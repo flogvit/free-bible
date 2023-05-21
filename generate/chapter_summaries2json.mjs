@@ -9,8 +9,8 @@ const doJson = async () => {
     const summaries = [];
     languages.forEach(language => {
 
-        fs.readdirSync(`summaries/${language}/`).forEach(file => {
-            const content = fs.readFileSync(`summaries/${language}/${file}`, 'utf-8');
+        fs.readdirSync(`chapter_summaries/${language}/`).forEach(file => {
+            const content = fs.readFileSync(`chapter_summaries/${language}/${file}`, 'utf-8');
             const parts = file.match(/(\d+)-(\d+)\.txt/);
             const bookId = parts[1];
             const chapterId = parts[2];

@@ -11,6 +11,7 @@ import osnb1 from './bibles/osnb1.json';
 import word4word from './assets/word4word.json'
 import references from './assets/references.json'
 import summaries from './assets/summaries.json'
+import book_summaries from './assets/book_summaries.json'
 
 const TRANSLATIONS = {
     'kjv': kjv,
@@ -63,6 +64,10 @@ const Dashboard = () => {
     const summary = useMemo(() => {
         return summaries.find(summary => +summary.bookId===+selectedBook.value && +summary.chapterId === +selectedChapter) || null
     }, [selectedBook, selectedChapter])
+
+    const book_summary = useMemo(() => {
+        return book_summaries.find(summary => +summary.bookId===+selectedBook.value) || null;
+    }, [selectedBook])
 
     const handleBookChange = (book) => {
         setSelectedBook(book);
@@ -121,6 +126,8 @@ const Dashboard = () => {
                 <i>Denne bolken er ikke laget ennå, men viser hvordan du kan få opp informasjon om hvert kapittel og vers</i>
                 <h2>Sammendrag</h2>
                 {summary && parse(summary.text)}
+                <h2>{translations[selectedTranslations[0].value].books.find(book => book.id===+selectedBook.value).name}</h2>
+                {book_summary && parse(book_summary.text)}
                 <h2>1.Mosebok 1,1</h2>
                 <div>
                 {parse(word4word[0].text)}
