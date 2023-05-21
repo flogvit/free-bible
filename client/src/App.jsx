@@ -12,15 +12,15 @@ const AppContainer = styled.div`
   min-height: 100vh;
   padding: 20px;
   box-sizing: border-box;
-  background-color: #1A1A1A;
-  color: #F3F3F3;
+  background-color: #FEFEFEFE;
+  color: #111;
 `;
 
 const GlobalStyle = createGlobalStyle`
   html, body {
     margin: 0;
     padding: 0;
-    font-family: 'Libre Baskerville', serif;
+    font-family: Georgia, Times, 'Times New Roman', serif;
   }
 `;
 

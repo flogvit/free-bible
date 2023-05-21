@@ -3,7 +3,7 @@ import styled from 'styled-components';
 import BibleBookChooser from './components/bible/BibleBookChooser';
 import BibleVerse from './components/bible/BibleVerse';
 import parse from 'html-react-parser';
-import {translations} from './library/translations.js'
+import {getBookName, getTranslationName, translations} from './library/translations.js'
 
 import dnb30 from './bibles/dnb30.json';
 import kjv from './bibles/kjv.json';
@@ -18,6 +18,11 @@ const TRANSLATIONS = {
     'dnb30': dnb30,
     'osnb1': osnb1
 }
+
+const Column = styled.div`
+  overflow-y: auto;
+  max-height: 100vh;
+`;
 
 const Grid = styled.div`
   display: grid;
@@ -84,7 +89,7 @@ const Dashboard = () => {
 
     return (
         <Grid>
-            <div>
+            <Column>
                 <h1>Velg</h1>
                 <BibleBookChooser
                     translations={translations}
@@ -95,12 +100,13 @@ const Dashboard = () => {
                     selectedChapter={selectedChapter}
                     selectedBook={selectedBook}
                 />
-            </div>
+            </Column>
+            <Column>
             <CenteredContent>
                 <h1>Kapittel {selectedChapter}</h1>
                 {selectedTranslations.length > 0 && selectedBook && (
                     <VerseGrid translations={selectedTranslations}>
-                        {selectedTranslations.map(translation => <div key={translation.value}>{translation.value}</div>)}
+                        {selectedTranslations.map(translation => <div key={translation.value}>{getTranslationName(translation.value)}</div>)}
                         {verses && verses[0].map((verse, idx) =>
                             <React.Fragment key={`A-${verse.bookId}-${verse.chapterId}-${verse.verseId}`}>
                                 <BibleVerse
@@ -121,12 +127,13 @@ const Dashboard = () => {
                     </VerseGrid>
                 )}
             </CenteredContent>
-            <div>
+            </Column>
+            <Column>
                 <h1>Hjelpemidler</h1>
                 <i>Denne bolken er ikke laget ennå, men viser hvordan du kan få opp informasjon om hvert kapittel og vers</i>
                 <h2>Sammendrag</h2>
                 {summary && parse(summary.text)}
-                <h2>{translations[selectedTranslations[0].value].books.find(book => book.id===+selectedBook.value).name}</h2>
+                <h2>{getBookName(selectedTranslations[0].value, selectedChapter)}</h2>
                 {book_summary && parse(book_summary.text)}
                 <h2>1.Mosebok 1,1</h2>
                 <div>
@@ -137,7 +144,7 @@ const Dashboard = () => {
                 <div>
                     {parse(references[0].text)}
                 </div>
-            </div>
+            </Column>
         </Grid>
     );
 };

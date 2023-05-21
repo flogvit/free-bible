@@ -17,6 +17,33 @@ const BookChooserContainer = styled.div`
   > * {
     margin: 0 0 10px 0
   }
+
+
+  button {
+    cursor: pointer;
+    border: none;
+    padding: 9px;
+    text-align: center;
+    text-decoration: none;
+    background-color: #e7e7e7;
+    border-radius: 2px;
+    margin: 1px;
+    width: 38px;
+    color: black;
+  }
+  button:disabled {
+    background-color: white;
+    color: black;
+    cursor: not-allowed;
+  }
+  
+  button:hover {
+    opacity: 0.6;
+  }
+  
+  button:focus {
+    background-color: #a7a7a7;
+  }
 `;
 
 const selectStyles = {

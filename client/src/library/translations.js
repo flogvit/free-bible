@@ -216,3 +216,9 @@ export const translations = {
     // Add more translations and books as needed
 };
 
+export const getTranslationName = (translation) => {
+    return translations[translation]?.name || '';
+}
+export const getBookName = (translation, bookId) => {
+    return translations[translation]?.books.find(book => book.id === +bookId).name || ''
+}
