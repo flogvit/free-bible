@@ -14,6 +14,7 @@ const AppContainer = styled.div`
   box-sizing: border-box;
   background-color: #FEFEFEFE;
   color: #111;
+  min-height: 100vh;
 `;
 
 const GlobalStyle = createGlobalStyle`

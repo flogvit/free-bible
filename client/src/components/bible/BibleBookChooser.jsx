@@ -83,14 +83,21 @@ const BibleBookChooser = ({
         onSelectChapter(chapter);
     };
 
-    const translationOptions = Object.keys(translations).map(t => ({value: t, label: translations[t].short}));
+    const translationOptions = useMemo(() => {
+        return Object.keys(translations).map(t => ({value: t, label: translations[t].short}));
+    }, [translations]);
 
-    const bookOptions = selectedTranslation ? translations[selectedTranslation[0].value].books.map(b => ({
-        value: b.id,
-        label: b.name
-    })) : [];
+    const bookOptions = useMemo(() => {
+        return selectedTranslation.length>0 ? translations[selectedTranslation[0].value].books.map(b => ({
+            value: b.id,
+            label: b.name
+        })) : [];
+    }, [translations, selectedTranslation]);
 
-    const chapterCount = selectedTranslation && selectedBook ? translations[selectedTranslation[0].value].books.find(b => b.id === selectedBook.value).chapter_count : [];
+    const chapterCount = useMemo(() => {
+        return selectedTranslation.length>0 && selectedBook ? translations[selectedTranslation[0].value].books.find(b => b.id === selectedBook.value).chapter_count : [];
+    }, [selectedTranslation, selectedBook, translations]);
+
     const chapterArray = useMemo(() => {
         return Array.from(Array(chapterCount).keys()).map(k => k + 1)
     }, [chapterCount])
@@ -106,7 +113,7 @@ const BibleBookChooser = ({
                 options={translationOptions}
                 styles={selectStyles}
             />
-            {selectedTranslation && (
+            {selectedTranslation.length>0 && (
                 <Select
                     styles={selectStyles}
                     onChange={handleBookChange}
@@ -117,7 +124,7 @@ const BibleBookChooser = ({
                 />
             )}
 
-            {selectedBook && (
+            {selectedTranslation.length>0 && selectedBook && (
                 <div>
                     {chapterArray.map((chapter) => (
                         <button

@@ -29,6 +29,7 @@ const Grid = styled.div`
   grid-template-columns: 1fr 4fr 1fr;
   gap: 20px;
   width: 100%;
+  min-height: 100vh;
 
   @media (max-width: 768px) {
     grid-template-columns: 1fr;
@@ -56,7 +57,10 @@ const CenteredContent = styled.div`
 const Dashboard = () => {
     const [selectedBook, setSelectedBook] = useState({value: 1, label: "1. Mosebok"});
     const [selectedChapter, setSelectedChapter] = useState(1);
-    const [selectedTranslations, setSelectedTranslations] = useState([{value: 'osnb1', label: "OSNB"}, {value: 'dnb30', label: "DNB30"}, {value: 'kjv', label: 'KJV'}]);
+    const [selectedTranslations, setSelectedTranslations] = useState([{value: 'osnb1', label: "OSNB"}, {
+        value: 'dnb30',
+        label: "DNB30"
+    }, {value: 'kjv', label: 'KJV'}]);
 
     const verses = useMemo(() => {
         const result = [];
@@ -67,11 +71,11 @@ const Dashboard = () => {
     }, [selectedBook, selectedChapter, selectedTranslations])
 
     const summary = useMemo(() => {
-        return summaries.find(summary => +summary.bookId===+selectedBook.value && +summary.chapterId === +selectedChapter) || null
+        return summaries.find(summary => +summary.bookId === +selectedBook.value && +summary.chapterId === +selectedChapter) || null
     }, [selectedBook, selectedChapter])
 
     const book_summary = useMemo(() => {
-        return book_summaries.find(summary => +summary.bookId===+selectedBook.value) || null;
+        return book_summaries.find(summary => +summary.bookId === +selectedBook.value) || null;
     }, [selectedBook])
 
     const handleBookChange = (book) => {
@@ -102,48 +106,56 @@ const Dashboard = () => {
                 />
             </Column>
             <Column>
-            <CenteredContent>
-                <h1>{getBookName(selectedTranslations[0].value, selectedBook.value)} {selectedChapter}</h1>
-                {selectedTranslations.length > 0 && selectedBook && (
-                    <VerseGrid translations={selectedTranslations}>
-                        {selectedTranslations.map(translation => <div key={translation.value}>{getTranslationName(translation.value)}</div>)}
-                        {verses && verses[0].map((verse, idx) =>
-                            <React.Fragment key={`A-${verse.bookId}-${verse.chapterId}-${verse.verseId}`}>
-                                <BibleVerse
-                                    verse={verse}
-                                    verseNumber={true}
-                                ></BibleVerse>
-                                {verses.slice(1).map(translation => {
-                                    const verse = translation[idx];
-                                    return <React.Fragment key={`${verse.bible}-${verse.bookId}-${verse.chapterId}-${verse.verseId}`}>
+                {selectedTranslations.length > 0 &&
+                    <CenteredContent>
+                        <h1>{getBookName(selectedTranslations[0].value, selectedBook.value)} {selectedChapter}</h1>
+                        {selectedTranslations.length > 0 && selectedBook && (
+                            <VerseGrid translations={selectedTranslations}>
+                                {selectedTranslations.map(translation => <div
+                                    key={translation.value}>{getTranslationName(translation.value)}</div>)}
+                                {verses && verses[0].map((verse, idx) =>
+                                    <React.Fragment key={`A-${verse.bookId}-${verse.chapterId}-${verse.verseId}`}>
                                         <BibleVerse
                                             verse={verse}
                                             verseNumber={true}
                                         ></BibleVerse>
+                                        {verses.slice(1).map(translation => {
+                                            const verse = translation[idx];
+                                            return <React.Fragment
+                                                key={`${verse.bible}-${verse.bookId}-${verse.chapterId}-${verse.verseId}`}>
+                                                <BibleVerse
+                                                    verse={verse}
+                                                    verseNumber={true}
+                                                ></BibleVerse>
+                                            </React.Fragment>
+                                        })}
                                     </React.Fragment>
-                                })}
-                            </React.Fragment>
+                                )}
+                            </VerseGrid>
                         )}
-                    </VerseGrid>
-                )}
-            </CenteredContent>
+                    </CenteredContent>
+                }
             </Column>
             <Column>
                 <h1>Hjelpemidler</h1>
-                <i>Denne bolken er ikke laget ennå, men viser hvordan du kan få opp informasjon om hvert kapittel og vers</i>
-                <h2>{getBookName(selectedTranslations[0].value, selectedBook.value)}</h2>
-                {book_summary && parse(book_summary.text)}
-                <h2>{getBookName(selectedTranslations[0].value, selectedBook.value)} {selectedChapter}</h2>
-                {summary && parse(summary.text)}
-                <h2>1.Mosebok 1,1</h2>
-                <div>
-                {parse(word4word[0].text)}
-                </div>
-                <p></p>
-                <h2>Referanser</h2>
-                <div>
-                    {parse(references[0].text)}
-                </div>
+                <i>Denne bolken er ikke laget ennå, men viser hvordan du kan få opp informasjon om hvert kapittel og
+                    vers</i>
+                {selectedTranslations.length > 0 && <>
+                    <h2>{getBookName(selectedTranslations[0].value, selectedBook.value)}</h2>
+                    {book_summary && parse(book_summary.text)}
+                    <h2>{getBookName(selectedTranslations[0].value, selectedBook.value)} {selectedChapter}</h2>
+                    {summary && parse(summary.text)}
+                    <h2>1.Mosebok 1,1</h2>
+                    <div>
+                        {parse(word4word[0].text)}
+                    </div>
+                    <p></p>
+                    <h2>Referanser</h2>
+                    <div>
+                        {parse(references[0].text)}
+                    </div>
+                </>
+                }
             </Column>
         </Grid>
     );
