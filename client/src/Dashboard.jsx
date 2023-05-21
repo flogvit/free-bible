@@ -103,7 +103,7 @@ const Dashboard = () => {
             </Column>
             <Column>
             <CenteredContent>
-                <h1>Kapittel {selectedChapter}</h1>
+                <h1>{getBookName(selectedTranslations[0].value, selectedBook.value)} {selectedChapter}</h1>
                 {selectedTranslations.length > 0 && selectedBook && (
                     <VerseGrid translations={selectedTranslations}>
                         {selectedTranslations.map(translation => <div key={translation.value}>{getTranslationName(translation.value)}</div>)}
@@ -131,10 +131,10 @@ const Dashboard = () => {
             <Column>
                 <h1>Hjelpemidler</h1>
                 <i>Denne bolken er ikke laget ennå, men viser hvordan du kan få opp informasjon om hvert kapittel og vers</i>
-                <h2>Sammendrag</h2>
-                {summary && parse(summary.text)}
-                <h2>{getBookName(selectedTranslations[0].value, selectedChapter)}</h2>
+                <h2>{getBookName(selectedTranslations[0].value, selectedBook.value)}</h2>
                 {book_summary && parse(book_summary.text)}
+                <h2>{getBookName(selectedTranslations[0].value, selectedBook.value)} {selectedChapter}</h2>
+                {summary && parse(summary.text)}
                 <h2>1.Mosebok 1,1</h2>
                 <div>
                 {parse(word4word[0].text)}
