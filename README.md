@@ -15,21 +15,28 @@ FINISHED
 ## Translations
 OSNB1 - Norwegian Bokmål, first version - Status: CHECKING  
 OSNN1 - Norwegian Nynorsk, first version - Status: NOT STARTED
+OSEN1 - English, easy to read - Status: NOT STARTED
 
 ## Summary
 All languages will get a summary for each chapter.
 
 NB - Norwegian Bokmål - Status: GENERATING
+NN - Norwegian Nynorsk - Status: NOT STARTED
+EN - English - Status: NOT STARTED
 
 ## Word 4 word
 All languages will get a word for word translation from the original language for each verse
 
 NB - Norwegian Bokmål - Status: NOT STARTED
+NN - Norwegian Nynorsk - Status: NOT STARTED
+EN - English - Status: NOT STARTED
 
 ## References
 All languages will get a reference list for each verse
 
 NB - Norwegian Bokmål - Status: NOT STARTED
+NN - Norwegian Nynorsk - Status: NOT STARTED
+EN - English - Status: NOT STARTED
 
 ## Variations
 
