@@ -15,7 +15,7 @@ FINISHED
 ## Translations
 OSNB1 - Norwegian Bokmål, first version - Status: CHECKING  
 OSNN1 - Norwegian Nynorsk, first version - Status: NOT STARTED
-OSEN1 - English, easy to read - Status: NOT STARTED
+OSEN1 - English, easy to read - Status: CHECKING
 
 ## Summary
 All languages will get a summary for each chapter.
@@ -90,6 +90,13 @@ You are free to dontate to the project if you want. Each translation costs about
 ## People
 
 Founder of the project: Vegard Hanssen, email: Vegard.Hanssen@menneske.no
+
+## Developer
+
+You need to use node 18 for this project
+```bash
+nvm use 18
+```
 
 ## Copyright 2023 Free Bible
 

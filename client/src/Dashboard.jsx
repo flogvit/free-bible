@@ -8,6 +8,7 @@ import {getBookName, getTranslationName, translations} from './library/translati
 import dnb30 from './bibles/dnb30.json';
 import kjv from './bibles/kjv.json';
 import osnb1 from './bibles/osnb1.json';
+import osen1 from './bibles/osen1.json'
 import word4word from './assets/word4word.json'
 import references from './assets/references.json'
 import summaries from './assets/summaries.json'
@@ -16,7 +17,8 @@ import book_summaries from './assets/book_summaries.json'
 const TRANSLATIONS = {
     'kjv': kjv,
     'dnb30': dnb30,
-    'osnb1': osnb1
+    'osnb1': osnb1,
+    'osen1': osen1
 }
 
 const Column = styled.div`
@@ -60,7 +62,7 @@ const Dashboard = () => {
     const [selectedTranslations, setSelectedTranslations] = useState([{value: 'osnb1', label: "OSNB"}, {
         value: 'dnb30',
         label: "DNB30"
-    }, {value: 'kjv', label: 'KJV'}]);
+    }, {value: 'kjv', label: 'KJV'}, {value: 'osen1', label: 'OSEN'}]);
 
     const verses = useMemo(() => {
         const result = [];
@@ -121,13 +123,14 @@ const Dashboard = () => {
                                         ></BibleVerse>
                                         {verses.slice(1).map(translation => {
                                             const verse = translation[idx];
-                                            return <React.Fragment
+                                            return verse ? <React.Fragment
                                                 key={`${verse.bible}-${verse.bookId}-${verse.chapterId}-${verse.verseId}`}>
                                                 <BibleVerse
                                                     verse={verse}
                                                     verseNumber={true}
                                                 ></BibleVerse>
                                             </React.Fragment>
+                                                : <div></div>
                                         })}
                                     </React.Fragment>
                                 )}

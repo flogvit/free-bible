@@ -1,4 +1,5 @@
 import dotenv from 'dotenv'
+import kjv from '../bibles/kjv.json' assert { type: "json" };
 
 dotenv.config()
 import {ChatGPTAPI} from 'chatgpt'
@@ -8,7 +9,22 @@ let API = null;
 
 const translations = {
     'osnb1': {
-        long: "norwegian, bokmål"
+        long: "norwegian, bokmål",
+        query: `Use your understanding of vulgata, KJV, WEB and ASV to make a translation of all verses in [bibleRef] with an easy to read language in norwegian, bokmål.
+Adjust for previous verses so the sentences does not start with the same words and feels fluent.
+When you are finished with the whole chapter, write FINISHED
+I want you to answer in the format, and only answer in this format, no other text or questions:
+[bookNr]:[chapter]:<verse>:<text>`,
+        followup: `if you are finished with all verses in [bibleRef], write FINISHED, else continue`
+    },
+    'osen1': {
+        long: "english",
+        query: `Use your understanding of vulgata, KJV, WEB and ASV to make a translation of all verses in [bibleRef] with an easy to read language in modern english.
+Adjust for previous verses so the sentences does not start with the same words and feels fluent.
+When you are finished with the whole chapter, write FINISHED
+I want you to answer in the format, and only answer in this format, no other text or questions:
+[bookNr]:[chapter]:<verseNumber>:<text>`,
+        followup: `if you are finished with all verses in [bibleRef], write FINISHED, else continue`
     }
 }
 
@@ -82,43 +98,65 @@ const books = [
 ]
 
 
-async function doBook(translation, bookNr=1, chapter=1) {
+async function doBook(translation, bookNr=1, chapter=1, includeText=false) {
 
     console.log("Starting up with parameters", bookNr, chapter);
-    let book = books.find(b => b.id === bookNr).name;
-    do {
-        API = new ChatGPTAPI({
-            apiKey: process.env.OPENAI_API_KEY,
-            completionParams: {
-                model: 'gpt-4',
-                temperature: 0.5,
-                top_p: 0.8
-            }
-        })
-        await translate(translation, translations[translation].long, bookNr, chapter, `${book} ${chapter++}`)
-    } while(chapter<=books.find(b => b.name===book).chapter_count)
+    while(bookNr<=66) {
+        let book = books.find(b => b.id === bookNr).name;
+        fs.appendFileSync(`bibles_raw/${translation}/${translation}-${bookNr}.txt`, '')
+        do {
+            API = new ChatGPTAPI({
+                apiKey: process.env.OPENAI_API_KEY,
+                completionParams: {
+                    model: 'gpt-4',
+                    temperature: 0.5,
+                    top_p: 0.8
+                }
+            })
+            await translate(translation, translations[translation].long, bookNr, chapter, `${book} ${chapter++}`, includeText)
+        } while (chapter <= books.find(b => b.name === book).chapter_count)
+        do {
+            bookNr++;
+            chapter = 1;
+        } while(fs.existsSync(`bibles_raw/${translation}/${translation}-${bookNr}.txt`))
+    }
 }
 
-const ask = async (text, prevRes = {}) => {
-    console.log(`--> ASKING ${text}`);
+const ask = async (text, prevRes = {}, systemMessage=null) => {
+    console.log(`--> ASKING ${systemMessage?systemMessage : ""} ${text}`);
     prevRes.timeoutMs = 10*60*1000;
+    if (systemMessage) {
+        prevRes.systemMessage = systemMessage;
+    }
     return await API.sendMessage(text, prevRes);
 }
-const translate = async (translation, bible_long, bookNr, chapter, bibleRef) => {
+const translate = async (translation, bible_long, bookNr, chapter, bibleRef, includeText) => {
     let res = null;
+    let systemMessage = null;
+    if (includeText) {
+        systemMessage = `Here is the KJV text for ${bibleRef}:
+        
+${kjv.filter(verse => verse.bookId===bookNr && verse.chapterId===chapter).map(verse => `${verse.bookId}:${verse.chapterId}:${verse.verseId}:${verse.text}`).join("\n")}
+
+`
+    }
     do {
         try {
-            res = await ask(`Use your understanding of vulgata, KJV, WEB and ASV to make a translation of all verses in ${bibleRef} with an easy to read language in norwegian, bokmål.
-Adjust for previous verses so the sentences does not start with the same words and feels fluent.
-When you are finished with the whole chapter, write FINISHED
-I want you to answer in the format, and only answer in this format, no other text or questions:
-${bookNr}:${chapter}:<verse>:<text>`);
+            let query = translations[translation].query;
+            query = query.replace("[bibleRef]", bibleRef);
+            query = query.replace("[bookNr]", bookNr);
+            query = query.replace("[chapter]", chapter);
+            res = await ask(query, {}, systemMessage);
         } catch(e) {console.log("Catching initial", e)}
     } while(!res)
     await store(translation, bookNr, bibleRef, res.text);
     while (!res.text.includes("FINISHED")) {
         try {
-            res = await ask(`if you are finished with all verses in ${bibleRef}, write FINISHED, else continue`, {
+            let query = translations[translation].followup;
+            query = query.replace("[bibleRef]", bibleRef);
+            query = query.replace("[bookNr]", bookNr);
+            query = query.replace("[chapter]", chapter);
+            res = await ask(query, {
                 parentMessageId: res.id
             })
         } catch(e) {console.log("Catching followup", e)}
@@ -129,7 +167,7 @@ ${bookNr}:${chapter}:<verse>:<text>`);
 const store = async (translation, bookNr, bibleRef, text) => {
     const append = `[${bibleRef}]
 ${text}
-`
+`.replaceAll("\n\n", "\n");
     console.log(append);
     fs.appendFileSync(`bibles_raw/${translation}/${translation}-${bookNr}.txt`,
         append
@@ -138,7 +176,7 @@ ${text}
 }
 
 const args = process.argv.slice(2);
-if (args.length!==3)
-    console.error("Wrong params: <translation> <bookId> <chapterId>");
+if (args.length<3)
+    console.error("Wrong params: <translation> <bookId> <chapterId> [1=include text in query]");
 
-await doBook(args[0], +args[1], +args[2]);
+await doBook(args[0], +args[1], +args[2], args.length>3 ? !!args[3] : false);
