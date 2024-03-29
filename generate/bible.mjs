@@ -1,5 +1,5 @@
 import dotenv from 'dotenv'
-import kjv from '../bibles/kjv.json' assert { type: "json" };
+import kjv from '../bibles/kjv.json' assert {type: "json"};
 
 dotenv.config()
 import {ChatGPTAPI} from 'chatgpt'
@@ -98,33 +98,32 @@ const books = [
 ]
 
 
-async function doBook(translation, bookNr=1, chapter=1, includeText=false) {
+async function doBook(translation, bookNr = 1, chapter = 1, includeText = false) {
 
     console.log("Starting up with parameters", bookNr, chapter);
-    while(bookNr<=66) {
+    while (bookNr <= 66) {
         let book = books.find(b => b.id === bookNr).name;
-        fs.appendFileSync(`bibles_raw/${translation}/${translation}-${bookNr}.txt`, '')
         do {
-            API = new ChatGPTAPI({
-                apiKey: process.env.OPENAI_API_KEY,
-                completionParams: {
-                    model: 'gpt-4',
-                    temperature: 0.5,
-                    top_p: 0.8
-                }
-            })
-            await translate(translation, translations[translation].long, bookNr, chapter, `${book} ${chapter++}`, includeText)
+            if (!fs.existsSync(`bibles_raw/${translation}/${translation}-${bookNr}.txt`)) {
+                API = new ChatGPTAPI({
+                    apiKey: process.env.OPENAI_API_KEY,
+                    completionParams: {
+                        model: 'gpt-4',
+                        temperature: 0
+                    }
+                })
+                fs.appendFileSync(`bibles_raw/${translation}/${translation}-${bookNr}.txt`, '')
+                await translate(translation, translations[translation].long, bookNr, chapter, `${book} ${chapter++}`, includeText)
+            }
         } while (chapter <= books.find(b => b.name === book).chapter_count)
-        do {
-            bookNr++;
-            chapter = 1;
-        } while(fs.existsSync(`bibles_raw/${translation}/${translation}-${bookNr}.txt`))
+        bookNr++;
+        chapter = 1;
     }
 }
 
-const ask = async (text, prevRes = {}, systemMessage=null) => {
-    console.log(`--> ASKING ${systemMessage?systemMessage : ""} ${text}`);
-    prevRes.timeoutMs = 10*60*1000;
+const ask = async (text, prevRes = {}, systemMessage = null) => {
+    console.log(`--> ASKING ${systemMessage ? systemMessage : ""} ${text}`);
+    prevRes.timeoutMs = 10 * 60 * 1000;
     if (systemMessage) {
         prevRes.systemMessage = systemMessage;
     }
@@ -136,7 +135,7 @@ const translate = async (translation, bible_long, bookNr, chapter, bibleRef, inc
     if (includeText) {
         systemMessage = `Here is the KJV text for ${bibleRef}:
         
-${kjv.filter(verse => verse.bookId===bookNr && verse.chapterId===chapter).map(verse => `${verse.bookId}:${verse.chapterId}:${verse.verseId}:${verse.text}`).join("\n")}
+${kjv.filter(verse => verse.bookId === bookNr && verse.chapterId === chapter).map(verse => `${verse.bookId}:${verse.chapterId}:${verse.verseId}:${verse.text}`).join("\n")}
 
 `
     }
@@ -147,8 +146,10 @@ ${kjv.filter(verse => verse.bookId===bookNr && verse.chapterId===chapter).map(ve
             query = query.replace("[bookNr]", bookNr);
             query = query.replace("[chapter]", chapter);
             res = await ask(query, {}, systemMessage);
-        } catch(e) {console.log("Catching initial", e)}
-    } while(!res)
+        } catch (e) {
+            console.log("Catching initial", e)
+        }
+    } while (!res)
     await store(translation, bookNr, bibleRef, res.text);
     while (!res.text.includes("FINISHED")) {
         try {
@@ -159,7 +160,9 @@ ${kjv.filter(verse => verse.bookId===bookNr && verse.chapterId===chapter).map(ve
             res = await ask(query, {
                 parentMessageId: res.id
             })
-        } catch(e) {console.log("Catching followup", e)}
+        } catch (e) {
+            console.log("Catching followup", e)
+        }
         await store(translation, bookNr, bibleRef, res.text);
     }
 }
@@ -176,7 +179,7 @@ ${text}
 }
 
 const args = process.argv.slice(2);
-if (args.length<3)
+if (args.length < 3)
     console.error("Wrong params: <translation> <bookId> <chapterId> [1=include text in query]");
 
-await doBook(args[0], +args[1], +args[2], args.length>3 ? !!args[3] : false);
+await doBook(args[0], +args[1], +args[2], args.length > 3 ? !!args[3] : false);
