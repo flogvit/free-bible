@@ -52,7 +52,7 @@ async function doText(bible, originalText, verse, filename) {
     },
 ]
 
-Translation must be ${language}. 
+Explanation must be ${language}. 
 
 Original text:
 ${originalText}
@@ -102,7 +102,7 @@ async function main() {
         const bible = "osnb1";
         const maxChapters = books.find(b => b.id === bookId).chapters;
         for (let chapterId = 1; chapterId <= maxChapters; chapterId++) {
-            const chapterFile = path.join(__dirname, `bibles_raw/sblgnt/${bible}/${bookId}/${chapterId}.json`)
+            const chapterFile = path.join(__dirname, `bibles_raw/${bible}/${bookId}/${chapterId}.json`)
             const chapter = JSON.parse(fs.readFileSync(chapterFile))
             const outputPath = path.join(__dirname, "word4word", `${bible}`, `${bookId}`, `${chapterId}`);
             if (!fs.existsSync(outputPath)) {

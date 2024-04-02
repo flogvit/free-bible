@@ -226,7 +226,7 @@ const Dashboard = () => {
                                             const verse = versesByTranslationAndVerseId[translationValue] ? versesByTranslationAndVerseId[translationValue][verseId] : null;
                                             return verse ? (
                                                 <BibleVerse
-                                                    key={`${translationValue}-${verseId}`}
+                                                    key={`${translationValue}-${selectedChapter}-${verseId}`}
                                                     verse={verse}
                                                     verseNumber={true}
                                                 />
