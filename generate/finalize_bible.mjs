@@ -35,6 +35,11 @@ function getBible(bible) {
                         const verseWords = JSON.parse(fs.readFileSync(word4wordFile, 'utf-8'))
                         verse.words = verseWords[0].words
                     }
+                    const referencesFile = path.join(__dirname, "references", book.name, chapter.name.split('.')[0], `${verse.verseId}.json`)
+                    if (fs.existsSync(referencesFile)) {
+                        const references = JSON.parse(fs.readFileSync(referencesFile, 'utf-8'))
+                        verse.references = references.references
+                    }
                     id = verse.verseId+1
                 }
                 verses = verses.concat(versesArray);

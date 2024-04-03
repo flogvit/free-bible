@@ -8,7 +8,9 @@ const BookChooserContainer = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
-  margin: 10px;
+    @media (min-width: 768px) {
+        margin: 10px;
+    }
 
   > div {
     width: 100%;
@@ -108,7 +110,7 @@ const BibleBookChooser = ({
                 onChange={handleTranslationChange}
                 closeMenuOnSelect={true}
                 components={animatedComponents}
-                defaultValue={selectedTranslation}
+                defaultValue={selectedTranslation} // Changed from defaultValue to value
                 isMulti
                 options={translationOptions}
                 styles={selectStyles}
@@ -119,7 +121,7 @@ const BibleBookChooser = ({
                     onChange={handleBookChange}
                     closeMenuOnSelect={true}
                     components={animatedComponents}
-                    defaultValue={selectedBook}
+                    value={selectedBook} // Changed from defaultValue to value
                     options={bookOptions}
                 />
             )}

@@ -10,6 +10,7 @@ const SummaryDetail = styled.div`
     background: lightgrey;
     margin-top: 10px;
     padding: 10px;
+    border-left: 4px solid #0077cc;
 `;
 
 const SummaryTitle = styled.h1`
@@ -17,7 +18,7 @@ const SummaryTitle = styled.h1`
     /* Additional styling for the title */
 `;
 
-const BookSummary = ({ summary, bookName }) => {
+const BookSummary = React.forwardRef(({ summary, bookName }, ref) => {
     const [showDetail, setShowDetail] = useState(false);
 
     const toggleDetail = () => {
@@ -28,13 +29,13 @@ const BookSummary = ({ summary, bookName }) => {
     const sanitizedContent = DOMPurify.sanitize(summary.text);
 
     return (
-        <SummaryWrapper>
+        <SummaryWrapper ref={ref}>
             <SummaryTitle onClick={toggleDetail}>{bookName}</SummaryTitle>
             {showDetail && (
                 <SummaryDetail dangerouslySetInnerHTML={{ __html: sanitizedContent }} />
             )}
         </SummaryWrapper>
     );
-};
+});
 
 export default BookSummary;

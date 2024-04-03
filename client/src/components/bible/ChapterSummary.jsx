@@ -7,9 +7,10 @@ const SummaryWrapper = styled.div`
 `;
 
 const SummaryDetail = styled.div`
-  background: lightgrey;
-  margin-top: 10px;
-  padding: 10px;
+    background: lightgrey;
+    margin-top: 10px;
+    padding: 10px;
+    border-left: 4px solid #0077cc;
 `;
 
 const SummaryTitle = styled.h2`

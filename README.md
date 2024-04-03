@@ -18,25 +18,15 @@ OSNB1 - Norwegian Bokmål, first version - Status: CHECKING
 ## Summary
 All languages will get a summary for each chapter.
 
-NB - Norwegian Bokmål - Status: GENERATING
-
 ## Word 4 word
 All languages will get a word for word translation from the original language for each verse
-
-NB - Norwegian Bokmål - Status: NOT STARTED
 
 ## References
 All languages will get a reference list for each verse
 
-NB - Norwegian Bokmål - Status: NOT STARTED
-
-## Variations
-
-The project will try to create both very easy to read and word for word translations when we are finished with the main translation.
-
 ## Bible texts
 To translate the old testament, the Tanach (https://tanach.us) is used.
-To translate the new testament, SBLGNT is used.
+To translate the new testament, SBLGNT (https://sblgnt.com/) is used.
 
 ## Encyclopedias
 The project will also generate encyclopedias like verse word for word, cross references and summaries.
@@ -46,7 +36,7 @@ It is possible to view the current state at: https://menneske.no/freebible/
 
 ## Support
 
-You are free to dontate to the project if you want. Each translation costs about $200, and the encyclopedias costs a lot more.
+You are free to dontate to the project if you want. Each translation costs about $100, and the encyclopedias costs a lot more.
 
 ## People
 

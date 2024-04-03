@@ -12,8 +12,6 @@ import {bibles, books} from "./constants.js";
 
 const openai = new OpenAI();
 
-let assistant = null;
-
 async function doGPTCall(content) {
     return openai.chat.completions.create({
         messages: [
@@ -31,9 +29,7 @@ async function doGPTCall(content) {
 
 async function doText(bible, originalText, bookId, chapterId) {
     const language = bibles[bible];
-    // console.log(bible, originalText, language);
-    // return;
-    let content = `You will be given a bible text in the original language, and must return the translation as a json on the format:
+    let content = `You will be given a bible text in the original language, and must return the translation as a json, and only json on the format:
 [
     {
         "bookId": ${bookId},
@@ -52,7 +48,6 @@ ${originalText}
     let returnContent = ""
     let fullReturnContent = ""
 
-    // console.log("Got answer")
     do {
         content = `${content}${returnContent}`
         completion = await doGPTCall(content)
@@ -76,7 +71,6 @@ async function doBook(bible, bookId, chapterId) {
     const bookText = fs.readFileSync(path.join(__dirname, "../", books.find(b => b.id === bookId).file));
     const lines = bookText.toString().split("\n");
     lines.shift();
-    // console.log(lines)
     const chapter = lines.filter(verse => {
         try {
             const [_, book, chapter, v, text] = verse.match(/([^\d]+) (\d+):(\d+)\t(.+)/);
@@ -86,12 +80,11 @@ async function doBook(bible, bookId, chapterId) {
         }
 
     })
-    console.log(chapter)
     await doText(bible, chapter.join("\n"), bookId, chapterId);
 }
 
 async function main() {
-    for(let bookId=46; bookId<=66; bookId++) {
+    for(let bookId=40; bookId<=66; bookId++) {
         const bible = "osnb1";
         const maxChapters = books.find(b => b.id === bookId).chapters;
         for (let chapterId = 1; chapterId <= maxChapters; chapterId++) {

@@ -2,6 +2,8 @@ export const translations = {
     'osnb1': {
         short: "OSNB",
         name: 'Open Source Norsk bokmål',
+        info: 'En Bibel som ikke er kopibeskyttet. Du kan bruke teksten og hjelpemidlene akkurat som du vil.',
+        infoUrl: 'https://github.com/flogvit/free-bible/',
         books: [
             {"id": 1, "name": "Første Mosebok", "chapter_count": 50},
             {"id": 2, "name": "Andre Mosebok", "chapter_count": 40},
