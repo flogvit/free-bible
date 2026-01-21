@@ -12,12 +12,12 @@ function getBible(bible) {
 
     try {
         // Step 1: Read the directory (book level)
-        const books = fs.readdirSync(baseDir, { withFileTypes: true });
+        const books = fs.readdirSync(baseDir, {withFileTypes: true});
         const sortedBooks = books.filter(dirent => dirent.isDirectory()).sort((a, b) => a.name - b.name);
 
         for (const book of sortedBooks) {
             const bookPath = path.join(baseDir, book.name);
-            const chapters = fs.readdirSync(bookPath, { withFileTypes: true });
+            const chapters = fs.readdirSync(bookPath, {withFileTypes: true});
             const sortedChapters = chapters.filter(dirent => dirent.isFile()).sort((a, b) => a.name.split('.')[0] - b.name.split('.')[0]);
 
             // Step 2: Read each chapter file and join verses
@@ -26,12 +26,13 @@ function getBible(bible) {
                 const chapterContent = fs.readFileSync(chapterPath, 'utf-8');
                 const versesArray = JSON.parse(chapterContent);
                 let id = 1;
-                for(let verse of versesArray) {
+                for (let verse of versesArray) {
                     if (id !== verse.verseId) {
                         console.log(`Wrong id ${id} `, verse);
                     }
                     const word4wordFile = path.join(__dirname, "word4word", bible, book.name, chapter.name.split('.')[0], `${verse.verseId}.json`)
                     if (fs.existsSync(word4wordFile)) {
+                        // console.log(word4wordFile)
                         const verseWords = JSON.parse(fs.readFileSync(word4wordFile, 'utf-8'))
                         verse.words = verseWords[0].words
                     }
@@ -40,7 +41,7 @@ function getBible(bible) {
                         const references = JSON.parse(fs.readFileSync(referencesFile, 'utf-8'))
                         verse.references = references.references
                     }
-                    id = verse.verseId+1
+                    id = verse.verseId + 1
                 }
                 verses = verses.concat(versesArray);
             }

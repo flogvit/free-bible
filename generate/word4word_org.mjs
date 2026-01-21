@@ -22,7 +22,7 @@ async function doGPTCall(content) {
                 content
             }
         ],
-        model: "gpt-4-turbo-preview",
+        model: "gpt-4o",
         max_tokens: null,
         n: 1,
         temperature: 0
@@ -46,7 +46,7 @@ async function doText(bible, verse, filename) {
                 word: <word>,
                 pronunciation: <in latin letters>,
                 wordId: <position in verse>,
-                explanation: "<explanation is ${language}"
+                explanation: "<explanation in ${language}"
             }
         ]
     },
@@ -77,7 +77,7 @@ ${verse.text}
 async function main() {
     for(let bookId=1; bookId<=1; bookId++) {
         const bible = bookId<40 ? "tanach" : "sblgnt";
-        const maxChapters = 1; //books.find(b => b.id === bookId).chapters;
+        const maxChapters = books.find(b => b.id === bookId).chapters;
         for (let chapterId = 1; chapterId <= maxChapters; chapterId++) {
             const chapterFile = path.join(__dirname, `bibles_raw/${bible}/${bookId}/${chapterId}.json`)
             const chapter = JSON.parse(fs.readFileSync(chapterFile))
