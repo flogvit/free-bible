@@ -75,9 +75,9 @@ ${verse.text}
 }
 
 async function main() {
-    for(let bookId=40; bookId<=40; bookId++) {
-        const bible = "sblgnt";
-        const maxChapters = books.find(b => b.id === bookId).chapters;
+    for(let bookId=1; bookId<=1; bookId++) {
+        const bible = bookId<40 ? "tanach" : "sblgnt";
+        const maxChapters = 1; //books.find(b => b.id === bookId).chapters;
         for (let chapterId = 1; chapterId <= maxChapters; chapterId++) {
             const chapterFile = path.join(__dirname, `bibles_raw/${bible}/${bookId}/${chapterId}.json`)
             const chapter = JSON.parse(fs.readFileSync(chapterFile))

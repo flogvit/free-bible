@@ -9,21 +9,22 @@ const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 dotenv.config()
 
-import OpenAI from 'openai';
-const openai = new OpenAI();
+import Anthropic from '@anthropic-ai/sdk';
 
-async function doGPTCall(content) {
-    return openai.chat.completions.create({
+const anthropic = new Anthropic({
+    apiKey: process.env.ANTHROPIC_API_KEY
+});
+
+async function doAnthropicCall(content) {
+    return anthropic.messages.create({
+        model: "claude-opus-4-5-20251101",
+        max_tokens: 8192,
         messages: [
             {
-                role: "system",
+                role: "user",
                 content
             }
-        ],
-        model: "gpt-4-turbo-preview",
-        max_tokens: null,
-        n: 1,
-        temperature: 0
+        ]
     });
 }
 
@@ -50,21 +51,11 @@ You should answer in a json format, and only json. If you find no cross-referenc
 ...
 ]
 `
-    let completion = null;
-    let returnContent = ""
-    let fullReturnContent = ""
+    let completion = await doAnthropicCall(content)
+    let returnContent = completion.content[0].text
+    console.log(returnContent)
 
-    // console.log("Got answer")
-    do {
-        content = `${content}${returnContent}`
-        completion = await doGPTCall(content)
-        returnContent = completion.choices[0].message.content
-        fullReturnContent = `${fullReturnContent}${returnContent}`
-        console.log(returnContent)
-    } while (completion.choices[0].finish_reason === "length")
-
-    console.log(fullReturnContent)
-    const result = JSON.parse(fullReturnContent.replaceAll("```json", "").replaceAll("```", ""))
+    const result = JSON.parse(returnContent.replaceAll("```json", "").replaceAll("```", ""))
     const dir = path.join(__dirname, "references", `${bookId}`, `${chapterId}`)
     if (!fs.existsSync(dir)) {
         fs.mkdirSync(dir, {recursive: true});
@@ -81,7 +72,7 @@ You should answer in a json format, and only json. If you find no cross-referenc
 }
 
 async function main() {
-    for(let bookId=1; bookId<=1; bookId++) {
+    for(let bookId=1; bookId<=66; bookId++) {
         const bible = "osnb1";
         const maxChapters = books.find(b => b.id === bookId).chapters;
         for (let chapterId = 1; chapterId <= maxChapters; chapterId++) {

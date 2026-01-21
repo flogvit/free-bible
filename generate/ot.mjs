@@ -10,25 +10,23 @@ const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 dotenv.config()
 
-import OpenAI from 'openai';
+import Anthropic from '@anthropic-ai/sdk';
 import {bibles, books} from "./constants.js";
 
-const openai = new OpenAI();
+const anthropic = new Anthropic({
+    apiKey: process.env.ANTHROPIC_API_KEY
+});
 
-let assistant = null;
-
-async function doGPTCall(content) {
-    return openai.chat.completions.create({
+async function doAnthropicCall(content) {
+    return anthropic.messages.create({
+        model: "claude-opus-4-5-20251101",
+        max_tokens: 8192,
         messages: [
             {
-                role: "system",
+                role: "user",
                 content
             }
-        ],
-        model: "gpt-4-turbo-preview",
-        max_tokens: null,
-        n: 1,
-        temperature: 0
+        ]
     });
 }
 
@@ -46,26 +44,16 @@ async function doText(bible, originalText, bookId, chapterId, verses, filename) 
     },
 ]
 
-Translation must be ${language} in a modern, easy to read, language. But you should emphasis translating theologically correct.
+Translation must be ${language} in a modern, easy to read, language. But you should emphasize translating theologically correct.
 
 Text:
 ${originalText}
 `
-    let completion = null;
-    let returnContent = ""
-    let fullReturnContent = ""
+    let completion = await doAnthropicCall(content)
+    let returnContent = completion.content[0].text
+    console.log(returnContent)
 
-    // console.log("Got answer")
-    do {
-        content = `${content}${returnContent}`
-        completion = await doGPTCall(content)
-        returnContent = completion.choices[0].message.content
-        fullReturnContent = `${fullReturnContent}${returnContent}`
-        console.log(returnContent)
-    } while (completion.choices[0].finish_reason === "length")
-
-    console.log(fullReturnContent)
-    const result = JSON.parse(fullReturnContent.replaceAll("```json", "").replaceAll("```", ""))
+    const result = JSON.parse(returnContent.replaceAll("```json", "").replaceAll("```", ""))
 
     fs.writeFileSync(filename, JSON.stringify([...verses, ...result].sort((a, b) => a.verseId - b.verseId), null, 2))
 }
@@ -105,7 +93,7 @@ async function doBook(bible, bookId, chapterId, filename) {
 
 async function main() {
     for(let bookId=1;bookId<40;bookId++) {
-        const bible = "osnb1";
+        const bible = "osnn1";
         const maxChapters = books.find(b => b.id === bookId).chapters;
         for (let chapterId = 1; chapterId <= maxChapters; chapterId++) {
             const dir = `bibles_raw/${bible}/${bookId}`
