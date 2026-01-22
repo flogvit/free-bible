@@ -32,7 +32,7 @@ To translate the new testament, SBLGNT (https://sblgnt.com/) is used.
 The project will also generate encyclopedias like verse word for word, cross references and summaries.
 
 ## Preview
-It is possible to view the current state at: https://menneske.no/freebible/
+It is possible to view the current state at: https://bibel.flogvit.com
 
 ## Support
 
