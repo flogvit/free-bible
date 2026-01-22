@@ -1,148 +1,98 @@
 import dotenv from 'dotenv'
-
-dotenv.config()
-import {ChatGPTAPI} from 'chatgpt'
 import * as fs from 'fs';
+import path from 'path';
+import {fileURLToPath} from 'url';
 
-let API = null;
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = path.dirname(__filename);
+dotenv.config()
 
-const translations = {
-    'osnb1': {
-        long: "norwegian, bokmål",
-        language: "nb"
-    }
+import Anthropic from '@anthropic-ai/sdk';
+import {books, anthropicModel} from "./constants.js";
+
+const anthropic = new Anthropic({
+    apiKey: process.env.ANTHROPIC_API_KEY
+});
+
+const bookNames = {
+    1: "1. Mosebok", 2: "2. Mosebok", 3: "3. Mosebok", 4: "4. Mosebok", 5: "5. Mosebok",
+    6: "Josva", 7: "Dommerne", 8: "Rut", 9: "1. Samuel", 10: "2. Samuel",
+    11: "1. Kongebok", 12: "2. Kongebok", 13: "1. Krønikebok", 14: "2. Krønikebok",
+    15: "Esra", 16: "Nehemja", 17: "Ester", 18: "Job", 19: "Salmene", 20: "Ordspråkene",
+    21: "Forkynneren", 22: "Høysangen", 23: "Jesaja", 24: "Jeremia", 25: "Klagesangene",
+    26: "Esekiel", 27: "Daniel", 28: "Hosea", 29: "Joel", 30: "Amos", 31: "Obadja",
+    32: "Jona", 33: "Mika", 34: "Nahum", 35: "Habakkuk", 36: "Sefanja", 37: "Haggai",
+    38: "Sakarja", 39: "Malaki", 40: "Matteus", 41: "Markus", 42: "Lukas", 43: "Johannes",
+    44: "Apostlenes gjerninger", 45: "Romerne", 46: "1. Korinterne", 47: "2. Korinterne",
+    48: "Galaterne", 49: "Efeserne", 50: "Filipperne", 51: "Kolosserne",
+    52: "1. Tessalonikerne", 53: "2. Tessalonikerne", 54: "1. Timoteus", 55: "2. Timoteus",
+    56: "Titus", 57: "Filemon", 58: "Hebreerne", 59: "Jakob", 60: "1. Peter", 61: "2. Peter",
+    62: "1. Johannes", 63: "2. Johannes", 64: "3. Johannes", 65: "Judas", 66: "Åpenbaringen"
+};
+
+async function doAnthropicCall(content) {
+    return anthropic.messages.create({
+        model: anthropicModel,
+        max_tokens: 4096,
+        messages: [
+            {
+                role: "user",
+                content
+            }
+        ]
+    });
 }
 
-const books = [
-    {"id": 1, "name": "1 Mosebok", "chapter_count": 50},
-    {"id": 2, "name": "2 Mosebok", "chapter_count": 40},
-    {"id": 3, "name": "3 Mosebok", "chapter_count": 27},
-    {"id": 4, "name": "4 Mosebok", "chapter_count": 36},
-    {"id": 5, "name": "5 Mosebok", "chapter_count": 34},
-    {"id": 6, "name": "Josvas bok", "chapter_count": 24},
-    {"id": 7, "name": "Dommernes bok", "chapter_count": 21},
-    {"id": 8, "name": "Ruts bok", "chapter_count": 4},
-    {"id": 9, "name": "1 Samuels bok", "chapter_count": 31},
-    {"id": 10, "name": "2 Samuels bok", "chapter_count": 24},
-    {"id": 11, "name": "1 Kongebok", "chapter_count": 22},
-    {"id": 12, "name": "2 Kongebok", "chapter_count": 25},
-    {"id": 13, "name": "1 Krønikebok", "chapter_count": 29},
-    {"id": 14, "name": "2 Krønikebok", "chapter_count": 36},
-    {"id": 15, "name": "Esras bok", "chapter_count": 10},
-    {"id": 16, "name": "Nehemjas bok", "chapter_count": 13},
-    {"id": 17, "name": "Esters bok", "chapter_count": 10},
-    {"id": 18, "name": "Jobs bok", "chapter_count": 42},
-    {"id": 19, "name": "Salmenes bok", "chapter_count": 150},
-    {"id": 20, "name": "Ordspråkenes bok", "chapter_count": 31},
-    {"id": 21, "name": "Forkynnerens bok", "chapter_count": 12},
-    {"id": 22, "name": "Høysangen", "chapter_count": 8},
-    {"id": 23, "name": "Jesajas bok", "chapter_count": 66},
-    {"id": 24, "name": "Jeremias bok", "chapter_count": 52},
-    {"id": 25, "name": "Klagesangene", "chapter_count": 5},
-    {"id": 26, "name": "Esekiels bok", "chapter_count": 48},
-    {"id": 27, "name": "Daniels bok", "chapter_count": 12},
-    {"id": 28, "name": "Hoseas bok", "chapter_count": 14},
-    {"id": 29, "name": "Joels bok", "chapter_count": 3},
-    {"id": 30, "name": "Amos' bok", "chapter_count": 9},
-    {"id": 31, "name": "Obadjas bok", "chapter_count": 1},
-    {"id": 32, "name": "Jonas' bok", "chapter_count": 4},
-    {"id": 33, "name": "Mikas bok", "chapter_count": 7},
-    {"id": 34, "name": "Nahums bok", "chapter_count": 3},
-    {"id": 35, "name": "Habakkuks bok", "chapter_count": 3},
-    {"id": 36, "name": "Sefanjas bok", "chapter_count": 3},
-    {"id": 37, "name": "Haggais bok", "chapter_count": 2},
-    {"id": 38, "name": "Sakarjas bok", "chapter_count": 14},
-    {"id": 39, "name": "Malakis bok", "chapter_count": 4},
-    {"id": 40, "name": "Matteus' evangelium", "chapter_count": 28},
-    {"id": 41, "name": "Markus' evangelium", "chapter_count": 16},
-    {"id": 42, "name": "Lukas' evangelium", "chapter_count": 24},
-    {"id": 43, "name": "Johannes' evangelium", "chapter_count": 21},
-    {"id": 44, "name": "Apostlenes gjerninger", "chapter_count": 28},
-    {"id": 45, "name": "Paulus' brev til romerne", "chapter_count": 16},
-    {"id": 46, "name": "1 Korinterbrev", "chapter_count": 16},
-    {"id": 47, "name": "2 Korinterbrev", "chapter_count": 13},
-    {"id": 48, "name": "Galaterbrevet", "chapter_count": 6},
-    {"id": 49, "name": "Efeserbrevet", "chapter_count": 6},
-    {"id": 50, "name": "Filipperbrevet", "chapter_count": 4},
-    {"id": 51, "name": "Kolosserbrevet", "chapter_count": 4},
-    {"id": 52, "name": "1 Tessalonikerbrev", "chapter_count": 5},
-    {"id": 53, "name": "2 Tessalonikerbrev", "chapter_count": 3},
-    {"id": 54, "name": "1 Timoteusbrev", "chapter_count": 6},
-    {"id": 55, "name": "2 Timoteusbrev", "chapter_count": 4},
-    {"id": 56, "name": "Titusbrevet", "chapter_count": 3},
-    {"id": 57, "name": "Filemonbrevet", "chapter_count": 1},
-    {"id": 58, "name": "Hebreerbrevet", "chapter_count": 13},
-    {"id": 59, "name": "Jakobsbrevet", "chapter_count": 5},
-    {"id": 60, "name": "1 Petersbrev", "chapter_count": 5},
-    {"id": 61, "name": "2 Petersbrev", "chapter_count": 3},
-    {"id": 62, "name": "1 Johannesbrev", "chapter_count": 5},
-    {"id": 63, "name": "2 Johannesbrev", "chapter_count": 1},
-    {"id": 64, "name": "3 Johannesbrev", "chapter_count": 1},
-    {"id": 65, "name": "Judasbrevet", "chapter_count": 1},
-    {"id": 66, "name": "Johannes' åpenbaring", "chapter_count": 22}
-]
-
-
-async function doBook(translation, bookNr=1, chapter=1) {
-
-    console.log("Starting up with parameters", bookNr, chapter);
-    while(bookNr<=66) {
-        let book = books.find(b => b.id === bookNr).name;
-        do {
-            if (!fs.existsSync(`important_words/${translations[translation].language}/${bookNr}-${chapter}.txt`)) {
-                API = new ChatGPTAPI({
-                    apiKey: process.env.OPENAI_API_KEY,
-                    completionParams: {
-                        model: 'gpt-4',
-                        temperature: 0.5,
-                        top_p: 0.8
-                    }
-                })
-                fs.appendFileSync(`important_words/${translations[translation].language}/${bookNr}-${chapter}.txt`, '')
-                await translate(translation, translations[translation].long, bookNr, chapter, `${book} ${chapter++}`)
-            } else { chapter++}
-        } while (chapter <= books.find(b => b.name === book).chapter_count)
-        bookNr++;
-        chapter = 1;
-    }
+function fileExists(language, bookNr, chapterNr) {
+    const filePath = path.join(__dirname, `important_words/${language}/${bookNr}-${chapterNr}.txt`);
+    return fs.existsSync(filePath) && fs.statSync(filePath).size > 0;
 }
 
-const ask = async (text, prevRes = {}) => {
-    console.log(`--> ASKING ${text}`);
-    prevRes.timeoutMs = 10*60*1000;
-    return await API.sendMessage(text, prevRes);
-}
-const translate = async (translation, bible_long, bookNr, chapter, bibleRef) => {
-    let res = null;
-    do {
-        try {
-            res = await ask(`Kan du skrive ut de viktigste ordene i ${bibleRef} og forklare dem på ${translations[translation].long}? Skriv kun ord og forklaring, ikke noe før og etter. Følg malen:
+async function generateImportantWords(language, bookId, chapter) {
+    const bookName = bookNames[bookId];
+    const bibleRef = `${bookName} ${chapter}`;
+
+    const prompt = `Kan du skrive ut de viktigste ordene i ${bibleRef} og forklare dem på norsk, bokmål? Skriv kun ord og forklaring, ikke noe før og etter. Følg malen:
+
 Gud:Den allmektige skaperen som i henhold til 1. Mosebok skapte himmelen, jorden og alt liv.
-Skapte:Begrepet brukt til å beskrive Guds handling av å bringe universet og alt i det til eksistens.
+Skapte:Begrepet brukt til å beskrive Guds handling av å bringe universet og alt i det til eksistens.`;
 
-Når du er ferdig, skriv: FERDIG`);
-        } catch(e) {console.log("Catching initial", e)}
-    } while(!res)
-    await store(translation, bookNr, chapter, res.text.replace("FINISHED", "").replace("FERDIG", ""));
-    while (!res.text.includes("FINISHED") && !res.text.includes("FERDIG") && !res.text.includes("FREDIG")) {
-        try {
-            res = await ask(`continue`, {
-                parentMessageId: res.id
-            })
-        } catch(e) {console.log("Catching followup", e)}
-        await store(translation, bookNr, chapter, res.text.replace("FINISHED", "").replace("FERDIG", ""));
+    console.log(`Generating important words for ${bibleRef}...`);
+    const completion = await doAnthropicCall(prompt);
+    const text = completion.content[0].text;
+
+    const outputDir = path.join(__dirname, `important_words/${language}`);
+    if (!fs.existsSync(outputDir)) {
+        fs.mkdirSync(outputDir, {recursive: true});
+    }
+
+    const filename = path.join(outputDir, `${bookId}-${chapter}.txt`);
+    fs.writeFileSync(filename, text.replaceAll("\n\n", "\n"));
+    console.log(`Saved: ${filename}`);
+}
+
+async function main() {
+    const args = process.argv.slice(2);
+    const language = args[0] || 'nb';
+    const startBook = args[1] ? +args[1] : 1;
+    const startChapter = args[2] ? +args[2] : 1;
+
+    console.log(`Starting from book ${startBook}, chapter ${startChapter}`);
+
+    for (let bookId = startBook; bookId <= 66; bookId++) {
+        const book = books.find(b => b.id === bookId);
+        const maxChapters = book.chapters;
+        const firstChapter = (bookId === startBook) ? startChapter : 1;
+
+        for (let chapter = firstChapter; chapter <= maxChapters; chapter++) {
+            if (fileExists(language, bookId, chapter)) {
+                console.log(`Skipping ${bookNames[bookId]} ${chapter} (already exists)`);
+                continue;
+            }
+
+            await generateImportantWords(language, bookId, chapter);
+        }
     }
 }
 
-const store = async (translation, bookNr, chapterNr, text) => {
-    fs.appendFileSync(`important_words/${translations[translation].language}/${bookNr}-${chapterNr}.txt`,
-        text.replaceAll("\n\n", "\n")
-    );
-    console.log("==> SAVED");
-}
-
-const args = process.argv.slice(2);
-if (args.length!==3)
-    console.error("Wrong params: <translation> <bookId> <chapterId>");
-
-await doBook(args[0], +args[1], +args[2]);
+main();

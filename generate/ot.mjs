@@ -11,7 +11,7 @@ const __dirname = path.dirname(__filename);
 dotenv.config()
 
 import Anthropic from '@anthropic-ai/sdk';
-import {bibles, books} from "./constants.js";
+import {bibles, books, anthropicModel} from "./constants.js";
 
 const anthropic = new Anthropic({
     apiKey: process.env.ANTHROPIC_API_KEY
@@ -19,7 +19,7 @@ const anthropic = new Anthropic({
 
 async function doAnthropicCall(content) {
     return anthropic.messages.create({
-        model: "claude-opus-4-5-20251101",
+        model: anthropicModel,
         max_tokens: 8192,
         messages: [
             {
@@ -30,11 +30,27 @@ async function doAnthropicCall(content) {
     });
 }
 
+const MAX_VERSES_PER_BATCH = 60;
+
 async function doText(bible, originalText, bookId, chapterId, verses, filename) {
     const language = bibles[bible];
-    // console.log(bible, originalText, language);
-    // return;
-    let content = `You will be given a bible text in the original language, and must return the translation as a json on the format, and only json:
+    const lines = originalText.split("\n");
+
+    // Split into batches if there are too many verses
+    const batches = [];
+    for (let i = 0; i < lines.length; i += MAX_VERSES_PER_BATCH) {
+        batches.push(lines.slice(i, i + MAX_VERSES_PER_BATCH));
+    }
+
+    console.log(`Processing ${lines.length} verses in ${batches.length} batch(es)`);
+
+    let allResults = [];
+
+    for (let batchIndex = 0; batchIndex < batches.length; batchIndex++) {
+        const batch = batches[batchIndex];
+        console.log(`Processing batch ${batchIndex + 1}/${batches.length} (${batch.length} verses)`);
+
+        let content = `You will be given a bible text in the original language, and must return the translation as a json on the format, and only json:
 [
     {
         "bookId": ${bookId},
@@ -47,15 +63,17 @@ async function doText(bible, originalText, bookId, chapterId, verses, filename) 
 Translation must be ${language} in a modern, easy to read, language. But you should emphasize translating theologically correct.
 
 Text:
-${originalText}
+${batch.join("\n")}
 `
-    let completion = await doAnthropicCall(content)
-    let returnContent = completion.content[0].text
-    console.log(returnContent)
+        let completion = await doAnthropicCall(content)
+        let returnContent = completion.content[0].text
+        console.log(returnContent)
 
-    const result = JSON.parse(returnContent.replaceAll("```json", "").replaceAll("```", ""))
+        const result = JSON.parse(returnContent.replaceAll("```json", "").replaceAll("```", ""))
+        allResults = [...allResults, ...result];
+    }
 
-    fs.writeFileSync(filename, JSON.stringify([...verses, ...result].sort((a, b) => a.verseId - b.verseId), null, 2))
+    fs.writeFileSync(filename, JSON.stringify([...verses, ...allResults].sort((a, b) => a.verseId - b.verseId), null, 2))
 }
 
 async function doBook(bible, bookId, chapterId, filename) {

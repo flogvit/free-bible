@@ -8,7 +8,7 @@ const __dirname = path.dirname(__filename);
 dotenv.config()
 
 import Anthropic from '@anthropic-ai/sdk';
-import {bibles, books} from "./constants.js";
+import {bibles, books, anthropicModel} from "./constants.js";
 
 const anthropic = new Anthropic({
     apiKey: process.env.ANTHROPIC_API_KEY
@@ -16,7 +16,7 @@ const anthropic = new Anthropic({
 
 async function doAnthropicCall(content) {
     return anthropic.messages.create({
-        model: "claude-opus-4-5-20251101",
+        model: anthropicModel,
         max_tokens: 8192,
         messages: [
             {

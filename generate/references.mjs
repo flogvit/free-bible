@@ -1,5 +1,5 @@
 import dotenv from 'dotenv'
-import {bibles, books} from "./constants.js";
+import {bibles, books, anthropicModel} from "./constants.js";
 import * as fs from 'fs';
 import path from 'path';
 import {fileURLToPath} from 'url';
@@ -17,7 +17,7 @@ const anthropic = new Anthropic({
 
 async function doAnthropicCall(content) {
     return anthropic.messages.create({
-        model: "claude-opus-4-5-20251101",
+        model: anthropicModel,
         max_tokens: 8192,
         messages: [
             {

@@ -3,6 +3,8 @@ export const bibles = {
     "osnn1": "Norwegian nynorsk",
 }
 
+export const anthropicModel = "claude-opus-4-5-20251101";
+
 export const books = [
     {"id": 1, "file": "external/bibles/tanach/Genesis.txt", "name": "Genesis", "chapters": 50},
     {"id": 2, "file": "external/bibles/tanach/Exodus.txt", "name": "Exodus", "chapters": 40},
