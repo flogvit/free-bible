@@ -1,0 +1,1466 @@
+{
+  "periods": [
+    {
+      "id": "creation",
+      "name": "Skapelsen og urhistorien",
+      "color": "#8b7355",
+      "description": "Fra skapelsen til Babels tårn"
+    },
+    {
+      "id": "patriarchs",
+      "name": "Patriarkene",
+      "color": "#c9a959",
+      "description": "Abraham, Isak, Jakob og Josef"
+    },
+    {
+      "id": "exodus",
+      "name": "Utvandringen og ørkenvandringen",
+      "color": "#6b8e4e",
+      "description": "Moses og utferden fra Egypt"
+    },
+    {
+      "id": "conquest",
+      "name": "Landnåm og dommertiden",
+      "color": "#4a7c59",
+      "description": "Josva og dommerne"
+    },
+    {
+      "id": "united-kingdom",
+      "name": "Det forente kongedømmet",
+      "color": "#2c5f41",
+      "description": "Saul, David og Salomo"
+    },
+    {
+      "id": "divided-kingdom",
+      "name": "Det delte riket",
+      "color": "#5d4e6d",
+      "description": "Israel og Juda som separate riker"
+    },
+    {
+      "id": "exile",
+      "name": "Eksilet",
+      "color": "#4a4a6a",
+      "description": "Babylonsk fangenskap"
+    },
+    {
+      "id": "return",
+      "name": "Hjemkomsten",
+      "color": "#6a5d4a",
+      "description": "Gjenoppbygging av tempelet og Jerusalem"
+    },
+    {
+      "id": "intertestamental",
+      "name": "Mellomtestamentlig tid",
+      "color": "#7a6a5a",
+      "description": "Fra Malaki til Johannes døperen"
+    },
+    {
+      "id": "jesus",
+      "name": "Jesu liv og tjeneste",
+      "color": "#b8860b",
+      "description": "Jesu fødsel, tjeneste, død og oppstandelse"
+    },
+    {
+      "id": "early-church",
+      "name": "Den tidlige kirke",
+      "color": "#8b4513",
+      "description": "Apostlenes gjerninger og brevene"
+    }
+  ],
+  "events": [
+    {
+      "id": "creation",
+      "title": "Skapelsen",
+      "description": "Gud skaper himmel og jord, lyset, himmelhvelvingen, havet og landjorden, plantene, himmellegemene, dyrene og mennesket.",
+      "year": null,
+      "year_display": "I begynnelsen",
+      "period": "creation",
+      "references": [
+        {"book": 1, "chapter": 1, "verseStart": 1, "verseEnd": 31},
+        {"book": 1, "chapter": 2, "verseStart": 1, "verseEnd": 25}
+      ],
+      "importance": "major",
+      "sort_order": 1
+    },
+    {
+      "id": "fall",
+      "title": "Syndefallet",
+      "description": "Adam og Eva spiser av treet til kunnskap om godt og ondt og blir drevet ut av Edens hage.",
+      "year": null,
+      "year_display": "Etter skapelsen",
+      "period": "creation",
+      "references": [
+        {"book": 1, "chapter": 3, "verseStart": 1, "verseEnd": 24}
+      ],
+      "importance": "major",
+      "sort_order": 2
+    },
+    {
+      "id": "cain-abel",
+      "title": "Kain og Abel",
+      "description": "Kain dreper sin bror Abel i det første mordet i historien.",
+      "year": null,
+      "year_display": "Etter syndefallet",
+      "period": "creation",
+      "references": [
+        {"book": 1, "chapter": 4, "verseStart": 1, "verseEnd": 16}
+      ],
+      "importance": "major",
+      "sort_order": 3
+    },
+    {
+      "id": "flood",
+      "title": "Syndfloden",
+      "description": "Gud sender en verdensomspennende flom. Bare Noah, hans familie og dyrene i arken overlever.",
+      "year": null,
+      "year_display": "Ca. 2400 f.Kr.",
+      "period": "creation",
+      "references": [
+        {"book": 1, "chapter": 6, "verseStart": 1, "verseEnd": 22},
+        {"book": 1, "chapter": 7, "verseStart": 1, "verseEnd": 24},
+        {"book": 1, "chapter": 8, "verseStart": 1, "verseEnd": 22}
+      ],
+      "importance": "major",
+      "sort_order": 4
+    },
+    {
+      "id": "babel",
+      "title": "Babels tårn",
+      "description": "Menneskene forsøker å bygge et tårn som når til himmelen. Gud forvirrer deres språk og sprer dem over jorden.",
+      "year": null,
+      "year_display": "Etter flommen",
+      "period": "creation",
+      "references": [
+        {"book": 1, "chapter": 11, "verseStart": 1, "verseEnd": 9}
+      ],
+      "importance": "major",
+      "sort_order": 5
+    },
+    {
+      "id": "abraham-call",
+      "title": "Abrahams kall",
+      "description": "Gud kaller Abram til å forlate Ur og dra til det landet Gud vil vise ham. Han får løftet om at han skal bli en stor nasjon.",
+      "year": -2091,
+      "year_display": "Ca. 2091 f.Kr.",
+      "period": "patriarchs",
+      "references": [
+        {"book": 1, "chapter": 12, "verseStart": 1, "verseEnd": 9}
+      ],
+      "importance": "major",
+      "sort_order": 10
+    },
+    {
+      "id": "abraham-covenant",
+      "title": "Pakten med Abraham",
+      "description": "Gud inngår en pakt med Abraham og lover ham landet Kanaan og utallige etterkommere.",
+      "year": -2081,
+      "year_display": "Ca. 2081 f.Kr.",
+      "period": "patriarchs",
+      "references": [
+        {"book": 1, "chapter": 15, "verseStart": 1, "verseEnd": 21},
+        {"book": 1, "chapter": 17, "verseStart": 1, "verseEnd": 27}
+      ],
+      "importance": "major",
+      "sort_order": 11
+    },
+    {
+      "id": "sodom-gomorrah",
+      "title": "Sodoma og Gomorra",
+      "description": "Gud ødelegger byene Sodoma og Gomorra på grunn av deres synd. Lot og hans døtre reddes.",
+      "year": -2067,
+      "year_display": "Ca. 2067 f.Kr.",
+      "period": "patriarchs",
+      "references": [
+        {"book": 1, "chapter": 19, "verseStart": 1, "verseEnd": 29}
+      ],
+      "importance": "major",
+      "sort_order": 12
+    },
+    {
+      "id": "isaac-birth",
+      "title": "Isaks fødsel",
+      "description": "Abraham og Sara får sønnen Isak i høy alder, som oppfyllelse av Guds løfte.",
+      "year": -2066,
+      "year_display": "Ca. 2066 f.Kr.",
+      "period": "patriarchs",
+      "references": [
+        {"book": 1, "chapter": 21, "verseStart": 1, "verseEnd": 7}
+      ],
+      "importance": "major",
+      "sort_order": 13
+    },
+    {
+      "id": "isaac-sacrifice",
+      "title": "Ofringen av Isak",
+      "description": "Gud prøver Abraham ved å be ham ofre Isak. I siste øyeblikk griper Gud inn og gir en vær som offer i stedet.",
+      "year": -2054,
+      "year_display": "Ca. 2054 f.Kr.",
+      "period": "patriarchs",
+      "references": [
+        {"book": 1, "chapter": 22, "verseStart": 1, "verseEnd": 19}
+      ],
+      "importance": "major",
+      "sort_order": 14
+    },
+    {
+      "id": "jacob-esau",
+      "title": "Jakob og Esau født",
+      "description": "Isak og Rebekka får tvillingene Esau og Jakob. Jakob kjøper førstefødselsretten fra Esau.",
+      "year": -2006,
+      "year_display": "Ca. 2006 f.Kr.",
+      "period": "patriarchs",
+      "references": [
+        {"book": 1, "chapter": 25, "verseStart": 19, "verseEnd": 34}
+      ],
+      "importance": "major",
+      "sort_order": 15
+    },
+    {
+      "id": "jacob-ladder",
+      "title": "Jakobs drøm",
+      "description": "Jakob drømmer om en stige til himmelen ved Betel og mottar Guds løfte om velsignelse.",
+      "year": -1929,
+      "year_display": "Ca. 1929 f.Kr.",
+      "period": "patriarchs",
+      "references": [
+        {"book": 1, "chapter": 28, "verseStart": 10, "verseEnd": 22}
+      ],
+      "importance": "minor",
+      "sort_order": 16
+    },
+    {
+      "id": "jacob-wrestling",
+      "title": "Jakob bryter med Gud",
+      "description": "Jakob bryter med en mann (engel) gjennom natten og får navnet Israel.",
+      "year": -1909,
+      "year_display": "Ca. 1909 f.Kr.",
+      "period": "patriarchs",
+      "references": [
+        {"book": 1, "chapter": 32, "verseStart": 22, "verseEnd": 32}
+      ],
+      "importance": "major",
+      "sort_order": 17
+    },
+    {
+      "id": "joseph-sold",
+      "title": "Josef selges som slave",
+      "description": "Josefs brødre selger ham til midianittiske kjøpmenn. Han blir ført til Egypt.",
+      "year": -1898,
+      "year_display": "Ca. 1898 f.Kr.",
+      "period": "patriarchs",
+      "references": [
+        {"book": 1, "chapter": 37, "verseStart": 12, "verseEnd": 36}
+      ],
+      "importance": "major",
+      "sort_order": 18
+    },
+    {
+      "id": "joseph-dreams",
+      "title": "Josef tyder Faraos drømmer",
+      "description": "Josef tolker Faraos drømmer om syv fete og syv magre år, og blir satt til å styre Egypt.",
+      "year": -1885,
+      "year_display": "Ca. 1885 f.Kr.",
+      "period": "patriarchs",
+      "references": [
+        {"book": 1, "chapter": 41, "verseStart": 1, "verseEnd": 57}
+      ],
+      "importance": "major",
+      "sort_order": 19
+    },
+    {
+      "id": "jacob-egypt",
+      "title": "Jakob flytter til Egypt",
+      "description": "Jakob og hele hans familie flytter til Egypt på grunn av hungersnøden og bosetter seg i Gosen.",
+      "year": -1876,
+      "year_display": "Ca. 1876 f.Kr.",
+      "period": "patriarchs",
+      "references": [
+        {"book": 1, "chapter": 46, "verseStart": 1, "verseEnd": 34},
+        {"book": 1, "chapter": 47, "verseStart": 1, "verseEnd": 12}
+      ],
+      "importance": "major",
+      "sort_order": 20
+    },
+    {
+      "id": "moses-birth",
+      "title": "Moses' fødsel",
+      "description": "Moses blir født under Faraos forfølgelse av israelittene og reddes av Faraos datter.",
+      "year": -1526,
+      "year_display": "Ca. 1526 f.Kr.",
+      "period": "exodus",
+      "references": [
+        {"book": 2, "chapter": 2, "verseStart": 1, "verseEnd": 10}
+      ],
+      "importance": "major",
+      "sort_order": 30
+    },
+    {
+      "id": "burning-bush",
+      "title": "Den brennende busken",
+      "description": "Gud taler til Moses fra en brennende busk på Horeb-fjellet og kaller ham til å føre Israel ut av Egypt.",
+      "year": -1446,
+      "year_display": "Ca. 1446 f.Kr.",
+      "period": "exodus",
+      "references": [
+        {"book": 2, "chapter": 3, "verseStart": 1, "verseEnd": 22},
+        {"book": 2, "chapter": 4, "verseStart": 1, "verseEnd": 17}
+      ],
+      "importance": "major",
+      "sort_order": 31
+    },
+    {
+      "id": "ten-plagues",
+      "title": "De ti plagene",
+      "description": "Gud sender ti plager over Egypt for å tvinge Farao til å la israelittene gå.",
+      "year": -1446,
+      "year_display": "1446 f.Kr.",
+      "period": "exodus",
+      "references": [
+        {"book": 2, "chapter": 7, "verseStart": 14, "verseEnd": 25},
+        {"book": 2, "chapter": 8, "verseStart": 1, "verseEnd": 32},
+        {"book": 2, "chapter": 9, "verseStart": 1, "verseEnd": 35},
+        {"book": 2, "chapter": 10, "verseStart": 1, "verseEnd": 29},
+        {"book": 2, "chapter": 11, "verseStart": 1, "verseEnd": 10}
+      ],
+      "importance": "major",
+      "sort_order": 32
+    },
+    {
+      "id": "passover",
+      "title": "Den første påske",
+      "description": "Israelittene feirer den første påske og blir spart fra dødsengelen som dreper Egypts førstefødte.",
+      "year": -1446,
+      "year_display": "1446 f.Kr.",
+      "period": "exodus",
+      "references": [
+        {"book": 2, "chapter": 12, "verseStart": 1, "verseEnd": 42}
+      ],
+      "importance": "major",
+      "sort_order": 33
+    },
+    {
+      "id": "exodus",
+      "title": "Utferden fra Egypt",
+      "description": "Israel forlater Egypt etter 430 år, ledet av Moses med Guds mektige hånd.",
+      "year": -1446,
+      "year_display": "1446 f.Kr.",
+      "period": "exodus",
+      "references": [
+        {"book": 2, "chapter": 12, "verseStart": 37, "verseEnd": 51},
+        {"book": 2, "chapter": 13, "verseStart": 17, "verseEnd": 22}
+      ],
+      "importance": "major",
+      "sort_order": 34
+    },
+    {
+      "id": "red-sea",
+      "title": "Kryssing av Rødehavet",
+      "description": "Gud deler Rødehavet og Israel går gjennom på tørr grunn. Egypts hær drukner når vannet vender tilbake.",
+      "year": -1446,
+      "year_display": "1446 f.Kr.",
+      "period": "exodus",
+      "references": [
+        {"book": 2, "chapter": 14, "verseStart": 1, "verseEnd": 31}
+      ],
+      "importance": "major",
+      "sort_order": 35
+    },
+    {
+      "id": "sinai-law",
+      "title": "Loven gis på Sinai",
+      "description": "Gud gir Moses de ti bud og loven på Sinai-fjellet midt i torden, lyn og jordskjelv.",
+      "year": -1446,
+      "year_display": "1446 f.Kr.",
+      "period": "exodus",
+      "references": [
+        {"book": 2, "chapter": 19, "verseStart": 1, "verseEnd": 25},
+        {"book": 2, "chapter": 20, "verseStart": 1, "verseEnd": 21}
+      ],
+      "importance": "major",
+      "sort_order": 36
+    },
+    {
+      "id": "golden-calf",
+      "title": "Gullkalven",
+      "description": "Mens Moses er på fjellet, lager folket en gullkalv og tilber den. Moses knuser lovtavlene i sinne.",
+      "year": -1446,
+      "year_display": "1446 f.Kr.",
+      "period": "exodus",
+      "references": [
+        {"book": 2, "chapter": 32, "verseStart": 1, "verseEnd": 35}
+      ],
+      "importance": "major",
+      "sort_order": 37
+    },
+    {
+      "id": "tabernacle",
+      "title": "Tabernaklet reises",
+      "description": "Israels transportable helligdom blir ferdigstilt og Guds herlighet fyller det.",
+      "year": -1445,
+      "year_display": "1445 f.Kr.",
+      "period": "exodus",
+      "references": [
+        {"book": 2, "chapter": 40, "verseStart": 1, "verseEnd": 38}
+      ],
+      "importance": "major",
+      "sort_order": 38
+    },
+    {
+      "id": "spies-canaan",
+      "title": "Speiderne i Kanaan",
+      "description": "12 speidere utforsker Kanaan. 10 gir negativ rapport og folket nekter å gå inn. De dømmes til 40 år i ørkenen.",
+      "year": -1445,
+      "year_display": "1445 f.Kr.",
+      "period": "exodus",
+      "references": [
+        {"book": 4, "chapter": 13, "verseStart": 1, "verseEnd": 33},
+        {"book": 4, "chapter": 14, "verseStart": 1, "verseEnd": 45}
+      ],
+      "importance": "major",
+      "sort_order": 39
+    },
+    {
+      "id": "bronze-serpent",
+      "title": "Kobberslangen",
+      "description": "Gud sender giftige slanger. Moses lager en kobberslange, og alle som ser på den blir helbredet.",
+      "year": -1407,
+      "year_display": "Ca. 1407 f.Kr.",
+      "period": "exodus",
+      "references": [
+        {"book": 4, "chapter": 21, "verseStart": 4, "verseEnd": 9}
+      ],
+      "importance": "minor",
+      "sort_order": 40
+    },
+    {
+      "id": "moses-death",
+      "title": "Moses' død",
+      "description": "Moses dør på Nebo-fjellet etter å ha sett det lovede land. Han begraves av Gud selv.",
+      "year": -1406,
+      "year_display": "1406 f.Kr.",
+      "period": "exodus",
+      "references": [
+        {"book": 5, "chapter": 34, "verseStart": 1, "verseEnd": 12}
+      ],
+      "importance": "major",
+      "sort_order": 41
+    },
+    {
+      "id": "jordan-crossing",
+      "title": "Jordans kryssing",
+      "description": "Under Josvas ledelse går Israel gjennom Jordan på tørr grunn og inn i det lovede land.",
+      "year": -1406,
+      "year_display": "1406 f.Kr.",
+      "period": "conquest",
+      "references": [
+        {"book": 6, "chapter": 3, "verseStart": 1, "verseEnd": 17},
+        {"book": 6, "chapter": 4, "verseStart": 1, "verseEnd": 24}
+      ],
+      "importance": "major",
+      "sort_order": 50
+    },
+    {
+      "id": "jericho",
+      "title": "Jerikos fall",
+      "description": "Israelittene marsjerer rundt Jeriko i syv dager, og murene faller når de blåser i hornene.",
+      "year": -1406,
+      "year_display": "1406 f.Kr.",
+      "period": "conquest",
+      "references": [
+        {"book": 6, "chapter": 6, "verseStart": 1, "verseEnd": 27}
+      ],
+      "importance": "major",
+      "sort_order": 51
+    },
+    {
+      "id": "sun-stands",
+      "title": "Solen står stille",
+      "description": "Gud lar solen stå stille en hel dag mens Josva kjemper mot amoritterne.",
+      "year": -1405,
+      "year_display": "Ca. 1405 f.Kr.",
+      "period": "conquest",
+      "references": [
+        {"book": 6, "chapter": 10, "verseStart": 1, "verseEnd": 15}
+      ],
+      "importance": "minor",
+      "sort_order": 52
+    },
+    {
+      "id": "land-divided",
+      "title": "Landet fordeles",
+      "description": "Kanaan fordeles mellom de tolv stammene etter erobringen.",
+      "year": -1399,
+      "year_display": "Ca. 1399 f.Kr.",
+      "period": "conquest",
+      "references": [
+        {"book": 6, "chapter": 13, "verseStart": 1, "verseEnd": 7},
+        {"book": 6, "chapter": 14, "verseStart": 1, "verseEnd": 15}
+      ],
+      "importance": "major",
+      "sort_order": 53
+    },
+    {
+      "id": "judges-period",
+      "title": "Dommertiden begynner",
+      "description": "Etter Josvas død styres Israel av dommere i en syklus av synd, straff, omvendelse og utfrielse.",
+      "year": -1375,
+      "year_display": "Ca. 1375 f.Kr.",
+      "period": "conquest",
+      "references": [
+        {"book": 7, "chapter": 2, "verseStart": 6, "verseEnd": 23}
+      ],
+      "importance": "major",
+      "sort_order": 54
+    },
+    {
+      "id": "deborah",
+      "title": "Debora og Barak",
+      "description": "Profetinnen Debora leder Israel til seier over Sisera og kanaaneerne.",
+      "year": -1209,
+      "year_display": "Ca. 1209 f.Kr.",
+      "period": "conquest",
+      "references": [
+        {"book": 7, "chapter": 4, "verseStart": 1, "verseEnd": 24},
+        {"book": 7, "chapter": 5, "verseStart": 1, "verseEnd": 31}
+      ],
+      "importance": "minor",
+      "sort_order": 55
+    },
+    {
+      "id": "gideon",
+      "title": "Gideon og de 300",
+      "description": "Gideon beseirer midianittene med bare 300 menn, utstyrt med fakler og horn.",
+      "year": -1162,
+      "year_display": "Ca. 1162 f.Kr.",
+      "period": "conquest",
+      "references": [
+        {"book": 7, "chapter": 6, "verseStart": 11, "verseEnd": 40},
+        {"book": 7, "chapter": 7, "verseStart": 1, "verseEnd": 25}
+      ],
+      "importance": "major",
+      "sort_order": 56
+    },
+    {
+      "id": "samson",
+      "title": "Samson",
+      "description": "Samson, med overnaturlig styrke fra Gud, kjemper mot filisterne men faller på grunn av Delila.",
+      "year": -1075,
+      "year_display": "Ca. 1075 f.Kr.",
+      "period": "conquest",
+      "references": [
+        {"book": 7, "chapter": 13, "verseStart": 1, "verseEnd": 25},
+        {"book": 7, "chapter": 16, "verseStart": 1, "verseEnd": 31}
+      ],
+      "importance": "major",
+      "sort_order": 57
+    },
+    {
+      "id": "ruth",
+      "title": "Rut og Boas",
+      "description": "Moabitterkvinnen Rut følger svigermoren Noomi til Israel og gifter seg med Boas. Hun blir oldemor til kong David.",
+      "year": -1100,
+      "year_display": "Ca. 1100 f.Kr.",
+      "period": "conquest",
+      "references": [
+        {"book": 8, "chapter": 1, "verseStart": 1, "verseEnd": 22},
+        {"book": 8, "chapter": 4, "verseStart": 1, "verseEnd": 22}
+      ],
+      "importance": "major",
+      "sort_order": 58
+    },
+    {
+      "id": "samuel-birth",
+      "title": "Samuels fødsel",
+      "description": "Hanna, som var barnløs, ber til Gud og føder Samuel, som hun gir tilbake til Gud for tjeneste i tempelet.",
+      "year": -1105,
+      "year_display": "Ca. 1105 f.Kr.",
+      "period": "conquest",
+      "references": [
+        {"book": 9, "chapter": 1, "verseStart": 1, "verseEnd": 28}
+      ],
+      "importance": "major",
+      "sort_order": 59
+    },
+    {
+      "id": "saul-king",
+      "title": "Saul blir konge",
+      "description": "Samuel salver Saul som Israels første konge, etter at folket krevde en konge som de andre nasjonene.",
+      "year": -1050,
+      "year_display": "Ca. 1050 f.Kr.",
+      "period": "united-kingdom",
+      "references": [
+        {"book": 9, "chapter": 9, "verseStart": 1, "verseEnd": 27},
+        {"book": 9, "chapter": 10, "verseStart": 1, "verseEnd": 27}
+      ],
+      "importance": "major",
+      "sort_order": 60
+    },
+    {
+      "id": "david-anointed",
+      "title": "David salves",
+      "description": "Samuel salver den unge gjeteren David til konge i hemmelighet mens Saul fortsatt regjerer.",
+      "year": -1025,
+      "year_display": "Ca. 1025 f.Kr.",
+      "period": "united-kingdom",
+      "references": [
+        {"book": 9, "chapter": 16, "verseStart": 1, "verseEnd": 13}
+      ],
+      "importance": "major",
+      "sort_order": 61
+    },
+    {
+      "id": "david-goliath",
+      "title": "David og Goliat",
+      "description": "Den unge David beseirer filisterkjempen Goliat med en slynge og en stein.",
+      "year": -1024,
+      "year_display": "Ca. 1024 f.Kr.",
+      "period": "united-kingdom",
+      "references": [
+        {"book": 9, "chapter": 17, "verseStart": 1, "verseEnd": 58}
+      ],
+      "importance": "major",
+      "sort_order": 62
+    },
+    {
+      "id": "david-king",
+      "title": "David blir konge",
+      "description": "Etter Sauls død blir David konge, først over Juda og senere over hele Israel.",
+      "year": -1010,
+      "year_display": "1010 f.Kr.",
+      "period": "united-kingdom",
+      "references": [
+        {"book": 10, "chapter": 2, "verseStart": 1, "verseEnd": 7},
+        {"book": 10, "chapter": 5, "verseStart": 1, "verseEnd": 5}
+      ],
+      "importance": "major",
+      "sort_order": 63
+    },
+    {
+      "id": "jerusalem-capital",
+      "title": "Jerusalem blir hovedstad",
+      "description": "David erobrer Jerusalem fra jebusittene og gjør den til Israels hovedstad - Davids by.",
+      "year": -1003,
+      "year_display": "1003 f.Kr.",
+      "period": "united-kingdom",
+      "references": [
+        {"book": 10, "chapter": 5, "verseStart": 6, "verseEnd": 10}
+      ],
+      "importance": "major",
+      "sort_order": 64
+    },
+    {
+      "id": "ark-jerusalem",
+      "title": "Paktens ark til Jerusalem",
+      "description": "David bringer paktens ark til Jerusalem med stor feiring og jubel.",
+      "year": -1000,
+      "year_display": "Ca. 1000 f.Kr.",
+      "period": "united-kingdom",
+      "references": [
+        {"book": 10, "chapter": 6, "verseStart": 1, "verseEnd": 23}
+      ],
+      "importance": "major",
+      "sort_order": 65
+    },
+    {
+      "id": "davidic-covenant",
+      "title": "Pakten med David",
+      "description": "Gud lover David at hans trone skal vare til evig tid - en pakt som peker frem mot Messias.",
+      "year": -995,
+      "year_display": "Ca. 995 f.Kr.",
+      "period": "united-kingdom",
+      "references": [
+        {"book": 10, "chapter": 7, "verseStart": 1, "verseEnd": 29}
+      ],
+      "importance": "major",
+      "sort_order": 66
+    },
+    {
+      "id": "david-bathsheba",
+      "title": "David og Batseba",
+      "description": "David begår ekteskapsbrudd med Batseba og arrangerer drapet på hennes mann Uria.",
+      "year": -990,
+      "year_display": "Ca. 990 f.Kr.",
+      "period": "united-kingdom",
+      "references": [
+        {"book": 10, "chapter": 11, "verseStart": 1, "verseEnd": 27},
+        {"book": 10, "chapter": 12, "verseStart": 1, "verseEnd": 25}
+      ],
+      "importance": "major",
+      "sort_order": 67
+    },
+    {
+      "id": "solomon-king",
+      "title": "Salomo blir konge",
+      "description": "Salomo følger sin far David som konge og ber Gud om visdom til å styre folket.",
+      "year": -970,
+      "year_display": "970 f.Kr.",
+      "period": "united-kingdom",
+      "references": [
+        {"book": 11, "chapter": 1, "verseStart": 28, "verseEnd": 53},
+        {"book": 11, "chapter": 3, "verseStart": 1, "verseEnd": 28}
+      ],
+      "importance": "major",
+      "sort_order": 68
+    },
+    {
+      "id": "temple-built",
+      "title": "Tempelet bygges",
+      "description": "Salomo bygger det første tempelet i Jerusalem. Det tar syv år å fullføre.",
+      "year": -966,
+      "year_display": "966-959 f.Kr.",
+      "period": "united-kingdom",
+      "references": [
+        {"book": 11, "chapter": 6, "verseStart": 1, "verseEnd": 38}
+      ],
+      "importance": "major",
+      "sort_order": 69
+    },
+    {
+      "id": "temple-dedication",
+      "title": "Tempelinnvielsen",
+      "description": "Salomo innvier tempelet med bønn og ofringer. Guds herlighet fyller tempelet.",
+      "year": -959,
+      "year_display": "959 f.Kr.",
+      "period": "united-kingdom",
+      "references": [
+        {"book": 11, "chapter": 8, "verseStart": 1, "verseEnd": 66}
+      ],
+      "importance": "major",
+      "sort_order": 70
+    },
+    {
+      "id": "queen-sheba",
+      "title": "Dronningen av Saba",
+      "description": "Dronningen av Saba besøker Salomo for å høre hans visdom og ser hans rikdom.",
+      "year": -950,
+      "year_display": "Ca. 950 f.Kr.",
+      "period": "united-kingdom",
+      "references": [
+        {"book": 11, "chapter": 10, "verseStart": 1, "verseEnd": 13}
+      ],
+      "importance": "minor",
+      "sort_order": 71
+    },
+    {
+      "id": "kingdom-divided",
+      "title": "Riket deles",
+      "description": "Etter Salomos død deles riket. Rehabeam styrer Juda i sør, Jeroboam styrer Israel i nord.",
+      "year": -930,
+      "year_display": "930 f.Kr.",
+      "period": "divided-kingdom",
+      "references": [
+        {"book": 11, "chapter": 12, "verseStart": 1, "verseEnd": 24}
+      ],
+      "importance": "major",
+      "sort_order": 80
+    },
+    {
+      "id": "elijah-baal",
+      "title": "Elia på Karmel",
+      "description": "Profeten Elia utfordrer Baals profeter på Karmel-fjellet. Gud sender ild fra himmelen.",
+      "year": -865,
+      "year_display": "Ca. 865 f.Kr.",
+      "period": "divided-kingdom",
+      "references": [
+        {"book": 11, "chapter": 18, "verseStart": 1, "verseEnd": 46}
+      ],
+      "importance": "major",
+      "sort_order": 81
+    },
+    {
+      "id": "elijah-taken",
+      "title": "Elia tas opp til himmelen",
+      "description": "Elia tas opp til himmelen i en ildvogn. Elisa overtar hans profetmantel.",
+      "year": -848,
+      "year_display": "Ca. 848 f.Kr.",
+      "period": "divided-kingdom",
+      "references": [
+        {"book": 12, "chapter": 2, "verseStart": 1, "verseEnd": 18}
+      ],
+      "importance": "major",
+      "sort_order": 82
+    },
+    {
+      "id": "jonah-nineveh",
+      "title": "Jona i Ninive",
+      "description": "Profeten Jona forkynner dom over Ninive etter å ha blitt slukt av en stor fisk. Byen omvender seg.",
+      "year": -760,
+      "year_display": "Ca. 760 f.Kr.",
+      "period": "divided-kingdom",
+      "references": [
+        {"book": 32, "chapter": 1, "verseStart": 1, "verseEnd": 17},
+        {"book": 32, "chapter": 2, "verseStart": 1, "verseEnd": 10},
+        {"book": 32, "chapter": 3, "verseStart": 1, "verseEnd": 10}
+      ],
+      "importance": "major",
+      "sort_order": 83
+    },
+    {
+      "id": "israel-falls",
+      "title": "Nordriket faller",
+      "description": "Assyria erobrer Israel (nordriket) og fører folket i eksil. De ti stammene spres.",
+      "year": -722,
+      "year_display": "722 f.Kr.",
+      "period": "divided-kingdom",
+      "references": [
+        {"book": 12, "chapter": 17, "verseStart": 1, "verseEnd": 23}
+      ],
+      "importance": "major",
+      "sort_order": 84
+    },
+    {
+      "id": "hezekiah-deliverance",
+      "title": "Jerusalem reddes fra Assyria",
+      "description": "Under kong Hiskia beleirer Assyria Jerusalem, men Guds engel dreper 185 000 fiender på én natt.",
+      "year": -701,
+      "year_display": "701 f.Kr.",
+      "period": "divided-kingdom",
+      "references": [
+        {"book": 12, "chapter": 18, "verseStart": 13, "verseEnd": 37},
+        {"book": 12, "chapter": 19, "verseStart": 1, "verseEnd": 37}
+      ],
+      "importance": "major",
+      "sort_order": 85
+    },
+    {
+      "id": "josiah-reform",
+      "title": "Josias reformasjon",
+      "description": "Kong Josia finner lovboken i tempelet og gjennomfører en stor religiøs reformasjon i Juda.",
+      "year": -622,
+      "year_display": "622 f.Kr.",
+      "period": "divided-kingdom",
+      "references": [
+        {"book": 12, "chapter": 22, "verseStart": 1, "verseEnd": 20},
+        {"book": 12, "chapter": 23, "verseStart": 1, "verseEnd": 30}
+      ],
+      "importance": "major",
+      "sort_order": 86
+    },
+    {
+      "id": "jerusalem-falls",
+      "title": "Jerusalem faller",
+      "description": "Babylon under Nebukadnesar erobrer Jerusalem, brenner tempelet og fører folket i eksil.",
+      "year": -586,
+      "year_display": "586 f.Kr.",
+      "period": "exile",
+      "references": [
+        {"book": 12, "chapter": 25, "verseStart": 1, "verseEnd": 21}
+      ],
+      "importance": "major",
+      "sort_order": 90
+    },
+    {
+      "id": "fiery-furnace",
+      "title": "Ildovnen",
+      "description": "Sjadrak, Mesjak og Abed-Nego kastes i ildovnen for å nekte å tilbe Nebukadnesars bilde, men kommer uskadd ut.",
+      "year": -580,
+      "year_display": "Ca. 580 f.Kr.",
+      "period": "exile",
+      "references": [
+        {"book": 27, "chapter": 3, "verseStart": 1, "verseEnd": 30}
+      ],
+      "importance": "major",
+      "sort_order": 91
+    },
+    {
+      "id": "daniel-lions",
+      "title": "Daniel i løvehulen",
+      "description": "Daniel kastes i løvehulen for å be til Gud, men løvene skader ham ikke.",
+      "year": -539,
+      "year_display": "Ca. 539 f.Kr.",
+      "period": "exile",
+      "references": [
+        {"book": 27, "chapter": 6, "verseStart": 1, "verseEnd": 28}
+      ],
+      "importance": "major",
+      "sort_order": 92
+    },
+    {
+      "id": "cyrus-decree",
+      "title": "Kyros' edikt",
+      "description": "Perserkongen Kyros utsteder et edikt som lar jødene vende tilbake og gjenoppbygge tempelet.",
+      "year": -538,
+      "year_display": "538 f.Kr.",
+      "period": "return",
+      "references": [
+        {"book": 15, "chapter": 1, "verseStart": 1, "verseEnd": 11}
+      ],
+      "importance": "major",
+      "sort_order": 100
+    },
+    {
+      "id": "return-exile",
+      "title": "Hjemkomsten fra eksilet",
+      "description": "Den første gruppen jøder under Serubabel vender tilbake til Jerusalem fra Babylon.",
+      "year": -537,
+      "year_display": "537 f.Kr.",
+      "period": "return",
+      "references": [
+        {"book": 15, "chapter": 2, "verseStart": 1, "verseEnd": 70}
+      ],
+      "importance": "major",
+      "sort_order": 101
+    },
+    {
+      "id": "second-temple",
+      "title": "Det andre tempelet bygges",
+      "description": "Det andre tempelet fullføres under ledelse av Serubabel, oppmuntret av profetene Haggai og Sakarja.",
+      "year": -516,
+      "year_display": "516 f.Kr.",
+      "period": "return",
+      "references": [
+        {"book": 15, "chapter": 6, "verseStart": 1, "verseEnd": 22}
+      ],
+      "importance": "major",
+      "sort_order": 102
+    },
+    {
+      "id": "esther",
+      "title": "Ester redder sitt folk",
+      "description": "Dronning Ester avslører Hamans plan om å utrydde jødene og redder sitt folk.",
+      "year": -473,
+      "year_display": "Ca. 473 f.Kr.",
+      "period": "return",
+      "references": [
+        {"book": 17, "chapter": 4, "verseStart": 1, "verseEnd": 17},
+        {"book": 17, "chapter": 5, "verseStart": 1, "verseEnd": 14},
+        {"book": 17, "chapter": 7, "verseStart": 1, "verseEnd": 10}
+      ],
+      "importance": "major",
+      "sort_order": 103
+    },
+    {
+      "id": "ezra-returns",
+      "title": "Esra vender tilbake",
+      "description": "Presten Esra leder en ny gruppe tilbake fra Babylon og gjeninnfører loven.",
+      "year": -458,
+      "year_display": "458 f.Kr.",
+      "period": "return",
+      "references": [
+        {"book": 15, "chapter": 7, "verseStart": 1, "verseEnd": 28}
+      ],
+      "importance": "major",
+      "sort_order": 104
+    },
+    {
+      "id": "nehemiah-walls",
+      "title": "Jerusalems murer gjenoppbygges",
+      "description": "Nehemja leder gjenoppbyggingen av Jerusalems murer på bare 52 dager, til tross for motstand.",
+      "year": -445,
+      "year_display": "445 f.Kr.",
+      "period": "return",
+      "references": [
+        {"book": 16, "chapter": 2, "verseStart": 11, "verseEnd": 20},
+        {"book": 16, "chapter": 6, "verseStart": 15, "verseEnd": 16}
+      ],
+      "importance": "major",
+      "sort_order": 105
+    },
+    {
+      "id": "malachi",
+      "title": "Profeten Malaki",
+      "description": "Malaki er den siste av GT-profetene. Deretter følger 400 års profetisk stillhet.",
+      "year": -430,
+      "year_display": "Ca. 430 f.Kr.",
+      "period": "return",
+      "references": [
+        {"book": 39, "chapter": 1, "verseStart": 1, "verseEnd": 14},
+        {"book": 39, "chapter": 4, "verseStart": 1, "verseEnd": 6}
+      ],
+      "importance": "major",
+      "sort_order": 106
+    },
+    {
+      "id": "silent-years",
+      "title": "Den mellomtestamentlige perioden",
+      "description": "400 år uten profetisk ord. Jødene styres av persere, grekere og romere.",
+      "year": -430,
+      "year_display": "430-5 f.Kr.",
+      "period": "intertestamental",
+      "references": [],
+      "importance": "minor",
+      "sort_order": 110
+    },
+    {
+      "id": "jesus-birth",
+      "title": "Jesu fødsel",
+      "description": "Jesus Kristus, Guds Sønn, blir født av jomfru Maria i Betlehem.",
+      "year": -5,
+      "year_display": "Ca. 5-4 f.Kr.",
+      "period": "jesus",
+      "references": [
+        {"book": 40, "chapter": 1, "verseStart": 18, "verseEnd": 25},
+        {"book": 42, "chapter": 2, "verseStart": 1, "verseEnd": 20}
+      ],
+      "importance": "major",
+      "sort_order": 120
+    },
+    {
+      "id": "magi-visit",
+      "title": "Vismennenes besøk",
+      "description": "Vismenn fra Østen følger en stjerne og kommer for å tilbe den nyfødte kongen.",
+      "year": -4,
+      "year_display": "Ca. 4 f.Kr.",
+      "period": "jesus",
+      "references": [
+        {"book": 40, "chapter": 2, "verseStart": 1, "verseEnd": 12}
+      ],
+      "importance": "minor",
+      "sort_order": 121
+    },
+    {
+      "id": "flight-egypt",
+      "title": "Flukten til Egypt",
+      "description": "Josef, Maria og Jesus flykter til Egypt for å unnslippe Herodes' massakre av guttebarn.",
+      "year": -4,
+      "year_display": "Ca. 4 f.Kr.",
+      "period": "jesus",
+      "references": [
+        {"book": 40, "chapter": 2, "verseStart": 13, "verseEnd": 23}
+      ],
+      "importance": "minor",
+      "sort_order": 122
+    },
+    {
+      "id": "jesus-temple-12",
+      "title": "Jesus i tempelet som 12-åring",
+      "description": "Den unge Jesus blir funnet i tempelet, der han diskuterer med de lærde.",
+      "year": 8,
+      "year_display": "Ca. 8 e.Kr.",
+      "period": "jesus",
+      "references": [
+        {"book": 42, "chapter": 2, "verseStart": 41, "verseEnd": 52}
+      ],
+      "importance": "minor",
+      "sort_order": 123
+    },
+    {
+      "id": "john-baptist",
+      "title": "Johannes døperen",
+      "description": "Johannes begynner sin tjeneste i ørkenen og forbereder veien for Messias.",
+      "year": 26,
+      "year_display": "Ca. 26 e.Kr.",
+      "period": "jesus",
+      "references": [
+        {"book": 40, "chapter": 3, "verseStart": 1, "verseEnd": 12},
+        {"book": 41, "chapter": 1, "verseStart": 1, "verseEnd": 8}
+      ],
+      "importance": "major",
+      "sort_order": 124
+    },
+    {
+      "id": "jesus-baptism",
+      "title": "Jesu dåp",
+      "description": "Jesus døpes av Johannes i Jordan. Ånden daler ned som en due og Faderen taler fra himmelen.",
+      "year": 26,
+      "year_display": "Ca. 26 e.Kr.",
+      "period": "jesus",
+      "references": [
+        {"book": 40, "chapter": 3, "verseStart": 13, "verseEnd": 17},
+        {"book": 41, "chapter": 1, "verseStart": 9, "verseEnd": 11}
+      ],
+      "importance": "major",
+      "sort_order": 125
+    },
+    {
+      "id": "jesus-temptation",
+      "title": "Jesu fristelse",
+      "description": "Jesus fastes 40 dager i ørkenen og fristes av djevelen, men overvinner alle fristelser.",
+      "year": 26,
+      "year_display": "Ca. 26 e.Kr.",
+      "period": "jesus",
+      "references": [
+        {"book": 40, "chapter": 4, "verseStart": 1, "verseEnd": 11},
+        {"book": 42, "chapter": 4, "verseStart": 1, "verseEnd": 13}
+      ],
+      "importance": "major",
+      "sort_order": 126
+    },
+    {
+      "id": "disciples-called",
+      "title": "Disiplene kalles",
+      "description": "Jesus kaller sine tolv disipler til å følge ham og bli menneskefiskere.",
+      "year": 27,
+      "year_display": "Ca. 27 e.Kr.",
+      "period": "jesus",
+      "references": [
+        {"book": 40, "chapter": 4, "verseStart": 18, "verseEnd": 22},
+        {"book": 41, "chapter": 1, "verseStart": 16, "verseEnd": 20},
+        {"book": 41, "chapter": 3, "verseStart": 13, "verseEnd": 19}
+      ],
+      "importance": "major",
+      "sort_order": 127
+    },
+    {
+      "id": "sermon-mount",
+      "title": "Bergprekenen",
+      "description": "Jesus holder sin store tale på fjellet om Guds rikes etikk og saligprisningene.",
+      "year": 28,
+      "year_display": "Ca. 28 e.Kr.",
+      "period": "jesus",
+      "references": [
+        {"book": 40, "chapter": 5, "verseStart": 1, "verseEnd": 48},
+        {"book": 40, "chapter": 6, "verseStart": 1, "verseEnd": 34},
+        {"book": 40, "chapter": 7, "verseStart": 1, "verseEnd": 29}
+      ],
+      "importance": "major",
+      "sort_order": 128
+    },
+    {
+      "id": "water-wine",
+      "title": "Vann til vin",
+      "description": "Jesu første mirakel: Han gjør vann til vin ved bryllupet i Kana.",
+      "year": 27,
+      "year_display": "Ca. 27 e.Kr.",
+      "period": "jesus",
+      "references": [
+        {"book": 43, "chapter": 2, "verseStart": 1, "verseEnd": 12}
+      ],
+      "importance": "minor",
+      "sort_order": 129
+    },
+    {
+      "id": "feeding-5000",
+      "title": "Mettelsen av de 5000",
+      "description": "Jesus metter over 5000 mennesker med fem brød og to fisker.",
+      "year": 29,
+      "year_display": "Ca. 29 e.Kr.",
+      "period": "jesus",
+      "references": [
+        {"book": 40, "chapter": 14, "verseStart": 13, "verseEnd": 21},
+        {"book": 43, "chapter": 6, "verseStart": 1, "verseEnd": 15}
+      ],
+      "importance": "major",
+      "sort_order": 130
+    },
+    {
+      "id": "walking-water",
+      "title": "Jesus går på vannet",
+      "description": "Jesus går på vannet til disiplene under en storm på Gennesaretsjøen.",
+      "year": 29,
+      "year_display": "Ca. 29 e.Kr.",
+      "period": "jesus",
+      "references": [
+        {"book": 40, "chapter": 14, "verseStart": 22, "verseEnd": 33},
+        {"book": 43, "chapter": 6, "verseStart": 16, "verseEnd": 21}
+      ],
+      "importance": "minor",
+      "sort_order": 131
+    },
+    {
+      "id": "peter-confession",
+      "title": "Peters bekjennelse",
+      "description": "Peter bekjenner at Jesus er Kristus, Guds Sønn. Jesus lover å bygge sin kirke på denne klippen.",
+      "year": 29,
+      "year_display": "Ca. 29 e.Kr.",
+      "period": "jesus",
+      "references": [
+        {"book": 40, "chapter": 16, "verseStart": 13, "verseEnd": 20}
+      ],
+      "importance": "major",
+      "sort_order": 132
+    },
+    {
+      "id": "transfiguration",
+      "title": "Forklarelsen på fjellet",
+      "description": "Jesus forvandles på et høyt fjell foran Peter, Jakob og Johannes. Moses og Elia viser seg.",
+      "year": 29,
+      "year_display": "Ca. 29 e.Kr.",
+      "period": "jesus",
+      "references": [
+        {"book": 40, "chapter": 17, "verseStart": 1, "verseEnd": 13},
+        {"book": 41, "chapter": 9, "verseStart": 2, "verseEnd": 13}
+      ],
+      "importance": "major",
+      "sort_order": 133
+    },
+    {
+      "id": "lazarus-raised",
+      "title": "Lasarus oppvekkes",
+      "description": "Jesus oppvekker sin venn Lasarus fra de døde etter fire dager i graven.",
+      "year": 30,
+      "year_display": "Ca. 30 e.Kr.",
+      "period": "jesus",
+      "references": [
+        {"book": 43, "chapter": 11, "verseStart": 1, "verseEnd": 46}
+      ],
+      "importance": "major",
+      "sort_order": 134
+    },
+    {
+      "id": "triumphal-entry",
+      "title": "Inntog i Jerusalem",
+      "description": "Jesus rider inn i Jerusalem på et esel mens folkemengden roper 'Hosianna' og strør palmegrener.",
+      "year": 30,
+      "year_display": "30 e.Kr.",
+      "period": "jesus",
+      "references": [
+        {"book": 40, "chapter": 21, "verseStart": 1, "verseEnd": 11},
+        {"book": 43, "chapter": 12, "verseStart": 12, "verseEnd": 19}
+      ],
+      "importance": "major",
+      "sort_order": 135
+    },
+    {
+      "id": "last-supper",
+      "title": "Det siste måltid",
+      "description": "Jesus innstifter nattverden med disiplene kvelden før sin død.",
+      "year": 30,
+      "year_display": "30 e.Kr.",
+      "period": "jesus",
+      "references": [
+        {"book": 40, "chapter": 26, "verseStart": 17, "verseEnd": 30},
+        {"book": 42, "chapter": 22, "verseStart": 14, "verseEnd": 23}
+      ],
+      "importance": "major",
+      "sort_order": 136
+    },
+    {
+      "id": "gethsemane",
+      "title": "Getsemane",
+      "description": "Jesus ber i Getsemane-hagen og svetter blod mens han forbereder seg på korsfestelsen.",
+      "year": 30,
+      "year_display": "30 e.Kr.",
+      "period": "jesus",
+      "references": [
+        {"book": 40, "chapter": 26, "verseStart": 36, "verseEnd": 46},
+        {"book": 42, "chapter": 22, "verseStart": 39, "verseEnd": 46}
+      ],
+      "importance": "major",
+      "sort_order": 137
+    },
+    {
+      "id": "jesus-arrest",
+      "title": "Jesus arresteres",
+      "description": "Judas forråder Jesus med et kyss. Jesus arresteres i Getsemane-hagen.",
+      "year": 30,
+      "year_display": "30 e.Kr.",
+      "period": "jesus",
+      "references": [
+        {"book": 40, "chapter": 26, "verseStart": 47, "verseEnd": 56},
+        {"book": 43, "chapter": 18, "verseStart": 1, "verseEnd": 14}
+      ],
+      "importance": "major",
+      "sort_order": 138
+    },
+    {
+      "id": "crucifixion",
+      "title": "Korsfestelsen",
+      "description": "Jesus korsfestes på Golgata mellom to røvere. Han dør for verdens synder.",
+      "year": 30,
+      "year_display": "30 e.Kr.",
+      "period": "jesus",
+      "references": [
+        {"book": 40, "chapter": 27, "verseStart": 32, "verseEnd": 56},
+        {"book": 43, "chapter": 19, "verseStart": 16, "verseEnd": 37}
+      ],
+      "importance": "major",
+      "sort_order": 139
+    },
+    {
+      "id": "resurrection",
+      "title": "Oppstandelsen",
+      "description": "Jesus står opp fra de døde på den tredje dag. Graven er tom!",
+      "year": 30,
+      "year_display": "30 e.Kr.",
+      "period": "jesus",
+      "references": [
+        {"book": 40, "chapter": 28, "verseStart": 1, "verseEnd": 10},
+        {"book": 43, "chapter": 20, "verseStart": 1, "verseEnd": 18}
+      ],
+      "importance": "major",
+      "sort_order": 140
+    },
+    {
+      "id": "great-commission",
+      "title": "Misjonsbefalingen",
+      "description": "Den oppstandne Jesus gir disiplene oppdraget om å gjøre alle folkeslag til disipler.",
+      "year": 30,
+      "year_display": "30 e.Kr.",
+      "period": "jesus",
+      "references": [
+        {"book": 40, "chapter": 28, "verseStart": 16, "verseEnd": 20}
+      ],
+      "importance": "major",
+      "sort_order": 141
+    },
+    {
+      "id": "ascension",
+      "title": "Himmelfarten",
+      "description": "Jesus tas opp til himmelen fra Oljeberget mens disiplene ser på. Engler lover at han vil komme tilbake.",
+      "year": 30,
+      "year_display": "30 e.Kr.",
+      "period": "jesus",
+      "references": [
+        {"book": 42, "chapter": 24, "verseStart": 50, "verseEnd": 53},
+        {"book": 44, "chapter": 1, "verseStart": 6, "verseEnd": 11}
+      ],
+      "importance": "major",
+      "sort_order": 142
+    },
+    {
+      "id": "pentecost",
+      "title": "Pinsedag",
+      "description": "Den Hellige Ånd utgytes over disiplene. De taler i tunger og 3000 mennesker blir frelst.",
+      "year": 30,
+      "year_display": "30 e.Kr.",
+      "period": "early-church",
+      "references": [
+        {"book": 44, "chapter": 2, "verseStart": 1, "verseEnd": 47}
+      ],
+      "importance": "major",
+      "sort_order": 150
+    },
+    {
+      "id": "stephen-martyred",
+      "title": "Stefanus' martyrium",
+      "description": "Stefanus blir den første kristne martyr. Han steines til døde mens Saulus (Paulus) ser på.",
+      "year": 34,
+      "year_display": "Ca. 34 e.Kr.",
+      "period": "early-church",
+      "references": [
+        {"book": 44, "chapter": 6, "verseStart": 8, "verseEnd": 15},
+        {"book": 44, "chapter": 7, "verseStart": 54, "verseEnd": 60}
+      ],
+      "importance": "major",
+      "sort_order": 151
+    },
+    {
+      "id": "saul-conversion",
+      "title": "Saulus' omvendelse",
+      "description": "Saulus, kirkens forfølger, møter den oppstandne Jesus på veien til Damaskus og blir omvendt.",
+      "year": 35,
+      "year_display": "Ca. 35 e.Kr.",
+      "period": "early-church",
+      "references": [
+        {"book": 44, "chapter": 9, "verseStart": 1, "verseEnd": 22}
+      ],
+      "importance": "major",
+      "sort_order": 152
+    },
+    {
+      "id": "cornelius",
+      "title": "Kornelius",
+      "description": "Peter forkynner evangeliet for den romerske offiseren Kornelius. Hedningene mottar Den Hellige Ånd.",
+      "year": 40,
+      "year_display": "Ca. 40 e.Kr.",
+      "period": "early-church",
+      "references": [
+        {"book": 44, "chapter": 10, "verseStart": 1, "verseEnd": 48}
+      ],
+      "importance": "major",
+      "sort_order": 153
+    },
+    {
+      "id": "antioch-christians",
+      "title": "Kristne i Antiokia",
+      "description": "Disiplene kalles 'kristne' for første gang i Antiokia.",
+      "year": 43,
+      "year_display": "Ca. 43 e.Kr.",
+      "period": "early-church",
+      "references": [
+        {"book": 44, "chapter": 11, "verseStart": 19, "verseEnd": 26}
+      ],
+      "importance": "minor",
+      "sort_order": 154
+    },
+    {
+      "id": "paul-journey-1",
+      "title": "Paulus' første misjonsreise",
+      "description": "Paulus og Barnabas reiser ut på den første organiserte misjonsreisen.",
+      "year": 47,
+      "year_display": "47-48 e.Kr.",
+      "period": "early-church",
+      "references": [
+        {"book": 44, "chapter": 13, "verseStart": 1, "verseEnd": 52},
+        {"book": 44, "chapter": 14, "verseStart": 1, "verseEnd": 28}
+      ],
+      "importance": "major",
+      "sort_order": 155
+    },
+    {
+      "id": "jerusalem-council",
+      "title": "Apostelmøtet i Jerusalem",
+      "description": "Apostlene og de eldste møtes for å avgjøre om hedningekristne må omskjæres.",
+      "year": 49,
+      "year_display": "Ca. 49 e.Kr.",
+      "period": "early-church",
+      "references": [
+        {"book": 44, "chapter": 15, "verseStart": 1, "verseEnd": 35}
+      ],
+      "importance": "major",
+      "sort_order": 156
+    },
+    {
+      "id": "paul-journey-2",
+      "title": "Paulus' andre misjonsreise",
+      "description": "Paulus reiser gjennom Asia Minor og over til Europa. Evangeliet når Filippi, Tessalonika og Korint.",
+      "year": 50,
+      "year_display": "50-52 e.Kr.",
+      "period": "early-church",
+      "references": [
+        {"book": 44, "chapter": 15, "verseStart": 36, "verseEnd": 41},
+        {"book": 44, "chapter": 16, "verseStart": 1, "verseEnd": 40},
+        {"book": 44, "chapter": 17, "verseStart": 1, "verseEnd": 34},
+        {"book": 44, "chapter": 18, "verseStart": 1, "verseEnd": 22}
+      ],
+      "importance": "major",
+      "sort_order": 157
+    },
+    {
+      "id": "paul-journey-3",
+      "title": "Paulus' tredje misjonsreise",
+      "description": "Paulus tilbringer tre år i Efesos og styrker menighetene i Hellas.",
+      "year": 53,
+      "year_display": "53-57 e.Kr.",
+      "period": "early-church",
+      "references": [
+        {"book": 44, "chapter": 18, "verseStart": 23, "verseEnd": 28},
+        {"book": 44, "chapter": 19, "verseStart": 1, "verseEnd": 41},
+        {"book": 44, "chapter": 20, "verseStart": 1, "verseEnd": 38}
+      ],
+      "importance": "major",
+      "sort_order": 158
+    },
+    {
+      "id": "paul-arrested-jerusalem",
+      "title": "Paulus arresteres i Jerusalem",
+      "description": "Paulus arresteres i tempelet og begynner sin lange reise som fange mot Roma.",
+      "year": 57,
+      "year_display": "Ca. 57 e.Kr.",
+      "period": "early-church",
+      "references": [
+        {"book": 44, "chapter": 21, "verseStart": 27, "verseEnd": 40},
+        {"book": 44, "chapter": 22, "verseStart": 1, "verseEnd": 30}
+      ],
+      "importance": "major",
+      "sort_order": 159
+    },
+    {
+      "id": "paul-rome",
+      "title": "Paulus i Roma",
+      "description": "Paulus ankommer Roma som fange og forkynner evangeliet fritt i to år mens han venter på rettssak.",
+      "year": 60,
+      "year_display": "60-62 e.Kr.",
+      "period": "early-church",
+      "references": [
+        {"book": 44, "chapter": 28, "verseStart": 11, "verseEnd": 31}
+      ],
+      "importance": "major",
+      "sort_order": 160
+    },
+    {
+      "id": "revelation-written",
+      "title": "Johannes' åpenbaring",
+      "description": "Apostelen Johannes mottar åpenbaringen om endetiden på øya Patmos.",
+      "year": 95,
+      "year_display": "Ca. 95 e.Kr.",
+      "period": "early-church",
+      "references": [
+        {"book": 66, "chapter": 1, "verseStart": 1, "verseEnd": 20}
+      ],
+      "importance": "major",
+      "sort_order": 170
+    }
+  ]
+}
