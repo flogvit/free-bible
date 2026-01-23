@@ -18,6 +18,7 @@ async function doAnthropicCall(content) {
     return anthropic.messages.create({
         model: anthropicModel,
         max_tokens: 8192,
+        system: "You are a JSON-only assistant. You MUST respond with valid JSON only. Never include explanations, comments, or any text outside the JSON structure. If there are any issues with the input, still return a valid JSON response - do not explain problems.",
         messages: [
             {
                 role: "user",

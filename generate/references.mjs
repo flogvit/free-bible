@@ -19,6 +19,7 @@ async function doAnthropicCall(content) {
     return anthropic.messages.create({
         model: anthropicModel,
         max_tokens: 8192,
+        system: "You are a JSON-only assistant. You MUST respond with valid JSON only. Never include explanations, comments, or any text outside the JSON structure. Follow the exact field names specified in the prompt.",
         messages: [
             {
                 role: "user",
@@ -55,7 +56,17 @@ You should answer in a json format, and only json. If you find no cross-referenc
     let returnContent = completion.content[0].text
     console.log(returnContent)
 
-    const result = JSON.parse(returnContent.replaceAll("```json", "").replaceAll("```", ""))
+    let result = JSON.parse(returnContent.replaceAll("```json", "").replaceAll("```", ""))
+
+    // Fix common issues: verseId instead of fromVerseId
+    result = result.map(ref => {
+        if (ref.verseId !== undefined && ref.fromVerseId === undefined) {
+            ref.fromVerseId = ref.verseId;
+            delete ref.verseId;
+        }
+        return ref;
+    });
+
     const dir = path.join(__dirname, "references", `${bookId}`, `${chapterId}`)
     if (!fs.existsSync(dir)) {
         fs.mkdirSync(dir, {recursive: true});
