@@ -236,7 +236,65 @@ function repairJsonStrings(json) {
     return result;
 }
 
-async function doAnthropicCallWithRetry(content, context = '') {
+// Detect hallucinated English words that shouldn't appear in Norwegian/other translations
+// Check if language is English (hallucination detection should be skipped for English)
+function isEnglishLanguage(language) {
+    const lower = language.toLowerCase();
+    return lower === 'english' || lower === 'en';
+}
+
+const HALLUCINATION_PATTERNS = [
+    /\bsatisf\w+/i,           // satisfying, satisfactory, satisfaction, etc.
+    /\bthe\s+[a-z]+ing\b/i,   // "the [verb]ing" English patterns
+    /\bhowever\b/i,
+    /\btherefore\b/i,
+    /\bmoreover\b/i,
+    /\bfurthermore\b/i,
+    /\bnevertheless\b/i,
+    /\balthough\b/i,
+    /\bwhich\s+is\b/i,
+    /\bthat\s+is\b/i,
+];
+
+function detectHallucinations(text) {
+    const found = [];
+    for (const pattern of HALLUCINATION_PATTERNS) {
+        const match = text.match(pattern);
+        if (match) {
+            found.push(match[0]);
+        }
+    }
+    return found;
+}
+
+function validateTranslationResult(result) {
+    // Check array of verses
+    const verses = Array.isArray(result) ? result : [result];
+
+    for (const verse of verses) {
+        if (verse.text) {
+            const hallucinations = detectHallucinations(verse.text);
+            if (hallucinations.length > 0) {
+                throw new Error(`Hallucinated English detected: "${hallucinations.join('", "')}"`);
+            }
+        }
+        // Also check issues/suggestions in proofread results
+        if (verse.issues) {
+            for (const issue of verse.issues) {
+                if (issue.suggested) {
+                    const hallucinations = detectHallucinations(issue.suggested);
+                    if (hallucinations.length > 0) {
+                        throw new Error(`Hallucinated English in suggestion: "${hallucinations.join('", "')}"`);
+                    }
+                }
+            }
+        }
+    }
+
+    return true;
+}
+
+async function doAnthropicCallWithRetry(content, context = '', validate = true) {
     let lastError;
 
     for (let attempt = 1; attempt <= MAX_RETRIES; attempt++) {
@@ -244,6 +302,12 @@ async function doAnthropicCallWithRetry(content, context = '') {
             const completion = await doAnthropicCall(content);
             const responseText = completion.content[0].text;
             const result = parseJsonResponse(responseText);
+
+            // Validate for hallucinations if requested
+            if (validate) {
+                validateTranslationResult(result);
+            }
+
             return result;
         } catch (error) {
             lastError = error;
@@ -305,7 +369,8 @@ function getProofreadPrompt(language, style, bookId, chapterId, originalText, tr
         if (v.versions && v.versions.length > 0) {
             entry += `\n   VERSION HISTORY (${v.versions.length} previous revisions - DO NOT suggest any of these):`;
             v.versions.forEach((ver, i) => {
-                entry += `\n   ${i + 1}. "${ver.text}"`;
+                const typeInfo = ver.type ? ` [${ver.type}/${ver.severity || 'unknown'}]` : '';
+                entry += `\n   ${i + 1}.${typeInfo} "${ver.text}"`;
                 if (ver.explanation) {
                     entry += `\n      Reason for change: ${ver.explanation}`;
                 }
@@ -349,7 +414,8 @@ async function translateChapter(bible, bookId, chapterId, style, existingVerses,
 
         const formattedBatch = batch.map(v => `${v.verseId}: ${v.text}`).join("\n");
         const content = getTranslationPrompt(style, language, bookId, chapterId, formattedBatch);
-        const result = await doAnthropicCallWithRetry(content, `${bookId}:${chapterId} batch ${batchIndex + 1}`);
+        const shouldValidate = !isEnglishLanguage(language);
+        const result = await doAnthropicCallWithRetry(content, `${bookId}:${chapterId} batch ${batchIndex + 1}`, shouldValidate);
         allResults.push(...result);
     }
 
@@ -379,7 +445,8 @@ function estimateVerseSize(verse, originalVerse) {
     if (verse.versions && verse.versions.length > 0) {
         size += `   VERSION HISTORY (${verse.versions.length} previous revisions - DO NOT suggest any of these):`.length;
         verse.versions.forEach((ver, i) => {
-            size += `\n   ${i + 1}. "${ver.text}"`.length;
+            const typeInfo = ver.type ? ` [${ver.type}/${ver.severity || 'unknown'}]` : '';
+            size += `\n   ${i + 1}.${typeInfo} "${ver.text}"`.length;
             if (ver.explanation) {
                 size += `\n      Reason for change: ${ver.explanation}`.length;
             }
@@ -454,7 +521,8 @@ async function proofreadChapter(bible, bookId, chapterId, style, filename, saveT
 
         const formattedOriginal = batchOriginal.map(v => `${v.verseId}: ${v.text}`).join("\n");
         const content = getProofreadPrompt(language, style, bookId, chapterId, formattedOriginal, batch);
-        let batchResult = await doAnthropicCallWithRetry(content, `proofread ${bookId}:${chapterId} batch ${batchIndex + 1}`);
+        const shouldValidate = !isEnglishLanguage(language);
+        let batchResult = await doAnthropicCallWithRetry(content, `proofread ${bookId}:${chapterId} batch ${batchIndex + 1}`, shouldValidate);
 
         // Handle case where API returns array directly instead of object with issues
         if (Array.isArray(batchResult)) {
@@ -551,29 +619,24 @@ function applyProofreadChanges(bible, bookId, chapterId, filename, proofreadResu
             continue;
         }
 
-        // Only save to version history if it's a suggestion/improvement, not an error
-        // Errors (like "satisfarao" instead of "farao") should not be preserved
-        const isError = issue.type === 'error' || issue.severity === 'critical';
-
-        if (!isError) {
-            // Initialize versions array if it doesn't exist
-            if (!verse.versions) {
-                verse.versions = [];
-            }
-
-            // Add current text to versions history
-            verse.versions.push({
-                text: verse.text,
-                explanation: issue.explanation
-            });
+        // Initialize versions array if it doesn't exist
+        if (!verse.versions) {
+            verse.versions = [];
         }
+
+        // Add current text to versions history with type and severity
+        verse.versions.push({
+            text: verse.text,
+            type: issue.type,
+            severity: issue.severity,
+            explanation: issue.explanation
+        });
 
         // Update the text
         verse.text = issue.suggested;
         appliedCount++;
 
-        const versionNote = isError ? ' (old version discarded)' : '';
-        console.log(`  Applied: Verse ${issue.verseId} [${issue.type}]${versionNote}`);
+        console.log(`  Applied: Verse ${issue.verseId} [${issue.type}/${issue.severity}]`);
     }
 
     if (appliedCount > 0) {
