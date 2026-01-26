@@ -1,5 +1,6 @@
 export const bibles = {
     "osnb1": "Norwegian bokmål",
+    "osnb2": "Norwegian bokmål",
     "osnn1": "Norwegian nynorsk",
 }
 
