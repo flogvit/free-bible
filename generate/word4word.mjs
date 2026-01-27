@@ -5,7 +5,7 @@ import path from 'path';
 dotenv.config()
 
 import Anthropic from '@anthropic-ai/sdk';
-import {bibles, books, anthropicModel} from "./constants.js";
+import {bibles, books, anthropicModel, normalizeLanguage, getLanguageCode} from "./constants.js";
 
 const anthropic = new Anthropic();
 
@@ -13,45 +13,6 @@ const MAX_RETRIES = 3;
 
 // Original sources (not translations)
 const ORIGINAL_SOURCES = ['tanach', 'sblgnt'];
-
-// Language name to code mapping (bidirectional)
-const LANGUAGE_CODES = {
-    'Norwegian bokmål': 'nb',
-    'Norwegian nynorsk': 'nn',
-    'English': 'en',
-    'German': 'de',
-    'Spanish': 'es',
-    'French': 'fr',
-    'Swedish': 'sv',
-    'Danish': 'da',
-};
-
-// Reverse mapping: code to full name
-const LANGUAGE_NAMES = {
-    'nb': 'Norwegian bokmål',
-    'nn': 'Norwegian nynorsk',
-    'en': 'English',
-    'de': 'German',
-    'es': 'Spanish',
-    'fr': 'French',
-    'sv': 'Swedish',
-    'da': 'Danish',
-};
-
-// Normalize language input - accepts both codes (nb) and full names (Norwegian bokmål)
-function normalizeLanguage(input) {
-    // If it's a known code, return the full name
-    if (LANGUAGE_NAMES[input.toLowerCase()]) {
-        return LANGUAGE_NAMES[input.toLowerCase()];
-    }
-    // Otherwise return as-is (assumed to be full name)
-    return input;
-}
-
-// Get language code from language name
-function getLanguageCode(language) {
-    return LANGUAGE_CODES[language] || language.toLowerCase().substring(0, 2);
-}
 
 // Check if bible is an original source (not a translation)
 function isOriginalSource(bible) {

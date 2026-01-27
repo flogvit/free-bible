@@ -6,6 +6,88 @@ export const bibles = {
 
 export const anthropicModel = "claude-opus-4-5-20251101";
 
+// Language name to code mapping
+export const languageCodes = {
+    'Norwegian bokmål': 'nb',
+    'Norwegian nynorsk': 'nn',
+    'English': 'en',
+    'German': 'de',
+    'Spanish': 'es',
+    'French': 'fr',
+    'Swedish': 'sv',
+    'Danish': 'da',
+};
+
+// Reverse mapping: code to full name
+export const languageNames = {
+    'nb': 'Norwegian bokmål',
+    'nn': 'Norwegian nynorsk',
+    'en': 'English',
+    'de': 'German',
+    'es': 'Spanish',
+    'fr': 'French',
+    'sv': 'Swedish',
+    'da': 'Danish',
+};
+
+// Normalize language input - accepts both codes (nb) and full names (Norwegian bokmål)
+export function normalizeLanguage(input) {
+    if (languageNames[input.toLowerCase()]) {
+        return languageNames[input.toLowerCase()];
+    }
+    return input;
+}
+
+// Get language code from language name
+export function getLanguageCode(language) {
+    return languageCodes[language] || language.toLowerCase().substring(0, 2);
+}
+
+// Book names in different languages (keyed by language code)
+export const bookNames = {
+    nb: {
+        1: "1. Mosebok", 2: "2. Mosebok", 3: "3. Mosebok", 4: "4. Mosebok", 5: "5. Mosebok",
+        6: "Josva", 7: "Dommerne", 8: "Rut", 9: "1. Samuel", 10: "2. Samuel",
+        11: "1. Kongebok", 12: "2. Kongebok", 13: "1. Krønikebok", 14: "2. Krønikebok",
+        15: "Esra", 16: "Nehemja", 17: "Ester", 18: "Job", 19: "Salmene", 20: "Ordspråkene",
+        21: "Forkynneren", 22: "Høysangen", 23: "Jesaja", 24: "Jeremia", 25: "Klagesangene",
+        26: "Esekiel", 27: "Daniel", 28: "Hosea", 29: "Joel", 30: "Amos", 31: "Obadja",
+        32: "Jona", 33: "Mika", 34: "Nahum", 35: "Habakkuk", 36: "Sefanja", 37: "Haggai",
+        38: "Sakarja", 39: "Malaki", 40: "Matteus", 41: "Markus", 42: "Lukas", 43: "Johannes",
+        44: "Apostlenes gjerninger", 45: "Romerne", 46: "1. Korinterne", 47: "2. Korinterne",
+        48: "Galaterne", 49: "Efeserne", 50: "Filipperne", 51: "Kolosserne",
+        52: "1. Tessalonikerne", 53: "2. Tessalonikerne", 54: "1. Timoteus", 55: "2. Timoteus",
+        56: "Titus", 57: "Filemon", 58: "Hebreerne", 59: "Jakob", 60: "1. Peter", 61: "2. Peter",
+        62: "1. Johannes", 63: "2. Johannes", 64: "3. Johannes", 65: "Judas", 66: "Åpenbaringen"
+    },
+    nn: {
+        1: "1. Mosebok", 2: "2. Mosebok", 3: "3. Mosebok", 4: "4. Mosebok", 5: "5. Mosebok",
+        6: "Josva", 7: "Domarane", 8: "Rut", 9: "1. Samuel", 10: "2. Samuel",
+        11: "1. Kongebok", 12: "2. Kongebok", 13: "1. Krønikebok", 14: "2. Krønikebok",
+        15: "Esra", 16: "Nehemja", 17: "Ester", 18: "Job", 19: "Salmane", 20: "Ordtøka",
+        21: "Forkynnaren", 22: "Høgsongen", 23: "Jesaja", 24: "Jeremia", 25: "Klagesongane",
+        26: "Esekiel", 27: "Daniel", 28: "Hosea", 29: "Joel", 30: "Amos", 31: "Obadja",
+        32: "Jona", 33: "Mika", 34: "Nahum", 35: "Habakkuk", 36: "Sefanja", 37: "Haggai",
+        38: "Sakarja", 39: "Malaki", 40: "Matteus", 41: "Markus", 42: "Lukas", 43: "Johannes",
+        44: "Apostelgjerningane", 45: "Romarane", 46: "1. Korintarane", 47: "2. Korintarane",
+        48: "Galatarane", 49: "Efesarane", 50: "Filipparane", 51: "Kolossarane",
+        52: "1. Tessalonikarane", 53: "2. Tessalonikarane", 54: "1. Timoteus", 55: "2. Timoteus",
+        56: "Titus", 57: "Filemon", 58: "Hebrearane", 59: "Jakob", 60: "1. Peter", 61: "2. Peter",
+        62: "1. Johannes", 63: "2. Johannes", 64: "3. Johannes", 65: "Judas", 66: "Openberringa"
+    }
+};
+
+// Get book name for a language (falls back to English from books array)
+export function getBookName(bookId, language) {
+    const langCode = getLanguageCode(language);
+    if (bookNames[langCode] && bookNames[langCode][bookId]) {
+        return bookNames[langCode][bookId];
+    }
+    // Fallback to English name from books array
+    const book = books.find(b => b.id === bookId);
+    return book ? book.name : `Book ${bookId}`;
+}
+
 export const books = [
     {"id": 1, "file": "external/bibles/tanach/Genesis.txt", "name": "Genesis", "chapters": 50},
     {"id": 2, "file": "external/bibles/tanach/Exodus.txt", "name": "Exodus", "chapters": 40},
