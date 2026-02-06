@@ -1,0 +1,516 @@
+{
+  "book": 1,
+  "book_name": "1. Mosebok",
+  "sections": [
+    {
+      "id": "primeval-history",
+      "title": "Urhistorien",
+      "chapter_start": 1,
+      "chapter_end": 11,
+      "description": "Fra skapelsen til Babels tårn"
+    },
+    {
+      "id": "abraham",
+      "title": "Abraham",
+      "chapter_start": 12,
+      "chapter_end": 25,
+      "description": "Guds kall og pakt med Abraham"
+    },
+    {
+      "id": "isaac-jacob",
+      "title": "Isak og Jakob",
+      "chapter_start": 25,
+      "chapter_end": 36,
+      "description": "Patriarkene og Guds løfter"
+    },
+    {
+      "id": "joseph",
+      "title": "Josef",
+      "chapter_start": 37,
+      "chapter_end": 50,
+      "description": "Josef i Egypt og familiens gjenforening"
+    }
+  ],
+  "events": [
+    {
+      "id": "genesis-creation",
+      "title": "Skapelsen",
+      "description": "Gud skaper himmel og jord på seks dager: lys, himmelhvelving, land og hav, planter, himmellegemer, dyr og til sist mennesket i sitt bilde. På den sjuende dagen hviler Gud.",
+      "references": [
+        {"chapter": 1, "verseStart": 1, "verseEnd": 31},
+        {"chapter": 2, "verseStart": 1, "verseEnd": 3}
+      ],
+      "section": "primeval-history",
+      "year": null,
+      "year_display": "I begynnelsen",
+      "importance": "major",
+      "sort_order": 1
+    },
+    {
+      "id": "genesis-adam-eve",
+      "title": "Adam og Eva i Edens hage",
+      "description": "Gud former Adam av jordens støv og blåser livspust i ham. Han planter Edens hage og setter Adam til å dyrke den. Eva skapes av Adams ribben som en medhjelp for ham.",
+      "references": [
+        {"chapter": 2, "verseStart": 4, "verseEnd": 25}
+      ],
+      "section": "primeval-history",
+      "year": null,
+      "year_display": "I begynnelsen",
+      "importance": "major",
+      "sort_order": 2
+    },
+    {
+      "id": "genesis-fall",
+      "title": "Syndefallet",
+      "description": "Slangen frister Eva til å spise av treet til kunnskap om godt og ondt, og Adam spiser også. De oppdager sin nakenhet, og Gud driver dem ut av Edens hage. Gud kunngjør straff over slangen, kvinnen og mannen.",
+      "references": [
+        {"chapter": 3, "verseStart": 1, "verseEnd": 24}
+      ],
+      "section": "primeval-history",
+      "year": null,
+      "year_display": "I begynnelsen",
+      "importance": "major",
+      "sort_order": 3
+    },
+    {
+      "id": "genesis-cain-abel",
+      "title": "Kain og Abel",
+      "description": "Kain og Abel bærer frem offer til Gud. Gud ser til Abels offer, men ikke til Kains. I sjalusi dreper Kain sin bror Abel. Gud forbanner Kain til å være flyktning og vandringsmann på jorden.",
+      "references": [
+        {"chapter": 4, "verseStart": 1, "verseEnd": 16}
+      ],
+      "section": "primeval-history",
+      "year": null,
+      "year_display": null,
+      "importance": "major",
+      "sort_order": 4
+    },
+    {
+      "id": "genesis-seth-descendants",
+      "title": "Sets ættelinje",
+      "description": "Adam og Eva får sønnen Set. Gjennom Sets ættelinje går linjen videre til Noa. Henok vandrer med Gud og blir tatt bort. Metusalem lever lengst av alle mennesker.",
+      "references": [
+        {"chapter": 4, "verseStart": 25, "verseEnd": 26},
+        {"chapter": 5, "verseStart": 1, "verseEnd": 32}
+      ],
+      "section": "primeval-history",
+      "year": null,
+      "year_display": null,
+      "importance": "minor",
+      "sort_order": 5
+    },
+    {
+      "id": "genesis-flood",
+      "title": "Syndfloden og Noas ark",
+      "description": "Ondskapen på jorden er stor, og Gud angrer at han skapte mennesket. Gud befaler Noa å bygge en ark for å redde sin familie og dyr av alle slag. Floden dekker hele jorden i 40 dager. Noa sender ut en due som kommer tilbake med et olivenblad.",
+      "references": [
+        {"chapter": 6, "verseStart": 1, "verseEnd": 22},
+        {"chapter": 7, "verseStart": 1, "verseEnd": 24},
+        {"chapter": 8, "verseStart": 1, "verseEnd": 22}
+      ],
+      "section": "primeval-history",
+      "year": null,
+      "year_display": null,
+      "importance": "major",
+      "sort_order": 6
+    },
+    {
+      "id": "genesis-noah-covenant",
+      "title": "Guds pakt med Noa",
+      "description": "Gud velsigner Noa og hans sønner og oppretter en pakt om at han aldri mer skal ødelegge jorden med en vannflom. Regnbuen settes som tegn på pakten.",
+      "references": [
+        {"chapter": 9, "verseStart": 1, "verseEnd": 17}
+      ],
+      "section": "primeval-history",
+      "year": null,
+      "year_display": null,
+      "importance": "major",
+      "sort_order": 7
+    },
+    {
+      "id": "genesis-babel",
+      "title": "Babels tårn",
+      "description": "Menneskene samles og begynner å bygge en by med et tårn som når opp til himmelen. Gud forvirrer deres språk og sprer dem over hele jorden.",
+      "references": [
+        {"chapter": 11, "verseStart": 1, "verseEnd": 9}
+      ],
+      "section": "primeval-history",
+      "year": null,
+      "year_display": null,
+      "importance": "major",
+      "sort_order": 8
+    },
+    {
+      "id": "genesis-abram-call",
+      "title": "Abrams kall",
+      "description": "Gud kaller Abram til å forlate Ur og dra til et land han skal vise ham. Gud lover å gjøre ham til et stort folk og velsigne alle jordens slekter gjennom ham. Abram drar fra Harran med Sarai og Lot.",
+      "references": [
+        {"chapter": 12, "verseStart": 1, "verseEnd": 9}
+      ],
+      "section": "abraham",
+      "year": null,
+      "year_display": "Ca. 2091 f.Kr.",
+      "importance": "major",
+      "sort_order": 9
+    },
+    {
+      "id": "genesis-abram-egypt",
+      "title": "Abram i Egypt",
+      "description": "En hungersnød driver Abram til Egypt. Av frykt for å bli drept utgir han Sarai som sin søster. Farao tar Sarai inn i sitt hus, men Gud slår farao med plager. Farao sender Abram bort.",
+      "references": [
+        {"chapter": 12, "verseStart": 10, "verseEnd": 20}
+      ],
+      "section": "abraham",
+      "year": null,
+      "year_display": null,
+      "importance": "minor",
+      "sort_order": 10
+    },
+    {
+      "id": "genesis-lot-separation",
+      "title": "Lot skilles fra Abram",
+      "description": "Konflikter mellom Abrams og Lots gjetere fører til at de deler seg. Lot velger den fruktbare Jordansletten og slår seg ned nær Sodoma. Gud gjentar sitt løfte om landet til Abram.",
+      "references": [
+        {"chapter": 13, "verseStart": 1, "verseEnd": 18}
+      ],
+      "section": "abraham",
+      "year": null,
+      "year_display": null,
+      "importance": "minor",
+      "sort_order": 11
+    },
+    {
+      "id": "genesis-abram-covenant",
+      "title": "Guds pakt med Abram",
+      "description": "Gud inngår en pakt med Abram. Han lover ham etterkommere tallrike som stjernene og lover å gi dem landet fra Egypterelven til Eufrat. Gud bekrefter pakten ved å gå mellom de delte offerdyrene som en brennende fakkel.",
+      "references": [
+        {"chapter": 15, "verseStart": 1, "verseEnd": 21}
+      ],
+      "section": "abraham",
+      "year": null,
+      "year_display": null,
+      "importance": "major",
+      "sort_order": 12
+    },
+    {
+      "id": "genesis-hagar-ishmael",
+      "title": "Hagar og Ismael",
+      "description": "Sarai gir sin trellkvinne Hagar til Abram for å få barn gjennom henne. Hagar blir gravid og ser ned på Sarai. Hagar flykter ut i ørkenen, men Herrens engel sender henne tilbake. Hun føder Ismael.",
+      "references": [
+        {"chapter": 16, "verseStart": 1, "verseEnd": 16}
+      ],
+      "section": "abraham",
+      "year": null,
+      "year_display": null,
+      "importance": "major",
+      "sort_order": 13
+    },
+    {
+      "id": "genesis-circumcision",
+      "title": "Abrahams nye navn og omskjærelsen",
+      "description": "Gud gir Abram det nye navnet Abraham og Sarai det nye navnet Sara. Omskjærelsen innstiftes som tegn på pakten mellom Gud og Abraham og hans etterkommere. Gud lover at Sara skal føde en sønn.",
+      "references": [
+        {"chapter": 17, "verseStart": 1, "verseEnd": 27}
+      ],
+      "section": "abraham",
+      "year": null,
+      "year_display": null,
+      "importance": "major",
+      "sort_order": 14
+    },
+    {
+      "id": "genesis-sodom-gomorrah",
+      "title": "Sodoma og Gomorras ødeleggelse",
+      "description": "Tre menn besøker Abraham, og han ber for Sodoma. To engler kommer til Sodoma, og Lot tar imot dem. Innbyggerne i Sodoma omringer huset. Gud ødelegger Sodoma og Gomorra med ild og svovel. Lots hustru ser seg tilbake og blir til en saltstøtte.",
+      "references": [
+        {"chapter": 18, "verseStart": 1, "verseEnd": 33},
+        {"chapter": 19, "verseStart": 1, "verseEnd": 29}
+      ],
+      "section": "abraham",
+      "year": null,
+      "year_display": null,
+      "importance": "major",
+      "sort_order": 15
+    },
+    {
+      "id": "genesis-isaac-birth",
+      "title": "Isaks fødsel",
+      "description": "Sara føder Isak i sin alderdom, som Gud hadde lovt. Abraham omskjærer Isak på den åttende dagen. Sara krever at Hagar og Ismael sendes bort, og Abraham sender dem ut i ørkenen med tungt hjerte.",
+      "references": [
+        {"chapter": 21, "verseStart": 1, "verseEnd": 21}
+      ],
+      "section": "abraham",
+      "year": null,
+      "year_display": null,
+      "importance": "major",
+      "sort_order": 16
+    },
+    {
+      "id": "genesis-isaac-sacrifice",
+      "title": "Gud prøver Abraham - Isak ofres",
+      "description": "Gud setter Abraham på prøve og ber ham ofre Isak på Moria-fjellet. Abraham adlyder i tro, men i siste øyeblikk griper Herrens engel inn og stanser ham. En vær ofres i stedet. Gud bekrefter sin velsignelse.",
+      "references": [
+        {"chapter": 22, "verseStart": 1, "verseEnd": 19}
+      ],
+      "section": "abraham",
+      "year": null,
+      "year_display": null,
+      "importance": "major",
+      "sort_order": 17
+    },
+    {
+      "id": "genesis-sarah-death",
+      "title": "Saras død",
+      "description": "Sara dør 127 år gammel i Hebron. Abraham kjøper Makpela-hulen fra hetitten Efron som gravsted. Det er det første landstykket Abraham eier i det lovede land.",
+      "references": [
+        {"chapter": 23, "verseStart": 1, "verseEnd": 20}
+      ],
+      "section": "abraham",
+      "year": null,
+      "year_display": null,
+      "importance": "minor",
+      "sort_order": 18
+    },
+    {
+      "id": "genesis-rebekah",
+      "title": "Rebekka blir Isaks hustru",
+      "description": "Abraham sender sin tjener til Mesopotamia for å finne en hustru til Isak. Tjeneren møter Rebekka ved brønnen, og hun viser gjestfrihet. Rebekka reiser tilbake med tjeneren og blir Isaks hustru.",
+      "references": [
+        {"chapter": 24, "verseStart": 1, "verseEnd": 67}
+      ],
+      "section": "abraham",
+      "year": null,
+      "year_display": null,
+      "importance": "minor",
+      "sort_order": 19
+    },
+    {
+      "id": "genesis-esau-jacob-birth",
+      "title": "Esau og Jakob fødes",
+      "description": "Rebekka føder tvillinger: Esau og Jakob. Gud sier at den eldste skal tjene den yngste. Esau selger sin førstefødselsrett til Jakob for et måltid linsesuppe.",
+      "references": [
+        {"chapter": 25, "verseStart": 19, "verseEnd": 34}
+      ],
+      "section": "isaac-jacob",
+      "year": null,
+      "year_display": null,
+      "importance": "major",
+      "sort_order": 20
+    },
+    {
+      "id": "genesis-jacob-blessing",
+      "title": "Jakob stjeler velsignelsen",
+      "description": "Isak er gammel og blind. Med Rebekkas hjelp utgir Jakob seg for Esau og mottar Isaks velsignelse. Esau oppdager bedraget og hater Jakob, som må flykte til sin onkel Laban i Harran.",
+      "references": [
+        {"chapter": 27, "verseStart": 1, "verseEnd": 45}
+      ],
+      "section": "isaac-jacob",
+      "year": null,
+      "year_display": null,
+      "importance": "major",
+      "sort_order": 21
+    },
+    {
+      "id": "genesis-jacob-ladder",
+      "title": "Jakobs stige",
+      "description": "På flukt fra Esau overnatter Jakob i Betel. Han drømmer om en stige mellom himmel og jord med engler som stiger opp og ned. Gud bekrefter Abrahams løfte til Jakob. Jakob reiser en minnestein og kaller stedet Betel.",
+      "references": [
+        {"chapter": 28, "verseStart": 10, "verseEnd": 22}
+      ],
+      "section": "isaac-jacob",
+      "year": null,
+      "year_display": null,
+      "importance": "major",
+      "sort_order": 22
+    },
+    {
+      "id": "genesis-jacob-laban",
+      "title": "Jakob hos Laban",
+      "description": "Jakob tjener Laban i syv år for Rakel, men blir lurt til å ekte Lea først. Han tjener syv år til for Rakel. Jakob får tolv sønner og en datter. Til sist flykter Jakob fra Laban med sin familie og rikdom.",
+      "references": [
+        {"chapter": 29, "verseStart": 1, "verseEnd": 30},
+        {"chapter": 30, "verseStart": 1, "verseEnd": 43},
+        {"chapter": 31, "verseStart": 1, "verseEnd": 55}
+      ],
+      "section": "isaac-jacob",
+      "year": null,
+      "year_display": null,
+      "importance": "major",
+      "sort_order": 23
+    },
+    {
+      "id": "genesis-jacob-wrestles",
+      "title": "Jakob kjemper med Gud",
+      "description": "Ved elven Jabbok kjemper Jakob hele natten med en mann. Mannen vrir Jakobs hofte av ledd, men Jakob slipper ikke taket. Jakob får det nye navnet Israel, som betyr 'han kjemper med Gud'.",
+      "references": [
+        {"chapter": 32, "verseStart": 22, "verseEnd": 32}
+      ],
+      "section": "isaac-jacob",
+      "year": null,
+      "year_display": null,
+      "importance": "major",
+      "sort_order": 24
+    },
+    {
+      "id": "genesis-esau-reconciliation",
+      "title": "Forsoning med Esau",
+      "description": "Jakob møter Esau igjen etter mange år. I stedet for hevn løper Esau ham i møte, omfavner ham og gråter. Brødrene forsones, og Jakob slår seg ned i Kanaan.",
+      "references": [
+        {"chapter": 33, "verseStart": 1, "verseEnd": 20}
+      ],
+      "section": "isaac-jacob",
+      "year": null,
+      "year_display": null,
+      "importance": "minor",
+      "sort_order": 25
+    },
+    {
+      "id": "genesis-dinah-shechem",
+      "title": "Dina i Sikem",
+      "description": "Dina, Jakobs datter, blir krenket av Sikem. Simeon og Levi hevner henne ved å drepe alle mennene i byen, noe som vekker Jakobs vrede og frykt.",
+      "references": [
+        {"chapter": 34, "verseStart": 1, "verseEnd": 31}
+      ],
+      "section": "isaac-jacob",
+      "year": null,
+      "year_display": null,
+      "importance": "minor",
+      "sort_order": 26
+    },
+    {
+      "id": "genesis-rachel-death",
+      "title": "Rakels død",
+      "description": "Rakel dør under fødselen av sin andre sønn, Benjamin, på veien til Efrat (Betlehem). Jakob reiser en minnestein over hennes grav.",
+      "references": [
+        {"chapter": 35, "verseStart": 16, "verseEnd": 20}
+      ],
+      "section": "isaac-jacob",
+      "year": null,
+      "year_display": null,
+      "importance": "minor",
+      "sort_order": 27
+    },
+    {
+      "id": "genesis-joseph-sold",
+      "title": "Josef selges som slave",
+      "description": "Jakobs sønner misunner Josef for hans drømmekåpe og drømmene der familien bøyer seg for ham. De selger ham til midjanittiske handelsmenn som fører ham til Egypt, og de viser Jakob den blodige kjortelen.",
+      "references": [
+        {"chapter": 37, "verseStart": 1, "verseEnd": 36}
+      ],
+      "section": "joseph",
+      "year": null,
+      "year_display": null,
+      "importance": "major",
+      "sort_order": 28
+    },
+    {
+      "id": "genesis-joseph-prison-dreams",
+      "title": "Josefs drømmetydning i fengslet",
+      "description": "Josef havner i fengsel etter falske anklager fra Potifars hustru. Der tyder han drømmene til faraos munnskjenk og baker. Munnskjenken glemmer Josef i to år.",
+      "references": [
+        {"chapter": 39, "verseStart": 1, "verseEnd": 23},
+        {"chapter": 40, "verseStart": 1, "verseEnd": 23}
+      ],
+      "section": "joseph",
+      "year": null,
+      "year_display": null,
+      "importance": "minor",
+      "sort_order": 29
+    },
+    {
+      "id": "genesis-pharaoh-dreams",
+      "title": "Faraos drøm og Josef som leder",
+      "description": "Farao drømmer om syv fete og syv magre kyr, og syv fulle og syv tomme aks. Josef tyder drømmene som syv år med overflod etterfulgt av syv hungersår. Farao setter Josef til å styre hele Egypt.",
+      "references": [
+        {"chapter": 41, "verseStart": 1, "verseEnd": 57}
+      ],
+      "section": "joseph",
+      "year": null,
+      "year_display": null,
+      "importance": "major",
+      "sort_order": 30
+    },
+    {
+      "id": "genesis-brothers-egypt",
+      "title": "Brødrene kommer til Egypt",
+      "description": "Hungeren driver Jakobs sønner til Egypt for å kjøpe korn. Josef kjenner dem igjen, men gir seg ikke til kjenne. Han setter dem på prøve og krever at de bringer Benjamin neste gang.",
+      "references": [
+        {"chapter": 42, "verseStart": 1, "verseEnd": 38},
+        {"chapter": 43, "verseStart": 1, "verseEnd": 34},
+        {"chapter": 44, "verseStart": 1, "verseEnd": 34}
+      ],
+      "section": "joseph",
+      "year": null,
+      "year_display": null,
+      "importance": "major",
+      "sort_order": 31
+    },
+    {
+      "id": "genesis-joseph-revealed",
+      "title": "Josef gir seg til kjenne",
+      "description": "Josef kan ikke lenger holde tilbake tårene og gir seg til kjenne for brødrene. Han sier at Gud sendte ham i forveien for å berge liv. Han ber dem hente Jakob og hele familien til Egypt.",
+      "references": [
+        {"chapter": 45, "verseStart": 1, "verseEnd": 28}
+      ],
+      "section": "joseph",
+      "year": null,
+      "year_display": null,
+      "importance": "major",
+      "sort_order": 32
+    },
+    {
+      "id": "genesis-jacob-to-egypt",
+      "title": "Jakob drar til Egypt",
+      "description": "Jakob bryter opp med hele sin familie og drar til Egypt. Gud taler til ham i et syn i Beer-Sjeba og lover å gjøre hans ætt til et stort folk der. Jakob og Josef gjenforenes i Gosen etter mange år.",
+      "references": [
+        {"chapter": 46, "verseStart": 1, "verseEnd": 34}
+      ],
+      "section": "joseph",
+      "year": null,
+      "year_display": null,
+      "importance": "major",
+      "sort_order": 33
+    },
+    {
+      "id": "genesis-jacob-blessing-sons",
+      "title": "Jakobs velsignelse over sønnene",
+      "description": "Den aldrende Jakob velsigner først Josefs sønner Efraim og Manasse, der den yngste settes foran den eldste. Deretter velsigner han alle sine tolv sønner med profetiske ord om deres fremtid.",
+      "references": [
+        {"chapter": 48, "verseStart": 1, "verseEnd": 22},
+        {"chapter": 49, "verseStart": 1, "verseEnd": 28}
+      ],
+      "section": "joseph",
+      "year": null,
+      "year_display": null,
+      "importance": "major",
+      "sort_order": 34
+    },
+    {
+      "id": "genesis-jacob-death",
+      "title": "Jakobs død og begravelse",
+      "description": "Jakob dør i Egypt og blir balsamert. Josef fører farens legeme tilbake til Kanaan og begraver ham i Makpela-hulen i Hebron, slik Jakob hadde bedt om.",
+      "references": [
+        {"chapter": 49, "verseStart": 29, "verseEnd": 33},
+        {"chapter": 50, "verseStart": 1, "verseEnd": 14}
+      ],
+      "section": "joseph",
+      "year": null,
+      "year_display": null,
+      "importance": "major",
+      "sort_order": 35
+    },
+    {
+      "id": "genesis-joseph-death",
+      "title": "Josefs død",
+      "description": "Josef beroligere brødrene etter Jakobs død og sier: 'Dere tenkte å gjøre ondt mot meg, men Gud tenkte det til det gode.' Josef dør 110 år gammel og blir balsamert. Han lar dem sverge å føre hans ben til det lovede land.",
+      "references": [
+        {"chapter": 50, "verseStart": 15, "verseEnd": 26}
+      ],
+      "section": "joseph",
+      "year": null,
+      "year_display": null,
+      "importance": "major",
+      "sort_order": 36
+    }
+  ]
+}
