@@ -331,6 +331,15 @@ node generate_reading_plans.mjs
 
 ---
 
+## Contributing
+
+Contributions are welcome! Please see [CONTRIBUTING.md](CONTRIBUTING.md) for guidelines on:
+
+- Reporting bugs
+- Suggesting features
+- Submitting translation corrections
+- Code contributions
+
 ## Support
 
 Donations welcome - each translation costs approximately $100, encyclopedias cost more.
@@ -339,8 +348,8 @@ Donations welcome - each translation costs approximately $100, encyclopedias cos
 
 **Founder:** Vegard Hanssen (Vegard.Hanssen@menneske.no)
 
-## Copyright 2023-2024 Free Bible
+## License
 
-[![CC BY 4.0](https://i.creativecommons.org/l/by/4.0/88x31.png)](https://creativecommons.org/licenses/by/4.0/)
+MIT License - Copyright (c) 2023-2025 Vegard Hanssen
 
-Licensed under [Creative Commons Attribution 4.0 International License](https://creativecommons.org/licenses/by/4.0/).
+See [LICENSE](LICENSE) for details.
