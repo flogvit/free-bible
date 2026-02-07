@@ -145,7 +145,7 @@ export const books = [
     {"id": 54, "file": "external/bibles/SBLGNT/data/sblgnt/text/1Tim.txt", "name": "1 Timothy", "chapters": 6},
     {"id": 55, "file": "external/bibles/SBLGNT/data/sblgnt/text/2Tim.txt", "name": "2 Timothy", "chapters": 4},
     {"id": 56, "file": "external/bibles/SBLGNT/data/sblgnt/text/Titus.txt", "name": "Titus", "chapters": 3},
-    {"id": 57, "file": "external/bibles/SBLGNT/data/sblgnt/text/Phil.txt", "name": "Philemon", "chapters": 1},
+    {"id": 57, "file": "external/bibles/SBLGNT/data/sblgnt/text/Phlm.txt", "name": "Philemon", "chapters": 1},
     {"id": 58, "file": "external/bibles/SBLGNT/data/sblgnt/text/Heb.txt", "name": "Hebrews", "chapters": 13},
     {"id": 59, "file": "external/bibles/SBLGNT/data/sblgnt/text/Jas.txt", "name": "James", "chapters": 5},
     {"id": 60, "file": "external/bibles/SBLGNT/data/sblgnt/text/1Pet.txt", "name": "1 Peter", "chapters": 5},

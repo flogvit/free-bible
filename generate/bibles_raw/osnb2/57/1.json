@@ -1,254 +1,188 @@
 [
   {
-    "bookId": 50,
+    "bookId": 57,
     "chapterId": 1,
     "verseId": 1,
-    "text": "Paulus og Timoteus, Kristi Jesu slaver, til alle de hellige i Kristus Jesus som er i Filippi, sammen med tilsynsmenn og menighetstjenere:",
-    "versions": [
-      {
-        "text": "Paulus og Timoteus, Kristi Jesu tjenere, til alle de hellige i Kristus Jesus som er i Filippi, sammen med tilsynsmenn og menighetstjenere:",
-        "explanation": "Det greske ordet δοῦλοι betyr 'slaver', ikke bare 'tjenere'. Dette er et sterkere uttrykk som viser total underkastelse under Kristus. Mange moderne oversettelser velger likevel 'tjenere' for lesbarhet, så dette er en vurderingssak."
-      }
-    ]
+    "text": "Paulus, Kristi Jesu fange, og vår bror Timoteus, til Filemon, vår kjære venn og medarbeider,"
   },
   {
-    "bookId": 50,
+    "bookId": 57,
     "chapterId": 1,
     "verseId": 2,
-    "text": "Nåde og fred fra Gud, vår Far, og Herren Jesus Kristus.",
-    "versions": [
-      {
-        "text": "Nåde være med dere og fred fra Gud, vår Far, og Herren Jesus Kristus.",
-        "explanation": "Den greske teksten har bare 'χάρις ὑμῖν' (nåde til dere), ikke 'nåde være med dere'. Den kortere formen 'Nåde og fred' er mer tro mot originalen og flyter bedre muntlig."
-      }
-    ]
+    "text": "og til vår søster Apfia og til Arkippus, vår medstrider, og til menigheten som samles i ditt hus:"
   },
   {
-    "bookId": 50,
+    "bookId": 57,
     "chapterId": 1,
     "verseId": 3,
-    "text": "Jeg takker min Gud hver gang jeg tenker på dere."
+    "text": "Nåde være med dere og fred fra Gud, vår Far, og Herren Jesus Kristus."
   },
   {
-    "bookId": 50,
+    "bookId": 57,
     "chapterId": 1,
     "verseId": 4,
-    "text": "Alltid, i hver bønn for dere alle, ber jeg med glede,",
-    "versions": [
-      {
-        "text": "Alltid, i hver bønn jeg ber for dere alle, ber jeg med glede,",
-        "explanation": "Gjentakelsen 'bønn jeg ber' er unødvendig og klønete for muntlig lesning. Den greske teksten har 'δεήσει' (bønn) og 'δέησιν ποιούμενος' (gjør bønn/ber), men på norsk blir det mer naturlig å unngå denne gjentakelsen."
-      }
-    ]
+    "text": "Jeg takker alltid min Gud når jeg nevner deg i mine bønner,"
   },
   {
-    "bookId": 50,
+    "bookId": 57,
     "chapterId": 1,
     "verseId": 5,
-    "text": "på grunn av deres fellesskap i evangeliet fra den første dagen og helt til nå."
+    "text": "for jeg hører om den kjærlighet og tro du har til Herren Jesus og til alle de hellige.",
+    "versions": [
+      {
+        "text": "for jeg hører om din kjærlighet og din tro på Herren Jesus og til alle de hellige.",
+        "type": "error",
+        "severity": "major",
+        "explanation": "Den nåværende oversettelsen gir inntrykk av at kjærligheten er rettet mot Herren Jesus, men gresk har en kiastisk struktur hvor troen er rettet mot Herren Jesus og kjærligheten mot de hellige. Formuleringen bør justeres for å gi bedre flyt og klarhet."
+      }
+    ]
   },
   {
-    "bookId": 50,
+    "bookId": 57,
     "chapterId": 1,
     "verseId": 6,
-    "text": "Jeg er overbevist om nettopp dette: at han som begynte en god gjerning i dere, vil fullføre den helt til Kristi Jesu dag."
+    "text": "Jeg ber om at din delaktighet i troen må bli virksom ved erkjennelsen av alt det gode vi har i Kristus."
   },
   {
-    "bookId": 50,
+    "bookId": 57,
     "chapterId": 1,
     "verseId": 7,
-    "text": "Det er jo rett at jeg tenker slik om dere alle, fordi jeg bærer dere i mitt hjerte, siden dere alle er delaktige med meg i nåden, både i mine lenker og i forsvaret og stadfestelsen av evangeliet.",
+    "text": "For jeg har fått stor glede og trøst av din kjærlighet, fordi de helliges hjerter har funnet hvile ved deg, bror.",
     "versions": [
       {
-        "text": "Det er jo rett at jeg tenker slik om dere alle, fordi jeg bærer dere i mitt hjerte. Dere er alle delaktige med meg i nåden, både i mine lenker og i forsvaret og stadfestelsen av evangeliet.",
-        "explanation": "Setningsstrukturen i originalen kobler 'delaktige med meg i nåden' tettere til 'bærer dere i mitt hjerte'. Å bruke 'siden' i stedet for punktum gir bedre flyt og gjenspeiler den greske syntaksen."
+        "text": "For jeg har fått stor glede og trøst av din kjærlighet, fordi de helliges hjerter er blitt styrket ved deg, bror.",
+        "type": "error",
+        "severity": "major",
+        "explanation": "Gresk ἀναπέπαυται (fra ἀναπαύω) betyr 'har fått hvile/er blitt vederkvegt', ikke 'styrket'. Dette er samme ordstamme som brukes i vers 20, og bør oversettes konsekvent."
+      },
+      {
+        "text": "fordi de helliges hjerter har funnet hvile ved deg, bror.",
+        "type": "error",
+        "severity": "critical",
+        "explanation": "Den nåværende oversettelsen mangler den første delen av verset: 'χαρὰν γὰρ πολλὴν ἔσχον καὶ παράκλησιν ἐπὶ τῇ ἀγάπῃ σου' (For jeg har fått stor glede og trøst av din kjærlighet). Versjonshistorikken viser at 'styrket' ble endret til 'funnet hvile', men hele første halvdel av verset ser ut til å ha blitt fjernet ved en feil. Denne rettelsen beholder den korrekte oversettelsen 'funnet hvile' samtidig som den gjeninnfører den manglende teksten."
       }
     ]
   },
   {
-    "bookId": 50,
+    "bookId": 57,
     "chapterId": 1,
     "verseId": 8,
-    "text": "For Gud er mitt vitne på hvor sterkt jeg lengter etter dere alle med Kristi Jesu inderlige kjærlighet."
+    "text": "Selv om jeg i Kristus har full frimodighet til å pålegge deg det som er rett,"
   },
   {
-    "bookId": 50,
+    "bookId": 57,
     "chapterId": 1,
     "verseId": 9,
-    "text": "Og dette ber jeg om: at deres kjærlighet må bli rikere og rikere på kunnskap og all innsikt,"
+    "text": "vil jeg heller be deg for kjærlighetens skyld – jeg, Paulus, en gammel mann, og nå også Kristi Jesu fange –"
   },
   {
-    "bookId": 50,
+    "bookId": 57,
     "chapterId": 1,
     "verseId": 10,
-    "text": "slik at dere kan skjelne hva som er det beste, for at dere kan være rene og uten anstøt til Kristi dag,",
-    "versions": [
-      {
-        "text": "slik at dere kan prøve hva som er det beste, for at dere kan være rene og uten anstøt til Kristi dag,",
-        "explanation": "Det greske δοκιμάζειν τὰ διαφέροντα handler om å skjelne/bedømme mellom ting som er forskjellige. 'Skjelne' er mer presist enn 'prøve' i denne konteksten og er et vanlig norsk ord i kristen sammenheng."
-      }
-    ]
+    "text": "jeg ber deg for mitt barn, Onesimus, som jeg har blitt far til mens jeg var i lenker."
   },
   {
-    "bookId": 50,
+    "bookId": 57,
     "chapterId": 1,
     "verseId": 11,
-    "text": "fylt med rettferdighetens frukt som kommer ved Jesus Kristus, til Guds ære og pris."
+    "text": "Han var en gang unyttig for deg, men nå er han nyttig både for deg og for meg."
   },
   {
-    "bookId": 50,
+    "bookId": 57,
     "chapterId": 1,
     "verseId": 12,
-    "text": "Jeg vil dere skal vite, søsken, at det som har skjedd med meg, faktisk har ført til fremgang for evangeliet.",
-    "versions": [
-      {
-        "text": "Jeg vil at dere skal vite, søsken, at det som har skjedd med meg, faktisk har ført til fremgang for evangeliet.",
-        "explanation": "Små stilistisk forbedring: 'Jeg vil dere skal vite' flyter bedre på norsk enn 'Jeg vil at dere skal vite'."
-      }
-    ]
+    "text": "Jeg sender ham tilbake til deg, ham som er mitt eget hjerte."
   },
   {
-    "bookId": 50,
+    "bookId": 57,
     "chapterId": 1,
     "verseId": 13,
-    "text": "Det har blitt kjent i hele livvakten og for alle de andre at mine lenker er for Kristus."
+    "text": "Jeg ville gjerne ha beholdt ham hos meg, så han kunne tjene meg i ditt sted mens jeg er i lenker for evangeliets skyld."
   },
   {
-    "bookId": 50,
+    "bookId": 57,
     "chapterId": 1,
     "verseId": 14,
-    "text": "Og de fleste av søsknene i Herren har fått større frimodighet gjennom mine lenker til å forkynne Ordet enda mer uten frykt.",
-    "versions": [
-      {
-        "text": "Og de fleste av søsknene i Herren har fått større frimodighet gjennom mine lenker, slik at de enda mer våger å forkynne Ordet uten frykt.",
-        "explanation": "Omstruktureringen gir bedre muntlig flyt. 'Slik at de enda mer våger' er litt klønete; 'til å forkynne Ordet enda mer uten frykt' er mer naturlig norsk."
-      }
-    ]
+    "text": "Men uten ditt samtykke ville jeg ikke gjøre noe, så din gode gjerning ikke skulle skje av tvang, men av fri vilje."
   },
   {
-    "bookId": 50,
+    "bookId": 57,
     "chapterId": 1,
     "verseId": 15,
-    "text": "Noen forkynner riktignok Kristus av misunnelse og strid, men andre gjør det av velvilje."
+    "text": "For kanskje var det derfor han ble skilt fra deg en kort tid, for at du skulle få ham tilbake for evig,"
   },
   {
-    "bookId": 50,
+    "bookId": 57,
     "chapterId": 1,
     "verseId": 16,
-    "text": "Disse gjør det av kjærlighet, for de vet at jeg er satt til å forsvare evangeliet."
+    "text": "ikke lenger som en slave, men som noe mer enn en slave: en elsket bror – særlig for meg, men hvor mye mer for deg, både som menneske og i Herren."
   },
   {
-    "bookId": 50,
+    "bookId": 57,
     "chapterId": 1,
     "verseId": 17,
-    "text": "Men de andre forkynner Kristus av selviske ambisjoner, ikke med rene motiver, for de mener å kunne legge trengsel til mine lenker.",
+    "text": "Hvis du da regner meg som din partner, så ta imot ham som om det var meg.",
     "versions": [
       {
-        "text": "Men de andre forkynner Kristus av selviske ambisjoner, ikke med rene motiver, for de mener de kan gjøre mine lenker tyngre å bære.",
-        "explanation": "Det greske θλῖψιν ἐγείρειν betyr 'reise/vekke trengsel', altså å legge til mer lidelse. 'Gjøre mine lenker tyngre å bære' er en fri tolkning som mister nyansen om at de aktivt prøver å påføre mer lidelse."
+        "text": "Hvis du da regner meg som din medbror, så ta imot ham som om det var meg.",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "Gresk κοινωνόν betyr 'partner/deltaker i fellesskap', ikke 'medbror' (ἀδελφός). Ordet viser til deres felles delaktighet i troen og arbeidet, ikke bare broderskap. Alternativt: 'din partner' eller 'din medarbeider'."
+      },
+      {
+        "text": "Hvis du da regner meg som din fellesskapspartner, så ta imot ham som om det var meg.",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "Ordet 'fellesskapspartner' er noe tungvint for muntlig opplesning. 'Partner' er kortere og mer naturlig på norsk, og formidler fortsatt betydningen av κοινωνόν (deltaker/partner i fellesskap). Versjonshistorikken viser at 'medbror' ble avvist, men 'partner' ble nevnt som et alternativ."
       }
     ]
   },
   {
-    "bookId": 50,
+    "bookId": 57,
     "chapterId": 1,
     "verseId": 18,
-    "text": "Men hva så? Uansett, enten det er med baktanker eller i sannhet, så blir Kristus forkynt, og det gleder jeg meg over. Ja, jeg vil fortsette å glede meg,"
+    "text": "Og har han gjort deg urett eller skylder deg noe, så før det på min regning."
   },
   {
-    "bookId": 50,
+    "bookId": 57,
     "chapterId": 1,
     "verseId": 19,
-    "text": "for jeg vet at dette skal føre til frelse for meg, gjennom deres bønn og det Jesu Kristi Ånd gir.",
-    "versions": [
-      {
-        "text": "for jeg vet at dette skal føre til frelse for meg, gjennom deres bønn og Jesu Kristi Ånds hjelp.",
-        "explanation": "Det greske ἐπιχορηγία betyr 'forsyning/tilførsel', ikke bare 'hjelp'. 'Det Jesu Kristi Ånd gir' fanger bedre ideen om at Ånden forsyner/utruster."
-      }
-    ]
+    "text": "Jeg, Paulus, skriver dette med egen hånd: Jeg skal betale det tilbake. For ikke å si at du også skylder meg deg selv."
   },
   {
-    "bookId": 50,
+    "bookId": 57,
     "chapterId": 1,
     "verseId": 20,
-    "text": "Det er min ivrige forventning og mitt håp at jeg ikke skal bli til skamme i noe, men at Kristus nå som alltid skal bli opphøyet i mitt legeme med full frimodighet, enten det skjer ved liv eller ved død."
+    "text": "Ja, bror, la meg få denne glede av deg i Herren! Gi mitt hjerte ro i Kristus."
   },
   {
-    "bookId": 50,
+    "bookId": 57,
     "chapterId": 1,
     "verseId": 21,
-    "text": "For meg er livet Kristus, og døden en vinning."
+    "text": "I tillit til din lydighet skriver jeg til deg, for jeg vet at du vil gjøre enda mer enn det jeg ber om."
   },
   {
-    "bookId": 50,
+    "bookId": 57,
     "chapterId": 1,
     "verseId": 22,
-    "text": "Men hvis jeg lever videre i kjødet – dette betyr frukt av arbeid for meg – og hva jeg skal velge, vet jeg ikke."
+    "text": "Gjør samtidig i stand et gjesterom til meg, for jeg håper at jeg ved deres bønner skal bli gitt tilbake til dere."
   },
   {
-    "bookId": 50,
+    "bookId": 57,
     "chapterId": 1,
     "verseId": 23,
-    "text": "Jeg er dratt mellom de to: Jeg har lyst til å bryte opp og være hos Kristus, for det er så mye bedre.",
-    "versions": [
-      {
-        "text": "Jeg er dratt mellom de to: Jeg har lyst til å bryte opp og være hos Kristus, for det er langt bedre.",
-        "explanation": "Det greske πολλῷ μᾶλλον κρεῖσσον er en forsterket form som betyr 'meget mye bedre'. 'Så mye bedre' gjengir denne forsterkelsen bedre enn bare 'langt bedre'."
-      }
-    ]
+    "text": "Epafras, min medfange i Kristus Jesus, hilser deg,"
   },
   {
-    "bookId": 50,
+    "bookId": 57,
     "chapterId": 1,
     "verseId": 24,
-    "text": "Men å bli i kroppen er mer nødvendig for deres skyld."
+    "text": "og det samme gjør Markus, Aristarkus, Demas og Lukas, mine medarbeidere."
   },
   {
-    "bookId": 50,
+    "bookId": 57,
     "chapterId": 1,
     "verseId": 25,
-    "text": "Og fordi jeg er overbevist om dette, vet jeg at jeg skal bli og forbli hos dere alle, til fremgang og glede for deres tro,"
-  },
-  {
-    "bookId": 50,
-    "chapterId": 1,
-    "verseId": 26,
-    "text": "slik at deres stolthet i Kristus Jesus kan bli enda større på grunn av meg, når jeg igjen kommer til dere."
-  },
-  {
-    "bookId": 50,
-    "chapterId": 1,
-    "verseId": 27,
-    "text": "Bare før et liv som er verdig Kristi evangelium, slik at jeg, enten jeg kommer og ser dere eller er borte, får høre om dere at dere står fast i én ånd og med ett sinn kjemper sammen for troen på evangeliet.",
-    "versions": [
-      {
-        "text": "Bare lev et liv som er verdig Kristi evangelium, slik at jeg, enten jeg kommer og ser dere eller er borte, får høre om dere at dere står fast i én ånd og med ett sinn kjemper sammen for troen på evangeliet.",
-        "explanation": "Det greske πολιτεύεσθε har konnotasjoner av borgerskap og samfunnsliv. 'Før et liv' eller 'oppfør dere som borgere' ville være mer presist enn bare 'lev'. Dette er en paulinsk nøkkelterm som peker mot det himmelske borgerskap (jf. Fil 3:20)."
-      }
-    ]
-  },
-  {
-    "bookId": 50,
-    "chapterId": 1,
-    "verseId": 28,
-    "text": "La dere ikke skremme av motstanderne på noen måte. Dette er et tegn på fortapelse for dem, men på frelse for dere – og det fra Gud."
-  },
-  {
-    "bookId": 50,
-    "chapterId": 1,
-    "verseId": 29,
-    "text": "For dere har fått den nåde for Kristi skyld, ikke bare å tro på ham, men også å lide for ham.",
-    "versions": [
-      {
-        "text": "For dere har fått den nåde, ikke bare å tro på Kristus, men også å lide for ham.",
-        "explanation": "Det greske τὸ ὑπὲρ Χριστοῦ (det for Kristus) står før både 'tro' og 'lide'. Uttrykket 'for Kristi skyld' hører til hele gaven, ikke bare lidelsen. Dette gir en viktig teologisk nyanse."
-      }
-    ]
-  },
-  {
-    "bookId": 50,
-    "chapterId": 1,
-    "verseId": 30,
-    "text": "Dere har den samme kampen som dere så jeg hadde, og som dere nå hører at jeg fortsatt har."
+    "text": "Herren Jesu Kristi nåde være med deres ånd."
   }
 ]
