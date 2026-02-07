@@ -101,11 +101,58 @@ ${originalText}`;
     }
 }
 
+// Token estimation: Hebrew/Greek text tokenizes at ~0.8 chars per token (each character ≈ 1.25 tokens)
+const ESTIMATED_CHARS_PER_TOKEN = 0.8;
+const MAX_PROMPT_TOKENS = 180000; // Leave room for response within 200K limit
+const PROMPT_OVERHEAD_TOKENS = 3000; // Approximate tokens for prompt instructions
+
+// Read condensed version of a book (first verse of each chapter)
+function readCondensedBook(bookId) {
+    const source = getOriginalSource(bookId);
+    const book = books.find(b => b.id === bookId);
+    if (!book) return null;
+
+    const chapters = [];
+    for (let chapterId = 1; chapterId <= book.chapters; chapterId++) {
+        const sourceFile = path.join(__dirname, `bibles_raw/${source}/${bookId}/${chapterId}.json`);
+        if (fs.existsSync(sourceFile)) {
+            const verses = JSON.parse(fs.readFileSync(sourceFile, 'utf-8'));
+            const firstVerse = verses[0] ? `1: ${verses[0].text}` : '';
+            const lastVerse = verses.length > 1 ? `${verses[verses.length - 1].verseId}: ${verses[verses.length - 1].text}` : '';
+            chapters.push(`Kapittel ${chapterId} (${verses.length} vers):\n${firstVerse}${lastVerse ? '\n...\n' + lastVerse : ''}`);
+        }
+    }
+    return chapters.join('\n\n');
+}
+
 // Proofread prompt for book summaries
 function getProofreadPrompt(language, bookId, currentSummary, originalText) {
     const bookName = getBookName(bookId, language);
     const langCode = getLanguageCode(language);
     const originalLanguage = bookId <= 39 ? 'hebraisk' : 'gresk';
+
+    // Estimate if full text fits within token limits
+    const summaryTokens = Math.ceil(currentSummary.length / ESTIMATED_CHARS_PER_TOKEN);
+    const originalTokens = Math.ceil(originalText.length / ESTIMATED_CHARS_PER_TOKEN);
+    const totalEstimate = summaryTokens + originalTokens + PROMPT_OVERHEAD_TOKENS;
+    const textTooLarge = totalEstimate > MAX_PROMPT_TOKENS;
+
+    let referenceText;
+    let referenceNote;
+    if (textTooLarge) {
+        referenceText = readCondensedBook(bookId);
+        if (langCode === 'nb') {
+            referenceNote = `(Merk: Originalteksten er forkortet til første og siste vers per kapittel pga. størrelse. Bruk din kunnskap om ${bookName} for å verifisere nøyaktigheten.)`;
+        } else if (langCode === 'nn') {
+            referenceNote = `(Merk: Originalteksten er forkorta til fyrste og siste vers per kapittel pga. storleik. Bruk kunnskapen din om ${bookName} for å verifisere nøyaktigheita.)`;
+        } else {
+            referenceNote = `(Note: The original text has been condensed to first and last verse per chapter due to size. Use your knowledge of ${bookName} to verify accuracy.)`;
+        }
+        console.log(`  Note: Original text too large (~${originalTokens} tokens), using condensed version for proofreading`);
+    } else {
+        referenceText = originalText;
+        referenceNote = '';
+    }
 
     let basePrompt;
     let structureReminder;
@@ -143,6 +190,7 @@ If the summary lacks the structure or has errors, revisedSummary must correct th
     }
 
     return `${basePrompt}
+${referenceNote ? '\n' + referenceNote : ''}
 
 Your task is to review the summary and identify:
 - Factual errors or inaccuracies compared to the original text
@@ -176,7 +224,7 @@ IMPORTANT:
 - Focus on accuracy and faithfulness to the biblical text
 
 Original text:
-${originalText}
+${referenceText}
 
 Current summary:
 ${currentSummary}`;
