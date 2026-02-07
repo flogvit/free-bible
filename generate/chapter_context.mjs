@@ -287,10 +287,10 @@ Current context:
 ${currentContext}`;
 }
 
-async function doAnthropicCall(content) {
+async function doAnthropicCall(content, maxTokens = 4096) {
     return anthropic.messages.create({
         model: anthropicModel,
-        max_tokens: 4096,
+        max_tokens: maxTokens,
         messages: [
             {
                 role: "user",
@@ -329,12 +329,15 @@ function parseJsonResponse(text) {
     }
 }
 
-async function doAnthropicCallWithRetry(content, context = '') {
+async function doAnthropicCallWithRetry(content, context = '', maxTokens = 4096) {
     let lastError;
 
     for (let attempt = 1; attempt <= MAX_RETRIES; attempt++) {
         try {
-            const completion = await doAnthropicCall(content);
+            const completion = await doAnthropicCall(content, maxTokens);
+            if (completion.stop_reason === 'max_tokens') {
+                throw new Error(`Response truncated (hit ${maxTokens} token limit). Try increasing max_tokens.`);
+            }
             return completion.content[0].text;
         } catch (error) {
             lastError = error;
@@ -413,7 +416,7 @@ async function proofreadChapterContext(language, bookId, chapter, contextFilenam
     console.log(`Proofreading context for ${bookName} ${chapter}...`);
 
     const prompt = getProofreadPrompt(language, bookId, chapter, currentContext, originalText);
-    const responseText = await doAnthropicCallWithRetry(prompt, `proofread ${bookId}:${chapter}`);
+    const responseText = await doAnthropicCallWithRetry(prompt, `proofread ${bookId}:${chapter}`, 8192);
     const result = parseJsonResponse(responseText);
 
     // Save proofread results if requested
