@@ -3,17 +3,31 @@
     "bookId": 24,
     "chapterId": 17,
     "verseId": 1,
-    "text": "Judas synd er skrevet med jerngrifffel, med diamantspiss er den risset inn på deres hjerters tavle og på hornene på altrene deres."
+    "text": "Judas synd er skrevet med jernstift, risset inn med diamantspiss på deres hjerters tavle og på hornene på altrene deres.",
+    "versions": [
+      {
+        "text": "Judas synd er skrevet med jerngrifffel, med diamantspiss er den risset inn på deres hjerters tavle og på hornene på altrene deres.",
+        "type": "grammar",
+        "severity": "minor",
+        "explanation": "'Jerngrifffel' er et uvanlig sammensatt ord. 'Jernstift' er mer naturlig norsk. Dessuten er setningsstrukturen litt klønete med 'med diamantspiss er den risset inn' – det hebraiske har en jevnere flyt der diamantspissen er middelet for innrissingen."
+      }
+    ]
   },
   {
     "bookId": 24,
     "chapterId": 17,
     "verseId": 2,
-    "text": "Deres barn husker sine altere og sine Asjera-stolper ved grønne trær, på de høye haugene.",
+    "text": "For deres barn husker altrene sine og Asjera-stolpene sine ved grønne trær, på de høye haugene.",
     "versions": [
       {
         "text": "Slik deres barn husker sine altere og sine Asjera-stolper ved grønne trær, på de høye haugene.",
         "explanation": "«Slik» (כִּזְכֹּר) fungerer bedre oversatt som en beskrivelse av hvordan barna husker, men det hebraiske uttrykket er mer direkte. «Deres barn husker» gir en klarere og mer direkte oversettelse."
+      },
+      {
+        "text": "Deres barn husker sine altere og sine Asjera-stolper ved grønne trær, på de høye haugene.",
+        "type": "error",
+        "severity": "major",
+        "explanation": "כִּזְכֹּר inneholder prefikset כ (som/når) som bør gjenspeiles i oversettelsen. 'For' passer kontekstuelt som en forklaring til vers 1. Dessuten bør 'altere' være 'altrene' (bestemt form med etterstilt eiendomspronomen for naturlig norsk)."
       }
     ]
   },
@@ -51,11 +65,17 @@
     "bookId": 24,
     "chapterId": 17,
     "verseId": 7,
-    "text": "Velsignet er den mann som stoler på Herren, den som har Herren som sitt håp.",
+    "text": "Velsignet er den mann som stoler på Herren, den som har Herren som sin trygghet.",
     "versions": [
       {
         "text": "Velsignet er den mann som stoler på Herren, og som har Herren som sin tilflukt.",
         "explanation": "Det hebraiske מִבְטַח (mivtach) betyr 'tillit' eller 'håp', ikke 'tilflukt' (som ville vært מַחֲסֶה). For å skape kontrast med vers 5 (hvor samme rot בטח brukes) og unngå repetisjon av 'stoler/tilflukt', er 'håp' en bedre oversettelse som også skaper bedre poetisk parallellisme."
+      },
+      {
+        "text": "Velsignet er den mann som stoler på Herren, den som har Herren som sitt håp.",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "מִבְטַח (mivtach) betyr primært 'trygghet/tillit/sikkerhet' snarere enn 'håp' (som ville vært תִּקְוָה). Selv om versjonshistorikken viser at 'tilflukt' ble byttet ut, er 'trygghet' nærmere grunnbetydningen enn 'håp' og opprettholder den tematiske forbindelsen med רוט בטח."
       }
     ]
   },
@@ -111,7 +131,15 @@
     "bookId": 24,
     "chapterId": 17,
     "verseId": 13,
-    "text": "Herre, du Israels håp! Alle som forlater deg, skal bli til skamme. De som vender seg bort fra meg, skal skrives i jorden, for de har forlatt Herren, kilden med levende vann."
+    "text": "Herre, du Israels håp! Alle som forlater deg, skal bli til skamme. De som vender seg bort fra deg, skal skrives i støvet, for de har forlatt Herren, kilden med levende vann.",
+    "versions": [
+      {
+        "text": "Herre, du Israels håp! Alle som forlater deg, skal bli til skamme. De som vender seg bort fra meg, skal skrives i jorden, for de har forlatt Herren, kilden med levende vann.",
+        "type": "error",
+        "severity": "major",
+        "explanation": "To problemer: 1) וְסוּרַי betyr 'de som vender seg bort fra meg (Herren)' – men konteksten i Jeremias bønn taler til Herren, og Qere-formen peker på 'fra deg'. 2) בָּאָרֶץ יִכָּתֵבוּ – 'skrives i jorden/støvet' (i motsetning til livets bok) – 'jorden' kan fungere, men 'støvet' formidler kontrasten bedre."
+      }
+    ]
   },
   {
     "bookId": 24,

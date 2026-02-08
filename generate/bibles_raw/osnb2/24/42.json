@@ -27,7 +27,15 @@
     "bookId": 24,
     "chapterId": 42,
     "verseId": 3,
-    "text": "Måtte Herren din Gud vise oss veien vi skal gå og hva vi skal gjøre.»"
+    "text": "Måtte Herren din Gud vise oss veien vi skal gå, og hva vi skal gjøre.»",
+    "versions": [
+      {
+        "text": "Måtte Herren din Gud vise oss veien vi skal gå og hva vi skal gjøre.»",
+        "type": "grammar",
+        "severity": "minor",
+        "explanation": "Det bør være et komma før 'og hva vi skal gjøre' for å tydeliggjøre at dette er to separate ting de ber om: veien å gå og hva de skal gjøre."
+      }
+    ]
   },
   {
     "bookId": 24,
@@ -45,11 +53,17 @@
     "bookId": 24,
     "chapterId": 42,
     "verseId": 6,
-    "text": "Enten det er godt eller vondt, vil vi adlyde Herren vår Guds røst, han som vi sender deg til. For det vil gå oss godt når vi adlyder Herren vår Guds røst.»",
+    "text": "Enten det er godt eller vondt, vil vi adlyde Herren vår Guds røst, han som vi sender deg til, slik at det kan gå oss godt når vi adlyder Herren vår Guds røst.»",
     "versions": [
       {
         "text": "Enten det er godt eller ondt, vil vi adlyde Herren vår Guds røst, han som vi sender deg til. For det vil gå oss godt når vi adlyder Herren vår Guds røst.»",
         "explanation": "For bedre muntlig flyt på norsk bokmål er 'vondt' mer naturlig enn 'ondt' i denne konteksten med 'godt eller vondt' som fast uttrykk."
+      },
+      {
+        "text": "Enten det er godt eller vondt, vil vi adlyde Herren vår Guds røst, han som vi sender deg til. For det vil gå oss godt når vi adlyder Herren vår Guds røst.»",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "Det hebraiske למען אשר ייטב לנו כי נשמע uttrykker formål ('for at det skal gå oss godt'), ikke en selvstendig begrunnelse. Den nåværende oversettelsen med 'For det vil gå oss godt' gjør det til en påstand snarere enn et formål. Imidlertid har dette verset allerede én revisjon, og endringen er relativt liten, så dette er kun et forslag."
       }
     ]
   },
@@ -87,7 +101,15 @@
     "bookId": 24,
     "chapterId": 42,
     "verseId": 12,
-    "text": "Jeg vil vise dere barmhjertighet, så han forbarmer seg over dere og lar dere vende tilbake til deres eget land."
+    "text": "Jeg vil vise dere barmhjertighet, og han skal forbarme seg over dere og la dere vende tilbake til deres eget land.",
+    "versions": [
+      {
+        "text": "Jeg vil vise dere barmhjertighet, så han forbarmer seg over dere og lar dere vende tilbake til deres eget land.",
+        "type": "error",
+        "severity": "major",
+        "explanation": "Subjektet i וְרִחַם og וְהֵשִׁיב refererer til Babylons konge (omtalt i v.11). Oversettelsen 'så han forbarmer seg' er akseptabel, men det hebraiske וְהֵשִׁיב אֶתְכֶם אֶל־אַדְמַתְכֶם betyr at det er han (Babylons konge) som lar dem vende tilbake til sitt eget land. 'La dere vende tilbake' er bedre enn 'lar dere vende tilbake' da det er en mer direkte gjengivelse. Forskjellen er liten, men ellers er oversettelsen god."
+      }
+    ]
   },
   {
     "bookId": 24,
@@ -123,7 +145,15 @@
     "bookId": 24,
     "chapterId": 42,
     "verseId": 18,
-    "text": "For så sier Herren Sebaot, Israels Gud: Slik min vrede og harme ble utøst over Jerusalems innbyggere, slik skal min harme utøses over dere når dere kommer til Egypt. Dere skal bli til en forbannelse, til forferdelse, til spott og til skam, og dere skal aldri mer se dette stedet."
+    "text": "For så sier Herren Sebaot, Israels Gud: Slik min vrede og harme ble utøst over Jerusalems innbyggere, slik skal min harme utøses over dere når dere kommer til Egypt. Dere skal bli til en forbannelse, til forferdelse, til en spott og til vanære, og dere skal aldri mer se dette stedet.",
+    "versions": [
+      {
+        "text": "For så sier Herren Sebaot, Israels Gud: Slik min vrede og harme ble utøst over Jerusalems innbyggere, slik skal min harme utøses over dere når dere kommer til Egypt. Dere skal bli til en forbannelse, til forferdelse, til spott og til skam, og dere skal aldri mer se dette stedet.",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "Det hebraiske חֶרְפָּה betyr vanære/skjensel snarere enn bare 'skam'. Og קְלָלָה betyr forbannelse/ed, mens שַׁמָּה betyr ødeleggelse/forferdelse. Oversettelsen bruker 'spott' for קְלָלָה, men det hebraiske ordet betyr snarere 'forbannelse'. Listen har allerede 'forbannelse' for אָלָה (ed/forbannelse), så det oppstår en dobling. Bedre: אָלָה = 'en ed', קְלָלָה = 'en forbannelse'. Også 'skam' for חֶרְפָּה er akseptabelt, men 'vanære' er mer presist."
+      }
+    ]
   },
   {
     "bookId": 24,

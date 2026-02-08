@@ -135,11 +135,17 @@
     "bookId": 24,
     "chapterId": 52,
     "verseId": 23,
-    "text": "Det var nittiseks granatepler som vendte utover.",
+    "text": "Det var nittiseks granatepler som vendte utover. I alt var det hundre granatepler på flettverket rundt omkring.",
     "versions": [
       {
         "text": "Det var nittiseks granatepler på sidene. I alt var det hundre granatepler rundt flettverket.",
         "explanation": "Det hebraiske ordet רוּחָה (rucha) betyr 'mot vinden' eller 'utover/utad', altså de granateplene som var synlige utenfra. 'På sidene' er en fortolkning, men 'som vendte utover' gjengir bedre betydningen av at dette var de synlige granateplene på utsiden av flettverket."
+      },
+      {
+        "text": "Det var nittiseks granatepler som vendte utover.",
+        "type": "error",
+        "severity": "major",
+        "explanation": "Den nåværende versjonen utelater den siste delen av verset som oppgir at det totale antallet granatepler var hundre på flettverket rundt omkring (כָּל־הָרִמּוֹנִים מֵאָה עַל־הַשְּׂבָכָה סָבִיב). Den forrige versjonen hadde denne informasjonen, og endringsnotatet forklarer kun endringen av 'på sidene' til 'som vendte utover' – det var ikke intensjonen å fjerne totaltallet. Denne foreslåtte versjonen bruker 'på flettverket rundt omkring' i stedet for den tidligere formuleringen 'rundt flettverket'."
       }
     ]
   },
@@ -201,7 +207,15 @@
     "bookId": 24,
     "chapterId": 52,
     "verseId": 33,
-    "text": "Han fikk legge av fangedrakten, og han spiste ved kongens bord alle sine levedager."
+    "text": "Han fikk legge av fangedrakten og spiste regelmessig ved kongens bord alle sine levedager.",
+    "versions": [
+      {
+        "text": "Han fikk legge av fangedrakten, og han spiste ved kongens bord alle sine levedager.",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "Uttrykket לְפָנָיו תָּמִיד betyr 'foran ham (kongen) stadig/alltid'. Oversettelsen 'ved kongens bord' er en god fortolkning, men 'regelmessig' fanger bedre opp תָּמִיד (stadig/alltid). Dessuten kan kommaet og 'og han' forenkles til 'og' for bedre flyt."
+      }
+    ]
   },
   {
     "bookId": 24,

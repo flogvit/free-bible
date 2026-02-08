@@ -21,11 +21,17 @@
     "bookId": 24,
     "chapterId": 14,
     "verseId": 3,
-    "text": "De fornemme sender sine tjenere etter vann. De kommer til brønnene, men finner ikke vann. De vender tilbake med tomme kar. De er skamfulle og ydmyket, og dekker hodene sine.",
+    "text": "De fornemme sender sine unge etter vann. De kommer til brønnene, men finner ikke vann. De vender tilbake med tomme kar. De er skamfulle og ydmyket, og dekker hodene sine.",
     "versions": [
       {
         "text": "De fornemme sender sine unge tjenere etter vann. De kommer til brønnene, men finner ikke vann. De vender tilbake med tomme kar. De skammer seg og blir til skamme, og dekker hodene sine.",
         "explanation": "Uttrykket 'skammer seg og blir til skamme' er redundant på norsk. De to hebraiske verbene (בֹּשׁוּ וְהָכְלְמוּ) uttrykker nyanser av skam og ydmykelse. 'Skamfulle og ydmyket' gjengir begge nyansene bedre."
+      },
+      {
+        "text": "De fornemme sender sine tjenere etter vann. De kommer til brønnene, men finner ikke vann. De vender tilbake med tomme kar. De er skamfulle og ydmyket, og dekker hodene sine.",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "Det hebraiske צְעִירֵיהֶם betyr 'sine unge/underordnede', ikke bare 'tjenere'. Ordet betyr spesifikt 'de unge' eller 'de yngre'. 'Tjenere' er en tolkning som går lenger enn originalen."
       }
     ]
   },
@@ -33,7 +39,15 @@
     "bookId": 24,
     "chapterId": 14,
     "verseId": 4,
-    "text": "Fordi jorden er sprukket, siden det ikke har vært regn i landet, skammer bøndene seg og dekker hodene sine."
+    "text": "Fordi bakken er sprukket, siden det ikke har vært regn i landet, skammer bøndene seg og dekker hodene sine.",
+    "versions": [
+      {
+        "text": "Fordi jorden er sprukket, siden det ikke har vært regn i landet, skammer bøndene seg og dekker hodene sine.",
+        "type": "grammar",
+        "severity": "minor",
+        "explanation": "Det hebraiske חַתָּה betyr 'forskrekket/forferdet/slått ned', ikke 'sprukket'. Bakken er som knust/forferdet fordi det ikke er regn. Flere oversettelser har 'oppsprukket' som en fri tolkning, men den hebraiske grunnteksten bruker et ord som betyr 'forskrekket' – bakken er 'forferdet' som en poetisk personifisering."
+      }
+    ]
   },
   {
     "bookId": 24,
@@ -105,7 +119,15 @@
     "bookId": 24,
     "chapterId": 14,
     "verseId": 16,
-    "text": "Og folket som de profeterer for, skal ligge slengt på Jerusalems gater på grunn av hungersnøden og sverdet. Det skal ikke være noen til å begrave dem – verken dem, deres koner, sønner eller døtre. Jeg skal øse ut over dem den ulykken de fortjener."
+    "text": "Og folket som de profeterer for, skal ligge slengt på Jerusalems gater på grunn av hungersnøden og sverdet. Det skal ikke være noen til å begrave dem – verken dem, deres koner, sønner eller døtre. Jeg skal øse deres egen ondskap ut over dem.",
+    "versions": [
+      {
+        "text": "Og folket som de profeterer for, skal ligge slengt på Jerusalems gater på grunn av hungersnøden og sverdet. Det skal ikke være noen til å begrave dem – verken dem, deres koner, sønner eller døtre. Jeg skal øse ut over dem den ulykken de fortjener.",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "Det hebraiske אֶת־רָעָתָם betyr 'deres ondskap/det onde de har gjort'. Teksten sier at Gud øser deres egen ondskap (konsekvensene av den) tilbake over dem, ikke at ulykken er noe de 'fortjener' – det siste er en tolkende tilføyelse."
+      }
+    ]
   },
   {
     "bookId": 24,
@@ -123,11 +145,17 @@
     "bookId": 24,
     "chapterId": 14,
     "verseId": 18,
-    "text": "Går jeg ut på marken, ser jeg dem som er drept med sverd. Går jeg inn i byen, ser jeg dem som er syke av sult. For både profet og prest driver handel i landet uten å forstå.",
+    "text": "Går jeg ut på marken, ser jeg dem som er drept med sverd. Går jeg inn i byen, ser jeg dem som er syke av sult. For både profet og prest drar rundt i et land de ikke kjenner.",
     "versions": [
       {
         "text": "Går jeg ut på marken, ser jeg dem som er drept med sverd. Går jeg inn i byen, ser jeg dem som er syke av sult. For både profet og prest vandrer omkring i landet uten å forstå.",
         "explanation": "Det hebraiske סָחֲרוּ (fra סחר) betyr primært 'å drive handel' eller 'handle med'. Uttrykket antyder at profetene og prestene driver sin 'virksomhet' (kanskje selger sine tjenester) uten virkelig forståelse. 'Vandrer omkring' mister denne kommersielle konnotasjonen."
+      },
+      {
+        "text": "Går jeg ut på marken, ser jeg dem som er drept med sverd. Går jeg inn i byen, ser jeg dem som er syke av sult. For både profet og prest driver handel i landet uten å forstå.",
+        "type": "theological",
+        "severity": "major",
+        "explanation": "Uttrykket סָחֲרוּ אֶל־אֶרֶץ וְלֹא יָדָעוּ er svært omdiskutert, men mange kommentatorer forstår det som at profet og prest vandrer/drar til et land de ikke kjenner (dvs. eksil/deportasjon). Selv om den forrige endringen bevisst valgte 'driver handel', er denne tolkningen problematisk fordi frasen אֶל־אֶרֶץ ('til et land') med וְלֹא יָדָעוּ ('og ikke kjente') mest naturlig leses som at de drar til et ukjent land. Uansett er dette et vanskelig vers, og gjeldende versjon ble bevisst valgt."
       }
     ]
   },

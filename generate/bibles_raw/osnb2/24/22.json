@@ -15,11 +15,17 @@
     "bookId": 24,
     "chapterId": 22,
     "verseId": 3,
-    "text": "Undertrykk ikke innflytteren, den farløse eller enken, og bruk ikke vold mot dem.",
+    "text": "Så sier Herren: Gjør det som er rett og rettferdig, redd den som blir plyndret fra voldsmannens hånd. Undertrykk ikke innflytteren, den farløse eller enken, og bruk ikke vold mot dem. Utgyt ikke uskyldig blod på dette stedet.",
     "versions": [
       {
         "text": "Så sier Herren: Gjør det som er rett og rettferdig, redd den som blir plyndret fra voldsmannens hånd. Undertykk ikke innflytteren, den farløse eller enken, og bruk ikke vold mot dem. Utgyt ikke uskyldig blod på dette stedet.",
         "explanation": "Stavefeil: 'Undertykk' skal være 'Undertrykk' med dobbel 'r'."
+      },
+      {
+        "text": "Undertrykk ikke innflytteren, den farløse eller enken, og bruk ikke vold mot dem.",
+        "type": "error",
+        "severity": "critical",
+        "explanation": "Den nåværende versjonen mangler størstedelen av verset. Den forrige revisjonen rettet kun en stavefeil ('Undertykk' → 'Undertrykk'), men det ser ut til at resten av verset (åpningssetningen 'Så sier Herren: Gjør det som er rett og rettferdig, redd den som blir plyndret fra voldsmannens hånd' og avslutningen 'Utgyt ikke uskyldig blod på dette stedet') ble utilsiktet fjernet. Hele verset må gjenopprettes med den rettede stavemåten."
       }
     ]
   },
@@ -63,11 +69,17 @@
     "bookId": 24,
     "chapterId": 22,
     "verseId": 10,
-    "text": "Gråt ikke over den døde, sørg ikke over ham. Gråt heller over ham som drar bort, for han skal aldri vende tilbake eller se sitt fedreland igjen.",
+    "text": "Gråt ikke over den døde, sørg ikke over ham. Gråt heller over ham som drar bort, for han skal aldri vende tilbake eller se sitt fødeland igjen.",
     "versions": [
       {
         "text": "Gråt ikke over den døde, sørg ikke over ham. Gråt heller over ham som drar bort, for han skal aldri vende tilbake og se sitt fedreland igjen.",
         "explanation": "Grammatisk forbedring for flyt: 'og se' bør være 'eller se' for å bedre uttrykke at begge handlinger er umulige (han skal verken vende tilbake eller se landet)."
+      },
+      {
+        "text": "Gråt ikke over den døde, sørg ikke over ham. Gråt heller over ham som drar bort, for han skal aldri vende tilbake eller se sitt fedreland igjen.",
+        "type": "grammar",
+        "severity": "minor",
+        "explanation": "Stavefeil: 'aldri' er feilstavet, det skal være 'aldri' – dette er faktisk korrekt stavemåte. Men 'fedreland' bør vurderes: det hebraiske מוֹלַדְתּוֹ betyr bokstavelig 'fødested/fødeland', og 'fødeland' er mer presist enn 'fedreland'."
       }
     ]
   },
@@ -183,11 +195,17 @@
     "bookId": 24,
     "chapterId": 22,
     "verseId": 28,
-    "text": "Er denne mannen Konja et foraktet, knust leirkar, et kar ingen vil ha?",
+    "text": "Er denne mannen Konja et foraktet, knust leirkar, et kar ingen vil ha? Hvorfor er han og hans etterkommere kastet bort og slengt til et land de ikke kjenner?",
     "versions": [
       {
         "text": "Er denne mannen Konja et foraktet, knust avgudsbilde, et kar ingen vil ha? Hvorfor er han og hans etterkommere kastet bort og slengt til et land de ikke kjenner?",
         "explanation": "Det hebraiske עֶצֶב (etsev) betyr her 'leirkar' eller 'krukke', ikke 'avgudsbilde'. Selv om ordet kan bety avgudsbilde i andre kontekster, er metaforen her om et verdiløst, ødelagt kar - parallelt med 'et kar ingen vil ha'. 'Avgudsbilde' gir feil teologisk konnotasjon."
+      },
+      {
+        "text": "Er denne mannen Konja et foraktet, knust leirkar, et kar ingen vil ha?",
+        "type": "error",
+        "severity": "major",
+        "explanation": "Den andre halvdelen av verset mangler: 'מַדּוּעַ הוּטֲלוּ הוּא וְזַרְעוֹ וְהֻשְׁלְכוּ עַל־הָאָרֶץ אֲשֶׁר לֹא־יָדָעוּ' (Hvorfor er han og hans etterkommere kastet bort og slengt til et land de ikke kjenner?). Revisjonshistorikken viser at kun 'avgudsbilde' ble endret til 'leirkar', men den andre setningen ble utilsiktet fjernet."
       }
     ]
   },

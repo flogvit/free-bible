@@ -57,7 +57,15 @@
     "bookId": 24,
     "chapterId": 48,
     "verseId": 9,
-    "text": "Gi Moab et gravmerke, for det skal helt gå til grunne! Byene skal bli til ødemark, uten noen som bor der."
+    "text": "Gi Moab vinger, for det må fly av sted! Byene skal bli til ødemark, uten noen som bor der.",
+    "versions": [
+      {
+        "text": "Gi Moab et gravmerke, for det skal helt gå til grunne! Byene skal bli til ødemark, uten noen som bor der.",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "Det hebraiske 'צִיץ' (tsits) betyr 'blomst' eller 'vinger' (i konteksten av å fly bort), ikke 'gravmerke'. Uttrykket handler om at Moab trenger vinger fordi det må fly bort – det vil si, det skal forlate landet. 'Gravmerke' er en fri gjengivelse som ikke reflekterer grunnteksten korrekt."
+      }
+    ]
   },
   {
     "bookId": 24,
@@ -69,17 +77,31 @@
     "bookId": 24,
     "chapterId": 48,
     "verseId": 11,
-    "text": "Moab har levd trygt fra sin ungdom av, har fått hvile på sin bunnfall. Det er ikke blitt helt fra kar til kar, og har ikke gått i eksil. Derfor har det beholdt sin smak, og duften er uforandret."
+    "text": "Moab har levd trygt fra sin ungdom av, har fått hvile på sin bunnfall. Det er ikke blitt helt over fra kar til kar, og har ikke gått i eksil. Derfor har det beholdt sin smak, og duften er uforandret.",
+    "versions": [
+      {
+        "text": "Moab har levd trygt fra sin ungdom av, har fått hvile på sin bunnfall. Det er ikke blitt helt fra kar til kar, og har ikke gått i eksil. Derfor har det beholdt sin smak, og duften er uforandret.",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "Bildet er om vin som helles over fra ett kar til et annet (for å rense den). 'Helt fra' mangler preposisjonen 'over' som bedre fanger meningen av å overføre/helle fra et kar til et annet."
+      }
+    ]
   },
   {
     "bookId": 24,
     "chapterId": 48,
     "verseId": 12,
-    "text": "Se, derfor kommer dager, sier Herren, da jeg sender folk som skjenker vinen skjevt. De skal skjenke det skjevt og tømme dets kar og knuse dets krukker.",
+    "text": "Se, derfor kommer dager, sier Herren, da jeg sender folk som velter det over. De skal velte det og tømme dets kar og knuse dets krukker.",
     "versions": [
       {
         "text": "Se, derfor kommer dager, sier Herren, da jeg sender folk som heller vinen ut. De skal helle det ut og tømme dets kar og knuse dets krukker.",
         "explanation": "Det hebraiske 'צֹעִים' refererer til de som heller/skjenker skjevt eller ujamnt - et ordspill på det foregående verset om vin. Oversettelsen kan gjenspeile dette ordspillet bedre."
+      },
+      {
+        "text": "Se, derfor kommer dager, sier Herren, da jeg sender folk som skjenker vinen skjevt. De skal skjenke det skjevt og tømme dets kar og knuse dets krukker.",
+        "type": "error",
+        "severity": "major",
+        "explanation": "Det hebraiske 'צֹעִים' betyr 'de som velter/tipper over' (kar for å tømme dem), ikke 'skjenker skjevt'. Bildet fra v.11 fortsetter: vinen/Moab som har fått hvile på sin bunnfall, skal nå veltes/tømmes over. 'Skjenker skjevt' gir en unaturlig norsk formulering og misforstår metaforen."
       }
     ]
   },
@@ -195,7 +217,15 @@
     "bookId": 24,
     "chapterId": 48,
     "verseId": 30,
-    "text": "Jeg kjenner dets frekkhet, sier Herren, men det er tomt skryt. Dets prat fører ikke til noe."
+    "text": "Jeg kjenner dets overmot, sier Herren, men det er uten grunn. Dets skryt fører ikke til noe.",
+    "versions": [
+      {
+        "text": "Jeg kjenner dets frekkhet, sier Herren, men det er tomt skryt. Dets prat fører ikke til noe.",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "Det hebraiske 'עֶבְרָתוֹ' betyr 'dets raseri/overmot/harme', ikke direkte 'frekkhet'. Og 'וְלֹא־כֵן' betyr 'men det er ikke rett/uten grunn' snarere enn at det er 'tomt skryt'. 'Overmot' passer bedre i konteksten av de foregående versene om hovmod."
+      }
+    ]
   },
   {
     "bookId": 24,
@@ -207,7 +237,15 @@
     "bookId": 24,
     "chapterId": 48,
     "verseId": 32,
-    "text": "Med Jasers gråt gråter jeg over deg, Sibmas vintre! Dine ranker nådde over havet, de strakte seg til Jaserhavet. Over din frukt og din vinhøst har ødeleggeren falt."
+    "text": "Med Jasers gråt gråter jeg over deg, Sibmas vintre! Dine ranker nådde over havet, de strakte seg til Jasers hav. Over din frukt og din vinhøst har ødeleggeren falt.",
+    "versions": [
+      {
+        "text": "Med Jasers gråt gråter jeg over deg, Sibmas vintre! Dine ranker nådde over havet, de strakte seg til Jaserhavet. Over din frukt og din vinhøst har ødeleggeren falt.",
+        "type": "error",
+        "severity": "minor",
+        "explanation": "'יָם יַעְזֵר' betyr 'Jasers hav/sjø', ikke 'Jaserhavet' som et sammensatt ord. Det refererer til sjøen/dammen ved Jaser. 'Jasers hav' er mer korrekt som to adskilte ord."
+      }
+    ]
   },
   {
     "bookId": 24,
@@ -285,7 +323,15 @@
     "bookId": 24,
     "chapterId": 48,
     "verseId": 45,
-    "text": "I Hesjbons skygge står flyktningene uten kraft. For ild går ut fra Hesjbon, en flamme fra Sihons hus. Den fortærer Moabs tinning og issen på opprørernes sønner."
+    "text": "I Hesjbons skygge står flyktningene uten kraft. For ild går ut fra Hesjbon, en flamme fra Sihons midte. Den fortærer Moabs tinning og issen på opprørernes sønner.",
+    "versions": [
+      {
+        "text": "I Hesjbons skygge står flyktningene uten kraft. For ild går ut fra Hesjbon, en flamme fra Sihons hus. Den fortærer Moabs tinning og issen på opprørernes sønner.",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "Det hebraiske 'מִבֵּין' betyr 'fra midten av' eller 'fra blant', ikke 'fra huset til'. 'Sihons hus' er en feiloversettelse av 'מִבֵּין סִיחוֹן' som betyr 'fra Sihons midte/innside'."
+      }
+    ]
   },
   {
     "bookId": 24,

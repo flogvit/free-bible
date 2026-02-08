@@ -63,7 +63,15 @@
     "bookId": 24,
     "chapterId": 25,
     "verseId": 9,
-    "text": "se, så sender jeg bud og henter alle folkene fra nord, sier Herren, og til Nebukadnesar, kongen av Babylon, min tjener. Jeg fører dem mot dette landet og mot dets innbyggere og mot alle disse folkene rundt omkring. Jeg skal vie dem til ødeleggelse og gjøre dem til en skrekk og til spott og til evige ruiner."
+    "text": "se, jeg sender bud og henter alle slektene fra nord, sier Herren, og Nebukadnesar, kongen av Babylon, min tjener.",
+    "versions": [
+      {
+        "text": "se, så sender jeg bud og henter alle folkene fra nord, sier Herren, og til Nebukadnesar, kongen av Babylon, min tjener. Jeg fører dem mot dette landet og mot dets innbyggere og mot alle disse folkene rundt omkring. Jeg skal vie dem til ødeleggelse og gjøre dem til en skrekk og til spott og til evige ruiner.",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "Hebraisk מִשְׁפְּחוֹת betyr 'slekter/ætter', ikke 'folkene'. Dessuten er 'og til Nebukadnesar' en merkelig konstruksjon – det hebraiske וְאֶל her fungerer som 'og (sender bud) til', men i konteksten er Nebukadnesar et objekt i oppregningen, altså 'og Nebukadnesar'. Frasen 'så sender jeg' er unødvendig dobbel – 'jeg sender' er tilstrekkelig."
+      }
+    ]
   },
   {
     "bookId": 24,
@@ -99,7 +107,15 @@
     "bookId": 24,
     "chapterId": 25,
     "verseId": 14,
-    "text": "For også de skal bli trellbundet av mange folkeslag og mektige konger. Jeg skal gjengjelde dem etter deres gjerninger og deres henders verk."
+    "text": "For også dem skal mange folkeslag og mektige konger gjøre til slaver. Jeg skal gjengjelde dem etter deres gjerninger og deres henders verk.",
+    "versions": [
+      {
+        "text": "For også de skal bli trellbundet av mange folkeslag og mektige konger. Jeg skal gjengjelde dem etter deres gjerninger og deres henders verk.",
+        "type": "error",
+        "severity": "major",
+        "explanation": "Hebraisk עָבְדוּ־בָם betyr 'de (mange folkeslag og mektige konger) skal bruke dem (babylonerne) som slaver/tjenere'. Subjektet er 'mange folkeslag og mektige konger' som skal gjøre babylonerne til slaver – ikke omvendt. Den nåværende oversettelsen snur setningsstrukturen."
+      }
+    ]
   },
   {
     "bookId": 24,
@@ -219,7 +235,15 @@
     "bookId": 24,
     "chapterId": 25,
     "verseId": 34,
-    "text": "Jamre dere, dere gjetere, og skrik! Velt dere i støvet, dere som er ledere for hjorden! For tiden er kommet da dere skal slaktes. Dere skal bli spredt og falle som kostbare kar."
+    "text": "Jamre dere, dere gjetere, og skrik! Velt dere i støvet, dere som er ledere for hjorden! For tiden er kommet da dere skal slaktes. Dere skal spres, og dere skal falle som kostbare kar som knuses.",
+    "versions": [
+      {
+        "text": "Jamre dere, dere gjetere, og skrik! Velt dere i støvet, dere som er ledere for hjorden! For tiden er kommet da dere skal slaktes. Dere skal bli spredt og falle som kostbare kar.",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "Hebraisk וּתְפוֹצוֹתִיכֶם kan leses som 'jeg skal spre/knuse dere'. Bildet med 'kostbare kar' (כִּכְלִי חֶמְדָּה) innebærer at de knuses/ødelegges – et fint kar som faller, knuses. Å legge til 'som knuses' gjør bildet tydeligere for leseren, selv om det er implisitt."
+      }
+    ]
   },
   {
     "bookId": 24,
@@ -249,11 +273,17 @@
     "bookId": 24,
     "chapterId": 25,
     "verseId": 38,
-    "text": "Som en løve har han forlatt sitt skjulested, for deres land er blitt til ødemark på grunn av det herjende sverdet og på grunn av hans brennende vrede.",
+    "text": "Som en løve har han forlatt sitt skjulested, for deres land er blitt til ødemark på grunn av det undertrykkende sverdet og på grunn av hans brennende vrede.",
     "versions": [
       {
         "text": "Som en løve har han forlatt sin skjulested, for deres land er blitt til ødemark på grunn av det herjende sverdet og på grunn av hans brennende vrede.",
         "explanation": "Hebraisk 'חֲרוֹן הַיּוֹנָה' (charon hayonah) betyr 'det undertrykkende/voldsomme sverdet' - ordet 'יוֹנָה' her refererer til undertrykkelse/vold, ikke 'herje'. Også rettet 'sin' til 'sitt' for å samsvare med intetkjønnssubstantivet 'skjulested'."
+      },
+      {
+        "text": "Som en løve har han forlatt sitt skjulested, for deres land er blitt til ødemark på grunn av det herjende sverdet og på grunn av hans brennende vrede.",
+        "type": "theological",
+        "severity": "minor",
+        "explanation": "Versjonshistorikken nevner at יוֹנָה her refererer til 'undertrykkelse/vold', ikke 'herje'. Mange oversettere leser חֲרוֹן הַיּוֹנָה som 'det undertrykkende/voldelige sverdet' (fra rot ינה). Revisjonsgrunnen nevnte dette, men oversettelsen beholdt 'herjende' i stedet for 'undertrykkende'. Det bør rettes for konsistens med den oppgitte begrunnelsen."
       }
     ]
   }

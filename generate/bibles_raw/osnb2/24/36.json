@@ -135,7 +135,15 @@
     "bookId": 24,
     "chapterId": 36,
     "verseId": 20,
-    "text": "Etter at de hadde lagt rullen til oppbevaring i kammeret til skriveren Elisjama, gikk de inn til kongen i forgården og fortalte ham alt som hadde skjedd."
+    "text": "De gikk inn til kongen i forgården, etter å ha lagt rullen til oppbevaring i kammeret til skriveren Elisjama, og fortalte kongen alle ordene.",
+    "versions": [
+      {
+        "text": "Etter at de hadde lagt rullen til oppbevaring i kammeret til skriveren Elisjama, gikk de inn til kongen i forgården og fortalte ham alt som hadde skjedd.",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "Den hebraiske teksten sier de gikk inn til kongen i forgården (חָצֵרָה) og fortalte ordene i kongens ører (בְּאָזְנֵי הַמֶּלֶךְ אֵת כָּל־הַדְּבָרִים). Oversettelsen sier 'fortalte ham alt som hadde skjedd', men originalen sier mer bokstavelig 'fortalte kongen alle ordene'. Dessuten er rekkefølgen i originalen at de gikk til kongen i forgården først, deretter nevnes at de hadde lagt rullen i oppbevaring – ikke omvendt."
+      }
+    ]
   },
   {
     "bookId": 24,
@@ -147,7 +155,15 @@
     "bookId": 24,
     "chapterId": 36,
     "verseId": 22,
-    "text": "Kongen satt i vinterhuset – det var den niende måneden – og det brant en ild i ovnen foran ham."
+    "text": "Kongen satt i vinterhuset – det var den niende måneden – og ovnen foran ham var tent.",
+    "versions": [
+      {
+        "text": "Kongen satt i vinterhuset – det var den niende måneden – og det brant en ild i ovnen foran ham.",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "Det hebraiske אָח (ach) refererer til en ildpanne eller fyrfat/ovn, og מְבֹעָרֶת betyr at den var tent/brennende. Uttrykket 'det brant en ild i ovnen' legger til 'en ild' som ikke er nødvendig – originalen sier simpelthen at ovnen/ildpannen foran ham var tent."
+      }
+    ]
   },
   {
     "bookId": 24,
@@ -207,13 +223,29 @@
     "bookId": 24,
     "chapterId": 36,
     "verseId": 30,
-    "text": "Derfor sier Herren om Jojakim, Judas konge: Han skal ikke ha noen etterkommer som sitter på Davids trone. Hans lik skal kastes ut og ligge i heten om dagen og i frosten om natten."
+    "text": "Derfor sier Herren om Jojakim, Judas konge: Ingen av hans etterkommere skal sitte på Davids trone. Hans lik skal kastes ut og ligge i heten om dagen og i frosten om natten.",
+    "versions": [
+      {
+        "text": "Derfor sier Herren om Jojakim, Judas konge: Han skal ikke ha noen etterkommer som sitter på Davids trone. Hans lik skal kastes ut og ligge i heten om dagen og i frosten om natten.",
+        "type": "error",
+        "severity": "major",
+        "explanation": "Det hebraiske לֹא־יִהְיֶה־לּוֹ יוֹשֵׁב עַל־כִּסֵּא דָוִד betyr 'han skal ikke ha noen som sitter på Davids trone', altså ingen av hans etterkommere skal sitte der. Den nåværende oversettelsen 'Han skal ikke ha noen etterkommer som sitter på Davids trone' kan misforstås som at han ikke vil ha noen etterkommere i det hele tatt. 'Ingen av hans etterkommere skal sitte på Davids trone' er klarere og mer presist."
+      }
+    ]
   },
   {
     "bookId": 24,
     "chapterId": 36,
     "verseId": 31,
-    "text": "Jeg vil straffe ham og hans etterkommere og hans tjenere for deres skyld. Jeg vil la all den ulykken jeg har varslet, komme over dem og over Jerusalems innbyggere og over Judas menn – for de ville ikke høre."
+    "text": "Jeg vil straffe ham og hans etterkommere og hans tjenere for deres synd. Jeg vil la all den ulykken jeg har varslet, komme over dem og over Jerusalems innbyggere og over Judas menn – for de ville ikke høre.",
+    "versions": [
+      {
+        "text": "Jeg vil straffe ham og hans etterkommere og hans tjenere for deres skyld. Jeg vil la all den ulykken jeg har varslet, komme over dem og over Jerusalems innbyggere og over Judas menn – for de ville ikke høre.",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "Det hebraiske עֲוֺנָם betyr 'deres synd/misgjerning', ikke 'deres skyld'. 'Skyld' (אַשְׁמָה) er et annet hebraisk ord. 'Synd' eller 'misgjerning' er mer presist her."
+      }
+    ]
   },
   {
     "bookId": 24,

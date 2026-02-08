@@ -39,7 +39,15 @@
     "bookId": 24,
     "chapterId": 51,
     "verseId": 6,
-    "text": "Fly ut av Babel! Redd livet, hver og en! Gå ikke til grunne i dets skyld! For dette er Herrens hevntid, han gjengjelder det for det de har gjort."
+    "text": "Fly ut av Babel! Redd livet, hver og en! Gå ikke til grunne i dets skyld! For dette er Herrens hevntid – han gjengjelder det fullt ut.",
+    "versions": [
+      {
+        "text": "Fly ut av Babel! Redd livet, hver og en! Gå ikke til grunne i dets skyld! For dette er Herrens hevntid, han gjengjelder det for det de har gjort.",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "גְּמ֕וּל ה֥וּא מְשַׁלֵּ֖ם לָֽהּ betyr 'gjengjeldelse gir han det' – altså han gjengjelder Babel. 'For det de har gjort' er en tolkning som ikke finnes direkte i teksten. 'Han gjengjelder det fullt ut' er nærmere originalen."
+      }
+    ]
   },
   {
     "bookId": 24,
@@ -69,7 +77,15 @@
     "bookId": 24,
     "chapterId": 51,
     "verseId": 11,
-    "text": "Skjerp pilene, fyll skjoldene!"
+    "text": "Skjerp pilene, fyll kogrene! Herren har vekket mederkongenes ånd, for hans plan er å ødelegge Babel. For dette er Herrens hevn, hevnen for hans tempel.",
+    "versions": [
+      {
+        "text": "Skjerp pilene, fyll skjoldene!",
+        "type": "error",
+        "severity": "major",
+        "explanation": "Den nåværende oversettelsen mangler størstedelen av verset. Hele andre halvdel om at Herren har vekket mederkongenes ånd, hans plan om å ødelegge Babel, og at dette er Herrens hevn for tempelet, er utelatt. שְּׁלָטִים betyr 'kogre' (pilkogre), ikke 'skjold'."
+      }
+    ]
   },
   {
     "bookId": 24,
@@ -141,7 +157,15 @@
     "bookId": 24,
     "chapterId": 51,
     "verseId": 23,
-    "text": "Med deg knuser jeg hyrde og hjord, med deg knuser jeg bonde og okser, med deg knuser jeg stattholderen og hans embetsmenn."
+    "text": "Med deg knuser jeg hyrde og hjord, med deg knuser jeg bonde og oksespann, med deg knuser jeg stattholdere og embetsmenn.",
+    "versions": [
+      {
+        "text": "Med deg knuser jeg hyrde og hjord, med deg knuser jeg bonde og okser, med deg knuser jeg stattholderen og hans embetsmenn.",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "צִמְדּוֹ betyr 'hans oksespann' (et par okser spent sammen), ikke bare 'okser'. פַּח֖וֹת er flertall ('stattholdere'), ikke bestemt entall ('stattholderen')."
+      }
+    ]
   },
   {
     "bookId": 24,
@@ -165,11 +189,17 @@
     "bookId": 24,
     "chapterId": 51,
     "verseId": 27,
-    "text": "La hestene rykke fram som bristende gresshopper!",
+    "text": "Reis banner i landet! Blås i horn blant folkeslagene! Innvi folkeslag til krig mot det! Kall sammen kongerikene Ararat, Minni og Asjkenas mot det! Sett inn en hærfører mot det! La hestene rykke fram som bristende gresshopper!",
     "versions": [
       {
         "text": "Reis banner i landet! Blås i horn blant folkeslagene! Innvi folkeslag til krig mot det! Kall sammen kongerikene Ararat, Minni og Asjkenas mot det! Sett inn en hærfører! La hestene rykke fram som strittende gresshopper!",
         "explanation": "סָמָר beskriver gresshopper som reiser bust/pigger, altså 'bristende' eller 'piggete'. 'Strittende' er akseptabelt, men 'bristende' fanger bedre bildet av gresshoppens karakteristiske utseende."
+      },
+      {
+        "text": "La hestene rykke fram som bristende gresshopper!",
+        "type": "error",
+        "severity": "major",
+        "explanation": "Den nåværende versjonen mangler nesten hele verset. Kun siste setning er beholdt. Det ser ut til at de foregående linjene ble fjernet ved en redigeringsfeil. Versjonshistorikken viser at den forrige versjonen hadde hele teksten, men kun endret 'strittende' til 'bristende'. Hele teksten må gjenopprettes (med 'bristende' beholdt i henhold til siste revisjon)."
       }
     ]
   },
@@ -213,11 +243,17 @@
     "bookId": 24,
     "chapterId": 51,
     "verseId": 34,
-    "text": "Nebukadnesar, kongen av Babel, har fortært meg, forvirret meg, satt meg bort som et tomt kar. Han har slukt meg som et sjøuhyre, fylt sin buk med mine herligheter og spydd meg ut.",
+    "text": "Nebukadnesar, kongen av Babel, har fortært meg, forvirret meg, satt meg til side som et tomt kar. Han har slukt meg som et sjøuhyre, fylt sin buk med mine lekkerbiskener og spydd meg ut.",
     "versions": [
       {
         "text": "Nebukadnesar, kongen av Babel, har fortært meg, forvirret meg, satt meg bort som et tomt kar. Han har slukt meg som et sjøuhyre, fylt sin buk med mine herligheter og drevet meg bort.",
         "explanation": "הֱדִיחָֽנִי kan bety 'drevet bort', men i konteksten av å bli slukt som av et sjøuhyre, gir 'spydd ut' et mer sammenhengende bilde - først slukt, så spydd ut."
+      },
+      {
+        "text": "Nebukadnesar, kongen av Babel, har fortært meg, forvirret meg, satt meg bort som et tomt kar. Han har slukt meg som et sjøuhyre, fylt sin buk med mine herligheter og spydd meg ut.",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "מֵֽעֲדָנָ֑י betyr 'mine lekkerbiskener/delikatesser', ikke 'mine herligheter'. Ordet refererer til velsmakende mat/delikatesser. 'Satt bort' er også litt uklart; 'satt til side' er mer idiomatisk."
       }
     ]
   },
@@ -309,7 +345,15 @@
     "bookId": 24,
     "chapterId": 51,
     "verseId": 49,
-    "text": "Også Babel må falle for Israels drepte, slik Babels drepte falt for hele jordens skyld."
+    "text": "Også Babel må falle for Israels dreptes skyld, slik også for Babels skyld drepte fra hele jorden falt.",
+    "versions": [
+      {
+        "text": "Også Babel må falle for Israels drepte, slik Babels drepte falt for hele jordens skyld.",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "Verset sier at Babel må falle på grunn av Israels drepte (de som Babel drepte av Israel), og likeledes falt drepte fra hele jorden på grunn av Babel. Oversettelsen kan misforstås til å bety noe annet enn den hebraiske tekstens mening."
+      }
+    ]
   },
   {
     "bookId": 24,
@@ -345,7 +389,15 @@
     "bookId": 24,
     "chapterId": 51,
     "verseId": 55,
-    "text": "For Herren ødelegger Babel og gjør den høye røsten stum. Bølgene bruser som store vann, larmen av deres røst høres."
+    "text": "For Herren ødelegger Babel og gjør den store røsten taus. Deres bølger bruser som store vann, larmen av deres røst gjaller.",
+    "versions": [
+      {
+        "text": "For Herren ødelegger Babel og gjør den høye røsten stum. Bølgene bruser som store vann, larmen av deres røst høres.",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "ק֣וֹל גָּד֑וֹל er 'stor røst', ikke 'høy røst' (selv om forskjellen er liten). וְאִבַּ֥ד betyr å tilintetgjøre/gjøre borte – 'taus' gir bedre gjenklang. גַלֵּיהֶם ('deres bølger') viser at det refererer til ødeleggernes/fiendenes bølger, og נִתַּ֥ן שְׁא֖וֹן קוֹלָֽם betyr at lyden/bruset av deres røst gis/gjaller, ikke bare 'høres'."
+      }
+    ]
   },
   {
     "bookId": 24,

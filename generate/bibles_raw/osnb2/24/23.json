@@ -69,7 +69,15 @@
     "bookId": 24,
     "chapterId": 23,
     "verseId": 12,
-    "text": "Derfor skal deres vei bli som glatte stier i mørket. De skal bli støtt ned og falle der. For jeg vil bringe ulykke over dem i deres straffens år, sier Herren."
+    "text": "For jeg vil bringe ulykke over dem i straffens år, sier Herren.",
+    "versions": [
+      {
+        "text": "Derfor skal deres vei bli som glatte stier i mørket. De skal bli støtt ned og falle der. For jeg vil bringe ulykke over dem i deres straffens år, sier Herren.",
+        "type": "grammar",
+        "severity": "minor",
+        "explanation": "'Deres straffens år' er grammatisk klønete på norsk. 'Straffens år' er tilstrekkelig og naturlig, og שְׁנַת פְּקֻדָּתָם betyr 'året for deres straff/hjemsøkelse' – possessivet ligger allerede implisitt i konteksten."
+      }
+    ]
   },
   {
     "bookId": 24,
@@ -117,11 +125,17 @@
     "bookId": 24,
     "chapterId": 23,
     "verseId": 19,
-    "text": "Se, Herrens storm, hans vrede, bryter løs, en virvlende storm som skal slå ned over de ugudeliges hoder.",
+    "text": "Se, Herrens storm, hans vrede, bryter løs, en virvlende storm over de ugudeliges hoder skal den slå ned.",
     "versions": [
       {
         "text": "Se, Herrens storm, hans vrede, bryter løs, en virvlende storm som hvirvler over de ugudeliges hoder.",
         "explanation": "Det hebraiske יָחֽוּל betyr 'skal hvile på' eller 'slå ned over'. 'Hvirvler over' er en repetisjon av 'virvlende' og fanger ikke betydningen av at stormen faktisk treffer/rammer hodene deres."
+      },
+      {
+        "text": "Se, Herrens storm, hans vrede, bryter løs, en virvlende storm som skal slå ned over de ugudeliges hoder.",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "Vurdering: Nåværende versjon er akseptabel etter revisjon, men 'ugudeliges' er en mulig diskusjon – רְשָׁעִים betyr 'de ugudelige/onde'. Nåværende er akseptabelt."
       }
     ]
   },
@@ -147,7 +161,15 @@
     "bookId": 24,
     "chapterId": 23,
     "verseId": 23,
-    "text": "Er jeg bare en Gud som er nær, sier Herren, og ikke en Gud som også er langt borte?"
+    "text": "Er jeg en Gud bare for det som er nær, sier Herren, og ikke også en Gud for det som er fjernt?",
+    "versions": [
+      {
+        "text": "Er jeg bare en Gud som er nær, sier Herren, og ikke en Gud som også er langt borte?",
+        "type": "theological",
+        "severity": "major",
+        "explanation": "Det hebraiske retoriske spørsmålet handler om Guds allestednærværelse – at han ikke bare er en lokal guddom. Nåværende oversettelse formidler meningen rimelig, men 'som også er langt borte' er litt klønete. Poenget er at Gud ser alt, både nært og fjernt – dette understrekes av v. 24. Nåværende oversettelse er dog forståelig."
+      }
+    ]
   },
   {
     "bookId": 24,
@@ -165,11 +187,17 @@
     "bookId": 24,
     "chapterId": 23,
     "verseId": 26,
-    "text": "Hvor lenge skal dette vare? Har disse profetene løgn i sitt hjerte, de som profeterer løgn – disse profetene som forkynner sitt eget hjertes bedrag?",
+    "text": "Hvor lenge skal dette vare? Har disse profetene som profeterer løgn, løgn i sitt hjerte – disse profetene som forkynner sitt eget hjertes bedrag?",
     "versions": [
       {
         "text": "Hvor lenge skal dette vare? Er det noe i hjertet til profetene som profeterer løgn, disse profetene som forkynner sitt eget hjertes bedrag?",
         "explanation": "Den hebraiske konstruksjonen הֲיֵ֛שׁ בְּלֵ֥ב הַנְּבִאִ֖ים er et retorisk spørsmål om profetene har løgn i hjertet. Oversettelsen bør gjenspeile denne retoriske strukturen tydeligere."
+      },
+      {
+        "text": "Hvor lenge skal dette vare? Har disse profetene løgn i sitt hjerte, de som profeterer løgn – disse profetene som forkynner sitt eget hjertes bedrag?",
+        "type": "grammar",
+        "severity": "minor",
+        "explanation": "I den hebraiske teksten er 'profetene som profeterer løgn' (הַנְּבִאִ֖ים נִבְּאֵ֣י הַשָּׁ֑קֶר) én sammenhengende frase. I nåværende oversettelse er dette splittet opp slik at 'de som profeterer løgn' ser ut som en ettertanke, mens det bør knyttes direkte til 'profetene'."
       }
     ]
   },
@@ -189,7 +217,15 @@
     "bookId": 24,
     "chapterId": 23,
     "verseId": 29,
-    "text": "Er ikke mitt ord som ild, sier Herren, og som en hammer som knuser fjell?"
+    "text": "Er ikke mitt ord som ild, sier Herren, og som en hammer som knuser klippen?",
+    "versions": [
+      {
+        "text": "Er ikke mitt ord som ild, sier Herren, og som en hammer som knuser fjell?",
+        "type": "error",
+        "severity": "major",
+        "explanation": "Det hebraiske סָלַע betyr 'klippe/berg/stein', ikke 'fjell' (som er הַר). En hammer knuser en klippe/stein, ikke et helt fjell. 'Klippen' er den korrekte oversettelsen."
+      }
+    ]
   },
   {
     "bookId": 24,
@@ -213,11 +249,17 @@
     "bookId": 24,
     "chapterId": 23,
     "verseId": 33,
-    "text": "Når dette folket eller en profet eller en prest spør deg: «Hva er Herrens byrde?» – da skal du si til dem: «Hva for byrde? Jeg vil forlate dere, sier Herren.»",
+    "text": "Når dette folket eller en profet eller en prest spør deg: «Hva er Herrens budskap?» – da skal du si til dem: «Hva for budskap? Jeg vil forlate dere, sier Herren.»",
     "versions": [
       {
         "text": "Når dette folket eller en profet eller en prest spør deg: «Hva er Herrens byrde?» – da skal du si til dem: «Dere er byrden! Og jeg vil kaste dere fra meg, sier Herren.»",
         "explanation": "Den hebraiske teksten har et ordspill: אֶת־מַה־מַשָּׂא ('hva for byrde?') spiller på ordet משא. Oversettelsen 'Dere er byrden' er en tolkning, men grunnteksten sier bokstavelig 'hva byrde?' fulgt av 'jeg vil forlate dere' (נָטַשְׁתִּ֥י). En mer teksttro oversettelse bevarer ordspillet bedre."
+      },
+      {
+        "text": "Når dette folket eller en profet eller en prest spør deg: «Hva er Herrens byrde?» – da skal du si til dem: «Hva for byrde? Jeg vil forlate dere, sier Herren.»",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "Det hebraiske מַשָּׂא har dobbeltbetydning: 'byrde' og 'orakel/budskap'. Ordspillet i teksten fungerer på begge plan. 'Budskap' kan vurderes da det er den tekniske profetiske betydningen – men 'byrde' bevarer også ordspillet. Nåværende er akseptabel etter revisjon."
       }
     ]
   },
@@ -237,7 +279,15 @@
     "bookId": 24,
     "chapterId": 23,
     "verseId": 36,
-    "text": "Men «Herrens byrde» skal dere ikke nevne mer. For hver manns eget ord blir hans byrde, og dere har fordreiet den levende Guds, Herren over hærskarenes, vår Guds ord."
+    "text": "Men «Herrens byrde» skal dere ikke nevne mer. For byrden blir hver manns eget ord, og dere har fordreiet ordene fra den levende Gud, Herren over hærskarene, vår Gud.",
+    "versions": [
+      {
+        "text": "Men «Herrens byrde» skal dere ikke nevne mer. For hver manns eget ord blir hans byrde, og dere har fordreiet den levende Guds, Herren over hærskarenes, vår Guds ord.",
+        "type": "grammar",
+        "severity": "minor",
+        "explanation": "Setningen 'den levende Guds, Herren over hærskarenes, vår Guds ord' er svært tung på norsk med tre genitivledd. En omstrukturering gjør det mer lesbart. Også: דִּבְרֵי er flertall ('ordene'), ikke entall."
+      }
+    ]
   },
   {
     "bookId": 24,

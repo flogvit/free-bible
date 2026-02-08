@@ -69,7 +69,15 @@
     "bookId": 24,
     "chapterId": 32,
     "verseId": 12,
-    "text": "Jeg ga kjøpekontrakten til Baruk, sønn av Nerija, sønn av Mahseja, mens min onkel Hanamel så på, og vitnene som hadde skrevet under på kjøpekontrakten så på, og alle judeerne som satt i vaktgården så på."
+    "text": "Jeg ga kjøpekontrakten til Baruk, sønn av Nerija, sønn av Mahseja, mens min fetter Hanamel så på, og vitnene som hadde skrevet under på kjøpekontrakten så på, og alle judeerne som satt i vaktgården så på.",
+    "versions": [
+      {
+        "text": "Jeg ga kjøpekontrakten til Baruk, sønn av Nerija, sønn av Mahseja, mens min onkel Hanamel så på, og vitnene som hadde skrevet under på kjøpekontrakten så på, og alle judeerne som satt i vaktgården så på.",
+        "type": "error",
+        "severity": "major",
+        "explanation": "The Hebrew 'חֲנַמְאֵל דֹּדִי' means 'Hanamel my uncle's son' (i.e., my cousin/fetter). Throughout the chapter, Hanamel is identified as 'ben-dodi' (son of my uncle), not as the uncle himself. Calling him 'min onkel Hanamel' is incorrect; he should be called 'min fetter Hanamel' (my cousin Hanamel). In verse 7, 'דֹּֽדְךָ' refers to Shallum being the uncle, and Hanamel is the uncle's son."
+      }
+    ]
   },
   {
     "bookId": 24,
@@ -123,7 +131,15 @@
     "bookId": 24,
     "chapterId": 32,
     "verseId": 21,
-    "text": "Du førte ditt folk Israel ut av Egypt med tegn og under, med sterk hånd og utrakt arm og med stor frykt."
+    "text": "Du førte ditt folk Israel ut av Egypt med tegn og under, med sterk hånd og utrakt arm og med stor skrekk.",
+    "versions": [
+      {
+        "text": "Du førte ditt folk Israel ut av Egypt med tegn og under, med sterk hånd og utrakt arm og med stor frykt.",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "'מוֹרָא גָּדוֹל' refers to great terror/dread that God inspired in others, not 'frykt' (fear) which in Norwegian could be misunderstood as Israel's own fear. 'Stor skrekk' or 'stor redsel' better conveys the terror God inflicted upon Egypt."
+      }
+    ]
   },
   {
     "bookId": 24,
@@ -201,7 +217,15 @@
     "bookId": 24,
     "chapterId": 32,
     "verseId": 34,
-    "text": "De satte sine avskyeligheter i det huset som mitt navn er nevnt over, og gjorde det urent."
+    "text": "De satte sine avskyeligheter i huset som er kalt ved mitt navn, og gjorde det urent.",
+    "versions": [
+      {
+        "text": "De satte sine avskyeligheter i det huset som mitt navn er nevnt over, og gjorde det urent.",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "The phrase 'אֲשֶׁר־נִקְרָא־שְׁמִי עָלָיו' is a standard formula meaning 'which is called by my name' - referring to the temple. 'Som mitt navn er nevnt over' is a slightly awkward rendering; 'som er kalt ved mitt navn' is more natural and idiomatic in Norwegian."
+      }
+    ]
   },
   {
     "bookId": 24,

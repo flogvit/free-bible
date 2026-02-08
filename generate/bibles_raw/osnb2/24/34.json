@@ -69,7 +69,15 @@
     "bookId": 24,
     "chapterId": 34,
     "verseId": 9,
-    "text": "slik at enhver skulle frigi sin tjener og sin tjenestekvinne, enten hebréer eller hebréerinne, så ingen skulle holde sin jødiske bror eller søster som slave."
+    "text": "slik at enhver skulle frigi sin hebraiske tjener og sin hebraiske tjenestekvinne, så ingen skulle holde sin jødiske bror som slave.",
+    "versions": [
+      {
+        "text": "slik at enhver skulle frigi sin tjener og sin tjenestekvinne, enten hebréer eller hebréerinne, så ingen skulle holde sin jødiske bror eller søster som slave.",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "Hebraisk העברי והעבריה er adjektiver som modifiserer tjener/tjenestekvinne ('den hebraiske tjeneren og den hebraiske tjenestekvinnen'), ikke et selvstendig ledd 'enten hebréer eller hebréerinne'. Dessuten nevner grunnteksten bare אָחִיהוּ ('sin bror'), ikke 'bror eller søster'."
+      }
+    ]
   },
   {
     "bookId": 24,
@@ -153,7 +161,15 @@
     "bookId": 24,
     "chapterId": 34,
     "verseId": 21,
-    "text": "Sidkia, Judas konge, og hans stormenn vil jeg overgi i hendene på deres fiender og i hendene på dem som står dem etter livet, og i hendene på kongen av Babels hær som nå har trukket seg tilbake fra dere."
+    "text": "Sidkia, Judas konge, og hans stormenn vil jeg overgi i hendene på deres fiender og i hendene på dem som står dem etter livet, og i hendene på kongen av Babels hær som har dratt opp fra dere.",
+    "versions": [
+      {
+        "text": "Sidkia, Judas konge, og hans stormenn vil jeg overgi i hendene på deres fiender og i hendene på dem som står dem etter livet, og i hendene på kongen av Babels hær som nå har trukket seg tilbake fra dere.",
+        "type": "error",
+        "severity": "major",
+        "explanation": "Det hebraiske הָעֹלִים מֵעֲלֵיהֶם betyr 'som har dratt opp/bort fra dem' (dvs. som har trukket seg tilbake). 'Trukket seg tilbake' er akseptabelt som mening, men 'fra dere' bør være 'fra dem' ettersom grunnteksten har מֵעֲלֵיהֶם (3. person flertall, 'fra dem'), ikke 'fra dere' (2. person)."
+      }
+    ]
   },
   {
     "bookId": 24,

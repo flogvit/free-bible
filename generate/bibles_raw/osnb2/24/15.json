@@ -51,11 +51,17 @@
     "bookId": 24,
     "chapterId": 15,
     "verseId": 8,
-    "text": "Deres enker ble flere for meg enn havets sand. Jeg lot en ødelegger komme over dem midt på dagen, mot moren og den unge mannen. Plutselig lot jeg angst og redsel falle over byen.",
+    "text": "Deres enker ble flere for meg enn havets sand. Jeg brakte over dem, over moren til den unge, en ødelegger midt på dagen. Plutselig lot jeg angst og redsel falle over byen.",
     "versions": [
       {
         "text": "Deres enker ble flere for meg enn havets sand. Jeg sendte en ødelegger mot dem midt på dagen, mot moren til den unge mannen. Plutselig lot jeg angst og redsel falle over henne.",
         "explanation": "Hebraisk 'עַל־אֵם בָּחוּר' kan forstås som 'mot mor og ung mann' (representerer hele befolkningen). Også 'עִיר' (ir) på slutten betyr 'by', ikke 'henne' - det er byen som rammes av angst og redsel."
+      },
+      {
+        "text": "Deres enker ble flere for meg enn havets sand. Jeg lot en ødelegger komme over dem midt på dagen, mot moren og den unge mannen. Plutselig lot jeg angst og redsel falle over byen.",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "Den hebraiske teksten sier 'הֵבֵאתִי לָהֶם עַל־אֵם בָּחוּר שֹׁדֵד' – 'Jeg brakte over dem, over en ung manns mor, en ødelegger'. Uttrykket 'אֵם בָּחוּר' betyr mest naturlig 'mor til en ung mann', altså representativt for mødrene som mister sine sønner. Nåværende oversettelse 'mot moren og den unge mannen' er en mulig tolkning men mister den poetiske kraften. Likevel, den forrige versjonen hadde 'moren til den unge mannen' så dette bør formuleres annerledes."
       }
     ]
   },
@@ -63,7 +69,15 @@
     "bookId": 24,
     "chapterId": 15,
     "verseId": 9,
-    "text": "Hun som fødte syv barn, visnet bort. Hun pustet ut sin sjel. Hennes sol gikk ned mens det ennå var dag. Hun ble til skamme og vanære. De som er igjen av dem, vil jeg overgi til sverdet foran deres fiender, sier Herren."
+    "text": "Hun som fødte syv barn, visnet bort. Hun utåndet. Hennes sol gikk ned mens det ennå var dag. Hun ble til skamme og vanære. De som er igjen av dem, vil jeg overgi til sverdet foran deres fiender, sier Herren.",
+    "versions": [
+      {
+        "text": "Hun som fødte syv barn, visnet bort. Hun pustet ut sin sjel. Hennes sol gikk ned mens det ennå var dag. Hun ble til skamme og vanære. De som er igjen av dem, vil jeg overgi til sverdet foran deres fiender, sier Herren.",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "'נָפְחָה נַפְשָׁהּ' betyr bokstavelig 'hun blåste ut sin sjel/ånd', dvs. hun utåndet/døde. 'Hun pustet ut sin sjel' er forståelig men noe uvanlig på norsk. 'Hun utåndet' er mer naturlig norsk."
+      }
+    ]
   },
   {
     "bookId": 24,
@@ -81,7 +95,15 @@
     "bookId": 24,
     "chapterId": 15,
     "verseId": 12,
-    "text": "Kan jern knuse jern fra nord, og bronse?"
+    "text": "Kan jern knekke jern fra nord og bronse?",
+    "versions": [
+      {
+        "text": "Kan jern knuse jern fra nord, og bronse?",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "Verbet 'יָרֹעַ' betyr 'knekke/bryte', ikke 'knuse'. Det retoriske spørsmålet antyder at det vanlige jern ikke kan bryte det sterke jernet fra nord (Babylon). 'Knekke' er mer presist enn 'knuse'."
+      }
+    ]
   },
   {
     "bookId": 24,
@@ -93,13 +115,29 @@
     "bookId": 24,
     "chapterId": 15,
     "verseId": 14,
-    "text": "Jeg vil la deg tjene dine fiender i et land du ikke kjenner, for en ild er tent i min vrede, den skal brenne mot dere."
+    "text": "Jeg vil la dine fiender føre deg gjennom et land du ikke kjenner, for en ild er tent i min vrede, den skal brenne mot dere.",
+    "versions": [
+      {
+        "text": "Jeg vil la deg tjene dine fiender i et land du ikke kjenner, for en ild er tent i min vrede, den skal brenne mot dere.",
+        "type": "error",
+        "severity": "major",
+        "explanation": "Verbet 'וְהַעֲבַרְתִּי' betyr 'jeg vil la passere/føre gjennom'. Teksten sier at Gud vil la fiendene passere/dra gjennom (eller: la folket bli ført bort av fiender til) et ukjent land. Nåværende oversettelse 'la deg tjene dine fiender' legger til et element ('tjene') som ikke finnes i originalen."
+      }
+    ]
   },
   {
     "bookId": 24,
     "chapterId": 15,
     "verseId": 15,
-    "text": "Du vet det, Herre. Husk meg og ta deg av meg! Ta hevn for meg over mine forfølgere! I din langmodighet, la meg ikke bli tatt bort. Vit at jeg bærer vanære for din skyld."
+    "text": "Du vet det, Herre. Husk meg og ta deg av meg! Ta hevn for meg over mine forfølgere! Ta meg ikke bort i din langmodighet. Vit at jeg bærer vanære for din skyld.",
+    "versions": [
+      {
+        "text": "Du vet det, Herre. Husk meg og ta deg av meg! Ta hevn for meg over mine forfølgere! I din langmodighet, la meg ikke bli tatt bort. Vit at jeg bærer vanære for din skyld.",
+        "type": "error",
+        "severity": "major",
+        "explanation": "Frasen 'אַל־לְאֶרֶךְ אַפְּךָ תִּקָּחֵנִי' betyr 'ta meg ikke bort på grunn av din langmodighet (mot mine fiender)'. Jeremia ber Gud om ikke å la sin langmodighet overfor forfølgerne føre til at Jeremia selv går under. Nåværende oversettelse 'I din langmodighet, la meg ikke bli tatt bort' er noe uklar og kan misforstås som om Guds langmodighet er rettet mot Jeremia."
+      }
+    ]
   },
   {
     "bookId": 24,
