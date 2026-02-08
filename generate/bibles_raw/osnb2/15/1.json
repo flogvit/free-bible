@@ -47,13 +47,19 @@
     "bookId": 15,
     "chapterId": 1,
     "verseId": 6,
-    "text": "Alle naboene deres støttet dem med sølvgjenstander, med gull, gods, buskap og kostbare gaver, i tillegg til alt det som ble gitt frivillig.",
+    "text": "Alle naboene deres støttet dem med gjenstander av sølv, med gull, gods, buskap og kostbare gaver, i tillegg til alt det som ble gitt frivillig.",
     "versions": [
       {
         "text": "Alle naboene deres støttet dem med sølvgjenstander, gull, gods, buskap og kostbare gaver, i tillegg til alt det som ble gitt frivillig.",
         "type": "suggestion",
         "severity": "minor",
         "explanation": "Det hebraiske 'בִּכְלֵי־כֶסֶף' betyr 'med gjenstander av sølv', ikke 'sølvgjenstander'. Men viktigere: teksten sier 'חִזְּקוּ בִידֵיהֶם' som betyr 'styrket deres hender' – 'støttet dem' er akseptabelt. Oversettelsen er rimelig, men 'sølvgjenstander' komprimerer 'כְלֵי כֶסֶף' (gjenstander av sølv) litt. Endringen er liten og dette er akseptabelt."
+      },
+      {
+        "text": "Alle naboene deres støttet dem med sølvgjenstander, med gull, gods, buskap og kostbare gaver, i tillegg til alt det som ble gitt frivillig.",
+        "type": "error",
+        "severity": "minor",
+        "explanation": "Det hebraiske 'בִּכְלֵי־כֶסֶף' betyr 'med gjenstander av sølv', og 'בַּזָּהָב' betyr 'med gull' (uten 'כְלֵי'). Gjeldende oversettelse har 'sølvgjenstander' som komprimerer uttrykket, og den doble preposisjonen 'med ... med' er unødvendig klønete. Dessuten er 'בַּזָּהָב' uten 'כְלֵי' og refererer til gull generelt, ikke gullgjenstander."
       }
     ]
   },

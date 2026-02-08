@@ -23,11 +23,17 @@
     "bookId": 15,
     "chapterId": 10,
     "verseId": 3,
-    "text": "La oss nå slutte en pakt med vår Gud om å sende bort alle disse kvinnene og barna de har født, etter råd fra min herre og fra dem som skjelver for vår Guds bud. La det bli gjort etter loven.",
+    "text": "La oss nå slutte en pakt med vår Gud om å sende bort alle disse kvinnene og barna de har født, etter råd fra Herren og fra dem som skjelver for vår Guds bud. La det bli gjort etter loven.",
     "versions": [
       {
         "text": "La oss nå slutte en pakt med vår Gud om å sende bort alle disse kvinnene og barna de har født, etter råd fra min herre og fra dem som frykter vår Guds bud. La det bli gjort etter loven.",
         "explanation": "Det hebraiske ordet 'הַחֲרֵדִים' (hacharedim) betyr 'de som skjelver/frykter med ærefrykt', ikke bare 'frykter'. 'Skjelver for' gir en sterkere og mer presis gjengivelse av den dype ærefrykten som er ment."
+      },
+      {
+        "text": "La oss nå slutte en pakt med vår Gud om å sende bort alle disse kvinnene og barna de har født, etter råd fra min herre og fra dem som skjelver for vår Guds bud. La det bli gjort etter loven.",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "Det hebraiske אֲדֹנָי (Adonai) her refererer til Herren (Gud) eller kan alternativt tolkes som en tiltaleform til Esra ('min herre'). Men i konteksten med 'de som skjelver for vår Guds bud' er det mer sannsynlig at det refererer til Esra som leder. Denne tolkningen er imidlertid tvetydig. Nåværende oversettelse er akseptabel, men merk at mange bibeloversettelser forstår dette som referanse til Esra."
       }
     ]
   },
@@ -131,7 +137,15 @@
     "bookId": 15,
     "chapterId": 10,
     "verseId": 16,
-    "text": "De som hadde vært i fangenskap, gjorde som foreslått. Presten Esra valgte ut menn som var familieoverhoder, alle navngitte, og de samlet seg på den første dagen i den tiende måneden for å granske saken."
+    "text": "De som hadde vært i fangenskap, gjorde som foreslått. Presten Esra og menn som var familieoverhoder, alle navngitte, ble utvalgt, og de samlet seg på den første dagen i den tiende måneden for å granske saken.",
+    "versions": [
+      {
+        "text": "De som hadde vært i fangenskap, gjorde som foreslått. Presten Esra valgte ut menn som var familieoverhoder, alle navngitte, og de samlet seg på den første dagen i den tiende måneden for å granske saken.",
+        "type": "error",
+        "severity": "major",
+        "explanation": "Det hebraiske וַיִּבָּדְלוּ (vayyibadlu) betyr 'ble utskilt/satt til side'. Teksten sier at Esra og familieoverhodene ble utskilt (til oppgaven), ikke at Esra valgte ut andre. Esra er subjektet sammen med familieoverhodene, ikke den som velger dem ut."
+      }
+    ]
   },
   {
     "bookId": 15,
