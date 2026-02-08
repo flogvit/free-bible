@@ -5,12 +5,12 @@ import path from 'path';
 dotenv.config()
 
 import Anthropic from '@anthropic-ai/sdk';
-import {bibles, books, anthropicModel} from "./constants.js";
+import {bibles, books, anthropicModel, maxTokens} from "./constants.js";
 
 const anthropic = new Anthropic();
 
 const MAX_VERSES_PER_BATCH = 100;
-const MAX_PROOFREAD_CHARS = 15000; // Target max input chars per proofread batch to keep response within 8192 tokens
+const MAX_PROOFREAD_CHARS = 20000; // Target max input chars per proofread batch
 
 // Translation style prompts
 const TRANSLATION_PROMPTS = {
@@ -72,7 +72,7 @@ const MAX_RETRIES = 3;
 async function doAnthropicCall(content) {
     return anthropic.messages.create({
         model: anthropicModel,
-        max_tokens: 8192,
+        max_tokens: maxTokens,
         messages: [
             {
                 role: "user",
@@ -89,16 +89,18 @@ function parseJsonResponse(text) {
         .replace(/```\s*/g, '')
         .trim();
 
-    // Try to extract JSON array if there's extra text
-    const arrayMatch = cleaned.match(/\[[\s\S]*]/);
-    if (arrayMatch) {
-        cleaned = arrayMatch[0];
+    // Try to extract JSON object first (preferred, since most responses are objects)
+    const objectMatch = cleaned.match(/\{[\s\S]*}/);
+    if (objectMatch) {
+        cleaned = objectMatch[0];
     }
 
-    // Try to extract JSON object if there's extra text
-    const objectMatch = cleaned.match(/\{[\s\S]*}/);
-    if (!arrayMatch && objectMatch) {
-        cleaned = objectMatch[0];
+    // Fall back to JSON array if no object found
+    if (!objectMatch) {
+        const arrayMatch = cleaned.match(/\[[\s\S]*]/);
+        if (arrayMatch) {
+            cleaned = arrayMatch[0];
+        }
     }
 
     // First try: parse as-is
@@ -176,7 +178,9 @@ function parseJsonResponse(text) {
         return JSON.parse(repaired);
     } catch (e) {
         // All repair attempts failed, throw original error with context
-        throw new Error(`JSON parse failed after repair attempts. Original text (first 500 chars): ${cleaned.substring(0, 500)}`);
+        const start = cleaned.substring(0, 300);
+        const end = cleaned.length > 300 ? `\n...LAST 300 chars: ${cleaned.substring(cleaned.length - 300)}` : '';
+        throw new Error(`JSON parse failed after repair attempts. Text (${cleaned.length} chars):\nFIRST 300: ${start}${end}`);
     }
 }
 
@@ -300,6 +304,9 @@ async function doAnthropicCallWithRetry(content, context = '', validate = true) 
     for (let attempt = 1; attempt <= MAX_RETRIES; attempt++) {
         try {
             const completion = await doAnthropicCall(content);
+            if (completion.stop_reason === 'max_tokens') {
+                throw new Error(`Response truncated (hit max_tokens limit of ${maxTokens})`);
+            }
             const responseText = completion.content[0].text;
             const result = parseJsonResponse(responseText);
 
