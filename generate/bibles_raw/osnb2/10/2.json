@@ -87,13 +87,19 @@
     "bookId": 10,
     "chapterId": 2,
     "verseId": 14,
-    "text": "«La de unge mennene stå frem og kjempe foran oss.» Joab svarte: «La dem stå frem.»",
+    "text": "Abner sa til Joab: «La de unge mennene stå frem og kjempe foran oss.» Joab svarte: «La dem stå frem.»",
     "versions": [
       {
         "text": "Abner sa til Joab: «La noen unge menn stå frem og holde en tvekamp foran oss.» Joab svarte: «La dem stå frem.»",
         "type": "suggestion",
         "severity": "minor",
         "explanation": "Det hebraiske הַנְּעָרִים har bestemt artikkel ('de unge mennene'), ikke 'noen unge menn'. Og וִֽישַׂחֲקוּ betyr bokstavelig 'leke/kjempe' – 'holde en tvekamp' er noe tolkningsmessig fritt, men akseptabelt. Hovedpoenget er den bestemte formen."
+      },
+      {
+        "text": "«La de unge mennene stå frem og kjempe foran oss.» Joab svarte: «La dem stå frem.»",
+        "type": "error",
+        "severity": "major",
+        "explanation": "Verset mangler subjektet 'Abner sa til Joab' (וַיֹּאמֶר אַבְנֵר אֶל־יוֹאָב). Uten dette fremgår det ikke hvem som taler, noe som er viktig for sammenhengen."
       }
     ]
   },

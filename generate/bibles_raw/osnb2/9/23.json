@@ -15,7 +15,15 @@
     "bookId": 9,
     "chapterId": 23,
     "verseId": 3,
-    "text": "Men Davids menn sa til ham: «Vi er redde allerede her i Juda. Hvor mye verre blir det ikke om vi drar til Keila mot filisternes hærstyrker?»"
+    "text": "Men Davids menn sa til ham: «Vi er redde allerede her i Juda. Hvor mye verre blir det ikke om vi drar til Keila mot filisternes hærstyrker!»",
+    "versions": [
+      {
+        "text": "Men Davids menn sa til ham: «Vi er redde allerede her i Juda. Hvor mye verre blir det ikke om vi drar til Keila mot filisternes hærstyrker?»",
+        "type": "grammar",
+        "severity": "minor",
+        "explanation": "The original phrasing uses a rhetorical exclamation (אַף כִּי), which is better rendered with an exclamation mark than a question mark to convey the sense of 'how much more so!'"
+      }
+    ]
   },
   {
     "bookId": 9,
@@ -111,7 +119,15 @@
     "bookId": 9,
     "chapterId": 23,
     "verseId": 19,
-    "text": "Noen sifitter dro opp til Saul i Gibea og sa: «Gjemmer ikke David seg hos oss i fjellborgene i skogområdet, på Kakilahøyden sør for ødemarken?"
+    "text": "Noen sifitter dro opp til Saul i Gibea og sa: «Gjemmer ikke David seg hos oss i fjellborgene i skogområdet, på Kakilahøyden sør for Jesjimmon?",
+    "versions": [
+      {
+        "text": "Noen sifitter dro opp til Saul i Gibea og sa: «Gjemmer ikke David seg hos oss i fjellborgene i skogområdet, på Kakilahøyden sør for ødemarken?",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "מִימִין הַיְשִׁימוֹן means 'to the south/right of Jeshimon'. The word הַיְשִׁימוֹן (Jeshimon) is likely a proper place name (a particular desert region), not just a generic 'ødemark'. In verse 24 'ødemarken' is used for the same word, but consistency aside, rendering it as a place name is more accurate. Alternatively, if 'ødemarken' is preferred, at least be consistent."
+      }
+    ]
   },
   {
     "bookId": 9,
@@ -153,7 +169,15 @@
     "bookId": 9,
     "chapterId": 23,
     "verseId": 26,
-    "text": "Saul gikk på den ene siden av fjellet, og David og hans menn på den andre. David skyndte seg for å komme unna Saul, mens Saul og hans menn omringet David og hans menn for å gripe dem."
+    "text": "Saul gikk på den ene siden av fjellet, og David og hans menn på den andre. David skyndte seg for å komme unna Saul, mens Saul og hans menn var i ferd med å omringe David og hans menn for å gripe dem.",
+    "versions": [
+      {
+        "text": "Saul gikk på den ene siden av fjellet, og David og hans menn på den andre. David skyndte seg for å komme unna Saul, mens Saul og hans menn omringet David og hans menn for å gripe dem.",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "The Hebrew עֹטְרִים indicates an ongoing action — they were closing in / in the process of surrounding, not that they had already surrounded them. Adding 'var i ferd med å' better conveys the progressive aspect and the tension of the scene."
+      }
+    ]
   },
   {
     "bookId": 9,
@@ -165,11 +189,17 @@
     "bookId": 9,
     "chapterId": 23,
     "verseId": 28,
-    "text": "Derfor kalte de dette stedet «Skillelsesklippen».",
+    "text": "Saul vendte om fra forfølgelsen av David og dro for å møte filisterne. Derfor kalte de dette stedet «Skillelsesklippen».",
     "versions": [
       {
         "text": "Saul vendte tilbake fra forfølgelsen av David og dro for å møte filisterne. Derfor kalte de dette stedet Sela-Hammaklekot.",
         "explanation": "For oral reading in Norwegian, it would be more meaningful to translate the place name rather than just transliterate it. סֶלַע הַמַּחְלְקוֹת means 'Rock of Separation/Division' - referring to the place where Saul and David were separated. A Norwegian translation like 'Skillelsesklippen' or 'Skillelsens klippe' would convey the meaning to listeners. Alternatively, keep the transliteration but add the meaning: 'Sela-Hammaklekot, som betyr Skillelsesklippen.'"
+      },
+      {
+        "text": "Derfor kalte de dette stedet «Skillelsesklippen».",
+        "type": "error",
+        "severity": "major",
+        "explanation": "The first half of verse 28 is missing entirely. The Hebrew clearly states that Saul turned back from pursuing David and went to meet the Philistines. This is critical narrative content that has been omitted."
       }
     ]
   }

@@ -89,13 +89,19 @@
     "bookId": 10,
     "chapterId": 18,
     "verseId": 14,
-    "text": "Joab sa: «Jeg vil ikke stå her og vente på deg!» Han tok tre staver i hånden og støtte dem i hjertet på Absalom mens han ennå hang levende i terebinten.",
+    "text": "Joab sa: «Jeg vil ikke nøle her foran deg!» Han tok tre staver i hånden og støtte dem i hjertet på Absalom mens han ennå hang levende i terebinten.",
     "versions": [
       {
         "text": "Joab sa: «Jeg vil ikke stå her og vente på deg!» Han tok tre spyd i hånden og støtte dem i hjertet på Absalom mens han ennå hang levende i terebinten.",
         "type": "error",
         "severity": "major",
         "explanation": "The Hebrew שְׁבָטִים means 'rods/staves/sticks', not 'spyd' (spears). The word for spears would be חֲנִיתוֹת. 'Staver' or 'pinner' is more accurate."
+      },
+      {
+        "text": "Joab sa: «Jeg vil ikke stå her og vente på deg!» Han tok tre staver i hånden og støtte dem i hjertet på Absalom mens han ennå hang levende i terebinten.",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "The Hebrew לֹא־כֵן אֹחִילָה לְפָנֶיךָ means 'Not so! I will not wait/tarry before you' – Joab is not speaking to the soldier about waiting for him but rather declaring he won't delay (i.e., he will act now). However, this verse has already been revised once (changing 'spyd' to 'staver'), so the current phrasing, while slightly imprecise, is not critically wrong. Noting as minor."
       }
     ]
   },

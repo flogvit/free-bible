@@ -81,7 +81,15 @@
     "bookId": 9,
     "chapterId": 20,
     "verseId": 14,
-    "text": "«Og om jeg ennå lever, skal du ikke da vise Herrens troskap mot meg, så jeg ikke dør?"
+    "text": "«Og mens jeg ennå lever, vis Herrens troskap mot meg, så jeg ikke dør!",
+    "versions": [
+      {
+        "text": "«Og om jeg ennå lever, skal du ikke da vise Herrens troskap mot meg, så jeg ikke dør?",
+        "type": "error",
+        "severity": "major",
+        "explanation": "The Hebrew וְלֹא אִם עוֹדֶנִּי חָי is difficult, but the sense is a request/plea: 'And if I am still alive, will you not show me the LORD's steadfast love, that I may not die?' The current translation is acceptable in meaning but renders it as a question with 'skal du ikke da' which slightly obscures that this is Jonatan speaking to David, making a covenant request. A more direct rendering as a plea improves clarity. This is a minor adjustment."
+      }
+    ]
   },
   {
     "bookId": 9,
@@ -93,7 +101,15 @@
     "bookId": 9,
     "chapterId": 20,
     "verseId": 16,
-    "text": "Slik sluttet Jonatan pakt med Davids hus, og sa: «Måtte Herren kreve det av Davids fienders hånd.»"
+    "text": "Slik sluttet Jonatan pakt med Davids hus: «Måtte Herren kreve det av Davids fienders hånd!»",
+    "versions": [
+      {
+        "text": "Slik sluttet Jonatan pakt med Davids hus, og sa: «Måtte Herren kreve det av Davids fienders hånd.»",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "The Hebrew וּבִקֵּשׁ יְהוָה מִיַּד אֹיְבֵי דָוִד does not contain 'and he said' (וַיֹּאמֶר). The clause is a direct covenant imprecation, not introduced with 'sa'. Changing 'og sa:' to a colon better reflects the text structure."
+      }
+    ]
   },
   {
     "bookId": 9,
@@ -111,7 +127,15 @@
     "bookId": 9,
     "chapterId": 20,
     "verseId": 19,
-    "text": "På den tredje dagen skal du gå langt ned og komme til stedet der du gjemte deg første gang, og du skal sette deg ved Esel-steinen."
+    "text": "På den tredje dagen skal du gå langt ned og komme til stedet der du gjemte deg den gangen, og du skal sette deg ved steinen Esel.",
+    "versions": [
+      {
+        "text": "På den tredje dagen skal du gå langt ned og komme til stedet der du gjemte deg første gang, og du skal sette deg ved Esel-steinen.",
+        "type": "error",
+        "severity": "major",
+        "explanation": "בְּיוֹם הַמַּעֲשֶׂה means 'on the day of the deed/event', referring to a specific previous occasion, not necessarily 'the first time'. 'Den gangen' is more neutral and accurate. Also הָאֶבֶן הָאָזֶל is a proper name for the stone, and 'steinen Esel' better reflects the Hebrew construct where אָזֶל is the name."
+      }
+    ]
   },
   {
     "bookId": 9,
@@ -147,7 +171,15 @@
     "bookId": 9,
     "chapterId": 20,
     "verseId": 25,
-    "text": "Kongen satte seg på sin vante plass, plassen ved veggen. Jonatan reiste seg, og Abner satte seg ved siden av Saul. Men Davids plass sto tom."
+    "text": "Kongen satte seg på sin vante plass, plassen ved veggen. Jonatan stod opp, og Abner satte seg ved Sauls side. Men Davids plass var tom.",
+    "versions": [
+      {
+        "text": "Kongen satte seg på sin vante plass, plassen ved veggen. Jonatan reiste seg, og Abner satte seg ved siden av Saul. Men Davids plass sto tom.",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "וַיָּקָם יְהוֹנָתָן – 'Jonatan reiste seg' is fine, but the verse says Jonatan stood up (perhaps to let Abner sit, or as a sign of respect). 'Stod opp' is slightly clearer. Also 'sto tom' vs 'var tom' – the Hebrew וַיִּפָּקֵד simply means 'was empty/noticed missing', and 'var tom' is slightly more natural."
+      }
+    ]
   },
   {
     "bookId": 9,
@@ -177,11 +209,17 @@
     "bookId": 9,
     "chapterId": 20,
     "verseId": 30,
-    "text": "«Du sønn av en utuktug og opprørsk kvinne!",
+    "text": "Da flammet Sauls vrede opp mot Jonatan, og han sa til ham: «Du sønn av en utuktig og opprørsk kvinne! Tror du ikke jeg vet at du har valgt Isais sønn, til skam for deg selv og til skam for din mors blygd?»",
     "versions": [
       {
         "text": "Da flammet Sauls vrede opp mot Jonatan, og han sa til ham: «Du sønn av en opprørsk kvinne! Tror du ikke jeg vet at du har valgt Isais sønn til skam for deg selv og til skam for din mors blusel?",
         "explanation": "נַעֲוַת kan bety 'fordervet/utuktug' eller 'forkvaklet', og הַמַּרְדּוּת betyr 'opprørskhet'. Den hebraiske teksten har to elementer i skjellsordet. Oversettelsen kan gjerne beholde begge aspektene for å fange den fulle kraften i Sauls fornærmelse."
+      },
+      {
+        "text": "«Du sønn av en utuktug og opprørsk kvinne!",
+        "type": "error",
+        "severity": "critical",
+        "explanation": "The current verse 30 is severely truncated — it only contains the insult phrase and is missing the introductory narrative ('Da flammet Sauls vrede...'), as well as the second half of the verse (about choosing the son of Jesse, to his own shame and his mother's shame). Also 'utuktug' is a typo and should be 'utuktig'. Note: the previous version used 'blusel' which was intentionally changed, so I use 'blygd' instead."
       }
     ]
   },

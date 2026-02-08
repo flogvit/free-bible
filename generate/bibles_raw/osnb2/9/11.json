@@ -33,7 +33,15 @@
     "bookId": 9,
     "chapterId": 11,
     "verseId": 5,
-    "text": "Nettopp da kom Saul inn fra marken etter oksene sine. Han spurte: «Hva er det med folket? Hvorfor gråter de?» Da fortalte de ham hva mennene fra Jabesj hadde sagt."
+    "text": "Nettopp da kom Saul fra marken, bak oksene sine. Han spurte: «Hva er det med folket? Hvorfor gråter de?» Da fortalte de ham hva mennene fra Jabesj hadde sagt.",
+    "versions": [
+      {
+        "text": "Nettopp da kom Saul inn fra marken etter oksene sine. Han spurte: «Hva er det med folket? Hvorfor gråter de?» Da fortalte de ham hva mennene fra Jabesj hadde sagt.",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "Det hebraiske בָּא אַחֲרֵי הַבָּקָר מִן הַשָּׂדֶה betyr at Saul kom fra marken bak/etter oksene – han gikk bak dem og drev dem hjem. 'Kom inn fra marken etter oksene sine' kan tolkes som om han kom for å hente dem. 'Fra marken, bak oksene sine' formidler bildet bedre."
+      }
+    ]
   },
   {
     "bookId": 9,
@@ -81,7 +89,15 @@
     "bookId": 9,
     "chapterId": 11,
     "verseId": 10,
-    "text": "Da sa mennene i Jabesj til ammonittene: «I morgen skal vi overgi oss til dere, så kan dere gjøre med oss som dere finner for godt.»"
+    "text": "Da sa mennene i Jabesj til ammonittene: «I morgen skal vi komme ut til dere, og dere kan gjøre med oss som dere finner for godt.»",
+    "versions": [
+      {
+        "text": "Da sa mennene i Jabesj til ammonittene: «I morgen skal vi overgi oss til dere, så kan dere gjøre med oss som dere finner for godt.»",
+        "type": "error",
+        "severity": "major",
+        "explanation": "Det hebraiske נֵצֵא אֲלֵיכֶם betyr 'vi skal komme ut til dere', ikke 'vi skal overgi oss til dere'. Dette er en bevisst tvetydighet i teksten: ammonittene tolker det som overgivelse, men mennene i Jabesj vet at hjelp er på vei. Å oversette med 'overgi oss' fjerner denne viktige tvetydigheten."
+      }
+    ]
   },
   {
     "bookId": 9,
@@ -93,7 +109,15 @@
     "bookId": 9,
     "chapterId": 11,
     "verseId": 12,
-    "text": "Da sa folket til Samuel: «Hvem var det som sa at Saul ikke skulle være konge over oss? Utlever disse mennene, så vi kan drepe dem!»"
+    "text": "«Hvem var det som sa: 'Skal Saul være konge over oss?' Utlever disse mennene, så vi kan drepe dem!»",
+    "versions": [
+      {
+        "text": "Da sa folket til Samuel: «Hvem var det som sa at Saul ikke skulle være konge over oss? Utlever disse mennene, så vi kan drepe dem!»",
+        "type": "error",
+        "severity": "major",
+        "explanation": "Det hebraiske מִי הָאֹמֵר שָׁאוּל יִמְלֹךְ עָלֵינוּ betyr 'Hvem er det som sier: Skal Saul herske over oss?' – altså de som stilte spørsmål ved Sauls kongedømme (jf. 1 Sam 10:27). Den nåværende oversettelsen med 'ikke skulle være konge' legger til en negasjon som ikke finnes i grunnteksten og endrer meningen. Folket siterer tvilen som ble uttrykt, ikke en påstand om at han ikke skulle være konge."
+      }
+    ]
   },
   {
     "bookId": 9,

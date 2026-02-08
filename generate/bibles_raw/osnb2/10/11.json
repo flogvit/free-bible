@@ -65,7 +65,15 @@
     "bookId": 10,
     "chapterId": 11,
     "verseId": 7,
-    "text": "Da Uria kom til ham, spurte David hvordan det sto til med Joab og hæren, og hvordan krigen gikk."
+    "text": "Da Uria kom til ham, spurte David hvordan det sto til med Joab, hvordan det sto til med folket, og hvordan det gikk med krigen.",
+    "versions": [
+      {
+        "text": "Da Uria kom til ham, spurte David hvordan det sto til med Joab og hæren, og hvordan krigen gikk.",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "Hebraisk har tre ledd med לִשְׁלוֹם: Joab, folket (הָעָם), og krigen. Oversettelsen slår sammen de to første ('Joab og hæren'), men הָעָם ('folket') er et eget ledd. I tillegg er עָם bedre oversatt 'folket' enn 'hæren' – det er et mer generelt ord."
+      }
+    ]
   },
   {
     "bookId": 10,
@@ -115,7 +123,15 @@
     "bookId": 10,
     "chapterId": 11,
     "verseId": 13,
-    "text": "David innbød ham, og han spiste og drakk hos ham, og David gjorde ham drukken. Om kvelden gikk Uria ut og la seg på sitt leie blant sin herres tjenere. Han gikk ikke ned til huset sitt."
+    "text": "David innbød ham, og Uria spiste og drakk hos ham, og David gjorde ham drukken.",
+    "versions": [
+      {
+        "text": "David innbød ham, og han spiste og drakk hos ham, og David gjorde ham drukken. Om kvelden gikk Uria ut og la seg på sitt leie blant sin herres tjenere. Han gikk ikke ned til huset sitt.",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "'Han spiste og drakk' er tvetydig – det kan leses som om David spiste og drakk. Hebraisk er tydelig på at det er Uria som spiser og drikker foran David (לְפָנָיו). Å skrive 'Uria' gjør det klart."
+      }
+    ]
   },
   {
     "bookId": 10,
@@ -195,13 +211,19 @@
     "bookId": 10,
     "chapterId": 11,
     "verseId": 25,
-    "text": "Da sa David til budbæreren: «Si dette til Joab: 'La ikke dette tynge deg, for sverdet fortærer snart den ene, snart den andre. Styrk angrepet mot byen og ødelegg den. Og gi ham mot!'»",
+    "text": "Da sa David til budbæreren: «Si dette til Joab: 'La ikke dette tynge deg, for sverdet fortærer snart den ene, snart den andre. Styrk angrepet mot byen og ødelegg den.' Og oppmuntre ham!»",
     "versions": [
       {
         "text": "Da sa David til budbæreren: «Si dette til Joab: 'La ikke dette tynge deg, for sverdet fortærer snart den ene, snart den andre. Sett hardere inn mot byen og legg den i grus. Gi ham mot!'»",
         "type": "suggestion",
         "severity": "minor",
         "explanation": "הַחֲזֵק מִלְחַמְתְּךָ betyr 'styrk din krig/ditt angrep', og וְהָרְסָהּ betyr 'ødelegg den' eller 'riv den ned'. 'Sett hardere inn' er en fri gjengivelse, og 'legg den i grus' er dramatisk men akseptabelt. Likevel er 'Styrk angrepet mot byen og ødelegg den' nærmere originalen."
+      },
+      {
+        "text": "Da sa David til budbæreren: «Si dette til Joab: 'La ikke dette tynge deg, for sverdet fortærer snart den ene, snart den andre. Styrk angrepet mot byen og ødelegg den. Og gi ham mot!'»",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "'Gi ham mot' er greit, men וְחַזְּקֵהוּ ('og styrk/oppmuntre ham') er rettet til Joab selv – det er Davids instruks til budbæreren om å oppmuntre Joab. I den nåværende oversettelsen er 'Gi ham mot' plassert innenfor sitatet fra David til Joab, noe som er forvirrende – hvem er 'ham'? Setningen bør plasseres utenfor det indre sitatet, som en instruks til budbæreren om å oppmuntre Joab."
       }
     ]
   },

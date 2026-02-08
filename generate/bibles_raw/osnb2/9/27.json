@@ -39,7 +39,15 @@
     "bookId": 9,
     "chapterId": 27,
     "verseId": 7,
-    "text": "Den tiden David bodde i filisternes land, var ett år og fire måneder."
+    "text": "Den tiden David bodde i filisternes land, var et år og fire måneder.",
+    "versions": [
+      {
+        "text": "Den tiden David bodde i filisternes land, var ett år og fire måneder.",
+        "type": "error",
+        "severity": "major",
+        "explanation": "The Hebrew 'yamim' here likely means 'a year' (as 'yamim' can mean 'a period of days' or idiomatically 'a year'), so the translation 'ett år' is defensible. However, 'ett' should be 'et' in Norwegian bokmål since 'år' is neuter gender. 'Ett' is the masculine/feminine form."
+      }
+    ]
   },
   {
     "bookId": 9,
@@ -57,13 +65,29 @@
     "bookId": 9,
     "chapterId": 27,
     "verseId": 10,
-    "text": "Når Akisj spurte: «Hvor har dere herjet i dag?», svarte David: «I Negev i Juda» eller «i jerahmeelittenes Negev» eller «i kenittenes Negev.»"
+    "text": "Når Akisj spurte: «Hvor har dere herjet i dag?», svarte David: «Mot Negev i Juda, mot jerahmeelittenes Negev og mot kenittenes Negev.»",
+    "versions": [
+      {
+        "text": "Når Akisj spurte: «Hvor har dere herjet i dag?», svarte David: «I Negev i Juda» eller «i jerahmeelittenes Negev» eller «i kenittenes Negev.»",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "The Hebrew uses 'al' (against/toward) and lists the three areas as a single response, not as alternative answers with 'eller' (or). David gave one answer listing all three areas. The preposition 'al/el' conveys direction ('mot'). The 'eller' construction in the current translation implies David gave different answers on different occasions, which is not what the Hebrew says in this verse."
+      }
+    ]
   },
   {
     "bookId": 9,
     "chapterId": 27,
     "verseId": 11,
-    "text": "David lot verken mann eller kvinne overleve for å bli ført til Gat, for han tenkte: «De kunne fortelle om oss og si: Slik har David gjort.» Dette var hans fremgangsmåte hele tiden han bodde i filisternes land."
+    "text": "David lot verken mann eller kvinne overleve og bli ført til Gat, for han tenkte: «De kunne fortelle om oss og si: Slik har David gjort.» Dette var hans fremgangsmåte hele tiden han bodde i filisternes land.",
+    "versions": [
+      {
+        "text": "David lot verken mann eller kvinne overleve for å bli ført til Gat, for han tenkte: «De kunne fortelle om oss og si: Slik har David gjort.» Dette var hans fremgangsmåte hele tiden han bodde i filisternes land.",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "The Hebrew 'lehavi Gat' means 'to bring to Gat'. The purpose of killing them was so none could be brought to Gat to inform on him. The current 'for å bli ført til Gat' could be misread as if the purpose of not letting them live was so they could be brought to Gat, which is the opposite meaning. Changing 'for å bli ført' to 'og bli ført' clarifies that he did not let them live AND be brought to Gat."
+      }
+    ]
   },
   {
     "bookId": 9,

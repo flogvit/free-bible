@@ -29,7 +29,15 @@
     "bookId": 10,
     "chapterId": 23,
     "verseId": 4,
-    "text": "han er som morgenlyset når solen går opp, en morgen uten skyer, når gresset spirer frem fra jorden etter regn og solskinn."
+    "text": "han er som morgenlyset når solen går opp, en morgen uten skyer, når gresset spirer frem fra jorden av glans etter regn.",
+    "versions": [
+      {
+        "text": "han er som morgenlyset når solen går opp, en morgen uten skyer, når gresset spirer frem fra jorden etter regn og solskinn.",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "The Hebrew מִנֹּגַהּ מִמָּטָר means 'from brightness, from rain' — describing how grass sprouts from the shining of the sun after rain. The translation adds 'solskinn' (sunshine) which is not wrong in sense, but 'av glans etter regn' is more faithful to the imagery. The word 'solskinn' is somewhat redundant given 'morgenlyset når solen går opp' earlier."
+      }
+    ]
   },
   {
     "bookId": 10,
@@ -71,7 +79,15 @@
     "bookId": 10,
     "chapterId": 23,
     "verseId": 11,
-    "text": "Etter ham kom Sjamma, sønn av Age fra Harar. Filisterne hadde samlet seg ved Lehi, der det var et jordstykke fullt av linser, og folket flyktet for filisterne."
+    "text": "Etter ham kom Sjamma, sønn av Age fra Harar. Filisterne hadde samlet seg til en flokk, og der var det et jordstykke fullt av linser, og folket flyktet for filisterne.",
+    "versions": [
+      {
+        "text": "Etter ham kom Sjamma, sønn av Age fra Harar. Filisterne hadde samlet seg ved Lehi, der det var et jordstykke fullt av linser, og folket flyktet for filisterne.",
+        "type": "error",
+        "severity": "major",
+        "explanation": "The Hebrew לַחַיָּה means 'into a troop/band' (cf. 1 Chronicles 11:13 'to battle'). It does not mean 'ved Lehi' (at Lehi). Lehi is a place in the Samson narratives (Judges 15), not here. The word should be translated as 'til en flokk' or 'til strid.'"
+      }
+    ]
   },
   {
     "bookId": 10,
@@ -119,13 +135,19 @@
     "bookId": 10,
     "chapterId": 23,
     "verseId": 19,
-    "text": "Han var den mest ansette av de tre og ble deres leder, men han nådde ikke opp til de tre første.",
+    "text": "Han var den mest ansette av de tre og ble deres leder, men han nådde ikke opp til de tre.",
     "versions": [
       {
         "text": "Han var den mest ansette blant de tre og ble deres høvding, men han nådde ikke opp til de tre første.",
         "type": "error",
         "severity": "minor",
         "explanation": "The context here is ambiguous. In verse 18, it says Abishai was leader of 'the three' (השלשה), and verse 19 says he was honored among 'the three' but didn't reach 'the three.' Some scholars understand 'the thirty' in places. The current translation is internally consistent, so this is minor."
+      },
+      {
+        "text": "Han var den mest ansette av de tre og ble deres leder, men han nådde ikke opp til de tre første.",
+        "type": "error",
+        "severity": "minor",
+        "explanation": "The Hebrew וְעַד־הַשְּׁלֹשָׁה לֹא־בָא simply says 'he did not attain to the three.' The word 'første' (first) is added in the translation and is not in the original text. However, since this verse has version history, this is noted as minor."
       }
     ]
   },

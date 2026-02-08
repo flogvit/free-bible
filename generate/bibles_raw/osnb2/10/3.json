@@ -95,13 +95,19 @@
     "bookId": 10,
     "chapterId": 3,
     "verseId": 14,
-    "text": "Gi meg min kone Mikal, som jeg vant med hundre filisterforhudner.",
+    "text": "Så sendte David sendebud til Isjbosjet, Sauls sønn, og sa: «Gi meg min kone Mikal, som jeg vant med hundre filisterforhudner.»",
     "versions": [
       {
         "text": "Så sendte David sendebud til Isjbosjet, Sauls sønn, og sa: «Gi meg min kone Mikal, som jeg vant med hundre filisterforhud.»",
         "type": "suggestion",
         "severity": "minor",
         "explanation": "'Filisterforhud' i entall er litt unaturlig på norsk. 'Filisterforhudner' (flertall, bestemt) er mer korrekt grammatisk siden det hebraiske עָרְלוֹת er flertall og det er snakk om hundre."
+      },
+      {
+        "text": "Gi meg min kone Mikal, som jeg vant med hundre filisterforhudner.",
+        "type": "error",
+        "severity": "critical",
+        "explanation": "Verset mangler den innledende setningen om at David sendte sendebud til Isjbosjet, Sauls sønn. Originalen begynner med 'וַיִּשְׁלַח דָּוִד מַלְאָכִים אֶל־אִישׁ־בֹּשֶׁת בֶּן־שָׁאוּל לֵאמֹר' (Og David sendte sendebud til Isjbosjet, Sauls sønn, og sa). Den nåværende oversettelsen har bare den direkte talen uten narrativ innramming, noe som gjør verset ufullstendig."
       }
     ]
   },

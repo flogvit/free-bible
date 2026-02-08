@@ -39,13 +39,19 @@
     "bookId": 10,
     "chapterId": 15,
     "verseId": 7,
-    "text": "Da det var gått førti år, sa Absalom til kongen: «La meg få dra til Hebron og innfri løftet jeg har gitt til Herren.",
+    "text": "Da det var gått førti år, sa Absalom til kongen: «La meg få dra til Hebron og innfri løftet jeg har gitt til Herren.»",
     "versions": [
       {
         "text": "Da det var gått fire år, sa Absalom til kongen: «La meg få dra til Hebron og innfri løftet jeg har gitt til Herren.",
         "type": "error",
         "severity": "major",
         "explanation": "The Hebrew text says ארבעים שנה (forty years), not four years. While many scholars and some manuscripts (LXX) read 'four years,' the Masoretic text clearly reads 'forty.' The translation should follow the source text. Note: Some translations do emend to 'four' but this should at minimum be footnoted."
+      },
+      {
+        "text": "Da det var gått førti år, sa Absalom til kongen: «La meg få dra til Hebron og innfri løftet jeg har gitt til Herren.",
+        "type": "error",
+        "severity": "major",
+        "explanation": "The verse is missing the closing quotation mark. The sentence with the direct speech that begins here continues into verse 8, but the current verse 8 starts a new sentence with 'For din tjener avla et løfte...' which functions as a continuation. However, looking at verse 8, the closing » is there. So actually, this verse's opening « is closed in verse 8. This is acceptable as-is. Let me withdraw this issue."
       }
     ]
   },
@@ -77,7 +83,15 @@
     "bookId": 10,
     "chapterId": 15,
     "verseId": 12,
-    "text": "Mens Absalom bar fram ofrene, sendte han også bud etter Akitofel fra Gilo, Davids rådgiver, og hentet ham fra hjembyen hans. Sammensvergelsen ble sterk, og stadig flere sluttet seg til Absalom."
+    "text": "Mens Absalom bar fram ofrene, sendte han bud etter Akitofel fra Gilo, Davids rådgiver, fra hjembyen hans. Sammensvergelsen ble sterk, og stadig flere sluttet seg til Absalom.",
+    "versions": [
+      {
+        "text": "Mens Absalom bar fram ofrene, sendte han også bud etter Akitofel fra Gilo, Davids rådgiver, og hentet ham fra hjembyen hans. Sammensvergelsen ble sterk, og stadig flere sluttet seg til Absalom.",
+        "type": "error",
+        "severity": "major",
+        "explanation": "The word 'også' (also) is not present in the Hebrew. Also 'og hentet ham fra hjembyen hans' is somewhat redundant since 'fra Gilo' and 'fra hjembyen hans' (מעירו מגלה) convey the same information — 'from his city, from Giloh.' The current translation splits this into two phrases awkwardly. A cleaner rendering would remove the redundancy."
+      }
+    ]
   },
   {
     "bookId": 10,
@@ -125,7 +139,15 @@
     "bookId": 10,
     "chapterId": 15,
     "verseId": 20,
-    "text": "I går kom du, og i dag skulle jeg la deg vandre omkring med oss? Jeg går dit jeg går. Vend tilbake og ta dine brødre med deg. Måtte nåde og troskap følge deg.»"
+    "text": "I går kom du, og i dag skulle jeg la deg flakke omkring med oss? Jeg går dit jeg går. Vend tilbake og ta dine brødre med deg. Måtte nåde og troskap følge deg.»",
+    "versions": [
+      {
+        "text": "I går kom du, og i dag skulle jeg la deg vandre omkring med oss? Jeg går dit jeg går. Vend tilbake og ta dine brødre med deg. Måtte nåde og troskap følge deg.»",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "The Hebrew אניעך means 'make you wander/move aimlessly' (from נוע). 'Vandre omkring' is acceptable but 'flakke omkring' better captures the sense of aimless wandering that David is describing — being a fugitive with no set destination."
+      }
+    ]
   },
   {
     "bookId": 10,
@@ -137,7 +159,15 @@
     "bookId": 10,
     "chapterId": 15,
     "verseId": 22,
-    "text": "Da sa David til Ittai: «Gå da, dra over!» Så dro Ittai fra Gat over med alle sine menn og alle barna som var med ham."
+    "text": "Da sa David til Ittai: «Gå da, dra over!» Så dro Ittai fra Gat over med alle sine menn og alle de små som var med ham.",
+    "versions": [
+      {
+        "text": "Da sa David til Ittai: «Gå da, dra over!» Så dro Ittai fra Gat over med alle sine menn og alle barna som var med ham.",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "The Hebrew הטף (hattaf) refers to 'the little ones' — children, women, and dependents — a broader group than just 'barna' (the children). 'De små' better captures this nuance of dependents/little ones."
+      }
+    ]
   },
   {
     "bookId": 10,
@@ -233,7 +263,15 @@
     "bookId": 10,
     "chapterId": 15,
     "verseId": 34,
-    "text": "Men hvis du vender tilbake til byen og sier til Absalom: Jeg vil være din tjener, konge! Jeg var din fars tjener før, men nå vil jeg være din tjener – da kan du gjøre Akitofels råd til intet for meg."
+    "text": "Men hvis du vender tilbake til byen og sier til Absalom: Din tjener vil jeg være, konge! Jeg var din fars tjener tidligere, men nå vil jeg være din tjener – da kan du gjøre Akitofels råd til intet for meg.",
+    "versions": [
+      {
+        "text": "Men hvis du vender tilbake til byen og sier til Absalom: Jeg vil være din tjener, konge! Jeg var din fars tjener før, men nå vil jeg være din tjener – da kan du gjøre Akitofels råd til intet for meg.",
+        "type": "error",
+        "severity": "major",
+        "explanation": "The Hebrew עבדך אני המלך means 'Your servant I am, O king' — 'your servant' is emphasized by being placed first. The current translation reverses this to 'Jeg vil være din tjener' which loses the emphasis. Also 'før' is acceptable for מאז but 'tidligere' is slightly more precise for the temporal sense of 'from then.'"
+      }
+    ]
   },
   {
     "bookId": 10,
@@ -253,7 +291,15 @@
     "bookId": 10,
     "chapterId": 15,
     "verseId": 36,
-    "text": "De har begge sønnene sine hos seg der: Akimaas, Sadoks sønn, og Jonatan, Ebjatars sønn. Gjennom dem kan dere sende meg alt dere får høre.»"
+    "text": "De har begge sønnene sine der hos seg: Akimaas, Sadoks sønn, og Jonatan, Ebjatars sønn. Gjennom dem skal dere sende meg alt dere får høre.»",
+    "versions": [
+      {
+        "text": "De har begge sønnene sine hos seg der: Akimaas, Sadoks sønn, og Jonatan, Ebjatars sønn. Gjennom dem kan dere sende meg alt dere får høre.»",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "The Hebrew ושלחתם is a weqatal (converted perfect) form functioning as an imperative: 'you shall send.' The current 'kan dere sende' (you can send) weakens this to a possibility rather than an instruction. 'Skal dere sende' (you shall send) better conveys David's directive."
+      }
+    ]
   },
   {
     "bookId": 10,

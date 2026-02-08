@@ -33,7 +33,15 @@
     "bookId": 9,
     "chapterId": 17,
     "verseId": 6,
-    "text": "Han hadde bronseskinner på leggene og et bronsespyd mellom skuldrene."
+    "text": "Han hadde bronseleggskinner på beina og et bronsekastesspyd mellom skuldrene.",
+    "versions": [
+      {
+        "text": "Han hadde bronseskinner på leggene og et bronsespyd mellom skuldrene.",
+        "type": "error",
+        "severity": "major",
+        "explanation": "The Hebrew מִצְחַת refers to greaves/leggskinner, and the word רַגְלָיו means 'his legs/feet' not specifically 'calves/legger'. Also כִידוֹן is a javelin/kastespyd, distinct from the חֲנִית (spear/spyd) mentioned in v.7. Using 'spyd' for both is potentially confusing. However, the bigger issue is that 'bronseskinner på leggene' is acceptable Norwegian. The main concern is כִידוֹן being translated as 'spyd' – it should be 'kastespyd' to differentiate from the spear in the next verse."
+      }
+    ]
   },
   {
     "bookId": 9,
@@ -69,7 +77,15 @@
     "bookId": 9,
     "chapterId": 17,
     "verseId": 12,
-    "text": "David var sønn av en efratitt fra Betlehem i Juda som het Isai. Han hadde åtte sønner, og på Sauls tid var mannen gammel og langt oppe i årene."
+    "text": "David var sønn av denne efratitten fra Betlehem i Juda som het Isai. Han hadde åtte sønner, og på Sauls tid var mannen gammel og langt oppe i årene.",
+    "versions": [
+      {
+        "text": "David var sønn av en efratitt fra Betlehem i Juda som het Isai. Han hadde åtte sønner, og på Sauls tid var mannen gammel og langt oppe i årene.",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "The Hebrew has הַזֶּה (demonstrative 'this') before the noun – 'this Ephrathite' – indicating a specific, known person being referenced. The indefinite 'en efratitt' misses this nuance."
+      }
+    ]
   },
   {
     "bookId": 9,
@@ -201,7 +217,15 @@
     "bookId": 9,
     "chapterId": 17,
     "verseId": 34,
-    "text": "David sa til Saul: «Din tjener har gjetet farens småfe. Når en løve eller en bjørn kom og tok et lam fra flokken,"
+    "text": "David sa til Saul: «Din tjener har gjetet farens småfe. Når det kom en løve, ja, til og med en bjørn, og tok et lam fra flokken,",
+    "versions": [
+      {
+        "text": "David sa til Saul: «Din tjener har gjetet farens småfe. Når en løve eller en bjørn kom og tok et lam fra flokken,",
+        "type": "error",
+        "severity": "major",
+        "explanation": "The Hebrew וּבָא הָאֲרִי וְאֶת־הַדּוֹב uses the construction with אֶת to mean 'the lion and (also) the bear' – both came. The current translation 'en løve eller en bjørn' ('a lion or a bear') changes 'and' to 'or', suggesting it was one or the other. The Hebrew indicates both a lion and a bear (on separate occasions). A more faithful rendering would be 'en løve, og også en bjørn'."
+      }
+    ]
   },
   {
     "bookId": 9,
@@ -255,7 +279,15 @@
     "bookId": 9,
     "chapterId": 17,
     "verseId": 42,
-    "text": "Da filisteren så opp og fikk øye på David, foraktet han ham, for han var bare en gutt, rødkinnet og vakker å se på."
+    "text": "Da filisteren så opp og fikk øye på David, foraktet han ham, for han var bare en gutt, rødlig og med et vakkert utseende.",
+    "versions": [
+      {
+        "text": "Da filisteren så opp og fikk øye på David, foraktet han ham, for han var bare en gutt, rødkinnet og vakker å se på.",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "The Hebrew אַדְמֹנִי means 'ruddy' or 'reddish' (referring to complexion/hair color), not specifically 'rødkinnet' (rosy-cheeked). 'Rødlig' is more accurate and matches the same word used to describe David in 1 Sam 16:12."
+      }
+    ]
   },
   {
     "bookId": 9,
@@ -315,7 +347,15 @@
     "bookId": 9,
     "chapterId": 17,
     "verseId": 52,
-    "text": "Israels og Judas menn reiste seg, hevet krigsrop og forfulgte filisterne til Gai og helt til Ekrons porter. Falne filistere lå langs veien fra Sja'arajim helt til Gat og Ekron."
+    "text": "Israels og Judas menn reiste seg, hevet krigsrop og forfulgte filisterne til du kommer til en dal og helt til Ekrons porter. Falne filistere lå langs veien fra Sja'arajim helt til Gat og Ekron.",
+    "versions": [
+      {
+        "text": "Israels og Judas menn reiste seg, hevet krigsrop og forfulgte filisterne til Gai og helt til Ekrons porter. Falne filistere lå langs veien fra Sja'arajim helt til Gat og Ekron.",
+        "type": "error",
+        "severity": "major",
+        "explanation": "The Hebrew עַד־בּוֹאֲךָ גַיְא means 'until you come to a valley/Gai'. This is debated – it could be a place name 'Gai' or the common noun 'valley'. Most translations render it as 'to the valley' or 'to Gath' (with LXX). The current translation 'Gai' treats it as a proper noun, which is a legitimate reading, so this is actually a minor issue rather than critical. The current rendering is defensible."
+      }
+    ]
   },
   {
     "bookId": 9,

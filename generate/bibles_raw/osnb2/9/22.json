@@ -105,11 +105,17 @@
     "bookId": 9,
     "chapterId": 22,
     "verseId": 18,
-    "text": "Den dagen drepte han åttifem menn som bar lin-efod.",
+    "text": "Da sa kongen til Doeg: «Gå du og hogg ned prestene!» Edomitten Doeg gikk da bort og hogg ned prestene. Den dagen drepte han åttifem menn som bar lin-efod.",
     "versions": [
       {
         "text": "Da sa kongen til Doeg: «Gå du bort og stikk ned prestene!» Og edomitten Doeg gikk bort og slo ned prestene. Den dagen drepte han åttifem menn som bar linefod.",
         "explanation": "Ordet 'linefod' er uklart på norsk. 'Lin-efod' eller 'efod av lin' ville være tydeligere, da efod er et kjent bibelsk begrep for et prestelig klesplagg. Alternativt 'prestedrakt av lin'."
+      },
+      {
+        "text": "Den dagen drepte han åttifem menn som bar lin-efod.",
+        "type": "error",
+        "severity": "critical",
+        "explanation": "Den nåværende versjonen mangler størstedelen av verset – kongens befaling til Doeg og Doegs utførelse av befalingen. Det originale hebraiske verset inneholder at kongen beordrer Doeg å gå og slå ned prestene, at Doeg gjør det, og deretter antallet drepte. Den forrige versjonen hadde denne informasjonen, men ble endret og mistet den i prosessen. Den foreslåtte teksten gjenoppretter det manglende innholdet med annen ordlyd enn den tidligere versjonen."
       }
     ]
   },
@@ -147,6 +153,14 @@
     "bookId": 9,
     "chapterId": 22,
     "verseId": 23,
-    "text": "Bli hos meg, vær ikke redd! For den som står meg etter livet, står også deg etter livet. Hos meg er du trygg.»"
+    "text": "Bli hos meg, vær ikke redd! For den som står meg etter livet, står også deg etter livet. Hos meg er du i trygg forvaring.»",
+    "versions": [
+      {
+        "text": "Bli hos meg, vær ikke redd! For den som står meg etter livet, står også deg etter livet. Hos meg er du trygg.»",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "Det hebraiske 'מִשְׁמֶרֶת' (mishmeret) betyr 'i forvaring, under beskyttelse/vakt'. 'Trygg' er akseptabelt, men 'i trygg forvaring' er mer presist og gjenspeiler bedre det hebraiske begrepet om aktiv beskyttelse/bevaring."
+      }
+    ]
   }
 ]

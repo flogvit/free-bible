@@ -9,7 +9,15 @@
     "bookId": 9,
     "chapterId": 28,
     "verseId": 2,
-    "text": "David svarte Akisj: «Godt, da skal du få se hva din tjener kan utrette.» Akisj sa til David: «Derfor vil jeg gjøre deg til min livvakt for alltid.»"
+    "text": "David svarte Akisj: «Da skal du selv få se hva din tjener kan gjøre.» Akisj sa til David: «Derfor vil jeg gjøre deg til min livvakt for alltid.»",
+    "versions": [
+      {
+        "text": "David svarte Akisj: «Godt, da skal du få se hva din tjener kan utrette.» Akisj sa til David: «Derfor vil jeg gjøre deg til min livvakt for alltid.»",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "Det hebraiske לָכֵן אַתָּה תֵדַע betyr 'derfor skal du selv vite/se', der אַתָּה er emfatisk. 'Godt' er et tillegg som ikke finnes i grunnteksten. Dessuten er יַעֲשֶׂה rett og slett 'gjøre', ikke 'utrette'."
+      }
+    ]
   },
   {
     "bookId": 9,
@@ -33,7 +41,15 @@
     "bookId": 9,
     "chapterId": 28,
     "verseId": 5,
-    "text": "Da Saul så filistrenes leir, ble han redd, og hjertet skalv i ham."
+    "text": "Da Saul så filistrenes leir, ble han redd, og hjertet hans skalv voldsomt.",
+    "versions": [
+      {
+        "text": "Da Saul så filistrenes leir, ble han redd, og hjertet skalv i ham.",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "מְאֹד ('svært/voldsomt') modifiserer וַיֶּחֱרַד לִבּוֹ – hjertet skalv 'i stor grad'. Uttrykket 'hjertet skalv i ham' gjengir ikke מְאֹד. 'Hjertet hans skalv voldsomt' er mer presist."
+      }
+    ]
   },
   {
     "bookId": 9,
@@ -69,7 +85,15 @@
     "bookId": 9,
     "chapterId": 28,
     "verseId": 11,
-    "text": "Kvinnen spurte: «Hvem skal jeg mane fram for deg?» Han svarte: «Man Samuel fram for meg.»"
+    "text": "Kvinnen spurte: «Hvem skal jeg mane fram for deg?» Han svarte: «Man fram Samuel for meg.»",
+    "versions": [
+      {
+        "text": "Kvinnen spurte: «Hvem skal jeg mane fram for deg?» Han svarte: «Man Samuel fram for meg.»",
+        "type": "grammar",
+        "severity": "minor",
+        "explanation": "'Man Samuel fram for meg' er litt klønete. 'Man fram Samuel for meg' gir bedre norsk ordflyt."
+      }
+    ]
   },
   {
     "bookId": 9,
@@ -105,13 +129,29 @@
     "bookId": 9,
     "chapterId": 28,
     "verseId": 16,
-    "text": "Samuel sa: «Hvorfor spør du meg når Herren har vendt seg fra deg og er blitt din motstander?»"
+    "text": "Samuel sa: «Hvorfor spør du meg når Herren har vendt seg fra deg og er blitt din fiende?»",
+    "versions": [
+      {
+        "text": "Samuel sa: «Hvorfor spør du meg når Herren har vendt seg fra deg og er blitt din motstander?»",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "Det hebraiske עָרֶךָ kommer fra עַר som betyr 'fiende/motstander'. 'Fiende' er en sterkere og mer presis gjengivelse enn 'motstander' og passer bedre med den dramatiske konteksten."
+      }
+    ]
   },
   {
     "bookId": 9,
     "chapterId": 28,
     "verseId": 17,
-    "text": "Herren har gjort som han talte gjennom meg. Herren har revet kongedømmet ut av din hånd og gitt det til din neste, til David."
+    "text": "Herren har gjort med deg som han talte gjennom meg. Herren har revet kongedømmet ut av din hånd og gitt det til din neste, til David.",
+    "versions": [
+      {
+        "text": "Herren har gjort som han talte gjennom meg. Herren har revet kongedømmet ut av din hånd og gitt det til din neste, til David.",
+        "type": "error",
+        "severity": "major",
+        "explanation": "Det hebraiske וַיַּעַשׂ יְהוָה לוֹ betyr 'Herren har gjort med ham/deg' (לוֹ = 'med ham'). At Herren har gjort dette 'med deg/ham' er et viktig element som mangler i oversettelsen."
+      }
+    ]
   },
   {
     "bookId": 9,

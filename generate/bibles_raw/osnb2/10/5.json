@@ -57,13 +57,19 @@
     "bookId": 10,
     "chapterId": 5,
     "verseId": 8,
-    "text": "Den dagen sa David: «Den som vil slå jebusittene, la ham trenge frem gjennom vannsjakten og ta de lamme og blinde, som David avskyr.» Derfor sier man: «Ingen blind eller lam skal komme inn i huset.»",
+    "text": "Den dagen sa David: «Den som vil slå jebusittene, må trenge frem gjennom vannsjakten mot de lamme og blinde, som er forhatt av Davids sjel.» Derfor sier man: «Ingen blind eller lam skal komme inn i huset.»",
     "versions": [
       {
         "text": "Den dagen sa David: «Den som slår jebusittene og trenger frem gjennom vannsjaktene til de lamme og blinde – dem som David hater –» Derfor sier man: «Ingen blind eller lam skal komme inn i huset.»",
         "type": "error",
         "severity": "major",
         "explanation": "Den nåværende oversettelsen bryter setningsstrukturen med en lang tankestrek og etterlater Davids utsagn ufullstendig. Den hebraiske teksten har שְׂנֻאֵי נֶפֶשׁ דָּוִד som betyr 'avskydd av Davids sjel/som Davids sjel hater'. Uttrykket 'dem som David hater' i en parentes bryter flyten. I tillegg bør 'vannsjaktene' stå i entall (בַּצִּנּוֹר = vannsjakten)."
+      },
+      {
+        "text": "Den dagen sa David: «Den som vil slå jebusittene, la ham trenge frem gjennom vannsjakten og ta de lamme og blinde, som David avskyr.» Derfor sier man: «Ingen blind eller lam skal komme inn i huset.»",
+        "type": "error",
+        "severity": "major",
+        "explanation": "Den hebraiske konstruksjonen וְיִגַּע בַּצִּנּוֹר betyr 'og nå frem via vannsjakten' – det handler om å nå frem gjennom vannsjakten til fiendene, ikke 'trenge frem og ta'. Dessuten er שְׂנֻאֵי נֶפֶשׁ דָּוִד bedre gjengitt som 'forhatt av Davids sjel' – dette uttrykket refererer tilbake til de lamme og blinde (jebusittene), ikke Davids personlige avsky som en aktiv handling. 'La ham' er også noe svakt – hebraisk har en mer direkte oppfordring."
       }
     ]
   },
@@ -91,7 +97,15 @@
     "bookId": 10,
     "chapterId": 5,
     "verseId": 11,
-    "text": "Kong Hiram av Tyros sendte utsendinger til David, og sedertrær, tømmermenn og steinhuggere, og de bygde et hus for David."
+    "text": "Kong Hiram av Tyros sendte utsendinger til David, sammen med sedertrær, tømmermenn og steinhuggere som arbeidet med murverk, og de bygde et palass for David.",
+    "versions": [
+      {
+        "text": "Kong Hiram av Tyros sendte utsendinger til David, og sedertrær, tømmermenn og steinhuggere, og de bygde et hus for David.",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "Den hebraiske teksten har חָרָשֵׁי אֶבֶן קִיר som er 'steinhuggere for murer/murverk', ikke bare generelle steinhuggere. Dessuten refererer בַיִת her til et kongelig palass, ikke bare et vanlig hus. 'Og' mellom 'David' og 'sedertrær' er litt brå – 'sammen med' gjør sammenhengen tydeligere."
+      }
+    ]
   },
   {
     "bookId": 10,
@@ -145,7 +159,15 @@
     "bookId": 10,
     "chapterId": 5,
     "verseId": 20,
-    "text": "David kom til Baal-Perasim og slo dem der. Han sa: «Herren har brutt igjennom mine fiender foran meg, som en vannflom bryter igjennom.» Derfor kalte han stedet Baal-Perasim."
+    "text": "David kom til Baal-Perasim og slo dem der. Da sa han: «Herren har brutt igjennom mine fiender foran meg, som vann bryter igjennom.» Derfor kalte han stedet Baal-Perasim.",
+    "versions": [
+      {
+        "text": "David kom til Baal-Perasim og slo dem der. Han sa: «Herren har brutt igjennom mine fiender foran meg, som en vannflom bryter igjennom.» Derfor kalte han stedet Baal-Perasim.",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "Den hebraiske teksten har כְּפֶרֶץ מָיִם som betyr 'som et gjennombrudd av vann' – det er vannet selv som bryter igjennom, ikke en 'vannflom' spesifikt. 'Vannflom' legger til en konnotasjon som ikke er i originalen. Også וַיֹּאמֶר med vav-konsekutiv antyder 'da sa han' som er mer narrativt presist."
+      }
+    ]
   },
   {
     "bookId": 10,

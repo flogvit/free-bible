@@ -53,13 +53,19 @@
     "bookId": 10,
     "chapterId": 20,
     "verseId": 8,
-    "text": "Joab var kledd i sin kappe som han hadde på seg, og over den hadde han et belte med et sverd i slire festet ved hoften. Da han gikk frem, falt sverdet ut.",
+    "text": "Da de var ved den store steinen i Gibeon, kom Amasa dem i møte. Joab var kledd i sin kappe som han hadde på seg, og over den hadde han et sverd i slire festet ved hoften. Da han gikk frem, falt sverdet ut.",
     "versions": [
       {
         "text": "Da de var ved den store steinen i Gibeon, kom Amasa dem i møte. Joab var kledd i sin krigsdrakt, og over den hadde han et sverd i slire festet ved hoften. Da han gikk frem, falt sverdet ut.",
         "type": "suggestion",
         "severity": "minor",
         "explanation": "Det hebraiske מִדּוֹ לְבֻשׁוֹ betyr 'hans kappe som han hadde på seg' - det er ikke spesifikt en 'krigsdrakt'. Ordet מַד refererer til en kappe/kledning, ikke nødvendigvis militærutstyr."
+      },
+      {
+        "text": "Joab var kledd i sin kappe som han hadde på seg, og over den hadde han et belte med et sverd i slire festet ved hoften. Da han gikk frem, falt sverdet ut.",
+        "type": "error",
+        "severity": "critical",
+        "explanation": "Den nåværende oversettelsen mangler hele den første halvdelen av verset: «Da de var ved den store steinen i Gibeon, kom Amasa dem i møte.» (הֵם עִם־הָאֶבֶן הַגְּדוֹלָה אֲשֶׁר בְּגִבְעוֹן וַעֲמָשָׂא בָּא לִפְנֵיהֶם). Det ser ut til at da den forrige revisjonen endret 'krigsdrakt' til 'kappe', ble også den første setningen om Gibeon og Amasa fjernet ved en feil. Hele konteksten om hvor hendelsen finner sted og at Amasa kom dem i møte, er essensiell."
       }
     ]
   },
@@ -119,7 +125,15 @@
     "bookId": 10,
     "chapterId": 20,
     "verseId": 15,
-    "text": "De kom og beleiret ham i Abel-Bet-Maaka. De kastet opp en voll mot byen, og den nådde opp til festningsmuren. Alt folket som var med Joab, arbeidet med å rive ned muren."
+    "text": "De kom og beleiret ham i Abel-Bet-Maaka. De kastet opp en beleiringsramp mot byen, som sto mot yttermuren. Alt folket som var med Joab, arbeidet med å rive ned muren.",
+    "versions": [
+      {
+        "text": "De kom og beleiret ham i Abel-Bet-Maaka. De kastet opp en voll mot byen, og den nådde opp til festningsmuren. Alt folket som var med Joab, arbeidet med å rive ned muren.",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "Uttrykket וַתַּעֲמֹד בַּחֵל betyr at rampen/vollen 'sto mot/ved yttervollen (חֵל)'. חֵל refererer til en ytre voll eller forsvarsverk, ikke selve festningsmuren. Dessuten er סֹלְלָה mer presist en 'beleiringsramp' enn bare en 'voll'."
+      }
+    ]
   },
   {
     "bookId": 10,
@@ -137,11 +151,17 @@
     "bookId": 10,
     "chapterId": 20,
     "verseId": 18,
-    "text": "Hun sa: «I gamle dager pleide man å si: Man bør først spørre i Abel! Og slik avgjorde de saken.",
+    "text": "Hun sa: «I gamle dager pleide man å si: Man bør først spørre i Abel! Og slik avgjorde de saken.»",
     "versions": [
       {
         "text": "Hun sa: «I gamle dager pleide man å si: La dem søke råd i Abel! Og slik løste de sakene.",
         "explanation": "Den hebraiske teksten har en mer direkte formulering: 'De pleide å tale i gamle dager og si: La dem visselig spørre i Abel, og slik avsluttet de saken.' Oversettelsen 'løste de sakene' er litt fri; הֵתַמּוּ betyr mer 'de avsluttet/fullførte' - altså at saken ble avgjort der."
+      },
+      {
+        "text": "Hun sa: «I gamle dager pleide man å si: Man bør først spørre i Abel! Og slik avgjorde de saken.",
+        "type": "grammar",
+        "severity": "minor",
+        "explanation": "Sitatet mangler en avsluttende anførselstegn (»). Det er en ren tegnsettingsfeil."
       }
     ]
   },

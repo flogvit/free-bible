@@ -169,13 +169,19 @@
     "bookId": 10,
     "chapterId": 17,
     "verseId": 25,
-    "text": "Absalom hadde satt Amasa over hæren i stedet for Joab. Amasa var sønn av en mann som het Jitra, en jisreelitt, som hadde gått inn til Abigajil, datter av Nahasj og søster til Seruja, Joabs mor.",
+    "text": "Amasa var sønn av en mann som het Jitra, en jisreelitt, som hadde gått inn til Abigajil, datter av Nahasj, søster til Seruja, Joabs mor.",
     "versions": [
       {
         "text": "Absalom hadde satt Amasa over hæren i stedet for Joab. Amasa var sønn av en mann som het Jitra, en israelitt som hadde gått inn til Abigajil, datter av Nahasj og søster til Seruja, Joabs mor.",
         "type": "error",
         "severity": "minor",
         "explanation": "I 1 Krøn 2:17 kalles denne mannen 'jismeelitt', og i noen teksttradisjoner her kalles han 'jisreelitt' (fra Jisreel) snarere enn 'israelitt'. Den massoretiske teksten har 'הַיִּשְׂרְאֵלִי', men mange forskere og oversettelser (inkludert LXX-tradisjonen) leser 'jismeelitt/jisreelitt'. 'Israelitt' er en mulig gjengivelse av MT, men det er verdt å merke seg at dette er en omdiskutert lesemåte. Oversettelsen følger MT og er akseptabel, men dette er likevel verdt å flagge."
+      },
+      {
+        "text": "Absalom hadde satt Amasa over hæren i stedet for Joab. Amasa var sønn av en mann som het Jitra, en jisreelitt, som hadde gått inn til Abigajil, datter av Nahasj og søster til Seruja, Joabs mor.",
+        "type": "error",
+        "severity": "major",
+        "explanation": "I den hebraiske teksten er 'søster til Seruja' en apposisjon til Abigajil, ikke til Nahasj. Abigajil var søster til Seruja. Bruken av 'og' ('og søster til Seruja') kan misforstås som at Nahasj var søster til Seruja, men det er Abigajil som er søster til Seruja. Et komma i stedet for 'og' gjør dette tydeligere."
       }
     ]
   },
@@ -195,13 +201,19 @@
     "bookId": 10,
     "chapterId": 17,
     "verseId": 28,
-    "text": "De brakte senger, fat og leirkar, hvete, bygg, mel, ristet korn, bønner, linser og ristede korn,",
+    "text": "De brakte senger, fat og leirkar, hvete, bygg, mel, ristet korn, bønner, linser og ristet korn,",
     "versions": [
       {
         "text": "De brakte senger, fat og leirkar, hvete, bygg, mel, ristet korn, bønner, linser og ristede bønner,",
         "type": "error",
         "severity": "minor",
         "explanation": "Det hebraiske 'קָלִי' betyr 'ristet korn' (ikke 'ristede bønner'). Samme ord brukes tidligere i verset og oversettes korrekt som 'ristet korn'. Det bør være konsekvent."
+      },
+      {
+        "text": "De brakte senger, fat og leirkar, hvete, bygg, mel, ristet korn, bønner, linser og ristede korn,",
+        "type": "grammar",
+        "severity": "minor",
+        "explanation": "'Ristet korn' bør være konsekvent gjennom hele verset. 'Ristede korn' er en feil bøyning – 'ristet' er partisipp av 'riste' og bør stå i samme form begge gangene. Alternativt kan man bruke 'ristet' som uforanderlig adjektiv."
       }
     ]
   },

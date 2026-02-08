@@ -35,7 +35,15 @@
     "bookId": 10,
     "chapterId": 22,
     "verseId": 5,
-    "text": "For dødens brenninger omsluttet meg, fordervelsens strømmer skremte meg."
+    "text": "For dødens bølger omringet meg, fordervelsens strømmer skremte meg.",
+    "versions": [
+      {
+        "text": "For dødens brenninger omsluttet meg, fordervelsens strømmer skremte meg.",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "מִשְׁבְּרֵי betyr 'bølger/brenninger'. 'Brenninger' er korrekt men noe arkaisk. 'Bølger' er mer forståelig for moderne lesere. 'Omsluttet' kan også erstattes med 'omringet' for en litt mer naturlig formulering."
+      }
+    ]
   },
   {
     "bookId": 10,
@@ -117,7 +125,15 @@
     "bookId": 10,
     "chapterId": 22,
     "verseId": 16,
-    "text": "Havets dyp ble synlige, jordens grunnvoller ble blottlagt ved Herrens trussel, ved hans vredes ånde."
+    "text": "Havets bunnløp ble synlige, jordens grunnvoller ble blottlagt ved Herrens trussel, ved hans vredes pust.",
+    "versions": [
+      {
+        "text": "Havets dyp ble synlige, jordens grunnvoller ble blottlagt ved Herrens trussel, ved hans vredes ånde.",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "אֲפִקֵי יָם betyr 'havets kanaler/bunnløp' (tørrlagte elveleier/bekkeløp), ikke 'havets dyp'. נִשְׁמַת betyr 'pust/blåst' snarere enn 'ånde' i denne konteksten – det handler om Guds vredes blåst som blottlegger havbunnen."
+      }
+    ]
   },
   {
     "bookId": 10,
@@ -177,13 +193,29 @@
     "bookId": 10,
     "chapterId": 22,
     "verseId": 26,
-    "text": "Mot den trofaste viser du deg trofast, mot den rettsindige viser du deg rettsindig."
+    "text": "Mot den trofaste viser du deg trofast, mot den ulastelige helt viser du deg ulastelig.",
+    "versions": [
+      {
+        "text": "Mot den trofaste viser du deg trofast, mot den rettsindige viser du deg rettsindig.",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "Det hebraiske גִּבּוֹר תָּמִים betyr 'den ulastelige/fullkomne helt/kriger', ikke 'den rettsindige'. תָּמִים betyr 'ulastelig/fullkommen' og גִּבּוֹר betyr 'helt/kriger'. 'Rettsindig' er ikke en nøyaktig gjengivelse av תָּמִים."
+      }
+    ]
   },
   {
     "bookId": 10,
     "chapterId": 22,
     "verseId": 27,
-    "text": "Mot den rene viser du deg ren, men mot den falske viser du deg uutgrunnelig."
+    "text": "Mot den rene viser du deg ren, men mot den krokete viser du deg uberegnelig.",
+    "versions": [
+      {
+        "text": "Mot den rene viser du deg ren, men mot den falske viser du deg uutgrunnelig.",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "עִקֵּשׁ betyr 'kroket/forvridd' snarere enn 'falsk'. תִּתַּפָּל betyr å vise seg 'vridd/uberegnelig' – 'uutgrunnelig' er mulig men 'uberegnelig' fanger bedre ideen om at Gud møter den krokete med sine egne metoder."
+      }
+    ]
   },
   {
     "bookId": 10,
@@ -219,7 +251,7 @@
     "bookId": 10,
     "chapterId": 22,
     "verseId": 33,
-    "text": "Gud er min tilflukt og styrke, han gjør min vei fullkommen.",
+    "text": "Gud er min tilflukt og styrke, han gjør min vei trygg.",
     "versions": [
       {
         "text": "Gud er min sterke festning, han gjør min vei fullkommen.",
@@ -230,6 +262,12 @@
         "type": "error",
         "severity": "major",
         "explanation": "Det hebraiske מָעוּזִּי חָיִל har to elementer: מָעוּז (tilflukt/vern) og חַיִל (kraft/styrke). Den nåværende oversettelsen slår dem sammen til 'sterke tilflukt', men חַיִל er et eget substantiv og bør gjengis separat. 'Min tilflukt og styrke' dekker begge elementene bedre."
+      },
+      {
+        "text": "Gud er min tilflukt og styrke, han gjør min vei fullkommen.",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "וַיַּתֵּר תָּמִים דַּרְכִּי – verbet נתר/יתר i hifil betyr 'å løse/slippe fri'. Sammen med תָּמִים kan det bety 'han gjør min vei fri/åpen/trygg'. 'Fullkommen' er brukt i vers 31 om Guds vei; her handler det om at Gud baner vei for David. Men dette er en tolkningssak, så bare en svak forslag."
       }
     ]
   },

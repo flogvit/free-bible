@@ -157,13 +157,19 @@
     "bookId": 10,
     "chapterId": 24,
     "verseId": 23,
-    "text": "Alt dette ga Aravna til kongen.",
+    "text": "Alt dette ga Aravna til kongen. Og Aravna sa til kongen: «Måtte Herren din Gud vise deg velvilje.»",
     "versions": [
       {
         "text": "Alt dette ga Aravna, kongen, til kongen. Og Aravna sa til kongen: «Måtte Herren din Gud ta imot deg med velvilje.»",
         "type": "suggestion",
         "severity": "minor",
         "explanation": "The Hebrew 'אֲרַוְנָה הַמֶּלֶךְ' is debated — it likely means 'Araunah the king' as a title (possibly a Jebusite king), but the current phrasing 'Aravna, kongen, til kongen' is confusing in Norwegian. However, many translations simply render this as Araunah giving to the king, or note that 'the king' is an appositive for Araunah. The phrase as it stands is awkward and unclear to a Norwegian reader. A footnote would be ideal, but at minimum the translation should be clearer. Alternatively, keeping the ambiguity: 'Alt dette ga Aravna kongen til kongen' could work but is still odd. Since the meaning is disputed, a simpler rendering avoids confusion."
+      },
+      {
+        "text": "Alt dette ga Aravna til kongen.",
+        "type": "error",
+        "severity": "major",
+        "explanation": "The second half of the verse is missing entirely. The Hebrew 'וַיֹּאמֶר אֲרַוְנָה אֶל־הַמֶּלֶךְ יְהוָה אֱלֹהֶיךָ יִרְצֶךָ' ('And Araunah said to the king: May the LORD your God accept you with favor') has been omitted. The version history shows that the previous revision included this clause but was changed to avoid the awkward 'Aravna, kongen, til kongen' issue — however, while simplifying the Araunah/king title issue was justified, the entire second clause of the verse was inadvertently dropped. It must be restored. The rendering 'Måtte Herren din Gud vise deg velvilje' avoids the previous version's exact wording ('ta imot deg med velvilje')."
       }
     ]
   },
