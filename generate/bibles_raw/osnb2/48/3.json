@@ -63,7 +63,15 @@
     "bookId": 48,
     "chapterId": 3,
     "verseId": 8,
-    "text": "Skriften forutså at Gud rettferdiggjør hedningene ved tro, og forkynte på forhånd dette evangeliet til Abraham: «I deg skal alle folkeslag velsignes.»"
+    "text": "Skriften forutså at Gud rettferdiggjør folkeslagene ved tro, og forkynte på forhånd dette evangeliet til Abraham: «I deg skal alle folkeslag velsignes.»",
+    "versions": [
+      {
+        "text": "Skriften forutså at Gud rettferdiggjør hedningene ved tro, og forkynte på forhånd dette evangeliet til Abraham: «I deg skal alle folkeslag velsignes.»",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "τὰ ἔθνη brukes to ganger i verset. I sitatet oversettes det korrekt som 'folkeslag', men i første del oversettes det som 'hedningene'. Selv om 'hedninger' er mulig, ville 'folkeslagene' gi bedre konsistens innen verset. Alternativt kan begge stå, da konteksten i Paulus' argument nettopp handler om ikke-jøder."
+      }
+    ]
   },
   {
     "bookId": 48,
@@ -129,11 +137,17 @@
     "bookId": 48,
     "chapterId": 3,
     "verseId": 17,
-    "text": "Det jeg mener, er dette: Loven, som kom fire hundre og tretti år senere, kan ikke oppheve en pakt som Gud allerede har stadfestet, så løftet settes ut av kraft.",
+    "text": "Det jeg mener, er dette: Loven, som kom fire hundre og tretti år senere, kan ikke oppheve en pakt som Gud allerede har stadfestet, slik at løftet settes ut av kraft.",
     "versions": [
       {
         "text": "Det jeg sier, er dette: Loven, som kom fire hundre og tretti år senere, kan ikke oppheve en pakt som Gud allerede har stadfestet, slik at løftet blir satt ut av kraft.",
         "explanation": "λέγω i denne konteksten betyr 'mener' eller 'vil si' snarere enn bare 'sier'. 'Slik at' antyder hensikt, men εἰς τὸ καταργῆσαι her uttrykker resultat/konsekvens – 'så ... settes ut av kraft' fanger dette bedre."
+      },
+      {
+        "text": "Det jeg mener, er dette: Loven, som kom fire hundre og tretti år senere, kan ikke oppheve en pakt som Gud allerede har stadfestet, så løftet settes ut av kraft.",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "Formuleringen 'så løftet settes ut av kraft' er litt tvetydig – det kan leses som om det faktisk skjer. 'slik at løftet settes ut av kraft' gjør det tydeligere at dette er den (avviste) konsekvensen. Men dette verset har versjonshistorikk der nettopp 'slik at' ble endret bort, så dette er bare en merknad – det nåværende er akseptabelt om enn noe tvetydig."
       }
     ]
   },
@@ -199,7 +213,15 @@
     "bookId": 48,
     "chapterId": 3,
     "verseId": 25,
-    "text": "Men nå når troen er kommet, er vi ikke lenger under vokteren."
+    "text": "Men nå når troen er kommet, er vi ikke lenger under tuktemesteren.",
+    "versions": [
+      {
+        "text": "Men nå når troen er kommet, er vi ikke lenger under vokteren.",
+        "type": "error",
+        "severity": "major",
+        "explanation": "I vers 24 ble παιδαγωγός bevisst endret fra 'vokter' til 'tuktemester' (se versjonshistorikk for vers 24). Vers 25 bruker samme ord (παιδαγωγόν) men har fortsatt den gamle oversettelsen 'vokteren'. Dette bør være konsistent med vers 24."
+      }
+    ]
   },
   {
     "bookId": 48,

@@ -3,13 +3,29 @@
     "bookId": 41,
     "chapterId": 2,
     "verseId": 1,
-    "text": "Noen dager senere kom han tilbake til Kapernaum, og det ble kjent at han var hjemme."
+    "text": "Da han noen dager senere kom tilbake til Kapernaum, ble det kjent at han var hjemme.",
+    "versions": [
+      {
+        "text": "Noen dager senere kom han tilbake til Kapernaum, og det ble kjent at han var hjemme.",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "Det greske 'εἰσελθὼν' er et partisipp som beskriver en handling underordnet hovedverbet 'ἠκούσθη' (det ble hørt/kjent). Den nåværende oversettelsen gjør begge til sideordnede hovedsetninger. En underordnet konstruksjon gjengir originalens syntaks bedre."
+      }
+    ]
   },
   {
     "bookId": 41,
     "chapterId": 2,
     "verseId": 2,
-    "text": "Det samlet seg så mange at det ikke lenger var plass, ikke engang ved døren. Og han talte Ordet til dem."
+    "text": "Det samlet seg så mange at det ikke lenger var plass, ikke engang ved døren. Og han forkynte ordet for dem.",
+    "versions": [
+      {
+        "text": "Det samlet seg så mange at det ikke lenger var plass, ikke engang ved døren. Og han talte Ordet til dem.",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "'τὸν λόγον' (ordet) bør ikke ha stor forbokstav her, da det i konteksten refererer til budskapet/forkynnelsen, ikke nødvendigvis til Kristus som Ordet (Logos) slik det brukes i Joh 1. Også er 'forkynte ordet for dem' mer naturlig norsk enn 'talte Ordet til dem'. Verbet 'ἐλάλει' (talte/forkynte) med 'τὸν λόγον' som objekt betyr å forkynne budskapet."
+      }
+    ]
   },
   {
     "bookId": 41,
@@ -27,7 +43,15 @@
     "bookId": 41,
     "chapterId": 2,
     "verseId": 5,
-    "text": "Da Jesus så deres tro, sa han til den lamme: «Sønn, syndene dine er tilgitt.»"
+    "text": "Da Jesus så troen deres, sa han til den lamme: «Sønn, syndene dine er tilgitt.»",
+    "versions": [
+      {
+        "text": "Da Jesus så deres tro, sa han til den lamme: «Sønn, syndene dine er tilgitt.»",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "'Troen deres' er mer naturlig moderne norsk bokmål enn 'deres tro', som kan oppfattes som mer høytidelig/arkaisk."
+      }
+    ]
   },
   {
     "bookId": 41,
@@ -81,7 +105,15 @@
     "bookId": 41,
     "chapterId": 2,
     "verseId": 10,
-    "text": "Men for at dere skal vite at Menneskesønnen har makt på jorden til å tilgi synder» – så sier han til den lamme:"
+    "text": "Men for at dere skal vite at Menneskesønnen har makt på jorden til å tilgi synder» – sa han til den lamme:",
+    "versions": [
+      {
+        "text": "Men for at dere skal vite at Menneskesønnen har makt på jorden til å tilgi synder» – så sier han til den lamme:",
+        "type": "grammar",
+        "severity": "major",
+        "explanation": "Det greske 'λέγει' er presens historicum, men i denne konteksten med narrativ fortelling bør det oversettes med preteritum 'sa' for konsistens med resten av fortellingen. Dessuten er 'så sier han' unaturlig norsk i denne sammenhengen."
+      }
+    ]
   },
   {
     "bookId": 41,
@@ -117,11 +149,23 @@
     "bookId": 41,
     "chapterId": 2,
     "verseId": 15,
-    "text": "Det skjedde at Jesus lå til bords i hans hus, og mange tollere og syndere lå til bords sammen med Jesus og disiplene hans. For det var mange som fulgte ham.",
+    "text": "Da Jesus lå til bords i Levis hus, var det mange tollere og syndere som lå til bords sammen med ham og disiplene hans. For det var mange som fulgte ham.",
     "versions": [
       {
         "text": "Senere lå Jesus til bords i huset hans, og mange tollere og syndere lå til bords sammen med Jesus og disiplene hans. For det var mange som fulgte ham.",
         "explanation": "Originalen har 'Καὶ γίνεται' (og det skjedde) som en typisk markansk konstruksjon. 'Senere' er en fortolkning. Også er 'αὐτοῦ' (hans hus) tvetydig i originalen - det kan referere til Levis hus, noe som er den vanlige tolkningen."
+      },
+      {
+        "text": "Det skjedde at Jesus lå til bords i hans hus, og mange tollere og syndere lå til bords sammen med Jesus og disiplene hans. For det var mange som fulgte ham.",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "Pronomenet 'αὐτοῦ' (hans) er tvetydig i originalen, men den forrige revisjonen nevner selv at det vanligvis tolkes som Levis hus. For klarhet og leservennlighet kan 'Levis hus' brukes i stedet for 'hans hus', da det ellers kan misforstås som Jesu hus."
+      },
+      {
+        "text": "Det skjedde at Jesus lå til bords i Levis hus, og mange tollere og syndere lå til bords sammen med Jesus og disiplene hans. For det var mange som fulgte ham.",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "Verset gjentar 'Jesus' to ganger, noe som er unaturlig på norsk. Det greske bruker 'αὐτὸν' (ham) andre gang, ikke navnet. Dessuten gjengir 'Da' bedre den narrative overgangen enn 'Det skjedde at'. Merk: dette er forskjellig fra alle tidligere versjoner."
       }
     ]
   },
@@ -129,7 +173,15 @@
     "bookId": 41,
     "chapterId": 2,
     "verseId": 16,
-    "text": "Da de skriftlærde blant fariseerne så at han spiste sammen med syndere og tollere, sa de til disiplene hans: «Hvorfor spiser han med tollere og syndere?»"
+    "text": "Da de skriftlærde blant fariseerne så at han spiste sammen med syndere og tollere, sa de til disiplene hans: «Hvorfor spiser han sammen med tollere og syndere?»",
+    "versions": [
+      {
+        "text": "Da de skriftlærde blant fariseerne så at han spiste sammen med syndere og tollere, sa de til disiplene hans: «Hvorfor spiser han med tollere og syndere?»",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "I spørsmålet mangler 'sammen med' (μετά), som er underforstått i originalen. Det greske 'μετὰ τῶν τελωνῶν καὶ ἁμαρτωλῶν ἐσθίει' har preposisjonen μετά. For konsistens med første del av verset bør 'sammen med' også brukes i spørsmålet."
+      }
+    ]
   },
   {
     "bookId": 41,
@@ -141,7 +193,15 @@
     "bookId": 41,
     "chapterId": 2,
     "verseId": 18,
-    "text": "Disiplene til Johannes og fariseerne holdt faste. Noen kom og spurte ham: «Hvorfor faster disiplene til Johannes og disiplene til fariseerne, mens dine disipler ikke faster?»"
+    "text": "Disiplene til Johannes og fariseerne holdt faste. Da kom noen og spurte ham: «Hvorfor faster disiplene til Johannes og disiplene til fariseerne, mens dine disipler ikke faster?»",
+    "versions": [
+      {
+        "text": "Disiplene til Johannes og fariseerne holdt faste. Noen kom og spurte ham: «Hvorfor faster disiplene til Johannes og disiplene til fariseerne, mens dine disipler ikke faster?»",
+        "type": "error",
+        "severity": "major",
+        "explanation": "Det greske 'καὶ ἔρχονται' (og de kommer) indikerer en handling som følger i tid. 'Da kom noen' gjengir bedre den narrative sekvensen og gir bedre flyt på norsk enn bare 'Noen kom'."
+      }
+    ]
   },
   {
     "bookId": 41,
@@ -159,7 +219,15 @@
     "bookId": 41,
     "chapterId": 2,
     "verseId": 20,
-    "text": "Men det skal komme dager da brudgommen blir tatt fra dem, og da skal de faste, på den dagen."
+    "text": "Men det skal komme dager da brudgommen blir tatt fra dem, og da skal de faste, i de dagene.",
+    "versions": [
+      {
+        "text": "Men det skal komme dager da brudgommen blir tatt fra dem, og da skal de faste, på den dagen.",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "Varianten 'ἐκείναις ταῖς ἡμέραις' (i de dagene) er den foretrukne lesemåten i mange manuskripter, og passer bedre med flertall 'ἡμέραι' (dager) i begynnelsen av verset. Uansett er 'på den dagen' noe klosset norsk i denne sammenhengen. Alternativt kan man beholde entall og si 'på den dag'."
+      }
+    ]
   },
   {
     "bookId": 41,
@@ -177,11 +245,17 @@
     "bookId": 41,
     "chapterId": 2,
     "verseId": 22,
-    "text": "Og ingen fyller ny vin i gamle skinnsekker. For da vil vinen sprenge sekkene, og både vinen og sekkene går til spille. Nei – ny vin må i nye skinnsekker.»",
+    "text": "Og ingen fyller ny vin i gamle skinnsekker. For da vil vinen sprenge sekkene, og både vinen og sekkene går tapt. Nei – ny vin må i nye skinnsekker.»",
     "versions": [
       {
         "text": "Og ingen fyller ny vin i gamle skinnsekker. For da vil vinen sprenge sekkene, og både vinen og sekkene går til spille. Nei, ny vin må i nye skinnsekker.»",
         "explanation": "En tankestrek etter 'Nei' forbedrer den muntlige flyten og markerer tydeligere overgangen til den positive konklusjonen."
+      },
+      {
+        "text": "Og ingen fyller ny vin i gamle skinnsekker. For da vil vinen sprenge sekkene, og både vinen og sekkene går til spille. Nei – ny vin må i nye skinnsekker.»",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "'ἀπόλλυται' betyr 'går tapt/ødelegges'. 'Går til spille' er akseptabelt, men 'går tapt' er en mer presis og vanlig gjengivelse. Dette er et mindre forslag."
       }
     ]
   },
@@ -189,7 +263,15 @@
     "bookId": 41,
     "chapterId": 2,
     "verseId": 23,
-    "text": "En sabbatsdag gikk han gjennom kornåkrene, og disiplene hans begynte å plukke aks mens de gikk."
+    "text": "En sabbatsdag gikk han gjennom kornåkrene, og disiplene begynte å plukke aks mens de banet seg vei.",
+    "versions": [
+      {
+        "text": "En sabbatsdag gikk han gjennom kornåkrene, og disiplene hans begynte å plukke aks mens de gikk.",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "Det greske 'ὁδὸν ποιεῖν τίλλοντες τοὺς στάχυας' betyr bokstavelig 'å bane seg vei mens de plukket aks'. Uttrykket 'ὁδὸν ποιεῖν' (å bane vei) er mer enn bare 'å gå'. Den nåværende oversettelsen forenkler dette. 'Mens de banet seg vei' gjengir bedre det greske uttrykket."
+      }
+    ]
   },
   {
     "bookId": 41,

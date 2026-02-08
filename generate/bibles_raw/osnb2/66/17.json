@@ -51,13 +51,29 @@
     "bookId": 66,
     "chapterId": 17,
     "verseId": 8,
-    "text": "Dyret du så, var og er ikke, men det skal stige opp fra avgrunnen og gå til fortapelsen. De som bor på jorden, de som ikke har fått navnene sine skrevet i livets bok fra verdens grunnleggelse, skal undre seg når de ser dyret som var og ikke er, men skal komme."
+    "text": "Dyret du så, var og er ikke, men det skal stige opp fra avgrunnen og gå til fortapelsen. De som bor på jorden, de som ikke har fått navnet sitt skrevet i livets bok fra verdens grunnleggelse, skal undre seg når de ser dyret som var og ikke er, men skal komme.",
+    "versions": [
+      {
+        "text": "Dyret du så, var og er ikke, men det skal stige opp fra avgrunnen og gå til fortapelsen. De som bor på jorden, de som ikke har fått navnene sine skrevet i livets bok fra verdens grunnleggelse, skal undre seg når de ser dyret som var og ikke er, men skal komme.",
+        "type": "error",
+        "severity": "major",
+        "explanation": "Grunnteksten har 'τὸ ὄνομα' (navnet, entall), ikke 'navnene' (flertall). Det greske uttrykket refererer til hvert enkelt individs navn, i entall. 'Navnet sitt' er mer nøyaktig."
+      }
+    ]
   },
   {
     "bookId": 66,
     "chapterId": 17,
     "verseId": 9,
-    "text": "Her trengs det et sinn med visdom: De sju hodene er sju fjell som kvinnen sitter på. De er også sju konger."
+    "text": "Her trengs det et sinn med visdom: De sju hodene er sju fjell som kvinnen sitter på. Og det er sju konger.",
+    "versions": [
+      {
+        "text": "Her trengs det et sinn med visdom: De sju hodene er sju fjell som kvinnen sitter på. De er også sju konger.",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "Grunnteksten har 'καὶ βασιλεῖς ἑπτά εἰσιν' – 'og det er sju konger'. Dette er en ny setning som introduserer kongene, ikke en identifisering av fjellene som konger ('De er også sju konger' antyder at fjellene = kongene). Grunnteksten synes å presentere fjellene og kongene som separate ting."
+      }
+    ]
   },
   {
     "bookId": 66,
@@ -81,7 +97,15 @@
     "bookId": 66,
     "chapterId": 17,
     "verseId": 13,
-    "text": "Disse er enige og gir sin kraft og myndighet til dyret."
+    "text": "Disse har ett og samme mål, og de gir sin kraft og myndighet til dyret.",
+    "versions": [
+      {
+        "text": "Disse er enige og gir sin kraft og myndighet til dyret.",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "'μίαν γνώμην ἔχουσιν' betyr mer bokstavelig 'har én mening/ett formål'. 'Ett og samme mål' gir en mer presis gjengivelse enn bare 'er enige'. Merk at vers 17 bruker 'bli enige' for 'ποιῆσαι μίαν γνώμην', så det er god grunn til å differensiere uttrykkene i de to versene."
+      }
+    ]
   },
   {
     "bookId": 66,

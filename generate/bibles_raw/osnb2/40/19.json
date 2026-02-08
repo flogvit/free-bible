@@ -111,7 +111,15 @@
     "bookId": 40,
     "chapterId": 19,
     "verseId": 13,
-    "text": "Da ble det ført barn til ham for at han skulle legge hendene på dem og be. Men disiplene talte strengt til dem."
+    "text": "Da ble det ført barn til ham for at han skulle legge hendene på dem og be. Men disiplene irettesatte dem.",
+    "versions": [
+      {
+        "text": "Da ble det ført barn til ham for at han skulle legge hendene på dem og be. Men disiplene talte strengt til dem.",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "'ἐπετίμησαν' betyr 'irettesatte' eller 'talte strengt til'. 'Irettesatte' er mer presist og naturlig på norsk enn 'talte strengt til dem'."
+      }
+    ]
   },
   {
     "bookId": 40,
@@ -141,7 +149,15 @@
     "bookId": 40,
     "chapterId": 19,
     "verseId": 17,
-    "text": "Han sa til ham: «Hvorfor spør du meg om det gode? Én er god. Men vil du gå inn til livet, så hold budene.»"
+    "text": "Han sa til ham: «Hvorfor spør du meg om det gode? Det er bare én som er god. Men vil du gå inn til livet, så hold budene.»",
+    "versions": [
+      {
+        "text": "Han sa til ham: «Hvorfor spør du meg om det gode? Én er god. Men vil du gå inn til livet, så hold budene.»",
+        "type": "error",
+        "severity": "major",
+        "explanation": "Det greske 'εἷς ἐστιν ὁ ἀγαθός' betyr 'det er (bare) én som er god', altså en referanse til Gud. 'Én er god' er grammatisk mulig men noe kryptisk på norsk. 'Det er bare én som er god' gjør meningen tydeligere for leseren."
+      }
+    ]
   },
   {
     "bookId": 40,

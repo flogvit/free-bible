@@ -39,7 +39,15 @@
     "bookId": 42,
     "chapterId": 9,
     "verseId": 5,
-    "text": "Og der de ikke tar imot dere, forlat den byen og rist støvet av føttene som et vitnesbyrd mot dem.»"
+    "text": "Og alle de som ikke tar imot dere – når dere forlater den byen, rist støvet av føttene som et vitnesbyrd mot dem.»",
+    "versions": [
+      {
+        "text": "Og der de ikke tar imot dere, forlat den byen og rist støvet av føttene som et vitnesbyrd mot dem.»",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "Det greske 'ὅσοι ἂν μὴ δέχωνται' refererer til personer ('alle de som ikke tar imot'), ikke steder ('der'). Også 'ἐξερχόμενοι' er et partisipp som beskriver handlingen 'når dere går ut/forlater', ikke en befaling om å forlate."
+      }
+    ]
   },
   {
     "bookId": 42,
@@ -105,13 +113,29 @@
     "bookId": 42,
     "chapterId": 9,
     "verseId": 14,
-    "text": "For det var omkring fem tusen menn der. Da sa han til disiplene sine: «Få dem til å sette seg ned i grupper på omtrent femti.»"
+    "text": "For det var omkring fem tusen menn der. Da sa han til disiplene sine: «Få dem til å legge seg til bords i grupper på omtrent femti.»",
+    "versions": [
+      {
+        "text": "For det var omkring fem tusen menn der. Da sa han til disiplene sine: «Få dem til å sette seg ned i grupper på omtrent femti.»",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "Det greske 'κατακλίνατε' og 'κλισίας' refererer til å legge seg ned/til bords i måltidsstilling, som var vanlig i antikken. 'Sette seg ned' er akseptabelt for moderne lesere, men mister noe av den kulturelle konteksten om måltidsfellesskap."
+      }
+    ]
   },
   {
     "bookId": 42,
     "chapterId": 9,
     "verseId": 15,
-    "text": "De gjorde det og fikk alle til å sette seg ned."
+    "text": "De gjorde det og fikk alle til å legge seg til bords.",
+    "versions": [
+      {
+        "text": "De gjorde det og fikk alle til å sette seg ned.",
+        "type": "error",
+        "severity": "minor",
+        "explanation": "Vers 14 bruker 'legge seg til bords' for κατακλίνατε, men vers 15 bruker 'sette seg ned' for κατέκλιναν - samme verb. For konsistens bør samme uttrykk brukes i begge vers."
+      }
+    ]
   },
   {
     "bookId": 42,
@@ -135,7 +159,15 @@
     "bookId": 42,
     "chapterId": 9,
     "verseId": 18,
-    "text": "En gang da han ba i ensomhet og disiplene var sammen med ham, spurte han dem: «Hvem sier folk at jeg er?»"
+    "text": "En gang da han var alene og ba, og disiplene var sammen med ham, spurte han dem: «Hvem sier folk at jeg er?»",
+    "versions": [
+      {
+        "text": "En gang da han ba i ensomhet og disiplene var sammen med ham, spurte han dem: «Hvem sier folk at jeg er?»",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "Det greske 'κατὰ μόνας' (alene) modifiserer hans tilstand, og 'προσευχόμενον' (bedende) beskriver hva han gjorde. Rekkefølgen og strukturen kan gjengis tydeligere for å vise at han var i bønn alene, men disiplene var i nærheten."
+      }
+    ]
   },
   {
     "bookId": 42,
@@ -195,7 +227,15 @@
     "bookId": 42,
     "chapterId": 9,
     "verseId": 26,
-    "text": "For den som skammer seg over meg og mine ord, ham skal også Menneskesønnen skamme seg over når han kommer i sin herlighet og Faderens og de hellige englers herlighet."
+    "text": "For den som skammer seg over meg og mine ord, over ham skal også Menneskesønnen skamme seg når han kommer i sin herlighet og Faderens og de hellige englers herlighet.",
+    "versions": [
+      {
+        "text": "For den som skammer seg over meg og mine ord, ham skal også Menneskesønnen skamme seg over når han kommer i sin herlighet og Faderens og de hellige englers herlighet.",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "Det greske 'τοῦτον' (denne/ham) er objekt for skammen. 'Over ham' er mer idiomatisk norsk med verbet 'skamme seg over' og gjør setningsstrukturen tydeligere."
+      }
+    ]
   },
   {
     "bookId": 42,
@@ -213,7 +253,15 @@
     "bookId": 42,
     "chapterId": 9,
     "verseId": 29,
-    "text": "Mens han ba, ble ansiktet hans forvandlet, og klærne hans ble hvite og strålende."
+    "text": "Mens han ba, ble ansiktet hans annerledes, og klærne hans ble hvite og strålende.",
+    "versions": [
+      {
+        "text": "Mens han ba, ble ansiktet hans forvandlet, og klærne hans ble hvite og strålende.",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "Det greske 'ἕτερον' betyr 'annerledes/forskjellig', ikke nødvendigvis 'forvandlet'. Lukas bruker et mildere uttrykk enn Matteus og Markus som bruker 'μετεμορφώθη' (ble forvandlet). Dette kan være en bevisst nyanseforskjell."
+      }
+    ]
   },
   {
     "bookId": 42,
@@ -243,7 +291,15 @@
     "bookId": 42,
     "chapterId": 9,
     "verseId": 34,
-    "text": "Mens han talte, kom det en sky og overskygget dem. De ble grepet av frykt da de kom inn i skyen."
+    "text": "Mens han talte, kom det en sky og overskygget dem. De ble grepet av frykt da skyen omsluttet dem.",
+    "versions": [
+      {
+        "text": "Mens han talte, kom det en sky og overskygget dem. De ble grepet av frykt da de kom inn i skyen.",
+        "type": "error",
+        "severity": "minor",
+        "explanation": "Det greske 'ἐν τῷ εἰσελθεῖν αὐτοὺς εἰς τὴν νεφέλην' refererer til at de (Moses, Elia og/eller Jesus, eller alle) gikk inn i skyen. 'Da de kom inn i skyen' kan misforstås som at disiplene gikk inn i skyen. Konteksten tyder på at det var de to mennene (og eventuelt Jesus) som forsvant inn i skyen, eller at skyen kom over dem alle. En tydeligere formulering unngår misforståelsen."
+      }
+    ]
   },
   {
     "bookId": 42,
@@ -267,7 +323,15 @@
     "bookId": 42,
     "chapterId": 9,
     "verseId": 38,
-    "text": "En mann i mengden ropte: «Mester, jeg ber deg, se til sønnen min! Han er min eneste."
+    "text": "En mann i mengden ropte: «Mester, jeg ber deg, se til sønnen min! Han er min eneste sønn.",
+    "versions": [
+      {
+        "text": "En mann i mengden ropte: «Mester, jeg ber deg, se til sønnen min! Han er min eneste.",
+        "type": "grammar",
+        "severity": "minor",
+        "explanation": "Det greske 'μονογενής' betyr 'enbåren/eneste sønn'. Selv om konteksten gjør det klart, er det mer presist å inkludere 'sønn' for fullstendighetens skyld."
+      }
+    ]
   },
   {
     "bookId": 42,
@@ -315,7 +379,15 @@
     "bookId": 42,
     "chapterId": 9,
     "verseId": 44,
-    "text": "«Merk dere nøye disse ordene: Menneskesønnen skal overgis i menneskers hender.»"
+    "text": "«Legg dere disse ordene på øret: Menneskesønnen skal overgis i menneskers hender.»",
+    "versions": [
+      {
+        "text": "«Merk dere nøye disse ordene: Menneskesønnen skal overgis i menneskers hender.»",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "Det greske 'Θέσθε εἰς τὰ ὦτα ὑμῶν' er bokstavelig 'legg i ørene deres'. Det norske idiomet 'legg dere dette på øret' fanger den billedlige kraften bedre enn 'merk dere nøye', som er mer generisk. Det beholder også øremetaforen fra originalen."
+      }
+    ]
   },
   {
     "bookId": 42,
@@ -339,7 +411,15 @@
     "bookId": 42,
     "chapterId": 9,
     "verseId": 47,
-    "text": "Men Jesus visste hva de tenkte i hjertet. Han tok et lite barn, stilte det ved siden av seg"
+    "text": "Men Jesus visste hva de tenkte i hjertet sitt. Han tok et lite barn og stilte det ved siden av seg",
+    "versions": [
+      {
+        "text": "Men Jesus visste hva de tenkte i hjertet. Han tok et lite barn, stilte det ved siden av seg",
+        "type": "grammar",
+        "severity": "minor",
+        "explanation": "1) 'τῆς καρδίας αὐτῶν' (deres hjerte) bør oversettes 'i hjertet sitt' eller 'i deres hjerter' for bedre norsk. 2) Verset mangler 'og' mellom handlingene for bedre flyt. 3) Verset mangler punktum på slutten da det er ufullstendig som setning (fortsetter i v.48)."
+      }
+    ]
   },
   {
     "bookId": 42,
@@ -375,7 +455,15 @@
     "bookId": 42,
     "chapterId": 9,
     "verseId": 51,
-    "text": "Da tiden nærmet seg for at han skulle tas opp til himmelen, vendte han ansiktet mot Jerusalem for å dra dit."
+    "text": "Da tiden nærmet seg for at han skulle tas opp til himmelen, vendte han fast ansiktet mot Jerusalem for å dra dit.",
+    "versions": [
+      {
+        "text": "Da tiden nærmet seg for at han skulle tas opp til himmelen, vendte han ansiktet mot Jerusalem for å dra dit.",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "Det greske 'ἐστήρισεν' (fra στηρίζω) betyr 'å gjøre fast/styrke'. Uttrykket 'τὸ πρόσωπον ἐστήρισεν' innebærer en bestemt, fast beslutning – han 'rettet ansiktet fast' mot Jerusalem. Å legge til 'fast' fanger opp denne viktige nyanssen av besluttsomhet."
+      }
+    ]
   },
   {
     "bookId": 42,
@@ -435,7 +523,15 @@
     "bookId": 42,
     "chapterId": 9,
     "verseId": 58,
-    "text": "Jesus sa til ham: «Revene har hi, og himmelens fugler har reder, men Menneskesønnen har ikke noe sted å hvile sitt hode.»"
+    "text": "Jesus sa til ham: «Revene har hi, og fuglene under himmelen har reder, men Menneskesønnen har ikke noe sted å hvile sitt hode.»",
+    "versions": [
+      {
+        "text": "Jesus sa til ham: «Revene har hi, og himmelens fugler har reder, men Menneskesønnen har ikke noe sted å hvile sitt hode.»",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "Det greske 'τὰ πετεινὰ τοῦ οὐρανοῦ' betyr bokstavelig 'fuglene til/under himmelen'. 'Himmelens fugler' er korrekt men noe arkaisk. 'Fuglene under himmelen' er mer moderne norsk og like nøyaktig. Dette er imidlertid en mindre preferansesak."
+      }
+    ]
   },
   {
     "bookId": 42,
@@ -453,7 +549,15 @@
     "bookId": 42,
     "chapterId": 9,
     "verseId": 60,
-    "text": "Jesus sa til ham: «La de døde begrave sine døde. Men du, gå og forkynn Guds rike!»"
+    "text": "Men han sa til ham: «La de døde begrave sine døde. Men du, gå og forkynn Guds rike!»",
+    "versions": [
+      {
+        "text": "Jesus sa til ham: «La de døde begrave sine døde. Men du, gå og forkynn Guds rike!»",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "Det greske 'εἶπεν δὲ αὐτῷ' har ikke 'Ἰησοῦς' eksplisitt nevnt. Oversettelsen legger til 'Jesus' som ikke står i grunnteksten. 'Men han sa' ville være mer teksttro."
+      }
+    ]
   },
   {
     "bookId": 42,

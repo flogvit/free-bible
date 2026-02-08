@@ -15,7 +15,15 @@
     "bookId": 2,
     "chapterId": 7,
     "verseId": 3,
-    "text": "Men jeg vil forherde faraos hjerte og gjøre mine tegn og underfulle gjerninger mange i Egypt."
+    "text": "Men jeg vil forherde faraos hjerte og gjøre mine tegn og under mange i Egypt.",
+    "versions": [
+      {
+        "text": "Men jeg vil forherde faraos hjerte og gjøre mine tegn og underfulle gjerninger mange i Egypt.",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "'מוֹפְתַי' betyr 'mine under/undere/tegn', ikke 'underfulle gjerninger'. 'Under' er mer presist og naturlig på norsk. 'Tegn og under' er også den etablerte bibelske formuleringen."
+      }
+    ]
   },
   {
     "bookId": 2,
@@ -99,7 +107,15 @@
     "bookId": 2,
     "chapterId": 7,
     "verseId": 14,
-    "text": "Herren sa til Moses: «Faraos hjerte er ubøyelig. Han nekter å la folket dra."
+    "text": "Herren sa til Moses: «Faraos hjerte er forherdet. Han nekter å la folket dra.",
+    "versions": [
+      {
+        "text": "Herren sa til Moses: «Faraos hjerte er ubøyelig. Han nekter å la folket dra.",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "'כָּבֵד' betyr bokstavelig 'tungt/hardt'. 'Forherdet' er en mer presis teologisk gjengivelse og er konsistent med bruken av 'forherde' i vers 3 og 13. 'Ubøyelig' er en mer fri tolkning."
+      }
+    ]
   },
   {
     "bookId": 2,
@@ -111,7 +127,15 @@
     "bookId": 2,
     "chapterId": 7,
     "verseId": 16,
-    "text": "Si til ham: Herren, hebreernes Gud, har sendt meg til deg med dette budskapet: La mitt folk dra, så de kan tjene meg i ørkenen! Men du har ikke villet høre til nå."
+    "text": "Si til ham: 'Herren, hebreernes Gud, har sendt meg til deg og sagt: La mitt folk dra, så de kan tjene meg i ørkenen! Men du har ikke villet høre til nå.'",
+    "versions": [
+      {
+        "text": "Si til ham: Herren, hebreernes Gud, har sendt meg til deg med dette budskapet: La mitt folk dra, så de kan tjene meg i ørkenen! Men du har ikke villet høre til nå.",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "'לֵאמֹר' betyr 'og sagt' eller 'med dette budskapet'. Begge fungerer, men direkte tale bør markeres med anførselstegn for klarhet, siden dette er Moses' ord til farao."
+      }
+    ]
   },
   {
     "bookId": 2,
@@ -135,7 +159,15 @@
     "bookId": 2,
     "chapterId": 7,
     "verseId": 19,
-    "text": "Herren sa til Moses: «Si til Aron: Ta staven din og rekk hånden ut over vannene i Egypt – over elvene, kanalene, dammene og alle vannsamlingene – så de blir til blod. Det skal være blod i hele Egypt, også i trekar og steinkar.»"
+    "text": "Herren sa til Moses: «Si til Aron: 'Ta staven din og rekk hånden ut over vannene i Egypt – over elvene, kanalene, dammene og alle vannsamlingene – så de blir til blod.' Det skal være blod i hele Egypt, også i trekar og steinkar.»",
+    "versions": [
+      {
+        "text": "Herren sa til Moses: «Si til Aron: Ta staven din og rekk hånden ut over vannene i Egypt – over elvene, kanalene, dammene og alle vannsamlingene – så de blir til blod. Det skal være blod i hele Egypt, også i trekar og steinkar.»",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "Guds instruksjon til Moses om hva han skal si til Aron bør markeres tydeligere med anførselstegn. Det siste utsagnet 'Det skal være blod...' er Guds eget tillegg, ikke en del av det Aron skal gjøre."
+      }
+    ]
   },
   {
     "bookId": 2,
@@ -159,11 +191,17 @@
     "bookId": 2,
     "chapterId": 7,
     "verseId": 23,
-    "text": "Farao snudde seg og gikk inn i sitt palass. Heller ikke dette tok han seg nær av.",
+    "text": "Farao snudde seg og gikk inn i sitt palass. Han la seg ikke heller dette på hjertet.",
     "versions": [
       {
         "text": "Farao snudde seg og gikk hjem til sitt palass. Heller ikke dette tok han seg nær av.",
         "explanation": "Det hebraiske 'וַיָּבֹא אֶל־בֵּיתוֹ' betyr 'gikk inn i sitt hus/palass'. 'Gikk hjem' impliserer at han var borte hjemmefra, men teksten sier bare at han gikk inn i palasset."
+      },
+      {
+        "text": "Farao snudde seg og gikk inn i sitt palass. Heller ikke dette tok han seg nær av.",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "'שָׁת לִבּוֹ' betyr bokstavelig 'la sitt hjerte til' – altså 'la seg på hjertet' eller 'aktet på'. 'Tok han seg nær av' kan misforstås som at det handler om følelsesmessig berøring, mens hebraisk uttrykker at han ikke ga det oppmerksomhet."
       }
     ]
   },
@@ -189,13 +227,29 @@
     "bookId": 2,
     "chapterId": 7,
     "verseId": 27,
-    "text": "Hvis du nekter å la dem dra, vil jeg slå hele ditt land med frosk."
+    "text": "Hvis du nekter å la dem dra, se, da vil jeg plage hele ditt land med frosk.",
+    "versions": [
+      {
+        "text": "Hvis du nekter å la dem dra, vil jeg slå hele ditt land med frosk.",
+        "type": "error",
+        "severity": "major",
+        "explanation": "'נֹגֵף' betyr 'plage/ramme/slå med en plage', ikke bare 'slå'. Dessuten mangler gjengivelsen av 'הִנֵּה' (se/se her), som understreker det umiddelbare og truende i budskapet. 'גְּבוּלְךָ' betyr 'ditt område/territorium', som 'ditt land' gjengir akseptabelt."
+      }
+    ]
   },
   {
     "bookId": 2,
     "chapterId": 7,
     "verseId": 28,
-    "text": "Nilen skal vrimle av frosk. De skal krype opp og trenge inn i ditt hus, i ditt soverom og opp i din seng, i husene til dine tjenere og blant ditt folk, i dine bakerovner og i dine deigtrau."
+    "text": "Nilen skal vrimle av frosker. De skal krype opp og trenge inn i ditt hus, i ditt soverom og opp i din seng, i husene til dine tjenere og blant ditt folk, i dine bakerovner og i dine deigtrau.",
+    "versions": [
+      {
+        "text": "Nilen skal vrimle av frosk. De skal krype opp og trenge inn i ditt hus, i ditt soverom og opp i din seng, i husene til dine tjenere og blant ditt folk, i dine bakerovner og i dine deigtrau.",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "'צְפַרְדְּעִים' er flertall – 'frosker'. 'Frosk' i entall er brukt i vers 27 der det fungerer som en kollektiv betegnelse for plagen, men her med 'vrimle' er flertall mer naturlig."
+      }
+    ]
   },
   {
     "bookId": 2,

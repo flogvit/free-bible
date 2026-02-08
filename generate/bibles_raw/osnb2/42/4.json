@@ -45,7 +45,15 @@
     "bookId": 42,
     "chapterId": 4,
     "verseId": 5,
-    "text": "Så førte djevelen ham opp og viste ham alle verdens riker på et øyeblikk."
+    "text": "Så førte han ham opp og viste ham alle verdens riker på et øyeblikk.",
+    "versions": [
+      {
+        "text": "Så førte djevelen ham opp og viste ham alle verdens riker på et øyeblikk.",
+        "type": "error",
+        "severity": "minor",
+        "explanation": "Subjektet i den greske teksten er implisitt (fra konteksten er det djevelen), men teksten nevner ikke eksplisitt 'ὁ διάβολος' i dette verset. Å bruke 'djevelen' er ikke feil per se, men å bruke 'han' er mer tekstnært og tilstrekkelig klart fra konteksten. Dette er dog en mindre sak."
+      }
+    ]
   },
   {
     "bookId": 42,
@@ -81,11 +89,17 @@
     "bookId": 42,
     "chapterId": 4,
     "verseId": 9,
-    "text": "Så førte han ham til Jerusalem og stilte ham på templets tinde og sa til ham: «Er du Guds Sønn, så kast deg ned herfra.",
+    "text": "Så førte djevelen ham til Jerusalem og stilte ham på templets tinde og sa til ham: «Er du Guds Sønn, så kast deg ned herfra.",
     "versions": [
       {
         "text": "Så førte han ham til Jerusalem og stilte ham på tempelmuren og sa til ham: «Er du Guds Sønn, så kast deg ned herfra.",
         "explanation": "Det greske 'πτερύγιον' betyr bokstavelig 'liten vinge' og refererer til en fremstikkende del eller tinde på tempelet, ikke muren generelt. 'Templets tinde' er den tradisjonelle og mer presise oversettelsen."
+      },
+      {
+        "text": "Så førte han ham til Jerusalem og stilte ham på templets tinde og sa til ham: «Er du Guds Sønn, så kast deg ned herfra.",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "Subjektsskifte: I vers 8 er Jesus subjekt, og i vers 9 er det djevelen (Ἤγαγεν δὲ). For å unngå forvirring om hvem 'han' refererer til, bør 'djevelen' brukes eksplisitt her, spesielt siden vers 8 avslutter med Jesu tale."
       }
     ]
   },
@@ -261,7 +275,7 @@
     "bookId": 42,
     "chapterId": 4,
     "verseId": 33,
-    "text": "I synagogen var det en mann som var besatt av en uren demonisk ånd. Han ropte høyt:",
+    "text": "I synagogen var det en mann som hadde en uren demonisk ånd i seg. Han ropte høyt:",
     "versions": [
       {
         "text": "I synagogen var det en mann som hadde en uren ånd i seg. Han ropte høyt:",
@@ -270,6 +284,12 @@
       {
         "text": "I synagogen var det en mann som hadde en uren demons ånd. Han ropte høyt:",
         "explanation": "'En uren demons ånd' er grammatisk klønete på norsk. 'En uren demonisk ånd' eller 'en ond ånds ånd' formidler meningen bedre. Alternativt kan 'besatt av' erstatte 'hadde' for naturlig norsk uttrykksmåte."
+      },
+      {
+        "text": "I synagogen var det en mann som var besatt av en uren demonisk ånd. Han ropte høyt:",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "Det greske 'ἔχων' betyr 'som hadde', ikke 'som var besatt av'. Selv om 'besatt av' er idiomatisk, er det en tolkning som legger til mer enn originalteksten sier. Verset har allerede 2 revisjoner, men denne endringen ble introdusert i revisjon 2 og avviker fra det greske verbet."
       }
     ]
   },
@@ -331,7 +351,15 @@
     "bookId": 42,
     "chapterId": 4,
     "verseId": 42,
-    "text": "Da det ble dag, gikk han ut og dro til et øde sted. Men folkemengden lette etter ham, og de kom helt fram til ham og ville holde ham tilbake så han ikke skulle forlate dem."
+    "text": "Da det ble dag, gikk han ut og dro til et øde sted. Men folkemengden lette etter ham, og de kom helt fram til ham og prøvde å holde ham tilbake så han ikke skulle forlate dem.",
+    "versions": [
+      {
+        "text": "Da det ble dag, gikk han ut og dro til et øde sted. Men folkemengden lette etter ham, og de kom helt fram til ham og ville holde ham tilbake så han ikke skulle forlate dem.",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "Det greske 'κατεῖχον' (imperfektum) indikerer en pågående handling - de forsøkte å holde ham tilbake. 'Ville holde ham tilbake' antyder bare intensjon, mens 'prøvde å holde ham tilbake' fanger bedre den aktive, men ufullstendige handlingen som imperfektum uttrykker."
+      }
+    ]
   },
   {
     "bookId": 42,

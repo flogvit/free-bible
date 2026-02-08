@@ -63,11 +63,17 @@
     "bookId": 45,
     "chapterId": 3,
     "verseId": 9,
-    "text": "Hva da? Er vi bedre stilt? Slett ikke!",
+    "text": "Hva da? Er vi bedre stilt? Slett ikke! For vi har allerede anklaget at både jøder og grekere, alle sammen, er under synden,",
     "versions": [
       {
         "text": "Hva da? Har vi noen fordel? Slett ikke! For vi har allerede anklaget både jøder og grekere for at de alle er under synden.",
         "explanation": "Det greske «προεχόμεθα» (medium/passiv) kan bety «har vi en fordel» eller «er vi bedre stilt». Konteksten handler om sammenligning mellom jøder og hedninger, så «er vi bedre stilt» fanger bedre den komparative betydningen og gir bedre flyt muntlig."
+      },
+      {
+        "text": "Hva da? Er vi bedre stilt? Slett ikke!",
+        "type": "error",
+        "severity": "critical",
+        "explanation": "Den andre halvdelen av verset er helt utelatt i den nåværende versjonen. Grunnteksten inneholder en viktig begrunnelse (γὰρ) med anklagen om at alle er under synden. Den forrige versjonen hadde denne teksten med, men ble endret - dessverre ble hele den andre setningen fjernet. Teksten må inkluderes da den er en vesentlig del av argumentasjonen."
       }
     ]
   },
@@ -147,7 +153,15 @@
     "bookId": 45,
     "chapterId": 3,
     "verseId": 20,
-    "text": "For ikke noe menneske blir rettferdiggjort for hans ansikt ved lovgjerninger, for ved loven kommer erkjennelse av synd."
+    "text": "For intet menneske blir rettferdiggjort for ham ved lovgjerninger, for ved loven kommer erkjennelse av synd.",
+    "versions": [
+      {
+        "text": "For ikke noe menneske blir rettferdiggjort for hans ansikt ved lovgjerninger, for ved loven kommer erkjennelse av synd.",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "«πᾶσα σὰρξ» betyr bokstavelig «alt kjøtt/kjød» og oversettes idiomatisk som «intet menneske» (med negasjonen). «Ikke noe menneske» er akseptabelt men «intet menneske» er mer idiomatisk norsk bokmål. «ἐνώπιον αὐτοῦ» betyr «for ham» / «i hans nærvær» – «for hans ansikt» er en hebraisme som kan forenkles."
+      }
+    ]
   },
   {
     "bookId": 45,
@@ -207,7 +221,15 @@
     "bookId": 45,
     "chapterId": 3,
     "verseId": 26,
-    "text": "Det skjedde i Guds tålmodighet, for å vise hans rettferdighet i den nåværende tid, så han kunne være rettferdig og rettferdiggjøre den som har tro på Jesus."
+    "text": "Det var i Guds tålmodige overbærenhet. Nå ville han vise sin rettferdighet i den nåværende tid, så han selv kunne være rettferdig og rettferdiggjøre den som har tro på Jesus.",
+    "versions": [
+      {
+        "text": "Det skjedde i Guds tålmodighet, for å vise hans rettferdighet i den nåværende tid, så han kunne være rettferdig og rettferdiggjøre den som har tro på Jesus.",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "«ἐν τῇ ἀνοχῇ τοῦ θεοῦ» hører grammatisk sammen med v.25 (overbærenheten der syndene ble båret over med). «πρὸς τὴν ἔνδειξιν» markerer et nytt formål som er rettet mot nåtiden, til forskjell fra det historiske i v.25. Skillet mellom den tidligere overbærenheten og den nåværende demonstrasjonen av rettferdighet kan tydeliggjøres noe."
+      }
+    ]
   },
   {
     "bookId": 45,

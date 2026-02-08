@@ -21,11 +21,17 @@
     "bookId": 44,
     "chapterId": 2,
     "verseId": 3,
-    "text": "Og tunger som av ild viste seg for dem og delte seg, og de satte seg på hver enkelt av dem.",
+    "text": "Og tunger som av ild viste seg for dem, fordelte seg og satte seg på hver enkelt av dem.",
     "versions": [
       {
         "text": "Og tunger som av ild viste seg for dem, delte seg og satte seg på hver enkelt av dem.",
         "explanation": "Den greske syntaksen viser at 'διαμεριζόμεναι' (delende seg) er et partisipp som beskriver tungene som viste seg, ikke en separat handling. Tungene viste seg allerede delt. Dessuten bør 'de satte seg' være klart at det refererer til tungene."
+      },
+      {
+        "text": "Og tunger som av ild viste seg for dem og delte seg, og de satte seg på hver enkelt av dem.",
+        "type": "error",
+        "severity": "major",
+        "explanation": "Versjonshistorikken viser at endringen var ment å tydeliggjøre at tungene viste seg allerede delt. Men den nåværende formuleringen 'viste seg for dem og delte seg' med 'og' skaper fortsatt inntrykk av to separate handlinger. 'Fordelte seg' er mer presist for διαμεριζόμεναι som betyr å fordele/distribuere seg – tungene fordelte seg utover og satte seg på hver enkelt."
       }
     ]
   },
@@ -243,11 +249,17 @@
     "bookId": 44,
     "chapterId": 2,
     "verseId": 33,
-    "text": "Han ble opphøyet til Guds høyre hånd og mottok fra Faderen Den hellige ånds løfte, og han har utøst dette som dere både ser og hører.",
+    "text": "Han ble opphøyet til Guds høyre hånd og mottok fra Faderen løftet om Den hellige ånd, og han har utøst dette som dere både ser og hører.",
     "versions": [
       {
         "text": "Han ble opphøyet til Guds høyre hånd og mottok fra Faderen det lovede, Den hellige ånd, og han har utøst dette som dere både ser og hører.",
         "explanation": "Det greske 'τὴν ἐπαγγελίαν τοῦ πνεύματος τοῦ ἁγίου' betyr 'løftet om Den hellige ånd' eller 'Den hellige ånds løfte'. 'Det lovede, Den hellige ånd' er litt uklart - det kan misforstås som om Den hellige ånd er det som ble lovet, mens det egentlig er løftet som tilhører/handler om Ånden."
+      },
+      {
+        "text": "Han ble opphøyet til Guds høyre hånd og mottok fra Faderen Den hellige ånds løfte, og han har utøst dette som dere både ser og hører.",
+        "type": "error",
+        "severity": "major",
+        "explanation": "'Den hellige ånds løfte' er tvetydig – det kan bety et løfte som Den hellige ånd gir. Det greske τὴν ἐπαγγελίαν τοῦ πνεύματος τοῦ ἁγίου betyr 'løftet om Den hellige ånd', altså løftet som handler om/innebærer Den hellige ånd. 'Løftet om Den hellige ånd' er klarere og teologisk mer presist."
       }
     ]
   },
@@ -345,12 +357,28 @@
     "bookId": 44,
     "chapterId": 2,
     "verseId": 46,
-    "text": "Hver dag var de samstemt sammen i tempelet, de brøt brød hjemme og delte måltider med glede og oppriktig hjerte."
+    "text": "Hver dag holdt de trofast sammen i tempelet, de brøt brød i hjemmene og delte måltider med jubel og oppriktig hjerte.",
+    "versions": [
+      {
+        "text": "Hver dag var de samstemt sammen i tempelet, de brøt brød hjemme og delte måltider med glede og oppriktig hjerte.",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "1) 'Samstemt sammen' er redundant – προσκαρτεροῦντες ὁμοθυμαδὸν betyr 'holdt trofast/utholdende sammen i enighet'. 2) κατʼ οἶκον betyr 'fra hus til hus' eller 'i hjemmene' (distributivt), ikke bare 'hjemme'. 3) ἀγαλλιάσει betyr 'jubel/fryd', som er sterkere enn bare 'glede'."
+      }
+    ]
   },
   {
     "bookId": 44,
     "chapterId": 2,
     "verseId": 47,
-    "text": "De lovpriste Gud og var godt likt av hele folket. Og Herren la hver dag dem som ble frelst, til menigheten."
+    "text": "De lovpriste Gud og var godt likt av hele folket. Og Herren la daglig dem som ble frelst, til deres fellesskap.",
+    "versions": [
+      {
+        "text": "De lovpriste Gud og var godt likt av hele folket. Og Herren la hver dag dem som ble frelst, til menigheten.",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "'Til menigheten' er en vanlig oversettelse, men ἐπὶ τὸ αὐτό betyr bokstavelig 'til det samme (stedet/fellesskapet)' og peker tilbake på fellesskapet beskrevet i v.42-46. 'Deres fellesskap' er mer tro mot originalen enn 'menigheten' som er en institusjonell term som ikke finnes i grunnteksten her."
+      }
+    ]
   }
 ]

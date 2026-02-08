@@ -33,7 +33,15 @@
     "bookId": 52,
     "chapterId": 5,
     "verseId": 5,
-    "text": "For dere er alle lysets barn og dagens barn. Vi tilhører ikke natten eller mørket."
+    "text": "For dere er alle lysets barn og dagens barn. Vi tilhører verken natten eller mørket.",
+    "versions": [
+      {
+        "text": "For dere er alle lysets barn og dagens barn. Vi tilhører ikke natten eller mørket.",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "Det greske οὐκ...οὐδὲ uttrykker en dobbelt nektelse ('ikke...heller ikke'), som på norsk best gjengis med 'verken...eller' for å understreke at begge deler er utelukket."
+      }
+    ]
   },
   {
     "bookId": 52,
@@ -81,7 +89,15 @@
     "bookId": 52,
     "chapterId": 5,
     "verseId": 11,
-    "text": "Derfor skal dere oppmuntre hverandre og bygge hverandre opp, slik dere allerede gjør."
+    "text": "Oppmuntre derfor hverandre og bygg hverandre opp, slik dere allerede gjør.",
+    "versions": [
+      {
+        "text": "Derfor skal dere oppmuntre hverandre og bygge hverandre opp, slik dere allerede gjør.",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "De greske verbene παρακαλεῖτε og οἰκοδομεῖτε er imperativer (bydeform), ikke indikativer med 'skal'. En direkte imperativ på norsk ('Oppmuntre... bygg opp') er mer naturlig og gjenspeiler grunnteksten bedre."
+      }
+    ]
   },
   {
     "bookId": 52,
@@ -195,17 +211,31 @@
     "bookId": 52,
     "chapterId": 5,
     "verseId": 26,
-    "text": "Hils alle søsknene med et hellig kyss."
+    "text": "Hils alle søsken med et hellig kyss.",
+    "versions": [
+      {
+        "text": "Hils alle søsknene med et hellig kyss.",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "Bestemt form 'søsknene' er unødvendig her; 'alle søsken' er mer naturlig norsk og dekker πάντας ἀδελφούς godt."
+      }
+    ]
   },
   {
     "bookId": 52,
     "chapterId": 5,
     "verseId": 27,
-    "text": "Jeg pålegger dere ved Herren at dette brevet blir lest opp for alle søsknene.",
+    "text": "Jeg pålegger dere ved Herren at dette brevet blir lest opp for alle søsken.",
     "versions": [
       {
         "text": "Jeg ber dere inntrengende ved Herren at dette brevet blir lest opp for alle søsknene.",
         "explanation": "ἐνορκίζω er et sterkere ord enn 'be inntrengende' - det betyr å pålegge noen under ed/ved noe hellig. 'Pålegger' fanger bedre den autoritative tonen i Paulus' avsluttende instruks."
+      },
+      {
+        "text": "Jeg pålegger dere ved Herren at dette brevet blir lest opp for alle søsknene.",
+        "type": "grammar",
+        "severity": "minor",
+        "explanation": "Konsistens med resten av brevet: 'søsken' uten bestemt artikkel er mer naturlig her, slik det brukes i vers 1, 12, 14, 25."
       }
     ]
   },

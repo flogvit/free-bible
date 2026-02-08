@@ -105,13 +105,29 @@
     "bookId": 44,
     "chapterId": 13,
     "verseId": 18,
-    "text": "I omkring førti år bar han over med dem i ørkenen."
+    "text": "I omkring førti år holdt han ut med dem i ørkenen.",
+    "versions": [
+      {
+        "text": "I omkring førti år bar han over med dem i ørkenen.",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "ἐτροποφόρησεν (tropophoreō) betyr å bære/tåle noens oppførsel/vaner. 'Bar over med' er forståelig men 'holdt ut med' er mer idiomatisk norsk og formidler den samme betydningen av å tåle deres atferd."
+      }
+    ]
   },
   {
     "bookId": 44,
     "chapterId": 13,
     "verseId": 19,
-    "text": "Han utryddet sju folkeslag i Kanaans land og lot dem arve deres land."
+    "text": "Han tilintetgjorde sju folkeslag i Kanaans land og ga dem deres land som arv.",
+    "versions": [
+      {
+        "text": "Han utryddet sju folkeslag i Kanaans land og lot dem arve deres land.",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "κατεκληρονόμησεν betyr 'ga som arv' – subjektet er Gud som ga landet som arv til Israel. 'Lot dem arve' er akseptabelt men 'ga dem deres land som arv' er noe mer presist. Også καθελών betyr å rive ned/ødelegge, 'tilintetgjorde' er et alternativ til 'utryddet'."
+      }
+    ]
   },
   {
     "bookId": 44,
@@ -147,13 +163,29 @@
     "bookId": 44,
     "chapterId": 13,
     "verseId": 25,
-    "text": "Da Johannes var i ferd med å fullføre sitt løp, sa han: 'Hvem tror dere jeg er? Jeg er ikke den dere venter på. Men se, etter meg kommer en som jeg ikke er verdig til å løse sandalene av.'"
+    "text": "Da Johannes var i ferd med å fullføre sitt løp, sa han: 'Hvem tror dere jeg er? Det er ikke meg. Men se, etter meg kommer en som jeg ikke er verdig til å løse sandalene av.'",
+    "versions": [
+      {
+        "text": "Da Johannes var i ferd med å fullføre sitt løp, sa han: 'Hvem tror dere jeg er? Jeg er ikke den dere venter på. Men se, etter meg kommer en som jeg ikke er verdig til å løse sandalene av.'",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "Det greske οὐκ εἰμὶ ἐγώ betyr bokstavelig 'det er ikke meg' (dvs. jeg er ikke den dere tenker på). 'Jeg er ikke den dere venter på' legger til innhold som ikke finnes i grunnteksten."
+      }
+    ]
   },
   {
     "bookId": 44,
     "chapterId": 13,
     "verseId": 26,
-    "text": "Brødre, sønner av Abrahams ætt, og dere blant oss som frykter Gud: Til dere er dette frelsens ord blitt sendt."
+    "text": "Brødre, sønner av Abrahams ætt, og dere blant dere som frykter Gud: Til oss er dette frelsens ord blitt sendt.",
+    "versions": [
+      {
+        "text": "Brødre, sønner av Abrahams ætt, og dere blant oss som frykter Gud: Til dere er dette frelsens ord blitt sendt.",
+        "type": "error",
+        "severity": "major",
+        "explanation": "Grunnsteksten har ἡμῖν (oss), ikke ὑμῖν (dere). Paulus inkluderer seg selv blant mottakerne. I tillegg: 'blant oss' bør være 'blant dere' (οἱ ἐν ὑμῖν), mens 'til dere' bør være 'til oss' (ἡμῖν). Begge pronomene er byttet om i gjeldende oversettelse."
+      }
+    ]
   },
   {
     "bookId": 44,
@@ -195,7 +227,15 @@
     "bookId": 44,
     "chapterId": 13,
     "verseId": 33,
-    "text": "det har Gud oppfylt for oss, deres barn, ved å oppreise Jesus. Som det også står skrevet i den andre salmen: 'Du er min Sønn, jeg har født deg i dag.'"
+    "text": "det har Gud oppfylt for oss, barna deres, ved å oppreise Jesus. Som det også står skrevet i den andre salmen: 'Du er min Sønn, jeg har født deg i dag.'",
+    "versions": [
+      {
+        "text": "det har Gud oppfylt for oss, deres barn, ved å oppreise Jesus. Som det også står skrevet i den andre salmen: 'Du er min Sønn, jeg har født deg i dag.'",
+        "type": "error",
+        "severity": "major",
+        "explanation": "τοῖς τέκνοις ἡμῶν betyr 'for oss, deres (fedrenes) barn'. 'Deres barn' refererer til fedrene nevnt i vers 32. 'Oss, deres barn' er korrekt, men formuleringen 'barna deres' er klarere norsk for å vise at 'deres' refererer tilbake til fedrene."
+      }
+    ]
   },
   {
     "bookId": 44,
@@ -277,7 +317,15 @@
     "bookId": 44,
     "chapterId": 13,
     "verseId": 45,
-    "text": "Men da jødene så folkemengden, ble de fylt av misunnelse og motsa det Paulus sa, og spottet."
+    "text": "Men da jødene så folkemengden, ble de fylt av sjalusi og motsa det Paulus sa, og spottet.",
+    "versions": [
+      {
+        "text": "Men da jødene så folkemengden, ble de fylt av misunnelse og motsa det Paulus sa, og spottet.",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "ζῆλος kan bety 'nidkjærhet/iver' men også 'sjalusi'. I denne konteksten er 'sjalusi' mer dekkende enn 'misunnelse'. Misunnelse handler om å ønske det andre har, mens sjalusi handler om å beskytte det man anser som sitt eget – jødene reagerte på at 'deres' tilhørere ble tiltrukket av Paulus."
+      }
+    ]
   },
   {
     "bookId": 44,

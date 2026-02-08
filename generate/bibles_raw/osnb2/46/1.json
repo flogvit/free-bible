@@ -87,7 +87,15 @@
     "bookId": 46,
     "chapterId": 1,
     "verseId": 14,
-    "text": "Jeg takker for at jeg ikke døpte noen av dere, unntatt Krispus og Gaius,"
+    "text": "Jeg takker Gud for at jeg ikke døpte noen av dere, unntatt Krispus og Gaius,",
+    "versions": [
+      {
+        "text": "Jeg takker for at jeg ikke døpte noen av dere, unntatt Krispus og Gaius,",
+        "type": "error",
+        "severity": "major",
+        "explanation": "Varianten har εὐχαριστῶ (τῷ θεῷ) – 'jeg takker Gud'. Selv om τῷ θεῷ er en tekstkritisk variant, er 'Jeg takker Gud' mer naturlig og tydelig på norsk enn bare 'Jeg takker'. Uten objekt virker setningen ufullstendig."
+      }
+    ]
   },
   {
     "bookId": 46,
@@ -153,11 +161,17 @@
     "bookId": 46,
     "chapterId": 1,
     "verseId": 23,
-    "text": "men vi forkynner Kristus korsfestet – for jøder en snublestein og for hedningene dårskap,",
+    "text": "men vi forkynner Kristus korsfestet – for jøder en snublestein, og for hedningefolk dårskap,",
     "versions": [
       {
         "text": "men vi forkynner Kristus korsfestet – for jøder en snublestein og for hedninger en dårskap,",
         "explanation": "Den greske teksten har 'ἔθνεσιν' (dativ plural med bestemt artikkel-funksjon). For konsistens med 'jøder' (uten artikkel) og bedre flyt på norsk, kan 'hedningene' fungere bedre. Alternativt kan begge være uten artikkel for parallellitet."
+      },
+      {
+        "text": "men vi forkynner Kristus korsfestet – for jøder en snublestein og for hedningene dårskap,",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "Verset mangler komma før 'og' mellom de to parallelle leddene. Også: grunnteksten har ἔθνεσιν (folkeslagene/hedningefolk) uten bestemt artikkel. 'Hedningene' med bestemt artikkel ble valgt i forrige revisjon, men 'hedningefolk' kan være et bedre kompromiss som unngår å gå tilbake til 'hedninger' fra v1, og gir en mer naturlig parallell med 'jøder' (også uten artikkel)."
       }
     ]
   },
@@ -177,11 +191,17 @@
     "bookId": 46,
     "chapterId": 1,
     "verseId": 26,
-    "text": "Se på deres egen kallelse, søsken: Ikke mange vise etter kjødet, ikke mange mektige, ikke mange av høy byrd.",
+    "text": "Se på kallelsen deres, søsken: Ikke mange vise etter kjødet, ikke mange mektige, ikke mange av høy byrd.",
     "versions": [
       {
         "text": "Se på deres kall, søsken: Ikke mange vise etter menneskelig målestokk, ikke mange mektige, ikke mange av høy byrd ble kalt.",
         "explanation": "«κατὰ σάρκα» betyr «etter kjødet» og er en viktig paulinsk term. «Menneskelig målestokk» er en fortolkning. Verbet «ble kalt» er ikke i grunnteksten - setningen er elliptisk og underforstått. «Kallelse» er mer naturlig på norsk enn «kall» i denne sammenhengen."
+      },
+      {
+        "text": "Se på deres egen kallelse, søsken: Ikke mange vise etter kjødet, ikke mange mektige, ikke mange av høy byrd.",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "«deres egen» legger til et refleksivt element ('egen') som ikke er i grunnteksten. 'τὴν κλῆσιν ὑμῶν' er ganske enkelt 'kallelsen deres'. 'Deres egen' er en fortolkende tilføyelse."
       }
     ]
   },

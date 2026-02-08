@@ -15,11 +15,17 @@
     "bookId": 47,
     "chapterId": 10,
     "verseId": 2,
-    "text": "Jeg ber om at jeg slipper å være like frimodig når jeg er til stede, som jeg regner med å være mot dem som mener at vi lever på kjødelig vis.",
+    "text": "Jeg ber om at jeg slipper å være like dristig når jeg er til stede, med den selvtillit jeg regner med å vise mot dem som mener at vi lever på kjødelig vis.",
     "versions": [
       {
         "text": "Jeg ber om at jeg ikke må være nødt til å vise den samme frimodighet når jeg kommer, som jeg regner med å vise mot dem som mener at vi lever på kjødelig vis.",
         "explanation": "Originalen har 'παρὼν' (når jeg er til stede) som kontrast til fraværet i vers 1. 'Når jeg kommer' er akseptabelt, men 'når jeg er til stede' er mer presist og skaper bedre sammenheng. 'Slipper å være like frimodig' flyter bedre muntlig enn 'ikke må være nødt til å vise den samme frimodighet'."
+      },
+      {
+        "text": "Jeg ber om at jeg slipper å være like frimodig når jeg er til stede, som jeg regner med å være mot dem som mener at vi lever på kjødelig vis.",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "Det greske 'τολμῆσαι' (å våge/være dristig) er sterkere enn 'frimodig' og er forskjellig fra 'θαρρῆσαι' (frimodighet/dristighet). Dessuten har originalen 'τῇ πεποιθήσει' (med den selvtillit/overbevisning) som et eget element som ikke kommer tydelig fram i nåværende oversettelse."
       }
     ]
   },
@@ -75,17 +81,31 @@
     "bookId": 47,
     "chapterId": 10,
     "verseId": 9,
-    "text": "Jeg sier dette for at jeg ikke skal se ut til å skremme dere med brevene mine."
+    "text": "Jeg sier dette for at det ikke skal se ut som om jeg vil skremme dere med brevene mine.",
+    "versions": [
+      {
+        "text": "Jeg sier dette for at jeg ikke skal se ut til å skremme dere med brevene mine.",
+        "type": "error",
+        "severity": "major",
+        "explanation": "Nåværende oversettelse legger til 'Jeg sier dette' som ikke finnes i originalen, men det er en akseptabel kontekstualisering. Imidlertid gir 'ὡς ἂν ἐκφοβεῖν' meningen 'som om jeg vil skremme' snarere enn 'at jeg skal se ut til å skremme'. Poenget er at Paulus ikke ønsker å gi inntrykk av at brevene hans er ment som skremsel."
+      }
+    ]
   },
   {
     "bookId": 47,
     "chapterId": 10,
     "verseId": 10,
-    "text": "For «brevene hans er tunge og kraftfulle», sier de, «men når han er til stede i egen person er han svak, og hans tale er verdiløs».",
+    "text": "For «brevene hans er tunge og kraftfulle», sier noen, «men når han er til stede i egen person, er han svak, og hans tale er verdiløs».",
     "versions": [
       {
         "text": "For «brevene hans er tunge og kraftfulle», sier de, «men hans kroppslige nærvær er svakt, og hans tale er verdiløs».",
         "explanation": "Det greske 'παρουσία τοῦ σώματος' (kroppens nærvær/tilstedeværelse) handler om hvordan Paulus fremstår personlig når han er til stede, ikke bare et abstrakt 'kroppslig nærvær'. 'Når han er til stede i egen person er han svak' formidler bedre kontrasten mellom brevene og Paulus' personlige fremtoning."
+      },
+      {
+        "text": "For «brevene hans er tunge og kraftfulle», sier de, «men når han er til stede i egen person er han svak, og hans tale er verdiløs».",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "Det greske 'φησίν' er tredje person entall ('sier han/man/noen'), ikke flertall 'sier de'. 'Sier noen' er mer korrekt. Også lagt til komma etter 'person' for korrekt tegnsetting."
       }
     ]
   },
@@ -129,7 +149,15 @@
     "bookId": 47,
     "chapterId": 10,
     "verseId": 15,
-    "text": "Vi roser oss ikke ut over alle grenser av andres arbeid, men vi har det håp at når troen vokser blant dere, skal vårt arbeidsområde bli enda større,"
+    "text": "Vi roser oss ikke grenseløst av andres arbeid, men har det håp at etter hvert som troen vokser blant dere, skal vi bli rikelig æret blant dere i samsvar med vårt virkefelt,",
+    "versions": [
+      {
+        "text": "Vi roser oss ikke ut over alle grenser av andres arbeid, men vi har det håp at når troen vokser blant dere, skal vårt arbeidsområde bli enda større,",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "Det greske 'ἐν ὑμῖν μεγαλυνθῆναι κατὰ τὸν κανόνα ἡμῶν εἰς περισσείαν' handler om at Paulus vil bli 'storaktet/æret blant dere i overflod etter vår målestokk', ikke bare at arbeidsområdet skal bli større. 'Μεγαλυνθῆναι' betyr å bli gjort stor/æret, og det relaterer til deres tjeneste blant korinterne."
+      }
+    ]
   },
   {
     "bookId": 47,

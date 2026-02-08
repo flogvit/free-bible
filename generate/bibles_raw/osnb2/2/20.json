@@ -27,7 +27,15 @@
     "bookId": 2,
     "chapterId": 20,
     "verseId": 5,
-    "text": "Du skal ikke tilbe dem og ikke dyrke dem. For jeg, Herren din Gud, er en nidkjær Gud som straffer fedres synd på barn i tredje og fjerde ledd, når de hater meg,"
+    "text": "Du skal ikke tilbe dem og ikke dyrke dem. For jeg, Herren din Gud, er en nidkjær Gud som lar fedrenes synd ramme barna i tredje og fjerde ledd, dem som hater meg,",
+    "versions": [
+      {
+        "text": "Du skal ikke tilbe dem og ikke dyrke dem. For jeg, Herren din Gud, er en nidkjær Gud som straffer fedres synd på barn i tredje og fjerde ledd, når de hater meg,",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "The Hebrew לְשֹׂנְאָֽי ('those who hate me') refers to those who hate God, not specifically contingent on timing ('når de hater meg'). 'Dem som hater meg' is more accurate. Also 'fedrenes' is more natural than 'fedres' in modern Norwegian, and 'lar...ramme' is a slightly more precise rendering of פֹּקֵד עֲוֺן...עַל than 'straffer...på'."
+      }
+    ]
   },
   {
     "bookId": 2,
@@ -105,7 +113,15 @@
     "bookId": 2,
     "chapterId": 20,
     "verseId": 18,
-    "text": "Hele folket så tordenen og lynglimtene, hørte lyden av hornet og så fjellet stå i røyk. Da folket så dette, skalv de og holdt seg på avstand."
+    "text": "Hele folket så tordenen og lynglimtene og hørte lyden av hornet og så fjellet stå i røyk. Da folket så dette, skalv de og holdt seg på avstand.",
+    "versions": [
+      {
+        "text": "Hele folket så tordenen og lynglimtene, hørte lyden av hornet og så fjellet stå i røyk. Da folket så dette, skalv de og holdt seg på avstand.",
+        "type": "error",
+        "severity": "major",
+        "explanation": "The Hebrew uses the same verb רֹאִים ('seeing/perceiving') for all four objects (the thunder, the lightning, the sound of the horn, and the mountain smoking). The translation introduces a verb change ('hørte') which is interpretive. More importantly, the Hebrew lists all four items under the same verb with repeated את. Adding 'og' before 'hørte' at least connects the clauses better, though the original text uses 'seeing' for all of them. The current translation's breaking into separate verbs is acceptable as an interpretive choice, but 'og' should connect the clauses."
+      }
+    ]
   },
   {
     "bookId": 2,
@@ -141,13 +157,29 @@
     "bookId": 2,
     "chapterId": 20,
     "verseId": 24,
-    "text": "Et alter av jord skal du bygge for meg, og på det skal du ofre dine brennoffer og fredsoffer, ditt småfe og storfe. På hvert sted der jeg lar mitt navn bli påkalt, vil jeg komme til deg og velsigne deg."
+    "text": "Et alter av jord skal du bygge for meg, og på det skal du ofre dine brennoffer og fredsoffer, ditt småfe og storfe. På hvert sted der jeg lar mitt navn bli husket, vil jeg komme til deg og velsigne deg.",
+    "versions": [
+      {
+        "text": "Et alter av jord skal du bygge for meg, og på det skal du ofre dine brennoffer og fredsoffer, ditt småfe og storfe. På hvert sted der jeg lar mitt navn bli påkalt, vil jeg komme til deg og velsigne deg.",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "The Hebrew אַזְכִּיר (hiphil of זכר) means 'cause to be remembered' or 'make mention of', referring to God causing His name to be remembered/mentioned. 'Påkalt' (invoked/called upon) is a different concept. 'Husket' (remembered) is closer to the Hebrew root."
+      }
+    ]
   },
   {
     "bookId": 2,
     "chapterId": 20,
     "verseId": 25,
-    "text": "Men om du bygger et steinalter for meg, skal du ikke bruke tilhugne steiner. For bruker du meisel på dem, vanhelliger du dem."
+    "text": "Men om du bygger et steinalter for meg, skal du ikke bruke tilhugne steiner. For svinger du ditt sverd over dem, vanhelliger du dem.",
+    "versions": [
+      {
+        "text": "Men om du bygger et steinalter for meg, skal du ikke bruke tilhugne steiner. For bruker du meisel på dem, vanhelliger du dem.",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "The Hebrew חַרְבְּךָ means 'your sword' (or iron tool/chisel), not specifically 'meisel' (chisel). While the meaning is similar, 'sverd' is the literal translation of חרב. Also הֵנַפְתָּ means 'you have swung/wielded', so 'svinger du ditt sverd over dem' is more literal."
+      }
+    ]
   },
   {
     "bookId": 2,

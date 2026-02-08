@@ -57,7 +57,15 @@
     "bookId": 40,
     "chapterId": 5,
     "verseId": 9,
-    "text": "Salige er de som skaper fred, for de skal kalles Guds barn."
+    "text": "Salige er de som skaper fred, for de skal kalles Guds sønner.",
+    "versions": [
+      {
+        "text": "Salige er de som skaper fred, for de skal kalles Guds barn.",
+        "type": "theological",
+        "severity": "minor",
+        "explanation": "Gresk 'υἱοὶ' betyr spesifikt 'sønner', ikke det mer generelle 'barn' (τέκνα). Mange norske oversettelser bruker 'barn' for inklusivitet, men det er en teologisk nyanse mellom υἱοί (sønner, med fokus på arverett og status) og τέκνα (barn). Imidlertid, 'barn' er svært utbredt i moderne norske oversettelser og kan anses akseptabelt – dette er en minor-sak."
+      }
+    ]
   },
   {
     "bookId": 40,
@@ -147,7 +155,7 @@
     "bookId": 40,
     "chapterId": 5,
     "verseId": 21,
-    "text": "Dere har hørt det er sagt til de gamle: 'Du skal ikke slå i hjel.' Den som slår i hjel, skal være skyldig for domstolen.",
+    "text": "Dere har hørt det er sagt til dem i gammel tid: 'Du skal ikke slå i hjel.' Den som slår i hjel, skal være skyldig for domstolen.",
     "versions": [
       {
         "text": "Dere har hørt det er sagt til de gamle: Du skal ikke slå i hjel. Den som slår i hjel, skal være skyldig for domstolen.",
@@ -156,6 +164,12 @@
       {
         "text": "Dere har hørt det er sagt til de gamle: 'Du skal ikke slå i hjel. Den som slår i hjel, skal være skyldig for domstolen.'",
         "explanation": "Bare det direkte sitatet fra budet ('Du skal ikke slå i hjel') bør stå i anførselstegn. Den påfølgende setningen er en rabbinsk tolkning/utlegning, ikke del av selve budet fra 2 Mos 20:13."
+      },
+      {
+        "text": "Dere har hørt det er sagt til de gamle: 'Du skal ikke slå i hjel.' Den som slår i hjel, skal være skyldig for domstolen.",
+        "type": "grammar",
+        "severity": "minor",
+        "explanation": "Gresk 'τοῖς ἀρχαίοις' betyr mer presist 'til dem i gammel tid' / 'til de gamle tiders folk' – altså forfedrene som mottok loven. 'De gamle' på norsk kan misforstås som 'de eldre' (elderly people). Samme gjelder vers 33. Men dette verset har allerede 2 revisjoner, så dette er bare en minor bemerkning."
       }
     ]
   },
@@ -193,7 +207,21 @@
     "bookId": 40,
     "chapterId": 5,
     "verseId": 26,
-    "text": "Sannelig, jeg sier deg: Du skal ikke komme ut derfra før du har betalt den siste øre."
+    "text": "Sannelig, jeg sier deg: Du skal ikke komme ut derfra før du har betalt til siste øre.",
+    "versions": [
+      {
+        "text": "Sannelig, jeg sier deg: Du skal ikke komme ut derfra før du har betalt den siste øre.",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "Κοδράντης (kodrantēs) er en spesifikk romersk mynt (quadrans), den minste i bruk. 'Øre' er en god dynamisk oversettelse, men 'kvadrant' bevarer den historiske konteksten bedre. Alternativt kan 'den siste lille mynt' brukes for å beholde den moderne tonen."
+      },
+      {
+        "text": "Sannelig, jeg sier deg: Du skal ikke komme ut derfra før du har betalt den siste kvadrant.",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "Nåværende tekst bruker 'kvadrant', som er et lite kjent ord på norsk og vil forvirre de fleste lesere (det forbindes med matematikk/geometri). Versjonshistorikken viser at 'øre' ble foreslått men ikke brukt. Et kompromiss kunne være 'til siste øre' (idiomatisk norsk uttrykk som bevarer meningen om den minste mynt) eller 'den siste lille mynt'. For en oversettelse som skal være 'moderne og lett å lese', er 'kvadrant' problematisk."
+      }
+    ]
   },
   {
     "bookId": 40,
@@ -281,7 +309,15 @@
     "bookId": 40,
     "chapterId": 5,
     "verseId": 36,
-    "text": "Du skal heller ikke sverge ved ditt hode, for du kan ikke gjøre ett eneste hår hvitt eller svart."
+    "text": "Sverg heller ikke ved ditt hode, for du kan ikke gjøre ett eneste hår hvitt eller svart.",
+    "versions": [
+      {
+        "text": "Du skal heller ikke sverge ved ditt hode, for du kan ikke gjøre ett eneste hår hvitt eller svart.",
+        "type": "grammar",
+        "severity": "minor",
+        "explanation": "Versene 34-35 bruker imperativ ('Sverg overhodet ikke! Ikke ved himmelen... Ikke ved jorden... Ikke ved Jerusalem'). Vers 36 bør følge samme mønster med imperativ 'Sverg' i stedet for 'Du skal... ikke sverge' for konsistent stil og flyt."
+      }
+    ]
   },
   {
     "bookId": 40,
@@ -335,11 +371,17 @@
     "bookId": 40,
     "chapterId": 5,
     "verseId": 43,
-    "text": "Dere har hørt det er sagt: 'Du skal elske din neste og hate din fiende.'",
+    "text": "Dere har hørt at det er sagt: 'Du skal elske din neste og hate din fiende.'",
     "versions": [
       {
         "text": "Dere har hørt det er sagt: Du skal elske din neste og hate din fiende.",
         "explanation": "Sitatet bør markeres med anførselstegn for konsistens med andre sitater i kapitlet."
+      },
+      {
+        "text": "Dere har hørt det er sagt: 'Du skal elske din neste og hate din fiende.'",
+        "type": "grammar",
+        "severity": "minor",
+        "explanation": "Mangler 'at' etter 'hørt'. 'Dere har hørt at det er sagt' er grammatisk mer korrekt norsk og gjengir ὅτι. Merk: den forrige revisjonen handlet kun om anførselstegn, så denne endringen er uavhengig."
       }
     ]
   },
@@ -347,30 +389,70 @@
     "bookId": 40,
     "chapterId": 5,
     "verseId": 44,
-    "text": "Men jeg sier dere: Elsk deres fiender og be for dem som forfølger dere."
+    "text": "Men jeg sier dere: Elsk fiendene deres og be for dem som forfølger dere.",
+    "versions": [
+      {
+        "text": "Men jeg sier dere: Elsk deres fiender og be for dem som forfølger dere.",
+        "type": "grammar",
+        "severity": "minor",
+        "explanation": "'Fiendene deres' er mer naturlig og moderne norsk bokmål enn 'deres fiender'. Etterstilt eiendomspronomen er mer idiomatisk i dagligtale."
+      }
+    ]
   },
   {
     "bookId": 40,
     "chapterId": 5,
     "verseId": 45,
-    "text": "Slik kan dere være barn av deres Far i himlene. For han lar sin sol gå opp over onde og gode og lar det regne over rettferdige og urettferdige."
+    "text": "Da kan dere være barn av deres Far i himmelen. For han lar sin sol gå opp over onde og gode og lar det regne over rettferdige og urettferdige.",
+    "versions": [
+      {
+        "text": "Slik kan dere være barn av deres Far i himlene. For han lar sin sol gå opp over onde og gode og lar det regne over rettferdige og urettferdige.",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "ὅπως med konjunktiv uttrykker hensikt/formål ('for at'/'slik at'). 'Da kan dere' er mer idiomatisk norsk og beholder hensiktsbetydningen. 'I himmelen' (entall) er mer naturlig på norsk enn 'i himlene', selv om gresk har flertall."
+      }
+    ]
   },
   {
     "bookId": 40,
     "chapterId": 5,
     "verseId": 46,
-    "text": "Om dere elsker dem som elsker dere, hva lønn har dere da? Gjør ikke også tollerne det samme?"
+    "text": "For om dere elsker dem som elsker dere, hva slags lønn har dere da? Gjør ikke også tollerne det samme?",
+    "versions": [
+      {
+        "text": "Om dere elsker dem som elsker dere, hva lønn har dere da? Gjør ikke også tollerne det samme?",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "γάρ ('for') mangler i oversettelsen – det knytter verset kausalt til det foregående. I tillegg er 'hva slags lønn' mer naturlig norsk enn 'hva lønn' for τίνα μισθὸν."
+      }
+    ]
   },
   {
     "bookId": 40,
     "chapterId": 5,
     "verseId": 47,
-    "text": "Og om dere bare hilser på deres søsken, hva stort gjør dere da? Gjør ikke også hedningene det samme?"
+    "text": "Og om dere bare hilser på søsknene deres, hva stort gjør dere da? Gjør ikke også hedningene det samme?",
+    "versions": [
+      {
+        "text": "Og om dere bare hilser på deres søsken, hva stort gjør dere da? Gjør ikke også hedningene det samme?",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "'Søsknene deres' med etterstilt pronomen er mer naturlig moderne norsk. Merk også at 'søsken' her bør stå i bestemt form flertall ('søsknene') siden det refererer til en bestemt gruppe (deres brødre/søsken)."
+      }
+    ]
   },
   {
     "bookId": 40,
     "chapterId": 5,
     "verseId": 48,
-    "text": "Vær da fullkomne, slik deres himmelske Far er fullkommen."
+    "text": "Vær da fullkomne, slik som deres himmelske Far er fullkommen.",
+    "versions": [
+      {
+        "text": "Vær da fullkomne, slik deres himmelske Far er fullkommen.",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "ὡς betyr 'som/slik som'. 'Slik som' gjengir sammenligningen mer presist enn bare 'slik'. Dette er en minor forbedring."
+      }
+    ]
   }
 ]

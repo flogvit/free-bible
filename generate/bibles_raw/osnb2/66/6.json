@@ -39,7 +39,7 @@
     "bookId": 66,
     "chapterId": 6,
     "verseId": 6,
-    "text": "En choinix hvete for en denar, og tre choiniker bygg for en denar. Men oljen og vinen skal du ikke skade!»",
+    "text": "Og jeg hørte noe som en røst midt blant de fire livsvesnene si: «En choinix hvete for en denar, og tre choiniker bygg for en denar. Men oljen og vinen skal du ikke skade!»",
     "versions": [
       {
         "text": "Og jeg hørte noe som en røst midt blant de fire livsvesnene si: «En liter hvete for en dagslønn, og tre liter bygg for en dagslønn. Men oljen og vinen skal du ikke skade!»",
@@ -52,6 +52,12 @@
       {
         "text": "Og jeg hørte noe som en røst midt blant de fire livsvesnene si: «En choiniks hvete for en denar, og tre choiniks bygg for en denar. Men oljen og vinen skal du ikke skade!»",
         "explanation": "Entallsformen bør være 'choinix' (ikke 'choiniks'), og for flertall på norsk bør man bruke 'choiniker' som er en naturlig norsk bøyning av fremmedord. Versjonshistorikken viser at dette har vært diskutert, men den nåværende løsningen med 'choiniks' i både entall og flertall er grammatisk inkonsekvent."
+      },
+      {
+        "text": "En choinix hvete for en denar, og tre choiniker bygg for en denar. Men oljen og vinen skal du ikke skade!»",
+        "type": "error",
+        "severity": "major",
+        "explanation": "Den innledende setningen 'Og jeg hørte noe som en røst midt blant de fire livsvesnene si:' mangler helt i den nåværende versjonen. Denne setningen gjengir 'καὶ ἤκουσα ὡς φωνὴν ἐν μέσῳ τῶν τεσσάρων ζῴων λέγουσαν' og er en viktig del av verset. Versjonshistorikken viser at denne setningen var med i alle tidligere versjoner, men har falt bort i den nåværende. Måleenhetene 'choinix/choiniker' og 'denar' beholdes i tråd med den bevisste redigeringen i versjonshistorikken."
       }
     ]
   },
@@ -125,6 +131,14 @@
     "bookId": 66,
     "chapterId": 6,
     "verseId": 17,
-    "text": "For den store vredens dag er kommet, og hvem kan da bli stående?»"
+    "text": "For deres vredes store dag er kommet, og hvem kan da bli stående?»",
+    "versions": [
+      {
+        "text": "For den store vredens dag er kommet, og hvem kan da bli stående?»",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "Den greske teksten har 'τῆς ὀργῆς αὐτῶν' (deres vrede), som refererer tilbake til både ham som sitter på tronen og Lammet fra vers 16. Den nåværende oversettelsen 'den store vredens dag' mister pronomenet 'deres' (αὐτῶν), som tydeliggjør at vreden tilhører både Gud og Lammet."
+      }
+    ]
   }
 ]

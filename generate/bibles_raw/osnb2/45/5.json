@@ -39,11 +39,17 @@
     "bookId": 45,
     "chapterId": 5,
     "verseId": 5,
-    "text": "Og håpet gjør ikke til skamme, for Guds kjærlighet er utøst i våre hjerter ved Den hellige ånds som er gitt oss.",
+    "text": "Og håpet gjør ikke til skamme, for Guds kjærlighet er utøst i våre hjerter ved Den hellige ånd som er gitt oss.",
     "versions": [
       {
         "text": "Og håpet gjør ikke til skamme, for Guds kjærlighet er utøst i våre hjerter ved Den hellige ånd som er gitt oss.",
         "explanation": "Etter nærmere vurdering er den nåværende oversettelsen faktisk korrekt og naturlig på norsk. Ingen endring nødvendig."
+      },
+      {
+        "text": "Og håpet gjør ikke til skamme, for Guds kjærlighet er utøst i våre hjerter ved Den hellige ånds som er gitt oss.",
+        "type": "grammar",
+        "severity": "critical",
+        "explanation": "Det står 'Den hellige ånds' med en genitiv-s som er grammatisk feil her. Det skal være 'Den hellige ånd som er gitt oss'. Versjonshistorikken viser at den forrige versjonen faktisk var korrekt ('Den hellige ånd'), og den nåværende versjonen har introdusert en skrivefeil med den ekstra 's'-en. Endringsnotatet sier 'Ingen endring nødvendig', men en feil ble likevel introdusert."
       }
     ]
   },
@@ -129,11 +135,17 @@
     "bookId": 45,
     "chapterId": 5,
     "verseId": 15,
-    "text": "Men med nådegaven er det ikke som med fallet. For om de mange døde på grunn av den enes fall, hvor mye mer har da Guds nåde og gaven ved det ene menneskets, Jesu Kristi, nåde strømmet over til de mange.",
+    "text": "Men med nådegaven er det ikke som med fallet. For om de mange døde på grunn av den enes fall, hvor mye mer har da Guds nåde og gaven ved det ene mennesket Jesu Kristi nåde strømmet over til de mange.",
     "versions": [
       {
         "text": "Men med nådegaven er det ikke som med fallet. For om de mange døde på grunn av den enes fall, hvor mye mer har da Guds nåde og gaven i det ene mennesket Jesu Kristi nåde strømmet over til de mange.",
         "explanation": "Setningen er noe klønete. 'Gaven i det ene mennesket Jesu Kristi nåde' er grammatisk uklar. Originalen sier at gaven kommer 'i/ved nåden fra det ene mennesket Jesus Kristus'."
+      },
+      {
+        "text": "Men med nådegaven er det ikke som med fallet. For om de mange døde på grunn av den enes fall, hvor mye mer har da Guds nåde og gaven ved det ene menneskets, Jesu Kristi, nåde strømmet over til de mange.",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "Kommaene rundt 'Jesu Kristi' skaper en apposisjon som bryter opp frasen unaturlig. Det greske sier 'ἐν χάριτι τῇ τοῦ ἑνὸς ἀνθρώπου Ἰησοῦ Χριστοῦ' – 'ved nåden fra det ene mennesket Jesus Kristus'. Formuleringen 'det ene menneskets, Jesu Kristi, nåde' er fortsatt klønete. En bedre løsning ville være å reformulere mer tydelig."
       }
     ]
   },

@@ -9,7 +9,15 @@
     "bookId": 58,
     "chapterId": 11,
     "verseId": 2,
-    "text": "For ved denne troen fikk de gamle godt vitnesbyrd."
+    "text": "For det var ved den troen de gamle fikk godt vitnesbyrd.",
+    "versions": [
+      {
+        "text": "For ved denne troen fikk de gamle godt vitnesbyrd.",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "Litt omstrukturering for mer naturlig norsk flyt. 'Ved denne troen' er litt stivt; 'ved den troen' er mer idiomatisk. Alternativt er nåværende versjon akseptabel."
+      }
+    ]
   },
   {
     "bookId": 58,
@@ -75,11 +83,17 @@
     "bookId": 58,
     "chapterId": 11,
     "verseId": 11,
-    "text": "Ved tro fikk også Sara kraft til å unnfange, selv om hun var over den alderen, fordi hun holdt ham som hadde gitt løftet for trofast.",
+    "text": "Ved tro fikk også Sara kraft til å unnfange, enda hun var kommet over den alderen, fordi hun holdt ham som hadde gitt løftet for trofast.",
     "versions": [
       {
         "text": "Ved tro fikk også Sara kraft til å bli mor, selv om hun var over den alderen, fordi hun holdt ham som hadde gitt løftet for trofast.",
         "explanation": "Det greske 'καταβολὴν σπέρματος' refererer spesifikt til unnfangelse/konsepsjon. 'Kraft til å unnfange' er mer presist enn 'kraft til å bli mor', selv om begge formidler hovedpoenget."
+      },
+      {
+        "text": "Ved tro fikk også Sara kraft til å unnfange, selv om hun var over den alderen, fordi hun holdt ham som hadde gitt løftet for trofast.",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "'Selv om hun var over den alderen' mangler et verb som indikerer at hun hadde passert den rette alderen. 'Enda hun var kommet over den alderen' er mer presist og naturlig norsk for παρὰ καιρὸν ἡλικίας (forbi den passende alderen)."
       }
     ]
   },
@@ -135,7 +149,15 @@
     "bookId": 58,
     "chapterId": 11,
     "verseId": 18,
-    "text": "han som det var blitt sagt om: «Gjennom Isak skal din ætt få navn.»"
+    "text": "han som det var blitt sagt til: «Gjennom Isak skal din ætt få navn.»",
+    "versions": [
+      {
+        "text": "han som det var blitt sagt om: «Gjennom Isak skal din ætt få navn.»",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "Det greske 'πρὸς ὃν ἐλαλήθη' betyr 'til hvem det ble sagt' (πρὸς ὃν = til hvem). Det ble sagt til Abraham, ikke om Abraham. 'Han som det var blitt sagt til' er korrekt; 'om' gir feil retning."
+      }
+    ]
   },
   {
     "bookId": 58,
@@ -255,11 +277,17 @@
     "bookId": 58,
     "chapterId": 11,
     "verseId": 35,
-    "text": "Kvinner fikk sine døde tilbake ved oppstandelse. Andre ble slått i hjel og ville ikke ta imot befrielse, for å oppnå en bedre oppstandelse.",
+    "text": "Kvinner fikk sine døde tilbake ved oppstandelse. Andre ble slått i hjel og tok ikke imot befrielsen, for å oppnå en bedre oppstandelse.",
     "versions": [
       {
         "text": "Kvinner fikk sine døde tilbake ved oppstandelse. Andre ble torturert og ville ikke ta imot befrielse, for å oppnå en bedre oppstandelse.",
         "explanation": "Det greske 'ἐτυμπανίσθησαν' refererer til en spesifikk form for henrettelse der offeret ble spent ut på et hjul eller en ramme og slått til døde. 'Torturert' er for generelt; 'slått i hjel' fanger bedre den dødelige naturen av denne straffen."
+      },
+      {
+        "text": "Kvinner fikk sine døde tilbake ved oppstandelse. Andre ble slått i hjel og ville ikke ta imot befrielse, for å oppnå en bedre oppstandelse.",
+        "type": "theological",
+        "severity": "minor",
+        "explanation": "Det greske 'οὐ προσδεξάμενοι' (ikke mottakende/aksepterende) er en aorist partisipp som beskriver hva de faktisk gjorde: de aksepterte ikke befrielsen. 'Ville ikke ta imot' legger til et viljeselement som ikke er eksplisitt i teksten. 'Tok ikke imot befrielsen' med bestemt artikkel er mer nøyaktig, da τὴν ἀπολύτρωσιν har bestemt artikkel."
       }
     ]
   },
@@ -273,7 +301,15 @@
     "bookId": 58,
     "chapterId": 11,
     "verseId": 37,
-    "text": "De ble steinet, saget i stykker, drept med sverd. De vandret omkring i saueskinn og geiteskinn, de led nød, ble forfulgt og mishandlet."
+    "text": "De ble steinet, saget i stykker, de døde for sverd. De vandret omkring i saueskinn og geiteskinn, de led nød, ble forfulgt og mishandlet.",
+    "versions": [
+      {
+        "text": "De ble steinet, saget i stykker, drept med sverd. De vandret omkring i saueskinn og geiteskinn, de led nød, ble forfulgt og mishandlet.",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "Det greske 'ἐν φόνῳ μαχαίρης ἀπέθανον' betyr mer bokstavelig 'de døde ved sverdets drap/mord'. 'Drept med sverd' er akseptabelt, men 'de døde for sverd' bevarer bedre den greske konstruksjonen. Dette er imidlertid en mindre preferanse."
+      }
+    ]
   },
   {
     "bookId": 58,

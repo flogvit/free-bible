@@ -75,7 +75,15 @@
     "bookId": 40,
     "chapterId": 15,
     "verseId": 9,
-    "text": "Forgjeves tilber de meg, for det de lærer, er menneskebud.'»"
+    "text": "Forgjeves dyrker de meg, for det de lærer, er menneskebud.'»",
+    "versions": [
+      {
+        "text": "Forgjeves tilber de meg, for det de lærer, er menneskebud.'»",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "Det greske 'σέβονταί' betyr 'ærer/dyrker' mer enn 'tilber' (som ofte brukes for 'προσκυνέω'). 'Dyrker' er et mer presist valg her og skiller bedre mellom de ulike greske ordene for tilbedelse. Alternativt kan 'tilber' beholdes, men 'dyrker' er mer tradisjonelt i denne Jesaja-konteksten."
+      }
+    ]
   },
   {
     "bookId": 40,
@@ -177,7 +185,15 @@
     "bookId": 40,
     "chapterId": 15,
     "verseId": 23,
-    "text": "Men han svarte henne ikke et ord. Disiplene kom da og ba ham inntrengende: «Send henne fra deg, for hun roper etter oss.»"
+    "text": "Men han svarte henne ikke et ord. Disiplene kom da og ba ham: «Send henne fra deg, for hun roper etter oss.»",
+    "versions": [
+      {
+        "text": "Men han svarte henne ikke et ord. Disiplene kom da og ba ham inntrengende: «Send henne fra deg, for hun roper etter oss.»",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "Ordet 'inntrengende' er ikke direkte til stede i den greske teksten. 'ἠρώτουν' (imperfektum av ἐρωτάω) betyr 'ba/spurte' – imperfektumet kan antyde gjentatt handling, men 'inntrengende' er en tolkende tilføyelse."
+      }
+    ]
   },
   {
     "bookId": 40,
@@ -207,11 +223,17 @@
     "bookId": 40,
     "chapterId": 15,
     "verseId": 27,
-    "text": "«Det er sant, Herre», sa hun, «men også hundene spiser av smulene som faller fra bordet til herrene sine.»",
+    "text": "«Det er sant, Herre», sa hun, «men også de små hundene spiser av smulene som faller fra bordet til herrene sine.»",
     "versions": [
       {
         "text": "«Det er sant, Herre», sa hun, «men også hundene spiser av smulene som faller fra herrenes bord.»",
         "explanation": "Formuleringen 'herrenes bord' er litt uvanlig på norsk. 'Bordet til herrene sine' flyter bedre for muntlig opplesning og gjør eierforholdet tydeligere - hundene tilhører herrene."
+      },
+      {
+        "text": "«Det er sant, Herre», sa hun, «men også hundene spiser av smulene som faller fra bordet til herrene sine.»",
+        "type": "error",
+        "severity": "major",
+        "explanation": "Det greske 'τὰ κυνάρια' er diminutiv (små hunder), som ble korrekt oversatt i vers 26, men her i vers 27 brukes bare 'hundene'. For konsistens og fordi kvinnen bevisst gjentar Jesu ord om 'de små hundene' (kjæledyr), bør diminutivet beholdes også her."
       }
     ]
   },
@@ -237,11 +259,17 @@
     "bookId": 40,
     "chapterId": 15,
     "verseId": 31,
-    "text": "Folkemengden undret seg da de så at stumme talte, vanføre ble friske, lamme gikk og blinde kunne se. Og de lovpriste Israels Gud.",
+    "text": "Folkemengden undret seg da de så stumme tale, vanføre bli friske, lamme gå og blinde se. Og de lovpriste Israels Gud.",
     "versions": [
       {
         "text": "Folkemengden undret seg da de så at stumme talte, vanføre ble helbredet, lamme gikk og blinde kunne se. Og de lovpriste Israels Gud.",
         "explanation": "Det greske ordet 'ὑγιεῖς' betyr 'friske/hele', ikke bare 'helbredet'. 'Ble friske' er en mer direkte oversettelse og flyter bedre på norsk."
+      },
+      {
+        "text": "Folkemengden undret seg da de så at stumme talte, vanføre ble friske, lamme gikk og blinde kunne se. Og de lovpriste Israels Gud.",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "Det greske bruker partisipper (λαλοῦντας, περιπατοῦντας, βλέποντας) som beskriver det de så direkte. 'Da de så at stumme talte' er litt tungvint; 'da de så stumme tale' er mer direkte og naturlig norsk for opplesning."
       }
     ]
   },
@@ -249,7 +277,15 @@
     "bookId": 40,
     "chapterId": 15,
     "verseId": 32,
-    "text": "Jesus kalte disiplene til seg og sa: «Jeg har inderlig medfølelse med folket, for de har allerede vært hos meg i tre dager og har ikke noe å spise. Jeg vil ikke sende dem sultne av sted, for da kan de bli utmattet på veien.»"
+    "text": "Jesus kalte disiplene til seg og sa: «Jeg har inderlig medynk med folkemengden, for de har allerede vært hos meg i tre dager og har ikke noe å spise. Jeg vil ikke sende dem sultne av sted, for da kan de bli utmattet på veien.»",
+    "versions": [
+      {
+        "text": "Jesus kalte disiplene til seg og sa: «Jeg har inderlig medfølelse med folket, for de har allerede vært hos meg i tre dager og har ikke noe å spise. Jeg vil ikke sende dem sultne av sted, for da kan de bli utmattet på veien.»",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "1) 'τὸν ὄχλον' er 'folkemengden' som brukes konsekvent ellers i kapittelet (v. 10, 31, 33, 35, 39). 'Folket' er en unødvendig variasjon. 2) 'Σπλαγχνίζομαι' er et sterkt ord som betyr å bli grepet i sitt innerste – 'medynk' er et noe sterkere og mer presist ord enn 'medfølelse' for dette uttrykket."
+      }
+    ]
   },
   {
     "bookId": 40,

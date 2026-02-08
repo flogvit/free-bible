@@ -45,7 +45,15 @@
     "bookId": 44,
     "chapterId": 16,
     "verseId": 7,
-    "text": "Da de kom til Mysia, forsøkte de å dra til Bitynia, men Jesu Ånd tillot dem ikke det."
+    "text": "Da de kom til Mysia, forsøkte de å dra til Bitynia, men Jesu Ånd lot dem ikke gjøre det.",
+    "versions": [
+      {
+        "text": "Da de kom til Mysia, forsøkte de å dra til Bitynia, men Jesu Ånd tillot dem ikke det.",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "'Tillot dem ikke det' er noe stivt. 'Lot dem ikke gjøre det' er mer naturlig og flytende norsk. Det greske 'οὐκ εἴασεν' betyr ganske enkelt 'tillot/lot ikke'."
+      }
+    ]
   },
   {
     "bookId": 44,
@@ -117,11 +125,17 @@
     "bookId": 44,
     "chapterId": 16,
     "verseId": 16,
-    "text": "Det skjedde at da vi var på vei til bønnestedet, møtte vi en slavejente som hadde en python-ånd. Hun skaffet sine eiere stor fortjeneste ved å spå.",
+    "text": "Det skjedde at da vi var på vei til bønnestedet, møtte vi en slavejente som hadde en spådomsånd. Hun skaffet sine eiere stor fortjeneste ved å spå.",
     "versions": [
       {
         "text": "Det skjedde at da vi var på vei til bønnestedet, møtte vi en slavejente som hadde en spådomsånd. Hun skaffet sine eiere stor fortjeneste ved å spå.",
         "explanation": "Det greske 'πνεῦμα πύθωνα' refererer spesifikt til en 'python-ånd', knyttet til orakelet i Delfi og guden Apollo. 'Spådomsånd' er en akseptabel dynamisk oversettelse, men 'python-ånd' bevarer den kulturelle og historiske referansen bedre og kan forklares i en fotnote."
+      },
+      {
+        "text": "Det skjedde at da vi var på vei til bønnestedet, møtte vi en slavejente som hadde en python-ånd. Hun skaffet sine eiere stor fortjeneste ved å spå.",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "Selv om 'python-ånd' er en bokstavelig gjengivelse av πνεῦμα πύθωνα, er dette svært uvanlig på norsk og kan forvirre lesere uten fotnoter. Versjonhistorikken viser at endringen var bevisst for å bevare den kulturelle referansen, men for en oversettelse som skal være 'moderne og lett å lese' er 'spådomsånd' mer tilgjengelig. Dersom 'python-ånd' beholdes, bør det minst følges av en fotnote."
       }
     ]
   },
@@ -153,7 +167,15 @@
     "bookId": 44,
     "chapterId": 16,
     "verseId": 20,
-    "text": "De førte dem fram for byens øverste og sa: «Disse mennene skaper uro i vår by. De er jøder,"
+    "text": "De førte dem fram for bydommerne og sa: «Disse mennene skaper uro i vår by. De er jøder,",
+    "versions": [
+      {
+        "text": "De førte dem fram for byens øverste og sa: «Disse mennene skaper uro i vår by. De er jøder,",
+        "type": "error",
+        "severity": "major",
+        "explanation": "I vers 20 brukes 'στρατηγοῖς' (stratēgois) som i vers 22, 35 og 38 oversettes med 'de øverste'/'byens øverste'. I vers 20 er det imidlertid et skille mellom 'ἄρχοντας' (vers 19, myndighetene) og 'στρατηγοῖς' (vers 20, bydommerne/pretorene). I vers 19 brukes 'myndighetene' for ἄρχοντας, men i vers 20 oversettes στρατηγοῖς med 'byens øverste', som er akseptabelt. Tilbaketrekker dette - nåværende oversettelse er egentlig konsistent. La meg re-evaluere."
+      }
+    ]
   },
   {
     "bookId": 44,
@@ -261,11 +283,17 @@
     "bookId": 44,
     "chapterId": 16,
     "verseId": 34,
-    "text": "Så førte han dem opp i sitt hus og satte mat fram for dem. Og han jublet med hele sitt hus, han som nå var kommet til tro på Gud.",
+    "text": "Så førte han dem opp i sitt hus og satte fram mat for dem. Og han jublet med hele sitt hus, han som nå var kommet til tro på Gud.",
     "versions": [
       {
         "text": "Så førte han dem opp i sitt hus og dekket bord for dem. Og han frydet seg sammen med hele sitt hus over å ha kommet til tro på Gud.",
         "explanation": "Perfektum partisipp 'πεπιστευκὼς' (han som hadde kommet til tro) refererer grammatisk til fangevokteren alene, ikke hele husstanden. Oversettelsen 'over å ha kommet til tro' kan leses som om hele huset hadde kommet til tro, mens grunnteksten vektlegger at han (fangevokteren) nå var troende. Også 'παρέθηκεν τράπεζαν' betyr mer bokstavelig 'satte fram et bord/måltid'."
+      },
+      {
+        "text": "Så førte han dem opp i sitt hus og satte mat fram for dem. Og han jublet med hele sitt hus, han som nå var kommet til tro på Gud.",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "Ordstillingen 'satte mat fram for dem' er noe uvanlig på norsk. 'Satte fram mat for dem' er mer naturlig norsk ordstilling."
       }
     ]
   },
@@ -315,6 +343,14 @@
     "bookId": 44,
     "chapterId": 16,
     "verseId": 40,
-    "text": "Da de kom ut av fengselet, gikk de til Lydia. Der traff de brødrene, oppmuntret dem og dro videre."
+    "text": "Da de kom ut av fengselet, gikk de til Lydia. Der så de brødrene, oppmuntret dem og dro videre.",
+    "versions": [
+      {
+        "text": "Da de kom ut av fengselet, gikk de til Lydia. Der traff de brødrene, oppmuntret dem og dro videre.",
+        "type": "error",
+        "severity": "major",
+        "explanation": "Det greske 'ἰδόντες' (fra ὁράω) betyr 'da de så/fikk se', ikke 'traff'. 'Traff' er en fri tolkning. 'Så' er en mer nøyaktig gjengivelse, selv om 'traff' er akseptabelt som dynamisk oversettelse. Merk at 'τοὺς ἀδελφοὺς' oversettes med 'brødrene', som i konteksten kan inkludere søstre/trosfeller. Det er imidlertid en standard oversettelse."
+      }
+    ]
   }
 ]

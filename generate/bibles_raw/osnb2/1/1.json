@@ -111,7 +111,15 @@
     "bookId": 1,
     "chapterId": 1,
     "verseId": 14,
-    "text": "Gud sa: «La det bli lys på himmelhvelvingen til å skille dagen fra natten. De skal være tegn for høytider, dager og år."
+    "text": "Gud sa: «La det bli lysgivere på himmelhvelvingen til å skille dagen fra natten. De skal være tegn for høytider, dager og år.",
+    "versions": [
+      {
+        "text": "Gud sa: «La det bli lys på himmelhvelvingen til å skille dagen fra natten. De skal være tegn for høytider, dager og år.",
+        "type": "error",
+        "severity": "major",
+        "explanation": "Hebraisk מְאֹרֹת (me'orot) betyr 'lysgivere/lyskilder', ikke bare 'lys' (som er אוֹר). Distinksjonen er viktig fordi lyset (אוֹר) allerede ble skapt i vers 3, mens dette er lysgiverne/lysbærerne som plasseres på himmelhvelvingen. Samme ord brukes i vers 15-16 der det oversettes 'lys' (i betydningen lyskilder). 'Lysgivere' gjør distinksjonen tydeligere."
+      }
+    ]
   },
   {
     "bookId": 1,
@@ -153,11 +161,17 @@
     "bookId": 1,
     "chapterId": 1,
     "verseId": 20,
-    "text": "Gud sa: «La vannet vrimle av levende skapninger, og la fugler fly over jorden, under himmelhvelvingen.»",
+    "text": "Gud sa: «La vannet vrimle av levende skapninger, og la fugler fly over jorden, langs himmelhvelvingen.»",
     "versions": [
       {
         "text": "Gud sa: «La vannet vrimle av levende skapninger, og la fugler fly over jorden, foran himmelhvelvingen.»",
         "explanation": "Hebraisk עַל־פְּנֵי betyr 'over overflaten av' eller 'på forsiden av'. I konteksten beskriver det fugler som flyr i luftrommet under/mot himmelhvelvingen, ikke 'foran' den. 'Under himmelhvelvingen' gir bedre mening kosmologisk og er mer i tråd med andre norske oversettelser."
+      },
+      {
+        "text": "Gud sa: «La vannet vrimle av levende skapninger, og la fugler fly over jorden, under himmelhvelvingen.»",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "Hebraisk עַל־פְּנֵי רְקִיעַ betyr bokstavelig 'over/mot overflaten av hvelvingen' – det beskriver fugler som flyr i rommet foran/langs hvelvingen sett nedenfra. 'Under' gir inntrykk av at fuglene er begrenset til å fly under hvelvingen, mens 'langs' bedre fanger bevegelsen mot hvelvingen som bakgrunn. Men dette er en mindre nyanseforskjell og den nåværende teksten er akseptabel."
       }
     ]
   },
@@ -207,11 +221,17 @@
     "bookId": 1,
     "chapterId": 1,
     "verseId": 26,
-    "text": "Gud sa: «La oss gjøre mennesket i vårt bilde, etter vår lignelse. De skal råde over fiskene i havet og fuglene under himmelen, over feet og hele jorden, og over alle krypdyr som kryper på jorden.»",
+    "text": "Gud sa: «La oss gjøre mennesker i vårt bilde, etter vår lignelse. De skal råde over fiskene i havet og fuglene under himmelen, over feet og hele jorden, og over alle krypdyr som kryper på jorden.»",
     "versions": [
       {
         "text": "Gud sa: «La oss skape mennesker i vårt bilde, etter vår lignelse. De skal råde over fiskene i havet og fuglene under himmelen, over feet og hele jorden, og over alle krypdyr som kryper på jorden.»",
         "explanation": "Hebraisk נַעֲשֶׂה (na'aseh) betyr 'la oss gjøre/lage', ikke 'skape' (som er בָּרָא). Vers 27 bruker בָּרָא for 'skapte'. Denne distinksjonen er teologisk viktig og bør bevares."
+      },
+      {
+        "text": "Gud sa: «La oss gjøre mennesket i vårt bilde, etter vår lignelse. De skal råde over fiskene i havet og fuglene under himmelen, over feet og hele jorden, og over alle krypdyr som kryper på jorden.»",
+        "type": "error",
+        "severity": "major",
+        "explanation": "Hebraisk אָדָם (adam) her brukes kollektivt om menneskeheten, noe som fremgår av flertallspronomenet 'De' (וְיִרְדּוּ) i samme vers. 'Mennesker' (flertall) samsvarer bedre med den kollektive betydningen og med at det refereres til 'dem' i flertall. Dette er ikke en reversering av den tidligere endringen fra 'skape' til 'gjøre' - det handler om substantivet 'menneske/mennesker'."
       }
     ]
   },
@@ -243,7 +263,15 @@
     "bookId": 1,
     "chapterId": 1,
     "verseId": 30,
-    "text": "Og til alle dyr på jorden, alle fugler under himmelen og alt som kryper på jorden, alt som har livsånde i seg, gir jeg alle grønne urter til føde.» Og det ble slik."
+    "text": "Og til alle dyr på jorden, alle fugler under himmelen og alt som kryper på jorden, alt som har livsånde i seg, gir jeg alle grønne planter til føde.» Og det ble slik.",
+    "versions": [
+      {
+        "text": "Og til alle dyr på jorden, alle fugler under himmelen og alt som kryper på jorden, alt som har livsånde i seg, gir jeg alle grønne urter til føde.» Og det ble slik.",
+        "type": "error",
+        "severity": "major",
+        "explanation": "Hebraisk יֶרֶק עֵשֶׂב betyr 'grønne planter/grønt planteliv'. 'Urter' er for snevert – det hebraiske uttrykket dekker alt grønt planteliv, inkludert gress og bladverk, ikke bare urter. 'Grønne planter' gir en bredere og mer korrekt gjengivelse."
+      }
+    ]
   },
   {
     "bookId": 1,

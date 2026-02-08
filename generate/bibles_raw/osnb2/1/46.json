@@ -15,7 +15,15 @@
     "bookId": 1,
     "chapterId": 46,
     "verseId": 3,
-    "text": "Han sa: «Jeg er Gud, din fars Gud. Frykt ikke for å dra ned til Egypt, for der vil jeg gjøre deg til et stort folk."
+    "text": "Han sa: «Jeg er Gud, din fars Gud. Vær ikke redd for å dra ned til Egypt, for der vil jeg gjøre deg til et stort folk.",
+    "versions": [
+      {
+        "text": "Han sa: «Jeg er Gud, din fars Gud. Frykt ikke for å dra ned til Egypt, for der vil jeg gjøre deg til et stort folk.",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "'Vær ikke redd' er mer naturlig og moderne norsk enn 'Frykt ikke', og passer bedre med målsettingen om lett lesbart bokmål. Begge er korrekte oversettelser av 'אַל־תִּירָא'."
+      }
+    ]
   },
   {
     "bookId": 1,
@@ -123,7 +131,15 @@
     "bookId": 1,
     "chapterId": 46,
     "verseId": 20,
-    "text": "I Egypt fikk Josef sønner: Manasse og Efraim, som Asnat, datter av Poti-Fera, presten i On, fødte ham."
+    "text": "I Egypt ble det født sønner for Josef: Manasse og Efraim, som Asnat, datter av Poti-Fera, presten i On, fødte for ham.",
+    "versions": [
+      {
+        "text": "I Egypt fikk Josef sønner: Manasse og Efraim, som Asnat, datter av Poti-Fera, presten i On, fødte ham.",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "'Fødte ham' er litt klønete norsk; 'fødte for ham' er mer idiomatisk og samsvarer bedre med det hebraiske 'יָלְדָה־לוֹ'. Dessuten reflekterer 'ble det født sønner for Josef' bedre den passive formen 'וַיִּוָּלֵד לְיוֹסֵף'."
+      }
+    ]
   },
   {
     "bookId": 1,
@@ -177,11 +193,17 @@
     "bookId": 1,
     "chapterId": 46,
     "verseId": 28,
-    "text": "Jakob sendte Juda i forveien til Josef for å bane vei til Gosen. Så kom de til landet Gosen.",
+    "text": "Han sendte Juda i forveien til Josef for å bane vei til Gosen. Så kom de til landet Gosen.",
     "versions": [
       {
         "text": "Jakob sendte Juda i forveien til Josef for å vise vei til Gosen. Så kom de til landet Gosen.",
         "explanation": "Det hebraiske 'לְהוֹרֹת' (fra ירה) betyr 'å instruere, veilede, bane vei'. 'Vise vei' er akseptabelt, men 'bane vei' fanger bedre betydningen av å forberede og tilrettelegge ankomsten, ikke bare gi retningsanvisninger."
+      },
+      {
+        "text": "Jakob sendte Juda i forveien til Josef for å bane vei til Gosen. Så kom de til landet Gosen.",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "Subjektet i den hebraiske teksten er implisitt (han/Jakob) fra konteksten. 'Jakob' er en rimelig eksplisitering, men det hebraiske originalen sier bare 'han sendte'. Denne endringen er minor og valgfri – 'Jakob' er tydeliggjørende og akseptabelt."
       }
     ]
   },
@@ -213,11 +235,17 @@
     "bookId": 1,
     "chapterId": 46,
     "verseId": 32,
-    "text": "Mennene er gjetere, for de er buskap-folk. De har tatt med seg småfeet, storfeet og alt de eier.",
+    "text": "Mennene er gjetere, for de er fedriftfolk. De har tatt med seg småfeet, storfeet og alt de eier.",
     "versions": [
       {
         "text": "Mennene er sauegjetere, for de driver med buskap. De har tatt med seg småfeet, storfeet og alt de eier.",
         "explanation": "Det hebraiske 'רֹעֵי צֹאן' betyr 'gjetere av småfe' (generelt), og 'אַנְשֵׁי מִקְנֶה' betyr 'buskap-menn/folk'. Oversettelsen 'driver med buskap' mister noe av den kulturelle identitetsbetydningen. Alternativt kan nåværende beholdes hvis enklere språk prioriteres."
+      },
+      {
+        "text": "Mennene er gjetere, for de er buskap-folk. De har tatt med seg småfeet, storfeet og alt de eier.",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "'Buskap-folk' er et uvanlig sammensatt ord på norsk og virker konstruert. 'Fedriftfolk' eller 'folk som driver med buskap' ville være mer naturlig norsk. Alternativt kan man skrive 'for de driver med husdyrhold'."
       }
     ]
   },
@@ -231,6 +259,14 @@
     "bookId": 1,
     "chapterId": 46,
     "verseId": 34,
-    "text": "skal dere svare: Dine tjenere har drevet med buskap fra ungdommen av og frem til nå, både vi og våre fedre. Da får dere bo i landet Gosen, for alle sauegjetere er en avsky for egypterne.»"
+    "text": "skal dere svare: «Dine tjenere har drevet med buskap fra ungdommen av og frem til nå, både vi og våre fedre.» Da får dere bo i landet Gosen, for alle sauegjetere er en avsky for egypterne.»",
+    "versions": [
+      {
+        "text": "skal dere svare: Dine tjenere har drevet med buskap fra ungdommen av og frem til nå, både vi og våre fedre. Da får dere bo i landet Gosen, for alle sauegjetere er en avsky for egypterne.»",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "Svaret til farao bør stå i anførselstegn for å markere den direkte talen som Josef instruerer brødrene å si. Uten anførselstegn er det uklart hvor det direkte sitatet begynner og slutter."
+      }
+    ]
   }
 ]

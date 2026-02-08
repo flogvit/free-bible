@@ -33,7 +33,15 @@
     "bookId": 46,
     "chapterId": 11,
     "verseId": 5,
-    "text": "Men enhver kvinne som ber eller profeterer med utildekket hode, vanærer sitt hode. For det er det samme som om hun var raket."
+    "text": "Men enhver kvinne som ber eller profeterer med utildekket hode, vanærer sitt hode. For det er ett og det samme som å være raket.",
+    "versions": [
+      {
+        "text": "Men enhver kvinne som ber eller profeterer med utildekket hode, vanærer sitt hode. For det er det samme som om hun var raket.",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "The Greek 'ἓν γάρ ἐστιν καὶ τὸ αὐτὸ τῇ ἐξυρημένῃ' says 'it is one and the same as being shaved'. The phrase 'ett og det samme' is a more accurate rendering of 'ἓν καὶ τὸ αὐτὸ' and is natural Norwegian. 'Som om hun var raket' adds a hypothetical nuance not in the Greek; Paul states it more directly as equivalence."
+      }
+    ]
   },
   {
     "bookId": 46,
@@ -135,11 +143,17 @@
     "bookId": 46,
     "chapterId": 11,
     "verseId": 19,
-    "text": "For det må også være splittelser blant dere, slik at de som holder mål, kan bli åpenbare blant dere.",
+    "text": "For det må også være grupperinger blant dere, slik at de som holder mål, kan bli åpenbare blant dere.",
     "versions": [
       {
         "text": "For det må også være partier blant dere, slik at de ekte kan bli åpenbare blant dere.",
         "explanation": "'αἱρέσεις' (haireseis) oversettes bedre som 'splittelser' eller 'uenigheter' i denne konteksten, og 'δόκιμοι' (dokimoi) betyr 'de som er prøvd og funnet ekte/holdbare' - 'de som holder mål' er mer presist enn bare 'de ekte'."
+      },
+      {
+        "text": "For det må også være splittelser blant dere, slik at de som holder mål, kan bli åpenbare blant dere.",
+        "type": "theological",
+        "severity": "minor",
+        "explanation": "Verse 18 already uses 'splittelser' for 'σχίσματα' (schismata). Using 'splittelser' again in verse 19 for 'αἱρέσεις' (haireseis) obscures the distinction between two different Greek words. 'αἱρέσεις' refers more to factions/parties/groupperinger than to splits. 'Grupperinger' preserves the distinction. However, the version history shows this was an intentional change, so this is noted as minor."
       }
     ]
   },
@@ -147,7 +161,15 @@
     "bookId": 46,
     "chapterId": 11,
     "verseId": 20,
-    "text": "Når dere da kommer sammen på ett sted, er det ikke mulig å spise Herrens måltid."
+    "text": "Når dere da kommer sammen på ett sted, er det ikke Herrens måltid dere spiser.",
+    "versions": [
+      {
+        "text": "Når dere da kommer sammen på ett sted, er det ikke mulig å spise Herrens måltid.",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "The Greek 'οὐκ ἔστιν κυριακὸν δεῖπνον φαγεῖν' means more literally 'it is not to eat the Lord's supper' - i.e., what you eat is not the Lord's supper. The current translation 'er det ikke mulig å spise' (it is not possible to eat) adds the concept of impossibility which is not in the Greek. Paul is saying that what they are doing when they gather does not constitute the Lord's supper, not that it is impossible to eat it."
+      }
+    ]
   },
   {
     "bookId": 46,
@@ -189,11 +211,17 @@
     "bookId": 46,
     "chapterId": 11,
     "verseId": 26,
-    "text": "For så ofte som dere spiser dette brødet og drikker av dette begeret, forkynner dere Herrens død inntil han kommer.",
+    "text": "For så ofte som dere spiser dette brødet og drikker dette begeret, forkynner dere Herrens død inntil han kommer.",
     "versions": [
       {
         "text": "For så ofte som dere spiser dette brødet og drikker dette begeret, forkynner dere Herrens død inntil han kommer.",
         "explanation": "For konsistens med vers 28 ('drikke av begeret') og vanlig norsk språkbruk bør 'av' legges til. Man drikker 'av' et beger, ikke begeret selv."
+      },
+      {
+        "text": "For så ofte som dere spiser dette brødet og drikker av dette begeret, forkynner dere Herrens død inntil han kommer.",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "The Greek text in verse 26 says 'τὸ ποτήριον πίνητε' (drink the cup), without a preposition 'of'. The version history shows 'av' was added for consistency with verse 28, but verse 28 actually uses 'ἐκ τοῦ ποτηρίου' (from/of the cup) while verse 26 does not have 'ἐκ'. The original Greek distinction should be preserved. However, since this was an intentional change with reasoning, this is merely noted as minor."
       }
     ]
   },

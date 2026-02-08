@@ -45,7 +45,15 @@
     "bookId": 1,
     "chapterId": 29,
     "verseId": 8,
-    "text": "Men de svarte: «Det kan vi ikke før alle flokkene er samlet. Så ruller de steinen bort fra brønnens åpning, og vi vanner småfeet.»"
+    "text": "Men de svarte: «Det kan vi ikke før alle flokkene er samlet og de ruller steinen bort fra brønnens åpning. Da vanner vi småfeet.»",
+    "versions": [
+      {
+        "text": "Men de svarte: «Det kan vi ikke før alle flokkene er samlet. Så ruller de steinen bort fra brønnens åpning, og vi vanner småfeet.»",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "Den nåværende oversettelsen gir inntrykk av at det å rulle steinen og vanne er en separat handling ('Så ruller de'). I originalteksten er alt dette del av samme betingelse: de kan ikke vanne FØR alle flokkene er samlet OG steinen er rullet bort. Strukturen bør gjenspeile at rulling av steinen og vanning henger sammen som en sammenhengende prosess som krever at alle er samlet."
+      }
+    ]
   },
   {
     "bookId": 1,
@@ -69,7 +77,15 @@
     "bookId": 1,
     "chapterId": 29,
     "verseId": 12,
-    "text": "Jakob fortalte Rakel at han var hennes fars slektning, og at han var sønn av Rebekka. Da sprang hun av sted og fortalte det til sin far."
+    "text": "Jakob fortalte Rakel at han var hennes fars bror, og at han var sønn av Rebekka. Da sprang hun av sted og fortalte det til sin far.",
+    "versions": [
+      {
+        "text": "Jakob fortalte Rakel at han var hennes fars slektning, og at han var sønn av Rebekka. Da sprang hun av sted og fortalte det til sin far.",
+        "type": "error",
+        "severity": "major",
+        "explanation": "Hebraisk 'achi aviha' betyr bokstavelig 'hennes fars bror', altså at Jakob kalte seg selv onkel/bror til Laban. 'Slektning' er for vagt. I bibelsk sammenheng brukes 'ach' (bror) her om nær slektning/nevø, men oversettelsen bør gjenspeile den faktiske formuleringen. Jakob presenterte seg som Labans bror (i utvidet forstand: nær slektning/nevø), og dette korresponderer med vers 15 der Laban kaller ham 'achi' (min bror)."
+      }
+    ]
   },
   {
     "bookId": 1,
@@ -99,7 +115,15 @@
     "bookId": 1,
     "chapterId": 29,
     "verseId": 17,
-    "text": "Lea hadde milde øyne, men Rakel var vakker av skikkelse og utseende."
+    "text": "Lea hadde milde øyne, men Rakel var vakker av fasong og utseende.",
+    "versions": [
+      {
+        "text": "Lea hadde milde øyne, men Rakel var vakker av skikkelse og utseende.",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "Hebraisk 'yefat-toar' refererer til kroppens form/fasong, ikke 'skikkelse' som kan høres litt gammelmodig ut. 'Vakker av fasong og utseende' er mer presist og naturlig på moderne norsk."
+      }
+    ]
   },
   {
     "bookId": 1,

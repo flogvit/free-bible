@@ -3,11 +3,17 @@
     "bookId": 45,
     "chapterId": 1,
     "verseId": 1,
-    "text": "Paulus, Jesu Kristi tjener, kalt til apostel, utvalgt til å forkynne Guds evangelium,",
+    "text": "Paulus, Jesu Kristi tjener, kalt til apostel, utsatt til Guds evangelium,",
     "versions": [
       {
         "text": "Paulus, Kristi Jesu tjener, kalt til apostel, utvalgt til å forkynne Guds evangelium,",
         "explanation": "Den greske teksten har 'Χριστοῦ Ἰησοῦ' (Christou Iesou), som på norsk tradisjonelt gjengis som 'Jesu Kristi' (genitiv), ikke 'Kristi Jesu'. Rekkefølgen i den norske oversettelsen følger ikke den greske teksten korrekt."
+      },
+      {
+        "text": "Paulus, Jesu Kristi tjener, kalt til apostel, utvalgt til å forkynne Guds evangelium,",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "ἀφωρισμένος betyr 'avsatt/utsatt/adskilt' (satt til side for), ikke 'utvalgt'. Og εἰς εὐαγγέλιον betyr 'til evangeliet', ikke 'til å forkynne evangeliet'. 'Å forkynne' er tillagt. En mer nøyaktig oversettelse ville være 'satt til side for Guds evangelium'. Men gitt at verset allerede har én revisjon, og 'utvalgt til å forkynne' er lettlest og teologisk forsvarlig om enn noe fritt, er dette en mindre sak."
       }
     ]
   },
@@ -33,11 +39,17 @@
     "bookId": 45,
     "chapterId": 1,
     "verseId": 4,
-    "text": "og som med kraft ble innsatt som Guds Sønn etter hellighetens Ånd ved oppstandelsen fra de døde: Jesus Kristus, vår Herre.",
+    "text": "og som ble innsatt som Guds Sønn i kraft etter hellighetens Ånd ved oppstandelsen fra de døde: Jesus Kristus, vår Herre.",
     "versions": [
       {
         "text": "og som med kraft ble stadfestet som Guds Sønn etter hellighets Ånd ved oppstandelsen fra de døde: Jesus Kristus, vår Herre.",
         "explanation": "Ordet 'ὁρισθέντος' betyr mer presist 'innsatt' eller 'erklært' enn 'stadfestet'. Også 'hellighets Ånd' er litt klønete - 'hellighetens Ånd' flyter bedre på norsk og er mer idiomatisk."
+      },
+      {
+        "text": "og som med kraft ble innsatt som Guds Sønn etter hellighetens Ånd ved oppstandelsen fra de døde: Jesus Kristus, vår Herre.",
+        "type": "theological",
+        "severity": "minor",
+        "explanation": "'ἐν δυνάμει' (i kraft/med kraft) modifiserer mest sannsynlig 'υἱοῦ θεοῦ' – altså 'Guds Sønn i kraft', dvs. kraftfullt erklært/innsatt som Guds Sønn, snarere enn at selve innsettelsen skjedde 'med kraft'. Plasseringen av 'med kraft' foran verbet kan gi inntrykk av at det beskriver måten han ble innsatt på, mens den greske syntaksen knytter det til hans status som Guds Sønn. Men dette er teologisk diskutert og verset har allerede én revisjon."
       }
     ]
   },
@@ -99,13 +111,29 @@
     "bookId": 45,
     "chapterId": 1,
     "verseId": 12,
-    "text": "det vil si at vi sammen kan bli oppmuntret hos dere ved den tro vi deler, både dere og jeg."
+    "text": "det vil si at vi gjensidig kan bli oppmuntret blant dere ved hverandres tro, både deres og min.",
+    "versions": [
+      {
+        "text": "det vil si at vi sammen kan bli oppmuntret hos dere ved den tro vi deler, både dere og jeg.",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "Den greske teksten sier 'διὰ τῆς ἐν ἀλλήλοις πίστεως' – 'gjennom den gjensidige troen' / 'hverandres tro'. 'Den tro vi deler' er litt upresist. Også 'ὑμῶν τε καὶ ἐμοῦ' er 'deres og min', ikke 'dere og jeg'."
+      }
+    ]
   },
   {
     "bookId": 45,
     "chapterId": 1,
     "verseId": 13,
-    "text": "Jeg vil ikke at dere skal være uvitende om dette, søsken: Mange ganger har jeg satt meg fore å komme til dere, men har blitt hindret helt til nå. Jeg ønsker å høste frukt også blant dere, slik som blant de andre folkeslagene."
+    "text": "Jeg vil ikke at dere skal være uvitende, søsken: Mange ganger har jeg satt meg fore å komme til dere, men har blitt hindret helt til nå. Jeg ønsker å høste frukt også blant dere, slik som blant de andre folkeslagene.",
+    "versions": [
+      {
+        "text": "Jeg vil ikke at dere skal være uvitende om dette, søsken: Mange ganger har jeg satt meg fore å komme til dere, men har blitt hindret helt til nå. Jeg ønsker å høste frukt også blant dere, slik som blant de andre folkeslagene.",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "Den greske teksten har 'οὐ θέλω δὲ ὑμᾶς ἀγνοεῖν, ἀδελφοί, ὅτι...' – 'jeg vil ikke at dere skal være uvitende, brødre, at...'. 'Om dette' er ikke i originalteksten; det som følger etter ὅτι er innholdet de ikke skal være uvitende om."
+      }
+    ]
   },
   {
     "bookId": 45,
@@ -183,7 +211,15 @@
     "bookId": 45,
     "chapterId": 1,
     "verseId": 24,
-    "text": "Derfor overga Gud dem til urenhet gjennom hjertenes lyster, slik at de vanæret kroppene sine med hverandre."
+    "text": "Derfor overga Gud dem til urenhet gjennom hjertenes lyster, slik at de vanæret kroppene sine seg imellom.",
+    "versions": [
+      {
+        "text": "Derfor overga Gud dem til urenhet gjennom hjertenes lyster, slik at de vanæret kroppene sine med hverandre.",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "Mindre stilistisk forslag. 'Med hverandre' er akseptabelt, men 'ἐν αὐτοῖς' kan også oversettes 'blant seg selv' / 'seg imellom'. Begge er forsvarlige."
+      }
+    ]
   },
   {
     "bookId": 45,

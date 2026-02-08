@@ -99,7 +99,15 @@
     "bookId": 1,
     "chapterId": 25,
     "verseId": 16,
-    "text": "Dette var Ismaels sønner, og dette var deres navn i landsbyene og leirene deres – tolv høvdinger for sine stammer."
+    "text": "Dette var Ismaels sønner, og dette var deres navn etter landsbyene og befestningene deres – tolv høvdinger for sine stammer.",
+    "versions": [
+      {
+        "text": "Dette var Ismaels sønner, og dette var deres navn i landsbyene og leirene deres – tolv høvdinger for sine stammer.",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "Det hebraiske 'טִירֹת' refererer til befestede leirer eller borger/befestninger, ikke vanlige leirer (som ville vært 'מַחֲנוֹת'). 'Befestninger' eller 'borger' gir en mer presis oversettelse. I tillegg bør 'i' endres til 'etter' for å gjenspeile at navnene knytter seg til stedene."
+      }
+    ]
   },
   {
     "bookId": 1,
@@ -111,7 +119,15 @@
     "bookId": 1,
     "chapterId": 25,
     "verseId": 18,
-    "text": "De bosatte seg fra Havila til Sjur, som ligger øst for Egypt, på veien mot Assur. Han falt overfor alle sine brødre."
+    "text": "De bosatte seg fra Havila til Sjur, som ligger øst for Egypt, på veien mot Assur. Han slo seg ned overfor alle sine brødre.",
+    "versions": [
+      {
+        "text": "De bosatte seg fra Havila til Sjur, som ligger øst for Egypt, på veien mot Assur. Han falt overfor alle sine brødre.",
+        "type": "error",
+        "severity": "major",
+        "explanation": "Uttrykket 'נָפָל' i denne konteksten betyr å 'slå seg ned' eller 'bosette seg', ikke 'falle' i fysisk forstand. 'Han falt overfor alle sine brødre' gir liten mening på norsk og kan misforstås. Dette er en oppfyllelse av 1 Mos 16:12 der det sies at Ismael skal bo 'overfor alle sine brødre'. Alternativt kan det oversettes 'Han levde i strid med alle sine brødre' eller 'Han holdt stand overfor alle sine brødre', men 'slo seg ned' passer best med konteksten om bosettelse."
+      }
+    ]
   },
   {
     "bookId": 1,
@@ -177,11 +193,17 @@
     "bookId": 1,
     "chapterId": 25,
     "verseId": 28,
-    "text": "Isak elsket Esau, for han likte viltkjøtt i munnen. Men Rebekka elsket Jakob.",
+    "text": "Isak elsket Esau, for han likte viltkjøtt. Men Rebekka elsket Jakob.",
     "versions": [
       {
         "text": "Isak elsket Esau, for han hadde sans for vilt. Men Rebekka elsket Jakob.",
         "explanation": "Det hebraiske uttrykket 'כִּי־צַ֣יִד בְּפִ֑יו' betyr bokstavelig 'for vilt var i hans munn', altså at Isak likte å spise viltet Esau jaktet. 'Hadde sans for vilt' er en akseptabel tolkning, men mister den konkrete referansen til å spise."
+      },
+      {
+        "text": "Isak elsket Esau, for han likte viltkjøtt i munnen. Men Rebekka elsket Jakob.",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "Formuleringen 'viltkjøtt i munnen' er unaturlig på norsk og lyder klossete. Det hebraiske uttrykket formidles godt med 'han likte viltkjøtt' uten den bokstavelige referansen til 'munnen'. Siden forrige versjon ('hadde sans for vilt') ble endret for å beholde referansen til å spise, kan 'han likte viltkjøtt' være et godt kompromiss."
       }
     ]
   },

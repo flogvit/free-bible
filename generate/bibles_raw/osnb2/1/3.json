@@ -3,17 +3,31 @@
     "bookId": 1,
     "chapterId": 3,
     "verseId": 1,
-    "text": "Slangen var listigere enn alle markens dyr som Herren Gud hadde skapt. Den sa til kvinnen: «Har Gud virkelig sagt at dere ikke skal spise av noe tre i hagen?»"
+    "text": "Slangen var listigere enn alle markens dyr som Herren Gud hadde skapt. Den sa til kvinnen: «Har Gud virkelig sagt at dere ikke skal spise av alle trærne i hagen?»",
+    "versions": [
+      {
+        "text": "Slangen var listigere enn alle markens dyr som Herren Gud hadde skapt. Den sa til kvinnen: «Har Gud virkelig sagt at dere ikke skal spise av noe tre i hagen?»",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "Det hebraiske 'מִכֹּל עֵץ הַגָּן' betyr 'av alle trærne i hagen', ikke 'av noe tre'. Slangens spørsmål er retorisk og fordreier Guds ord ved å antyde at forbudet gjaldt alle trær, ikke bare ett. 'Noe tre' endrer den retoriske effekten."
+      }
+    ]
   },
   {
     "bookId": 1,
     "chapterId": 3,
     "verseId": 2,
-    "text": "Kvinnen svarte slangen: «Vi kan spise av frukten på trærne i hagen.»",
+    "text": "Kvinnen svarte slangen: «Vi kan spise av frukten fra trærne i hagen.»",
     "versions": [
       {
         "text": "Kvinnen svarte slangen: «Vi kan spise av frukten på trærne i hagen.",
         "explanation": "Manglende avsluttende anførselstegn. Verset starter en direkte tale som avsluttes i vers 3, men for muntlig lesning bør hvert vers være grammatisk komplett, eller det bør markeres tydelig at sitatet fortsetter."
+      },
+      {
+        "text": "Kvinnen svarte slangen: «Vi kan spise av frukten på trærne i hagen.»",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "Preposisjonen 'fra' er mer presis enn 'på' når det gjelder å spise frukt. Man spiser frukt fra trær, ikke på trær. Dette er en liten stilistisk forbedring."
       }
     ]
   },
@@ -21,7 +35,15 @@
     "bookId": 1,
     "chapterId": 3,
     "verseId": 3,
-    "text": "Men om frukten på treet midt i hagen har Gud sagt: Dere skal ikke spise av den og ikke røre ved den, ellers skal dere dø.»"
+    "text": "Men om frukten på treet midt i hagen har Gud sagt: 'Dere skal ikke spise av den og ikke røre ved den, ellers skal dere dø.'»",
+    "versions": [
+      {
+        "text": "Men om frukten på treet midt i hagen har Gud sagt: Dere skal ikke spise av den og ikke røre ved den, ellers skal dere dø.»",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "Kvinnen siterer Guds ord, og dette er et sitat inne i et sitat (som startet i vers 2). For klarhet ved muntlig lesning kan enkle anførselstegn brukes rundt Guds ord. Dette er imidlertid en stilistisk vurdering."
+      }
+    ]
   },
   {
     "bookId": 1,
@@ -39,11 +61,17 @@
     "bookId": 1,
     "chapterId": 3,
     "verseId": 5,
-    "text": "For Gud vet at den dagen dere spiser av den, vil øynene deres åpnes, og dere vil bli som guder og kjenne godt og ondt.»",
+    "text": "For Gud vet at den dagen dere spiser av den, vil øynene deres åpnes, og dere vil bli som Gud og kjenne godt og ondt.»",
     "versions": [
       {
         "text": "For Gud vet at den dagen dere spiser av den, vil øynene deres åpnes, og dere vil bli som Gud og kjenne godt og ondt.»",
         "explanation": "Det hebraiske כֵּאלֹהִים kan oversettes 'som Gud' eller 'som guder' (flertall). Mange oversettelser velger 'guder' her fordi slangen antyder at de vil bli som guddommelige vesener generelt. Dette er en teologisk nyanse som kan vurderes."
+      },
+      {
+        "text": "For Gud vet at den dagen dere spiser av den, vil øynene deres åpnes, og dere vil bli som guder og kjenne godt og ondt.»",
+        "type": "theological",
+        "severity": "minor",
+        "explanation": "Versjonshistorikken viser at dette ble endret fra 'Gud' til 'guder'. Men כֵּאלֹהִים i denne konteksten oversettes oftest med 'som Gud' (entall) i de fleste norske bibeloversettelser (NO78, NO11, Bibelen Guds Ord). Slangen lover at de skal bli lik Gud selv, ikke generelle guddommelige vesener. Particippet יֹדְעֵי (flertall) refererer til subjektet 'dere', ikke til אלהים. Denne endringen har teologisk betydning og bør vurderes nøye."
       }
     ]
   },
@@ -69,11 +97,17 @@
     "bookId": 1,
     "chapterId": 3,
     "verseId": 8,
-    "text": "De hørte lyden av Herren Gud som vandret i hagen i den svale kveldsvinden. Da gjemte mannen og kona hans seg for Herren Gud blant trærne i hagen.",
+    "text": "De hørte lyden av Herren Gud som vandret i hagen i den svale kveldsvinden. Da gjemte mannen og hans kone seg for Herren Gud blant trærne i hagen.",
     "versions": [
       {
         "text": "De hørte lyden av Herren Gud som vandret i hagen i den svale kveldsvinden. Da gjemte mannen og kvinnen hans seg for Herren Gud blant trærne i hagen.",
         "explanation": "For bedre muntlig flyt og konsistens med moderne norsk bokmål er 'kona' mer naturlig enn 'kvinnen' når det refereres til Adams hustru. Dette samsvarer også bedre med bruken i andre vers (f.eks. vers 17, 20, 21)."
+      },
+      {
+        "text": "De hørte lyden av Herren Gud som vandret i hagen i den svale kveldsvinden. Da gjemte mannen og kona hans seg for Herren Gud blant trærne i hagen.",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "'Kona hans' kan høres litt uformelt ut. 'Hans kone' er mer konsistent med den litt høytidelige stilen i resten av kapitlet (jf. vers 17 'din kone', vers 20-21 'sin kone / hans kone')."
       }
     ]
   },
@@ -93,7 +127,15 @@
     "bookId": 1,
     "chapterId": 3,
     "verseId": 11,
-    "text": "Da sa han: «Hvem har fortalt deg at du er naken? Har du spist av treet jeg forbød deg å spise av?»"
+    "text": "Da sa Gud: «Hvem har fortalt deg at du er naken? Har du spist av treet jeg forbød deg å spise av?»",
+    "versions": [
+      {
+        "text": "Da sa han: «Hvem har fortalt deg at du er naken? Har du spist av treet jeg forbød deg å spise av?»",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "For klarhet ved muntlig lesning kan det være nyttig å presisere at det er Gud (eller 'Herren') som taler, ikke Adam. 'Han' kan være tvetydig etter vers 10 hvor Adam nettopp har snakket."
+      }
+    ]
   },
   {
     "bookId": 1,
@@ -159,13 +201,29 @@
     "bookId": 1,
     "chapterId": 3,
     "verseId": 18,
-    "text": "Torn og tistel skal den bære for deg, og du skal ete markens vekster."
+    "text": "Torner og tistler skal den bære for deg, og du skal ete markens vekster.",
+    "versions": [
+      {
+        "text": "Torn og tistel skal den bære for deg, og du skal ete markens vekster.",
+        "type": "grammar",
+        "severity": "minor",
+        "explanation": "Det hebraiske 'וְקוֹץ וְדַרְדַּר' er kollektive substantiver, men på norsk er flertallsformen 'torner og tistler' mer naturlig og idiomatisk enn entallsformen 'torn og tistel'."
+      }
+    ]
   },
   {
     "bookId": 1,
     "chapterId": 3,
     "verseId": 19,
-    "text": "I ditt ansikts sved skal du ete ditt brød, inntil du vender tilbake til jorden, for av den er du tatt. Støv er du, og til støv skal du vende tilbake.»"
+    "text": "Med svette i ansiktet skal du ete ditt brød, inntil du vender tilbake til jorden, for av den er du tatt. Støv er du, og til støv skal du vende tilbake.»",
+    "versions": [
+      {
+        "text": "I ditt ansikts sved skal du ete ditt brød, inntil du vender tilbake til jorden, for av den er du tatt. Støv er du, og til støv skal du vende tilbake.»",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "'I ditt ansikts sved' er en svært arkaisk konstruksjon som kan være vanskelig å forstå ved muntlig lesning. 'Med svette i ansiktet' formidler det samme på mer moderne norsk, i tråd med oversettelsens mål om å være 'modern og easy to read'. Samtidig kan man argumentere for at uttrykket er så kjent at det bør beholdes."
+      }
+    ]
   },
   {
     "bookId": 1,

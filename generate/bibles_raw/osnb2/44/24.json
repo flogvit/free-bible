@@ -9,7 +9,15 @@
     "bookId": 44,
     "chapterId": 24,
     "verseId": 2,
-    "text": "Da Paulus var ført fram, begynte Tertullus anklagen og sa: «Gjennom deg har vi fått oppleve stor fred, og ditt fremsynte styre har ført til forbedringer for dette folket."
+    "text": "Da Paulus var ført fram, begynte Tertullus anklagen og sa: «Takket være deg har vi fått oppleve stor fred, og gjennom ditt fremsynte styre skjer det forbedringer for dette folket.",
+    "versions": [
+      {
+        "text": "Da Paulus var ført fram, begynte Tertullus anklagen og sa: «Gjennom deg har vi fått oppleve stor fred, og ditt fremsynte styre har ført til forbedringer for dette folket.",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "Små stilforbedringer: 'Takket være deg' er mer idiomatisk enn 'Gjennom deg' for διὰ σοῦ i denne konteksten. 'Skjer det forbedringer' gjenspeiler γινομένων (som skjer/blir til) bedre enn 'har ført til'."
+      }
+    ]
   },
   {
     "bookId": 44,
@@ -27,7 +35,15 @@
     "bookId": 44,
     "chapterId": 24,
     "verseId": 5,
-    "text": "Vi har funnet at denne mannen er en pest som skaper opprør blant alle jødene over hele verden, og at han er en leder for nasareernes sekt."
+    "text": "Vi har nemlig funnet at denne mannen er en pest som skaper opprør blant alle jødene over hele verden, og at han er en leder for nasareernes sekt.",
+    "versions": [
+      {
+        "text": "Vi har funnet at denne mannen er en pest som skaper opprør blant alle jødene over hele verden, og at han er en leder for nasareernes sekt.",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "γὰρ ('for/nemlig') er ikke oversatt. Det gir en begrunnende funksjon som knytter anklagen til den foregående forespørselen om å lytte."
+      }
+    ]
   },
   {
     "bookId": 44,
@@ -39,11 +55,17 @@
     "bookId": 44,
     "chapterId": 24,
     "verseId": 7,
-    "text": "Men kommandanten Lysias kom og tok ham med makt ut av våre hender, og befalte at hans anklagere skulle komme til deg.",
+    "text": "Men kommandanten Lysias kom og førte ham med stor makt ut av våre hender, og befalte hans anklagere å komme til deg.",
     "versions": [
       {
         "text": "Men kommandanten Lysias kom og tok ham med makt ut av våre hender,",
         "explanation": "Den andre delen av vers 7 (om at anklagerne skulle komme til Feliks) bør være med i vers 7, ikke i vers 8, for å bevare riktig versstruktur."
+      },
+      {
+        "text": "Men kommandanten Lysias kom og tok ham med makt ut av våre hender, og befalte at hans anklagere skulle komme til deg.",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "μετὰ πολλῆς βίας = 'med stor/mye makt/vold', ikke bare 'med makt'. πολλῆς (mye/stor) bør gjenspeiles. ἀπήγαγε betyr 'førte bort' snarere enn 'tok'."
       }
     ]
   },
@@ -51,7 +73,15 @@
     "bookId": 44,
     "chapterId": 24,
     "verseId": 8,
-    "text": "Når du selv forhører ham, vil du kunne få rede på alt det vi anklager ham for.»"
+    "text": "Ved å forhøre ham selv vil du kunne få rede på alt det vi anklager ham for.»",
+    "versions": [
+      {
+        "text": "Når du selv forhører ham, vil du kunne få rede på alt det vi anklager ham for.»",
+        "type": "error",
+        "severity": "major",
+        "explanation": "παρʼ οὗ ('fra hvem') refererer tilbake, og αὐτὸς ἀνακρίνας er en partisipp ('selv etter å ha forhørt'). 'Når du selv forhører ham' med 'når' antyder en fremtidig betingelse, mens teksten sier at ved å forhøre ham vil han kunne finne ut sannheten. 'Ved å forhøre ham selv' er mer nøyaktig."
+      }
+    ]
   },
   {
     "bookId": 44,
@@ -93,7 +123,15 @@
     "bookId": 44,
     "chapterId": 24,
     "verseId": 14,
-    "text": "Men dette innrømmer jeg for deg: Jeg tjener våre fedres Gud etter Veien, som de kaller en sekt. Jeg tror alt som står skrevet i loven og i profetene."
+    "text": "Men dette bekjenner jeg for deg: Jeg tjener våre fedres Gud etter Veien, som de kaller en sekt. Jeg tror alt som står skrevet i loven og hos profetene.",
+    "versions": [
+      {
+        "text": "Men dette innrømmer jeg for deg: Jeg tjener våre fedres Gud etter Veien, som de kaller en sekt. Jeg tror alt som står skrevet i loven og i profetene.",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "ὁμολογῶ betyr 'bekjenner/erklærer' snarere enn 'innrømmer'. 'Innrømmer' har en negativ konnotasjon som om man erkjenner noe galt, mens Paulus bekjenner sin tro med stolthet. Også: ἐν τοῖς προφήταις = 'hos profetene' er mer idiomatisk enn 'i profetene'."
+      }
+    ]
   },
   {
     "bookId": 44,
@@ -129,7 +167,15 @@
     "bookId": 44,
     "chapterId": 24,
     "verseId": 18,
-    "text": "Under dette fant de meg i tempelet, rituelt renset, uten noen folkemengde og uten noe opprør."
+    "text": "Det var under dette de fant meg i tempelet, rituelt renset, uten noen folkemengde og uten noe uro.",
+    "versions": [
+      {
+        "text": "Under dette fant de meg i tempelet, rituelt renset, uten noen folkemengde og uten noe opprør.",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "θορύβου betyr 'uro/bråk/tumult' snarere enn 'opprør' (som ville være στάσις). 'Uro' er mer nøyaktig her."
+      }
+    ]
   },
   {
     "bookId": 44,
@@ -159,11 +205,17 @@
     "bookId": 44,
     "chapterId": 24,
     "verseId": 22,
-    "text": "Men Feliks, som hadde ganske god kjennskap til Veien, utsatte saken og sa: «Når kommandanten Lysias kommer ned, skal jeg avgjøre saken deres.»",
+    "text": "Men Feliks, som hadde ganske god kjennskap til Veien, utsatte saken og sa: «Når kommandanten Lysias kommer hit ned, skal jeg avgjøre saken deres.»",
     "versions": [
       {
         "text": "Men Feliks, som hadde god kjennskap til Veien, utsatte saken og sa: «Når kommandanten Lysias kommer ned, skal jeg avgjøre saken deres.»",
         "explanation": "ἀκριβέστερον er komparativ form og betyr 'ganske nøyaktig/temmelig god' kjennskap - det indikerer at han hadde mer enn overfladisk kunnskap, men komparativformen bør gjenspeiles."
+      },
+      {
+        "text": "Men Feliks, som hadde ganske god kjennskap til Veien, utsatte saken og sa: «Når kommandanten Lysias kommer ned, skal jeg avgjøre saken deres.»",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "καταβῇ ('kommer ned') indikerer bevegelse nedover, som gjenspeiler reisen fra Jerusalem ned til Cæsarea. 'Kommer hit ned' ivaretar denne geografiske nyansen bedre."
       }
     ]
   },

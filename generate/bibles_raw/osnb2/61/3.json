@@ -3,7 +3,15 @@
     "bookId": 61,
     "chapterId": 3,
     "verseId": 1,
-    "text": "Dette er nå det andre brevet jeg skriver til dere, mine kjære. I begge brevene har jeg villet vekke deres rene sinn ved å minne dere om dette:"
+    "text": "Dette er nå det andre brevet jeg skriver til dere, mine kjære. I begge brevene har jeg villet vekke deres oppriktige sinn ved å minne dere om dette:",
+    "versions": [
+      {
+        "text": "Dette er nå det andre brevet jeg skriver til dere, mine kjære. I begge brevene har jeg villet vekke deres rene sinn ved å minne dere om dette:",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "Det greske 'εἰλικρινῆ' betyr 'oppriktig/ren/ublandet'. 'Oppriktig' er en mer presis oversettelse enn 'ren' og brukes ofte i norske bibeloversettelser for dette ordet. 'Ren' kan forveksles med moralsk renhet, mens poenget er oppriktighet/ærlighet i sinnet."
+      }
+    ]
   },
   {
     "bookId": 61,
@@ -51,7 +59,15 @@
     "bookId": 61,
     "chapterId": 3,
     "verseId": 6,
-    "text": "Ved dette ble den daværende verden oversvømt av vann og gikk til grunne."
+    "text": "Ved dette ble den daværende verden oversvømt med vann og gikk til grunne.",
+    "versions": [
+      {
+        "text": "Ved dette ble den daværende verden oversvømt av vann og gikk til grunne.",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "Det greske 'ὕδατι κατακλυσθεὶς' bruker dativ instrumentalis. 'Oversvømt med vann' er mer idiomatisk norsk enn 'oversvømt av vann' (som lyder mer som passiv agens)."
+      }
+    ]
   },
   {
     "bookId": 61,
@@ -105,7 +121,15 @@
     "bookId": 61,
     "chapterId": 3,
     "verseId": 12,
-    "text": "mens dere venter på og fremskynder Guds dags komme. Den dagen skal himlene fortæres av ild og elementene smelte i brennende hete."
+    "text": "mens dere venter på og fremskynder Guds dags komme. Den dagen skal himlene oppløses i brann, og elementene smelte i brennende hete.",
+    "versions": [
+      {
+        "text": "mens dere venter på og fremskynder Guds dags komme. Den dagen skal himlene fortæres av ild og elementene smelte i brennende hete.",
+        "type": "error",
+        "severity": "major",
+        "explanation": "Det greske 'πυρούμενοι λυθήσονται' betyr 'skal oppløses i brann/ild' (λυθήσονται = oppløses, πυρούμενοι = i brann). 'Fortæres av ild' oversetter unøyaktig; λύω betyr 'oppløse/løse opp', ikke 'fortære'. Dette er også konsistent med vers 11 der 'λυομένων' oversettes med 'oppløses'."
+      }
+    ]
   },
   {
     "bookId": 61,
@@ -123,7 +147,15 @@
     "bookId": 61,
     "chapterId": 3,
     "verseId": 15,
-    "text": "Og regn vår Herres tålmodighet som frelse! Slik har også vår kjære bror Paulus skrevet til dere, ut fra den visdom som er gitt ham."
+    "text": "Og regn vår Herres tålmodighet som frelse! Slik har også vår kjære bror Paulus skrevet til dere, ut fra den visdom som ble gitt ham.",
+    "versions": [
+      {
+        "text": "Og regn vår Herres tålmodighet som frelse! Slik har også vår kjære bror Paulus skrevet til dere, ut fra den visdom som er gitt ham.",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "Det greske 'δοθεῖσαν' er aorist partisipp, som peker på en bestemt handling i fortiden (da visdommen ble gitt ham). 'Ble gitt' gjenspeiler dette bedre enn 'er gitt', som antyder nåtid/perfektum."
+      }
+    ]
   },
   {
     "bookId": 61,

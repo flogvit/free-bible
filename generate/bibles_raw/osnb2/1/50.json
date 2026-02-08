@@ -33,7 +33,15 @@
     "bookId": 1,
     "chapterId": 50,
     "verseId": 5,
-    "text": "Min far lot meg sverge og sa: Se, jeg skal dø. I min grav, som jeg har hogget ut for meg i Kanaans land, der skal du begrave meg. La meg nå få dra opp og begrave min far, så skal jeg vende tilbake.»"
+    "text": "Min far lot meg sverge og sa: Se, jeg skal dø. I den graven som jeg har gravd ut for meg i Kanaans land, der skal du begrave meg. La meg nå få dra opp og begrave min far, så skal jeg vende tilbake.»",
+    "versions": [
+      {
+        "text": "Min far lot meg sverge og sa: Se, jeg skal dø. I min grav, som jeg har hogget ut for meg i Kanaans land, der skal du begrave meg. La meg nå få dra opp og begrave min far, så skal jeg vende tilbake.»",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "Verbet כָּרָה betyr å grave/hugge ut. 'Gravd ut' er mer naturlig norsk for en grav enn 'hogget ut', selv om begge teknisk sett kan brukes. Også lagt til 'den' for bedre flyt."
+      }
+    ]
   },
   {
     "bookId": 1,
@@ -99,11 +107,17 @@
     "bookId": 1,
     "chapterId": 50,
     "verseId": 15,
-    "text": "Da Josefs brødre så at deres far var død, sa de: «Hva om Josef bærer nag til oss og gjengjelder oss alt det onde vi gjorde mot ham?»",
+    "text": "Da Josefs brødre så at deres far var død, sa de: «Hva om Josef bærer nag til oss og gjengjelder oss alt det onde vi har gjort mot ham?»",
     "versions": [
       {
         "text": "Da Josefs brødre så at deres far var død, sa de: «Kanskje Josef vil hate oss og gjengjelde oss alt det onde vi gjorde mot ham.»",
         "explanation": "Det hebraiske 'לוּ יִשְׂטְמֵנוּ' uttrykker en engstelig bekymring ('hva om'). Verbet 'שָׂטַם' betyr å bære nag/fiendskap snarere enn simpelthen å hate. Dette gir bedre gjengivelse av brødrenes frykt."
+      },
+      {
+        "text": "Da Josefs brødre så at deres far var død, sa de: «Hva om Josef bærer nag til oss og gjengjelder oss alt det onde vi gjorde mot ham?»",
+        "type": "grammar",
+        "severity": "minor",
+        "explanation": "Perfektum 'har gjort' er mer naturlig her på norsk, da handlingen har vedvarende relevans for situasjonen de befinner seg i."
       }
     ]
   },
@@ -117,7 +131,15 @@
     "bookId": 1,
     "chapterId": 50,
     "verseId": 17,
-    "text": "Slik skal dere si til Josef: Å, tilgi dine brødres overtredelse og synd, for de handlet ondt mot deg. Tilgi nå overtredelsen til din fars Guds tjenere.» Josef gråt da de talte slik til ham."
+    "text": "Slik skal dere si til Josef: Å, tilgi dine brødres overtredelse og synd, for de handlet ondt mot deg. Vær nå så god å tilgi overtredelsen til din fars Guds tjenere.» Josef gråt da de talte slik til ham.",
+    "versions": [
+      {
+        "text": "Slik skal dere si til Josef: Å, tilgi dine brødres overtredelse og synd, for de handlet ondt mot deg. Tilgi nå overtredelsen til din fars Guds tjenere.» Josef gråt da de talte slik til ham.",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "Det hebraiske 'שָׂא נָא' med partikkelen 'nå' (נָא) uttrykker en høflig, inntrengende bønn. 'Vær nå så god å tilgi' fanger bedre den bønnfallende tonen enn bare 'Tilgi nå'."
+      }
+    ]
   },
   {
     "bookId": 1,

@@ -39,11 +39,17 @@
     "bookId": 47,
     "chapterId": 13,
     "verseId": 5,
-    "text": "Prøv dere selv om dere er i troen! Undersøk dere selv! Eller erkjenner dere ikke at Jesus Kristus er i dere? – med mindre dere mislykkes i prøven.",
+    "text": "Prøv dere selv om dere er i troen! Undersøk dere selv! Eller erkjenner dere ikke at Jesus Kristus er i dere? – med mindre dere ikke består prøven.",
     "versions": [
       {
         "text": "Prøv dere selv om dere er i troen! Undersøk dere selv! Eller erkjenner dere ikke at Jesus Kristus er i dere? – hvis dere da ikke består prøven.",
         "explanation": "Uttrykket 'εἰ μήτι' betyr 'med mindre' eller 'unntatt hvis'. 'Med mindre dere ikke består prøven' er mer presist enn 'hvis dere da ikke består prøven' og flyter bedre på norsk."
+      },
+      {
+        "text": "Prøv dere selv om dere er i troen! Undersøk dere selv! Eller erkjenner dere ikke at Jesus Kristus er i dere? – med mindre dere mislykkes i prøven.",
+        "type": "error",
+        "severity": "major",
+        "explanation": "Nåværende tekst sier 'mislykkes i prøven', men ἀδόκιμοι betyr 'de som ikke består prøven / er forkastet'. Oversettelsen 'mislykkes i prøven' er akseptabel i seg selv, men resten av kapitlet bruker konsekvent 'består prøven' for δόκιμος/ἀδόκιμος (vers 6 og 7). For konsistens bør det stå 'ikke består prøven'. NB: den forrige versjonen hadde 'hvis dere da ikke består prøven' – her endres bare rammestrukturen ('med mindre' beholdes som intendert), men ordvalget 'består prøven' gjeninnføres for konsistens med v.6-7."
       }
     ]
   },

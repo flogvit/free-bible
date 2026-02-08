@@ -75,11 +75,17 @@
     "bookId": 46,
     "chapterId": 8,
     "verseId": 8,
-    "text": "Mat bringer oss ikke nærmere Gud. Vi mangler ikke noe om vi ikke spiser, og vinner ikke noe om vi spiser.",
+    "text": "Mat bringer oss ikke nærmere Gud. Vi vinner ikke noe om vi spiser, og mangler ikke noe om vi ikke spiser.",
     "versions": [
       {
         "text": "Mat bringer oss ikke nærmere Gud. Vi blir ikke bedre av å spise, og ikke dårligere av å la være å spise.",
         "explanation": "Den greske teksten har rekkefølgen 'spise først, så ikke spise' med ordene περισσεύομεν (ha overflod/vinne) og ὑστερούμεθα (mangle/komme til kort). Oversettelsen bør følge den greske strukturen nærmere. 'Bedre/dårligere' er noe upresist for disse verbene."
+      },
+      {
+        "text": "Mat bringer oss ikke nærmere Gud. Vi mangler ikke noe om vi ikke spiser, og vinner ikke noe om vi spiser.",
+        "type": "error",
+        "severity": "major",
+        "explanation": "Endringsloggen for vers 8 angir eksplisitt at rekkefølgen i den greske teksten er 'spise først, så ikke spise' (ἐὰν φάγωμεν først, deretter ἐὰν μὴ φάγωμεν). Men den nåværende oversettelsen har fortsatt omvendt rekkefølge: 'ikke spiser' før 'spiser'. Dette er inkonsistent med den oppgitte begrunnelsen for endringen."
       }
     ]
   },
@@ -93,11 +99,17 @@
     "bookId": 46,
     "chapterId": 8,
     "verseId": 10,
-    "text": "For hvis noen ser deg som har kunnskap, sitte til bords i et avgudstempel, vil ikke da samvittigheten til den som er svak, bli styrket til å spise mat ofret til avguder?",
+    "text": "For hvis noen ser deg som har kunnskap, sitte til bords i et avgudstempel, vil ikke da samvittigheten til den som er svak, bli styrket til å spise avgudsoffer?",
     "versions": [
       {
         "text": "For hvis noen ser deg som har kunnskap, sitte til bords i et avgudstempel, vil ikke da samvittigheten til den som er svak, bli oppmuntret til å spise mat ofret til avguder?",
         "explanation": "Det greske οἰκοδομηθήσεται ('bli bygget opp/styrket') brukes her ironisk - den svakes samvittighet blir 'styrket' i feil retning. 'Oppmuntret' er akseptabelt, men 'styrket' bevarer bedre den ironiske bruken av οἰκοδομέω som ellers betyr å bygge opp positivt (jf. vers 1)."
+      },
+      {
+        "text": "For hvis noen ser deg som har kunnskap, sitte til bords i et avgudstempel, vil ikke da samvittigheten til den som er svak, bli styrket til å spise mat ofret til avguder?",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "I vers 1, 4 og 7 er εἰδωλόθυτα konsekvent oversatt med 'avgudsoffer'. Her i vers 10 er det oversatt med 'mat ofret til avguder', som er den gamle formuleringen fra vers 1. For konsistens bør 'avgudsoffer' brukes også her."
       }
     ]
   },
@@ -105,17 +117,31 @@
     "bookId": 46,
     "chapterId": 8,
     "verseId": 11,
-    "text": "Da går den svake til grunne på grunn av din kunnskap – denne broren som Kristus døde for."
+    "text": "Da går den svake til grunne på grunn av din kunnskap – den broren som Kristus døde for.",
+    "versions": [
+      {
+        "text": "Da går den svake til grunne på grunn av din kunnskap – denne broren som Kristus døde for.",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "'Denne broren' kan oppfattes som pekende/demonstrativt på en spesifikk person, mens originalen har artikkelen ὁ ἀδελφός som er mer generelt beskrivende. 'Den broren' er mer naturlig norsk i denne sammenhengen og bevarer den generelle referansen bedre. Dette er en svært liten nyanse."
+      }
+    ]
   },
   {
     "bookId": 46,
     "chapterId": 8,
     "verseId": 12,
-    "text": "Når dere slik synder mot søsknene og slår deres svake samvittighet, synder dere mot Kristus.",
+    "text": "Når dere slik synder mot søsknene deres og slår deres svake samvittighet, synder dere mot Kristus.",
     "versions": [
       {
         "text": "Når dere slik synder mot søsknene og sårer deres svake samvittighet, synder dere mot Kristus.",
         "explanation": "Det greske τύπτοντες betyr bokstavelig 'slår' - et sterkt, fysisk ord. 'Sårer' er noe mildere. 'Slår' bevarer den kraftige metaforen Paulus bruker og gir bedre muntlig effekt."
+      },
+      {
+        "text": "Når dere slik synder mot søsknene og slår deres svake samvittighet, synder dere mot Kristus.",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "Det greske τοὺς ἀδελφούς med artikkelen antyder 'søsknene deres' – altså medtroende i menigheten. 'Søsknene' alene er litt ubestemt; 'søsknene deres' gjør relasjonen tydeligere og flyter bedre muntlig."
       }
     ]
   },

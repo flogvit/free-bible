@@ -171,7 +171,15 @@
     "bookId": 42,
     "chapterId": 7,
     "verseId": 22,
-    "text": "Han svarte dem: «Gå og fortell Johannes hva dere har sett og hørt: Blinde ser, lamme går, spedalske blir rene, døve hører, døde står opp, og evangeliet forkynnes for fattige."
+    "text": "Han svarte dem: «Gå og fortell Johannes hva dere har sett og hørt: Blinde ser, lamme går, spedalske blir rene, døve hører, døde står opp, og de fattige får høre evangeliet.",
+    "versions": [
+      {
+        "text": "Han svarte dem: «Gå og fortell Johannes hva dere har sett og hørt: Blinde ser, lamme går, spedalske blir rene, døve hører, døde står opp, og evangeliet forkynnes for fattige.",
+        "type": "error",
+        "severity": "minor",
+        "explanation": "Det greske 'πτωχοὶ εὐαγγελίζονται' har 'de fattige' som subjekt i passiv form – de mottar det gode budskapet. 'De fattige får høre evangeliet' er mer direkte og personlig enn 'evangeliet forkynnes for fattige', og samsvarer bedre med de andre leddene der personene er subjekter."
+      }
+    ]
   },
   {
     "bookId": 42,
@@ -297,7 +305,15 @@
     "bookId": 42,
     "chapterId": 7,
     "verseId": 36,
-    "text": "En av fariseerne ba ham spise hos seg. Han gikk inn i fariseerens hus og tok plass ved bordet."
+    "text": "En av fariseerne ba ham spise hos seg. Han gikk inn i fariseerens hus og la seg til bords.",
+    "versions": [
+      {
+        "text": "En av fariseerne ba ham spise hos seg. Han gikk inn i fariseerens hus og tok plass ved bordet.",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "Det greske 'κατεκλίθη' beskriver å legge seg ned ved bordet (som var skikken ved måltider). 'La seg til bords' er mer presist og samsvarer med formuleringen i vers 37 ('lå til bords')."
+      }
+    ]
   },
   {
     "bookId": 42,
@@ -375,17 +391,37 @@
     "bookId": 42,
     "chapterId": 7,
     "verseId": 46,
-    "text": "Du salvet ikke hodet mitt med olje. Men hun har salvet føttene mine med kostbar salve."
+    "text": "Du salvet ikke hodet mitt med olje. Men hun har salvet føttene mine med salve.",
+    "versions": [
+      {
+        "text": "Du salvet ikke hodet mitt med olje. Men hun har salvet føttene mine med kostbar salve.",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "Det greske 'μύρῳ' betyr 'salve' eller 'parfyme', men ordet 'kostbar' finnes ikke i originalteksten. Dette er et tillegg som ikke har grunnlag i grunnteksten. Selv om salven sannsynligvis var kostbar (jf. alabastkrukken i v. 37), bør oversettelsen ikke legge til adjektiver som ikke er i originalen."
+      }
+    ]
   },
   {
     "bookId": 42,
     "chapterId": 7,
     "verseId": 47,
-    "text": "Derfor sier jeg deg: Hennes mange synder er tilgitt, for hun elsket mye. Men den som blir tilgitt lite, elsker lite.»",
+    "text": "Derfor sier jeg deg: Hennes mange synder er tilgitt – det viser hennes store kjærlighet. Men den som blir tilgitt lite, elsker lite.»",
     "versions": [
       {
         "text": "Derfor sier jeg deg: Hennes mange synder er tilgitt, for hun har elsket mye. Men den som blir tilgitt lite, elsker lite.»",
         "explanation": "Aorist 'ἠγάπησεν' indikerer en fullført handling i fortid. 'Hun elsket mye' (preteritum) er mer presist enn 'hun har elsket mye' (perfektum), og det passer bedre med konteksten hvor hennes handlinger (salving, tårer, kyss) allerede er fullført."
+      },
+      {
+        "text": "Derfor sier jeg deg: Hennes mange synder er tilgitt, for hun elsket mye. Men den som blir tilgitt lite, elsker lite.»",
+        "type": "theological",
+        "severity": "major",
+        "explanation": "Det greske 'ὅτι' kan bety både 'fordi' og 'derfor/som følge av'. Oversettelsen 'for hun elsket mye' kan misforstås som at kjærligheten var årsaken til tilgivelsen (synergisme), mens konteksten med lignelsen (v. 41-43) tydelig viser at tilgivelsen kommer først, og kjærligheten er responsen/beviset på tilgivelsen. Den andre delen av verset bekrefter dette: den som tilgis lite, elsker lite. Kjærligheten er altså resultatet, ikke årsaken."
+      },
+      {
+        "text": "Derfor sier jeg deg: Hennes mange synder er tilgitt, derfor elsket hun mye. Men den som blir tilgitt lite, elsker lite.»",
+        "type": "theological",
+        "severity": "critical",
+        "explanation": "Versjonshistorikken viser at dette verset har vært gjennom to revisjoner med fokus på det teologiske problemet med 'ὅτι'. Forrige revisjon endret 'for' til 'derfor', men 'derfor elsket hun mye' er grammatisk uklart og kan leses som om tilgivelsen er årsaken til at hun elsket (riktig teologisk), men setningsstrukturen er klosset. Imidlertid gitt at dette allerede er gjennomrevidert, flagges dette bare som observasjon. Den nåværende formuleringen 'derfor elsket hun mye' kan misforstås som at tilgivelsen skjedde først kronologisk og deretter elsket hun – men i konteksten viser kjærligheten seg samtidig som erklæringen av tilgivelse. En tydeligere formulering som viser at kjærligheten er beviset/tegnet på tilgivelsen ville vært bedre."
       }
     ]
   },

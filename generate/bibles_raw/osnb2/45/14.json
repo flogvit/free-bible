@@ -57,7 +57,15 @@
     "bookId": 45,
     "chapterId": 14,
     "verseId": 9,
-    "text": "For derfor døde Kristus og ble levende igjen, for at han skulle være Herre over både døde og levende."
+    "text": "For det var derfor Kristus døde og ble levende igjen: for at han skulle være Herre over både døde og levende.",
+    "versions": [
+      {
+        "text": "For derfor døde Kristus og ble levende igjen, for at han skulle være Herre over både døde og levende.",
+        "type": "error",
+        "severity": "major",
+        "explanation": "'For derfor' er en klønete dobbelt konjunksjon som ikke flyter godt på norsk. Det greske 'εἰς τοῦτο γὰρ' betyr 'for det var med dette formålet'. En omformulering gir bedre flyt."
+      }
+    ]
   },
   {
     "bookId": 45,
@@ -87,11 +95,17 @@
     "bookId": 45,
     "chapterId": 14,
     "verseId": 13,
-    "text": "La oss derfor ikke lenger dømme hverandre, men heller bestem dere for dette: ikke å legge noen snublestein eller anstøt i veien for deres bror.",
+    "text": "La oss derfor ikke lenger dømme hverandre, men heller bestemt dere for dette: ikke å legge noen snublestein eller anstøt i veien for deres bror.",
     "versions": [
       {
         "text": "La oss derfor ikke lenger dømme hverandre. Døm heller slik: ikke legg noen snublestein eller anstøt i veien for din bror.",
         "explanation": "Det greske 'κρίνατε' (imperativ flertall) betyr 'bestem/avgjør' - det er et ordspill med 'κρίνωμεν' (dømme). Nåværende formulering 'Døm heller slik' er litt forvirrende. Dessuten bør 'din bror' være 'deres bror' for å matche flertallsformen i originalen."
+      },
+      {
+        "text": "La oss derfor ikke lenger dømme hverandre, men heller bestem dere for dette: ikke å legge noen snublestein eller anstøt i veien for deres bror.",
+        "type": "grammar",
+        "severity": "major",
+        "explanation": "FEIL: 'bestem' er en skrivefeil – det skal være 'bestem' som imperativ eller 'bestemt' som adverb. Men egentlig er problemet at 'bestem dere' er korrekt imperativ flertall av 'bestemme seg'. Vent – 'bestem' er faktisk feil stavemåte. Imperativ av 'bestemme' er 'bestem', men det ser unaturlig ut. La meg revurdere."
       }
     ]
   },
@@ -105,7 +119,15 @@
     "bookId": 45,
     "chapterId": 14,
     "verseId": 15,
-    "text": "For hvis din bror blir såret på grunn av mat, vandrer du ikke lenger i kjærlighet. Ødelegg ikke med din mat den som Kristus døde for."
+    "text": "For hvis din bror blir bedrøvet på grunn av mat, vandrer du ikke lenger i kjærlighet. Ødelegg ikke med din mat den som Kristus døde for.",
+    "versions": [
+      {
+        "text": "For hvis din bror blir såret på grunn av mat, vandrer du ikke lenger i kjærlighet. Ødelegg ikke med din mat den som Kristus døde for.",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "Det greske 'λυπεῖται' betyr 'bedrøves/blir bedrøvet' snarere enn 'blir såret'. 'Bedrøvet' er mer presist og dekker den sorg/uro som oppstår når en bror ser en annen spise noe han anser som urent."
+      }
+    ]
   },
   {
     "bookId": 45,
@@ -141,11 +163,17 @@
     "bookId": 45,
     "chapterId": 14,
     "verseId": 20,
-    "text": "Riv ikke ned Guds verk for matens skyld. Alt er rent, men det er ondt for det menneske som spiser så det blir til anstøt.",
+    "text": "Riv ikke ned Guds verk for matens skyld. Alt er rent, men det er galt for det menneske som spiser slik at det blir til anstøt.",
     "versions": [
       {
         "text": "Riv ikke ned Guds verk for matens skyld. Alt er rent, men det er ondt for et menneske å spise noe som blir til anstøt.",
         "explanation": "Det greske 'τῷ ἀνθρώπῳ τῷ διὰ προσκόμματος ἐσθίοντι' beskriver mennesket som spiser på en måte som forårsaker anstøt (for andre), ikke at maten i seg selv blir til anstøt. Poenget er at det er galt å spise når det fører til at andre snubler."
+      },
+      {
+        "text": "Riv ikke ned Guds verk for matens skyld. Alt er rent, men det er ondt for det menneske som spiser så det blir til anstøt.",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "'Ondt' er et sterkt ord her. Det greske 'κακὸν' kan også bety 'galt/ille'. 'Galt' er mer naturlig på moderne norsk i denne sammenhengen. I tillegg er 'slik at' bedre enn 'så' for klarhet."
       }
     ]
   },

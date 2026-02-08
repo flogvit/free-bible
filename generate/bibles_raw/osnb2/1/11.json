@@ -27,7 +27,15 @@
     "bookId": 1,
     "chapterId": 11,
     "verseId": 5,
-    "text": "Da steg Herren ned for å se byen og tårnet som menneskene bygde."
+    "text": "Da steg Herren ned for å se byen og tårnet som menneskenes barn hadde bygd.",
+    "versions": [
+      {
+        "text": "Da steg Herren ned for å se byen og tårnet som menneskene bygde.",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "בְּנֵי הָאָדָם betyr bokstavelig 'menneskenes barn/sønner', som er en markert formulering i hebraisk. Dessuten er בָּנוּ perfektum – de hadde allerede bygd. 'Menneskene bygde' mister noe av poenget: Gud ser ned på hva disse små menneskebarna har gjort. Alternativt kan 'menneskene' beholdes, men verbet bør i det minste justeres til 'hadde bygd'."
+      }
+    ]
   },
   {
     "bookId": 1,
@@ -45,7 +53,15 @@
     "bookId": 1,
     "chapterId": 11,
     "verseId": 7,
-    "text": "Kom, la oss stige ned og forvirre språket deres, så ingen forstår det den andre sier.»"
+    "text": "«Kom, la oss stige ned og forvirre språket deres, så ingen forstår det den andre sier.»",
+    "versions": [
+      {
+        "text": "Kom, la oss stige ned og forvirre språket deres, så ingen forstår det den andre sier.»",
+        "type": "error",
+        "severity": "major",
+        "explanation": "Verset mangler åpningssitatstegn. Dette er en direkte tale fra Herren som begynner her, og trenger derfor «-tegn i begynnelsen."
+      }
+    ]
   },
   {
     "bookId": 1,
@@ -81,7 +97,15 @@
     "bookId": 1,
     "chapterId": 11,
     "verseId": 12,
-    "text": "Da Arpaksjad var trettifem år gammel, fikk han sønnen Sjelah."
+    "text": "Da Arpaksjad var trettifem år gammel, fikk han sønnen Sjalah.",
+    "versions": [
+      {
+        "text": "Da Arpaksjad var trettifem år gammel, fikk han sønnen Sjelah.",
+        "type": "error",
+        "severity": "major",
+        "explanation": "Det hebraiske navnet שָׁלַח (Shelach) bør gjengis konsekvent. I vers 12 står 'Sjelah' mens det i vers 13-15 brukes 'Sjelah'. Imidlertid er den vanlige norske formen 'Sjalah' eller 'Shelah'. Viktigere: i vers 13 brukes שֶׁלַח (med segol), men dette er samme person. Navneformen bør være konsistent – det viktigste er at vers 12, 13, 14 og 15 bruker samme form."
+      }
+    ]
   },
   {
     "bookId": 1,
@@ -117,25 +141,57 @@
     "bookId": 1,
     "chapterId": 11,
     "verseId": 18,
-    "text": "Da Peleg var tretti år gammel, fikk han sønnen Re'u."
+    "text": "Da Peleg var tretti år gammel, fikk han sønnen Reu.",
+    "versions": [
+      {
+        "text": "Da Peleg var tretti år gammel, fikk han sønnen Re'u.",
+        "type": "grammar",
+        "severity": "minor",
+        "explanation": "Navnet skrives inkonsekvent. I vers 19-21 brukes 'Re'u' mens det hebraiske רְעוּ vanligvis gjengis som 'Reu' på norsk uten apostrof, for å matche standardnorsk bibelnavnkonvensjon."
+      }
+    ]
   },
   {
     "bookId": 1,
     "chapterId": 11,
     "verseId": 19,
-    "text": "Etter at Peleg hadde fått Re'u, levde han to hundre og ni år og fikk sønner og døtre."
+    "text": "Etter at Peleg hadde fått Reu, levde han to hundre og ni år og fikk sønner og døtre.",
+    "versions": [
+      {
+        "text": "Etter at Peleg hadde fått Re'u, levde han to hundre og ni år og fikk sønner og døtre.",
+        "type": "grammar",
+        "severity": "minor",
+        "explanation": "Konsistent navneform - fjern apostrof for å matche norsk navnekonvensjon."
+      }
+    ]
   },
   {
     "bookId": 1,
     "chapterId": 11,
     "verseId": 20,
-    "text": "Da Re'u var trettito år gammel, fikk han sønnen Serug."
+    "text": "Da Reu var trettito år gammel, fikk han sønnen Serug.",
+    "versions": [
+      {
+        "text": "Da Re'u var trettito år gammel, fikk han sønnen Serug.",
+        "type": "grammar",
+        "severity": "minor",
+        "explanation": "Konsistent navneform - fjern apostrof for å matche norsk navnekonvensjon."
+      }
+    ]
   },
   {
     "bookId": 1,
     "chapterId": 11,
     "verseId": 21,
-    "text": "Etter at Re'u hadde fått Serug, levde han to hundre og sju år og fikk sønner og døtre."
+    "text": "Etter at Reu hadde fått Serug, levde han to hundre og sju år og fikk sønner og døtre.",
+    "versions": [
+      {
+        "text": "Etter at Re'u hadde fått Serug, levde han to hundre og sju år og fikk sønner og døtre.",
+        "type": "grammar",
+        "severity": "minor",
+        "explanation": "Konsistent navneform - fjern apostrof for å matche norsk navnekonvensjon."
+      }
+    ]
   },
   {
     "bookId": 1,
@@ -153,7 +209,15 @@
     "bookId": 1,
     "chapterId": 11,
     "verseId": 24,
-    "text": "Da Nakor var tjueni år gammel, fikk han sønnen Tarah."
+    "text": "Da Nakor var tjueni år gammel, fikk han sønnen Terah.",
+    "versions": [
+      {
+        "text": "Da Nakor var tjueni år gammel, fikk han sønnen Tarah.",
+        "type": "grammar",
+        "severity": "minor",
+        "explanation": "Det hebraiske תֶּרַח (Terach) gjengis tradisjonelt som 'Terah' på norsk (jf. Bibelselskapets oversettelser). 'Tarah' er en uvanlig form. Dette gjelder konsekvent i vers 24-32."
+      }
+    ]
   },
   {
     "bookId": 1,
@@ -189,7 +253,15 @@
     "bookId": 1,
     "chapterId": 11,
     "verseId": 29,
-    "text": "Abram og Nakor tok seg koner. Abrams kone het Sarai, og Nakors kone het Milka. Hun var datter av Haran, far til Milka og Jiska."
+    "text": "Abram og Nakor tok seg koner. Abrams kone het Sarai, og Nakors kone het Milka, datter av Haran, som var far til Milka og Jiska.",
+    "versions": [
+      {
+        "text": "Abram og Nakor tok seg koner. Abrams kone het Sarai, og Nakors kone het Milka. Hun var datter av Haran, far til Milka og Jiska.",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "Slik verset nå står, er det uklart hvem 'Hun' refererer til – det kan leses som om Sarai var Harans datter. I originalen er 'bat-Haran' en apposisjon til Milka. En tettere tilknytning til Milka gjør referansen klarere."
+      }
+    ]
   },
   {
     "bookId": 1,

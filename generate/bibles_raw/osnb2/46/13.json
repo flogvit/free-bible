@@ -27,11 +27,17 @@
     "bookId": 46,
     "chapterId": 13,
     "verseId": 4,
-    "text": "Kjærligheten misunner ikke, den skryter ikke, den er ikke hovmodig.",
+    "text": "Kjærligheten er tålmodig og velvillig. Den misunner ikke, den skryter ikke, den er ikke hovmodig.",
     "versions": [
       {
         "text": "Kjærligheten er tålmodig, kjærligheten er velvillig. Kjærligheten er ikke misunnelig, den skryter ikke, den er ikke hovmodig.",
         "explanation": "Det greske 'οὐ ζηλοῖ' er et verb (presens aktiv), ikke et adjektiv. 'Misunner ikke' gjengir verbalformen mer presist enn 'er ikke misunnelig', og gir bedre rytme med de påfølgende verbale uttrykkene 'skryter ikke' og 'er ikke hovmodig'."
+      },
+      {
+        "text": "Kjærligheten misunner ikke, den skryter ikke, den er ikke hovmodig.",
+        "type": "error",
+        "severity": "critical",
+        "explanation": "Verset mangler oversettelse av 'μακροθυμεῖ' (er tålmodig) og 'χρηστεύεται' (er velvillig/god). Dette er to sentrale utsagn i begynnelsen av verset som er helt utelatt. Den forrige versjonen hadde disse med, men ble endret for å korrigere 'misunner ikke' vs 'er ikke misunnelig'. Det ser ut til at de to første leddene ble utilsiktet fjernet i redigeringen. Formuleringen er justert for å unngå å gjenta 'kjærligheten' tre ganger (som i den gamle versjonen), men beholder det teologisk essensielle innholdet."
       }
     ]
   },
@@ -39,11 +45,17 @@
     "bookId": 46,
     "chapterId": 13,
     "verseId": 5,
-    "text": "Den oppfører seg ikke usømmelig, søker ikke sitt eget, lar seg ikke provosere, gjemmer ikke på det onde.",
+    "text": "Den oppfører seg ikke usømmelig, søker ikke sitt eget, lar seg ikke provosere, bærer ikke nag.",
     "versions": [
       {
         "text": "Den oppfører seg ikke usømmelig, søker ikke sitt eget, blir ikke provosert, holder ikke regnskap over det onde.",
         "explanation": "'Lar seg ikke provosere' er mer naturlig norsk enn 'blir ikke provosert'. 'Gjemmer ikke på det onde' eller 'bærer ikke nag' er mer idiomatisk enn 'holder ikke regnskap over det onde', som er tungt for muntlig lesning. Det greske 'λογίζεται τὸ κακόν' handler om å ikke registrere/lagre krenkelser."
+      },
+      {
+        "text": "Den oppfører seg ikke usømmelig, søker ikke sitt eget, lar seg ikke provosere, gjemmer ikke på det onde.",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "'Gjemmer ikke på det onde' er uvanlig norsk. Uttrykket 'gjemmer på' brukes sjelden slik. 'Bærer ikke nag' er idiomatisk norsk og ble nevnt som alternativ i endringsloggen. Det greske 'λογίζεται τὸ κακόν' handler om å ikke lagre/registrere krenkelser, noe 'bærer ikke nag' fanger godt."
       }
     ]
   },
@@ -111,6 +123,14 @@
     "bookId": 46,
     "chapterId": 13,
     "verseId": 13,
-    "text": "Så blir de stående disse tre: tro, håp og kjærlighet. Men størst av dem er kjærligheten."
+    "text": "Nå blir de stående, disse tre: tro, håp og kjærlighet. Men størst av dem er kjærligheten.",
+    "versions": [
+      {
+        "text": "Så blir de stående disse tre: tro, håp og kjærlighet. Men størst av dem er kjærligheten.",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "Det greske 'νυνὶ δὲ' betyr 'men nå' eller 'nå', ikke 'så'. 'Nå' gjengir tidsperspektivet bedre – Paulus kontrasterer det nåværende (tro, håp, kjærlighet som består) med det fremtidige (det fullkomne, v. 10). 'Så' antyder en konklusjon, mens 'nå' bevarer den temporale kontrasten i teksten."
+      }
+    ]
   }
 ]

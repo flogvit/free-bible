@@ -3,11 +3,17 @@
     "bookId": 40,
     "chapterId": 23,
     "verseId": 1,
-    "text": "Da talte Jesus til folkemengden og disiplene sine",
+    "text": "Da talte Jesus til folkemengden og disiplene sine:",
     "versions": [
       {
         "text": "Da talte Jesus til folkemengden og til disiplene sine",
         "explanation": "Det andre 'til' er overflødig på norsk og gjør setningen litt tyngre. Norsk idiom tillater å utelate preposisjonen ved det andre leddet."
+      },
+      {
+        "text": "Da talte Jesus til folkemengden og disiplene sine",
+        "type": "grammar",
+        "severity": "minor",
+        "explanation": "Vers 1 er en innledning til direkte tale som begynner i vers 2. Det bør avsluttes med kolon for å signalisere at talen følger."
       }
     ]
   },
@@ -15,7 +21,15 @@
     "bookId": 40,
     "chapterId": 23,
     "verseId": 2,
-    "text": "og sa: «De skriftlærde og fariseerne sitter på Moses' stol."
+    "text": "og sa: «De skriftlærde og fariseerne har satt seg på Moses' stol.",
+    "versions": [
+      {
+        "text": "og sa: «De skriftlærde og fariseerne sitter på Moses' stol.",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "Verbet ἐκάθισαν er aorist (fortid): 'har satt seg'. Det uttrykker at de har inntatt denne posisjonen, ikke bare at de sitter der nå. 'Har satt seg' fanger dette bedre enn presens 'sitter'."
+      }
+    ]
   },
   {
     "bookId": 40,
@@ -39,7 +53,15 @@
     "bookId": 40,
     "chapterId": 23,
     "verseId": 5,
-    "text": "Alle sine gjerninger gjør de for å bli sett av mennesker. De gjør bønneremmene sine brede og duskene lange."
+    "text": "Alt de gjør, gjør de for å bli sett av mennesker. De gjør bønneremmene sine brede og duskene lange.",
+    "versions": [
+      {
+        "text": "Alle sine gjerninger gjør de for å bli sett av mennesker. De gjør bønneremmene sine brede og duskene lange.",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "'Alle sine gjerninger gjør de' er litt stivt på norsk. 'Alt de gjør, gjør de' er mer naturlig og idiomatisk norsk bokmål, og gjengir πάντα δὲ τὰ ἔργα αὐτῶν ποιοῦσιν like presist."
+      }
+    ]
   },
   {
     "bookId": 40,
@@ -51,7 +73,15 @@
     "bookId": 40,
     "chapterId": 23,
     "verseId": 7,
-    "text": "å bli hilst på torget og å bli kalt rabbi av folk."
+    "text": "å bli hilst på torget og å bli kalt 'rabbi' av folk.",
+    "versions": [
+      {
+        "text": "å bli hilst på torget og å bli kalt rabbi av folk.",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "Rabbi er en tittel/tiltaleform som brukes i direkte tale. Å sette den i anførselstegn tydeliggjør at det er en tittel de ønsker å bli tiltalt med, i tråd med bruken i vers 8."
+      }
+    ]
   },
   {
     "bookId": 40,
@@ -119,7 +149,15 @@
     "bookId": 40,
     "chapterId": 23,
     "verseId": 15,
-    "text": "Ve dere, skriftlærde og fariseere, dere hyklere! Dere reiser over hav og land for å vinne en eneste proselytt, og når han er blitt det, gjør dere ham til et helvetes barn, dobbelt så ille som dere selv."
+    "text": "Ve dere, skriftlærde og fariseere, dere hyklere! Dere reiser over hav og land for å vinne en eneste proselytt, og når han er blitt det, gjør dere ham til et Gehennas barn, dobbelt verre enn dere selv.",
+    "versions": [
+      {
+        "text": "Ve dere, skriftlærde og fariseere, dere hyklere! Dere reiser over hav og land for å vinne en eneste proselytt, og når han er blitt det, gjør dere ham til et helvetes barn, dobbelt så ille som dere selv.",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "For konsistens med vers 33 der 'Gehenna' er brukt (i stedet for 'helvete'), bør også υἱὸν γεέννης gjengis med 'Gehennas barn'. Dessuten er 'dobbelt verre enn' mer presist for διπλότερον ὑμῶν enn 'dobbelt så ille som'."
+      }
+    ]
   },
   {
     "bookId": 40,
@@ -277,7 +315,15 @@
     "bookId": 40,
     "chapterId": 23,
     "verseId": 34,
-    "text": "Se, derfor sender jeg til dere profeter, vismenn og skriftlærde. Noen av dem skal dere drepe og korsfeste, andre skal dere piske i synagogene deres og forfølge fra by til by."
+    "text": "Se, derfor sender jeg til dere profeter, vismenn og skriftlærde. Noen av dem kommer dere til å drepe og korsfeste, og noen av dem kommer dere til å piske i synagogene deres og forfølge fra by til by.",
+    "versions": [
+      {
+        "text": "Se, derfor sender jeg til dere profeter, vismenn og skriftlærde. Noen av dem skal dere drepe og korsfeste, andre skal dere piske i synagogene deres og forfølge fra by til by.",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "Grunnteksten har futurum indikativ (ἀποκτενεῖτε, σταυρώσετε, μαστιγώσετε, διώξετε) - dette er profetiske utsagn om hva de faktisk kommer til å gjøre, ikke påbud. 'Kommer dere til å' gjengir dette bedre enn 'skal dere'. Også gjentar grunnteksten ἐξ αὐτῶν ('noen av dem') to ganger, ikke 'noen...andre'."
+      }
+    ]
   },
   {
     "bookId": 40,

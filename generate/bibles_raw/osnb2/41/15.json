@@ -105,7 +105,15 @@
     "bookId": 41,
     "chapterId": 15,
     "verseId": 16,
-    "text": "Soldatene førte ham inn i borggården, det vil si pretoriet, og kalte sammen hele vaktstyrken."
+    "text": "Soldatene førte ham inn i borggården, det vil si pretoriet, og kalte sammen hele avdelingen.",
+    "versions": [
+      {
+        "text": "Soldatene førte ham inn i borggården, det vil si pretoriet, og kalte sammen hele vaktstyrken.",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "Det greske 'σπεῖραν' (speira) refererer til en romersk kohort eller avdeling, som var en militær enhet. 'Vaktstyrken' er ikke feil, men 'avdelingen' eller 'kohorten' er mer presist. En speira var en større militærenhet (typisk 600 mann), ikke bare en vaktgruppe."
+      }
+    ]
   },
   {
     "bookId": 41,
@@ -153,7 +161,15 @@
     "bookId": 41,
     "chapterId": 15,
     "verseId": 22,
-    "text": "De førte ham til stedet Golgata, det betyr Hodeskallen."
+    "text": "De førte ham til stedet Golgata, som betyr Hodeskalleplassen.",
+    "versions": [
+      {
+        "text": "De førte ham til stedet Golgata, det betyr Hodeskallen.",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "Det greske 'Κρανίου Τόπος' betyr bokstavelig 'Hodeskallens sted/plass', ikke bare 'Hodeskallen'. 'Hodeskalleplassen' gjengir dette mer nøyaktig. Også 'ὅ ἐστιν μεθερμηνευόμενον' betyr 'som oversatt betyr', der 'som betyr' er mer presist enn bare 'det betyr'."
+      }
+    ]
   },
   {
     "bookId": 41,
@@ -205,7 +221,15 @@
     "bookId": 41,
     "chapterId": 15,
     "verseId": 29,
-    "text": "De som gikk forbi, spottet ham og ristet på hodet og sa: «Se på deg! Du som river ned tempelet og bygger det opp igjen på tre dager –"
+    "text": "De som gikk forbi, spottet ham og ristet på hodet og sa: «Ha! Du som river ned tempelet og bygger det opp igjen på tre dager –",
+    "versions": [
+      {
+        "text": "De som gikk forbi, spottet ham og ristet på hodet og sa: «Se på deg! Du som river ned tempelet og bygger det opp igjen på tre dager –",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "Det greske 'Οὐά' er et utrop som uttrykker hån/spott, nærmere 'Ha!' eller 'Aha!' enn 'Se på deg!'. 'Se på deg!' er en norsk gjengivelse som ikke helt fanger det hånlige utropet. 'Ha!' er mer direkte og fanger tonen bedre."
+      }
+    ]
   },
   {
     "bookId": 41,
@@ -331,11 +355,23 @@
     "bookId": 41,
     "chapterId": 15,
     "verseId": 44,
-    "text": "Pilatus undret seg over at han allerede var død. Han kalte til seg offiseren og spurte om han alt var død.",
+    "text": "Pilatus undret seg over at han allerede var død. Han kalte til seg offiseren og spurte om det var lenge siden han døde.",
     "versions": [
       {
         "text": "Pilatus undret seg over at han allerede skulle være død. Han kalte til seg offiseren og spurte om han hadde vært død lenge.",
         "explanation": "Det greske 'εἰ πάλαι ἀπέθανεν' spør om han allerede/alt var død, ikke om hvor lenge han hadde vært død. Pilatus' undring gjaldt at døden kom så raskt."
+      },
+      {
+        "text": "Pilatus undret seg over at han allerede var død. Han kalte til seg offiseren og spurte om han alt var død.",
+        "type": "error",
+        "severity": "major",
+        "explanation": "Det greske 'εἰ πάλαι ἀπέθανεν' med 'πάλαι' (for en stund siden / allerede) spør om han virkelig allerede var død. Den nåværende oversettelsen 'om han alt var død' er nesten identisk med forrige setning ('allerede var død'), noe som ikke gjengir nyanseforskjellen mellom Pilatus' overraskelse (τέθνηκεν, perfektum) og hans spørsmål til offiseren (πάλαι ἀπέθανεν, aorist med πάλαι). Spørsmålet dreier seg om hvorvidt døden allerede hadde inntruffet. Forslaget varierer formuleringen for å unngå ren gjentakelse."
+      },
+      {
+        "text": "Pilatus undret seg over at han allerede var død. Han kalte til seg offiseren og spurte om han allerede hadde dødd.",
+        "type": "grammar",
+        "severity": "minor",
+        "explanation": "Den nåværende versjonen 'om han allerede hadde dødd' er fortsatt svært lik første setning 'at han allerede var død'. Det greske 'πάλαι' betyr 'for en stund siden / lenge'. Pilatus spør offiseren om det var en stund siden han døde – altså om døden hadde inntruffet for en tid tilbake. Dette skiller bedre mellom Pilatus' overraskelse (perfektum τέθνηκεν) og hans konkrete spørsmål (πάλαι ἀπέθανεν). De to tidligere versjonene som ble avvist var 'om han hadde vært død lenge' og 'om han alt var død', så dette er en ny formulering."
       }
     ]
   },

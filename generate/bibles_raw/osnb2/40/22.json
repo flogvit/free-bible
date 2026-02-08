@@ -15,7 +15,15 @@
     "bookId": 40,
     "chapterId": 22,
     "verseId": 2,
-    "text": "«Himmelriket kan lignes med en konge som holdt bryllup for sønnen sin."
+    "text": "«Himmelriket kan sammenlignes med en konge som holdt bryllupsfest for sønnen sin.",
+    "versions": [
+      {
+        "text": "«Himmelriket kan lignes med en konge som holdt bryllup for sønnen sin.",
+        "type": "grammar",
+        "severity": "minor",
+        "explanation": "γάμους (flertall) indikerer en bryllupsfest/bryllupsfeiring, ikke bare et bryllup. 'Bryllupsfest' gjenspeiler dette bedre. 'Sammenlignes' er også mer korrekt norsk enn 'lignes med'."
+      }
+    ]
   },
   {
     "bookId": 40,
@@ -121,11 +129,17 @@
     "bookId": 40,
     "chapterId": 22,
     "verseId": 13,
-    "text": "Da sa kongen til tjenerne: «Bind føttene og hendene hans og kast ham ut i mørket utenfor. Der skal de gråte og skjære tenner.»",
+    "text": "Da sa kongen til tjenerne: «Bind hendene og føttene hans og kast ham ut i mørket utenfor. Der skal de gråte og skjære tenner.»",
     "versions": [
       {
         "text": "Da sa kongen til tjenerne: Bind føttene og hendene hans og kast ham ut i mørket utenfor. Der skal de gråte og skjære tenner.",
         "explanation": "Direkte tale bør markeres med anførselstegn for konsistens med resten av oversettelsen."
+      },
+      {
+        "text": "Da sa kongen til tjenerne: «Bind føttene og hendene hans og kast ham ut i mørket utenfor. Der skal de gråte og skjære tenner.»",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "Grunnteksten har πόδας καὶ χεῖρας (føtter og hender), men norsk idiom sier normalt 'hender og føtter'. Siden dette er en oversettelse som skal være lett å lese, er norsk ordstilling naturlig. Alternativt kan man beholde grunntekstens rekkefølge, men dette er et stilistisk valg."
       }
     ]
   },
@@ -259,7 +273,15 @@
     "bookId": 40,
     "chapterId": 22,
     "verseId": 30,
-    "text": "For i oppstandelsen verken gifter de seg eller blir giftet bort, men de er som Guds engler i himmelen."
+    "text": "For i oppstandelsen gifter de seg verken eller blir giftet bort, men de er som Guds engler i himmelen.",
+    "versions": [
+      {
+        "text": "For i oppstandelsen verken gifter de seg eller blir giftet bort, men de er som Guds engler i himmelen.",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "På norsk bokmål er 'verken...eller' korrekt, men plasseringen 'verken gifter de seg' er litt uvanlig. Imidlertid er begge plasseringer akseptable, og den nåværende versjonen er forståelig. Dette er en svært liten stilistisk observasjon."
+      }
+    ]
   },
   {
     "bookId": 40,
@@ -319,7 +341,15 @@
     "bookId": 40,
     "chapterId": 22,
     "verseId": 40,
-    "text": "På disse to budene hviler hele loven og profetene.»"
+    "text": "Hele loven og profetene henger på disse to budene.»",
+    "versions": [
+      {
+        "text": "På disse to budene hviler hele loven og profetene.»",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "κρέμαται betyr 'henger (på)' ikke 'hviler (på)'. Bildet er at hele loven og profetene 'henger på' disse to budene, som noe som henger på en knagg. 'Hviler' gir en litt annen nyanse. 'Henger på' er den tradisjonelle og mer presise gjengivelsen."
+      }
+    ]
   },
   {
     "bookId": 40,

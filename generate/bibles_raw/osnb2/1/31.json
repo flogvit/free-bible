@@ -45,7 +45,15 @@
     "bookId": 1,
     "chapterId": 31,
     "verseId": 8,
-    "text": "Når han sa: 'De spettede skal være din lønn,' da fødte hele flokken spettede. Og når han sa: 'De stripete skal være din lønn,' da fødte hele flokken stripete."
+    "text": "Når han sa: 'De flekkete skal være din lønn,' da fødte hele flokken flekkete. Og når han sa: 'De stripete skal være din lønn,' da fødte hele flokken stripete.",
+    "versions": [
+      {
+        "text": "Når han sa: 'De spettede skal være din lønn,' da fødte hele flokken spettede. Og når han sa: 'De stripete skal være din lønn,' da fødte hele flokken stripete.",
+        "type": "error",
+        "severity": "major",
+        "explanation": "Hebraisk נְקֻדִּים (nequddim) betyr 'flekkete/prikkete', ikke 'spettede'. I vers 10 og 12 oversettes נְקֻדִּים med 'flekkete', så det bør være konsistent. עֲקֻדִּים (aquddim) betyr 'stripete/båndete' og er korrekt oversatt."
+      }
+    ]
   },
   {
     "bookId": 1,
@@ -75,7 +83,15 @@
     "bookId": 1,
     "chapterId": 31,
     "verseId": 13,
-    "text": "Jeg er Gud fra Betel, der du salvet en steinstøtte og avla et løfte til meg. Bryt nå opp og dra ut fra dette landet, og vend tilbake til ditt fødeland.'»"
+    "text": "Jeg er Gud fra Betel, der du salvet en steinstøtte og avla et løfte til meg. Bryt nå opp, dra bort fra dette landet og vend tilbake til ditt fødeland!'»",
+    "versions": [
+      {
+        "text": "Jeg er Gud fra Betel, der du salvet en steinstøtte og avla et løfte til meg. Bryt nå opp og dra ut fra dette landet, og vend tilbake til ditt fødeland.'»",
+        "type": "error",
+        "severity": "major",
+        "explanation": "Hebraisk 'צֵא מִן־הָאָרֶץ הַזֹּאת' betyr 'dra bort/ut fra dette landet'. 'Dra ut fra' er litt tungt; 'dra bort fra' er mer naturlig norsk. Liten forbedring."
+      }
+    ]
   },
   {
     "bookId": 1,
@@ -147,7 +163,15 @@
     "bookId": 1,
     "chapterId": 31,
     "verseId": 24,
-    "text": "Men Gud kom til arameeren Laban i en drøm om natten og sa til ham: «Vokt deg for å si noe til Jakob, verken godt eller ondt!»"
+    "text": "Men Gud kom til arameeren Laban i en drøm om natten og sa til ham: «Vokt deg så du ikke taler til Jakob verken godt eller ondt!»",
+    "versions": [
+      {
+        "text": "Men Gud kom til arameeren Laban i en drøm om natten og sa til ham: «Vokt deg for å si noe til Jakob, verken godt eller ondt!»",
+        "type": "error",
+        "severity": "major",
+        "explanation": "Det hebraiske uttrykket 'מִטּוֹב עַד־רָע' (fra godt til ondt) med 'דַבֵּר' (tale) betyr å ikke presse/true Jakob. 'Si noe til' kan misforstås som generell taushet. 'Taler til... verken godt eller ondt' gjengir mer presist at det dreier seg om å ikke forsøke å påvirke Jakob i noen retning."
+      }
+    ]
   },
   {
     "bookId": 1,
@@ -171,7 +195,15 @@
     "bookId": 1,
     "chapterId": 31,
     "verseId": 28,
-    "text": "Du lot meg ikke engang få kysse mine sønnesønner og døtre farvel. Du har handlet dumt!"
+    "text": "Du lot meg ikke engang få kysse mine sønner og døtre farvel. Du har handlet dumt!",
+    "versions": [
+      {
+        "text": "Du lot meg ikke engang få kysse mine sønnesønner og døtre farvel. Du har handlet dumt!",
+        "type": "error",
+        "severity": "major",
+        "explanation": "Hebraisk 'בָנַי' betyr 'mine sønner' (dvs. barnebarn for Laban, men han omtaler dem som sine barn). 'Sønnesønner' er en tolkning – men Laban hadde også døtresønner, og det hebraiske ordet er simpelthen 'sønner'. Laban bruker bevisst 'mine sønner og mine døtre' for å markere eierskap. 'Mine sønner' er mer trofast mot originalen."
+      }
+    ]
   },
   {
     "bookId": 1,
@@ -213,7 +245,15 @@
     "bookId": 1,
     "chapterId": 31,
     "verseId": 35,
-    "text": "Hun sa til sin far: «Ikke bli sint, herre, fordi jeg ikke kan reise meg for deg. Det er slik det er med kvinner for meg nå.» Og han lette, men fant ikke husgudene."
+    "text": "Hun sa til sin far: «Ikke bli sint, herre, fordi jeg ikke kan reise meg for deg, for det er kvinners vis med meg nå.» Og han lette, men fant ikke husgudene.",
+    "versions": [
+      {
+        "text": "Hun sa til sin far: «Ikke bli sint, herre, fordi jeg ikke kan reise meg for deg. Det er slik det er med kvinner for meg nå.» Og han lette, men fant ikke husgudene.",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "Uttrykket 'דֶּרֶךְ נָשִׁים' (kvinners vei/vis) er en eufemisme for menstruasjon. 'Kvinners vis' er en mer presis og etablert oversettelse av dette idiomatiske uttrykket enn 'slik det er med kvinner'."
+      }
+    ]
   },
   {
     "bookId": 1,
@@ -231,7 +271,15 @@
     "bookId": 1,
     "chapterId": 31,
     "verseId": 38,
-    "text": "I tjue år har jeg vært hos deg. Sauene og geitene dine har aldri kastet, og værene fra flokken din har jeg ikke spist."
+    "text": "I tjue år har jeg vært hos deg. Søyene og geitene dine har aldri kastet, og værene fra flokken din har jeg ikke spist.",
+    "versions": [
+      {
+        "text": "I tjue år har jeg vært hos deg. Sauene og geitene dine har aldri kastet, og værene fra flokken din har jeg ikke spist.",
+        "type": "error",
+        "severity": "minor",
+        "explanation": "Hebraisk רְחֵלֶיךָ er hunkjønnsformen og betyr 'søyene dine' (hunnsauer), ikke 'sauene dine' generelt. Poenget er at hunnene aldri mistet avkommet, noe som var Jakobs fortjeneste som gjeter. 'Søyene' er mer presist."
+      }
+    ]
   },
   {
     "bookId": 1,
@@ -327,11 +375,17 @@
     "bookId": 1,
     "chapterId": 31,
     "verseId": 53,
-    "text": "Og Jakob sverget ved ham som hans far Isak frykter.",
+    "text": "Abrahams Gud og Nakors Gud – deres fedres Gud – skal dømme mellom oss.» Og Jakob sverget ved ham som hans far Isak frykter.",
     "versions": [
       {
         "text": "Abrahams Gud og Nakors Gud, deres fedres Gud, skal dømme mellom oss.» Og Jakob sverget ved sin far Isaks frykt.",
         "explanation": "I vers 42 ble uttrykket 'פַחַד יִצְחָק' (pachad Yitschak) forbedret til 'han som Isak frykter' for klarhet. Samme uttrykk i vers 53 bør behandles konsistent. 'Isaks frykt' er uklart på norsk og kan misforstås som at Isak var redd, mens det refererer til Gud som Isak ærer/frykter."
+      },
+      {
+        "text": "Og Jakob sverget ved ham som hans far Isak frykter.",
+        "type": "error",
+        "severity": "critical",
+        "explanation": "Første del av verset mangler fullstendig. Det hebraiske 'אֱלֹהֵי אַבְרָהָם וֵאלֹהֵי נָחוֹר יִשְׁפְּטוּ בֵינֵינוּ אֱלֹהֵי אֲבִיהֶם' (Abrahams Gud og Nakors Gud, deres fedres Gud, skal dømme mellom oss) er utelatt. Vershistorikken viser at denne delen var med i den forrige versjonen men ble fjernet – trolig ved en feil under redigeringen. Dette er Labans avsluttende ord og en viktig del av paktsinngåelsen."
       }
     ]
   },

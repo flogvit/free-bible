@@ -21,7 +21,15 @@
     "bookId": 47,
     "chapterId": 8,
     "verseId": 4,
-    "text": "De ba oss inntrengende om å få del i nåden ved å tjene de hellige."
+    "text": "De ba oss inntrengende om å få ta del i nåden å tjene de hellige.",
+    "versions": [
+      {
+        "text": "De ba oss inntrengende om å få del i nåden ved å tjene de hellige.",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "Den greske teksten taler om «τὴν χάριν καὶ τὴν κοινωνίαν τῆς διακονίας» – 'nåden og fellesskapet i tjenesten for de hellige'. Det handler om fellesskap/deltagelse (κοινωνία) i tjenesten. Den nåværende oversettelsen er akseptabel, men 'å få ta del i' er litt mer naturlig norsk enn 'å få del i'."
+      }
+    ]
   },
   {
     "bookId": 47,
@@ -51,7 +59,15 @@
     "bookId": 47,
     "chapterId": 8,
     "verseId": 8,
-    "text": "Jeg sier ikke dette som en befaling, men ved å vise til andres iver prøver jeg om deres kjærlighet er ekte."
+    "text": "Jeg sier ikke dette som en befaling, men ved å vise til andres iver vil jeg prøve ektheten av deres kjærlighet.",
+    "versions": [
+      {
+        "text": "Jeg sier ikke dette som en befaling, men ved å vise til andres iver prøver jeg om deres kjærlighet er ekte.",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "Det greske «τὸ τῆς ὑμετέρας ἀγάπης γνήσιον δοκιμάζων» betyr 'prøver ektheten av deres kjærlighet'. Substantiveringen «τὸ γνήσιον» (ektheten) gjør det til et mer presist uttrykk. 'Vil jeg prøve ektheten av deres kjærlighet' flyter også bedre på norsk."
+      }
+    ]
   },
   {
     "bookId": 47,
@@ -63,11 +79,17 @@
     "bookId": 47,
     "chapterId": 8,
     "verseId": 10,
-    "text": "Og jeg gir dere et råd i denne saken. Det er til nytte for dere, dere som allerede i fjor begynte, ikke bare å ville, men også å gjøre.",
+    "text": "Og jeg gir dere et råd i denne saken. Det er til nytte for dere, dere som allerede i fjor var de første til ikke bare å handle, men også å ville det.",
     "versions": [
       {
         "text": "Og jeg gir dere et råd i denne saken. Det er til nytte for dere, dere som allerede i fjor begynte, ikke bare å gjøre, men også å ville.",
         "explanation": "Den greske teksten har rekkefølgen 'τὸ ποιῆσαι... τὸ θέλειν' (å gjøre... å ville), men poenget er at korinterne begynte med viljen før handlingen. Den nåværende oversettelsen har snudd rekkefølgen korrekt fra gresk ordstilling, men den logiske meningen er at de begynte med ønsket (viljen) som førte til handling. Mange oversettelser har 'å ville... å gjøre' for å gi bedre mening på målspråket."
+      },
+      {
+        "text": "Og jeg gir dere et råd i denne saken. Det er til nytte for dere, dere som allerede i fjor begynte, ikke bare å ville, men også å gjøre.",
+        "type": "error",
+        "severity": "major",
+        "explanation": "Den greske teksten sier at korinterne begynte (προενήρξασθε, med prefiks προ- som betyr 'først/før andre') ikke bare å gjøre (τὸ ποιῆσαι) men også å ville (τὸ θέλειν). Poenget i den greske teksten er at de var forut for andre, og at de ikke bare handlet men også hadde viljen bak. Versjonshistorien viser at rekkefølgen ble snudd fra v1, men den nåværende versjonen snur den greske rekkefølgen. Paulus' poeng er at de begynte både med handling OG vilje - begge deler - og προ- indikerer at de var tidlig ute. Oversettelsen bør bedre gjenspeile dette uten å falle tilbake til v1."
       }
     ]
   },
@@ -87,7 +109,15 @@
     "bookId": 47,
     "chapterId": 8,
     "verseId": 13,
-    "text": "Det er ikke meningen at andre skal få det lett mens dere har det vanskelig. Nei, det handler om likhet."
+    "text": "Det er ikke meningen at andre skal få lettelse mens dere har trengsel. Nei, det handler om likhet.",
+    "versions": [
+      {
+        "text": "Det er ikke meningen at andre skal få det lett mens dere har det vanskelig. Nei, det handler om likhet.",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "De greske ordene ἄνεσις (lettelse/lindring) og θλῖψις (trengsel/nød) er sterkere og mer teologisk ladede ord enn 'få det lett' og 'ha det vanskelig'. 'Lettelse' og 'trengsel' gjengir nyansene bedre."
+      }
+    ]
   },
   {
     "bookId": 47,
@@ -105,7 +135,15 @@
     "bookId": 47,
     "chapterId": 8,
     "verseId": 16,
-    "text": "Men takk være Gud, som legger den samme iver for dere i Titus' hjerte."
+    "text": "Men Gud være takk, som gir den samme iver for dere i Titus' hjerte.",
+    "versions": [
+      {
+        "text": "Men takk være Gud, som legger den samme iver for dere i Titus' hjerte.",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "«Χάρις δὲ τῷ θεῷ» er en takksigelse rettet til Gud og oversettes bedre med «Gud være takk» som er mer idiomatisk norsk for en doksologi. Også «τῷ διδόντι» (presens partisipp) betyr 'som gir' (pågående), ikke 'som legger'."
+      }
+    ]
   },
   {
     "bookId": 47,
@@ -117,11 +155,17 @@
     "bookId": 47,
     "chapterId": 8,
     "verseId": 18,
-    "text": "Sammen med ham sender vi den broren som er lovprist i alle menighetene for sin tjeneste for evangeliet.",
+    "text": "Sammen med ham sender vi den broren som er lovprist blant alle menighetene for sin tjeneste for evangeliet.",
     "versions": [
       {
         "text": "Sammen med ham sender vi den broren som er lovprist i alle menighetene for sitt arbeid med evangeliet.",
         "explanation": "Frasen 'ἐν τῷ εὐαγγελίῳ' betyr 'i evangeliet' eller 'i evangeliets tjeneste'. 'For sitt arbeid med evangeliet' er akseptabelt, men 'for sin tjeneste for evangeliet' er litt mer presis og flyter bedre muntlig."
+      },
+      {
+        "text": "Sammen med ham sender vi den broren som er lovprist i alle menighetene for sin tjeneste for evangeliet.",
+        "type": "error",
+        "severity": "major",
+        "explanation": "Det greske «διὰ πασῶν τῶν ἐκκλησιῶν» betyr 'gjennom/blant alle menighetene' – altså hans ry strekker seg gjennom alle menighetene. 'Blant' gjengir dette bedre enn 'i', som kan misforstås som at han er lovprist bare innenfor menighetene. Men dette er en mindre justering, og verset har versionshistorikk med 1 revisjon, så dette er en forsiktig forbedring."
       }
     ]
   },

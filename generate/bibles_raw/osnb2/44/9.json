@@ -45,7 +45,15 @@
     "bookId": 44,
     "chapterId": 9,
     "verseId": 8,
-    "text": "Saulus reiste seg opp fra jorden, men da han åpnet øynene, kunne han ikke se noe. De leide ham ved hånden og førte ham inn i Damaskus."
+    "text": "Saulus reiste seg opp fra jorden, men selv med åpne øyne kunne han ikke se noe. De leide ham ved hånden og førte ham inn i Damaskus.",
+    "versions": [
+      {
+        "text": "Saulus reiste seg opp fra jorden, men da han åpnet øynene, kunne han ikke se noe. De leide ham ved hånden og førte ham inn i Damaskus.",
+        "type": "error",
+        "severity": "major",
+        "explanation": "Det greske 'ἀνεῳγμένων τῶν ὀφθαλμῶν' er en genitiv absolutt med perfektum partisipp passiv, som betyr 'med øynene åpne' (en tilstand), ikke 'da han åpnet øynene' (en aktiv handling). Poenget er at øynene var åpne, men han kunne likevel ikke se – altså blindhet, ikke at øynene var lukket."
+      }
+    ]
   },
   {
     "bookId": 44,
@@ -87,7 +95,15 @@
     "bookId": 44,
     "chapterId": 9,
     "verseId": 15,
-    "text": "Men Herren sa til ham: «Gå! For han er et utvalgt redskap for meg til å bære mitt navn fram for hedningefolk og konger og Israels barn."
+    "text": "Men Herren sa til ham: «Gå! For han er et utvalgt redskap for meg til å bære mitt navn fram for hedningefolk, konger og Israels barn.",
+    "versions": [
+      {
+        "text": "Men Herren sa til ham: «Gå! For han er et utvalgt redskap for meg til å bære mitt navn fram for hedningefolk og konger og Israels barn.",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "Originalen har tre grupper med 'τε καὶ ... τε' som knytter dem sammen. Et komma mellom 'hedningefolk' og 'konger' gjør opplistingen tydeligere og mer naturlig på norsk enn 'og ... og'."
+      }
+    ]
   },
   {
     "bookId": 44,
@@ -129,7 +145,15 @@
     "bookId": 44,
     "chapterId": 9,
     "verseId": 22,
-    "text": "Men Saulus ble stadig sterkere og forvirret jødene som bodde i Damaskus ved å bevise at Jesus er Messias."
+    "text": "Men Saulus ble stadig sterkere og brakte jødene som bodde i Damaskus i forlegenhet ved å bevise at Jesus er Messias.",
+    "versions": [
+      {
+        "text": "Men Saulus ble stadig sterkere og forvirret jødene som bodde i Damaskus ved å bevise at Jesus er Messias.",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "Det greske 'συνέχυννεν' (fra συγχέω) betyr mer enn bare 'forvirret' – det innebærer at de ble brakt ut av fatning, gjort rådville, lamslått. 'Brakte i forlegenhet' fanger bedre nyansen av at de ikke kunne svare på hans argumenter."
+      }
+    ]
   },
   {
     "bookId": 44,
@@ -183,7 +207,15 @@
     "bookId": 44,
     "chapterId": 9,
     "verseId": 31,
-    "text": "Så hadde menigheten fred over hele Judea, Galilea og Samaria. Den ble bygget opp og vandret i frykt for Herren, og den vokste ved Den Hellige Ånds trøst."
+    "text": "Så hadde menigheten fred over hele Judea, Galilea og Samaria. Den ble bygget opp og vandret i ærefrykt for Herren, og den vokste ved Den Hellige Ånds oppmuntring.",
+    "versions": [
+      {
+        "text": "Så hadde menigheten fred over hele Judea, Galilea og Samaria. Den ble bygget opp og vandret i frykt for Herren, og den vokste ved Den Hellige Ånds trøst.",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "1) 'φόβῳ τοῦ κυρίου' er bedre gjengitt med 'ærefrykt' enn bare 'frykt' – det er en ærbødig gudsfrykt, ikke redsel. 2) 'παρακλήσει' kan bety trøst, men også oppmuntring/formaning. I konteksten av menighetsvekst er 'oppmuntring' mer dekkende enn 'trøst'."
+      }
+    ]
   },
   {
     "bookId": 44,
@@ -213,11 +245,17 @@
     "bookId": 44,
     "chapterId": 9,
     "verseId": 36,
-    "text": "I Joppa var det en kvinnelig disippel som het Tabita, som oversatt betyr Dorkas. Hun var full av gode gjerninger og almisser som hun gav.",
+    "text": "I Joppa var det en kvinnelig disippel som het Tabita, som oversatt betyr Dorkas. Hun var full av gode gjerninger og gavmildhet som hun øste av.",
     "versions": [
       {
         "text": "I Joppa var det en kvinnelig disippel som het Tabita, som oversatt betyr Dorkas. Hun var full av gode gjerninger og barmhjertighetsgaver som hun gjorde.",
         "explanation": "Det greske 'ἐλεημοσυνῶν' betyr 'almisser' - konkrete gaver til de fattige. 'Barmhjertighetsgaver' er unødvendig langt. Også 'ὧν ἐποίει' passer bedre med 'gav' når det gjelder almisser, da man 'gir' almisser snarere enn 'gjør' dem."
+      },
+      {
+        "text": "I Joppa var det en kvinnelig disippel som het Tabita, som oversatt betyr Dorkas. Hun var full av gode gjerninger og almisser som hun gav.",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "Selv om 'almisser' er korrekt som oversettelse, er det et gammeldags ord som få moderne lesere forstår. For en oversettelse som skal være 'modern og easy to read' kunne et mer tilgjengelig uttrykk vurderes. Men noterer at dette allerede er revidert, så dette er bare en mild observasjon."
       }
     ]
   },

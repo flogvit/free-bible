@@ -135,11 +135,17 @@
     "bookId": 46,
     "chapterId": 9,
     "verseId": 18,
-    "text": "Hva er da min lønn? Jo, at jeg når jeg forkynner evangeliet, gjør det uten kostnad, slik at jeg ikke utnytter den retten jeg har gjennom evangeliet.",
+    "text": "Hva er da min lønn? Jo, at jeg forkynner evangeliet uten kostnad, så jeg ikke utnytter den retten jeg har gjennom evangeliet.",
     "versions": [
       {
         "text": "Hva er da min lønn? Jo, at jeg når jeg forkynner evangeliet, kan gjøre det uten kostnad, slik at jeg ikke utnytter den retten jeg har gjennom evangeliet.",
         "explanation": "Setningsstrukturen 'at jeg når jeg forkynner evangeliet, kan gjøre det' er noe klossete. Ved å fjerne 'kan' og bruke 'gjør det' blir setningen mer flytende for muntlig lesning, og det greske uttrykker også en faktisk handling snarere enn en mulighet."
+      },
+      {
+        "text": "Hva er da min lønn? Jo, at jeg når jeg forkynner evangeliet, gjør det uten kostnad, slik at jeg ikke utnytter den retten jeg har gjennom evangeliet.",
+        "type": "grammar",
+        "severity": "major",
+        "explanation": "Setningen 'at jeg når jeg forkynner evangeliet, gjør det uten kostnad' er fortsatt klossete med dobbel subjunksjonsstruktur ('at jeg når jeg'). En enklere omformulering gir bedre flyt og er mer naturlig norsk, uten å miste meningen. 'Slik at' kan forenkles til 'så' for bedre muntlig lesning."
       }
     ]
   },
@@ -195,7 +201,15 @@
     "bookId": 46,
     "chapterId": 9,
     "verseId": 25,
-    "text": "Enhver som deltar i idrettskonkurranser, er avholdende i alt. De gjør det for å vinne en forgjengelig krans, men vi for å vinne en uforgjengelig."
+    "text": "Enhver som kjemper i konkurranse, viser selvdisiplin i alt. De gjør det for å vinne en forgjengelig krans, men vi for å vinne en uforgjengelig.",
+    "versions": [
+      {
+        "text": "Enhver som deltar i idrettskonkurranser, er avholdende i alt. De gjør det for å vinne en forgjengelig krans, men vi for å vinne en uforgjengelig.",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "'Idrettskonkurranser' er litt tungt. Det greske 'ἀγωνιζόμενος' betyr 'den som kjemper/konkurrerer'. 'Avholdende' kan gi feil assosiasjoner på norsk (avhold fra alkohol); 'selvdisiplin' er nærmere det greske 'ἐγκρατεύεται' som handler om selvkontroll i bred forstand."
+      }
+    ]
   },
   {
     "bookId": 46,

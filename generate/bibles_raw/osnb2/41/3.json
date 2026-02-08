@@ -3,7 +3,15 @@
     "bookId": 41,
     "chapterId": 3,
     "verseId": 1,
-    "text": "Han gikk igjen inn i en synagoge, og der var det en mann med en vissen hånd."
+    "text": "Han gikk inn i synagogen igjen, og der var det en mann med en vissen hånd.",
+    "versions": [
+      {
+        "text": "Han gikk igjen inn i en synagoge, og der var det en mann med en vissen hånd.",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "Det greske 'εἰς συναγωγήν' med bestemt artikkel implisert fra konteksten (tilbake til samme synagoge eller en kjent synagoge) oversettes bedre med 'synagogen'. Også bedre ordstilling med 'igjen' etter 'synagogen'."
+      }
+    ]
   },
   {
     "bookId": 41,
@@ -39,7 +47,15 @@
     "bookId": 41,
     "chapterId": 3,
     "verseId": 6,
-    "text": "Fariseerne gikk da straks ut og la planer mot ham sammen med herodianerne om hvordan de kunne få tatt livet av ham."
+    "text": "Fariseerne gikk straks ut og la planer sammen med herodianerne om hvordan de kunne ta livet av ham.",
+    "versions": [
+      {
+        "text": "Fariseerne gikk da straks ut og la planer mot ham sammen med herodianerne om hvordan de kunne få tatt livet av ham.",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "Ordstillingen kan forbedres. 'Da' er unødvendig og ikke i grunnteksten. 'Sammen med herodianerne' bør stå nærmere 'la planer' for klarhet, da det var samarbeidet som var poenget. 'Få tatt livet av' kan forenkles til 'ta livet av' (ἀπολέσωσιν = ødelegge/drepe)."
+      }
+    ]
   },
   {
     "bookId": 41,
@@ -69,13 +85,29 @@
     "bookId": 41,
     "chapterId": 3,
     "verseId": 10,
-    "text": "For han helbredet mange, og derfor trengte alle som led av plager seg fram for å få røre ved ham."
+    "text": "For han helbredet mange, slik at alle som var plaget av sykdommer, kastet seg over ham for å få røre ved ham.",
+    "versions": [
+      {
+        "text": "For han helbredet mange, og derfor trengte alle som led av plager seg fram for å få røre ved ham.",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "Det greske ἐπιπίπτειν betyr 'falle over/kaste seg over', noe sterkere enn 'trenge seg fram'. Dessuten er 'ὥστε' (slik at) en konsekutiv konjunksjon som viser resultatet av helbredelsene, ikke et tillegg ('og derfor'). μάστιγας (svøper/plager) refererer til sykdomsplager."
+      }
+    ]
   },
   {
     "bookId": 41,
     "chapterId": 3,
     "verseId": 11,
-    "text": "Og når de urene åndene så ham, kastet de seg ned for ham og ropte: «Du er Guds Sønn!»"
+    "text": "Og hver gang de urene åndene så ham, kastet de seg ned for ham og ropte: «Du er Guds Sønn!»",
+    "versions": [
+      {
+        "text": "Og når de urene åndene så ham, kastet de seg ned for ham og ropte: «Du er Guds Sønn!»",
+        "type": "grammar",
+        "severity": "minor",
+        "explanation": "Det greske 'ὅταν' med imperfektum indikerer gjentatt handling ('hver gang', 'når som helst'). 'Hver gang' formidler bedre den iterative aspekten enn bare 'når'."
+      }
+    ]
   },
   {
     "bookId": 41,
@@ -123,7 +155,15 @@
     "bookId": 41,
     "chapterId": 3,
     "verseId": 17,
-    "text": "Videre Jakob, sønn av Sebedeus, og Johannes, Jakobs bror – dem ga han navnet Boanerges, det betyr Tordensønner –"
+    "text": "Videre Jakob, sønn av Sebedeus, og Johannes, Jakobs bror – dem ga han tilnavnet Boanerges, det betyr «Tordensønner» –",
+    "versions": [
+      {
+        "text": "Videre Jakob, sønn av Sebedeus, og Johannes, Jakobs bror – dem ga han navnet Boanerges, det betyr Tordensønner –",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "Boanerges var et tilnavn (ὀνόματα i betydningen tilnavn), ikke et erstatningsnavn. I tillegg bør oversettelsen 'Tordensønner' stå i anførselstegn for klarhet, da det er en oversettelse av det arameiske ordet."
+      }
+    ]
   },
   {
     "bookId": 41,
@@ -211,11 +251,23 @@
     "bookId": 41,
     "chapterId": 3,
     "verseId": 29,
-    "text": "Men den som spotter Den hellige ånd, får aldri tilgivelse i evighet, men er skyldig i en evig synd.»",
+    "text": "Men den som spotter Den Hellige Ånd, får aldri tilgivelse, men er skyldig i en evig synd.»",
     "versions": [
       {
         "text": "Men den som spotter Den hellige ånd, får aldri i evighet tilgivelse, men er skyldig i en evig synd.»",
         "explanation": "«Aldri i evighet» er noe redundant på norsk. «Aldri tilgivelse i evighet» eller bare «får aldri tilgivelse» ville vært mer naturlig. Det greske «οὐκ ἔχει ἄφεσιν εἰς τὸν αἰῶνα» betyr bokstavelig 'har ikke tilgivelse inn i evigheten'."
+      },
+      {
+        "text": "Men den som spotter Den hellige ånd, får aldri tilgivelse i evighet, men er skyldig i en evig synd.»",
+        "type": "grammar",
+        "severity": "minor",
+        "explanation": "I norsk kristen tradisjon skrives 'Den Hellige Ånd' med store bokstaver på alle tre ord, da det er et egennavn for den tredje person i treenigheten. 'Den hellige ånd' med liten h og å er inkonsekvent."
+      },
+      {
+        "text": "Men den som spotter Den Hellige Ånd, får aldri tilgivelse i evighet, men er skyldig i en evig synd.»",
+        "type": "grammar",
+        "severity": "minor",
+        "explanation": "«Aldri tilgivelse i evighet» er fortsatt redundant – «aldri» og «i evighet» sier det samme. Enten «aldri tilgivelse» eller «ingen tilgivelse i evighet» ville vært korrekt norsk. Men gitt at dette verset allerede har 2+ revisjoner, markeres dette kun som minor."
       }
     ]
   },
@@ -235,7 +287,15 @@
     "bookId": 41,
     "chapterId": 3,
     "verseId": 32,
-    "text": "Det satt en folkemengde rundt ham, og de sa til ham: «Din mor og dine brødre står utenfor og spør etter deg.»"
+    "text": "Det satt en folkemengde rundt ham, og de sa til ham: «Din mor og dine brødre står utenfor og leter etter deg.»",
+    "versions": [
+      {
+        "text": "Det satt en folkemengde rundt ham, og de sa til ham: «Din mor og dine brødre står utenfor og spør etter deg.»",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "Det greske 'ζητοῦσίν' betyr 'søker/leter etter', ikke bare 'spør etter'. 'Leter etter deg' formidler bedre at de aktivt prøver å finne ham, ikke bare at de har spurt om ham."
+      }
+    ]
   },
   {
     "bookId": 41,

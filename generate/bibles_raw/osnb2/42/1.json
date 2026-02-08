@@ -85,7 +85,15 @@
     "bookId": 42,
     "chapterId": 1,
     "verseId": 11,
-    "text": "Da viste en Herrens engel seg for ham, stående på høyre side av røkelsesalteret."
+    "text": "Da viste en Herrens engel seg for ham. Han stod på høyre side av røkelsesalteret.",
+    "versions": [
+      {
+        "text": "Da viste en Herrens engel seg for ham, stående på høyre side av røkelsesalteret.",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "Setningen blir noe tung med partisippkonstruksjonen 'stående'. To setninger gir bedre flyt på moderne norsk."
+      }
+    ]
   },
   {
     "bookId": 42,
@@ -157,7 +165,15 @@
     "bookId": 42,
     "chapterId": 1,
     "verseId": 21,
-    "text": "Folket stod og ventet på Sakarja og undret seg over at han ble så lenge i tempelet."
+    "text": "Folket ventet på Sakarja og undret seg over at han drøyde så lenge i tempelet.",
+    "versions": [
+      {
+        "text": "Folket stod og ventet på Sakarja og undret seg over at han ble så lenge i tempelet.",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "'Stod og ventet' er implisitt i konteksten. 'Drøyde' (χρονίζειν) er et mer presist verb som indikerer forsinkelse/at tiden trakk ut, snarere enn bare å 'bli lenge'."
+      }
+    ]
   },
   {
     "bookId": 42,
@@ -205,11 +221,17 @@
     "bookId": 42,
     "chapterId": 1,
     "verseId": 29,
-    "text": "Hun ble forvirret over dette ordet og grunnet på hva denne hilsenen kunne bety.",
+    "text": "Hun ble foruroliget over dette ordet og grunnet på hva denne hilsenen kunne bety.",
     "versions": [
       {
         "text": "Hun ble urolig over hans ord og grunnet på hva denne hilsenen kunne bety.",
         "explanation": "Det greske 'διεταράχθη' er et sterkere ord enn 'urolig' - det betyr 'ble helt forvirret/oppskaket'. Også 'τῷ λόγῳ' er entall ('ordet/budskapet'), ikke flertall ('ordene')."
+      },
+      {
+        "text": "Hun ble forvirret over dette ordet og grunnet på hva denne hilsenen kunne bety.",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "διεταράχθη betyr 'ble dypt foruroliget/oppskaket', ikke 'forvirret'. Forvirring handler om manglende forståelse, mens det greske ordet handler om å bli følelsesmessig rystet/urolig. 'Foruroliget' fanger bedre den emosjonelle reaksjonen."
       }
     ]
   },
@@ -241,17 +263,31 @@
     "bookId": 42,
     "chapterId": 1,
     "verseId": 34,
-    "text": "Maria sa til engelen: «Hvordan skal dette skje, når jeg ikke har vært sammen med noen mann?»"
+    "text": "Maria sa til engelen: «Hvordan skal dette skje, siden jeg ikke kjenner noen mann?»",
+    "versions": [
+      {
+        "text": "Maria sa til engelen: «Hvordan skal dette skje, når jeg ikke har vært sammen med noen mann?»",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "'Γινώσκω' (kjenner) i presens indikerer en pågående tilstand - Maria kjenner ikke (har ikke intimt forhold til) noen mann. 'Har vært sammen med' antyder fortid, mens det greske uttrykket er i presens."
+      }
+    ]
   },
   {
     "bookId": 42,
     "chapterId": 1,
     "verseId": 35,
-    "text": "Engelen svarte henne: «Den hellige ånd skal komme over deg, og Den høyestes kraft skal overskygge deg. Derfor skal også det som fødes, kalles hellig, kalles Guds Sønn.",
+    "text": "Engelen svarte henne: «Den hellige ånd skal komme over deg, og Den høyestes kraft skal overskygge deg. Derfor skal også barnet som blir født, kalles hellig – Guds Sønn.",
     "versions": [
       {
         "text": "Engelen svarte henne: «Den hellige ånd skal komme over deg, og Den høyestes kraft skal overskygge deg. Derfor skal også det hellige som fødes, kalles Guds Sønn.",
         "explanation": "Den greske konstruksjonen 'τὸ γεννώμενον ἅγιον κληθήσεται, υἱὸς θεοῦ' indikerer at barnet skal kalles både 'hellig' og 'Guds Sønn'. Den nåværende oversettelsen gjør 'hellig' til en attributt snarere enn en del av det som proklameres."
+      },
+      {
+        "text": "Engelen svarte henne: «Den hellige ånd skal komme over deg, og Den høyestes kraft skal overskygge deg. Derfor skal også det som fødes, kalles hellig, kalles Guds Sønn.",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "Den doble 'kalles...kalles'-konstruksjonen er klosset på norsk. En tankestrek gir bedre flyt og beholder det teologiske poenget om at barnet kalles både hellig og Guds Sønn. 'Barnet som blir født' er også klarere enn 'det som fødes'."
       }
     ]
   },
@@ -295,13 +331,29 @@
     "bookId": 42,
     "chapterId": 1,
     "verseId": 42,
-    "text": "og ropte med høy røst: «Velsignet er du blant kvinner, og velsignet er frukten i ditt liv!"
+    "text": "og ropte med høy røst: «Velsignet er du blant kvinner, og velsignet er frukten av ditt liv!",
+    "versions": [
+      {
+        "text": "og ropte med høy røst: «Velsignet er du blant kvinner, og velsignet er frukten i ditt liv!",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "'Frukten av ditt liv' er mer idiomatisk norsk enn 'frukten i ditt liv'. Det greske τῆς κοιλίας σου er genitiv ('av ditt morsliv'), ikke lokativ ('i')."
+      }
+    ]
   },
   {
     "bookId": 42,
     "chapterId": 1,
     "verseId": 43,
-    "text": "Hvordan kan dette skje meg, at min Herres mor kommer til meg?"
+    "text": "Hvorfor skjer dette meg, at min Herres mor kommer til meg?",
+    "versions": [
+      {
+        "text": "Hvordan kan dette skje meg, at min Herres mor kommer til meg?",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "'Πόθεν' betyr 'hvorfra' eller 'hvorfor/hvordan kommer det seg'. Elisabet uttrykker forundring over at hun er verdig denne æren, ikke spør om mekanismen. 'Hvorfor skjer dette meg' eller 'Hvordan har jeg fortjent dette' fanger bedre nyansen av ydmyk forundring."
+      }
+    ]
   },
   {
     "bookId": 42,
@@ -355,11 +407,17 @@
     "bookId": 42,
     "chapterId": 1,
     "verseId": 51,
-    "text": "Han viste sin arms velde, han spredte dem som er hovmodige i sitt hjertes tanker.",
+    "text": "Han utøvde velde med sin arm, han spredte dem som er hovmodige i sitt hjertes tanker.",
     "versions": [
       {
         "text": "Han gjorde storverk med sin arm, han spredte dem som er hovmodige i sitt hjertes tanker.",
         "explanation": "Det greske 'κράτος' betyr 'makt/velde/herredømme'. 'Storverk' er en friere gjengivelse. 'Viste sin arms velde' eller 'utøvde makt med sin arm' er nærmere originalen."
+      },
+      {
+        "text": "Han viste sin arms velde, han spredte dem som er hovmodige i sitt hjertes tanker.",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "'Ἐποίησεν κράτος' betyr bokstavelig 'han gjorde/utøvde makt'. 'Viste sin arms velde' er litt svakt – Gud bare 'viste' det. 'Utøvde velde med sin arm' gjenspeiler den aktive handlingen i det greske verbet bedre."
       }
     ]
   },
@@ -475,7 +533,15 @@
     "bookId": 42,
     "chapterId": 1,
     "verseId": 68,
-    "text": "«Lovet være Herren, Israels Gud, for han har sett til sitt folk og forløst det."
+    "text": "«Lovet være Herren, Israels Gud, for han har gjestet sitt folk og kjøpt det fri.",
+    "versions": [
+      {
+        "text": "«Lovet være Herren, Israels Gud, for han har sett til sitt folk og forløst det.",
+        "type": "error",
+        "severity": "major",
+        "explanation": "ἐπεσκέψατο betyr 'besøkte/gjestet' (jf. eng. 'visited'), ikke bare 'sett til'. Det uttrykker Guds aktive inngripen. ἐποίησεν λύτρωσιν betyr 'utvirket forløsning/utfrielse' – 'kjøpt fri' fanger løsepenge-konnotasjonen i λύτρωσιν bedre enn 'forløst' alene."
+      }
+    ]
   },
   {
     "bookId": 42,
@@ -499,7 +565,15 @@
     "bookId": 42,
     "chapterId": 1,
     "verseId": 71,
-    "text": "frelse fra våre fiender og fra alle deres hånd som hater oss,"
+    "text": "frelse fra våre fiender og fra hånden til alle som hater oss,",
+    "versions": [
+      {
+        "text": "frelse fra våre fiender og fra alle deres hånd som hater oss,",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "Formuleringen 'alle deres hånd som hater oss' er grammatisk uklar på norsk. 'Hånden til alle som hater oss' er mer idiomatisk og tydelig. Det greske 'ἐκ χειρὸς πάντων τῶν μισούντων' betyr bokstavelig 'fra hånden til alle de som hater'."
+      }
+    ]
   },
   {
     "bookId": 42,
@@ -535,11 +609,17 @@
     "bookId": 42,
     "chapterId": 1,
     "verseId": 76,
-    "text": "Og du, barn, skal kalles Den Høyestes profet, for du skal gå foran Herren for å rydde hans veier",
+    "text": "Og du, lille barn, skal kalles Den Høyestes profet, for du skal gå foran Herren for å rydde hans veier,",
     "versions": [
       {
         "text": "Og du, barn, skal kalles Den høyestes profet, for du skal gå foran Herren og rydde hans veier",
         "explanation": "Det greske ἑτοιμάσαι er en infinitiv som uttrykker hensikt ('for å forberede/rydde'). Å legge til 'for å' gjør den syntaktiske strukturen tydeligere og mer presis."
+      },
+      {
+        "text": "Og du, barn, skal kalles Den Høyestes profet, for du skal gå foran Herren for å rydde hans veier",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "παιδίον er en diminutivform som antyder et lite barn. 'Lille barn' fanger denne nyansen bedre. I tillegg mangler det komma på slutten av verset, da setningen fortsetter i vers 77."
       }
     ]
   },
@@ -547,17 +627,31 @@
     "bookId": 42,
     "chapterId": 1,
     "verseId": 77,
-    "text": "for å gi hans folk kunnskap om frelse ved forlatelse for deres synder,"
+    "text": "for å gi hans folk kunnskap om frelse ved tilgivelse av deres synder,",
+    "versions": [
+      {
+        "text": "for å gi hans folk kunnskap om frelse ved forlatelse for deres synder,",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "Ordet 'forlatelse' er noe arkaisk. 'Tilgivelse' er mer moderne og lettere forståelig på bokmål, samtidig som det bevarer den teologiske betydningen av ἄφεσις. Preposisjonen 'av' passer også bedre med 'tilgivelse' enn 'for'."
+      }
+    ]
   },
   {
     "bookId": 42,
     "chapterId": 1,
     "verseId": 78,
-    "text": "ved vår Guds inderlige barmhjertighet, som skal la soloppgang fra det høye gjeste oss",
+    "text": "ved vår Guds inderlige barmhjertighet, som skal la en soloppgang fra det høye gjeste oss,",
     "versions": [
       {
         "text": "ved vår Guds inderlige barmhjertighet. Ved den skal soloppgang fra det høye gjeste oss",
         "explanation": "Den greske relativsetningen (ἐν οἷς) kobler tettere sammen barmhjertigheten med soloppgangen. To separate setninger bryter denne flyten unødvendig."
+      },
+      {
+        "text": "ved vår Guds inderlige barmhjertighet, som skal la soloppgang fra det høye gjeste oss",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "ἀνατολή brukes her uten bestemt artikkel og har en poetisk/messiansk betydning. 'En soloppgang' gjengir dette bedre enn 'soloppgang' uten artikkel. I tillegg mangler det komma til slutt da setningen fortsetter i vers 79."
       }
     ]
   },
@@ -565,7 +659,15 @@
     "bookId": 42,
     "chapterId": 1,
     "verseId": 79,
-    "text": "for å lyse for dem som sitter i mørke og dødens skygge, for å lede våre føtter inn på fredens vei.»"
+    "text": "for å lyse for dem som sitter i mørke og dødsskygge, for å lede våre føtter inn på fredens vei.»",
+    "versions": [
+      {
+        "text": "for å lyse for dem som sitter i mørke og dødens skygge, for å lede våre føtter inn på fredens vei.»",
+        "type": "grammar",
+        "severity": "minor",
+        "explanation": "σκιᾷ θανάτου er et fast uttrykk (jf. hebraisk צַלְמָוֶת) som vanligvis gjengis som 'dødsskygge' – ett sammensatt begrep som betegner det dypeste mørke, ikke bare en skygge som tilhører døden. 'Dødsskygge' er også den tradisjonelle norske gjengivelsen."
+      }
+    ]
   },
   {
     "bookId": 42,

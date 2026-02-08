@@ -51,11 +51,17 @@
     "bookId": 49,
     "chapterId": 3,
     "verseId": 7,
-    "text": "For dette evangeliet ble jeg en tjener ved den nådegaven Gud ga meg ved sin kraftfulle virksomhet.",
+    "text": "For dette evangeliet ble jeg en tjener ved den nådegaven fra Gud som ble gitt meg gjennom hans kraftige virkning.",
     "versions": [
       {
         "text": "Jeg ble en tjener for dette evangeliet ved den nådegaven Gud ga meg ved sin kraftfulle virksomhet.",
         "explanation": "Rekkefølgen kan forbedres for å matche den greske strukturen bedre, der 'evangeliet' (οὗ) kommer først som relativpronomen som refererer tilbake til forrige vers."
+      },
+      {
+        "text": "For dette evangeliet ble jeg en tjener ved den nådegaven Gud ga meg ved sin kraftfulle virksomhet.",
+        "type": "error",
+        "severity": "minor",
+        "explanation": "Uttrykket 'κατὰ τὴν ἐνέργειαν τῆς δυνάμεως αὐτοῦ' betyr mer presist 'i samsvar med virkningen av hans kraft/makt'. 'Kraftfulle virksomhet' er litt vagt. Dessuten bør 'τῆς δοθείσης' (passiv partisipp: 'som ble gitt') gjenspeiles som passiv, i tråd med prinsippet som allerede ble anvendt i vers 2."
       }
     ]
   },
@@ -69,7 +75,15 @@
     "bookId": 49,
     "chapterId": 3,
     "verseId": 9,
-    "text": "og å bringe i lyset for alle hva som er forvaltningen av den hemmelighet som fra evighet av har vært skjult i Gud, han som skapte alle ting."
+    "text": "og å opplyse alle om hva forvaltningsordningen er for den hemmelighet som fra evighet av har vært skjult i Gud, han som skapte alle ting.",
+    "versions": [
+      {
+        "text": "og å bringe i lyset for alle hva som er forvaltningen av den hemmelighet som fra evighet av har vært skjult i Gud, han som skapte alle ting.",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "'φωτίσαι' betyr 'å opplyse/kaste lys over', og 'å bringe i lyset' er akseptabelt men litt klossete. 'Opplyse alle om' er mer naturlig norsk. 'Forvaltningsordningen' kan også være mer presist enn 'forvaltningen' for οἰκονομία i denne sammenhengen, men dette er en mindre sak."
+      }
+    ]
   },
   {
     "bookId": 49,
@@ -81,7 +95,15 @@
     "bookId": 49,
     "chapterId": 3,
     "verseId": 11,
-    "text": "etter den evige plan som han fattet i Kristus Jesus, vår Herre."
+    "text": "etter den evige plan som han gjennomførte i Kristus Jesus, vår Herre.",
+    "versions": [
+      {
+        "text": "etter den evige plan som han fattet i Kristus Jesus, vår Herre.",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "'ἐποίησεν' (fra ποιέω) betyr 'utførte/gjennomførte', ikke bare 'fattet'. Guds evige plan ble ikke bare uttenkt men realisert/gjennomført i Kristus. 'Fattet' gir inntrykk av at det bare handler om planlegging, mens det greske verbet peker mot utførelse."
+      }
+    ]
   },
   {
     "bookId": 49,
@@ -93,7 +115,15 @@
     "bookId": 49,
     "chapterId": 3,
     "verseId": 13,
-    "text": "Derfor ber jeg om at dere ikke må miste motet på grunn av mine trengsler for dere. De er til ære for dere."
+    "text": "Derfor ber jeg dere om ikke å miste motet på grunn av mine trengsler for dere, for de er deres ære.",
+    "versions": [
+      {
+        "text": "Derfor ber jeg om at dere ikke må miste motet på grunn av mine trengsler for dere. De er til ære for dere.",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "Det greske 'ἥτις ἐστὶν δόξα ὑμῶν' er en relativsetning ('som er deres ære/herlighet') som hører tettere sammen med hovedsetningen. 'De er til ære for dere' er litt løst. 'Deres ære' er mer direkte. Dessuten er 'ber jeg dere om ikke å' mer naturlig norsk enn 'ber jeg om at dere ikke må'."
+      }
+    ]
   },
   {
     "bookId": 49,

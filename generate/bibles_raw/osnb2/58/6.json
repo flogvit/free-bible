@@ -45,11 +45,17 @@
     "bookId": 58,
     "chapterId": 6,
     "verseId": 6,
-    "text": "og som så har falt fra – å fornye dem til omvendelse er umulig, siden de korsfester Guds Sønn på nytt for seg selv og gjør ham til spott.",
+    "text": "og som så har falt fra – å fornye dem til omvendelse er umulig, så lenge de korsfester Guds Sønn på nytt for seg selv og gjør ham til spott.",
     "versions": [
       {
         "text": "og som så har falt fra. De korsfester jo Guds Sønn på nytt for seg selv og gjør ham til spott.",
         "explanation": "Den nåværende oversettelsen bryter setningen på en måte som skjuler at 'ἀνασταυροῦντας' og 'παραδειγματίζοντας' er partisipper som forklarer hvorfor fornyelse er umulig (årsakspartisipper). Strukturen fra vers 4-6 er én lang setning der hovedverbet 'ἀνακαινίζειν' (fornye) fra vers 6 henger sammen med 'ἀδύνατον' (umulig) fra vers 4. Dette bør gjenspeiles tydeligere."
+      },
+      {
+        "text": "og som så har falt fra – å fornye dem til omvendelse er umulig, siden de korsfester Guds Sønn på nytt for seg selv og gjør ham til spott.",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "Partisippene 'ἀνασταυροῦντας' og 'παραδειγματίζοντας' er samtidige/kausale partisipper. 'Siden' fungerer, men 'så lenge' gjenspeiler bedre den samtidige aspekten og unngår å låse teksten til en rent kausal tolkning. Dette er imidlertid en marginal forbedring, og verset har allerede blitt revidert."
       }
     ]
   },
@@ -105,7 +111,15 @@
     "bookId": 58,
     "chapterId": 6,
     "verseId": 14,
-    "text": "og sa: «Sannelig, jeg vil velsigne deg rikt og gjøre deg tallrik.»"
+    "text": "og sa: «Sannelig, jeg vil rikt velsigne deg og storlig gjøre deg tallrik.»",
+    "versions": [
+      {
+        "text": "og sa: «Sannelig, jeg vil velsigne deg rikt og gjøre deg tallrik.»",
+        "type": "error",
+        "severity": "major",
+        "explanation": "Det greske bruker en hebraisk forsterkningskonstruksjon (infinitiv + finitt verb) både for 'velsigne' (εὐλογῶν εὐλογήσω) og for 'gjøre tallrik' (πληθύνων πληθυνῶ). Den nåværende oversettelsen gjengir forsterkingen for 'velsigne' ('rikt'), men mister den for 'gjøre tallrik'. Begge leddene bør ha forsterkende uttrykk for å gjenspeile originalen. Alternativt: 'jeg vil velsigne deg rikt og gjøre deg overmåte tallrik.'"
+      }
+    ]
   },
   {
     "bookId": 58,
@@ -117,11 +131,17 @@
     "bookId": 58,
     "chapterId": 6,
     "verseId": 16,
-    "text": "Mennesker sverger jo ved en som er større enn dem selv, og eden er en bekreftelse som gjør slutt på all strid.",
+    "text": "For mennesker sverger ved en som er større enn dem selv, og eden er en bekreftelse som gjør slutt på all strid.",
     "versions": [
       {
         "text": "Mennesker sverger jo ved en som er større enn dem selv, og eden er en bekreftelse som gjør slutt på all motstand.",
         "explanation": "'ἀντιλογίας' betyr 'strid', 'uenighet' eller 'motsigelse' snarere enn 'motstand'. Eden avslutter tvister og uenigheter mellom parter, ikke 'motstand' i generell forstand."
+      },
+      {
+        "text": "Mennesker sverger jo ved en som er større enn dem selv, og eden er en bekreftelse som gjør slutt på all strid.",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "'γὰρ' betyr 'for' og innleder en begrunnelse. 'Jo' fungerer pragmatisk, men 'For' er mer presist og viser den logiske forbindelsen til det foregående verset tydeligere."
       }
     ]
   },

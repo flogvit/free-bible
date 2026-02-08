@@ -9,7 +9,15 @@
     "bookId": 1,
     "chapterId": 9,
     "verseId": 2,
-    "text": "Frykt for dere skal komme over alle jordens dyr og alle himmelens fugler, over alt som kryper på marken og alle havets fisker. I deres hånd er de gitt."
+    "text": "Frykt og redsel for dere skal komme over alle jordens dyr og alle himmelens fugler, over alt som kryper på marken og alle havets fisker. I deres hånd er de gitt.",
+    "versions": [
+      {
+        "text": "Frykt for dere skal komme over alle jordens dyr og alle himmelens fugler, over alt som kryper på marken og alle havets fisker. I deres hånd er de gitt.",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "Det hebraiske har to ord: מוֹרָא (frykt) og חִתָּה (redsel/skrekk). Begge bør gjenspeiles i oversettelsen for å fange den fullstendige meningen."
+      }
+    ]
   },
   {
     "bookId": 1,
@@ -57,7 +65,15 @@
     "bookId": 1,
     "chapterId": 9,
     "verseId": 10,
-    "text": "og med hver levende skapning som er hos dere – fugler, fe og alle jordens ville dyr – alt som gikk ut av arken, alle jordens dyr."
+    "text": "og med hver levende skapning som er hos dere – fugler, husdyr og alle jordens ville dyr – alle som gikk ut av arken, alle jordens dyr.",
+    "versions": [
+      {
+        "text": "og med hver levende skapning som er hos dere – fugler, fe og alle jordens ville dyr – alt som gikk ut av arken, alle jordens dyr.",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "«Fe» er noe arkaisk; «husdyr» er mer moderne og lettlest. Også: «alt som gikk ut» bør være «alle som gikk ut» siden det refererer til levende skapninger (flertall av כֹּל יֹצְאֵי)."
+      }
+    ]
   },
   {
     "bookId": 1,
@@ -117,7 +133,15 @@
     "bookId": 1,
     "chapterId": 9,
     "verseId": 20,
-    "text": "Noah, mannen av jorden, var den første som plantet en vingård."
+    "text": "Noah begynte å dyrke jorden og plantet en vingård.",
+    "versions": [
+      {
+        "text": "Noah, mannen av jorden, var den første som plantet en vingård.",
+        "type": "error",
+        "severity": "major",
+        "explanation": "Verbet וַיָּחֶל betyr 'begynte', ikke 'var den første'. Uttrykket אִישׁ הָאֲדָמָה betyr 'jordbruker/jordmann' - en som dyrker jorden. Den nåværende oversettelsen feiltolker både verbet og frasen."
+      }
+    ]
   },
   {
     "bookId": 1,
@@ -165,11 +189,17 @@
     "bookId": 1,
     "chapterId": 9,
     "verseId": 27,
-    "text": "Gud gi Jafet rom! Han skal bo i Sems telt, og Kanaan skal være trell for dem.»",
+    "text": "Måtte Gud gi Jafet rom! Han skal bo i Sems telt, og Kanaan skal være trell for dem.»",
     "versions": [
       {
         "text": "Gud gi Jafet rom! Han skal bo i Sems telt, og Kanaan skal være trell for ham.",
         "explanation": "Samme som vers 26 - לָמוֹ oversettes bedre som 'for dem' for konsistens. Mangler også avsluttende anførselstegn for å avslutte Noahs tale."
+      },
+      {
+        "text": "Gud gi Jafet rom! Han skal bo i Sems telt, og Kanaan skal være trell for dem.»",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "Det hebraiske יַפְתְּ er en jussiv (ønske-/bønneform). «Måtte Gud gi Jafet rom» gjengir dette bedre enn det noe brå «Gud gi Jafet rom». Det er også et ordspill mellom יַפְתְּ (yaft) og יֶפֶת (Jafet) som uttrykker et ønske."
       }
     ]
   },

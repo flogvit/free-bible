@@ -87,7 +87,15 @@
     "bookId": 66,
     "chapterId": 18,
     "verseId": 12,
-    "text": "last av gull og sølv, edelstener og perler, fint lin og purpur, silke og skarlagen, alle slags velluktende trær, alle slags gjenstander av elfenben, alle slags gjenstander av kostbart tre, bronse, jern og marmor,"
+    "text": "last av gull og sølv, edelstener og perler, fint lin og purpur, silke og skarlagen, alle slags velluktende tresorter, alle slags gjenstander av elfenben, alle slags gjenstander av kostbart tre, bronse, jern og marmor,",
+    "versions": [
+      {
+        "text": "last av gull og sølv, edelstener og perler, fint lin og purpur, silke og skarlagen, alle slags velluktende trær, alle slags gjenstander av elfenben, alle slags gjenstander av kostbart tre, bronse, jern og marmor,",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "Det greske 'πᾶν ξύλον θύϊνον' refererer til velluktende trevirke/tresorter (spesielt tuja/sitrustre), ikke trær som vokser. 'Tresorter' er mer presist enn 'trær' i denne handelskonteksten."
+      }
+    ]
   },
   {
     "bookId": 66,
@@ -147,7 +155,7 @@
     "bookId": 66,
     "chapterId": 18,
     "verseId": 20,
-    "text": "Fryd deg over henne, du himmel, og dere hellige, apostler og profeter! For Gud har holdt dom over henne for dere.",
+    "text": "Fryd deg over henne, du himmel, og dere hellige og apostler og profeter! For Gud har holdt dom over henne for dere.",
     "versions": [
       {
         "text": "Gled dere over henne, du himmel og dere hellige, apostler og profeter! For Gud har dømt henne for det hun gjorde mot dere.",
@@ -156,6 +164,12 @@
       {
         "text": "Gled dere over henne, du himmel og dere hellige, apostler og profeter! For Gud har holdt dom over henne for dere.",
         "explanation": "Det greske 'Εὐφραίνου' er imperativ entall rettet til himmelen, deretter følger de hellige osv. som separate tiltaleformer. 'Fryd deg' (entall til himmelen) etterfulgt av 'og dere hellige' gjenspeiler strukturen bedre og gir bedre rytme."
+      },
+      {
+        "text": "Fryd deg over henne, du himmel, og dere hellige, apostler og profeter! For Gud har holdt dom over henne for dere.",
+        "type": "grammar",
+        "severity": "minor",
+        "explanation": "Den greske teksten har 'καὶ οἱ ἅγιοι καὶ οἱ ἀπόστολοι καὶ οἱ προφῆται' – tre grupper forbundet med 'og' (kai). Den nåværende oversettelsen bruker komma mellom 'hellige, apostler og profeter', noe som kan gi inntrykk av at det er en oppramsing av tre like grupper. Med 'og' mellom alle tre gjenspeiles den greske strukturen bedre, der de hellige er en overordnet kategori."
       }
     ]
   },
@@ -187,6 +201,14 @@
     "bookId": 66,
     "chapterId": 18,
     "verseId": 24,
-    "text": "I henne ble blodet funnet av profeter og hellige og av alle som er blitt slaktet på jorden."
+    "text": "I henne ble det funnet blod av profeter og hellige og av alle som er blitt slaktet på jorden.",
+    "versions": [
+      {
+        "text": "I henne ble blodet funnet av profeter og hellige og av alle som er blitt slaktet på jorden.",
+        "type": "suggestion",
+        "severity": "major",
+        "explanation": "Den nåværende ordstillingen 'ble blodet funnet av profeter' kan på norsk misforstås som at profetene fant blodet (passiv med agenssetning). 'Ble det funnet blod av profeter' gjør det tydeligere at det er blodet som tilhører profetene som ble funnet i henne."
+      }
+    ]
   }
 ]

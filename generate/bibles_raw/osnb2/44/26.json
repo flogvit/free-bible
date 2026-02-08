@@ -57,7 +57,7 @@
     "bookId": 44,
     "chapterId": 26,
     "verseId": 9,
-    "text": "Jeg selv mente at jeg burde gjøre mye mot nasareerens, Jesu, navn.",
+    "text": "Jeg selv mente at jeg burde gjøre mye mot Jesus nasareerens navn.",
     "versions": [
       {
         "text": "Jeg selv mente at jeg burde gjøre mye for å motarbeide Jesu navn, han fra Nasaret.",
@@ -66,6 +66,12 @@
       {
         "text": "Jeg selv mente at jeg burde gjøre mye mot Jesu, nasareerens, navn.",
         "explanation": "Ordstillingen i nåværende oversettelse med 'Jesu, nasareerens, navn' er grammatisk uheldig på norsk. Kommaet etter 'Jesu' skaper en merkelig pause. En bedre løsning er 'nasareerens, Jesu, navn' eller alternativt 'Jesus nasareerens navn' uten komma. Den greske konstruksjonen har 'Ἰησοῦ τοῦ Ναζωραίου' hvor 'τοῦ Ναζωραίου' er en apposisjon til 'Ἰησοῦ'."
+      },
+      {
+        "text": "Jeg selv mente at jeg burde gjøre mye mot nasareerens, Jesu, navn.",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "Konstruksjonen 'nasareerens, Jesu, navn' med kommaer er fortsatt grammatisk klønete på norsk. Uten kommaer flyter 'Jesus nasareerens navn' bedre og gjenspeiler den greske apposisjonskonstruksjonen 'Ἰησοῦ τοῦ Ναζωραίου' mer naturlig. Versjon 2 i historikken nevnte selv dette som et alternativ."
       }
     ]
   },
@@ -79,7 +85,15 @@
     "bookId": 44,
     "chapterId": 26,
     "verseId": 11,
-    "text": "Ofte straffet jeg dem i alle synagogene og tvang dem til å spotte. I mitt raseri mot dem forfulgte jeg dem helt til byer i utlandet."
+    "text": "Ofte straffet jeg dem i alle synagogene og tvang dem til å spotte. I mitt grenseløse raseri mot dem forfulgte jeg dem helt til byer i utlandet.",
+    "versions": [
+      {
+        "text": "Ofte straffet jeg dem i alle synagogene og tvang dem til å spotte. I mitt raseri mot dem forfulgte jeg dem helt til byer i utlandet.",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "Gresk 'περισσῶς ἐμμαινόμενος' betyr 'i overmåte/grenseløst raseri'. Adverbet 'περισσῶς' (overordentlig, i høy grad) uttrykker en intensitet som ikke fanges opp i nåværende oversettelse."
+      }
+    ]
   },
   {
     "bookId": 44,
@@ -109,11 +123,17 @@
     "bookId": 44,
     "chapterId": 26,
     "verseId": 16,
-    "text": "'Men reis deg opp og stå på føttene dine! For jeg har vist meg for deg for å utvelge deg til tjener og vitne, både om det du har sett meg, og det jeg skal åpenbare for deg.",
+    "text": "'Men reis deg opp og stå på føttene dine! For jeg har vist meg for deg for å utvelge deg til tjener og vitne, både om det du har sett av meg, og det jeg skal åpenbare for deg.",
     "versions": [
       {
         "text": "'Men reis deg opp og stå på føttene dine! For jeg har vist meg for deg for å utvelge deg til tjener og vitne, både om det du har sett og det jeg skal vise deg.",
         "explanation": "Gresken har 'εἶδές με' (du har sett meg) - objektet 'meg' mangler i oversettelsen. Også 'ὀφθήσομαί σοι' (jeg skal vise meg for deg/åpenbare for deg) er mer enn bare 'vise deg'."
+      },
+      {
+        "text": "'Men reis deg opp og stå på føttene dine! For jeg har vist meg for deg for å utvelge deg til tjener og vitne, både om det du har sett meg, og det jeg skal åpenbare for deg.",
+        "type": "error",
+        "severity": "major",
+        "explanation": "«det du har sett meg» er ikke korrekt norsk. Den greske konstruksjonen 'ὧν τε εἶδές με' betyr 'det du har sett av meg' eller 'det du har sett meg i'. 'Sett av meg' er idiomatisk riktig norsk."
       }
     ]
   },
@@ -127,7 +147,15 @@
     "bookId": 44,
     "chapterId": 26,
     "verseId": 18,
-    "text": "for å åpne øynene deres, så de vender seg fra mørke til lys og fra Satans makt til Gud, og ved troen på meg får tilgivelse for syndene og arv sammen med dem som er helliget.'"
+    "text": "for å åpne øynene deres, så de vender seg fra mørke til lys og fra Satans makt til Gud, for at de ved troen på meg skal få tilgivelse for syndene og en arvedel blant dem som er helliget.'",
+    "versions": [
+      {
+        "text": "for å åpne øynene deres, så de vender seg fra mørke til lys og fra Satans makt til Gud, og ved troen på meg får tilgivelse for syndene og arv sammen med dem som er helliget.'",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "Gresk 'κλῆρον' betyr 'arvedel/lodd' snarere enn bare 'arv'. 'En arvedel blant' er mer presist enn 'arv sammen med'. Også 'τοῦ λαβεῖν' (formålsinfinitiv) gjengis bedre med 'for at de skal få' enn det løsere 'og får'."
+      }
+    ]
   },
   {
     "bookId": 44,
@@ -205,7 +233,15 @@
     "bookId": 44,
     "chapterId": 26,
     "verseId": 29,
-    "text": "Paulus svarte: «Enten med lite eller mye, jeg ber til Gud om at ikke bare du, men alle som hører meg i dag, må bli slik som jeg er – bortsett fra disse lenkene.»"
+    "text": "Paulus svarte: «Jeg ville ønske overfor Gud at enten det er med lite eller mye, ikke bare du, men alle som hører meg i dag, måtte bli slik som jeg er – bortsett fra disse lenkene.»",
+    "versions": [
+      {
+        "text": "Paulus svarte: «Enten med lite eller mye, jeg ber til Gud om at ikke bare du, men alle som hører meg i dag, må bli slik som jeg er – bortsett fra disse lenkene.»",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "Gresk 'Εὐξαίμην ἂν' er en optativ som uttrykker et ønske ('jeg ville ønske'), ikke en direkte bønn ('jeg ber'). Den nåværende oversettelsen gjør det til en aktiv bønn, mens den greske formen er mer av et høflig, hypotetisk ønske."
+      }
+    ]
   },
   {
     "bookId": 44,

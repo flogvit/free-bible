@@ -21,7 +21,15 @@
     "bookId": 40,
     "chapterId": 1,
     "verseId": 3,
-    "text": "Juda fikk Peres og Serah med Tamar, Peres fikk Hesron, og Hesron fikk Aram."
+    "text": "Juda fikk Peres og Serak med Tamar, Peres fikk Hesron, og Hesron fikk Aram.",
+    "versions": [
+      {
+        "text": "Juda fikk Peres og Serah med Tamar, Peres fikk Hesron, og Hesron fikk Aram.",
+        "type": "error",
+        "severity": "minor",
+        "explanation": "Det greske navnet Ζάρα (Zara) tilsvarer det hebraiske Zerak (זֶרַח). 'Serah' er et annet bibelsk navn (en kvinne, 1 Mos 46:17). Den korrekte norske formen for denne personen er 'Serak' (jf. 1 Mos 38:30, 1 Krøn 2:4 i norske oversettelser)."
+      }
+    ]
   },
   {
     "bookId": 40,
@@ -67,7 +75,7 @@
     "bookId": 40,
     "chapterId": 1,
     "verseId": 8,
-    "text": "Asa fikk Josjafat, Josjafat fikk Joram, og Joram fikk Ussia.",
+    "text": "Asa fikk Josafat, Josafat fikk Joram, og Joram fikk Ussia.",
     "versions": [
       {
         "text": "Asaf fikk Josjafat, Josjafat fikk Joram, og Joram fikk Ussia.",
@@ -76,6 +84,12 @@
       {
         "text": "Asaf fikk Josjafat, Josjafat fikk Joram, og Joram fikk Ussia.",
         "explanation": "Samme som vers 7 - versjonshistorikken indikerer at endring til 'Asa' var planlagt for konsistens, men den nåværende teksten har fortsatt 'Asaf'. Bør endres til 'Asa' for å samsvare med GT-navneformen."
+      },
+      {
+        "text": "Asa fikk Josjafat, Josjafat fikk Joram, og Joram fikk Ussia.",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "Den etablerte norske formen av Ἰωσαφάτ er 'Josafat' (jf. 1 Kong 22 i norske bibeloversettelser). 'Josjafat' ser ut som en sammenblanding med 'Josjia'. Samme navneform bør brukes konsekvent."
       }
     ]
   },
@@ -203,6 +217,14 @@
     "bookId": 40,
     "chapterId": 1,
     "verseId": 25,
-    "text": "Men han lå ikke med henne før hun hadde født en sønn. Og han ga ham navnet Jesus."
+    "text": "Han var ikke sammen med henne før hun hadde født en sønn. Og han ga ham navnet Jesus.",
+    "versions": [
+      {
+        "text": "Men han lå ikke med henne før hun hadde født en sønn. Og han ga ham navnet Jesus.",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "«Lå ikke med henne» er en grei oversettelse av ἐγίνωσκεν (å kjenne), men «var ikke sammen med henne» er en litt mer diskret formulering som også er vanlig i moderne norske bibeloversettelser. Begge er akseptable; dette er kun et stilistisk forslag."
+      }
+    ]
   }
 ]

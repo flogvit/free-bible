@@ -9,7 +9,15 @@
     "bookId": 1,
     "chapterId": 19,
     "verseId": 2,
-    "text": "Han sa: «Se, mine herrer, vær så vennlige å ta inn i deres tjeners hus og bli natten over, og vask føttene deres. Så kan dere stå tidlig opp og dra videre på veien.» Men de svarte: «Nei, vi vil tilbringe natten på torget.»"
+    "text": "Han sa: «Se, mine herrer, vær så vennlige å ta inn i deres tjeners hus og bli natten over og vaske føttene deres. Så kan dere stå tidlig opp og dra videre på veien.» Men de svarte: «Nei, vi vil tilbringe natten på torget.»",
+    "versions": [
+      {
+        "text": "Han sa: «Se, mine herrer, vær så vennlige å ta inn i deres tjeners hus og bli natten over, og vask føttene deres. Så kan dere stå tidlig opp og dra videre på veien.» Men de svarte: «Nei, vi vil tilbringe natten på torget.»",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "Imperativene i originalen er rettet til gjestene (de skal vaske sine egne føtter). 'Vask føttene deres' er grammatisk korrekt men 'vaske føttene deres' med infinitiv passer bedre i den syntaktiske sammenhengen med 'og bli natten over og vaske' som en sammenhengende rekke."
+      }
+    ]
   },
   {
     "bookId": 1,
@@ -21,7 +29,15 @@
     "bookId": 1,
     "chapterId": 19,
     "verseId": 4,
-    "text": "Men før de hadde lagt seg, omringet byens menn, Sodomas menn, huset – både unge og gamle, hele folket fra alle kanter."
+    "text": "Men før de hadde lagt seg, omringet byens menn, mennene i Sodoma, huset – både unge og gamle, hele folket fra alle kanter.",
+    "versions": [
+      {
+        "text": "Men før de hadde lagt seg, omringet byens menn, Sodomas menn, huset – både unge og gamle, hele folket fra alle kanter.",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "Hebraisk 'אַנְשֵׁי סְדֹם' betyr 'mennene i Sodoma', ikke 'Sodomas menn'. 'Mennene i Sodoma' er en mer presis og naturlig formulering som også skiller bedre mellom de to leddene 'אַנְשֵׁי הָעִיר' (byens menn) og 'אַנְשֵׁי סְדֹם' (mennene i Sodoma)."
+      }
+    ]
   },
   {
     "bookId": 1,
@@ -39,7 +55,15 @@
     "bookId": 1,
     "chapterId": 19,
     "verseId": 7,
-    "text": "Han sa: «Jeg ber dere, brødre, gjør ikke denne ondskapen!»"
+    "text": "Han sa: «Jeg ber dere, mine brødre, gjør ikke noe ondt!»",
+    "versions": [
+      {
+        "text": "Han sa: «Jeg ber dere, brødre, gjør ikke denne ondskapen!»",
+        "type": "error",
+        "severity": "major",
+        "explanation": "Hebraisk 'תָּרֵעוּ' er en generell form av 'å handle ondt/gjøre ondt', ikke 'denne ondskapen' (som ville vært 'הָרָעָה הַזֹּאת'). Dessuten er 'אַחַי' 'mine brødre' med possessivt suffiks."
+      }
+    ]
   },
   {
     "bookId": 1,
@@ -75,19 +99,43 @@
     "bookId": 1,
     "chapterId": 19,
     "verseId": 13,
-    "text": "For vi skal ødelegge dette stedet, fordi ropet over dem er blitt så stort for Herrens åsyn. Herren har sendt oss for å ødelegge det."
+    "text": "For vi skal ødelegge dette stedet, fordi ropet over dem har blitt så stort for Herrens åsyn. Herren har sendt oss for å ødelegge det.»",
+    "versions": [
+      {
+        "text": "For vi skal ødelegge dette stedet, fordi ropet over dem er blitt så stort for Herrens åsyn. Herren har sendt oss for å ødelegge det.",
+        "type": "grammar",
+        "severity": "minor",
+        "explanation": "Vers 13 mangler avsluttende anførselstegn – det er en fortsettelse av englenes tale fra vers 12. Dessuten er 'har blitt' mer korrekt moderne norsk enn 'er blitt'."
+      }
+    ]
   },
   {
     "bookId": 1,
     "chapterId": 19,
     "verseId": 14,
-    "text": "Da gikk Lot ut og talte til svigersønnene sine, de som skulle ha døtrene hans, og sa: «Stå opp og dra bort fra dette stedet, for Herren skal ødelegge byen!» Men i svigersønnenes øyne var det som om han spøkte."
+    "text": "Da gikk Lot ut og talte til svigersønnene sine, de som skulle gifte seg med døtrene hans, og sa: «Stå opp og dra bort fra dette stedet, for Herren skal ødelegge byen!» Men i svigersønnenes øyne var det som om han spøkte.",
+    "versions": [
+      {
+        "text": "Da gikk Lot ut og talte til svigersønnene sine, de som skulle ha døtrene hans, og sa: «Stå opp og dra bort fra dette stedet, for Herren skal ødelegge byen!» Men i svigersønnenes øyne var det som om han spøkte.",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "'לֹקְחֵי בְנֹתָיו' betyr 'de som tok/skulle ta hans døtre' i ekteskapelig forstand. 'De som skulle gifte seg med døtrene hans' er tydeligere enn 'de som skulle ha døtrene hans'."
+      }
+    ]
   },
   {
     "bookId": 1,
     "chapterId": 19,
     "verseId": 15,
-    "text": "Da morgenen grydde, skyndte englene på Lot og sa: «Stå opp! Ta din kone og dine to døtre som finnes her, så du ikke blir revet bort i byens straff!»"
+    "text": "Da morgenen grydde, skyndte englene på Lot og sa: «Stå opp! Ta din kone og dine to døtre som er her, så du ikke blir revet bort i byens straff!»",
+    "versions": [
+      {
+        "text": "Da morgenen grydde, skyndte englene på Lot og sa: «Stå opp! Ta din kone og dine to døtre som finnes her, så du ikke blir revet bort i byens straff!»",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "'הַנִּמְצָאֹת' betyr 'som befinner seg her / som er her'. 'Som finnes her' er litt stivt; 'som er her' er mer naturlig norsk."
+      }
+    ]
   },
   {
     "bookId": 1,
@@ -141,7 +189,15 @@
     "bookId": 1,
     "chapterId": 19,
     "verseId": 22,
-    "text": "Skynd deg og flykt dit, for jeg kan ikke gjøre noe før du kommer dit. Derfor kalte de byen Soar."
+    "text": "Skynd deg og flykt dit, for jeg kan ikke gjøre noe før du kommer dit.» Derfor ble byen kalt Soar.",
+    "versions": [
+      {
+        "text": "Skynd deg og flykt dit, for jeg kan ikke gjøre noe før du kommer dit. Derfor kalte de byen Soar.",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "Det hebraiske 'קָרָא שֵׁם' brukes her i passiv/upersonlig forstand – 'byen ble kalt'. Dessuten mangler avsluttende anførselstegn etter taledelen."
+      }
+    ]
   },
   {
     "bookId": 1,
@@ -159,7 +215,15 @@
     "bookId": 1,
     "chapterId": 19,
     "verseId": 25,
-    "text": "Han ødela disse byene og hele sletten, alle som bodde i byene, og alt som vokste på marken."
+    "text": "Han ødela disse byene og hele sletten, alle som bodde i byene, og det som vokste på marken.",
+    "versions": [
+      {
+        "text": "Han ødela disse byene og hele sletten, alle som bodde i byene, og alt som vokste på marken.",
+        "type": "grammar",
+        "severity": "minor",
+        "explanation": "'צֶמַח הָאֲדָמָה' (markens vekst/grøde) er en kollektiv betegnelse. 'Det som vokste' er mer presist enn 'alt som vokste', da hebraisk tekst ikke har 'כָּל' (alt) foran dette leddet."
+      }
+    ]
   },
   {
     "bookId": 1,
@@ -195,13 +259,29 @@
     "bookId": 1,
     "chapterId": 19,
     "verseId": 31,
-    "text": "Den eldste sa til den yngste: «Vår far er gammel, og det finnes ingen mann i landet som kan komme til oss, slik det er skikk over hele jorden.»"
+    "text": "Den eldste sa til den yngste: «Vår far er gammel, og det finnes ingen mann i landet som kan komme inn til oss, slik det er skikk over hele jorden.»",
+    "versions": [
+      {
+        "text": "Den eldste sa til den yngste: «Vår far er gammel, og det finnes ingen mann i landet som kan komme til oss, slik det er skikk over hele jorden.»",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "Hebraisk 'לָבוֹא עָלֵינוּ' er en eufemisme for seksuell omgang. 'Komme inn til oss' er den tradisjonelle norske bibeloversettelsen som bevarer den eufemistiske karakteren bedre enn bare 'komme til oss'."
+      }
+    ]
   },
   {
     "bookId": 1,
     "chapterId": 19,
     "verseId": 32,
-    "text": "Kom, la oss gi vår far vin å drikke og ligge med ham, så vi kan holde slekten i live gjennom vår far."
+    "text": "«Kom, la oss gi vår far vin å drikke og ligge med ham, så vi kan holde slekten i live gjennom vår far.»",
+    "versions": [
+      {
+        "text": "Kom, la oss gi vår far vin å drikke og ligge med ham, så vi kan holde slekten i live gjennom vår far.",
+        "type": "grammar",
+        "severity": "minor",
+        "explanation": "Verset mangler anførselstegn – det er direkte tale fra den eldste datteren."
+      }
+    ]
   },
   {
     "bookId": 1,

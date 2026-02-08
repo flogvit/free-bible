@@ -57,7 +57,15 @@
     "bookId": 1,
     "chapterId": 4,
     "verseId": 8,
-    "text": "Kain sa noe til sin bror Abel. Og da de var ute på marken, reiste Kain seg mot sin bror Abel og slo ham i hjel."
+    "text": "Kain sa til sin bror Abel: «La oss gå ut på marken.» Og da de var ute på marken, reiste Kain seg mot sin bror Abel og slo ham i hjel.",
+    "versions": [
+      {
+        "text": "Kain sa noe til sin bror Abel. Og da de var ute på marken, reiste Kain seg mot sin bror Abel og slo ham i hjel.",
+        "type": "error",
+        "severity": "major",
+        "explanation": "Den hebraiske teksten har וַיֹּאמֶר ('og han sa') uten direkte tale-innhold, noe som er uvanlig. Mange manuskripter (inkludert Samaritansk Pentateuk, Septuaginta og Vulgata) har 'La oss gå ut på marken'. Oversettelsen 'sa noe' er uklar og uvanlig på norsk. Enten bør man følge de andre tekstvitnene, eller skrive 'Kain snakket med sin bror Abel' for bedre flyt."
+      }
+    ]
   },
   {
     "bookId": 1,
@@ -109,7 +117,15 @@
     "bookId": 1,
     "chapterId": 4,
     "verseId": 14,
-    "text": "Se, i dag driver du meg bort fra landet, og jeg må skjule meg for ditt ansikt. Fredløs og flyktning blir jeg på jorden, og den som finner meg, vil drepe meg.»"
+    "text": "Se, i dag driver du meg bort fra jordens overflate, og jeg må skjule meg for ditt ansikt. Fredløs og flyktning blir jeg på jorden, og den som finner meg, vil drepe meg.»",
+    "versions": [
+      {
+        "text": "Se, i dag driver du meg bort fra landet, og jeg må skjule meg for ditt ansikt. Fredløs og flyktning blir jeg på jorden, og den som finner meg, vil drepe meg.»",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "Det hebraiske פְּנֵי הָאֲדָמָה betyr 'jordens overflate/ansikt', ikke 'landet'. אֲדָמָה er 'jorden/jordoverflaten', og dette knytter an til forbannelsen i v.11 der det er nettopp אֲדָמָה (jorden) som er i fokus. 'Landet' kan gi inntrykk av et bestemt geografisk område, mens originalen handler om å bli drevet bort fra jordens overflate generelt."
+      }
+    ]
   },
   {
     "bookId": 1,
@@ -151,7 +167,15 @@
     "bookId": 1,
     "chapterId": 4,
     "verseId": 20,
-    "text": "Ada fødte Jabal. Han ble stamfar til dem som bor i telt og holder buskap."
+    "text": "Ada fødte Jabal. Han ble stamfar til dem som bor i telt og driver med fe.",
+    "versions": [
+      {
+        "text": "Ada fødte Jabal. Han ble stamfar til dem som bor i telt og holder buskap.",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "Det hebraiske מִקְנֶה refererer spesifikt til husdyr/fe (kveg, småfe), ikke 'buskap' som er et mer generelt og litt arkaisk ord på norsk. 'Driver med fe' eller 'har husdyr' er mer presist og moderne."
+      }
+    ]
   },
   {
     "bookId": 1,
@@ -163,7 +187,21 @@
     "bookId": 1,
     "chapterId": 4,
     "verseId": 22,
-    "text": "Også Silla fødte en sønn, Tubal-Kain, som smidde alle slags redskaper av bronse og jern. Tubal-Kains søster var Naama."
+    "text": "Også Silla fødte en sønn, Tubal-Kain. Han smidde og skjerpet alle slags redskaper av bronse og jern. Tubal-Kains søster var Naama.",
+    "versions": [
+      {
+        "text": "Også Silla fødte en sønn, Tubal-Kain, som smidde alle slags redskaper av bronse og jern. Tubal-Kains søster var Naama.",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "Det hebraiske לֹטֵשׁ betyr 'sliper/skjerper' og חֹרֵשׁ betyr 'håndverker/smed'. Teksten beskriver ham som en som både former (smir) og sliper/skjerper metallredskaper. Nåværende oversettelse mangler aspektet med sliping/skjerping."
+      },
+      {
+        "text": "Også Silla fødte en sønn, Tubal-Kain. Han smidd og skjerpet alle slags redskaper av bronse og jern. Tubal-Kains søster var Naama.",
+        "type": "grammar",
+        "severity": "critical",
+        "explanation": "Grammatisk feil: 'smidd' er partisipp/adjektiv, men her trengs preteritum 'smidde'. 'Han smidd' er ikke korrekt norsk."
+      }
+    ]
   },
   {
     "bookId": 1,

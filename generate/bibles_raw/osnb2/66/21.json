@@ -21,11 +21,17 @@
     "bookId": 66,
     "chapterId": 21,
     "verseId": 3,
-    "text": "Og jeg hørte en høy røst fra tronen som sa: «Se, Guds bolig er hos menneskene, og han skal bo hos dem, og de skal være hans folk, og Gud selv skal være hos dem.»",
+    "text": "Og jeg hørte en høy røst fra tronen som sa: «Se, Guds bolig er hos menneskene, og han skal bo hos dem, og de skal være hans folk, og Gud selv skal være hos dem.",
     "versions": [
       {
         "text": "Og jeg hørte en høy røst fra tronen som sa: «Se, Guds bolig er hos menneskene, og han skal bo hos dem, og de skal være hans folk, og Gud selv skal være hos dem.",
         "explanation": "Mangler avsluttende anførselstegn. Sitatet fra røsten avsluttes ikke i vers 3, men fortsetter i vers 4, så dette er egentlig korrekt struktur. Ingen endring nødvendig ved nærmere ettersyn."
+      },
+      {
+        "text": "Og jeg hørte en høy røst fra tronen som sa: «Se, Guds bolig er hos menneskene, og han skal bo hos dem, og de skal være hans folk, og Gud selv skal være hos dem.»",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "Sitatet fra tronen fortsetter i vers 4 (avsluttet med » der). Å ha avsluttende anførselstegn i vers 3 bryter sitatet opp feilaktig. Version history viser at dette ble vurdert, og opprinnelig versjon manglet avsluttende anførselstegn – men den nåværende versjonen la det til igjen. Siden vers 4 avslutter med », bør vers 3 ikke ha avsluttende anførselstegn."
       }
     ]
   },
@@ -39,7 +45,15 @@
     "bookId": 66,
     "chapterId": 21,
     "verseId": 5,
-    "text": "Og han som sitter på tronen, sa: «Se, jeg gjør alle ting nye.» Og han sier: «Skriv, for disse ordene er troverdige og sanne.»"
+    "text": "Og han som sitter på tronen, sa: «Se, jeg gjør alle ting nye!» Og han sier: «Skriv, for disse ordene er troverdige og sanne.»",
+    "versions": [
+      {
+        "text": "Og han som sitter på tronen, sa: «Se, jeg gjør alle ting nye.» Og han sier: «Skriv, for disse ordene er troverdige og sanne.»",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "Denne proklamasjonen fra tronen – 'Se, jeg gjør alle ting nye' – er en av de mest kraftfulle utsagnene i Åpenbaringen. Et utropstegn forsterker den proklamatoriske tonen og passer bedre for muntlig lesning."
+      }
+    ]
   },
   {
     "bookId": 66,
@@ -231,6 +245,14 @@
     "bookId": 66,
     "chapterId": 21,
     "verseId": 27,
-    "text": "Og intet urent skal komme inn i den, og ingen som gjør avskyelige ting eller lyver, men bare de som er skrevet i Lammets livets bok."
+    "text": "Og intet urent skal komme inn i den, heller ikke noen som gjør avskyelige ting eller farer med løgn, men bare de som er skrevet i Lammets livsbok.",
+    "versions": [
+      {
+        "text": "Og intet urent skal komme inn i den, og ingen som gjør avskyelige ting eller lyver, men bare de som er skrevet i Lammets livets bok.",
+        "type": "error",
+        "severity": "major",
+        "explanation": "1) ψεῦδος er substantivet 'løgn/usannhet', ikke verbet 'lyver'. ποιῶν ψεῦδος = 'gjør løgn' / 'farer med løgn'. 2) 'Livets bok' (τῷ βιβλίῳ τῆς ζωῆς) oversettes bedre som 'livsbok' for naturlig norsk. 3) καὶ ποιῶν i denne konstruksjonen har mer betydningen 'heller ikke noen som' snarere enn 'og ingen som'."
+      }
+    ]
   }
 ]

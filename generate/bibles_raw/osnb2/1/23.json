@@ -51,7 +51,15 @@
     "bookId": 1,
     "chapterId": 23,
     "verseId": 8,
-    "text": "Han talte med dem og sa: «Hvis det er deres vilje at jeg får begrave min døde, så hør på meg og gå i forbønn for meg hos Efron, Sohars sønn."
+    "text": "Han talte med dem og sa: «Hvis det er deres vilje at jeg får begrave min døde, så hør på meg og legg inn et godt ord for meg hos Efron, Sohars sønn.",
+    "versions": [
+      {
+        "text": "Han talte med dem og sa: «Hvis det er deres vilje at jeg får begrave min døde, så hør på meg og gå i forbønn for meg hos Efron, Sohars sønn.",
+        "type": "error",
+        "severity": "major",
+        "explanation": "Det hebraiske verbet פגע med preposisjon ב betyr her 'å tale til noen på vegne av en annen', altså å megle eller legge inn et godt ord. 'Gå i forbønn' har sterke religiøse/bønnerelaterte konnotasjoner på norsk og er misvisende i denne konteksten der det handler om å overtale Efron til å selge. 'Legg inn et godt ord' er mer presist og naturlig."
+      }
+    ]
   },
   {
     "bookId": 1,
@@ -117,17 +125,31 @@
     "bookId": 1,
     "chapterId": 23,
     "verseId": 17,
-    "text": "Slik ble Efrons mark ved Makpela, som ligger overfor Mamre, stadfestet – marken med hulen på den og alle trærne på marken innenfor hele dens grense rundt omkring –"
+    "text": "Slik ble Efrons mark ved Makpela, overfor Mamre, overdratt – marken med hulen på den og alle trærne på marken innenfor hele dens grense rundt omkring –",
+    "versions": [
+      {
+        "text": "Slik ble Efrons mark ved Makpela, som ligger overfor Mamre, stadfestet – marken med hulen på den og alle trærne på marken innenfor hele dens grense rundt omkring –",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "1) Det hebraiske וַיָּקָם betyr her at eiendommen 'ble overdratt/gikk over' til ny eier, altså et juridisk eiendomsskifte. 'Stadfestet' antyder bare bekreftelse, mens 'overdratt' fanger den faktiske eiendomsoverføringen bedre. 2) 'som ligger' er lagt til uten grunnlag i originalen; הַמַּכְפֵּלָה אֲשֶׁר לִפְנֵי מַמְרֵא sier bare 'Makpela som er overfor Mamre'."
+      }
+    ]
   },
   {
     "bookId": 1,
     "chapterId": 23,
     "verseId": 18,
-    "text": "som Abrahams eiendom, for Hets sønners øyne, for alle som kom til hans byport.",
+    "text": "som Abrahams eiendom, for Hets sønners øyne, alle som kom til byporten i hans by.",
     "versions": [
       {
         "text": "som Abrahams eiendom, for øynene på Hets sønner, for alle som kom til hans byport.",
         "explanation": "I vers 11 ble 'for mitt folks øyne' valgt som mer idiomatisk norsk fremfor 'for øynene på'. For konsistens bør samme prinsipp følges her: 'for Hets sønners øyne' er mer naturlig enn 'for øynene på Hets sønner'."
+      },
+      {
+        "text": "som Abrahams eiendom, for Hets sønners øyne, for alle som kom til hans byport.",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "Det hebraiske בָּאֵי שַׁעַר־עִירוֹ betyr 'de som kom til porten i hans by'. Uttrykket 'hans byport' er litt uklart – det høres ut som Abrahams byport, men det er Efrons by det er snakk om. 'Byporten i hans by' er mer presist. I tillegg er בְּכֹל en presisering av hvem som er Hets sønner (alle som kom), ikke en separat gruppe, så 'alle som' uten 'for' foran gjenspeiler dette bedre."
       }
     ]
   },
@@ -141,6 +163,14 @@
     "bookId": 1,
     "chapterId": 23,
     "verseId": 20,
-    "text": "Slik ble marken og hulen på den stadfestet som Abrahams eiendom til gravplass, kjøpt fra Hets sønner."
+    "text": "Slik ble marken og hulen på den overdratt til Abraham som gravplass, fra Hets sønner.",
+    "versions": [
+      {
+        "text": "Slik ble marken og hulen på den stadfestet som Abrahams eiendom til gravplass, kjøpt fra Hets sønner.",
+        "type": "error",
+        "severity": "major",
+        "explanation": "Samme problem som v.17: וַיָּקָם betyr 'ble overdratt' snarere enn 'stadfestet'. Dessuten legger 'kjøpt' til et ord som ikke finnes i originalteksten her (מֵאֵת betyr 'fra'). Formuleringen bør gjenspeile den juridiske overføringen uten å legge til ekstra ord."
+      }
+    ]
   }
 ]

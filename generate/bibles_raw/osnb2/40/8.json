@@ -21,7 +21,15 @@
     "bookId": 40,
     "chapterId": 8,
     "verseId": 3,
-    "text": "Han rakte ut hånden, rørte ved ham og sa: «Jeg vil. Bli ren!» Og straks ble han renset for sin spedalskhet."
+    "text": "Han rakte ut hånden, rørte ved ham og sa: «Jeg vil. Bli ren!» Og straks ble spedalskhet hans renset.",
+    "versions": [
+      {
+        "text": "Han rakte ut hånden, rørte ved ham og sa: «Jeg vil. Bli ren!» Og straks ble han renset for sin spedalskhet.",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "Grunnteksten sier bokstavelig 'hans spedalskhet ble renset' (ἐκαθαρίσθη αὐτοῦ ἡ λέπρα), der spedalskhet er subjektet. Den nåværende oversettelsen er imidlertid fullt forståelig og teologisk korrekt, så dette er en svært liten detalj."
+      }
+    ]
   },
   {
     "bookId": 40,
@@ -33,7 +41,15 @@
     "bookId": 40,
     "chapterId": 8,
     "verseId": 5,
-    "text": "Da han kom inn i Kapernaum, kom en offiser til ham og ba ham:"
+    "text": "Da han kom inn i Kapernaum, kom en offiser til ham og bønnfalt ham:",
+    "versions": [
+      {
+        "text": "Da han kom inn i Kapernaum, kom en offiser til ham og ba ham:",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "παρακαλῶν har en sterkere nyanse enn bare 'ba', det innebærer inntrengende bønn. 'Bønnfalt' gjengir intensiteten bedre. Kolon på slutten fungerer godt som overgang til direkte tale i neste vers."
+      }
+    ]
   },
   {
     "bookId": 40,
@@ -75,7 +91,15 @@
     "bookId": 40,
     "chapterId": 8,
     "verseId": 9,
-    "text": "For jeg er selv en mann under kommando og har soldater under meg. Sier jeg til én: Gå! – så går han. Og til en annen: Kom! – så kommer han. Og til min tjener: Gjør dette! – så gjør han det.»"
+    "text": "For også jeg er en mann under myndighet og har soldater under meg. Sier jeg til én: Gå! – så går han. Og til en annen: Kom! – så kommer han. Og til min tjener: Gjør dette! – så gjør han det.»",
+    "versions": [
+      {
+        "text": "For jeg er selv en mann under kommando og har soldater under meg. Sier jeg til én: Gå! – så går han. Og til en annen: Kom! – så kommer han. Og til min tjener: Gjør dette! – så gjør han det.»",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "καὶ γὰρ ἐγώ betyr 'for også jeg', ikke 'for jeg er selv'. Poenget er at offiseren sammenligner seg med Jesus: 'også jeg' er en mann under autoritet – underforstått at Jesus har enda større autoritet. ἐξουσίαν betyr 'myndighet/autoritet', som er mer presist enn 'kommando'."
+      }
+    ]
   },
   {
     "bookId": 40,
@@ -133,11 +157,23 @@
     "bookId": 40,
     "chapterId": 8,
     "verseId": 15,
-    "text": "Han rørte ved hånden hennes, og feberen forlot henne. Hun sto opp og tjente dem.",
+    "text": "Han rørte ved hånden hennes, og feberen forlot henne. Hun sto opp og tjente ham.",
     "versions": [
       {
         "text": "Han rørte ved hånden hennes, og feberen forlot henne. Hun sto opp og tjente ham.",
         "explanation": "Noen håndskrifter har αὐτοῖς (dem) i stedet for αὐτῷ (ham), noe som er mer sannsynlig i konteksten der Jesus hadde disiplene med seg. Dette er imidlertid en tekstkritisk variant, og hvis grunnteksten følges konsekvent med αὐτῷ, er 'ham' korrekt."
+      },
+      {
+        "text": "Han rørte ved hånden hennes, og feberen forlot henne. Hun sto opp og tjente dem.",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "Grunnteksten har αὐτῷ (ham), ikke αὐτοῖς (dem). Selv om versjonshistorikken nevner tekstkritiske varianter, bør oversettelsen følge den oppgitte grunnteksten som har αὐτῷ. Den nåværende teksten 'dem' avviker fra originalteksten som er oppgitt."
+      },
+      {
+        "text": "Hun sto opp og tjente ham.",
+        "type": "error",
+        "severity": "critical",
+        "explanation": "Den nåværende teksten mangler den første halvdelen av verset: 'καὶ ἥψατο τῆς χειρὸς αὐτῆς, καὶ ἀφῆκεν αὐτὴν ὁ πυρετός' (Han rørte ved hånden hennes, og feberen forlot henne). Versjonshistorikken viser at den opprinnelige oversettelsen hadde denne delen med, men den ble tilsynelatende fjernet ved en feil. Revision 2 var en foreslått endring fra 'ham' til 'dem' som ble avvist, men det ser ut til at hele første del av verset gikk tapt i prosessen. Originalteksten har αὐτῷ (ham), så 'ham' er korrekt."
       }
     ]
   },

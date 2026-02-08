@@ -63,7 +63,15 @@
     "bookId": 40,
     "chapterId": 14,
     "verseId": 9,
-    "text": "Kongen ble bedrøvet, men på grunn av edene og gjestene befalte han at det skulle gis henne."
+    "text": "Kongen ble bedrøvet, men på grunn av edene og dem som satt til bords med ham, befalte han at det skulle gis henne.",
+    "versions": [
+      {
+        "text": "Kongen ble bedrøvet, men på grunn av edene og gjestene befalte han at det skulle gis henne.",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "Det greske 'τοὺς συνανακειμένους' betyr spesifikt 'de som lå/satt til bords med ham', altså bordgjestene. 'Gjestene' er akseptabelt men mindre presist – det spesifikke er at de var vitner ved bordet, noe som forklarer presset Herodes følte."
+      }
+    ]
   },
   {
     "bookId": 40,
@@ -93,7 +101,21 @@
     "bookId": 40,
     "chapterId": 14,
     "verseId": 14,
-    "text": "Da han steg i land, så han en stor folkemengde. Han fikk inderlig medynk med dem og helbredet de syke blant dem."
+    "text": "Da han steg ut av båten, så han en stor folkemengde. Han fikk inderlig medynk med dem og helbredet de syke blant dem.",
+    "versions": [
+      {
+        "text": "Da han steg i land, så han en stor folkemengde. Han fikk inderlig medynk med dem og helbredet de syke blant dem.",
+        "type": "error",
+        "severity": "minor",
+        "explanation": "Det greske 'ἐξελθὼν' betyr 'gikk ut' (av båten), ikke spesifikt 'steg i land'. 'Gikk ut' er mer nøytralt og direkte oversettelse av verbet."
+      },
+      {
+        "text": "Da han gikk ut, så han en stor folkemengde. Han fikk inderlig medynk med dem og helbredet de syke blant dem.",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "Konteksten (v. 13: han dro med båt) gjør at 'ἐξελθὼν' her naturlig betyr at han steg ut av båten. 'Gikk ut' er for vagt og gir ikke riktig bilde. Forrige versjon 'steg i land' ble endret, men 'steg ut av båten' er et kompromiss som er direkte uten å bruke det avviste 'steg i land'."
+      }
+    ]
   },
   {
     "bookId": 40,
@@ -111,7 +133,15 @@
     "bookId": 40,
     "chapterId": 14,
     "verseId": 17,
-    "text": "De svarte ham: «Vi har ikke annet her enn fem brød og to fisker.»"
+    "text": "Men de sa til ham: «Vi har ikke annet her enn fem brød og to fisker.»",
+    "versions": [
+      {
+        "text": "De svarte ham: «Vi har ikke annet her enn fem brød og to fisker.»",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "Det greske 'οἱ δὲ λέγουσιν αὐτῷ' er 'men de sa til ham', ikke 'de svarte ham'. Verbet er 'λέγουσιν' (sier), ikke 'ἀποκρίνομαι' (svarer). 'Men de sa' bevarer også 'δὲ' (men/og)."
+      }
+    ]
   },
   {
     "bookId": 40,
@@ -123,11 +153,17 @@
     "bookId": 40,
     "chapterId": 14,
     "verseId": 19,
-    "text": "Så befalte han folkemengdene å sette seg ned i gresset. Han tok de fem brødene og de to fiskene, så opp mot himmelen og velsignet dem. Så brøt han brødene og ga dem til disiplene, og disiplene ga dem til folkemengdene.",
+    "text": "Så befalte han folkemengdene å sette seg ned i gresset. Han tok de fem brødene og de to fiskene, så opp mot himmelen, ba velsignelsen og brøt brødene. Så ga han dem til disiplene, og disiplene ga dem til folkemengdene.",
     "versions": [
       {
         "text": "Så ba han folkemengdene sette seg ned i gresset. Han tok de fem brødene og de to fiskene, så opp mot himmelen og velsignet dem. Så brøt han brødene og ga dem til disiplene, og disiplene ga dem til folkemengdene.",
         "explanation": "Det greske 'κελεύσας' betyr 'befalte' eller 'ga ordre om', ikke bare 'ba'. Det samme verbet brukes i vers 22 ('fikk... til å'), så konsistens tilsier en sterkere oversettelse."
+      },
+      {
+        "text": "Så befalte han folkemengdene å sette seg ned i gresset. Han tok de fem brødene og de to fiskene, så opp mot himmelen og velsignet dem. Så brøt han brødene og ga dem til disiplene, og disiplene ga dem til folkemengdene.",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "Det greske 'εὐλόγησεν' (velsignet) har ikke et eksplisitt objekt 'dem' i teksten. 'Velsignet dem' kan misforstås som at han velsignet brødene/fiskene som objekter, mens den jødiske praksis var å velsigne Gud (si takkebønn). 'Ba velsignelsen' er mer presist teologisk og unngår misforståelse."
       }
     ]
   },
@@ -141,7 +177,15 @@
     "bookId": 40,
     "chapterId": 14,
     "verseId": 21,
-    "text": "De som hadde spist, var omkring fem tusen menn, foruten kvinner og barn."
+    "text": "De som spiste, var omkring fem tusen menn, foruten kvinner og barn.",
+    "versions": [
+      {
+        "text": "De som hadde spist, var omkring fem tusen menn, foruten kvinner og barn.",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "Det greske 'ἐσθίοντες' er presens partisipp ('de som spiste/spiste'), ikke perfektum ('hadde spist'). 'De som spiste' er mer nøyaktig."
+      }
+    ]
   },
   {
     "bookId": 40,

@@ -3,7 +3,15 @@
     "bookId": 1,
     "chapterId": 6,
     "verseId": 1,
-    "text": "Da menneskene begynte å bli tallrike på jorden og det ble født døtre til dem,"
+    "text": "Da menneskene begynte å bli tallrike på jorden, og det ble født døtre til dem,",
+    "versions": [
+      {
+        "text": "Da menneskene begynte å bli tallrike på jorden og det ble født døtre til dem,",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "Det bør være komma før 'og' her fordi det innleder en ny setning med eget subjekt ('det'). Dette er standard norsk tegnsetting."
+      }
+    ]
   },
   {
     "bookId": 1,
@@ -27,17 +35,31 @@
     "bookId": 1,
     "chapterId": 6,
     "verseId": 4,
-    "text": "På den tiden var kjempene på jorden, og også senere, da Guds sønner gikk inn til menneskedøtrene og de fødte barn til dem. Dette var de veldige menn fra gammel tid, navnkundige menn."
+    "text": "Kjempene var på jorden i de dager, og også senere, da Guds sønner gikk inn til menneskedøtrene og de fødte barn til dem. Dette var de veldige menn fra gammel tid, navnkundige menn.",
+    "versions": [
+      {
+        "text": "På den tiden var kjempene på jorden, og også senere, da Guds sønner gikk inn til menneskedøtrene og de fødte barn til dem. Dette var de veldige menn fra gammel tid, navnkundige menn.",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "Det hebraiske 'בַּיָּמִים הָהֵם' (i de dager) er en mer direkte og bibelsk frase enn 'på den tiden'. Dette gir også bedre flyt ved å starte med subjektet 'Kjempene'."
+      }
+    ]
   },
   {
     "bookId": 1,
     "chapterId": 6,
     "verseId": 5,
-    "text": "Herren så at menneskets ondskap var stor på jorden, og at hver tanke og hensikt i deres hjerter bare var ond hele dagen.",
+    "text": "Herren så at menneskets ondskap var stor på jorden, og at hver tanke og hensikt i dets hjerte bare var ond hele dagen.",
     "versions": [
       {
         "text": "Herren så at menneskets ondskap var stor på jorden, og at alle tanker og hensikter i deres hjerter bare var onde hele dagen.",
         "explanation": "Det hebraiske 'כָל־יֵצֶר' (kol-yetser) med entallsformen 'יֵצֶר' peker på hver enkelt tankeimpuls. 'Hver tanke' gir bedre flyt og er mer presist enn 'alle tanker'. Også 'onde' bør være 'ond' i entall for å matche."
+      },
+      {
+        "text": "Herren så at menneskets ondskap var stor på jorden, og at hver tanke og hensikt i deres hjerter bare var ond hele dagen.",
+        "type": "error",
+        "severity": "minor",
+        "explanation": "Det hebraiske 'לִבּוֹ' er entall possessiv 3. person hankjønn ('dets/hans hjerte'), ikke flertall ('deres hjerter'). Subjektet er 'הָאָדָם' (mennesket) i entall. 'Dets hjerte' er mer nøyaktig."
       }
     ]
   },
@@ -75,23 +97,45 @@
     "bookId": 1,
     "chapterId": 6,
     "verseId": 11,
-    "text": "Jorden var fordervet for Guds ansikt, og jorden var full av vold."
+    "text": "Jorden var blitt fordervet for Guds åsyn, og jorden var full av vold.",
+    "versions": [
+      {
+        "text": "Jorden var fordervet for Guds ansikt, og jorden var full av vold.",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "Det hebraiske verbet 'וַתִּשָּׁחֵת' er i nifal (passiv) og indikerer en prosess som har skjedd – 'var blitt fordervet' er mer presist. 'Åsyn' er mer konsistent med vers 13 der 'לְפָנַי' oversettes 'for mitt åsyn'."
+      }
+    ]
   },
   {
     "bookId": 1,
     "chapterId": 6,
     "verseId": 12,
-    "text": "Gud så på jorden, og se, den var fordervet, for alt kjød hadde fordervet sin ferd på jorden."
+    "text": "Gud så jorden, og se, den var fordervet, for alt kjød hadde fordervet sin ferd på jorden.",
+    "versions": [
+      {
+        "text": "Gud så på jorden, og se, den var fordervet, for alt kjød hadde fordervet sin ferd på jorden.",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "Det hebraiske 'וַיַּרְא אֱלֹהִים אֶת־הָאָרֶץ' bruker direkte objekt med 'אֶת'. 'Så jorden' er mer direkte enn 'så på jorden', som impliserer et annet hebraisk uttrykk (הִבִּיט אֶל/עַל)."
+      }
+    ]
   },
   {
     "bookId": 1,
     "chapterId": 6,
     "verseId": 13,
-    "text": "Da sa Gud til Noah: «Enden for alt kjød er kommet for mitt åsyn. Jorden er full av vold på grunn av dem. Se, jeg vil ødelegge dem sammen med jorden.»",
+    "text": "Da sa Gud til Noah: «Enden for alt kjød er kommet for mitt åsyn, for jorden er full av vold på grunn av dem. Se, jeg vil ødelegge dem sammen med jorden.»",
     "versions": [
       {
         "text": "Da sa Gud til Noah: «Enden for alt kjød er kommet for mitt åsyn. Jorden er full av vold på grunn av dem. Se, jeg vil ødelegge dem sammen med jorden.",
         "explanation": "Verset mangler avsluttende anførselstegn. Guds tale begynner med « men avsluttes ikke med »."
+      },
+      {
+        "text": "Da sa Gud til Noah: «Enden for alt kjød er kommet for mitt åsyn. Jorden er full av vold på grunn av dem. Se, jeg vil ødelegge dem sammen med jorden.»",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "Det hebraiske 'כִּי־מָלְאָה' begynner med 'כִּי' (for/fordi), som gir en begrunnelse. 'For jorden er full av vold' gir den kausale sammenhengen som originalen uttrykker."
       }
     ]
   },
@@ -123,7 +167,15 @@
     "bookId": 1,
     "chapterId": 6,
     "verseId": 17,
-    "text": "Se, jeg sender vannflommen over jorden for å ødelegge alt kjød som har livsånde i seg, under himmelen. Alt som er på jorden, skal omkomme."
+    "text": "Og jeg, se, jeg bringer vannflommen over jorden for å ødelegge alt kjød som har livsånde i seg, under himmelen. Alt som er på jorden, skal omkomme.",
+    "versions": [
+      {
+        "text": "Se, jeg sender vannflommen over jorden for å ødelegge alt kjød som har livsånde i seg, under himmelen. Alt som er på jorden, skal omkomme.",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "Det hebraiske 'וַאֲנִי הִנְנִי מֵבִיא' har en emfatisk struktur 'Og jeg, se, jeg bringer' som understreker Guds personlige handling. 'Bringer' er også nærmere 'מֵבִיא' enn 'sender'."
+      }
+    ]
   },
   {
     "bookId": 1,
@@ -153,7 +205,15 @@
     "bookId": 1,
     "chapterId": 6,
     "verseId": 21,
-    "text": "Du skal samle til deg av all slags mat som kan spises, og ta det med deg. Det skal være til føde for deg og for dem.»"
+    "text": "Du skal ta med deg av all slags mat som kan spises, og samle det hos deg. Det skal være til føde for deg og for dem.»",
+    "versions": [
+      {
+        "text": "Du skal samle til deg av all slags mat som kan spises, og ta det med deg. Det skal være til føde for deg og for dem.»",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "I originalen kommer 'קַח־לְךָ' (ta til deg) først, deretter 'וְאָסַפְתָּ אֵלֶיךָ' (og samle det til deg). Den nåværende oversettelsen bytter om rekkefølgen. 'Ta med deg' for 'קַח־לְךָ' og 'samle det hos deg' for 'וְאָסַפְתָּ אֵלֶיךָ' følger originalen bedre."
+      }
+    ]
   },
   {
     "bookId": 1,

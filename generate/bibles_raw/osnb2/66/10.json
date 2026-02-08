@@ -9,7 +9,15 @@
     "bookId": 66,
     "chapterId": 10,
     "verseId": 2,
-    "text": "I hånden holdt han en liten bokrull som var åpnet. Han satte sin høyre fot på havet og den venstre på jorden."
+    "text": "Han hadde en liten, åpen bokrull i hånden. Han satte sin høyre fot på havet og den venstre på jorden.",
+    "versions": [
+      {
+        "text": "I hånden holdt han en liten bokrull som var åpnet. Han satte sin høyre fot på havet og den venstre på jorden.",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "Det greske 'ἔχων' er et partisipp ('havende'), ikke et finitt verb. Det beskriver engelen som allerede holder bokrullen, ikke en handling. 'Han hadde ... i hånden' gjenspeiler partisippformen bedre enn 'I hånden holdt han'. Også 'ἠνεῳγμένον' er perfektum partisipp - bokrullen er allerede åpnet/åpen, så 'åpen' er mer naturlig enn 'som var åpnet'."
+      }
+    ]
   },
   {
     "bookId": 66,
@@ -45,7 +53,15 @@
     "bookId": 66,
     "chapterId": 10,
     "verseId": 7,
-    "text": "Men i de dagene når den sjuende engelen lar sin røst lyde og skal til å blåse i basunen, da skal Guds hemmelighet være fullført, slik han forkynte det som godt budskap for sine tjenere, profetene.»"
+    "text": "Men i de dagene når den sjuende engelen lar sin røst lyde og skal til å blåse i basunen, da er Guds hemmelighet fullført, slik han forkynte som godt budskap for sine tjenere profetene.»",
+    "versions": [
+      {
+        "text": "Men i de dagene når den sjuende engelen lar sin røst lyde og skal til å blåse i basunen, da skal Guds hemmelighet være fullført, slik han forkynte det som godt budskap for sine tjenere, profetene.»",
+        "type": "error",
+        "severity": "major",
+        "explanation": "1) 'ἐτελέσθη' er aorist passiv indikativ, som uttrykker fullført handling med sikkerhet - 'da er ... fullført' er mer treffende enn 'da skal ... være fullført'. 2) 'ὡς εὐηγγέλισεν τοὺς ἑαυτοῦ δούλους τοὺς προφήτας' - 'slik han forkynte som godt budskap' er mer direkte; 'det som godt budskap' legger til et ekstra ord som ikke finnes i grunnteksten."
+      }
+    ]
   },
   {
     "bookId": 66,

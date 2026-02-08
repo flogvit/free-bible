@@ -15,11 +15,17 @@
     "bookId": 66,
     "chapterId": 2,
     "verseId": 3,
-    "text": "Du har utholdenhet og har båret byrder for mitt navns skyld uten å bli trett.",
+    "text": "Du har utholdenhet og har holdt ut for mitt navns skyld uten å bli trett.",
     "versions": [
       {
         "text": "Du har utholdenhet og har holdt ut for mitt navns skyld, og du har ikke gitt opp.",
         "explanation": "Det greske κεκοπίακες (fra κοπιάω) betyr 'å bli trett/utmattet', ikke 'å gi opp'. Verset understreker at de har holdt ut uten å bli utslitte. 'Gitt opp' er en fortolkende oversettelse som mister noe av originalens nyanse om utholdenhet uten utmattelse."
+      },
+      {
+        "text": "Du har utholdenhet og har båret byrder for mitt navns skyld uten å bli trett.",
+        "type": "error",
+        "severity": "major",
+        "explanation": "Det greske ἐβάστασας (fra βαστάζω) betyr her 'å holde ut/bære' i betydningen utholdenhet, ikke 'å bære byrder'. 'Har båret byrder' legger til et objekt ('byrder') som ikke finnes i originalteksten. 'Har holdt ut' er mer nøyaktig. Merk: dette skiller seg fra versjon 1 som hadde 'og du har ikke gitt opp' på slutten."
       }
     ]
   },
@@ -69,7 +75,15 @@
     "bookId": 66,
     "chapterId": 2,
     "verseId": 10,
-    "text": "Frykt ikke for det du skal lide. Se, djevelen kommer til å kaste noen av dere i fengsel for at dere skal bli prøvd, og dere skal ha trengsel i ti dager. Vær tro til døden, så skal jeg gi deg livets krone."
+    "text": "Frykt ikke for det du skal komme til å lide. Se, djevelen kommer til å kaste noen av dere i fengsel for at dere skal bli prøvd, og dere skal ha trengsel i ti dager. Vær tro inntil døden, så skal jeg gi deg livets krone.",
+    "versions": [
+      {
+        "text": "Frykt ikke for det du skal lide. Se, djevelen kommer til å kaste noen av dere i fengsel for at dere skal bli prøvd, og dere skal ha trengsel i ti dager. Vær tro til døden, så skal jeg gi deg livets krone.",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "Det greske ἄχρι θανάτου betyr 'inntil døden' (altså helt til det punktet hvor døden inntreffer), ikke bare 'til døden'. 'Inntil døden' understreker bedre at troskapen skal vare helt frem til dødsøyeblikket. Dette er en viktig teologisk nyanse."
+      }
+    ]
   },
   {
     "bookId": 66,
@@ -127,7 +141,15 @@
     "bookId": 66,
     "chapterId": 2,
     "verseId": 17,
-    "text": "Den som har ører, hør hva Ånden sier til menighetene! Den som seirer, vil jeg gi av den skjulte manna. Og jeg vil gi ham en hvit stein, og på steinen er det skrevet et nytt navn som ingen kjenner uten den som får det."
+    "text": "Den som har ører, hør hva Ånden sier til menighetene! Den som seirer, vil jeg gi av det skjulte mannaet. Og jeg vil gi ham en hvit stein, og på steinen er det skrevet et nytt navn som ingen kjenner uten den som mottar det.",
+    "versions": [
+      {
+        "text": "Den som har ører, hør hva Ånden sier til menighetene! Den som seirer, vil jeg gi av den skjulte manna. Og jeg vil gi ham en hvit stein, og på steinen er det skrevet et nytt navn som ingen kjenner uten den som får det.",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "τοῦ μάννα τοῦ κεκρυμμένου - 'manna' med bestemt artikkel og adjektiv bør oversettes 'det skjulte mannaet' for å gjenspeile de bestemte artiklene i gresk. 'Den skjulte manna' har feil kjønn (manna er intetkjønn på norsk). Også ὁ λαμβάνων = 'den som mottar/tar imot' er mer presist enn 'den som får det'."
+      }
+    ]
   },
   {
     "bookId": 66,
@@ -145,11 +167,17 @@
     "bookId": 66,
     "chapterId": 2,
     "verseId": 20,
-    "text": "Men jeg har dette imot deg: Du lar kvinnen Jesabel holde på, hun som kaller seg profetinne og som lærer og forfører mine tjenere til å drive hor og spise avgudsoffer.",
+    "text": "Men jeg har dette imot deg: Du lar kvinnen Jesabel holde på, hun som kaller seg profetinne, og hun lærer og forfører mine tjenere til å drive hor og spise avgudsoffer.",
     "versions": [
       {
         "text": "Men jeg har dette imot deg: Du tolererer kvinnen Jesabel, som kaller seg profetinne og lærer og forfører mine tjenere til å drive hor og spise avgudsoffer.",
         "explanation": "Det greske ἀφεῖς betyr 'tillater/lar være' snarere enn det mer moderne 'tolererer'. 'Lar...holde på' gir bedre muntlig flyt. I tillegg mangler oversettelsen artikkelen 'ἡ' foran λέγουσα som indikerer en relativ konstruksjon ('hun som')."
+      },
+      {
+        "text": "Men jeg har dette imot deg: Du lar kvinnen Jesabel holde på, hun som kaller seg profetinne og som lærer og forfører mine tjenere til å drive hor og spise avgudsoffer.",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "I den greske teksten er 'καὶ διδάσκει καὶ πλανᾷ' hovedverb (presens indikativ), ikke underordnet relativsetning. Det er Jesabel som aktivt lærer og forfører, ikke en del av hennes selvpåståtte tittel. Å endre 'som lærer' til 'og hun lærer' gjenspeiler den greske syntaksen bedre."
       }
     ]
   },

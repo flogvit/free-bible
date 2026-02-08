@@ -57,11 +57,17 @@
     "bookId": 66,
     "chapterId": 16,
     "verseId": 9,
-    "text": "Menneskene ble svidd av den intense heten.",
+    "text": "Menneskene ble svidd av den intense heten. De spottet Guds navn, han som har makt over disse plagene, og de omvendte seg ikke og ga ham ikke ære.",
     "versions": [
       {
         "text": "Menneskene ble brent av den intense heten. De spottet Guds navn, han som har makt over disse plagene, og de omvendte seg ikke og ga ham ikke ære.",
         "explanation": "Vers 8 bruker 'svi' (καυματίσαι), og vers 9 bruker samme verbstamme (ἐκαυματίσθησαν). For konsistens og bedre flyt bør samme ord brukes. 'Svidd' passer også bedre med 'hete' enn 'brent'."
+      },
+      {
+        "text": "Menneskene ble svidd av den intense heten.",
+        "type": "error",
+        "severity": "critical",
+        "explanation": "Verset mangler hele andre halvdel. Den greske teksten inkluderer at de spottet Guds navn, at Gud har makt over plagene, og at de ikke omvendte seg til å gi ham ære. Versjonshistorikken viser at den forrige versjonen hadde denne teksten, og endringen var kun ment å bytte 'brent' til 'svidd' – men resten av verset ble utilsiktet slettet. Teksten må gjenopprettes (med 'svidd' beholdt per den intenderte endringen)."
       }
     ]
   },

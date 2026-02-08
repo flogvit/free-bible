@@ -69,7 +69,15 @@
     "bookId": 46,
     "chapterId": 14,
     "verseId": 10,
-    "text": "Det finnes så mange forskjellige språk i verden, og ingen av dem er uten mening."
+    "text": "Det finnes kanskje så mange slags språk i verden, og ingen av dem er uten mening.",
+    "versions": [
+      {
+        "text": "Det finnes så mange forskjellige språk i verden, og ingen av dem er uten mening.",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "Det greske 'εἰ τύχοι' betyr 'for eksempel' eller 'kanskje' og angir en viss ubestemthet. Dette nyanserte uttrykket mangler i den nåværende oversettelsen."
+      }
+    ]
   },
   {
     "bookId": 46,
@@ -177,7 +185,15 @@
     "bookId": 46,
     "chapterId": 14,
     "verseId": 24,
-    "text": "Men om alle taler profetisk og det kommer inn en vantro eller ukyndig, da blir han overbevist av alle og dømt av alle."
+    "text": "Men om alle taler profetisk og det kommer inn en vantro eller ukyndig, da blir han avslørt av alle og gransket av alle.",
+    "versions": [
+      {
+        "text": "Men om alle taler profetisk og det kommer inn en vantro eller ukyndig, da blir han overbevist av alle og dømt av alle.",
+        "type": "error",
+        "severity": "major",
+        "explanation": "'ἐλέγχεται' betyr 'avslørt/overbevist om synd/konfrontert', og 'ἀνακρίνεται' betyr 'gransket/undersøkt'. 'Dømt' er for sterkt og gir feil konnotasjon – det greske ordet handler om prøving/gransking, ikke dom (κρίνω). 'Overbevist' er akseptabelt for ἐλέγχω, men 'avslørt' passer bedre med konteksten i v.25 der hjertets skjulte ting blir avslørt."
+      }
+    ]
   },
   {
     "bookId": 46,
@@ -279,13 +295,29 @@
     "bookId": 46,
     "chapterId": 14,
     "verseId": 37,
-    "text": "Om noen mener seg å være en profet eller åndelig, må han erkjenne at det jeg skriver til dere, er Herrens bud."
+    "text": "Om noen mener å være en profet eller åndelig, må han erkjenne at det jeg skriver til dere, er Herrens bud.",
+    "versions": [
+      {
+        "text": "Om noen mener seg å være en profet eller åndelig, må han erkjenne at det jeg skriver til dere, er Herrens bud.",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "'Mener seg å være' er litt tungt på norsk. 'Mener å være' er mer naturlig og flyter bedre."
+      }
+    ]
   },
   {
     "bookId": 46,
     "chapterId": 14,
     "verseId": 38,
-    "text": "Men om noen ikke erkjenner dette, blir han selv ikke erkjent."
+    "text": "Men om noen ikke vil vite av dette, blir han selv ikke anerkjent.",
+    "versions": [
+      {
+        "text": "Men om noen ikke erkjenner dette, blir han selv ikke erkjent.",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "Det greske 'ἀγνοεῖ' betyr 'er uvitende om / ikke anerkjenner'. Ordspillet i grunnteksten (ἀγνοεῖ/ἀγνοεῖται) er vanskelig å gjengi, men 'anerkjent' i passiv-formen gir bedre mening teologisk – personen blir ikke anerkjent (av Gud/menigheten). 'Erkjent' i passiv er uvanlig norsk."
+      }
+    ]
   },
   {
     "bookId": 46,

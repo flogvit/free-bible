@@ -3,11 +3,17 @@
     "bookId": 40,
     "chapterId": 25,
     "verseId": 1,
-    "text": "Da skal himmelriket lignes med ti jomfruer som tok lampene sine og gikk ut for å møte brudgommen.",
+    "text": "Da kan himmelriket sammenlignes med ti jomfruer som tok lampene sine og gikk ut for å møte brudgommen.",
     "versions": [
       {
         "text": "Da skal himmelriket være likt ti jomfruer som tok lampene sine og gikk ut for å møte brudgommen.",
         "explanation": "ὁμοιωθήσεται er passiv futurum og betyr 'skal lignes med' eller 'skal sammenlignes med'. 'Være likt' er akseptabelt, men 'lignes med' er mer presist og tradisjonelt i lignelsesspråk. Alternativt kan 'Da skal det være med himmelriket som med...' vurderes for bedre muntlig flyt."
+      },
+      {
+        "text": "Da skal himmelriket lignes med ti jomfruer som tok lampene sine og gikk ut for å møte brudgommen.",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "'Himmelriket lignes med' er grammatisk uvanlig på moderne norsk. 'Kan sammenlignes med' er mer naturlig norsk og beholder passivbetydningen. Merk at dette er annerledes enn forrige versjon ('være likt')."
       }
     ]
   },
@@ -141,7 +147,15 @@
     "bookId": 40,
     "chapterId": 25,
     "verseId": 17,
-    "text": "På samme måte tjente han som hadde fått de to, to til."
+    "text": "På samme måte tjente han som hadde fått to talenter, to til.",
+    "versions": [
+      {
+        "text": "På samme måte tjente han som hadde fått de to, to til.",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "For klarhetens skyld bør 'talenter' nevnes eksplisitt, slik det gjøres i de andre versene. 'De to' uten substantiv er litt uklart."
+      }
+    ]
   },
   {
     "bookId": 40,
@@ -153,11 +167,17 @@
     "bookId": 40,
     "chapterId": 25,
     "verseId": 19,
-    "text": "Etter lang tid kom herrene til disse tjenerne og gjorde opp regnskap med dem.",
+    "text": "Etter lang tid kom herren til disse tjenerne og gjorde opp regnskap med dem.",
     "versions": [
       {
         "text": "Lang tid etter kom tjenernes herre tilbake og ville gjøre opp regnskapet med dem.",
         "explanation": "ἔρχεται er presens historicum (ikke impliserer 'tilbake'), og συναίρει λόγον er også presens ('gjør opp regnskap'), ikke 'ville gjøre opp'. Presensformen gir mer dramatisk nærhet til fortellingen. 'Tilbake' er ikke i grunnteksten men kan forsvares fra konteksten."
+      },
+      {
+        "text": "Etter lang tid kom herrene til disse tjenerne og gjorde opp regnskap med dem.",
+        "type": "error",
+        "severity": "critical",
+        "explanation": "ὁ κύριος er entall ('herren'), ikke flertall ('herrene'). Det er én herre som eier alle tjenerne. Dette er en kritisk feil som endrer meningen i lignelsen."
       }
     ]
   },

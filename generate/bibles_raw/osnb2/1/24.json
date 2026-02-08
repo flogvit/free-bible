@@ -45,7 +45,15 @@
     "bookId": 1,
     "chapterId": 24,
     "verseId": 7,
-    "text": "Herren, himmelens Gud, som hentet meg fra min fars hus og fra mitt fødeland, og som talte til meg og sverget for meg og sa: 'Din ætt vil jeg gi dette landet' – han skal sende sin engel foran deg, så du kan hente en kone til min sønn derfra."
+    "text": "Herren, himmelens Gud, som hentet meg fra min fars hus og fra mitt fødeland, og som talte til meg og sverget for meg og sa: 'Til din ætt vil jeg gi dette landet' – han skal sende sin engel foran deg, så du kan hente en kone til min sønn derfra.",
+    "versions": [
+      {
+        "text": "Herren, himmelens Gud, som hentet meg fra min fars hus og fra mitt fødeland, og som talte til meg og sverget for meg og sa: 'Din ætt vil jeg gi dette landet' – han skal sende sin engel foran deg, så du kan hente en kone til min sønn derfra.",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "Hebraisk לְזַרְעֲךָ har prepoisjonen ל som betyr 'til'. 'Til din ætt vil jeg gi dette landet' gjengir ordstillingen og meningen mer presist."
+      }
+    ]
   },
   {
     "bookId": 1,
@@ -123,7 +131,15 @@
     "bookId": 1,
     "chapterId": 24,
     "verseId": 18,
-    "text": "Hun sa: «Drikk, min herre.» Og hun skyndte seg og senket krukken i hendene og lot ham drikke."
+    "text": "Hun sa: «Drikk, min herre.» Og hun skyndte seg og senket krukken ned på hånden og lot ham drikke.",
+    "versions": [
+      {
+        "text": "Hun sa: «Drikk, min herre.» Og hun skyndte seg og senket krukken i hendene og lot ham drikke.",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "Hebraisk עַל־יָדָהּ betyr 'ned på hånden/armen sin' – hun tok krukken ned fra skulderen og holdt den i hånden. 'Senket krukken i hendene' er litt uklart og kan gi inntrykk av at hun senket den ned i hendene hans."
+      }
+    ]
   },
   {
     "bookId": 1,
@@ -201,7 +217,15 @@
     "bookId": 1,
     "chapterId": 24,
     "verseId": 30,
-    "text": "Da han så ringen og armringene på søsterens hender, og hørte sin søster Rebekka fortelle: «Slik talte mannen til meg», gikk han ut til mannen. Og se, der sto han ved kamelene ved kilden."
+    "text": "Da han så neseringen og armringene på søsterens hender, og hørte sin søster Rebekka fortelle: «Slik talte mannen til meg», gikk han ut til mannen. Og se, der sto han ved kamelene ved kilden.",
+    "versions": [
+      {
+        "text": "Da han så ringen og armringene på søsterens hender, og hørte sin søster Rebekka fortelle: «Slik talte mannen til meg», gikk han ut til mannen. Og se, der sto han ved kamelene ved kilden.",
+        "type": "error",
+        "severity": "major",
+        "explanation": "I vers 22 ble נֶזֶם korrekt oversatt som 'gull-nesering' (se versjonshistorikk). Her i vers 30 bør det også være 'neseringen' for konsistens, ikke bare 'ringen'."
+      }
+    ]
   },
   {
     "bookId": 1,
@@ -225,7 +249,15 @@
     "bookId": 1,
     "chapterId": 24,
     "verseId": 33,
-    "text": "Det ble satt mat foran ham, men han sa: «Jeg vil ikke spise før jeg har sagt det jeg har å si.» De sa: «Tal.»"
+    "text": "Det ble satt mat foran ham, men han sa: «Jeg vil ikke spise før jeg har sagt det jeg har å si.» Han sa: «Tal.»",
+    "versions": [
+      {
+        "text": "Det ble satt mat foran ham, men han sa: «Jeg vil ikke spise før jeg har sagt det jeg har å si.» De sa: «Tal.»",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "Hebraisk וַיֹּאמֶר er entall (3. person maskulin singularis), altså 'han sa', ikke 'de sa'. Det er sannsynligvis Laban som svarer."
+      }
+    ]
   },
   {
     "bookId": 1,
@@ -273,11 +305,17 @@
     "bookId": 1,
     "chapterId": 24,
     "verseId": 41,
-    "text": "Da skal du være løst fra min ed. Når du kommer til min slekt og de ikke gir henne til deg, da er du fri fra eden.'",
+    "text": "Da skal du være løst fra min ed: når du kommer til min slekt og de ikke gir henne til deg, da er du fri fra eden.'",
     "versions": [
       {
         "text": "Da skal du være løst fra eden du har sverget for meg. Når du kommer til min slekt og de ikke gir henne til deg, da er du fri fra eden.'",
         "explanation": "Hebraisk אָלָתִי ('min forbannelse/ed') refererer til Abrahams ed som tjeneren er bundet av, ikke en ed tjeneren selv har sverget. 'Eden du har sverget for meg' er upresist."
+      },
+      {
+        "text": "Da skal du være løst fra min ed. Når du kommer til min slekt og de ikke gir henne til deg, da er du fri fra eden.'",
+        "type": "error",
+        "severity": "major",
+        "explanation": "Manglende avsluttende apostrof/sitattegn etter 'eden' i vers 41 som avslutter Abrahams direkte tale som begynte i vers 40. Gjeldende versjon har riktig avslutning med '. Egentlig er verset korrekt med avslutningen. Men strukturelt bør det forklares at אָז ('da') knytter seg betinget til forrige vers – 'da' referer til handlingen i vers 40. Kolon i stedet for punktum viser bedre sammenhengen."
       }
     ]
   },
@@ -297,13 +335,29 @@
     "bookId": 1,
     "chapterId": 24,
     "verseId": 44,
-    "text": "og hun svarer: Drikk du, og jeg vil også hente vann til kamelene dine – la henne være den kvinnen Herren har utvalgt for min herres sønn.'"
+    "text": "og hun svarer: Drikk du, og jeg vil også hente vann til kamelene dine – da er hun den kvinnen Herren har utpekt for min herres sønn.'",
+    "versions": [
+      {
+        "text": "og hun svarer: Drikk du, og jeg vil også hente vann til kamelene dine – la henne være den kvinnen Herren har utvalgt for min herres sønn.'",
+        "type": "error",
+        "severity": "major",
+        "explanation": "Hebraisk הִוא הָאִשָּׁה אֲשֶׁר־הֹכִיחַ er en konstatering ('hun er kvinnen som Herren har utpekt'), ikke en bønn ('la henne være'). Samme verb הֹכִיחַ ble i vers 14 korrekt oversatt som 'utpekt' (se versjonshistorikk). Her bør det være konsistent."
+      }
+    ]
   },
   {
     "bookId": 1,
     "chapterId": 24,
     "verseId": 45,
-    "text": "Før jeg hadde sluttet å tale stille i mitt hjerte, se, da kom Rebekka ut med krukken på skulderen. Hun gikk ned til kilden og øste vann. Jeg sa til henne: 'Gi meg å drikke.'"
+    "text": "Før jeg hadde sluttet å tale i mitt hjerte, se, da kom Rebekka ut med krukken på skulderen. Hun gikk ned til kilden og øste vann. Jeg sa til henne: 'Gi meg å drikke.'",
+    "versions": [
+      {
+        "text": "Før jeg hadde sluttet å tale stille i mitt hjerte, se, da kom Rebekka ut med krukken på skulderen. Hun gikk ned til kilden og øste vann. Jeg sa til henne: 'Gi meg å drikke.'",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "Hebraisk אֶל־לִבִּי betyr 'i/til mitt hjerte', som allerede impliserer stille/indre bønn. Tillegget 'stille' er overflødig og ikke i originalteksten."
+      }
+    ]
   },
   {
     "bookId": 1,
@@ -357,7 +411,15 @@
     "bookId": 1,
     "chapterId": 24,
     "verseId": 53,
-    "text": "Tjeneren tok frem sølvsmykker og gullsmykker og klær og ga dem til Rebekka. Også til broren og moren ga han kostbare gaver."
+    "text": "Tjeneren tok frem gjenstander av sølv og gull og klær og ga dem til Rebekka. Også til broren og moren ga han kostbare gaver.",
+    "versions": [
+      {
+        "text": "Tjeneren tok frem sølvsmykker og gullsmykker og klær og ga dem til Rebekka. Også til broren og moren ga han kostbare gaver.",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "Det hebraiske כְּלֵי־כֶסֶף וּכְלֵי זָהָב betyr 'gjenstander/ting av sølv og gjenstander/ting av gull' – ikke nødvendigvis smykker. כְּלִי er et generelt ord for gjenstander/redskaper. 'Sølvsmykker og gullsmykker' er en innsnevring av betydningen."
+      }
+    ]
   },
   {
     "bookId": 1,
@@ -369,7 +431,15 @@
     "bookId": 1,
     "chapterId": 24,
     "verseId": 55,
-    "text": "Broren og moren hennes sa: «La den unge kvinnen bli hos oss en tid, ti dager eller så. Deretter kan hun dra.»"
+    "text": "Broren og moren hennes sa: «La den unge kvinnen bli hos oss noen dager, kanskje ti. Deretter kan hun dra.»",
+    "versions": [
+      {
+        "text": "Broren og moren hennes sa: «La den unge kvinnen bli hos oss en tid, ti dager eller så. Deretter kan hun dra.»",
+        "type": "error",
+        "severity": "major",
+        "explanation": "Det hebraiske יָמִים אוֹ עָשׂוֹר betyr 'dager eller ti (dager)', altså 'noen dager, eller ti'. Uttrykket 'ti dager eller så' snur rekkefølgen og gjør det vagere enn originalen. Grunnteksten nevner først en ubestemt periode ('dager') og deretter spesifiserer 'eller ti', noe som bør gjenspeiles bedre."
+      }
+    ]
   },
   {
     "bookId": 1,
@@ -399,7 +469,15 @@
     "bookId": 1,
     "chapterId": 24,
     "verseId": 60,
-    "text": "De velsignet Rebekka og sa til henne: «Vår søster, måtte du bli mor til tusener på tusener! Måtte din ætt ta fiendens porter i eie!»"
+    "text": "De velsignet Rebekka og sa til henne: «Vår søster, måtte du bli til titusener av tusener! Måtte din ætt ta fiendens porter i eie!»",
+    "versions": [
+      {
+        "text": "De velsignet Rebekka og sa til henne: «Vår søster, måtte du bli mor til tusener på tusener! Måtte din ætt ta fiendens porter i eie!»",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "Det hebraiske לְאַלְפֵי רְבָבָה betyr bokstavelig 'til tusener av titusen(er)', dvs. et enormt antall etterkommere. 'Tusener på tusener' er noe svakere enn originalens uttrykk som kombinerer 'tusener' (אלפי) med 'titusener' (רבבה). Alternativt kan man beholde nåværende formulering da den kommuniserer ideen, men en mer nøyaktig oversettelse gjenspeiler de to ulike tallstørrelsene."
+      }
+    ]
   },
   {
     "bookId": 1,
@@ -411,7 +489,15 @@
     "bookId": 1,
     "chapterId": 24,
     "verseId": 62,
-    "text": "Isak var kommet fra Beer-Lakai-Ro'i, for han bodde i Negev-landet."
+    "text": "Isak hadde kommet tilbake fra Beer-Lakai-Roi, og han bodde i Negev-landet.",
+    "versions": [
+      {
+        "text": "Isak var kommet fra Beer-Lakai-Ro'i, for han bodde i Negev-landet.",
+        "type": "error",
+        "severity": "major",
+        "explanation": "Det hebraiske וְהוּא יוֹשֵׁב בְּאֶרֶץ הַנֶּגֶב er en tilstandssetning ('og han bodde i Negev-landet'), ikke en årsakssetning. 'For' (kausal konjunksjon) er en tolkning som ikke nødvendigvis er riktig. Dessuten bør transkripsjonen være konsekvent – 'Ro'i' kan skrives 'Roi'."
+      }
+    ]
   },
   {
     "bookId": 1,

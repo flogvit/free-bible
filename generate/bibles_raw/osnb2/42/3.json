@@ -45,11 +45,17 @@
     "bookId": 42,
     "chapterId": 3,
     "verseId": 6,
-    "text": "Og alt kjød skal se Guds frelse.",
+    "text": "Og alle mennesker skal se Guds frelse.",
     "versions": [
       {
         "text": "Og alle mennesker skal se Guds frelse.",
         "explanation": "Det greske 'πᾶσα σὰρξ' (pasa sarx) betyr bokstavelig 'alt kjød' eller 'alt levende'. 'Alle mennesker' er en fortolkende oversettelse. For en mer trofast oversettelse av Jesaja-sitatet, og for å bevare det poetiske uttrykket, kan 'alt kjød' vurderes. Alternativt kan 'alle levende' brukes om 'kjød' anses for gammeldags."
+      },
+      {
+        "text": "Og alt kjød skal se Guds frelse.",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "Selv om 'alt kjød' er en bokstavelig oversettelse, er dette uttrykket svært gammeldags på norsk og vil være uforståelig for mange moderne lesere. Målsetningen er 'moderne og lett å lese'. 'Alle mennesker' formidler samme betydning på en tilgjengelig måte. Merk: Versjonshistorikken viser at dette var den opprinnelige oversettelsen som ble endret - men for en moderne, lettlest oversettelse er 'alle mennesker' å foretrekke."
       }
     ]
   },
@@ -111,7 +117,15 @@
     "bookId": 42,
     "chapterId": 3,
     "verseId": 14,
-    "text": "Også soldater spurte ham: Og vi, hva skal vi gjøre? Han sa til dem: Press ikke penger fra noen med vold eller falske anklager, og nøy dere med lønnen deres."
+    "text": "Også soldater spurte ham: Hva skal vi gjøre, vi da? Han sa til dem: Press ikke penger fra noen med vold eller falske anklager, og nøy dere med lønnen deres.",
+    "versions": [
+      {
+        "text": "Også soldater spurte ham: Og vi, hva skal vi gjøre? Han sa til dem: Press ikke penger fra noen med vold eller falske anklager, og nøy dere med lønnen deres.",
+        "type": "grammar",
+        "severity": "minor",
+        "explanation": "Det greske 'Τί ποιήσωμεν καὶ ἡμεῖς' har 'καὶ ἡμεῖς' (også vi) på slutten av spørsmålet. 'Og vi, hva skal vi gjøre?' er grammatisk uvanlig på norsk. 'Hva skal vi gjøre, vi da?' gir mer naturlig norsk og bevarer emfasen på 'vi også'."
+      }
+    ]
   },
   {
     "bookId": 42,
@@ -135,7 +149,15 @@
     "bookId": 42,
     "chapterId": 3,
     "verseId": 17,
-    "text": "Han har kasteskovlen i hånden for å rense sin treskeplass og samle hveten i låven sin. Men agnene skal han brenne opp med ild som aldri slukner."
+    "text": "Han har kasteskovlen i sin hånd for å rense treskeplassen sin og samle hveten i låven sin. Men agnene skal han brenne opp med ild som aldri slukner.",
+    "versions": [
+      {
+        "text": "Han har kasteskovlen i hånden for å rense sin treskeplass og samle hveten i låven sin. Men agnene skal han brenne opp med ild som aldri slukner.",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "For konsistens bør 'sin hånd' og 'treskeplassen sin' brukes for å matche 'låven sin'. Det greske teksten har 'αὐτοῦ' (hans) gjentatt, og konsistent bruk av eiendomspronomen gir bedre flyt."
+      }
+    ]
   },
   {
     "bookId": 42,
@@ -267,13 +289,29 @@
     "bookId": 42,
     "chapterId": 3,
     "verseId": 34,
-    "text": "sønn av Jakob, sønn av Isak, sønn av Abraham, sønn av Tarah, sønn av Nakor,"
+    "text": "sønn av Jakob, sønn av Isak, sønn av Abraham, sønn av Tera, sønn av Nakor,",
+    "versions": [
+      {
+        "text": "sønn av Jakob, sønn av Isak, sønn av Abraham, sønn av Tarah, sønn av Nakor,",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "Det greske 'Θάρα' (Thara) er den greske formen av det hebraiske navnet 'Terah' (תֶּרַח). På norsk er den vanlige formen 'Tera' (brukt i de fleste norske bibeloversettelser, inkludert Bibelselskapets oversettelser). 'Tarah' er en uvanlig norsk form."
+      }
+    ]
   },
   {
     "bookId": 42,
     "chapterId": 3,
     "verseId": 35,
-    "text": "sønn av Serug, sønn av Re'u, sønn av Peleg, sønn av Eber, sønn av Sjelah,"
+    "text": "sønn av Serug, sønn av Re'u, sønn av Peleg, sønn av Eber, sønn av Sjela,",
+    "versions": [
+      {
+        "text": "sønn av Serug, sønn av Re'u, sønn av Peleg, sønn av Eber, sønn av Sjelah,",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "Det greske 'Σαλὰ' (Sala) tilsvarer det hebraiske 'Shelah' (שֶׁלַח). Den vanligste norske formen er 'Sjela' (uten h). 'Sjelah' er en uvanlig translitterering. Merk at i vers 32 er det også 'Sala' som er oversatt 'Sala' – dette er Salmon/Salma, en annen person."
+      }
+    ]
   },
   {
     "bookId": 42,

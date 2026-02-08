@@ -93,7 +93,15 @@
     "bookId": 2,
     "chapterId": 35,
     "verseId": 14,
-    "text": "lysestaken med tilbehøret og lampene, og oljen til lysestaken,"
+    "text": "lysestaken til belysning med tilbehøret og lampene, og oljen til belysningen,",
+    "versions": [
+      {
+        "text": "lysestaken med tilbehøret og lampene, og oljen til lysestaken,",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "Det hebraiske 'מְנֹרַת הַמָּאוֹר' betyr 'lysestaken for belysning/lyset', og 'שֶׁמֶן הַמָּאוֹר' betyr 'oljen til belysningen'. Nåværende oversettelse gjengir begge forekomster av 'הַמָּאוֹר' bare som 'lysestaken', men originalen skiller mellom lysestaken som gjenstand og dens funksjon som belysning."
+      }
+    ]
   },
   {
     "bookId": 2,
@@ -141,11 +149,17 @@
     "bookId": 2,
     "chapterId": 35,
     "verseId": 22,
-    "text": "Mennene kom sammen med kvinnene, alle som hadde et villig hjerte. De brakte spenner, neseringer, fingerringer og anheng, alle slags gjenstander av gull. Og enhver som ville ofre et svingeoffer av gull til Herren, kom med det.",
+    "text": "Mennene kom sammen med kvinnene, alle som hadde et villig hjerte. De brakte brosjer, neseringer, fingerringer og halskjeder, alle slags gjenstander av gull. Og enhver som ville ofre et svingeoffer av gull til Herren, kom med det.",
     "versions": [
       {
         "text": "De kom, både menn og kvinner, alle som hadde et villig hjerte. De brakte spenner, neseringer, fingerringer og anheng, alle slags gjenstander av gull. Og enhver som ville ofre et svingeoffer av gull til Herren, kom med det.",
         "explanation": "Det hebraiske 'עַל־הַנָּשִׁים' (al-hannashim) betyr 'med/sammen med kvinnene', og indikerer at mennene kom ledsaget av kvinnene. Den nåværende oversettelsen mister denne nyansen om at mennene spesifikt kom sammen med kvinnene."
+      },
+      {
+        "text": "Mennene kom sammen med kvinnene, alle som hadde et villig hjerte. De brakte spenner, neseringer, fingerringer og anheng, alle slags gjenstander av gull. Og enhver som ville ofre et svingeoffer av gull til Herren, kom med det.",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "חָח refererer mer til en brosje/nål enn en spenne, og כוּמָז er tradisjonelt forstått som en halskjede eller gullsmykke snarere enn et 'anheng'. 'Brosjer' og 'halskjeder' er mer presise gjengivelser."
       }
     ]
   },
@@ -171,7 +185,15 @@
     "bookId": 2,
     "chapterId": 35,
     "verseId": 26,
-    "text": "Og alle kvinner som kjente seg drevet av visdom i hjertet, spant geitehåret."
+    "text": "Og alle kvinner som hjertet drev til det med visdom, spant geitehåret.",
+    "versions": [
+      {
+        "text": "Og alle kvinner som kjente seg drevet av visdom i hjertet, spant geitehåret.",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "Det hebraiske uttrykket 'נָשָׂא לִבָּן אֹתָנָה בְּחָכְמָה' betyr bokstavelig 'hvis hjerte løftet/drev dem med visdom'. Den nåværende oversettelsen 'drevet av visdom' er litt unøyaktig – det er hjertet som driver dem, og visdommen er middelet/egenskapen de hadde."
+      }
+    ]
   },
   {
     "bookId": 2,
@@ -219,7 +241,15 @@
     "bookId": 2,
     "chapterId": 35,
     "verseId": 34,
-    "text": "Og han har gitt ham og Oholiab, sønn av Akisamak, av Dan stamme, evne til å lære opp andre."
+    "text": "Og han har lagt det i hans hjerte å lære opp andre, han og Oholiab, sønn av Akisamak, av Dan stamme.",
+    "versions": [
+      {
+        "text": "Og han har gitt ham og Oholiab, sønn av Akisamak, av Dan stamme, evne til å lære opp andre.",
+        "type": "error",
+        "severity": "major",
+        "explanation": "Det hebraiske 'נָתַן בְּלִבּוֹ' betyr 'lagt i hans hjerte'. Nåværende oversettelse utelater denne viktige frasen om at Gud la det i hjertet. Dessuten bør 'han og Oholiab' komme etter 'å lære opp andre' for å gjenspeile den hebraiske setningsstrukturen bedre, der 'הוּא וְאָהֳלִיאָב' er tilføyelse som presiserer hvem det gjelder."
+      }
+    ]
   },
   {
     "bookId": 2,

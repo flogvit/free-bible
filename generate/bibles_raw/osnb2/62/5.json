@@ -3,7 +3,15 @@
     "bookId": 62,
     "chapterId": 5,
     "verseId": 1,
-    "text": "Hver den som tror at Jesus er Kristus, er født av Gud. Og hver den som elsker ham som fødte, elsker også den som er født av ham."
+    "text": "Hver den som tror at Jesus er Kristus, er født av Gud. Og den som elsker Far, elsker også den som er født av ham.",
+    "versions": [
+      {
+        "text": "Hver den som tror at Jesus er Kristus, er født av Gud. Og hver den som elsker ham som fødte, elsker også den som er født av ham.",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "Uttrykket 'ham som fødte' er litt uvanlig og stivt på norsk. 'τὸν γεννήσαντα' refererer til Gud som Far – den som har født. 'Far' eller 'ham som har født' ville vært mer naturlig. Alternativt kan man beholde 'ham som fødte' men det lyder noe arkaisk. Dette er kun et forslag for bedre flyt."
+      }
+    ]
   },
   {
     "bookId": 62,
@@ -33,7 +41,15 @@
     "bookId": 62,
     "chapterId": 5,
     "verseId": 4,
-    "text": "For alt som er født av Gud, seirer over verden. Og dette er den seieren som har seiret over verden: vår tro."
+    "text": "For hver den som er født av Gud, seirer over verden. Og dette er den seieren som har seiret over verden: vår tro.",
+    "versions": [
+      {
+        "text": "For alt som er født av Gud, seirer over verden. Og dette er den seieren som har seiret over verden: vår tro.",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "'πᾶν τὸ γεγεννημένον' er intetkjønn og brukes generaliserende, men det refererer til personer (de troende). 'Alt som er født av Gud' kan lyde tingliggjørende på norsk. 'Hver den som er født av Gud' er mer personlig og naturlig, og samsvarer med konteksten som handler om troende mennesker."
+      }
+    ]
   },
   {
     "bookId": 62,
@@ -69,7 +85,15 @@
     "bookId": 62,
     "chapterId": 5,
     "verseId": 9,
-    "text": "Hvis vi godtar menneskers vitnesbyrd, så er Guds vitnesbyrd større. For dette er Guds vitnesbyrd, at han har vitnet om sin Sønn."
+    "text": "Hvis vi godtar menneskers vitnesbyrd, så er Guds vitnesbyrd større, for dette er Guds vitnesbyrd: at han har vitnet om sin Sønn.",
+    "versions": [
+      {
+        "text": "Hvis vi godtar menneskers vitnesbyrd, så er Guds vitnesbyrd større. For dette er Guds vitnesbyrd, at han har vitnet om sin Sønn.",
+        "type": "error",
+        "severity": "major",
+        "explanation": "Den greske teksten har ὅτι som knytter begrunnelsen tettere til forrige setning – Guds vitnesbyrd er større *fordi* (ὅτι) dette er Guds vitnesbyrd. Kolon foran 'at han har vitnet' tydeliggjør innholdsbestemmelsen. Dessuten bør komma brukes mellom 'større' og 'for' for å vise at begrunnelsen henger sammen med hovedpåstanden."
+      }
+    ]
   },
   {
     "bookId": 62,
@@ -129,11 +153,17 @@
     "bookId": 62,
     "chapterId": 5,
     "verseId": 18,
-    "text": "Vi vet at den som er født av Gud, ikke synder, men han som er født av Gud, bevarer ham, og den onde rører ham ikke.",
+    "text": "Vi vet at den som er født av Gud, ikke synder, men den som er født av Gud, blir bevart av ham, og den onde rører ham ikke.",
     "versions": [
       {
         "text": "Vi vet at den som er født av Gud, ikke synder, men han som er født av Gud, bevarer ham, og den onde rører ham ikke.",
         "explanation": "Det er tekstkritisk usikkerhet her (αὐτόν vs ἑαυτόν), men den valgte lesemåten 'han som er født av Gud, bevarer ham' er tvetydig på norsk. Hvis man følger lesningen at den troende bevarer seg selv, bør det tydeliggjøres. Alternativt kan det referere til Kristus som 'den som er født av Gud' som bevarer den troende - dette bør avklares teologisk."
+      },
+      {
+        "text": "Vi vet at den som er født av Gud, ikke synder, men han som er født av Gud, bevarer ham, og den onde rører ham ikke.",
+        "type": "theological",
+        "severity": "minor",
+        "explanation": "Verset er tvetydig, noe som også er kommentert i versjonshistorikken uten at endring ble gjort. Det nåværende 'han som er født av Gud, bevarer ham' er problematisk fordi begge leddene bruker 'født av Gud' og det blir uklart hvem som bevarer hvem. Tekstkritisk leses αὐτόν, som typisk forstås som at Kristus (ὁ γεννηθείς, den enfødte) bevarer den troende, eller alternativt at Gud bevarer den troende. En passiv konstruksjon kan løse tvetydigheten noe. Merk: dette er kun et forslag siden historikken viser at det allerede er diskutert."
       }
     ]
   },

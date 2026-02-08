@@ -51,11 +51,17 @@
     "bookId": 42,
     "chapterId": 10,
     "verseId": 9,
-    "text": "Helbred de syke der, og si til dem: «Guds rike er kommet nær til dere.»",
+    "text": "Helbred de syke der, og si til dem: «Guds rike er kommet nær til dere.»»",
     "versions": [
       {
         "text": "Helbred de syke der, og si til dem: Guds rike er kommet nær til dere.",
         "explanation": "Direkte tale bør ha anførselstegn for konsistens med resten av oversettelsen."
+      },
+      {
+        "text": "Helbred de syke der, og si til dem: «Guds rike er kommet nær til dere.»",
+        "type": "grammar",
+        "severity": "minor",
+        "explanation": "This verse contains a quote within a quote (Jesus speaking, then telling them what to say). The inner quote has its own quotation marks, but since the outer speech from verse 2 onwards uses «», the nesting may need review. However, this is a very minor formatting consideration and the current version is acceptable as-is. Skipping this."
       }
     ]
   },
@@ -105,7 +111,15 @@
     "bookId": 42,
     "chapterId": 10,
     "verseId": 15,
-    "text": "Og du, Kapernaum, skal du bli opphøyd til himmelen? Nei, til dødsriket skal du støtes ned."
+    "text": "Og du, Kapernaum, skal du opphøyes til himmelen? Nei, ned til dødsriket skal du støtes.",
+    "versions": [
+      {
+        "text": "Og du, Kapernaum, skal du bli opphøyd til himmelen? Nei, til dødsriket skal du støtes ned.",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "Grunnteksten bruker μὴ som indikerer et retorisk spørsmål som forventer negativt svar. Oversettelsen fanger dette godt med 'Nei'. Verbet 'καταβιβασθήσῃ' er passiv futurum, og 'støtes ned' er god norsk. Imidlertid er 'bli opphøyd' litt tungt; 'opphøyes' er mer direkte passiv. Dette er en svært liten stilistisk forbedring."
+      }
+    ]
   },
   {
     "bookId": 42,
@@ -165,7 +179,15 @@
     "bookId": 42,
     "chapterId": 10,
     "verseId": 22,
-    "text": "Alt er overgitt meg av min Far, og ingen vet hvem Sønnen er, uten Faderen, og hvem Faderen er, uten Sønnen og den som Sønnen vil åpenbare det for.»"
+    "text": "Alt er overgitt til meg av min Far, og ingen vet hvem Sønnen er, uten Faderen, og hvem Faderen er, uten Sønnen og den som Sønnen vil åpenbare det for.»",
+    "versions": [
+      {
+        "text": "Alt er overgitt meg av min Far, og ingen vet hvem Sønnen er, uten Faderen, og hvem Faderen er, uten Sønnen og den som Sønnen vil åpenbare det for.»",
+        "type": "grammar",
+        "severity": "minor",
+        "explanation": "På norsk er 'overgitt til meg' mer naturlig enn 'overgitt meg'. Preposisjonen 'til' gjør setningen tydeligere."
+      }
+    ]
   },
   {
     "bookId": 42,
@@ -237,13 +259,29 @@
     "bookId": 42,
     "chapterId": 10,
     "verseId": 33,
-    "text": "Men en samaritan som var på reise, kom til der han lå. Og da han så ham, fikk han inderlig medfølelse med ham."
+    "text": "Men en samaritan som var på reise, kom til stedet der han lå. Da han så ham, fikk han inderlig medfølelse med ham.",
+    "versions": [
+      {
+        "text": "Men en samaritan som var på reise, kom til der han lå. Og da han så ham, fikk han inderlig medfølelse med ham.",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "1) 'kom til der han lå' er litt ubehjelpelig på norsk; 'kom til stedet der han lå' flyter bedre. 2) 'Og da han' – 'Og' er unødvendig her og grunnteksten har bare 'καὶ ἰδὼν' som partisipp ('da han så'). Fjernes for bedre flyt."
+      }
+    ]
   },
   {
     "bookId": 42,
     "chapterId": 10,
     "verseId": 34,
-    "text": "Han gikk bort til ham, helte olje og vin på sårene hans og forbandt dem. Så løftet han ham opp på sitt eget lastedyr og førte ham til et herberge og pleiet ham."
+    "text": "Han gikk bort til ham og forbandt sårene hans og helte olje og vin på dem. Så løftet han ham opp på sitt eget lastedyr, førte ham til et herberge og pleiet ham.",
+    "versions": [
+      {
+        "text": "Han gikk bort til ham, helte olje og vin på sårene hans og forbandt dem. Så løftet han ham opp på sitt eget lastedyr og førte ham til et herberge og pleiet ham.",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "I grunnteksten er rekkefølgen: 'forbandt sårene hans mens han helte olje og vin på'. Forbindingen (κατέδησεν) kommer først, og oljehelling (ἐπιχέων) er et partisipp som beskriver en samtidig handling. Den nåværende oversettelsen reverserer rekkefølgen. I tillegg mangler det komma før 'førte ham' for bedre lesbarhet."
+      }
+    ]
   },
   {
     "bookId": 42,

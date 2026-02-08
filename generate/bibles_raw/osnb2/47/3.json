@@ -15,11 +15,17 @@
     "bookId": 47,
     "chapterId": 3,
     "verseId": 3,
-    "text": "Det er klart at dere er et Kristi brev, utarbeidet gjennom vår tjeneste, skrevet ikke med blekk, men med den levende Guds Ånd, ikke på steintavler, men på hjerter av kjøtt og blod.",
+    "text": "Det er klart at dere er et Kristi brev, utarbeidet gjennom vår tjeneste, skrevet ikke med blekk, men med den levende Guds Ånd, ikke på steintavler, men på levende hjerter av kjøtt og blod.",
     "versions": [
       {
         "text": "Det er klart at dere er et Kristi brev, utarbeidet gjennom vår tjeneste, skrevet ikke med blekk, men med den levende Guds Ånd, ikke på steintavler, men på hjertets kjødelige tavler.",
         "explanation": "Uttrykket 'hjertets kjødelige tavler' er noe kronglete på norsk. Det greske 'πλαξὶν καρδίαις σαρκίναις' refererer til hjerter som er levende og mottakelige, i motsetning til stein. 'Hjerter av kjøtt og blod' formidler denne betydningen mer naturlig på moderne norsk."
+      },
+      {
+        "text": "Det er klart at dere er et Kristi brev, utarbeidet gjennom vår tjeneste, skrevet ikke med blekk, men med den levende Guds Ånd, ikke på steintavler, men på hjerter av kjøtt og blod.",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "Det greske σαρκίναις betyr 'av kjød/kjøtt' og kontrasterer stein med det levende og mottakelige. 'Hjerter av kjøtt og blod' er akseptabelt, men å legge til 'levende' tydeliggjør kontrasten med steintavler, som er kjernen i Paulus' poeng. Bare et lite forslag; den nåværende versjonen er også forsvarlig."
       }
     ]
   },
@@ -49,11 +55,17 @@
     "bookId": 47,
     "chapterId": 3,
     "verseId": 6,
-    "text": "Han har også gjort oss i stand til å være tjenere for en ny pakt, ikke bokstavens, men Åndens.",
+    "text": "Han har også gjort oss i stand til å være tjenere for en ny pakt, ikke bokstavens, men Åndens. For bokstaven dreper, men Ånden gjør levende.",
     "versions": [
       {
         "text": "Han har også gjort oss i stand til å være tjenere for en ny pakt, ikke bokstavens pakt, men Åndens. For bokstaven dreper, men Ånden gjør levende.",
         "explanation": "Ordet 'pakt' er lagt til etter 'bokstavens' i oversettelsen, men finnes ikke i originalen. Det greske har bare 'οὐ γράμματος ἀλλὰ πνεύματος' (ikke bokstavens, men Åndens). Å fjerne det ekstra 'pakt' gir en mer presis oversettelse og bedre flyt ved opplesning."
+      },
+      {
+        "text": "Han har også gjort oss i stand til å være tjenere for en ny pakt, ikke bokstavens, men Åndens.",
+        "type": "error",
+        "severity": "critical",
+        "explanation": "Den siste delen av verset ('τὸ γὰρ γράμμα ἀποκτέννει, τὸ δὲ πνεῦμα ζῳοποιεῖ' – 'For bokstaven dreper, men Ånden gjør levende') mangler helt i den nåværende oversettelsen. Ifølge versjonshistorikken ble denne setningen fjernet ved en tidligere revisjon, men begrunnelsen for endringen gjaldt kun fjerning av det ekstra ordet 'pakt'. Selve setningen 'For bokstaven dreper, men Ånden gjør levende' er en del av det greske originalteksten og må inkluderes. Å utelate den er en alvorlig mangel."
       }
     ]
   },
@@ -61,7 +73,15 @@
     "bookId": 47,
     "chapterId": 3,
     "verseId": 7,
-    "text": "Men hvis dødens tjeneste, som med bokstaver var inngravert i stein, kom med herlighet, slik at Israels barn ikke kunne se fast på Moses' ansikt på grunn av herligheten som strålte fra hans ansikt – en herlighet som skulle forgå –"
+    "text": "Men hvis dødens tjeneste, med bokstaver inngravert i stein, kom med herlighet, slik at Israels barn ikke kunne se fast på Moses' ansikt på grunn av herligheten som strålte fra hans ansikt – en herlighet som var i ferd med å forgå –",
+    "versions": [
+      {
+        "text": "Men hvis dødens tjeneste, som med bokstaver var inngravert i stein, kom med herlighet, slik at Israels barn ikke kunne se fast på Moses' ansikt på grunn av herligheten som strålte fra hans ansikt – en herlighet som skulle forgå –",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "τὴν καταργουμένην er presens partisipp passiv, som indikerer en pågående prosess – 'som var i ferd med å forgå' / 'som holdt på å forsvinne', ikke bare noe som 'skulle forgå' i fremtiden. Også fjernet 'som' før 'med bokstaver' for bedre flyt."
+      }
+    ]
   },
   {
     "bookId": 47,
@@ -91,7 +111,15 @@
     "bookId": 47,
     "chapterId": 3,
     "verseId": 11,
-    "text": "For hvis det som forgår kom med herlighet, hvor mye større herlighet har ikke det som blir stående!"
+    "text": "For hvis det som forgår kom i herlighet, hvor mye mer skal ikke det som blir stående være i herlighet!",
+    "versions": [
+      {
+        "text": "For hvis det som forgår kom med herlighet, hvor mye større herlighet har ikke det som blir stående!",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "Det greske 'διὰ δόξης' (gjennom/i herlighet) og 'ἐν δόξῃ' (i herlighet) brukes om henholdsvis det forgående og det varige. 'Kom med herlighet' er akseptabelt for 'διὰ δόξης', men den andre delen 'ἐν δόξῃ' bør gjengis tydeligere. 'Hvor mye større herlighet har ikke det som blir stående' er en fri gjengivelse; 'hvor mye mer skal ikke det som blir stående være i herlighet' er mer tro mot originalen."
+      }
+    ]
   },
   {
     "bookId": 47,

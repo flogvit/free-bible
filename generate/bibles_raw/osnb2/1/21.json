@@ -21,7 +21,15 @@
     "bookId": 1,
     "chapterId": 21,
     "verseId": 3,
-    "text": "Abraham ga sønnen som var født ham, han som Sara hadde født, navnet Isak."
+    "text": "Abraham ga sønnen som ble født ham, han som Sara hadde født ham, navnet Isak.",
+    "versions": [
+      {
+        "text": "Abraham ga sønnen som var født ham, han som Sara hadde født, navnet Isak.",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "«var født ham» er litt uidiomatisk; «ble født ham» flyter bedre. I tillegg har hebraisk יָלְדָה־לּוֹ ('hadde født ham') et «ham» som mangler i oversettelsen."
+      }
+    ]
   },
   {
     "bookId": 1,
@@ -55,7 +63,15 @@
     "bookId": 1,
     "chapterId": 21,
     "verseId": 7,
-    "text": "Og hun sa: «Hvem kunne sagt til Abraham at Sara skulle amme barn? For jeg har født ham en sønn på hans gamle dager.»"
+    "text": "Og hun sa: «Hvem ville trodd at Sara skulle amme barn for Abraham? For jeg har født ham en sønn på hans gamle dager.»",
+    "versions": [
+      {
+        "text": "Og hun sa: «Hvem kunne sagt til Abraham at Sara skulle amme barn? For jeg har født ham en sønn på hans gamle dager.»",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "Det hebraiske מִי מִלֵּל לְאַבְרָהָם er et retorisk utrop: 'Hvem ville ha sagt/trodd overfor Abraham'. 'Hvem kunne sagt til Abraham at Sara skulle...' er grammatisk mulig men litt stivt. 'Hvem ville trodd' fanger det retoriske uttrykket bedre på idiomatisk norsk."
+      }
+    ]
   },
   {
     "bookId": 1,
@@ -67,11 +83,17 @@
     "bookId": 1,
     "chapterId": 21,
     "verseId": 9,
-    "text": "Sara så at sønnen til egypterkvinnen Hagar, hun som hadde født Abraham et barn, lo.",
+    "text": "Sara så at sønnen som egypterkvinnen Hagar hadde født Abraham, lo.",
     "versions": [
       {
         "text": "Sara så at sønnen til egypterkvinnen Hagar, hun som hadde født Abraham et barn, drev gjøn.",
         "explanation": "Det hebraiske מְצַחֵק (metsacheq) er partisipp av samme rot som צחק (le/leke) og navnet Isak. 'Drev gjøn' er en tolkende oversettelse som legger til en negativ konnotasjon som ikke nødvendigvis er i grunnteksten. 'Lo' eller 'lekte' er mer nøytralt og bevarer ordspillet."
+      },
+      {
+        "text": "Sara så at sønnen til egypterkvinnen Hagar, hun som hadde født Abraham et barn, lo.",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "Den hebraiske relativsetningen אֲשֶׁר־יָלְדָה לְאַבְרָהָם refererer til Hagar som hadde født (en sønn) til Abraham, ikke 'et barn'. Den nåværende formuleringen 'hun som hadde født Abraham et barn' er noe omstendelig og upresist. Relativsetningen modifiserer בֶּן (sønnen), altså 'sønnen som Hagar hadde født Abraham'."
       }
     ]
   },
@@ -91,7 +113,15 @@
     "bookId": 1,
     "chapterId": 21,
     "verseId": 12,
-    "text": "Men Gud sa til Abraham: «La det ikke være tungt for deg på grunn av gutten og slavekvinnen din. Lytt til Sara i alt hun sier til deg, for det er gjennom Isak din ætt skal føres videre."
+    "text": "Men Gud sa til Abraham: «La det ikke være tungt for deg på grunn av gutten og slavekvinnen din. I alt Sara sier til deg, lytt til henne! For det er gjennom Isak din ætt skal føres videre.",
+    "versions": [
+      {
+        "text": "Men Gud sa til Abraham: «La det ikke være tungt for deg på grunn av gutten og slavekvinnen din. Lytt til Sara i alt hun sier til deg, for det er gjennom Isak din ætt skal føres videre.",
+        "type": "grammar",
+        "severity": "minor",
+        "explanation": "Den hebraiske ordstillingen er 'alt som Sara sier til deg – lytt til hennes røst'. Nåværende oversettelse er grei, men den hebraiske strukturen understreker at det gjelder ALT Sara sier. 'I alt Sara sier til deg, lytt til henne' gjenspeiler dette bedre og bevarer den emfatiske strukturen."
+      }
+    ]
   },
   {
     "bookId": 1,
@@ -121,7 +151,15 @@
     "bookId": 1,
     "chapterId": 21,
     "verseId": 16,
-    "text": "Så gikk hun og satte seg et stykke unna, omtrent et bueskyts lengde borte, for hun sa: «Jeg orker ikke se på at gutten dør.» Hun satt der borte, løftet røsten og gråt."
+    "text": "Så gikk hun og satte seg et stykke unna, omtrent et bueskyts lengde borte, for hun sa: «La meg slippe å se barnet dø.» Hun satt der borte, løftet røsten og gråt.",
+    "versions": [
+      {
+        "text": "Så gikk hun og satte seg et stykke unna, omtrent et bueskyts lengde borte, for hun sa: «Jeg orker ikke se på at gutten dør.» Hun satt der borte, løftet røsten og gråt.",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "Det hebraiske אַל־אֶרְאֶה er en kohortativ/ønskende form: 'la meg ikke se' – altså en bønn/ønske, ikke en konstatering av hva hun orker. Dessuten bruker originalen הַיֶּלֶד (barnet/gutten), som her kan oversettes 'barnet' for variasjon siden 'gutten' brukes ellers."
+      }
+    ]
   },
   {
     "bookId": 1,
@@ -163,11 +201,17 @@
     "bookId": 1,
     "chapterId": 21,
     "verseId": 23,
-    "text": "Så sverg nå for meg ved Gud, her på stedet, at du ikke vil handle svikefullt mot meg, mine barn eller etterkommere. Den godhet jeg har vist deg, skal du vise mot meg og mot det landet der du bor som fremmed.»",
+    "text": "Så sverg nå for meg ved Gud, her på stedet, at du ikke vil handle svikefullt mot meg, mot mine barn eller mine barnebarn. Den godhet jeg har vist deg, skal du vise mot meg og mot det landet der du bor som fremmed.»",
     "versions": [
       {
         "text": "Så sverg nå for meg ved Gud, her og nå, at du ikke vil handle svikefullt mot meg, mine barn eller etterkommere. Den godhet jeg har vist deg, skal du vise mot meg og mot det landet der du bor som fremmed.»",
         "explanation": "Det hebraiske הֵנָּה betyr 'her' i betydningen 'på dette stedet', ikke 'her og nå' som antyder tid. 'Her på stedet' er mer nøyaktig."
+      },
+      {
+        "text": "Så sverg nå for meg ved Gud, her på stedet, at du ikke vil handle svikefullt mot meg, mine barn eller etterkommere. Den godhet jeg har vist deg, skal du vise mot meg og mot det landet der du bor som fremmed.»",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "Det hebraiske נִין (nin) og נֶכֶד (nekhed) betyr spesifikt 'barn' og 'barnebarn/etterkommer'. 'Etterkommere' er vagt. 'Mine barn eller mine barnebarn' er mer presist og bevarer de to separate leddene i hebraisk."
       }
     ]
   },
@@ -199,7 +243,15 @@
     "bookId": 1,
     "chapterId": 21,
     "verseId": 28,
-    "text": "Abraham stilte syv unge søyer for seg selv."
+    "text": "Abraham stilte syv søyelam fra flokken for seg selv.",
+    "versions": [
+      {
+        "text": "Abraham stilte syv unge søyer for seg selv.",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "Det hebraiske כִּבְשֹׂת הַצֹּאן betyr 'søyelam av småfeet/flokken'. 'Unge søyer' mangler referansen til flokken (הַצֹּאן). כִּבְשָׂה er spesifikt et hunlam, så 'søyelam' er mer presist enn 'unge søyer'."
+      }
+    ]
   },
   {
     "bookId": 1,

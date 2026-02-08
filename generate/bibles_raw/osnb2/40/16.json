@@ -69,11 +69,17 @@
     "bookId": 40,
     "chapterId": 16,
     "verseId": 9,
-    "text": "Forstår dere ennå ikke? Husker dere ikke de fem brødene til de fem tusen, og hvor mange kurver dere fikk tilbake?",
+    "text": "Forstår dere ennå ikke? Husker dere ikke de fem brødene til de fem tusen, og hvor mange kurver dere fikk?",
     "versions": [
       {
         "text": "Forstår dere ennå ikke? Husker dere ikke de fem brødene til de fem tusen, og hvor mange kurver dere samlet inn?",
         "explanation": "Gresk 'ἐλάβετε' (dere mottok/fikk) er mer nøytralt enn 'samlet inn'. 'Fikk tilbake' passer bedre i konteksten der det handler om overfloden som ble til overs."
+      },
+      {
+        "text": "Forstår dere ennå ikke? Husker dere ikke de fem brødene til de fem tusen, og hvor mange kurver dere fikk tilbake?",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "Versjon 10 ble endret fra 'fikk tilbake' til 'fikk da' fordi 'tilbake' er en overtolkning av 'ἐλάβετε'. Samme logikk gjelder vers 9 – 'ἐλάβετε' betyr simpelthen 'dere mottok/fikk', ikke 'fikk tilbake'. Dette ble anerkjent i endringshistorikken til vers 10."
       }
     ]
   },
@@ -81,7 +87,15 @@
     "bookId": 40,
     "chapterId": 16,
     "verseId": 10,
-    "text": "Eller de sju brødene til de fire tusen, og hvor mange kurver dere fikk tilbake da?"
+    "text": "Eller de sju brødene til de fire tusen, og hvor mange kurver dere fikk da?",
+    "versions": [
+      {
+        "text": "Eller de sju brødene til de fire tusen, og hvor mange kurver dere fikk tilbake da?",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "Gresken bruker to forskjellige ord for kurver: 'κοφίνους' (v.9) og 'σπυρίδας' (v.10), men begge oversettes med 'kurver' som er akseptabelt. Imidlertid er 'fikk tilbake' en overtolkning av 'ἐλάβετε' (dere mottok/fikk). 'Tilbake' ble lagt til i v.9 for kontekst, men i v.10 er 'fikk da' tilstrekkelig og mer nøyaktig."
+      }
+    ]
   },
   {
     "bookId": 40,
@@ -207,7 +221,15 @@
     "bookId": 40,
     "chapterId": 16,
     "verseId": 26,
-    "text": "Hva gagner det et menneske om det vinner hele verden, men taper sin sjel? Eller hva kan et menneske gi som vederlag for sin sjel?"
+    "text": "For hva gagner det et menneske om det vinner hele verden, men taper sin sjel? Eller hva kan et menneske gi som vederlag for sin sjel?",
+    "versions": [
+      {
+        "text": "Hva gagner det et menneske om det vinner hele verden, men taper sin sjel? Eller hva kan et menneske gi som vederlag for sin sjel?",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "Originalen begynner med 'τί γὰρ' (for hva), der 'γὰρ' markerer en begrunnelse eller fortsettelse av argumentet fra vers 25. 'For' bør inkluderes for å bevare denne logiske koblingen."
+      }
+    ]
   },
   {
     "bookId": 40,

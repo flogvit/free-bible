@@ -21,7 +21,21 @@
     "bookId": 40,
     "chapterId": 12,
     "verseId": 4,
-    "text": "Hvordan han gikk inn i Guds hus og spiste skuebrødene, som verken han eller de som var med ham hadde lov til å spise, men bare prestene."
+    "text": "Hvordan han gikk inn i Guds hus og de spiste skuebrødene, som verken han eller de som var med ham hadde lov til å spise, men bare prestene?",
+    "versions": [
+      {
+        "text": "Hvordan han gikk inn i Guds hus og spiste skuebrødene, som verken han eller de som var med ham hadde lov til å spise, men bare prestene.",
+        "type": "error",
+        "severity": "major",
+        "explanation": "Grunnteksten har 'ἔφαγον' (flertall - 'de spiste'), ikke 'ἔφαγεν' (entall - 'han spiste'). David og følget hans spiste brødene sammen, ikke bare David alene."
+      },
+      {
+        "text": "Hvordan han gikk inn i Guds hus og de spiste skuebrødene, som verken han eller de som var med ham hadde lov til å spise, men bare prestene.",
+        "type": "grammar",
+        "severity": "minor",
+        "explanation": "Vers 3-4 utgjør ett spørsmål ('Har dere ikke lest ... hvordan han gikk inn ...?'). Vers 4 bør avsluttes med spørsmålstegn for å fullføre spørsmålet som begynner i vers 3."
+      }
+    ]
   },
   {
     "bookId": 40,
@@ -33,7 +47,21 @@
     "bookId": 40,
     "chapterId": 12,
     "verseId": 6,
-    "text": "Men jeg sier dere: Her er noe som er større enn tempelet."
+    "text": "Men jeg sier dere: Her er noe som er større enn tempelet.",
+    "versions": [
+      {
+        "text": "Men jeg sier dere: Her er noe som er større enn tempelet.",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "Konteksten tyder på at Jesus refererer til seg selv ('én som er større'), ikke bare 'noe'. Dette er den vanlige forståelsen og stemmer med parallellen i vers 41-42 ('mer enn Jona/Salomo')."
+      },
+      {
+        "text": "Men jeg sier dere: Her er én som er større enn tempelet.",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "Grunnteksten har det nøytrale 'μεῖζόν' (noe større), ikke maskulinum. Den greske teksten sier bokstavelig 'noe større enn tempelet er her'. Selv om det implisitt peker mot Jesus selv, er den grammatiske formen nøytral. Mange oversettelser beholder denne tvetydigheten. Merk: versjonhistorikken viser endring FRA 'noe' TIL 'én', men den grammatiske formen i grunnteksten støtter faktisk 'noe'."
+      }
+    ]
   },
   {
     "bookId": 40,
@@ -63,7 +91,15 @@
     "bookId": 40,
     "chapterId": 12,
     "verseId": 11,
-    "text": "Han sa til dem: «Om noen av dere har en sau og den faller i en grøft på sabbaten, vil han ikke da gripe tak i den og dra den opp?"
+    "text": "Han sa til dem: «Hvem av dere som har en sau og den faller i en grøft på sabbaten, vil ikke gripe tak i den og dra den opp?",
+    "versions": [
+      {
+        "text": "Han sa til dem: «Om noen av dere har en sau og den faller i en grøft på sabbaten, vil han ikke da gripe tak i den og dra den opp?",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "Grunnteksten begynner med 'Τίς ἔσται ἐξ ὑμῶν' (Hvem blant dere), et retorisk spørsmål. 'Om noen av dere' gjør det til en betingelsessetning i stedet for et spørsmål, noe som endrer den retoriske formen."
+      }
+    ]
   },
   {
     "bookId": 40,
@@ -105,11 +141,17 @@
     "bookId": 40,
     "chapterId": 12,
     "verseId": 18,
-    "text": "«Se, min tjener som jeg har utvalgt, min elskede som jeg har min glede i. Jeg vil legge min Ånd på ham, og han skal forkynne rett for folkeslagene.",
+    "text": "«Se, min tjener som jeg har utvalgt, min elskede som jeg har min glede i! Jeg vil legge min Ånd på ham, og han skal forkynne rett for folkeslagene.",
     "versions": [
       {
         "text": "«Se, min tjener som jeg har utvalgt, min elskede som min sjel har behag i. Jeg vil legge min Ånd på ham, og han skal forkynne rett for folkeslagene.",
         "explanation": "'εὐδόκησεν ἡ ψυχή μου' kan oversettes mer naturlig til 'som jeg har min glede i' fremfor det mer arkaiske 'som min sjel har behag i'. Dette flyter bedre ved opplesning."
+      },
+      {
+        "text": "«Se, min tjener som jeg har utvalgt, min elskede som jeg har min glede i. Jeg vil legge min Ånd på ham, og han skal forkynne rett for folkeslagene.",
+        "type": "grammar",
+        "severity": "minor",
+        "explanation": "Utropstegn etter 'glede i' markerer bedre det proklamerende 'Ἰδοὺ' (Se!) og gir naturlig pausering før neste setning."
       }
     ]
   },
@@ -177,7 +219,15 @@
     "bookId": 40,
     "chapterId": 12,
     "verseId": 28,
-    "text": "Men hvis det er ved Guds Ånd jeg driver ut demonene, da har Guds rike nådd frem til dere."
+    "text": "Men hvis det er ved Guds Ånd jeg driver ut demoner, da har Guds rike nådd frem til dere.",
+    "versions": [
+      {
+        "text": "Men hvis det er ved Guds Ånd jeg driver ut demonene, da har Guds rike nådd frem til dere.",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "Grunnteksten har 'τὰ δαιμόνια' (demonene) med bestemt artikkel, men for konsistens med vers 27 ('driver ut demoner') og naturlig norsk flyt, kan 'demoner' uten artikkel vurderes. Alternativt er begge akseptable, men konsistens i konteksten er ønskelig."
+      }
+    ]
   },
   {
     "bookId": 40,
@@ -213,7 +263,15 @@
     "bookId": 40,
     "chapterId": 12,
     "verseId": 33,
-    "text": "Enten må dere si at treet er godt og frukten god, eller at treet er dårlig og frukten dårlig. For treet kjennes på frukten."
+    "text": "Enten gjør treet godt og frukten god, eller gjør treet dårlig og frukten dårlig. For treet kjennes på frukten.",
+    "versions": [
+      {
+        "text": "Enten må dere si at treet er godt og frukten god, eller at treet er dårlig og frukten dårlig. For treet kjennes på frukten.",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "Grunnteksten har 'ποιήσατε' (gjør) i imperativ, ikke 'si at'. Jesus oppfordrer til konsistens mellom det man er og det man produserer, ikke bare til å beskrive det."
+      }
+    ]
   },
   {
     "bookId": 40,
@@ -267,7 +325,15 @@
     "bookId": 40,
     "chapterId": 12,
     "verseId": 40,
-    "text": "For slik Jona var i fiskens buk i tre dager og tre netter, slik skal Menneskesønnen være i jordens dyp i tre dager og tre netter."
+    "text": "For slik Jona var i den store fiskens buk i tre dager og tre netter, slik skal Menneskesønnen være i jordens dyp i tre dager og tre netter.",
+    "versions": [
+      {
+        "text": "For slik Jona var i fiskens buk i tre dager og tre netter, slik skal Menneskesønnen være i jordens dyp i tre dager og tre netter.",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "Det greske 'κῆτος' betyr 'sjøuhyre' eller 'stor fisk/havdyr', ikke bare en vanlig fisk. Mange norske oversettelser bruker 'den store fisken' eller 'havdyret' for å gjenspeile dette. 'Fiskens buk' alene kan oppfattes som en vanlig fisk."
+      }
+    ]
   },
   {
     "bookId": 40,
@@ -303,7 +369,15 @@
     "bookId": 40,
     "chapterId": 12,
     "verseId": 46,
-    "text": "Mens han ennå talte til folkemengden, kom hans mor og brødre. De sto utenfor og ville snakke med ham."
+    "text": "Mens han ennå talte til folkemengden, se, da sto hans mor og brødre utenfor og ville snakke med ham.",
+    "versions": [
+      {
+        "text": "Mens han ennå talte til folkemengden, kom hans mor og brødre. De sto utenfor og ville snakke med ham.",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "Grunnteksten har 'ἰδοὺ' (se!) og 'εἱστήκεισαν' (sto, pluskvamperfektum) - de sto allerede der, de 'kom' ikke akkurat da. Oversettelsen 'kom hans mor og brødre' antyder at de ankom i det øyeblikket, mens grunnteksten indikerer at de allerede sto utenfor."
+      }
+    ]
   },
   {
     "bookId": 40,

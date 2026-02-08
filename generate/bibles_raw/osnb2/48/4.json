@@ -39,7 +39,15 @@
     "bookId": 48,
     "chapterId": 4,
     "verseId": 6,
-    "text": "Og fordi dere er sønner, har Gud sendt sin Sønns Ånd inn i våre hjerter, den roper: «Abba, Far!»"
+    "text": "Og fordi dere er sønner, har Gud sendt sin Sønns Ånd inn i våre hjerter, og den roper: «Abba, Far!»",
+    "versions": [
+      {
+        "text": "Og fordi dere er sønner, har Gud sendt sin Sønns Ånd inn i våre hjerter, den roper: «Abba, Far!»",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "Å legge til 'og' før 'den roper' gir bedre flyt på norsk og tydeliggjør at det er Ånden som roper."
+      }
+    ]
   },
   {
     "bookId": 48,
@@ -105,11 +113,17 @@
     "bookId": 48,
     "chapterId": 4,
     "verseId": 15,
-    "text": "Hvor er da den saligprisningen dere hadde? For jeg kan vitne om at dere ville ha revet ut øynene deres og gitt dem til meg, om det hadde vært mulig.",
+    "text": "Hva ble det da av saligprisningen deres? For jeg kan vitne om at dere ville ha revet ut øynene deres og gitt dem til meg, om det hadde vært mulig.",
     "versions": [
       {
         "text": "Hvor ble det av gleden dere hadde? For jeg kan vitne om at dere ville ha revet ut øynene deres og gitt dem til meg, om det hadde vært mulig.",
         "explanation": "Det greske 'μακαρισμός' betyr mer spesifikt 'saligprisning' eller 'lykksalighetserklæring' - altså den entusiastiske lovprisningen de hadde av Paulus. 'Glede' er noe vagere. 'Οὖν' (da/altså) bør også gjenspeiles."
+      },
+      {
+        "text": "Hvor er da den saligprisningen dere hadde? For jeg kan vitne om at dere ville ha revet ut øynene deres og gitt dem til meg, om det hadde vært mulig.",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "'ποῦ' (hvor) med 'μακαρισμός' antyder at den er forsvunnet – 'Hva ble det av' formidler dette bedre enn det statiske 'Hvor er'. Også 'saligprisningen deres' er mer naturlig norsk enn 'den saligprisningen dere hadde'."
       }
     ]
   },
@@ -135,7 +149,15 @@
     "bookId": 48,
     "chapterId": 4,
     "verseId": 18,
-    "text": "Det er godt å være ivrig i en god sak, alltid, og ikke bare når jeg er hos dere."
+    "text": "Det er godt å bli vist iver i en god sak til enhver tid, og ikke bare når jeg er hos dere.",
+    "versions": [
+      {
+        "text": "Det er godt å være ivrig i en god sak, alltid, og ikke bare når jeg er hos dere.",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "Det greske 'ζηλοῦσθαι' er passiv – det betyr 'å bli vist iver' (dvs. at andre er ivrige etter dere), ikke 'å være ivrig'. Paulus sier det er bra at noen er ivrige etter galaterne, så lenge det er i det gode. 'Til enhver tid' er noe mer naturlig enn 'alltid' med komma her."
+      }
+    ]
   },
   {
     "bookId": 48,
@@ -201,7 +223,15 @@
     "bookId": 48,
     "chapterId": 4,
     "verseId": 27,
-    "text": "For det står skrevet: «Gled deg, du ufruktbare som ikke føder! Bryt ut i jubel og rop, du som ikke har fødselsveer! For den enslige kvinnen har flere barn enn hun som har en mann.»"
+    "text": "For det står skrevet: «Gled deg, du ufruktbare som ikke føder! Bryt ut i jubel og rop, du som ikke har fødselsveer! For den forlatte kvinnen har flere barn enn hun som har en mann.»",
+    "versions": [
+      {
+        "text": "For det står skrevet: «Gled deg, du ufruktbare som ikke føder! Bryt ut i jubel og rop, du som ikke har fødselsveer! For den enslige kvinnen har flere barn enn hun som har en mann.»",
+        "type": "error",
+        "severity": "major",
+        "explanation": "Det greske 'τῆς ἐρήμου' (fra Jes 54:1) betyr 'den forlatte/øde' – altså kvinnen som er forlatt av sin mann, ikke bare 'enslig'. 'Forlatte' gjenspeiler bedre profetiens kontekst om Israel som forlatt av Gud, men som likevel får mange barn."
+      }
+    ]
   },
   {
     "bookId": 48,

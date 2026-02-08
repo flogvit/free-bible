@@ -87,7 +87,15 @@
     "bookId": 42,
     "chapterId": 8,
     "verseId": 14,
-    "text": "Det som falt blant tornebusker, er de som hører, men som på livets vei kveles av bekymringer, rikdom og nytelser og aldri bærer moden frukt."
+    "text": "Det som falt blant tornebusker, er de som hører, men som kveles av livets bekymringer, rikdom og nytelser, og aldri bærer moden frukt.",
+    "versions": [
+      {
+        "text": "Det som falt blant tornebusker, er de som hører, men som på livets vei kveles av bekymringer, rikdom og nytelser og aldri bærer moden frukt.",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "Det greske πορευόμενοι betyr 'idet de vandrer/går' og beskriver deres livsførsel, mens μεριμνῶν... τοῦ βίου ('livets bekymringer/rikdom/nytelser') er det som kveler. 'På livets vei' er en noe fri omskrivning. 'Livets bekymringer, rikdom og nytelser' er mer presist og naturlig."
+      }
+    ]
   },
   {
     "bookId": 42,
@@ -105,7 +113,21 @@
     "bookId": 42,
     "chapterId": 8,
     "verseId": 17,
-    "text": "For ingenting er skjult som ikke skal bli åpenbart, og ingenting er gjemt som ikke skal bli kjent og komme for dagen."
+    "text": "For ingenting er skjult som ikke skal bli åpenbart, og ingenting er hemmelig som ikke skal bli kjent og komme for dagen.",
+    "versions": [
+      {
+        "text": "For ingenting er skjult som ikke skal bli åpenbart, og ingenting er gjemt som ikke skal bli kjent og komme for dagen.",
+        "type": "error",
+        "severity": "minor",
+        "explanation": "Det greske ἀπόκρυφον betyr 'skjult/hemmelig', ikke 'gjemt'. Selv om betydningen er nær, er 'skjult' mer presist for denne konteksten og gir bedre parallellisme med første del av verset."
+      },
+      {
+        "text": "For ingenting er skjult som ikke skal bli åpenbart, og ingenting er skjult som ikke skal bli kjent og komme for dagen.",
+        "type": "error",
+        "severity": "minor",
+        "explanation": "Det greske bruker to ulike ord: κρυπτόν (skjult) og ἀπόκρυφον (hemmelig/bortgjemt). Å bruke 'skjult' begge steder mister denne distinksjonen. 'Hemmelig' er et godt alternativ som skiller seg fra det forrige forslaget 'gjemt' og bevarer nyansen i originalen."
+      }
+    ]
   },
   {
     "bookId": 42,
@@ -177,11 +199,17 @@
     "bookId": 42,
     "chapterId": 8,
     "verseId": 29,
-    "text": "For Jesus var i ferd med å befale den urene ånden å fare ut av mannen. I lang tid hadde ånden grepet ham, og han ble bundet med lenker og fotjern og holdt under bevoktning. Men han sprengte lenkene og ble drevet av demonen ut i ødemarken.",
+    "text": "For Jesus var i ferd med å befale den urene ånden å fare ut av mannen. I lang tid hadde ånden grepet ham. Han ble bundet med lenker og fotjern og holdt under bevoktning, men han sprengte lenkene og ble drevet av demonen ut i ødemarken.",
     "versions": [
       {
         "text": "For Jesus hadde befalt den urene ånden å fare ut av mannen. I lang tid hadde den hatt ham i sitt grep. Han ble holdt bundet med lenker og fotjern og bevoktet, men han sprengte lenkene og ble drevet av demonen ut i øde trakter.",
         "explanation": "Det greske παρήγγελλεν er imperfektum, som indikerer en pågående eller gjentatt handling. Dette forklarer hvorfor demonen reagerte - Jesus holdt på med å gi befalingen."
+      },
+      {
+        "text": "For Jesus var i ferd med å befale den urene ånden å fare ut av mannen. I lang tid hadde ånden grepet ham, og han ble bundet med lenker og fotjern og holdt under bevoktning. Men han sprengte lenkene og ble drevet av demonen ut i ødemarken.",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "Konjunksjonen 'og' mellom 'grepet ham' og 'han ble bundet' skaper en feilaktig sammenheng, som om det er ånden som binder ham. I virkeligheten er det folkene som binder ham. En ny setning etter 'grepet ham' gjør det tydeligere at subjektet skifter."
       }
     ]
   },
@@ -225,7 +253,21 @@
     "bookId": 42,
     "chapterId": 8,
     "verseId": 36,
-    "text": "De som hadde sett det, fortalte dem hvordan den besatte var blitt helbredet."
+    "text": "De som hadde sett det, fortalte dem hvordan den demonbesatte var blitt frelst.",
+    "versions": [
+      {
+        "text": "De som hadde sett det, fortalte dem hvordan den besatte var blitt helbredet.",
+        "type": "error",
+        "severity": "major",
+        "explanation": "Det greske ἐσώθη (fra σῴζω) betyr 'frelst/reddet', ikke bare 'helbredet'. Dette ordet har en dypere teologisk betydning som inkluderer både fysisk og åndelig frelse. 'Frelst' gjengir dette bedre enn 'helbredet', som kun dekker det fysiske aspektet."
+      },
+      {
+        "text": "De som hadde sett det, fortalte dem hvordan den besatte var blitt frelst.",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "δαιμονισθείς er mer spesifikt enn bare 'besatt' – det refererer direkte til demonbesettelse. 'Demonbesatte' er mer presist og gjør teksten tydeligere."
+      }
+    ]
   },
   {
     "bookId": 42,
@@ -243,7 +285,15 @@
     "bookId": 42,
     "chapterId": 8,
     "verseId": 39,
-    "text": "«Vend hjem og fortell hvor store ting Gud har gjort mot deg.» Så gikk han av sted og forkynte over hele byen hvor store ting Jesus hadde gjort mot ham."
+    "text": "«Vend hjem og fortell hvor store ting Gud har gjort for deg.» Så gikk han av sted og forkynte over hele byen hvor store ting Jesus hadde gjort for ham.",
+    "versions": [
+      {
+        "text": "«Vend hjem og fortell hvor store ting Gud har gjort mot deg.» Så gikk han av sted og forkynte over hele byen hvor store ting Jesus hadde gjort mot ham.",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "Preposisjonen 'mot' på norsk har en negativ konnotasjon (noe rettet mot noen). Det greske σοι/αὐτῷ (dativ) uttrykker her mottaker av velgjerninger. 'For deg/ham' er mer naturlig og korrekt på norsk i denne sammenhengen."
+      }
+    ]
   },
   {
     "bookId": 42,
@@ -273,7 +323,15 @@
     "bookId": 42,
     "chapterId": 8,
     "verseId": 43,
-    "text": "Blant dem var det en kvinne som hadde hatt blødninger i tolv år. Hun hadde brukt alt hun eide på leger, men ingen hadde kunnet helbrede henne."
+    "text": "Der var det en kvinne som hadde hatt blødninger i tolv år. Hun hadde brukt alt hun eide på leger, men ingen hadde kunnet helbrede henne.",
+    "versions": [
+      {
+        "text": "Blant dem var det en kvinne som hadde hatt blødninger i tolv år. Hun hadde brukt alt hun eide på leger, men ingen hadde kunnet helbrede henne.",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "Originalen begynner med καὶ γυνὴ ('og en kvinne'), som introduserer en ny person i fortellingen. 'Blant dem' antyder feilaktig at hun var del av folkemengden som presset seg på Jesus, mens teksten presenterer henne som en separat person som nærmet seg."
+      }
+    ]
   },
   {
     "bookId": 42,
@@ -321,7 +379,15 @@
     "bookId": 42,
     "chapterId": 8,
     "verseId": 50,
-    "text": "Men da Jesus hørte det, sa han til ham: «Frykt ikke, bare tro, så skal hun bli frelst.»"
+    "text": "Men da Jesus hørte det, sa han til ham: «Frykt ikke, bare tro, så skal hun bli reddet.»",
+    "versions": [
+      {
+        "text": "Men da Jesus hørte det, sa han til ham: «Frykt ikke, bare tro, så skal hun bli frelst.»",
+        "type": "theological",
+        "severity": "minor",
+        "explanation": "σωθήσεται (fra σῴζω) kan bety 'frelst' eller 'reddet'. I denne konteksten handler det primært om at jenta skal reddes fra døden (bli vekket til live igjen), ikke om åndelig frelse. 'Reddet' passer bedre i konteksten. Merk at i vers 36 er 'frelst' riktig brukt fordi den demonbesatte opplever en mer helhetlig frelse."
+      }
+    ]
   },
   {
     "bookId": 42,
@@ -345,13 +411,29 @@
     "bookId": 42,
     "chapterId": 8,
     "verseId": 54,
-    "text": "Men han tok henne i hånden og sa: «Barn, stå opp!»"
+    "text": "Men han grep hånden hennes og ropte: «Barn, stå opp!»",
+    "versions": [
+      {
+        "text": "Men han tok henne i hånden og sa: «Barn, stå opp!»",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "κρατήσας (kratēsas) innebærer et fastere grep enn bare 'tok', og ἐφώνησεν (ephōnēsen) betyr 'ropte' eller 'kalte med høy stemme' snarere enn bare 'sa'. Dette gir et mer presist bilde av handlingen."
+      }
+    ]
   },
   {
     "bookId": 42,
     "chapterId": 8,
     "verseId": 55,
-    "text": "Da vendte ånden hennes tilbake, og hun reiste seg straks opp. Og han sa at de skulle gi henne noe å spise."
+    "text": "Da vendte ånden hennes tilbake, og hun reiste seg straks. Og han ba dem gi henne noe å spise.",
+    "versions": [
+      {
+        "text": "Da vendte ånden hennes tilbake, og hun reiste seg straks opp. Og han sa at de skulle gi henne noe å spise.",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "'reiste seg opp' er redundant - 'reiste seg' er tilstrekkelig. Også διέταξεν (dietaxen) betyr 'befalte/ga ordre om', men 'ba dem' er mer naturlig på moderne norsk og formidler meningen godt."
+      }
+    ]
   },
   {
     "bookId": 42,

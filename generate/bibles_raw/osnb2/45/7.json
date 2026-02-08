@@ -69,11 +69,17 @@
     "bookId": 45,
     "chapterId": 7,
     "verseId": 8,
-    "text": "Men synden grep muligheten gjennom budet og virket all slags begjær i meg. For uten loven er synden død.",
+    "text": "Men synden grep muligheten gjennom budet og virket alt slags begjær i meg. For uten loven er synden død.",
     "versions": [
       {
         "text": "Men synden grep muligheten gjennom budet og virket i meg all slags begjær. For uten loven er synden død.",
         "explanation": "Ordstillingen 'virket i meg all slags begjær' er litt tung på norsk. 'Virket all slags begjær i meg' flyter bedre for muntlig lesning og beholder samme betydning."
+      },
+      {
+        "text": "Men synden grep muligheten gjennom budet og virket all slags begjær i meg. For uten loven er synden død.",
+        "type": "grammar",
+        "severity": "minor",
+        "explanation": "'Begjær' er intetkjønn på norsk (et begjær), så det bør hete 'alt slags begjær', ikke 'all slags begjær'."
       }
     ]
   },
@@ -87,7 +93,15 @@
     "bookId": 45,
     "chapterId": 7,
     "verseId": 10,
-    "text": "og jeg døde. Og budet som var til liv, det ble til død for meg."
+    "text": "og jeg døde. Det viste seg at budet som skulle gi liv, førte til død for meg.",
+    "versions": [
+      {
+        "text": "og jeg døde. Og budet som var til liv, det ble til død for meg.",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "εὑρέθη μοι ('det ble funnet for meg' / 'det viste seg') innebærer en oppdagelse, ikke bare at noe 'ble' til noe. Dessuten er ἡ εἰς ζωήν ('det som var rettet mot liv') bedre gjengitt med 'som skulle gi liv' for å få frem hensikten. Nåværende oversettelse er akseptabel men litt flat."
+      }
+    ]
   },
   {
     "bookId": 45,
@@ -111,7 +125,15 @@
     "bookId": 45,
     "chapterId": 7,
     "verseId": 14,
-    "text": "Vi vet jo at loven er åndelig, men jeg er kjødelig, solgt som slave under synden."
+    "text": "Vi vet jo at loven er åndelig, men jeg er av kjød, solgt som slave under synden.",
+    "versions": [
+      {
+        "text": "Vi vet jo at loven er åndelig, men jeg er kjødelig, solgt som slave under synden.",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "σάρκινος betyr 'av kjød/kjødelig av natur' (materialt, bestående av kjød), til forskjell fra σαρκικός som mer betyr 'kjødelig innstilt'. 'Av kjød' fanger dette nyansert. Men 'kjødelig' er også akseptabelt og idiomatisk, så dette er bare et forslag."
+      }
+    ]
   },
   {
     "bookId": 45,

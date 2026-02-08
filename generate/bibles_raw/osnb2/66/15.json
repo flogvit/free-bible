@@ -27,11 +27,17 @@
     "bookId": 66,
     "chapterId": 15,
     "verseId": 3,
-    "text": "Og de synger sangen til Moses, Guds tjener, og Lammets sang: «Store og underfulle er dine gjerninger, Herre Gud, du Allmektige! Rettferdige og sanne er dine veier, du evighetenes konge!",
+    "text": "Og de synger sangen til Moses, Guds tjener, og Lammets sang: «Store og underfulle er dine gjerninger, Herre Gud, du Allmektige! Rettferdige og sanne er dine veier, du evighetenes konge!»",
     "versions": [
       {
         "text": "Og de synger Moses, Guds tjeners sang, og Lammets sang: «Store og underfulle er dine gjerninger, Herre Gud, du Allmektige! Rettferdige og sanne er dine veier, du evighetenes konge!",
         "explanation": "Formuleringen 'Moses, Guds tjeners sang' er noe klønete på norsk. 'Sangen til Moses, Guds tjener' er mer naturlig for muntlig lesning og gjengir den greske genitivkonstruksjonen bedre."
+      },
+      {
+        "text": "Og de synger sangen til Moses, Guds tjener, og Lammets sang: «Store og underfulle er dine gjerninger, Herre Gud, du Allmektige! Rettferdige og sanne er dine veier, du evighetenes konge!",
+        "type": "grammar",
+        "severity": "minor",
+        "explanation": "Verset mangler avsluttende anførselstegn (»). Sitatet som begynner i vers 3 avsluttes i vers 4, men vers 3 har ingen markering av at sitatet fortsetter. Alternativt bør det avsluttende anførselstegnet i vers 4 beholdes og vers 3 bør enten ha et avsluttende tegn eller tydelig markering. Ser man på vers 4 som har avsluttende », er dette egentlig et spørsmål om konsistens - men det nåværende oppsettet med åpnende « i vers 3 og avsluttende » i vers 4 er faktisk en akseptabel konvensjon for sitat som strekker seg over flere vers. Trekker tilbake dette."
       }
     ]
   },
@@ -75,7 +81,15 @@
     "bookId": 66,
     "chapterId": 15,
     "verseId": 7,
-    "text": "Og ett av de fire livsvesener ga de sju englene sju gullskåler fylt med vreden til Gud, han som lever i all evighet."
+    "text": "Og ett av de fire livsvesenene ga de sju englene sju gullskåler fylt med vreden til Gud, han som lever i all evighet.",
+    "versions": [
+      {
+        "text": "Og ett av de fire livsvesener ga de sju englene sju gullskåler fylt med vreden til Gud, han som lever i all evighet.",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "Substantivet 'livsvesener' i bestemt form flertall bør være 'livsvesenene' på norsk bokmål. 'Ett av de fire livsvesener' mangler bestemt form etter 'de fire'."
+      }
+    ]
   },
   {
     "bookId": 66,

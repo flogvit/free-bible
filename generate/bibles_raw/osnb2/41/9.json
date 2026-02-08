@@ -3,7 +3,15 @@
     "bookId": 41,
     "chapterId": 9,
     "verseId": 1,
-    "text": "Og han sa til dem: «Sannelig, jeg sier dere: Noen av dem som står her, skal ikke smake døden før de ser Guds rike komme med kraft.»"
+    "text": "Han sa til dem: «Sannelig, jeg sier dere: Noen av dem som står her, skal ikke smake døden før de ser Guds rike komme med kraft.»",
+    "versions": [
+      {
+        "text": "Og han sa til dem: «Sannelig, jeg sier dere: Noen av dem som står her, skal ikke smake døden før de ser Guds rike komme med kraft.»",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "Det greske καὶ ἔλεγεν αὐτοῖς er en vanlig narrativ innledning. 'Og han sa' er litt tungt på norsk som kapittelstart. 'Han sa' er mer naturlig og flytende som åpning."
+      }
+    ]
   },
   {
     "bookId": 41,
@@ -105,19 +113,49 @@
     "bookId": 41,
     "chapterId": 9,
     "verseId": 14,
-    "text": "Da de kom til disiplene, så de en stor folkemengde omkring dem og noen skriftlærde som diskuterte med dem."
+    "text": "Da de kom tilbake til disiplene, så de en stor folkemengde omkring dem og noen skriftlærde som diskuterte med dem.",
+    "versions": [
+      {
+        "text": "Da de kom til disiplene, så de en stor folkemengde omkring dem og noen skriftlærde som diskuterte med dem.",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "Konteksten er at Jesus, Peter, Jakob og Johannes kommer ned fra forklarelsens fjell tilbake til de andre disiplene. 'Tilbake' tydeliggjør at de vender tilbake til gruppen de forlot."
+      }
+    ]
   },
   {
     "bookId": 41,
     "chapterId": 9,
     "verseId": 15,
-    "text": "Straks hele mengden fikk øye på ham, ble de overveldet og løp bort og hilste ham."
+    "text": "Straks hele mengden fikk øye på ham, ble de overrasket og løp bort for å hilse ham.",
+    "versions": [
+      {
+        "text": "Straks hele mengden fikk øye på ham, ble de overveldet og løp bort og hilste ham.",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "Det greske ἐξεθαμβήθησαν betyr 'ble svært forundret/overrasket' snarere enn 'overveldet'. I tillegg er 'løp bort for å hilse ham' mer naturlig norsk enn 'løp bort og hilste ham'."
+      },
+      {
+        "text": "Straks hele mengden fikk øye på ham, ble de forundret og løp bort for å hilse ham.",
+        "type": "error",
+        "severity": "major",
+        "explanation": "Det greske ἐξεθαμβήθησαν er et sterkt uttrykk som betyr 'ble svært overrasket/forbauset'. 'Forundret' er litt for mildt. 'Overrasket' fanger den plutselige reaksjonen bedre, og versionshistorikken viser at 'overveldet' ble avvist til fordel for noe som betyr 'forundret/overrasket', men 'overrasket' er sterkere enn 'forundret' og nærmere originalen."
+      }
+    ]
   },
   {
     "bookId": 41,
     "chapterId": 9,
     "verseId": 16,
-    "text": "Han spurte dem: «Hva er det dere diskuterer?»"
+    "text": "Han spurte dem: «Hva er det dere diskuterer med dem?»",
+    "versions": [
+      {
+        "text": "Han spurte dem: «Hva er det dere diskuterer?»",
+        "type": "error",
+        "severity": "minor",
+        "explanation": "Det greske πρὸς αὑτούς kan bety 'med dem' (altså med de skriftlærde, jf. konteksten i vers 14). Noen håndskrifter har αὐτούς (dem) i stedet for αὑτούς (dere selv/hverandre). I den kritiske teksten spør Jesus hva de diskuterer med de skriftlærde. Den nåværende oversettelsen utelater dette elementet. Alternativt kan det leses som 'seg imellom', men det bør gjenspeiles i oversettelsen."
+      }
+    ]
   },
   {
     "bookId": 41,
@@ -141,7 +179,15 @@
     "bookId": 41,
     "chapterId": 9,
     "verseId": 20,
-    "text": "De brakte gutten til ham. Da ånden fikk se Jesus, rev og slet den straks i gutten, og han falt om på bakken og veltet seg rundt mens han frådet."
+    "text": "De brakte gutten til ham. Straks ånden fikk se Jesus, rev og slet den i gutten, og han falt om på bakken og veltet seg rundt mens han frådet.",
+    "versions": [
+      {
+        "text": "De brakte gutten til ham. Da ånden fikk se Jesus, rev og slet den straks i gutten, og han falt om på bakken og veltet seg rundt mens han frådet.",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "Det greske εὐθὺς (euthys = straks) modifiserer hele handlingssekvensen – det var umiddelbart da ånden så Jesus. 'Straks ånden fikk se Jesus' plasserer tidsaspektet mer presist enn 'Da ånden fikk se Jesus, rev og slet den straks'."
+      }
+    ]
   },
   {
     "bookId": 41,
@@ -165,7 +211,15 @@
     "bookId": 41,
     "chapterId": 9,
     "verseId": 23,
-    "text": "Jesus sa til ham: «'Om du kan'? Alt er mulig for den som tror.»"
+    "text": "Jesus sa til ham: «Du sier 'om du kan'? Alt er mulig for den som tror.»",
+    "versions": [
+      {
+        "text": "Jesus sa til ham: «'Om du kan'? Alt er mulig for den som tror.»",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "Det greske Τὸ Εἰ δύνῃ med artikkelen τὸ indikerer at Jesus siterer og kommenterer farens ord. En tydeliggjøring med 'Du sier' gjør dette mer forståelig for leseren."
+      }
+    ]
   },
   {
     "bookId": 41,
@@ -237,7 +291,15 @@
     "bookId": 41,
     "chapterId": 9,
     "verseId": 33,
-    "text": "De kom til Kapernaum. Da han var inne i huset, spurte han dem: «Hva var det dere snakket om på veien?»"
+    "text": "De kom til Kapernaum. Da han var inne i huset, spurte han dem: «Hva var det dere diskuterte på veien?»",
+    "versions": [
+      {
+        "text": "De kom til Kapernaum. Da han var inne i huset, spurte han dem: «Hva var det dere snakket om på veien?»",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "Det greske διελογίζεσθε (fra dialogizomai) betyr 'drøftet/diskuterte', som er sterkere enn 'snakket om'. I vers 34 brukes også 'diskutert' (διελέχθησαν), så konsistens tilsier 'diskuterte' også her."
+      }
+    ]
   },
   {
     "bookId": 41,
@@ -273,7 +335,15 @@
     "bookId": 41,
     "chapterId": 9,
     "verseId": 38,
-    "text": "Johannes sa til ham: «Mester, vi så en som drev ut onde ånder i ditt navn, og vi forsøkte å hindre ham fordi han ikke fulgte oss.»"
+    "text": "Johannes sa til ham: «Mester, vi så en som drev ut demoner i ditt navn, og vi forsøkte å hindre ham fordi han ikke fulgte oss.»",
+    "versions": [
+      {
+        "text": "Johannes sa til ham: «Mester, vi så en som drev ut onde ånder i ditt navn, og vi forsøkte å hindre ham fordi han ikke fulgte oss.»",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "Det greske δαιμόνια er 'demoner', ikke 'onde ånder'. Selv om betydningen er relatert, er 'demoner' den mer presise oversettelsen. I vers 25 brukes 'ånd' for πνεῦμα, så det er god grunn til å skille mellom termene."
+      }
+    ]
   },
   {
     "bookId": 41,
@@ -303,11 +373,17 @@
     "bookId": 41,
     "chapterId": 9,
     "verseId": 43,
-    "text": "Om hånden din lokker deg til fall, så hugg den av! Det er bedre for deg å gå lemlestet inn til livet enn å ha begge hender og bli kastet i Gehenna, til ilden som ikke slukner.",
+    "text": "Om hånden din lokker deg til fall, så hugg den av! Det er bedre for deg å gå lemlestet inn til livet enn å ha begge hender og bli kastet i Gehenna, i ilden som ikke slukkes.",
     "versions": [
       {
         "text": "Om hånden din lokker deg til fall, så hugg den av! Det er bedre for deg å gå lemlestet inn til livet enn å ha begge hender og bli kastet til Gehenna, til ilden som ikke slukner.",
         "explanation": "For konsistens med vers 45 og 47 som bruker 'i Gehenna' (εἰς τὴν γέενναν), bør vers 43 også bruke 'i Gehenna' i stedet for 'til Gehenna'."
+      },
+      {
+        "text": "Om hånden din lokker deg til fall, så hugg den av! Det er bedre for deg å gå lemlestet inn til livet enn å ha begge hender og bli kastet i Gehenna, til ilden som ikke slukner.",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "For konsistens: vers 44, 46 og 48 bruker alle 'slukkes'. Vers 43 bruker 'slukner', noe som er inkonsistent. Det greske σβέννυται er passiv og bør oversettes likt gjennom hele avsnittet. I tillegg er 'i ilden' mer naturlig enn 'til ilden' gitt at εἰς τὸ πῦρ parallellerer εἰς τὴν γέενναν."
       }
     ]
   },
@@ -369,6 +445,14 @@
     "bookId": 41,
     "chapterId": 9,
     "verseId": 50,
-    "text": "Salt er godt. Men om saltet mister sin kraft, hvordan skal dere da få det salt igjen? Ha salt i dere selv, og hold fred med hverandre!»"
+    "text": "Salt er godt. Men om saltet mister sin kraft, hvordan skal dere gjøre det salt igjen? Ha salt i dere selv, og hold fred med hverandre!»",
+    "versions": [
+      {
+        "text": "Salt er godt. Men om saltet mister sin kraft, hvordan skal dere da få det salt igjen? Ha salt i dere selv, og hold fred med hverandre!»",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "Det greske ἀρτύσετε betyr 'krydre/gjøre salt igjen' (make salty). 'Få det salt igjen' er akseptabelt, men 'gjøre det salt igjen' er en noe mer presis gjengivelse av det greske verbet og flyter bedre på norsk."
+      }
+    ]
   }
 ]

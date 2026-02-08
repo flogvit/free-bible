@@ -21,13 +21,29 @@
     "bookId": 2,
     "chapterId": 31,
     "verseId": 4,
-    "text": "Han skal tenke ut kunstferdige arbeider i gull, sølv og bronse,"
+    "text": "Han skal tenke ut kunstferdige design, og arbeide i gull, sølv og bronse,",
+    "versions": [
+      {
+        "text": "Han skal tenke ut kunstferdige arbeider i gull, sølv og bronse,",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "Det hebraiske 'לַחְשֹׁב מַחֲשָׁבֹת' betyr 'å uttenke planer/design', og 'לַעֲשׂוֹת' betyr 'å lage/utføre'. Nåværende oversettelse blander de to verbene sammen. Det er to separate handlinger: å uttenke design, og å utføre arbeid i metallene. Likevel er nåværende versjon forståelig, så dette er kun en mindre forbedring."
+      }
+    ]
   },
   {
     "bookId": 2,
     "chapterId": 31,
     "verseId": 5,
-    "text": "slipe steiner til innfatning og skjære ut i tre – han skal utføre all slags håndverk."
+    "text": "bearbeide edelsteiner til innfatning og skjære ut i tre – han skal utføre all slags håndverk.",
+    "versions": [
+      {
+        "text": "slipe steiner til innfatning og skjære ut i tre – han skal utføre all slags håndverk.",
+        "type": "error",
+        "severity": "major",
+        "explanation": "Det hebraiske 'חֲרֹשֶׁת אֶבֶן' betyr 'steinarbeid/steinbearbeiding', ikke spesifikt 'slipe'. Og 'לְמַלֹּאת' betyr 'til innfatning/innlegging' (av edelsteiner). 'Slipe steiner' gir et feil bilde; det handler om å bearbeide (skjære, forme) edelsteiner for å sette dem inn i innfatninger."
+      }
+    ]
   },
   {
     "bookId": 2,
@@ -75,11 +91,17 @@
     "bookId": 2,
     "chapterId": 31,
     "verseId": 13,
-    "text": "Tal til Israels barn og si: Fremfor alt skal dere holde mine sabbater! For det er et tegn mellom meg og dere gjennom alle slekter, for at dere skal vite at jeg er Herren som helliger dere.",
+    "text": "Tal til Israels barn og si: Dere skal sannelig holde mine sabbater! For det er et tegn mellom meg og dere gjennom alle slekter, for at dere skal vite at jeg er Herren som helliger dere.",
     "versions": [
       {
         "text": "Tal til Israels barn og si: Mine sabbater skal dere holde! For det er et tegn mellom meg og dere gjennom alle slekter, for at dere skal vite at jeg er Herren som helliger dere.",
         "explanation": "Det hebraiske 'אַךְ' (akh) er en forsterkende partikkel som betyr 'sannelig/fremfor alt/absolutt'. Det understreker viktigheten av sabbatsbudet, spesielt i konteksten av arbeidet med tabernaklet. Denne nyanseringen bør komme frem."
+      },
+      {
+        "text": "Tal til Israels barn og si: Fremfor alt skal dere holde mine sabbater! For det er et tegn mellom meg og dere gjennom alle slekter, for at dere skal vite at jeg er Herren som helliger dere.",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "Partikkelen 'אַךְ' er forsterkende, men 'fremfor alt' kan gi inntrykk av en prioritering over andre bud, noe som er sterkere enn originalteksten tilsier. 'Sannelig' er en mer presis gjengivelse av den forsterkende partikkelen uten å introdusere en rangering. Likevel er dette en mindre nyanse, og den nåværende versjonen er bevisst valgt for å forsterke budets vekt i konteksten."
       }
     ]
   },
@@ -87,7 +109,15 @@
     "bookId": 2,
     "chapterId": 31,
     "verseId": 14,
-    "text": "Dere skal holde sabbaten, for den er hellig for dere. Den som vanhelliger den, skal dø. Enhver som gjør arbeid på den dagen, skal utryddes fra sitt folk."
+    "text": "Dere skal holde sabbaten, for den er hellig for dere. Den som vanhelliger den, skal sannelig dø. For enhver som gjør arbeid på den, den sjelen skal utryddes fra sitt folk.",
+    "versions": [
+      {
+        "text": "Dere skal holde sabbaten, for den er hellig for dere. Den som vanhelliger den, skal dø. Enhver som gjør arbeid på den dagen, skal utryddes fra sitt folk.",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "1) 'מוֹת יוּמָת' er en forsterket form (infinitiv absolutt + finitt verb) som betyr 'skal sannelig/visselig dø'. 2) 'כִּי' (for/fordi) innleder en begrunnelse som mangler. 3) 'בָהּ' betyr 'på den' (sabbaten), ikke 'på den dagen'. 4) 'הַנֶּפֶשׁ הַהִוא' er 'den sjelen', noe som gjenspeiler den juridiske språkbruken i originalen."
+      }
+    ]
   },
   {
     "bookId": 2,
@@ -117,6 +147,14 @@
     "bookId": 2,
     "chapterId": 31,
     "verseId": 18,
-    "text": "Da Gud var ferdig med å tale til Moses på Sinai-fjellet, ga han ham vitnesbyrdets to tavler, steintavler skrevet med Guds finger."
+    "text": "Da han var ferdig med å tale til Moses på Sinai-fjellet, ga han ham vitnesbyrdets to tavler, steintavler skrevet med Guds finger.",
+    "versions": [
+      {
+        "text": "Da Gud var ferdig med å tale til Moses på Sinai-fjellet, ga han ham vitnesbyrdets to tavler, steintavler skrevet med Guds finger.",
+        "type": "error",
+        "severity": "major",
+        "explanation": "Originalteksten bruker ikke 'אֱלֹהִים' (Gud) som subjekt for handlingen å tale, men et pronominalt suffix 'כְּכַלֹּתוֹ' (da han var ferdig). Subjektet er underforstått Herren (YHWH) fra den foregående konteksten. Å oversette med 'Da Gud var ferdig' introduserer et subjekt som ikke er eksplisitt i teksten. 'Da han var ferdig' er mer tro mot originalen og konteksten (det er Herren/YHWH som har talt gjennom hele kapitlet)."
+      }
+    ]
   }
 ]

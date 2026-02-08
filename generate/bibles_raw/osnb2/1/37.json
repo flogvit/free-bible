@@ -9,11 +9,17 @@
     "bookId": 1,
     "chapterId": 37,
     "verseId": 2,
-    "text": "Dette er Jakobs slektshistorie. Josef var sytten år gammel og gjette småfeet sammen med brødrene sine. Som ung gutt var han med sønnene til Bilha og Silpa, sin fars koner. Og Josef kom til faren med onde rykter om dem.",
+    "text": "Dette er Jakobs slektshistorie. Josef var sytten år gammel og gjette småfeet sammen med brødrene sine. Som ung gutt var han med sønnene til Bilha og Silpa, farens medhustruer. Og Josef kom til faren med onde rykter om dem.",
     "versions": [
       {
         "text": "Dette er Jakobs slektshistorie. Josef var sytten år gammel og gjette småfeet sammen med brødrene sine. Han var da en ung gutt blant sønnene til Bilha og Silpa, sin fars koner. Og Josef kom til faren med onde rykter om dem.",
         "explanation": "Det hebraiske 'והוא נער את־בני' indikerer at Josef var sammen med eller assisterte disse sønnene, ikke bare 'blant' dem. 'Som ung gutt var han med' gir bedre flyt og er mer presist."
+      },
+      {
+        "text": "Dette er Jakobs slektshistorie. Josef var sytten år gammel og gjette småfeet sammen med brødrene sine. Som ung gutt var han med sønnene til Bilha og Silpa, sin fars koner. Og Josef kom til faren med onde rykter om dem.",
+        "type": "grammar",
+        "severity": "minor",
+        "explanation": "Bilha og Silpa var medhustruer/trellkvinner, ikke Jakobs 'koner' i egentlig forstand. Det hebraiske 'נשי' kan bety 'kvinner/hustruer', men i konteksten er 'medhustruer' mer presist da de var tjenestepikene til Rakel og Lea. Alternativt kan 'koner' stå, men 'medhustruer' er teologisk mer nøyaktig."
       }
     ]
   },
@@ -99,7 +105,15 @@
     "bookId": 1,
     "chapterId": 37,
     "verseId": 13,
-    "text": "Da sa Israel til Josef: «Brødrene dine gjeter ved Sikem. Kom, jeg vil sende deg til dem.» Han svarte: «Jeg er klar.»"
+    "text": "Da sa Israel til Josef: «Gjeter ikke brødrene dine ved Sikem? Kom, jeg vil sende deg til dem.» Han svarte: «Jeg er klar.»",
+    "versions": [
+      {
+        "text": "Da sa Israel til Josef: «Brødrene dine gjeter ved Sikem. Kom, jeg vil sende deg til dem.» Han svarte: «Jeg er klar.»",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "Det hebraiske 'הלוא' er et retorisk spørsmål ('er det ikke slik at...?'). Originalen har spørreform, ikke en konstatering. 'Gjeter ikke brødrene dine ved Sikem?' gjengir dette mer korrekt."
+      }
+    ]
   },
   {
     "bookId": 1,
@@ -153,11 +167,17 @@
     "bookId": 1,
     "chapterId": 37,
     "verseId": 21,
-    "text": "Men Ruben hørte det og reddet ham fra deres hender. Han sa: «La oss ikke slå ham i hjel.»",
+    "text": "Men Ruben hørte det og reddet ham fra deres hender. Han sa: «Vi skal ikke slå ham i hjel.»",
     "versions": [
       {
         "text": "Men Ruben hørte det og reddet ham fra deres hender. Han sa: «La oss ikke ta livet hans.»",
         "explanation": "Det hebraiske 'נכנו נפש' betyr bokstavelig 'slå/drepe sjelen'. 'Slå i hjel' er mer idiomatisk på norsk og skaper bedre sammenheng med vers 20 der brødrene sier 'la oss slå ham i hjel' (נהרגהו)."
+      },
+      {
+        "text": "Men Ruben hørte det og reddet ham fra deres hender. Han sa: «La oss ikke slå ham i hjel.»",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "Det hebraiske 'לא נכנו נפש' er mer et forbud/sterk negasjon enn en oppfordring. 'Vi skal ikke' gir en sterkere tone enn 'la oss ikke', som bedre gjenspeiler Rubens autoritative inngrep."
       }
     ]
   },
@@ -183,7 +203,15 @@
     "bookId": 1,
     "chapterId": 37,
     "verseId": 25,
-    "text": "De satte seg ned for å spise. Da de så opp, fikk de øye på en karavane av ismaelitter som kom fra Gilead. Kamelene deres bar krydder, balsam og ladanum, og de var på vei ned til Egypt."
+    "text": "De satte seg ned for å spise. Da de så opp, fikk de øye på en karavane av ismaelitter som kom fra Gilead. Kamelene deres bar gummi, balsam og ladanum, og de var på vei ned til Egypt.",
+    "versions": [
+      {
+        "text": "De satte seg ned for å spise. Da de så opp, fikk de øye på en karavane av ismaelitter som kom fra Gilead. Kamelene deres bar krydder, balsam og ladanum, og de var på vei ned til Egypt.",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "Det hebraiske 'נכאת' (nekho't) refererer trolig til tragakant-gummi eller en lignende harpiksliknende substans, ikke generelt 'krydder'. 'Gummi' eller 'harpiks' er mer presist. Mange oversettelser bruker 'gummi' eller 'tragakant'."
+      }
+    ]
   },
   {
     "bookId": 1,
@@ -231,7 +259,15 @@
     "bookId": 1,
     "chapterId": 37,
     "verseId": 32,
-    "text": "Så sendte de den side kjortelen og brakte den til faren og sa: «Denne har vi funnet. Se etter om det er sønnens kjortel eller ikke.»"
+    "text": "Så sendte de den side kjortelen og brakte den til faren og sa: «Denne har vi funnet. Se om det er din sønns kjortel eller ikke.»",
+    "versions": [
+      {
+        "text": "Så sendte de den side kjortelen og brakte den til faren og sa: «Denne har vi funnet. Se etter om det er sønnens kjortel eller ikke.»",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "Det hebraiske 'בנך' (binkha) betyr 'din sønn', ikke bare 'sønnen'. 'Din sønns kjortel' er mer presist og gjengir den direkte tiltalen til Jakob. 'Se etter' kan også forenkles til 'Se'."
+      }
+    ]
   },
   {
     "bookId": 1,

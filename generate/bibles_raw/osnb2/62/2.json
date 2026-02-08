@@ -123,7 +123,15 @@
     "bookId": 62,
     "chapterId": 2,
     "verseId": 17,
-    "text": "Og verden forgår med sin lyst, men den som gjør Guds vilje, blir til evig tid."
+    "text": "Og verden forgår med sitt begjær, men den som gjør Guds vilje, blir til evig tid.",
+    "versions": [
+      {
+        "text": "Og verden forgår med sin lyst, men den som gjør Guds vilje, blir til evig tid.",
+        "type": "error",
+        "severity": "major",
+        "explanation": "I vers 16 ble ἐπιθυμία bevisst endret fra 'lyst' til 'begjær' (se versjonshistorikk for vers 16). For konsistens bør samme ord brukes i vers 17. ἐπιθυμία αὐτοῦ bør oversettes 'sitt begjær' i tråd med den bevisste endringen i vers 16."
+      }
+    ]
   },
   {
     "bookId": 62,
@@ -147,7 +155,7 @@
     "bookId": 62,
     "chapterId": 2,
     "verseId": 20,
-    "text": "Og dere har en salvelse fra Den Hellige, og dere vet alle.",
+    "text": "Men dere har en salvelse fra Den Hellige, og dere vet alle.",
     "versions": [
       {
         "text": "Og dere har en salvelse fra Den Hellige, og dere vet alle ting.",
@@ -156,6 +164,12 @@
       {
         "text": "Og dere har en salvelse fra Den Hellige, og dere vet det alle sammen.",
         "explanation": "Formuleringen 'dere vet det alle sammen' er litt muntlig/uformell. 'Dere vet alle' eller 'dere vet alle sammen' (uten 'det') er mer naturlig og direkte, og lar det stå åpent hva de vet (som i originalen)."
+      },
+      {
+        "text": "Og dere har en salvelse fra Den Hellige, og dere vet alle.",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "Kontekstuelt fungerer καί her som en kontrast til antikristene i vers 18-19. 'Men' gir bedre mening i konteksten – til forskjell fra de falske lærerne, har dere salvelse og kunnskap. Dette er dog en tolkningsmessig vurdering."
       }
     ]
   },
@@ -223,6 +237,14 @@
     "bookId": 62,
     "chapterId": 2,
     "verseId": 29,
-    "text": "Hvis dere vet at han er rettferdig, så forstår dere at hver den som gjør rettferdighet, er født av ham."
+    "text": "Hvis dere vet at han er rettferdig, da vet dere at hver den som gjør rettferdighet, er født av ham.",
+    "versions": [
+      {
+        "text": "Hvis dere vet at han er rettferdig, så forstår dere at hver den som gjør rettferdighet, er født av ham.",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "γινώσκετε betyr 'dere vet/kjenner', ikke 'dere forstår'. Å bruke 'vet' i begge leddene speiler originalen bedre, der εἰδῆτε og γινώσκετε begge er kunnskapsverb. 'Forstår' er en litt fri gjengivelse."
+      }
+    ]
   }
 ]

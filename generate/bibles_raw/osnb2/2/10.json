@@ -15,7 +15,15 @@
     "bookId": 2,
     "chapterId": 10,
     "verseId": 2,
-    "text": "Og for at du skal fortelle dine barn og barnebarn hvordan jeg viste min makt mot Egypt, og om de tegnene jeg gjorde blant dem, så dere skal kjenne at jeg er Herren.»"
+    "text": "Og for at du skal fortelle dine barn og barnebarn hvordan jeg handlet mot Egypt, og om de tegnene jeg satte blant dem, så dere skal kjenne at jeg er Herren.»",
+    "versions": [
+      {
+        "text": "Og for at du skal fortelle dine barn og barnebarn hvordan jeg viste min makt mot Egypt, og om de tegnene jeg gjorde blant dem, så dere skal kjenne at jeg er Herren.»",
+        "type": "error",
+        "severity": "major",
+        "explanation": "Det hebraiske הִתְעַלַּלְתִּי betyr 'å handle hardt mot' eller 'å gjøre narr av', ikke bare 'viste makt'. 'Handlet mot' er mer nøytralt og nøyaktig. I tillegg brukes שַׂמְתִּי (samti, 'satte/plasserte') om tegnene, ikke 'gjorde'. Dette samsvarer også bedre med vers 1 der שִׁתִ֛י ('sette') brukes."
+      }
+    ]
   },
   {
     "bookId": 2,
@@ -75,7 +83,15 @@
     "bookId": 2,
     "chapterId": 10,
     "verseId": 10,
-    "text": "Han sa til dem: «Måtte Herren være med dere, om jeg noen gang lar dere og barna deres dra! Se, det er onde hensikter foran dere."
+    "text": "Han sa til dem: «Måtte Herren være med dere, om jeg noen gang lar dere og barna deres dra! Se, dere har ondt i sinne!",
+    "versions": [
+      {
+        "text": "Han sa til dem: «Måtte Herren være med dere, om jeg noen gang lar dere og barna deres dra! Se, det er onde hensikter foran dere.",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "Det hebraiske רָעָה נֶגֶד פְּנֵיכֶם betyr bokstavelig 'ondskap er foran deres ansikt', altså at de har onde planer/hensikter. 'Det er onde hensikter foran dere' er litt uklart – det kan høres ut som at noe ondt venter dem. Farao anklager Moses og Aron for å ha onde hensikter."
+      }
+    ]
   },
   {
     "bookId": 2,
@@ -87,7 +103,15 @@
     "bookId": 2,
     "chapterId": 10,
     "verseId": 12,
-    "text": "Da sa Herren til Moses: «Rekk hånden ut over landet Egypt og kall gresshoppene, så de kommer over landet Egypt og fortærer alle vekster i landet, alt det haglet har levnet.»"
+    "text": "Da sa Herren til Moses: «Rekk hånden ut over landet Egypt for å fremkalle gresshoppene, så de kommer over landet Egypt og fortærer alle vekster i landet, alt det haglet har levnet.»",
+    "versions": [
+      {
+        "text": "Da sa Herren til Moses: «Rekk hånden ut over landet Egypt og kall gresshoppene, så de kommer over landet Egypt og fortærer alle vekster i landet, alt det haglet har levnet.»",
+        "type": "error",
+        "severity": "major",
+        "explanation": "Det hebraiske בָּאַרְבֶּה betyr 'for/med gresshoppene' – det er en preposisjon som angir formål. 'Og kall gresshoppene' legger til et verb som ikke finnes i originalen. 'For å fremkalle gresshoppene' gjengir bedre den hebraiske konstruksjonen."
+      }
+    ]
   },
   {
     "bookId": 2,
@@ -177,13 +201,29 @@
     "bookId": 2,
     "chapterId": 10,
     "verseId": 25,
-    "text": "Men Moses sa: «Du må selv gi oss slaktoffer og brennoffer, så vi kan ofre til Herren vår Gud."
+    "text": "Men Moses sa: «Du må selv gi oss slaktoffer og brennoffer, så vi kan ofre til Herren vår Gud.»",
+    "versions": [
+      {
+        "text": "Men Moses sa: «Du må selv gi oss slaktoffer og brennoffer, så vi kan ofre til Herren vår Gud.",
+        "type": "grammar",
+        "severity": "major",
+        "explanation": "Verset mangler avsluttende anførselstegn. Moses' tale avsluttes her (eller i vers 26, men uansett bør det markeres korrekt). Mest sannsynlig mangler det bare avsluttende guillemet."
+      }
+    ]
   },
   {
     "bookId": 2,
     "chapterId": 10,
     "verseId": 26,
-    "text": "Også buskapen vår må dra med oss. Ikke en klov skal bli igjen, for av den må vi ta det vi skal bruke til å tjene Herren vår Gud. Vi vet ikke hva vi skal ofre til Herren før vi kommer dit.»"
+    "text": "Også buskapen vår skal dra med oss. Ikke en klov skal bli igjen, for fra den må vi ta det vi skal bruke til å tjene Herren vår Gud. Vi vet ikke hva vi skal ofre til Herren før vi kommer dit.»",
+    "versions": [
+      {
+        "text": "Også buskapen vår må dra med oss. Ikke en klov skal bli igjen, for av den må vi ta det vi skal bruke til å tjene Herren vår Gud. Vi vet ikke hva vi skal ofre til Herren før vi kommer dit.»",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "The Hebrew יֵלֵ֣ךְ עִמָּ֗נוּ is a declarative statement ('shall go with us') rather than an obligation ('må dra'). Also, 'av den' could be slightly improved to 'fra den' to better reflect מִמֶּנּוּ (from it), though both are acceptable in Norwegian."
+      }
+    ]
   },
   {
     "bookId": 2,
@@ -201,6 +241,14 @@
     "bookId": 2,
     "chapterId": 10,
     "verseId": 29,
-    "text": "Moses svarte: «Du har talt vel. Jeg skal aldri mer se ditt ansikt.»"
+    "text": "Moses svarte: «Du har talt rett. Jeg skal aldri mer se ditt ansikt.»",
+    "versions": [
+      {
+        "text": "Moses svarte: «Du har talt vel. Jeg skal aldri mer se ditt ansikt.»",
+        "type": "translation",
+        "severity": "major",
+        "explanation": "כֵּן דִּבַּרְתָּ means 'You have spoken correctly/rightly' (i.e., 'what you said is true'), not 'You have spoken well' which could imply Moses is complimenting Pharaoh. 'Rett' (correctly/rightly) is more accurate than 'vel' (well) and conveys Moses's agreement with the factual content of Pharaoh's statement."
+      }
+    ]
   }
 ]

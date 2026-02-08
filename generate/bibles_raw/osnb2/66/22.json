@@ -97,11 +97,17 @@
     "bookId": 66,
     "chapterId": 22,
     "verseId": 12,
-    "text": "«Se, jeg kommer snart, og min lønn er med meg, for å gi enhver igjen etter sin gjerning.»",
+    "text": "«Se, jeg kommer snart, og min lønn er med meg, for å gjengjelde enhver etter hans gjerning.»",
     "versions": [
       {
         "text": "«Se, jeg kommer snart, og min lønn er med meg, for å gi enhver igjen etter hans gjerning.»",
         "explanation": "På norsk er 'sin gjerning' mer naturlig og idiomatisk når subjektet refererer tilbake til 'enhver'. 'Hans gjerning' kan virke som det refererer til en tredjeperson."
+      },
+      {
+        "text": "«Se, jeg kommer snart, og min lønn er med meg, for å gi enhver igjen etter sin gjerning.»",
+        "type": "error",
+        "severity": "major",
+        "explanation": "Den greske teksten bruker ὡς τὸ ἔργον ἐστὶν αὐτοῦ – 'som hans gjerning er'. Verbet ἀποδοῦναι betyr 'å gjengjelde/gi tilbake'. 'Gi igjen etter' er litt uklart på norsk; 'gjengjelde enhver etter' er mer presist. Merk: versjonshistorikken endret 'hans' til 'sin', men det greske αὐτοῦ refererer til ἑκάστῳ og 'hans' er faktisk grammatisk korrekt her siden subjektet i setningen er 'jeg' (Jesus), ikke 'enhver'. 'Sin' ville referere tilbake til subjektet 'jeg'. Imidlertid er dette grensetilfelle på norsk – begge kan forsvares, men 'gjengjelde' er uansett en forbedring."
       }
     ]
   },
@@ -169,7 +175,15 @@
     "bookId": 66,
     "chapterId": 22,
     "verseId": 19,
-    "text": "Og om noen tar bort noe fra ordene i denne profetiske boken, skal Gud ta bort hans del fra livets tre og fra den hellige byen, som det er skrevet om i denne boken."
+    "text": "Og dersom noen tar bort noe fra ordene i denne profetiske boken, skal Gud ta bort hans del fra livets tre og fra den hellige byen, slik det er skrevet i denne boken.",
+    "versions": [
+      {
+        "text": "Og om noen tar bort noe fra ordene i denne profetiske boken, skal Gud ta bort hans del fra livets tre og fra den hellige byen, som det er skrevet om i denne boken.",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "For konsistens med vers 18 som bruker 'dersom' (ikke 'om'). Dessuten betyr τῶν γεγραμμένων 'de som er skrevet' – relativsetningen modifiserer livets tre og den hellige byen som ting beskrevet i boken, ikke 'skrevet om'. 'Slik det er skrevet' er mer presist enn 'som det er skrevet om'."
+      }
+    ]
   },
   {
     "bookId": 66,

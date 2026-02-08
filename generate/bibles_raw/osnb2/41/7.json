@@ -15,17 +15,31 @@
     "bookId": 41,
     "chapterId": 7,
     "verseId": 3,
-    "text": "For fariseerne og alle jødene spiser ikke uten først å ha vasket hendene grundig, slik de holder fast ved de eldres overlevering."
+    "text": "For fariseerne og alle jødene spiser ikke uten først å ha vasket hendene omhyggelig, slik de holder fast ved de eldres overlevering.",
+    "versions": [
+      {
+        "text": "For fariseerne og alle jødene spiser ikke uten først å ha vasket hendene grundig, slik de holder fast ved de eldres overlevering.",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "πυγμῇ (bokstavelig 'med neven') er et vanskelig ord, men 'grundig' er kanskje litt for fritt. 'Omhyggelig' fanger bedre den rituelle nøyaktigheten som ligger i uttrykket. Dette er et mildt forslag."
+      }
+    ]
   },
   {
     "bookId": 41,
     "chapterId": 7,
     "verseId": 4,
-    "text": "Og når de kommer fra torget, spiser de ikke uten å ha renset seg. Det er også mye annet de har overtatt og holder fast ved: å vaske begre, kanner, kobberkjeler og senger.",
+    "text": "Og når de kommer fra torget, spiser de ikke uten å ha renset seg. Det er også mye annet de har overtatt og holder fast ved: vasking av begre, kanner, kobberkjeler og senger.",
     "versions": [
       {
         "text": "Og når de kommer fra torget, spiser de ikke uten å ha renset seg. Det er også mye annet de har overtatt og holder fast ved: å skylle begre, kanner og kobberkjeler og senger.",
         "explanation": "«Skylle» er litt svakere enn det greske βαπτισμούς (rituell vasking/nedsenking). «Vaske» er mer dekkende. Også fjernet «og» før siste ledd for bedre flyt."
+      },
+      {
+        "text": "Og når de kommer fra torget, spiser de ikke uten å ha renset seg. Det er også mye annet de har overtatt og holder fast ved: å vaske begre, kanner, kobberkjeler og senger.",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "Grunnteksten har substantivet βαπτισμούς (vaskinger/renselser), ikke infinitiv. 'Vasking av' gjenspeiler bedre at det handler om ritualer/praksiser de holder fast ved, ikke en handling de utfører i øyeblikket."
       }
     ]
   },
@@ -117,7 +131,15 @@
     "bookId": 41,
     "chapterId": 7,
     "verseId": 15,
-    "text": "Det finnes ikke noe utenfor mennesket som kan gjøre det urent ved å komme inn i det. Det er det som går ut fra mennesket, som gjør mennesket urent.»"
+    "text": "Det finnes ikke noe utenfor mennesket som kan gjøre det urent ved å komme inn i det. Det er det som kommer ut av mennesket, som gjør mennesket urent.»",
+    "versions": [
+      {
+        "text": "Det finnes ikke noe utenfor mennesket som kan gjøre det urent ved å komme inn i det. Det er det som går ut fra mennesket, som gjør mennesket urent.»",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "ἐκπορευόμενα (kommer ut av) brukes konsekvent i dette avsnittet (v. 15, 20, 21, 23). 'Kommer ut av' er mer presist enn 'går ut fra' og gir bedre konsistens med v. 20 og 23."
+      }
+    ]
   },
   {
     "bookId": 41,
@@ -159,7 +181,15 @@
     "bookId": 41,
     "chapterId": 7,
     "verseId": 20,
-    "text": "Og han sa: «Det er det som går ut fra mennesket, som gjør mennesket urent."
+    "text": "Og han sa: «Det er det som kommer ut av mennesket, som gjør mennesket urent.",
+    "versions": [
+      {
+        "text": "Og han sa: «Det er det som går ut fra mennesket, som gjør mennesket urent.",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "For konsistens med vers 15 og 23 der ἐκπορεύομαι oversettes med 'kommer ut av', bør samme uttrykk brukes her. Vers 15 ble bevisst revidert til å beholde 'kommer ut av' fremfor 'går ut fra', så dette bør følges opp."
+      }
+    ]
   },
   {
     "bookId": 41,
@@ -171,7 +201,27 @@
     "bookId": 41,
     "chapterId": 7,
     "verseId": 22,
-    "text": "ekteskapsbrudd, grådighet, ondskap, svik, utskeielser, misunnelig blikk, spott, hovmod, uforstand."
+    "text": "ekteskapsbrudd, grådighet, ondskap, svik, utskeielser, ondt øye, blasfemi, hovmod, uforstand.",
+    "versions": [
+      {
+        "text": "ekteskapsbrudd, grådighet, ondskap, svik, utskeielser, misunnelig blikk, spott, hovmod, uforstand.",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "ὀφθαλμὸς πονηρός er et semittisk idiom som bokstavelig betyr 'ondt øye' og refererer til misunnelse/gjerrighet. 'Misunnelig blikk' er en mulig tolkning, men 'ondt øye' er mer direkte og bevarer idiomets bredde (det kan inkludere både misunnelse og gjerrighet). Alternativt kan 'misunnelse' brukes. Dette er et forslag, ikke en kritisk feil."
+      },
+      {
+        "text": "ekteskapsbrudd, grådighet, ondskap, svik, utskeielser, ondt øye, spott, hovmod, uforstand.",
+        "type": "theological",
+        "severity": "minor",
+        "explanation": "βλασφημία betyr i første rekke 'blasfemi' (bespottelse av Gud) eller 'baktalelse/ærekrenkelse'. 'Spott' er svakere og dekker ikke den teologiske tyngden av ordet. 'Blasfemi' eller 'bespottelse' ville være mer presist."
+      },
+      {
+        "text": "ekteskapsbrudd, grådighet, ondskap, svik, utskeielser, misunnelig blikk, blasfemi, hovmod, uforstand.",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "Versjonshistorikken viser at 'misunnelig blikk' ble foreslått endret til 'ondt øye' i revisjon 1, men dette ble tilsynelatende ikke fulgt opp. 'Ondt øye' er mer direkte oversettelse av ὀφθαλμὸς πονηρός og bevarer idiomets bredde (misunnelse og gjerrighet). Nåværende versjon med 'blasfemi' ble valgt bevisst i revisjon 2, så den beholdes."
+      }
+    ]
   },
   {
     "bookId": 41,
@@ -231,7 +281,15 @@
     "bookId": 41,
     "chapterId": 7,
     "verseId": 29,
-    "text": "Da sa han til henne: «For dette ordets skyld, gå hjem. Demonen har forlatt din datter.»"
+    "text": "Da sa han til henne: «For dette ordets skyld, gå hjem. Demonen har fart ut av datteren din.»",
+    "versions": [
+      {
+        "text": "Da sa han til henne: «For dette ordets skyld, gå hjem. Demonen har forlatt din datter.»",
+        "type": "error",
+        "severity": "major",
+        "explanation": "Grunnteksten har 'ἐκ τῆς θυγατρός σου' (ut av datteren din), ikke bare 'forlatt din datter'. Preposisjonen ἐκ (ut av) bør gjenspeiles, og 'datteren din' er mer naturlig norsk ordstilling enn 'din datter'. Dette gir også bedre konsistens med vers 30 som bruker 'fart ut'."
+      }
+    ]
   },
   {
     "bookId": 41,

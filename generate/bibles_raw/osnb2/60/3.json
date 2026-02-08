@@ -3,7 +3,15 @@
     "bookId": 60,
     "chapterId": 3,
     "verseId": 1,
-    "text": "På samme måte skal dere hustruer underordne dere deres egne menn, slik at selv om noen ikke adlyder Ordet, kan de bli vunnet uten ord gjennom hustruenes livsførsel."
+    "text": "På samme måte skal dere hustruer underordne dere under deres egne menn, slik at selv om noen ikke adlyder Ordet, kan de bli vunnet uten ord gjennom hustruenes livsførsel.",
+    "versions": [
+      {
+        "text": "På samme måte skal dere hustruer underordne dere deres egne menn, slik at selv om noen ikke adlyder Ordet, kan de bli vunnet uten ord gjennom hustruenes livsførsel.",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "På norsk er den mest presise formuleringen 'underordne seg under' for å gjengi ὑποτασσόμεναι med dativ. Alternativt er 'underordne dere' uten 'under' også akseptabelt, så dette er kun en mindre forbedringsmulighet."
+      }
+    ]
   },
   {
     "bookId": 60,
@@ -87,7 +95,15 @@
     "bookId": 60,
     "chapterId": 3,
     "verseId": 11,
-    "text": "Han må vende seg bort fra det onde og gjøre det gode, søke fred og jage etter den."
+    "text": "Han skal vende seg bort fra det onde og gjøre det gode, søke fred og jage etter den.",
+    "versions": [
+      {
+        "text": "Han må vende seg bort fra det onde og gjøre det gode, søke fred og jage etter den.",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "Vers 10 brukte 'skal' for å gjengi 3. person imperativ (παυσάτω), og endringshistorien for vers 10 forklarer eksplisitt at 'skal' er mer tro mot imperativformen enn 'må'. Vers 11 har tilsvarende 3. person imperativer (ἐκκλινάτω, ποιησάτω, ζητησάτω, διωξάτω) og bør bruke samme oversettelse for konsistens."
+      }
+    ]
   },
   {
     "bookId": 60,
@@ -117,7 +133,7 @@
     "bookId": 60,
     "chapterId": 3,
     "verseId": 15,
-    "text": "Men hellige Kristus som Herre i deres hjerter. Vær alltid klare til forsvar overfor enhver som ber dere om å forklare det håp som er i dere.",
+    "text": "Men hellige Kristus som Herre i deres hjerter. Vær alltid klare til forsvar overfor enhver som ber dere om å forklare det håpet som er i dere.",
     "versions": [
       {
         "text": "Men hellige Kristus som Herre i deres hjerter. Vær alltid klare til forsvar overfor enhver som krever at dere gir grunn for det håp som er i dere,",
@@ -126,6 +142,12 @@
       {
         "text": "Men hellige Kristus som Herre i deres hjerter. Vær alltid klare til forsvar overfor enhver som ber dere om å forklare det håp som er i dere,",
         "explanation": "Verset ender med komma, men vers 16 begynner med 'men' som indikerer en ny hovedsetning. Kommaet er korrekt siden vers 16 fortsetter tanken, så ingen endring nødvendig. Tilbaketrekker dette punktet."
+      },
+      {
+        "text": "Men hellige Kristus som Herre i deres hjerter. Vær alltid klare til forsvar overfor enhver som ber dere om å forklare det håp som er i dere.",
+        "type": "grammar",
+        "severity": "minor",
+        "explanation": "På norsk bokmål bør 'håp' i denne konteksten ha bestemt form 'håpet' siden det viser til et spesifikt håp (τῆς ἐν ὑμῖν ἐλπίδος - håpet som er i dere). 'Det håp som' er en eldre form; 'det håpet som' er mer naturlig moderne bokmål."
       }
     ]
   },
@@ -175,11 +197,17 @@
     "bookId": 60,
     "chapterId": 3,
     "verseId": 21,
-    "text": "Som et motstykke til dette frelser dåpen nå også dere – ikke som fjerning av kroppens urenhet, men som en god samvittighets bekjennelse til Gud – gjennom Jesu Kristi oppstandelse.",
+    "text": "Som et motstykke til dette frelser dåpen nå også dere – ikke som fjerning av kroppens urenhet, men som en god samvittighets appell til Gud – gjennom Jesu Kristi oppstandelse.",
     "versions": [
       {
         "text": "Dette er et bilde på dåpen, som nå frelser dere – ikke som fjerning av kroppens urenhet, men som en god samvittighets bekjennelse til Gud – gjennom Jesu Kristi oppstandelse.",
         "explanation": "ἀντίτυπον betyr 'motstykke/motbilde' og viser at dåpen svarer til frelsen gjennom vannet i Noahs tid. Gresken sier at dåpen (som motstykke) frelser dere, ikke at vannet er et bilde på dåpen."
+      },
+      {
+        "text": "Som et motstykke til dette frelser dåpen nå også dere – ikke som fjerning av kroppens urenhet, men som en god samvittighets bekjennelse til Gud – gjennom Jesu Kristi oppstandelse.",
+        "type": "theological",
+        "severity": "minor",
+        "explanation": "ἐπερώτημα betyr primært 'appell', 'henvendelse' eller 'bønn/løfte' snarere enn 'bekjennelse'. Ordet brukes om en henvendelse/appell til Gud om en god samvittighet, ikke en bekjennelse av samvittigheten. 'Appell' gjengir den greske betydningen mer presist."
       }
     ]
   },

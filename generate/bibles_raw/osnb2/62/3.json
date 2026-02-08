@@ -87,7 +87,15 @@
     "bookId": 62,
     "chapterId": 3,
     "verseId": 12,
-    "text": "Ikke som Kain, som var av den onde og drepte sin bror. Og hvorfor drepte han ham? Fordi hans gjerninger var onde, mens hans brors gjerninger var rettferdige."
+    "text": "Ikke som Kain, som var av den onde og slo i hjel sin bror. Og hvorfor slo han ham i hjel? Fordi hans gjerninger var onde, mens hans brors gjerninger var rettferdige.",
+    "versions": [
+      {
+        "text": "Ikke som Kain, som var av den onde og drepte sin bror. Og hvorfor drepte han ham? Fordi hans gjerninger var onde, mens hans brors gjerninger var rettferdige.",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "Det greske ἔσφαξεν (fra σφάζω) betyr 'slakte/slå i hjel' – et sterkere ord enn bare 'drepe' (ἀποκτείνω). Ordet bærer konnotasjoner av voldelig drap/slakting. 'Slo i hjel' fanger denne intensiteten bedre på norsk enn det mer nøytrale 'drepte'."
+      }
+    ]
   },
   {
     "bookId": 62,
@@ -149,11 +157,17 @@
     "bookId": 62,
     "chapterId": 3,
     "verseId": 17,
-    "text": "Men den som har verdens goder og ser sitt søsken lide nød, og likevel lukker sitt hjerte – hvordan kan Guds kjærlighet bli i ham?",
+    "text": "Men den som har verdens goder og ser sin neste lide nød, og likevel lukker sitt hjerte – hvordan kan Guds kjærlighet bli i ham?",
     "versions": [
       {
         "text": "Men den som har verdens goder og ser sin bror lide nød, og likevel lukker sitt hjerte for ham – hvordan kan Guds kjærlighet bli i ham?",
         "explanation": "For konsistens med inkluderende språkbruk. Også fjernet 'for ham' som er overflødig og gjør setningen lettere å lese muntlig."
+      },
+      {
+        "text": "Men den som har verdens goder og ser sitt søsken lide nød, og likevel lukker sitt hjerte – hvordan kan Guds kjærlighet bli i ham?",
+        "type": "grammar",
+        "severity": "major",
+        "explanation": "'Sitt søsken' er grammatisk problematisk på norsk. 'Søsken' er normalt et flertallsord, mens den greske teksten har entall (τὸν ἀδελφὸν αὐτοῦ). 'Sitt søsken' fungerer dårlig som entallsform. Siden 'sin bror' allerede ble endret bort (versjonhistorikk), kan 'sin neste' være et alternativ som bevarer entallsbetydningen og inkluderende språk. Alternativt kan 'sin søster eller bror' brukes, men det er tungvint."
       }
     ]
   },

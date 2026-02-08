@@ -27,7 +27,21 @@
     "bookId": 1,
     "chapterId": 14,
     "verseId": 5,
-    "text": "I det fjortende året kom Kedorlaomer og kongene som var med ham, og de slo refaittene i Asjterot-Karnajim, susittene i Ham og emittene i Sjave-Kirjatajim."
+    "text": "I det fjortende året kom Kedorlaomer og kongene som var med ham, og de slo refaittene i Asjterot-Karnajim, zuzittene i Ham, og emittene i Sjave-Kirjatajim.",
+    "versions": [
+      {
+        "text": "I det fjortende året kom Kedorlaomer og kongene som var med ham, og de slo refaittene i Asjterot-Karnajim, susittene i Ham og emittene i Sjave-Kirjatajim.",
+        "type": "error",
+        "severity": "minor",
+        "explanation": "Folkegruppen הַזּוּזִים (Zuzim/Susim) er oversatt som 'susittene', men den vanligste gjengivelsen på norsk er 'susittene' eller 'zuzittene'. Oversettelsen er akseptabel, men et komma før 'og emittene' ville gi bedre rytme ved opplesning."
+      },
+      {
+        "text": "I det fjortende året kom Kedorlaomer og kongene som var med ham, og de slo refaittene i Asjterot-Karnajim, susittene i Ham, og emittene i Sjave-Kirjatajim.",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "Det hebraiske הַזּוּזִים er 'zuzittene' (Zuzim), ikke 'susittene'. Susittene (Susim) nevnes i 5 Mos 2:20 som et annet navn for refaittene, men her i 1 Mos 14:5 står det eksplisitt זּוּזִים med z-lyd. De to navnene kan referere til samme folk, men translitterasjonen bør gjenspeile grunnteksten."
+      }
+    ]
   },
   {
     "bookId": 1,
@@ -135,7 +149,15 @@
     "bookId": 1,
     "chapterId": 14,
     "verseId": 19,
-    "text": "Han velsignet ham og sa: «Velsignet være Abram av Den Høyeste Gud, han som eier himmel og jord."
+    "text": "Han velsignet ham og sa: «Velsignet være Abram av Den Høyeste Gud, himmelens og jordens skaper.",
+    "versions": [
+      {
+        "text": "Han velsignet ham og sa: «Velsignet være Abram av Den Høyeste Gud, han som eier himmel og jord.",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "Det hebraiske ordet קֹנֵה kan bety både 'eier' og 'skaper/grunnlegger'. I denne konteksten, som handler om Guds suverene makt, foretrekker mange oversettelser 'skaper'. Nåværende oversettelse er ikke feil, men 'skaper' ville være mer teologisk presist og samsvare bedre med tradisjonelle norske oversettelser."
+      }
+    ]
   },
   {
     "bookId": 1,
@@ -153,13 +175,29 @@
     "bookId": 1,
     "chapterId": 14,
     "verseId": 22,
-    "text": "Men Abram sa til kongen i Sodoma: «Jeg løfter min hånd til Herren, Den Høyeste Gud, han som eier himmel og jord:"
+    "text": "Men Abram sa til kongen i Sodoma: «Jeg har løftet min hånd til Herren, Den Høyeste Gud, han som eier himmel og jord:",
+    "versions": [
+      {
+        "text": "Men Abram sa til kongen i Sodoma: «Jeg løfter min hånd til Herren, Den Høyeste Gud, han som eier himmel og jord:",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "Det hebraiske הֲרִימֹתִי er perfektum (fullført handling), som indikerer at Abram allerede har avlagt denne eden. 'Jeg har løftet' gjengir dette mer nøyaktig enn presens 'Jeg løfter'."
+      }
+    ]
   },
   {
     "bookId": 1,
     "chapterId": 14,
     "verseId": 23,
-    "text": "Ikke en tråd eller en sandalrem, ikke noe av det som er ditt, vil jeg ta, så du ikke skal kunne si: Jeg har gjort Abram rik."
+    "text": "Ikke en tråd eller en sandalrem, ikke noe av det som er ditt, vil jeg ta, for at du ikke skal kunne si: «Jeg har gjort Abram rik.»",
+    "versions": [
+      {
+        "text": "Ikke en tråd eller en sandalrem, ikke noe av det som er ditt, vil jeg ta, så du ikke skal kunne si: Jeg har gjort Abram rik.",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "Den direkte talen 'Jeg har gjort Abram rik' bør markeres med anførselstegn for konsistens med resten av oversettelsen. I tillegg er 'for at' en noe mer presis gjengivelse av formålet enn 'så'."
+      }
+    ]
   },
   {
     "bookId": 1,

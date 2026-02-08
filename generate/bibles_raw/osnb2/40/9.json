@@ -87,11 +87,17 @@
     "bookId": 40,
     "chapterId": 9,
     "verseId": 12,
-    "text": "Men da Jesus hørte det, sa han: «Det er ikke de friske som trenger lege, men de syke.»",
+    "text": "Men da han hørte det, sa han: «Det er ikke de friske som trenger lege, men de syke.»",
     "versions": [
       {
         "text": "Men da Jesus hørte det, sa han: «Det er ikke de friske som trenger lege, men de syke.",
         "explanation": "Manglende avsluttende anførselstegn. Verset avsluttes med punktum men mangler anførselstegn etter 'syke'. Merk: Talen fortsetter i vers 13, men vers 12 har punktum og bør teknisk sett ha et avsluttende anførselstegn her, eller punktumet bør fjernes."
+      },
+      {
+        "text": "Men da Jesus hørte det, sa han: «Det er ikke de friske som trenger lege, men de syke.»",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "Grunnteksten sier bare 'ὁ δὲ' (men han), ikke 'Jesus'. Navnet Jesus er ikke i den greske teksten her. Dog er dette en vanlig praksis i oversettelser for klarhet, så dette er kun en mindre bemerkning."
       }
     ]
   },
@@ -123,13 +129,29 @@
     "bookId": 40,
     "chapterId": 9,
     "verseId": 16,
-    "text": "Ingen setter en lapp av ukrympet stoff på en gammel kappe. For da river lappen med seg et stykke av kappen, og riften blir verre."
+    "text": "Ingen setter en lapp av ukrympet stoff på en gammel kappe. For da river lappen løs fra kappen, og riften blir verre.",
+    "versions": [
+      {
+        "text": "Ingen setter en lapp av ukrympet stoff på en gammel kappe. For da river lappen med seg et stykke av kappen, og riften blir verre.",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "Det greske 'αἴρει τὸ πλήρωμα αὐτοῦ ἀπὸ τοῦ ἱματίου' betyr at lappen (det nye stoffet som krymper) river/drar med seg av det gamle klesplagget, slik at hullet blir verre. 'River lappen med seg et stykke av kappen' er litt uklart. 'River lappen løs fra kappen' er tydeligere om at det er lappen som løsner og tar med seg stoff."
+      }
+    ]
   },
   {
     "bookId": 40,
     "chapterId": 9,
     "verseId": 17,
-    "text": "Heller ikke fyller man ny vin i gamle skinnsekker. For da sprenges sekkene, vinen renner ut, og sekkene blir ødelagt. Nei, ny vin fylles i nye skinnsekker, så begge blir bevart.»"
+    "text": "Heller ikke fyller man ny vin i gamle skinnsekker. For da sprenges sekkene, vinen renner ut, og sekkene blir ødelagt. Nei, ny vin fylles i nye skinnsekker, så begge blir bevart.",
+    "versions": [
+      {
+        "text": "Heller ikke fyller man ny vin i gamle skinnsekker. For da sprenges sekkene, vinen renner ut, og sekkene blir ødelagt. Nei, ny vin fylles i nye skinnsekker, så begge blir bevart.»",
+        "type": "error",
+        "severity": "major",
+        "explanation": "Verset har et avsluttende anførselstegn (») som ikke har en åpning i dette verset. Vers 16-17 er ikke direkte tale, men Jesu undervisning uttrykt som generelle sannheter/ordtak. Det er ingen åpnende anførselstegn i vers 16, så det avsluttende tegnet er feilplassert og bør fjernes."
+      }
+    ]
   },
   {
     "bookId": 40,
@@ -255,11 +277,17 @@
     "bookId": 40,
     "chapterId": 9,
     "verseId": 33,
-    "text": "Og da demonen var drevet ut, talte den stumme. Folkemengden undret seg og sa: «Noe slikt har aldri skjedd i Israel!»",
+    "text": "Og da demonen var drevet ut, talte den stumme. Folkemengden var forundret og sa: «Noe slikt er aldri blitt sett i Israel!»",
     "versions": [
       {
         "text": "Og da den onde ånden var drevet ut, talte den stumme. Folkemengden undret seg og sa: «Noe slikt har aldri skjedd i Israel!»",
         "explanation": "For konsistens med vers 32 og trofasthet mot det greske 'δαιμόνιον' (demon), bør 'demon' brukes fremfor 'ond ånd'."
+      },
+      {
+        "text": "Og da demonen var drevet ut, talte den stumme. Folkemengden undret seg og sa: «Noe slikt har aldri skjedd i Israel!»",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "'ἐθαύμασαν' betyr snarere 'var forundret/forbauset' enn bare 'undret seg'. 'ἐφάνη' (fra φαίνω) betyr 'ble sett/vist seg', ikke 'skjedd'. 'Aldri blitt sett' er mer trofast mot grunnteksten."
       }
     ]
   },

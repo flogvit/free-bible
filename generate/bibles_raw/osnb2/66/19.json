@@ -57,7 +57,15 @@
     "bookId": 66,
     "chapterId": 19,
     "verseId": 7,
-    "text": "La oss glede oss og juble og gi ham æren! For Lammets bryllup er kommet, og hans brud har gjort seg klar."
+    "text": "La oss glede oss og juble og gi ham herligheten! For Lammets bryllup er kommet, og hans brud har gjort seg klar.",
+    "versions": [
+      {
+        "text": "La oss glede oss og juble og gi ham æren! For Lammets bryllup er kommet, og hans brud har gjort seg klar.",
+        "type": "error",
+        "severity": "major",
+        "explanation": "I vers 1 ble 'δόξα' bevisst endret fra 'ære' til 'herlighet'. Samme greske ord 'δόξαν' brukes her i vers 7, men er oversatt med 'æren'. For konsistens og i tråd med den allerede etablerte endringen i vers 1 bør dette også være 'herligheten'."
+      }
+    ]
   },
   {
     "bookId": 66,
@@ -93,7 +101,15 @@
     "bookId": 66,
     "chapterId": 19,
     "verseId": 11,
-    "text": "Og jeg så himmelen åpnet, og se, en hvit hest! Og han som sitter på den, kalles Trofast og Sannferdig, og han dømmer og fører krig i rettferdighet."
+    "text": "Og jeg så himmelen åpnet, og se, en hvit hest! Og han som sitter på den, heter Trofast og Sann, og han dømmer og fører krig i rettferdighet.",
+    "versions": [
+      {
+        "text": "Og jeg så himmelen åpnet, og se, en hvit hest! Og han som sitter på den, kalles Trofast og Sannferdig, og han dømmer og fører krig i rettferdighet.",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "Det greske 'ἀληθινός' betyr 'sann' eller 'ekte', ikke 'sannferdig' (som ville være mer som 'ἀληθής' i betydningen 'sannferdig/oppriktig'). 'Sann' er mer presist. Dessuten bruker originalen 'καλούμενος' (kalles/heter), som kan gjengis som 'heter' for mer naturlig norsk."
+      }
+    ]
   },
   {
     "bookId": 66,
@@ -129,11 +145,17 @@
     "bookId": 66,
     "chapterId": 19,
     "verseId": 15,
-    "text": "Fra hans munn går det ut et skarpt sverd, for at han med det skal slå folkeslagene. Han skal styre dem med jernstav, og han tråkker vinpressen med vinen fra Gud Den allmektiges harme og vrede.",
+    "text": "Fra hans munn går det ut et skarpt sverd, for at han med det skal slå folkeslagene. Han skal styre dem med jernstav, og han tråkker vinpressen med vredens vin fra Gud Den allmektiges harme.",
     "versions": [
       {
         "text": "Fra hans munn går det ut et skarpt sverd, for at han med det skal slå folkeslagene. Han skal styre dem med jernstav, og han tråkker vinpressen med Gud Den allmektiges harme og vrede.",
         "explanation": "Det greske har 'τὴν ληνὸν τοῦ οἴνου' (vinpressen med vinen). 'Vinen' er med i originalen og forsterker bildet – det er vreden som vin som tråkkes ut. Utelatelsen svekker metaforen."
+      },
+      {
+        "text": "Fra hans munn går det ut et skarpt sverd, for at han med det skal slå folkeslagene. Han skal styre dem med jernstav, og han tråkker vinpressen med vinen fra Gud Den allmektiges harme og vrede.",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "Det greske 'τοῦ οἴνου τοῦ θυμοῦ τῆς ὀργῆς' er en genitiv-kjede: 'vinen av vreden (θυμοῦ) av harmen (ὀργῆς)'. Nåværende oversettelse 'vinen fra ... harme og vrede' skiller θυμός og ὀργή som om de er parallelle, men de er i genitiv-kjede. 'Vredens vin fra Gud Den allmektiges harme' gjengir strukturen bedre."
       }
     ]
   },
@@ -171,11 +193,17 @@
     "bookId": 66,
     "chapterId": 19,
     "verseId": 20,
-    "text": "Og dyret ble grepet, og sammen med det den falske profeten som hadde gjort tegnene foran det – de tegn som han forførte med dem som tok dyrets merke og dem som tilba dets bilde. Levende ble de to kastet i ildsjøen som brenner med svovel.",
+    "text": "Og dyret ble grepet, og sammen med det den falske profeten som hadde gjort tegnene foran det – de tegnene som han hadde forført med dem som tok dyrets merke og dem som tilba dets bilde. Levende ble de to kastet i ildsjøen som brenner med svovel.",
     "versions": [
       {
         "text": "Og dyret ble grepet, og sammen med det den falske profeten som hadde gjort tegnene for dets ansikt, de tegn som han hadde forført med, de som tok dyrets merke og de som tilba dets bilde. Levende ble de to kastet i ildsjøen som brenner med svovel.",
         "explanation": "Setningen er vanskelig å forstå. Originalen sier at profeten forførte 'de som tok merket og de som tilba bildet' ved hjelp av tegnene. Omformuleringen gjør dette klarere og grammatisk bedre."
+      },
+      {
+        "text": "Og dyret ble grepet, og sammen med det den falske profeten som hadde gjort tegnene foran det – de tegn som han forførte med dem som tok dyrets merke og dem som tilba dets bilde. Levende ble de to kastet i ildsjøen som brenner med svovel.",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "Grammatisk nit: 'de tegn som' bør være 'de tegnene som' for naturlig norsk bokmål i denne konstruksjonen. Men dette er et vers med revisjonshistorikk, så dette er kun en minor observasjon."
       }
     ]
   },

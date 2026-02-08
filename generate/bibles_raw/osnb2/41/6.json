@@ -21,7 +21,15 @@
     "bookId": 41,
     "chapterId": 6,
     "verseId": 3,
-    "text": "«Er ikke dette tømmermannen, sønn av Maria og bror til Jakob, Joses, Judas og Simon? Og bor ikke søstrene hans her hos oss?» Og de tok anstøt av ham."
+    "text": "«Er ikke dette tømmermannen, Marias sønn og bror til Jakob, Joses, Judas og Simon? Og bor ikke søstrene hans her hos oss?» Og de tok anstøt av ham.",
+    "versions": [
+      {
+        "text": "«Er ikke dette tømmermannen, sønn av Maria og bror til Jakob, Joses, Judas og Simon? Og bor ikke søstrene hans her hos oss?» Og de tok anstøt av ham.",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "Det greske ὁ υἱὸς τῆς Μαρίας har bestemt artikkel og genitiv ('Marias sønn'), ikke 'sønn av Maria'. 'Marias sønn' er mer naturlig norsk og gjenspeiler den greske konstruksjonen bedre."
+      }
+    ]
   },
   {
     "bookId": 41,
@@ -57,7 +65,15 @@
     "bookId": 41,
     "chapterId": 6,
     "verseId": 8,
-    "text": "og påla dem at de ikke skulle ta med seg noe på veien, bare en stav – ikke brød, ikke veske, ikke kobbermynter i beltet."
+    "text": "Han påla dem at de ikke skulle ta med seg noe på veien, bare en stav – ikke brød, ikke veske, ikke kobbermynter i beltet.",
+    "versions": [
+      {
+        "text": "og påla dem at de ikke skulle ta med seg noe på veien, bare en stav – ikke brød, ikke veske, ikke kobbermynter i beltet.",
+        "type": "grammar",
+        "severity": "minor",
+        "explanation": "Verset begynner med liten 'og' som om det er en fortsettelse, men vers 8 starter en ny setning i norsk. Det bør begynne med 'Han' for klarhet, spesielt ved høytlesning."
+      }
+    ]
   },
   {
     "bookId": 41,
@@ -93,7 +109,15 @@
     "bookId": 41,
     "chapterId": 6,
     "verseId": 14,
-    "text": "Kong Herodes hørte om dette, for Jesu navn var blitt kjent. Noen sa: «Døperen Johannes er stått opp fra de døde, og derfor virker disse kreftene i ham.»"
+    "text": "Kong Herodes hørte om dette, for Jesu navn var blitt kjent. Noen sa: «Døperen Johannes er blitt reist opp fra de døde, og derfor virker disse kreftene i ham.»",
+    "versions": [
+      {
+        "text": "Kong Herodes hørte om dette, for Jesu navn var blitt kjent. Noen sa: «Døperen Johannes er stått opp fra de døde, og derfor virker disse kreftene i ham.»",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "Det greske ἐγήγερται er passiv perfektum ('er blitt reist opp'), som understreker Guds handling. 'Er stått opp' er mer aktivt og mister denne nyansen."
+      }
+    ]
   },
   {
     "bookId": 41,
@@ -111,17 +135,31 @@
     "bookId": 41,
     "chapterId": 6,
     "verseId": 16,
-    "text": "Men da Herodes hørte dette, sa han: «Johannes, som jeg halshogde, han er stått opp.»"
+    "text": "Men da Herodes hørte dette, sa han: «Johannes, som jeg halshogde, han er blitt reist opp.»",
+    "versions": [
+      {
+        "text": "Men da Herodes hørte dette, sa han: «Johannes, som jeg halshogde, han er stått opp.»",
+        "type": "theological",
+        "severity": "major",
+        "explanation": "Det greske ἠγέρθη er passiv aorist ('er blitt reist opp'), noe som indikerer at en ytre kraft (Gud) har reist ham opp. 'Er stått opp' er aktivt og mister denne passive nyansen. Dette er konsistent med vers 14 der samme teologiske poeng ble gjort med ἐγήγερται og oversatt 'er blitt reist opp'."
+      }
+    ]
   },
   {
     "bookId": 41,
     "chapterId": 6,
     "verseId": 17,
-    "text": "For Herodes selv hadde sendt folk for å gripe Johannes og lagt ham i lenker i fengsel. Dette skjedde på grunn av Herodias, hans bror Filips kone, som han hadde giftet seg med.",
+    "text": "For Herodes selv hadde sendt folk for å gripe Johannes og lagt ham i lenker i fengsel, på grunn av Herodias, hans bror Filips kone, som han hadde giftet seg med.",
     "versions": [
       {
         "text": "For Herodes selv hadde sendt folk for å gripe Johannes og sette ham i fengsel. Dette skjedde på grunn av Herodias, hans bror Filips kone, som han hadde giftet seg med.",
         "explanation": "Det greske ἔδησεν betyr 'bandt' eller 'la i lenker', ikke bare 'sette i fengsel'. Originalen understreker at Johannes ble lenket/bundet, noe som forsterker alvoret i fangenskapet."
+      },
+      {
+        "text": "For Herodes selv hadde sendt folk for å gripe Johannes og lagt ham i lenker i fengsel. Dette skjedde på grunn av Herodias, hans bror Filips kone, som han hadde giftet seg med.",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "Originalteksten er én sammenhengende setning med διά som angir årsaken direkte. 'Dette skjedde' er tillagt og bryter flyten unødvendig. En enklere konstruksjon med komma og 'på grunn av' flyter bedre og er nærmere originalen."
       }
     ]
   },
@@ -177,19 +215,49 @@
     "bookId": 41,
     "chapterId": 6,
     "verseId": 25,
-    "text": "Straks skyndte hun seg inn til kongen og ba: «Jeg vil at du nå med det samme gir meg hodet til døperen Johannes på et fat.»"
+    "text": "Straks skyndte hun seg inn til kongen og ba: «Jeg vil at du med det samme gir meg hodet til døperen Johannes på et fat.»",
+    "versions": [
+      {
+        "text": "Straks skyndte hun seg inn til kongen og ba: «Jeg vil at du nå med det samme gir meg hodet til døperen Johannes på et fat.»",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "Formuleringen 'du nå med det samme gir meg' er litt klønete på norsk. Ved å flytte 'nå med det samme' til slutten av setningen blir det mer naturlig norsk og beholder det greske ἐξαυτῆς (umiddelbart) som et forsterket krav."
+      },
+      {
+        "text": "Straks skyndte hun seg inn til kongen og ba: «Jeg vil at du gir meg hodet til døperen Johannes på et fat, nå med det samme.»",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "I den greske teksten står ἐξαυτῆς ('med det samme') rett foran verbet δῷς μοι ('gir meg'), og understreker umiddelbarheten av kravet. Den nåværende oversettelsen plasserer 'nå med det samme' helt til slutt etter 'på et fat', noe som gjør at det haster-elementet svekkes. Å plassere 'med det samme' nærmere verbet gjenspeiler originalens ordstilling bedre og gir mer naturlig norsk."
+      }
+    ]
   },
   {
     "bookId": 41,
     "chapterId": 6,
     "verseId": 26,
-    "text": "Kongen ble dypt bedrøvet, men på grunn av eden og gjestene ville han ikke avvise henne."
+    "text": "Kongen ble dypt bedrøvet, men på grunn av edene og gjestene ville han ikke avvise henne.",
+    "versions": [
+      {
+        "text": "Kongen ble dypt bedrøvet, men på grunn av eden og gjestene ville han ikke avvise henne.",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "Det greske τοὺς ὅρκους er flertall ('edene'), ikke entall. Herodes avla flere eder (jf. vers 23), så flertall er mer nøyaktig."
+      }
+    ]
   },
   {
     "bookId": 41,
     "chapterId": 6,
     "verseId": 27,
-    "text": "Han sendte straks en livvakt av sted med ordre om å hente hodet hans. Vakten gikk og halshogde Johannes i fengselet."
+    "text": "Kongen sendte straks en livvakt av sted med ordre om å bringe hodet hans. Vakten gikk og halshogde Johannes i fengselet.",
+    "versions": [
+      {
+        "text": "Han sendte straks en livvakt av sted med ordre om å hente hodet hans. Vakten gikk og halshogde Johannes i fengselet.",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "Originalen sier ὁ βασιλεύς ('kongen'), ikke bare et pronomen. Å beholde 'kongen' understreker det ironiske i at en konge bøyer seg for en ung pikes ønske. Dessuten betyr ἐνέγκαι 'bringe' (hente og komme tilbake med), ikke bare 'hente'."
+      }
+    ]
   },
   {
     "bookId": 41,
@@ -243,7 +311,15 @@
     "bookId": 41,
     "chapterId": 6,
     "verseId": 34,
-    "text": "Da Jesus gikk i land, så han en stor folkemengde. Han fikk inderlig medfølelse med dem, for de var som sauer uten gjeter. Og han begynte å lære dem mange ting."
+    "text": "Da Jesus gikk i land, så han en stor folkemengde. Han fikk inderlig medfølelse med dem, for de var som sauer uten gjeter. Og han begynte å undervise dem om mange ting.",
+    "versions": [
+      {
+        "text": "Da Jesus gikk i land, så han en stor folkemengde. Han fikk inderlig medfølelse med dem, for de var som sauer uten gjeter. Og han begynte å lære dem mange ting.",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "Verbet διδάσκειν oversettes mer konsekvent med 'undervise' gjennom kapittelet (vers 2, 6, 30). 'Lære dem' kan misforstås som at Jesus lærte av dem (norsk er tvetydig her). 'Undervise dem' er klarere."
+      }
+    ]
   },
   {
     "bookId": 41,
@@ -285,7 +361,15 @@
     "bookId": 41,
     "chapterId": 6,
     "verseId": 40,
-    "text": "Og de slo seg ned i flokker på hundre og på femti."
+    "text": "Og de satte seg ned i rekker, hundre og hundre og femti og femti.",
+    "versions": [
+      {
+        "text": "Og de slo seg ned i flokker på hundre og på femti.",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "Det greske πρασιαὶ πρασιαὶ (bokstavelig 'bed for bed', som i en hage) antyder ordnede rekker/rader, ikke 'flokker' som gir et mer uordnet inntrykk. Dessuten har det greske den samme reduplikasjonsformen (κατὰ ἑκατὸν καὶ κατὰ πεντήκοντα) som best gjengis med 'hundre og hundre og femti og femti' for å matche den distribuerende stilen, parallelt med 'gruppe for gruppe' i vers 39."
+      }
+    ]
   },
   {
     "bookId": 41,
@@ -351,7 +435,15 @@
     "bookId": 41,
     "chapterId": 6,
     "verseId": 49,
-    "text": "Da de så ham gå på sjøen, trodde de det var et gjenferd, og de skrek."
+    "text": "Da de så ham gå på sjøen, trodde de det var et spøkelse, og de skrek opp.",
+    "versions": [
+      {
+        "text": "Da de så ham gå på sjøen, trodde de det var et gjenferd, og de skrek.",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "Det greske φάντασμα betyr 'spøkelse/åpenbaring/syn', og 'spøkelse' er det vanligste og mest gjenkjennelige norske ordet for dette. 'Gjenferd' er mer arkaisk. ἀνέκραξαν (med prefikset ἀνα-) antyder et høyt, plutselig utrop - 'skrek opp' fanger dette bedre enn bare 'skrek'."
+      }
+    ]
   },
   {
     "bookId": 41,
@@ -363,7 +455,21 @@
     "bookId": 41,
     "chapterId": 6,
     "verseId": 51,
-    "text": "Han steg opp i båten til dem, og vinden la seg. De var helt ute av seg av undring."
+    "text": "Så steg han opp i båten til dem, og vinden la seg. Da ble de fullstendig overveldet og ute av seg.",
+    "versions": [
+      {
+        "text": "Han steg opp i båten til dem, og vinden la seg. De var helt ute av seg av undring.",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "Det greske uttrykket «λίαν ἐκ περισσοῦ» er en dobbel forsterkelse som betyr 'svært overmåte/ekstremt'. Den nåværende oversettelsen med 'helt ute av seg av undring' fanger noe av intensiteten, men 'av undring' er en tilføyelse som ikke finnes i originalen. Originalen uttrykker bare deres ekstreme forbløffelse/forvirring uten å spesifisere årsaken som 'undring'."
+      },
+      {
+        "text": "De var fullstendig overveldet og ute av seg.",
+        "type": "error",
+        "severity": "critical",
+        "explanation": "Den nåværende oversettelsen mangler de to første setningene i verset: at Jesus steg opp i båten til dem (καὶ ἀνέβη πρὸς αὐτοὺς εἰς τὸ πλοῖον) og at vinden la seg (καὶ ἐκόπασεν ὁ ἄνεμος). Dette er vesentlig innhold som ble fjernet. Versjonshistorikken viser at forrige revisjon fjernet 'av undring' (som var riktig), men ser ut til å ha fjernet hele begynnelsen av verset ved en feil. Den foreslåtte teksten beholder den forbedrede andre halvdelen ('fullstendig overveldet og ute av seg') og legger tilbake det manglende innholdet med litt annen formulering enn den historiske versjonen."
+      }
+    ]
   },
   {
     "bookId": 41,
@@ -405,7 +511,15 @@
     "bookId": 41,
     "chapterId": 6,
     "verseId": 55,
-    "text": "De løp omkring i hele området og begynte å bære de syke på bårer dit de hørte han var."
+    "text": "De løp omkring i hele det området og begynte å bære de syke på bårer dit de hørte han var.",
+    "versions": [
+      {
+        "text": "De løp omkring i hele området og begynte å bære de syke på bårer dit de hørte han var.",
+        "type": "error",
+        "severity": "major",
+        "explanation": "Det greske «ἐκείνην» (det/hin) er et demonstrativt pronomen som peker på det spesifikke området. 'Hele det området' gjengir dette mer nøyaktig enn bare 'hele området'."
+      }
+    ]
   },
   {
     "bookId": 41,

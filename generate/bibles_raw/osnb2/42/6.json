@@ -3,7 +3,15 @@
     "bookId": 42,
     "chapterId": 6,
     "verseId": 1,
-    "text": "En sabbat skjedde det at han gikk gjennom kornåkrene, og disiplene plukket aks, gned dem mellom hendene og spiste."
+    "text": "Det skjedde en sabbat at han gikk gjennom kornåkrene, og disiplene plukket aks, gned dem mellom hendene og spiste.",
+    "versions": [
+      {
+        "text": "En sabbat skjedde det at han gikk gjennom kornåkrene, og disiplene plukket aks, gned dem mellom hendene og spiste.",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "«En sabbat skjedde det» er noe uvanlig ordstilling. «Det skjedde en sabbat» er mer naturlig norsk og gjenspeiler den greske konstruksjonen Ἐγένετο δέ bedre."
+      }
+    ]
   },
   {
     "bookId": 42,
@@ -39,7 +47,15 @@
     "bookId": 42,
     "chapterId": 6,
     "verseId": 6,
-    "text": "En annen sabbat gikk han inn i synagogen og underviste. Der var det en mann med en vissen høyre hånd."
+    "text": "En annen sabbat gikk han inn i synagogen og underviste. Der var det en mann som hadde en vissen høyre hånd.",
+    "versions": [
+      {
+        "text": "En annen sabbat gikk han inn i synagogen og underviste. Der var det en mann med en vissen høyre hånd.",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "Grunnteksten har en relativ konstruksjon: det var en mann der, og hans høyre hånd var vissen. «som hadde en vissen høyre hånd» gjenspeiler dette litt bedre enn «med en vissen høyre hånd», men dette er en mindre nyanse."
+      }
+    ]
   },
   {
     "bookId": 42,
@@ -201,11 +217,17 @@
     "bookId": 42,
     "chapterId": 6,
     "verseId": 29,
-    "text": "Slår noen deg på kinnet, så by frem det andre også. Tar noen kappen din, så nekt ham heller ikke kjortelen.",
+    "text": "Slår noen deg på kinnet, så by frem det andre også. Tar noen kappen din fra deg, så nekt ham heller ikke kjortelen.",
     "versions": [
       {
         "text": "Slår noen deg på det ene kinnet, så by frem det andre også. Tar noen kappen din, så nekt ham heller ikke kjortelen.",
         "explanation": "Grunnteksten sier bare «kinnet» (τὴν σιαγόνα), ikke «det ene kinnet». Tillegget «det ene» er unødvendig og ikke i originalen."
+      },
+      {
+        "text": "Slår noen deg på kinnet, så by frem det andre også. Tar noen kappen din, så nekt ham heller ikke kjortelen.",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "Det greske αἴροντός σου (tar fra deg) innebærer at noen tar kappen fra deg. «Tar noen kappen din fra deg» er litt mer presist enn bare «Tar noen kappen din»."
       }
     ]
   },
@@ -225,7 +247,15 @@
     "bookId": 42,
     "chapterId": 6,
     "verseId": 31,
-    "text": "Slik dere vil at andre skal gjøre mot dere, slik skal også dere gjøre mot dem."
+    "text": "Og slik dere vil at andre skal gjøre mot dere, slik skal dere gjøre mot dem.",
+    "versions": [
+      {
+        "text": "Slik dere vil at andre skal gjøre mot dere, slik skal også dere gjøre mot dem.",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "Grunnteksten begynner med καί (og), som binder verset til det foregående. I tillegg har originalen ikke noe ord som tilsvarer «også» – det er en liten tilføyelse."
+      }
+    ]
   },
   {
     "bookId": 42,
@@ -279,7 +309,15 @@
     "bookId": 42,
     "chapterId": 6,
     "verseId": 38,
-    "text": "Gi, så skal det bli gitt dere. Et godt mål, pakket, ristet og overfylt skal bli gitt i fanget deres. For med det målet dere måler med, skal det måles igjen til dere."
+    "text": "Gi, så skal det bli gitt dere! Et godt mål, presset sammen, ristet og overfylt, skal bli gitt i fanget deres. For med det målet dere måler med, skal det bli målt tilbake til dere.",
+    "versions": [
+      {
+        "text": "Gi, så skal det bli gitt dere. Et godt mål, pakket, ristet og overfylt skal bli gitt i fanget deres. For med det målet dere måler med, skal det måles igjen til dere.",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "«Pakket» er en noe upresis gjengivelse av πεπιεσμένον, som betyr 'presset sammen/nedpresset'. «Presset sammen» gir et riktigere bilde av kornmål som presses ned i beholderen. I tillegg gjenspeiler «målt tilbake» bedre ἀντιμετρηθήσεται (gjenmåles) enn «måles igjen»."
+      }
+    ]
   },
   {
     "bookId": 42,
@@ -291,7 +329,15 @@
     "bookId": 42,
     "chapterId": 6,
     "verseId": 40,
-    "text": "En disippel står ikke over sin lærer, men når han er fullt utlært, blir han som sin lærer."
+    "text": "En disippel står ikke over sin lærer, men enhver som er fullt utlært, skal bli som sin lærer.",
+    "versions": [
+      {
+        "text": "En disippel står ikke over sin lærer, men når han er fullt utlært, blir han som sin lærer.",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "Grunnteksten har πᾶς (enhver/alle), som understreker at dette gjelder alle. «Enhver som er fullt utlært» fanger dette bedre enn bare «når han er fullt utlært». I tillegg er ἔσται (skal bli) futurum, som «skal bli» gjengir bedre enn «blir»."
+      }
+    ]
   },
   {
     "bookId": 42,
@@ -345,13 +391,29 @@
     "bookId": 42,
     "chapterId": 6,
     "verseId": 47,
-    "text": "Den som kommer til meg og hører mine ord og gjør etter dem – jeg skal vise dere hvem han ligner:"
+    "text": "Hver den som kommer til meg og hører mine ord og handler etter dem – jeg skal vise dere hvem han ligner:",
+    "versions": [
+      {
+        "text": "Den som kommer til meg og hører mine ord og gjør etter dem – jeg skal vise dere hvem han ligner:",
+        "type": "error",
+        "severity": "critical",
+        "explanation": "Grunnteksten har «πᾶς ὁ ἐρχόμενος» som betyr 'hver den som kommer', ikke bare 'den som kommer'. «πᾶς» (hver/alle) understreker universaliteten av utsagnet og bør inkluderes. I tillegg er «gjør etter» noe uidiomatisk; «handler etter» er mer naturlig norsk."
+      }
+    ]
   },
   {
     "bookId": 42,
     "chapterId": 6,
     "verseId": 48,
-    "text": "Han ligner en mann som bygde et hus. Han gravde dypt og la grunnmuren på fjell. Da flommen kom, brøt elven mot huset, men kunne ikke rokke det, for det var godt bygd."
+    "text": "Han ligner en mann som bygde et hus. Han gravde og grov dypt, og la grunnmuren på fjell. Da flommen kom, brøt elven mot huset, men kunne ikke rokke det, for det var godt bygd.",
+    "versions": [
+      {
+        "text": "Han ligner en mann som bygde et hus. Han gravde dypt og la grunnmuren på fjell. Da flommen kom, brøt elven mot huset, men kunne ikke rokke det, for det var godt bygd.",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "The Greek has two verbs 'ἔσκαψεν καὶ ἐβάθυνεν' (he dug and he deepened), emphasizing the thoroughness of the work. The current translation 'gravde dypt' only captures one verb. Consider 'gravde og grov dypt' or 'gravde og gjorde det dypt' to better reflect the original's emphasis on the builder's diligent effort."
+      }
+    ]
   },
   {
     "bookId": 42,

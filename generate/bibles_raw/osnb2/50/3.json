@@ -3,7 +3,15 @@
     "bookId": 50,
     "chapterId": 3,
     "verseId": 1,
-    "text": "For øvrig, mine søsken, gled dere i Herren! Å skrive det samme til dere er ikke brysomt for meg, og for dere er det trygt."
+    "text": "For øvrig, mine søsken: Gled dere i Herren! Å skrive det samme til dere er ikke brysomt for meg, og for dere er det trygt.",
+    "versions": [
+      {
+        "text": "For øvrig, mine søsken, gled dere i Herren! Å skrive det samme til dere er ikke brysomt for meg, og for dere er det trygt.",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "Et kolon etter 'mine søsken' ville tydeliggjøre at oppfordringen 'Gled dere i Herren' er rettet til dem. Svært liten endring, men gir bedre flyt."
+      }
+    ]
   },
   {
     "bookId": 50,
@@ -75,7 +83,15 @@
     "bookId": 50,
     "chapterId": 3,
     "verseId": 9,
-    "text": "og bli funnet i ham, ikke med min egen rettferdighet, den som kommer av loven, men med den som kommer ved troen på Kristus, rettferdigheten fra Gud som gis ved tro."
+    "text": "og bli funnet i ham, ikke med min egen rettferdighet, den som kommer av loven, men med den som kommer ved troen på Kristus, rettferdigheten fra Gud grunnet på tro.",
+    "versions": [
+      {
+        "text": "og bli funnet i ham, ikke med min egen rettferdighet, den som kommer av loven, men med den som kommer ved troen på Kristus, rettferdigheten fra Gud som gis ved tro.",
+        "type": "theological",
+        "severity": "minor",
+        "explanation": "ἐπὶ τῇ πίστει betyr 'på grunnlag av tro' eller 'grunnet på tro', ikke 'som gis ved tro'. Preposisjonen ἐπί med dativ uttrykker grunnlaget rettferdigheten hviler på. 'Som gis ved tro' legger til et element ('gis') som ikke er i teksten og svekker det grunnleggende aspektet."
+      }
+    ]
   },
   {
     "bookId": 50,
@@ -111,11 +127,17 @@
     "bookId": 50,
     "chapterId": 3,
     "verseId": 14,
-    "text": "Jeg jager mot målet, mot seierspremien fra Guds kall der oppe, i Kristus Jesus.",
+    "text": "Jeg jager mot målet, mot seierspremien ved Guds himmelske kall i Kristus Jesus.",
     "versions": [
       {
         "text": "Jeg jager mot målet, mot seierspremien som Gud har kalt oss til der oppe i Kristus Jesus.",
         "explanation": "Originalen har 'τῆς ἄνω κλήσεως' (det himmelske kall/kallet ovenfra), ikke 'kalt oss til der oppe'. Kallet kommer ovenfra, det er selve kallet som er himmelsk."
+      },
+      {
+        "text": "Jeg jager mot målet, mot seierspremien fra Guds kall der oppe, i Kristus Jesus.",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "τῆς ἄνω κλήσεως betyr 'det himmelske kall' eller 'kallet ovenfra'. Uttrykket 'Guds kall der oppe' er litt uklart - det kan høres ut som om Gud er 'der oppe' snarere enn at kallet er himmelsk. 'Guds himmelske kall' er klarere. Versjonshistorikken viser at forrige versjon sa 'kalt oss til der oppe', som ble endret fordi kallet selv er himmelsk - nåværende versjon har fortsatt 'der oppe' hengende etter på en uklar måte."
       }
     ]
   },
@@ -177,6 +199,14 @@
     "bookId": 50,
     "chapterId": 3,
     "verseId": 21,
-    "text": "Han skal forvandle vår fornedrede kropp og gjøre den lik hans herlige kropp ved den kraft som gjør ham i stand til å legge alle ting under seg."
+    "text": "Han skal forvandle vår fornedrede kropp og gjøre den lik sin herlige kropp ved den kraft som gjør ham i stand til å legge alle ting under seg.",
+    "versions": [
+      {
+        "text": "Han skal forvandle vår fornedrede kropp og gjøre den lik hans herlige kropp ved den kraft som gjør ham i stand til å legge alle ting under seg.",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "På norsk bokmål bør 'sin' brukes refleksivt når det refererer tilbake til subjektet ('Han'). 'Hans herlige kropp' er grammatisk mulig men 'sin herlige kropp' er mer korrekt norsk siden det refererer til subjektets egen kropp."
+      }
+    ]
   }
 ]

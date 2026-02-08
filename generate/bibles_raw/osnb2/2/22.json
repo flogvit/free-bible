@@ -9,11 +9,17 @@
     "bookId": 2,
     "chapterId": 22,
     "verseId": 2,
-    "text": "Men har solen stått opp over ham, hviler det blodskyld på den som slo. Tyven skal betale full erstatning. Har han ingenting, skal han selges for det han har stjålet.",
+    "text": "Men har solen stått opp over ham, hviler det blodskyld på den som slo ham. Tyven skal betale full erstatning. Har han ingenting, skal han selges for det han har stjålet.",
     "versions": [
       {
         "text": "Men har solen stått opp over ham, hviler det blodskyld på ham. Tyven skal betale full erstatning. Har han ingenting, skal han selges for det han har stjålet.",
         "explanation": "Blodskylden hviler på den som slår tyven i hjel (ikke på tyven selv), dersom det skjer etter soloppgang. Pronomenet 'ham' i 'blodskyld på ham' refererer tilbake til den som slår, ikke tyven. Den nåværende oversettelsen er tvetydig."
+      },
+      {
+        "text": "Men har solen stått opp over ham, hviler det blodskyld på den som slo. Tyven skal betale full erstatning. Har han ingenting, skal han selges for det han har stjålet.",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "Setningen 'den som slo' mangler objektet 'ham' for klarhet. Uten det kan det virke ufullstendig. Merk at dette ikke er det samme som den tidligere versjonen som hadde 'blodskyld på ham' (som refererte feil til tyven)."
       }
     ]
   },
@@ -45,7 +51,15 @@
     "bookId": 2,
     "chapterId": 22,
     "verseId": 7,
-    "text": "Om tyven ikke blir funnet, skal husets eier tre fram for Gud og avlegge ed på at han ikke har forgrepet seg på sin nestes eiendom."
+    "text": "Om tyven ikke blir funnet, skal husets eier tre fram for Gud for å avgjøre om han har forgrepet seg på sin nestes eiendom.",
+    "versions": [
+      {
+        "text": "Om tyven ikke blir funnet, skal husets eier tre fram for Gud og avlegge ed på at han ikke har forgrepet seg på sin nestes eiendom.",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "Grunnteksten sier 'אִם־לֹא שָׁלַח יָדוֹ' – dette er en betingelsessetning ('om han ikke har lagt sin hånd på'), ikke en ed han avlegger. Teksten beskriver en guddommelig avgjørelse/dom, ikke en ed. Oversettelsen legger til 'avlegge ed' som ikke finnes i grunnteksten (eden nevnes først i vers 10)."
+      }
+    ]
   },
   {
     "bookId": 2,
@@ -147,7 +161,21 @@
     "bookId": 2,
     "chapterId": 22,
     "verseId": 22,
-    "text": "Om du gjør dem urett, og de roper til meg, skal jeg sannelig høre deres rop."
+    "text": "Om du virkelig gjør ham urett, og han roper til meg, skal jeg sannelig høre hans rop.",
+    "versions": [
+      {
+        "text": "Om du gjør dem urett, og de roper til meg, skal jeg sannelig høre deres rop.",
+        "type": "error",
+        "severity": "major",
+        "explanation": "Den hebraiske infinitivus absolutus-konstruksjonen 'עַנֵּה תְעַנֶּה' (ane te'ane) uttrykker emfase – 'virkelig gjør urett'. Denne forsterkende formen bør gjenspeiles i oversettelsen, slik den gjøres med 'sannelig høre' (שָׁמֹעַ אֶשְׁמַע) i andre halvdel av verset."
+      },
+      {
+        "text": "Om du virkelig gjør dem urett, og de roper til meg, skal jeg sannelig høre deres rop.",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "Hebraisk bruker entallssuffikser (אֹתוֹ 'ham', צַעֲקָתוֹ 'hans rop') som refererer tilbake til 'enke og farløs' som kollektiv entall. Oversettelsen bruker flertall 'dem/de/deres', som er en tolkningsfraskrivelse men fjerner seg fra grunntekstens form. Entall ville ligge nærmere originalen."
+      }
+    ]
   },
   {
     "bookId": 2,
@@ -201,7 +229,15 @@
     "bookId": 2,
     "chapterId": 22,
     "verseId": 29,
-    "text": "Det samme skal du gjøre med din okse og ditt småfe: Syv dager skal de bli hos sin mor, på den åttende dagen skal du gi dem til meg."
+    "text": "Det samme skal du gjøre med din okse og ditt småfe: I syv dager skal det bli hos sin mor, på den åttende dagen skal du gi det til meg.",
+    "versions": [
+      {
+        "text": "Det samme skal du gjøre med din okse og ditt småfe: Syv dager skal de bli hos sin mor, på den åttende dagen skal du gi dem til meg.",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "Hebraisk bruker entall (יִהְיֶה 'det skal være', תִּתְּנוֹ 'du skal gi det') – det refererer til hvert enkelt førstefødt dyr. Oversettelsen bruker 'de/dem' (flertall), men entall ligger nærmere grunnteksten."
+      }
+    ]
   },
   {
     "bookId": 2,

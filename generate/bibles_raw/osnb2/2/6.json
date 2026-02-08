@@ -15,7 +15,15 @@
     "bookId": 2,
     "chapterId": 6,
     "verseId": 3,
-    "text": "Jeg åpenbarte meg for Abraham, Isak og Jakob som Gud Den Allmektige, men ved mitt navn Herren gjorde jeg meg ikke kjent for dem."
+    "text": "Jeg åpenbarte meg for Abraham, Isak og Jakob som El Sjaddai, men ved mitt navn Herren gjorde jeg meg ikke kjent for dem.",
+    "versions": [
+      {
+        "text": "Jeg åpenbarte meg for Abraham, Isak og Jakob som Gud Den Allmektige, men ved mitt navn Herren gjorde jeg meg ikke kjent for dem.",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "אֵל שַׁדַּי (El Shaddai) is a specific divine name. Translating it as 'Gud Den Allmektige' is a common tradition, but 'El Sjaddai' preserves the original name and distinguishes it from the Tetragrammaton contrast being made in this verse. This is a theological/stylistic choice; the current translation is also defensible."
+      }
+    ]
   },
   {
     "bookId": 2,
@@ -51,7 +59,15 @@
     "bookId": 2,
     "chapterId": 6,
     "verseId": 9,
-    "text": "Moses talte dette til Israels barn, men de lyttet ikke til ham, for de var motløse og utslitt av det harde arbeidet."
+    "text": "Moses talte dette til Israels barn, men de lyttet ikke til Moses, for de var motløse og utslitt av det harde arbeidet.",
+    "versions": [
+      {
+        "text": "Moses talte dette til Israels barn, men de lyttet ikke til ham, for de var motløse og utslitt av det harde arbeidet.",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "The Hebrew says אֶל־מֹשֶׁה (to Moses) rather than using a pronoun. While using 'ham' is natural in Norwegian, the original specifically names Moses. This is a minor point."
+      }
+    ]
   },
   {
     "bookId": 2,
@@ -165,13 +181,29 @@
     "bookId": 2,
     "chapterId": 6,
     "verseId": 28,
-    "text": "På den dagen Herren talte til Moses i Egypt, skjedde dette:"
+    "text": "På den dagen Herren talte til Moses i Egypt,",
+    "versions": [
+      {
+        "text": "På den dagen Herren talte til Moses i Egypt, skjedde dette:",
+        "type": "error",
+        "severity": "critical",
+        "explanation": "Verse 28 is the beginning of a sentence that continues into verse 29. The Hebrew וַיְהִי introduces a temporal clause ('And it was on the day...') that sets up what follows in verse 29. The addition of 'skjedde dette:' is not in the original and creates an awkward construction. Verses 28-29 form one continuous sentence in Hebrew."
+      }
+    ]
   },
   {
     "bookId": 2,
     "chapterId": 6,
     "verseId": 29,
-    "text": "sa Herren til Moses: «Jeg er Herren. Tal til farao, kongen av Egypt, alt det jeg sier til deg.»"
+    "text": "talte Herren til Moses og sa: «Jeg er Herren. Tal til farao, kongen av Egypt, alt det jeg sier til deg.»",
+    "versions": [
+      {
+        "text": "sa Herren til Moses: «Jeg er Herren. Tal til farao, kongen av Egypt, alt det jeg sier til deg.»",
+        "type": "error",
+        "severity": "critical",
+        "explanation": "The verse begins with וַיְדַבֵּר יְהוָה אֶל־מֹשֶׁה לֵּאמֹר which means 'the LORD spoke to Moses, saying'. The current translation 'sa Herren til Moses' omits the לֵּאמֹר construction. Since this continues from verse 28, it should read 'talte Herren til Moses og sa' to properly render both וַיְדַבֵּר and לֵּאמֹר."
+      }
+    ]
   },
   {
     "bookId": 2,

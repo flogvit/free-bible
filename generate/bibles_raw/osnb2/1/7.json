@@ -3,19 +3,49 @@
     "bookId": 1,
     "chapterId": 7,
     "verseId": 1,
-    "text": "Herren sa til Noah: «Gå inn i arken, du og hele ditt hus, for jeg har sett at du er rettferdig for mitt ansikt i denne slekt."
+    "text": "Herren sa til Noah: «Gå inn i arken, du og hele ditt hus, for jeg har sett at du er rettferdig for meg i denne slekt.»",
+    "versions": [
+      {
+        "text": "Herren sa til Noah: «Gå inn i arken, du og hele ditt hus, for jeg har sett at du er rettferdig for mitt ansikt i denne slekt.",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "«For mitt ansikt» er en hebraisme som kan oversettes mer naturlig til «for meg» på moderne norsk. I tillegg mangler det avsluttende anførselstegn."
+      }
+    ]
   },
   {
     "bookId": 1,
     "chapterId": 7,
     "verseId": 2,
-    "text": "Av alle rene dyr skal du ta med deg sju og sju, hann og hunn, og av de dyr som ikke er rene, to, hann og hunn."
+    "text": "Av alle rene dyr skal du ta med deg sju par, hann og hunn, og av de dyr som ikke er rene, ett par, hann og hunn.",
+    "versions": [
+      {
+        "text": "Av alle rene dyr skal du ta med deg sju og sju, hann og hunn, og av de dyr som ikke er rene, to, hann og hunn.",
+        "type": "error",
+        "severity": "major",
+        "explanation": "Det hebraiske «שִׁבְעָה שִׁבְעָה» (syv syv) med «אִישׁ וְאִשְׁתּוֹ» (hann og hunn) indikerer sju par. Tilsvarende betyr «שְׁנַיִם» (to) med «אִישׁ וְאִשְׁתּוֹ» ett par. Oversettelsen «sju og sju» er uklar på norsk."
+      }
+    ]
   },
   {
     "bookId": 1,
     "chapterId": 7,
     "verseId": 3,
-    "text": "Også av himmelens fugler skal du ta sju og sju, hann og hunn, for å holde slekten i live over hele jorden."
+    "text": "Også av himmelens fugler skal du ta sju par, hann og hunn, for å bevare avkom på hele jorden.",
+    "versions": [
+      {
+        "text": "Også av himmelens fugler skal du ta sju og sju, hann og hunn, for å holde slekten i live over hele jorden.",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "«Sju og sju» bør være «sju par» for konsistens med vers 2. «לְחַיּוֹת זֶרַע» betyr å holde avkom/slekt i live - «bevare slekten» er mer idiomatisk norsk."
+      },
+      {
+        "text": "Også av himmelens fugler skal du ta sju par, hann og hunn, for å bevare slekten på hele jorden.",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "«זֶרַע» betyr 'avkom' eller 'ætt', ikke 'slekt' i seg selv. 'Bevare avkom' er mer presist til hebraisk 'לְחַיּוֹת זֶרַע' (holde avkom/sæd i live)."
+      }
+    ]
   },
   {
     "bookId": 1,
@@ -45,7 +75,15 @@
     "bookId": 1,
     "chapterId": 7,
     "verseId": 7,
-    "text": "Noah gikk inn i arken sammen med sine sønner, sin kone og sønnenes koner for å berge seg fra flomvannet."
+    "text": "Noah gikk inn i arken sammen med sine sønner, sin kone og sønnenes koner på grunn av flomvannet.",
+    "versions": [
+      {
+        "text": "Noah gikk inn i arken sammen med sine sønner, sin kone og sønnenes koner for å berge seg fra flomvannet.",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "«מִפְּנֵי מֵי הַמַּבּוּל» betyr 'på grunn av / for å unngå flomvannet'. 'For å berge seg' legger til en intensjon som ikke er eksplisitt i grunnteksten. 'På grunn av flomvannet' er mer nøyaktig."
+      }
+    ]
   },
   {
     "bookId": 1,
@@ -75,7 +113,15 @@
     "bookId": 1,
     "chapterId": 7,
     "verseId": 11,
-    "text": "I det året Noah fylte seks hundre år, i den andre måneden, på den syttende dagen i måneden – på denne dagen brøt alle kilder i det store dypet frem, og himmelens sluser ble åpnet."
+    "text": "I Noahs seks hundre år, i den andre måneden, på den syttende dagen i måneden – på denne dagen brøt alle kilder i det store dypet frem, og himmelens sluser ble åpnet.",
+    "versions": [
+      {
+        "text": "I det året Noah fylte seks hundre år, i den andre måneden, på den syttende dagen i måneden – på denne dagen brøt alle kilder i det store dypet frem, og himmelens sluser ble åpnet.",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "Hebraisk sier «i det seks hundrede året av Noahs liv», ikke «da Noah fylte seks hundre». Han fylte ikke nødvendigvis 600 den dagen – han var i sitt 600. leveår. Alternativt: «Da Noah var seks hundre år gammel»."
+      }
+    ]
   },
   {
     "bookId": 1,
@@ -105,7 +151,15 @@
     "bookId": 1,
     "chapterId": 7,
     "verseId": 15,
-    "text": "De kom til Noah og gikk inn i arken, par for par av alt kjød som har livsånde i seg."
+    "text": "De kom til Noah og gikk inn i arken, to og to av alt kjød som har livsånde i seg.",
+    "versions": [
+      {
+        "text": "De kom til Noah og gikk inn i arken, par for par av alt kjød som har livsånde i seg.",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "«שְׁנַיִם שְׁנַיִם» betyr bokstavelig 'to, to' – altså 'to og to'. 'Par for par' er en tolkning, mens 'to og to' er mer direkte og konsistent med grunnteksten."
+      }
+    ]
   },
   {
     "bookId": 1,
@@ -117,13 +171,29 @@
     "bookId": 1,
     "chapterId": 7,
     "verseId": 17,
-    "text": "Flommen varte i førti dager over jorden. Vannet steg og løftet arken, så den hevet seg over jorden."
+    "text": "Flommen varte i førti dager over jorden. Vannet økte og løftet arken, så den hevet seg over jorden.",
+    "versions": [
+      {
+        "text": "Flommen varte i førti dager over jorden. Vannet steg og løftet arken, så den hevet seg over jorden.",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "וַיִּרְבּוּ betyr 'økte/ble flere/mange', ikke bare 'steg'. Vannet økte i mengde, som førte til at arken ble løftet."
+      }
+    ]
   },
   {
     "bookId": 1,
     "chapterId": 7,
     "verseId": 18,
-    "text": "Vannet steg og ble veldig stort over jorden, og arken fløt på vannflaten."
+    "text": "Vannet ble mektig og økte veldig over jorden, og arken fløt på vannflaten.",
+    "versions": [
+      {
+        "text": "Vannet steg og ble veldig stort over jorden, og arken fløt på vannflaten.",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "«וַיִּגְבְּרוּ» (gavru) betyr 'ble mektig/sterkt', og «וַיִּרְבּוּ» betyr 'økte/ble mye'. 'Steg' dekker ikke helt betydningen av «גבר» som innebærer kraft og velde."
+      }
+    ]
   },
   {
     "bookId": 1,
@@ -141,11 +211,17 @@
     "bookId": 1,
     "chapterId": 7,
     "verseId": 21,
-    "text": "Da omkom alt kjød som rørte seg på jorden: fugler, fe, ville dyr, alt myldret som krydde på jorden, og alle mennesker.",
+    "text": "Da omkom alt kjød som rørte seg på jorden: fugler, fe, ville dyr, alt krypet som krydde på jorden, og alle mennesker.",
     "versions": [
       {
         "text": "Da omkom alt kjød som rørte seg på jorden: fugler, fe, ville dyr, alt mylderet som krydde på jorden, og alle mennesker.",
         "explanation": "«Mylderet» bør være «myldret» (intetkjønn bestemt form entall av 'mylder')."
+      },
+      {
+        "text": "Da omkom alt kjød som rørte seg på jorden: fugler, fe, ville dyr, alt myldret som krydde på jorden, og alle mennesker.",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "«הַשֶּׁרֶץ» (sherets) refererer til småkryp/krypdyr, ikke «mylder». «Alt krypet som krydde» er mer presist og skaper fin allitterasjon."
       }
     ]
   },
@@ -159,7 +235,15 @@
     "bookId": 1,
     "chapterId": 7,
     "verseId": 23,
-    "text": "Slik ble alt liv utslettet fra jordens overflate, både mennesker og fe, kryp og himmelens fugler. De ble utslettet fra jorden. Bare Noah ble igjen, og de som var med ham i arken."
+    "text": "Slik utslettet han alt det levende fra jordens overflate, både mennesker og fe, kryp og himmelens fugler. De ble utslettet fra jorden. Bare Noah ble igjen, og de som var med ham i arken.",
+    "versions": [
+      {
+        "text": "Slik ble alt liv utslettet fra jordens overflate, både mennesker og fe, kryp og himmelens fugler. De ble utslettet fra jorden. Bare Noah ble igjen, og de som var med ham i arken.",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "Hebraisk har en aktiv verbform «וַיִּמַח» – 'han (Gud) utslettet'. Passivformen 'ble utslettet' svekker at det er Guds aktive handling. Dessuten er «הַיְקוּם» 'alt det levende' (som i vers 4), ikke bare 'alt liv'."
+      }
+    ]
   },
   {
     "bookId": 1,

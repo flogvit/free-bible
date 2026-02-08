@@ -57,7 +57,15 @@
     "bookId": 2,
     "chapterId": 4,
     "verseId": 8,
-    "text": "«Hvis de ikke tror deg og ikke hører på det første tegnet, vil de tro på det andre tegnet."
+    "text": "«Hvis de ikke tror deg og ikke hører på det første tegnet, så vil de tro på det andre tegnet.",
+    "versions": [
+      {
+        "text": "«Hvis de ikke tror deg og ikke hører på det første tegnet, vil de tro på det andre tegnet.",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "Verset mangler avsluttende anførselstegn eller sammenheng med neste vers. Den hebraiske konstruksjonen 'וְהָיָה אִם' (og det skal skje at hvis) introduserer en betinget setning. Teksten flyter naturlig inn i vers 9 som en fortsettelse. Å legge til 'så' gjør flyten litt bedre på norsk, men dette er en svært liten forbedring."
+      }
+    ]
   },
   {
     "bookId": 2,
@@ -177,7 +185,15 @@
     "bookId": 2,
     "chapterId": 4,
     "verseId": 25,
-    "text": "Da tok Sippora en skarp stein og skar av forhuden på sin sønn. Hun rørte ved hans føtter og sa: «Du er en blodbrudgom for meg.»"
+    "text": "Da tok Sippora en skarp flintstein og skar av forhuden på sin sønn. Hun rørte ved hans føtter og sa: «Du er en blodbrudgom for meg.»",
+    "versions": [
+      {
+        "text": "Da tok Sippora en skarp stein og skar av forhuden på sin sønn. Hun rørte ved hans føtter og sa: «Du er en blodbrudgom for meg.»",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "Det hebraiske 'צֹר' (tsor) betyr spesifikt 'flintstein', ikke bare en generell 'skarp stein'. Flintstein var det tradisjonelle redskapet brukt til omskjærelse (jf. Jos 5:2-3). 'Flintstein' er mer presist."
+      }
+    ]
   },
   {
     "bookId": 2,
@@ -207,12 +223,34 @@
     "bookId": 2,
     "chapterId": 4,
     "verseId": 30,
-    "text": "Aron fortalte dem alt det Herren hadde sagt til Moses, og han gjorde tegnene for folkets øyne."
+    "text": "Aron fortalte alt det Herren hadde sagt til Moses, og han gjorde tegnene for folkets øyne.",
+    "versions": [
+      {
+        "text": "Aron fortalte dem alt det Herren hadde sagt til Moses, og han gjorde tegnene for folkets øyne.",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "Subjektet for 'וַיַּעַשׂ' (og han gjorde) er noe tvetydig i hebraisk – det kan referere til Moses som den som utførte tegnene, ikke Aron. De fleste kommentatorer forstår det slik at Moses utførte tegnene mens Aron talte. Men den nåværende oversettelsen med 'han' er akseptabel som ambiguitet. Et mindre problem er at 'dem' (altså 'fortalte dem') ikke har et eksplisitt objekt i hebraisk – teksten sier bare at Aron talte ordene. Endringen er minimal."
+      }
+    ]
   },
   {
     "bookId": 2,
     "chapterId": 4,
     "verseId": 31,
-    "text": "Folket trodde. Da de hørte at Herren hadde sett til Israels barn og sett deres nød, bøyde de seg ned og tilba."
+    "text": "Folket trodde. Da de hørte at Herren hadde tatt seg av Israels barn og sett deres nød, bøyde de seg ned og tilba.",
+    "versions": [
+      {
+        "text": "Folket trodde. Da de hørte at Herren hadde sett til Israels barn og sett deres nød, bøyde de seg ned og tilba.",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "The Hebrew uses two כִּי-clauses (כִּי־פָקַד ... וְכִי רָאָה), both with perfect verbs, indicating two parallel subordinate clauses. Adding 'hadde' before 'sett deres nød' better reflects this parallel structure in Norwegian. However, this is a very minor stylistic point."
+      },
+      {
+        "text": "Folket trodde. Da de hørte at Herren hadde sett til Israels barn og hadde sett deres nød, bøyde de seg ned og tilba.",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "The Hebrew verb פָּקַד means 'to visit, attend to, take care of' — it conveys divine intervention and care, not merely 'seeing to.' The current translation 'sett til' could work but is close to the second verb רָאָה ('sett'). Using 'tatt seg av' better distinguishes the two verbs and captures the meaning of פָּקַד as God's active concern and intervention."
+      }
+    ]
   }
 ]

@@ -63,11 +63,17 @@
     "bookId": 46,
     "chapterId": 12,
     "verseId": 8,
-    "text": "For til én blir det gitt visdomsord ved Ånden, til en annen kunnskapsord ved den samme Ånd,",
+    "text": "For til én blir det gitt visdomsord ved Ånden, til en annen kunnskapsord ved den samme Ånden,",
     "versions": [
       {
         "text": "For til én blir det gitt visdoms ord ved Ånden, til en annen kunnskaps ord ved den samme Ånd,",
         "explanation": "På norsk skrives 'visdomsord' og 'kunnskapsord' som sammensatte ord, ikke som to separate ord. Dette er standard norsk rettskrivning og gir bedre flyt ved muntlig lesning."
+      },
+      {
+        "text": "For til én blir det gitt visdomsord ved Ånden, til en annen kunnskapsord ved den samme Ånd,",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "På norsk bør 'Ånd' bøyes i bestemt form 'Ånden' etter 'den samme'. 'Den samme Ånd' er grammatisk uvanlig; korrekt norsk er 'den samme Ånden'. Dette gjelder også vers 9, men dette verset er det mest sentrale eksempelet."
       }
     ]
   },
@@ -75,13 +81,29 @@
     "bookId": 46,
     "chapterId": 12,
     "verseId": 9,
-    "text": "til én blir det gitt tro ved den samme Ånd, til en annen nådegaver til å helbrede ved den ene Ånd,"
+    "text": "til én blir det gitt tro ved den samme Ånden, til en annen nådegaver til å helbrede ved den ene Ånden,",
+    "versions": [
+      {
+        "text": "til én blir det gitt tro ved den samme Ånd, til en annen nådegaver til å helbrede ved den ene Ånd,",
+        "type": "grammar",
+        "severity": "minor",
+        "explanation": "Samme grammatiske problem som vers 8: 'den samme Ånd' og 'den ene Ånd' bør være 'den samme Ånden' og 'den ene Ånden' for korrekt norsk bøyning. Etter determinativ 'den' brukes bestemt form av substantivet."
+      }
+    ]
   },
   {
     "bookId": 46,
     "chapterId": 12,
     "verseId": 10,
-    "text": "til én å gjøre kraftige gjerninger, til en annen profeti, til en annen å bedømme ånder, til én forskjellige slags tunger, til en annen tydning av tunger."
+    "text": "til én kraftige gjerninger, til en annen profeti, til en annen å bedømme ånder, til én forskjellige slags tunger, til en annen tydning av tunger.",
+    "versions": [
+      {
+        "text": "til én å gjøre kraftige gjerninger, til en annen profeti, til en annen å bedømme ånder, til én forskjellige slags tunger, til en annen tydning av tunger.",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "Det greske 'ἐνεργήματα δυνάμεων' er et substantiv ('virkninger av krefter'), ikke en infinitivkonstruksjon. 'Å gjøre kraftige gjerninger' legger til et verb som ikke er i originalen. Listen i vers 8-10 gir substantiver. 'Kraftige gjerninger' alene er konsistent med mønsteret i resten av listen."
+      }
+    ]
   },
   {
     "bookId": 46,
@@ -105,7 +127,15 @@
     "bookId": 46,
     "chapterId": 12,
     "verseId": 13,
-    "text": "For med én Ånd ble vi alle døpt til å være én kropp, enten vi er jøder eller grekere, slaver eller frie, og vi har alle fått én Ånd å drikke."
+    "text": "For ved én Ånd ble vi alle døpt til å være én kropp, enten vi er jøder eller grekere, slaver eller frie, og vi ble alle gitt én Ånd å drikke.",
+    "versions": [
+      {
+        "text": "For med én Ånd ble vi alle døpt til å være én kropp, enten vi er jøder eller grekere, slaver eller frie, og vi har alle fått én Ånd å drikke.",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "'ἐν ἑνὶ πνεύματι' er mer presist 'ved' (instrumentalt) enn 'med'. Også 'ἐποτίσθημεν' er aorist passiv ('vi ble gitt å drikke'), ikke perfektum ('vi har fått'). For konsistens med 'ble vi alle døpt' (aorist) bør begge verbene gjenspeile den samme tidsformen."
+      }
+    ]
   },
   {
     "bookId": 46,
@@ -117,13 +147,29 @@
     "bookId": 46,
     "chapterId": 12,
     "verseId": 15,
-    "text": "Om foten skulle si: «Fordi jeg ikke er hånd, hører jeg ikke til kroppen», så hører den likevel til kroppen."
+    "text": "Om foten skulle si: «Fordi jeg ikke er en hånd, hører jeg ikke til kroppen», hører den vel ikke derfor mindre til kroppen?",
+    "versions": [
+      {
+        "text": "Om foten skulle si: «Fordi jeg ikke er hånd, hører jeg ikke til kroppen», så hører den likevel til kroppen.",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "Originalen har en retorisk spørsmålsform: 'οὐ παρὰ τοῦτο οὐκ ἔστιν ἐκ τοῦ σώματος;' - 'hører den ikke av den grunn likevel til kroppen?' Den nåværende oversettelsen gjør det til en påstand ('så hører den likevel til'), men originalen er et retorisk spørsmål. Spørsmålsformen er sterkere retorisk."
+      }
+    ]
   },
   {
     "bookId": 46,
     "chapterId": 12,
     "verseId": 16,
-    "text": "Og om øret skulle si: «Fordi jeg ikke er øye, hører jeg ikke til kroppen», så hører det likevel til kroppen."
+    "text": "Og om øret skulle si: «Fordi jeg ikke er et øye, hører jeg ikke til kroppen», hører det vel ikke derfor mindre til kroppen.",
+    "versions": [
+      {
+        "text": "Og om øret skulle si: «Fordi jeg ikke er øye, hører jeg ikke til kroppen», så hører det likevel til kroppen.",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "Samme problem som vers 15 – originalen har en retorisk spørsmålsform som er blitt omgjort til en påstand. Merk at originalen her har et punktum (eller kolon) i stedet for spørsmålstegn i noen manuskripttradisjoner, men strukturen speiler vers 15."
+      }
+    ]
   },
   {
     "bookId": 46,
@@ -237,6 +283,14 @@
     "bookId": 46,
     "chapterId": 12,
     "verseId": 31,
-    "text": "Men streb etter de største nådegavene! Og nå vil jeg vise dere en vei som overgår alle andre."
+    "text": "Men streb etter de største nådegavene! Og jeg vil vise dere en vei som overgår alt.",
+    "versions": [
+      {
+        "text": "Men streb etter de største nådegavene! Og nå vil jeg vise dere en vei som overgår alle andre.",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "'καθʼ ὑπερβολὴν' betyr 'i overmål/aller mest fremragende' og 'ἔτι' betyr 'ennå/videre', ikke 'nå'. 'Alle andre' er lagt til uten grunnlag i originalen. 'En vei som overgår alt' eller 'den aller beste veien' er mer treffsikkert."
+      }
+    ]
   }
 ]

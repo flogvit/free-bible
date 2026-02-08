@@ -57,13 +57,29 @@
     "bookId": 40,
     "chapterId": 10,
     "verseId": 7,
-    "text": "Gå ut og forkynn: Himmelriket er kommet nær."
+    "text": "Og mens dere går, forkynn og si: Himmelriket er kommet nær.",
+    "versions": [
+      {
+        "text": "Gå ut og forkynn: Himmelriket er kommet nær.",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "πορευόμενοι δὲ er et presens partisipp som betyr 'mens dere går' eller 'på veien', ikke et nytt imperativ 'Gå ut'. λέγοντες ὅτι ('og si at') er heller ikke oversatt. Formuleringen 'Gå ut og forkynn' gir inntrykk av en ny utsendelse, mens originalen beskriver forkynnelse underveis."
+      }
+    ]
   },
   {
     "bookId": 40,
     "chapterId": 10,
     "verseId": 8,
-    "text": "Helbred syke, vekk opp døde, gjør spedalske rene, driv ut onde ånder. For intet har dere fått det, for intet skal dere gi det."
+    "text": "Helbred syke, vekk opp døde, gjør spedalske rene, driv ut onde ånder. Fritt har dere fått, fritt skal dere gi.",
+    "versions": [
+      {
+        "text": "Helbred syke, vekk opp døde, gjør spedalske rene, driv ut onde ånder. For intet har dere fått det, for intet skal dere gi det.",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "'For intet har dere fått det, for intet skal dere gi det' er litt tungt og har overflødige 'det'. Den greske teksten har δωρεὰν ἐλάβετε, δωρεὰν δότε – kort og slagkraftig uten objekt. 'Fritt har dere fått, fritt skal dere gi' er mer idiomatisk og gjenspeiler originalens kortfattede stil."
+      }
+    ]
   },
   {
     "bookId": 40,
@@ -123,7 +139,15 @@
     "bookId": 40,
     "chapterId": 10,
     "verseId": 16,
-    "text": "Se, jeg sender dere ut som sauer blant ulver. Vær derfor kloke som slanger og uskyldsrene som duer."
+    "text": "Se, jeg sender dere ut som sauer blant ulver. Vær derfor kloke som slanger og uten svik som duer.",
+    "versions": [
+      {
+        "text": "Se, jeg sender dere ut som sauer blant ulver. Vær derfor kloke som slanger og uskyldsrene som duer.",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "ἀκέραιοι betyr 'ublandet, ren, uskyldig' i betydningen 'uten falskhet/svik'. 'Uskyldsrene' kan gi inntrykk av moralsk renhet/uskyld generelt, mens poenget er å være uten svik eller baktanker – altså oppriktighet. 'Uten svik' er mer presist, men 'uskyldsrene' er akseptabelt."
+      }
+    ]
   },
   {
     "bookId": 40,
@@ -141,7 +165,15 @@
     "bookId": 40,
     "chapterId": 10,
     "verseId": 18,
-    "text": "Dere skal føres fram for landshøvdinger og konger for min skyld, til vitnesbyrd for dem og for folkeslagene."
+    "text": "Dere skal også føres fram for landshøvdinger og konger for min skyld, til et vitnesbyrd for dem og for folkeslagene.",
+    "versions": [
+      {
+        "text": "Dere skal føres fram for landshøvdinger og konger for min skyld, til vitnesbyrd for dem og for folkeslagene.",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "Den greske teksten begynner med καὶ ... δὲ som indikerer et tillegg ('også'). Dessuten mangler ubestemt artikkel 'et' foran 'vitnesbyrd' – 'til et vitnesbyrd' er mer naturlig norsk."
+      }
+    ]
   },
   {
     "bookId": 40,
@@ -207,7 +239,7 @@
     "bookId": 40,
     "chapterId": 10,
     "verseId": 27,
-    "text": "Og det dere hører i øret, skal dere rope ut fra hustakene.",
+    "text": "Det jeg sier dere i mørket, skal dere si i lyset. Og det dere hører i øret, skal dere rope ut fra hustakene.",
     "versions": [
       {
         "text": "Det jeg sier dere i mørket, skal dere si i lyset. Og det dere hører hvisket i øret, skal dere rope ut fra hustakene.",
@@ -216,6 +248,12 @@
       {
         "text": "Det jeg sier dere i mørket, skal dere si i lyset. Og det som hviskes dere i øret, skal dere rope ut fra hustakene.",
         "explanation": "Versjonshistorikken viser at forrige versjon hadde 'det dere hører hvisket i øret' og ble endret fordi 'hvisket' er tolkende. Men den nåværende versjonen har fortsatt 'hviskes' i en annen konstruksjon. For å følge begrunnelsen i endringsloggen bør 'hviskes' fjernes helt, slik at teksten blir mer nøytral og nærmere den greske originalen."
+      },
+      {
+        "text": "Og det dere hører i øret, skal dere rope ut fra hustakene.",
+        "type": "error",
+        "severity": "critical",
+        "explanation": "Den første halvdelen av verset mangler helt: 'ὃ λέγω ὑμῖν ἐν τῇ σκοτίᾳ, εἴπατε ἐν τῷ φωτί' (Det jeg sier dere i mørket, skal dere si i lyset). Dette er en vesentlig utelatelse. Versjonshistorikken viser at denne delen var med tidligere, men ble utilsiktet fjernet."
       }
     ]
   },
@@ -229,11 +267,17 @@
     "bookId": 40,
     "chapterId": 10,
     "verseId": 29,
-    "text": "Selges ikke to spurver for en skilling? Og ikke én av dem faller til jorden uten deres Fars vilje.",
+    "text": "Selges ikke to spurver for en skilling? Og ikke én av dem faller til jorden uten at deres Far vet det.",
     "versions": [
       {
         "text": "Selges ikke to spurver for en skilling? Og ikke én av dem faller til jorden uten at deres Far er der.",
         "explanation": "Den greske teksten sier bokstavelig 'uten deres Far', men meningen er 'uten deres Fars vilje/viten'. Oversettelsen 'er der' er en tolkende gjengivelse som kan fungere, men 'vilje' eller 'viten' er mer tradisjonelt og teologisk presis."
+      },
+      {
+        "text": "Selges ikke to spurver for en skilling? Og ikke én av dem faller til jorden uten deres Fars vilje.",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "Den greske teksten sier bokstavelig 'uten deres Far' (ἄνευ τοῦ πατρὸς ὑμῶν). 'Vilje' er én mulig tolkning, men 'uten at deres Far vet det' (viten/kunnskap) er en annen vanlig og kanskje bredere tolkning som inkluderer både Guds viten og omsorg, uten å begrense det til bare vilje. Versjonshistorikken viser at 'er der' ble endret, men 'vilje' er heller ikke eksplisitt i teksten."
       }
     ]
   },
@@ -283,7 +327,15 @@
     "bookId": 40,
     "chapterId": 10,
     "verseId": 35,
-    "text": "For jeg er kommet for å sette skille mellom en mann og hans far, mellom en datter og hennes mor, mellom en svigerdatter og hennes svigermor."
+    "text": "For jeg er kommet for å sette en mann opp mot hans far, en datter mot hennes mor, og en svigerdatter mot hennes svigermor.",
+    "versions": [
+      {
+        "text": "For jeg er kommet for å sette skille mellom en mann og hans far, mellom en datter og hennes mor, mellom en svigerdatter og hennes svigermor.",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "διχάσαι med κατὰ betyr 'å sette noen opp mot' noen, ikke bare 'sette skille mellom'. κατά med genitiv indikerer motstand/fiendskap. 'Sette skille mellom' er for nøytralt og mister den konfronterende tonen i originalen."
+      }
+    ]
   },
   {
     "bookId": 40,

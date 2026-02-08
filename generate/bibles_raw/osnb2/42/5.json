@@ -39,7 +39,15 @@
     "bookId": 42,
     "chapterId": 5,
     "verseId": 6,
-    "text": "Da de gjorde det, fanget de en veldig mengde fisk, og garnene holdt på å revne."
+    "text": "Da de gjorde det, fanget de en så stor mengde fisk at garnene holdt på å revne.",
+    "versions": [
+      {
+        "text": "Da de gjorde det, fanget de en veldig mengde fisk, og garnene holdt på å revne.",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "'En veldig mengde' er litt uidiomatisk norsk. 'En så stor mengde fisk at' gir bedre flyt og kobler de to leddsetningene naturlig. Alternativt: 'en veldig stor mengde fisk'."
+      }
+    ]
   },
   {
     "bookId": 42,
@@ -51,7 +59,21 @@
     "bookId": 42,
     "chapterId": 5,
     "verseId": 8,
-    "text": "Da Simon Peter så dette, falt han ned for Jesu knær og sa: «Gå bort fra meg, Herre, for jeg er en syndig mann.»"
+    "text": "Da Simon Peter så dette, falt han på kne foran Jesus og sa: «Gå bort fra meg, Herre, for jeg er en syndig mann.»",
+    "versions": [
+      {
+        "text": "Da Simon Peter så dette, falt han ned for Jesu knær og sa: «Gå bort fra meg, Herre, for jeg er en syndig mann.»",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "Det greske τοῖς γόνασιν betyr 'knærne', men på norsk er uttrykket 'falle ned for noens føtter' mer idiomatisk for å uttrykke ærbødighet og underkastelse. Alternativt kan 'falt på kne foran Jesus' brukes, men 'for Jesu knær' er uvanlig norsk."
+      },
+      {
+        "text": "Da Simon Peter så dette, falt han ned for Jesu føtter og sa: «Gå bort fra meg, Herre, for jeg er en syndig mann.»",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "τοῖς γόνασιν betyr 'knærne'. Versjonhistorikken viser at 'for Jesu knær' ble forkastet som uidiomatisk norsk, men 'for Jesu føtter' er en unøyaktig oversettelse av det greske. 'Falt på kne foran Jesus' er både idiomatisk norsk og tro mot originalen – dette alternativet ble nevnt i historikken men aldri faktisk brukt."
+      }
+    ]
   },
   {
     "bookId": 42,
@@ -69,13 +91,29 @@
     "bookId": 42,
     "chapterId": 5,
     "verseId": 10,
-    "text": "Det samme gjaldt Jakob og Johannes, Sebedeus' sønner, som var Simons arbeidspartnere. Jesus sa til Simon: «Frykt ikke! Fra nå av skal du fange mennesker.»"
+    "text": "Det samme gjaldt Jakob og Johannes, Sebedeus' sønner, som var Simons fiskekamerater. Jesus sa til Simon: «Frykt ikke! Fra nå av skal du fange mennesker.»",
+    "versions": [
+      {
+        "text": "Det samme gjaldt Jakob og Johannes, Sebedeus' sønner, som var Simons arbeidspartnere. Jesus sa til Simon: «Frykt ikke! Fra nå av skal du fange mennesker.»",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "κοινωνοί betyr 'partnere/delaktige'. 'Arbeidspartnere' er noe formelt og moderne. 'Fiskekamerater' eller 'kompanjonger' passer bedre i konteksten og er mer idiomatisk norsk. Alternativt kan 'kompanjonger' brukes."
+      }
+    ]
   },
   {
     "bookId": 42,
     "chapterId": 5,
     "verseId": 11,
-    "text": "De rodde båtene i land, forlot alt og fulgte ham."
+    "text": "De dro båtene opp på land, forlot alt og fulgte ham.",
+    "versions": [
+      {
+        "text": "De rodde båtene i land, forlot alt og fulgte ham.",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "Det greske καταγαγόντες (fra κατάγω) betyr å bringe/føre ned eller i land. 'Rodde i land' antyder en aktiv roingshandling, mens teksten fokuserer på at de brakte båtene til land. 'Dro båtene opp på land' er mer presist og vanlig i norsk fiskerterminologi."
+      }
+    ]
   },
   {
     "bookId": 42,
@@ -117,11 +155,23 @@
     "bookId": 42,
     "chapterId": 5,
     "verseId": 17,
-    "text": "En dag mens han underviste, satt det fariseere og lovlærere der som var kommet fra alle landsbyene i Galilea og Judea og fra Jerusalem. Og Herrens kraft var med ham til å helbrede.",
+    "text": "En dag mens han underviste, satt det fariseere og lovlærere der som var kommet fra alle landsbyene i Galilea og Judea og fra Jerusalem. Og Herrens kraft var til stede for å helbrede.",
     "versions": [
       {
         "text": "En dag mens han underviste, satt det fariseere og lovlærere der som var kommet fra alle landsbyene i Galilea og Judea og fra Jerusalem. Og Herrens kraft var hos ham til å helbrede.",
         "explanation": "Preposisjonen 'med' er mer idiomatisk på norsk når man snakker om kraft som følger en person, og gir bedre muntlig flyt enn 'hos ham'."
+      },
+      {
+        "text": "En dag mens han underviste, satt det fariseere og lovlærere der som var kommet fra alle landsbyene i Galilea og Judea og fra Jerusalem. Og Herrens kraft var med ham til å helbrede.",
+        "type": "error",
+        "severity": "major",
+        "explanation": "Det greske αὐτόν i noen manuskripter kan forstås som 'ham' (Jesus), men i konteksten handler det om at Herrens kraft var til stede for helbredelse generelt. 'Med ham' kan gi inntrykk av at Jesus trengte kraft utenfra. 'Var der' eller 'var til stede' bevarer bedre den teologiske nyansen om Guds krafts nærvær."
+      },
+      {
+        "text": "En dag mens han underviste, satt det fariseere og lovlærere der som var kommet fra alle landsbyene i Galilea og Judea og fra Jerusalem. Og Herrens kraft var der til å helbrede.",
+        "type": "theological",
+        "severity": "major",
+        "explanation": "Selv om dette verset har blitt revidert, er 'var der' tvetydig – det kan leses som en stedsangivelse snarere enn en utsagn om kraften som virket. 'Var til stede for å helbrede' er noe klarere teologisk og uttrykker bedre at Herrens kraft aktivt virket. Men dette er en liten forbedring og respekterer intensjonen i forrige revisjon."
       }
     ]
   },
@@ -247,7 +297,15 @@
     "bookId": 42,
     "chapterId": 5,
     "verseId": 34,
-    "text": "Jesus sa til dem: «Kan dere få bryllupsgjestene til å faste mens brudgommen er hos dem?"
+    "text": "Jesus svarte dem: «Kan dere få bryllupsgjestene til å faste mens brudgommen er hos dem?",
+    "versions": [
+      {
+        "text": "Jesus sa til dem: «Kan dere få bryllupsgjestene til å faste mens brudgommen er hos dem?",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "Det greske εἶπεν πρὸς αὐτούς brukes her som et svar på deres spørsmål i vers 33. For konsistens med vers 31 (hvor samme konstruksjon oversettes 'svarte dem') bør 'svarte' brukes her også."
+      }
+    ]
   },
   {
     "bookId": 42,
@@ -259,7 +317,15 @@
     "bookId": 42,
     "chapterId": 5,
     "verseId": 36,
-    "text": "Han fortalte dem også en lignelse: «Ingen river et stykke av et nytt klesplagg for å lappe et gammelt. For da vil han både rive i stykker det nye, og lappen fra det nye vil ikke passe til det gamle."
+    "text": "Han fortalte dem også en lignelse: «Ingen river et stykke av et nytt klesplagg for å lappe et gammelt. For da vil han rive i stykker det nye, og lappen fra det nye vil ikke passe sammen med det gamle.",
+    "versions": [
+      {
+        "text": "Han fortalte dem også en lignelse: «Ingen river et stykke av et nytt klesplagg for å lappe et gammelt. For da vil han både rive i stykker det nye, og lappen fra det nye vil ikke passe til det gamle.",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "I originalen er det 'καὶ τὸ καινὸν σχίσει' (han vil rive det nye) og 'τῷ παλαιῷ οὐ συμφωνήσει' (det vil ikke stemme overens/passe sammen med det gamle). Ordet 'både' i 'både rive' impliserer en dobbelthet som er grammatisk ubalansert uten et tilsvarende 'og ... også'. Å fjerne 'både' gjør setningen renere. 'Passe sammen med' gjengir συμφωνήσει bedre enn bare 'passe til'."
+      }
+    ]
   },
   {
     "bookId": 42,

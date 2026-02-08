@@ -15,11 +15,17 @@
     "bookId": 47,
     "chapterId": 2,
     "verseId": 3,
-    "text": "Jeg skrev nettopp dette for at jeg ikke skulle komme og få sorg fra dem som burde gi meg glede. Jeg stoler på dere alle at min glede er deres alles glede.",
+    "text": "Jeg skrev nettopp dette for at jeg ikke skulle komme og få sorg fra dem som burde gi meg glede, i tillit til dere alle om at min glede er deres alles glede.",
     "versions": [
       {
         "text": "Jeg skrev nettopp dette for at jeg ikke skulle komme og få sorg fra dem som burde gi meg glede. Jeg har tillit til dere alle om at min glede er alles deres glede.",
         "explanation": "«Jeg har tillit til dere alle om at» er litt tungt. «Jeg stoler på dere alle at» er mer naturlig norsk. Også «alles deres» bør være «deres alles» for bedre flyt."
+      },
+      {
+        "text": "Jeg skrev nettopp dette for at jeg ikke skulle komme og få sorg fra dem som burde gi meg glede. Jeg stoler på dere alle at min glede er deres alles glede.",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "I den greske teksten er πεποιθώς et partisipp som er underordnet hovedverbet ἔγραψα, altså 'idet jeg stolte på'. Å bryte dette opp i to separate setninger mister den grammatiske sammenhengen. En innlemmelse med 'i tillit til' bevarer dette forholdet bedre."
       }
     ]
   },
@@ -33,7 +39,15 @@
     "bookId": 47,
     "chapterId": 2,
     "verseId": 5,
-    "text": "Men hvis noen har voldt sorg, er det ikke meg han har gjort bedrøvet, men til en viss grad – for ikke å overdrive – dere alle."
+    "text": "Men hvis noen har voldt sorg, har han ikke gjort meg bedrøvet, men til en viss grad – for ikke å legge for stor vekt på det – dere alle.",
+    "versions": [
+      {
+        "text": "Men hvis noen har voldt sorg, er det ikke meg han har gjort bedrøvet, men til en viss grad – for ikke å overdrive – dere alle.",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "«For ikke å overdrive» er en akseptabel gjengivelse av ἵνα μὴ ἐπιβαρῶ, men ἐπιβαρέω betyr 'å legge byrde på / legge for stor vekt på'. Paulus demper sin uttalelse for ikke å belaste menigheten for mye, ikke for å unngå å overdrive. Også 'er det ikke meg han har gjort bedrøvet' er noe omstendelig; 'har han ikke gjort meg bedrøvet' er mer direkte."
+      }
+    ]
   },
   {
     "bookId": 47,
@@ -95,7 +109,15 @@
     "bookId": 47,
     "chapterId": 2,
     "verseId": 11,
-    "text": "Dette for at Satan ikke skal få overtaket på oss, for vi er ikke uvitende om hans onde planer."
+    "text": "Dette for at Satan ikke skal få overtaket på oss, for vi er ikke uvitende om hans planer.",
+    "versions": [
+      {
+        "text": "Dette for at Satan ikke skal få overtaket på oss, for vi er ikke uvitende om hans onde planer.",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "Det greske τὰ νοήματα betyr 'tanker/planer/hensikter'. Adjektivet 'onde' er lagt til og finnes ikke i grunnteksten. Selv om Satans planer åpenbart er onde, er det tillagt innhold."
+      }
+    ]
   },
   {
     "bookId": 47,
@@ -147,6 +169,14 @@
     "bookId": 47,
     "chapterId": 2,
     "verseId": 17,
-    "text": "For vi er ikke som de mange som driver handel med Guds ord. Nei, vi taler i Kristus med oppriktighet, som fra Gud og for Guds ansikt."
+    "text": "For vi er ikke som de mange som driver handel med Guds ord. Nei, som i oppriktighet, som fra Gud, taler vi for Guds ansikt i Kristus.",
+    "versions": [
+      {
+        "text": "For vi er ikke som de mange som driver handel med Guds ord. Nei, vi taler i Kristus med oppriktighet, som fra Gud og for Guds ansikt.",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "Den greske teksten har en dobbel ἀλλʼ ὡς-konstruksjon: 'men som av oppriktighet, men som fra Gud, taler vi for Guds ansikt i Kristus'. Den nåværende oversettelsen omorganiserer elementene slik at 'i Kristus' og 'med oppriktighet' kobles sammen, mens i grunnteksten er 'ἐν Χριστῷ' knyttet til λαλοῦμεν (vi taler). Også 'κατέναντι θεοῦ' (for Guds ansikt/øyne) er en viktig posisjonering av taleren som bør stå tettere på verbet."
+      }
+    ]
   }
 ]

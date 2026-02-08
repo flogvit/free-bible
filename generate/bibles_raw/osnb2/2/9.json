@@ -15,13 +15,29 @@
     "bookId": 2,
     "chapterId": 9,
     "verseId": 3,
-    "text": "da skal Herrens hånd ramme feet ditt ute på marken – hestene, eslene, kamelene, storfeet og småfeet – med en svært alvorlig pest."
+    "text": "da skal Herrens hånd ramme feet ditt ute på marken – hestene, eslene, kamelene, storfe og småfe – med en svært alvorlig pest.",
+    "versions": [
+      {
+        "text": "da skal Herrens hånd ramme feet ditt ute på marken – hestene, eslene, kamelene, storfeet og småfeet – med en svært alvorlig pest.",
+        "type": "grammar",
+        "severity": "minor",
+        "explanation": "I bestemt form i norsk bokmål brukes vanligvis 'storfe' og 'småfe' uten ekstra bøyning. 'Storfeet' og 'småfeet' er uvanlige former. Alternativt kan 'storfeet' godtas, men 'storfe og småfe' er mer naturlig norsk."
+      }
+    ]
   },
   {
     "bookId": 2,
     "chapterId": 9,
     "verseId": 4,
-    "text": "Men Herren skal gjøre forskjell på Israels fe og egypternes fe, og av alt det som tilhører israelittene, skal ikke noe dø.»"
+    "text": "Men Herren skal gjøre forskjell på Israels fe og egypternes fe, og ikke noe av det som tilhører israelittene, skal dø.»",
+    "versions": [
+      {
+        "text": "Men Herren skal gjøre forskjell på Israels fe og egypternes fe, og av alt det som tilhører israelittene, skal ikke noe dø.»",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "Originalen sier bokstavelig 'ikke skal dø av alt som tilhører Israels barn en eneste ting'. Den nåværende oversettelsen er akseptabel, men en litt strammere formulering kan bedre reflektere det hebraiske uttrykket."
+      }
+    ]
   },
   {
     "bookId": 2,
@@ -87,7 +103,15 @@
     "bookId": 2,
     "chapterId": 9,
     "verseId": 15,
-    "text": "For nå kunne jeg ha rakt ut min hånd og slått deg og ditt folk med pest, og du var blitt utslettet fra jorden."
+    "text": "For nå kunne jeg ha rakt ut min hånd og slått deg og ditt folk med pest, så du var blitt utslettet fra jorden.",
+    "versions": [
+      {
+        "text": "For nå kunne jeg ha rakt ut min hånd og slått deg og ditt folk med pest, og du var blitt utslettet fra jorden.",
+        "type": "theological",
+        "severity": "major",
+        "explanation": "Det hebraiske כִּי עַתָּה uttrykker en kontrafaktisk hypotetisk: 'For allerede nå kunne jeg ha...' Oversettelsen fanger dette godt, men 'så du var blitt' er litt bedre enn 'og du var blitt' for å vise konsekvenssammenhengen (וַתִּכָּחֵד med konsekutiv vav)."
+      }
+    ]
   },
   {
     "bookId": 2,
@@ -111,11 +135,17 @@
     "bookId": 2,
     "chapterId": 9,
     "verseId": 19,
-    "text": "Send derfor bud og få ditt fe og alt du har ute på marken i sikkerhet. Alle mennesker og dyr som er ute på marken og ikke blir brakt i hus, skal dø når haglet faller over dem.»",
+    "text": "Send derfor bud og få ditt fe og alt du har ute på marken i sikkerhet! Alle mennesker og dyr som er ute på marken og ikke blir brakt i hus, skal dø når haglet faller over dem.»",
     "versions": [
       {
         "text": "Send derfor bud og få feet ditt og alt du har ute på marken i sikkerhet. Alle mennesker og dyr som er ute på marken og ikke blir brakt i hus, skal dø når haglet faller over dem.»",
         "explanation": "Hebraisk 'הָעֵז' (ha'ez) betyr 'bring i sikkerhet/søk ly'. Oversettelsen 'Send derfor bud og få' er en god gjengivelse. Men 'feet ditt' bør være 'ditt fe' for bedre språklig flyt ved muntlig lesning."
+      },
+      {
+        "text": "Send derfor bud og få ditt fe og alt du har ute på marken i sikkerhet. Alle mennesker og dyr som er ute på marken og ikke blir brakt i hus, skal dø når haglet faller over dem.»",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "Imperativformen i hebraisk (שְׁלַח הָעֵז) er en inntrengende befaling. Et utropstegn etter 'sikkerhet' gjenspeiler urgensen bedre."
       }
     ]
   },
@@ -147,7 +177,15 @@
     "bookId": 2,
     "chapterId": 9,
     "verseId": 23,
-    "text": "Moses rakte staven sin mot himmelen, og Herren sendte torden og hagl. Ild slo ned mot jorden, og Herren lot hagl falle over Egypt."
+    "text": "Moses rakte staven sin mot himmelen, og Herren sendte torden og hagl. Ild for ned mot jorden, og Herren lot hagl falle over Egypt.",
+    "versions": [
+      {
+        "text": "Moses rakte staven sin mot himmelen, og Herren sendte torden og hagl. Ild slo ned mot jorden, og Herren lot hagl falle over Egypt.",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "Hebraisk 'וַתִּהֲלַךְ אֵשׁ אָרְצָה' (ild gikk/for mot jorden) beskriver ildens bevegelse. 'For ned' er mer dynamisk og poetisk enn 'slo ned', og skiller seg bedre fra haglets 'slo ned' i vers 25."
+      }
+    ]
   },
   {
     "bookId": 2,
@@ -177,7 +215,15 @@
     "bookId": 2,
     "chapterId": 9,
     "verseId": 28,
-    "text": "Be til Herren, for det er nok med Guds torden og hagl! Så skal jeg la dere fare, og dere skal ikke bli her lenger.»"
+    "text": "Be til Herren! Det er nok av Guds torden og hagl. Så skal jeg la dere fare, dere trenger ikke bli her lenger.»",
+    "versions": [
+      {
+        "text": "Be til Herren, for det er nok med Guds torden og hagl! Så skal jeg la dere fare, og dere skal ikke bli her lenger.»",
+        "type": "error",
+        "severity": "major",
+        "explanation": "Hebraisk 'וְרַב מִהְיֹת קֹלֹת אֱלֹהִים וּבָרָד' betyr 'det er nok/mer enn nok av Guds torden og hagl' – Farao innrømmer at plagene er tilstrekkelige. Det er bedre å skille bønnen ('Be til Herren!') fra innrømmelsen. Videre betyr 'וְלֹא תֹסִפוּן לַעֲמֹד' mer presist 'dere trenger ikke bli/stå lenger' enn 'dere skal ikke bli her lenger'."
+      }
+    ]
   },
   {
     "bookId": 2,

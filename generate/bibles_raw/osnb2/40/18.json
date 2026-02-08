@@ -75,11 +75,17 @@
     "bookId": 40,
     "chapterId": 18,
     "verseId": 8,
-    "text": "Om hånden eller foten din fører deg til fall, hogg den av og kast den fra deg. Det er bedre for deg å gå lemlestet eller halt inn til livet enn å ha begge hender og begge føtter og bli kastet i den evige ild.",
+    "text": "Om hånden eller foten din fører deg til fall, hugg den av og kast den fra deg. Det er bedre for deg å gå lemlestet eller halt inn til livet enn å ha begge hender og begge føtter og bli kastet i den evige ild.",
     "versions": [
       {
         "text": "Om din hånd eller fot fører deg til fall, hogg den av og kast den fra deg. Det er bedre for deg å gå lemlestet eller halt inn til livet enn å ha begge hender eller begge føtter og bli kastet i den evige ild.",
         "explanation": "For bedre muntlig flyt: 'hånden eller foten din' er mer naturlig norsk ordstilling enn 'din hånd eller fot'. Også: 'begge hender og begge føtter' (med 'og') er mer presist enn 'eller' siden det greske har 'δύο χεῖρας ἢ δύο πόδας' hvor ἢ kobler de to alternativene (hender ELLER føtter), ikke 'begge... eller begge'."
+      },
+      {
+        "text": "Om hånden eller foten din fører deg til fall, hogg den av og kast den fra deg. Det er bedre for deg å gå lemlestet eller halt inn til livet enn å ha begge hender og begge føtter og bli kastet i den evige ild.",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "Verbet 'hogge' i imperativ bør være 'hugg' (som i 'hugg av'), ikke 'hogg'. 'Hugg' er korrekt imperativform på moderne norsk bokmål."
       }
     ]
   },
@@ -141,13 +147,29 @@
     "bookId": 40,
     "chapterId": 18,
     "verseId": 14,
-    "text": "Slik er det heller ikke deres himmelske Fars vilje at en eneste av disse små skal gå fortapt."
+    "text": "Slik er det heller ikke deres himmelske Fars vilje at én eneste av disse små skal gå fortapt.",
+    "versions": [
+      {
+        "text": "Slik er det heller ikke deres himmelske Fars vilje at en eneste av disse små skal gå fortapt.",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "For å understreke 'ἓν' (én) bør 'en' ha aksent: 'én eneste'. Dette gir mer vekt til at ikke en eneste skal gå fortapt, og skiller tallordet fra ubestemt artikkel."
+      }
+    ]
   },
   {
     "bookId": 40,
     "chapterId": 18,
     "verseId": 15,
-    "text": "Om din bror synder mot deg, gå da og tal ham til rette på tomannshånd. Hører han på deg, har du vunnet din bror tilbake."
+    "text": "Om din bror synder mot deg, gå til ham og tal ham til rette på tomannshånd. Hører han på deg, har du vunnet din bror tilbake.",
+    "versions": [
+      {
+        "text": "Om din bror synder mot deg, gå da og tal ham til rette på tomannshånd. Hører han på deg, har du vunnet din bror tilbake.",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "Det greske 'ὕπαγε ἔλεγξον αὐτὸν μεταξὺ σοῦ καὶ αὐτοῦ μόνου' innebærer at man skal gå til vedkommende. 'Gå da og tal ham til rette' er akseptabelt, men 'gå til ham og tal ham til rette' formidler tydeligere det personlige møtet som teksten forutsetter."
+      }
+    ]
   },
   {
     "bookId": 40,
@@ -207,11 +229,17 @@
     "bookId": 40,
     "chapterId": 18,
     "verseId": 22,
-    "text": "Jesus svarte: «Jeg sier deg: Ikke sju ganger, men syttisju ganger.»",
+    "text": "Jesus sa til ham: «Jeg sier deg: Ikke sju ganger, men syttisju ganger.»",
     "versions": [
       {
         "text": "Jesus svarte: «Jeg sier deg: Ikke sju ganger, men sytti ganger sju.",
         "explanation": "Det greske 'ἑβδομηκοντάκις ἑπτά' kan oversettes enten som 'sytti ganger sju' (490) eller 'syttisju ganger'. Mange oversettelser velger 'syttisju' som alluderer til 1 Mos 4:24 (Lameks hevn). Begge er akseptable, men 'syttisju' har sterk støtte og gir en mer direkte kontrast til Peters 'sju ganger'. Vurder også å legge til avsluttende anførselstegn."
+      },
+      {
+        "text": "Jesus svarte: «Jeg sier deg: Ikke sju ganger, men syttisju ganger.»",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "Det greske 'λέγει αὐτῷ ὁ Ἰησοῦς' er presens indikativ 'sier til ham', ikke 'svarte'. 'Jesus sa til ham' er mer nøyaktig enn 'Jesus svarte', selv om meningen er lik. Det historiske presens i gresk gjengis normalt som fortid på norsk."
       }
     ]
   },

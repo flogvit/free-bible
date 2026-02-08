@@ -39,13 +39,29 @@
     "bookId": 1,
     "chapterId": 28,
     "verseId": 6,
-    "text": "Esau så at Isak hadde velsignet Jakob og sendt ham til Paddan-Aram for å ta seg en kone derfra, og at han da han velsignet ham, påla ham: «Du skal ikke ta deg en kone blant Kanaans døtre.»"
+    "text": "Esau så at Isak hadde velsignet Jakob og sendt ham til Paddan-Aram for å ta seg en kone derfra, og at da han velsignet ham, påla han ham og sa: «Du skal ikke ta deg en kone blant Kanaans døtre.»",
+    "versions": [
+      {
+        "text": "Esau så at Isak hadde velsignet Jakob og sendt ham til Paddan-Aram for å ta seg en kone derfra, og at han da han velsignet ham, påla ham: «Du skal ikke ta deg en kone blant Kanaans døtre.»",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "Setningen 'og at han da han velsignet ham, påla ham' er noe klønete med dobbelt 'han' etter hverandre. Også det hebraiske וַיְצַו עָלָיו לֵאמֹר inkluderer 'לֵאמֹר' (og sa/idet han sa), som bør gjenspeiles."
+      }
+    ]
   },
   {
     "bookId": 1,
     "chapterId": 28,
     "verseId": 7,
-    "text": "Jakob hadde adlydt sin far og sin mor og dratt til Paddan-Aram."
+    "text": "Jakob adlød sin far og sin mor og dro til Paddan-Aram.",
+    "versions": [
+      {
+        "text": "Jakob hadde adlydt sin far og sin mor og dratt til Paddan-Aram.",
+        "type": "error",
+        "severity": "major",
+        "explanation": "Den hebraiske teksten bruker vayyiqtol-former (וַיִּשְׁמַע ... וַיֵּלֶךְ), som er narrativ fortid, ikke pluskvamperfektum. Oversettelsen bruker 'hadde adlydt ... hadde dratt' (pluskvamperfektum), men dette verset er en del av den fortløpende fortellingen (v.7 følger v.6). Det er v.6 som forteller hva Esau observerte, mens v.7 forteller hva Jakob faktisk gjorde. Enkel preteritum er mer korrekt her. I tillegg er 'adlydt' en uvanlig form; 'adlød' er mer naturlig norsk bokmål."
+      }
+    ]
   },
   {
     "bookId": 1,
@@ -93,7 +109,15 @@
     "bookId": 1,
     "chapterId": 28,
     "verseId": 13,
-    "text": "Og se, Herren sto over ham og sa: «Jeg er Herren, din far Abrahams Gud og Isaks Gud. Det landet du ligger på, vil jeg gi til deg og dine etterkommere."
+    "text": "Og se, Herren sto over den og sa: «Jeg er Herren, din far Abrahams Gud og Isaks Gud. Det landet du ligger på, vil jeg gi til deg og dine etterkommere.",
+    "versions": [
+      {
+        "text": "Og se, Herren sto over ham og sa: «Jeg er Herren, din far Abrahams Gud og Isaks Gud. Det landet du ligger på, vil jeg gi til deg og dine etterkommere.",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "Det hebraiske עָלָיו kan referere enten til Jakob ('over ham') eller til trappen ('over den'). Begge tolkninger er mulige, men kontekstuelt – med trappen som nettopp er beskrevet – tolker mange at Herren sto øverst på trappen. Dette er imidlertid en tolkningssak, så nåværende oversettelse er også akseptabel."
+      }
+    ]
   },
   {
     "bookId": 1,
@@ -117,7 +141,15 @@
     "bookId": 1,
     "chapterId": 28,
     "verseId": 17,
-    "text": "Han ble grepet av frykt og sa: «Hvor skremmende er ikke dette stedet! Dette er intet annet enn Guds hus, her er himmelens port.»"
+    "text": "Han ble grepet av ærefrykt og sa: «Hvor fryktinngytende er ikke dette stedet! Dette er intet annet enn Guds hus, her er himmelens port.»",
+    "versions": [
+      {
+        "text": "Han ble grepet av frykt og sa: «Hvor skremmende er ikke dette stedet! Dette er intet annet enn Guds hus, her er himmelens port.»",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "Det hebraiske וַיִּירָא handler om ærefrykt/hellig frykt snarere enn vanlig frykt, og נּוֹרָא betyr 'fryktinngytende/ærefryktvekkende' snarere enn bare 'skremmende'. 'Skremmende' har en mer negativ klang enn det hebraiske uttrykket tilsier."
+      }
+    ]
   },
   {
     "bookId": 1,

@@ -141,7 +141,15 @@
     "bookId": 40,
     "chapterId": 21,
     "verseId": 19,
-    "text": "Han fikk øye på et fikentre ved veien og gikk bort til det, men fant ikke annet på det enn blader. Da sa han til det: «Aldri mer skal du bære frukt!» Og straks visnet fikentreet."
+    "text": "Han fikk øye på et fikentre ved veien og gikk bort til det, men fant ikke annet på det enn blader. Da sa han til det: «Aldri i evighet skal det komme frukt fra deg!» Og straks visnet fikentreet.",
+    "versions": [
+      {
+        "text": "Han fikk øye på et fikentre ved veien og gikk bort til det, men fant ikke annet på det enn blader. Da sa han til det: «Aldri mer skal du bære frukt!» Og straks visnet fikentreet.",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "Det greske 'εἰς τὸν αἰῶνα' betyr 'i evighet' og forsterker uttrykket utover et enkelt 'aldri mer'. 'Aldri i evighet' gjengir denne forsterkelsen bedre."
+      }
+    ]
   },
   {
     "bookId": 40,
@@ -195,7 +203,7 @@
     "bookId": 40,
     "chapterId": 21,
     "verseId": 28,
-    "text": "Men hva mener dere? En mann hadde to sønner. Han gikk til den første og sa: «Sønn, gå og arbeid i vingården i dag.»»",
+    "text": "Men hva mener dere? En mann hadde to sønner. Han gikk til den første og sa: 'Sønn, gå og arbeid i vingården i dag.'",
     "versions": [
       {
         "text": "Men hva mener dere? En mann hadde to sønner. Han gikk til den første og sa: Sønn, gå og arbeid i vingården i dag.",
@@ -204,6 +212,12 @@
       {
         "text": "Men hva mener dere? En mann hadde to sønner. Han gikk til den første og sa: «Sønn, gå og arbeid i vingården i dag.»",
         "explanation": "Verset mangler avsluttende anførselstegn for den ytre direkte talen (Jesu lignelse). Hele lignelsen fra vers 28-31 er Jesu direkte tale, men det mangler et avsluttende anførselstegn. Dette kan alternativt løses ved å fjerne åpningsanførselstegnet før 'Sønn' og bruke enkle anførselstegn for farens ord, men det viktigste er konsistens."
+      },
+      {
+        "text": "Men hva mener dere? En mann hadde to sønner. Han gikk til den første og sa: «Sønn, gå og arbeid i vingården i dag.»»",
+        "type": "grammar",
+        "severity": "major",
+        "explanation": "De doble avsluttende anførselstegnene (»») er forvirrende. Siden dette er nestet direkte tale (Jesu tale som inneholder farens tale), bør farens tale bruke enkle anførselstegn. Den ytre Jesu tale avsluttes først i vers 31 med spørsmålet, så det avsluttende doble anførselstegnet her er feil."
       }
     ]
   },
@@ -235,7 +249,15 @@
     "bookId": 40,
     "chapterId": 21,
     "verseId": 31,
-    "text": "Hvem av de to gjorde farens vilje?» De svarte: «Den første.» Jesus sa til dem: «Sannelig, jeg sier dere: Tollere og skjøger går inn i Guds rike foran dere."
+    "text": "Hvem av de to gjorde farens vilje?' De svarte: «Den første.» Jesus sa til dem: «Sannelig, jeg sier dere: Tollere og skjøger går inn i Guds rike foran dere.",
+    "versions": [
+      {
+        "text": "Hvem av de to gjorde farens vilje?» De svarte: «Den første.» Jesus sa til dem: «Sannelig, jeg sier dere: Tollere og skjøger går inn i Guds rike foran dere.",
+        "type": "grammar",
+        "severity": "major",
+        "explanation": "Avsluttende anførselstegn her (»)  bør korrespondere med åpningen i vers 28. Hvis vers 28 endres til enkle anførselstegn for farens tale, må spørsmålet i vers 31 som avslutter Jesu lignelse-fortelling også bruke enkelt anførselstegn (') for å markere slutten på den nestede fortellingen, mens Jesu nye direkte tale fortsetter med vanlige anførselstegn."
+      }
+    ]
   },
   {
     "bookId": 40,
@@ -259,11 +281,17 @@
     "bookId": 40,
     "chapterId": 21,
     "verseId": 34,
-    "text": "Da tiden for innhøstingen nærmet seg, sendte han tjenerne sine til vinbøndene for å hente det som tilkom ham av avlingen.",
+    "text": "Da tiden for innhøstingen nærmet seg, sendte han tjenerne sine til vinbøndene for å hente avlingen sin.",
     "versions": [
       {
         "text": "Da tiden for innhøstingen nærmet seg, sendte han tjenerne sine til vingårdsarbeiderne for å hente det som tilkom ham av avlingen.",
         "explanation": "For konsistens med foreslått endring i vers 33 – 'γεωργούς' bør oversettes konsekvent som 'vinbønder' gjennom lignelsen."
+      },
+      {
+        "text": "Da tiden for innhøstingen nærmet seg, sendte han tjenerne sine til vinbøndene for å hente det som tilkom ham av avlingen.",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "Det greske 'λαβεῖν τοὺς καρποὺς αὐτοῦ' betyr simpelthen 'for å motta/hente fruktene/avlingen hans'. 'Det som tilkom ham av avlingen' er en tolkning/utvidelse som ikke finnes i grunnteksten. 'Hente avlingen sin' er mer tro mot originalen."
       }
     ]
   },
@@ -359,7 +387,15 @@
     "bookId": 40,
     "chapterId": 21,
     "verseId": 44,
-    "text": "Den som faller på denne steinen, skal bli knust, og den som steinen faller på, skal bli smadret."
+    "text": "Den som faller på denne steinen, skal bli knust, og den som steinen faller på, skal den knuse til støv.",
+    "versions": [
+      {
+        "text": "Den som faller på denne steinen, skal bli knust, og den som steinen faller på, skal bli smadret.",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "Det greske 'λικμήσει' betyr å 'knuse til støv' eller 'spre som agner i vinden' – det er et sterkere uttrykk enn 'smadret' og innebærer total ødeleggelse. Det er også viktig at de to uttrykkene (συνθλασθήσεται vs λικμήσει) er forskjellige og uttrykker en opptrapping. 'Knust' og 'smadret' er for like på norsk."
+      }
+    ]
   },
   {
     "bookId": 40,

@@ -39,7 +39,15 @@
     "bookId": 1,
     "chapterId": 10,
     "verseId": 7,
-    "text": "Kusjs sønner var Seba, Havila, Sabta, Raema og Sabteka. Raemas sønner var Saba og Dedan."
+    "text": "Kusjs sønner var Seba, Havila, Sabta, Raema og Sabteka. Raemas sønner var Sjeba og Dedan.",
+    "versions": [
+      {
+        "text": "Kusjs sønner var Seba, Havila, Sabta, Raema og Sabteka. Raemas sønner var Saba og Dedan.",
+        "type": "error",
+        "severity": "minor",
+        "explanation": "Det hebraiske שְׁבָא (Sheba) bør gjengis som 'Sjeba' for å skille det fra סְבָא (Seba) som nevnes tidligere i samme vers. I den nåværende oversettelsen brukes 'Saba' som kan forveksles med 'Seba'. Den vanlige norske gjengivelsen er 'Sjeba'."
+      }
+    ]
   },
   {
     "bookId": 1,
@@ -63,7 +71,15 @@
     "bookId": 1,
     "chapterId": 10,
     "verseId": 11,
-    "text": "Fra dette landet dro han ut til Assur og bygde Ninive, Rehobot-Ir og Kalah,"
+    "text": "Fra dette landet dro Assur ut og bygde Ninive, Rehobot-Ir og Kalah,",
+    "versions": [
+      {
+        "text": "Fra dette landet dro han ut til Assur og bygde Ninive, Rehobot-Ir og Kalah,",
+        "type": "error",
+        "severity": "major",
+        "explanation": "Den hebraiske teksten er tvetydig og kan tolkes på to måter: enten at Nimrod dro ut til Assur, eller at Assur (personen) dro ut. Den tradisjonelle tolkningen (som også reflekteres i mange oversettelser) er at Assur er subjektet som dro ut. Gjeldende oversettelse tolker det som at 'han' (Nimrod) dro til Assur, men dette bør klargjøres."
+      }
+    ]
   },
   {
     "bookId": 1,
@@ -123,7 +139,21 @@
     "bookId": 1,
     "chapterId": 10,
     "verseId": 21,
-    "text": "Også Sem fikk barn. Han var stamfar til alle Ebers sønner og storebror til Jafet."
+    "text": "Også Sem fikk sønner. Han var stamfar til alle Ebers etterkommere og bror til Jafet, den eldste.",
+    "versions": [
+      {
+        "text": "Også Sem fikk barn. Han var stamfar til alle Ebers sønner og storebror til Jafet.",
+        "type": "error",
+        "severity": "major",
+        "explanation": "Uttrykket 'הַגָּדֽוֹל' (den eldste/store) refererer grammatisk til Jafet, ikke til Sem. Teksten sier at Sem var bror til 'Jafet den eldste', altså at Jafet var den eldste broren. Oversettelsen 'storebror til Jafet' snur betydningen."
+      },
+      {
+        "text": "Også Sem fikk barn. Han var stamfar til alle Ebers sønner og bror til Jafet, den eldste.",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "Det hebraiske יֻלַּד betyr 'ble født (sønner)' og כָּל־בְּנֵי־עֵבֶר betyr 'alle Ebers sønner/etterkommere'. 'Barn' er litt generelt for יֻלַּד som her spesifikt refererer til sønner (maskulin). Også 'Ebers sønner' kan bedre gjengis som 'Ebers etterkommere' siden det handler om en stamfar-rolle."
+      }
+    ]
   },
   {
     "bookId": 1,
@@ -165,7 +195,15 @@
     "bookId": 1,
     "chapterId": 10,
     "verseId": 28,
-    "text": "Obal, Abimael og Saba,"
+    "text": "Obal, Abimael og Sjeba,",
+    "versions": [
+      {
+        "text": "Obal, Abimael og Saba,",
+        "type": "error",
+        "severity": "minor",
+        "explanation": "Samme navn שְׁבָא (Sheba) som i vers 7 bør konsekvent gjengis som 'Sjeba'."
+      }
+    ]
   },
   {
     "bookId": 1,
@@ -189,6 +227,14 @@
     "bookId": 1,
     "chapterId": 10,
     "verseId": 32,
-    "text": "Dette var Noahs sønners slekter etter sine ætter og blant sine folkeslag. Fra dem spredte folkeslagene seg ut over jorden etter flommen."
+    "text": "Dette var Noahs sønners slekter etter sine avstamninger og blant sine folkeslag. Fra dem spredte folkeslagene seg ut over jorden etter flommen.",
+    "versions": [
+      {
+        "text": "Dette var Noahs sønners slekter etter sine ætter og blant sine folkeslag. Fra dem spredte folkeslagene seg ut over jorden etter flommen.",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "Det hebraiske לְתוֹלְדֹתָם betyr 'etter sine slektslinjer/avstamninger'. Å bruke 'ætter' for תוֹלְדֹת når 'slekter' allerede brukes for מִשְׁפְּחֹת i samme setning er litt forvirrende. 'Avstamninger' gir bedre differensiering."
+      }
+    ]
   }
 ]

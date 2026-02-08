@@ -15,13 +15,29 @@
     "bookId": 1,
     "chapterId": 12,
     "verseId": 2,
-    "text": "Jeg vil gjøre deg til et stort folk. Jeg vil velsigne deg og gjøre ditt navn stort, og du skal bli til velsignelse."
+    "text": "Jeg vil gjøre deg til et stort folk, jeg vil velsigne deg og gjøre ditt navn stort. Du skal bli til velsignelse.",
+    "versions": [
+      {
+        "text": "Jeg vil gjøre deg til et stort folk. Jeg vil velsigne deg og gjøre ditt navn stort, og du skal bli til velsignelse.",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "Verset er en fortsettelse av Guds tale fra vers 1 og bør kobles bedre sammen. Det hebraiske har en mer sammenhengende struktur med וְ (og/så). Den siste setningen 'וֶהְיֵה בְּרָכָה' (og vær/bli en velsignelse) fungerer som en imperativ/formål og bør skilles litt ut."
+      }
+    ]
   },
   {
     "bookId": 1,
     "chapterId": 12,
     "verseId": 3,
-    "text": "Jeg vil velsigne dem som velsigner deg, og den som forbanner deg, vil jeg forbanne. I deg skal alle jordens slekter velsignes.»"
+    "text": "Jeg vil velsigne dem som velsigner deg, men den som forbanner deg, vil jeg forbanne. I deg skal alle jordens slekter velsignes.»",
+    "versions": [
+      {
+        "text": "Jeg vil velsigne dem som velsigner deg, og den som forbanner deg, vil jeg forbanne. I deg skal alle jordens slekter velsignes.»",
+        "type": "grammar",
+        "severity": "minor",
+        "explanation": "Det hebraiske skiftet mellom flertall (מְבָרְכֶיךָ - 'de som velsigner deg') og entall (וּמְקַלֶּלְךָ - 'den som forbanner deg') markerer en kontrast. 'Men' gjengir denne kontrasten bedre enn 'og'."
+      }
+    ]
   },
   {
     "bookId": 1,
