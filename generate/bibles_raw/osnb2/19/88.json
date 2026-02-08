@@ -45,7 +45,15 @@
     "bookId": 19,
     "chapterId": 88,
     "verseId": 7,
-    "text": "Du har lagt meg i den dypeste grav, i mørke, i avgrunnen."
+    "text": "Du har lagt meg i den dypeste grav, i mørke steder, i dypet.",
+    "versions": [
+      {
+        "text": "Du har lagt meg i den dypeste grav, i mørke, i avgrunnen.",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "Det hebraiske 'בְּמַחֲשַׁכִּים' er flertall ('mørke steder/mørke dyp') og 'בִּמְצֹלוֹת' betyr 'i dyp/dybder' snarere enn 'avgrunnen'. 'Avgrunnen' brukes allerede i vers 12 for 'אֲבַדּוֹן', så det kan skape forvirring å bruke samme ord for to ulike hebraiske begreper."
+      }
+    ]
   },
   {
     "bookId": 19,
@@ -93,7 +101,15 @@
     "bookId": 19,
     "chapterId": 88,
     "verseId": 14,
-    "text": "Men jeg roper til deg, Herre, om morgenen kommer min bønn til deg."
+    "text": "Men jeg roper til deg om hjelp, Herre, og om morgenen kommer min bønn deg i møte.",
+    "versions": [
+      {
+        "text": "Men jeg roper til deg, Herre, om morgenen kommer min bønn til deg.",
+        "type": "error",
+        "severity": "major",
+        "explanation": "Det hebraiske 'שִׁוַּעְתִּי' betyr 'jeg roper om hjelp/jeg skriker' (fra שׁוע, å rope om hjelp), ikke bare 'roper'. Dessuten betyr 'תְקַדְּמֶךָּ' 'kommer deg i møte/kommer deg i forkjøpet', ikke bare 'kommer til deg'. Verbet קדם innebærer at bønnen møter Gud tidlig, før noe annet."
+      }
+    ]
   },
   {
     "bookId": 19,
@@ -105,7 +121,15 @@
     "bookId": 19,
     "chapterId": 88,
     "verseId": 16,
-    "text": "Elendig er jeg og døende fra ungdommen av. Jeg har båret din redsel, jeg er rådvill."
+    "text": "Elendig er jeg og døende fra ungdommen av. Jeg bærer dine redsler og er motløs.",
+    "versions": [
+      {
+        "text": "Elendig er jeg og døende fra ungdommen av. Jeg har båret din redsel, jeg er rådvill.",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "'אֵמֶיךָ' er flertall ('dine redsler'), ikke entall. Også 'אָפוּנָה' er et vanskelig ord, men 'rådvill' er akseptabelt, 'motløs' eller 'fortvilt' kan også fungere. Hovedpoenget er flertallsformen."
+      }
+    ]
   },
   {
     "bookId": 19,
@@ -117,7 +141,15 @@
     "bookId": 19,
     "chapterId": 88,
     "verseId": 18,
-    "text": "De omgir meg som vann hele dagen, de omringer meg fra alle kanter."
+    "text": "De omgir meg som vann hele dagen, de lukker seg sammen om meg.",
+    "versions": [
+      {
+        "text": "De omgir meg som vann hele dagen, de omringer meg fra alle kanter.",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "Det hebraiske 'הִקִּיפוּ עָלַי יָחַד' betyr 'de omslutter meg alle sammen / på én gang', ikke 'fra alle kanter'. 'יָחַד' betyr 'sammen/på én gang', og refererer til at alle truslene samlet omslutter ham samtidig."
+      }
+    ]
   },
   {
     "bookId": 19,

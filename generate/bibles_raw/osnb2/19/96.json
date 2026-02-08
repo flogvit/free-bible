@@ -3,7 +3,15 @@
     "bookId": 19,
     "chapterId": 96,
     "verseId": 1,
-    "text": "Syng for Herren en ny sang! Syng for Herren, all jorden!"
+    "text": "Syng en ny sang for Herren! Syng for Herren, hele jorden!",
+    "versions": [
+      {
+        "text": "Syng for Herren en ny sang! Syng for Herren, all jorden!",
+        "type": "grammar",
+        "severity": "minor",
+        "explanation": "The Hebrew כָּל־הָאָרֶץ means 'hele jorden' (the whole earth) rather than 'all jorden'. 'Hele jorden' is more natural Norwegian bokmål. Also, 'Syng en ny sang for Herren' follows the Hebrew word order more naturally (שִׁיר חָדָשׁ comes after the verb)."
+      }
+    ]
   },
   {
     "bookId": 19,
@@ -63,13 +71,29 @@
     "bookId": 19,
     "chapterId": 96,
     "verseId": 11,
-    "text": "Himmelen glede seg, og jorden juble! Havet bruse og alt som fyller det!"
+    "text": "La himmelen glede seg og jorden juble! La havet bruse og alt som fyller det!",
+    "versions": [
+      {
+        "text": "Himmelen glede seg, og jorden juble! Havet bruse og alt som fyller det!",
+        "type": "grammar",
+        "severity": "minor",
+        "explanation": "The Hebrew uses jussive forms (יִשְׂמְחוּ, יִרְעַם) expressing a wish/command. In Norwegian, this is best rendered with 'La' to make the optative sense clear. Without 'La', the Norwegian reads somewhat awkwardly as bare subjunctive."
+      }
+    ]
   },
   {
     "bookId": 19,
     "chapterId": 96,
     "verseId": 12,
-    "text": "Marken fryde seg og alt som er på den! Da skal alle skogens trær juble"
+    "text": "La marken fryde seg og alt som er på den! Da skal alle skogens trær juble.",
+    "versions": [
+      {
+        "text": "Marken fryde seg og alt som er på den! Da skal alle skogens trær juble",
+        "type": "grammar",
+        "severity": "minor",
+        "explanation": "Same jussive issue as verse 11 — 'La' should be added for consistency. Also, the verse is missing a period at the end."
+      }
+    ]
   },
   {
     "bookId": 19,

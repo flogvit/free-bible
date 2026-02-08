@@ -27,7 +27,15 @@
     "bookId": 19,
     "chapterId": 115,
     "verseId": 4,
-    "text": "Deres gudebilder er sølv og gull, et verk av menneskehender."
+    "text": "Deres avgudsbilde er av sølv og gull, laget av menneskehender.",
+    "versions": [
+      {
+        "text": "Deres gudebilder er sølv og gull, et verk av menneskehender.",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "Det hebraiske עֲצַבֵּיהֶם refererer spesifikt til 'avgudsbilder' (fra עצב, som betyr idol/avgud). 'Gudebilder' er akseptabelt, men 'avgudsbilde' er mer presist. I tillegg mangler preposisjonen 'av' foran 'sølv og gull' – de er laget av sølv og gull, ikke identisk med det. מַעֲשֵׂה ('verk/produkt') kan godt oversettes 'laget av'."
+      }
+    ]
   },
   {
     "bookId": 19,
@@ -57,13 +65,29 @@
     "bookId": 19,
     "chapterId": 115,
     "verseId": 9,
-    "text": "Israel, sett din lit til Herren! Han er din hjelp og ditt skjold."
+    "text": "Israel, sett din lit til Herren! Han er deres hjelp og skjold.",
+    "versions": [
+      {
+        "text": "Israel, sett din lit til Herren! Han er din hjelp og ditt skjold.",
+        "type": "error",
+        "severity": "major",
+        "explanation": "Det hebraiske עֶזְרָם וּמָגִנָּם bruker 3. person flertall suffiks (-ם), altså 'deres hjelp og deres skjold'. Den nåværende oversettelsen bruker entall ('din hjelp og ditt skjold'), mens vers 10 og 11 bruker 'deres'. For konsistens og korrekthet bør det være 'deres' også i vers 9, da Israel er et kollektivt substantiv."
+      }
+    ]
   },
   {
     "bookId": 19,
     "chapterId": 115,
     "verseId": 10,
-    "text": "Arons hus, sett deres lit til Herren! Han er deres hjelp og skjold."
+    "text": "Arons hus, sett deres lit til Herren! Han er deres hjelp og deres skjold.",
+    "versions": [
+      {
+        "text": "Arons hus, sett deres lit til Herren! Han er deres hjelp og skjold.",
+        "type": "error",
+        "severity": "minor",
+        "explanation": "Selv om vers 11 bevisst fjernet den andre forekomsten av 'deres' for konsistens med vers 10, kan man merke seg at det hebraiske וּמָגִנָּם har possessivsuffiks også på 'skjold'. Imidlertid, ettersom vers 11 ble endret for å matche vers 10, er dette bare en mindre observasjon og den nåværende formen er akseptabel for flyt."
+      }
+    ]
   },
   {
     "bookId": 19,

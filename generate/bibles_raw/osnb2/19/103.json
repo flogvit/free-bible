@@ -27,11 +27,17 @@
     "bookId": 19,
     "chapterId": 103,
     "verseId": 5,
-    "text": "Han som metter deg med det gode i din pryd, så din ungdom fornyes som ørnens.",
+    "text": "Han som metter din pryd med det gode, så din ungdom fornyes som ørnens.",
     "versions": [
       {
         "text": "Han som metter deg med det gode så lenge du lever, så din ungdom fornyes som ørnens.",
         "explanation": "Ordet עֶדְיֵךְ (edyek) betyr 'din pryd/smykke' og er vanskelig å oversette. 'Så lenge du lever' er en tolkende oversettelse. Alternativt kan det bety 'i din blomst' eller referere til kroppen som 'smykke'. Oversettelsen er akseptabel som dynamisk gjengivelse, men noe legges til som ikke står direkte i teksten."
+      },
+      {
+        "text": "Han som metter deg med det gode i din pryd, så din ungdom fornyes som ørnens.",
+        "type": "error",
+        "severity": "major",
+        "explanation": "Hebraisk בַּטּוֹב עֶדְיֵךְ har 'din pryd' (edyek) som objekt for mettelsen, ikke en adverbiell bestemmelse. 'Metter din pryd med det gode' er grammatisk mer korrekt enn 'metter deg med det gode i din pryd'. Men dette er et vanskelig ord og verset har allerede vært revidert, så dette er en mindre justering."
       }
     ]
   },
@@ -69,7 +75,15 @@
     "bookId": 19,
     "chapterId": 103,
     "verseId": 10,
-    "text": "Han handler ikke med oss etter våre synder og gjengjelder oss ikke etter vår skyld."
+    "text": "Han handler ikke med oss etter våre synder og gjengjelder oss ikke etter våre misgjerninger.",
+    "versions": [
+      {
+        "text": "Han handler ikke med oss etter våre synder og gjengjelder oss ikke etter vår skyld.",
+        "type": "grammar",
+        "severity": "minor",
+        "explanation": "עֲוֺנֹתֵינוּ (avonotenu) betyr 'våre misgjerninger/synder', ikke 'vår skyld'. Ordet er flertall og bør gjengis som 'våre misgjerninger' for å skille det fra חֲטָאֵינוּ (synder) og bevare den hebraiske parallellismen mellom to ulike ord for synd."
+      }
+    ]
   },
   {
     "bookId": 19,
@@ -111,7 +125,15 @@
     "bookId": 19,
     "chapterId": 103,
     "verseId": 16,
-    "text": "Når vinden farer over det, er det borte, og stedet det sto, kjenner det ikke mer."
+    "text": "Når vinden farer over det, er det borte, og dets sted kjenner det ikke mer.",
+    "versions": [
+      {
+        "text": "Når vinden farer over det, er det borte, og stedet det sto, kjenner det ikke mer.",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "Hebraisk sier at 'dets sted' (מְקוֹמוֹ) ikke lenger kjenner det (personen/gresset). Det er stedet som ikke gjenkjenner personen, ikke personen som ikke kjenner stedet. 'Stedet det sto, kjenner det ikke mer' er tvetydig – det kan leses som om gresset ikke kjenner stedet. 'Dets sted kjenner det ikke mer' gjør subjektet tydeligere."
+      }
+    ]
   },
   {
     "bookId": 19,

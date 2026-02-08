@@ -21,17 +21,31 @@
     "bookId": 19,
     "chapterId": 87,
     "verseId": 4,
-    "text": "Jeg nevner Rahab og Babel blant dem som kjenner meg."
+    "text": "Jeg nevner Rahab og Babel blant dem som kjenner meg. Se, Filisterland og Tyros sammen med Kusj – denne ble født der.",
+    "versions": [
+      {
+        "text": "Jeg nevner Rahab og Babel blant dem som kjenner meg.",
+        "type": "error",
+        "severity": "major",
+        "explanation": "The current translation omits the second half of the verse entirely. The Hebrew continues with 'hinneh Peleshet ve-Tsor im-Kush, zeh yullad-sham' meaning 'Behold, Philistia and Tyre with Cush – this one was born there.' This is a significant omission of content."
+      }
+    ]
   },
   {
     "bookId": 19,
     "chapterId": 87,
     "verseId": 5,
-    "text": "Og om Sion skal det sies: Mann etter mann er født i henne, og Den Høyeste skal selv grunnfeste henne.",
+    "text": "Og om Sion skal det sies: Mann etter mann er født i henne, og den Høyeste skal selv grunnfeste henne.",
     "versions": [
       {
         "text": "Og om Sion skal det sies: Hver og en er født i henne, og Den høyeste skal selv grunnfeste henne.",
         "explanation": "The Hebrew אִישׁ וְאִישׁ literally means 'man and man' emphasizing each individual person. 'Hver og en' captures the meaning well, so this is only a minor stylistic consideration."
+      },
+      {
+        "text": "Og om Sion skal det sies: Mann etter mann er født i henne, og Den Høyeste skal selv grunnfeste henne.",
+        "type": "grammar",
+        "severity": "minor",
+        "explanation": "In Norwegian, 'den Høyeste' should normally have lowercase 'd' when 'den' functions as a regular article/pronoun before the capitalized title. The previous version had 'Den høyeste' with lowercase 'h', and the current version corrected to capitalize 'Høyeste' but also capitalized 'Den'. Standard Norwegian convention would be 'den Høyeste'."
       }
     ]
   },

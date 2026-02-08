@@ -3,7 +3,15 @@
     "bookId": 19,
     "chapterId": 85,
     "verseId": 1,
-    "text": "Til kordirigenten. Av Korahs sønner. En salme."
+    "text": "Til sangmesteren. Av Korahs sønner. En salme.",
+    "versions": [
+      {
+        "text": "Til kordirigenten. Av Korahs sønner. En salme.",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "'לַמְנַצֵּחַ' (lamnatseach) is traditionally rendered 'sangmesteren' or 'forsangeren' in Norwegian Bible translations. 'Kordirigenten' is a modern word that doesn't align well with the traditional and established rendering. 'Sangmesteren' is the standard Norwegian term used in psalm superscriptions."
+      }
+    ]
   },
   {
     "bookId": 19,
@@ -57,7 +65,15 @@
     "bookId": 19,
     "chapterId": 85,
     "verseId": 8,
-    "text": "Vis oss din miskunn, Herre, og gi oss din frelse."
+    "text": "Herre, vis oss din miskunn, og gi oss din frelse.",
+    "versions": [
+      {
+        "text": "Vis oss din miskunn, Herre, og gi oss din frelse.",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "In the Hebrew, 'Herre' (YHWH) appears between 'vis oss' and 'din miskunn' (הַרְאֵנוּ יְהוָה חַסְדֶּךָ). Moving 'Herre' to the beginning of the sentence improves the flow while still capturing the vocative. The current placement is acceptable but slightly departs from the Hebrew word order where YHWH is more prominent."
+      }
+    ]
   },
   {
     "bookId": 19,
@@ -99,6 +115,14 @@
     "bookId": 19,
     "chapterId": 85,
     "verseId": 14,
-    "text": "Rettferd skal gå foran ham og berede veien for hans føtter."
+    "text": "Rettferd skal gå foran ham og gjøre hans fotspor til en vei.",
+    "versions": [
+      {
+        "text": "Rettferd skal gå foran ham og berede veien for hans føtter.",
+        "type": "error",
+        "severity": "major",
+        "explanation": "The Hebrew 'וְיָשֵׂם לְדֶרֶךְ פְּעָמָיו' literally means 'and shall set/place his footsteps as a way' – i.e., righteousness walks ahead and makes his steps into a path. The current translation 'berede veien for hans føtter' (prepare the way for his feet) reverses the sense slightly: it's not that the way is prepared for God's feet, but rather that God's footsteps themselves become the way/path (for others to follow). A more accurate rendering preserves this nuance."
+      }
+    ]
   }
 ]

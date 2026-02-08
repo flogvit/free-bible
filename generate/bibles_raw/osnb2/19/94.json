@@ -3,11 +3,17 @@
     "bookId": 19,
     "chapterId": 94,
     "verseId": 1,
-    "text": "Herre, hevnens Gud, hevnens Gud, tre fram i stråleglans!",
+    "text": "Hevnens Gud, Herre, hevnens Gud, tre fram i stråleglans!",
     "versions": [
       {
         "text": "Hevnens Gud er Herren, hevnens Gud, tre fram i stråleglans!",
         "explanation": "Den hebraiske teksten har strukturen 'El neqamot YHWH' som er en vokativ konstruksjon - 'Herre, hevnens Gud'. Den nåværende oversettelsen omstrukturerer dette til en deklarativ setning. For bedre nærhet til originalen og muntlig flyt bør vokativformen bevares."
+      },
+      {
+        "text": "Herre, hevnens Gud, hevnens Gud, tre fram i stråleglans!",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "Den hebraiske teksten har 'El neqamot YHWH' – altså 'hevnens Gud' kommer først, deretter 'YHWH' (Herre). Nåværende oversettelse setter 'Herre' først. For å bevare den hebraiske rekkefølgen og vokativformen bør 'Hevnens Gud' komme først. Dette er heller ikke likt den tidligere versjonen som brukte en deklarativ setning."
       }
     ]
   },
@@ -27,7 +33,15 @@
     "bookId": 19,
     "chapterId": 94,
     "verseId": 4,
-    "text": "De flommer over med frekke ord, alle som gjør urett, skryter høylytt."
+    "text": "De spyr ut frekke ord, alle som gjør urett skryter og hoverer.",
+    "versions": [
+      {
+        "text": "De flommer over med frekke ord, alle som gjør urett, skryter høylytt.",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "Det hebraiske יִתְאַמְּרוּ (yit'amru) betyr 'de opphøyer seg selv' eller 'de hoverer/skryter', noe som er godt fanget med 'skryter'. Men 'høylytt' er en tilleggsfortolkning som ikke finnes i originalen. Dessuten mangler det et komma-problem: 'alle som gjør urett, skryter høylytt' kan leses tvetydig."
+      }
+    ]
   },
   {
     "bookId": 19,
@@ -75,7 +89,15 @@
     "bookId": 19,
     "chapterId": 94,
     "verseId": 12,
-    "text": "Salig er den mann du tukter, Herre, den du lærer fra din lov,"
+    "text": "Salig er den du tukter, Herre, den du underviser ut fra din lov,",
+    "versions": [
+      {
+        "text": "Salig er den mann du tukter, Herre, den du lærer fra din lov,",
+        "type": "grammar",
+        "severity": "minor",
+        "explanation": "'Lærer fra din lov' er litt uidiomatisk på norsk. 'Underviser ut fra din lov' er mer naturlig og fanger bedre det hebraiske מִתּוֹרָתְךָ (mittoratkha – 'ut fra din lov/instruksjon'). Dessuten er 'den mann' unødvendig spesifiserende; 'den' er mer inkluderende og moderne."
+      }
+    ]
   },
   {
     "bookId": 19,
@@ -93,7 +115,15 @@
     "bookId": 19,
     "chapterId": 94,
     "verseId": 15,
-    "text": "For dommen skal igjen bygge på rettferd, og alle med oppriktig hjerte skal følge den."
+    "text": "For retten skal vende tilbake til rettferd, og alle med oppriktig hjerte skal følge den.",
+    "versions": [
+      {
+        "text": "For dommen skal igjen bygge på rettferd, og alle med oppriktig hjerte skal følge den.",
+        "type": "error",
+        "severity": "major",
+        "explanation": "Det hebraiske 'ad-tsedeq yashuv mishpat' betyr bokstavelig 'til rettferdighet skal retten/dommen vende tilbake'. Verbet שׁוּב (shuv) betyr 'vende tilbake', ikke 'bygge på'. Poenget er at rettspraksisen (mishpat) skal gjenopprettes til å samsvare med rettferd (tsedeq). 'Bygge på' er en unøyaktig gjengivelse."
+      }
+    ]
   },
   {
     "bookId": 19,
@@ -123,11 +153,17 @@
     "bookId": 19,
     "chapterId": 94,
     "verseId": 20,
-    "text": "Kan fordervelsens trone være din allierte, de som skaper ulykke gjennom lovbud?",
+    "text": "Kan fordervelsens trone ha samfunn med deg, de som skaper ulykke gjennom lovbud?",
     "versions": [
       {
         "text": "Kan fordervelsens trone ha fellesskap med deg, den som skaper urett med loven i hånd?",
         "explanation": "Det hebraiske 'yotser amal alei-choq' handler om å bruke loven/lovgivning som et verktøy for å skape ondskap - altså korrupt lovgivning. 'Med loven i hånd' er noe uklart. 'Gjennom lovbud' fanger bedre meningen om misbruk av lovgivende makt."
+      },
+      {
+        "text": "Kan fordervelsens trone være din allierte, de som skaper ulykke gjennom lovbud?",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "Det hebraiske הַיְחָבְרְךָ (hayechaverka) er rettet til Gud og spør om en korrupt trone kan ha 'forbindelse/samfunn' med Gud. 'Være din allierte' antyder en militær allianse, mens den hebraiske tanken handler om at en urettferdig myndighet ikke kan ha fellesskap/tilknytning til Gud. 'Ha samfunn med deg' er teologisk mer presis og skiller seg fra den tidligere versjonen som brukte 'fellesskap'."
       }
     ]
   },
@@ -147,6 +183,14 @@
     "bookId": 19,
     "chapterId": 94,
     "verseId": 23,
-    "text": "Han lar deres ondskap falle tilbake på dem, for deres egen ondskap utrydder han dem. Herren vår Gud utrydder dem."
+    "text": "Han lar deres urett falle tilbake på dem, og for deres ondskap utrydder han dem. Herren vår Gud utrydder dem.",
+    "versions": [
+      {
+        "text": "Han lar deres ondskap falle tilbake på dem, for deres egen ondskap utrydder han dem. Herren vår Gud utrydder dem.",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "Det hebraiske אוֹנָם (onam) betyr 'deres urett/misgjerning', mens רָעָתָם (ra'atam) betyr 'deres ondskap'. Originalen bruker to forskjellige ord, men oversettelsen gjentar 'ondskap' for begge. Ved å bruke 'urett' for det første og 'ondskap' for det andre bevares den hebraiske distinksjonen. Dessuten bør 'for' byttes til 'og for' for å gjenspeile den hebraiske parallellstrukturen bedre."
+      }
+    ]
   }
 ]

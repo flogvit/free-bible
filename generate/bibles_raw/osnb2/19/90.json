@@ -27,11 +27,17 @@
     "bookId": 19,
     "chapterId": 90,
     "verseId": 5,
-    "text": "Du skyller dem bort som i en søvn. Om morgenen er de som gresset som skifter.",
+    "text": "Du skyller dem bort som i en søvn. Om morgenen er de som gress som skifter.",
     "versions": [
       {
         "text": "Du skyller dem bort, de blir som en søvn. Om morgenen er de som gresset som gror.",
         "explanation": "Verbet יַחֲלֹף (yachalof) betyr 'skifter/forandrer seg' snarere enn 'gror'. Dette passer bedre med vers 6 som beskriver gressets forgjengelighet. 'Som en søvn' gir også bedre flyt enn 'de blir som en søvn'."
+      },
+      {
+        "text": "Du skyller dem bort som i en søvn. Om morgenen er de som gresset som skifter.",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "'Gresset som skifter' med bestemt form 'gresset' er litt tungt. 'Gress som skifter' med ubestemt form er mer naturlig på norsk og samsvarer bedre med den poetiske hebraiske konstruksjonen כֶּחָצִיר (som gress)."
       }
     ]
   },
@@ -39,7 +45,15 @@
     "bookId": 19,
     "chapterId": 90,
     "verseId": 6,
-    "text": "Om morgenen blomstrer det og gror, om kvelden visner det og tørker bort."
+    "text": "Om morgenen blomstrer det og skifter, om kvelden visner det og tørker bort.",
+    "versions": [
+      {
+        "text": "Om morgenen blomstrer det og gror, om kvelden visner det og tørker bort.",
+        "type": "error",
+        "severity": "minor",
+        "explanation": "Verbet וְחָלָף (vechalaf) betyr 'skifter/forgår' ikke 'gror'. Å oversette med 'gror' gir feil mening – poenget er at gresset allerede begynner å forgå/forandres, ikke at det fortsetter å vokse. Dette er også konsistent med rettelsen som ble gjort i vers 5 der det samme verbet (יַחֲלֹף) ble endret fra 'gror' til 'skifter'."
+      }
+    ]
   },
   {
     "bookId": 19,
@@ -75,13 +89,29 @@
     "bookId": 19,
     "chapterId": 90,
     "verseId": 11,
-    "text": "Hvem kjenner din vredes styrke og din harme slik den svarer til frykten for deg?"
+    "text": "Hvem kjenner styrken i din vrede? Din harme svarer til frykten for deg.",
+    "versions": [
+      {
+        "text": "Hvem kjenner din vredes styrke og din harme slik den svarer til frykten for deg?",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "Den nåværende oversettelsen er grammatisk tung og vanskelig å forstå. En oppdeling i to setninger gir bedre flyt og klarhet, samtidig som meningen bevares: Guds harme (עֶבְרָתֶךָ) er proporsjonal med den ærefrykt (כְיִרְאָתְךָ) som tilkommer ham."
+      }
+    ]
   },
   {
     "bookId": 19,
     "chapterId": 90,
     "verseId": 12,
-    "text": "Lær oss å telle våre dager, så vi kan vinne et hjerte med visdom."
+    "text": "Lær oss å telle våre dager, så vi kan få et vist hjerte.",
+    "versions": [
+      {
+        "text": "Lær oss å telle våre dager, så vi kan vinne et hjerte med visdom.",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "Det hebraiske לְבַב חָכְמָה betyr bokstavelig 'et visdomshjerte' eller 'et vist hjerte'. 'Vinne et hjerte med visdom' er litt upresist og unaturlig. 'Få et vist hjerte' er mer direkte og lettere å forstå."
+      }
+    ]
   },
   {
     "bookId": 19,

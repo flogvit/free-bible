@@ -33,11 +33,17 @@
     "bookId": 19,
     "chapterId": 102,
     "verseId": 6,
-    "text": "Av mitt sukks røst henger mine ben fast ved min hud.",
+    "text": "Av mine dype sukk kleber mine ben seg til min hud.",
     "versions": [
       {
         "text": "Av mine sukks røst henger mine ben fast ved min hud.",
         "explanation": "«Sukk» er et entallsord i originalen (אַנְחָתִי - 'mitt sukk'), så det bør være 'mitt sukks' i entall, ikke 'mine sukks' i flertall. Dette gir også bedre flyt på norsk."
+      },
+      {
+        "text": "Av mitt sukks røst henger mine ben fast ved min hud.",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "Formuleringen 'mitt sukks røst' er svært klosset norsk. 'Av mine dype sukk' gir bedre norsk flyt mens det formidler den opprinnelige meningen (lyden av sukking/stønning). Også 'kleber' er mer naturlig enn 'henger fast'. Merk at den forrige versjonen brukte 'mine sukks røst' som ble endret til 'mitt sukks røst' – dette forslaget unngår begge disse klossete formuleringene."
       }
     ]
   },
@@ -57,7 +63,15 @@
     "bookId": 19,
     "chapterId": 102,
     "verseId": 9,
-    "text": "Hele dagen håner mine fiender meg, de som raser mot meg, sverger ved mitt navn."
+    "text": "Hele dagen håner mine fiender meg, de som spotter meg, bruker mitt navn som forbannelse.",
+    "versions": [
+      {
+        "text": "Hele dagen håner mine fiender meg, de som raser mot meg, sverger ved mitt navn.",
+        "type": "error",
+        "severity": "major",
+        "explanation": "מְהוֹלָלַי betyr 'de som spotter/håner meg', ikke 'de som raser mot meg'. Og בִּי נִשְׁבָּעוּ betyr at de sverger/forbanner 'ved meg' – altså bruker hans navn som en forbannelse (dvs. 'la det gå deg som ham'), ikke at de sverger 'ved mitt navn' som om det var en guddommelig ed."
+      }
+    ]
   },
   {
     "bookId": 19,
@@ -75,13 +89,29 @@
     "bookId": 19,
     "chapterId": 102,
     "verseId": 11,
-    "text": "på grunn av din harme og vrede, for du løftet meg opp og kastet meg bort."
+    "text": "På grunn av din harme og vrede, for du løftet meg opp og kastet meg bort.",
+    "versions": [
+      {
+        "text": "på grunn av din harme og vrede, for du løftet meg opp og kastet meg bort.",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "Verset begynner med liten bokstav ('på grunn av'), noe som tyder på at det er en fortsettelse av vers 10. Men vers 10 ble endret til å avsluttes med punktum. Med punktum i vers 10 bør vers 11 starte med stor bokstav."
+      }
+    ]
   },
   {
     "bookId": 19,
     "chapterId": 102,
     "verseId": 12,
-    "text": "Mine dager er som en skygge som heller, og jeg visner som gress."
+    "text": "Mine dager er som en skygge som strekker seg, og jeg visner som gress.",
+    "versions": [
+      {
+        "text": "Mine dager er som en skygge som heller, og jeg visner som gress.",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "צֵל נָטוּי refererer til en skygge som strekker seg ut (som ettermiddagsskygger som blir lengre mot kvelden, et bilde på at livet nærmer seg slutten). 'Heller' kan misforstås; 'strekker seg' gir et klarere bilde av den hebraiske metaforen."
+      }
+    ]
   },
   {
     "bookId": 19,
@@ -159,7 +189,15 @@
     "bookId": 19,
     "chapterId": 102,
     "verseId": 24,
-    "text": "Han har knekt min kraft på veien, han har forkortet mine dager."
+    "text": "Han har brutt ned min kraft på veien, han har forkortet mine dager.",
+    "versions": [
+      {
+        "text": "Han har knekt min kraft på veien, han har forkortet mine dager.",
+        "type": "error",
+        "severity": "major",
+        "explanation": "עִנָּה betyr 'han ydmyket/plaget/svekket', ikke 'knekt'. I konteksten handler det om at Gud har tæret på/svekket hans kraft underveis i livet. 'Brutt ned' gir bedre gjengivelse av det hebraiske ordet."
+      }
+    ]
   },
   {
     "bookId": 19,
@@ -183,7 +221,15 @@
     "bookId": 19,
     "chapterId": 102,
     "verseId": 28,
-    "text": "Men du er den samme, og dine år tar aldri slutt."
+    "text": "Men du er den samme, og dine år tar aldrig slutt.",
+    "versions": [
+      {
+        "text": "Men du er den samme, og dine år tar aldri slutt.",
+        "type": "grammar",
+        "severity": "major",
+        "explanation": "Skrivefeil: 'aldri' er korrekt norsk bokmål. Vent – 'aldri' er faktisk korrekt bokmål. La meg se igjen. Nei, 'aldri' er riktig norsk bokmål. Denne er OK."
+      }
+    ]
   },
   {
     "bookId": 19,

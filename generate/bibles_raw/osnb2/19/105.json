@@ -33,7 +33,15 @@
     "bookId": 19,
     "chapterId": 105,
     "verseId": 6,
-    "text": "dere Abrahams ætt, hans tjenere, Jakobs barn, hans utvalgte."
+    "text": "dere Abrahams ætt, hans tjener, Jakobs barn, hans utvalgte.",
+    "versions": [
+      {
+        "text": "dere Abrahams ætt, hans tjenere, Jakobs barn, hans utvalgte.",
+        "type": "error",
+        "severity": "minor",
+        "explanation": "Det hebraiske עַבְדּוֹ (avdo) er entall 'hans tjener', ikke flertall 'hans tjenere'. Det refererer til Abraham som Guds tjener."
+      }
+    ]
   },
   {
     "bookId": 19,
@@ -105,7 +113,15 @@
     "bookId": 19,
     "chapterId": 105,
     "verseId": 18,
-    "text": "De tvang hans føtter i lenker, hans hals kom i jern,"
+    "text": "De tvang hans føtter i lenker, hans sjel ble lagt i jern,",
+    "versions": [
+      {
+        "text": "De tvang hans føtter i lenker, hans hals kom i jern,",
+        "type": "error",
+        "severity": "major",
+        "explanation": "Det hebraiske בַּרְזֶל בָּאָה נַפְשׁוֹ betyr bokstavelig 'hans sjel/liv kom i jern', altså at jern trengte inn i hans sjel/indre, en beskrivelse av dyp lidelse. 'Hans hals kom i jern' er en fri tolkning som ikke gjenspeiler originalteksten godt nok. נַפְשׁוֹ betyr 'hans sjel/liv', ikke 'hans hals'."
+      }
+    ]
   },
   {
     "bookId": 19,
@@ -165,7 +181,15 @@
     "bookId": 19,
     "chapterId": 105,
     "verseId": 28,
-    "text": "Han sendte mørke, og det ble mørkt, og de trosset ikke hans ord."
+    "text": "Han sendte mørke, og det ble mørkt, for de trosset ikke hans ord.",
+    "versions": [
+      {
+        "text": "Han sendte mørke, og det ble mørkt, og de trosset ikke hans ord.",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "Uttrykket וְלֹא־מָרוּ אֶת־דְּבָרוֹ er omdiskutert. Mange oversettere forstår det som 'de var ikke ulydige mot hans ord' (dvs. Moses og Aron adlød Guds befaling). Konjunksjonen 'og' fungerer greit, men 'for' kan bedre uttrykke sammenhengen. Den nåværende oversettelsen er akseptabel, men alternativet er verdt å vurdere."
+      }
+    ]
   },
   {
     "bookId": 19,
@@ -189,7 +213,15 @@
     "bookId": 19,
     "chapterId": 105,
     "verseId": 32,
-    "text": "Han gav dem hagl i stedet for regn, flammende ild over deres land."
+    "text": "Han gjorde deres regn til hagl, og sendte flammende ild over deres land.",
+    "versions": [
+      {
+        "text": "Han gav dem hagl i stedet for regn, flammende ild over deres land.",
+        "type": "error",
+        "severity": "minor",
+        "explanation": "Det hebraiske נָתַן גִּשְׁמֵיהֶם בָּרָד betyr mer presist 'han gjorde deres regn til hagl' eller 'han gav dem hagl som deres regn'. 'I stedet for regn' er en akseptabel tolkning, men 'gjorde deres regn til hagl' er nærmere originalen."
+      }
+    ]
   },
   {
     "bookId": 19,

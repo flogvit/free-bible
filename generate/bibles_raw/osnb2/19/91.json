@@ -9,7 +9,15 @@
     "bookId": 19,
     "chapterId": 91,
     "verseId": 2,
-    "text": "Jeg sier til Herren: «Min tilflukt og min borg, min Gud som jeg setter min lit til.»"
+    "text": "Jeg sier om Herren: «Han er min tilflukt og min borg, min Gud som jeg setter min lit til.»",
+    "versions": [
+      {
+        "text": "Jeg sier til Herren: «Min tilflukt og min borg, min Gud som jeg setter min lit til.»",
+        "type": "error",
+        "severity": "major",
+        "explanation": "Det hebraiske 'omar la-YHWH' i denne konteksten betyr 'jeg sier om Herren' (bekjennelse om Herren), ikke nødvendigvis direkte tale til Herren. Dessuten mangler et verb i den direkte talen – 'Han er min tilflukt' gjør setningen komplett og naturlig på norsk."
+      }
+    ]
   },
   {
     "bookId": 19,
@@ -33,7 +41,15 @@
     "bookId": 19,
     "chapterId": 91,
     "verseId": 5,
-    "text": "Du skal ikke frykte for nattens redsler, ikke for pilen som flyr om dagen,"
+    "text": "Du skal ikke frykte nattens redsler, ikke pilen som flyr om dagen,",
+    "versions": [
+      {
+        "text": "Du skal ikke frykte for nattens redsler, ikke for pilen som flyr om dagen,",
+        "type": "grammar",
+        "severity": "minor",
+        "explanation": "På norsk er 'frykte for' en vanlig konstruksjon, men 'frykte nattens redsler' er mer direkte og idiomatisk. Med gjentatt 'ikke for' i versene 5-6 blir det mange preposisjoner. Å fjerne 'for' gjør teksten strammere."
+      }
+    ]
   },
   {
     "bookId": 19,
@@ -57,7 +73,15 @@
     "bookId": 19,
     "chapterId": 91,
     "verseId": 9,
-    "text": "For du har gjort Herren til din tilflukt, Den høyeste til din bolig."
+    "text": "Fordi du, Herre, er min tilflukt – Den høyeste har du gjort til din bolig.",
+    "versions": [
+      {
+        "text": "For du har gjort Herren til din tilflukt, Den høyeste til din bolig.",
+        "type": "error",
+        "severity": "major",
+        "explanation": "Verset er vanskelig, men den hebraiske teksten har et skifte i person. Første del sier 'du, YHWH, er min tilflukt' (machsi = min tilflukt, 1. person), mens andre del vender seg til den troende: 'Den høyeste har du gjort til din bolig'. Den nåværende oversettelsen gjengir hele verset i 2. person og mister den personlige bekjennelsen 'min tilflukt'."
+      }
+    ]
   },
   {
     "bookId": 19,
@@ -69,7 +93,15 @@
     "bookId": 19,
     "chapterId": 91,
     "verseId": 11,
-    "text": "For han skal gi sine engler befaling om deg, å vokte deg på alle dine veier."
+    "text": "For han skal befale sine engler å vokte deg på alle dine veier.",
+    "versions": [
+      {
+        "text": "For han skal gi sine engler befaling om deg, å vokte deg på alle dine veier.",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "'Gi sine engler befaling om deg, å vokte deg' er noe tungt. 'Befale sine engler å vokte deg' er mer direkte og lettlest, og formidler det samme innholdet."
+      }
+    ]
   },
   {
     "bookId": 19,

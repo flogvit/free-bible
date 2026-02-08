@@ -69,7 +69,15 @@
     "bookId": 19,
     "chapterId": 83,
     "verseId": 12,
-    "text": "Gjør med deres stormenn som med Oreb og Seeb, med alle deres fyrster som med Sebah og Salmunna,"
+    "text": "Gjør med deres høvdinger som med Oreb og Seeb, med alle deres fyrster som med Sebah og Salmunna,",
+    "versions": [
+      {
+        "text": "Gjør med deres stormenn som med Oreb og Seeb, med alle deres fyrster som med Sebah og Salmunna,",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "Det hebraiske נְדִיבֵמוֹ betyr 'deres edle/høvdinger' (nedivim). 'Høvdinger' er en mer presis oversettelse enn 'stormenn', og skaper bedre distinksjon fra 'fyrster' (נְסִיכֵמוֹ) i neste linje."
+      }
+    ]
   },
   {
     "bookId": 19,
@@ -81,11 +89,17 @@
     "bookId": 19,
     "chapterId": 83,
     "verseId": 14,
-    "text": "Min Gud, gjør dem som virvlende strå, som halm for vinden!",
+    "text": "Min Gud, gjør dem som virvlende tistelull, som halm for vinden!",
     "versions": [
       {
         "text": "Min Gud, gjør dem som virvlende støv, som halm for vinden!",
         "explanation": "Det hebraiske 'galgal' (גַּלְגַּל) betyr primært 'hjul' eller 'virvlende ting' (som tørre tornebusker eller strå som virvler i vinden), ikke 'støv'. 'Virvlende strå' gir bedre bilde av noe lett som blir kastet omkring, og skaper bedre parallell med 'halm' i neste linje."
+      },
+      {
+        "text": "Min Gud, gjør dem som virvlende strå, som halm for vinden!",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "גַּלְגַּל refererer spesifikt til den virvlende tumbleweed/tistelull (Gundelia tournefortii) som ruller over bakken i vinden. 'Virvlende strå' skaper unødvendig overlapping med 'halm' i parallellismen. 'Tistelull' er mer presist og gir bedre kontrast med 'halm'."
       }
     ]
   },
@@ -99,7 +113,15 @@
     "bookId": 19,
     "chapterId": 83,
     "verseId": 16,
-    "text": "slik skal du forfølge dem med din storm og slå dem med redsel ved ditt uvær."
+    "text": "slik skal du forfølge dem med din storm og fylle dem med redsel ved ditt uvær.",
+    "versions": [
+      {
+        "text": "slik skal du forfølge dem med din storm og slå dem med redsel ved ditt uvær.",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "Det hebraiske תְבַהֲלֵם (fra בהל) betyr 'skremme/forvirre/fylle med redsel'. 'Slå dem med redsel' er ikke galt, men 'fylle dem med redsel' er mer naturlig og idiomatisk norsk, og gjengir verbet mer presist."
+      }
+    ]
   },
   {
     "bookId": 19,
@@ -117,6 +139,14 @@
     "bookId": 19,
     "chapterId": 83,
     "verseId": 19,
-    "text": "La dem kjenne at du alene, du som bærer navnet Herren, er Den høyeste over hele jorden."
+    "text": "La dem kjenne at du, som har navnet HERREN, du alene er Den høyeste over hele jorden.",
+    "versions": [
+      {
+        "text": "La dem kjenne at du alene, du som bærer navnet Herren, er Den høyeste over hele jorden.",
+        "type": "theological",
+        "severity": "major",
+        "explanation": "Setningsstrukturen i den nåværende oversettelsen plasserer 'alene' (לְבַדֶּךָ) feil i setningen. I originalen er poenget at JHVH alene er Den høyeste – 'alene' hører til 'Den høyeste', ikke til 'du'. Omstruktureringen gjør det teologiske poenget klarere."
+      }
+    ]
   }
 ]

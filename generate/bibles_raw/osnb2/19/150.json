@@ -3,11 +3,17 @@
     "bookId": 19,
     "chapterId": 150,
     "verseId": 1,
-    "text": "Halleluja! Lovpris Gud i hans helligdom, lovpris ham i hans krafts himmelhvelv!",
+    "text": "Halleluja! Lovpris Gud i hans helligdom, lovpris ham i hans styrkes himmelhvelving!",
     "versions": [
       {
         "text": "Halleluja! Lovpris Gud i hans helligdom, lovpris ham i hans mektige himmelhvelv!",
         "explanation": "עֻזּֽוֹ (uzzo) betyr 'hans kraft/styrke', ikke 'mektige'. Uttrykket 'hans krafts himmelhvelv' eller 'hans styrkes himmelhvelv' er mer presist og bevarer genitivkonstruksjonen fra hebraisk."
+      },
+      {
+        "text": "Halleluja! Lovpris Gud i hans helligdom, lovpris ham i hans krafts himmelhvelv!",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "'Hans krafts himmelhvelv' er grammatisk uvanlig på norsk. 'Hans styrkes himmelhvelving' er litt bedre, men konstruksjonen er uansett vanskelig. Alternativt kan man si 'hans mektighets himmelhvelving'. Imidlertid er den nåværende versjonen akseptabel gitt at den bevisst ble endret for å bevare genitivkonstruksjonen. Dette er kun et mindre forslag."
       }
     ]
   },
@@ -21,7 +27,21 @@
     "bookId": 19,
     "chapterId": 150,
     "verseId": 3,
-    "text": "Lovpris ham med støt i horn, lovpris ham med harpe og lyre!"
+    "text": "Lovpris ham med støt i sjofar, lovpris ham med lyre og harpe!",
+    "versions": [
+      {
+        "text": "Lovpris ham med støt i horn, lovpris ham med harpe og lyre!",
+        "type": "error",
+        "severity": "major",
+        "explanation": "שׁוֹפָר (shofar) er et spesifikt instrument – et bukkehorn brukt i jødisk liturgi. Det generiske 'horn' mister den spesifikke referansen. 'Sjofar' er et kjent lånord også på norsk og bevarer den kulturelle og religiøse betydningen."
+      },
+      {
+        "text": "Lovpris ham med støt i sjofar, lovpris ham med harpe og lyre!",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "נֵבֶל (nevel) er et strengeinstrument som vanligvis oversettes med 'lyre' eller 'harpe', og כִנּוֹר (kinnor) er Davids instrument, tradisjonelt oversatt med 'lyre' eller 'harpe'. Rekkefølgen i originalen er nevel (harpe/lyre) først og kinnor (lyre/harpe) sist. Den nåværende oversettelsen er akseptabel, men det er verdt å merke seg at nevel gjerne identifiseres som det større instrumentet (harpe) og kinnor som det mindre (lyre), så rekkefølgen 'harpe og lyre' faktisk stemmer med originalen."
+      }
+    ]
   },
   {
     "bookId": 19,
@@ -39,6 +59,14 @@
     "bookId": 19,
     "chapterId": 150,
     "verseId": 6,
-    "text": "Alt som ånder, skal lovprise Jah! Halleluja!"
+    "text": "Alt som har ånde, skal lovprise Herren! Halleluja!",
+    "versions": [
+      {
+        "text": "Alt som ånder, skal lovprise Jah! Halleluja!",
+        "type": "theological",
+        "severity": "minor",
+        "explanation": "'Jah' er en uvanlig gjengivelse på norsk. Selv om יָהּ teknisk sett er kortformen av JHVH, er det i norsk bibeltradisjon vanlig å gjengi dette med 'Herren'. Hvis man ønsker å beholde 'Jah', bør det i det minste forklares. 'Alt som har ånde' er mer idiomatisk norsk enn 'Alt som ånder' og gjenspeiler הַנְּשָׁמָה (neshamah = ånde/pust) bedre."
+      }
+    ]
   }
 ]

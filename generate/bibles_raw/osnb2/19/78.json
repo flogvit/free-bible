@@ -21,11 +21,17 @@
     "bookId": 19,
     "chapterId": 78,
     "verseId": 4,
-    "text": "Vi vil ikke skjule det for deres barn, men fortelle den kommende slekt om Herrens lovsang, hans makt og de under han har gjort.",
+    "text": "Vi vil ikke skjule det for deres barn, men fortelle den kommende slekt om Herrens lovprisning, hans makt og de underfulle gjerninger han har gjort.",
     "versions": [
       {
         "text": "Vi vil ikke skjule det for deres barn, men fortelle den kommende slekt om Herrens pris, hans makt og de under han har gjort.",
         "explanation": "תְּהִלּוֹת betyr 'lovprisninger' eller 'lovsang' snarere enn 'pris'. 'Lovsang' er mer poetisk og presis for oral lesning."
+      },
+      {
+        "text": "Vi vil ikke skjule det for deres barn, men fortelle den kommende slekt om Herrens lovsang, hans makt og de under han har gjort.",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "תְּהִלּוֹת betyr 'lovprisninger/prishandlinger' – altså Herrens prisverdige gjerninger. 'Lovsang' impliserer sang snarere enn det prisverdige ved Herren. Men dette verset har versjonshistorikk med en bevisst endring, så dette er bare en minor suggestion. Dessuten er 'de under' litt uformelt; 'underfulle gjerninger' er mer presist for נִפְלְאוֹתָיו."
       }
     ]
   },
@@ -57,11 +63,17 @@
     "bookId": 19,
     "chapterId": 78,
     "verseId": 9,
-    "text": "Efraims sønner, bueskyttere i rustning, vendte om på stridens dag.",
+    "text": "Efraims sønner, væpnet med buer og klare til å skyte, snudde ryggen på kampens dag.",
     "versions": [
       {
         "text": "Efraims sønner, væpnet med buer, vendte om på stridens dag.",
         "explanation": "נוֹשְׁקֵי רוֹמֵי־קָשֶׁת betyr bokstavelig 'de som spenner buer' eller 'bueskyttere som skyter'. 'Bueskyttere i rustning' gir en mer levende beskrivelse og bedre rytme for muntlig lesning."
+      },
+      {
+        "text": "Efraims sønner, bueskyttere i rustning, vendte om på stridens dag.",
+        "type": "error",
+        "severity": "major",
+        "explanation": "נוֹשְׁקֵי רוֹמֵי־קָשֶׁת betyr 'de som spenner/skyter med buer', ikke 'bueskyttere i rustning'. Det er ingenting i teksten om rustning. Verset har versjonshistorikk, men den nåværende oversettelsen introduserer feilen 'i rustning' som ikke finnes i grunnteksten. 'Vendte om' kan misforstås positivt; הָפְכוּ betyr her at de snudde ryggen/flyktet."
       }
     ]
   },
@@ -291,7 +303,15 @@
     "bookId": 19,
     "chapterId": 78,
     "verseId": 46,
-    "text": "Han ga gresshoppene deres grøde og gresshoppsvermene frukten av deres arbeid."
+    "text": "Han ga gnageren deres grøde og gresshoppene frukten av deres arbeid.",
+    "versions": [
+      {
+        "text": "Han ga gresshoppene deres grøde og gresshoppsvermene frukten av deres arbeid.",
+        "type": "error",
+        "severity": "minor",
+        "explanation": "חָסִיל og אַרְבֶּה er to forskjellige typer insekter/skadedyr. חָסִיל er ofte oversatt som 'gnager' eller 'gresshoppelarve' – et annet skadedyr enn אַרְבֶּה (gresshoppe). Å oversette begge som 'gresshopper' visker ut distinksjonen i originalteksten."
+      }
+    ]
   },
   {
     "bookId": 19,
@@ -303,7 +323,15 @@
     "bookId": 19,
     "chapterId": 78,
     "verseId": 48,
-    "text": "Han overga deres fe til hagl og deres buskap til lynet."
+    "text": "Han overga deres fe til haglet og deres buskap til lynild.",
+    "versions": [
+      {
+        "text": "Han overga deres fe til hagl og deres buskap til lynet.",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "רְשָׁפִים kan bety 'lyn' eller 'lynild/glødende ild'. 'Lynild' er litt mer poetisk og presist. Dessuten refererer בְּעִירָם til 'deres storfe/trekkdyr', ikke generelt 'fe', som er en litt vid oversettelse."
+      }
+    ]
   },
   {
     "bookId": 19,
@@ -339,7 +367,15 @@
     "bookId": 19,
     "chapterId": 78,
     "verseId": 54,
-    "text": "Han førte dem til sitt hellige land, til fjellet som hans høyre hånd hadde vunnet."
+    "text": "Han førte dem til sitt hellige område, til dette fjellet som hans høyre hånd hadde vunnet.",
+    "versions": [
+      {
+        "text": "Han førte dem til sitt hellige land, til fjellet som hans høyre hånd hadde vunnet.",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "גְּבוּל קָדְשׁוֹ betyr 'hans hellige grense/område', ikke nødvendigvis 'land'. הַר־זֶה betyr 'dette fjellet' med demonstrativt pronomen, som gir mer nærhet og pekende kraft enn bare 'fjellet'."
+      }
+    ]
   },
   {
     "bookId": 19,
@@ -363,7 +399,15 @@
     "bookId": 19,
     "chapterId": 78,
     "verseId": 58,
-    "text": "De vakte hans harme med sine offerhauger og egget hans nidkjærhet med sine avgudsbillder."
+    "text": "De vakte hans harme med sine offerhauger og egget hans nidkjærhet med sine avgudsbilleder.",
+    "versions": [
+      {
+        "text": "De vakte hans harme med sine offerhauger og egget hans nidkjærhet med sine avgudsbillder.",
+        "type": "grammar",
+        "severity": "minor",
+        "explanation": "Stavefeil: 'avgudsbillder' skal være 'avgudsbilleder'."
+      }
+    ]
   },
   {
     "bookId": 19,
@@ -435,7 +479,15 @@
     "bookId": 19,
     "chapterId": 78,
     "verseId": 69,
-    "text": "Han bygde sin helligdom høy som himmelen, fast som jorden han grunnla for evig."
+    "text": "Han bygde sin helligdom høy som himmelens høyder, fast som jorden han har grunnlagt for evig.",
+    "versions": [
+      {
+        "text": "Han bygde sin helligdom høy som himmelen, fast som jorden han grunnla for evig.",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "כְּמוֹ־רָמִים betyr 'som høyder/høye steder', ikke direkte 'som himmelen'. Bildet er av høye fjell eller himmelske høyder. 'Himmelens høyder' bevarer bildet bedre. 'Grunnlagt' er bedre enn 'grunnla' i denne konteksten."
+      }
+    ]
   },
   {
     "bookId": 19,

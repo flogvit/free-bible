@@ -45,7 +45,15 @@
     "bookId": 19,
     "chapterId": 89,
     "verseId": 8,
-    "text": "Gud er fryktet i de helliges store råd, veldige og skremmende over alle som omgir ham."
+    "text": "Gud er fryktet i de helliges store råd, veldig og skremmende over alle som omgir ham.",
+    "versions": [
+      {
+        "text": "Gud er fryktet i de helliges store råd, veldige og skremmende over alle som omgir ham.",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "Det hebraiske נַעֲרָץ (fryktet) refererer til Gud (entall). 'Veldige' (flertall) passer ikke grammatisk – det bør være 'veldig' (entall) for å referere til Gud."
+      }
+    ]
   },
   {
     "bookId": 19,
@@ -267,11 +275,17 @@
     "bookId": 19,
     "chapterId": 89,
     "verseId": 44,
-    "text": "Du vendte hans sverds egg tilbake og holdt ham ikke oppe i striden.",
+    "text": "Du har vendt hans sverds egg tilbake og har ikke holdt ham oppe i striden.",
     "versions": [
       {
         "text": "Du lot hans sverd vike tilbake og holdt ham ikke oppe i striden.",
         "explanation": "Hebraisk 'צוּר חַרְבּוֹ' betyr 'hans sverds egg/skarphet'. Bildet er at sverdet mister sin skarphet eller slagkraft, ikke at det viker tilbake. 'Vendte hans sverds egg tilbake' formidler dette bedre."
+      },
+      {
+        "text": "Du vendte hans sverds egg tilbake og holdt ham ikke oppe i striden.",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "I konteksten av vers 39-46 brukes konsekvent perfektum ('Du har forkastet', 'Du har revet ned', etc.). Vers 44 bryter dette mønsteret med preteritum 'vendte' og 'holdt'. For konsistens bør det være 'Du har vendt ... og har ikke holdt'."
       }
     ]
   },
@@ -297,7 +311,15 @@
     "bookId": 19,
     "chapterId": 89,
     "verseId": 48,
-    "text": "Husk hvor kort mitt liv er! Til hvilken tomhet har du skapt alle mennesker!"
+    "text": "Husk at jeg er forgjengelig! Til hvilken tomhet har du skapt alle mennesker!",
+    "versions": [
+      {
+        "text": "Husk hvor kort mitt liv er! Til hvilken tomhet har du skapt alle mennesker!",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "Hebraisk מֶה־חָלֶד betyr bokstavelig 'hva er livstiden/forgjengeligheten' – det handler om å minne Gud om menneskets forgjengelige natur. 'Hvor kort mitt liv er' er en akseptabel omskrivning, men 'Husk at jeg er forgjengelig' fanger bedre det hebraiske uttrykket."
+      }
+    ]
   },
   {
     "bookId": 19,
@@ -309,7 +331,15 @@
     "bookId": 19,
     "chapterId": 89,
     "verseId": 50,
-    "text": "Hvor er din nåde fra fordums tid, Herre, som du sverget David i din trofasthet?"
+    "text": "Hvor er dine nådegjerninger fra fordums tid, Herre, som du sverget David i din trofasthet?",
+    "versions": [
+      {
+        "text": "Hvor er din nåde fra fordums tid, Herre, som du sverget David i din trofasthet?",
+        "type": "error",
+        "severity": "major",
+        "explanation": "Hebraisk חֲסָדֶיךָ er flertall (dine nådegjerninger/trofaste handlinger), ikke entall. 'Din nåde' er entall og gjengir ikke flertallsformen korrekt."
+      }
+    ]
   },
   {
     "bookId": 19,

@@ -81,11 +81,17 @@
     "bookId": 19,
     "chapterId": 139,
     "verseId": 14,
-    "text": "Jeg takker deg fordi jeg er skapt på skremmende underfullt vis. Underfulle er dine gjerninger, min sjel vet det så vel.",
+    "text": "Jeg takker deg fordi jeg er skapt på vidunderlig, ærefryktvekkende vis. Underfulle er dine gjerninger, det vet min sjel så vel.",
     "versions": [
       {
         "text": "Jeg takker deg fordi jeg er skapt på forferdelig underfullt vis. Underfulle er dine gjerninger, min sjel vet det så vel.",
         "explanation": "Det hebraiske 'noraot' betyr 'fryktinngytende/ærefryktvekkende' i positiv forstand. 'Forferdelig' kan på norsk misforstås negativt. 'Skremmende underfullt' eller 'ærefryktvekkende' bevarer bedre den positive, ærbødige betydningen."
+      },
+      {
+        "text": "Jeg takker deg fordi jeg er skapt på skremmende underfullt vis. Underfulle er dine gjerninger, min sjel vet det så vel.",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "Verset har allerede én revisjon, så dette er kun et forslag. 'Skremmende underfullt' kan fortsatt oppfattes negativt på norsk. 'Vidunderlig, ærefryktvekkende' fanger bedre det hebraiske 'noraot nifleiti' – ærefrykt kombinert med undring. Det opprinnelige endringsønsket var å unngå negativt fortegn, og dette forslaget går videre i den retningen."
       }
     ]
   },
@@ -117,13 +123,29 @@
     "bookId": 19,
     "chapterId": 139,
     "verseId": 19,
-    "text": "Om du bare ville drepe den ugudelige, Gud! Dere blodsmennesker, vik fra meg!"
+    "text": "Om du bare ville drepe den ugudelige, Gud! Dere blodtørstige menn, vik fra meg!",
+    "versions": [
+      {
+        "text": "Om du bare ville drepe den ugudelige, Gud! Dere blodsmennesker, vik fra meg!",
+        "type": "error",
+        "severity": "major",
+        "explanation": "'Blodsmennesker' er et uvanlig og uklart ord på moderne norsk bokmål. Det hebraiske 'anshei damim' betyr 'blodets menn', altså menn som er skyldige i blodsutgytelse. 'Blodtørstige menn' er mer forståelig og naturlig på norsk."
+      }
+    ]
   },
   {
     "bookId": 19,
     "chapterId": 139,
     "verseId": 20,
-    "text": "De taler om deg med onde hensikter, dine fiender misbruker ditt navn."
+    "text": "De som nevner deg i ondsinnet hensikt og misbruker ditt navn til løgn.",
+    "versions": [
+      {
+        "text": "De taler om deg med onde hensikter, dine fiender misbruker ditt navn.",
+        "type": "error",
+        "severity": "major",
+        "explanation": "Det hebraiske 'nasa lashshav arekha' betyr bokstavelig 'opphøyer/bærer dine byer/fiender til forfengelighet/løgn'. Oversettelsen gjengir meningen rimelig, men 'dine fiender' er en tolkning av det vanskelige 'arekha'. Større problem: 'nasa lashshav' peker mot å misbruke (Guds navn) til løgn/tomhet, ikke bare generelt 'misbruke ditt navn'. Forslaget gjør koblingen til falskhet tydeligere."
+      }
+    ]
   },
   {
     "bookId": 19,
@@ -135,7 +157,15 @@
     "bookId": 19,
     "chapterId": 139,
     "verseId": 22,
-    "text": "Jeg hater dem med fullt alvor, de er blitt mine fiender."
+    "text": "Med et fullkomment hat hater jeg dem, de er blitt mine fiender.",
+    "versions": [
+      {
+        "text": "Jeg hater dem med fullt alvor, de er blitt mine fiender.",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "Det hebraiske 'taklit sin'ah' betyr 'fullkomment/ytterste hat' – et hat som er totalt og komplett. 'Fullt alvor' er en mildere gjengivelse som mister intensiteten i det hebraiske uttrykket. 'Fullkomment hat' gjengir den hebraiske superlativkonstruksjonen mer presist."
+      }
+    ]
   },
   {
     "bookId": 19,
@@ -147,6 +177,14 @@
     "bookId": 19,
     "chapterId": 139,
     "verseId": 24,
-    "text": "Se om det er noen smertens vei i meg, og led meg på evighetens vei."
+    "text": "Se om det er noen vei til smerte i meg, og led meg på den evige veien.",
+    "versions": [
+      {
+        "text": "Se om det er noen smertens vei i meg, og led meg på evighetens vei.",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "'Derekh-otsev' kan bety 'avguderiets vei' eller 'smertens/avvikelsens vei' – altså en vei som leder til smerte/synd, ikke 'smertens vei' (som kan misforstås som en vei av lidelse). Også 'evighetens vei' er litt abstrakt; 'den evige veien' er mer naturlig norsk bokmål."
+      }
+    ]
   }
 ]

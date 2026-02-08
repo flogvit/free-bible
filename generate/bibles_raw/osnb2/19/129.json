@@ -3,11 +3,17 @@
     "bookId": 19,
     "chapterId": 129,
     "verseId": 1,
-    "text": "Mye har de trengt meg fra min ungdom av – så skal Israel si.",
+    "text": "En sang ved oppgangen. Mye har de trengt meg fra min ungdom av – så skal Israel si.",
     "versions": [
       {
         "text": "En sang ved festreisene. Hardt har de trengt meg fra min ungdom av – så skal Israel si.",
         "explanation": "Det hebraiske 'rabbat' betyr 'mye/ofte/mange ganger' snarere enn 'hardt'. Det beskriver hyppighet/omfang mer enn intensitet. 'Mye' gir bedre gjengivelse av grunnteksten."
+      },
+      {
+        "text": "Mye har de trengt meg fra min ungdom av – så skal Israel si.",
+        "type": "error",
+        "severity": "major",
+        "explanation": "Overskriften 'שִׁיר הַמַּעֲלוֹת' (Sang ved oppgangen/oppgangene) mangler i gjeldende versjon. Den ble fjernet i forrige revisjon, men endringsloggen sier bare at 'rabbat' ble endret fra 'hardt' til 'mye'. Fjerningen av salmens overskrift ser ut som en utilsiktet utelatelse, da dette er standardoverskrift for Salme 120–134."
       }
     ]
   },
@@ -45,7 +51,15 @@
     "bookId": 19,
     "chapterId": 129,
     "verseId": 6,
-    "text": "La dem bli som gress på takene, som visner før det rykkes opp."
+    "text": "La dem bli som gress på takene, som visner før det vokser opp.",
+    "versions": [
+      {
+        "text": "La dem bli som gress på takene, som visner før det rykkes opp.",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "Hebraisk 'קַדְמַת שָׁלַף' betyr 'før det vokser opp / skyter i vekst', ikke 'før det rykkes opp'. Verbet 'שָׁלַף' kan bety 'trekke ut', men i konteksten handler det om gress som tørker før det rekker å vokse seg stort – poenget er at det visner allerede før det skyter opp ordentlig. 'Rykkes opp' gir inntrykk av at noen fjerner det, mens bildet er at det visner av seg selv."
+      }
+    ]
   },
   {
     "bookId": 19,

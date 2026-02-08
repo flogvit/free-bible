@@ -45,7 +45,15 @@
     "bookId": 19,
     "chapterId": 118,
     "verseId": 7,
-    "text": "Herren er med meg, han er min hjelper, jeg skal se med fryd på mine fiender."
+    "text": "Herren er med meg som min hjelper, og jeg skal se på mine fiender.",
+    "versions": [
+      {
+        "text": "Herren er med meg, han er min hjelper, jeg skal se med fryd på mine fiender.",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "Hebraisk 'אֶרְאֶה בְשֹׂנְאָי' betyr 'jeg skal se på mine fiender' – underforstått se deres nederlag. 'Med fryd' er et tillegg som ikke finnes i originalteksten. Det hebraiske uttrykket er bevisst kort og ladet; å legge til 'med fryd' er en tolkning som ikke bør stå i oversettelsen."
+      }
+    ]
   },
   {
     "bookId": 19,
@@ -75,13 +83,29 @@
     "bookId": 19,
     "chapterId": 118,
     "verseId": 11,
-    "text": "De omringet meg på alle kanter, i Herrens navn slo jeg dem ned."
+    "text": "De omringet meg, ja, omringet meg, i Herrens navn skar jeg dem ned.",
+    "versions": [
+      {
+        "text": "De omringet meg på alle kanter, i Herrens navn slo jeg dem ned.",
+        "type": "error",
+        "severity": "major",
+        "explanation": "Hebraisk 'סַבּוּנִי גַם־סְבָבוּנִי' betyr bokstavelig 'de omringet meg, ja, omringet meg' – en intensiverende gjentagelse. 'På alle kanter' er en fri tolkning. Dessuten bør verbet her være konsistent med vers 10 som ble endret til 'skar jeg dem ned' (אֲמִילַם). Vers 10 ble bevisst endret fra 'slo' til 'skar', men vers 11 og 12 ble ikke oppdatert tilsvarende."
+      }
+    ]
   },
   {
     "bookId": 19,
     "chapterId": 118,
     "verseId": 12,
-    "text": "De omringet meg som bier, men sluknet som ild i tornekratt. I Herrens navn slo jeg dem ned."
+    "text": "De omringet meg som bier, men sluknet som ild i tornekratt. I Herrens navn skar jeg dem ned.",
+    "versions": [
+      {
+        "text": "De omringet meg som bier, men sluknet som ild i tornekratt. I Herrens navn slo jeg dem ned.",
+        "type": "error",
+        "severity": "major",
+        "explanation": "For konsistens med vers 10, der verbet 'אֲמִילַם' bevisst ble endret til 'skar jeg dem ned', bør samme verb brukes her i vers 12 som har nøyaktig samme hebraiske uttrykk."
+      }
+    ]
   },
   {
     "bookId": 19,
