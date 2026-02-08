@@ -5,7 +5,7 @@ import path from 'path';
 dotenv.config()
 
 import Anthropic from '@anthropic-ai/sdk';
-import {bibles, books, anthropicModel, normalizeLanguage, getLanguageCode} from "./constants.js";
+import {bibles, books, anthropicModel, maxTokens, normalizeLanguage, getLanguageCode} from "./constants.js";
 
 const anthropic = new Anthropic();
 
@@ -190,7 +190,7 @@ ${formattedWords}`;
 async function doAnthropicCall(content, useSystemPrompt = false) {
     const options = {
         model: anthropicModel,
-        max_tokens: 8192,
+        max_tokens: maxTokens,
         messages: [
             {
                 role: "user",

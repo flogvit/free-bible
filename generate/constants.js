@@ -4,7 +4,8 @@ export const bibles = {
     "osnn1": "Norwegian nynorsk",
 }
 
-export const anthropicModel = "claude-opus-4-5-20251101";
+export const anthropicModel = "claude-opus-4-6";
+export const maxTokens = 16384;
 
 // Language name to code mapping
 export const languageCodes = {

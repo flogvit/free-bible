@@ -8,7 +8,7 @@ const __dirname = path.dirname(__filename);
 dotenv.config()
 
 import Anthropic from '@anthropic-ai/sdk';
-import {anthropicModel} from "./constants.js";
+import {anthropicModel, maxTokens} from "./constants.js";
 
 const anthropic = new Anthropic({
     apiKey: process.env.ANTHROPIC_API_KEY
@@ -88,7 +88,7 @@ const eras = {
 async function doAnthropicCall(content) {
     return anthropic.messages.create({
         model: anthropicModel,
-        max_tokens: 8192,
+        max_tokens: maxTokens,
         system: `You are a biblical scholar assistant. You MUST respond with valid JSON only.
 Never include explanations, comments, or any text outside the JSON structure.
 All text content should be in Norwegian bokmål.`,

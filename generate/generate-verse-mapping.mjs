@@ -20,7 +20,7 @@ import dotenv from 'dotenv';
 import * as fs from 'fs';
 import path from 'path';
 import { fileURLToPath } from 'url';
-import { books } from './constants.js';
+import { books, maxTokens } from './constants.js';
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
@@ -223,7 +223,7 @@ If dst is null (no match), use: { "src": [chapter, verse], "dst": null }`;
 
   const response = await anthropic.messages.create({
     model: 'claude-sonnet-4-5-20250929',
-    max_tokens: 4096,
+    max_tokens: maxTokens,
     messages: [{ role: 'user', content: prompt }],
   });
 

@@ -8,7 +8,7 @@ const __dirname = path.dirname(__filename);
 dotenv.config()
 
 import Anthropic from '@anthropic-ai/sdk';
-import {books, anthropicModel, normalizeLanguage, getLanguageCode, getBookName} from "./constants.js";
+import {books, anthropicModel, maxTokens, normalizeLanguage, getLanguageCode, getBookName} from "./constants.js";
 import {getOriginalVerse, getOriginalChapter, getRef} from "./lib.js";
 
 const anthropic = new Anthropic({
@@ -154,7 +154,7 @@ ${refsJson}`;
 async function doAnthropicCall(content) {
     return anthropic.messages.create({
         model: anthropicModel,
-        max_tokens: 8192,
+        max_tokens: maxTokens,
         system: "You are a JSON-only assistant. You MUST respond with valid JSON only. Never include explanations, comments, or any text outside the JSON structure. Follow the exact field names specified in the prompt.",
         messages: [
             {
