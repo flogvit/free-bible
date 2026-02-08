@@ -11,6 +11,74 @@ const anthropic = new Anthropic();
 
 const MAX_RETRIES = 3;
 
+// --- JSON Schemas for structured outputs ---
+
+const WORD_EXPLANATION_SCHEMA = {
+    type: "object",
+    properties: {
+        verses: {
+            type: "array",
+            items: {
+                type: "object",
+                properties: {
+                    bookId: {type: "integer"},
+                    chapterId: {type: "integer"},
+                    verseId: {type: "integer"},
+                    words: {
+                        type: "array",
+                        items: {
+                            type: "object",
+                            properties: {
+                                word: {type: "string"},
+                                pronunciation: {type: "string"},
+                                wordId: {type: "integer"},
+                                original: {type: "string"},
+                                explanation: {type: "string"}
+                            },
+                            required: ["word", "wordId", "explanation"],
+                            additionalProperties: false
+                        }
+                    }
+                },
+                required: ["bookId", "chapterId", "verseId", "words"],
+                additionalProperties: false
+            }
+        }
+    },
+    required: ["verses"],
+    additionalProperties: false
+};
+
+const WORD_PROOFREAD_SCHEMA = {
+    type: "object",
+    properties: {
+        issues: {
+            type: "array",
+            items: {
+                type: "object",
+                properties: {
+                    wordId: {type: "integer"},
+                    type: {type: "string", enum: ["error", "suggestion", "theological", "grammar"]},
+                    severity: {type: "string", enum: ["critical", "major", "minor"]},
+                    currentExplanation: {type: "string"},
+                    suggestedExplanation: {type: "string"},
+                    currentPronunciation: {type: "string"},
+                    suggestedPronunciation: {type: "string"},
+                    currentOriginal: {type: "string"},
+                    suggestedOriginal: {type: "string"},
+                    reason: {type: "string"}
+                },
+                required: ["wordId", "type", "severity", "reason"],
+                additionalProperties: false
+            }
+        },
+        summary: {type: "string"},
+        score: {type: "integer"}
+    },
+    required: ["issues", "summary", "score"],
+    additionalProperties: false
+};
+
 // Original sources (not translations)
 const ORIGINAL_SOURCES = ['tanach', 'sblgnt'];
 
@@ -31,7 +99,7 @@ function getOriginalSource(bookId) {
 // Word explanation prompt for ORIGINAL language texts (tanach/sblgnt)
 function getOriginalWordExplanationPrompt(explanationLanguage, originalLanguage, bookId, chapterId, verseId, originalText) {
     return `You will be given a verse in the original ${originalLanguage} language.
-You should explain every word in the text. Your response must be in JSON format, and only JSON.
+You should explain every word in the text.
 Do not include punctuation marks as separate words, but include particles and prefixes that carry meaning.
 
 IMPORTANT GUIDELINES FOR EXPLANATIONS:
@@ -47,22 +115,7 @@ IMPORTANT GUIDELINES FOR EXPLANATIONS:
 - Keep explanations concise but informative (1-3 sentences)
 - Use different opening phrases like: "Betyr...", "Refererer til...", "Navnet på...", "Et verb som...", "Brukes her for å...", "Uttales...", etc.
 
-JSON format:
-[
-    {
-        "bookId": ${bookId},
-        "chapterId": ${chapterId},
-        "verseId": ${verseId},
-        "words": [
-            {
-                "word": "<${originalLanguage} word>",
-                "pronunciation": "<pronunciation guide>",
-                "wordId": <position in verse>,
-                "explanation": "<varied, natural explanation in ${explanationLanguage}>"
-            }
-        ]
-    }
-]
+Return a JSON object with a "verses" array containing each verse with its word explanations.
 
 ${originalLanguage} text:
 ${originalText}`;
@@ -71,7 +124,7 @@ ${originalText}`;
 // Word explanation prompt for TRANSLATED texts (osnb1, osnb2, etc)
 function getTranslationWordExplanationPrompt(language, originalLanguage, bookId, chapterId, verseId, originalText, translatedText) {
     return `You will be given a verse in the original ${originalLanguage} language and a translation.
-You should explain every word in the translated text. Your response must be in JSON format, and only JSON.
+You should explain every word in the translated text.
 Do not include punctuation, commas etc as words.
 
 IMPORTANT GUIDELINES FOR EXPLANATIONS:
@@ -86,22 +139,7 @@ IMPORTANT GUIDELINES FOR EXPLANATIONS:
 - Keep explanations concise but informative (1-2 sentences)
 - Use different opening phrases like: "Betyr...", "Refererer til...", "Navnet på...", "Et verb som...", "Brukes her for å...", etc.
 
-JSON format:
-[
-    {
-        "bookId": ${bookId},
-        "chapterId": ${chapterId},
-        "verseId": ${verseId},
-        "words": [
-            {
-                "word": "<translated word>",
-                "wordId": <position in verse>,
-                "original": "<original ${originalLanguage} word(s)>",
-                "explanation": "<varied, natural explanation>"
-            }
-        ]
-    }
-]
+Return a JSON object with a "verses" array containing each verse with its word explanations.
 
 Original ${originalLanguage} text:
 ${originalText}
@@ -148,27 +186,6 @@ ${isOriginalSource ? '- Missing or wrong pronunciation guides (marked as N/A mea
 - Explanations that are too repetitive in structure
 ${isOriginalSource ? '- IMPORTANT: If pronunciation is "N/A", always provide the correct pronunciation!' : ''}
 
-Return your response as JSON only, in this format:
-{
-    "issues": [
-        {
-            "wordId": 1,
-            "type": "error|suggestion|theological|grammar",
-            "severity": "critical|major|minor",
-            "currentExplanation": "the current explanation",
-            "suggestedExplanation": "the improved explanation",
-${isOriginalSource
-    ? `            "currentPronunciation": "current pronunciation (if changing)",
-            "suggestedPronunciation": "corrected pronunciation (if changing)",`
-    : `            "currentOriginal": "current original word (if changing)",
-            "suggestedOriginal": "corrected original word (if changing)",`}
-            "reason": "why this change is recommended"
-        }
-    ],
-    "summary": "Overall assessment of the explanations quality",
-    "score": 1-10
-}
-
 IMPORTANT:
 - Some words have VERSION HISTORY showing previous revisions. Read the history carefully.
 - NEVER suggest text that matches or is similar to ANY previous version in the history.
@@ -176,7 +193,7 @@ IMPORTANT:
 - If a word has 3+ revisions, it has been extensively reviewed - only suggest changes for CRITICAL errors.
 - If the current explanation is acceptable, SKIP that word entirely - do not include it in issues.
 
-If there are no issues, return: {"issues": [], "summary": "All explanations are accurate and well-written", "score": 10}
+If there are no issues, return an empty issues array with a summary and score of 10.
 
 Book ID: ${bookId}, Chapter: ${chapterId}, Verse: ${verseId}
 
@@ -187,7 +204,7 @@ Current word explanations:
 ${formattedWords}`;
 }
 
-async function doAnthropicCall(content, useSystemPrompt = false) {
+async function doAnthropicCall(content, schema) {
     const options = {
         model: anthropicModel,
         max_tokens: maxTokens,
@@ -199,115 +216,16 @@ async function doAnthropicCall(content, useSystemPrompt = false) {
         ]
     };
 
-    if (useSystemPrompt) {
-        options.system = "You are a JSON-only assistant. You MUST respond with valid JSON only. Never include explanations, comments, or any text outside the JSON structure.";
+    if (schema) {
+        options.output_config = {
+            format: {
+                type: "json_schema",
+                schema
+            }
+        };
     }
 
     return anthropic.messages.create(options);
-}
-
-function parseJsonResponse(text) {
-    let cleaned = text
-        .replace(/```json\s*/g, '')
-        .replace(/```\s*/g, '')
-        .trim();
-
-    const arrayMatch = cleaned.match(/\[[\s\S]*]/);
-    if (arrayMatch) {
-        cleaned = arrayMatch[0];
-    }
-
-    const objectMatch = cleaned.match(/\{[\s\S]*}/);
-    if (!arrayMatch && objectMatch) {
-        cleaned = objectMatch[0];
-    }
-
-    try {
-        return JSON.parse(cleaned);
-    } catch (e) {
-        // Continue to repair attempts
-    }
-
-    // Repair attempt: fix unescaped quotes
-    let repaired = cleaned.replace(/"([^"]*?)": "([^"]*?)"/g, (match, key, value) => {
-        const fixedValue = value.replace(/(?<!\\)"/g, '\\"');
-        return `"${key}": "${fixedValue}"`;
-    });
-
-    try {
-        return JSON.parse(repaired);
-    } catch (e) {
-        // Continue
-    }
-
-    // Repair attempt: handle unicode quotes
-    repaired = cleaned
-        .replace(/[\u201C\u201D\u201E\u201F\u2033\u2036]/g, '"')
-        .replace(/[\u2018\u2019\u201A\u201B\u2032\u2035]/g, "'");
-
-    try {
-        return JSON.parse(repaired);
-    } catch (e) {
-        // Continue
-    }
-
-    // Repair attempt: character-by-character repair
-    repaired = repairJsonStrings(cleaned);
-
-    try {
-        return JSON.parse(repaired);
-    } catch (e) {
-        throw new Error(`JSON parse failed. Original text (first 500 chars): ${cleaned.substring(0, 500)}`);
-    }
-}
-
-function repairJsonStrings(json) {
-    let result = '';
-    let inString = false;
-    let i = 0;
-
-    while (i < json.length) {
-        const char = json[i];
-        const nextChar = json[i + 1];
-
-        if (!inString) {
-            if (char === '"') {
-                inString = true;
-            }
-            result += char;
-        } else {
-            if (char === '\\') {
-                result += char;
-                if (nextChar) {
-                    result += nextChar;
-                    i++;
-                }
-            } else if (char === '"') {
-                const afterQuote = json.substring(i + 1).trimStart();
-                if (afterQuote.startsWith(',') ||
-                    afterQuote.startsWith('}') ||
-                    afterQuote.startsWith(']') ||
-                    afterQuote.startsWith(':') ||
-                    afterQuote.startsWith('"')) {
-                    inString = false;
-                    result += char;
-                } else {
-                    result += '\\"';
-                }
-            } else if (char === '\n') {
-                result += '\\n';
-            } else if (char === '\r') {
-                result += '\\r';
-            } else if (char === '\t') {
-                result += '\\t';
-            } else {
-                result += char;
-            }
-        }
-        i++;
-    }
-
-    return result;
 }
 
 // Detect hallucinated English words that shouldn't appear in Norwegian/other translations
@@ -373,14 +291,17 @@ function validateWordExplanationResult(result) {
     return true;
 }
 
-async function doAnthropicCallWithRetry(content, context = '', useSystemPrompt = false, validate = true) {
+async function doAnthropicCallWithRetry(content, schema, context = '', validate = true) {
     let lastError;
 
     for (let attempt = 1; attempt <= MAX_RETRIES; attempt++) {
         try {
-            const completion = await doAnthropicCall(content, useSystemPrompt);
+            const completion = await doAnthropicCall(content, schema);
+            if (completion.stop_reason === 'max_tokens') {
+                throw new Error(`Response truncated (hit max_tokens limit of ${maxTokens})`);
+            }
             const responseText = completion.content[0].text;
-            const result = parseJsonResponse(responseText);
+            const result = JSON.parse(responseText);
 
             // Validate for hallucinations if requested
             if (validate) {
@@ -475,7 +396,7 @@ async function generateWordExplanations(bible, bookId, chapterId, verseId, filen
     }
 
     const shouldValidate = !isEnglishLanguage(language);
-    const result = await doAnthropicCallWithRetry(content, `${bookId}:${chapterId}:${verseId}`, true, shouldValidate);
+    const result = await doAnthropicCallWithRetry(content, WORD_EXPLANATION_SCHEMA, `${bookId}:${chapterId}:${verseId}`, shouldValidate);
 
     const dir = path.dirname(filename);
     if (!fs.existsSync(dir)) {
@@ -483,7 +404,7 @@ async function generateWordExplanations(bible, bookId, chapterId, verseId, filen
     }
 
     console.log("Writing", filename);
-    fs.writeFileSync(filename, JSON.stringify(result, null, 2));
+    fs.writeFileSync(filename, JSON.stringify(result.verses, null, 2));
 }
 
 async function proofreadVerse(bible, bookId, chapterId, verseId, filename, saveToFile = true, explanationLanguage = 'Norwegian bokmål') {
@@ -524,7 +445,7 @@ async function proofreadVerse(bible, bookId, chapterId, verseId, filename, saveT
     );
 
     const shouldValidate = !isEnglishLanguage(language);
-    const result = await doAnthropicCallWithRetry(content, `proofread ${bookId}:${chapterId}:${verseId}`, false, shouldValidate);
+    const result = await doAnthropicCallWithRetry(content, WORD_PROOFREAD_SCHEMA, `proofread ${bookId}:${chapterId}:${verseId}`, shouldValidate);
 
     // Save proofread results if requested
     if (saveToFile) {

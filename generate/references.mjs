@@ -17,6 +17,68 @@ const anthropic = new Anthropic({
 
 const MAX_RETRIES = 3;
 
+const REFERENCE_SCHEMA = {
+    type: "object",
+    properties: {
+        references: {
+            type: "array",
+            items: {
+                type: "object",
+                properties: {
+                    bookId: {type: "integer"},
+                    chapterId: {type: "integer"},
+                    fromVerseId: {type: "integer"},
+                    toVerseId: {type: "integer"},
+                    text: {type: "string"}
+                },
+                required: ["bookId", "chapterId", "fromVerseId", "toVerseId", "text"],
+                additionalProperties: false
+            }
+        }
+    },
+    required: ["references"],
+    additionalProperties: false
+};
+
+const REFERENCE_PROOFREAD_SCHEMA = {
+    type: "object",
+    properties: {
+        issues: {
+            type: "array",
+            items: {
+                type: "object",
+                properties: {
+                    type: {type: "string", enum: ["error", "missing", "irrelevant", "text", "self-reference"]},
+                    severity: {type: "string", enum: ["critical", "major", "minor"]},
+                    reference: {type: "string"},
+                    explanation: {type: "string"}
+                },
+                required: ["type", "severity", "explanation"],
+                additionalProperties: false
+            }
+        },
+        summary: {type: "string"},
+        score: {type: "integer"},
+        revisedReferences: {
+            type: "array",
+            items: {
+                type: "object",
+                properties: {
+                    bookId: {type: "integer"},
+                    chapterId: {type: "integer"},
+                    fromVerseId: {type: "integer"},
+                    toVerseId: {type: "integer"},
+                    text: {type: "string"}
+                },
+                required: ["bookId", "chapterId", "fromVerseId", "toVerseId", "text"],
+                additionalProperties: false
+            }
+        }
+    },
+    required: ["issues", "summary", "score", "revisedReferences"],
+    additionalProperties: false
+};
+
 function getReferencePrompt(language, bookId, chapterId, verseId, originalText) {
     const bookName = getBookName(bookId, language);
     const ref = `${bookName} ${chapterId}:${verseId}`;
@@ -31,16 +93,7 @@ GT-referanser er fra tanach, og NT er fra SBLGNT.
 Den ${originalLanguage}e originalteksten for verset er:
 ${originalText}
 
-Svar kun med JSON. Hvis du ikke finner kryssreferanser, bruk tom array.
-[{
-    "bookId": <bookId som tall>,
-    "chapterId": <chapterId som tall>,
-    "fromVerseId": <verseId som tall>,
-    "toVerseId": <verseId som tall>,
-    "text": <Forklar hvorfor dette er en kryssreferanse, men ikke start med "Dette er en kryssreferanse fordi">
-},
-...
-]`;
+Returner et JSON-objekt med en 'references'-array. Hvert element har: bookId (tall), chapterId (tall), fromVerseId (tall), toVerseId (tall), text (forklar hvorfor dette er en kryssreferanse, men ikke start med "Dette er en kryssreferanse fordi"). Hvis du ikke finner kryssreferanser, bruk tom array.`;
     } else if (langCode === 'nn') {
         return `Skriv kryssreferansar for ${ref} på norsk nynorsk.
 GT-referansar er frå tanach, og NT er frå SBLGNT.
@@ -48,16 +101,7 @@ GT-referansar er frå tanach, og NT er frå SBLGNT.
 Den ${originalLanguage}e originalteksten for verset er:
 ${originalText}
 
-Svar berre med JSON. Dersom du ikkje finn kryssreferansar, bruk tom array.
-[{
-    "bookId": <bookId som tal>,
-    "chapterId": <chapterId som tal>,
-    "fromVerseId": <verseId som tal>,
-    "toVerseId": <verseId som tal>,
-    "text": <Forklar kvifor dette er ein kryssreferanse, men ikkje start med "Dette er ein kryssreferanse fordi">
-},
-...
-]`;
+Returner eit JSON-objekt med ein 'references'-array. Kvart element har: bookId (tal), chapterId (tal), fromVerseId (tal), toVerseId (tal), text (forklar kvifor dette er ein kryssreferanse, men ikkje start med "Dette er ein kryssreferanse fordi"). Dersom du ikkje finn kryssreferansar, bruk tom array.`;
     } else {
         return `Write cross-references for ${ref} in ${language}.
 OT references are from tanach, and NT is from SBLGNT.
@@ -65,16 +109,7 @@ OT references are from tanach, and NT is from SBLGNT.
 The original ${originalLanguageEn} text for the verse is:
 ${originalText}
 
-Respond with JSON only. If you find no cross-references, use an empty array.
-[{
-    "bookId": <bookId as number>,
-    "chapterId": <chapterId as number>,
-    "fromVerseId": <verseId as number>,
-    "toVerseId": <verseId as number>,
-    "text": <Explain why this is a cross-reference, but do not start with "This is a cross-reference because">
-},
-...
-]`;
+Return a JSON object with a 'references' array. Each element has: bookId (number), chapterId (number), fromVerseId (number), toVerseId (number), text (explain why this is a cross-reference, but do not start with "This is a cross-reference because"). If you find no cross-references, use an empty array.`;
     }
 }
 
@@ -123,21 +158,6 @@ You are given the original ${originalLanguageEn} text to verify accuracy.`;
 
 ${taskDescription}
 
-Return your response as JSON only, in this format:
-{
-    "issues": [
-        {
-            "type": "error|missing|irrelevant|text|self-reference",
-            "severity": "critical|major|minor",
-            "reference": "bookId:chapterId:fromVerseId-toVerseId (if applicable)",
-            "explanation": "why this is an issue"
-        }
-    ],
-    "summary": "Overall assessment of the cross-references quality",
-    "score": 1-10,
-    "revisedReferences": [if there are issues, provide the complete revised references array here, otherwise empty array]
-}
-
 IMPORTANT:
 - If the current references are good, return an empty issues array and empty revisedReferences array
 - The revisedReferences must use the same format: [{bookId, chapterId, fromVerseId, toVerseId, text}]
@@ -151,64 +171,28 @@ Current cross-references:
 ${refsJson}`;
 }
 
-async function doAnthropicCall(content) {
-    return anthropic.messages.create({
+async function doAnthropicCall(content, schema) {
+    const options = {
         model: anthropicModel,
         max_tokens: maxTokens,
-        system: "You are a JSON-only assistant. You MUST respond with valid JSON only. Never include explanations, comments, or any text outside the JSON structure. Follow the exact field names specified in the prompt.",
-        messages: [
-            {
-                role: "user",
-                content
-            }
-        ]
-    });
+        messages: [{role: "user", content}]
+    };
+    if (schema) {
+        options.output_config = {format: {type: "json_schema", schema}};
+    }
+    return anthropic.messages.create(options);
 }
 
-function parseJsonResponse(text) {
-    let cleaned = text
-        .replace(/```json\s*/g, '')
-        .replace(/```\s*/g, '')
-        .trim();
-
-    // Try to find array (for generation) or object (for proofread)
-    const objectMatch = cleaned.match(/\{[\s\S]*}/);
-    const arrayMatch = cleaned.match(/\[[\s\S]*]/);
-
-    // Prefer object match for proofread responses, array for generation
-    if (objectMatch && cleaned.trimStart().startsWith('{')) {
-        cleaned = objectMatch[0];
-    } else if (arrayMatch && cleaned.trimStart().startsWith('[')) {
-        cleaned = arrayMatch[0];
-    } else if (objectMatch) {
-        cleaned = objectMatch[0];
-    } else if (arrayMatch) {
-        cleaned = arrayMatch[0];
-    }
-
-    try {
-        return JSON.parse(cleaned);
-    } catch (e) {
-        // Repair attempt: handle unicode quotes
-        let repaired = cleaned
-            .replace(/[\u201C\u201D\u201E\u201F\u2033\u2036]/g, '"')
-            .replace(/[\u2018\u2019\u201A\u201B\u2032\u2035]/g, "'");
-
-        try {
-            return JSON.parse(repaired);
-        } catch (e) {
-            throw new Error(`JSON parse failed. Original text (first 500 chars): ${cleaned.substring(0, 500)}`);
-        }
-    }
-}
-
-async function doAnthropicCallWithRetry(content, context = '') {
+async function doAnthropicCallWithRetry(content, schema, context = '') {
     let lastError;
 
     for (let attempt = 1; attempt <= MAX_RETRIES; attempt++) {
         try {
-            const completion = await doAnthropicCall(content);
-            return completion.content[0].text;
+            const completion = await doAnthropicCall(content, schema);
+            if (completion.stop_reason === 'max_tokens') {
+                throw new Error('Response truncated due to max_tokens limit');
+            }
+            return JSON.parse(completion.content[0].text);
         } catch (error) {
             lastError = error;
             if (attempt < MAX_RETRIES) {
@@ -269,21 +253,20 @@ async function generateReferences(language, bookId, chapterId, verseId, filename
     const prompt = getReferencePrompt(language, bookId, chapterId, verseId, verseOrg.text);
 
     console.log(`Generating references for ${bookName} ${chapterId}:${verseId}...`);
-    const responseText = await doAnthropicCallWithRetry(prompt, `${bookId}:${chapterId}:${verseId}`);
-    let result = parseJsonResponse(responseText);
+    const result = await doAnthropicCallWithRetry(prompt, REFERENCE_SCHEMA, `${bookId}:${chapterId}:${verseId}`);
 
-    result = normalizeReferences(result);
+    const references = normalizeReferences(result.references);
 
     const verse = {
         bookId,
         chapterId,
         verseId,
-        references: result
+        references
     };
 
     ensureDir(filename);
     fs.writeFileSync(filename, JSON.stringify(verse, null, 2));
-    console.log(`  Saved: ${filename} (${result.length} references)`);
+    console.log(`  Saved: ${filename} (${references.length} references)`);
 }
 
 async function proofreadReferences(language, bookId, chapterId, verseId, refFilename, saveToFile = true) {
@@ -310,8 +293,7 @@ async function proofreadReferences(language, bookId, chapterId, verseId, refFile
     console.log(`Proofreading references for ${bookName} ${chapterId}:${verseId}...`);
 
     const prompt = getProofreadPrompt(language, bookId, chapterId, verseId, verseOrg.text, currentReferences);
-    const responseText = await doAnthropicCallWithRetry(prompt, `proofread ${bookId}:${chapterId}:${verseId}`);
-    const result = parseJsonResponse(responseText);
+    const result = await doAnthropicCallWithRetry(prompt, REFERENCE_PROOFREAD_SCHEMA, `proofread ${bookId}:${chapterId}:${verseId}`);
 
     // Save proofread results if requested
     if (saveToFile) {

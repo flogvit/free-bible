@@ -85,20 +85,69 @@ const eras = {
     "early-church": "Den tidlige kirke"
 };
 
-async function doAnthropicCall(content) {
-    return anthropic.messages.create({
+const PERSON_SCHEMA = {
+    type: "object",
+    properties: {
+        id: {type: "string"},
+        name: {type: "string"},
+        title: {type: "string"},
+        era: {type: "string", enum: ["creation", "patriarchs", "exodus", "conquest", "judges", "united-kingdom", "divided-kingdom", "exile", "return", "intertestamental", "jesus", "early-church"]},
+        lifespan: {type: "string"},
+        summary: {type: "string"},
+        roles: {type: "array", items: {type: "string"}},
+        family: {
+            type: "object",
+            properties: {
+                father: {type: ["string", "null"]},
+                mother: {type: ["string", "null"]},
+                siblings: {type: "array", items: {type: "string"}},
+                spouse: {type: ["string", "null"]},
+                children: {type: "array", items: {type: "string"}}
+            },
+            required: ["father", "mother", "siblings", "spouse", "children"],
+            additionalProperties: false
+        },
+        relatedPersons: {type: "array", items: {type: "string"}},
+        keyEvents: {
+            type: "array",
+            items: {
+                type: "object",
+                properties: {
+                    title: {type: "string"},
+                    description: {type: "string"},
+                    verses: {
+                        type: "array",
+                        items: {
+                            type: "object",
+                            properties: {
+                                bookId: {type: "integer"},
+                                chapter: {type: "integer"},
+                                verses: {type: "array", items: {type: "integer"}}
+                            },
+                            required: ["bookId", "chapter", "verses"],
+                            additionalProperties: false
+                        }
+                    }
+                },
+                required: ["title", "description", "verses"],
+                additionalProperties: false
+            }
+        }
+    },
+    required: ["id", "name", "title", "era", "summary", "roles", "family", "relatedPersons", "keyEvents"],
+    additionalProperties: false
+};
+
+async function doAnthropicCall(content, schema) {
+    const options = {
         model: anthropicModel,
         max_tokens: maxTokens,
-        system: `You are a biblical scholar assistant. You MUST respond with valid JSON only.
-Never include explanations, comments, or any text outside the JSON structure.
-All text content should be in Norwegian bokmål.`,
-        messages: [
-            {
-                role: "user",
-                content
-            }
-        ]
-    });
+        messages: [{ role: "user", content }]
+    };
+    if (schema) {
+        options.output_config = { format: { type: "json_schema", schema } };
+    }
+    return anthropic.messages.create(options);
 }
 
 async function generatePerson(personConfig) {
@@ -149,17 +198,11 @@ Important guidelines:
 5. Be historically and biblically accurate
 6. Include both OT and NT references where relevant (e.g., for Abraham include Hebrews references)
 
-Response ONLY with the JSON, no other text.`;
+`;
 
     try {
-        const completion = await doAnthropicCall(prompt);
-        let responseText = completion.content[0].text;
-
-        // Clean up potential markdown formatting
-        responseText = responseText.replace(/```json\n?/g, '').replace(/```\n?/g, '').trim();
-
-        // Validate JSON
-        const personData = JSON.parse(responseText);
+        const completion = await doAnthropicCall(prompt, PERSON_SCHEMA);
+        const personData = JSON.parse(completion.content[0].text);
 
         // Write to file
         fs.writeFileSync(outputPath, JSON.stringify(personData, null, 2));

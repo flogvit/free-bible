@@ -16,6 +16,32 @@ const anthropic = new Anthropic({
 
 const MAX_RETRIES = 3;
 
+const PROOFREAD_SUMMARY_SCHEMA = {
+    type: "object",
+    properties: {
+        issues: {
+            type: "array",
+            items: {
+                type: "object",
+                properties: {
+                    type: {type: "string", enum: ["error", "suggestion", "theological", "grammar", "missing", "structure"]},
+                    severity: {type: "string", enum: ["critical", "major", "minor"]},
+                    current: {type: "string"},
+                    suggested: {type: "string"},
+                    explanation: {type: "string"}
+                },
+                required: ["type", "severity", "current", "suggested", "explanation"],
+                additionalProperties: false
+            }
+        },
+        summary: {type: "string"},
+        score: {type: "integer"},
+        revisedSummary: {type: "string"}
+    },
+    required: ["issues", "summary", "score", "revisedSummary"],
+    additionalProperties: false
+};
+
 // Get original source based on book ID
 function getOriginalSource(bookId) {
     return bookId <= 39 ? 'tanach' : 'sblgnt';
@@ -202,22 +228,6 @@ Your task is to review the summary and identify:
 
 ${structureReminder}
 
-Return your response as JSON only, in this format:
-{
-    "issues": [
-        {
-            "type": "error|suggestion|theological|grammar|missing|structure",
-            "severity": "critical|major|minor",
-            "current": "the problematic text or section",
-            "suggested": "the corrected or improved text",
-            "explanation": "why this change is recommended"
-        }
-    ],
-    "summary": "Overall assessment of the summary quality",
-    "score": 1-10,
-    "revisedSummary": "If there are issues, provide the complete revised summary here. If no issues, leave empty."
-}
-
 IMPORTANT:
 - If the current summary is good and has no issues, return an empty issues array and no revisedSummary
 - The revisedSummary MUST use the required structure
@@ -230,53 +240,29 @@ Current summary:
 ${currentSummary}`;
 }
 
-async function doAnthropicCall(content) {
-    return anthropic.messages.create({
+async function doAnthropicCall(content, schema) {
+    const options = {
         model: anthropicModel,
         max_tokens: maxTokens,
-        messages: [
-            {
-                role: "user",
-                content
-            }
-        ]
-    });
+        messages: [{ role: "user", content }]
+    };
+    if (schema) {
+        options.output_config = { format: { type: "json_schema", schema } };
+    }
+    return anthropic.messages.create(options);
 }
 
-function parseJsonResponse(text) {
-    let cleaned = text
-        .replace(/```json\s*/g, '')
-        .replace(/```\s*/g, '')
-        .trim();
-
-    const objectMatch = cleaned.match(/\{[\s\S]*}/);
-    if (objectMatch) {
-        cleaned = objectMatch[0];
-    }
-
-    try {
-        return JSON.parse(cleaned);
-    } catch (e) {
-        // Repair attempt: handle unicode quotes
-        let repaired = cleaned
-            .replace(/[\u201C\u201D\u201E\u201F\u2033\u2036]/g, '"')
-            .replace(/[\u2018\u2019\u201A\u201B\u2032\u2035]/g, "'");
-
-        try {
-            return JSON.parse(repaired);
-        } catch (e) {
-            throw new Error(`JSON parse failed. Original text (first 500 chars): ${cleaned.substring(0, 500)}`);
-        }
-    }
-}
-
-async function doAnthropicCallWithRetry(content, context = '') {
+async function doAnthropicCallWithRetry(content, context = '', schema = null) {
     let lastError;
 
     for (let attempt = 1; attempt <= MAX_RETRIES; attempt++) {
         try {
-            const completion = await doAnthropicCall(content);
-            return completion.content[0].text;
+            const completion = await doAnthropicCall(content, schema);
+            if (completion.stop_reason === 'max_tokens') {
+                throw new Error(`Response truncated (hit ${maxTokens} token limit).`);
+            }
+            const text = completion.content[0].text;
+            return schema ? JSON.parse(text) : text;
         } catch (error) {
             lastError = error;
             if (attempt < MAX_RETRIES) {
@@ -348,8 +334,7 @@ async function proofreadBookSummary(language, bookId, summaryFilename, saveToFil
     console.log(`Proofreading summary for ${bookName}...`);
 
     const prompt = getProofreadPrompt(language, bookId, currentSummary, originalText);
-    const responseText = await doAnthropicCallWithRetry(prompt, `proofread book ${bookId}`);
-    const result = parseJsonResponse(responseText);
+    const result = await doAnthropicCallWithRetry(prompt, `proofread book ${bookId}`, PROOFREAD_SUMMARY_SCHEMA);
 
     // Save proofread results if requested
     if (saveToFile) {

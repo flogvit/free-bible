@@ -12,6 +12,57 @@ const anthropic = new Anthropic();
 const MAX_VERSES_PER_BATCH = 100;
 const MAX_PROOFREAD_CHARS = 20000; // Target max input chars per proofread batch
 
+r// --- JSON Schemas for structured outputs ---
+
+const TRANSLATION_SCHEMA = {
+    type: "object",
+    properties: {
+        verses: {
+            type: "array",
+            items: {
+                type: "object",
+                properties: {
+                    bookId: {type: "integer"},
+                    chapterId: {type: "integer"},
+                    verseId: {type: "integer"},
+                    text: {type: "string"}
+                },
+                required: ["bookId", "chapterId", "verseId", "text"],
+                additionalProperties: false
+            }
+        }
+    },
+    required: ["verses"],
+    additionalProperties: false
+};
+
+const PROOFREAD_SCHEMA = {
+    type: "object",
+    properties: {
+        issues: {
+            type: "array",
+            items: {
+                type: "object",
+                properties: {
+                    verseId: {type: "integer"},
+                    type: {type: "string", enum: ["error", "suggestion", "theological", "grammar"]},
+                    severity: {type: "string", enum: ["critical", "major", "minor"]},
+                    original: {type: "string"},
+                    current: {type: "string"},
+                    suggested: {type: "string"},
+                    explanation: {type: "string"}
+                },
+                required: ["verseId", "type", "severity", "original", "current", "suggested", "explanation"],
+                additionalProperties: false
+            }
+        },
+        summary: {type: "string"},
+        score: {type: "integer"}
+    },
+    required: ["issues", "summary", "score"],
+    additionalProperties: false
+};
+
 // Translation style prompts
 const TRANSLATION_PROMPTS = {
     standard: (language) => `Translation must be ${language} in a modern, easy to read, language. But you should emphasize translating theologically correct.`,
@@ -38,23 +89,6 @@ Your task is to review the translation and identify:
 - Missing or added content
 - Grammar or spelling errors
 
-Return your response as JSON only, in this format:
-{
-    "issues": [
-        {
-            "verseId": 1,
-            "type": "error|suggestion|theological|grammar",
-            "severity": "critical|major|minor",
-            "original": "relevant part of original text",
-            "current": "the COMPLETE current verse text",
-            "suggested": "the COMPLETE corrected verse text (not just the changed part)",
-            "explanation": "why this change is recommended"
-        }
-    ],
-    "summary": "Overall assessment of the translation quality",
-    "score": 1-10
-}
-
 IMPORTANT:
 - The "suggested" field must contain the ENTIRE corrected verse, not just the changed phrase.
 - Some verses have VERSION HISTORY showing previous revisions. Read the history carefully.
@@ -64,13 +98,13 @@ IMPORTANT:
 - If the current version is acceptable, SKIP that verse entirely - do not include it in issues.
 - Focus only on verses WITHOUT version history, or verses with genuine new errors.
 
-If there are no issues (or all issues are in well-reviewed verses), return an empty array: []`;
+If there are no issues (or all issues are in well-reviewed verses), return an empty issues array.`;
 };
 
 const MAX_RETRIES = 3;
 
-async function doAnthropicCall(content) {
-    return anthropic.messages.create({
+async function doAnthropicCall(content, schema) {
+    const options = {
         model: anthropicModel,
         max_tokens: maxTokens,
         messages: [
@@ -79,165 +113,16 @@ async function doAnthropicCall(content) {
                 content
             }
         ]
-    });
-}
-
-function parseJsonResponse(text) {
-    // Clean up common issues with LLM JSON responses
-    let cleaned = text
-        .replace(/```json\s*/g, '')
-        .replace(/```\s*/g, '')
-        .trim();
-
-    // Try to extract JSON object first (preferred, since most responses are objects)
-    const objectMatch = cleaned.match(/\{[\s\S]*}/);
-    if (objectMatch) {
-        cleaned = objectMatch[0];
-    }
-
-    // Fall back to JSON array if no object found
-    if (!objectMatch) {
-        const arrayMatch = cleaned.match(/\[[\s\S]*]/);
-        if (arrayMatch) {
-            cleaned = arrayMatch[0];
-        }
-    }
-
-    // First try: parse as-is
-    try {
-        return JSON.parse(cleaned);
-    } catch (e) {
-        // Continue to repair attempts
-    }
-
-    // Repair attempt 1: Fix unescaped quotes in string values
-    // This handles cases like: "text": "He said "hello" to her"
-    let repaired = cleaned.replace(/"([^"]*?)": "([^"]*?)"/g, (match, key, value) => {
-        // If value contains unescaped quotes, escape them
-        const fixedValue = value.replace(/(?<!\\)"/g, '\\"');
-        return `"${key}": "${fixedValue}"`;
-    });
-
-    try {
-        return JSON.parse(repaired);
-    } catch (e) {
-        // Continue to next repair attempt
-    }
-
-    // Repair attempt 2: More aggressive - fix quotes inside string values
-    // Find all string values and escape internal quotes
-    repaired = cleaned.replace(/"text"\s*:\s*"([\s\S]*?)(?<!\\)"\s*([,}\]])/g, (match, content, ending) => {
-        // Escape any unescaped quotes in the content
-        const fixed = content.replace(/(?<!\\)"/g, '\\"');
-        return `"text": "${fixed}"${ending}`;
-    });
-
-    try {
-        return JSON.parse(repaired);
-    } catch (e) {
-        // Continue to next repair attempt
-    }
-
-    // Repair attempt 3: Handle curly quotes and other unicode quotes
-    repaired = cleaned
-        .replace(/[\u201C\u201D\u201E\u201F\u2033\u2036]/g, '"')  // Various double quotes
-        .replace(/[\u2018\u2019\u201A\u201B\u2032\u2035]/g, "'"); // Various single quotes
-
-    try {
-        return JSON.parse(repaired);
-    } catch (e) {
-        // Continue to next repair attempt
-    }
-
-    // Repair attempt 4: Try to fix by finding and escaping problematic patterns in text fields
-    repaired = cleaned.replace(/"(text|explanation|suggested|current|original|summary)"\s*:\s*"([\s\S]*?)"\s*([,}\]])/g,
-        (match, fieldName, content, ending) => {
-            // Replace unescaped internal quotes
-            let fixed = content;
-            // First, protect already escaped quotes
-            fixed = fixed.replace(/\\"/g, '\u0000ESCAPED_QUOTE\u0000');
-            // Then escape unescaped quotes
-            fixed = fixed.replace(/"/g, '\\"');
-            // Restore the protected quotes
-            fixed = fixed.replace(/\u0000ESCAPED_QUOTE\u0000/g, '\\"');
-            return `"${fieldName}": "${fixed}"${ending}`;
-        }
-    );
-
-    try {
-        return JSON.parse(repaired);
-    } catch (e) {
-        // Continue to next repair attempt
-    }
-
-    // Repair attempt 5: Escape newlines and tabs in string values
-    // This is a character-by-character approach for more robust handling
-    repaired = repairJsonStrings(cleaned);
-
-    try {
-        return JSON.parse(repaired);
-    } catch (e) {
-        // All repair attempts failed, throw original error with context
-        const start = cleaned.substring(0, 300);
-        const end = cleaned.length > 300 ? `\n...LAST 300 chars: ${cleaned.substring(cleaned.length - 300)}` : '';
-        throw new Error(`JSON parse failed after repair attempts. Text (${cleaned.length} chars):\nFIRST 300: ${start}${end}`);
-    }
-}
-
-// Helper function to repair JSON strings by properly escaping problematic characters
-function repairJsonStrings(json) {
-    let result = '';
-    let inString = false;
-    let i = 0;
-
-    while (i < json.length) {
-        const char = json[i];
-        const nextChar = json[i + 1];
-
-        if (!inString) {
-            if (char === '"') {
-                inString = true;
+    };
+    if (schema) {
+        options.output_config = {
+            format: {
+                type: "json_schema",
+                schema
             }
-            result += char;
-        } else {
-            // We're inside a string
-            if (char === '\\') {
-                // Already escaped character - keep as-is
-                result += char;
-                if (nextChar) {
-                    result += nextChar;
-                    i++;
-                }
-            } else if (char === '"') {
-                // Check if this is the end of the string or an unescaped quote
-                // Look ahead to see if this looks like end of string
-                const afterQuote = json.substring(i + 1).trimStart();
-                if (afterQuote.startsWith(',') ||
-                    afterQuote.startsWith('}') ||
-                    afterQuote.startsWith(']') ||
-                    afterQuote.startsWith(':') ||
-                    afterQuote.startsWith('"')) {
-                    // Likely end of string
-                    inString = false;
-                    result += char;
-                } else {
-                    // Unescaped quote inside string - escape it
-                    result += '\\"';
-                }
-            } else if (char === '\n') {
-                result += '\\n';
-            } else if (char === '\r') {
-                result += '\\r';
-            } else if (char === '\t') {
-                result += '\\t';
-            } else {
-                result += char;
-            }
-        }
-        i++;
+        };
     }
-
-    return result;
+    return anthropic.messages.create(options);
 }
 
 // Detect hallucinated English words that shouldn't appear in Norwegian/other translations
@@ -298,19 +183,18 @@ function validateTranslationResult(result) {
     return true;
 }
 
-async function doAnthropicCallWithRetry(content, context = '', validate = true) {
+async function doAnthropicCallWithRetry(content, schema, context = '', validate = true) {
     let lastError;
 
     for (let attempt = 1; attempt <= MAX_RETRIES; attempt++) {
         try {
-            const completion = await doAnthropicCall(content);
+            const completion = await doAnthropicCall(content, schema);
             if (completion.stop_reason === 'max_tokens') {
                 throw new Error(`Response truncated (hit max_tokens limit of ${maxTokens})`);
             }
             const responseText = completion.content[0].text;
-            const result = parseJsonResponse(responseText);
+            const result = JSON.parse(responseText);
 
-            // Validate for hallucinations if requested
             if (validate) {
                 validateTranslationResult(result);
             }
@@ -320,7 +204,6 @@ async function doAnthropicCallWithRetry(content, context = '', validate = true) 
             lastError = error;
             if (attempt < MAX_RETRIES) {
                 console.log(`  Attempt ${attempt} failed (${error.message}), retrying...`);
-                // Small delay before retry
                 await new Promise(resolve => setTimeout(resolve, 1000));
             }
         }
@@ -354,17 +237,12 @@ function readOriginalText(bookId, chapterId, existingVerses = []) {
 function getTranslationPrompt(style, language, bookId, chapterId, text) {
     const stylePrompt = TRANSLATION_PROMPTS[style](language);
 
-    return `You will be given a bible text in the original language, and must return the translation as a json, and only json on the format:
-[
-    {
-        "bookId": ${bookId},
-        "chapterId": ${chapterId},
-        "verseId": verseId,
-        "text": "Everything started when God created heaven and earth."
-    }
-]
+    return `You will be given a bible text in the original language, and must return the translation.
+Return a JSON object with a "verses" array containing each verse.
 
 ${stylePrompt}
+
+Book ID: ${bookId}, Chapter: ${chapterId}
 
 Text:
 ${text}`;
@@ -422,8 +300,8 @@ async function translateChapter(bible, bookId, chapterId, style, existingVerses,
         const formattedBatch = batch.map(v => `${v.verseId}: ${v.text}`).join("\n");
         const content = getTranslationPrompt(style, language, bookId, chapterId, formattedBatch);
         const shouldValidate = !isEnglishLanguage(language);
-        const result = await doAnthropicCallWithRetry(content, `${bookId}:${chapterId} batch ${batchIndex + 1}`, shouldValidate);
-        allResults.push(...result);
+        const result = await doAnthropicCallWithRetry(content, TRANSLATION_SCHEMA, `${bookId}:${chapterId} batch ${batchIndex + 1}`, shouldValidate);
+        allResults.push(...result.verses);
     }
 
     const dir = path.dirname(filename);
@@ -529,16 +407,7 @@ async function proofreadChapter(bible, bookId, chapterId, style, filename, saveT
         const formattedOriginal = batchOriginal.map(v => `${v.verseId}: ${v.text}`).join("\n");
         const content = getProofreadPrompt(language, style, bookId, chapterId, formattedOriginal, batch);
         const shouldValidate = !isEnglishLanguage(language);
-        let batchResult = await doAnthropicCallWithRetry(content, `proofread ${bookId}:${chapterId} batch ${batchIndex + 1}`, shouldValidate);
-
-        // Handle case where API returns array directly instead of object with issues
-        if (Array.isArray(batchResult)) {
-            batchResult = {
-                issues: batchResult,
-                summary: batchResult.length === 0 ? "No issues found" : `Found ${batchResult.length} issue(s)`,
-                score: null
-            };
-        }
+        const batchResult = await doAnthropicCallWithRetry(content, PROOFREAD_SCHEMA, `proofread ${bookId}:${chapterId} batch ${batchIndex + 1}`, shouldValidate);
 
         if (batchResult.issues) {
             allIssues.push(...batchResult.issues);

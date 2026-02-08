@@ -53,6 +53,36 @@ const KNOWN_FORMATS = {
   },
 };
 
+const VERSE_MAPPING_SCHEMA = {
+    type: "object",
+    properties: {
+        mappings: {
+            type: "array",
+            items: {
+                type: "object",
+                properties: {
+                    src: {
+                        type: "array",
+                        items: {type: "integer"},
+                        minItems: 2,
+                        maxItems: 2
+                    },
+                    dst: {
+                        type: ["array", "null"],
+                        items: {type: "integer"},
+                        minItems: 2,
+                        maxItems: 2
+                    }
+                },
+                required: ["src", "dst"],
+                additionalProperties: false
+            }
+        }
+    },
+    required: ["mappings"],
+    additionalProperties: false
+};
+
 // --- Parsing ---
 
 function parseInputFile(filePath, format) {
@@ -212,12 +242,14 @@ Rules:
 - For merges: map each source verse to the same osnb2 verse
 - If a source verse has no match in osnb2, use null
 
-Return ONLY a JSON array, one entry per source verse:
-[
-  { "src": [chapter, verse], "dst": [chapter, verse] },
-  { "src": [chapter, verse], "dst": [chapter, verse] },
-  ...
-]
+Return a JSON object with a 'mappings' array, one entry per source verse:
+{
+  "mappings": [
+    { "src": [chapter, verse], "dst": [chapter, verse] },
+    { "src": [chapter, verse], "dst": [chapter, verse] },
+    ...
+  ]
+}
 
 If dst is null (no match), use: { "src": [chapter, verse], "dst": null }`;
 
@@ -225,34 +257,16 @@ If dst is null (no match), use: { "src": [chapter, verse], "dst": null }`;
     model: 'claude-sonnet-4-5-20250929',
     max_tokens: maxTokens,
     messages: [{ role: 'user', content: prompt }],
+    output_config: {
+      format: {
+        type: "json_schema",
+        schema: VERSE_MAPPING_SCHEMA
+      }
+    }
   });
 
-  const text = response.content[0].text;
-  // Extract JSON from response - find the outermost [...] block
-  const jsonMatch = text.match(/\[[\s\S]*\]/);
-  if (!jsonMatch) {
-    throw new Error(`Could not parse AI response for ${bookName} ch${srcChapter}: ${text.substring(0, 200)}`);
-  }
-  try {
-    return JSON.parse(jsonMatch[0]);
-  } catch (e) {
-    // Try to fix common issues: trailing commas, truncated response
-    let cleaned = jsonMatch[0]
-      .replace(/,\s*\]/g, ']')  // trailing commas
-      .replace(/}\s*{/g, '},{'); // missing commas between objects
-    // If still invalid, try to find valid prefix
-    try {
-      return JSON.parse(cleaned);
-    } catch (e2) {
-      // Find the last complete object and close the array
-      const lastBrace = cleaned.lastIndexOf('}');
-      if (lastBrace > 0) {
-        const truncated = cleaned.substring(0, lastBrace + 1) + ']';
-        return JSON.parse(truncated);
-      }
-      throw new Error(`Could not parse AI JSON for ${bookName} ch${srcChapter}: ${e.message}`);
-    }
-  }
+  const result = JSON.parse(response.content[0].text);
+  return result.mappings;
 }
 
 // --- Deterministic mapping ---

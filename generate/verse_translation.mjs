@@ -17,6 +17,58 @@ const anthropic = new Anthropic({
 const MAX_RETRIES = 3;
 const MAX_VERSES_PER_BATCH = 15; // Keep batches small for detailed explanations
 
+const EXPLANATION_SCHEMA = {
+    type: "object",
+    properties: {
+        verses: {
+            type: "array",
+            items: {
+                type: "object",
+                properties: {
+                    verseId: {type: "integer"},
+                    explanation: {type: "string"},
+                    lostInTranslation: {type: "string"},
+                    uncertainty: {type: "string"},
+                    theologicalImplications: {type: "string"},
+                    connections: {type: "string"},
+                    culturalBackground: {type: "string"}
+                },
+                required: ["verseId", "explanation"],
+                additionalProperties: false
+            }
+        }
+    },
+    required: ["verses"],
+    additionalProperties: false
+};
+
+const EXPLANATION_PROOFREAD_SCHEMA = {
+    type: "object",
+    properties: {
+        issues: {
+            type: "array",
+            items: {
+                type: "object",
+                properties: {
+                    verseId: {type: "integer"},
+                    field: {type: "string", enum: ["explanation", "lostInTranslation", "uncertainty", "theologicalImplications", "connections", "culturalBackground"]},
+                    type: {type: "string", enum: ["error", "factual", "suggestion", "addition", "redundant", "filler"]},
+                    severity: {type: "string", enum: ["critical", "major", "minor"]},
+                    current: {type: "string"},
+                    suggested: {type: "string"},
+                    explanation: {type: "string"}
+                },
+                required: ["verseId", "field", "type", "severity", "current", "suggested", "explanation"],
+                additionalProperties: false
+            }
+        },
+        summary: {type: "string"},
+        score: {type: "integer"}
+    },
+    required: ["issues", "summary", "score"],
+    additionalProperties: false
+};
+
 function getOriginalSource(bookId) {
     return bookId <= 39 ? 'tanach' : 'sblgnt';
 }
@@ -90,15 +142,7 @@ IKKE inkluder:
 - "Filler" som later som det er interessant men egentlig er trivielt
 - Connections til vers i samme kapittel (det er åpenbart for leseren)
 
-Format:
-[
-    {
-        "verseId": 1,
-        "explanation": "Alltid inkludert - fokuser på det interessante",
-        "lostInTranslation": "Kun hvis genuint interessant",
-        "connections": "Kun til ANDRE kapitler/bøker"
-    }
-]
+Returner et JSON-objekt med en 'verses'-array.
 
 Originalspråk: ${originalLanguage}
 Målspråk: ${language}
@@ -135,15 +179,7 @@ Do NOT include:
 - "Filler" that pretends to be interesting but is actually trivial
 - Connections to verses in the same chapter (that's obvious to the reader)
 
-Format:
-[
-    {
-        "verseId": 1,
-        "explanation": "Always included - focus on what's interesting",
-        "lostInTranslation": "Only if genuinely interesting",
-        "connections": "Only to OTHER chapters/books"
-    }
-]
+Return a JSON object with a 'verses' array.
 
 Original language: ${originalLanguageEn}
 Target language: ${language}
@@ -157,53 +193,28 @@ ${formattedPairs}`;
     return promptEn;
 }
 
-async function doAnthropicCall(content) {
-    return anthropic.messages.create({
+async function doAnthropicCall(content, schema) {
+    const options = {
         model: anthropicModel,
         max_tokens: maxTokens,
-        messages: [
-            {
-                role: "user",
-                content
-            }
-        ]
-    });
+        messages: [{ role: "user", content }]
+    };
+    if (schema) {
+        options.output_config = { format: { type: "json_schema", schema } };
+    }
+    return anthropic.messages.create(options);
 }
 
-function parseJsonResponse(text) {
-    let cleaned = text
-        .replace(/```json\s*/g, '')
-        .replace(/```\s*/g, '')
-        .trim();
-
-    const arrayMatch = cleaned.match(/\[[\s\S]*]/);
-    if (arrayMatch) {
-        cleaned = arrayMatch[0];
-    }
-
-    try {
-        return JSON.parse(cleaned);
-    } catch (e) {
-        // Repair attempt: handle unicode quotes
-        let repaired = cleaned
-            .replace(/[\u201C\u201D\u201E\u201F\u2033\u2036]/g, '"')
-            .replace(/[\u2018\u2019\u201A\u201B\u2032\u2035]/g, "'");
-
-        try {
-            return JSON.parse(repaired);
-        } catch (e) {
-            throw new Error(`JSON parse failed. Original text (first 500 chars): ${cleaned.substring(0, 500)}`);
-        }
-    }
-}
-
-async function doAnthropicCallWithRetry(content, context = '') {
+async function doAnthropicCallWithRetry(content, schema, context = '') {
     let lastError;
 
     for (let attempt = 1; attempt <= MAX_RETRIES; attempt++) {
         try {
-            const completion = await doAnthropicCall(content);
-            return parseJsonResponse(completion.content[0].text);
+            const completion = await doAnthropicCall(content, schema);
+            if (completion.stop_reason === 'max_tokens') {
+                throw new Error('Response truncated due to max_tokens limit');
+            }
+            return JSON.parse(completion.content[0].text);
         } catch (error) {
             lastError = error;
             if (attempt < MAX_RETRIES) {
@@ -277,22 +288,7 @@ KRITISK - FULLSTENDIGE SETNINGER:
 - Eksempel: Hvis nåværende er "Dette er feil om tre ord" og du vil endre "tre" til "syv",
   skal suggested være "Dette er riktig om syv ord", IKKE bare "syv ord"
 
-Returner som JSON:
-{
-    "issues": [
-        {
-            "verseId": 1,
-            "field": "explanation|lostInTranslation|uncertainty|theologicalImplications|connections|culturalBackground",
-            "type": "error|factual|suggestion|addition|redundant|filler",
-            "severity": "critical|major|minor",
-            "current": "nåværende tekst (eller tom streng hvis addition)",
-            "suggested": "KOMPLETT ny tekst som erstatter hele feltet",
-            "explanation": "hvorfor denne endringen anbefales"
-        }
-    ],
-    "summary": "Overordnet vurdering av kvaliteten",
-    "score": 1-10
-}
+Returner et JSON-objekt med 'issues' (array), 'summary' (string) og 'score' (heltall 1-10).
 
 VIKTIG:
 - Les VERSJONSHISTORIKK nøye - ALDRI foreslå tekst som ligner på tidligere versjoner
@@ -321,14 +317,7 @@ async function proofreadExplanations(bible, bookId, chapterId, filename, saveToF
     console.log(`Proofreading explanations for ${bookName} ${chapterId}...`);
 
     const prompt = getProofreadPrompt(language, currentExplanations);
-    const result = await doAnthropicCallWithRetry(prompt, `proofread ${bookId}:${chapterId}`);
-
-    // Handle case where API returns array directly
-    const proofreadResult = Array.isArray(result) ? {
-        issues: result,
-        summary: result.length === 0 ? "No issues found" : `Found ${result.length} issue(s)`,
-        score: null
-    } : result;
+    const proofreadResult = await doAnthropicCallWithRetry(prompt, EXPLANATION_PROOFREAD_SCHEMA, `proofread ${bookId}:${chapterId}`);
 
     if (saveToFile) {
         const proofreadFile = getProofreadPath(bible, bookId, chapterId);
@@ -509,8 +498,8 @@ async function generateExplanations(bible, bookId, chapterId, filename, force = 
         }
 
         const prompt = getExplanationPrompt(language, bookId, chapterId, batch, batchTranslations);
-        const result = await doAnthropicCallWithRetry(prompt, `${bookId}:${chapterId} batch ${batchIndex + 1}`);
-        allResults.push(...result);
+        const result = await doAnthropicCallWithRetry(prompt, EXPLANATION_SCHEMA, `${bookId}:${chapterId} batch ${batchIndex + 1}`);
+        allResults.push(...result.verses);
     }
 
     // Merge with existing and sort

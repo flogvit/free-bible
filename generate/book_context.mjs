@@ -16,6 +16,32 @@ const anthropic = new Anthropic({
 
 const MAX_RETRIES = 3;
 
+const PROOFREAD_CONTEXT_SCHEMA = {
+    type: "object",
+    properties: {
+        issues: {
+            type: "array",
+            items: {
+                type: "object",
+                properties: {
+                    type: {type: "string", enum: ["error", "suggestion", "factual", "grammar", "structure", "scope"]},
+                    severity: {type: "string", enum: ["critical", "major", "minor"]},
+                    current: {type: "string"},
+                    suggested: {type: "string"},
+                    explanation: {type: "string"}
+                },
+                required: ["type", "severity", "current", "suggested", "explanation"],
+                additionalProperties: false
+            }
+        },
+        summary: {type: "string"},
+        score: {type: "integer"},
+        revisedContext: {type: "string"}
+    },
+    required: ["issues", "summary", "score", "revisedContext"],
+    additionalProperties: false
+};
+
 // Get book context generation prompt
 function getContextPrompt(language, bookId) {
     const bookName = getBookName(bookId, language);
@@ -171,22 +197,6 @@ Your task is to review the context and identify:
 
 ${structureReminder}
 
-Return your response as JSON only, in this format:
-{
-    "issues": [
-        {
-            "type": "error|suggestion|factual|grammar|structure|scope",
-            "severity": "critical|major|minor",
-            "current": "the problematic text or section",
-            "suggested": "the corrected or improved text",
-            "explanation": "why this change is recommended"
-        }
-    ],
-    "summary": "Overall assessment of the context quality",
-    "score": 1-10,
-    "revisedContext": "If there are issues, provide the complete revised context here. If no issues, leave empty."
-}
-
 IMPORTANT:
 - If the current context is good and has no issues, return an empty issues array and no revisedContext
 - The revisedContext MUST use the required structure
@@ -197,53 +207,29 @@ Current context:
 ${currentContext}`;
 }
 
-async function doAnthropicCall(content) {
-    return anthropic.messages.create({
+async function doAnthropicCall(content, schema) {
+    const options = {
         model: anthropicModel,
         max_tokens: maxTokens,
-        messages: [
-            {
-                role: "user",
-                content
-            }
-        ]
-    });
+        messages: [{ role: "user", content }]
+    };
+    if (schema) {
+        options.output_config = { format: { type: "json_schema", schema } };
+    }
+    return anthropic.messages.create(options);
 }
 
-function parseJsonResponse(text) {
-    let cleaned = text
-        .replace(/```json\s*/g, '')
-        .replace(/```\s*/g, '')
-        .trim();
-
-    const objectMatch = cleaned.match(/\{[\s\S]*}/);
-    if (objectMatch) {
-        cleaned = objectMatch[0];
-    }
-
-    try {
-        return JSON.parse(cleaned);
-    } catch (e) {
-        // Repair attempt: handle unicode quotes
-        let repaired = cleaned
-            .replace(/[\u201C\u201D\u201E\u201F\u2033\u2036]/g, '"')
-            .replace(/[\u2018\u2019\u201A\u201B\u2032\u2035]/g, "'");
-
-        try {
-            return JSON.parse(repaired);
-        } catch (e) {
-            throw new Error(`JSON parse failed. Original text (first 500 chars): ${cleaned.substring(0, 500)}`);
-        }
-    }
-}
-
-async function doAnthropicCallWithRetry(content, context = '') {
+async function doAnthropicCallWithRetry(content, context = '', schema = null) {
     let lastError;
 
     for (let attempt = 1; attempt <= MAX_RETRIES; attempt++) {
         try {
-            const completion = await doAnthropicCall(content);
-            return completion.content[0].text;
+            const completion = await doAnthropicCall(content, schema);
+            if (completion.stop_reason === 'max_tokens') {
+                throw new Error(`Response truncated (hit ${maxTokens} token limit).`);
+            }
+            const text = completion.content[0].text;
+            return schema ? JSON.parse(text) : text;
         } catch (error) {
             lastError = error;
             if (attempt < MAX_RETRIES) {
@@ -299,8 +285,7 @@ async function proofreadBookContext(language, bookId, contextFilename, saveToFil
     console.log(`Proofreading context for ${bookName}...`);
 
     const prompt = getProofreadPrompt(language, bookId, currentContext);
-    const responseText = await doAnthropicCallWithRetry(prompt, `proofread book ${bookId}`);
-    const result = parseJsonResponse(responseText);
+    const result = await doAnthropicCallWithRetry(prompt, `proofread book ${bookId}`, PROOFREAD_CONTEXT_SCHEMA);
 
     // Save proofread results if requested
     if (saveToFile) {
