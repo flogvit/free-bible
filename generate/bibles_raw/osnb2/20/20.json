@@ -39,11 +39,17 @@
     "bookId": 20,
     "chapterId": 20,
     "verseId": 6,
-    "text": "Mange mennesker roper ut sin egen godhet, men hvem kan finne en som virkelig er til å stole på?",
+    "text": "Mange mennesker roper ut sin egen godhet, men en trofast mann – hvem kan finne det?",
     "versions": [
       {
         "text": "Mange mennesker roser sin egen troskap, men hvem kan finne en som virkelig er til å stole på?",
         "explanation": "Hebraisk 'יִקְרָא' betyr 'roper ut/proklamerer' og 'חַסְדּוֹ' betyr 'hans godhet/nåde' snarere enn 'troskap'. Poenget er at mange skryter av sin egen godhet, men ekte pålitelighet er sjelden."
+      },
+      {
+        "text": "Mange mennesker roper ut sin egen godhet, men hvem kan finne en som virkelig er til å stole på?",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "Ordet 'virkelig' finnes ikke i originalteksten og er et tillegg. Dessuten er 'אִישׁ אֱמוּנִים' mer spesifikt 'en trofast/pålitelig mann' enn 'en som er til å stole på'. En tettere oversettelse ville vært mer presis."
       }
     ]
   },
@@ -51,7 +57,15 @@
     "bookId": 20,
     "chapterId": 20,
     "verseId": 7,
-    "text": "Den rettferdige vandrer i sin integritet; salige er hans barn etter ham."
+    "text": "Den rettferdige vandrer i sin ulastelighet; lykkelige er hans barn etter ham.",
+    "versions": [
+      {
+        "text": "Den rettferdige vandrer i sin integritet; salige er hans barn etter ham.",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "'Integritet' er et lånord som kan føles litt fremmed i moderne norsk bokmål. 'Ulastelighet' er en mer naturlig norsk gjengivelse av תֻּמּוֹ. Dessuten er 'salige' et tungt kirkeord; 'lykkelige' er mer moderne og lettlest, og אַשְׁרֵי betyr nettopp 'lykkelige/velsignede'."
+      }
+    ]
   },
   {
     "bookId": 20,
@@ -87,7 +101,15 @@
     "bookId": 20,
     "chapterId": 20,
     "verseId": 13,
-    "text": "Elsk ikke søvn, så du ikke blir fattig; åpne øynene dine, så får du nok brød."
+    "text": "Elsk ikke søvn, ellers blir du fattig. Åpne øynene dine, så får du nok brød.",
+    "versions": [
+      {
+        "text": "Elsk ikke søvn, så du ikke blir fattig; åpne øynene dine, så får du nok brød.",
+        "type": "grammar",
+        "severity": "minor",
+        "explanation": "'Så du ikke blir fattig' er en litt tung konstruksjon. פֶּן betyr 'for at ikke / ellers'. 'Ellers blir du fattig' er mer idiomatisk norsk. I tillegg er de to setningene to adskilte oppfordringer og fungerer bedre med punktum mellom dem."
+      }
+    ]
   },
   {
     "bookId": 20,
@@ -165,7 +187,15 @@
     "bookId": 20,
     "chapterId": 20,
     "verseId": 25,
-    "text": "Det er en snare for et menneske å forhastet love noe hellig, og først etter løftene begynne å tenke seg om."
+    "text": "Det er en snare for et menneske å forhastet rope «Hellig!», og først etter å ha avlagt løfter begynne å tenke seg om.",
+    "versions": [
+      {
+        "text": "Det er en snare for et menneske å forhastet love noe hellig, og først etter løftene begynne å tenke seg om.",
+        "type": "error",
+        "severity": "major",
+        "explanation": "Verbet יָלַע betyr 'å sluke/rope ut' – altså å ubesindig rope noe hellig (dedikere noe til Gud uten å tenke seg om), ikke generelt å 'love noe hellig'. Også 'etter løftene' bør være 'etter å ha avlagt løfter' for bedre flyt. לְבַקֵּר betyr 'å granske/undersøke', dvs. å tenke nøye over det man har lovet."
+      }
+    ]
   },
   {
     "bookId": 20,
@@ -195,7 +225,15 @@
     "bookId": 20,
     "chapterId": 20,
     "verseId": 28,
-    "text": "Godhet og troskap bevarer kongen, og ved godhet støtter han sin trone."
+    "text": "Godhet og sannhet bevarer kongen, og ved godhet støttes hans trone.",
+    "versions": [
+      {
+        "text": "Godhet og troskap bevarer kongen, og ved godhet støtter han sin trone.",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "אֱמֶת betyr primært 'sannhet/pålitelighet' snarere enn 'troskap'. Dessuten er subjektet i andre halvdel ikke kongen selv – 'וְסָעַד בַּחֶסֶד כִּסְאוֹ' betyr at tronen støttes/opprettholdes ved godhet (passiv mening), ikke at kongen aktivt støtter den."
+      }
+    ]
   },
   {
     "bookId": 20,
@@ -207,6 +245,14 @@
     "bookId": 20,
     "chapterId": 20,
     "verseId": 30,
-    "text": "Sår fra slag renser bort det onde, og piskeslag når inn til kroppens innerste."
+    "text": "Sår og blåmerker renser ut det onde, og slag når inn til kroppens innerste kamre.",
+    "versions": [
+      {
+        "text": "Sår fra slag renser bort det onde, og piskeslag når inn til kroppens innerste.",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "חַבֻּרוֹת פֶּצַע betyr 'sår og blåmerker/merker fra slag', ikke 'sår fra slag'. תַּמְרוּק betyr 'renselse/polering' (gjør ren). Også חַדְרֵי־בָטֶן er 'kroppens innerste kamre' (som i vers 27), ikke bare 'kroppens innerste'."
+      }
+    ]
   }
 ]

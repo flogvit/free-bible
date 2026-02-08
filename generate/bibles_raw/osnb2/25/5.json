@@ -3,7 +3,15 @@
     "bookId": 25,
     "chapterId": 5,
     "verseId": 1,
-    "text": "Husk, Herre, hva som har hendt oss. Se ned og se vår vanære!"
+    "text": "Husk, Herre, hva som har hendt oss. Se på oss og se vår vanære!",
+    "versions": [
+      {
+        "text": "Husk, Herre, hva som har hendt oss. Se ned og se vår vanære!",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "Det hebraiske הַבִּיטָה betyr 'se, skue, betrakt' – ikke spesifikt 'se ned'. 'Se ned' legger til en spatial dimensjon som ikke finnes i originalteksten. 'Se på oss' er mer nøytralt og nærere originalen."
+      }
+    ]
   },
   {
     "bookId": 25,
@@ -81,7 +89,15 @@
     "bookId": 25,
     "chapterId": 5,
     "verseId": 12,
-    "text": "Fyrster ble hengt opp ved deres hender, de eldste ble ikke vist respekt."
+    "text": "Fyrster ble hengt opp etter sine hender, de eldstes ansikter ble ikke vist respekt.",
+    "versions": [
+      {
+        "text": "Fyrster ble hengt opp ved deres hender, de eldste ble ikke vist respekt.",
+        "type": "error",
+        "severity": "major",
+        "explanation": "בְּיָדָם betyr 'etter/ved deres (egne) hender' – det refererer til fyrstenes egne hender, ikke andres. 'Ved deres hender' er tvetydig. Videre har originalen פְּנֵי זְקֵנִים ('de eldstes ansikter'), som understreker at det er deres verdighet/anseelse (uttrykt gjennom 'ansikt') som ikke ble respektert. Dette er en viktig nyanse."
+      }
+    ]
   },
   {
     "bookId": 25,
@@ -99,7 +115,15 @@
     "bookId": 25,
     "chapterId": 5,
     "verseId": 14,
-    "text": "De eldste er borte fra porten, de unge har sluttet med sin sang."
+    "text": "De eldste er borte fra byporten, de unge har sluttet med sin musikk.",
+    "versions": [
+      {
+        "text": "De eldste er borte fra porten, de unge har sluttet med sin sang.",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "שַׁעַר refererer til byporten, som var stedet for rettsmøter og rådslag – en viktig kulturell referanse. נְגִינָה betyr strengespill/musikk snarere enn sang (שִׁיר). Det hebraiske ordet refererer spesifikt til instrumentalmusikk."
+      }
+    ]
   },
   {
     "bookId": 25,
@@ -117,7 +141,15 @@
     "bookId": 25,
     "chapterId": 5,
     "verseId": 17,
-    "text": "Derfor er vårt hjerte sykt, derfor er våre øyne blitt dimme."
+    "text": "På grunn av dette er vårt hjerte sykt, på grunn av alt dette er våre øyne blitt dimme.",
+    "versions": [
+      {
+        "text": "Derfor er vårt hjerte sykt, derfor er våre øyne blitt dimme.",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "Hebraisk skiller mellom עַל־זֶה (på grunn av dette) og עַל־אֵלֶּה (på grunn av disse/alt dette) – singularis vs. pluralis. Den nåværende oversettelsen bruker 'derfor' to ganger og mister denne oppbyggende parallellismen der den andre linjen utvider til å omfatte alle lidelsene som er beskrevet."
+      }
+    ]
   },
   {
     "bookId": 25,
@@ -147,11 +179,17 @@
     "bookId": 25,
     "chapterId": 5,
     "verseId": 22,
-    "text": "Med mindre du helt har forkastet oss og din vrede mot oss er uten grense.",
+    "text": "Med mindre du helt har forkastet oss, og er vred på oss ut over all grense.",
     "versions": [
       {
         "text": "Eller har du helt forkastet oss? Er din vrede mot oss uten grense?",
         "explanation": "Den hebraiske konstruksjonen 'כי אם' fungerer her som en betingelsessetning som henger sammen med vers 21 - en bønn om gjenopprettelse 'med mindre' Gud fullstendig har forkastet dem. Dette bevarer den åpne, klagende tonen som avslutter boken."
+      },
+      {
+        "text": "Med mindre du helt har forkastet oss og din vrede mot oss er uten grense.",
+        "type": "theological",
+        "severity": "minor",
+        "explanation": "עַד־מְאֹד betyr 'i svært stor grad / ut over all grense' og modifiserer verbet קָצַפְתָּ (har vært vred). Nåværende oversettelse gjør det til 'din vrede er uten grense', som endrer konstruksjonen. 'Er vred på oss ut over all grense' er nærmere originalen og bevarer verbformen."
       }
     ]
   }

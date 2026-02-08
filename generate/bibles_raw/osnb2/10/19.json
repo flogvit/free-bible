@@ -81,13 +81,29 @@
     "bookId": 10,
     "chapterId": 19,
     "verseId": 13,
-    "text": "Dere er mine brødre, mitt eget kjøtt og blod. Hvorfor skal dere være de siste til å føre kongen tilbake?"
+    "text": "«Dere er mine brødre, mitt eget kjøtt og blod. Hvorfor skal dere være de siste til å føre kongen tilbake?",
+    "versions": [
+      {
+        "text": "Dere er mine brødre, mitt eget kjøtt og blod. Hvorfor skal dere være de siste til å føre kongen tilbake?",
+        "type": "grammar",
+        "severity": "minor",
+        "explanation": "Vers 13 er en fortsettelse av Davids tale som begynner i vers 12 og avsluttes med anførselstegn i vers 14. Det mangler et åpnings-anførselstegn i vers 13 for å markere at dette er direkte tale (en del av budskapet David sender via prestene)."
+      }
+    ]
   },
   {
     "bookId": 10,
     "chapterId": 19,
     "verseId": 14,
-    "text": "Og til Amasa skal dere si: Er du ikke mitt kjøtt og blod? Måtte Gud straffe meg hardt om du ikke skal være hærfører for meg alle dine dager, i stedet for Joab.»"
+    "text": "Og til Amasa skal dere si: 'Er du ikke mitt kjøtt og blod? Måtte Gud straffe meg hardt om du ikke skal være hærfører for meg alle dine dager, i stedet for Joab.'»",
+    "versions": [
+      {
+        "text": "Og til Amasa skal dere si: Er du ikke mitt kjøtt og blod? Måtte Gud straffe meg hardt om du ikke skal være hærfører for meg alle dine dager, i stedet for Joab.»",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "Davids ord til Amasa er et sitat innenfor sitatet. For klarhet bør det markeres med enkle anførselstegn for å skille det fra den ytre talen."
+      }
+    ]
   },
   {
     "bookId": 10,
@@ -159,13 +175,29 @@
     "bookId": 10,
     "chapterId": 19,
     "verseId": 26,
-    "text": "Da han kom fra Jerusalem for å møte kongen, spurte kongen ham: «Hvorfor dro du ikke med meg, Mefibosjeth?»"
+    "text": "Da han kom til Jerusalem for å møte kongen, spurte kongen ham: «Hvorfor dro du ikke med meg, Mefibosjeth?»",
+    "versions": [
+      {
+        "text": "Da han kom fra Jerusalem for å møte kongen, spurte kongen ham: «Hvorfor dro du ikke med meg, Mefibosjeth?»",
+        "type": "error",
+        "severity": "major",
+        "explanation": "Det hebraiske כִּי־בָא יְרוּשָׁלַם betyr 'da han kom til Jerusalem', ikke 'fra Jerusalem'. Mefibosjeth kom til Jerusalem for å møte kongen som var på vei tilbake. Preposisjonen indikerer destinasjon, ikke opprinnelse."
+      }
+    ]
   },
   {
     "bookId": 10,
     "chapterId": 19,
     "verseId": 27,
-    "text": "Han svarte: «Min herre og konge, min tjener lurte meg. Din tjener sa: Jeg vil sale eselet mitt og ri på det og dra med kongen – for din tjener er halt."
+    "text": "Han svarte: «Min herre og konge, min tjener lurte meg. For din tjener sa: 'Jeg vil sale eselet mitt og ri på det og dra med kongen' – for din tjener er halt.",
+    "versions": [
+      {
+        "text": "Han svarte: «Min herre og konge, min tjener lurte meg. Din tjener sa: Jeg vil sale eselet mitt og ri på det og dra med kongen – for din tjener er halt.",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "Det hebraiske כִּי ('for') mangler i oversettelsen, og Mefibosjets gjengivelse av egne ord bør markeres som et sitat innenfor sitatet. Dessuten hører 'for din tjener er halt' (כִּי פִסֵּחַ עַבְדֶּךָ) til Mefibosjets egen forklaring, ikke til det han sa til Siba."
+      }
+    ]
   },
   {
     "bookId": 10,

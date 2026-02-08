@@ -3,11 +3,17 @@
     "bookId": 30,
     "chapterId": 9,
     "verseId": 1,
-    "text": "Jeg så Herren stå ved alteret, og han sa: Slå søylehodene så tersklene rister! Knus dem over hodene på dem alle, og de som er igjen, vil jeg drepe med sverd. Ingen av dem skal slippe unna, ingen av dem skal unnslippe.",
+    "text": "Jeg så Herren stå ved alteret, og han sa: Slå søylehodene så tersklene rister! Splintene skal falle over hodene på dem alle, og de som er igjen, vil jeg drepe med sverd. Ingen av dem skal slippe unna, ingen av dem skal unnslippe.",
     "versions": [
       {
         "text": "Jeg så Herren stå ved alteret, og han sa: Slå søylehodene så terskelen rister! Knus dem over hodene på dem alle, og de som er igjen, vil jeg drepe med sverd. Ingen av dem skal slippe unna, ingen av dem skal unnslippe.",
         "explanation": "הַסִּפִּים er flertall ('tersklene'), ikke entall. Bør være 'tersklene' for nøyaktighet."
+      },
+      {
+        "text": "Jeg så Herren stå ved alteret, og han sa: Slå søylehodene så tersklene rister! Knus dem over hodene på dem alle, og de som er igjen, vil jeg drepe med sverd. Ingen av dem skal slippe unna, ingen av dem skal unnslippe.",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "Det hebraiske וּבְצַעַם betyr 'skjær/kapp dem av' eller refererer til at fragmentene/splintene faller ned. 'Knus dem' er en fri gjengivelse som ikke helt fanger det hebraiske uttrykket. Uttrykket beskriver at søylehodene slås slik at brokker/splinter faller ned over hodene på folket."
       }
     ]
   },
@@ -33,7 +39,15 @@
     "bookId": 30,
     "chapterId": 9,
     "verseId": 5,
-    "text": "Herren Gud, hærskarenes Gud, rører ved jorden så den smelter, og alle som bor på den, sørger. Hele jorden stiger som Nilen og synker igjen som Egypts elv."
+    "text": "Herren Gud, den Allmektige, rører ved jorden så den smelter, og alle som bor på den, sørger. Hele jorden stiger som Nilen og synker igjen som Egypts elv.",
+    "versions": [
+      {
+        "text": "Herren Gud, hærskarenes Gud, rører ved jorden så den smelter, og alle som bor på den, sørger. Hele jorden stiger som Nilen og synker igjen som Egypts elv.",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "Det hebraiske אֲדֹנָי יְהוִה הַצְּבָאוֹת er bokstavelig 'Herren JHVH Sebaot'. Oversettelsen 'Herren Gud, hærskarenes Gud' gjentar 'Gud' to ganger, noe som er litt tungt. Et alternativ som 'Herren, Allhærs Gud' eller 'Herren Gud, den Allmektige' kan vurderes, men dette er en stilistisk vurdering og den nåværende oversettelsen er akseptabel."
+      }
+    ]
   },
   {
     "bookId": 30,
@@ -69,13 +83,29 @@
     "bookId": 30,
     "chapterId": 9,
     "verseId": 9,
-    "text": "For se, jeg gir befaling og vil ryste Israels hus blant alle folkeslagene, slik man rister i et såld, uten at en stein faller til jorden."
+    "text": "For se, jeg gir befaling og vil ryste Israels hus blant alle folkeslagene, slik man rister i et såld, uten at et korn faller til jorden.",
+    "versions": [
+      {
+        "text": "For se, jeg gir befaling og vil ryste Israels hus blant alle folkeslagene, slik man rister i et såld, uten at en stein faller til jorden.",
+        "type": "error",
+        "severity": "major",
+        "explanation": "Det hebraiske צְרוֹר betyr 'liten stein' eller 'korn/klump'. I konteksten av et såld (sikt/sold) er poenget at det som er verdifullt (korn/småstein) ikke vil gå tapt gjennom såldet og falle til jorden. 'Stein' kan misforstås - det handler om de små verdifulle kornene/klumpene som holdes igjen i såldet. 'Korn' passer bedre med bildet av sålding."
+      }
+    ]
   },
   {
     "bookId": 30,
     "chapterId": 9,
     "verseId": 10,
-    "text": "Ved sverd skal alle synderne i mitt folk dø, de som sier: Ulykken skal ikke nå oss eller ramme oss."
+    "text": "Ved sverd skal alle synderne i mitt folk dø, de som sier: Ulykken skal ikke nå oss eller komme over oss.",
+    "versions": [
+      {
+        "text": "Ved sverd skal alle synderne i mitt folk dø, de som sier: Ulykken skal ikke nå oss eller ramme oss.",
+        "type": "error",
+        "severity": "major",
+        "explanation": "Det hebraiske וְתַקְדִּים betyr 'komme i forkjøpet' eller 'komme foran/over', altså at ulykken ikke skal innhente dem eller komme dem i møte. 'Ramme' er akseptabelt men תַקְדִּים har mer nyanser av at noe 'kommer forut' eller 'innhenter'. 'Komme over oss' er noe mer tro mot originalen, men dette er en mindre justering."
+      }
+    ]
   },
   {
     "bookId": 30,

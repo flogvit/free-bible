@@ -121,7 +121,15 @@
     "bookId": 42,
     "chapterId": 15,
     "verseId": 14,
-    "text": "Da han hadde brukt opp alt, kom det en svær hungersnød over dette landet, og han begynte å lide nød."
+    "text": "Da han hadde brukt opp alt, kom det en alvorlig hungersnød over det landet, og han begynte å lide nød.",
+    "versions": [
+      {
+        "text": "Da han hadde brukt opp alt, kom det en svær hungersnød over dette landet, og han begynte å lide nød.",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "'dette landet' burde heller være 'det landet' for å gjenspeile det greske demonstrativpronomenet ἐκείνην (det/hint) som peker på noe fjernt, ikke nært. 'Svær' fungerer, men 'alvorlig' er en mer presis oversettelse av ἰσχυρά i denne sammenhengen."
+      }
+    ]
   },
   {
     "bookId": 42,
@@ -187,7 +195,15 @@
     "bookId": 42,
     "chapterId": 15,
     "verseId": 22,
-    "text": "Men faren sa til tjenerne sine: 'Skynd dere! Hent frem den fineste kappen og kle ham i den, sett en ring på hånden hans og sko på føttene."
+    "text": "Men faren sa til tjenerne sine: 'Fort! Hent frem den fineste kappen og kle ham i den, og gi ham en ring på hånden og sko på føttene.",
+    "versions": [
+      {
+        "text": "Men faren sa til tjenerne sine: 'Skynd dere! Hent frem den fineste kappen og kle ham i den, sett en ring på hånden hans og sko på føttene.",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "Ταχὺ betyr 'fort/raskt' som et adverb, ikke 'skynd dere' som er en imperativ. 'Fort!' er mer tro mot originalen. Også det greske δότε (gi) gjenspeiles bedre med 'gi ham' enn 'sett'."
+      }
+    ]
   },
   {
     "bookId": 42,
@@ -253,7 +269,15 @@
     "bookId": 42,
     "chapterId": 15,
     "verseId": 30,
-    "text": "Men når denne sønnen din kommer, han som har sløst bort formuen din på skjøger, da slakter du gjøkalven for ham!'"
+    "text": "Men da denne sønnen din kom, han som har sløst bort formuen din på skjøger, da slaktet du gjøkalven for ham!'",
+    "versions": [
+      {
+        "text": "Men når denne sønnen din kommer, han som har sløst bort formuen din på skjøger, da slakter du gjøkalven for ham!'",
+        "type": "grammar",
+        "severity": "minor",
+        "explanation": "Det greske ὅτε med aorist (ἦλθεν, ἔθυσας) angir en bestemt hendelse i fortid. 'Når ... kommer ... slakter du' er presens/fremtid, men dette er noe som allerede har skjedd. Det bør være 'da ... kom ... slaktet du' i fortid."
+      }
+    ]
   },
   {
     "bookId": 42,
@@ -265,6 +289,14 @@
     "bookId": 42,
     "chapterId": 15,
     "verseId": 32,
-    "text": "Men nå måtte vi feire og glede oss, for denne broren din var død og er blitt levende, han var tapt og er funnet.'»"
+    "text": "Men vi måtte feire og glede oss, for denne broren din var død og er blitt levende, han var tapt og er funnet.'»",
+    "versions": [
+      {
+        "text": "Men nå måtte vi feire og glede oss, for denne broren din var død og er blitt levende, han var tapt og er funnet.'»",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "Det greske ἔδει (det var nødvendig) inneholder ikke noe temporal element som 'nå'. Tillegget av 'nå' er en interpretativ tilføyelse som ikke finnes i originalteksten. 'Vi måtte' dekker ἔδει tilstrekkelig."
+      }
+    ]
   }
 ]

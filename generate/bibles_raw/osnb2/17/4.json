@@ -45,7 +45,15 @@
     "bookId": 17,
     "chapterId": 4,
     "verseId": 7,
-    "text": "Mordekai fortalte ham alt som hadde hendt ham, og nøyaktig hvor mye sølv Haman hadde lovet å betale inn i kongens skattkammer for å få utryddet jødene."
+    "text": "Mordekai fortalte ham alt som hadde hendt ham, og den nøyaktige summen sølv Haman hadde lovet å veie opp til kongens skattkammer for å få utryddet jødene.",
+    "versions": [
+      {
+        "text": "Mordekai fortalte ham alt som hadde hendt ham, og nøyaktig hvor mye sølv Haman hadde lovet å betale inn i kongens skattkammer for å få utryddet jødene.",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "Det hebraiske ordet לִשְׁקוֹל betyr 'å veie opp/ut', ikke bare 'betale inn'. 'Veie opp' gjenspeiler den gamle praksisen med å veie ut metall som betaling. Også פָּרָשַׁת הַכֶּסֶף betyr mer presist 'den nøyaktige summen sølv' enn 'nøyaktig hvor mye sølv'."
+      }
+    ]
   },
   {
     "bookId": 17,
@@ -69,7 +77,15 @@
     "bookId": 17,
     "chapterId": 4,
     "verseId": 11,
-    "text": "«Alle kongens tjenere og folket i kongens provinser vet at enhver mann eller kvinne som går inn til kongen i den indre forgården uten å være innkalt, blir dømt til døden etter én og samme lov – med mindre kongen rekker ut gullsepteret mot vedkommende, så han får leve. Og jeg har ikke blitt kalt inn til kongen på tretti dager.»"
+    "text": "«Alle kongens tjenere og folket i kongens provinser vet at enhver mann eller kvinne som går inn til kongen i den indre forgården uten å være innkalt, blir dømt til døden etter én og samme lov – med mindre kongen rekker ut gullsepteret mot vedkommende, så vedkommende får leve. Og jeg har ikke blitt kalt inn til kongen på tretti dager.»",
+    "versions": [
+      {
+        "text": "«Alle kongens tjenere og folket i kongens provinser vet at enhver mann eller kvinne som går inn til kongen i den indre forgården uten å være innkalt, blir dømt til døden etter én og samme lov – med mindre kongen rekker ut gullsepteret mot vedkommende, så han får leve. Og jeg har ikke blitt kalt inn til kongen på tretti dager.»",
+        "type": "error",
+        "severity": "major",
+        "explanation": "'så han får leve' bør være 'så vedkommende får leve' siden konteksten handler om 'enhver mann eller kvinne' (כָּל־אִישׁ וְאִשָּׁה). 'Han' ekskluderer kvinner, og Ester snakker jo nettopp om seg selv som kvinne."
+      }
+    ]
   },
   {
     "bookId": 17,
@@ -87,7 +103,15 @@
     "bookId": 17,
     "chapterId": 4,
     "verseId": 14,
-    "text": "For om du tier helt stille i denne tiden, vil det komme utfrielse og redning for jødene fra et annet sted, men du og din fars hus vil gå til grunne. Og hvem vet om det ikke er nettopp for en tid som denne at du har fått din dronningverdighet?»"
+    "text": "Og hvem vet om det ikke er nettopp for en tid som denne du har nådd din kongelige stilling?»",
+    "versions": [
+      {
+        "text": "For om du tier helt stille i denne tiden, vil det komme utfrielse og redning for jødene fra et annet sted, men du og din fars hus vil gå til grunne. Og hvem vet om det ikke er nettopp for en tid som denne at du har fått din dronningverdighet?»",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "Det hebraiske הִגַּעַתְּ לַמַּלְכוּת betyr bokstavelig 'du har nådd/kommet til kongeverdigheten'. 'Fått din dronningverdighet' er en akseptabel gjengivelse, men 'dronningverdighet' er et sjeldent og tungt norsk ord. Alternativt kan nåværende formulering beholdes om man ønsker å beholde den mer formelle tonen."
+      }
+    ]
   },
   {
     "bookId": 17,

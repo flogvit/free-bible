@@ -21,7 +21,15 @@
     "bookId": 18,
     "chapterId": 11,
     "verseId": 4,
-    "text": "Du sier: «Min lære er ren, og jeg er ren i hans øyne.»"
+    "text": "Du sier: «Min lære er ren, og jeg er ren i dine øyne.»",
+    "versions": [
+      {
+        "text": "Du sier: «Min lære er ren, og jeg er ren i hans øyne.»",
+        "type": "error",
+        "severity": "major",
+        "explanation": "Det hebraiske 'בְעֵינֶֽיךָ' (be'einekha) er andreperson entall – 'i dine øyne' (dvs. Guds øyne, tiltalt direkte), ikke 'i hans øyne'. Sofar siterer Job som om Job taler til Gud."
+      }
+    ]
   },
   {
     "bookId": 18,
@@ -51,7 +59,15 @@
     "bookId": 18,
     "chapterId": 11,
     "verseId": 8,
-    "text": "Den er høyere enn himmelen – hva kan du gjøre? Dypere enn dødsriket – hva kan du vite?"
+    "text": "Høyere enn himmelen – hva kan du gjøre? Dypere enn dødsriket – hva kan du vite?",
+    "versions": [
+      {
+        "text": "Den er høyere enn himmelen – hva kan du gjøre? Dypere enn dødsriket – hva kan du vite?",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "Originalen har ikke noe pronomen 'den' – setningen begynner direkte med beskrivelsen 'himmelens høyder'. Å fjerne 'Den er' gir en mer nøyaktig og poetisk gjengivelse som lar vers 7 stå som referansen."
+      }
+    ]
   },
   {
     "bookId": 18,
@@ -75,11 +91,17 @@
     "bookId": 18,
     "chapterId": 11,
     "verseId": 11,
-    "text": "For han kjenner de tomme mennesker. Han ser ondskapen uten å måtte granske.",
+    "text": "For han kjenner de tomme mennesker. Han ser ondskapen uten å anstrenge seg.",
     "versions": [
       {
         "text": "For han kjenner de falske mennesker. Han ser ondskapen uten å måtte granske.",
         "explanation": "Det hebraiske 'מְתֵי־שָׁוְא' (metey-shav) refererer til 'tomme/verdiløse mennesker' snarere enn 'falske'. 'שָׁוְא' (shav) betyr tomhet, nytteløshet, som korresponderer bedre med 'tomme'."
+      },
+      {
+        "text": "For han kjenner de tomme mennesker. Han ser ondskapen uten å måtte granske.",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "'וְלֹא יִתְבּוֹנָן' betyr bokstavelig 'uten å granske/vie oppmerksomhet til det'. Formuleringen 'uten å måtte granske' er akseptabel, men 'uten å anstrenge seg' er litt mer naturlig norsk og fanger bedre nyansen at Gud ser ondskap uanstrengt."
       }
     ]
   },
@@ -135,7 +157,15 @@
     "bookId": 18,
     "chapterId": 11,
     "verseId": 18,
-    "text": "Du vil være trygg fordi det er håp, du vil se deg om og legge deg trygt til hvile."
+    "text": "Du vil være trygg fordi det er håp, du vil grave deg ned og legge deg trygt til hvile.",
+    "versions": [
+      {
+        "text": "Du vil være trygg fordi det er håp, du vil se deg om og legge deg trygt til hvile.",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "Det hebraiske 'חָפַרְתָּ' (khafarta) betyr 'du graver/leter', ikke 'se deg om'. Verbet brukes ofte om å grave seg ned for natten (som dyr gjør), altså å forberede seg trygt for hvile. 'Se deg om' er en fri gjengivelse som mister den konkrete handlingen."
+      }
+    ]
   },
   {
     "bookId": 18,

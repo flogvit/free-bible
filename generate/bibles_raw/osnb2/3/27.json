@@ -57,7 +57,15 @@
     "bookId": 3,
     "chapterId": 27,
     "verseId": 9,
-    "text": "Gjelder det dyr som kan bæres fram som offer for Herren, skal alt som gis til Herren, være hellig."
+    "text": "Gjelder det dyr av det slaget som kan bæres fram som offer for Herren, skal alt som gis til Herren, være hellig.",
+    "versions": [
+      {
+        "text": "Gjelder det dyr som kan bæres fram som offer for Herren, skal alt som gis til Herren, være hellig.",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "Det hebraiske אֲשֶׁר יַקְרִיבוּ מִמֶּנָּה refererer til dyrearter/slag som det bringes offer av (dvs. rene dyr), ikke et spesifikt dyr som kan ofres. 'Av det slaget' presiserer at det handler om dyretyper som er godkjent for offer."
+      }
+    ]
   },
   {
     "bookId": 3,
@@ -75,7 +83,15 @@
     "bookId": 3,
     "chapterId": 27,
     "verseId": 12,
-    "text": "Presten skal fastsette verdien, enten den er høy eller lav. Som presten fastsetter, slik skal det være."
+    "text": "Presten skal vurdere dyret, enten det er godt eller dårlig. Som presten fastsetter verdien, slik skal det være.",
+    "versions": [
+      {
+        "text": "Presten skal fastsette verdien, enten den er høy eller lav. Som presten fastsetter, slik skal det være.",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "Det hebraiske בֵּין טוֹב וּבֵין רָע betyr bokstavelig 'mellom godt og dårlig' og refererer til dyrets kvalitet, ikke til verdiens størrelse. Presten vurderer dyrets tilstand/kvalitet og fastsetter verdien deretter."
+      }
+    ]
   },
   {
     "bookId": 3,
@@ -99,7 +115,15 @@
     "bookId": 3,
     "chapterId": 27,
     "verseId": 16,
-    "text": "Dersom noen helliger en del av sin arvejord for Herren, skal verdien fastsettes etter såmengden: én homer såkorn av bygg til femti sekel sølv."
+    "text": "Dersom noen helliger en del av sin arvejord for Herren, skal verdien fastsettes etter såmengden: et areal som tilsvarer én homer byggkorn til femti sekel sølv.",
+    "versions": [
+      {
+        "text": "Dersom noen helliger en del av sin arvejord for Herren, skal verdien fastsettes etter såmengden: én homer såkorn av bygg til femti sekel sølv.",
+        "type": "error",
+        "severity": "major",
+        "explanation": "Det hebraiske זֶרַע חֹמֶר שְׂעֹרִים betyr et jordstykke som krever én homer bygg som såkorn, ikke selve kornet. Det er et areal-mål. 'Såkorn av bygg' er også litt uvanlig norsk; 'byggkorn' er mer naturlig."
+      }
+    ]
   },
   {
     "bookId": 3,
@@ -189,7 +213,15 @@
     "bookId": 3,
     "chapterId": 27,
     "verseId": 29,
-    "text": "Ingen som er viet til ban, kan løses ut. De skal dø."
+    "text": "Ingen som er viet til ban blant mennesker, kan kjøpes fri. Vedkommende skal dø.",
+    "versions": [
+      {
+        "text": "Ingen som er viet til ban, kan løses ut. De skal dø.",
+        "type": "theological",
+        "severity": "major",
+        "explanation": "Det hebraiske מִן־הָאָדָם ('blant mennesker') er en viktig presisering som mangler i oversettelsen. Verset handler spesifikt om mennesker som er viet til ban (i motsetning til dyr og eiendom i vers 28). Også 'løses ut' bør være 'kjøpes fri' (פדה = løskjøpe/frikjøpe) for å skille fra גאל i andre vers. 'De' bør være 'vedkommende' da det refererer til enkeltpersonen."
+      }
+    ]
   },
   {
     "bookId": 3,

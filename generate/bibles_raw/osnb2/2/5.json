@@ -27,7 +27,15 @@
     "bookId": 2,
     "chapterId": 5,
     "verseId": 5,
-    "text": "Og farao sa: «Se, folket i landet er allerede tallrikt, og dere vil få dem til å legge ned arbeidet!»"
+    "text": "Og farao sa: «Se, folket i landet er allerede tallrikt, og nå vil dere få dem til å hvile fra tvangsarbeidet!»",
+    "versions": [
+      {
+        "text": "Og farao sa: «Se, folket i landet er allerede tallrikt, og dere vil få dem til å legge ned arbeidet!»",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "Det hebraiske וְהִשְׁבַּתֶּם (hishbattem) kommer av roten שׁבת (å hvile/stanse) og מִסִּבְלֹתָם betyr 'fra deres tvangsarbeid/byrder'. 'Legge ned arbeidet' er akseptabelt men mister nyansen av at det handler om hvile fra tvangsarbeid/byrder spesifikt, noe som er sentralt for konteksten."
+      }
+    ]
   },
   {
     "bookId": 2,
@@ -109,7 +117,7 @@
     "bookId": 2,
     "chapterId": 5,
     "verseId": 16,
-    "text": "Tjenerne dine får ikke halm, men likevel sier de til oss: Lag murstein! Og se, tjenerne dine blir slått, og synden er ditt folks.»",
+    "text": "Tjenerne dine får ikke halm, men likevel sier de til oss: «Lag murstein!» Og se, tjenerne dine blir slått, og synden er ditt folks.»",
     "versions": [
       {
         "text": "Tjenerne dine får ikke halm, men likevel sier de til oss: Lag murstein! Og se, tjenerne dine blir slått, men skylden ligger hos ditt eget folk.»",
@@ -118,6 +126,12 @@
       {
         "text": "Tjenerne dine får ikke halm, men likevel sier de til oss: Lag murstein! Og se, tjenerne dine blir slått, og synden er ditt folks.",
         "explanation": "Verset mangler avsluttende anførselstegn. Alle de andre sitatene i kapitlet har korrekte anførselstegn."
+      },
+      {
+        "text": "Tjenerne dine får ikke halm, men likevel sier de til oss: Lag murstein! Og se, tjenerne dine blir slått, og synden er ditt folks.»",
+        "type": "grammar",
+        "severity": "minor",
+        "explanation": "Det direkte sitatet 'Lag murstein!' bør ha anførselstegn for konsistens med resten av kapitlet der direkte tale markeres. Dette er i tråd med endringen som ble gjort i vers 8 der nettopp et indre sitat fikk anførselstegn."
       }
     ]
   },
@@ -125,13 +139,19 @@
     "bookId": 2,
     "chapterId": 5,
     "verseId": 17,
-    "text": "Men han sa: «Late er dere, late! Derfor sier dere: La oss dra og ofre til Herren.»",
+    "text": "Men han sa: «Late er dere, late! Derfor sier dere: «La oss dra og ofre til Herren.»»",
     "versions": [
       {
         "text": "Men han sa: «Late er dere, late! Derfor sier dere: La oss dra og ofre til Herren.",
         "type": "grammar",
         "severity": "minor",
         "explanation": "Verset mangler avsluttende anførselstegn. Sitatet som begynner med « bør avsluttes med ». Alternativt kan sitatet avsluttes i vers 18, men da bør det markeres tydeligere."
+      },
+      {
+        "text": "Men han sa: «Late er dere, late! Derfor sier dere: La oss dra og ofre til Herren.»",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "For konsistens med vers 8, der det indre sitatet fikk anførselstegn, bør også det indre sitatet her ('La oss dra og ofre til Herren') markeres med anførselstegn."
       }
     ]
   },

@@ -9,7 +9,15 @@
     "bookId": 26,
     "chapterId": 4,
     "verseId": 2,
-    "text": "Legg beleiringsverk mot den, bygg et belejringstårn mot den, kast opp en rampe mot den, still opp leire mot den og sett stormbukker opp mot den rundt omkring."
+    "text": "Legg beleiringsverk mot den, bygg et beleiringstårn mot den, kast opp en rampe mot den, still opp leire mot den og sett stormbukker opp mot den rundt omkring.",
+    "versions": [
+      {
+        "text": "Legg beleiringsverk mot den, bygg et belejringstårn mot den, kast opp en rampe mot den, still opp leire mot den og sett stormbukker opp mot den rundt omkring.",
+        "type": "grammar",
+        "severity": "major",
+        "explanation": "Skrivefeil: 'belejringstårn' skal være 'beleiringstårn'."
+      }
+    ]
   },
   {
     "bookId": 26,
@@ -57,11 +65,17 @@
     "bookId": 26,
     "chapterId": 4,
     "verseId": 10,
-    "text": "Maten du spiser, skal veies ut: tjue sekel om dagen. Fra én tid til én annen tid skal du spise den.",
+    "text": "Maten du spiser, skal veies ut: tjue sekel om dagen. Fra fast tid til fast tid skal du spise den.",
     "versions": [
       {
         "text": "Maten du spiser, skal veies ut: tjue sekel om dagen. Fra tid til annen skal du spise den.",
         "explanation": "Uttrykket 'מֵעֵ֥ת עַד־עֵ֖ת' betyr 'fra en bestemt tid til en bestemt tid', altså på faste tidspunkter i løpet av dagen. 'Fra tid til annen' gir inntrykk av uregelmessighet, mens originalen indikerer regelmessige, fastsatte måltider."
+      },
+      {
+        "text": "Maten du spiser, skal veies ut: tjue sekel om dagen. Fra én tid til én annen tid skal du spise den.",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "'Fra én tid til én annen tid' er litt klønet norsk. 'Fra fast tid til fast tid' uttrykker bedre den regelmessigheten som er ment, og er mer naturlig norsk. Den forrige versjonen ('fra tid til annen') er allerede forkastet."
       }
     ]
   },
@@ -69,11 +83,17 @@
     "bookId": 26,
     "chapterId": 4,
     "verseId": 11,
-    "text": "Vann skal du drikke etter mål: en sjettedel hin. Fra én tid til én annen tid skal du drikke det.",
+    "text": "Vann skal du drikke etter mål: en sjettedel hin. Fra fast tid til fast tid skal du drikke det.",
     "versions": [
       {
         "text": "Vann skal du drikke etter mål: en sjettedel hin. Fra tid til annen skal du drikke det.",
         "explanation": "Samme som vers 10 - uttrykket indikerer regelmessige, fastsatte tidspunkter, ikke tilfeldige intervaller."
+      },
+      {
+        "text": "Vann skal du drikke etter mål: en sjettedel hin. Fra én tid til én annen tid skal du drikke det.",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "Samme som vers 10: 'Fra én tid til én annen tid' er klønet. 'Fra fast tid til fast tid' gir bedre mening og er mer naturlig norsk."
       }
     ]
   },
@@ -93,7 +113,15 @@
     "bookId": 26,
     "chapterId": 4,
     "verseId": 14,
-    "text": "Da sa jeg: Å, Herre Gud! Se, min sjel har aldri blitt urent. Selvdødt eller sønderrevet dyr har jeg aldri spist fra min ungdom og til nå, og urent kjøtt har aldri kommet i min munn."
+    "text": "Da sa jeg: Å, Herre Gud! Se, min sjel har aldri blitt uren. Selvdødt eller sønderrevet dyr har jeg aldri spist fra min ungdom og til nå, og urent kjøtt har aldri kommet i min munn.",
+    "versions": [
+      {
+        "text": "Da sa jeg: Å, Herre Gud! Se, min sjel har aldri blitt urent. Selvdødt eller sønderrevet dyr har jeg aldri spist fra min ungdom og til nå, og urent kjøtt har aldri kommet i min munn.",
+        "type": "error",
+        "severity": "major",
+        "explanation": "'Urent' bør være 'uren' for å samsvare med 'sjel' (hunkjønn/felleskjønn). 'Min sjel er uren' – adjektivet bør bøyes riktig."
+      }
+    ]
   },
   {
     "bookId": 26,
@@ -111,6 +139,14 @@
     "bookId": 26,
     "chapterId": 4,
     "verseId": 17,
-    "text": "Slik skal de mangle brød og vann. De skal forferdes, den ene med den andre, og tæres bort i sin skyld."
+    "text": "Slik skal de mangle brød og vann. De skal forferdes, den ene sammen med den andre, og tæres bort i sin skyld.",
+    "versions": [
+      {
+        "text": "Slik skal de mangle brød og vann. De skal forferdes, den ene med den andre, og tæres bort i sin skyld.",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "'Den ene med den andre' er grammatisk greit, men 'den ene sammen med den andre' gjengir bedre det hebraiske uttrykket 'ish ve-achiv' (en mann og hans bror) som uttrykker gjensidig fortvilelse."
+      }
+    ]
   }
 ]

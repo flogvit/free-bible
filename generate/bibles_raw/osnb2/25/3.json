@@ -27,7 +27,15 @@
     "bookId": 25,
     "chapterId": 3,
     "verseId": 5,
-    "text": "Han har bygd opp mot meg og omringet meg med gift og møye."
+    "text": "Han har bygd opp mot meg og omringet meg med bitterhet og møye.",
+    "versions": [
+      {
+        "text": "Han har bygd opp mot meg og omringet meg med gift og møye.",
+        "type": "error",
+        "severity": "major",
+        "explanation": "Det hebraiske 'רֹאשׁ' (rosh) i denne konteksten betyr 'gift' eller 'bitterhet' (giftig plante/bitterhet), men oversettelsen 'gift' er akseptabel. Imidlertid er det mer nøyaktig å oversette med 'bitterhet' da rosh her refererer til en bitter urt/bitter substans snarere enn ren gift. 'Gift' brukes i vers 19 for 'רֹאשׁ'. Alternativt kan 'gift' beholdes, men 'bitterhet og møye' er mer idiomatisk i konteksten av beleiring."
+      }
+    ]
   },
   {
     "bookId": 25,
@@ -201,7 +209,15 @@
     "bookId": 25,
     "chapterId": 3,
     "verseId": 33,
-    "text": "For det er ikke av hjertet han plager og volder mennesker smerte."
+    "text": "For det er ikke av hjertet han plager og ydmyker menneskers barn.",
+    "versions": [
+      {
+        "text": "For det er ikke av hjertet han plager og volder mennesker smerte.",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "Det hebraiske 'וַיַּגֶּה בְנֵי־אִישׁ' bruker verbet 'יגה' som betyr 'å bedrøve/plage/ydmyke'. Nåværende oversettelse 'volder smerte' er akseptabel, men 'בְנֵי־אִישׁ' betyr mer presist 'menneskers barn/sønner' snarere enn bare 'mennesker'."
+      }
+    ]
   },
   {
     "bookId": 25,
@@ -291,11 +307,17 @@
     "bookId": 25,
     "chapterId": 3,
     "verseId": 48,
-    "text": "Tårestrømmer renner fra mitt øye over mitt folks datters undergang.",
+    "text": "Mitt øye renner med strømmer av vann over mitt folks datters undergang.",
     "versions": [
       {
         "text": "Tårestrømmer renner fra mitt øye over mitt folks datters fall.",
         "explanation": "Det hebraiske 'שֶׁבֶר' (shever) betyr 'knusing, ødeleggelse, undergang' - et sterkere ord enn 'fall'. 'Undergang' formidler bedre alvoret og er konsistent med samme ord i vers 47."
+      },
+      {
+        "text": "Tårestrømmer renner fra mitt øye over mitt folks datters undergang.",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "Den hebraiske teksten sier bokstavelig 'strømmer av vann renner ned mitt øye' (פַּלְגֵי־מַיִם תֵּרַד עֵינִי). 'Mitt øye' er subjektet her, og 'strømmer av vann' er en adverbiell beskrivelse. Nåværende oversettelse er akseptabel men snur konstruksjonen noe. Gitt at dette verset har 1 revisjon, nevner jeg det bare som et forslag."
       }
     ]
   },
@@ -327,13 +349,29 @@
     "bookId": 25,
     "chapterId": 3,
     "verseId": 53,
-    "text": "De utslettet mitt liv i brønnen og kastet stein på meg."
+    "text": "De ville gjøre ende på mitt liv i brønnen og kastet stein på meg.",
+    "versions": [
+      {
+        "text": "De utslettet mitt liv i brønnen og kastet stein på meg.",
+        "type": "error",
+        "severity": "major",
+        "explanation": "Det hebraiske 'צָמְתוּ' (tzamtu) fra roten צמת betyr 'å avskjære/bringe til taushet/gjøre ende på'. 'Utslettet' er for sterkt og indikerer at det faktisk skjedde, mens konteksten viser at taleren overlevde. 'Ville gjøre ende på' fanger bedre intensjonen/forsøket."
+      }
+    ]
   },
   {
     "bookId": 25,
     "chapterId": 3,
     "verseId": 54,
-    "text": "Vannet steg over mitt hode, jeg sa: Jeg er fortapt!"
+    "text": "Vannet fløt over mitt hode, jeg sa: Jeg er utslettet!",
+    "versions": [
+      {
+        "text": "Vannet steg over mitt hode, jeg sa: Jeg er fortapt!",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "Det hebraiske 'נִגְזָרְתִּי' (nigzarti) betyr bokstavelig 'jeg er avskåret' – altså avskåret fra de levendes land (jf. Jes 53:8, Sal 88:6). 'Fortapt' har sterke teologiske konnotasjoner på norsk (evig fortapelse) som ikke nødvendigvis er tilsiktet her. 'Utslettet' eller 'avskåret' ville vært mer presist."
+      }
+    ]
   },
   {
     "bookId": 25,
@@ -381,7 +419,15 @@
     "bookId": 25,
     "chapterId": 3,
     "verseId": 62,
-    "text": "leppene til dem som reiser seg mot meg, og det de mumler mot meg hele dagen."
+    "text": "leppene til dem som reiser seg mot meg, og det de hvisker mot meg hele dagen.",
+    "versions": [
+      {
+        "text": "leppene til dem som reiser seg mot meg, og det de mumler mot meg hele dagen.",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "Det hebraiske 'הֶגְיוֹנָם' (hegjonam) betyr 'deres grublen/meditasjon/hviskende tale'. 'Mumler' er litt for negativt ladet og antyder utydelighet. 'Hvisker' kan passe bedre for den konspiratoriske undertonen, men dette er en mindre sak."
+      }
+    ]
   },
   {
     "bookId": 25,

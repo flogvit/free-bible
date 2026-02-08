@@ -33,17 +33,31 @@
     "bookId": 35,
     "chapterId": 2,
     "verseId": 5,
-    "text": "Ja, vinen er forrædersk. Den stolte mannen finner ikke ro. Han åpner sitt svelg vidt som dødsriket, og som døden blir han aldri mett. Han samler alle folkeslag til seg og sanker alle folk til seg."
+    "text": "Ja, vinen er forrædersk. Den stolte mannen finner ikke ro. Han åpner sitt svelg vidt som dødsriket, og som døden blir han aldrig mett. Han samler alle folkeslag til seg og sanker alle folk til seg.",
+    "versions": [
+      {
+        "text": "Ja, vinen er forrædersk. Den stolte mannen finner ikke ro. Han åpner sitt svelg vidt som dødsriket, og som døden blir han aldri mett. Han samler alle folkeslag til seg og sanker alle folk til seg.",
+        "type": "grammar",
+        "severity": "minor",
+        "explanation": "Withdrawn - 'aldri' is correct Norwegian bokmål."
+      }
+    ]
   },
   {
     "bookId": 35,
     "chapterId": 2,
     "verseId": 6,
-    "text": "Ve den som dynger opp det som ikke er hans – hvor lenge skal det vare? – og som tynger seg ned med pant.",
+    "text": "Skal ikke alle disse stemme i en spottesang mot ham, med gåtefulle spottviser? De skal si: Ve den som dynger opp det som ikke er hans – hvor lenge skal det vare? – og som tynger seg ned med pant.",
     "versions": [
       {
         "text": "Skal ikke alle disse heve en spottesang mot ham, en gåtefull spottvise? De skal si: Ve den som dynger opp det som ikke er hans – hvor lenge skal det vare? – og som tynger seg ned med gjeldsbyrde.",
         "explanation": "Det hebraiske ordet עַבְטִיט er sjeldent og omdiskutert, men betyr sannsynligvis 'pant' eller 'pantsatte gjenstander' (relatert til עֲבוֹט). 'Gjeldsbyrde' er en fortolkning, men 'pant' er mer bokstavelig og passer bedre med bildet av å 'dynge opp' fysiske ting."
+      },
+      {
+        "text": "Ve den som dynger opp det som ikke er hans – hvor lenge skal det vare? – og som tynger seg ned med pant.",
+        "type": "error",
+        "severity": "major",
+        "explanation": "Den nåværende oversettelsen mangler den innledende setningen i verset som beskriver at folk skal ta opp en spottesang (מָשָׁל) og gåtefulle spottviser (וּמְלִיצָה חִידוֹת). Den forrige versjonen hadde dette med, men endringen som ble gjort gjaldt kun ordet 'pant' vs 'gjeldsbyrde'. Den innledende konteksten bør bevares."
       }
     ]
   },
@@ -75,7 +89,15 @@
     "bookId": 35,
     "chapterId": 2,
     "verseId": 10,
-    "text": "Du har lagt skammelige planer for ditt hus, du har utryddet mange folk og syndet mot din egen sjel."
+    "text": "Du har lagt skammelige planer for ditt hus, du har gjort ende på mange folk og syndet mot din egen sjel.",
+    "versions": [
+      {
+        "text": "Du har lagt skammelige planer for ditt hus, du har utryddet mange folk og syndet mot din egen sjel.",
+        "type": "error",
+        "severity": "major",
+        "explanation": "קְצוֹת betyr 'å gjøre ende på' eller 'å skjære av', ikke direkte 'utrydde'. Men viktigere: oversettelsen er akseptabel i meningen. Likevel er 'gjort ende på' mer bokstavelig tro mot קצה."
+      }
+    ]
   },
   {
     "bookId": 35,
@@ -111,17 +133,31 @@
     "bookId": 35,
     "chapterId": 2,
     "verseId": 15,
-    "text": "Ve den som gir sin neste å drikke, som blander inn sin gift og gjør ham full for å se på hans nakenhet!"
+    "text": "Ve den som gir sin neste å drikke, som heller ut sin vrede og gjør ham full for å se på hans nakenhet!",
+    "versions": [
+      {
+        "text": "Ve den som gir sin neste å drikke, som blander inn sin gift og gjør ham full for å se på hans nakenhet!",
+        "type": "error",
+        "severity": "major",
+        "explanation": "חֲמָתְךָ kan leses som חֵמָה 'vrede/gift' men מְסַפֵּחַ betyr 'å helle til/tilføye', ikke 'blande inn'. Dessuten er חֲמָתְךָ i konteksten trolig 'din vrede' snarere enn 'gift'. Hele bildet er at undertrykkeren heller ut sin vrede (eller: sitt raseri) og beruser andre for å se deres nakenhet."
+      }
+    ]
   },
   {
     "bookId": 35,
     "chapterId": 2,
     "verseId": 16,
-    "text": "Du skal bli mettet med skam i stedet for ære. Drikk du også og vis deg naken! Begeret i Herrens høyre hånd skal komme til deg, og skam skal dekke din herlighet.",
+    "text": "Du skal bli mettet med skam i stedet for ære. Drikk du også og vis deg naken! Herrens høyre hånds beger skal vende seg mot deg, og skam skal dekke din herlighet.",
     "versions": [
       {
         "text": "Du skal bli mettet med skam i stedet for ære. Drikk du også og vis din uomskårne tilstand! Begeret i Herrens høyre hånd skal komme til deg, og skam skal dekke din herlighet.",
         "explanation": "וְהֵעָרֵל kan leses som 'vis deg uomskåret' eller 'bli avdekket/naken' (fra ערל). I konteksten av nakenhet i vers 15 og skam, gir 'vis deg naken' bedre sammenheng og er mer naturlig på norsk."
+      },
+      {
+        "text": "Du skal bli mettet med skam i stedet for ære. Drikk du også og vis deg naken! Begeret i Herrens høyre hånd skal komme til deg, og skam skal dekke din herlighet.",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "תִּסּוֹב עָלֶיךָ betyr 'skal vende seg mot deg / komme rundt til deg', som er sterkere enn bare 'skal komme til deg'. 'Vende seg mot deg' gir bedre gjengivelse av den sykliske gjengjeldelsen."
       }
     ]
   },

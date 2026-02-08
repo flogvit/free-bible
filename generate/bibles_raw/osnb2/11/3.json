@@ -21,11 +21,17 @@
     "bookId": 11,
     "chapterId": 3,
     "verseId": 4,
-    "text": "Tusen brennoffer bar Salomo frem på dette alteret.",
+    "text": "Kongen dro til Gibeon for å ofre der, for det var den største offerhøyden. Tusen brennoffer bar Salomo frem på dette alteret.",
     "versions": [
       {
         "text": "Kongen dro til Gibeon for å ofre der, for det var den største offerhøyden. Tusen brennoffer bar Salomo frem på det alteret.",
         "explanation": "Hebraisk 'הַהֽוּא' (hahu) betyr 'dette/det' med demonstrativ betydning. 'Dette alteret' er mer naturlig på norsk når man refererer til noe spesifikt som nettopp er nevnt."
+      },
+      {
+        "text": "Tusen brennoffer bar Salomo frem på dette alteret.",
+        "type": "error",
+        "severity": "critical",
+        "explanation": "Den første delen av verset er helt utelatt i den nåværende versjonen. Den hebraiske teksten begynner med at kongen dro til Gibeon for å ofre der fordi det var den største offerhøyden. Denne informasjonen mangler og er kritisk for sammenhengen. Den forrige versjonen hadde denne informasjonen, men ble endret kun for å endre 'det alteret' til 'dette alteret' – resten av setningen bør ha blitt bevart."
       }
     ]
   },
@@ -45,11 +51,17 @@
     "bookId": 11,
     "chapterId": 3,
     "verseId": 7,
-    "text": "Men jeg er bare en ung gutt og vet ikke hvordan jeg skal gå ut eller inn.",
+    "text": "Nå, Herre min Gud, har du gjort din tjener til konge etter min far David. Men jeg er bare en ung gutt og vet ikke hvordan jeg skal gå ut eller inn.",
     "versions": [
       {
         "text": "Nå, Herre min Gud, har du gjort din tjener til konge etter min far David. Men jeg er bare en ung gutt og forstår ikke å gå ut eller inn.",
         "explanation": "Uttrykket 'å gå ut og inn' er et idiom for å lede/styre. 'Vet ikke hvordan jeg skal' gir bedre flyt og gjør idiomet mer forståelig enn 'forstår ikke å'."
+      },
+      {
+        "text": "Men jeg er bare en ung gutt og vet ikke hvordan jeg skal gå ut eller inn.",
+        "type": "error",
+        "severity": "major",
+        "explanation": "Den første delen av verset som adresserer Gud og nevner at Salomo er blitt gjort til konge, er helt utelatt. Den hebraiske teksten begynner med 'Ve'attah YHWH Elohai, attah himlakta et-avdekha tachat David avi' – dette er vesentlig teologisk innhold som gir kontekst til Salomos ydmykhet."
       }
     ]
   },

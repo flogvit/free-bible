@@ -15,7 +15,15 @@
     "bookId": 34,
     "chapterId": 2,
     "verseId": 2,
-    "text": "En ødelegger drar opp mot deg. Bevokt festningen, hold utkikk på veien, gjør hoftene sterke, samle all din kraft!"
+    "text": "En ødelegger drar opp mot deg. Bevokt festningen, hold utkikk langs veien, spenn hoftene, samle all din kraft!",
+    "versions": [
+      {
+        "text": "En ødelegger drar opp mot deg. Bevokt festningen, hold utkikk på veien, gjør hoftene sterke, samle all din kraft!",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "'Hold utkikk på veien' bør heller være 'langs veien' for å gi bedre norsk flyt. צַפֵּה־דֶרֶךְ betyr å speide langs veien. 'Gjør hoftene sterke' er en noe tung gjengivelse av חַזֵּק מָתְנַיִם; 'spenn hoftene' er mer idiomatisk norsk og gir bedre muntlig rytme."
+      }
+    ]
   },
   {
     "bookId": 34,
@@ -33,11 +41,17 @@
     "bookId": 34,
     "chapterId": 2,
     "verseId": 4,
-    "text": "Skjoldene til hans krigere er farget røde, soldatene er kledd i skarlagen. Stridsvognene blinker som ild av stål på den dagen han gjør dem klare, og spydene av sypress svinges.",
+    "text": "Skjoldene til hans krigere er farget røde, soldatene er kledd i skarlagen. Stridsvognene blinker som ild av stål på den dagen han gjør dem klare, og spydskaftene av sypress svinges.",
     "versions": [
       {
         "text": "Skjoldene til hans krigere er farget røde, soldatene er kledd i skarlagen. Stridsvognene blinker som ild av stål på den dagen han gjør dem klare, og spydene av sypress svaier.",
         "explanation": "הָרְעָֽלוּ (fra רעל) betyr å svinge/vibrere/bli rystet, ikke bare 'svaie'. 'Svinges' gir bedre inntrykk av aktiv krigshandling og rytmisk kraft i muntlig lesning."
+      },
+      {
+        "text": "Skjoldene til hans krigere er farget røde, soldatene er kledd i skarlagen. Stridsvognene blinker som ild av stål på den dagen han gjør dem klare, og spydene av sypress svinges.",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "הַבְּרֹשִׁים refererer mest sannsynlig til spyd/lanser laget av sypresstreet, ikke treet selv. 'Spydene av sypress' er litt tvetydig — 'spydskaftene av sypress' er mer presist og tydelig."
       }
     ]
   },
@@ -97,7 +111,15 @@
     "bookId": 34,
     "chapterId": 2,
     "verseId": 10,
-    "text": "Plyndr sølvet! Plyndr gullet! Det er ingen ende på skattene, rikdom av alle slags kostbare ting."
+    "text": "Plyndr sølvet! Plyndr gullet! Det er ingen ende på forrådet, rikdom av alle slags kostbare ting.",
+    "versions": [
+      {
+        "text": "Plyndr sølvet! Plyndr gullet! Det er ingen ende på skattene, rikdom av alle slags kostbare ting.",
+        "type": "error",
+        "severity": "major",
+        "explanation": "'Plyndr' mangler en e — korrekt imperativform på bokmål er 'Plyndr' (akseptabel kort imperativ), men det egentlige problemet er תְּכוּנָה som betyr 'forråd/opplag', ikke 'skatter'. 'Forrådet' er mer nøyaktig og skiller seg fra כֶּסֶף/זָהָב."
+      }
+    ]
   },
   {
     "bookId": 34,
@@ -127,12 +149,28 @@
     "bookId": 34,
     "chapterId": 2,
     "verseId": 13,
-    "text": "Løven rev i stykker nok til sine unger og kvalte bytte for sine løvinner. Han fylte sine huler med rov og sine hi med byttet."
+    "text": "Løven rev i stykker nok til sine unger og kvalte bytte for sine løvinner. Han fylte sine huler med rov og sine hi med byttedyr.",
+    "versions": [
+      {
+        "text": "Løven rev i stykker nok til sine unger og kvalte bytte for sine løvinner. Han fylte sine huler med rov og sine hi med byttet.",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "טְרֵפָה (byttet/rovdyr) som avslutning i verset kan gjengis bedre med 'byttedyr' for å skille det fra det mer generelle 'rov' (טֶרֶף) tidligere i verset, og for å gi en mer levende avslutning."
+      }
+    ]
   },
   {
     "bookId": 34,
     "chapterId": 2,
     "verseId": 14,
-    "text": "Se, jeg kommer mot deg, sier Herren Sebaot. Jeg vil la dine stridsvogner gå opp i røyk, og sverdet skal fortære dine unge løver. Jeg vil utrydde ditt rov fra jorden, og dine sendebuds røst skal ikke lenger bli hørt."
+    "text": "Se, jeg kommer mot deg, sier Herren, hærskarenes Gud. Jeg vil la hennes stridsvogner gå opp i røyk, og sverdet skal fortære dine unge løver. Jeg vil utrydde ditt rov fra jorden, og dine sendebuds røst skal ikke lenger bli hørt.",
+    "versions": [
+      {
+        "text": "Se, jeg kommer mot deg, sier Herren Sebaot. Jeg vil la dine stridsvogner gå opp i røyk, og sverdet skal fortære dine unge løver. Jeg vil utrydde ditt rov fra jorden, og dine sendebuds røst skal ikke lenger bli hørt.",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "רִכְבָּהּ har 3. person feminin suffiks ('hennes stridsvogner', dvs. Ninives), ikke 'dine'. Teksten veksler mellom tiltale til Ninive (2. person fem.) og omtale (3. person fem.) — her er det 3. person. I tillegg kan 'Herren Sebaot' gjengis med 'Herren, hærskarenes Gud' for klarere moderne norsk."
+      }
+    ]
   }
 ]

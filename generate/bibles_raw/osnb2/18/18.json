@@ -25,11 +25,17 @@
     "bookId": 18,
     "chapterId": 18,
     "verseId": 3,
-    "text": "Hvorfor blir vi regnet som fe, og ansett som dumme i deres øyne?",
+    "text": "Hvorfor blir vi regnet som fe og ansett som dumme i deres øyne?",
     "versions": [
       {
         "text": "Hvorfor blir vi regnet som fe, og sett på som urene i deres øyne?",
         "explanation": "Det hebraiske נִטְמִינוּ (fra טמה) betyr 'være dum/stum' eller 'være tilstoppet', ikke 'uren'. Bildad klager over at de blir behandlet som dumme dyr, ikke som urene."
+      },
+      {
+        "text": "Hvorfor blir vi regnet som fe, og ansett som dumme i deres øyne?",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "Grammatisk: Kommaet før 'og' er unødvendig her. De to leddene er jevnbyrdige og forbundet med 'og', så komma bør fjernes for bedre flyt."
       }
     ]
   },
@@ -67,7 +73,15 @@
     "bookId": 18,
     "chapterId": 18,
     "verseId": 8,
-    "text": "For han sendes inn i et nett ved sine egne føtter, og han vandrer på et gitter."
+    "text": "For ved sine egne føtter drives han inn i et nett, og han vandrer på et gitter.",
+    "versions": [
+      {
+        "text": "For han sendes inn i et nett ved sine egne føtter, og han vandrer på et gitter.",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "Den hebraiske ordstillingen בְּרֶשֶׁת בְּרַגְלָיו plasserer 'ved sine føtter' som årsak/middel – det er hans egne føtter som fører ham inn i nettet. Den nåværende oversettelsen kan misforstås som at nettet ligger ved føttene. Omformuleringen tydeliggjør at han selv går inn i fellen."
+      }
+    ]
   },
   {
     "bookId": 18,
@@ -91,7 +105,15 @@
     "bookId": 18,
     "chapterId": 18,
     "verseId": 12,
-    "text": "Hans styrke blir utsultet, og ulykken står klar ved hans side."
+    "text": "Sulten fortærer hans styrke, og ulykken står klar ved hans side.",
+    "versions": [
+      {
+        "text": "Hans styrke blir utsultet, og ulykken står klar ved hans side.",
+        "type": "error",
+        "severity": "major",
+        "explanation": "Det hebraiske יְהִי־רָעֵב אֹנוֹ betyr bokstavelig 'hans styrke/kraft blir sulten' – altså sulten tærer på hans kraft. 'Hans styrke blir utsultet' er uidiomatisk på norsk. 'Sulten fortærer hans styrke' er mer naturlig og formidler bedre at sult bryter ned hans kraft."
+      }
+    ]
   },
   {
     "bookId": 18,
@@ -121,7 +143,15 @@
     "bookId": 18,
     "chapterId": 18,
     "verseId": 16,
-    "text": "Nedenfra visner røttene hans, og ovenfra visner grenene."
+    "text": "Nedenfra tørker røttene hans ut, og ovenfra visner grenene hans.",
+    "versions": [
+      {
+        "text": "Nedenfra visner røttene hans, og ovenfra visner grenene.",
+        "type": "error",
+        "severity": "major",
+        "explanation": "Verbet יִבָשׁוּ (fra יבשׁ) betyr 'tørke ut', ikke 'visne'. Og קְצִירוֹ har possessivsuffiks 'hans' som mangler i oversettelsen. Dessuten brukes 'visner' for begge halvdeler, men det hebraiske bruker to forskjellige verb (יבשׁ 'tørke ut' og מלל 'visne/svikte'), så å differensiere gir bedre gjengivelse."
+      }
+    ]
   },
   {
     "bookId": 18,
@@ -151,7 +181,15 @@
     "bookId": 18,
     "chapterId": 18,
     "verseId": 20,
-    "text": "De som kommer etter, grøsser over hans skjebne, og de som gikk før, gripes av redsel."
+    "text": "De som kommer etter, forferdes over hans skjebne, og de som gikk før, gripes av redsel.",
+    "versions": [
+      {
+        "text": "De som kommer etter, grøsser over hans skjebne, og de som gikk før, gripes av redsel.",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "Det hebraiske נָשַׁמּוּ (fra שׁמם) betyr 'bli forferdet/forskrekket', ikke 'grøsse'. 'Grøsser' er litt for mildt og dagligdags. 'Forferdes' gir bedre samsvar med det hebraiske ordets styrke og alvor."
+      }
+    ]
   },
   {
     "bookId": 18,

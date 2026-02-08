@@ -37,7 +37,15 @@
     "bookId": 42,
     "chapterId": 17,
     "verseId": 4,
-    "text": "Selv om han synder mot deg sju ganger om dagen og sju ganger vender tilbake til deg og sier: 'Jeg angrer', skal du tilgi ham.»"
+    "text": "Og om han synder mot deg sju ganger om dagen og sju ganger vender tilbake til deg og sier: 'Jeg angrer', skal du tilgi ham.»",
+    "versions": [
+      {
+        "text": "Selv om han synder mot deg sju ganger om dagen og sju ganger vender tilbake til deg og sier: 'Jeg angrer', skal du tilgi ham.»",
+        "type": "grammar",
+        "severity": "minor",
+        "explanation": "Gresk 'καὶ ἐὰν' betyr 'og hvis/om', ikke 'selv om'. 'Selv om' (som tilsvarer gresk 'εἰ καί' eller 'κἂν') gir en innrømmende betydning som ikke er i grunnteksten. Originalen presenterer dette som en betingelse ('og om'), ikke en innrømmelse."
+      }
+    ]
   },
   {
     "bookId": 42,
@@ -79,7 +87,15 @@
     "bookId": 42,
     "chapterId": 17,
     "verseId": 9,
-    "text": "Takker han tjeneren fordi han gjorde det han ble pålagt?"
+    "text": "Skylder han tjeneren takk fordi han gjorde det han ble pålagt?",
+    "versions": [
+      {
+        "text": "Takker han tjeneren fordi han gjorde det han ble pålagt?",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "Det greske 'μὴ ἔχει χάριν' med spørrepartikkelen 'μή' forventer et negativt svar ('Nei'). Formuleringen 'Takker han tjeneren' er et nøytralt spørsmål, mens grunnteksten impliserer 'Han skylder vel ikke tjeneren takk?'. 'Skylder han tjeneren takk' gjør det tydeligere at svaret forventes å være nei."
+      }
+    ]
   },
   {
     "bookId": 42,
@@ -163,7 +179,7 @@
     "bookId": 42,
     "chapterId": 17,
     "verseId": 21,
-    "text": "Ingen skal si: 'Se, her er det!' eller: 'Der!' For se, Guds rike er midt iblant dere.»",
+    "text": "Heller ikke skal noen si: 'Se, her er det!' eller: 'Der!' For se, Guds rike er midt iblant dere.»",
     "versions": [
       {
         "text": "Ingen skal si: 'Se, her er det!' eller: 'Der!' For se, Guds rike er midt iblant dere.»",
@@ -172,6 +188,12 @@
       {
         "text": "Ingen skal si: 'Se, her er det!' eller: 'Der!' For se, Guds rike er inne i dere.»",
         "explanation": "Selv om versjonshistorikken viser at dette ble endret, er det teologisk problematisk å si at Guds rike er 'inne i' fariseerne som Jesus taler til. Konteksten (Jesus taler til skeptiske fariseere) taler sterkt for 'midt iblant dere' - altså at riket er til stede i Jesu person og virke blant dem. De fleste moderne oversettelser og kommentatorer foretrekker 'midt iblant dere' av denne grunn."
+      },
+      {
+        "text": "Ingen skal si: 'Se, her er det!' eller: 'Der!' For se, Guds rike er midt iblant dere.»",
+        "type": "grammar",
+        "severity": "minor",
+        "explanation": "Gresk 'οὐδὲ ἐροῦσιν' betyr 'heller ikke skal de si' – det bygger videre på det foregående verset om at riket ikke kommer på observerbar måte. 'Ingen skal si' mister koblingen 'heller ikke' (οὐδὲ) som knytter setningen til vers 20. Men dette verset har 2+ revisjoner, så dette er bare en mindre observasjon."
       }
     ]
   },
@@ -263,7 +285,15 @@
     "bookId": 42,
     "chapterId": 17,
     "verseId": 35,
-    "text": "To kvinner skal male korn sammen. Den ene blir tatt med, den andre blir igjen.»"
+    "text": "To kvinner skal male korn sammen. Den ene blir tatt med, den andre blir igjen.",
+    "versions": [
+      {
+        "text": "To kvinner skal male korn sammen. Den ene blir tatt med, den andre blir igjen.»",
+        "type": "grammar",
+        "severity": "minor",
+        "explanation": "Avsluttende anførselstegn (») er plassert etter vers 35, men Jesu tale fortsetter i vers 36 og 37. Anførselstegnet bør flyttes til slutten av vers 37 i stedet."
+      }
+    ]
   },
   {
     "bookId": 42,
@@ -281,6 +311,14 @@
     "bookId": 42,
     "chapterId": 17,
     "verseId": 37,
-    "text": "De spurte ham: «Hvor, Herre?» Han svarte: «Der hvor liket er, der vil gribbene samles.»"
+    "text": "De spurte ham: «Hvor, Herre?» Han svarte dem: «Der hvor liket er, der vil gribbene samles.»",
+    "versions": [
+      {
+        "text": "De spurte ham: «Hvor, Herre?» Han svarte: «Der hvor liket er, der vil gribbene samles.»",
+        "type": "grammar",
+        "severity": "minor",
+        "explanation": "Gresk 'εἶπεν αὐτοῖς' betyr 'sa til dem'. Å legge til 'dem' gjenspeiler grunnteksten bedre og er mer presist."
+      }
+    ]
   }
 ]

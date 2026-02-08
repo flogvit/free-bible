@@ -27,7 +27,15 @@
     "bookId": 3,
     "chapterId": 25,
     "verseId": 5,
-    "text": "Det som vokser av seg selv etter innhøstingen, skal du ikke høste, og druene fra dine ustelte vintrær skal du ikke plukke. Det skal være et sabbatsår for landet."
+    "text": "Det som vokser av seg selv etter høsten, skal du ikke høste, og druene fra dine ubeskårne vintrær skal du ikke plukke. Det skal være et hvileår for landet.",
+    "versions": [
+      {
+        "text": "Det som vokser av seg selv etter innhøstingen, skal du ikke høste, og druene fra dine ustelte vintrær skal du ikke plukke. Det skal være et sabbatsår for landet.",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "Det hebraiske נְזִירֶךָ refererer til ubeskårne vintrær (vintrær som ikke er beskåret/stelt), ikke bare 'ustelte'. Ordet שַׁבָּתוֹן betyr 'fullstendig hvile', og 'hvileår' er et noe bedre norsk uttrykk enn 'sabbatsår'. Også 'innhøstingen' → 'høsten' er mer naturlig norsk."
+      }
+    ]
   },
   {
     "bookId": 3,
@@ -99,7 +107,15 @@
     "bookId": 3,
     "chapterId": 25,
     "verseId": 17,
-    "text": "Dere skal ikke utnytte hverandre, men frykte din Gud. For jeg er Herren deres Gud."
+    "text": "Dere skal ikke utnytte hverandre, men dere skal frykte deres Gud. For jeg er Herren deres Gud.",
+    "versions": [
+      {
+        "text": "Dere skal ikke utnytte hverandre, men frykte din Gud. For jeg er Herren deres Gud.",
+        "type": "grammar",
+        "severity": "minor",
+        "explanation": "Blandingen av 'dere' og 'din' i samme setning er grammatisk inkonsistent. Hebraisk har וְיָרֵאתָ (2. person entall), men i kontekst med det foregående flertall er det naturlig å harmonisere til 'deres Gud' i norsk for konsistensens skyld – eller beholde entall gjennomgående. Den nåværende blandingen er uheldig."
+      }
+    ]
   },
   {
     "bookId": 3,
@@ -195,7 +211,15 @@
     "bookId": 3,
     "chapterId": 25,
     "verseId": 33,
-    "text": "Når noen løser inn fra levittene, skal det solgte huset i byen de eier, frigis i jubelåret. For husene i levittenes byer er deres eiendom blant Israels barn."
+    "text": "Selv om noen skulle løse inn et hus fra levittene, skal det solgte huset i byen de eier, gå tilbake i jubelåret. For husene i levittenes byer er deres eiendom blant Israels barn.",
+    "versions": [
+      {
+        "text": "Når noen løser inn fra levittene, skal det solgte huset i byen de eier, frigis i jubelåret. For husene i levittenes byer er deres eiendom blant Israels barn.",
+        "type": "error",
+        "severity": "major",
+        "explanation": "Verset er vanskelig, men meningen er at selv om et hus fra en levitt blir solgt og eventuelt innløst, skal det uansett frigis/gå tilbake i jubelåret. Den nåværende oversettelsen mangler nyansen om at huset uansett går tilbake. Formuleringen 'Når noen løser inn fra levittene' er også litt uklar – det handler om at dersom et hus kjøpt fra en levitt ikke blir innløst, frigis det likevel i jubelåret."
+      }
+    ]
   },
   {
     "bookId": 3,

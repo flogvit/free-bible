@@ -21,7 +21,15 @@
     "bookId": 22,
     "chapterId": 3,
     "verseId": 3,
-    "text": "Vekterne som går rundt i byen, fant meg. Jeg spurte: «Har dere sett ham som min sjel elsker?»"
+    "text": "Vekterne som går rundt i byen, fant meg. «Har dere sett ham som min sjel elsker?»",
+    "versions": [
+      {
+        "text": "Vekterne som går rundt i byen, fant meg. Jeg spurte: «Har dere sett ham som min sjel elsker?»",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "Teksten 'Jeg spurte:' er lagt til og finnes ikke i den hebraiske originalen. Originalen går rett fra 'fant meg' til spørsmålet. Det er vanlig i poetisk oversettelse å la det stå implisitt, slik originalen gjør. 'Jeg spurte:' er et tillegg som gjør teksten mer prosaisk."
+      }
+    ]
   },
   {
     "bookId": 22,
@@ -51,7 +59,15 @@
     "bookId": 22,
     "chapterId": 3,
     "verseId": 7,
-    "text": "Se, det er Salomos bæreseng! Seksti krigere omgir den, av Israels kjemper."
+    "text": "Se, det er Salomos bæreseng! Seksti krigere omgir den, av Israels mektigste menn.",
+    "versions": [
+      {
+        "text": "Se, det er Salomos bæreseng! Seksti krigere omgir den, av Israels kjemper.",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "מִגִּבֹּרֵי יִשְׂרָאֵל betyr 'av Israels helter/sterke menn'. 'Kjemper' kan gi assosiasjoner til kjempestore personer (som Goliat). 'Mektigste menn' formidler bedre at dette er elitekrigere."
+      }
+    ]
   },
   {
     "bookId": 22,
@@ -87,6 +103,14 @@
     "bookId": 22,
     "chapterId": 3,
     "verseId": 11,
-    "text": "Kom ut og se, Sions døtre, på kong Salomo med kronen som hans mor kronet ham med på bryllupsdagen hans, på dagen da hans hjerte gledet seg."
+    "text": "Kom ut og se, Sions døtre, på kong Salomo med kronen hans mor kronet ham med på bryllupsdagen hans, på dagen da hans hjerte gledet seg.",
+    "versions": [
+      {
+        "text": "Kom ut og se, Sions døtre, på kong Salomo med kronen som hans mor kronet ham med på bryllupsdagen hans, på dagen da hans hjerte gledet seg.",
+        "type": "grammar",
+        "severity": "minor",
+        "explanation": "'som hans mor kronet ham med' er litt tungt. 'Kronen hans mor kronet ham med' er mer naturlig norsk og unngår dobbelt 'som'-konstruksjon. Alternativt kan den nåværende formuleringen aksepteres, men den er noe tung."
+      }
+    ]
   }
 ]

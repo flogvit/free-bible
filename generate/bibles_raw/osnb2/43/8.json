@@ -15,7 +15,15 @@
     "bookId": 43,
     "chapterId": 8,
     "verseId": 3,
-    "text": "Da kom de skriftlærde og fariseerne med en kvinne som var grepet i ekteskapsbrudd. De stilte henne fram foran ham"
+    "text": "Da kom de skriftlærde og fariseerne med en kvinne som var grepet i ekteskapsbrudd. De stilte henne fram midt iblant dem",
+    "versions": [
+      {
+        "text": "Da kom de skriftlærde og fariseerne med en kvinne som var grepet i ekteskapsbrudd. De stilte henne fram foran ham",
+        "type": "grammar",
+        "severity": "minor",
+        "explanation": "Gresk 'ἐν μέσῳ' betyr 'i midten' (blant dem/forsamlingen), ikke 'foran ham'. Kvinnen ble stilt fram midt i forsamlingen, ikke spesifikt foran Jesus."
+      }
+    ]
   },
   {
     "bookId": 43,
@@ -57,7 +65,15 @@
     "bookId": 43,
     "chapterId": 8,
     "verseId": 9,
-    "text": "Da de hørte dette og ble dømt av sin egen samvittighet, gikk de bort, én etter én, de eldste først. Jesus ble igjen alene med kvinnen som sto der."
+    "text": "Da de hørte dette, gikk de bort, én etter én, de eldste først. Jesus ble igjen alene med kvinnen som sto der.",
+    "versions": [
+      {
+        "text": "Da de hørte dette og ble dømt av sin egen samvittighet, gikk de bort, én etter én, de eldste først. Jesus ble igjen alene med kvinnen som sto der.",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "Frasen 'ὑπὸ τῆς συνειδήσεως ἐλεγχόμενοι' (dømt av sin egen samvittighet) er tekstkritisk usikker og mangler i de fleste tidlige manuskripter, på samme måte som 'μὴ προσποιούμενος' i vers 6 ble fjernet. For konsistens i den tekstkritiske tilnærmingen bør denne frasen også utelates."
+      }
+    ]
   },
   {
     "bookId": 43,
@@ -105,7 +121,15 @@
     "bookId": 43,
     "chapterId": 8,
     "verseId": 16,
-    "text": "Men selv om jeg dømmer, er min dom sann, for jeg er ikke alene – jeg og Faderen som har sendt meg."
+    "text": "Men selv om jeg dømmer, er min dom rett, for jeg er ikke alene – jeg og Faderen som har sendt meg.",
+    "versions": [
+      {
+        "text": "Men selv om jeg dømmer, er min dom sann, for jeg er ikke alene – jeg og Faderen som har sendt meg.",
+        "type": "theological",
+        "severity": "minor",
+        "explanation": "Det greske 'ἀληθινή' betyr her 'ekte/sann/pålitelig' i betydningen 'rettferdig/rett'. Ordet 'rett' formidler bedre at dommen er rettferdig og korrekt, i tråd med konteksten om at den er forankret i Faderens autoritet. Det skiller også bedre fra 'ἀληθής' (sant) i vers 13-14."
+      }
+    ]
   },
   {
     "bookId": 43,
@@ -135,7 +159,15 @@
     "bookId": 43,
     "chapterId": 8,
     "verseId": 21,
-    "text": "Igjen sa han til dem: «Jeg går bort, og dere skal lete etter meg. Dere skal dø i deres synd. Dit jeg går, kan dere ikke komme.»"
+    "text": "Igjen sa han til dem: «Jeg går bort, og dere vil lete etter meg, og dere skal dø i deres synd. Dit jeg går, kan dere ikke komme.»",
+    "versions": [
+      {
+        "text": "Igjen sa han til dem: «Jeg går bort, og dere skal lete etter meg. Dere skal dø i deres synd. Dit jeg går, kan dere ikke komme.»",
+        "type": "error",
+        "severity": "minor",
+        "explanation": "Gresk 'ζητήσετέ με' (futurum) oversettes bedre med 'dere vil lete' enn 'dere skal lete'. 'Skal' antyder en befaling, mens Jesus beskriver hva som vil skje. Det mangler også et 'og' (καί) mellom setningene for å gjenspeile den greske konjunksjonen."
+      }
+    ]
   },
   {
     "bookId": 43,
@@ -159,11 +191,17 @@
     "bookId": 43,
     "chapterId": 8,
     "verseId": 25,
-    "text": "Da spurte de ham: «Hvem er du?» Jesus svarte: «Det jeg fra begynnelsen har sagt dere.»",
+    "text": "Da spurte de ham: «Hvem er du?» Jesus sa til dem: «Nettopp det jeg fra begynnelsen har sagt dere.»",
     "versions": [
       {
         "text": "Da spurte de ham: «Hvem er du?» Jesus svarte: «Nettopp det jeg sier til dere!»",
         "explanation": "Dette verset er notorisk vanskelig å oversette. 'Τὴν ἀρχὴν' (fra begynnelsen) er viktig å få med. Den nåværende oversettelsen mister denne tidsreferansen som peker på at Jesus konsekvent har forkynt det samme."
+      },
+      {
+        "text": "Da spurte de ham: «Hvem er du?» Jesus svarte: «Det jeg fra begynnelsen har sagt dere.»",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "Gresk 'εἶπεν' bør gjengis som 'sa til dem' snarere enn 'svarte' for nøyaktighet. I tillegg mangler et forsterkende ord som 'nettopp' for å fange opp nyanseringen i det greske uttrykket."
       }
     ]
   },
@@ -355,19 +393,43 @@
     "bookId": 43,
     "chapterId": 8,
     "verseId": 54,
-    "text": "Jesus svarte: «Ærer jeg meg selv, er min ære ingenting. Det er min Far som ærer meg, han som dere sier er deres Gud.»"
+    "text": "Jesus svarte: «Ærer jeg meg selv, er min ære ingenting. Det er min Far som ærer meg, han som dere sier er deres Gud.",
+    "versions": [
+      {
+        "text": "Jesus svarte: «Ærer jeg meg selv, er min ære ingenting. Det er min Far som ærer meg, han som dere sier er deres Gud.»",
+        "type": "error",
+        "severity": "major",
+        "explanation": "Verset mangler noe som viser at sitatet ikke avsluttes her – anførselstegnet lukkes, men talen fortsetter i vers 55-56. Alternativt bør versene 54-56 behandles som sammenhengende tale."
+      }
+    ]
   },
   {
     "bookId": 43,
     "chapterId": 8,
     "verseId": 55,
-    "text": "Dere har ikke kjent ham, men jeg kjenner ham. Sa jeg at jeg ikke kjenner ham, ville jeg være en løgner som dere. Men jeg kjenner ham og holder fast på hans ord."
+    "text": "Dere har ikke kjent ham, men jeg kjenner ham. Dersom jeg sa at jeg ikke kjenner ham, ville jeg være en løgner som dere. Men jeg kjenner ham og holder fast på hans ord.",
+    "versions": [
+      {
+        "text": "Dere har ikke kjent ham, men jeg kjenner ham. Sa jeg at jeg ikke kjenner ham, ville jeg være en løgner som dere. Men jeg kjenner ham og holder fast på hans ord.",
+        "type": "error",
+        "severity": "major",
+        "explanation": "Vers 55 mangler åpnende anførselstegn – det er en fortsettelse av Jesu tale fra vers 54. I tillegg bør 'Sa jeg' endres til 'Dersom jeg sa' for å tydeliggjøre den kontrafaktiske konstruksjonen (κἂν εἴπω)."
+      }
+    ]
   },
   {
     "bookId": 43,
     "chapterId": 8,
     "verseId": 56,
-    "text": "Abraham, deres far, jublet over å få se min dag. Han så den og gledet seg.»"
+    "text": "Abraham, deres far, frydet seg over å skulle få se min dag. Han så den og gledet seg.»",
+    "versions": [
+      {
+        "text": "Abraham, deres far, jublet over å få se min dag. Han så den og gledet seg.»",
+        "type": "grammar",
+        "severity": "minor",
+        "explanation": "'ἠγαλλιάσατο ἵνα ἴδῃ' uttrykker en glede rettet mot fremtiden – Abraham gledet seg i forventning om å se Jesu dag. 'Jublet over å få se' kan tolkes som at han allerede så den. 'Frydet seg over å skulle få se' formidler bedre den fremtidsrettede forventningen."
+      }
+    ]
   },
   {
     "bookId": 43,

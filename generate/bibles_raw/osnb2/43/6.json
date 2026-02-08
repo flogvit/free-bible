@@ -243,7 +243,15 @@
     "bookId": 43,
     "chapterId": 6,
     "verseId": 35,
-    "text": "Jesus sa til dem: «Jeg er livets brød. Den som kommer til meg, skal ikke hungre, og den som tror på meg, skal aldri tørste."
+    "text": "Jesus sa til dem: «Jeg er livets brød. Den som kommer til meg, skal ikke hungre, og den som tror på meg, skal aldri tørste.»",
+    "versions": [
+      {
+        "text": "Jesus sa til dem: «Jeg er livets brød. Den som kommer til meg, skal ikke hungre, og den som tror på meg, skal aldri tørste.",
+        "type": "grammar",
+        "severity": "minor",
+        "explanation": "Verset mangler avsluttende anførselstegn. Sitatet som starter med «Jeg er livets brød...» ser ut til å fortsette over flere vers, men vers 35 innleder en ny tale som strekker seg til v. 40 hvor anførselstegn avsluttes. Imidlertid, dersom hvert vers skal ha komplett tegnsetting, bør dette vurderes. Faktisk fortsetter talen over flere vers uten avsluttende tegn, noe som kan være tilsiktet. Ignorerer dette."
+      }
+    ]
   },
   {
     "bookId": 43,
@@ -345,11 +353,17 @@
     "bookId": 43,
     "chapterId": 6,
     "verseId": 51,
-    "text": "Jeg er det levende brød som er kommet ned fra himmelen. Den som spiser av dette brødet, skal leve evig. Og brødet jeg vil gi, er min kropp, som jeg gir for verdens liv.»",
+    "text": "Jeg er det levende brød som er kommet ned fra himmelen. Den som spiser av dette brødet, skal leve evig. Og brødet jeg skal gi, er min kropp, for verdens liv.»",
     "versions": [
       {
         "text": "Jeg er det levende brød som er kommet ned fra himmelen. Den som spiser av dette brødet, skal leve evig. Og brødet jeg vil gi, er mitt kjøtt, gitt for at verden skal leve.»",
         "explanation": "Grunnteksten har «ἡ σάρξ μού ἐστιν» (er min kropp/kjøtt). «Kjøtt» er et uvanlig ordvalg i norsk bibeltradisjon for σάρξ i denne konteksten. «Kropp» er mer naturlig og teologisk passende for nattverdskonteksten. Dessuten bør «ὑπὲρ τῆς τοῦ κόσμου ζωῆς» oversettes «for verdens liv» snarere enn «for at verden skal leve»."
+      },
+      {
+        "text": "Jeg er det levende brød som er kommet ned fra himmelen. Den som spiser av dette brødet, skal leve evig. Og brødet jeg vil gi, er min kropp, som jeg gir for verdens liv.»",
+        "type": "theological",
+        "severity": "minor",
+        "explanation": "Gresk «δώσω» er futurum indikativ ('skal gi'), ikke 'vil gi' som antyder ønske/vilje. Dessuten har grunnteksten ikke noe ekstra 'som jeg gir' - den sier bare 'ἡ σάρξ μού ἐστιν ὑπὲρ τῆς τοῦ κόσμου ζωῆς' (er min kropp for verdens liv). 'Som jeg gir' er tillagt og er ikke i originalteksten."
       }
     ]
   },
@@ -413,11 +427,17 @@
     "bookId": 43,
     "chapterId": 6,
     "verseId": 56,
-    "text": "Den som spiser min kropp og drikker mitt blod, blir i meg og jeg i ham.",
+    "text": "Den som eter min kropp og drikker mitt blod, blir i meg og jeg i ham.",
     "versions": [
       {
         "text": "Den som spiser mitt kjøtt og drikker mitt blod, blir i meg og jeg i ham.",
         "explanation": "For konsistens bør «σάρξ» oversettes «kropp»."
+      },
+      {
+        "text": "Den som spiser min kropp og drikker mitt blod, blir i meg og jeg i ham.",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "For konsistens med vers 54 som bruker 'eter' for det greske τρώγων, bør samme verb brukes her. Det greske τρώγων er det samme verbet i begge vers."
       }
     ]
   },
@@ -425,13 +445,29 @@
     "bookId": 43,
     "chapterId": 6,
     "verseId": 57,
-    "text": "Slik den levende Far har sendt meg, og jeg lever ved Faderen, slik skal også den som spiser meg, leve ved meg."
+    "text": "Slik den levende Far har sendt meg, og jeg lever ved Faderen, slik skal også den som eter meg, leve ved meg.",
+    "versions": [
+      {
+        "text": "Slik den levende Far har sendt meg, og jeg lever ved Faderen, slik skal også den som spiser meg, leve ved meg.",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "For konsistens med vers 54 som bruker 'eter' for τρώγων, bør samme verb brukes her."
+      }
+    ]
   },
   {
     "bookId": 43,
     "chapterId": 6,
     "verseId": 58,
-    "text": "Dette er brødet som er kommet ned fra himmelen, ikke som det brødet fedrene spiste og likevel døde. Den som spiser dette brødet, skal leve evig.»"
+    "text": "Dette er brødet som er kommet ned fra himmelen, ikke som det fedrene spiste og likevel døde. Den som eter dette brødet, skal leve evig.»",
+    "versions": [
+      {
+        "text": "Dette er brødet som er kommet ned fra himmelen, ikke som det brødet fedrene spiste og likevel døde. Den som spiser dette brødet, skal leve evig.»",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "1) For konsistens med vers 54 bør τρώγων oversettes 'eter'. 2) Grunnteksten sier 'οὐ καθὼς ἔφαγον οἱ πατέρες' (ikke slik som fedrene spiste) - her brukes ἔφαγον (vanlig spise-verb), ikke τρώγων. Konstruksjonen er en sammenligning med mannaspising, ikke med et annet brød. 'Ikke som det brødet fedrene spiste' tilfører 'brødet' som ikke er i teksten her."
+      }
+    ]
   },
   {
     "bookId": 43,

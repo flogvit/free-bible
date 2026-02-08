@@ -111,7 +111,15 @@
     "bookId": 42,
     "chapterId": 14,
     "verseId": 14,
-    "text": "Da skal du være salig, for de har ikke noe å gi deg igjen. Du skal få din lønn ved de rettferdiges oppstandelse.»"
+    "text": "Da skal du være salig, for de har ikke noe å gi deg igjen. For du skal få det gjengjeldt ved de rettferdiges oppstandelse.»",
+    "versions": [
+      {
+        "text": "Da skal du være salig, for de har ikke noe å gi deg igjen. Du skal få din lønn ved de rettferdiges oppstandelse.»",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "Det greske ἀνταποδοθήσεται betyr 'det skal bli gjengjeldt deg' (passiv), ikke 'du skal få din lønn'. Ordet 'lønn' (μισθός) forekommer ikke i grunnteksten. Dessuten mangler konjunksjonen γάρ ('for') som binder setningene sammen."
+      }
+    ]
   },
   {
     "bookId": 42,
@@ -183,7 +191,15 @@
     "bookId": 42,
     "chapterId": 14,
     "verseId": 24,
-    "text": "For jeg sier dere: Ingen av de mennene som var innbudt, skal smake mitt måltid.'»"
+    "text": "For jeg sier dere: Ingen av de mennene som var innbudt, skal få smake mitt festmåltid.'»",
+    "versions": [
+      {
+        "text": "For jeg sier dere: Ingen av de mennene som var innbudt, skal smake mitt måltid.'»",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "Det greske δείπνου (festmåltid) er det samme ordet som i vers 16 (δεῖπνον μέγα = 'stort gjestebud'). For konsistens bør det oversettes med 'festmåltid' eller 'gjestebud'. Dessuten er 'få smake' mer naturlig norsk enn bare 'smake' i denne konteksten."
+      }
+    ]
   },
   {
     "bookId": 42,
@@ -255,11 +271,17 @@
     "bookId": 42,
     "chapterId": 14,
     "verseId": 33,
-    "text": "Slik kan da ingen av dere som ikke gir avkall på alt han eier, være min disippel.",
+    "text": "Slik kan da ingen av dere som ikke gir avkall på alt sitt eget, være min disippel.",
     "versions": [
       {
         "text": "Slik kan heller ingen av dere være min disippel uten at han gir avkall på alt han eier.",
         "explanation": "Det greske οὖν ('altså', 'da') markerer en konklusjon. Setningsstrukturen i originalen legger vekt på 'den som ikke gir avkall' som subjekt, ikke som en betingelse etterpå. 'Heller' har ikke grunnlag i grunnteksten."
+      },
+      {
+        "text": "Slik kan da ingen av dere som ikke gir avkall på alt han eier, være min disippel.",
+        "type": "grammar",
+        "severity": "major",
+        "explanation": "Pronomenbruken 'han eier' bryter med subjektet 'ingen av dere'. Siden subjektet er 'dere' (andre person), bør det refleksive uttrykkes annerledes. Det greske τοῖς ἑαυτοῦ ὑπάρχουσιν betyr 'sine egne eiendeler'. 'Alt sitt eget' er mer korrekt grammatisk og tydelig."
       }
     ]
   },
@@ -279,6 +301,14 @@
     "bookId": 42,
     "chapterId": 14,
     "verseId": 35,
-    "text": "Det duger verken for jorden eller for gjødselshaugen. De kaster det ut. Den som har ører å høre med, hør!»"
+    "text": "Det duger verken for jorden eller for gjødselhaugen. Folk kaster det ut. Den som har ører å høre med, la ham høre!»",
+    "versions": [
+      {
+        "text": "Det duger verken for jorden eller for gjødselshaugen. De kaster det ut. Den som har ører å høre med, hør!»",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "'Gjødselshaugen' har en skrivefeil – det skal være 'gjødselhaugen' (uten ekstra s). Dessuten gjengir det greske ἀκουέτω (imperativ tredje person) bedre med 'la ham høre' enn bare 'hør' (som er andre person imperativ)."
+      }
+    ]
   }
 ]

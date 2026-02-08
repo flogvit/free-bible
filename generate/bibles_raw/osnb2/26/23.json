@@ -9,11 +9,17 @@
     "bookId": 26,
     "chapterId": 23,
     "verseId": 2,
-    "text": "Satisfactory as is.",
+    "text": "Menneske, det var to kvinner, døtre av samme mor.",
     "versions": [
       {
         "text": "Menneske, det var to kvinner, døtre av samme mor.",
         "explanation": "The verse is accurate and flows well. No change needed."
+      },
+      {
+        "text": "Satisfactory as is.",
+        "type": "error",
+        "severity": "critical",
+        "explanation": "The current text reads 'Satisfactory as is.' which is not a translation at all but an editorial comment. The verse must contain an actual translation of the Hebrew text."
       }
     ]
   },
@@ -39,7 +45,15 @@
     "bookId": 26,
     "chapterId": 23,
     "verseId": 6,
-    "text": "kledd i purpur, stattholdere og hærførere, alle sammen vakre unge menn, ryttere til hest."
+    "text": "kledd i blått og purpur, stattholdere og hærførere, alle sammen vakre unge menn, ryttere til hest.",
+    "versions": [
+      {
+        "text": "kledd i purpur, stattholdere og hærførere, alle sammen vakre unge menn, ryttere til hest.",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "The Hebrew תְּכֵלֶת (tekhelet) refers to blue or violet-blue fabric, not purpur (purple). While there is overlap in the color range, 'blått' or 'blåfiolett' is more accurate for tekhelet."
+      }
+    ]
   },
   {
     "bookId": 26,
@@ -123,7 +137,15 @@
     "bookId": 26,
     "chapterId": 23,
     "verseId": 20,
-    "text": "Hun begjærte sine elskovsmenn der, de som hadde lem som esler og sæd som hingster."
+    "text": "Hun begjærte sine elskovsmenn, de som hadde lem som esler og utløsning som hingster.",
+    "versions": [
+      {
+        "text": "Hun begjærte sine elskovsmenn der, de som hadde lem som esler og sæd som hingster.",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "The Hebrew פִּלַגְשֵׁיהֶם means 'their paramours/concubines' (not 'there'). The word 'der' (there) has no basis in the Hebrew. Also זִרְמַת refers more specifically to 'utløsning' (emission/discharge) rather than 'sæd' (seed/semen), though this is a minor nuance."
+      }
+    ]
   },
   {
     "bookId": 26,
@@ -225,7 +247,15 @@
     "bookId": 26,
     "chapterId": 23,
     "verseId": 37,
-    "text": "For de har drevet hor, og det er blod på deres hender. Med sine avguder har de drevet hor, og til og med sine barn, som de fødte for meg, har de latt gå gjennom ilden for dem, til føde."
+    "text": "For de har drevet hor, og det er blod på deres hender. Med sine avguder har de drevet hor, og til og med sine barn, som de fødte meg, har de latt gå gjennom ilden for avgudene, til føde.",
+    "versions": [
+      {
+        "text": "For de har drevet hor, og det er blod på deres hender. Med sine avguder har de drevet hor, og til og med sine barn, som de fødte for meg, har de latt gå gjennom ilden for dem, til føde.",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "'som de fødte for meg' should be 'som de fødte meg' – the Hebrew יָלְדוּ־לִי means 'bore to me/for me' in the sense of bearing children that belonged to God, not 'bore for my sake.' Also 'for dem' (לָהֶם) refers to the idols – 'for avgudene' would be clearer."
+      }
+    ]
   },
   {
     "bookId": 26,

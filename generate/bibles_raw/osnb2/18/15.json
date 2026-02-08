@@ -33,7 +33,15 @@
     "bookId": 18,
     "chapterId": 15,
     "verseId": 5,
-    "text": "For din skyld lærer din munn, og du velger de listiges språk."
+    "text": "For din skyld styrer din munn, og du velger de listiges tunge.",
+    "versions": [
+      {
+        "text": "For din skyld lærer din munn, og du velger de listiges språk.",
+        "type": "error",
+        "severity": "major",
+        "explanation": "Oversettelsen 'For din skyld lærer din munn' er uklar og gir lite mening på norsk. Det hebraiske 'יְאַלֵּף עֲוֺנְךָ פִיךָ' betyr at synden/skylden styrer/instruerer munnen. 'Lærer' mangler objekt og er uklart. 'Styrer' formidler bedre at det er synden som driver det han sier. Også 'לְשׁוֹן' betyr 'tunge' snarere enn 'språk'."
+      }
+    ]
   },
   {
     "bookId": 18,
@@ -69,7 +77,15 @@
     "bookId": 18,
     "chapterId": 15,
     "verseId": 11,
-    "text": "Er Guds trøst for lite for deg, og ordet som taler mildt til deg?"
+    "text": "Er Guds trøst for lite for deg, og det ord som tales mildt til deg?",
+    "versions": [
+      {
+        "text": "Er Guds trøst for lite for deg, og ordet som taler mildt til deg?",
+        "type": "grammar",
+        "severity": "minor",
+        "explanation": "Setningen 'ordet som taler mildt til deg' er grammatisk upresist – det er ikke ordet som taler, men ordet som tales mildt. En liten justering gir bedre mening."
+      }
+    ]
   },
   {
     "bookId": 18,
@@ -117,7 +133,15 @@
     "bookId": 18,
     "chapterId": 15,
     "verseId": 18,
-    "text": "Det som vise menn har fortalt, det de ikke skjulte fra sine fedre."
+    "text": "Det som vise menn har fortalt, og som de ikke skjulte – overlevert fra sine fedre.",
+    "versions": [
+      {
+        "text": "Det som vise menn har fortalt, det de ikke skjulte fra sine fedre.",
+        "type": "grammar",
+        "severity": "minor",
+        "explanation": "'מֵאֲבוֹתָם' betyr 'fra sine fedre', dvs. det de mottok fra sine fedre og ikke holdt tilbake. Den nåværende oversettelsen 'ikke skjulte fra sine fedre' kan misforstås som at de vise skjulte noe for fedrene, mens poenget er at fedrene overleverte det åpent, eller at de ikke skjulte det de hadde mottatt fra fedrene."
+      }
+    ]
   },
   {
     "bookId": 18,
@@ -195,11 +219,17 @@
     "bookId": 18,
     "chapterId": 15,
     "verseId": 29,
-    "text": "Han skal ikke bli rik, hans gods skal ikke bestå, og hans skygge skal ikke bre seg utover jorden.",
+    "text": "Han skal ikke bli rik, hans velstand skal ikke bestå, og hans skygge skal ikke bre seg utover jorden.",
     "versions": [
       {
         "text": "Han skal ikke bli rik, hans gods skal ikke bestå, og hans eiendom skal ikke bre seg utover landet.",
         "explanation": "Det hebraiske 'מִנְלָם' er vanskelig, men tolkes ofte som 'skygge' eller 'fylde'. 'Eiendom' er en mulig tolkning, men 'skygge' (som bilde på innflytelse eller velstand som strekker seg ut) er en vanligere forståelse."
+      },
+      {
+        "text": "Han skal ikke bli rik, hans gods skal ikke bestå, og hans skygge skal ikke bre seg utover jorden.",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "'חֵילוֹ' betyr mer presist 'velstand/rikdom' enn 'gods'. 'Gods' er ikke feil, men 'velstand' er mer naturlig norsk bokmål i denne konteksten."
       }
     ]
   },
@@ -207,7 +237,15 @@
     "bookId": 18,
     "chapterId": 15,
     "verseId": 30,
-    "text": "Han skal ikke slippe unna mørket. Flammen skal tørke ut hans skudd, og han skal forgå ved pusten fra sin egen munn."
+    "text": "Han skal ikke slippe unna mørket. Flammen skal tørke ut hans skudd, og han skal forgå ved pusten fra Guds munn.",
+    "versions": [
+      {
+        "text": "Han skal ikke slippe unna mørket. Flammen skal tørke ut hans skudd, og han skal forgå ved pusten fra sin egen munn.",
+        "type": "error",
+        "severity": "major",
+        "explanation": "'בְּרוּחַ פִּיו' – 'pusten fra hans munn' – refererer i konteksten til Guds munn, ikke den ugudeliges egen munn. Det er Guds dom som feier ham bort. 'Sin egen munn' er en misforståelse av pronomenet; det viser tilbake til Gud, ikke til den ugudelige."
+      }
+    ]
   },
   {
     "bookId": 18,

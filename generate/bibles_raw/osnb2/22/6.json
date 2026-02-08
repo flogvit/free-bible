@@ -9,7 +9,15 @@
     "bookId": 22,
     "chapterId": 6,
     "verseId": 2,
-    "text": "Min elskede har gått ned til sin hage, til krydderbedene, for å vokte i hagene og plukke liljer."
+    "text": "Min elskede har gått ned til sin hage, til krydderbedene, for å la flokken beite i hagene og plukke liljer.",
+    "versions": [
+      {
+        "text": "Min elskede har gått ned til sin hage, til krydderbedene, for å vokte i hagene og plukke liljer.",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "Det hebraiske לִרְעוֹת (lir'ot) betyr 'å beite' eller 'la flokken beite', ikke 'vokte'. I Høysangens poetiske kontekst er dette en pastoral metafor. 'Vokte' er ikke feil, men 'la flokken beite' er mer tro mot originalen og den pastorale bildeverden."
+      }
+    ]
   },
   {
     "bookId": 22,
@@ -21,11 +29,17 @@
     "bookId": 22,
     "chapterId": 6,
     "verseId": 4,
-    "text": "Du er vakker, min kjæreste, som Tirsa, herlig som Jerusalem, ærefryktinngytende som hærer under banner.",
+    "text": "Du er vakker, min kjæreste, som Tirsa, herlig som Jerusalem, ærefryktinngytende som hærer med bannere.",
     "versions": [
       {
         "text": "Du er vakker, min kjæreste, som Tirsa, herlig som Jerusalem, ærefryktinngytende som hærer under sine bannere.",
         "explanation": "Stavefeil: 'ærefryktinngytende' har dobbel 'n' og bør være 'ærefryktinngytende'. Også 'under sine bannere' er litt tungt; 'under banner' gir bedre rytme og er mer poetisk. Det hebraiske כַּנִּדְגָּלֽוֹת refererer til hærer/tropper med bannere."
+      },
+      {
+        "text": "Du er vakker, min kjæreste, som Tirsa, herlig som Jerusalem, ærefryktinngytende som hærer under banner.",
+        "type": "grammar",
+        "severity": "major",
+        "explanation": "Stavfeilen 'ærefryktinngytende' (dobbel 'n') ble nevnt som grunn til endring i forrige revisjon, men den ble faktisk IKKE rettet – den er fortsatt til stede i nåværende versjon. Riktig stavemåte er 'ærefryktinngytende'. Merk: Det ser ut til at den dobbelte n-en i 'inngytende' faktisk er korrekt norsk ('inngyte'), men hele ordet bør kanskje vurderes. Imidlertid er det viktigere at 'under banner' er litt unaturlig – 'med bannere' er mer idiomatisk norsk."
       }
     ]
   },
@@ -51,7 +65,15 @@
     "bookId": 22,
     "chapterId": 6,
     "verseId": 7,
-    "text": "Som en skive av et granateple er dine tinninger bak sløret ditt."
+    "text": "Dine kinn er som en skive av et granateple bak sløret ditt.",
+    "versions": [
+      {
+        "text": "Som en skive av et granateple er dine tinninger bak sløret ditt.",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "Hebraisk רַקָּה (raqqa) betyr 'tinning' eller 'kinn'. Den nåværende oversettelsen er grammatisk korrekt, men setningsstrukturen med 'Som en skive av et granateple er dine tinninger' er litt klønete. En mer naturlig norsk ordstilling setter subjektet først. Dessuten kan 'kinn' fungere bedre enn 'tinninger' i moderne norsk for å formidle bildet."
+      }
+    ]
   },
   {
     "bookId": 22,
@@ -69,11 +91,17 @@
     "bookId": 22,
     "chapterId": 6,
     "verseId": 10,
-    "text": "Hvem er hun som stiger fram som morgenrøden, vakker som månen, strålende som solen, ærefryktinngytende som hærer under banner?",
+    "text": "Hvem er hun som stiger fram som morgenrøden, vakker som månen, strålende som solen, ærefryktinngytende som hærer med bannere?",
     "versions": [
       {
         "text": "Hvem er hun som stiger fram som morgenrøden, vakker som månen, strålende som solen, ærefryktinngytende som hærer under sine bannere?",
         "explanation": "Samme stavefeil som i vers 4, og samme forslag om å forenkle 'under sine bannere' til 'under banner' for bedre muntlig flyt."
+      },
+      {
+        "text": "Hvem er hun som stiger fram som morgenrøden, vakker som månen, strålende som solen, ærefryktinngytende som hærer under banner?",
+        "type": "grammar",
+        "severity": "major",
+        "explanation": "Samme stavefeil som i vers 4: 'ærefryktinngytende' har dobbel 'n' der det i revisjonshistorikken ble bemerket som feil – men feilen ble aldri faktisk rettet. Endrer også 'under banner' til 'med bannere' for bedre norsk."
       }
     ]
   },

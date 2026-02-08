@@ -33,11 +33,17 @@
     "bookId": 30,
     "chapterId": 5,
     "verseId": 6,
-    "text": "Søk Herren og lev! Ellers bryter han ut som ild mot Josefs hus og fortærer det, og ingen kan slukke ilden for Betel.",
+    "text": "Søk Herren og lev! Ellers slår han ned som ild over Josefs hus og fortærer, og ingen kan slukke den for Betel.",
     "versions": [
       {
         "text": "Søk Herren og lev! Ellers bryter han ut som ild i Josefs hus og fortærer det, og ingen kan slukke ilden for Betel.",
         "explanation": "Det hebraiske uttrykket beskriver ilden som bryter ut 'mot' (בֵּית יוֹסֵף) Josefs hus, ikke 'i' det. Preposisjonen bør justeres for å gi riktig retning på handlingen."
+      },
+      {
+        "text": "Søk Herren og lev! Ellers bryter han ut som ild mot Josefs hus og fortærer det, og ingen kan slukke ilden for Betel.",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "Det hebraiske יִצְלַח betyr 'slå ned på / falle over' snarere enn 'bryte ut'. Dessuten mangler subjektet for 'fortærer' (וְאָכְלָה) i hebraisk et eksplisitt objekt – ilden fortærer uten at 'det' er spesifisert. 'Slukke ilden' legger til et ord som ikke finnes; det hebraiske har bare אֵין־מְכַבֶּה 'ingen som slukker'."
       }
     ]
   },
@@ -63,7 +69,15 @@
     "bookId": 30,
     "chapterId": 5,
     "verseId": 9,
-    "text": "Han lar ødeleggelse bryte frem over den sterke, og ødeleggelse kommer over festningen."
+    "text": "Han lar ødeleggelse ramme den sterke i et glimt, og ødeleggelse kommer over festningen.",
+    "versions": [
+      {
+        "text": "Han lar ødeleggelse bryte frem over den sterke, og ødeleggelse kommer over festningen.",
+        "type": "error",
+        "severity": "major",
+        "explanation": "Det hebraiske המבליג (fra בלג) betyr 'la blinke frem / la bryte frem plutselig'. Oversettelsen 'bryte frem over' er akseptabel, men verset er en doksologi/hymne som beskriver Guds makt – han sender plutselig ødeleggelse over den sterke. Betydningen av המבליג er omdiskutert, men 'ramme i et glimt' fanger bedre den plutselige karakteren."
+      }
+    ]
   },
   {
     "bookId": 30,
@@ -105,11 +119,17 @@
     "bookId": 30,
     "chapterId": 5,
     "verseId": 16,
-    "text": "Derfor, så sier Herren, hærskarenes Gud, Herren: På alle torg skal det være klagerop, og på alle gater skal de rope: «Ve! Ve!» De skal kalle bøndene til sorg og dem som kan klagesanger til å holde likklage.",
+    "text": "Derfor, så sier Herren, hærskarenes Gud, Herren: På alle torg skal det være klagerop, og på alle gater skal de rope: «Ve! Ve!» De skal kalle bonden til sorg og dem som kan klagesanger, til å holde likklage.",
     "versions": [
       {
         "text": "Derfor, så sier Herren, hærskarenes Gud, Herren: På alle torg skal det være klagerop, og på alle gater skal de rope: «Ve! Ve!» De skal kalle bøndene til sorg og klagesangerne til å holde likklage.",
         "explanation": "Det hebraiske יֹודְעֵי נֶהִי betyr bokstavelig 'de som kjenner klagesang', altså profesjonelle klagekvinner/klagere. 'Klagesangerne' fungerer, men 'dem som kan klagesanger' gjengir uttrykket mer nøyaktig."
+      },
+      {
+        "text": "Derfor, så sier Herren, hærskarenes Gud, Herren: På alle torg skal det være klagerop, og på alle gater skal de rope: «Ve! Ve!» De skal kalle bøndene til sorg og dem som kan klagesanger til å holde likklage.",
+        "type": "grammar",
+        "severity": "minor",
+        "explanation": "Det hebraiske אִכָּר er entall ('bonde'), ikke flertall. Dessuten mangler et komma før 'til å holde likklage' for å tydeliggjøre setningsstrukturen – det er både bøndene og klagesangerne som kalles."
       }
     ]
   },
@@ -171,11 +191,17 @@
     "bookId": 30,
     "chapterId": 5,
     "verseId": 26,
-    "text": "Dere bar Sikkut, deres konge, og Kijjun, bildene deres – stjernen som dere gjorde til gud for dere selv.",
+    "text": "Dere bar Sikkut, deres konge, og Kijjun, bildene deres – stjernen, deres gud, som dere laget dere.",
     "versions": [
       {
         "text": "Dere bar Sikkut, deres konge, og Kijjun, deres stjernebildegud – stjernen dere laget til gud for dere selv.",
         "explanation": "Det hebraiske צַלְמֵיכֶם betyr 'bildene deres' (flertall av צֶלֶם, bilde/statue), ikke 'stjernebildegud'. Oversettelsen legger til en tolkning som ikke finnes i grunnteksten. כּוֹכַב אֱלֹהֵיכֶם ('stjernen, deres gud') er en apposisjon som beskriver disse avgudene."
+      },
+      {
+        "text": "Dere bar Sikkut, deres konge, og Kijjun, bildene deres – stjernen som dere gjorde til gud for dere selv.",
+        "type": "theological",
+        "severity": "minor",
+        "explanation": "Det hebraiske כּוֹכַב אֱלֹהֵיכֶם betyr 'stjernen, deres gud' – dette er en apposisjon der אֱלֹהֵיכֶם er en betegnelse for stjernen. 'Som dere gjorde til gud' er mer en tolkning; grunnteksten sier at stjernen er 'deres gud' og at de 'laget' (עֲשִׂיתֶם) den for seg selv. Dessuten er אֲשֶׁר עֲשִׂיתֶם לָכֶם bedre gjengitt som 'som dere laget dere' (laget som avgudsbilder)."
       }
     ]
   },

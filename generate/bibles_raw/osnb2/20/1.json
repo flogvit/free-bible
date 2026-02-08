@@ -15,7 +15,15 @@
     "bookId": 20,
     "chapterId": 1,
     "verseId": 3,
-    "text": "For å ta imot oppdragelse i klokskap, rettferdighet, rett og rettsinn."
+    "text": "For å ta imot tukt som gir klokskap, rettferdighet, rett og rettsinn.",
+    "versions": [
+      {
+        "text": "For å ta imot oppdragelse i klokskap, rettferdighet, rett og rettsinn.",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "Det hebraiske מוּסַר הַשְׂכֵּל betyr 'tukt/formaning som gir innsikt/klokskap'. 'Oppdragelse i klokskap' er akseptabelt, men 'tukt som gir klokskap' er mer tro mot det hebraiske uttrykket, der מוּסָר (tukt/formaning) er hovedordet og הַשְׂכֵּל (klokskap/innsikt) beskriver formålet eller resultatet av tukten."
+      }
+    ]
   },
   {
     "bookId": 20,
@@ -85,7 +93,15 @@
     "bookId": 20,
     "chapterId": 1,
     "verseId": 13,
-    "text": "Vi skal finne all slags kostbare skatter, vi fyller våre hus med bytte."
+    "text": "Vi skal finne all slags kostbar rikdom, vi fyller våre hus med bytte.",
+    "versions": [
+      {
+        "text": "Vi skal finne all slags kostbare skatter, vi fyller våre hus med bytte.",
+        "type": "error",
+        "severity": "minor",
+        "explanation": "'Kostbare skatter' er grammatisk uriktig på norsk. 'All slags' krever entall ('kostbar'), og הוֹן betyr 'rikdom/gods' snarere enn 'skatter'. 'All slags kostbar rikdom' er mer korrekt."
+      }
+    ]
   },
   {
     "bookId": 20,
@@ -109,7 +125,15 @@
     "bookId": 20,
     "chapterId": 1,
     "verseId": 17,
-    "text": "For det er forgjeves å spre ut garnet for øynene på enhver fugl."
+    "text": "For det er forgjeves å sette opp nettet for øynene på enhver fugl.",
+    "versions": [
+      {
+        "text": "For det er forgjeves å spre ut garnet for øynene på enhver fugl.",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "מְזֹרָה הָרָשֶׁת betyr å 'strø ut / sette opp nettet (for å fange)'. 'Sette opp nettet' er mer naturlig norsk enn 'spre ut garnet'. רֶשֶׁת er 'nett' snarere enn 'garn'."
+      }
+    ]
   },
   {
     "bookId": 20,
@@ -145,7 +169,15 @@
     "bookId": 20,
     "chapterId": 1,
     "verseId": 22,
-    "text": "«Hvor lenge vil dere uerfarne elske enfoldighet? Hvor lenge vil spotterne ha lyst til spott, og dårene hate kunnskap?"
+    "text": "«Hvor lenge, dere uerfarne, vil dere elske enfoldighet? Hvor lenge vil spotterne ha lyst til spott, og dårene hate kunnskap?",
+    "versions": [
+      {
+        "text": "«Hvor lenge vil dere uerfarne elske enfoldighet? Hvor lenge vil spotterne ha lyst til spott, og dårene hate kunnskap?",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "Det hebraiske עַד־מָתַי פְּתָיִם har en tiltaleform: 'Hvor lenge, dere uerfarne...' - visdommen henvender seg direkte til dem. Den nåværende oversettelsen mister noe av denne direkte tiltalen."
+      }
+    ]
   },
   {
     "bookId": 20,
@@ -175,11 +207,17 @@
     "bookId": 20,
     "chapterId": 1,
     "verseId": 27,
-    "text": "Når det dere frykter kommer som et uvær, og ulykken kommer som en virvelvind, når nød og trengsel rammer dere.",
+    "text": "Når det dere frykter kommer som en ødeleggelse, og ulykken kommer som en virvelvind, når nød og trengsel rammer dere.",
     "versions": [
       {
         "text": "Når det dere frykter kommer som en storm, og ulykken bruser inn som en virvelvind, når nød og trengsel kommer over dere.",
         "explanation": "שׁוֹאָה betyr 'ødeleggelse, uvær, katastrofe' - mer dramatisk enn bare 'storm'. כְּסוּפָ֣ה יֶאֱתֶ֑ה - verbet יֶאֱתֶה betyr 'kommer', ikke 'bruser inn'. 'Rammer dere' er mer naturlig norsk enn 'kommer over dere' for muntlig lesning."
+      },
+      {
+        "text": "Når det dere frykter kommer som et uvær, og ulykken kommer som en virvelvind, når nød og trengsel rammer dere.",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "כְשׁוֹאָה betyr 'som ødeleggelse/katastrofe', ikke 'uvær'. Ordet שׁוֹאָה innebærer plutselig, total ødeleggelse. 'Uvær' er for mildt og fanger ikke den hebraiske betydningen av fullstendig ruin."
       }
     ]
   },

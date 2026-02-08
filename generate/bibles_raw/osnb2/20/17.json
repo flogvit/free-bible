@@ -15,7 +15,15 @@
     "bookId": 20,
     "chapterId": 17,
     "verseId": 2,
-    "text": "En klok tjener vil herske over en sønn som gjør skam, og han skal dele arven blant brødrene."
+    "text": "En klok tjener vil herske over en sønn som gjør skam, og dele arven med brødrene.",
+    "versions": [
+      {
+        "text": "En klok tjener vil herske over en sønn som gjør skam, og han skal dele arven blant brødrene.",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "'Blant brødrene' kan gi inntrykk av at tjeneren fordeler arven mellom brødrene. Det hebraiske uttrykket betyr at tjeneren selv vil dele arven sammen med brødrene, altså motta en del av arven på lik linje med dem. 'Med brødrene' er mer presist."
+      }
+    ]
   },
   {
     "bookId": 20,
@@ -93,7 +101,15 @@
     "bookId": 20,
     "chapterId": 17,
     "verseId": 13,
-    "text": "Den som gjengjelder godt med ondt, fra hans hus skal ulykken aldri vike."
+    "text": "Den som gjengjelder ondt for godt, fra hans hus skal ulykken aldri vike.",
+    "versions": [
+      {
+        "text": "Den som gjengjelder godt med ondt, fra hans hus skal ulykken aldri vike.",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "Det hebraiske 'meshiv ra'ah tachat tovah' betyr 'den som gjengjelder ondt (ra'ah) i stedet for (tachat) godt (tovah)'. Gjeldende oversettelse sier 'gjengjelder godt med ondt', som reverserer rekkefølgen og kan misforstås. 'Ondt for godt' er mer presist og tydeligere."
+      }
+    ]
   },
   {
     "bookId": 20,
@@ -147,7 +163,15 @@
     "bookId": 20,
     "chapterId": 17,
     "verseId": 20,
-    "text": "Den med et falskt hjerte finner ikke lykke, og den med en falsk tunge faller i ulykke."
+    "text": "Den med et kroket hjerte finner ikke lykke, og den som vrir på ordene, faller i ulykke.",
+    "versions": [
+      {
+        "text": "Den med et falskt hjerte finner ikke lykke, og den med en falsk tunge faller i ulykke.",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "Hebraisk 'iqqesh-lev' betyr 'kroket/forvridd hjerte' (ikke nødvendigvis 'falskt'). 'Nehpakh bil'shono' betyr bokstavelig 'den som snur/vrir sin tunge' – altså en som fordreier sannheten med ordene sine, ikke bare har en 'falsk tunge'. 'Kroket' og 'vrir på ordene' gir bedre gjengivelse av originalens billedspråk."
+      }
+    ]
   },
   {
     "bookId": 20,
@@ -177,11 +201,17 @@
     "bookId": 20,
     "chapterId": 17,
     "verseId": 25,
-    "text": "En dårlig sønn er til harme for sin far og til bitter sorg for henne som fødte ham.",
+    "text": "En dårlig sønn er til harme for sin far og bitter sorg for henne som fødte ham.",
     "versions": [
       {
         "text": "En dårlig sønn er til harme for sin far og til bitter smerte for sin mor.",
         "explanation": "Hebraisk 'yoladto' (יוֹלַדְתּֽוֹ) betyr bokstavelig 'henne som fødte ham', ikke bare 'sin mor'. Dette fremhever morens spesielle bånd gjennom fødselen og gjør smerten mer personlig. 'Memer' (מֶמֶר) betyr bitterhet/sorg snarere enn 'smerte'."
+      },
+      {
+        "text": "En dårlig sønn er til harme for sin far og til bitter sorg for henne som fødte ham.",
+        "type": "grammar",
+        "severity": "minor",
+        "explanation": "Det hebraiske 'ben kesil' betyr 'en dårlig/tåpelig sønn'. Gjentakelsen av 'til' før 'bitter sorg' er unødvendig og gjør setningen tyngre. Det er en svært liten stilistisk forbedring."
       }
     ]
   },

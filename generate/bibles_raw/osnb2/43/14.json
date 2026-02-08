@@ -9,11 +9,17 @@
     "bookId": 43,
     "chapterId": 14,
     "verseId": 2,
-    "text": "I min Fars hus er det mange rom. Hadde det ikke vært slik, ville jeg ha sagt dere det. Jeg går for å gjøre i stand et sted for dere.",
+    "text": "I min Fars hus er det mange rom. Hadde det ikke vært slik, ville jeg ha sagt dere det, for jeg går for å gjøre i stand et sted for dere.",
     "versions": [
       {
         "text": "I min Fars hus er det mange rom. Hvis det ikke var slik, ville jeg ha sagt dere det. Jeg går for å gjøre i stand et sted for dere.",
         "explanation": "For bedre muntlig flyt kan 'Hvis det ikke var slik' endres til 'Hadde det ikke vært slik' - en mer naturlig norsk konstruksjon som også matcher den kontrafaktiske kondisjonalen i originalen."
+      },
+      {
+        "text": "I min Fars hus er det mange rom. Hadde det ikke vært slik, ville jeg ha sagt dere det. Jeg går for å gjøre i stand et sted for dere.",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "Det greske ὅτι πορεύομαι ἑτοιμάσαι τόπον ὑμῖν er syntaktisk knyttet til εἶπον ἂν ὑμῖν – altså 'ville jeg ha sagt dere at jeg går for å gjøre i stand et sted'. Alternativt kan ὅτι leses kausalt ('for'). I begge tilfeller bør det være en tydeligere kobling mellom setningene. En komma med 'for' ivaretar flyten bedre."
       }
     ]
   },
@@ -93,7 +99,15 @@
     "bookId": 43,
     "chapterId": 14,
     "verseId": 13,
-    "text": "Og hva dere enn ber om i mitt navn, det skal jeg gjøre, for at Faderen skal bli æret gjennom Sønnen."
+    "text": "Og hva dere enn ber om i mitt navn, vil jeg gjøre, for at Faderen skal bli æret gjennom Sønnen.",
+    "versions": [
+      {
+        "text": "Og hva dere enn ber om i mitt navn, det skal jeg gjøre, for at Faderen skal bli æret gjennom Sønnen.",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "Det greske ποιήσω er futurum indikativ 1. person entall ('jeg vil gjøre'). 'Det skal jeg gjøre' er akseptabelt, men 'vil jeg gjøre' er noe nærmere grunnteksten og litt mer naturlig norsk i denne konteksten."
+      }
+    ]
   },
   {
     "bookId": 43,
@@ -105,11 +119,17 @@
     "bookId": 43,
     "chapterId": 14,
     "verseId": 15,
-    "text": "Dersom dere elsker meg, holder dere mine bud.",
+    "text": "Dersom dere elsker meg, da vil dere holde mine bud.",
     "versions": [
       {
         "text": "Dersom dere elsker meg, vil dere holde mine bud.",
         "explanation": "Futurum τηρήσετε kan også forstås som en konsekvens/resultat. 'Holder dere' (presens) er mer idiomatisk norsk i denne kondisjonale setningen og flyter bedre muntlig."
+      },
+      {
+        "text": "Dersom dere elsker meg, holder dere mine bud.",
+        "type": "theological",
+        "severity": "minor",
+        "explanation": "Varianten τηρήσετε (futurum indikativ) indikerer en fremtidig konsekvens: 'vil dere holde'. Presens 'holder dere' mister noe av den prediktive/løftepregede tonen. Merk at versjonhistorikken gikk fra 'vil dere holde' til 'holder dere' – men den nåværende versjonen fjerner futurumaspektet som er tydelig i grunnteksten. Likevel er dette markert som bare minor fordi forrige endring var bevisst."
       }
     ]
   },
@@ -225,11 +245,17 @@
     "bookId": 43,
     "chapterId": 14,
     "verseId": 30,
-    "text": "Jeg skal ikke tale mye mer med dere, for denne verdens fyrste kommer. Han har ikke noe i meg,",
+    "text": "Jeg skal ikke tale mye mer med dere, for denne verdens fyrste kommer. Men han har ikke noe i meg,",
     "versions": [
       {
         "text": "Jeg skal ikke tale mye mer med dere, for denne verdens fyrste kommer. Han har ingen makt over meg,",
         "explanation": "Originalen sier bokstavelig «har ingenting i meg» (οὐκ ἔχει οὐδέν ἐν ἐμοί), som er et sterkere teologisk utsagn enn bare «ingen makt». Det betyr at Satan ikke har noe krav, ingen del, ingen synd i Jesus. Oversettelsen «ingen makt» er en tolkning, men mister noe av dybden."
+      },
+      {
+        "text": "Jeg skal ikke tale mye mer med dere, for denne verdens fyrste kommer. Han har ikke noe i meg,",
+        "type": "grammar",
+        "severity": "minor",
+        "explanation": "Det greske καὶ har her en adversativ funksjon ('men/og likevel') – fyrsten kommer, men har ingenting i meg. Et 'men' gjør kontrasten tydeligere på norsk. I tillegg ender verset med komma, noe som er riktig fordi setningen fortsetter i vers 31, men det kan se ubevisst ut."
       }
     ]
   },

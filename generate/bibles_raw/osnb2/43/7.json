@@ -45,7 +45,15 @@
     "bookId": 43,
     "chapterId": 7,
     "verseId": 8,
-    "text": "Dra dere opp til festen! Jeg drar ennå ikke opp til denne festen, for min tid er ennå ikke fylt.»"
+    "text": "Dra dere opp til festen! Jeg drar ikke opp til denne festen, for min tid er ennå ikke fylt.»",
+    "versions": [
+      {
+        "text": "Dra dere opp til festen! Jeg drar ennå ikke opp til denne festen, for min tid er ennå ikke fylt.»",
+        "type": "error",
+        "severity": "major",
+        "explanation": "Den kritiske tekstvarianten har 'οὐκ' (ikke) snarere enn 'οὔπω' (ennå ikke). Oversettelsen har 'ennå ikke' som følger den alternative lesemåten. Men dette er en tekstkritisk vurdering; mange manuskripter har 'οὔπω', så begge er forsvarlige. Likevel bør det nevnes at den valgte hovedtekstvarianten (med 'οὐκ') ikke gjenspeiles."
+      }
+    ]
   },
   {
     "bookId": 43,
@@ -117,7 +125,15 @@
     "bookId": 43,
     "chapterId": 7,
     "verseId": 19,
-    "text": "Har ikke Moses gitt dere loven? Og ingen av dere holder loven. Hvorfor søker dere å drepe meg?»"
+    "text": "Har ikke Moses gitt dere loven? Likevel holder ingen av dere loven. Hvorfor søker dere å drepe meg?»",
+    "versions": [
+      {
+        "text": "Har ikke Moses gitt dere loven? Og ingen av dere holder loven. Hvorfor søker dere å drepe meg?»",
+        "type": "grammar",
+        "severity": "minor",
+        "explanation": "Det greske 'καὶ οὐδεὶς ἐξ ὑμῶν ποιεῖ τὸν νόμον' har en adversativ nyanse - Moses ga loven, men ingen holder den. 'Likevel' fanger denne kontrasten bedre enn 'Og'."
+      }
+    ]
   },
   {
     "bookId": 43,
@@ -135,11 +151,17 @@
     "bookId": 43,
     "chapterId": 7,
     "verseId": 22,
-    "text": "Derfor har Moses gitt dere omskjærelsen – ikke at den er fra Moses, men fra fedrene – og dere omskjærer mennesker på sabbaten.",
+    "text": "Derfor ga Moses dere omskjærelsen – ikke at den er fra Moses, men fra fedrene – og dere omskjærer et menneske på sabbaten.",
     "versions": [
       {
         "text": "Moses har gitt dere omskjærelsen – ikke at den er fra Moses, men fra fedrene – og dere omskjærer mennesker på sabbaten.",
         "explanation": "Det greske 'διὰ τοῦτο' (derfor/av denne grunn) mangler i oversettelsen. Det knytter argumentet til det foregående og er viktig for den logiske sammenhengen i Jesu resonnement."
+      },
+      {
+        "text": "Derfor har Moses gitt dere omskjærelsen – ikke at den er fra Moses, men fra fedrene – og dere omskjærer mennesker på sabbaten.",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "Det greske 'δέδωκεν' er perfektum, men på norsk er preteritum ('ga') mer naturlig her. I tillegg har grunnteksten 'ἄνθρωπον' (entall - et menneske), ikke flertall 'mennesker'."
       }
     ]
   },
@@ -213,7 +235,15 @@
     "bookId": 43,
     "chapterId": 7,
     "verseId": 34,
-    "text": "Dere skal lete etter meg og ikke finne meg, og der jeg er, kan dere ikke komme.»"
+    "text": "Dere skal lete etter meg og ikke finne meg, og dit hvor jeg er, kan dere ikke komme.»",
+    "versions": [
+      {
+        "text": "Dere skal lete etter meg og ikke finne meg, og der jeg er, kan dere ikke komme.»",
+        "type": "error",
+        "severity": "minor",
+        "explanation": "'ὅπου εἰμὶ ἐγὼ' betyr 'dit hvor jeg er' - det er en retningsbetydning (dit hvor), ikke en enkel stedsbetydning. 'Dit hvor' formidler bedre at de ikke kan komme til det stedet."
+      }
+    ]
   },
   {
     "bookId": 43,
@@ -249,11 +279,17 @@
     "bookId": 43,
     "chapterId": 7,
     "verseId": 39,
-    "text": "Dette sa han om Ånden, som de som trodde på ham, skulle få. For Ånden var ennå ikke kommet, siden Jesus ennå ikke var herliggjort.",
+    "text": "Dette sa han om Ånden, som de som kom til tro på ham, skulle motta. For Ånden var ennå ikke kommet, siden Jesus ennå ikke var herliggjort.",
     "versions": [
       {
         "text": "Dette sa han om Ånden, som de som trodde på ham, skulle få. For Ånden var ennå ikke gitt, siden Jesus ennå ikke var herliggjort.",
         "explanation": "Det greske 'οὔπω γὰρ ἦν πνεῦμα' sier bokstavelig 'for Ånden var ennå ikke'. 'Gitt' er en fortolkende tilføyelse. 'Kommet' er mer nøytralt og formidler bedre at Ånden ennå ikke var utøst/tilgjengelig på den nye måten."
+      },
+      {
+        "text": "Dette sa han om Ånden, som de som trodde på ham, skulle få. For Ånden var ennå ikke kommet, siden Jesus ennå ikke var herliggjort.",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "'πιστεύσαντες' er aorist partisipp og betyr 'de som kom til tro' (punktuelt), ikke 'de som trodde' (durativt). 'Λαμβάνειν' (motta) er også mer presist enn 'få'."
       }
     ]
   },
@@ -321,7 +357,15 @@
     "bookId": 43,
     "chapterId": 7,
     "verseId": 49,
-    "text": "Men denne folkehopen som ikke kjenner loven – forbannet er de!»"
+    "text": "Men denne folkehopen som ikke kjenner loven, er forbannet!»",
+    "versions": [
+      {
+        "text": "Men denne folkehopen som ikke kjenner loven – forbannet er de!»",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "Ordstillingen 'forbannet er de' er unødvendig arkaisk for en moderne oversettelse. 'Er forbannet' er mer naturlig norsk og like slagkraftig."
+      }
+    ]
   },
   {
     "bookId": 43,

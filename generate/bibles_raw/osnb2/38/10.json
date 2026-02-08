@@ -3,7 +3,7 @@
     "bookId": 38,
     "chapterId": 10,
     "verseId": 1,
-    "text": "Be til Herren om regn i vårregntiden. Herren er den som lager tordenskyer, og han gir dem regnskurer, og hver mann grønt gress på marken.",
+    "text": "Be til Herren om regn i vårregntiden. Herren er den som lager tordenskyer. Han gir dem regnskurer og gir hver mann grønt gress på marken.",
     "versions": [
       {
         "text": "Be til Herren om regn i vårregntiden. Herren er den som lager tordenskyer, og han gir dem regnskurer og gir hver mann grøde på marken.",
@@ -12,6 +12,12 @@
       {
         "text": "Be til Herren om regn i vårregntiden. Herren er den som lager tordenskyer, og han gir dem regnskurer, hver mann grønt gress på marken.",
         "explanation": "Setningen mangler en konjunksjon eller preposisjon for å knytte 'hver mann grønt gress' til resten. 'Og hver mann grønt gress på marken' gir bedre flyt og gjenspeiler at Gud gir regn til alle og vegetasjon til hver enkelt."
+      },
+      {
+        "text": "Be til Herren om regn i vårregntiden. Herren er den som lager tordenskyer, og han gir dem regnskurer, og hver mann grønt gress på marken.",
+        "type": "grammar",
+        "severity": "minor",
+        "explanation": "Slik den nåværende versjonen står, er 'og hver mann grønt gress på marken' grammatisk uklart – det mangler et verb. Det hebraiske יִתֵּן (yitten, 'han gir') styrer begge objektene: regnskurer til dem, og gress til hver mann. En omstrukturering med gjentakelse av 'gir' er nødvendig for klarhet. Denne formuleringen skiller seg fra versjon 1 ved å dele opp i to setninger."
       }
     ]
   },
@@ -67,7 +73,15 @@
     "bookId": 38,
     "chapterId": 10,
     "verseId": 7,
-    "text": "Efraim skal bli som en helt, og deres hjerte skal glede seg som av vin. Deres barn skal se det og glede seg, deres hjerte skal juble i Herren."
+    "text": "Efraims folk skal bli som helter, og deres hjerte skal glede seg som av vin. Deres barn skal se det og glede seg, deres hjerte skal juble i Herren.",
+    "versions": [
+      {
+        "text": "Efraim skal bli som en helt, og deres hjerte skal glede seg som av vin. Deres barn skal se det og glede seg, deres hjerte skal juble i Herren.",
+        "type": "error",
+        "severity": "major",
+        "explanation": "Det hebraiske כְגִבּוֹר er entall 'som en helt', men subjektet וְהָיוּ er flertall ('de skal bli'). Efraim er et kollektivt navn for folket, så 'Efraims folk skal bli som helter' gjengir bedre den hebraiske flertallsformen og gjør det klarere at det handler om et folk, ikke én person."
+      }
+    ]
   },
   {
     "bookId": 38,
@@ -103,11 +117,17 @@
     "bookId": 38,
     "chapterId": 10,
     "verseId": 11,
-    "text": "Han skal gå gjennom trengselshavet og slå ned bølgene i havet. Alle Nilens dybder skal tørke ut, Assyrias stolthet skal styrtes ned, og Egypts herskerstav skal tas bort.",
+    "text": "Han skal gå gjennom et hav av trengsel og slå ned bølgene i havet. Alle Nilens dybder skal tørke ut, Assyrias stolthet skal styrtes ned, og Egypts herskerstav skal tas bort.",
     "versions": [
       {
         "text": "Han skal gå gjennom trengselshavet og slå ned bølgene i havet.",
         "explanation": "Mindre justeringer for bedre muntlig flyt: 'dybder' er mer naturlig enn 'dyp' som substantiv, 'tørke ut' (aktiv) flyter bedre enn 'tørkes ut' (passiv), og 'tas bort' er mer konsist enn 'bli tatt bort'."
+      },
+      {
+        "text": "Han skal gå gjennom trengselshavet og slå ned bølgene i havet. Alle Nilens dybder skal tørke ut, Assyrias stolthet skal styrtes ned, og Egypts herskerstav skal tas bort.",
+        "type": "error",
+        "severity": "major",
+        "explanation": "Det hebraiske בַּיָּם צָרָה betyr bokstavelig 'gjennom havet (med) trengsel' eller 'gjennom et hav av trengsel/nød'. 'Trengselshavet' som ett sammensatt ord er uvanlig på norsk og kan virke uklart. 'Et hav av trengsel' er mer naturlig norsk og formidler bildet tydeligere."
       }
     ]
   },

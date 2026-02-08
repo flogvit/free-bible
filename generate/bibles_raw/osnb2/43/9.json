@@ -15,11 +15,17 @@
     "bookId": 43,
     "chapterId": 9,
     "verseId": 3,
-    "text": "Jesus svarte: «Verken han eller foreldrene hans har syndet, men dette skjedde for at Guds gjerninger skulle bli åpenbart gjennom ham.",
+    "text": "Jesus svarte: «Verken han eller foreldrene hans har syndet, men dette skjedde for at Guds gjerninger skulle bli åpenbart gjennom ham.»",
     "versions": [
       {
         "text": "Jesus svarte: «Verken han eller foreldrene hans har syndet, men Guds gjerninger skulle bli åpenbart på ham.",
         "explanation": "Det greske 'ἀλλʼ ἵνα' (men for at) uttrykker hensikt. Den nåværende oversettelsen mangler hensiktsaspektet. 'Gjennom ham' er også mer naturlig på norsk enn 'på ham' for 'ἐν αὐτῷ' i denne konteksten."
+      },
+      {
+        "text": "Jesus svarte: «Verken han eller foreldrene hans har syndet, men dette skjedde for at Guds gjerninger skulle bli åpenbart gjennom ham.",
+        "type": "grammar",
+        "severity": "minor",
+        "explanation": "Verset mangler avsluttende anførselstegn. Det er mulig at anførselstegnet er ment å lukkes i vers 5, men hvis vers 3 avsluttes som en selvstendig setning, bør den ha avsluttende anførselstegn. Alternativt kan talen sees som å fortsette gjennom vers 4-5, som gjeldende formatering antyder (vers 5 avslutter med »). Denne er akseptabel hvis det er intensjonen - se forklaring."
       }
     ]
   },
@@ -51,7 +57,15 @@
     "bookId": 43,
     "chapterId": 9,
     "verseId": 7,
-    "text": "og sa til ham: «Gå og vask deg i Siloa-dammen» – det betyr «utsendt». Han gikk da og vasket seg, og da han kom tilbake, kunne han se."
+    "text": "og sa til ham: «Gå og vask deg i Siloa-dammen» – det betyr «den utsendte». Han gikk da og vasket seg, og da han kom tilbake, kunne han se.",
+    "versions": [
+      {
+        "text": "og sa til ham: «Gå og vask deg i Siloa-dammen» – det betyr «utsendt». Han gikk da og vasket seg, og da han kom tilbake, kunne han se.",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "Det greske 'Ἀπεσταλμένος' er et partisipp (den som er sendt / den utsendte), ikke bare et abstrakt adjektiv. 'Den utsendte' er mer presist enn bare 'utsendt'."
+      }
+    ]
   },
   {
     "bookId": 43,
@@ -229,13 +243,29 @@
     "bookId": 43,
     "chapterId": 9,
     "verseId": 31,
-    "text": "Vi vet at Gud ikke hører på syndere, men på den som frykter Gud og gjør hans vilje."
+    "text": "Vi vet at Gud ikke hører på syndere, men den som er gudfryktig og gjør hans vilje, ham hører han.",
+    "versions": [
+      {
+        "text": "Vi vet at Gud ikke hører på syndere, men på den som frykter Gud og gjør hans vilje.",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "Det greske 'θεοσεβὴς' betyr 'gudfryktig', ikke 'frykter Gud'. Mer presist er det et adjektiv. Dessuten mister den nåværende oversettelsen den andre delen av setningen: 'τούτου ἀκούει' (ham hører han). Originalen har en tydelig kontraststruktur: Gud hører ikke syndere, men den gudfryktiges bønn hører han. Oversettelsen bør gjenspeile denne strukturen bedre."
+      }
+    ]
   },
   {
     "bookId": 43,
     "chapterId": 9,
     "verseId": 32,
-    "text": "Aldri før har noen hørt at en har åpnet øynene på en som var født blind."
+    "text": "Aldri i historien har noen hørt om at en har åpnet øynene på en som var født blind.",
+    "versions": [
+      {
+        "text": "Aldri før har noen hørt at en har åpnet øynene på en som var født blind.",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "'ἐκ τοῦ αἰῶνος' betyr 'fra evighet av' eller 'fra tidenes begynnelse'. 'Aldri før' dekker dette rimelig, men 'Aldri i historien' eller 'Fra tidenes morgen' ville gi en sterkere gjengivelse av det greske uttrykkets vekt. Dessuten mangler 'om' etter 'hørt' - man 'hører om' noe på norsk."
+      }
+    ]
   },
   {
     "bookId": 43,
@@ -289,7 +319,15 @@
     "bookId": 43,
     "chapterId": 9,
     "verseId": 40,
-    "text": "Noen av fariseerne som var sammen med ham, hørte dette og sa til ham: «Er kanskje vi også blinde?»"
+    "text": "Noen av fariseerne som var sammen med ham, hørte dette og sa til ham: «Er vel ikke vi også blinde?»",
+    "versions": [
+      {
+        "text": "Noen av fariseerne som var sammen med ham, hørte dette og sa til ham: «Er kanskje vi også blinde?»",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "Det greske 'Μὴ καὶ ἡμεῖς τυφλοί ἐσμεν;' bruker 'μή' som i et spørsmål forventer et negativt svar - fariseerne forventer svaret 'nei'. 'Er kanskje vi også blinde?' er nøytralt, mens 'Er vel ikke vi også blinde?' (eller 'Vi er vel ikke blinde?') bedre fanger forventningen om et negativt svar."
+      }
+    ]
   },
   {
     "bookId": 43,

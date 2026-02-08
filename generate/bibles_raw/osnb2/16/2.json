@@ -3,7 +3,15 @@
     "bookId": 16,
     "chapterId": 2,
     "verseId": 1,
-    "text": "I det tjuende året av kong Artaxerxes' regjeringstid, i måneden nisan, sto vin foran ham. Jeg tok vinen og ga den til kongen. Jeg hadde aldri før sett bedrøvet ut i hans nærvær."
+    "text": "I måneden nisan, i det tjuende året av kong Artaxerxes' regjeringstid, sto det vin foran ham. Jeg tok vinen og ga den til kongen. Jeg hadde aldri før sett bedrøvet ut i hans nærvær.",
+    "versions": [
+      {
+        "text": "I det tjuende året av kong Artaxerxes' regjeringstid, i måneden nisan, sto vin foran ham. Jeg tok vinen og ga den til kongen. Jeg hadde aldri før sett bedrøvet ut i hans nærvær.",
+        "type": "error",
+        "severity": "major",
+        "explanation": "I den hebraiske teksten kommer 'i måneden nisan' først, deretter 'det tjuende året'. Rekkefølgen bør gjenspeile originalen. Også 'sto vin foran ham' mangler 'det' – 'sto det vin foran ham' er mer korrekt norsk."
+      }
+    ]
   },
   {
     "bookId": 16,
@@ -51,11 +59,17 @@
     "bookId": 16,
     "chapterId": 2,
     "verseId": 8,
-    "text": "«Og et brev til Asaf, som har tilsyn med kongens skoger, så han kan gi meg tømmer til takbjelkene i portene til borgen som hører til tempelet, til bymuren og til huset jeg skal bo i.» Kongen ga meg dette, fordi min Guds gode hånd var over meg.",
+    "text": "«Og et brev til Asaf, som har tilsyn med kongens skoger, så han kan gi meg tømmer til takbjelkene i portene til borgen som hører til tempelet, til bymuren og til det huset jeg selv skal bo i.» Kongen ga meg dette, fordi min Guds gode hånd var over meg.",
     "versions": [
       {
         "text": "«Og et brev til Asaf, som har tilsyn med kongens skoger, så han kan gi meg tømmer til bjelkene i portene til borgen ved tempelet, til bymuren og til huset jeg skal bo i.» Kongen ga meg dette, fordi min Guds gode hånd var over meg.",
         "explanation": "Det hebraiske ordet 'לְקָרוֹת' refererer spesifikt til takbjelker eller taksperrer. 'Takbjelkene' er mer presist enn bare 'bjelkene'. Også 'אֲשֶׁר־לַבַּיִת' betyr 'som hører til huset/tempelet' - borgen var knyttet til tempelområdet."
+      },
+      {
+        "text": "«Og et brev til Asaf, som har tilsyn med kongens skoger, så han kan gi meg tømmer til takbjelkene i portene til borgen som hører til tempelet, til bymuren og til huset jeg skal bo i.» Kongen ga meg dette, fordi min Guds gode hånd var over meg.",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "Det hebraiske 'וְלַבַּ֖יִת אֲשֶׁר־אָב֣וֹא אֵלָ֑יו' betyr 'og til huset som jeg skal komme/flytte inn i'. Å legge til 'selv' understreker at dette er Nehemjas personlige bolig, til forskjell fra tempelet, og gjør oversettelsen tydeligere."
       }
     ]
   },
@@ -99,7 +113,15 @@
     "bookId": 16,
     "chapterId": 2,
     "verseId": 14,
-    "text": "Så gikk jeg videre til Kildeporten og til Kongsdammen, men der var det ikke plass for dyret jeg red på til å komme forbi."
+    "text": "Så gikk jeg videre til Kildeporten og til Kongsdammen, men der var det ikke plass for ridedyret under meg til å komme frem.",
+    "versions": [
+      {
+        "text": "Så gikk jeg videre til Kildeporten og til Kongsdammen, men der var det ikke plass for dyret jeg red på til å komme forbi.",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "Det hebraiske 'לַבְּהֵמָ֖ה לַעֲבֹ֥ר תַּחְתָּֽי' sier bokstavelig 'for dyret å passere under meg' – altså dyret han satt på. 'Ridedyret under meg' er mer trofast mot originalteksten enn 'dyret jeg red på'. 'Komme frem' er også mer presist enn 'komme forbi' for 'לַעֲבֹר'."
+      }
+    ]
   },
   {
     "bookId": 16,
@@ -141,6 +163,14 @@
     "bookId": 16,
     "chapterId": 2,
     "verseId": 20,
-    "text": "Da svarte jeg dem og sa: «Himmelens Gud vil gi oss fremgang. Vi, hans tjenere, vil reise oss og bygge. Men dere har ingen del, ingen rett og ingen minne i Jerusalem.»"
+    "text": "Da svarte jeg dem og sa: «Himmelens Gud vil gi oss fremgang. Vi, hans tjenere, vil reise oss og bygge. Men dere har ingen del, ingen rett og ikke noe minne i Jerusalem.»",
+    "versions": [
+      {
+        "text": "Da svarte jeg dem og sa: «Himmelens Gud vil gi oss fremgang. Vi, hans tjenere, vil reise oss og bygge. Men dere har ingen del, ingen rett og ingen minne i Jerusalem.»",
+        "type": "error",
+        "severity": "minor",
+        "explanation": "'Ingen minne' er grammatisk feil på norsk. 'Minne' er et intetkjønn-ord og krever 'ikke noe minne' eller 'intet minne'."
+      }
+    ]
   }
 ]

@@ -27,11 +27,17 @@
     "bookId": 2,
     "chapterId": 1,
     "verseId": 5,
-    "text": "Alle som stammet fra Jakobs lend, var sytti i tallet, og Josef var allerede i Egypt.",
+    "text": "Alle som stammet fra Jakobs lend, var sytti i alt, og Josef var allerede i Egypt.",
     "versions": [
       {
         "text": "Alle som stammet fra Jakobs lend, var sytti i tallet. Josef var allerede i Egypt.",
         "explanation": "Den hebraiske teksten har en sammenbindende struktur med וְיוֹסֵף (ve-Yosef). Et komma etterfulgt av 'og' gir bedre flyt for muntlig lesning og binder setningene naturlig sammen, slik originalteksten gjør."
+      },
+      {
+        "text": "Alle som stammet fra Jakobs lend, var sytti i tallet, og Josef var allerede i Egypt.",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "'I tallet' er litt tungt og uvanlig. 'I alt' er mer naturlig norsk for å uttrykke et totalt antall (שִׁבְעִים נָפֶשׁ = sytti sjeler/personer i alt)."
       }
     ]
   },
@@ -99,7 +105,15 @@
     "bookId": 2,
     "chapterId": 1,
     "verseId": 12,
-    "text": "Men jo mer de ble undertrykt, desto flere ble de, og desto mer bredte de seg ut. Egypterne fikk avsky for Israels sønner."
+    "text": "Men jo mer de ble undertrykt, desto flere ble de, og desto mer bredte de seg ut. Egypterne ble fylt med angst for Israels sønner.",
+    "versions": [
+      {
+        "text": "Men jo mer de ble undertrykt, desto flere ble de, og desto mer bredte de seg ut. Egypterne fikk avsky for Israels sønner.",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "Det hebraiske וַיָּקֻצוּ (fra קוץ) uttrykker en blanding av frykt/redsel og avsky – en slags engstelig motvilje. 'Avsky' alene mister fryktelementet. 'Ble fylt med angst for' fanger bedre den hebraiske betydningen som inkluderer både redsel og ubehag."
+      }
+    ]
   },
   {
     "bookId": 2,
@@ -195,11 +209,17 @@
     "bookId": 2,
     "chapterId": 1,
     "verseId": 21,
-    "text": "Fordi jordmødrene fryktet Gud, ga han dem etterkommere.",
+    "text": "Fordi jordmødrene fryktet Gud, ga han dem familier.",
     "versions": [
       {
         "text": "Og fordi jordmødrene fryktet Gud, ga han dem etterkommere.",
         "explanation": "Det innledende 'Og' er unødvendig tungt for muntlig lesning. Setningen flyter bedre uten det, og årsakssammenhengen er allerede tydelig med 'fordi'."
+      },
+      {
+        "text": "Fordi jordmødrene fryktet Gud, ga han dem etterkommere.",
+        "type": "theological",
+        "severity": "minor",
+        "explanation": "בָּתִּים betyr bokstavelig 'hus', som i bibelsk kontekst ofte betyr 'husstand/familie' (inkludert ekteskap, barn og velstand). 'Etterkommere' er for snevert – det begrenser betydningen til bare avkom. 'Familier' er en bredere og mer presis oversettelse som dekker det hebraiske 'hus' i sin fulle betydning."
       }
     ]
   },

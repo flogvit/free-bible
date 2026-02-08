@@ -9,11 +9,17 @@
     "bookId": 20,
     "chapterId": 3,
     "verseId": 2,
-    "text": "For lange dager og mange leveår og fred skal de gi deg.",
+    "text": "For lange dager, mange leveår og fred skal de gi deg.",
     "versions": [
       {
         "text": "For de vil gi deg et langt liv, mange leveår og fred.",
         "explanation": "Oversettelsen er god, men den hebraiske strukturen har 'lange dager' (אֹרֶךְ יָמִים) og 'leveår' (שְׁנוֹת חַיִּים) som separate elementer. Den nåværende oversettelsen slår disse sammen til 'et langt liv, mange leveår', som er noe redundant. En mer presis oversettelse beholder begge elementene distinkt."
+      },
+      {
+        "text": "For lange dager og mange leveår og fred skal de gi deg.",
+        "type": "grammar",
+        "severity": "minor",
+        "explanation": "Mellom 'lange dager' og 'mange leveår' bør det stå komma i stedet for 'og', siden det er en oppramsing av tre elementer. I norsk bokmål brukes komma mellom leddene i en oppramsing, med 'og' bare før det siste leddet."
       }
     ]
   },
@@ -87,7 +93,15 @@
     "bookId": 20,
     "chapterId": 3,
     "verseId": 14,
-    "text": "For å vinne den er bedre enn å vinne sølv, og utbyttet av den er større enn gull."
+    "text": "For handelen med den gir bedre utbytte enn sølv, og gevinsten av den er større enn gull.",
+    "versions": [
+      {
+        "text": "For å vinne den er bedre enn å vinne sølv, og utbyttet av den er større enn gull.",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "Det hebraiske 'סַחְרָהּ' (sachrah) betyr 'handel/handelsgevinst med henne' og 'תְּבוּאָתָהּ' betyr 'utbytte/avkastning'. Den nåværende oversettelsen bruker 'å vinne den' to ganger, men den hebraiske teksten taler om at handelen/gevinsten ved visdom er bedre enn ved sølv og gull – en handelsmetafor."
+      }
+    ]
   },
   {
     "bookId": 20,
@@ -159,7 +173,15 @@
     "bookId": 20,
     "chapterId": 3,
     "verseId": 25,
-    "text": "Frykt ikke for plutselig redsel eller for ødeleggelsen som kommer over de ugudelige."
+    "text": "Frykt ikke for plutselig redsel, eller for de ugudeliges ødeleggelse når den kommer.",
+    "versions": [
+      {
+        "text": "Frykt ikke for plutselig redsel eller for ødeleggelsen som kommer over de ugudelige.",
+        "type": "error",
+        "severity": "major",
+        "explanation": "Det hebraiske 'מִשֹּׁאַת רְשָׁעִים כִּי תָבֹא' betyr 'ødeleggelsen fra de ugudelige når den kommer', altså ødeleggelsen som de ugudelige bringer/forårsaker, ikke ødeleggelsen som rammer de ugudelige. 'כִּי תָבֹא' (når den kommer) er også en temporal setning som bør gjenspeiles."
+      }
+    ]
   },
   {
     "bookId": 20,
@@ -225,7 +247,15 @@
     "bookId": 20,
     "chapterId": 3,
     "verseId": 34,
-    "text": "Spotterne spotter han, men de ydmyke gir han nåde."
+    "text": "Overfor spotterne er han selv en spotter, men de ydmyke gir han nåde.",
+    "versions": [
+      {
+        "text": "Spotterne spotter han, men de ydmyke gir han nåde.",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "Det hebraiske 'אִם־לַלֵּצִים הוּא־יָלִיץ' har en betingelses-/konsekvens-struktur og uttrykker at Gud møter spotterne med spott (gjengjeldelse i same mynt). Den nåværende oversettelsen er forståelig men noe flat; en formulering som viser at Gud selv spotter spotterne gir bedre gjenklang med originalen."
+      }
+    ]
   },
   {
     "bookId": 20,

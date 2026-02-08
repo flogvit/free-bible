@@ -9,11 +9,17 @@
     "bookId": 30,
     "chapterId": 2,
     "verseId": 2,
-    "text": "Moab skal dø i krigslarm, under krigsrop og lyden av horn.",
+    "text": "Jeg vil sende ild mot Moab, og den skal fortære palassene i Kerijjot. Moab skal dø i krigslarm, i krigsrop og lyden av horn.",
     "versions": [
       {
         "text": "Jeg vil sende ild mot Moab, og den skal fortære palassene i Kerijjot. Moab skal dø under krigslarm, under krigsrop og lyden av horn.",
         "explanation": "Preposisjonen בְּ (be-) oversettes bedre med 'i' enn 'under' i denne konteksten. 'I krigslarm' gir bedre flyt på norsk og unngår gjentagelse av 'under'."
+      },
+      {
+        "text": "Moab skal dø i krigslarm, under krigsrop og lyden av horn.",
+        "type": "error",
+        "severity": "major",
+        "explanation": "Den første delen av verset ('Jeg vil sende ild mot Moab, og den skal fortære palassene i Kerijjot') mangler i den nåværende versjonen. Denne delen oversetter וְשִׁלַּחְתִּי־אֵשׁ בְּמוֹאָב וְאָכְלָה אַרְמְנוֹת הַקְּרִיּוֹת og er viktig innhold. I tillegg, i tråd med revisjonshistorikkens endring fra 'under' til 'i', bør 'under krigsrop' endres til 'i krigsrop' for konsistens."
       }
     ]
   },
@@ -45,11 +51,17 @@
     "bookId": 30,
     "chapterId": 2,
     "verseId": 7,
-    "text": "De som trår på de fattiges hoder i jordens støv, og bøyer de ydmykes vei til side. En mann og hans far går til samme jente og vanhelliger mitt hellige navn.",
+    "text": "De trår på de fattiges hoder i jordens støv og bøyer de ydmykes vei til side. En mann og hans far går til samme jente for å vanhellige mitt hellige navn.",
     "versions": [
       {
         "text": "De tråkker de svakes hoder ned i støvet på jorden og bøyer de ydmykes vei til side. En mann og hans far går til samme jente og vanhelliger mitt hellige navn.",
         "explanation": "Det hebraiske הַשֹּׁאֲפִים (hasho'afim) betyr 'de som trår/tramper på' eller 'de som gisper etter'. Uttrykket handler om å tråkke på de fattiges hoder som ligger i støvet, ikke å tråkke hodene ned i støvet. 'De svake' bør være 'de fattige' (דַּלִּים dallim)."
+      },
+      {
+        "text": "De som trår på de fattiges hoder i jordens støv, og bøyer de ydmykes vei til side. En mann og hans far går til samme jente og vanhelliger mitt hellige navn.",
+        "type": "grammar",
+        "severity": "minor",
+        "explanation": "To forbedringer: (1) 'De som trår...' er en ufullstendig setning (relativsetning uten hoveddel). 'De trår...' gir en fullstendig setning. (2) Det hebraiske לְמַעַן חַלֵּל betyr 'for å vanhellige' (formålsuttrykk), ikke bare 'og vanhelliger'. Formålsbetydningen er viktig teologisk fordi den viser at handlingen har som konsekvens/formål å vanhellige Guds navn."
       }
     ]
   },

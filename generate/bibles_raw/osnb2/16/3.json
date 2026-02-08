@@ -3,7 +3,15 @@
     "bookId": 16,
     "chapterId": 3,
     "verseId": 1,
-    "text": "Øverstepresten Eljasjib og hans brødre, prestene, reiste seg og bygde Saueporten. De innviet den og satte inn dørene. De innviet muren til Hundretårnet og videre til Hananeltårnet."
+    "text": "Øverstepresten Eljasjib og hans brødre, prestene, reiste seg og bygde Saueporten. De innviet den og satte inn dørene. De innviet den videre til Hundretårnet og helt til Hananeltårnet.",
+    "versions": [
+      {
+        "text": "Øverstepresten Eljasjib og hans brødre, prestene, reiste seg og bygde Saueporten. De innviet den og satte inn dørene. De innviet muren til Hundretårnet og videre til Hananeltårnet.",
+        "type": "error",
+        "severity": "major",
+        "explanation": "Hebraisk tekst sier at de innviet (קדשוהו) den (porten/muren) til (עד) Hundretårnet og til (עד) Hananeltårnet. Det er ikke 'muren' som innvies separat, men innvielsen av det de bygde strekker seg til disse to tårnene. Oversettelsen bør reflektere at innvielsen gjelder strekningen fra Saueporten til begge tårnene."
+      }
+    ]
   },
   {
     "bookId": 16,
@@ -39,13 +47,29 @@
     "bookId": 16,
     "chapterId": 3,
     "verseId": 7,
-    "text": "Ved siden av dem arbeidet gibeonittene Melatja og meronottitten Jadon, sammen med mennene fra Gibeon og Mispa, som hørte under stattholderen i provinsen vest for Eufrat."
+    "text": "Ved siden av dem arbeidet gibeonittene Melatja og meronottitten Jadon, sammen med mennene fra Gibeon og Mispa, som hørte under setet til stattholderen i provinsen bortenfor Elven.",
+    "versions": [
+      {
+        "text": "Ved siden av dem arbeidet gibeonittene Melatja og meronottitten Jadon, sammen med mennene fra Gibeon og Mispa, som hørte under stattholderen i provinsen vest for Eufrat.",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "לכסא (lekisse) betyr 'til tronen/setet til' og refererer til jurisdiksjonsområdet. 'Vest for Eufrat' er en tolkning; den hebraiske frasen עבר הנהר betyr bokstavelig 'på den andre siden av elven' og er et standarduttrykk for provinsen. Oversettelsen er akseptabel men 'bortenfor Elven' er mer presis."
+      }
+    ]
   },
   {
     "bookId": 16,
     "chapterId": 3,
     "verseId": 8,
-    "text": "Ved siden av ham arbeidet Ussiel, sønn av Harhaja, en av gullsmedene. Ved siden av ham arbeidet Hananja, en av salveblenderne. De forsterket Jerusalem helt til den Brede mur."
+    "text": "Ved siden av ham arbeidet Ussiel, sønn av Harhaja, en av gullsmedene. Ved siden av ham arbeidet Hananja, en av salveblenderne. De gjenoppbygde Jerusalem helt til den Brede muren.",
+    "versions": [
+      {
+        "text": "Ved siden av ham arbeidet Ussiel, sønn av Harhaja, en av gullsmedene. Ved siden av ham arbeidet Hananja, en av salveblenderne. De forsterket Jerusalem helt til den Brede mur.",
+        "type": "error",
+        "severity": "major",
+        "explanation": "Verbet ויעזבו (vayyaazvu) fra עזב i denne konteksten betyr 'de restaurerte/gjenoppbygde' (eller 'etterlot/utvidet'), ikke 'forsterket'. Mange oversettelser gjengir dette som 'de restaurerte/reparerte Jerusalem'. 'Forsterket' er en mulig men upresis tolkning."
+      }
+    ]
   },
   {
     "bookId": 16,
@@ -129,7 +153,15 @@
     "bookId": 16,
     "chapterId": 3,
     "verseId": 22,
-    "text": "Etter ham arbeidet prestene som bodde i Jordan-sletten."
+    "text": "Etter ham arbeidet prestene som bodde i Jordansletten.",
+    "versions": [
+      {
+        "text": "Etter ham arbeidet prestene som bodde i Jordan-sletten.",
+        "type": "error",
+        "severity": "minor",
+        "explanation": "'Jordansletten' er normalt skrevet som ett sammensatt ord på norsk, ikke 'Jordan-sletten' med bindestrek."
+      }
+    ]
   },
   {
     "bookId": 16,
@@ -207,13 +239,29 @@
     "bookId": 16,
     "chapterId": 3,
     "verseId": 34,
-    "text": "Han sa foran sine brødre og Samaria-hæren: «Hva er det disse elendige jødene holder på med? Vil de få lov til dette? Vil de ofre? Vil de bli ferdige på én dag? Kan de vekke til live steinene fra støvhaugene når de er brent opp?»"
+    "text": "Han sa foran sine brødre og Samaria-hæren: «Hva er det disse elendige jødene holder på med? Skal de overlates til seg selv? Vil de ofre? Vil de bli ferdige på én dag? Kan de vekke til live steinene fra støvhaugene når de er brent opp?»",
+    "versions": [
+      {
+        "text": "Han sa foran sine brødre og Samaria-hæren: «Hva er det disse elendige jødene holder på med? Vil de få lov til dette? Vil de ofre? Vil de bli ferdige på én dag? Kan de vekke til live steinene fra støvhaugene når de er brent opp?»",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "הֲיַעַזְבוּ לָהֶם betyr mer bokstavelig 'Skal de overlates til seg selv?' eller 'Vil man la dem holde på?', altså et retorisk spørsmål om de andre vil la jødene fortsette uforstyrret. 'Vil de få lov til dette?' er en akseptabel tolkning men 'Skal de overlates til seg selv?' er nærmere originalteksten."
+      }
+    ]
   },
   {
     "bookId": 16,
     "chapterId": 3,
     "verseId": 35,
-    "text": "Ammonitten Tobia sto ved siden av ham og sa: «Det de bygger – om en rev hopper opp på det, river den ned steinmuren deres!»"
+    "text": "Ammonitten Tobia sto ved siden av ham og sa: «Selv det de bygger – om en rev hopper opp på det, bryter den gjennom steinmuren deres!»",
+    "versions": [
+      {
+        "text": "Ammonitten Tobia sto ved siden av ham og sa: «Det de bygger – om en rev hopper opp på det, river den ned steinmuren deres!»",
+        "type": "error",
+        "severity": "minor",
+        "explanation": "ופרץ betyr 'bryte gjennom/rive ned'. 'Bryter gjennom' er mer presist enn 'river ned' for פרץ, som indikerer gjennombryting. Også et 'selv' (גם) i begynnelsen bør gjengis for å fange den forsterkende betydningen."
+      }
+    ]
   },
   {
     "bookId": 16,

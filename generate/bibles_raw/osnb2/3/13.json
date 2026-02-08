@@ -105,7 +105,15 @@
     "bookId": 3,
     "chapterId": 13,
     "verseId": 17,
-    "text": "Presten skal undersøke ham, og hvis det angrepne stedet har blitt hvitt, skal presten erklære den syke ren. Han er ren."
+    "text": "Presten skal undersøke ham, og hvis det angrepne stedet har blitt hvitt, skal presten erklære ham ren. Han er ren.",
+    "versions": [
+      {
+        "text": "Presten skal undersøke ham, og hvis det angrepne stedet har blitt hvitt, skal presten erklære den syke ren. Han er ren.",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "I vers 4 ble 'den syke' bevisst endret til 'ham' for konsistens. Her i vers 17 står det fortsatt 'den syke', som er inkonsekvent med den endringen. Grunnteksten bruker heller ikke noe ord som tilsvarer 'den syke' – det er הַנֶּגַע (det angrepne stedet) som erklæres rent, men i norsk idiom bør det være 'ham' for å matche resten av kapitlet."
+      }
+    ]
   },
   {
     "bookId": 3,
@@ -249,7 +257,15 @@
     "bookId": 3,
     "chapterId": 13,
     "verseId": 41,
-    "text": "Og hvis han mister håret foran på hodet, har han bare høy panne. Han er ren."
+    "text": "Og hvis han mister håret foran på hodet, er han skallet foran. Han er ren.",
+    "versions": [
+      {
+        "text": "Og hvis han mister håret foran på hodet, har han bare høy panne. Han er ren.",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "Det hebraiske גִּבֵּחַ (gibbeach) betyr 'skallet foran/i pannen' – det beskriver skallethet fra forsiden. 'Høy panne' er en moderne omskrivning som ikke gjenspeiler den hebraiske betydningen nøyaktig og kan virke bagatelliserende. Parallellen med vers 40 (קֵרֵחַ = 'skallet') tilsier en tilsvarende formulering."
+      }
+    ]
   },
   {
     "bookId": 3,
@@ -351,7 +367,15 @@
     "bookId": 3,
     "chapterId": 13,
     "verseId": 55,
-    "text": "Etter vaskingen skal presten undersøke flekken. Hvis den ikke har forandret utseende, selv om den ikke har spredt seg, er gjenstanden uren. Du skal brenne den i ilden. Den er angrepet, enten på inn- eller utsiden."
+    "text": "Etter vaskingen skal presten undersøke flekken. Hvis den ikke har forandret utseende, selv om den ikke har spredt seg, er gjenstanden uren. Du skal brenne den i ilden. Det er en fordypning, enten på baksiden eller forsiden.",
+    "versions": [
+      {
+        "text": "Etter vaskingen skal presten undersøke flekken. Hvis den ikke har forandret utseende, selv om den ikke har spredt seg, er gjenstanden uren. Du skal brenne den i ilden. Den er angrepet, enten på inn- eller utsiden.",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "Det hebraiske פְּחֶתֶת (pecheteth) betyr 'fordypning' eller 'uthuling' – det beskriver at materialet er angrepet innenfra. בְּקָרַחְתּוֹ אוֹ בְגַבַּחְתּוֹ bruker samme termer som for skallethet bak/foran (v.42), og refererer her til baksiden eller forsiden av stoffet/skinnet. 'Angrepet' er for vagt og mister den spesifikke betydningen av en fordypning i materialet."
+      }
+    ]
   },
   {
     "bookId": 3,
@@ -387,11 +411,17 @@
     "bookId": 3,
     "chapterId": 13,
     "verseId": 59,
-    "text": "Dette er loven om flekksykdom på klesplagg av ull eller lin, på renning eller innslag, eller på noe som er laget av skinn – om det skal erklæres rent eller urent.",
+    "text": "Dette er loven om flekksykdom på klesplagg av ull eller lin, i renning eller innslag, eller på noe som er laget av skinn – om det skal erklæres rent eller urent.",
     "versions": [
       {
         "text": "Dette er loven om spedalskhet på klesplagg av ull eller lin, på renning eller innslag, eller på noe som er laget av skinn – om det skal erklæres rent eller urent.",
         "explanation": "Det hebraiske צָרַעַת (tsara'at) refererer ikke til moderne lepra/spedalskhet, men til ulike hudtilstander og mugg/råte på materialer. 'Hudsykdom' eller 'angrepet flekk' er mer presist. Siden dette handler om klesplagg, kan 'smittsom flekk' også vurderes."
+      },
+      {
+        "text": "Dette er loven om flekksykdom på klesplagg av ull eller lin, på renning eller innslag, eller på noe som er laget av skinn – om det skal erklæres rent eller urent.",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "I versene 48 og 51 ble preposisjonen bevisst endret fra 'på' til 'i' for renning og innslag, siden disse er tråder i vevet stoff. Vers 59 bør være konsekvent med denne endringen og bruke 'i renning eller innslag'."
       }
     ]
   }

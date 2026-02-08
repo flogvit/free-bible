@@ -211,7 +211,7 @@
     "bookId": 43,
     "chapterId": 11,
     "verseId": 33,
-    "text": "Da Jesus så henne gråte, og jødene som var kommet sammen med henne også gråte, ble han dypt beveget i ånden og rystet i sitt indre.",
+    "text": "Da Jesus så henne gråte, og jødene som var kommet sammen med henne også gråt, ble han dypt beveget i ånden og rystet i sitt indre.",
     "versions": [
       {
         "text": "Da Jesus så henne gråte, og så at jødene som var kommet sammen med henne også gråt, ble han opprørt i ånden og rystet.",
@@ -220,6 +220,12 @@
       {
         "text": "Da Jesus så henne gråte, og så at jødene som var kommet sammen med henne også gråt, ble han dypt beveget i ånden og rystet i sitt indre.",
         "explanation": "Verset er grammatisk korrekt etter revisjonen. Ingen endring nødvendig - beholdes som det er."
+      },
+      {
+        "text": "Da Jesus så henne gråte, og jødene som var kommet sammen med henne også gråte, ble han dypt beveget i ånden og rystet i sitt indre.",
+        "type": "grammar",
+        "severity": "minor",
+        "explanation": "'gråte' i den andre forekomsten bør være 'gråt' (preteritum) for å matche den syntaktiske strukturen. Den første 'gråte' er korrekt som infinitiv etter 'så henne', men den andre leddsetningen ('og jødene... også gråte') trenger preteritum 'gråt'. Merk at versjon 2 i historikken rettet noe annet og beholdt denne feilen."
       }
     ]
   },
@@ -323,7 +329,15 @@
     "bookId": 43,
     "chapterId": 11,
     "verseId": 48,
-    "text": "Hvis vi lar ham fortsette slik, vil alle tro på ham, og romerne vil komme og ta fra oss både vårt hellige sted og vårt folk.»"
+    "text": "Hvis vi lar ham fortsette slik, vil alle tro på ham, og romerne vil komme og ta fra oss både stedet vårt og folket vårt.»",
+    "versions": [
+      {
+        "text": "Hvis vi lar ham fortsette slik, vil alle tro på ham, og romerne vil komme og ta fra oss både vårt hellige sted og vårt folk.»",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "Det greske τὸν τόπον betyr simpelthen 'stedet' (dvs. tempelet/Jerusalem), ikke 'vårt hellige sted'. Å legge til 'hellige' er en tolkning som ikke finnes i grunnteksten. Tilsvarende er τὸ ἔθνος 'nasjonen/folket'. En mer nøytral oversettelse holder seg nærmere originalen."
+      }
+    ]
   },
   {
     "bookId": 43,
@@ -335,7 +349,15 @@
     "bookId": 43,
     "chapterId": 11,
     "verseId": 50,
-    "text": "Dere skjønner ikke at det er bedre for dere at ett menneske dør for folket, enn at hele folket går til grunne.»"
+    "text": "Dere tenker ikke over at det er bedre for dere at ett menneske dør for folket, enn at hele nasjonen går til grunne.»",
+    "versions": [
+      {
+        "text": "Dere skjønner ikke at det er bedre for dere at ett menneske dør for folket, enn at hele folket går til grunne.»",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "λογίζεσθε betyr 'overveier/tenker over', ikke bare 'skjønner'. Dessuten bruker den greske teksten to ulike ord: λαοῦ (folket) og ἔθνος (nasjonen). Å oversette begge som 'folket' mister denne distinksjonen. 'Nasjonen' for ἔθνος er mer presist."
+      }
+    ]
   },
   {
     "bookId": 43,
@@ -371,7 +393,15 @@
     "bookId": 43,
     "chapterId": 11,
     "verseId": 55,
-    "text": "Jødenes påskehøytid var nær, og mange dro opp til Jerusalem fra landsbygda før påske for å rense seg."
+    "text": "Jødenes påske var nær, og mange dro opp til Jerusalem fra landsbygda før påsken for å rense seg.",
+    "versions": [
+      {
+        "text": "Jødenes påskehøytid var nær, og mange dro opp til Jerusalem fra landsbygda før påske for å rense seg.",
+        "type": "grammar",
+        "severity": "minor",
+        "explanation": "Det greske τὸ πάσχα betyr 'påsken' (bestemt form), ikke 'påskehøytid'. Første forekomst kan gjerne bare være 'påske'. Viktigere er at den andre forekomsten 'før påske' bør ha bestemt form 'før påsken' på norsk for naturlig språkflyt."
+      }
+    ]
   },
   {
     "bookId": 43,

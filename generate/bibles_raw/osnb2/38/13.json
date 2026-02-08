@@ -21,23 +21,45 @@
     "bookId": 38,
     "chapterId": 13,
     "verseId": 4,
-    "text": "På den dagen skal profetene skamme seg, hver og en over sin visjon når de profeterer. De skal ikke kle seg i lodden kappe for å bedra."
+    "text": "På den dagen skal profetene skamme seg, hver og en over sin visjon når de profeterer. De skal ikke kle seg i en lodden kappe for å bedra.",
+    "versions": [
+      {
+        "text": "På den dagen skal profetene skamme seg, hver og en over sin visjon når de profeterer. De skal ikke kle seg i lodden kappe for å bedra.",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "Liten grammatisk forbedring: 'i lodden kappe' bør ha ubestemt artikkel 'en' foran for mer naturlig norsk: 'i en lodden kappe'."
+      }
+    ]
   },
   {
     "bookId": 38,
     "chapterId": 13,
     "verseId": 5,
-    "text": "Han skal si: Jeg er ingen profet. Jeg er en som dyrker jorden, for en mann eide meg fra min ungdom av."
+    "text": "Han skal si: Jeg er ingen profet. Jeg er en som dyrker jorden, for en mann kjøpte meg fra min ungdom av.",
+    "versions": [
+      {
+        "text": "Han skal si: Jeg er ingen profet. Jeg er en som dyrker jorden, for en mann eide meg fra min ungdom av.",
+        "type": "error",
+        "severity": "major",
+        "explanation": "Det hebraiske verbet הִקְנַנִי (hiqnani) fra roten קנה betyr 'kjøpte meg / ervervet meg', ikke 'eide meg'. Det handler om at han ble kjøpt/ervervet som slave eller tjener allerede fra ungdommen, ikke bare at noen eide ham. 'Kjøpte meg' gjengir den hebraiske roten mer presist."
+      }
+    ]
   },
   {
     "bookId": 38,
     "chapterId": 13,
     "verseId": 6,
-    "text": "Og om noen spør ham: Hva er disse slagene mellom hendene dine? Da skal han svare: Det er sår jeg fikk i mine venners hus.",
+    "text": "Og en skal si til ham: Hva er disse slagene mellom hendene dine? Da skal han svare: Det er sår jeg fikk i mine venners hus.",
     "versions": [
       {
         "text": "Og om noen spør ham: Hva er disse sårene mellom hendene dine? Da skal han svare: Det er sår jeg fikk i mine elskeres hus.",
         "explanation": "1) 'מַּכּוֹת' (makkot) betyr 'slag' snarere enn 'sår' - det refererer til merker etter slag. 2) 'מְאַהֲבָי' (me'ahavay) betyr 'mine elskende/de som elsker meg' i betydningen 'mine venner/kjære', ikke romantiske elskere. Konteksten antyder dette er merker fra ekstastisk profetisk praksis som personen bortforklarer."
+      },
+      {
+        "text": "Og om noen spør ham: Hva er disse slagene mellom hendene dine? Da skal han svare: Det er sår jeg fikk i mine venners hus.",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "Det hebraiske וְאָמַר אֵלָיו bruker ikke en betingelsesform ('om noen'), men en enkel narrativ form: 'og en/man skal si til ham'. Den nåværende oversettelsen legger til en betingelse som ikke finnes i originalteksten."
       }
     ]
   },

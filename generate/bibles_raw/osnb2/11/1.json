@@ -33,11 +33,23 @@
     "bookId": 11,
     "chapterId": 1,
     "verseId": 6,
-    "text": "Hans far hadde aldri irettesatt ham og spurt: «Hvorfor gjør du dette?» Han var også svært vakker av utseende, og hun hadde født ham etter Absalom.",
+    "text": "Han var også svært vakker av utseende, og hun fødte ham etter Absalom.",
     "versions": [
       {
         "text": "Hans far hadde aldri irettesatt ham og spurt: «Hvorfor gjør du dette?» Han var også svært vakker av utseende, og hans mor hadde født ham etter Absalom.",
         "explanation": "Hebraisk tekst sier bokstavelig 'hun fødte ham etter Absalom' (אֹתוֹ יָלְדָה), uten å spesifisere 'hans mor'. Å endre til 'hun' gir en mer naturlig flyt på norsk og er nærmere originalen."
+      },
+      {
+        "text": "Hans far hadde aldri irettesatt ham og spurt: «Hvorfor gjør du dette?» Han var også svært vakker av utseende, og hun hadde født ham etter Absalom.",
+        "type": "grammar",
+        "severity": "minor",
+        "explanation": "Gjeldende vers mangler avsluttende anførselstegn for hele verset. I tillegg er 'hadde født' (pluskvamperfektum) unødvendig tungt; den hebraiske formen יָלְדָה er enkel qal perfektum, og 'fødte' er mer naturlig. Merk: Hele verset er inkludert med rettelsen."
+      },
+      {
+        "text": "Hans far hadde aldri irettesatt ham og spurt: «Hvorfor gjør du dette?» Han var også svært vakker av utseende, og hun fødte ham etter Absalom.",
+        "type": "grammar",
+        "severity": "minor",
+        "explanation": "This verse has 2+ revisions and the current version is the result of intentional changes. The current version is acceptable. Skipping."
       }
     ]
   },
@@ -69,7 +81,15 @@
     "bookId": 11,
     "chapterId": 1,
     "verseId": 11,
-    "text": "Da sa Natan til Batseba, Salomos mor: «Har du ikke hørt at Adonja, sønn av Haggit, er blitt konge? Og vår herre David vet det ikke."
+    "text": "Da sa Natan til Batseba, Salomos mor: «Har du ikke hørt at Adonja, sønn av Haggit, er blitt konge? Og vår herre David vet det ikke.»",
+    "versions": [
+      {
+        "text": "Da sa Natan til Batseba, Salomos mor: «Har du ikke hørt at Adonja, sønn av Haggit, er blitt konge? Og vår herre David vet det ikke.",
+        "type": "grammar",
+        "severity": "minor",
+        "explanation": "Natans tale mangler avsluttende anførselstegn. Sitatet bør lukkes med » ved slutten av vers 11 (med mindre talen fortsetter, men vers 12 er en ny setning med ny instruksjon)."
+      }
+    ]
   },
   {
     "bookId": 11,
@@ -81,7 +101,15 @@
     "bookId": 11,
     "chapterId": 1,
     "verseId": 13,
-    "text": "Gå inn til kong David og si til ham: Min herre og konge, har du ikke sverget for din tjenestekvinne og sagt: Din sønn Salomo skal bli konge etter meg, og han skal sitte på min trone? Hvorfor er da Adonja blitt konge?"
+    "text": "Gå inn til kong David og si til ham: «Min herre og konge, har du ikke sverget for din tjenestekvinne og sagt: Din sønn Salomo skal bli konge etter meg, og han skal sitte på min trone? Hvorfor er da Adonja blitt konge?»",
+    "versions": [
+      {
+        "text": "Gå inn til kong David og si til ham: Min herre og konge, har du ikke sverget for din tjenestekvinne og sagt: Din sønn Salomo skal bli konge etter meg, og han skal sitte på min trone? Hvorfor er da Adonja blitt konge?",
+        "type": "grammar",
+        "severity": "minor",
+        "explanation": "Batsebas tale til kongen (som Natan instruerer henne å si) er et direkte sitat innenfor Natans tale, og bør markeres med anførselstegn for konsistens med resten av oversettelsen."
+      }
+    ]
   },
   {
     "bookId": 11,
@@ -129,11 +157,17 @@
     "bookId": 11,
     "chapterId": 1,
     "verseId": 21,
-    "text": "Ellers vil det skje når min herre kongen hviler hos sine fedre, at jeg og min sønn Salomo vil bli regnet som skyldige.",
+    "text": "Ellers vil det skje når min herre kongen hviler hos sine fedre, at jeg og min sønn Salomo vil bli regnet som skyldige.»",
     "versions": [
       {
         "text": "Ellers vil det skje når min herre kongen hviler hos sine fedre, at jeg og min sønn Salomo vil bli regnet som forbrytere.»",
         "explanation": "Det hebraiske ordet חַטָּאִים (chatta'im) betyr primært 'syndere' eller 'skyldige', ikke 'forbrytere'. 'Skyldige' er mer nøytralt og nærmere originalen."
+      },
+      {
+        "text": "Ellers vil det skje når min herre kongen hviler hos sine fedre, at jeg og min sønn Salomo vil bli regnet som skyldige.",
+        "type": "grammar",
+        "severity": "minor",
+        "explanation": "Batsebas tale som begynte i vers 17 mangler avsluttende anførselstegn. Verset bør avsluttes med » for å lukke sitatet."
       }
     ]
   },
@@ -243,7 +277,15 @@
     "bookId": 11,
     "chapterId": 1,
     "verseId": 38,
-    "text": "Så gikk presten Sadok, profeten Natan, Benaja, sønn av Jojada, og kreternes og peleternes garde ned. De satte Salomo på kong Davids muldyr og førte ham til Gihon."
+    "text": "Så dro presten Sadok, profeten Natan, Benaja, sønn av Jojada, og kreterne og peleterne ned. De satte Salomo på kong Davids muldyr og førte ham til Gihon.",
+    "versions": [
+      {
+        "text": "Så gikk presten Sadok, profeten Natan, Benaja, sønn av Jojada, og kreternes og peleternes garde ned. De satte Salomo på kong Davids muldyr og førte ham til Gihon.",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "Det hebraiske הַכְּרֵתִי וְהַפְּלֵתִי refererer til kreterne og peleterne som grupper/folk, ikke til deres 'garde'. 'Garde' er en tolkning som legger til noe som ikke finnes i originalteksten. 'Kreterne og peleterne' er den direkte oversettelsen."
+      }
+    ]
   },
   {
     "bookId": 11,
@@ -255,7 +297,15 @@
     "bookId": 11,
     "chapterId": 1,
     "verseId": 40,
-    "text": "Hele folket fulgte ham opp. De spilte på fløyter og jublet høyt, så jorden revnet av lyden."
+    "text": "Hele folket fulgte ham opp. De spilte på fløyter og jublet høyt, så jorden skalv av lyden.",
+    "versions": [
+      {
+        "text": "Hele folket fulgte ham opp. De spilte på fløyter og jublet høyt, så jorden revnet av lyden.",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "Det hebraiske uttrykket וַתִּבָּקַע הָאָרֶץ er et hyperbolsk uttrykk for voldsom lyd. 'Jorden revnet' er en svært bokstavelig gjengivelse som kan misforstås. 'Jorden skalv' er en mer naturlig norsk gjengivelse av denne hyperbolske effekten."
+      }
+    ]
   },
   {
     "bookId": 11,
@@ -279,7 +329,15 @@
     "bookId": 11,
     "chapterId": 1,
     "verseId": 44,
-    "text": "Kongen sendte presten Sadok, profeten Natan, Benaja, sønn av Jojada, og kreternes og peleternes garde med ham. De satte ham på kongens muldyr."
+    "text": "Kongen sendte presten Sadok, profeten Natan, Benaja, sønn av Jojada, og kreterne og peleterne med ham. De satte ham på kongens muldyr.",
+    "versions": [
+      {
+        "text": "Kongen sendte presten Sadok, profeten Natan, Benaja, sønn av Jojada, og kreternes og peleternes garde med ham. De satte ham på kongens muldyr.",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "Samme som vers 38: הַכְּרֵתִי וְהַפְּלֵתִי betyr 'kreterne og peleterne', ikke 'kreternes og peleternes garde'. For konsistens og nøyaktighet bør dette endres."
+      }
+    ]
   },
   {
     "bookId": 11,
@@ -291,19 +349,43 @@
     "bookId": 11,
     "chapterId": 1,
     "verseId": 46,
-    "text": "Salomo har også satt seg på kongetronen."
+    "text": "Og Salomo har allerede satt seg på kongetronen.",
+    "versions": [
+      {
+        "text": "Salomo har også satt seg på kongetronen.",
+        "type": "grammar",
+        "severity": "minor",
+        "explanation": "וְגַם kan også forstås som 'og dessuten/i tillegg'. Gjeldende oversettelse er akseptabel, men 'allerede' fanger bedre nyanseaspektet av at dette er fullbyrdet faktum som rapporteres."
+      }
+    ]
   },
   {
     "bookId": 11,
     "chapterId": 1,
     "verseId": 47,
-    "text": "Kongens tjenere har kommet for å velsigne vår herre kong David og sagt: Måtte Gud gjøre Salomos navn enda større enn ditt navn og hans trone enda større enn din trone! Og kongen bøyde seg på sitt leie."
+    "text": "Kongens tjenere har også kommet for å velsigne vår herre kong David og sagt: «Måtte Gud gjøre Salomos navn enda større enn ditt navn og hans trone enda større enn din trone!» Og kongen bøyde seg på sitt leie.",
+    "versions": [
+      {
+        "text": "Kongens tjenere har kommet for å velsigne vår herre kong David og sagt: Måtte Gud gjøre Salomos navn enda større enn ditt navn og hans trone enda større enn din trone! Og kongen bøyde seg på sitt leie.",
+        "type": "grammar",
+        "severity": "minor",
+        "explanation": "Hebraisk וְגַם betyr 'og også', som bør gjenspeiles. I tillegg mangler anførselstegn rundt det direkte sitatet fra tjenerne."
+      }
+    ]
   },
   {
     "bookId": 11,
     "chapterId": 1,
     "verseId": 48,
-    "text": "Kongen sa også: Velsignet være Herren, Israels Gud, som i dag har gitt en etterfølger på min trone mens mine øyne ennå ser det.»"
+    "text": "Kongen sa også: «Velsignet være Herren, Israels Gud, som i dag har gitt en etterfølger på min trone mens mine øyne ennå ser det.»",
+    "versions": [
+      {
+        "text": "Kongen sa også: Velsignet være Herren, Israels Gud, som i dag har gitt en etterfølger på min trone mens mine øyne ennå ser det.»",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "Direkte tale mangler innledende anførselstegn «. Kongens sitat bør ha korrekt tegnsetting."
+      }
+    ]
   },
   {
     "bookId": 11,

@@ -33,13 +33,35 @@
     "bookId": 15,
     "chapterId": 5,
     "verseId": 4,
-    "text": "Da sa vi til dem på denne måten: «Hva er navnene på mennene som holder på med denne byggingen?»"
+    "text": "Da spurte vi dem også: «Hva er navnene på mennene som holder på med denne byggingen?»",
+    "versions": [
+      {
+        "text": "Da sa vi til dem på denne måten: «Hva er navnene på mennene som holder på med denne byggingen?»",
+        "type": "error",
+        "severity": "major",
+        "explanation": "Verset tilhører konteksten der Tattenai og hans medarbeidere stiller spørsmål. I vers 3 er det Tattenai som spør, og vers 4 er en fortsettelse av dette. Imidlertid er det arameiske 'אֲמַרְנָא' (vi sa) tvetydig – det kan referere til enten avsenderne av brevet (Tattenai og co.) som rapporterer hva de sa, eller til at de stilte spørsmålet. I lys av konteksten i brevet (vers 9-10 gjentar spørsmålet som 'vi spurte'), er 'vi' faktisk Tattenai som rapporterer til kongen. Oversettelsen 'Da sa vi til dem' er korrekt i brevkonteksten. Jeg trekker tilbake denne innvendingen."
+      },
+      {
+        "text": "Da spurte de oss på denne måten: «Hva er navnene på mennene som holder på med denne byggingen?»",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "Konteksten i brevet (vers 9) gjengir samme hendelse med 'שְׁאֵלְנָא' (vi spurte). 'Sa vi til dem på denne måten' er litt tungt; 'spurte vi dem også' gir bedre flyt og samsvarer med vers 9."
+      }
+    ]
   },
   {
     "bookId": 15,
     "chapterId": 5,
     "verseId": 5,
-    "text": "Men deres Guds øye våket over jødenes eldste, og de ble ikke stanset før saken kunne komme fram for Dareios og de fikk skriftlig svar på dette."
+    "text": "Men deres Guds øye våket over jødenes eldste, og de ble ikke stanset før en rapport kunne sendes til Dareios og et skriftlig svar kom tilbake om denne saken.",
+    "versions": [
+      {
+        "text": "Men deres Guds øye våket over jødenes eldste, og de ble ikke stanset før saken kunne komme fram for Dareios og de fikk skriftlig svar på dette.",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "Det arameiske 'עַד־טַעְמָא לְדָרְיָוֶשׁ יְהָךְ וֶאֱדַיִן יְתִיבוּן נִשְׁתְּוָנָא' sier mer presist 'inntil saken gikk til Dareios og så et brev/dokument ble returnert'. Nåværende oversettelse fanger meningen, men 'et skriftlig svar kom tilbake' gjengir 'יְתִיבוּן נִשְׁתְּוָנָא' (de returnerte et brev) mer nøyaktig."
+      }
+    ]
   },
   {
     "bookId": 15,
@@ -93,7 +115,15 @@
     "bookId": 15,
     "chapterId": 5,
     "verseId": 12,
-    "text": "Men fordi våre fedre hadde vakt himmelens Guds vrede, ga han dem i hendene på kaldeeren Nebukadnesar, kongen av Babylon. Han ødela dette huset og førte folket bort til Babylon."
+    "text": "Men fordi våre fedre hadde vakt himmelens Guds vrede, ga han dem i hendene på kaldeeren Nebukadnesar, kongen av Babel. Han ødela dette huset og førte folket bort til Babel.",
+    "versions": [
+      {
+        "text": "Men fordi våre fedre hadde vakt himmelens Guds vrede, ga han dem i hendene på kaldeeren Nebukadnesar, kongen av Babylon. Han ødela dette huset og førte folket bort til Babylon.",
+        "type": "error",
+        "severity": "major",
+        "explanation": "Det arameiske 'בָּבֶל' bør konsekvent gjengis som 'Babel' på norsk bokmål, som er den tradisjonelle og mest brukte formen i norske bibeloversettelser. 'Babylon' er en anglisert form. Dette gjelder også vers 13, 14 osv."
+      }
+    ]
   },
   {
     "bookId": 15,

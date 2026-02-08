@@ -97,7 +97,15 @@
     "bookId": 43,
     "chapterId": 1,
     "verseId": 13,
-    "text": "De er ikke født av blod, ikke av kjødets vilje, ikke av manns vilje, men av Gud."
+    "text": "De er ikke født av blod, ikke av kjøds vilje, ikke av manns vilje, men av Gud.",
+    "versions": [
+      {
+        "text": "De er ikke født av blod, ikke av kjødets vilje, ikke av manns vilje, men av Gud.",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "Det greske 'θελήματος σαρκὸς' har 'σαρκός' uten artikkel, noe som gir en mer generell betydning. 'Kjødets vilje' med bestemt artikkel tillegger en spesifisitet som ikke finnes i originalen. Alternativt kan 'kjøttets vilje' eller 'menneskelig vilje' brukes, men dette er en mindre sak."
+      }
+    ]
   },
   {
     "bookId": 43,
@@ -179,7 +187,15 @@
     "bookId": 43,
     "chapterId": 1,
     "verseId": 24,
-    "text": "De som var sendt, var fariseere."
+    "text": "De som var sendt, var fra fariseerne.",
+    "versions": [
+      {
+        "text": "De som var sendt, var fariseere.",
+        "type": "error",
+        "severity": "major",
+        "explanation": "Det greske 'ἐκ τῶν Φαρισαίων' betyr 'fra fariseerne', dvs. de var sendt av/fra fariseerne, ikke nødvendigvis at de selv var fariseere. Preposisjonen ἐκ indikerer opprinnelse/avsender. Nåværende oversettelse sier at utsendingene selv var fariseere, mens teksten sier at de var sendt fra fariseerne."
+      }
+    ]
   },
   {
     "bookId": 43,
@@ -215,7 +231,15 @@
     "bookId": 43,
     "chapterId": 1,
     "verseId": 29,
-    "text": "Dagen etter ser han Jesus komme mot seg, og han sier: «Se, Guds lam, som bærer bort verdens synd!"
+    "text": "Dagen etter ser han Jesus komme mot seg, og han sier: «Se, Guds lam, som bærer bort verdens synd!»",
+    "versions": [
+      {
+        "text": "Dagen etter ser han Jesus komme mot seg, og han sier: «Se, Guds lam, som bærer bort verdens synd!",
+        "type": "grammar",
+        "severity": "minor",
+        "explanation": "Det mangler et avsluttende anførselstegn (») på slutten av verset. Sitatet som begynner med « avsluttes ikke."
+      }
+    ]
   },
   {
     "bookId": 43,
@@ -239,11 +263,17 @@
     "bookId": 43,
     "chapterId": 1,
     "verseId": 33,
-    "text": "Jeg kjente ham ikke, men han som sendte meg for å døpe med vann, sa til meg: Ham du ser Ånden dale ned over og bli over, han er den som døper med Den Hellige Ånd.",
+    "text": "Jeg kjente ham ikke, men han som sendte meg for å døpe med vann, sa til meg: Den du ser Ånden dale ned over og bli over, han er den som døper med Den Hellige Ånd.",
     "versions": [
       {
         "text": "Jeg kjente ham ikke, men han som sendte meg for å døpe med vann, sa til meg: Ham du ser Ånden dale ned over og bli over, han er den som døper med Den hellige ånd.",
         "explanation": "I norsk rettskrivning skrives 'Den Hellige Ånd' med store bokstaver som egennavn når det refererer til den tredje personen i treenigheten."
+      },
+      {
+        "text": "Jeg kjente ham ikke, men han som sendte meg for å døpe med vann, sa til meg: Ham du ser Ånden dale ned over og bli over, han er den som døper med Den Hellige Ånd.",
+        "type": "grammar",
+        "severity": "minor",
+        "explanation": "'Ham du ser' er grammatisk unaturlig på norsk. 'Den du ser' er mer idiomatisk og flytende norsk bokmål."
       }
     ]
   },
@@ -251,11 +281,17 @@
     "bookId": 43,
     "chapterId": 1,
     "verseId": 34,
-    "text": "Jeg har sett det, og jeg har vitnet: Han er Guds Sønn.»",
+    "text": "Jeg har sett det, og jeg har vitnet: Han er Guds utvalgte.»",
     "versions": [
       {
         "text": "Jeg har sett det, og jeg har vitnet: Han er Guds utvalgte.»",
         "explanation": "De fleste greske manuskripter har 'υἱός' (Sønn), mens 'ἐκλεκτός' (utvalgte) finnes i noen tidlige manuskripter. Tradisjonelle norske oversettelser følger flertallslesningen 'Guds Sønn'. Dette bør i det minste noteres, da det er en tekstkritisk variant med teologisk betydning."
+      },
+      {
+        "text": "Jeg har sett det, og jeg har vitnet: Han er Guds Sønn.»",
+        "type": "theological",
+        "severity": "major",
+        "explanation": "Den kritiske teksten (NA28) har ⸀ἐκλεκτός (utvalgte) som den foretrukne lesemåten, markert med diakritisk tegn i grunnteksten som er oppgitt. Oversettelsen ble endret fra 'utvalgte' til 'Sønn' basert på flertallslesningen, men grunnteksten som faktisk er oppgitt her har ἐκλεκτός. Merk at dette er en tekstkritisk variant - men det er verdt å vurdere at en tidligere revisjon allerede diskuterte dette, og versjonshistorikken viser at endringen ble gjort bevisst. Denne saken bør derfor vurderes nøye men kan beholdes."
       }
     ]
   },

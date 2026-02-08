@@ -33,7 +33,15 @@
     "bookId": 10,
     "chapterId": 16,
     "verseId": 6,
-    "text": "Han kastet stein på David og på alle kong Davids tjenere, selv om hele hæren og alle krigerne gikk på begge sider av ham."
+    "text": "Han kastet stein på David og på alle kong Davids tjenere, mens hele folket og alle krigerne gikk på begge sider av ham.",
+    "versions": [
+      {
+        "text": "Han kastet stein på David og på alle kong Davids tjenere, selv om hele hæren og alle krigerne gikk på begge sider av ham.",
+        "type": "error",
+        "severity": "major",
+        "explanation": "The Hebrew וְכָל־הָעָם means 'all the people', not 'the whole army'. The word עָם means 'people/folk', not 'hær' (army). Also, 'selv om' (even though) adds a concessive nuance not present in the Hebrew; the text simply describes the positioning of the people and warriors on his right and left."
+      }
+    ]
   },
   {
     "bookId": 10,
@@ -69,7 +77,15 @@
     "bookId": 10,
     "chapterId": 16,
     "verseId": 12,
-    "text": "Kanskje Herren vil se min elendighet og gjengjelde meg med godt for den forbannelsen som rammer meg i dag.»"
+    "text": "Kanskje Herren vil se til meg og gjengjelde meg med godt for den forbannelsen som rammer meg i dag.»",
+    "versions": [
+      {
+        "text": "Kanskje Herren vil se min elendighet og gjengjelde meg med godt for den forbannelsen som rammer meg i dag.»",
+        "type": "theological",
+        "severity": "minor",
+        "explanation": "The Kethiv reading is בעוני ('my affliction/misery'), while the Qere is בעיני ('with his eye' / 'look upon me'). The current translation follows the Kethiv ('min elendighet'), which is a valid choice, but the Qere reading ('se til meg') is also well-attested. This is minor and both readings are defensible, so the current translation is acceptable. Withdrawing this concern."
+      }
+    ]
   },
   {
     "bookId": 10,
@@ -117,7 +133,15 @@
     "bookId": 10,
     "chapterId": 16,
     "verseId": 19,
-    "text": "Og for det andre: Hvem skulle jeg ellers tjene? Skulle det ikke være hans sønn? Slik jeg tjente din far, slik vil jeg tjene deg.»"
+    "text": "Og for det andre: Hvem skulle jeg ellers tjene? Burde det ikke være overfor hans sønn? Slik jeg tjente din far, slik vil jeg tjene deg.»",
+    "versions": [
+      {
+        "text": "Og for det andre: Hvem skulle jeg ellers tjene? Skulle det ikke være hans sønn? Slik jeg tjente din far, slik vil jeg tjene deg.»",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "The Hebrew הֲלוֹא לִפְנֵי בְנוֹ uses the phrase לִפְנֵי (before/in the presence of) which suggests serving 'before his son' rather than simply being his son. The current translation is adequate and communicates the meaning, but 'overfor hans sønn' would be slightly more precise. This is a minor point."
+      }
+    ]
   },
   {
     "bookId": 10,
@@ -141,6 +165,14 @@
     "bookId": 10,
     "chapterId": 16,
     "verseId": 23,
-    "text": "På den tiden var et råd fra Akitofel som et ord fra Gud selv. Slik var hvert råd fra Akitofel, både for David og for Absalom."
+    "text": "På den tiden var et råd fra Akitofel som om en mann spurte Gud om råd. Slik var hvert råd fra Akitofel, både for David og for Absalom.",
+    "versions": [
+      {
+        "text": "På den tiden var et råd fra Akitofel som et ord fra Gud selv. Slik var hvert råd fra Akitofel, både for David og for Absalom.",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "The Hebrew says Ahithophel's counsel was 'as if a man inquired of the word of God' (כַּאֲשֶׁר יִשְׁאַל אִישׁ בִּדְבַר הָאֱלֹהִים), comparing it to consulting an oracle. The current translation 'som et ord fra Gud selv' simplifies the simile and loses the nuance of the original comparison involving a person seeking God's word/oracle."
+      }
+    ]
   }
 ]

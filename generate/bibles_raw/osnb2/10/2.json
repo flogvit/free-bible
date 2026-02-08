@@ -87,7 +87,15 @@
     "bookId": 10,
     "chapterId": 2,
     "verseId": 14,
-    "text": "Abner sa til Joab: «La noen unge menn stå frem og holde en tvekamp foran oss.» Joab svarte: «La dem stå frem.»"
+    "text": "«La de unge mennene stå frem og kjempe foran oss.» Joab svarte: «La dem stå frem.»",
+    "versions": [
+      {
+        "text": "Abner sa til Joab: «La noen unge menn stå frem og holde en tvekamp foran oss.» Joab svarte: «La dem stå frem.»",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "Det hebraiske הַנְּעָרִים har bestemt artikkel ('de unge mennene'), ikke 'noen unge menn'. Og וִֽישַׂחֲקוּ betyr bokstavelig 'leke/kjempe' – 'holde en tvekamp' er noe tolkningsmessig fritt, men akseptabelt. Hovedpoenget er den bestemte formen."
+      }
+    ]
   },
   {
     "bookId": 10,
@@ -141,7 +149,15 @@
     "bookId": 10,
     "chapterId": 2,
     "verseId": 23,
-    "text": "Men han nektet å gi seg. Da stakk Abner ham i magen med bakenden av spydet så det gikk ut gjennom ryggen. Han falt om og døde på stedet. Alle som kom til stedet der Asael hadde falt og dødd, stanset opp."
+    "text": "Men han nektet å gi seg. Da slo Abner ham i magen med den bakre enden av spydet, så spydet gikk ut gjennom ryggen. Han falt om og døde på stedet. Alle som kom til stedet der Asael hadde falt og dødd, stanset opp.",
+    "versions": [
+      {
+        "text": "Men han nektet å gi seg. Da stakk Abner ham i magen med bakenden av spydet så det gikk ut gjennom ryggen. Han falt om og døde på stedet. Alle som kom til stedet der Asael hadde falt og dødd, stanset opp.",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "Det hebraiske חֹמֶשׁ betyr 'magen/underlivet' (femte ribben-området), som er korrekt oversatt. Men 'stakk' er noe upresist for וַיַּכֵּהוּ (som betyr 'slo'), gitt at det var bakenden (den butte enden) av spydet som ble brukt. 'Slo' eller 'traff' er mer presist."
+      }
+    ]
   },
   {
     "bookId": 10,
@@ -165,7 +181,15 @@
     "bookId": 10,
     "chapterId": 2,
     "verseId": 27,
-    "text": "Joab svarte: «Så sant Gud lever, hadde du ikke talt, ville folket først i morgen ha vendt om fra å forfølge sine brødre.»"
+    "text": "Joab svarte: «Så sant Gud lever, hadde du ikke talt, ville folket allerede i morges ha trukket seg tilbake fra å forfølge sine brødre.»",
+    "versions": [
+      {
+        "text": "Joab svarte: «Så sant Gud lever, hadde du ikke talt, ville folket først i morgen ha vendt om fra å forfølge sine brødre.»",
+        "type": "error",
+        "severity": "major",
+        "explanation": "Det hebraiske מֵהַבֹּקֶר betyr 'fra/allerede i morges' (dvs. fra morgenen av, altså tidligere på dagen). Joabs poeng er at dersom Abner hadde talt tidligere (jf. v.14 der Abner utfordret til kamp), ville folket allerede om morgenen ha trukket seg tilbake. 'Først i morgen' (fremtid) snur meningen; det hebraiske uttrykket peker tilbake i tid – kampen ville aldri ha startet."
+      }
+    ]
   },
   {
     "bookId": 10,

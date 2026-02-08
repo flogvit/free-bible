@@ -15,7 +15,15 @@
     "bookId": 42,
     "chapterId": 23,
     "verseId": 2,
-    "text": "Der begynte de å anklage ham og sa: «Vi har funnet at denne mannen forfører folket vårt, hindrer folk i å betale skatt til keiseren, og påstår at han selv er Kristus, en konge.»"
+    "text": "Der begynte de å anklage ham og sa: «Vi har funnet at denne mannen villeder folket vårt, hindrer folk i å betale skatt til keiseren, og påstår at han selv er Messias, en konge.»",
+    "versions": [
+      {
+        "text": "Der begynte de å anklage ham og sa: «Vi har funnet at denne mannen forfører folket vårt, hindrer folk i å betale skatt til keiseren, og påstår at han selv er Kristus, en konge.»",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "Det greske διαστρέφοντα betyr 'villeder/forvrengt' snarere enn 'forfører'. Også 'Kristus' er en translitterering av det greske χριστός, men i norsk bibeltradisjon brukes ofte 'Messias' for å tydeliggjøre den jødiske konteksten. Merk at vers 14 bruker 'forfører' for ἀποστρέφοντα, så det er uheldig at samme norske ord brukes for to ulike greske ord."
+      }
+    ]
   },
   {
     "bookId": 42,
@@ -165,13 +173,29 @@
     "bookId": 42,
     "chapterId": 23,
     "verseId": 25,
-    "text": "Han løslot ham som var kastet i fengsel for opprør og drap, ham de ba om. Men Jesus overgav han til deres vilje."
+    "text": "Han løslot ham som var kastet i fengsel for opprør og drap, ham de ba om. Men Jesus overga han til deres vilje.",
+    "versions": [
+      {
+        "text": "Han løslot ham som var kastet i fengsel for opprør og drap, ham de ba om. Men Jesus overgav han til deres vilje.",
+        "type": "error",
+        "severity": "major",
+        "explanation": "'Overgav' er feil bøyning; det heter 'overga' (preteritum av 'overgi'). Også setningen er tvetydig om hvem som er subjekt. Pilatus er subjektet i hele verset – det er han som overga Jesus til deres vilje. Setningen kan misforstås som at Jesus overga noen."
+      }
+    ]
   },
   {
     "bookId": 42,
     "chapterId": 23,
     "verseId": 26,
-    "text": "Da de førte ham bort, grep de tak i en mann som het Simon fra Kyréne, som kom inn fra landsbygda. Ham la de korset på og lot ham bære det etter Jesus."
+    "text": "Da de førte ham bort, grep de tak i en mann som het Simon fra Kyréne, som kom fra landet. Ham la de korset på og lot ham bære det etter Jesus.",
+    "versions": [
+      {
+        "text": "Da de førte ham bort, grep de tak i en mann som het Simon fra Kyréne, som kom inn fra landsbygda. Ham la de korset på og lot ham bære det etter Jesus.",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "Det greske ἀπʼ ἀγροῦ betyr 'fra åkeren/landet' (dvs. fra markarbeid utenfor byen), ikke 'inn fra landsbygda'. 'Kom fra landet' er en mer nøyaktig gjengivelse."
+      }
+    ]
   },
   {
     "bookId": 42,
@@ -231,7 +255,15 @@
     "bookId": 42,
     "chapterId": 23,
     "verseId": 35,
-    "text": "Folket sto og så på. Også rådsherrene hånte ham og sa: «Andre har han frelst. La ham nå frelse seg selv, om han er Guds Messias, den utvalgte.»"
+    "text": "Folket sto og så på. Også lederne hånte ham og sa: «Andre har han frelst. La ham nå frelse seg selv, om han er Guds Messias, den utvalgte.»",
+    "versions": [
+      {
+        "text": "Folket sto og så på. Også rådsherrene hånte ham og sa: «Andre har han frelst. La ham nå frelse seg selv, om han er Guds Messias, den utvalgte.»",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "Det greske ἄρχοντες betyr 'ledere/styresmenn' i bred forstand. 'Rådsherrer' (βουλευτής) er et annet gresk ord som brukes i vers 50 om Josef. For å unngå sammenblanding og være tro mot grunnteksten, bør ἄρχοντες gjengis som 'lederne'."
+      }
+    ]
   },
   {
     "bookId": 42,
@@ -375,7 +407,15 @@
     "bookId": 42,
     "chapterId": 23,
     "verseId": 55,
-    "text": "Kvinnene som hadde fulgt med Jesus fra Galilea, gikk etter og så graven og hvordan kroppen hans ble lagt."
+    "text": "Kvinnene som hadde fulgt med ham fra Galilea, fulgte etter og så graven og hvordan kroppen hans ble lagt ned.",
+    "versions": [
+      {
+        "text": "Kvinnene som hadde fulgt med Jesus fra Galilea, gikk etter og så graven og hvordan kroppen hans ble lagt.",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "Det greske κατακολουθήσασαι betyr 'fulgte etter' (Josef til graven), ikke bare 'gikk etter'. Også ἐτέθη ('ble lagt ned') gir bedre mening med 'lagt ned' for å vise at kroppen ble plassert i graven. 'Jesus' er αὐτῷ i teksten, så 'ham' er tilstrekkelig."
+      }
+    ]
   },
   {
     "bookId": 42,

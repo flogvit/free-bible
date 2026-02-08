@@ -51,7 +51,15 @@
     "bookId": 11,
     "chapterId": 8,
     "verseId": 9,
-    "text": "I arken var det ikke annet enn de to steintavlene som Moses la ned der ved Horeb, da Herren sluttet pakt med Israels barn etter at de dro ut av Egypt."
+    "text": "I arken var det ikke annet enn de to steintavlene som Moses la ned der ved Horeb, da Herren sluttet pakt med Israels barn da de dro ut av Egypt.",
+    "versions": [
+      {
+        "text": "I arken var det ikke annet enn de to steintavlene som Moses la ned der ved Horeb, da Herren sluttet pakt med Israels barn etter at de dro ut av Egypt.",
+        "type": "error",
+        "severity": "minor",
+        "explanation": "Det hebraiske בְּצֵאתָם betyr 'da de dro ut' (temporalt, samtidig), ikke 'etter at de dro ut'. Pakten ved Horeb/Sinai ble sluttet under utferden fra Egypt, ikke etter den. 'Etter at' gir feil tidsmessig inntrykk."
+      }
+    ]
   },
   {
     "bookId": 11,
@@ -147,7 +155,15 @@
     "bookId": 11,
     "chapterId": 8,
     "verseId": 25,
-    "text": "Så hold nå, Herre, Israels Gud, det du lovte din tjener David, min far, da du sa: Det skal aldri mangle en mann av din ætt til å sitte på Israels trone for mitt ansikt, så sant dine sønner akter på sin ferd og vandrer for mitt ansikt slik du har vandret for meg."
+    "text": "Så hold nå, Herre, Israels Gud, det du lovte din tjener David, min far, da du sa: Det skal aldri mangle en mann av din ætt til å sitte på Israels trone for mitt ansikt, så sant dine sønner vokter sin ferd og vandrer for mitt ansikt slik du har vandret for mitt ansikt.",
+    "versions": [
+      {
+        "text": "Så hold nå, Herre, Israels Gud, det du lovte din tjener David, min far, da du sa: Det skal aldri mangle en mann av din ætt til å sitte på Israels trone for mitt ansikt, så sant dine sønner akter på sin ferd og vandrer for mitt ansikt slik du har vandret for meg.",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "Det hebraiske לְפָנָי ('for mitt ansikt') gjentas i slutten av verset, men oversettelsen har 'for meg' i stedet for 'for mitt ansikt'. For konsistens og nøyaktighet bør begge forekomster gjengis likt. Også 'vokter' er en litt mer presis gjengivelse av יִשְׁמְרוּ enn 'akter på'."
+      }
+    ]
   },
   {
     "bookId": 11,
@@ -183,7 +199,15 @@
     "bookId": 11,
     "chapterId": 8,
     "verseId": 31,
-    "text": "Når noen synder mot sin neste og får en ed lagt på seg for å forplikte ham, og han kommer og sverger foran ditt alter i dette huset,"
+    "text": "Når noen synder mot sin neste og det legges en forbannelsesed på ham, og denne eden kommer foran ditt alter i dette huset,",
+    "versions": [
+      {
+        "text": "Når noen synder mot sin neste og får en ed lagt på seg for å forplikte ham, og han kommer og sverger foran ditt alter i dette huset,",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "Hebraisk אָלָה er spesifikt en forbannelsesed/selved, ikke bare en vanlig ed. Dessuten er det eden (אָלָה) som kommer foran alteret, ikke personen som 'kommer og sverger'. Subjektet for וּבָא er אָלָה (eden), ikke personen."
+      }
+    ]
   },
   {
     "bookId": 11,
@@ -213,7 +237,15 @@
     "bookId": 11,
     "chapterId": 8,
     "verseId": 35,
-    "text": "Når himmelen lukkes så det ikke kommer regn fordi de har syndet mot deg, men de så ber mot dette stedet og priser ditt navn og vender om fra sin synd fordi du ydmyker dem,"
+    "text": "Når himmelen lukkes så det ikke kommer regn fordi de har syndet mot deg, men de ber mot dette stedet og priser ditt navn og vender om fra sin synd fordi du ydmyker dem,",
+    "versions": [
+      {
+        "text": "Når himmelen lukkes så det ikke kommer regn fordi de har syndet mot deg, men de så ber mot dette stedet og priser ditt navn og vender om fra sin synd fordi du ydmyker dem,",
+        "type": "grammar",
+        "severity": "minor",
+        "explanation": "Formuleringen 'men de så ber' er litt klønete på norsk. Ordet 'så' virker overflødig og skaper en uheldig rytme. 'men de ber' er mer naturlig."
+      }
+    ]
   },
   {
     "bookId": 11,
@@ -249,7 +281,15 @@
     "bookId": 11,
     "chapterId": 8,
     "verseId": 40,
-    "text": "Da skal de frykte deg alle sine dager, så lenge de lever i det landet du ga våre fedre."
+    "text": "Slik skal de frykte deg alle sine dager, så lenge de lever i det landet du ga våre fedre.",
+    "versions": [
+      {
+        "text": "Da skal de frykte deg alle sine dager, så lenge de lever i det landet du ga våre fedre.",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "Verset uttrykker hensikt/formål (לְמַעַן = 'for at/slik at'), ikke konsekvens ('da'). 'Slik skal de' formidler formålet bedre enn 'Da skal de'."
+      }
+    ]
   },
   {
     "bookId": 11,
@@ -381,7 +421,15 @@
     "bookId": 11,
     "chapterId": 8,
     "verseId": 59,
-    "text": "Måtte disse ordene som jeg har bedt ydmykt for Herrens ansikt, være nær Herren vår Gud dag og natt, så han hjelper sin tjener og sitt folk Israel til deres rett, dag for dag,"
+    "text": "Måtte disse ordene mine som jeg har bedt ydmykt med for Herrens ansikt, være nær Herren vår Gud dag og natt, så han sørger for sin tjeners rett og sitt folk Israels rett, dag for dag,",
+    "versions": [
+      {
+        "text": "Måtte disse ordene som jeg har bedt ydmykt for Herrens ansikt, være nær Herren vår Gud dag og natt, så han hjelper sin tjener og sitt folk Israel til deres rett, dag for dag,",
+        "type": "grammar",
+        "severity": "minor",
+        "explanation": "Hebraisk 'לַעֲשׂוֹת מִשְׁפַּט עַבְדּוֹ וּמִשְׁפַּט עַמּוֹ' handler om å skaffe/sørge for sin tjeners rett og sitt folks rett. Nåværende oversettelse 'hjelper ... til deres rett' er litt upresis. Dessuten har hebraisk to separate 'mishpat' (rett) – for tjeneren og for folket – som bør gjenspeiles tydeligere."
+      }
+    ]
   },
   {
     "bookId": 11,
@@ -423,12 +471,28 @@
     "bookId": 11,
     "chapterId": 8,
     "verseId": 65,
-    "text": "På den tiden holdt Salomo festen, og hele Israel med ham, en stor forsamling fra Lebo-Hamat til Egypterbekken. De feiret for Herrens, vår Guds ansikt i syv dager og syv dager til, fjorten dager i alt."
+    "text": "På den tiden holdt Salomo festen, og hele Israel med ham, en stor forsamling fra Lebo-Hamat til Egypterbekken, for Herren vår Guds ansikt i syv dager og enda syv dager, fjorten dager i alt.",
+    "versions": [
+      {
+        "text": "På den tiden holdt Salomo festen, og hele Israel med ham, en stor forsamling fra Lebo-Hamat til Egypterbekken. De feiret for Herrens, vår Guds ansikt i syv dager og syv dager til, fjorten dager i alt.",
+        "type": "error",
+        "severity": "major",
+        "explanation": "Nåværende versjon deler verset i to setninger og legger til 'De feiret' som ikke finnes i originalen. I hebraisk er 'לִפְנֵי יְהוָה אֱלֹהֵינוּ' (for Herren vår Guds ansikt) knyttet til hele forsamlingen/festen, ikke en separat setning. Dessuten bør 'Herrens, vår Guds' skrives 'Herren vår Guds' uten komma, da det er én sammensatt tittel."
+      }
+    ]
   },
   {
     "bookId": 11,
     "chapterId": 8,
     "verseId": 66,
-    "text": "Den åttende dagen lot han folket fare. De velsignet kongen og gikk hjem til sine telt, glade og vel til mote over alt det gode Herren hadde gjort mot sin tjener David og mot sitt folk Israel."
+    "text": "På den åttende dagen sendte han folket av sted. De velsignet kongen og gikk hjem til sine telt, glade og vel til mote over alt det gode Herren hadde gjort mot sin tjener David og mot sitt folk Israel.",
+    "versions": [
+      {
+        "text": "Den åttende dagen lot han folket fare. De velsignet kongen og gikk hjem til sine telt, glade og vel til mote over alt det gode Herren hadde gjort mot sin tjener David og mot sitt folk Israel.",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "Hebraisk 'שִׁלַּח' betyr 'sendte av sted/bort', ikke bare 'lot fare'. 'Sendte av sted' gjengir originalen mer presist og er naturlig norsk."
+      }
+    ]
   }
 ]

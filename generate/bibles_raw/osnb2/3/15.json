@@ -51,7 +51,15 @@
     "bookId": 3,
     "chapterId": 15,
     "verseId": 9,
-    "text": "Ethvert ridedyr som den med utflod rir på, blir urent."
+    "text": "Ethvert rideutstyr som den med utflod rir på, blir urent.",
+    "versions": [
+      {
+        "text": "Ethvert ridedyr som den med utflod rir på, blir urent.",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "Det hebraiske ordet 'מֶרְכָּב' (merkav) betyr 'rideutstyr' eller 'sal', ikke 'ridedyr'. Det refererer til gjenstanden man sitter på når man rir, ikke selve dyret. Konteksten om gjenstander som blir urene (leie, sete, rideutstyr) støtter dette."
+      }
+    ]
   },
   {
     "bookId": 3,
@@ -111,11 +119,17 @@
     "bookId": 3,
     "chapterId": 15,
     "verseId": 19,
-    "text": "Når en kvinne har blødning og utfloden fra hennes kropp er blod, skal hun være i sin månedlige urenhet i syv dager. Enhver som rører ved henne, er uren til kvelden.",
+    "text": "Når en kvinne har blødning – det er blod som flyter fra hennes kropp – skal hun være i sin månedlige urenhet i syv dager. Enhver som rører ved henne, er uren til kvelden.",
     "versions": [
       {
         "text": "Når en kvinne har utflod, og utfloden fra hennes kropp er blod, skal hun være i sin urenhet i syv dager. Enhver som rører ved henne, er uren til kvelden.",
         "explanation": "Hebraisk 'זָבָה' (zavah) i kombinasjon med 'דָּם' (blod) og 'בְנִדָּתָהּ' (i hennes niddah) refererer spesifikt til menstruasjon. Å bruke 'blødning' og 'månedlige urenhet' gjør dette tydeligere og harmonerer med vers 33."
+      },
+      {
+        "text": "Når en kvinne har blødning og utfloden fra hennes kropp er blod, skal hun være i sin månedlige urenhet i syv dager. Enhver som rører ved henne, er uren til kvelden.",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "Den nåværende oversettelsen 'utfloden fra hennes kropp er blod' er noe klønete. Det hebraiske 'דָּם יִהְיֶה זֹבָהּ בִּבְשָׂרָהּ' presiserer at hennes utflod i kroppen er blod. En litt klarere formulering forbedrer lesbarheten."
       }
     ]
   },
@@ -123,7 +137,15 @@
     "bookId": 3,
     "chapterId": 15,
     "verseId": 20,
-    "text": "Alt hun ligger på under sin urenhet, blir urent, og alt hun sitter på, blir urent."
+    "text": "Alt hun ligger på under sin månedlige urenhet, blir urent, og alt hun sitter på, blir urent.",
+    "versions": [
+      {
+        "text": "Alt hun ligger på under sin urenhet, blir urent, og alt hun sitter på, blir urent.",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "Det hebraiske 'בְּנִדָּתָהּ' refererer spesifikt til hennes niddah (menstruasjon). For konsistens med vers 19 og 26 bør det presiseres som 'månedlige urenhet' i stedet for bare 'urenhet'."
+      }
+    ]
   },
   {
     "bookId": 3,
@@ -147,17 +169,31 @@
     "bookId": 3,
     "chapterId": 15,
     "verseId": 24,
-    "text": "Hvis en mann ligger med henne og hennes urenhet kommer på ham, blir han uren i syv dager, og ethvert leie han ligger på, blir urent."
+    "text": "Hvis en mann ligger med henne og hennes månedlige urenhet kommer på ham, blir han uren i syv dager, og ethvert leie han ligger på, blir urent.",
+    "versions": [
+      {
+        "text": "Hvis en mann ligger med henne og hennes urenhet kommer på ham, blir han uren i syv dager, og ethvert leie han ligger på, blir urent.",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "Igjen bruker hebraisk 'נִדָּתָהּ' (niddah), som spesifikt refererer til menstruasjon. For konsistens med konteksten bør 'månedlige urenhet' brukes."
+      }
+    ]
   },
   {
     "bookId": 3,
     "chapterId": 15,
     "verseId": 25,
-    "text": "Når en kvinne har blødning i mange dager utenom sin vanlige tid, eller hun blør utover sin vanlige tid, er hun uren alle de dager hun har denne urene utfloden, slik som i hennes vanlige urenhets dager.",
+    "text": "Når en kvinne har blødning i mange dager utenom sin vanlige tid, eller hun blør utover sin vanlige tid, er hun uren alle de dagene hun har denne urene utfloden, slik som i dagene for hennes vanlige urenhet.",
     "versions": [
       {
         "text": "Når en kvinne har blødning i mange dager utenom sin vanlige tid, eller hun blør lenger enn vanlig, er hun uren alle de dager hun har denne urene utfloden, slik som i hennes vanlige urenhets dager.",
         "explanation": "Hebraisk 'עַל־נִדָּתָהּ' betyr 'utover/forbi hennes niddah' (menstruasjonsperiode), ikke bare 'lenger enn vanlig'. Dette skiller mellom blødning på feil tidspunkt og blødning som fortsetter etter normal periode."
+      },
+      {
+        "text": "Når en kvinne har blødning i mange dager utenom sin vanlige tid, eller hun blør utover sin vanlige tid, er hun uren alle de dager hun har denne urene utfloden, slik som i hennes vanlige urenhets dager.",
+        "type": "grammar",
+        "severity": "minor",
+        "explanation": "'hennes vanlige urenhets dager' er grammatisk klønete på norsk. 'dagene for hennes vanlige urenhet' er mer naturlig. Også 'de dager' bør helst være 'de dagene' for korrekt bestemt form."
       }
     ]
   },
@@ -213,6 +249,14 @@
     "bookId": 3,
     "chapterId": 15,
     "verseId": 33,
-    "text": "og om kvinnen som er syk under sin månedlige urenhet, og om den som har utflod, enten det er mann eller kvinne, og om mannen som ligger med en uren kvinne."
+    "text": "og om kvinnen som lider under sin månedlige urenhet, og om den som har utflod, enten det er mann eller kvinne, og om mannen som ligger med en uren kvinne.",
+    "versions": [
+      {
+        "text": "og om kvinnen som er syk under sin månedlige urenhet, og om den som har utflod, enten det er mann eller kvinne, og om mannen som ligger med en uren kvinne.",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "Det hebraiske 'הַדָּוָה' (haddavah) betyr 'den som lider/er svak', og brukes om menstruasjon. 'Syk' er litt for sterkt og kan misforstås medisinsk. 'Lider' fanger bedre den hebraiske betydningen av ubehag/svakhet."
+      }
+    ]
   }
 ]

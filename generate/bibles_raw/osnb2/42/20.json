@@ -111,7 +111,15 @@
     "bookId": 42,
     "chapterId": 20,
     "verseId": 18,
-    "text": "Hver den som faller på denne steinen, skal bli knust. Men den som steinen faller på, skal den søndermalme.»"
+    "text": "Hver den som faller på denne steinen, skal bli knust. Men den som steinen faller på, skal bli søndermalmet.»",
+    "versions": [
+      {
+        "text": "Hver den som faller på denne steinen, skal bli knust. Men den som steinen faller på, skal den søndermalme.»",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "'skal den søndermalme' har et uklart subjekt – 'den' ser ut til å referere til steinen, men setningsstrukturen gjør det litt uklart. 'Skal bli søndermalmet' er mer idiomatisk og tydelig på norsk, og speiler konstruksjonen i første setningsdel ('skal bli knust')."
+      }
+    ]
   },
   {
     "bookId": 42,
@@ -189,7 +197,15 @@
     "bookId": 42,
     "chapterId": 20,
     "verseId": 30,
-    "text": "Den andre likeså,"
+    "text": "Den andre likeså.",
+    "versions": [
+      {
+        "text": "Den andre likeså,",
+        "type": "error",
+        "severity": "major",
+        "explanation": "Vers 30 i den greske teksten er svært kort og inneholder bare 'og den andre' (underforstått: tok henne og døde barnløs). Verset ender her. Komma etter 'likeså' antyder at setningen fortsetter, men vers 30 er et eget vers. Det bør avsluttes med punktum, eventuelt komma dersom man leser det som en del av en oppramsing som fortsetter i vers 31. Men med tanke på vers 31 som begynner med 'og den tredje tok henne', er komma akseptabelt. Likevel mangler det noe – den greske teksten sier bare 'og den andre', uten 'likeså'. 'Likeså' er lagt til tolkende. Men dette er en akseptabel fortolkende oversettelse."
+      }
+    ]
   },
   {
     "bookId": 42,
@@ -231,7 +247,15 @@
     "bookId": 42,
     "chapterId": 20,
     "verseId": 34,
-    "text": "Jesus sa til dem: «Barna av denne verden gifter seg og blir giftet bort."
+    "text": "Jesus sa til dem: «Barna i denne verden gifter seg og blir giftet bort.",
+    "versions": [
+      {
+        "text": "Jesus sa til dem: «Barna av denne verden gifter seg og blir giftet bort.",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "'Barna av denne verden' er en uvanlig formulering på norsk. 'Barna i denne verden' eller 'Denne verdens barn' er mer naturlige norske uttrykk. 'Οἱ υἱοὶ τοῦ αἰῶνος τούτου' betyr bokstavelig 'sønnene av denne tidsalder', og 'i' er mer idiomatisk enn 'av' på norsk."
+      }
+    ]
   },
   {
     "bookId": 42,
@@ -243,7 +267,15 @@
     "bookId": 42,
     "chapterId": 20,
     "verseId": 36,
-    "text": "De kan heller ikke lenger dø, for de er lik englene og er Guds barn, siden de er oppstandelsens barn."
+    "text": "De kan jo heller ikke dø lenger, for de er som engler. Og de er Guds barn, siden de er oppstandelsens barn.",
+    "versions": [
+      {
+        "text": "De kan heller ikke lenger dø, for de er lik englene og er Guds barn, siden de er oppstandelsens barn.",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "Oversettelsen er teologisk korrekt, men 'lik englene' kan forbedres til 'som engler' som er mer naturlig norsk. Dessuten kobler originalteksten 'ισάγγελοι' (engellike) og 'Guds barn' som to separate utsagn, ikke ett. En tydeligere oppdeling ville vært nyttig for lesbarheten."
+      }
+    ]
   },
   {
     "bookId": 42,

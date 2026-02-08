@@ -57,7 +57,21 @@
     "bookId": 3,
     "chapterId": 1,
     "verseId": 7,
-    "text": "Arons sønner, prestens sønner, skal legge ild på alteret og stable ved oppå ilden."
+    "text": "Sønnene til presten Aron skal legge ild på alteret og stable ved oppå ilden.",
+    "versions": [
+      {
+        "text": "Arons sønner, prestens sønner, skal legge ild på alteret og stable ved oppå ilden.",
+        "type": "error",
+        "severity": "major",
+        "explanation": "The Hebrew 'בְּנֵי אַהֲרֹן הַכֹּהֵן' means 'the sons of Aaron the priest' (singular priest, referring to Aaron). The current translation says 'prestens sønner' which could work but is inconsistent. However, the bigger issue is that 'הַכֹּהֵן' is singular here (unlike verses 5, 8, 11 where it is plural 'הַכֹּהֲנִים'). 'Prestens sønner' is a possible reading, but 'Arons sønner, prestens sønner' is awkward and redundant. A clearer rendering would be 'Arons, prestens, sønner' or simply follow the pattern used elsewhere. The most natural Norwegian would acknowledge that הַכֹּהֵן modifies Aaron: 'Sønnene til presten Aron'."
+      },
+      {
+        "text": "Arons sønner, prestene, skal legge ild på alteret og stable ved oppå ilden.",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "The Hebrew has 'הַכֹּהֵן' (the priest, singular) modifying Aaron, not his sons. This verse differs from verses 5, 8, and 11 where the plural 'הַכֹּהֲנִים' (the priests) is used. The current translation 'prestens sønner' is awkward and redundant after 'Arons sønner'. A clearer rendering is 'Sønnene til presten Aron'."
+      }
+    ]
   },
   {
     "bookId": 3,
@@ -117,7 +131,15 @@
     "bookId": 3,
     "chapterId": 1,
     "verseId": 15,
-    "text": "Presten skal bære den fram til alteret, vri av hodet og brenne det på alteret. Blodet skal presses ut mot alterets vegg."
+    "text": "Presten skal bære den fram til alteret, knipe av hodet og brenne det på alteret. Blodet skal presses ut mot alterets vegg.",
+    "versions": [
+      {
+        "text": "Presten skal bære den fram til alteret, vri av hodet og brenne det på alteret. Blodet skal presses ut mot alterets vegg.",
+        "type": "error",
+        "severity": "major",
+        "explanation": "The Hebrew 'מָלַק' refers to a specific action of pinching/nipping off the head (with the fingernail), not 'vri av' (twisting off). 'Knipe av' or 'knekke av' is more accurate for this technical sacrificial term."
+      }
+    ]
   },
   {
     "bookId": 3,

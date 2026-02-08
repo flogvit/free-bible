@@ -61,11 +61,17 @@
     "bookId": 43,
     "chapterId": 16,
     "verseId": 8,
-    "text": "Og når han kommer, skal han refse verden for synd, for rettferdighet og for dom.",
+    "text": "Og når han kommer, skal han overbevise verden om synd, om rettferdighet og om dom.",
     "versions": [
       {
         "text": "Og når han kommer, skal han overbevise verden om synd, om rettferdighet og om dom.",
         "explanation": "Det greske 'ἐλέγξει' (elenxei) betyr primært 'overbevise ved å avsløre', 'refse', 'irettesette' - det har en sterkere konnotasjon enn bare 'overbevise'. 'Refse' fanger bedre den juridiske/anklagende dimensjonen. Preposisjonen 'περὶ' kan oversettes 'angående' eller 'for'."
+      },
+      {
+        "text": "Og når han kommer, skal han refse verden for synd, for rettferdighet og for dom.",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "Selv om 'refse' fanger en dimensjon av ἐλέγξει, er den primære betydningen i denne konteksten å 'overbevise/avsløre/bringe til erkjennelse'. Konteksten i v.9-11 forklarer hvordan Ånden overbeviser verden — det handler om å bringe erkjennelse snarere enn å straffe/irettesette. Imidlertid, dette verset har versionshistorikk med en bevisst endring til 'refse', så dette er kun en observasjon."
       }
     ]
   },
@@ -73,19 +79,43 @@
     "bookId": 43,
     "chapterId": 16,
     "verseId": 9,
-    "text": "Om synd, fordi de ikke tror på meg."
+    "text": "For synd, fordi de ikke tror på meg.",
+    "versions": [
+      {
+        "text": "Om synd, fordi de ikke tror på meg.",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "Preposisjonen 'περὶ' er oversatt med 'for' i vers 8, men med 'om' i vers 9-11. For konsistens med vers 8 bør det stå 'for' også her."
+      }
+    ]
   },
   {
     "bookId": 43,
     "chapterId": 16,
     "verseId": 10,
-    "text": "Om rettferdighet, fordi jeg går til Faderen og dere ikke lenger ser meg."
+    "text": "For rettferdighet, fordi jeg går til Faderen og dere ikke lenger ser meg.",
+    "versions": [
+      {
+        "text": "Om rettferdighet, fordi jeg går til Faderen og dere ikke lenger ser meg.",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "Samme inkonsistens som vers 9 — bør matche 'for' fra vers 8 for konsistens."
+      }
+    ]
   },
   {
     "bookId": 43,
     "chapterId": 16,
     "verseId": 11,
-    "text": "Om dom, fordi denne verdens fyrste er dømt."
+    "text": "For dom, fordi denne verdens fyrste er dømt.",
+    "versions": [
+      {
+        "text": "Om dom, fordi denne verdens fyrste er dømt.",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "Samme inkonsistens som vers 9-10 — bør matche 'for' fra vers 8."
+      }
+    ]
   },
   {
     "bookId": 43,
@@ -211,7 +241,15 @@
     "bookId": 43,
     "chapterId": 16,
     "verseId": 27,
-    "text": "for Faderen selv elsker dere, fordi dere har elsket meg og trodd at jeg kom ut fra Gud."
+    "text": "for Faderen selv elsker dere, fordi dere har elsket meg og trodd at jeg gikk ut fra Gud.",
+    "versions": [
+      {
+        "text": "for Faderen selv elsker dere, fordi dere har elsket meg og trodd at jeg kom ut fra Gud.",
+        "type": "theological",
+        "severity": "minor",
+        "explanation": "Det greske 'παρὰ τοῦ θεοῦ ἐξῆλθον' bruker aorist (ἐξῆλθον). Tekstkritisk støtter varianten 'θεοῦ' (Gud) i stedet for 'πατρός' (Faderen). Oversettelsen er akseptabel, men 'gikk ut' ville gjenspeile den punktuelle handlingen i aorist bedre enn 'kom ut'."
+      }
+    ]
   },
   {
     "bookId": 43,
@@ -223,7 +261,15 @@
     "bookId": 43,
     "chapterId": 16,
     "verseId": 29,
-    "text": "Disiplene hans sa: «Se, nå taler du åpent og bruker ingen lignelse."
+    "text": "Disiplene hans sa: «Se, nå taler du åpent og bruker ingen billedtale.",
+    "versions": [
+      {
+        "text": "Disiplene hans sa: «Se, nå taler du åpent og bruker ingen lignelse.",
+        "type": "error",
+        "severity": "major",
+        "explanation": "I vers 25 ble 'παροιμίαις' bevisst endret fra 'lignelser' til 'billedtale' for å gjenspeile den korrekte betydningen av det greske ordet. Det samme ordet 'παροιμίαν' brukes her i vers 29, men er oversatt med 'lignelse' i stedet for 'billedtale'. Dette er inkonsistent og bør rettes."
+      }
+    ]
   },
   {
     "bookId": 43,
@@ -247,6 +293,14 @@
     "bookId": 43,
     "chapterId": 16,
     "verseId": 33,
-    "text": "Dette har jeg sagt dere for at dere skal ha fred i meg. I verden har dere trengsler, men vær frimodige! Jeg har seiret over verden.»"
+    "text": "Dette har jeg sagt dere for at dere skal ha fred i meg. I verden har dere trengsel, men vær frimodige! Jeg har seiret over verden.»",
+    "versions": [
+      {
+        "text": "Dette har jeg sagt dere for at dere skal ha fred i meg. I verden har dere trengsler, men vær frimodige! Jeg har seiret over verden.»",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "Det greske 'θλῖψιν' er entall (akkusativ singularis). 'Trengsel' (entall) ville være mer nøyaktig enn 'trengsler' (flertall). Dessuten brukes 'trengselen' (entall) om samme ord i vers 21."
+      }
+    ]
   }
 ]

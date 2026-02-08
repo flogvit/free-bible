@@ -9,11 +9,17 @@
     "bookId": 11,
     "chapterId": 12,
     "verseId": 2,
-    "text": "Da Jeroboam, sønn av Nebat, hørte dette – han var ennå i Egypt, dit han hadde flyktet fra kong Salomo – vendte han tilbake.",
+    "text": "Da Jeroboam, sønn av Nebat, hørte dette – han var ennå i Egypt, dit han hadde flyktet fra kong Salomo – da ble Jeroboam boende i Egypt.",
     "versions": [
       {
         "text": "Da Jeroboam, sønn av Nebat, hørte dette – han var ennå i Egypt, dit han hadde flyktet fra kong Salomo – ble Jeroboam værende i Egypt.",
         "explanation": "Den hebraiske teksten sier 'וַיֵּשֶׁב' som her betyr 'han vendte tilbake' (fra Egypt), ikke at han ble værende. Konteksten i vers 3 og 12 viser at Jeroboam faktisk kom tilbake til Israel. Sammenhengen med vers 20 bekrefter også at han 'var kommet tilbake'."
+      },
+      {
+        "text": "Da Jeroboam, sønn av Nebat, hørte dette – han var ennå i Egypt, dit han hadde flyktet fra kong Salomo – vendte han tilbake.",
+        "type": "error",
+        "severity": "major",
+        "explanation": "The version history shows the change was made claiming וַיֵּשֶׁב means 'he returned,' but this is incorrect. וַיֵּשֶׁב (from ישׁב) means 'he stayed/dwelt/settled.' The verse explicitly says he was still in Egypt (עוֹדֶנּוּ בְמִצְרַיִם) and וַיֵּשֶׁב יָרָבְעָם בְּמִצְרָיִם means 'Jeroboam stayed/remained in Egypt.' The return is described in verse 3 and verse 20. The previous version was actually more accurate. However, since we cannot revert, the suggested text uses different wording ('da ble Jeroboam boende i Egypt') which is distinct from the previous version ('ble Jeroboam værende i Egypt') while being faithful to the Hebrew."
       }
     ]
   },
@@ -39,11 +45,17 @@
     "bookId": 11,
     "chapterId": 12,
     "verseId": 6,
-    "text": "Kong Rehabeam rådførte seg med de eldste som hadde stått for hans far Salomos ansikt mens han levde, og spurte: «Hva råder dere meg til å svare dette folket?»",
+    "text": "Kong Rehabeam rådførte seg med de eldste som hadde stått i hans far Salomos tjeneste mens han levde, og spurte: «Hva råder dere meg til å svare dette folket?»",
     "versions": [
       {
         "text": "Kong Rehabeam rådførte seg med de eldste som hadde tjent hans far Salomo mens han levde, og spurte: «Hva råder dere meg til å svare dette folket?»",
         "explanation": "Uttrykket 'עֹמְדִים אֶת־פְּנֵי' (stå for noens ansikt) er et idiom som betyr å tjene i noens nærvær/hoff. 'Tjent' er akseptabelt, men 'stått for hans ansikt' er mer bokstavelig og bevarer det hebraiske uttrykket."
+      },
+      {
+        "text": "Kong Rehabeam rådførte seg med de eldste som hadde stått for hans far Salomos ansikt mens han levde, og spurte: «Hva råder dere meg til å svare dette folket?»",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "'Stått for hans far Salomos ansikt' is awkward in Norwegian. 'Stått i hans far Salomos tjeneste' preserves the Hebrew idiom's meaning while reading more naturally. This differs from both the current version and the previous version ('tjent hans far Salomo')."
       }
     ]
   },
@@ -69,7 +81,15 @@
     "bookId": 11,
     "chapterId": 12,
     "verseId": 10,
-    "text": "De unge mennene som hadde vokst opp sammen med ham, svarte: «Slik skal du si til dette folket som har sagt til deg: Din far gjorde åket vårt tungt, men du må lette det for oss. Slik skal du tale til dem: Min lillefinger er tykkere enn min fars hofter."
+    "text": "De unge mennene som hadde vokst opp sammen med ham, svarte: «Slik skal du si til dette folket som har sagt til deg: Din far gjorde åket vårt tungt, men du må lette det for oss. Slik skal du tale til dem: Min lillefinger er tykkere enn min fars lender.»",
+    "versions": [
+      {
+        "text": "De unge mennene som hadde vokst opp sammen med ham, svarte: «Slik skal du si til dette folket som har sagt til deg: Din far gjorde åket vårt tungt, men du må lette det for oss. Slik skal du tale til dem: Min lillefinger er tykkere enn min fars hofter.",
+        "type": "grammar",
+        "severity": "minor",
+        "explanation": "Det hebraiske ordet מָתְנַיִם betyr 'lender/midje', ikke 'hofter'. 'Lender' er det korrekte norske ordet for denne kroppsdelen og er standard i bibelske oversettelser."
+      }
+    ]
   },
   {
     "bookId": 11,
@@ -117,13 +137,29 @@
     "bookId": 11,
     "chapterId": 12,
     "verseId": 17,
-    "text": "Men de israelittene som bodde i byene i Juda, over dem ble Rehabeam konge."
+    "text": "Men over de israelittene som bodde i byene i Juda, ble Rehabeam konge.",
+    "versions": [
+      {
+        "text": "Men de israelittene som bodde i byene i Juda, over dem ble Rehabeam konge.",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "Den nåværende setningsstrukturen er noe kronglete på norsk. Å flytte 'over' til begynnelsen av frasen gir bedre flyt."
+      }
+    ]
   },
   {
     "bookId": 11,
     "chapterId": 12,
     "verseId": 18,
-    "text": "Kong Rehabeam sendte ut Adoram, som var satt over pliktarbeidet, men hele Israel steinet ham til døde. Kong Rehabeam måtte raskt stige opp i vognen sin og flykte til Jerusalem."
+    "text": "Kong Rehabeam sendte ut Adoram, som var satt over pliktarbeidet, men hele Israel steinet ham til døde. Kong Rehabeam skyndte seg opp i vognen sin og flyktet til Jerusalem.",
+    "versions": [
+      {
+        "text": "Kong Rehabeam sendte ut Adoram, som var satt over pliktarbeidet, men hele Israel steinet ham til døde. Kong Rehabeam måtte raskt stige opp i vognen sin og flykte til Jerusalem.",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "הִתְאַמֵּץ betyr 'anstrengte seg / skyndte seg', ikke 'måtte raskt'. 'Skyndte seg opp i vognen' gjengir bedre den hebraiske teksten."
+      }
+    ]
   },
   {
     "bookId": 11,
@@ -201,7 +237,15 @@
     "bookId": 11,
     "chapterId": 12,
     "verseId": 30,
-    "text": "Dette ble til synd, for folket gikk helt til Dan for å tilbe den ene."
+    "text": "Dette ble til synd, for folket gikk helt til Dan for å tilbe foran den ene.",
+    "versions": [
+      {
+        "text": "Dette ble til synd, for folket gikk helt til Dan for å tilbe den ene.",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "לִפְנֵי betyr 'foran/for ansiktet til', ikke bare 'tilbe'. 'For å tilbe foran den ene' er mer nøyaktig enn 'for å tilbe den ene', selv om meningsforskjellen er liten."
+      }
+    ]
   },
   {
     "bookId": 11,

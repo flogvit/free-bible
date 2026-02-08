@@ -15,7 +15,15 @@
     "bookId": 26,
     "chapterId": 28,
     "verseId": 3,
-    "text": "Se, du er visere enn Daniel! Ingen hemmelighet er for dunkel for deg."
+    "text": "Se, du er visere enn Daniel! Ingen hemmelighet er skjult for deg.",
+    "versions": [
+      {
+        "text": "Se, du er visere enn Daniel! Ingen hemmelighet er for dunkel for deg.",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "עֲמָמוּךָ betyr 'gjort mørk/skjult for deg'. 'For dunkel for deg' er noe uvanlig; 'skjult for deg' er mer idiomatisk norsk og formidler meningen klarere."
+      }
+    ]
   },
   {
     "bookId": 26,
@@ -57,7 +65,15 @@
     "bookId": 26,
     "chapterId": 28,
     "verseId": 9,
-    "text": "Vil du da si: «Jeg er en gud» for dem som dreper deg? Du er et menneske og ikke en gud i hendene på dem som gjennomborer deg."
+    "text": "Vil du virkelig si: «Jeg er en gud» overfor dem som dreper deg? Du er et menneske og ikke en gud i hendene på dem som gjennomborer deg.",
+    "versions": [
+      {
+        "text": "Vil du da si: «Jeg er en gud» for dem som dreper deg? Du er et menneske og ikke en gud i hendene på dem som gjennomborer deg.",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "הֶאָמֹר תֹּאמַר er en emfatisk infinitiv absolutt-konstruksjon som uttrykker sterk tvil/retorisk spørsmål. 'Vil du virkelig si' fanger dette bedre enn bare 'Vil du da si'. Også 'overfor' er mer presist enn 'for' i denne konteksten (לִפְנֵי = foran/overfor)."
+      }
+    ]
   },
   {
     "bookId": 26,
@@ -147,7 +163,15 @@
     "bookId": 26,
     "chapterId": 28,
     "verseId": 22,
-    "text": "Si: Så sier Herren Gud: Se, jeg kommer mot deg, Sidon, og jeg vil vise min herlighet i deg. De skal kjenne at jeg er Herren når jeg holder dom over det og viser min hellighet i det."
+    "text": "Si: Så sier Herren Gud: Se, jeg kommer mot deg, Sidon, og jeg vil vise min herlighet i deg. De skal kjenne at jeg er Herren når jeg holder dom over henne og viser min hellighet i henne.",
+    "versions": [
+      {
+        "text": "Si: Så sier Herren Gud: Se, jeg kommer mot deg, Sidon, og jeg vil vise min herlighet i deg. De skal kjenne at jeg er Herren når jeg holder dom over det og viser min hellighet i det.",
+        "type": "error",
+        "severity": "major",
+        "explanation": "Hebraisk bruker femininpronomen בָהּ som refererer til Sidon (feminint bynavn). Oversettelsen veksler mellom 'deg' (korrekt for direkte tiltale) og 'det' (nøytrum). Det bør være konsekvent, og 'henne' er mest trofast mot hebraisk, men 'det' kan godtas i norsk. Hovedproblemet er inkonsistensen – byen tiltales først med 'deg' og deretter omtales med 'det'."
+      }
+    ]
   },
   {
     "bookId": 26,

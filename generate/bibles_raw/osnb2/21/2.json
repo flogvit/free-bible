@@ -81,7 +81,15 @@
     "bookId": 21,
     "chapterId": 2,
     "verseId": 12,
-    "text": "Så vendte jeg meg til å betrakte visdom, galskap og dårskap. For hva kan det mennesket gjøre som kommer etter kongen? Bare det som allerede er gjort."
+    "text": "Så vendte jeg meg til å betrakte visdom, galskap og dårskap. For hva kan det mennesket som kommer etter kongen, gjøre? Bare det som allerede er gjort.",
+    "versions": [
+      {
+        "text": "Så vendte jeg meg til å betrakte visdom, galskap og dårskap. For hva kan det mennesket gjøre som kommer etter kongen? Bare det som allerede er gjort.",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "Den nåværende formuleringen er litt uklar. En omstilling gjør det tydeligere at spørsmålet gjelder mennesket som kommer etter kongen og hva det kan gjøre – nemlig bare det som allerede er gjort."
+      }
+    ]
   },
   {
     "bookId": 21,
@@ -123,7 +131,15 @@
     "bookId": 21,
     "chapterId": 2,
     "verseId": 19,
-    "text": "Og hvem vet om han vil være vis eller dårlig? Likevel skal han råde over alt mitt strev, det jeg har slitt og brukt min visdom på under solen. Også dette er tomhet."
+    "text": "Og hvem vet om han vil være vis eller en dåre? Likevel skal han råde over alt mitt strev, det jeg har slitt og brukt min visdom på under solen. Også dette er tomhet.",
+    "versions": [
+      {
+        "text": "Og hvem vet om han vil være vis eller dårlig? Likevel skal han råde over alt mitt strev, det jeg har slitt og brukt min visdom på under solen. Også dette er tomhet.",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "Det hebraiske סָכָל betyr 'dåre/tåpe', ikke 'dårlig'. Kontrasten er mellom חָכָם (vis) og סָכָל (dåre), altså mellom en vis person og en tåpelig person, ikke mellom vis og dårlig (som er en moralsk kategori)."
+      }
+    ]
   },
   {
     "bookId": 21,
@@ -153,11 +169,17 @@
     "bookId": 21,
     "chapterId": 2,
     "verseId": 24,
-    "text": "Det er ikke noe godt i mennesket selv at det kan spise og drikke og nyte godt av sitt strev. Også dette har jeg sett kommer fra Guds hånd.",
+    "text": "Det er ikke noe godt i mennesket selv at det kan spise og drikke og nyte godt av sitt strev. Også dette har jeg sett: det kommer fra Guds hånd.",
     "versions": [
       {
         "text": "Det er ikke noe bedre for et menneske enn å spise og drikke og la seg selv nyte det gode i sitt strev. Også dette har jeg sett kommer fra Guds hånd.",
         "explanation": "Den hebraiske konstruksjonen אֵין־טוֹב בָּאָדָם betyr bokstavelig 'det er ikke noe godt I mennesket' - poenget er at evnen til å nyte ikke kommer fra mennesket selv, men er en gave fra Gud. Dette er teologisk viktig: mennesket kan ikke selv skape glede, det kommer fra Gud."
+      },
+      {
+        "text": "Det er ikke noe godt i mennesket selv at det kan spise og drikke og nyte godt av sitt strev. Også dette har jeg sett kommer fra Guds hånd.",
+        "type": "grammar",
+        "severity": "minor",
+        "explanation": "Setningen 'har jeg sett kommer fra' er grammatisk uheldig på norsk. Et kolon etter 'sett' gjør setningen klarere og mer naturlig, og skiller observasjonen fra konklusjonen."
       }
     ]
   },
@@ -165,7 +187,15 @@
     "bookId": 21,
     "chapterId": 2,
     "verseId": 25,
-    "text": "For hvem kan spise og hvem kan nyte uten ham?"
+    "text": "For hvem kan spise og hvem kan nyte uten meg?",
+    "versions": [
+      {
+        "text": "For hvem kan spise og hvem kan nyte uten ham?",
+        "type": "theological",
+        "severity": "major",
+        "explanation": "Det hebraiske מִמֶּנִּי betyr 'uten meg' (1. person entall) – det er Predikeren/Salomo som snakker. Mange manuskripter (inkl. Qere) leser riktignok מִמֶּנּוּ 'uten ham' (dvs. Gud), men den bokstavelige teksten (Ketiv) sier 'uten meg'. Alternativt, dersom man følger Qere-tradisjonen, bør det stå 'uten ham' med referanse til Gud, noe som da bør gjøres eksplisitt: 'uten Gud'. Oversettelsen 'uten ham' er tvetydig om hvem 'ham' refererer til."
+      }
+    ]
   },
   {
     "bookId": 21,

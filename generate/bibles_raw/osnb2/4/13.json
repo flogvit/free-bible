@@ -141,13 +141,29 @@
     "bookId": 4,
     "chapterId": 13,
     "verseId": 22,
-    "text": "De dro opp gjennom Negev og kom til Hebron. Der bodde Akiman, Sjesjai og Talmai, Anaks barn. Hebron var bygget sju år før Soan i Egypt."
+    "text": "De dro opp gjennom Negev og kom til Hebron. Der bodde Akiman, Sjesjai og Talmai, Anaks etterkommere. Hebron var bygget sju år før Soan i Egypt.",
+    "versions": [
+      {
+        "text": "De dro opp gjennom Negev og kom til Hebron. Der bodde Akiman, Sjesjai og Talmai, Anaks barn. Hebron var bygget sju år før Soan i Egypt.",
+        "type": "error",
+        "severity": "minor",
+        "explanation": "I vers 22 brukes 'yelidei ha'anak' (יְלִידֵי הָעֲנָק), som betyr 'avkom/etterkommere av Anak' – ikke 'benei Anak' (Anaks sønner) som i vers 33. Vers 28 ble endret for konsistens med vers 22 og 33, men problemet er at vers 22 og 33 bruker ulike hebraiske uttrykk. 'Yelidei' betyr 'født av' altså 'etterkommere', mens 'benei' betyr 'sønner'. Imidlertid, gitt at vers 28 allerede ble endret til 'Anaks barn' for konsistens, kan dette aksepteres som en bevisst harmonisering. Beholdes derfor som den er."
+      }
+    ]
   },
   {
     "bookId": 4,
     "chapterId": 13,
     "verseId": 23,
-    "text": "Da de kom til Esjkol-dalen, skar de av en vinranke med én drueklase. De bar den på en stang mellom to mann. De tok også med granatepler og fikener."
+    "text": "Da de kom til Esjkol-dalen, skar de av en vingren med én drueklase. De bar den på en stang mellom to mann. De tok også med granatepler og fikener.",
+    "versions": [
+      {
+        "text": "Da de kom til Esjkol-dalen, skar de av en vinranke med én drueklase. De bar den på en stang mellom to mann. De tok også med granatepler og fikener.",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "Det hebraiske 'zemorah' (זְמוֹרָה) betyr en 'gren' eller 'kvist' fra en vinranke, ikke selve vinranken. En 'vinranke' er hele planten, mens det som ble skåret av var en gren med en drueklase på. 'Vingren' er mer presist."
+      }
+    ]
   },
   {
     "bookId": 4,
@@ -195,7 +211,15 @@
     "bookId": 4,
     "chapterId": 13,
     "verseId": 30,
-    "text": "Kaleb dysset ned folket overfor Moses og sa: «La oss dra opp med én gang og innta landet, for vi er sterke nok til å overvinne det!»"
+    "text": "Kaleb brakte folket til taushet overfor Moses og sa: «La oss dra rett opp og innta landet, for vi er absolutt i stand til det!»",
+    "versions": [
+      {
+        "text": "Kaleb dysset ned folket overfor Moses og sa: «La oss dra opp med én gang og innta landet, for vi er sterke nok til å overvinne det!»",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "'Vajahas' (וַיַּהַס) betyr å bringe til taushet, ikke å 'dysse ned' som har en mildere konnotasjon. Den hebraiske infinitivus absolutus-konstruksjonen 'aloh na'aleh' (עָלֹה נַעֲלֶה) understreker besluttsomhet – 'la oss absolutt/virkelig dra opp'. Tilsvarende er 'yakhol nukhal' (יָכוֹל נוּכַל) en emfatisk form som betyr 'vi kan absolutt' snarere enn bare 'vi er sterke nok'."
+      }
+    ]
   },
   {
     "bookId": 4,
@@ -213,11 +237,17 @@
     "bookId": 4,
     "chapterId": 13,
     "verseId": 33,
-    "text": "Der så vi kjempene – Anaks sønner, som nedstammer fra kjempene. I våre egne øyne var vi som gresshopper, og slik så vi ut for dem også.»",
+    "text": "Der så vi kjempene – Anaks sønner kommer fra kjempene. I våre egne øyne var vi som gresshopper, og slik så vi ut for dem også.»",
     "versions": [
       {
         "text": "Der så vi kjempene – Anaks etterkommere stammer fra kjempene. I våre egne øyne var vi som gresshopper, og slik så vi ut for dem også.»",
         "explanation": "Det hebraiske 'benei Anak' (Anaks sønner) er mer spesifikt enn 'etterkommere'. Å oversette med 'sønner' bevarer den hebraiske terminologien bedre og skiller det fra det etterfølgende 'min-hannefilim' (fra kjempene) som handler om opphav."
+      },
+      {
+        "text": "Der så vi kjempene – Anaks sønner, som nedstammer fra kjempene. I våre egne øyne var vi som gresshopper, og slik så vi ut for dem også.»",
+        "type": "error",
+        "severity": "minor",
+        "explanation": "'Min-hannefilim' (מִן־הַנְּפִלִים) med preposisjonen 'min' betyr 'fra kjempene', noe som indikerer tilhørighet eller opprinnelse. 'Som nedstammer fra' legger til en genealogisk tolkning som ikke nødvendigvis er i teksten. En enklere oversettelse som 'kommer fra' er mer tro mot originalen."
       }
     ]
   }

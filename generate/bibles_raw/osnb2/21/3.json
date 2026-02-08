@@ -93,11 +93,17 @@
     "bookId": 21,
     "chapterId": 3,
     "verseId": 15,
-    "text": "Det som er, har allerede vært, og det som skal komme, har allerede vært. Gud søker opp det som er forfulgt.",
+    "text": "Det som er, har allerede vært, og det som skal komme, har allerede vært. Gud oppsøker det som er forjaget.",
     "versions": [
       {
         "text": "Det som er, har allerede vært, og det som skal komme, har allerede vært. Gud søker opp det som er forsvunnet.",
         "explanation": "Det hebraiske ordet נִרְדָּף (nirdaf) betyr 'det som er forfulgt' eller 'det som er drevet bort', ikke bare 'det som er forsvunnet'. Betydningen er at Gud tar seg av det som er jaget vekk eller undertrykt. 'Forfulgt' gir en mer presis gjengivelse av det hebraiske begrepet."
+      },
+      {
+        "text": "Det som er, har allerede vært, og det som skal komme, har allerede vært. Gud søker opp det som er forfulgt.",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "'Søker opp det som er forfulgt' er grammatisk akseptabelt men noe tungt. 'Oppsøker det som er forjaget' flyter bedre på norsk og bevarer betydningen av נִרְדָּף (noe som er drevet bort/jaget). Men dette er en minor forbedring ettersom verset allerede er revidert."
       }
     ]
   },
@@ -147,7 +153,15 @@
     "bookId": 21,
     "chapterId": 3,
     "verseId": 21,
-    "text": "Hvem vet at menneskets ånd stiger opp, og at dyrets ånd synker ned til jorden?"
+    "text": "Hvem vet om menneskets ånd stiger oppover, og om dyrets ånd synker nedover til jorden?",
+    "versions": [
+      {
+        "text": "Hvem vet at menneskets ånd stiger opp, og at dyrets ånd synker ned til jorden?",
+        "type": "error",
+        "severity": "major",
+        "explanation": "Det hebraiske מִי יוֹדֵעַ ('hvem vet') uttrykker tvil og usikkerhet, ikke en påstand. Oversettelsen med 'at' gjør det til en sikker påstand (hvem vet at det er slik), mens 'om' korrekt formidler den skeptiske/spørrende tonen som Predikeren uttrykker. Konteksten (v.19-20) understreker at mennesket ikke har noen åpenbar fordel over dyret, så tvilen er vesentlig for den teologiske meningen."
+      }
+    ]
   },
   {
     "bookId": 21,

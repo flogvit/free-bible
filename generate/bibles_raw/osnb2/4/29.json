@@ -123,17 +123,31 @@
     "bookId": 4,
     "chapterId": 29,
     "verseId": 19,
-    "text": "Dere skal også ofre én geitebukk som syndoffer, i tillegg til det daglige brennofferet med tilhørende grødeoffer og drikkoffer."
+    "text": "Dere skal også ofre én geitebukk som syndoffer, i tillegg til det daglige brennofferet med tilhørende grødeoffer og drikkofrene som hører til.",
+    "versions": [
+      {
+        "text": "Dere skal også ofre én geitebukk som syndoffer, i tillegg til det daglige brennofferet med tilhørende grødeoffer og drikkoffer.",
+        "type": "error",
+        "severity": "minor",
+        "explanation": "Det hebraiske 'וְנִסְכֵּיהֶם' er flertall ('drikkofrene deres'), mens oversettelsen bruker entall 'drikkoffer'. For nøyaktighet og konsistens med vers 6 bør flertallsformen brukes."
+      }
+    ]
   },
   {
     "bookId": 4,
     "chapterId": 29,
     "verseId": 20,
-    "text": "På den tredje dagen: elleve unge okser, to værer og fjorten årsgamle lam uten feil.",
+    "text": "På den tredje dagen: elleve unge okser, to værer og fjorten årsgamle lam, uten feil.",
     "versions": [
       {
         "text": "På den tredje dagen: elleve okser, to værer og fjorten årsgamle lam uten feil.",
         "explanation": "For konsistens med vers 13 og 17 som bruker 'unge okser' (פָּרִים בְּנֵי־בָקָר). Selv om 'בְּנֵי־בָקָר' ikke gjentas i dette verset, er det underforstått at det er samme type dyr."
+      },
+      {
+        "text": "På den tredje dagen: elleve unge okser, to værer og fjorten årsgamle lam uten feil.",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "For konsistens med vers 17 som ble revidert til å ha komma før 'uten feil', bør dette verset også ha komma der."
       }
     ]
   },

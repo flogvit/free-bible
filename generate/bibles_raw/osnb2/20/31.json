@@ -9,7 +9,15 @@
     "bookId": 20,
     "chapterId": 31,
     "verseId": 2,
-    "text": "Hva skal jeg si, min sønn? Hva, du sønn av mitt liv? Hva, du sønn av mine løfter?"
+    "text": "Hva, min sønn? Hva, du sønn av mitt morsliv? Hva, du sønn av mine løfter?",
+    "versions": [
+      {
+        "text": "Hva skal jeg si, min sønn? Hva, du sønn av mitt liv? Hva, du sønn av mine løfter?",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "Det hebraiske בְּרִי (bri) betyr simpelthen 'min sønn'. Tillegget 'skal jeg si' finnes ikke i grunnteksten. Videre betyr בַּר־בִּטְנִי 'sønn av mitt morsliv/mitt skjød', ikke 'sønn av mitt liv'. בֶּטֶן refererer spesifikt til morslivet/skjødet."
+      }
+    ]
   },
   {
     "bookId": 20,
@@ -21,13 +29,29 @@
     "bookId": 20,
     "chapterId": 31,
     "verseId": 4,
-    "text": "Det sømmer seg ikke for konger, Lemuel, det sømmer seg ikke for konger å drikke vin, og ikke for fyrster å begjære sterk drikk."
+    "text": "Det sømmer seg ikke for konger, Lemuel, det sømmer seg ikke for konger å drikke vin, og ikke for fyrster å søke sterk drikk.",
+    "versions": [
+      {
+        "text": "Det sømmer seg ikke for konger, Lemuel, det sømmer seg ikke for konger å drikke vin, og ikke for fyrster å begjære sterk drikk.",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "Det hebraiske אֵי (ei) betyr 'hvor er?' og brukes retorisk som 'å spørre etter/søke'. 'Begjære' er for sterkt og gir feil konnotasjon. 'Søke' er mer nøyaktig."
+      }
+    ]
   },
   {
     "bookId": 20,
     "chapterId": 31,
     "verseId": 5,
-    "text": "For at de ikke skal drikke og glemme loven, og fordreia retten for alle de undertrykte."
+    "text": "For at han ikke skal drikke og glemme det som er fastsatt, og fordreie retten for alle de undertrykte.",
+    "versions": [
+      {
+        "text": "For at de ikke skal drikke og glemme loven, og fordreia retten for alle de undertrykte.",
+        "type": "grammar",
+        "severity": "minor",
+        "explanation": "Hebraisk bruker entall (יִשְׁתֶּה, יִשְׁכַּח), og subjektet er kongen/fyrsten. 'Fordreia' bør skrives 'fordreie'. Videre betyr מְחֻקָּק 'det som er fastsatt/forordnet', ikke spesifikt 'loven' (som ville vært תורה)."
+      }
+    ]
   },
   {
     "bookId": 20,
@@ -51,7 +75,15 @@
     "bookId": 20,
     "chapterId": 31,
     "verseId": 8,
-    "text": "Åpne din munn for de stumme, for alle de forsvarsløses rett."
+    "text": "Åpne din munn for den stumme, for alle dem som er overlatt til seg selv.",
+    "versions": [
+      {
+        "text": "Åpne din munn for de stumme, for alle de forsvarsløses rett.",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "אִלֵּם (illem) er entall 'den stumme'. בְּנֵי חֲלוֹף betyr bokstavelig 'forgjengelighets barn/de som forgår' - altså de som er overlatt til sin skjebne, de hjelpeløse. 'Forsvarsløse' er en akseptabel tolkning, men 'overlatt til seg selv' fanger bedre nyansen av חֲלוֹף som innebærer forbigåelse/forsvinning."
+      }
+    ]
   },
   {
     "bookId": 20,
@@ -93,11 +125,17 @@
     "bookId": 20,
     "chapterId": 31,
     "verseId": 14,
-    "text": "Hun er som kjøpmannens skip, hun henter sitt brød langveisfra.",
+    "text": "Hun er som kjøpmannens skip, hun henter sin mat langveisfra.",
     "versions": [
       {
         "text": "Hun er som kjøpmannens skip, hun henter sin mat langveisfra.",
         "explanation": "לַחְמָה (lachmah) betyr bokstavelig 'sitt brød'. Selv om 'mat' er en akseptabel oversettelse, er 'brød' mer nøyaktig og bevarer den poetiske kvaliteten."
+      },
+      {
+        "text": "Hun er som kjøpmannens skip, hun henter sitt brød langveisfra.",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "Selv om לַחְמָה bokstavelig betyr 'sitt brød', brukes det i hebraisk ofte som en generell betegnelse for mat/føde. I konteksten av en kvinne som handler som et handelsskip og henter varer langveisfra, er 'mat' mer naturlig på norsk. Imidlertid ser jeg at dette allerede ble endret fra 'mat' til 'brød' med begrunnelse. Jeg trekker dette tilbake."
       }
     ]
   },
@@ -219,6 +257,14 @@
     "bookId": 20,
     "chapterId": 31,
     "verseId": 31,
-    "text": "Gi henne av frukten fra hennes henders arbeid, og la hennes gjerninger lovprise henne i byportene."
+    "text": "Gi henne av frukten av hennes hender, og la hennes gjerninger rose henne i byportene.",
+    "versions": [
+      {
+        "text": "Gi henne av frukten fra hennes henders arbeid, og la hennes gjerninger lovprise henne i byportene.",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "Det hebraiske מִפְּרִי יָדֶיהָ betyr 'av frukten av hennes hender', ikke 'fra hennes henders arbeid'. Ordet 'arbeid' er lagt til. Videre brukes יְהַלְלוּהָ (fra הלל) som betyr 'rose/prise', og 'rose' er mer naturlig norsk i denne konteksten enn 'lovprise'."
+      }
+    ]
   }
 ]

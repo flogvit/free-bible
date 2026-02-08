@@ -9,7 +9,15 @@
     "bookId": 18,
     "chapterId": 4,
     "verseId": 2,
-    "text": "Vil du bli utmattet om noen prøver å tale et ord til deg? Men hvem kan holde tilbake sine ord?"
+    "text": "Om noen våger å tale et ord til deg, vil du bli utmattet? Men hvem kan holde tilbake sine ord?",
+    "versions": [
+      {
+        "text": "Vil du bli utmattet om noen prøver å tale et ord til deg? Men hvem kan holde tilbake sine ord?",
+        "type": "error",
+        "severity": "major",
+        "explanation": "Det hebraiske הֲנִסָּה דָבָר אֵלֶיךָ תִּלְאֶה betyr 'Hvis noen prøver/våger et ord til deg, vil du bli utmattet?' Subjektet for 'prøver' er underforstått (noen), og spørsmålet er om Job vil tåle at noen taler til ham. Den nåværende oversettelsen snur strukturen på en litt forvirrende måte."
+      }
+    ]
   },
   {
     "bookId": 18,
@@ -39,11 +47,17 @@
     "bookId": 18,
     "chapterId": 4,
     "verseId": 7,
-    "text": "Tenk etter: Hvem som var uskyldig, gikk noen gang til grunne? Og hvor ble de rettsindige noen gang utryddet?",
+    "text": "Tenk etter: Hvem gikk noen gang til grunne som uskyldig? Og hvor ble de rettsindige noen gang utryddet?",
     "versions": [
       {
         "text": "Tenk etter: Hvem som var uskyldig gikk noen gang til grunne? Og hvor ble de oppriktige noen gang utslettet?",
         "explanation": "Det mangler et komma etter 'uskyldig' for å skille leddsetningen fra hovedsetningen. Dette er standard norsk tegnsetting."
+      },
+      {
+        "text": "Tenk etter: Hvem som var uskyldig, gikk noen gang til grunne? Og hvor ble de rettsindige noen gang utryddet?",
+        "type": "grammar",
+        "severity": "minor",
+        "explanation": "Den nåværende formuleringen 'Hvem som var uskyldig, gikk noen gang til grunne?' er grammatisk klønete på norsk. Det hebraiske מִי הוּא נָקִי אָבָד betyr 'hvem gikk til grunne [som] uskyldig'. En naturligere norsk setningsstruktur forbedrer lesbarheten."
       }
     ]
   },
@@ -105,7 +119,15 @@
     "bookId": 18,
     "chapterId": 4,
     "verseId": 16,
-    "text": "Den sto stille, men jeg kunne ikke kjenne igjen skikkelsen. En form var foran mine øyne. Det var stille, så hørte jeg en stemme:"
+    "text": "Den sto stille, men jeg kunne ikke kjenne igjen skikkelsen – en form var foran mine øyne. Det ble stille, og jeg hørte en stemme:",
+    "versions": [
+      {
+        "text": "Den sto stille, men jeg kunne ikke kjenne igjen skikkelsen. En form var foran mine øyne. Det var stille, så hørte jeg en stemme:",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "Verset er en poetisk enhet. Bruk av tankestrek binder 'en form var foran mine øyne' bedre sammen med foregående ledd, slik det er i originalen. 'Det ble stille' gjenspeiler bedre den hebraiske דְּמָמָה (stillhet) som en tilstand som inntrer, og 'og jeg hørte' er mer trofast mot וָקוֹל אֶשְׁמָע enn 'så hørte jeg'."
+      }
+    ]
   },
   {
     "bookId": 18,
@@ -123,7 +145,15 @@
     "bookId": 18,
     "chapterId": 4,
     "verseId": 19,
-    "text": "Hvor mye mer da de som bor i hus av leire, de som har sitt fundament i støvet! De knuses lettere enn et møll."
+    "text": "Hvor mye mer da de som bor i hus av leire, de som har sitt fundament i støvet! De knuses som foran et møll.",
+    "versions": [
+      {
+        "text": "Hvor mye mer da de som bor i hus av leire, de som har sitt fundament i støvet! De knuses lettere enn et møll.",
+        "type": "error",
+        "severity": "major",
+        "explanation": "Det hebraiske לִפְנֵי־עָשׁ betyr 'foran/for et møll', altså de knuses like lett som et møll ødelegger (noe). Uttrykket 'lettere enn et møll' er en misvisende gjengivelse. 'Som foran et møll' formidler bedre bildet av at mennesker knuses like uanstrengt som et møll fortærer stoff."
+      }
+    ]
   },
   {
     "bookId": 18,

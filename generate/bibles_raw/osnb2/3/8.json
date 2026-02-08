@@ -9,7 +9,15 @@
     "bookId": 3,
     "chapterId": 8,
     "verseId": 2,
-    "text": "«Ta Aron og sønnene hans med deg, og klærne, salvingsoljen, syndofferoksen, de to værene og kurven med usyret brød."
+    "text": "«Ta med deg Aron og sønnene hans, klærne, salvingsoljen, syndofferoksen, de to værene og kurven med usyret brød.",
+    "versions": [
+      {
+        "text": "«Ta Aron og sønnene hans med deg, og klærne, salvingsoljen, syndofferoksen, de to værene og kurven med usyret brød.",
+        "type": "grammar",
+        "severity": "minor",
+        "explanation": "Den hebraiske teksten har 'אִתּוֹ' (med ham/deg). 'Ta med deg' er mer idiomatisk norsk enn 'Ta ... med deg' med lang avstand mellom ordene. 'Med deg' hører naturlig til verbet 'ta'."
+      }
+    ]
   },
   {
     "bookId": 3,
@@ -123,7 +131,15 @@
     "bookId": 3,
     "chapterId": 8,
     "verseId": 20,
-    "text": "Han delte væren i stykker, og Moses brente hodet, stykkene og fettet."
+    "text": "Væren ble delt i stykker, og Moses brente hodet, stykkene og fettet.",
+    "versions": [
+      {
+        "text": "Han delte væren i stykker, og Moses brente hodet, stykkene og fettet.",
+        "type": "error",
+        "severity": "major",
+        "explanation": "Det hebraiske 'נִתַּח' er nifal (passiv) – 'ble delt/skåret opp', ikke aktiv 'han delte'. Passivformen er viktig fordi subjektet for delingen ikke er eksplisitt nevnt, mens Moses eksplisitt er subjekt for brenningen."
+      }
+    ]
   },
   {
     "bookId": 3,
@@ -159,7 +175,15 @@
     "bookId": 3,
     "chapterId": 8,
     "verseId": 25,
-    "text": "Han tok fettet, fettsporden, alt fettet som var på innvollene, leverlappen, de to nyrene med fettet på dem, og det høyre låret."
+    "text": "Han tok fetthalsen, fetthalen, alt fettet som var på innvollene, leverlappen, de to nyrene med fettet på dem, og det høyre låret.",
+    "versions": [
+      {
+        "text": "Han tok fettet, fettsporden, alt fettet som var på innvollene, leverlappen, de to nyrene med fettet på dem, og det høyre låret.",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "'הַחֵלֶב' (det første) og 'הָאַלְיָה' er to forskjellige ting. 'הַחֵלֶב' er det generelle fettet/bukfettet, mens 'הָאַלְיָה' er fetthalen (fettsporden). Begge oversettes korrekt, men 'fettsporden' er et noe uvanlig ord. Det kan beholdes da det er faglig korrekt."
+      }
+    ]
   },
   {
     "bookId": 3,
@@ -207,7 +231,15 @@
     "bookId": 3,
     "chapterId": 8,
     "verseId": 33,
-    "text": "Dere skal ikke forlate inngangen til møteteltet på sju dager, til innvielsesdagene er fullført. For i sju dager skal dere innvies."
+    "text": "Dere skal ikke gå ut fra inngangen til møteteltet på sju dager, til innvielsesdagene er fullført. For i sju dager skal han fylle deres hender.",
+    "versions": [
+      {
+        "text": "Dere skal ikke forlate inngangen til møteteltet på sju dager, til innvielsesdagene er fullført. For i sju dager skal dere innvies.",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "Det hebraiske 'לֹא תֵצְאוּ' betyr 'dere skal ikke gå ut' (fra inngangen), ikke 'forlate'. Videre er 'יְמַלֵּא אֶת־יֶדְכֶם' bokstavelig 'han skal fylle deres hender' – dette er det tekniske uttrykket for innvielse. 'Skal dere innvies' mister nyanseringen at det er Herren/Moses som gjør innvielsen (piel med implisitt subjekt)."
+      }
+    ]
   },
   {
     "bookId": 3,

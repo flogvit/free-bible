@@ -3,11 +3,17 @@
     "bookId": 22,
     "chapterId": 7,
     "verseId": 1,
-    "text": "Vend tilbake, vend tilbake, Sjulammit! Vend tilbake, vend tilbake, så vi kan se på deg! Hva ser dere i Sjulammit? En dans mellom to leire.",
+    "text": "Vend tilbake, vend tilbake, Sjulammit! Vend tilbake, vend tilbake, så vi kan se på deg! Hva ser dere i Sjulammit? Hun er som en dans mellom to leire.",
     "versions": [
       {
         "text": "Vend tilbake, vend tilbake, Sjulammit! Vend tilbake, vend tilbake, så vi kan se på deg! Hvorfor vil dere se på Sjulammit, som i en dans mellom to leire?",
         "explanation": "Det hebraiske 'מַה־תֶּחֱזוּ' er mer direkte 'hva ser dere' enn 'hvorfor vil dere se'. Spørsmålet handler om hva de ser i henne, ikke hvorfor de vil se. Svaret 'כִּמְחֹלַת הַמַּחֲנָיִם' fungerer bedre som et svar på spørsmålet enn en sammenligning."
+      },
+      {
+        "text": "Vend tilbake, vend tilbake, Sjulammit! Vend tilbake, vend tilbake, så vi kan se på deg! Hva ser dere i Sjulammit? En dans mellom to leire.",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "Svaret 'En dans mellom to leire' henger litt løst som et eget fragment. En liten kobling som 'Hun er som' gjør det tydeligere at dette er svaret på spørsmålet, og gjenspeiler den hebraiske sammenligningen (כִּמְחֹלַת) bedre. Verset har 1 revisjon, men dette er ikke en tilbakeføring til den forrige versjonen."
       }
     ]
   },
@@ -21,7 +27,15 @@
     "bookId": 22,
     "chapterId": 7,
     "verseId": 3,
-    "text": "Din navle er en rund skål som aldri mangler krydret vin. Din mage er en hvetehaug, omgitt av liljer."
+    "text": "Din navle er en rund skål som aldri mangler blandet vin. Din mage er en hvetehaug, omgitt av liljer.",
+    "versions": [
+      {
+        "text": "Din navle er en rund skål som aldri mangler krydret vin. Din mage er en hvetehaug, omgitt av liljer.",
+        "type": "error",
+        "severity": "major",
+        "explanation": "Det hebraiske 'מָזֶג' betyr 'blandet vin' (vin blandet med vann eller krydder), ikke spesifikt 'krydret vin'. 'Blandet vin' er den mer nøyaktige oversettelsen og er den tradisjonelle gjengivelsen."
+      }
+    ]
   },
   {
     "bookId": 22,
@@ -45,11 +59,17 @@
     "bookId": 22,
     "chapterId": 7,
     "verseId": 7,
-    "text": "Hvor vakker du er, og hvor liflig, du elskede, blant alle nytelser!",
+    "text": "Hvor vakker du er, og hvor liflig, du elskede, full av nytelser!",
     "versions": [
       {
         "text": "Hvor vakker du er, og hvor herlig, du kjærlighet blant nytelser!",
         "explanation": "Det hebraiske 'נָּעַמְתְּ' betyr 'liflig/behagelig' mer enn 'herlig'. Ordet 'אַהֲבָה' (kjærlighet) brukes her som en tiltale til den elskede, og 'בַּתַּעֲנוּגִים' indikerer 'blant nytelser/gleder'."
+      },
+      {
+        "text": "Hvor vakker du er, og hvor liflig, du elskede, blant alle nytelser!",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "Det hebraiske 'בַּתַּעֲנוּגִים' kan bety 'i/blant nytelser' men i kontekst beskriver det den elskede som full av/rik på nytelser/gleder, snarere enn at hun er 'blant alle nytelser'. Ordet 'alle' er dessuten tillagt og finnes ikke i originalteksten."
       }
     ]
   },
@@ -63,13 +83,29 @@
     "bookId": 22,
     "chapterId": 7,
     "verseId": 9,
-    "text": "Jeg sa: Jeg vil klatre opp i palmen og gripe tak i dens grener. La dine bryster være som drueklaser på vintreet, og duften av din pust som epler."
+    "text": "Jeg sa: Jeg vil klatre opp i palmen og gripe tak i dens daddelklaser. La dine bryster være som drueklaser på vintreet, og duften av din pust som epler.",
+    "versions": [
+      {
+        "text": "Jeg sa: Jeg vil klatre opp i palmen og gripe tak i dens grener. La dine bryster være som drueklaser på vintreet, og duften av din pust som epler.",
+        "type": "error",
+        "severity": "major",
+        "explanation": "Det hebraiske 'סַנְסִנִּים' (sansinnim) refererer spesifikt til daddelklaser/fruktklaser på palmetreet, ikke generelt til 'grener'. Dette er viktig fordi bildet parallelliserer med brystene som drueklaser i neste linje."
+      }
+    ]
   },
   {
     "bookId": 22,
     "chapterId": 7,
     "verseId": 10,
-    "text": "Din munn er som den beste vin, som glir jevnt ned til min elskede og får sovende lepper til å tale."
+    "text": "Din munn er som den beste vin som glir jevnt ned for min elskede, og får sovende lepper til å bevege seg.",
+    "versions": [
+      {
+        "text": "Din munn er som den beste vin, som glir jevnt ned til min elskede og får sovende lepper til å tale.",
+        "type": "error",
+        "severity": "major",
+        "explanation": "Det hebraiske 'חִכֵּךְ' betyr egentlig 'din gane' (munn/gane), men 'munn' er akseptabelt. Viktigere er at 'דּוֹבֵב' betyr 'bevege seg/røre seg' snarere enn 'tale'. Bildet er at vinen glir over leppene til de som sover og får dem til å bevege seg. 'Til min elskede' er riktig, men 'for min elskede' er mer naturlig norsk."
+      }
+    ]
   },
   {
     "bookId": 22,

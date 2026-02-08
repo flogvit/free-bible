@@ -21,7 +21,15 @@
     "bookId": 10,
     "chapterId": 17,
     "verseId": 3,
-    "text": "Så vil jeg føre hele folket tilbake til deg. Som når alle vender tilbake, så er det mannen du søker – hele folket vil ha fred.»"
+    "text": "Så vil jeg føre hele folket tilbake til deg. Når mannen du søker er borte, er det som om alle vender tilbake – hele folket vil ha fred.»",
+    "versions": [
+      {
+        "text": "Så vil jeg føre hele folket tilbake til deg. Som når alle vender tilbake, så er det mannen du søker – hele folket vil ha fred.»",
+        "type": "error",
+        "severity": "major",
+        "explanation": "Den hebraiske teksten sier at det å bringe tilbake hele folket avhenger av å eliminere den ene mannen (David). Akitofels poeng er at når mannen du søker er drept, vil hele folket komme over til deg i fred. Den nåværende oversettelsen er uklar og fanger ikke denne meningen godt."
+      }
+    ]
   },
   {
     "bookId": 10,
@@ -135,7 +143,15 @@
     "bookId": 10,
     "chapterId": 17,
     "verseId": 22,
-    "text": "David brøt opp med hele folket som var med ham, og de krysset Jordan. Da morgenen grydde, manglet ikke én som ikke hadde kommet over Jordan."
+    "text": "David brøt opp med hele folket som var med ham, og de krysset Jordan. Da morgenen grydde, var det ikke én eneste som ikke hadde kommet over Jordan.",
+    "versions": [
+      {
+        "text": "David brøt opp med hele folket som var med ham, og de krysset Jordan. Da morgenen grydde, manglet ikke én som ikke hadde kommet over Jordan.",
+        "type": "grammar",
+        "severity": "minor",
+        "explanation": "Den doble nektelsen 'manglet ikke én som ikke hadde kommet over' er grammatisk korrekt men litt kronglete. 'Var det ikke én eneste som ikke hadde kommet over' er noe tydeligere på norsk."
+      }
+    ]
   },
   {
     "bookId": 10,
@@ -153,7 +169,15 @@
     "bookId": 10,
     "chapterId": 17,
     "verseId": 25,
-    "text": "Absalom hadde satt Amasa over hæren i stedet for Joab. Amasa var sønn av en mann som het Jitra, en israelitt som hadde gått inn til Abigajil, datter av Nahasj og søster til Seruja, Joabs mor."
+    "text": "Absalom hadde satt Amasa over hæren i stedet for Joab. Amasa var sønn av en mann som het Jitra, en jisreelitt, som hadde gått inn til Abigajil, datter av Nahasj og søster til Seruja, Joabs mor.",
+    "versions": [
+      {
+        "text": "Absalom hadde satt Amasa over hæren i stedet for Joab. Amasa var sønn av en mann som het Jitra, en israelitt som hadde gått inn til Abigajil, datter av Nahasj og søster til Seruja, Joabs mor.",
+        "type": "error",
+        "severity": "minor",
+        "explanation": "I 1 Krøn 2:17 kalles denne mannen 'jismeelitt', og i noen teksttradisjoner her kalles han 'jisreelitt' (fra Jisreel) snarere enn 'israelitt'. Den massoretiske teksten har 'הַיִּשְׂרְאֵלִי', men mange forskere og oversettelser (inkludert LXX-tradisjonen) leser 'jismeelitt/jisreelitt'. 'Israelitt' er en mulig gjengivelse av MT, men det er verdt å merke seg at dette er en omdiskutert lesemåte. Oversettelsen følger MT og er akseptabel, men dette er likevel verdt å flagge."
+      }
+    ]
   },
   {
     "bookId": 10,
@@ -171,7 +195,15 @@
     "bookId": 10,
     "chapterId": 17,
     "verseId": 28,
-    "text": "De brakte senger, fat og leirkar, hvete, bygg, mel, ristet korn, bønner, linser og ristede bønner,"
+    "text": "De brakte senger, fat og leirkar, hvete, bygg, mel, ristet korn, bønner, linser og ristede korn,",
+    "versions": [
+      {
+        "text": "De brakte senger, fat og leirkar, hvete, bygg, mel, ristet korn, bønner, linser og ristede bønner,",
+        "type": "error",
+        "severity": "minor",
+        "explanation": "Det hebraiske 'קָלִי' betyr 'ristet korn' (ikke 'ristede bønner'). Samme ord brukes tidligere i verset og oversettes korrekt som 'ristet korn'. Det bør være konsekvent."
+      }
+    ]
   },
   {
     "bookId": 10,

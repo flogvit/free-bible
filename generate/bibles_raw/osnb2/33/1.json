@@ -39,11 +39,17 @@
     "bookId": 33,
     "chapterId": 1,
     "verseId": 5,
-    "text": "Alt dette skjer på grunn av Jakobs opprør og Israels hus' synder. Hva er Jakobs opprør? Er det ikke Samaria? Og hvem står bak Judas offerhøyder? Er det ikke Jerusalem?",
+    "text": "Alt dette skjer på grunn av Jakobs opprør og Israels hus' synder. Hvem er Jakobs opprør? Er det ikke Samaria? Og hvem står bak Judas offerhøyder? Er det ikke Jerusalem?",
     "versions": [
       {
         "text": "Alt dette skjer på grunn av Jakobs opprør og Israels hus' synder. Hva er Jakobs opprør? Er det ikke Samaria? Og hva er Judas offerhøyder? Er det ikke Jerusalem?",
         "explanation": "Det hebraiske מִי ('mi') betyr 'hvem', ikke 'hva'. Spørsmålet handler om hvem som er ansvarlig for offerhøydene, ikke hva de er."
+      },
+      {
+        "text": "Alt dette skjer på grunn av Jakobs opprør og Israels hus' synder. Hva er Jakobs opprør? Er det ikke Samaria? Og hvem står bak Judas offerhøyder? Er det ikke Jerusalem?",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "Den første spørsmålssetningen bruker også מִי ('hvem'), ikke מָה ('hva'). Etter forrige revisjon ble det andre spørsmålet korrigert til 'hvem', men det første spørsmålet ble oversett og står fremdeles som 'Hva'. Begge bør bruke 'Hvem' for konsistens med det hebraiske מִי."
       }
     ]
   },
@@ -69,7 +75,15 @@
     "bookId": 33,
     "chapterId": 1,
     "verseId": 8,
-    "text": "Derfor vil jeg klage og jamre, jeg vil gå avkledd og naken. Jeg vil hyle som sjakaler og klage som strutser."
+    "text": "Derfor vil jeg klage og jamre, jeg vil gå avkledd og naken. Jeg vil jamre som sjakaler og klage som strutser.",
+    "versions": [
+      {
+        "text": "Derfor vil jeg klage og jamre, jeg vil gå avkledd og naken. Jeg vil hyle som sjakaler og klage som strutser.",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "Det hebraiske מִסְפֵּד (misped) betyr 'klage/sørge', ikke 'hyle'. Verbet 'hyle' passer bedre for אֵילִילָה tidligere i verset. For å variere ordvalget og unngå gjentakelse kan 'jamre' brukes her, da sjakalenes lyd er assosiert med klagerop."
+      }
+    ]
   },
   {
     "bookId": 33,
@@ -129,7 +143,15 @@
     "bookId": 33,
     "chapterId": 1,
     "verseId": 15,
-    "text": "Enda en gang skal jeg bringe en erobrer over deg, du som bor i Maresja. Israels herlighet skal komme til Adullam."
+    "text": "Enda en erobrer skal jeg bringe over deg, du som bor i Maresja. Israels herlighet skal komme til Adullam.",
+    "versions": [
+      {
+        "text": "Enda en gang skal jeg bringe en erobrer over deg, du som bor i Maresja. Israels herlighet skal komme til Adullam.",
+        "type": "error",
+        "severity": "major",
+        "explanation": "Det hebraiske עֹד הַיֹּרֵשׁ אָבִי לָךְ betyr 'enda en erobrer (yoresh) skal jeg bringe over deg'. Det er et ordspill mellom יֹּרֵשׁ (erobrer/arving) og מָרֵשָׁה (Maresja). Den nåværende oversettelsen 'Enda en gang' antyder at det har skjedd før, mens hebraisk עוֹד her betyr 'enda en' (ytterligere), ikke 'igjen'. 'Enda en erobrer' er mer nøyaktig."
+      }
+    ]
   },
   {
     "bookId": 33,

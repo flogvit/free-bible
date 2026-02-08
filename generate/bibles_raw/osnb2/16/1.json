@@ -3,7 +3,15 @@
     "bookId": 16,
     "chapterId": 1,
     "verseId": 1,
-    "text": "Dette er ordene til Nehemja, sønn av Hakalja. I måneden kislev, i det tjuende året, var jeg i borgen Susan."
+    "text": "Dette er ordene til Nehemja, sønn av Hakalja. I måneden kislev, i det tjuende året, befant jeg meg i borgen Susan.",
+    "versions": [
+      {
+        "text": "Dette er ordene til Nehemja, sønn av Hakalja. I måneden kislev, i det tjuende året, var jeg i borgen Susan.",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "The Hebrew 'וַאֲנִי הָיִיתִי' emphasizes 'and I was/found myself' — 'befant jeg meg' captures the nuance slightly better than the plain 'var jeg', though both are acceptable. This is a minor stylistic suggestion."
+      }
+    ]
   },
   {
     "bookId": 16,
@@ -39,7 +47,15 @@
     "bookId": 16,
     "chapterId": 1,
     "verseId": 6,
-    "text": "La ditt øre være lydhørt og dine øyne åpne, så du hører din tjeners bønn som jeg ber for ditt ansikt i dag, dag og natt, for Israels barn, dine tjenere. Jeg bekjenner syndene som vi, Israels barn, har begått mot deg. Både jeg og min fars hus har syndet."
+    "text": "La ditt øre være lydhørt og dine øyne åpne, så du hører din tjeners bønn som jeg ber for ditt ansikt i dag, dag og natt, for Israels barn, dine tjenere. Jeg bekjenner syndene til Israels barn, som vi har syndet mot deg. Både jeg og min fars hus har syndet.",
+    "versions": [
+      {
+        "text": "La ditt øre være lydhørt og dine øyne åpne, så du hører din tjeners bønn som jeg ber for ditt ansikt i dag, dag og natt, for Israels barn, dine tjenere. Jeg bekjenner syndene som vi, Israels barn, har begått mot deg. Både jeg og min fars hus har syndet.",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "The Hebrew 'עַל־חַטֹּאות בְּנֵי־יִשְׂרָאֵל אֲשֶׁר חָטָאנוּ לָךְ' literally says 'concerning the sins of the children of Israel which we have sinned against you.' The current translation restructures this as 'syndene som vi, Israels barn, har begått mot deg' — but the Hebrew construction has 'sins of Israel's children' as a construct, then 'which we have sinned' identifying the speaker with them. A more accurate rendering would keep 'Israels barns synder' as the object of confession."
+      }
+    ]
   },
   {
     "bookId": 16,
@@ -51,11 +67,17 @@
     "bookId": 16,
     "chapterId": 1,
     "verseId": 8,
-    "text": "Husk det ordet du befalte din tjener Moses: 'Hvis dere er troløse, vil jeg spre dere blant folkene.'",
+    "text": "Husk det ordet du befalte din tjener Moses: 'Hvis dere er troløse, vil jeg spre dere blant folkeslagene.'",
     "versions": [
       {
         "text": "Husk det ordet du ga din tjener Moses da du sa: 'Hvis dere er troløse, vil jeg spre dere blant folkene.'",
         "explanation": "Det hebraiske 'צִוִּיתָ' (tsivvita) betyr 'befalte' eller 'påla', ikke bare 'ga'. Dette er samme verb som brukes om Guds bud. 'Da du sa' er også overflødig siden 'לֵאמֹר' (lemor - 'idet han sa') allerede introduserer sitatet."
+      },
+      {
+        "text": "Husk det ordet du befalte din tjener Moses: 'Hvis dere er troløse, vil jeg spre dere blant folkene.'",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "The Hebrew 'בָּעַמִּים' (ba'ammim) refers to 'the peoples/nations' — 'folkeslagene' (nations/peoples) is more precise than 'folkene' (which can mean just 'the people'). In biblical context, this refers to the nations of the world, and 'folkeslagene' better conveys this meaning in Norwegian."
       }
     ]
   },

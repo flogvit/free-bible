@@ -63,7 +63,15 @@
     "bookId": 11,
     "chapterId": 13,
     "verseId": 11,
-    "text": "Det bodde en gammel profet i Betel. Hans sønner kom og fortalte ham alt det Guds mann hadde gjort den dagen i Betel, og ordene han hadde talt til kongen. De fortalte det til sin far."
+    "text": "Det bodde en gammel profet i Betel. Hans sønn kom og fortalte ham alt det Guds mann hadde gjort den dagen i Betel, og ordene han hadde talt til kongen. De fortalte det til sin far.",
+    "versions": [
+      {
+        "text": "Det bodde en gammel profet i Betel. Hans sønner kom og fortalte ham alt det Guds mann hadde gjort den dagen i Betel, og ordene han hadde talt til kongen. De fortalte det til sin far.",
+        "type": "grammar",
+        "severity": "minor",
+        "explanation": "The Hebrew בְנוֹ is singular ('his son'), though the verb וַיְסַפְּרוּם later switches to plural ('they told'). The initial subject should be singular 'hans sønn' to match the Hebrew, with the plural coming in the second part of the verse as in the original."
+      }
+    ]
   },
   {
     "bookId": 11,
@@ -147,7 +155,15 @@
     "bookId": 11,
     "chapterId": 13,
     "verseId": 24,
-    "text": "Han dro av sted, men en løve møtte ham på veien og drepte ham. Kroppen hans lå slengt på veien, og eselet sto ved siden av den. Løven sto også ved siden av kroppen."
+    "text": "Han dro av sted, men en løve møtte ham på veien og drepte ham. Liket hans lå slengt på veien, og eselet sto ved siden av det. Løven sto også ved siden av liket.",
+    "versions": [
+      {
+        "text": "Han dro av sted, men en løve møtte ham på veien og drepte ham. Kroppen hans lå slengt på veien, og eselet sto ved siden av den. Løven sto også ved siden av kroppen.",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "In verse 22, נִבְלָה was deliberately changed to 'legeme' for a more dignified tone in prophetic speech. However, in the narrative verses (24-30), נִבְלָה consistently refers to a dead body/corpse. 'Kropp' can mean a living body, while 'liket' (the corpse) more accurately conveys the meaning of נִבְלָה in narrative context and is consistent with the intentional distinction from verse 22."
+      }
+    ]
   },
   {
     "bookId": 11,
@@ -201,7 +217,15 @@
     "bookId": 11,
     "chapterId": 13,
     "verseId": 33,
-    "text": "Etter dette vendte Jeroboam ikke om fra sin onde vei, men fortsatte å gjøre hvem han ville blant folket til prester ved offerhøydene. Den som ønsket det, innsatte han, så de ble prester ved offerhøydene."
+    "text": "Etter dette vendte Jeroboam ikke om fra sin onde vei, men fortsatte å innsette prester fra alle lag av folket til å tjene ved offerhøydene. Hvem som helst som ønsket det, kunne han vigsle, så de ble prester ved offerhøydene.",
+    "versions": [
+      {
+        "text": "Etter dette vendte Jeroboam ikke om fra sin onde vei, men fortsatte å gjøre hvem han ville blant folket til prester ved offerhøydene. Den som ønsket det, innsatte han, så de ble prester ved offerhøydene.",
+        "type": "error",
+        "severity": "major",
+        "explanation": "מִקְצוֹת הָעָם means 'from all parts/classes of the people' (i.e., from among ordinary people, not just Levites). The current translation 'hvem han ville blant folket' misses this nuance. Also, יְמַלֵּא אֶת־יָדוֹ literally means 'fill his hand,' an idiom for ordination/consecration. The current translation splits the verse awkwardly; the key point is that Jeroboam made priests from all social classes, not just from the tribe of Levi."
+      }
+    ]
   },
   {
     "bookId": 11,

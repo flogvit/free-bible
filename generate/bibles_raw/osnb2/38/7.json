@@ -9,17 +9,31 @@
     "bookId": 38,
     "chapterId": 7,
     "verseId": 2,
-    "text": "Betel sendte Sareser og Regem-Melek med sine menn for å søke Herrens nåde,"
+    "text": "Betel sendte Sareser og Regem-Melek med sine menn for å bønnfalle Herren,",
+    "versions": [
+      {
+        "text": "Betel sendte Sareser og Regem-Melek med sine menn for å søke Herrens nåde,",
+        "type": "error",
+        "severity": "major",
+        "explanation": "Det hebraiske uttrykket לְחַלּוֹת אֶת־פְּנֵי יְהוָה betyr bokstavelig 'å mildne/bønnfalle Herrens ansikt'. 'Søke Herrens nåde' er ikke galt, men 'bønnfalle Herren' gjengir det hebraiske uttrykket mer presist – det handler om å be inntrengende, ikke bare søke nåde generelt."
+      }
+    ]
   },
   {
     "bookId": 38,
     "chapterId": 7,
     "verseId": 3,
-    "text": "og for å spørre prestene i Hærskarenes Herres hus og profetene: «Skal jeg gråte i den femte måneden og holde meg fra mat, slik jeg har gjort i så mange år?»",
+    "text": "og for å spørre prestene ved Hærskarenes Herres hus og profetene: «Skal jeg gråte i den femte måneden og holde meg fra mat, slik jeg har gjort i så mange år?»",
     "versions": [
       {
         "text": "og for å spørre prestene i Hærskarenes Herres hus og profetene: «Skal jeg gråte og faste i den femte måneden, slik jeg har gjort i så mange år?»",
         "explanation": "Det hebraiske הִנָּזֵר (hinnazér) betyr 'å holde seg tilbake/avholde seg', ikke direkte 'faste'. Oversettelsen 'holde meg fra mat' gjengir betydningen mer presist og skiller seg fra det vanlige fasteordet (צום) som brukes i vers 5."
+      },
+      {
+        "text": "og for å spørre prestene i Hærskarenes Herres hus og profetene: «Skal jeg gråte i den femte måneden og holde meg fra mat, slik jeg har gjort i så mange år?»",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "Det hebraiske אֲשֶׁר לְבֵית־יְהוָה צְבָאוֹת betyr 'som hørte til / var ved Hærskarenes Herres hus'. 'Ved' er mer presist enn 'i' for å beskrive prestenes tilknytning til tempelet."
       }
     ]
   },
@@ -117,7 +131,15 @@
     "bookId": 38,
     "chapterId": 7,
     "verseId": 13,
-    "text": "Det skjedde at slik han ropte og de ikke hørte, slik skal de rope og jeg vil ikke høre, sier Hærskarenes Herre."
+    "text": "Og slik han ropte uten at de hørte, slik skal de rope uten at jeg hører, sier Hærskarenes Herre.",
+    "versions": [
+      {
+        "text": "Det skjedde at slik han ropte og de ikke hørte, slik skal de rope og jeg vil ikke høre, sier Hærskarenes Herre.",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "Formuleringen 'Det skjedde at slik han ropte og de ikke hørte' er noe tung og uidiomatisk på norsk. 'Slik han ropte uten at de hørte, slik skal de rope uten at jeg hører' gir bedre flyt og tydeliggjør den parallelle strukturen i den hebraiske teksten."
+      }
+    ]
   },
   {
     "bookId": 38,

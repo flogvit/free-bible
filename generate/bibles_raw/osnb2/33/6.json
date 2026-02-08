@@ -43,7 +43,15 @@
     "bookId": 33,
     "chapterId": 6,
     "verseId": 5,
-    "text": "Mitt folk, husk hva Balak, kongen av Moab, planla, og hva Bileam, sønn av Beor, svarte ham – fra Sjittim til Gilgal – så du kan kjenne Herrens rettferdige gjerninger."
+    "text": "Mitt folk, husk hva Balak, Moabs konge, planla, og hva Bileam, Beors sønn, svarte ham – fra Sjittim til Gilgal – så du kan kjenne Herrens rettferdige gjerninger.",
+    "versions": [
+      {
+        "text": "Mitt folk, husk hva Balak, kongen av Moab, planla, og hva Bileam, sønn av Beor, svarte ham – fra Sjittim til Gilgal – så du kan kjenne Herrens rettferdige gjerninger.",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "I norsk bibelspråk er 'Moabs konge' og 'Beors sønn' den mer naturlige og tradisjonelle formen for disse genitivkonstruksjonene, fremfor 'kongen av Moab' og 'sønn av Beor'. Det hebraiske har også konstruktus-form (מֶלֶךְ מוֹאָב, בֶּן־בְּעוֹר) som best gjengis slik."
+      }
+    ]
   },
   {
     "bookId": 33,
@@ -67,11 +75,23 @@
     "bookId": 33,
     "chapterId": 6,
     "verseId": 9,
-    "text": "Herrens røst roper til byen – og den som er vis, ser ditt navn: Hør! Staven! Og hvem har bestemt den?",
+    "text": "Herrens røst roper til byen – og den som er vis, ser ditt navn: Hør om staven og hvem som har fastsatt den!",
     "versions": [
       {
         "text": "Herrens røst roper til byen – og det er visdom å frykte ditt navn: Hør på staven og på ham som har fastsatt den!",
         "explanation": "Det hebraiske 'תוּשִׁיָּה יִרְאֶה שְׁמֶךָ' betyr 'visdom ser ditt navn' eller 'den vise ser ditt navn'. Verbet 'יִרְאֶה' (yir'eh) betyr 'ser', ikke 'frykter' (som ville vært יִרְאָה). Oversettelsen har forvekslet disse to hebraiske ordene."
+      },
+      {
+        "text": "Herrens røst roper til byen – og den som er vis, ser ditt navn: Hør! Staven! Og hvem har bestemt den?",
+        "type": "error",
+        "severity": "major",
+        "explanation": "Verbet 'יִרְאֶה' her er faktisk tvetydig - det kan leses som 'ser' (ירא/ראה) men i kontekst med 'שְׁמֶךָ' (ditt navn) gir det mer teologisk mening som 'frykter'. Imidlertid, gitt at forrige revisjon eksplisitt korrigerte dette og forklarte at verbet er 'ser' (ראה) ikke 'frykter' (ירא), la meg fokusere på den andre delen: 'שִׁמְעוּ מַטֶּה וּמִי יְעָדָהּ' betyr 'hør om staven og hvem som har fastsatt den'. Den nåværende oversettelsen 'Hør! Staven! Og hvem har bestemt den?' er fragmentert og unatural. En bedre formulering er 'Hør om staven, og hvem som har fastsatt den'."
+      },
+      {
+        "text": "Herrens røst roper til byen – og den som er vis, frykter ditt navn: Hør om staven, og hvem som har fastsatt den!",
+        "type": "suggestion",
+        "severity": "major",
+        "explanation": "Siste del av verset 'שִׁמְעוּ מַטֶּה וּמִי יְעָדָהּ' er en sammenhengende setning: 'Hør om staven og hvem som har fastsatt den'. Den nåværende fragmenterte stilen 'Hør! Staven! Og hvem har bestemt den?' bryter opp setningen unaturlig og gjør den vanskelig å forstå. 'Fastsatt' er også mer presis for 'יְעָדָהּ' enn 'bestemt'."
       }
     ]
   },
@@ -119,7 +139,15 @@
     "bookId": 33,
     "chapterId": 6,
     "verseId": 14,
-    "text": "Du skal spise, men ikke bli mett, og tomhet skal være i ditt indre. Du skal samle sammen, men ikke berge noe, og det du berger, skal jeg overgi til sverdet."
+    "text": "Du skal spise, men ikke bli mett, og hunger skal gnage i ditt indre. Du skal flytte unna, men ikke redde noe, og det du redder, skal jeg overgi til sverdet.",
+    "versions": [
+      {
+        "text": "Du skal spise, men ikke bli mett, og tomhet skal være i ditt indre. Du skal samle sammen, men ikke berge noe, og det du berger, skal jeg overgi til sverdet.",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "'וְיֶשְׁחֲךָ' kommer trolig fra roten ישח som betyr 'å synke ned/sult/gnaging' - 'tomhet' er en fri gjengivelse. Viktigere er at 'וְתַסֵּג' fra roten נסג/סוג betyr 'å trekke seg tilbake/flytte unna' (i krig), ikke 'samle sammen'. Og 'תַפְלִיט/תְּפַלֵּט' fra פלט betyr 'redde/bringe i sikkerhet', ikke bare 'berge'. Konteksten handler om flukt i krig, ikke innsamling."
+      }
+    ]
   },
   {
     "bookId": 33,

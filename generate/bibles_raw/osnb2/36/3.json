@@ -51,7 +51,15 @@
     "bookId": 36,
     "chapterId": 3,
     "verseId": 7,
-    "text": "Jeg sa: Sannelig, du vil frykte meg og ta imot tukt! Da skulle hennes bolig ikke bli utryddet, tross alt det jeg hadde bestemt over henne. Men de stod tidlig opp og handlet enda mer fordervet i alle sine gjerninger."
+    "text": "Jeg sa: Sannelig, du vil frykte meg og ta imot tukt! Da skulle hennes bolig ikke bli utryddet, tross alt det jeg hadde bestemt over henne. Men de var ivrige etter å handle fordervet i alle sine gjerninger.",
+    "versions": [
+      {
+        "text": "Jeg sa: Sannelig, du vil frykte meg og ta imot tukt! Da skulle hennes bolig ikke bli utryddet, tross alt det jeg hadde bestemt over henne. Men de stod tidlig opp og handlet enda mer fordervet i alle sine gjerninger.",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "Det hebraiske 'הִשְׁכִּימוּ הִשְׁחִיתוּ' er et idiom der 'hishkimu' (stod tidlig opp) forsterker det neste verbet – det betyr 'de var ivrige/raske til å handle fordervet', ikke bokstavelig 'stod tidlig opp'. Uttrykket 'enda mer' finnes heller ikke i grunnteksten."
+      }
+    ]
   },
   {
     "bookId": 36,
@@ -69,7 +77,15 @@
     "bookId": 36,
     "chapterId": 3,
     "verseId": 10,
-    "text": "Fra den andre siden av elvene i Kusj skal mine tilbedere, mitt spredte folk, bringe meg offergaver."
+    "text": "Fra den andre siden av Kusjs elver skal mine tilbedere, mitt spredte folk, bringe meg offergaver.",
+    "versions": [
+      {
+        "text": "Fra den andre siden av elvene i Kusj skal mine tilbedere, mitt spredte folk, bringe meg offergaver.",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "'לְנַהֲרֵי־כוּשׁ' er en genitivkonstruksjon: 'Kusjs elver' eller 'elvene til Kusj'. 'Elvene i Kusj' er akseptabelt, men 'Kusjs elver' er mer naturlig norsk og mer tro mot konstruksjonen."
+      }
+    ]
   },
   {
     "bookId": 36,
@@ -131,13 +147,29 @@
     "bookId": 36,
     "chapterId": 3,
     "verseId": 18,
-    "text": "De som sørger over høytiden, vil jeg samle – de som var fra deg, de som bar skammens byrde for hennes skyld."
+    "text": "De som sørger borte fra høytidene, vil jeg samle fra deg – de bar skammens byrde over henne.",
+    "versions": [
+      {
+        "text": "De som sørger over høytiden, vil jeg samle – de som var fra deg, de som bar skammens byrde for hennes skyld.",
+        "type": "error",
+        "severity": "major",
+        "explanation": "'נוּגֵי מִמּוֹעֵד' betyr 'de som sørger borte fra høytiden/festforsamlingen' – altså de som er borte fra høytidene og sørger over det, ikke de som sørger 'over' høytiden. 'מִמֵּךְ' ('fra deg') hører grammatisk til 'אָסַפְתִּי' (jeg vil samle fra deg), ikke som en beskrivelse av dem ('som var fra deg')."
+      }
+    ]
   },
   {
     "bookId": 36,
     "chapterId": 3,
     "verseId": 19,
-    "text": "Se, på den tiden vil jeg ta et oppgjør med alle som har plaget deg. Jeg vil frelse den haltende og samle den fordrevne. Jeg vil gjøre dem til lovsang og til ære over hele jorden, der de ble til skamme."
+    "text": "Se, på den tiden vil jeg ta meg av alle som undertrykker deg. Jeg vil frelse den haltende og samle den fordrevne. Jeg vil gjøre dem til lovsang og til ære over hele jorden, der de ble til skamme.",
+    "versions": [
+      {
+        "text": "Se, på den tiden vil jeg ta et oppgjør med alle som har plaget deg. Jeg vil frelse den haltende og samle den fordrevne. Jeg vil gjøre dem til lovsang og til ære over hele jorden, der de ble til skamme.",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "'עֹשֶׂה אֶת־כָּל־מְעַנַּיִךְ' betyr bokstavelig 'handle med/ta meg av alle dine undertrykkere'. 'Ta et oppgjør med' er tolkende men akseptabelt; 'ta meg av' er litt nærmere. Begge er godtagbare, men 'undertrykkere' er mer nøyaktig enn 'de som har plaget deg'."
+      }
+    ]
   },
   {
     "bookId": 36,

@@ -235,7 +235,15 @@
     "bookId": 42,
     "chapterId": 12,
     "verseId": 30,
-    "text": "For alt dette søker folkeslagene i verden etter, men deres Far vet at dere trenger dette."
+    "text": "For alt dette er det folkeslagene i verden søker etter, men deres Far vet at dere trenger dette.",
+    "versions": [
+      {
+        "text": "For alt dette søker folkeslagene i verden etter, men deres Far vet at dere trenger dette.",
+        "type": "grammar",
+        "severity": "minor",
+        "explanation": "Setningen 'For alt dette søker folkeslagene i verden etter' er grammatisk korrekt men litt klønete på norsk. 'For alt dette er det folkeslagene i verden søker etter' gir en mer naturlig norsk setningsstruktur."
+      }
+    ]
   },
   {
     "bookId": 42,
@@ -289,7 +297,15 @@
     "bookId": 42,
     "chapterId": 12,
     "verseId": 37,
-    "text": "Salige er de tjenerne som herren finner våkne når han kommer. Sannelig, jeg sier dere: Han skal binde opp om seg, la dem sette seg til bords og selv komme og tjene dem."
+    "text": "Salige er de tjenerne som herren finner våkne når han kommer! Sannelig, jeg sier dere: Han skal binde opp om seg, la dem sette seg til bords og selv komme og tjene dem.",
+    "versions": [
+      {
+        "text": "Salige er de tjenerne som herren finner våkne når han kommer. Sannelig, jeg sier dere: Han skal binde opp om seg, la dem sette seg til bords og selv komme og tjene dem.",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "Μακάριοι er en saligprisning som typisk har utropskraft. Et utropstegn etter 'kommer' vil understreke den høytidelige karakteren av utsagnet, men dette er en svært mindre justering."
+      }
+    ]
   },
   {
     "bookId": 42,
@@ -383,11 +399,17 @@
     "bookId": 42,
     "chapterId": 12,
     "verseId": 49,
-    "text": "Ild er jeg kommet for å kaste på jorden! Og hvor jeg ønsker at den allerede var tent!",
+    "text": "Ild er jeg kommet for å kaste på jorden! Og hva annet ønsker jeg enn at den allerede var tent!",
     "versions": [
       {
         "text": "Ild er jeg kommet for å kaste på jorden, og hvor jeg ønsker at den alt var tent!",
         "explanation": "Den greske teksten har en utropsaktig karakter. Å dele setningen med utropstegn etter 'jorden' gir bedre muntlig rytme. 'Allerede' er mer naturlig norsk enn 'alt' i denne konteksten og gjengir ἤδη tydeligere."
+      },
+      {
+        "text": "Ild er jeg kommet for å kaste på jorden! Og hvor jeg ønsker at den allerede var tent!",
+        "type": "theological",
+        "severity": "major",
+        "explanation": "Det greske 'καὶ τί θέλω εἰ ἤδη ἀνήφθη' er en retorisk konstruksjon som bokstavelig betyr 'og hva ønsker jeg om den allerede er tent?' Meningen er 'hva mer ønsker jeg enn at den allerede var tent!' Den nåværende oversettelsen 'hvor jeg ønsker at den allerede var tent' er en akseptabel tolkning, men 'τί θέλω εἰ' er mer enn bare et ønske - det uttrykker 'hva annet vil jeg enn at'. Den nåværende versjonen er imidlertid allerede revidert én gang, så dette er grensetilfelle."
       }
     ]
   },
@@ -469,12 +491,28 @@
     "bookId": 42,
     "chapterId": 12,
     "verseId": 58,
-    "text": "For når du går med motparten din til øvrigheten, så gjør ditt beste for å bli forlikt med ham på veien, så han ikke drar deg for dommeren, og dommeren overgir deg til vakten, og vakten kaster deg i fengsel."
+    "text": "For når du går med motparten din til øvrigheten, så gjør ditt beste underveis for å komme til enighet med ham, så han ikke drar deg for dommeren, og dommeren overgir deg til fangevokteren, og fangevokteren kaster deg i fengsel.",
+    "versions": [
+      {
+        "text": "For når du går med motparten din til øvrigheten, så gjør ditt beste for å bli forlikt med ham på veien, så han ikke drar deg for dommeren, og dommeren overgir deg til vakten, og vakten kaster deg i fengsel.",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "Gresk πράκτωρ betyr mer spesifikt en 'innkrever' eller 'fangevokter' enn bare 'vakt'. 'Vakt' er litt vagt og kan misforstås. 'Fangevokteren' er mer presist. I tillegg er 'ἐν τῇ ὁδῷ' (på veien) bedre plassert som 'underveis' knyttet til innsatsen ('gjør ditt beste underveis'), og 'ἀπηλλάχθαι ἀπʼ αὐτοῦ' betyr mer direkte 'å bli fri fra ham' / 'komme til enighet med ham', snarere enn 'bli forlikt'. 'Bli forlikt' fungerer dog teologisk, men 'komme til enighet' er mer naturlig norsk."
+      }
+    ]
   },
   {
     "bookId": 42,
     "chapterId": 12,
     "verseId": 59,
-    "text": "Jeg sier deg: Du skal ikke komme ut derfra før du har betalt den siste øre.»"
+    "text": "Jeg sier deg: Du skal ikke komme ut derfra før du har betalt tilbake den aller siste øre.",
+    "versions": [
+      {
+        "text": "Jeg sier deg: Du skal ikke komme ut derfra før du har betalt den siste øre.»",
+        "type": "error",
+        "severity": "minor",
+        "explanation": "Det greske 'καὶ τὸ ἔσχατον' med καί som forsterkende partikel betyr 'selv den siste' eller 'den aller siste', noe som understreker fullstendigheten av betalingen. 'Den aller siste øre' fanger denne forsterkningen bedre. I tillegg er ἀποδῷς (betale tilbake) mer presist enn bare 'betalt'. Dessuten har originalen ikke avsluttende anførselstegn (»), og det er uklart hvor et sitat starter som ville kreve dette tegnet."
+      }
+    ]
   }
 ]

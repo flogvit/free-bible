@@ -27,7 +27,15 @@
     "bookId": 4,
     "chapterId": 12,
     "verseId": 4,
-    "text": "Da sa Herren plutselig til Moses, Aron og Mirjam: «Gå ut alle tre til møteteltet.» Og de tre gikk ut."
+    "text": "Da sa Herren plutselig til Moses, Aron og Mirjam: «Gå ut, dere tre, til møteteltet.» Og alle tre gikk ut.",
+    "versions": [
+      {
+        "text": "Da sa Herren plutselig til Moses, Aron og Mirjam: «Gå ut alle tre til møteteltet.» Og de tre gikk ut.",
+        "type": "error",
+        "severity": "minor",
+        "explanation": "Det hebraiske שְׁלָשְׁתְּכֶם har et direkte tiltale ('dere tre'), ikke bare 'alle tre'. Og שְׁלָשְׁתָּם i andre del betyr 'alle tre' / 'de tre'. Endringen gjør tiltaleformen tydeligere i den direkte talen."
+      }
+    ]
   },
   {
     "bookId": 4,
@@ -69,11 +77,17 @@
     "bookId": 4,
     "chapterId": 12,
     "verseId": 10,
-    "text": "Da skyen løftet seg fra teltet, se, da var Mirjam rammet av hudsykdom, hvit som snø. Aron vendte seg mot Mirjam og så at hun var syk.",
+    "text": "Da skyen løftet seg fra teltet, se, da var Mirjam rammet av hudsykdom, hvit som snø. Aron vendte seg mot Mirjam, og se, hun var rammet av hudsykdom.",
     "versions": [
       {
         "text": "Da skyen løftet seg fra teltet, se, da var Mirjam angrepet av spedalskhet, hvit som snø. Aron vendte seg mot Mirjam og så at hun var spedalsk.",
         "explanation": "מְצֹרַעַת refererer til en hudsykdom (tsara'at) som ikke er identisk med moderne lepra/spedalskhet. Mange moderne oversettelser bruker 'hudsykdom' for å unngå feilaktig medisinsk assosiasjon. Dette er dog en teologisk/terminologisk vurdering - 'spedalskhet' er tradisjonelt akseptert."
+      },
+      {
+        "text": "Da skyen løftet seg fra teltet, se, da var Mirjam rammet av hudsykdom, hvit som snø. Aron vendte seg mot Mirjam og så at hun var syk.",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "Den andre וְהִנֵּה מְצֹרָעַת har samme dramatiske 'se'-konstruksjon og bruker det samme begrepet מְצֹרָעַת. 'Og så at hun var syk' er for svakt – det mister både den dramatiske והנה-konstruksjonen og den spesifikke gjentakelsen av hudsykdombegrepet. Gjengivelsen bør speile originalens retoriske repetisjon."
       }
     ]
   },
@@ -99,11 +113,17 @@
     "bookId": 4,
     "chapterId": 12,
     "verseId": 13,
-    "text": "Da ropte Moses til Herren: «Å Gud, kjære, helbred henne!»",
+    "text": "Da ropte Moses til Herren: «Å Gud, jeg ber deg, helbred henne!»",
     "versions": [
       {
         "text": "Da ropte Moses til Herren: «Å Gud, helbred henne!»",
         "explanation": "Det hebraiske har dobbelt נָא (na) - et bønnfallende partikel. 'Å Gud, helbred henne!' fanger bare én נָא. En gjengivelse som 'Å Gud, kjære, helbred henne!' eller 'Å Gud, jeg ber deg, helbred henne!' ville bedre formidle den intense bønnen. Kan også vurderes: 'Å Gud, helbred henne, jeg ber!'"
+      },
+      {
+        "text": "Da ropte Moses til Herren: «Å Gud, kjære, helbred henne!»",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "'Kjære' som gjengivelse av det første נָא virker litt uformelt i en bønn rettet til Gud. 'Jeg ber deg' formidler den bønnfallende tonen på en mer verdig måte, og var nevnt som alternativ i endringshistorikken. Dette er bare et forslag om tone, ikke en kritisk feil."
       }
     ]
   },

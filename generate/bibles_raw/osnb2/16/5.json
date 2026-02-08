@@ -27,11 +27,17 @@
     "bookId": 16,
     "chapterId": 5,
     "verseId": 5,
-    "text": "«Men vårt kjød er som våre brødres kjød, og våre barn er som deres barn. Likevel må vi tvinge sønnene og døtrene våre til å bli slaver. Noen av døtrene våre er allerede tvunget til dette, og vi er maktesløse, for åkrene og vingårdene våre tilhører andre.»",
+    "text": "«Nå er jo vårt kjød som våre brødres kjød, og våre barn er som deres barn. Likevel må vi tvinge sønnene og døtrene våre til å bli slaver. Noen av døtrene våre er allerede tvunget til dette, og vi er maktesløse, for åkrene og vingårdene våre tilhører andre.»",
     "versions": [
       {
         "text": "«Men vårt kjøtt er som våre brødres kjøtt, og våre barn er som deres barn. Likevel må vi selge sønnene og døtrene våre som slaver. Noen av døtrene våre er allerede solgt, og vi er maktesløse, for åkrene og vingårdene våre tilhører andre.»",
         "explanation": "Det hebraiske verbet כֹּבְשִׁים (kovshim) betyr 'å undertvinge/tvinge', ikke 'å selge'. Likeledes betyr נִכְבָּשׁוֹת (nichbashot) 'er undertvunget/tvunget', ikke 'solgt'. Dette er et sterkere uttrykk som viser tvangen i situasjonen."
+      },
+      {
+        "text": "«Men vårt kjød er som våre brødres kjød, og våre barn er som deres barn. Likevel må vi tvinge sønnene og døtrene våre til å bli slaver. Noen av døtrene våre er allerede tvunget til dette, og vi er maktesløse, for åkrene og vingårdene våre tilhører andre.»",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "Det hebraiske וְעַתָּה (ve'attah) betyr 'og nå' / 'nå', som markerer en overgang. 'Men' fanger ikke helt opp dette. Ellers er verset godt oversatt etter revisjon."
       }
     ]
   },
@@ -69,7 +75,15 @@
     "bookId": 16,
     "chapterId": 5,
     "verseId": 11,
-    "text": "Gi dem i dag tilbake åkrene, vingårdene, olivenlundene og husene deres, og ettergi rentene på pengene, kornet, vinen og oljen som dere har krevd av dem."
+    "text": "Gi dem i dag tilbake åkrene, vingårdene, olivenlundene og husene deres, og den hundredelen av pengene, kornet, vinen og oljen som dere har krevd av dem som rente.",
+    "versions": [
+      {
+        "text": "Gi dem i dag tilbake åkrene, vingårdene, olivenlundene og husene deres, og ettergi rentene på pengene, kornet, vinen og oljen som dere har krevd av dem.",
+        "type": "error",
+        "severity": "major",
+        "explanation": "Det hebraiske מְאַת (me'at) betyr 'hundredel' (altså 1 prosent, trolig en månedlig rente). Oversettelsen sier bare 'rentene', men det spesifikke 'hundredelen' (den prosentvise renten) er viktig informasjon som bør gjenspeiles i oversettelsen."
+      }
+    ]
   },
   {
     "bookId": 16,
@@ -87,7 +101,15 @@
     "bookId": 16,
     "chapterId": 5,
     "verseId": 14,
-    "text": "Fra den dagen jeg ble utnevnt til stattholder i Juda – fra kong Artaxerxes' tjuende år til hans trettiannet år, tolv år i alt – spiste verken jeg eller mine brødre av stattholderens kost."
+    "text": "Fra den dagen jeg ble utnevnt til stattholder i Juda – fra kong Artaxerxes' tjuende år til hans trettiandre år, tolv år i alt – spiste verken jeg eller mine brødre av stattholderens kost.",
+    "versions": [
+      {
+        "text": "Fra den dagen jeg ble utnevnt til stattholder i Juda – fra kong Artaxerxes' tjuende år til hans trettiannet år, tolv år i alt – spiste verken jeg eller mine brødre av stattholderens kost.",
+        "type": "error",
+        "severity": "minor",
+        "explanation": "Det hebraiske שְׁלֹשִׁים וּשְׁתַּיִם betyr 'trettito', altså det 32. året. 'Trettiannet' (31.) er feil. Korrekt norsk ordenstall er 'trettiandre'."
+      }
+    ]
   },
   {
     "bookId": 16,
@@ -117,7 +139,15 @@
     "bookId": 16,
     "chapterId": 5,
     "verseId": 18,
-    "text": "Det som ble tilberedt for hver dag, var én okse, seks utvalgte sauer og fugler. Og hver tiende dag ble det servert vin i store mengder. Likevel krevde jeg ikke stattholderens kost, for arbeidet lå allerede tungt på dette folket."
+    "text": "Det som ble tilberedt for hver dag, var én okse, seks utvalgte sauer og fugler. Og hver tiende dag ble det servert rikelig med alle slags viner. Likevel krevde jeg ikke stattholderens kost, for arbeidet lå allerede tungt på dette folket.",
+    "versions": [
+      {
+        "text": "Det som ble tilberedt for hver dag, var én okse, seks utvalgte sauer og fugler. Og hver tiende dag ble det servert vin i store mengder. Likevel krevde jeg ikke stattholderens kost, for arbeidet lå allerede tungt på dette folket.",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "Det hebraiske בְּכָל־יַיִן לְהַרְבֵּה betyr mer presist 'rikelig med all slags vin' – altså variasjon og mengde. 'Vin i store mengder' dekker mengden men mister noe av bredden i uttrykket."
+      }
+    ]
   },
   {
     "bookId": 16,

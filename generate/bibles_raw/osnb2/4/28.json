@@ -3,7 +3,15 @@
     "bookId": 4,
     "chapterId": 28,
     "verseId": 1,
-    "text": "Herren talte til Moses og sa:"
+    "text": "Herren talte til Moses:",
+    "versions": [
+      {
+        "text": "Herren talte til Moses og sa:",
+        "type": "error",
+        "severity": "minor",
+        "explanation": "Det hebraiske 'לֵּאמֹר' betyr 'og sa' eller bare innleder direkte tale. Oversettelsen 'Herren talte til Moses og sa:' er akseptabel, men 'Herren talte til Moses:' er mer idiomatisk på norsk og unngår redundansen med 'talte ... og sa'. Dette er imidlertid en svært liten stilistisk preferanse."
+      }
+    ]
   },
   {
     "bookId": 4,
@@ -69,7 +77,15 @@
     "bookId": 4,
     "chapterId": 28,
     "verseId": 12,
-    "text": "Til hver okse: tre tiendedeler efa fint mel som grødeoffer, blandet med olje. Til hver vær: to tiendedeler efa fint mel som grødeoffer, blandet med olje."
+    "text": "Til hver okse: tre tiendedeler efa fint mel som grødeoffer, blandet med olje. Til væren: to tiendedeler efa fint mel som grødeoffer, blandet med olje.",
+    "versions": [
+      {
+        "text": "Til hver okse: tre tiendedeler efa fint mel som grødeoffer, blandet med olje. Til hver vær: to tiendedeler efa fint mel som grødeoffer, blandet med olje.",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "Hebraisk har 'לָאַיִל הָאֶחָד' (den ene væren), og det er kun snakk om én vær (vers 11). 'Hver vær' antyder flere værer, men det er bare én. 'Til væren' er mer presist."
+      }
+    ]
   },
   {
     "bookId": 4,
@@ -117,7 +133,15 @@
     "bookId": 4,
     "chapterId": 28,
     "verseId": 20,
-    "text": "Grødeofferet som hører til, skal være fint mel blandet med olje: tre tiendedeler efa til hver okse og to tiendedeler efa til væren."
+    "text": "Grødeofferet som hører til, skal være fint mel blandet med olje: tre tiendedeler efa til hver okse og to tiendedeler efa til væren. Slik skal dere gjøre.",
+    "versions": [
+      {
+        "text": "Grødeofferet som hører til, skal være fint mel blandet med olje: tre tiendedeler efa til hver okse og to tiendedeler efa til væren.",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "Det hebraiske 'תַּעֲשׂוּ' (dere skal gjøre/tilberede) ved slutten av verset er utelatt i oversettelsen."
+      }
+    ]
   },
   {
     "bookId": 4,
@@ -165,7 +189,15 @@
     "bookId": 4,
     "chapterId": 28,
     "verseId": 27,
-    "text": "Dere skal bære fram et brennoffer til en duft som behager Herren: to unge okser, én vær og sju årsgamle lam uten feil."
+    "text": "Dere skal bære fram et brennoffer til en duft som behager Herren: to unge okser, én vær og sju årsgamle lam.",
+    "versions": [
+      {
+        "text": "Dere skal bære fram et brennoffer til en duft som behager Herren: to unge okser, én vær og sju årsgamle lam uten feil.",
+        "type": "error",
+        "severity": "minor",
+        "explanation": "Den hebraiske teksten i vers 27 nevner ikke תְּמִימִם (uten feil) for dyrene. Kravet om at de skal være uten feil kommer først i vers 31 (תְּמִימִם יִהְיוּ־לָכֶם). Å legge til 'uten feil' her er en tilføyelse som ikke finnes i originalen."
+      }
+    ]
   },
   {
     "bookId": 4,

@@ -3,7 +3,15 @@
     "bookId": 10,
     "chapterId": 23,
     "verseId": 1,
-    "text": "Dette er Davids siste ord. Så sier David, Isais sønn, ordet fra mannen som ble opphøyet, Jakobs Guds salvede, Israels liflige sanger:"
+    "text": "Dette er Davids siste ord. Så sier David, Isais sønn, ordet fra mannen som ble reist opp til det høye, Jakobs Guds salvede, Israels liflige sanger:",
+    "versions": [
+      {
+        "text": "Dette er Davids siste ord. Så sier David, Isais sønn, ordet fra mannen som ble opphøyet, Jakobs Guds salvede, Israels liflige sanger:",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "הֻקַם עָל means 'raised up on high' – the Hebrew עָל means 'on high/the Most High.' 'Ble opphøyet' is acceptable but 'ble reist opp til det høye' better captures the nuance of עָל as indicating elevation/the Most High."
+      }
+    ]
   },
   {
     "bookId": 10,
@@ -111,13 +119,29 @@
     "bookId": 10,
     "chapterId": 23,
     "verseId": 19,
-    "text": "Han var den mest ansette blant de tre og ble deres høvding, men han nådde ikke opp til de tre første."
+    "text": "Han var den mest ansette av de tre og ble deres leder, men han nådde ikke opp til de tre første.",
+    "versions": [
+      {
+        "text": "Han var den mest ansette blant de tre og ble deres høvding, men han nådde ikke opp til de tre første.",
+        "type": "error",
+        "severity": "minor",
+        "explanation": "The context here is ambiguous. In verse 18, it says Abishai was leader of 'the three' (השלשה), and verse 19 says he was honored among 'the three' but didn't reach 'the three.' Some scholars understand 'the thirty' in places. The current translation is internally consistent, so this is minor."
+      }
+    ]
   },
   {
     "bookId": 10,
     "chapterId": 23,
     "verseId": 20,
-    "text": "Benaja, sønn av Jojada, var sønn av en tapper mann fra Kabseel, en som hadde gjort store bedrifter. Han slo ned de to sønnene til Ariel fra Moab. Han gikk også ned og slo i hjel en løve i en brønn en dag det hadde snødd."
+    "text": "Benaja, sønn av Jojada, var sønn av en tapper mann fra Kabseel, en som hadde gjort store bedrifter. Han slo ned to av Moabs mektigste krigere. Han gikk også ned og slo i hjel en løve i en brønn en dag det hadde snødd.",
+    "versions": [
+      {
+        "text": "Benaja, sønn av Jojada, var sønn av en tapper mann fra Kabseel, en som hadde gjort store bedrifter. Han slo ned de to sønnene til Ariel fra Moab. Han gikk også ned og slo i hjel en løve i en brønn en dag det hadde snødd.",
+        "type": "error",
+        "severity": "major",
+        "explanation": "The Hebrew שְׁנֵי אֲרִאֵל מוֹאָב does not mean 'the two sons of Ariel from Moab.' The word אֲרִאֵל (ariel) means 'lion of God' or 'champion/hero,' so this refers to two champions/mighty warriors of Moab, not sons of someone named Ariel. The translation adds 'sønnene til' (sons of) which is not in the text."
+      }
+    ]
   },
   {
     "bookId": 10,

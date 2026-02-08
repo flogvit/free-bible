@@ -61,7 +61,15 @@
     "bookId": 15,
     "chapterId": 9,
     "verseId": 7,
-    "text": "Fra våre fedres dager til denne dag har vi vært dypt skyldige. På grunn av våre synder er vi, våre konger og våre prester blitt overgitt til fremmede konger, til sverd, fangenskap, plyndring og skam, slik det er den dag i dag."
+    "text": "Fra våre fedres dager til denne dag har vi vært dypt skyldige. På grunn av våre synder er vi, våre konger og våre prester blitt overgitt i hendene på kongene i landene, til sverd, fangenskap, plyndring og skam, slik det er den dag i dag.",
+    "versions": [
+      {
+        "text": "Fra våre fedres dager til denne dag har vi vært dypt skyldige. På grunn av våre synder er vi, våre konger og våre prester blitt overgitt til fremmede konger, til sverd, fangenskap, plyndring og skam, slik det er den dag i dag.",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "«מַלְכֵי הָאֲרָצוֹת» betyr «kongene i landene», ikke «fremmede konger». Uttrykket er parallelt med «folkene i landene» som brukes ellers i kapitlet. «Fremmede konger» er en tolkende gjengivelse som mangler den spesifikke referansen."
+      }
+    ]
   },
   {
     "bookId": 15,
@@ -91,11 +99,17 @@
     "bookId": 15,
     "chapterId": 9,
     "verseId": 11,
-    "text": "som du ga gjennom dine tjenere profetene da du sa: 'Landet dere kommer til for å ta i eie, er et urent land på grunn av urenheten til folkene der. Med sine avskyelige skikker har de fylt det fra ende til annen med sin urenhet.'",
+    "text": "som du ga gjennom dine tjenere profetene da du sa: 'Landet dere kommer til for å ta i eie, er et urent land på grunn av urenheten til folkene i landene. Med sine avskyelige skikker har de fylt det fra ende til annen med sin urenhet.",
     "versions": [
       {
         "text": "som du ga gjennom dine tjenere profetene da du sa: 'Landet dere kommer til for å ta i eie, er et urent land på grunn av urenheten til folkene der. Med sine avskyelige skikker har de fylt det fra ende til annen med sin urenhet.",
         "explanation": "Det indre sitatet som begynner med 'Landet dere kommer til...' avsluttes ikke før i vers 12. Vers 11 bør ikke ha avsluttende anførselstegn, eller det bør markeres at sitatet fortsetter."
+      },
+      {
+        "text": "som du ga gjennom dine tjenere profetene da du sa: 'Landet dere kommer til for å ta i eie, er et urent land på grunn av urenheten til folkene der. Med sine avskyelige skikker har de fylt det fra ende til annen med sin urenhet.'",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "Det indre sitatet fortsetter inn i vers 12, så avsluttende enkelt anførselstegn bør ikke stå i vers 11 men i vers 12. I tillegg: «עַמֵּי הָאֲרָצוֹת» betyr «folkene i landene» (et spesifikt uttrykk brukt gjennomgående i Esra), ikke bare «folkene der». Merk: det forrige endringsforslaget handlet om å legge til avsluttende tegn, men nå bør det fjernes igjen siden sitatet faktisk fortsetter til vers 12."
       }
     ]
   },
@@ -103,11 +117,17 @@
     "bookId": 15,
     "chapterId": 9,
     "verseId": 12,
-    "text": "Derfor skal dere ikke gi døtrene deres til deres sønner eller ta deres døtre til hustruer for sønnene deres. Søk aldri deres fred eller velstand, så dere kan bli sterke og spise av landets gode ting og la barna deres arve det for alltid.'",
+    "text": "Nå skal dere ikke gi døtrene deres til deres sønner eller ta deres døtre til hustruer for sønnene deres. Søk aldri deres fred eller velstand, så dere kan bli sterke og spise av landets gode ting og la barna deres arve det for alltid.'»",
     "versions": [
       {
         "text": "Derfor skal dere ikke gi døtrene deres til deres sønner eller ta deres døtre til koner for sønnene deres. Søk aldri deres fred eller velstand, så dere kan bli sterke og spise av landets gode ting og la barna deres arve det for alltid.'",
         "explanation": "For konsistens med vers 2 hvor «hustruer» brukes, bør samme ord brukes her. «Hustruer» er også mer bibelsk språkbruk."
+      },
+      {
+        "text": "Derfor skal dere ikke gi døtrene deres til deres sønner eller ta deres døtre til hustruer for sønnene deres. Søk aldri deres fred eller velstand, så dere kan bli sterke og spise av landets gode ting og la barna deres arve det for alltid.'",
+        "type": "error",
+        "severity": "major",
+        "explanation": "Hebraisk «וְעַתָּה» betyr «og nå» / «nå», ikke «derfor». Det uttrykker tidsmessig overgang, ikke kausalitet. I tillegg mangler det avsluttende ytre anførselstegn (») etter det avsluttende enkle anførselstegnet, ettersom Esras sitat fra vers 6 også avsluttes her (det ytre sitatet som startet i vers 6 med «Min Gud...» løper gjennom til slutten av kapitlet, men det indre sitatet fra profetene avsluttes her)."
       }
     ]
   },

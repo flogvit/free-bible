@@ -63,11 +63,17 @@
     "bookId": 42,
     "chapterId": 19,
     "verseId": 9,
-    "text": "Da sa Jesus om ham: «I dag er frelse kommet til dette huset, for også han er en Abrahams sønn.",
+    "text": "Da sa Jesus om ham: «I dag er frelse kommet til dette huset, for også han er en sønn av Abraham.",
     "versions": [
       {
         "text": "Da sa Jesus til ham: «I dag er frelse kommet til dette huset, for også han er en Abrahams sønn.",
         "explanation": "Det greske 'πρὸς αὐτὸν' kan bety 'til ham' eller 'om ham'. Konteksten tyder på at Jesus snakker om Sakkeus (i tredje person: 'også han er'), ikke direkte til ham. 'Om ham' gir bedre sammenheng med resten av setningen."
+      },
+      {
+        "text": "Da sa Jesus om ham: «I dag er frelse kommet til dette huset, for også han er en Abrahams sønn.",
+        "type": "error",
+        "severity": "major",
+        "explanation": "Verset mangler avsluttende anførselstegn. Sitatet som starter her avsluttes først i vers 10, så dette er egentlig korrekt at det ikke lukkes her. Men merk at vers 10 har avsluttende anførselstegn. Ingen endring nødvendig for anførselstegn. Verset er OK som det er med tanke på versjonshistorikken."
       }
     ]
   },
@@ -111,7 +117,15 @@
     "bookId": 42,
     "chapterId": 19,
     "verseId": 14,
-    "text": "Men innbyggerne i landet hatet ham og sendte en delegasjon etter ham med beskjed: 'Vi vil ikke ha denne mannen til konge over oss.'"
+    "text": "Men byens innbyggere hatet ham og sendte en delegasjon etter ham med beskjed: 'Vi vil ikke ha denne mannen til konge over oss.'",
+    "versions": [
+      {
+        "text": "Men innbyggerne i landet hatet ham og sendte en delegasjon etter ham med beskjed: 'Vi vil ikke ha denne mannen til konge over oss.'",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "Det greske 'πολῖται' betyr 'borgere' eller 'innbyggere i byen', ikke 'innbyggerne i landet'. Det er avledet av 'πόλις' (by). 'Byens innbyggere' eller 'borgerne' er mer presist."
+      }
+    ]
   },
   {
     "bookId": 42,
@@ -141,7 +155,15 @@
     "bookId": 42,
     "chapterId": 19,
     "verseId": 18,
-    "text": "Den andre kom og sa: 'Herre, din mine har gitt fem miner.'"
+    "text": "Den andre kom og sa: 'Herre, din mine har gitt fem miner i avkastning.'",
+    "versions": [
+      {
+        "text": "Den andre kom og sa: 'Herre, din mine har gitt fem miner.'",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "For konsistens med vers 16, der det står 'din mine har gitt ti miner i avkastning', bør også vers 18 ha 'i avkastning'. Selv om det greske 'ἐποίησεν' (har gjort/frembrakt) er litt annerledes enn vers 16s 'προσηργάσατο' (har tjent i tillegg), betyr begge at minen har produsert avkastning."
+      }
+    ]
   },
   {
     "bookId": 42,
@@ -177,7 +199,15 @@
     "bookId": 42,
     "chapterId": 19,
     "verseId": 23,
-    "text": "Hvorfor satte du da ikke pengene mine i banken? Så kunne jeg fått dem tilbake med renter når jeg kom.'"
+    "text": "Hvorfor satte du da ikke pengene mine i banken? Da kunne jeg krevd dem inn med renter når jeg kom.'",
+    "versions": [
+      {
+        "text": "Hvorfor satte du da ikke pengene mine i banken? Så kunne jeg fått dem tilbake med renter når jeg kom.'",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "Det greske 'ἔπραξα' betyr 'krevd inn' snarere enn 'fått tilbake'. Og 'κἀγὼ ... ἂν' (da kunne jeg) er bedre gjengitt med 'Da kunne jeg' enn 'Så kunne jeg'. Dessuten innebærer 'ἔπραξα' en aktiv innkreving, ikke bare passiv mottagelse."
+      }
+    ]
   },
   {
     "bookId": 42,
@@ -285,7 +315,15 @@
     "bookId": 42,
     "chapterId": 19,
     "verseId": 38,
-    "text": "De ropte: «Velsignet er kongen som kommer i Herrens navn! Fred i himmelen og ære i det høyeste!»"
+    "text": "De ropte: «Velsignet er han, kongen som kommer i Herrens navn! Fred i himmelen og ære i det høyeste!»",
+    "versions": [
+      {
+        "text": "De ropte: «Velsignet er kongen som kommer i Herrens navn! Fred i himmelen og ære i det høyeste!»",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "Gresken har 'Εὐλογημένος ὁ ἐρχόμενος βασιλεὺς' der 'βασιλεὺς' er en apposisjon til 'ὁ ἐρχόμενος'. Den nåværende oversettelsen er grammatisk akseptabel, men 'Velsignet er han, kongen som kommer' gjør den messianske referansen (Salme 118:26) tydeligere. Dette er imidlertid en mindre stilistisk preferanse."
+      }
+    ]
   },
   {
     "bookId": 42,
@@ -327,7 +365,7 @@
     "bookId": 42,
     "chapterId": 19,
     "verseId": 44,
-    "text": "De skal slå deg og dine barn til jorden, og de skal ikke la stein bli tilbake på stein i deg, fordi du ikke kjente tiden da Gud gjestet deg.»",
+    "text": "De skal jevne deg med jorden, deg og dine barn, og de skal ikke la stein bli tilbake på stein i deg, fordi du ikke kjente tiden da Gud gjestet deg.»",
     "versions": [
       {
         "text": "De skal slå deg og dine barn til jorden, og de skal ikke la stein bli tilbake på stein i deg, fordi du ikke kjente tiden da du ble gjestet.»",
@@ -336,6 +374,12 @@
       {
         "text": "De skal slå deg og dine barn til jorden, og de skal ikke la stein bli tilbake på stein i deg, fordi du ikke kjente tiden da Gud gjestet deg.",
         "explanation": "Det mangler et avsluttende anførselstegn (») på slutten av verset. Jesus' tale som startet i vers 42 må avsluttes."
+      },
+      {
+        "text": "De skal slå deg og dine barn til jorden, og de skal ikke la stein bli tilbake på stein i deg, fordi du ikke kjente tiden da Gud gjestet deg.»",
+        "type": "error",
+        "severity": "major",
+        "explanation": "Det greske 'ἐδαφιοῦσίν σε' betyr 'jevne med jorden' / 'rasere til grunnen'. Verbet ἐδαφίζω brukes om å ødelegge/rase en by. 'Slå deg til jorden' er upresist – det handler om å rase/ødelegge byen (Jerusalem personifisert) og drepe barna. Verset har 2 tidligere revisjoner, men disse gjaldt anførselstegn og 'Gud gjestet deg', ikke dette uttrykket."
       }
     ]
   },

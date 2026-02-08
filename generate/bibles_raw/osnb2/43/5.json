@@ -81,7 +81,15 @@
     "bookId": 43,
     "chapterId": 5,
     "verseId": 12,
-    "text": "De spurte ham: «Hvem er den mannen som sa til deg: Ta båren din og gå?»"
+    "text": "De spurte ham: «Hvem er den mannen som sa til deg: Ta opp og gå?»",
+    "versions": [
+      {
+        "text": "De spurte ham: «Hvem er den mannen som sa til deg: Ta båren din og gå?»",
+        "type": "error",
+        "severity": "minor",
+        "explanation": "I vers 12 spør de kun 'Ἆρον καὶ περιπάτει' – 'Ta opp og gå!' De nevner ikke 'båren din' (τὸν κράβαττόν σου) i spørsmålet. Den greske teksten forkorter bevisst uttrykket. Det er en liten nyanse, men oversettelsen legger til 'båren din' som ikke er i den greske teksten for dette verset."
+      }
+    ]
   },
   {
     "bookId": 43,
@@ -129,11 +137,17 @@
     "bookId": 43,
     "chapterId": 5,
     "verseId": 19,
-    "text": "Jesus svarte og sa til dem: «Sannelig, sannelig, jeg sier dere: Sønnen kan ikke gjøre noe av seg selv, men bare det han ser Faderen gjøre. For det Faderen gjør, det gjør også Sønnen.»",
+    "text": "Jesus svarte og sa til dem: «Sannelig, sannelig, jeg sier dere: Sønnen kan ikke gjøre noe av seg selv, men bare det han ser Faderen gjøre. For det Faderen gjør, det gjør også Sønnen på samme måte.»",
     "versions": [
       {
         "text": "Jesus svarte og sa til dem: «Sannelig, sannelig, jeg sier dere: Sønnen kan ikke gjøre noe av seg selv, men bare det han ser Faderen gjøre. For det Faderen gjør, det gjør også Sønnen.",
         "explanation": "Manglende avsluttende anførselstegn. Verset avsluttes midt i Jesu tale, men trenger likevel markering for at sitatet fortsetter (eller avsluttende tegn hvis det er ment som en fullstendig enhet)."
+      },
+      {
+        "text": "Jesus svarte og sa til dem: «Sannelig, sannelig, jeg sier dere: Sønnen kan ikke gjøre noe av seg selv, men bare det han ser Faderen gjøre. For det Faderen gjør, det gjør også Sønnen.»",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "Det greske 'ὁμοίως' (likeledes, på samme måte) er utelatt i oversettelsen. Dette er et viktig ord som understreker at Sønnen gjør det samme på nøyaktig samme måte – det handler om identisk handling, ikke bare tilsvarende."
       }
     ]
   },
@@ -213,7 +227,15 @@
     "bookId": 43,
     "chapterId": 5,
     "verseId": 31,
-    "text": "Hvis jeg vitner om meg selv, er mitt vitnesbyrd ikke gyldig."
+    "text": "Hvis jeg vitner om meg selv, er mitt vitnesbyrd ikke sant.",
+    "versions": [
+      {
+        "text": "Hvis jeg vitner om meg selv, er mitt vitnesbyrd ikke gyldig.",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "Det greske 'ἀληθής' betyr 'sant/sannferdig'. Oversettelsen bruker 'gyldig', som er en juridisk tolkning. I vers 32 brukes 'sant' (ἀληθής) korrekt. Det bør være konsistent, og 'sant' er en mer direkte oversettelse. Jesus snakker om sannhet/troverdighet, ikke juridisk gyldighet."
+      }
+    ]
   },
   {
     "bookId": 43,

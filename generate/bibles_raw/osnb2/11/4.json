@@ -9,7 +9,15 @@
     "bookId": 11,
     "chapterId": 4,
     "verseId": 2,
-    "text": "Dette var hans øverste embetsmenn: Asarja, sønn av Sadok, var prest."
+    "text": "Dette var hans øverste embetsmenn: Asarja, sønn av Sadok, var presten.",
+    "versions": [
+      {
+        "text": "Dette var hans øverste embetsmenn: Asarja, sønn av Sadok, var prest.",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "Det hebraiske «הַכֹּהֵן» har bestemt artikkel, 'presten', noe som indikerer en spesifikk rolle (øverstepresten eller en bestemt prestestilling), ikke bare at han var en prest blant mange. Oversettelsen 'var prest' mangler denne nyanseringen."
+      }
+    ]
   },
   {
     "bookId": 11,
@@ -27,7 +35,15 @@
     "bookId": 11,
     "chapterId": 4,
     "verseId": 5,
-    "text": "Asarja, sønn av Natan, var over stattholderne. Sabud, sønn av Natan, var prest og kongens venn."
+    "text": "Asarja, sønn av Natan, var over stattholderne. Sabud, sønn av Natan, var prest og kongens rådgiver.",
+    "versions": [
+      {
+        "text": "Asarja, sønn av Natan, var over stattholderne. Sabud, sønn av Natan, var prest og kongens venn.",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "Det hebraiske «רֵעֶה הַמֶּלֶךְ» betyr 'kongens venn', men dette var en offisiell tittel/embete som innebar en rådgiverfunksjon. 'Kongens rådgiver' formidler bedre den offisielle funksjonen, men 'kongens venn' er også akseptabelt som en etablert oversettelse. Dette er kun et forslag."
+      }
+    ]
   },
   {
     "bookId": 11,
@@ -75,7 +91,15 @@
     "bookId": 11,
     "chapterId": 4,
     "verseId": 13,
-    "text": "Ben-Geber i Ramot-Gilead. Han hadde Ja'irs leirer, som tilhørte Manasses sønn Ja'ir, i Gilead. Han hadde også Argob-området i Basan, seksti store byer med murer og bronseportslåer."
+    "text": "Ben-Geber i Ramot-Gilead. Han hadde Ja'irs leirer, som tilhørte Manasse, i Gilead. Han hadde også Argob-området i Basan, seksti store byer med murer og bronseportslåer.",
+    "versions": [
+      {
+        "text": "Ben-Geber i Ramot-Gilead. Han hadde Ja'irs leirer, som tilhørte Manasses sønn Ja'ir, i Gilead. Han hadde også Argob-området i Basan, seksti store byer med murer og bronseportslåer.",
+        "type": "error",
+        "severity": "minor",
+        "explanation": "Uttrykket «חַוֺּת יָאִיר בֶּן־מְנַשֶּׁה» betyr 'Ja'irs leirer, Manasses sønns', der 'ben-Menashe' refererer til Ja'ir som en etterkommer av Manasse, ikke at Ja'ir var Manasses sønn direkte. Det nåværende 'Manasses sønn Ja'ir' er misvisende – Ja'ir var en fjern etterkommer av Manasse (jf. 4 Mos 32:41). Det bør oversettes 'som tilhørte Manasse' eller 'av Manasses ætt'."
+      }
+    ]
   },
   {
     "bookId": 11,
@@ -117,11 +141,17 @@
     "bookId": 11,
     "chapterId": 4,
     "verseId": 20,
-    "text": "Juda og Israel var tallrike, som sanden ved havet i mengde. De spiste og drakk og var glade.",
+    "text": "Juda og Israel var tallrike som sanden ved havet, i mengde. De spiste og drakk og var glade.",
     "versions": [
       {
         "text": "Juda og Israel var tallrike som sanden ved havet. De spiste og drakk og var glade.",
         "explanation": "Det hebraiske «לָרֹב» (i mengde/i masser) forsterker sammenligningen og bør gjengis for å bevare den poetiske intensiteten i originalen."
+      },
+      {
+        "text": "Juda og Israel var tallrike, som sanden ved havet i mengde. De spiste og drakk og var glade.",
+        "type": "grammar",
+        "severity": "minor",
+        "explanation": "Kommaet etter 'tallrike' bryter den naturlige sammenligningen. Kommaet bør heller plasseres etter 'havet' for å la sammenligningen flyte bedre, med 'i mengde' som en forsterkende tilføyelse."
       }
     ]
   }

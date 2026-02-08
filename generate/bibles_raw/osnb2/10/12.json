@@ -27,7 +27,15 @@
     "bookId": 10,
     "chapterId": 12,
     "verseId": 4,
-    "text": "Så kom det en vandringsmann til den rike. Men han ville ikke ta av sine egne sauer eller okser for å lage mat til den reisende som var kommet til ham. I stedet tok han den fattige mannens lam og tilberedte det for mannen som var kommet til ham.»"
+    "text": "Så kom det en vandringsmann til den rike. Men han kunne ikke få seg til å ta av sine egne sauer eller storfe for å lage mat til den reisende som var kommet til ham. I stedet tok han den fattige mannens lam og tilberedte det for mannen som var kommet til ham.»",
+    "versions": [
+      {
+        "text": "Så kom det en vandringsmann til den rike. Men han ville ikke ta av sine egne sauer eller okser for å lage mat til den reisende som var kommet til ham. I stedet tok han den fattige mannens lam og tilberedte det for mannen som var kommet til ham.»",
+        "type": "error",
+        "severity": "major",
+        "explanation": "Vers 2 ble rettet fra 'okser' til 'storfe' fordi בָקָר betyr storfe generelt. Samme ord brukes her i vers 4 (וּמִבְּקָר֔וֹ), men det er fortsatt oversatt som 'okser'. For konsistens bør det også her stå 'storfe'. I tillegg betyr וַיַּחְמֹל 'han sparte/skånte' i betydningen 'han kunne ikke få seg til', noe som er litt sterkere enn 'ville ikke'."
+      }
+    ]
   },
   {
     "bookId": 10,
@@ -81,7 +89,15 @@
     "bookId": 10,
     "chapterId": 12,
     "verseId": 12,
-    "text": "For du gjorde det i det skjulte, men jeg vil gjøre dette for hele Israels øyne og i fullt dagslys.»"
+    "text": "For du gjorde det i det skjulte, men jeg vil gjøre dette for hele Israels øyne og for solens øyne.»",
+    "versions": [
+      {
+        "text": "For du gjorde det i det skjulte, men jeg vil gjøre dette for hele Israels øyne og i fullt dagslys.»",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "I vers 11 ble 'i full offentlighet' bevisst endret tilbake til 'for denne solens øyne' for å beholde den poetiske parallellen til vers 12. Men vers 12 bruker fortsatt den tolkende frasen 'i fullt dagslys' i stedet for den bokstavelige 'for solens øyne' (נֶגֶד הַשָּׁמֶשׁ). For å opprettholde den poetiske parallellen som var begrunnelsen for endringen i vers 11, bør vers 12 også bruke den mer bokstavelige formuleringen."
+      }
+    ]
   },
   {
     "bookId": 10,
@@ -93,11 +109,17 @@
     "bookId": 10,
     "chapterId": 12,
     "verseId": 14,
-    "text": "Men fordi du ved denne gjerningen har vist stor forakt for Herren, skal den sønnen som er født deg, visselig dø.»",
+    "text": "Men fordi du ved denne gjerningen har gitt Herrens fiender stor grunn til å spotte, skal den sønnen som er født deg, visselig dø.»",
     "versions": [
       {
         "text": "Men fordi du ved denne gjerningen har gitt Herrens fiender grunn til å spotte, skal den sønnen som er født deg, visselig dø.»",
         "explanation": "Den hebraiske teksten har en kjent tiqqun soferim (skriverkorrigering) hvor 'Herrens fiender' erstatter det opprinnelige 'Herren'. Frasen נִאֵץ נִאַצְתָּ betyr 'du har vist dyp forakt'. Mange oversettelser følger den opprinnelige betydningen at David foraktet Herren selv, ikke bare ga fiender grunn til å spotte."
+      },
+      {
+        "text": "Men fordi du ved denne gjerningen har vist stor forakt for Herren, skal den sønnen som er født deg, visselig dø.»",
+        "type": "theological",
+        "severity": "minor",
+        "explanation": "Versjonshistorikken viser at teksten ble endret fra 'gitt Herrens fiender grunn til å spotte' til 'vist stor forakt for Herren' med begrunnelse om tiqqun soferim. Men den masoretiske teksten som faktisk foreligger sier אֶת־אֹיְבֵי יְהוָה (Herrens fiender). Selv om det finnes en tradisjon om tiqqun soferim, følger de fleste bibeloversettelser den overleverte hebraiske teksten. Å velge en rekonstruert opprinnelig lesemåte over den masoretiske teksten er uvanlig for en standardoversettelse."
       }
     ]
   },
@@ -111,7 +133,15 @@
     "bookId": 10,
     "chapterId": 12,
     "verseId": 16,
-    "text": "David søkte Gud for guttens skyld. David fastet strengt, og når han gikk inn for natten, lå han på bakken."
+    "text": "David søkte Gud for guttens skyld. David fastet, og han gikk inn og tilbrakte natten liggende på bakken.",
+    "versions": [
+      {
+        "text": "David søkte Gud for guttens skyld. David fastet strengt, og når han gikk inn for natten, lå han på bakken.",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "Hebraisk צוֹם alene betyr 'faste' uten forsterkende ord. 'Strengt' er tillagt. Dessuten beskriver וּבָא וְלָן וְשָׁכַב אָרְצָה en sekvens: han gikk inn, tilbrakte natten, og lå på bakken – ikke betinget 'når han gikk inn'."
+      }
+    ]
   },
   {
     "bookId": 10,
@@ -171,7 +201,15 @@
     "bookId": 10,
     "chapterId": 12,
     "verseId": 26,
-    "text": "Joab kjempet mot Rabba i Ammon og inntok kongsbyen."
+    "text": "Joab kjempet mot Rabba i Ammon og inntok den kongelige byen.",
+    "versions": [
+      {
+        "text": "Joab kjempet mot Rabba i Ammon og inntok kongsbyen.",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "עִיר הַמְּלוּכָה betyr 'den kongelige byen' eller 'kongebyen'. 'Kongsbyen' er forståelig, men 'den kongelige byen' er mer naturlig norsk bokmål."
+      }
+    ]
   },
   {
     "bookId": 10,

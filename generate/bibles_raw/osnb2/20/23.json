@@ -33,7 +33,15 @@
     "bookId": 20,
     "chapterId": 23,
     "verseId": 6,
-    "text": "Spis ikke maten til den som har et ondt øye, og begjær ikke hans delikatesser."
+    "text": "Spis ikke maten til den som er gjerrig, og begjær ikke hans delikatesser.",
+    "versions": [
+      {
+        "text": "Spis ikke maten til den som har et ondt øye, og begjær ikke hans delikatesser.",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "Det hebraiske uttrykket רַע עָיִן (ra ayin, 'ondt øye') er et idiom for gjerrighet/knauserhet. 'Den som har et ondt øye' er en ubearbeidet direkte oversettelse som ikke formidler meningen til norske lesere. 'Den som er gjerrig' kommuniserer den faktiske betydningen bedre."
+      }
+    ]
   },
   {
     "bookId": 20,
@@ -159,7 +167,15 @@
     "bookId": 20,
     "chapterId": 23,
     "verseId": 24,
-    "text": "En rettferdig manns far skal juble stort, og den som får en vis sønn, skal glede seg over ham."
+    "text": "En rettferdig manns far skal juble stort, og den som har født en vis sønn, skal glede seg over ham.",
+    "versions": [
+      {
+        "text": "En rettferdig manns far skal juble stort, og den som får en vis sønn, skal glede seg over ham.",
+        "type": "error",
+        "severity": "major",
+        "explanation": "Det hebraiske וְיוֹלֵד חָכָם refererer til den som har født/avlet et visst barn – det er et partisipp som beskriver faren som allerede har fått barnet. 'Den som får' kan tolkes som fremtidig, mens 'den som har født' er mer presist. Men viktigere: versets subjekt er faren til den rettferdige/vise, så 'får' er akseptabelt. Likevel er 'har født' nærmere den hebraiske partisippformen."
+      }
+    ]
   },
   {
     "bookId": 20,
@@ -189,11 +205,17 @@
     "bookId": 20,
     "chapterId": 23,
     "verseId": 29,
-    "text": "Hvem roper «ve»? Hvem har sorg? Hvem har strid? Hvem har klager? Hvem har sår uten grunn? Hvem har røde øyne?",
+    "text": "Hvem roper «ve»? Hvem roper «akk»? Hvem har strid? Hvem har klager? Hvem har sår uten grunn? Hvem har røde øyne?",
     "versions": [
       {
         "text": "Hvem har «ve»? Hvem har sorg? Hvem har strid? Hvem har klager? Hvem har sår uten grunn? Hvem har røde øyne?",
         "explanation": "Det hebraiske אוֹי (oy) er et utrop av smerte/klage. 'Hvem roper ve' gir bedre mening enn 'hvem har ve' på norsk."
+      },
+      {
+        "text": "Hvem roper «ve»? Hvem har sorg? Hvem har strid? Hvem har klager? Hvem har sår uten grunn? Hvem har røde øyne?",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "Det hebraiske אֲבוֹי (avoy) er et utrop av klage/smerte, parallelt med אוֹי (oy). Å oversette det som 'sorg' mister at det er et utrop. 'Hvem roper akk' ville bedre bevare parallellismen med 'hvem roper ve'. Men dette er en minor suggestion da 'sorg' fungerer akseptabelt."
       }
     ]
   },
@@ -201,7 +223,15 @@
     "bookId": 20,
     "chapterId": 23,
     "verseId": 30,
-    "text": "De som sitter lenge over vinen, de som kommer for å smake krydret vin."
+    "text": "De som sitter sent over vinen, de som kommer for å prøve krydret vin.",
+    "versions": [
+      {
+        "text": "De som sitter lenge over vinen, de som kommer for å smake krydret vin.",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "Det hebraiske מְאַחֲרִים betyr 'de som sitter sent' (dvs. til langt på natten), ikke bare 'lenge'. Også חקר betyr å 'undersøke/prøve', noe som passer bedre med 'prøve' enn 'smake'."
+      }
+    ]
   },
   {
     "bookId": 20,
@@ -243,6 +273,14 @@
     "bookId": 20,
     "chapterId": 23,
     "verseId": 35,
-    "text": "«De slo meg, men jeg følte ingen smerte. De banket meg, men jeg merket det ikke. Når våkner jeg? Jeg vil søke etter mer vin igjen.»"
+    "text": "«De slo meg, men jeg ble ikke syk. De banket meg, men jeg kjente det ikke. Når våkner jeg? Da vil jeg søke etter det igjen.»",
+    "versions": [
+      {
+        "text": "«De slo meg, men jeg følte ingen smerte. De banket meg, men jeg merket det ikke. Når våkner jeg? Jeg vil søke etter mer vin igjen.»",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "Det hebraiske חָלִיתִי betyr 'jeg ble syk/svak', ikke 'jeg følte smerte'. Også אֲבַקְשֶׁנּוּ ('jeg vil søke det') refererer tilbake til vinen med suffiks, og 'det' (vinen) er mer tro mot hebraisk enn 'mer vin'. Dessuten antyder עוֹד ('igjen/enda') at han vil fortsette å oppsøke vinen."
+      }
+    ]
   }
 ]

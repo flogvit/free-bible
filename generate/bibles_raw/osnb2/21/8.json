@@ -15,11 +15,17 @@
     "bookId": 21,
     "chapterId": 8,
     "verseId": 2,
-    "text": "Hold kongens befaling, og det på grunn av eden du har sverget for Gud.",
+    "text": "Jeg sier: Adlyd kongens befaling, og det på grunn av eden for Gud.",
     "versions": [
       {
         "text": "Jeg sier: Hold kongens befaling, på grunn av eden du har sverget for Gud.",
         "explanation": "Det hebraiske אֲנִי (ani - 'jeg') er vanskelig å plassere syntaktisk. Noen oversettelser knytter det til vers 1, andre ser det som emfatisk. 'Jeg sier:' er en tolkning, men kan virke litt kunstig. En alternativ løsning er å utelate det og la verset stå som en direkte formaning, noe som gir bedre flyt for muntlig lesning."
+      },
+      {
+        "text": "Hold kongens befaling, og det på grunn av eden du har sverget for Gud.",
+        "type": "error",
+        "severity": "major",
+        "explanation": "Det hebraiske שְׁבוּעַת אֱלֹהִים (shevuat Elohim) betyr 'Guds ed' eller 'eden for Gud' – det refererer ikke nødvendigvis til en ed 'du har sverget'. Uttrykket er mer kompakt i originalen. Dessuten: forrige revisjon fjernet 'Jeg sier:' men det hebraiske אֲנִי (ani) hører syntaktisk til vers 2, ikke vers 1. Mange kommentatorer leser dette som 'Jeg (sier): hold kongens befaling'. Likevel, gitt at dette er bevisst revidert, er hovedproblemet 'du har sverget' som er et tillegg utover originalteksten."
       }
     ]
   },
@@ -39,7 +45,15 @@
     "bookId": 21,
     "chapterId": 8,
     "verseId": 5,
-    "text": "Den som holder budet, skal ikke oppleve noe ondt. Den vises hjerte kjenner rett tid og rett dom."
+    "text": "Den som holder budet, skal ikke oppleve noe ondt, og den vises hjerte kjenner rett tid og rett dom.",
+    "versions": [
+      {
+        "text": "Den som holder budet, skal ikke oppleve noe ondt. Den vises hjerte kjenner rett tid og rett dom.",
+        "type": "error",
+        "severity": "major",
+        "explanation": "I hebraisk er dette én sammenhengende setning med 'og' (וְ) som binder de to delene sammen. Å dele det i to separate setninger med punktum bryter den syntaktiske sammenhengen. Et komma og 'og' gjenspeiler originalen bedre."
+      }
+    ]
   },
   {
     "bookId": 21,
@@ -81,11 +95,17 @@
     "bookId": 21,
     "chapterId": 8,
     "verseId": 10,
-    "text": "Så har jeg også sett ugudelige bli gravlagt og ført bort. Fra det hellige stedet gikk de, og ble glemt i byen der de hadde handlet slik. Også dette er forgjengelig.",
+    "text": "Så har jeg også sett ugudelige bli gravlagt; de kom og gikk fra det hellige stedet, men ble glemt i byen der de hadde handlet slik. Også dette er forgjengelig.",
     "versions": [
       {
         "text": "Så har jeg også sett ugudelige bli gravlagt. De kom og gikk fra det hellige stedet, og ble glemt i byen der de hadde handlet slik. Også dette er forgjengelig.",
         "explanation": "וָבָ֗אוּ (vava'u) kan bety 'og de kom' eller 'og de ble ført bort' (til graven). Strukturen i hebraisk er at 'fra det hellige stedet gikk de' - de som hadde frekventert tempelet ble likevel glemt. Den nåværende oversettelsen er noe uklar."
+      },
+      {
+        "text": "Så har jeg også sett ugudelige bli gravlagt og ført bort. Fra det hellige stedet gikk de, og ble glemt i byen der de hadde handlet slik. Også dette er forgjengelig.",
+        "type": "error",
+        "severity": "major",
+        "explanation": "Det hebraiske וָבָאוּ (vava'u) betyr mest naturlig 'og de kom'. Sammen med יְהַלֵּכוּ (yehallechu - 'de gikk') beskriver det ugudelige som pleide å komme og gå fra det hellige stedet (tempelet), altså en kontrast: de som frekventerte helligdommen ble likevel glemt. Den nåværende oversettelsen 'ført bort' er en uvanlig tolkning. Den forrige versjonen hadde 'De kom og gikk' som er nærmere, men den nye foreslåtte versjonen skiller seg ved å bruke semikolon og 'men' for å tydeliggjøre kontrasten."
       }
     ]
   },
@@ -111,7 +131,15 @@
     "bookId": 21,
     "chapterId": 8,
     "verseId": 13,
-    "text": "Men det skal ikke gå godt for den ugudelige, og han skal ikke forlenge sine dager, som er som en skygge, fordi han ikke frykter Gud."
+    "text": "Men det skal ikke gå godt for den ugudelige, og som en skygge skal han ikke forlenge sine dager, fordi han ikke frykter Gud.",
+    "versions": [
+      {
+        "text": "Men det skal ikke gå godt for den ugudelige, og han skal ikke forlenge sine dager, som er som en skygge, fordi han ikke frykter Gud.",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "I hebraisk modifiserer כַּצֵּל (katsel, 'som en skygge') dagene eller den ugudelige direkte – hans dager er som en skygge. Den nåværende oversettelsen med 'som er som en skygge' som en innskutt bisetning er litt klønete og kan misforstås. Å flytte 'som en skygge' gir bedre flyt."
+      }
+    ]
   },
   {
     "bookId": 21,
@@ -129,7 +157,15 @@
     "bookId": 21,
     "chapterId": 8,
     "verseId": 16,
-    "text": "Da jeg satte meg fore å forstå visdom og se på det strevet som finner sted på jorden – for verken dag eller natt ser øynene hans søvn –"
+    "text": "Da jeg satte meg fore å forstå visdom og se på alt strevet som finner sted på jorden – for verken dag eller natt får mennesket søvn i øynene –",
+    "versions": [
+      {
+        "text": "Da jeg satte meg fore å forstå visdom og se på det strevet som finner sted på jorden – for verken dag eller natt ser øynene hans søvn –",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "Hebraisk שֵׁנָה בְּעֵינָיו אֵינֶנּוּ רֹאֶה betyr bokstavelig 'søvn ser hans øyne ikke' – altså øynene ser ikke søvn, dvs. man får ikke sove. 'Ser øynene hans søvn' er litt uklart på norsk. 'Får mennesket søvn i øynene' er mer idiomatisk. Dessuten beskriver הָעִנְיָן (ha'inyan) mer generelt virksomheten/strevet, og 'alt strevet' gjengir dette bedre."
+      }
+    ]
   },
   {
     "bookId": 21,

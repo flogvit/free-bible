@@ -3,7 +3,15 @@
     "bookId": 11,
     "chapterId": 2,
     "verseId": 1,
-    "text": "Da Davids dager nærmet seg slutten, ga han sin sønn Salomo disse påbudene:"
+    "text": "Da Davids dager nærmet seg slutten, ga han sin sønn Salomo disse instruksjonene:",
+    "versions": [
+      {
+        "text": "Da Davids dager nærmet seg slutten, ga han sin sønn Salomo disse påbudene:",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "'Påbudene' er litt formelt/juridisk. Det hebraiske וַיְצַו ... לֵאמֹר betyr mer 'befalte/instruerte ... og sa'. 'Instruksjonene' eller 'dette budskapet' passer bedre for konteksten der en far gir sin sønn siste formaninger."
+      }
+    ]
   },
   {
     "bookId": 11,
@@ -27,13 +35,29 @@
     "bookId": 11,
     "chapterId": 2,
     "verseId": 4,
-    "text": "Da skal Herren oppfylle det ordet han talte om meg: Hvis dine sønner akter på sin ferd og vandrer for mitt åsyn i sannhet, av hele sitt hjerte og hele sin sjel, skal det aldri mangle en mann av din ætt på Israels trone."
+    "text": "Da skal Herren oppfylle det løftet han ga meg da han sa: Hvis dine sønner akter på sin ferd og vandrer for mitt åsyn i troskap, av hele sitt hjerte og hele sin sjel, skal det aldri mangle en mann av din ætt på Israels trone.",
+    "versions": [
+      {
+        "text": "Da skal Herren oppfylle det ordet han talte om meg: Hvis dine sønner akter på sin ferd og vandrer for mitt åsyn i sannhet, av hele sitt hjerte og hele sin sjel, skal det aldri mangle en mann av din ætt på Israels trone.",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "Det hebraiske בֶּאֱמֶת (be'emet) betyr her primært 'i troskap/trofasthet' snarere enn 'i sannhet' – det handler om trofast vandring for Guds ansikt. Videre er אֲשֶׁר דִּבֶּר עָלַי mer presist gjengitt som 'det løftet han ga meg' enn bare 'det ordet han talte om meg', siden konteksten er et betinget løfte."
+      }
+    ]
   },
   {
     "bookId": 11,
     "chapterId": 2,
     "verseId": 5,
-    "text": "Du vet også hva Joab, sønn av Seruja, gjorde mot meg – hva han gjorde mot de to hærførerne i Israel, Abner, sønn av Ner, og Amasa, sønn av Jeter. Han drepte dem og utøste krigsblod i fredstid. Han satte krigsblod på beltet rundt livet sitt og på sandalene på føttene sine."
+    "text": "Du vet også hva Joab, sønn av Seruja, gjorde mot meg – hva han gjorde mot de to hærførerne i Israel, Abner, sønn av Ner, og Amasa, sønn av Jeter. Han drepte dem og utøste krigsblod i fredstid, og han fikk krigsblod på beltet rundt livet sitt og på sandalene på føttene sine.",
+    "versions": [
+      {
+        "text": "Du vet også hva Joab, sønn av Seruja, gjorde mot meg – hva han gjorde mot de to hærførerne i Israel, Abner, sønn av Ner, og Amasa, sønn av Jeter. Han drepte dem og utøste krigsblod i fredstid. Han satte krigsblod på beltet rundt livet sitt og på sandalene på føttene sine.",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "'Han satte krigsblod' er litt unaturlig på norsk. Uttrykket וַיִּתֵּן דְּמֵי מִלְחָמָה betyr at blodet havnet/kom på klærne hans – 'fikk krigsblod' gir bedre flyt og er mer idiomatisk."
+      }
+    ]
   },
   {
     "bookId": 11,
@@ -87,7 +111,21 @@
     "bookId": 11,
     "chapterId": 2,
     "verseId": 13,
-    "text": "Da kom Adonja, sønn av Haggit, til Batseba, Salomos mor. Hun spurte: «Kommer du med fred?» Han svarte: «Med fred.»"
+    "text": "Da kom Adonja, sønn av Haggit, til Batseba, Salomos mor. Hun sa: «Kommer du i fredelig ærend?» Han svarte: «Ja, i fredelig ærend.»",
+    "versions": [
+      {
+        "text": "Da kom Adonja, sønn av Haggit, til Batseba, Salomos mor. Hun spurte: «Kommer du med fred?» Han svarte: «Med fred.»",
+        "type": "error",
+        "severity": "major",
+        "explanation": "Teksten har וַתֹּאמֶר (hun sa), ikke 'hun spurte'. Men viktigere: הֲשָׁלוֹם בֹּאֶךָ betyr bokstavelig 'er din ankomst fred/fredelig?' – altså spørsmål om hensikten er fredelig. 'Kommer du med fred?' fungerer, men 'Kommer du i fredelig ærend?' er mer naturlig på norsk. Dette er dog en mindre justering."
+      },
+      {
+        "text": "Da kom Adonja, sønn av Haggit, til Batseba, Salomos mor. Hun sa: «Kommer du i fredelig ærend?» Han svarte: «I fredelig ærend.»",
+        "type": "grammar",
+        "severity": "minor",
+        "explanation": "Det hebraiske שָׁלוֹם som svar bekrefter spørsmålet positivt. På norsk er det mer naturlig å legge til 'Ja' for å gjøre bekreftelsen tydelig. Uten 'Ja' kan svaret virke litt abrupt."
+      }
+    ]
   },
   {
     "bookId": 11,
@@ -111,7 +149,15 @@
     "bookId": 11,
     "chapterId": 2,
     "verseId": 17,
-    "text": "Han sa: «Tal til kong Salomo – for deg vil han ikke avvise – og be ham gi meg Abisjag fra Sjunem til kone.»"
+    "text": "Han sa: «Vær så snill å tale til kong Salomo – for han vil ikke avvise deg – og be ham gi meg Abisjag fra Sjunem til kone.»",
+    "versions": [
+      {
+        "text": "Han sa: «Tal til kong Salomo – for deg vil han ikke avvise – og be ham gi meg Abisjag fra Sjunem til kone.»",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "Rekkefølgen i den nåværende versjonen 'for deg vil han ikke avvise' er litt kronglete på norsk. 'For han vil ikke avvise deg' er mer naturlig ordstilling. I tillegg gjengir נָא (na) en høflig forespørsel, som 'Vær så snill å' fanger opp bedre enn bare 'Tal'."
+      }
+    ]
   },
   {
     "bookId": 11,
@@ -123,7 +169,15 @@
     "bookId": 11,
     "chapterId": 2,
     "verseId": 19,
-    "text": "Batseba gikk inn til kong Salomo for å tale til ham om Adonja. Kongen reiste seg og gikk henne i møte, bøyde seg for henne og satte seg på sin trone. Han lot sette frem en trone for kongens mor, og hun satte seg ved hans høyre side."
+    "text": "Batseba gikk inn til kong Salomo for å tale til ham om Adonja. Kongen reiste seg og gikk henne i møte, bøyde seg for henne og satte seg på sin trone. Det ble satt frem en trone for kongens mor, og hun satte seg ved hans høyre side.",
+    "versions": [
+      {
+        "text": "Batseba gikk inn til kong Salomo for å tale til ham om Adonja. Kongen reiste seg og gikk henne i møte, bøyde seg for henne og satte seg på sin trone. Han lot sette frem en trone for kongens mor, og hun satte seg ved hans høyre side.",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "'Han lot sette frem en trone' er litt tungt. Hebraisk וַיָּשֶׂם kan leses som 'han satte/lot sette', men 'Det ble satt frem en trone' er mer naturlig og lettlest."
+      }
+    ]
   },
   {
     "bookId": 11,
@@ -147,7 +201,15 @@
     "bookId": 11,
     "chapterId": 2,
     "verseId": 23,
-    "text": "Kong Salomo sverget ved Herren og sa: «Måtte Gud gjøre med meg både det ene og det andre om ikke Adonja har talt dette ordet mot sitt eget liv."
+    "text": "Kong Salomo sverget ved Herren og sa: «Måtte Gud gjøre med meg både det ene og det andre! For med sitt eget liv som innsats har Adonja talt dette ordet.",
+    "versions": [
+      {
+        "text": "Kong Salomo sverget ved Herren og sa: «Måtte Gud gjøre med meg både det ene og det andre om ikke Adonja har talt dette ordet mot sitt eget liv.",
+        "type": "theological",
+        "severity": "major",
+        "explanation": "Den nåværende oversettelsen med 'om ikke' skaper en betingelsessetning som gjør meningen uklar. Det hebraiske כִּי בְנַפְשׁוֹ דִּבֶּר betyr at Adonja har talt dette ordet på bekostning av/med sitt eget liv – altså at hans forespørsel koster ham livet. Eden (כֹּה יַעֲשֶׂה לִי אֱלֹהִים וְכֹה יוֹסִיף) er en selvstendig edsformel, og כִּי innleder begrunnelsen."
+      }
+    ]
   },
   {
     "bookId": 11,
@@ -195,7 +257,15 @@
     "bookId": 11,
     "chapterId": 2,
     "verseId": 30,
-    "text": "Benaja kom til Herrens telt og sa til ham: «Så sier kongen: Kom ut!» Men han svarte: «Nei, her vil jeg dø.» Benaja kom tilbake til kongen med svar og sa: «Slik talte Joab, og slik svarte han meg.»"
+    "text": "Benaja brakte kongen tilbake dette svaret og sa: «Slik talte Joab, og slik svarte han meg.»",
+    "versions": [
+      {
+        "text": "Benaja kom til Herrens telt og sa til ham: «Så sier kongen: Kom ut!» Men han svarte: «Nei, her vil jeg dø.» Benaja kom tilbake til kongen med svar og sa: «Slik talte Joab, og slik svarte han meg.»",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "Det hebraiske וַיָּשֶׁב ... אֶת־הַמֶּלֶךְ דָּבָר betyr bokstavelig 'han brakte kongen tilbake et ord/svar'. 'Kom tilbake til kongen med svar' er akseptabelt, men 'brakte kongen tilbake dette svaret' er mer presist og naturlig."
+      }
+    ]
   },
   {
     "bookId": 11,
@@ -255,7 +325,15 @@
     "bookId": 11,
     "chapterId": 2,
     "verseId": 40,
-    "text": "sto Sjimi opp, salte eselet sitt og dro til Gat, til Akisj, for å lete etter slavene sine. Sjimi dro av sted og hentet slavene sine fra Gat."
+    "text": "sto Sjimi opp, sadlet eselet sitt og dro til Gat, til Akisj, for å lete etter slavene sine. Sjimi dro av sted og hentet slavene sine fra Gat.",
+    "versions": [
+      {
+        "text": "sto Sjimi opp, salte eselet sitt og dro til Gat, til Akisj, for å lete etter slavene sine. Sjimi dro av sted og hentet slavene sine fra Gat.",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "'Salte' bør være 'sadlet'. Det hebraiske וַיַּחֲבֹשׁ betyr å sadle/legge sal på. 'Salte' betyr å tilsette salt. Riktig norsk ord er 'sadlet'."
+      }
+    ]
   },
   {
     "bookId": 11,

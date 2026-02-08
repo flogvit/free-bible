@@ -3,11 +3,17 @@
     "bookId": 10,
     "chapterId": 11,
     "verseId": 1,
-    "text": "Ved årsskiftet, på den tid da kongene drar ut i krig, sendte David Joab ut sammen med sine menn og hele Israel. De herjet ammonittenes land og beleiret Rabba. Men David ble igjen i Jerusalem.",
+    "text": "Ved årsskiftet, på den tid da kongene drar ut i krig, sendte David Joab ut sammen med tjenerne sine og hele Israel. De herjet ammonittenes land og beleiret Rabba. Men David ble igjen i Jerusalem.",
     "versions": [
       {
         "text": "Ved årsskiftet, på den tid da kongene drar ut i krig, sendte David Joab av sted med sine menn og hele Israel. De herjet ammonittenes land og beleiret Rabba. Men David ble igjen i Jerusalem.",
         "explanation": "Hebraisk har bare 'sendte' (וַיִּשְׁלַח) uten 'av sted'. 'Sendte Joab ut' er mer direkte og naturlig for muntlig lesning."
+      },
+      {
+        "text": "Ved årsskiftet, på den tid da kongene drar ut i krig, sendte David Joab ut sammen med sine menn og hele Israel. De herjet ammonittenes land og beleiret Rabba. Men David ble igjen i Jerusalem.",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "Hebraisk עֲבָדָיו betyr 'sine tjenere', ikke bare 'sine menn'. 'Tjenerne sine' er mer presist og skiller bedre fra det generelle 'hele Israel'. Dessuten er 'tjenerne sine' mer idiomatisk bokmål med possessiv etter substantivet."
       }
     ]
   },
@@ -21,7 +27,15 @@
     "bookId": 10,
     "chapterId": 11,
     "verseId": 3,
-    "text": "David sendte bud og spurte etter kvinnen. De svarte: «Er ikke dette Batseba, datter av Eliam og hustru til hetitten Uria?»"
+    "text": "David sendte bud og spurte etter kvinnen. Man svarte: «Er ikke dette Batseba, datter av Eliam, hustru til hetitten Uria?»",
+    "versions": [
+      {
+        "text": "David sendte bud og spurte etter kvinnen. De svarte: «Er ikke dette Batseba, datter av Eliam og hustru til hetitten Uria?»",
+        "type": "error",
+        "severity": "major",
+        "explanation": "Hebraisk har וַיֹּאמֶר (singularis 'han sa'), ikke flertall 'de svarte'. Oversettelsen 'Man svarte' dekker den upersonlige singularen bedre. I tillegg bør det være komma etter 'Eliam' (ikke 'og') for å markere at det er to appositiver til Batseba, ikke en kobling av far og ektemann."
+      }
+    ]
   },
   {
     "bookId": 10,
@@ -63,7 +77,15 @@
     "bookId": 10,
     "chapterId": 11,
     "verseId": 9,
-    "text": "Men Uria la seg ved inngangen til kongens palass sammen med alle sin herres tjenere. Han gikk ikke ned til huset sitt."
+    "text": "Men Uria la seg ved inngangen til kongens palass sammen med sin herres tjenere. Han gikk ikke ned til huset sitt.",
+    "versions": [
+      {
+        "text": "Men Uria la seg ved inngangen til kongens palass sammen med alle sin herres tjenere. Han gikk ikke ned til huset sitt.",
+        "type": "grammar",
+        "severity": "minor",
+        "explanation": "Hebraisk כָּל־עַבְדֵי אֲדֹנָיו betyr 'alle sin herres tjenere'. 'Alle sin herres' er grammatisk korrekt, men litt klossete. I den nåværende versjonen står det imidlertid 'alle sin herres tjenere' som er akseptabelt – det mer alvorlige problemet er at ordstillingen 'alle sin herres' er dårlig bokmål. 'Sin herres tjenere' (uten 'alle') eller 'alle tjenerne til sin herre' ville vært bedre, men den enkleste løsningen er å fjerne 'alle' da det ikke endrer vesentlig mening."
+      }
+    ]
   },
   {
     "bookId": 10,
@@ -129,7 +151,15 @@
     "bookId": 10,
     "chapterId": 11,
     "verseId": 19,
-    "text": "Han befalte budbæreren: «Når du er ferdig med å fortelle kongen alt om kampen,"
+    "text": "Han ga budbæreren denne beskjeden: «Når du er ferdig med å fortelle kongen alt om kampen,",
+    "versions": [
+      {
+        "text": "Han befalte budbæreren: «Når du er ferdig med å fortelle kongen alt om kampen,",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "'Befalte budbæreren' er litt stivt. 'Ga budbæreren denne beskjeden' er mer naturlig norsk og passer bedre konteksten der Joab instruerer budbæreren om hva han skal si."
+      }
+    ]
   },
   {
     "bookId": 10,
@@ -165,7 +195,15 @@
     "bookId": 10,
     "chapterId": 11,
     "verseId": 25,
-    "text": "Da sa David til budbæreren: «Si dette til Joab: 'La ikke dette tynge deg, for sverdet fortærer snart den ene, snart den andre. Sett hardere inn mot byen og legg den i grus. Gi ham mot!'»"
+    "text": "Da sa David til budbæreren: «Si dette til Joab: 'La ikke dette tynge deg, for sverdet fortærer snart den ene, snart den andre. Styrk angrepet mot byen og ødelegg den. Og gi ham mot!'»",
+    "versions": [
+      {
+        "text": "Da sa David til budbæreren: «Si dette til Joab: 'La ikke dette tynge deg, for sverdet fortærer snart den ene, snart den andre. Sett hardere inn mot byen og legg den i grus. Gi ham mot!'»",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "הַחֲזֵק מִלְחַמְתְּךָ betyr 'styrk din krig/ditt angrep', og וְהָרְסָהּ betyr 'ødelegg den' eller 'riv den ned'. 'Sett hardere inn' er en fri gjengivelse, og 'legg den i grus' er dramatisk men akseptabelt. Likevel er 'Styrk angrepet mot byen og ødelegg den' nærmere originalen."
+      }
+    ]
   },
   {
     "bookId": 10,

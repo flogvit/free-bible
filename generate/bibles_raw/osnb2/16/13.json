@@ -21,11 +21,17 @@
     "bookId": 16,
     "chapterId": 13,
     "verseId": 4,
-    "text": "Men før dette hadde presten Eljasjib, som var satt over kammerne i vår Guds hus, knyttet seg nær til Tobia.",
+    "text": "Men før dette hadde presten Eljasjib, som var satt over kammerne i vår Guds hus, stått Tobia nær.",
     "versions": [
       {
         "text": "Men før dette hadde presten Eljasjib, som var satt over kammerne i vår Guds hus, en nær forbindelse med Tobia.",
         "explanation": "Det hebraiske 'qarov' (קָרוֹב) betyr 'nær' i en relasjonell forstand. 'En nær forbindelse' er akseptabelt, men 'knyttet seg nær til' er mer idiomatisk norsk og flyter bedre ved opplesning."
+      },
+      {
+        "text": "Men før dette hadde presten Eljasjib, som var satt over kammerne i vår Guds hus, knyttet seg nær til Tobia.",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "Det hebraiske קָרוֹב לְטוֹבִיָּה betyr bokstavelig 'nær til Tobia', altså at Eljasjib hadde en nær tilknytning til Tobia. 'Knyttet seg nær til' er litt klumsete; 'stått Tobia nær' er mer idiomatisk norsk og bevarer meningen."
       }
     ]
   },
@@ -39,7 +45,15 @@
     "bookId": 16,
     "chapterId": 13,
     "verseId": 6,
-    "text": "Mens alt dette skjedde, var jeg ikke i Jerusalem. For i det trettioandre året av Artaxerxes, kongen av Babel, hadde jeg reist til kongen. Etter en tid ba jeg kongen om tillatelse til å reise tilbake."
+    "text": "Mens alt dette skjedde, var jeg ikke i Jerusalem. For i det trettiannet året av Artaxerxes, kongen av Babel, hadde jeg reist til kongen. Etter en tid ba jeg kongen om tillatelse til å reise tilbake.",
+    "versions": [
+      {
+        "text": "Mens alt dette skjedde, var jeg ikke i Jerusalem. For i det trettioandre året av Artaxerxes, kongen av Babel, hadde jeg reist til kongen. Etter en tid ba jeg kongen om tillatelse til å reise tilbake.",
+        "type": "error",
+        "severity": "major",
+        "explanation": "Det hebraiske שְׁלֹשִׁים וּשְׁתַּיִם betyr 'trettito' (32), ikke 'trettioandre'. 'Trettioandre' er dessuten feil norsk stavemåte. Riktig norsk ordenstall er 'trettiannet'. Rettelse: 'det trettiannet året'."
+      }
+    ]
   },
   {
     "bookId": 16,
@@ -51,7 +65,15 @@
     "bookId": 16,
     "chapterId": 13,
     "verseId": 8,
-    "text": "Dette gjorde meg svært harm, og jeg kastet alt det Tobia eide ut av kammeret."
+    "text": "Dette gjorde meg svært harm, og jeg kastet alle Tobias eiendeler ut av kammeret.",
+    "versions": [
+      {
+        "text": "Dette gjorde meg svært harm, og jeg kastet alt det Tobia eide ut av kammeret.",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "כְּלֵי בֵית־טוֹבִיָּה betyr 'Tobias husgeråd/eiendeler'. Oversettelsen 'alt det Tobia eide' er litt upresist – det var det som var i kammeret. 'Alle Tobias eiendeler' er mer presist og naturlig."
+      }
+    ]
   },
   {
     "bookId": 16,
@@ -93,11 +115,17 @@
     "bookId": 16,
     "chapterId": 13,
     "verseId": 15,
-    "text": "I de dagene så jeg folk i Juda som tråkket vinpresser på sabbaten og brakte inn kornbånd og lesset dem på esler, sammen med vin, druer, fikener og alle slags varer som de førte inn i Jerusalem på sabbatsdagen. Jeg advarte dem på den dagen de solgte mat.",
+    "text": "I de dagene så jeg folk i Juda som tråkket vinpresser på sabbaten og brakte inn kornbånd og lesset dem på esler, sammen med vin, druer, fikener og alle slags varer som de førte inn i Jerusalem på sabbatsdagen. Jeg advarte dem den dagen de solgte sine varer.",
     "versions": [
       {
         "text": "I de dagene så jeg folk i Juda som tråkket vinpresser på sabbaten og brakte inn kornbånd og lesset dem på esler, og også vin, druer, fikener og alle slags varer som de førte inn i Jerusalem på sabbatsdagen. Jeg advarte dem den dagen de solgte matvarer.",
         "explanation": "Små forbedringer for bedre flyt: 'og også' til 'sammen med' er mer naturlig norsk, og 'matvarer' kan forkortes til 'mat' for bedre rytme ved opplesning."
+      },
+      {
+        "text": "I de dagene så jeg folk i Juda som tråkket vinpresser på sabbaten og brakte inn kornbånd og lesset dem på esler, sammen med vin, druer, fikener og alle slags varer som de førte inn i Jerusalem på sabbatsdagen. Jeg advarte dem på den dagen de solgte mat.",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "צָיִד betyr 'proviant/matvarer/forsyninger' i bredere forstand enn bare 'mat'. Gitt konteksten med mange typer varer, er 'sine varer' eller 'forsyninger' mer dekkende. Merk: sjekket mot tidligere versjon som brukte 'matvarer' – 'sine varer' er noe annet."
       }
     ]
   },
@@ -153,7 +181,15 @@
     "bookId": 16,
     "chapterId": 13,
     "verseId": 24,
-    "text": "Halvparten av barna deres snakket asjdodittisk og kunne ikke snakke jødisk, men bare språket til de forskjellige folkene."
+    "text": "Halvparten av barna deres snakket asjdodisk og kunne ikke snakke jødisk, men snakket språket til det ene eller andre folket.",
+    "versions": [
+      {
+        "text": "Halvparten av barna deres snakket asjdodittisk og kunne ikke snakke jødisk, men bare språket til de forskjellige folkene.",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "'Asjdodittisk' er en uvanlig form; 'asjdodisk' er mer naturlig. I tillegg betyr וְכִלְשׁוֹן עַם וָעָם mer presist 'og etter hvert folks språk' (dvs. det ene eller andre folkets språk), ikke nødvendigvis 'de forskjellige folkene' som kan gi inntrykk av at de snakket mange språk."
+      }
+    ]
   },
   {
     "bookId": 16,

@@ -9,11 +9,17 @@
     "bookId": 26,
     "chapterId": 25,
     "verseId": 2,
-    "text": "Satisfying Menneskesonn, vend ansiktet mot Ammons barn og profeter mot dem.",
+    "text": "Menneskesonn, vend ansiktet mot Ammons barn og profeter mot dem.",
     "versions": [
       {
         "text": "Menneske, vend ansiktet mot Ammons barn og profeter mot dem.",
         "explanation": "The Hebrew בֶּן־אָדָם literally means 'son of man' (menneskesonn), which is the characteristic way God addresses Ezekiel throughout the book. 'Menneske' alone loses this distinctive prophetic address."
+      },
+      {
+        "text": "Satisfying Menneskesonn, vend ansiktet mot Ammons barn og profeter mot dem.",
+        "type": "error",
+        "severity": "critical",
+        "explanation": "The word 'Satisfying' at the beginning of the verse is clearly a spurious insertion — it has no basis in the Hebrew text and appears to be a software artifact or accidental text. It must be removed. The version history shows the previous version used 'Menneske' and was changed to 'Menneskesonn' for good reason, so we retain 'Menneskesonn'."
       }
     ]
   },
@@ -45,7 +51,15 @@
     "bookId": 26,
     "chapterId": 25,
     "verseId": 6,
-    "text": "For så sier Herren Gud: Fordi du klappet i hendene og stampet med føttene og frydet deg av hele ditt foraktfulle hjerte over Israels land,"
+    "text": "For så sier Herren Gud: Fordi du klappet i hendene og stampet med foten og frydet deg med all din forakt i sjelen over Israels land,",
+    "versions": [
+      {
+        "text": "For så sier Herren Gud: Fordi du klappet i hendene og stampet med føttene og frydet deg av hele ditt foraktfulle hjerte over Israels land,",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "The Hebrew has בְּרָגֶל (singular 'foot') not plural. Also בְּכָל־שָׁאטְךָ בְּנֶפֶשׁ means 'with all your contempt in soul/spirit' — 'av hele ditt foraktfulle hjerte' introduces 'heart' which is not in the text (the Hebrew says נֶפֶשׁ = soul/being, not לֵב = heart)."
+      }
+    ]
   },
   {
     "bookId": 26,
@@ -63,11 +77,17 @@
     "bookId": 26,
     "chapterId": 25,
     "verseId": 9,
-    "text": "derfor åpner jeg Moabs flanke fra byene ved grensen: Bet-Jesjimot, Ba'al-Meon og Kirjatajim, landets pryd.",
+    "text": "derfor åpner jeg Moabs flanke fra byene ved grensen – Bet-Jesjimot, Ba'al-Meon og Kirjatajim – landets pryd.",
     "versions": [
       {
         "text": "derfor åpner jeg Moabs flanke fra byene, fra byene ved grensen: Bet-Jesjimot, Ba'al-Meon og Kirjatajim, landets pryd.",
         "explanation": "The repetition 'fra byene, fra byene ved grensen' is awkward in Norwegian. The Hebrew מֵהֶעָרִים מֵעָרָיו מִקָּצֵהוּ can be rendered more smoothly as 'fra byene ved grensen' without losing meaning."
+      },
+      {
+        "text": "derfor åpner jeg Moabs flanke fra byene ved grensen: Bet-Jesjimot, Ba'al-Meon og Kirjatajim, landets pryd.",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "The phrase צְבִי אֶרֶץ ('landets pryd') is in apposition to the three cities listed, not to Moab's flank. Using dashes instead of a colon and comma makes it clearer that 'landets pryd' describes these cities specifically. This is a minor stylistic suggestion."
       }
     ]
   },
@@ -93,7 +113,15 @@
     "bookId": 26,
     "chapterId": 25,
     "verseId": 13,
-    "text": "derfor sier Herren Gud: Jeg rekker ut min hånd mot Edom og utrydder mennesker og dyr fra det. Jeg gjør det til ødemark fra Teman til Dedan; de skal falle for sverd."
+    "text": "Jeg gjør det til ødemark fra Teman, og til Dedan skal de falle for sverd.",
+    "versions": [
+      {
+        "text": "derfor sier Herren Gud: Jeg rekker ut min hånd mot Edom og utrydder mennesker og dyr fra det. Jeg gjør det til ødemark fra Teman til Dedan; de skal falle for sverd.",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "The Hebrew וּדְדָנֶה בַּחֶרֶב יִפֹּלוּ means 'and to/toward Dedan they shall fall by the sword.' The current translation 'fra Teman til Dedan' makes it sound like the whole area from Teman to Dedan becomes wasteland, but the Hebrew structure is: 'I will make it desolate from Teman, and toward Dedan they shall fall by the sword.' Dedan is linked to the falling by sword, not to the desolation."
+      }
+    ]
   },
   {
     "bookId": 26,

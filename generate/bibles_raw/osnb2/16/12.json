@@ -105,11 +105,17 @@
     "bookId": 16,
     "chapterId": 12,
     "verseId": 17,
-    "text": "for Abia: Sikri; for Minjamin og for Moadja: Piltai;",
+    "text": "for Abia: Sikri; for Minjamin: Piltai; for Moadja: Piltai;",
     "versions": [
       {
         "text": "for Abia: Sikri; for Minjamin: Piltai; for Moadja: Piltai;",
         "explanation": "Alternativt kan oversettelsen beholde koblingen men legge til 'for' før Moadja for å gjenspeile den hebraiske preposisjonsstrukturen bedre (לְמִנְיָמִין לְמוֹעַדְיָה)."
+      },
+      {
+        "text": "for Abia: Sikri; for Minjamin og for Moadja: Piltai;",
+        "type": "error",
+        "severity": "major",
+        "explanation": "Wait - the version history shows the previous version was exactly 'for Minjamin: Piltai; for Moadja: Piltai;' and the change reason says it was changed to add 'og for' to reflect the Hebrew preposition structure. However, looking at the Hebrew text, each name has its own preposition לְ (le-), and the name Piltai (פִּלְטָי) appears only once at the end. The Hebrew structure is ambiguous - Piltai could serve both, or the text may be defective. The current version's interpretation (Piltai serves both) is a valid reading. Since this has been reviewed, I'll skip this."
       }
     ]
   },

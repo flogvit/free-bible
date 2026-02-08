@@ -27,11 +27,17 @@
     "bookId": 39,
     "chapterId": 2,
     "verseId": 3,
-    "text": "Se, jeg vil ødelegge deres såkorn, og jeg vil strø møkk i ansiktene deres, møkken fra høytidsofrene deres, og dere skal bli kastet bort sammen med den.",
+    "text": "Se, jeg truer deres såkorn, og jeg vil strø møkk i ansiktene deres, møkken fra høytidsofrene deres, og dere skal bli kastet bort sammen med den.",
     "versions": [
       {
         "text": "Se, jeg vil true deres avkom, og jeg vil strø møkk i ansiktene deres, møkken fra høytidsofrene deres, og dere skal bli kastet bort sammen med den.",
         "explanation": "Det hebraiske גֹעֵר (go'er) betyr 'irettesette' eller 'true', men i denne konteksten handler det om å 'ødelegge' eller 'forderve' såkornet (זֶּרַע). Mange oversettelser tolker dette som at Gud vil ødelegge avlingen/såkornet som straff. 'Avkom' er en mulig tolkning, men 'såkorn' passer bedre i den landbruksmessige konteksten."
+      },
+      {
+        "text": "Se, jeg vil ødelegge deres såkorn, og jeg vil strø møkk i ansiktene deres, møkken fra høytidsofrene deres, og dere skal bli kastet bort sammen med den.",
+        "type": "error",
+        "severity": "major",
+        "explanation": "Det hebraiske גֹעֵר betyr 'irettesette' eller 'true/refse', ikke 'ødelegge'. Selv om versjonshistorikken forklarer at 'ødelegge' ble valgt, er dette en unøyaktig gjengivelse av det hebraiske verbet. 'True' eller 'refse' er mer nøyaktig. Merk at den forrige versjonen brukte 'true' med 'avkom' - her foreslås 'truer' med 'såkorn' som beholdes fra nåværende versjon."
       }
     ]
   },
@@ -63,11 +69,17 @@
     "bookId": 39,
     "chapterId": 2,
     "verseId": 7,
-    "text": "For en prests lepper skal bevare kunnskap, og loven skal man søke fra hans munn, for han er en Herrens, hærskarenes Guds, sendebud.",
+    "text": "For en prests lepper skal bevare kunnskap, og loven skal man søke fra hans munn, for han er Herren over hærskarenes sendebud.",
     "versions": [
       {
         "text": "For en prests lepper skal bevare kunnskap, og man skal søke loven fra hans munn, for han er en budbærer fra Herren over hærskarene.",
         "explanation": "Hebraisk מַלְאַךְ יְהוָה צְבָאוֹת betyr mer presist 'Herrens, hærskarenes Guds, sendebud' - altså en budbærer/sendebud som tilhører Herren. 'Sendebud' er et mer tradisjonelt og høytidelig uttrykk enn 'budbærer'. Også endret ordstillingen i første del for bedre flyt."
+      },
+      {
+        "text": "For en prests lepper skal bevare kunnskap, og loven skal man søke fra hans munn, for han er en Herrens, hærskarenes Guds, sendebud.",
+        "type": "grammar",
+        "severity": "minor",
+        "explanation": "Formuleringen 'Herrens, hærskarenes Guds, sendebud' er grammatisk tung og unatural på norsk med de mange kommategn. Det hebraiske מַלְאַךְ יְהוָה־צְבָאוֹת kan gjengis mer flytende som 'Herren over hærskarenes sendebud'. Dette er verken den nåværende eller den forrige versjonen."
       }
     ]
   },
@@ -129,11 +141,17 @@
     "bookId": 39,
     "chapterId": 2,
     "verseId": 15,
-    "text": "Har ikke den Ene skapt dem, og en rest av ånd tilhører ham? Og hva søker den Ene? Gudfryktig avkom! Så vokt dere i deres ånd, og vær ikke troløs mot din ungdoms hustru.",
+    "text": "Har ikke den Ene skapt dem og bevart åndens livspust for dem? Og hva søker den Ene? Gudfryktig avkom! Så vokt dere i deres ånd, og vær ikke troløs mot din ungdoms hustru.",
     "versions": [
       {
         "text": "Har ikke den Ene gjort dem til ett, med en rest av ånd i seg? Og hva søker den Ene? Gudfryktig avkom! Så vokt dere i deres ånd, og vær ikke troløs mot din ungdoms hustru.",
         "explanation": "Dette er et notorisk vanskelig vers å oversette. Hebraisk וּשְׁאָר רוּחַ לוֹ kan bety 'og en rest av ånd tilhører ham' (dvs. Gud), noe som understreker at Gud har makt over livets ånd. Den nåværende oversettelsen er akseptabel, men alternativet kan være mer presist."
+      },
+      {
+        "text": "Har ikke den Ene skapt dem, og en rest av ånd tilhører ham? Og hva søker den Ene? Gudfryktig avkom! Så vokt dere i deres ånd, og vær ikke troløs mot din ungdoms hustru.",
+        "type": "theological",
+        "severity": "major",
+        "explanation": "Det hebraiske וּשְׁאָר רוּחַ לוֹ er vanskelig, men 'en rest av ånd tilhører ham' er ganske uklart og gir lite mening i konteksten. Verset handler om ekteskapet - at Gud skapte mann og kvinne til ett, og bevarte livets ånd for dem, med formålet om gudfryktig avkom. 'Bevart åndens livspust for dem' kobler bedre til konteksten om skapelse og ekteskapets formål."
       }
     ]
   },
@@ -141,7 +159,15 @@
     "bookId": 39,
     "chapterId": 2,
     "verseId": 16,
-    "text": "For «jeg hater skilsmisse», sier Herren, Israels Gud, «og at man dekker sitt plagg med vold», sier Herren over hærskarene. Så vokt dere i deres ånd og vær ikke troløse."
+    "text": "For «den som hater og skiller seg, dekker sitt plagg med vold», sier Herren, Israels Gud, sier Herren over hærskarene. Så vokt dere i deres ånd og vær ikke troløse.",
+    "versions": [
+      {
+        "text": "For «jeg hater skilsmisse», sier Herren, Israels Gud, «og at man dekker sitt plagg med vold», sier Herren over hærskarene. Så vokt dere i deres ånd og vær ikke troløse.",
+        "type": "theological",
+        "severity": "major",
+        "explanation": "Det hebraiske כִּי־שָׂנֵא שַׁלַּח har subjektet i 3. person (han som hater, sender bort). Mange moderne hebraister tolker dette som 'den som hater (sin kone) og skiller seg (fra henne)' - altså at det er mannen som hater og skiller seg, ikke Gud som sier 'jeg hater skilsmisse'. Den nåværende oversettelsen følger en tradisjonell tolkning (LXX/Vulgata), men den hebraiske grammatikken peker mot 3. person."
+      }
+    ]
   },
   {
     "bookId": 39,

@@ -3,7 +3,15 @@
     "bookId": 10,
     "chapterId": 22,
     "verseId": 1,
-    "text": "David talte ordene i denne sangen til Herren den dagen Herren hadde fridd ham fra alle hans fiender og fra Sauls hånd."
+    "text": "David sang denne sangen for Herren den dagen Herren hadde fridd ham fra alle hans fiender og fra Sauls hånd.",
+    "versions": [
+      {
+        "text": "David talte ordene i denne sangen til Herren den dagen Herren hadde fridd ham fra alle hans fiender og fra Sauls hånd.",
+        "type": "grammar",
+        "severity": "minor",
+        "explanation": "Selv om 'talte ordene i denne sangen' er en bokstavelig gjengivelse, er det noe tungt på norsk. 'Sang denne sangen' er mer naturlig og dekker meningen godt. Alternativt kan man beholde originalen, men det er litt klosset."
+      }
+    ]
   },
   {
     "bookId": 10,
@@ -63,13 +71,29 @@
     "bookId": 10,
     "chapterId": 22,
     "verseId": 11,
-    "text": "Han red på en kjerub og fløy, han seilte frem på vindens vinger."
+    "text": "Han red på en kjerub og fløy, han viste seg på vindens vinger.",
+    "versions": [
+      {
+        "text": "Han red på en kjerub og fløy, han seilte frem på vindens vinger.",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "Det hebraiske וַיֵּרָא betyr 'han ble sett / han viste seg' (fra רָאָה), ikke 'seilte frem'. Parallelteksten i Sal 18:11 har וַיֵּדֶא (å sveve), men her i 2 Sam 22:11 er verbet וַיֵּרָא. 'Viste seg' er mer nøyaktig."
+      }
+    ]
   },
   {
     "bookId": 10,
     "chapterId": 22,
     "verseId": 12,
-    "text": "Han satte mørke som et telt rundt seg, vannmasser og tette skyer."
+    "text": "Han gjorde mørke til hytter rundt seg, vannmasser og tette skyer.",
+    "versions": [
+      {
+        "text": "Han satte mørke som et telt rundt seg, vannmasser og tette skyer.",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "Det hebraiske סֻכּוֹת betyr 'hytter/løvhytter/skjul' (flertall), ikke 'et telt'. Meningen er at mørket fungerte som et skjul rundt ham. 'Skjul' ville også vært et godt alternativ."
+      }
+    ]
   },
   {
     "bookId": 10,
@@ -195,11 +219,17 @@
     "bookId": 10,
     "chapterId": 22,
     "verseId": 33,
-    "text": "Gud er min sterke tilflukt, han gjør min vei fullkommen.",
+    "text": "Gud er min tilflukt og styrke, han gjør min vei fullkommen.",
     "versions": [
       {
         "text": "Gud er min sterke festning, han gjør min vei fullkommen.",
         "explanation": "'מָעוּז' betyr 'tilflukt' eller 'styrke', ikke nødvendigvis 'festning'. 'Tilflukt' passer bedre og unngår repetisjon med 'festning' i vers 2."
+      },
+      {
+        "text": "Gud er min sterke tilflukt, han gjør min vei fullkommen.",
+        "type": "error",
+        "severity": "major",
+        "explanation": "Det hebraiske מָעוּזִּי חָיִל har to elementer: מָעוּז (tilflukt/vern) og חַיִל (kraft/styrke). Den nåværende oversettelsen slår dem sammen til 'sterke tilflukt', men חַיִל er et eget substantiv og bør gjengis separat. 'Min tilflukt og styrke' dekker begge elementene bedre."
       }
     ]
   },
@@ -219,7 +249,15 @@
     "bookId": 10,
     "chapterId": 22,
     "verseId": 36,
-    "text": "Du ga meg din frelses skjold, din mildhet har gjort meg stor."
+    "text": "Du ga meg din frelses skjold, din ydmykhet har gjort meg stor.",
+    "versions": [
+      {
+        "text": "Du ga meg din frelses skjold, din mildhet har gjort meg stor.",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "Det hebraiske עֲנֹתְךָ (fra ענה/ענוה) kan bety 'din ydmykhet' eller 'din nedlatenhet' (at Gud bøyer seg ned til mennesket). 'Mildhet' er mulig, men 'ydmykhet' (i betydningen at Gud nedlater seg) er en mer tradisjonell og presis gjengivelse."
+      }
+    ]
   },
   {
     "bookId": 10,
@@ -285,7 +323,15 @@
     "bookId": 10,
     "chapterId": 22,
     "verseId": 46,
-    "text": "Fremmede visner bort og kommer skjelvende ut fra sine borger."
+    "text": "Fremmede visner bort og kommer haltende ut fra sine festninger.",
+    "versions": [
+      {
+        "text": "Fremmede visner bort og kommer skjelvende ut fra sine borger.",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "Det hebraiske יַחְגְּרוּ betyr 'halte/skjelve' og מִמִּסְגְּרוֹתָם betyr 'fra sine tilfluktsteder/festninger' (fra סגר, å stenge). 'Haltende' er mer presist enn 'skjelvende' for חגר, og 'festninger' er mer nøyaktig enn 'borger'."
+      }
+    ]
   },
   {
     "bookId": 10,

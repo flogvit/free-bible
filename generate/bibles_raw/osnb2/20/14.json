@@ -51,7 +51,15 @@
     "bookId": 20,
     "chapterId": 14,
     "verseId": 9,
-    "text": "Dårer spotter skyldofferet, men blant de oppriktige er det velvilje."
+    "text": "Blant dårer håner skyldofferet dem, men blant de oppriktige er det velvilje.",
+    "versions": [
+      {
+        "text": "Dårer spotter skyldofferet, men blant de oppriktige er det velvilje.",
+        "type": "error",
+        "severity": "major",
+        "explanation": "Det hebraiske 'אָשָׁם' kan bety 'skyld' eller 'skyldoffer'. Verbet 'יָלִיץ' betyr 'å spotte/håne'. Tolkningen er omdiskutert, men en vanlig forståelse er at skyld(en)/skyldofferet spotter dårer, dvs. at dårer håner tanken om skyld/soning. Den nåværende oversettelsen er en akseptabel tolkning, men 'skyldofferet' alene er noe smal. En alternativ og mer kontekstuelt passende gjengivelse er 'Dårer spotter det å gjøre opp for skyld'."
+      }
+    ]
   },
   {
     "bookId": 20,
@@ -105,7 +113,15 @@
     "bookId": 20,
     "chapterId": 14,
     "verseId": 17,
-    "text": "Den som er snar til vrede, handler tåpelig, og en mann med onde planer blir hatet."
+    "text": "Den som er snar til vrede, handler tåpelig, og en utspekulert mann blir hatet.",
+    "versions": [
+      {
+        "text": "Den som er snar til vrede, handler tåpelig, og en mann med onde planer blir hatet.",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "'מְזִמּוֹת' (mezimmot) betyr 'planer/renkespill', men er ikke nødvendigvis 'onde planer'. Ordet er tvetydig og kan bety beregnende planer generelt. 'Utspekulert' gjengir dette bedre enn 'onde planer', som er en fortolkende tilføyelse."
+      }
+    ]
   },
   {
     "bookId": 20,
@@ -201,7 +217,7 @@
     "bookId": 20,
     "chapterId": 14,
     "verseId": 33,
-    "text": "Visdom hviler i den forstandiges hjerte, men i dårers indre blir den ikke kjent.",
+    "text": "Visdom hviler i den forstandiges hjerte, men i dårers indre gjør den seg til kjenne.",
     "versions": [
       {
         "text": "Visdom hviler i den forstandiges hjerte, men blant dårene gjør den seg kjent.",
@@ -210,6 +226,12 @@
       {
         "text": "Visdom hviler i den forstandiges hjerte, men blant dårer blir den ikke gjenkjent.",
         "explanation": "Hebraisk 'בְּקֶרֶב' betyr 'i det indre av' eller 'midt iblant'. Nåværende 'blant dårer' mister nyansen om at visdom ikke finnes i dårers indre/hjerte, i kontrast til første del hvor visdom 'hviler i hjertet'."
+      },
+      {
+        "text": "Visdom hviler i den forstandiges hjerte, men i dårers indre blir den ikke kjent.",
+        "type": "error",
+        "severity": "major",
+        "explanation": "Det hebraiske 'תִּוָּדֵעַ' (tivvadea) er en hitpael-form som betyr 'gjør seg kjent/til kjenne'. Teksten inneholder ikke en negasjon ('ikke'). De fleste tolkninger leser dette enten som at visdom faktisk gjør seg kjent (ironisk, fordi den stikker seg ut som fremmed) blant dårer, eller som en retorisk kontrast. Å legge til 'ikke' er et tillegg som ikke finnes i grunnteksten. Imidlertid har verset 2 tidligere revisjoner, så dette forslaget gis kun fordi 'ikke' er en vesentlig innholdstilleggelse."
       }
     ]
   },
@@ -217,7 +239,7 @@
     "bookId": 20,
     "chapterId": 14,
     "verseId": 34,
-    "text": "Rettferdighet opphøyer et folk, men folkeslagenes godgjerninger er som synd.",
+    "text": "Rettferdighet opphøyer et folk, men folkeslagenes velvilje er synd.",
     "versions": [
       {
         "text": "Rettferdighet opphøyer et folk, men synd er en skam for folkeslagene.",
@@ -226,6 +248,12 @@
       {
         "text": "Rettferdighet opphøyer et folk, men synden er folkeslagenes skam.",
         "explanation": "Som nevnt i versjonshistorikken utelater nåværende oversettelse 'חֶסֶד' helt. Dette ordet er viktig teologisk - det antyder at selv hedningefolkenes 'chesed' (godhet/nåde) regnes som synd uten Gud. Ordet bør gjenspeiles i oversettelsen."
+      },
+      {
+        "text": "Rettferdighet opphøyer et folk, men folkeslagenes godgjerninger er som synd.",
+        "type": "theological",
+        "severity": "major",
+        "explanation": "Den nåværende oversettelsen legger til 'som' ('er som synd'), men grunnteksten sier direkte 'חַטָּאת' (synd) uten sammenligning. 'Godgjerninger' er en akseptabel gjengivelse av 'חֶסֶד', men 'velvilje' er tettere på grunnbetydningen. Ordlyden 'er som synd' svekker utsagnet sammenlignet med den direkte hebraiske formen 'er synd'. Verset har 2 revisjoner, men dette er en vesentlig teologisk nyanse."
       }
     ]
   },

@@ -39,23 +39,45 @@
     "bookId": 15,
     "chapterId": 4,
     "verseId": 7,
-    "text": "I Artaxerxes' dager skrev Bislam, Mitredat, Tabeel og deres embetsbrødre til kong Artaxerxes av Persia. Brevet var skrevet med arameisk skrift og oversatt til arameisk."
+    "text": "I Artaxerxes' dager skrev Bislam, Mitredat, Tabeel og deres embetsbrødre til kong Artaxerxes av Persia. Brevet var skrevet med arameisk skrift og på arameisk språk.",
+    "versions": [
+      {
+        "text": "I Artaxerxes' dager skrev Bislam, Mitredat, Tabeel og deres embetsbrødre til kong Artaxerxes av Persia. Brevet var skrevet med arameisk skrift og oversatt til arameisk.",
+        "type": "error",
+        "severity": "major",
+        "explanation": "Det hebraiske וּמְתֻרְגָּם אֲרָמִית betyr bokstavelig 'og oversatt til arameisk', men i konteksten betyr det snarere at dokumentet var 'på arameisk språk' – altså at det var skrevet med arameisk skrift og på arameisk. 'Oversatt til arameisk' kan gi inntrykk av at det opprinnelig ble skrevet på et annet språk og deretter oversatt, noe som er misvisende. Mange oversettelser gjengir dette som 'skrevet med arameisk skrift og på arameisk språk'."
+      }
+    ]
   },
   {
     "bookId": 15,
     "chapterId": 4,
     "verseId": 8,
-    "text": "Stattholder Rehum og skriveren Simsai skrev et brev mot Jerusalem til kong Artaxerxes med følgende innhold:"
+    "text": "Rådgiver Rehum og skriveren Simsai skrev et brev mot Jerusalem til kong Artaxerxes med følgende innhold:",
+    "versions": [
+      {
+        "text": "Stattholder Rehum og skriveren Simsai skrev et brev mot Jerusalem til kong Artaxerxes med følgende innhold:",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "Det arameiske בְּעֵל־טְעֵם betyr 'den som har myndighet/kommando' – mer spesifikt en øvrighetsperson eller rådgiver, ikke en stattholder. Tittelen brukes konsekvent i kapitlet og bør gjengis likt. 'Stattholder' kan forveksles med פֶּחָה (pecha). 'Rådgiver' eller 'øvrighetsperson' er mer presist."
+      }
+    ]
   },
   {
     "bookId": 15,
     "chapterId": 4,
     "verseId": 9,
-    "text": "Fra stattholder Rehum og skriveren Simsai og deres andre embetsbrødre – dommerne, tarpelittene, perserne, folket fra Erek, babylonerne, folket fra Susan, det vil si elamittene,",
+    "text": "Fra rådgiver Rehum og skriveren Simsai og deres andre embetsbrødre – dommerne, embetsmennene, tarpelittene, perserne, folket fra Erek, babylonerne, folket fra Susan, det vil si elamittene,",
     "versions": [
       {
         "text": "Fra stattholder Rehum og skriveren Simsai og deres andre embetsbrødre – dommerne, utsendingene, perserne, folket fra Erek, babylonerne, folket fra Susan, det vil si elamittene,",
         "explanation": "Det arameiske 'טַרְפְּלָיֵא' (tarpelitter) er et folkenavn som vanligvis beholdes eller translittereres, ikke oversettes til 'utsendingene'. Betydningen er usikker, men det refererer sannsynligvis til en etnisk gruppe."
+      },
+      {
+        "text": "Fra stattholder Rehum og skriveren Simsai og deres andre embetsbrødre – dommerne, tarpelittene, perserne, folket fra Erek, babylonerne, folket fra Susan, det vil si elamittene,",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "Det arameiske אֲפַרְסַתְכָיֵא (afarsatakayya) er en egen gruppe som mangler i oversettelsen. De fleste oversettelser gjengir dette som en separat folkegruppe eller embetstittel (f.eks. 'embetsmenn' eller 'inspektører'). I tillegg bør בְּעֵל־טְעֵם oversettes med 'rådgiver' i stedet for 'stattholder'."
       }
     ]
   },
@@ -93,11 +115,17 @@
     "bookId": 15,
     "chapterId": 4,
     "verseId": 14,
-    "text": "Siden vi nå mottar lønn fra palasset og det ikke sømmer seg for oss å se på at kongen blir vanæret, sender vi dette budskapet for å informere kongen,",
+    "text": "Siden vi nå er i kongens tjeneste og det ikke sømmer seg for oss å se på at kongen blir vanæret, sender vi dette budskapet for å informere kongen,",
     "versions": [
       {
         "text": "Siden vi nå spiser salt fra palasset og det ikke sømmer seg for oss å se på at kongen blir vanæret, sender vi dette budskapet for å informere kongen,",
         "explanation": "Uttrykket 'å spise salt fra' er et idiom som betyr å være i noens tjeneste eller motta lønn. 'Mottar lønn fra palasset' formidler betydningen tydeligere på moderne norsk, selv om 'spiser salt' er en bokstavelig oversettelse av idiomet."
+      },
+      {
+        "text": "Siden vi nå mottar lønn fra palasset og det ikke sømmer seg for oss å se på at kongen blir vanæret, sender vi dette budskapet for å informere kongen,",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "Uttrykket 'mottar lønn fra palasset' er en akseptabel tolkning av det arameiske idiomet, men 'er i kongens tjeneste' er en enda mer naturlig og presis gjengivelse av lojalitetsbetydningen i uttrykket 'å spise palassets salt'. Gitt at den forrige versjonen 'spiser salt fra palasset' allerede ble endret, kan dette likevel stå som det er."
       }
     ]
   },

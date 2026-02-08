@@ -9,7 +9,15 @@
     "bookId": 3,
     "chapterId": 7,
     "verseId": 2,
-    "text": "På det stedet hvor brennofferet slaktes, skal skyldofferet slaktes. Blodet skal stenkes mot alteret rundt omkring."
+    "text": "På det stedet hvor brennofferet slaktes, skal skyldofferet slaktes. Blodet skal kastes mot alteret rundt omkring.",
+    "versions": [
+      {
+        "text": "På det stedet hvor brennofferet slaktes, skal skyldofferet slaktes. Blodet skal stenkes mot alteret rundt omkring.",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "Det hebraiske verbet זָרַק betyr å kaste/sprenge (blod), ikke å stenke. 'Stenke' (hebraisk: נָזָה/הִזָּה) er en annen handling der blod dryppes forsiktig. זָרַק innebærer å kaste blodet i større mengder mot alteret."
+      }
+    ]
   },
   {
     "bookId": 3,
@@ -81,7 +89,15 @@
     "bookId": 3,
     "chapterId": 7,
     "verseId": 14,
-    "text": "Av dette skal han bære fram én del av hver offergave som en gave til Herren. Det skal tilhøre den presten som stenker blodet av fredsofferet."
+    "text": "Av dette skal han bære fram én del av hver offergave som en løftegave til Herren. Det skal tilhøre den presten som kaster blodet av fredsofferet.",
+    "versions": [
+      {
+        "text": "Av dette skal han bære fram én del av hver offergave som en gave til Herren. Det skal tilhøre den presten som stenker blodet av fredsofferet.",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "Hebraisk תְּרוּמָה er spesifikt en 'løftegave' (heave offering), og bør oversettes mer presist. Også her brukes זֹרֵק som betyr 'kaster', ikke 'stenker'."
+      }
+    ]
   },
   {
     "bookId": 3,
@@ -111,7 +127,15 @@
     "bookId": 3,
     "chapterId": 7,
     "verseId": 19,
-    "text": "Kjøtt som har kommet i berøring med noe urent, skal ikke spises, men brennes opp i ild. Ellers kan alle som er rene, spise av kjøttet."
+    "text": "Kjøtt som har kommet i berøring med noe urent, skal ikke spises, men brennes opp i ild. Men kjøttet kan spises av alle som er rene.",
+    "versions": [
+      {
+        "text": "Kjøtt som har kommet i berøring med noe urent, skal ikke spises, men brennes opp i ild. Ellers kan alle som er rene, spise av kjøttet.",
+        "type": "grammar",
+        "severity": "minor",
+        "explanation": "Oversettelsen er akseptabel, men 'Ellers' er litt uformelt. En mer direkte oversettelse som gjenspeiler den hebraiske strukturen bedre ville vært å formulere det som en egen setning om kjøttet."
+      }
+    ]
   },
   {
     "bookId": 3,
@@ -213,13 +237,29 @@
     "bookId": 3,
     "chapterId": 7,
     "verseId": 35,
-    "text": "Dette er den delen av Herrens ildoffer som tilkommer Aron og hans sønner fra den dagen de ble ført fram for å gjøre prestetjeneste for Herren."
+    "text": "Dette er den salvingsdelen som tilkommer Aron og hans sønner av Herrens ildoffer, fra den dagen de ble ført fram for å gjøre prestetjeneste for Herren.",
+    "versions": [
+      {
+        "text": "Dette er den delen av Herrens ildoffer som tilkommer Aron og hans sønner fra den dagen de ble ført fram for å gjøre prestetjeneste for Herren.",
+        "type": "error",
+        "severity": "major",
+        "explanation": "Det hebraiske ordet מִשְׁחַת (mishchat) betyr 'salving' eller 'den salvedes del/andel'. Verset handler om den andelen av ildofrene som tilkommer Aron og hans sønner i kraft av deres salving. Den nåværende oversettelsen utelater helt begrepet salving/innvielse som er sentralt i verset."
+      }
+    ]
   },
   {
     "bookId": 3,
     "chapterId": 7,
     "verseId": 36,
-    "text": "Dette befalte Herren at Israels barn skulle gi dem den dagen de ble salvet. Det er en evig ordning for alle deres slekter."
+    "text": "Dette befalte Herren skulle gis dem av Israels barn den dagen han salvet dem. Det er en evig ordning for alle deres slekter.",
+    "versions": [
+      {
+        "text": "Dette befalte Herren at Israels barn skulle gi dem den dagen de ble salvet. Det er en evig ordning for alle deres slekter.",
+        "type": "error",
+        "severity": "major",
+        "explanation": "Setningen er litt uklar i nåværende form. Den hebraiske teksten sier at Herren befalte at dette skulle gis dem (prestene) fra Israels barn den dagen han (Herren/Moses) salvet dem. Det er Herren som salver, ikke at de passivt 'ble salvet'."
+      }
+    ]
   },
   {
     "bookId": 3,

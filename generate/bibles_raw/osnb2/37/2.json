@@ -31,11 +31,17 @@
     "bookId": 37,
     "chapterId": 2,
     "verseId": 4,
-    "text": "Men vær nå sterk, Serubabel, sier Herren. Vær sterk, Josva, sønn av Jehosadak, du yppersteprest. Vær sterkt, hele folket i landet, sier Herren. Arbeid! For jeg er med dere, sier Herren over hærskarene.",
+    "text": "Men vær nå sterk, Serubabel, sier Herren. Vær sterk, Josva, sønn av Jehosadak, du yppersteprest. Vær sterk, hele folket i landet, sier Herren. Arbeid! For jeg er med dere, sier Herren over hærskarene.",
     "versions": [
       {
         "text": "Men vær nå sterk, Serubabel, sier Herren. Vær sterk, Josva, sønn av Jehosadak, du yppersteprest. Vær sterke, hele folket i landet, sier Herren. Arbeid! For jeg er med dere, sier Herren over hærskarene.",
         "explanation": "«Hele folket» er et kollektivt substantiv i entall og bør ha adjektivet i entall intetkjønn: «Vær sterkt» (ikke «Vær sterke»). Alternativt kan man beholde «sterke» hvis man tenker på folket som individer, men grammatisk sett er «sterkt» mer korrekt for «folket»."
+      },
+      {
+        "text": "Men vær nå sterk, Serubabel, sier Herren. Vær sterk, Josva, sønn av Jehosadak, du yppersteprest. Vær sterkt, hele folket i landet, sier Herren. Arbeid! For jeg er med dere, sier Herren over hærskarene.",
+        "type": "grammar",
+        "severity": "minor",
+        "explanation": "Verbet «חֲזַק» er imperativ maskulin entall (som i de to foregående tilfellene i verset). Formen er den samme for alle tre tiltalte – «חֲזַק» – og «folket» tiltales kollektivt med maskulin entall imperativ, ikke intetkjønn. «Vær sterk» er dermed den mest korrekte formen, konsistent med resten av verset. «Sterkt» (intetkjønn) er grammatisk misvisende fordi det er verbet som styrer formen, ikke substantivet."
       }
     ]
   },
@@ -73,7 +79,15 @@
     "bookId": 37,
     "chapterId": 2,
     "verseId": 9,
-    "text": "Dette siste husets herlighet skal bli større enn det førstes, sier Herren over hærskarene. Og på dette stedet vil jeg gi fred, sier Herren over hærskarene."
+    "text": "Herligheten til dette siste huset skal bli større enn det førstes, sier Herren over hærskarene. Og på dette stedet vil jeg gi fred, sier Herren over hærskarene.",
+    "versions": [
+      {
+        "text": "Dette siste husets herlighet skal bli større enn det førstes, sier Herren over hærskarene. Og på dette stedet vil jeg gi fred, sier Herren over hærskarene.",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "«Dette siste husets herlighet» er en litt klumpete eiendomskonstruksjon på norsk. «Herligheten til dette siste huset» gir bedre flyt og er mer naturlig norsk bokmål, samtidig som meningen bevares."
+      }
+    ]
   },
   {
     "bookId": 37,
@@ -121,7 +135,15 @@
     "bookId": 37,
     "chapterId": 2,
     "verseId": 15,
-    "text": "Legg nå merke til tiden fra denne dagen og bakover, før det ble lagt stein på stein i Herrens tempel."
+    "text": "Legg nå dette på hjertet, fra denne dagen og bakover: Før det ble lagt stein på stein i Herrens tempel –",
+    "versions": [
+      {
+        "text": "Legg nå merke til tiden fra denne dagen og bakover, før det ble lagt stein på stein i Herrens tempel.",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "Hebraisk «שִׂימוּ־נָא לְבַבְכֶם» betyr bokstavelig «legg det på hjertet» (dvs. tenk nøye over). «Legg merke til tiden» er en fri gjengivelse som mister noe av den personlige appellen. Dessuten fungerer setningen bedre med et kolon for å innlede det som følger i vers 16."
+      }
+    ]
   },
   {
     "bookId": 37,
@@ -157,11 +179,17 @@
     "bookId": 37,
     "chapterId": 2,
     "verseId": 19,
-    "text": "Er såkornet ennå i lageret? Vintreet, fikentreet, granatepletreet og oliventreet har ennå ikke båret frukt. Fra denne dagen av vil jeg velsigne dere.",
+    "text": "Er såkornet ennå i lageret? Selv vintreet, fikentreet, granatepletreet og oliventreet har ennå ikke båret frukt. Fra denne dagen av vil jeg velsigne dere.",
     "versions": [
       {
         "text": "Er såkornet ennå i lageret? Har vintreet, fikentreet, granatepletreet og oliventreet fortsatt ikke båret frukt? Fra denne dagen av vil jeg velsigne dere.",
         "explanation": "Den hebraiske teksten er en konstatering, ikke et spørsmål. 'לֹא נָשָׂא' (har ikke båret) er en påstand om tingenes tilstand, ikke et retorisk spørsmål. En deklarativ setning gjenspeiler originalen bedre."
+      },
+      {
+        "text": "Er såkornet ennå i lageret? Vintreet, fikentreet, granatepletreet og oliventreet har ennå ikke båret frukt. Fra denne dagen av vil jeg velsigne dere.",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "Hebraisk «וְעַד» (og til og med / selv) indikerer at listen av trær introduseres med en forsterkende partikkel – «til og med» eller «selv» – som understreker at ingen av disse har gitt avling. «Selv» gjengir denne nyanseforskjellen bedre."
       }
     ]
   },

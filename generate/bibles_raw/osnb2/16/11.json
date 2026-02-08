@@ -27,7 +27,15 @@
     "bookId": 16,
     "chapterId": 11,
     "verseId": 5,
-    "text": "Og Maaseja, sønn av Baruk, sønn av Kol-Hose, sønn av Hasaja, sønn av Adaja, sønn av Jojarib, sønn av Sakarja, av sjilonittene."
+    "text": "Og Maaseja, sønn av Baruk, sønn av Kol-Hose, sønn av Hasaja, sønn av Adaja, sønn av Jojarib, sønn av Sakarja, sønn av Hassjiloni.",
+    "versions": [
+      {
+        "text": "Og Maaseja, sønn av Baruk, sønn av Kol-Hose, sønn av Hasaja, sønn av Adaja, sønn av Jojarib, sønn av Sakarja, av sjilonittene.",
+        "type": "error",
+        "severity": "minor",
+        "explanation": "Det hebraiske 'בֶּן־הַשִּׁלֹנִי' betyr 'sønn av sjilonitten' (patronymisk betegnelse), ikke bare 'av sjilonittene'. Det er del av slektstavlen og bør oversettes som 'sønn av Hassjiloni' eller 'sjilonitten' knyttet til Sakarja."
+      }
+    ]
   },
   {
     "bookId": 16,
@@ -45,7 +53,15 @@
     "bookId": 16,
     "chapterId": 11,
     "verseId": 8,
-    "text": "Etter ham kom Gabbai og Sallai, ni hundre og tjueåtte i alt."
+    "text": "Etter ham: Gabbai og Sallai, ni hundre og tjueåtte i alt.",
+    "versions": [
+      {
+        "text": "Etter ham kom Gabbai og Sallai, ni hundre og tjueåtte i alt.",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "'Etter ham kom' innfører et verb ('kom') som ikke finnes i grunnteksten. Det hebraiske uttrykket er enklere: 'Og etter ham Gabbai, Sallai'. En mer nøyaktig oversettelse bruker kolon i stedet for å legge til et verb."
+      }
+    ]
   },
   {
     "bookId": 16,
@@ -81,11 +97,17 @@
     "bookId": 16,
     "chapterId": 11,
     "verseId": 14,
-    "text": "Deres brødre, dyktige stridsmenn, var hundre og tjueåtte. Deres tilsynsmann var Sabdiel, sønn av Haggdolim.",
+    "text": "Deres brødre, dyktige stridsmenn, var hundre og tjueåtte. Deres tilsynsmann var Sabdiel, sønn av Haggedolim.",
     "versions": [
       {
         "text": "Deres brødre, dyktige stridsmenn, var hundre og tjueåtte. Deres tilsynsmann var Sabdiel, sønn av Haggedolim.",
         "explanation": "Navnet 'הַגְּדוֹלִים' bør translittereres som 'Haggdolim' (med dobbelt-g for å reflektere dagesh i gimel) for mer korrekt gjengivelse av det hebraiske navnet."
+      },
+      {
+        "text": "Deres brødre, dyktige stridsmenn, var hundre og tjueåtte. Deres tilsynsmann var Sabdiel, sønn av Haggdolim.",
+        "type": "grammar",
+        "severity": "minor",
+        "explanation": "'Haggdolim' er en uvanlig translitterering. Dagesh i gimel gir dobbelt-g, men den fulle vokalen mellom de to g-ene bør reflekteres: 'Haggedolim' er mer standard (med 'e'-vokal fra segol). Merk: dette er forskjellig fra v1 som hadde 'Haggedolim' - men den nåværende versjonen 'Haggdolim' dropper vokalen unødvendig."
       }
     ]
   },
@@ -159,7 +181,15 @@
     "bookId": 16,
     "chapterId": 11,
     "verseId": 24,
-    "text": "Petakja, sønn av Mesjésabel, av etterkommerne til Serak, Judas sønn, var ved kongens hånd i alle saker som gjaldt folket."
+    "text": "Petakja, sønn av Mesjsabel, av etterkommerne til Serak, Judas sønn, var ved kongens hånd i alle saker som gjaldt folket.",
+    "versions": [
+      {
+        "text": "Petakja, sønn av Mesjésabel, av etterkommerne til Serak, Judas sønn, var ved kongens hånd i alle saker som gjaldt folket.",
+        "type": "grammar",
+        "severity": "minor",
+        "explanation": "Aksenttegnet over é i 'Mesjésabel' er uvanlig i norsk translitterering og inkonsistent med resten av oversettelsen som ikke bruker slike aksenter. 'Mesjsabel' eller 'Mesjezabel' ville være mer konsistent."
+      }
+    ]
   },
   {
     "bookId": 16,

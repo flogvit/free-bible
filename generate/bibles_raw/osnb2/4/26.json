@@ -3,7 +3,15 @@
     "bookId": 4,
     "chapterId": 26,
     "verseId": 1,
-    "text": "Herren sa til Moses og Elasar, sønn av presten Aron:"
+    "text": "Herren sa til Moses og til Elasar, sønn av Aron, presten:",
+    "versions": [
+      {
+        "text": "Herren sa til Moses og Elasar, sønn av presten Aron:",
+        "type": "error",
+        "severity": "major",
+        "explanation": "The Hebrew says 'Eleazar son of Aaron the priest' (בֶּן־אַהֲרֹ֥ן הַכֹּהֵ֖ן), meaning Eleazar is the son of Aaron and Aaron is the priest (or Eleazar is the priest). The current translation 'sønn av presten Aron' is acceptable but slightly restructured. More importantly, 'הַכֹּהֵ֖ן' modifies Aron (the priest) rather than making it 'presten Aron'. A clearer rendering would be 'Aron, presten' to match the Hebrew word order and apposition."
+      }
+    ]
   },
   {
     "bookId": 4,
@@ -21,7 +29,15 @@
     "bookId": 4,
     "chapterId": 26,
     "verseId": 4,
-    "text": "«Fra tjue år og oppover» – slik Herren hadde befalt Moses. Og Israels barn som dro ut av Egypt:"
+    "text": "«Fra tjue år og oppover» – slik Herren hadde befalt Moses. Dette var Israels barn som hadde dratt ut av Egypt:",
+    "versions": [
+      {
+        "text": "«Fra tjue år og oppover» – slik Herren hadde befalt Moses. Og Israels barn som dro ut av Egypt:",
+        "type": "grammar",
+        "severity": "minor",
+        "explanation": "The Hebrew וּבְנֵ֣י יִשְׂרָאֵ֔ל הַיֹּצְאִ֖ים מֵאֶ֥רֶץ מִצְרָֽיִם refers to the Israelites who had come out of Egypt, serving as a heading for the census list that follows. The current 'Og Israels barn som dro ut av Egypt:' is a bit abrupt and unclear in its syntactic role. A smoother rendering would be 'Dette var Israels barn som hadde dratt ut av Egypt:' to clarify it introduces the following list."
+      }
+    ]
   },
   {
     "bookId": 4,
@@ -51,7 +67,15 @@
     "bookId": 4,
     "chapterId": 26,
     "verseId": 9,
-    "text": "Eliabs sønner var Nemuel, Datan og Abiram. Dette var de Datan og Abiram som var utvalgt av menigheten, de som satte seg opp mot Moses og Aron sammen med Korahs flokk, da de gjorde opprør mot Herren."
+    "text": "Eliabs sønner var Nemuel, Datan og Abiram. Det var de samme Datan og Abiram som var kalt inn av menigheten, de som satte seg opp mot Moses og Aron sammen med Korahs flokk, da de gjorde opprør mot Herren.",
+    "versions": [
+      {
+        "text": "Eliabs sønner var Nemuel, Datan og Abiram. Dette var de Datan og Abiram som var utvalgt av menigheten, de som satte seg opp mot Moses og Aron sammen med Korahs flokk, da de gjorde opprør mot Herren.",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "The Hebrew קְרִיאֵ֣י הָעֵדָ֗ה means 'called/summoned ones of the congregation' – they were representatives or delegates called to the assembly. 'Utvalgt' (chosen) slightly shifts the meaning. 'Kalt inn av menigheten' better reflects the Hebrew root קרא (to call/summon)."
+      }
+    ]
   },
   {
     "bookId": 4,
@@ -207,7 +231,15 @@
     "bookId": 4,
     "chapterId": 26,
     "verseId": 35,
-    "text": "Efraims sønner etter sine slekter var: Sjutelah, stamfar til sjutelahittenes slekt; Beker, stamfar til bakrittenes slekt; Tahan, stamfar til tahanittenes slekt."
+    "text": "Efraims sønner etter sine slekter var: Sjutelah, stamfar til sjutelahittenes slekt; Beker, stamfar til bekerittenes slekt; Tahan, stamfar til tahanittenes slekt.",
+    "versions": [
+      {
+        "text": "Efraims sønner etter sine slekter var: Sjutelah, stamfar til sjutelahittenes slekt; Beker, stamfar til bakrittenes slekt; Tahan, stamfar til tahanittenes slekt.",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "The name is transliterated as 'Beker' but the clan name is given as 'bakrittenes' instead of 'bekerittenes'. This inconsistency could be confusing. The clan name should be derived consistently from the personal name."
+      }
+    ]
   },
   {
     "bookId": 4,
@@ -321,7 +353,15 @@
     "bookId": 4,
     "chapterId": 26,
     "verseId": 54,
-    "text": "Til en stor stamme skal du gi stor arv, og til en liten stamme liten arv. Hver stamme skal få sin arv etter antall mønstrede."
+    "text": "Til den store skal du gi en større arv, og til den lille skal du gi en mindre arv. Hver skal få sin arv i forhold til sine mønstrede.",
+    "versions": [
+      {
+        "text": "Til en stor stamme skal du gi stor arv, og til en liten stamme liten arv. Hver stamme skal få sin arv etter antall mønstrede.",
+        "type": "theological",
+        "severity": "major",
+        "explanation": "The Hebrew uses אִישׁ לְפִי פְקֻדָיו (each according to his numbered ones), meaning each group receives land proportional to its census count. The word 'stamme' (tribe) is not in the Hebrew - it says לָרַב (to the many/large) and לַמְעַט (to the few/small), referring to the groups. The translation adds 'stamme' which slightly narrows the meaning. Also, the verse doesn't say 'du' (you) - the verbs are impersonal/passive forms."
+      }
+    ]
   },
   {
     "bookId": 4,

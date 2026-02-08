@@ -27,7 +27,15 @@
     "bookId": 43,
     "chapterId": 10,
     "verseId": 4,
-    "text": "Når han har fått alle sine ut, går han foran dem, og sauene følger ham, for de kjenner hans røst."
+    "text": "Når han har drevet alle sine ut, går han foran dem, og sauene følger ham, for de kjenner hans røst.",
+    "versions": [
+      {
+        "text": "Når han har fått alle sine ut, går han foran dem, og sauene følger ham, for de kjenner hans røst.",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "Det greske 'ἐκβάλῃ' betyr 'drive ut' (sterkt ord, jf. samme verb brukt om å drive ut demoner). 'Fått ... ut' er for svakt og mister noe av den opprinnelige betydningen. 'Drevet ... ut' er mer nøyaktig."
+      }
+    ]
   },
   {
     "bookId": 43,
@@ -73,7 +81,15 @@
     "bookId": 43,
     "chapterId": 10,
     "verseId": 10,
-    "text": "Tyven kommer bare for å stjele, slakte og ødelegge. Jeg er kommet for at de skal ha liv og overflod."
+    "text": "Tyven kommer bare for å stjele, slakte og ødelegge. Jeg er kommet for at de skal ha liv, og det i overflod.",
+    "versions": [
+      {
+        "text": "Tyven kommer bare for å stjele, slakte og ødelegge. Jeg er kommet for at de skal ha liv og overflod.",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "Det greske 'καὶ περισσὸν ἔχωσιν' betyr 'og ha det i overflod/rikelig'. Uttrykket 'liv og overflod' gjør 'overflod' til et eget substantiv ved siden av 'liv', mens den greske teksten sier at det er livet de skal ha i overflod. 'Liv, og det i overflod' fanger denne nyansen bedre."
+      }
+    ]
   },
   {
     "bookId": 43,
@@ -145,11 +161,17 @@
     "bookId": 43,
     "chapterId": 10,
     "verseId": 20,
-    "text": "«Han er besatt og har gått fra vettet! Hvorfor hører dere på ham?»",
+    "text": "Mange av dem sa: «Han er besatt og har gått fra vettet! Hvorfor hører dere på ham?»",
     "versions": [
       {
         "text": "Mange av dem sa: «Han har en ond ånd og er fra forstanden. Hvorfor hører dere på ham?»",
         "explanation": "Det greske 'μαίνεται' betyr 'er gal/raser' og er sterkere enn 'er fra forstanden'. 'Har gått fra vettet' er mer idiomatisk norsk og gir bedre muntlig energi. 'Er besatt' er også mer direkte enn 'har en ond ånd' og samsvarer med ordbruken i vers 21."
+      },
+      {
+        "text": "«Han er besatt og har gått fra vettet! Hvorfor hører dere på ham?»",
+        "type": "error",
+        "severity": "major",
+        "explanation": "Den nåværende oversettelsen har fjernet innledningen 'ἔλεγον δὲ πολλοὶ ἐξ αὐτῶν' (Mange av dem sa). Uten denne innledningen mangler verset sitt subjekt og narrativ kontekst. Den forrige versjonen hadde 'Mange av dem sa:' som innledning, men det var ordlyden etterpå som ble endret. Innledningen bør bevares."
       }
     ]
   },
@@ -217,11 +239,17 @@
     "bookId": 43,
     "chapterId": 10,
     "verseId": 29,
-    "text": "Det min Far har gitt meg, er større enn alt, og ingen kan rive dem ut av min Fars hånd.",
+    "text": "Min Far, som har gitt meg det, er større enn alt, og ingen kan rive dem ut av min Fars hånd.",
     "versions": [
       {
         "text": "Min Far, som har gitt meg dem, er større enn alle, og ingen kan rive dem ut av min Fars hånd.",
         "explanation": "Det er en kjent tekstvariant her. Noen manuskripter leser 'ὃ' (nøytrum - 'det som') og andre 'ὃς' (maskulinum - 'han som'). Den valgte oversettelsen følger lesningen som gjør Faderen til subjekt ('han som'), men grunnteksten du har oppgitt har nøytrum 'ὃ', som ville bety 'det min Far har gitt meg er større enn alt'. Dette er en teologisk viktig tekstkritisk forskjell."
+      },
+      {
+        "text": "Det min Far har gitt meg, er større enn alt, og ingen kan rive dem ut av min Fars hånd.",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "Verset har allerede vært revidert én gang, men den nåværende oversettelsen har et problem. Selv om grunnteksten har nøytrum 'ὃ', er 'πάντων μεῖζων' (større enn alle/alt) med 'ἐστίν' vanskelig å lese som om det er 'det gitte' som er subjektet, fordi setningen da mangler logisk koherens med konteksten om beskyttelse. Mange eksegeter og oversettelser tolker dette slik at Faderen er subjektet. Den foreslåtte versjonen unngår den forrige versjonens ordlyd ('er større enn alle') ved å bruke 'er større enn alt', men klargjør at Faderen er den som er større."
       }
     ]
   },

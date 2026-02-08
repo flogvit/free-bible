@@ -21,11 +21,17 @@
     "bookId": 22,
     "chapterId": 1,
     "verseId": 3,
-    "text": "Dine salver dufter herlig, ditt navn er som utgytt olje.",
+    "text": "Dine salver dufter herlig, ditt navn er som utgytt olje. Derfor elsker de unge kvinnene deg.",
     "versions": [
       {
         "text": "Dine salver dufter herlig, navnet ditt er som utgytt olje. Derfor elsker de unge kvinnene deg.",
         "explanation": "For bedre muntlig flyt på norsk er 'ditt navn' mer naturlig enn 'navnet ditt' i denne setningskonstruksjonen."
+      },
+      {
+        "text": "Dine salver dufter herlig, ditt navn er som utgytt olje.",
+        "type": "error",
+        "severity": "major",
+        "explanation": "Den siste setningen עַל־כֵּן עֲלָמוֹת אֲהֵבוּךָ ('derfor elsker de unge kvinnene deg') er utelatt i den nåværende oversettelsen. Versjonshistorikken viser at denne setningen var med i versjon 1, men endringsårsaken nevner bare en omformulering av 'ditt navn' vs 'navnet ditt' – ikke fjerning av siste setning. Dette ser ut som en utilsiktet utelatelse av innhold fra grunnteksten. Selv om forrige versjon hadde denne setningen, er det en kritisk feil at bibeltekst mangler."
       }
     ]
   },
@@ -81,13 +87,29 @@
     "bookId": 22,
     "chapterId": 1,
     "verseId": 10,
-    "text": "Vakre er dine kinn med øreringene, din hals med perlekjedene."
+    "text": "Vakre er dine kinn mellom radene av smykker, din hals med perlekjedene.",
+    "versions": [
+      {
+        "text": "Vakre er dine kinn med øreringene, din hals med perlekjedene.",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "Det hebraiske בַּתֹּרִים betyr 'med rader (av smykker/perler)' snarere enn 'øreringer'. Ordet תּוֹר refererer til en rad eller rekke av smykker, ikke spesifikt øredobber. Oversettelsen 'øreringene' er upresist."
+      }
+    ]
   },
   {
     "bookId": 22,
     "chapterId": 1,
     "verseId": 11,
-    "text": "Vi vil lage gullringer til deg med sølvkuler."
+    "text": "Vi vil lage gullkjeder til deg med sølvprikker.",
+    "versions": [
+      {
+        "text": "Vi vil lage gullringer til deg med sølvkuler.",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "תּוֹרֵי זָהָב betyr 'rader/kjeder av gull', ikke 'gullringer'. Og נְקֻדּוֹת betyr 'prikker/punkter/innlegg', ikke 'kuler'. Oversettelsen bør reflektere at det handler om gullkjeder/gullrader med sølvinnlegg."
+      }
+    ]
   },
   {
     "bookId": 22,
@@ -117,7 +139,15 @@
     "bookId": 22,
     "chapterId": 1,
     "verseId": 16,
-    "text": "Se, du er vakker, min elskede, ja, så herlig! Vårt leie er grønt og frodig."
+    "text": "Se, du er vakker, min elskede, ja, så herlig! Ja, vårt leie er grønt.",
+    "versions": [
+      {
+        "text": "Se, du er vakker, min elskede, ja, så herlig! Vårt leie er grønt og frodig.",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "רַעֲנָנָה betyr 'grønn/frodig' – det er ett adjektiv, ikke to. 'Grønt og frodig' er litt redundant. Den andre אַף ('ja/også') innleder setningen om leiet og bør gjenspeiles. Men dette er en mindre stilistisk sak."
+      }
+    ]
   },
   {
     "bookId": 22,

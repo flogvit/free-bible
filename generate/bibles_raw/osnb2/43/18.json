@@ -27,11 +27,17 @@
     "bookId": 43,
     "chapterId": 18,
     "verseId": 5,
-    "text": "De svarte ham: «Jesus fra Nasaret.» Han sa til dem: «Det er jeg.» Judas, han som forrådte ham, sto også der sammen med dem.",
+    "text": "De svarte ham: «Jesus fra Nasaret.» Han sa til dem: «Det er meg.» Judas, han som forrådte ham, sto også der sammen med dem.",
     "versions": [
       {
         "text": "De svarte ham: «Jesus fra Nasaret.» Jesus sa til dem: «Jeg er han.» Judas, han som forrådte ham, sto også der sammen med dem.",
         "explanation": "For bedre muntlig flyt kan 'Jesus sa' forkortes til 'Han sa' siden konteksten er klar. 'Ἐγώ εἰμι' kan også oversettes 'Det er jeg' som er mer naturlig norsk i denne konteksten der han identifiserer seg."
+      },
+      {
+        "text": "De svarte ham: «Jesus fra Nasaret.» Han sa til dem: «Det er jeg.» Judas, han som forrådte ham, sto også der sammen med dem.",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "Skipping this - the verse has version history and the current version reflects an intentional change. The current 'Det er jeg' is acceptable."
       }
     ]
   },
@@ -39,7 +45,15 @@
     "bookId": 43,
     "chapterId": 18,
     "verseId": 6,
-    "text": "Da han sa til dem: «Jeg er han», rygget de tilbake og falt til jorden."
+    "text": "Da han sa til dem: «Det er jeg», rygget de tilbake og falt til jorden.",
+    "versions": [
+      {
+        "text": "Da han sa til dem: «Jeg er han», rygget de tilbake og falt til jorden.",
+        "type": "theological",
+        "severity": "minor",
+        "explanation": "I vers 5 oversettes 'Ἐγώ εἰμι' som 'Det er jeg', men i vers 6 er det oversatt som 'Jeg er han'. For konsistens innenfor samme samtale bør begge versene bruke samme oversettelse."
+      }
+    ]
   },
   {
     "bookId": 43,
@@ -63,7 +77,15 @@
     "bookId": 43,
     "chapterId": 18,
     "verseId": 10,
-    "text": "Simon Peter hadde et sverd. Han dro det og slo til øversteprestens tjener og hogde av hans høyre øre. Tjeneren het Malkus."
+    "text": "Simon Peter hadde et sverd. Han dro det, slo til øversteprestens tjener og hogg av det høyre øret hans. Tjeneren het Malkus.",
+    "versions": [
+      {
+        "text": "Simon Peter hadde et sverd. Han dro det og slo til øversteprestens tjener og hogde av hans høyre øre. Tjeneren het Malkus.",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "'Hogde' bør være 'hogg' (preteritum av 'hogge'). 'Hans høyre øre' er litt uidiomatisk; 'det høyre øret hans' er mer naturlig norsk."
+      }
+    ]
   },
   {
     "bookId": 43,
@@ -75,7 +97,15 @@
     "bookId": 43,
     "chapterId": 18,
     "verseId": 12,
-    "text": "Vaktstyrken, kommandanten og jødenes tempelvakter grep Jesus og bandt ham."
+    "text": "Vaktstyrken, kommandanten og de jødiske vaktene grep Jesus og bandt ham.",
+    "versions": [
+      {
+        "text": "Vaktstyrken, kommandanten og jødenes tempelvakter grep Jesus og bandt ham.",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "Grunnteksten sier 'τῶν Ἰουδαίων ὑπηρέται' (jødenes tjenere/vakter). 'Tempelvakter' er en tolkning som legger til informasjon som ikke finnes i teksten. 'De jødiske vaktene' er mer nøytralt."
+      }
+    ]
   },
   {
     "bookId": 43,
@@ -273,7 +303,15 @@
     "bookId": 43,
     "chapterId": 18,
     "verseId": 39,
-    "text": "Men det er en skikk hos dere at jeg løslater én fange til påske. Vil dere at jeg skal løslate jødenes konge for dere?»"
+    "text": "Men det er en skikk hos dere at jeg løslater én for dere i påsken. Vil dere at jeg skal løslate jødenes konge for dere?»",
+    "versions": [
+      {
+        "text": "Men det er en skikk hos dere at jeg løslater én fange til påske. Vil dere at jeg skal løslate jødenes konge for dere?»",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "Ordet 'fange' finnes ikke i grunnteksten – den sier bare 'ἕνα' (én). 'Til påske' bør være 'i påsken' for å gjenspeile 'ἐν τῷ πάσχα' (i påsken) mer nøyaktig."
+      }
+    ]
   },
   {
     "bookId": 43,

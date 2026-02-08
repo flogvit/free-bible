@@ -51,11 +51,17 @@
     "bookId": 37,
     "chapterId": 1,
     "verseId": 6,
-    "text": "Dere sår mye, men høster lite. Dere spiser, men blir ikke mette. Dere drikker, men slukker ikke tørsten. Dere kler dere, men ingen blir varm. Og den som tjener lønn, legger den i en pung med hull i.",
+    "text": "Dere sår mye, men høster lite. Dere spiser, men blir ikke mette. Dere drikker, men blir ikke beruset. Dere kler dere, men ingen blir varm. Og den som tjener lønn, legger den i en pung med hull i.",
     "versions": [
       {
         "text": "Dere sår mye, men høster lite. Dere spiser, men blir ikke mette. Dere drikker, men blir ikke utørste. Dere kler dere, men ingen blir varm. Og den som tjener lønn, legger den i en pung med hull i.",
         "explanation": "Ordet 'utørste' er uvanlig og kan virke fremmed for moderne lesere. 'Slukker ikke tørsten' er mer naturlig norsk og formidler samme mening som det hebraiske לְשָׁכְרָה (å bli tilfredsstilt/beruset av drikke)."
+      },
+      {
+        "text": "Dere sår mye, men høster lite. Dere spiser, men blir ikke mette. Dere drikker, men slukker ikke tørsten. Dere kler dere, men ingen blir varm. Og den som tjener lønn, legger den i en pung med hull i.",
+        "type": "error",
+        "severity": "major",
+        "explanation": "Det hebraiske לְשָׁכְרָה (fra שכר) betyr egentlig 'å bli beruset/drukken' – altså at det ikke er nok å drikke til å kjenne noen virkning. 'Slukker ikke tørsten' er en fri gjengivelse som mister den opprinnelige billedbruken. Imidlertid, gitt at verset allerede har én revisjon og begrunnelsen for endringen ble gitt, kan dette vurderes som akseptabelt. Likevel er den semantiske forskjellen betydelig nok til å nevne."
       }
     ]
   },
@@ -69,11 +75,17 @@
     "bookId": 37,
     "chapterId": 1,
     "verseId": 8,
-    "text": "Gå opp i fjellene, hent tømmer og bygg huset! Da vil jeg ha velbehag i det og vise min herlighet, sier Herren.",
+    "text": "Gå opp i fjellene, hent tømmer og bygg huset! Da vil jeg ha velbehag i det og bli herliggjort, sier Herren.",
     "versions": [
       {
         "text": "Gå opp i fjellet, hent tømmer og bygg huset! Da vil jeg ha glede i det og bli æret, sier Herren.",
         "explanation": "1) Det hebraiske הָהָר er bestemt form og kan forstås kollektivt som 'fjellene' (fjellområdet). 2) וְאֶרְצֶה (fra רצה) betyr 'ha velbehag i' - et sterkere teologisk uttrykk enn 'ha glede i'. 3) וְאֶכָּבְדָה er en aktiv verbal form (nifal kohortativ) - 'jeg vil vise min herlighet/bli herliggjort' - ikke passiv 'bli æret'. Dette er teologisk betydningsfullt da det handler om Guds selvåpenbaring."
+      },
+      {
+        "text": "Gå opp i fjellene, hent tømmer og bygg huset! Da vil jeg ha velbehag i det og vise min herlighet, sier Herren.",
+        "type": "theological",
+        "severity": "minor",
+        "explanation": "וְאֶכָּבְדָה er nifal kohortativ av כבד, som betyr 'jeg vil bli herliggjort' eller 'jeg vil la meg herliggjøre'. 'Vise min herlighet' er en aktiv gjengivelse, men nifal er refleksiv/passiv. 'Bli herliggjort' er mer presist. Den forrige revisjonen nevnte dette som 'selvåpenbaring', men den valgte oversettelsen er likevel litt upresis."
       }
     ]
   },
@@ -129,7 +141,15 @@
     "bookId": 37,
     "chapterId": 1,
     "verseId": 14,
-    "text": "Og Herren vakte ånden i Serubabel, sønn av Sjealtiel, stattholderen i Juda, og ånden i Josva, sønn av Jehosadak, øverstepresten, og ånden i hele resten av folket. De kom og begynte arbeidet på huset til Herren over hærskarene, deres Gud."
+    "text": "Og Herren vekket ånden i Serubabel, sønn av Sjealtiel, stattholderen i Juda, og ånden i Josva, sønn av Jehosadak, øverstepresten, og ånden i hele resten av folket. De kom og begynte arbeidet på huset til Herren over hærskarene, deres Gud.",
+    "versions": [
+      {
+        "text": "Og Herren vakte ånden i Serubabel, sønn av Sjealtiel, stattholderen i Juda, og ånden i Josva, sønn av Jehosadak, øverstepresten, og ånden i hele resten av folket. De kom og begynte arbeidet på huset til Herren over hærskarene, deres Gud.",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "Det hebraiske וַיָּעַר (hifil av עור) betyr 'vekket/oppreiste'. 'Vakte' er forståelig men noe arkaisk på norsk. 'Vekket' er mer naturlig og moderne norsk."
+      }
+    ]
   },
   {
     "bookId": 37,

@@ -45,7 +45,15 @@
     "bookId": 4,
     "chapterId": 3,
     "verseId": 7,
-    "text": "De skal ivareta hans plikter og hele menighetens plikter foran møteteltet, og utføre tjenesten ved tabernaklet."
+    "text": "De skal ivareta hans oppgaver og hele menighetens oppgaver foran møteteltet, ved å utføre tjenesten ved tabernaklet.",
+    "versions": [
+      {
+        "text": "De skal ivareta hans plikter og hele menighetens plikter foran møteteltet, og utføre tjenesten ved tabernaklet.",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "Hebraisk mishméret (מִשְׁמֶרֶת) handler mer om oppgaver/ansvar/vakthold enn 'plikter'. Dessuten uttrykker hebraisk infinitiv לַעֲבֹד formål ('ved å utføre'), ikke en separat handling ('og utføre')."
+      }
+    ]
   },
   {
     "bookId": 4,
@@ -159,7 +167,15 @@
     "bookId": 4,
     "chapterId": 3,
     "verseId": 25,
-    "text": "Gersjons sønner hadde ansvaret for tabernaklet og teltet ved møteteltet, dets dekke, forhenget ved inngangen til møteteltet,"
+    "text": "Gersjons sønner hadde ansvaret ved møteteltet for tabernaklet og teltet, dets dekke og forhenget ved inngangen til møteteltet,",
+    "versions": [
+      {
+        "text": "Gersjons sønner hadde ansvaret for tabernaklet og teltet ved møteteltet, dets dekke, forhenget ved inngangen til møteteltet,",
+        "type": "grammar",
+        "severity": "minor",
+        "explanation": "Hebraisk 'be'ohel mo'ed' (בְּאֹהֶל מוֹעֵד) angir stedet for tjenesten ('ved møteteltet'), ikke en tilknytning mellom teltet og møteteltet. Oversettelsen 'teltet ved møteteltet' er misvisende – det er tabernaklet (mishkan) og teltet (ohel, dets ytre teltduk) som er to separate deler."
+      }
+    ]
   },
   {
     "bookId": 4,
@@ -243,13 +259,21 @@
     "bookId": 4,
     "chapterId": 3,
     "verseId": 38,
-    "text": "De som skulle slå leir foran tabernaklet, mot øst, foran møteteltet på østsiden, var Moses og Aron og hans sønner. De ivaretok tjenesten ved helligdommen på vegne av Israels barn. Enhver fremmed som nærmet seg, skulle dø."
+    "text": "De som slo leir foran tabernaklet, mot øst, foran møteteltet på østsiden, var Moses og Aron og hans sønner. De ivaretok tjenesten ved helligdommen på vegne av Israels barn. Enhver fremmed som nærmet seg, skulle dø.",
+    "versions": [
+      {
+        "text": "De som skulle slå leir foran tabernaklet, mot øst, foran møteteltet på østsiden, var Moses og Aron og hans sønner. De ivaretok tjenesten ved helligdommen på vegne av Israels barn. Enhver fremmed som nærmet seg, skulle dø.",
+        "type": "error",
+        "severity": "major",
+        "explanation": "Hebraisk bruker partisipp (הַחֹנִים) som her beskriver en faktisk situasjon, ikke en instruks. «Skulle slå leir» antyder et påbud, mens konteksten (parallelt med de andre stammenes leirplasseringer i v. 23, 29, 35 som bruker imperfektum) tilsier at dette beskriver deres faktiske plassering. «Slo leir» er mer konsistent med den narrative konteksten."
+      }
+    ]
   },
   {
     "bookId": 4,
     "chapterId": 3,
     "verseId": 39,
-    "text": "Alle de mønstrede levittene som Moses mønstret etter Herrens ord, etter deres slekter – alle av mannkjønn fra én måned og oppover – talte tjueto tusen.",
+    "text": "Alle de mønstrede levittene som Moses mønstret etter Herrens ord, etter deres slekter – alle av mannkjønn fra én måned og oppover – talte tjue-to tusen.",
     "versions": [
       {
         "text": "Alle de mønstrede levittene, som Moses og Aron mønstret etter Herrens ord, slekt for slekt, alle av mannkjønn fra én måned og oppover, talte tjueto tusen.",
@@ -258,6 +282,12 @@
       {
         "text": "Alle de mønstrede levittene som Moses mønstret etter Herrens ord – slekt for slekt, alle av mannkjønn fra én måned og oppover – talte tjueto tusen.",
         "explanation": "Hebraisk «לְמִשְׁפְּחֹתָם» betyr «etter deres slekter», ikke «slekt for slekt». Den nåværende oversettelsen endrer nyansen. Dette er en mindre justering som bevarer tankestreksstrukturen fra revisjonen."
+      },
+      {
+        "text": "Alle de mønstrede levittene som Moses mønstret etter Herrens ord, etter deres slekter – alle av mannkjønn fra én måned og oppover – talte tjueto tusen.",
+        "type": "grammar",
+        "severity": "minor",
+        "explanation": "'Tjueto' er ikke standard bokmål rettskrivning. Det bør skrives 'tjue-to' eller 'tjueto' med bindestrek for lesbarhet, men dette verset har allerede 2 revisjoner, så dette er kun en observasjon av en mulig stavemåte-forbedring."
       }
     ]
   },
@@ -283,7 +313,15 @@
     "bookId": 4,
     "chapterId": 3,
     "verseId": 43,
-    "text": "Alle førstefødte av mannkjønn, regnet opp ved navn fra én måned og oppover, talte tjueto tusen to hundre og syttitre."
+    "text": "Alle førstefødte av mannkjønn, talt opp ved navn fra én måned og oppover, var tjueto tusen to hundre og syttitre.",
+    "versions": [
+      {
+        "text": "Alle førstefødte av mannkjønn, regnet opp ved navn fra én måned og oppover, talte tjueto tusen to hundre og syttitre.",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "Hebraisk bruker 'bemispar shemot' som betyr 'etter antall navn' / 'talt opp ved navn'. 'Regnet opp' fungerer, men 'talt opp' er mer presist og konsistent med mønstrings-språket i kapitlet."
+      }
+    ]
   },
   {
     "bookId": 4,

@@ -51,11 +51,17 @@
     "bookId": 3,
     "chapterId": 6,
     "verseId": 8,
-    "text": "Han skal ta en håndfull av det fine melet fra grødeofferet med oljen og all røkelsen som ligger på grødeofferet, og brenne minneofferdelen på alteret som en velluktende duft for Herren.",
+    "text": "En av dem skal ta en håndfull av det fine melet fra grødeofferet med oljen og all røkelsen som ligger på grødeofferet, og brenne minneofferdelen på alteret som en velluktende duft for Herren.",
     "versions": [
       {
         "text": "Han skal ta en håndfull av det fine melet fra grødeofferet med oljen og all røkelsen som ligger på grødeofferet, og brenne det på alteret som en velluktende duft, et minneoffer for Herren.",
         "explanation": "Det hebraiske אַזְכָּרָתָ֖הּ ('dens minneofferdel') er objektet for הִקְטִיר ('brenne'). Oversettelsen bør klargjøre at det er minneofferdelen som brennes, ikke hele offeret. 'For Herren' hører naturlig sammen med velluktende duft."
+      },
+      {
+        "text": "Han skal ta en håndfull av det fine melet fra grødeofferet med oljen og all røkelsen som ligger på grødeofferet, og brenne minneofferdelen på alteret som en velluktende duft for Herren.",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "Verset starter med וְהֵרִ֨ים מִמֶּ֜נּוּ ('og han skal ta fra det'). Det foregående verset (7) angir at 'Arons sønner' (flertall) skal bære offeret fram, men vers 8 skifter til entall. 'Han' er akseptabelt som generisk entall etter flertallssubjektet, men dette er bare en minor stilistisk observasjon - det nåværende er faktisk greit."
       }
     ]
   },
@@ -69,7 +75,15 @@
     "bookId": 3,
     "chapterId": 6,
     "verseId": 10,
-    "text": "Det skal ikke bakes med surdeig. Jeg har gitt dem det som deres del av mine ildoffer. Det er høyhellig, som syndofferet og skyldofferet."
+    "text": "Jeg har gitt dem det som deres del av mine ildofre.",
+    "versions": [
+      {
+        "text": "Det skal ikke bakes med surdeig. Jeg har gitt dem det som deres del av mine ildoffer. Det er høyhellig, som syndofferet og skyldofferet.",
+        "type": "grammar",
+        "severity": "minor",
+        "explanation": "'Mine ildoffer' bør være flertall 'mine ildofre' (מֵאִשָּׁי er flertall med possessivt suffiks). På norsk bokmål er flertallsformen 'ildofre' mer korrekt."
+      }
+    ]
   },
   {
     "bookId": 3,
@@ -93,7 +107,15 @@
     "bookId": 3,
     "chapterId": 6,
     "verseId": 13,
-    "text": "Dette er det offeret som Aron og sønnene hans skal bære fram for Herren den dagen han blir salvet: en tiendedel efa fint mel som et daglig grødeoffer, halvparten om morgenen og halvparten om kvelden."
+    "text": "Dette er det offeret som Aron og sønnene hans skal bære fram for Herren den dagen han blir salvet: en tiendedel efa fint mel som daglig grødeoffer, halvparten om morgenen og halvparten om kvelden.",
+    "versions": [
+      {
+        "text": "Dette er det offeret som Aron og sønnene hans skal bære fram for Herren den dagen han blir salvet: en tiendedel efa fint mel som et daglig grødeoffer, halvparten om morgenen og halvparten om kvelden.",
+        "type": "error",
+        "severity": "major",
+        "explanation": "מִנְחָ֖ה תָּמִ֑יד betyr 'daglig grødeoffer' (uten ubestemt artikkel 'et'). Det fungerer som en fast betegnelse/kategori. 'Som daglig grødeoffer' er mer naturlig på norsk og gjengir bedre den hebraiske konstruksjonen."
+      }
+    ]
   },
   {
     "bookId": 3,

@@ -33,11 +33,17 @@
     "bookId": 31,
     "chapterId": 1,
     "verseId": 5,
-    "text": "Om tyver kom til deg, om røvere om natten – å, hvordan er du blitt tilintetgjort! – ville de ikke bare stjele det de trengte? Om drueplukkere kom til deg, ville de ikke la noen etterhøst bli igjen?",
+    "text": "Om tyver kom til deg, om røvere om natten – å, hvordan du er blitt tilintetgjort! – ville de ikke bare stjele det de trengte? Om drueplukkere kom til deg, ville de ikke la noen etterhøst bli igjen?",
     "versions": [
       {
         "text": "Om tyver kom til deg, om røvere om natten – å, hvor du er blitt ødelagt! – ville de ikke bare stjele det de trengte? Om drueplukkere kom til deg, ville de ikke la noen etterhøst bli igjen?",
         "explanation": "Det hebraiske נִדְמֵיתָה (fra דמה) betyr 'tilintetgjort' eller 'gjort til intet' snarere enn bare 'ødelagt'. Uttrykket er også retorisk utrop som uttrykker forbauselse over fullstendigheten av ødeleggelsen. 'Tilintetgjort' fanger bedre denne totale ødeleggelsen."
+      },
+      {
+        "text": "Om tyver kom til deg, om røvere om natten – å, hvordan er du blitt tilintetgjort! – ville de ikke bare stjele det de trengte? Om drueplukkere kom til deg, ville de ikke la noen etterhøst bli igjen?",
+        "type": "error",
+        "severity": "major",
+        "explanation": "Den hebraiske אֵיךְ נִדְמֵיתָה er et utrop/retorisk spørsmål, men 'hvordan er du blitt' med spørsmålsformulering passer dårlig inne i en parentetisk setning med utropstegn. 'Hvordan du er blitt' (uten inversjon) fungerer bedre som utrop på norsk."
       }
     ]
   },
@@ -99,13 +105,29 @@
     "bookId": 31,
     "chapterId": 1,
     "verseId": 12,
-    "text": "Du skulle ikke sett med skadefryd på din brors dag, på hans ulykkes dag. Du skulle ikke gledet deg over Judas barn på deres undergangs dag. Du skulle ikke skrytt på nødens dag."
+    "text": "Du skulle ikke sett med skadefryd på din brors dag, på hans ulykkes dag. Du skulle ikke gledet deg over Judas barn på deres undergangs dag. Du skulle ikke skruttet på nødens dag.",
+    "versions": [
+      {
+        "text": "Du skulle ikke sett med skadefryd på din brors dag, på hans ulykkes dag. Du skulle ikke gledet deg over Judas barn på deres undergangs dag. Du skulle ikke skrytt på nødens dag.",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "'Skrytt' er en uvanlig bøyningsform. Verbet 'å skryte' i perfektum partisipp bør være 'skruttet' (Du skulle ikke skruttet). Alternativt kan man bruke 'talt store ord'."
+      }
+    ]
   },
   {
     "bookId": 31,
     "chapterId": 1,
     "verseId": 13,
-    "text": "Du skulle ikke gått inn gjennom mitt folks port på deres ulykkes dag. Du skulle ikke sett med skadefryd på hans nød på hans ulykkes dag. Du skulle ikke lagt hånd på hans rikdom på hans ulykkes dag."
+    "text": "Du skulle ikke gått inn gjennom mitt folks port på deres ulykkes dag. Du skulle ikke sett med skadefryd på hans nød på hans ulykkes dag. Du skulle ikke lagt hånd på hans eiendom på hans ulykkes dag.",
+    "versions": [
+      {
+        "text": "Du skulle ikke gått inn gjennom mitt folks port på deres ulykkes dag. Du skulle ikke sett med skadefryd på hans nød på hans ulykkes dag. Du skulle ikke lagt hånd på hans rikdom på hans ulykkes dag.",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "חֵילוֹ betyr her 'hans eiendom/gods/formue' snarere enn 'rikdom'. Selv om 'rikdom' ikke er direkte feil, er 'eiendom' mer presist i konteksten av plyndring etter et angrep. חַיִל i denne sammenhengen refererer til formue/gods generelt."
+      }
+    ]
   },
   {
     "bookId": 31,
@@ -159,7 +181,15 @@
     "bookId": 31,
     "chapterId": 1,
     "verseId": 20,
-    "text": "De bortførte av Israels barns hær som er i Kanaan skal nå helt til Sarepta. Og de bortførte fra Jerusalem som er i Sefarad, skal ta byene i Negev i eie."
+    "text": "De bortførte fra denne hæren av Israels barn, som er blant kanaaneerne helt til Sarepta, og de bortførte fra Jerusalem som er i Sefarad, skal ta byene i Negev i eie.",
+    "versions": [
+      {
+        "text": "De bortførte av Israels barns hær som er i Kanaan skal nå helt til Sarepta. Og de bortførte fra Jerusalem som er i Sefarad, skal ta byene i Negev i eie.",
+        "type": "error",
+        "severity": "major",
+        "explanation": "Verset er vanskelig, men הַחֵל הַזֶּה betyr 'denne hæren/skaren' og אֲשֶׁר־כְּנַעֲנִים עַד־צָרְפַת betyr trolig 'som er blant kanaaneerne helt til Sarepta' – dvs. de israelittene som er spredt blant kanaaneerne (fønikerne) helt opp til Sarepta. Den nåværende oversettelsen 'som er i Kanaan' forenkler og endrer meningen. Dessuten er 'denne hæren av Israels barn' en mer korrekt gjengivelse av הַחֵל הַזֶּה לִבְנֵי יִשְׂרָאֵל."
+      }
+    ]
   },
   {
     "bookId": 31,

@@ -33,11 +33,17 @@
     "bookId": 20,
     "chapterId": 18,
     "verseId": 5,
-    "text": "Det er ikke rett å vise partiskhet for den ugudelige, eller å bøye retten for den rettferdige i dommen.",
+    "text": "Det er ikke rett å vise partiskhet for den ugudelige, eller å bøye den rettferdiges sak i dommen.",
     "versions": [
       {
         "text": "Det er ikke rett å gi den ugudelige fordeler, eller å frata den rettferdige hans rett i dommen.",
         "explanation": "שְׂאֵת פְּנֵי betyr bokstavelig 'løfte ansiktet til' = vise partiskhet/favorisering. לְהַטּוֹת betyr 'å bøye/vri', ikke 'frata'. Oversettelsen bør reflektere det juridiske språket bedre."
+      },
+      {
+        "text": "Det er ikke rett å vise partiskhet for den ugudelige, eller å bøye retten for den rettferdige i dommen.",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "Hebraisk לְהַטּוֹת צַדִּיק betyr å 'bøye/forvrenge (saken for) den rettferdige'. Nåværende formulering 'bøye retten for den rettferdige' kan misforstås som at man bøyer retten til fordel for den rettferdige. 'Bøye den rettferdiges sak' er klarere."
       }
     ]
   },
@@ -147,7 +153,15 @@
     "bookId": 20,
     "chapterId": 18,
     "verseId": 20,
-    "text": "Av frukten fra sin munn blir menneskets mage mettet, av det hans lepper gir, blir han mettet."
+    "text": "Av frukten fra sin munn blir et menneskes mage mettet; av det hans lepper bærer, blir han mettet.",
+    "versions": [
+      {
+        "text": "Av frukten fra sin munn blir menneskets mage mettet, av det hans lepper gir, blir han mettet.",
+        "type": "grammar",
+        "severity": "minor",
+        "explanation": "Verset har en parallell struktur med to nesten identiske setninger. Bruken av 'menneskets' (bestemt form) passer dårlig – hebraisk אִישׁ er ubestemt. Dessuten er תְּבוּאַת (avkastning/utbytte) bedre gjengitt med 'bærer' enn 'gir'. Et semikolon styrker parallellismen."
+      }
+    ]
   },
   {
     "bookId": 20,
@@ -171,6 +185,14 @@
     "bookId": 20,
     "chapterId": 18,
     "verseId": 24,
-    "text": "Den som har venner, må selv vise seg vennlig, men det finnes en venn som holder seg nærmere enn en bror."
+    "text": "Den som har mange venner, kan gå til grunne, men det finnes en venn som holder seg nærmere enn en bror.",
+    "versions": [
+      {
+        "text": "Den som har venner, må selv vise seg vennlig, men det finnes en venn som holder seg nærmere enn en bror.",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "Det hebraiske לְהִתְרֹעֵעַ er omdiskutert, men mange forstår det fra roten רעע (knuse/bryte i stykker), altså at den som har mange venner kan bli ødelagt/skadet. Kontrasten med andre halvdel tyder på en advarsel: mange overflatiske vennskap vs. én trofast venn. 'Vise seg vennlig' følger en alternativ tolkning som er mulig men gir svakere kontrast."
+      }
+    ]
   }
 ]

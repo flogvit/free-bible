@@ -79,11 +79,17 @@
     "bookId": 42,
     "chapterId": 13,
     "verseId": 11,
-    "text": "Der var det en kvinne som hadde hatt en vanmaktsånd i atten år. Hun gikk krokbøyd og kunne på ingen måte rette seg opp.",
+    "text": "Der var det en kvinne som hadde en vanmaktsånd i atten år. Hun gikk krokbøyd og kunne på ingen måte rette seg opp.",
     "versions": [
       {
         "text": "Der var det en kvinne som hadde vært plaget av en sykdomsånd i atten år. Hun gikk krokbøyd og kunne ikke rette seg opp.",
         "explanation": "πνεῦμα ἀσθενείας betyr bokstavelig 'svakhets-/vanmaktsånd'. Også εἰς τὸ παντελές betyr 'fullstendig/på ingen måte', noe som understreker at hun absolutt ikke kunne rette seg opp."
+      },
+      {
+        "text": "Der var det en kvinne som hadde hatt en vanmaktsånd i atten år. Hun gikk krokbøyd og kunne på ingen måte rette seg opp.",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "Det greske πνεῦμα ἔχουσα ἀσθενείας er presens partisipp – 'som har en vanmaktsånd', ikke 'hadde hatt'. Hun har fortsatt ånden på dette tidspunktet i fortellingen. 'Hadde hatt' (pluskvamperfektum) antyder at hun allerede var fri fra den."
       }
     ]
   },
@@ -109,7 +115,15 @@
     "bookId": 42,
     "chapterId": 13,
     "verseId": 15,
-    "text": "Herren svarte ham: «Hyklere! Løser ikke hver av dere oksen eller eselet fra båsen på sabbaten og fører dem ut for å gi dem vann?"
+    "text": "Herren svarte ham: «Hyklere! Løser ikke hver eneste av dere oksen sin eller eselet sitt fra krybben på sabbaten og fører det bort for å gi det vann?",
+    "versions": [
+      {
+        "text": "Herren svarte ham: «Hyklere! Løser ikke hver av dere oksen eller eselet fra båsen på sabbaten og fører dem ut for å gi dem vann?",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "Flere nyanser: (1) φάτνη betyr 'krybbe' (samme ord som i Lukas 2:7), ikke 'bås'. (2) Det greske har eiendomspronomen αὐτοῦ ('sin okse'). (3) ἕκαστος ὑμῶν er sterkere: 'hver eneste av dere'. (4) Singularis 'det' passer bedre enn 'dem' da det er enten oksen eller eselet."
+      }
+    ]
   },
   {
     "bookId": 42,
@@ -199,7 +213,15 @@
     "bookId": 42,
     "chapterId": 13,
     "verseId": 26,
-    "text": "Da skal dere si: 'Vi spiste og drakk sammen med deg, og du underviste på gatene våre.'"
+    "text": "Da skal dere si: 'Vi spiste og drakk i ditt nærvær, og du underviste på gatene våre.'",
+    "versions": [
+      {
+        "text": "Da skal dere si: 'Vi spiste og drakk sammen med deg, og du underviste på gatene våre.'",
+        "type": "error",
+        "severity": "major",
+        "explanation": "Det greske ἐνώπιόν σου betyr 'i ditt nærvær / foran deg', ikke 'sammen med deg'. 'Sammen med' (μετά) ville antydet fellesskap og deltakelse, mens ἐνώπιόν bare betyr at de befant seg i hans nærhet. Dette er en teologisk viktig nyanse – de påberoper seg nærhet uten egentlig relasjon."
+      }
+    ]
   },
   {
     "bookId": 42,
@@ -259,11 +281,17 @@
     "bookId": 42,
     "chapterId": 13,
     "verseId": 34,
-    "text": "Jerusalem, Jerusalem, du som dreper profetene og steiner dem som er sendt til deg! Hvor ofte ville jeg ikke samle barna dine, slik en høne samler sitt kulle under vingene sine. Men dere ville ikke.",
+    "text": "Jerusalem, Jerusalem, du som dreper profetene og steiner dem som er sendt til deg! Hvor ofte har jeg ikke villet samle barna dine, slik en høne samler sitt kulle under vingene sine. Men dere ville ikke.",
     "versions": [
       {
         "text": "Jerusalem, Jerusalem, du som dreper profetene og steiner dem som er sendt til deg! Hvor ofte ville jeg ikke samle barna dine, slik en høne samler kyllingene under vingene sine. Men dere ville ikke.",
         "explanation": "νοσσιάν betyr 'kull/unger/rede', ikke spesifikt 'kyllinger'. 'Kulle' er mer presist og dekker bredere."
+      },
+      {
+        "text": "Jerusalem, Jerusalem, du som dreper profetene og steiner dem som er sendt til deg! Hvor ofte ville jeg ikke samle barna dine, slik en høne samler sitt kulle under vingene sine. Men dere ville ikke.",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "ἠθέλησα er aorist indikativ – 'har jeg villet' gir bedre gjengivelse av det gjentatte ønsket over tid enn 'ville jeg'. 'Hvor ofte ville jeg ikke' kan misforstås som at Jesus ikke ville samle dem, mens 'Hvor ofte har jeg ikke villet' tydeligere uttrykker det retoriske 'gang på gang har jeg ønsket å'."
       }
     ]
   },

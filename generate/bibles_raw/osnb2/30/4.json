@@ -27,7 +27,15 @@
     "bookId": 30,
     "chapterId": 4,
     "verseId": 4,
-    "text": "Kom til Betel og synd! Kom til Gilgal og synd enda mer! Bring deres slaktoffer om morgenen, deres tiende hver tredje dag."
+    "text": "Kom til Betel og synd! Kom til Gilgal og synd enda mer! Bring deres slaktoffer om morgenen, deres tiende hvert tredje år.",
+    "versions": [
+      {
+        "text": "Kom til Betel og synd! Kom til Gilgal og synd enda mer! Bring deres slaktoffer om morgenen, deres tiende hver tredje dag.",
+        "type": "error",
+        "severity": "minor",
+        "explanation": "Det hebraiske לִשְׁלֹשֶׁת יָמִים refererer her sannsynlig til 'hvert tredje år' (jf. 5 Mos 14:28 om tiende hvert tredje år), ikke 'hver tredje dag'. Konteksten handler om tiende-praksisen som var en treårig syklus."
+      }
+    ]
   },
   {
     "bookId": 30,
@@ -63,7 +71,15 @@
     "bookId": 30,
     "chapterId": 4,
     "verseId": 9,
-    "text": "Jeg slo dere med kornbrann og rust. Gresshoppene fortærte deres mange hager og vingårder, deres fikentrær og oliventrær. Likevel vendte dere ikke om til meg, sier Herren."
+    "text": "Jeg slo dere med kornbrann og rust. Når deres mange hager og vingårder, deres fikentrær og oliventrær spirte fram, fortærte gresshoppene dem. Likevel vendte dere ikke om til meg, sier Herren.",
+    "versions": [
+      {
+        "text": "Jeg slo dere med kornbrann og rust. Gresshoppene fortærte deres mange hager og vingårder, deres fikentrær og oliventrær. Likevel vendte dere ikke om til meg, sier Herren.",
+        "type": "error",
+        "severity": "minor",
+        "explanation": "הַרְבּוֹת er en infinitiv som betyr 'når (de ble) mange / økte i antall' – det handler om at plantene vokste og spirte, men da kom gresshoppene og fortærte dem. Den nåværende oversettelsen leser det som et adjektiv ('mange'), men det er en infinitivform som beskriver prosessen av vekst."
+      }
+    ]
   },
   {
     "bookId": 30,
@@ -93,6 +109,14 @@
     "bookId": 30,
     "chapterId": 4,
     "verseId": 13,
-    "text": "For se, han som former fjellene og skaper vinden, som kunngjør for mennesket hva dets tanker er, som gjør morgenrøden til mørke og trår på jordens høyder – Herren, hærskarenes Gud, er hans navn."
+    "text": "For se, han som former fjellene og skaper vinden, som kunngjør for mennesket hva dets tanker er, som gjør morgengry til mørke og trår på jordens høyder – Herren, hærskarenes Gud, er hans navn.",
+    "versions": [
+      {
+        "text": "For se, han som former fjellene og skaper vinden, som kunngjør for mennesket hva dets tanker er, som gjør morgenrøden til mørke og trår på jordens høyder – Herren, hærskarenes Gud, er hans navn.",
+        "type": "error",
+        "severity": "major",
+        "explanation": "שַׁחַר עֵיפָה betyr bokstavelig 'morgengry (til) mørke/skumring'. 'Morgenrøden' er akseptabelt, men 'morgengry' er mer presist for שַׁחַר. Ellers er oversettelsen adekvat her, men 'morgengry' er litt mer presis."
+      }
+    ]
   }
 ]

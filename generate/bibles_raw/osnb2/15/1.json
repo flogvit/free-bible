@@ -15,7 +15,15 @@
     "bookId": 15,
     "chapterId": 1,
     "verseId": 3,
-    "text": "Den av dere som tilhører hans folk – måtte hans Gud være med ham – kan dra opp til Jerusalem i Juda og bygge Herrens, Israels Guds hus. Han er den Gud som er i Jerusalem."
+    "text": "Hvem som helst blant dere av hele hans folk – måtte hans Gud være med ham – kan dra opp til Jerusalem i Juda og bygge Herrens, Israels Guds hus. Han er den Gud som er i Jerusalem.",
+    "versions": [
+      {
+        "text": "Den av dere som tilhører hans folk – måtte hans Gud være med ham – kan dra opp til Jerusalem i Juda og bygge Herrens, Israels Guds hus. Han er den Gud som er i Jerusalem.",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "'מִי בָכֶם מִכָּל עַמּוֹ' er en retorisk formulering som betyr 'hvem som helst blant dere av hele hans folk'. 'Den av dere som tilhører hans folk' er litt snevrere og mister nyansen 'מִכָּל' (av hele/blant alle). Forslaget gjenspeiler bedre den åpne invitasjonen i den originale teksten."
+      }
+    ]
   },
   {
     "bookId": 15,
@@ -39,17 +47,31 @@
     "bookId": 15,
     "chapterId": 1,
     "verseId": 6,
-    "text": "Alle naboene deres støttet dem med sølvgjenstander, gull, gods, buskap og kostbare gaver, i tillegg til alt det som ble gitt frivillig."
+    "text": "Alle naboene deres støttet dem med sølvgjenstander, med gull, gods, buskap og kostbare gaver, i tillegg til alt det som ble gitt frivillig.",
+    "versions": [
+      {
+        "text": "Alle naboene deres støttet dem med sølvgjenstander, gull, gods, buskap og kostbare gaver, i tillegg til alt det som ble gitt frivillig.",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "Det hebraiske 'בִּכְלֵי־כֶסֶף' betyr 'med gjenstander av sølv', ikke 'sølvgjenstander'. Men viktigere: teksten sier 'חִזְּקוּ בִידֵיהֶם' som betyr 'styrket deres hender' – 'støttet dem' er akseptabelt. Oversettelsen er rimelig, men 'sølvgjenstander' komprimerer 'כְלֵי כֶסֶף' (gjenstander av sølv) litt. Endringen er liten og dette er akseptabelt."
+      }
+    ]
   },
   {
     "bookId": 15,
     "chapterId": 1,
     "verseId": 7,
-    "text": "Kong Kyros tok også frem gjenstandene fra Herrens hus, som Nebukadnesar hadde ført bort fra Jerusalem og satt i sine guders tempel.",
+    "text": "Kong Kyros tok også frem gjenstandene fra Herrens hus, som Nebukadnesar hadde ført bort fra Jerusalem og plassert i sine guders tempel.",
     "versions": [
       {
         "text": "Kong Kyros tok også frem gjenstandene fra Herrens hus, som Nebukadnesar hadde ført bort fra Jerusalem og plassert i sin guds tempel.",
         "explanation": "Det hebraiske 'אֱלֹהָיו' (elohav) er flertall - 'sine guder' - og refererer til de babylonske gudene/templene. 'Sin guds tempel' antyder monoteisme hos Nebukadnesar."
+      },
+      {
+        "text": "Kong Kyros tok også frem gjenstandene fra Herrens hus, som Nebukadnesar hadde ført bort fra Jerusalem og satt i sine guders tempel.",
+        "type": "error",
+        "severity": "major",
+        "explanation": "'וַיִּתְּנֵם' betyr 'og han plasserte/satte dem'. 'satt' er dårlig norsk her – det bør være 'plassert' (som i forrige versjon) for korrekt grammatikk. Merk: den forrige versjonen ble endret fordi den hadde 'sin guds tempel' (entall), men rettelsen til 'sine guders tempel' er korrekt. Problemet nå er bare verbet 'satt' vs. 'plassert'."
       }
     ]
   },

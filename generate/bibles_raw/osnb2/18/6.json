@@ -27,11 +27,17 @@
     "bookId": 18,
     "chapterId": 6,
     "verseId": 5,
-    "text": "Skryter villeset når det har gress å beite? Rauter oksen over fôret sitt?",
+    "text": "Skryter villeselet når det har gress å beite? Rauter oksen over fôret sitt?",
     "versions": [
       {
         "text": "Skryter villeset når det har gress? Rauter oksen over fôret sitt?",
         "explanation": "Det hebraiske 'עֲלֵי־דֶשֶׁא' betyr 'over/ved gress' og impliserer tilgang til beite. Å legge til 'å beite' gjør poenget tydeligere for muntlig lesning - at dyr ikke klager når de har det de trenger."
+      },
+      {
+        "text": "Skryter villeset når det har gress å beite? Rauter oksen over fôret sitt?",
+        "type": "grammar",
+        "severity": "minor",
+        "explanation": "'Villeset' er feil bøyning. Bestemt form entall av 'villesel' er 'villeselet'. Alternativt kan man bruke 'et villesel' i ubestemt form."
       }
     ]
   },
@@ -99,7 +105,15 @@
     "bookId": 18,
     "chapterId": 6,
     "verseId": 14,
-    "text": "Den som fortviler, trenger trofast kjærlighet fra sin venn, ellers kan han forlate frykten for Den Allmektige."
+    "text": "Den som nekter sin venn trofast kjærlighet, forlater frykten for Den Allmektige.",
+    "versions": [
+      {
+        "text": "Den som fortviler, trenger trofast kjærlighet fra sin venn, ellers kan han forlate frykten for Den Allmektige.",
+        "type": "error",
+        "severity": "major",
+        "explanation": "Det hebraiske 'לַמָּס' (lammas) betyr 'den som smelter bort/nekter' – altså den som holder tilbake godhet fra sin venn. Verset er en anklage mot vennene, ikke en beskrivelse av Jobs behov. Den nåværende oversettelsen snur meningen. Poenget er: den som ikke viser barmhjertighet mot sin venn, svikter også sin gudsfrykt."
+      }
+    ]
   },
   {
     "bookId": 18,
@@ -111,7 +125,15 @@
     "bookId": 18,
     "chapterId": 6,
     "verseId": 16,
-    "text": "De er mørke av is, og snøen skjuler seg i dem."
+    "text": "De som er grumsete av is, over dem smelter snøen bort.",
+    "versions": [
+      {
+        "text": "De er mørke av is, og snøen skjuler seg i dem.",
+        "type": "error",
+        "severity": "major",
+        "explanation": "Verset beskriver bekker som er mørke/grumsete fordi de fører med seg is, og snø som smelter oppå dem (og dermed bidrar til vannmassene som snart forsvinner). 'Snøen skjuler seg i dem' er en misvisende oversettelse av 'עָלֵימוֹ יִתְעַלֶּם־שָׁלֶג' som betyr at snøen smelter bort / forsvinner over dem."
+      }
+    ]
   },
   {
     "bookId": 18,
@@ -123,7 +145,15 @@
     "bookId": 18,
     "chapterId": 6,
     "verseId": 18,
-    "text": "Karavanene viker av fra sin vei, de drar ut i ødemarken og går til grunne."
+    "text": "Vannstrømmene snor seg bort fra sin vei, de stiger opp i ørkenluften og forsvinner.",
+    "versions": [
+      {
+        "text": "Karavanene viker av fra sin vei, de drar ut i ødemarken og går til grunne.",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "Konteksten handler fortsatt om bekkene/vannstrømmene, ikke karavanene (karavanene nevnes først i vers 19). Det hebraiske beskriver hvordan bekkenes løp snor seg og vannet fordamper. 'Går til grunne' er for dramatisk – 'forsvinner' passer bedre for vann som tørker inn."
+      }
+    ]
   },
   {
     "bookId": 18,
@@ -153,7 +183,15 @@
     "bookId": 18,
     "chapterId": 6,
     "verseId": 22,
-    "text": "Har jeg sagt: Gi meg noe, eller: Bruk av deres rikdom til å bestikke noen for min skyld?"
+    "text": "Har jeg sagt: «Gi meg noe!» eller: «Bruk av deres rikdom til å bestikke noen for min skyld»?",
+    "versions": [
+      {
+        "text": "Har jeg sagt: Gi meg noe, eller: Bruk av deres rikdom til å bestikke noen for min skyld?",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "Sitatene i verset bør markeres med anførselstegn for tydelighet, spesielt med tanke på muntlig lesning."
+      }
+    ]
   },
   {
     "bookId": 18,
@@ -183,7 +221,15 @@
     "bookId": 18,
     "chapterId": 6,
     "verseId": 27,
-    "text": "Dere ville til og med kaste lodd om den farløse, og grave en grav for deres venn."
+    "text": "Dere ville til og med kaste dere over den farløse og handle med deres venn som med en handelsvare.",
+    "versions": [
+      {
+        "text": "Dere ville til og med kaste lodd om den farløse, og grave en grav for deres venn.",
+        "type": "error",
+        "severity": "major",
+        "explanation": "'תַּפִּילוּ' betyr 'kaste (nett/felle)' eller 'falle over', ikke 'kaste lodd'. 'וְתִכְרוּ' kommer fra כרה som kan bety 'grave' men også 'handle/forhandle'. Mange forstår det som 'dere handler om deres venn' – altså behandler vennen som en vare. 'Grave en grav' er en mulig men mindre sannsynlig tolkning."
+      }
+    ]
   },
   {
     "bookId": 18,

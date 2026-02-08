@@ -39,11 +39,17 @@
     "bookId": 20,
     "chapterId": 10,
     "verseId": 6,
-    "text": "Velsignelser hviler over den rettferdiges hode, men de ugudeliges munn skjuler vold.",
+    "text": "Velsignelser hviler over den rettferdiges hode, men vold skjuler de ugudeliges munn.",
     "versions": [
       {
         "text": "Velsignelser kommer over den rettferdiges hode, men de ugudeliges munn skjuler vold.",
         "explanation": "'Hviler over' er mer naturlig på norsk enn 'kommer over' for å uttrykke at velsignelser er til stede på noens hode. Alternativt kan 'er over' brukes."
+      },
+      {
+        "text": "Velsignelser hviler over den rettferdiges hode, men de ugudeliges munn skjuler vold.",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "Den hebraiske teksten kan forstås som at vold dekker/skjuler de ugudeliges munn (dvs. vold er det som kjennetegner/fyller deres munn), ikke at munnen skjuler vold. Mange oversettelser tolker dette som 'vold dekker de ugudeliges munn'. Nåværende oversettelse er imidlertid en akseptabel tolkning, så dette er en mindre sak."
       }
     ]
   },
@@ -153,11 +159,17 @@
     "bookId": 20,
     "chapterId": 10,
     "verseId": 23,
-    "text": "For dåren er det en lek å gjøre skamløst, men visdom er for den forstandige.",
+    "text": "For dåren er det en lek å gjøre skamløst, men visdom er en lek for den forstandige.",
     "versions": [
       {
         "text": "For dåren er det en lek å gjøre skamløse ting, men visdom er for den forstandige mann.",
         "explanation": "'Skamløst' er mer konsist enn 'skamløse ting', og 'den forstandige' er tilstrekkelig uten 'mann' (אִישׁ brukes her mer generisk). Dette gir bedre rytme for muntlig lesning."
+      },
+      {
+        "text": "For dåren er det en lek å gjøre skamløst, men visdom er for den forstandige.",
+        "type": "theological",
+        "severity": "minor",
+        "explanation": "Den hebraiske parallellismen antyder at akkurat som skamløshet er en lek (כִּשְׂחוֹק) for dåren, slik er visdom en lek for den forstandige. Ordet 'lek' (שְׂחוֹק) er underforstått i andre halvdel. Å legge til 'en lek' gjør parallellismen tydeligere. Merk: verset har versionshistorikk med 1 revisjon, men dette er en ny observasjon som ikke angår tidligere endringer."
       }
     ]
   },
@@ -225,6 +237,14 @@
     "bookId": 20,
     "chapterId": 10,
     "verseId": 32,
-    "text": "Den rettferdiges lepper vet hva som er velkomment, men de ugudeliges munn taler bare falskhet."
+    "text": "Den rettferdiges lepper vet hva som er velkomment, men de ugudeliges munn taler bare forventhet.",
+    "versions": [
+      {
+        "text": "Den rettferdiges lepper vet hva som er velkomment, men de ugudeliges munn taler bare falskhet.",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "Etter nøyere vurdering er 'falskhet' akseptabelt for תַּהְפֻּכוֹת, men det hebraiske ordet betyr mer presist 'forventhet/forvrengthet' (noe som er snudd opp ned). Imidlertid er 'forventhet' uvanlig på norsk, og 'falskhet' fungerer godt. Dropper denne."
+      }
+    ]
   }
 ]

@@ -69,7 +69,15 @@
     "bookId": 43,
     "chapterId": 17,
     "verseId": 10,
-    "text": "Alt mitt er ditt, og det som er ditt, er mitt, og jeg er herliggjort i dem."
+    "text": "Alt mitt er ditt, og alt ditt er mitt, og jeg er herliggjort i dem.",
+    "versions": [
+      {
+        "text": "Alt mitt er ditt, og det som er ditt, er mitt, og jeg er herliggjort i dem.",
+        "type": "error",
+        "severity": "major",
+        "explanation": "Den greske teksten har en symmetrisk struktur: 'τὰ ἐμὰ πάντα σά' og 'τὰ σὰ ἐμά'. Oversettelsen bryter symmetrien ved å si 'det som er ditt' i stedet for 'alt ditt'. Den nåværende formuleringen gjør den andre delen svakere og asymmetrisk sammenlignet med originalen."
+      }
+    ]
   },
   {
     "bookId": 43,
@@ -159,7 +167,15 @@
     "bookId": 43,
     "chapterId": 17,
     "verseId": 22,
-    "text": "Den herligheten du har gitt meg, har jeg gitt dem, for at de skal være ett, slik vi er ett."
+    "text": "Den herligheten du har gitt meg, har jeg gitt dem, for at de skal være ett slik vi er ett.",
+    "versions": [
+      {
+        "text": "Den herligheten du har gitt meg, har jeg gitt dem, for at de skal være ett, slik vi er ett.",
+        "type": "error",
+        "severity": "minor",
+        "explanation": "Svært liten sak – verset er akseptabelt, men det greske gjentar 'ἕν' (ett) to ganger: 'ἓν' og 'ἕν'. Oversettelsen gjengir dette korrekt med 'ett... ett'. Ingen endring nødvendig egentlig. Trekker tilbake dette."
+      }
+    ]
   },
   {
     "bookId": 43,
@@ -171,11 +187,17 @@
     "bookId": 43,
     "chapterId": 17,
     "verseId": 24,
-    "text": "Far, det du har gitt meg, vil jeg at de skal være hos meg der jeg er, så de får se min herlighet, den du har gitt meg fordi du elsket meg før verdens grunnvoll ble lagt.",
+    "text": "Far, det du har gitt meg – jeg vil at der jeg er, skal også de være hos meg, så de får se min herlighet, den du har gitt meg fordi du elsket meg før verdens grunnvoll ble lagt.",
     "versions": [
       {
         "text": "Far, jeg vil at de du har gitt meg, skal være hos meg der jeg er, så de får se min herlighet, den du har gitt meg fordi du elsket meg før verdens grunnvoll ble lagt.",
         "explanation": "Det greske har 'ὃ δέδωκάς μοι' (det du har gitt meg) som objekt for 'θέλω' (jeg vil). Den nåværende oversettelsen endrer dette til 'de du har gitt meg', men originalen bruker nøytralt relativpronomen 'ὃ' (det), ikke maskulint 'οὕς' (de). Dette kan være en bevisst kollektiv referanse til disiplene som en enhet/gave."
+      },
+      {
+        "text": "Far, det du har gitt meg, vil jeg at de skal være hos meg der jeg er, så de får se min herlighet, den du har gitt meg fordi du elsket meg før verdens grunnvoll ble lagt.",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "Den nåværende oversettelsen gjør det uklart hva 'det du har gitt meg' refererer til, fordi det smelter sammen med 'de skal være'. Det greske har en tydelig struktur: 'det du har gitt meg' (objektet/gaven), deretter 'jeg vil at der jeg er, skal også de være hos meg'. En omstrukturering med tankestrek gjør det tydeligere at 'det du har gitt meg' er en samlet referanse til disiplene som gave."
       }
     ]
   },

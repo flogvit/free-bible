@@ -21,7 +21,15 @@
     "bookId": 34,
     "chapterId": 3,
     "verseId": 3,
-    "text": "Ryttere stormer fram med flammende sverd og lynende spyd. Mengder av drepte, hauger av lik – det er ingen ende på likene, de snubler over kroppene."
+    "text": "Ryttere stormer fram med flammende sverd og lynende spyd. Mengder av drepte, hauger av lik – det er ingen ende på likene, folk snubler over kroppene.",
+    "versions": [
+      {
+        "text": "Ryttere stormer fram med flammende sverd og lynende spyd. Mengder av drepte, hauger av lik – det er ingen ende på likene, de snubler over kroppene.",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "'De snubler' har uklart subjekt. Det hebraiske וְכָשְׁלוּ בִּגְוִיָּתָם er upersonlig/generelt – 'folk/man snubler over kroppene deres'. 'Folk snubler' gjør det litt klarere."
+      }
+    ]
   },
   {
     "bookId": 34,
@@ -51,7 +59,15 @@
     "bookId": 34,
     "chapterId": 3,
     "verseId": 8,
-    "text": "Er du bedre enn No-Amon, som lå ved Nilens kanaler, omgitt av vann, med havet som voll og vann som mur?"
+    "text": "Er du bedre enn No-Amon, som lå ved Nilens kanaler, omgitt av vann, med havet som vern og havet som mur?",
+    "versions": [
+      {
+        "text": "Er du bedre enn No-Amon, som lå ved Nilens kanaler, omgitt av vann, med havet som voll og vann som mur?",
+        "type": "error",
+        "severity": "major",
+        "explanation": "Det hebraiske חֵיל betyr 'vern/forsvarsverk', ikke 'voll'. Videre er מִיָּם 'fra havet' / 'havet', som korresponderer med יָם. Begge refererer til havet (Nilen oppfattet som hav). 'Vann som mur' er en upresis gjengivelse av מִיָּם חוֹמָתָהּ som betyr 'havet var hennes mur'."
+      }
+    ]
   },
   {
     "bookId": 34,
@@ -129,11 +145,17 @@
     "bookId": 34,
     "chapterId": 3,
     "verseId": 17,
-    "text": "Dine voktere er som gresshopper, dine offiserer som gresshoppesverm som slår seg ned på murene en kald dag. Når solen stiger, flyr de bort, og ingen vet hvor de blir av.",
+    "text": "Dine voktere er som gresshopper, dine offiserer som gresshoppesverm som slår seg ned på steingjerdene en kald dag. Når solen stiger, flyr de bort, og ingen vet hvor de blir av.",
     "versions": [
       {
         "text": "Dine vakter er som gresshopper, dine skrivere som gresshoppesverm som slår seg ned på murene en kald dag. Når solen stiger, flyr de bort, og ingen vet hvor de blir av.",
         "explanation": "מִנְּזָרַיִךְ refererer trolig til 'voktere/vaktmenn' (fra נזר). טַפְסְרַיִךְ er et låneord som betyr 'offiserer/embedsmenn', ikke 'skrivere'. Dette er militær terminologi i konteksten."
+      },
+      {
+        "text": "Dine voktere er som gresshopper, dine offiserer som gresshoppesverm som slår seg ned på murene en kald dag. Når solen stiger, flyr de bort, og ingen vet hvor de blir av.",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "גְּדֵרוֹת betyr 'steingjerder/gjerder', ikke 'murer' (som ville vært חוֹמוֹת). Gresshopper slår seg ned på steingjerder for å varme seg, noe som gir bedre biologisk mening og er mer presist."
       }
     ]
   },

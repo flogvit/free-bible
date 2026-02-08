@@ -3,7 +3,15 @@
     "bookId": 10,
     "chapterId": 4,
     "verseId": 1,
-    "text": "Da Sauls sønn hørte at Abner var død i Hebron, mistet han motet, og hele Israel ble grepet av forferdelse."
+    "text": "Da Sauls sønn hørte at Abner var død i Hebron, ble hendene hans slappe, og hele Israel ble grepet av forferdelse.",
+    "versions": [
+      {
+        "text": "Da Sauls sønn hørte at Abner var død i Hebron, mistet han motet, og hele Israel ble grepet av forferdelse.",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "Det hebraiske uttrykket 'vayyirpu yadav' betyr bokstavelig 'hans hender ble slappe', som uttrykker at han mistet kraft/mot. 'Mistet han motet' er en akseptabel tolkende oversettelse, men 'hendene hans ble slappe' er nærmere originalen og bevarer den hebraiske idiomatikken bedre. Likevel er dette en minor suggestion, da meningen er bevart."
+      }
+    ]
   },
   {
     "bookId": 10,
@@ -21,13 +29,29 @@
     "bookId": 10,
     "chapterId": 4,
     "verseId": 4,
-    "text": "Jonatan, Sauls sønn, hadde en sønn som var lam i begge føttene. Han var fem år gammel da budskapet om Saul og Jonatan kom fra Jisreel. Ammen hans tok ham opp og flyktet, men i sin hast til å komme seg bort, falt gutten og ble halt. Hans navn var Mefibosjét."
+    "text": "Jonatan, Sauls sønn, hadde en sønn som var lam i føttene. Han var fem år gammel da budskapet om Saul og Jonatan kom fra Jisreel. Ammen hans tok ham opp og flyktet, men i sin hast til å komme seg bort, falt gutten og ble halt. Hans navn var Mefibosjét.",
+    "versions": [
+      {
+        "text": "Jonatan, Sauls sønn, hadde en sønn som var lam i begge føttene. Han var fem år gammel da budskapet om Saul og Jonatan kom fra Jisreel. Ammen hans tok ham opp og flyktet, men i sin hast til å komme seg bort, falt gutten og ble halt. Hans navn var Mefibosjét.",
+        "type": "grammar",
+        "severity": "minor",
+        "explanation": "Det hebraiske 'nekhe raglayim' betyr 'slått/skadet i føttene', men sier ikke eksplisitt 'begge'. Ordet 'raglayim' er dual-form som på hebraisk er standardformen for 'føtter'. Å legge til 'begge' er en tolkning som går utover teksten."
+      }
+    ]
   },
   {
     "bookId": 10,
     "chapterId": 4,
     "verseId": 5,
-    "text": "Rekab og Baana, sønnene til Rimmon fra Beerot, dro av sted og kom til Isjbosjets hus midt på den heteste tiden av dagen. Han lå og hvilte midt på dagen."
+    "text": "Rekab og Baana, sønnene til Rimmon fra Beerot, dro av sted og kom til Isjbosjets hus midt på den varmeste tiden av dagen. Han lå og tok sin middagshvil.",
+    "versions": [
+      {
+        "text": "Rekab og Baana, sønnene til Rimmon fra Beerot, dro av sted og kom til Isjbosjets hus midt på den heteste tiden av dagen. Han lå og hvilte midt på dagen.",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "'Den heteste tiden' bør være 'den varmeste tiden' for bedre norsk. I tillegg gjentar 'midt på dagen' seg to ganger i samme vers. Det hebraiske 'mishkav hatssohorayim' betyr 'middagshvil/siesta', så 'tok sin middagshvil' er mer presist og unngår repetisjonen."
+      }
+    ]
   },
   {
     "bookId": 10,
@@ -63,13 +87,29 @@
     "bookId": 10,
     "chapterId": 4,
     "verseId": 10,
-    "text": "Da en mann kom og fortalte meg at Saul var død, og mente han brakte godt budskap, grep jeg ham og drepte ham i Siklag. Det var den lønnen jeg ga ham for hans budskap."
+    "text": "Da en mann kom og fortalte meg at Saul var død, og mente han brakte godt budskap, grep jeg ham og drepte ham i Siklag. Det var den belønningen jeg ga ham for hans gode nyhet.",
+    "versions": [
+      {
+        "text": "Da en mann kom og fortalte meg at Saul var død, og mente han brakte godt budskap, grep jeg ham og drepte ham i Siklag. Det var den lønnen jeg ga ham for hans budskap.",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "Det hebraiske 'besorah' betyr spesifikt 'godt budskap/gode nyheter'. 'Budskap' alene mister nyansen om at budbringeren trodde det var gode nyheter. I tillegg passer 'belønning' (ironisk) bedre enn 'lønn' for 'l'titti-lo' i denne konteksten."
+      }
+    ]
   },
   {
     "bookId": 10,
     "chapterId": 4,
     "verseId": 11,
-    "text": "Hvor mye mer skal jeg ikke da kreve hans blod av dere når ugudelige menn har drept en rettferdig mann i hans eget hus, på hans egen seng? Nå skal jeg utrydde dere fra jorden!»"
+    "text": "Hvor mye mer skal jeg ikke da kreve hans blod fra deres hender, når ugudelige menn har drept en rettferdig mann i hans eget hus, på hans egen seng? Nå skal jeg utrydde dere fra jorden!»",
+    "versions": [
+      {
+        "text": "Hvor mye mer skal jeg ikke da kreve hans blod av dere når ugudelige menn har drept en rettferdig mann i hans eget hus, på hans egen seng? Nå skal jeg utrydde dere fra jorden!»",
+        "type": "error",
+        "severity": "major",
+        "explanation": "Setningsstrukturen er noe misvisende. I originalen kommer 'af ki' (hvor mye mer) først, og resten av verset inneholder både det retoriske spørsmålet og truslelen. Oversettelsen er akseptabel, men 'fra deres hender' (miyedkhem) er mer presist enn bare 'av dere' og understreker det personlige ansvaret."
+      }
+    ]
   },
   {
     "bookId": 10,

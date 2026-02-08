@@ -21,13 +21,29 @@
     "bookId": 26,
     "chapterId": 11,
     "verseId": 3,
-    "text": "De sier: Det er ikke tid for å bygge hus. Byen er gryta, og vi er kjøttet."
+    "text": "Det er ikke snart tid for å bygge hus. Byen er gryta, og vi er kjøttet.",
+    "versions": [
+      {
+        "text": "De sier: Det er ikke tid for å bygge hus. Byen er gryta, og vi er kjøttet.",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "Det hebraiske 'לֹא בְקָרוֹב' betyr 'ikke snart' eller 'ikke i nærmeste fremtid', ikke 'ikke tid for'. De falske profetene mente at ødeleggelse ikke var nært forestående, og at det derfor ikke var nødvendig å bygge hus. Alternativt kan det forstås som 'Det er ikke snart' – altså at dommen ikke kommer snart. Nåværende oversettelse mister nyanset av 'nærhet i tid'."
+      }
+    ]
   },
   {
     "bookId": 26,
     "chapterId": 11,
     "verseId": 4,
-    "text": "Derfor skal du profetere mot dem. Profetér, menneske!"
+    "text": "Derfor skal du profetere mot dem. Profetér, menneskesonn!",
+    "versions": [
+      {
+        "text": "Derfor skal du profetere mot dem. Profetér, menneske!",
+        "type": "error",
+        "severity": "major",
+        "explanation": "I vers 2 ble 'בֶּן־אָדָם' bevisst endret til 'menneskesonn' for nøyaktighet. For konsekvens bør vers 4 også bruke 'menneskesonn' i stedet for 'menneske'."
+      }
+    ]
   },
   {
     "bookId": 26,
@@ -93,11 +109,17 @@
     "bookId": 26,
     "chapterId": 11,
     "verseId": 15,
-    "text": "Menneske, dine brødre, ja, dine brødre, dine løsningsberettigede slektninger og hele Israels hus – det er om dem Jerusalems innbyggere sier: «De er langt borte fra Herren. Til oss er landet gitt som eiendom.»",
+    "text": "Menneskesonn, dine brødre, ja, dine brødre, dine løsningsberettigede slektninger og hele Israels hus – det er om dem Jerusalems innbyggere sier: «De er langt borte fra Herren. Til oss er landet gitt som eiendom.»",
     "versions": [
       {
         "text": "Menneske, dine brødre, dine egne brødre, dine løsningsberettigede slektninger og hele Israels hus – det er om dem Jerusalems innbyggere sier: «De er langt borte fra Herren. Til oss er landet gitt som eiendom.»",
         "explanation": "Den hebraiske gjentagelsen 'אַחֶיךָ אַחֶיךָ' (dine brødre, dine brødre) er en emfatisk gjentagelse. 'Dine egne brødre' er en tolkning, mens 'ja, dine brødre' bevarer den retoriske gjentagelsen bedre for muntlig lesning."
+      },
+      {
+        "text": "Menneske, dine brødre, ja, dine brødre, dine løsningsberettigede slektninger og hele Israels hus – det er om dem Jerusalems innbyggere sier: «De er langt borte fra Herren. Til oss er landet gitt som eiendom.»",
+        "type": "error",
+        "severity": "major",
+        "explanation": "Samme konsekvensproblem som vers 4: 'בֶּן־אָדָם' bør oversettes 'menneskesonn' i tråd med endringen som ble gjort i vers 2."
       }
     ]
   },
@@ -105,7 +127,15 @@
     "bookId": 26,
     "chapterId": 11,
     "verseId": 16,
-    "text": "Derfor skal du si: Så sier Herren Gud: Selv om jeg har ført dem langt bort blant folkeslagene og spredt dem i landene, har jeg likevel vært en helligdom for dem en kort stund i de landene de er kommet til."
+    "text": "Derfor skal du si: Så sier Herren Gud: Selv om jeg har ført dem langt bort blant folkeslagene og spredt dem i landene, har jeg likevel vært en helligdom for dem i noen grad i de landene de er kommet til.",
+    "versions": [
+      {
+        "text": "Derfor skal du si: Så sier Herren Gud: Selv om jeg har ført dem langt bort blant folkeslagene og spredt dem i landene, har jeg likevel vært en helligdom for dem en kort stund i de landene de er kommet til.",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "Det hebraiske 'מִקְדָּשׁ מְעַט' er omdiskutert, men betyr mest sannsynlig 'en helligdom i liten/begrenset grad' (en slags midlertidig eller delvis helligdom), ikke nødvendigvis 'en kort stund'. 'En kort stund' tolker 'מְעַט' som temporal, men det kan like gjerne bety 'i noen grad' eller 'i det små'. Begge tolkninger er mulige, men nåværende oversettelse er noe ensidig."
+      }
+    ]
   },
   {
     "bookId": 26,
@@ -123,7 +153,15 @@
     "bookId": 26,
     "chapterId": 11,
     "verseId": 19,
-    "text": "Jeg skal gi dem ett hjerte og legge en ny ånd i deres indre. Jeg skal ta steinhjertet ut av kroppen deres og gi dem et hjerte av kjøtt."
+    "text": "Jeg skal gi dem ett hjerte og legge en ny ånd i deres indre. Jeg skal ta steinhjertet ut av kroppen deres og gi dem et hjerte av kjøtt og blod.",
+    "versions": [
+      {
+        "text": "Jeg skal gi dem ett hjerte og legge en ny ånd i deres indre. Jeg skal ta steinhjertet ut av kroppen deres og gi dem et hjerte av kjøtt.",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "'לֵב בָּשָׂר' oversettes bokstavelig 'et hjerte av kjøtt', men på norsk høres 'hjerte av kjøtt' noe merkelig ut. 'Et hjerte av kjøtt og blod' er mer idiomatisk norsk og formidler meningen om et levende, følsomt hjerte i motsetning til et steinhjerte. Alternativt kan man beholde 'kjøtt' for å bevare den bokstavelige kontrasten med stein."
+      }
+    ]
   },
   {
     "bookId": 26,

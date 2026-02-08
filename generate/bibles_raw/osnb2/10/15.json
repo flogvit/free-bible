@@ -39,7 +39,15 @@
     "bookId": 10,
     "chapterId": 15,
     "verseId": 7,
-    "text": "Da det var gått fire år, sa Absalom til kongen: «La meg få dra til Hebron og innfri løftet jeg har gitt til Herren."
+    "text": "Da det var gått førti år, sa Absalom til kongen: «La meg få dra til Hebron og innfri løftet jeg har gitt til Herren.",
+    "versions": [
+      {
+        "text": "Da det var gått fire år, sa Absalom til kongen: «La meg få dra til Hebron og innfri løftet jeg har gitt til Herren.",
+        "type": "error",
+        "severity": "major",
+        "explanation": "The Hebrew text says ארבעים שנה (forty years), not four years. While many scholars and some manuscripts (LXX) read 'four years,' the Masoretic text clearly reads 'forty.' The translation should follow the source text. Note: Some translations do emend to 'four' but this should at minimum be footnoted."
+      }
+    ]
   },
   {
     "bookId": 10,
@@ -141,7 +149,15 @@
     "bookId": 10,
     "chapterId": 15,
     "verseId": 24,
-    "text": "Også Sadok var der, og alle levittene med ham bar Guds paktsark. De satte ned Guds ark, og Ebjatar steg opp til alt folket var kommet ut av byen."
+    "text": "Også Sadok var der, og alle levittene med ham bar Guds paktsark. De satte ned Guds ark, og Ebjatar ofret inntil alt folket var kommet ut av byen.",
+    "versions": [
+      {
+        "text": "Også Sadok var der, og alle levittene med ham bar Guds paktsark. De satte ned Guds ark, og Ebjatar steg opp til alt folket var kommet ut av byen.",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "The Hebrew ויעל אביתר more likely means 'Abiathar offered (sacrifices)' rather than 'Abiathar went up.' The verb עלה in the Hiphil can mean 'to offer up,' which fits the context of the ark being set down while sacrifices were offered until all the people had passed."
+      }
+    ]
   },
   {
     "bookId": 10,
@@ -159,13 +175,29 @@
     "bookId": 10,
     "chapterId": 15,
     "verseId": 27,
-    "text": "Kongen sa til presten Sadok: «Du er seer. Vend tilbake til byen i fred, du og Ebjatar, og deres to sønner, din sønn Akimaas og Ebjatars sønn Jonatan."
+    "text": "Kongen sa til presten Sadok: «Forstår du det? Vend tilbake til byen i fred, du og Ebjatar, og deres to sønner, din sønn Akimaas og Ebjatars sønn Jonatan.",
+    "versions": [
+      {
+        "text": "Kongen sa til presten Sadok: «Du er seer. Vend tilbake til byen i fred, du og Ebjatar, og deres to sønner, din sønn Akimaas og Ebjatars sønn Jonatan.",
+        "type": "error",
+        "severity": "major",
+        "explanation": "The translation 'Du er seer' (You are a seer) is a possible but unlikely reading. The interrogative הֲרוֹאֶה אַתָּה is better understood as 'Do you see?' or 'Do you understand?' — it is David asking Zadok if he understands the plan, not calling him a seer. While Zadok could be called a seer, the context of David giving instructions makes the interrogative reading more natural."
+      }
+    ]
   },
   {
     "bookId": 10,
     "chapterId": 15,
     "verseId": 28,
-    "text": "Se, jeg blir ved elveslettene i ødemarken til det kommer ord fra dere med melding til meg.»"
+    "text": "Se, jeg venter ved ødeslettene i ørkenen til det kommer ord fra dere med melding til meg.",
+    "versions": [
+      {
+        "text": "Se, jeg blir ved elveslettene i ødemarken til det kommer ord fra dere med melding til meg.»",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "The Hebrew בערבות המדבר means 'at the desert plains/steppes of the wilderness.' The word ערבות refers to arid plains or steppes, not specifically 'elveslettene' (river plains). While there are river crossings nearby, the word itself means desert/arid plains."
+      }
+    ]
   },
   {
     "bookId": 10,
@@ -207,7 +239,15 @@
     "bookId": 10,
     "chapterId": 15,
     "verseId": 35,
-    "text": "Er ikke prestene Sadok og Ebjatar der hos deg? Alt du hører fra kongens hus, skal du melde til prestene Sadok og Ebjatar."
+    "text": "Er ikke prestene Sadok og Ebjatar der sammen med deg? Alt du hører fra kongens hus, skal du fortelle til prestene Sadok og Ebjatar.",
+    "versions": [
+      {
+        "text": "Er ikke prestene Sadok og Ebjatar der hos deg? Alt du hører fra kongens hus, skal du melde til prestene Sadok og Ebjatar.",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "Minor improvement: 'hos deg' could be 'sammen med deg' to better reflect עמך (with you), and 'melde' could be 'fortelle' for a more natural and modern tone matching תגיד."
+      }
+    ]
   },
   {
     "bookId": 10,

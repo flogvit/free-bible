@@ -39,7 +39,15 @@
     "bookId": 21,
     "chapterId": 5,
     "verseId": 6,
-    "text": "For i mange drømmer er det tomhet, og likeså i mange ord. Frykt derfor Gud!"
+    "text": "For med mange drømmer kommer tomhet og mange ord. Frykt du heller Gud!",
+    "versions": [
+      {
+        "text": "For i mange drømmer er det tomhet, og likeså i mange ord. Frykt derfor Gud!",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "Den hebraiske strukturen 'בְרֹב חֲלֹמוֹת וַהֲבָלִים וּדְבָרִים הַרְבֵּה' kobler drømmer, tomhet (הֲבָלִים) og mange ord sammen i én frase. Den nåværende oversettelsen splitter dette opp med 'og likeså', noe som ikke helt fanger den opprinnelige strukturen. Dessuten er הֲבָלִים (hevel i flertall) en del av listen, ikke en beskrivelse av drømmene."
+      }
+    ]
   },
   {
     "bookId": 21,
@@ -51,7 +59,21 @@
     "bookId": 21,
     "chapterId": 5,
     "verseId": 8,
-    "text": "Men fordelen for et land er i alt dette: at kongen selv tjener av marken."
+    "text": "Men fordelen for et land er over alt: selv en konge er avhengig av det dyrkede jord.",
+    "versions": [
+      {
+        "text": "Men fordelen for et land er i alt dette: at kongen selv tjener av marken.",
+        "type": "error",
+        "severity": "major",
+        "explanation": "Verset er notorisk vanskelig, men den nåværende oversettelsen 'at kongen selv tjener av marken' er noe upresis. Det hebraiske 'מֶלֶךְ לְשָׂדֶה נֶעֱבָד' betyr snarere at selv en konge er tjent med/avhengig av det dyrkede jord – poenget er at selv kongen er avhengig av jordbruket. En bedre gjengivelse ville være: 'Fordelen for et land i alle ting er dette: en konge som er bundet til dyrket mark.' Men gitt versens tvetydighet, bør oversettelsen i det minste reflektere at kongen er avhengig av jordbruket."
+      },
+      {
+        "text": "Men fordelen for et land er i alle ting: en konge som tjener det dyrkede jord.",
+        "type": "suggestion",
+        "severity": "major",
+        "explanation": "Det hebraiske 'בַּכֹּל הוּא' betyr 'i alt' eller 'over alt/for alle', ikke 'i alt dette'. Uttrykket 'מֶלֶךְ לְשָׂדֶה נֶעֱבָד' peker på at selv kongen er tjent med/underlagt det dyrkede land. Den nåværende formuleringen 'kongen selv tjener av marken' gir inntrykk av at kongen personlig arbeider på marken, mens poenget er at selv kongemakten er avhengig av jordbruk."
+      }
+    ]
   },
   {
     "bookId": 21,
@@ -87,7 +109,15 @@
     "bookId": 21,
     "chapterId": 5,
     "verseId": 14,
-    "text": "Naken kom han fra sin mors liv, og naken skal han vende tilbake slik han kom. Ingenting av sitt strev kan han ta med seg når han går."
+    "text": "Slik han kom ut fra sin mors liv, naken skal han vende tilbake slik han kom. Ingenting av sitt strev kan han ta med seg i sin hånd når han går.",
+    "versions": [
+      {
+        "text": "Naken kom han fra sin mors liv, og naken skal han vende tilbake slik han kom. Ingenting av sitt strev kan han ta med seg når han går.",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "Det hebraiske 'בְּיָדוֹ' (i sin hånd) er utelatt i oversettelsen. Uttrykket 'som han kan ta med seg i sin hånd' er et konkret bilde som understreker det tomhendte i avreisen og bør bevares."
+      }
+    ]
   },
   {
     "bookId": 21,

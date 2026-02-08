@@ -3,7 +3,15 @@
     "bookId": 42,
     "chapterId": 22,
     "verseId": 1,
-    "text": "De usyrede brøds høytid, som kalles påske, nærmet seg."
+    "text": "Høytiden for de usyrede brød, som kalles påske, nærmet seg.",
+    "versions": [
+      {
+        "text": "De usyrede brøds høytid, som kalles påske, nærmet seg.",
+        "type": "grammar",
+        "severity": "minor",
+        "explanation": "'De usyrede brøds høytid' er en uvanlig og tung genitivskonstruksjon på norsk. 'Høytiden for de usyrede brød' er mer naturlig og lettlest."
+      }
+    ]
   },
   {
     "bookId": 42,
@@ -111,7 +119,15 @@
     "bookId": 42,
     "chapterId": 22,
     "verseId": 19,
-    "text": "Så tok han et brød, takket, brøt det og ga dem det og sa: «Dette er mitt legeme, som gis for dere. Gjør dette til minne om meg.»"
+    "text": "Så tok han et brød, takket, brøt det og ga det til dem og sa: «Dette er mitt legeme, som gis for dere. Gjør dette til minne om meg.»",
+    "versions": [
+      {
+        "text": "Så tok han et brød, takket, brøt det og ga dem det og sa: «Dette er mitt legeme, som gis for dere. Gjør dette til minne om meg.»",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "'Ga dem det' er litt uelegant. 'Ga det til dem' flyter bedre på norsk."
+      }
+    ]
   },
   {
     "bookId": 42,
@@ -213,7 +229,15 @@
     "bookId": 42,
     "chapterId": 22,
     "verseId": 34,
-    "text": "Men Jesus svarte: «Jeg sier deg, Peter: Hanen skal ikke gale i dag før du tre ganger har nektet at du kjenner meg.»"
+    "text": "Men han svarte: «Jeg sier deg, Peter: Hanen skal ikke gale i dag før du tre ganger har nektet at du kjenner meg.»",
+    "versions": [
+      {
+        "text": "Men Jesus svarte: «Jeg sier deg, Peter: Hanen skal ikke gale i dag før du tre ganger har nektet at du kjenner meg.»",
+        "type": "error",
+        "severity": "major",
+        "explanation": "Grunnteksten sier 'ὁ δὲ εἶπεν' (men han sa), ikke 'Men Jesus svarte'. Subjektet 'Jesus' er ikke nevnt eksplisitt i den greske teksten her, bare pronomenet 'han'. Dessuten er εἶπεν 'sa', ikke 'svarte'."
+      }
+    ]
   },
   {
     "bookId": 42,
@@ -225,7 +249,15 @@
     "bookId": 42,
     "chapterId": 22,
     "verseId": 36,
-    "text": "Da sa han til dem: «Men nå skal den som har en pengepung, ta den med, og likeså vesken. Og den som ikke har sverd, må selge kappen sin og kjøpe seg et."
+    "text": "Da sa han til dem: «Men nå skal den som har en pengepung, ta den med, og likeså en veske. Og den som ikke har noe sverd, må selge kappen sin og kjøpe seg et.»",
+    "versions": [
+      {
+        "text": "Da sa han til dem: «Men nå skal den som har en pengepung, ta den med, og likeså vesken. Og den som ikke har sverd, må selge kappen sin og kjøpe seg et.",
+        "type": "error",
+        "severity": "major",
+        "explanation": "Grunnteksten sier 'ὁ μὴ ἔχων' (den som ikke har) etterfulgt av konteksten om sverd (μάχαιραν). Oversettelsen mangler avsluttende anførselstegn/gåseøyne. Dessuten bør det stå 'en veske' (ubestemt) og 'noe sverd' for å tydeliggjøre at det handler om den som mangler et sverd."
+      }
+    ]
   },
   {
     "bookId": 42,
@@ -339,13 +371,29 @@
     "bookId": 42,
     "chapterId": 22,
     "verseId": 51,
-    "text": "Men Jesus svarte: «La det være nok!» Og han rørte ved øret hans og helbredet ham."
+    "text": "Men Jesus svarte: «Stopp! Ikke mer av dette!» Og han rørte ved øret hans og helbredet ham.",
+    "versions": [
+      {
+        "text": "Men Jesus svarte: «La det være nok!» Og han rørte ved øret hans og helbredet ham.",
+        "type": "error",
+        "severity": "major",
+        "explanation": "'Ἐᾶτε ἕως τούτου' betyr bokstavelig 'La det gå til dette' eller 'Stopp, nok av dette'. 'La det være nok' er akseptabelt, men den greske frasen er en befaling om å stoppe volden, ikke en vurdering av at noe er tilstrekkelig. 'Stopp! Ikke mer av dette!' gjengir kommandoen tydeligere."
+      }
+    ]
   },
   {
     "bookId": 42,
     "chapterId": 22,
     "verseId": 52,
-    "text": "Så sa Jesus til overprestene, tempelkommandantene og de eldste som var kommet ut mot ham: «Dere har rykket ut med sverd og køller som mot en røver."
+    "text": "Så sa Jesus til overprestene, tempelkommandantene og de eldste som var kommet ut mot ham: «Er det som mot en røver dere har rykket ut, med sverd og køller?»",
+    "versions": [
+      {
+        "text": "Så sa Jesus til overprestene, tempelkommandantene og de eldste som var kommet ut mot ham: «Dere har rykket ut med sverd og køller som mot en røver.",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "Den greske teksten er formulert som et retorisk spørsmål (Ὡς ἐπὶ λῃστὴν ἐξήλθατε...;). Den nåværende oversettelsen gjengir det som en påstand uten spørsmålstegn, men det bør tydelig være et spørsmål."
+      }
+    ]
   },
   {
     "bookId": 42,
@@ -369,7 +417,15 @@
     "bookId": 42,
     "chapterId": 22,
     "verseId": 55,
-    "text": "De hadde tent en ild midt i gårdsrommet og satt sammen der, og Peter satte seg blant dem."
+    "text": "De tente en ild midt i gårdsrommet og satte seg sammen, og Peter satte seg blant dem.",
+    "versions": [
+      {
+        "text": "De hadde tent en ild midt i gårdsrommet og satt sammen der, og Peter satte seg blant dem.",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "De greske partisippene (περιαψάντων, συγκαθισάντων) er genitivus absolutus i aorist og beskriver handlinger som fant sted, ikke pluskvamperfektum. 'Tente' og 'satte seg' gjengir handlingen mer presist enn 'hadde tent' og 'satt sammen der'."
+      }
+    ]
   },
   {
     "bookId": 42,
@@ -435,7 +491,15 @@
     "bookId": 42,
     "chapterId": 22,
     "verseId": 65,
-    "text": "Og de spottet ham med mange andre ord."
+    "text": "Og mange andre spottende ting sa de mot ham.",
+    "versions": [
+      {
+        "text": "Og de spottet ham med mange andre ord.",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "'βλασφημοῦντες ἔλεγον εἰς αὐτόν' betyr mer bokstavelig 'de sa mange andre spottende/blasfemiske ting mot ham'. Den nåværende oversettelsen er akseptabel, men 'spottet ham med mange andre ord' omformulerer strukturen noe. Alternativt: 'Og de sa mange andre spottende ord mot ham.'"
+      }
+    ]
   },
   {
     "bookId": 42,

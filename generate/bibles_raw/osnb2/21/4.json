@@ -45,7 +45,15 @@
     "bookId": 21,
     "chapterId": 4,
     "verseId": 5,
-    "text": "Dåren legger hendene i fanget og fortærer sitt eget kjøtt."
+    "text": "Dåren legger hendene i fanget og fortærer seg selv.",
+    "versions": [
+      {
+        "text": "Dåren legger hendene i fanget og fortærer sitt eget kjøtt.",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "'וְאֹכֵל אֶת־בְּשָׂרוֹ' (og spiser sitt kjøtt/kjød) er et idiomatisk uttrykk som betyr at den late ødelegger seg selv. 'Fortærer sitt eget kjøtt' er svært bokstavelig og kan virke forvirrende på norsk. 'Fortærer seg selv' formidler den idiomatiske betydningen bedre og er mer naturlig norsk."
+      }
+    ]
   },
   {
     "bookId": 21,
@@ -105,17 +113,31 @@
     "bookId": 21,
     "chapterId": 4,
     "verseId": 14,
-    "text": "For fra fengselet kom han ut for å bli konge, selv om han ble født fattig i sitt kongerike."
+    "text": "For fra fengselet kom han ut for å regjere, selv om han ble født fattig i sitt kongerike.",
+    "versions": [
+      {
+        "text": "For fra fengselet kom han ut for å bli konge, selv om han ble født fattig i sitt kongerike.",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "Hebraisk 'לִמְלֹךְ' betyr 'å regjere/herske', ikke bare 'å bli konge'. 'Å regjere' gir en mer dynamisk og nøyaktig gjengivelse av verbet."
+      }
+    ]
   },
   {
     "bookId": 21,
     "chapterId": 4,
     "verseId": 15,
-    "text": "Jeg så alle de levende som vandrer under solen, sammen med den andre unge mannen som skulle tre i hans sted.",
+    "text": "Jeg så alle de levende som vandrer under solen, at de var med den andre ungdommen som skulle tre i hans sted.",
     "versions": [
       {
         "text": "Jeg så alle de levende som vandrer under solen, hvordan de fulgte den unge mannen, den andre, som skulle tre i hans sted.",
         "explanation": "Hebraisk 'עִם' betyr 'med/sammen med', ikke 'hvordan de fulgte'. Teksten beskriver at Forkynneren observerte alle de levende sammen med denne andre unge mannen, ikke nødvendigvis at de fulgte ham."
+      },
+      {
+        "text": "Jeg så alle de levende som vandrer under solen, sammen med den andre unge mannen som skulle tre i hans sted.",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "'הַיֶּלֶד' (hajjeled) betyr 'gutten/ungdommen', ikke 'unge mannen'. Selv om forskjellen er liten, er 'ungdommen' nærmere det hebraiske ordet og korresponderer bedre med 'יֶלֶד' i vers 13."
       }
     ]
   },
@@ -135,6 +157,14 @@
     "bookId": 21,
     "chapterId": 4,
     "verseId": 17,
-    "text": "Vokt din fot når du går til Guds hus. Å komme nær for å høre er bedre enn når dårer bringer offer, for de vet ikke at de gjør ondt."
+    "text": "Vokt din fot når du går til Guds hus. Å komme nær for å høre er bedre enn når dårer bringer offer, for de vet ikke annet enn å gjøre ondt.",
+    "versions": [
+      {
+        "text": "Vokt din fot når du går til Guds hus. Å komme nær for å høre er bedre enn når dårer bringer offer, for de vet ikke at de gjør ondt.",
+        "type": "error",
+        "severity": "critical",
+        "explanation": "Den hebraiske frasen 'כִּי־אֵינָם יוֹדְעִים לַעֲשׂוֹת רָע' er omdiskutert, men den mest aksepterte tolkningen er 'for de vet/forstår ikke at de gjør ondt' ELLER 'for de vet ikke annet enn å gjøre ondt'. Den nåværende oversettelsen 'for de vet ikke at de gjør ondt' er faktisk en gyldig tolkning. Men mange kommentatorer tolker dette som at dårene ikke engang er klar over at deres offer er noe galt – altså at de er uvitende om at de gjør ondt. Alternativt kan det bety at de ikke kan annet enn å gjøre ondt. Den nåværende oversettelsen er akseptabel, men det finnes en sterkere lesning."
+      }
+    ]
   }
 ]

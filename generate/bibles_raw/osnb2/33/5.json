@@ -45,7 +45,15 @@
     "bookId": 33,
     "chapterId": 5,
     "verseId": 5,
-    "text": "De skal herje Assyrias land med sverd og Nimrods land ved dets porter. Han skal frelse oss fra Assyria når de kommer inn i vårt land og tråkker innenfor våre grenser."
+    "text": "De skal herje Assyrias land med sverd og Nimrods land ved dets porter. Slik skal han redde oss fra Assyria når de kommer inn i vårt land og tråkker innenfor våre grenser.",
+    "versions": [
+      {
+        "text": "De skal herje Assyrias land med sverd og Nimrods land ved dets porter. Han skal frelse oss fra Assyria når de kommer inn i vårt land og tråkker innenfor våre grenser.",
+        "type": "error",
+        "severity": "major",
+        "explanation": "Verbet 'וְהִצִּיל' (wehitstsil) betyr 'redde/befri', ikke 'frelse' i den teologisk ladede betydningen. 'Redde' er mer presist i denne militære konteksten. Dessuten gir 'Slik' (som gjenspeiler den logiske sammenhengen med foregående setning) bedre flyt enn den brå overgangen med 'Han'."
+      }
+    ]
   },
   {
     "bookId": 33,
@@ -63,13 +71,29 @@
     "bookId": 33,
     "chapterId": 5,
     "verseId": 7,
-    "text": "Jakobs rest skal være blant hedningefolkene, midt iblant mange folk, som en løve blant skogens dyr, som en ungløve blant saueflokker, som tråkker ned og river i stykker når den går gjennom, og ingen kan redde."
+    "text": "Jakobs rest skal være blant hedningefolkene, midt iblant mange folk, som en løve blant skogens dyr, som en ungløve blant saueflokker – som når den går gjennom, tråkker ned og river i stykker, og ingen kan redde.",
+    "versions": [
+      {
+        "text": "Jakobs rest skal være blant hedningefolkene, midt iblant mange folk, som en løve blant skogens dyr, som en ungløve blant saueflokker, som tråkker ned og river i stykker når den går gjennom, og ingen kan redde.",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "Den hebraiske ordrekkefølgen er 'som om den går gjennom og tråkker ned og river i stykker'. Den nåværende oversettelsen endrer rekkefølgen slik at 'tråkker ned og river i stykker' kommer før 'når den går gjennom'. En mer naturlig og teksttro rekkefølge gir bedre flyt."
+      }
+    ]
   },
   {
     "bookId": 33,
     "chapterId": 5,
     "verseId": 8,
-    "text": "Din hånd skal løftes over dine fiender, og alle dine motstandere skal bli utryddet."
+    "text": "Din hånd skal løftes over dine fiender, og alle dine fiender skal bli utryddet.",
+    "versions": [
+      {
+        "text": "Din hånd skal løftes over dine fiender, og alle dine motstandere skal bli utryddet.",
+        "type": "error",
+        "severity": "minor",
+        "explanation": "Det hebraiske 'אֹיְבֶיךָ' betyr 'dine fiender', ikke 'dine motstandere'. Ordet 'צָרֶיךָ' (tsarekha) i første del betyr 'dine motstandere/trengselsfiender'. De to ordene er forskjellige på hebraisk – 'צָרֶיךָ' (motstandere) og 'אֹיְבֶיךָ' (fiender). Nåværende oversettelse bytter om nyansene."
+      }
+    ]
   },
   {
     "bookId": 33,
@@ -105,11 +129,17 @@
     "bookId": 33,
     "chapterId": 5,
     "verseId": 14,
-    "text": "I vrede og harme skal jeg ta hevn over de hedningefolk som ikke har hørt.",
+    "text": "I vrede og harme skal jeg ta hevn over de hedningefolk som ikke har adlydt.",
     "versions": [
       {
         "text": "I vrede og harme skal jeg ta hevn over de hedningefolk som ikke har villet høre.",
         "explanation": "Det hebraiske 'לֹא שָׁמֵעוּ' er enkel perfektum ('ikke hørte/har hørt'), ikke en modal konstruksjon ('har villet høre'). 'Har hørt' eller 'hørte' er mer nøyaktig og flyter bedre muntlig."
+      },
+      {
+        "text": "I vrede og harme skal jeg ta hevn over de hedningefolk som ikke har hørt.",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "Det hebraiske 'שָׁמַע' (shama) har ofte betydningen 'adlyde/lytte til' i tillegg til 'høre'. I denne konteksten, der Gud straffer folkeslagene, handler det om ulydighet – at de ikke har adlydt Guds vilje – snarere enn bare at de ikke har hørt. 'Adlydt' gir bedre teologisk mening. Men merk at dette er et vers med revisjonshistorikk, så dette er bare en mindre observasjon."
       }
     ]
   }

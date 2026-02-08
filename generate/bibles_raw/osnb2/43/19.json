@@ -171,7 +171,15 @@
     "bookId": 43,
     "chapterId": 19,
     "verseId": 25,
-    "text": "Ved Jesu kors stod hans mor og morens søster, Maria, Klopas' hustru, og Maria Magdalena."
+    "text": "Ved Jesu kors stod hans mor, hans mors søster, Maria, Klopas' hustru, og Maria Magdalena.",
+    "versions": [
+      {
+        "text": "Ved Jesu kors stod hans mor og morens søster, Maria, Klopas' hustru, og Maria Magdalena.",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "'Morens søster' er grammatisk korrekt men litt uvanlig formulering på norsk. 'Hans mors søster' flyter noe bedre og er mer naturlig norsk. Alternativt er dette en svært liten stilistisk preferanse, men det gjør setningen lettere å lese."
+      }
+    ]
   },
   {
     "bookId": 43,
@@ -273,11 +281,17 @@
     "bookId": 43,
     "chapterId": 19,
     "verseId": 39,
-    "text": "Også Nikodemus kom, han som første gang hadde oppsøkt Jesus om natten. Han hadde med seg en blanding av myrra og aloe, omkring hundre litra.",
+    "text": "Også Nikodemus kom, han som første gang hadde oppsøkt Jesus om natten. Han hadde med seg en blanding av myrra og aloë, omkring hundre litra.",
     "versions": [
       {
         "text": "Også Nikodemus kom, han som første gang hadde oppsøkt Jesus om natten. Han hadde med seg en blanding av myrra og aloe, omkring hundre pund.",
         "explanation": "Det greske 'λίτρα' (litra) var en romersk vektenhet på ca. 327 gram, ikke det samme som et moderne pund. 'Litra' kan beholdes som teknisk term, eller det kan forklares at dette tilsvarer ca. 33 kilo. 'Hundre pund' kan gi feil inntrykk av mengden."
+      },
+      {
+        "text": "Også Nikodemus kom, han som første gang hadde oppsøkt Jesus om natten. Han hadde med seg en blanding av myrra og aloe, omkring hundre litra.",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "Det greske ἀλόης tilsvarer aloë (med trema), som er den korrekte norske skrivemåten for denne planten. 'Aloe' uten trema kan leses feil med tanke på uttale."
       }
     ]
   },

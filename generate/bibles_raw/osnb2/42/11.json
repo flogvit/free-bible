@@ -87,7 +87,15 @@
     "bookId": 42,
     "chapterId": 11,
     "verseId": 14,
-    "text": "Han drev ut en demon som gjorde stum. Da demonen var fart ut, begynte den stumme å tale, og folkemengden undret seg."
+    "text": "Han drev ut en demon som gjorde stum. Da demonen hadde fart ut, begynte den stumme å tale, og folkemengden undret seg.",
+    "versions": [
+      {
+        "text": "Han drev ut en demon som gjorde stum. Da demonen var fart ut, begynte den stumme å tale, og folkemengden undret seg.",
+        "type": "grammar",
+        "severity": "minor",
+        "explanation": "'Var fart ut' er grammatisk uvanlig på norsk. 'Hadde fart ut' er korrekt norsk pluskvamperfektum og passer bedre for å uttrykke den forutgående handlingen (genitivus absolutus i gresk)."
+      }
+    ]
   },
   {
     "bookId": 42,
@@ -219,7 +227,15 @@
     "bookId": 42,
     "chapterId": 11,
     "verseId": 33,
-    "text": "Ingen tenner en lampe og setter den i kjelleren eller under et kar, men på lampeholderen, slik at de som kommer inn, kan se lyset."
+    "text": "Ingen tenner en lampe og setter den på et skjult sted eller under et kar, men på lampeholderen, slik at de som kommer inn, kan se lyset.",
+    "versions": [
+      {
+        "text": "Ingen tenner en lampe og setter den i kjelleren eller under et kar, men på lampeholderen, slik at de som kommer inn, kan se lyset.",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "Det greske κρύπτην betyr 'et skjult/gjemt sted', ikke nødvendigvis en kjeller. 'Et skjult sted' er mer presist og bevarer den bredere betydningen i originalen."
+      }
+    ]
   },
   {
     "bookId": 42,
@@ -299,7 +315,15 @@
     "bookId": 42,
     "chapterId": 11,
     "verseId": 42,
-    "text": "Men ve dere, fariseere! Dere gir tiende av mynte og rute og alle slags grønnsaker, men rettferd og kjærlighet til Gud går dere forbi. Det ene burde gjøres og det andre ikke forsømmes."
+    "text": "Men ve dere, fariseere! Dere gir tiende av mynte og rute og alle slags grønnsaker, men rettferd og kjærlighet til Gud går dere forbi. Dette burde dere gjøre uten å forsømme det andre.",
+    "versions": [
+      {
+        "text": "Men ve dere, fariseere! Dere gir tiende av mynte og rute og alle slags grønnsaker, men rettferd og kjærlighet til Gud går dere forbi. Det ene burde gjøres og det andre ikke forsømmes.",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "'Det ene burde gjøres og det andre ikke forsømmes' er upersonlig og uklart om hva 'det ene' og 'det andre' refererer til. Det greske ταῦτα... κἀκεῖνα skiller mellom 'disse ting' (rettferd og kjærlighet) og 'de andre' (tienden). 'Dette burde dere gjøre uten å forsømme det andre' er klarere og mer direkte."
+      }
+    ]
   },
   {
     "bookId": 42,
@@ -353,7 +377,21 @@
     "bookId": 42,
     "chapterId": 11,
     "verseId": 50,
-    "text": "Slik skal blodet av alle profetene som er utøst fra verdens grunnvoll ble lagt, kreves av denne slekt –"
+    "text": "Slik skal blodet av alle profetene, som er blitt utøst helt siden verdens grunnvoll ble lagt, kreves av denne slekt –",
+    "versions": [
+      {
+        "text": "Slik skal blodet av alle profetene som er utøst fra verdens grunnvoll ble lagt, kreves av denne slekt –",
+        "type": "grammar",
+        "severity": "critical",
+        "explanation": "Setningen 'som er utøst fra verdens grunnvoll ble lagt' er grammatisk feil. 'Er utøst' og 'ble lagt' kolliderer. Enten bør det stå 'som er blitt utøst helt fra verdens grunnvoll ble lagt' eller forenkles. En bedre løsning:"
+      },
+      {
+        "text": "Slik skal blodet av alle profetene, utøst fra verdens grunnvoll ble lagt, kreves av denne slekt –",
+        "type": "grammar",
+        "severity": "critical",
+        "explanation": "Den nåværende setningen er grammatisk ødelagt: 'som er utøst fra verdens grunnvoll ble lagt' mangler konjunksjonen 'siden' og hjelpeverbet 'blitt'. Det greske ἀπὸ καταβολῆς κόσμου betyr 'fra/siden verdens grunnleggelse'. Riktig norsk krever 'som er blitt utøst helt siden verdens grunnvoll ble lagt'."
+      }
+    ]
   },
   {
     "bookId": 42,

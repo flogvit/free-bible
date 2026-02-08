@@ -93,7 +93,15 @@
     "bookId": 10,
     "chapterId": 13,
     "verseId": 16,
-    "text": "Hun sa til ham: «Nei! Å jage meg bort er en større ondskap enn det du allerede har gjort mot meg.» Men han ville ikke høre på henne."
+    "text": "Hun sa til ham: «Nei! Denne store ondskapen å sende meg bort er verre enn den andre du har gjort mot meg.» Men han ville ikke høre på henne.",
+    "versions": [
+      {
+        "text": "Hun sa til ham: «Nei! Å jage meg bort er en større ondskap enn det du allerede har gjort mot meg.» Men han ville ikke høre på henne.",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "The Hebrew אַל־אוֹדֹת הָרָעָה הַגְּדוֹלָה הַזֹּאת מֵאַחֶרֶת literally says 'No! On account of this great evil being greater than the other that you did to me – to send me away.' The current translation is close but could more precisely convey that she is comparing two wrongs: the sending away versus the violation already done."
+      }
+    ]
   },
   {
     "bookId": 10,
@@ -111,7 +119,15 @@
     "bookId": 10,
     "chapterId": 13,
     "verseId": 19,
-    "text": "Tamar strødde aske på hodet sitt og rev i stykker den side kjortelen hun hadde på seg. Hun la hendene på hodet og gikk bort mens hun ropte høyt."
+    "text": "Tamar strødde aske på hodet sitt og rev i stykker den side kjortelen hun hadde på seg. Hun la hånden på hodet og gikk bort mens hun ropte høyt.",
+    "versions": [
+      {
+        "text": "Tamar strødde aske på hodet sitt og rev i stykker den side kjortelen hun hadde på seg. Hun la hendene på hodet og gikk bort mens hun ropte høyt.",
+        "type": "grammar",
+        "severity": "minor",
+        "explanation": "The Hebrew יָדָהּ is singular ('her hand'), not plural. The translation says 'hendene' (hands, plural) where it should be 'hånden' (hand, singular)."
+      }
+    ]
   },
   {
     "bookId": 10,
@@ -219,7 +235,15 @@
     "bookId": 10,
     "chapterId": 13,
     "verseId": 37,
-    "text": "Absalom flyktet og dro til Talmai, sønn av Ammihud, kongen av Gesjur. David sørget over sin sønn alle sine dager."
+    "text": "Absalom flyktet og dro til Talmai, sønn av Ammihud, kongen av Gesjur. David sørget over sin sønn dag etter dag.",
+    "versions": [
+      {
+        "text": "Absalom flyktet og dro til Talmai, sønn av Ammihud, kongen av Gesjur. David sørget over sin sønn alle sine dager.",
+        "type": "error",
+        "severity": "minor",
+        "explanation": "כָּל־הַיָּמִים means 'all the days' in the sense of continuously/every day. 'Alle sine dager' could be misread as 'the rest of his life.' A rendering like 'dag etter dag' or 'hele tiden' better captures the ongoing nature of the mourning. Also, 'sin sønn' is ambiguous — in context it refers to Amnon, and this could be clarified, though the Hebrew is similarly ambiguous (בְּנוֹ)."
+      }
+    ]
   },
   {
     "bookId": 10,
@@ -231,6 +255,14 @@
     "bookId": 10,
     "chapterId": 13,
     "verseId": 39,
-    "text": "Kong David holdt seg fra å dra ut mot Absalom, for han hadde funnet trøst etter Amnon, som var død."
+    "text": "Kong David lengtet etter å dra ut til Absalom, for han hadde funnet trøst etter Amnons død.",
+    "versions": [
+      {
+        "text": "Kong David holdt seg fra å dra ut mot Absalom, for han hadde funnet trøst etter Amnon, som var død.",
+        "type": "error",
+        "severity": "major",
+        "explanation": "The verb וַתְּכַל (from כלה) means 'to long, yearn, be consumed with desire' – not 'to refrain from.' The text says David longed/yearned to go out TO Absalom (אֶל, not against). Also, לָצֵאת אֶל means 'to go out to,' not 'to go out against.' The current translation reverses the meaning of the verse."
+      }
+    ]
   }
 ]

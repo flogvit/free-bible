@@ -27,7 +27,15 @@
     "bookId": 4,
     "chapterId": 35,
     "verseId": 5,
-    "text": "Dere skal måle ut utenfor byen to tusen alen på østsiden, to tusen alen på sørsiden, to tusen alen på vestsiden og to tusen alen på nordsiden, med byen i midten. Dette skal være beitemarkene til byene deres."
+    "text": "Dere skal måle ut utenfor byen to tusen alen på østsiden, to tusen alen på sørsiden, to tusen alen på vestsiden og to tusen alen på nordsiden, med byen i midten. Dette skal være beitemarkene til deres byer.",
+    "versions": [
+      {
+        "text": "Dere skal måle ut utenfor byen to tusen alen på østsiden, to tusen alen på sørsiden, to tusen alen på vestsiden og to tusen alen på nordsiden, med byen i midten. Dette skal være beitemarkene til byene deres.",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "'Beitemarkene til byene deres' er akseptabelt, men 'beitemarkene til deres byer' tilsvarer bedre det hebraiske הֶעָרִים (byene) som refererer til levittenes byer generelt. Dette er en svært liten stilistisk forskjell og kan beholdes som den er."
+      }
+    ]
   },
   {
     "bookId": 4,
@@ -51,7 +59,15 @@
     "bookId": 4,
     "chapterId": 35,
     "verseId": 9,
-    "text": "Herren talte til Moses:"
+    "text": "Herren talte til Moses og sa:",
+    "versions": [
+      {
+        "text": "Herren talte til Moses:",
+        "type": "error",
+        "severity": "minor",
+        "explanation": "Det hebraiske לֵּאמֹר (le'mor) betyr 'og sa' eller 'og sa følgende'. Den nåværende oversettelsen forkorter dette med bare et kolon, men for konsistens med vers 1 og andre steder i teksten bør 'og sa' inkluderes."
+      }
+    ]
   },
   {
     "bookId": 4,
@@ -207,7 +223,15 @@
     "bookId": 4,
     "chapterId": 35,
     "verseId": 32,
-    "text": "Dere skal heller ikke ta imot løsepenger for en som har flyktet til tilfluktsbyen, så han kan vende tilbake og bo i landet før presten dør."
+    "text": "Dere skal heller ikke ta imot løsepenger for en som har flyktet til sin tilfluktsbye, så han kan vende tilbake og bo i landet før presten dør.",
+    "versions": [
+      {
+        "text": "Dere skal heller ikke ta imot løsepenger for en som har flyktet til tilfluktsbyen, så han kan vende tilbake og bo i landet før presten dør.",
+        "type": "error",
+        "severity": "minor",
+        "explanation": "Det hebraiske עִיר מִקְלָטוֹ har possessivt suffiks ('sin tilfluktsbye'), som presiserer at det er drapsmannens spesifikke tilfluktsbye. Men dette er en svært liten nyanse og den nåværende versjonen er forståelig."
+      }
+    ]
   },
   {
     "bookId": 4,

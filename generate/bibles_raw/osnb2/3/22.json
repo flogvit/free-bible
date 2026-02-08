@@ -99,7 +99,15 @@
     "bookId": 3,
     "chapterId": 22,
     "verseId": 16,
-    "text": "De ville påføre dem skyld som krever soning ved å la dem spise deres hellige gaver, for jeg er Herren som helliger dem."
+    "text": "De ville påføre dem syndeskyld når de spiser av deres hellige gaver, for jeg er Herren som helliger dem.",
+    "versions": [
+      {
+        "text": "De ville påføre dem skyld som krever soning ved å la dem spise deres hellige gaver, for jeg er Herren som helliger dem.",
+        "type": "error",
+        "severity": "major",
+        "explanation": "Subjektet i verset er prestene (v.15), og meningen er at prestene ville påføre folket (dem som spiser) skyld. Formuleringen 'ved å la dem spise' impliserer at prestene gir tillatelse, men den hebraiske teksten (בְּאָכְלָם) betyr snarere 'når de spiser' – det handler om konsekvensen av urettmessig spising. Dessuten er עֲוֺן אַשְׁמָה bedre gjengitt som 'syndeskyld' enn 'skyld som krever soning', som er en unødig omskrivning."
+      }
+    ]
   },
   {
     "bookId": 3,
@@ -135,11 +143,17 @@
     "bookId": 3,
     "chapterId": 22,
     "verseId": 22,
-    "text": "Blinde, med brudd, lemlestede, dyr med vorter, skabb eller utslett – slike skal dere ikke bære fram for Herren, og dere skal ikke legge dem som ildoffer på alteret for Herren.",
+    "text": "Blinde, dyr med brudd, lemlestede, med vorter, skabb eller utslett – slike skal dere ikke bære fram for Herren, og dere skal ikke legge dem som ildoffer på alteret for Herren.",
     "versions": [
       {
         "text": "Blinde, med brudd, lemlestede, dyr med byller, skabb eller utslett – slike skal dere ikke bære fram for Herren, og dere skal ikke legge dem som ildoffer på alteret for Herren.",
         "explanation": "Det hebraiske ordet יַבֶּלֶת (yabbelet) betyr 'vorte' eller 'utvekst', ikke 'byller'. Byller ville vært שְׁחִין (shechin)."
+      },
+      {
+        "text": "Blinde, med brudd, lemlestede, dyr med vorter, skabb eller utslett – slike skal dere ikke bære fram for Herren, og dere skal ikke legge dem som ildoffer på alteret for Herren.",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "Formuleringen er inkonsekvent: 'Blinde' er uten preposisjon, 'med brudd' har preposisjon, 'lemlestede' er uten, 'dyr med vorter' har et tillegg. For bedre parallellisme bør 'dyr med' flyttes til 'brudd' i stedet, da det gir en mer naturlig oppramsing."
       }
     ]
   },
@@ -165,7 +179,15 @@
     "bookId": 3,
     "chapterId": 22,
     "verseId": 25,
-    "text": "Fra en utlendings hånd skal dere ikke motta noe av dette som mat for deres Gud, for de er skadde og har lyte. De vil ikke bli godtatt for dere."
+    "text": "Fra en utlendings hånd skal dere ikke bære fram noe av dette som mat for deres Gud, for deres fordervethet er i dem, de har lyte. De vil ikke bli godtatt for dere.",
+    "versions": [
+      {
+        "text": "Fra en utlendings hånd skal dere ikke motta noe av dette som mat for deres Gud, for de er skadde og har lyte. De vil ikke bli godtatt for dere.",
+        "type": "error",
+        "severity": "major",
+        "explanation": "Det hebraiske תַקְרִיבוּ betyr 'bære fram (som offer)', ikke 'motta'. Dessuten er מָשְׁחָתָם בָּהֶם bedre gjengitt som 'deres fordervethet/fordervelse er i dem' snarere enn 'de er skadde'. Ordet מָשְׁחָת refererer til defekt/fordervethet."
+      }
+    ]
   },
   {
     "bookId": 3,
@@ -183,11 +205,17 @@
     "bookId": 3,
     "chapterId": 22,
     "verseId": 28,
-    "text": "En okse eller et småfe skal dere ikke slakte på samme dag som avkommet.",
+    "text": "En okse eller et småfe – den og avkommet – skal dere ikke slakte på samme dag.",
     "versions": [
       {
         "text": "En ku eller et småfe skal dere ikke slakte på samme dag som avkommet.",
         "explanation": "Det hebraiske שׁוֹר betyr 'okse' eller 'storfe' generelt, ikke spesifikt 'ku'. I vers 27 er samme ord oversatt med 'okse'. For konsistens og nøyaktighet bør det også her stå 'okse' eller eventuelt 'storfe'."
+      },
+      {
+        "text": "En okse eller et småfe skal dere ikke slakte på samme dag som avkommet.",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "Den hebraiske teksten har den stilistiske strukturen אֹתוֹ וְאֶת־בְּנוֹ ('den og avkommet dens'), som presiserer at det er dyret og dets avkom som ikke skal slaktes sammen. Nåværende oversettelse formidler meningen, men mister den eksplisitte appositive strukturen. Forslaget gjør det tydeligere at forbudet gjelder begge dyrene."
       }
     ]
   },
@@ -213,7 +241,15 @@
     "bookId": 3,
     "chapterId": 22,
     "verseId": 32,
-    "text": "Dere skal ikke vanhellige mitt hellige navn, for jeg vil bli helliget blant Israels barn. Jeg er Herren som helliger dere,"
+    "text": "Dere skal ikke vanhellige mitt hellige navn, men jeg vil bli helliget blant Israels barn. Jeg er Herren som helliger dere,",
+    "versions": [
+      {
+        "text": "Dere skal ikke vanhellige mitt hellige navn, for jeg vil bli helliget blant Israels barn. Jeg er Herren som helliger dere,",
+        "type": "grammar",
+        "severity": "minor",
+        "explanation": "Den hebraiske konjunksjonen וְ i וְנִקְדַּשְׁתִּי har her en adversativ/resultativ funksjon ('men/og') snarere enn kausal ('for'). Setningen uttrykker en kontrast/positiv motsetning: 'Dere skal ikke vanhellige ... men jeg vil bli helliget'. Å bruke 'for' endrer den logiske sammenhengen."
+      }
+    ]
   },
   {
     "bookId": 3,

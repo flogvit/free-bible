@@ -21,7 +21,15 @@
     "bookId": 4,
     "chapterId": 23,
     "verseId": 4,
-    "text": "Gud kom til Bileam, og han sa til ham: «Jeg har reist de sju altrene og ofret en okse og en vær på hvert alter.»"
+    "text": "Gud kom til Bileam, og han sa til ham: «Jeg har gjort i stand de sju altrene og ofret en okse og en vær på hvert alter.»",
+    "versions": [
+      {
+        "text": "Gud kom til Bileam, og han sa til ham: «Jeg har reist de sju altrene og ofret en okse og en vær på hvert alter.»",
+        "type": "error",
+        "severity": "minor",
+        "explanation": "Verbet 'עָרַכְתִּי' betyr 'ordnet/stilt opp/gjort i stand', ikke 'reist'. 'Reist' passer bedre for 'בָּנָה' (bygge). Bileam refererer til at han har gjort altrene i stand/lagt til rette ofrene på dem."
+      }
+    ]
   },
   {
     "bookId": 4,
@@ -39,11 +47,17 @@
     "bookId": 4,
     "chapterId": 23,
     "verseId": 7,
-    "text": "Da løftet han røsten og sa: «Fra Aram hentet Balak meg, Moabs konge, fra fjellene i øst: Kom og forban Jakob for meg, kom og forbann Israel!",
+    "text": "Da løftet han røsten og sa: «Fra Aram hentet Balak meg, Moabs konge, fra fjellene i øst: Kom og forban Jakob for meg, kom og fordøm Israel!",
     "versions": [
       {
         "text": "Da løftet han røsten og sa: «Fra Aram hentet Balak meg, Moabs konge, fra fjellene i øst: Kom og forban Jakob for meg, kom og forban Israel!",
         "explanation": "Hebraisk bruker to forskjellige verb: 'אָרָה' (forbanne) og 'זָעַם' (fordømme/forbanne med vrede). Oversettelsen bruker 'forban' to ganger, men det andre verbet har en sterkere betydning. Alternativt kan 'forbann' (med dobbelt-n) brukes for variasjon og for å skille mellom verbene, eller 'fordøm' som i vers 8."
+      },
+      {
+        "text": "Da løftet han røsten og sa: «Fra Aram hentet Balak meg, Moabs konge, fra fjellene i øst: Kom og forban Jakob for meg, kom og forbann Israel!",
+        "type": "grammar",
+        "severity": "minor",
+        "explanation": "Basert på endringshistorikken ble det bemerket at 'זָעַם' har en sterkere betydning enn vanlig forbannelse. 'Forbann' (med dobbelt-n) er bare en stavemåtevariasjon av samme ord 'forban'. Vers 8 bruker allerede 'fordømme' for 'זָעַם', så for konsistens bør vers 7 også bruke 'fordøm' for dette verbet."
       }
     ]
   },
@@ -93,7 +107,15 @@
     "bookId": 4,
     "chapterId": 23,
     "verseId": 14,
-    "text": "Så tok han ham med til Vaktmarken på toppen av Pisga. Der bygde han sju altere og ofret en okse og en vær på hvert alter."
+    "text": "Så tok han ham med til Sofim-marken, på toppen av Pisga. Der bygde han sju altere og ofret en okse og en vær på hvert alter.",
+    "versions": [
+      {
+        "text": "Så tok han ham med til Vaktmarken på toppen av Pisga. Der bygde han sju altere og ofret en okse og en vær på hvert alter.",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "'שְׂדֵה צֹפִים' er et stedsnavn som kan gjengis som 'Sofim-marken' (vaktpostenes mark). 'Vaktmarken' er en mulig oversettelse, men det er uvanlig på norsk. Alternativt kan det beholdes som egennavn."
+      }
+    ]
   },
   {
     "bookId": 4,
@@ -129,7 +151,15 @@
     "bookId": 4,
     "chapterId": 23,
     "verseId": 20,
-    "text": "Se, å velsigne er det jeg har fått befaling om. Han har velsignet, og jeg kan ikke gjøre det om."
+    "text": "Se, å velsigne har jeg fått i oppdrag. Han har velsignet, og jeg kan ikke gjøre det om.",
+    "versions": [
+      {
+        "text": "Se, å velsigne er det jeg har fått befaling om. Han har velsignet, og jeg kan ikke gjøre det om.",
+        "type": "error",
+        "severity": "major",
+        "explanation": "Hebraisk 'בָרֵךְ לָקָחְתִּי' betyr bokstavelig 'å velsigne har jeg mottatt/tatt'. Verbet 'לָקַח' betyr 'ta/motta', ikke 'befale'. Bileam sier han har mottatt oppdraget å velsigne, ikke fått en befaling. 'Fått i oppdrag' er mer nøyaktig enn 'fått befaling om'."
+      }
+    ]
   },
   {
     "bookId": 4,
@@ -141,11 +171,17 @@
     "bookId": 4,
     "chapterId": 23,
     "verseId": 22,
-    "text": "Gud førte dem ut av Egypt, med styrke som villoksens.",
+    "text": "Gud førte dem ut av Egypt, han har styrke som villoksens.",
     "versions": [
       {
         "text": "Gud førte dem ut av Egypt, han har kraft som villoksens horn.",
         "explanation": "Det hebraiske 'תּוֹעֲפֹת' betyr 'styrke/kraft' og 'רְאֵם' betyr 'villokse'. Ordet 'horn' er ikke i grunnteksten, selv om det ofte tillegges i tolkninger. Alternativt kan 'horn' beholdes for klarhet, men det er en tilføyelse."
+      },
+      {
+        "text": "Gud førte dem ut av Egypt, med styrke som villoksens.",
+        "type": "error",
+        "severity": "minor",
+        "explanation": "Pronomenet 'לוֹ' (for ham) refererer til Gud/folket og indikerer at styrken tilhører ham. 'Med styrke' er litt vagt - 'han har styrke' gjør det tydeligere at det er en egenskap som tilhører subjektet."
       }
     ]
   },

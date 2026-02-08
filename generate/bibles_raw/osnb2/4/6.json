@@ -75,19 +75,43 @@
     "bookId": 4,
     "chapterId": 6,
     "verseId": 13,
-    "text": "Dette er loven for nasireeren: Den dagen hans innvielsestid er fullført, skal han føres til inngangen av møteteltet."
+    "text": "Den dagen hans innvielsestid er fullført, skal han komme til inngangen av møteteltet.",
+    "versions": [
+      {
+        "text": "Dette er loven for nasireeren: Den dagen hans innvielsestid er fullført, skal han føres til inngangen av møteteltet.",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "Det hebraiske יָבִיא אֹתוֹ kan bety 'han skal bringe seg selv' (eller 'han skal bringe ham'), men den passive formen 'skal han føres' er unødvendig passiv. Subjektet handler aktivt i konteksten."
+      }
+    ]
   },
   {
     "bookId": 4,
     "chapterId": 6,
     "verseId": 14,
-    "text": "Han skal bære fram som sin gave til Herren et årsgammelt værlam uten lyte til brennoffer, et årsgammelt hunlam uten lyte til syndoffer og en vær uten lyte til fredsoffer,"
+    "text": "Han skal bære fram som sin gave til Herren et årsgammelt hannlam uten lyte til brennoffer, et årsgammelt hunnlam uten lyte til syndoffer og en vær uten lyte til fredsoffer,",
+    "versions": [
+      {
+        "text": "Han skal bære fram som sin gave til Herren et årsgammelt værlam uten lyte til brennoffer, et årsgammelt hunlam uten lyte til syndoffer og en vær uten lyte til fredsoffer,",
+        "type": "error",
+        "severity": "major",
+        "explanation": "Hebraisk כֶּבֶשׂ (keves) er et hannlam, ikke et 'værlam' (vær er איל). 'Værlam' er dessuten en selvmotsigelse – en vær er et voksent dyr. Bedre å bruke 'hannlam' og 'hunnlam' (konsistent rettskriving med dobbel-n)."
+      }
+    ]
   },
   {
     "bookId": 4,
     "chapterId": 6,
     "verseId": 15,
-    "text": "samt en kurv med usyret brød – kaker av fint mel blandet med olje og usyrede kjeks smurt med olje – sammen med grødeoffer og drikkoffer."
+    "text": "samt en kurv med usyret brød – kaker av fint mel blandet med olje og usyrede flatkaker smurt med olje – sammen med grødeoffer og drikkoffer.",
+    "versions": [
+      {
+        "text": "samt en kurv med usyret brød – kaker av fint mel blandet med olje og usyrede kjeks smurt med olje – sammen med grødeoffer og drikkoffer.",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "Hebraisk רְקִיקֵי (rekikey) betyr tynne flatkaker/brødleiver, ikke 'kjeks'. 'Kjeks' gir feil assosiasjoner for moderne norske lesere. 'Flatkaker' er mer dekkende."
+      }
+    ]
   },
   {
     "bookId": 4,
@@ -111,7 +135,15 @@
     "bookId": 4,
     "chapterId": 6,
     "verseId": 19,
-    "text": "Presten skal ta den kokte bogen av væren, én usyret kake fra kurven og én usyret kjeks og legge dem i hendene på nasireeren etter at han har raket av sitt innviede hår."
+    "text": "Presten skal ta den kokte bogen av væren, én usyret kake fra kurven og én usyret flatkake og legge dem i hendene på nasireeren etter at han har raket av sitt innviede hår.",
+    "versions": [
+      {
+        "text": "Presten skal ta den kokte bogen av væren, én usyret kake fra kurven og én usyret kjeks og legge dem i hendene på nasireeren etter at han har raket av sitt innviede hår.",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "Samme som vers 15 – רְקִיק bør oversettes 'flatkake', ikke 'kjeks'."
+      }
+    ]
   },
   {
     "bookId": 4,

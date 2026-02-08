@@ -39,7 +39,15 @@
     "bookId": 36,
     "chapterId": 2,
     "verseId": 6,
-    "text": "Kystlandet skal bli til beitemarker med gjeterhytter og innhegninger for sauer."
+    "text": "Kystlandet skal bli til beitemarker med gjeterhytter og innhegninger for småfe.",
+    "versions": [
+      {
+        "text": "Kystlandet skal bli til beitemarker med gjeterhytter og innhegninger for sauer.",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "Det hebraiske 'צֹאן' (tson) betyr 'småfe' – både sauer og geiter – ikke bare 'sauer'. 'Småfe' er den mer presise oversettelsen."
+      }
+    ]
   },
   {
     "bookId": 36,
@@ -57,17 +65,31 @@
     "bookId": 36,
     "chapterId": 2,
     "verseId": 9,
-    "text": "Resten av mitt folk skal plyndre dem, og det som er igjen av mitt folkeslag, skal arve dem."
+    "text": "Derfor, så sant jeg lever, sier Herren over hærskarene, Israels Gud: Moab skal bli som Sodoma og ammonittene som Gomorra – et nesselkratt, en saltgruve og en ødemark for alltid. Resten av mitt folk skal plyndre dem, og det som er igjen av mitt folkeslag, skal arve dem.",
+    "versions": [
+      {
+        "text": "Resten av mitt folk skal plyndre dem, og det som er igjen av mitt folkeslag, skal arve dem.",
+        "type": "error",
+        "severity": "critical",
+        "explanation": "Verset mangler hele den første delen: Herrens ed ('så sant jeg lever'), identifiseringen av hvem som taler (Herren over hærskarene, Israels Gud), sammenligningen med Sodoma og Gomorra, og beskrivelsen av ødeleggelsen (nesselkratt, saltgruve, evig ødemark). Dette er en svært stor utelatelse som fjerner kjerneinnholdet i verset."
+      }
+    ]
   },
   {
     "bookId": 36,
     "chapterId": 2,
     "verseId": 10,
-    "text": "Dette skal de få for sitt hovmod, fordi de hånte og opphøyet seg mot Herren over hærskarenes folk.",
+    "text": "Dette skal de få for sitt hovmod, fordi de hånte og opphøyet seg mot Herren, hærskarenes Guds folk.",
     "versions": [
       {
         "text": "Dette skal de få for sitt hovmod, fordi de hånte og skrøt mot Herren over hærskarenes folk.",
         "explanation": "Ordet 'skrøt' er uformelt og passer dårlig i konteksten. Det hebraiske 'וַיַּגְדִּלוּ' betyr 'gjorde seg store' eller 'opphøyet seg', som gir en mer presis og verdig tone."
+      },
+      {
+        "text": "Dette skal de få for sitt hovmod, fordi de hånte og opphøyet seg mot Herren over hærskarenes folk.",
+        "type": "error",
+        "severity": "major",
+        "explanation": "Uttrykket 'עַל־עַם יְהוָה צְבָאוֹת' betyr 'mot folket til Herren over hærskarene', dvs. Guds folk. I den nåværende oversettelsen kan 'Herren over hærskarenes folk' misforstås som at de opphøyet seg mot Herren, mens teksten sier at de opphøyet seg mot Herrens folk. Alternativt kan det forstås rett, men formuleringen er tvetydig."
       }
     ]
   },

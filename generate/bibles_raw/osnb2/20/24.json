@@ -27,7 +27,15 @@
     "bookId": 20,
     "chapterId": 24,
     "verseId": 4,
-    "text": "Ved kunnskap fylles rommene med all slags kostbar og herlig rikdom."
+    "text": "Ved kunnskap fylles rommene med alle slags kostbare og herlige skatter.",
+    "versions": [
+      {
+        "text": "Ved kunnskap fylles rommene med all slags kostbar og herlig rikdom.",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "Det hebraiske כָּל־הוֹן יָקָר וְנָעִים betyr 'all kostbar og behagelig rikdom/skatter'. 'All slags' bør være 'alle slags' (flertall), og adjektivene 'kostbar og herlig' bør bøyes i flertall for å samsvare med substantivet. Dessuten er 'נָעִים' (na'im) mer 'behagelig/deilig' enn 'herlig', men 'herlige skatter' fungerer godt på norsk."
+      }
+    ]
   },
   {
     "bookId": 20,
@@ -99,11 +107,17 @@
     "bookId": 20,
     "chapterId": 24,
     "verseId": 15,
-    "text": "Du ugudelige, legg ikke lur ved den rettferdiges bolig, ødelegg ikke hans hvilested.",
+    "text": "Legg ikke lur, du ugudelige, ved den rettferdiges bolig! Ødelegg ikke hans hvilested!",
     "versions": [
       {
         "text": "Legg ikke lur som en ugudelig ved den rettferdiges bolig, ødelegg ikke hans hvilested.",
         "explanation": "Den hebraiske teksten henvender seg direkte til den ugudelige (רָשָׁע som vokativ), ikke som en sammenligning. Alternativt kan det oversettes som en advarsel til leseren om ikke å oppføre seg som en ugudelig."
+      },
+      {
+        "text": "Du ugudelige, legg ikke lur ved den rettferdiges bolig, ødelegg ikke hans hvilested.",
+        "type": "error",
+        "severity": "major",
+        "explanation": "Den nåværende oversettelsen er akseptabel som vokativ, men den mangler utropstegn som passer til den imperative tonen i originalen. Formuleringen kan også forbedres ved å flytte vokativen litt for bedre norsk flyt. Denne endringen er ulik den tidligere versjonen."
       }
     ]
   },
@@ -159,7 +173,15 @@
     "bookId": 20,
     "chapterId": 24,
     "verseId": 22,
-    "text": "For plutselig reiser ulykken seg over dem, og hvem vet hvilken ødeleggelse som kan komme fra dem begge?"
+    "text": "For plutselig reiser deres ulykke seg, og hvem vet hvilken ødeleggelse som kommer fra dem begge?",
+    "versions": [
+      {
+        "text": "For plutselig reiser ulykken seg over dem, og hvem vet hvilken ødeleggelse som kan komme fra dem begge?",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "Det hebraiske אֵידָם (eidam) har possessivt suffiks 'deres ulykke' – ulykken som rammer dem, ikke som 'reiser seg over dem'. Også 'kan komme' er unødvendig dempende; originalen er mer direkte."
+      }
+    ]
   },
   {
     "bookId": 20,
@@ -201,7 +223,15 @@
     "bookId": 20,
     "chapterId": 24,
     "verseId": 27,
-    "text": "Fullfør ditt arbeid utendørs, gjør det ferdig på marken, bygg deretter ditt hus."
+    "text": "Gjør ditt arbeid ferdig utendørs og klargjør det på marken, bygg deretter ditt hus.",
+    "versions": [
+      {
+        "text": "Fullfør ditt arbeid utendørs, gjør det ferdig på marken, bygg deretter ditt hus.",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "Det hebraiske הָכֵן (haken) betyr 'gjør klar/forbered' og וְעַתְּדָהּ (ve'attedah) betyr 'klargjør/gjør klar'. De to verbene i første halvdel er ikke synonyme; det første handler om å forberede arbeidet utendørs og det andre om å klargjøre det på marken. Den nåværende oversettelsen gjør dem for like ('fullfør'/'gjør ferdig')."
+      }
+    ]
   },
   {
     "bookId": 20,

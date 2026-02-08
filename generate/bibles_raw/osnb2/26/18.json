@@ -57,11 +57,17 @@
     "bookId": 26,
     "chapterId": 18,
     "verseId": 10,
-    "text": "Men han får en sønn som er voldelig, en som utøser blod, eller gjør noe av dette –",
+    "text": "Men han får en sønn som er voldelig, en som utøser blod, og som gjør noe av dette –",
     "versions": [
       {
         "text": "Men han får en sønn som er voldelig, en som utøser blod og gjør noe av dette –",
         "explanation": "Det hebraiske אָח (ach) betyr 'bror/en av' og מֵאַחַד (me'achad) betyr 'én av'. Uttrykket indikerer at sønnen gjør én eller flere av disse tingene, ikke nødvendigvis alle. Å legge til 'eller' gjør dette tydeligere."
+      },
+      {
+        "text": "Men han får en sønn som er voldelig, en som utøser blod, eller gjør noe av dette –",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "Det hebraiske וְעָשָׂה אָח מֵאַחַד מֵאֵלֶּה kan leses som 'og gjør en bror (dvs. lignende ting) av en av disse'. Bruken av 'eller' kan antyde at blodsutgytelse er noe annet enn resten av listen, men teksten sier snarere at sønnen utøser blod OG gjør (noen av) disse tingene. Endringen til 'eller' i versjonshistorikken var ment å klargjøre, men 'og som gjør' er mer tro mot hebraisk."
       }
     ]
   },
@@ -69,7 +75,15 @@
     "bookId": 26,
     "chapterId": 18,
     "verseId": 11,
-    "text": "mens faren ikke gjorde noe av dette: Han holder offermåltid på fjellene, vanærer sin nestes hustru,"
+    "text": "men han selv har ikke gjort noe av dette. For han holder offermåltid på fjellene og vanærer sin nestes hustru,",
+    "versions": [
+      {
+        "text": "mens faren ikke gjorde noe av dette: Han holder offermåltid på fjellene, vanærer sin nestes hustru,",
+        "type": "error",
+        "severity": "major",
+        "explanation": "Setningen 'וְהוּא אֶת־כָּל־אֵלֶּה לֹא עָשָׂה' refererer til sønnen (ikke faren) som ikke har gjort de gode tingene som nevnes i v. 5-9. Subjektet 'הוּא' viser tilbake til sønnen fra v. 10. Oversettelsen 'mens faren ikke gjorde noe av dette' snur meningen. Sønnen gjorde ikke noe av det gode, men tvert imot (כִּי גַם) holdt offermåltid på fjellene osv."
+      }
+    ]
   },
   {
     "bookId": 26,
@@ -87,7 +101,15 @@
     "bookId": 26,
     "chapterId": 18,
     "verseId": 14,
-    "text": "Men se, han får en sønn som ser alle syndene hans far har gjort, og selv om han ser dem, gjør han ikke slike ting."
+    "text": "Men se, han får en sønn som ser alle syndene hans far har gjort. Han ser dem, men gjør ikke slike ting selv.",
+    "versions": [
+      {
+        "text": "Men se, han får en sønn som ser alle syndene hans far har gjort, og selv om han ser dem, gjør han ikke slike ting.",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "Formuleringen 'selv om han ser dem' legger til en konsessiv nyanse som ikke er tydelig i originalen. Det hebraiske וַיִּרְאֶה וְלֹא יַעֲשֶׂה כָּהֵן betyr mer direkte 'han ser og gjør ikke likedan/slik'. Det er en enkel konstatering, ikke en konsessiv setning."
+      }
+    ]
   },
   {
     "bookId": 26,
@@ -105,7 +127,21 @@
     "bookId": 26,
     "chapterId": 18,
     "verseId": 17,
-    "text": "holder hånden tilbake fra den fattige, tar ikke rente eller overskudd, følger mine lover og vandrer etter mine forskrifter – han skal ikke dø for sin fars skyld. Han skal visselig leve."
+    "text": "holder hånden tilbake fra å utnytte den fattige, tar ikke rente eller overskudd, følger mine lover og vandrer etter mine forskrifter – han skal ikke dø for sin fars skyld. Han skal visselig leve.",
+    "versions": [
+      {
+        "text": "holder hånden tilbake fra den fattige, tar ikke rente eller overskudd, følger mine lover og vandrer etter mine forskrifter – han skal ikke dø for sin fars skyld. Han skal visselig leve.",
+        "type": "error",
+        "severity": "major",
+        "explanation": "Det hebraiske מֵעָנִי הֵשִׁיב יָדוֹ betyr 'holder hånden tilbake fra å gjøre urett mot den fattige' eller mer presist 'fra å undertrykke den fattige'. Oversettelsen 'holder hånden tilbake fra den fattige' kan misforstås som at han holder seg unna den fattige (dvs. ikke hjelper), mens meningen er det motsatte - han avstår fra å utnytte/undertrykke den fattige. En bedre formulering ville vært 'holder hånden tilbake fra å utnytte den fattige'. Men gitt konteksten i vers 8 der מֵעָוֶל יָשִׁיב יָדוֹ oversettes 'holder hånden tilbake fra urett', bør dette parallelliseres."
+      },
+      {
+        "text": "holder hånden tilbake fra urett, tar ikke rente eller overskudd, følger mine lover og vandrer etter mine forskrifter – han skal ikke dø for sin fars skyld. Han skal visselig leve.",
+        "type": "error",
+        "severity": "major",
+        "explanation": "'Holder hånden tilbake fra den fattige' kan misforstås som at han ikke hjelper den fattige. Hebraisk מֵעָנִי הֵשִׁיב יָדוֹ betyr at han holder hånden tilbake fra å undertrykke/utnytte den fattige. Tilsvarende vers 8 har מֵעָוֶל יָשִׁיב יָדוֹ (fra urett)."
+      }
+    ]
   },
   {
     "bookId": 26,

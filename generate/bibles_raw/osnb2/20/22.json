@@ -27,7 +27,15 @@
     "bookId": 20,
     "chapterId": 22,
     "verseId": 4,
-    "text": "Lønn for ydmykhet og frykt for Herren er rikdom, ære og liv."
+    "text": "Lønnen for ydmykhet og frykt for Herren er rikdom, ære og liv.",
+    "versions": [
+      {
+        "text": "Lønn for ydmykhet og frykt for Herren er rikdom, ære og liv.",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "'Lønnen' med bestemt form er mer idiomatisk norsk enn 'Lønn' uten artikkel i denne sammenhengen."
+      }
+    ]
   },
   {
     "bookId": 20,
@@ -51,7 +59,15 @@
     "bookId": 20,
     "chapterId": 22,
     "verseId": 8,
-    "text": "Den som sår urett, høster ulykke, og hans vredes stav skal bli knust."
+    "text": "Den som sår urett, høster ulykke, og hans vredes ris skal forgå.",
+    "versions": [
+      {
+        "text": "Den som sår urett, høster ulykke, og hans vredes stav skal bli knust.",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "שֵׁבֶט (shevet) betyr 'stav' eller 'ris/kjepp', men יִכְלֶה (yikhleh) betyr 'ta slutt/forgå/gå til grunne', ikke 'bli knust'. Dessuten passer 'ris' bedre som oversettelse av שֵׁבֶט i kontekst av straff/vrede."
+      }
+    ]
   },
   {
     "bookId": 20,
@@ -69,7 +85,15 @@
     "bookId": 20,
     "chapterId": 22,
     "verseId": 11,
-    "text": "Den som elsker et rent hjerte og taler med ynde, har kongen som sin venn."
+    "text": "Den som elsker et rent hjerte og har nåde på sine lepper, har kongen som sin venn.",
+    "versions": [
+      {
+        "text": "Den som elsker et rent hjerte og taler med ynde, har kongen som sin venn.",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "חֵן שְׂפָתָיו betyr bokstavelig 'nåde/ynde på hans lepper'. 'Taler med ynde' er en rimelig tolkning, men 'har nåde på sine lepper' er mer presist og bevarer bildet fra originalen med שְׂפָתָיו (lepper)."
+      }
+    ]
   },
   {
     "bookId": 20,
@@ -111,11 +135,17 @@
     "bookId": 20,
     "chapterId": 22,
     "verseId": 18,
-    "text": "For det er godt at du bevarer dem i ditt indre, så de alltid er klare på dine lepper.",
+    "text": "For det er herlig at du bevarer dem i ditt indre, så de alltid er klare på dine lepper.",
     "versions": [
       {
         "text": "For det er godt om du bevarer dem i ditt indre, så de alle er klare på dine lepper.",
         "explanation": "יִכֹּנוּ יַחְדָּו betyr at de skal være 'fast grunnlagt sammen' eller 'alltid klare'. 'Alltid' gjengir יַחְדָּו bedre i denne konteksten enn 'alle'. Også 'at du' er mer naturlig norsk enn 'om du' her."
+      },
+      {
+        "text": "For det er godt at du bevarer dem i ditt indre, så de alltid er klare på dine lepper.",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "נָעִים (na'im) betyr 'herlig/behagelig/liflig', ikke bare 'godt' (som ville vært טוֹב). 'Herlig' gjengir den mer poetiske kvaliteten i ordet bedre."
       }
     ]
   },
@@ -141,7 +171,15 @@
     "bookId": 20,
     "chapterId": 22,
     "verseId": 21,
-    "text": "for å lære deg sannhets pålitelige ord, så du kan gi riktige svar til dem som sender deg?"
+    "text": "for å lære deg pålitelige sannhetsord, så du kan gi sanne svar til dem som sender deg?",
+    "versions": [
+      {
+        "text": "for å lære deg sannhets pålitelige ord, så du kan gi riktige svar til dem som sender deg?",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "קֹשְׁט אִמְרֵי אֱמֶת - 'påliteligheten av sannhets ord'. Ordstillingen 'sannhets pålitelige ord' er litt klønete på norsk. Dessuten er אֲמָרִים אֱמֶת (amarim emet) 'sanne ord/svar', ikke 'riktige svar'. 'Sanne' gjengir אֱמֶת mer presist."
+      }
+    ]
   },
   {
     "bookId": 20,
@@ -159,7 +197,15 @@
     "bookId": 20,
     "chapterId": 22,
     "verseId": 23,
-    "text": "For Herren vil føre deres sak og ta livet av dem som tar fra dem."
+    "text": "For Herren vil føre deres sak og ta livet fra dem som plyndrer dem.",
+    "versions": [
+      {
+        "text": "For Herren vil føre deres sak og ta livet av dem som tar fra dem.",
+        "type": "error",
+        "severity": "major",
+        "explanation": "וְקָבַע אֶת־קֹבְעֵיהֶם נָפֶשׁ - verbet קָבַע betyr 'å rane/plyndre', og נֶפֶשׁ (sjel/liv) er objektet. Herren 'tar livet fra' (ikke 'av') dem som plyndrer de fattige. 'Fra' er riktig preposisjon, og 'plyndrer' gjengir קֹבְעֵיהֶם bedre enn 'tar fra dem'."
+      }
+    ]
   },
   {
     "bookId": 20,

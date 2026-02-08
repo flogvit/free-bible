@@ -3,7 +3,15 @@
     "bookId": 4,
     "chapterId": 30,
     "verseId": 1,
-    "text": "Moses sa dette til Israels barn, slik Herren hadde befalt ham."
+    "text": "Moses sa til Israels barn alt det Herren hadde befalt Moses.",
+    "versions": [
+      {
+        "text": "Moses sa dette til Israels barn, slik Herren hadde befalt ham.",
+        "type": "error",
+        "severity": "major",
+        "explanation": "Den hebraiske teksten sier bokstavelig 'i samsvar med alt som Herren hadde befalt Moses' (כְּכֹל אֲשֶׁר־צִוָּה יְהוָה אֶת־מֹשֶׁה). Ordet 'dette' er lagt til uten grunnlag i originalen, og 'ham' bør gjenspeile at det eksplisitt står 'Moses' i originalen, ikke et pronomen. Uttrykket 'alt det' gjenspeiler כְּכֹל bedre."
+      }
+    ]
   },
   {
     "bookId": 4,
@@ -39,11 +47,17 @@
     "bookId": 4,
     "chapterId": 30,
     "verseId": 7,
-    "text": "Dersom hun gifter seg mens løfter hviler på henne, eller et ubesindig ord hun har forpliktet seg med,",
+    "text": "Dersom hun gifter seg mens løfter hviler på henne, eller et ubesindig ord fra hennes lepper som hun har forpliktet seg med,",
     "versions": [
       {
         "text": "Dersom hun gifter seg mens hun er bundet av løfter eller av et ubesindig ord hun har forpliktet seg med,",
         "explanation": "Hebraisk וּנְדָרֶ֖יהָ עָלֶ֑יהָ betyr bokstavelig 'og hennes løfter er over/på henne'. Uttrykket 'løfter hviler på henne' gjenspeiler originalen bedre og harmonerer med vers 9 og 15 hvor samme uttrykk brukes."
+      },
+      {
+        "text": "Dersom hun gifter seg mens løfter hviler på henne, eller et ubesindig ord hun har forpliktet seg med,",
+        "type": "grammar",
+        "severity": "minor",
+        "explanation": "Det hebraiske מִבְטָא שְׂפָתֶיהָ betyr 'et ubesindig ord fra hennes lepper'. Uttrykket 'fra hennes lepper' (שְׂפָתֶיהָ) er utelatt i oversettelsen. Dette tillegget gir også bedre parallellisme med vers 13 som nevner 'gått over hennes lepper'."
       }
     ]
   },
@@ -87,11 +101,17 @@
     "bookId": 4,
     "chapterId": 30,
     "verseId": 14,
-    "text": "Ethvert løfte og enhver ed om forpliktelse til å ydmyke seg, kan hennes mann stadfeste eller oppheve.",
+    "text": "Ethvert løfte og enhver ed om forpliktelse til å ydmyke seg – hennes mann kan stadfeste det, og hennes mann kan oppheve det.",
     "versions": [
       {
         "text": "Ethvert løfte og enhver ed om forpliktelse til å faste, kan hennes mann stadfeste eller oppheve.",
         "explanation": "Uttrykket לְעַנֹּת נֶפֶשׁ betyr bokstavelig 'å ydmyke sin sjel/seg selv', som kan inkludere faste, men er bredere enn bare faste. Det omfatter selvfornektelse og avholdenhet generelt. 'Å ydmyke seg' eller 'å fornekte seg selv' er mer nøyaktig."
+      },
+      {
+        "text": "Ethvert løfte og enhver ed om forpliktelse til å ydmyke seg, kan hennes mann stadfeste eller oppheve.",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "Den hebraiske teksten gjentar אִישָׁהּ (hennes mann) to ganger med emfase: 'hennes mann skal stadfeste det, og hennes mann skal oppheve det'. Den nåværende oversettelsen forenkler dette til 'kan hennes mann stadfeste eller oppheve', som mister den retoriske repetisjonen og den juridiske vekten i originalen. Men dette er en stilistisk forbedring, ikke en kritisk feil."
       }
     ]
   },
