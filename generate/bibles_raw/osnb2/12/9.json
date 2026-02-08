@@ -45,11 +45,17 @@
     "bookId": 12,
     "chapterId": 9,
     "verseId": 8,
-    "text": "Jeg skal utrydde av Akabs ætt hver mann i Israel, både slave og fri.",
+    "text": "Hele Akabs hus skal gå til grunne. Jeg skal utrydde av Akabs ætt hver mann i Israel, både slave og fri.",
     "versions": [
       {
         "text": "Hele Akabs hus skal gå til grunne. Jeg skal utrydde hver mann av Akabs ætt i Israel, både ufri og fri.",
         "explanation": "Den hebraiske frasen 'עָצ֥וּר וְעָז֖וּב' (atsur ve'azuv) betyr bokstavelig 'bundet og løslatt' eller 'slave og fri', som er en merisme for alle. 'Ufri og fri' er akseptabelt, men 'slave og fri' er mer direkte. Også ordstillingen kan forbedres for bedre flyt ved opplesning."
+      },
+      {
+        "text": "Jeg skal utrydde av Akabs ætt hver mann i Israel, både slave og fri.",
+        "type": "error",
+        "severity": "major",
+        "explanation": "Den første setningen i den hebraiske teksten 'וְאָבַד כָּל־בֵּית אַחְאָב' (hele Akabs hus skal gå til grunne) mangler i den nåværende oversettelsen. Det er to separate utsagn i verset, og den første er falt bort i den siste revisjonen."
       }
     ]
   },
@@ -57,7 +63,15 @@
     "bookId": 12,
     "chapterId": 9,
     "verseId": 9,
-    "text": "Jeg skal gjøre Akabs hus som Jeroboams, Nebats sønns hus, og som Basjas, Ahias sønns hus."
+    "text": "Jeg skal gjøre Akabs hus som Jeroboams, Nebats sønns hus, og som Baasjas, Akias sønns hus.",
+    "versions": [
+      {
+        "text": "Jeg skal gjøre Akabs hus som Jeroboams, Nebats sønns hus, og som Basjas, Ahias sønns hus.",
+        "type": "error",
+        "severity": "minor",
+        "explanation": "Det hebraiske navnet 'בַּעְשָׁא' translittereres vanligvis som 'Baasja' på norsk, ikke 'Basja'. Likeledes bør 'אֲחִיָּה' gjengis som 'Akia' i tråd med norsk bibelnavntradisjon."
+      }
+    ]
   },
   {
     "bookId": 12,
@@ -153,7 +167,15 @@
     "bookId": 12,
     "chapterId": 9,
     "verseId": 24,
-    "text": "Men Jehu grep buen og traff Joram mellom skuldrene, så pilen gikk ut gjennom hjertet. Han segnet ned i vognen sin."
+    "text": "Men Jehu grep buen og traff Joram mellom armene, så pilen gikk ut gjennom hjertet. Han segnet ned i vognen sin.",
+    "versions": [
+      {
+        "text": "Men Jehu grep buen og traff Joram mellom skuldrene, så pilen gikk ut gjennom hjertet. Han segnet ned i vognen sin.",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "Det hebraiske 'בֵּין זְרֹעָיו' betyr 'mellom armene hans', dvs. midt i brystet/ryggen mellom armene - ikke mellom skuldrene. 'זְרֹעָ' betyr 'arm', ikke 'skulder'."
+      }
+    ]
   },
   {
     "bookId": 12,
@@ -171,7 +193,15 @@
     "bookId": 12,
     "chapterId": 9,
     "verseId": 26,
-    "text": "Sannelig, blodet til Nabot og hans sønner så jeg i går, sier Herren, og jeg vil gjengjelde deg på dette jordstykket, sier Herren. Løft ham nå opp og kast ham på jordstykket etter Herrens ord.»"
+    "text": "Sannelig, blodet til Nabot og hans sønner så jeg i går, sier Herren, og jeg vil gjengjelde deg på dette jordstykket, sier Herren. Løft ham nå opp og kast ham på jordstykket, etter Herrens ord.»",
+    "versions": [
+      {
+        "text": "Sannelig, blodet til Nabot og hans sønner så jeg i går, sier Herren, og jeg vil gjengjelde deg på dette jordstykket, sier Herren. Løft ham nå opp og kast ham på jordstykket etter Herrens ord.»",
+        "type": "error",
+        "severity": "major",
+        "explanation": "Oversettelsen av 'וְשִׁלַּמְתִּי לְךָ' som 'gjengjelde deg' er tvetydig. I den hebraiske konteksten er det rettet mot Akab/hans hus ('jeg vil gjengjelde det for deg / gi deg igjen'). Oversettelsen er akseptabel men et komma før 'etter Herrens ord' forbedrer lesbarheten noe. Ellers er verset greit."
+      }
+    ]
   },
   {
     "bookId": 12,
@@ -237,6 +267,14 @@
     "bookId": 12,
     "chapterId": 9,
     "verseId": 37,
-    "text": "Jesabels lik skal bli som gjødsel på marken i Jisreel, så ingen kan si: Dette er Jesabels grav.»"
+    "text": "Jesabels lik skal bli som gjødsel på marken i Jisreel, så ingen kan si: Dette er Jesabel.»",
+    "versions": [
+      {
+        "text": "Jesabels lik skal bli som gjødsel på marken i Jisreel, så ingen kan si: Dette er Jesabels grav.»",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "Den hebraiske teksten sier 'זֹאת אִיזָבֶל' - 'dette er Jesabel', ikke 'dette er Jesabels grav'. Ordet 'grav' er lagt til og finnes ikke i grunnteksten. Poenget er at liket er så ødelagt at ingen kan identifisere det som Jesabel."
+      }
+    ]
   }
 ]

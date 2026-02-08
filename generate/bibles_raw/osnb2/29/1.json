@@ -21,7 +21,21 @@
     "bookId": 29,
     "chapterId": 1,
     "verseId": 4,
-    "text": "Det gnageren levnet, åt gresshoppen, det gresshoppen levnet, åt larven, og det larven levnet, åt gråsugeren."
+    "text": "Det den bitende gresshoppen levnet, åt vandregresshoppen, det vandregresshoppen levnet, åt gresshoppelarven, og det gresshoppelarven levnet, åt den fortærende gresshoppen.",
+    "versions": [
+      {
+        "text": "Det gnageren levnet, åt gresshoppen, det gresshoppen levnet, åt larven, og det larven levnet, åt gråsugeren.",
+        "type": "error",
+        "severity": "major",
+        "explanation": "De fire hebraiske ordene (גָּזָם, אַרְבֶּה, יֶלֶק, חָסִיל) beskriver alle ulike stadier eller arter av gresshopper, ikke helt forskjellige insekttyper. Oversettelsen bør gjenspeile at det handler om gresshoppearter. Dog er dette vanskelig å oversette presist. Nåværende oversettelse med 'gråsugeren' er misvisende – gråsugere er krepsdyr, ikke insekter. 'Gnageren' er også upresis. Se alternativt forslag nedenfor."
+      },
+      {
+        "text": "Det gnaggresshoppen levnet, åt vandregresshoppen, det vandregresshoppen levnet, åt gresshoppelarven, og det gresshoppelarven levnet, åt den ødeleggende gresshoppen.",
+        "type": "suggestion",
+        "severity": "major",
+        "explanation": "Bedre forslag: De fire hebraiske begrepene refererer alle til gresshopper i ulike stadier. 'Gnageren' og 'gråsugeren' i originaloversettelsen er misvisende. Tradisjonelle norske oversettelser bruker varianter som 'gnaggresshoppe', 'vandregresshoppe', 'gresshoppelarve' og 'ødeleggende gresshoppe'."
+      }
+    ]
   },
   {
     "bookId": 29,
@@ -45,7 +59,15 @@
     "bookId": 29,
     "chapterId": 1,
     "verseId": 8,
-    "text": "Klag som en jomfru kledd i sekk over sin ungdoms brudgom!"
+    "text": "Klag som en ung kvinne kledd i sekkestrie over sin ungdoms ektefelle!",
+    "versions": [
+      {
+        "text": "Klag som en jomfru kledd i sekk over sin ungdoms brudgom!",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "Hebraisk בְּתוּלָה betyr her snarere 'ung kvinne' enn 'jomfru' – konteksten antyder at hun allerede var gift (בַּעַל נְעוּרֶיהָ = hennes ungdoms mann/ektemann). 'Sekk' bør være 'sekkestrie' (שַׂק = sekkestoff som sorgsklede). 'Brudgom' (חָתָן) er et annet ord enn בַּעַל som betyr 'herre/ektemann'."
+      }
+    ]
   },
   {
     "bookId": 29,
@@ -81,11 +103,17 @@
     "bookId": 29,
     "chapterId": 1,
     "verseId": 14,
-    "text": "Hellige en faste, utrop en høytidssamling!",
+    "text": "Hellige en faste, utrop en høytidssamling! Samle de eldste og alle som bor i landet, til Herren deres Guds hus, og rop til Herren!",
     "versions": [
       {
         "text": "Hellighet en faste, utrop en høytidssamling! Samle de eldste, alle som bor i landet, til Herren deres Guds hus, og rop til Herren!",
         "explanation": "«Hellighet» er et substantiv, men her trengs imperativformen av verbet «å hellige», som er «Hellige». Det hebraiske קַדְּשׁוּ er en imperativ (piel) av קדשׁ."
+      },
+      {
+        "text": "Hellige en faste, utrop en høytidssamling!",
+        "type": "error",
+        "severity": "critical",
+        "explanation": "Halvparten av verset mangler. Den hebraiske teksten inneholder også 'samle de eldste, alle som bor i landet, til Herrens, deres Guds, hus, og rop til Herren'. Det ser ut til at da den forrige versjonen ble korrigert (fra 'Hellighet' til 'Hellige'), ble resten av verset ved et uhell fjernet."
       }
     ]
   },

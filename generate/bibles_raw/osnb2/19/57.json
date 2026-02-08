@@ -27,11 +27,17 @@
     "bookId": 19,
     "chapterId": 57,
     "verseId": 4,
-    "text": "Han sender hjelp fra himmelen og frelser meg fra den som håner meg. Sela. Gud sender sin nåde og sin trofasthet.",
+    "text": "Han sender hjelp fra himmelen og frelser meg, han ydmyker den som forfølger meg. Sela. Gud sender sin nåde og sin trofasthet.",
     "versions": [
       {
         "text": "Han sender hjelp fra himmelen og frelser meg, han gjør til skamme den som vil oppsluke meg. Sela. Gud sender sin nåde og sin trofasthet.",
         "explanation": "Det hebraiske חֵרֵף (cheref) betyr 'håne' eller 'spotte', og שֹׁאֲפִי (sho'afi) betyr 'den som snapper etter meg' eller 'den som forfølger meg'. Oversettelsen 'gjør til skamme den som vil oppsluke meg' er en tolkning, men 'fra den som håner meg' er nærmere originalen."
+      },
+      {
+        "text": "Han sender hjelp fra himmelen og frelser meg fra den som håner meg. Sela. Gud sender sin nåde og sin trofasthet.",
+        "type": "error",
+        "severity": "major",
+        "explanation": "Strukturen i den hebraiske teksten er at חֵרֵף שֹׁאֲפִי er en egen setning/frase: 'han håner/ydmyker den som snapper etter meg (forfølgeren)'. Det er Gud som håner/ydmyker forfølgeren – ikke at Gud frelser 'fra den som håner meg'. Den nåværende oversettelsen gjør שֹׁאֲפִי til subjektet for חֵרֵף, men grammatisk er det Gud (via det forrige verbet) som er subjekt, og שֹׁאֲפִי er objekt for חֵרֵף."
       }
     ]
   },
@@ -69,7 +75,15 @@
     "bookId": 19,
     "chapterId": 57,
     "verseId": 9,
-    "text": "Våkn opp, min sjel! Våkn opp, harpe og lyre! Jeg vil vekke morgenrøden."
+    "text": "Våkn opp, min ære! Våkn opp, harpe og lyre! Jeg vil vekke morgenrøden.",
+    "versions": [
+      {
+        "text": "Våkn opp, min sjel! Våkn opp, harpe og lyre! Jeg vil vekke morgenrøden.",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "Det hebraiske כְבוֹדִי betyr 'min ære' eller 'min herlighet', ikke 'min sjel'. Noen oversettelser tolker dette som en omskrivning for sjelen, men den mest presise oversettelsen er 'min ære'. Alternativt kan det beholdes som 'min sjel' med en note, men 'min ære' er nærmere originalteksten."
+      }
+    ]
   },
   {
     "bookId": 19,

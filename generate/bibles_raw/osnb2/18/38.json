@@ -93,11 +93,17 @@
     "bookId": 18,
     "chapterId": 38,
     "verseId": 14,
-    "text": "Den forvandles som leire under et segl, og ting trer frem som en kledning.",
+    "text": "Den tar form som leire under et segl, og ting trer frem som en kledning.",
     "versions": [
       {
         "text": "Jorden forvandles som leire under et segl, og alt trer frem som en kledning.",
         "explanation": "Subjektet 'jorden' er ikke eksplisitt i dette verset - det refererer tilbake til v.13. 'Den' er mer tro mot originalen. וְיִתְיַצְּבוּ refererer til hvordan ting/konturer blir synlige i morgenlyset, ikke 'alt'."
+      },
+      {
+        "text": "Den forvandles som leire under et segl, og ting trer frem som en kledning.",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "Verbet תִּתְהַפֵּךְ handler om å ta form/bli preget (som leire under et segl), ikke om å 'forvandles'. Bildet er at morgenlyset gir form og konturer til landskapet, slik et segl preger leire. 'Tar form' gir en mer presis gjengivelse av metaforen."
       }
     ]
   },
@@ -135,7 +141,15 @@
     "bookId": 18,
     "chapterId": 38,
     "verseId": 20,
-    "text": "Kan du føre dem til deres grense og forstå stiene til deres hjem?"
+    "text": "Kan du føre det til dets grense og forstå stiene til dets hjem?",
+    "versions": [
+      {
+        "text": "Kan du føre dem til deres grense og forstå stiene til deres hjem?",
+        "type": "error",
+        "severity": "major",
+        "explanation": "Det hebraiske suffikset -נּוּ (ennu) er entall (refererer til lyset eller mørket individuelt), ikke flertall. 'Dem/deres' bør være 'det/dets'."
+      }
+    ]
   },
   {
     "bookId": 18,
@@ -261,7 +275,15 @@
     "bookId": 18,
     "chapterId": 38,
     "verseId": 37,
-    "text": "Hvem kan med visdom telle skyene? Hvem kan tømme himmelens vannsekker,"
+    "text": "Hvem kan med visdom telle skyene? Og hvem kan helle ut himmelens vannsekker,",
+    "versions": [
+      {
+        "text": "Hvem kan med visdom telle skyene? Hvem kan tømme himmelens vannsekker,",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "Verbet יַשְׁכִּיב betyr 'legge ned/helle ut', ikke bare 'tømme'. 'Helle ut' gir et bedre bilde av at vannet strømmer ned fra skyene. I tillegg har originalen en konjunksjon (og) mellom de to spørsmålene."
+      }
+    ]
   },
   {
     "bookId": 18,

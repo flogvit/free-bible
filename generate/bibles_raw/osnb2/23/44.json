@@ -27,7 +27,15 @@
     "bookId": 23,
     "chapterId": 44,
     "verseId": 5,
-    "text": "Én skal si: «Jeg tilhører Herren», en annen skal kalle seg ved Jakobs navn, en tredje skal skrive på sin hånd: «Herrens eiendom», og ta Israel som sitt navn."
+    "text": "Én skal si: «Jeg tilhører Herren», en annen skal kalle seg ved Jakobs navn, en tredje skal skrive på sin hånd: «Tilhører Herren», og ta Israel som tilnavn.",
+    "versions": [
+      {
+        "text": "Én skal si: «Jeg tilhører Herren», en annen skal kalle seg ved Jakobs navn, en tredje skal skrive på sin hånd: «Herrens eiendom», og ta Israel som sitt navn.",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "Hebraisk 'יְכַנֶּה' betyr 'gi seg et tilnavn' eller 'kalle seg'. 'Ta Israel som tilnavn' er mer presist enn 'ta Israel som sitt navn'. Også 'לַיהוָה' betyr bokstavelig 'for/til Herren', oversatt 'Herrens eiendom' er en tolkning; 'Tilhører Herren' er litt nærmere."
+      }
+    ]
   },
   {
     "bookId": 23,
@@ -75,11 +83,17 @@
     "bookId": 23,
     "chapterId": 44,
     "verseId": 12,
-    "text": "Jernsmeden former med meisel og arbeider over glørne. Han former gudebildet med hammere og bearbeider det med sin sterke arm. Han blir sulten og mister kraften, han drikker ikke vann og blir utmattet.",
+    "text": "Jernsmeden arbeider med meisel og arbeider over glørne. Han former det med hammere og bearbeider det med sin sterke arm. Han blir sulten og mister kraften, han drikker ikke vann og blir utmattet.",
     "versions": [
       {
         "text": "Jernsmeden tar en meisel og arbeider over glørne. Han former gudebildet med hammere og bearbeider det med sin sterke arm. Han blir sulten og mister kraften, han drikker ikke vann og blir utmattet.",
         "explanation": "Hebraisk 'מַעֲצָד' er et verktøy (meisel/øks), og verbet antyder forming/bearbeiding med dette verktøyet. 'Tar en meisel' er akseptabelt, men 'former med meisel' gjenspeiler handlingen bedre."
+      },
+      {
+        "text": "Jernsmeden former med meisel og arbeider over glørne. Han former gudebildet med hammere og bearbeider det med sin sterke arm. Han blir sulten og mister kraften, han drikker ikke vann og blir utmattet.",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "'Gudebildet' er lagt til i oversettelsen uten direkte grunnlag i hebraisk tekst som bare har suffiks 'det' (יִצְּרֵהוּ). Det er en fortolkende tilføyelse. I tillegg brukes 'former' to ganger i samme vers; det første verbet er mer generelt 'arbeider med'."
       }
     ]
   },
@@ -123,7 +137,15 @@
     "bookId": 23,
     "chapterId": 44,
     "verseId": 18,
-    "text": "De forstår ikke og skjønner ikke, for han har smurt igjen deres øyne så de ikke kan se, og deres hjerter så de ikke kan forstå."
+    "text": "De forstår ikke og skjønner ikke, for deres øyne er tilsmurt så de ikke kan se, og deres hjerter så de ikke kan forstå.",
+    "versions": [
+      {
+        "text": "De forstår ikke og skjønner ikke, for han har smurt igjen deres øyne så de ikke kan se, og deres hjerter så de ikke kan forstå.",
+        "type": "error",
+        "severity": "major",
+        "explanation": "Den hebraiske teksten bruker passiv/upersonlig konstruksjon 'טַח מֵרְאוֹת עֵינֵיהֶם' – 'deres øyne er tilsmurt fra å se'. Subjektet 'han' (Gud) er ikke eksplisitt nevnt i teksten. Å legge til 'han har smurt igjen' gjør det til en aktiv handling av Gud, noe som er en teologisk fortolkning som ikke er direkte i teksten."
+      }
+    ]
   },
   {
     "bookId": 23,
@@ -189,6 +211,14 @@
     "bookId": 23,
     "chapterId": 44,
     "verseId": 28,
-    "text": "Jeg sier om Kyros: «Han er min hyrde, han skal fullføre alt det jeg vil.» Han skal si om Jerusalem: «Det skal bygges opp», og om tempelet: «Din grunnvoll skal legges på ny.»"
+    "text": "Jeg sier om Kyros: «Han er min hyrde, han skal fullføre alt det jeg vil», og si til Jerusalem: «Du skal bygges opp», og til tempelet: «Din grunnvoll skal legges.»",
+    "versions": [
+      {
+        "text": "Jeg sier om Kyros: «Han er min hyrde, han skal fullføre alt det jeg vil.» Han skal si om Jerusalem: «Det skal bygges opp», og om tempelet: «Din grunnvoll skal legges på ny.»",
+        "type": "error",
+        "severity": "major",
+        "explanation": "Hebraisk 'וְלֵאמֹר' er en fortsettelse av Guds tale ('og å si til Jerusalem'), ikke Kyros' tale. Det er Gud som taler om Jerusalem og tempelet, ikke Kyros. Dessuten betyr 'תִּוָּסֵד' 'skal grunnlegges', ikke 'legges på ny' – 'på ny' er tillagt."
+      }
+    ]
   }
 ]

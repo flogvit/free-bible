@@ -51,7 +51,15 @@
     "bookId": 13,
     "chapterId": 1,
     "verseId": 9,
-    "text": "Kusjs sønner var Seba, Havila, Sabta, Rama og Sabteka. Ramas sønner var Saba og Dedan."
+    "text": "Kusjs sønner var Seba, Havila, Sabta, Rama og Sabteka. Ramas sønner var Sjeba og Dedan.",
+    "versions": [
+      {
+        "text": "Kusjs sønner var Seba, Havila, Sabta, Rama og Sabteka. Ramas sønner var Saba og Dedan.",
+        "type": "error",
+        "severity": "minor",
+        "explanation": "Det hebraiske שְׁבָא (Sheba) er translitterert som 'Saba' her, men i vers 22 og 32 er det samme navnet translitterert som 'Saba'. Problemet er at Seba (סְבָא) i begynnelsen av verset allerede er gjengitt som 'Seba', og dermed oppstår forvirring. Det hebraiske שְׁבָא bør konsekvent gjengis som 'Sjeba' eller i det minste skilles fra סְבָא (Seba). I den nåværende oversettelsen brukes 'Saba' som er svært likt 'Seba' og kan skape forvirring."
+      }
+    ]
   },
   {
     "bookId": 13,
@@ -99,7 +107,15 @@
     "bookId": 13,
     "chapterId": 1,
     "verseId": 17,
-    "text": "Sems sønner var Elam, Assur, Arpaksjad, Lud og Aram. Arams sønner var Us, Hul, Geter og Mesjek."
+    "text": "Sems sønner var Elam, Assur, Arpaksjad, Lud og Aram, og Us, Hul, Geter og Mesjek.",
+    "versions": [
+      {
+        "text": "Sems sønner var Elam, Assur, Arpaksjad, Lud og Aram. Arams sønner var Us, Hul, Geter og Mesjek.",
+        "type": "error",
+        "severity": "major",
+        "explanation": "I den hebraiske teksten i 1 Krønikebok 1:17 er Us, Hul, Geter og Mesjek listet som del av Sems sønner, ikke spesifikt som Arams sønner (det er 1 Mos 10:23 som identifiserer dem som Arams sønner). Krønikeboken utelater den eksplisitte koblingen til Aram og lister dem alle som Sems etterkommere. Oversettelsen legger til 'Arams sønner var' som ikke finnes i originalteksten her."
+      }
+    ]
   },
   {
     "bookId": 13,
@@ -213,11 +229,17 @@
     "bookId": 13,
     "chapterId": 1,
     "verseId": 36,
-    "text": "Elifas' sønner var Teman, Omar, Sefi, Gatam og Kenas. Timna og Amalek var også hans etterkommere.",
+    "text": "Elifas' sønner var Teman, Omar, Sefi, Gatam, Kenas, Timna og Amalek.",
     "versions": [
       {
         "text": "Elifas' sønner var Teman, Omar, Sefi, Gatam, Kenas, Timna og Amalek.",
         "explanation": "Ifølge 1 Mos 36:12 var Timna en medhustru til Elifas, og Amalek var hennes sønn. Kronikeboken forenkler dette, men den nåværende oversettelsen kan misforstås. En liten justering kan klargjøre forholdet."
+      },
+      {
+        "text": "Elifas' sønner var Teman, Omar, Sefi, Gatam og Kenas. Timna og Amalek var også hans etterkommere.",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "Denne kommentaren er å bemerke at den gjeldende versjonen sier 'Timna og Amalek var også hans etterkommere', men den hebraiske teksten i Krønikeboken lister faktisk alle navnene i en enkel liste uten noen distinksjon. Endringen fra versjon 1 la til en tolkning basert på 1 Mos 36:12, men Krønikeboken selv gjør ingen slik distinksjon. Likevel, siden dette allerede er gjennomgått, la jeg denne stå som en observasjon."
       }
     ]
   },

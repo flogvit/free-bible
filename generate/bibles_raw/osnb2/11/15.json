@@ -33,7 +33,15 @@
     "bookId": 11,
     "chapterId": 15,
     "verseId": 6,
-    "text": "Det var krig mellom Rehabeam og Jeroboam så lenge han levde."
+    "text": "Det var krig mellom Rehabeam og Jeroboam alle hans levedager.",
+    "versions": [
+      {
+        "text": "Det var krig mellom Rehabeam og Jeroboam så lenge han levde.",
+        "type": "error",
+        "severity": "major",
+        "explanation": "The Hebrew כָּל־יְמֵי חַיָּיו means 'all the days of his life.' The current translation 'så lenge han levde' is acceptable but the pronoun 'han' is ambiguous — it could refer to either Rehabeam or Jeroboam. A more literal rendering avoids the ambiguity. However, the bigger concern is that this verse refers to Abiam's reign but mentions Rehabeam — this is faithful to the Hebrew text, so no error there. Minor phrasing issue only."
+      }
+    ]
   },
   {
     "bookId": 11,
@@ -159,7 +167,15 @@
     "bookId": 11,
     "chapterId": 15,
     "verseId": 27,
-    "text": "Basja, sønn av Akia, av Jissakars hus, sammensverget seg mot ham. Basja slo ham ned ved Gibbeton, som tilhørte filisterne, mens Nadab og hele Israel beleiret Gibbeton."
+    "text": "Basja, sønn av Ahia, av Jissakars hus, sammensverget seg mot ham. Basja slo ham ned ved Gibbeton, som tilhørte filisterne, mens Nadab og hele Israel beleiret Gibbeton.",
+    "versions": [
+      {
+        "text": "Basja, sønn av Akia, av Jissakars hus, sammensverget seg mot ham. Basja slo ham ned ved Gibbeton, som tilhørte filisterne, mens Nadab og hele Israel beleiret Gibbeton.",
+        "type": "error",
+        "severity": "minor",
+        "explanation": "The Hebrew name אֲחִיָּה is 'Ahia' (or 'Ahija'), the same name used for the prophet in verse 29 (rendered 'Akia'). While the names are the same Hebrew word, 'Akia' is a less standard Norwegian transliteration. 'Ahia' or 'Ahija' would be more consistent with standard Norwegian Bible transliterations."
+      }
+    ]
   },
   {
     "bookId": 11,
@@ -171,7 +187,15 @@
     "bookId": 11,
     "chapterId": 15,
     "verseId": 29,
-    "text": "Da han ble konge, slo han ned hele Jeroboams hus. Han lot ikke en eneste sjel bli igjen av Jeroboams slekt, men utryddet dem alle, etter Herrens ord som han hadde talt gjennom sin tjener Akia fra Sjilo."
+    "text": "Da han ble konge, slo han ned hele Jeroboams hus. Han lot ikke en eneste sjel bli igjen av Jeroboams slekt, men utryddet dem alle, etter Herrens ord som han hadde talt gjennom sin tjener Ahia fra Sjilo.",
+    "versions": [
+      {
+        "text": "Da han ble konge, slo han ned hele Jeroboams hus. Han lot ikke en eneste sjel bli igjen av Jeroboams slekt, men utryddet dem alle, etter Herrens ord som han hadde talt gjennom sin tjener Akia fra Sjilo.",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "Same issue as verse 27: 'Akia' should be 'Ahia' for consistent and standard Norwegian transliteration of אֲחִיָּה."
+      }
+    ]
   },
   {
     "bookId": 11,
@@ -195,7 +219,15 @@
     "bookId": 11,
     "chapterId": 15,
     "verseId": 33,
-    "text": "I det tredje året under Asa, Judas konge, ble Basja, sønn av Akia, konge over hele Israel i Tirsa. Han regjerte i tjuefire år."
+    "text": "I det tredje året under Asa, Judas konge, ble Basja, sønn av Ahia, konge over hele Israel i Tirsa. Han regjerte i tjuefire år.",
+    "versions": [
+      {
+        "text": "I det tredje året under Asa, Judas konge, ble Basja, sønn av Akia, konge over hele Israel i Tirsa. Han regjerte i tjuefire år.",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "Same transliteration issue: 'Akia' should be 'Ahia' for consistency with standard Norwegian Bible transliteration of אֲחִיָּה."
+      }
+    ]
   },
   {
     "bookId": 11,

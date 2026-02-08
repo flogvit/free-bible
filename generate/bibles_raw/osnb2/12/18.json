@@ -21,11 +21,17 @@
     "bookId": 12,
     "chapterId": 18,
     "verseId": 4,
-    "text": "Han slo også i stykker bronsjeslangen som Moses hadde laget, for helt til den tid hadde israelittene brent røkelse for den. Den ble kalt Nehusjtan.",
+    "text": "Han fjernet offerhaugene, knuste steinstøttene og hogg ned Asjera-stolpen. Han slo også i stykker bronsjeslangen som Moses hadde laget, for helt til den tid hadde israelittene brent røkelse for den. Den ble kalt Nehusjtan.",
     "versions": [
       {
         "text": "Han fjernet offerhaugene, knuste steinstøttene og hogg ned Asjera-pælen. Han slo også i stykker kobberslangen som Moses hadde laget, for helt til den tid hadde israelittene brent røkelse for den. Den ble kalt Nehusjtan.",
         "explanation": "נְחֹשֶׁת refererer til bronse, ikke kobber. Bronse var det vanlige metallet i oldtiden for slike gjenstander."
+      },
+      {
+        "text": "Han slo også i stykker bronsjeslangen som Moses hadde laget, for helt til den tid hadde israelittene brent røkelse for den. Den ble kalt Nehusjtan.",
+        "type": "error",
+        "severity": "critical",
+        "explanation": "Den nåværende versjonen mangler de tre første handlingene i verset: fjerning av offerhaugene (הַבָּמוֹת), knusing av steinstøttene (הַמַּצֵּבֹת) og hogging av Asjera-stolpen (הָאֲשֵׁרָה). Den forrige versjonen hadde disse, men ble endret kun for å fikse kobber->bronse. Det ser ut som teksten ved et uhell ble kuttet. 'Asjera-stolpen' brukes i stedet for 'Asjera-pælen' fra den forrige versjonen for å unngå å gjenta den."
       }
     ]
   },
@@ -75,7 +81,15 @@
     "bookId": 12,
     "chapterId": 18,
     "verseId": 12,
-    "text": "Dette skjedde fordi de ikke hadde hørt på Herren sin Guds røst, men hadde brutt hans pakt – alt det Moses, Herrens tjener, hadde befalt. De verken hørte eller adlød."
+    "text": "Dette skjedde fordi de ikke hadde hørt på Herren sin Guds røst, men hadde brutt hans pakt – alt det Moses, Herrens tjener, hadde befalt. De hverken hørte eller adlød.",
+    "versions": [
+      {
+        "text": "Dette skjedde fordi de ikke hadde hørt på Herren sin Guds røst, men hadde brutt hans pakt – alt det Moses, Herrens tjener, hadde befalt. De verken hørte eller adlød.",
+        "type": "grammar",
+        "severity": "minor",
+        "explanation": "'Verken' er feil stavemåte på norsk bokmål. Det korrekte ordet er 'hverken'."
+      }
+    ]
   },
   {
     "bookId": 12,
@@ -99,11 +113,17 @@
     "bookId": 12,
     "chapterId": 18,
     "verseId": 16,
-    "text": "På den tiden skar Hiskia gullet av dørene til Herrens tempel og av dørstolpene som han selv hadde kledd med gull, og ga det til assyrerkongen.",
+    "text": "På den tiden skar Hiskia gullet av dørene til Herrens tempel og av dørstolpene som Hiskia, Judas konge, selv hadde kledd med gull, og ga det til assyrerkongen.",
     "versions": [
       {
         "text": "På den tiden skar Hiskia gullet av dørene til Herrens tempel og av dørkarmene som han selv hadde kledd med gull, og ga det til assyrerkongen.",
         "explanation": "אֹמְנֹת refererer til dørstolper/sidestolper snarere enn dørkarmer. Ordet beskriver de vertikale støttene ved døren."
+      },
+      {
+        "text": "På den tiden skar Hiskia gullet av dørene til Herrens tempel og av dørstolpene som han selv hadde kledd med gull, og ga det til assyrerkongen.",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "Originalteksten sier eksplisitt 'חִזְקִיָּה מֶלֶךְ יְהוּדָה' (Hiskia, Judas konge). Selv om 'han selv' er forståelig, gjengir det ikke den fulle tittelen som brukes i originalen."
       }
     ]
   },

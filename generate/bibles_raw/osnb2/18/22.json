@@ -9,11 +9,17 @@
     "bookId": 18,
     "chapterId": 22,
     "verseId": 2,
-    "text": "Kan et menneske være til nytte for Gud? En klok mann er til nytte for seg selv.",
+    "text": "Kan et menneske være til nytte for Gud? Kan en klok mann være til nytte for ham?",
     "versions": [
       {
         "text": "Kan et menneske være til nytte for Gud? Selv en klok mann er bare til nytte for seg selv.",
         "explanation": "Den hebraiske teksten sier at en klok mann er til nytte for seg selv (עָלֵימוֹ - 'for ham selv'), ikke 'bare' til nytte for seg selv. Ordet 'bare' legger til en begrensning som ikke er i originalen."
+      },
+      {
+        "text": "Kan et menneske være til nytte for Gud? En klok mann er til nytte for seg selv.",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "Det hebraiske עָלֵימוֹ (aleimo) betyr 'for ham' og refererer tilbake til Gud (אֵל), ikke 'for seg selv'. Verset stiller to retoriske spørsmål om hvorvidt mennesket kan være til nytte for Gud - selv en klok mann kan ikke tilføre Gud noe. Nåværende oversettelse endrer meningen ved å gjøre det til et utsagn om selvnytte."
       }
     ]
   },
@@ -39,11 +45,17 @@
     "bookId": 18,
     "chapterId": 22,
     "verseId": 6,
-    "text": "For du tok pant fra dine brødre uten grunn, og du kledde av de nakne deres klær.",
+    "text": "For du tok pant fra dine brødre uten grunn, og du rev klærne av de halvnakne.",
     "versions": [
       {
         "text": "For du tok pant fra dine brødre uten grunn, og du kledde av de fattigkledde deres klær.",
         "explanation": "Det hebraiske עֲרוּמִּים betyr 'nakne' eller 'de som er avkledde', ikke 'fattigkledde'. Poenget er at Job anklages for å ha tatt klærne fra folk som allerede var nakne/avkledde, noe som forsterker anklagen om grusomhet."
+      },
+      {
+        "text": "For du tok pant fra dine brødre uten grunn, og du kledde av de nakne deres klær.",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "Formuleringen 'kledde av de nakne deres klær' er logisk selvmotsigende - hvis de allerede er nakne, har de ikke klær å kle av. Det hebraiske עֲרוּמִּים kan bety 'de som er tynt kledd/halvnakne', og poenget er at man fratok dem det lille de hadde. En bedre formulering unngår den logiske selvmotsigelsen."
       }
     ]
   },
@@ -57,7 +69,15 @@
     "bookId": 18,
     "chapterId": 22,
     "verseId": 8,
-    "text": "Den mektige mannen eide landet, og den fornemme fikk bo der."
+    "text": "Men den mektige mannen – han eide landet, og den fornemme fikk bo der.",
+    "versions": [
+      {
+        "text": "Den mektige mannen eide landet, og den fornemme fikk bo der.",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "Verset kontrasterer Jobs påståtte behandling av de fattige (vers 6-7, 9) med hvordan de mektige ble begunstiget. Et 'men' ville tydeliggjøre kontrasten bedre. Det hebraiske וְאִישׁ med vav kan ha adversativ betydning her."
+      }
+    ]
   },
   {
     "bookId": 18,
@@ -111,7 +131,15 @@
     "bookId": 18,
     "chapterId": 22,
     "verseId": 16,
-    "text": "De ble revet bort før sin tid, en flom ble utøst over deres grunnvoll."
+    "text": "De ble rykket bort før sin tid, deres grunnvoll ble skylt bort som en elv.",
+    "versions": [
+      {
+        "text": "De ble revet bort før sin tid, en flom ble utøst over deres grunnvoll.",
+        "type": "error",
+        "severity": "major",
+        "explanation": "Det hebraiske קֻמְּטוּ betyr 'rynket sammen/skrumpet inn' eller 'rykket bort'. Mer vesentlig: נָהָר יוּצַק יְסוֹדָם betyr bokstavelig 'en elv/strøm ble utøst [over] deres grunnvoll'. Oversettelsen 'en flom' er akseptabel, men נָהָר er primært 'elv/strøm'. Verset refererer til syndfloden som ødela de ugudelige."
+      }
+    ]
   },
   {
     "bookId": 18,
@@ -123,7 +151,15 @@
     "bookId": 18,
     "chapterId": 22,
     "verseId": 18,
-    "text": "Likevel fylte han deres hus med gode ting. Men de ugudeliges råd er langt fra meg."
+    "text": "Men han hadde fylt deres hus med gode ting – de ugudeliges råd er langt fra meg!",
+    "versions": [
+      {
+        "text": "Likevel fylte han deres hus med gode ting. Men de ugudeliges råd er langt fra meg.",
+        "type": "theological",
+        "severity": "minor",
+        "explanation": "Siste del av verset ('de ugudeliges råd er langt fra meg') er enten Elifas' eget innskudd eller et sitat fra de rettferdige i vers 19-20. 'Likevel' på starten gir inntrykk av en innrømmelse, mens det hebraiske וְהוּא snarere betyr 'men han' eller 'og han'. Tillegget av 'Likevel' endrer nyanseringen noe."
+      }
+    ]
   },
   {
     "bookId": 18,
@@ -165,13 +201,29 @@
     "bookId": 18,
     "chapterId": 22,
     "verseId": 24,
-    "text": "Kast ditt gull i støvet, og Ofir-gullet blant bekkens steiner."
+    "text": "Legg ditt gull i støvet, og Ofir-gullet blant bekkenes steiner.",
+    "versions": [
+      {
+        "text": "Kast ditt gull i støvet, og Ofir-gullet blant bekkens steiner.",
+        "type": "error",
+        "severity": "major",
+        "explanation": "Det hebraiske שִׁית betyr 'legg/sett', ikke 'kast'. Poenget er å legge det ned, altså å gi avkall på det - ikke å kaste det vekk i forakt. Dessuten er נְחָלִים flertall: 'bekker', ikke 'bekken'."
+      }
+    ]
   },
   {
     "bookId": 18,
     "chapterId": 22,
     "verseId": 25,
-    "text": "Da skal Den Allmektige være ditt gull og dyrebar sølv for deg."
+    "text": "Da skal Den Allmektige være ditt gull og sølv i overflod for deg.",
+    "versions": [
+      {
+        "text": "Da skal Den Allmektige være ditt gull og dyrebar sølv for deg.",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "Det hebraiske תּוֹעָפוֹת betyr 'i overflod/i mengder' snarere enn 'dyrebar'. Ordspillet er at det gullet (בָּצֶר) du la fra deg i vers 24, nå erstattes av Gud som din skatt, og sølv i overflod."
+      }
+    ]
   },
   {
     "bookId": 18,
@@ -207,6 +259,14 @@
     "bookId": 18,
     "chapterId": 22,
     "verseId": 30,
-    "text": "Han skal til og med redde den som ikke er uskyldig; han blir reddet ved dine rene hender."
+    "text": "Han redder den uskyldige, og du skal bli reddet ved dine rene hender.",
+    "versions": [
+      {
+        "text": "Han skal til og med redde den som ikke er uskyldig; han blir reddet ved dine rene hender.",
+        "type": "error",
+        "severity": "major",
+        "explanation": "Oversettelsen av אִי־נָקִי er omstridt. Mange tolker det som 'den uskyldige' (med אִי som en gammel form av אִישׁ = 'mann'), altså 'den uskyldige mannen'. Andre leser det som 'den som ikke er uskyldig'. Konteksten i Elifas' oppfordring handler om at Jobs renhet (rene hender) skal føre til redning – det er mer sannsynlig at det handler om at den uskyldige reddes. Dessuten er בְּבֹר כַּפֶּיךָ 'ved dine henders renhet', ikke 'rene hender'."
+      }
+    ]
   }
 ]

@@ -3,7 +3,15 @@
     "bookId": 27,
     "chapterId": 9,
     "verseId": 1,
-    "text": "I det første året Dareios, sønn av Ahasverus, av medisk ætt, regjerte over kaldeerriket –"
+    "text": "I det første året da Dareios, sønn av Ahasverus, av medisk ætt, regjerte over kaldeerriket –",
+    "versions": [
+      {
+        "text": "I det første året Dareios, sønn av Ahasverus, av medisk ætt, regjerte over kaldeerriket –",
+        "type": "grammar",
+        "severity": "minor",
+        "explanation": "Setningen mangler 'da' for å fungere grammatisk korrekt på norsk. Uten 'da' blir det en ufullstendig og ugrammatisk konstruksjon."
+      }
+    ]
   },
   {
     "bookId": 27,
@@ -75,7 +83,15 @@
     "bookId": 27,
     "chapterId": 9,
     "verseId": 13,
-    "text": "Slik det står skrevet i Moses' lov, kom all denne ulykken over oss. Likevel bønnfalt vi ikke Herren vår Gud om å vende om fra våre synder og gi akt på din sannhet."
+    "text": "Slik det står skrevet i Moses' lov, kom all denne ulykken over oss. Likevel bønnfalt vi ikke Herren vår Gud ved å vende om fra våre synder og gi akt på din sannhet.",
+    "versions": [
+      {
+        "text": "Slik det står skrevet i Moses' lov, kom all denne ulykken over oss. Likevel bønnfalt vi ikke Herren vår Gud om å vende om fra våre synder og gi akt på din sannhet.",
+        "type": "error",
+        "severity": "major",
+        "explanation": "Det hebraiske חִלִּינוּ אֶת־פְּנֵי (bønnfalt ansiktet til) med לָשׁוּב (ved å vende om) angir midlet for bønnfallelsen, ikke formålet med den. Vi bønnfalt ikke Gud ved å vende om fra synden – altså at omvendelsen ville ha vært måten å bønnfalle på. 'Om å vende om' antyder at vi ba Gud om å vende om, mens poenget er at vi ikke søkte Guds ansikt ved å vende oss bort fra synden."
+      }
+    ]
   },
   {
     "bookId": 27,
@@ -129,7 +145,15 @@
     "bookId": 27,
     "chapterId": 9,
     "verseId": 22,
-    "text": "Han underviste meg og sa: Daniel, nå er jeg kommet for å gi deg innsikt og forstand."
+    "text": "Han ga meg forståelse og talte med meg og sa: Daniel, nå er jeg kommet for å gi deg innsikt og forstand.",
+    "versions": [
+      {
+        "text": "Han underviste meg og sa: Daniel, nå er jeg kommet for å gi deg innsikt og forstand.",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "Det hebraiske וַיָּבֶן (vayyaven) betyr 'han ga forståelse' og וַיְדַבֵּר עִמִּי (vaydabber immi) betyr 'han talte med meg'. Oversettelsen utelater 'talte med meg' og gjengir to separate handlinger som én."
+      }
+    ]
   },
   {
     "bookId": 27,
@@ -147,7 +171,15 @@
     "bookId": 27,
     "chapterId": 9,
     "verseId": 25,
-    "text": "Så vit og forstå: Fra ordet går ut om å gjenreise og bygge opp Jerusalem, inntil en Salvet, en fyrste, kommer, skal det gå sju uker og sekstito uker. Den skal igjen bli bygget opp med gater og vollgraver, men i trange tider."
+    "text": "Så vit og forstå: Fra ordet går ut om å gjenreise og bygge opp Jerusalem, inntil en Salvet, en fyrste, kommer, skal det gå sju uker og sekstito uker. Gater og vollgraver skal igjen bli bygget opp, men i trange tider.",
+    "versions": [
+      {
+        "text": "Så vit og forstå: Fra ordet går ut om å gjenreise og bygge opp Jerusalem, inntil en Salvet, en fyrste, kommer, skal det gå sju uker og sekstito uker. Den skal igjen bli bygget opp med gater og vollgraver, men i trange tider.",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "Subjektet for 'tashub venivnetah' er רְחוֹב וְחָרוּץ (gater og vollgraver), ikke Jerusalem direkte. Det er gatene og vollgravene som bygges opp igjen. 'Den' er tvetydig; det er bedre å spesifisere hva som bygges."
+      }
+    ]
   },
   {
     "bookId": 27,

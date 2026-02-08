@@ -69,11 +69,17 @@
     "bookId": 5,
     "chapterId": 23,
     "verseId": 11,
-    "text": "Er det en mann blant dere som ikke er ren på grunn av utflod om natten, skal han gå ut av leiren. Han skal ikke komme inn i leiren.",
+    "text": "Er det en mann blant dere som ikke er ren på grunn av nattlig utløsning, skal han gå utenfor leiren. Han skal ikke komme inn i leiren.",
     "versions": [
       {
         "text": "Er det en mann blant dere som ikke er ren på grunn av noe som har hendt ham om natten, skal han gå ut av leiren. Han skal ikke komme inn i leiren.",
         "explanation": "Det hebraiske uttrykket 'מִקְּרֵה־לָיְלָה' (mikreh-laylah) refererer spesifikt til nattlig sædutløsning/uren utflod, ikke bare 'noe som har hendt'. Den nåværende oversettelsen er eufemistisk til det punkt at meningen blir uklar. 'Utflod om natten' er fortsatt diskret men mer presis."
+      },
+      {
+        "text": "Er det en mann blant dere som ikke er ren på grunn av utflod om natten, skal han gå ut av leiren. Han skal ikke komme inn i leiren.",
+        "type": "error",
+        "severity": "major",
+        "explanation": "Det hebraiske מִקְּרֵה־לָיְלָה refererer spesifikt til nattlig sædutløsning (pollusjon), ikke generell 'utflod'. 'Utflod' kan forveksles med sykelig utflod (zav). Dessuten sier hebraisk אֶל־מִחוּץ לַמַּחֲנֶה ('utenfor leiren'), ikke bare 'ut av leiren'."
       }
     ]
   },
@@ -175,7 +181,15 @@
     "bookId": 5,
     "chapterId": 23,
     "verseId": 25,
-    "text": "Når du kommer inn i din nestes vingård, kan du spise druer så mye du vil, til du er mett. Men du skal ikke legge noen i din kurv."
+    "text": "Når du kommer inn i din nestes vingård, kan du spise druer så mye du vil, til du er mett. Men du skal ikke legge noe i din kurv.",
+    "versions": [
+      {
+        "text": "Når du kommer inn i din nestes vingård, kan du spise druer så mye du vil, til du er mett. Men du skal ikke legge noen i din kurv.",
+        "type": "error",
+        "severity": "minor",
+        "explanation": "'Noen' bør være 'noe' – det hebraiske refererer til ting (druer), ikke personer. 'Noe' er korrekt grammatisk her da det handler om å legge druene i kurven."
+      }
+    ]
   },
   {
     "bookId": 5,

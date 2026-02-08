@@ -39,11 +39,17 @@
     "bookId": 23,
     "chapterId": 66,
     "verseId": 6,
-    "text": "Hør! Bulder fra byen! Røst fra tempelet! Herrens røst som gjengjelder sine fiender det de fortjener.",
+    "text": "Hør! Bulder fra byen! Røst fra tempelet! Herrens røst som gjengjelder fiendene det de fortjener.",
     "versions": [
       {
         "text": "Hør! Bulder fra byen! En røst fra tempelet! Det er Herrens røst som gjengjelder sine fiender det de fortjener.",
         "explanation": "Den hebraiske teksten har en poetisk, stakkato struktur med gjentatt 'qol' (røst/lyd). 'En røst' og 'Det er' bryter rytmen. Kortere setninger gjenspeiler originalen bedre."
+      },
+      {
+        "text": "Hør! Bulder fra byen! Røst fra tempelet! Herrens røst som gjengjelder sine fiender det de fortjener.",
+        "type": "grammar",
+        "severity": "minor",
+        "explanation": "'sine fiender' er grammatisk uklart fordi subjektet er 'Herrens røst', ikke 'Herren'. 'Fiendene' (med bestemt form) viser tydelig tilbake til Herrens fiender uten den grammatiske tvetydigheten. Alternativt er dette en svært liten sak, og den eksisterende teksten er forståelig."
       }
     ]
   },
@@ -63,7 +69,15 @@
     "bookId": 23,
     "chapterId": 66,
     "verseId": 9,
-    "text": "Skulle jeg åpne morslivet og ikke la barnet bli født? sier Herren. Skulle jeg som lar føde, lukke det igjen? sier din Gud."
+    "text": "Skulle jeg bringe frem til fødselen og ikke la barnet bli født? sier Herren. Skulle jeg som lar føde, lukke det igjen? sier din Gud.",
+    "versions": [
+      {
+        "text": "Skulle jeg åpne morslivet og ikke la barnet bli født? sier Herren. Skulle jeg som lar føde, lukke det igjen? sier din Gud.",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "Det hebraiske 'ashbir' (fra shavar) betyr å 'bryte frem' eller 'bringe til gjennombruddet' i fødselen, ikke å 'åpne morslivet'. Bildet er at Gud bringer frem til det punktet der fødselen skal skje. 'Åpne morslivet' er en unøyaktig gjengivelse av den hebraiske metaforen."
+      }
+    ]
   },
   {
     "bookId": 23,
@@ -105,7 +119,15 @@
     "bookId": 23,
     "chapterId": 66,
     "verseId": 15,
-    "text": "For se, Herren kommer i ild, og hans vogner er som en virvelvind. Han kommer for å utøse sin vrede med glødende harme og sin trussel med flammende ild."
+    "text": "For se, Herren kommer i ild, og hans vogner er som en stormvind. Han kommer for å gjengjelde i brennende vrede og sin trussel med flammende ild.",
+    "versions": [
+      {
+        "text": "For se, Herren kommer i ild, og hans vogner er som en virvelvind. Han kommer for å utøse sin vrede med glødende harme og sin trussel med flammende ild.",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "1) 'Sufa' betyr stormvind/orkan heller enn 'virvelvind' (som er 'se'ara'). 2) 'Lehashiv bechema appo' betyr bokstavelig 'å gjengjelde/vende tilbake i vrede sin harme' – det handler om gjengjeldelse, ikke generell 'utøsing'. 'Glødende harme' er en tilføyelse som ikke finnes i teksten; 'chema' (vrede) og 'af' (harme/vrede) er to separate vredes-ord."
+      }
+    ]
   },
   {
     "bookId": 23,
@@ -123,7 +145,15 @@
     "bookId": 23,
     "chapterId": 66,
     "verseId": 18,
-    "text": "Jeg – deres gjerninger og deres tanker! – kommer for å samle alle folkeslag og tungemål. De skal komme og se min herlighet."
+    "text": "Jeg kjenner deres gjerninger og deres tanker. Tiden kommer da jeg skal samle alle folkeslag og tungemål. De skal komme og se min herlighet.",
+    "versions": [
+      {
+        "text": "Jeg – deres gjerninger og deres tanker! – kommer for å samle alle folkeslag og tungemål. De skal komme og se min herlighet.",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "Den hebraiske teksten er vanskelig, men meningen er at Gud kjenner deres gjerninger og tanker, og at tiden/han kommer for å samle folkeslagene. Den nåværende oversettelsen med tankestrekene er kryptisk og vanskelig å forstå for leseren, og gjenspeiler ikke godt nok meningen. En mer eksplisitt gjengivelse hjelper forståelsen."
+      }
+    ]
   },
   {
     "bookId": 23,
@@ -147,7 +177,15 @@
     "bookId": 23,
     "chapterId": 66,
     "verseId": 22,
-    "text": "For likesom de nye himler og den nye jord som jeg skaper, skal bestå for mitt ansikt, sier Herren, slik skal deres ætt og deres navn bestå."
+    "text": "For likesom de nye himlene og den nye jorden som jeg skaper, skal bestå for mitt ansikt, sier Herren, slik skal deres ætt og deres navn bestå.",
+    "versions": [
+      {
+        "text": "For likesom de nye himler og den nye jord som jeg skaper, skal bestå for mitt ansikt, sier Herren, slik skal deres ætt og deres navn bestå.",
+        "type": "grammar",
+        "severity": "minor",
+        "explanation": "'Himler' og 'jord' bør ha bestemt form ('himlene' og 'jorden') når de foranstilles av 'de nye', for å følge norsk grammatikk korrekt. 'De nye himler' er arkaisk; moderne bokmål krever 'de nye himlene'."
+      }
+    ]
   },
   {
     "bookId": 23,

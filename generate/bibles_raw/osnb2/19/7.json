@@ -33,7 +33,15 @@
     "bookId": 19,
     "chapterId": 7,
     "verseId": 5,
-    "text": "hvis jeg har gjengjeldt min venn med ondt, eller plyndret min fiende uten grunn,"
+    "text": "hvis jeg har gjengjeldt den som levde i fred med meg, med ondt, eller plyndret min motstander uten grunn,",
+    "versions": [
+      {
+        "text": "hvis jeg har gjengjeldt min venn med ondt, eller plyndret min fiende uten grunn,",
+        "type": "error",
+        "severity": "major",
+        "explanation": "Det hebraiske 'שׁוֹלְמִי' (sholmi) betyr 'den som lever i fred med meg' eller 'den som er i fredelig forhold til meg', ikke direkte 'min venn'. Og 'צוֹרְרִי' betyr 'min motstander/fiende' - poenget i verset er at David heller ikke har plyndret sin fiende uten grunn (altså uten rettferdig årsak). 'Venn' er for upresist."
+      }
+    ]
   },
   {
     "bookId": 19,
@@ -87,7 +95,15 @@
     "bookId": 19,
     "chapterId": 7,
     "verseId": 13,
-    "text": "Hvis han ikke vender om, vil Gud hvesse sitt sverd. Han spenner sin bue og gjør den klar."
+    "text": "Hvis den ugudelige ikke vender om, hvesser Gud sitt sverd. Han spenner sin bue og gjør den klar.",
+    "versions": [
+      {
+        "text": "Hvis han ikke vender om, vil Gud hvesse sitt sverd. Han spenner sin bue og gjør den klar.",
+        "type": "error",
+        "severity": "major",
+        "explanation": "Subjektet for 'יָשׁוּב' (vender om) er den ugudelige (fra konteksten i v.12), ikke Gud. Og 'חַרְבּוֹ יִלְטוֹשׁ' betyr at Gud hvesser sverdet – det er en konsekvens, ikke en fremtidig vilje ('vil'). Å gjøre det tydeligere at det er den ugudelige som skal vende om, er viktig for den teologiske meningen."
+      }
+    ]
   },
   {
     "bookId": 19,
@@ -105,13 +121,29 @@
     "bookId": 19,
     "chapterId": 7,
     "verseId": 15,
-    "text": "Se, han føder ondskap, han er svanger med ulykke og føder løgn."
+    "text": "Se, han er svanger med ondskap, han unnfanger ulykke og føder løgn.",
+    "versions": [
+      {
+        "text": "Se, han føder ondskap, han er svanger med ulykke og føder løgn.",
+        "type": "error",
+        "severity": "major",
+        "explanation": "Det hebraiske bruker en billedlig progresjon: 'יְחַבֶּל' (er i fødselsveer med / er svanger med), 'הָרָה' (unnfanger/er svanger med), og 'יָלַד' (føder). Den nåværende oversettelsen har 'føder' to ganger og mister den poetiske progresjonen fra unnfangelse til fødsel. Rekkefølgen i hebraisk er bevisst omvendt for retorisk effekt."
+      }
+    ]
   },
   {
     "bookId": 19,
     "chapterId": 7,
     "verseId": 16,
-    "text": "Han graver en grop og gjør den dyp, men faller selv i den graven han har laget."
+    "text": "Han graver en grop og gjør den dyp, men faller selv i den gropen han har laget.",
+    "versions": [
+      {
+        "text": "Han graver en grop og gjør den dyp, men faller selv i den graven han har laget.",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "'Graven' burde være 'gropen' for å samsvare med 'en grop' tidligere i verset. Hebraisk 'בּוֹר' og 'שַׁחַת' refererer begge til en grop/grøft, ikke en grav i begravelsesforstand."
+      }
+    ]
   },
   {
     "bookId": 19,

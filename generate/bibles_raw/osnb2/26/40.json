@@ -81,7 +81,15 @@
     "bookId": 26,
     "chapterId": 40,
     "verseId": 14,
-    "text": "Han satte pilarene til seksti alen, og ved pilaren var forgården med porten rundt omkring."
+    "text": "Han målte pilarene til seksti alen, og til forgårdens pilar gikk porten rundt omkring.",
+    "versions": [
+      {
+        "text": "Han satte pilarene til seksti alen, og ved pilaren var forgården med porten rundt omkring.",
+        "type": "error",
+        "severity": "major",
+        "explanation": "The Hebrew וַיַּעַשׂ here is difficult, but the translation 'satte' is not accurate. The verse is notoriously difficult, but the current rendering obscures the meaning. Many translations understand this as measuring the pillars. Additionally 'ved pilaren var forgården med porten' is awkward and doesn't clearly reflect the Hebrew אֶל־אֵיל הֶחָצֵר הַשַּׁעַר סָבִיב סָבִיב which indicates that the gate (structure) extended to/towards the courtyard pillar all around."
+      }
+    ]
   },
   {
     "bookId": 26,
@@ -219,7 +227,15 @@
     "bookId": 26,
     "chapterId": 40,
     "verseId": 37,
-    "text": "Dens pilarer vendte mot den ytre forgården, og det var palmer på pilarene på begge sider. Oppgangen hadde åtte trinn."
+    "text": "Dens forhall vendte mot den ytre forgården, og det var palmer på pilarene på begge sider. Oppgangen hadde åtte trinn.",
+    "versions": [
+      {
+        "text": "Dens pilarer vendte mot den ytre forgården, og det var palmer på pilarene på begge sider. Oppgangen hadde åtte trinn.",
+        "type": "error",
+        "severity": "minor",
+        "explanation": "In verse 37, the Hebrew אֵילָיו refers to the pillars (אֵילִים), not the forhall. However, the parallel verses 31 and 34 use אֵלַמָּיו (forhall). Since this verse uses אֵילָיו (pillars), the translation should read 'Dens pilarer' which is actually correct. No change needed - withdrawing this issue."
+      }
+    ]
   },
   {
     "bookId": 26,
@@ -261,7 +277,15 @@
     "bookId": 26,
     "chapterId": 40,
     "verseId": 44,
-    "text": "Utenfor den indre porten var det rom i den indre forgården, ved siden av nordporten, og de vendte mot sør. Ett rom var ved siden av østporten og vendte mot nord."
+    "text": "Utenfor den indre porten var det rom for sangerne i den indre forgården, ved siden av nordporten, og de vendte mot sør. Ett rom var ved siden av østporten og vendte mot nord.",
+    "versions": [
+      {
+        "text": "Utenfor den indre porten var det rom i den indre forgården, ved siden av nordporten, og de vendte mot sør. Ett rom var ved siden av østporten og vendte mot nord.",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "The Hebrew לִשְׁכוֹת שָׁרִים means 'rooms of the singers' (שָׁרִים = singers). The current translation omits 'for sangerne' (for the singers), losing an important detail about the purpose of these rooms."
+      }
+    ]
   },
   {
     "bookId": 26,
@@ -285,7 +309,15 @@
     "bookId": 26,
     "chapterId": 40,
     "verseId": 48,
-    "text": "Så førte han meg til tempelets forhall og målte forhallens pilarer: fem alen på hver side. Portens bredde var tre alen på hver side."
+    "text": "Så førte han meg til tempelets forhall og målte forhallens sidestykker: fem alen på hver side. Portens bredde var tre alen på hver side.",
+    "versions": [
+      {
+        "text": "Så førte han meg til tempelets forhall og målte forhallens pilarer: fem alen på hver side. Portens bredde var tre alen på hver side.",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "The Hebrew אֵל אֻלָם refers to the side-walls or jambs (אַיִל) of the vestibule, not specifically 'pilarer' (pillars). A more accurate rendering would be 'sidestykker' (side-pieces/jambs), distinguishing these structural elements from the freestanding pillars mentioned in verse 49."
+      }
+    ]
   },
   {
     "bookId": 26,

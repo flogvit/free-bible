@@ -21,11 +21,17 @@
     "bookId": 28,
     "chapterId": 2,
     "verseId": 4,
-    "text": "La henne fjerne horeriet fra sitt ansikt og utroskapstegnene fra mellom sine bryster.",
+    "text": "Før sak mot deres mor, før sak! For hun er ikke min hustru, og jeg er ikke hennes mann. La henne fjerne horeriet fra sitt ansikt og utroskapstegnene fra mellom sine bryster.",
     "versions": [
       {
         "text": "Før sak mot deres mor, før sak! For hun er ikke min hustru, og jeg er ikke hennes mann. La henne fjerne horeriet fra sitt ansikt og utroskapstegnene fra sine bryster.",
         "explanation": "Det hebraiske מִבֵּין (mibbein) betyr spesifikt 'fra mellom', ikke bare 'fra'. Dette kan referere til smykker eller tegn båret mellom brystene, og den presise plasseringen er meningsbærende."
+      },
+      {
+        "text": "La henne fjerne horeriet fra sitt ansikt og utroskapstegnene fra mellom sine bryster.",
+        "type": "error",
+        "severity": "critical",
+        "explanation": "The current version is missing the first half of the verse: 'Før sak mot deres mor, før sak! For hun er ikke min hustru, og jeg er ikke hennes mann.' This was present in version 1 but was apparently accidentally deleted during the revision that focused on 'fra mellom'. The revision reason only addressed the mibbein correction, yet the entire first clause was removed. This is a critical omission of substantial content. The suggested text restores the missing content while keeping the 'fra mellom' correction from the current version."
       }
     ]
   },

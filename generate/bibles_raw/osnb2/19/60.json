@@ -57,13 +57,29 @@
     "bookId": 19,
     "chapterId": 60,
     "verseId": 9,
-    "text": "Gilead er mitt, og Manasse er mitt. Efraim er hjelmen på mitt hode, Juda er min herskerstav."
+    "text": "Gilead er mitt, og Manasse er mitt. Efraim er mitt hodes vern, Juda er min herskerstav.",
+    "versions": [
+      {
+        "text": "Gilead er mitt, og Manasse er mitt. Efraim er hjelmen på mitt hode, Juda er min herskerstav.",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "Det hebraiske 'ma'oz roshi' betyr 'mitt hodes styrke/vern/festning'. 'Hjelm' er en tolkning som ikke finnes direkte i teksten. 'Mitt hodes vern' er mer nøyaktig og unngår å legge til et spesifikt objekt (hjelm) som ikke er nevnt i originalen."
+      }
+    ]
   },
   {
     "bookId": 19,
     "chapterId": 60,
     "verseId": 10,
-    "text": "Moab er mitt vaskefat. På Edom kaster jeg min sandal. Filisterland, rop ut din underkastelse for meg!»"
+    "text": "Moab er mitt vaskefat. På Edom kaster jeg min sandal. Over meg, Filisterland, bryt ut i jubelrop!",
+    "versions": [
+      {
+        "text": "Moab er mitt vaskefat. På Edom kaster jeg min sandal. Filisterland, rop ut din underkastelse for meg!»",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "Det hebraiske 'hitro'a'i' betyr å rope i triumf/jubel. Den tradisjonelle tolkningen er ironisk: Filistea oppfordres til å juble over Gud/David – men det er en sarkastisk/ironisk utfordring. 'Rop ut din underkastelse' er en fortolkende gjengivelse som legger til noe som ikke står i teksten. En mer direkte oversettelse er 'bryt ut i jubelrop'."
+      }
+    ]
   },
   {
     "bookId": 19,
@@ -81,7 +97,15 @@
     "bookId": 19,
     "chapterId": 60,
     "verseId": 13,
-    "text": "Gi oss hjelp mot fienden, for menneskers frelse er forgjeves."
+    "text": "Gi oss hjelp mot fienden, for menneskers hjelp er forgjeves.",
+    "versions": [
+      {
+        "text": "Gi oss hjelp mot fienden, for menneskers frelse er forgjeves.",
+        "type": "error",
+        "severity": "major",
+        "explanation": "Det hebraiske 'teshu'at adam' betyr 'menneskers hjelp/redning/utfrielse', ikke 'frelse' i teologisk forstand. Poenget er at menneskelig hjelp/bistand er verdiløs – bare Guds hjelp nytter. 'Frelse' kan gi feil teologiske assosiasjoner her, og 'hjelp' passer bedre i konteksten."
+      }
+    ]
   },
   {
     "bookId": 19,

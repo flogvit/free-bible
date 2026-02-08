@@ -21,11 +21,17 @@
     "bookId": 23,
     "chapterId": 33,
     "verseId": 4,
-    "text": "Byttet deres blir sanket slik gresshopper sanker, som når gresshopper svermende styrter seg over det.",
+    "text": "Byttet deres blir sanket slik gresshopper sanker, som en sverm av gresshopper styrter de seg over det.",
     "versions": [
       {
         "text": "Byttet deres blir sanket som gresshopper sanker, som en gresshoppesverm stormer de over det.",
         "explanation": "Hebraisk חָסִיל (chasil) er en type gresshoppe, og גֵּבִים (gevim) er også gresshopper. Uttrykket שׁוֹקֵק beskriver gresshoppenes fremstormende bevegelse. 'Slik' er mer idiomatisk enn 'som' ved sammenligning med handling, og 'svermende styrter seg over' gjengir bedre den hebraiske intensiteten."
+      },
+      {
+        "text": "Byttet deres blir sanket slik gresshopper sanker, som når gresshopper svermende styrter seg over det.",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "Gjentakelsen av 'gresshopper' i begge leddene er litt klønete. Men viktigere: 'svermende styrter seg' er et adverbielt partisipp som virker noe tung. 'Som en sverm av gresshopper styrter de seg over det' er mer naturlig norsk og beholder intensiteten. Dette er likevel en marginal forbedring."
       }
     ]
   },
@@ -57,13 +63,29 @@
     "bookId": 23,
     "chapterId": 33,
     "verseId": 8,
-    "text": "Hovedveiene ligger øde, de veifarende er borte. Han har brutt pakten, han forakter byene, han akter ikke mennesker."
+    "text": "Hovedveiene ligger øde, de reisende har holdt opp å ferdes. Han har brutt pakten, han forakter byene, han akter ikke mennesker.",
+    "versions": [
+      {
+        "text": "Hovedveiene ligger øde, de veifarende er borte. Han har brutt pakten, han forakter byene, han akter ikke mennesker.",
+        "type": "error",
+        "severity": "major",
+        "explanation": "שָׁבַת עֹבֵר אֹרַח betyr bokstavelig at den veifarende har opphørt (å reise på veien). 'De veifarende er borte' er en akseptabel forenkling, men 'de reisende har holdt opp å ferdes' er mer presist og gjengir bedre at det er selve reiseaktiviteten som har opphørt."
+      }
+    ]
   },
   {
     "bookId": 23,
     "chapterId": 33,
     "verseId": 9,
-    "text": "Landet sørger og visner bort. Libanon skammer seg og visner. Saron er blitt som en ørken, og Basan og Karmel mister sitt løv."
+    "text": "Landet sørger og tæres bort. Libanon skammer seg og visner. Saron er blitt som en ødemark, og Basan og Karmel rister av seg sitt løv.",
+    "versions": [
+      {
+        "text": "Landet sørger og visner bort. Libanon skammer seg og visner. Saron er blitt som en ørken, og Basan og Karmel mister sitt løv.",
+        "type": "error",
+        "severity": "minor",
+        "explanation": "אֻמְלְלָה betyr 'å tæres/sykne hen' snarere enn 'visne' (som brukes for קָמַל). כָּעֲרָבָה refererer til den tørre steppen/ødemarken (Araba-sletten), og 'ødemark' er mer presist enn 'ørken'. וְנֹעֵר (fra נער) betyr 'rister av seg' (løvet), ikke bare 'mister'."
+      }
+    ]
   },
   {
     "bookId": 23,
@@ -117,7 +139,15 @@
     "bookId": 23,
     "chapterId": 33,
     "verseId": 15,
-    "text": "Den som vandrer i rettferdighet og taler det som er rett, som forakter vinning ved undertrykkelse, som rister hendene fri fra bestikkelse, som lukker ørene for planer om blodsutgytelse og lukker øynene for det onde –"
+    "text": "Den som vandrer i rettferdighet og taler det som er rett, som forakter urettmessig vinning, som rister hendene fri fra bestikkelse, som lukker ørene for planer om blodsutgytelse og lukker øynene for det onde –",
+    "versions": [
+      {
+        "text": "Den som vandrer i rettferdighet og taler det som er rett, som forakter vinning ved undertrykkelse, som rister hendene fri fra bestikkelse, som lukker ørene for planer om blodsutgytelse og lukker øynene for det onde –",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "בְּבֶצַע מַעֲשַׁקּוֹת betyr 'vinning fra utpressinger/undertrykkelse'. 'Urettmessig vinning' er mer naturlig og idiomatisk norsk enn 'vinning ved undertrykkelse', og fanger betydningen av at selve profitten er urettferdig oppnådd."
+      }
+    ]
   },
   {
     "bookId": 23,
@@ -141,13 +171,29 @@
     "bookId": 23,
     "chapterId": 33,
     "verseId": 19,
-    "text": "Du skal ikke lenger se det frekke folket, folket med det uforståelige språk som du ikke kan høre, med det stammende tungemål som ingen forstår."
+    "text": "Du skal ikke lenger se det frekke folket, folket med det dype, uhørbare språk, med det stammende tungemål som ingen forstår.",
+    "versions": [
+      {
+        "text": "Du skal ikke lenger se det frekke folket, folket med det uforståelige språk som du ikke kan høre, med det stammende tungemål som ingen forstår.",
+        "type": "error",
+        "severity": "major",
+        "explanation": "עִמְקֵי שָׂפָה מִשְּׁמוֹעַ betyr 'med et språk for dypt til å forstå/høre' (dvs. uforståelig dypt/fremmed), ikke 'et uforståelig språk som du ikke kan høre'. Den nåværende oversettelsen splitter opp uttrykket på en måte som endrer meningen."
+      }
+    ]
   },
   {
     "bookId": 23,
     "chapterId": 33,
     "verseId": 20,
-    "text": "Se på Sion, byen for våre høytider! Dine øyne skal se Jerusalem som en fredelig bolig, et telt som ikke skal flyttes. Dets plugger skal aldri rykkes opp, og ingen av dets snorer skal slites av."
+    "text": "Se på Sion, byen for våre høytider! Dine øyne skal se Jerusalem som en fredelig bolig, et telt som ikke brytes ned. Dets plugger skal aldri rykkes opp, og ingen av dets snorer skal slites av.",
+    "versions": [
+      {
+        "text": "Se på Sion, byen for våre høytider! Dine øyne skal se Jerusalem som en fredelig bolig, et telt som ikke skal flyttes. Dets plugger skal aldri rykkes opp, og ingen av dets snorer skal slites av.",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "בַּל־יִצְעָן (fra צָעַן) betyr 'som ikke brytes ned / pakkes sammen', ikke bare 'flyttes'. Det handler spesifikt om å rive ned et telt, ikke bare å flytte det. 'Brytes ned' er mer presist."
+      }
+    ]
   },
   {
     "bookId": 23,
@@ -175,7 +221,15 @@
     "bookId": 23,
     "chapterId": 33,
     "verseId": 23,
-    "text": "Dine tauverk henger slappe, de kan ikke holde masten på plass eller spenne seilet. Da skal et veldig bytte bli delt ut, selv de lamme skal røve bytte."
+    "text": "Dine tauverk henger løse, de holder ikke masten stødig, de kan ikke spenne seilet. Da skal et veldig bytte bli delt ut, selv de lamme skal røve bytte.",
+    "versions": [
+      {
+        "text": "Dine tauverk henger slappe, de kan ikke holde masten på plass eller spenne seilet. Da skal et veldig bytte bli delt ut, selv de lamme skal røve bytte.",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "Oversettelsen er grei men kan forbedres litt. 'Løse' er mer presist for נִטְּשׁוּ enn 'slappe'. Dessuten er det to separate utsagn i hebraisk: de holder ikke masten (כֵן תָּרְנָם) stødig, og de kan ikke spenne seilet (נֵס). Å dele det i to setninger gjengir strukturen bedre."
+      }
+    ]
   },
   {
     "bookId": 23,

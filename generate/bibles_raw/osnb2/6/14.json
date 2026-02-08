@@ -3,7 +3,15 @@
     "bookId": 6,
     "chapterId": 14,
     "verseId": 1,
-    "text": "Dette er det Israels barn fikk i arv i Kanaans land, det som presten Elasar og Josva, Nuns sønn, og overhodene for stammenes familier delte ut til dem."
+    "text": "Dette er det Israels barn fikk i arv i Kanaans land, det som presten Elasar og Josva, Nuns sønn, og familieoverhodene for Israels barns stammer delte ut til dem.",
+    "versions": [
+      {
+        "text": "Dette er det Israels barn fikk i arv i Kanaans land, det som presten Elasar og Josva, Nuns sønn, og overhodene for stammenes familier delte ut til dem.",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "Uttrykket רָאשֵׁי אֲבוֹת הַמַּטּוֹת לִבְנֵי יִשְׂרָאֵל betyr 'overhodene for fedrene/familiene til stammene for Israels barn'. Oversettelsen 'overhodene for stammenes familier' mister koblingen til 'Israels barn' og rekkefølgen er noe upresis."
+      }
+    ]
   },
   {
     "bookId": 6,
@@ -33,7 +41,15 @@
     "bookId": 6,
     "chapterId": 14,
     "verseId": 6,
-    "text": "Da kom Judas barn til Josva i Gilgal, og kenitten Kaleb, Jefunnes sønn, sa til ham: «Du vet hva Herren sa til gudsmannen Moses om meg og om deg i Kadesj-Barnea."
+    "text": "Da kom Judas barn til Josva i Gilgal, og kenissitten Kaleb, Jefunnes sønn, sa til ham: «Du vet hva Herren sa til gudsmannen Moses om meg og om deg i Kadesj-Barnea.",
+    "versions": [
+      {
+        "text": "Da kom Judas barn til Josva i Gilgal, og kenitten Kaleb, Jefunnes sønn, sa til ham: «Du vet hva Herren sa til gudsmannen Moses om meg og om deg i Kadesj-Barnea.",
+        "type": "error",
+        "severity": "major",
+        "explanation": "Det hebraiske ordet הַקְּנִזִּי (hak-qenizzi) betyr 'kenissitten', dvs. en etterkommer av Kenas. 'Kenitten' (הַקֵּינִי) er en annen folkegruppe. Denne feilen gjentas i vers 14."
+      }
+    ]
   },
   {
     "bookId": 6,
@@ -69,7 +85,15 @@
     "bookId": 6,
     "chapterId": 14,
     "verseId": 12,
-    "text": "Gi meg nå dette fjellandet som Herren talte om den dagen. For du hørte selv den dagen at det bor anakitter der, og at byene er store og befestede. Men kanskje Herren vil være med meg, så jeg kan drive dem ut, slik Herren har sagt.»"
+    "text": "Gi meg nå dette fjellandet som Herren talte om den dagen. For du hørte selv den dagen at det bor anakitter der, og at byene er store og befestede. Kanskje vil Herren være med meg, så jeg kan drive dem ut, slik Herren har sagt.»",
+    "versions": [
+      {
+        "text": "Gi meg nå dette fjellandet som Herren talte om den dagen. For du hørte selv den dagen at det bor anakitter der, og at byene er store og befestede. Men kanskje Herren vil være med meg, så jeg kan drive dem ut, slik Herren har sagt.»",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "Det hebraiske אוּלַי ('kanskje') uttrykker et ydmykt håp, ikke en motsetning. 'Men' gir en motsetnings-konnotasjon som ikke finnes i grunnteksten. Det er bedre å bruke 'Kanskje' uten 'men'."
+      }
+    ]
   },
   {
     "bookId": 6,
@@ -81,12 +105,28 @@
     "bookId": 6,
     "chapterId": 14,
     "verseId": 14,
-    "text": "Derfor har Hebron tilhørt kenitten Kaleb, Jefunnes sønn, som arv til denne dag, fordi han fulgte Herren, Israels Gud, fullt ut."
+    "text": "Derfor har Hebron tilhørt kenissitten Kaleb, Jefunnes sønn, som arv til denne dag, fordi han fulgte Herren, Israels Gud, fullt ut.",
+    "versions": [
+      {
+        "text": "Derfor har Hebron tilhørt kenitten Kaleb, Jefunnes sønn, som arv til denne dag, fordi han fulgte Herren, Israels Gud, fullt ut.",
+        "type": "error",
+        "severity": "major",
+        "explanation": "Samme feil som i vers 6: הַקְּנִזִּי betyr 'kenissitten' (etterkommer av Kenas), ikke 'kenitten' (etterkommer av Kain). Dette er to forskjellige folkegrupper."
+      }
+    ]
   },
   {
     "bookId": 6,
     "chapterId": 14,
     "verseId": 15,
-    "text": "Hebron het tidligere Kirjat-Arba, oppkalt etter Arba, den største mannen blant anakittene. Og landet hadde fred fra krig."
+    "text": "Hebron het tidligere Kirjat-Arba. Han var den største mannen blant anakittene. Og landet hadde fred fra krig.",
+    "versions": [
+      {
+        "text": "Hebron het tidligere Kirjat-Arba, oppkalt etter Arba, den største mannen blant anakittene. Og landet hadde fred fra krig.",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "Den hebraiske teksten sier at Arba var 'den store mannen blant anakittene' (הָאָדָם הַגָּדוֹל בָּעֲנָקִים הוּא). Oversettelsen legger til 'oppkalt etter Arba' som en forklaring som ikke finnes i grunnteksten. Grunnteksten identifiserer Arba som personen som var den største blant anakittene, og dette bør gjengis mer trofast."
+      }
+    ]
   }
 ]

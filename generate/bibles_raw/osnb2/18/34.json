@@ -33,7 +33,15 @@
     "bookId": 18,
     "chapterId": 34,
     "verseId": 6,
-    "text": "Skulle jeg lyve om min rett? Min pil har rammet dødelig, uten at jeg har syndet.»"
+    "text": "Skulle jeg lyve om min rett? Mitt sår er uhelbredelig, uten at jeg har syndet.»",
+    "versions": [
+      {
+        "text": "Skulle jeg lyve om min rett? Min pil har rammet dødelig, uten at jeg har syndet.»",
+        "type": "error",
+        "severity": "major",
+        "explanation": "Det hebraiske 'אָנוּשׁ חִצִּי' betyr 'mitt sår (pil/slag) er uhelbredelig/dødelig'. 'חִצִּי' kan bety 'min pil' men i konteksten refererer det til den pilen/det slaget som har rammet Job – altså hans sår/lidelse. 'Min pil har rammet dødelig' gir feil inntrykk av at Job har skutt en pil. Det er Job som er rammet, ikke at han har rammet noen."
+      }
+    ]
   },
   {
     "bookId": 18,
@@ -63,7 +71,15 @@
     "bookId": 18,
     "chapterId": 34,
     "verseId": 11,
-    "text": "For han gjengjelder mennesket etter dets gjerninger og lar enhver finne det hans ferd fortjener."
+    "text": "For han gjengjelder mennesket etter dets gjerninger og lar enhver høste det hans ferd fortjener.",
+    "versions": [
+      {
+        "text": "For han gjengjelder mennesket etter dets gjerninger og lar enhver finne det hans ferd fortjener.",
+        "type": "grammar",
+        "severity": "minor",
+        "explanation": "'gjengjelder' er feil stavemåte i bokmål; det skal være 'gjengjelder' (dette er korrekt). Setningen er ellers akseptabel, men 'lar enhver finne det hans ferd fortjener' er litt tung. 'Høste' er et mer naturlig ord i denne sammenhengen for 'יַמְצִאֶנּוּ' (lar det komme over ham)."
+      }
+    ]
   },
   {
     "bookId": 18,
@@ -81,7 +97,15 @@
     "bookId": 18,
     "chapterId": 34,
     "verseId": 14,
-    "text": "Hvis han rettet sitt hjerte mot mennesket og tok dets ånd og livspust tilbake til seg,"
+    "text": "Hvis han vendte sitt hjerte kun mot seg selv og samlet sin ånd og livspust tilbake til seg,",
+    "versions": [
+      {
+        "text": "Hvis han rettet sitt hjerte mot mennesket og tok dets ånd og livspust tilbake til seg,",
+        "type": "error",
+        "severity": "major",
+        "explanation": "Det hebraiske 'אִם־יָשִׂם אֵלָיו לִבּוֹ' med 'רוּחוֹ וְנִשְׁמָתוֹ אֵלָיו יֶאֱסֹף' handler om at Gud tar tilbake sin egen ånd og livspust (den han gav menneskene). 'רוּחוֹ' og 'נִשְׁמָתוֹ' refererer til Guds ånd/livspust som han blåste inn i skapningen. Oversettelsen 'dets ånd' er misvisende – det er Guds ånd som trekkes tilbake."
+      }
+    ]
   },
   {
     "bookId": 18,
@@ -105,7 +129,15 @@
     "bookId": 18,
     "chapterId": 34,
     "verseId": 18,
-    "text": "Kan man si til en konge: «Du er en niding», og til fyrster: «Dere er ugudelige»?"
+    "text": "Kan man si til en konge: «Du er en niding!» og til stormenn: «Dere er ugudelige!»?",
+    "versions": [
+      {
+        "text": "Kan man si til en konge: «Du er en niding», og til fyrster: «Dere er ugudelige»?",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "Det hebraiske 'נְדִיבִים' betyr 'edlinger/stormenn' snarere enn 'fyrster' (som ville vært 'שָׂרִים'). Videre brukes 'רָשָׁע' (ugudelig/ond) som tiltale, noe som bedre gjengis med utropstegn for å fange den retoriske kraften."
+      }
+    ]
   },
   {
     "bookId": 18,
@@ -159,7 +191,15 @@
     "bookId": 18,
     "chapterId": 34,
     "verseId": 26,
-    "text": "Han slår dem for deres ugudelighet på et sted der alle kan se det,"
+    "text": "Han straffer dem som ugudelige på et sted der alle kan se det,",
+    "versions": [
+      {
+        "text": "Han slår dem for deres ugudelighet på et sted der alle kan se det,",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "'תַּחַת רְשָׁעִים סְפָקָם' betyr bokstavelig 'i stedet for ugudelige slår han dem' eller 'som ugudelige slår/straffer han dem'. 'For deres ugudelighet' er en akseptabel tolkning, men 'som ugudelige' eller 'straffer dem som ugudelige' er nærmere grunnteksten."
+      }
+    ]
   },
   {
     "bookId": 18,

@@ -9,13 +9,29 @@
     "bookId": 24,
     "chapterId": 1,
     "verseId": 2,
-    "text": "Herrens ord kom til ham i Josias' dager, sønn av Amon, Judas konge, i det trettende året av hans regjeringstid."
+    "text": "Herrens ord kom til ham i dagene til Josjia, sønn av Amon, Judas konge, i det trettende året av hans regjeringstid.",
+    "versions": [
+      {
+        "text": "Herrens ord kom til ham i Josias' dager, sønn av Amon, Judas konge, i det trettende året av hans regjeringstid.",
+        "type": "grammar",
+        "severity": "minor",
+        "explanation": "Navnet bør være 'Josjia' for konsistens med vers 3, hvor formen 'Josia' brukes. Men enda viktigere: 'Josias'' med dobbel s og apostrof er klumsete. Norsk standard for dette navnet er typisk 'Josjia' (med sj-lyd). Begge former forekommer, men konsistens med vers 3 er viktig."
+      }
+    ]
   },
   {
     "bookId": 24,
     "chapterId": 1,
     "verseId": 3,
-    "text": "Det kom også i Jojakims dager, sønn av Josia, Judas konge, og fortsatte til slutten av det ellevte året til Sidkia, sønn av Josia, Judas konge, inntil Jerusalem ble bortført i den femte måneden."
+    "text": "Det kom også i Jojakims dager, sønn av Josjia, Judas konge, og fortsatte til slutten av det ellevte året til Sidkia, sønn av Josjia, Judas konge, inntil Jerusalems bortføring i den femte måneden.",
+    "versions": [
+      {
+        "text": "Det kom også i Jojakims dager, sønn av Josia, Judas konge, og fortsatte til slutten av det ellevte året til Sidkia, sønn av Josia, Judas konge, inntil Jerusalem ble bortført i den femte måneden.",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "'גְּלוֹת יְרוּשָׁלַם' (galut Yerushalaim) betyr 'Jerusalems eksil/bortføring' – det er byen som føres i eksil, ikke bare en passiv hendelse. 'Jerusalems bortføring' er mer presist enn 'Jerusalem ble bortført'. Også navneformen 'Josjia' bør være konsistent."
+      }
+    ]
   },
   {
     "bookId": 24,
@@ -75,7 +91,15 @@
     "bookId": 24,
     "chapterId": 1,
     "verseId": 13,
-    "text": "Jeg ser en kokende gryte, og den heller fra nord."
+    "text": "Herrens ord kom til meg for andre gang: «Hva ser du?» Jeg svarte: «Jeg ser en kokende gryte, og den heller bort fra nord.»",
+    "versions": [
+      {
+        "text": "Jeg ser en kokende gryte, og den heller fra nord.",
+        "type": "error",
+        "severity": "major",
+        "explanation": "Verset mangler den innledende setningen om at Herrens ord kom til Jeremia for andre gang med spørsmålet 'Hva ser du?'. Dette er en betydelig utelatelse. I tillegg betyr 'וּפָנָ֖יו מִפְּנֵ֥י צָפֽוֹנָה' at grytens front/åpning vender bort fra nord (dvs. mot sør), noe som betyr at innholdet helles sørover – altså 'heller bort fra nord' eller 'vender bort fra nord'."
+      }
+    ]
   },
   {
     "bookId": 24,
@@ -87,7 +111,15 @@
     "bookId": 24,
     "chapterId": 1,
     "verseId": 15,
-    "text": "«For se, jeg kaller på alle slektene fra rikene i nord,» sier Herren. «De skal komme og sette opp hver sin trone ved inngangen til Jerusalems porter, mot alle murene rundt omkring og mot alle byene i Juda.»"
+    "text": "«For se, jeg kaller på alle slektene fra nordens riker,» sier Herren. «De skal komme og reise hver sin trone ved inngangene til Jerusalems porter, mot alle dens murer rundt omkring og mot alle byene i Juda.»",
+    "versions": [
+      {
+        "text": "«For se, jeg kaller på alle slektene fra rikene i nord,» sier Herren. «De skal komme og sette opp hver sin trone ved inngangen til Jerusalems porter, mot alle murene rundt omkring og mot alle byene i Juda.»",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "'שַׁעֲרֵי' er flertall – 'porter' har flere innganger, så 'inngangene' (flertall) er mer presist. Også 'חוֹמֹתֶיהָ' – 'dens murer' – pronomenet 'dens' (som refererer til Jerusalem) bør tas med for presisjonens skyld."
+      }
+    ]
   },
   {
     "bookId": 24,
@@ -99,11 +131,17 @@
     "bookId": 24,
     "chapterId": 1,
     "verseId": 17,
-    "text": "«Men du skal binde opp om livet, reise deg og tale til dem alt det jeg befaler deg. Vær ikke forferdet for dem, ellers vil jeg la deg bli til skamme foran dem.»",
+    "text": "«Men du skal binde opp om livet, reise deg og tale til dem alt det jeg befaler deg. Vær ikke forferdet for dem, ellers vil jeg forferde deg foran dem.»",
     "versions": [
       {
         "text": "«Men du skal binde opp om livet, reise deg og tale til dem alt det jeg befaler deg. Vær ikke redd for dem, ellers vil jeg gjøre deg redd for dem.»",
         "explanation": "Det hebraiske 'חתת' (chatat) handler om å bli knust, forferdet eller til skamme, ikke bare 'redd'. Poenget er at hvis Jeremia viker tilbake i frykt, vil Gud la ham bli ydmyket/knust foran dem. Dette gir sterkere mening enn gjentagelsen av 'redd'."
+      },
+      {
+        "text": "«Men du skal binde opp om livet, reise deg og tale til dem alt det jeg befaler deg. Vær ikke forferdet for dem, ellers vil jeg la deg bli til skamme foran dem.»",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "Hebraisk bruker samme rot חתת (chatat) i begge ledd: 'al-techat' og 'achitecha'. Ordspillet bør bevares. 'Forferde' / 'forferde deg' fanger opp dette bedre enn 'bli til skamme', selv om forrige revisjon bevisst endret fra 'redd'. 'Forferde' viderefører intensjonen om å unngå 'redd' mens det bevarer ordspillet."
       }
     ]
   },

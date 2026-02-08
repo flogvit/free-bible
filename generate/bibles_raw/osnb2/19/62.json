@@ -3,7 +3,15 @@
     "bookId": 19,
     "chapterId": 62,
     "verseId": 1,
-    "text": "Til korlederen. Etter Jedutuns vis. En salme av David."
+    "text": "For korlederen. Etter Jedutuns vis. En salme av David.",
+    "versions": [
+      {
+        "text": "Til korlederen. Etter Jedutuns vis. En salme av David.",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "לַמְנַצֵּחַ oversettes tradisjonelt med 'For korlederen/musikklederen' (med 'for'), ikke 'Til korlederen'. Preposisjonen ל indikerer hensikt/formål ('for'), og 'For korlederen' er den vanlige oversettelsen i norske bibler og flyter bedre."
+      }
+    ]
   },
   {
     "bookId": 19,
@@ -21,11 +29,17 @@
     "bookId": 19,
     "chapterId": 62,
     "verseId": 4,
-    "text": "Hvor lenge vil dere angripe en mann? Dere vil alle drepe ham, som en vegg som heller, et gjerde som faller.",
+    "text": "Hvor lenge vil dere storme løs på en mann? Dere vil alle drepe ham, som en vegg som heller, et gjerde som er skjøvet ut.",
     "versions": [
       {
         "text": "Hvor lenge vil dere storme mot en mann, alle sammen slå ham ned, som en vegg som heller, et gjerde som faller?",
         "explanation": "Det hebraiske תְּרָצְּחוּ (teratsechu) betyr 'dere vil myrde/drepe', ikke bare 'slå ned'. Ordet er sterkere enn oversettelsen formidler. Også en liten omstrukturering for bedre flyt ved opplesning."
+      },
+      {
+        "text": "Hvor lenge vil dere angripe en mann? Dere vil alle drepe ham, som en vegg som heller, et gjerde som faller.",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "תְּהוֹתְתוּ betyr 'storme løs på / angripe voldsomt', og 'storme løs på' er sterkere og mer presist enn bare 'angripe'. Også הַדְּחוּיָה betyr 'som er skjøvet/presset ut' (passivt partisipp av דחה), snarere enn bare 'faller'. Merk: dette er forskjellig fra den tidligere versjonen som brukte 'storme mot'."
       }
     ]
   },
@@ -33,7 +47,15 @@
     "bookId": 19,
     "chapterId": 62,
     "verseId": 5,
-    "text": "Bare på å støte ham ned fra hans høyde legger de råd. De finner behag i løgn. Med munnen velsigner de, men i sitt indre forbanner de. Sela"
+    "text": "Bare på å støte ham ned fra hans opphøyde plass legger de råd. De finner behag i løgn. Med munnen velsigner de, men i sitt indre forbanner de. Sela",
+    "versions": [
+      {
+        "text": "Bare på å støte ham ned fra hans høyde legger de råd. De finner behag i løgn. Med munnen velsigner de, men i sitt indre forbanner de. Sela",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "מִשְּׂאֵתוֹ refererer til 'hans opphøyde stilling/posisjon' (fra נשׂא, å løfte opp). 'Hans høyde' er akseptabelt, men 'hans opphøyde plass/stilling' gjengir den hebraiske betydningen mer presist."
+      }
+    ]
   },
   {
     "bookId": 19,
@@ -87,6 +109,14 @@
     "bookId": 19,
     "chapterId": 62,
     "verseId": 13,
-    "text": "Og hos deg, Herre, er nåden, for du gjengjelder enhver etter hans gjerning."
+    "text": "Og hos deg, Herre, er nåden, for du gjengjelder enhver etter hans gjerninger.",
+    "versions": [
+      {
+        "text": "Og hos deg, Herre, er nåden, for du gjengjelder enhver etter hans gjerning.",
+        "type": "grammar",
+        "severity": "major",
+        "explanation": "Det hebraiske כְּמַעֲשֵׂהוּ er egentlig flertall eller kollektiv ('gjerninger'), og på norsk bokmål er det mer naturlig å si 'gjerninger' (flertall) i denne sammenhengen. Dessuten er 'gjengjelder' korrekt skrevet, men 'gjengjelder' er bokmål – vurder at dette er korrekt."
+      }
+    ]
   }
 ]

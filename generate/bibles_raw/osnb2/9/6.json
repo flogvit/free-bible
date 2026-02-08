@@ -27,7 +27,15 @@
     "bookId": 9,
     "chapterId": 6,
     "verseId": 4,
-    "text": "De spurte: «Hva slags skyldoffer skal vi gi ham?» De svarte: «Fem byller av gull og fem mus av gull, etter tallet på filisternes fyrster, for samme plage har rammet dere alle og fyrstene deres.»"
+    "text": "De spurte: «Hva slags skyldoffer skal vi gi ham?» De svarte: «Fem svulster av gull og fem mus av gull, etter tallet på filisternes fyrster, for samme plage har rammet dere alle og fyrstene deres.»",
+    "versions": [
+      {
+        "text": "De spurte: «Hva slags skyldoffer skal vi gi ham?» De svarte: «Fem byller av gull og fem mus av gull, etter tallet på filisternes fyrster, for samme plage har rammet dere alle og fyrstene deres.»",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "Det hebraiske טְחֹרֵי refererer til svulster/hemoroider, ikke byller. Begrepet 'svulster' er mer presist og konsistent med den tradisjonelle oversettelsen. Ordet 'byller' kan gi feil medisinsk assosiasjon. Denne endringen bør også gjennomføres konsekvent i vers 5, 11 og 17."
+      }
+    ]
   },
   {
     "bookId": 9,
@@ -81,7 +89,15 @@
     "bookId": 9,
     "chapterId": 6,
     "verseId": 12,
-    "text": "Kyrne gikk rett fram på veien mot Bet-Sjemesj. De fulgte den samme veien hele tiden, rautet mens de gikk, og bøyde ikke av verken til høyre eller venstre. Filisternes fyrster fulgte etter dem helt til grensen mot Bet-Sjemesj."
+    "text": "Kyrne gikk rett fram på veien mot Bet-Sjemesj. De holdt seg til hovedveien, rautet mens de gikk, og bøyde ikke av verken til høyre eller venstre. Filisternes fyrster fulgte etter dem helt til grensen ved Bet-Sjemesj.",
+    "versions": [
+      {
+        "text": "Kyrne gikk rett fram på veien mot Bet-Sjemesj. De fulgte den samme veien hele tiden, rautet mens de gikk, og bøyde ikke av verken til høyre eller venstre. Filisternes fyrster fulgte etter dem helt til grensen mot Bet-Sjemesj.",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "בִּמְסִלָּה אַחַת betyr at de holdt seg til én (hoved)vei, ikke 'den samme veien hele tiden' som er en litt fri gjengivelse. Dessuten bør 'grensen mot Bet-Sjemesj' heller være 'grensen ved Bet-Sjemesj' (עַד־גְּבוּל) da det er grensen til Bet-Sjemesj' eget område."
+      }
+    ]
   },
   {
     "bookId": 9,
@@ -141,11 +157,17 @@
     "bookId": 9,
     "chapterId": 6,
     "verseId": 20,
-    "text": "Mennene i Bet-Sjemesj sa: «Hvem kan bestå for Herren, denne hellige Guds åsyn? Og til hvem skal arken dra opp fra oss?»",
+    "text": "Mennene i Bet-Sjemesj sa: «Hvem kan bestå for Herren, denne hellige Gud? Og til hvem skal arken dra videre fra oss?»",
     "versions": [
       {
         "text": "Mennene i Bet-Sjemesj sa: «Hvem kan bestå for Herrens, denne hellige Guds åsyn? Og til hvem skal arken dra opp fra oss?»",
         "explanation": "«Herrens» med genitiv-s er grammatisk feil her. Det burde være «Herren» uten genitiv, siden «åsyn» kommer senere i setningen og styrer genitiven der."
+      },
+      {
+        "text": "Mennene i Bet-Sjemesj sa: «Hvem kan bestå for Herren, denne hellige Guds åsyn? Og til hvem skal arken dra opp fra oss?»",
+        "type": "error",
+        "severity": "major",
+        "explanation": "Den hebraiske teksten har לִפְנֵי יְהוָה הָאֱלֹהִים הַקָּדוֹשׁ הַזֶּה, som betyr 'for Herren, denne hellige Gud'. Ordet 'åsyn' er en tolkning av לִפְנֵי, men det gjør setningen kunstig. לִפְנֵי brukes her som preposisjon ('for/foran'), ikke som substantivet 'ansikt/åsyn'. Dessuten betyr יַעֲלֶה מֵעָלֵינוּ 'dra opp/videre fra oss' – 'dra videre' er mer naturlig enn 'dra opp'."
       }
     ]
   },

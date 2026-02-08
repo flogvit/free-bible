@@ -21,11 +21,17 @@
     "bookId": 12,
     "chapterId": 3,
     "verseId": 4,
-    "text": "Mesja, kongen av Moab, var saueoppdretter. Han betalte til Israels konge hundre tusen lam og ull fra hundre tusen værer.",
+    "text": "Mesja, kongen av Moab, var saueoppdretter. Han betalte til Israels konge hundre tusen lam og ull av hundre tusen værer.",
     "versions": [
       {
         "text": "Mesja, kongen av Moab, var saueoppdretter. Han betalte i skatt til Israels konge hundre tusen lam og ull fra hundre tusen værer.",
         "explanation": "Det hebraiske ordet הֵשִׁיב betyr 'returnerte/betalte' som tributt, ikke spesifikt 'i skatt'. Å fjerne 'i skatt' gir en mer naturlig setning for muntlig lesning uten å miste betydningen."
+      },
+      {
+        "text": "Mesja, kongen av Moab, var saueoppdretter. Han betalte til Israels konge hundre tusen lam og ull fra hundre tusen værer.",
+        "type": "error",
+        "severity": "major",
+        "explanation": "כָּרִים betyr egentlig 'værer' (voksne sauer), ikke 'lam'. Teksten sier hundre tusen כָּרִים (værer) OG ull av hundre tusen אֵילִים (værer). Det er altså to separate ytelser: 100 000 værer pluss ullen fra 100 000 værer. Den nåværende oversettelsen gjør כָּרִים til 'lam', noe som er unøyaktig. Imidlertid, gitt versjonshistorikken, er dette en mindre justering: 'fra' til 'av' er stilistisk, men hovedproblemet er at כָּרִים oversettes som 'lam' i stedet for 'værer'."
       }
     ]
   },
@@ -87,11 +93,17 @@
     "bookId": 12,
     "chapterId": 3,
     "verseId": 14,
-    "text": "Elisja sa: «Så sant Herren Sebaot lever, han som jeg står for: Hadde jeg ikke hatt respekt for Josjafat, Judas konge, ville jeg ikke engang sett på deg eller lagt merke til deg.",
+    "text": "Elisja sa: «Så sant Herren Sebaot lever, han som jeg står for: Hadde jeg ikke hatt respekt for Josjafat, Judas konge, ville jeg ikke engang ha sett på deg eller lagt merke til deg.",
     "versions": [
       {
         "text": "Elisja sa: «Så sant Herren Sebaot lever, han som jeg tjener: Hadde jeg ikke hatt respekt for Josjafat, Judas konge, ville jeg ikke engang sett på deg eller lagt merke til deg.",
         "explanation": "Det hebraiske uttrykket 'עָמַדְתִּי לְפָנָיו' (stå foran) er et idiom som betyr å tjene/stå i noens tjeneste. 'Han som jeg står for' er mer bokstavelig og bevarer det hebraiske idiomets karakter, men 'tjener' er også akseptabelt. Hovedproblemet er skrivefeil 'he' som må rettes til 'han'."
+      },
+      {
+        "text": "Elisja sa: «Så sant Herren Sebaot lever, han som jeg står for: Hadde jeg ikke hatt respekt for Josjafat, Judas konge, ville jeg ikke engang sett på deg eller lagt merke til deg.",
+        "type": "grammar",
+        "severity": "minor",
+        "explanation": "Grammatisk bør det være 'ville jeg ikke engang ha sett' (med 'ha') for korrekt norsk bokmål kondisjonalis perfektum."
       }
     ]
   },
@@ -147,7 +159,15 @@
     "bookId": 12,
     "chapterId": 3,
     "verseId": 23,
-    "text": "De sa: «Dette er blod! Kongene har slått hverandre i hjel og drept hverandre. Nå til plyndring, Moab!»"
+    "text": "De sa: «Dette er blod! Kongene har helt sikkert drept hverandre med sverd. Nå til plyndring, Moab!»",
+    "versions": [
+      {
+        "text": "De sa: «Dette er blod! Kongene har slått hverandre i hjel og drept hverandre. Nå til plyndring, Moab!»",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "Det hebraiske הָחֳרֵב נֶחֶרְבוּ er en emfatisk infinitivkonstruksjon med verbet חרב (ødelegge med sverd), og וַיַּכּוּ אִישׁ אֶת־רֵעֵהוּ betyr 'de har slått hverandre'. Den nåværende oversettelsen er noe redundant med 'slått hverandre i hjel og drept hverandre'. Originalteksten sier mer presist at kongene har ødelagt hverandre (med sverd) og slått mann mot mann."
+      }
+    ]
   },
   {
     "bookId": 12,
@@ -165,7 +185,15 @@
     "bookId": 12,
     "chapterId": 3,
     "verseId": 25,
-    "text": "Byene rev de ned, og på hver god åker kastet de hver sin stein og fylte den. Hver vannkilde tettet de igjen, og hvert godt tre felte de. Bare i Kir-Hareset lot de steinmurene stå, men slyngekasterne omringet byen og angrep den."
+    "text": "Byene rev de ned, og på hver god åker kastet de hver sin stein og fylte den. Hver vannkilde tettet de igjen, og hvert godt tre felte de, helt til bare Kir-Hareset sto igjen med sine steinmurer. Men slyngekasterne omringet byen og angrep den.",
+    "versions": [
+      {
+        "text": "Byene rev de ned, og på hver god åker kastet de hver sin stein og fylte den. Hver vannkilde tettet de igjen, og hvert godt tre felte de. Bare i Kir-Hareset lot de steinmurene stå, men slyngekasterne omringet byen og angrep den.",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "Hebraisk עַד־הִשְׁאִיר אֲבָנֶיהָ בַּקִּיר חֲרָשֶׂת betyr 'til bare steinene i Kir-Hareset sto igjen' – altså at ødeleggelsen fortsatte inntil bare Kir-Hareset gjenstod. Den nåværende formuleringen 'Bare i Kir-Hareset lot de steinmurene stå' gir inntrykk av et bevisst valg om å spare byen, mens originalen beskriver at det var den siste gjenværende festningen."
+      }
+    ]
   },
   {
     "bookId": 12,

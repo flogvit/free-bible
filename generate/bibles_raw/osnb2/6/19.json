@@ -51,7 +51,15 @@
     "bookId": 6,
     "chapterId": 19,
     "verseId": 9,
-    "text": "Simeons arvelodd ble tatt fra Judas del, for Judas lodd var for stort for dem. Derfor fikk Simeons etterkommere sin arv inne i deres område."
+    "text": "Simeons arvelodd ble tatt fra Judas del, for Judas del var for stor for dem. Derfor fikk Simeons etterkommere sin arv inne i deres område.",
+    "versions": [
+      {
+        "text": "Simeons arvelodd ble tatt fra Judas del, for Judas lodd var for stort for dem. Derfor fikk Simeons etterkommere sin arv inne i deres område.",
+        "type": "error",
+        "severity": "major",
+        "explanation": "«for dem» er tvetydig – det kan leses som om loddet var for stort for Simeon. Hebraisk sier at Judas del var for stor for dem (Juda-stammens folk), altså at Juda hadde fått mer enn de trengte. «For stor» er også mer korrekt grammatisk (חֵלֶק er hankjønn, men «lodd» er intetkjønn på norsk – enten bør man skrive «for stort» med intetkjønn ved «lodd», eller «for stor» med hunkjønn ved «del»). Oversettelsen bør klargjøre at Judas del var større enn det de selv trengte."
+      }
+    ]
   },
   {
     "bookId": 6,
@@ -63,7 +71,15 @@
     "bookId": 6,
     "chapterId": 19,
     "verseId": 11,
-    "text": "Grensen gikk vestover opp til Marala, støtte mot Dabbesjet og nådde bekken øst for Jokneam."
+    "text": "Grensen gikk vestover opp til Marala, støtte mot Dabbesjet og nådde bekken som er foran Jokneam.",
+    "versions": [
+      {
+        "text": "Grensen gikk vestover opp til Marala, støtte mot Dabbesjet og nådde bekken øst for Jokneam.",
+        "type": "error",
+        "severity": "minor",
+        "explanation": "Hebraisk עַל־פְּנֵי betyr «foran» eller «ved», ikke nødvendigvis «øst for». Å oversette med «øst for» er en tolkning som ikke direkte støttes av grunnteksten."
+      }
+    ]
   },
   {
     "bookId": 6,
@@ -207,7 +223,15 @@
     "bookId": 6,
     "chapterId": 19,
     "verseId": 35,
-    "text": "Befestede byer var: Siddim, Ser, Hammat, Rakkat og Kinneret,"
+    "text": "Befestede byer var: Hassiddim, Ser, Hammat, Rakkat og Kinneret,",
+    "versions": [
+      {
+        "text": "Befestede byer var: Siddim, Ser, Hammat, Rakkat og Kinneret,",
+        "type": "error",
+        "severity": "major",
+        "explanation": "Hebraisk הַצִּדִּים er et stedsnavn som vanligvis transkribers som «Hassiddim» (med den bestemte artikkelen ha-), ikke bare «Siddim». Alternativt kan det leses som to ord, men de fleste oversettelser behandler dette som et stedsnavn med artikkel."
+      }
+    ]
   },
   {
     "bookId": 6,
@@ -285,7 +309,15 @@
     "bookId": 6,
     "chapterId": 19,
     "verseId": 47,
-    "text": "Men Dans område ble for trangt for dem. Derfor dro danittene opp og førte krig mot Lesjem. De inntok byen, slo den med sverd og tok den i eie. De bosatte seg der og kalte Lesjem for Dan, etter sin stamfar Dan."
+    "text": "Men Dans grenseområde gikk tapt for dem. Derfor dro danittene opp og førte krig mot Lesjem. De inntok byen, slo den med sverd og tok den i eie. De bosatte seg der og kalte Lesjem for Dan, etter sin stamfar Dan.",
+    "versions": [
+      {
+        "text": "Men Dans område ble for trangt for dem. Derfor dro danittene opp og førte krig mot Lesjem. De inntok byen, slo den med sverd og tok den i eie. De bosatte seg der og kalte Lesjem for Dan, etter sin stamfar Dan.",
+        "type": "error",
+        "severity": "major",
+        "explanation": "Hebraisk וַיֵּצֵא גְבוּל־בְּנֵי־דָן מֵהֶם betyr bokstavelig «Dans grense gikk ut fra dem» – dvs. deres territorium gikk tapt / ble presset bort fra dem. «Ble for trangt» er en tolkning som mangler støtte i grunnteksten. Verbet יָצָא (gå ut) handler om at området forsvant fra dem, ikke at det var for trangt."
+      }
+    ]
   },
   {
     "bookId": 6,
@@ -309,6 +341,14 @@
     "bookId": 6,
     "chapterId": 19,
     "verseId": 51,
-    "text": "Dette var de arveloddene som presten Elasar og Josva, Nuns sønn, og overhodene for stammene i Israel fordelte ved loddkasting i Sjilo, for Herrens ansikt ved inngangen til telthelligdommen. Slik fullførte de fordelingen av landet."
+    "text": "Dette var de arveloddene som presten Elasar og Josva, Nuns sønn, og familieoverhodene for Israels stammer fordelte ved loddkasting i Sjilo, for Herrens ansikt ved inngangen til telthelligdommen. Slik fullførte de fordelingen av landet.",
+    "versions": [
+      {
+        "text": "Dette var de arveloddene som presten Elasar og Josva, Nuns sønn, og overhodene for stammene i Israel fordelte ved loddkasting i Sjilo, for Herrens ansikt ved inngangen til telthelligdommen. Slik fullførte de fordelingen av landet.",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "Hebraisk רָאשֵׁי הָאָבוֹת betyr «familieoverhodene» eller «overhodene for fedrene/familiene», ikke bare «overhodene for stammene». Det er snakk om slektsoverhoder, noe som gir et litt annet bilde enn stammeledere."
+      }
+    ]
   }
 ]

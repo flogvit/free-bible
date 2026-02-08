@@ -81,13 +81,35 @@
     "bookId": 26,
     "chapterId": 39,
     "verseId": 14,
-    "text": "De skal utpeke faste menn som skal dra gjennom landet og begrave dem som ligger igjen på marken, for å rense landet. Etter sju måneder skal de begynne å lete."
+    "text": "De skal utpeke faste menn som skal dra gjennom landet og begrave dem som ligger igjen på overflaten av landet, for å rense det. Etter at de sju månedene er over, skal de begynne å lete.",
+    "versions": [
+      {
+        "text": "De skal utpeke faste menn som skal dra gjennom landet og begrave dem som ligger igjen på marken, for å rense landet. Etter sju måneder skal de begynne å lete.",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "The Hebrew מִקְצֵה שִׁבְעָה־חֳדָשִׁים means 'at the end of seven months' – i.e., after the seven months (of v.12) are completed. The current translation 'Etter sju måneder' could be clearer about this being at the conclusion of the initial seven-month burial period."
+      }
+    ]
   },
   {
     "bookId": 26,
     "chapterId": 39,
     "verseId": 15,
-    "text": "Når de drar gjennom landet og en av dem ser et menneskeknokkel, skal han sette opp et merke ved det, til gravleggerne har begravd det i Hamon-Gogs dal."
+    "text": "Når de drar gjennom landet og en av dem ser en menneskeknokkel, skal han sette opp et merke ved den, inntil gravleggerne har begravd den i Hamon-Gogs dal.",
+    "versions": [
+      {
+        "text": "Når de drar gjennom landet og en av dem ser et menneskeknokkel, skal han sette opp et merke ved det, til gravleggerne har begravd det i Hamon-Gogs dal.",
+        "type": "grammar",
+        "severity": "minor",
+        "explanation": "'et menneskeknokkel' should be 'en menneskeknokkel' since 'knokkel' is masculine in Norwegian (en knokkel). Also, 'til' could more clearly be 'inntil' for temporal meaning."
+      },
+      {
+        "text": "Når de drar gjennom landet og en av dem ser et menneskeknokkel, skal han sette opp et merke ved det, inntil gravleggerne har begravd det i Hamon-Gogs dal.",
+        "type": "grammar",
+        "severity": "major",
+        "explanation": "'Knokkel' is masculine in Norwegian (en knokkel), so it should be 'en menneskeknokkel' and the pronouns referring to it should be 'den' not 'det'."
+      }
+    ]
   },
   {
     "bookId": 26,
@@ -105,7 +127,15 @@
     "bookId": 26,
     "chapterId": 39,
     "verseId": 18,
-    "text": "Kjøtt av helter skal dere ete, og blod av jordens fyrster skal dere drikke – værer, lam, bukker og okser, alle gjøfet i Basan."
+    "text": "Kjøtt av helter skal dere ete, og blod av jordens fyrster skal dere drikke – værer, lam, bukker og okser, alle gjødd fra Basan.",
+    "versions": [
+      {
+        "text": "Kjøtt av helter skal dere ete, og blod av jordens fyrster skal dere drikke – værer, lam, bukker og okser, alle gjøfet i Basan.",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "'Gjøfet' is not standard Norwegian bokmål; the correct form is 'gjødd' (from 'gjø' or 'fete'). Also, מְרִיאֵי בָשָׁן means 'fatlings of Bashan' – 'fra Basan' is more natural than 'i Basan'."
+      }
+    ]
   },
   {
     "bookId": 26,
@@ -153,7 +183,15 @@
     "bookId": 26,
     "chapterId": 39,
     "verseId": 26,
-    "text": "De skal glemme sin skam og all den troløshet de viste mot meg, når de bor trygt i sitt land uten at noen skremmer dem."
+    "text": "De skal bære sin skam og all den troløshet de viste mot meg, når de bor trygt i sitt land uten at noen skremmer dem.",
+    "versions": [
+      {
+        "text": "De skal glemme sin skam og all den troløshet de viste mot meg, når de bor trygt i sitt land uten at noen skremmer dem.",
+        "type": "error",
+        "severity": "major",
+        "explanation": "The Hebrew verb נָשׂוּ (from נשא) means 'to bear/carry', not 'to forget' (which would be נשה). The verse says they will bear/carry their shame, acknowledging their past unfaithfulness. This is a significant translation error."
+      }
+    ]
   },
   {
     "bookId": 26,

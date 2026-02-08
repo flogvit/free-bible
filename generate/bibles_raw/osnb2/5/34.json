@@ -3,7 +3,15 @@
     "bookId": 5,
     "chapterId": 34,
     "verseId": 1,
-    "text": "Moses gikk opp fra Moabs sletter til fjellet Nebo, til toppen av Pisga, som ligger rett overfor Jeriko. Og Herren lot ham se hele landet: Gilead helt til Dan,"
+    "text": "Moses gikk opp fra Moabs sletter til fjellet Nebo, til toppen av Pisga, som ligger overfor Jeriko. Og Herren lot ham se hele landet: Gilead helt til Dan,",
+    "versions": [
+      {
+        "text": "Moses gikk opp fra Moabs sletter til fjellet Nebo, til toppen av Pisga, som ligger rett overfor Jeriko. Og Herren lot ham se hele landet: Gilead helt til Dan,",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "Det hebraiske 'עַל־פְּנֵי' betyr 'overfor' eller 'foran', men ikke nødvendigvis 'rett overfor'. Å legge til 'rett' er en tilføyelse som ikke finnes i originalteksten og kan gi et mer presist inntrykk enn det hebraiske uttrykket tilsier."
+      }
+    ]
   },
   {
     "bookId": 5,
@@ -87,6 +95,14 @@
     "bookId": 5,
     "chapterId": 34,
     "verseId": 12,
-    "text": "og med all den veldige kraft og alle de store og skremmende gjerninger som Moses utførte for hele Israels øyne."
+    "text": "og med all den sterke hånd og all den store frykt som Moses viste for hele Israels øyne.",
+    "versions": [
+      {
+        "text": "og med all den veldige kraft og alle de store og skremmende gjerninger som Moses utførte for hele Israels øyne.",
+        "type": "error",
+        "severity": "major",
+        "explanation": "Det hebraiske 'הַיָּד הַחֲזָקָה' betyr 'den sterke hånd' (en viktig teologisk formulering), og 'הַמּוֹרָא הַגָּדוֹל' betyr 'den store frykt/redsel' – ikke 'skremmende gjerninger'. Oversettelsen gjengir to distinkte hebraiske uttrykk som om de var lignende begreper, og 'gjerninger' er tillagt. 'עָשָׂה' betyr 'gjorde/utførte', men hele uttrykket handler om den frykten/ærefrykten Moses frembrakte, ikke bare 'gjerninger'."
+      }
+    ]
   }
 ]

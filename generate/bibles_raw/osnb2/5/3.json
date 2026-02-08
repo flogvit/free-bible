@@ -33,11 +33,17 @@
     "bookId": 5,
     "chapterId": 3,
     "verseId": 6,
-    "text": "Vi vigslet dem til ødeleggelse, slik vi hadde gjort med Sihon, kongen i Hesjbon. Vi vigslet hver by til ødeleggelse: menn, kvinner og barn.",
+    "text": "Vi vigslet dem til ødeleggelse, slik vi hadde gjort med Sihon, kongen i Hesjbon. Vi vigslet hver by til ødeleggelse – mennene, kvinnene og barna.",
     "versions": [
       {
         "text": "Vi vigslet dem til ødeleggelse, slik vi hadde gjort med Sihon, kongen i Hesjbon. Vi vigslet til ødeleggelse hele bybefolkningen: menn, kvinner og barn.",
         "explanation": "Det hebraiske כָּל־עִיר מְתִם betyr 'hver by med sine menn' (מְתִם = menn/voksne menn). 'Bybefolkningen' er en litt upresis gjengivelse. 'Hver by' følger originalen bedre, og מְתִם refererer spesifikt til menn, ikke en generell befolkning."
+      },
+      {
+        "text": "Vi vigslet dem til ødeleggelse, slik vi hadde gjort med Sihon, kongen i Hesjbon. Vi vigslet hver by til ødeleggelse: menn, kvinner og barn.",
+        "type": "error",
+        "severity": "major",
+        "explanation": "Hebraisk מְתִם (metim) betyr spesifikt 'menn/voksne menn', og הַנָּשִׁים וְהַטָּף er 'kvinnene og barna' som tillegg. Den nåværende oversettelsen har en enkel oppramsing 'menn, kvinner og barn' som mister den hebraiske strukturen der mennene i byen nevnes først, deretter kvinner og barn som separate grupper med bestemt artikkel. Bruk av tankestrek og bestemte former gjenspeiler originalen bedre."
       }
     ]
   },
@@ -69,11 +75,17 @@
     "bookId": 5,
     "chapterId": 3,
     "verseId": 11,
-    "text": "For Og, kongen i Basan, var den eneste som var igjen av kjempene. Se, hans leie var et leie av jern. Står det ikke i Rabba hos ammonittene? Det er ni alen langt og fire alen bredt, målt i vanlig alen.",
+    "text": "For Og, kongen i Basan, var den eneste som var igjen av kjempene. Se, hans leie var et leie av jern. Finnes det ikke i Rabba hos ammonittene? Det er ni alen langt og fire alen bredt, målt i vanlig alen.",
     "versions": [
       {
         "text": "For Og, kongen i Basan, var den eneste som var igjen av kjempene. Se, hans seng var en seng av jern. Står den ikke i Rabba hos ammonittene? Den er ni alen lang og fire alen bred, målt i vanlig alen.",
         "explanation": "Det hebraiske עֶרֶשׂ (eres) kan bety 'seng' eller 'leie/hvilested', og mange mener det her refererer til en sarkofag eller gravleie snarere enn en vanlig seng. 'Leie' er mer nøytralt og åpner for begge tolkninger."
+      },
+      {
+        "text": "For Og, kongen i Basan, var den eneste som var igjen av kjempene. Se, hans leie var et leie av jern. Står det ikke i Rabba hos ammonittene? Det er ni alen langt og fire alen bredt, målt i vanlig alen.",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "Det hebraiske הֲלֹה הִוא refererer til selve leiet/gjenstanden ('er det ikke [der]'), ikke til en tekst som 'står'. 'Finnes det ikke' er mer nøyaktig enn 'Står det ikke', som kan gi inntrykk av at det refereres til en skriftlig kilde."
       }
     ]
   },
@@ -129,7 +141,15 @@
     "bookId": 5,
     "chapterId": 3,
     "verseId": 18,
-    "text": "På den tiden ga jeg dere denne befalingen: «Herren deres Gud har gitt dere dette landet til eiendom. Alle stridsdyktige menn blant dere skal dra væpnet over foran deres brødre, Israels barn."
+    "text": "På den tiden ga jeg dere denne befalingen: «Herren deres Gud har gitt dere dette landet til eiendom. Væpnet skal alle stridsdyktige menn blant dere dra over foran deres brødre, Israels barn.",
+    "versions": [
+      {
+        "text": "På den tiden ga jeg dere denne befalingen: «Herren deres Gud har gitt dere dette landet til eiendom. Alle stridsdyktige menn blant dere skal dra væpnet over foran deres brødre, Israels barn.",
+        "type": "grammar",
+        "severity": "minor",
+        "explanation": "I den hebraiske teksten kommer חֲלוּצִים (væpnet) først med emfase, etterfulgt av verbet 'dra over'. I den nåværende oversettelsen er ordstillingen litt merkelig med 'skal dra væpnet over'. Å flytte 'væpnet' fremover gjenspeiler den hebraiske emfasen bedre og gir bedre norsk flyt."
+      }
+    ]
   },
   {
     "bookId": 5,
@@ -141,7 +161,15 @@
     "bookId": 5,
     "chapterId": 3,
     "verseId": 20,
-    "text": "Bli der til Herren gir deres brødre ro, slik som dere, og de også har tatt i eie det landet Herren deres Gud gir dem på den andre siden av Jordan. Da kan dere vende tilbake, hver til sin eiendom som jeg har gitt dere.»"
+    "text": "Bli der til Herren gir deres brødre ro, likesom dere, og også de har tatt i eie det landet Herren deres Gud gir dem på den andre siden av Jordan. Da kan dere vende tilbake, hver til sin eiendom som jeg har gitt dere.»",
+    "versions": [
+      {
+        "text": "Bli der til Herren gir deres brødre ro, slik som dere, og de også har tatt i eie det landet Herren deres Gud gir dem på den andre siden av Jordan. Da kan dere vende tilbake, hver til sin eiendom som jeg har gitt dere.»",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "'Slik som dere' er litt uklart i konteksten – det kan misforstås. 'Likesom dere' er et mer presist uttrykk som tydeliggjør sammenligningen: 'gir ro likesom [han har gitt] dere [ro]'."
+      }
+    ]
   },
   {
     "bookId": 5,

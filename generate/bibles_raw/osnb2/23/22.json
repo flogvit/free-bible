@@ -21,7 +21,15 @@
     "bookId": 23,
     "chapterId": 22,
     "verseId": 3,
-    "text": "Alle dine ledere flyktet sammen, de ble fanget uten bue. Alle som ble funnet hos deg, ble bundet sammen, selv om de hadde flyktet langt bort."
+    "text": "Alle dine ledere flyktet sammen, uten bue ble de fanget. Alle som ble funnet hos deg, ble bundet sammen – de som hadde flyktet langt bort.",
+    "versions": [
+      {
+        "text": "Alle dine ledere flyktet sammen, de ble fanget uten bue. Alle som ble funnet hos deg, ble bundet sammen, selv om de hadde flyktet langt bort.",
+        "type": "error",
+        "severity": "major",
+        "explanation": "Uttrykket 'מִקֶּשֶׁת אֻסָּרוּ' betyr 'uten bue ble de fanget/bundet' – dvs. de ble tatt til fange uten at det ble brukt bue (uten kamp). Oversettelsen har riktig innhold, men 'selv om de hadde flyktet langt bort' antyder en innrømmelse som ikke finnes i hebraisk. Teksten sier snarere at de som ble funnet, ble bundet, selv om de hadde flyktet langt – men det hebraiske uttrykket identifiserer dem som flyktet langt bort som de som ble bundet."
+      }
+    ]
   },
   {
     "bookId": 23,
@@ -33,17 +41,31 @@
     "bookId": 23,
     "chapterId": 22,
     "verseId": 5,
-    "text": "For Herren, Herren over hærskarene, har en dag med forvirring, nedtrampelse og rådløshet i Synsdalen – murene rives ned, og ropet når opp til fjellet."
+    "text": "For Herren, Herren over hærskarene, har en dag med forvirring, nedtrampelse og rådløshet i Synsdalen – muren brytes ned, og nødropet lyder mot fjellet.",
+    "versions": [
+      {
+        "text": "For Herren, Herren over hærskarene, har en dag med forvirring, nedtrampelse og rådløshet i Synsdalen – murene rives ned, og ropet når opp til fjellet.",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "'קִר' (qir) er entall 'mur', ikke flertall 'murene'. Også 'שׁוֹעַ' er et nødrop/hjelperop, ikke bare et generelt 'rop'. 'Når opp til' er en tolkning – hebraisk sier ropet lyder 'mot/til' fjellet."
+      }
+    ]
   },
   {
     "bookId": 23,
     "chapterId": 22,
     "verseId": 6,
-    "text": "Elam bar kogger, med stridsvogner bemannet med ryttere, og Kir blottet skjoldet.",
+    "text": "Elam bar kogger, med stridsvogner og hestfolk, og Kir blottet skjoldet.",
     "versions": [
       {
         "text": "Elam bar kogger, med vogner og ryttere, og Kir blottet skjoldet.",
         "explanation": "Hebraisk 'berekev adam parashim' indikerer stridsvogner med mannskap/ryttere. 'Med vogner og ryttere' kan misforstås som separate enheter, mens teksten beskriver bemannede stridsvogner."
+      },
+      {
+        "text": "Elam bar kogger, med stridsvogner bemannet med ryttere, og Kir blottet skjoldet.",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "'בְּרֶכֶב אָדָם פָּרָשִׁים' betyr bokstavelig 'med vogner av mennesker (og) ryttere/hestfolk'. 'Ryttere' (parashim) refererer vanligvis til kavaleri/hestfolk, ikke til mannskapet i stridsvogner. Uttrykket beskriver trolig både stridsvogner med mannskap og kavaleri som separate enheter."
       }
     ]
   },
@@ -93,7 +115,15 @@
     "bookId": 23,
     "chapterId": 22,
     "verseId": 14,
-    "text": "Herren over hærskarene har åpenbart det for mine ører: Sannelig, denne synden skal ikke bli sonet for dere før dere dør! sier Herren, Herren over hærskarene."
+    "text": "Herren over hærskarene har åpenbart det for mine ører: Sannelig, denne misgjerningen skal ikke bli sonet for dere før dere dør! sier Herren, Herren over hærskarene.",
+    "versions": [
+      {
+        "text": "Herren over hærskarene har åpenbart det for mine ører: Sannelig, denne synden skal ikke bli sonet for dere før dere dør! sier Herren, Herren over hærskarene.",
+        "type": "error",
+        "severity": "major",
+        "explanation": "Hebraisk 'עָוֺן' (avon) betyr 'misgjerning' eller 'skyld', ikke 'synd' (som ville vært 'chattat'). Selv om forskjellen er subtil, er 'misgjerning/skyld' mer presist. Det hebraiske 'אם' i en ed-formel er en sterk nektelse: 'denne misgjerningen skal sannelig ikke bli sonet'."
+      }
+    ]
   },
   {
     "bookId": 23,

@@ -3,7 +3,15 @@
     "bookId": 13,
     "chapterId": 4,
     "verseId": 1,
-    "text": "Judas sønner var Peres, Hesron, Karmi, Hur og Sjobal."
+    "text": "Judas etterkommere var Peres, Hesron, Karmi, Hur og Sjobal.",
+    "versions": [
+      {
+        "text": "Judas sønner var Peres, Hesron, Karmi, Hur og Sjobal.",
+        "type": "error",
+        "severity": "minor",
+        "explanation": "'Judas sønner' er akseptabelt, men disse er ikke alle direkte sønner – de er etterkommere fra ulike generasjoner (f.eks. Hesron er sønn av Peres). Likevel er 'sønner' en vanlig oversettelse av בְּנֵי i slektstavler, så dette er kun en mindre bemerkelse."
+      }
+    ]
   },
   {
     "bookId": 13,
@@ -99,7 +107,15 @@
     "bookId": 13,
     "chapterId": 4,
     "verseId": 17,
-    "text": "Esras sønner var Jeter, Mered, Efer og Jalon. Hun ble med barn og fødte Mirjam, Sjammai og Jisjbah, far til Esjtemoa."
+    "text": "Esras sønner var Jeter, Mered, Efer og Jalon. Hun ble gravid og fødte Mirjam, Sjammai og Jisjbah, far til Esjtemoa.",
+    "versions": [
+      {
+        "text": "Esras sønner var Jeter, Mered, Efer og Jalon. Hun ble med barn og fødte Mirjam, Sjammai og Jisjbah, far til Esjtemoa.",
+        "type": "error",
+        "severity": "major",
+        "explanation": "'Ble med barn' er forståelig men litt uformelt. 'Ble gravid' er mer presist og naturlig norsk bokmål for וַתַּהַר. Ellers er verset akseptabelt oversatt."
+      }
+    ]
   },
   {
     "bookId": 13,
@@ -129,7 +145,15 @@
     "bookId": 13,
     "chapterId": 4,
     "verseId": 22,
-    "text": "Videre Jokim og mennene fra Koseba, og Joasj og Saraf, som hersket over Moab, men vendte tilbake til Betlehem. Dette er gamle opptegnelser."
+    "text": "Videre Jokim og mennene fra Koseba, og Joasj og Saraf, som hersket over Moab og Jasjubi-Lehem. Dette er gamle opptegnelser.",
+    "versions": [
+      {
+        "text": "Videre Jokim og mennene fra Koseba, og Joasj og Saraf, som hersket over Moab, men vendte tilbake til Betlehem. Dette er gamle opptegnelser.",
+        "type": "error",
+        "severity": "minor",
+        "explanation": "Det hebraiske וְיָשֻׁבִי לָחֶם (Jashubi-Lehem) er mest sannsynlig et egennavn, ikke verbet 'vendte tilbake til Betlehem'. De fleste moderne kommentarer og oversettelser behandler dette som et egennavn."
+      }
+    ]
   },
   {
     "bookId": 13,
@@ -153,7 +177,15 @@
     "bookId": 13,
     "chapterId": 4,
     "verseId": 26,
-    "text": "Misjmas sønner var: hans sønn Hammuel, hans sønn Sakkur, hans sønn Sjimi."
+    "text": "Misjmas etterkommere var: hans sønn Hammuel, hans sønn Sakkur, hans sønn Sjimi.",
+    "versions": [
+      {
+        "text": "Misjmas sønner var: hans sønn Hammuel, hans sønn Sakkur, hans sønn Sjimi.",
+        "type": "grammar",
+        "severity": "minor",
+        "explanation": "Teksten beskriver en enelinjes genealogi (far-sønn-sønn), ikke flere sønner av Misjma. 'Etterkommere' ville vært noe mer presist, men 'sønner' i vid forstand er også akseptabelt. Dette er et mindre forslag."
+      }
+    ]
   },
   {
     "bookId": 13,
@@ -219,7 +251,15 @@
     "bookId": 13,
     "chapterId": 4,
     "verseId": 37,
-    "text": "og Sisa, sønn av Sjifi, sønn av Allon, sønn av Jedaja, sønn av Sjimri, sønn av Sjemaja."
+    "text": "og Sisja, sønn av Sjifi, sønn av Allon, sønn av Jedaja, sønn av Sjimri, sønn av Sjemaja.",
+    "versions": [
+      {
+        "text": "og Sisa, sønn av Sjifi, sønn av Allon, sønn av Jedaja, sønn av Sjimri, sønn av Sjemaja.",
+        "type": "error",
+        "severity": "major",
+        "explanation": "Det hebraiske navnet זִיזָא bør transkriberes som 'Sisja' (eller 'Ziza') for å gjenspeile den hebraiske formen bedre. 'Sisa' er en unøyaktig gjengivelse av navnet."
+      }
+    ]
   },
   {
     "bookId": 13,
@@ -255,6 +295,14 @@
     "bookId": 13,
     "chapterId": 4,
     "verseId": 43,
-    "text": "De slo de amalekittene som hadde overlevd, og de har bodd der til denne dag."
+    "text": "De slo den resten som var igjen av amalekittene, og de har bodd der til denne dag.",
+    "versions": [
+      {
+        "text": "De slo de amalekittene som hadde overlevd, og de har bodd der til denne dag.",
+        "type": "error",
+        "severity": "minor",
+        "explanation": "'De slo de amalekittene som hadde overlevd' er akseptabelt men mangler noe av betydningen av שְׁאֵרִית הַפְּלֵטָה – 'den resten som hadde unnsluppet' – som understreker at dette var de aller siste overlevende."
+      }
+    ]
   }
 ]

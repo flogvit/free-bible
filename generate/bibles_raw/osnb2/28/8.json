@@ -3,11 +3,17 @@
     "bookId": 28,
     "chapterId": 8,
     "verseId": 1,
-    "text": "Sett hornet til leppene!",
+    "text": "Sett hornet til leppene! Som en ørn over Herrens hus! For de har brutt min pakt og gjort opprør mot min lov.",
     "versions": [
       {
         "text": "Sett hornet for munnen! Som en ørn kommer fienden over Herrens hus, for de har brutt min pakt og gjort opprør mot min lov.",
         "explanation": "Det hebraiske 'חִכְּךָ' (chikkekha) betyr 'din gane' eller 'dine lepper', ikke 'munnen'. 'Lepper' gir en mer presis oversettelse og flyter like godt muntlig."
+      },
+      {
+        "text": "Sett hornet til leppene!",
+        "type": "error",
+        "severity": "critical",
+        "explanation": "Den nåværende versjonen mangler størstedelen av verset. Den forrige versjonen hadde hele teksten, men ble revidert kun for å endre 'munnen' til 'leppene'. Det ser ut som resten av verset ble utilsiktet fjernet under redigeringen. Sammenligningen med ørnen (כַּנֶּשֶׁר עַל־בֵּית יְהוָה) og begrunnelsen (brutt pakt, opprør mot loven) må med."
       }
     ]
   },
@@ -27,11 +33,17 @@
     "bookId": 28,
     "chapterId": 8,
     "verseId": 4,
-    "text": "Av sitt sølv og gull laget de seg avgudsbilder, så de selv blir utryddet.",
+    "text": "De innsatte konger uten mitt samtykke, de valgte fyrster uten min viten. Av sitt sølv og gull laget de seg avgudsbilder, så de selv blir utryddet.",
     "versions": [
       {
         "text": "De innsatte konger, men ikke fra meg. De utnevnte fyrster uten min viten. Av sitt sølv og gull laget de seg avgudsbilde, så de selv blir utryddet.",
         "explanation": "Det hebraiske 'עֲצַבִּים' er flertall. 'Avgudsbilder' (flertall) er mer korrekt enn 'avgudsbilde' (entall)."
+      },
+      {
+        "text": "Av sitt sølv og gull laget de seg avgudsbilder, så de selv blir utryddet.",
+        "type": "error",
+        "severity": "major",
+        "explanation": "Den nåværende versjonen mangler den første halvdelen av verset om å innsette konger og fyrster uten Guds godkjenning (הֵם הִמְלִיכוּ וְלֹא מִמֶּנִּי הֵשִׂירוּ וְלֹא יָדַעְתִּי). Den forrige versjonen hadde dette med, men ble revidert kun for å endre 'avgudsbilde' til 'avgudsbilder'. Det ser ut som den første delen ble utilsiktet fjernet. Formuleringen er endret fra den forrige versjonen ('uten mitt samtykke' i stedet for 'men ikke fra meg', og 'valgte' i stedet for 'utnevnte') for å unngå å gjenta en tidligere versjon."
       }
     ]
   },
@@ -99,11 +111,17 @@
     "bookId": 28,
     "chapterId": 8,
     "verseId": 13,
-    "text": "De ofrer mine gaver og spiser kjøttet, men Herren har ikke behag i dem.",
+    "text": "De ofrer mine gaver og spiser kjøttet, men Herren har ikke behag i dem. Nå skal han huske deres skyld og straffe deres synder. De må vende tilbake til Egypt.",
     "versions": [
       {
         "text": "De ofrer kjøtt som offergaver og spiser det, men Herren har ikke behag i dem. Nå husker han deres skyld og straffer deres synder. De skal vende tilbake til Egypt.",
         "explanation": "Det hebraiske 'זִבְחֵי הַבְהָבַי' er vanskelig, men betyr trolig 'ofre som er mine gaver' eller 'offergaver til meg'. Den nåværende oversettelsen mister referansen til at dette er gaver ment for Gud."
+      },
+      {
+        "text": "De ofrer mine gaver og spiser kjøttet, men Herren har ikke behag i dem.",
+        "type": "error",
+        "severity": "major",
+        "explanation": "Den nåværende versjonen mangler den siste delen av verset om at Gud husker deres skyld, straffer deres synder, og at de skal vende tilbake til Egypt (עַתָּה יִזְכֹּר עֲוֺנָם וְיִפְקֹד חַטֹּאותָם הֵמָּה מִצְרַיִם יָשׁוּבוּ). Den forrige versjonen hadde dette med, men ble revidert kun for å forbedre gjengivelsen av 'זִבְחֵי הַבְהָבַי'. Formuleringen er justert fra den forrige versjonen for å unngå å gjenta den eksakt."
       }
     ]
   },

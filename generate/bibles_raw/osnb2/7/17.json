@@ -21,7 +21,15 @@
     "bookId": 7,
     "chapterId": 17,
     "verseId": 3,
-    "text": "Han ga de elleve hundre sølvstykkene tilbake til sin mor, og hans mor sa: «Jeg har helliget dette sølvet til Herren, fra min egen hånd, for min sønn, til å lage et utskåret bilde og et støpt bilde. Nå gir jeg det tilbake til deg.»"
+    "text": "Han ga de elleve hundre sølvstykkene tilbake til sin mor, og hans mor sa: «Jeg har viet dette sølvet helt og fullt til Herren fra min hånd for min sønn, til å lage et utskåret bilde og et støpt bilde. Nå gir jeg det tilbake til deg.»",
+    "versions": [
+      {
+        "text": "Han ga de elleve hundre sølvstykkene tilbake til sin mor, og hans mor sa: «Jeg har helliget dette sølvet til Herren, fra min egen hånd, for min sønn, til å lage et utskåret bilde og et støpt bilde. Nå gir jeg det tilbake til deg.»",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "Det hebraiske הַקְדֵּשׁ הִקְדַּשְׁתִּי er en infinitivus absolutus-konstruksjon som uttrykker emfase – 'jeg har virkelig/fullstendig helliget'. Oversettelsen mister denne forsterkende betydningen. 'Viet helt og fullt' gjengir den emfatiske formen bedre."
+      }
+    ]
   },
   {
     "bookId": 7,
@@ -51,7 +59,15 @@
     "bookId": 7,
     "chapterId": 17,
     "verseId": 7,
-    "text": "Det var en ung mann fra Betlehem i Juda, av Juda-stammen. Han var levitt og bodde der som fremmed."
+    "text": "Det var en ung mann fra Betlehem i Juda, av Juda-slekten. Han var levitt og bodde der som fremmed.",
+    "versions": [
+      {
+        "text": "Det var en ung mann fra Betlehem i Juda, av Juda-stammen. Han var levitt og bodde der som fremmed.",
+        "type": "error",
+        "severity": "major",
+        "explanation": "Det hebraiske מִמִּשְׁפַּחַת (mimishpachat) betyr 'av slekten/familien', ikke 'stammen' (שֵׁבֶט, shevet). Dessuten er det teologisk viktig: mannen var levitt (av Levis stamme), men bodde blant Juda-slekten i Betlehem. Å bruke 'stammen' skaper forvirring om hvorfor en levitt tilhører Juda-stammen."
+      }
+    ]
   },
   {
     "bookId": 7,
@@ -69,7 +85,7 @@
     "bookId": 7,
     "chapterId": 17,
     "verseId": 10,
-    "text": "Mika sa til ham: «Bli hos meg og vær far og prest for meg. Jeg vil gi deg ti sølvstykker i året, klær og kost.» Da gikk levitten inn.",
+    "text": "Mika sa til ham: «Bli hos meg og vær far og prest for meg. Jeg vil gi deg ti sølvstykker i året, klær og kost.» Og levitten gikk med på det.",
     "versions": [
       {
         "text": "Mika sa til ham: «Bli hos meg og vær far og prest for meg. Jeg vil gi deg ti sølvstykker om året, klær og kost.» Og levitten gikk med ham.",
@@ -78,6 +94,12 @@
       {
         "text": "Mika sa til ham: «Bli hos meg og vær far og prest for meg. Jeg vil gi deg ti sølvstykker om året, klær og kost.» Da gikk levitten inn.",
         "explanation": "På norsk bokmål er 'i året' mer naturlig enn 'om året' i denne konteksten for muntlig opplesning."
+      },
+      {
+        "text": "Mika sa til ham: «Bli hos meg og vær far og prest for meg. Jeg vil gi deg ti sølvstykker i året, klær og kost.» Da gikk levitten inn.",
+        "type": "grammar",
+        "severity": "minor",
+        "explanation": "Verset har allerede 2 revisjoner, men 'Da gikk levitten inn' er fortsatt noe uklar. Det hebraiske וַיֵּלֶךְ הַלֵּוִי betyr bokstavelig 'og levitten gikk' og fungerer som en overgang til neste vers der han samtykker. 'Gikk med på det' ville vært klarere, men dette er kun en mindre forbedring og verset er godt gjennomgått."
       }
     ]
   },

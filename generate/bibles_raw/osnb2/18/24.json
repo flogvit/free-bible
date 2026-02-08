@@ -33,7 +33,15 @@
     "bookId": 18,
     "chapterId": 24,
     "verseId": 6,
-    "text": "På marken høster de fôr, og de sanker etternøst i den ugudeliges vingård."
+    "text": "På marken høster de fôr, og de plukker rester i den ugudeliges vingård.",
+    "versions": [
+      {
+        "text": "På marken høster de fôr, og de sanker etternøst i den ugudeliges vingård.",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "Ordet 'etternøst' er et sjeldent og gammeldags norsk ord som kan være vanskelig å forstå for moderne lesere. 'Plukker rester' formidler betydningen av 'yelaqeshu' (sanke det som er igjen etter høsting) på en mer tilgjengelig måte."
+      }
+    ]
   },
   {
     "bookId": 18,
@@ -51,7 +59,15 @@
     "bookId": 18,
     "chapterId": 24,
     "verseId": 9,
-    "text": "De river den farløse fra brystet, og de tar pant fra den fattige."
+    "text": "De river den farløse fra mors bryst, og de tar pant fra den fattige.",
+    "versions": [
+      {
+        "text": "De river den farløse fra brystet, og de tar pant fra den fattige.",
+        "type": "error",
+        "severity": "major",
+        "explanation": "Hebraisk 'mi-shod yatom' betyr 'de røver/plyndrer den farløse' - 'shod' betyr 'bryst' i noen tolkninger, men mer sannsynlig betyr det at de røver den farløse (fra mors favn/bryst). Imidlertid er den vanligste tolkningen at 'shod' her relaterer til rov/utplyndring snarere enn et fysisk bryst. Oversettelsen 'fra brystet' er uklar uten kontekst - hvem sitt bryst? Å legge til 'mors' gjør det tydeligere om man beholder denne tolkningen."
+      }
+    ]
   },
   {
     "bookId": 18,
@@ -117,7 +133,15 @@
     "bookId": 18,
     "chapterId": 24,
     "verseId": 18,
-    "text": "Han er lett på vannets overflate, deres jordlodd er forbannet i landet. Han vender seg ikke mot vingårdenes vei."
+    "text": "Han er lett på vannets overflate, deres jordlodd er forbannet i landet. Ingen vender seg mot vingårdenes vei.",
+    "versions": [
+      {
+        "text": "Han er lett på vannets overflate, deres jordlodd er forbannet i landet. Han vender seg ikke mot vingårdenes vei.",
+        "type": "error",
+        "severity": "major",
+        "explanation": "Hebraisk 'lo yifneh' (han vender seg ikke) refererer i konteksten til at ingen vender/går i retning av vingårdene – altså at de ugudelige unngår den veien. 'Ingen vender seg mot' er en noe klarere gjengivelse enn 'Han vender seg ikke mot', da subjektet i verset skifter mellom entall og flertall."
+      }
+    ]
   },
   {
     "bookId": 18,
@@ -129,7 +153,15 @@
     "bookId": 18,
     "chapterId": 24,
     "verseId": 20,
-    "text": "Mors liv glemmer ham, makken nyter ham. Han huskes ikke lenger, og urettferdigheten brytes som et tre."
+    "text": "Mors liv glemmer ham, makken nyter ham. Han huskes ikke lenger, og urettferdigheten knekkes som et tre.",
+    "versions": [
+      {
+        "text": "Mors liv glemmer ham, makken nyter ham. Han huskes ikke lenger, og urettferdigheten brytes som et tre.",
+        "type": "error",
+        "severity": "major",
+        "explanation": "Hebraisk 'tishaber' betyr 'knekkes/brytes i stykker' og brukes typisk om trær som knekker. 'Brytes' er ikke idiomatisk norsk om trær – man sier at et tre knekkes, ikke at det brytes."
+      }
+    ]
   },
   {
     "bookId": 18,
@@ -141,13 +173,29 @@
     "bookId": 18,
     "chapterId": 24,
     "verseId": 22,
-    "text": "Han holder de mektige i live med sin kraft. Den ugudelige reiser seg, men kan ikke stole på livet."
+    "text": "Men Gud drar de mektige bort med sin kraft. Han reiser seg, men ingen kan stole på livet.",
+    "versions": [
+      {
+        "text": "Han holder de mektige i live med sin kraft. Den ugudelige reiser seg, men kan ikke stole på livet.",
+        "type": "error",
+        "severity": "major",
+        "explanation": "Hebraisk 'mashakh' betyr 'dra/trekke' – ikke 'holde i live'. Verset beskriver trolig at Gud drar de mektige bort (i dom) med sin kraft. 'Holder de mektige i live' er en misvisende gjengivelse. Også 'Den ugudelige' er lagt til uten grunnlag i teksten – subjektet er det samme som i konteksten."
+      }
+    ]
   },
   {
     "bookId": 18,
     "chapterId": 24,
     "verseId": 23,
-    "text": "Han gir dem trygghet så de kan hvile, men hans øyne våker over deres veier."
+    "text": "Gud gir ham trygghet så han kan hvile, men hans øyne våker over deres veier.",
+    "versions": [
+      {
+        "text": "Han gir dem trygghet så de kan hvile, men hans øyne våker over deres veier.",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "Hebraisk har entall 'lo' (ham) og 'yisha'en' (han hviler/lener seg), ikke flertall. Subjektet skifter til flertall først med 'darkehem' (deres veier). Å bruke 'ham' i stedet for 'dem' er mer nøyaktig."
+      }
+    ]
   },
   {
     "bookId": 18,

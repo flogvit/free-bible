@@ -51,7 +51,15 @@
     "bookId": 19,
     "chapterId": 38,
     "verseId": 7,
-    "text": "Jeg er bøyd ned og dypt nedbøyd, hele dagen går jeg sorgfull omkring."
+    "text": "Jeg er kroket og dypt nedbøyd, hele dagen går jeg i sorg omkring.",
+    "versions": [
+      {
+        "text": "Jeg er bøyd ned og dypt nedbøyd, hele dagen går jeg sorgfull omkring.",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "נַעֲוֵיתִי betyr 'kroket/vridd', ikke bare 'bøyd ned'. 'Bøyd ned' og 'nedbøyd' er nesten tautologisk. 'Kroket' gir bedre variasjon og er mer nøyaktig for det hebraiske ordet som beskriver en fysisk fordreining. Dessuten er קֹדֵר mer 'i sorg/sørgende' enn adjektivet 'sorgfull'."
+      }
+    ]
   },
   {
     "bookId": 19,
@@ -69,7 +77,15 @@
     "bookId": 19,
     "chapterId": 38,
     "verseId": 9,
-    "text": "Jeg er kraftløs og fullstendig knust, jeg skriker ut fra mitt hjertets angst."
+    "text": "Jeg er nummen og fullstendig knust, jeg stønner høyt fra mitt hjertets uro.",
+    "versions": [
+      {
+        "text": "Jeg er kraftløs og fullstendig knust, jeg skriker ut fra mitt hjertets angst.",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "נְפוּגוֹתִי (nefugoti) betyr 'nummen/lammet/bedøvet', ikke bare 'kraftløs'. שָׁאַגְתִּי betyr å brøle/stønne, og נַהֲמַת betyr sukking/stønning/uro, ikke direkte 'angst'. 'Stønner høyt fra mitt hjertets uro' er nærmere originalen."
+      }
+    ]
   },
   {
     "bookId": 19,
@@ -87,7 +103,15 @@
     "bookId": 19,
     "chapterId": 38,
     "verseId": 12,
-    "text": "Mine venner og mine nærmeste står på avstand fra min plage, og mine slektninger holder seg langt borte."
+    "text": "Mine venner og mine nærmeste holder avstand til min plage, og mine slektninger stiller seg langt borte.",
+    "versions": [
+      {
+        "text": "Mine venner og mine nærmeste står på avstand fra min plage, og mine slektninger holder seg langt borte.",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "Det hebraiske מִנֶּגֶד נִגְעִי betyr 'overfor min plage' - de står på avstand fra/overfor hans lidelse. Uttrykket 'på avstand fra min plage' er litt uklart på norsk. Dessuten bruker hebraisk to ulike verbformer (יַעֲמֹדוּ imperfektum og עָמָדוּ perfektum), noe som kan gjenspeiles med litt variasjon i norsk."
+      }
+    ]
   },
   {
     "bookId": 19,
@@ -123,11 +147,17 @@
     "bookId": 19,
     "chapterId": 38,
     "verseId": 17,
-    "text": "For jeg sa: Måtte de ikke glede seg over meg! Når min fot vakler, opphøyer de seg over meg.",
+    "text": "For jeg sa: La dem ikke glede seg over meg! For når min fot vakler, gjør de seg store mot meg.",
     "versions": [
       {
         "text": "For jeg sa: La dem ikke glede seg over meg! Når min fot vakler, opphøyer de seg over meg.",
         "explanation": "Uttrykket er ikke en imperativ ('La dem ikke'), men uttrykker salmistens frykt eller ønske. 'Måtte de ikke' gjengir פֶּן (pen - 'at ikke', 'for at ikke') bedre i denne konteksten."
+      },
+      {
+        "text": "For jeg sa: Måtte de ikke glede seg over meg! Når min fot vakler, opphøyer de seg over meg.",
+        "type": "error",
+        "severity": "major",
+        "explanation": "Selv om versjonshistorikken endret 'La dem ikke' til 'Måtte de ikke' basert på פֶּן, er dette vers allerede godt gjennomgått. Likevel er הִגְדִּילוּ (higdilu) best gjengitt 'gjør seg store mot meg' snarere enn 'opphøyer de seg over meg'. עָלַי הִגְדִּילוּ er et idiom som betyr å skryte/hovere over noen. Dessuten mangler en logisk kobling - 'Når' bør helst være 'For når' for å forklare hvorfor han ber om dette."
       }
     ]
   },
@@ -135,7 +165,15 @@
     "bookId": 19,
     "chapterId": 38,
     "verseId": 18,
-    "text": "For jeg er nær ved å snuble, og min smerte er alltid foran meg."
+    "text": "For jeg er nær ved å falle, og min smerte er alltid foran meg.",
+    "versions": [
+      {
+        "text": "For jeg er nær ved å snuble, og min smerte er alltid foran meg.",
+        "type": "error",
+        "severity": "major",
+        "explanation": "לְצֶלַע נָכוֹן betyr bokstavelig 'klar til å halte/falle'. צֶלַע betyr 'halting' eller 'fall', ikke 'snuble'. Poenget er at salmisten er på randen av å falle/kollapse, ikke bare snuble. 'Falle' gir bedre teologisk tyngde og er mer nøyaktig."
+      }
+    ]
   },
   {
     "bookId": 19,

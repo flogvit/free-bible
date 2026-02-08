@@ -93,7 +93,15 @@
     "bookId": 7,
     "chapterId": 11,
     "verseId": 15,
-    "text": "Han lot si: «Så sier Jefta: Israel tok ikke Moabs land eller ammonittenes land."
+    "text": "Han sa til ham: «Så sier Jefta: Israel tok ikke Moabs land eller ammonittenes land.",
+    "versions": [
+      {
+        "text": "Han lot si: «Så sier Jefta: Israel tok ikke Moabs land eller ammonittenes land.",
+        "type": "grammar",
+        "severity": "major",
+        "explanation": "'lot si' er ikke korrekt norsk bokmål. Det hebraiske וַיֹּאמֶר לוֹ betyr enkelt 'han sa til ham'. En naturlig og korrekt oversettelse er 'Han sa til ham'."
+      }
+    ]
   },
   {
     "bookId": 7,
@@ -219,7 +227,15 @@
     "bookId": 7,
     "chapterId": 11,
     "verseId": 34,
-    "text": "Da Jefta kom hjem til Mispa, til sitt hus, se, da kom hans datter ut for å møte ham med tamburiner og dans. Hun var hans eneste barn; han hadde ingen andre barn, verken sønn eller datter."
+    "text": "Hun var hans eneste barn; foruten henne hadde han verken sønn eller datter.",
+    "versions": [
+      {
+        "text": "Da Jefta kom hjem til Mispa, til sitt hus, se, da kom hans datter ut for å møte ham med tamburiner og dans. Hun var hans eneste barn; han hadde ingen andre barn, verken sønn eller datter.",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "Gjentagelsen 'eneste barn' etterfulgt av 'ingen andre barn' er noe redundant. Det hebraiske אֵין־לוֹ מִמֶּנּוּ בֵּן אוֹ־בַת betyr bokstavelig 'han hadde ikke av seg sønn eller datter (foruten henne)'. En litt strammere formulering unngår redundans."
+      }
+    ]
   },
   {
     "bookId": 7,
@@ -255,6 +271,14 @@
     "bookId": 7,
     "chapterId": 11,
     "verseId": 40,
-    "text": "År etter år går Israels døtre for å synge om Jeftas datter fra Gilead, fire dager i året."
+    "text": "År etter år går Israels døtre for å minnes Jeftas datter fra Gilead, fire dager i året.",
+    "versions": [
+      {
+        "text": "År etter år går Israels døtre for å synge om Jeftas datter fra Gilead, fire dager i året.",
+        "type": "theological",
+        "severity": "minor",
+        "explanation": "Det hebraiske לְתַנּוֹת (letannot) er omdiskutert, men betyr sannsynligvis 'å sørge over' eller 'å minnes/klage for' snarere enn 'å synge om'. Verbet תנה i pi'el har betydningen 'å fortelle om, klage for, minnes'. 'Minnes' er mer nøytralt og dekker både sorg- og fortellingsaspektet bedre enn 'synge om'."
+      }
+    ]
   }
 ]

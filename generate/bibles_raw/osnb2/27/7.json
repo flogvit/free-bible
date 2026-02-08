@@ -27,7 +27,15 @@
     "bookId": 27,
     "chapterId": 7,
     "verseId": 5,
-    "text": "Og se, et annet dyr, det andre, lignet en bjørn. Det reiste seg på den ene siden, og det hadde tre ribbein i munnen mellom tennene. Og slik ble det sagt til det: Reis deg og et mye kjøtt!"
+    "text": "Og se, et annet dyr, det andre, lignet en bjørn. Det reiste seg på den ene siden, og det hadde tre ribben i munnen mellom tennene. Og slik ble det sagt til det: Reis deg og et mye kjøtt!",
+    "versions": [
+      {
+        "text": "Og se, et annet dyr, det andre, lignet en bjørn. Det reiste seg på den ene siden, og det hadde tre ribbein i munnen mellom tennene. Og slik ble det sagt til det: Reis deg og et mye kjøtt!",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "'Ribbein' er en gammelmodig/dialektal form. Moderne norsk bokmål bruker 'ribben' (eventuelt 'ribbein' i nynorsk). For en moderne bokmålstekst bør 'ribben' brukes."
+      }
+    ]
   },
   {
     "bookId": 27,
@@ -63,11 +71,17 @@
     "bookId": 27,
     "chapterId": 7,
     "verseId": 11,
-    "text": "Jeg så på, og da – på grunn av lyden av de store ordene som hornet talte –",
+    "text": "Jeg så på, og da – på grunn av lyden av de store ordene som hornet talte – jeg så på til dyret ble drept, kroppen ble ødelagt og kastet på ilden.",
     "versions": [
       {
         "text": "Jeg så på da, på grunn av lyden av de store ordene som hornet talte. Jeg så på til dyret ble drept og kroppen dets ødelagt og kastet i den brennende ilden.",
         "explanation": "Setningsstrukturen 'Jeg så på da' er grammatisk uklar på norsk. En bedre flyt oppnås ved å reformulere med tankestrek for å markere innskuddet."
+      },
+      {
+        "text": "Jeg så på, og da – på grunn av lyden av de store ordene som hornet talte –",
+        "type": "error",
+        "severity": "critical",
+        "explanation": "Den nåværende versjonen mangler hele andre halvdel av verset. Det arameiske inneholder klart en fortsettelse: dyret ble drept, kroppen ødelagt og gitt til å brennes i ild. Den forrige revisjonen hadde dette innholdet, men ble revidert for bedre flyt med tankestrek-strukturen. Dessverre ble selve innholdet fjernet. Det må legges tilbake i en form som er forskjellig fra den tidligere versjonen."
       }
     ]
   },
@@ -123,13 +137,29 @@
     "bookId": 27,
     "chapterId": 7,
     "verseId": 19,
-    "text": "Da ønsket jeg å vite sannheten om det fjerde dyret, som var annerledes enn alle de andre, det fryktelig skremmende med tenner av jern og klør av bronse, som fortærte og knuste og tråkket ned det som var igjen, med føttene."
+    "text": "Da ønsket jeg å vite sannheten om det fjerde dyret, som var annerledes enn alle de andre, det overmåte skremmende med tenner av jern og klør av bronse, som fortærte og knuste og tråkket ned det som var igjen, med føttene.",
+    "versions": [
+      {
+        "text": "Da ønsket jeg å vite sannheten om det fjerde dyret, som var annerledes enn alle de andre, det fryktelig skremmende med tenner av jern og klør av bronse, som fortærte og knuste og tråkket ned det som var igjen, med føttene.",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "I vers 7 er det arameiske דְּחִילָה ... יַתִּירָא oversatt 'skremmende ... overmåte sterkt'. Her i vers 19, דְּחִילָה יַתִּירָה oversettes 'fryktelig skremmende'. 'Overmåte skremmende' ville være mer konsistent og nærmere det arameiske יַתִּירָה (overmåte/ekstremt)."
+      }
+    ]
   },
   {
     "bookId": 27,
     "chapterId": 7,
     "verseId": 20,
-    "text": "Og om de ti hornene på dets hode, og det andre hornet som skjøt opp så tre falt av, det hornet som hadde øyne og en munn som talte store ord, og som så større ut enn de andre."
+    "text": "Og om de ti hornene på dets hode, og det andre hornet som skjøt opp slik at tre av dem falt, det hornet som hadde øyne og en munn som talte store ord, og som så større ut enn de andre.",
+    "versions": [
+      {
+        "text": "Og om de ti hornene på dets hode, og det andre hornet som skjøt opp så tre falt av, det hornet som hadde øyne og en munn som talte store ord, og som så større ut enn de andre.",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "'Tre falt av' er litt upresist. Det arameiske sier at tre horn falt foran det (ble rykket opp for å gi plass, jf. v. 8). 'Slik at tre av dem falt' er noe bedre, og 'falt av' kan misforstås som at de bare falt av av seg selv."
+      }
+    ]
   },
   {
     "bookId": 27,

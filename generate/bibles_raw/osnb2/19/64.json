@@ -21,11 +21,17 @@
     "bookId": 19,
     "chapterId": 64,
     "verseId": 4,
-    "text": "De har hvesset sin tunge som et sverd, de har lagt bitre ord på sin bue.",
+    "text": "De har hvesset sin tunge som et sverd, de har rettet sin pil – det bitre ord.",
     "versions": [
       {
         "text": "De har hvesset sin tunge som et sverd, de har spent sin bue med bitre ord.",
         "explanation": "Det hebraiske uttrykket 'דָּרְכוּ חִצָּם דָּבָר מָר' betyr at de har spent buen med et bittert ord som pil, altså at det bitre ordet er pilen. 'Spent sin bue med bitre ord' er litt uklart; 'lagt bitre ord på sin bue' gir et tydeligere bilde av at ordene er ammunisjonen."
+      },
+      {
+        "text": "De har hvesset sin tunge som et sverd, de har lagt bitre ord på sin bue.",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "Det hebraiske uttrykket 'דָּרְכוּ חִצָּם דָּבָר מָר' betyr bokstavelig at de har spent (rettet) sin pil, nemlig et bittert ord. Pilen er det bitre ordet. Nåværende oversettelse 'lagt bitre ord på sin bue' er akseptabel og en bevisst endring, så dette er kun en mindre merknad. Verset har allerede én revisjon, så nåværende versjon er brukbar."
       }
     ]
   },
@@ -45,17 +51,31 @@
     "bookId": 19,
     "chapterId": 64,
     "verseId": 7,
-    "text": "De pønsker ut urett: «Vi har fullført en utspekulert plan!» Menneskets indre og hjerte er dypt."
+    "text": "De pønsker ut urett, de gjennomfører en utspekulert plan. For menneskets indre og hjerte er dypt.",
+    "versions": [
+      {
+        "text": "De pønsker ut urett: «Vi har fullført en utspekulert plan!» Menneskets indre og hjerte er dypt.",
+        "type": "error",
+        "severity": "major",
+        "explanation": "Det hebraiske 'תַּמְנוּ חֵפֶשׂ מְחֻפָּשׂ' er ikke et direkte sitat/utrop, men en beskrivelse av at de har fullført en nøye uttrenkt plan. Å sette det i anførselstegn som direkte tale er en vanlig tolkning, men mange kommentatorer leser dette som en videre beskrivelse. Viktigere er at 'וְקֶרֶב אִישׁ וְלֵב עָמֹק' mangler en kobling ('for') som viser at siste setningsledd forklarer hvorfor de klarer å pønske ut slikt – fordi menneskets indre er dypt/uutgrunnelig."
+      }
+    ]
   },
   {
     "bookId": 19,
     "chapterId": 64,
     "verseId": 8,
-    "text": "Men Gud skyter en pil mot dem, plutselig rammes de av sine sår.",
+    "text": "Men Gud skyter sin pil mot dem – plutselig! Da rammes de av sine sår.",
     "versions": [
       {
         "text": "Men Gud skyter sin pil mot dem, plutselig blir de rammet.",
         "explanation": "Det hebraiske 'הָיוּ מַכּוֹתָם' betyr 'deres slag/sår ble (til virkelighet)' - altså at sårene blir deres. Uttrykket 'rammes de av sine sår' gjenspeiler bedre at dette er en gjengjeldelse."
+      },
+      {
+        "text": "Men Gud skyter en pil mot dem, plutselig rammes de av sine sår.",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "Det hebraiske 'פִּתְאוֹם' (plutselig) hører grammatisk sammen med at Gud skyter pilen, ikke med at de rammes. Nåværende oversettelse knytter 'plutselig' til den andre setningen. Verset har allerede én revisjon, og nåværende er akseptabel, men plasseringen av 'plutselig' kunne vært mer nøyaktig."
       }
     ]
   },
@@ -63,13 +83,29 @@
     "bookId": 19,
     "chapterId": 64,
     "verseId": 9,
-    "text": "Deres egen tunge fører dem i fall. Alle som ser dem, rister på hodet."
+    "text": "Deres egen tunge fører dem i fall. Alle som ser dem, flykter bort.",
+    "versions": [
+      {
+        "text": "Deres egen tunge fører dem i fall. Alle som ser dem, rister på hodet.",
+        "type": "error",
+        "severity": "major",
+        "explanation": "Det hebraiske verbet 'יִתְנֹדֲדוּ' (fra נדד) betyr å flykte, bevege seg bort, vike unna – ikke 'riste på hodet' (som ville vært נוד/נוע med hode som objekt). Betydningen er at alle som ser dem, viker unna/trekker seg bort i forferdelse."
+      }
+    ]
   },
   {
     "bookId": 19,
     "chapterId": 64,
     "verseId": 10,
-    "text": "Da skal alle mennesker frykte og forkynne Guds verk, og de skal forstå hans gjerning."
+    "text": "Da fryktet alle mennesker og forkynte Guds gjerning, og hans verk forstod de.",
+    "versions": [
+      {
+        "text": "Da skal alle mennesker frykte og forkynne Guds verk, og de skal forstå hans gjerning.",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "De hebraiske verbformene er wayyiqtol (וַיִּירְאוּ, וַיַּגִּידוּ) som normalt uttrykker fortid/narrativ, ikke futurum. Oversettelsen bruker 'skal' (futurum), men konteksten (vv. 8-9) taler om at Gud allerede har handlet. Dessuten er rekkefølgen i originalen 'פֹּעַל אֱלֹהִים' (Guds gjerning) først, deretter 'מַעֲשֵׂהוּ' (hans verk) – nåværende versjon bytter disse."
+      }
+    ]
   },
   {
     "bookId": 19,

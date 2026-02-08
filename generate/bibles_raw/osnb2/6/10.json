@@ -9,7 +9,15 @@
     "bookId": 6,
     "chapterId": 10,
     "verseId": 2,
-    "text": "ble han grepet av stor frykt. For Gibeon var en stor by, som en av kongebyene, større enn Ai, og alle mennene der var dyktige krigere."
+    "text": "ble de grepet av stor frykt. For Gibeon var en stor by, som en av kongebyene, større enn Ai, og alle mennene der var dyktige krigere.",
+    "versions": [
+      {
+        "text": "ble han grepet av stor frykt. For Gibeon var en stor by, som en av kongebyene, større enn Ai, og alle mennene der var dyktige krigere.",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "Det hebraiske verbet וַיִּירְאוּ er flertall ('de fryktet'), ikke entall. Selv om vers 1 fokuserer på Adoni-Sedek, refererer flertallsformen sannsynligvis til ham og hans folk/de andre kongene. 'Han' innsnevrer subjektet på en måte originalteksten ikke gjør."
+      }
+    ]
   },
   {
     "bookId": 6,
@@ -57,11 +65,17 @@
     "bookId": 6,
     "chapterId": 10,
     "verseId": 10,
-    "text": "Herren skapte forvirring blant dem foran Israel, og han påførte dem et stort nederlag ved Gibeon, forfulgte dem på veien opp til Bet-Horon og slo dem helt til Aseka og Makkeda.",
+    "text": "Herren skapte forvirring blant dem foran Israel, og de påførte dem et stort nederlag ved Gibeon, forfulgte dem på veien opp til Bet-Horon og slo dem helt til Aseka og Makkeda.",
     "versions": [
       {
         "text": "Herren skapte forvirring blant dem foran Israel. Josva påførte dem et stort nederlag ved Gibeon, forfulgte dem på veien opp til Bet-Horon og slo dem helt til Aseka og Makkeda.",
         "explanation": "Subjektet for 'slo dem' (וַיַּכֵּ֥ם) er tvetydig i hebraisk - det kan være Herren eller Israel/Josva. Oversettelsen spesifiserer 'Josva', men teksten lar det stå åpent. Ved å bruke 'han' beholdes tvetydigheten og flyten fra forrige setning."
+      },
+      {
+        "text": "Herren skapte forvirring blant dem foran Israel, og han påførte dem et stort nederlag ved Gibeon, forfulgte dem på veien opp til Bet-Horon og slo dem helt til Aseka og Makkeda.",
+        "type": "error",
+        "severity": "major",
+        "explanation": "Verset har allerede 1 revisjon, men den nåværende versjonen bruker 'han' som subjekt for 'påførte dem et stort nederlag'. Ifølge den hebraiske teksten er subjektet for וַיַּכֵּם og וַיִּרְדְּפֵם mest sannsynlig Israel (flertall), ikke Herren alene. Revisjonshistorikken viser at intensjonen var å holde subjektet tvetydig, men 'han' peker mest naturlig tilbake på 'Herren', mens konteksten tyder på at det er Israel som slår, forfølger og slår videre. 'De' bevarer tvetydigheten bedre."
       }
     ]
   },
@@ -87,11 +101,17 @@
     "bookId": 6,
     "chapterId": 10,
     "verseId": 13,
-    "text": "Og solen sto stille, og månen stanset til folket hadde tatt hevn over sine fiender. Står ikke dette skrevet i «Den rettferdiges bok»? Solen ble stående midt på himmelen og hastet ikke med å gå ned – i nærmere en hel dag.",
+    "text": "Og solen sto stille, og månen stanset til folket hadde hevnet seg på sine fiender. Står ikke dette skrevet i «Den rettferdiges bok»? Solen ble stående midt på himmelen og hastet ikke med å gå ned – i nærmere en hel dag.",
     "versions": [
       {
         "text": "Og solen sto stille, og månen stanset til folket hadde tatt hevn over sine fiender. Står ikke dette skrevet i «Den rettferdiges bok»? Solen ble stående midt på himmelen og hastet ikke med å gå ned, nærmere en hel dag.",
         "explanation": "Uttrykket 'nærmere en hel dag' henger litt løst. Med tankestrek og 'i' blir det tydeligere at dette er en tidsangivelse: 'i nærmere en hel dag'."
+      },
+      {
+        "text": "Og solen sto stille, og månen stanset til folket hadde tatt hevn over sine fiender. Står ikke dette skrevet i «Den rettferdiges bok»? Solen ble stående midt på himmelen og hastet ikke med å gå ned – i nærmere en hel dag.",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "'Tatt hevn over' er akseptabelt, men 'hevnet seg på' er mer idiomatisk norsk og like nøyaktig som oversettelse av 'יִקֹּם'. Verset har 1 revisjon som gjaldt en annen del av verset, så dette er en ny observasjon."
       }
     ]
   },
@@ -147,7 +167,15 @@
     "bookId": 6,
     "chapterId": 10,
     "verseId": 21,
-    "text": "Hele hæren vendte velberget tilbake til Josva i leiren ved Makkeda. Ingen våget å kny mot Israels barn."
+    "text": "Hele hæren vendte velberget tilbake til Josva i leiren ved Makkeda. Ingen våget å si et ord mot Israels barn.",
+    "versions": [
+      {
+        "text": "Hele hæren vendte velberget tilbake til Josva i leiren ved Makkeda. Ingen våget å kny mot Israels barn.",
+        "type": "error",
+        "severity": "minor",
+        "explanation": "Det hebraiske uttrykket 'לֹא חָרַץ ... לְאִישׁ אֶת לְשֹׁנוֹ' betyr bokstavelig 'ingen hvesset sin tunge mot noen'. 'Å kny' er litt uformelt og betyr å klage svakt/mumle, men det hebraiske uttrykket handler mer om at ingen turte å åpne munnen eller tale imot dem. 'Si et ord mot' er mer presist."
+      }
+    ]
   },
   {
     "bookId": 6,

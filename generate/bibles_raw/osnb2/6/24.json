@@ -9,7 +9,15 @@
     "bookId": 6,
     "chapterId": 24,
     "verseId": 2,
-    "text": "Josva sa til hele folket: «Så sier Herren, Israels Gud: På den andre siden av elven bodde fedrene deres i gammel tid, Tarah, far til Abraham og Nakor, og de dyrket andre guder."
+    "text": "Josva sa til hele folket: «Så sier Herren, Israels Gud: På den andre siden av elven bodde fedrene deres i gammel tid – Tarah, far til Abraham og far til Nakor – og de dyrket andre guder.",
+    "versions": [
+      {
+        "text": "Josva sa til hele folket: «Så sier Herren, Israels Gud: På den andre siden av elven bodde fedrene deres i gammel tid, Tarah, far til Abraham og Nakor, og de dyrket andre guder.",
+        "type": "grammar",
+        "severity": "minor",
+        "explanation": "Den hebraiske teksten sier 'Tarah, far til Abraham og far til Nakor' – altså at Tarah var far til begge. I den nåværende oversettelsen kan det tolkes som at Abraham og Nakor er likestilte, men det er tydeligere å gjenta 'far til' for å gjenspeile originalteksten der begge er sønner av Tarah."
+      }
+    ]
   },
   {
     "bookId": 6,
@@ -69,7 +77,15 @@
     "bookId": 6,
     "chapterId": 24,
     "verseId": 12,
-    "text": "Jeg sendte vepser foran dere, og de drev dem bort – de to amoritterkongene. Det skjedde ikke med ditt sverd eller din bue."
+    "text": "Jeg sendte vepser foran dere, som drev de to amoritterkongene bort for dere. Det skjedde ikke med ditt sverd eller din bue.",
+    "versions": [
+      {
+        "text": "Jeg sendte vepser foran dere, og de drev dem bort – de to amoritterkongene. Det skjedde ikke med ditt sverd eller din bue.",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "Den nåværende formuleringen er litt uklar med tanke på hva 'dem' refererer til og bruken av tankestrek. I originalteksten er 'de to amoritterkongene' objektet som ble drevet bort. En omformulering gjør setningen klarere."
+      }
+    ]
   },
   {
     "bookId": 6,
@@ -195,6 +211,14 @@
     "bookId": 6,
     "chapterId": 24,
     "verseId": 33,
-    "text": "Også Elasar, Arons sønn, døde. De gravla ham i Gibea, som tilhørte hans sønn Pinhas, den byen han hadde fått i Efraims fjellland."
+    "text": "Også Elasar, Arons sønn, døde. De gravla ham i Gibat-Pinhas, som var gitt til hans sønn Pinhas, i Efraims fjellland.",
+    "versions": [
+      {
+        "text": "Også Elasar, Arons sønn, døde. De gravla ham i Gibea, som tilhørte hans sønn Pinhas, den byen han hadde fått i Efraims fjellland.",
+        "type": "error",
+        "severity": "major",
+        "explanation": "Det hebraiske בְּגִבְעַת פִּֽינְחָ֣ס בְּנ֔וֹ betyr 'i Gibat-Pinhas, (som tilhørte) hans sønn (Pinhas)'. Gibat-Pinhas er et stedsnavn ('Pinhas' høyde'), ikke bare 'Gibea'. Og אֲשֶׁ֥ר נִתַּן־ל֖וֹ refererer til at stedet var gitt til Pinhas, ikke at det var en by. Oversettelsen 'den byen han hadde fått' legger til informasjon som ikke finnes i originalen."
+      }
+    ]
   }
 ]

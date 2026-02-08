@@ -9,7 +9,15 @@
     "bookId": 24,
     "chapterId": 6,
     "verseId": 2,
-    "text": "Den vakre og bortskjemte, Sions datter, skal jeg gjøre taus."
+    "text": "Den vakre og bortskjemte – jeg tilintetgjør Sions datter.",
+    "versions": [
+      {
+        "text": "Den vakre og bortskjemte, Sions datter, skal jeg gjøre taus.",
+        "type": "error",
+        "severity": "major",
+        "explanation": "Verbet דָּמִיתִי fra roten דמה kan bety 'ødelegge/tilintetgjøre' (som i Hosea 4:6), ikke 'gjøre taus'. Roten דמם betyr 'være stille', men her er det דמה i pi'el som betyr 'ødelegge'. Oversettelsen 'gjøre taus' er misvisende og gir feil mening i konteksten."
+      }
+    ]
   },
   {
     "bookId": 24,
@@ -39,7 +47,15 @@
     "bookId": 24,
     "chapterId": 6,
     "verseId": 7,
-    "text": "Som en brønn holder vannet friskt, slik holder hun sin ondskap frisk. Vold og ødeleggelse høres i henne; sykdom og sår er stadig for mitt ansikt."
+    "text": "Som en cisterne holder vannet sitt kjølig, slik holder hun sin ondskap frisk. Vold og ødeleggelse høres i henne; sykdom og sår er stadig for mitt ansikt.",
+    "versions": [
+      {
+        "text": "Som en brønn holder vannet friskt, slik holder hun sin ondskap frisk. Vold og ødeleggelse høres i henne; sykdom og sår er stadig for mitt ansikt.",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "Det hebraiske בַּיִר betyr 'cisterne' eller 'brønn', og הָקִיר betyr 'holde kaldt/kjølig' snarere enn 'friskt'. En cisterne som holder vannet kjølig er det mest presise bildet. 'Friskt' er akseptabelt men 'kjølig' er nærmere originalen."
+      }
+    ]
   },
   {
     "bookId": 24,
@@ -105,13 +121,29 @@
     "bookId": 24,
     "chapterId": 6,
     "verseId": 17,
-    "text": "Jeg satte vektere over dere og sa: «Lytt til hornets lyd!» Men de sa: «Vi vil ikke lytte.»"
+    "text": "Jeg satte vektere over dere: «Lytt til hornets lyd!» Men de sa: «Vi vil ikke lytte.»",
+    "versions": [
+      {
+        "text": "Jeg satte vektere over dere og sa: «Lytt til hornets lyd!» Men de sa: «Vi vil ikke lytte.»",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "I originalteksten er det ingen 'og sa' (וַיֹּאמֶר) knyttet til Gud. Oppfordringen 'Lytt til hornets lyd' er vekternes budskap, ikke noe Gud sier direkte. 'Og sa' er lagt til og gir et litt feilaktig inntrykk av hvem som taler. En enklere formulering med kolon etter 'dere' formidler dette bedre."
+      }
+    ]
   },
   {
     "bookId": 24,
     "chapterId": 6,
     "verseId": 18,
-    "text": "Derfor, hør, dere folkeslag! Vit, du menighet, hva som skal skje med dem."
+    "text": "Derfor, hør, dere folkeslag! Vit, du menighet, hva som er blant dem.",
+    "versions": [
+      {
+        "text": "Derfor, hør, dere folkeslag! Vit, du menighet, hva som skal skje med dem.",
+        "type": "error",
+        "severity": "major",
+        "explanation": "Det hebraiske אֶת־אֲשֶׁר־בָּם betyr 'det som er blant/i dem', altså hva som finnes/foregår blant israelittene. Oversettelsen 'hva som skal skje med dem' legger til et futuralt aspekt og endrer betydningen til å handle om fremtidige hendelser, mens originalen handler om den nåværende tilstanden blant folket."
+      }
+    ]
   },
   {
     "bookId": 24,
@@ -187,7 +219,15 @@
     "bookId": 24,
     "chapterId": 6,
     "verseId": 29,
-    "text": "Belgen blåser, blyet fortæres av ilden. Forgjeves renser smelteverket, de onde blir ikke skilt ut."
+    "text": "Belgen blåser kraftig, blyet er fortært av ilden. Forgjeves smelter smelteren, de onde blir ikke skilt ut.",
+    "versions": [
+      {
+        "text": "Belgen blåser, blyet fortæres av ilden. Forgjeves renser smelteverket, de onde blir ikke skilt ut.",
+        "type": "error",
+        "severity": "major",
+        "explanation": "נָחַר betyr 'er forbrent/blåser kraftig' (impliserer intensitet). צָרַף צָרוֹף er 'smelteren smelter' (en person som renser metall), ikke 'smelteverket renser'. Dessuten betyr תַּם עֹפָרֶת at blyet er oppbrukt/fortært (resultat), ikke at det 'fortæres' (pågående)."
+      }
+    ]
   },
   {
     "bookId": 24,

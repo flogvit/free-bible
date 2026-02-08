@@ -9,7 +9,7 @@
     "bookId": 18,
     "chapterId": 26,
     "verseId": 2,
-    "text": "Hvor godt du har hjulpet den som er uten kraft! Hvor du har styrket armen som mangler styrke!",
+    "text": "Så godt du har hjulpet den som er uten kraft! Så godt du har styrket armen som mangler styrke!",
     "versions": [
       {
         "text": "Hvor godt du har hjulpet den som er uten kraft! Hvor du har frelst den armen som er uten styrke!",
@@ -18,6 +18,12 @@
       {
         "text": "Hvor godt du har hjulpet den som er uten kraft! Hvor du har frelst armen som er uten styrke!",
         "explanation": "Hebraisk «הוֹשַׁעְתָּ» betyr primært 'frelse/redde', men i konteksten av å hjelpe en svak arm, gir 'styrket' bedre mening på norsk. Dessuten mangler det et verb foran 'armen' i andre setning for å matche strukturen. 'Mangler styrke' varierer språket og unngår gjentakelse av 'uten'."
+      },
+      {
+        "text": "Hvor godt du har hjulpet den som er uten kraft! Hvor du har styrket armen som mangler styrke!",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "Hebraisk «מֶה» brukt retorisk her er ironisk/sarkastisk. 'Hvor godt' fungerer, men den andre setningen mangler et tilsvarende uttrykk. 'Så godt' gjentas i begge ledd for å gi jevnere parallellisme og tydeliggjøre den sarkastiske tonen. Imidlertid har dette verset allerede 2 revisjoner, så dette er kun en mindre forbedring."
       }
     ]
   },
@@ -37,7 +43,15 @@
     "bookId": 18,
     "chapterId": 26,
     "verseId": 5,
-    "text": "De døde skjelver under vannene, de og alt som bor der."
+    "text": "De døde skjelver under vannene, de og de som bor hos dem.",
+    "versions": [
+      {
+        "text": "De døde skjelver under vannene, de og alt som bor der.",
+        "type": "error",
+        "severity": "major",
+        "explanation": "«וְשֹׁכְנֵיהֶם» betyr 'og deres beboere/innbyggere' – altså de som bor hos dem (de døde/refaim). 'Alt som bor der' er unøyaktig fordi det refererer til stedet, mens hebraisk refererer til dem som bor sammen med de døde. Dessuten bruker hebraisk ikke 'alt' (כֹּל) her."
+      }
+    ]
   },
   {
     "bookId": 18,
@@ -49,11 +63,17 @@
     "bookId": 18,
     "chapterId": 26,
     "verseId": 7,
-    "text": "Han spente ut nordenshimmel over det tomme rom, han hengte jorden opp over intet.",
+    "text": "Han spente ut nordens himmel over det tomme rom, han hengte jorden opp over intet.",
     "versions": [
       {
         "text": "Han spente ut himmelen i nord over det tomme rom, han hengte jorden opp over intet.",
         "explanation": "«צָפוֹן» (nord) refererer her sannsynligvis til nordenshimmel eller den nordlige himmelhvelving, ikke at himmelen ble spent ut 'i nord'. Uttrykket 'nordenshimmel' er mer poetisk og nøyaktig."
+      },
+      {
+        "text": "Han spente ut nordenshimmel over det tomme rom, han hengte jorden opp over intet.",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "'Nordenshimmel' som ett ord er uvanlig og unaturlig på norsk. 'Nordens himmel' (to ord) er mer idiomatisk norsk bokmål."
       }
     ]
   },
@@ -97,7 +117,15 @@
     "bookId": 18,
     "chapterId": 26,
     "verseId": 12,
-    "text": "Ved sin kraft stilnet han havet, og ved sin forstand knuste han Rahab."
+    "text": "Ved sin kraft rørte han opp havet, og ved sin forstand knuste han Rahab.",
+    "versions": [
+      {
+        "text": "Ved sin kraft stilnet han havet, og ved sin forstand knuste han Rahab.",
+        "type": "error",
+        "severity": "minor",
+        "explanation": "Hebraisk «רָגַע» i denne konteksten betyr mest sannsynlig 'å røre opp/opprøre' (jf. Jes 51:15), ikke 'å stille/roe'. Det handler om Guds makt over havets kaoskrefter, parallelt med å knuse Rahab. Å 'stille' havet gir motsatt mening av den tiltenkte poetiske parallellen."
+      }
+    ]
   },
   {
     "bookId": 18,

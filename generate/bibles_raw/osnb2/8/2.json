@@ -3,7 +3,15 @@
     "bookId": 8,
     "chapterId": 2,
     "verseId": 1,
-    "text": "Noomi hadde en slektning på sin manns side, en velstående og ansett mann av Elimeleks slekt. Hans navn var Boas."
+    "text": "Noomi hadde en slektning på sin manns side, en mektig og velstående mann av Elimeleks slekt. Hans navn var Boas.",
+    "versions": [
+      {
+        "text": "Noomi hadde en slektning på sin manns side, en velstående og ansett mann av Elimeleks slekt. Hans navn var Boas.",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "The Hebrew אִישׁ גִּבּוֹר חַיִל means 'a man of wealth/valor/standing' — often translated as 'a powerful/prominent man of wealth.' 'Ansett' (respected) is acceptable but 'mektig' (mighty/prominent) captures גִּבּוֹר more accurately. However, the current translation is reasonable and this is a minor nuance."
+      }
+    ]
   },
   {
     "bookId": 8,
@@ -39,7 +47,15 @@
     "bookId": 8,
     "chapterId": 2,
     "verseId": 7,
-    "text": "Hun spurte om hun kunne få sanke og samle blant kornbåndene etter høstfolkene. Så kom hun og har stått her fra tidlig om morgenen til nå. Hun har bare hvilt en kort stund i huset.»"
+    "text": "Hun spurte om hun kunne få sanke og samle blant kornbåndene etter høstfolkene. Så kom hun og har stått her fra tidlig om morgenen til nå. Hun har knapt sittet ned og hvilt.»",
+    "versions": [
+      {
+        "text": "Hun spurte om hun kunne få sanke og samle blant kornbåndene etter høstfolkene. Så kom hun og har stått her fra tidlig om morgenen til nå. Hun har bare hvilt en kort stund i huset.»",
+        "type": "error",
+        "severity": "major",
+        "explanation": "The phrase זֶה שִׁבְתָּהּ הַבַּיִת מְעָט is notoriously difficult, but 'i huset' is misleading since they are in the field. The phrase likely means she has hardly sat down/rested at all (i.e., she has worked diligently). 'Hvilt en kort stund i huset' suggests she went to a building, which is not the sense of the Hebrew. The word הַבַּיִת here likely refers to a shelter/shed in the field, or the phrase means 'her sitting down has been little.'"
+      }
+    ]
   },
   {
     "bookId": 8,
@@ -51,7 +67,15 @@
     "bookId": 8,
     "chapterId": 2,
     "verseId": 9,
-    "text": "Hold øynene dine på den åkeren hvor de høster, og følg etter dem. Jeg har pålagt mine tjenere ikke å røre deg. Blir du tørst, så gå bort til karene og drikk av det tjenerne har øst opp."
+    "text": "Hold øynene dine på den åkeren hvor de høster, og følg etter dem. Jeg har pålagt mine tjenere ikke å røre deg. Og når du er tørst, gå bort til karene og drikk av det tjenerne har øst opp.",
+    "versions": [
+      {
+        "text": "Hold øynene dine på den åkeren hvor de høster, og følg etter dem. Jeg har pålagt mine tjenere ikke å røre deg. Blir du tørst, så gå bort til karene og drikk av det tjenerne har øst opp.",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "The Hebrew וְצָמִת means 'and when you are thirsty' — a straightforward conditional. 'Blir du tørst' is acceptable, but 'Og når du er tørst' is slightly more natural and accurate as it presents it as an expected occurrence rather than a hypothetical."
+      }
+    ]
   },
   {
     "bookId": 8,
@@ -75,7 +99,15 @@
     "bookId": 8,
     "chapterId": 2,
     "verseId": 13,
-    "text": "Hun sa: «Måtte jeg finne nåde for dine øyne, herre, for du har trøstet meg og talt vennlig til din tjenestekvinne, enda jeg ikke engang er som en av dine tjenestepiker.»"
+    "text": "Da sa hun: «Måtte jeg finne nåde for dine øyne, min herre, for du har trøstet meg og talt vennlig til din tjenestekvinne, enda jeg ikke engang er som en av dine tjenestepiker.»",
+    "versions": [
+      {
+        "text": "Hun sa: «Måtte jeg finne nåde for dine øyne, herre, for du har trøstet meg og talt vennlig til din tjenestekvinne, enda jeg ikke engang er som en av dine tjenestepiker.»",
+        "type": "grammar",
+        "severity": "minor",
+        "explanation": "The Hebrew אֲדֹנִי means 'my lord/master.' Translating as just 'herre' misses the possessive. 'Min herre' is more accurate. Also, adding 'Da' at the beginning reflects the conversational flow better."
+      }
+    ]
   },
   {
     "bookId": 8,
@@ -123,7 +155,15 @@
     "bookId": 8,
     "chapterId": 2,
     "verseId": 21,
-    "text": "Rut fra Moab sa: «Han sa også til meg: Hold deg til mine tjenestefolk til de er ferdige med hele min innhøsting.»"
+    "text": "Rut fra Moab sa: «Han sa også til meg: Hold deg nær til mine tjenere til de er ferdige med hele min innhøsting.»",
+    "versions": [
+      {
+        "text": "Rut fra Moab sa: «Han sa også til meg: Hold deg til mine tjenestefolk til de er ferdige med hele min innhøsting.»",
+        "type": "error",
+        "severity": "major",
+        "explanation": "The Hebrew הַנְּעָרִים (ne'arim) specifically refers to the male servants/workers. Rut quotes Boaz as saying to stay with his 'young men' (ne'arim), which is notable because in verse 22, Naomi corrects this to 'his maidservants' (na'arotav). This distinction between male and female workers is important for the narrative. 'Tjenestefolk' is gender-neutral and obscures this contrast. 'Tjenere' (male) preserves the distinction."
+      }
+    ]
   },
   {
     "bookId": 8,

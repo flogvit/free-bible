@@ -27,7 +27,15 @@
     "bookId": 14,
     "chapterId": 12,
     "verseId": 5,
-    "text": "Da kom profeten Sjemaja til Rehabeam og Judas ledere, som hadde samlet seg i Jerusalem på grunn av Sjisak, og han sa til dem: «Så sier Herren: Dere har forlatt meg, derfor har også jeg forlatt dere og gitt dere i Sjisjaks hånd.»"
+    "text": "Da kom profeten Sjemaja til Rehabeam og Judas ledere, som hadde samlet seg i Jerusalem på grunn av Sjisak, og han sa til dem: «Så sier Herren: Dere har forlatt meg, derfor har også jeg forlatt dere i Sjisaks hånd.»",
+    "versions": [
+      {
+        "text": "Da kom profeten Sjemaja til Rehabeam og Judas ledere, som hadde samlet seg i Jerusalem på grunn av Sjisak, og han sa til dem: «Så sier Herren: Dere har forlatt meg, derfor har også jeg forlatt dere og gitt dere i Sjisjaks hånd.»",
+        "type": "error",
+        "severity": "major",
+        "explanation": "The Hebrew says 'Sjisak' (שִׁישָׁק) consistently throughout the chapter, but in this verse the translation switches to 'Sjisjak' with an extra 'j'. Also, the Hebrew עָזַבְתִּי אֶתְכֶם בְּיַד־שִׁישָׁק means 'I have abandoned you in the hand of Shishak' — the phrase 'og gitt dere' (and given you) is added and not in the original. The verb עזב (abandon/leave) is used, not נתן (give)."
+      }
+    ]
   },
   {
     "bookId": 14,
@@ -39,7 +47,21 @@
     "bookId": 14,
     "chapterId": 12,
     "verseId": 7,
-    "text": "Da Herren så at de ydmyket seg, kom Herrens ord til Sjemaja: «De har ydmyket seg, derfor vil jeg ikke ødelegge dem. Jeg vil snart gi dem en utvei, og min vrede skal ikke bli utøst over Jerusalem ved Sjisjaks hånd."
+    "text": "Da Herren så at de ydmyket seg, kom Herrens ord til Sjemaja: «De har ydmyket seg, derfor vil jeg ikke ødelegge dem. Jeg vil om kort tid gi dem en utfrielse, og min vrede skal ikke bli utøst over Jerusalem ved Sjisaks hånd.",
+    "versions": [
+      {
+        "text": "Da Herren så at de ydmyket seg, kom Herrens ord til Sjemaja: «De har ydmyket seg, derfor vil jeg ikke ødelegge dem. Jeg vil snart gi dem en utvei, og min vrede skal ikke bli utøst over Jerusalem ved Sjisjaks hånd.",
+        "type": "error",
+        "severity": "major",
+        "explanation": "Same inconsistency: 'Sjisjaks' should be 'Sjisaks' to match the spelling used elsewhere in the chapter (v.2, 3, 4, 9). Also, the closing quotation mark is missing at the end — the quote that begins in v.7 ends in v.8, but v.7 itself is missing its formatting connection."
+      },
+      {
+        "text": "Da Herren så at de ydmyket seg, kom Herrens ord til Sjemaja: «De har ydmyket seg, derfor vil jeg ikke ødelegge dem. Jeg vil snart gi dem en utvei, og min vrede skal ikke bli utøst over Jerusalem ved Sjisaks hånd.»",
+        "type": "grammar",
+        "severity": "minor",
+        "explanation": "The Hebrew כִּמְעַט means 'in a little while' or 'soon' but in this context it modifies the deliverance — 'I will give them some deliverance' (i.e., partial/limited deliverance). Many translations render this as 'some measure of deliverance' rather than 'soon give them a way out'. The word לִפְלֵיטָה specifically means 'deliverance/escape' rather than 'utvei' (way out), though this is a minor nuance."
+      }
+    ]
   },
   {
     "bookId": 14,

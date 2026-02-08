@@ -15,7 +15,15 @@
     "bookId": 14,
     "chapterId": 6,
     "verseId": 2,
-    "text": "Jeg har bygget et hus til bolig for deg, et sted der du kan bo for evig.»"
+    "text": "Jeg har bygget et hus til bolig for deg, et sted der du kan bo for alltid.»",
+    "versions": [
+      {
+        "text": "Jeg har bygget et hus til bolig for deg, et sted der du kan bo for evig.»",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "'For alltid' er mer naturlig norsk bokmål enn 'for evig' i denne konteksten, og mer hverdagsnært i tråd med oversettelsens mål om å være lettlest."
+      }
+    ]
   },
   {
     "bookId": 14,
@@ -33,7 +41,15 @@
     "bookId": 14,
     "chapterId": 6,
     "verseId": 5,
-    "text": "Fra den dagen jeg førte mitt folk ut av Egypt, har jeg ikke utvalgt noen by blant alle Israels stammer til å bygge et hus der mitt navn skulle bo, og jeg valgte ingen mann til å være fyrste over mitt folk Israel."
+    "text": "Fra den dagen jeg førte mitt folk ut av Egypt, har jeg ikke utvalgt noen by blant alle Israels stammer til å bygge et hus der mitt navn skulle bo, og jeg har ikke utvalgt noen mann til å være fyrste over mitt folk Israel.",
+    "versions": [
+      {
+        "text": "Fra den dagen jeg førte mitt folk ut av Egypt, har jeg ikke utvalgt noen by blant alle Israels stammer til å bygge et hus der mitt navn skulle bo, og jeg valgte ingen mann til å være fyrste over mitt folk Israel.",
+        "type": "error",
+        "severity": "minor",
+        "explanation": "Begge leddene i verset bruker den samme vernektende formen (לֹא־בָחַרְתִּי). Oversettelsen bør gjenspeile denne parallellismen mer konsekvent. 'Jeg valgte ingen' er dessuten stilistisk forskjellig fra det første 'jeg har ikke utvalgt'."
+      }
+    ]
   },
   {
     "bookId": 14,
@@ -81,7 +97,15 @@
     "bookId": 14,
     "chapterId": 6,
     "verseId": 13,
-    "text": "Salomo hadde laget en forhøyning av bronse og satt den midt i forgården. Den var fem alen lang, fem alen bred og tre alen høy. Han stilte seg på den, falt på kne foran hele Israels forsamling og bredte hendene ut mot himmelen."
+    "text": "Salomo hadde laget en plattform av bronse og satt den midt i forgården. Den var fem alen lang, fem alen bred og tre alen høy. Han stilte seg på den, falt på kne foran hele Israels forsamling og bredte hendene ut mot himmelen.",
+    "versions": [
+      {
+        "text": "Salomo hadde laget en forhøyning av bronse og satt den midt i forgården. Den var fem alen lang, fem alen bred og tre alen høy. Han stilte seg på den, falt på kne foran hele Israels forsamling og bredte hendene ut mot himmelen.",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "Det hebraiske כִּיּוֹר (kijor) betyr vanligvis 'bekken' eller 'kar', men her brukes det om en forhøyet plattform. 'Forhøyning' er akseptabelt, men 'plattform' gir en klarere forestilling om gjenstanden Salomo sto på."
+      }
+    ]
   },
   {
     "bookId": 14,
@@ -99,7 +123,15 @@
     "bookId": 14,
     "chapterId": 6,
     "verseId": 16,
-    "text": "Så hold nå, Herre, Israels Gud, det du lovet din tjener David, min far, da du sa: Det skal aldri mangle en mann av din ætt til å sitte på Israels trone for mitt ansikt, så sant dine sønner akter på sin vei og vandrer etter min lov, slik du har vandret for mitt ansikt."
+    "text": "Så hold nå, Herre, Israels Gud, det du lovet din tjener David, min far, da du sa: Du skal aldri mangle en mann til å sitte for mitt ansikt på Israels trone, så sant dine sønner holder seg til sin vei og vandrer etter min lov, slik du har vandret for mitt ansikt.",
+    "versions": [
+      {
+        "text": "Så hold nå, Herre, Israels Gud, det du lovet din tjener David, min far, da du sa: Det skal aldri mangle en mann av din ætt til å sitte på Israels trone for mitt ansikt, så sant dine sønner akter på sin vei og vandrer etter min lov, slik du har vandret for mitt ansikt.",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "'Det skal aldri mangle en mann av din ætt' legger til 'av din ætt' som ikke finnes i den hebraiske teksten. Originalen sier לְךָ (lekha, 'for deg') = 'Du skal aldri mangle en mann for mitt ansikt sittende på Israels trone'. Også 'akter på' er litt stivt; 'holder seg til' er mer naturlig."
+      }
+    ]
   },
   {
     "bookId": 14,
@@ -135,7 +167,15 @@
     "bookId": 14,
     "chapterId": 6,
     "verseId": 22,
-    "text": "Når noen synder mot sin neste og det legges en ed på ham for å få ham til å sverge, og eden kommer fram foran ditt alter i dette huset,"
+    "text": "Når noen synder mot sin neste og han blir pålagt en forbannelsesed, og han kommer og sverger eden foran ditt alter i dette huset,",
+    "versions": [
+      {
+        "text": "Når noen synder mot sin neste og det legges en ed på ham for å få ham til å sverge, og eden kommer fram foran ditt alter i dette huset,",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "Det hebraiske אָלָה (alah) er spesifikt en forbannelsesed/selvforbannelsesed, ikke bare en generell ed. Og 'eden kommer fram' er litt uklar – originalen sier at personen kommer (וּבָא) og avlegger eden foran alteret."
+      }
+    ]
   },
   {
     "bookId": 14,
@@ -177,7 +217,15 @@
     "bookId": 14,
     "chapterId": 6,
     "verseId": 29,
-    "text": "enhver bønn og enhver ydmyk begjæring fra noe menneske eller fra hele ditt folk Israel, når de kjenner sin egen plage og smerte og strekker hendene ut mot dette huset,"
+    "text": "enhver bønn og enhver bønnfallelse fra noe menneske eller fra hele ditt folk Israel, når de kjenner sin egen plage og smerte og strekker hendene ut mot dette huset,",
+    "versions": [
+      {
+        "text": "enhver bønn og enhver ydmyk begjæring fra noe menneske eller fra hele ditt folk Israel, når de kjenner sin egen plage og smerte og strekker hendene ut mot dette huset,",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "'Ydmyk begjæring' er en noe tung og uklar formulering for תְּחִנָּה (tehinnah). 'Bønnfallelse' er mer presist og lettere å lese."
+      }
+    ]
   },
   {
     "bookId": 14,
@@ -213,7 +261,15 @@
     "bookId": 14,
     "chapterId": 6,
     "verseId": 35,
-    "text": "da må du høre deres bønn og rop fra himmelen og hjelpe dem til sin rett."
+    "text": "da må du høre deres bønn og rop fra himmelen og skaffe dem rett.",
+    "versions": [
+      {
+        "text": "da må du høre deres bønn og rop fra himmelen og hjelpe dem til sin rett.",
+        "type": "error",
+        "severity": "minor",
+        "explanation": "'Hjelpe dem til sin rett' er noe upresist. Det hebraiske וְעָשִׂיתָ מִשְׁפָּטָם betyr 'utfør/gjør deres rett/dom', altså 'skaffe dem rett' – Gud handler som dommer, ikke bare hjelper."
+      }
+    ]
   },
   {
     "bookId": 14,
@@ -255,6 +311,14 @@
     "bookId": 14,
     "chapterId": 6,
     "verseId": 42,
-    "text": "Herre Gud, avvis ikke din salvede! Husk nåden mot din tjener David!"
+    "text": "Herre Gud, avvis ikke din salvede! Husk din trofaste kjærlighet mot din tjener David!",
+    "versions": [
+      {
+        "text": "Herre Gud, avvis ikke din salvede! Husk nåden mot din tjener David!",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "חַסְדֵי (hasdei) er flertall av חֶסֶד (hesed) som betyr 'trofast kjærlighet/nåde'. Resten av oversettelsen bruker 'trofast kjærlighet' for hesed (f.eks. vers 14), så konsistens tilsier at det bør brukes her også. 'Nåden' alene dekker ikke hele betydningen av hesed."
+      }
+    ]
   }
 ]

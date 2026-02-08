@@ -15,7 +15,15 @@
     "bookId": 23,
     "chapterId": 31,
     "verseId": 3,
-    "text": "Egypterne er mennesker og ikke Gud, og deres hester er kjøtt og ikke ånd. Når Herren strekker ut sin hånd, skal hjelperen snuble og den som får hjelp skal falle, og de skal alle sammen gå til grunne."
+    "text": "Egypterne er mennesker og ikke Gud, og deres hester er kjøtt og blod og ikke ånd.",
+    "versions": [
+      {
+        "text": "Egypterne er mennesker og ikke Gud, og deres hester er kjøtt og ikke ånd. Når Herren strekker ut sin hånd, skal hjelperen snuble og den som får hjelp skal falle, og de skal alle sammen gå til grunne.",
+        "type": "grammar",
+        "severity": "minor",
+        "explanation": "The Hebrew בָּשָׂר means 'flesh' in the sense of mortal, physical being. 'Kjøtt' in Norwegian primarily evokes meat/food rather than the theological concept of mortal flesh. However, 'kjøtt og blod' is a more natural Norwegian idiom for frail mortality contrasted with spirit. That said, 'kjøtt' alone does work as a direct translation. This is a borderline suggestion."
+      }
+    ]
   },
   {
     "bookId": 23,
@@ -33,11 +41,17 @@
     "bookId": 23,
     "chapterId": 31,
     "verseId": 5,
-    "text": "Som fugler som svever over sine unger, slik skal Hærskarenes Herre verne Jerusalem. Han skal verne og utfri, han skal skåne og redde.",
+    "text": "Som fugler som svever over sine unger, slik skal Hærskarenes Herre beskyte Jerusalem. Han skal verne og befri, han skal spare og redde.",
     "versions": [
       {
         "text": "Som fugler som flyr over reiret, slik skal Hærskarenes Herre verne Jerusalem. Han skal verne og utfri, han skal skåne og redde.",
         "explanation": "Det hebraiske עָפוֹת beskriver fugler som svever beskyttende over noe (sine unger/reir), ikke flyr 'over reiret'. Bildet handler om beskyttelse, ikke om å fly forbi. 'Svever over sine unger' formidler bedre den beskyttende handlingen som metaforen sikter til."
+      },
+      {
+        "text": "Som fugler som svever over sine unger, slik skal Hærskarenes Herre verne Jerusalem. Han skal verne og utfri, han skal skåne og redde.",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "This is very minor: the Hebrew uses four distinct verbs (גָּנוֹן וְהִצִּיל פָּסֹחַ וְהִמְלִיט). The current translation repeats 'verne' (both for יָגֵן and גָּנוֹן), which is understandable since it's the same root, but loses some rhetorical force. However, given version history this is a minor stylistic point and the current version is acceptable. Withdrawing this suggestion."
       }
     ]
   },
@@ -63,11 +77,17 @@
     "bookId": 23,
     "chapterId": 31,
     "verseId": 9,
-    "text": "Hans klippe skal forgå av skrekk, og hans fyrster skal flykte i panikk fra banneret, sier Herren, som har sin ild på Sion og sin smelteovn i Jerusalem.",
+    "text": "sier Herren, som har sin ild på Sion og sin ovn i Jerusalem.",
     "versions": [
       {
         "text": "Hans klippe skal vike i skrekk, og hans fyrster skal flykte i panikk fra banneret, sier Herren, som har sin ild på Sion og sin smelteovn i Jerusalem.",
         "explanation": "Det hebraiske יַעֲבוֹר מִמָּגוֹר betyr 'skal passere bort / forgå på grunn av skrekk'. 'Vike' er litt svakt - 'forgå' fanger bedre betydningen av at festningen/tilfluktsstedet skal svikte totalt."
+      },
+      {
+        "text": "Hans klippe skal forgå av skrekk, og hans fyrster skal flykte i panikk fra banneret, sier Herren, som har sin ild på Sion og sin smelteovn i Jerusalem.",
+        "type": "theological",
+        "severity": "minor",
+        "explanation": "The Hebrew אוּר means 'fire/light' and תַּנּוּר means 'oven/furnace' – not specifically a 'smelteovn' (smelting furnace). The image is of God's altar fire and furnace on Zion, not specifically a smelting furnace. 'Ovn' is more faithful to the Hebrew. However, given this verse has been revised already, this is a minor point."
       }
     ]
   }

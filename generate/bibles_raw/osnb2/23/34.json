@@ -33,7 +33,15 @@
     "bookId": 23,
     "chapterId": 34,
     "verseId": 5,
-    "text": "For mitt sverd er blitt drukkent i himmelen. Se, det skal fare ned over Edom, over det folket jeg har lyst i bann, til dom."
+    "text": "For mitt sverd har drukket seg mett i himmelen. Se, det skal fare ned over Edom, over det folket jeg har lyst i bann, til dom.",
+    "versions": [
+      {
+        "text": "For mitt sverd er blitt drukkent i himmelen. Se, det skal fare ned over Edom, over det folket jeg har lyst i bann, til dom.",
+        "type": "error",
+        "severity": "major",
+        "explanation": "Det hebraiske 'רִוְּתָה' (fra רוה) betyr 'har drukket seg mett/er mettet'. 'Drukkent' er en uvanlig og uklar form på norsk. 'Har drukket seg mett' gir bedre mening og er mer idiomatisk."
+      }
+    ]
   },
   {
     "bookId": 23,
@@ -45,7 +53,15 @@
     "bookId": 23,
     "chapterId": 34,
     "verseId": 7,
-    "text": "Villokser skal falle sammen med dem, unge okser sammen med de sterke. Deres land skal bli mettet med blod, og deres jord skal bli gjødslet med fett."
+    "text": "Villokser skal falle sammen med dem, og unge okser sammen med de mektige. Deres land skal bli mettet med blod, og deres jord skal bli gjødslet med fett.",
+    "versions": [
+      {
+        "text": "Villokser skal falle sammen med dem, unge okser sammen med de sterke. Deres land skal bli mettet med blod, og deres jord skal bli gjødslet med fett.",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "'רְאֵמִים' (villokser) 'יָרְדוּ' betyr 'skal gå ned/falle ned', noe som er korrekt gjengitt. Men 'אַבִּירִים' betyr 'mektige/sterke (okser)' og 'de mektige' er en litt mer presis gjengivelse som bedre fanger det poetiske bildet av store, kraftige dyr."
+      }
+    ]
   },
   {
     "bookId": 23,
@@ -69,7 +85,15 @@
     "bookId": 23,
     "chapterId": 34,
     "verseId": 11,
-    "text": "Pelikan og pinnsvin skal ta det i eie, hornugle og ravn skal bo der. Han skal spenne ut over det en målesnor for ødeleggelse og et lodd for tomhet."
+    "text": "Pelikan og pinnsvin skal ta det i eie, hornugle og ravn skal bo der. Han skal spenne ut over det kaos' målesnor og tomhetens lodd.",
+    "versions": [
+      {
+        "text": "Pelikan og pinnsvin skal ta det i eie, hornugle og ravn skal bo der. Han skal spenne ut over det en målesnor for ødeleggelse og et lodd for tomhet.",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "Det hebraiske 'קַו־תֹהוּ וְאַבְנֵי־בֹהוּ' er et ekko av 1 Mos 1:2 (תֹהוּ וָבֹהוּ = 'øde og tom'). 'Kaos' målesnor og tomhetens lodd' bevarer den teologiske allusjonen bedre og er mer poetisk. 'Ødeleggelse' er en for fri gjengivelse av תֹהוּ."
+      }
+    ]
   },
   {
     "bookId": 23,
@@ -93,11 +117,17 @@
     "bookId": 23,
     "chapterId": 34,
     "verseId": 14,
-    "text": "Ørkenens villdyr skal møte sjakaler, og raggete demoner skal rope til hverandre. Ja, der skal nattens vesener slå seg ned og finne et hvilested.",
+    "text": "Ørkenens villdyr skal møte sjakaler, og bukkedemoner skal rope til hverandre. Ja, der skal Lilit slå seg ned og finne et hvilested.",
     "versions": [
       {
         "text": "Ørkenens dyr skal møte ulvene, og raggete demoner skal rope til hverandre. Ja, der skal nattens vesener slå seg ned og finne seg et hvilested.",
         "explanation": "'צִיִּים' og 'אִיִּים' er begge ord for ørkendyr/villdyr, ikke spesifikt ulver. 'Sjakaler' eller 'villdyr' er mer presist. Også fjernet 'seg' i 'finne seg et hvilested' for bedre flyt i muntlig lesning."
+      },
+      {
+        "text": "Ørkenens villdyr skal møte sjakaler, og raggete demoner skal rope til hverandre. Ja, der skal nattens vesener slå seg ned og finne et hvilested.",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "'שָׂעִיר' betyr bokstavelig 'hårete/raggete' og refererer tradisjonelt til bukkedemoner/satyr-lignende vesener, ikke bare 'raggete demoner'. 'לִּילִית' (Lilit) er et spesifikt egennavn i hebraisk tradisjon, og bør gjengis som sådant fremfor det vage 'nattens vesener'."
       }
     ]
   },

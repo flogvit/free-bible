@@ -27,13 +27,29 @@
     "bookId": 13,
     "chapterId": 24,
     "verseId": 5,
-    "text": "De ble fordelt ved loddkasting, begge gruppene på lik linje, for det var helligdomsførere og Guds førere både blant Elasars og Itamars etterkommere."
+    "text": "De ble fordelt ved loddkasting, begge gruppene på lik linje, for det fantes ledere for helligdommen og ledere for Gud både blant Elasars og Itamars etterkommere.",
+    "versions": [
+      {
+        "text": "De ble fordelt ved loddkasting, begge gruppene på lik linje, for det var helligdomsførere og Guds førere både blant Elasars og Itamars etterkommere.",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "Ordet 'førere' er uvanlig på norsk i denne sammenhengen. 'Ledere for helligdommen og ledere for Gud' er mer naturlig og korrekt."
+      }
+    ]
   },
   {
     "bookId": 13,
     "chapterId": 24,
     "verseId": 6,
-    "text": "Sjemaja, sønn av Netanel, som var skriver og levitt, skrev dem opp i nærvær av kongen og fyrstene, presten Sadok og Akimelek, sønn av Ebjatar, og overhodene for prestefamiliene og levittfamiliene. Én familie ble trukket ut for Elasar, og deretter én for Itamar."
+    "text": "Sjemaja, sønn av Netanel, som var skriver og levitt, skrev dem opp i nærvær av kongen og fyrstene, presten Sadok og Akimelek, sønn av Ebjatar, og overhodene for prestefamiliene og levittfamiliene. Én familie ble trukket ut for Elasar, og deretter én og én for Itamar.",
+    "versions": [
+      {
+        "text": "Sjemaja, sønn av Netanel, som var skriver og levitt, skrev dem opp i nærvær av kongen og fyrstene, presten Sadok og Akimelek, sønn av Ebjatar, og overhodene for prestefamiliene og levittfamiliene. Én familie ble trukket ut for Elasar, og deretter én for Itamar.",
+        "type": "error",
+        "severity": "major",
+        "explanation": "Den hebraiske teksten har 'אָחֻז אָחֻז' (achuz achuz) for Itamar, som indikerer en gjentatt/alternerende fordeling - 'én og én' for Itamar, i motsetning til kun 'én' for Elasar. Dette reflekterer fordelingen der Elasar fikk dobbelt (to familier per runde) sammenlignet med Itamar (én per runde)."
+      }
+    ]
   },
   {
     "bookId": 13,
@@ -135,7 +151,15 @@
     "bookId": 13,
     "chapterId": 24,
     "verseId": 23,
-    "text": "Jerias sønner: Amarja var den andre, Jahasiel den tredje, Jekamam den fjerde."
+    "text": "Jerias sønner: Amarja var den andre, Jahasiel den tredje og Jekamam den fjerde.",
+    "versions": [
+      {
+        "text": "Jerias sønner: Amarja var den andre, Jahasiel den tredje, Jekamam den fjerde.",
+        "type": "error",
+        "severity": "minor",
+        "explanation": "Med tre elementer i en liste bør det siste leddet innledes med 'og' for korrekt norsk grammatikk."
+      }
+    ]
   },
   {
     "bookId": 13,
@@ -153,7 +177,15 @@
     "bookId": 13,
     "chapterId": 24,
     "verseId": 26,
-    "text": "Meraris sønner var Mahli og Musji. Jaasijas sønn var hans sønn Beno."
+    "text": "Meraris sønner var Mahli og Musji. Jaasijas sønner: hans sønn Beno.",
+    "versions": [
+      {
+        "text": "Meraris sønner var Mahli og Musji. Jaasijas sønn var hans sønn Beno.",
+        "type": "error",
+        "severity": "major",
+        "explanation": "'בְּנֵי' er flertall 'sønner', ikke entall 'sønn'. Dessuten er 'בְנוֹ' (beno) her trolig et egennavn 'Beno' (som betyr 'hans sønn'), og teksten lister dette som etterkommere av Jaasija. Formuleringen 'Jaasijas sønn var hans sønn Beno' er forvirrende og upresist."
+      }
+    ]
   },
   {
     "bookId": 13,

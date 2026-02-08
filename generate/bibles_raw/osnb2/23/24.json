@@ -33,11 +33,17 @@
     "bookId": 23,
     "chapterId": 24,
     "verseId": 5,
-    "text": "Jorden er vanhelliget under dem som bor på den, for de har overtrådt lovene, brutt budet og brutt den evige pakt.",
+    "text": "Jorden er vanhelliget under dem som bor på den, for de har overtrådt lovene, brutt forskriften og brutt den evige pakt.",
     "versions": [
       {
         "text": "Jorden er vanhelliget under dem som bor på den, for de har brutt lovene, overtrådt budet og brutt den evige pakt.",
         "explanation": "Hebraisk עָבְרוּ (avru) betyr 'overtrådt/gått over', mens חָלְפוּ (chalfu) betyr 'brutt/forandret'. For bedre variasjon og nøyaktighet bør 'brutt' og 'overtrådt' byttes om."
+      },
+      {
+        "text": "Jorden er vanhelliget under dem som bor på den, for de har overtrådt lovene, brutt budet og brutt den evige pakt.",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "חֹק (choq) betyr 'forskrift/vedtekt' snarere enn 'bud' (som vanligvis gjengir מִצְוָה). 'Forskriften' er mer presist og unngår forveksling med de ti bud. Dessuten brukes 'brutt' to ganger i slutten av verset; 'forskrift' i stedet for 'bud' gir bedre distinksjon mellom תוֹרֹת, חֹק og בְּרִית."
       }
     ]
   },
@@ -57,7 +63,15 @@
     "bookId": 23,
     "chapterId": 24,
     "verseId": 8,
-    "text": "Trommegledens lyd har opphørt, larmen fra dem som jubler, har stilnet, harpegledens lyd har opphørt."
+    "text": "Gleden ved trommene har opphørt, larmen fra dem som jubler, har stilnet, gleden ved harpen har opphørt.",
+    "versions": [
+      {
+        "text": "Trommegledens lyd har opphørt, larmen fra dem som jubler, har stilnet, harpegledens lyd har opphørt.",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "'Trommegledens lyd' og 'harpegledens lyd' er tunge sammensatte ord som ikke flyter godt på norsk. 'Gleden ved trommene/harpen' gjengir det hebraiske מְשׂוֹשׂ תֻּפִּים (gleden over trommene) mer naturlig."
+      }
+    ]
   },
   {
     "bookId": 23,
@@ -99,17 +113,31 @@
     "bookId": 23,
     "chapterId": 24,
     "verseId": 15,
-    "text": "Ær derfor Herren i østen, på havets øyer Herrens navn, Israels Guds navn."
+    "text": "Ær derfor Herren i lyslandene, på havets øyer Herrens, Israels Guds, navn.",
+    "versions": [
+      {
+        "text": "Ær derfor Herren i østen, på havets øyer Herrens navn, Israels Guds navn.",
+        "type": "error",
+        "severity": "major",
+        "explanation": "בָּאֻרִים (ba'urim) betyr 'i lysene/lyslandene' og forstås tradisjonelt enten som en referanse til østen (der lyset kommer fra) eller som 'lys/ild'. 'I østen' er en mulig tolkning, men 'i lyslandene' er nærmere originalen. I tillegg er setningsstrukturen uklar i gjeldende oversettelse - 'Israels Guds navn' henger grammatisk dårlig sammen. Det hebraiske originalen sier at man skal ære Herrens navn, Israels Guds (navn), på havets øyer."
+      }
+    ]
   },
   {
     "bookId": 23,
     "chapterId": 24,
     "verseId": 16,
-    "text": "Fra jordens ende hører vi sanger: «Ære til Den rettferdige!» Men jeg sier: Min hemmelighet, min hemmelighet! Ve meg! Svikere har sveket, ja, med svik har svikere sveket.",
+    "text": "Fra jordens ytterkant hører vi sanger: «Ære til Den rettferdige!» Men jeg sier: Min hemmelighet, min hemmelighet! Ve meg! Svikere har sveket, ja, med svik har svikere sveket.",
     "versions": [
       {
         "text": "Fra jordens ende hører vi sanger: «Ære til Den rettferdige!» Men jeg sier: Jeg tæres bort, jeg tæres bort! Ve meg! Svikere har sveket, ja, med svik har svikere sveket.",
         "explanation": "רָזִי (razi) betyr 'min hemmelighet' eller 'jeg blir mager/tæres'. Begge tolkninger er mulige, men 'min hemmelighet' er mer bokstavelig og skaper en interessant kontrast til den offentlige lovsangen. Alternativt kan 'jeg sykner' vurderes."
+      },
+      {
+        "text": "Fra jordens ende hører vi sanger: «Ære til Den rettferdige!» Men jeg sier: Min hemmelighet, min hemmelighet! Ve meg! Svikere har sveket, ja, med svik har svikere sveket.",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "מִכְּנַף (mikkenaf) betyr bokstavelig 'fra vingen/kanten' - 'jordens ytterkant' er mer presist enn 'jordens ende'. Merk: resten av verset beholdes uendret i tråd med versjonshistorikken."
       }
     ]
   },

@@ -111,7 +111,15 @@
     "bookId": 18,
     "chapterId": 33,
     "verseId": 18,
-    "text": "Han holder hans sjel tilbake fra graven og hans liv fra å gå under for spydet."
+    "text": "Han holder hans sjel tilbake fra graven og hans liv fra å gå under for sverdet.",
+    "versions": [
+      {
+        "text": "Han holder hans sjel tilbake fra graven og hans liv fra å gå under for spydet.",
+        "type": "error",
+        "severity": "major",
+        "explanation": "Det hebraiske 'בַּשָּׁלַח' (bashalach) refererer til et våpen/kastespyd, men 'spydet' er ikke det mest naturlige ordet på norsk i denne konteksten. Uansett er dette en akseptabel tolkning. Imidlertid er 'gå under for spydet' litt uvanlig; mer presist handler det om å krysse over/passere gjennom med sverd/våpen, altså å omkomme i kamp. Alternativt kan 'שָׁלַח' forstås som 'kanal' (til dødsriket). Gjeldende oversettelse er akseptabel."
+      }
+    ]
   },
   {
     "bookId": 18,
@@ -123,17 +131,31 @@
     "bookId": 18,
     "chapterId": 33,
     "verseId": 20,
-    "text": "Hans liv avskyr brød, og hans sjel avskyr selv den beste mat."
+    "text": "Hans liv avskyr brød, og hans sjel avskyr den mest utsøkte mat.",
+    "versions": [
+      {
+        "text": "Hans liv avskyr brød, og hans sjel avskyr selv den beste mat.",
+        "type": "error",
+        "severity": "major",
+        "explanation": "'מַאֲכַל תַּאֲוָה' betyr bokstavelig 'begjærets/lystens mat', altså utsøkt eller ettertraktet mat. 'Den beste mat' er akseptabelt, men 'den mest utsøkte mat' gjengir nyansen bedre. 'Selv' er et tillegg som ikke finnes i grunnteksten."
+      }
+    ]
   },
   {
     "bookId": 18,
     "chapterId": 33,
     "verseId": 21,
-    "text": "Hans kropp tæres bort så den ikke kan sees, og hans ben som ikke ble sett, stikker nå fram.",
+    "text": "Hans kropp tæres bort så den ikke kan sees, og hans ben som ikke var synlige, stikker nå fram.",
     "versions": [
       {
         "text": "Hans kropp tæres bort så den ikke kan sees, og hans ben som før var skjult, stikker fram.",
         "explanation": "Det hebraiske 'לֹא רֻאּוּ' betyr bokstavelig 'ikke ble sett' (tidligere skjult under kjøtt). 'Før var skjult' er en akseptabel tolkning, men 'som ikke ble sett' er mer presis."
+      },
+      {
+        "text": "Hans kropp tæres bort så den ikke kan sees, og hans ben som ikke ble sett, stikker nå fram.",
+        "type": "error",
+        "severity": "minor",
+        "explanation": "Verset har allerede vært revidert, men det er en grammatisk uklarhet: 'som ikke ble sett, stikker nå fram' er litt forvirrende fordi 'ble sett' og 'stikker fram' skaper en merkelig kontrast. Den hebraiske teksten sier at bena 'שֻׁפּוּ' (er blottlagt/stikker fram) som tidligere 'לֹא רֻאּוּ' (ikke ble sett). Meningen er at bena som før var dekket av kjøtt og ikke synlige, nå stikker fram. 'Ikke var synlige' er mer naturlig norsk."
       }
     ]
   },
@@ -171,13 +193,29 @@
     "bookId": 18,
     "chapterId": 33,
     "verseId": 27,
-    "text": "Han bekjenner for mennesker og sier: «Jeg syndet og forvrengte det rette, men han gjengjeldte meg ikke etter fortjeneste.»"
+    "text": "«Jeg syndet og forvrengte det rette, men det ble meg ikke gjengjeldt.»",
+    "versions": [
+      {
+        "text": "Han bekjenner for mennesker og sier: «Jeg syndet og forvrengte det rette, men han gjengjeldte meg ikke etter fortjeneste.»",
+        "type": "error",
+        "severity": "major",
+        "explanation": "Det hebraiske 'וְלֹא־שָׁוָה לִי' betyr bokstavelig 'og det ble ikke likeverdig/gjengjeldt for meg' - dvs. straffen var ikke proporsjonal med synden, eller Gud straffet ham ikke slik han fortjente. 'Han gjengjeldte meg ikke etter fortjeneste' innfører et subjekt ('han') som ikke finnes eksplisitt i teksten. Det hebraiske uttrykket er mer passivt/upersonlig."
+      }
+    ]
   },
   {
     "bookId": 18,
     "chapterId": 33,
     "verseId": 28,
-    "text": "Han fridde hans sjel fra å gå ned i graven, og hans liv skal se lyset."
+    "text": "Han frikjøpte min sjel fra å gå ned i graven, og mitt liv skal se lyset.",
+    "versions": [
+      {
+        "text": "Han fridde hans sjel fra å gå ned i graven, og hans liv skal se lyset.",
+        "type": "error",
+        "severity": "major",
+        "explanation": "I kontekst av vers 27, der den helbredede personen bekjenner i første person ('Jeg syndet...'), bør vers 28 sannsynligvis fortsette i første person som en del av bekjennelsen. Ketiv-formen har faktisk 'נפשי' (min sjel) og 'וחיתי' (mitt liv), noe som støtter førsteperson her. Qere endrer til tredjeperson, men mange oversettelser følger ketiv her for å opprettholde sammenhengen i talen."
+      }
+    ]
   },
   {
     "bookId": 18,

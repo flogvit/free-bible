@@ -15,11 +15,17 @@
     "bookId": 19,
     "chapterId": 44,
     "verseId": 3,
-    "text": "Du drev ut folkeslag med din hånd og plantet dem der. Du rammet folkene og lot dem bre seg ut.",
+    "text": "Med din hånd drev du ut folkeslag og plantet dem. Du slo folkene og lot dem bre seg ut.",
     "versions": [
       {
         "text": "Med din hånd drev du ut folkeslag og plantet våre fedre der. Du knuste folkene og spredte dem.",
         "explanation": "Hebraisk וַתִּטָּעֵם ('og plantet dem') refererer til fedrene/Israel, ikke eksplisitt 'våre fedre'. Siste del וַֽתְּשַׁלְּחֵֽם handler om at Israel fikk bre seg ut/sendes ut (i positiv forstand), ikke at fiendene ble spredt."
+      },
+      {
+        "text": "Du drev ut folkeslag med din hånd og plantet dem der. Du rammet folkene og lot dem bre seg ut.",
+        "type": "error",
+        "severity": "major",
+        "explanation": "Den nåværende versjonen har 'plantet dem der' – men 'der' har ingen basis i teksten. Dessuten begynner verset med 'Du drev ut folkeslag med din hånd' men grunnteksten har strukturen 'Du – din hånd – folkeslag – drev ut' (אַתָּה יָדְךָ גּוֹיִם הוֹרַשְׁתָּ), der 'din hånd' er tematisert og bør stå først som instrument. Verbet תָּרַע betyr 'å slå/plage', ikke 'rammet' som er akseptabelt, men 'slo' er mer direkte. Merk: vi unngår den tidligere versjonen."
       }
     ]
   },
@@ -93,7 +99,15 @@
     "bookId": 19,
     "chapterId": 44,
     "verseId": 13,
-    "text": "Du selger ditt folk for ingenting og tjener ikke noe på salget."
+    "text": "Du selger ditt folk for ingenting og øker ikke prisen på dem.",
+    "versions": [
+      {
+        "text": "Du selger ditt folk for ingenting og tjener ikke noe på salget.",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "וְלֹא־רִבִּיתָ בִּמְחִירֵיהֶם betyr bokstavelig 'og du økte ikke (prisen) ved deres salgspris'. Poenget er at Gud ikke engang forsøkte å forhandle opp prisen – han solgte dem billig. 'Tjener ikke noe på salget' er en noe fri parafrase som mister nyansen om at Gud ikke satte en høy pris."
+      }
+    ]
   },
   {
     "bookId": 19,
@@ -111,7 +125,15 @@
     "bookId": 19,
     "chapterId": 44,
     "verseId": 16,
-    "text": "Hele dagen er min vanære foran meg, og skam dekker mitt ansikt,"
+    "text": "Hele dagen er min vanære foran meg, og skam dekker mitt ansikt",
+    "versions": [
+      {
+        "text": "Hele dagen er min vanære foran meg, og skam dekker mitt ansikt,",
+        "type": "grammar",
+        "severity": "minor",
+        "explanation": "Vers 16 og 17 henger sammen syntaktisk (vers 17 gir årsaken med מִקּוֹל), men vers 16 avsluttes med komma mens vers 17 allerede begynner med liten bokstav. For konsistens bør vers 16 enten avsluttes med komma (om det forstås som en del av vers 17) – men da bør det også tydeliggjøres. Kommaet er greit for å vise sammenhengen, men rent grammatisk bør norsk tekst enten ha punktum eller kolon. Et kolon eller utelatt komma ville vært klarere – men dette er en svært liten sak og kommaet er forståelig nok. Vurdering: ingen kritisk endring nødvendig."
+      }
+    ]
   },
   {
     "bookId": 19,
@@ -177,7 +199,15 @@
     "bookId": 19,
     "chapterId": 44,
     "verseId": 25,
-    "text": "Hvorfor skjuler du ditt ansikt? Hvorfor glemmer du vår nød og undertrykkelse?"
+    "text": "Hvorfor skjuler du ditt ansikt og glemmer vår nød og undertrykkelse?",
+    "versions": [
+      {
+        "text": "Hvorfor skjuler du ditt ansikt? Hvorfor glemmer du vår nød og undertrykkelse?",
+        "type": "error",
+        "severity": "major",
+        "explanation": "Grunnteksten har bare ett spørreord לָמָּה som dekker begge leddene. Den nåværende oversettelsen legger til et ekstra 'Hvorfor' som ikke finnes i originalen. Én sammenhengende setning med ett 'Hvorfor' er mer tro mot hebraisk."
+      }
+    ]
   },
   {
     "bookId": 19,

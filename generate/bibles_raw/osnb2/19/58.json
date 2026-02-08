@@ -3,13 +3,29 @@
     "bookId": 19,
     "chapterId": 58,
     "verseId": 1,
-    "text": "Til korlederen. «Ødelegg ikke.» En miktam av David."
+    "text": "Til korlederен. «Ødelegg ikke.» En miktam av David.",
+    "versions": [
+      {
+        "text": "Til korlederen. «Ødelegg ikke.» En miktam av David.",
+        "type": "grammar",
+        "severity": "minor",
+        "explanation": "Actually the current translation is fine. Let me re-check: 'korlederen' is correct Norwegian bokmål. No issue here."
+      }
+    ]
   },
   {
     "bookId": 19,
     "chapterId": 58,
     "verseId": 2,
-    "text": "Taler dere virkelig rettferdighet, dere stumme? Dømmer dere menneskenes barn med rettskaffenhet?"
+    "text": "Taler dere virkelig rettferdig, dere mektige? Dømmer dere menneskenes barn med rettskaffenhet?",
+    "versions": [
+      {
+        "text": "Taler dere virkelig rettferdighet, dere stumme? Dømmer dere menneskenes barn med rettskaffenhet?",
+        "type": "suggestion",
+        "severity": "major",
+        "explanation": "Det hebraiske אֵלֶם (elem) er omdiskutert. Mange oversettelser leser det som אֵלִם (elim, 'mektige/guder') i stedet for 'stumme'. Konteksten – der de tiltales som om de burde tale rett og dømme rettferdig – tyder sterkt på at de er maktpersoner/dommere, ikke 'stumme'. Også: צֶדֶק fungerer her adverbielt ('rettferdig'), ikke som substantiv ('rettferdighet')."
+      }
+    ]
   },
   {
     "bookId": 19,
@@ -75,7 +91,15 @@
     "bookId": 19,
     "chapterId": 58,
     "verseId": 11,
-    "text": "Den rettferdige skal glede seg når han ser hevnen, han skal vaske sine føtter i den ugudeliges blod."
+    "text": "Den rettferdige skal glede seg når han ser hevnen, han skal vaske sine skritt i den ugudeliges blod.",
+    "versions": [
+      {
+        "text": "Den rettferdige skal glede seg når han ser hevnen, han skal vaske sine føtter i den ugudeliges blod.",
+        "type": "error",
+        "severity": "major",
+        "explanation": "Det hebraiske פְּעָמָיו (pe'amav) betyr 'sine skritt/trinn', ikke 'sine føtter'. Ordet for føtter er רַגְלָיו (raglav). Bildet er at den rettferdige tråkker gjennom (vasker sine skritt/trinn i) den ugudeliges blod, altså et bilde på fullstendig seier."
+      }
+    ]
   },
   {
     "bookId": 19,

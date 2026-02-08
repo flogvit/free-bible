@@ -27,7 +27,15 @@
     "bookId": 19,
     "chapterId": 33,
     "verseId": 5,
-    "text": "Han elsker rettferdighet og rett. Jorden er full av HERRENS nåde."
+    "text": "Han elsker rettferdighet og rett. Jorden er full av HERRENS trofaste kjærlighet.",
+    "versions": [
+      {
+        "text": "Han elsker rettferdighet og rett. Jorden er full av HERRENS nåde.",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "Hebraisk 'חֶסֶד' (chesed) er et rikt begrep som betegner trofast, paktstro kjærlighet, mer enn bare 'nåde'. 'Trofaste kjærlighet' fanger bedre opp den hebraiske betydningen. Dessuten brukes 'nåde' allerede som oversettelse av חֶסֶד i vers 18 og 22, men der passer det bedre kontekstuelt."
+      }
+    ]
   },
   {
     "bookId": 19,
@@ -103,11 +111,17 @@
     "bookId": 19,
     "chapterId": 33,
     "verseId": 15,
-    "text": "Han som har formet deres hjerter, alle sammen, han forstår alle deres gjerninger.",
+    "text": "Han som har formet hvert eneste hjerte, han forstår alle deres gjerninger.",
     "versions": [
       {
         "text": "Han som har formet alles hjerter, han forstår alle deres gjerninger.",
         "explanation": "The Hebrew 'יַחַד' (yachad) means 'together/altogether' and modifies how God formed their hearts - either 'together' or 'each one'. The current 'alles hjerter' loses this nuance. A more literal rendering would capture this emphasis."
+      },
+      {
+        "text": "Han som har formet deres hjerter, alle sammen, han forstår alle deres gjerninger.",
+        "type": "grammar",
+        "severity": "minor",
+        "explanation": "Plasseringen av 'alle sammen' midt i setningen er litt klønete. 'Hvert eneste hjerte' fanger opp יַחַד-betydningen mer elegant og flyter bedre på norsk, uten å gå tilbake til den forrige versjonen."
       }
     ]
   },
@@ -157,6 +171,14 @@
     "bookId": 19,
     "chapterId": 33,
     "verseId": 22,
-    "text": "La din nåde være over oss, HERRE, slik vi håper på deg."
+    "text": "La din nåde være over oss, HERRE, slik som vi setter vårt håp til deg.",
+    "versions": [
+      {
+        "text": "La din nåde være over oss, HERRE, slik vi håper på deg.",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "'Slik vi håper på deg' er litt flatt. 'Slik som vi setter vårt håp til deg' gir bedre korrespondanse med det hebraiske יִחַלְנוּ som uttrykker en aktiv og tillitsfull forventning, og harmonerer med vers 18 der samme rot brukes."
+      }
+    ]
   }
 ]

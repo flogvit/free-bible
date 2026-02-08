@@ -39,11 +39,17 @@
     "bookId": 7,
     "chapterId": 8,
     "verseId": 6,
-    "text": "Men lederne i Sukkot svarte: «Er Sebahs og Salmunnas hånd allerede i din hånd, siden vi skulle gi brød til hæren din?»",
+    "text": "Men lederne i Sukkot svarte: «Er Sebahs og Salmunnas håndsflate allerede i din makt, siden vi skulle gi brød til hæren din?»",
     "versions": [
       {
         "text": "Men lederne i Sukkot svarte: «Har du allerede Sebah og Salmunna i din hånd, siden vi skulle gi brød til hæren din?»",
         "explanation": "Det hebraiske 'הֲכַף' (hakaf) betyr 'hånd/håndsflate', ikke bare en underforstått 'har du fanget'. Spørsmålet handler retorisk om hvorvidt kongenes makt (representert ved deres hånd) allerede er overvunnet. Alternativt kan nåværende oversettelse beholdes som en idiomatisk gjengivelse, men den bokstavelige betydningen går tapt."
+      },
+      {
+        "text": "Men lederne i Sukkot svarte: «Er Sebahs og Salmunnas hånd allerede i din hånd, siden vi skulle gi brød til hæren din?»",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "Den hebraiske teksten bruker 'כַף' (kaf) som spesifikt betyr 'håndsflate/håndflate', ikke bare 'hånd' (יד). Gjentakelsen av 'hånd... hånd' i nåværende oversettelse blir forvirrende. Å bruke 'håndsflate' for כַף og 'makt' for יד gir bedre differensiering og viser det retoriske poenget (er de allerede beseiret/i din makt?)."
       }
     ]
   },
@@ -87,7 +93,15 @@
     "bookId": 7,
     "chapterId": 8,
     "verseId": 12,
-    "text": "Sebah og Salmunna flyktet, men han forfulgte dem og tok til fange de to midjanittiske kongene, Sebah og Salmunna, og spredte hele hæren."
+    "text": "Sebah og Salmunna flyktet, men han forfulgte dem og tok til fange de to midjanittiske kongene, Sebah og Salmunna, og slo hele leiren med skrekk.",
+    "versions": [
+      {
+        "text": "Sebah og Salmunna flyktet, men han forfulgte dem og tok til fange de to midjanittiske kongene, Sebah og Salmunna, og spredte hele hæren.",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "Det hebraiske verbet הֶחֱרִיד (hifil av חרד) betyr 'å slå med redsel/skrekk', ikke 'å spre'. Å oversette med 'spredte' mister nyanseforskjellen – poenget er at hele leiren ble slått med panikk/skrekk."
+      }
+    ]
   },
   {
     "bookId": 7,
@@ -111,7 +125,15 @@
     "bookId": 7,
     "chapterId": 8,
     "verseId": 15,
-    "text": "Så kom han til mennene i Sukkot og sa: «Se, her er Sebah og Salmunna, som dere hånte meg for og sa: 'Har du allerede Sebah og Salmunna i din hånd, siden vi skulle gi dine utmattede menn brød?'»"
+    "text": "Så kom han til mennene i Sukkot og sa: «Se, her er Sebah og Salmunna, som dere hånte meg for og sa: 'Er Sebahs og Salmunnas hånd allerede i din hånd, siden vi skulle gi dine utmattede menn brød?'»",
+    "versions": [
+      {
+        "text": "Så kom han til mennene i Sukkot og sa: «Se, her er Sebah og Salmunna, som dere hånte meg for og sa: 'Har du allerede Sebah og Salmunna i din hånd, siden vi skulle gi dine utmattede menn brød?'»",
+        "type": "error",
+        "severity": "minor",
+        "explanation": "Sitatet i vers 15 bør samsvare med gjengivelsen i vers 6 for konsistens. Nåværende vers 15 bruker en formulering som ligner den opprinnelige (forkastede) versjonen av vers 6."
+      }
+    ]
   },
   {
     "bookId": 7,
@@ -213,11 +235,17 @@
     "bookId": 7,
     "chapterId": 8,
     "verseId": 30,
-    "text": "Gideon hadde sytti sønner, født av hans egen lend, for han hadde mange koner.",
+    "text": "Gideon hadde sytti sønner, som var kommet fra hans lend, for han hadde mange koner.",
     "versions": [
       {
         "text": "Gideon hadde sytti sønner som stammet fra ham selv, for han hadde mange koner.",
         "explanation": "Det hebraiske uttrykket 'יֹצְאֵי יְרֵכוֹ' (som gikk ut fra hans lend/hofte) er en idiomatisk måte å uttrykke biologisk farskap på. 'Stammet fra ham selv' er noe vagt; 'født av hans egen lend' bevarer den hebraiske bildespråket bedre."
+      },
+      {
+        "text": "Gideon hadde sytti sønner, født av hans egen lend, for han hadde mange koner.",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "'Født av hans egen lend' er litt klønete på norsk – man blir vanligvis ikke 'født av' en lend. Det hebraiske uttrykket 'יֹצְאֵי יְרֵכוֹ' betyr bokstavelig 'de som gikk ut fra hans lend/hofte'. 'Som var kommet fra hans lend' bevarer hebraisk bildespråk bedre og er grammatisk mer korrekt."
       }
     ]
   },

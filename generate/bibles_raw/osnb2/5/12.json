@@ -15,11 +15,17 @@
     "bookId": 5,
     "chapterId": 12,
     "verseId": 2,
-    "text": "Dere skal fullstendig ødelegge alle de steder hvor folkene dere skal drive ut, dyrket sine guder – på de høye fjell, på haugene og under hvert frodig tre.",
+    "text": "Dere skal fullstendig ødelegge alle de steder hvor folkene dere driver ut, dyrket sine guder – på de høye fjell, på haugene og under hvert frodig tre.",
     "versions": [
       {
         "text": "Dere skal fullstendig ødelegge alle de steder hvor folkene dere skal fordrive, dyrket sine guder – på de høye fjell, på haugene og under hvert frodig tre.",
         "explanation": "Det hebraiske 'יֹרְשִׁים' (yorshim) betyr 'arve/ta i besittelse' eller 'drive ut'. 'Fordrive' er akseptabelt, men 'drive ut' er mer direkte og flyter bedre muntlig."
+      },
+      {
+        "text": "Dere skal fullstendig ødelegge alle de steder hvor folkene dere skal drive ut, dyrket sine guder – på de høye fjell, på haugene og under hvert frodig tre.",
+        "type": "error",
+        "severity": "major",
+        "explanation": "Det hebraiske 'יֹרְשִׁים' er et partisipp (presens) – 'dere driver ut', ikke 'dere skal drive ut'. 'Skal drive ut' legger til en futurumsform som ikke finnes i originalteksten. Bemerk at den forrige versjonen brukte 'fordrive' og ble endret, men den nåværende versjonen har et annet problem med verbformen."
       }
     ]
   },
@@ -45,11 +51,17 @@
     "bookId": 5,
     "chapterId": 12,
     "verseId": 6,
-    "text": "Dit skal dere bringe brennofrene og slaktofrene deres, tienden og det dere løfter opp som gave, løfteofrene og de frivillige ofrene, og de førstefødte av storfe og småfe.",
+    "text": "Dit skal dere bringe brennofrene og slaktofrene deres, tienden og det dere løfter opp som gave, løftene og de frivillige gavene, og de førstefødte av storfe og småfe.",
     "versions": [
       {
         "text": "Dit skal dere bringe brennofrene og slaktofrene deres, tienden og det dere gir som gaver, løfteofrene og de frivillige ofrene, og de førstefødte av storfe og småfe.",
         "explanation": "Det hebraiske 'תְּרוּמַת יֶדְכֶם' (terumat yedkhem) betyr bokstavelig 'løfteoffer av deres hånd' – en gave som løftes opp. 'Det dere løfter opp som gave' er mer presist enn 'det dere gir som gaver'."
+      },
+      {
+        "text": "Dit skal dere bringe brennofrene og slaktofrene deres, tienden og det dere løfter opp som gave, løfteofrene og de frivillige ofrene, og de førstefødte av storfe og småfe.",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "'נְדָרִים' (nedarim) betyr 'løfter/lovnader' (vows), ikke 'løfteofre'. Begrepet 'løfteoffer' kan forveksles med 'terumah' (løftoffer/heving). 'Løfter' eller 'lovnader' er mer presist for nedarim."
       }
     ]
   },
@@ -81,11 +93,17 @@
     "bookId": 5,
     "chapterId": 12,
     "verseId": 11,
-    "text": "da skal dere til det stedet Herren deres Gud velger ut for å la sitt navn bo der, bringe alt det jeg befaler dere: brennofrene og slaktofrene deres, tienden og gavene deres, og det beste av løfteofrene dere lover Herren.",
+    "text": "da skal dere til det stedet Herren deres Gud velger ut for å la sitt navn bo der, bringe alt det jeg befaler dere: brennofrene og slaktofrene deres, tienden og det dere løfter opp som gave, og det beste av løftene dere avlegger for Herren.",
     "versions": [
       {
         "text": "da skal dere til det stedet Herren deres Gud velger ut for å la sitt navn bo der, bringe alt det jeg befaler dere: brennofrene og slaktofrene deres, tienden og gavene deres, og alle de utvalgte løfteofrene dere lover Herren.",
         "explanation": "Det hebraiske 'מִבְחַר' (mivchar) betyr 'det beste/utvalgte'. 'Det beste av løfteofrene' er mer idiomatisk på norsk enn 'alle de utvalgte løfteofrene'."
+      },
+      {
+        "text": "da skal dere til det stedet Herren deres Gud velger ut for å la sitt navn bo der, bringe alt det jeg befaler dere: brennofrene og slaktofrene deres, tienden og gavene deres, og det beste av løfteofrene dere lover Herren.",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "I vers 6 ble 'terumat yedkhem' presist oversatt som 'det dere løfter opp som gave', men her i vers 11 er det forenklet til bare 'gavene deres'. For konsistens og presisjon bør samme uttrykk brukes."
       }
     ]
   },
@@ -123,7 +141,15 @@
     "bookId": 5,
     "chapterId": 12,
     "verseId": 17,
-    "text": "Du har ikke lov til å spise i byene dine tienden av korn, vin og olje, de førstefødte av storfe og småfe, løfteofrene du har lovet, de frivillige ofrene eller det du løfter opp som gave."
+    "text": "Du har ikke lov til å spise i byene dine tienden av kornet, vinen og oljen din, de førstefødte av storfe og småfe, noen av løftene du avlegger, de frivillige gavene dine eller det du løfter opp som gave.",
+    "versions": [
+      {
+        "text": "Du har ikke lov til å spise i byene dine tienden av korn, vin og olje, de førstefødte av storfe og småfe, løfteofrene du har lovet, de frivillige ofrene eller det du løfter opp som gave.",
+        "type": "error",
+        "severity": "major",
+        "explanation": "Hebraisk har possessivt suffiks på 'korn, vin og olje' (דְּגָנְךָ, תִירֹשְׁךָ, יִצְהָרֶךָ) – 'ditt korn, din vin og din olje'. Dessuten er 'כָל־נְדָרֶיךָ' (kol nedarekha) 'alle dine løfter' – med 'כָל' (alle/noen av) som bør gjenspeiles."
+      }
+    ]
   },
   {
     "bookId": 5,
@@ -183,7 +209,15 @@
     "bookId": 5,
     "chapterId": 12,
     "verseId": 27,
-    "text": "Du skal ofre brennofrene dine – kjøttet og blodet – på Herrens, din Guds alter. Blodet av slaktofrene skal helles ut ved Herrens, din Guds alter, men kjøttet kan du spise."
+    "text": "Du skal ofre brennofrene dine – kjøttet og blodet – på Herrens, din Guds alter. Blodet av slaktofrene dine skal helles ut på Herrens, din Guds alter, men kjøttet kan du spise.",
+    "versions": [
+      {
+        "text": "Du skal ofre brennofrene dine – kjøttet og blodet – på Herrens, din Guds alter. Blodet av slaktofrene skal helles ut ved Herrens, din Guds alter, men kjøttet kan du spise.",
+        "type": "error",
+        "severity": "minor",
+        "explanation": "Hebraisk 'עַל' betyr 'på/over', ikke 'ved'. Blodet ble helt ut på alteret, ikke ved siden av det. Dessuten mangler possessivformen 'dine' etter 'slaktofrene' (זְבָחֶיךָ)."
+      }
+    ]
   },
   {
     "bookId": 5,
@@ -195,7 +229,15 @@
     "bookId": 5,
     "chapterId": 12,
     "verseId": 29,
-    "text": "Når Herren din Gud utrydder de folkene du kommer til for å fordrive, og du driver dem ut og bosetter deg i landet deres,"
+    "text": "Når Herren din Gud utrydder de folkene du kommer til for å ta i eie, og du tar deres plass og bosetter deg i landet deres,",
+    "versions": [
+      {
+        "text": "Når Herren din Gud utrydder de folkene du kommer til for å fordrive, og du driver dem ut og bosetter deg i landet deres,",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "'וְיָרַשְׁתָּ אֹתָם' betyr 'du tar dem i besittelse / tar deres plass', ikke bare 'driver dem ut'. Verbet ירש handler om å ta i besittelse/arve, noe som er et sentralt tema i Deuteronomium."
+      }
+    ]
   },
   {
     "bookId": 5,

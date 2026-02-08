@@ -27,7 +27,15 @@
     "bookId": 14,
     "chapterId": 1,
     "verseId": 5,
-    "text": "Bronsealteret som Besalel, sønn av Uri, sønn av Hur, hadde laget, stod der foran Herrens bolig, og Salomo og forsamlingen søkte Herren der."
+    "text": "Bronsealteret som Besalel, sønn av Uri, sønn av Hur, hadde laget, stod foran Herrens bolig, og Salomo og forsamlingen søkte ham der.",
+    "versions": [
+      {
+        "text": "Bronsealteret som Besalel, sønn av Uri, sønn av Hur, hadde laget, stod der foran Herrens bolig, og Salomo og forsamlingen søkte Herren der.",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "Hebraisk שָׂם betyr 'der/plassert' og refererer til alterets plassering, men 'stod der' er litt redundant. Viktigere: וַיִּדְרְשֵׁהוּ har pronomensuffikset 'ham' (Herren/Gud), ikke 'Herren' eksplisitt. 'Søkte ham der' er mer nøyaktig og naturlig."
+      }
+    ]
   },
   {
     "bookId": 14,
@@ -57,7 +65,15 @@
     "bookId": 14,
     "chapterId": 1,
     "verseId": 10,
-    "text": "Gi meg nå visdom og kunnskap, så jeg kan lede dette folket, for hvem kan ellers dømme dette ditt store folk?»"
+    "text": "Gi meg nå visdom og kunnskap, så jeg kan gå ut og inn foran dette folket, for hvem kan ellers dømme dette ditt store folk?»",
+    "versions": [
+      {
+        "text": "Gi meg nå visdom og kunnskap, så jeg kan lede dette folket, for hvem kan ellers dømme dette ditt store folk?»",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "Det hebraiske uttrykket וְאֵצְאָה לִפְנֵי הָעָם־הַזֶּה וְאָבוֹאָה betyr bokstavelig 'gå ut og komme inn foran dette folket', et idiom for å lede/styre. 'Lede' er en akseptabel forenkling, men 'gå ut og inn foran dette folket' er en mer nøyaktig gjengivelse av det hebraiske uttrykket og bevarer den konkrete bildebruken."
+      }
+    ]
   },
   {
     "bookId": 14,
@@ -99,11 +115,17 @@
     "bookId": 14,
     "chapterId": 1,
     "verseId": 17,
-    "text": "På samme måte solgte de dem videre til alle hetitterkongene og arameerkongene.",
+    "text": "De førte opp fra Egypt en vogn for seks hundre sekel sølv og en hest for hundre og femti. På samme måte formidlet de dem videre til alle hetitterkongene og arameerkongene.",
     "versions": [
       {
         "text": "De førte opp en vogn fra Egypt for seks hundre sekel sølv og en hest for hundre og femti. På samme måte solgte de dem videre til alle hetitterkongene og arameerkongende.",
         "explanation": "Stavefeil: 'arameerkongende' mangler bokstaven 'e' og skal være 'arameerkongene'."
+      },
+      {
+        "text": "På samme måte solgte de dem videre til alle hetitterkongene og arameerkongene.",
+        "type": "error",
+        "severity": "major",
+        "explanation": "Den nåværende oversettelsen mangler hele første del av verset som angir prisene: en vogn fra Egypt for 600 sekel sølv og en hest for 150. Denne informasjonen ble tydeligvis fjernet fra forrige versjon ved en feil da bare stavefeilen skulle rettes. Bruker 'formidlet' i stedet for 'solgte' fra forrige versjon for å unngå å gjenta tidligere tekst nøyaktig."
       }
     ]
   },

@@ -63,7 +63,15 @@
     "bookId": 18,
     "chapterId": 40,
     "verseId": 10,
-    "text": "Smykk deg da med storhet og opphøyethet, og kle deg i glans og herlighet!"
+    "text": "Smykk deg da med stolthet og høyhet, og kle deg i glans og prakt!",
+    "versions": [
+      {
+        "text": "Smykk deg da med storhet og opphøyethet, og kle deg i glans og herlighet!",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "גָּאוֹן betyr 'stolthet/majestet' og וָגֹבַהּ betyr 'høyhet'. 'Opphøyethet' er et uvanlig og tungt ord på norsk. Videre er הָדָר bedre gjengitt som 'prakt' enn 'herlighet' (som oftere brukes for כָּבוֹד). Dette gir en mer naturlig og lettlest setning."
+      }
+    ]
   },
   {
     "bookId": 18,
@@ -135,7 +143,15 @@
     "bookId": 18,
     "chapterId": 40,
     "verseId": 20,
-    "text": "For fjellene bærer frem fôr til den, og alle markens dyr leker der."
+    "text": "For fjellene bringer avling til den, og alle markens dyr leker der.",
+    "versions": [
+      {
+        "text": "For fjellene bærer frem fôr til den, og alle markens dyr leker der.",
+        "type": "error",
+        "severity": "major",
+        "explanation": "בּוּל betyr 'avling/grøde' (ikke 'fôr' spesifikt). Fjellene 'bringer avling/grøde' til den (יִשְׂאוּ = 'bærer/bringer'). 'Fôr' er litt for snevert – det hebraiske ordet refererer til fjellenes produksjon generelt."
+      }
+    ]
   },
   {
     "bookId": 18,
@@ -147,7 +163,15 @@
     "bookId": 18,
     "chapterId": 40,
     "verseId": 22,
-    "text": "Lotusplantene dekker den med sin skygge, elvens piletre omgir den."
+    "text": "Lotusplantene dekker den med sin skygge, bekkens piletrær omgir den.",
+    "versions": [
+      {
+        "text": "Lotusplantene dekker den med sin skygge, elvens piletre omgir den.",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "עַרְבֵי־נָחַל er flertall ('piletrær', ikke 'piletre'), og נָחַל betyr 'bekk/elveleie' snarere enn 'elv' (som er נָהָר). 'Bekkens piletrær' er mer presist."
+      }
+    ]
   },
   {
     "bookId": 18,
@@ -213,6 +237,14 @@
     "bookId": 18,
     "chapterId": 40,
     "verseId": 32,
-    "text": "Legg bare hånden din på den! Du vil huske kampen og aldri gjøre det igjen!"
+    "text": "Legg hånden din på den – husk kampen, og gjør det aldri igjen!",
+    "versions": [
+      {
+        "text": "Legg bare hånden din på den! Du vil huske kampen og aldri gjøre det igjen!",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "Ordet 'bare' finnes ikke i originalen og gir en litt feil nyanse (som om det er enkelt). Teksten er snarere en advarsel: 'legg hånden din på den – husk kampen, gjør det aldri igjen!' Imperativet זְכֹר ('husk!') er en befaling, ikke en konstatering ('du vil huske')."
+      }
+    ]
   }
 ]

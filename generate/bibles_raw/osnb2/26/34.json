@@ -45,7 +45,15 @@
     "bookId": 26,
     "chapterId": 34,
     "verseId": 8,
-    "text": "Så sant jeg lever, sier Herren Gud: Fordi sauene mine ble til rov og til føde for alle markens villdyr siden de var uten hyrde, og fordi hyrdene mine ikke spurte etter sauene, men gjette seg selv og ikke gjette sauene mine –"
+    "text": "Så sant jeg lever, sier Herren Gud: Sannelig, fordi sauene mine ble til rov og til føde for alle markens villdyr siden de var uten hyrde, og fordi hyrdene mine ikke spurte etter sauene, men gjette seg selv og ikke gjette sauene mine –",
+    "versions": [
+      {
+        "text": "Så sant jeg lever, sier Herren Gud: Fordi sauene mine ble til rov og til føde for alle markens villdyr siden de var uten hyrde, og fordi hyrdene mine ikke spurte etter sauene, men gjette seg selv og ikke gjette sauene mine –",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "Det hebraiske אִם־לֹא er en ed-formel som betyr 'sannelig' eller 'virkelig' (en sterk bekreftelse i en ed). Å legge til 'Sannelig' gjenspeiler denne edsformuleringen bedre og viser styrken i Guds utsagn."
+      }
+    ]
   },
   {
     "bookId": 26,
@@ -69,11 +77,17 @@
     "bookId": 26,
     "chapterId": 34,
     "verseId": 12,
-    "text": "Jeg vil berge dem fra alle steder der de ble spredt på den skytunge og mørke dagen.",
+    "text": "Slik en hyrde ser etter flokken sin den dagen han er blant sauene sine som har blitt spredt, slik vil jeg se etter sauene mine. Jeg vil berge dem fra alle steder der de ble spredt på den skytunge og mørke dagen.",
     "versions": [
       {
         "text": "Som en hyrde tar seg av flokken sin den dagen han er blant sauene som er spredt, slik vil jeg ta meg av sauene mine. Jeg vil berge dem fra alle steder der de ble spredt på den mørke og skyfulle dagen.",
         "explanation": "Den hebraiske frasen 'ענן וערפל' (sky og mørke/tåke) er et ordpar som ofte brukes sammen. 'Skytunge' gir bedre flyt på norsk og bevarer den poetiske kvaliteten bedre enn 'mørke og skyfulle'."
+      },
+      {
+        "text": "Jeg vil berge dem fra alle steder der de ble spredt på den skytunge og mørke dagen.",
+        "type": "error",
+        "severity": "major",
+        "explanation": "Den nåværende versjonen mangler den første halvdelen av verset, som inneholder sammenligningen med hyrden som tar seg av sin spredte flokk. Det hebraiske teksten har en tydelig simile (כְּבַקָּרַת רֹעֶה ... כֵּן אֲבַקֵּר) som må gjengis. Denne delen ble fjernet i en revisjon men den er en vesentlig del av versinnholdet."
       }
     ]
   },
@@ -129,7 +143,15 @@
     "bookId": 26,
     "chapterId": 34,
     "verseId": 21,
-    "text": "Fordi dere puffer med side og skulder og stanger alle de syke med hornene til dere har drevet dem bort,"
+    "text": "Fordi dere puffer med side og skulder og stanger alle de svake med hornene til dere har drevet dem ut,",
+    "versions": [
+      {
+        "text": "Fordi dere puffer med side og skulder og stanger alle de syke med hornene til dere har drevet dem bort,",
+        "type": "error",
+        "severity": "major",
+        "explanation": "Det hebraiske הַנַּחְלוֹת kommer fra חָלָה (svak/syk), men i konteksten av Esekiel 34 refererer det til de svake dyrene i flokken. 'Svake' er mer presist og konsistent med vers 4 der נַּחְלוֹת oversettes 'svake'. Også 'ut' (אֶל־הַחוּצָה betyr bokstavelig 'til utsiden') er mer nøyaktig enn 'bort'."
+      }
+    ]
   },
   {
     "bookId": 26,

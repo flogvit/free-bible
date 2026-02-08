@@ -21,7 +21,15 @@
     "bookId": 19,
     "chapterId": 17,
     "verseId": 3,
-    "text": "Du har prøvd mitt hjerte, du har gransket meg om natten. Du har lutret meg og funnet ingenting; det jeg har tenkt, skal ikke gå over mine lepper."
+    "text": "Du har prøvd mitt hjerte, du har gransket meg om natten, du har lutret meg uten å finne noe. Det jeg har tenkt, skal ikke gå over mine lepper.",
+    "versions": [
+      {
+        "text": "Du har prøvd mitt hjerte, du har gransket meg om natten. Du har lutret meg og funnet ingenting; det jeg har tenkt, skal ikke gå over mine lepper.",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "Den hebraiske teksten har 'בַל־תִּמְצָא' (du finner ikke / uten å finne) som er tettere knyttet til lutringshandlingen – det er ikke et separat resultat, men del av samme setning. 'Funnet ingenting' er litt klønete; 'uten å finne noe' flyter bedre og kobler seg naturlig til forrige ledd. Også bør de tre handlingene (prøvd, gransket, lutret) henge sammen med komma snarere enn punktum, da de utgjør en sammenhengende parallellisme i hebraisk."
+      }
+    ]
   },
   {
     "bookId": 19,
@@ -45,7 +53,15 @@
     "bookId": 19,
     "chapterId": 17,
     "verseId": 7,
-    "text": "Vis din underfulle nåde, du som frelser dem som søker tilflukt hos deg, fra dem som reiser seg mot din høyre hånd."
+    "text": "Vis din underfulle nåde, du som med din høyre hånd frelser dem som søker tilflukt hos deg fra dem som reiser seg mot dem.",
+    "versions": [
+      {
+        "text": "Vis din underfulle nåde, du som frelser dem som søker tilflukt hos deg, fra dem som reiser seg mot din høyre hånd.",
+        "type": "error",
+        "severity": "major",
+        "explanation": "Hebraisk 'בִּימִינֶךָ' (med din høyre hånd) beskriver mest sannsynlig midlet Gud bruker for å frelse, og 'מִמִּתְקוֹמְמִים' (fra dem som reiser seg) refererer til motstanderne som reiser seg mot de troende, ikke mot Guds høyre hånd. Den nåværende oversettelsen gir inntrykk av at fiendene reiser seg mot Guds høyre hånd, noe som er en mindre vanlig og teologisk mer problematisk tolkning."
+      }
+    ]
   },
   {
     "bookId": 19,
@@ -111,11 +127,17 @@
     "bookId": 19,
     "chapterId": 17,
     "verseId": 13,
-    "text": "Reis deg, Herre! Gå mot ham, slå ham ned! Frels min sjel fra den ugudelige, som er ditt sverd.",
+    "text": "Reis deg, Herre! Gå ham i møte, slå ham ned! Frels min sjel fra den ugudelige med ditt sverd.",
     "versions": [
       {
         "text": "Reis deg, Herre! Gå mot ham, slå ham ned! Frels min sjel fra den ugudelige med ditt sverd,",
         "explanation": "Hebraisk 'חַרְבֶּךָ' (ditt sverd) står i apposisjon til 'den ugudelige' - den ugudelige er Guds sverd/redskap for tukt. Alternativt kan det forstås som 'frels min sjel ved ditt sverd fra den ugudelige', men 'med ditt sverd' er tvetydig."
+      },
+      {
+        "text": "Reis deg, Herre! Gå mot ham, slå ham ned! Frels min sjel fra den ugudelige, som er ditt sverd.",
+        "type": "theological",
+        "severity": "major",
+        "explanation": "Tolkningen 'som er ditt sverd' (den ugudelige som Guds sverd/redskap) er mulig men kontroversiell. Den mer naturlige lesning av hebraisk 'חַרְבֶּךָ' er instrumentalt: 'med ditt sverd' – altså at Gud bruker sitt sverd til å befri salmisten fra den ugudelige. Selv om versjonshistorien viser at dette var en bevisst endring, er det teologisk problematisk å kalle den ugudelige for Guds sverd i denne konteksten, og de fleste oversettelser og kommentarer tolker det instrumentalt. Også 'קַדְּמָה פָנָיו' betyr å gå noen i møte/konfrontere, og 'Gå ham i møte' er mer presist enn 'Gå mot ham'."
       }
     ]
   },

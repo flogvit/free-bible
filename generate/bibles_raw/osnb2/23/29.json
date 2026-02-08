@@ -3,7 +3,15 @@
     "bookId": 23,
     "chapterId": 29,
     "verseId": 1,
-    "text": "Ve, Ariel, Ariel, byen der David slo leir! Legg år til år, la høytidene fullføre sin syklus."
+    "text": "Ve, Ariel, Ariel, byen der David slo leir! Legg år til år, la høytidene gå sin gang.",
+    "versions": [
+      {
+        "text": "Ve, Ariel, Ariel, byen der David slo leir! Legg år til år, la høytidene fullføre sin syklus.",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "'La høytidene fullføre sin syklus' er unødvendig tungt. 'La høytidene gå sin gang' er mer naturlig norsk og formidler den hebraiske meningen (יִנְקֹפוּ - gå rundt/fullføre sin runde) på en enklere måte."
+      }
+    ]
   },
   {
     "bookId": 23,
@@ -33,7 +41,15 @@
     "bookId": 23,
     "chapterId": 29,
     "verseId": 4,
-    "text": "Da skal du tale dypt nede fra jorden, og fra støvet skal dine ord komme dempet. Din stemme skal være som en ånds røst fra jorden, og fra støvet skal dine ord hviske."
+    "text": "Da skal du bli ydmyket og tale nede fra jorden, og fra støvet skal din tale komme dempet. Din stemme skal lyde som en gjenferd fra jorden, og fra støvet skal dine ord hviske.",
+    "versions": [
+      {
+        "text": "Da skal du tale dypt nede fra jorden, og fra støvet skal dine ord komme dempet. Din stemme skal være som en ånds røst fra jorden, og fra støvet skal dine ord hviske.",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "Hebraisk 'וְשָׁפַלְתְּ' betyr 'du skal bli ydmyket/fornedret' – et viktig element som mangler. 'כְּאוֹב' betyr 'som en ob/gjenferd' (en som maner frem døde), ikke bare 'en ånd'. 'Gjenferd' er mer presist. Også 'אִמְרָתֵךְ' (din tale/ditt ord) i første del gjengis bedre som 'din tale' for variasjon."
+      }
+    ]
   },
   {
     "bookId": 23,
@@ -75,7 +91,15 @@
     "bookId": 23,
     "chapterId": 29,
     "verseId": 10,
-    "text": "For Herren har utøst over dere en ånd av dyp søvn. Han har lukket deres øyne – profetene, og tilhyllet deres hoder – seerne."
+    "text": "For Herren har utøst over dere en ånd av dyp søvn. Han har lukket deres øyne, profetene, og tilhyllet deres hoder, seerne.",
+    "versions": [
+      {
+        "text": "For Herren har utøst over dere en ånd av dyp søvn. Han har lukket deres øyne – profetene, og tilhyllet deres hoder – seerne.",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "Tankestrekene kan misforstås. I den hebraiske teksten er 'profetene' en apposisjon til 'øyne' (øynene = profetene) og 'seerne' til 'hodene' (hodene = seerne). Komma er mer standard og tydelig for apposisjon i norsk."
+      }
+    ]
   },
   {
     "bookId": 23,
@@ -165,13 +189,29 @@
     "bookId": 23,
     "chapterId": 29,
     "verseId": 22,
-    "text": "Derfor sier Herren, han som fridde ut Abraham, til Jakobs hus: Nå skal Jakob ikke lenger skamme seg, nå skal ikke hans ansikt blekne."
+    "text": "Derfor sier Herren til Jakobs hus, han som frikjøpte Abraham: Nå skal Jakob ikke lenger skamme seg, nå skal ikke hans ansikt blekne.",
+    "versions": [
+      {
+        "text": "Derfor sier Herren, han som fridde ut Abraham, til Jakobs hus: Nå skal Jakob ikke lenger skamme seg, nå skal ikke hans ansikt blekne.",
+        "type": "error",
+        "severity": "major",
+        "explanation": "'אֲשֶׁר פָּדָה אֶת־אַבְרָהָם' (han som frikjøpte/løste ut Abraham) er en relativsetning som modifiserer Herren, men setningsstrukturen i originalen har 'til Jakobs hus' først. Viktigere er at 'פָּדָה' betyr 'frikjøpte/løste ut' (et teologisk viktig begrep om løskjøpelse), ikke bare 'fridde ut'. Ordvalget bør reflektere dette."
+      }
+    ]
   },
   {
     "bookId": 23,
     "chapterId": 29,
     "verseId": 23,
-    "text": "For når han ser sine barn, mine henders verk, i sin midte, skal de holde mitt navn hellig. De skal holde Jakobs Hellige hellig og frykte Israels Gud."
+    "text": "For når han ser sine barn, mine henders verk, i sin midte, skal de holde mitt navn hellig. De skal hellige Jakobs Hellige og ha ærefrykt for Israels Gud.",
+    "versions": [
+      {
+        "text": "For når han ser sine barn, mine henders verk, i sin midte, skal de holde mitt navn hellig. De skal holde Jakobs Hellige hellig og frykte Israels Gud.",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "'יַעֲרִיצוּ' betyr 'de skal ha ærefrykt for / vise ærefrykt overfor', ikke bare 'frykte'. Ærefrykt innebærer både frykt og ærbødighet, noe som er mer presist. Også 'hellige' er et bedre verb enn 'holde hellig' for variasjon og stil."
+      }
+    ]
   },
   {
     "bookId": 23,

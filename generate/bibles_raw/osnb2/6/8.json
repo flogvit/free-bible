@@ -87,17 +87,31 @@
     "bookId": 6,
     "chapterId": 8,
     "verseId": 13,
-    "text": "Folket stilte opp hele leiren nord for byen og baktroppen vest for byen. Den natten gikk Josva ned i dalen."
+    "text": "Folket stilte opp hele hovedleiren nord for byen og bakholdet vest for byen. Den natten gikk Josva ned i dalen.",
+    "versions": [
+      {
+        "text": "Folket stilte opp hele leiren nord for byen og baktroppen vest for byen. Den natten gikk Josva ned i dalen.",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "Hebraisk 'עֲקֵבוֹ' (aqevo) betyr bokstavelig 'dens hæl/bakdel', som her refererer til bakholdsstyrken (den bakerste delen av oppstillingen), ikke en 'baktropp' i vanlig militær forstand. 'Bakholdet' passer bedre med konteksten der det refereres til styrkene som er plassert i bakhold vest for byen."
+      }
+    ]
   },
   {
     "bookId": 6,
     "chapterId": 8,
     "verseId": 14,
-    "text": "Da kongen i Ai så dette, skyndte han og byens menn seg ut tidlig om morgenen for å møte Israel til kamp. Han og hele hans folk dro til det fastsatte stedet foran Jordan-dalen. Men han visste ikke at det lå et bakhold mot ham bak byen.",
+    "text": "Da kongen i Ai så dette, skyndte han og byens menn seg ut tidlig om morgenen for å møte Israel til kamp – han og hele hans folk – til det fastsatte stedet foran Jordan-dalen. Men han visste ikke at det lå et bakhold mot ham bak byen.",
     "versions": [
       {
         "text": "Da kongen i Ai så dette, skyndte han og byens menn seg ut tidlig om morgenen for å møte Israel til kamp. Han og hele hans folk dro til det avtalte stedet foran Araba-sletten. Men han visste ikke at det lå et bakhold mot ham bak byen.",
         "explanation": "למועד betyr 'til det fastsatte/bestemte stedet' (et kjent møtested for kamp). 'הערבה' refererer her til Jordan-dalen/Araba-dalen som geografisk område, ikke 'Araba-sletten' som egennavn."
+      },
+      {
+        "text": "Da kongen i Ai så dette, skyndte han og byens menn seg ut tidlig om morgenen for å møte Israel til kamp. Han og hele hans folk dro til det fastsatte stedet foran Jordan-dalen. Men han visste ikke at det lå et bakhold mot ham bak byen.",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "I den hebraiske teksten er 'הוא וכל-עמו' (han og hele hans folk) subjektet som rykket ut til kamp, ikke et separat utsagn. Gjeldende oversettelse bryter dette opp med 'Han og hele hans folk dro til det fastsatte stedet', men i originalen er det hele én sammenhengende handling: kongen, byens menn og hele hans folk skyndte seg ut for å møte Israel ved det fastsatte stedet."
       }
     ]
   },
@@ -111,7 +125,15 @@
     "bookId": 6,
     "chapterId": 8,
     "verseId": 16,
-    "text": "Alt folket i byen ble kalt sammen for å forfølge dem. De forfulgte Josva og ble trukket bort fra byen."
+    "text": "Alt folket i Ai ble ropt sammen for å forfølge dem. De forfulgte Josva og ble lokket bort fra byen.",
+    "versions": [
+      {
+        "text": "Alt folket i byen ble kalt sammen for å forfølge dem. De forfulgte Josva og ble trukket bort fra byen.",
+        "type": "error",
+        "severity": "major",
+        "explanation": "Hebraisk 'וַיִּזָּעֲקוּ' betyr 'ble ropt sammen/tilkalt' (nifal av זעק), ikke bare 'kalt sammen'. Videre sier teksten 'בָּעַי' (i Ai), ikke generelt 'i byen'. 'וַיִּנָּתְקוּ' betyr at de ble 'revet/trukket/lokket bort' – 'lokket bort' gir bedre mening i konteksten av bakholdsstrategien."
+      }
+    ]
   },
   {
     "bookId": 6,
@@ -213,7 +235,15 @@
     "bookId": 6,
     "chapterId": 8,
     "verseId": 33,
-    "text": "Hele Israel, både eldste, tilsynsmenn og dommere, sto på begge sider av arken, vendt mot de levittiske prestene som bar Herrens paktsark – både fremmede og innfødte. Halvparten av dem sto vendt mot Garisim-fjellet og halvparten mot Ebal-fjellet, slik Moses, Herrens tjener, først hadde befalt for å velsigne Israels folk."
+    "text": "Hele Israel, både eldste, tilsynsmenn og dommere, sto på begge sider av arken, vendt mot de levittiske prestene som bar Herrens paktsark – både fremmed og innfødt. Halvparten sto vendt mot Gerisim-fjellet og halvparten mot Ebal-fjellet, slik Moses, Herrens tjener, først hadde befalt for å velsigne Israels folk.",
+    "versions": [
+      {
+        "text": "Hele Israel, både eldste, tilsynsmenn og dommere, sto på begge sider av arken, vendt mot de levittiske prestene som bar Herrens paktsark – både fremmede og innfødte. Halvparten av dem sto vendt mot Garisim-fjellet og halvparten mot Ebal-fjellet, slik Moses, Herrens tjener, først hadde befalt for å velsigne Israels folk.",
+        "type": "error",
+        "severity": "major",
+        "explanation": "Det hebraiske fjellnavnet er 'הר-גרזים' (Har Gerizim), som normalt transkriberes som 'Gerisim' på norsk, ikke 'Garisim'. Standardformen i norske bibeloversettelser er 'Gerisim'."
+      }
+    ]
   },
   {
     "bookId": 6,

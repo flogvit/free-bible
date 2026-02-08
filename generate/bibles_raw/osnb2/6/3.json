@@ -39,7 +39,15 @@
     "bookId": 6,
     "chapterId": 3,
     "verseId": 5,
-    "text": "Josva sa til folket: «Hellige dere, for i morgen vil Herren gjøre underfulle gjerninger blant dere.»"
+    "text": "Josva sa til folket: «Hellige dere, for i morgen vil Herren gjøre undere blant dere.»",
+    "versions": [
+      {
+        "text": "Josva sa til folket: «Hellige dere, for i morgen vil Herren gjøre underfulle gjerninger blant dere.»",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "Det hebraiske נִפְלָאוֹת betyr 'undere' eller 'underfulle ting'. 'Underfulle gjerninger' er litt tungt og legger til 'gjerninger' som ikke er i originalen. 'Undere' er mer presist og naturlig norsk."
+      }
+    ]
   },
   {
     "bookId": 6,
@@ -51,7 +59,15 @@
     "bookId": 6,
     "chapterId": 3,
     "verseId": 7,
-    "text": "Herren sa til Josva: «I dag begynner jeg å gjøre deg stor i hele Israels øyne, så de skal kjenne at jeg er med deg slik jeg var med Moses."
+    "text": "Herren sa til Josva: «I dag begynner jeg å gjøre deg stor i hele Israels øyne, så de skal kjenne at slik jeg var med Moses, skal jeg være med deg.",
+    "versions": [
+      {
+        "text": "Herren sa til Josva: «I dag begynner jeg å gjøre deg stor i hele Israels øyne, så de skal kjenne at jeg er med deg slik jeg var med Moses.",
+        "type": "grammar",
+        "severity": "minor",
+        "explanation": "Den hebraiske ordstillingen כַּאֲשֶׁר הָיִיתִי עִם־מֹשֶׁה אֶהְיֶה עִמָּךְ legger vekt på sammenligningen: 'slik jeg var med Moses, skal jeg være med deg'. Den nåværende oversettelsen snur ordstillingen og mister noe av den retoriske vekten. I tillegg mangler det avsluttende anførselstegn (sitatet fortsetter i v.8), men det er allerede konsistent med vers 8 som avslutter sitatet."
+      }
+    ]
   },
   {
     "bookId": 6,
@@ -81,11 +97,17 @@
     "bookId": 6,
     "chapterId": 3,
     "verseId": 11,
-    "text": "Se, paktsarken til Herren over hele jorden går foran dere over Jordan.",
+    "text": "Se, paktsarken til hele jordens Herre går foran dere gjennom Jordan.",
     "versions": [
       {
         "text": "Se, paktsarken til hele jordens Herre går foran dere over Jordan.",
         "explanation": "Uttrykket אֲד֖וֹן כָּל־הָאָ֑רֶץ betyr 'Herren over hele jorden' (en tittel), ikke 'hele jordens Herre'. Ordstillingen 'Herren over hele jorden' gir en mer naturlig og teologisk presis gjengivelse av denne viktige tittelen."
+      },
+      {
+        "text": "Se, paktsarken til Herren over hele jorden går foran dere over Jordan.",
+        "type": "error",
+        "severity": "major",
+        "explanation": "Verset sier בַּיַּרְדֵּן (b'Yarden = 'i/gjennom Jordan'), ikke 'over Jordan'. Arken går gjennom Jordan (i elven), ikke over den. Preposisjonen בְּ betyr 'i/gjennom', ikke 'over' (som ville vært עַל eller את). Dette er en viktig nyanseforskjell i konteksten der arken faktisk bæres ned i og gjennom elven."
       }
     ]
   },

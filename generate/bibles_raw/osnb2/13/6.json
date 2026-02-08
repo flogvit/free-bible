@@ -63,7 +63,15 @@
     "bookId": 13,
     "chapterId": 6,
     "verseId": 11,
-    "text": "Elkana – hans sønn var Sofai, hans sønn Nahat,"
+    "text": "Elkana – Elkanas sønner var Sofai, hans sønn Nahat,",
+    "versions": [
+      {
+        "text": "Elkana – hans sønn var Sofai, hans sønn Nahat,",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "The Qere reading (בְּנֵי אֶלְקָנָה) indicates 'sons of Elkana' rather than just 'his son.' The current translation follows the Ketiv (בנו). While acceptable, following the Qere would be more precise: 'Elkanas sønner: Sofai, hans sønn Nahat.'"
+      }
+    ]
   },
   {
     "bookId": 13,
@@ -75,7 +83,15 @@
     "bookId": 13,
     "chapterId": 6,
     "verseId": 13,
-    "text": "Samuels sønner var: Den førstefødte, og den andre Abia."
+    "text": "Samuels sønner var: Den førstefødte Vasjni og den andre Abia.",
+    "versions": [
+      {
+        "text": "Samuels sønner var: Den førstefødte, og den andre Abia.",
+        "type": "error",
+        "severity": "major",
+        "explanation": "The Hebrew הַבְּכֹ֥ר וַשְׁנִ֖י (habbəkōr waššənî) is ambiguous and has been interpreted differently, but וַשְׁנִי (Vashni) is most likely a proper name here (as in some traditions), referring to the firstborn son. The current translation omits the name entirely, leaving a gap. Even if one follows the interpretation that the firstborn's name was accidentally omitted (cf. 1 Sam 8:2 where Joel is mentioned), the text as it stands in Chronicles has וַשְׁנִי which should be rendered as the name 'Vasjni'."
+      }
+    ]
   },
   {
     "bookId": 13,
@@ -231,7 +247,15 @@
     "bookId": 13,
     "chapterId": 6,
     "verseId": 39,
-    "text": "Dette var deres bosteder etter deres leirer innenfor deres grenser: Arons sønner av kehatittenes slekt – for loddet falt på dem –"
+    "text": "Dette var deres bosteder med sine innhegninger innenfor deres grenser: Arons sønner av kehatittenes slekt – for loddet falt på dem –",
+    "versions": [
+      {
+        "text": "Dette var deres bosteder etter deres leirer innenfor deres grenser: Arons sønner av kehatittenes slekt – for loddet falt på dem –",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "The word לְטִירוֹתָם (ləṭîrōṯām) means 'their encampments/settlements/enclosures' rather than 'their camps/leirer.' The word 'leirer' (camps) is a slightly misleading translation; 'innhegninger' or 'bosettinger' better captures the meaning of permanent settlements with walls/enclosures."
+      }
+    ]
   },
   {
     "bookId": 13,

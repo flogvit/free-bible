@@ -3,7 +3,15 @@
     "bookId": 19,
     "chapterId": 21,
     "verseId": 1,
-    "text": "Til korlederen. En salme av David."
+    "text": "For korlederen. En salme av David.",
+    "versions": [
+      {
+        "text": "Til korlederen. En salme av David.",
+        "type": "grammar",
+        "severity": "minor",
+        "explanation": "'לַמְנַצֵּחַ' oversettes tradisjonelt som 'For korlederen/dirigenten' med preposisjonen 'for' snarere enn 'til'. Dette er den vanlige norske konvensjonen i salmeoversettelser."
+      }
+    ]
   },
   {
     "bookId": 19,
@@ -69,7 +77,15 @@
     "bookId": 19,
     "chapterId": 21,
     "verseId": 10,
-    "text": "Du skal gjøre dem som en brennende ovn når du viser deg. Herren skal oppsluke dem i sin vrede, og ilden skal fortære dem."
+    "text": "Du skal gjøre dem som en brennende ovn når du viser ditt ansikt. Herren skal oppsluke dem i sin vrede, og ilden skal fortære dem.",
+    "versions": [
+      {
+        "text": "Du skal gjøre dem som en brennende ovn når du viser deg. Herren skal oppsluke dem i sin vrede, og ilden skal fortære dem.",
+        "type": "error",
+        "severity": "major",
+        "explanation": "'לְעֵת פָּנֶיךָ' betyr 'på den tid da du viser ditt ansikt' – altså når Gud åpenbarer seg. 'Når du viser deg' er akseptabelt, men 'når du viser ditt ansikt' gjengir det hebraiske uttrykket mer presist. Dessuten endres subjektet midt i verset fra 'du' (Gud tiltalt direkte) til 'Herren' (tredje person), noe som gjenspeiler den hebraiske teksten korrekt."
+      }
+    ]
   },
   {
     "bookId": 19,
@@ -87,12 +103,28 @@
     "bookId": 19,
     "chapterId": 21,
     "verseId": 13,
-    "text": "For du skal få dem til å snu seg, med din buestreng sikter du mot deres ansikter."
+    "text": "For du skal få dem til å vende ryggen, med dine buestrenger sikter du mot deres ansikter.",
+    "versions": [
+      {
+        "text": "For du skal få dem til å snu seg, med din buestreng sikter du mot deres ansikter.",
+        "type": "error",
+        "severity": "major",
+        "explanation": "'תְּשִׁיתֵמוֹ שֶׁכֶם' betyr bokstavelig 'du skal gjøre dem til rygg/skulder', dvs. du får dem til å vende ryggen (flykte). 'Snu seg' er for vagt – poenget er at fiendene flykter og viser ryggen. Dessuten er 'מֵיתָרֶיךָ' flertall (buestrenger), ikke entall."
+      }
+    ]
   },
   {
     "bookId": 19,
     "chapterId": 21,
     "verseId": 14,
-    "text": "Reis deg, Herre, i din styrke! Vi vil synge og lovprise din makt."
+    "text": "Opphøy deg, Herre, i din styrke! Vi vil synge og lovprise din makt.",
+    "versions": [
+      {
+        "text": "Reis deg, Herre, i din styrke! Vi vil synge og lovprise din makt.",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "'רוּמָה' betyr 'opphøy deg' eller 'vis deg opphøyet', ikke 'reis deg' (som ville vært 'קוּמָה'). Det handler om Guds opphøyelse og maktdemonstrasjon snarere enn å reise seg opp."
+      }
+    ]
   }
 ]

@@ -15,7 +15,15 @@
     "bookId": 23,
     "chapterId": 41,
     "verseId": 3,
-    "text": "Han forfølger dem og går trygt fram, en sti han ikke betrer med sine føtter."
+    "text": "Han forfølger dem og går trygt fram, på en sti hans føtter ikke har betrådt.",
+    "versions": [
+      {
+        "text": "Han forfølger dem og går trygt fram, en sti han ikke betrer med sine føtter.",
+        "type": "error",
+        "severity": "major",
+        "explanation": "Den hebraiske teksten sier at han passerer gjennom på en vei han ikke tidligere har gått med føttene - altså en ukjent vei han ferdes trygt på. Den nåværende oversettelsen er litt uklar og kan misforstås. Formuleringen bør gjøres klarere."
+      }
+    ]
   },
   {
     "bookId": 23,
@@ -81,11 +89,17 @@
     "bookId": 23,
     "chapterId": 41,
     "verseId": 14,
-    "text": "Frykt ikke, du orm Jakob, du lille Israel! Jeg hjelper deg, sier Herren, din gjenløser er Israels Hellige.",
+    "text": "Frykt ikke, du lille orm Jakob, du lille flokk Israel! Jeg hjelper deg, sier Herren, din gjenløser er Israels Hellige.",
     "versions": [
       {
         "text": "Frykt ikke, du orm Jakob, dere Israels menn! Jeg hjelper deg, sier Herren, din gjenløser er Israels Hellige.",
         "explanation": "מְתֵי (mete) betyr 'få i antall' eller 'de få', og refererer til Israels litenhet/fåtallighet, ikke 'menn'. Dette er en poetisk parallell til 'orm' - begge uttrykker Israels ringhet."
+      },
+      {
+        "text": "Frykt ikke, du orm Jakob, du lille Israel! Jeg hjelper deg, sier Herren, din gjenløser er Israels Hellige.",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "'תּוֹלַעַת' (orm) beskriver noe lite og ubetydelig. Nåværende versjon sier 'du orm Jakob, du lille Israel' - men 'orm' alene uten 'lille' føles brått, mens 'lille' bare brukes ved Israel. For bedre parallellisme og klarhet kan 'du lille orm Jakob' brukes, og 'מְתֵי' (de få) gjengis som 'lille flokk'."
       }
     ]
   },
@@ -147,13 +161,29 @@
     "bookId": 23,
     "chapterId": 41,
     "verseId": 23,
-    "text": "Fortell hva som skal skje i fremtiden, så vi kan vite at dere er guder! Gjør noe, godt eller ondt, så vi kan bli forferdet og se det sammen."
+    "text": "Fortell hva som skal skje heretter, så vi kan vite at dere er guder! Gjør noe, godt eller ondt, så vi kan bli forferdet og se det sammen.",
+    "versions": [
+      {
+        "text": "Fortell hva som skal skje i fremtiden, så vi kan vite at dere er guder! Gjør noe, godt eller ondt, så vi kan bli forferdet og se det sammen.",
+        "type": "error",
+        "severity": "major",
+        "explanation": "Hebraisk 'הָאֹתִיּוֹת לְאָחוֹר' betyr 'de kommende ting heretter/i ettertid' - det handler om ting som kommer etterpå. 'I fremtiden' er en akseptabel gjengivelse, men 'heretter' er mer presist og skiller seg bedre fra v.22 som allerede spurte om fremtidige ting."
+      }
+    ]
   },
   {
     "bookId": 23,
     "chapterId": 41,
     "verseId": 24,
-    "text": "Se, dere er ingenting, og deres gjerninger er tomhet. Avskyelig er den som velger dere."
+    "text": "Se, dere er ingenting, og deres gjerninger er tomhet. En styggedom er den som velger dere.",
+    "versions": [
+      {
+        "text": "Se, dere er ingenting, og deres gjerninger er tomhet. Avskyelig er den som velger dere.",
+        "type": "error",
+        "severity": "major",
+        "explanation": "'תּוֹעֵבָה' (to'evah) er et sterkt teologisk begrep som betyr 'styggedom/vederstyggelighet'. 'Avskyelig' er et adjektiv, mens hebraisk bruker substantivet 'styggedom/vederstyggelighet'. Men dette er egentlig en mindre nyanse. Viktigere: 'מֵאָפַע' (me'afa) er et sjeldent ord som betyr 'ingenting/tomhet' - det er godt gjengitt som 'tomhet'."
+      }
+    ]
   },
   {
     "bookId": 23,
@@ -189,6 +219,14 @@
     "bookId": 23,
     "chapterId": 41,
     "verseId": 29,
-    "text": "Se, alle er de tomhet! Deres gjerninger er ingenting, deres støpte bilder er vind og tomhet."
+    "text": "Se, alle er de tomhet! Deres gjerninger er ingenting, deres avgudsstøtter er vind og tomhet.",
+    "versions": [
+      {
+        "text": "Se, alle er de tomhet! Deres gjerninger er ingenting, deres støpte bilder er vind og tomhet.",
+        "type": "error",
+        "severity": "major",
+        "explanation": "'נִסְכֵּיהֶם' (niskeihem) kommer fra 'nesek' som betyr 'støpt bilde' eller 'drikkoffer'. I konteksten av avgudsdyrkelse refererer det til støpte gudebilder/avgudsstøtter. 'Støpte bilder' er teknisk korrekt, men 'avgudsstøtter' er tydeligere for en moderne leser om hva dette refererer til."
+      }
+    ]
   }
 ]

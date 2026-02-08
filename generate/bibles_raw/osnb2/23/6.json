@@ -3,7 +3,15 @@
     "bookId": 23,
     "chapterId": 6,
     "verseId": 1,
-    "text": "I det året kong Ussia døde, så jeg Herren sitte på en høy og opphøyet trone, og kanten av hans kappe fylte tempelet."
+    "text": "I det året kong Ussia døde, så jeg Herren sitte på en høy og opphøyet trone, og slepet av hans kappe fylte tempelet.",
+    "versions": [
+      {
+        "text": "I det året kong Ussia døde, så jeg Herren sitte på en høy og opphøyet trone, og kanten av hans kappe fylte tempelet.",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "שׁוּלָיו betyr 'slepet/flikene' av kappen, ikke 'kanten'. 'Slepet' er mer presist og gir bedre bilde av den majestetiske scenen der kappens slep fyller tempelet."
+      }
+    ]
   },
   {
     "bookId": 23,
@@ -75,11 +83,17 @@
     "bookId": 23,
     "chapterId": 6,
     "verseId": 10,
-    "text": "Gjør dette folkets hjerte sløvt, gjør ørene deres tunghørte og stryk øynene deres igjen, så de ikke ser med øynene, ikke hører med ørene og ikke forstår med hjertet, slik at de vender om og blir helbredet.",
+    "text": "Gjør dette folkets hjerte sløvt, gjør ørene deres tunghørte og stryk øynene deres igjen, så de ikke ser med øynene, ikke hører med ørene og ikke forstår med hjertet, vender om og blir helbredet.",
     "versions": [
       {
         "text": "Gjør dette folkets hjerte sløvt, gjør ørene deres tunghørte og klin øynene deres igjen, så de ikke ser med øynene, ikke hører med ørene og ikke forstår med hjertet, slik at de vender om og blir helbredet.",
         "explanation": "Verbet הָשַׁע betyr å smøre/stryke igjen (lukke). 'Klin igjen' er forståelig, men 'stryk igjen' eller 'lim igjen' kan være mer naturlig norsk. Alternativt er 'klin' akseptabelt, men uvanlig i moderne norsk."
+      },
+      {
+        "text": "Gjør dette folkets hjerte sløvt, gjør ørene deres tunghørte og stryk øynene deres igjen, så de ikke ser med øynene, ikke hører med ørene og ikke forstår med hjertet, slik at de vender om og blir helbredet.",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "Det hebraiske פֶּן uttrykker en negativ hensikt: 'for at de ikke ... skal se ... høre ... forstå ... vende om og bli helbredet.' Hele kjeden inkludert 'vender om og blir helbredet' er det som skal forhindres. Med 'slik at de vender om og blir helbredet' virker det som om omvendelse er hensikten, mens poenget er at de IKKE skal kunne vende om. Å fjerne 'slik at' og la hele rekken stå under 'så de ikke' gjengir dette bedre."
       }
     ]
   },
@@ -99,11 +113,17 @@
     "bookId": 23,
     "chapterId": 6,
     "verseId": 12,
-    "text": "Herren skal drive menneskene langt bort, og det forlattet midt i landet skal bli stort.",
+    "text": "Herren skal drive menneskene langt bort, og det forlatte midt i landet skal bli stort.",
     "versions": [
       {
         "text": "Herren skal drive menneskene langt bort, og det skal bli stor ødeleggelse midt i landet.",
         "explanation": "הָעֲזוּבָה betyr 'det forlatte/ødelagte området' - substantiv, ikke bare 'ødeleggelse'. Oversettelsen kan beholdes for flyt, men mister noe av den konkrete betydningen om forlatt land."
+      },
+      {
+        "text": "Herren skal drive menneskene langt bort, og det forlattet midt i landet skal bli stort.",
+        "type": "error",
+        "severity": "major",
+        "explanation": "'forlattet' er en skrivefeil; det skal være 'forlatte' (adjektiv/partisipp brukt som substantiv)."
       }
     ]
   },
@@ -111,6 +131,14 @@
     "bookId": 23,
     "chapterId": 6,
     "verseId": 13,
-    "text": "Selv om en tiendedel blir igjen, skal også den bli til brenne. Men som terebinten og eiken, som ved felling har en rotstubbe igjen – en hellig ætt er dens stubbe."
+    "text": "Selv om en tiendedel blir igjen, skal også den fortæres. Men som terebinten og eiken, som ved felling har en rotstubbe igjen – en hellig ætt er dens stubbe.",
+    "versions": [
+      {
+        "text": "Selv om en tiendedel blir igjen, skal også den bli til brenne. Men som terebinten og eiken, som ved felling har en rotstubbe igjen – en hellig ætt er dens stubbe.",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "וְהָיְתָה לְבָעֵר betyr 'den skal bli fortært/brent opp' – altså en aktiv prosess av ødeleggelse. 'Bli til brenne' gjør tiendedelen til brennmateriale, men det hebraiske uttrykker snarere at den selv skal bli brent/fortært. 'Fortæres' er mer presist."
+      }
+    ]
   }
 ]

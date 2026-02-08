@@ -21,11 +21,17 @@
     "bookId": 23,
     "chapterId": 47,
     "verseId": 3,
-    "text": "Din nakenhet skal bli avdekket, og din skam skal bli sett. Jeg vil ta hevn, og ingen skal hindre meg.",
+    "text": "Jeg vil ta hevn, og ingen skal stå meg imot.",
     "versions": [
       {
         "text": "Din nakenhet skal bli avdekket, og din skam skal bli sett. Jeg vil ta hevn og ikke skåne noe menneske.",
         "explanation": "Uttrykket וְלֹא אֶפְגַּע אָדָם betyr snarere 'jeg vil ikke la noen møte meg (for å megle)' eller 'ingen skal stå i veien'. Det handler om at Gud ikke vil la seg avbryte i sin dom, ikke at han ikke skåner mennesker."
+      },
+      {
+        "text": "Din nakenhet skal bli avdekket, og din skam skal bli sett. Jeg vil ta hevn, og ingen skal hindre meg.",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "Selv om den nåværende versjonen er akseptabel og forbedret fra forrige versjon, er 'ingen skal stå meg imot' en litt mer nøyaktig gjengivelse av idéen om at ingen kan intervenere eller mekle. Men dette er en mindre preferanse."
       }
     ]
   },
@@ -51,7 +57,15 @@
     "bookId": 23,
     "chapterId": 47,
     "verseId": 6,
-    "text": "Jeg var vred på mitt folk, jeg vanhelliget min arv og ga dem i din hånd. Du viste dem ingen barmhjertighet; selv på de gamle la du ditt åk tungt."
+    "text": "Jeg var vred på mitt folk, jeg vanhelliget min arv og ga dem i din hånd. Du viste dem ingen barmhjertighet; på de gamle la du ditt åk svært tungt.",
+    "versions": [
+      {
+        "text": "Jeg var vred på mitt folk, jeg vanhelliget min arv og ga dem i din hånd. Du viste dem ingen barmhjertighet; selv på de gamle la du ditt åk tungt.",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "מְאֹד ('svært/meget') bør gjenspeiles tydeligere i oversettelsen. 'La du ditt åk tungt' mangler intensiteten i 'מְאֹד'. 'Svært tungt' gjengir dette bedre."
+      }
+    ]
   },
   {
     "bookId": 23,
@@ -111,7 +125,15 @@
     "bookId": 23,
     "chapterId": 47,
     "verseId": 13,
-    "text": "Du har slitt deg ut med alle dine rådgivere. La dem stå fram og frelse deg, de som gransker himmelen, de som stirrer på stjernene, de som ved nymåne kunngjør hva som skal komme over deg."
+    "text": "Du har slitt deg ut med dine mange råd. La dem stå fram og frelse deg, de som gransker himmelen, de som stirrer på stjernene, de som ved nymåne kunngjør hva som skal komme over deg.",
+    "versions": [
+      {
+        "text": "Du har slitt deg ut med alle dine rådgivere. La dem stå fram og frelse deg, de som gransker himmelen, de som stirrer på stjernene, de som ved nymåne kunngjør hva som skal komme over deg.",
+        "type": "error",
+        "severity": "major",
+        "explanation": "עֲצָתָיִךְ betyr 'dine råd/rådslag', ikke 'dine rådgivere'. Ordet er fra עֵצָה (råd), ikke fra יוֹעֵץ (rådgiver). Verset handler om at Babylon har slitt seg ut med mengden av råd (fra astrologer osv.), ikke med rådgivere som personer."
+      }
+    ]
   },
   {
     "bookId": 23,

@@ -9,7 +9,15 @@
     "bookId": 28,
     "chapterId": 5,
     "verseId": 2,
-    "text": "De opprørske har gått dypt i slakting, men jeg skal tukte dem alle."
+    "text": "De har gått dypt i slakting ved Sjittim, men jeg skal tukte dem alle.",
+    "versions": [
+      {
+        "text": "De opprørske har gått dypt i slakting, men jeg skal tukte dem alle.",
+        "type": "error",
+        "severity": "major",
+        "explanation": "שֵׂטִים (Shittim) er et stedsnavn, ikke et adjektiv som betyr 'opprørske'. Det refererer til et sted knyttet til avgudsdyrkelse og umoral (jf. 4 Mos 25). Oversettelsen bør gjenspeile dette som stedsnavn. Alternativt kan שׁחטה שׂטים forstås som 'de frafalne har gjort slaktingen dyp', men 'opprørske' er en for fri gjengivelse av שֵׂטִים."
+      }
+    ]
   },
   {
     "bookId": 28,
@@ -57,7 +65,15 @@
     "bookId": 28,
     "chapterId": 5,
     "verseId": 9,
-    "text": "Efraim skal bli til ødemark på straffens dag. Blant Israels stammer har jeg kunngjort det som er visst."
+    "text": "Blant Israels stammer kunngjør jeg det som er sikkert.",
+    "versions": [
+      {
+        "text": "Efraim skal bli til ødemark på straffens dag. Blant Israels stammer har jeg kunngjort det som er visst.",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "'Det som er visst' er litt uvanlig norsk. 'Det som er sikkert' er mer naturlig bokmål og gjengir נֶאֱמָנָה (pålitelig, sikkert) bedre."
+      }
+    ]
   },
   {
     "bookId": 28,
@@ -69,7 +85,15 @@
     "bookId": 28,
     "chapterId": 5,
     "verseId": 11,
-    "text": "Efraim er undertrykt, knust av dom, for han ville gjerne følge menneskebud."
+    "text": "Efraim er undertrykt, knust i sin rett, for han ville gjerne følge tomme bud.",
+    "versions": [
+      {
+        "text": "Efraim er undertrykt, knust av dom, for han ville gjerne følge menneskebud.",
+        "type": "error",
+        "severity": "major",
+        "explanation": "צָו betyr 'bud/befaling' og refererer her sannsynligvis til tomme/menneskelige/falske bud eller avguderiens påbud. 'Menneskebud' er en mulig tolkning, men 'tomme bud' fanger bedre den hebraiske konnotasjonen. Viktigere er at רְצוּץ מִשְׁפָּט betyr 'knust i sin rett/dom' – altså at hans rett er krenket/knust, ikke at han er 'knust av dom' (som gir inntrykk av at Guds dom knuser ham). Efraim er offeret for urettferdig rettspleie."
+      }
+    ]
   },
   {
     "bookId": 28,

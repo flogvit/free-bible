@@ -9,7 +9,15 @@
     "bookId": 18,
     "chapterId": 23,
     "verseId": 2,
-    "text": "Også i dag er min klage full av bitterhet, hans hånd ligger tungt tross mitt sukk."
+    "text": "Også i dag er min klage full av opprør, min hånd ligger tungt tross mitt sukk.",
+    "versions": [
+      {
+        "text": "Også i dag er min klage full av bitterhet, hans hånd ligger tungt tross mitt sukk.",
+        "type": "error",
+        "severity": "major",
+        "explanation": "Det hebraiske 'meri' betyr 'opprør/trass' snarere enn 'bitterhet'. Dessuten har den hebraiske teksten 'yadi' (min hånd), ikke 'hans hånd'. Mange kommentatorer leser det som 'yado' (hans hånd), men grunnformen er 'min hånd' – og i konteksten handler det om at Jobs lidelse (hans tunge hånd/byrde) overgår hans sukk."
+      }
+    ]
   },
   {
     "bookId": 18,
@@ -63,7 +71,15 @@
     "bookId": 18,
     "chapterId": 23,
     "verseId": 9,
-    "text": "Når han virker i nord, griper jeg ham ikke, han svinger mot sør, og jeg ser ham ikke."
+    "text": "Når han handler til venstre, griper jeg ham ikke, han vender seg til høyre, og jeg ser ham ikke.",
+    "versions": [
+      {
+        "text": "Når han virker i nord, griper jeg ham ikke, han svinger mot sør, og jeg ser ham ikke.",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "Hebraisk 'semol' betyr 'venstre' og 'yamin' betyr 'høyre'. Selv om disse tradisjonelt kan assosiere med nord og sør (når man vender seg mot øst), bevarer vers 8 allerede øst/vest-retningen ('qedem'/'achor'). For å gjøre den poetiske progresjonen tydelig og tro mot originalteksten bør venstre/høyre beholdes her, da det gir en egen dimensjon."
+      }
+    ]
   },
   {
     "bookId": 18,
@@ -105,7 +121,15 @@
     "bookId": 18,
     "chapterId": 23,
     "verseId": 14,
-    "text": "For han fullfører det han har bestemt for meg, og mye slikt har han i tankene."
+    "text": "For han fullfører det han har fastsatt over meg, og mange slike planer har han.",
+    "versions": [
+      {
+        "text": "For han fullfører det han har bestemt for meg, og mye slikt har han i tankene.",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "'Chukki' betyr 'min forskrift/det som er fastsatt over meg' – oversettelsen 'bestemt for meg' er akseptabel, men 'fastsatt over meg' gir en sterkere følelse av at noe er pålagt utenfra. 'I tankene' er litt fritt; 'immo' betyr 'hos ham/med ham', altså at han har mange slike planer."
+      }
+    ]
   },
   {
     "bookId": 18,
@@ -123,11 +147,17 @@
     "bookId": 18,
     "chapterId": 23,
     "verseId": 17,
-    "text": "For jeg ble ikke tilintetgjort på grunn av mørket, og ikke fordi det dype mørket dekker mitt ansikt.",
+    "text": "For det er ikke mørket som har brakt meg til taushet, det er ikke det dype mørket som dekker mitt ansikt – det er ham.",
     "versions": [
       {
         "text": "For jeg ble ikke brakt til taushet av mørket, ikke av det dype mørket som dekker mitt ansikt.",
         "explanation": "Verset er vanskelig, men 'nitzamti' betyr 'tilintetgjort/utslettet' snarere enn 'brakt til taushet'. Job klager over at han ikke ble fjernet før mørket/lidelsen kom, eller at mørket selv ikke har tilintetgjort ham. Den nåværende oversettelsen mister denne nyansen."
+      },
+      {
+        "text": "For jeg ble ikke tilintetgjort på grunn av mørket, og ikke fordi det dype mørket dekker mitt ansikt.",
+        "type": "theological",
+        "severity": "major",
+        "explanation": "Verset er notorisk vanskelig. Jobs poeng synes å være at hans frykt (v.15-16) ikke skyldes mørket/lidelsen i seg selv, men Gud selv. Den nåværende versjonen med 'tilintetgjort' er problematisk fordi Job tydelig ikke er tilintetgjort – han lever og taler. Selv om forrige revisjon ble endret bort fra 'brakt til taushet', er den nåværende tolkningen heller ikke overbevisende. Denne foreslåtte versjonen er vesentlig forskjellig fra den forrige revisjonen og tydeliggjør konteksten: Job frykter Gud, ikke selve mørket."
       }
     ]
   }

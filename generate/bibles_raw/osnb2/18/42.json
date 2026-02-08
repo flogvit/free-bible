@@ -9,7 +9,15 @@
     "bookId": 18,
     "chapterId": 42,
     "verseId": 2,
-    "text": "Jeg vet at du kan gjøre alle ting, og at ingen plan er umulig for deg."
+    "text": "Jeg vet at du kan alt, og at ingen plan er umulig for deg.",
+    "versions": [
+      {
+        "text": "Jeg vet at du kan gjøre alle ting, og at ingen plan er umulig for deg.",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "Det hebraiske 'כֹּל תּוּכָל' betyr 'du kan alt' (du formår alt), ikke 'du kan gjøre alle ting'. 'Kan alt' er mer konsist og tettere på originalen."
+      }
+    ]
   },
   {
     "bookId": 18,
@@ -27,7 +35,15 @@
     "bookId": 18,
     "chapterId": 42,
     "verseId": 4,
-    "text": "«Hør nå, og jeg vil tale; jeg vil spørre deg, og du skal lære meg.»"
+    "text": "«Hør, og la meg tale; jeg vil spørre deg, og du skal lære meg.»",
+    "versions": [
+      {
+        "text": "«Hør nå, og jeg vil tale; jeg vil spørre deg, og du skal lære meg.»",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "Job siterer her Guds egne ord tilbake til ham (fra Job 38:3). Det hebraiske 'שְׁמַע־נָא וְאָנֹכִי אֲדַבֵּר' betyr 'Hør, og la meg tale' – det er en oppfordring fulgt av en hensiktssetning. 'Og jeg vil tale' er akseptabelt men 'la meg tale' fanger bedre den retoriske strukturen der Job gjentar Guds utfordring."
+      }
+    ]
   },
   {
     "bookId": 18,
@@ -51,11 +67,17 @@
     "bookId": 18,
     "chapterId": 42,
     "verseId": 7,
-    "text": "Etter at Herren hadde talt disse ordene til Job, sa Herren til Elifas fra Teman: «Min vrede er opptent mot deg og dine to venner, for dere har ikke talt rett til meg, slik min tjener Job har gjort.",
+    "text": "Etter at Herren hadde talt disse ordene til Job, sa Herren til Elifas fra Teman: «Min vrede er opptent mot deg og dine to venner, for dere har ikke talt rett til meg, slik min tjener Job har gjort.»",
     "versions": [
       {
         "text": "Etter at Herren hadde talt disse ordene til Job, sa Herren til Elifas fra Teman: «Min vrede er opptent mot deg og dine to venner, for dere har ikke talt rett om meg, slik min tjener Job har gjort.",
         "explanation": "Det hebraiske 'אֵלַי' (elai) betyr 'til meg', ikke 'om meg'. Job og vennene talte til Gud, og spørsmålet var om de talte sant/rett til ham. Dette er en teologisk viktig nyanse."
+      },
+      {
+        "text": "Etter at Herren hadde talt disse ordene til Job, sa Herren til Elifas fra Teman: «Min vrede er opptent mot deg og dine to venner, for dere har ikke talt rett til meg, slik min tjener Job har gjort.",
+        "type": "grammar",
+        "severity": "minor",
+        "explanation": "Verset mangler avsluttende anførselstegn (»). Sitatet som begynner med « må avsluttes med »."
       }
     ]
   },
@@ -75,11 +97,17 @@
     "bookId": 18,
     "chapterId": 42,
     "verseId": 9,
-    "text": "Så gikk Elifas fra Teman, Bildad fra Sjuah og Sofar fra Naama og gjorde som Herren hadde sagt til dem. Og Herren viste Job nåde.",
+    "text": "Så gikk Elifas fra Teman, Bildad fra Sjuah og Sofar fra Naama og gjorde som Herren hadde sagt til dem. Og Herren tok hensyn til Job.",
     "versions": [
       {
         "text": "Så gikk Elifas fra Teman, Bildad fra Sjuah og Sofar fra Naama og gjorde som Herren hadde sagt til dem. Og Herren tok imot Jobs bønn.",
         "explanation": "Det hebraiske uttrykket 'נָשָׂא פָּנִים' (nasa panim) betyr bokstavelig 'løftet ansiktet' og er et idiom for å 'vise nåde' eller 'ta imot'. Her refererer det til Job selv, ikke hans bønn. 'Viste Job nåde' fanger bedre meningen."
+      },
+      {
+        "text": "Så gikk Elifas fra Teman, Bildad fra Sjuah og Sofar fra Naama og gjorde som Herren hadde sagt til dem. Og Herren viste Job nåde.",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "Uttrykket 'נָשָׂא פָּנִים' (nasa panim) betyr bokstavelig 'løftet ansiktet til'. Forrige versjon hadde 'tok imot Jobs bønn' som ble endret. 'Viste Job nåde' er ok, men 'tok hensyn til Job' er nærmere det hebraiske idiomet som handler om å vise anerkjennelse/aksept av personen snarere enn generell nåde."
       }
     ]
   },

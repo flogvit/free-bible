@@ -81,11 +81,17 @@
     "bookId": 18,
     "chapterId": 39,
     "verseId": 13,
-    "text": "Strutsen flakser glad med vingene – men er det storkens vinger og fjær?",
+    "text": "Strutsen flakser glad med vingene – men har den storkens vinger og fjær?",
     "versions": [
       {
         "text": "Strutsen flakser stolt med vingene, men er det kjærlige vinger og fjær som storken har?",
         "explanation": "Det hebraiske נֶעֱלָסָה betyr 'glad/jublende' snarere enn 'stolt'. Dessuten er חֲסִידָה (stork) assosiert med חֶסֶד (trofast kjærlighet), men teksten spør retorisk om strutsen har slike vinger - ikke 'kjærlige vinger'. Formuleringen kan forenkles."
+      },
+      {
+        "text": "Strutsen flakser glad med vingene – men er det storkens vinger og fjær?",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "Det retoriske spørsmålet handler om hvorvidt strutsen har (besitter) storkens vinger og fjær, ikke om det 'er' storkens vinger. 'Har den' er mer naturlig og presist på norsk for den retoriske sammenligningen."
       }
     ]
   },
@@ -117,7 +123,15 @@
     "bookId": 18,
     "chapterId": 39,
     "verseId": 18,
-    "text": "Men når den reiser seg og løper av sted, ler den av hesten og dens rytter."
+    "text": "Men når den løfter seg opp i høyden, ler den av hesten og dens rytter.",
+    "versions": [
+      {
+        "text": "Men når den reiser seg og løper av sted, ler den av hesten og dens rytter.",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "בַּמָּרוֹם תַּמְרִיא betyr 'svinger seg opp i høyden' – det refererer til at strutsen løfter seg og løper med stor fart, nesten som om den flyr. 'Reiser seg og løper av sted' mister dimensjonen av høyde (מָרוֹם) som er sentral i verset."
+      }
+    ]
   },
   {
     "bookId": 18,
@@ -129,13 +143,29 @@
     "bookId": 18,
     "chapterId": 39,
     "verseId": 20,
-    "text": "Får du den til å springe som en gresshoppe? Dens fryktinngytende fnysen er majestetisk."
+    "text": "Får du den til å springe som en gresshoppe? Dens stolte fnysen sprer frykt.",
+    "versions": [
+      {
+        "text": "Får du den til å springe som en gresshoppe? Dens fryktinngytende fnysen er majestetisk.",
+        "type": "error",
+        "severity": "major",
+        "explanation": "Det hebraiske הוֹד נַחְרוֹ אֵימָה betyr bokstavelig 'dens fnysens majestet er frykt/skrekk'. Det handler om at den majestiske fnysen sprer frykt – ikke at fnysen selv 'er majestetisk'. Dessuten er 'fryktinngytende' feilstavet (skal være 'fryktinngytende' eller helst omformulert). Formuleringen 'Dens stolte fnysen sprer frykt' fanger bedre meningen."
+      }
+    ]
   },
   {
     "bookId": 18,
     "chapterId": 39,
     "verseId": 21,
-    "text": "Den skraper i dalen og gleder seg i sin kraft, den stormer frem mot våpnene."
+    "text": "Den stamper i dalen og frydes over sin kraft, den stormer frem mot våpnene.",
+    "versions": [
+      {
+        "text": "Den skraper i dalen og gleder seg i sin kraft, den stormer frem mot våpnene.",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "יַחְפְּרוּ betyr 'stamper/graver med hovene' snarere enn bare 'skraper'. 'Stamper' er mer dekkende for en hest som slår hovene i bakken. Dessuten er יָשִׂישׂ sterkere enn bare 'gleder seg' – 'frydes' fanger bedre den kraftfulle gleden."
+      }
+    ]
   },
   {
     "bookId": 18,

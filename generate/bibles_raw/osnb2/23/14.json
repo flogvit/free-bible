@@ -39,7 +39,15 @@
     "bookId": 23,
     "chapterId": 14,
     "verseId": 6,
-    "text": "Han som slo folkene i vrede med slag uten opphør, han som hersket over nasjonene i sinne, blir forfulgt uten skånsel."
+    "text": "Han som slo folkene i vrede med slag uten opphør, han som undertrykte nasjonene i sinne, forfulgt uten å holde tilbake.",
+    "versions": [
+      {
+        "text": "Han som slo folkene i vrede med slag uten opphør, han som hersket over nasjonene i sinne, blir forfulgt uten skånsel.",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "רֹדֶה betyr 'undertrykte/kuet' snarere enn 'hersket'. מֻרְדָּף בְּלִי חָשָׂךְ er en participiumkonstruksjon som beskriver den som slo – han forfulgte uten å holde tilbake – men det er grammatisk tvetydig om subjektet skifter. 'Uten skånsel' er en akseptabel tolkning, men 'uten å holde tilbake' er nærmere חָשָׂךְ."
+      }
+    ]
   },
   {
     "bookId": 23,
@@ -85,7 +93,15 @@
     "bookId": 23,
     "chapterId": 14,
     "verseId": 12,
-    "text": "Hvordan er du falt ned fra himmelen, du morgenstjerne, morgenrødens sønn! Du er hogd ned til jorden, du som slo folkeslagene til bakken."
+    "text": "Hvordan er du falt ned fra himmelen, du strålende stjerne, morgenrødens sønn! Du er hogd ned til jorden, du som undertrykte folkeslagene.",
+    "versions": [
+      {
+        "text": "Hvordan er du falt ned fra himmelen, du morgenstjerne, morgenrødens sønn! Du er hogd ned til jorden, du som slo folkeslagene til bakken.",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "הֵילֵל betyr 'den skinnende/strålende' og er ikke direkte 'morgenstjerne' (selv om det tradisjonelt er blitt forstått slik). חוֹלֵשׁ עַל־גּוֹיִם betyr 'som svekket/undertrykte folkeslagene', ikke 'slo til bakken'. Verbet חלשׁ betyr å svekke eller undertvinge."
+      }
+    ]
   },
   {
     "bookId": 23,
@@ -121,7 +137,15 @@
     "bookId": 23,
     "chapterId": 14,
     "verseId": 18,
-    "text": "Alle folkenes konger, alle sammen, ligger med ære, hver i sitt gravhus."
+    "text": "Alle folkenes konger, alle sammen, ligger med ære, hver i sin grav.",
+    "versions": [
+      {
+        "text": "Alle folkenes konger, alle sammen, ligger med ære, hver i sitt gravhus.",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "בְּבֵיתוֹ betyr bokstavelig 'i sitt hus', her brukt som metafor for gravsted/grav. 'Gravhus' er et uvanlig norsk ord. 'Grav' er mer naturlig norsk og formidler meningen godt."
+      }
+    ]
   },
   {
     "bookId": 23,
@@ -211,13 +235,29 @@
     "bookId": 23,
     "chapterId": 14,
     "verseId": 30,
-    "text": "De fattiges førstefødte skal få beite, og de trengende skal hvile trygt. Men jeg vil drepe din rot med hungersnød, og resten av deg skal han drepe."
+    "text": "De fattiges førstefødte skal få beite, og de trengende skal hvile trygt. Men din rot skal jeg la dø av sult, og din rest skal han slå i hjel.",
+    "versions": [
+      {
+        "text": "De fattiges førstefødte skal få beite, og de trengende skal hvile trygt. Men jeg vil drepe din rot med hungersnød, og resten av deg skal han drepe.",
+        "type": "error",
+        "severity": "major",
+        "explanation": "וְהֵמַתִּי בָרָעָב שָׁרְשֵׁךְ – 'jeg vil la din rot dø av sult' er mer nøyaktig enn 'drepe din rot med hungersnød'. Verbet המית med בְּ+רעב betyr å la dø/omkomme ved sult. Siste ledd יַהֲרֹג har et ubestemt subjekt (muligens Gud eller fienden), 'skal han slå i hjel' er akseptabelt. Endringen er primært stilistisk forbedring."
+      }
+    ]
   },
   {
     "bookId": 23,
     "chapterId": 14,
     "verseId": 31,
-    "text": "Jamre deg, du port! Skrik, du by! Skjelv, hele Filisterland! For fra nord kommer en røyk, og ingen forlater rekkene."
+    "text": "Jamre deg, du port! Skrik, du by! Smelt bort, hele Filisterland! For fra nord kommer en røyk, og ingen bryter ut av rekkene hans.",
+    "versions": [
+      {
+        "text": "Jamre deg, du port! Skrik, du by! Skjelv, hele Filisterland! For fra nord kommer en røyk, og ingen forlater rekkene.",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "נָמוֹג betyr 'smelte bort' (av frykt), ikke 'skjelve'. בּוֹדֵד בְּמוֹעָדָיו betyr at ingen faller ut/bryter ut av hans (fiendens) rekker – dvs. fiendehæren er disiplinert og ingen deserterer."
+      }
+    ]
   },
   {
     "bookId": 23,

@@ -39,7 +39,15 @@
     "bookId": 23,
     "chapterId": 56,
     "verseId": 5,
-    "text": "Jeg vil gi dem et minnesmerke og et navn i mitt hus og innenfor mine murer, noe som er bedre enn sønner og døtre. Et evig navn vil jeg gi dem, et som aldri skal bli utslettet."
+    "text": "Jeg vil gi dem en plass og et navn i mitt hus og innenfor mine murer, noe som er bedre enn sønner og døtre. Et evig navn vil jeg gi dem, et som aldri skal bli utslettet.",
+    "versions": [
+      {
+        "text": "Jeg vil gi dem et minnesmerke og et navn i mitt hus og innenfor mine murer, noe som er bedre enn sønner og døtre. Et evig navn vil jeg gi dem, et som aldri skal bli utslettet.",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "Det hebraiske 'יָד וָשֵׁם' betyr bokstavelig 'hånd og navn', der 'yad' her betyr et monument, en minnestein eller en plass/posisjon. 'Minnesmerke' er en mulig oversettelse, men 'en plass og et navn' er mer dekkende og naturlig, og fanger bedre betydningen av at de får en varig posisjon og identitet i Guds hus. Yad Vashem-minnesmerket i Jerusalem har sitt navn herfra."
+      }
+    ]
   },
   {
     "bookId": 23,
@@ -63,7 +71,15 @@
     "bookId": 23,
     "chapterId": 56,
     "verseId": 9,
-    "text": "Alle dyr på marken, kom for å ete! Alle dyr i skogen, kom!"
+    "text": "Alle dyr på marken, kom og et! Alle dyr i skogen, kom!",
+    "versions": [
+      {
+        "text": "Alle dyr på marken, kom for å ete! Alle dyr i skogen, kom!",
+        "type": "error",
+        "severity": "major",
+        "explanation": "Imperativformen 'אֵתָיוּ לֶאֱכֹל' er en oppfordring til å komme og ete. 'Kom for å ete' er grammatisk akseptabelt, men 'kom og et' er mer naturlig norsk og bedre fanger den direkte imperativtonen. Viktigere: strukturen i hebraisk knytter 'leekhol' (å ete) til den første setningen, og 'alle dyr i skogen' er subjektet som oppfordres – den nåværende oversettelsen gjenspeiler dette rimelig, men 'kom og et' er idiomatisk bedre."
+      }
+    ]
   },
   {
     "bookId": 23,
@@ -93,6 +109,14 @@
     "bookId": 23,
     "chapterId": 56,
     "verseId": 12,
-    "text": "«Kom,» sier de, «la meg hente vin! La oss drikke oss fulle av sterk drikk! Og i morgen skal det bli som i dag, ja, enda mye bedre!»"
+    "text": "«Kom,» sier de, «la meg hente vin! La oss drikke oss fulle av sterk drikk! I morgen blir det som i dag, ja, enda mye bedre!»",
+    "versions": [
+      {
+        "text": "«Kom,» sier de, «la meg hente vin! La oss drikke oss fulle av sterk drikk! Og i morgen skal det bli som i dag, ja, enda mye bedre!»",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "Små stilistisk forbedring: 'Og i morgen skal det bli' er litt tungt. 'I morgen blir det' er mer direkte og fanger den selvsikre, sorgløse tonen i originalen bedre. 'והיה' uttrykker en enkel fremtidstilstand uten behov for 'skal'."
+      }
+    ]
   }
 ]

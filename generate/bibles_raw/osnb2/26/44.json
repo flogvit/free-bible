@@ -33,7 +33,15 @@
     "bookId": 26,
     "chapterId": 44,
     "verseId": 5,
-    "text": "Herren sa til meg: Menneske, legg deg dette på hjertet og se med dine øyne og hør med dine ører alt det jeg sier deg om alle forskriftene for Herrens hus og alle dets lover. Legg merke til inngangen til tempelet og alle utgangene fra helligdommen."
+    "text": "Menneske, legg det på hjertet! Se med dine øyne og hør med dine ører alt det jeg sier deg om alle forskriftene for Herrens hus og alle dets lover.",
+    "versions": [
+      {
+        "text": "Herren sa til meg: Menneske, legg deg dette på hjertet og se med dine øyne og hør med dine ører alt det jeg sier deg om alle forskriftene for Herrens hus og alle dets lover. Legg merke til inngangen til tempelet og alle utgangene fra helligdommen.",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "'Legg deg dette på hjertet' er litt klønete. Det hebraiske 'שִׂים לִבְּךָ' betyr 'legg det på hjertet' eller 'gi akt'. 'Deg dette' er unødvendig tungt."
+      }
+    ]
   },
   {
     "bookId": 26,
@@ -183,13 +191,29 @@
     "bookId": 26,
     "chapterId": 44,
     "verseId": 28,
-    "text": "De skal ikke ha noen arv. Jeg er deres arv. Eiendom skal dere ikke gi dem i Israel. Jeg er deres eiendom."
+    "text": "Dette skal være deres arv: Jeg er deres arv. Eiendom skal dere ikke gi dem i Israel. Jeg er deres eiendom.",
+    "versions": [
+      {
+        "text": "De skal ikke ha noen arv. Jeg er deres arv. Eiendom skal dere ikke gi dem i Israel. Jeg er deres eiendom.",
+        "type": "error",
+        "severity": "major",
+        "explanation": "Den nåværende oversettelsen 'De skal ikke ha noen arv' er en feiloversettelse av 'וְהָיְתָה לָהֶם לְנַחֲלָה'. Det hebraiske betyr 'det (dette) skal være dem til arv' – altså at Gud selv skal være deres arvedel. Det sier ikke at de ikke skal ha arv, men at Gud er deres arv. 'De skal ikke ha noen arv' er en gal negasjon som ikke finnes i grunnteksten."
+      }
+    ]
   },
   {
     "bookId": 26,
     "chapterId": 44,
     "verseId": 29,
-    "text": "Matofferet, syndofferet og skyldofferet skal de spise. Alt som er viet til Herren i Israel, skal tilhøre dem."
+    "text": "Matofferet, syndofferet og skyldofferet skal de spise. Alt som er bannlyst i Israel, skal tilhøre dem.",
+    "versions": [
+      {
+        "text": "Matofferet, syndofferet og skyldofferet skal de spise. Alt som er viet til Herren i Israel, skal tilhøre dem.",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "'חֵרֶם' (cherem) betyr 'bannlyst/viet til ødeleggelse' eller 'bannlysingsgods' – ting som er ugjenkallelig viet til Gud. 'Viet til Herren' er for svakt. 'Bannlyst' eller 'banlyst gods' er mer presist og teologisk korrekt."
+      }
+    ]
   },
   {
     "bookId": 26,

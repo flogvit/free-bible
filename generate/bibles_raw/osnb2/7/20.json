@@ -39,11 +39,17 @@
     "bookId": 7,
     "chapterId": 20,
     "verseId": 6,
-    "text": "Da tok jeg min medhustru, delte henne opp og sendte henne ut over hele Israels arveland, for de hadde begått skjensel og skammelig utukt i Israel.",
+    "text": "Da tok jeg min medhustru, delte henne opp og sendte henne ut over hele Israels arveland, for de hadde begått utukt og skammelig handling i Israel.",
     "versions": [
       {
         "text": "Da tok jeg min medhustru, delte henne opp og sendte henne ut over hele Israels arveland, for de hadde begått skammelig utukt i Israel.",
         "explanation": "Det hebraiske uttrykket 'זִמָּה וּנְבָלָה' (zimmah u-nevalah) inneholder to ord: 'zimmah' (utukt/skjensel) og 'nevalah' (skammelig handling/dårskap). Begge bør gjenspeiles i oversettelsen for fullstendighet."
+      },
+      {
+        "text": "Da tok jeg min medhustru, delte henne opp og sendte henne ut over hele Israels arveland, for de hadde begått skjensel og skammelig utukt i Israel.",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "Rekkefølgen av ordene er byttet i forhold til hebraisk: 'zimmah' = utukt/skjensel kommer først, og 'nevalah' = skammelig handling/skjensel kommer andre. I den nåværende oversettelsen er 'skjensel' plassert først og 'skammelig utukt' sist, men dette blander begrepene. 'Zimmah' betyr utukt/umoral, 'nevalah' betyr skammelig/dårlig handling. Men dette er en svært liten nyanse, og den nåværende versjonen er akseptabel."
       }
     ]
   },
@@ -69,7 +75,15 @@
     "bookId": 7,
     "chapterId": 20,
     "verseId": 9,
-    "text": "Dette er det vi nå skal gjøre mot Gibea: Vi går mot den etter loddtrekning."
+    "text": "Dette er det vi nå skal gjøre mot Gibea: Vi går opp mot den etter loddtrekning.",
+    "versions": [
+      {
+        "text": "Dette er det vi nå skal gjøre mot Gibea: Vi går mot den etter loddtrekning.",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "Det hebraiske 'עָלֶיהָ' inneholder verbet 'alah' (gå opp), ikke bare 'gå'. 'Gå opp mot' er mer nøyaktig og gjenspeiler den militære oppmarsjbevegelsen bedre."
+      }
+    ]
   },
   {
     "bookId": 7,
@@ -123,7 +137,15 @@
     "bookId": 7,
     "chapterId": 20,
     "verseId": 16,
-    "text": "Blant hele denne hæren var det syv hundre utvalgte menn som var venstrehendte. Hver av dem kunne slynge stein mot et hårstrå uten å bomme."
+    "text": "Blant hele dette folket var det syv hundre utvalgte menn som var venstrehendte. Hver av dem kunne slynge stein mot et hårstrå uten å bomme.",
+    "versions": [
+      {
+        "text": "Blant hele denne hæren var det syv hundre utvalgte menn som var venstrehendte. Hver av dem kunne slynge stein mot et hårstrå uten å bomme.",
+        "type": "error",
+        "severity": "minor",
+        "explanation": "Det hebraiske 'הָעָם' (ha'am) betyr 'folket', ikke 'hæren'. Dessuten betyr 'אִטֵּר יַד־יְמִינוֹ' bokstavelig 'hemmet/bundet på høyre hånd', altså de brukte venstre hånd – 'venstrehendte' er akseptabelt, men 'folket' bør brukes i stedet for 'hæren'."
+      }
+    ]
   },
   {
     "bookId": 7,
@@ -213,7 +235,15 @@
     "bookId": 7,
     "chapterId": 20,
     "verseId": 31,
-    "text": "Benjamins sønner rykket ut mot folket og ble lokket bort fra byen. De begynte å slå ned noen av folket, som de tidligere gangene, langs veiene som fører opp til Betel og til Gibea over markene – omkring tretti mann av Israel."
+    "text": "Benjamins sønner rykket ut mot folket og ble trukket bort fra byen. De begynte å slå ned noen av folket, som de tidligere gangene, langs veiene som fører opp til Betel og til Gibea over markene – omkring tretti mann av Israel.",
+    "versions": [
+      {
+        "text": "Benjamins sønner rykket ut mot folket og ble lokket bort fra byen. De begynte å slå ned noen av folket, som de tidligere gangene, langs veiene som fører opp til Betel og til Gibea over markene – omkring tretti mann av Israel.",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "Det hebraiske 'הָנְתְּקוּ' (nåtal-form av nataq) betyr 'ble trukket/dratt bort', som er en passiv form. 'Lokket bort' tillegger en intensjon som ikke direkte finnes i det hebraiske verbet. 'Trukket bort' er mer nøyaktig, selv om 'lokket bort' gir mening i konteksten."
+      }
+    ]
   },
   {
     "bookId": 7,
@@ -321,6 +351,14 @@
     "bookId": 7,
     "chapterId": 20,
     "verseId": 48,
-    "text": "Israels menn vendte tilbake til benjaminittene og slo dem med sverdets egg, både folk i byene og fe og alt de fant. Også alle byene de kom til, satte de i brann."
+    "text": "Israels menn vendte tilbake til benjaminittene og slo dem med sverdets egg, fra byene med folk til fe og alt de fant. Også alle byene de kom til, satte de i brann.",
+    "versions": [
+      {
+        "text": "Israels menn vendte tilbake til benjaminittene og slo dem med sverdets egg, både folk i byene og fe og alt de fant. Også alle byene de kom til, satte de i brann.",
+        "type": "error",
+        "severity": "minor",
+        "explanation": "Det hebraiske 'מֵעִיר מְתִם' betyr 'fra by med (dens) mennesker/menn' – det indikerer en progresjon: fra byer med mennesker, til fe, til alt som ble funnet. Den nåværende oversettelsen 'både folk i byene' er noe upresist i forhold til denne strukturen."
+      }
+    ]
   }
 ]

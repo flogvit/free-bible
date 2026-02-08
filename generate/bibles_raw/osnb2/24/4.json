@@ -39,7 +39,15 @@
     "bookId": 24,
     "chapterId": 4,
     "verseId": 6,
-    "text": "Reis et banner mot Sion! Flykt, ikke stans! For jeg bringer ulykke fra nord, en stor ødeleggelse."
+    "text": "Reis et banner mot Sion! Søk tilflukt, ikke stans! For jeg bringer ulykke fra nord, en stor ødeleggelse.",
+    "versions": [
+      {
+        "text": "Reis et banner mot Sion! Flykt, ikke stans! For jeg bringer ulykke fra nord, en stor ødeleggelse.",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "הָעִיזוּ betyr 'søk tilflukt/bring i sikkerhet', ikke direkte 'flykt'. Ordet handler om å bringe seg selv i sikkerhet, noe 'søk tilflukt' fanger bedre enn det mer generelle 'flykt'."
+      }
+    ]
   },
   {
     "bookId": 24,
@@ -81,7 +89,15 @@
     "bookId": 24,
     "chapterId": 4,
     "verseId": 12,
-    "text": "En vind sterkere enn disse kommer til meg. Nå vil også jeg avsi dom over dem."
+    "text": "En vind sterkere enn disse kommer på min befaling. Nå vil også jeg avsi dom over dem.",
+    "versions": [
+      {
+        "text": "En vind sterkere enn disse kommer til meg. Nå vil også jeg avsi dom over dem.",
+        "type": "error",
+        "severity": "major",
+        "explanation": "לִי ('li') betyr her 'for meg / på mine vegne / på min befaling', ikke 'til meg'. Vinden kommer på Guds befaling, ikke til Gud. Uttrykket 'kommer til meg' gir feil teologisk mening."
+      }
+    ]
   },
   {
     "bookId": 24,
@@ -105,11 +121,17 @@
     "bookId": 24,
     "chapterId": 4,
     "verseId": 16,
-    "text": "Kunngjør det for folkeslagene! Se, forkynn det over Jerusalem: Beleirerestyrker kommer fra et fjernt land og hever sin røst mot Judas byer.",
+    "text": "Minn folkeslagene på dette! Se, kunngjør over Jerusalem: Beleirerestyrker kommer fra et fjernt land og hever sin røst mot Judas byer.",
     "versions": [
       {
         "text": "Kunngjør det for folkeslagene! Se, forkynn det over Jerusalem: Vaktmenn kommer fra et fjernt land og hever sin røst mot Judas byer.",
         "explanation": "נֹצְרִים (notsrim) betyr 'voktere/beleirerestyrker' i konteksten av en militær beleiring, ikke bare 'vaktmenn'. Dette er fiendtlige styrker som omringer byen (jf. v.17)."
+      },
+      {
+        "text": "Kunngjør det for folkeslagene! Se, forkynn det over Jerusalem: Beleirerestyrker kommer fra et fjernt land og hever sin røst mot Judas byer.",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "הַזְכִּירוּ betyr mer presist 'minn om/påminn' enn bare 'kunngjør'. Verbet har en konnotasjon av å minne noen om noe, og dette skiller det fra הַשְׁמִיעוּ som betyr 'kunngjør/la høre'."
       }
     ]
   },
@@ -117,7 +139,15 @@
     "bookId": 24,
     "chapterId": 4,
     "verseId": 17,
-    "text": "Som vakter rundt en åker omringer de henne, for hun har gjort opprør mot meg, sier Herren."
+    "text": "Som vakter rundt en mark omringer de henne fra alle kanter, for hun har gjort opprør mot meg, sier Herren.",
+    "versions": [
+      {
+        "text": "Som vakter rundt en åker omringer de henne, for hun har gjort opprør mot meg, sier Herren.",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "מִסָּבִיב (missaviv) betyr 'fra alle kanter/rundt omkring' og fortjener å bli gjengitt for å understreke fullstendig omringelse. Også שָׂדַי er 'mark/jorde' snarere enn spesifikt 'åker'."
+      }
+    ]
   },
   {
     "bookId": 24,
@@ -153,7 +183,15 @@
     "bookId": 24,
     "chapterId": 4,
     "verseId": 22,
-    "text": "«For mitt folk er tåpelig, de kjenner meg ikke. De er uforstandige barn, de har ingen innsikt. De er vise til å gjøre ondt, men å gjøre godt forstår de ikke.»"
+    "text": "For mitt folk er tåpelig, de kjenner meg ikke. De er uforstandige barn, de har ingen innsikt. De er vise til å gjøre ondt, men å gjøre godt forstår de ikke.",
+    "versions": [
+      {
+        "text": "«For mitt folk er tåpelig, de kjenner meg ikke. De er uforstandige barn, de har ingen innsikt. De er vise til å gjøre ondt, men å gjøre godt forstår de ikke.»",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "Anførselstegnene rundt verset antyder direkte tale med tydelig markering, men konteksten viser at dette er en del av Guds løpende tale som begynte tidligere. De ekstra anførselstegnene er unødvendige og inkonsistente med resten av passasjen."
+      }
+    ]
   },
   {
     "bookId": 24,
@@ -195,7 +233,15 @@
     "bookId": 24,
     "chapterId": 4,
     "verseId": 29,
-    "text": "For lyden av ryttere og bueskyttere får hver by til å flykte. De går inn i skogtykningen og klatrer opp på klippene. Hver by er forlatt, ingen bor i dem."
+    "text": "For lyden av ryttere og bueskyttere flykter alle byene. De går inn i tett kratt og klatrer opp på klippene. Hver by er forlatt, ingen bor i dem.",
+    "versions": [
+      {
+        "text": "For lyden av ryttere og bueskyttere får hver by til å flykte. De går inn i skogtykningen og klatrer opp på klippene. Hver by er forlatt, ingen bor i dem.",
+        "type": "error",
+        "severity": "major",
+        "explanation": "עָבִים betyr 'tett kratt/buskas', ikke 'skogtykningen'. Selv om betydningen er nær, er 'tett kratt' en mer presis gjengivelse. Også כָּל־הָעִיר בֹּרַחַת betyr 'hele byen (enhver by) flykter', ikke 'får hver by til å flykte' – subjektet er byene/innbyggerne, ikke lyden."
+      }
+    ]
   },
   {
     "bookId": 24,

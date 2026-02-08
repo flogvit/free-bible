@@ -15,7 +15,15 @@
     "bookId": 13,
     "chapterId": 2,
     "verseId": 3,
-    "text": "Judas sønner var Er, Onan og Sjela. Disse tre fikk han med Sjuas datter, kanaaneerkvinnnen. Men Er, Judas førstefødte, var ond i Herrens øyne, og han lot ham dø."
+    "text": "Judas sønner var Er, Onan og Sjela. Disse tre fikk han med Sjuas datter, kanaaneerkvinnen.",
+    "versions": [
+      {
+        "text": "Judas sønner var Er, Onan og Sjela. Disse tre fikk han med Sjuas datter, kanaaneerkvinnnen. Men Er, Judas førstefødte, var ond i Herrens øyne, og han lot ham dø.",
+        "type": "grammar",
+        "severity": "minor",
+        "explanation": "Det er en stavefeil: 'kanaaneerkvinnnen' har tre n-er, det skal være 'kanaaneerkvinnen' med to n-er."
+      }
+    ]
   },
   {
     "bookId": 13,
@@ -33,7 +41,15 @@
     "bookId": 13,
     "chapterId": 2,
     "verseId": 6,
-    "text": "Serahs sønner var Simri, Etan, Heman, Kalkol og Darda, fem i alt."
+    "text": "Serahs sønner var Simri, Etan, Heman, Kalkol og Dara, fem i alt.",
+    "versions": [
+      {
+        "text": "Serahs sønner var Simri, Etan, Heman, Kalkol og Darda, fem i alt.",
+        "type": "error",
+        "severity": "minor",
+        "explanation": "Det hebraiske navnet וָדָ֖רַע (Dara) er mer nøyaktig gjengitt som 'Dara' enn 'Darda'. 'Darda' er formen som brukes i 1 Kong 5:11, men her i 1 Krønikebok er den hebraiske formen דָּרַע (Dara)."
+      }
+    ]
   },
   {
     "bookId": 13,
@@ -297,7 +313,15 @@
     "bookId": 13,
     "chapterId": 2,
     "verseId": 50,
-    "text": "Dette var Kalebs etterkommere. Sønnene til Hur, Efratas førstefødte, var: Sjobal, far til Kirjat-Jearim,"
+    "text": "Dette var sønnene til Kaleb. Hurs sønner – han som var Efratas førstefødte – var: Sjobal, far til Kirjat-Jearim,",
+    "versions": [
+      {
+        "text": "Dette var Kalebs etterkommere. Sønnene til Hur, Efratas førstefødte, var: Sjobal, far til Kirjat-Jearim,",
+        "type": "error",
+        "severity": "major",
+        "explanation": "Den hebraiske teksten sier 'בְּנֵי כָלֵב בֶּן־חוּר בְּכוֹר אֶפְרָתָה', som betyr 'sønnene til Kaleb, sønn av Hur, Efratas førstefødte'. Teksten identifiserer Hur som Efratas førstefødte, og Kaleb her er 'Kaleb sønn av Hur' (dvs. barnebarn). Den nåværende oversettelsen bryter setningen på en måte som endrer betydningen."
+      }
+    ]
   },
   {
     "bookId": 13,

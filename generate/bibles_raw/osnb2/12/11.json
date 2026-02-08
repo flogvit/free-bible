@@ -57,7 +57,15 @@
     "bookId": 12,
     "chapterId": 11,
     "verseId": 8,
-    "text": "Dere skal stille dere rundt kongen på alle kanter, hver mann med våpen i hånd. Den som trenger inn i rekkene, skal drepes. Vær hos kongen hvor han går ut og hvor han går inn.»"
+    "text": "Dere skal stille dere rundt kongen på alle kanter, hver mann med våpen i hånd. Den som kommer inn i rekkene, skal drepes. Vær hos kongen hvor han går ut og hvor han går inn.»",
+    "versions": [
+      {
+        "text": "Dere skal stille dere rundt kongen på alle kanter, hver mann med våpen i hånd. Den som trenger inn i rekkene, skal drepes. Vær hos kongen hvor han går ut og hvor han går inn.»",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "Det hebraiske הַבָּא אֶל־הַשְּׂדֵרוֹת betyr 'den som kommer inn i rekkene/geleddene', ikke nødvendigvis 'trenger inn'. 'Trenger inn' tillegger en aggressiv konnotasjon som ikke nødvendigvis er i originalen. Men dette er en mindre nyanse og 'kommer inn i' er mer nøytralt og presist."
+      }
+    ]
   },
   {
     "bookId": 12,
@@ -87,7 +95,15 @@
     "bookId": 12,
     "chapterId": 11,
     "verseId": 13,
-    "text": "Da Atalja hørte ropene fra livvaktene og folket, kom hun til folket i Herrens hus."
+    "text": "Da Atalja hørte lyden av livvaktene og folket, kom hun til folket i Herrens hus.",
+    "versions": [
+      {
+        "text": "Da Atalja hørte ropene fra livvaktene og folket, kom hun til folket i Herrens hus.",
+        "type": "error",
+        "severity": "minor",
+        "explanation": "Det hebraiske קוֹל betyr 'lyd/støy', ikke spesifikt 'rop'. Teksten refererer til den generelle lyden/støyen fra livvaktene og folket (jubel, trompeter, klapping), ikke bare rop."
+      }
+    ]
   },
   {
     "bookId": 12,
@@ -123,7 +139,15 @@
     "bookId": 12,
     "chapterId": 11,
     "verseId": 18,
-    "text": "Hele folket i landet gikk til Baals tempel og rev det ned. Altrene og bildene knuste de fullstendig, og Mattan, Baals prest, drepte de foran altrene. Presten satte vakter ved Herrens hus."
+    "text": "Hele folket i landet gikk til Baals tempel og rev det ned. Altrene og gudebilledene hans knuste de fullstendig, og Mattan, Baals prest, drepte de foran altrene. Presten satte vakter ved Herrens hus.",
+    "versions": [
+      {
+        "text": "Hele folket i landet gikk til Baals tempel og rev det ned. Altrene og bildene knuste de fullstendig, og Mattan, Baals prest, drepte de foran altrene. Presten satte vakter ved Herrens hus.",
+        "type": "error",
+        "severity": "minor",
+        "explanation": "Det hebraiske צְלָמָיו betyr 'hans bilder/gudebilledne hans' - med possessivt suffiks som refererer til Baal. 'Bildene' er litt vagt; 'gudebilledne hans' er mer presist og tydeliggjør at det er Baals kultbilder."
+      }
+    ]
   },
   {
     "bookId": 12,

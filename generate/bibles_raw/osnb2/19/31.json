@@ -63,11 +63,17 @@
     "bookId": 19,
     "chapterId": 31,
     "verseId": 10,
-    "text": "Vær meg nådig, HERRE, for jeg er i nød! Mitt øye tæres bort av sorg, ja, min sjel og min mage likeså.",
+    "text": "Vær meg nådig, HERRE, for jeg er i nød! Mitt øye tæres bort av fortvilelse, ja, min sjel og min mage likeså.",
     "versions": [
       {
         "text": "Vær meg nådig, HERRE, for jeg er i nød! Mitt øye tæres bort av sorg, min sjel og min kropp likeså.",
         "explanation": "Hebraisk 'בִטְנִֽי' betyr spesifikt 'mage/buk', ikke 'kropp' generelt. Også 'בְכַ֥עַס' betyr egentlig 'av vrede/fortvilelse' mer enn bare 'sorg', men 'sorg' er akseptabelt i konteksten."
+      },
+      {
+        "text": "Vær meg nådig, HERRE, for jeg er i nød! Mitt øye tæres bort av sorg, ja, min sjel og min mage likeså.",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "Hebraisk 'בְכַ֥עַס' betyr mer 'vrede/fortvilelse' enn 'sorg'. Endringsloggen fra forrige revisjon nevner også dette: '«בְכַ֥עַס» betyr egentlig «av vrede/fortvilelse» mer enn bare «sorg»'. Å bruke 'fortvilelse' ville være mer presist."
       }
     ]
   },
@@ -81,13 +87,29 @@
     "bookId": 19,
     "chapterId": 31,
     "verseId": 12,
-    "text": "For alle mine fiender er jeg blitt til spott, ja, særlig for mine naboer, og en redsel for mine kjente."
+    "text": "For alle mine fiender er jeg blitt til spott, ja, særlig for mine naboer, og en redsel for mine kjente. De som ser meg på gaten, flykter fra meg.",
+    "versions": [
+      {
+        "text": "For alle mine fiender er jeg blitt til spott, ja, særlig for mine naboer, og en redsel for mine kjente.",
+        "type": "error",
+        "severity": "major",
+        "explanation": "Den siste setningen i verset ('רֹאַ֥י בַּח֑וּץ נָדְד֥וּ מִמֶּֽנִּי' – 'de som ser meg ute/på gaten, flykter fra meg') mangler helt i oversettelsen. Dette er viktig innhold som er utelatt."
+      }
+    ]
   },
   {
     "bookId": 19,
     "chapterId": 31,
     "verseId": 13,
-    "text": "Jeg er glemt som en død, ute av sinnet. Jeg er blitt som et kar som er kastet bort."
+    "text": "Jeg er glemt som en død, ute av sinnet. Jeg er blitt som et knust kar.",
+    "versions": [
+      {
+        "text": "Jeg er glemt som en død, ute av sinnet. Jeg er blitt som et kar som er kastet bort.",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "Hebraisk 'כִּכְלִ֥י אֹבֵֽד' betyr 'som et tapt/ødelagt kar' – noe som er gått tapt eller knust, ikke nødvendigvis 'kastet bort'. 'Knust kar' er et mer vanlig og treffende uttrykk."
+      }
+    ]
   },
   {
     "bookId": 19,
@@ -141,7 +163,15 @@
     "bookId": 19,
     "chapterId": 31,
     "verseId": 21,
-    "text": "Du skjuler dem i ditt ansikts skjul mot menneskers sammensvergelser. Du gjemmer dem i din hytte mot stridende tunger."
+    "text": "Du skjuler dem i ditt ansikts skjul mot menneskers angrep. Du gjemmer dem i din hytte mot stridende tunger.",
+    "versions": [
+      {
+        "text": "Du skjuler dem i ditt ansikts skjul mot menneskers sammensvergelser. Du gjemmer dem i din hytte mot stridende tunger.",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "Hebraisk 'רֻכְסֵי אִישׁ' er vanskelig, men betyr sannsynligvis 'menneskers angrep/overfall/intriger' snarere enn 'sammensvergelser'. Ordet 'רֻכְסֵי' peker mot aggressiv opptreden/angrep."
+      }
+    ]
   },
   {
     "bookId": 19,
@@ -165,7 +195,15 @@
     "bookId": 19,
     "chapterId": 31,
     "verseId": 24,
-    "text": "Elsk HERREN, alle dere hans hellige! HERREN bevarer de trofaste, men han gjengjelder rikelig den som handler i hovmod."
+    "text": "Elsk HERREN, alle dere hans hellige! HERREN bevarer de trofaste, men gjengjelder den som handler i hovmod, i fullt mål.",
+    "versions": [
+      {
+        "text": "Elsk HERREN, alle dere hans hellige! HERREN bevarer de trofaste, men han gjengjelder rikelig den som handler i hovmod.",
+        "type": "grammar",
+        "severity": "minor",
+        "explanation": "'עַל־יֶ֝֗תֶר' betyr 'i overflod/i fullt mål' og beskriver måten gjengjeldelsen skjer på, ikke at det er 'rikelig gjengjeldelse'. Plasseringen av 'rikelig' i nåværende tekst er litt uklar. 'I fullt mål' som avslutning er tydeligere."
+      }
+    ]
   },
   {
     "bookId": 19,

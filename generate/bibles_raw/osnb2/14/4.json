@@ -15,7 +15,15 @@
     "bookId": 14,
     "chapterId": 4,
     "verseId": 3,
-    "text": "Under det var det bilder av okser rundt hele karet, ti på hver alen, og de omsluttet havet. Oksene var støpt i to rader, i ett med karet."
+    "text": "Under det var det figurer som lignet okser hele veien rundt, ti per alen, som omsluttet havet rundt omkring. Oksene sto i to rader og var støpt i ett med karet.",
+    "versions": [
+      {
+        "text": "Under det var det bilder av okser rundt hele karet, ti på hver alen, og de omsluttet havet. Oksene var støpt i to rader, i ett med karet.",
+        "type": "error",
+        "severity": "major",
+        "explanation": "The Hebrew says 'dəmut bəqarim' (likeness/figures of oxen) underneath it all around, ten per cubit encircling the sea. The phrase 'ti på hver alen' is correct but 'bilder' is slightly misleading since these were three-dimensional cast figures, not images. Also 'hele karet' is inaccurate — the Hebrew says 'the sea' (הַיָּם), not 'the vessel/kar'."
+      }
+    ]
   },
   {
     "bookId": 14,
@@ -57,7 +65,15 @@
     "bookId": 14,
     "chapterId": 4,
     "verseId": 10,
-    "text": "Havet plasserte han på høyre side av huset, mot sørøst."
+    "text": "Havet plasserte han ved husets høyre side, mot sørøst.",
+    "versions": [
+      {
+        "text": "Havet plasserte han på høyre side av huset, mot sørøst.",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "Minor stylistic suggestion: 'ved husets høyre side' reads more naturally in Norwegian than 'på høyre side av huset'. The Hebrew 'mik-ketef hay-yemanit' means 'at the right shoulder' of the house. This is a minor phrasing preference."
+      }
+    ]
   },
   {
     "bookId": 14,
@@ -93,7 +109,15 @@
     "bookId": 14,
     "chapterId": 4,
     "verseId": 16,
-    "text": "grytene, skovlene, gaflene og alt tilbehøret – alt dette laget Huram-Abi for kong Salomo til Herrens hus, av polert bronse."
+    "text": "grytene, skovlene, gaflene og alt tilbehøret – alt dette laget mester Huram for kong Salomo til Herrens hus, av polert bronse.",
+    "versions": [
+      {
+        "text": "grytene, skovlene, gaflene og alt tilbehøret – alt dette laget Huram-Abi for kong Salomo til Herrens hus, av polert bronse.",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "The Hebrew 'Huram aviv' likely means 'Huram his master craftsman' (where 'av' means 'master/father'). 'Huram-Abi' treats it as a compound name, which is one interpretation but potentially confusing for Norwegian readers. The parallel in 2 Chr 2:13 introduces him as Huram-Abi, so this reading is defensible, but a note or clarification could help."
+      }
+    ]
   },
   {
     "bookId": 14,
@@ -105,7 +129,15 @@
     "bookId": 14,
     "chapterId": 4,
     "verseId": 18,
-    "text": "Salomo laget alle disse gjenstandene i store mengder, for bronsen ble ikke veid."
+    "text": "Salomo laget alle disse gjenstandene i store mengder, for vekten av bronsen var ikke til å utforske.",
+    "versions": [
+      {
+        "text": "Salomo laget alle disse gjenstandene i store mengder, for bronsen ble ikke veid.",
+        "type": "error",
+        "severity": "major",
+        "explanation": "The Hebrew 'lo nechqar' means 'was not searched out/investigated/fathomed' — i.e., the weight was so great it could not be determined or was beyond reckoning. 'Ble ikke veid' (was not weighed) misses the nuance that it was too vast to measure, not merely that they chose not to weigh it."
+      }
+    ]
   },
   {
     "bookId": 14,
@@ -129,6 +161,14 @@
     "bookId": 14,
     "chapterId": 4,
     "verseId": 22,
-    "text": "knivene, skålene, kannene og ildpannene av rent gull. Og inngangen til huset – de indre dørene til Det aller helligste og dørene til tempelhallen – var av gull."
+    "text": "knivsakene, skålene, kannene og ildpannene av rent gull. Og inngangen til huset – de indre dørene til Det aller helligste og dørene til tempelhallen – var av gull.",
+    "versions": [
+      {
+        "text": "knivene, skålene, kannene og ildpannene av rent gull. Og inngangen til huset – de indre dørene til Det aller helligste og dørene til tempelhallen – var av gull.",
+        "type": "error",
+        "severity": "minor",
+        "explanation": "The Hebrew מְזַמְּרוֹת (mezammerot) refers to snuffers or wick-trimmers (for lamps), not knives. 'Knivsakene' or 'vekesaksene' would be more accurate. These are tools used for trimming lamp wicks."
+      }
+    ]
   }
 ]

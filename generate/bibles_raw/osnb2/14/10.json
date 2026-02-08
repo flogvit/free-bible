@@ -9,7 +9,15 @@
     "bookId": 14,
     "chapterId": 10,
     "verseId": 2,
-    "text": "Da Jeroboam, sønn av Nebat, hørte dette – han var ennå i Egypt, dit han hadde flyktet fra kong Salomo – vendte han tilbake fra Egypt."
+    "text": "Da Jeroboam, sønn av Nebat, hørte dette – han var i Egypt, dit han hadde flyktet fra kong Salomo – vendte Jeroboam tilbake fra Egypt.",
+    "versions": [
+      {
+        "text": "Da Jeroboam, sønn av Nebat, hørte dette – han var ennå i Egypt, dit han hadde flyktet fra kong Salomo – vendte han tilbake fra Egypt.",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "The Hebrew has 'ennå' is not present in the original text. Also, the subject in the final clause is explicitly 'Jeroboam' (יָרָבְעָם) in the Hebrew, not just a pronoun. While using a pronoun is acceptable, removing the word 'ennå' (still) is more accurate since the Hebrew does not include it."
+      }
+    ]
   },
   {
     "bookId": 14,
@@ -81,7 +89,15 @@
     "bookId": 14,
     "chapterId": 10,
     "verseId": 14,
-    "text": "og talte til dem etter de unges råd: «Jeg har gjort deres åk tungt, og jeg skal legge enda mer til. Min far tuktet dere med sveper, men jeg skal tukte dere med skorpioner.»"
+    "text": "og talte til dem etter de unges råd: «Jeg vil gjøre deres åk tungt, og jeg skal legge enda mer til. Min far tuktet dere med sveper, men jeg skal tukte dere med skorpioner.»",
+    "versions": [
+      {
+        "text": "og talte til dem etter de unges råd: «Jeg har gjort deres åk tungt, og jeg skal legge enda mer til. Min far tuktet dere med sveper, men jeg skal tukte dere med skorpioner.»",
+        "type": "error",
+        "severity": "major",
+        "explanation": "The Hebrew אַכְבִּיד is a Hiphil imperfect ('I will make heavy'), expressing a future intention, not a past action ('I have made heavy'). Rehabeam is declaring what he will do, not reflecting on what he has already done. 'Jeg har gjort' (I have made) should be 'Jeg vil gjøre' (I will make)."
+      }
+    ]
   },
   {
     "bookId": 14,

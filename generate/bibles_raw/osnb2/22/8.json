@@ -33,7 +33,15 @@
     "bookId": 22,
     "chapterId": 8,
     "verseId": 5,
-    "text": "Hvem er hun som kommer opp fra ørkenen, lent mot sin elskede? Under epletreet vekket jeg deg. Der fødte din mor deg med smerter, der lå hun i fødselsveer og fødte deg."
+    "text": "Hvem er hun som kommer opp fra ørkenen, lent mot sin elskede? Under epletreet vekket jeg deg. Der var din mor i fødselsveer med deg, der lå hun i rier og fødte deg.",
+    "versions": [
+      {
+        "text": "Hvem er hun som kommer opp fra ørkenen, lent mot sin elskede? Under epletreet vekket jeg deg. Der fødte din mor deg med smerter, der lå hun i fødselsveer og fødte deg.",
+        "type": "error",
+        "severity": "major",
+        "explanation": "Den nåværende oversettelsen gjengir 'חִבְּלַתְךָ אִמֶּךָ' som 'fødte din mor deg med smerter' og 'חִבְּלָה יְלָדַתְךָ' som 'lå hun i fødselsveer og fødte deg'. Problemet er at begge linjene blir for like. Det hebraiske 'חִבְּלַתְךָ' (piel av חבל) betyr 'var i fødselsveer/rier med deg', ikke 'fødte med smerter'. Første linje bør skille seg fra andre linje der 'יְלָדַתְךָ' (fødte deg) brukes. Oversettelsen bør gjenspeile den poetiske progresjonen: først veer, så fødsel."
+      }
+    ]
   },
   {
     "bookId": 22,
@@ -57,11 +65,17 @@
     "bookId": 22,
     "chapterId": 8,
     "verseId": 9,
-    "text": "Er hun en mur, skal vi bygge et sølvtårn på henne. Er hun en dør, skal vi sperre henne inne med en sederplanke.",
+    "text": "Er hun en mur, skal vi bygge et sølvtårn på den. Er hun en dør, skal vi sperre den inne med en sederplanke.",
     "versions": [
       {
         "text": "Er hun en mur, skal vi bygge et sølvtårn på henne. Er hun en dør, skal vi stenge henne med en sederplanke.",
         "explanation": "Verbet 'נָצוּר' (fra צור) betyr å beleire, omringe eller sperre inne. 'Stenge henne med' er litt uklart - 'sperre henne inne med' gir bedre mening i konteksten om å beskytte søsteren."
+      },
+      {
+        "text": "Er hun en mur, skal vi bygge et sølvtårn på henne. Er hun en dør, skal vi sperre henne inne med en sederplanke.",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "Det hebraiske 'עָלֶיהָ' refererer til muren/døren (feminin), ikke direkte til søsteren personlig. 'På henne' er litt klønete på norsk i denne billedlige konteksten. 'På den' ville referere til muren/døren som metafor og være mer naturlig, men dette er en mindre stilistisk preferanse."
       }
     ]
   },
@@ -99,11 +113,17 @@
     "bookId": 22,
     "chapterId": 8,
     "verseId": 14,
-    "text": "Fly hit, min elskede! Vær som en gasell eller en ung hjort på de duftende fjellene.",
+    "text": "Kom raskt, min elskede! Vær lik en gasell eller en ung hjort på krydderfjellene.",
     "versions": [
       {
         "text": "Skynd deg, min elskede! Vær som en gasell eller en ung hjort på de duftende fjellene.",
         "explanation": "Det hebraiske 'בְּרַח' betyr primært 'flykt' eller 'fly'. I konteksten av Høysangen, hvor bruden kaller på sin elskede, er det mer sannsynlig en invitasjon til å komme raskt til henne ('fly hit') enn bare 'skynd deg'. Dette gir også bedre parallell til bildet av den raske gasellen."
+      },
+      {
+        "text": "Fly hit, min elskede! Vær som en gasell eller en ung hjort på de duftende fjellene.",
+        "type": "error",
+        "severity": "major",
+        "explanation": "'בְּרַח' betyr 'flykt/fly'. I denne konteksten, som avslutning på boken, er det omdiskutert om det er en invitasjon til å komme eller en oppfordring til å fly bort (jf. parallellen med 2:17). 'Fly hit' legger til 'hit' som ikke finnes i teksten. Verbet alene sier bare 'fly/flykt'. Dessuten er 'הָרֵי בְשָׂמִים' mer bokstavelig 'krydderfjellene' / 'balsamfjellene', ikke bare 'duftende fjellene'."
       }
     ]
   }

@@ -9,11 +9,17 @@
     "bookId": 6,
     "chapterId": 16,
     "verseId": 2,
-    "text": "Fra Betel-Lus går den over til arkittenes grense ved Atarot.",
+    "text": "Fra Betel går den til Lus og over til arkittenes grense ved Atarot.",
     "versions": [
       {
         "text": "Fra Betel går den videre til Lus og over til arkittenes grense ved Atarot.",
         "explanation": "Hebraisk יָצָא betyr simpelthen 'gikk ut' eller 'går'. Ordet 'videre' er ikke i originalen og kan fjernes for en strammere oversettelse som holder seg nærmere grunnteksten."
+      },
+      {
+        "text": "Fra Betel-Lus går den over til arkittenes grense ved Atarot.",
+        "type": "error",
+        "severity": "major",
+        "explanation": "Den hebraiske teksten har מִבֵּית־אֵל לוּזָה – 'fra Betel til Lus'. Det er to separate steder (eller i det minste to separate navn) med preposisjonen מִן ('fra') og retningsendelsen -ָה ('til'). 'Betel-Lus' som ett bindestreksnavn er en tolkning som ikke gjenspeiler den hebraiske syntaksen. Den forrige versjonen ble endret for å fjerne 'videre', men den nåværende versjonen slår feilaktig sammen de to stedsnavnene. Vi kan beholde endringen (uten 'videre') og likevel skille stedsnavnene."
       }
     ]
   },
@@ -69,7 +75,15 @@
     "bookId": 6,
     "chapterId": 16,
     "verseId": 8,
-    "text": "Fra Tappuah gikk grensen vestover til Kana-bekken og endte ved havet. Dette er arveloddet til Efraims stamme etter deres slekter."
+    "text": "Fra Tappuah gikk grensen vestover til Kana-bekken, og dens utløp var ved havet. Dette er arveloddet til Efraims stamme etter deres slekter.",
+    "versions": [
+      {
+        "text": "Fra Tappuah gikk grensen vestover til Kana-bekken og endte ved havet. Dette er arveloddet til Efraims stamme etter deres slekter.",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "I vers 3 ble תֹצְאֹתָיו bevisst oversatt med 'dens utløp er ved havet' for å bevare det tekniske grensebegrepet. Samme hebraiske uttrykk (תֹצְאֹתָיו הַיָּמָּה) brukes her i vers 8, men er oversatt med 'endte ved havet'. For konsistens bør samme faguttrykk brukes begge steder."
+      }
+    ]
   },
   {
     "bookId": 6,

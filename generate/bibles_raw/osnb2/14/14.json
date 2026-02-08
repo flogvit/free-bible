@@ -3,7 +3,15 @@
     "bookId": 14,
     "chapterId": 14,
     "verseId": 1,
-    "text": "Asa gjorde det som var godt og rett i HERRENs, sin Guds øyne."
+    "text": "Asa gjorde det som var godt og rett i HERREN sin Guds øyne.",
+    "versions": [
+      {
+        "text": "Asa gjorde det som var godt og rett i HERRENs, sin Guds øyne.",
+        "type": "grammar",
+        "severity": "minor",
+        "explanation": "Konstruksjonen 'HERRENs, sin Guds øyne' er grammatisk uvanlig med komma og genitivs-s på HERREN. Den hebraiske konstruksjonen 'יְהוָ֥ה אֱלֹהָֽיו' er en apposisjon der 'HERREN' og 'hans Gud' står sammen. 'HERREN sin Guds øyne' er mer naturlig norsk bokmål."
+      }
+    ]
   },
   {
     "bookId": 14,
@@ -45,7 +53,15 @@
     "bookId": 14,
     "chapterId": 14,
     "verseId": 8,
-    "text": "Kusjitten Serah dro ut mot dem med en hær på én million mann og tre hundre stridsvogner, og han kom helt til Maresja."
+    "text": "Kusjitten Serah dro ut mot dem med en hær på tusen ganger tusen mann og tre hundre stridsvogner, og han kom helt til Maresja.",
+    "versions": [
+      {
+        "text": "Kusjitten Serah dro ut mot dem med en hær på én million mann og tre hundre stridsvogner, og han kom helt til Maresja.",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "Det hebraiske uttrykket 'אֶלֶף אֲלָפִים' betyr bokstavelig 'tusen tusener'. Å oversette det som 'én million' er teknisk korrekt men moderniserer talluttrykket. 'Tusen ganger tusen' bevarer det bibelske stilregisteret bedre, men dette er en mindre preferansesak."
+      }
+    ]
   },
   {
     "bookId": 14,
@@ -81,6 +97,14 @@
     "bookId": 14,
     "chapterId": 14,
     "verseId": 14,
-    "text": "De slo også ned teltene til gjeterne og førte bort en mengde småfe og kameler. Så vendte de tilbake til Jerusalem."
+    "text": "De slo også ned teltene til buskapen og førte bort en mengde småfe og kameler. Så vendte de tilbake til Jerusalem.",
+    "versions": [
+      {
+        "text": "De slo også ned teltene til gjeterne og førte bort en mengde småfe og kameler. Så vendte de tilbake til Jerusalem.",
+        "type": "error",
+        "severity": "major",
+        "explanation": "Det hebraiske 'אָהֳלֵי מִקְנֶה' betyr 'buskapteltene' eller 'teltene til buskapen/feet' – det refererer til teltene der buskap ble holdt (nomadiske gjeteres kveginnhegninger/leirer). 'Gjeterne' er en tolkning; 'מִקְנֶה' betyr 'buskap/fe', ikke 'gjetere'. En mer presis oversettelse er 'teltene til buskapen' eller 'kveg-teltene'."
+      }
+    ]
   }
 ]

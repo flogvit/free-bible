@@ -3,7 +3,15 @@
     "bookId": 9,
     "chapterId": 2,
     "verseId": 1,
-    "text": "Hanna ba og sa: Mitt hjerte jubler i Herren, mitt horn er løftet ved Herren. Min munn er vid åpen mot mine fiender, for jeg gleder meg over din frelse."
+    "text": "Hanna ba denne bønnen og sa: Mitt hjerte jubler i Herren, mitt horn er løftet ved Herren. Min munn er vid åpen mot mine fiender, for jeg gleder meg over din frelse.",
+    "versions": [
+      {
+        "text": "Hanna ba og sa: Mitt hjerte jubler i Herren, mitt horn er løftet ved Herren. Min munn er vid åpen mot mine fiender, for jeg gleder meg over din frelse.",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "Det hebraiske וַתִּתְפַּלֵּל betyr 'ba/bad en bønn'. 'Hanna ba og sa' er akseptabelt, men 'Hanna ba denne bønnen' gir litt bedre flyt. Dette er en mindre forbedring."
+      }
+    ]
   },
   {
     "bookId": 9,
@@ -27,7 +35,15 @@
     "bookId": 9,
     "chapterId": 2,
     "verseId": 5,
-    "text": "De mette må arbeide for brød, mens de sultne slipper å hungre. Den ufruktbare føder sju barn, men den med mange sønner visner bort."
+    "text": "De mette må leie seg ut for brød, mens de hungrige kan hvile. Den ufruktbare føder sju barn, men den med mange sønner visner bort.",
+    "versions": [
+      {
+        "text": "De mette må arbeide for brød, mens de sultne slipper å hungre. Den ufruktbare føder sju barn, men den med mange sønner visner bort.",
+        "type": "error",
+        "severity": "major",
+        "explanation": "נִשְׂכָּרוּ betyr 'leie seg ut/ta seg arbeid for lønn' (fra שכר), og חָדֵלּוּ betyr 'holde opp/slutte' (dvs. slutte å hungre/hvile fra sult). 'De sultne slipper å hungre' er en akseptabel tolkning, men 'De mette må arbeide for brød' er litt upresist — poenget er at de som var mette nå må leie seg ut (for å få brød), altså en omveltning av status. 'Leie seg ut' er mer presist enn bare 'arbeide'."
+      }
+    ]
   },
   {
     "bookId": 9,
@@ -69,7 +85,15 @@
     "bookId": 9,
     "chapterId": 2,
     "verseId": 12,
-    "text": "Elis sønner var onde menn som ikke kjente Herren."
+    "text": "Elis sønner var nytteløse menn som ikke kjente Herren.",
+    "versions": [
+      {
+        "text": "Elis sønner var onde menn som ikke kjente Herren.",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "בְּנֵי בְלִיָּעַל betyr bokstavelig 'sønner av Belial/nyttesløshet', som innebærer verdløse/onde personer. 'Onde menn' er akseptabelt og formidler meningen, men 'nytteløse menn' eller 'udugelige menn' ligger nærmere det hebraiske uttrykket. Dette er en mindre sak."
+      }
+    ]
   },
   {
     "bookId": 9,
@@ -117,11 +141,17 @@
     "bookId": 9,
     "chapterId": 2,
     "verseId": 20,
-    "text": "Eli velsignet Elkana og hans kone og sa: «Måtte Herren gi deg avkom med denne kvinnen i stedet for den gaven hun ba om fra Herren.» Så dro de hjem.",
+    "text": "Eli velsignet Elkana og hans kone og sa: «Måtte Herren gi deg avkom med denne kvinnen i stedet for det som ble utbedt til Herren.» Så dro de hjem.",
     "versions": [
       {
         "text": "Eli velsignet Elkana og hans kone og sa: «Måtte Herren gi deg avkom med denne kvinnen i stedet for ham som ble bedt om og gitt til Herren.» Så dro de hjem.",
         "explanation": "Det hebraiske שָׁאַל (sha'al) refererer til bønnen/forespørselen Hanna gjorde, ikke direkte til Samuel som person. Formuleringen 'den gaven hun ba om' gjenspeiler bedre den hebraiske konstruksjonen og ordspillet med Samuels navn."
+      },
+      {
+        "text": "Eli velsignet Elkana og hans kone og sa: «Måtte Herren gi deg avkom med denne kvinnen i stedet for den gaven hun ba om fra Herren.» Så dro de hjem.",
+        "type": "error",
+        "severity": "major",
+        "explanation": "Det hebraiske שָׁאַל (sha'al) her er i 3. person maskulin (han ba om), noe som grammatisk refererer til Elkana (eller generisk 'man'). Å oversette med 'hun ba om' endrer subjektet. 'Det som ble utbedt til Herren' beholder passiv konstruksjon og unngår å spesifisere subjekt feilaktig, samtidig som det skiller seg fra den tidligere versjonen."
       }
     ]
   },
@@ -177,7 +207,15 @@
     "bookId": 9,
     "chapterId": 2,
     "verseId": 29,
-    "text": "Hvorfor forakter dere mitt slaktoffer og mitt matoffer, som jeg har påbudt i min bolig? Du ærer dine sønner mer enn meg ved å fete dere på det beste av alle offergaver fra Israel, mitt folk."
+    "text": "Hvorfor tramper dere på mitt slaktoffer og mitt matoffer, som jeg har påbudt i min bolig? Du ærer dine sønner mer enn meg ved å fete dere på det beste av alle offergaver fra Israel, mitt folk.",
+    "versions": [
+      {
+        "text": "Hvorfor forakter dere mitt slaktoffer og mitt matoffer, som jeg har påbudt i min bolig? Du ærer dine sønner mer enn meg ved å fete dere på det beste av alle offergaver fra Israel, mitt folk.",
+        "type": "error",
+        "severity": "major",
+        "explanation": "תִבְעֲטוּ (fra בעט) betyr 'sparke/trampe på' snarere enn bare 'forakte'. Det er et sterkere bilde enn bare forakt — det beskriver å behandle offergavene med forakt ved å tråkke på dem. 'Tramper dere på' formidler bedre den hebraiske metaforen."
+      }
+    ]
   },
   {
     "bookId": 9,
@@ -201,7 +239,15 @@
     "bookId": 9,
     "chapterId": 2,
     "verseId": 33,
-    "text": "Likevel skal jeg ikke utrydde alle dine fra mitt alter, så dine øyne slites ut og din sjel tæres bort. Men alle som fødes i ditt hus, skal dø i sin beste alder."
+    "text": "Den eneste jeg ikke utrydder for deg fra mitt alter, skal være til å slite ut dine øyne og tære bort din sjel. Og alle som vokser fram i ditt hus, skal dø som menn i sin beste alder.",
+    "versions": [
+      {
+        "text": "Likevel skal jeg ikke utrydde alle dine fra mitt alter, så dine øyne slites ut og din sjel tæres bort. Men alle som fødes i ditt hus, skal dø i sin beste alder.",
+        "type": "error",
+        "severity": "major",
+        "explanation": "Verset sier ikke 'jeg skal ikke utrydde alle' som en nådehandling, men snarere at den ene som overlever ved alteret vil være en kilde til sorg — 'for å slite ut dine øyne og plage din sjel'. Det er en trussel, ikke en trøst. מַרְבִּית betyr 'det som vokser/avkommet', og אֲנָשִׁים betyr 'som menn' (altså i sin manndomskraft/beste alder)."
+      }
+    ]
   },
   {
     "bookId": 9,

@@ -3,7 +3,15 @@
     "bookId": 12,
     "chapterId": 19,
     "verseId": 1,
-    "text": "Da kong Hiskia hørte dette, flerret han klærne sine, kledde seg i sekkestrie og gikk inn i Herrens hus."
+    "text": "Da kong Hiskia hørte dette, flerret han klærne sine, kledde seg i sekkestoff og gikk inn i Herrens hus.",
+    "versions": [
+      {
+        "text": "Da kong Hiskia hørte dette, flerret han klærne sine, kledde seg i sekkestrie og gikk inn i Herrens hus.",
+        "type": "grammar",
+        "severity": "minor",
+        "explanation": "«Sekkestrie» er en uvanlig og litt tung form på norsk bokmål. «Sekkestoff» eller «sekk» er mer idiomatisk. Imidlertid er «sekkestrie» også akseptabelt i bibelsk norsk. Dette er en mindre stilistisk observasjon. Alternativt kan «sekkestrie» beholdes for konsistens dersom det er et bevisst valg."
+      }
+    ]
   },
   {
     "bookId": 12,
@@ -51,7 +59,15 @@
     "bookId": 12,
     "chapterId": 19,
     "verseId": 9,
-    "text": "Da kongen fikk høre om Tirhaka, kongen av Kusj: «Se, han har dratt ut for å kjempe mot deg», sendte han igjen budbærere til Hiskia og sa:"
+    "text": "Da han fikk høre det om Tirhaka, kongen av Kusj, at han hadde dratt ut for å kjempe mot ham, sendte han igjen budbærere til Hiskia og sa:",
+    "versions": [
+      {
+        "text": "Da kongen fikk høre om Tirhaka, kongen av Kusj: «Se, han har dratt ut for å kjempe mot deg», sendte han igjen budbærere til Hiskia og sa:",
+        "type": "error",
+        "severity": "major",
+        "explanation": "Subjektet her er Sanherib (assyrerkongen), ikke bare «kongen» generelt. Dessuten er det siterte «Se, han har dratt ut for å kjempe mot deg» i originalen ikke direkte tale, men en indirekte rapport (לֵאמֹר med infinitiv). Det bør være indirekte tale. Også «mot deg» bør være «mot ham» siden det er en rapport om Tirhaka som drar ut mot Sanherib, fortalt i tredjeperson."
+      }
+    ]
   },
   {
     "bookId": 12,
@@ -81,7 +97,15 @@
     "bookId": 12,
     "chapterId": 19,
     "verseId": 14,
-    "text": "Hiskia tok brevet fra budbærernes hånd og leste det. Så gikk han opp til Herrens hus, og Hiskia brettet det ut for Herrens ansikt."
+    "text": "Hiskia tok brevene fra budbærernes hånd og leste dem. Så gikk han opp til Herrens hus, og Hiskia brettet det ut for Herrens ansikt.",
+    "versions": [
+      {
+        "text": "Hiskia tok brevet fra budbærernes hånd og leste det. Så gikk han opp til Herrens hus, og Hiskia brettet det ut for Herrens ansikt.",
+        "type": "error",
+        "severity": "minor",
+        "explanation": "Det hebraiske הַסְּפָרִים er flertall – «brevene», ikke «brevet». Tilsvarende bør «leste det» være «leste dem». Resten av verset beholdes som det er."
+      }
+    ]
   },
   {
     "bookId": 12,
@@ -93,7 +117,15 @@
     "bookId": 12,
     "chapterId": 19,
     "verseId": 16,
-    "text": "Bøy ditt øre, Herre, og hør! Åpne dine øyne, Herre, og se! Hør Sanheribs ord, han som har sendt bud for å håne den levende Gud."
+    "text": "Bøy ditt øre, Herre, og hør! Åpne dine øyne, Herre, og se! Hør ordene til Sanherib, som han har sendt for å håne den levende Gud.",
+    "versions": [
+      {
+        "text": "Bøy ditt øre, Herre, og hør! Åpne dine øyne, Herre, og se! Hør Sanheribs ord, han som har sendt bud for å håne den levende Gud.",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "Oversettelsen «han som har sendt bud» gjør det uklart at det er Sanherib som har sendt (noen). Det hebraiske אֲשֶׁר שְׁלָחוֹ betyr «som han sendte ham» (dvs. Rabsjake). «Som han har sendt for å håne» er mer presist enn «han som har sendt bud»."
+      }
+    ]
   },
   {
     "bookId": 12,
@@ -141,7 +173,15 @@
     "bookId": 12,
     "chapterId": 19,
     "verseId": 24,
-    "text": "Jeg har gravd brønner og drukket fremmede vann. Med mine fotsåler har jeg tørket ut alle Egypts strømmer."
+    "text": "Jeg har gravd og drukket fremmede vann. Med mine fotsåler har jeg tørket ut alle Egypts elver.",
+    "versions": [
+      {
+        "text": "Jeg har gravd brønner og drukket fremmede vann. Med mine fotsåler har jeg tørket ut alle Egypts strømmer.",
+        "type": "error",
+        "severity": "major",
+        "explanation": "Det hebraiske קַרְתִּי betyr «jeg gravde (etter vann)» – ikke «gravd brønner». Ordet «brønner» er tillagt og finnes ikke i grunnteksten. Verbet alene betyr at han gravde (for å finne vann), uten at «brønner» nevnes eksplisitt."
+      }
+    ]
   },
   {
     "bookId": 12,
@@ -165,7 +205,15 @@
     "bookId": 12,
     "chapterId": 19,
     "verseId": 27,
-    "text": "Men jeg kjenner din bolig, din utgang og din inngang, og ditt raseri mot meg."
+    "text": "Men jeg kjenner ditt sete, din utgang og din inngang, og ditt raseri mot meg.",
+    "versions": [
+      {
+        "text": "Men jeg kjenner din bolig, din utgang og din inngang, og ditt raseri mot meg.",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "Det hebraiske שִׁבְתְּךָ (fra ישׁב) betyr «din sittende/boende» i betydningen «ditt sete» eller «ditt oppholdssted» – det uttrykker mer enn bare «bolig». «Ditt sete» gir bedre gjengivelse av den hebraiske metaforen om at Gud kjenner alt om personens tilværelse."
+      }
+    ]
   },
   {
     "bookId": 12,
@@ -189,7 +237,15 @@
     "bookId": 12,
     "chapterId": 19,
     "verseId": 31,
-    "text": "For fra Jerusalem skal en rest gå ut, og fra Sions fjell skal det komme noen som har unnsluppet. Herrens, hærskarenes Guds, nidkjærhet skal gjøre dette."
+    "text": "For fra Jerusalem skal en rest gå ut, og fra Sions fjell skal det komme noen som har unnsluppet. Herren over hærskarene skal i sin nidkjærhet gjøre dette.",
+    "versions": [
+      {
+        "text": "For fra Jerusalem skal en rest gå ut, og fra Sions fjell skal det komme noen som har unnsluppet. Herrens, hærskarenes Guds, nidkjærhet skal gjøre dette.",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "«Herrens, hærskarenes Guds, nidkjærhet» er grammatisk tungvint på norsk. «Herren over hærskarene skal i sin nidkjærhet gjøre dette» er mer lesbart og naturlig på moderne norsk bokmål, og gjengir innholdet presist."
+      }
+    ]
   },
   {
     "bookId": 12,

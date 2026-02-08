@@ -33,7 +33,15 @@
     "bookId": 18,
     "chapterId": 36,
     "verseId": 5,
-    "text": "Se, Gud er mektig, men han forakter ingen; han er mektig i forstandens kraft."
+    "text": "Se, Gud er mektig og forakter ingen; han er mektig i forstandens kraft.",
+    "versions": [
+      {
+        "text": "Se, Gud er mektig, men han forakter ingen; han er mektig i forstandens kraft.",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "Det hebraiske 'וְלֹא יִמְאָס' har ikke en adversativ (men) kontrast i originalen. Det er en enkel konjunksjon 'og'. 'Og forakter ingen' flyter bedre og er mer nøyaktig."
+      }
+    ]
   },
   {
     "bookId": 18,
@@ -111,13 +119,29 @@
     "bookId": 18,
     "chapterId": 36,
     "verseId": 17,
-    "text": "Men du er opptatt av den ugudeliges sak; dom og rett vil opprettholdes."
+    "text": "Men du er full av den ugudeliges dom; dom og rett vil gripe deg.",
+    "versions": [
+      {
+        "text": "Men du er opptatt av den ugudeliges sak; dom og rett vil opprettholdes.",
+        "type": "error",
+        "severity": "major",
+        "explanation": "Det hebraiske 'דִין־רָשָׁע מָלֵאתָ' betyr bokstavelig 'du har fylt deg med den ugudeliges dom/sak', altså at Job selv er blitt gjenstand for dom som en ugudelig. 'יִתְמֹכוּ' betyr 'de vil gripe/holde fast', og refererer til at dom og rett vil innhente eller gripe personen, ikke bare 'opprettholdes' i abstrakt forstand."
+      }
+    ]
   },
   {
     "bookId": 18,
     "chapterId": 36,
     "verseId": 18,
-    "text": "La ikke vreden lokke deg til spott, og la ikke stor løsepenge føre deg på villspor."
+    "text": "For pass deg for vreden, så den ikke lokker deg med overflod, og la ikke stor løsepenge føre deg på villspor.",
+    "versions": [
+      {
+        "text": "La ikke vreden lokke deg til spott, og la ikke stor løsepenge føre deg på villspor.",
+        "type": "error",
+        "severity": "major",
+        "explanation": "Det hebraiske 'כִּי חֵמָה פֶּן' er en advarsel: 'for (pass deg for) vrede, at den ikke...' Ordet 'בְסָפֶק' betyr 'med overflod/rikdom', ikke 'til spott'. Oversettelsen 'spott' er feil; det hebraiske ordet handler om materiell overflod som kan friste en person bort fra rettferdighet."
+      }
+    ]
   },
   {
     "bookId": 18,
@@ -201,7 +225,15 @@
     "bookId": 18,
     "chapterId": 36,
     "verseId": 30,
-    "text": "Se, han sprer sitt lys omkring seg og dekker havets røtter."
+    "text": "Se, han sprer sitt lys over det og dekker havets dypeste bunn.",
+    "versions": [
+      {
+        "text": "Se, han sprer sitt lys omkring seg og dekker havets røtter.",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "'עָלָיו' betyr 'over det/ham' snarere enn 'omkring seg'. Dessuten kan 'havets røtter' (שָׁרְשֵׁי הַיָּם) gjøres tydeligere for moderne lesere som 'havets dypeste bunn', som formidler meningen bedre."
+      }
+    ]
   },
   {
     "bookId": 18,
@@ -219,11 +251,17 @@
     "bookId": 18,
     "chapterId": 36,
     "verseId": 33,
-    "text": "Tordenen forkynner om ham, ja, kveget varsler om det som stiger opp.",
+    "text": "Hans torden forkynner om ham, selv kveget varsler om det som stiger opp.",
     "versions": [
       {
         "text": "Tordenen forkynner om ham, kveget varsler om uvær som kommer.",
         "explanation": "Det hebraiske 'עוֹלֶה' betyr 'det som stiger opp' (stormen/uværet som bygger seg opp). Formuleringen 'uvær som kommer' er akseptabel, men 'det som stiger opp' fanger bedre det poetiske bildet av stormen som reiser seg."
+      },
+      {
+        "text": "Tordenen forkynner om ham, ja, kveget varsler om det som stiger opp.",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "'רֵעוֹ' betyr 'hans torden/drønn' (fra rotordet רעם), med suffiks som viser til Gud. 'Tordenen' uten possessivpronomen mister tilknytningen til Gud. 'מִקְנֶה' med 'אַף' gir bedre mening som 'selv kveget' enn bare 'ja, kveget'."
       }
     ]
   }

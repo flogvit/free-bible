@@ -63,7 +63,15 @@
     "bookId": 13,
     "chapterId": 11,
     "verseId": 11,
-    "text": "Dette er tallet på Davids helter: Jasjobam, sønn av Hakkmoni, var leder for de tre. Han svang spydet sitt over tre hundre falne på én gang."
+    "text": "Dette er tallet på Davids helter: Jasjobam, sønn av Hakkmoni, var leder for de tretti. Han svang spydet sitt over tre hundre falne på én gang.",
+    "versions": [
+      {
+        "text": "Dette er tallet på Davids helter: Jasjobam, sønn av Hakkmoni, var leder for de tre. Han svang spydet sitt over tre hundre falne på én gang.",
+        "type": "error",
+        "severity": "minor",
+        "explanation": "The Ketiv reading is 'hashloshim' (the thirty), and the Qere is 'hashalishim' (the officers/captains). The current translation says 'de tre' (the three), but the Hebrew text (both Ketiv and Qere) does not say 'the three' here. Most translations render this as 'the thirty' or 'the captains/officers.' 'De tretti' follows the Ketiv and is the more common reading."
+      }
+    ]
   },
   {
     "bookId": 13,
@@ -105,7 +113,15 @@
     "bookId": 13,
     "chapterId": 11,
     "verseId": 18,
-    "text": "De tre brøt seg gjennom filisterleiren, øste vann fra brønnen ved Betlehems port og bar det med seg til David. Men David ville ikke drikke det. Han øste det ut for Herren"
+    "text": "De tre brøt seg gjennom filisterleiren, øste vann fra brønnen ved Betlehems port og bar det med seg til David. Men David ville ikke drikke det. Han øste det ut som et offer for Herren.",
+    "versions": [
+      {
+        "text": "De tre brøt seg gjennom filisterleiren, øste vann fra brønnen ved Betlehems port og bar det med seg til David. Men David ville ikke drikke det. Han øste det ut for Herren",
+        "type": "grammar",
+        "severity": "minor",
+        "explanation": "The Hebrew 'vaynassekh' means to pour out as a libation/drink offering, not just to pour out. Adding 'som et offer' captures the ritual/sacrificial nature of the act, which is theologically significant."
+      }
+    ]
   },
   {
     "bookId": 13,
@@ -117,13 +133,29 @@
     "bookId": 13,
     "chapterId": 11,
     "verseId": 20,
-    "text": "Absjai, bror til Joab, var leder for de tre. Han svang spydet sitt over tre hundre falne og hadde et navn blant de tre."
+    "text": "Absjai, bror av Joab, var leder for de tre. Han svang spydet sitt over tre hundre falne og hadde et navn blant de tre.",
+    "versions": [
+      {
+        "text": "Absjai, bror til Joab, var leder for de tre. Han svang spydet sitt over tre hundre falne og hadde et navn blant de tre.",
+        "type": "error",
+        "severity": "minor",
+        "explanation": "Minor: 'bror til' should be 'bror av' for more natural Norwegian, but this is very minor. The main text is acceptable."
+      }
+    ]
   },
   {
     "bookId": 13,
     "chapterId": 11,
     "verseId": 21,
-    "text": "Blant de tre var han den mest ærede av de to, og ble deres leder, men han nådde ikke opp til de tre."
+    "text": "Blant de tre var han æret fremfor de to andre, og ble deres leder, men han nådde ikke opp til de tre.",
+    "versions": [
+      {
+        "text": "Blant de tre var han den mest ærede av de to, og ble deres leder, men han nådde ikke opp til de tre.",
+        "type": "error",
+        "severity": "major",
+        "explanation": "The Hebrew 'מן השלושה בשנים נכבד' means 'of the three, he was more honored than the two (others),' not 'the most honored of the two.' The current phrasing 'den mest ærede av de to' is awkward and slightly misleading. The sense is that among the group of three, he was more honored than the other two."
+      }
+    ]
   },
   {
     "bookId": 13,

@@ -33,7 +33,15 @@
     "bookId": 23,
     "chapterId": 49,
     "verseId": 5,
-    "text": "Og nå sier Herren, han som formet meg fra mors liv til å være hans tjener, for å føre Jakob tilbake til ham, så Israel kan samles hos ham – jeg er æret i Herrens øyne, og min Gud er blitt min styrke –"
+    "text": "Og nå sier Herren – han som formet meg fra mors liv til å være hans tjener, for å føre Jakob tilbake til ham, så Israel samles hos ham – jeg er æret i Herrens øyne, og min Gud er blitt min styrke –",
+    "versions": [
+      {
+        "text": "Og nå sier Herren, han som formet meg fra mors liv til å være hans tjener, for å føre Jakob tilbake til ham, så Israel kan samles hos ham – jeg er æret i Herrens øyne, og min Gud er blitt min styrke –",
+        "type": "grammar",
+        "severity": "minor",
+        "explanation": "Setningsstrukturen er noe uklar. Bruk av tankestreker i stedet for komma etter 'Herren' gjør parentesen tydeligere. Også 'kan samles' (modalverb) er unødvendig - 'samles' er mer direkte og tro mot hebraisk."
+      }
+    ]
   },
   {
     "bookId": 23,
@@ -111,7 +119,15 @@
     "bookId": 23,
     "chapterId": 49,
     "verseId": 16,
-    "text": "Se, i mine håndflater har jeg tegnet deg inn, dine murer er alltid foran meg."
+    "text": "Se, i mine håndflater har jeg risset deg inn, dine murer er alltid foran meg.",
+    "versions": [
+      {
+        "text": "Se, i mine håndflater har jeg tegnet deg inn, dine murer er alltid foran meg.",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "Hebraisk 'חַקֹּתִיךְ' (fra חקק) betyr 'risset inn' eller 'gravert', ikke bare 'tegnet'. Verbet innebærer en permanent inskripsjon, noe som er teologisk viktig - det handler om noe uutslettelig. 'Risset inn' formidler dette bedre enn 'tegnet inn'."
+      }
+    ]
   },
   {
     "bookId": 23,
@@ -141,7 +157,15 @@
     "bookId": 23,
     "chapterId": 49,
     "verseId": 21,
-    "text": "Da skal du si i ditt hjerte: 'Hvem har født meg disse? Jeg var jo barnløs og ufruktbar, bortført og forstøtt. Hvem har fostret disse? Se, jeg var igjen alene. Hvor kom disse fra?'»"
+    "text": "Da skal du si i ditt hjerte: 'Hvem har født meg disse? Jeg var jo barnløs og ufruktbar, landflyktig og fordrevet. Hvem har fostret disse? Se, jeg var igjen alene. Hvor kom disse fra?'»",
+    "versions": [
+      {
+        "text": "Da skal du si i ditt hjerte: 'Hvem har født meg disse? Jeg var jo barnløs og ufruktbar, bortført og forstøtt. Hvem har fostret disse? Se, jeg var igjen alene. Hvor kom disse fra?'»",
+        "type": "grammar",
+        "severity": "minor",
+        "explanation": "Hebraisk 'גֹּלָה' betyr 'landflyktig/i eksil' og 'וְסוּרָה' betyr 'frastøtt/fordrevet'. 'Bortført' er akseptabelt men 'landflyktig' fanger bedre betydningen av eksil. 'Forstøtt' er litt upresist for 'סוּרָה' som handler mer om å bli drevet bort/fordrevet."
+      }
+    ]
   },
   {
     "bookId": 23,
@@ -165,11 +189,17 @@
     "bookId": 23,
     "chapterId": 49,
     "verseId": 24,
-    "text": "Kan byttet tas fra den mektige? Kan fanger tas fra en tyrann?",
+    "text": "Kan byttet tas fra den mektige? Kan den mektiges fanger settes fri?",
     "versions": [
       {
         "text": "Kan byttet tas fra den mektige? Kan den rettferdiges fanger bli satt fri?",
         "explanation": "Tekstkritisk sett leser mange manuskripter (inkludert Qumran) 'עָרִיץ' (tyrann) i stedet for 'צַדִּיק' (rettferdig), noe som gir bedre mening i konteksten og harmonerer med vers 25. LXX støtter også denne lesningen. 'Den rettferdiges fanger' er teologisk problematisk da det antyder at en rettferdig holder fanger."
+      },
+      {
+        "text": "Kan byttet tas fra den mektige? Kan fanger tas fra en tyrann?",
+        "type": "error",
+        "severity": "major",
+        "explanation": "Vers 24 følger MT (Masoretisk tekst) som leser 'צַדִּיק' (rettferdig), men den forrige revisjonen endret dette til 'tyrann' basert på tekstkritiske grunner. Problemet nå er at vers 24 og 25 sier nesten det samme - begge nevner 'mektige' og 'tyrann'. Ifølge MT stiller vers 24 et retorisk spørsmål (med 'rettferdig') som vers 25 svarer på med 'tyrann'. Men siden den forrige revisjonen bevisst valgte 'tyrann', og vi ikke skal angre denne endringen, bør vi i det minste justere formuleringen for å unngå nøyaktig repetisjon med vers 25. Oversettelsen bruker 'den mektiges fanger' i v.25 men 'fanger fra en tyrann' i v.24 - dette bryter den retoriske strukturen der v.24 spør og v.25 svarer."
       }
     ]
   },

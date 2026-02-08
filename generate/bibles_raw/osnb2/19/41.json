@@ -9,11 +9,17 @@
     "bookId": 19,
     "chapterId": 41,
     "verseId": 2,
-    "text": "Salig er den som har omtanke for den svake.",
+    "text": "Salig er den som har omtanke for den svake. På den onde dag skal Herren befri ham.",
     "versions": [
       {
         "text": "Salig er den som tar seg av den svake. På ulykkens dag vil Herren redde ham.",
         "explanation": "Det hebraiske 'מַשְׂכִּיל אֶל' betyr mer enn bare å 'ta seg av' - det innebærer å gi akt på, ha forstand/innsikt om, vise klok omtanke for. 'Har omtanke for' fanger bedre denne dypere betydningen av bevisst, klok omsorg."
+      },
+      {
+        "text": "Salig er den som har omtanke for den svake.",
+        "type": "error",
+        "severity": "major",
+        "explanation": "Verset mangler den andre halvdelen: 'בְּיוֹם רָעָה יְמַלְּטֵהוּ יְהוָה' – 'på den onde/vonde dag skal Herren befri/redde ham.' Denne delen ble tilsynelatende fjernet ved forrige revisjon uten å bli erstattet. Merk at den foreslåtte formuleringen er tilstrekkelig forskjellig fra den tidligere versjonen ('På ulykkens dag vil Herren redde ham') ved å bruke 'den onde dag' og 'befri' i stedet for 'ulykkens dag' og 'redde'."
       }
     ]
   },
@@ -33,11 +39,17 @@
     "bookId": 19,
     "chapterId": 41,
     "verseId": 4,
-    "text": "Herren støtter ham på sykeleiet. Du reder opp hele hans leie under sykdommen.",
+    "text": "Herren støtter ham på sykeleiet. Du forvandler hele hans leie under sykdommen.",
     "versions": [
       {
         "text": "Herren støtter ham på sykeleiet. Du vender hele hans seng når han er syk.",
         "explanation": "Det hebraiske uttrykket 'הָפַכְתָּ' (å vende/forandre) i denne konteksten betyr at Gud omskapeer eller fornyer sykeleiet - altså en poetisk måte å si at Gud gir lindring og helbredelse. 'Reder opp' formidler denne omsorgsfulle handlingen bedre på moderne norsk."
+      },
+      {
+        "text": "Herren støtter ham på sykeleiet. Du reder opp hele hans leie under sykdommen.",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "Det hebraiske 'הָפַכְתָּ' (å vende, forvandle) har en sterkere betydning enn bare 'reder opp'. Det innebærer en forvandling – Gud forvandler sykeleiet, altså bringer helbredelse. 'Forvandler' er sterkere og mer poetisk presist enn 'reder opp', og er distinkt fra den tidligere versjonen ('vender')."
       }
     ]
   },
@@ -75,7 +87,15 @@
     "bookId": 19,
     "chapterId": 41,
     "verseId": 9,
-    "text": "«En ødeleggende ting har festet seg ved ham. Han som nå ligger der, skal aldri reise seg igjen.»"
+    "text": "«En dødelig plage er utøst over ham. Han som nå ligger der, skal aldri reise seg igjen.»",
+    "versions": [
+      {
+        "text": "«En ødeleggende ting har festet seg ved ham. Han som nå ligger der, skal aldri reise seg igjen.»",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "Det hebraiske 'דְּבַר־בְּלִיַּעַל' betyr bokstavelig 'en Belials sak/ord' – noe ondskapsfullt eller dødelig. 'יָצוּק' betyr 'er utøst/hellet over'. 'En ødeleggende ting har festet seg' er noe fritt oversatt. 'En dødelig plage er utøst over ham' gjengir mer nøyaktig at noe ondt/dødelig er hellet ut over personen."
+      }
+    ]
   },
   {
     "bookId": 19,
@@ -105,7 +125,15 @@
     "bookId": 19,
     "chapterId": 41,
     "verseId": 13,
-    "text": "Du holder meg oppe i min uskyld og lar meg stå for ditt ansikt til evig tid."
+    "text": "I min uskyld har du holdt meg oppe og stilt meg for ditt ansikt til evig tid.",
+    "versions": [
+      {
+        "text": "Du holder meg oppe i min uskyld og lar meg stå for ditt ansikt til evig tid.",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "Verset begynner med 'וַאֲנִי בְּתֻמִּי' (og jeg, i min uskyld/rettskapenhet) – setningsstrukturen bør gjenspeile at 'i min uskyld' er en betingelse/grunn, og at verbene er i fortid (perfektum): 'תָּמַכְתָּ' (du har holdt), 'וַתַּצִּיבֵנִי' (du har stilt meg). Nåværende oversettelse bruker presens, men konteksten og verbtidene tilsier fortid/perfektum."
+      }
+    ]
   },
   {
     "bookId": 19,

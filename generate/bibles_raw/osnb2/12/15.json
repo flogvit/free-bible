@@ -3,7 +3,15 @@
     "bookId": 12,
     "chapterId": 15,
     "verseId": 1,
-    "text": "I det tjuesjuende året av Jeroboams, Israels konges, regjeringstid ble Asarja, sønn av Amasja, konge over Juda."
+    "text": "I det tjuende og sjuende året av Jeroboam, Israels konges, regjeringstid ble Asarja, sønn av Amasja, konge over Juda.",
+    "versions": [
+      {
+        "text": "I det tjuesjuende året av Jeroboams, Israels konges, regjeringstid ble Asarja, sønn av Amasja, konge over Juda.",
+        "type": "grammar",
+        "severity": "minor",
+        "explanation": "Formuleringen 'av Jeroboams, Israels konges, regjeringstid' har en unødvendig genitiv-s på 'Jeroboams' som gjør setningen grammatisk tung. Bedre: 'av Jeroboam, Israels konges, regjeringstid'. Alternativt er 'tjuesjuende' akseptabelt men stilistisk kan det forbedres."
+      }
+    ]
   },
   {
     "bookId": 12,
@@ -57,7 +65,15 @@
     "bookId": 12,
     "chapterId": 15,
     "verseId": 10,
-    "text": "Sjallum, sønn av Jabesj, sammensverget seg mot ham og slo ham ned i nærvær av folket. Han drepte ham og ble konge i hans sted."
+    "text": "Sjallum, sønn av Jabesj, sammensverget seg mot ham og slo ham ned foran folket. Han drepte ham og ble konge i hans sted.",
+    "versions": [
+      {
+        "text": "Sjallum, sønn av Jabesj, sammensverget seg mot ham og slo ham ned i nærvær av folket. Han drepte ham og ble konge i hans sted.",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "Uttrykket קָבָל־עָם betyr 'foran folket' eller 'offentlig'. 'Foran folket' er en mer naturlig og presis oversettelse på norsk enn 'i nærvær av folket'."
+      }
+    ]
   },
   {
     "bookId": 12,
@@ -75,7 +91,15 @@
     "bookId": 12,
     "chapterId": 15,
     "verseId": 13,
-    "text": "Sjallum, sønn av Jabesj, ble konge i det trettiende året av Ussias, Judas konges, regjeringstid. Han regjerte én måned i Samaria."
+    "text": "Sjallum, sønn av Jabesj, ble konge i det trettiniende året av Ussias, Judas konges, regjeringstid. Han regjerte én måned i Samaria.",
+    "versions": [
+      {
+        "text": "Sjallum, sønn av Jabesj, ble konge i det trettiende året av Ussias, Judas konges, regjeringstid. Han regjerte én måned i Samaria.",
+        "type": "error",
+        "severity": "major",
+        "explanation": "Hebraisk שְׁלֹשִׁ֤ים וָתֵ֙שַׁע֙ betyr 'trettinije' (39), ikke 'tretti' (30). Det mangler 'ni' i 'trettiende' – skal være 'trettiniende'."
+      }
+    ]
   },
   {
     "bookId": 12,
@@ -93,7 +117,15 @@
     "bookId": 12,
     "chapterId": 15,
     "verseId": 16,
-    "text": "På den tiden angrep Menahem Tifsa og alle som bodde der, og hele området fra Tirsa, fordi de ikke hadde åpnet portene for ham. Han slo byen og rev opp alle de gravide kvinnene."
+    "text": "På den tiden angrep Menahem Tifsa og alle som bodde der, og området rundt den fra Tirsa av, fordi de ikke åpnet for ham. Han angrep den og skar opp alle de gravide kvinnene.",
+    "versions": [
+      {
+        "text": "På den tiden angrep Menahem Tifsa og alle som bodde der, og hele området fra Tirsa, fordi de ikke hadde åpnet portene for ham. Han slo byen og rev opp alle de gravide kvinnene.",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "Uttrykket 'rev opp' er uvanlig på norsk i denne sammenhengen. 'Skar opp' (בִּקֵּעַ) er mer presist. Også 'portene' er tillagt – originalen sier bare לֹא פָתַח ('ikke åpnet'). Og גְּבוּלֶיהָ betyr 'dens grenser/områder', ikke 'hele området'."
+      }
+    ]
   },
   {
     "bookId": 12,
@@ -231,6 +263,14 @@
     "bookId": 12,
     "chapterId": 15,
     "verseId": 38,
-    "text": "Jotam gikk til hvile hos sine fedre og ble begravd hos sine fedre i sin far Davids by. Hans sønn Akas ble konge etter ham."
+    "text": "Jotam gikk til hvile hos sine fedre og ble begravd hos sine fedre i sin far Davids by. Hans sønn Ahas ble konge etter ham.",
+    "versions": [
+      {
+        "text": "Jotam gikk til hvile hos sine fedre og ble begravd hos sine fedre i sin far Davids by. Hans sønn Akas ble konge etter ham.",
+        "type": "error",
+        "severity": "major",
+        "explanation": "Det hebraiske navnet אָחָז skal translittereres som 'Ahas', ikke 'Akas'. 'Ahas' er den etablerte norske formen av dette kongenavnet."
+      }
+    ]
   }
 ]

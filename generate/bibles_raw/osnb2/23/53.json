@@ -9,7 +9,15 @@
     "bookId": 23,
     "chapterId": 53,
     "verseId": 2,
-    "text": "Han vokste opp som et skudd foran ham, som en rot fra tørr jord. Han hadde ingen skikkelse og ingen prakt. Vi så ham, men han hadde ikke et utseende som kunne tiltrekke oss."
+    "text": "Han vokste opp som et skudd foran ham, som en rot fra tørr jord. Han hadde ingen skikkelse og ingen prakt. Når vi så ham, var det ikke et utseende som kunne tiltrekke oss.",
+    "versions": [
+      {
+        "text": "Han vokste opp som et skudd foran ham, som en rot fra tørr jord. Han hadde ingen skikkelse og ingen prakt. Vi så ham, men han hadde ikke et utseende som kunne tiltrekke oss.",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "Det hebraiske וְנִרְאֵהוּ וְלֹא־מַרְאֶה וְנֶחְמְדֵהוּ er mer presist gjengitt som 'når vi så ham, var det ikke et utseende som (gjorde at) vi begjærte/ønsket ham'. Den nåværende oversettelsen er akseptabel, men «Når vi så ham» gir en bedre gjengivelse av den samtidige handlingen i originalteksten."
+      }
+    ]
   },
   {
     "bookId": 23,
@@ -33,11 +41,17 @@
     "bookId": 23,
     "chapterId": 53,
     "verseId": 6,
-    "text": "Vi gikk alle vill som sauer, hver av oss vendte seg til sin egen vei. Men Herren lot alles vår skyld ramme ham.",
+    "text": "Vi gikk alle vill som sauer, hver av oss vendte seg til sin egen vei. Men Herren lot vår alles skyld ramme ham.",
     "versions": [
       {
         "text": "Vi gikk alle vill som sauer, hver av oss vendte seg til sin egen vei. Men Herren lot våres alles skyld ramme ham.",
         "explanation": "«våres alles» er grammatisk feil på norsk. Korrekt form er «alles vår» eller «vår alles». «Alles vår skyld» er mest naturlig på moderne norsk bokmål."
+      },
+      {
+        "text": "Vi gikk alle vill som sauer, hver av oss vendte seg til sin egen vei. Men Herren lot alles vår skyld ramme ham.",
+        "type": "grammar",
+        "severity": "minor",
+        "explanation": "«Alles vår skyld» er en uvanlig ordstilling. «Vår alles skyld» er mer naturlig og idiomatisk norsk bokmål. Merk: den forrige versjonen hadde «våres alles» som ble rettet, men den nåværende «alles vår» er litt klønete sammenlignet med «vår alles»."
       }
     ]
   },

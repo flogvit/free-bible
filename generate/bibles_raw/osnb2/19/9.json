@@ -3,11 +3,17 @@
     "bookId": 19,
     "chapterId": 9,
     "verseId": 1,
-    "text": "Til korlederens. Al-mut labben. En salme av David.",
+    "text": "Til korlederen. Al-mut labben. En salme av David.",
     "versions": [
       {
         "text": "Til korlederen. Al-mut labben. En salme av David.",
         "explanation": "The Hebrew למנצח uses a preposition with the definite article, which in Norwegian typically renders as 'Til korlederen' or 'For korlederen'. However, the current translation is acceptable - this is a very minor stylistic point."
+      },
+      {
+        "text": "Til korlederens. Al-mut labben. En salme av David.",
+        "type": "grammar",
+        "severity": "minor",
+        "explanation": "'Korlederens' is a genitive form (possessive) which is grammatically incorrect here. The previous version 'Til korlederen' was actually correct. The change reason noted it was 'acceptable' but then changed it to the genitive form, which is a grammatical error. 'Til' takes the object form, not the possessive."
       }
     ]
   },
@@ -141,7 +147,15 @@
     "bookId": 19,
     "chapterId": 9,
     "verseId": 17,
-    "text": "Herren har kunngjort seg ved dommen han har holdt: Den ugudelige er snart i sine egne henders verk. Higgajon. Sela."
+    "text": "Herren har gjort seg kjent: han har holdt dom. Den ugudelige er fanget i sine egne henders verk. Higgajon. Sela.",
+    "versions": [
+      {
+        "text": "Herren har kunngjort seg ved dommen han har holdt: Den ugudelige er snart i sine egne henders verk. Higgajon. Sela.",
+        "type": "error",
+        "severity": "major",
+        "explanation": "The Hebrew נוֹדַע יְהוָה מִשְׁפָּט עָשָׂה means 'The LORD has made himself known, he has executed judgment.' The word נוֹקֵשׁ means 'is snared/ensnared', not 'is snart' (soon). The wicked is trapped/snared (נוֹקֵשׁ) by the work of his own hands. 'Snart' appears to be a mistranslation or typo for 'snaret' (snared/fanget)."
+      }
+    ]
   },
   {
     "bookId": 19,

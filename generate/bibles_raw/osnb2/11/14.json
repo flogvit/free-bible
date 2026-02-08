@@ -57,7 +57,15 @@
     "bookId": 11,
     "chapterId": 14,
     "verseId": 10,
-    "text": "Derfor vil jeg føre ulykke over Jeroboams hus. Jeg skal utrydde alle av mannkjønn hos Jeroboam, både umyndig og myndig i Israel. Jeg skal feie bort Jeroboams hus, slik man feier bort møkk til det er helt borte."
+    "text": "Derfor vil jeg føre ulykke over Jeroboams hus. Jeg skal utrydde hver eneste mann hos Jeroboam, både ufri og fri i Israel. Jeg skal feie bort Jeroboams hus, slik man feier bort møkk til det er helt borte.",
+    "versions": [
+      {
+        "text": "Derfor vil jeg føre ulykke over Jeroboams hus. Jeg skal utrydde alle av mannkjønn hos Jeroboam, både umyndig og myndig i Israel. Jeg skal feie bort Jeroboams hus, slik man feier bort møkk til det er helt borte.",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "The Hebrew עָצוּר וְעָזוּב literally means 'shut up and left' (i.e., bond and free / restrained and abandoned), which is an idiomatic expression meaning 'every last one.' The translation 'umyndig og myndig' (minor and of age) doesn't accurately reflect the Hebrew idiom. 'Ufri og fri' better captures the meaning of the pair."
+      }
+    ]
   },
   {
     "bookId": 11,
@@ -81,7 +89,15 @@
     "bookId": 11,
     "chapterId": 14,
     "verseId": 14,
-    "text": "Herren skal reise opp en konge over Israel som skal utrydde Jeroboams hus. Dette er dagen, ja, allerede nå!"
+    "text": "Herren skal reise opp en konge over Israel som skal utrydde Jeroboams hus. Det skjer denne dagen – ja, hva sier jeg, det skjer allerede nå!",
+    "versions": [
+      {
+        "text": "Herren skal reise opp en konge over Israel som skal utrydde Jeroboams hus. Dette er dagen, ja, allerede nå!",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "The Hebrew וּמֶה גַּם־עָתָּה is a rhetorical expression meaning roughly 'and what? even now!' – conveying a sense of urgency and surprise. The current translation captures the meaning reasonably but loses the rhetorical question element. A slightly expanded rendering conveys the dramatic force better."
+      }
+    ]
   },
   {
     "bookId": 11,
@@ -123,13 +139,29 @@
     "bookId": 11,
     "chapterId": 14,
     "verseId": 21,
-    "text": "Rehabeam, sønn av Salomo, var konge i Juda. Rehabeam var førtien år gammel da han ble konge, og han regjerte sytten år i Jerusalem, byen som Herren hadde utvalgt blant alle Israels stammer for å la sitt navn bo der. Hans mor het Na'ama og var fra Ammon."
+    "text": "Rehabeam, sønn av Salomo, var konge i Juda. Rehabeam var førtien år gammel da han ble konge, og han regjerte sytten år i Jerusalem, byen som Herren hadde utvalgt blant alle Israels stammer for å la sitt navn bo der. Hans mor het Naama og var ammonitt.",
+    "versions": [
+      {
+        "text": "Rehabeam, sønn av Salomo, var konge i Juda. Rehabeam var førtien år gammel da han ble konge, og han regjerte sytten år i Jerusalem, byen som Herren hadde utvalgt blant alle Israels stammer for å la sitt navn bo der. Hans mor het Na'ama og var fra Ammon.",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "The standard Norwegian rendering of the name נַעֲמָה is 'Naama' (without apostrophe). Also הָעַמֹּנִית means 'the Ammonitess' – i.e. she was an ammonitt (by ethnicity), not just 'from Ammon'. The same applies to verse 31."
+      }
+    ]
   },
   {
     "bookId": 11,
     "chapterId": 14,
     "verseId": 22,
-    "text": "Juda gjorde det som var ondt i Herrens øyne. Med sine synder vakte de hans nidkjærhet, mer enn deres fedre hadde gjort."
+    "text": "Juda gjorde det som var ondt i Herrens øyne. De egget ham til sjalusi med alle syndene de begikk, mer enn alt det fedrene deres hadde gjort.",
+    "versions": [
+      {
+        "text": "Juda gjorde det som var ondt i Herrens øyne. Med sine synder vakte de hans nidkjærhet, mer enn deres fedre hadde gjort.",
+        "type": "error",
+        "severity": "major",
+        "explanation": "The Hebrew וַיְקַנְאוּ אֹתוֹ means 'they provoked him to jealousy' – the subject is Juda (not 'their sins'). The phrase מִכֹּל אֲשֶׁר עָשׂוּ אֲבֹתָם means 'more than all that their fathers had done.' The current translation makes 'sine synder' the subject of provoking and slightly obscures the comparison. Also 'nidkjærhet' is somewhat archaic; 'sjalusi' is more modern and readable."
+      }
+    ]
   },
   {
     "bookId": 11,
@@ -183,6 +215,14 @@
     "bookId": 11,
     "chapterId": 14,
     "verseId": 31,
-    "text": "Rehabeam gikk til hvile hos sine fedre og ble begravet hos sine fedre i Davidsbyen. Hans mor het Na'ama og var fra Ammon. Hans sønn Abiam ble konge etter ham."
+    "text": "Rehabeam gikk til hvile hos sine fedre og ble begravet hos sine fedre i Davidsbyen. Hans mor het Naama og var ammonitt. Hans sønn Abiam ble konge etter ham.",
+    "versions": [
+      {
+        "text": "Rehabeam gikk til hvile hos sine fedre og ble begravet hos sine fedre i Davidsbyen. Hans mor het Na'ama og var fra Ammon. Hans sønn Abiam ble konge etter ham.",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "Same as verse 21: 'Na'ama' should be 'Naama' (standard Norwegian rendering without apostrophe), and הָעַמֹּנִית means 'the Ammonitess/ammonitt' rather than 'fra Ammon'."
+      }
+    ]
   }
 ]

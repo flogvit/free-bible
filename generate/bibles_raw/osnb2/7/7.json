@@ -15,7 +15,15 @@
     "bookId": 7,
     "chapterId": 7,
     "verseId": 3,
-    "text": "Rop derfor ut så folket hører det: Den som er redd og engstelig, kan snu og forlate Gilead-fjellet. Da vendte tjueto tusen av folket tilbake, og ti tusen ble igjen."
+    "text": "Rop derfor ut så folket hører det: «Den som er redd og engstelig, kan snu og dra fra Gilead-fjellet.»",
+    "versions": [
+      {
+        "text": "Rop derfor ut så folket hører det: Den som er redd og engstelig, kan snu og forlate Gilead-fjellet. Da vendte tjueto tusen av folket tilbake, og ti tusen ble igjen.",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "Den hebraiske teksten gjengir dette som direkte tale (Herren taler fortsatt til Gideon), og det som ropes bør stå i anførselstegn for konsistens. I tillegg betyr verbet יִצְפֹּר 'dra bort fra / vende seg fra' snarere enn 'forlate'."
+      }
+    ]
   },
   {
     "bookId": 7,
@@ -51,7 +59,15 @@
     "bookId": 7,
     "chapterId": 7,
     "verseId": 8,
-    "text": "De tok med seg folkets proviant og deres horn. De andre israelittene sendte han hjem, hver til sitt telt, men de tre hundre mennene beholdt han. Midians leir lå nedenfor ham i dalen."
+    "text": "De tre hundre tok med seg proviant fra folket og deres horn. De andre israelittene sendte han hjem, hver til sitt telt, men de tre hundre mennene beholdt han.",
+    "versions": [
+      {
+        "text": "De tok med seg folkets proviant og deres horn. De andre israelittene sendte han hjem, hver til sitt telt, men de tre hundre mennene beholdt han. Midians leir lå nedenfor ham i dalen.",
+        "type": "error",
+        "severity": "major",
+        "explanation": "Verset sier at de tre hundre tok provianten fra det øvrige folket (צֵדָה הָעָם – 'folkets proviant'), altså tok over matforsyningene fra dem som skulle dra hjem. Den nåværende oversettelsen er tvetydig om hvem som tok med seg hva."
+      }
+    ]
   },
   {
     "bookId": 7,
@@ -81,11 +97,17 @@
     "bookId": 7,
     "chapterId": 7,
     "verseId": 13,
-    "text": "Da Gideon kom dit, var det en mann som fortalte en drøm til kameraten sin. Han sa: «Hør her, jeg har hatt en drøm. Jeg så en rund byggkake som kom rullende inn i Midians leir. Det traff et telt og slo det ned, veltet det opp ned så teltet falt sammen.»",
+    "text": "Da Gideon kom dit, var det en mann som fortalte en drøm til kameraten sin. Han sa: «Hør her, jeg har hatt en drøm. Jeg så en rund byggkake som kom rullende inn i Midians leir. Den traff et telt og slo det ned, veltet det opp ned så teltet falt sammen.»",
     "versions": [
       {
         "text": "Da Gideon kom dit, var det en mann som fortalte en drøm til kameraten sin. Han sa: «Hør her, jeg har hatt en drøm. Jeg så et byggbrød som kom rullende inn i Midians leir. Det traff et telt og slo det ned, veltet det opp ned så teltet falt sammen.»",
         "explanation": "Det hebraiske 'צְלִיל' beskriver en rund, flat kake (som en lefse), ikke et brød. 'Byggkake' formidler bedre bildet av noe rundt som kan rulle, og gir drømmen mer mening."
+      },
+      {
+        "text": "Da Gideon kom dit, var det en mann som fortalte en drøm til kameraten sin. Han sa: «Hør her, jeg har hatt en drøm. Jeg så en rund byggkake som kom rullende inn i Midians leir. Det traff et telt og slo det ned, veltet det opp ned så teltet falt sammen.»",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "Siden subjektet er 'en rund byggkake' (hunkjønn/felleskjønn), bør pronomenet være 'den' i stedet for 'det' for å referere tilbake til kaken."
       }
     ]
   },
@@ -117,7 +139,15 @@
     "bookId": 7,
     "chapterId": 7,
     "verseId": 18,
-    "text": "Når jeg og alle som er med meg, støter i hornet, skal dere også støte i hornene rundt hele leiren og rope: Sverd for Herren og for Gideon!»"
+    "text": "Når jeg og alle som er med meg, støter i hornet, skal dere også støte i hornene rundt hele leiren og rope: For Herren og for Gideon!»",
+    "versions": [
+      {
+        "text": "Når jeg og alle som er med meg, støter i hornet, skal dere også støte i hornene rundt hele leiren og rope: Sverd for Herren og for Gideon!»",
+        "type": "error",
+        "severity": "major",
+        "explanation": "I vers 18 sier den hebraiske teksten bare 'lַיהוָה וּלְגִדְעוֹן' – 'For Herren og for Gideon'. Ordet 'sverd' (חֶרֶב) er ikke med her (det kommer først i vers 20). Å legge til 'sverd' i vers 18 harmoniserer med vers 20, men det er ikke trofast mot originalteksten."
+      }
+    ]
   },
   {
     "bookId": 7,
@@ -135,7 +165,15 @@
     "bookId": 7,
     "chapterId": 7,
     "verseId": 21,
-    "text": "De ble stående på sin plass rundt leiren. Da begynte hele leiren å løpe omkring, og de skrek og flyktet."
+    "text": "De ble stående på sin plass rundt leiren. Da begynte hele leiren å løpe, og de ropte høyt og flyktet.",
+    "versions": [
+      {
+        "text": "De ble stående på sin plass rundt leiren. Da begynte hele leiren å løpe omkring, og de skrek og flyktet.",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "Det hebraiske וַיָּרָץ betyr 'løpe' (i panikk), ikke nødvendigvis 'løpe omkring'. וַיָּרִיעוּ betyr 'skrike/rope høyt' (ofte et krigsrop eller nødrop), og 'ropte høyt' er mer presist enn 'skrek'."
+      }
+    ]
   },
   {
     "bookId": 7,

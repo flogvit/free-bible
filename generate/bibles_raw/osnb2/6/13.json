@@ -21,13 +21,29 @@
     "bookId": 6,
     "chapterId": 13,
     "verseId": 3,
-    "text": "Fra Sjihor ved grensen til Egypt og nordover til Ekrons grense regnes det som kanaaneisk. Der er de fem filisterfyrstene: i Gaza, Asjdod, Asjkalon, Gat og Ekron, og dessuten avvittene."
+    "text": "Fra Sjihor øst for Egypt og nordover til Ekrons grense regnes det som kanaaneisk. Der er de fem filisterfyrstene: i Gaza, Asjdod, Asjkalon, Gat og Ekron, og dessuten avvittene.",
+    "versions": [
+      {
+        "text": "Fra Sjihor ved grensen til Egypt og nordover til Ekrons grense regnes det som kanaaneisk. Der er de fem filisterfyrstene: i Gaza, Asjdod, Asjkalon, Gat og Ekron, og dessuten avvittene.",
+        "type": "error",
+        "severity": "major",
+        "explanation": "Hebraisk 'עַל־פְּנֵי מִצְרַיִם' betyr 'foran/øst for Egypt' (bokstavelig 'på ansiktet av Egypt'), ikke 'ved grensen til Egypt'. Sjihor (en sidearm av Nilen eller en bekk nær Egypt) lå øst for Egypt, ikke ved Egypts grense."
+      }
+    ]
   },
   {
     "bookId": 6,
     "chapterId": 13,
     "verseId": 4,
-    "text": "I sør hele kanaaneernes land og Meara, som tilhører sidonerne, og frem til Afek og til amorittenes grense."
+    "text": "I sør: hele kanaaneernes land, og Meara som tilhører sidonerne, frem til Afek, til amorittenes grense.",
+    "versions": [
+      {
+        "text": "I sør hele kanaaneernes land og Meara, som tilhører sidonerne, og frem til Afek og til amorittenes grense.",
+        "type": "error",
+        "severity": "major",
+        "explanation": "Mindre forbedring: et kolon etter 'I sør' gir bedre lesbarhet og gjør det tydeligere at dette er en opplisting som hører til de gjenværende områdene."
+      }
+    ]
   },
   {
     "bookId": 6,
@@ -171,7 +187,15 @@
     "bookId": 6,
     "chapterId": 13,
     "verseId": 25,
-    "text": "Deres område omfattet Jaser og alle byene i Gilead og halvparten av ammonittenes land til Aroer, som ligger øst for Rabba."
+    "text": "Deres område omfattet Jaser og alle byene i Gilead og halvparten av ammonittenes land, helt til Aroer som ligger øst for Rabba.",
+    "versions": [
+      {
+        "text": "Deres område omfattet Jaser og alle byene i Gilead og halvparten av ammonittenes land til Aroer, som ligger øst for Rabba.",
+        "type": "error",
+        "severity": "major",
+        "explanation": "'עַד־עֲרוֹעֵר' bør gjengis med 'helt til Aroer' for å markere at Aroer er endepunktet for området, ikke en beskrivelse av 'ammonittenes land'. Et komma før 'helt til' gjør den geografiske avgrensningen tydeligere."
+      }
+    ]
   },
   {
     "bookId": 6,
@@ -183,11 +207,17 @@
     "bookId": 6,
     "chapterId": 13,
     "verseId": 27,
-    "text": "I dalen: Bet-Haram, Bet-Nimra, Sukkot og Safon, resten av riket til Sihon, kongen av Hesjbon. Jordan og dens bredde var grensen, helt til den nordlige enden av Kinneret-sjøen, på østsiden av Jordan.",
+    "text": "I dalen: Bet-Haram, Bet-Nimra, Sukkot og Safon, resten av riket til Sihon, kongen av Hesjbon. Jordan med sitt grenseområde, helt til den sørlige enden av Kinneret-sjøen, på østsiden av Jordan.",
     "versions": [
       {
         "text": "I dalen: Bet-Haram, Bet-Nimra, Sukkot og Safon, resten av riket til Sihon, kongen av Hesjbon. Jordan var grensen til den nordlige enden av Kinneret-sjøen, på østsiden av Jordan.",
         "explanation": "Hebraisk 'הַיַּרְדֵּן וּגְבֻל' antyder at Jordan selv med sin bredde utgjorde grensen. Tillegget 'helt til' gjengir 'עַד' bedre."
+      },
+      {
+        "text": "I dalen: Bet-Haram, Bet-Nimra, Sukkot og Safon, resten av riket til Sihon, kongen av Hesjbon. Jordan og dens bredde var grensen, helt til den nordlige enden av Kinneret-sjøen, på østsiden av Jordan.",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "Hebraisk 'עַד־קְצֵה יָם־כִּנֶּרֶת' betyr 'til enden av Kinneret-sjøen'. Kontekstuelt handler det om den sørlige enden (der Jordan renner ut), ikke den nordlige, ettersom Gads område lå sør for sjøen. Også 'Jordan og dens bredde' er uklart; 'הַיַּרְדֵּן וּגְבֻל' betyr snarere 'Jordan med (dens) grenseområde'."
       }
     ]
   },
@@ -213,7 +243,15 @@
     "bookId": 6,
     "chapterId": 13,
     "verseId": 31,
-    "text": "Halvparten av Gilead og Asjtatot og Edre'i, Ogs kongsbyer i Basan, ble gitt til etterkommerne av Makir, Manasses sønn, til halvparten av Makirs etterkommere etter deres slekter."
+    "text": "Halvparten av Gilead, og Asjtatot og Edre'i, kongsbyer i Ogs rike i Basan, ble gitt til Makirs etterkommere, Manasses sønn – til halvparten av Makirs etterkommere etter deres slekter.",
+    "versions": [
+      {
+        "text": "Halvparten av Gilead og Asjtatot og Edre'i, Ogs kongsbyer i Basan, ble gitt til etterkommerne av Makir, Manasses sønn, til halvparten av Makirs etterkommere etter deres slekter.",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "'עָרֵי מַמְלְכוּת עוֹג' betyr 'byer i Ogs rike/kongedømme', ikke 'Ogs kongsbyer'. Formuleringen 'Ogs kongsbyer' antyder at det var personlige byer, mens teksten beskriver byer som tilhørte hans rike."
+      }
+    ]
   },
   {
     "bookId": 6,

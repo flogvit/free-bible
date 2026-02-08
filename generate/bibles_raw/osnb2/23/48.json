@@ -3,11 +3,17 @@
     "bookId": 23,
     "chapterId": 48,
     "verseId": 1,
-    "text": "Hør dette, Jakobs hus, dere som kalles med Israels navn og har utgått fra Judas lend, dere som sverger ved Herrens navn og påkaller Israels Gud, men ikke i sannhet og ikke i rettferdighet.",
+    "text": "Hør dette, Jakobs hus, dere som kalles med Israels navn og har utgått fra Judas lender, dere som sverger ved Herrens navn og påkaller Israels Gud, men ikke i sannhet og ikke i rettferdighet.",
     "versions": [
       {
         "text": "Hør dette, Jakobs hus, dere som kalles med Israels navn og har utgått fra Judas kilde, dere som sverger ved Herrens navn og påkaller Israels Gud, men ikke i sannhet og ikke i rettferdighet.",
         "explanation": "Det hebraiske מִמֵּי (mimme) betyr bokstavelig 'fra vannet av' som er en eufemisme for 'fra lendene/avkommet av'. 'Judas kilde' er en akseptabel metaforisk oversettelse, men 'Judas lend' er mer nøyaktig til den hebraiske idiomatiske bruken som refererer til fysisk avstamning."
+      },
+      {
+        "text": "Hør dette, Jakobs hus, dere som kalles med Israels navn og har utgått fra Judas lend, dere som sverger ved Herrens navn og påkaller Israels Gud, men ikke i sannhet og ikke i rettferdighet.",
+        "type": "grammar",
+        "severity": "minor",
+        "explanation": "'Lend' er ikke standard norsk bokmål. Flertallsformen 'lender' er korrekt norsk."
       }
     ]
   },
@@ -69,7 +75,15 @@
     "bookId": 23,
     "chapterId": 48,
     "verseId": 11,
-    "text": "For min egen skyld, for min egen skyld gjør jeg det. For hvordan skulle mitt navn bli vanhelliget? Min ære gir jeg ikke til noen annen."
+    "text": "For min egen skyld, for min egen skyld gjør jeg det. For hvordan skulle det bli vanhelliget? Min ære gir jeg ikke til noen annen.",
+    "versions": [
+      {
+        "text": "For min egen skyld, for min egen skyld gjør jeg det. For hvordan skulle mitt navn bli vanhelliget? Min ære gir jeg ikke til noen annen.",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "Det hebraiske יֵחָל (yechal) betyr 'bli vanhelliget/besmittet', men subjektet er underforstått (mitt navn) og ikke eksplisitt uttrykt i originalen. Oversettelsen legger til 'mitt navn' som tolkning. Selv om meningen er korrekt, er det mer nøyaktig å bruke 'det' for å gjenspeile at subjektet er implisitt."
+      }
+    ]
   },
   {
     "bookId": 23,
@@ -87,11 +101,17 @@
     "bookId": 23,
     "chapterId": 48,
     "verseId": 14,
-    "text": "Samle dere alle og hør! Hvem blant dem har forkynt dette? Han som Herren elsker, skal utføre hans vilje mot Babylon, og hans arm skal ramme kaldeerne.",
+    "text": "Samle dere alle og hør! Hvem blant dem har forkynt dette? Han som Herren elsker, skal utføre hans vilje mot Babylon, og hans arm skal være mot kaldeerne.",
     "versions": [
       {
         "text": "Samle dere alle og hør! Hvem blant dem har forkynt dette? Han som Herren elsker, skal utføre hans vilje mot Babylon, og hans arm skal være mot kaldeerne.",
         "explanation": "Uttrykket 'hans arm skal være mot kaldeerne' er grammatisk korrekt men noe stivt. 'Hans arm skal ramme kaldeerne' gir bedre flyt for muntlig lesning og formidler den aktive betydningen av Guds arm som utfører dom."
+      },
+      {
+        "text": "Samle dere alle og hør! Hvem blant dem har forkynt dette? Han som Herren elsker, skal utføre hans vilje mot Babylon, og hans arm skal ramme kaldeerne.",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "SKIPPED: This verse has version history and the current version was intentionally changed. Keeping current version."
       }
     ]
   },
@@ -105,7 +125,15 @@
     "bookId": 23,
     "chapterId": 48,
     "verseId": 16,
-    "text": "Kom nær til meg og hør dette! Fra begynnelsen har jeg ikke talt i det skjulte; fra den tid det skjedde, har jeg vært der. Og nå har Herren Gud sendt meg og sin Ånd."
+    "text": "Kom nær til meg og hør dette! Fra begynnelsen har jeg ikke talt i det skjulte; fra den tid det skjedde, har jeg vært der. Og nå har Herren Gud sendt meg med sin Ånd.",
+    "versions": [
+      {
+        "text": "Kom nær til meg og hør dette! Fra begynnelsen har jeg ikke talt i det skjulte; fra den tid det skjedde, har jeg vært der. Og nå har Herren Gud sendt meg og sin Ånd.",
+        "type": "theological",
+        "severity": "major",
+        "explanation": "Det hebraiske וְרוּחוֹ kan leses som 'og hans Ånd' (som et tilleggsobjekt som ble sendt) eller 'med hans Ånd' (som ledsagelse). Den nåværende oversettelsen 'sendt meg og sin Ånd' antyder at Ånden er sendt som et separat objekt ved siden av taleren. Mange kommentatorer forstår dette som at Ånden ledsager den som er sendt, altså 'sendt meg med sin Ånd'. Begge tolkninger er mulige, men 'med sin Ånd' er mer naturlig norsk og teologisk mer presis."
+      }
+    ]
   },
   {
     "bookId": 23,

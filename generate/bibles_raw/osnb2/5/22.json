@@ -27,7 +27,15 @@
     "bookId": 5,
     "chapterId": 22,
     "verseId": 4,
-    "text": "Når du ser din brors esel eller okse falt på veien, skal du ikke se en annen vei. Du skal hjelpe ham med å reise dem opp igjen."
+    "text": "Når du ser din brors esel eller okse falle på veien, skal du ikke se en annen vei. Du skal hjelpe ham med å reise dem opp igjen.",
+    "versions": [
+      {
+        "text": "Når du ser din brors esel eller okse falt på veien, skal du ikke se en annen vei. Du skal hjelpe ham med å reise dem opp igjen.",
+        "type": "grammar",
+        "severity": "minor",
+        "explanation": "Det hebraiske נֹפְלִים er et partisipp som beskriver en pågående handling ('falle'), ikke en fullført handling ('falt'). 'Falle' er grammatisk mer korrekt her."
+      }
+    ]
   },
   {
     "bookId": 5,
@@ -57,7 +65,15 @@
     "bookId": 5,
     "chapterId": 22,
     "verseId": 9,
-    "text": "Du skal ikke så to slag i din vingård, ellers blir hele avlingen helliget – både såkornet du har sådd og avlingen fra vingården."
+    "text": "Du skal ikke så to slags frø i din vingård, ellers blir hele avlingen helliget – både såkornet du har sådd og avlingen fra vingården.",
+    "versions": [
+      {
+        "text": "Du skal ikke så to slag i din vingård, ellers blir hele avlingen helliget – både såkornet du har sådd og avlingen fra vingården.",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "Det hebraiske כִּלְאָיִם betyr 'to slags (frø)' – altså å blande ulike frøtyper. 'To slag' alene er litt uklart; 'to slags frø' gjør meningen tydeligere."
+      }
+    ]
   },
   {
     "bookId": 5,
@@ -153,7 +169,15 @@
     "bookId": 5,
     "chapterId": 22,
     "verseId": 23,
-    "text": "Når en ung kvinne som er jomfru er forlovet med en mann, og en annen mann finner henne i byen og ligger med henne,"
+    "text": "Når en ung kvinne som er jomfru, er forlovet med en mann, og en annen mann finner henne i byen og ligger med henne,",
+    "versions": [
+      {
+        "text": "Når en ung kvinne som er jomfru er forlovet med en mann, og en annen mann finner henne i byen og ligger med henne,",
+        "type": "grammar",
+        "severity": "minor",
+        "explanation": "Det mangler et komma etter 'jomfru' for å markere slutten på relativsetningen ('som er jomfru') før hovedsetningen fortsetter ('er forlovet'). Dette er standard norsk tegnsetting."
+      }
+    ]
   },
   {
     "bookId": 5,

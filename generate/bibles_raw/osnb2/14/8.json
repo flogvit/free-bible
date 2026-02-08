@@ -3,7 +3,15 @@
     "bookId": 14,
     "chapterId": 8,
     "verseId": 1,
-    "text": "Da tjue år var gått, og Salomo hadde bygd Herrens hus og sitt eget hus,"
+    "text": "Etter tjue år, da Salomo hadde bygd Herrens hus og sitt eget hus,",
+    "versions": [
+      {
+        "text": "Da tjue år var gått, og Salomo hadde bygd Herrens hus og sitt eget hus,",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "Den hebraiske konstruksjonen מִקֵּץ עֶשְׂרִים שָׁנָה אֲשֶׁר בָּנָה betyr 'ved slutten av tjue år som Salomo bygde' – altså de tjue årene er byggeperioden, ikke en tidsfrist som passerte før byggingen. Uttrykket 'Da tjue år var gått, og Salomo hadde bygd' er akseptabelt men kan misforstås. 'Etter tjue år, da Salomo hadde bygd' er tydeligere."
+      }
+    ]
   },
   {
     "bookId": 14,
@@ -51,11 +59,17 @@
     "bookId": 14,
     "chapterId": 8,
     "verseId": 9,
-    "text": "Men av israelittene gjorde Salomo ingen til slaver for sitt arbeid, for de var krigsmenn, offiserer over hans vogner og hans ryttere.",
+    "text": "Men av israelittene gjorde Salomo ingen til slaver for sitt arbeid, for de var krigsmenn, hans øverste offiserer, og ledere over hans vogner og hans ryttere.",
     "versions": [
       {
         "text": "Men av israelittene gjorde Salomo ingen til slaver for sitt arbeid, for de var krigere, hærførere, vognstyrere og ryttere.",
         "explanation": "שָׁלִישִׁים refererer til høytstående offiserer eller kaptener, ikke generelle 'hærførere'. Også שָׂרֵי רִכְבּוֹ וּפָרָשָׁיו betyr 'offiserer over hans vogner og hans ryttere', ikke bare 'vognstyrere og ryttere'. Strukturen i originalen indikerer militære ledere, ikke bare soldater."
+      },
+      {
+        "text": "Men av israelittene gjorde Salomo ingen til slaver for sitt arbeid, for de var krigsmenn, offiserer over hans vogner og hans ryttere.",
+        "type": "error",
+        "severity": "major",
+        "explanation": "Den nåværende oversettelsen utelater שָׂרֵי שָׁלִישָׁיו (hans øverste offiserer / kapteinenes ledere) helt. Teksten nevner tre kategorier etter 'krigsmenn': (1) שָׂרֵי שָׁלִישָׁיו - ledere/offiserer over hans kapteinkorps, (2) שָׂרֵי רִכְבּוֹ - ledere over hans vogner, og (3) וּפָרָשָׁיו - hans ryttere. Den nåværende versjonen slår sammen punkt 1 og 2."
       }
     ]
   },
@@ -63,13 +77,29 @@
     "bookId": 14,
     "chapterId": 8,
     "verseId": 10,
-    "text": "Kong Salomo hadde to hundre og femti oppsynsmenn som styrte over folket."
+    "text": "Kong Salomo hadde to hundre og femti oppsynsmenn som hadde tilsyn med folket.",
+    "versions": [
+      {
+        "text": "Kong Salomo hadde to hundre og femti oppsynsmenn som styrte over folket.",
+        "type": "error",
+        "severity": "minor",
+        "explanation": "Tallet 250 er korrekt. Men הָרֹדִים betyr mer presist 'som hadde tilsyn/oppsyn over' enn 'styrte over'. Endringen er liten men forbedrer nøyaktigheten."
+      }
+    ]
   },
   {
     "bookId": 14,
     "chapterId": 8,
     "verseId": 11,
-    "text": "Salomo førte faraos datter opp fra Davidsbyen til det huset han hadde bygd for henne. For han sa: «Min kone skal ikke bo i israelskongen Davids hus, for de stedene der Herrens ark har kommet, er hellige.»"
+    "text": "Salomo førte faraos datter opp fra Davidsbyen til det huset han hadde bygd for henne. For han sa: «Min kone skal ikke bo i israelskongen Davids hus, for de steder som Herrens ark har kommet til, er hellige.»",
+    "versions": [
+      {
+        "text": "Salomo førte faraos datter opp fra Davidsbyen til det huset han hadde bygd for henne. For han sa: «Min kone skal ikke bo i israelskongen Davids hus, for de stedene der Herrens ark har kommet, er hellige.»",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "Originalen sier קֹדֶשׁ הֵמָּה - 'hellige er de' - om stedene som arken har kommet til. Den nåværende oversettelsen er grei, men 'de steder som Herrens ark har kommet til' gjengir rekkefølgen i originalen noe tettere. Liten forbedring."
+      }
+    ]
   },
   {
     "bookId": 14,

@@ -27,11 +27,17 @@
     "bookId": 9,
     "chapterId": 5,
     "verseId": 4,
-    "text": "Men da de sto tidlig opp morgenen etter, lå Dagon igjen med ansiktet mot jorden foran Herrens ark. Hodet og begge håndflatene var hugget av og lå på terskelen. Bare kroppen var igjen av ham.",
+    "text": "Men da de sto tidlig opp morgenen etter, lå Dagon igjen med ansiktet mot jorden foran Herrens ark. Hodet og begge håndflatene var hugget av og lå på terskelen. Bare overkroppen var igjen av ham.",
     "versions": [
       {
         "text": "Men da de sto tidlig opp morgenen etter, lå Dagon igjen med ansiktet mot jorden foran Herrens ark. Hodet og begge håndflatene var hugget av og lå på terskelen. Bare fiskekroppen var igjen av ham.",
         "explanation": "Det hebraiske 'רַק דָּגוֹן' betyr bokstavelig 'bare Dagon' (dvs. bare kroppen/torso). 'Fiskekroppen' er en tolkende oversettelse basert på teorien om at Dagon var en fiskegud, men dette er omdiskutert blant forskere. Den hebraiske teksten sier ikke eksplisitt 'fiskekropp', bare at kroppen/torso var igjen."
+      },
+      {
+        "text": "Men da de sto tidlig opp morgenen etter, lå Dagon igjen med ansiktet mot jorden foran Herrens ark. Hodet og begge håndflatene var hugget av og lå på terskelen. Bare kroppen var igjen av ham.",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "Det hebraiske 'רַק דָּגוֹן נִשְׁאַר עָלָיו' betyr bokstavelig 'bare Dagon-[delen] var igjen på ham'. Ordet 'דָּגוֹן' her refererer til selve torso/overkroppen (uten hode og hender). 'Kroppen' er litt for generelt – 'overkroppen' er mer presist gitt at hodet og hendene var avskåret. Men dette er en mindre nyanseforskjell, og den nåværende versjonen er akseptabel."
       }
     ]
   },
@@ -75,13 +81,29 @@
     "bookId": 9,
     "chapterId": 5,
     "verseId": 10,
-    "text": "Da sendte de Guds ark til Ekron. Men da Guds ark kom til Ekron, ropte folket i Ekron: «De har ført Israels Guds ark til oss for å drepe oss og vårt folk!»"
+    "text": "Da sendte de Guds ark til Ekron. Men da Guds ark kom til Ekron, ropte folket i Ekron: «De har ført Israels Guds ark hit til meg for å drepe meg og mitt folk!»",
+    "versions": [
+      {
+        "text": "Da sendte de Guds ark til Ekron. Men da Guds ark kom til Ekron, ropte folket i Ekron: «De har ført Israels Guds ark til oss for å drepe oss og vårt folk!»",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "Det hebraiske bruker entallsformer: אֵלַי (til meg), לַהֲמִיתֵנִי (drepe meg), og עַמִּי (mitt folk). Dette er sannsynligvis byens talsperson/leder som taler. Oversettelsen endrer dette til flertall ('oss/vårt'), men vers 11 beholder korrekt entall ('meg og mitt folk'). Det skaper inkonsistens. I tillegg er 'אֵלַי' (til meg) oversatt som 'til oss' – bør være 'hit til meg'."
+      }
+    ]
   },
   {
     "bookId": 9,
     "chapterId": 5,
     "verseId": 11,
-    "text": "De sendte bud og samlet alle filisterfyrstene og sa: «Send Israels Guds ark bort, la den vende tilbake til sitt sted, så den ikke dreper meg og mitt folk!» For det var en dødelig redsel i hele byen; Guds hånd lå svært tungt over dem der."
+    "text": "De sendte bud og samlet alle filisterfyrstene og sa: «Send Israels Guds ark bort, la den vende tilbake til sitt sted, så den ikke dreper meg og mitt folk!» For det var en dødelig redsel i hele byen; Guds hånd lå svært tungt på dem der.",
+    "versions": [
+      {
+        "text": "De sendte bud og samlet alle filisterfyrstene og sa: «Send Israels Guds ark bort, la den vende tilbake til sitt sted, så den ikke dreper meg og mitt folk!» For det var en dødelig redsel i hele byen; Guds hånd lå svært tungt over dem der.",
+        "type": "error",
+        "severity": "major",
+        "explanation": "I vers 6 ble preposisjonen bevisst endret fra 'over' til 'på' for konsistens. Samme prinsipp bør gjelde her – 'på dem' i stedet for 'over dem' for konsistens gjennom kapittelet. Dessuten brukes עָלָיו her som i vers 6."
+      }
+    ]
   },
   {
     "bookId": 9,

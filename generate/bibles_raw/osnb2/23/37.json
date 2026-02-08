@@ -3,7 +3,15 @@
     "bookId": 23,
     "chapterId": 37,
     "verseId": 1,
-    "text": "Da kong Hiskia hørte dette, flerret han klærne sine, kledde seg i sekkestrie og gikk inn i Herrens hus."
+    "text": "Da kong Hiskia hørte dette, flerret han klærne sine, kledde seg i sekkestoff og gikk inn i Herrens hus.",
+    "versions": [
+      {
+        "text": "Da kong Hiskia hørte dette, flerret han klærne sine, kledde seg i sekkestrie og gikk inn i Herrens hus.",
+        "type": "grammar",
+        "severity": "minor",
+        "explanation": "«Sekkestrie» er et uvanlig ord. «Sekkestoff» eller «sekk» er mer vanlig i moderne norsk bokmål og brukes i flere bibeloversettelser. Alternativt kan «sekkelerret» brukes. Men dette er et mindre poeng - det viktigere er konsistens med vers 2."
+      }
+    ]
   },
   {
     "bookId": 23,
@@ -105,7 +113,15 @@
     "bookId": 23,
     "chapterId": 37,
     "verseId": 18,
-    "text": "Det er sant, Herre, at assyrerkongene har lagt øde alle landene og deres områder."
+    "text": "Det er sant, Herre, at assyrerkongene har lagt øde alle landene og deres eget land.",
+    "versions": [
+      {
+        "text": "Det er sant, Herre, at assyrerkongene har lagt øde alle landene og deres områder.",
+        "type": "error",
+        "severity": "major",
+        "explanation": "Det hebraiske וְאֶת־אַרְצָם betyr «og deres land» (dvs. de erobrede folkenes land), ikke «deres områder.» Uttrykket refererer til landene og landområdene til de folkene som ble erobret. «Områder» er en unøyaktig gjengivelse."
+      }
+    ]
   },
   {
     "bookId": 23,
@@ -147,7 +163,15 @@
     "bookId": 23,
     "chapterId": 37,
     "verseId": 25,
-    "text": "Jeg har gravd og drukket vann, og med mine fotsåler tørker jeg ut alle Egypts elver."
+    "text": "Jeg har gravd brønner og drukket vann, og med mine fotsåler tørker jeg ut alle elvene i det beleirede landet.",
+    "versions": [
+      {
+        "text": "Jeg har gravd og drukket vann, og med mine fotsåler tørker jeg ut alle Egypts elver.",
+        "type": "error",
+        "severity": "minor",
+        "explanation": "Det hebraiske יְאֹרֵי מָצוֹר betyr «elvene/kanalene i Matsor/det beleirede» (muligvis Egypt, men kan også bety «beleirede steder»). Oversettelsen tolker מָצוֹר som Egypt, men det kan også bety «beleiring/befestet sted.» Dessuten mangler «brønner» (קַרְתִּי) - verbet קרה betyr å grave (brønner)."
+      }
+    ]
   },
   {
     "bookId": 23,
@@ -159,7 +183,15 @@
     "bookId": 23,
     "chapterId": 37,
     "verseId": 27,
-    "text": "Deres innbyggere var maktesløse, de ble forferdet og beskjemmet. De ble som markens gress og grønne vekster, som gress på tak og korn som visner før det vokser opp."
+    "text": "Deres innbyggere var maktesløse, de ble forferdet og til skamme. De ble som markens gress og grønne urter, som gress på tak og som korn svidd av østenvind før det skyter i aks.",
+    "versions": [
+      {
+        "text": "Deres innbyggere var maktesløse, de ble forferdet og beskjemmet. De ble som markens gress og grønne vekster, som gress på tak og korn som visner før det vokser opp.",
+        "type": "error",
+        "severity": "minor",
+        "explanation": "שְׁדֵמָה לִפְנֵי קָמָה er vanskelig, men betyr omtrent «svidd/brent korn før det står opp/skyter i aks.» Oversettelsen «korn som visner før det vokser opp» fanger ikke helt meningen av שְׁדֵמָה (svidd/ødelagt mark). Også «beskjemmet» er en stavefeil, korrekt er «til skamme» eller «skamfulle.»"
+      }
+    ]
   },
   {
     "bookId": 23,
@@ -213,7 +245,15 @@
     "bookId": 23,
     "chapterId": 37,
     "verseId": 36,
-    "text": "Da dro Herrens engel ut og slo i hjel hundre og åttifem tusen mann i assyrernes leir. Da de sto opp tidlig om morgenen, se, da var de alle døde lik."
+    "text": "Herrens engel dro ut og slo i hjel hundre og åttifem tusen mann i assyrernes leir. Da de sto opp tidlig om morgenen, se, da var de alle døde lik.",
+    "versions": [
+      {
+        "text": "Da dro Herrens engel ut og slo i hjel hundre og åttifem tusen mann i assyrernes leir. Da de sto opp tidlig om morgenen, se, da var de alle døde lik.",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "Verset begynner ikke med en temporal konjunksjon «da» i betydningen «på det tidspunktet.» Det hebraiske וַיֵּצֵא er en narrativ wayyiqtol-form som indikerer neste handling i fortellingen, ikke nødvendigvis årsak/tidspunkt."
+      }
+    ]
   },
   {
     "bookId": 23,

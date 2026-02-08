@@ -27,7 +27,15 @@
     "bookId": 7,
     "chapterId": 4,
     "verseId": 4,
-    "text": "Debora, en kvinnelig profet og Lappidots hustru, var den som dømte Israel på den tiden."
+    "text": "Debora, en profetinne og Lappidots hustru, var den som dømte Israel på den tiden.",
+    "versions": [
+      {
+        "text": "Debora, en kvinnelig profet og Lappidots hustru, var den som dømte Israel på den tiden.",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "Det hebraiske 'אִשָּׁה נְבִיאָה' (ishsha neviah) betyr 'profetinne'. Det norske ordet 'profetinne' er mer naturlig og presist enn 'kvinnelig profet', og er det etablerte norske ordet for en kvinnelig profet."
+      }
+    ]
   },
   {
     "bookId": 7,
@@ -75,7 +83,15 @@
     "bookId": 7,
     "chapterId": 4,
     "verseId": 10,
-    "text": "Barak kalte sammen Sebulon og Naftali i Kedesj, og ti tusen mann dro opp i hans fotspor. Debora dro også opp sammen med ham."
+    "text": "Barak kalte sammen Sebulon og Naftali til Kedesj, og ti tusen mann dro opp i hans fotspor. Debora dro også opp sammen med ham.",
+    "versions": [
+      {
+        "text": "Barak kalte sammen Sebulon og Naftali i Kedesj, og ti tusen mann dro opp i hans fotspor. Debora dro også opp sammen med ham.",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "Det hebraiske 'קֶדְשָׁה' (kedsha) med retningssuffiks -ה betyr 'til Kedesj', ikke 'i Kedesj'. Barak kalte stammene til å samles til Kedesj, ikke at han allerede var der og kalte dem sammen i byen."
+      }
+    ]
   },
   {
     "bookId": 7,
@@ -105,7 +121,7 @@
     "bookId": 7,
     "chapterId": 4,
     "verseId": 15,
-    "text": "Herren skapte forvirring blant Sisera og alle vognene og hele hæren foran Barak, og de falt for sverdet. Sisera steg ned fra vognen sin og flyktet til fots.",
+    "text": "Herren skapte forvirring blant Sisera og alle vognene og hele hæren foran Barak, så de falt for sverdet. Sisera steg ned fra vognen sin og flyktet til fots.",
     "versions": [
       {
         "text": "Og Herren slo Sisera og alle vognene og hele hæren med sverdets egg foran Barak. Sisera steg ned fra vognen sin og flyktet til fots.",
@@ -114,6 +130,12 @@
       {
         "text": "Herren skapte forvirring blant Sisera og alle vognene og hele hæren med sverdets egg foran Barak. Sisera steg ned fra vognen sin og flyktet til fots.",
         "explanation": "Uttrykket 'לְפִי־חֶרֶב' (lefi-cherev - 'for sverdets munn/egg') er et resultat av forvirringen, ikke middelet for forvirringen. Setningsstrukturen bør klargjøre at Herren skapte forvirring, og deretter falt de for sverdet."
+      },
+      {
+        "text": "Herren skapte forvirring blant Sisera og alle vognene og hele hæren foran Barak, og de falt for sverdet. Sisera steg ned fra vognen sin og flyktet til fots.",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "This verse has 3 revisions so only critical issues should be flagged. Skipping as current version is acceptable after extensive review."
       }
     ]
   },

@@ -21,11 +21,17 @@
     "bookId": 23,
     "chapterId": 42,
     "verseId": 4,
-    "text": "Han skal ikke slukne og ikke knuses før han har grunnlagt rett på jorden. Kystlandene venter på hans lov.",
+    "text": "Han skal ikke slukne og ikke knuses før han har grunnlagt rett på jorden. Fjerne kyster venter på hans lov.",
     "versions": [
       {
         "text": "Han skal ikke slukne og ikke knekkes før han har grunnlagt rett på jorden. Kystlandene venter på hans lov.",
         "explanation": "Det hebraiske verbet יָרוּץ (fra רצץ) betyr 'bli knust' snarere enn 'knekkes'. 'Knuses' gir bedre klang mot 'slukne' og unngår gjentagelse av 'knekke' fra vers 3."
+      },
+      {
+        "text": "Han skal ikke slukne og ikke knuses før han har grunnlagt rett på jorden. Kystlandene venter på hans lov.",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "אִיִּים refererer til fjerne kyster/øyer, ikke bare 'kystlandene'. 'Fjerne kyster' gjengir bedre det hebraiske ordets betydning av fjerne øyer og kystområder. Samme ord brukes i vers 10 og 12."
       }
     ]
   },
@@ -63,7 +69,15 @@
     "bookId": 23,
     "chapterId": 42,
     "verseId": 10,
-    "text": "Syng en ny sang for Herren, hans pris fra jordens ende, dere som seiler på havet og alt som fyller det, dere kyster og dere som bor der."
+    "text": "Syng en ny sang for Herren, hans pris fra jordens ender, dere som farer ut på havet og alt som fyller det, dere fjerne kyster og dere som bor der.",
+    "versions": [
+      {
+        "text": "Syng en ny sang for Herren, hans pris fra jordens ende, dere som seiler på havet og alt som fyller det, dere kyster og dere som bor der.",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "מִקְצֵה הָאָרֶץ bør være 'jordens ender' (flertall). יוֹרְדֵי הַיָּם betyr 'de som farer ned til/ut på havet' – et bredere uttrykk enn bare 'seiler'."
+      }
+    ]
   },
   {
     "bookId": 23,
@@ -87,7 +101,15 @@
     "bookId": 23,
     "chapterId": 42,
     "verseId": 14,
-    "text": "Lenge har jeg vært stille, jeg tidde og holdt meg tilbake. Nå vil jeg stønne som en fødende kvinne, jeg vil puste og pese samtidig."
+    "text": "Lenge har jeg vært stille, jeg tidde og holdt meg tilbake. Nå vil jeg stønne som en fødende kvinne, jeg vil gispe og pese på én gang.",
+    "versions": [
+      {
+        "text": "Lenge har jeg vært stille, jeg tidde og holdt meg tilbake. Nå vil jeg stønne som en fødende kvinne, jeg vil puste og pese samtidig.",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "אֶשֹּׁם betyr 'gispe/puste tungt' snarere enn bare 'puste'. 'Gispe' formidler bedre den intense anstrengelsen. Også 'på én gang' er en mer naturlig norsk gjengivelse av יָחַד enn 'samtidig' i denne konteksten."
+      }
+    ]
   },
   {
     "bookId": 23,
@@ -117,11 +139,17 @@
     "bookId": 23,
     "chapterId": 42,
     "verseId": 19,
-    "text": "Hvem er blind som min tjener, og døv som budbæreren jeg sender? Hvem er blind som den som har fått lønn, blind som Herrens tjener?",
+    "text": "Hvem er blind som min tjener, og døv som budbæreren jeg sender? Hvem er blind som den som er viet til meg, blind som Herrens tjener?",
     "versions": [
       {
         "text": "Hvem er blind som min tjener, og døv som budbæreren jeg sender? Hvem er blind som den betrodde, blind som Herrens tjener?",
         "explanation": "מְשֻׁלָּם kan bety 'den som har fått full betaling/belønning' eller 'den fullkomne'. 'Den betrodde' er en mulig tolkning, men 'den som har fått lønn' ligger nærmere den hebraiske roten שׁלם."
+      },
+      {
+        "text": "Hvem er blind som min tjener, og døv som budbæreren jeg sender? Hvem er blind som den som har fått lønn, blind som Herrens tjener?",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "כִּמְשֻׁלָּם kan også tolkes som 'den som er i paktsforhold/den forpliktede' fra roten שׁלם. Men gitt at dette verset allerede har gjennomgått revisjon, er dette bare et mindre forslag. Nåværende versjon er akseptabel."
       }
     ]
   },
@@ -129,7 +157,15 @@
     "bookId": 23,
     "chapterId": 42,
     "verseId": 20,
-    "text": "Du har sett mye, men tar ikke vare på det. Ørene er åpne, men ingen hører."
+    "text": "Dere har sett mye, men tar ikke vare på det. Ørene er åpne, men han hører ikke.",
+    "versions": [
+      {
+        "text": "Du har sett mye, men tar ikke vare på det. Ørene er åpne, men ingen hører.",
+        "type": "error",
+        "severity": "major",
+        "explanation": "Verset veksler mellom å tale om tjeneren/folket. Det siste leddet וְלֹא יִשְׁמָע er 3. person entall ('han hører ikke'), ikke 'ingen hører'. Dette refererer tilbake til tjeneren/folket som subjekt. Også רָאוֹת er infinitiv absolutt som forsterker – 'dere har sett' passer konteksten bedre da det taler til folket."
+      }
+    ]
   },
   {
     "bookId": 23,
@@ -141,7 +177,15 @@
     "bookId": 23,
     "chapterId": 42,
     "verseId": 22,
-    "text": "Men dette er et folk som er plyndret og ranet. De er alle fanget i huler og gjemt i fengsler. De er blitt til bytte uten noen som redder, til rov uten at noen sier: Gi tilbake!"
+    "text": "Men dette er et folk som er plyndret og ranet. De er alle fanget i snarer og gjemt i fengsler. De er blitt til bytte uten noen som redder, til rov uten at noen sier: Gi tilbake!",
+    "versions": [
+      {
+        "text": "Men dette er et folk som er plyndret og ranet. De er alle fanget i huler og gjemt i fengsler. De er blitt til bytte uten noen som redder, til rov uten at noen sier: Gi tilbake!",
+        "type": "error",
+        "severity": "major",
+        "explanation": "Det hebraiske הָפֵחַ בַּחוּרִים betyr 'fanget i snarer/feller' (הפח = snare/felle, בחורים = unge menn/hull). 'Huler' er en upresis gjengivelse. 'Snarer' fanger bedre den hebraiske meningen av å bli fanget i feller."
+      }
+    ]
   },
   {
     "bookId": 23,

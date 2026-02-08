@@ -15,11 +15,17 @@
     "bookId": 24,
     "chapterId": 3,
     "verseId": 2,
-    "text": "Ved veiene satt du for dem, som en araber i ørkenen.",
+    "text": "Løft blikket mot de nakne høydene og se! Hvor er det du ikke har latt deg ligge med? Ved veiene satt du for dem, som en araber i ørkenen. Du har vanhelliget landet med din utukt og ondskap.",
     "versions": [
       {
         "text": "Løft blikket mot de nakne høydene og se! Hvor har du ikke latt deg ligge med? Ved veiene satt du og ventet på dem, som en araber i ørkenen. Du har vanhelliget landet med din utukt og ondskap.",
         "explanation": "Det hebraiske יָשַׁבְתְּ לָהֶם betyr 'du satt for dem' – altså ventende på dem. 'Ventet på dem' er en tolkende tilføyelse som ikke står i originalen. 'Satt for dem' bevarer originalens mer direkte uttrykk."
+      },
+      {
+        "text": "Ved veiene satt du for dem, som en araber i ørkenen.",
+        "type": "error",
+        "severity": "critical",
+        "explanation": "Den nåværende versjonen mangler store deler av verset. Den forrige versjonen ble endret for å fjerne 'ventet på dem', men den nåværende versjonen har fjernet for mye – hele begynnelsen (שְׂאִי עֵינַיִךְ עַל שְׁפָיִם וּרְאִי אֵיפֹה לֹא שֻׁכַּבְתְּ) og slutten (וַתַּחֲנִיפִי אֶרֶץ בִּזְנוּתַיִךְ וּבְרָעָתֵךְ) av verset er utelatt. Denne foreslåtte versjonen gjenoppretter de manglende delene samtidig som den respekterer endringen fra forrige revisjon ('satt for dem' i stedet for 'satt og ventet på dem')."
       }
     ]
   },
@@ -63,7 +69,15 @@
     "bookId": 24,
     "chapterId": 3,
     "verseId": 9,
-    "text": "Ved lyden av hennes utukt vanhelliget hun landet og drev hor med stein og tre."
+    "text": "Fordi hennes utukt var så lettsindig, vanhelliget hun landet og drev hor med stein og tre.",
+    "versions": [
+      {
+        "text": "Ved lyden av hennes utukt vanhelliget hun landet og drev hor med stein og tre.",
+        "type": "error",
+        "severity": "major",
+        "explanation": "Det hebraiske מִקֹּל זְנוּתָהּ betyr bokstavelig 'fra lettheten/lettsindigheten av hennes utukt' (fra קלל = å være lett/ubetydelig), ikke 'fra lyden av hennes utukt' (som ville vært מִקּוֹל). Oversettelsen forveksler קֹל (letthet) med קוֹל (lyd/røst)."
+      }
+    ]
   },
   {
     "bookId": 24,
@@ -87,7 +101,15 @@
     "bookId": 24,
     "chapterId": 3,
     "verseId": 13,
-    "text": "Bare erkjenn din skyld, at du har gjort opprør mot Herren din Gud. Du spredte din gunst til fremmede under hvert grønt tre, og dere hørte ikke på min røst,» sier Herren."
+    "text": "Bare erkjenn din skyld, at du har gjort opprør mot Herren din Gud. Du spredte dine veier til fremmede under hvert grønt tre, og dere hørte ikke på min røst,» sier Herren.",
+    "versions": [
+      {
+        "text": "Bare erkjenn din skyld, at du har gjort opprør mot Herren din Gud. Du spredte din gunst til fremmede under hvert grønt tre, og dere hørte ikke på min røst,» sier Herren.",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "Det hebraiske וַתְּפַזְּרִי אֶת־דְּרָכַיִךְ betyr 'du spredte dine veier', ikke 'du spredte din gunst'. דְּרָכַיִךְ betyr 'dine veier'. 'Spredte dine veier' er et bilde på å gi seg hen til ulike avgudsdyrkere i alle retninger."
+      }
+    ]
   },
   {
     "bookId": 24,
@@ -123,7 +145,15 @@
     "bookId": 24,
     "chapterId": 3,
     "verseId": 17,
-    "text": "På den tiden skal Jerusalem kalles Herrens trone, og alle folkeslag skal samles der, til Herrens navn i Jerusalem. De skal ikke lenger følge sitt onde, harde hjerte."
+    "text": "På den tiden skal Jerusalem kalles Herrens trone, og alle folkeslag skal samles der, til Herrens navn i Jerusalem. De skal ikke lenger følge sitt onde og harde hjertes stahet.",
+    "versions": [
+      {
+        "text": "På den tiden skal Jerusalem kalles Herrens trone, og alle folkeslag skal samles der, til Herrens navn i Jerusalem. De skal ikke lenger følge sitt onde, harde hjerte.",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "Det hebraiske שְׁרִרוּת לִבָּם הָרָע betyr 'staheten/gjenstrididheten i sitt onde hjerte'. שְׁרִרוּת betyr 'stahet/gjenstriddighet', og det er denne staheten de følger, ikke bare hjertet i seg selv. Nåværende oversettelse mister dette viktige nyansebegrepet."
+      }
+    ]
   },
   {
     "bookId": 24,

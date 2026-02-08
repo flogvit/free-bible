@@ -3,7 +3,15 @@
     "bookId": 19,
     "chapterId": 70,
     "verseId": 1,
-    "text": "Til korlederen. Av David. Til påminnelse."
+    "text": "For korlederen. Av David. Til påminnelse.",
+    "versions": [
+      {
+        "text": "Til korlederen. Av David. Til påminnelse.",
+        "type": "grammar",
+        "severity": "minor",
+        "explanation": "Det hebraiske 'לַמְנַצֵּחַ' oversettes vanligvis med 'For korlederen' eller 'For sangmesteren' på norsk bokmål, ikke 'Til korlederen'. 'For' er mer idiomatisk i denne sammenhengen."
+      }
+    ]
   },
   {
     "bookId": 19,
@@ -27,11 +35,17 @@
     "bookId": 19,
     "chapterId": 70,
     "verseId": 4,
-    "text": "La dem vende tilbake på grunn av sin skam, de som roper «Ha, ha!»",
+    "text": "La dem som sier «Ha, ha!» vike tilbake på grunn av sin skam.",
     "versions": [
       {
         "text": "La dem som roper «Ha, ha!» vende om, rammet av sin egen skam.",
         "explanation": "Hebraisk 'עַל־עֵ֣קֶב בָּשְׁתָּ֑ם' betyr 'på grunn av deres skam' eller 'som følge av deres skam'. Den nåværende oversettelsen 'rammet av' er en tolkning, men 'vende tilbake på grunn av' er mer ordrett og gir god mening i konteksten."
+      },
+      {
+        "text": "La dem vende tilbake på grunn av sin skam, de som roper «Ha, ha!»",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "Hebraisk 'יָשׁוּבוּ' kan bety 'vende tilbake' eller 'vike tilbake'. I konteksten (jf. v.3 'יִסֹּגוּ אָחוֹר' - vike tilbake) handler det om at fiendene trekker seg tilbake i skam. Også 'הָאֹמְרִים' betyr 'de som sier', ikke 'de som roper'. Setningsstrukturen kan forbedres ved å integrere relativsetningen bedre."
       }
     ]
   },

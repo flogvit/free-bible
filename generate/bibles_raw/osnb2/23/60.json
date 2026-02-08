@@ -57,7 +57,15 @@
     "bookId": 23,
     "chapterId": 60,
     "verseId": 9,
-    "text": "For på meg venter øyene, og skipene fra Tarsis kommer først for å bringe dine sønner fra det fjerne, med deres sølv og gull, til Herren din Guds navn og til Israels Hellige, for han har herliggjort deg."
+    "text": "For kystlandene venter på meg, og skipene fra Tarsis kommer først for å bringe dine sønner fra det fjerne, med deres sølv og gull, til Herren din Guds navn og til Israels Hellige, for han har herliggjort deg.",
+    "versions": [
+      {
+        "text": "For på meg venter øyene, og skipene fra Tarsis kommer først for å bringe dine sønner fra det fjerne, med deres sølv og gull, til Herren din Guds navn og til Israels Hellige, for han har herliggjort deg.",
+        "type": "error",
+        "severity": "major",
+        "explanation": "'אִיִּים' (iyyim) betyr 'øyer' eller 'kystland', ikke 'øyne'. Dette er en kritisk oversettelsefeil som endrer meningen."
+      }
+    ]
   },
   {
     "bookId": 23,
@@ -111,11 +119,17 @@
     "bookId": 23,
     "chapterId": 60,
     "verseId": 17,
-    "text": "I stedet for bronse vil jeg bringe gull, og i stedet for jern vil jeg bringe sølv, i stedet for tre, bronse, og i stedet for stein, jern. Jeg vil gjøre fred til din øvrighet og rettferdighet til dine drivere.",
+    "text": "I stedet for bronse vil jeg bringe gull, og i stedet for jern vil jeg bringe sølv, i stedet for tre, bronse, og i stedet for stein, jern. Jeg vil gjøre fred til din øvrighet og rettferdighet til dine oppsynsmenn.",
     "versions": [
       {
         "text": "I stedet for bronse vil jeg bringe gull, og i stedet for jern vil jeg bringe sølv, i stedet for tre, bronse, og i stedet for stein, jern. Jeg vil sette fred til din styrer og rettferdighet til din hersker.",
         "explanation": "Det hebraiske פְקֻדָּה (pekuddah) betyr 'tilsyn/forvaltning/øvrighet' og נֹגְשִׂים (nogsim) betyr 'drivere/oppsynsmenn'. Oversettelsen 'styrer' og 'hersker' mister nyanseforskjellen mellom de to begrepene. Fred og rettferdighet blir personifisert som byens ledelse."
+      },
+      {
+        "text": "I stedet for bronse vil jeg bringe gull, og i stedet for jern vil jeg bringe sølv, i stedet for tre, bronse, og i stedet for stein, jern. Jeg vil gjøre fred til din øvrighet og rettferdighet til dine drivere.",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "'Drivere' har en negativ klang på norsk og gir ikke helt mening i konteksten der fred og rettferdighet personifiseres som positiv ledelse. 'Oppsynsmenn' er mer nøytralt. Men verset har allerede vært revidert, så dette er bare en mindre forbedring."
       }
     ]
   },

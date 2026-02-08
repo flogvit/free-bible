@@ -27,11 +27,17 @@
     "bookId": 23,
     "chapterId": 45,
     "verseId": 4,
-    "text": "Jeg gav deg et hedersnavn, selv om du ikke kjente meg.",
+    "text": "For min tjener Jakobs skyld og for Israel, min utvalgte, kalte jeg deg ved navn. Jeg gav deg et hedersnavn, selv om du ikke kjente meg.",
     "versions": [
       {
         "text": "For min tjener Jakobs skyld og for Israel, min utvalgte, kalte jeg deg ved navn. Jeg gav deg et hedersnavn, enda du ikke kjente meg.",
         "explanation": "For bedre muntlig flyt er 'selv om' mer naturlig i moderne norsk enn det litt arkaiske 'enda'."
+      },
+      {
+        "text": "Jeg gav deg et hedersnavn, selv om du ikke kjente meg.",
+        "type": "error",
+        "severity": "critical",
+        "explanation": "Den nåværende versjonen mangler den første halvdelen av verset: 'For min tjener Jakobs skyld og for Israel, min utvalgte, kalte jeg deg ved navn.' Denne setningen ble fjernet i en tidligere revisjon, men revisjonsnotatet sier at endringen var for 'bedre muntlig flyt' (enda→selv om), ikke for å fjerne innhold. Den første halvdelen av verset er teologisk viktig – det forklarer motivasjonen bak Guds kall av Kyros. Å utelate dette er en kritisk innholdsfeil."
       }
     ]
   },
@@ -69,7 +75,15 @@
     "bookId": 23,
     "chapterId": 45,
     "verseId": 9,
-    "text": "Ve den som tretter med sin skaper, et leirkar blant leirkar av jord! Kan leiren si til ham som former den: Hva lager du? Eller kan verket si: Han har ingen hender?"
+    "text": "Ve den som tretter med sin skaper, et leirskår blant leirskår av jord! Kan leiren si til ham som former den: Hva lager du? Eller kan verket si: Han har ingen hender?",
+    "versions": [
+      {
+        "text": "Ve den som tretter med sin skaper, et leirkar blant leirkar av jord! Kan leiren si til ham som former den: Hva lager du? Eller kan verket si: Han har ingen hender?",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "Det hebraiske חֶרֶשׂ betyr 'potteskår' eller 'leirskår', ikke 'leirkar'. Poenget er at mennesket er et skjørt skår, ikke et helt kar. 'Leirskår' er den mer presise oversettelsen."
+      }
+    ]
   },
   {
     "bookId": 23,
@@ -81,7 +95,15 @@
     "bookId": 23,
     "chapterId": 45,
     "verseId": 11,
-    "text": "Så sier Herren, Israels Hellige og hans skaper: Spør meg om det som skal komme! Om mine barn og mine henders verk, gi meg påbud!"
+    "text": "Så sier Herren, Israels Hellige og hans skaper: Vil dere spørre meg om det som skal komme? Vil dere gi meg påbud om mine barn og mine henders verk?",
+    "versions": [
+      {
+        "text": "Så sier Herren, Israels Hellige og hans skaper: Spør meg om det som skal komme! Om mine barn og mine henders verk, gi meg påbud!",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "Den hebraiske teksten er retorisk-ironisk – Gud utfordrer folket med retoriske spørsmål om de virkelig tør å spørre ham om det kommende eller gi ham kommandoer om hans barn. Den nåværende oversettelsen gjør det til imperativer (oppfordringer), noe som snur meningen. Det bør fremgå at dette er retoriske spørsmål, ikke oppfordringer."
+      }
+    ]
   },
   {
     "bookId": 23,
@@ -93,7 +115,15 @@
     "bookId": 23,
     "chapterId": 45,
     "verseId": 13,
-    "text": "Jeg har vakt ham opp i rettferdighet, og alle hans veier vil jeg gjøre jevne. Han skal bygge min by og sende mine bortførte hjem, ikke for betaling og ikke for bestikkelse, sier Herren, hærskarenes Gud."
+    "text": "Han skal bygge min by og sette mine fanger fri, ikke for betaling og ikke for bestikkelse, sier Herren, hærskarenes Gud.",
+    "versions": [
+      {
+        "text": "Jeg har vakt ham opp i rettferdighet, og alle hans veier vil jeg gjøre jevne. Han skal bygge min by og sende mine bortførte hjem, ikke for betaling og ikke for bestikkelse, sier Herren, hærskarenes Gud.",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "גָלוּתִי betyr 'mine bortførte/fanger' og יְשַׁלֵּחַ betyr 'slippe fri/sende bort'. 'Sette mine fanger fri' er en mer nøyaktig og naturlig gjengivelse enn 'sende mine bortførte hjem'. Teksten sier ikke eksplisitt 'hjem'."
+      }
+    ]
   },
   {
     "bookId": 23,
@@ -171,11 +201,17 @@
     "bookId": 23,
     "chapterId": 45,
     "verseId": 24,
-    "text": "Bare i Herren, skal man si om meg, er rettferdighet og styrke. Til ham skal de komme og stå til skamme, alle som har harmes mot ham.",
+    "text": "Bare i Herren, skal man si om meg, er rettferdighet og styrke. Til ham skal de komme og stå til skamme, alle som harmes mot ham.",
     "versions": [
       {
         "text": "Bare i Herren, skal man si om meg, er rettferdighet og styrke. Til ham skal de komme og stå til skamme, alle som har vært opprørt mot ham.",
         "explanation": "Det hebraiske הַנֶּחֱרִים (fra חרה) betyr 'de som er vrede/harmes', ikke 'opprørt'. 'Harmes' er mer presist og har en bibelsk klang som passer konteksten."
+      },
+      {
+        "text": "Bare i Herren, skal man si om meg, er rettferdighet og styrke. Til ham skal de komme og stå til skamme, alle som har harmes mot ham.",
+        "type": "grammar",
+        "severity": "minor",
+        "explanation": "'Har harmes' er grammatisk uheldig på norsk. 'Harmes' brukes som verb i presens (de som harmes), eller alternativt 'har harmet seg'. Den nåværende formuleringen blander perfektum hjelpeverb med et verb som ikke passer i den formen."
       }
     ]
   },

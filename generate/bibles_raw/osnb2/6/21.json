@@ -69,11 +69,17 @@
     "bookId": 6,
     "chapterId": 21,
     "verseId": 11,
-    "text": "De ga dem Kirjat-Arba – Arba var stamfar til anakittene – det vil si Hebron, i Juda-fjellene, med beitemarker rundt omkring.",
+    "text": "De ga dem Kirjat-Arba – Arba var far til Anok – det vil si Hebron, i Juda-fjellene, med beitemarker rundt omkring.",
     "versions": [
       {
         "text": "De ga dem Kirjat-Arba – det vil si Hebron – i Juda-fjellene. Arba var stamfar tilAnak. De fikk også byens beitemarker rundt omkring.",
         "explanation": "Manglende mellomrom mellom 'til' og 'Anak' - dette er en skrivefeil som må rettes."
+      },
+      {
+        "text": "De ga dem Kirjat-Arba – Arba var stamfar til anakittene – det vil si Hebron, i Juda-fjellene, med beitemarker rundt omkring.",
+        "type": "error",
+        "severity": "major",
+        "explanation": "Det hebraiske אֲבִי הָעֲנוֹק betyr 'far til Anok' (en person), ikke 'stamfar til anakittene' (et folk). Anok (Anak) er en enkeltperson, og uttrykket refererer til Arba som hans far. 'Anakittene' som folk kalles på hebraisk הָעֲנָקִים (ha-Anakim), mens הָעֲנוֹק (ha-Anok) er personnavnet."
       }
     ]
   },
@@ -255,11 +261,17 @@
     "bookId": 6,
     "chapterId": 21,
     "verseId": 41,
-    "text": "Levittene hadde i alt førtiåtte byer med beitemarker inne i Israels barns eiendom.",
+    "text": "Levittene hadde i alt førtiåtte byer med beitemarker innenfor Israels barns eiendom.",
     "versions": [
       {
         "text": "Levittene hadde i alt førtiåtte byer med beitemarker midt i Israels barns eiendom.",
         "explanation": "«midt i» antyder sentrum, mens hebraisk 'betok' her betyr 'innenfor/inne i' – byene var spredt over hele territoriet, ikke samlet i midten."
+      },
+      {
+        "text": "Levittene hadde i alt førtiåtte byer med beitemarker inne i Israels barns eiendom.",
+        "type": "grammar",
+        "severity": "minor",
+        "explanation": "'Innenfor' er mer naturlig norsk enn 'inne i' i denne sammenhengen, og formidler betydningen av hebraisk בְּתוֹךְ bedre. Men dette verset har allerede vært revidert, så dette er kun en liten forbedring."
       }
     ]
   },

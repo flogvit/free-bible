@@ -87,7 +87,15 @@
     "bookId": 13,
     "chapterId": 3,
     "verseId": 15,
-    "text": "Josjias sønner var: Johanan, den førstefødte, Jojakim, den andre, Sidkia, den tredje, og Sjallum, den fjerde."
+    "text": "Josjias sønner var: Den førstefødte Johanan, den andre Jojakim, den tredje Sidkia og den fjerde Sjallum.",
+    "versions": [
+      {
+        "text": "Josjias sønner var: Johanan, den førstefødte, Jojakim, den andre, Sidkia, den tredje, og Sjallum, den fjerde.",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "The word order in the current translation is slightly awkward with ordinal numbers placed after the names. In Norwegian it reads more naturally to place the ordinal before the name, matching the Hebrew word order where the ordinal precedes the name."
+      }
+    ]
   },
   {
     "bookId": 13,
@@ -99,7 +107,15 @@
     "bookId": 13,
     "chapterId": 3,
     "verseId": 17,
-    "text": "Jekonjas sønner var Assir og Sjealtiel, hans sønn."
+    "text": "Jekonjas sønn var Sjealtiel, som var fange.",
+    "versions": [
+      {
+        "text": "Jekonjas sønner var Assir og Sjealtiel, hans sønn.",
+        "type": "error",
+        "severity": "major",
+        "explanation": "The word אַסִּר (assir) is debated but most likely means 'the captive/prisoner' (a description of Jeconiah), not a proper name 'Assir'. The Hebrew reads 'sons of Jeconiah the captive: Shealtiel his son.' However, since this is a legitimate textual interpretation question, some translations do treat it as a name. At minimum, the translation should note the ambiguity. Many modern translations render it as 'Jeconiah the captive' with Shealtiel as his son."
+      }
+    ]
   },
   {
     "bookId": 13,
@@ -129,7 +145,15 @@
     "bookId": 13,
     "chapterId": 3,
     "verseId": 22,
-    "text": "Sjemajas sønner var Hattusj, Jigal, Bariah, Nearja og Sjafat – seks i alt."
+    "text": "Sjekanjas sønn var Sjemaja. Sjemajas sønner var Hattusj, Jigal, Bariah, Nearja og Sjafat – seks i alt.",
+    "versions": [
+      {
+        "text": "Sjemajas sønner var Hattusj, Jigal, Bariah, Nearja og Sjafat – seks i alt.",
+        "type": "error",
+        "severity": "major",
+        "explanation": "The verse starts with 'Sjekanjas sønn var Sjemaja' (וּבְנֵי שְׁכַנְיָה שְׁמַעְיָה), which establishes that Shemaiah is the son of Shecaniah. The current translation omits this first clause entirely."
+      }
+    ]
   },
   {
     "bookId": 13,

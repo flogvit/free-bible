@@ -21,7 +21,15 @@
     "bookId": 28,
     "chapterId": 4,
     "verseId": 4,
-    "text": "Men ingen må anklage, ingen må gå i rette! Ditt folk er som de som anklager presten."
+    "text": "Men la ingen anklage, la ingen gå i rette! For ditt folk er som de som strides med presten.",
+    "versions": [
+      {
+        "text": "Men ingen må anklage, ingen må gå i rette! Ditt folk er som de som anklager presten.",
+        "type": "error",
+        "severity": "major",
+        "explanation": "Hebraisk כִּמְרִיבֵי כֹהֵן betyr 'som de som strides med presten', ikke bare 'anklager'. Dessuten mangler årsakskonjunksjonen 'for' (כִּ-lignende logikk i konteksten). Uttrykket refererer til dem som trosser prestens autoritet (jf. 5 Mos 17:12), noe som var en alvorlig forbrytelse."
+      }
+    ]
   },
   {
     "bookId": 28,
@@ -57,7 +65,15 @@
     "bookId": 28,
     "chapterId": 4,
     "verseId": 10,
-    "text": "De skal spise, men ikke bli mette. De skal drive hor, men ikke bli flere. For de har forlatt Herren og sluttet å holde seg til ham."
+    "text": "De skal spise, men ikke bli mette. De skal drive hor, men ikke bli flere. For de har forlatt Herren for å holde fast ved hor.",
+    "versions": [
+      {
+        "text": "De skal spise, men ikke bli mette. De skal drive hor, men ikke bli flere. For de har forlatt Herren og sluttet å holde seg til ham.",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "Det hebraiske לִשְׁמֹר kan forstås som at de har forlatt Herren 'for å holde fast ved' (dvs. hor/avgudsdyrkelse, som er temaet i konteksten). Den nåværende oversettelsen legger til 'sluttet å holde seg til ham' som er en fri tolkning. Alternativt kan det bety at de sluttet å akte på/holde (Herrens bud). Nåværende løsning er akseptabel men litt fri."
+      }
+    ]
   },
   {
     "bookId": 28,
@@ -69,7 +85,15 @@
     "bookId": 28,
     "chapterId": 4,
     "verseId": 12,
-    "text": "Mitt folk spør sitt trestykke til råds, og staven gir dem svar. For en horånd har ført dem vill, og de har drevet hor og forlatt sin Gud."
+    "text": "Mitt folk spør sitt trestykke til råds, og staven gir dem svar. For en horånd har ført dem vill, og de har drevet hor bort fra sin Gud.",
+    "versions": [
+      {
+        "text": "Mitt folk spør sitt trestykke til råds, og staven gir dem svar. For en horånd har ført dem vill, og de har drevet hor og forlatt sin Gud.",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "Hebraisk מִתַּחַת אֱלֹהֵיהֶם betyr bokstavelig 'bort fra under sin Gud', altså de har vært utro og gått bort fra sin Guds herredømme. 'Forlatt sin Gud' er litt upresist; 'drevet hor bort fra sin Gud' gjenspeiler bedre den hebraiske preposisjonen מִתַּחַת (fra under) og horebildet."
+      }
+    ]
   },
   {
     "bookId": 28,
@@ -111,12 +135,28 @@
     "bookId": 28,
     "chapterId": 4,
     "verseId": 18,
-    "text": "Når drikkingen er over, driver de hor på hor. Hennes herskere elsker skammen høyt."
+    "text": "Deres drikk er sur. De driver stadig hor. Hennes ledere elsker skam – «gi!» roper de.",
+    "versions": [
+      {
+        "text": "Når drikkingen er over, driver de hor på hor. Hennes herskere elsker skammen høyt.",
+        "type": "error",
+        "severity": "major",
+        "explanation": "סָר סָבְאָם betyr sannsynligvis 'deres drikk er sur/blitt dårlig' (סָר = har vendt seg, blitt sur), ikke 'når drikkingen er over'. אָהֲבוּ הֵבוּ קָלוֹן er vanskelig, men 'הֵבוּ' er en imperativ 'gi!', og מָגִנֶּיהָ betyr 'hennes skjold/beskyttere' (dvs. ledere). Den nåværende oversettelsen forenkler og mister noe av meningen."
+      }
+    ]
   },
   {
     "bookId": 28,
     "chapterId": 4,
     "verseId": 19,
-    "text": "En vind har innhyllet dem i sine vinger, og de skal bli til skamme for sine ofre."
+    "text": "En vind har innhyllet henne i sine vinger, og de skal bli til skamme for sine ofre.",
+    "versions": [
+      {
+        "text": "En vind har innhyllet dem i sine vinger, og de skal bli til skamme for sine ofre.",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "Det hebraiske אוֹתָהּ er hunkjønn entall ('henne'), som refererer til Efraim/Israel som nasjon (hunkjønn). Oversettelsen bruker 'dem' som mister denne referansen. 'Henne' er mer presist og opprettholder den poetiske billedbruken."
+      }
+    ]
   }
 ]

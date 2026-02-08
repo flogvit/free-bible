@@ -39,11 +39,17 @@
     "bookId": 7,
     "chapterId": 13,
     "verseId": 6,
-    "text": "Da gikk kvinnen og sa til sin mann: «En Guds mann kom til meg. Han så ut som en Guds engel, svært ærefryktinngytende. Jeg spurte ham ikke hvor han var fra, og han fortalte meg ikke navnet sitt.",
+    "text": "Da gikk kvinnen og sa til sin mann: «En Guds mann kom til meg. Han så ut som en Guds engel, svært ærefryktinngytende. Jeg spurte ham ikke hvor han var fra, og han fortalte meg ikke navnet sitt.»",
     "versions": [
       {
         "text": "Da gikk kvinnen og sa til sin mann: «En Guds mann kom til meg. Han så ut som en Guds engel, svært ærefryktinngytende. Jeg spurte ham ikke hvor han var fra, og han fortalte meg ikke sitt navn.",
         "explanation": "På norsk er 'navnet sitt' mer naturlig muntlig språk enn 'sitt navn'. Dette gir bedre flyt ved høytlesning."
+      },
+      {
+        "text": "Da gikk kvinnen og sa til sin mann: «En Guds mann kom til meg. Han så ut som en Guds engel, svært ærefryktinngytende. Jeg spurte ham ikke hvor han var fra, og han fortalte meg ikke navnet sitt.",
+        "type": "grammar",
+        "severity": "minor",
+        "explanation": "Det mangler et avsluttende anførselstegn (») på slutten av verset. Kvinnens direkte tale avsluttes her."
       }
     ]
   },
@@ -69,13 +75,29 @@
     "bookId": 7,
     "chapterId": 13,
     "verseId": 9,
-    "text": "Gud hørte Manoahs bønn, og Guds engel kom igjen til kvinnen mens hun satt ute på marken. Hennes mann Manoah var ikke hos henne."
+    "text": "Gud hørte Manoahs røst, og Guds engel kom igjen til kvinnen mens hun satt ute på marken. Hennes mann Manoah var ikke hos henne.",
+    "versions": [
+      {
+        "text": "Gud hørte Manoahs bønn, og Guds engel kom igjen til kvinnen mens hun satt ute på marken. Hennes mann Manoah var ikke hos henne.",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "Det hebraiske בְּקוֹל betyr 'røst' eller 'stemme', ikke 'bønn'. Selv om Manoah nettopp ba, sier teksten bokstavelig at Gud hørte hans røst/stemme. 'Bønn' er en tolkende tilføyelse."
+      }
+    ]
   },
   {
     "bookId": 7,
     "chapterId": 13,
     "verseId": 10,
-    "text": "Kvinnen skyndte seg og løp og fortalte sin mann. Hun sa til ham: «Mannen som kom til meg forrige gang, har vist seg for meg igjen.»"
+    "text": "Kvinnen skyndte seg og løp og fortalte sin mann. Hun sa til ham: «Se, mannen som kom til meg den dagen, har vist seg for meg.»",
+    "versions": [
+      {
+        "text": "Kvinnen skyndte seg og løp og fortalte sin mann. Hun sa til ham: «Mannen som kom til meg forrige gang, har vist seg for meg igjen.»",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "Det hebraiske הִנֵּה ('se') mangler i oversettelsen. Dessuten betyr בַיּוֹם 'den dagen' (dvs. den første gangen), ikke 'forrige gang'. Og 'igjen' er ikke direkte i grunnteksten – det hebraiske נִרְאָה אֵלַי betyr bare 'har vist seg for meg'."
+      }
+    ]
   },
   {
     "bookId": 7,
@@ -129,7 +151,15 @@
     "bookId": 7,
     "chapterId": 13,
     "verseId": 17,
-    "text": "Manoah spurte Herrens engel: «Hva er ditt navn? Vi vil ære deg når ditt ord går i oppfyllelse.»"
+    "text": "Manoah spurte Herrens engel: «Hva er navnet ditt? Når ditt ord går i oppfyllelse, vil vi ære deg.»",
+    "versions": [
+      {
+        "text": "Manoah spurte Herrens engel: «Hva er ditt navn? Vi vil ære deg når ditt ord går i oppfyllelse.»",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "For konsistens med den muntlige stilen brukt andre steder (jf. v.6 'navnet sitt'), bør 'ditt navn' endres til 'navnet ditt'. Dessuten gjenspeiler rekkefølgen i den foreslåtte versjonen den hebraiske setningsstrukturen bedre, der כִּי-setningen (når ditt ord...) kommer før hovedverbet (vi vil ære deg)."
+      }
+    ]
   },
   {
     "bookId": 7,
@@ -141,11 +171,17 @@
     "bookId": 7,
     "chapterId": 13,
     "verseId": 19,
-    "text": "Manoah tok kjeet og grødeofferet og ofret det på klippen til Herren. Og han gjorde underfulle ting mens Manoah og hans kone så på.",
+    "text": "Manoah tok kjeet og grødeofferet og ofret det på klippen for Herren. Og Herren gjorde underfulle ting mens Manoah og hans kone så på.",
     "versions": [
       {
         "text": "Manoah tok kjeet og grødeofferet og ofret det på klippen til Herren. Da skjedde det noe underfullt mens Manoah og hans kone så på.",
         "explanation": "Det hebraiske וּמַפְלִא לַעֲשׂוֹת refererer til Herren (eller engelen) som subjekt - 'han gjorde underfulle ting'. Den nåværende oversettelsen med 'da skjedde det' mister det personlige subjektet og den aktive handlingen."
+      },
+      {
+        "text": "Manoah tok kjeet og grødeofferet og ofret det på klippen til Herren. Og han gjorde underfulle ting mens Manoah og hans kone så på.",
+        "type": "theological",
+        "severity": "minor",
+        "explanation": "Subjektet for 'han gjorde underfulle ting' er uklart i oversettelsen. Siden den forrige versjonen ble endret nettopp for å bevare det personlige subjektet, bør det tydeliggjøres at det er Herren som er subjektet. Dessuten er 'til Herren' bedre gjengitt som 'for Herren' (לַיהוָה = 'for/til Herren' i offerkontekst)."
       }
     ]
   },

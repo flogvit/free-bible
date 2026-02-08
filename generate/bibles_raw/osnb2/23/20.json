@@ -15,7 +15,15 @@
     "bookId": 23,
     "chapterId": 20,
     "verseId": 2,
-    "text": "På den tiden talte Herren gjennom Jesaja, sønn av Amots, og sa: «Gå og løs sekkestoffet fra hoftene dine, og ta sandalene av føttene dine.» Og han gjorde det, og gikk omkring naken og barfotet."
+    "text": "På den tiden talte Herren gjennom Jesaja, sønn av Amots, og sa: «Gå og løs sekkestoffet fra hoftene dine, og ta sandalene av føttene dine.» Han gjorde som han ble sagt, og gikk omkring naken og barfotet.",
+    "versions": [
+      {
+        "text": "På den tiden talte Herren gjennom Jesaja, sønn av Amots, og sa: «Gå og løs sekkestoffet fra hoftene dine, og ta sandalene av føttene dine.» Og han gjorde det, og gikk omkring naken og barfotet.",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "'Og han gjorde det' er en litt tung konstruksjon. 'Han gjorde som han ble sagt' gir bedre flyt og unngår at setningen begynner med 'Og'. Dette er likevel en mindre forbedring."
+      }
+    ]
   },
   {
     "bookId": 23,
@@ -51,6 +59,14 @@
     "bookId": 23,
     "chapterId": 20,
     "verseId": 6,
-    "text": "Og innbyggerne på denne kysten skal si på den dagen: «Se, slik gikk det med dem vi satte vår lit til, dem vi flyktet til for å få hjelp og bli reddet fra Assyrias konge. Hvordan skal da vi kunne slippe unna?»"
+    "text": "Og innbyggerne på denne kysten skal si på den dagen: «Se, slik gikk det med dem vi satte vårt håp til, dem vi flyktet til for å få hjelp og bli reddet fra Assyrias konge. Hvordan skal da vi kunne slippe unna?»",
+    "versions": [
+      {
+        "text": "Og innbyggerne på denne kysten skal si på den dagen: «Se, slik gikk det med dem vi satte vår lit til, dem vi flyktet til for å få hjelp og bli reddet fra Assyrias konge. Hvordan skal da vi kunne slippe unna?»",
+        "type": "error",
+        "severity": "major",
+        "explanation": "Hebraisk מַבָּטֵנוּ (mabbatenu) betyr 'vårt håp' eller 'det vi så hen til'. Oversettelsen 'satte vår lit til' er akseptabel, men i vers 5 brukes allerede 'satte sitt håp til' for det samme hebraiske ordet מַבָּט (mabbat). For konsistens bør samme begrep brukes i begge vers. 'Vårt håp' samsvarer bedre med vers 5."
+      }
+    ]
   }
 ]

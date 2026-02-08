@@ -15,11 +15,17 @@
     "bookId": 9,
     "chapterId": 10,
     "verseId": 2,
-    "text": "«Når du går fra meg i dag, vil du møte to menn ved Rakels grav i Benjamins område, ved Selsah. De vil si til deg: Eselhoppene du gikk for å lete etter, er funnet. Nå har din far sluttet å bekymre seg for eselhoppene og er i stedet urolig for dere. Han sier: Hva skal jeg gjøre med sønnen min?",
+    "text": "«Når du går fra meg i dag, vil du møte to menn ved Rakels grav i Benjamins område, ved Selsah. De vil si til deg: ‹Eselhoppene du gikk for å lete etter, er funnet. Nå har din far sluttet å bekymre seg for eselhoppene og er i stedet urolig for dere. Han sier: Hva skal jeg gjøre med sønnen min?›",
     "versions": [
       {
         "text": "Når du går fra meg i dag, vil du møte to menn ved Rakels grav i Benjamins område, ved Selsah. De vil si til deg: Eselhoppene du gikk for å lete etter, er funnet. Nå har din far sluttet å bekymre seg for eselhoppene og er i stedet urolig for dere. Han sier: Hva skal jeg gjøre med sønnen min?",
         "explanation": "Vers 2 er begynnelsen av Samuels tale som fortsetter til vers 8. Det mangler et innledende anførselstegn «. Sammenhengen viser at dette er direkte tale fra Samuel."
+      },
+      {
+        "text": "«Når du går fra meg i dag, vil du møte to menn ved Rakels grav i Benjamins område, ved Selsah. De vil si til deg: Eselhoppene du gikk for å lete etter, er funnet. Nå har din far sluttet å bekymre seg for eselhoppene og er i stedet urolig for dere. Han sier: Hva skal jeg gjøre med sønnen min?",
+        "type": "grammar",
+        "severity": "minor",
+        "explanation": "Vers 2 inneholder tale-i-tale: Samuel forteller Saul hva to menn vil si. For klarhetens skyld bør den indre talen markeres med enkle anførselstegn ‹ › for å skille den fra Samuels overordnede tale som startet med «."
       }
     ]
   },
@@ -45,11 +51,17 @@
     "bookId": 9,
     "chapterId": 10,
     "verseId": 5,
-    "text": "Deretter skal du komme til Gibea-Elohim, der filistrenes garnison er. Når du kommer inn i byen, vil du møte en flokk profeter som kommer ned fra offerhøyden. Foran dem går det folk med harpe, tamburin, fløyte og lyre, og de profeterer.",
+    "text": "Deretter skal du komme til Gibea-Elohim, der filistrenes garnison er. Når du kommer inn i byen, vil du møte en flokk profeter som kommer ned fra offerhøyden, med harpe, tamburin, fløyte og lyre foran seg, mens de profeterer.",
     "versions": [
       {
         "text": "«Deretter skal du komme til Gibea-Elohim, der filistrenes garnison er. Når du kommer inn i byen, vil du møte en flokk profeter som kommer ned fra offerhøyden. Foran dem går det folk med harpe, tamburin, fløyte og lyre, og de profeterer.",
         "explanation": "Det innledende « i vers 5 er unødvendig siden talen allerede begynte i vers 2. Dette skaper forvirring om talens struktur."
+      },
+      {
+        "text": "Deretter skal du komme til Gibea-Elohim, der filistrenes garnison er. Når du kommer inn i byen, vil du møte en flokk profeter som kommer ned fra offerhøyden. Foran dem går det folk med harpe, tamburin, fløyte og lyre, og de profeterer.",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "I grunnteksten er det profetene selv som har instrumentene foran seg (וְלִפְנֵיהֶ֞ם = foran dem), ikke andre folk som går foran. Den nåværende oversettelsen 'Foran dem går det folk med...' legger til 'folk' som ikke finnes i originalen og gir feil inntrykk av at det er andre personer som bærer instrumentene."
       }
     ]
   },
@@ -165,7 +177,15 @@
     "bookId": 9,
     "chapterId": 10,
     "verseId": 23,
-    "text": "De løp og hentet ham derfra. Da han stilte seg midt blant folket, var han et hode høyere enn alle andre."
+    "text": "De løp og hentet ham derfra. Da han stilte seg midt blant folket, raget han over alle andre fra skuldrene og oppover.",
+    "versions": [
+      {
+        "text": "De løp og hentet ham derfra. Da han stilte seg midt blant folket, var han et hode høyere enn alle andre.",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "Det hebraiske מִשִּׁכְמ֖וֹ וָמָֽעְלָה betyr bokstavelig 'fra skuldrene og oppover', ikke 'et hode høyere'. Dette er et kjent uttrykk som beskriver at Saul var betydelig høyere enn alle andre – fra skuldrene og opp. 'Et hode høyere' er en mindre presis gjengivelse."
+      }
+    ]
   },
   {
     "bookId": 9,

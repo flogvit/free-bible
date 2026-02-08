@@ -111,7 +111,15 @@
     "bookId": 12,
     "chapterId": 4,
     "verseId": 18,
-    "text": "Gutten vokste opp. En dag gikk han ut til sin far, som var hos høstfolkene."
+    "text": "En dag gikk han ut til sin far, som var hos innhøstingsfolkene.",
+    "versions": [
+      {
+        "text": "Gutten vokste opp. En dag gikk han ut til sin far, som var hos høstfolkene.",
+        "type": "error",
+        "severity": "minor",
+        "explanation": "Hebraisk 'הַקֹּצְרִים' (ha-qotsrim) betyr 'de som høster/skjærer', altså 'skurdfolkene' eller 'innhøstingsfolkene'. 'Høstfolkene' er forståelig men litt uvanlig. Imidlertid er dette en mindre stilistisk sak og 'høstfolkene' er akseptabelt."
+      }
+    ]
   },
   {
     "bookId": 12,
@@ -153,7 +161,15 @@
     "bookId": 12,
     "chapterId": 4,
     "verseId": 24,
-    "text": "Hun salte eselet og sa til tjeneren: «Driv på og ri! Slakk ikke farten for min skyld med mindre jeg sier det.»"
+    "text": "Hun salte eselet og sa til tjeneren: «Driv på og ri! Ikke slakk farten for min skyld med mindre jeg sier fra.»",
+    "versions": [
+      {
+        "text": "Hun salte eselet og sa til tjeneren: «Driv på og ri! Slakk ikke farten for min skyld med mindre jeg sier det.»",
+        "type": "grammar",
+        "severity": "major",
+        "explanation": "'Slakk ikke farten' er en litt uvanlig ordstilling på norsk. 'Ikke slakk farten' er mer naturlig. Dessuten er 'med mindre jeg sier fra' noe mer idiomatisk enn 'med mindre jeg sier det'. Men den hebraiske teksten 'אַל־תַּעֲצָר־לִי לִרְכֹּב כִּי אִם־אָמַרְתִּי לָךְ' betyr bokstavelig 'ikke hold tilbake ridingen for meg med mindre jeg sier til deg'."
+      }
+    ]
   },
   {
     "bookId": 12,
@@ -171,7 +187,15 @@
     "bookId": 12,
     "chapterId": 4,
     "verseId": 27,
-    "text": "Men da hun kom opp til gudsmannen på fjellet, grep hun om føttene hans. Gehasi gikk bort for å skyve henne unna, men gudsmannen sa: «La henne være. Sjelen hennes er fylt av bitter smerte, og Herren har skjult det for meg og ikke fortalt meg noe.»"
+    "text": "Men da hun kom opp til gudsmannen på fjellet, grep hun om føttene hans. Gehasi gikk bort for å skyve henne unna, men gudsmannen sa: «La henne være. Hun er dypt fortvilet, og Herren har skjult det for meg og ikke fortalt meg noe.»",
+    "versions": [
+      {
+        "text": "Men da hun kom opp til gudsmannen på fjellet, grep hun om føttene hans. Gehasi gikk bort for å skyve henne unna, men gudsmannen sa: «La henne være. Sjelen hennes er fylt av bitter smerte, og Herren har skjult det for meg og ikke fortalt meg noe.»",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "'נַפְשָׁהּ מָרָה־לָהּ' betyr bokstavelig 'hennes sjel er bitter for henne'. 'Sjelen hennes er fylt av bitter smerte' er noe omstendelig. 'Hun er dypt fortvilet' er mer naturlig moderne norsk og fanger meningen godt."
+      }
+    ]
   },
   {
     "bookId": 12,
@@ -261,7 +285,15 @@
     "bookId": 12,
     "chapterId": 4,
     "verseId": 42,
-    "text": "En mann kom fra Baal-Sjalisja og brakte gudsmannen førstegrødebrød: tjue byggbrød og nyhøstet korn i sekken sin. Elisja sa: «Gi det til folket så de kan spise.»"
+    "text": "En mann kom fra Baal-Sjalisja og brakte gudsmannen førstegrødebrød: tjue byggbrød og friskt korn i posen sin. Elisja sa: «Gi det til folket så de kan spise.»",
+    "versions": [
+      {
+        "text": "En mann kom fra Baal-Sjalisja og brakte gudsmannen førstegrødebrød: tjue byggbrød og nyhøstet korn i sekken sin. Elisja sa: «Gi det til folket så de kan spise.»",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "Hebraisk 'כַרְמֶל' betyr 'friskt/ferskt korn' (korn i akset), ikke 'nyhøstet korn'. 'בְּצִקְלֹנוֹ' refererer til en pose/veske, ikke nødvendigvis en sekk. 'Friskt korn i posen sin' er mer presist."
+      }
+    ]
   },
   {
     "bookId": 12,

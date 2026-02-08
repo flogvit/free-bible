@@ -39,11 +39,17 @@
     "bookId": 23,
     "chapterId": 8,
     "verseId": 6,
-    "text": "«Fordi dette folket har forkastet Siloahs stille rinnende vann og skjelver for Resin og Remaljas sønn,",
+    "text": "«Fordi dette folket har forkastet Siloahs stille rinnende vann og fryder seg over Resin og Remaljas sønn,",
     "versions": [
       {
         "text": "«Fordi dette folket har forkastet Siloahs stille rinnende vann og gleder seg over Resin og Remaljas sønn,",
         "explanation": "Det hebraiske 'משׂושׂ' (mesos) betyr 'fryd' eller 'glede'. 'Fryder seg' er et mer presist og litterært uttrykk enn 'gleder seg' i denne konteksten."
+      },
+      {
+        "text": "«Fordi dette folket har forkastet Siloahs stille rinnende vann og skjelver for Resin og Remaljas sønn,",
+        "type": "error",
+        "severity": "major",
+        "explanation": "Det hebraiske 'וּמְשׂוֹשׂ' (umesos) betyr 'og fryd/glede over', ikke 'skjelver for'. Den forrige versjonen brukte 'gleder seg' som ble endret til nåværende 'skjelver for', men endringsbegrunnelsen sa at 'fryder seg' ville vært mer presist. Nåværende tekst 'skjelver for' er en feil oversettelse – ordet handler om glede, ikke frykt. 'Fryder seg over' følger endringsbegrunnelsens anbefaling uten å gjenbruke den forrige versjonen."
       }
     ]
   },
@@ -63,7 +69,15 @@
     "bookId": 23,
     "chapterId": 8,
     "verseId": 9,
-    "text": "Slå alarm, dere folk, og bli knust! Lytt, alle dere fjerne land! Rust dere og bli knust! Rust dere og bli knust!"
+    "text": "Ras og skjelv, dere folk, og bli sønderknust! Lytt, alle dere fjerne land! Rust dere, men bli knust! Rust dere, men bli knust!",
+    "versions": [
+      {
+        "text": "Slå alarm, dere folk, og bli knust! Lytt, alle dere fjerne land! Rust dere og bli knust! Rust dere og bli knust!",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "Det hebraiske 'רֹעוּ' (ro'u) betyr 'vær i opprør/ras' eller 'bli onde', ikke 'slå alarm'. Og 'וָחֹתּוּ' (vachotu) betyr 'bli sønderslått/knust' i betydningen av å bli fylt av redsel/bli lamslått. 'Slå alarm' er en upresis gjengivelse. Dessuten inneholder 'הִתְאַזְּרוּ וָחֹתּוּ' en implisitt kontrast – 'rust dere, men bli knust' – som gir bedre mening enn bare 'og'."
+      }
+    ]
   },
   {
     "bookId": 23,
@@ -129,13 +143,29 @@
     "bookId": 23,
     "chapterId": 8,
     "verseId": 19,
-    "text": "Når de sier til dere: «Søk råd hos åndemanere og spåmenn som hvisker og mumler» – skal ikke et folk søke sin Gud? Skal man søke de døde på vegne av de levende?"
+    "text": "Når de sier til dere: «Søk råd hos åndemanere og spåmenn som hvisker og mumler» – skal ikke et folk søke sin Gud? Skal man spørre de døde på vegne av de levende?",
+    "versions": [
+      {
+        "text": "Når de sier til dere: «Søk råd hos åndemanere og spåmenn som hvisker og mumler» – skal ikke et folk søke sin Gud? Skal man søke de døde på vegne av de levende?",
+        "type": "error",
+        "severity": "major",
+        "explanation": "Det hebraiske 'בְּעַד הַחַיִּים אֶל־הַמֵּתִים' betyr 'på vegne av de levende [henvende seg] til de døde'. Altså er det de døde man henvender seg til, på vegne av de levende – ikke omvendt. Den nåværende oversettelsen har riktig rekkefølge av 'de døde' og 'de levende' men bruker 'søke' som er litt vagt; 'spørre de døde på vegne av de levende' er tydeligere retorisk."
+      }
+    ]
   },
   {
     "bookId": 23,
     "chapterId": 8,
     "verseId": 20,
-    "text": "Til loven og til vitnesbyrdet! Hvis de ikke taler i samsvar med dette ord, er det fordi det ikke finnes noe lys i dem."
+    "text": "Til loven og til vitnesbyrdet! Hvis de ikke taler i samsvar med dette ord, er det fordi det ikke finnes noen morgenrøde for dem.",
+    "versions": [
+      {
+        "text": "Til loven og til vitnesbyrdet! Hvis de ikke taler i samsvar med dette ord, er det fordi det ikke finnes noe lys i dem.",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "Det hebraiske 'אֵין־לוֹ שָׁחַר' betyr bokstavelig 'det er ingen morgenrøde/daggry for dem'. 'Shachar' betyr 'morgenrøde/daggry', ikke bare 'lys'. Uttrykket antyder at det ikke finnes noe håp eller ny dag for dem. 'Ingen morgenrøde' er mer tro mot originalen og mer poetisk."
+      }
+    ]
   },
   {
     "bookId": 23,

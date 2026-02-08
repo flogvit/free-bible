@@ -93,7 +93,15 @@
     "bookId": 5,
     "chapterId": 31,
     "verseId": 14,
-    "text": "Herren sa til Moses: «Se, dagen for din død nærmer seg. Kall på Josva og still dere fram i telthelligdommen, så skal jeg gi ham mitt oppdrag.» Så gikk Moses og Josva og stilte seg fram i telthelligdommen."
+    "text": "Herren sa til Moses: «Se, dine dager nærmer seg sin ende. Kall på Josva og still dere fram i telthelligdommen, så skal jeg gi ham mitt oppdrag.»",
+    "versions": [
+      {
+        "text": "Herren sa til Moses: «Se, dagen for din død nærmer seg. Kall på Josva og still dere fram i telthelligdommen, så skal jeg gi ham mitt oppdrag.» Så gikk Moses og Josva og stilte seg fram i telthelligdommen.",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "The Hebrew הֵן קָרְבוּ יָמֶיךָ לָמוּת says 'your days to die are drawing near' (plural 'days'), not 'the day of your death is approaching'. The current translation changes the nuance from 'your remaining days are few' to a specific death-day."
+      }
+    ]
   },
   {
     "bookId": 5,
@@ -111,7 +119,15 @@
     "bookId": 5,
     "chapterId": 31,
     "verseId": 17,
-    "text": "Den dagen skal min vrede flamme opp mot dem. Jeg skal forlate dem og skjule mitt ansikt for dem. De skal bli fortært, og mange ulykker og trengsler skal ramme dem. Den dagen skal de si: Er det ikke fordi min Gud ikke er midt iblant meg at disse ulykkene har rammet meg?"
+    "text": "Den dagen skal min vrede flamme opp mot dem. Jeg skal forlate dem og skjule mitt ansikt for dem. De skal bli til føde, og mange ulykker og trengsler skal ramme dem. Den dagen skal de si: Er det ikke fordi min Gud ikke er midt iblant meg at disse ulykkene har rammet meg?",
+    "versions": [
+      {
+        "text": "Den dagen skal min vrede flamme opp mot dem. Jeg skal forlate dem og skjule mitt ansikt for dem. De skal bli fortært, og mange ulykker og trengsler skal ramme dem. Den dagen skal de si: Er det ikke fordi min Gud ikke er midt iblant meg at disse ulykkene har rammet meg?",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "The Hebrew וְהָיָה לֶאֱכֹל means 'it/he shall become something to be consumed/devoured' — i.e., become prey or food for others. 'Bli fortært' (be consumed) misses the sense that they become food/prey for enemies. 'Bli til føde' conveys the original sense better."
+      }
+    ]
   },
   {
     "bookId": 5,
@@ -147,7 +163,15 @@
     "bookId": 5,
     "chapterId": 31,
     "verseId": 23,
-    "text": "Så ga han Josva, Nuns sønn, dette påbudet og sa: «Vær sterk og modig! For du skal føre Israels barn inn i landet jeg har lovt dem med ed, og jeg skal være med deg.»"
+    "text": "Så ga Herren Josva, Nuns sønn, dette påbudet og sa: «Vær sterk og modig! For du skal føre Israels barn inn i landet jeg har lovt dem med ed, og jeg skal være med deg.»",
+    "versions": [
+      {
+        "text": "Så ga han Josva, Nuns sønn, dette påbudet og sa: «Vær sterk og modig! For du skal føre Israels barn inn i landet jeg har lovt dem med ed, og jeg skal være med deg.»",
+        "type": "theological",
+        "severity": "minor",
+        "explanation": "The subject of וַיְצַו in this verse is ambiguous, but the context (God is speaking from v.16 onwards, and the promise 'I will be with you' fits God, not Moses) strongly suggests God is the one commanding Joshua. The current translation implies it was Moses ('han'), which is a possible but less likely reading."
+      }
+    ]
   },
   {
     "bookId": 5,
@@ -165,7 +189,15 @@
     "bookId": 5,
     "chapterId": 31,
     "verseId": 26,
-    "text": "«Ta denne lovboken og legg den ved siden av Herren deres Guds paktsark. Der skal den være som et vitne mot deg."
+    "text": "«Ta denne lovboken og legg den ved siden av Herren deres Guds paktsark. Der skal den være som et vitne mot dere.",
+    "versions": [
+      {
+        "text": "«Ta denne lovboken og legg den ved siden av Herren deres Guds paktsark. Der skal den være som et vitne mot deg.",
+        "type": "error",
+        "severity": "major",
+        "explanation": "The word בְּךָ here is addressed collectively, as Moses is speaking to the Levites (plural, see v.25). While the Hebrew uses singular 'you' (common when addressing the community as a whole), the preceding context addresses the Levites with plural forms (v.25-26 וְשַׂמְתֶּם, אֱלֹהֵיכֶם). The Norwegian 'deg' (singular) is inconsistent with the plural context and should be 'dere' for consistency."
+      }
+    ]
   },
   {
     "bookId": 5,

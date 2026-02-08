@@ -81,7 +81,15 @@
     "bookId": 24,
     "chapterId": 2,
     "verseId": 12,
-    "text": "Bli forferdet over dette, dere himler, skjelv og vær rystet, sier Herren."
+    "text": "Bli forferdet over dette, dere himler, skjelv og bli helt uttørket, sier Herren.",
+    "versions": [
+      {
+        "text": "Bli forferdet over dette, dere himler, skjelv og vær rystet, sier Herren.",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "Det hebraiske חָרְבוּ betyr 'bli tørre/uttørket' (fra חרב), ikke 'vær rystet'. Teksten har tre ulike reaksjoner: 1) שֹׁמּוּ = bli forferdet, 2) שַׂעֲרוּ = skjelv/gys, 3) חָרְבוּ = bli uttørket/tørr. 'Vær rystet' er en dobling av 'skjelv' og mister den tredje nyanssen."
+      }
+    ]
   },
   {
     "bookId": 24,
@@ -105,7 +113,15 @@
     "bookId": 24,
     "chapterId": 2,
     "verseId": 16,
-    "text": "Også Memfis' og Tahpanhes' sønner skal beite ned din isse."
+    "text": "Også Memfis' og Tahpanhes' sønner skal skalle deg på issen.",
+    "versions": [
+      {
+        "text": "Også Memfis' og Tahpanhes' sønner skal beite ned din isse.",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "Det hebraiske יִרְעוּךְ קָדְקֹד betyr bokstavelig 'beite/knuse din isse/skalle'. 'Beite ned din isse' er en uvanlig formulering på norsk. 'Skalle deg på issen' (i betydningen barbere/klippe hodet) fanger bedre ideen om ydmykelse og ødeleggelse."
+      }
+    ]
   },
   {
     "bookId": 24,
@@ -129,7 +145,15 @@
     "bookId": 24,
     "chapterId": 2,
     "verseId": 20,
-    "text": "For lenge siden brøt jeg ditt åk og sprengte dine bånd. Men du sa: Jeg vil ikke tjene! På hver høy haug og under hvert grønt tre la du deg ned som en hore."
+    "text": "For lenge siden brøt jeg ditt åk og sprengte dine bånd. Men du sa: Jeg vil ikke bøye meg!",
+    "versions": [
+      {
+        "text": "For lenge siden brøt jeg ditt åk og sprengte dine bånd. Men du sa: Jeg vil ikke tjene! På hver høy haug og under hvert grønt tre la du deg ned som en hore.",
+        "type": "error",
+        "severity": "major",
+        "explanation": "Det hebraiske Qere er אֶעֱבוֹר ('jeg vil ikke gå over/overholde/adlyde'), mens Ketiv er אעבד ('jeg vil ikke tjene'). De fleste oversettelser følger Ketiv med 'tjene', men det er verdt å merke seg at Qere-formen gir 'jeg vil ikke adlyde/underkaste meg'. Begge er teologisk forsvarlige, men den nåværende oversettelsen 'tjene' følger Ketiv. Dette er en mindre tolkningssak og kan beholdes."
+      }
+    ]
   },
   {
     "bookId": 24,
@@ -195,7 +219,15 @@
     "bookId": 24,
     "chapterId": 2,
     "verseId": 30,
-    "text": "Forgjeves har jeg slått barna deres, de tok ikke imot tukt. Deres eget sverd fortærte deres profeter som en løve som ødelegger."
+    "text": "Forgjeves har jeg slått barna deres, de tok ikke imot tukt. Deres sverd fortærte deres profeter som en ødeleggende løve.",
+    "versions": [
+      {
+        "text": "Forgjeves har jeg slått barna deres, de tok ikke imot tukt. Deres eget sverd fortærte deres profeter som en løve som ødelegger.",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "'Som en løve som ødelegger' er litt tungvint. 'Som en ødeleggende løve' er mer idiomatisk norsk og formidler det samme."
+      }
+    ]
   },
   {
     "bookId": 24,
@@ -219,11 +251,17 @@
     "bookId": 24,
     "chapterId": 2,
     "verseId": 33,
-    "text": "Hvor dyktig du legger opp din vei for å søke kjærlighet! Derfor har du også lært dine veier det onde.",
+    "text": "Hvor dyktig du legger opp din vei for å søke kjærlighet! Derfor har du også vent dine veier til det onde.",
     "versions": [
       {
         "text": "Hvor dyktig du legger opp din vei for å søke kjærlighet! Derfor har du også lært ondskap dine veier.",
         "explanation": "Den nåværende formuleringen 'lært ondskap dine veier' er grammatisk uklar på norsk. Hebraisk sier at 'du har lært dine veier det onde' – altså at veiene/oppførselen har blitt opplært i ondskap."
+      },
+      {
+        "text": "Hvor dyktig du legger opp din vei for å søke kjærlighet! Derfor har du også lært dine veier det onde.",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "'Lært dine veier det onde' er fortsatt litt stiv norsk, selv etter revisjonen. 'Vent dine veier til det onde' kan være noe mer naturlig, men den nåværende formuleringen er akseptabel og følger originalen. Dette er en minor forbedringsmulighet."
       }
     ]
   },
@@ -231,7 +269,15 @@
     "bookId": 24,
     "chapterId": 2,
     "verseId": 34,
-    "text": "Også på dine kjolekanter finnes blodet av uskyldige fattige. Du grep dem ikke i innbrudd, men det var på grunn av alt dette."
+    "text": "Også på dine kjoleflipper finnes blodet av uskyldige fattige. Du tok dem ikke på fersk gjerning i innbrudd, men likevel er alt dette der.",
+    "versions": [
+      {
+        "text": "Også på dine kjolekanter finnes blodet av uskyldige fattige. Du grep dem ikke i innbrudd, men det var på grunn av alt dette.",
+        "type": "error",
+        "severity": "major",
+        "explanation": "Siste del er vanskelig, men 'det var på grunn av alt dette' er uklar. Den hebraiske frasen כִּי עַל־כָּל־אֵלֶּה kan bety 'men over alt dette' eller 'men på tross av alt dette'. Poenget er at blodet ble funnet til tross for at de fattige ikke ble grepet i innbrudd (som ville ha rettferdiggjort drap ifølge loven). Formuleringen bør gjøres klarere."
+      }
+    ]
   },
   {
     "bookId": 24,

@@ -45,11 +45,17 @@
     "bookId": 7,
     "chapterId": 15,
     "verseId": 8,
-    "text": "Han slo dem søndre og sammen og påførte dem et stort nederlag.",
+    "text": "Han slo dem søndre og sammen og påførte dem et stort nederlag. Deretter dro han ned og slo seg ned i fjellkløften ved Etam.",
     "versions": [
       {
         "text": "Han slo dem med voldsom kraft og påførte dem et stort nederlag. Deretter dro han ned og slo seg ned i fjellkløften ved Etam.",
         "explanation": "Det hebraiske uttrykket 'שׁוֹק עַל־יָרֵךְ' (shok al-yarekh, 'legg over lår') er et idiom som beskriver en brutal, fullstendig nedslakting. Nåværende oversettelse er akseptabel, men 'søndre og sammen' fanger bedre den idiomatiske karakteren av uttrykket og gir bedre muntlig flyt."
+      },
+      {
+        "text": "Han slo dem søndre og sammen og påførte dem et stort nederlag.",
+        "type": "error",
+        "severity": "critical",
+        "explanation": "Den siste delen av verset mangler helt: 'וַיֵּרֶד וַיֵּשֶׁב בִּסְעִיף סֶלַע עֵיטָם' (Deretter dro han ned og slo seg ned i fjellkløften ved Etam). Denne setningen var med i den forrige versjonen men ble fjernet ved revisjonen, selv om den er en del av grunnteksten. Begrunnelsen for endringen handlet om den idiomatiske oversettelsen av 'shok al-yarekh', ikke om å fjerne resten av verset."
       }
     ]
   },
@@ -87,11 +93,17 @@
     "bookId": 7,
     "chapterId": 15,
     "verseId": 14,
-    "text": "Da han kom til Leki, kom filisterne ham i møte med kamprop.",
+    "text": "Da han kom til Leki, kom filisterne ham i møte med kamprop. Men Herrens Ånd kom over ham med kraft, og tauene på armene hans ble som linfibre fortært av ild, og båndene smeltet av hendene hans.",
     "versions": [
       {
         "text": "Da han kom til Leki, stormet filisterne imot ham med kamprop. Men Herrens Ånd kom over ham med kraft, og tauene på armene hans ble som linfibre som er fortært av ild, og båndene smeltet av hendene hans.",
         "explanation": "Det hebraiske 'הֵרִיעוּ לִקְרָאתוֹ' betyr 'ropte/skrek mot ham' eller 'kom ham i møte med rop'. 'Stormet imot' antyder fysisk bevegelse som ikke er i grunnteksten - verbet הֵרִיעוּ handler om å rope/skrike, ikke om å storme."
+      },
+      {
+        "text": "Da han kom til Leki, kom filisterne ham i møte med kamprop.",
+        "type": "error",
+        "severity": "critical",
+        "explanation": "Størstedelen av verset mangler. Revisjonen endret bare 'stormet imot' til 'kom ham i møte med kamprop', men resten av verset (om Herrens Ånd, tauene som ble som linfibre, og båndene som smeltet) ble fjernet. Dette er teologisk viktig innhold som viser Guds direkte inngripen gjennom sin Ånd."
       }
     ]
   },
@@ -129,7 +141,15 @@
     "bookId": 7,
     "chapterId": 15,
     "verseId": 19,
-    "text": "Da kløvde Gud fordypningen i kjevebeinet, og det strømmet vann ut av den."
+    "text": "Da kløvde Gud fordypningen som er i Leki, og det strømmet vann ut av den. Han drakk, og kreftene vendte tilbake, og han livnet til. Derfor kalte han stedet «Den ropende kilden i Leki», og det heter så den dag i dag.",
+    "versions": [
+      {
+        "text": "Da kløvde Gud fordypningen i kjevebeinet, og det strømmet vann ut av den.",
+        "type": "error",
+        "severity": "major",
+        "explanation": "Verset mangler store deler: at han drakk (וַיֵּשְׁתְּ), at kreftene vendte tilbake (וַתָּשָׁב רוּחוֹ), at han livnet til (וַיֶּחִי), og navngivningen av stedet En-Hakkore (עֵין הַקּוֹרֵא). Dessuten refererer 'הַמַּכְתֵּשׁ אֲשֶׁר־בַּלֶּחִי' sannsynligvis til en fordypning i stedet Leki, ikke i selve kjevebeinet."
+      }
+    ]
   },
   {
     "bookId": 7,

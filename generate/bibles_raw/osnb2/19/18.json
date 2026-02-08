@@ -27,7 +27,15 @@
     "bookId": 19,
     "chapterId": 18,
     "verseId": 5,
-    "text": "Dødens rep omsluttet meg, og ødeleggelsens strømmer overveldet meg med frykt."
+    "text": "Dødens rep omsluttet meg, og fordervelsens strømmer skremte meg.",
+    "versions": [
+      {
+        "text": "Dødens rep omsluttet meg, og ødeleggelsens strømmer overveldet meg med frykt.",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "Hebraisk 'בְלִיַּעַל' (belial) betyr 'fordervelse/undergang' snarere enn bare 'ødeleggelse'. Og verbet 'יְבַעֲתוּנִי' betyr 'skremte meg' direkte, ikke 'overveldet meg med frykt' som er en omskrivning."
+      }
+    ]
   },
   {
     "bookId": 19,
@@ -93,7 +101,15 @@
     "bookId": 19,
     "chapterId": 18,
     "verseId": 16,
-    "text": "Da ble vannenes løp synlige, jordens grunnvoller ble blottlagt ved din trussel, Herre, ved pusten fra din vredes ånde."
+    "text": "Da ble vannenes løp synlige, jordens grunnvoller ble blottlagt ved din trussel, Herre, ved din vredes pust.",
+    "versions": [
+      {
+        "text": "Da ble vannenes løp synlige, jordens grunnvoller ble blottlagt ved din trussel, Herre, ved pusten fra din vredes ånde.",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "'נִשְׁמַת רוּחַ אַפֶּךָ' betyr 'pusten fra din nese/vrede', altså 'din vredes pust'. Uttrykket 'din vredes ånde' er unødig tungt og 'ånde' er misvisende her — 'רוּחַ' i denne sammenhengen betyr 'pust/blåst', ikke 'ånd'."
+      }
+    ]
   },
   {
     "bookId": 19,
@@ -147,7 +163,15 @@
     "bookId": 19,
     "chapterId": 18,
     "verseId": 24,
-    "text": "Jeg var helhjertet overfor ham og voktet meg for min synd."
+    "text": "Jeg var ulastelig overfor ham og voktet meg for min synd.",
+    "versions": [
+      {
+        "text": "Jeg var helhjertet overfor ham og voktet meg for min synd.",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "Hebraisk 'תָמִים' betyr 'ulastelig/fullkommen/hel'. I konteksten av Salme 18 der forfatteren hevder sin uskyld, er 'ulastelig' mer presist enn 'helhjertet'. 'Ulastelig' brukes også i vers 26 for det beslektede verbet 'תִּתַּמָּם', noe som gir bedre konsistens."
+      }
+    ]
   },
   {
     "bookId": 19,
@@ -255,7 +279,15 @@
     "bookId": 19,
     "chapterId": 18,
     "verseId": 41,
-    "text": "Du lar mine fiender flykte for meg, og dem som hater meg, utsletter jeg."
+    "text": "Mine fiender lot du vende ryggen til meg, og dem som hater meg, utsletter jeg.",
+    "versions": [
+      {
+        "text": "Du lar mine fiender flykte for meg, og dem som hater meg, utsletter jeg.",
+        "type": "error",
+        "severity": "major",
+        "explanation": "Hebraisk 'נָתַתָּה לִּי עֹרֶף' betyr bokstavelig 'du ga meg nakken/ryggen' — dvs. fiendene vender ryggen og flykter. Den nåværende oversettelsen med 'lar mine fiender flykte' mister bildet av å 'vende ryggen', og gjør Guds handling mer indirekte. Dessuten er 'lar ... flykte' grammatisk upresis da det hebraiske uttrykket beskriver noe som allerede er gjort (perfektum)."
+      }
+    ]
   },
   {
     "bookId": 19,
@@ -267,11 +299,17 @@
     "bookId": 19,
     "chapterId": 18,
     "verseId": 43,
-    "text": "Jeg maler dem til støv for vinden, jeg tramper dem ned som søle i gatene.",
+    "text": "Jeg maler dem til støv for vinden, jeg heller dem ut som søle i gatene.",
     "versions": [
       {
         "text": "Jeg knuser dem til støv for vinden, jeg tømmer dem ut som søle i gatene.",
         "explanation": "Verbet 'אֶשְׁחָקֵם' (eshchaqem) betyr 'male/finmale' snarere enn 'knuse'. Og 'אֲרִיקֵם' (ariqem) betyr mer 'tømme ut/helle ut', men i konteksten av søle i gatene gir 'trampe ned' bedre mening og flyt på norsk."
+      },
+      {
+        "text": "Jeg maler dem til støv for vinden, jeg tramper dem ned som søle i gatene.",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "Selv om 'trampe ned' ble valgt for bedre flyt, er 'אֲרִיקֵם' (ariqem) fra roten ר-י-ק som betyr 'tømme ut/helle ut'. 'Heller ut' er mer nøyaktig og gir fortsatt god flyt på norsk. Siden dette verset allerede har vært revidert én gang, gis dette som et mildt forslag."
       }
     ]
   },

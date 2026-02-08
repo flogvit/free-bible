@@ -9,7 +9,15 @@
     "bookId": 6,
     "chapterId": 18,
     "verseId": 2,
-    "text": "Men det var fortsatt syv stammer blant Israels barn som ikke hadde fått sin arvedel tildelt."
+    "text": "Men det var fortsatt syv stammer blant Israels barn som ennå ikke hadde fått sin arvedel utdelt.",
+    "versions": [
+      {
+        "text": "Men det var fortsatt syv stammer blant Israels barn som ikke hadde fått sin arvedel tildelt.",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "Verbet חָלְקוּ handler om å dele ut / fordele. 'Utdelt' er mer presist enn 'tildelt' i konteksten av landfordeling, og 'ennå' gjengir bedre nyansen av at de gjensto."
+      }
+    ]
   },
   {
     "bookId": 6,
@@ -63,7 +71,15 @@
     "bookId": 6,
     "chapterId": 18,
     "verseId": 11,
-    "text": "Loddet falt først på Benjamins stamme etter deres slekter. Området de fikk ved loddkasting, lå mellom Judas barn og Josefs barn."
+    "text": "Loddet falt på Benjamins stamme etter deres slekter. Området de fikk ved loddkasting, lå mellom Judas barn og Josefs barn.",
+    "versions": [
+      {
+        "text": "Loddet falt først på Benjamins stamme etter deres slekter. Området de fikk ved loddkasting, lå mellom Judas barn og Josefs barn.",
+        "type": "error",
+        "severity": "major",
+        "explanation": "Det hebraiske ordet 'først' (rishon) finnes ikke i grunnteksten. וַיַּעַל גּוֹרַל sier bare 'loddet kom opp' uten å spesifisere rekkefølge. Ordet 'først' er tillagt og bør fjernes."
+      }
+    ]
   },
   {
     "bookId": 6,
@@ -81,7 +97,15 @@
     "bookId": 6,
     "chapterId": 18,
     "verseId": 14,
-    "text": "Så bøyde grensen av og svingte på vestsiden sørover fra fjellet som ligger rett sør for Bet-Horon, og endte ved Kirjat-Ba'al – det er Kirjat-Jearim – en by som tilhører Judas barn. Dette var vestsiden."
+    "text": "Så dreide grensen og svingte mot vest, sørover, fra fjellet som ligger sør for Bet-Horon, og endte ved Kirjat-Ba'al – det er Kirjat-Jearim – en by som tilhører Judas barn. Dette var vestsiden.",
+    "versions": [
+      {
+        "text": "Så bøyde grensen av og svingte på vestsiden sørover fra fjellet som ligger rett sør for Bet-Horon, og endte ved Kirjat-Ba'al – det er Kirjat-Jearim – en by som tilhører Judas barn. Dette var vestsiden.",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "Uttrykket לִפְאַת־יָם נֶגְבָּה betyr 'mot vestsiden, sørover', ikke 'på vestsiden sørover'. Oversettelsen bør tydeliggjøre retningsbeskrivelsen."
+      }
+    ]
   },
   {
     "bookId": 6,
@@ -165,6 +189,14 @@
     "bookId": 6,
     "chapterId": 18,
     "verseId": 28,
-    "text": "Sela, Ha'elef, Jebus – det er Jerusalem – Gibat-Kirjat – fjorten byer med tilhørende landsbyer. Dette var Benjamins barns arvedel etter deres slekter."
+    "text": "Sela, Ha'elef, Jebus – det er Jerusalem – Gibat og Kirjat – fjorten byer med tilhørende landsbyer. Dette var Benjamins barns arvedel etter deres slekter.",
+    "versions": [
+      {
+        "text": "Sela, Ha'elef, Jebus – det er Jerusalem – Gibat-Kirjat – fjorten byer med tilhørende landsbyer. Dette var Benjamins barns arvedel etter deres slekter.",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "Det hebraiske גִּבְעַת קִרְיַת kan leses som to separate byer: Gibat og Kirjat. Mange oversettelser og kommentatorer tolker dette som to byer, noe som også passer bedre med totalen på fjorten byer."
+      }
+    ]
   }
 ]

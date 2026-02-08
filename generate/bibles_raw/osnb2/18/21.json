@@ -99,11 +99,17 @@
     "bookId": 18,
     "chapterId": 21,
     "verseId": 17,
-    "text": "Hvor ofte slukkes de ugudeliges lampe? Hvor ofte kommer ulykke over dem? Hvor ofte tildeler han dem smerter i sin vrede?",
+    "text": "Hvor ofte slukkes de ugudeliges lampe, og ulykke kommer over dem? Hvor ofte tildeler han dem lidelser i sin vrede?",
     "versions": [
       {
         "text": "Hvor ofte slukkes de ugudeliges lampe? Hvor ofte kommer ulykke over dem, og han tildeler dem smerter i sin vrede?",
         "explanation": "Den hebraiske teksten har tre retoriske spørsmål med כַּמָּה (hvor ofte). Det siste spørsmålet bør også formuleres som et spørsmål for bedre flyt og tydelighet."
+      },
+      {
+        "text": "Hvor ofte slukkes de ugudeliges lampe? Hvor ofte kommer ulykke over dem? Hvor ofte tildeler han dem smerter i sin vrede?",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "כַּמָּה opptrer bare én gang i den hebraiske teksten, ikke tre ganger. Den nåværende oversettelsen legger til to ekstra 'Hvor ofte' som ikke finnes i originalen. Teksten har egentlig én כַּמָּה som styrer hele verset. Dessuten er חֲבָלִים bedre oversatt med 'lidelser' enn 'smerter'."
       }
     ]
   },
@@ -127,7 +133,15 @@
     "bookId": 18,
     "chapterId": 21,
     "verseId": 19,
-    "text": "Gud sparer hans straff til hans barn! La ham gjengjelde ham selv, så han får kjenne det."
+    "text": "Dere sier: 'Gud sparer hans straff til hans barn.' La ham heller gjengjelde ham selv, så han får kjenne det!",
+    "versions": [
+      {
+        "text": "Gud sparer hans straff til hans barn! La ham gjengjelde ham selv, så han får kjenne det.",
+        "type": "error",
+        "severity": "major",
+        "explanation": "Verset er Jobs gjengivelse av et motargument – at Gud lagrer den ondes straff for barna hans – fulgt av Jobs svar: la Gud heller straffe den skyldige selv. Uten innledningen 'Dere sier:' mangler den retoriske konteksten. Imperativene יְשַׁלֵּם og וְיֵדָע uttrykker Jobs ønske/krav om at den ugudelige selv skal få konsekvensene."
+      }
+    ]
   },
   {
     "bookId": 18,
@@ -157,7 +171,15 @@
     "bookId": 18,
     "chapterId": 21,
     "verseId": 24,
-    "text": "Hans sider er fulle av fett, og margen i hans ben er saftig."
+    "text": "Hans kar er fulle av melk, og margen i hans ben er saftig.",
+    "versions": [
+      {
+        "text": "Hans sider er fulle av fett, og margen i hans ben er saftig.",
+        "type": "error",
+        "severity": "major",
+        "explanation": "עֲטִינָיו betyr 'hans kar' eller 'hans beholdere' (muligens mjølkekar), og חָלָב betyr 'melk', ikke 'fett'. Selv om noen oversettelser tolker dette billedlig som kroppsfett, bør grunntekstens ord 'melk' bevares. 'Sider' er ikke en nøyaktig gjengivelse av עֲטִינָיו."
+      }
+    ]
   },
   {
     "bookId": 18,
@@ -199,7 +221,15 @@
     "bookId": 18,
     "chapterId": 21,
     "verseId": 30,
-    "text": "At den onde spares på ulykkens dag, at de føres bort på vredens dag?"
+    "text": "At den onde spares på ulykkens dag, at de ledes forbi på vredens dag.",
+    "versions": [
+      {
+        "text": "At den onde spares på ulykkens dag, at de føres bort på vredens dag?",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "יוּבָלוּ (fra יבל, 'å lede') sammen med עֲבָרוֹת (fra עברה, som kan bety 'vrede' men også 'overgang/forbifart') antyder at de ledes forbi/unna ødeleggelsen, ikke 'føres bort'. Poenget er at den onde unnslipper dommen, ikke at han tas bort. Dessuten bør subjektet holdes konsistent i entall ('den onde... han ledes')."
+      }
+    ]
   },
   {
     "bookId": 18,
@@ -223,7 +253,15 @@
     "bookId": 18,
     "chapterId": 21,
     "verseId": 33,
-    "text": "Dalens jordklumper er milde mot ham, og alle mennesker følger etter ham, utallige har gått foran ham."
+    "text": "Jordklumpene i dalen hviler lett over ham, og alle mennesker følger etter ham, og foran ham er det utallige.",
+    "versions": [
+      {
+        "text": "Dalens jordklumper er milde mot ham, og alle mennesker følger etter ham, utallige har gått foran ham.",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "מָתְקוּ (fra מתק, 'å være søt/mild') beskriver hvordan jorden i graven hviler lett og behagelig over den døde – et poetisk bilde om en fredelig grav. 'Er milde mot ham' er litt uklart; 'hviler lett over ham' formidler bildet bedre. 'Foran ham er det utallige' betyr at utallige har gått samme vei før ham (til døden)."
+      }
+    ]
   },
   {
     "bookId": 18,

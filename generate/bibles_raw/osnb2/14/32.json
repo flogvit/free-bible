@@ -21,11 +21,17 @@
     "bookId": 14,
     "chapterId": 32,
     "verseId": 4,
-    "text": "De sa: «Hvorfor skulle assyrerkongene komme og finne rikelig med vann?»",
+    "text": "Mye folk samlet seg, og de stoppet alle kildene og bekken som rant gjennom landet. De sa: «Hvorfor skulle assyrerkongene komme og finne rikelig med vann?»",
     "versions": [
       {
         "text": "Mye folk samlet seg, og de stoppet alle kildene og bekken som rant gjennom landet. De sa: «Hvorfor skulle assyrerkongen komme og finne rikelig med vann?»",
         "explanation": "Det hebraiske מַלְכֵי אַשּׁוּר er flertall ('kongene av Assyria'), ikke entall. Dette kan være en retorisk flertallsform, men for nøyaktighet bør flertallet beholdes."
+      },
+      {
+        "text": "De sa: «Hvorfor skulle assyrerkongene komme og finne rikelig med vann?»",
+        "type": "error",
+        "severity": "major",
+        "explanation": "Den nåværende versjonen mangler den første halvdelen av verset – om at mye folk samlet seg og stoppet kildene og bekken. Bare avslutningen med sitatet er beholdt. Forrige versjon hadde dette innholdet, men med 'assyrerkongen' i entall. Rettelsen beholder flertallsformen 'assyrerkongene' (som var hensikten med revisjonen) mens den gjeninnfører den manglende teksten."
       }
     ]
   },
@@ -75,7 +81,15 @@
     "bookId": 14,
     "chapterId": 32,
     "verseId": 12,
-    "text": "Er det ikke denne Hiskia som har fjernet hans offerhauger og altere og sagt til Juda og Jerusalem: 'Foran ett eneste alter skal dere tilbe, og på det skal dere brenne røkelse'?"
+    "text": "Er det ikke denne Hiskia som har fjernet hans offerhauger og hans altere og sagt til Juda og Jerusalem: 'Foran ett eneste alter skal dere tilbe, og på det skal dere brenne røkelse'?",
+    "versions": [
+      {
+        "text": "Er det ikke denne Hiskia som har fjernet hans offerhauger og altere og sagt til Juda og Jerusalem: 'Foran ett eneste alter skal dere tilbe, og på det skal dere brenne røkelse'?",
+        "type": "error",
+        "severity": "major",
+        "explanation": "Det hebraiske har tydelig possessivt suffiks på begge ord: 'hans offerhauger og hans altere'. Sankeribs poeng (fra hans perspektiv) er at Hiskia har fjernet Guds egne offerhauger og altere. 'Hans' bør knyttes til begge substantiv for klarhet, men dette er en mindre detalj. Oversettelsen er ellers akseptabel."
+      }
+    ]
   },
   {
     "bookId": 14,
@@ -135,7 +149,15 @@
     "bookId": 14,
     "chapterId": 32,
     "verseId": 22,
-    "text": "Slik frelste Herren Hiskia og Jerusalems innbyggere fra assyrerkongen Sankeribs hånd og fra alle fienders hånd. Han vernet dem på alle kanter."
+    "text": "Slik frelste Herren Hiskia og Jerusalems innbyggere fra assyrerkongen Sankeribs hånd og fra alles hånd. Han vernet dem på alle kanter.",
+    "versions": [
+      {
+        "text": "Slik frelste Herren Hiskia og Jerusalems innbyggere fra assyrerkongen Sankeribs hånd og fra alle fienders hånd. Han vernet dem på alle kanter.",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "Det hebraiske מִיַּד־כֹּל betyr bokstavelig 'fra alles hånd', ikke spesifikt 'fra alle fienders hånd'. Ordet 'fienders' er lagt til uten grunnlag i teksten. 'Fra alles hånd' er mer nøyaktig."
+      }
+    ]
   },
   {
     "bookId": 14,
@@ -201,7 +223,15 @@
     "bookId": 14,
     "chapterId": 32,
     "verseId": 32,
-    "text": "Det som ellers er å fortelle om Hiskia og hans fromme gjerninger, det er skrevet i profeten Jesajas, Amots' sønns, syn, i boken om Judas og Israels konger."
+    "text": "Det som ellers er å fortelle om Hiskia og hans trofaste gjerninger, det er skrevet i profeten Jesajas, Amots' sønns, syn, i boken om Judas og Israels konger.",
+    "versions": [
+      {
+        "text": "Det som ellers er å fortelle om Hiskia og hans fromme gjerninger, det er skrevet i profeten Jesajas, Amots' sønns, syn, i boken om Judas og Israels konger.",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "חֲסָדָיו betyr hans 'lojale/trofaste gjerninger' eller 'hans barmhjertighetsgjerninger' (fra חֶסֶד). 'Fromme gjerninger' er ikke feil, men 'trofaste gjerninger' er mer presist og samsvarer bedre med det hebraiske חֶסֶד som handler om trofast kjærlighet/lojalitet."
+      }
+    ]
   },
   {
     "bookId": 14,

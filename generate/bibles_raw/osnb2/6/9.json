@@ -3,7 +3,15 @@
     "bookId": 6,
     "chapterId": 9,
     "verseId": 1,
-    "text": "Da alle kongene på den andre siden av Jordan hørte dette – de som holdt til i fjellene, i lavlandet og langs hele kysten av Storhavet mot Libanon: hetittene, amorittene, kanaaneerne, perisittene, hevittene og jebusittene –"
+    "text": "Da alle kongene på den andre siden av Jordan hørte dette – de som var i fjellene, i lavlandet og langs hele kysten av Storhavet, mot Libanon: hetittene, amorittene, kanaaneerne, perisittene, hevittene og jebusittene –",
+    "versions": [
+      {
+        "text": "Da alle kongene på den andre siden av Jordan hørte dette – de som holdt til i fjellene, i lavlandet og langs hele kysten av Storhavet mot Libanon: hetittene, amorittene, kanaaneerne, perisittene, hevittene og jebusittene –",
+        "type": "grammar",
+        "severity": "minor",
+        "explanation": "I grunnteksten er 'mot Libanon' (אֶל־מוּל הַלְּבָנוֹן) en separat stedsangivelse som modifiserer hele kystområdet, ikke en retning knyttet til Storhavet alene. Et komma foran 'mot Libanon' tydeliggjør dette."
+      }
+    ]
   },
   {
     "bookId": 6,
@@ -21,11 +29,17 @@
     "bookId": 6,
     "chapterId": 9,
     "verseId": 4,
-    "text": "Da gikk de frem med list. De utstyrte seg med proviant og la slitte sekker på eslene sine, samt vinslauker som var gamle, sprukne og lappet.",
+    "text": "Da gikk de frem med list. De utstyrte seg med proviant og la slitte sekker på eslene sine, samt gamle vinslauker som var sprukne og bundet sammen.",
     "versions": [
       {
         "text": "Da gikk de frem med list. De gjorde seg til sendebud og la slitte sekker på eslene sine, samt vinslauker som var gamle, sprukne og lappet.",
         "explanation": "Det hebraiske verbet וַיִּצְטַיָּרוּ (fra צִיד) betyr 'de utstyrte seg med proviant/reisekost', ikke 'de gjorde seg til sendebud'. Konteksten handler om at de utstyrte seg med gammelt utstyr for å se ut som de hadde reist langt."
+      },
+      {
+        "text": "Da gikk de frem med list. De utstyrte seg med proviant og la slitte sekker på eslene sine, samt vinslauker som var gamle, sprukne og lappet.",
+        "type": "error",
+        "severity": "minor",
+        "explanation": "Det hebraiske וּמְצֹרָרִים betyr 'bundet sammen' (dvs. reparert ved å bindes), ikke 'lappet'. 'Lappet' (מְטֻלָּאוֹת) brukes om sandalene i vers 5. Også בָּלִים beskriver vinslaukene som 'gamle/slitte', ikke at de var gamle i tillegg til sprukne."
       }
     ]
   },
@@ -69,11 +83,17 @@
     "bookId": 6,
     "chapterId": 9,
     "verseId": 11,
-    "text": "Våre eldste og alle innbyggerne i landet vårt sa til oss: «Ta med dere reisekost og gå dem i møte. Si til dem: Vi er deres tjenere. Inngå nå en pakt med oss.»",
+    "text": "Våre eldste og alle innbyggerne i landet vårt sa til oss: «Ta med dere reisekost og gå dem i møte. Si til dem: 'Vi er deres tjenere. Inngå nå en pakt med oss.'»",
     "versions": [
       {
         "text": "Våre eldste og alle innbyggerne i landet vårt sa til oss: Ta med dere reisekost og gå dem i møte. Si til dem: Vi er deres tjenere. Inngå nå en pakt med oss.",
         "explanation": "For konsistens med resten av oversettelsen bør direkte tale markeres med anførselstegn. De andre versene bruker «» for direkte tale."
+      },
+      {
+        "text": "Våre eldste og alle innbyggerne i landet vårt sa til oss: «Ta med dere reisekost og gå dem i møte. Si til dem: Vi er deres tjenere. Inngå nå en pakt med oss.»",
+        "type": "grammar",
+        "severity": "minor",
+        "explanation": "Det er tale-i-tale her: de eldste sier at de skal si noe til israelittene. For å tydeliggjøre denne strukturen bør den indre talen markeres med enkle anførselstegn."
       }
     ]
   },
@@ -93,7 +113,15 @@
     "bookId": 6,
     "chapterId": 9,
     "verseId": 14,
-    "text": "Mennene tok imot noe av reisematen deres, men spurte ikke Herren til råds."
+    "text": "Mennene smakte på noe av reisematen deres, men spurte ikke Herren til råds.",
+    "versions": [
+      {
+        "text": "Mennene tok imot noe av reisematen deres, men spurte ikke Herren til råds.",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "Det hebraiske וַיִּקְחוּ הָאֲנָשִׁים מִצֵּידָם betyr at de tok (smakte på/undersøkte) noe av provianten for å vurdere den – for å se om den virkelig var gammel. 'Tok imot' kan misforstås som om de aksepterte gaver, men poenget er at de undersøkte provianten som bevis i stedet for å rådspørre Herren."
+      }
+    ]
   },
   {
     "bookId": 6,
@@ -177,6 +205,14 @@
     "bookId": 6,
     "chapterId": 9,
     "verseId": 27,
-    "text": "Den dagen gjorde Josva dem til vedhoggere og vannbærere for menigheten og for Herrens alter – slik de er den dag i dag – på det stedet han skulle utvelge."
+    "text": "Den dagen gjorde Josva dem til vedhoggere og vannbærere for menigheten og for Herrens alter, helt til denne dag, på det stedet han skulle utvelge.",
+    "versions": [
+      {
+        "text": "Den dagen gjorde Josva dem til vedhoggere og vannbærere for menigheten og for Herrens alter – slik de er den dag i dag – på det stedet han skulle utvelge.",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "Uttrykket עַד־הַיּוֹם הַזֶּה betyr 'helt til denne dag' og viser varighet/kontinuitet. 'Slik de er den dag i dag' er en parafrase som mister tidsdimensjonen i עַד (helt til). Tankestrekene bryter også flyten unødvendig."
+      }
+    ]
   }
 ]

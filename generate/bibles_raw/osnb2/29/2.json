@@ -33,7 +33,15 @@
     "bookId": 29,
     "chapterId": 2,
     "verseId": 6,
-    "text": "Foran det vrir folkeslag seg i angst, alle ansikter blekner."
+    "text": "Foran det skjelver folkeslag, alle ansikter blekner.",
+    "versions": [
+      {
+        "text": "Foran det vrir folkeslag seg i angst, alle ansikter blekner.",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "Det hebraiske 'יָחִילוּ' (fra חיל) betyr primært 'skjelve/beve' av frykt, ikke 'vri seg'. 'Vrir seg i angst' gir en litt annen nyanse enn grunnteksten. 'Skjelver' er mer presist og stilistisk renere."
+      }
+    ]
   },
   {
     "bookId": 29,
@@ -45,7 +53,15 @@
     "bookId": 29,
     "chapterId": 2,
     "verseId": 8,
-    "text": "De trenger ikke hverandre til side, hver mann går sin bane. De styrter gjennom våpen uten å stanse."
+    "text": "De trenger ikke hverandre til side, hver mann går sin bane. Faller de mellom våpen, bryter de ikke rekken.",
+    "versions": [
+      {
+        "text": "De trenger ikke hverandre til side, hver mann går sin bane. De styrter gjennom våpen uten å stanse.",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "Det hebraiske 'יִפֹּלוּ' betyr 'de faller', og 'לֹא יִבְצָעוּ' betyr 'de bryter ikke (rekkene)/de lar seg ikke avbryte'. Nåværende oversettelse 'styrter gjennom våpen uten å stanse' er en fri gjengivelse som mister nyanser. Ideen er at selv om de faller ned mellom våpen/kastevåpen, bryter de ikke formasjonen."
+      }
+    ]
   },
   {
     "bookId": 29,
@@ -123,11 +139,17 @@
     "bookId": 29,
     "chapterId": 2,
     "verseId": 20,
-    "text": "Fienden fra nord vil jeg drive langt bort fra dere og støte ham ut i et tørt og øde land, hans fortropp mot havet i øst og hans baktropp mot havet i vest. Stanken skal stige opp fra ham, lukten skal stige, for stort er det han har gjort.",
+    "text": "Fienden fra nord vil jeg drive langt bort fra dere og støte ham ut i et tørt og øde land, hans fortropp mot havet i øst og hans baktropp mot havet i vest. Stanken skal stige opp fra ham, og lukten skal bre seg, for store ting har han gjort.",
     "versions": [
       {
         "text": "Fienden fra nord vil jeg drive langt bort fra dere og støte ham ut i et goldt og øde land, hans fortropp mot havet i øst og hans baktropp mot havet i vest. Stanken skal stige opp fra ham, lukten skal stige, for stort er det han har gjort.",
         "explanation": "Det hebraiske 'צִיָּה' (tsiyyah) betyr 'tørt/uttørket' snarere enn 'goldt'. 'Tørt' er mer presist og gir bedre flyt ved muntlig lesning."
+      },
+      {
+        "text": "Fienden fra nord vil jeg drive langt bort fra dere og støte ham ut i et tørt og øde land, hans fortropp mot havet i øst og hans baktropp mot havet i vest. Stanken skal stige opp fra ham, lukten skal stige, for stort er det han har gjort.",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "Siste del 'for stort er det han har gjort' er litt tvetydig – det kan høres ut som ros. Det hebraiske כִּי הִגְדִּיל לַעֲשׂוֹת betyr her at fienden har gjort store (onde) ting. 'For store ting har han gjort' gjør det tydeligere at det refererer til omfanget av ødeleggelsen."
       }
     ]
   },
@@ -147,7 +169,15 @@
     "bookId": 29,
     "chapterId": 2,
     "verseId": 23,
-    "text": "Og dere, Sions barn, fryd dere og vær glade i Herren deres Gud! For han gir dere læreren til rettferdighet og sender dere regn, høstregn og vårregn, som i gammel tid."
+    "text": "Og dere, Sions barn, fryd dere og vær glade i Herren deres Gud! For han gir dere høstregnet i rettferdig mål og sender dere regn, høstregn og vårregn, som før.",
+    "versions": [
+      {
+        "text": "Og dere, Sions barn, fryd dere og vær glade i Herren deres Gud! For han gir dere læreren til rettferdighet og sender dere regn, høstregn og vårregn, som i gammel tid.",
+        "type": "error",
+        "severity": "major",
+        "explanation": "Det hebraiske 'הַמּוֹרֶה' kan bety enten 'læreren' eller 'høstregnet' (tidligregnet). I konteksten av Joel 2:23, som handler om gjenopprettelse av jordbruk etter gresshoppeplagen, er regn-betydningen mer naturlig, spesielt ettersom resten av verset fortsetter å snakke om regn. 'בָּרִאשׁוֹן' betyr 'som i begynnelsen/som før' snarere enn 'i gammel tid'. Oversettelsen 'læreren til rettferdighet' er en mulig tolkning, men kontekstuelt er regn-tolkningen mer sannsynlig. Uansett hvilken tolkning man velger, bør 'som i gammel tid' justeres til 'som før' for bedre presisjon."
+      }
+    ]
   },
   {
     "bookId": 29,

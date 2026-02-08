@@ -51,7 +51,15 @@
     "bookId": 5,
     "chapterId": 7,
     "verseId": 8,
-    "text": "Det var fordi Herren elsket dere og ville holde eden han hadde sverget til fedrene deres. Derfor førte Herren dere ut med sterk hånd og løste dere ut fra trellehuset, fra faraos hånd, kongen av Egypt."
+    "text": "Det var fordi Herren elsket dere og holdt eden han hadde sverget til fedrene deres. Derfor førte Herren dere ut med sterk hånd og fridde dere ut fra trellehuset, fra faraos hånd, kongen av Egypt.",
+    "versions": [
+      {
+        "text": "Det var fordi Herren elsket dere og ville holde eden han hadde sverget til fedrene deres. Derfor førte Herren dere ut med sterk hånd og løste dere ut fra trellehuset, fra faraos hånd, kongen av Egypt.",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "Hebraisk וּמִשָּׁמְרוֹ (umishomro) betyr 'og fordi han holdt/bevarte', ikke 'ville holde'. Det er en konstatering, ikke en intensjon. Også וַֽיִּפְדְּךָ֙ (vayyifdekha) betyr 'fridde ut/løste ut' – 'fridde ut' er mer tradisjonelt og presist for פדה."
+      }
+    ]
   },
   {
     "bookId": 5,
@@ -75,7 +83,15 @@
     "bookId": 5,
     "chapterId": 7,
     "verseId": 11,
-    "text": "Derfor skal du holde budet og forskriftene og lovene som jeg gir deg i dag, og leve etter dem."
+    "text": "Derfor skal du holde budet, forskriftene og lovene som jeg pålegger deg i dag, og leve etter dem.",
+    "versions": [
+      {
+        "text": "Derfor skal du holde budet og forskriftene og lovene som jeg gir deg i dag, og leve etter dem.",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "Hebraisk מְצַוְּךָ (metsavvekha) betyr 'pålegger deg / befaler deg', ikke bare 'gir deg'. מצוה handler om å befale/pålegge, og 'pålegger' gjenspeiler bedre autoriteten i det hebraiske verbet."
+      }
+    ]
   },
   {
     "bookId": 5,
@@ -147,7 +163,15 @@
     "bookId": 5,
     "chapterId": 7,
     "verseId": 21,
-    "text": "Vær ikke redd for dem, for Herren din Gud er midt iblant dere, en stor og fryktinngytende Gud."
+    "text": "Vær ikke redd for dem, for Herren din Gud er midt iblant deg, en stor og fryktinngytende Gud.",
+    "versions": [
+      {
+        "text": "Vær ikke redd for dem, for Herren din Gud er midt iblant dere, en stor og fryktinngytende Gud.",
+        "type": "error",
+        "severity": "minor",
+        "explanation": "Det hebraiske בְּקִרְבֶּ֔ךָ (beqirbekha) er 2. person entall ('deg'), ikke flertall ('dere'). Hele verset er i entall (תַעֲרֹץ), så 'midt iblant deg' er korrekt."
+      }
+    ]
   },
   {
     "bookId": 5,

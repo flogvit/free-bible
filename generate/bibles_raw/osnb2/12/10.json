@@ -75,7 +75,15 @@
     "bookId": 12,
     "chapterId": 10,
     "verseId": 12,
-    "text": "Så brøt han opp og dro av sted mot Samaria. Ved Bet-Eked-Haroim langs veien"
+    "text": "Så brøt han opp og dro av sted mot Samaria. Da han var ved Bet-Eked-Haroim langs veien,",
+    "versions": [
+      {
+        "text": "Så brøt han opp og dro av sted mot Samaria. Ved Bet-Eked-Haroim langs veien",
+        "type": "error",
+        "severity": "major",
+        "explanation": "Verset ender brått uten noen forbindelse til neste vers. Den hebraiske teksten antyder at dette er en setning som leder inn til vers 13. En konjunksjon som 'Da han var ved' gir bedre flyt og gjør det klart at setningen fortsetter."
+      }
+    ]
   },
   {
     "bookId": 12,
@@ -153,19 +161,43 @@
     "bookId": 12,
     "chapterId": 10,
     "verseId": 25,
-    "text": "Da han var ferdig med å ofre brennofferet, sa Jehu til livvaktene og offiserene: «Gå inn og slå dem ned! Ingen må slippe ut!» De slo dem ned med sverd. Livvaktene og offiserene kastet likene ut og gikk inn i Ba'als-husets indre rom."
+    "text": "Da han var ferdig med å ofre brennofferet, sa Jehu til livvaktene og offiserene: «Gå inn og slå dem ned! Ingen må slippe ut!» De slo dem ned med sverd. Livvaktene og offiserene kastet dem ut og gikk videre inn til det innerste rommet i Ba'als hus.",
+    "versions": [
+      {
+        "text": "Da han var ferdig med å ofre brennofferet, sa Jehu til livvaktene og offiserene: «Gå inn og slå dem ned! Ingen må slippe ut!» De slo dem ned med sverd. Livvaktene og offiserene kastet likene ut og gikk inn i Ba'als-husets indre rom.",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "עַד־עִ֥יר בֵּית־הַבָּֽעַל er vanskelig, men 'עיר' kan bety 'innerste del/citadell'. Oversettelsen 'indre rom' er rimelig, men 'kastet likene ut' er en tilføyelse – den hebraiske teksten sier bare וַיַּשְׁלִ֗כוּ (kastet ut/forkastet) uten å spesifisere 'likene'. Dessuten gir 'gikk videre inn til det innerste rommet' bedre gjengitt bevegelsen i teksten."
+      }
+    ]
   },
   {
     "bookId": 12,
     "chapterId": 10,
     "verseId": 26,
-    "text": "De bar ut Asjera-stolpen fra Ba'als hus og brente den."
+    "text": "De bar ut steinstøttene fra Ba'als hus og brente dem.",
+    "versions": [
+      {
+        "text": "De bar ut Asjera-stolpen fra Ba'als hus og brente den.",
+        "type": "error",
+        "severity": "major",
+        "explanation": "Det hebraiske מַצְּבוֹת (matstsevot) betyr 'steinstøtter/kultbilder', ikke 'Asjera-stolpen'. Teksten nevner ikke Asjera i det hele tatt. Dessuten er ordet i flertall, så 'dem' er mer korrekt enn 'den'."
+      }
+    ]
   },
   {
     "bookId": 12,
     "chapterId": 10,
     "verseId": 27,
-    "text": "De rev ned Ba'als steinstøtte og rev ned Ba'als hus og gjorde det til latriner, slik det er den dag i dag."
+    "text": "De rev ned Ba'als steinstøtte og rev ned Ba'als hus og gjorde det til latriner, som det er den dag i dag.",
+    "versions": [
+      {
+        "text": "De rev ned Ba'als steinstøtte og rev ned Ba'als hus og gjorde det til latriner, slik det er den dag i dag.",
+        "type": "error",
+        "severity": "major",
+        "explanation": "Mindre stilistisk poeng: 'som det er den dag i dag' er mer vanlig norsk bokmål enn 'slik det er den dag i dag'. Men dette er en minor sak. Verset er ellers korrekt oversatt – ketiv למחראות (latriner) er korrekt gjengitt."
+      }
+    ]
   },
   {
     "bookId": 12,

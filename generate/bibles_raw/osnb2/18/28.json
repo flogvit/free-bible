@@ -15,7 +15,15 @@
     "bookId": 18,
     "chapterId": 28,
     "verseId": 3,
-    "text": "Mennesket setter en grense for mørket og utforsker alt til det ytterste, steiner i dypeste mørke og dødsskygge."
+    "text": "Mennesket setter en grense for mørket og utforsker alt til det ytterste – stein i det dypeste mørke og dødsskygge.",
+    "versions": [
+      {
+        "text": "Mennesket setter en grense for mørket og utforsker alt til det ytterste, steiner i dypeste mørke og dødsskygge.",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "'Steiner' (flertall) bør være 'stein' (entall) da det hebraiske אֶבֶן er entall. Tillegg av tankestrek gir bedre lesbarhet og markerer overgangen til det poetiske bildet."
+      }
+    ]
   },
   {
     "bookId": 18,
@@ -39,7 +47,15 @@
     "bookId": 18,
     "chapterId": 28,
     "verseId": 6,
-    "text": "Dens steiner er safirens hjem, og gullstøv finnes der."
+    "text": "Dens steiner inneholder safir, og gullstøv finnes der.",
+    "versions": [
+      {
+        "text": "Dens steiner er safirens hjem, og gullstøv finnes der.",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "Det hebraiske מְקוֹם־סַפִּיר אֲבָנֶיהָ betyr at steinene er et sted for safir, altså at steinene inneholder safir. 'Safirens hjem' er en uvanlig formulering; 'inneholder safir' er mer naturlig."
+      }
+    ]
   },
   {
     "bookId": 18,
@@ -63,13 +79,29 @@
     "bookId": 18,
     "chapterId": 28,
     "verseId": 10,
-    "text": "Det hogger kanaler gjennom klippene, og øyet ser alle skatter."
+    "text": "I klippene hogger det kanaler, og øyet ser alle skatter.",
+    "versions": [
+      {
+        "text": "Det hogger kanaler gjennom klippene, og øyet ser alle skatter.",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "Hebraisk har בַּצּוּרוֹת ('i klippene') som stedsangivelse foran verbet. 'I klippene hogger det kanaler' gjenspeiler den hebraiske setningsstrukturen bedre og gir et naturligere norsk uttrykk."
+      }
+    ]
   },
   {
     "bookId": 18,
     "chapterId": 28,
     "verseId": 11,
-    "text": "Det stopper elvenes sivning, og det skjulte bringer det fram i lyset."
+    "text": "Det demmer opp elvenes strømmer, og det som er skjult bringer det fram i lyset.",
+    "versions": [
+      {
+        "text": "Det stopper elvenes sivning, og det skjulte bringer det fram i lyset.",
+        "type": "error",
+        "severity": "major",
+        "explanation": "מִבְּכִי betyr 'gråt/strømming' av elvene, altså vannstrømmene. חִבֵּשׁ betyr å binde/demme opp. 'Stopper elvenes sivning' er upresist – det handler om å demme opp vannstrømmene i gruvene. 'Det skjulte' bør være 'det som er skjult' for bedre flyt."
+      }
+    ]
   },
   {
     "bookId": 18,
@@ -93,7 +125,15 @@
     "bookId": 18,
     "chapterId": 28,
     "verseId": 15,
-    "text": "Den kan ikke kjøpes for fint gull, og sølv kan ikke veies opp som dens pris."
+    "text": "Den kan ikke kjøpes for purt gull, og sølv kan ikke veies opp som dens pris.",
+    "versions": [
+      {
+        "text": "Den kan ikke kjøpes for fint gull, og sølv kan ikke veies opp som dens pris.",
+        "type": "error",
+        "severity": "major",
+        "explanation": "Det hebraiske סְגוֹר refererer til purt/fint gull (tilsvarende 'fine gold'), ikke generelt 'fint gull' som i כֶּתֶם. Oversettelsen er akseptabel, men 'purt gull' skiller seg bedre fra כֶּתֶם (gull fra Ofir) i vers 16. Likevel er dette en mindre nyanse."
+      }
+    ]
   },
   {
     "bookId": 18,
@@ -111,7 +151,15 @@
     "bookId": 18,
     "chapterId": 28,
     "verseId": 18,
-    "text": "Koraller og krystall er ikke verdt å nevne, å eie visdom er bedre enn perler."
+    "text": "Koraller og krystall er ikke verdt å nevne, å vinne visdom er mer verdt enn perler.",
+    "versions": [
+      {
+        "text": "Koraller og krystall er ikke verdt å nevne, å eie visdom er bedre enn perler.",
+        "type": "error",
+        "severity": "major",
+        "explanation": "Det hebraiske מֶשֶׁךְ betyr 'å dra/trekke fram' eller 'å erverve/vinne', ikke 'å eie'. Og מִפְּנִינִים betyr 'mer enn perler' (komparativ). 'Å vinne visdom er mer verdt enn perler' er mer nøyaktig."
+      }
+    ]
   },
   {
     "bookId": 18,

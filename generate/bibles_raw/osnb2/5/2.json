@@ -57,7 +57,15 @@
     "bookId": 5,
     "chapterId": 2,
     "verseId": 9,
-    "text": "Da sa Herren til meg: «Du skal ikke angripe Moab eller gå til strid mot dem. For jeg vil ikke gi deg noe av deres land som eiendom, for Ar har jeg gitt til Lots etterkommere som eiendom."
+    "text": "Da sa Herren til meg: «Du skal ikke angripe Moab eller gå til strid mot dem. For jeg vil ikke gi deg noe av deres land som eiendom, for Ar har jeg gitt til Lots etterkommere som eiendom.»",
+    "versions": [
+      {
+        "text": "Da sa Herren til meg: «Du skal ikke angripe Moab eller gå til strid mot dem. For jeg vil ikke gi deg noe av deres land som eiendom, for Ar har jeg gitt til Lots etterkommere som eiendom.",
+        "type": "grammar",
+        "severity": "minor",
+        "explanation": "Verset mangler avsluttende anførselstegn. Guds tale som begynner i vers 9 avsluttes her (eller eventuelt videre i vers 12), men det bør i det minste være konsistent. Ser man på vers 12, avsluttes anførselstegnet der. Dersom sitatet faktisk skal løpe til vers 12, er nåværende formatering akseptabel. Men sammenlignet med vers 3-7 og andre sitat-blokker i teksten, er det uklart hvor sitatet slutter. Dette er et mindre formateringsproblem."
+      }
+    ]
   },
   {
     "bookId": 5,
@@ -75,7 +83,15 @@
     "bookId": 5,
     "chapterId": 2,
     "verseId": 12,
-    "text": "I Seir bodde horittene før, men Esaus etterkommere drev dem ut og utryddet dem og bosatte seg i deres sted, slik Israel gjorde med det landet de fikk i eie, det som Herren ga dem.»"
+    "text": "I Seir bodde horittene før, men Esaus etterkommere fortrengte dem og utryddet dem og bosatte seg i deres sted, slik Israel gjorde med det landet de fikk i eie, det som Herren ga dem.»",
+    "versions": [
+      {
+        "text": "I Seir bodde horittene før, men Esaus etterkommere drev dem ut og utryddet dem og bosatte seg i deres sted, slik Israel gjorde med det landet de fikk i eie, det som Herren ga dem.»",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "Det hebraiske יִירָשׁוּם (yirashu) betyr 'tok deres plass' / 'fortrengte dem' (fra yarash = ta i eie/fortrenge), mens וַיַּשְׁמִידוּם er 'utryddet dem'. Oversettelsen bruker 'drev dem ut' for yarash og 'utryddet' for hishmid, men yarash handler mer om å fortrenge/ta i besittelse enn å drive ut. 'Fortrengte' er mer presist."
+      }
+    ]
   },
   {
     "bookId": 5,
@@ -99,7 +115,15 @@
     "bookId": 5,
     "chapterId": 2,
     "verseId": 15,
-    "text": "Herrens hånd var også mot dem og ryddet dem ut fra leiren til de var borte."
+    "text": "Herrens hånd var også mot dem for å forvirre dem og fjerne dem fra leiren til de var borte.",
+    "versions": [
+      {
+        "text": "Herrens hånd var også mot dem og ryddet dem ut fra leiren til de var borte.",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "Det hebraiske לְהֻמָּם (lehumam) betyr 'å forvirre/bringe i forvirring/uroe dem', fra roten ה-מ-ם. Oversettelsen utelater dette viktige elementet og går direkte til 'ryddet dem ut', mens teksten sier at Guds hånd virket til å bringe dem i forvirring/uro inntil de var fjernet fra leiren."
+      }
+    ]
   },
   {
     "bookId": 5,
@@ -153,7 +177,15 @@
     "bookId": 5,
     "chapterId": 2,
     "verseId": 23,
-    "text": "Og avvittene, som bodde i landsbyer helt til Gasa, ble utryddet av kaftorittene, som kom fra Kaftor, og de bosatte seg i deres sted."
+    "text": "Og avvittene, som bodde i bosetninger helt til Gasa – kaftorittene, som kom fra Kaftor, utryddet dem og bosatte seg i deres sted.",
+    "versions": [
+      {
+        "text": "Og avvittene, som bodde i landsbyer helt til Gasa, ble utryddet av kaftorittene, som kom fra Kaftor, og de bosatte seg i deres sted.",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "Det hebraiske חֲצֵרִים (chatserim) betyr 'bosetninger' eller 'teltlandsbyer' (ubefestede bosetninger), ikke vanlige 'landsbyer'. Dessuten er setningsstrukturen noe uheldig med passiv ('ble utryddet') etterfulgt av aktiv ('de bosatte seg'). En gjennomgående aktiv konstruksjon flyter bedre."
+      }
+    ]
   },
   {
     "bookId": 5,
@@ -243,6 +275,14 @@
     "bookId": 5,
     "chapterId": 2,
     "verseId": 37,
-    "text": "Bare ammonittenes land kom du ikke nær – verken landet langs Jabbok-elven eller byene i fjellene – alt som Herren vår Gud hadde forbudt oss."
+    "text": "Bare ammonittenes land kom du ikke nær – hele strekningen langs Jabbok-elven og byene i fjellene – alt slik Herren vår Gud hadde befalt.",
+    "versions": [
+      {
+        "text": "Bare ammonittenes land kom du ikke nær – verken landet langs Jabbok-elven eller byene i fjellene – alt som Herren vår Gud hadde forbudt oss.",
+        "type": "error",
+        "severity": "major",
+        "explanation": "Hebraisk צִוָּה (tsivvah) betyr 'befalt/påbudt', ikke 'forbudt'. Teksten sier at Israel holdt seg borte fra ammonittenes land i samsvar med alt det Herren hadde befalt – altså de adlød Guds bud. 'Forbudt' er en tolkning, men det hebraiske ordet er nøytralt 'befalt'. Dessuten betyr כָּל־יַד נַחַל יַבֹּק 'hele strekningen langs Jabbok-elven', ikke 'landet langs'."
+      }
+    ]
   }
 ]

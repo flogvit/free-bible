@@ -3,7 +3,15 @@
     "bookId": 6,
     "chapterId": 23,
     "verseId": 1,
-    "text": "Lang tid etter at Herren hadde gitt Israel ro for alle fiendene rundt omkring, og Josva var blitt gammel og høyt opp i årene,"
+    "text": "Lang tid etter at Herren hadde gitt Israel ro fra alle fiendene rundt omkring, og Josva var blitt gammel og høyt opp i årene,",
+    "versions": [
+      {
+        "text": "Lang tid etter at Herren hadde gitt Israel ro for alle fiendene rundt omkring, og Josva var blitt gammel og høyt opp i årene,",
+        "type": "grammar",
+        "severity": "minor",
+        "explanation": "Det hebraiske מִכָּל־אֹיְבֵיהֶם bruker preposisjonen מִן som betyr 'fra'. 'Ro fra fiendene' er mer presist enn 'ro for fiendene' på norsk. 'Ro for' kan misforstås som om roen er til fordel for fiendene."
+      }
+    ]
   },
   {
     "bookId": 6,
@@ -21,7 +29,15 @@
     "bookId": 6,
     "chapterId": 23,
     "verseId": 4,
-    "text": "Se, jeg har tildelt dere disse gjenværende folkeslagene som arv for stammene deres, sammen med alle folkeslagene jeg har utryddet, fra Jordan til det store havet i vest."
+    "text": "Se, jeg har fordelt disse gjenværende folkeslagene som arv for stammene deres, fra Jordan og alle folkeslagene jeg har utryddet, helt til det store havet i vest.",
+    "versions": [
+      {
+        "text": "Se, jeg har tildelt dere disse gjenværende folkeslagene som arv for stammene deres, sammen med alle folkeslagene jeg har utryddet, fra Jordan til det store havet i vest.",
+        "type": "error",
+        "severity": "major",
+        "explanation": "Verbet הִפַּלְתִּי (fra נפל i hif'il) betyr 'fordelt ved loddkasting', ikke bare 'tildelt'. Dessuten er setningsstrukturen i originalen at landområdet strekker seg fra Jordan (inkludert de gjenværende og de utryddede folkeslagenes territorier) til Middelhavet i vest. 'Sammen med' er ikke helt presist; teksten beskriver et geografisk område fra Jordan til havet."
+      }
+    ]
   },
   {
     "bookId": 6,
@@ -51,7 +67,15 @@
     "bookId": 6,
     "chapterId": 23,
     "verseId": 8,
-    "text": "Hold dere til Herren deres Gud, slik dere har gjort til denne dag."
+    "text": "Men hold dere til Herren deres Gud, slik dere har gjort fram til denne dag.",
+    "versions": [
+      {
+        "text": "Hold dere til Herren deres Gud, slik dere har gjort til denne dag.",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "Det hebraiske כִּי אִם har en adversativ/betingende kraft ('men/derimot') som knytter verset til forbudet i v.7. 'Fram til denne dag' er også litt mer presist for עַד הַיּוֹם הַזֶּה enn bare 'til denne dag'."
+      }
+    ]
   },
   {
     "bookId": 6,
@@ -105,7 +129,15 @@
     "bookId": 6,
     "chapterId": 23,
     "verseId": 15,
-    "text": "Men slik alle de gode ord som Herren deres Gud talte til dere, har gått i oppfyllelse, slik skal Herren også la alle de onde ord ramme dere, inntil han har utslettet dere fra dette gode landet som Herren deres Gud har gitt dere."
+    "text": "Men slik alt det gode som Herren deres Gud lovte dere, har skjedd med dere, slik skal Herren også la alt det onde komme over dere, inntil han har utslettet dere fra dette gode landet som Herren deres Gud har gitt dere.",
+    "versions": [
+      {
+        "text": "Men slik alle de gode ord som Herren deres Gud talte til dere, har gått i oppfyllelse, slik skal Herren også la alle de onde ord ramme dere, inntil han har utslettet dere fra dette gode landet som Herren deres Gud har gitt dere.",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "Hebraisk כָּל־הַדָּבָר הַטּוֹב og כָּל־הַדָּבָר הָרָע er entall ('alt det gode ord/ting' og 'alt det onde ord/ting'). Å oversette med 'alle de gode ord' og 'alle de onde ord' gjør det for spesifikt til 'ord'; דָּבָר kan også bety 'ting/sak'. Dessuten er יָבִיא ('bringe over') bedre gjengitt med 'la komme over' enn 'la ramme'."
+      }
+    ]
   },
   {
     "bookId": 6,

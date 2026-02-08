@@ -3,7 +3,7 @@
     "bookId": 5,
     "chapterId": 18,
     "verseId": 1,
-    "text": "De levittiske prestene, hele Levi stamme, skal ikke ha noen del eller arv sammen med Israel. De skal spise Herrens ildofre, det er hans arv.",
+    "text": "De levittiske prestene, hele Levi stamme, skal ikke ha noen del eller arv sammen med Israel. Herrens ildofre og hans arv skal de spise.",
     "versions": [
       {
         "text": "De levittiske prestene, hele Levi stamme, skal ikke ha noen del eller arv sammen med Israel. De skal leve av Herrens ildoffer og hans arv.",
@@ -12,6 +12,12 @@
       {
         "text": "De levittiske prestene, hele Levi stamme, skal ikke ha noen del eller arv sammen med Israel. De skal spise av Herrens ildofre og hans arv.",
         "explanation": "Hebraisk 'וְנַחֲלָתוֹ' (og hans arv) refererer tilbake til ildofrene som deres arv - de spiser ikke 'av' arven, men ildofrene ER arven. Formuleringen 'det er hans arv' gjør dette klarere teologisk."
+      },
+      {
+        "text": "De levittiske prestene, hele Levi stamme, skal ikke ha noen del eller arv sammen med Israel. De skal spise Herrens ildofre, det er hans arv.",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "Den hebraiske teksten sier 'אִשֵּׁי יְהוָה וְנַחֲלָתוֹ יֹאכֵלוּן' – 'Herrens ildofre og hans arv skal de spise'. Teksten presenterer to ting de skal spise: ildofrene OG hans arv (dvs. Herrens andel). Den nåværende oversettelsen gjør 'hans arv' til en forklarende bisetning ('det er hans arv'), men hebraisk har 'og' (וְ) som konjunksjon, noe som tyder på to parallelle objekter. Likevel, gitt versjonhistorikken med 2 revisjoner og at dette er en fortolkningsmessig nyanse, er dette bare en mindre merknad."
       }
     ]
   },
@@ -61,7 +67,15 @@
     "bookId": 5,
     "chapterId": 18,
     "verseId": 8,
-    "text": "De skal ha like stor del å spise, i tillegg til det han har fått ved salg av fedrearven."
+    "text": "De skal ha like stor del å spise, bortsett fra det han har fått ved salg av fedrearven.",
+    "versions": [
+      {
+        "text": "De skal ha like stor del å spise, i tillegg til det han har fått ved salg av fedrearven.",
+        "type": "error",
+        "severity": "major",
+        "explanation": "Hebraisk 'לְבַד מִמְכָּרָיו עַל־הָאָבוֹת' betyr 'bortsett fra/i tillegg til det han har solgt etter fedrene'. Uttrykket 'לְבַד מִן' betyr vanligvis 'bortsett fra' eller 'foruten'. Meningen er at levitten skal få lik del uavhengig av hva han eventuelt har solgt av sin fedrearv. 'I tillegg til' kan gi inntrykk av at det legges til, mens poenget er at det ikke skal trekkes fra – han får lik del uansett. 'Bortsett fra' er mer nøyaktig."
+      }
+    ]
   },
   {
     "bookId": 5,
@@ -85,7 +99,15 @@
     "bookId": 5,
     "chapterId": 18,
     "verseId": 12,
-    "text": "For alle som gjør slikt, er en avsky for Herren, og på grunn av disse avskyelighetene driver Herren din Gud dem bort foran deg."
+    "text": "For alle som gjør slikt, er en avskyelighet for Herren, og på grunn av disse avskyelighetene driver Herren din Gud dem bort foran deg.",
+    "versions": [
+      {
+        "text": "For alle som gjør slikt, er en avsky for Herren, og på grunn av disse avskyelighetene driver Herren din Gud dem bort foran deg.",
+        "type": "grammar",
+        "severity": "minor",
+        "explanation": "Ordet 'תוֹעֲבַת' (to'avat) oversettes som 'avsky' i første del, men som 'avskyelighetene' i andre del. For konsistens med vers 9 ('avskyeligheter') bør det stå 'avskyelighet' i begge tilfeller. Dessuten er 'avsky' mer en følelse, mens 'avskyelighet' er det som er avskyelig – en viktig nyanse."
+      }
+    ]
   },
   {
     "bookId": 5,
@@ -97,7 +119,15 @@
     "bookId": 5,
     "chapterId": 18,
     "verseId": 14,
-    "text": "For disse folkene som du skal drive ut, lytter til tegntydere og spåmenn. Men slik har Herren din Gud ikke gitt det for deg."
+    "text": "For disse folkene som du skal drive ut, lytter til tegntydere og spåmenn. Men deg har Herren din Gud ikke tillatt slikt.",
+    "versions": [
+      {
+        "text": "For disse folkene som du skal drive ut, lytter til tegntydere og spåmenn. Men slik har Herren din Gud ikke gitt det for deg.",
+        "type": "error",
+        "severity": "major",
+        "explanation": "Formuleringen 'ikke gitt det for deg' er uklar og vanskelig å forstå på norsk. Den hebraiske teksten betyr at Herren ikke har tillatt deg å gjøre slik / ikke har bestemt det slik for deg. En klarere formulering er nødvendig for at meningen skal komme frem."
+      }
+    ]
   },
   {
     "bookId": 5,

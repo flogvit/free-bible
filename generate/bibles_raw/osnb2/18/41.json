@@ -45,7 +45,15 @@
     "bookId": 18,
     "chapterId": 41,
     "verseId": 7,
-    "text": "Hans stolthet er rekker av skjold, tett forseglet og lukket."
+    "text": "Hans stolthet er rader av skjold, lukket med tett forsegling.",
+    "versions": [
+      {
+        "text": "Hans stolthet er rekker av skjold, tett forseglet og lukket.",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "'אֲפִיקֵי מָגִנִּים' betyr 'rader/kanaler av skjold' snarere enn 'rekker'. Dessuten er rekkefølgen i den hebraiske teksten 'סָגוּר חוֹתָם צָר' (lukket med tett segl/forsegling), som bedre gjengis med 'lukket med tett forsegling' for å fange bildet av at hvert skjold er forseglet mot det neste."
+      }
+    ]
   },
   {
     "bookId": 18,
@@ -63,7 +71,15 @@
     "bookId": 18,
     "chapterId": 41,
     "verseId": 10,
-    "text": "Når han nyser, blinker det lys, og øynene hans er som morgenrødens stråler."
+    "text": "Når han nyser, stråler det lys, og øynene hans er som morgenrødens øyelokk.",
+    "versions": [
+      {
+        "text": "Når han nyser, blinker det lys, og øynene hans er som morgenrødens stråler.",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "'תָּהֶל אוֹר' betyr snarere 'stråler lys' enn 'blinker det lys'. 'כְּעַפְעַפֵּי שָׁחַר' betyr bokstavelig 'som morgenrødens øyelokk' – et klassisk poetisk uttrykk for de første lysstrålene ved daggry. 'Stråler' er mer dekkende enn 'blinker', men 'morgenrødens stråler' er en akseptabel tolkning. Likevel er 'øyelokk' det bokstavelige og mer poetiske bildet."
+      }
+    ]
   },
   {
     "bookId": 18,
@@ -105,13 +121,29 @@
     "bookId": 18,
     "chapterId": 41,
     "verseId": 17,
-    "text": "Når han reiser seg, gripes de mektige av frykt, de mister fatningen av redsel."
+    "text": "Når han reiser seg, gripes de mektige av frykt, av forferdelse famler de seg vill.",
+    "versions": [
+      {
+        "text": "Når han reiser seg, gripes de mektige av frykt, de mister fatningen av redsel.",
+        "type": "error",
+        "severity": "major",
+        "explanation": "'מִשְּׁבָרִים יִתְחַטָּאוּ' betyr mer bokstavelig 'av forferdelse/bølger famler de seg vill' eller 'renser de seg' (dvs. mister kontrollen). 'Mister fatningen av redsel' er en fri gjengivelse, men 'יִתְחַטָּאוּ' (fra חטא) handler om å feile, bomme, gå feil – altså at de er så redde at de ikke vet hva de gjør. 'Famler seg vill' fanger dette bedre."
+      }
+    ]
   },
   {
     "bookId": 18,
     "chapterId": 41,
     "verseId": 18,
-    "text": "Sverdet som treffer ham, har ingen virkning, heller ikke spyd, kastevåpen eller pil."
+    "text": "Sverdet som treffer ham, har ingen virkning, heller ikke spyd, kastevåpen eller brynje.",
+    "versions": [
+      {
+        "text": "Sverdet som treffer ham, har ingen virkning, heller ikke spyd, kastevåpen eller pil.",
+        "type": "error",
+        "severity": "major",
+        "explanation": "'שִׁרְיָה' betyr 'brynje/rustning' (dvs. panserplagg), ikke 'pil'. Poenget er at selv våpen som spyd og rustning/brynje er virkningsløse mot Leviatan. Oversettelsen bør reflektere dette korrekt."
+      }
+    ]
   },
   {
     "bookId": 18,
@@ -147,11 +179,17 @@
     "bookId": 18,
     "chapterId": 41,
     "verseId": 24,
-    "text": "Bak seg etterlater han en lysende sti, så man skulle tro havdypet var gråhåret.",
+    "text": "Bak seg etterlater han en lysende sti, man kan tro at havdypet er gråhåret.",
     "versions": [
       {
         "text": "Bak seg etterlater han en lysende sti, man skulle tro dypet hadde grått hår.",
         "explanation": "Formuleringen kan gjøres mer poetisk og flytende. 'Havdypet var gråhåret' er en mer direkte og billedlig gjengivelse av det hebraiske uttrykket som sammenligner det hvite skummet i kjølvannet med grått hår."
+      },
+      {
+        "text": "Bak seg etterlater han en lysende sti, så man skulle tro havdypet var gråhåret.",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "Det hebraiske 'יַחְשֹׁב תְּהוֹם לְשֵׂיבָה' bruker tredje person (han/man anser dypet for grått hår), ikke en betinget konstruksjon med 'skulle'. 'Man kan tro at havdypet er gråhåret' er noe mer direkte, men den nåværende versjonen er akseptabel. Bare en mindre forbedring."
       }
     ]
   },

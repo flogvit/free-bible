@@ -3,11 +3,17 @@
     "bookId": 5,
     "chapterId": 17,
     "verseId": 1,
-    "text": "Du skal ikke ofre til Herren din Gud en okse eller et lam som har noen feil, noe som helst lyte, for det er avskyelig for Herren din Gud.",
+    "text": "Du skal ikke ofre til Herren din Gud en okse eller et lam som har noen feil – noe som helst lyte – for det er avskyelig for Herren din Gud.",
     "versions": [
       {
         "text": "Du skal ikke ofre til Herren din Gud en okse eller et lam som har en feil, noe som helst lyte, for det er avskyelig for Herren din Gud.",
         "explanation": "Hebraisk 'כֹּל דָּבָר רָע' (kol davar ra) betyr 'enhver dårlig ting/feil'. 'En feil' kan misforstås som én bestemt feil, mens 'noen feil' bedre gjenspeiler at enhver form for feil diskvalifiserer dyret."
+      },
+      {
+        "text": "Du skal ikke ofre til Herren din Gud en okse eller et lam som har noen feil, noe som helst lyte, for det er avskyelig for Herren din Gud.",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "Uttrykket 'כֹּל דָּבָר רָע' (kol davar ra, 'enhver dårlig ting') er en presisering/apposisjon til 'מוּם' (feil/lyte). Med komma etter 'feil' kan det leses som to separate ting. Tankestrek gjør det tydeligere at dette er en forklaring/utdypning. Men dette er svært marginalt og den nåværende versjonen er akseptabel."
       }
     ]
   },
@@ -123,7 +129,15 @@
     "bookId": 5,
     "chapterId": 17,
     "verseId": 18,
-    "text": "Når han har satt seg på sin kongetrone, skal han skrive av denne loven i en bokrull etter den som er hos de levittiske prestene."
+    "text": "Når han har satt seg på sin kongetrone, skal han skrive en avskrift av denne loven i en bokrull, fra den som er i de levittiske prestenes varetekt.",
+    "versions": [
+      {
+        "text": "Når han har satt seg på sin kongetrone, skal han skrive av denne loven i en bokrull etter den som er hos de levittiske prestene.",
+        "type": "error",
+        "severity": "major",
+        "explanation": "Hebraisk 'מִשְׁנֵה הַתּוֹרָה' betyr 'en kopi/avskrift av loven', ikke bare 'skrive av loven'. Substantivet 'mishneh' (kopi/avskrift) bør komme tydeligere frem. Dessuten betyr 'מִלִּפְנֵי הַכֹּהֲנִים' mer presist 'fra (det som er) foran prestene', altså fra det eksemplaret som er i prestenes varetekt, snarere enn 'etter den som er hos'."
+      }
+    ]
   },
   {
     "bookId": 5,
@@ -141,6 +155,14 @@
     "bookId": 5,
     "chapterId": 17,
     "verseId": 20,
-    "text": "Da skal ikke hans hjerte heve seg over hans landsmenn, og han skal ikke vike fra budet, verken til høyre eller til venstre. Slik kan han få leve lenge som konge, han og hans sønner, i Israel."
+    "text": "Da skal ikke hans hjerte heve seg over hans brødre, og han skal ikke vike fra budet, verken til høyre eller til venstre. Slik kan han få leve lenge som konge, han og hans sønner, i Israel.",
+    "versions": [
+      {
+        "text": "Da skal ikke hans hjerte heve seg over hans landsmenn, og han skal ikke vike fra budet, verken til høyre eller til venstre. Slik kan han få leve lenge som konge, han og hans sønner, i Israel.",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "I vers 15 ble 'אַחֶיךָ' bevisst endret fra 'landsmenn' til 'brødre' med begrunnelsen at den bibelske broderskapsterminologien er teologisk viktig i Deuteronomium. Samme hebraiske ord 'אֶחָיו' (achav, 'hans brødre') brukes her i vers 20, så konsistensen tilsier at også dette bør oversettes med 'brødre' fremfor 'landsmenn'."
+      }
+    ]
   }
 ]

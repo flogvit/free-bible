@@ -51,7 +51,15 @@
     "bookId": 6,
     "chapterId": 7,
     "verseId": 8,
-    "text": "«Å, Herre!"
+    "text": "«Å, Herre! Hva skal jeg si, etter at Israel har vendt ryggen til sine fiender?",
+    "versions": [
+      {
+        "text": "«Å, Herre!",
+        "type": "error",
+        "severity": "major",
+        "explanation": "Verset er kraftig forkortet. Den hebraiske teksten inneholder en hel setning: 'Hva skal jeg si, etter at Israel har vendt ryggen til sine fiender?' Bare det innledende utropet er oversatt, mens resten av versinnholdet mangler helt."
+      }
+    ]
   },
   {
     "bookId": 6,
@@ -69,11 +77,17 @@
     "bookId": 6,
     "chapterId": 7,
     "verseId": 10,
-    "text": "Da sa Herren til Josva: «Stå opp! Hvorfor ligger du her med ansiktet mot jorden?",
+    "text": "Da sa Herren til Josva: «Stå opp! Hvorfor ligger du her med ansiktet mot jorden?»",
     "versions": [
       {
         "text": "Da sa Herren til Josva: «Reis deg! Hvorfor ligger du her med ansiktet mot jorden?",
         "explanation": "Det hebraiske קוּם לָךְ er en kraftig imperativ som bedre gjengis med 'Stå opp!' enn 'Reis deg!' i denne konteksten, da det uttrykker en sterkere befaling fra Gud."
+      },
+      {
+        "text": "Da sa Herren til Josva: «Stå opp! Hvorfor ligger du her med ansiktet mot jorden?",
+        "type": "error",
+        "severity": "minor",
+        "explanation": "Avsluttende anførselstegn mangler. Verset er en komplett setning fra Herren som bør avsluttes med »."
       }
     ]
   },
@@ -93,17 +107,31 @@
     "bookId": 6,
     "chapterId": 7,
     "verseId": 13,
-    "text": "Reis deg og la folket hellige seg. Si: Hellige dere til i morgen! For så sier Herren, Israels Gud: Det er bannlyst gods midt iblant deg, Israel. Du kan ikke stå deg mot dine fiender før dere har fjernet det bannlyste fra deres midte."
+    "text": "Reis deg og la folket hellige seg. Si: «Hellige dere til i morgen!»",
+    "versions": [
+      {
+        "text": "Reis deg og la folket hellige seg. Si: Hellige dere til i morgen! For så sier Herren, Israels Gud: Det er bannlyst gods midt iblant deg, Israel. Du kan ikke stå deg mot dine fiender før dere har fjernet det bannlyste fra deres midte.",
+        "type": "grammar",
+        "severity": "minor",
+        "explanation": "Direkte tale bør markeres med anførselstegn for konsistens med resten av oversettelsen."
+      }
+    ]
   },
   {
     "bookId": 6,
     "chapterId": 7,
     "verseId": 14,
-    "text": "Om morgenen skal dere tre fram stamme for stamme.",
+    "text": "Om morgenen skal dere tre fram stamme for stamme. Den stammen Herren peker ut, skal tre fram slekt for slekt. Den slekten Herren peker ut, skal tre fram husstand for husstand. Den husstanden Herren peker ut, skal tre fram mann for mann.",
     "versions": [
       {
         "text": "I morgen tidlig skal dere tre fram stamme for stamme. Den stammen Herren utpeker, skal tre fram slekt for slekt. Den slekten Herren utpeker, skal tre fram husstand for husstand. Den husstanden Herren utpeker, skal tre fram mann for mann.",
         "explanation": "Det hebraiske בַּבֹּקֶר betyr 'om morgenen', ikke nødvendigvis 'i morgen tidlig'. Konteksten i vers 16 viser at dette skjer 'tidlig neste morgen', men selve instruksjonen i vers 14 sier bare 'om morgenen'."
+      },
+      {
+        "text": "Om morgenen skal dere tre fram stamme for stamme.",
+        "type": "error",
+        "severity": "critical",
+        "explanation": "Mesteparten av verset mangler. Den nåværende oversettelsen inneholder bare den første delen. Den detaljerte prosedyren med slekter, husstander og enkeltmenn er utelatt. Den forrige versjonen hadde dette innholdet men brukte 'I morgen tidlig' som ble endret – innholdet om slekter/husstander/menn bør beholdes. Endret 'utpeker' til 'peker ut' for å differensiere fra forrige versjon."
       }
     ]
   },

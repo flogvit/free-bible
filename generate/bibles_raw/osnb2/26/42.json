@@ -21,7 +21,15 @@
     "bookId": 26,
     "chapterId": 42,
     "verseId": 4,
-    "text": "Foran kamrene var det en gang på ti alen i bredde, en vei mot det indre, og inngangene deres vendte mot nord."
+    "text": "Foran kamrene var det en gang på ti alen i bredde mot det indre, en vei på én alen, og inngangene deres vendte mot nord.",
+    "versions": [
+      {
+        "text": "Foran kamrene var det en gang på ti alen i bredde, en vei mot det indre, og inngangene deres vendte mot nord.",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "Den hebraiske teksten beskriver en gang på ti alen bredde mot det indre, og deretter 'דֶּרֶךְ אַמָּה אֶחָת' (en vei/sti på én alen). Den nåværende oversettelsen utelater at veien var på én alen og gjør 'en vei mot det indre' til en feilaktig sammenslåing."
+      }
+    ]
   },
   {
     "bookId": 26,
@@ -93,30 +101,70 @@
     "bookId": 26,
     "chapterId": 42,
     "verseId": 16,
-    "text": "Han målte østsiden med målestangen: fem hundre alen etter målestangen, rundt omkring."
+    "text": "Han målte østsiden med målestangen: fem hundre stenger etter målestangen, rundt omkring.",
+    "versions": [
+      {
+        "text": "Han målte østsiden med målestangen: fem hundre alen etter målestangen, rundt omkring.",
+        "type": "error",
+        "severity": "major",
+        "explanation": "Det hebraiske ordet her er 'קָנִים' (stenger/rør), ikke 'אַמּוֹת' (alen). Teksten sier fem hundre stenger (rør) med målestangen, ikke fem hundre alen. Hver stang var seks alen lang. Dette er en betydelig forskjell i det faktiske målet."
+      }
+    ]
   },
   {
     "bookId": 26,
     "chapterId": 42,
     "verseId": 17,
-    "text": "Han målte nordsiden: fem hundre alen etter målestangen, rundt omkring."
+    "text": "Han målte nordsiden: fem hundre stenger etter målestangen, rundt omkring.",
+    "versions": [
+      {
+        "text": "Han målte nordsiden: fem hundre alen etter målestangen, rundt omkring.",
+        "type": "error",
+        "severity": "major",
+        "explanation": "Samme som vers 16 – det hebraiske ordet er 'קָנִים' (stenger), ikke 'alen'."
+      }
+    ]
   },
   {
     "bookId": 26,
     "chapterId": 42,
     "verseId": 18,
-    "text": "Sørsiden målte han: fem hundre alen etter målestangen."
+    "text": "Sørsiden målte han: fem hundre stenger etter målestangen.",
+    "versions": [
+      {
+        "text": "Sørsiden målte han: fem hundre alen etter målestangen.",
+        "type": "error",
+        "severity": "major",
+        "explanation": "Samme som vers 16 og 17 – det hebraiske ordet er 'קָנִים' (stenger), ikke 'alen'."
+      }
+    ]
   },
   {
     "bookId": 26,
     "chapterId": 42,
     "verseId": 19,
-    "text": "Han snudde seg til vestsiden og målte: fem hundre alen etter målestangen."
+    "text": "Han snudde seg til vestsiden og målte: fem hundre stenger etter målestangen.",
+    "versions": [
+      {
+        "text": "Han snudde seg til vestsiden og målte: fem hundre alen etter målestangen.",
+        "type": "error",
+        "severity": "major",
+        "explanation": "Samme som de foregående versene – det hebraiske ordet er 'קָנִים' (stenger), ikke 'alen'."
+      }
+    ]
   },
   {
     "bookId": 26,
     "chapterId": 42,
     "verseId": 20,
-    "text": "Til alle fire sider målte han det. Det hadde en mur rundt omkring, fem hundre alen i lengde og fem hundre i bredde, for å skille det hellige fra det vanhellige."
+    "text": "Til alle fire sider målte han det. Det hadde en mur rundt omkring, fem hundre alen i lengde og fem hundre alen i bredde, for å skille det hellige fra det alminnelige.",
+    "versions": [
+      {
+        "text": "Til alle fire sider målte han det. Det hadde en mur rundt omkring, fem hundre alen i lengde og fem hundre i bredde, for å skille det hellige fra det vanhellige.",
+        "type": "error",
+        "severity": "minor",
+        "explanation": "Hebraisk 'חֹל' betyr 'alminnelig/profant', ikke 'vanhellig' (som har en sterkere negativ konnotasjon). Dessuten mangler enheten 'alen' etter tallene i vers 20 (der grunnteksten ikke spesifiserer 'קָנִים' som i v.16-19, så det er rimelig å anta alen her)."
+      }
+    ]
   }
 ]

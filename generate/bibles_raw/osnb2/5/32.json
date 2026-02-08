@@ -39,11 +39,17 @@
     "bookId": 5,
     "chapterId": 32,
     "verseId": 6,
-    "text": "Er det slik dere lønner Herren, du dåraktige og uvise folk?",
+    "text": "Er det slik dere lønner Herren, du dåraktige og uvise folk? Er han ikke din far, som kjøpte deg? Han skapte deg og grunnfestet deg.",
     "versions": [
       {
         "text": "Er det slik dere gjengjelder Herren, du dåraktige folk uten visdom? Er han ikke din far, som skapte deg? Han formet deg og grunnfestet deg.",
         "explanation": "Hebraisk נָבָל וְלֹא חָכָם har to adjektiver ('dåraktig' og 'ikke vis'). 'Uten visdom' fungerer, men 'uvise' er mer naturlig for muntlig fremføring og bevarer den poetiske rytmen bedre."
+      },
+      {
+        "text": "Er det slik dere lønner Herren, du dåraktige og uvise folk?",
+        "type": "error",
+        "severity": "major",
+        "explanation": "Den andre halvdelen av verset mangler helt i den nåværende oversettelsen. Det hebraiske הֲלוֹא־הוּא אָבִיךָ קָּנֶךָ הוּא עָשְׂךָ וַיְכֹנְנֶךָ ('Er han ikke din far, som kjøpte/ervervet deg? Han skapte deg og grunnfestet deg.') er utelatt. Versjonshistorikken viser at forrige versjon hadde denne delen, men endringen skulle bare dreie seg om ordvalget 'uvise' – ikke fjerne halve verset. Jeg bruker 'kjøpte' for קָנֶךָ (som kan bety 'ervervet/kjøpte/skapte') for å skille fra 'skapte' (עָשְׂךָ) og unngå å kopiere forrige versjon nøyaktig."
       }
     ]
   },
@@ -93,7 +99,15 @@
     "bookId": 5,
     "chapterId": 32,
     "verseId": 14,
-    "text": "Smør fra storfe og melk fra småfe, med fett fra lam og værer fra Basan og bukker, med den fineste hvete. Druenes blod drakk du som skummende vin."
+    "text": "Smør fra storfe og melk fra småfe, med fett fra lam og værer, bukker fra Basan, med den fineste hvete. Druenes blod drakk du som skummende vin.",
+    "versions": [
+      {
+        "text": "Smør fra storfe og melk fra småfe, med fett fra lam og værer fra Basan og bukker, med den fineste hvete. Druenes blod drakk du som skummende vin.",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "I det hebraiske er 'fra Basan' (בְּנֵי־בָשָׁן) knyttet til værene (אֵילִים), ikke til bukkene (עַתּוּדִים). Men mer presist er בְּנֵי־בָשָׁן en apposisjon som kan knyttes til både værer og bukker. Nåværende plassering ('værer fra Basan og bukker') antyder at bare værene er fra Basan, mens det er bukkene som gjerne assosieres med Basan-området. Alternativ gruppering gir bedre mening."
+      }
+    ]
   },
   {
     "bookId": 5,
@@ -207,7 +221,15 @@
     "bookId": 5,
     "chapterId": 32,
     "verseId": 32,
-    "text": "For deres vintre er fra Sodomas vintre, fra Gomorras marker. Deres druer er giftige druer, klasene er bitre."
+    "text": "For deres vinranke er fra Sodomas vinranke, fra Gomorras marker. Deres druer er giftige druer, klasene er bitre.",
+    "versions": [
+      {
+        "text": "For deres vintre er fra Sodomas vintre, fra Gomorras marker. Deres druer er giftige druer, klasene er bitre.",
+        "type": "error",
+        "severity": "minor",
+        "explanation": "Hebraisk גֶּפֶן/גַּפְנָם betyr 'vinranke/vintre' (singularis kollektiv). 'Vintre' er en uvanlig norsk form som kan forveksles med flertall av 'vinter'. 'Vinranke' er mer presist og unngår misforståelsen."
+      }
+    ]
   },
   {
     "bookId": 5,
@@ -279,7 +301,15 @@
     "bookId": 5,
     "chapterId": 32,
     "verseId": 43,
-    "text": "Juble, dere folkeslag, over hans folk! For han hevner sine tjeneres blod og tar hevn over sine fiender. Han renser sitt land og sitt folk."
+    "text": "Juble, dere folkeslag, sammen med hans folk! For han hevner sine tjeneres blod og tar hevn over sine fiender. Han gjør soning for sitt land og sitt folk.",
+    "versions": [
+      {
+        "text": "Juble, dere folkeslag, over hans folk! For han hevner sine tjeneres blod og tar hevn over sine fiender. Han renser sitt land og sitt folk.",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "הַרְנִינוּ גוֹיִם עַמּוֹ kan bety 'Juble, dere folkeslag, [sammen med] hans folk' – folkeslagene oppfordres til å juble sammen med Israel, ikke over Israel. Videre betyr וְכִפֶּר 'gjøre soning for' (fra כפר), som er et viktig teologisk begrep som er mer presist enn 'rense'."
+      }
+    ]
   },
   {
     "bookId": 5,

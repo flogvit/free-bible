@@ -39,11 +39,17 @@
     "bookId": 5,
     "chapterId": 8,
     "verseId": 7,
-    "text": "For Herren din Gud fører deg inn i et godt land, et land med vannrike bekker, med kilder og grunnvann som strømmer frem i dal og på fjell,",
+    "text": "For Herren din Gud fører deg inn i et godt land, et land med bekker og vannstrømmer, med kilder og grunnvann som velter frem i dal og på fjell,",
     "versions": [
       {
         "text": "For Herren din Gud fører deg inn i et godt land, et land med rennende bekker, med kilder og dype vann som strømmer frem i dal og på fjell,",
         "explanation": "תְהֹמֹת (tehomot) refererer til underjordisk grunnvann/dypvann snarere enn 'dype vann' på overflaten. 'Grunnvann' gir bedre teologisk og geografisk mening."
+      },
+      {
+        "text": "For Herren din Gud fører deg inn i et godt land, et land med vannrike bekker, med kilder og grunnvann som strømmer frem i dal og på fjell,",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "נַחֲלֵי מָיִם betyr 'bekker av vann / vannbekker' – adjektivet 'vannrike' er en unøyaktig gjengivelse. 'Bekker og vannstrømmer' eller 'vannførende bekker' er mer presist. Også יֹצְאִים har en sterkere valør enn bare 'strømmer frem'; 'velter frem' kan fange dynamikken bedre."
       }
     ]
   },
@@ -51,7 +57,15 @@
     "bookId": 5,
     "chapterId": 8,
     "verseId": 8,
-    "text": "et land med hvete og bygg, med vinranker, fikentrær og granatepler, et land med oliven og honning,"
+    "text": "et land med hvete og bygg, med vinranker, fikentrær og granatepler, et land med oliventrær som gir olje, og honning,",
+    "versions": [
+      {
+        "text": "et land med hvete og bygg, med vinranker, fikentrær og granatepler, et land med oliven og honning,",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "זֵית שֶׁמֶן betyr bokstavelig 'olje-oliven' dvs. oliven som produserer olje. Oversettelsen 'oliven' mister referansen til olje (שֶׁמֶן). De fleste oversettelser gjengir dette som 'oliventrær og olje' eller 'oljebærende oliventrær'."
+      }
+    ]
   },
   {
     "bookId": 5,
@@ -69,7 +83,15 @@
     "bookId": 5,
     "chapterId": 8,
     "verseId": 11,
-    "text": "Vokt deg så du ikke glemmer Herren din Gud og lar være å holde hans bud, hans lover og hans forskrifter, som jeg gir deg i dag."
+    "text": "Vokt deg så du ikke glemmer Herren din Gud ved å ikke holde hans bud, hans dommer og hans forskrifter, som jeg gir deg i dag.",
+    "versions": [
+      {
+        "text": "Vokt deg så du ikke glemmer Herren din Gud og lar være å holde hans bud, hans lover og hans forskrifter, som jeg gir deg i dag.",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "מִשְׁפָּטָיו (mishpatav) betyr 'hans dommer/rettsregler', ikke 'hans lover'. 'Lover' er for generelt og overlapper med 'bud'. I tillegg er den hebraiske konstruksjonen לְבִלְתִּי שְׁמֹר ('ved å ikke holde') en forklaring på hvordan de glemmer Gud – det er måten glemsel manifesterer seg, ikke en tilleggshandling."
+      }
+    ]
   },
   {
     "bookId": 5,
@@ -99,7 +121,15 @@
     "bookId": 5,
     "chapterId": 8,
     "verseId": 15,
-    "text": "han som ledet deg gjennom den store og fryktinngytende ørkenen, med giftslanger og skorpioner og tørt land uten vann, han som lot vann strømme frem til deg fra den harde klippen,"
+    "text": "han som ledet deg gjennom den store og skremmende ørkenen, med giftige slanger og skorpioner og tørr ødemark uten vann, han som lot vann strømme frem til deg fra den harde klippen,",
+    "versions": [
+      {
+        "text": "han som ledet deg gjennom den store og fryktinngytende ørkenen, med giftslanger og skorpioner og tørt land uten vann, han som lot vann strømme frem til deg fra den harde klippen,",
+        "type": "error",
+        "severity": "minor",
+        "explanation": "Stavefeil: 'fryktinngytende' er feilstavet (dobbel n). Korrekt norsk er 'fryktinngytende' – men egentlig er hele ordet uhåndterlig; 'skremmende' eller 'fryktelig' er bedre moderne norsk. Også צִמָּאוֹן betyr 'tørsteland/tørr ødemark' snarere enn bare 'tørt land'."
+      }
+    ]
   },
   {
     "bookId": 5,

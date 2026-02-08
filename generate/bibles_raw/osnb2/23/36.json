@@ -33,11 +33,17 @@
     "bookId": 23,
     "chapterId": 36,
     "verseId": 5,
-    "text": "Jeg sier: Bare tomme ord er ditt råd og din styrke til krig! Hvem stoler du på siden du gjør opprør mot meg?",
+    "text": "Jeg sier: Råd og styrke til krig – det er bare tomme ord! Hvem stoler du på siden du gjør opprør mot meg?",
     "versions": [
       {
         "text": "Du sier at du har råd og styrke til krig, men det er bare tomme ord. Hvem stoler du på siden du gjør opprør mot meg?",
         "explanation": "Hebraisk אָמַרְתִּי er førsteperson 'jeg sier/sa', ikke andreperson 'du sier'. Rab-Sjake avviser Hiskias påståtte strategi som tomme ord."
+      },
+      {
+        "text": "Jeg sier: Bare tomme ord er ditt råd og din styrke til krig! Hvem stoler du på siden du gjør opprør mot meg?",
+        "type": "error",
+        "severity": "major",
+        "explanation": "Den hebraiske teksten sier bokstavelig 'bare et leppeord er råd og styrke til krig' – dvs. Rab-Sjake avviser Hiskias påståtte strategi som bare prat. Den nåværende formuleringen 'bare tomme ord er ditt råd og din styrke' gjør det uklart hva som er tomme ord. En tydeligere formulering viser at det er påstanden om å ha råd og styrke som avvises som tomsnakk."
       }
     ]
   },
@@ -51,7 +57,15 @@
     "bookId": 23,
     "chapterId": 36,
     "verseId": 7,
-    "text": "Og om du sier til meg: 'Vi stoler på Herren vår Gud' – er det ikke hans offerhauger og altere Hiskia har fjernet, og så har han sagt til Juda og Jerusalem: 'Foran dette alteret skal dere tilbe'?"
+    "text": "Og om du sier til meg: 'Vi stoler på Herren vår Gud' – er det ikke han hvis offerhauger og altere Hiskia har fjernet? Og så sa han til Juda og Jerusalem: 'Foran dette alteret skal dere tilbe'?",
+    "versions": [
+      {
+        "text": "Og om du sier til meg: 'Vi stoler på Herren vår Gud' – er det ikke hans offerhauger og altere Hiskia har fjernet, og så har han sagt til Juda og Jerusalem: 'Foran dette alteret skal dere tilbe'?",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "Den nåværende oversettelsen med 'er det ikke hans offerhauger og altere Hiskia har fjernet' er grammatisk uklar – 'hans' refererer til Herren, men setningsstrukturen gjør det tvetydig. I den hebraiske teksten er det en retorisk spørsmålssetning: 'er det ikke han (Herren) hvis offerhauger og altere Hiskia fjernet?' En klarere formulering viser bedre at Rab-Sjake hevder at Hiskia har fornærmet sin egen Gud."
+      }
+    ]
   },
   {
     "bookId": 23,
@@ -63,7 +77,15 @@
     "bookId": 23,
     "chapterId": 36,
     "verseId": 9,
-    "text": "Hvordan kan du da avvise en eneste stattholder, en av min herres minste tjenere? Og så stoler du på Egypt for å få vogner og ryttere!"
+    "text": "Hvordan kan du da slå tilbake en eneste stattholder, en av min herres minste tjenere, når du stoler på Egypt for vogner og ryttere!",
+    "versions": [
+      {
+        "text": "Hvordan kan du da avvise en eneste stattholder, en av min herres minste tjenere? Og så stoler du på Egypt for å få vogner og ryttere!",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "Hebraisk תָּשִׁיב אֶת פְּנֵי betyr 'slå tilbake / drive tilbake ansiktet til' (dvs. stå imot militært), ikke bare 'avvise'. Dessuten er siste del en sammenhengende tanke – du kan ikke engang stå imot én liten tjener, og likevel stoler du på Egypt – snarere enn to separate utsagn."
+      }
+    ]
   },
   {
     "bookId": 23,
@@ -117,7 +139,15 @@
     "bookId": 23,
     "chapterId": 36,
     "verseId": 15,
-    "text": "La ikke Hiskia få dere til å stole på Herren når han sier: 'Herren skal berge oss. Denne byen skal ikke bli overgitt i assyrerkongens hånd.'"
+    "text": "La ikke Hiskia få dere til å stole på Herren når han sier: 'Herren skal absolutt redde oss! Denne byen skal ikke bli overgitt i assyrerkongens hånd.'",
+    "versions": [
+      {
+        "text": "La ikke Hiskia få dere til å stole på Herren når han sier: 'Herren skal berge oss. Denne byen skal ikke bli overgitt i assyrerkongens hånd.'",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "Den hebraiske konstruksjonen הַצֵּל יַצִּילֵנוּ er en infinitivus absolutus som uttrykker emfatisk forsikring – 'han skal absolutt/sikkert redde oss'. Dette emfatiske elementet mangler i den nåværende oversettelsen."
+      }
+    ]
   },
   {
     "bookId": 23,

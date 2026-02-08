@@ -39,11 +39,17 @@
     "bookId": 23,
     "chapterId": 5,
     "verseId": 7,
-    "text": "Han ventet rett, men se, det ble urett! Han ventet rettferd, men hør, det ble skrik!",
+    "text": "For Herrens, hærskarenes Guds, vingård er Israels hus, og Judas menn er hans kjære planting. Han ventet rett, men se, det ble urett! Han ventet rettferd, men hør, det ble skrik!",
     "versions": [
       {
         "text": "For Herrens, hærskarenes Guds, vingård er Israels hus, og Judas menn er hans kjære planting. Han ventet rettferd, men se, det ble blodsutgytelse! Han ventet rettferdighet, men hør, det ble skrik!",
         "explanation": "Det hebraiske har et ordspill mellom 'mishpat' (rett/dom) og 'mispach' (blodsutgytelse/urett), samt mellom 'tsedaqah' (rettferdighet) og 'tse'aqah' (skrik). Å bruke 'rett/urett' fanger bedre ordspillet og lydlikheten i originalen, selv om full klanglikhet er vanskelig å oppnå på norsk."
+      },
+      {
+        "text": "Han ventet rett, men se, det ble urett! Han ventet rettferd, men hør, det ble skrik!",
+        "type": "error",
+        "severity": "critical",
+        "explanation": "Den nåværende versjonen mangler den første halvdelen av verset som identifiserer vingården som Israels hus og Judas menn som Guds kjære planting. Dette er teologisk vesentlig innhold som knytter hele vingårdsallegorien (v. 1-6) til Israel og Juda. Den forrige versjonen hadde dette med, og endringen var kun ment å forbedre ordspillet i andre halvdel – ikke å fjerne den første halvdelen."
       }
     ]
   },
@@ -57,7 +63,15 @@
     "bookId": 23,
     "chapterId": 5,
     "verseId": 9,
-    "text": "I mine ører lyder ordet fra Herren, hærskarenes Gud: Sannelig, mange hus skal bli øde, store og vakre hus skal stå tomme."
+    "text": "Herren, hærskarenes Gud, har talt i mine ører: Sannelig, mange hus skal bli øde, store og vakre hus skal stå uten beboer.",
+    "versions": [
+      {
+        "text": "I mine ører lyder ordet fra Herren, hærskarenes Gud: Sannelig, mange hus skal bli øde, store og vakre hus skal stå tomme.",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "Det hebraiske 'be'oznay YHWH tseva'ot' betyr 'i mine ører [har] Herren, hærskarenes [Gud], [talt]' – det er Jesaja som hører Guds ord, ikke at 'ordet lyder fra Herren'. Også 'me'ein yoshev' betyr bokstavelig 'uten beboer', som er mer presist enn 'stå tomme'."
+      }
+    ]
   },
   {
     "bookId": 23,
@@ -105,7 +119,15 @@
     "bookId": 23,
     "chapterId": 5,
     "verseId": 17,
-    "text": "Da skal lam beite som på sin egen mark, og fremmede skal finne føde på ruinene etter de rike."
+    "text": "Da skal lam beite som på sine egne beitemarker, og fremmede skal livnære seg blant ruinene etter de velstående.",
+    "versions": [
+      {
+        "text": "Da skal lam beite som på sin egen mark, og fremmede skal finne føde på ruinene etter de rike.",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "'Kedavram' betyr 'som etter deres vis/vane' eller 'som på sine beitemarker' – flertall gir bedre mening. 'Mechim' (bokstavelig 'fete/velstående') oversettes bedre med 'velstående' enn 'rike', og 'garîm yo'khelu' ('fremmede skal spise') passer bedre med 'livnære seg' enn 'finne føde'."
+      }
+    ]
   },
   {
     "bookId": 23,
@@ -147,7 +169,15 @@
     "bookId": 23,
     "chapterId": 5,
     "verseId": 23,
-    "text": "De som frikjenner den skyldige for bestikkelser og tar fra den uskyldige hans rett!"
+    "text": "De som frikjenner den skyldige for bestikkelsers skyld og tar fra den rettferdige hans rett!",
+    "versions": [
+      {
+        "text": "De som frikjenner den skyldige for bestikkelser og tar fra den uskyldige hans rett!",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "Det hebraiske 'tsaddiqim' betyr 'rettferdige', ikke 'uskyldige'. Selv om meningsforskjellen er liten, er 'rettferdige' mer presist og skaper bedre kontrast med 'rasha' (skyldige/ugudelige). Også 'eqev shochad' betyr 'på grunn av/for bestikkelsers skyld'."
+      }
+    ]
   },
   {
     "bookId": 23,

@@ -45,7 +45,15 @@
     "bookId": 24,
     "chapterId": 5,
     "verseId": 6,
-    "text": "Derfor skal en løve fra skogen slå dem ned, en ulv fra ødemarken skal rive dem i stykker. En leopard lurer ved byene deres, alle som går ut derfra blir revet i filler. For deres overtredelser er mange, og deres frafall er tallrike."
+    "text": "Derfor skal en løve fra skogen slå dem ned, en ulv fra ødemarken skal rive dem i stykker. En leopard lurer ved byene deres, alle som går ut derfra blir revet i filler. For deres overtredelser er mange, og deres frafall er talløse.",
+    "versions": [
+      {
+        "text": "Derfor skal en løve fra skogen slå dem ned, en ulv fra ødemarken skal rive dem i stykker. En leopard lurer ved byene deres, alle som går ut derfra blir revet i filler. For deres overtredelser er mange, og deres frafall er tallrike.",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "'Tallrike' er grammatisk uheldig (hankjønn/flertall brukt med intetkjønn substantiv 'frafall'). 'Talløse' fungerer bedre og gjenspeiler det hebraiske עָצְמוּ (de er mektige/mange) mer presist."
+      }
+    ]
   },
   {
     "bookId": 24,
@@ -69,7 +77,15 @@
     "bookId": 24,
     "chapterId": 5,
     "verseId": 10,
-    "text": "Gå opp mellom vinrekkene hennes og ødelegg, men gjør ikke helt ende på dem. Riv bort rankene hennes, for de tilhører ikke Herren."
+    "text": "Gå opp på hennes vinskråninger og ødelegg, men gjør ikke helt ende på dem. Riv bort hennes skudd, for de tilhører ikke Herren.",
+    "versions": [
+      {
+        "text": "Gå opp mellom vinrekkene hennes og ødelegg, men gjør ikke helt ende på dem. Riv bort rankene hennes, for de tilhører ikke Herren.",
+        "type": "error",
+        "severity": "major",
+        "explanation": "Det hebraiske שָׁרוֹת (sharoth) betyr 'terrasser/skråninger' snarere enn 'vinrekker'. Og נְטִישׁוֹת (netishoth) betyr 'skudd/kvister' - de unge sideskuddene - snarere enn 'ranker'. Oversettelsen bør reflektere dette mer presist."
+      }
+    ]
   },
   {
     "bookId": 24,
@@ -111,11 +127,17 @@
     "bookId": 24,
     "chapterId": 5,
     "verseId": 17,
-    "text": "De skal fortære din avling og ditt brød, de skal fortære dine sønner og døtre, de skal fortære din småfe og storfe, de skal fortære din vinranke og ditt fikentre. Dine befestede byer som du stoler på, skal de knuse med sverd.",
+    "text": "De skal fortære din avling og ditt brød, de skal fortære dine sønner og døtre, de skal fortære din småfe og storfe, de skal fortære din vinranke og ditt fikentre. Dine befestede byer som du stoler på, skal de ødelegge med sverd.",
     "versions": [
       {
         "text": "De skal fortære din avling og ditt brød, de skal fortære dine sønner og døtre, de skal fortære din småfe og storfe, de skal fortære din vinmark og ditt fikentre. Dine befestede byer som du stoler på, skal de knuse med sverd.",
         "explanation": "גֶּפֶן (gefen) betyr 'vinranke' eller 'vinstokk', ikke 'vinmark'. Det handler om selve planten og dens frukt som blir fortært."
+      },
+      {
+        "text": "De skal fortære din avling og ditt brød, de skal fortære dine sønner og døtre, de skal fortære din småfe og storfe, de skal fortære din vinranke og ditt fikentre. Dine befestede byer som du stoler på, skal de knuse med sverd.",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "Det hebraiske יְרֹשֵׁשׁ betyr 'gjøre fattig/utarme' og kan bety 'ødelegge'. 'Knuse' er litt sterkt; 'ødelegge' er mer dekkende. Men dette er en minor nyanse."
       }
     ]
   },
@@ -147,13 +169,29 @@
     "bookId": 24,
     "chapterId": 5,
     "verseId": 21,
-    "text": "Hør dette, du tåpelige folk uten forstand! De har øyne, men ser ikke, ører har de, men hører ikke."
+    "text": "Hør dette, du tåpelige folk uten forstand! Dere har øyne, men ser ikke, ører har dere, men hører ikke.",
+    "versions": [
+      {
+        "text": "Hør dette, du tåpelige folk uten forstand! De har øyne, men ser ikke, ører har de, men hører ikke.",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "Verset skifter plutselig fra tiltale ('du tåpelige folk') til tredjeperson ('De har øyne'). Det hebraiske bruker konsekvent tredjeperson, men i og med at det er en direkte tiltale, bør det i det minste være konsistent. 'Dere' passer bedre som direkte tiltale til folket, i samsvar med 'du' i begynnelsen av verset."
+      }
+    ]
   },
   {
     "bookId": 24,
     "chapterId": 5,
     "verseId": 22,
-    "text": "Frykter dere ikke meg? sier Herren. Skjelver dere ikke for mitt ansikt? Jeg som satte sanden som grense for havet, en evig ordning det ikke kan bryte. Bølgene bruser, men makter ikke noe, de larmer, men kan ikke bryte gjennom."
+    "text": "Frykter dere ikke meg? sier Herren. Skjelver dere ikke for mitt ansikt? Jeg som satte sanden som grense for havet, en evig ordning det ikke kan bryte. Bølgene velter seg, men makter ikke noe, de bruser, men kan ikke bryte gjennom.",
+    "versions": [
+      {
+        "text": "Frykter dere ikke meg? sier Herren. Skjelver dere ikke for mitt ansikt? Jeg som satte sanden som grense for havet, en evig ordning det ikke kan bryte. Bølgene bruser, men makter ikke noe, de larmer, men kan ikke bryte gjennom.",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "Det hebraiske har to ledd: יִתְגָּעֲשׁוּ (de kaster seg/velter seg) og הָמוּ (de bruser/larmer). Nåværende oversettelse bruker 'bruser' for det første og 'larmer' for det andre. Men יִתְגָּעֲשׁוּ handler mer om fysisk bevegelse (velting/kasting), mens הָמוּ er lyden (brusing). Å bruke 'velter seg' og 'bruser' gir bedre differensiering."
+      }
+    ]
   },
   {
     "bookId": 24,

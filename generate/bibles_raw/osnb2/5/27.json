@@ -3,7 +3,15 @@
     "bookId": 5,
     "chapterId": 27,
     "verseId": 1,
-    "text": "Moses og Israels eldste befalte folket og sa: Hold alle budene jeg gir dere i dag."
+    "text": "Moses og Israels eldste befalte folket og sa: Hold hele det budet jeg gir dere i dag.",
+    "versions": [
+      {
+        "text": "Moses og Israels eldste befalte folket og sa: Hold alle budene jeg gir dere i dag.",
+        "type": "grammar",
+        "severity": "minor",
+        "explanation": "Det hebraiske כָּל־הַמִּצְוָה bruker entall 'hammitsvah' (budet/befalingen), ikke flertall. Uttrykket betyr 'hele befalingen' eller 'hele det budet', og refererer til lovens helhet som ett samlet bud. Å oversette med flertall 'budene' endrer nyansen."
+      }
+    ]
   },
   {
     "bookId": 5,
@@ -39,7 +47,15 @@
     "bookId": 5,
     "chapterId": 27,
     "verseId": 7,
-    "text": "Du skal ofre fredsoffer og spise dem der, og du skal glede deg for Herren din Guds ansikt."
+    "text": "Du skal ofre fredsoffer og spise der, og du skal glede deg for Herren din Guds ansikt.",
+    "versions": [
+      {
+        "text": "Du skal ofre fredsoffer og spise dem der, og du skal glede deg for Herren din Guds ansikt.",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "Det hebraiske וְאָכַלְתָּ שָּׁם har ikke noe objekt – det sier bare 'og du skal spise der'. Pronomenet 'dem' er lagt til i oversettelsen uten tilsvarende i grunnteksten. Selv om det kan impliseres, er det mer nøyaktig å utelate det."
+      }
+    ]
   },
   {
     "bookId": 5,
@@ -69,7 +85,15 @@
     "bookId": 5,
     "chapterId": 27,
     "verseId": 12,
-    "text": "Disse stammene skal stå på Garisim-fjellet og velsigne folket når dere har gått over Jordan: Simeon, Levi, Juda, Jissakar, Josef og Benjamin."
+    "text": "Disse skal stå på Garisim-fjellet for å velsigne folket når dere har gått over Jordan: Simeon, Levi, Juda, Jissakar, Josef og Benjamin.",
+    "versions": [
+      {
+        "text": "Disse stammene skal stå på Garisim-fjellet og velsigne folket når dere har gått over Jordan: Simeon, Levi, Juda, Jissakar, Josef og Benjamin.",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "Originalteksten sier אֵלֶּה (disse), ikke 'disse stammene'. Ordet 'stammene' er lagt til. I tillegg er לְבָרֵךְ en infinitiv med formål ('for å velsigne'), ikke en koordinert handling ('og velsigne')."
+      }
+    ]
   },
   {
     "bookId": 5,
@@ -81,7 +105,15 @@
     "bookId": 5,
     "chapterId": 27,
     "verseId": 14,
-    "text": "Levittene skal ta til orde og rope med høy røst til hver mann i Israel:"
+    "text": "Levittene skal ta til orde og si til hver mann i Israel med høy røst:",
+    "versions": [
+      {
+        "text": "Levittene skal ta til orde og rope med høy røst til hver mann i Israel:",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "Det hebraiske וְאָמְרוּ betyr 'og si/tale', ikke 'rope'. קוֹל רָם (med høy røst) er en adverbiell bestemmelse til 'si'. Å oversette med 'rope' er en litt fri gjengivelse; 'si med høy røst' er mer nøyaktig."
+      }
+    ]
   },
   {
     "bookId": 5,
@@ -129,7 +161,15 @@
     "bookId": 5,
     "chapterId": 27,
     "verseId": 21,
-    "text": "Forbannet er den som ligger med noe dyr. Og hele folket skal si: Amen."
+    "text": "Forbannet er den som ligger med noen slags dyr. Og hele folket skal si: Amen.",
+    "versions": [
+      {
+        "text": "Forbannet er den som ligger med noe dyr. Og hele folket skal si: Amen.",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "כָּל־בְּהֵמָה betyr 'noe som helst dyr / noen slags dyr'. 'Noe dyr' kan leses litt uklart på norsk – 'noen slags dyr' eller 'et hvilket som helst dyr' gjengir bedre at כָּל understreker enhver type dyr."
+      }
+    ]
   },
   {
     "bookId": 5,
@@ -165,6 +205,14 @@
     "bookId": 5,
     "chapterId": 27,
     "verseId": 26,
-    "text": "Forbannet er den som ikke holder ordene i denne loven og gjør etter dem. Og hele folket skal si: Amen."
+    "text": "Forbannet er den som ikke opprettholder ordene i denne loven ved å leve etter dem. Og hele folket skal si: Amen.",
+    "versions": [
+      {
+        "text": "Forbannet er den som ikke holder ordene i denne loven og gjør etter dem. Og hele folket skal si: Amen.",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "Det hebraiske לֹא־יָקִים betyr 'ikke opprettholder/stadfester', og לַעֲשׂוֹת אוֹתָם er en formålsinfinitiv ('for å gjøre dem'). Den nåværende oversettelsen 'holder ... og gjør etter dem' leser det som to sidestilte handlinger, mens originalen har én handling med formålsbestemmelse. 'Opprettholder ... ved å leve etter dem' gjengir strukturen bedre."
+      }
+    ]
   }
 ]

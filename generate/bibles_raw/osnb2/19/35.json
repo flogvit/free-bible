@@ -39,7 +39,15 @@
     "bookId": 19,
     "chapterId": 35,
     "verseId": 7,
-    "text": "For uten grunn har de gravd en grav og skjult sitt nett for meg, uten grunn har de gravd en felle for mitt liv."
+    "text": "For uten grunn har de skjult sitt nett i en grav for meg, uten grunn har de gravd en felle for mitt liv.",
+    "versions": [
+      {
+        "text": "For uten grunn har de gravd en grav og skjult sitt nett for meg, uten grunn har de gravd en felle for mitt liv.",
+        "type": "error",
+        "severity": "major",
+        "explanation": "Den hebraiske teksten sier 'de skjulte for meg graven til sitt nett' (טָמְנוּ־לִי שַׁחַת רִשְׁתָּם) – det er nettet som er skjult i en grav/fallgrop, ikke at de 'gravd en grav og skjult sitt nett'. Verbet טמן (skjule) hører sammen med שַׁחַת רִשְׁתָּם (sin fangstgrops nett). Oversettelsen omstrukturerer setningen på en måte som forvrenger bildet."
+      }
+    ]
   },
   {
     "bookId": 19,
@@ -63,17 +71,31 @@
     "bookId": 19,
     "chapterId": 35,
     "verseId": 11,
-    "text": "Voldelige vitner står fram, de spør meg om ting jeg ikke vet om."
+    "text": "Voldelige vitner står fram, de anklager meg for ting jeg ikke kjenner til.",
+    "versions": [
+      {
+        "text": "Voldelige vitner står fram, de spør meg om ting jeg ikke vet om.",
+        "type": "error",
+        "severity": "major",
+        "explanation": "Verbet יִשְׁאָלוּנִי betyr her 'de krever meg til regnskap' eller 'de anklager meg', ikke bare 'de spør meg'. Konteksten er en rettssak der falske vitner kommer med anklager, ikke nøytrale spørsmål. 'Spør meg om ting' er for svakt."
+      }
+    ]
   },
   {
     "bookId": 19,
     "chapterId": 35,
     "verseId": 12,
-    "text": "De gjengjelder meg ondt for godt, min sjel er som barneløs.",
+    "text": "De gjengjelder meg ondt for godt – barneløshet for min sjel.",
     "versions": [
       {
         "text": "De gjengjelder meg ondt for godt, det er tap og sorg for min sjel.",
         "explanation": "שְׁכוֹל (shekol) betyr spesifikt 'barneløshet' eller 'å miste barn' - en sterk metafor for ensomhet og tap. 'Tap og sorg' er for generelt og mister bildets kraft."
+      },
+      {
+        "text": "De gjengjelder meg ondt for godt, min sjel er som barneløs.",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "Nåværende versjon legger til sammenligningsordet 'som' som ikke finnes i hebraisk. שְׁכוֹל לְנַפְשִׁי er mer direkte: 'barneløshet for min sjel' – det er en tilstand, ikke en sammenligning. Dette bevarer metaforens kraft bedre enn 'som barneløs'."
       }
     ]
   },
@@ -87,19 +109,43 @@
     "bookId": 19,
     "chapterId": 35,
     "verseId": 14,
-    "text": "Jeg gikk omkring som om det var min venn eller bror. Jeg gikk nedbøyd i sorg, som en som sørger over sin mor."
+    "text": "Jeg gikk omkring som for en venn, som for en bror. Nedbøyd i sorg gikk jeg, som en som sørger over sin mor.",
+    "versions": [
+      {
+        "text": "Jeg gikk omkring som om det var min venn eller bror. Jeg gikk nedbøyd i sorg, som en som sørger over sin mor.",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "Den hebraiske teksten sier 'som en venn, som en bror for meg gikk jeg omkring' – det betyr at han sørget over fiendene som om de var hans venn eller bror. 'Som om det var min venn' er litt upresist; det bør tydeliggjøres at han behandlet dem som en nær venn/bror."
+      }
+    ]
   },
   {
     "bookId": 19,
     "chapterId": 35,
     "verseId": 15,
-    "text": "Men da jeg snublet, gledet de seg og samlet seg. Fremmede som jeg ikke kjente, samlet seg mot meg. De rev meg i stykker og ga seg ikke."
+    "text": "Men da jeg haltet, gledet de seg og samlet seg. Slike som slår, som jeg ikke kjente, samlet seg mot meg. De rev i stykker og ga seg ikke.",
+    "versions": [
+      {
+        "text": "Men da jeg snublet, gledet de seg og samlet seg. Fremmede som jeg ikke kjente, samlet seg mot meg. De rev meg i stykker og ga seg ikke.",
+        "type": "error",
+        "severity": "major",
+        "explanation": "בְצַלְעִי betyr 'da jeg haltet/vaklet' (ikke 'snublet'). נֵכִים betyr 'de som slår' eller 'angripere', ikke 'fremmede'. Oversettelsen gjengir נֵכִים feil; ordet refererer til folk som slår/angriper, ikke ukjente/fremmede."
+      }
+    ]
   },
   {
     "bookId": 19,
     "chapterId": 35,
     "verseId": 16,
-    "text": "Som gudløse spottere ved festmåltidet skar de tenner mot meg."
+    "text": "Som gudløse som spotter for en brødbit, skar de tenner mot meg.",
+    "versions": [
+      {
+        "text": "Som gudløse spottere ved festmåltidet skar de tenner mot meg.",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "מָעוֹג betyr 'kake/brød' og bildet handler om folk som smigrer/spotter for mat (dvs. snyltergjester), ikke om et festmåltid. Uttrykket חַנְפֵי לַעֲגֵי מָעוֹג beskriver hyklerske spottere som gjør det for en matbit."
+      }
+    ]
   },
   {
     "bookId": 19,

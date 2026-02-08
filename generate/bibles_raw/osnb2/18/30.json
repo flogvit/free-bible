@@ -9,11 +9,17 @@
     "bookId": 18,
     "chapterId": 30,
     "verseId": 2,
-    "text": "Hva skulle jeg med kraften i deres hender? Deres kraft var borte, de var utslitte.",
+    "text": "Hva skulle jeg med kraften i deres hender? Deres fulle styrke var borte.",
     "versions": [
       {
         "text": "Hva skulle jeg med kraften i deres hender? All livskraft var borte fra dem.",
         "explanation": "Det hebraiske 'כָּלַח' refererer til modenhet/full kraft, ikke 'livskraft' generelt. Verset beskriver at disse menneskene hadde mistet sin fulle styrke - de var utslitte og svake. 'All livskraft' er en litt fri tolkning."
+      },
+      {
+        "text": "Hva skulle jeg med kraften i deres hender? Deres kraft var borte, de var utslitte.",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "Uttrykket 'de var utslitte' er et tillegg som ikke finnes i originalteksten. Hebraisk sier bare at כָּלַח (full styrke/modenhet) var אָבַד (borte/tapt) over dem. Formuleringen bør holdes tettere på originalen uten å gjenta den tidligere versjonen 'livskraft'."
       }
     ]
   },
@@ -81,7 +87,15 @@
     "bookId": 18,
     "chapterId": 30,
     "verseId": 11,
-    "text": "For han har løst mitt tau og ydmyket meg, og de har kastet av seg all hemning overfor meg."
+    "text": "For han har løst min buestreng og ydmyket meg, og de har kastet av seg tøylen overfor meg.",
+    "versions": [
+      {
+        "text": "For han har løst mitt tau og ydmyket meg, og de har kastet av seg all hemning overfor meg.",
+        "type": "error",
+        "severity": "major",
+        "explanation": "Hebraisk יִתְרִי betyr 'min buestreng' (eller 'min streng'), ikke 'mitt tau'. Bildet er at Gud har løst Jobs buestreng, dvs. gjort ham forsvarsløs. Videre er רֶסֶן spesifikt 'tømme/tøyle' – et mer presist bilde enn 'all hemning' som er en ganske fri gjengivelse."
+      }
+    ]
   },
   {
     "bookId": 18,
@@ -105,7 +119,15 @@
     "bookId": 18,
     "chapterId": 30,
     "verseId": 15,
-    "text": "Redsler har vendt seg mot meg, min ære drives bort som av vinden, og min frelse forsvinner som en sky."
+    "text": "Redsler har vendt seg mot meg, min verdighet jages bort som av vinden, og min frelse forsvinner som en sky.",
+    "versions": [
+      {
+        "text": "Redsler har vendt seg mot meg, min ære drives bort som av vinden, og min frelse forsvinner som en sky.",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "Det hebraiske נְדִיבָה betyr 'edelt/opphøyd stilling' eller 'verdighet', ikke direkte 'ære' (som ville vært כָּבוֹד). Dessuten bruker originalen verbet תִּרְדֹּף (forfølge/jage), så 'jages bort' er mer presist enn 'drives bort'."
+      }
+    ]
   },
   {
     "bookId": 18,
@@ -123,11 +145,17 @@
     "bookId": 18,
     "chapterId": 30,
     "verseId": 18,
-    "text": "Med stor kraft er min kledning forvandlet, den snører meg inn som kragelinningen på min kjortel.",
+    "text": "Med stor kraft forvrenger sykdommen min kledning, den klemmer rundt meg som kragelinningen på min kjortel.",
     "versions": [
       {
         "text": "Med stor kraft griper han tak i min kledning, han snører meg inn som kragelinningen på min kjortel.",
         "explanation": "Det hebraiske 'יִתְחַפֵּשׂ' er hitpael-formen og kan bety 'forvandler seg' eller 'forvrenger seg'. Verset beskriver hvordan sykdommen har forvandlet Jobs klær (eller kropp under klærne) - ikke nødvendigvis at Gud aktivt griper tak."
+      },
+      {
+        "text": "Med stor kraft er min kledning forvandlet, den snører meg inn som kragelinningen på min kjortel.",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "Selv om versjonshistorikken viser at den forrige versjonen med 'griper han tak' ble endret, er den nåværende formuleringen 'er forvandlet' noe passiv og utydelig. Sykdommen (eller Gud gjennom den) forvrenger klærne rundt Jobs kropp. 'Snører meg inn' er også litt upresist – יַאַזְרֵנִי betyr 'omgjorder meg' eller 'klemmer rundt meg'."
       }
     ]
   },
@@ -153,7 +181,15 @@
     "bookId": 18,
     "chapterId": 30,
     "verseId": 22,
-    "text": "Du løfter meg opp i vinden og lar meg ri på den, og du lar meg oppløses i stormen."
+    "text": "Du løfter meg opp i vinden og lar meg ri på den, og du oppløser meg fullstendig.",
+    "versions": [
+      {
+        "text": "Du løfter meg opp i vinden og lar meg ri på den, og du lar meg oppløses i stormen.",
+        "type": "error",
+        "severity": "major",
+        "explanation": "Det hebraiske תּוּשִׁיָּה (tushiyya) betyr 'fullstendig/effektivt' eller 'med vellykket resultat', ikke 'i stormen'. Kere-lesningen תּוּשִׁיָּה er et nøkkelord i visdomslitteraturen. Poenget er at Gud oppløser Job fullstendig/effektivt, ikke at det skjer i en storm."
+      }
+    ]
   },
   {
     "bookId": 18,
@@ -165,7 +201,15 @@
     "bookId": 18,
     "chapterId": 30,
     "verseId": 24,
-    "text": "Men mot en ruin strekker man vel ikke ut hånden? Roper man ikke om hjelp når ulykken rammer?"
+    "text": "Men strekker ikke den som faller ut sin hånd? Roper man ikke om hjelp når ulykken rammer?",
+    "versions": [
+      {
+        "text": "Men mot en ruin strekker man vel ikke ut hånden? Roper man ikke om hjelp når ulykken rammer?",
+        "type": "suggestion",
+        "severity": "major",
+        "explanation": "Dette er et vanskelig vers, men בְּעִי relaterer seg trolig til en som er i nød eller faller (fra בָּעָה), ikke 'en ruin'. Job argumenterer for at den som faller/er i nød naturlig strekker ut hånden (om hjelp), og at man roper når ulykken rammer – altså forsvarer han sitt eget rop til Gud."
+      }
+    ]
   },
   {
     "bookId": 18,

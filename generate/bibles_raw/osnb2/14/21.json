@@ -39,11 +39,17 @@
     "bookId": 14,
     "chapterId": 21,
     "verseId": 7,
-    "text": "Men Herren ville ikke ødelegge Davids hus, på grunn av pakten han hadde sluttet med David, og fordi han hadde lovet å gi ham og hans etterkommere en lampe for alle tider.",
+    "text": "Men Herren ville ikke ødelegge Davids hus, på grunn av pakten han hadde sluttet med David, og fordi han hadde lovet å gi ham og hans etterkommere et lys for alle tider.",
     "versions": [
       {
         "text": "Men Herren ville ikke ødelegge Davids hus, på grunn av pakten han hadde sluttet med David, og fordi han hadde lovet å gi ham og hans sønner en lampe alle dager.",
         "explanation": "«Sønner» er teknisk korrekt, men «etterkommere» formidler bedre den dynastiske betydningen av בָנָיו i denne konteksten. «For alle tider» flyter bedre muntlig enn «alle dager»."
+      },
+      {
+        "text": "Men Herren ville ikke ødelegge Davids hus, på grunn av pakten han hadde sluttet med David, og fordi han hadde lovet å gi ham og hans etterkommere en lampe for alle tider.",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "Det hebraiske נִיר (nir) betyr egentlig 'lys' eller 'lykt' snarere enn 'lampe'. 'Et lys' er en bedre oversettelse og unngår den konkrete gjenstanden 'lampe', og formidler den metaforiske betydningen av dynastisk kontinuitet bedre. Men dette er en mindre sak i en vers som allerede er revidert, så det er ikke kritisk."
       }
     ]
   },
@@ -75,7 +81,15 @@
     "bookId": 14,
     "chapterId": 21,
     "verseId": 11,
-    "text": "Han bygde også offerhauger i fjellene i Juda og fikk innbyggerne i Jerusalem til å drive hor, og han førte Juda på avveier."
+    "text": "Han bygde også offerhauger i fjellene i Juda og forledet innbyggerne i Jerusalem til avgudsdyrkelse, og han førte Juda på avveier.",
+    "versions": [
+      {
+        "text": "Han bygde også offerhauger i fjellene i Juda og fikk innbyggerne i Jerusalem til å drive hor, og han førte Juda på avveier.",
+        "type": "theological",
+        "severity": "major",
+        "explanation": "Verbet וַיֶּזֶן (fra זנה) betyr 'å drive hor' i åndelig/religiøs forstand, altså avgudsdyrkelse. 'Fikk ... til å drive hor' er en mulig gjengivelse, men 'forledet ... til avgudsdyrkelse' er klarere for moderne lesere og teologisk mer presist i konteksten om offerhauger."
+      }
+    ]
   },
   {
     "bookId": 14,
@@ -105,13 +119,29 @@
     "bookId": 14,
     "chapterId": 21,
     "verseId": 16,
-    "text": "Herren egget filisternes og arabernes ånd mot Joram, de som bodde i nærheten av kusjittene."
+    "text": "Herren egget filisternes og arabernes ånd mot Joram – de araberne som holdt til ved siden av kusjittene.",
+    "versions": [
+      {
+        "text": "Herren egget filisternes og arabernes ånd mot Joram, de som bodde i nærheten av kusjittene.",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "Relativsetningen 'som bodde i nærheten av kusjittene' refererer grammatisk til araberne, ikke til både filisterne og araberne. Den nåværende formuleringen er tvetydig. En tydeliggjøring vil bedre reflektere den hebraiske syntaksen."
+      }
+    ]
   },
   {
     "bookId": 14,
     "chapterId": 21,
     "verseId": 17,
-    "text": "De dro opp mot Juda, brøt inn i landet og bortførte alt godset som fantes i kongens hus, også hans sønner og hustruer. Ingen sønn ble igjen hos ham unntatt Joakas, den yngste sønnen."
+    "text": "De dro opp mot Juda, brøt inn i landet og bortførte alt godset som fantes i kongens hus, også hans sønner og hustruer. Ingen sønn ble igjen hos ham unntatt Joakas, den yngste av sønnene hans.",
+    "versions": [
+      {
+        "text": "De dro opp mot Juda, brøt inn i landet og bortførte alt godset som fantes i kongens hus, også hans sønner og hustruer. Ingen sønn ble igjen hos ham unntatt Joakas, den yngste sønnen.",
+        "type": "error",
+        "severity": "minor",
+        "explanation": "'Den yngste sønnen' er litt upresist. Det hebraiske קְטֹן בָּנָיו betyr 'den yngste av hans sønner', noe som bør reflekteres tydeligere for å vise at han hadde flere sønner som ble bortført."
+      }
+    ]
   },
   {
     "bookId": 14,

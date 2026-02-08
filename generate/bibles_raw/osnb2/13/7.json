@@ -81,13 +81,29 @@
     "bookId": 13,
     "chapterId": 7,
     "verseId": 14,
-    "text": "Manasses sønner: Hans arameiske medhustru fødte Asriel. Hun fødte også Makir, far til Gilead."
+    "text": "Manasses sønn var Asriel, som hans arameiske medhustru fødte. Hun fødte Makir, far til Gilead.",
+    "versions": [
+      {
+        "text": "Manasses sønner: Hans arameiske medhustru fødte Asriel. Hun fødte også Makir, far til Gilead.",
+        "type": "error",
+        "severity": "major",
+        "explanation": "Teksten sier at den arameiske medhustruen fødte Asriel (relativsetning), og deretter at hun fødte Makir. Den nåværende oversettelsen med 'sønner' (flertall) er unøyaktig – hebraisk har 'beni' her i en konstruksjon som peker på Asriel som navn, ikke flertall av sønner. Også 'også' er tillagt og ikke i originalen."
+      }
+    ]
   },
   {
     "bookId": 13,
     "chapterId": 7,
     "verseId": 15,
-    "text": "Makir tok en kone til Huppim og Sjuppim. Hans søster het Maaka. Den andre het Selofhad, og Selofhad hadde bare døtre."
+    "text": "Makir tok en kone for Huppim og Sjuppim. Hans søster het Maaka. Den andre het Selofhad, og Selofhad hadde døtre.",
+    "versions": [
+      {
+        "text": "Makir tok en kone til Huppim og Sjuppim. Hans søster het Maaka. Den andre het Selofhad, og Selofhad hadde bare døtre.",
+        "type": "error",
+        "severity": "major",
+        "explanation": "Hebraisk 'לְחֻפִּים וּלְשֻׁפִּים' betyr 'for Huppim og Sjuppim', ikke 'til'. Også 'bare' er tillagt – originalen sier simpelthen at Selofhad hadde døtre (בָּנוֹת), uten å spesifisere 'bare'."
+      }
+    ]
   },
   {
     "bookId": 13,
@@ -123,7 +139,15 @@
     "bookId": 13,
     "chapterId": 7,
     "verseId": 21,
-    "text": "hans sønn var Sabad, hans sønn var Sjutelah, og videre Eser og Elad. Men mennene fra Gat, som var født i landet, drepte dem fordi de hadde dratt ned for å ta buskapen deres."
+    "text": "hans sønn var Sabad, hans sønn var Sjutelah, og videre Eser og Elad. Mennene fra Gat, som var født i landet, drepte dem fordi de hadde dratt ned for å ta buskapen deres.",
+    "versions": [
+      {
+        "text": "hans sønn var Sabad, hans sønn var Sjutelah, og videre Eser og Elad. Men mennene fra Gat, som var født i landet, drepte dem fordi de hadde dratt ned for å ta buskapen deres.",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "'Men' er tillagt og finnes ikke i originalteksten. Hebraisk har bare 'וַהֲרָגוּם' (og de drepte dem) uten noen adversativ konjunksjon. Det er en mindre sak, men 'og' ville vært mer nøyaktig, eller man kan utelate konjunksjonen helt."
+      }
+    ]
   },
   {
     "bookId": 13,
@@ -201,7 +225,15 @@
     "bookId": 13,
     "chapterId": 7,
     "verseId": 34,
-    "text": "Sjamers sønner var Ahi, Rohga, Hubba og Aram."
+    "text": "Sjemers sønner var Ahi, Rohga, Hubba og Aram.",
+    "versions": [
+      {
+        "text": "Sjamers sønner var Ahi, Rohga, Hubba og Aram.",
+        "type": "error",
+        "severity": "minor",
+        "explanation": "Hebraisk שָׁמֶר bør translittereres som 'Sjemer' (med e-lyder), ikke 'Sjamer'. Navnet i vers 32 er שׁוֹמֵר (Sjomer), men her er det et annet navn שָׁמֶר (Sjemer)."
+      }
+    ]
   },
   {
     "bookId": 13,

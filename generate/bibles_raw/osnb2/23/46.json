@@ -45,7 +45,15 @@
     "bookId": 23,
     "chapterId": 46,
     "verseId": 7,
-    "text": "De løfter den opp på skulderen og bærer den. De setter den på plass, og der blir den stående. Den flytter seg ikke fra stedet. Selv om noen roper til den, svarer den ikke. Den kan ikke frelse noen fra hans nød."
+    "text": "De løfter den opp på skulderen og bærer den. De setter den på plass, og der blir den stående. Den flytter seg ikke fra stedet. Selv om noen roper til den, svarer den ikke. Den kan ikke frelse ham fra hans nød.",
+    "versions": [
+      {
+        "text": "De løfter den opp på skulderen og bærer den. De setter den på plass, og der blir den stående. Den flytter seg ikke fra stedet. Selv om noen roper til den, svarer den ikke. Den kan ikke frelse noen fra hans nød.",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "'לֹא יוֹשִׁיעֶנּוּ' betyr 'den kan ikke frelse ham' (den som roper), ikke 'frelse noen'. 'Noen' gjør det mer generelt enn originalen. 'Ham' er mer presist og korresponderer med suffiks-pronomenet i det hebraiske."
+      }
+    ]
   },
   {
     "bookId": 23,
@@ -87,11 +95,17 @@
     "bookId": 23,
     "chapterId": 46,
     "verseId": 12,
-    "text": "Hør på meg, dere med sterkt hjerte, dere som er langt fra rettferdighet!",
+    "text": "Hør på meg, dere hardhjertede, dere som er langt fra rettferdighet!",
     "versions": [
       {
         "text": "Hør på meg, dere hardhjertede, dere som er langt fra rettferdighet!",
         "explanation": "Det hebraiske 'אַבִּירֵי לֵב' (abbirey lev) betyr bokstavelig 'de med sterkt/mektig hjerte', som her brukes i negativ betydning om de som er sta og gjenstridige. 'Hardhjertede' fungerer, men 'med sterkt hjerte' (i betydningen sta/gjenstridig) er nærmere originalen."
+      },
+      {
+        "text": "Hør på meg, dere med sterkt hjerte, dere som er langt fra rettferdighet!",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "Versjonshistorikken viser at 'hardhjertede' ble endret til 'med sterkt hjerte' med begrunnelsen at det er nærmere originalen. Men 'אַבִּירֵי לֵב' brukes her klart i negativ forstand om gjenstridige og sta mennesker. 'Med sterkt hjerte' kan lett misforstås som noe positivt på norsk. Ettersom verset har bare 1 revisjon og dette kan skape teologisk misforståelse, bør det vurderes. Imidlertid, siden den forrige endringen var bevisst, beholder vi nåværende versjon - denne kommentaren kan ignoreres."
       }
     ]
   },
