@@ -12,7 +12,7 @@ const anthropic = new Anthropic();
 const MAX_VERSES_PER_BATCH = 100;
 const MAX_PROOFREAD_CHARS = 20000; // Target max input chars per proofread batch
 
-r// --- JSON Schemas for structured outputs ---
+// --- JSON Schemas for structured outputs ---
 
 const TRANSLATION_SCHEMA = {
     type: "object",
@@ -104,7 +104,7 @@ If there are no issues (or all issues are in well-reviewed verses), return an em
 const MAX_RETRIES = 3;
 
 async function doAnthropicCall(content, schema) {
-    const options = {
+    return anthropic.messages.create({
         model: anthropicModel,
         max_tokens: maxTokens,
         messages: [
@@ -112,29 +112,25 @@ async function doAnthropicCall(content, schema) {
                 role: "user",
                 content
             }
-        ]
-    };
-    if (schema) {
-        options.output_config = {
+        ],
+        output_config: {
             format: {
                 type: "json_schema",
                 schema
             }
-        };
-    }
-    return anthropic.messages.create(options);
+        }
+    });
 }
 
 // Detect hallucinated English words that shouldn't appear in Norwegian/other translations
-// Check if language is English (hallucination detection should be skipped for English)
 function isEnglishLanguage(language) {
     const lower = language.toLowerCase();
     return lower === 'english' || lower === 'en';
 }
 
 const HALLUCINATION_PATTERNS = [
-    /\bsatisf\w+/i,           // satisfying, satisfactory, satisfaction, etc.
-    /\bthe\s+[a-z]+ing\b/i,   // "the [verb]ing" English patterns
+    /\bsatisf\w+/i,
+    /\bthe\s+[a-z]+ing\b/i,
     /\bhowever\b/i,
     /\btherefore\b/i,
     /\bmoreover\b/i,
@@ -157,7 +153,6 @@ function detectHallucinations(text) {
 }
 
 function validateTranslationResult(result) {
-    // Check array of verses
     const verses = Array.isArray(result) ? result : [result];
 
     for (const verse of verses) {
@@ -167,16 +162,18 @@ function validateTranslationResult(result) {
                 throw new Error(`Hallucinated English detected: "${hallucinations.join('", "')}"`);
             }
         }
-        // Also check issues/suggestions in proofread results
         if (verse.issues) {
-            for (const issue of verse.issues) {
+            const filtered = verse.issues.filter(issue => {
                 if (issue.suggested) {
                     const hallucinations = detectHallucinations(issue.suggested);
                     if (hallucinations.length > 0) {
-                        throw new Error(`Hallucinated English in suggestion: "${hallucinations.join('", "')}"`);
+                        console.log(`  Filtered out hallucinated suggestion: "${hallucinations.join('", "')}" in verse ${issue.verseId || '?'}`);
+                        return false;
                     }
                 }
-            }
+                return true;
+            });
+            verse.issues = filtered;
         }
     }
 
@@ -228,7 +225,6 @@ function readOriginalText(bookId, chapterId, existingVerses = []) {
 
     const allVerses = JSON.parse(fs.readFileSync(sourceFile, 'utf-8'));
 
-    // Filter out verses that already exist in the translation
     return allVerses.filter(verse =>
         !existingVerses.some(v => +v.verseId === +verse.verseId)
     );
@@ -283,7 +279,6 @@ async function translateChapter(bible, bookId, chapterId, style, existingVerses,
         return;
     }
 
-    // Split into batches if there are too many verses
     const batches = [];
     for (let i = 0; i < verses.length; i += MAX_VERSES_PER_BATCH) {
         batches.push(verses.slice(i, i + MAX_VERSES_PER_BATCH));
@@ -315,18 +310,14 @@ async function translateChapter(bible, bookId, chapterId, style, existingVerses,
 }
 
 function estimateVerseSize(verse, originalVerse) {
-    // Estimate the character count for a verse in the proofread prompt
     let size = 0;
 
-    // Original text
     if (originalVerse) {
         size += `${originalVerse.verseId}: ${originalVerse.text}\n`.length;
     }
 
-    // Translated text
     size += `${verse.verseId}: ${verse.text}\n`.length;
 
-    // Version history (can add significant length)
     if (verse.versions && verse.versions.length > 0) {
         size += `   VERSION HISTORY (${verse.versions.length} previous revisions - DO NOT suggest any of these):`.length;
         verse.versions.forEach((ver, i) => {
@@ -350,8 +341,6 @@ function createProofreadBatches(translatedVerses, originalVerses) {
         const originalVerse = originalVerses.find(v => +v.verseId === +verse.verseId);
         const verseSize = estimateVerseSize(verse, originalVerse);
 
-        // If adding this verse would exceed limit, start a new batch
-        // (unless current batch is empty - then we must include it anyway)
         if (currentSize + verseSize > MAX_PROOFREAD_CHARS && currentBatch.length > 0) {
             batches.push(currentBatch);
             currentBatch = [];
@@ -362,7 +351,6 @@ function createProofreadBatches(translatedVerses, originalVerses) {
         currentSize += verseSize;
     }
 
-    // Don't forget the last batch
     if (currentBatch.length > 0) {
         batches.push(currentBatch);
     }
@@ -386,7 +374,6 @@ async function proofreadChapter(bible, bookId, chapterId, style, filename, saveT
         return null;
     }
 
-    // Create batches based on text size
     const batches = createProofreadBatches(translatedVerses, originalVerses);
 
     console.log(`Proofreading ${bookId}:${chapterId} (${translatedVerses.length} verses in ${batches.length} batch(es))`);
@@ -420,7 +407,6 @@ async function proofreadChapter(bible, bookId, chapterId, style, filename, saveT
         }
     }
 
-    // Combine results from all batches
     let result = {
         issues: allIssues,
         summary: batches.length > 1
@@ -429,7 +415,6 @@ async function proofreadChapter(bible, bookId, chapterId, style, filename, saveT
         score: scores.length > 0 ? Math.round(scores.reduce((a, b) => a + b, 0) / scores.length) : null
     };
 
-    // Save proofread results only if requested
     if (saveToFile) {
         const proofreadDir = `proofread/${bible}/${bookId}`;
         if (!fs.existsSync(proofreadDir)) {
@@ -440,7 +425,6 @@ async function proofreadChapter(bible, bookId, chapterId, style, filename, saveT
         fs.writeFileSync(proofreadFile, JSON.stringify(result, null, 2));
     }
 
-    // Print summary
     console.log(`\nProofread results for ${bookId}:${chapterId}:`);
     if (result.score !== null) {
         console.log(`Score: ${result.score}/10`);
@@ -458,7 +442,6 @@ async function proofreadChapter(bible, bookId, chapterId, style, filename, saveT
 }
 
 function applyProofreadChanges(bible, bookId, chapterId, filename, proofreadResult = null) {
-    // Load proofread result from file if not provided
     if (!proofreadResult) {
         const proofreadFile = `proofread/${bible}/${bookId}/${chapterId}.json`;
         if (!fs.existsSync(proofreadFile)) {
@@ -490,17 +473,14 @@ function applyProofreadChanges(bible, bookId, chapterId, filename, proofreadResu
             continue;
         }
 
-        // Skip if the suggested text is the same as current
         if (verse.text === issue.suggested) {
             continue;
         }
 
-        // Initialize versions array if it doesn't exist
         if (!verse.versions) {
             verse.versions = [];
         }
 
-        // Add current text to versions history with type and severity
         verse.versions.push({
             text: verse.text,
             type: issue.type,
@@ -508,7 +488,6 @@ function applyProofreadChanges(bible, bookId, chapterId, filename, proofreadResu
             explanation: issue.explanation
         });
 
-        // Update the text
         verse.text = issue.suggested;
         appliedCount++;
 
@@ -523,7 +502,7 @@ function applyProofreadChanges(bible, bookId, chapterId, filename, proofreadResu
 
 function printUsage() {
     console.log(`
-Usage: node bible.mjs <bible> [options]
+Usage: node bible_test.mjs <bible> [options]
 
 Arguments:
   bible              Bible version to work with (e.g., osnb1, osnb2, osnn1)
@@ -540,26 +519,19 @@ Options:
   --help             Show this help message
 
 Examples:
-  node bible.mjs osnb2 --style oral --nt                       # translate NT
-  node bible.mjs osnb2 --style oral --book 1-20                # translate books 1-20
-  node bible.mjs osnb2 --book 43 --chapter 1-11                # translate John 1-11
-  node bible.mjs osnb2 --nt --proofread --apply                # translate → proofread → apply
-  node bible.mjs osnn1 --ot --style standard
-
-Parallel processing (run in separate terminals):
-  node bible.mjs osnb2 --book 1-20 &                           # terminal 1
-  node bible.mjs osnb2 --book 21-39 &                          # terminal 2
+  node bible_test.mjs osnb2 --style oral --nt
+  node bible_test.mjs osnb2 --book 43 --chapter 1-11
+  node bible_test.mjs osnb2 --nt --proofread --apply
 `);
 }
 
 function parseRange(value) {
-    // Parse "5" or "1-20" into {start, end}
     if (value.includes('-')) {
         const [start, end] = value.split('-').map(n => parseInt(n, 10));
-        return { start, end };
+        return {start, end};
     }
     const num = parseInt(value, 10);
-    return { start: num, end: num };
+    return {start: num, end: num};
 }
 
 function parseArgs(args) {
@@ -638,7 +610,6 @@ async function main() {
         process.exit(1);
     }
 
-    // Determine book range
     let startBook = 1;
     let endBook = 66;
 
@@ -678,24 +649,19 @@ async function main() {
             const dir = `bibles_raw/${options.bible}/${bookId}`;
             const filename = `${dir}/${chapterId}.json`;
 
-            // Step 1: Translation (always runs, skips if nothing to translate)
             let existingVerses = [];
             if (fs.existsSync(filename) && !options.force) {
                 existingVerses = JSON.parse(fs.readFileSync(filename, 'utf-8'));
             }
             await translateChapter(options.bible, bookId, chapterId, options.style, existingVerses, filename);
 
-            // Step 2: Proofread (if requested)
             let proofreadResult = null;
             if (options.proofread) {
-                // Don't save to file if we're going to apply immediately
                 const saveToFile = !options.apply;
                 proofreadResult = await proofreadChapter(options.bible, bookId, chapterId, options.style, filename, saveToFile);
             }
 
-            // Step 3: Apply (if requested)
             if (options.apply) {
-                // Pass proofread result directly if we just did proofread, otherwise load from file
                 applyProofreadChanges(options.bible, bookId, chapterId, filename, proofreadResult);
             }
         }
