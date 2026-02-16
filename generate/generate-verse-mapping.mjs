@@ -5,8 +5,8 @@
  *   node generate-verse-mapping.mjs <input-file> <mapping-id> [--use-ai]
  *
  * Example:
- *   node generate-verse-mapping.mjs ../bibel2011.txt bibel2011
- *   node generate-verse-mapping.mjs ../bibel2011.txt bibel2011 --use-ai
+ *   node generate-verse-mapping.mjs ../bibel2011.txt dnb_2011_nb
+ *   node generate-verse-mapping.mjs ../bibel2011.txt dnb_2011_nb --use-ai
  *
  * The input file should have one verse per line in the format:
  *   BookName chapter,verse text
@@ -29,8 +29,8 @@ dotenv.config({ path: path.join(__dirname, '.env') });
 // --- Configuration per known format ---
 
 const KNOWN_FORMATS = {
-  bibel2011: {
-    name: 'Bibel 2011',
+  dnb_2011_nb: {
+    name: 'Det Norske Bibelselskap 2011 Bokmål',
     description: 'Bibelselskapets oversettelse 2011',
     lineRegex: /^(.+?)\s+(\d+),(\d+)\s+(.+)$/,
     bookNames: {
