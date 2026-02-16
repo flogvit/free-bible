@@ -1,0 +1,49 @@
+{
+  "issues": [
+    {
+      "field": "keywords",
+      "severity": "minor",
+      "explanation": "Nøkkelordet 'efrata' mangler. Betlehem Efrata er en viktig benevnelse i teksten og kan hjelpe brukere med å finne historien.",
+      "current": "[\"mika\", \"betlehem\", \"profeti\", \"messias\", \"hersker\", \"israel\", \"fødsel\"]",
+      "suggested": "[\"mika\", \"betlehem\", \"efrata\", \"profeti\", \"messias\", \"hersker\", \"israel\", \"hyrde\", \"fred\"]"
+    },
+    {
+      "field": "keywords",
+      "severity": "minor",
+      "explanation": "Nøkkelordet 'fødsel' er litt misvisende – teksten nevner \"hun som skal føde\" i vers 2, men hovedtemaet er ikke en fødsel. 'fred' og 'hyrde' er mer relevante nøkkelord basert på teksten."
+    },
+    {
+      "field": "description",
+      "severity": "minor",
+      "explanation": "Beskrivelsen sier 'eldgamle dager', men bibelteksten sier 'fra gammel tid, fra evighets dager'. Dette er en liten nyanseforskjell som ikke er direkte feil, men kunne vært mer presis. Ellers er beskrivelsen god og dekkende."
+    }
+  ],
+  "summary": "Historien er generelt godt utformet. Referansen til Mika 5:1-4 (bookId 33) er korrekt og dekker den messianske profetien om herskeren fra Betlehem. Kategorien 'profetene' er riktig. Tittelen og slug er gode. Noen mindre forbedringer kan gjøres i nøkkelord og beskrivelse for å bedre gjenspeile teksten.",
+  "score": 8,
+  "revisedStory": {
+    "slug": "mika-profetien-om-betlehem",
+    "title": "Mikas profeti om herskeren fra Betlehem",
+    "keywords": [
+      "mika",
+      "betlehem",
+      "efrata",
+      "profeti",
+      "messias",
+      "hersker",
+      "israel",
+      "hyrde",
+      "fred"
+    ],
+    "description": "Profeten Mika forkynner at det fra den lille byen Betlehem Efrata skal komme en hersker over Israel, en som har sitt opphav fra gammel tid, fra evighets dager, og som skal vokte sitt folk i Herrens kraft som en hyrde.",
+    "category": "profetene",
+    "references": [
+      {
+        "bookId": 33,
+        "startChapter": 5,
+        "startVerse": 1,
+        "endChapter": 5,
+        "endVerse": 4
+      }
+    ]
+  }
+}

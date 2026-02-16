@@ -1,0 +1,46 @@
+{
+  "issues": [
+    {
+      "field": "keywords",
+      "severity": "minor",
+      "explanation": "Nøkkelordet 'kornband' bør skrives 'kornbånd' for korrekt norsk, men som søkeord i lowercase er det akseptabelt uten å. Likevel mangler viktige nøkkelord som 'jakob', 'kjortel', 'misunnelse' og 'sol og måne' som er sentrale elementer i teksten.",
+      "current": "josef, drømmer, brødre, kornband, stjerner, sjalusi",
+      "suggested": "josef, jakob, drømmer, brødre, kornbånd, stjerner, sjalusi, kjortel, misunnelse"
+    },
+    {
+      "field": "description",
+      "severity": "minor",
+      "explanation": "Beskrivelsen nevner ikke den andre drømmen (sol, måne og stjerner) eller farens reaksjon, som er sentrale deler av teksten. Den dekker bare delvis innholdet. Også konteksten med Jakobs spesielle kjærlighet til Josef og kjortelen mangler.",
+      "current": "Josef forteller om drømmene sine der brødrene bøyer seg for ham. De blir sjalu og hater ham.",
+      "suggested": "Josef, som er Jakobs favorittsønn, forteller brødrene sine om to drømmer der kornbånd og himmellegemer bøyer seg for ham. Brødrene hater ham av sjalusi, mens faren irettesetter ham men tar vare på ordet."
+    }
+  ],
+  "summary": "Historien er i hovedsak korrekt. Referansene stemmer perfekt med bibelteksten (1. Mos 37:1-11). Slug, tittel og kategori er gode. Beskrivelsen kunne vært mer fullstendig, og nøkkelordene kunne inkludert flere sentrale begreper fra teksten.",
+  "score": 8,
+  "revisedStory": {
+    "slug": "josefs-drommer",
+    "title": "Josefs drømmer",
+    "keywords": [
+      "josef",
+      "jakob",
+      "drømmer",
+      "brødre",
+      "kornbånd",
+      "stjerner",
+      "sjalusi",
+      "kjortel",
+      "misunnelse"
+    ],
+    "description": "Josef, som er Jakobs favorittsønn, forteller brødrene sine om to drømmer der kornbånd og himmellegemer bøyer seg for ham. Brødrene hater ham av sjalusi, mens faren irettesetter ham men tar vare på ordet.",
+    "category": "patriarkene",
+    "references": [
+      {
+        "bookId": 1,
+        "startChapter": 37,
+        "startVerse": 1,
+        "endChapter": 37,
+        "endVerse": 11
+      }
+    ]
+  }
+}

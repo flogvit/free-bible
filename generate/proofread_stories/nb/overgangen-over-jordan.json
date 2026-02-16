@@ -1,0 +1,50 @@
+{
+  "issues": [
+    {
+      "field": "category",
+      "severity": "minor",
+      "explanation": "Kategorien er skrevet som 'landnaam' som ser ut som en nederlandsk/afrikaans stavemåte. Det korrekte norske ordet ville være 'landnåm', men siden kategorien må matche en av de forhåndsdefinerte verdiene og 'landnaam' er oppført i listen over gyldige kategorier, er dette teknisk sett korrekt."
+    },
+    {
+      "field": "keywords",
+      "severity": "minor",
+      "explanation": "Noen viktige nøkkelord mangler, som 'josva' (hovedpersonen), 'steiner'/'minnesmerke' (de tolv steinene er en sentral del av historien), og 'gilgal' (stedet der de slo leir). Disse ville hjelpe brukere å finne historien.",
+      "current": "jordan, elv, paktens ark, kanaan, overgang",
+      "suggested": "jordan, josva, paktens ark, kanaan, tolv steiner, gilgal, minnesmerke, tørt land"
+    },
+    {
+      "field": "description",
+      "severity": "minor",
+      "explanation": "Beskrivelsen er korrekt men dekker bare halvparten av historien. Den nevner ikke de tolv minnesteinene som er en sentral del av fortellingen (hele kapittel 4).",
+      "current": "Israelittene krysser Jordanelven på tørt land mens prestene bærer paktens ark.",
+      "suggested": "Israelittene krysser Jordanelven på tørt land mens prestene bærer paktens ark, og tolv steiner reises som minnesmerke ved Gilgal."
+    }
+  ],
+  "summary": "Historien er i hovedsak korrekt. Referansene til Josva 3:1-4:24 er helt riktige og dekker hele fortellingen om overgangen over Jordan. Kategorien 'landnaam' er korrekt. Noen mindre forbedringer kan gjøres: nøkkelordene bør inkludere 'josva' og 'tolv steiner'/'minnesmerke' som er sentrale elementer, og beskrivelsen bør nevne minnesteinene som utgjør en stor del av fortellingen.",
+  "score": 8,
+  "revisedStory": {
+    "slug": "overgangen-over-jordan",
+    "title": "Overgangen over Jordan",
+    "keywords": [
+      "jordan",
+      "josva",
+      "paktens ark",
+      "kanaan",
+      "tolv steiner",
+      "gilgal",
+      "minnesmerke",
+      "tørt land"
+    ],
+    "description": "Israelittene krysser Jordanelven på tørt land mens prestene bærer paktens ark, og tolv steiner reises som minnesmerke ved Gilgal.",
+    "category": "landnaam",
+    "references": [
+      {
+        "bookId": 6,
+        "startChapter": 3,
+        "startVerse": 1,
+        "endChapter": 4,
+        "endVerse": 24
+      }
+    ]
+  }
+}

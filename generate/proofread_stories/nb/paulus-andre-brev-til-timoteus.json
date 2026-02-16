@@ -1,0 +1,44 @@
+{
+  "issues": [
+    {
+      "field": "slug",
+      "severity": "minor",
+      "explanation": "Sluggen 'paulus-andre-brev-til-timoteus' er litt generell og matcher ikke helt tittelen 'Paulus' avskjedsord til Timoteus'. En slug som 'paulus-avskjedsord-til-timoteus' ville matche tittelen bedre.",
+      "current": "paulus-andre-brev-til-timoteus",
+      "suggested": "paulus-avskjedsord-til-timoteus"
+    },
+    {
+      "field": "references",
+      "severity": "minor",
+      "explanation": "Referansen dekker 2. Tim 4:1-8 som er kjerneteksten for Paulus' avskjedsord. Man kunne argumentere for å inkludere noen flere vers fra kapittel 1-3 for å dekke hele brevets formaning, men 4:1-8 er det mest sentrale avsnittet som samsvarer med beskrivelsen. Referansen er korrekt og fornuftig som den er."
+    }
+  ],
+  "summary": "Historien er gjennomgående god. Referansen til 2. Timoteus 4:1-8 (bookId 55) er korrekt og dekker Paulus' avskjedsformaning til Timoteus, inkludert de berømte versene om å ha fullført løpet og bevart troen. Tittel, beskrivelse, nøkkelord og kategori er alle passende. Eneste forbedring er at sluggen kunne matche tittelen bedre.",
+  "score": 9,
+  "revisedStory": {
+    "slug": "paulus-avskjedsord-til-timoteus",
+    "title": "Paulus' avskjedsord til Timoteus",
+    "keywords": [
+      "paulus",
+      "timoteus",
+      "avskjed",
+      "tro",
+      "løp",
+      "krans",
+      "tjeneste",
+      "forkynnelse",
+      "2. timoteus"
+    ],
+    "description": "I sitt siste brev formaner Paulus sin unge medarbeider Timoteus til å holde fast ved troen og forkynnelsen, og erklærer at han selv har fullført løpet og bevart troen.",
+    "category": "paulus",
+    "references": [
+      {
+        "bookId": 55,
+        "startChapter": 4,
+        "startVerse": 1,
+        "endChapter": 4,
+        "endVerse": 8
+      }
+    ]
+  }
+}

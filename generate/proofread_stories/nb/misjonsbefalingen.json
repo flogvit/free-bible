@@ -1,0 +1,59 @@
+{
+  "issues": [
+    {
+      "field": "keywords",
+      "severity": "minor",
+      "explanation": "Nøkkelordet 'den hellige ånd' er relevant, men det er mer presist å skrive 'den hellige ånds navn' eller beholde som det er. Nøkkelordet 'evangeliet' er relevant for Markus-referansen. Imidlertid mangler noen viktige nøkkelord som 'oppstandelse', 'Jesus' og 'makt'. Disse ville hjelpe brukere å finne historien."
+    },
+    {
+      "field": "keywords",
+      "severity": "minor",
+      "explanation": "Nøkkelordet 'disippel' bør kanskje stå i flertall 'disipler' for å matche teksten bedre ('gjør alle folkeslag til disipler').",
+      "current": "disippel",
+      "suggested": "disipler"
+    }
+  ],
+  "summary": "Historien er stort sett korrekt og godt utformet. Referansene er korrekte og dekker misjonsbefalingen i Matteus 28:16-20, Markus 16:15-18 og Lukas 24:46-49. Beskrivelsen stemmer med bibelteksten. Kategorien 'jesus-liv' er passende. Små forbedringer kan gjøres i nøkkelordene: legge til 'oppstandelse' og 'Jesus', og endre 'disippel' til 'disipler'.",
+  "score": 9,
+  "revisedStory": {
+    "slug": "misjonsbefalingen",
+    "title": "Misjonsbefalingen",
+    "keywords": [
+      "misjon",
+      "dåp",
+      "alle folkeslag",
+      "befaling",
+      "disipler",
+      "evangeliet",
+      "den hellige ånd",
+      "oppstandelse",
+      "Jesus",
+      "makt"
+    ],
+    "description": "Etter sin oppstandelse gir Jesus disiplene den store misjonsbefalingen: 'Gå ut og gjør alle folkeslag til disipler,' og lover å være med dem alle dager inntil tidenes ende.",
+    "category": "jesus-liv",
+    "references": [
+      {
+        "bookId": 40,
+        "startChapter": 28,
+        "startVerse": 16,
+        "endChapter": 28,
+        "endVerse": 20
+      },
+      {
+        "bookId": 41,
+        "startChapter": 16,
+        "startVerse": 15,
+        "endChapter": 16,
+        "endVerse": 18
+      },
+      {
+        "bookId": 42,
+        "startChapter": 24,
+        "startVerse": 46,
+        "endChapter": 24,
+        "endVerse": 49
+      }
+    ]
+  }
+}

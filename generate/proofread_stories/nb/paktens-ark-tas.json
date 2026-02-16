@@ -1,0 +1,52 @@
+{
+  "issues": [
+    {
+      "field": "category",
+      "severity": "major",
+      "explanation": "Historien foregår i Samuel-perioden, som er overgangen mellom dommertiden og kongetiden. Eli var dommer i Israel (v.18), men 1. Samuel hører tradisjonelt til kongetiden i bibelske kategoriseringer. Likevel, siden Eli eksplisitt kalles dommer i teksten (v.18), kan 'dommerne' forsvares. Men mer konvensjonelt plasseres 1. Samuel under 'kongetiden'. Siden teksten selv kaller Eli en dommer, er dette en grensetilfelle - men kongetiden er mer korrekt for 1. Samuel som bok.",
+      "current": "dommerne",
+      "suggested": "kongetiden"
+    },
+    {
+      "field": "keywords",
+      "severity": "minor",
+      "explanation": "Viktige nøkkelord som 'hofni', 'pinhas', 'sjilo' og 'eben-eser' mangler. Hofni og Pinhas' død er en sentral del av historien, og Sjilo er stedet arken ble hentet fra.",
+      "current": "paktens ark, filisterne, eli, ikabod, nederlag",
+      "suggested": "paktens ark, filisterne, eli, ikabod, hofni, pinhas, nederlag, sjilo"
+    },
+    {
+      "field": "description",
+      "severity": "minor",
+      "explanation": "Beskrivelsen nevner at Eli dør av sjokk, men teksten spesifiserer at han falt bakover av stolen og brakk nakken. I tillegg mangler viktige detaljer som Hofni og Pinhas' død og fødselen av Ikabod. En noe mer presis beskrivelse ville vært bedre.",
+      "current": "Filisterne tar paktens ark i kamp. Eli dør av sjokk da han hører nyheten.",
+      "suggested": "Filisterne beseirer Israel og tar paktens ark. Elis sønner Hofni og Pinhas dør i slaget, og Eli selv faller av stolen og dør da han hører nyheten. Hans svigerdatter føder sønnen Ikabod og sier: «Herligheten har veket fra Israel.»"
+    }
+  ],
+  "summary": "Historien er i hovedsak korrekt med riktige referanser (1. Samuel 4:1-22). Bibelteksten bekrefter innholdet. Kategorien 'dommerne' er diskutabel siden 1. Samuel tradisjonelt tilhører kongetiden, selv om Eli kalles dommer. Nøkkelordene mangler noen viktige navn, og beskrivelsen kunne vært mer fullstendig.",
+  "score": 7,
+  "revisedStory": {
+    "slug": "paktens-ark-tas",
+    "title": "Paktens ark tas av filisterne",
+    "keywords": [
+      "paktens ark",
+      "filisterne",
+      "eli",
+      "ikabod",
+      "hofni",
+      "pinhas",
+      "nederlag",
+      "sjilo"
+    ],
+    "description": "Filisterne beseirer Israel og tar paktens ark. Elis sønner Hofni og Pinhas dør i slaget, og Eli selv faller av stolen og dør da han hører nyheten. Hans svigerdatter føder sønnen Ikabod og sier: «Herligheten har veket fra Israel.»",
+    "category": "kongetiden",
+    "references": [
+      {
+        "bookId": 9,
+        "startChapter": 4,
+        "startVerse": 1,
+        "endChapter": 4,
+        "endVerse": 22
+      }
+    ]
+  }
+}

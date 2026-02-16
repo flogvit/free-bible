@@ -1,0 +1,54 @@
+{
+  "issues": [
+    {
+      "field": "keywords",
+      "severity": "minor",
+      "explanation": "Nøkkelordet 'salomo' er implisitt (Forkynneren identifiserer seg som 'Davids sønn, konge i Jerusalem'), men det er aldri eksplisitt nevnt i teksten. Det er likevel en rimelig kobling. Man kunne vurdere å legge til nøkkelord som 'frykt gud', 'bud', 'alt har sin tid' som er sentrale temaer i de refererte passasjene.",
+      "current": "[\"forkynneren\",\"predikanten\",\"forgjengelig\",\"tomhet\",\"tid\",\"salomo\",\"visdom\"]",
+      "suggested": "[\"forkynneren\",\"predikanten\",\"forgjengelig\",\"tomhet\",\"tid\",\"salomo\",\"visdom\",\"alt har sin tid\",\"frykt gud\",\"jag etter vind\"]"
+    }
+  ],
+  "summary": "Historien er veldig godt satt opp. Referansene er korrekte – bookId 21 er Forkynneren, og de tre passasjene (kap. 1:1-18, 3:1-15, 12:1-14) dekker de sentrale temaene i boken: livets forgjengelighet/tomhet, 'alt har sin tid', og konklusjonen om å frykte Gud. Kategorien 'visdomslitteratur' er helt riktig. Tittelen, slug og beskrivelse er presise og dekkende. Eneste mindre forbedring er at nøkkelordlisten kunne utvides med noen flere sentrale temaer fra teksten.",
+  "score": 9,
+  "revisedStory": {
+    "slug": "forkynneren-om-livets-forgjengelighet",
+    "title": "Forkynneren – Alt er forgjengelig",
+    "keywords": [
+      "forkynneren",
+      "predikanten",
+      "forgjengelig",
+      "tomhet",
+      "tid",
+      "salomo",
+      "visdom",
+      "alt har sin tid",
+      "frykt gud",
+      "jag etter vind"
+    ],
+    "description": "Forkynneren reflekterer over livets forgjengelighet og konkluderer med at alt under solen er tomhet, men at mennesket skal frykte Gud og holde hans bud.",
+    "category": "visdomslitteratur",
+    "references": [
+      {
+        "bookId": 21,
+        "startChapter": 1,
+        "startVerse": 1,
+        "endChapter": 1,
+        "endVerse": 18
+      },
+      {
+        "bookId": 21,
+        "startChapter": 3,
+        "startVerse": 1,
+        "endChapter": 3,
+        "endVerse": 15
+      },
+      {
+        "bookId": 21,
+        "startChapter": 12,
+        "startVerse": 1,
+        "endChapter": 12,
+        "endVerse": 14
+      }
+    ]
+  }
+}

@@ -1,0 +1,52 @@
+{
+  "issues": [
+    {
+      "field": "slug",
+      "severity": "critical",
+      "explanation": "Slug-en sier 'den-blinde-ved-betesda', men historien handler om en lam mann, ikke en blind mann. Slug-en må samsvare med tittelen.",
+      "current": "den-blinde-ved-betesda",
+      "suggested": "den-lamme-ved-betesda-dammen"
+    },
+    {
+      "field": "description",
+      "severity": "minor",
+      "explanation": "Bibelteksten i vers 5 sier at mannen hadde vært 'syk' i 38 år, ikke nødvendigvis spesifikt 'lam'. Teksten nevner at det lå blinde, lamme og forkrøplete ved dammen (v.3), men mannen selv beskrives som 'syk'. Beskrivelsen kan være mer presis ved å bruke 'syk' i stedet for 'lam'.",
+      "current": "Jesus helbreder en mann som hadde vært lam i 38 år ved Betesda-dammen.",
+      "suggested": "Jesus helbreder en mann som hadde vært syk i 38 år ved Betesda-dammen i Jerusalem."
+    },
+    {
+      "field": "keywords",
+      "severity": "minor",
+      "explanation": "Nøkkelordet 'jesus' og 'jerusalem' mangler. Disse er viktige søkeord for å finne historien. Også 'helbredelse' kan suppleres med 'båre' som er et viktig element i fortellingen.",
+      "current": "betesda, lam, helbredelse, vann, sabbat",
+      "suggested": "betesda, helbredelse, sabbat, jerusalem, jesus, syk, båre"
+    }
+  ],
+  "summary": "Historien har én kritisk feil: slug-en sier 'den-blinde-ved-betesda' mens historien handler om en lam/syk mann, ikke en blind mann. Tittelen er derimot korrekt. Beskrivelsen bruker ordet 'lam' mens bibelteksten sier 'syk'. Referansen til Johannes 5:1-15 er korrekt, og kategorien 'jesu-mirakler' er passende.",
+  "score": 6,
+  "revisedStory": {
+    "slug": "den-lamme-ved-betesda-dammen",
+    "title": "Den lamme ved Betesda-dammen",
+    "keywords": [
+      "betesda",
+      "helbredelse",
+      "sabbat",
+      "jerusalem",
+      "jesus",
+      "syk",
+      "båre",
+      "lam"
+    ],
+    "description": "Jesus helbreder en mann som hadde vært syk i 38 år ved Betesda-dammen i Jerusalem.",
+    "category": "jesu-mirakler",
+    "references": [
+      {
+        "bookId": 43,
+        "startChapter": 5,
+        "startVerse": 1,
+        "endChapter": 5,
+        "endVerse": 15
+      }
+    ]
+  }
+}

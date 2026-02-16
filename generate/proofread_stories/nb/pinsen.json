@@ -1,0 +1,52 @@
+{
+  "issues": [
+    {
+      "field": "slug",
+      "severity": "minor",
+      "explanation": "Sluggen 'pinsen' er grei, men 'pinsedagen' ville matche tittelen 'Pinsedagen' bedre.",
+      "current": "pinsen",
+      "suggested": "pinsedagen"
+    },
+    {
+      "field": "keywords",
+      "severity": "minor",
+      "explanation": "Nøkkelord som 'jerusalem', 'omvendelse', 'dåp' og 'Den hellige ånd' (som 'den hellige ånd') kunne vært med for bedre dekning av innholdet. 'tunger' er litt vagt – 'tungetale' eller 'tunger av ild' er mer presist. Keyword 'tale' er litt generisk.",
+      "current": "pinse, hellig ånd, tunger, ild, peter, tale",
+      "suggested": "pinse, den hellige ånd, tunger av ild, peter, jerusalem, omvendelse, dåp, tungetale"
+    },
+    {
+      "field": "description",
+      "severity": "minor",
+      "explanation": "Beskrivelsen sier 'Peter holder sin første tale og 3000 tror.' Bibelteksten sier 'omkring tre tusen sjeler ble lagt til' – de ble døpt, ikke bare 'trodde'. Formuleringen kan presiseres.",
+      "current": "Den hellige ånd faller over disiplene på pinsedagen med tunger av ild. Peter holder sin første tale og 3000 tror.",
+      "suggested": "Den hellige ånd faller over disiplene på pinsedagen med tunger av ild. Peter holder sin første tale, og omkring 3000 mennesker omvender seg og blir døpt."
+    }
+  ],
+  "summary": "Historien er i all hovedsak korrekt. Referansen til Apostlenes gjerninger 2:1-41 er helt riktig og dekker hele pinsedagsberetningen. Kategorien 'urkirken' passer perfekt. Noen mindre forbedringer kan gjøres: sluggen kan matche tittelen bedre, nøkkelordene kan utvides, og beskrivelsen kan presiseres for å stemme bedre med bibelteksten (de ble døpt, ikke bare 'trodde').",
+  "score": 8,
+  "revisedStory": {
+    "slug": "pinsedagen",
+    "title": "Pinsedagen",
+    "keywords": [
+      "pinse",
+      "den hellige ånd",
+      "tunger av ild",
+      "peter",
+      "jerusalem",
+      "omvendelse",
+      "dåp",
+      "tungetale"
+    ],
+    "description": "Den hellige ånd faller over disiplene på pinsedagen med tunger av ild. Peter holder sin første tale, og omkring 3000 mennesker omvender seg og blir døpt.",
+    "category": "urkirken",
+    "references": [
+      {
+        "bookId": 44,
+        "startChapter": 2,
+        "startVerse": 1,
+        "endChapter": 2,
+        "endVerse": 41
+      }
+    ]
+  }
+}

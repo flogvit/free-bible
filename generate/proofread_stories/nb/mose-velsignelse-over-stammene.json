@@ -1,0 +1,51 @@
+{
+  "issues": [
+    {
+      "field": "description",
+      "severity": "minor",
+      "explanation": "Beskrivelsen sier 'hver av Israels tolv stammer', men teksten nevner ikke Simeon i det hele tatt. Moses velsigner elleve stammer eksplisitt, og Simeon er utelatt (eller noen mener inkludert i Judas velsignelse). Å si 'hver av Israels tolv stammer' er dermed litt upresist.",
+      "current": "Før sin død uttaler Moses velsignelser over hver av Israels tolv stammer, med løfter om Guds beskyttelse og velsignelse for fremtiden.",
+      "suggested": "Før sin død uttaler Moses velsignelser over Israels stammer, med løfter om Guds beskyttelse og velsignelse for fremtiden."
+    },
+    {
+      "field": "category",
+      "severity": "major",
+      "explanation": "Kategorien 'oerkenvandringen' er ikke helt treffende. Moses' avskjedsvelsignelse hører mer naturlig til under 'moses'-kategorien, da dette er et av de siste kapitlene i Moses' liv og en sentral del av Moses-narrativet, snarere enn en ørkenvandringsepisode.",
+      "current": "oerkenvandringen",
+      "suggested": "moses"
+    },
+    {
+      "field": "keywords",
+      "severity": "minor",
+      "explanation": "Nøkkelordet 'femte mosebok' er mer en bokreferanse enn et søkeord. Det kunne erstattes med mer innholdsrelevante søkeord som 'profeti' eller 'løfter'. I tillegg mangler 'avskjedstale' eller 'Jesjurun' som kan være relevant.",
+      "current": "femte mosebok",
+      "suggested": "profeti"
+    }
+  ],
+  "summary": "Historien er generelt god. Referansene er korrekte – 5. Mosebok 33:1-29 dekker Moses' velsignelse over stammene. Hovedproblemene er: (1) kategorien bør være 'moses' i stedet for 'oerkenvandringen', (2) beskrivelsen sier 'hver av Israels tolv stammer' men Simeon er ikke nevnt i teksten, og (3) nøkkelordene kan forbedres litt.",
+  "score": 7,
+  "revisedStory": {
+    "slug": "moses-velsignelse-over-stammene",
+    "title": "Moses' velsignelse over Israels stammer",
+    "keywords": [
+      "moses",
+      "velsignelse",
+      "stammer",
+      "avskjed",
+      "israel",
+      "profeti",
+      "jesjurun"
+    ],
+    "description": "Før sin død uttaler Moses velsignelser over Israels stammer, med løfter om Guds beskyttelse og velsignelse for fremtiden.",
+    "category": "moses",
+    "references": [
+      {
+        "bookId": 5,
+        "startChapter": 33,
+        "startVerse": 1,
+        "endChapter": 33,
+        "endVerse": 29
+      }
+    ]
+  }
+}

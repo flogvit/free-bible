@@ -1,0 +1,60 @@
+{
+  "issues": [
+    {
+      "field": "slug",
+      "severity": "critical",
+      "explanation": "Sluggen 'den-samaritanske-kvinnen-ved-bybronnen' har ingenting med historien å gjøre. Historien handler om Susanna som frikjennes av Daniel, ikke om den samaritanske kvinnen ved brønnen.",
+      "current": "den-samaritanske-kvinnen-ved-bybronnen",
+      "suggested": "susanna-frikjennes-av-daniel"
+    },
+    {
+      "field": "references",
+      "severity": "critical",
+      "explanation": "Historien om Susanna som frikjennes av Daniel finnes i tillegget til Daniels bok (kapittel 13 i den greske/katolske kanon). Dette kapittelet finnes IKKE i den protestantiske kanon og dermed ikke i de fleste norske bibeloversettelser (osnb2). Daniel i den protestantiske kanon har bare 12 kapitler. Denne historien er apokryf/deuterokanonisk og kan ikke refereres med standard protestantisk bookId. Siden dette bibelprosjektet ser ut til å bruke protestantisk kanon (bookId 1-66), finnes ikke denne historien i den tilgjengelige bibelteksten. Det er ingen gyldig referanse som kan brukes.",
+      "current": "Daniel 13:1-64 (bookId 27)",
+      "suggested": "Denne historien er deuterokanonisk/apokryf og finnes ikke i protestantisk kanon. Bør vurderes om den skal inkluderes i prosjektet."
+    },
+    {
+      "field": "category",
+      "severity": "minor",
+      "explanation": "Kategorien 'profetene' kan forsvares ettersom Daniel tradisjonelt regnes blant profetene, men siden dette er et apokryft/deuterokanonisk tillegg, kan det diskuteres. Beholdes som 'profetene' da det er nærmest.",
+      "current": "profetene",
+      "suggested": "profetene"
+    },
+    {
+      "field": "description",
+      "severity": "minor",
+      "explanation": "Beskrivelsen er i hovedsak korrekt for innholdet i Susanna-fortellingen, men presiseringen '(omtalt i tradisjonen)' er uklar. Bedre å si 'deuterokanonisk tillegg'.",
+      "current": "I tillegget til Daniels bok (omtalt i tradisjonen) frikjenner den unge Daniel den uskyldige Susanna som er falskt anklaget av to eldre.",
+      "suggested": "I det deuterokanoniske tillegget til Daniels bok frikjenner den unge Daniel den uskyldige Susanna, som er falskt anklaget for utroskap av to korrupte eldre."
+    }
+  ],
+  "summary": "Historien har flere alvorlige problemer. Sluggen er helt feil og refererer til en helt annen bibelhistorie (den samaritanske kvinnen ved brønnen). Viktigst: historien om Susanna (Daniel kapittel 13) er et deuterokanonisk/apokryft tillegg som ikke finnes i den protestantiske kanon. Daniel har bare 12 kapitler i protestantiske bibler, så referansen Daniel 13:1-64 er ugyldig i et protestantisk bibelsystem. Hvis prosjektet kun bruker protestantisk kanon, bør denne historien muligens fjernes helt. Jeg har likevel beholdt referansen i den reviderte versjonen, men markerer problemet som kritisk.",
+  "score": 2,
+  "revisedStory": {
+    "slug": "susanna-frikjennes-av-daniel",
+    "title": "Susanna frikjennes av Daniel",
+    "keywords": [
+      "susanna",
+      "daniel",
+      "rettferd",
+      "anklagelse",
+      "eldre",
+      "frikjennelse",
+      "uskyld",
+      "visdom",
+      "falsk vitnesbyrd"
+    ],
+    "description": "I det deuterokanoniske tillegget til Daniels bok frikjenner den unge Daniel den uskyldige Susanna, som er falskt anklaget for utroskap av to korrupte eldre.",
+    "category": "profetene",
+    "references": [
+      {
+        "bookId": 27,
+        "startChapter": 13,
+        "startVerse": 1,
+        "endChapter": 13,
+        "endVerse": 64
+      }
+    ]
+  }
+}

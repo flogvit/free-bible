@@ -1,0 +1,57 @@
+{
+  "issues": [
+    {
+      "field": "slug",
+      "severity": "minor",
+      "explanation": "Sluggen har en skrivefeil: 'etterfolger' mangler dobbel 't' sammenlignet med tittelen 'etterfølger'. Selv om ø fjernes i slugs, bør det stå 'etterfolger' med dobbel 't': 'etterfolger'.",
+      "current": "josva-utvelges-som-moses-etterfolger",
+      "suggested": "josva-utvelges-som-moses-etterfolger"
+    },
+    {
+      "field": "keywords",
+      "severity": "minor",
+      "explanation": "Nøkkelordet 'frimodighet' er ikke direkte reflektert i teksten. Teksten sier 'sterk og modig', ikke 'frimodig'. Nøkkelord som 'jordan', 'det lovede land' eller 'mot' kunne vært mer relevante. Også 'innsettelse' er et greit ord, men 'etterfølger' ville vært et naturlig søkeord.",
+      "current": "frimodighet",
+      "suggested": "mot"
+    },
+    {
+      "field": "category",
+      "severity": "minor",
+      "explanation": "Historien handler om overgangen fra Moses til Josva, som inkluderer både ørkenvandringen (5. Mos 31) og landnåmet (Jos 1). Kategorien 'oerkenvandringen' er akseptabel, men 'landnaam' kunne også vurderes siden Josva 1 er starten på landnåmet. Likevel, siden 5. Mos 31 er den første referansen, er 'oerkenvandringen' forsvarlig."
+    }
+  ],
+  "summary": "Historien er i all hovedsak korrekt. Referansene dekker de relevante passasjene i 5. Mosebok 31:1-8 og Josva 1:1-9 som handler om Josvas utvelgelse som Moses' etterfølger. Beskrivelsen samsvarer godt med bibelteksten. Det er kun mindre problemer: en skrivefeil i sluggen (manglende dobbel-t) og nøkkelordet 'frimodighet' kunne vært mer presist.",
+  "score": 9,
+  "revisedStory": {
+    "slug": "josva-utvelges-som-moses-etterfolger",
+    "title": "Josva utvelges som Moses' etterfølger",
+    "keywords": [
+      "josva",
+      "moses",
+      "lederskap",
+      "innsettelse",
+      "mot",
+      "styrke",
+      "det lovede land",
+      "jordan"
+    ],
+    "description": "Etter at Moses får vite at han ikke skal føre folket inn i det lovede land, utpeker Gud Josva som hans etterfølger og befaler ham å være sterk og modig.",
+    "category": "oerkenvandringen",
+    "references": [
+      {
+        "bookId": 5,
+        "startChapter": 31,
+        "startVerse": 1,
+        "endChapter": 31,
+        "endVerse": 8
+      },
+      {
+        "bookId": 6,
+        "startChapter": 1,
+        "startVerse": 1,
+        "endChapter": 1,
+        "endVerse": 9
+      }
+    ]
+  }
+}

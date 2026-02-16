@@ -1,0 +1,56 @@
+{
+  "issues": [
+    {
+      "field": "references",
+      "severity": "critical",
+      "explanation": "Den oppgitte referansen (1. Mosebok 1:1-10) handler om skapelsesberetningen, ikke om Bileams esel. Historien om Bileams esel finnes i 4. Mosebok (Numeri) kapittel 22-24. Hovedepisoden med eselet som ser engelen er i kapittel 22, vers 21-35.",
+      "current": "bookId: 1, 1. Mosebok 1:1-10 (skapelsesberetningen)",
+      "suggested": "bookId: 4, 4. Mosebok 22:21-35 (Bileams esel og engelen)"
+    },
+    {
+      "field": "slug",
+      "severity": "minor",
+      "explanation": "Sluggen 'test-feil-ref' ser ut som en test-identifikator og bør endres til noe som gjenspeiler historiens innhold.",
+      "current": "test-feil-ref",
+      "suggested": "bileams-esel"
+    },
+    {
+      "field": "keywords",
+      "severity": "major",
+      "explanation": "Viktige nøkkelord mangler. Historien handler også om en engel, Balak, og Moab. Disse bør inkluderes for bedre søkbarhet.",
+      "current": "bileam, esel",
+      "suggested": "bileam, esel, engel, balak, moab"
+    },
+    {
+      "field": "description",
+      "severity": "minor",
+      "explanation": "Beskrivelsen er korrekt men kunne vært litt mer utfyllende for å gi bedre kontekst om at Bileam var på vei for å forbanne Israel.",
+      "current": "Bileams esel ser en engel og nekter å gå videre.",
+      "suggested": "Bileam er på vei for å forbanne Israel, men eselet hans ser Herrens engel og nekter å gå videre. Til slutt åpner Gud eselets munn så det taler til Bileam."
+    }
+  ],
+  "summary": "Historien har en kritisk feil: referansen peker til 1. Mosebok 1:1-10 (skapelsesberetningen), mens historien om Bileams esel finnes i 4. Mosebok 22:21-35. I tillegg er sluggen en test-identifikator som bør endres, og nøkkelordene bør utvides for bedre søkbarhet.",
+  "score": 2,
+  "revisedStory": {
+    "slug": "bileams-esel",
+    "title": "Bileams esel",
+    "keywords": [
+      "bileam",
+      "esel",
+      "engel",
+      "balak",
+      "moab"
+    ],
+    "description": "Bileam er på vei for å forbanne Israel, men eselet hans ser Herrens engel og nekter å gå videre. Til slutt åpner Gud eselets munn så det taler til Bileam.",
+    "category": "oerkenvandringen",
+    "references": [
+      {
+        "bookId": 4,
+        "startChapter": 22,
+        "startVerse": 21,
+        "endChapter": 22,
+        "endVerse": 35
+      }
+    ]
+  }
+}

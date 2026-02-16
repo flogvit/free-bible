@@ -1,0 +1,48 @@
+{
+  "issues": [
+    {
+      "field": "slug",
+      "severity": "minor",
+      "explanation": "Sluggen har en skrivefeil: 'kjerligheten' mangler æ (burde vært 'kjaerligheten' eller tilsvarende). Den bør også matche tittelen bedre.",
+      "current": "salomos-hoysang-om-kjerligheten",
+      "suggested": "kjaerlighetens-lovsang-i-hoysangen"
+    },
+    {
+      "field": "references",
+      "severity": "major",
+      "explanation": "Referansen dekker kun Høysangen 8:5-14, som er avslutningen av boken. Selv om dette avsnittet inneholder det berømte verset om kjærligheten som er sterk som døden (8:6-7), handler historien/tittelen om 'Kjærlighetens lovsang i Høysangen' generelt. For å bedre dekke kjærlighetens høydepunkt og den mest sentrale passasjen, bør referansen i det minste starte fra 8:5, men den kunne også inkludere tidligere nøkkelpassasjer. Imidlertid er 8:5-14 et rimelig utvalg som inneholder kjernebudskapet. Referansen er akseptabel men kunne vært mer dekkende. De viktigste versene (8:6-7) er med."
+    },
+    {
+      "field": "description",
+      "severity": "minor",
+      "explanation": "Beskrivelsen sier 'den intense kjærligheten mellom brudgommen og bruden', men den refererte teksten bruker ikke ordet 'brudgom' direkte. Teksten omtaler 'elskede'. Dessuten dekker den refererte passasjen også temaer som den lille søsteren (v.8-9) og Salomos vingård (v.11-12), ikke bare kjærligheten mellom to elskende. Beskrivelsen er likevel en rimelig oppsummering av hovedtemaet."
+    }
+  ],
+  "summary": "Historien er i hovedsak god. Sluggen inneholder en skrivefeil ('kjerligheten' i stedet for 'kjaerligheten'). Referansen til Høysangen 8:5-14 er korrekt og inneholder det sentrale avsnittet om kjærligheten som er sterk som døden. BookId 22 er korrekt for Høysangen. Kategorien 'visdomslitteratur' er passende. Nøkkelordene er relevante. Hovedproblemet er den lille skrivefeilen i sluggen.",
+  "score": 8,
+  "revisedStory": {
+    "slug": "kjaerlighetens-lovsang-i-hoysangen",
+    "title": "Kjærlighetens lovsang i Høysangen",
+    "keywords": [
+      "høysangen",
+      "kjærlighet",
+      "brud",
+      "brudgom",
+      "salomo",
+      "poesi",
+      "segl",
+      "flamme"
+    ],
+    "description": "Høysangen beskriver den intense kjærligheten mellom brudgommen og bruden, og feirer kjærligheten som sterkere enn døden.",
+    "category": "visdomslitteratur",
+    "references": [
+      {
+        "bookId": 22,
+        "startChapter": 8,
+        "startVerse": 5,
+        "endChapter": 8,
+        "endVerse": 14
+      }
+    ]
+  }
+}

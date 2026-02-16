@@ -1,0 +1,55 @@
+{
+  "issues": [
+    {
+      "field": "slug",
+      "severity": "minor",
+      "explanation": "Sluggen 'amos-syn-og-formaning' stemmer ikke godt overens med tittelen 'Amos' kall og budskap'. Sluggen bør gjenspeile tittelen.",
+      "current": "amos-syn-og-formaning",
+      "suggested": "amos-kall-og-budskap"
+    },
+    {
+      "field": "description",
+      "severity": "minor",
+      "explanation": "Beskrivelsen nevner at Amos 'kaller folket tilbake til rettferdighet', men den refererte teksten (Amos 1-2) handler primært om domsord mot folkeslagene og Israel/Juda, ikke en eksplisitt oppfordring til omvendelse. Beskrivelsen nevner også 'avgudsdyrkelse' som et sentralt tema, men teksten fokuserer mer på sosial urettferdighet og brudd på pakten. Beskrivelsen bør justeres for å bedre matche innholdet.",
+      "current": "Amos, en sauegjeter fra Tekoa, blir kalt av Gud til å profetere mot Israel. Han forkynner Guds dom over sosial urettferdighet og avgudsdyrkelse, og kaller folket tilbake til rettferdighet.",
+      "suggested": "Amos, en saueeier fra Tekoa, mottar Guds ord om dom over Israel og de omkringliggende folkeslagene. Gjennom en serie domsord avslører han deres overtredelser, inkludert sosial urettferdighet og brudd på Guds lov."
+    },
+    {
+      "field": "keywords",
+      "severity": "minor",
+      "explanation": "Nøkkelordet 'sauegjeter' er litt unøyaktig – bibelteksten sier 'saueeierne' (ikke gjeter). Dessuten mangler relevante søkeord som 'domsord', 'folkeslag' og 'overtredelser' som er sentrale temaer i teksten.",
+      "current": "sauegjeter",
+      "suggested": "saueeier, domsord, folkeslag, overtredelser"
+    }
+  ],
+  "summary": "Historien er i hovedsak god. Referansene er korrekte – Amos 1:1-2:16 (bookId 30) dekker innledningen til Amos' bok med hans kall og domsordene mot folkeslagene og Israel. Sluggen stemmer ikke overens med tittelen og bør justeres. Beskrivelsen er litt upresis i forhold til den faktiske bibelteksten. Nøkkelordene kan forbedres noe.",
+  "score": 7,
+  "revisedStory": {
+    "slug": "amos-kall-og-budskap",
+    "title": "Amos' kall og budskap",
+    "keywords": [
+      "amos",
+      "profet",
+      "rettferdighet",
+      "dom",
+      "israel",
+      "tekoa",
+      "saueeier",
+      "domsord",
+      "folkeslag",
+      "overtredelser",
+      "juda"
+    ],
+    "description": "Amos, en saueeier fra Tekoa, mottar Guds ord om dom over Israel og de omkringliggende folkeslagene. Gjennom en serie domsord avslører han deres overtredelser, inkludert sosial urettferdighet og brudd på Guds lov.",
+    "category": "profetene",
+    "references": [
+      {
+        "bookId": 30,
+        "startChapter": 1,
+        "startVerse": 1,
+        "endChapter": 2,
+        "endVerse": 16
+      }
+    ]
+  }
+}

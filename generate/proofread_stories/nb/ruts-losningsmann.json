@@ -1,0 +1,54 @@
+{
+  "issues": [
+    {
+      "field": "category",
+      "severity": "major",
+      "explanation": "Ruts bok hører kronologisk til dommertiden, men kategorien 'dommerne' refererer typisk til Dommernes bok. Ruts bok klassifiseres ofte separat. Likevel, siden Rut foregår i dommertiden (Rut 1:1), er 'dommerne' en akseptabel kategori. Ingen endring nødvendig."
+    },
+    {
+      "field": "keywords",
+      "severity": "minor",
+      "explanation": "Viktige nøkkelord som 'naomi', 'obed', 'david', 'sandal' og 'innløsning' mangler. Obed og David nevnes eksplisitt i teksten og er sentrale. Sandal-skikken er et ikonisk element. 'losningsmann' bør også ha riktig stavemåte uten spesialtegn for søkbarhet.",
+      "current": "[\"rut\",\"boas\",\"losningsmann\",\"byport\",\"ekteskap\",\"arv\",\"betlehem\"]",
+      "suggested": "[\"rut\",\"boas\",\"losningsmann\",\"byport\",\"ekteskap\",\"arv\",\"betlehem\",\"naomi\",\"obed\",\"david\",\"sandal\",\"innlosning\"]"
+    },
+    {
+      "field": "description",
+      "severity": "minor",
+      "explanation": "Beskrivelsen er god, men den nevner kun forhandlingen og ekteskapet. Den utelater fødselen av Obed og koblingen til David, som er klimakset i teksten (v.13-17). En mer komplett beskrivelse ville nevne dette.",
+      "current": "Boas forhandler med en nærmere løsningsmann ved byporten i Betlehem og sikrer seg retten til å løse Naomis jord og ta Rut til ekte, slik at Elimelek-slektens arv blir bevart.",
+      "suggested": "Boas forhandler med en nærmere løsningsmann ved byporten i Betlehem og sikrer seg retten til å løse Naomis jord og ta Rut til ekte. De gifter seg, og Rut føder sønnen Obed, som blir farfar til kong David."
+    }
+  ],
+  "summary": "Historien er generelt god. Referansene er korrekte – Rut 4:1-17 (bookId 8) dekker nøyaktig den beskrevne fortellingen. Kategorien 'dommerne' er akseptabel da Ruts bok utspiller seg i dommertiden. Mindre forbedringer kan gjøres i nøkkelord og beskrivelse for å dekke hele tekstens innhold, inkludert fødselen av Obed og slektslinjen til David.",
+  "score": 8,
+  "revisedStory": {
+    "slug": "ruts-losningsmann",
+    "title": "Rut og løsningsmannen ved byporten",
+    "keywords": [
+      "rut",
+      "boas",
+      "losningsmann",
+      "byport",
+      "ekteskap",
+      "arv",
+      "betlehem",
+      "naomi",
+      "obed",
+      "david",
+      "sandal",
+      "innlosning"
+    ],
+    "description": "Boas forhandler med en nærmere løsningsmann ved byporten i Betlehem og sikrer seg retten til å løse Naomis jord og ta Rut til ekte. De gifter seg, og Rut føder sønnen Obed, som blir farfar til kong David.",
+    "category": "dommerne",
+    "references": [
+      {
+        "bookId": 8,
+        "startChapter": 4,
+        "startVerse": 1,
+        "endChapter": 4,
+        "endVerse": 17
+      }
+    ]
+  }
+}

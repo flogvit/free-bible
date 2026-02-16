@@ -1,0 +1,48 @@
+{
+  "issues": [
+    {
+      "field": "category",
+      "severity": "minor",
+      "explanation": "Kategorien 'landnaam' er skrevet feil. Det korrekte norske uttrykket er 'landnaam' – men la oss sjekke stavemåten. Faktisk er 'landnaam' en gyldig kategori i listen, så dette er korrekt."
+    },
+    {
+      "field": "keywords",
+      "severity": "minor",
+      "explanation": "Noen viktige nøkkelord mangler. 'Amoritter' (amoreerne/amorittene) er sentrale motstandere i historien. Også 'hagl'/'haglsteiner' og 'Bet-Horon' er relevante. 'Ajalon' bør skrives 'ajjalon' for å matche bibelteksten, men lowercase 'ajalon' er akseptabelt som søkeord.",
+      "current": "josva, sol, måne, gibeon, ajalon, mirakel",
+      "suggested": "josva, sol, måne, gibeon, ajalon, amoritter, mirakel, bet-horon"
+    },
+    {
+      "field": "references",
+      "severity": "minor",
+      "explanation": "Referansen dekker Josva 10:1-15 som inneholder hele historien om solen som står stille. Selve mirakelet med solen er i vers 12-14, men konteksten med amoritterkongenes angrep og Guds inngripen (vers 1-11) er viktig bakgrunn. Noen bibler inkluderer også videre i kapitlet (til vers 15 som avslutter episoden med retur til Gilgal), så referansen er god."
+    }
+  ],
+  "summary": "Historien er generelt god. Referansene er korrekte – Josva 10:1-15 dekker hele beretningen om solen som står stille, inkludert konteksten med amoritterkongenes angrep. Kategorien 'landnaam' er riktig. Tittelen og beskrivelsen samsvarer med bibelteksten. Noen ekstra nøkkelord som 'amoritter' kan forbedre søkbarheten.",
+  "score": 8,
+  "revisedStory": {
+    "slug": "solen-star-stille",
+    "title": "Solen står stille",
+    "keywords": [
+      "josva",
+      "sol",
+      "måne",
+      "gibeon",
+      "ajalon",
+      "amoritter",
+      "mirakel",
+      "bet-horon"
+    ],
+    "description": "Josva ber Gud om at solen og månen skal stå stille mens Israel kjemper mot amorittene, og Gud hører hans bønn og gir Israel seier.",
+    "category": "landnaam",
+    "references": [
+      {
+        "bookId": 6,
+        "startChapter": 10,
+        "startVerse": 1,
+        "endChapter": 10,
+        "endVerse": 15
+      }
+    ]
+  }
+}

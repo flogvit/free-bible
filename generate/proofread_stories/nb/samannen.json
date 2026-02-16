@@ -1,0 +1,60 @@
+{
+  "issues": [
+    {
+      "field": "slug",
+      "severity": "critical",
+      "explanation": "Sluggen 'samannen' mangler bokstaven 'å' og er en skrivefeil. Den burde være 'lignelsen-om-samannen' eller lignende for å matche tittelen. Siden URL-slugs vanligvis ikke bruker 'å', er 'samannen' akseptabelt som forenkling, men det matcher ikke tittelen godt. En bedre slug ville vært 'lignelsen-om-samannen' for å matche tittelen 'Lignelsen om såmannen'.",
+      "current": "samannen",
+      "suggested": "lignelsen-om-samannen"
+    },
+    {
+      "field": "keywords",
+      "severity": "minor",
+      "explanation": "Nøkkelordet 'steingrunn' mangler – dette er en viktig jordtype i lignelsen. Ordet 'lignelse' bør også være med som søkeord. 'torner' kan erstattes med 'tornebusker' som er mer i tråd med bibelteksten.",
+      "current": "[\"såmann\", \"frø\", \"jord\", \"vei\", \"torner\", \"frukt\"]",
+      "suggested": "[\"såmann\", \"frø\", \"jord\", \"vei\", \"tornebusker\", \"steingrunn\", \"frukt\", \"lignelse\", \"guds ord\"]"
+    }
+  ],
+  "summary": "Historien er i hovedsak korrekt. Referansene til Matteus 13:1-23, Markus 4:1-20 og Lukas 8:4-15 er alle korrekte og dekker lignelsen om såmannen. Tittelen, beskrivelsen og kategorien er gode. De to problemene er: (1) sluggen 'samannen' matcher ikke tittelen godt – den burde inkludere 'lignelsen-om' for bedre gjenkjennelse, og (2) nøkkelordlisten mangler noen viktige termer som 'steingrunn' og 'lignelse'.",
+  "score": 7,
+  "revisedStory": {
+    "slug": "lignelsen-om-samannen",
+    "title": "Lignelsen om såmannen",
+    "keywords": [
+      "såmann",
+      "frø",
+      "jord",
+      "vei",
+      "tornebusker",
+      "steingrunn",
+      "frukt",
+      "lignelse",
+      "guds ord"
+    ],
+    "description": "Jesus forteller om en såmann som sår frø i forskjellig jord – et bilde på hvordan mennesker tar imot Guds ord.",
+    "category": "jesu-lignelser",
+    "references": [
+      {
+        "bookId": 40,
+        "startChapter": 13,
+        "startVerse": 1,
+        "endChapter": 13,
+        "endVerse": 23
+      },
+      {
+        "bookId": 41,
+        "startChapter": 4,
+        "startVerse": 1,
+        "endChapter": 4,
+        "endVerse": 20
+      },
+      {
+        "bookId": 42,
+        "startChapter": 8,
+        "startVerse": 4,
+        "endChapter": 8,
+        "endVerse": 15
+      }
+    ]
+  }
+}

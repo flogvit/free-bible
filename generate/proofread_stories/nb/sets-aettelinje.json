@@ -1,0 +1,50 @@
+{
+  "issues": [
+    {
+      "field": "keywords",
+      "severity": "minor",
+      "explanation": "Bibelteksten bruker formen 'Metusjalah', ikke 'Metusalem'. Nøkkelordet bør oppdateres til å matche bibelteksten, og flere relevante nøkkelord som 'adam', 'noa/noah', 'lamek' og 'slekt' kan legges til for bedre søkbarhet.",
+      "current": "[\"set\", \"ættelinje\", \"henok\", \"metusalem\", \"slektsregister\"]",
+      "suggested": "[\"set\", \"ættelinje\", \"henok\", \"metusjalah\", \"slektsregister\", \"adam\", \"noah\", \"lamek\"]"
+    },
+    {
+      "field": "description",
+      "severity": "minor",
+      "explanation": "Beskrivelsen nevner 'Noa' men bibelteksten bruker 'Noah'. Beskrivelsen er ellers god og dekkende.",
+      "current": "Slektsregisteret fra Adam gjennom Set til Noa, inkludert Henok som vandret med Gud.",
+      "suggested": "Slektsregisteret fra Adam gjennom Set til Noah, inkludert Henok som vandret med Gud."
+    },
+    {
+      "field": "category",
+      "severity": "minor",
+      "explanation": "Kategorien 'skapelsen' kan forsvares siden dette er en fortsettelse av skapelsesberetningen i 1. Mosebok, men 'patriarkene' kunne også vært passende da det handler om stamfedrene før syndfloden. Beholder 'skapelsen' siden det er urhistorien."
+    }
+  ],
+  "summary": "Historien er i hovedsak korrekt. Referansen til 1. Mosebok 5:1-32 er helt riktig og dekker hele Sets ættelinje fra Adam til Noah. Små forbedringer kan gjøres i nøkkelord (Metusjalah i stedet for Metusalem for å matche bibelteksten) og beskrivelsen (Noah i stedet for Noa). Kategorien er akseptabel.",
+  "score": 8,
+  "revisedStory": {
+    "slug": "sets-aettelinje",
+    "title": "Sets ættelinje",
+    "keywords": [
+      "set",
+      "ættelinje",
+      "henok",
+      "metusjalah",
+      "slektsregister",
+      "adam",
+      "noah",
+      "lamek"
+    ],
+    "description": "Slektsregisteret fra Adam gjennom Set til Noah, inkludert Henok som vandret med Gud.",
+    "category": "skapelsen",
+    "references": [
+      {
+        "bookId": 1,
+        "startChapter": 5,
+        "startVerse": 1,
+        "endChapter": 5,
+        "endVerse": 32
+      }
+    ]
+  }
+}

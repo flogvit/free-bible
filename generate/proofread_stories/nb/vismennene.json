@@ -1,0 +1,54 @@
+{
+  "issues": [
+    {
+      "field": "references",
+      "severity": "critical",
+      "explanation": "Den andre referansen (Lukas 2:1-20) handler om Jesu fødsel og gjeternes besøk, ikke om vismennenes besøk. Historien om vismennene finnes kun i Matteus 2:1-12. Lukas 2:1-20 er en helt annen fortelling og bør fjernes.",
+      "current": "bookId 42, Lukas 2:1-20",
+      "suggested": "Fjern referansen til Lukas 2:1-20. Behold kun Matteus 2:1-12."
+    },
+    {
+      "field": "slug",
+      "severity": "minor",
+      "explanation": "Sluggen 'vismennene' er akseptabel, men 'vismennene-fra-osten' ville bedre matche tittelen 'Vismennene fra Østen'.",
+      "current": "vismennene",
+      "suggested": "vismennene-fra-osten"
+    },
+    {
+      "field": "keywords",
+      "severity": "minor",
+      "explanation": "Nøkkelordet 'tilbedelse' kunne vært inkludert siden vismennene kom for å tilbe Jesusbarnet, og 'jesus' er et viktig søkeord som mangler.",
+      "current": "vismenn, stjerne, gull, røkelse, myrra, betlehem, herodes",
+      "suggested": "vismenn, stjerne, gull, røkelse, myrra, betlehem, herodes, tilbedelse, jesus, gaver"
+    }
+  ],
+  "summary": "Historien har én kritisk feil: Lukas 2:1-20 er inkludert som referanse, men denne teksten handler om Jesu fødsel og gjeternes besøk, ikke om vismennene. Historien om vismennene finnes utelukkende i Matteus 2:1-12, som er korrekt inkludert. Slug og keywords har mindre forbedringspotensial.",
+  "score": 4,
+  "revisedStory": {
+    "slug": "vismennene-fra-osten",
+    "title": "Vismennene fra Østen",
+    "keywords": [
+      "vismenn",
+      "stjerne",
+      "gull",
+      "røkelse",
+      "myrra",
+      "betlehem",
+      "herodes",
+      "tilbedelse",
+      "jesus",
+      "gaver"
+    ],
+    "description": "Vise menn fra Østen følger en stjerne til Betlehem og bringer gaver til Jesusbarnet.",
+    "category": "jesus-liv",
+    "references": [
+      {
+        "bookId": 40,
+        "startChapter": 2,
+        "startVerse": 1,
+        "endChapter": 2,
+        "endVerse": 12
+      }
+    ]
+  }
+}

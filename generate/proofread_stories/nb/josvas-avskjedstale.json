@@ -1,0 +1,43 @@
+{
+  "issues": [
+    {
+      "field": "category",
+      "severity": "minor",
+      "explanation": "Kategorien 'landnaam' er skrevet med dobbel 'a'. Riktig norsk stavemåte ville være 'landnaam' som ser ut til å være den aksepterte slug-formen i systemet, men det kan diskuteres. Siden dette er en av de forhåndsdefinerte kategoriene i systemet, er dette korrekt."
+    },
+    {
+      "field": "keywords",
+      "severity": "minor",
+      "explanation": "Noen relevante nøkkelord mangler, som 'sikem' (stedet der hendelsen finner sted), 'israel' og 'stein' (vitnesteinen som reises). Disse ville hjelpe brukere å finne historien.",
+      "current": "josva, avskjed, valg, tjen herren, pakt",
+      "suggested": "josva, avskjed, valg, tjen herren, pakt, sikem, israel, vitne"
+    }
+  ],
+  "summary": "Historien er generelt god. Referansene er korrekte - Josva 24:1-28 dekker Josvas avskjedstale i Sikem der han utfordrer folket til å velge hvem de vil tjene. Slug, tittel og beskrivelse er treffende. Kategorien 'landnaam' passer godt da dette skjer i forbindelse med landnåmet. Noen ekstra nøkkelord kunne vært lagt til for bedre søkbarhet.",
+  "score": 9,
+  "revisedStory": {
+    "slug": "josvas-avskjedstale",
+    "title": "Josvas avskjedstale",
+    "keywords": [
+      "josva",
+      "avskjed",
+      "valg",
+      "tjen herren",
+      "pakt",
+      "sikem",
+      "israel",
+      "vitne"
+    ],
+    "description": "Josva utfordrer folket: 'Velg i dag hvem dere vil tjene! Men jeg og mitt hus vil tjene Herren.'",
+    "category": "landnaam",
+    "references": [
+      {
+        "bookId": 6,
+        "startChapter": 24,
+        "startVerse": 1,
+        "endChapter": 24,
+        "endVerse": 28
+      }
+    ]
+  }
+}

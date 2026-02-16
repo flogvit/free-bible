@@ -1,0 +1,51 @@
+{
+  "issues": [
+    {
+      "field": "keywords",
+      "severity": "minor",
+      "explanation": "Nøkkelordet 'philip' er engelsk. Det bør enten være 'filip' (norsk form) eller fjernes, ettersom Filip ikke er eksplisitt nevnt i den refererte teksten (Apg 8:1-4). Filip nevnes først fra vers 5 og utover. Nøkkelordet 'stefanus' bør legges til siden teksten refererer til hans død som kontekst.",
+      "current": "philip",
+      "suggested": "stefanus (legg til), fjern 'philip' eller endre til 'filip'"
+    },
+    {
+      "field": "keywords",
+      "severity": "minor",
+      "explanation": "Nøkkelordet 'judea' mangler. Teksten nevner eksplisitt at de ble spredt utover Judea og Samaria.",
+      "current": "(mangler)",
+      "suggested": "judea"
+    },
+    {
+      "field": "description",
+      "severity": "minor",
+      "explanation": "Beskrivelsen nevner 'Philip' indirekte gjennom nøkkelord, men teksten i Apg 8:1-4 nevner ikke Filip spesifikt. Beskrivelsen sier 'forkynner evangeliet' mens teksten sier 'forkynte Ordet'. Dette er en liten nyanseforskjell, men akseptabelt. Ellers er beskrivelsen presis og god."
+    }
+  ],
+  "summary": "Historien er i all hovedsak god. Referansene er korrekte - Apostlenes gjerninger 8:1-4 dekker nettopp Saulus' forfølgelse av menigheten og spredningen av de troende. Kategorien 'urkirken' er riktig. Noen mindre justeringer anbefales i nøkkelordene: 'philip' bør fjernes (ikke nevnt i teksten) eller endres til norsk form, og 'stefanus' og 'judea' bør legges til som relevante søkeord.",
+  "score": 8,
+  "revisedStory": {
+    "slug": "saulus-forfolgelse-av-menigheten",
+    "title": "Saulus forfølger menigheten",
+    "keywords": [
+      "saulus",
+      "forfølgelse",
+      "jerusalem",
+      "menigheten",
+      "spredning",
+      "samaria",
+      "judea",
+      "stefanus",
+      "fengsel"
+    ],
+    "description": "Etter Stefanus' martyrium bryter en stor forfølgelse løs mot menigheten i Jerusalem, ledet av Saulus. De troende spres ut over Judea og Samaria og forkynner Ordet der de kommer.",
+    "category": "urkirken",
+    "references": [
+      {
+        "bookId": 44,
+        "startChapter": 8,
+        "startVerse": 1,
+        "endChapter": 8,
+        "endVerse": 4
+      }
+    ]
+  }
+}

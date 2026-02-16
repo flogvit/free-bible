@@ -1,0 +1,51 @@
+{
+  "issues": [
+    {
+      "field": "category",
+      "severity": "major",
+      "explanation": "Johannes 15:1-17 er ikke en lignelse, men en del av Jesu avskjedstale til disiplene. Jesus bruker vintre-bildet som en allegori/metafor i direkte undervisning, ikke som en lignelse (parabel). Kategorien bør være 'jesus-liv' siden dette er del av Jesu undervisning/avskjedstale.",
+      "current": "jesu-lignelser",
+      "suggested": "jesus-liv"
+    },
+    {
+      "field": "keywords",
+      "severity": "minor",
+      "explanation": "Viktige temaer fra teksten mangler som nøkkelord, spesielt 'kjærlighet' (et hovedtema fra v.9-17), 'vinbonden' (Faderen), og 'Guds kjærlighet'. Også 'vintre' bør være 'vintreet' for bedre søketreff.",
+      "current": "vintre, grener, frukt, bli i meg, beskjæring",
+      "suggested": "vintreet, grener, frukt, bli i meg, beskjæring, kjærlighet, vinbonden"
+    },
+    {
+      "field": "description",
+      "severity": "minor",
+      "explanation": "Beskrivelsen er korrekt men dekker bare deler av passasjen. Den nevner ikke kjærlighetsbudet som er et sentralt tema i siste del av teksten (v.9-17).",
+      "current": "Jesus sier: 'Jeg er vintreet, dere er grenene. Den som blir i meg, bærer mye frukt.'",
+      "suggested": "Jesus sier: 'Jeg er det sanne vintreet, dere er grenene.' Den som blir i ham bærer mye frukt, og han befaler disiplene å elske hverandre."
+    }
+  ],
+  "summary": "Historien har korrekte referanser (Johannes 15:1-17) og en god tittel. Hovedproblemet er at kategorien 'jesu-lignelser' er misvisende – dette er ikke en lignelse, men direkte undervisning i Jesu avskjedstale. I tillegg kan nøkkelord og beskrivelse forbedres for å bedre dekke hele passasjens innhold, spesielt kjærlighetstemaet.",
+  "score": 6,
+  "revisedStory": {
+    "slug": "vintreet-og-grenene",
+    "title": "Vintreet og grenene",
+    "keywords": [
+      "vintreet",
+      "grener",
+      "frukt",
+      "bli i meg",
+      "beskjæring",
+      "kjærlighet",
+      "vinbonden"
+    ],
+    "description": "Jesus sier: 'Jeg er det sanne vintreet, dere er grenene.' Den som blir i ham bærer mye frukt, og han befaler disiplene å elske hverandre.",
+    "category": "jesus-liv",
+    "references": [
+      {
+        "bookId": 43,
+        "startChapter": 15,
+        "startVerse": 1,
+        "endChapter": 15,
+        "endVerse": 17
+      }
+    ]
+  }
+}

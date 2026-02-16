@@ -1,0 +1,60 @@
+{
+  "issues": [
+    {
+      "field": "slug",
+      "severity": "minor",
+      "explanation": "Slug-en sier 'tornens-kjod' som er litt klønete og inneholder en skrivefeil ('kjod' i stedet for 'kjodet'). Den bør matche tittelen bedre.",
+      "current": "paulus-omtaler-tornens-kjod",
+      "suggested": "paulus-torn-i-kjodet"
+    },
+    {
+      "field": "description",
+      "severity": "minor",
+      "explanation": "Bibelteksten (osnb2) bruker 'torn i kroppen' (v.7), ikke 'torn i kjødet'. Beskrivelsen er ellers korrekt i innhold. Passasjen handler også om Paulus' synserfaringer (v.1-6) og hans holdning til svakheter (v.10), men beskrivelsen fokuserer korrekt på hovedtemaet. Liten terminologisk avvik med oversettelsen som brukes.",
+      "current": "Paulus forteller om en torn i kjødet som plager ham",
+      "suggested": "Paulus forteller om en torn i kroppen som plager ham (samsvar med osnb2-teksten)"
+    },
+    {
+      "field": "keywords",
+      "severity": "minor",
+      "explanation": "Nøkkelordet 'kjødet' bør muligens være 'kroppen' for å samsvare med bibelteksten. I tillegg mangler noen relevante søkeord som 'hovmod', 'åpenbaringer' og '2. korinterne'.",
+      "current": "kjødet",
+      "suggested": "kroppen, hovmod, åpenbaringer, 2. korinterne"
+    },
+    {
+      "field": "references",
+      "severity": "minor",
+      "explanation": "Passasjen v.1-6 handler om Paulus' synserfaringer og skryt, og tornen i kjødet introduseres først i v.7. Referansen kunne starte ved v.7, men å inkludere v.1-6 gir kontekst for hvorfor tornen ble gitt (de overveldende åpenbaringene). Referansen er akseptabel slik den er."
+    }
+  ],
+  "summary": "Historien er i det store og hele korrekt. Referansen til 2. Korinterne 12:1-10 dekker historien om Paulus' torn godt - tornen omtales fra v.7 med kontekst fra v.1-6. Slug-en har en liten skrivefeil, og bibelteksten bruker 'kroppen' der beskrivelsen sier 'kjødet' (begge er kjente oversettelser av det greske 'sarx'). Noen nøkkelord kan forbedres.",
+  "score": 8,
+  "revisedStory": {
+    "slug": "paulus-torn-i-kjodet",
+    "title": "Paulus' torn i kjødet",
+    "keywords": [
+      "paulus",
+      "torn",
+      "kjødet",
+      "kroppen",
+      "svakhet",
+      "nåde",
+      "kraft",
+      "bønn",
+      "hovmod",
+      "åpenbaringer",
+      "2. korinterne"
+    ],
+    "description": "Paulus forteller om en torn i kroppen som ble gitt ham for at han ikke skulle bli hovmodig på grunn av de overveldende åpenbaringene. Tre ganger ba han Herren om å ta den bort, men Gud svarte at hans nåde er nok, for kraften fullendes i svakhet.",
+    "category": "paulus",
+    "references": [
+      {
+        "bookId": 47,
+        "startChapter": 12,
+        "startVerse": 1,
+        "endChapter": 12,
+        "endVerse": 10
+      }
+    ]
+  }
+}

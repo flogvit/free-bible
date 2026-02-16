@@ -1,0 +1,59 @@
+{
+  "issues": [
+    {
+      "field": "slug",
+      "severity": "major",
+      "explanation": "Sluggen 'babelskapet-og-folkeslagenes-opphav' inneholder 'babelskapet' som ikke har noe med tittelen eller innholdet å gjøre. Babels tårn (1. Mos 11) er en annen historie. Sluggen bør gjenspeile tittelen og innholdet, altså folkeslagenes opphav etter syndfloden.",
+      "current": "babelskapet-og-folkeslagenes-opphav",
+      "suggested": "folkeslagenes-opphav-etter-syndfloden"
+    },
+    {
+      "field": "keywords",
+      "severity": "minor",
+      "explanation": "Bibelteksten bruker navneformen 'Noah' (ikke 'Noa') og 'Kam' (ikke 'Ham'). Dessuten mangler viktige nøkkelord som 'nimrod', 'kanaan', 'kusj' og 'eber' som alle er fremtredende i teksten. 'Noah' og 'Kam' bør legges til for å matche bibeltekstens stavemåte.",
+      "current": "noa, sem, ham, jafet, folkeslagene, slektstavle, nasjoner",
+      "suggested": "noah, sem, kam, jafet, folkeslagene, slektstavle, nasjoner, nimrod, kanaan, eber"
+    },
+    {
+      "field": "description",
+      "severity": "minor",
+      "explanation": "Beskrivelsen bruker 'Ham' mens bibelteksten (osnb2) bruker 'Kam'. Bør oppdateres for konsistens med bibelteksten.",
+      "current": "Etter syndfloden sprer Noas tre sønner – Sem, Ham og Jafet – seg utover jorden, og deres etterkommere blir opphav til alle verdens folkeslag.",
+      "suggested": "Etter syndfloden sprer Noahs tre sønner – Sem, Kam og Jafet – seg utover jorden, og deres etterkommere blir opphav til alle verdens folkeslag."
+    },
+    {
+      "field": "category",
+      "severity": "minor",
+      "explanation": "Kategorien 'skapelsen' kan diskuteres. 1. Mosebok 10 ligger etter syndfloden og før patriarkene. 'Skapelsen' dekker typisk 1. Mos 1-2, men urhistorien (1. Mos 1-11) kan falle inn under denne kategorien. Alternativt kunne 'patriarkene' passe bedre da dette er stamfedre-materiale, men 'skapelsen' er akseptabelt for urhistorien."
+    }
+  ],
+  "summary": "Historien dekker 1. Mosebok 10, folkenes tabell (Table of Nations), og referansene er korrekte. Hovedproblemene er: (1) sluggen inneholder 'babelskapet' som er misvisende og refererer til Babels tårn (1. Mos 11), ikke folkenes tabell; (2) navneformene 'Noa' og 'Ham' avviker fra bibeltekstens 'Noah' og 'Kam'; (3) noen relevante nøkkelord mangler.",
+  "score": 6,
+  "revisedStory": {
+    "slug": "folkeslagenes-opphav-etter-syndfloden",
+    "title": "Folkeslagenes opphav etter syndfloden",
+    "keywords": [
+      "noah",
+      "sem",
+      "kam",
+      "jafet",
+      "folkeslagene",
+      "slektstavle",
+      "nasjoner",
+      "nimrod",
+      "kanaan",
+      "eber"
+    ],
+    "description": "Etter syndfloden sprer Noahs tre sønner – Sem, Kam og Jafet – seg utover jorden, og deres etterkommere blir opphav til alle verdens folkeslag.",
+    "category": "skapelsen",
+    "references": [
+      {
+        "bookId": 1,
+        "startChapter": 10,
+        "startVerse": 1,
+        "endChapter": 10,
+        "endVerse": 32
+      }
+    ]
+  }
+}

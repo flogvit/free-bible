@@ -1,0 +1,44 @@
+{
+  "issues": [
+    {
+      "field": "keywords",
+      "severity": "minor",
+      "explanation": "Bibelteksten bruker 'Aram' (ikke 'Syria') og Gehasi er en viktig del av historien. Nøkkelordet 'syria' kan beholdes for søkbarhet, men 'gehasi' og 'aram' bør legges til. 'Elisja' er den korrekte skrivemåten i bibelteksten, ikke 'elisa'.",
+      "current": "[\"naaman\", \"elisa\", \"spedalsk\", \"jordan\", \"helbredelse\", \"syria\"]",
+      "suggested": "[\"naaman\", \"elisja\", \"spedalsk\", \"jordan\", \"helbredelse\", \"aram\", \"gehasi\"]"
+    },
+    {
+      "field": "description",
+      "severity": "minor",
+      "explanation": "Beskrivelsen er korrekt men dekker kun helbredelsen. Historien inkluderer også Gehasis grådighet og straff, som er en vesentlig del av fortellingen. Beskrivelsen kan gjøres mer dekkende.",
+      "current": "Den syriske hærføreren Naaman helbredes for spedalskhet ved å bade syv ganger i Jordan.",
+      "suggested": "Den arameiske hærføreren Naaman helbredes for spedalskhet ved å bade sju ganger i Jordan etter profeten Elisjas ord, men Elisjas tjener Gehasi straffes med spedalskhet for sin grådighet."
+    }
+  ],
+  "summary": "Historien er i hovedsak korrekt. Referansen til 2. Kongebok 5:1-27 er helt riktig og dekker hele fortellingen. Mindre forbedringer kan gjøres: nøkkelordet 'elisa' bør være 'elisja' (som i bibelteksten), og beskrivelsen kunne inkludere Gehasi-episoden som utgjør en vesentlig del av kapitlet.",
+  "score": 8,
+  "revisedStory": {
+    "slug": "naaman-helbredes",
+    "title": "Naaman helbredes for spedalskhet",
+    "keywords": [
+      "naaman",
+      "elisja",
+      "spedalsk",
+      "jordan",
+      "helbredelse",
+      "aram",
+      "gehasi"
+    ],
+    "description": "Den arameiske hærføreren Naaman helbredes for spedalskhet ved å bade sju ganger i Jordan etter profeten Elisjas ord, men Elisjas tjener Gehasi straffes med spedalskhet for sin grådighet.",
+    "category": "kongetiden",
+    "references": [
+      {
+        "bookId": 12,
+        "startChapter": 5,
+        "startVerse": 1,
+        "endChapter": 5,
+        "endVerse": 27
+      }
+    ]
+  }
+}

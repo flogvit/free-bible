@@ -1,0 +1,37 @@
+{
+  "issues": [
+    {
+      "field": "slug",
+      "severity": "minor",
+      "explanation": "Slugen 'josefs-brødre-i-egypt' er generisk og matcher ikke tittelen 'Josefs beger i Benjamins sekk'. Slugen bør gjenspeile tittelen bedre.",
+      "current": "josefs-brødre-i-egypt",
+      "suggested": "josefs-beger-i-benjamins-sekk"
+    }
+  ],
+  "summary": "Historien er svært godt utformet. Referansen til 1. Mosebok 44:1-34 er helt korrekt og dekker nøyaktig den beskrevne hendelsen. Tittelen, beskrivelsen, nøkkelordene og kategorien er alle treffende. Det eneste mindre problemet er at slugen ikke matcher tittelen godt nok.",
+  "score": 9,
+  "revisedStory": {
+    "slug": "josefs-beger-i-benjamins-sekk",
+    "title": "Josefs beger i Benjamins sekk",
+    "keywords": [
+      "josef",
+      "benjamin",
+      "beger",
+      "egypt",
+      "prøvelse",
+      "brødre",
+      "juda"
+    ],
+    "description": "Josef legger sitt sølvbeger i Benjamins sekk for å prøve brødrene sine. Da bedrageri oppdages, trer Juda fram og tilbyr seg selv som slave i Benjamins sted.",
+    "category": "patriarkene",
+    "references": [
+      {
+        "bookId": 1,
+        "startChapter": 44,
+        "startVerse": 1,
+        "endChapter": 44,
+        "endVerse": 34
+      }
+    ]
+  }
+}

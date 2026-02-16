@@ -1,0 +1,43 @@
+{
+  "issues": [
+    {
+      "field": "keywords",
+      "severity": "minor",
+      "explanation": "Nøkkelordet 'bartimeus' er ikke relevant for denne passasjen. Bartimeus er navnet på den blinde mannen i Markus 10:46-52 og Lukas 18:35-43, men i Matteus' versjon nevnes det to blinde menn uten navn. Inkludering av 'bartimeus' kan være misvisende.",
+      "current": "bartimeus",
+      "suggested": "Fjern 'bartimeus' og legg til mer relevante nøkkelord som 'jeriko', 'medynk', 'barmhjertighet'"
+    },
+    {
+      "field": "keywords",
+      "severity": "minor",
+      "explanation": "Nøkkelord som 'jeriko', 'medynk' og 'barmhjertighet' ville vært nyttige tillegg for å hjelpe brukere å finne historien, da dette er sentrale elementer i teksten."
+    }
+  ],
+  "summary": "Historien er i hovedsak korrekt. Referansene stemmer perfekt med bibelteksten, og tittelen, beskrivelsen og kategorien er alle passende. Det eneste problemet er at nøkkelordet 'bartimeus' er inkludert, men dette navnet forekommer ikke i Matteus' versjon av denne beretningen (det tilhører Markus/Lukas-parallellene). Noen relevante nøkkelord som 'jeriko', 'medynk' og 'barmhjertighet' mangler.",
+  "score": 8,
+  "revisedStory": {
+    "slug": "jesus-helbreder-to-blinde",
+    "title": "Jesus helbreder to blinde menn",
+    "keywords": [
+      "jesus",
+      "blinde",
+      "helbredelse",
+      "tro",
+      "syn",
+      "jeriko",
+      "medynk",
+      "barmhjertighet"
+    ],
+    "description": "To blinde menn ved Jeriko roper til Jesus om barmhjertighet, og han helbreder dem slik at de får synet tilbake og følger ham.",
+    "category": "jesu-mirakler",
+    "references": [
+      {
+        "bookId": 40,
+        "startChapter": 20,
+        "startVerse": 29,
+        "endChapter": 20,
+        "endVerse": 34
+      }
+    ]
+  }
+}

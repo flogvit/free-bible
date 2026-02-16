@@ -1,0 +1,45 @@
+{
+  "issues": [
+    {
+      "field": "slug",
+      "severity": "critical",
+      "explanation": "Sluggen 'elia-blir-tatt-opp-til-himmelen' handler om Elia som blir tatt opp til himmelen, men historien handler om Gehasis grådighet etter Namans helbredelse. Sluggen må matche innholdet og tittelen.",
+      "current": "elia-blir-tatt-opp-til-himmelen",
+      "suggested": "gehasis-gradighet-namans-spedalskhet"
+    },
+    {
+      "field": "title",
+      "severity": "minor",
+      "explanation": "Tittelen 'Naman skjuler sin spedalskhet – Gehasis grådighet' er litt misvisende. Naman skjuler ikke sin spedalskhet i denne teksten – det er Gehasi som lyver og blir straffet med spedalskhet. En mer presis tittel bør fokusere på Gehasis bedrag og straff.",
+      "current": "Naman skjuler sin spedalskhet – Gehasis grådighet",
+      "suggested": "Gehasis grådighet og straff"
+    }
+  ],
+  "summary": "Historien har to problemer: 1) Sluggen 'elia-blir-tatt-opp-til-himmelen' har ingenting med historien å gjøre - den handler om Gehasis grådighet, ikke om Elia. 2) Tittelen er misvisende ved å si at Naman 'skjuler sin spedalskhet', noe som ikke er tema i den refererte teksten. Referansene (2. Kongebok 5:19-27) er korrekte og dekker historien godt. Kategorien, nøkkelordene og beskrivelsen er i hovedsak gode.",
+  "score": 4,
+  "revisedStory": {
+    "slug": "gehasis-gradighet-og-straff",
+    "title": "Gehasis grådighet og straff",
+    "keywords": [
+      "gehasi",
+      "elisja",
+      "naman",
+      "grådighet",
+      "spedalskhet",
+      "straff",
+      "løgn",
+      "sølv"
+    ],
+    "description": "Etter at Naman er blitt helbredet, avslår Elisja enhver betaling. Men tjeneren Gehasi løper etter Naman og lyver for å få gaver, og blir selv rammet av spedalskhet som straff.",
+    "category": "profetene",
+    "references": [
+      {
+        "bookId": 12,
+        "startChapter": 5,
+        "startVerse": 19,
+        "endChapter": 5,
+        "endVerse": 27
+      }
+    ]
+  }
+}

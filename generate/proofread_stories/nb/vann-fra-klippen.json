@@ -1,0 +1,47 @@
+{
+  "issues": [
+    {
+      "field": "category",
+      "severity": "major",
+      "explanation": "Historien handler om Israels ørkenvandring etter utgangen fra Egypt, ikke spesifikt om Moses som person. Kategorien 'oerkenvandringen' er mer passende enn 'moses', da dette er en typisk ørkenvandring-episode.",
+      "current": "moses",
+      "suggested": "oerkenvandringen"
+    },
+    {
+      "field": "keywords",
+      "severity": "minor",
+      "explanation": "Nøkkelordene mangler noen viktige begreper fra teksten, som 'horeb', 'massa', 'meriba' og 'ørken'. Disse er sentrale for historien.",
+      "current": "vann, klippe, moses, stav, tørst, refidim",
+      "suggested": "vann, klippe, moses, stav, tørst, refidim, horeb, massa, meriba"
+    }
+  ],
+  "summary": "Historien er generelt god. Referansene er korrekte — 2. Mosebok 17:1-7 dekker nøyaktig historien om vann fra klippen ved Refidim. Beskrivelsen samsvarer med bibelteksten. Kategorien bør endres til 'oerkenvandringen' da dette er en ørkenvandringsepisode, og nøkkelordene bør utvides med stedsnavn fra teksten.",
+  "score": 7,
+  "revisedStory": {
+    "slug": "vann-fra-klippen",
+    "title": "Vann fra klippen",
+    "keywords": [
+      "vann",
+      "klippe",
+      "moses",
+      "stav",
+      "tørst",
+      "refidim",
+      "horeb",
+      "massa",
+      "meriba",
+      "ørken"
+    ],
+    "description": "Moses slår på klippen med sin stav og vann strømmer ut for det tørstige folket ved Refidim.",
+    "category": "oerkenvandringen",
+    "references": [
+      {
+        "bookId": 2,
+        "startChapter": 17,
+        "startVerse": 1,
+        "endChapter": 17,
+        "endVerse": 7
+      }
+    ]
+  }
+}

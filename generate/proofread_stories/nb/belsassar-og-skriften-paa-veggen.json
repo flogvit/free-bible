@@ -1,0 +1,75 @@
+{
+  "issues": [
+    {
+      "field": "slug",
+      "severity": "critical",
+      "explanation": "Sluggen 'belsassar-og-skriften-paa-veggen' refererer til historien om Belsassar og skriften på veggen (Daniel 5), men historien handler verken om det eller om tittelen 'Nehustans kors – Hiskia fjerner avgudene'. Den faktiske bibelteksten handler om David som flykter til Adullam-hulen og Sauls massakre av prestene i Nob.",
+      "current": "belsassar-og-skriften-paa-veggen",
+      "suggested": "david-i-adullam-og-massakren-i-nob"
+    },
+    {
+      "field": "title",
+      "severity": "critical",
+      "explanation": "Tittelen 'Nehustans kors – Hiskia fjerner avgudene' handler om Hiskias reformer (2. Kong 18), men bibelteksten handler om David som flykter til Adullam-hulen og Sauls drap på prestene i Nob. Tittelen må endres fullstendig.",
+      "current": "Nehustans kors – Hiskia fjerner avgudene",
+      "suggested": "David i Adullam-hulen og massakren i Nob"
+    },
+    {
+      "field": "keywords",
+      "severity": "critical",
+      "explanation": "Nøkkelordene er delvis relevante (saulus/david/forfølgelse/flukt er ok), men mangler viktige nøkkelord som 'adullam', 'nob', 'akimelek', 'doeg', 'prester', 'massakre'. 'salme' og 'nåde' er ikke direkte relevante for denne teksten. 'saulus' bør være 'saul' (GT-kontekst, ikke NT).",
+      "current": "saulus, david, forfølgelse, salme, flukt, nåde",
+      "suggested": "saul, david, forfølgelse, flukt, adullam, nob, akimelek, doeg, prester, ebjatar"
+    },
+    {
+      "field": "description",
+      "severity": "major",
+      "explanation": "Beskrivelsen nevner at David 'samler en gruppe menn rundt seg mens han gjemmer seg for Saul i huler og ødemark', noe som delvis stemmer (v.1-2), men den utelater den viktigste delen av kapitlet: Sauls massakre av prestene i Nob og Ebjatars flukt til David. Beskrivelsen er ufullstendig og misvisende for hele kapittelet.",
+      "current": "Saul forfølger David som må flykte og leve som fredløs i ørkenen. David samler en gruppe menn rundt seg mens han gjemmer seg for Saul i huler og ødemark.",
+      "suggested": "David flykter til hulen i Adullam der han samler rundt 400 menn. Saul beskylder prestene i Nob for å ha hjulpet David og lar edomitten Doeg drepe 85 prester, men Ebjatar unnslipper og slutter seg til David."
+    },
+    {
+      "field": "category",
+      "severity": "minor",
+      "explanation": "Kategorien 'kongetiden' er korrekt. Historien foregår i perioden da Saul er konge og David er på flukt.",
+      "current": "kongetiden",
+      "suggested": "kongetiden"
+    },
+    {
+      "field": "references",
+      "severity": "minor",
+      "explanation": "Referansen til 1. Samuel 22:1-23 stemmer godt med bibelteksten som er oppgitt og dekker hele kapitlet. Referansen er korrekt.",
+      "current": "1. Samuel 22:1-23",
+      "suggested": "1. Samuel 22:1-23"
+    }
+  ],
+  "summary": "Historien har alvorlige problemer med at slug, tittel og nøkkelord ikke matcher den faktiske bibelteksten. Sluggen refererer til Belsassar (Daniel 5), tittelen til Hiskias reformer (2. Kongebok 18), mens bibelteksten faktisk handler om Davids flukt til Adullam og Sauls massakre av prestene i Nob (1. Samuel 22). Referansene er korrekte, men metadata er fullstendig feil.",
+  "score": 2,
+  "revisedStory": {
+    "slug": "david-i-adullam-og-massakren-i-nob",
+    "title": "David i Adullam-hulen og massakren i Nob",
+    "keywords": [
+      "saul",
+      "david",
+      "forfølgelse",
+      "flukt",
+      "adullam",
+      "nob",
+      "akimelek",
+      "doeg",
+      "prester",
+      "ebjatar"
+    ],
+    "description": "David flykter til hulen i Adullam der han samler rundt 400 menn. Saul beskylder prestene i Nob for å ha hjulpet David og lar edomitten Doeg drepe 85 prester, men Ebjatar unnslipper og slutter seg til David.",
+    "category": "kongetiden",
+    "references": [
+      {
+        "bookId": 9,
+        "startChapter": 22,
+        "startVerse": 1,
+        "endChapter": 22,
+        "endVerse": 23
+      }
+    ]
+  }
+}

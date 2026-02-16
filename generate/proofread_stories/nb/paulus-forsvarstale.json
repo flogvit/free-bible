@@ -1,0 +1,50 @@
+{
+  "issues": [
+    {
+      "field": "description",
+      "severity": "major",
+      "explanation": "Beskrivelsen sier at Paulus 'appellerer til keiseren for å få sin sak prøvd i Rom'. Dette stemmer ikke med den oppgitte bibelteksten (Apg 22:1-29). I dette kapitlet holder Paulus sin forsvarstale til folkemengden i Jerusalem og avslører sitt romerske borgerskap for å unngå pisking. Appellen til keiseren skjer først i Apostlenes gjerninger 25:11. Beskrivelsen bør korrigeres til å samsvare med den faktiske teksten.",
+      "current": "Paulus holder sin forsvarstale i Jerusalem og appellerer til keiseren for å få sin sak prøvd i Rom.",
+      "suggested": "Paulus holder sin forsvarstale for folkemengden i Jerusalem, der han forteller om sitt møte med Jesus på veien til Damaskus, og avslører sitt romerske borgerskap for å unngå pisking."
+    },
+    {
+      "field": "keywords",
+      "severity": "minor",
+      "explanation": "Nøkkelordet 'rom' er misvisende siden appellen til Rom ikke skjer i denne teksten. Det bør byttes ut med mer relevante nøkkelord som 'romersk borger', 'damaskus', 'omvendelse' osv.",
+      "current": "rom",
+      "suggested": "romersk-borger, damaskus, omvendelse"
+    },
+    {
+      "field": "references",
+      "severity": "minor",
+      "explanation": "Referansen dekker Apg 22:1-29 som inneholder forsvarstalen og hendelsen med det romerske borgerskapet. Dette er korrekt for selve forsvarstalen. Man kunne vurdere å inkludere konteksten fra kapittel 21 (arrestasjonen) eller utvide til kapittel 23 (for rådet), men den nåværende referansen dekker kjernehistorien godt."
+    }
+  ],
+  "summary": "Historien har korrekte referanser til Apostlenes gjerninger 22:1-29, men beskrivelsen inneholder en faktafeil: Paulus appellerer ikke til keiseren i denne teksten. Det skjer først i Apg 25. Beskrivelsen bør korrigeres. Nøkkelordene bør også justeres for å bedre reflektere innholdet i teksten.",
+  "score": 6,
+  "revisedStory": {
+    "slug": "paulus-forsvarstale",
+    "title": "Paulus' forsvarstale",
+    "keywords": [
+      "paulus",
+      "forsvar",
+      "tale",
+      "jerusalem",
+      "damaskus",
+      "omvendelse",
+      "romersk borger",
+      "fange"
+    ],
+    "description": "Paulus holder sin forsvarstale for folkemengden i Jerusalem, der han forteller om sitt møte med Jesus på veien til Damaskus. Da han er i ferd med å bli pisket, avslører han sitt romerske borgerskap og unngår straffen.",
+    "category": "paulus",
+    "references": [
+      {
+        "bookId": 44,
+        "startChapter": 22,
+        "startVerse": 1,
+        "endChapter": 22,
+        "endVerse": 29
+      }
+    ]
+  }
+}

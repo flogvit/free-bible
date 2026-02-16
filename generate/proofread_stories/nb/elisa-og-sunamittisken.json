@@ -1,0 +1,61 @@
+{
+  "issues": [
+    {
+      "field": "slug",
+      "severity": "minor",
+      "explanation": "Sluggen bruker 'sunamittisken' mens bibelteksten konsekvent bruker 'sjunemittinnen'. Navneformen bør være konsistent, men 'sunamittisk' er en akseptert norsk form. Likevel bør sluggen matche tittelen bedre.",
+      "current": "elisa-og-sunamittisken",
+      "suggested": "elisja-og-den-sunamittiske-kvinnen"
+    },
+    {
+      "field": "title",
+      "severity": "minor",
+      "explanation": "Bibelteksten bruker navneformen 'Elisja', ikke 'Elisa'. For konsistens med bibelteksten (osnb2) bør tittelen bruke 'Elisja'. 'Sunamittisk' er en akseptabel norsk form selv om bibelteksten bruker 'sjunemittinnen'.",
+      "current": "Elisa og den sunamittiske kvinnen",
+      "suggested": "Elisja og den sunamittiske kvinnen"
+    },
+    {
+      "field": "keywords",
+      "severity": "minor",
+      "explanation": "Nøkkelordene bruker 'elisa' mens bibelteksten bruker 'Elisja'. Dessuten mangler nøkkelord som 'gehasi', 'sjunem/sjunemittinnen', 'mirakel' og 'gudsmann' som ville hjelpe med søk.",
+      "current": "elisa, sunamittisk, kvinne, barn, oppvekkelse, død",
+      "suggested": "elisja, sunamittisk, sjunemittinnen, kvinne, barn, oppvekkelse, død, gehasi, gudsmann, mirakel"
+    },
+    {
+      "field": "description",
+      "severity": "minor",
+      "explanation": "Beskrivelsen bruker 'Elisa' i stedet for 'Elisja'. Ellers er beskrivelsen god og dekkende.",
+      "current": "Elisa lover en barnløs kvinne en sønn. Da gutten dør, oppvekker Elisa ham fra de døde.",
+      "suggested": "Elisja lover en barnløs kvinne en sønn. Da gutten dør, oppvekker Elisja ham fra de døde."
+    }
+  ],
+  "summary": "Historien er generelt god og dekker den riktige bibelteksten. Hovedproblemet er at navnet 'Elisa' brukes gjennomgående, mens bibelteksten (osnb2) bruker 'Elisja'. Referansene er korrekte (2. Kongebok 4:8-37, bookId 12). Kategorien 'kongetiden' er passende. Nøkkelordene kunne suppleres med flere relevante søkeord som 'gehasi' og 'gudsmann'.",
+  "score": 7,
+  "revisedStory": {
+    "slug": "elisja-og-den-sunamittiske-kvinnen",
+    "title": "Elisja og den sunamittiske kvinnen",
+    "keywords": [
+      "elisja",
+      "sunamittisk",
+      "sjunemittinnen",
+      "kvinne",
+      "barn",
+      "oppvekkelse",
+      "død",
+      "gehasi",
+      "gudsmann",
+      "mirakel"
+    ],
+    "description": "Elisja lover en barnløs kvinne en sønn. Da gutten dør, oppvekker Elisja ham fra de døde.",
+    "category": "kongetiden",
+    "references": [
+      {
+        "bookId": 12,
+        "startChapter": 4,
+        "startVerse": 8,
+        "endChapter": 4,
+        "endVerse": 37
+      }
+    ]
+  }
+}

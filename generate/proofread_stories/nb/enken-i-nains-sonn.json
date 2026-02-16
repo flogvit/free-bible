@@ -1,0 +1,44 @@
+{
+  "issues": [
+    {
+      "field": "keywords",
+      "severity": "minor",
+      "explanation": "Nøkkelordet 'jesus' mangler. Jesus er hovedpersonen som utfører mirakelet, og brukere vil sannsynligvis søke etter dette ordet.",
+      "current": "[\"nain\", \"enke\", \"sønn\", \"død\", \"oppvekkelse\"]",
+      "suggested": "[\"nain\", \"enke\", \"sønn\", \"død\", \"oppvekkelse\", \"jesus\", \"mirakel\"]"
+    },
+    {
+      "field": "slug",
+      "severity": "minor",
+      "explanation": "Sluggen 'enken-i-nains-sonn' er litt klønete og gjenspeiler ikke tittelen helt. Tittelen er 'Enkens sønn i Nain oppvekkes', så en mer presis slug ville vært 'enkens-sonn-i-nain-oppvekkes'.",
+      "current": "enken-i-nains-sonn",
+      "suggested": "enkens-sonn-i-nain-oppvekkes"
+    }
+  ],
+  "summary": "Historien er i all hovedsak korrekt. Bibelreferansen (Lukas 7:11-17) er riktig, beskrivelsen samsvarer med teksten, og kategorien 'jesu-mirakler' er passende. To mindre forbedringer foreslås: sluggen bør bedre gjenspeile tittelen, og nøkkelordene bør inkludere 'jesus' og 'mirakel' for bedre søkbarhet.",
+  "score": 8,
+  "revisedStory": {
+    "slug": "enkens-sonn-i-nain-oppvekkes",
+    "title": "Enkens sønn i Nain oppvekkes",
+    "keywords": [
+      "nain",
+      "enke",
+      "sønn",
+      "død",
+      "oppvekkelse",
+      "jesus",
+      "mirakel"
+    ],
+    "description": "Jesus møter et gravfølge i Nain og oppvekker enkens eneste sønn fra de døde.",
+    "category": "jesu-mirakler",
+    "references": [
+      {
+        "bookId": 42,
+        "startChapter": 7,
+        "startVerse": 11,
+        "endChapter": 7,
+        "endVerse": 17
+      }
+    ]
+  }
+}

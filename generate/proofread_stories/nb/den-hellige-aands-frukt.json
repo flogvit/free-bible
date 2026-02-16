@@ -1,0 +1,55 @@
+{
+  "issues": [
+    {
+      "field": "description",
+      "severity": "minor",
+      "explanation": "Beskrivelsen nevner 'trofasthet' og 'ydmykhet' som deler av Åndens frukt, men bibelteksten (osnb2) bruker ordene 'troskap' og 'saktmodighet'. Beskrivelsen bør samsvare med bibeltekstens ordlyd.",
+      "current": "Paulus beskriver i Galaterbrevet kontrasten mellom kjødets gjerninger og Åndens frukt: kjærlighet, glede, fred, tålmodighet, vennlighet, godhet, trofasthet, ydmykhet og selvkontroll.",
+      "suggested": "Paulus beskriver i Galaterbrevet kontrasten mellom kjødets gjerninger og Åndens frukt: kjærlighet, glede, fred, tålmodighet, vennlighet, godhet, troskap, saktmodighet og selvkontroll."
+    },
+    {
+      "field": "slug",
+      "severity": "minor",
+      "explanation": "Slugen 'den-hellige-aands-frukt' matcher ikke tittelen 'Åndens frukt' særlig godt. 'aandens-frukt' ville vært mer konsistent med tittelen.",
+      "current": "den-hellige-aands-frukt",
+      "suggested": "aandens-frukt"
+    },
+    {
+      "field": "keywords",
+      "severity": "minor",
+      "explanation": "Nøkkelordet 'helliggjørelse' er ikke direkte nevnt i teksten, selv om det er tematisk relatert. Det kunne vært mer relevant å inkludere 'troskap', 'saktmodighet', 'tålmodighet', 'selvkontroll' og 'vandre i ånden' som er eksplisitt i teksten.",
+      "current": "helliggjørelse",
+      "suggested": "Erstatt 'helliggjørelse' med nøkkelord som er direkte fra teksten, f.eks. 'vandre i ånden', 'tålmodighet', 'selvkontroll'"
+    }
+  ],
+  "summary": "Historien er i hovedsak korrekt. Referansene til Galaterne 5:16-26 er helt riktige og dekker hele passasjen om Åndens frukt og kjødets gjerninger. Det er noen mindre avvik: beskrivelsen bruker 'trofasthet' og 'ydmykhet' der bibelteksten sier 'troskap' og 'saktmodighet', og slugen matcher ikke tittelen optimalt. Kategorien 'paulus' er korrekt.",
+  "score": 8,
+  "revisedStory": {
+    "slug": "aandens-frukt",
+    "title": "Åndens frukt",
+    "keywords": [
+      "åndens frukt",
+      "kjærlighet",
+      "glede",
+      "fred",
+      "tålmodighet",
+      "selvkontroll",
+      "galaterbrevet",
+      "kjødets gjerninger",
+      "vandre i ånden",
+      "troskap",
+      "saktmodighet"
+    ],
+    "description": "Paulus beskriver i Galaterbrevet kontrasten mellom kjødets gjerninger og Åndens frukt: kjærlighet, glede, fred, tålmodighet, vennlighet, godhet, troskap, saktmodighet og selvkontroll.",
+    "category": "paulus",
+    "references": [
+      {
+        "bookId": 48,
+        "startChapter": 5,
+        "startVerse": 16,
+        "endChapter": 5,
+        "endVerse": 26
+      }
+    ]
+  }
+}

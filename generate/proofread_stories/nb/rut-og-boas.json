@@ -1,0 +1,51 @@
+{
+  "issues": [
+    {
+      "field": "references",
+      "severity": "minor",
+      "explanation": "Historien starter egentlig allerede i Rut kapittel 1 med bakgrunnen om Rut og Noomis reise til Betlehem, men den nåværende referansen (2:1-4:22) dekker hovedhandlingen om Rut og Boas godt. Kapittel 1 gir kontekst, men er ikke strengt nødvendig for historien om Rut og Boas spesifikt. Referansene er akseptable."
+    },
+    {
+      "field": "category",
+      "severity": "major",
+      "explanation": "Kategorien 'dommerne' er ikke helt presis. Ruts bok foregår riktignok i dommertiden (Rut 1:1), men Ruts bok handler primært om slektslinjen til David og regnes ofte som en overgang til kongetiden. Likevel er 'dommerne' den mest passende av de tilgjengelige kategoriene siden 'kongetiden' refererer til perioden etter Saul/David ble konger, og Ruts bok er satt i dommertiden. Kategorien kan beholdes.",
+      "current": "dommerne",
+      "suggested": "dommerne"
+    },
+    {
+      "field": "keywords",
+      "severity": "minor",
+      "explanation": "Noen relevante nøkkelord mangler, som 'noomi' (viktig person i historien), 'løser'/'løsningsmann' (sentral tematikk), 'david' (ættelinjen), og 'troskap'. Ordet 'innløser' er greit men 'løser'/'løsningsmann' er begrepet brukt i teksten.",
+      "current": "rut, boas, aks, innløser, ekteskap, betlehem",
+      "suggested": "rut, boas, noomi, aks, løsningsmann, ekteskap, betlehem, troskap, david"
+    }
+  ],
+  "summary": "Historien er generelt godt utformet. Referansene er korrekte (Rut bok = bookId 8, kapittel 2-4 dekker hovedhandlingen om Rut og Boas). Kategorien 'dommerne' er akseptabel. Noen nøkkelord kan forbedres for bedre søkbarhet. Beskrivelsen er kort men presis.",
+  "score": 8,
+  "revisedStory": {
+    "slug": "rut-og-boas",
+    "title": "Rut og Boas",
+    "keywords": [
+      "rut",
+      "boas",
+      "noomi",
+      "aks",
+      "løsningsmann",
+      "ekteskap",
+      "betlehem",
+      "troskap",
+      "david"
+    ],
+    "description": "Rut sanker aks på Boas' mark. Boas tar henne til hustru som løsningsmann og reiser opp den avdødes navn. Fra dem nedstammer kong David.",
+    "category": "dommerne",
+    "references": [
+      {
+        "bookId": 8,
+        "startChapter": 2,
+        "startVerse": 1,
+        "endChapter": 4,
+        "endVerse": 22
+      }
+    ]
+  }
+}

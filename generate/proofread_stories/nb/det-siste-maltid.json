@@ -1,0 +1,68 @@
+{
+  "issues": [
+    {
+      "field": "title",
+      "severity": "critical",
+      "explanation": "Tittelen inneholder en skrivefeil: 'Det siste satisfmåltidet' burde være 'Det siste måltidet'.",
+      "current": "Det siste satisfmåltidet",
+      "suggested": "Det siste måltidet"
+    },
+    {
+      "field": "slug",
+      "severity": "minor",
+      "explanation": "Sluggen 'det-siste-maltid' er OK men mangler bestemt form for å matche tittelen. Bør være 'det-siste-maltidet'.",
+      "current": "det-siste-maltid",
+      "suggested": "det-siste-maltidet"
+    }
+  ],
+  "summary": "Historien har en åpenbar skrivefeil i tittelen ('satisfmåltidet' i stedet for 'måltidet'). Sluggen bør også oppdateres for å matche den korrigerte tittelen. Referansene er korrekte og dekker alle fire evangelienes beretninger om det siste måltidet. Nøkkelord, beskrivelse og kategori er alle passende og korrekte.",
+  "score": 5,
+  "revisedStory": {
+    "slug": "det-siste-maltidet",
+    "title": "Det siste måltidet",
+    "keywords": [
+      "nattverd",
+      "brød",
+      "vin",
+      "pakt",
+      "påske",
+      "disipler",
+      "fotvasking",
+      "judas",
+      "forråderi",
+      "påskemåltid"
+    ],
+    "description": "Jesus forbereder og feirer påskemåltidet med disiplene, vasker deres føtter, innstifter nattverden med brødet og vinen som sin kropp og sitt blod, og forutsier at en av dem skal forråde ham.",
+    "category": "jesu-lidelse",
+    "references": [
+      {
+        "bookId": 40,
+        "startChapter": 26,
+        "startVerse": 17,
+        "endChapter": 26,
+        "endVerse": 30
+      },
+      {
+        "bookId": 41,
+        "startChapter": 14,
+        "startVerse": 12,
+        "endChapter": 14,
+        "endVerse": 26
+      },
+      {
+        "bookId": 42,
+        "startChapter": 22,
+        "startVerse": 7,
+        "endChapter": 22,
+        "endVerse": 23
+      },
+      {
+        "bookId": 43,
+        "startChapter": 13,
+        "startVerse": 1,
+        "endChapter": 13,
+        "endVerse": 30
+      }
+    ]
+  }
+}

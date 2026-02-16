@@ -1,0 +1,60 @@
+{
+  "issues": [
+    {
+      "field": "category",
+      "severity": "major",
+      "explanation": "Historien handler om Jesu oppstandelse og hans fremtreden for disiplene etter oppstandelsen. Kategorien 'jesu-lidelse' dekker lidelseshistorien (pasjon), men oppstandelsen og det som skjer etterpå passer bedre under 'jesus-liv' eller eventuelt 'jesu-lidelse' i vid forstand. Tradisjonelt regnes oppstandelsen som del av påskefortellingen, men denne historien fokuserer på post-oppstandelses-hendelser. Likevel kan 'jesu-lidelse' forsvares da oppstandelsen er kulminasjonen av lidelseshistorien. Jeg foreslår å beholde 'jesu-lidelse' men noterer det som en mulig forbedring.",
+      "current": "jesu-lidelse",
+      "suggested": "jesu-lidelse"
+    },
+    {
+      "field": "keywords",
+      "severity": "minor",
+      "explanation": "Noen relevante nøkkelord mangler, f.eks. 'fred', 'den hellige ånd', 'tvillingen' og 'oppstandelse' kunne suppleres med 'jesus'. Også 'tilgivelse' er et tema i begge tekster.",
+      "current": "oppstandelse, disipler, tomas, tvil, sår, tro",
+      "suggested": "oppstandelse, disipler, tomas, tvil, sår, tro, fred, den hellige ånd, tilgivelse"
+    },
+    {
+      "field": "description",
+      "severity": "minor",
+      "explanation": "Beskrivelsen sier 'Tvileren Tomas tror når han ser Jesu sår', men ifølge bibelteksten (Joh 20:27-28) tilbyr Jesus ham å røre ved sårene, og Tomas utbryter 'Min Herre og min Gud!' - teksten sier ikke eksplisitt at han faktisk rørte ved sårene. Men han ser dem og tror. Beskrivelsen er i hovedsak riktig, men dekker ikke Lukas-passasjen der Jesus spiser fisk og åpner deres forstand for skriftene. En litt bredere beskrivelse ville vært bedre.",
+      "current": "Den oppstandne Jesus viser seg for disiplene. Tvileren Tomas tror når han ser Jesu sår.",
+      "suggested": "Den oppstandne Jesus viser seg for disiplene, viser dem sine sår og gir dem Den hellige ånd. Tomas, som ikke var til stede, tror først når han selv får se Jesus."
+    }
+  ],
+  "summary": "Historien er i hovedsak korrekt. Referansene er riktige - Johannes 20:19-31 dekker Jesu fremtreden for disiplene og Tomas-episoden, og Lukas 24:36-49 dekker den parallelle beretningen. Kategorien 'jesu-lidelse' kan diskuteres men er akseptabel da oppstandelsen ofte regnes som del av lidelseshistorien. Beskrivelsen kunne vært litt bredere for å dekke begge tekstene bedre, og noen flere nøkkelord kunne legges til.",
+  "score": 8,
+  "revisedStory": {
+    "slug": "jesus-viser-seg-for-disiplene",
+    "title": "Jesus viser seg for disiplene",
+    "keywords": [
+      "oppstandelse",
+      "disipler",
+      "tomas",
+      "tvil",
+      "sår",
+      "tro",
+      "fred",
+      "den hellige ånd",
+      "tilgivelse"
+    ],
+    "description": "Den oppstandne Jesus viser seg for disiplene, viser dem sine sår og gir dem Den hellige ånd. Tomas, som ikke var til stede, tror først når han selv får se Jesus.",
+    "category": "jesu-lidelse",
+    "references": [
+      {
+        "bookId": 43,
+        "startChapter": 20,
+        "startVerse": 19,
+        "endChapter": 20,
+        "endVerse": 31
+      },
+      {
+        "bookId": 42,
+        "startChapter": 24,
+        "startVerse": 36,
+        "endChapter": 24,
+        "endVerse": 49
+      }
+    ]
+  }
+}

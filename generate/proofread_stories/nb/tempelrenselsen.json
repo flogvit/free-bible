@@ -1,0 +1,65 @@
+{
+  "issues": [
+    {
+      "field": "keywords",
+      "severity": "minor",
+      "explanation": "Historien inkluderer også elementer som Jesu autoritet, røverhule, duer, og handel. Nøkkelord som 'Jesus', 'Jerusalem' og 'røverhule' ville vært nyttige for søk.",
+      "current": "[\"tempel\", \"pengevekslere\", \"renselse\", \"bønnens hus\"]",
+      "suggested": "[\"tempel\", \"pengevekslere\", \"renselse\", \"bønnens hus\", \"Jesus\", \"Jerusalem\", \"røverhule\"]"
+    },
+    {
+      "field": "slug",
+      "severity": "minor",
+      "explanation": "Sluggen 'tempelrenselsen' er funksjonell, men 'jesus-renser-tempelet' ville vært mer beskrivende og konsistent med tittelen.",
+      "current": "tempelrenselsen",
+      "suggested": "jesus-renser-tempelet"
+    }
+  ],
+  "summary": "Historien er godt sammensatt. Alle fire referanser (Matt 21:12-17, Mark 11:15-19, Luk 19:45-48, Joh 2:13-22) stemmer nøyaktig med bibelteksten om tempelrenselsen. Tittel, beskrivelse og kategori er korrekte. Mindre forbedringer kan gjøres på slug og keywords for bedre søkbarhet.",
+  "score": 9,
+  "revisedStory": {
+    "slug": "jesus-renser-tempelet",
+    "title": "Jesus renser tempelet",
+    "keywords": [
+      "tempel",
+      "pengevekslere",
+      "renselse",
+      "bønnens hus",
+      "Jesus",
+      "Jerusalem",
+      "røverhule"
+    ],
+    "description": "Jesus driver ut pengevekslerne fra tempelet: 'Mitt hus skal kalles et bønnens hus!'",
+    "category": "jesus-liv",
+    "references": [
+      {
+        "bookId": 40,
+        "startChapter": 21,
+        "startVerse": 12,
+        "endChapter": 21,
+        "endVerse": 17
+      },
+      {
+        "bookId": 41,
+        "startChapter": 11,
+        "startVerse": 15,
+        "endChapter": 11,
+        "endVerse": 19
+      },
+      {
+        "bookId": 42,
+        "startChapter": 19,
+        "startVerse": 45,
+        "endChapter": 19,
+        "endVerse": 48
+      },
+      {
+        "bookId": 43,
+        "startChapter": 2,
+        "startVerse": 13,
+        "endChapter": 2,
+        "endVerse": 22
+      }
+    ]
+  }
+}

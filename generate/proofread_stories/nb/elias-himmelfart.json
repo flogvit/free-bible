@@ -1,0 +1,55 @@
+{
+  "issues": [
+    {
+      "field": "keywords",
+      "severity": "minor",
+      "explanation": "Nøkkelordet 'elisa' er en forkortelse/alternativ stavemåte som ikke brukes i bibelteksten. Det brukes konsekvent 'Elisja' i teksten. 'elisa' kan potensielt forvirre, men kan også hjelpe brukere som søker med denne stavemåten. Det er en marginal sak, men det er bedre å være konsekvent. I tillegg mangler noen relevante søkeord som 'betel', 'jeriko', 'gilgal' og 'ildvogn' som allerede er med.",
+      "current": "elisa",
+      "suggested": "Kan vurderes fjernet eller beholdes som alternativ søketerm"
+    },
+    {
+      "field": "keywords",
+      "severity": "minor",
+      "explanation": "Nøkkelordene kan suppleres med stedsnavn som er sentrale i fortellingen: 'gilgal', 'betel', 'jeriko' - disse er viktige steder i beretningen som kan hjelpe brukere å finne historien.",
+      "suggested": "Legg til 'gilgal', 'betel', 'jeriko'"
+    },
+    {
+      "field": "description",
+      "severity": "minor",
+      "explanation": "Beskrivelsen er god, men uttrykket 'dobbel ånd' som Elisja ber om ('en dobbel del av din ånd') er ikke nevnt, og det er en sentral del av fortellingen. Man kunne også nevne at Elisja deler Jordan med kappen som bekreftelse på at han har fått ånden."
+    }
+  ],
+  "summary": "Historien er generelt godt utformet. Referansen til 2. Kongebok 2:1-18 er helt korrekt og dekker fortellingen om Elias himmelfart. Slug, tittel og kategori er alle korrekte. Beskrivelsen er presis og samsvarer med bibelteksten. Det er kun mindre forbedringer mulig i nøkkelord og beskrivelse.",
+  "score": 9,
+  "revisedStory": {
+    "slug": "elias-himmelfart",
+    "title": "Elias himmelfart",
+    "keywords": [
+      "elia",
+      "elisja",
+      "elisa",
+      "ildvogn",
+      "ildhester",
+      "kappe",
+      "himmelfart",
+      "storm",
+      "jordan",
+      "profetdisipler",
+      "dobbel ånd",
+      "gilgal",
+      "betel",
+      "jeriko"
+    ],
+    "description": "Elia tas opp til himmelen i en storm mens en ildvogn med ildhester skiller ham fra Elisja. Elisja tar opp hans kappe, deler Jordanelven og fortsetter hans profetiske gjerning med en dobbel del av Elias ånd.",
+    "category": "kongetiden",
+    "references": [
+      {
+        "bookId": 12,
+        "startChapter": 2,
+        "startVerse": 1,
+        "endChapter": 2,
+        "endVerse": 18
+      }
+    ]
+  }
+}

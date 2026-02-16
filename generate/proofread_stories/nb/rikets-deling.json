@@ -1,0 +1,45 @@
+{
+  "issues": [
+    {
+      "field": "keywords",
+      "severity": "minor",
+      "explanation": "Nøkkelordet 'judariket' er uvanlig skrivemåte. 'Juda rike' eller 'sørriket' er mer vanlige betegnelser. I tillegg mangler noen relevante søkeord som 'salomo', 'gullkalver', 'sikem' og 'stammefordeling'.",
+      "current": "[\"rehabeam\",\"jeroboam\",\"deling\",\"nordriket\",\"judariket\"]",
+      "suggested": "[\"rehabeam\",\"jeroboam\",\"deling\",\"nordriket\",\"sørriket\",\"salomo\",\"gullkalver\",\"sikem\"]"
+    },
+    {
+      "field": "description",
+      "severity": "minor",
+      "explanation": "Beskrivelsen er korrekt men dekker ikke Jeroboams gullkalver og avgudsdyrkelse, som er en vesentlig del av kapitlet (v.25-33). En mer dekkende beskrivelse ville nevne dette.",
+      "current": "Etter Salomos død deles riket. Rehabeam styrer Juda i sør, Jeroboam styrer Israel i nord.",
+      "suggested": "Etter Salomos død deles riket i to da Rehabeam avviser folkets bønn om lettelse. Jeroboam blir konge over Israel i nord, og setter opp gullkalver i Betel og Dan."
+    }
+  ],
+  "summary": "Historien er i det store og hele korrekt. Referansen til 1. Kongebok 12:1-33 stemmer perfekt med bibelteksten som er oppgitt. Kategorien 'kongetiden' er riktig. Slug og tittel er gode. Mindre forbedringer kan gjøres på keywords og description for å dekke hele innholdet bedre, inkludert Jeroboams gullkalver.",
+  "score": 8,
+  "revisedStory": {
+    "slug": "rikets-deling",
+    "title": "Rikets deling",
+    "keywords": [
+      "rehabeam",
+      "jeroboam",
+      "deling",
+      "nordriket",
+      "sørriket",
+      "salomo",
+      "gullkalver",
+      "sikem"
+    ],
+    "description": "Etter Salomos død deles riket i to da Rehabeam avviser folkets bønn om lettelse. Jeroboam blir konge over Israel i nord, og setter opp gullkalver i Betel og Dan.",
+    "category": "kongetiden",
+    "references": [
+      {
+        "bookId": 11,
+        "startChapter": 12,
+        "startVerse": 1,
+        "endChapter": 12,
+        "endVerse": 33
+      }
+    ]
+  }
+}

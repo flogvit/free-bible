@@ -1,0 +1,52 @@
+{
+  "issues": [
+    {
+      "field": "slug",
+      "severity": "major",
+      "explanation": "Sluggen nevner 'nehustans-ødeleggelse' som ikke har noe med denne historien å gjøre. Historien handler om Hiskias sykdom og helbredelse, ikke om Nehustan (kobberslangen). Sluggen bør matche tittelen.",
+      "current": "nehustans-ødeleggelse-og-hiskias-sykdom",
+      "suggested": "hiskias-sykdom-og-helbredelse"
+    },
+    {
+      "field": "description",
+      "severity": "minor",
+      "explanation": "Beskrivelsen nevner 'fikenmos' implisitt via nøkkelordene, men selve beskrivelsen er korrekt. Beskrivelsen kunne også nevne fikenkaken som ble brukt i helbredelsen, men den er ikke direkte feil. Skyggetegnet beskrives korrekt."
+    },
+    {
+      "field": "keywords",
+      "severity": "minor",
+      "explanation": "Nøkkelordene mangler noen relevante termer som 'bønn', 'akas trapper', 'skygge', og 'fikenkake'. 'fikenmos' brukes som nøkkelord, men bibelteksten sier 'fikenkake', ikke fikenmos.",
+      "current": "fikenmos",
+      "suggested": "fikenkake"
+    }
+  ],
+  "summary": "Hovedproblemet er at sluggen refererer til 'nehustans ødeleggelse' som er en helt annen hendelse (2. Kong 18:4) og ikke har noe med denne historien å gjøre. Referansene, tittelen, kategorien og beskrivelsen er korrekte. Nøkkelordet 'fikenmos' bør endres til 'fikenkake' for å matche bibelteksten.",
+  "score": 6,
+  "revisedStory": {
+    "slug": "hiskias-sykdom-og-helbredelse",
+    "title": "Hiskias sykdom og helbredelse",
+    "keywords": [
+      "hiskia",
+      "sykdom",
+      "jesaja",
+      "helbredelse",
+      "femten år",
+      "fikenkake",
+      "tegn",
+      "bønn",
+      "skygge",
+      "akas trapper"
+    ],
+    "description": "Kong Hiskia blir dødssyk, men ber til Herren med gråt. Gjennom profeten Jesaja lover Gud ham femten år ekstra levetid og helbreder ham med en fikenkake. Gud gir ham et tegn ved at skyggen går ti trinn tilbake på Akas' trapper.",
+    "category": "kongetiden",
+    "references": [
+      {
+        "bookId": 12,
+        "startChapter": 20,
+        "startVerse": 1,
+        "endChapter": 20,
+        "endVerse": 11
+      }
+    ]
+  }
+}

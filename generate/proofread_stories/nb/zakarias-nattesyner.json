@@ -1,0 +1,47 @@
+{
+  "issues": [
+    {
+      "field": "slug",
+      "severity": "minor",
+      "explanation": "Sluggen 'zakarias-nattesyner' refererer til 'Zakarias' (som er en annen person/stavemåte) og 'nattesyner' (flertall, generelt), mens tittelen spesifikt handler om Sakarjas syn med lysestaken og oliventrærne. Sluggen bør matche tittelen bedre.",
+      "current": "zakarias-nattesyner",
+      "suggested": "sakarja-ser-lysestaken-og-oliventraerne"
+    },
+    {
+      "field": "keywords",
+      "severity": "minor",
+      "explanation": "Nøkkelordet 'gjenoppbygging' er relevant men litt generelt. Det kunne vært nyttig å legge til 'tempel', 'guds ånd', 'gullysestake' og 'salvet' som mer spesifikke nøkkelord knyttet til teksten.",
+      "current": "sakarja, lysestake, oliventrær, serubabel, syn, gjenoppbygging",
+      "suggested": "sakarja, lysestake, oliventrær, serubabel, syn, tempel, guds ånd, gullysestake, salvet"
+    }
+  ],
+  "summary": "Historien er stort sett god. Referansen til Sakarja 4:1-14 (bookId 38) er korrekt og dekker hele synet med lysestaken og oliventrærne. Beskrivelsen stemmer godt med bibelteksten. Kategorien 'profetene' er riktig. De eneste forbedringene er at sluggen bør matche tittelen bedre (bruker 'Zakarias' i stedet for 'Sakarja'), og nøkkelordene kan utvides noe for bedre dekning.",
+  "score": 8,
+  "revisedStory": {
+    "slug": "sakarja-ser-lysestaken-og-oliventraerne",
+    "title": "Sakarja ser lysestaken og oliventrærne",
+    "keywords": [
+      "sakarja",
+      "lysestake",
+      "oliventrær",
+      "serubabel",
+      "syn",
+      "tempel",
+      "guds ånd",
+      "gullysestake",
+      "salvet",
+      "gjenoppbygging"
+    ],
+    "description": "Profeten Sakarja ser et syn med en gullysestake og to oliventrær, som symboliserer at Guds tempel skal fullføres ikke ved makt, men ved Guds Ånd.",
+    "category": "profetene",
+    "references": [
+      {
+        "bookId": 38,
+        "startChapter": 4,
+        "startVerse": 1,
+        "endChapter": 4,
+        "endVerse": 14
+      }
+    ]
+  }
+}

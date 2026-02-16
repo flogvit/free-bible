@@ -1,0 +1,61 @@
+{
+  "issues": [
+    {
+      "field": "description",
+      "severity": "minor",
+      "explanation": "Beskrivelsen nevner at Josef blir innsatt som 'visir', men dette er en moderne/anakronistisk betegnelse. Bibelteksten beskriver at han ble satt over hele Egypt uten å bruke tittelen 'visir'. En mer nøytral formulering ville være bedre, men det er ikke direkte feil – det er en vanlig betegnelse brukt i bibelforskning.",
+      "current": "Josef tyder Faraos drøm om syv fete og syv magre kyr, og blir innsatt som visir over Egypt.",
+      "suggested": "Josef tyder Faraos drømmer om syv fete og syv magre kyr, og blir satt over hele Egypt."
+    },
+    {
+      "field": "description",
+      "severity": "minor",
+      "explanation": "Farao hadde to drømmer (kyr og aks), ikke bare én. Beskrivelsen sier 'Faraos drøm' (entall), mens det mer presist er 'Faraos drømmer' (flertall).",
+      "current": "Josef tyder Faraos drøm om syv fete og syv magre kyr, og blir innsatt som visir over Egypt.",
+      "suggested": "Josef tyder Faraos drømmer om syv fete og syv magre kyr og syv fulle og syv tynne aks, og blir satt over hele Egypt."
+    },
+    {
+      "field": "title",
+      "severity": "minor",
+      "explanation": "Tittelen bruker entall 'drøm', men Farao hadde to drømmer (kyr og aks). Josef selv sier at de betyr det samme (v.25-26), så entall er forsvarlig, men flertall ville være mer presist.",
+      "current": "Josef tyder Faraos drøm",
+      "suggested": "Josef tyder Faraos drømmer"
+    },
+    {
+      "field": "keywords",
+      "severity": "minor",
+      "explanation": "Nøkkelordet 'aks' mangler. Faraos andre drøm handlet om aks, og dette er et sentralt element i fortellingen. Også 'overflod' kunne vært med.",
+      "current": "josef, farao, drøm, kyr, korn, hungersnød, egypt",
+      "suggested": "josef, farao, drøm, kyr, aks, korn, hungersnød, overflod, egypt"
+    }
+  ],
+  "summary": "Historien er generelt god og referansene er korrekte – 1. Mosebok 41:1-57 dekker hele fortellingen om Josef som tyder Faraos drømmer og blir satt over Egypt. Mindre forbedringer kan gjøres: bruke flertall 'drømmer' i tittel og beskrivelse (Farao hadde to drømmer), legge til 'aks' som nøkkelord, og justere beskrivelsen til å unngå den anakronistiske tittelen 'visir'.",
+  "score": 8,
+  "revisedStory": {
+    "slug": "josef-tyder-faraos-drommer",
+    "title": "Josef tyder Faraos drømmer",
+    "keywords": [
+      "josef",
+      "farao",
+      "drøm",
+      "drømmer",
+      "kyr",
+      "aks",
+      "korn",
+      "hungersnød",
+      "overflod",
+      "egypt"
+    ],
+    "description": "Josef tyder Faraos drømmer om syv fete og syv magre kyr og syv fulle og syv tynne aks, og blir satt over hele Egypt for å forberede landet på hungersnøden.",
+    "category": "patriarkene",
+    "references": [
+      {
+        "bookId": 1,
+        "startChapter": 41,
+        "startVerse": 1,
+        "endChapter": 41,
+        "endVerse": 57
+      }
+    ]
+  }
+}

@@ -1,0 +1,68 @@
+{
+  "issues": [
+    {
+      "field": "title",
+      "severity": "minor",
+      "explanation": "Tittelen nevner bare begynnelsen av den andre misjonsreisen, men den andre referansen (Apg 16:1-5) inkluderer også Timoteus som blir med på reisen. Tittelen kunne vært bredere for å dekke dette.",
+      "current": "Paulus og Silas begynner den andre misjonsreisen",
+      "suggested": "Paulus og Silas begynner den andre misjonsreisen og møter Timoteus"
+    },
+    {
+      "field": "description",
+      "severity": "major",
+      "explanation": "Beskrivelsen nevner ikke Timoteus i det hele tatt, til tross for at den andre referansen (Apg 16:1-5) handler om at Paulus møter Timoteus i Derbe og Lystra og tar ham med på reisen. Beskrivelsen dekker dermed ikke hele det refererte tekstområdet.",
+      "current": "Paulus og Barnabas blir uenige om å ta med Johannes Markus, og går hver sin vei. Paulus velger Silas som reisefølge og begynner sin andre misjonsreise gjennom Syria og Kilikia.",
+      "suggested": "Paulus og Barnabas blir uenige om å ta med Johannes Markus, og går hver sin vei. Paulus velger Silas som reisefølge og begynner sin andre misjonsreise gjennom Syria og Kilikia. I Lystra møter de Timoteus, som blir med dem videre."
+    },
+    {
+      "field": "keywords",
+      "severity": "minor",
+      "explanation": "Timoteus er en sentral person i den andre referansen (Apg 16:1-5) og bør være med som nøkkelord. Også 'derbe', 'lystra' og 'timoteus' er relevante.",
+      "current": "paulus, silas, barnabas, johannes markus, andre misjonsreise, syria, kilikia",
+      "suggested": "paulus, silas, barnabas, johannes markus, timoteus, andre misjonsreise, syria, kilikia, derbe, lystra"
+    },
+    {
+      "field": "slug",
+      "severity": "minor",
+      "explanation": "Sluggen bør oppdateres for å reflektere at historien også inkluderer møtet med Timoteus, hvis tittelen oppdateres.",
+      "current": "paulus-andre-misjonsreise-begynner",
+      "suggested": "paulus-silas-og-timoteus-den-andre-misjonsreisen"
+    }
+  ],
+  "summary": "Historien har korrekte referanser som samsvarer med bibelteksten, og kategorien er riktig. Hovedproblemet er at beskrivelsen, tittelen og nøkkelordene bare dekker den første referansen (Apg 15:36-41) og ignorerer den andre referansen (Apg 16:1-5) som handler om møtet med Timoteus. Enten bør referansene begrenses til Apg 15:36-41, eller så bør metadata oppdateres til å inkludere Timoteus.",
+  "score": 6,
+  "revisedStory": {
+    "slug": "paulus-andre-misjonsreise-begynner",
+    "title": "Paulus og Silas begynner den andre misjonsreisen og møter Timoteus",
+    "keywords": [
+      "paulus",
+      "silas",
+      "barnabas",
+      "johannes markus",
+      "timoteus",
+      "andre misjonsreise",
+      "syria",
+      "kilikia",
+      "derbe",
+      "lystra"
+    ],
+    "description": "Paulus og Barnabas blir uenige om å ta med Johannes Markus, og går hver sin vei. Paulus velger Silas som reisefølge og begynner sin andre misjonsreise gjennom Syria og Kilikia. I Lystra møter de Timoteus, som blir med dem videre.",
+    "category": "paulus",
+    "references": [
+      {
+        "bookId": 44,
+        "startChapter": 15,
+        "startVerse": 36,
+        "endChapter": 15,
+        "endVerse": 41
+      },
+      {
+        "bookId": 44,
+        "startChapter": 16,
+        "startVerse": 1,
+        "endChapter": 16,
+        "endVerse": 5
+      }
+    ]
+  }
+}

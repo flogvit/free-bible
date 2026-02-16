@@ -1,0 +1,62 @@
+{
+  "issues": [
+    {
+      "field": "category",
+      "severity": "major",
+      "explanation": "Historien om Noas ark og syndfloden hører til perioden før patriarkene (Abraham, Isak, Jakob). Kategorien 'skapelsen' dekker vanligvis 1. Mosebok 1-2 (eventuelt 1-3 med syndefallet). Noa-fortellingen (1. Mosebok 6-9) faller mellom skapelsen og patriarkene. Siden det ikke finnes en egen kategori for 'urhistorien' (1. Mos 1-11), er 'patriarkene' det mest nærliggende alternativet, da denne kategorien typisk dekker hele 1. Mosebok. Alternativt kan 'skapelsen' forsvares siden Noa-fortellingen er del av urhistorien, men den handler ikke om skapelsen i seg selv.",
+      "current": "skapelsen",
+      "suggested": "patriarkene"
+    },
+    {
+      "field": "references",
+      "severity": "minor",
+      "explanation": "Referansen starter ved 1. Mosebok 6:5, men historien om Noa begynner egentlig allerede ved 6:1-4 med bakgrunnen om jordens tilstand, og 6:8-9 introduserer Noah. Å starte ved 6:5 er likevel en rimelig avgrensning, men man kunne vurdere å starte ved 6:1 for å inkludere hele konteksten. Sluttverset 9:17 er en god avslutning for paktsavsnittet med regnbuen."
+    },
+    {
+      "field": "keywords",
+      "severity": "minor",
+      "explanation": "Noen nyttige søkeord mangler, for eksempel 'noah' (den vanlige norske skrivemåten i mange bibler), 'flom', 'dom', 'frelse', 'due', 'olivenblad'. Disse kan hjelpe brukere med å finne historien.",
+      "current": "noa, ark, syndflod, dyr, regnbue, pakt, vann",
+      "suggested": "noa, noah, ark, syndflod, flom, dyr, regnbue, pakt, due, olivenblad, dom, frelse"
+    },
+    {
+      "field": "slug",
+      "severity": "minor",
+      "explanation": "Slugen 'noas-ark' er akseptabel, men kunne inkludere 'syndfloden' for å matche tittelen bedre, f.eks. 'noas-ark-og-syndfloden'. Den nåværende er dog kort og funksjonell.",
+      "current": "noas-ark",
+      "suggested": "noas-ark-og-syndfloden"
+    }
+  ],
+  "summary": "Historien er i hovedsak godt skrevet med en presis beskrivelse og korrekte referanser. De viktigste forbedringspunktene er: (1) Kategorien 'skapelsen' er ikke ideell for Noa-historien – 'patriarkene' er mer passende da det dekker 1. Mosebok bredere. (2) Nøkkelordene kan utvides med flere relevante termer som 'noah', 'flom', 'due' og 'olivenblad'. (3) Slugen kan eventuelt tilpasses bedre til tittelen. Referansene dekker historien godt (1. Mos 6:5-9:17).",
+  "score": 7,
+  "revisedStory": {
+    "slug": "noas-ark-og-syndfloden",
+    "title": "Noas ark og syndfloden",
+    "keywords": [
+      "noa",
+      "noah",
+      "ark",
+      "syndflod",
+      "flom",
+      "dyr",
+      "regnbue",
+      "pakt",
+      "due",
+      "olivenblad",
+      "dom",
+      "frelse",
+      "vann"
+    ],
+    "description": "Gud sender en stor flom over jorden, men redder Noa og hans familie i arken sammen med dyr av alle slag. Etterpå oppretter Gud en pakt med Noa og setter regnbuen som tegn på at han aldri mer skal ødelegge jorden med en flom.",
+    "category": "patriarkene",
+    "references": [
+      {
+        "bookId": 1,
+        "startChapter": 6,
+        "startVerse": 5,
+        "endChapter": 9,
+        "endVerse": 17
+      }
+    ]
+  }
+}

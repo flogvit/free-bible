@@ -1,0 +1,51 @@
+{
+  "issues": [
+    {
+      "field": "keywords",
+      "severity": "minor",
+      "explanation": "Viktige personer i opprøret som Datan og Abiram mangler som nøkkelord. Disse er sentrale i fortellingen. Også 'dødsriket' og 'røkelse' kunne vært relevante, men Datan og Abiram er de viktigste som mangler.",
+      "current": "korah, opprør, moses, aron, jord, straff",
+      "suggested": "korah, datan, abiram, opprør, moses, aron, jord, straff, dødsriket"
+    },
+    {
+      "field": "description",
+      "severity": "minor",
+      "explanation": "Beskrivelsen er korrekt men utelater viktige detaljer: Datan og Abiram nevnes ikke, og den nevner ikke at de 250 mennene ble fortært av ild. En mer fullstendig beskrivelse ville dekke dette.",
+      "current": "Korah og hans tilhengere gjør opprør mot Moses og Aron. Jorden åpner seg og sluker dem.",
+      "suggested": "Korah, Datan og Abiram gjør opprør mot Moses og Aron. Jorden åpner seg og sluker opprørerne, og ild fra Herren fortærer de 250 mennene som bar frem røkelse."
+    },
+    {
+      "field": "references",
+      "severity": "minor",
+      "explanation": "Kapittel 16 i 4. Mosebok har faktisk 50 vers (v. 36-50 handler om ettervirkningene: ildbeholderne som ble til plater, og plagen som rammet folket da de knurret dagen etter). Referansen dekker hele kapitlet som er relevant for den fullstendige fortellingen. Den oppgitte bibelteksten stopper ved vers 35, men vers 36-50 er også en del av den samme hendelsen. Referansen er korrekt."
+    }
+  ],
+  "summary": "Historien er i hovedsak korrekt og godt strukturert. Referansen til 4. Mosebok 16:1-50 er riktig og dekker hele fortellingen om Korahs opprør. Noen mindre forbedringer kan gjøres: nøkkelordene bør inkludere Datan og Abiram som var sentrale i opprøret, og beskrivelsen kunne vært mer fullstendig ved å nevne både jordåpningen og ilden som fortærte de 250 mennene.",
+  "score": 8,
+  "revisedStory": {
+    "slug": "korahs-oppror",
+    "title": "Korahs opprør",
+    "keywords": [
+      "korah",
+      "datan",
+      "abiram",
+      "opprør",
+      "moses",
+      "aron",
+      "jord",
+      "straff",
+      "dødsriket"
+    ],
+    "description": "Korah, Datan og Abiram gjør opprør mot Moses og Aron. Jorden åpner seg og sluker opprørerne, og ild fra Herren fortærer de 250 mennene som bar frem røkelse.",
+    "category": "oerkenvandringen",
+    "references": [
+      {
+        "bookId": 4,
+        "startChapter": 16,
+        "startVerse": 1,
+        "endChapter": 16,
+        "endVerse": 50
+      }
+    ]
+  }
+}

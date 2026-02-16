@@ -1,0 +1,40 @@
+{
+  "issues": [
+    {
+      "field": "keywords",
+      "severity": "minor",
+      "explanation": "Noen viktige nøkkelord mangler, for eksempel 'babylon', 'mene tekel', 'nebukadnesar', og 'hånd'. Disse ville gjøre historien lettere å finne.",
+      "current": "belsasar, skrift, vegg, daniel, dom, fest",
+      "suggested": "belsasar, skrift, vegg, daniel, dom, fest, babylon, mene tekel, hånd, nebukadnesar"
+    }
+  ],
+  "summary": "Historien er generelt godt utformet. Slug, tittel, beskrivelse, kategori og referanser er alle korrekte. Daniel kapittel 5 (bookId 27) dekker hele historien om skriften på veggen, fra vers 1 til 31 (vers 31 handler om Dareios som tar over riket, men den oppgitte teksten slutter ved vers 30 som er det siste verset med Belsasars død). Bibelteksten bekrefter at endVerse 31 er fornuftig da Daniel 5:31 vanligvis omtaler Dareios. Den eneste forbedringen er å legge til flere relevante søkeord.",
+  "score": 9,
+  "revisedStory": {
+    "slug": "skriften-pa-veggen",
+    "title": "Skriften på veggen",
+    "keywords": [
+      "belsasar",
+      "skrift",
+      "vegg",
+      "daniel",
+      "dom",
+      "fest",
+      "babylon",
+      "mene tekel",
+      "hånd",
+      "nebukadnesar"
+    ],
+    "description": "Under kong Belsasars fest skriver en mystisk hånd på veggen. Daniel tyder budskapet som dom over riket.",
+    "category": "eksil",
+    "references": [
+      {
+        "bookId": 27,
+        "startChapter": 5,
+        "startVerse": 1,
+        "endChapter": 5,
+        "endVerse": 31
+      }
+    ]
+  }
+}

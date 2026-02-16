@@ -1,0 +1,58 @@
+{
+  "issues": [
+    {
+      "field": "keywords",
+      "severity": "minor",
+      "explanation": "Bibelteksten nevner at folket klaget/syndet mot Gud og Moses, og at Gud sendte slangene som straff. Nøkkelord som 'straff', 'synd' og 'klage' kunne vært relevante. Dessuten bruker bibelteksten 'kobberslange' (ett ord), mens keywordet bruker 'kopperslange'. Begge stavemåter kan forsvares, men 'kobberslange' matcher bibelteksten bedre.",
+      "current": "kopperslange, slanger, helbredelse, ørken, moses",
+      "suggested": "kobberslange, slanger, helbredelse, ørken, moses, straff, synd"
+    },
+    {
+      "field": "title",
+      "severity": "minor",
+      "explanation": "Bibelteksten bruker stavemåten 'kobberslange' (med b), ikke 'kopperslange' (med p). Begge er akseptable norske former, men 'Kobberslangen' matcher bibelteksten (osnb2) direkte.",
+      "current": "Kopperslangen",
+      "suggested": "Kobberslangen"
+    },
+    {
+      "field": "slug",
+      "severity": "minor",
+      "explanation": "Slug bør matche tittelen. Hvis tittelen endres til 'Kobberslangen', bør slug også oppdateres.",
+      "current": "kopperslangen",
+      "suggested": "kobberslangen"
+    },
+    {
+      "field": "description",
+      "severity": "minor",
+      "explanation": "Beskrivelsen sier 'giftige slanger', men teksten kaller dem 'brennende slanger'. Ellers er beskrivelsen dekkende og korrekt i hovedtrekk.",
+      "current": "Når giftige slanger biter folket, lager Moses en kopperslange. Alle som ser på den, blir helbredet.",
+      "suggested": "Når Gud sender brennende slanger mot folket som straff for deres klager, lager Moses en kobberslange og setter den på en stang. Alle som er bitt og ser på den, får leve."
+    }
+  ],
+  "summary": "Historien er i hovedsak korrekt. Referansene er riktige – 4. Mosebok 21:4-9 dekker hele fortellingen om kobberslangen. Mindre forbedringer kan gjøres: stavemåten 'kobberslange' matcher bibelteksten bedre enn 'kopperslange', beskrivelsen kan presiseres (brennende slanger, ikke giftige), og noen relevante nøkkelord mangler.",
+  "score": 8,
+  "revisedStory": {
+    "slug": "kobberslangen",
+    "title": "Kobberslangen",
+    "keywords": [
+      "kobberslange",
+      "slanger",
+      "helbredelse",
+      "ørken",
+      "moses",
+      "straff",
+      "synd"
+    ],
+    "description": "Når Gud sender brennende slanger mot folket som straff for deres klager, lager Moses en kobberslange og setter den på en stang. Alle som er bitt og ser på den, får leve.",
+    "category": "oerkenvandringen",
+    "references": [
+      {
+        "bookId": 4,
+        "startChapter": 21,
+        "startVerse": 4,
+        "endChapter": 21,
+        "endVerse": 9
+      }
+    ]
+  }
+}

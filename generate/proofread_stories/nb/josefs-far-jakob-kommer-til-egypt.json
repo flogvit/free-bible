@@ -1,0 +1,59 @@
+{
+  "issues": [
+    {
+      "field": "title",
+      "severity": "critical",
+      "explanation": "Tittelen 'Fødselen av Moses' sønn – Sefarjas stamtavle' har ingenting å gjøre med historien. Bibelteksten handler om Peters tale i Salomos søylegang etter helbredelsen av den lamme mannen (Apg 3:11-26). Tittelen er helt feilaktig.",
+      "current": "Fødselen av Moses' sønn – Sefarjas stamtavle",
+      "suggested": "Peters tale i Salomos søylegang"
+    },
+    {
+      "field": "slug",
+      "severity": "critical",
+      "explanation": "Sluggen 'josefs-far-jakob-kommer-til-egypt' refererer til en helt annen bibelhistorie (1. Mosebok om Jakob som reiser til Egypt). Den matcher verken tittelen eller innholdet i historien.",
+      "current": "josefs-far-jakob-kommer-til-egypt",
+      "suggested": "peters-tale-i-salomos-soylegang"
+    },
+    {
+      "field": "keywords",
+      "severity": "minor",
+      "explanation": "Nøkkelordene er relevante for historien, men mangler viktige begreper som 'omvendelse', 'profet', 'helbredelse', 'den lamme' og 'messias' som er sentrale i teksten.",
+      "current": "peter, tempelet, salomos søylegang, forkynnelse, jerusalem, disiplene",
+      "suggested": "peter, johannes, salomos søylegang, omvendelse, profet, messias, helbredelse, den lamme, forkynnelse, jerusalem"
+    },
+    {
+      "field": "description",
+      "severity": "minor",
+      "explanation": "Beskrivelsen er god og stemmer med bibelteksten. Den oppsummerer korrekt at Peter taler til folket i Salomos søylegang om Jesus som den profet Moses forutsa, og kaller til omvendelse."
+    }
+  ],
+  "summary": "Historien har alvorlige problemer med slug og tittel som ikke samsvarer med innholdet. Sluggen refererer til Jakobs reise til Egypt, og tittelen nevner 'Fødselen av Moses' sønn – Sefarjas stamtavle', mens innholdet faktisk handler om Peters tale i Salomos søylegang (Apg 3:11-26). Beskrivelsen, kategorien og referansene er derimot korrekte og samsvarer godt med bibelteksten.",
+  "score": 3,
+  "revisedStory": {
+    "slug": "peters-tale-i-salomos-soylegang",
+    "title": "Peters tale i Salomos søylegang",
+    "keywords": [
+      "peter",
+      "johannes",
+      "salomos søylegang",
+      "omvendelse",
+      "profet",
+      "messias",
+      "helbredelse",
+      "den lamme",
+      "forkynnelse",
+      "jerusalem"
+    ],
+    "description": "Etter helbredelsen av den lamme taler Peter frimodig til folket i Salomos søylegang om at Jesus er den profet Moses forutsa, og kaller folket til omvendelse.",
+    "category": "urkirken",
+    "references": [
+      {
+        "bookId": 44,
+        "startChapter": 3,
+        "startVerse": 11,
+        "endChapter": 3,
+        "endVerse": 26
+      }
+    ]
+  }
+}

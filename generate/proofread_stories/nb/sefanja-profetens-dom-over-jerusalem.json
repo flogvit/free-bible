@@ -1,0 +1,37 @@
+{
+  "issues": [
+    {
+      "field": "slug",
+      "severity": "critical",
+      "explanation": "Sluggen 'sefanja-profetens-dom-over-jerusalem' refererer til Sefanja og Jerusalem, men historien handler om Obadjas profeti om Edoms fall. Sluggen må matche tittelen.",
+      "current": "sefanja-profetens-dom-over-jerusalem",
+      "suggested": "obadjas-profeti-om-edoms-fall"
+    }
+  ],
+  "summary": "Referansene (Obadja 1:1-21, bookId 31) er helt korrekte og dekker hele Obadjas bok. Tittelen, nøkkelord, beskrivelsen og kategorien er alle treffende og korrekte. Det eneste problemet er at sluggen refererer til Sefanja i stedet for Obadja, noe som er en kritisk feil siden den ikke matcher tittelen eller innholdet.",
+  "score": 7,
+  "revisedStory": {
+    "slug": "obadjas-profeti-om-edoms-fall",
+    "title": "Obadjas profeti om Edoms fall",
+    "keywords": [
+      "obadja",
+      "edom",
+      "esau",
+      "dom",
+      "gjenopprettelse",
+      "israel",
+      "hovmod"
+    ],
+    "description": "Profeten Obadja forkynner Guds dom over Edom for deres hovmod og svik mot broderfolket Israel da Jerusalem ble angrepet. Profetien avsluttes med løfte om gjenopprettelse for Israel.",
+    "category": "profetene",
+    "references": [
+      {
+        "bookId": 31,
+        "startChapter": 1,
+        "startVerse": 1,
+        "endChapter": 1,
+        "endVerse": 21
+      }
+    ]
+  }
+}

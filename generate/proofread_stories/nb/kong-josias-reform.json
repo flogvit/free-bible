@@ -1,0 +1,58 @@
+{
+  "issues": [
+    {
+      "field": "keywords",
+      "severity": "minor",
+      "explanation": "Navnet på kongen skrives 'Josjia' i bibelteksten (osnb2), men nøkkelordet bruker formen 'josia'. Det bør inkludere den korrekte formen 'josjia' samt andre relevante nøkkelord som 'hilkia', 'paktsbok', 'hulda' og 'påske'.",
+      "current": "[\"josia\", \"reform\", \"lovbok\", \"tempel\", \"omvendelse\"]",
+      "suggested": "[\"josjia\", \"reform\", \"lovbok\", \"tempel\", \"omvendelse\", \"hilkia\", \"paktsbok\", \"hulda\", \"påske\"]"
+    },
+    {
+      "field": "description",
+      "severity": "minor",
+      "explanation": "Beskrivelsen er generelt dekkende, men den nevner bare funnet av lovboken og reformen. Teksten dekker også profetinnen Hulda, paktsfornyelsen og påskefeiringen. Dessuten brukes stavemåten 'Josia' i stedet for 'Josjia' som brukes i bibelteksten.",
+      "current": "Lovboken finnes i tempelet, og kong Josia iverksetter en stor religiøs reform.",
+      "suggested": "Lovboken blir funnet i tempelet, og kong Josjia fornyer pakten med Herren og gjennomfører en omfattende religiøs reform med fjerning av avgudsdyrkelse og feiring av påske."
+    },
+    {
+      "field": "title",
+      "severity": "minor",
+      "explanation": "Bibelteksten bruker formen 'Josjia' konsekvent. Tittelen bruker 'Josias' som er en alternativ form, men for konsistens med bibelteksten bør den oppdateres.",
+      "current": "Kong Josias reform",
+      "suggested": "Kong Josjias reform"
+    },
+    {
+      "field": "references",
+      "severity": "minor",
+      "explanation": "2. Kongebok 23 har 30 vers totalt. Referansen slutter ved vers 25, som er et naturlig endepunkt fordi vers 25 oppsummerer Josjias karakter. Versene 26-30 handler om Herrens vedvarende vrede og Josjias død, som kan anses som en separat del. Referansen er fornuftig slik den er."
+    }
+  ],
+  "summary": "Historien er generelt god og referansene er korrekte. Bibelteksten i 2. Kongebok 22-23 handler nettopp om kong Josjias reform. De viktigste forbedringspunktene er navneformen 'Josjia' vs 'Josia' for konsistens med bibelteksten, samt utvidelse av nøkkelord og beskrivelse for å dekke flere viktige elementer i fortellingen (profetinnen Hulda, paktsfornyelsen, påskefeiringen).",
+  "score": 8,
+  "revisedStory": {
+    "slug": "kong-josjias-reform",
+    "title": "Kong Josjias reform",
+    "keywords": [
+      "josjia",
+      "reform",
+      "lovbok",
+      "tempel",
+      "omvendelse",
+      "hilkia",
+      "paktsbok",
+      "hulda",
+      "påske"
+    ],
+    "description": "Lovboken blir funnet i tempelet, og kong Josjia fornyer pakten med Herren og gjennomfører en omfattende religiøs reform med fjerning av avgudsdyrkelse og feiring av påske.",
+    "category": "kongetiden",
+    "references": [
+      {
+        "bookId": 12,
+        "startChapter": 22,
+        "startVerse": 1,
+        "endChapter": 23,
+        "endVerse": 25
+      }
+    ]
+  }
+}

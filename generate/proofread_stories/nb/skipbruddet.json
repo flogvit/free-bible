@@ -1,0 +1,54 @@
+{
+  "issues": [
+    {
+      "field": "slug",
+      "severity": "minor",
+      "explanation": "Sluggen 'skipbruddet' er grei, men kunne vært mer beskrivende for å matche tittelen bedre, f.eks. 'skipbruddet-pa-vei-til-rom'.",
+      "current": "skipbruddet",
+      "suggested": "skipbruddet-pa-vei-til-rom"
+    },
+    {
+      "field": "keywords",
+      "severity": "minor",
+      "explanation": "Noen relevante søkeord mangler, som 'engel', 'slange', 'publius', 'adriaterhavet', og 'julius'. Disse ville gjøre historien mer søkbar. Spesielt slangeepisoden på Malta er et markant element i historien.",
+      "current": "skipbrudd, storm, malta, paulus, redning",
+      "suggested": "skipbrudd, storm, malta, paulus, redning, slange, engel, publius, adriaterhavet, sjøreise"
+    },
+    {
+      "field": "description",
+      "severity": "minor",
+      "explanation": "Beskrivelsen er korrekt men dekker kun skipbruddet og redningen. Den nevner ikke hendelsene på Malta (slangeepisoden, helbredelsene av Publius' far og andre syke) som er en vesentlig del av den refererte teksten (Apg 28:1-10).",
+      "current": "Paulus' skip forlisar i en voldsom storm, men alle 276 om bord reddes i land på Malta.",
+      "suggested": "Paulus' skip forliser i en voldsom storm, men alle 276 om bord reddes i land på Malta, der Paulus overlever et slangebitt og helbreder syke."
+    }
+  ],
+  "summary": "Historien er i all hovedsak korrekt. Referansene (Apg 27:1–28:10) stemmer godt overens med bibelteksten og dekker hele fortellingen. Kategorien 'paulus' er riktig. Beskrivelsen er nøyaktig men dekker ikke Malta-hendelsene som utgjør en vesentlig del av den refererte teksten. Sluggen kunne vært mer beskrivende. Noen nyttige søkeord mangler.",
+  "score": 8,
+  "revisedStory": {
+    "slug": "skipbruddet-pa-vei-til-rom",
+    "title": "Skipbruddet på vei til Rom",
+    "keywords": [
+      "skipbrudd",
+      "storm",
+      "malta",
+      "paulus",
+      "redning",
+      "slange",
+      "engel",
+      "publius",
+      "adriaterhavet",
+      "sjøreise"
+    ],
+    "description": "Paulus' skip forliser i en voldsom storm, men alle 276 om bord reddes i land på Malta, der Paulus overlever et slangebitt og helbreder syke.",
+    "category": "paulus",
+    "references": [
+      {
+        "bookId": 44,
+        "startChapter": 27,
+        "startVerse": 1,
+        "endChapter": 28,
+        "endVerse": 10
+      }
+    ]
+  }
+}

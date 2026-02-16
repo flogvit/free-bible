@@ -1,0 +1,51 @@
+{
+  "issues": [
+    {
+      "field": "slug",
+      "severity": "minor",
+      "explanation": "Sluggen 'ruts-trofasthet-paa-jordet' matcher ikke tittelen 'Rut sanker på Boas' jorde' særlig godt. En slug som bedre reflekterer tittelen ville vært mer passende.",
+      "current": "ruts-trofasthet-paa-jordet",
+      "suggested": "rut-sanker-paa-boas-jorde"
+    },
+    {
+      "field": "category",
+      "severity": "major",
+      "explanation": "Ruts bok hører ikke naturlig under kategorien 'dommerne'. Selv om handlingen tidsmessig finner sted i dommertiden, er Ruts bok typisk kategorisert under 'landnaam' eller lignende. Blant de tilgjengelige kategoriene er 'dommerne' likevel den nærmeste, da handlingen utspiller seg i dommertiden. Alternativt kan 'kongetiden' brukes fordi boken ender med Davids ættelinje, men 'dommerne' er forsvarlig."
+    },
+    {
+      "field": "keywords",
+      "severity": "minor",
+      "explanation": "Nøkkelordet 'jorde' er litt upresist. Tillegg av nøkkelord som 'noomi', 'høst', 'moab' og 'løser' ville gjøre historien lettere å finne, da disse er sentrale temaer i teksten.",
+      "current": "rut, boas, sanking, nåde, betlehem, jorde",
+      "suggested": "rut, boas, sanking, nåde, betlehem, noomi, høst, moab, løser"
+    }
+  ],
+  "summary": "Historien er i hovedsak korrekt. Referansene er riktige (Rut 2:1-23, bookId 8). Beskrivelsen samsvarer godt med bibelteksten. Sluggen kunne bedre reflektere tittelen, og nøkkelordene kunne utvides med viktige begreper som 'noomi', 'moab', 'høst' og 'løser'. Kategorien 'dommerne' er akseptabel da handlingen utspiller seg i dommertiden.",
+  "score": 7,
+  "revisedStory": {
+    "slug": "rut-sanker-paa-boas-jorde",
+    "title": "Rut sanker på Boas' jorde",
+    "keywords": [
+      "rut",
+      "boas",
+      "sanking",
+      "nåde",
+      "betlehem",
+      "noomi",
+      "høst",
+      "moab",
+      "løser"
+    ],
+    "description": "Rut går ut for å sanke aks på jordene og havner på Boas' åker, der han viser henne stor velvilje og beskyttelse.",
+    "category": "dommerne",
+    "references": [
+      {
+        "bookId": 8,
+        "startChapter": 2,
+        "startVerse": 1,
+        "endChapter": 2,
+        "endVerse": 23
+      }
+    ]
+  }
+}

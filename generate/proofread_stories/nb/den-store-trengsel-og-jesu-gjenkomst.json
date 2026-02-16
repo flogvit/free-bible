@@ -1,0 +1,56 @@
+{
+  "issues": [
+    {
+      "field": "slug",
+      "severity": "minor",
+      "explanation": "Sluggen 'den-store-trengsel-og-jesu-gjenkomst' er akseptabel men matcher ikke tittelen 'Jesu tale om de siste tider' spesielt godt. Det ville vært mer konsistent å bruke en slug som gjenspeiler tittelen.",
+      "current": "den-store-trengsel-og-jesu-gjenkomst",
+      "suggested": "jesu-tale-om-de-siste-tider"
+    },
+    {
+      "field": "keywords",
+      "severity": "minor",
+      "explanation": "Noen relevante nøkkelord mangler, for eksempel 'trengsel', 'årvåkenhet'/'beredskap', 'menneskesønnen', 'fikentreet' og 'noahs dager'. Disse temaene er sentrale i teksten.",
+      "current": "eskatologi, gjenkomst, endetid, oljeberget, tegn, jesus, profeti",
+      "suggested": "eskatologi, gjenkomst, endetid, oljeberget, tegn, jesus, profeti, trengsel, menneskesønnen, beredskap, fikentreet, noahs dager"
+    },
+    {
+      "field": "description",
+      "severity": "minor",
+      "explanation": "Beskrivelsen er god, men den dekker ikke de viktige avsluttende lignelsene om beredskap (vaktsom husvert, tro og utro tjener) som utgjør en betydelig del av kapitlet (v. 36-51). En litt bredere beskrivelse ville vært mer dekkende.",
+      "current": "På Oljeberget underviser Jesus sine disipler om tegnene på endetiden, Jerusalems ødeleggelse og Menneskesønnens gjenkomst i herlighet.",
+      "suggested": "På Oljeberget underviser Jesus sine disipler om tegnene på endetiden, Jerusalems ødeleggelse, Menneskesønnens gjenkomst i herlighet og behovet for årvåkenhet og beredskap."
+    }
+  ],
+  "summary": "Historien er generelt god. Referansen til Matteus 24:1-51 er korrekt og dekker hele Jesu eskatologiske tale på Oljeberget. Kategorien 'jesus-liv' er passende. Mindre forbedringer kan gjøres: sluggen bør matche tittelen bedre, nøkkelord kan utvides med flere sentrale temaer fra teksten, og beskrivelsen bør nevne beredskap/årvåkenhet som er et viktig tema i siste halvdel av kapitlet.",
+  "score": 8,
+  "revisedStory": {
+    "slug": "jesu-tale-om-de-siste-tider",
+    "title": "Jesu tale om de siste tider",
+    "keywords": [
+      "eskatologi",
+      "gjenkomst",
+      "endetid",
+      "oljeberget",
+      "tegn",
+      "jesus",
+      "profeti",
+      "trengsel",
+      "menneskesønnen",
+      "beredskap",
+      "fikentreet",
+      "noahs dager"
+    ],
+    "description": "På Oljeberget underviser Jesus sine disipler om tegnene på endetiden, Jerusalems ødeleggelse, Menneskesønnens gjenkomst i herlighet og behovet for årvåkenhet og beredskap.",
+    "category": "jesus-liv",
+    "references": [
+      {
+        "bookId": 40,
+        "startChapter": 24,
+        "startVerse": 1,
+        "endChapter": 24,
+        "endVerse": 51
+      }
+    ]
+  }
+}

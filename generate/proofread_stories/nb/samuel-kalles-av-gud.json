@@ -1,0 +1,50 @@
+{
+  "issues": [
+    {
+      "field": "description",
+      "severity": "minor",
+      "explanation": "I bibelteksten (vers 10) sier Samuel: 'Tal, for din tjener hører' — uten 'Herre'. Beskrivelsen siterer 'Tal, Herre, din tjener hører', som er Elis instruksjon i vers 9. Selve sitatet fra Samuel utelater 'Herre'. Dette er en liten unøyaktighet.",
+      "current": "Den unge Samuel hører Guds stemme om natten i tempelet og svarer: 'Tal, Herre, din tjener hører.'",
+      "suggested": "Den unge Samuel hører Guds stemme om natten i tempelet og svarer: 'Tal, for din tjener hører.'"
+    },
+    {
+      "field": "category",
+      "severity": "major",
+      "explanation": "Kategorien 'dommerne' er ikke helt dekkende. Samuels kall skjer i overgangen mellom dommertiden og kongetiden. Samuel var den siste dommeren, men historien om hans kall handler om starten på profetgjerningen (vers 20: 'Samuel var stadfestet som profet for Herren'). Likevel kan 'dommerne' forsvares siden Samuel tjente under Eli som var dommer. Men kategorien 'kongetiden' eller 'profetene' kunne også passe. Mest korrekt ville nok 'dommerne' være akseptabelt da dette er før kongetiden starter."
+    },
+    {
+      "field": "keywords",
+      "severity": "minor",
+      "explanation": "Nøkkelordet 'profet' mangler. Vers 20 sier at Samuel ble stadfestet som profet for Herren, noe som er et sentralt poeng i historien. Også 'guds ark' eller 'sjilo' kunne vært relevante.",
+      "current": "samuel, kall, natt, eli, stemme, tempel",
+      "suggested": "samuel, kall, natt, eli, stemme, tempel, profet, sjilo"
+    }
+  ],
+  "summary": "Historien er i hovedsak god. Referansene er korrekte — 1. Samuel 3:1-21 dekker hele fortellingen om Samuels kall. Tittelen og sluggen er gode. Beskrivelsen har en liten unøyaktighet i sitatet (Samuel sier 'Tal, for din tjener hører' i vers 10, ikke 'Tal, Herre, din tjener hører' — det siste er Elis instruksjon i vers 9). Kategorien 'dommerne' er akseptabel men kan diskuteres. Nøkkelord mangler 'profet' som er sentralt.",
+  "score": 7,
+  "revisedStory": {
+    "slug": "samuel-kalles-av-gud",
+    "title": "Samuel kalles av Gud",
+    "keywords": [
+      "samuel",
+      "kall",
+      "natt",
+      "eli",
+      "stemme",
+      "tempel",
+      "profet",
+      "sjilo"
+    ],
+    "description": "Den unge Samuel hører Guds stemme om natten i tempelet og svarer: «Tal, for din tjener hører.» Hele Israel forstod at Samuel var stadfestet som profet for Herren.",
+    "category": "dommerne",
+    "references": [
+      {
+        "bookId": 9,
+        "startChapter": 3,
+        "startVerse": 1,
+        "endChapter": 3,
+        "endVerse": 21
+      }
+    ]
+  }
+}

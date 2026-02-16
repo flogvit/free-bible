@@ -1,0 +1,55 @@
+{
+  "issues": [
+    {
+      "field": "keywords",
+      "severity": "minor",
+      "explanation": "Matteus 2:1-12 handler om vismennene (de vise menn), stjernen, og gavene (gull, røkelse, myrra). Disse viktige elementene mangler i nøkkelordlisten. I tillegg er 'jul' mer et kulturbegrep enn et bibelsk nøkkelord, men det kan argumenteres for at det hjelper brukere å finne historien.",
+      "current": "[\"jesus\", \"fødsel\", \"betlehem\", \"krybbe\", \"gjetere\", \"engler\", \"jul\"]",
+      "suggested": "[\"jesus\", \"fødsel\", \"betlehem\", \"krybbe\", \"gjetere\", \"engler\", \"vismenn\", \"stjernen\", \"maria\", \"josef\", \"jul\"]"
+    },
+    {
+      "field": "description",
+      "severity": "minor",
+      "explanation": "Beskrivelsen nevner bare Lukas-fortellingen (krybbe, engler, gjetere), men referansene inkluderer også Matteus 2:1-12 om vismennene. Beskrivelsen bør nevne vismennene for å dekke begge referansene.",
+      "current": "Jesus fødes i Betlehem og legges i en krybbe. Engler forkynner det glade budskapet for gjeterne.",
+      "suggested": "Jesus fødes i Betlehem og legges i en krybbe. Engler forkynner det glade budskapet for gjeterne, og vismenn fra Østen kommer for å tilbe ham."
+    }
+  ],
+  "summary": "Historien er generelt god. Referansene er korrekte – Lukas 2:1-20 (bookId 42) dekker fødselen og gjeternes besøk, og Matteus 2:1-12 (bookId 40) dekker vismennenes besøk. Slug, tittel og kategori er alle passende. To mindre forbedringer foreslås: nøkkelordlisten bør utvides med termer fra Matteus-fortellingen (vismenn, stjernen, maria, josef), og beskrivelsen bør også nevne vismennene siden Matteus 2:1-12 er inkludert som referanse.",
+  "score": 8,
+  "revisedStory": {
+    "slug": "jesu-fodsel",
+    "title": "Jesu fødsel",
+    "keywords": [
+      "jesus",
+      "fødsel",
+      "betlehem",
+      "krybbe",
+      "gjetere",
+      "engler",
+      "vismenn",
+      "stjernen",
+      "maria",
+      "josef",
+      "jul"
+    ],
+    "description": "Jesus fødes i Betlehem og legges i en krybbe. Engler forkynner det glade budskapet for gjeterne, og vismenn fra Østen kommer for å tilbe ham.",
+    "category": "jesus-liv",
+    "references": [
+      {
+        "bookId": 42,
+        "startChapter": 2,
+        "startVerse": 1,
+        "endChapter": 2,
+        "endVerse": 20
+      },
+      {
+        "bookId": 40,
+        "startChapter": 2,
+        "startVerse": 1,
+        "endChapter": 2,
+        "endVerse": 12
+      }
+    ]
+  }
+}

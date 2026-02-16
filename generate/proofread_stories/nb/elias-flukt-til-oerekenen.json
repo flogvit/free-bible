@@ -1,0 +1,55 @@
+{
+  "issues": [
+    {
+      "field": "slug",
+      "severity": "minor",
+      "explanation": "Slug-en har en skrivefeil: 'oerekenen' burde være 'oerkenen' for å matche standard norsk translitterering av 'ørkenen'. Dessuten bør slug-en gjenspeile tittelen bedre.",
+      "current": "elias-flukt-til-oerekenen",
+      "suggested": "elia-flykter-fra-jesabel"
+    },
+    {
+      "field": "keywords",
+      "severity": "minor",
+      "explanation": "Nøkkelordet 'uttmattet' har en skrivefeil (dobbel t). Det skal være 'utmattet'. I tillegg mangler noen relevante nøkkelord som 'horeb', 'beer-sjeba' og 'karmel'.",
+      "current": "uttmattet",
+      "suggested": "utmattet"
+    },
+    {
+      "field": "keywords",
+      "severity": "minor",
+      "explanation": "Relevante nøkkelord som 'horeb', 'beer-sjeba' og 'gyvelbusk' mangler. 'gyveltre' bør endres til 'gyvelbusk' for å samsvare med bibelteksten.",
+      "current": "gyveltre",
+      "suggested": "gyvelbusk"
+    }
+  ],
+  "summary": "Historien er i hovedsak korrekt og godt beskrevet. Referansen til 1. Kongebok 19:1-8 er helt riktig og dekker hele historien. Det er noen mindre problemer: slug-en har en skrivefeil ('oerekenen'), nøkkelordet 'uttmattet' har en skrivefeil, og 'gyveltre' bør være 'gyvelbusk' for å samsvare med bibelteksten. Noen relevante nøkkelord som 'horeb' og 'beer-sjeba' mangler.",
+  "score": 8,
+  "revisedStory": {
+    "slug": "elia-flykter-fra-jesabel",
+    "title": "Elia flykter fra Jesabel",
+    "keywords": [
+      "elia",
+      "jesabel",
+      "flukt",
+      "ørken",
+      "engel",
+      "mat",
+      "utmattet",
+      "gyvelbusk",
+      "horeb",
+      "beer-sjeba",
+      "karmel"
+    ],
+    "description": "Etter seieren på Karmel truer dronning Jesabel Elia på livet. Han flykter til ørkenen, ønsker å dø, men blir styrket av en engel som gir ham mat og drikke for reisen til Horeb.",
+    "category": "profetene",
+    "references": [
+      {
+        "bookId": 11,
+        "startChapter": 19,
+        "startVerse": 1,
+        "endChapter": 19,
+        "endVerse": 8
+      }
+    ]
+  }
+}

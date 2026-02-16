@@ -1,0 +1,51 @@
+{
+  "issues": [
+    {
+      "field": "slug",
+      "severity": "minor",
+      "explanation": "Sluggen 'mordokai-og-hamans-plan' matcher ikke helt tittelen 'Hamans plan om å utrydde jødene'. En slug som bedre reflekterer tittelen ville være 'hamans-plan-om-a-utrydde-jodene'.",
+      "current": "mordokai-og-hamans-plan",
+      "suggested": "hamans-plan-om-a-utrydde-jodene"
+    },
+    {
+      "field": "keywords",
+      "severity": "minor",
+      "explanation": "Nøkkelordet 'ester' er ikke direkte relevant for denne passasjen (Ester 3:1-15) - Ester nevnes ikke i dette kapittelet. Derimot mangler relevante nøkkelord som 'ahasverus', 'dekret' og 'jøder'.",
+      "current": "[\"haman\",\"mordokai\",\"ester\",\"persisk rike\",\"folkemord\",\"loddkasting\",\"plan\"]",
+      "suggested": "[\"haman\",\"mordokai\",\"ahasverus\",\"persisk rike\",\"folkemord\",\"loddkasting\",\"dekret\",\"jøder\",\"pur\"]"
+    },
+    {
+      "field": "description",
+      "severity": "minor",
+      "explanation": "Beskrivelsen kaller Haman 'kongens mektige rådgiver', men teksten sier at han ble opphøyet og fikk en høy stilling over alle fyrstene - han var mer en slags øverste minister/embetsmann. Begrepet 'rådgiver' er litt upresist men ikke direkte feil. Ellers er beskrivelsen god og presis."
+    }
+  ],
+  "summary": "Historien er generelt god. Referansene er korrekte - Ester 3:1-15 (bookId 17) dekker nøyaktig Hamans plan om å utrydde jødene. Tittelen, beskrivelsen og kategorien er passende. Mindre forbedringer kan gjøres i slug (bedre match med tittel) og keywords (fjerne 'ester' som ikke forekommer i passasjen, legge til mer relevante nøkkelord).",
+  "score": 8,
+  "revisedStory": {
+    "slug": "hamans-plan-om-a-utrydde-jodene",
+    "title": "Hamans plan om å utrydde jødene",
+    "keywords": [
+      "haman",
+      "mordokai",
+      "ahasverus",
+      "persisk rike",
+      "folkemord",
+      "loddkasting",
+      "dekret",
+      "jøder",
+      "pur"
+    ],
+    "description": "Haman, kongens øverste embetsmann, blir rasende fordi Mordokai nekter å bøye seg for ham, og overtaler kong Ahasverus til å utstede et dekret om å utrydde alle jøder i riket.",
+    "category": "eksil",
+    "references": [
+      {
+        "bookId": 17,
+        "startChapter": 3,
+        "startVerse": 1,
+        "endChapter": 3,
+        "endVerse": 15
+      }
+    ]
+  }
+}

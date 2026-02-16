@@ -1,0 +1,41 @@
+{
+  "issues": [
+    {
+      "field": "keywords",
+      "severity": "minor",
+      "explanation": "Nøkkelordet 'engel' er ikke direkte bekreftet av teksten. Teksten omtaler figuren som 'hærføreren for Herrens hær', ikke eksplisitt som en engel. Selv om mange tolker dette som en engel eller en teofani, er det mer presist å bruke 'herrens hær' som nøkkelord i stedet.",
+      "current": "engel",
+      "suggested": "herrens hær"
+    },
+    {
+      "field": "category",
+      "severity": "minor",
+      "explanation": "Kategorien 'landnaam' ser ut til å mangle en 'e' – den korrekte norske skrivemåten bør være 'landnaam', men basert på de tillatte kategoriene er dette riktig. Ingen endring nødvendig."
+    }
+  ],
+  "summary": "Historien er i all hovedsak korrekt. Referansene til Josva 5:13-15 stemmer perfekt med bibelteksten som er oppgitt. Tittel, slug, beskrivelse og kategori er alle passende. Det eneste forbedringsforslaget er å bytte ut nøkkelordet 'engel' med 'herrens hær', da teksten ikke eksplisitt kaller figuren en engel.",
+  "score": 9,
+  "revisedStory": {
+    "slug": "josvas-moete-med-haerfoereren",
+    "title": "Josvas møte med Herrens hærfører",
+    "keywords": [
+      "josva",
+      "hærfører",
+      "sverd",
+      "hellig",
+      "jericho",
+      "herrens hær"
+    ],
+    "description": "Før erobringen av Jeriko møter Josva en mann med et draget sverd som åpenbarer seg som føreren for Herrens hær. Josva faller ned og tilber, og stedet erklæres hellig.",
+    "category": "landnaam",
+    "references": [
+      {
+        "bookId": 6,
+        "startChapter": 5,
+        "startVerse": 13,
+        "endChapter": 5,
+        "endVerse": 15
+      }
+    ]
+  }
+}

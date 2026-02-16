@@ -1,0 +1,46 @@
+{
+  "issues": [
+    {
+      "field": "slug",
+      "severity": "major",
+      "explanation": "Slug-en 'pinnesvinet-og-sauen-davids-lignelse' er misvisende og stemmer ikke med tittelen. Historien handler om et lam, ikke et pinnesvin. Slug bør reflektere tittelen 'Natans lignelse om den fattige mannens lam'.",
+      "current": "pinnesvinet-og-sauen-davids-lignelse",
+      "suggested": "natans-lignelse-om-den-fattige-mannens-lam"
+    },
+    {
+      "field": "keywords",
+      "severity": "minor",
+      "explanation": "Nøkkelordet 'uria' mangler. Uria er en sentral figur i konteksten for denne lignelsen (2. Sam 12:9). Også 'anger' eller 'bekjennelse' kunne vært relevant siden David bekjenner sin synd.",
+      "current": "natan, david, lignelse, lam, batseba, dom, synd",
+      "suggested": "natan, david, lignelse, lam, batseba, uria, dom, synd, bekjennelse"
+    }
+  ],
+  "summary": "Historien er i hovedsak korrekt. Referansene til 2. Samuel 12:1-15 stemmer perfekt med bibelteksten og beskrivelsen. Tittelen, kategorien og beskrivelsen er gode. Hovedproblemet er at slug-en inneholder 'pinnesvinet-og-sauen' som er helt feil – historien handler om et lam, ikke et pinnesvin. I tillegg mangler nøkkelordet 'uria' som er sentralt i konteksten.",
+  "score": 6,
+  "revisedStory": {
+    "slug": "natans-lignelse-om-den-fattige-mannens-lam",
+    "title": "Natans lignelse om den fattige mannens lam",
+    "keywords": [
+      "natan",
+      "david",
+      "lignelse",
+      "lam",
+      "batseba",
+      "uria",
+      "dom",
+      "synd",
+      "bekjennelse"
+    ],
+    "description": "Profeten Natan forteller David lignelsen om den rike mannen som tok den fattige mannens eneste lam, og David innser at lignelsen handler om ham selv.",
+    "category": "kongetiden",
+    "references": [
+      {
+        "bookId": 10,
+        "startChapter": 12,
+        "startVerse": 1,
+        "endChapter": 12,
+        "endVerse": 15
+      }
+    ]
+  }
+}

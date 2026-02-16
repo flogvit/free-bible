@@ -1,0 +1,43 @@
+{
+  "issues": [
+    {
+      "field": "category",
+      "severity": "minor",
+      "explanation": "Kategorien 'landnaam' er stavet feil (ser ut som nederlandsk/afrikaans). Korrekt norsk stavemåte bør være 'landnaam' — men dette er faktisk den definerte kategorien i listen, så det er teknisk korrekt. Ingen endring nødvendig."
+    },
+    {
+      "field": "description",
+      "severity": "minor",
+      "explanation": "Beskrivelsen nevner 'basunstøt' mens bibelteksten spesifikt omtaler 'værerhorn' (shofar). Begrepet 'basun' er likevel allment forstått og akseptabelt i en oppsummering. Beskrivelsen er ellers presis og korrekt."
+    }
+  ],
+  "summary": "Historien er svært god. Referansen til Josva 6:1-27 er helt korrekt og dekker hele beretningen om Jerikos fall. Slug, tittel, nøkkelord, beskrivelse og kategori er alle passende. Nøkkelordene dekker de viktigste elementene godt. Eneste svært små bemerkninger er at 'basun' i nøkkelord og beskrivelse er en litt fri oversettelse av 'værerhorn', men dette er allment akseptert terminologi. Jeg legger til 'værerhorn' som ekstra nøkkelord for fullstendighetens skyld.",
+  "score": 9,
+  "revisedStory": {
+    "slug": "jerikos-mur",
+    "title": "Jerikos mur faller",
+    "keywords": [
+      "jeriko",
+      "mur",
+      "basun",
+      "marsj",
+      "seier",
+      "josva",
+      "rahab",
+      "paktsarken",
+      "israelittene",
+      "værerhorn"
+    ],
+    "description": "Israelittene marsjerer rundt Jeriko i syv dager. På den sjuende dagen går de rundt byen sju ganger, og murene faller etter basunstøt og folkets rop.",
+    "category": "landnaam",
+    "references": [
+      {
+        "bookId": 6,
+        "startChapter": 6,
+        "startVerse": 1,
+        "endChapter": 6,
+        "endVerse": 27
+      }
+    ]
+  }
+}

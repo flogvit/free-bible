@@ -1,0 +1,53 @@
+{
+  "issues": [
+    {
+      "field": "slug",
+      "severity": "minor",
+      "explanation": "Sluggen 'elias-kappestrid-og-regnet-vender-tilbake' nevner 'kappestrid' som handler om konfrontasjonen med Baalsprofetene (v. 20-40), men denne historien dekker kun bønnen om regn (v. 41-46). Sluggen bør matche tittelen bedre.",
+      "current": "elias-kappestrid-og-regnet-vender-tilbake",
+      "suggested": "elia-ber-om-regn-paa-karmel"
+    },
+    {
+      "field": "keywords",
+      "severity": "minor",
+      "explanation": "Nøkkelordet 'tjener' mangler, siden tjeneren spiller en viktig rolle i fortellingen (han sendes ut sju ganger for å se etter skyen). Også 'jisreel' kunne vært med da det er Akabs mål.",
+      "current": "elia, regn, karmel, bønn, tørke, sky, ahab",
+      "suggested": "elia, regn, karmel, bønn, tørke, sky, ahab, tjener, jisreel"
+    },
+    {
+      "field": "description",
+      "severity": "minor",
+      "explanation": "Beskrivelsen sier 'etter sju ganger med bønn', men teksten sier at Elia sendte tjeneren for å se mot havet sju ganger – det var tjeneren som gikk sju ganger, ikke at Elia ba sju ganger eksplisitt. En liten presisering ville være mer nøyaktig.",
+      "current": "Etter seieren over Baalsprofetene ber Elia inderlig om regn, og etter sju ganger med bønn sender Herren en kraftig regnskur som avslutter den lange tørken.",
+      "suggested": "Etter seieren over Baalsprofetene ber Elia inderlig om regn på toppen av Karmel. Tjeneren sendes sju ganger for å se mot havet, og den sjuende gangen stiger en liten sky opp, etterfulgt av kraftig regn som avslutter den lange tørken."
+    }
+  ],
+  "summary": "Historien er i hovedsak korrekt. Referansene til 1. Kongebok 18:41-46 er helt riktige og dekker nøyaktig den beskrevne historien. Kategorien 'profetene' passer godt. De eneste problemene er at sluggen ikke matcher tittelen (den nevner 'kappestrid' som tilhører en annen del av kapitlet), at noen relevante nøkkelord mangler, og at beskrivelsen er litt upresis om de sju gangene.",
+  "score": 8,
+  "revisedStory": {
+    "slug": "elia-ber-om-regn-paa-karmel",
+    "title": "Elia ber om regn på Karmel",
+    "keywords": [
+      "elia",
+      "regn",
+      "karmel",
+      "bønn",
+      "tørke",
+      "sky",
+      "ahab",
+      "tjener",
+      "jisreel"
+    ],
+    "description": "Etter seieren over Baalsprofetene ber Elia inderlig om regn på toppen av Karmel. Tjeneren sendes sju ganger for å se mot havet, og den sjuende gangen stiger en liten sky opp, etterfulgt av kraftig regn som avslutter den lange tørken.",
+    "category": "profetene",
+    "references": [
+      {
+        "bookId": 11,
+        "startChapter": 18,
+        "startVerse": 41,
+        "endChapter": 18,
+        "endVerse": 46
+      }
+    ]
+  }
+}

@@ -1,0 +1,45 @@
+{
+  "issues": [
+    {
+      "field": "keywords",
+      "severity": "minor",
+      "explanation": "Nøkkelordet 'joh 3:16' er en bibelreferanse, ikke et typisk søkeord. Det er bedre å bruke innholdsmessige søkeord som 'evig liv', 'Guds kjærlighet', 'født på ny' osv. I tillegg mangler viktige tematiske nøkkelord som 'evig liv', 'Guds rike', 'fariseer' og 'født på ny'.",
+      "current": "[\"nikodemus\",\"gjenfødt\",\"natt\",\"tro\",\"joh 3:16\"]",
+      "suggested": "[\"nikodemus\",\"født på ny\",\"gjenfødelse\",\"evig liv\",\"guds kjærlighet\",\"natt\",\"tro\",\"fariseer\"]"
+    },
+    {
+      "field": "keywords",
+      "severity": "minor",
+      "explanation": "Nøkkelordet 'gjenfødt' er ok, men teksten bruker uttrykket 'født på ny' (Joh 3:3,7), så 'født på ny' er mer tekstnært. Begge varianter kan inkluderes.",
+      "current": "gjenfødt",
+      "suggested": "født på ny, gjenfødelse"
+    }
+  ],
+  "summary": "Historien er i all hovedsak korrekt. Slug, tittel, beskrivelse, kategori og referanser er alle korrekte og samsvarer med bibelteksten. De eneste forbedringspunktene gjelder nøkkelordene: 'joh 3:16' er en bibelreferanse heller enn et innholdsmessig søkeord, og noen viktige tematiske nøkkelord som 'evig liv', 'født på ny' og 'Guds kjærlighet' mangler.",
+  "score": 8,
+  "revisedStory": {
+    "slug": "jesus-og-nikodemus",
+    "title": "Jesus og Nikodemus",
+    "keywords": [
+      "nikodemus",
+      "født på ny",
+      "gjenfødelse",
+      "evig liv",
+      "guds kjærlighet",
+      "natt",
+      "tro",
+      "fariseer"
+    ],
+    "description": "Nikodemus oppsøker Jesus om natten. Jesus forklarer om gjenfødselen og Guds kjærlighet til verden.",
+    "category": "jesus-liv",
+    "references": [
+      {
+        "bookId": 43,
+        "startChapter": 3,
+        "startVerse": 1,
+        "endChapter": 3,
+        "endVerse": 21
+      }
+    ]
+  }
+}

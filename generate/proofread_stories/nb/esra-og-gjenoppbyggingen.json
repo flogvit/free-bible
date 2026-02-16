@@ -1,0 +1,59 @@
+{
+  "issues": [
+    {
+      "field": "description",
+      "severity": "major",
+      "explanation": "Beskrivelsen sier at tempelet gjenoppbygges \"under Esras ledelse\", men bibelteksten viser tydelig at det er Serubabel og Josva som leder gjenoppbyggingen. Esra selv er ikke nevnt i kapitlene 3-6 som en aktiv leder av tempelbyggingen. Esras rolle kommer først senere i boken.",
+      "current": "De hjemvendte fra eksilet gjenoppbygger tempelet i Jerusalem under Esras ledelse.",
+      "suggested": "De hjemvendte fra eksilet gjenoppbygger tempelet i Jerusalem under ledelse av Serubabel og Josva, med støtte fra profetene Haggai og Sakarja."
+    },
+    {
+      "field": "slug",
+      "severity": "minor",
+      "explanation": "Sluggen nevner Esra, men Esra er ikke den sentrale lederen i denne passasjen (Esra 3-6). Det er Serubabel og Josva som leder arbeidet. Sluggen bør bedre reflektere innholdet.",
+      "current": "esra-og-gjenoppbyggingen",
+      "suggested": "tempelets-gjenoppbygging"
+    },
+    {
+      "field": "keywords",
+      "severity": "major",
+      "explanation": "Viktige nøkkelord mangler: 'serubabel', 'josva', 'kyros', 'dareios', 'haggai', 'sakarja' er alle sentrale personer i teksten. 'esra' er misvisende som nøkkelord siden han ikke opptrer aktivt i disse kapitlene. 'hjemkomst' er relevant men mindre sentralt enn andre manglende nøkkelord.",
+      "current": "esra, tempel, gjenoppbygging, babylon, hjemkomst",
+      "suggested": "serubabel, josva, tempel, gjenoppbygging, jerusalem, kyros, dareios, haggai, sakarja, hjemkomst"
+    },
+    {
+      "field": "category",
+      "severity": "minor",
+      "explanation": "Kategorien 'eksil' kan diskuteres – historien handler om tiden etter eksilet (hjemkomsten og gjenoppbyggingen). Men 'eksil' er den nærmeste tilgjengelige kategorien og dekker perioden rimelig godt. Ingen endring nødvendig."
+    }
+  ],
+  "summary": "Hovedproblemet er at beskrivelsen og sluggen feilaktig tilskriver ledelsen av tempelgjenoppbyggingen til Esra, mens bibelteksten tydelig viser at Serubabel og Josva ledet arbeidet. Nøkkelordene mangler flere sentrale personer som Serubabel, Josva, Kyros, Dareios, Haggai og Sakarja. Referansene og kategorien er korrekte.",
+  "score": 5,
+  "revisedStory": {
+    "slug": "tempelets-gjenoppbygging",
+    "title": "Tempelet gjenoppbygges",
+    "keywords": [
+      "serubabel",
+      "josva",
+      "tempel",
+      "gjenoppbygging",
+      "jerusalem",
+      "kyros",
+      "dareios",
+      "haggai",
+      "sakarja",
+      "hjemkomst"
+    ],
+    "description": "De hjemvendte fra eksilet gjenoppbygger tempelet i Jerusalem under ledelse av Serubabel og Josva, med støtte fra profetene Haggai og Sakarja, og etter påbud fra perserkongene Kyros og Dareios.",
+    "category": "eksil",
+    "references": [
+      {
+        "bookId": 15,
+        "startChapter": 3,
+        "startVerse": 1,
+        "endChapter": 6,
+        "endVerse": 22
+      }
+    ]
+  }
+}

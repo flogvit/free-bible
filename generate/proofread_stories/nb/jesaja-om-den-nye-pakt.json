@@ -1,0 +1,66 @@
+{
+  "issues": [
+    {
+      "field": "title",
+      "severity": "minor",
+      "explanation": "Tittelen nevner 'den nye pakt', men bibelteksten i Jesaja 9:1-7 handler ikke om den nye pakt. Den handler om profetien om barnet som skal fødes (Fredsfyrsten). Begrepet 'den nye pakt' er mer knyttet til Jeremia 31:31-34 og NT. Tittelen bør justeres for å reflektere innholdet bedre.",
+      "current": "Jesajas profeti om den nye pakt og fredsfyrsten",
+      "suggested": "Jesajas profeti om fredsfyrsten"
+    },
+    {
+      "field": "slug",
+      "severity": "minor",
+      "explanation": "Sluggen inneholder 'den-nye-pakt' som ikke er relevant for denne teksten. Bør oppdateres for å matche den reviderte tittelen.",
+      "current": "jesaja-om-den-nye-pakt",
+      "suggested": "jesaja-om-fredsfyrsten"
+    },
+    {
+      "field": "description",
+      "severity": "minor",
+      "explanation": "Beskrivelsen sier 'Under, Rådgiver' som to separate titler, men bibelteksten (osnb2) sier 'Underfull Rådgiver' som én tittel. Beskrivelsen bør justeres for å stemme med bibelteksten.",
+      "current": "Profeten Jesaja forkynner at et barn skal bli født som skal bære herredømme på sin skulder og kalles Under, Rådgiver, Veldig Gud, Evig Far og Fredsfyrste.",
+      "suggested": "Profeten Jesaja forkynner at et barn skal bli født som skal bære herredømme på sin skulder og kalles Underfull Rådgiver, Veldig Gud, Evig Far og Fredsfyrste."
+    },
+    {
+      "field": "references",
+      "severity": "minor",
+      "explanation": "Vers 7 ('Herren har sendt et ord mot Jakob, og det har falt over Israel') begynner en ny seksjon og hører egentlig ikke til profetien om Fredsfyrsten. Profetien om barnet og Fredsfyrsten avsluttes naturlig ved vers 6. Imidlertid er det ikke en alvorlig feil å inkludere vers 7.",
+      "current": "Jesaja 9:1-7",
+      "suggested": "Jesaja 9:1-6"
+    },
+    {
+      "field": "keywords",
+      "severity": "minor",
+      "explanation": "Nøkkelordet 'immanuel' er ikke direkte nevnt i Jesaja 9:1-7. Immanuel-profetien er i Jesaja 7:14. Nøkkelord som 'davids trone', 'herredømme' eller 'sønn' ville vært mer relevante. Også mangler 'fredsfyrste' som et viktig nøkkelord (det er der, men 'ny pakt' mangler med rette).",
+      "current": "jesaja, fredsfyrsten, barn, immanuel, profeti, lys, mørke",
+      "suggested": "jesaja, fredsfyrsten, barn, profeti, lys, mørke, herredømme, davids trone"
+    }
+  ],
+  "summary": "Historien er generelt god, men har noen unøyaktigheter: Tittelen og sluggen nevner 'den nye pakt' som ikke er tema i Jesaja 9:1-7. Beskrivelsen bruker 'Under, Rådgiver' som to separate titler i stedet for 'Underfull Rådgiver'. Nøkkelordet 'immanuel' er ikke direkte relevant for denne passasjen. Referansene er i hovedsak korrekte, men kunne vært avgrenset til vers 1-6.",
+  "score": 6,
+  "revisedStory": {
+    "slug": "jesaja-om-fredsfyrsten",
+    "title": "Jesajas profeti om fredsfyrsten",
+    "keywords": [
+      "jesaja",
+      "fredsfyrsten",
+      "barn",
+      "profeti",
+      "lys",
+      "mørke",
+      "herredømme",
+      "davids trone"
+    ],
+    "description": "Profeten Jesaja forkynner at et barn skal bli født som skal bære herredømme på sin skulder og kalles Underfull Rådgiver, Veldig Gud, Evig Far og Fredsfyrste. Hans rike skal grunnfestes med rett og rettferdighet på Davids trone for evig.",
+    "category": "profetene",
+    "references": [
+      {
+        "bookId": 23,
+        "startChapter": 9,
+        "startVerse": 1,
+        "endChapter": 9,
+        "endVerse": 6
+      }
+    ]
+  }
+}

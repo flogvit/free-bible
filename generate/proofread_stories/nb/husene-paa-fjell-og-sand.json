@@ -1,0 +1,47 @@
+{
+  "issues": [
+    {
+      "field": "keywords",
+      "severity": "minor",
+      "explanation": "Bibelteksten bruker ordet 'klippen' (ikke 'fjell') som grunnlaget for det kloke huset. Nøkkelordet 'fjell' er litt misvisende. 'klippe' bør legges til som nøkkelord, og 'klok' og 'uforstandig' er også sentrale begreper i teksten.",
+      "current": "lignelse, hus, fjell, sand, lydighet, grunnvoll, bergprekenen",
+      "suggested": "lignelse, hus, klippe, fjell, sand, lydighet, grunnvoll, bergprekenen, klok, uforstandig"
+    },
+    {
+      "field": "description",
+      "severity": "minor",
+      "explanation": "Bibelteksten bruker ordet 'klippen', ikke 'fjell'. Beskrivelsen sier 'den kloke mannen som bygde huset sitt på fjell', men det bør være 'på klippen' for å være tro mot bibelteksten.",
+      "current": "Jesus avslutter Bergprekenen med lignelsen om den kloke mannen som bygde huset sitt på fjell, og den uforstandige som bygde på sand. Lignelsen understreker viktigheten av å leve etter Jesu ord.",
+      "suggested": "Jesus avslutter Bergprekenen med lignelsen om den kloke mannen som bygde huset sitt på klippen, og den uforstandige som bygde på sand. Lignelsen understreker viktigheten av å høre og gjøre etter Jesu ord."
+    }
+  ],
+  "summary": "Historien er i det store og hele korrekt. Referansene (Matt 7:24-29) stemmer perfekt med innholdet. Kategori og slug er passende. To mindre justeringer anbefales: bibelteksten bruker 'klippen' (ikke 'fjell') som bilde, og nøkkelordene kan utvides noe for bedre dekning. Lukas-parallellen (Luk 6:47-49) kan eventuelt legges til som sekundær referanse, men er ikke nødvendig.",
+  "score": 8,
+  "revisedStory": {
+    "slug": "husene-paa-klippen-og-paa-sand",
+    "title": "Husene på klippen og på sand",
+    "keywords": [
+      "lignelse",
+      "hus",
+      "klippe",
+      "fjell",
+      "sand",
+      "lydighet",
+      "grunnvoll",
+      "bergprekenen",
+      "klok",
+      "uforstandig"
+    ],
+    "description": "Jesus avslutter Bergprekenen med lignelsen om den kloke mannen som bygde huset sitt på klippen, og den uforstandige som bygde på sand. Lignelsen understreker viktigheten av å høre og gjøre etter Jesu ord.",
+    "category": "jesu-lignelser",
+    "references": [
+      {
+        "bookId": 40,
+        "startChapter": 7,
+        "startVerse": 24,
+        "endChapter": 7,
+        "endVerse": 29
+      }
+    ]
+  }
+}

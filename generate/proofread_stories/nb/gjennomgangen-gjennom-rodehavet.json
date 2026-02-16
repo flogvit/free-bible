@@ -1,0 +1,53 @@
+{
+  "issues": [
+    {
+      "field": "keywords",
+      "severity": "minor",
+      "explanation": "Søkeordet 'tørrskodde' er feilstavet. Bibelteksten bruker 'tørrskodd', som er den korrekte formen.",
+      "current": "tørrskodde",
+      "suggested": "tørrskodd"
+    },
+    {
+      "field": "description",
+      "severity": "minor",
+      "explanation": "Beskrivelsen bruker 'tørrskodde' som er feilstavet. Korrekt form er 'tørrskodd' i henhold til bibelteksten.",
+      "current": "Gud deler Rødehavet slik at israelittene kan gå tørrskodde over, mens den egyptiske hæren drukner.",
+      "suggested": "Gud deler Rødehavet slik at israelittene kan gå tørrskodd over, mens den egyptiske hæren drukner."
+    },
+    {
+      "field": "category",
+      "severity": "major",
+      "explanation": "Historien om gjennomgangen gjennom Rødehavet er en del av ørkenvandringen/utferden fra Egypt, ikke primært en 'moses'-kategori. Kategorien 'oerkenvandringen' er mer passende da dette handler om Israels vandring etter å ha forlatt Egypt.",
+      "current": "moses",
+      "suggested": "oerkenvandringen"
+    }
+  ],
+  "summary": "Historien er generelt god med korrekte referanser til 2. Mosebok 14:1-31. Hovedproblemene er en stavefeil i 'tørrskodde' (skal være 'tørrskodd') og at kategorien 'moses' bør endres til 'oerkenvandringen' da dette er en sentral hendelse i ørkenvandringen/utferden. Referansene er presise og dekker hele beretningen om Rødehavets deling.",
+  "score": 7,
+  "revisedStory": {
+    "slug": "gjennomgangen-gjennom-rodehavet",
+    "title": "Gjennomgangen gjennom Rødehavet",
+    "keywords": [
+      "rødehavet",
+      "moses",
+      "havet deles",
+      "farao",
+      "befrielse",
+      "mirakel",
+      "israelittene",
+      "tørrskodd",
+      "exodus"
+    ],
+    "description": "Gud deler Rødehavet slik at israelittene kan gå tørrskodd over, mens den egyptiske hæren drukner.",
+    "category": "oerkenvandringen",
+    "references": [
+      {
+        "bookId": 2,
+        "startChapter": 14,
+        "startVerse": 1,
+        "endChapter": 14,
+        "endVerse": 31
+      }
+    ]
+  }
+}

@@ -1,0 +1,65 @@
+{
+  "issues": [
+    {
+      "field": "keywords",
+      "severity": "minor",
+      "explanation": "Nøkkelordet 'noa' bør skrives 'noah' for å matche den bibelske skrivemåten som brukes i teksten (osnb2). I tillegg mangler nøkkelord som 'flom', 'velsignelse' og 'blod' som er sentrale temaer i teksten.",
+      "current": "noa, pakt, regnbue, offer, altar",
+      "suggested": "noah, pakt, regnbue, offer, alter, flom, velsignelse"
+    },
+    {
+      "field": "keywords",
+      "severity": "minor",
+      "explanation": "'altar' bør være 'alter' som er korrekt norsk bokmål.",
+      "current": "altar",
+      "suggested": "alter"
+    },
+    {
+      "field": "category",
+      "severity": "major",
+      "explanation": "Kategorien 'skapelsen' passer ikke optimalt. Noahs pakt skjer etter syndfloden og hører bedre til kategorien 'patriarkene', da Noah regnes blant patriarkene/stamfedrene i 1. Mosebok.",
+      "current": "skapelsen",
+      "suggested": "patriarkene"
+    },
+    {
+      "field": "slug",
+      "severity": "minor",
+      "explanation": "Sluggen bruker 'noas' mens den bibelske navneformen er 'noah'. Bør endres til 'noahs-pakt-med-gud' for konsistens.",
+      "current": "noas-pakt-med-gud",
+      "suggested": "noahs-pakt-med-gud"
+    },
+    {
+      "field": "title",
+      "severity": "minor",
+      "explanation": "Tittelen bruker 'Noas' men den bibelske navneformen i teksten er 'Noah'. Bør endres til 'Noahs pakt med Gud'.",
+      "current": "Noas pakt med Gud",
+      "suggested": "Noahs pakt med Gud"
+    }
+  ],
+  "summary": "Historien er i hovedsak korrekt. Referansene er riktige og dekker hele fortellingen om Noahs ofring og Guds pakt med regnbuen som tegn (1. Mos 8:15–9:17). Hovedproblemene er at kategorien bør være 'patriarkene' i stedet for 'skapelsen', navneformen 'Noa' bør være 'Noah' for å matche bibelteksten, og noen nøkkelord kan forbedres.",
+  "score": 7,
+  "revisedStory": {
+    "slug": "noahs-pakt-med-gud",
+    "title": "Noahs pakt med Gud",
+    "keywords": [
+      "noah",
+      "pakt",
+      "regnbue",
+      "offer",
+      "alter",
+      "flom",
+      "velsignelse"
+    ],
+    "description": "Etter flommen bygger Noah et alter og ofrer til Gud. Gud inngår en pakt og setter regnbuen som tegn.",
+    "category": "patriarkene",
+    "references": [
+      {
+        "bookId": 1,
+        "startChapter": 8,
+        "startVerse": 15,
+        "endChapter": 9,
+        "endVerse": 17
+      }
+    ]
+  }
+}

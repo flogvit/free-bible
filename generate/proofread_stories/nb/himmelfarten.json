@@ -1,0 +1,59 @@
+{
+  "issues": [
+    {
+      "field": "category",
+      "severity": "major",
+      "explanation": "Jesu himmelfart hører ikke til kategorien 'jesu-lidelse' (som dekker lidelseshistorien/påsken). Himmelfarten skjer etter oppstandelsen og markerer overgangen til urkirken. Kategorien 'urkirken' passer bedre, spesielt siden teksten er fra Apostlenes gjerninger kapittel 1.",
+      "current": "jesu-lidelse",
+      "suggested": "urkirken"
+    },
+    {
+      "field": "slug",
+      "severity": "minor",
+      "explanation": "Sluggen 'himmelfarten' bruker bestemt form. For konsistens og bedre match med tittelen bør den være 'jesu-himmelfart'.",
+      "current": "himmelfarten",
+      "suggested": "jesu-himmelfart"
+    },
+    {
+      "field": "keywords",
+      "severity": "minor",
+      "explanation": "Nøkkelordet 'disiplene' eller 'apostlene' mangler, selv om de er sentrale i fortellingen. Også 'apostlenes gjerninger' kan være nyttig for søk. 'Jesus' bør også være med som nøkkelord.",
+      "current": "himmelfart, sky, engler, løfte, gjenkomst",
+      "suggested": "himmelfart, sky, engler, løfte, gjenkomst, jesus, disiplene, apostlenes gjerninger"
+    },
+    {
+      "field": "description",
+      "severity": "minor",
+      "explanation": "Beskrivelsen sier 'To engler lover at han skal komme tilbake', men bibelteksten beskriver dem som 'to menn i hvite klær', ikke eksplisitt som engler. Ellers er beskrivelsen god, men kan presiseres litt.",
+      "current": "Jesus stiger opp til himmelen mens disiplene ser på. To engler lover at han skal komme tilbake.",
+      "suggested": "Jesus stiger opp til himmelen mens disiplene ser på, og en sky tar ham bort. To menn i hvite klær lover at han skal komme tilbake på samme måte."
+    }
+  ],
+  "summary": "Historien er i hovedsak god, men kategorien er feil – himmelfarten hører til 'urkirken', ikke 'jesu-lidelse'. Sluggen bør matche tittelen bedre, og beskrivelsen kan presiseres noe (to menn i hvite klær, ikke eksplisitt engler i teksten). Noen nyttige nøkkelord mangler.",
+  "score": 6,
+  "revisedStory": {
+    "slug": "jesu-himmelfart",
+    "title": "Jesu himmelfart",
+    "keywords": [
+      "himmelfart",
+      "sky",
+      "engler",
+      "løfte",
+      "gjenkomst",
+      "jesus",
+      "disiplene",
+      "apostlenes gjerninger"
+    ],
+    "description": "Jesus stiger opp til himmelen mens disiplene ser på, og en sky tar ham bort. To menn i hvite klær lover at han skal komme tilbake på samme måte.",
+    "category": "urkirken",
+    "references": [
+      {
+        "bookId": 44,
+        "startChapter": 1,
+        "startVerse": 6,
+        "endChapter": 1,
+        "endVerse": 11
+      }
+    ]
+  }
+}

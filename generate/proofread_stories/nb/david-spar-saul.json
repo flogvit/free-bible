@@ -1,0 +1,52 @@
+{
+  "issues": [
+    {
+      "field": "slug",
+      "severity": "minor",
+      "explanation": "Sluggen 'david-spar-saul' mangler bokstaven 'e' – det burde være 'david-sparer-saul' for å matche tittelen 'David sparer Sauls liv' og være grammatisk korrekt.",
+      "current": "david-spar-saul",
+      "suggested": "david-sparer-saul"
+    },
+    {
+      "field": "keywords",
+      "severity": "minor",
+      "explanation": "Noen viktige nøkkelord mangler. 'En-Gedi' er et sentralt sted i historien, 'salvet' (Herrens salvede) er et nøkkeltema, og 'tilgivelse' er relevant. Disse ville hjelpe brukere å finne historien.",
+      "current": "david, saul, hule, nåde, kappe",
+      "suggested": "david, saul, hule, nåde, kappe, en-gedi, salvet, tilgivelse"
+    },
+    {
+      "field": "description",
+      "severity": "minor",
+      "explanation": "Beskrivelsen er god men kan presiseres litt. David kutter av en 'flik' av kappen (ikke bare et generelt 'stykke'), og det er verdt å nevne at han angrer på dette. Bibelteksten sier eksplisitt at 'hjertet hans slo ham' etter handlingen.",
+      "current": "David kutter av et stykke av Sauls kappe i hulen, men nekter å drepe den salvede kongen.",
+      "suggested": "David skjærer av en flik av Sauls kappe mens Saul er i hulen ved En-Gedi, men angrer og nekter å skade Herrens salvede konge."
+    }
+  ],
+  "summary": "Historien er i hovedsak god og korrekt. Referansen til 1. Samuel 24:1-22 (bookId 9) stemmer med bibelteksten. Kategorien 'kongetiden' er riktig. Små forbedringer kan gjøres: sluggen mangler en bokstav, noen relevante nøkkelord kan legges til, og beskrivelsen kan presiseres for å bedre gjenspeile bibelteksten (spesifikt at det var en 'flik' og at David angret).",
+  "score": 8,
+  "revisedStory": {
+    "slug": "david-sparer-saul",
+    "title": "David sparer Sauls liv",
+    "keywords": [
+      "david",
+      "saul",
+      "hule",
+      "nåde",
+      "kappe",
+      "en-gedi",
+      "salvet",
+      "tilgivelse"
+    ],
+    "description": "David skjærer av en flik av Sauls kappe mens Saul er i hulen ved En-Gedi, men angrer og nekter å skade Herrens salvede konge.",
+    "category": "kongetiden",
+    "references": [
+      {
+        "bookId": 9,
+        "startChapter": 24,
+        "startVerse": 1,
+        "endChapter": 24,
+        "endVerse": 22
+      }
+    ]
+  }
+}

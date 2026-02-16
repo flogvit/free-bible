@@ -1,0 +1,51 @@
+{
+  "issues": [
+    {
+      "field": "keywords",
+      "severity": "minor",
+      "explanation": "Søkeordet 'susan' bør være 'susa' som er den vanlige norske formen av bynavnet. Bibelteksten bruker riktignok 'Susan' (borgen Susan), men den vanligste norske formen er 'Susa'. Alternativt kan 'susan' beholdes for å matche teksten. I tillegg mangler nøkkelordet 'hadassa' som er Esters hebraiske navn nevnt i teksten.",
+      "current": "susan",
+      "suggested": "susa"
+    },
+    {
+      "field": "description",
+      "severity": "minor",
+      "explanation": "Beskrivelsen sier at Mordekai er Esters 'fetter', men bibelteksten (Ester 2:7) sier at Ester var 'hans onkels datter', altså var Mordekai Esters fetter (cousin). Dette er faktisk korrekt - men vær oppmerksom på at noen oversettelser tolker det annerledes. Beskrivelsen er i hovedsak presis."
+    },
+    {
+      "field": "references",
+      "severity": "minor",
+      "explanation": "Referansen dekker Ester 2:1-23, men historien om Ester som blir dronning har en viktig forhistorie i Ester 1 der dronning Vasjti avsettes. Imidlertid dekker kapittel 2 den faktiske historien som beskrives i tittelen og beskrivelsen tilstrekkelig, så dette er en mindre merknad. Referansene er korrekte som de er."
+    }
+  ],
+  "summary": "Historien er i hovedsak korrekt og godt utformet. Referansene er riktige - Ester 2:1-23 (bookId 17) dekker historien om Ester som blir dronning, Mordekais rolle, og avsløringen av sammensvergelsen mot kongen. Beskrivelsen samsvarer med bibelteksten. Kategorien 'eksil' er passende da handlingen foregår under det persiske eksil. Kun mindre justeringer foreslås for nøkkelord.",
+  "score": 9,
+  "revisedStory": {
+    "slug": "ester-blir-dronning",
+    "title": "Ester blir dronning",
+    "keywords": [
+      "ester",
+      "dronning",
+      "persia",
+      "mordekai",
+      "ahasverus",
+      "vasjti",
+      "susa",
+      "hadassa",
+      "skjønnhet",
+      "gjestebud",
+      "sammensvergelse"
+    ],
+    "description": "Den jødiske jenta Ester velges til dronning av Persia, veiledet av sin fetter og fosterfar Mordekai, som også avslører en sammensvergelse mot kongen.",
+    "category": "eksil",
+    "references": [
+      {
+        "bookId": 17,
+        "startChapter": 2,
+        "startVerse": 1,
+        "endChapter": 2,
+        "endVerse": 23
+      }
+    ]
+  }
+}

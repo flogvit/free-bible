@@ -1,0 +1,44 @@
+{
+  "issues": [
+    {
+      "field": "category",
+      "severity": "minor",
+      "explanation": "Kategorien 'landnaam' er skrevet med dobbel 'a'. Den korrekte formen bør være 'landnaam' — men dette ser ut til å være den tiltenkte kategoriverdien i systemet (norsk-nederlandsk-inspirert stavemåte). Siden 'landnaam' er oppført som en gyldig kategori, er dette teknisk sett korrekt. Historien om Rahab og speiderne i Josva passer godt i landnåm-kategorien.",
+      "current": "landnaam",
+      "suggested": "landnaam"
+    },
+    {
+      "field": "keywords",
+      "severity": "minor",
+      "explanation": "Nøkkelordet 'snor' er relevant (den skarlagenrøde snoren), men det kunne vært mer presist med 'skarlagenrød snor'. I tillegg mangler nøkkelord som 'josva' og 'skjøge' som er relevante for historien. Nøkkelordet 'tro' er bibelsk relevant (Rahabs tro nevnes i Hebreerne 11:31), men fremkommer ikke direkte i den refererte teksten.",
+      "current": "rahab, speidere, jeriko, snor, tro",
+      "suggested": "rahab, speidere, jeriko, josva, skarlagenrød snor, tro"
+    }
+  ],
+  "summary": "Historien er generelt godt utformet. Slug, tittel, beskrivelse og referanser er korrekte og samsvarer med bibelteksten. Josva 2:1-24 dekker hele fortellingen om Rahab og speiderne. Kategorien 'landnaam' er passende. Små forbedringer kan gjøres på nøkkelordene for å øke søkbarheten.",
+  "score": 9,
+  "revisedStory": {
+    "slug": "rahab-og-speiderne",
+    "title": "Rahab og speiderne",
+    "keywords": [
+      "rahab",
+      "speidere",
+      "jeriko",
+      "josva",
+      "skarlagenrød snor",
+      "tro",
+      "skjøge"
+    ],
+    "description": "Rahab skjuler de israelittiske speiderne i Jeriko og reddes fra byens ødeleggelse.",
+    "category": "landnaam",
+    "references": [
+      {
+        "bookId": 6,
+        "startChapter": 2,
+        "startVerse": 1,
+        "endChapter": 2,
+        "endVerse": 24
+      }
+    ]
+  }
+}

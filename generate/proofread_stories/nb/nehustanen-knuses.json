@@ -1,0 +1,58 @@
+{
+  "issues": [
+    {
+      "field": "slug",
+      "severity": "minor",
+      "explanation": "Sluggen bruker 'nehustanen' mens tittelen sier 'Kong Hiskia fjerner kobberslangen'. For bedre samsvar med tittelen kunne sluggen vært 'kong-hiskia-fjerner-kobberslangen'. Alternativt er 'nehustanen-knuses' akseptabel som en kortere variant, men den matcher ikke tittelen direkte.",
+      "current": "nehustanen-knuses",
+      "suggested": "kong-hiskia-fjerner-kobberslangen"
+    },
+    {
+      "field": "description",
+      "severity": "minor",
+      "explanation": "Bibelteksten bruker ordet 'bronsjeslangen', ikke 'kobberslangen'. Selv om kobber og bronse er nært beslektede, bør beskrivelsen samsvare med den refererte bibelteksten (osnb2). I tillegg er det verdt å nevne at reformen også inkluderte fjerning av offerhauger, steinstøtter og Asjera-stolpen, noe beskrivelsen allerede antyder med 'blant annet'.",
+      "current": "Kong Hiskia gjennomfører en religiøs reform og knuser blant annet kobberslangen som Moses hadde laget, fordi folket hadde begynt å tilbe den.",
+      "suggested": "Kong Hiskia gjennomfører en religiøs reform og knuser blant annet bronsjeslangen som Moses hadde laget, fordi israelittene hadde brent røkelse for den."
+    },
+    {
+      "field": "keywords",
+      "severity": "minor",
+      "explanation": "Bibelteksten bruker 'Nehusjtan' (med j), ikke 'nehustanen'. I tillegg kan nøkkelordet 'bronsjeslangen' være mer korrekt enn 'kobberslangen' i henhold til bibelteksten. Nøkkelord som 'offerhauger' og 'juda' kan også være relevante.",
+      "current": "nehustanen",
+      "suggested": "nehusjtan"
+    },
+    {
+      "field": "title",
+      "severity": "minor",
+      "explanation": "Bibelteksten bruker 'bronsjeslangen', ikke 'kobberslangen'. For å samsvare med bibelteksten bør tittelen justeres.",
+      "current": "Kong Hiskia fjerner kobberslangen",
+      "suggested": "Kong Hiskia fjerner bronsjeslangen"
+    }
+  ],
+  "summary": "Historien er i hovedsak korrekt og godt beskrevet. Referansene til 2. Kongebok 18:1-8 er presise og dekker historien godt. De viktigste forbedringspunktene er terminologiske: bibelteksten (osnb2) bruker 'bronsjeslangen' og 'Nehusjtan' (med j), mens historien bruker 'kobberslangen' og 'nehustanen'. Kategorien 'kongetiden' er korrekt. Ingen kritiske feil funnet.",
+  "score": 8,
+  "revisedStory": {
+    "slug": "kong-hiskia-fjerner-bronsjeslangen",
+    "title": "Kong Hiskia fjerner bronsjeslangen",
+    "keywords": [
+      "hiskia",
+      "nehusjtan",
+      "bronsjeslangen",
+      "avgudsdyrkelse",
+      "reform",
+      "offerhauger",
+      "juda"
+    ],
+    "description": "Kong Hiskia gjennomfører en religiøs reform og knuser blant annet bronsjeslangen som Moses hadde laget, fordi israelittene hadde brent røkelse for den.",
+    "category": "kongetiden",
+    "references": [
+      {
+        "bookId": 12,
+        "startChapter": 18,
+        "startVerse": 1,
+        "endChapter": 18,
+        "endVerse": 8
+      }
+    ]
+  }
+}

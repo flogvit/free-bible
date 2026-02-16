@@ -1,0 +1,52 @@
+{
+  "issues": [
+    {
+      "field": "slug",
+      "severity": "minor",
+      "explanation": "Slug bruker 'elias' (genitiv) mens det vanligvis er bedre å bruke grunnformen 'elia' for konsistens. Alternativt kan man beholde det, men det bør matche tittelen bedre.",
+      "current": "elias-ild-over-soldatene",
+      "suggested": "elia-kaller-ild-over-kongens-soldater"
+    },
+    {
+      "field": "keywords",
+      "severity": "minor",
+      "explanation": "Navnet 'Ahasja' i keywords stemmer ikke helt med bibelteksten som bruker 'Akasja'. Det er to ulike translitterasjoner, men for konsistens med bibelteksten (osnb2) bør det være 'akasja'. I tillegg kan nøkkelord som 'nåde', 'ba'al-sebub' og '2. kongebok' være nyttige.",
+      "current": "ahasja",
+      "suggested": "akasja"
+    },
+    {
+      "field": "description",
+      "severity": "minor",
+      "explanation": "Beskrivelsen bruker navnet 'Ahasja' mens bibelteksten (osnb2) bruker 'Akasja'. For konsistens med bibelteksten bør dette endres. Ellers er beskrivelsen korrekt og dekkende.",
+      "current": "Kong Ahasja sender soldater for å hente profeten Elia, men Elia kaller ild ned fra himmelen over de to første gruppene. Den tredje offiseren ber om nåde og blir spart.",
+      "suggested": "Kong Akasja sender soldater for å hente profeten Elia, men Elia kaller ild ned fra himmelen over de to første gruppene. Den tredje offiseren ber om nåde og blir spart."
+    }
+  ],
+  "summary": "Historien er i hovedsak korrekt. Referansen til 2. Kongebok 1:1-16 (bookId 12) er helt riktig og dekker historien godt. Kategorien 'profetene' passer utmerket. De eneste problemene er mindre navneforskjeller: bibelteksten bruker 'Akasja' mens historien bruker 'Ahasja'. Dette er to gyldige translitterasjoner av det hebraiske navnet, men for konsistens med den refererte bibelteksten bør 'Akasja' brukes.",
+  "score": 8,
+  "revisedStory": {
+    "slug": "elia-kaller-ild-over-kongens-soldater",
+    "title": "Elia kaller ild over kongens soldater",
+    "keywords": [
+      "elia",
+      "ild",
+      "akasja",
+      "soldater",
+      "dom",
+      "profet",
+      "nåde",
+      "ba'al-sebub"
+    ],
+    "description": "Kong Akasja sender soldater for å hente profeten Elia, men Elia kaller ild ned fra himmelen over de to første gruppene. Den tredje offiseren ber om nåde og blir spart.",
+    "category": "profetene",
+    "references": [
+      {
+        "bookId": 12,
+        "startChapter": 1,
+        "startVerse": 1,
+        "endChapter": 1,
+        "endVerse": 16
+      }
+    ]
+  }
+}

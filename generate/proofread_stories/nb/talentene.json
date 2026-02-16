@@ -1,0 +1,56 @@
+{
+  "issues": [
+    {
+      "field": "slug",
+      "severity": "minor",
+      "explanation": "Slug 'talentene' er ok, men for konsistens med tittelen 'Lignelsen om talentene' kunne man bruke 'lignelsen-om-talentene'. Likevel er 'talentene' akseptabelt som en kortere slug."
+    },
+    {
+      "field": "keywords",
+      "severity": "minor",
+      "explanation": "Nøkkelord mangler noen relevante termer som 'lignelse', 'trofasthet', 'forvaltning'. Disse ville hjelpe brukere å finne historien. 'Investering' er litt moderne, men forståelig.",
+      "current": "talenter, tjenere, investering, ansvar, regnskap",
+      "suggested": "talenter, lignelse, tjenere, forvaltning, trofasthet, ansvar, regnskap"
+    },
+    {
+      "field": "description",
+      "severity": "minor",
+      "explanation": "Beskrivelsen er korrekt men kunne vært litt mer komplett. Den nevner ikke konsekvensene - belønning for de trofaste og straff for den late tjeneren, som er en vesentlig del av lignelsen.",
+      "current": "En herre betror tjenere sine talenter. To forvalter dem godt, men den tredje graver sin ned.",
+      "suggested": "En herre betror tjenerne sine talenter før han reiser bort. To forvalter dem godt og blir belønnet, men den tredje graver sin ned og blir straffet."
+    }
+  ],
+  "summary": "Historien er generelt godt utformet. Referansene er korrekte: Matteus 25:14-30 dekker lignelsen om talentene, og Lukas 19:11-27 dekker den parallelle lignelsen om minene. Kategorien 'jesu-lignelser' er korrekt. Noen mindre forbedringer kan gjøres i nøkkelord og beskrivelse for å gi bedre dekning.",
+  "score": 8,
+  "revisedStory": {
+    "slug": "lignelsen-om-talentene",
+    "title": "Lignelsen om talentene",
+    "keywords": [
+      "talenter",
+      "lignelse",
+      "tjenere",
+      "forvaltning",
+      "trofasthet",
+      "ansvar",
+      "regnskap"
+    ],
+    "description": "En herre betror tjenerne sine talenter før han reiser bort. To forvalter dem godt og blir belønnet, men den tredje graver sin ned og blir straffet.",
+    "category": "jesu-lignelser",
+    "references": [
+      {
+        "bookId": 40,
+        "startChapter": 25,
+        "startVerse": 14,
+        "endChapter": 25,
+        "endVerse": 30
+      },
+      {
+        "bookId": 42,
+        "startChapter": 19,
+        "startVerse": 11,
+        "endChapter": 19,
+        "endVerse": 27
+      }
+    ]
+  }
+}

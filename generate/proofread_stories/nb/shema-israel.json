@@ -1,0 +1,46 @@
+{
+  "issues": [
+    {
+      "field": "keywords",
+      "severity": "minor",
+      "explanation": "Nøkkelordet 'makt' mangler, selv om teksten eksplisitt nevner 'av all din makt' (v.5). Også 'israel' er et viktig søkeord som bør inkluderes. 'kraft' kan være et alternativ.",
+      "current": "[\"shema\", \"bud\", \"kjærlighet\", \"gud\", \"hjerte\", \"sjel\"]",
+      "suggested": "[\"shema\", \"bud\", \"kjærlighet\", \"gud\", \"hjerte\", \"sjel\", \"makt\", \"israel\", \"moses\"]"
+    },
+    {
+      "field": "description",
+      "severity": "minor",
+      "explanation": "Beskrivelsen nevner bare v.4 (Shema-verset), men teksten dekker v.1-9 som også handler om å elske Gud av hele hjertet, innprente ordene i barna, og binde dem som tegn. En litt bredere beskrivelse ville vært mer dekkende.",
+      "current": "Moses formaner folket med det sentrale budet: 'Hør, Israel! Herren er vår Gud, Herren er én.'",
+      "suggested": "Moses formaner folket med det sentrale budet: 'Hør, Israel! Herren er vår Gud, Herren er én.' Folket skal elske Gud av hele sitt hjerte, sin sjel og all sin makt, og innprente disse ordene i sine barn."
+    }
+  ],
+  "summary": "Historien er i all hovedsak korrekt. Referansene til 5. Mosebok 6:1-9 stemmer perfekt overens med Shema Israel-teksten. Slug, tittel og kategori er passende. Små forbedringer kan gjøres i nøkkelord (legge til 'makt', 'israel', 'moses') og en litt mer utfyllende beskrivelse.",
+  "score": 8,
+  "revisedStory": {
+    "slug": "shema-israel",
+    "title": "Shema Israel",
+    "keywords": [
+      "shema",
+      "bud",
+      "kjærlighet",
+      "gud",
+      "hjerte",
+      "sjel",
+      "makt",
+      "israel",
+      "moses"
+    ],
+    "description": "Moses formaner folket med det sentrale budet: 'Hør, Israel! Herren er vår Gud, Herren er én.' Folket skal elske Gud av hele sitt hjerte, sin sjel og all sin makt, og innprente disse ordene i sine barn.",
+    "category": "oerkenvandringen",
+    "references": [
+      {
+        "bookId": 5,
+        "startChapter": 6,
+        "startVerse": 1,
+        "endChapter": 6,
+        "endVerse": 9
+      }
+    ]
+  }
+}

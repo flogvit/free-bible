@@ -1,0 +1,52 @@
+{
+  "issues": [
+    {
+      "field": "category",
+      "severity": "major",
+      "explanation": "Åpenbaringen er ikke en profetisk bok i GT-forstand. Johannes' syn i Åpenbaringen hører til urkirken/den nytestamentlige perioden. Kategorien 'urkirken' passer bedre, da Åpenbaringen er skrevet av apostelen Johannes til de tidlige menighetene.",
+      "current": "profetene",
+      "suggested": "urkirken"
+    },
+    {
+      "field": "keywords",
+      "severity": "minor",
+      "explanation": "Bibelteksten bruker begrepet 'livsvesener' (ikke 'de fire vesener'). Det kan være nyttig å legge til 'livsvesener' og 'himmelen' som nøkkelord for bedre søkbarhet.",
+      "current": "de fire vesener",
+      "suggested": "livsvesener"
+    },
+    {
+      "field": "slug",
+      "severity": "minor",
+      "explanation": "Sluggen er litt lang men funksjonell. Den matcher tittelen godt nok, men kunne forenkles litt for bedre URL-vennlighet.",
+      "current": "johannes-syn-av-den-himmelske-tronsalen",
+      "suggested": "den-himmelske-tronsalen"
+    }
+  ],
+  "summary": "Historien er generelt god og referansene til Åpenbaringen 4:1-11 er helt korrekte og dekker hele den beskrevne historien. Hovedproblemet er at kategorien 'profetene' er feil – Åpenbaringen tilhører nytestamentlig tid og bør kategoriseres under 'urkirken'. I tillegg bruker bibelteksten begrepet 'livsvesener' snarere enn 'de fire vesener', og sluggen kunne forenkles noe.",
+  "score": 7,
+  "revisedStory": {
+    "slug": "den-himmelske-tronsalen",
+    "title": "Den himmelske tronsalen",
+    "keywords": [
+      "åpenbaring",
+      "tronsalen",
+      "guds trone",
+      "livsvesener",
+      "de tjuefire eldste",
+      "tilbedelse",
+      "johannes",
+      "himmelen"
+    ],
+    "description": "Apostelen Johannes ser i et syn Guds trone i himmelen, omgitt av tjuefire eldste og fire livsvesener. Hele den himmelske forsamlingen tilber Gud som skapte alle ting.",
+    "category": "urkirken",
+    "references": [
+      {
+        "bookId": 66,
+        "startChapter": 4,
+        "startVerse": 1,
+        "endChapter": 4,
+        "endVerse": 11
+      }
+    ]
+  }
+}

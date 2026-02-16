@@ -1,0 +1,48 @@
+{
+  "issues": [
+    {
+      "field": "slug",
+      "severity": "critical",
+      "explanation": "Sluggen sier 'jesaja-om-den-nye-himmel-og-jord', noe som antyder at dette handler om Jesajas profeti (Jesaja 65-66). Men historien handler om Johannes' syn i Åpenbaringen 21. Sluggen bør matche tittelen og innholdet.",
+      "current": "jesaja-om-den-nye-himmel-og-jord",
+      "suggested": "den-nye-himmel-og-den-nye-jord"
+    },
+    {
+      "field": "keywords",
+      "severity": "minor",
+      "explanation": "Nøkkelordet 'åpenbaring' er relevant, men det mangler noen viktige nøkkelord som 'johannes', 'guds bolig', 'livets vann' og 'alfa og omega' som er sentrale i teksten.",
+      "current": "ny himmel, ny jord, nytt jerusalem, håp, gjenopprettelse, åpenbaring, evighet",
+      "suggested": "ny himmel, ny jord, nytt jerusalem, håp, gjenopprettelse, åpenbaring, johannes, guds bolig, alfa og omega, livets vann"
+    }
+  ],
+  "summary": "Historien er i hovedsak korrekt. Referansen til Åpenbaringen 21:1-8 stemmer perfekt med beskrivelsen. Kategorien 'urkirken' er akseptabel for Åpenbaringen. Hovedproblemet er at sluggen feilaktig refererer til Jesaja, mens innholdet handler om Johannes' syn i Åpenbaringen. Beskrivelsen er presis og samsvarer godt med bibelteksten.",
+  "score": 7,
+  "revisedStory": {
+    "slug": "den-nye-himmel-og-den-nye-jord",
+    "title": "Den nye himmel og den nye jord",
+    "keywords": [
+      "ny himmel",
+      "ny jord",
+      "nytt jerusalem",
+      "håp",
+      "gjenopprettelse",
+      "åpenbaring",
+      "johannes",
+      "guds bolig",
+      "alfa og omega",
+      "livets vann",
+      "evighet"
+    ],
+    "description": "Johannes ser i et syn en ny himmel og en ny jord der Gud bor blant menneskene, tørker hver tåre og gjør alle ting nye, uten død, sorg eller smerte.",
+    "category": "urkirken",
+    "references": [
+      {
+        "bookId": 66,
+        "startChapter": 21,
+        "startVerse": 1,
+        "endChapter": 21,
+        "endVerse": 8
+      }
+    ]
+  }
+}

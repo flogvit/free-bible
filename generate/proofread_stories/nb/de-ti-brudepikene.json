@@ -1,0 +1,61 @@
+{
+  "issues": [
+    {
+      "field": "title",
+      "severity": "minor",
+      "explanation": "Bibelteksten bruker ordet «jomfruer» (Matt 25:1), ikke «brudepiker». Begge termer er i bruk i norsk tradisjon, men for å være mest presis mot den refererte bibelteksten (osnb2) bør tittelen bruke «jomfruer».",
+      "current": "De ti brudepikene",
+      "suggested": "De ti jomfruene"
+    },
+    {
+      "field": "slug",
+      "severity": "minor",
+      "explanation": "Slug bør matche tittelen. Hvis tittelen endres til «De ti jomfruene», bør slug også oppdateres.",
+      "current": "de-ti-brudepikene",
+      "suggested": "de-ti-jomfruene"
+    },
+    {
+      "field": "keywords",
+      "severity": "minor",
+      "explanation": "Bibelteksten bruker «jomfruer», ikke «brudepiker». Nøkkelordet «brudepiker» bør erstattes med eller suppleres med «jomfruer». I tillegg mangler viktige nøkkelord som «bryllup», «våke» og «klok».",
+      "current": "brudepiker, lamper, olje, brudgom, beredt, uforberedt",
+      "suggested": "jomfruer, brudepiker, lamper, olje, brudgom, bryllup, klok, uforstandig, våke, beredt"
+    },
+    {
+      "field": "description",
+      "severity": "minor",
+      "explanation": "Beskrivelsen bruker «brudepiker» i stedet for «jomfruer» som bibelteksten bruker. Den er ellers korrekt og dekkende, men kan forbedres litt for å nevne lignelsens poeng om å våke.",
+      "current": "Fem kloke og fem uforstandige brudepiker venter på brudgommen. Bare de som har olje i lampene, slipper inn.",
+      "suggested": "Fem kloke og fem uforstandige jomfruer venter på brudgommen. Bare de som har olje i lampene, slipper inn til bryllupsfesten – en lignelse om å våke og være beredt."
+    }
+  ],
+  "summary": "Historien er generelt godt utformet med korrekt kategori og bibelreferanse. Hovedproblemet er at bibelteksten (osnb2) bruker «jomfruer», ikke «brudepiker», så tittel, slug, nøkkelord og beskrivelse bør oppdateres for konsistens med kildeteksten. Referansen Matt 25:1-13 er helt korrekt. Nøkkelordene kan også utvides med relevante termer som «bryllup», «våke» og «klok».",
+  "score": 7,
+  "revisedStory": {
+    "slug": "de-ti-jomfruene",
+    "title": "De ti jomfruene",
+    "keywords": [
+      "jomfruer",
+      "brudepiker",
+      "lamper",
+      "olje",
+      "brudgom",
+      "bryllup",
+      "klok",
+      "uforstandig",
+      "våke",
+      "beredt"
+    ],
+    "description": "Fem kloke og fem uforstandige jomfruer venter på brudgommen. Bare de som har olje i lampene, slipper inn til bryllupsfesten – en lignelse om å våke og være beredt.",
+    "category": "jesu-lignelser",
+    "references": [
+      {
+        "bookId": 40,
+        "startChapter": 25,
+        "startVerse": 1,
+        "endChapter": 25,
+        "endVerse": 13
+      }
+    ]
+  }
+}

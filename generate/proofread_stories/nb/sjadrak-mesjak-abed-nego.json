@@ -1,0 +1,45 @@
+{
+  "issues": [
+    {
+      "field": "keywords",
+      "severity": "minor",
+      "explanation": "Nøkkelordet 'nebukadnesar' mangler. Han er en sentral figur i historien og brukere kan søke etter dette navnet. I tillegg kunne 'daniel' vært med som kontekstuelt nøkkelord, da historien er fra Daniels bok.",
+      "current": "sjadrak, mesjak, abed-nego, ildovn, gullbilde, tro",
+      "suggested": "sjadrak, mesjak, abed-nego, ildovn, gullbilde, tro, nebukadnesar, daniel"
+    },
+    {
+      "field": "description",
+      "severity": "minor",
+      "explanation": "Beskrivelsen sier 'Tre unge menn' men bibelteksten sier ikke eksplisitt at de er unge. De omtales som 'jødiske menn'. Beskrivelsen er ellers god, men 'kongens gullbilde' kunne presiseres til 'kong Nebukadnesars gullstøtte'. Også mangler det viktige elementet at en fjerde skikkelse ble sett i ilden.",
+      "current": "Tre unge menn nekter å tilbe kongens gullbilde og kastes i en brennende ovn, men overlever uskadd.",
+      "suggested": "Tre jødiske menn nekter å tilbe kong Nebukadnesars gullstøtte og kastes i en brennende ildovn, men Gud redder dem uskadd."
+    }
+  ],
+  "summary": "Historien er generelt godt utformet. Referansene er korrekte – Daniel 3:1-30 (bookId 27) dekker hele historien om Sjadrak, Mesjak og Abed-Nego i ildovnen. Slug, tittel og kategori er alle korrekte. Små forbedringer kan gjøres i keywords (legge til 'nebukadnesar') og i beskrivelsen (presisere at det er jødiske menn, ikke 'unge menn').",
+  "score": 8,
+  "revisedStory": {
+    "slug": "sjadrak-mesjak-abed-nego",
+    "title": "Sjadrak, Mesjak og Abed-Nego i ildovnen",
+    "keywords": [
+      "sjadrak",
+      "mesjak",
+      "abed-nego",
+      "ildovn",
+      "gullbilde",
+      "tro",
+      "nebukadnesar",
+      "daniel"
+    ],
+    "description": "Tre jødiske menn nekter å tilbe kong Nebukadnesars gullstøtte og kastes i en brennende ildovn, men Gud redder dem uskadd.",
+    "category": "eksil",
+    "references": [
+      {
+        "bookId": 27,
+        "startChapter": 3,
+        "startVerse": 1,
+        "endChapter": 3,
+        "endVerse": 30
+      }
+    ]
+  }
+}

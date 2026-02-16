@@ -1,0 +1,65 @@
+{
+  "issues": [
+    {
+      "field": "slug",
+      "severity": "minor",
+      "explanation": "Slug-en 'sennepsfroet' mangler bindestrek og samsvarer ikke helt med tittelen 'Lignelsen om sennepsfrøet'. En mer beskrivende slug med bindestrek ville vært bedre.",
+      "current": "sennepsfroet",
+      "suggested": "lignelsen-om-sennepsfroet"
+    },
+    {
+      "field": "keywords",
+      "severity": "minor",
+      "explanation": "Nøkkelordet 'lite' er litt vagt. Det kunne vært mer presist, f.eks. 'lignelse'. I tillegg mangler nøkkelord som 'himmelriket' og 'fugler' som er sentrale i teksten.",
+      "current": "[\"sennepsfrø\", \"tre\", \"guds rike\", \"vekst\", \"lite\"]",
+      "suggested": "[\"sennepsfrø\", \"tre\", \"guds rike\", \"vekst\", \"lignelse\", \"himmelriket\", \"fugler\"]"
+    },
+    {
+      "field": "description",
+      "severity": "minor",
+      "explanation": "Beskrivelsen bruker 'Guds rike', men i Matteus-versjonen kalles det 'Himmelriket'. Begge uttrykk brukes i de ulike versjonene, så dette er akseptabelt, men beskrivelsen kunne også nevne fuglene som finner ly i grenene, som er et sentralt poeng i alle tre versjoner.",
+      "current": "Guds rike er som et sennepsfrø – det minste av alle frø, men det vokser til et stort tre.",
+      "suggested": "Guds rike er som et sennepsfrø – det minste av alle frø, men det vokser til et stort tre der himmelens fugler kan finne ly i grenene."
+    }
+  ],
+  "summary": "Historien er svært god. Referansene er korrekte og dekker alle tre synoptiske versjoner av lignelsen om sennepsfrøet (Matt 13:31-32, Mark 4:30-32, Luk 13:18-19). Kategorien 'jesu-lignelser' er helt riktig. Det er bare noen mindre forbedringer å gjøre: slug-en kunne hatt bindestrek, nøkkelordene kunne vært mer dekkende, og beskrivelsen kunne inkludert poenget om fuglene.",
+  "score": 9,
+  "revisedStory": {
+    "slug": "lignelsen-om-sennepsfroet",
+    "title": "Lignelsen om sennepsfrøet",
+    "keywords": [
+      "sennepsfrø",
+      "tre",
+      "guds rike",
+      "himmelriket",
+      "vekst",
+      "lignelse",
+      "fugler"
+    ],
+    "description": "Guds rike er som et sennepsfrø – det minste av alle frø, men det vokser til et stort tre der himmelens fugler kan finne ly i grenene.",
+    "category": "jesu-lignelser",
+    "references": [
+      {
+        "bookId": 40,
+        "startChapter": 13,
+        "startVerse": 31,
+        "endChapter": 13,
+        "endVerse": 32
+      },
+      {
+        "bookId": 41,
+        "startChapter": 4,
+        "startVerse": 30,
+        "endChapter": 4,
+        "endVerse": 32
+      },
+      {
+        "bookId": 42,
+        "startChapter": 13,
+        "startVerse": 18,
+        "endChapter": 13,
+        "endVerse": 19
+      }
+    ]
+  }
+}

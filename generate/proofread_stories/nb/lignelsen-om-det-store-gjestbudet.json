@@ -1,0 +1,49 @@
+{
+  "issues": [
+    {
+      "field": "keywords",
+      "severity": "minor",
+      "explanation": "Bibelteksten bruker ordene 'vanføre' og 'lamme' snarere enn 'halte'. Nøkkelordet 'halte' kan erstattes med 'lamme' eller 'vanføre' for bedre samsvar. I tillegg mangler relevante nøkkelord som 'unnskyldning', 'festmåltid' og 'Guds rike'.",
+      "current": "[\"lignelse\",\"gjestebud\",\"innbydelse\",\"avvisning\",\"fattige\",\"halte\",\"blinde\",\"jesus\"]",
+      "suggested": "[\"lignelse\",\"gjestebud\",\"innbydelse\",\"avvisning\",\"fattige\",\"vanføre\",\"lamme\",\"blinde\",\"jesus\",\"unnskyldning\",\"festmåltid\",\"guds rike\"]"
+    },
+    {
+      "field": "description",
+      "severity": "minor",
+      "explanation": "Beskrivelsen nevner 'halte' som ikke brukes i bibelteksten (osnb2). Teksten bruker 'vanføre' og 'lamme'. Også nevnes 'gater og stier' mens teksten sier 'gater og smug' og senere 'veiene og langs gjerdene'. Beskrivelsen kan bli mer presis.",
+      "current": "Verten sender da tjenerne ut for å hente inn fattige, blinde og halte fra gater og stier.",
+      "suggested": "Verten sender da tjeneren ut for å hente inn fattige, vanføre, blinde og lamme fra byens gater og smug, og deretter fra veiene og langs gjerdene."
+    }
+  ],
+  "summary": "Historien er generelt god. Referansen til Lukas 14:15-24 er korrekt og dekker hele lignelsen om det store gjestbudet. Kategori og slug er riktige. Det er noen mindre avvik i ordvalg mellom beskrivelsen/nøkkelordene og den faktiske bibelteksten: 'halte' vs. 'vanføre/lamme', og 'gater og stier' vs. 'gater og smug / veiene og langs gjerdene'.",
+  "score": 8,
+  "revisedStory": {
+    "slug": "lignelsen-om-det-store-gjestbudet",
+    "title": "Lignelsen om det store gjestbudet",
+    "keywords": [
+      "lignelse",
+      "gjestebud",
+      "innbydelse",
+      "avvisning",
+      "fattige",
+      "vanføre",
+      "lamme",
+      "blinde",
+      "jesus",
+      "unnskyldning",
+      "festmåltid",
+      "guds rike"
+    ],
+    "description": "Jesus forteller lignelsen om en mann som holder et stort gjestebud, men de innbudte gjestene takker nei med ulike unnskyldninger. Verten sender da tjeneren ut for å hente inn fattige, vanføre, blinde og lamme fra byens gater og smug, og deretter fra veiene og langs gjerdene, så huset blir fullt.",
+    "category": "jesu-lignelser",
+    "references": [
+      {
+        "bookId": 42,
+        "startChapter": 14,
+        "startVerse": 15,
+        "endChapter": 14,
+        "endVerse": 24
+      }
+    ]
+  }
+}

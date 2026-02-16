@@ -1,0 +1,52 @@
+{
+  "issues": [
+    {
+      "field": "slug",
+      "severity": "major",
+      "explanation": "Slug-en 'jonas-boennebok' gir inntrykk av at dette handler om Jonas bønnebok/bønn, men historien handler primært om Jonas vrede og Guds lærdom gjennom planten. Tittelen og slug-en er misvisende.",
+      "current": "jonas-boennebok",
+      "suggested": "jonas-vrede-og-guds-naade"
+    },
+    {
+      "field": "title",
+      "severity": "major",
+      "explanation": "Tittelen 'Jonas bønnebok' er misvisende. Jona 4 handler ikke om en bønnebok, men om Jonas sinne over Guds barmhjertighet mot Ninive og Guds lærdom gjennom kikajonplanten. Jonas bønn i vers 2-3 er bare en liten del av kapitlet.",
+      "current": "Jonas bønnebok",
+      "suggested": "Jonas vrede og Guds nåde"
+    },
+    {
+      "field": "keywords",
+      "severity": "minor",
+      "explanation": "Nøkkelordene mangler noen viktige termer som 'ninive', 'kikajon', 'barmhjertighet' og 'medynk'. 'Klage' er ikke helt dekkende - det er mer sinne/vrede enn klage. 'Bønnebok' er heller ikke et relevant søkeord.",
+      "current": "jona, bønn, klage, nåde, vrede, plante",
+      "suggested": "jona, ninive, vrede, nåde, barmhjertighet, plante, kikajon, medynk"
+    }
+  ],
+  "summary": "Historien har korrekte referanser (Jona 4:1-11, bookId 32) og en god beskrivelse som samsvarer med bibelteksten. Kategorien 'profetene' er riktig. Hovedproblemet er at tittelen og slug-en er misvisende - 'Jonas bønnebok' antyder at historien handler om bønn, mens den egentlig handler om Jonas sinne over Guds barmhjertighet og Guds lærdom gjennom kikajonplanten. Nøkkelordene bør også oppdateres for bedre å reflektere innholdet.",
+  "score": 6,
+  "revisedStory": {
+    "slug": "jonas-vrede-og-guds-naade",
+    "title": "Jonas vrede og Guds nåde",
+    "keywords": [
+      "jona",
+      "ninive",
+      "vrede",
+      "nåde",
+      "barmhjertighet",
+      "plante",
+      "kikajon",
+      "medynk"
+    ],
+    "description": "Etter at Ninive omvender seg, blir Jona sint på Gud for hans barmhjertighet. Gud bruker en plante for å lære Jona om sin nåde over alle folk.",
+    "category": "profetene",
+    "references": [
+      {
+        "bookId": 32,
+        "startChapter": 4,
+        "startVerse": 1,
+        "endChapter": 4,
+        "endVerse": 11
+      }
+    ]
+  }
+}

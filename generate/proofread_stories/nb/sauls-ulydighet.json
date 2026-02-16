@@ -1,0 +1,52 @@
+{
+  "issues": [
+    {
+      "field": "description",
+      "severity": "minor",
+      "explanation": "Beskrivelsen sier 'Saul ofrer uten å vente på Samuel', men dette refererer til hendelsen i 1. Samuel 13, ikke kapittel 15. I kapittel 15 handler det om at Saul sparte Agag og det beste av byttedyrene i stedet for å innvie alt til tilintetgjørelse som Gud befalte. Beskrivelsen bør reflektere innholdet i kapittel 15 korrekt.",
+      "current": "Saul ofrer uten å vente på Samuel og forkastes som konge. 'Lydighet er bedre enn offer.'",
+      "suggested": "Saul sparer Agag og det beste av byttet i stedet for å innvie alt til tilintetgjørelse slik Gud befalte, og Samuel forkynner at Gud har forkastet ham som konge. «Å adlyde er bedre enn slaktoffer.»"
+    },
+    {
+      "field": "keywords",
+      "severity": "minor",
+      "explanation": "Nøkkelordene mangler viktige termer som 'amalek/amalekittene', 'agag', 'lydighet' og 'byttet' som er sentrale i denne historien. 'offer' er litt misvisende da hovedtemaet er ulydighet mot Guds befaling om å tilintetgjøre, ikke et offersituasjon som i 1. Sam 13.",
+      "current": "saul, ulydighet, samuel, offer, forkastelse",
+      "suggested": "saul, ulydighet, samuel, amalek, agag, lydighet, forkastelse, byttet"
+    },
+    {
+      "field": "title",
+      "severity": "minor",
+      "explanation": "Tittelen 'Sauls ulydighet' er dekkende, men kunne vært mer spesifikk for å skille fra ulydigheten i 1. Samuel 13. En tittel som inkluderer krigen mot Amalek ville vært mer presis.",
+      "current": "Sauls ulydighet",
+      "suggested": "Sauls ulydighet mot Amalek"
+    }
+  ],
+  "summary": "Historien refererer korrekt til 1. Samuel 15:1-35 (bookId 9), og teksten bekrefter at dette handler om Sauls ulydighet i krigen mot amalekittene. Hovedproblemet er at beskrivelsen blander sammen to hendelser: 'ofrer uten å vente på Samuel' er fra 1. Samuel 13, mens kapittel 15 handler om at Saul sparte Agag og det beste av byttet. Sitatet 'lydighet er bedre enn offer' er korrekt fra teksten (v.22). Kategorien 'kongetiden' er korrekt.",
+  "score": 7,
+  "revisedStory": {
+    "slug": "sauls-ulydighet-mot-amalek",
+    "title": "Sauls ulydighet mot Amalek",
+    "keywords": [
+      "saul",
+      "ulydighet",
+      "samuel",
+      "amalek",
+      "agag",
+      "lydighet",
+      "forkastelse",
+      "byttet"
+    ],
+    "description": "Saul sparer Agag og det beste av byttet i stedet for å innvie alt til tilintetgjørelse slik Gud befalte, og Samuel forkynner at Gud har forkastet ham som konge. «Å adlyde er bedre enn slaktoffer.»",
+    "category": "kongetiden",
+    "references": [
+      {
+        "bookId": 9,
+        "startChapter": 15,
+        "startVerse": 1,
+        "endChapter": 15,
+        "endVerse": 35
+      }
+    ]
+  }
+}

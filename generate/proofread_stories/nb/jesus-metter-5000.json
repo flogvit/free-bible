@@ -1,0 +1,58 @@
+{
+  "issues": [
+    {
+      "field": "keywords",
+      "severity": "minor",
+      "explanation": "Nøkkelordet 'metting' er et uvanlig ord på norsk. Det kunne erstattes med mer søkbare alternativer som 'Jesus', 'disiplene', 'Betsaida' eller 'tolv kurver'. I tillegg mangler 'Jesus' som nøkkelord, noe som er viktig for søkbarhet.",
+      "current": "[\"fem tusen\", \"brød\", \"fisk\", \"mirakel\", \"mat\", \"metting\"]",
+      "suggested": "[\"jesus\", \"fem tusen\", \"brød\", \"fisk\", \"mirakel\", \"disiplene\", \"tolv kurver\"]"
+    }
+  ],
+  "summary": "Historien er svært god. Alle fire referanser (Matt 14:13-21, Mark 6:30-44, Luk 9:10-17, Joh 6:1-15) er korrekte og dekker hele bespisningen av de fem tusen. Slug, tittel, beskrivelse og kategori er alle korrekte. Eneste forbedringspunkt er at nøkkelordlisten kan optimaliseres litt – 'metting' er et uvanlig søkeord, og 'Jesus' mangler som nøkkelord.",
+  "score": 9,
+  "revisedStory": {
+    "slug": "jesus-metter-5000",
+    "title": "Jesus metter fem tusen",
+    "keywords": [
+      "jesus",
+      "fem tusen",
+      "brød",
+      "fisk",
+      "mirakel",
+      "disiplene",
+      "tolv kurver"
+    ],
+    "description": "Jesus metter over fem tusen mennesker med fem brød og to fisker.",
+    "category": "jesu-mirakler",
+    "references": [
+      {
+        "bookId": 40,
+        "startChapter": 14,
+        "startVerse": 13,
+        "endChapter": 14,
+        "endVerse": 21
+      },
+      {
+        "bookId": 41,
+        "startChapter": 6,
+        "startVerse": 30,
+        "endChapter": 6,
+        "endVerse": 44
+      },
+      {
+        "bookId": 42,
+        "startChapter": 9,
+        "startVerse": 10,
+        "endChapter": 9,
+        "endVerse": 17
+      },
+      {
+        "bookId": 43,
+        "startChapter": 6,
+        "startVerse": 1,
+        "endChapter": 6,
+        "endVerse": 15
+      }
+    ]
+  }
+}

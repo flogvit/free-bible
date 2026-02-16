@@ -1,0 +1,52 @@
+{
+  "issues": [
+    {
+      "field": "category",
+      "severity": "major",
+      "explanation": "Historien om byggingen av tabernaklet skjer under ørkenvandringen etter utgangen fra Egypt. Kategorien 'moses' er ikke feil per se, men 'oerkenvandringen' er mer presis siden dette handler om israelittenes opphold i ørkenen og tabernaklets reisning der.",
+      "current": "moses",
+      "suggested": "oerkenvandringen"
+    },
+    {
+      "field": "keywords",
+      "severity": "minor",
+      "explanation": "Nøkkelordet 'pakt' er ikke direkte dekkende for denne teksten. Teksten handler om reisningen av tabernaklet, dets inventar, og Guds herlighets sky. Viktige nøkkelord som 'Moses', 'møteteltet', 'ark', 'sky' og 'Guds herlighet' mangler. 'Pakt' er mer indirekte relatert.",
+      "current": "tabernakel, helligdom, pakt, herlighetens sky",
+      "suggested": "tabernakel, helligdom, møteteltet, vitnesbyrdets ark, guds herlighet, sky, moses, prestetjeneste"
+    },
+    {
+      "field": "description",
+      "severity": "minor",
+      "explanation": "Beskrivelsen er god men kunne vært litt mer presis. Teksten beskriver at Moses reiser tabernaklet etter Guds detaljerte instruksjoner, plasserer alt inventaret, og at Herrens herlighets sky dekker og fyller tabernaklet.",
+      "current": "Israelittene bygger tabernaklet etter Guds anvisning, og Guds herlighet fyller det.",
+      "suggested": "Moses reiser tabernaklet etter Herrens anvisning, plasserer alt inventaret på sin plass, og Herrens herlighet fyller tabernaklet i form av en sky."
+    }
+  ],
+  "summary": "Historien er i hovedsak korrekt. Referansene til 2. Mosebok 40:1-38 stemmer perfekt med innholdet. Kategorien bør endres til 'oerkenvandringen' for bedre presisjon. Nøkkelordene kan forbedres med mer relevante termer fra teksten. Beskrivelsen kan gjøres litt mer presis - det er Moses som reiser tabernaklet, ikke israelittene generelt.",
+  "score": 7,
+  "revisedStory": {
+    "slug": "tabernaklet-bygges",
+    "title": "Tabernaklet bygges",
+    "keywords": [
+      "tabernakel",
+      "helligdom",
+      "møteteltet",
+      "vitnesbyrdets ark",
+      "guds herlighet",
+      "sky",
+      "moses",
+      "prestetjeneste"
+    ],
+    "description": "Moses reiser tabernaklet etter Herrens anvisning, plasserer alt inventaret på sin plass, og Herrens herlighet fyller tabernaklet i form av en sky.",
+    "category": "oerkenvandringen",
+    "references": [
+      {
+        "bookId": 2,
+        "startChapter": 40,
+        "startVerse": 1,
+        "endChapter": 40,
+        "endVerse": 38
+      }
+    ]
+  }
+}

@@ -1,0 +1,45 @@
+{
+  "issues": [
+    {
+      "field": "slug",
+      "severity": "minor",
+      "explanation": "Slug har en skrivefeil: 'spaakvinen' burde være 'spaakinnen' (spåkvinnen). Alternativt kan man bruke 'spaakvinna' eller 'spaakvinna'. Det nåværende slug mangler 'n' i 'kvinnen'.",
+      "current": "sauls-moete-med-spaakvinen-i-en-dor",
+      "suggested": "sauls-moete-med-spaakvinna-i-en-dor"
+    },
+    {
+      "field": "references",
+      "severity": "minor",
+      "explanation": "Referansen starter ved vers 3, men vers 3-4 gir viktig kontekst (Samuels død, filisternes ankomst). Man kunne inkludere fra vers 1 eller 3. Vers 3 er akseptabelt som start, men ideelt sett kan vers 3 inkluderes som det gjør. Referansene er korrekte og dekker hele historien fra 1. Samuel 28:3-25. Ingen endring nødvendig her."
+    }
+  ],
+  "summary": "Historien er generelt godt skrevet og korrekt. Referansene er riktige: 1. Samuel 28:3-25 (bookId 9) dekker hele beretningen om Sauls besøk hos spåkvinnen i En-Dor. Beskrivelsen samsvarer med bibelteksten. Den eneste feilen er en skrivefeil i sluggen der 'spaakvinen' mangler en bokstav og burde være 'spaakvinna' eller 'spaakinnen'.",
+  "score": 9,
+  "revisedStory": {
+    "slug": "sauls-moete-med-spaakvinna-i-en-dor",
+    "title": "Saul og spåkvinnen i En-Dor",
+    "keywords": [
+      "saul",
+      "en-dor",
+      "spåkvinne",
+      "samuel",
+      "åndemaning",
+      "filistrene",
+      "død",
+      "kongedømmet",
+      "david",
+      "gilboa"
+    ],
+    "description": "I fortvilelse oppsøker kong Saul spåkvinnen i En-Dor for å mane frem den avdøde Samuel, som profeterer Sauls undergang i kampen mot filistrene.",
+    "category": "kongetiden",
+    "references": [
+      {
+        "bookId": 9,
+        "startChapter": 28,
+        "startVerse": 3,
+        "endChapter": 28,
+        "endVerse": 25
+      }
+    ]
+  }
+}

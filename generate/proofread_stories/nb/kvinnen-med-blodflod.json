@@ -1,0 +1,70 @@
+{
+  "issues": [
+    {
+      "field": "slug",
+      "severity": "minor",
+      "explanation": "Slug-en 'kvinnen-med-blodflod' bruker 'blodflod' mens tittelen bruker 'blødningene'. Sluggen bør matche tittelen bedre. 'blodflod' er riktignok et tradisjonelt begrep, men for konsistens bør slug og tittel samsvare.",
+      "current": "kvinnen-med-blodflod",
+      "suggested": "kvinnen-med-blodningene"
+    },
+    {
+      "field": "references",
+      "severity": "minor",
+      "explanation": "Matteus-referansen dekker 9:18-26, men historien om kvinnen med blødninger er spesifikt i 9:20-22. Versene 9:18-19 og 9:23-26 handler om Jairus' datter. Tilsvarende dekker Lukas-referansen 8:40-56, men kvinnen med blødninger er spesifikt i 8:43-48, mens resten handler om Jairus' datter. Siden historien handler spesifikt om kvinnen med blødninger og ikke om Jairus' datter, bør referansene snevres inn. Dog kan det argumenteres for at de er sammenvevde fortellinger. Markus-referansen (5:25-34) er presist avgrenset."
+    },
+    {
+      "field": "references",
+      "severity": "major",
+      "explanation": "Lukas 8:40-56 og Matteus 9:18-26 inkluderer store deler som handler om Jairus' datter, ikke kvinnen med blødninger. For en historie som spesifikt handler om kvinnen med blødninger bør referansene avgrenses til de relevante versene: Matt 9:20-22 og Luk 8:43-48.",
+      "current": "Matt 9:18-26, Luk 8:40-56",
+      "suggested": "Matt 9:20-22, Luk 8:43-48"
+    },
+    {
+      "field": "keywords",
+      "severity": "minor",
+      "explanation": "Nøkkelordet 'Jesus' mangler, og det kunne vært nyttig å ha med 'blodflod' som er et tradisjonelt søkeord for denne historien.",
+      "current": "kvinne, blødning, kappe, tro, helbredelse",
+      "suggested": "kvinne, blødning, blodflod, kappe, tro, helbredelse, Jesus"
+    }
+  ],
+  "summary": "Historien er i hovedsak korrekt. Markus-referansen er presist avgrenset. Matteus- og Lukas-referansene er for brede og inkluderer mye tekst om Jairus' datter som ikke er del av denne historien. Sluggen matcher ikke tittelen helt. Nøkkelord mangler 'Jesus' og det tradisjonelle begrepet 'blodflod'.",
+  "score": 6,
+  "revisedStory": {
+    "slug": "kvinnen-med-blodningene",
+    "title": "Kvinnen med blødningene",
+    "keywords": [
+      "kvinne",
+      "blødning",
+      "blodflod",
+      "kappe",
+      "tro",
+      "helbredelse",
+      "Jesus"
+    ],
+    "description": "En kvinne som har hatt blødninger i tolv år rører ved Jesu kappe og blir helbredet.",
+    "category": "jesu-mirakler",
+    "references": [
+      {
+        "bookId": 41,
+        "startChapter": 5,
+        "startVerse": 25,
+        "endChapter": 5,
+        "endVerse": 34
+      },
+      {
+        "bookId": 40,
+        "startChapter": 9,
+        "startVerse": 20,
+        "endChapter": 9,
+        "endVerse": 22
+      },
+      {
+        "bookId": 42,
+        "startChapter": 8,
+        "startVerse": 43,
+        "endChapter": 8,
+        "endVerse": 48
+      }
+    ]
+  }
+}

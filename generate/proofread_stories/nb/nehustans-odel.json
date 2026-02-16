@@ -1,0 +1,53 @@
+{
+  "issues": [
+    {
+      "field": "slug",
+      "severity": "critical",
+      "explanation": "Sluggen 'nehustans-odel' har ingenting med historien å gjøre. Nehustan er kobberslangen fra 4. Mosebok/2. Kongebok, og 'odel' er heller ikke relevant. Sluggen bør matche tittelen 'Nehemjas murinnvielse'.",
+      "current": "nehustans-odel",
+      "suggested": "nehemjas-murinnvielse"
+    },
+    {
+      "field": "keywords",
+      "severity": "minor",
+      "explanation": "Noen flere relevante nøkkelord kunne inkluderes, som 'levitter', 'sangere', 'prester', 'takkesang' og 'davidsbyen', som alle er sentrale i teksten.",
+      "current": "nehemja, jerusalem, mur, innvielse, feiring, lovprising, prosesjon",
+      "suggested": "nehemja, jerusalem, mur, innvielse, feiring, lovprising, prosesjon, levitter, sangere, prester, takkesang"
+    },
+    {
+      "field": "category",
+      "severity": "minor",
+      "explanation": "Kategorien 'eksil' kan diskuteres. Nehemjas tid er teknisk sett etter eksilet (post-eksilsk tid), men 'eksil' er den nærmeste tilgjengelige kategorien blant de gitte alternativene, så den er akseptabel."
+    }
+  ],
+  "summary": "Historien er i hovedsak korrekt. Tittelen, beskrivelsen, referansene og kategorien stemmer godt. Det kritiske problemet er at sluggen 'nehustans-odel' er helt feil og ikke har noen relasjon til historien om Nehemjas murinnvielse. Referansene til Nehemja 12:27-47 er korrekte og dekker hele innvielsesfortellingen.",
+  "score": 4,
+  "revisedStory": {
+    "slug": "nehemjas-murinnvielse",
+    "title": "Nehemjas murinnvielse",
+    "keywords": [
+      "nehemja",
+      "jerusalem",
+      "mur",
+      "innvielse",
+      "feiring",
+      "lovprising",
+      "prosesjon",
+      "levitter",
+      "sangere",
+      "prester",
+      "takkesang"
+    ],
+    "description": "Etter at Jerusalems mur er ferdig gjenoppbygd, holder Nehemja en stor innvielsesfest med to store lovprisningsprosesjoner som vandrer rundt på muren.",
+    "category": "eksil",
+    "references": [
+      {
+        "bookId": 16,
+        "startChapter": 12,
+        "startVerse": 27,
+        "endChapter": 12,
+        "endVerse": 47
+      }
+    ]
+  }
+}

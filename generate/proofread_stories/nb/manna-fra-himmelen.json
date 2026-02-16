@@ -1,0 +1,45 @@
+{
+  "issues": [
+    {
+      "field": "category",
+      "severity": "major",
+      "explanation": "Historien om manna fra himmelen handler om israelittenes ørkenvandring etter utgangen fra Egypt. Kategorien 'moses' er ikke feil per se, men 'oerkenvandringen' er en mer presis kategori siden dette er en klassisk ørkenvandring-hendelse.",
+      "current": "moses",
+      "suggested": "oerkenvandringen"
+    },
+    {
+      "field": "keywords",
+      "severity": "minor",
+      "explanation": "Noen viktige søkeord mangler, som 'sabbat' (et sentralt tema i teksten), 'vaktler' (som nevnes i beskrivelsen), og 'israelittene'. Ordet 'forsyning' er litt generisk og kan erstattes med mer spesifikke termer.",
+      "current": "manna, ørken, brød, himmelen, mat, forsyning",
+      "suggested": "manna, ørken, brød, himmelen, vaktler, sabbat, israelittene, guds forsyning"
+    }
+  ],
+  "summary": "Historien er generelt god. Referansen til 2. Mosebok 16:1-36 er korrekt og dekker hele manna-fortellingen. Beskrivelsen stemmer med bibelteksten. Hovedforbedringsforslaget er å endre kategori fra 'moses' til 'oerkenvandringen' som er mer presist, samt å legge til noen viktige søkeord som 'sabbat' og 'vaktler' som er sentrale temaer i teksten.",
+  "score": 7,
+  "revisedStory": {
+    "slug": "manna-fra-himmelen",
+    "title": "Manna fra himmelen",
+    "keywords": [
+      "manna",
+      "ørken",
+      "brød",
+      "himmelen",
+      "vaktler",
+      "sabbat",
+      "israelittene",
+      "guds forsyning"
+    ],
+    "description": "Gud sørger for manna fra himmelen og vaktler for å mette israelittene i ørkenen, og gir dem regler for sabbatshvile.",
+    "category": "oerkenvandringen",
+    "references": [
+      {
+        "bookId": 2,
+        "startChapter": 16,
+        "startVerse": 1,
+        "endChapter": 16,
+        "endVerse": 36
+      }
+    ]
+  }
+}

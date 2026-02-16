@@ -1,0 +1,45 @@
+{
+  "issues": [
+    {
+      "field": "keywords",
+      "severity": "minor",
+      "explanation": "Noen relevante nøkkelord mangler, for eksempel 'josva' (som etterfølger), 'moab' (stedet han døde), 'pisga', og 'det lovede land'. 'avskjed' er litt vagt men akseptabelt.",
+      "current": "moses, nebo, død, kanaan, avskjed",
+      "suggested": "moses, nebo, død, kanaan, moab, josva, det lovede land, pisga"
+    },
+    {
+      "field": "category",
+      "severity": "major",
+      "explanation": "Kategorien 'oerkenvandringen' er ikke helt feil, men 'moses' passer bedre som kategori. Moses' død er kulminasjonen av Moses' liv og tjeneste, og det finnes en dedikert 'moses'-kategori som er mer presis.",
+      "current": "oerkenvandringen",
+      "suggested": "moses"
+    }
+  ],
+  "summary": "Historien er i hovedsak god. Referansene er korrekte – 5. Mosebok 34:1-12 dekker nøyaktig Moses' død, hans syn over det lovede land, og avslutningen. Beskrivelsen stemmer med bibelteksten. Kategorien bør endres fra 'oerkenvandringen' til 'moses' da det finnes en mer passende kategori. Nøkkelordene kan utvides med noen flere relevante termer.",
+  "score": 7,
+  "revisedStory": {
+    "slug": "moses-dod",
+    "title": "Moses' død",
+    "keywords": [
+      "moses",
+      "nebo",
+      "død",
+      "kanaan",
+      "moab",
+      "josva",
+      "det lovede land",
+      "pisga"
+    ],
+    "description": "Moses ser det lovede land fra Nebo-fjellet, men får ikke gå inn. Han dør 120 år gammel.",
+    "category": "moses",
+    "references": [
+      {
+        "bookId": 5,
+        "startChapter": 34,
+        "startVerse": 1,
+        "endChapter": 34,
+        "endVerse": 12
+      }
+    ]
+  }
+}

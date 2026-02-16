@@ -1,0 +1,47 @@
+{
+  "issues": [
+    {
+      "field": "keywords",
+      "severity": "minor",
+      "explanation": "Historien inkluderer viktige elementer som loddkasting, sjømennene, og at Jona ble kastet i havet. Nøkkelord som 'ninive', 'loddkasting' og 'sjømenn' ville vært nyttige tillegg for søkbarhet. 'Guds kall' eller 'profet' kunne også vært relevante.",
+      "current": "[\"jona\",\"flukt\",\"skip\",\"storm\",\"hav\",\"tarsis\"]",
+      "suggested": "[\"jona\",\"flukt\",\"skip\",\"storm\",\"hav\",\"tarsis\",\"ninive\",\"sjømenn\",\"loddkasting\",\"profet\"]"
+    },
+    {
+      "field": "description",
+      "severity": "minor",
+      "explanation": "Beskrivelsen er korrekt men dekker bare delvis innholdet i Jona 1:1-17. Den nevner ikke at Jona ble kastet i havet, noe som er et sentralt klimaks i denne passasjen. Vers 17 om den store fisken er referert i referansene (endVerse: 17) men er ikke med i den oppgitte bibelteksten - det kan tyde på at vers 17 bør inkluderes i beskrivelsen.",
+      "current": "Jona prøver å flykte fra Guds kall ved å ta et skip til Tarsis, men en voldsom storm rammer skipet.",
+      "suggested": "Jona prøver å flykte fra Guds kall ved å ta et skip til Tarsis, men en voldsom storm rammer skipet. Sjømennene kaster lodd og finner ut at Jona er skyld i stormen, og han blir kastet i havet."
+    }
+  ],
+  "summary": "Historien er generelt god. Referansene er korrekte: bookId 32 er Jona, og kapittel 1 vers 1-17 dekker akkurat denne historien (merk at vers 17 om den store fisken som slukte Jona ikke var med i den oppgitte bibelteksten, men er del av referansen). Kategorien 'profetene' er riktig. Slug og tittel matcher godt. Mindre forbedringer kan gjøres i nøkkelord og beskrivelse for å dekke historien mer fullstendig.",
+  "score": 8,
+  "revisedStory": {
+    "slug": "jona-flykter-fra-gud",
+    "title": "Jona flykter fra Gud",
+    "keywords": [
+      "jona",
+      "flukt",
+      "skip",
+      "storm",
+      "hav",
+      "tarsis",
+      "ninive",
+      "sjømenn",
+      "loddkasting",
+      "profet"
+    ],
+    "description": "Jona prøver å flykte fra Guds kall ved å ta et skip til Tarsis, men en voldsom storm rammer skipet. Sjømennene kaster lodd og finner ut at Jona er skyld i stormen, og han blir kastet i havet.",
+    "category": "profetene",
+    "references": [
+      {
+        "bookId": 32,
+        "startChapter": 1,
+        "startVerse": 1,
+        "endChapter": 1,
+        "endVerse": 17
+      }
+    ]
+  }
+}

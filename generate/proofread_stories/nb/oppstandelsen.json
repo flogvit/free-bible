@@ -1,0 +1,75 @@
+{
+  "issues": [
+    {
+      "field": "category",
+      "severity": "major",
+      "explanation": "Oppstandelsen er en del av Jesu lidelse, død og oppstandelse. Kategorien 'jesu-lidelse' er mer passende enn 'jesus-liv', da oppstandelsen er kulminasjonen av lidelseshistorien (pasjon og påske).",
+      "current": "jesus-liv",
+      "suggested": "jesu-lidelse"
+    },
+    {
+      "field": "description",
+      "severity": "minor",
+      "explanation": "Beskrivelsen sier at Jesus viser seg for 'Maria Magdalena og de andre kvinnene'. I Matteus viser han seg for kvinnene samlet, men i Johannes viser han seg spesifikt for Maria Magdalena alene. Beskrivelsen er ikke direkte feil, men kunne vært mer presis. I tillegg sier Lukas om to menn/engler (flertall), mens beskrivelsen bare nevner 'en engel'. Siden dette er en samlet beskrivelse av alle fire evangeliers beretning, er det akseptabelt, men 'engler' (flertall) eller en mer nøytral formulering ville vært mer dekkende.",
+      "current": "Kvinnene kommer til graven og finner den tom. En engel forkynner: 'Han er ikke her, han er oppstått!' Jesus viser seg for Maria Magdalena og de andre kvinnene.",
+      "suggested": "Kvinnene kommer til graven og finner den tom. Engler forkynner: «Han er ikke her, han er oppstått!» Jesus viser seg for Maria Magdalena og de andre kvinnene."
+    },
+    {
+      "field": "slug",
+      "severity": "minor",
+      "explanation": "Sluggen 'oppstandelsen' er grei, men for bedre presisjon og konsistens med tittelen 'Jesu oppstandelse' kunne den være 'jesu-oppstandelse'.",
+      "current": "oppstandelsen",
+      "suggested": "jesu-oppstandelse"
+    }
+  ],
+  "summary": "Historien er generelt godt utformet med korrekte og dekkende referanser fra alle fire evangelier. Referansene til Matt 28:1-10, Mark 16:1-8, Luk 24:1-12 og Joh 20:1-18 er alle korrekte og dekker oppstandelsesberetningen godt. Hovedproblemet er kategorien: oppstandelsen hører naturlig til under 'jesu-lidelse' (som dekker pasjon og påske) snarere enn 'jesus-liv'. Det er også mindre forbedringer mulig i slug og beskrivelse.",
+  "score": 7,
+  "revisedStory": {
+    "slug": "jesu-oppstandelse",
+    "title": "Jesu oppstandelse",
+    "keywords": [
+      "oppstandelse",
+      "tom grav",
+      "engel",
+      "påske",
+      "maria magdalena",
+      "jesus",
+      "disiplene",
+      "peter",
+      "korsfestet",
+      "tredje dag"
+    ],
+    "description": "Kvinnene kommer til graven og finner den tom. Engler forkynner: «Han er ikke her, han er oppstått!» Jesus viser seg for Maria Magdalena og de andre kvinnene.",
+    "category": "jesu-lidelse",
+    "references": [
+      {
+        "bookId": 40,
+        "startChapter": 28,
+        "startVerse": 1,
+        "endChapter": 28,
+        "endVerse": 10
+      },
+      {
+        "bookId": 41,
+        "startChapter": 16,
+        "startVerse": 1,
+        "endChapter": 16,
+        "endVerse": 8
+      },
+      {
+        "bookId": 42,
+        "startChapter": 24,
+        "startVerse": 1,
+        "endChapter": 24,
+        "endVerse": 12
+      },
+      {
+        "bookId": 43,
+        "startChapter": 20,
+        "startVerse": 1,
+        "endChapter": 20,
+        "endVerse": 18
+      }
+    ]
+  }
+}
