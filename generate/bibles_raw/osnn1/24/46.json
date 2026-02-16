@@ -63,11 +63,17 @@
     "bookId": 24,
     "chapterId": 46,
     "verseId": 9,
-    "text": "Rykk fram, de hestar! Far vilt av stad, de vogner! Lat krigsmennene dra ut, Kusj og Put som ber skjold, og ludarane som spenner bogen.",
+    "text": "Rykk fram, de hestar! Far vilt av stad, de vogner! Lat krigsmennene dra ut, Kusj og Put som ber skjold, og lydiarane som spenner bogen.",
     "versions": [
       {
         "text": "Rykkk fram, de hestar! Far vilt av stad, de vogner! Lat krigsmennene dra ut, kusj og Put som ber skjold, og ludarane som spenner bogen.",
         "explanation": "Skrivefeil: 'Rykkk' har tre k-ar, skal vera 'Rykk'. I tillegg bør 'kusj' ha stor forbokstav som eigennamn: 'Kusj'."
+      },
+      {
+        "text": "Rykk fram, de hestar! Far vilt av stad, de vogner! Lat krigsmennene dra ut, Kusj og Put som ber skjold, og ludarane som spenner bogen.",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "'לוּדִים' (Ludim) refererer til lydiarane, eit kjent folkeslag. 'Ludarane' kan verka forvirrande og er ei uvanleg form. 'Lydiarane' er meir gjenkjenneleg og korrekt."
       }
     ]
   },
@@ -105,7 +111,15 @@
     "bookId": 24,
     "chapterId": 46,
     "verseId": 15,
-    "text": "Kvifor er dei sterke dine feia bort? Dei heldt ikkje stand, for Herren støytte dei ned."
+    "text": "Kvifor er oksen din feia bort? Han heldt ikkje stand, for Herren støytte han ned.",
+    "versions": [
+      {
+        "text": "Kvifor er dei sterke dine feia bort? Dei heldt ikkje stand, for Herren støytte dei ned.",
+        "type": "grammar",
+        "severity": "minor",
+        "explanation": "Hebraisk 'אַבִּירֶיךָ' (abbirekha) kan lesast som 'den sterke din' eller 'oksen din' (Apis-oksen, eit bilete på Egypt). Verbet 'נִסְחַף' er eintal, og 'לֹא עָמַד' og 'הֲדָפוֹ' er begge eintal. Heile verset brukar eintalsformer, så oversettinga bør reflektera dette."
+      }
+    ]
   },
   {
     "bookId": 24,
@@ -147,7 +161,15 @@
     "bookId": 24,
     "chapterId": 46,
     "verseId": 22,
-    "text": "Lyden av henne er som ei orm som glid bort, for dei kjem med ein hær og går mot henne med økser, som dei som høgg ved."
+    "text": "Lyden hennar er som ein orm som glid bort, for dei kjem med ein hær og går mot henne med økser, som dei som høgg ved.",
+    "versions": [
+      {
+        "text": "Lyden av henne er som ei orm som glid bort, for dei kjem med ein hær og går mot henne med økser, som dei som høgg ved.",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "'קוֹלָהּ' betyr 'lyden hennar' (ikkje 'lyden av henne'). I tillegg er 'נָחָשׁ' hankjønn på hebraisk, så det bør vera 'ein orm' på nynorsk."
+      }
+    ]
   },
   {
     "bookId": 24,
@@ -183,6 +205,14 @@
     "bookId": 24,
     "chapterId": 46,
     "verseId": 28,
-    "text": "Du, min tenar Jakob, ver ikkje redd, seier Herren, for eg er med deg. Eg skal gjera ende på alle dei folkeslaga eg har drive deg bort til, men deg vil eg ikkje gjera ende på. Eg vil tukta deg med rettferd, men lata deg sleppa heilt fri, det gjer eg ikkje."
+    "text": "Du, min tenar Jakob, ver ikkje redd, seier Herren, for eg er med deg. Eg skal gjera ende på alle dei folkeslaga eg har drive deg bort til, men deg vil eg ikkje gjera ende på. Eg vil tukta deg med rettferd, men frikjenna deg heilt, det gjer eg ikkje.",
+    "versions": [
+      {
+        "text": "Du, min tenar Jakob, ver ikkje redd, seier Herren, for eg er med deg. Eg skal gjera ende på alle dei folkeslaga eg har drive deg bort til, men deg vil eg ikkje gjera ende på. Eg vil tukta deg med rettferd, men lata deg sleppa heilt fri, det gjer eg ikkje.",
+        "type": "theological",
+        "severity": "major",
+        "explanation": "'וְנַקֵּה לֹא אֲנַקֶּךָּ' betyr 'men frikjenna deg heilt, det gjer eg ikkje' – altså at Gud ikkje vil la Jakob gå heilt ustraffet. 'Lata deg sleppa heilt fri' kan misforståast til å handla om frigjering frå fangenskap i staden for straffridom. 'Frikjenna' gjev betre att den juridiske/teologiske meininga."
+      }
+    ]
   }
 ]

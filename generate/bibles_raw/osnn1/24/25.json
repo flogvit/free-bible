@@ -87,11 +87,17 @@
     "bookId": 24,
     "chapterId": 25,
     "verseId": 15,
-    "text": "Ta dette begeret med vreidens vin frå mi hand og lat alle dei folka eg sender deg til, drikka av det.",
+    "text": "For så sa Herren, Israels Gud, til meg: Ta dette begeret med vreidens vin frå mi hand og lat alle dei folka eg sender deg til, drikka av det.",
     "versions": [
       {
         "text": "For så sa Herren, Israels Gud, til meg: Ta denne begeret med vreidens vin frå mi hand og lat alle dei folka eg sender deg til, drikka av det.",
         "explanation": "«Beger» er eit inkjekjønnsord på nynorsk, så det skal vera «dette begeret», ikkje «denne begeret»."
+      },
+      {
+        "text": "Ta dette begeret med vreidens vin frå mi hand og lat alle dei folka eg sender deg til, drikka av det.",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "The introductory phrase 'כִּי כֹה אָמַר יְהוָה אֱלֹהֵי יִשְׂרָאֵל אֵלַי' (For thus said the LORD, the God of Israel, to me) has been dropped entirely from the current translation. The previous version had it but used 'denne begeret'. The current version fixed the gender but removed the entire introductory clause, which is a significant omission of content."
       }
     ]
   },
@@ -207,7 +213,15 @@
     "bookId": 24,
     "chapterId": 25,
     "verseId": 34,
-    "text": "Jamra dykk, de gjetarar, og skrik! Velt dykk i støvet, de som leier flokken! For tida dykkar til å bli slakta er komen. De skal falla som kostbare kar."
+    "text": "Jamra dykk, de gjetarar, og skrik! Velt dykk i støvet, de som leier flokken! For tida dykkar til å bli slakta er komen. De skal spreiast og falla som kostbare kar.",
+    "versions": [
+      {
+        "text": "Jamra dykk, de gjetarar, og skrik! Velt dykk i støvet, de som leier flokken! For tida dykkar til å bli slakta er komen. De skal falla som kostbare kar.",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "The Hebrew וּתְפוֹצוֹתִיכֶם means 'and your scatterings' or 'you shall be scattered'. This concept of being scattered/dispersed is missing from the current translation."
+      }
+    ]
   },
   {
     "bookId": 24,
@@ -231,6 +245,14 @@
     "bookId": 24,
     "chapterId": 25,
     "verseId": 38,
-    "text": "Som ei ung løve har han forlate hiet sitt. Landet deira er blitt til øydemark på grunn av det undertrykkjande sverdet og hans brennande vreide."
+    "text": "Som ei ung løve har han forlate hiet sitt. Landet deira er blitt til øydemark på grunn av det valdfulle sverdet og på grunn av hans brennande vreide.",
+    "versions": [
+      {
+        "text": "Som ei ung løve har han forlate hiet sitt. Landet deira er blitt til øydemark på grunn av det undertrykkjande sverdet og hans brennande vreide.",
+        "type": "error",
+        "severity": "major",
+        "explanation": "The Hebrew חֲרוֹן הַיּוֹנָה is difficult but likely refers to 'the oppressing/destroying sword' (from ינה = to oppress) or possibly 'the fierce sword' (from חרון = fierceness of). The word 'undertrykkjande' (oppressive) is a possible reading, but 'valdfulle' (violent) better captures the destructive military context. More importantly, the Hebrew has two parallel מִפְּנֵי clauses which should both be reflected."
+      }
+    ]
   }
 ]

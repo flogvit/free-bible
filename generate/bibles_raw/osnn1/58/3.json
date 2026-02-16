@@ -9,7 +9,15 @@
     "bookId": 58,
     "chapterId": 3,
     "verseId": 2,
-    "text": "Han var trufast mot den som innsette han, slik også Moses var i huset hans."
+    "text": "Han var trufast mot den som innsette han, slik også Moses var trufast i heile huset hans.",
+    "versions": [
+      {
+        "text": "Han var trufast mot den som innsette han, slik også Moses var i huset hans.",
+        "type": "error",
+        "severity": "major",
+        "explanation": "Den greske teksten seier 'ὡς καὶ Μωϋσῆς ἐν ὅλῳ τῷ οἴκῳ αὐτοῦ' (som refererer tilbake til Num 12:7). Sjølv om 'ὅλῳ' ikkje er eksplisitt i alle tekstversjonar av v.2, er poenget at Moses var 'trufast' i huset. Omsetjinga manglar 'trufast' for Moses si side av samanlikninga, noko som svekkar parallellen."
+      }
+    ]
   },
   {
     "bookId": 58,
@@ -63,7 +71,15 @@
     "bookId": 58,
     "chapterId": 3,
     "verseId": 10,
-    "text": "i førti år. Difor vart eg harm på denne slekta og sa: Alltid farer dei vill i hjarta sitt, og dei har ikkje kjent vegane mine."
+    "text": "i førti år. Difor vart eg harm på denne slekta og sa: Alltid fer dei vill i hjarta sitt, og dei har ikkje kjent vegane mine.",
+    "versions": [
+      {
+        "text": "i førti år. Difor vart eg harm på denne slekta og sa: Alltid farer dei vill i hjarta sitt, og dei har ikkje kjent vegane mine.",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "'Farer' er bokmål/riksmål-form. Korrekt nynorsk presensform av 'fara' er 'fer'."
+      }
+    ]
   },
   {
     "bookId": 58,
@@ -81,7 +97,7 @@
     "bookId": 58,
     "chapterId": 3,
     "verseId": 13,
-    "text": "Men oppmuntra kvarandre kvar dag, så lenge det heiter «i dag», så ingen av dykk blir forherdast ved synda sitt svik.",
+    "text": "Men oppmuntra kvarandre kvar dag, så lenge det heiter «i dag», så ingen av dykk blir forherdas ved synda sitt svik.",
     "versions": [
       {
         "text": "Men oppmuntra kvarandre kvar dag, så lenge det heiter «i dag», så ingen av dykk blir forherdast ved synda sitt bedrag.",
@@ -90,6 +106,12 @@
       {
         "text": "Men oppmuntra kvarandre kvar dag, så lenge det heiter «i dag», så ingen av dykk blir forherdast ved synda si svik.",
         "explanation": "Sjølv om førre revisjon endra til 'synda si svik', er 'svik' inkjekjønn på nynorsk og bør ha 'sitt'. Formuleringa 'synda sitt svik' er korrekt (synda er eigar, svik er inkjekjønn)."
+      },
+      {
+        "text": "Men oppmuntra kvarandre kvar dag, så lenge det heiter «i dag», så ingen av dykk blir forherdast ved synda sitt svik.",
+        "type": "grammar",
+        "severity": "major",
+        "explanation": "'Forherdast' er feil bøying. Korrekt passiv infinitiv/presens etter 'blir' er 'forherdas' (eventuelt 'forherda'). 'Blir forherdast' er dobbeltmerking av passiv."
       }
     ]
   },
@@ -115,11 +137,17 @@
     "bookId": 58,
     "chapterId": 3,
     "verseId": 17,
-    "text": "Og kven var det han var harm på i førti år? Var det ikkje dei som synda, dei som kroppane fall i øydemarka?",
+    "text": "Og kven var det han var harm på i førti år? Var det ikkje dei som synda, dei som leivningane deira fall i øydemarka?",
     "versions": [
       {
         "text": "Og kven var det han var harm på i førti år? Var det ikkje dei som synda, dei som kroppane deira fall i øydemarka?",
         "explanation": "Formuleringa 'dei som kroppane deira fall' er klønete. Betre flyt med 'dei som kroppane fall' (relativsetninga gjer eigeforholdet klart)."
+      },
+      {
+        "text": "Og kven var det han var harm på i førti år? Var det ikkje dei som synda, dei som kroppane fall i øydemarka?",
+        "type": "grammar",
+        "severity": "minor",
+        "explanation": "Gresk 'τὰ κῶλα' tyder 'lemmer/lik/leivningar' — ikkje 'kroppar'. Det er eit bilete på at lika deira låg att i øydemarka. 'Kroppane' er ikkje heilt presist, og 'leivningane' eller 'lika' ville vere meir nøyaktig. I tillegg trengst 'deira' for å gjere eigeforholdet heilt klart."
       }
     ]
   },
@@ -127,7 +155,15 @@
     "bookId": 58,
     "chapterId": 3,
     "verseId": 18,
-    "text": "Og kven svor han at aldri skulle koma inn til kvila hans, om ikkje dei som var ulydige?"
+    "text": "Og kven svor han at ikkje skulle få koma inn til kvila hans, om ikkje dei som var ulydige?",
+    "versions": [
+      {
+        "text": "Og kven svor han at aldri skulle koma inn til kvila hans, om ikkje dei som var ulydige?",
+        "type": "grammar",
+        "severity": "major",
+        "explanation": "Setninga 'kven svor han at aldri skulle koma inn' manglar eit subjekt/objekt og er grammatisk uklar. 'Kven svor han at ikkje skulle få koma inn' gir betre syntaks og fangar meininga i det greske 'μὴ εἰσελεύσεσθαι'."
+      }
+    ]
   },
   {
     "bookId": 58,

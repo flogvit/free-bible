@@ -45,11 +45,17 @@
     "bookId": 1,
     "chapterId": 35,
     "verseId": 8,
-    "text": "Debora, amma til Rebekka, døydde og vart gravlagd nedanfor Betel, under eika. Dei kalla henne Gråte-eika.",
+    "text": "Debora, amma til Rebekka, døydde og vart gravlagd nedanfor Betel, under eika. Dei kalla han Gråte-eika.",
     "versions": [
       {
         "text": "Debora, amma til Rebekka, døydde og vart gravlagd nedanfor Betel, under eika. Han kalla eika Allon-Bakut.",
         "explanation": "Subjektet 'Han' er uklart (refererer til Jakob, men han er ikkje nemnd i verset). I tillegg: hebraisk 'אַלּוֹן בָּכוּת' betyr 'gråteeika' - ei forklarande omsetjing kan vera meir tenleg for munnleg lesing, eventuelt med 'Allon-Bakut' i parentes."
+      },
+      {
+        "text": "Debora, amma til Rebekka, døydde og vart gravlagd nedanfor Betel, under eika. Dei kalla henne Gråte-eika.",
+        "type": "error",
+        "severity": "major",
+        "explanation": "Det hebraiske har 'וַיִּקְרָא שְׁמוֹ' (han/dei kalla NAMNET hans/hennar), der pronomenet 'שְׁמוֹ' (namnet hans) viser til staden/eika (maskulin i hebraisk). 'Henne' er feil pronomen her - det bør vera 'han' sidan det refererer til eika/staden (som er maskulin på hebraisk). Dessutan: i den noverande versjonen er 'Dei kalla henne' uklart - kven kalla? Det hebraiske har eintal 'וַיִּקְרָא', men 'dei' kan forsvarast. Hovudproblemet er pronomenet."
       }
     ]
   },
@@ -105,7 +111,15 @@
     "bookId": 1,
     "chapterId": 35,
     "verseId": 15,
-    "text": "Jakob kalla staden der Gud hadde tala med han, for Betel."
+    "text": "Jakob kalla staden der Gud hadde tala med han, Betel.",
+    "versions": [
+      {
+        "text": "Jakob kalla staden der Gud hadde tala med han, for Betel.",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "På nynorsk er 'kalla ... for' munnleg og akseptabelt, men meir korrekt form er 'kalla ... (noko)' utan 'for'. Likevel er dette ein minor stilsak og begge former er akseptable."
+      }
+    ]
   },
   {
     "bookId": 1,
@@ -171,7 +185,15 @@
     "bookId": 1,
     "chapterId": 35,
     "verseId": 23,
-    "text": "Sønene til Lea var: Ruben, den førstefødde til Jakob, Simon, Levi, Juda, Jissakar og Sebulon."
+    "text": "Sønene til Lea var: Ruben, den førstefødde til Jakob, Simon, Levi, Juda, Issakar og Sebulon.",
+    "versions": [
+      {
+        "text": "Sønene til Lea var: Ruben, den førstefødde til Jakob, Simon, Levi, Juda, Jissakar og Sebulon.",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "Den vanlege norske forma av namnet יִשָּׂשכָר er 'Issakar', ikkje 'Jissakar'. Dei fleste norske bibelomsetjingar brukar 'Issakar'."
+      }
+    ]
   },
   {
     "bookId": 1,

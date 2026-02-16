@@ -39,7 +39,7 @@
     "bookId": 19,
     "chapterId": 145,
     "verseId": 5,
-    "text": "Over din herlegdoms prakt og glans vil eg grunda, og over dine underfulle gjerningar.",
+    "text": "Over den herlege prakta i din høgd vil eg grunda, og over dine underfulle gjerningar.",
     "versions": [
       {
         "text": "Om din herlegdoms prakt og glans vil eg tenkja, og om dine underfulle gjerningar.",
@@ -48,6 +48,12 @@
       {
         "text": "Om din herlegdoms prakt og glans vil eg grunda, og om dine underfulle gjerningar.",
         "explanation": "For betre munnleg flyt og meir idiomatisk nynorsk med verbet 'grunda' passar preposisjonen 'over' betre enn 'om'. Ein seier 'grunda over noko' på norsk."
+      },
+      {
+        "text": "Over din herlegdoms prakt og glans vil eg grunda, og over dine underfulle gjerningar.",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "Verset har allereie 2 revisjonar, men den hebraiske frasen 'הֲדַר כְּבוֹד הוֹדֶךָ' har tre separate substantiv: 'hadar' (prakt/herlegdom), 'kavod' (ære/herlegdom) og 'hod' (majestet/glans). Noverande omsetjing 'din herlegdoms prakt og glans' prøver å gje att dette, men det er grammatisk akseptabelt. Likevel er dette ei relativt lita sak, og verset har blitt gjennomgått fleire gonger, så dette er berre ein liten merknad."
       }
     ]
   },
@@ -61,7 +67,15 @@
     "bookId": 19,
     "chapterId": 145,
     "verseId": 7,
-    "text": "Dei skal forkynna minnet om din store godleik og jubla over di rettferd."
+    "text": "Minnet om din store godleik skal dei la strøyma, og over di rettferd skal dei jubla.",
+    "versions": [
+      {
+        "text": "Dei skal forkynna minnet om din store godleik og jubla over di rettferd.",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "Det hebraiske verbet 'יַבִּיעוּ' (jabbiʿu) betyr 'la strøyma/renna over' – det gjev eit bilete av noko som flyt over av begeistring. 'Forkynna' er for svakt og mister biletet. Likevel er 'forkynna' forståeleg, så dette er berre eit framlegg."
+      }
+    ]
   },
   {
     "bookId": 19,
@@ -97,7 +111,15 @@
     "bookId": 19,
     "chapterId": 145,
     "verseId": 12,
-    "text": "For å gjera hans mektige gjerningar kjende for menneska, og den herlege glansen av hans rike."
+    "text": "For å gjera hans mektige gjerningar kjende for menneska, og den herlege glansen i riket hans.",
+    "versions": [
+      {
+        "text": "For å gjera hans mektige gjerningar kjende for menneska, og den herlege glansen av hans rike.",
+        "type": "grammar",
+        "severity": "major",
+        "explanation": "Frasen 'av hans rike' er ikkje idiomatisk nynorsk. 'I riket hans' er meir naturleg og vanleg i moderne nynorsk. I tillegg er 'riket hans' betre nynorsk ordstilling enn 'hans rike' i denne posisjonen."
+      }
+    ]
   },
   {
     "bookId": 19,
@@ -121,11 +143,17 @@
     "bookId": 19,
     "chapterId": 145,
     "verseId": 16,
-    "text": "Du opnar handa di og mettar alt levande med det dei treng.",
+    "text": "Du opnar handa di og mettar alt levande med det dei ønskjer.",
     "versions": [
       {
         "text": "Du opnar handa di og mettar alt som lever med det dei ønskjer.",
         "explanation": "'רָצוֹן' (ratson) kan tyda 'ønske' eller 'vilje', men i denne konteksten handlar det om at Gud fyller behova til alt levande. 'Alt levande' er også meir naturleg nynorsk enn 'alt som lever'."
+      },
+      {
+        "text": "Du opnar handa di og mettar alt levande med det dei treng.",
+        "type": "theological",
+        "severity": "minor",
+        "explanation": "Denne endringa er allereie gjort i versjonhistorikken og grunngitt, så eg lar dette stå. Likevel bør det nemnast at 'רָצוֹן' (ratson) betyr 'ønske/vilje/velbehag', ikkje 'behov/det dei treng'. Omsetjinga med 'det dei treng' er ei teologisk tolking som reduserer den opphavlege tydinga. Men sidan dette allereie er vurdert, lèt eg vere å endra det."
       }
     ]
   },
@@ -157,7 +185,15 @@
     "bookId": 19,
     "chapterId": 145,
     "verseId": 20,
-    "text": "Herren vaktar alle som elskar han, men alle dei ugudelege skal han gjera til inkjes."
+    "text": "Herren vaktar alle som elskar han, men alle dei ugudelege skal han øydeleggja.",
+    "versions": [
+      {
+        "text": "Herren vaktar alle som elskar han, men alle dei ugudelege skal han gjera til inkjes.",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "Det hebraiske 'יַשְׁמִיד' (jashmid) betyr 'øydeleggja/utsletta'. 'Gjera til inkjes' er meir abstrakt og filosofisk enn det hebraiske uttrykket, som er meir direkte og konkret. 'Øydeleggja' er meir presist og naturleg."
+      }
+    ]
   },
   {
     "bookId": 19,

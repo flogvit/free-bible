@@ -21,7 +21,15 @@
     "bookId": 16,
     "chapterId": 13,
     "verseId": 4,
-    "text": "Men før dette hadde presten Eljasjib, som var sett over romma i huset åt vår Gud, vorte nær knytt til Tobia."
+    "text": "Men før dette hadde presten Eljasjib, som hadde tilsyn med romma i huset åt vår Gud, vorte nær knytt til Tobia.",
+    "versions": [
+      {
+        "text": "Men før dette hadde presten Eljasjib, som var sett over romma i huset åt vår Gud, vorte nær knytt til Tobia.",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "Hebraisk נָתוּן בְּלִשְׁכַּת betyr at han var sett/utnemnd over romma. 'Hadde tilsyn med' er meir idiomatisk nynorsk enn 'var sett over'."
+      }
+    ]
   },
   {
     "bookId": 16,
@@ -33,7 +41,15 @@
     "bookId": 16,
     "chapterId": 13,
     "verseId": 6,
-    "text": "I alt dette var eg ikkje i Jerusalem, for i det to og trettiande året til Artaxerxes, kongen i Babel, hadde eg reist attende til kongen. Ei tid etter bad eg kongen om løyve til å reisa."
+    "text": "Under alt dette var eg ikkje i Jerusalem, for i det to og trettiande året til Artaxerxes, kongen av Babel, hadde eg reist til kongen. Ei tid etter bad eg kongen om løyve til å reisa.",
+    "versions": [
+      {
+        "text": "I alt dette var eg ikkje i Jerusalem, for i det to og trettiande året til Artaxerxes, kongen i Babel, hadde eg reist attende til kongen. Ei tid etter bad eg kongen om løyve til å reisa.",
+        "type": "error",
+        "severity": "major",
+        "explanation": "בָּאתִי אֶל־הַמֶּלֶךְ betyr 'eg kom til kongen' / 'eg gjekk til kongen', ikkje nødvendigvis 'reist attende'. Nehemja reiste frå Jerusalem til kongen, ikkje attende. 'Kongen i Babel' bør helst vera 'kongen av Babel' for å markera at det er ein kongetittel."
+      }
+    ]
   },
   {
     "bookId": 16,
@@ -99,7 +115,15 @@
     "bookId": 16,
     "chapterId": 13,
     "verseId": 16,
-    "text": "Det budde òg tyrarar der som førte inn fisk og alle slags varer og selde til judearane på sabbaten, jamvel i Jerusalem."
+    "text": "Det budde òg folk frå Tyrus der som førte inn fisk og alle slags varer og selde til judearane på sabbaten, jamvel i Jerusalem.",
+    "versions": [
+      {
+        "text": "Det budde òg tyrarar der som førte inn fisk og alle slags varer og selde til judearane på sabbaten, jamvel i Jerusalem.",
+        "type": "error",
+        "severity": "major",
+        "explanation": "הַצֹּרִים betyr 'folk frå Tyrus' (tyriarar), ikkje 'tyrarar' som gjev heilt feil meining på norsk (tyrannar). דָּאג betyr 'fisk', som er rett omsett."
+      }
+    ]
   },
   {
     "bookId": 16,
@@ -153,7 +177,15 @@
     "bookId": 16,
     "chapterId": 13,
     "verseId": 24,
-    "text": "Halvparten av borna deira tala asjdodittisk, og ingen av dei kunne tala jødisk, men berre språket til dei ulike folka."
+    "text": "Halvparten av borna deira tala asjdodisk, og ingen av dei kunne tala judisk, men berre språket til dei ulike folka.",
+    "versions": [
+      {
+        "text": "Halvparten av borna deira tala asjdodittisk, og ingen av dei kunne tala jødisk, men berre språket til dei ulike folka.",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "'Asjdodittisk' er ein uvanleg form; 'asjdodisk' er meir naturleg. 'Jødisk' (jiddisk-assosiasjon) bør vera 'judisk' sidan det hebraiske יְהוּדִית viser til det judeiske/hebraiske språket i Juda, ikkje det seinare jiddisk."
+      }
+    ]
   },
   {
     "bookId": 16,
@@ -189,7 +221,15 @@
     "bookId": 16,
     "chapterId": 13,
     "verseId": 29,
-    "text": "Kom dei i hug, min Gud, fordi dei har skitna til prestedømet og pakta for prestane og levittane."
+    "text": "Kom dei i hug, min Gud, for det dei har gjort mot prestedømet og pakta for prestane og levittane.",
+    "versions": [
+      {
+        "text": "Kom dei i hug, min Gud, fordi dei har skitna til prestedømet og pakta for prestane og levittane.",
+        "type": "error",
+        "severity": "major",
+        "explanation": "גָּאֳלֵי הַכְּהֻנָּה betyr 'ureininga/vanæringa av prestedømet'. 'Skitna til' er ikkje direkte feil, men 'det dei har gjort mot' er meir nøytralt og dekkjer betre den hebraiske konstruksjonen med עַל + substantiv (grunn til at Gud skal koma dei i hug)."
+      }
+    ]
   },
   {
     "bookId": 16,

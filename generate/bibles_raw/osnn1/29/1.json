@@ -45,7 +45,15 @@
     "bookId": 29,
     "chapterId": 1,
     "verseId": 7,
-    "text": "Det har lagt vinstokken min øyde og fikentreet mitt til spelde. Det har flekt av borken og kasta han bort; greinene har vorte kvite."
+    "text": "Det har lagt vinstokken min øyde og fikentreet mitt til spelde. Det har flekt av borken og kasta henne bort; greinene har vorte kvite.",
+    "versions": [
+      {
+        "text": "Det har lagt vinstokken min øyde og fikentreet mitt til spelde. Det har flekt av borken og kasta han bort; greinene har vorte kvite.",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "Pronomenet 'han' viser tilbake til borken (barken), som på nynorsk er hokjønn (borka/borken). Sidan det hebraiske suffikset (-hā) refererer til vinstokken/fikentreet (begge femininum), bør det heite 'henne' eller alternativt 'det'. 'Han' er grammatisk uheldig her."
+      }
+    ]
   },
   {
     "bookId": 29,
@@ -69,7 +77,15 @@
     "bookId": 29,
     "chapterId": 1,
     "verseId": 10,
-    "text": "Marka er herja, jorda syrgjer. For kornet er øydelagt, druesafta har tørka inn, og oljen veiknar."
+    "text": "Marka er herja, jorda syrgjer. For kornet er øydelagt, druesafta har tørka inn, og olja veiknar.",
+    "versions": [
+      {
+        "text": "Marka er herja, jorda syrgjer. For kornet er øydelagt, druesafta har tørka inn, og oljen veiknar.",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "'Olje' er hokjønn på nynorsk (ei olje, olja). 'Oljen' er bokmålsforma med hankjønnsbestemt form. Korrekt nynorsk bøying er 'olja'."
+      }
+    ]
   },
   {
     "bookId": 29,
@@ -87,7 +103,15 @@
     "bookId": 29,
     "chapterId": 1,
     "verseId": 13,
-    "text": "Kledd dykk i sekkestrie og syrg, de prestar! Jamra dykk, de som gjer teneste ved altaret! Kom og ligg natten over i sekkestrie, de som tener min Gud! For grødeoffer og drikkoffer er halde tilbake frå dykkar Guds hus."
+    "text": "Kle dykk i sekkestrie og syrg, de prestar! Jamra dykk, de som gjer teneste ved altaret! Kom og ligg natten over i sekkestrie, de som tener min Gud! For grødeoffer og drikkoffer er halde tilbake frå dykkar Guds hus.",
+    "versions": [
+      {
+        "text": "Kledd dykk i sekkestrie og syrg, de prestar! Jamra dykk, de som gjer teneste ved altaret! Kom og ligg natten over i sekkestrie, de som tener min Gud! For grødeoffer og drikkoffer er halde tilbake frå dykkar Guds hus.",
+        "type": "grammar",
+        "severity": "minor",
+        "explanation": "Imperativforma av 'å kle' på nynorsk er 'kle', ikkje 'kledd'. 'Kledd' er partisipp/preteritum. Det hebraiske חִגְרוּ er ein imperativ, så det bør vere 'Kle dykk'."
+      }
+    ]
   },
   {
     "bookId": 29,
@@ -123,11 +147,17 @@
     "bookId": 29,
     "chapterId": 1,
     "verseId": 18,
-    "text": "Kor dyra stønnar! Buskapen flakkar omkring, for det finst ikkje beite for dei. Jamvel saueflokkane ber skuld.",
+    "text": "Kor dyra stønnar! Storfeflokkar flakkar omkring, for det finst ikkje beite for dei. Jamvel saueflokkane ber skuld.",
     "versions": [
       {
         "text": "Kor dyra stønnar! Buskapen flakkar omkring, for det finst ikkje beite for dei. Jamvel saueflokken lid.",
         "explanation": "Hebraisk נֶאְשָׁמוּ (ne'eshamu) kjem frå rota אשׁם som tyder 'bera skuld/lida straff'. 'Lid' er vagt, medan 'ber skuld' fangar det teologiske poenget om at jamvel dyra lid under domen."
+      },
+      {
+        "text": "Kor dyra stønnar! Buskapen flakkar omkring, for det finst ikkje beite for dei. Jamvel saueflokkane ber skuld.",
+        "type": "theological",
+        "severity": "minor",
+        "explanation": "Hebraisk עֶדְרֵי בָקָר tyder spesifikt 'storfeflokkar/okseflokkar', ikkje 'buskap' generelt. בְהֵמָה i byrjinga av verset er det generelle ordet for dyr/buskap. Ved å omsetje בָקָר med 'buskap' mistar ein distinksjonen mellom dei to ledda. 'Storfeflokkar' gjev meir presis omsetting."
       }
     ]
   },

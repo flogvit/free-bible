@@ -9,7 +9,15 @@
     "bookId": 20,
     "chapterId": 18,
     "verseId": 2,
-    "text": "Ein dåre har ikkje glede av forstand, han vil berre syna fram det som bur i hjartet hans."
+    "text": "Ein dåre har ikkje glede av forstand, men berre av å syna fram det som bur i hjartet hans.",
+    "versions": [
+      {
+        "text": "Ein dåre har ikkje glede av forstand, han vil berre syna fram det som bur i hjartet hans.",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "Det hebraiske 'כִּי אִם' (ki im) tyder 'men berre' og knyter dei to delane saman som ein kontrast. Den noverande omsetjinga med to separate setningar mister noko av denne kontrasten. 'Men berre av å syna fram' gjev ein tydelegare motsetnad."
+      }
+    ]
   },
   {
     "bookId": 20,
@@ -21,11 +29,17 @@
     "bookId": 20,
     "chapterId": 18,
     "verseId": 4,
-    "text": "Orda frå ein manns munn er som djupe vatn, ei rennande bekk er kjelda til visdom.",
+    "text": "Orda frå ein manns munn er djupe vatn, ei rennande bekk er kjelda til visdom.",
     "versions": [
       {
         "text": "Orda frå ein manns munn er som djupe vatn, ei rennande bekk, ei kjelde til visdom.",
         "explanation": "Den hebraiske teksten har ein parallellisme der 'נַחַל נֹבֵעַ' (rennande bekk) er i apposisjon til 'מְקוֹר חָכְמָה' (visdomskjelda). Den noverande omsetjinga har tre separate bilete, medan originalen knyter dei to siste saman tydelegare."
+      },
+      {
+        "text": "Orda frå ein manns munn er som djupe vatn, ei rennande bekk er kjelda til visdom.",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "Det hebraiske originalet brukar ikkje samanlikningsordet 'som' (כ) her, men identifiserer orda direkte med djupe vatn. 'Er djupe vatn' er meir trofast mot originalen enn 'er som djupe vatn'."
       }
     ]
   },
@@ -165,6 +179,14 @@
     "bookId": 20,
     "chapterId": 18,
     "verseId": 24,
-    "text": "Den som har mange vener, kan koma til å verta øydelagd, men det finst ein ven som held seg nærare enn ein bror."
+    "text": "Den som har mange vener, kan koma til skade, men det finst ein ven som held seg nærare enn ein bror.",
+    "versions": [
+      {
+        "text": "Den som har mange vener, kan koma til å verta øydelagd, men det finst ein ven som held seg nærare enn ein bror.",
+        "type": "error",
+        "severity": "major",
+        "explanation": "Det hebraiske 'לְהִתְרֹעֵעַ' (lehitro'ea) frå rota רעע tyder 'å koma til skade' eller 'å verta knust'. 'Verta øydelagd' er noko sterkt og kan vera misvisande. 'Koma til skade' er meir presist og naturleg på nynorsk."
+      }
+    ]
   }
 ]

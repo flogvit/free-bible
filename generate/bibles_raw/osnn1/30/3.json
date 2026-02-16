@@ -33,7 +33,15 @@
     "bookId": 30,
     "chapterId": 3,
     "verseId": 5,
-    "text": "Fell fuglen i snara på marka utan at det er ei felle for han? Sprett snara opp frå bakken utan at ho har fanga noko?"
+    "text": "Fell fuglen i snara på marka utan at det er ei felle for henne? Sprett snara opp frå bakken utan at ho har fanga noko?",
+    "versions": [
+      {
+        "text": "Fell fuglen i snara på marka utan at det er ei felle for han? Sprett snara opp frå bakken utan at ho har fanga noko?",
+        "type": "error",
+        "severity": "minor",
+        "explanation": "Det hebraiske ordet צִפּוֹר (fugl) er hankjønn/hokjønn, men pronomenet 'לָהּ' (for henne) er femininum. På nynorsk er 'fugl' hankjønn, men sidan den hebraiske teksten brukar femininum pronomen, bør dette reflekterast. Dessutan er det meir konsekvent å bruka 'henne' sidan snara (fella) er for fuglen."
+      }
+    ]
   },
   {
     "bookId": 30,
@@ -75,19 +83,43 @@
     "bookId": 30,
     "chapterId": 3,
     "verseId": 10,
-    "text": "Dei veit ikkje å gjera det som er rett, seier Herren, dei som samlar vald og ran i palassa sine."
+    "text": "Dei veit ikkje å gjera det som er rett, seier Herren, dei som samlar vald og ran i borgene sine.",
+    "versions": [
+      {
+        "text": "Dei veit ikkje å gjera det som er rett, seier Herren, dei som samlar vald og ran i palassa sine.",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "I vers 9 vart 'אַרְמְנוֹת' omsett med 'borger' (jamfør versjonshistorikken der endringa var gjord medvite). Av konsekvens bør same ord brukast her: 'borgene sine' i staden for 'palassa sine'."
+      }
+    ]
   },
   {
     "bookId": 30,
     "chapterId": 3,
     "verseId": 11,
-    "text": "Difor, så seier Herren Gud: Ein fiende skal kringsetja landet og riva ned forsvaret ditt, og palassa dine skal plyndrast."
+    "text": "Difor, så seier Herren Gud: Ein fiende skal kringsetja landet og riva ned forsvaret ditt, og borgene dine skal plyndrast.",
+    "versions": [
+      {
+        "text": "Difor, så seier Herren Gud: Ein fiende skal kringsetja landet og riva ned forsvaret ditt, og palassa dine skal plyndrast.",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "Same konsekvens-problemet som i vers 10: 'אַרְמְנוֹת' er omsett som 'borger' i vers 9 (etter medviten revisjon), men som 'palass' i vers 11. For samsvar bør 'borgene' brukast."
+      }
+    ]
   },
   {
     "bookId": 30,
     "chapterId": 3,
     "verseId": 12,
-    "text": "Så seier Herren: Liksom gjetaren bergar to leggbein eller ein øyreflipp frå løvegapet, slik skal Israels born bergast, dei som sit i Samaria i ein sofakrok eller på ein divan av damask."
+    "text": "Så seier Herren: Liksom gjetaren bergar to leggbein eller ein øyreflipp frå løvegapet, slik skal Israels born bergast, dei som sit i Samaria med eit hjørne av ei seng og eit stykke av ein divan.",
+    "versions": [
+      {
+        "text": "Så seier Herren: Liksom gjetaren bergar to leggbein eller ein øyreflipp frå løvegapet, slik skal Israels born bergast, dei som sit i Samaria i ein sofakrok eller på ein divan av damask.",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "Det hebraiske 'בִּפְאַת מִטָּה' betyr 'i hjørnet av ei seng', ikkje 'ein sofakrok'. Og 'דְמֶשֶׁק עָרֶשׂ' er omstridd – det kan tyda 'ein divan frå Damaskus' eller 'eit damask-stoff på ei seng'. 'Divan av damask' er ei tolking, men 'sofakrok' er for fritt. Ei meir nøyaktig attgjeving held seg nærare originalen."
+      }
+    ]
   },
   {
     "bookId": 30,
@@ -99,7 +131,15 @@
     "bookId": 30,
     "chapterId": 3,
     "verseId": 14,
-    "text": "For den dagen eg straffar Israel for syndene deira, skal eg og heimsøkja altara i Betel. Horna på altaret skal hoggast av og falla til jorda."
+    "text": "For den dagen eg straffar Israel for syndene deira, skal eg òg heimsøkja altara i Betel. Horna på altaret skal hoggast av og falla til jorda.",
+    "versions": [
+      {
+        "text": "For den dagen eg straffar Israel for syndene deira, skal eg og heimsøkja altara i Betel. Horna på altaret skal hoggast av og falla til jorda.",
+        "type": "grammar",
+        "severity": "minor",
+        "explanation": "'og' bør skrivast 'òg' (med gravis) når det betyr 'også/dessutan'. 'Og' utan aksent er ein konjunksjon, medan 'òg' markerer tillegg, noko som er meininga her."
+      }
+    ]
   },
   {
     "bookId": 30,

@@ -57,11 +57,17 @@
     "bookId": 49,
     "chapterId": 4,
     "verseId": 9,
-    "text": "Men kva tyder «han steig opp» utan at han òg steig ned til dei lågare delane av jorda?",
+    "text": "Men kva tyder «han steig opp» utan at han òg har stege ned til dei lågare delane av jorda?",
     "versions": [
       {
         "text": "Men kva tyder «han steig opp» om det ikkje er at han òg steig ned til dei lågare delane av jorda?",
         "explanation": "«εἰ μὴ ὅτι» kan omsetjast meir naturleg med «utan at» enn «om det ikkje er at». Dette gjev betre flyt for munnleg lesing."
+      },
+      {
+        "text": "Men kva tyder «han steig opp» utan at han òg steig ned til dei lågare delane av jorda?",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "Grammatisk: «utan at han òg steig ned» bryt med tidslogikken i setninga. «Utan at» krev typisk perfektum ('har stege ned') for å uttrykkja at nedstigninga er ein føresetnad for oppstigninga. Men dette er ein mindre merknad, og den noverande formuleringa er forståeleg."
       }
     ]
   },
@@ -81,7 +87,15 @@
     "bookId": 49,
     "chapterId": 4,
     "verseId": 12,
-    "text": "Dette var for å utrusta dei heilage til tenestegjerning, til oppbygging av Kristi kropp."
+    "text": "for å utrusta dei heilage til tenestegjerning, til oppbygging av Kristi kropp,",
+    "versions": [
+      {
+        "text": "Dette var for å utrusta dei heilage til tenestegjerning, til oppbygging av Kristi kropp.",
+        "type": "error",
+        "severity": "major",
+        "explanation": "Verset startar med «Dette var for å» som ikkje har grunnlag i originalteksten. Gresk har berre preposisjonsfrasar (πρὸς... εἰς... εἰς...) som held fram frå v. 11. Å leggja til «Dette var» bryt flyten og legg til innhald. Verset bør dessutan ha komma på slutten, ikkje punktum, sidan setninga held fram i v. 13."
+      }
+    ]
   },
   {
     "bookId": 49,
@@ -93,7 +107,15 @@
     "bookId": 49,
     "chapterId": 4,
     "verseId": 14,
-    "text": "Då skal vi ikkje lenger vera umodne, kasta hit og dit og drivne omkring av kvar lærevind, ved menneskeleg falskspel og listige knep som leier på avvegar."
+    "text": "Då skal vi ikkje lenger vera umodne, kasta hit og dit og drivne omkring av kvar lærevind, ved menneskeleg falskspel og listige knep som fører vill.",
+    "versions": [
+      {
+        "text": "Då skal vi ikkje lenger vera umodne, kasta hit og dit og drivne omkring av kvar lærevind, ved menneskeleg falskspel og listige knep som leier på avvegar.",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "«πρὸς τὴν μεθοδείαν τῆς πλάνης» tyder 'mot villfaringa sine listige metodar/planar'. «Leier på avvegar» er litt omstendelig; «fører vill» er meir konsist og dekkjer πλάνης (villfarring) betre."
+      }
+    ]
   },
   {
     "bookId": 49,
@@ -171,7 +193,15 @@
     "bookId": 49,
     "chapterId": 4,
     "verseId": 23,
-    "text": "De skal fornyast i ånda i dykkar sinn."
+    "text": "De skal fornyast i ånd og sinn.",
+    "versions": [
+      {
+        "text": "De skal fornyast i ånda i dykkar sinn.",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "«I ånda i dykkar sinn» er noko klønete. Det greske «τῷ πνεύματι τοῦ νοὸς ὑμῶν» tyder 'i ånda til sinnet dykkar' - det handlar om fornyinga av det indre mennesket. «I ånd og sinn» er ein meir naturleg nynorsk formulering, men ei anna løysing kan vera «i dykkar sinn og ånd»."
+      }
+    ]
   },
   {
     "bookId": 49,
@@ -183,7 +213,15 @@
     "bookId": 49,
     "chapterId": 4,
     "verseId": 25,
-    "text": "Legg difor av løgna og tal sanning, kvar og ein med nesten sin, for vi er lemer på same kroppen."
+    "text": "Legg difor av løgna og tal sanning, kvar og ein med nesten sin, for vi er lemer på kvarandre.",
+    "versions": [
+      {
+        "text": "Legg difor av løgna og tal sanning, kvar og ein med nesten sin, for vi er lemer på same kroppen.",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "«ἀλλήλων μέλη» tyder 'lemer på kvarandre', ikkje 'lemer på same kroppen'. Omsetjinga legg til «same kroppen» som ikkje finst i originalteksten. Sjølv om meininga er nær, er det ein tillegg til teksten."
+      }
+    ]
   },
   {
     "bookId": 49,

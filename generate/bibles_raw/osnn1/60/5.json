@@ -33,7 +33,15 @@
     "bookId": 60,
     "chapterId": 5,
     "verseId": 5,
-    "text": "Like eins, de unge: Underordna dykk dei eldste. Og alle skal kle seg i audmjukskap mot kvarandre, for Gud står dei stolte imot, men dei audmjuke gjev han nåde."
+    "text": "Like eins, de unge: Underordna dykk under dei eldste. Og alle skal kle seg i audmjukskap mot kvarandre, for Gud står dei stolte imot, men dei audmjuke gjev han nåde.",
+    "versions": [
+      {
+        "text": "Like eins, de unge: Underordna dykk dei eldste. Og alle skal kle seg i audmjukskap mot kvarandre, for Gud står dei stolte imot, men dei audmjuke gjev han nåde.",
+        "type": "grammar",
+        "severity": "minor",
+        "explanation": "'Underordna dykk dei eldste' manglar preposisjonen 'under'. På nynorsk er det meir naturleg og tydeleg å seia 'underordna dykk under dei eldste'."
+      }
+    ]
   },
   {
     "bookId": 60,
@@ -57,11 +65,17 @@
     "bookId": 60,
     "chapterId": 5,
     "verseId": 9,
-    "text": "Stå han imot, faste i trua! De veit at syskenbrorskapen dykkar i verda går gjennom dei same lidingane.",
+    "text": "Stå han imot, faste i trua! De veit at dei same lidingane vert fullførte i syskenbrorskapen dykkar i verda.",
     "versions": [
       {
         "text": "Stå han imot, faste i trua! De veit at syskena dykkar rundt om i verda går gjennom dei same lidingane.",
         "explanation": "Det greske ἀδελφότητι (brorskap/syskenskap) er eit kollektivt omgrep som viser til det kristne fellesskapet som heilskap, ikkje berre til enkeltpersonar. 'Syskenbrorskapen' fangar betre dette kollektive aspektet, sjølv om 'syskena' fungerer greitt for munnleg lesing."
+      },
+      {
+        "text": "Stå han imot, faste i trua! De veit at syskenbrorskapen dykkar i verda går gjennom dei same lidingane.",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "Det greske ἐπιτελεῖσθαι tyder 'å verta fullført/gjennomført', ikkje berre 'å gå gjennom'. Og den greske setninga har τὰ αὐτὰ τῶν παθημάτων som subjekt – det er lidingane som vert fullførte i brorskapen, ikkje brorskapen som går gjennom lidingane. Den noverande omsetjinga snur syntaksen og gjer teksten litt upresis."
       }
     ]
   },
@@ -69,17 +83,31 @@
     "bookId": 60,
     "chapterId": 5,
     "verseId": 10,
-    "text": "Men all nådes Gud, som har kalla dykk til sin evige herlegdom i Kristus, han skal sjølv, etter at de har lide ei kort tid, gjera dykk fullt dugande, stø, styrkje og grunnfeste dykk."
+    "text": "Men all nådes Gud, som har kalla dykk til sin evige herlegdom i Kristus, han skal sjølv, etter at de har lide ei kort tid, utrusta dykk, stø dykk, styrkja dykk og grunnfesta dykk.",
+    "versions": [
+      {
+        "text": "Men all nådes Gud, som har kalla dykk til sin evige herlegdom i Kristus, han skal sjølv, etter at de har lide ei kort tid, gjera dykk fullt dugande, stø, styrkje og grunnfeste dykk.",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "Det greske καταρτίσει tyder 'utrusta, setja i stand, gjera fullkomen', ikkje direkte 'gjera fullt dugande'. 'Utrusta' er meir presist. I tillegg er στηρίξει, σθενώσει, θεμελιώσει fire parallelle verb, og kvar bør ha same grammatiske form med objekt for balanse og klarleik."
+      }
+    ]
   },
   {
     "bookId": 60,
     "chapterId": 5,
     "verseId": 11,
-    "text": "Han høyrer makta til i all æve, amen.",
+    "text": "Han tilhøyrer makta i all æve, amen.",
     "versions": [
       {
         "text": "Han tilhøyrer makta i all æve! Amen.",
         "explanation": "Doksologiar i NT avsluttast vanlegvis utan utropsteikn. Eit komma før 'amen' gjev betre flyt for munnleg lesing."
+      },
+      {
+        "text": "Han høyrer makta til i all æve, amen.",
+        "type": "error",
+        "severity": "major",
+        "explanation": "MERK: Eg ser at dette er identisk med versjon 1 i historikken. Men den noverande teksten 'Han høyrer makta til' er grammatisk underleg på nynorsk – 'høyrer ... til' vert feil splitta. Gresk αὐτῷ τὸ κράτος betyr 'hans er makta' eller 'makta tilhøyrer han'. Betre: 'Makta høyrer han til i all æve, amen.' der subjektet er 'makta' og ikkje 'han'."
       }
     ]
   },

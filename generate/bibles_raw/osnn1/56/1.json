@@ -15,13 +15,29 @@
     "bookId": 56,
     "chapterId": 1,
     "verseId": 2,
-    "text": "med von om evig liv, som Gud, han som ikkje kan lyga, har lova frå evige tider,"
+    "text": "med von om evig liv, som Gud, han som ikkje kan lyga, lova frå evige tider,",
+    "versions": [
+      {
+        "text": "med von om evig liv, som Gud, han som ikkje kan lyga, har lova frå evige tider,",
+        "type": "grammar",
+        "severity": "minor",
+        "explanation": "Gresk ἐπηγγείλατο er aorist (enkel fortid), ikkje perfektum. 'Lova' (preteritum) er meir korrekt enn 'har lova' (presens perfektum) for å gjengi den greske aoristforma. Dessutan passar enkel fortid betre med tidsuttrykket 'frå evige tider' som peikar mot eit tidspunkt i fortida."
+      }
+    ]
   },
   {
     "bookId": 56,
     "chapterId": 1,
     "verseId": 3,
-    "text": "Men i si tid har han openberra ordet sitt gjennom forkynninga som eg vart betrudd etter påbod frå Gud, vår frelsar."
+    "text": "Men i si tid openberra han ordet sitt gjennom forkynninga som eg vart betrudd med, etter påbod frå Gud, vår frelsar.",
+    "versions": [
+      {
+        "text": "Men i si tid har han openberra ordet sitt gjennom forkynninga som eg vart betrudd etter påbod frå Gud, vår frelsar.",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "1) Gresk ἐφανέρωσεν er aorist og bør gjevast att som enkel fortid 'openberra han' i staden for 'har han openberra'. 2) 'Betrudd' åleine manglar preposisjonen 'med' – ein vert betrudd med noko. Det greske ὃ ἐπιστεύθην ἐγὼ tyder 'som eg vart betrudd med'."
+      }
+    ]
   },
   {
     "bookId": 56,
@@ -57,7 +73,15 @@
     "bookId": 56,
     "chapterId": 1,
     "verseId": 8,
-    "text": "men gjestfri, glad i det gode, sindig, rettferdig, heilag og avhaldande."
+    "text": "men gjestfri, glad i det gode, sindig, rettferdig, gudfryktig og sjølvdisiplinert.",
+    "versions": [
+      {
+        "text": "men gjestfri, glad i det gode, sindig, rettferdig, heilag og avhaldande.",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "ὅσιον tyder 'from', 'gudfryktig' eller 'heilag i livsførsla' – det handlar meir om personleg fromskap enn ἅγιος (heilag i absolutt forstand). 'Gudfryktig' er meir presist. ἐγκρατῆ tyder 'sjølvdisiplinert' eller 'måtehalden' – 'avhaldande' kan på norsk lett mistolkast som avhald frå alkohol spesifikt, medan det greske ordet er breiare."
+      }
+    ]
   },
   {
     "bookId": 56,
@@ -75,11 +99,17 @@
     "bookId": 56,
     "chapterId": 1,
     "verseId": 11,
-    "text": "Dei må få munn på seg, for dei øydelegg heile familiar ved å læra det dei ikkje burde, for skammeleg vinning si skuld.",
+    "text": "Dei må få munnkorg på seg, for dei øydelegg heile familiar ved å læra det dei ikkje burde, for skammeleg vinning si skuld.",
     "versions": [
       {
         "text": "Dei må teiast, for dei øydelegg heile familiar ved å læra det dei ikkje burde, for skammeleg vinning si skuld.",
         "explanation": "Det greske 'ἐπιστομίζειν' betyr bokstavleg 'å setja munnkorg på' eller 'stogga munnen på'. 'Dei må teiast' er passivt og litt utydeleg. 'Få munn på seg' er eit norsk uttrykk som betre fangar det aktive i å stogga nokon."
+      },
+      {
+        "text": "Dei må få munn på seg, for dei øydelegg heile familiar ved å læra det dei ikkje burde, for skammeleg vinning si skuld.",
+        "type": "error",
+        "severity": "major",
+        "explanation": "'Få munn på seg' er eit norsk uttrykk som tyder å bli kritisert eller snakka om – altså det motsette av det greske ἐπιστομίζειν som tyder å stogga/teie nokon. Det rette uttrykket er 'få munnkorg på seg' som tyder å bli hindra frå å tala, og som dessutan er nærare den bokstavlege tydinga av det greske verbet (epi + stoma = over munnen)."
       }
     ]
   },
@@ -111,7 +141,15 @@
     "bookId": 56,
     "chapterId": 1,
     "verseId": 15,
-    "text": "Alt er reint for dei reine. Men for dei ureine og vantruande er ingenting reint, for både sinnet og samvitet deira er ureine."
+    "text": "Alt er reint for dei reine. Men for dei ureine og vantruande er ingenting reint, for både sinnet og samvitet deira er ureint.",
+    "versions": [
+      {
+        "text": "Alt er reint for dei reine. Men for dei ureine og vantruande er ingenting reint, for både sinnet og samvitet deira er ureine.",
+        "type": "grammar",
+        "severity": "minor",
+        "explanation": "'Sinnet' og 'samvitet' er inkjekjønn på nynorsk. Adjektivet bør difor vera 'ureint' (inkjekjønn) i staden for 'ureine' (fleirtal). Sjølv om det er to substantiv, er det vanleg å bruke eintal inkjekjønn når begge substantiva er inkjekjønn."
+      }
+    ]
   },
   {
     "bookId": 56,

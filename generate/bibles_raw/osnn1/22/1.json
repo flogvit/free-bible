@@ -21,11 +21,17 @@
     "bookId": 22,
     "chapterId": 1,
     "verseId": 3,
-    "text": "Oljene dine duftar så godt, namnet ditt er som utrend olje. Difor elskar dei unge kvinnene deg.",
+    "text": "Oljene dine duftar så godt, namnet ditt er som utheld olje. Difor elskar dei unge kvinnene deg.",
     "versions": [
       {
         "text": "Oljene dine duftar så godt, namnet ditt er som utrent olje. Difor elskar dei unge kvinnene deg.",
         "explanation": "På nynorsk bør det vera 'utrend' (partisipp av 'renna'), ikkje 'utrent'. Verbet 'renna' har partisippforma 'rend' i nynorsk."
+      },
+      {
+        "text": "Oljene dine duftar så godt, namnet ditt er som utrend olje. Difor elskar dei unge kvinnene deg.",
+        "type": "grammar",
+        "severity": "minor",
+        "explanation": "Det hebraiske תּוּרַק tyder 'uthelt' / 'utaust' (frå רוק/ריק = å hella ut). Omsetjinga 'utrend' (frå 'renna') gjev ikkje heilt same meining. Olje som vert helt ut av ei krukke spreier dufta si, og det er poenget i biletet. 'Utheld olje' er meir presist. Likevel er dette ei mindre sak sidan tidlegare revisjon fokuserte på grammatisk form."
       }
     ]
   },
@@ -87,13 +93,29 @@
     "bookId": 22,
     "chapterId": 1,
     "verseId": 10,
-    "text": "Vakre er kinna dine mellom kjedene, halsen din med perlesnorene."
+    "text": "Vakre er kinna dine med radene av smykke, halsen din med perlesnorene.",
+    "versions": [
+      {
+        "text": "Vakre er kinna dine mellom kjedene, halsen din med perlesnorene.",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "Det hebraiske בַּתֹּרִים tyder 'med rader (av smykke/perler)', ikkje 'mellom kjedene'. Ordet תֹּר refererer til rader eller rekkjer, truleg av smykkesteinar eller perler som heng langs kinnet. 'Mellom kjedene' er ikkje heilt presist."
+      }
+    ]
   },
   {
     "bookId": 22,
     "chapterId": 1,
     "verseId": 11,
-    "text": "Gullkjeder vil vi laga til deg, med sølvkuler på."
+    "text": "Gullsmykke med rader vil vi laga til deg, med sølvprikkar på.",
+    "versions": [
+      {
+        "text": "Gullkjeder vil vi laga til deg, med sølvkuler på.",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "תּוֹרֵי זָהָב refererer til 'rader/ornament av gull', ikkje 'gullkjeder'. Og נְקֻדּוֹת הַכָּסֶף tyder 'sølvprikkar/sølvpunkt' (små sølvdetaljar), ikkje 'sølvkuler'. 'Sølvkuler' er litt upresis."
+      }
+    ]
   },
   {
     "bookId": 22,

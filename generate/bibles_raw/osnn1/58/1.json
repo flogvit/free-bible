@@ -27,7 +27,15 @@
     "bookId": 58,
     "chapterId": 1,
     "verseId": 4,
-    "text": "Slik vart han så mykje større enn englane, for det namnet han har arva, er så mykje meir framifrå enn deira."
+    "text": "Slik vart han så mykje høgare enn englane, som det namnet han har arva, er meir framifrå enn deira.",
+    "versions": [
+      {
+        "text": "Slik vart han så mykje større enn englane, for det namnet han har arva, er så mykje meir framifrå enn deira.",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "Gresk κρείττων tyder 'betre, høgare, meir opphøgd' – 'høgare' passar betre teologisk for å skildre rang/posisjon over englane. I tillegg er den greske konstruksjonen τοσούτῳ...ὅσῳ ein korrelativ komparativ ('i same grad som'), ikkje kausal ('for'). 'Som' fangar denne samanlikninga betre enn 'for'."
+      }
+    ]
   },
   {
     "bookId": 58,
@@ -39,17 +47,31 @@
     "bookId": 58,
     "chapterId": 1,
     "verseId": 6,
-    "text": "Og når han på nytt fører den førstefødde inn i verda, seier han: «Alle Guds englar skal tilbe han.»"
+    "text": "Og når han på nytt fører den førstefødde inn i verda, seier han: «Alle Guds englar skal tilbe honom.»",
+    "versions": [
+      {
+        "text": "Og når han på nytt fører den førstefødde inn i verda, seier han: «Alle Guds englar skal tilbe han.»",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "'Han' som objekt etter 'tilbe' bør vere 'honom' i korrekt nynorsk. Objektsforma 'honom' er meir grammatisk rett i skriftleg nynorsk."
+      }
+    ]
   },
   {
     "bookId": 58,
     "chapterId": 1,
     "verseId": 7,
-    "text": "Om englane seier han: «Han gjer englane sine til vindar og tenarane sine til eldlogar.»",
+    "text": "Om englane seier han: «Han gjer englane sine til vindar og tenarane sine til eldflammer.»",
     "versions": [
       {
         "text": "Om englane seier han: «Han gjer englane sine til vindar og tenarane sine til eldsloge.»",
         "explanation": "Ordet 'eldsloge' bør vere 'eldlogar' for betre rytme og for å matche fleirtalsforma i originalen (πυρὸς φλόγα kan tolkast kollektivt, men 'eldlogar' flyt betre på nynorsk ved munnleg lesing)."
+      },
+      {
+        "text": "Om englane seier han: «Han gjer englane sine til vindar og tenarane sine til eldlogar.»",
+        "type": "theological",
+        "severity": "minor",
+        "explanation": "Gresk πυρὸς φλόγα er eintal 'eldflamme/flamme av eld'. Versjonshistorikken viser at 'eldsloge' vart endra til 'eldlogar', men det greske uttrykket er eigentleg eintal. 'Eldflammer' er eit meir naturleg norsk uttrykk som kan brukast kollektivt og er ulikt tidlegare versjonar."
       }
     ]
   },
@@ -57,7 +79,7 @@
     "bookId": 58,
     "chapterId": 1,
     "verseId": 8,
-    "text": "Men om Sonen seier han: «Trona di, Gud, står i all æve, og rettferds stav er staven i riket ditt.»",
+    "text": "Men om Sonen seier han: «Trona di, Gud, står i all æve, og rettvisas stav er staven i riket ditt.»",
     "versions": [
       {
         "text": "Men om Sonen seier han: «Trona di, Gud, står i all æve, og rettferds stav er kongsstaven din.",
@@ -66,6 +88,12 @@
       {
         "text": "Men om Sonen seier han: «Trona di, Gud, står i all æve, og rettferds stav er kongsstaven din.»",
         "explanation": "Gresk 'ῥάβδος τῆς βασιλείας σου' tyder meir direkte 'staven i kongeriket ditt/riket ditt' enn 'kongsstaven din'. Noverande omsetjing er idiomatisk god, men 'staven i riket ditt' er nærmare originalen."
+      },
+      {
+        "text": "Men om Sonen seier han: «Trona di, Gud, står i all æve, og rettferds stav er staven i riket ditt.»",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "Gresk εὐθύτητος tyder 'rettskaffenheit, det rette, rettvis' – ikkje 'rettferd' (δικαιοσύνη). Sidan δικαιοσύνη (rettferd) er brukt i vers 9, er det viktig å skilje mellom desse to omgrepa. 'Rettvisas stav' eller 'det rettes stav' fangar εὐθύτης betre."
       }
     ]
   },

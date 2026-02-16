@@ -33,7 +33,15 @@
     "bookId": 2,
     "chapterId": 5,
     "verseId": 5,
-    "text": "Og farao sa: «Sjå, folket i landet er no mange, og de vil få dei til å halda opp med tvangsarbeidet sitt!»"
+    "text": "Og farao sa: «Sjå, folket i landet er no talrikt, og de vil få dei til å halda opp med tvangsarbeidet sitt!»",
+    "versions": [
+      {
+        "text": "Og farao sa: «Sjå, folket i landet er no mange, og de vil få dei til å halda opp med tvangsarbeidet sitt!»",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "'Folket ... er no mange' er grammatisk uheldig på nynorsk. 'Folket' er eintal kollektivt substantiv og bør ha eit adjektiv i eintal: 'talrikt' i staden for 'mange'."
+      }
+    ]
   },
   {
     "bookId": 2,
@@ -123,11 +131,17 @@
     "bookId": 2,
     "chapterId": 5,
     "verseId": 16,
-    "text": "Tenarane dine får ikkje halm, men likevel seier dei til oss: 'Lag murstein!' Sjå, tenarane dine vert slåtte, men synda er hjå ditt eige folk.»",
+    "text": "Tenarane dine får ikkje halm, men likevel seier dei til oss: 'Lag murstein!' Sjå, tenarane dine vert slåtte, og det er du som syndar mot ditt eige folk.»",
     "versions": [
       {
         "text": "Tenarane dine får ikkje halm, men likevel seier dei til oss: 'Lag murstein!' Sjå, tenarane dine vert slåtte, men skulda ligg hos ditt eige folk.»",
         "explanation": "Det hebraiske וְחָטָ֥את עַמֶּֽךָ er ein vanskeleg frase, men tyder truleg 'og du syndar mot ditt eige folk' eller 'synda er mot ditt folk'. Den noverande omsetjinga 'skulda ligg hos ditt eige folk' gjev ei anna meining - at det er egyptarane som har skuld, ikkje farao. Oppsynsmennene klagar til farao om hans urettferd."
+      },
+      {
+        "text": "Tenarane dine får ikkje halm, men likevel seier dei til oss: 'Lag murstein!' Sjå, tenarane dine vert slåtte, men synda er hjå ditt eige folk.»",
+        "type": "theological",
+        "severity": "major",
+        "explanation": "Frasen וְחָטָ֥את עַמֶּֽךָ er retta frå den tidlegare versjonen 'skulda ligg hos ditt eige folk' med grunngjevinga at det er farao som syndar mot sitt folk. Men den noverande versjonen 'synda er hjå ditt eige folk' er framleis tvetydig - ho kan tolkast som at synda ligg hos det egyptiske folket (slavedrivarane), ikkje at farao sjølv syndar. Ei tydelegare formulering bør visa at oppsynsmennene klagar farao for hans urettferd mot israelittane."
       }
     ]
   },

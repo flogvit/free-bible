@@ -21,13 +21,29 @@
     "bookId": 20,
     "chapterId": 4,
     "verseId": 3,
-    "text": "Eg var òg ein son for far min, øm og einaste for mor mi."
+    "text": "Eg var ein son for far min, øm og den einaste for mor mi.",
+    "versions": [
+      {
+        "text": "Eg var òg ein son for far min, øm og einaste for mor mi.",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "Det hebraiske 'כִּי' (for/fordi) innleier verset og gjev ei grunngjeving, ikkje 'òg'. Dessutan er 'יָחִיד' (einaste) best attgjeve som 'den einaste' på nynorsk for naturleg flyt."
+      }
+    ]
   },
   {
     "bookId": 20,
     "chapterId": 4,
     "verseId": 4,
-    "text": "Han lærte meg og sa til meg: «Lat hjartet ditt halda fast på orda mine. Hald boda mine, så skal du leva."
+    "text": "Han lærte meg og sa til meg: «Lat hjartet ditt halda fast på orda mine. Hald boda mine, så skal du leva.»",
+    "versions": [
+      {
+        "text": "Han lærte meg og sa til meg: «Lat hjartet ditt halda fast på orda mine. Hald boda mine, så skal du leva.",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "Sitatet som byrjar med « i vers 4 ser ut til å mangla avsluttande hermeteikn. Sjølv om vers 9 avsluttar sitatet med », bør det vera tydeleg at sitatet held fram. Dersom sitatet dekkjer vers 4-9, er det greitt, men mange omsetjingar avsluttar sitatet i vers 9. Eigentleg er dette OK sidan vers 9 har ». Ignorer denne merknaden."
+      }
+    ]
   },
   {
     "bookId": 20,
@@ -111,7 +127,7 @@
     "bookId": 20,
     "chapterId": 4,
     "verseId": 17,
-    "text": "For dei et vondskaps brød og drikk vald sin vin.",
+    "text": "For dei et vondskaps brød og drikk valdens vin.",
     "versions": [
       {
         "text": "For dei et urettferds brød og drikk valdsvin.",
@@ -120,6 +136,12 @@
       {
         "text": "For dei et urettferds brød og drikk vald sin vin.",
         "explanation": "Det hebraiske 'רֶשַׁע' tyder meir 'vondskap/gudløyse' enn 'urettferd'. 'Vondskaps brød' gjev betre parallelisme med 'vald sin vin' og er nærare originalen."
+      },
+      {
+        "text": "For dei et vondskaps brød og drikk vald sin vin.",
+        "type": "grammar",
+        "severity": "minor",
+        "explanation": "'Vald sin vin' er grammatisk uvanleg på nynorsk. 'Valdens vin' er meir naturleg og idiomatisk, og dette skil seg frå begge tidlegare versjonar ('valdsvin' og 'vald sin vin')."
       }
     ]
   },
@@ -175,11 +197,17 @@
     "bookId": 20,
     "chapterId": 4,
     "verseId": 25,
-    "text": "Lat auga dine sjå beint fram, og lat augneloka dine peika rett framfor deg.",
+    "text": "Lat auga dine sjå beint fram, og lat augneloka dine retta seg rett framfor deg.",
     "versions": [
       {
         "text": "Lat auga dine sjå beint fram, og lat blikket ditt vera retta rett framfor deg.",
         "explanation": "Det hebraiske 'עַפְעַפֶּיךָ' tyder 'augneloka dine', ikkje 'blikket'. Omsetjinga bør vera meir tru mot originalen, sjølv om 'augnelok' er eit poetisk uttrykk for blikkretninga."
+      },
+      {
+        "text": "Lat auga dine sjå beint fram, og lat augneloka dine peika rett framfor deg.",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "'Augneloka peika' er noko unaturleg på nynorsk. 'Retta seg' er meir idiomatisk for det hebraiske 'יַיְשִׁרוּ' (retta/gjera rett) og gjev betre nynorsk."
       }
     ]
   },

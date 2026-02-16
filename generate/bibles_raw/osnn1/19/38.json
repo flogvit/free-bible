@@ -75,11 +75,17 @@
     "bookId": 19,
     "chapterId": 38,
     "verseId": 12,
-    "text": "Mine vener og kameratar held seg borte frå mi plage, og mine slektningar står langt unna.",
+    "text": "Mine vener og kameratar held seg borte frå mi plage, og mine næraste står langt unna.",
     "versions": [
       {
         "text": "Mine vener og kameratar held seg unna mi plage, og mine slektningar står langt borte.",
         "explanation": "Det hebraiske 'מִנֶּגֶד' tyder 'på avstand frå' eller 'overfor'. 'Held seg borte frå mi plage' er meir presist enn 'held seg unna', og variasjonen 'langt unna' i andre ledd gjev betre flyt."
+      },
+      {
+        "text": "Mine vener og kameratar held seg borte frå mi plage, og mine slektningar står langt unna.",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "Det hebraiske 'קְרוֹבַי' (qerovay) tyder 'mine næraste' eller 'dei som står meg nær', ikkje berre 'slektningar'. 'Næraste' er meir presist og dekkjer eit breiare omgrep enn berre blodslektskap."
       }
     ]
   },
@@ -99,7 +105,15 @@
     "bookId": 19,
     "chapterId": 38,
     "verseId": 15,
-    "text": "Eg er som ein mann som ikkje høyrer, og som ikkje har noko motsvar i munnen."
+    "text": "Eg vart som ein mann som ikkje høyrer, og som ikkje har noko motsvar i munnen.",
+    "versions": [
+      {
+        "text": "Eg er som ein mann som ikkje høyrer, og som ikkje har noko motsvar i munnen.",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "Det hebraiske 'וָאֱהִי' (wa'ehî) er ein narrativ imperfekt/konsekutiv som skildrar ei fortidshandling: 'eg vart' eller 'eg var'. Presensforma 'Eg er' fangar ikkje det temporale aspektet korrekt. Vers 14 brukar allereie presens, så ei fortidsform her markerer ein naturleg progresjon."
+      }
+    ]
   },
   {
     "bookId": 19,
@@ -111,7 +125,15 @@
     "bookId": 19,
     "chapterId": 38,
     "verseId": 17,
-    "text": "For eg sa: Lat dei ikkje gleda seg over meg! Når foten min vaklar, opphøgjer dei seg over meg."
+    "text": "For eg sa: Lat dei ikkje gleda seg over meg! Når foten min vaklar, skryter dei mot meg.",
+    "versions": [
+      {
+        "text": "For eg sa: Lat dei ikkje gleda seg over meg! Når foten min vaklar, opphøgjer dei seg over meg.",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "Det hebraiske 'הִגְדִּילוּ עָלַי' tyder meir 'gjer seg store mot meg' eller 'skryter mot meg'. 'Opphøgjer dei seg over meg' er akseptabelt, men 'skryter mot meg' gjev betre att den aggressive, fiendtlege tonen i det hebraiske uttrykket."
+      }
+    ]
   },
   {
     "bookId": 19,
@@ -129,7 +151,15 @@
     "bookId": 19,
     "chapterId": 38,
     "verseId": 20,
-    "text": "Men mine fiendar er sterke og lever, og mange er dei som hatar meg utan grunn."
+    "text": "Men mine fiendar lever og er mektige, og mange er dei som hatar meg utan grunn.",
+    "versions": [
+      {
+        "text": "Men mine fiendar er sterke og lever, og mange er dei som hatar meg utan grunn.",
+        "type": "error",
+        "severity": "major",
+        "explanation": "Det hebraiske 'חַיִּים עָצֵמוּ' tyder 'lever og er mektige/sterke'. Ordstillinga bør reflektera at 'חַיִּים' (levande) kjem fyrst, etterfølgt av 'עָצֵמוּ' (er mektige). 'Lever og er mektige' gjev betre att den hebraiske rekkjefølgja og meininga: fiendane er i live og har makt."
+      }
+    ]
   },
   {
     "bookId": 19,

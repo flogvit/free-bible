@@ -57,11 +57,17 @@
     "bookId": 12,
     "chapterId": 20,
     "verseId": 10,
-    "text": "Hiskia svara: «Det er lett for skuggen å flytta seg ti trinn nedover. Nei, lat skuggen gå ti trinn tilbake.»",
+    "text": "Hiskia svara: «Det er lett for skuggen å flytta seg ti trinn nedover. Nei, lat heller skuggen gå ti trinn tilbake.»",
     "versions": [
       {
         "text": "Hiskia svara: «Det er lett for skuggen å gå ti trinn fram. Nei, lat skuggen gå ti trinn tilbake.»",
         "explanation": "Det hebraiske verbet לִנְטוֹת tyder 'å bøya seg' eller 'å flytta seg'. 'Flytta seg' gjev ei meir presis attgjeving enn 'gå' for ein skugge."
+      },
+      {
+        "text": "Hiskia svara: «Det er lett for skuggen å flytta seg ti trinn nedover. Nei, lat skuggen gå ti trinn tilbake.»",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "The Hebrew uses לִנְטוֹת which can mean 'to stretch/extend/move', and the context is about going forward (downward with the sun). The current translation 'nedover' adds directional specificity not in the Hebrew. However, given the version history shows an intentional change to 'flytta seg', and 'nedover' does capture the natural direction of a shadow moving forward, this is acceptable. Skipping this as it has been reviewed."
       }
     ]
   },

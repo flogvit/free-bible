@@ -75,11 +75,17 @@
     "bookId": 43,
     "chapterId": 18,
     "verseId": 12,
-    "text": "Så greip vaktstyrken med offiseren og tenarane til jødane Jesus og batt han.",
+    "text": "Så greip vaktstyrken, offiseren og tenarane til jødane Jesus og batt han.",
     "versions": [
       {
         "text": "Så greip vaktstyrken og offiseren og tenarane til jødane Jesus og batt han.",
         "explanation": "Ordlyden 'vaktstyrken og offiseren' er litt uklår. Offiseren (χιλίαρχος) leia vaktstyrken (σπεῖρα), så 'med offiseren' gjev betre meining og flyt."
+      },
+      {
+        "text": "Så greip vaktstyrken med offiseren og tenarane til jødane Jesus og batt han.",
+        "type": "grammar",
+        "severity": "minor",
+        "explanation": "I den greske teksten er σπεῖρα, χιλίαρχος og ὑπηρέται tre separate subjekt kopla med καί (og). 'Med offiseren' gjer offiseren til ein del av vaktstyrken, men originalen listar tre separate grupper. Ei kommaliste gjev dette tydelegare att. Merk: den tidlegare versjonen brukte 'og' mellom alle tre, men vart endra til 'med'. Komma-løysinga er ein annan tilnærming."
       }
     ]
   },
@@ -141,7 +147,15 @@
     "bookId": 43,
     "chapterId": 18,
     "verseId": 22,
-    "text": "Då han sa dette, slo ein av vaktene som stod der, Jesus i andletet og sa: «Svarar du øvstepresten slik?»"
+    "text": "Då han sa dette, gav ein av vaktene som stod der, Jesus eit slag og sa: «Svarar du øvstepresten slik?»",
+    "versions": [
+      {
+        "text": "Då han sa dette, slo ein av vaktene som stod der, Jesus i andletet og sa: «Svarar du øvstepresten slik?»",
+        "type": "error",
+        "severity": "major",
+        "explanation": "ῥάπισμα betyr eit slag (i ansiktet eller med flat hand), men teksten legg til 'i andletet' som ikkje står eksplisitt i originalen. Dessutan er 'gav eit slag' meir nøyaktig enn 'slo i andletet'. Dette er likevel eit mindre punkt; hovudpoenget er at 'i andletet' er tillagt."
+      }
+    ]
   },
   {
     "bookId": 43,
@@ -255,7 +269,15 @@
     "bookId": 43,
     "chapterId": 18,
     "verseId": 39,
-    "text": "Men de har ein skikk at eg skal gje dykk éin fri i påska. Vil de at eg skal gje dykk jødekongen fri?»"
+    "text": "Men de har ein skikk at eg skal setja éin fri for dykk i påska. Vil de at eg skal setja jødekongen fri for dykk?»",
+    "versions": [
+      {
+        "text": "Men de har ein skikk at eg skal gje dykk éin fri i påska. Vil de at eg skal gje dykk jødekongen fri?»",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "Det greske ἀπολύσω betyr 'frigje / setja fri', ikkje 'gje fri'. 'Setja fri' er meir presist og naturleg nynorsk for å uttrykka at ein fange vert sleppt laus."
+      }
+    ]
   },
   {
     "bookId": 43,

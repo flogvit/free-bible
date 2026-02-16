@@ -39,13 +39,29 @@
     "bookId": 20,
     "chapterId": 26,
     "verseId": 6,
-    "text": "Den som sender bod med ein dåre, høgg av sine eigne føter og drikk vald."
+    "text": "Den som sender bod med ein dåre, det er som å hogga av sine eigne føter og drikka vald.",
+    "versions": [
+      {
+        "text": "Den som sender bod med ein dåre, høgg av sine eigne føter og drikk vald.",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "Setningsstrukturen er litt brå utan samanlikningsleddet. Ved å leggje til 'det er som å' vert det tydelegare at dette er eit biletleg uttrykk, noko som gjer teksten meir forståeleg for lesaren."
+      }
+    ]
   },
   {
     "bookId": 20,
     "chapterId": 26,
     "verseId": 7,
-    "text": "Som beina til ein lam heng slappe, slik er eit ordtak i munnen på dårar."
+    "text": "Som beina til ein halt heng slappe, slik er eit ordtak i munnen på dårar.",
+    "versions": [
+      {
+        "text": "Som beina til ein lam heng slappe, slik er eit ordtak i munnen på dårar.",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "Det hebraiske פִּסֵּחַ tyder 'halt' eller 'lam person', ikkje 'lam' (dyret). 'Ein halt' gjer meininga tydelegare – det handlar om ein person som ikkje kan bruka beina sine rett, og parallellet er at dåren ikkje kan bruka ordtaket rett."
+      }
+    ]
   },
   {
     "bookId": 20,
@@ -63,7 +79,15 @@
     "bookId": 20,
     "chapterId": 26,
     "verseId": 10,
-    "text": "Ein meister som skapar alt, men den som leiger ein dåre, er som den som leiger kven som helst som går forbi."
+    "text": "Som ein bogeskyttar som sårar alle, slik er den som leiger ein dåre eller leiger kven som helst som går forbi.",
+    "versions": [
+      {
+        "text": "Ein meister som skapar alt, men den som leiger ein dåre, er som den som leiger kven som helst som går forbi.",
+        "type": "error",
+        "severity": "major",
+        "explanation": "Verset er notorisk vanskeleg å tolka. Det hebraiske רַב מְחוֹלֵל־כֹּל kan tolkast som 'ein bogeskyttar som sårar alle' (jf. fleire kommentatorar). Den noverande omsetjinga med 'Ein meister som skapar alt' legg inn ein kontrast ('men') som ikkje finst i originalen, og tolkinga er tvitydig. Mange moderne omsetjingar forstår det som at den som leiger ein dåre eller ein tilfeldig forbigåande, gjer skade på alle – slik ein bogeskyttar gjer. Alternativt kan ein behalde tolkinga, men fjerne den innlagde kontrasten."
+      }
+    ]
   },
   {
     "bookId": 20,
@@ -81,7 +105,15 @@
     "bookId": 20,
     "chapterId": 26,
     "verseId": 13,
-    "text": "Den late seier: «Det er ei løve på vegen, ei løve på torget!»"
+    "text": "Den late seier: «Det er ei løve på vegen, ei løve på plassane!»",
+    "versions": [
+      {
+        "text": "Den late seier: «Det er ei løve på vegen, ei løve på torget!»",
+        "type": "error",
+        "severity": "minor",
+        "explanation": "Det hebraiske שַׁחַל og אֲרִי er to ulike ord for løve/rovdyr – det første kan vera 'ung løve' eller 'løve', det andre er 'løve'. רְחֹבוֹת (fleirtal) tyder 'opne plassar/gater', ikkje 'torget' (eintal). 'Plassane' gjev betre att fleirtalet."
+      }
+    ]
   },
   {
     "bookId": 20,
@@ -153,7 +185,15 @@
     "bookId": 20,
     "chapterId": 26,
     "verseId": 22,
-    "text": "Orda til ein baktalar er som godbit, dei går ned i det djupaste av magen."
+    "text": "Orda til ein baktalar er som godbit, dei går ned i dei djupaste romma i magen.",
+    "versions": [
+      {
+        "text": "Orda til ein baktalar er som godbit, dei går ned i det djupaste av magen.",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "Det hebraiske חַדְרֵי־בָטֶן tyder bokstaveleg 'dei indre romma i magen/buken'. 'Det djupaste av magen' er akseptabelt, men 'dei djupaste romma i magen' fangar betre biletet om at orda trengjer inn i dei innerste delane av kroppen."
+      }
+    ]
   },
   {
     "bookId": 20,
@@ -171,7 +211,15 @@
     "bookId": 20,
     "chapterId": 26,
     "verseId": 24,
-    "text": "Med leppene sine spelar hataren hyklar, men i sitt indre legg han opp svik."
+    "text": "Med leppene sine gjev den som hatar seg ut for å vera ein annan, men i sitt indre legg han opp svik.",
+    "versions": [
+      {
+        "text": "Med leppene sine spelar hataren hyklar, men i sitt indre legg han opp svik.",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "'Spelar hyklar' er ikkje heilt dekkande for det hebraiske יִנָּכֵר som tyder 'gjer seg ukjennande' eller 'forstellar seg'. 'Gjev seg ut for å vera ein annan' er nærare originalen. Alternativt kan 'forstellar seg' brukast."
+      }
+    ]
   },
   {
     "bookId": 20,

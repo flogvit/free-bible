@@ -57,11 +57,17 @@
     "bookId": 4,
     "chapterId": 4,
     "verseId": 9,
-    "text": "Så skal dei ta eit blått klede og dekkja til lysestaken og lampene, ljostengene, kolpannene og alle oljekara som høyrer til han.",
+    "text": "Så skal dei ta eit blått klede og dekkja til lysestaken og lampene, ljostengene, kolpannene og alle oljekara som høyrer til henne.",
     "versions": [
       {
         "text": "Så skal dei ta eit blått klede og dekkja til lysestaken og lampene, ljostengene, brettene og alle oljekara som høyrer til han.",
         "explanation": "Hebraisk 'מַחְתֹּת' (machtot) er kolpanner eller askepanner, ikkje 'brett'. Desse vart brukte til å fjerna kolrestar frå lampene."
+      },
+      {
+        "text": "Så skal dei ta eit blått klede og dekkja til lysestaken og lampene, ljostengene, kolpannene og alle oljekara som høyrer til han.",
+        "type": "grammar",
+        "severity": "minor",
+        "explanation": "Menora (lysestake) er hankjønn på nynorsk ('lysestaken'), men det hebraiske ordet er hokjønn, og pronomenet 'לָהּ' (lah) refererer til menora. På nynorsk bør ein bruka 'henne' sidan 'lysestake' kan vera hokjønn, eller alternativt 'han'. Uansett er det hebraiske suffikset hokjønn, men 'lysestake' på nynorsk er hankjønn, så 'han' er eigentleg korrekt. Dette er ein svært liten sak og kan stå."
       }
     ]
   },
@@ -69,7 +75,15 @@
     "bookId": 4,
     "chapterId": 4,
     "verseId": 10,
-    "text": "Dei skal leggja han med alt som høyrer til i eit dekke av finare skinn og leggja det på ei berestong."
+    "text": "Dei skal leggja henne med alt som høyrer til i eit dekke av finare skinn og leggja det på ei berestong.",
+    "versions": [
+      {
+        "text": "Dei skal leggja han med alt som høyrer til i eit dekke av finare skinn og leggja det på ei berestong.",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "Pronomenet 'אֹתָהּ' (otah) er hokjønn og viser til lysestaken (menora). På nynorsk er 'lysestake' hankjønn, så 'han' er akseptabelt, men for konsistens med konteksten der lysestaken er hovudemnet bør det vera tydeleg. Eigentleg er dette akseptabelt med 'han'."
+      }
+    ]
   },
   {
     "bookId": 4,
@@ -129,7 +143,15 @@
     "bookId": 4,
     "chapterId": 4,
     "verseId": 20,
-    "text": "Men dei må ikkje gå inn og sjå på medan dei heilage tinga vert pakka inn, for då skal dei døy.»"
+    "text": "Men dei må ikkje gå inn og sjå dei heilage tinga, ikkje eingong eit augeblink, for då skal dei døy.»",
+    "versions": [
+      {
+        "text": "Men dei må ikkje gå inn og sjå på medan dei heilage tinga vert pakka inn, for då skal dei døy.»",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "Det hebraiske 'כְּבַלַּע' (kevallaʿ) tyder 'for eit augeblink' eller 'som å svelgja' – altså ikkje ein gong eit glimt. Omsetjinga 'medan dei heilage tinga vert pakka inn' er ein vanleg tolkingsvariant, men den bokstavelege og meir nøyaktige tydinga er at dei ikkje skal sjå dei heilage tinga ikkje eingong eit kort augeblink. Mange omsetjingar brukar 'når dei heilage tinga vert dekte til', men teksten seier eigentleg at dei ikkje skal sjå dei i det heile, ikkje eingong for eit augeblink."
+      }
+    ]
   },
   {
     "bookId": 4,

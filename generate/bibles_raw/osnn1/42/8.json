@@ -9,7 +9,15 @@
     "bookId": 42,
     "chapterId": 8,
     "verseId": 2,
-    "text": "og nokre kvinner som hadde vorte lækte frå vonde ånder og sjukdomar: Maria, som vart kalla Magdalena, som sju vonde ånder hadde fare ut av,"
+    "text": "og nokre kvinner som hadde vorte lækte frå vonde ånder og sjukdomar: Maria, som vart kalla Magdalena, som sju demonar hadde fare ut av,",
+    "versions": [
+      {
+        "text": "og nokre kvinner som hadde vorte lækte frå vonde ånder og sjukdomar: Maria, som vart kalla Magdalena, som sju vonde ånder hadde fare ut av,",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "Det greske 'δαιμόνια ἑπτά' i vers 2 brukar 'δαιμόνια' (demonar), ikkje 'πνευμάτων πονηρῶν' (vonde ånder) som tidlegare i same vers. For å skilje mellom dei to greske uttrykka, bør 'δαιμόνια' omsettast med 'demonar' her. Men dette er ein mindre merknad, sidan 'vonde ånder' også er akseptabelt."
+      }
+    ]
   },
   {
     "bookId": 42,
@@ -57,11 +65,17 @@
     "bookId": 42,
     "chapterId": 8,
     "verseId": 10,
-    "text": "Dykk er det gjeve å kjenna løyndomane om Guds rike.",
+    "text": "Han sa: «Dykk er det gjeve å kjenna løyndomane om Guds rike. Men til dei andre kjem det i likningar, så dei ser og likevel ikkje ser, og høyrer og likevel ikkje forstår.»",
     "versions": [
       {
         "text": "Han sa: «Dykk er det gjeve å kjenna løyndomane i Guds rike. Men til dei andre kjem det i likningar, så dei skal sjå og likevel ikkje sjå, og høyra og likevel ikkje forstå.",
         "explanation": "Det greske 'τὰ μυστήρια τῆς βασιλείας τοῦ θεοῦ' brukar genitiv som indikerer 'løyndomane om/angåande Guds rike' heller enn 'i Guds rike'. Preposisjonen 'om' gjev betre meining teologisk."
+      },
+      {
+        "text": "Dykk er det gjeve å kjenna løyndomane om Guds rike.",
+        "type": "error",
+        "severity": "critical",
+        "explanation": "Verset manglar over halvparten av innhaldet. Den andre delen av verset (τοῖς δὲ λοιποῖς ἐν παραβολαῖς, ἵνα βλέποντες μὴ βλέπωσιν καὶ ἀκούοντες μὴ συνιῶσιν) er heilt utelaten. Dessutan manglar innleiinga 'Han sa'. Merk: endringane i ordlyd ('ser'/'forstår' i presens i staden for 'sjå'/'forstå' i infinitiv) skil dette frå den tidlegare versjonen."
       }
     ]
   },
@@ -135,11 +149,17 @@
     "bookId": 42,
     "chapterId": 8,
     "verseId": 22,
-    "text": "Ein dag steig han ut i ein båt saman med læresveinane sine, og han sa til dei: «Lat oss fara over til andre sida av sjøen.» Så la dei ut.",
+    "text": "Ein dag steig han om bord i ein båt saman med læresveinane sine, og han sa til dei: «Lat oss fara over til andre sida av sjøen.» Så la dei ut.",
     "versions": [
       {
         "text": "Ein dag gjekk han ut i ein båt saman med læresveinane sine, og han sa til dei: «Lat oss fara over til andre sida av sjøen.» Så la dei ut.",
         "explanation": "Det greske 'ἐνέβη' (frå ἐμβαίνω) tyder 'steig om bord i' eller 'gjekk om bord i'. 'Steig' er meir presist enn 'gjekk' når ein går inn i ein båt."
+      },
+      {
+        "text": "Ein dag steig han ut i ein båt saman med læresveinane sine, og han sa til dei: «Lat oss fara over til andre sida av sjøen.» Så la dei ut.",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "'Steig ut i' er uvanleg på nynorsk. 'Steig om bord i' er meir naturleg og presist for 'ἐνέβη εἰς πλοῖον'. 'Ut i' kan gje inntrykk av å gå ut i vatnet."
       }
     ]
   },
@@ -231,7 +251,15 @@
     "bookId": 42,
     "chapterId": 8,
     "verseId": 36,
-    "text": "Dei som hadde sett det, fortalde korleis den demonplaga mannen hadde vorte frelst."
+    "text": "Dei som hadde sett det, fortalde dei korleis den demonplaga mannen hadde vorte frelst.",
+    "versions": [
+      {
+        "text": "Dei som hadde sett det, fortalde korleis den demonplaga mannen hadde vorte frelst.",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "Det greske 'ἀπήγγειλαν δὲ αὐτοῖς' har eit indirekte objekt 'αὐτοῖς' (til dei/dei), som refererer til folkemengda som hadde kome ut. Det manglar 'dei' (αὐτοῖς) i omsettinga."
+      }
+    ]
   },
   {
     "bookId": 42,
@@ -333,7 +361,15 @@
     "bookId": 42,
     "chapterId": 8,
     "verseId": 50,
-    "text": "Men då Jesus høyrde det, sa han til Jairus: «Ver ikkje redd! Berre tru, så skal ho bli frelst.»"
+    "text": "Men då Jesus høyrde det, svara han han: «Ver ikkje redd! Berre tru, så skal ho bli frelst.»",
+    "versions": [
+      {
+        "text": "Men då Jesus høyrde det, sa han til Jairus: «Ver ikkje redd! Berre tru, så skal ho bli frelst.»",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "Det greske 'ἀπεκρίθη αὐτῷ' tyder 'svara han', ikkje 'sa han til Jairus'. Omsetjinga legg til namnet 'Jairus' som ikkje er i grunnteksten. Men det er ein minor merknad, sidan det klårgjer samanhengen. Likevel bør nærleiken til grunnteksten prioriterast."
+      }
+    ]
   },
   {
     "bookId": 42,

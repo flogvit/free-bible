@@ -57,13 +57,29 @@
     "bookId": 20,
     "chapterId": 2,
     "verseId": 8,
-    "text": "Han vaktar rettens stigar og vernar vegen til dei trufaste."
+    "text": "Han vaktar rettens stigar og vernar vegen åt dei trufaste sine.",
+    "versions": [
+      {
+        "text": "Han vaktar rettens stigar og vernar vegen til dei trufaste.",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "Det hebraiske דֶּרֶךְ חֲסִידָיו tyder 'vegen til hans trufaste/fromme'. Preposisjonen 'åt' er meir idiomatisk nynorsk enn 'til' i denne samanhengen, og 'sine' (refleksivt possessiv) gjer det klart at det er Herrens trufaste det er tale om."
+      }
+    ]
   },
   {
     "bookId": 20,
     "chapterId": 2,
     "verseId": 9,
-    "text": "Då skal du forstå rettferd og rett og ærlegdom, kvar ein god stig."
+    "text": "Då skal du forstå rettferd og rett, ærlegdom og kvar ein god stig.",
+    "versions": [
+      {
+        "text": "Då skal du forstå rettferd og rett og ærlegdom, kvar ein god stig.",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "I den hebraiske teksten er det fire ting som vert forstått: צֶדֶק (rettferd), מִשְׁפָּט (rett), מֵישָׁרִים (ærlegdom/rettskaffenheit) og כָּל־מַעְגַּל־טוֹב (kvar god stig). Kommaet etter 'rett' og 'og' mellom 'ærlegdom' og 'kvar ein god stig' gjer strukturen klarare."
+      }
+    ]
   },
   {
     "bookId": 20,
@@ -93,11 +109,17 @@
     "bookId": 20,
     "chapterId": 2,
     "verseId": 14,
-    "text": "dei som gler seg over å gjera vondt og frydar seg over vondskapen sine forvrengde vegar,",
+    "text": "dei som gler seg over å gjera vondt og frydar seg over vondskapens forvrengde vegar,",
     "versions": [
       {
         "text": "dei som gler seg over å gjera vondt og frydar seg over det vonde sine forvrengde vegar,",
         "explanation": "'Det vonde sine' er ein uvanleg konstruksjon. 'Vondskapen' eller 'det vonde sin' ville vera meir idiomatisk nynorsk."
+      },
+      {
+        "text": "dei som gler seg over å gjera vondt og frydar seg over vondskapen sine forvrengde vegar,",
+        "type": "error",
+        "severity": "major",
+        "explanation": "Konstruksjonen 'vondskapen sine' er grammatisk uvanleg på nynorsk. 'Vondskapens' (med genitiv-s) er meir naturleg og idiomatisk. Dessutan tyder det hebraiske בְּתַהְפֻּכוֹת רָע 'det vonde sine forvrengingar/forvrengde ting' – det handlar om forvrengingane som tilhøyrer det vonde/ondskapen, og 'vondskapens forvrengde vegar' formidlar dette betre."
       }
     ]
   },
@@ -111,11 +133,17 @@
     "bookId": 20,
     "chapterId": 2,
     "verseId": 16,
-    "text": "for å berga deg frå den framande kvinna, frå den ukjende kvinna med dei sleipe orda,",
+    "text": "for å berga deg frå den framande kvinna, frå den ukjende som glatter orda sine,",
     "versions": [
       {
         "text": "Ho skal berga deg frå den framande kvinna, frå den ukjende kvinna med dei sleipe orda,",
         "explanation": "Subjektet i vers 11 er 'klokskap' og 'forstand' (to ting), så pronomenet bør vera 'dei' i fleirtal, ikkje 'ho' i eintal."
+      },
+      {
+        "text": "for å berga deg frå den framande kvinna, frå den ukjende kvinna med dei sleipe orda,",
+        "type": "error",
+        "severity": "major",
+        "explanation": "Det hebraiske אֲמָרֶיהָ הֶחֱלִיקָה tyder bokstaveleg 'ho har gjort orda sine glatte/sleipe'. Verbet הֶחֱלִיקָה er aktivt – ho glattar/smigrar med orda sine. Dessutan er 'den ukjende kvinna' tungt; 'den ukjende' er tilstrekkeleg sidan konteksten alt har 'kvinna'. 'Som glatter orda sine' fangar det aktive aspektet betre."
       }
     ]
   },

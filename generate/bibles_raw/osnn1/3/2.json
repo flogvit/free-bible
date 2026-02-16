@@ -63,7 +63,15 @@
     "bookId": 3,
     "chapterId": 2,
     "verseId": 8,
-    "text": "Du skal bera fram for Herren det grødeofferet som er laga på ein av desse måtane. Når du gjev det til presten, skal han bera det fram til altaret."
+    "text": "Du skal bera det grødeofferet som er laga av desse tinga, fram for Herren. Du skal gje det til presten, og han skal bera det fram til altaret.",
+    "versions": [
+      {
+        "text": "Du skal bera fram for Herren det grødeofferet som er laga på ein av desse måtane. Når du gjev det til presten, skal han bera det fram til altaret.",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "Det hebraiske 'מֵאֵלֶּה' tyder 'av desse (tinga/ingrediensane)', ikkje 'på ein av desse måtane'. Teksten refererer til ingrediensane (fint mjøl, olje), ikkje tillagingsmåtane. I tillegg er 'וְהִקְרִיבָהּ אֶל־הַכֹּהֵן' ei direkte handling ('du skal gje det til presten'), ikkje ein temporal bisetning med 'Når'."
+      }
+    ]
   },
   {
     "bookId": 3,
@@ -105,7 +113,15 @@
     "bookId": 3,
     "chapterId": 2,
     "verseId": 13,
-    "text": "Alt grødeoffer du ber fram, skal du salta med salt. Du skal ikkje la saltet frå pakta med din Gud mangla på grødeofferet ditt. Til alle offer skal du bera fram salt."
+    "text": "Kvart grødeoffer du ber fram, skal du salta med salt. Du skal ikkje la saltet frå pakta med din Gud mangla på grødeofferet ditt. Til alle offera dine skal du bera fram salt.",
+    "versions": [
+      {
+        "text": "Alt grødeoffer du ber fram, skal du salta med salt. Du skal ikkje la saltet frå pakta med din Gud mangla på grødeofferet ditt. Til alle offer skal du bera fram salt.",
+        "type": "grammar",
+        "severity": "minor",
+        "explanation": "'כָּל־קָרְבַּן מִנְחָתְךָ' tyder 'kvart grødeoffer ditt' – 'Alt grødeoffer' er litt unaturleg på nynorsk. I tillegg har 'עַל כָּל־קָרְבָּנְךָ' eigedomssuffiks ('dine'), som bør reflekterast: 'alle offera dine'."
+      }
+    ]
   },
   {
     "bookId": 3,
@@ -129,6 +145,14 @@
     "bookId": 3,
     "chapterId": 2,
     "verseId": 16,
-    "text": "Presten skal brenna minneofferet, noko av dei knuste korna og oljen, saman med all viraken, som eit eldoffer for Herren."
+    "text": "Presten skal brenna minneofferet av dei knuste korna og oljen, saman med all viraken, eit eldoffer for Herren.",
+    "versions": [
+      {
+        "text": "Presten skal brenna minneofferet, noko av dei knuste korna og oljen, saman med all viraken, som eit eldoffer for Herren.",
+        "type": "error",
+        "severity": "major",
+        "explanation": "Det hebraiske 'מִגִּרְשָׂהּ וּמִשַּׁמְנָהּ' tyder 'av dei knuste korna og oljen hennar' – partitiv 'מִן' viser at minneofferet består av ein del av korna og oljen. Omsetjinga legg til 'noko av' som ikkje er nødvendig sidan 'minneofferet' allereie impliserer at det er ein del. I tillegg bør 'som eit eldoffer' vera 'eit eldoffer' (utan 'som') for å matcha den hebraiske apposisjonskonstruksjonen 'אִשֶּׁה לַיהוָה'."
+      }
+    ]
   }
 ]

@@ -27,7 +27,15 @@
     "bookId": 9,
     "chapterId": 31,
     "verseId": 5,
-    "text": "Då våpensveinen såg at Saul var død, kasta han seg òg over sitt eige sverd og døydde saman med han."
+    "text": "Då våpensveinen såg at Saul var død, kasta han seg òg over sverdet sitt og døydde saman med han.",
+    "versions": [
+      {
+        "text": "Då våpensveinen såg at Saul var død, kasta han seg òg over sitt eige sverd og døydde saman med han.",
+        "type": "grammar",
+        "severity": "minor",
+        "explanation": "'Sitt eige sverd' er litt tungt og unødvendig emfatisk. Det hebraiske עַל־חַרְבּ֖וֹ betyr enkelt 'over sverdet sitt'. 'Sverdet sitt' er meir naturleg nynorsk."
+      }
+    ]
   },
   {
     "bookId": 9,
@@ -57,11 +65,17 @@
     "bookId": 9,
     "chapterId": 31,
     "verseId": 9,
-    "text": "Dei hogg av hovudet hans og tok våpna hans. Så sende dei bod rundt i heile filistarlandet for å forkynna sigersbodskapen i avgudstempla deira og for folket.",
+    "text": "Dei hogg av hovudet hans og tok våpna hans. Så sende dei det rundt i heile filistarlandet for å kunngjera det i avgudstempla deira og for folket.",
     "versions": [
       {
         "text": "Dei hogg av hovudet hans og tok våpna hans. Så sende dei bod rundt i heile filistarlandet for å forkynna sigersnyhendet i avgudstempla deira og for folket.",
         "explanation": "Ordet 'sigersnyhendet' er uvanleg og kan kjennast konstruert. 'Sigersbodskapen' eller 'den gode nyheita' flyt betre på nynorsk."
+      },
+      {
+        "text": "Dei hogg av hovudet hans og tok våpna hans. Så sende dei bod rundt i heile filistarlandet for å forkynna sigersbodskapen i avgudstempla deira og for folket.",
+        "type": "error",
+        "severity": "major",
+        "explanation": "Det hebraiske וַיְשַׁלְּחוּ seier at dei sende (hovudet/våpna) rundt, ikkje berre 'sende bod'. Verbet לְבַשֵּׂר betyr å kunngjera/bringa gode nyheiter, men originalen seier ikkje 'sigersbodskapen' eksplisitt – det er sjølve gjenstandane som vart sende rundt for å kunngjera sigeren."
       }
     ]
   },
@@ -69,7 +83,15 @@
     "bookId": 9,
     "chapterId": 31,
     "verseId": 10,
-    "text": "Dei la våpna hans i Astarte-tempelet, og liket hans hengde dei opp på muren i Bet-Sjean."
+    "text": "Dei la våpna hans i Astarte-tempelet, og kroppen hans festa dei på muren i Bet-Sjean.",
+    "versions": [
+      {
+        "text": "Dei la våpna hans i Astarte-tempelet, og liket hans hengde dei opp på muren i Bet-Sjean.",
+        "type": "error",
+        "severity": "major",
+        "explanation": "Det hebraiske verbet תָּקְעוּ betyr 'festa/nagla', ikkje 'hengde opp'. Det er ein viktig skilnad – kroppen vart festa/spikra til muren, ikkje hengt opp. Dessutan er 'kroppen' meir presist enn 'liket' for גְּוִיָּה."
+      }
+    ]
   },
   {
     "bookId": 9,
@@ -81,7 +103,15 @@
     "bookId": 9,
     "chapterId": 31,
     "verseId": 12,
-    "text": "braut alle dei tapre mennene opp og gjekk heile natta. Dei tok liket av Saul og lika av sønene hans ned frå muren i Bet-Sjean. Så kom dei til Jabesj og brende dei der."
+    "text": "braut alle dei tapre mennene opp og gjekk heile natta. Dei tok kroppen til Saul og kroppane til sønene hans ned frå muren i Bet-Sjean. Så kom dei til Jabesj og brende dei der.",
+    "versions": [
+      {
+        "text": "braut alle dei tapre mennene opp og gjekk heile natta. Dei tok liket av Saul og lika av sønene hans ned frå muren i Bet-Sjean. Så kom dei til Jabesj og brende dei der.",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "For konsistens med vers 10 bør גְּוִיַּת omsetjast likt, anten som 'kropp' eller 'lik'. Dersom vers 10 vert retta til 'kroppen', bør same ord brukast her."
+      }
+    ]
   },
   {
     "bookId": 9,

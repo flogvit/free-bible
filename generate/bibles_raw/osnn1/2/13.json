@@ -33,7 +33,15 @@
     "bookId": 2,
     "chapterId": 13,
     "verseId": 5,
-    "text": "Når Herren fører deg inn i landet til kanaanearane, hetittane, amorittane, hevittane og jebusittane, som han lova fedrane dine å gje deg, eit land som fløymer med mjølk og honning, då skal du halda denne gudstenesta i denne månaden."
+    "text": "Når Herren fører deg inn i landet til kanaanearane, hetittane, amorittane, hevittane og jebusittane, som han svor for fedrane dine å gje deg, eit land som fløymer med mjølk og honning, då skal du halda denne gudstenesta i denne månaden.",
+    "versions": [
+      {
+        "text": "Når Herren fører deg inn i landet til kanaanearane, hetittane, amorittane, hevittane og jebusittane, som han lova fedrane dine å gje deg, eit land som fløymer med mjølk og honning, då skal du halda denne gudstenesta i denne månaden.",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "Det hebraiske 'נִשְׁבַּע' (nishba) tyder 'svor' (avla ein eid), ikkje berre 'lova'. 'Svor' er meir presist og formidlar den høgtidlege karakteren av Guds lovnad."
+      }
+    ]
   },
   {
     "bookId": 2,
@@ -51,7 +59,15 @@
     "bookId": 2,
     "chapterId": 13,
     "verseId": 8,
-    "text": "Den dagen skal du fortelja son din: 'Dette er på grunn av det Herren gjorde for meg då eg drog ut frå Egypt.'"
+    "text": "Den dagen skal du fortelja son din: 'Det er for dette Herren handla for meg då eg drog ut frå Egypt.'",
+    "versions": [
+      {
+        "text": "Den dagen skal du fortelja son din: 'Dette er på grunn av det Herren gjorde for meg då eg drog ut frå Egypt.'",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "Hebraisk 'בַּעֲבוּר זֶה' (ba'avur zeh) peikar framover til den gudstenestehandlinga ein utfører – 'for dette [dvs. denne tenesta/feiringa] handla Herren for meg'. Den noverande omsettinga snur retninga og gjer det til ein retrospektiv forklaring ('på grunn av det Herren gjorde'), medan originalen seier at ein gjer dette fordi Herren handla. Nyanseforskjellen er liten, men den foreslåtte versjonen er nærare grunnteksten."
+      }
+    ]
   },
   {
     "bookId": 2,
@@ -105,7 +121,15 @@
     "bookId": 2,
     "chapterId": 13,
     "verseId": 15,
-    "text": "Då farao var hardhuga og ikkje ville sleppa oss, drap Herren alle førstefødde i Egypt, både førstefødde av menneske og førstefødde av fe. Derfor ofrar eg til Herren alle hannkjønn som fyrst opnar morslivet, men alle førstefødde av sønene mine løyser eg ut.'"
+    "text": "Då farao var hardnakka og nekta å sleppa oss, drap Herren alle førstefødde i Egypt, både førstefødde av menneske og førstefødde av fe. Derfor ofrar eg til Herren alle hannkjønn som fyrst opnar morslivet, men alle førstefødde av sønene mine løyser eg ut.'",
+    "versions": [
+      {
+        "text": "Då farao var hardhuga og ikkje ville sleppa oss, drap Herren alle førstefødde i Egypt, både førstefødde av menneske og førstefødde av fe. Derfor ofrar eg til Herren alle hannkjønn som fyrst opnar morslivet, men alle førstefødde av sønene mine løyser eg ut.'",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "'Hardhuga' er eit sjeldant ord som kan vera uklart for moderne lesarar. 'Hardnakka og nekta' formidlar betre tydinga av det hebraiske 'הִקְשָׁה לְשַׁלְּחֵנוּ' som uttrykkjer aktiv motstand mot å senda dei av stad."
+      }
+    ]
   },
   {
     "bookId": 2,
@@ -153,11 +177,17 @@
     "bookId": 2,
     "chapterId": 13,
     "verseId": 22,
-    "text": "Skystøtta veik ikkje frå dei om dagen, og ikkje eldstøtta om natta.",
+    "text": "Skystøtta veik ikkje frå folket om dagen, og ikkje eldstøtta om natta.",
     "versions": [
       {
         "text": "Skystøtta veik ikkje frå folket om dagen, og eldstøtta veik ikkje om natta.",
         "explanation": "Hebraisk har 'לִפְנֵי הָעָם' (framfor folket) berre éin gong på slutten, ikkje to gonger. Gjentakinga av 'veik ikkje' er ikkje i grunnteksten. Forslaget er meir tru mot originalen og flyt betre munnleg."
+      },
+      {
+        "text": "Skystøtta veik ikkje frå dei om dagen, og ikkje eldstøtta om natta.",
+        "type": "error",
+        "severity": "minor",
+        "explanation": "Grunnteksten har 'לִפְנֵי הָעָם' (framfor folket). 'Dei' er litt vagt – 'folket' er meir presist og tru mot originalen. Merk: dette er ikkje det same som den tidlegare versjonen som hadde ein annan struktur med gjentaking av 'veik ikkje'."
       }
     ]
   }

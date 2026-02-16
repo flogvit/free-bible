@@ -21,11 +21,17 @@
     "bookId": 26,
     "chapterId": 16,
     "verseId": 4,
-    "text": "Då du vart fødd, vart ikkje navlestrengen din skoren av, du vart ikkje vaska rein med vatn, ikkje gniden inn med salt og ikkje sveipt i reiner.",
+    "text": "Då du vart fødd, vart ikkje navlestrengen din skoren av, du vart ikkje vaska med vatn til reinsing, ikkje gniden inn med salt og ikkje sveipt i reiner.",
     "versions": [
       {
         "text": "Då du vart fødd, vart ikkje navlestrengen din skoren av, du vart ikkje vaska rein med vatn, ikkje gniden inn med salt og ikkje sveipt i reinar.",
         "explanation": "Ordet 'reinar' bør vera 'reiner' (svøpeband/klede) på nynorsk. 'Reinar' er fleirtal av 'rein' (dyret), medan 'reiner' er svøpeband."
+      },
+      {
+        "text": "Då du vart fødd, vart ikkje navlestrengen din skoren av, du vart ikkje vaska rein med vatn, ikkje gniden inn med salt og ikkje sveipt i reiner.",
+        "type": "grammar",
+        "severity": "minor",
+        "explanation": "Det hebraiske ordet 'לְמִשְׁעִי' tyder 'til reinsing' eller 'for å gjerast rein'. Omsetjinga 'vaska rein' fangar litt av meininga, men 'vaska med vatn til reinsing' er meir nøyaktig og skil betre mellom vaskinga og formålet."
       }
     ]
   },
@@ -63,7 +69,15 @@
     "bookId": 26,
     "chapterId": 16,
     "verseId": 10,
-    "text": "Eg kledde deg i fargesterke klede, gav deg sko av fint lêr, batt lin om hovudet ditt og hylla deg i silke."
+    "text": "Eg kledde deg i fargesterke klede, gav deg sko av fint lêr, kledde deg i lin og hylla deg i silke.",
+    "versions": [
+      {
+        "text": "Eg kledde deg i fargesterke klede, gav deg sko av fint lêr, batt lin om hovudet ditt og hylla deg i silke.",
+        "type": "error",
+        "severity": "minor",
+        "explanation": "Det hebraiske 'וָאֶחְבְּשֵׁךְ בַּשֵּׁשׁ' tyder 'eg kledde/sveipte deg i lin', ikkje spesifikt 'batt lin om hovudet ditt'. Verbet 'חבש' kan tyda å binda eller sveipa, men refererer her til å kle kroppen i lin, ikkje til eit hovudplagg."
+      }
+    ]
   },
   {
     "bookId": 26,
@@ -189,7 +203,15 @@
     "bookId": 26,
     "chapterId": 16,
     "verseId": 30,
-    "text": "Kor sjukt er ikkje hjartet ditt, seier Herren Gud, når du gjer alt dette, som ei frekk hore!"
+    "text": "Kor veikt er ikkje hjartet ditt, seier Herren Gud, når du gjer alt dette, som ei frekk hore!",
+    "versions": [
+      {
+        "text": "Kor sjukt er ikkje hjartet ditt, seier Herren Gud, når du gjer alt dette, som ei frekk hore!",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "Det hebraiske 'אֲמֻלָה' (frå rot אמל) tyder 'veik/kraftlaus/sjukleg'. 'Veikt' fangar betre den hebraiske meininga av eit hjarte utan motstandskraft, medan 'sjukt' kan gje eit litt anna inntrykk på norsk."
+      }
+    ]
   },
   {
     "bookId": 26,
@@ -291,7 +313,15 @@
     "bookId": 26,
     "chapterId": 16,
     "verseId": 46,
-    "text": "Di eldste syster er Samaria, som bur nord for deg med døtrene sine. Og di yngste syster, som bur sør for deg, er Sodoma med døtrene sine."
+    "text": "Di eldste syster er Samaria, som bur til venstre for deg med døtrene sine. Og di yngste syster, som bur til høgre for deg, er Sodoma med døtrene sine.",
+    "versions": [
+      {
+        "text": "Di eldste syster er Samaria, som bur nord for deg med døtrene sine. Og di yngste syster, som bur sør for deg, er Sodoma med døtrene sine.",
+        "type": "error",
+        "severity": "major",
+        "explanation": "Det hebraiske teksten seier 'עַל־שְׂמֹאולֵךְ' (til venstre for deg) og 'מִימִינֵךְ' (til høgre for deg). Når ein står vendt mot aust (som er standardorienteringa i hebraisk), er venstre = nord og høgre = sør. Men den bokstavelege tydinga er 'venstre' og 'høgre'. Mange omsetjingar brukar 'nord' og 'sør', men Samaria ligg nord for Jerusalem og Sodoma sør – dette stemmer med retninga. Sjølv om tolkinga er korrekt, bør det merkast at originalteksten brukar 'venstre/høgre'."
+      }
+    ]
   },
   {
     "bookId": 26,
@@ -327,7 +357,15 @@
     "bookId": 26,
     "chapterId": 16,
     "verseId": 52,
-    "text": "Ber du òg skamma di, du som har dømt for systrene dine! Ved syndene dine, som var meir avskyelege enn deira, står dei meir rettferdige enn du. Skam deg då, og ber vanæra di, du som har fått systrene dine til å sjå rettferdige ut!"
+    "text": "Ber du òg skamma di, du som har tala til forsvar for systrene dine! Ved syndene dine, som var meir avskyelege enn deira, står dei meir rettferdige enn du. Skam deg då, og ber vanæra di, du som har fått systrene dine til å sjå rettferdige ut!",
+    "versions": [
+      {
+        "text": "Ber du òg skamma di, du som har dømt for systrene dine! Ved syndene dine, som var meir avskyelege enn deira, står dei meir rettferdige enn du. Skam deg då, og ber vanæra di, du som har fått systrene dine til å sjå rettferdige ut!",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "Det hebraiske 'פִּלַּלְתְּ' (frå פלל) tyder her 'å intervenera for / tala til forsvar for', ikkje 'å døma for'. Jerusalem sine synder var så store at ho i praksis tala til forsvar for systrene sine ved å få dei til å sjå rettferdige ut i samanlikning."
+      }
+    ]
   },
   {
     "bookId": 26,

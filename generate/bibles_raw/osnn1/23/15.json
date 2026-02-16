@@ -9,11 +9,17 @@
     "bookId": 23,
     "chapterId": 15,
     "verseId": 2,
-    "text": "Dei går opp til tempelet, til Dibon, til offerhaugane for å gråta. Over Nebo og over Medeba jamrar Moab seg. Kvart hovud er snauklypt, kvart skjegg er avskore.",
+    "text": "Dei går opp til tempelet – og Dibon går opp til offerhaugane for å gråta. Over Nebo og over Medeba jamrar Moab seg. Kvart hovud er snauklypt, kvart skjegg er avskore.",
     "versions": [
       {
         "text": "Bat-Dibon går opp til tempelet og til offerhaugane for å gråta. Over Nebo og over Medeba jamrar Moab seg. Kvart hovud er snauklypt, kvart skjegg er avskore.",
         "explanation": "Skrivefeil: 'avscore' skal vera 'avskore'."
+      },
+      {
+        "text": "Dei går opp til tempelet, til Dibon, til offerhaugane for å gråta. Over Nebo og over Medeba jamrar Moab seg. Kvart hovud er snauklypt, kvart skjegg er avskore.",
+        "type": "error",
+        "severity": "major",
+        "explanation": "Den hebraiske teksten har ein struktur der 'huset' (tempelet) og 'Dibon' + 'offerhaugane' er to separate einingar: «(folket) går opp til tempelet, og Dibon (går opp) til offerhaugane for å gråta.» Dibon er ikkje eit mål for oppstiginga, men subjektet for den andre delen. Den noverande teksten gjer Dibon til eit av fleire reisemål, som om dei gjekk til tre stader, noko som ikkje stemmer med originalen."
       }
     ]
   },
@@ -27,11 +33,17 @@
     "bookId": 23,
     "chapterId": 15,
     "verseId": 4,
-    "text": "Hesjbon og Eleale ropar ut, ropa deira kan høyrast heilt til Jahas. Difor skrik Moabs krigarar, sjela deira skjelv i dei.",
+    "text": "Hesjbon og Eleale ropar ut, ropa deira kan høyrast heilt til Jahas. Difor skrik Moabs krigarar, dei skjelv av redsle.",
     "versions": [
       {
         "text": "Hesjbon og Eleale ropar ut, ropa deira kan høyrast heilt til Jahas. Difor skrik Moabs krigarar, sjela hans skjelv i han.",
         "explanation": "Sidan subjektet er 'Moabs krigarar' (fleirtal), bør pronomenet vera 'deira' og 'dei', ikkje 'hans' og 'han'."
+      },
+      {
+        "text": "Hesjbon og Eleale ropar ut, ropa deira kan høyrast heilt til Jahas. Difor skrik Moabs krigarar, sjela deira skjelv i dei.",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "Uttrykket 'sjela deira skjelv i dei' er litt uidiomatisk på nynorsk. 'Dei skjelv av redsle' gir same meining og flyt betre. Det hebraiske נַפְשׁוֹ יָרְעָה לּוֹ tyder at sjela/livet deira beva – altså at dei var redde."
       }
     ]
   },
@@ -39,11 +51,17 @@
     "bookId": 23,
     "chapterId": 15,
     "verseId": 5,
-    "text": "Hjarta mitt ropar for Moab. Flyktningane når til Soar, til Eglat-Sjelisija. For dei går gråtande opp Luhit-kleiva, og på vegen til Horonajim reiser dei klagerop over øydelegginga.",
+    "text": "Hjarta mitt ropar for Moab. Flyktningane deira når til Soar, til Eglat-Sjelisija. For dei går gråtande opp Luhit-kleiva, og på vegen til Horonajim reiser dei klagerop over øydelegginga.",
     "versions": [
       {
         "text": "Hjarta mitt ropar for Moab. Flyktningane flyktar til Soar, til Eglat-Sjelisija. For dei går gråtande opp Luhit-bakken, og på vegen til Horonajim reiser dei klagerop over øydelegginga.",
         "explanation": "'מַעֲלֵה' tyder ei stigande veg eller kleiv. 'Luhit-kleiva' er meir presist enn 'Luhit-bakken' for å skildra ein bratt fjellveg."
+      },
+      {
+        "text": "Hjarta mitt ropar for Moab. Flyktningane når til Soar, til Eglat-Sjelisija. For dei går gråtande opp Luhit-kleiva, og på vegen til Horonajim reiser dei klagerop over øydelegginga.",
+        "type": "error",
+        "severity": "major",
+        "explanation": "Det hebraiske בְּרִיחֶהָ tyder 'flyktningane hennar/deira' (med possessivsuffiks som viser til Moab). Det bør vera 'Flyktningane deira' for å få med tilhøyrsla til Moab."
       }
     ]
   },

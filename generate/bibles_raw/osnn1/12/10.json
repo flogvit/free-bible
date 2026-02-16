@@ -39,11 +39,17 @@
     "bookId": 12,
     "chapterId": 10,
     "verseId": 6,
-    "text": "Då skreiv han eit andre brev til dei og sa: «Dersom de er på mi side og vil lyda meg, så ta hovuda til sønene til herren dykkar og kom til meg i morgon på denne tida i Jisreel.» No var kongssønene, sytti menn, hos storfolket i byen som fostra dei.",
+    "text": "Då skreiv han eit andrebrev til dei og sa: «Dersom de er på mi side og vil lyda meg, så ta hovuda til sønene til herren dykkar og kom til meg i morgon på denne tida i Jisreel.» No var kongssønene, sytti menn, hos storfolket i byen som fostra dei.",
     "versions": [
       {
         "text": "Då skreiv han eit andre brev til dei og sa: «Dersom de er på mi side og vil lyda meg, så ta hovuda til sønene til herren dykkar og kom til meg i morgon på denne tida i Jisreel.» Kongssønene, sytti menn, var hos storfolket i byen som fostra dei.",
         "explanation": "Å leggja til 'No' gjer det tydelegare at dette er ein parentetisk kommentar som gjev bakgrunnsinformasjon, ikkje ein del av Jehus brev."
+      },
+      {
+        "text": "Då skreiv han eit andre brev til dei og sa: «Dersom de er på mi side og vil lyda meg, så ta hovuda til sønene til herren dykkar og kom til meg i morgon på denne tida i Jisreel.» No var kongssønene, sytti menn, hos storfolket i byen som fostra dei.",
+        "type": "grammar",
+        "severity": "minor",
+        "explanation": "'Eit andre brev' er ikkje korrekt nynorsk. Det bør vera 'eit andre brev' med samanskrive 'andrebrev', eller helst 'eit nytt brev' / 'endå eit brev'. Men sidan verset allereie har vore gjennom revisjon og endringa er marginal, held eg denne som minor."
       }
     ]
   },
@@ -81,7 +87,15 @@
     "bookId": 12,
     "chapterId": 10,
     "verseId": 12,
-    "text": "Så braut han opp og drog av stad mot Samaria. Undervegs, ved Bet-Eked-Haroim,"
+    "text": "Så braut han opp og drog av stad mot Samaria. Då han var ved Bet-Eked-Haroim, undervegs,",
+    "versions": [
+      {
+        "text": "Så braut han opp og drog av stad mot Samaria. Undervegs, ved Bet-Eked-Haroim,",
+        "type": "error",
+        "severity": "major",
+        "explanation": "Verset endar med eit komma, noko som gjer det til ein ufullstendig setning. Sjølv om det fortset i vers 13, bør verset vera ei fullstendig syntaktisk eining. Dessutan er den hebraiske konstruksjonen 'הוא בית עקד הרועים בדרך' betre omsett som 'Då han var ved Bet-Eked-Haroim, undervegs' for å gjera det til ei meir fullstendig setning."
+      }
+    ]
   },
   {
     "bookId": 12,
@@ -111,7 +125,15 @@
     "bookId": 12,
     "chapterId": 10,
     "verseId": 17,
-    "text": "Då han kom til Samaria, slo han i hel alle som var att av Akabs ætt i Samaria, til han hadde utsletta henne, etter det ordet Herren hadde tala til Elia."
+    "text": "Då han kom til Samaria, slo han i hel alle som var att av Akabs ætt i Samaria, til han hadde utsletta dei, etter det ordet Herren hadde tala til Elia.",
+    "versions": [
+      {
+        "text": "Då han kom til Samaria, slo han i hel alle som var att av Akabs ætt i Samaria, til han hadde utsletta henne, etter det ordet Herren hadde tala til Elia.",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "Pronomenet 'henne' har uklårt referansepunkt. Det hebraiske suffikset på הִשְׁמִידוֹ viser tilbake til Akabs ætt/hus, og 'dei' ville passa betre på nynorsk sidan 'ætt' kan vera fleirtydigt."
+      }
+    ]
   },
   {
     "bookId": 12,
@@ -225,6 +247,14 @@
     "bookId": 12,
     "chapterId": 10,
     "verseId": 36,
-    "text": "Den tida Jehu var konge over Israel i Samaria, var tjueåtte år."
+    "text": "Tida Jehu rådde som konge over Israel i Samaria, var tjueåtte år.",
+    "versions": [
+      {
+        "text": "Den tida Jehu var konge over Israel i Samaria, var tjueåtte år.",
+        "type": "error",
+        "severity": "major",
+        "explanation": "'Den tida Jehu var konge ... var tjueåtte år' er grammatisk klønete på nynorsk. Setninga kan lesast som om tida han var konge var identisk med tjueåtte år, men uttrykksmåten er uvanleg. 'Tida Jehu rådde som konge over Israel i Samaria, var tjueåtte år' flyt betre."
+      }
+    ]
   }
 ]

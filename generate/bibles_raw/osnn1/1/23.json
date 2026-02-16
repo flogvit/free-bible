@@ -3,7 +3,15 @@
     "bookId": 1,
     "chapterId": 23,
     "verseId": 1,
-    "text": "Sara levde i hundre og tjuesju år. Dette var åra Sara levde."
+    "text": "Sara vart hundre og tjuesju år gammal. Dette var leveåra til Sara.",
+    "versions": [
+      {
+        "text": "Sara levde i hundre og tjuesju år. Dette var åra Sara levde.",
+        "type": "error",
+        "severity": "major",
+        "explanation": "Den hebraiske formelen מֵאָה שָׁנָה וְעֶשְׂרִים שָׁנָה וְשֶׁבַע שָׁנִים er ein aldersformel som uttrykkjer kor gammal Sara vart. 'Sara levde i hundre og tjuesju år' er akseptabelt, men den avsluttande frasen שְׁנֵי חַיֵּי שָׂרָה betyr bokstavleg 'leveåra til Sara', ikkje 'åra Sara levde'. Ei meir presis og idiomatisk formulering gjer teksten tydelegare."
+      }
+    ]
   },
   {
     "bookId": 1,
@@ -15,7 +23,15 @@
     "bookId": 1,
     "chapterId": 23,
     "verseId": 3,
-    "text": "Så reiste Abraham seg frå den døde og tala til Hets søner og sa:"
+    "text": "Så reiste Abraham seg frå den døde si og tala til Hets søner og sa:",
+    "versions": [
+      {
+        "text": "Så reiste Abraham seg frå den døde og tala til Hets søner og sa:",
+        "type": "grammar",
+        "severity": "minor",
+        "explanation": "Hebraisk מֵתוֹ har possessivt suffiks 'hans døde' (dvs. hans avdøde kone). 'Den døde' manglar eigedomsforholdet som finst i originalen. 'Den døde si' (hans avdøde) er meir presist."
+      }
+    ]
   },
   {
     "bookId": 1,
@@ -63,7 +79,15 @@
     "bookId": 1,
     "chapterId": 23,
     "verseId": 9,
-    "text": "Lat han gje meg Makpela-hòla som han eig, ho som ligg i utkanten av åkeren hans. Mot full betaling skal han gje meg henne som gravplass mellom dykk.»"
+    "text": "Lat han gje meg Makpela-hòla som han eig, ho som ligg i utkanten av åkeren hans. Mot full pris skal han gje meg henne mellom dykk som eigedom til gravplass.»",
+    "versions": [
+      {
+        "text": "Lat han gje meg Makpela-hòla som han eig, ho som ligg i utkanten av åkeren hans. Mot full betaling skal han gje meg henne som gravplass mellom dykk.»",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "Hebraisk לַאֲחֻזַּת־קָבֶר betyr 'som eigedom til gravplass', ikkje berre 'som gravplass'. Ordet אֲחֻזָּה (eigedom/eige) er viktig fordi det understrekar at Abraham ønskjer varig eigedomsrett. Også בְּכֶסֶף מָלֵא betyr 'til full pris' heller enn 'mot full betaling'."
+      }
+    ]
   },
   {
     "bookId": 1,
@@ -111,7 +135,15 @@
     "bookId": 1,
     "chapterId": 23,
     "verseId": 15,
-    "text": "«Herre, høyr på meg! Eit jordstykke til fire hundre sekel sølv, kva er det mellom meg og deg? Gravlegg den døde din!»"
+    "text": "«Herre, høyr på meg! Eit stykke jord til fire hundre sekel sølv, kva er vel det mellom meg og deg? Gravlegg den døde din!»",
+    "versions": [
+      {
+        "text": "«Herre, høyr på meg! Eit jordstykke til fire hundre sekel sølv, kva er det mellom meg og deg? Gravlegg den døde din!»",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "Å leggja til 'vel' i 'kva er vel det' gjev betre att den retoriske tonen i det hebraiske מַה־הִוא, som uttrykkjer at beløpet er ubetydeleg. 'Stykke jord' er også meir naturleg nynorsk enn 'jordstykke'."
+      }
+    ]
   },
   {
     "bookId": 1,

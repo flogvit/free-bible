@@ -51,7 +51,15 @@
     "bookId": 26,
     "chapterId": 28,
     "verseId": 9,
-    "text": "Vil du då seia: «Eg er ein gud» framfor dei som drep deg? Du er eit menneske og ikkje ein gud i hendene på dei som drep deg."
+    "text": "Vil du då seia: «Eg er ein gud» framfor den som drep deg? Du er eit menneske og ikkje ein gud, i hendene på dei som vanhelgar deg.",
+    "versions": [
+      {
+        "text": "Vil du då seia: «Eg er ein gud» framfor dei som drep deg? Du er eit menneske og ikkje ein gud i hendene på dei som drep deg.",
+        "type": "grammar",
+        "severity": "minor",
+        "explanation": "Det hebraiske 'הֹרְגֶךָ' (horgekha) er singularis ('den som drep deg'), og 'מְחַלְלֶיךָ' (mechallelekha) tyder 'dei som vanhelgar/skjendar deg', ikkje berre 'dei som drep deg'. Omsetjinga brukar 'drep' i begge tilfelle, men det andre ordet har ei anna tyding."
+      }
+    ]
   },
   {
     "bookId": 26,
@@ -69,11 +77,17 @@
     "bookId": 26,
     "chapterId": 28,
     "verseId": 12,
-    "text": "Menneske, stem i ei klagesong over kongen i Tyrus og sei til han: Så seier Herren Gud: Du var seglet på fullending, full av visdom og fullendt i venleik.",
+    "text": "Menneske, stem i ei klagesong over kongen i Tyrus og sei til han: Så seier Herren Gud: Du var seglet på det fullkomne, full av visdom og fullendt i venleik.",
     "versions": [
       {
         "text": "Menneske, stem i ei klagesong over kongen i Tyrus og sei til han: Så seier Herren Gud: Du var eit fullkome signet, full av visdom og fullendt i venleik.",
         "explanation": "Det hebraiske 'חוֹתֵם תָּכְנִית' (chotem toknit) tyder bokstaveleg 'seglet på fullending/mønster' - altså den som set det endelege stempelet på perfeksjon. 'Fullkome signet' er noko uklart på norsk."
+      },
+      {
+        "text": "Menneske, stem i ei klagesong over kongen i Tyrus og sei til han: Så seier Herren Gud: Du var seglet på fullending, full av visdom og fullendt i venleik.",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "'תָּכְנִית' (toknit) tyder 'mønster, plan, modell' – altså noko fullkome/perfekt. 'Seglet på fullending' er litt uklart; 'seglet på det fullkomne' formidlar betre at dette er den som set det endelege stempelet på perfeksjon."
       }
     ]
   },
@@ -81,7 +95,15 @@
     "bookId": 26,
     "chapterId": 28,
     "verseId": 13,
-    "text": "Du var i Eden, Guds hage. Alle slags edle steinar dekte deg: rubin, topas og diamant, krysolitt, onyks og jaspis, safir, turkis og smaragd, og gull. Trommene og fløytene dine vart laga til deg den dagen du vart skapt."
+    "text": "Du var i Eden, Guds hage. Alle slags edle steinar dekte deg: rubin, topas og diamant, krysolitt, onyks og jaspis, safir, turkis og smaragd, og gull. Handverket med innfatningane og inngravingane dine vart førebudd den dagen du vart skapt.",
+    "versions": [
+      {
+        "text": "Du var i Eden, Guds hage. Alle slags edle steinar dekte deg: rubin, topas og diamant, krysolitt, onyks og jaspis, safir, turkis og smaragd, og gull. Trommene og fløytene dine vart laga til deg den dagen du vart skapt.",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "Det hebraiske 'תֻּפֶּיךָ וּנְקָבֶיךָ' (tuppekha unekavekha) er omdiskutert, men refererer mest sannsynleg til innfatningar og inngravingar/hol for edlesteinane, ikkje til trommer og fløyter. Tradisjonelt har dette vorte tolka som musikkinstrument, men moderne forsking tyder på at det handlar om juvelhandverk – noko som passar betre med konteksten om edle steinar."
+      }
+    ]
   },
   {
     "bookId": 26,
@@ -153,7 +175,15 @@
     "bookId": 26,
     "chapterId": 28,
     "verseId": 23,
-    "text": "Eg sender pest og blod i gatene der, og dei drepne skal falla midt i byen ved sverdet som kjem mot han frå alle kantar. Då skal dei kjenna at eg er Herren."
+    "text": "Eg sender pest og blod i gatene der, og dei drepne skal falla midt i byen ved sverdet som kjem mot henne frå alle kantar. Då skal dei kjenna at eg er Herren.",
+    "versions": [
+      {
+        "text": "Eg sender pest og blod i gatene der, og dei drepne skal falla midt i byen ved sverdet som kjem mot han frå alle kantar. Då skal dei kjenna at eg er Herren.",
+        "type": "error",
+        "severity": "major",
+        "explanation": "I vers 22 vart pronomenet bevisst endra til 'henne' fordi Sidon er femininum på hebraisk (בָהּ). Same prinsippet bør gjelde her i vers 23 – 'עָלֶיהָ' er også femininum, så det bør vera 'henne', ikkje 'han'."
+      }
+    ]
   },
   {
     "bookId": 26,

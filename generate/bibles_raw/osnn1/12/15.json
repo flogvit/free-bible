@@ -27,11 +27,17 @@
     "bookId": 12,
     "chapterId": 15,
     "verseId": 5,
-    "text": "Han budde i eit hus for seg sjølv, og Jotam, son til kongen, styrte hoffet og dømde folket i landet.",
+    "text": "Herren slo kongen med ein hudsykdom, og han var sjuk til den dagen han døydde. Han budde i eit hus for seg sjølv, og Jotam, son til kongen, styrte hoffet og dømde folket i landet.",
     "versions": [
       {
         "text": "Herren slo kongen med spedalske, og han var spedalsk til den dagen han døydde. Han budde i eit eige hus, og Jotam, son til kongen, styrte hoffet og dømde folket i landet.",
         "explanation": "בֵּית הַחָפְשִׁית betyr bokstavelig 'fridomshuset' eller 'hus for avsondring' - eit hus der den spedalske budde isolert. 'Eit hus for seg sjølv' gjev betre meining for munnleg lesing og fangar opp isolasjonsaspektet."
+      },
+      {
+        "text": "Han budde i eit hus for seg sjølv, og Jotam, son til kongen, styrte hoffet og dømde folket i landet.",
+        "type": "error",
+        "severity": "critical",
+        "explanation": "Den noverande versjonen manglar heilt den første delen av verset: at Herren slo kongen med spedalske/hudsykdom og at han var sjuk til han døydde (וַיְנַגַּע יְהוָה אֶת־הַמֶּלֶךְ וַיְהִי מְצֹרָע עַד־יוֹם מֹתוֹ). Dette er vesentleg innhald som er utelate."
       }
     ]
   },
@@ -63,7 +69,15 @@
     "bookId": 12,
     "chapterId": 15,
     "verseId": 10,
-    "text": "Sjallum, son til Jabesj, svor seg saman mot han og slo han ned framfor folket. Han drap han og vart konge i staden hans."
+    "text": "Sjallum, son til Jabesj, svor seg saman mot han og slo han ned i Jibleam. Han drap han og vart konge i staden hans.",
+    "versions": [
+      {
+        "text": "Sjallum, son til Jabesj, svor seg saman mot han og slo han ned framfor folket. Han drap han og vart konge i staden hans.",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "Uttrykket קָבָל־עָם er omdiskutert – det kan bety 'framfor folket' eller vera eit stadnamn (Jibleam/Qibl'am). Mange moderne omsetjingar les det som ein stad. 'Framfor folket' er éi tolking, men det er verdt å vurdera alternativet."
+      }
+    ]
   },
   {
     "bookId": 12,
@@ -123,11 +137,17 @@
     "bookId": 12,
     "chapterId": 15,
     "verseId": 20,
-    "text": "Menahem kravde inn sølvet frå Israel, frå alle dei velståande mennene, femti sheklar sølv frå kvar mann, for å gje det til assyrarkongen. Så snudde assyrarkongen og vart ikkje verande i landet.",
+    "text": "Menahem kravde inn sølvet frå Israel, frå alle dei velståande mennene, femti sjekel sølv frå kvar mann, for å gje det til assyrarkongen. Så snudde assyrarkongen og vart ikkje verande i landet.",
     "versions": [
       {
         "text": "Menahem kravde inn sølvet frå Israel, frå alle dei rike mennene, femti sheklar sølv frå kvar mann, for å gje det til assyrarkongen. Så snudde assyrarkongen og vart ikkje verande i landet.",
         "explanation": "גִּבּוֹרֵי הַחַיִל refererer til velståande menn med eigendom, ikkje nødvendigvis 'rike'. 'Velståande' er meir presist og flyt betre munnleg."
+      },
+      {
+        "text": "Menahem kravde inn sølvet frå Israel, frå alle dei velståande mennene, femti sheklar sølv frå kvar mann, for å gje det til assyrarkongen. Så snudde assyrarkongen og vart ikkje verande i landet.",
+        "type": "grammar",
+        "severity": "minor",
+        "explanation": "I nynorsk bør det hebraiske lånordet 'shekel' skrivast 'sjekel' i tråd med norsk rettskriving og vanleg bibelomsetjingspraksis."
       }
     ]
   },
@@ -237,6 +257,14 @@
     "bookId": 12,
     "chapterId": 15,
     "verseId": 38,
-    "text": "Så gjekk Jotam til kvile hos fedrane sine og vart gravlagd hos fedrane sine i Davidsbyen, byen til far hans. Og Akas, son hans, vart konge etter han."
+    "text": "Så gjekk Jotam til kvile hos fedrane sine og vart gravlagd hos fedrane sine i Davidsbyen, byen til stamfar hans David. Og Akas, son hans, vart konge etter han.",
+    "versions": [
+      {
+        "text": "Så gjekk Jotam til kvile hos fedrane sine og vart gravlagd hos fedrane sine i Davidsbyen, byen til far hans. Og Akas, son hans, vart konge etter han.",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "Uttrykket בְּעִיר דָּוִד אָבִיו, 'i Davidsbyen, byen til far hans (David)', refererer til David som stamfar/forfader, ikkje den direkte faren. 'Byen til far hans' kan vera forvirrande sidan Jotams far var Ussia, ikkje David. 'Byen til stamfar hans David' er tydelegare."
+      }
+    ]
   }
 ]

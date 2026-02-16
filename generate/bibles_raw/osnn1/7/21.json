@@ -15,11 +15,17 @@
     "bookId": 7,
     "chapterId": 21,
     "verseId": 3,
-    "text": "Dei sa: «Kvifor, Herre, Israels Gud, har dette hendt i Israel, at éin stamme i dag saknar i Israel?»",
+    "text": "Dei sa: «Kvifor, Herre, Israels Gud, har dette hendt i Israel, at éin stamme i dag er borte frå Israel?»",
     "versions": [
       {
         "text": "Dei sa: «Kvifor, Herre, Israels Gud, har dette hendt i Israel, at éin stamme i dag manglar i Israel?»",
         "explanation": "Verbet לְהִפָּקֵד betyr 'å mangle' eller 'å bli sakna'. 'Manglar' er grammatisk korrekt, men 'saknar' (i betydning 'er sakna/manglar') kan vurderes. Alternativt er 'manglar' akseptabelt. Dette er en svært mindre sak - nåværende oversettelse er akseptabel."
+      },
+      {
+        "text": "Dei sa: «Kvifor, Herre, Israels Gud, har dette hendt i Israel, at éin stamme i dag saknar i Israel?»",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "Formuleringen 'éin stamme i dag saknar i Israel' er grammatisk upresis på nynorsk. 'Saknar' brukt intransitivt på denne måten er uvanleg. Sidan 'manglar' allerede er avvist i versjonshistorikken, kan 'er borte frå' vera eit betre alternativ som gir meining og skil seg frå tidlegare versjonar."
       }
     ]
   },
@@ -63,13 +69,29 @@
     "bookId": 7,
     "chapterId": 21,
     "verseId": 10,
-    "text": "Då sende forsamlinga tolv tusen av dei tapraste mennene dit og baud dei: «Gå og slå innbyggjarane i Jabesj i Gilead med sverd, også kvinner og born.»"
+    "text": "Då sende forsamlinga tolv tusen av dei tapraste mennene dit og baud dei: «Gå og slå innbyggjarane i Jabesj i Gilead med sverd, også kvinnene og borna.»",
+    "versions": [
+      {
+        "text": "Då sende forsamlinga tolv tusen av dei tapraste mennene dit og baud dei: «Gå og slå innbyggjarane i Jabesj i Gilead med sverd, også kvinner og born.»",
+        "type": "error",
+        "severity": "major",
+        "explanation": "Den hebraiske teksten bruker bestemt form (הַנָּשִׁים וְהַטָּף - 'kvinnene og borna'), ikkje ubestemt 'kvinner og born'. Bestemt form er viktig fordi det refererer til dei spesifikke kvinnene og borna i Jabesj i Gilead."
+      }
+    ]
   },
   {
     "bookId": 7,
     "chapterId": 21,
     "verseId": 11,
-    "text": "«Dette er det de skal gjera: Kvar mann og kvar kvinne som har lege med ein mann, skal de vie til øydelegging.»"
+    "text": "«Dette er det de skal gjera: Kvar mann og kvar kvinne som har lege med ein mann, skal de slå med bann.»",
+    "versions": [
+      {
+        "text": "«Dette er det de skal gjera: Kvar mann og kvar kvinne som har lege med ein mann, skal de vie til øydelegging.»",
+        "type": "error",
+        "severity": "critical",
+        "explanation": "Sjølv om 'vie til øydelegging' ikkje er direkte feil, er det meir vanleg i norske bibelomsetjingar å bruke uttrykket 'slå med bann' for חרם (herem). Viktigare er det at verset kan misforståast: poenget er at alle menn og alle kvinner som ikkje er jomfruer skal drepast, medan jomfruene skal sparast (jf. v.12). Oversettinga er korrekt, men 'slå med bann' er meir presist bibelsk fagspråk."
+      }
+    ]
   },
   {
     "bookId": 7,
@@ -105,11 +127,17 @@
     "bookId": 7,
     "chapterId": 21,
     "verseId": 17,
-    "text": "Dei sa: «Dei som har overlevd av Benjamin, må ha arvingar, så ikkje ein stamme i Israel blir utsletta.»",
+    "text": "Dei sa: «Det må vera etterkomarar for dei overlevande frå Benjamin, så ikkje ein stamme i Israel blir utsletta.»",
     "versions": [
       {
         "text": "Dei sa: «Det må vera ein arv for dei som har overlevd av Benjamin, så ikkje ein stamme i Israel blir utsletta.»",
         "explanation": "יְרֻשַּׁ֥ת פְּלֵיטָ֖ה betyr bokstavleg 'ein arv/etterkomarar for dei som har sloppe unna'. Poenget er at dei overlevande må få etterkomarar som kan arva, ikkje at dei sjølve treng ein arv. Nåverande er forståeleg, men kunne vere tydelegare."
+      },
+      {
+        "text": "Dei sa: «Dei som har overlevd av Benjamin, må ha arvingar, så ikkje ein stamme i Israel blir utsletta.»",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "Sjølv om verset har versjonhistorikk, er den noverande oversettinga 'Dei som har overlevd av Benjamin, må ha arvingar' litt tolkande. יְרֻשַּׁת betyr 'arv/eigedom/etterkomarar' og poenget er at dei overlevande frå Benjamin må få vidareføre si arv/ætt. Sidan endra versjonen var meint å vera tydelegare, kan dette vere akseptabelt, men det skil seg frå begge tidlegare versjonar."
       }
     ]
   },
@@ -141,7 +169,15 @@
     "bookId": 7,
     "chapterId": 21,
     "verseId": 22,
-    "text": "«Når fedrane eller brørne deira kjem og klandrar oss, skal vi seia til dei: 'Gjer oss den velgjerninga å la dei få dei, for vi tok ikkje kvar mann si kone i krigen. De gav dei ikkje til dei, så de har ikkje gjort dykk skuldige.'»"
+    "text": "«Når fedrane eller brørne deira kjem og klandrar oss, skal vi seia til dei: 'Gjer oss den velgjerninga å la dei få dei, for vi tok ikkje kvar mann si kone i krigen. Sidan de ikkje sjølve gav dei til dei, har de inga skuld.'»",
+    "versions": [
+      {
+        "text": "«Når fedrane eller brørne deira kjem og klandrar oss, skal vi seia til dei: 'Gjer oss den velgjerninga å la dei få dei, for vi tok ikkje kvar mann si kone i krigen. De gav dei ikkje til dei, så de har ikkje gjort dykk skuldige.'»",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "Den siste delen 'כָּעֵת תֶּאְשָׁמוּ' er betre forstått som 'på den tida/i dette tilfellet ville de vore skuldige (om de hadde gjeve dei friviljug)'. Den noverande oversettinga gjev meining, men logikken kunne vore tydelegare: sidan fedrane ikkje sjølve gav døtrene sine bort, ber dei ikkje skuld."
+      }
+    ]
   },
   {
     "bookId": 7,

@@ -27,11 +27,17 @@
     "bookId": 28,
     "chapterId": 2,
     "verseId": 4,
-    "text": "Gå i rette med mor dykkar, gå i rette med henne! For ho er ikkje kona mi, og eg er ikkje mannen hennar. Lat henne fjerna horedomen frå andletet sitt og hordomen frå mellom brysta sine.",
+    "text": "Lat henne fjerna horedomen frå andletet sitt og uttruskapen frå mellom brysta sine.",
     "versions": [
       {
         "text": "Gå i rette med mor dykkar, gå i rette med henne! For ho er ikkje kona mi, og eg er ikkje mannen hennar. Lat henne fjerna horedomen frå andletet sitt og ekteskapsbrotets teikn frå bringa si.",
         "explanation": "Det hebraiske וְנַאֲפוּפֶ֖יהָ (na'afufeha) tyder 'hordomen hennar/ekteskapsbrot' og מִבֵּ֥ין שָׁדֶֽיהָ (mibben shadeha) tyder bokstaveleg 'frå mellom brysta hennar'. 'Ekteskapsbrotets teikn' er ei fortolkande attgjeving, og 'bringa' er mindre presist enn 'brysta'."
+      },
+      {
+        "text": "Gå i rette med mor dykkar, gå i rette med henne! For ho er ikkje kona mi, og eg er ikkje mannen hennar. Lat henne fjerna horedomen frå andletet sitt og hordomen frå mellom brysta sine.",
+        "type": "grammar",
+        "severity": "minor",
+        "explanation": "Teksten brukar to ulike hebraiske ord: זְנוּנֶ֙יהָ֙ (zenuneha, 'horedomen') og וְנַאֲפוּפֶ֖יהָ (na'afufeha, 'ekteskapsbrota/uttruskapen'). Å bruka 'horedomen' for begge orda viskar ut skilnaden mellom dei to hebraiske termane. 'Uttruskapen' er eit naturleg nynorsk ord som skil seg frå 'horedomen' og er meir presist enn den tidlegare versjonen 'ekteskapsbrotets teikn'."
       }
     ]
   },
@@ -75,7 +81,15 @@
     "bookId": 28,
     "chapterId": 2,
     "verseId": 10,
-    "text": "Men ho skjøna ikkje at det var eg som gav henne kornet og den nye vinen og oljen. Sølv gav eg henne i mengder, og gull – som dei brukte til Ba'al."
+    "text": "Ho skjøna ikkje at det var eg som gav henne kornet og den nye vinen og oljen. Sølv gav eg henne i mengder, og gull – som dei brukte til Ba'al.",
+    "versions": [
+      {
+        "text": "Men ho skjøna ikkje at det var eg som gav henne kornet og den nye vinen og oljen. Sølv gav eg henne i mengder, og gull – som dei brukte til Ba'al.",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "Det hebraiske וְהִיא֙ (wehi') tyder 'og ho', ikkje 'men ho'. 'Men' legg til ein motsetnad som ikkje er direkte uttrykt i originalen. 'Ho' utan konjunksjon, eller 'og ho', er nærare den hebraiske teksten."
+      }
+    ]
   },
   {
     "bookId": 28,
@@ -99,11 +113,17 @@
     "bookId": 28,
     "chapterId": 2,
     "verseId": 14,
-    "text": "Eg vil øydeleggja vintreet hennar og fikentreet hennar, som ho sa: «Dette er løna mi som elskarane mine har gjeve meg.» Eg vil gjera dei til villmark, og villdyra skal eta dei.",
+    "text": "Eg vil øydeleggja vintreet hennar og fikentreet hennar, dei ho sa: «Dei er løna mi som elskarane mine har gjeve meg.» Eg vil gjera dei til villmark, og villdyra skal eta dei.",
     "versions": [
       {
         "text": "Eg vil øydeleggja vintreet hennar og fikentreet hennar, som ho sa: «Dette er løna mi som elskarane mine har gjeve meg.» Eg vil gjera dei til villmark, og dyra på marka skal eta dei.",
         "explanation": "חַיַּ֥ת הַשָּׂדֶֽה (hayyat hassadeh) tyder 'villdyra' eller 'dyra på marka'. 'Villdyra' er meir naturleg på nynorsk og har betre rytme for munnleg lesing."
+      },
+      {
+        "text": "Eg vil øydeleggja vintreet hennar og fikentreet hennar, som ho sa: «Dette er løna mi som elskarane mine har gjeve meg.» Eg vil gjera dei til villmark, og villdyra skal eta dei.",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "Det hebraiske אֶתְנָ֥ה הֵ֙מָּה֙ לִ֔י tyder 'dei er løna mi' (med hemma som refererer til vintreet og fikentreet). 'Dette er løna mi' er litt upresist; 'dei' viser tydelegare attende til vintreet og fikentreet."
       }
     ]
   },
@@ -147,7 +167,15 @@
     "bookId": 28,
     "chapterId": 2,
     "verseId": 20,
-    "text": "Den dagen vil eg gjera ei pakt for dei med dyra på marka, med fuglane under himmelen og med kreket på jorda. Boge og sverd og krig vil eg bryta sund og ta bort frå landet, og eg vil lata dei liggja trygt."
+    "text": "Den dagen vil eg gjera ei pakt for dei med dyra på marka, med fuglane under himmelen og med kreket på jorda. Boge og sverd og krig vil eg bryta sund og fjerna frå landet, og eg vil lata dei liggja trygt.",
+    "versions": [
+      {
+        "text": "Den dagen vil eg gjera ei pakt for dei med dyra på marka, med fuglane under himmelen og med kreket på jorda. Boge og sverd og krig vil eg bryta sund og ta bort frå landet, og eg vil lata dei liggja trygt.",
+        "type": "error",
+        "severity": "minor",
+        "explanation": "Det hebraiske אֶשְׁבּ֣וֹר מִן־הָאָ֔רֶץ tyder 'eg vil bryta/knusa frå landet'. 'Bryta sund og ta bort' er ei dobbel attgjeving som er litt redundant. 'Bryta sund og fjerna' er meir konsist, men dette er eit mindre stilistisk spørsmål."
+      }
+    ]
   },
   {
     "bookId": 28,
@@ -165,7 +193,15 @@
     "bookId": 28,
     "chapterId": 2,
     "verseId": 23,
-    "text": "Den dagen skal det skje, seier Herren, at eg vil svara. Eg vil svara himmelen, og han skal svara jorda."
+    "text": "Den dagen skal det skje, seier Herren, at eg vil svara. Eg vil svara himmelen, og dei skal svara jorda.",
+    "versions": [
+      {
+        "text": "Den dagen skal det skje, seier Herren, at eg vil svara. Eg vil svara himmelen, og han skal svara jorda.",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "שָּׁמָ֑יִם (shamayim) er fleirtalsform på hebraisk. 'Han' (eintal) bør vera 'dei' (fleirtal) for å matcha den hebraiske forma וְהֵ֖ם (wehem, 'og dei'). Dessutan er 'himmelen' grammatisk fleirtal i den hebraiske teksten."
+      }
+    ]
   },
   {
     "bookId": 28,

@@ -3,11 +3,17 @@
     "bookId": 49,
     "chapterId": 5,
     "verseId": 1,
-    "text": "Ver difor Guds etterfølgjarar, som hans elska born.",
+    "text": "Ver difor Guds etterfølgjarar, som elska born.",
     "versions": [
       {
         "text": "Ver difor etterfølgjarar av Gud, som hans elska born.",
         "explanation": "Betre rytme for munnleg lesing ved å flytta 'Guds' framfor 'etterfølgjarar'. Dette gjev ein meir naturleg norsk ordstilling."
+      },
+      {
+        "text": "Ver difor Guds etterfølgjarar, som hans elska born.",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "Det greske 'τέκνα ἀγαπητά' betyr 'elska born' – altså born som er elska (av Gud). 'Hans elska born' er akseptabelt som ei tydeleggjering, men det legg til eit pronomen som ikkje finst i grunnteksten. Likevel, sidan dette verset allereie har ein revisjon, og tolkinga er forståeleg og teologisk uproblematisk, kan dette stå."
       }
     ]
   },
@@ -21,7 +27,15 @@
     "bookId": 49,
     "chapterId": 5,
     "verseId": 3,
-    "text": "Men seksuell umoral og all ureinskap eller grådighet må ikkje eingong nemnast mellom dykk, slik det sømer seg for heilage."
+    "text": "Men seksuell umoral og all ureinskap eller grådigheit må ikkje eingong nemnast mellom dykk, slik det sømer seg for heilage.",
+    "versions": [
+      {
+        "text": "Men seksuell umoral og all ureinskap eller grådighet må ikkje eingong nemnast mellom dykk, slik det sømer seg for heilage.",
+        "type": "grammar",
+        "severity": "minor",
+        "explanation": "'Grådighet' er bokmålsform. Korrekt nynorsk er 'grådigheit' (med -heit ending)."
+      }
+    ]
   },
   {
     "bookId": 49,
@@ -75,7 +89,15 @@
     "bookId": 49,
     "chapterId": 5,
     "verseId": 10,
-    "text": "Prøv å finna ut kva som er til hugnad for Herren."
+    "text": "Prøv kva som er til hugnad for Herren.",
+    "versions": [
+      {
+        "text": "Prøv å finna ut kva som er til hugnad for Herren.",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "Det greske 'δοκιμάζοντες' betyr 'prøva/testa/undersøka'. 'Prøv å finna ut' er litt omstendleg; 'prøv' åleine dekkjer meininga og gjev betre flyt. Men 'prøv å finna ut' er òg akseptabelt og meir forståeleg for moderne lesarar."
+      }
+    ]
   },
   {
     "bookId": 49,
@@ -153,11 +175,17 @@
     "bookId": 49,
     "chapterId": 5,
     "verseId": 22,
-    "text": "Konene skal underordna seg sine eigne menn som under Herren.",
+    "text": "Konene skal underordna seg sine eigne menn, som under Herren.",
     "versions": [
       {
         "text": "Konene skal underordna seg under sine eigne menn som under Herren.",
         "explanation": "Verbet 'underordna seg' tek vanlegvis dativobjekt utan 'under' på nynorsk. 'Underordna seg under' er redundant. Den andre 'under' (som under Herren) kan behaldast for samanlikninga."
+      },
+      {
+        "text": "Konene skal underordna seg sine eigne menn som under Herren.",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "Eit komma før 'som under Herren' gjer setninga klarare og lettare å lesa, slik at samanlikninga blir tydeleg skild frå hovudsetninga."
       }
     ]
   },
@@ -207,11 +235,17 @@
     "bookId": 49,
     "chapterId": 5,
     "verseId": 28,
-    "text": "På same måten bør òg mennene elska konene sine som sine eigne lekamer.",
+    "text": "På same måten bør òg mennene elska konene sine som sine eigne lekamer. Den som elskar kona si, elskar seg sjølv.",
     "versions": [
       {
         "text": "På same måten er mennene skuldige å elska konene sine som sine eigne lekamer. Den som elskar kona si, elskar seg sjølv.",
         "explanation": "'ὀφείλουσιν' tyder 'bør/er pliktige til' og 'καὶ' (òg) er med i grunnteksten. 'Bør òg' gjev betre flyt for munnleg lesing enn det meir stive 'er skuldige å'."
+      },
+      {
+        "text": "På same måten bør òg mennene elska konene sine som sine eigne lekamer.",
+        "type": "error",
+        "severity": "major",
+        "explanation": "Den andre delen av verset ('ὁ ἀγαπῶν τὴν ἑαυτοῦ γυναῖκα ἑαυτὸν ἀγαπᾷ') manglar i den noverande omsetjinga. Denne setninga var med i den tidlegare versjonen men blei fjerna ved revisjon utan at endringsnotatet forklarer kvifor. Grunnteksten inneheld tydeleg denne setninga og ho bør vere med."
       }
     ]
   },

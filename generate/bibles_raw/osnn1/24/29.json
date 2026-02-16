@@ -9,7 +9,15 @@
     "bookId": 24,
     "chapterId": 29,
     "verseId": 2,
-    "text": "Det var etter at kong Jekonja, dronningmora, hoffmennene, leiarane i Juda og Jerusalem, handverkarane og smedane hadde fare frå Jerusalem."
+    "text": "Det var etter at kong Jekonja, dronningmora, hoffmennene, leiarane i Juda og Jerusalem, handverkarane og låsesmedane hadde fare frå Jerusalem.",
+    "versions": [
+      {
+        "text": "Det var etter at kong Jekonja, dronningmora, hoffmennene, leiarane i Juda og Jerusalem, handverkarane og smedane hadde fare frå Jerusalem.",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "Det hebraiske הַמַּסְגֵּר refererer meir spesifikt til låsesmedar eller dei som arbeider med metall/lås, ikkje berre generelt 'smedar'. 'Låsesmedar' er meir presist, sjølv om 'smedar' ikkje er direkte feil."
+      }
+    ]
   },
   {
     "bookId": 24,
@@ -99,11 +107,17 @@
     "bookId": 24,
     "chapterId": 29,
     "verseId": 17,
-    "text": "Så seier Herren over hærskarane: Sjå, eg sender sverd, svolt og pest mot dei og gjer dei like elendig som dei dårlege fikena som ikkje kan etast.",
+    "text": "Så seier Herren over hærskarane: Sjå, eg sender sverd, svolt og pest mot dei og gjer dei like dårlege fiken som ikkje kan etast.",
     "versions": [
       {
         "text": "Så seier Herren over hærskarane: Sjå, eg sender sverd, svolt og pest mot dei og gjer dei som rotne fiken som er så dårlege at dei ikkje kan etast.",
         "explanation": "Det hebraiske 'הַשֹּׁעָרִים' tyder 'dei dårlege/vonde' (ikkje 'rotne'). Omsetjinga bør fokusera på at fikena er så dårlege at dei ikkje kan etast, slik originalen gjer, heller enn å leggja til 'rotne'."
+      },
+      {
+        "text": "Så seier Herren over hærskarane: Sjå, eg sender sverd, svolt og pest mot dei og gjer dei like elendig som dei dårlege fikena som ikkje kan etast.",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "Uttrykket 'like elendig som dei dårlege fikena' er noko omstendleg og legg til 'elendig' som ikkje er i originalteksten. Samanlikninga i hebraisk er direkte: 'eg gjer dei som dei dårlege fikena som ikkje kan etast på grunn av kor dårlege dei er.' Det er nok å seia 'gjer dei like dårlege fiken som ikkje kan etast' – kortare og nærare originalen."
       }
     ]
   },
@@ -111,7 +125,15 @@
     "bookId": 24,
     "chapterId": 29,
     "verseId": 18,
-    "text": "Eg vil forfølgja dei med sverd, svolt og pest og gjera dei til ei skrekk for alle rike på jorda, til ei forbanning, til øydelegging, til spott og vanære mellom alle folkeslag dit eg har drive dei."
+    "text": "Eg vil forfølgja dei med sverd, svolt og pest og gjera dei til ei skrekk for alle rike på jorda, til forbanning og øydelegging, til spott og vanære mellom alle folkeslag dit eg har drive dei.",
+    "versions": [
+      {
+        "text": "Eg vil forfølgja dei med sverd, svolt og pest og gjera dei til ei skrekk for alle rike på jorda, til ei forbanning, til øydelegging, til spott og vanære mellom alle folkeslag dit eg har drive dei.",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "Hebraisk har fire ledd: לְאָלָה (forbanning), לְשַׁמָּה (øydelegging), לִשְׁרֵקָה (spott/plystring), לְחֶרְפָּה (vanære). Desse er parallelle nemningar, og å setja 'til ei forbanning, til øydelegging' med gjenteke 'til' framfor kvart einaste ledd er litt tungt. Ei lita justering for betre flyt."
+      }
+    ]
   },
   {
     "bookId": 24,
@@ -129,7 +151,15 @@
     "bookId": 24,
     "chapterId": 29,
     "verseId": 21,
-    "text": "Så seier Herren over hærskarane, Israels Gud, om Akab, son til Kolaja, og om Sidkia, son til Maaseja, som profeterer løgn for dykk i mitt namn: Sjå, eg gjev dei i hendene på Nebukadnesar, kongen i Babel, og han skal slå dei i hel framfor auga dykkar."
+    "text": "Så seier Herren over hærskarane, Israels Gud, om Akab, son til Kolaja, og om Sidkia, son til Maaseja, som profeterer løgn for dykk i mitt namn: Sjå, eg gjev dei i hendene på Nebukadnesar, kongen i Babel, og han skal slå dei ned framfor auga dykkar.",
+    "versions": [
+      {
+        "text": "Så seier Herren over hærskarane, Israels Gud, om Akab, son til Kolaja, og om Sidkia, son til Maaseja, som profeterer løgn for dykk i mitt namn: Sjå, eg gjev dei i hendene på Nebukadnesar, kongen i Babel, og han skal slå dei i hel framfor auga dykkar.",
+        "type": "error",
+        "severity": "minor",
+        "explanation": "Det hebraiske וְהִכָּם tyder 'slå dei' men ikkje nødvendigvis 'slå dei i hel'. Verbet נכה kan tyda å drepa, men det er ikkje eksplisitt her. 'Slå dei ned' er meir nøytralt og nærare originalen."
+      }
+    ]
   },
   {
     "bookId": 24,

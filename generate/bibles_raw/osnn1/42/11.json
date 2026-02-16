@@ -69,7 +69,15 @@
     "bookId": 42,
     "chapterId": 11,
     "verseId": 11,
-    "text": "Kven av dykk som er far, ville gje sonen sin ein orm når han bed om ein fisk?"
+    "text": "Kven av dykk fedrar ville gje sonen sin ein orm når han bed om ein fisk?",
+    "versions": [
+      {
+        "text": "Kven av dykk som er far, ville gje sonen sin ein orm når han bed om ein fisk?",
+        "type": "error",
+        "severity": "major",
+        "explanation": "Det greske uttrykket τίνα... ἐξ ὑμῶν τὸν πατέρα tiltalar fleirtal ('dykk fedrar'). Men dette er ein liten nyanseforskjell og den noverande formuleringa er forståeleg. Likevel er 'som er far' ei omskriving som legg til eit relativsetning som ikkje finst i teksten."
+      }
+    ]
   },
   {
     "bookId": 42,
@@ -81,7 +89,15 @@
     "bookId": 42,
     "chapterId": 11,
     "verseId": 13,
-    "text": "Når då de som er vonde, veit å gje borna dykkar gode gåver, kor mykje meir skal ikkje Far i himmelen gje Den Heilage Ande til dei som bed han!»"
+    "text": "Når då de som er vonde, veit å gje borna dykkar gode gåver, kor mykje meir skal ikkje Far i himmelen gje den Heilage Ande til dei som bed han!»",
+    "versions": [
+      {
+        "text": "Når då de som er vonde, veit å gje borna dykkar gode gåver, kor mykje meir skal ikkje Far i himmelen gje Den Heilage Ande til dei som bed han!»",
+        "type": "theological",
+        "severity": "major",
+        "explanation": "«Den Heilage Ande» med stor D i «Den» er ikkje vanleg nynorsk rettskriving i løpande tekst. Det bør vera «den Heilage Ande» med liten d, sidan «den» er ein artikkel og ikkje del av eigennamnet."
+      }
+    ]
   },
   {
     "bookId": 42,
@@ -207,13 +223,29 @@
     "bookId": 42,
     "chapterId": 11,
     "verseId": 32,
-    "text": "Folket i Ninive skal stå fram i dommen saman med denne slekta og fordøma henne. For dei vende om då Jona forkynte for dei, og sjå, her er meir enn Jona."
+    "text": "Mennene frå Ninive skal stå fram i dommen saman med denne slekta og fordøma henne.",
+    "versions": [
+      {
+        "text": "Folket i Ninive skal stå fram i dommen saman med denne slekta og fordøma henne. For dei vende om då Jona forkynte for dei, og sjå, her er meir enn Jona.",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "Det greske ἄνδρες Νινευῖται betyr spesifikt 'mennene frå Ninive', ikkje berre 'folket i Ninive'. I vers 31 brukar Lukas ἀνδρῶν for 'menneska/mennene' i denne slekta, og her brukar han ἄνδρες igjen. Paralleliteten mellom vers 31 og 32 bør koma fram."
+      }
+    ]
   },
   {
     "bookId": 42,
     "chapterId": 11,
     "verseId": 33,
-    "text": "Ingen tenner ei lampe og set henne i kjellaren eller under eit kar. Nei, ein set henne på lampestaden, så dei som kjem inn, kan sjå lyset."
+    "text": "Ingen tenner ei lampe og set henne bort i ein gøymestad eller under eit kar. Nei, ein set henne på lampestaden, så dei som kjem inn, kan sjå lyset.",
+    "versions": [
+      {
+        "text": "Ingen tenner ei lampe og set henne i kjellaren eller under eit kar. Nei, ein set henne på lampestaden, så dei som kjem inn, kan sjå lyset.",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "Det greske κρύπτην betyr 'gøymestad' eller 'skjult stad', ikkje nødvendigvis 'kjellar'. 'Kjellar' er ei for spesifikk gjengjeving. 'Gøymestad' er meir presist."
+      }
+    ]
   },
   {
     "bookId": 42,
@@ -249,7 +281,15 @@
     "bookId": 42,
     "chapterId": 11,
     "verseId": 38,
-    "text": "Farisearen undra seg då han såg at han ikkje først vaska seg før måltidet."
+    "text": "Farisearen undra seg då han såg at han ikkje først reinsa seg før måltidet.",
+    "versions": [
+      {
+        "text": "Farisearen undra seg då han såg at han ikkje først vaska seg før måltidet.",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "Det greske ἐβαπτίσθη (vart døypt/dykt ned) refererer til den rituelle reinsinga, ikkje vanleg handvask. 'Reinsa seg' fangar betre den rituelle dimensjonen enn 'vaska seg'."
+      }
+    ]
   },
   {
     "bookId": 42,
@@ -333,7 +373,15 @@
     "bookId": 42,
     "chapterId": 11,
     "verseId": 50,
-    "text": "Difor skal denne slekta bli kravd til rekneskap for blodet av alle profetane som er utrent heilt frå verda vart grunnlagd,"
+    "text": "Slik skal blodet av alle profetane som er utrent heilt frå verda vart grunnlagd, bli kravd av denne slekta,",
+    "versions": [
+      {
+        "text": "Difor skal denne slekta bli kravd til rekneskap for blodet av alle profetane som er utrent heilt frå verda vart grunnlagd,",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "Verset startar med ἵνα ('slik at, for at'), som er ein formålskonjunksjon som knyter seg til vers 49, ikkje med 'Difor' (som er ein konklusjon). 'Difor' står allereie i vers 49 og bør ikkje gjentakast. Dessutan er det blodet som blir kravd (subjektet), ikkje slekta som er subjekt."
+      }
+    ]
   },
   {
     "bookId": 42,

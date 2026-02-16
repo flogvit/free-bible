@@ -39,7 +39,15 @@
     "bookId": 9,
     "chapterId": 2,
     "verseId": 5,
-    "text": "Dei mette lyt arbeida for brød, men dei svoltne svelt ikkje meir. Ho som var barnlaus, har fødd sju, men ho med mange born visnar bort."
+    "text": "Dei mette må leiga seg ut for brød, men dei svoltne kan kvila. Ho som var barnlaus, har fødd sju, men ho med mange born visnar bort.",
+    "versions": [
+      {
+        "text": "Dei mette lyt arbeida for brød, men dei svoltne svelt ikkje meir. Ho som var barnlaus, har fødd sju, men ho med mange born visnar bort.",
+        "type": "error",
+        "severity": "major",
+        "explanation": "Det hebraiske נִשְׂכָּרוּ tyder 'leiga seg ut' (frå rota שׂכר), ikkje berre 'arbeida'. Og חָדֵלּוּ tyder 'haldt opp / slutta', dvs. dei svoltne treng ikkje lenger streva – ikkje at dei 'svelt ikkje meir'. Omsetjinga manglar det poetiske poenget om statusomvelting."
+      }
+    ]
   },
   {
     "bookId": 9,
@@ -105,11 +113,17 @@
     "bookId": 9,
     "chapterId": 2,
     "verseId": 14,
-    "text": "Han stakk henne ned i kjelen eller gryta eller panna eller karet. Alt det gaffelen fekk med seg, tok presten for seg sjølv. Slik gjorde dei med alle israelittar som kom dit til Sjilo.",
+    "text": "Han stakk henne ned i karet eller gryta eller kjelen eller panna. Alt det gaffelen fekk med seg, tok presten for seg sjølv. Slik gjorde dei med alle israelittar som kom dit til Sjilo.",
     "versions": [
       {
         "text": "Han stakk han ned i kjelen eller gryta eller panna eller karet. Alt det gaffelen fekk med seg, tok presten for seg sjølv. Slik gjorde dei med alle israelittar som kom dit til Sjilo.",
         "explanation": "Pronomenet viser tilbake til 'gaffel' (hokjønn) frå vers 13, så det skal vera 'henne' ikkje 'han'."
+      },
+      {
+        "text": "Han stakk henne ned i kjelen eller gryta eller panna eller karet. Alt det gaffelen fekk med seg, tok presten for seg sjølv. Slik gjorde dei med alle israelittar som kom dit til Sjilo.",
+        "type": "grammar",
+        "severity": "minor",
+        "explanation": "Rekkjefølgja av kara i den hebraiske teksten er כִּיּוֹר (kar/kjele), דּוּד (gryte), קַלַּחַת (kjele/potte), פָּרוּר (panne/gryte). Dette er eit mindre punkt, men den noverande rekkjefølgja er akseptabel. Lat dette liggja om ein vil."
       }
     ]
   },
@@ -129,7 +143,15 @@
     "bookId": 9,
     "chapterId": 2,
     "verseId": 17,
-    "text": "Synda til dei unge mennene var svært stor framfor Herren, for mennene fekk folk til å forsmå offeret til Herren."
+    "text": "Synda til dei unge mennene var svært stor framfor Herren, for dei forsmådde offeret til Herren.",
+    "versions": [
+      {
+        "text": "Synda til dei unge mennene var svært stor framfor Herren, for mennene fekk folk til å forsmå offeret til Herren.",
+        "type": "error",
+        "severity": "major",
+        "explanation": "Det hebraiske נִאֲצוּ הָאֲנָשִׁים er at mennene (dvs. prestesønene sjølve) forakta/forsmådde Herrens offer. Det står ikkje at dei fekk andre folk til å forsmå det. Subjektet הָאֲנָשִׁים viser til dei unge mennene, ikkje til folket generelt."
+      }
+    ]
   },
   {
     "bookId": 9,
@@ -141,7 +163,15 @@
     "bookId": 9,
     "chapterId": 2,
     "verseId": 19,
-    "text": "Mor hans laga ei lita kappe til han, og ho tok henne med til han kvart år når ho kom opp saman med mannen sin for å ofra det årlege offeret."
+    "text": "Mor hans laga ei lita kappe til han, og ho tok ho med til han kvart år når ho kom opp saman med mannen sin for å ofra det årlege offeret.",
+    "versions": [
+      {
+        "text": "Mor hans laga ei lita kappe til han, og ho tok henne med til han kvart år når ho kom opp saman med mannen sin for å ofra det årlege offeret.",
+        "type": "grammar",
+        "severity": "minor",
+        "explanation": "I nynorsk bør ein bruka 'ho' som objektsform for hokjønnspronomen, ikkje 'henne'. 'Ho tok ho med til han' er korrekt nynorsk."
+      }
+    ]
   },
   {
     "bookId": 9,
@@ -201,7 +231,15 @@
     "bookId": 9,
     "chapterId": 2,
     "verseId": 27,
-    "text": "Ein gudsmann kom til Eli og sa til han: «Så seier Herren: Openberra eg meg ikkje for ætta til far din då dei var i Egypt og trælar for faraos hus?"
+    "text": "Ein gudsmann kom til Eli og sa til han: «Så seier Herren: Openberra eg meg ikkje for ætta til far din då dei var i Egypt, under faraos hus?",
+    "versions": [
+      {
+        "text": "Ein gudsmann kom til Eli og sa til han: «Så seier Herren: Openberra eg meg ikkje for ætta til far din då dei var i Egypt og trælar for faraos hus?",
+        "type": "error",
+        "severity": "major",
+        "explanation": "Det hebraiske לְבֵית פַּרְעֹה tyder 'til/under faraos hus', altså at dei høyrde til eller var underlagde faraos hus. 'Trælar for' er ei tilføying som ikkje finst i teksten – det hebraiske uttrykket seier berre at dei var i Egypt, underlagde faraos husstand."
+      }
+    ]
   },
   {
     "bookId": 9,
@@ -243,7 +281,15 @@
     "bookId": 9,
     "chapterId": 2,
     "verseId": 33,
-    "text": "Den einaste av dine eg ikkje skal rydda ut frå altaret mitt, skal få auga sine til å svinna og sjela si til å tærast bort. Alle som veks fram i huset ditt, skal døy i si beste alder."
+    "text": "Alle som veks fram i huset ditt, skal døy som menn.",
+    "versions": [
+      {
+        "text": "Den einaste av dine eg ikkje skal rydda ut frå altaret mitt, skal få auga sine til å svinna og sjela si til å tærast bort. Alle som veks fram i huset ditt, skal døy i si beste alder.",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "Det hebraiske יָמוּתוּ אֲנָשִׁים tyder bokstavleg 'skal døy som menn', dvs. i vaksen alder men ikkje som gamle. 'I si beste alder' er ei rimeleg tolking, men 'som menn' er nærare originalen og meir nøytralt."
+      }
+    ]
   },
   {
     "bookId": 9,

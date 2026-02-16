@@ -87,7 +87,15 @@
     "bookId": 50,
     "chapterId": 4,
     "verseId": 11,
-    "text": "Ikkje at eg seier dette fordi eg lid naud, for eg har lært å vera nøgd med det eg har."
+    "text": "Ikkje at eg seier dette fordi eg lid mangel, for eg har lært å vera nøgd med det eg har.",
+    "versions": [
+      {
+        "text": "Ikkje at eg seier dette fordi eg lid naud, for eg har lært å vera nøgd med det eg har.",
+        "type": "error",
+        "severity": "major",
+        "explanation": "Det greske 'ὑστέρησιν' betyr 'mangel' (lack/want), ikkje 'naud' (distress/hardship). 'Lid naud' er for sterkt og dekkjer ikkje den rette tydinga. 'Lid mangel' er meir presist og samsvarar med ordbruken i vers 12 ('lida mangel')."
+      }
+    ]
   },
   {
     "bookId": 50,
@@ -141,11 +149,17 @@
     "bookId": 50,
     "chapterId": 4,
     "verseId": 18,
-    "text": "No har eg fått alt og har overflod. Eg har nok, etter at eg tok imot frå Epafroditos det de sende – ein velluktande ange, eit offer Gud tek imot med glede og hugnad.",
+    "text": "No har eg fått alt og har overflod. Eg er fylt opp, etter at eg tok imot frå Epafroditos det de sende – ein velluktande ange, eit offer Gud tek imot med glede og hugnad.",
     "versions": [
       {
         "text": "No har eg fått alt og har overflod. Eg har nok, etter at eg tok imot frå Epafroditos det de sende, ein velluktande ange, eit offer som er til hugnad og som Gud tek imot med glede.",
         "explanation": "Omstrukturering for betre flyt ved munnleg lesing. Tankestrek markerer overgangen til den biletlege skildringa, og samanslåinga av 'til hugnad' og 'tek imot med glede' gjer setninga meir rytmisk."
+      },
+      {
+        "text": "No har eg fått alt og har overflod. Eg har nok, etter at eg tok imot frå Epafroditos det de sende – ein velluktande ange, eit offer Gud tek imot med glede og hugnad.",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "Det greske 'πεπλήρωμαι' (perfektum passiv av πληρόω) betyr 'eg er fylt opp / eg har fått fullt opp', som er sterkare enn berre 'eg har nok'. 'Eg er fylt opp' fangar betre den mettande tydinga i det greske ordet og svarar til konteksten med overflod."
       }
     ]
   },
@@ -159,7 +173,15 @@
     "bookId": 50,
     "chapterId": 4,
     "verseId": 20,
-    "text": "Vår Gud og Far vere ære i all æve, amen!"
+    "text": "Vår Gud og Far vere ære i all æve! Amen.",
+    "versions": [
+      {
+        "text": "Vår Gud og Far vere ære i all æve, amen!",
+        "type": "grammar",
+        "severity": "minor",
+        "explanation": "'Amen' er tradisjonelt ei stadfesting som står som eige ord etter utropsteikn. Det er meir naturleg å setja utropsteikn før 'Amen' og punktum etter."
+      }
+    ]
   },
   {
     "bookId": 50,

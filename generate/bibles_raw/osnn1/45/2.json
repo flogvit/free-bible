@@ -39,7 +39,15 @@
     "bookId": 45,
     "chapterId": 2,
     "verseId": 6,
-    "text": "Han skal gje kvar einskild att etter gjerningane sine."
+    "text": "Han skal gje kvar ein att etter gjerningane sine.",
+    "versions": [
+      {
+        "text": "Han skal gje kvar einskild att etter gjerningane sine.",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "'Kvar einskild' er litt tungt; 'kvar ein' er meir naturleg nynorsk og like presist for ἑκάστῳ."
+      }
+    ]
   },
   {
     "bookId": 45,
@@ -67,7 +75,15 @@
     "bookId": 45,
     "chapterId": 2,
     "verseId": 9,
-    "text": "Naud og trengsle skal koma over kvart menneske som gjer det vonde, jøde først og så grekar."
+    "text": "Trengsle og naud skal koma over kvart menneske som gjer det vonde, jøde først og så grekar.",
+    "versions": [
+      {
+        "text": "Naud og trengsle skal koma over kvart menneske som gjer det vonde, jøde først og så grekar.",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "Gresk har 'θλῖψις' (trengsle) først og 'στενοχωρία' (naud/angst) deretter. Rekkjefølgja bør bevarast."
+      }
+    ]
   },
   {
     "bookId": 45,
@@ -91,7 +107,15 @@
     "bookId": 45,
     "chapterId": 2,
     "verseId": 13,
-    "text": "For det er ikkje dei som høyrer lova, som er rettferdige for Gud, men dei som gjer etter lova, skal verta rettferdiggjorde."
+    "text": "For det er ikkje dei som høyrer lova, som er rettferdige for Gud, men dei som gjer det lova seier, skal verta rettferdiggjorde.",
+    "versions": [
+      {
+        "text": "For det er ikkje dei som høyrer lova, som er rettferdige for Gud, men dei som gjer etter lova, skal verta rettferdiggjorde.",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "'Dei som gjer etter lova' er litt uklart. 'οἱ ποιηταὶ νόμου' betyr 'dei som gjer det lova krev / det lova seier'. 'Gjer det lova seier' er meir naturleg nynorsk og tydelegare."
+      }
+    ]
   },
   {
     "bookId": 45,
@@ -181,13 +205,29 @@
     "bookId": 45,
     "chapterId": 2,
     "verseId": 25,
-    "text": "Omskjeringa er nok til gagn om du held lova. Men er du ein lovbrytar, har omskjeringa di vorte til førehud."
+    "text": "Omskjeringa er til gagn om du held lova. Men er du ein lovbrytar, har omskjeringa di vorte til førehud.",
+    "versions": [
+      {
+        "text": "Omskjeringa er nok til gagn om du held lova. Men er du ein lovbrytar, har omskjeringa di vorte til førehud.",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "Gresk har berre 'ὠφελεῖ' (er til nytte/gagn). Ordet 'nok' er ikkje i originalen og legg til ei avgrensing som ikkje finst i grunnteksten."
+      }
+    ]
   },
   {
     "bookId": 45,
     "chapterId": 2,
     "verseId": 26,
-    "text": "Om då den uomskorne held det rettferdige i lova, skal ikkje då førehuden hans reknast som omskjering?"
+    "text": "Om då den uomskorne held boda i lova, skal ikkje då førehuden hans reknast som omskjering?",
+    "versions": [
+      {
+        "text": "Om då den uomskorne held det rettferdige i lova, skal ikkje då førehuden hans reknast som omskjering?",
+        "type": "error",
+        "severity": "major",
+        "explanation": "Gresk 'τὰ δικαιώματα τοῦ νόμου' betyr 'lovboda' eller 'rettskrava i lova', ikkje 'det rettferdige i lova'. δικαιώματα er fleirtal og refererer til dei konkrete boda/forskriftene i lova."
+      }
+    ]
   },
   {
     "bookId": 45,

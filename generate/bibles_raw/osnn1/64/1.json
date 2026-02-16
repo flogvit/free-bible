@@ -57,11 +57,17 @@
     "bookId": 64,
     "chapterId": 1,
     "verseId": 7,
-    "text": "For dei drog ut for Namnetlskuld, utan å ta imot noko frå heidningane.",
+    "text": "For dei drog ut for Namnet skuld, utan å ta imot noko frå heidningane.",
     "versions": [
       {
         "text": "For dei drog ut for namnet hans skuld, utan å ta imot noko frå heidningane.",
         "explanation": "The Greek simply says 'τοῦ ὀνόματος' (the Name) without a possessive pronoun. This is a reverent reference to God's/Christ's name. 'Namnet hans' adds a pronoun not in the original. 'Namnetl(with capital) preserves the reverent absolute usage found in the Greek."
+      },
+      {
+        "text": "For dei drog ut for Namnetlskuld, utan å ta imot noko frå heidningane.",
+        "type": "error",
+        "severity": "critical",
+        "explanation": "There is a clear typo: 'Namnetlskuld' should be 'Namnet skuld'. The 'l' appears to be a stray character. The version history note confirms the intent was 'Namnetl(with capital)' but the actual result has a typo with an extra 'l' fused into the word."
       }
     ]
   },

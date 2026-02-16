@@ -3,7 +3,15 @@
     "bookId": 19,
     "chapterId": 67,
     "verseId": 1,
-    "text": "Til korleiaren. Med strengespel. Ein salme. Ein song."
+    "text": "Til kormeisteren. Med strengespel. Ein salme. Ein song.",
+    "versions": [
+      {
+        "text": "Til korleiaren. Med strengespel. Ein salme. Ein song.",
+        "type": "error",
+        "severity": "minor",
+        "explanation": "Det hebraiske לַמְנַצֵּח tyder 'til dirigenten/kormeisteren', ikkje 'korleiaren'. Ordet נצח i pi'el tyder å leia, dirigera, ha oppsyn med. 'Kormeisteren' er meir presist og standard omsetjing. 'Korleiaren' kan misforståast."
+      }
+    ]
   },
   {
     "bookId": 19,
@@ -57,12 +65,28 @@
     "bookId": 19,
     "chapterId": 67,
     "verseId": 7,
-    "text": "Jorda har gjeve si grøde. Måtte Gud, vår Gud, velsigna oss."
+    "text": "Jorda har gjeve si grøde. Gud, vår Gud, velsignar oss.",
+    "versions": [
+      {
+        "text": "Jorda har gjeve si grøde. Måtte Gud, vår Gud, velsigna oss.",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "Det hebraiske יְבָרְכֵנוּ er jussiv (ønskjeform), men kan òg lesast som yiqtol (indikativ): 'Gud velsignar oss'. I konteksten, der v.7a konstaterer at jorda har gjeve grøde (perfektum), er det naturleg å sjå v.7b som ein konstatering av velsigning som alt skjer. Alternativt kan jussiv forsvarast, men v.8 har den tydelege jussiven. Likevel er dette eit tolkingsspørsmål, og gjeldande versjon er forsvarleg."
+      }
+    ]
   },
   {
     "bookId": 19,
     "chapterId": 67,
     "verseId": 8,
-    "text": "Måtte Gud velsigna oss, så alle endar på jorda skal frykta han."
+    "text": "Måtte Gud velsigna oss, og alle endar av jorda skal frykta han.",
+    "versions": [
+      {
+        "text": "Måtte Gud velsigna oss, så alle endar på jorda skal frykta han.",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "Det hebraiske וְיִירְאוּ er kopulativt med vav ('og dei skal frykta'). 'Så' gjev inntrykk av at frykt er eit resultat/formål, noko som er ei mogleg tolking, men 'og' er nærare den hebraiske syntaksen. I tillegg er 'endar av jorda' meir presist for אַפְסֵי־אָרֶץ enn 'endar på jorda'."
+      }
+    ]
   }
 ]

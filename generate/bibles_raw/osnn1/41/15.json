@@ -99,7 +99,15 @@
     "bookId": 41,
     "chapterId": 15,
     "verseId": 16,
-    "text": "Soldatane førte han inn i borggarden, det vil seia pretorium, og kalla saman heile vaktstyrken."
+    "text": "Soldatane førte han inn i borggarden, det vil seia pretoriet, og kalla saman heile vaktstyrken.",
+    "versions": [
+      {
+        "text": "Soldatane førte han inn i borggarden, det vil seia pretorium, og kalla saman heile vaktstyrken.",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "«Pretorium» er ubøygd latinsk form. På nynorsk bør det heita «pretoriet» (med norsk bestemt artikkel) for å flyta betre og vera meir idiomatisk."
+      }
+    ]
   },
   {
     "bookId": 41,
@@ -129,11 +137,17 @@
     "bookId": 41,
     "chapterId": 15,
     "verseId": 21,
-    "text": "Dei tvinga ein mann som kom forbi til å bera krossen hans, Simon frå Kyréne, far til Aleksander og Rufus, som kom inn frå marka.",
+    "text": "Dei tvinga ein mann som kom forbi, Simon frå Kyréne, far til Aleksander og Rufus, som kom inn frå marka, til å bera krossen hans.",
     "versions": [
       {
         "text": "Ein mann som gjekk forbi, Simon frå Kyréne, far til Aleksander og Rufus, kom inn frå marka. Dei tvinga han til å bera krossen hans.",
         "explanation": "Den noverande ordstillinga er litt ulogisk og bryt opp den naturlege flyten. Originalteksten har ἀγγαρεύουσιν (dei tvinga) som hovudverbet tidleg, og παράγοντά τινα (ein som gjekk forbi) som objekt. Ei omstilling gjer setninga meir flytande og følgjer originalen betre."
+      },
+      {
+        "text": "Dei tvinga ein mann som kom forbi til å bera krossen hans, Simon frå Kyréne, far til Aleksander og Rufus, som kom inn frå marka.",
+        "type": "grammar",
+        "severity": "minor",
+        "explanation": "Slik setninga står no, manglar det komma etter «forbi», og «til å bera krossen hans» kjem mellom «forbi» og «Simon», noko som gjer det uklart. Å flytta «til å bera krossen hans» til slutten av setninga gjer det tydelegare kven som bar krossen og kva som var tvangen, samstundes som apposisjonane om Simon flyt betre."
       }
     ]
   },
@@ -255,7 +269,15 @@
     "bookId": 41,
     "chapterId": 15,
     "verseId": 40,
-    "text": "Det var òg nokre kvinner der som stod på avstand og såg på. Mellom dei var Maria Magdalena, Maria, mor til Jakob den yngre og Joses, og Salome."
+    "text": "Det var òg nokre kvinner der som stod på avstand og såg på. Mellom dei var Maria Magdalena og Maria, mor til Jakob den vesle og Joses, og Salome.",
+    "versions": [
+      {
+        "text": "Det var òg nokre kvinner der som stod på avstand og såg på. Mellom dei var Maria Magdalena, Maria, mor til Jakob den yngre og Joses, og Salome.",
+        "type": "grammar",
+        "severity": "minor",
+        "explanation": "Originalen har τοῦ μικροῦ som tyder 'den vesle/den litle', ikkje 'den yngre' (som ville vore τοῦ νεωτέρου). I tillegg manglar 'og' mellom Maria Magdalena og Maria (mor til Jakob), noko som kan skapa forvirring om det er to eller tre kvinner."
+      }
+    ]
   },
   {
     "bookId": 41,

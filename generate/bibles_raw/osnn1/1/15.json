@@ -21,17 +21,31 @@
     "bookId": 1,
     "chapterId": 15,
     "verseId": 3,
-    "text": "Og Abram sa: «Du har ikkje gjeve meg etterkomarar, og sjå, ein tenar fødd i huset mitt skal arva meg.»"
+    "text": "Og Abram sa: «Sjå, du har ikkje gjeve meg etterkomarar, og ein som er fødd i huset mitt, skal arva meg.»",
+    "versions": [
+      {
+        "text": "Og Abram sa: «Du har ikkje gjeve meg etterkomarar, og sjå, ein tenar fødd i huset mitt skal arva meg.»",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "Det hebraiske 'הֵן לִי' betyr 'sjå, til meg' og bør gjengjevast med 'sjå' for å markera den emfatiske innleiinga. Vidare er 'בֶן־בֵּיתִי' (son av huset mitt) ikkje nødvendigvis ein tenar, men ein som er fødd i hushaldet. 'Ein tenar fødd i huset mitt' legg til tolkinga 'tenar' som ikkje finst i originalteksten."
+      }
+    ]
   },
   {
     "bookId": 1,
     "chapterId": 15,
     "verseId": 4,
-    "text": "Då kom Herrens ord til han og sa: «Han skal ikkje arva deg. Nei, ein som kjem frå ditt eige skaut, han skal arva deg.»",
+    "text": "Då kom Herrens ord til han og sa: «Han skal ikkje arva deg. Nei, ein som kjem frå ditt eige indre, han skal arva deg.»",
     "versions": [
       {
         "text": "Då kom Herrens ord til han og sa: «Han skal ikkje arva deg. Nei, ein som kjem frå ditt eige liv, han skal arva deg.»",
         "explanation": "Det hebraiske 'מִמֵּעֶיךָ' (frå dine innvolar/livmor) er meir konkret enn 'liv'. 'Skaut' er ein tradisjonell norsk omsetjing som betre fangar den fysiske tydinga og er poetisk passande."
+      },
+      {
+        "text": "Då kom Herrens ord til han og sa: «Han skal ikkje arva deg. Nei, ein som kjem frå ditt eige skaut, han skal arva deg.»",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "'Skaut' er uvanleg i moderne nynorsk og kan vera vanskeleg å forstå. Sidan 'liv' allereie er avvist i tidlegare versjon, kan 'indre' vera eit alternativ som fangar den fysiske tydinga av 'מִמֵּעֶיךָ' (frå innvolane dine) betre enn 'skaut', som tradisjonelt refererer til eit klesplagg/fang."
       }
     ]
   },
@@ -85,7 +99,15 @@
     "bookId": 1,
     "chapterId": 15,
     "verseId": 10,
-    "text": "Så henta han alt dette til han, delte dyra i to og la kvar del mot den andre. Men fuglane delte han ikkje."
+    "text": "Så henta han alt dette til han, delte dei midtover og la kvar halvdel mot den andre. Men fuglane delte han ikkje.",
+    "versions": [
+      {
+        "text": "Så henta han alt dette til han, delte dyra i to og la kvar del mot den andre. Men fuglane delte han ikkje.",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "Det hebraiske 'וַיְבַתֵּר אֹתָם בַּתָּוֶךְ' seier at han delte dei (אֹתָם, dvs. alle dyra) på midten. 'Delte dyra i to' er greitt, men 'delte dei midtover' er meir presist til 'בַּתָּוֶךְ' (på midten). Og 'אִישׁ־בִּתְרוֹ' betyr 'kvar halvdel', ikkje berre 'kvar del'."
+      }
+    ]
   },
   {
     "bookId": 1,
@@ -127,7 +149,15 @@
     "bookId": 1,
     "chapterId": 15,
     "verseId": 15,
-    "text": "Men du skal fara til fedrane dine i fred og verta gravlagd i høg alder."
+    "text": "Du sjølv skal fara til fedrane dine i fred og verta gravlagd i god alderdom.",
+    "versions": [
+      {
+        "text": "Men du skal fara til fedrane dine i fred og verta gravlagd i høg alder.",
+        "type": "grammar",
+        "severity": "minor",
+        "explanation": "'Men' er ikkje nødvendig her – hebraisk har berre 'וְאַתָּה' (og du/du sjølv), som markerer ein kontrast til det føregåande om ætta. 'Du sjølv' fangar den emfatiske 'אַתָּה' betre. Vidare er 'בְּשֵׂיבָה טוֹבָה' bokstaveleg 'i god gråhåra alder' – 'god alderdom' er nærare originalen enn 'høg alder'."
+      }
+    ]
   },
   {
     "bookId": 1,

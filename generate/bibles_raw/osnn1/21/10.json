@@ -15,11 +15,17 @@
     "bookId": 21,
     "chapterId": 10,
     "verseId": 2,
-    "text": "Hjartet til den vise er på hans høgre side, men hjartet til dåren er på hans venstre.",
+    "text": "Hjartet til den vise dreg til høgre, men hjartet til dåren dreg til venstre.",
     "versions": [
       {
         "text": "Den vise har hjartet på rett stad, men dåren har hjartet på feil stad.",
         "explanation": "Originalen nemner spesifikt 'høgre' (יָמִין) og 'venstre' (שְׂמֹאל), noko som har symbolsk tyding i hebraisk kultur der høgre representerer det gode/rette og venstre det dårlege. Omsetjinga mistar denne konkrete referansen ved å bruke 'rett stad' og 'feil stad'."
+      },
+      {
+        "text": "Hjartet til den vise er på hans høgre side, men hjartet til dåren er på hans venstre.",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "Det hebraiske לִימִינוֹ og לִשְׂמֹאלוֹ tyder 'mot/til høgre hans' og 'mot/til venstre hans' - det handlar om retning og tendens, ikkje bokstaveleg plassering. 'Er på hans høgre side' høyrest ut som ein anatomisk påstand. 'Dreg til høgre/venstre' fangar den symbolske meininga betre."
       }
     ]
   },
@@ -33,7 +39,15 @@
     "bookId": 21,
     "chapterId": 10,
     "verseId": 4,
-    "text": "Om sinnet til herskaren flammar opp mot deg, så forlat ikkje plassen din. For ro kan hindra store synder."
+    "text": "Om vreiden til herskaren flammar opp mot deg, så forlat ikkje plassen din. For ro kan hindra store synder.",
+    "versions": [
+      {
+        "text": "Om sinnet til herskaren flammar opp mot deg, så forlat ikkje plassen din. For ro kan hindra store synder.",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "Det hebraiske רוּחַ הַמּוֹשֵׁל tyder 'ånda/vreiden til herskaren'. 'Sinnet' er akseptabelt, men 'vreiden' er meir presist for konteksten der ein makthavar blir sint på ein underordna."
+      }
+    ]
   },
   {
     "bookId": 21,
@@ -45,7 +59,15 @@
     "bookId": 21,
     "chapterId": 10,
     "verseId": 6,
-    "text": "Dårar blir sette i høge stillingar mange, medan rike sit lågt."
+    "text": "Dårar blir sette i mange høge stillingar, medan rike sit lågt.",
+    "versions": [
+      {
+        "text": "Dårar blir sette i høge stillingar mange, medan rike sit lågt.",
+        "type": "grammar",
+        "severity": "minor",
+        "explanation": "Ordstillinga 'høge stillingar mange' er uidiomatisk på nynorsk. 'Mange' bør stå føre substantivet det modifiserer: 'mange høge stillingar'. Det hebraiske רַבִּים (mange) modifiserer מְּרוֹמִים (høgder/høge stillingar)."
+      }
+    ]
   },
   {
     "bookId": 21,
@@ -141,11 +163,17 @@
     "bookId": 21,
     "chapterId": 10,
     "verseId": 19,
-    "text": "Dei lagar mat for å le og gleda seg, vin gjer livet godt, og pengar svarar for alt.",
+    "text": "Dei lagar mat for å festa, vin gjer livet godt, og pengar svarar for alt.",
     "versions": [
       {
         "text": "Måltid gjev glede, og vin gjer livet godt, og pengar svarar for alt.",
         "explanation": "Det hebraiske 'לִשְׂחוֹק עֹשִׂים לֶחֶם' tyder 'dei lagar brød/mat for latter/glede' - altså at måltidet blir laga med tanke på feiring og glede. Omsetjinga 'Måltid gjev glede' snur meininga noko."
+      },
+      {
+        "text": "Dei lagar mat for å le og gleda seg, vin gjer livet godt, og pengar svarar for alt.",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "'For å le og gleda seg' er noko tungt. Det hebraiske לִשְׂחוֹק tyder 'for latter/glede/fest'. 'For å festa' er meir konsist og dekkjer meininga av fest og glede i ein meir naturleg nynorsk konstruksjon."
       }
     ]
   },

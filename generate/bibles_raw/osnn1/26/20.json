@@ -21,11 +21,17 @@
     "bookId": 26,
     "chapterId": 20,
     "verseId": 4,
-    "text": "Vil du døma dei, vil du døma dei, menneske?",
+    "text": "Vil du døma dei, vil du døma dei, menneske? Gjer dei kjende med dei avskyelege tinga fedrane deira gjorde.",
     "versions": [
       {
         "text": "Vil du døma dei? Vil du døma dei, menneske? Gjer dei kjende med dei avskyelege tinga som fedrane deira gjorde.",
         "explanation": "For betre munnleg flyt kan dei to retoriske spørsmåla bindast saman med komma i staden for punktum, slik det er i originalen der det er éi samanhengande setning."
+      },
+      {
+        "text": "Vil du døma dei, vil du døma dei, menneske?",
+        "type": "error",
+        "severity": "critical",
+        "explanation": "The second half of the verse (אֶת־תּוֹעֲבֹת אֲבוֹתָם הוֹדִיעֵם) is completely missing from the current translation. The version history shows this content was present in revision 1 but was removed. The stated reason for the change was about punctuation (combining the two rhetorical questions with comma), but the entire second clause was deleted, which is a critical omission of content. The sentence needs to be slightly reworded to avoid being identical to the previous version."
       }
     ]
   },
@@ -171,7 +177,15 @@
     "bookId": 26,
     "chapterId": 20,
     "verseId": 28,
-    "text": "Eg førte dei inn i landet som eg hadde lyft handa mi og sore å gje dei. Men då dei såg kvar høg haug og kvart lauvtungt tre, ofra dei slaktoffera sine der, bar fram gåvene sine som vekte min harme, sende opp den gode angen sin og helte ut drikkoffera sine."
+    "text": "Eg førte dei inn i landet som eg hadde lyft handa mi og svore å gje dei. Men då dei såg kvar høg haug og kvart lauvtungt tre, ofra dei slaktoffera sine der, bar fram gåvene sine som vekte min harme, sende opp den gode angen sin og helte ut drikkoffera sine.",
+    "versions": [
+      {
+        "text": "Eg førte dei inn i landet som eg hadde lyft handa mi og sore å gje dei. Men då dei såg kvar høg haug og kvart lauvtungt tre, ofra dei slaktoffera sine der, bar fram gåvene sine som vekte min harme, sende opp den gode angen sin og helte ut drikkoffera sine.",
+        "type": "grammar",
+        "severity": "minor",
+        "explanation": "'Sore' should be 'svore' (past participle of 'sverja' in nynorsk)."
+      }
+    ]
   },
   {
     "bookId": 26,
@@ -201,7 +215,15 @@
     "bookId": 26,
     "chapterId": 20,
     "verseId": 33,
-    "text": "Så sant eg lever, seier Herren Gud, med sterk hand og utstrekt arm og utrent harme vil eg herska over dykk."
+    "text": "Så sant eg lever, seier Herren Gud, med sterk hand og utstrekt arm og utrend harme vil eg herska over dykk.",
+    "versions": [
+      {
+        "text": "Så sant eg lever, seier Herren Gud, med sterk hand og utstrekt arm og utrent harme vil eg herska over dykk.",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "'Utrent' is an unusual nynorsk form. The more natural nynorsk form would be 'utrend' (from 'renna'). However, 'utaust harme' could also work well and would match the phrasing used elsewhere in the chapter ('ausa ut min harme'). This is a minor stylistic point."
+      }
+    ]
   },
   {
     "bookId": 26,
@@ -273,6 +295,14 @@
     "bookId": 26,
     "chapterId": 20,
     "verseId": 44,
-    "text": "Då skal de kjenna at eg er Herren, når eg handlar med dykk for mitt namn skuld og ikkje etter dei vonde vegane dykkar og dei skadelege gjerningane dykkar, Israels hus, seier Herren Gud."
+    "text": "Då skal de kjenna at eg er Herren, når eg handlar med dykk for mitt namn skuld og ikkje etter dei vonde vegane dykkar og dei fordervelege gjerningane dykkar, Israels hus, seier Herren Gud.",
+    "versions": [
+      {
+        "text": "Då skal de kjenna at eg er Herren, når eg handlar med dykk for mitt namn skuld og ikkje etter dei vonde vegane dykkar og dei skadelege gjerningane dykkar, Israels hus, seier Herren Gud.",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "הַנִּשְׁחָתוֹת means 'corrupt/corrupted', not simply 'skadelege' (harmful). 'Fordervelege' (corrupt/depraved) captures the Hebrew meaning more accurately and carries the moral weight of the original."
+      }
+    ]
   }
 ]

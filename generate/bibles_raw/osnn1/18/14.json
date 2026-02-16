@@ -63,7 +63,15 @@
     "bookId": 18,
     "chapterId": 14,
     "verseId": 9,
-    "text": "så spirer det ved lukta av vatn og set greiner som ein nyplanta vekst."
+    "text": "så spirer det ved lukta av vatn og skyt lauv som ein nyplanta vekst.",
+    "versions": [
+      {
+        "text": "så spirer det ved lukta av vatn og set greiner som ein nyplanta vekst.",
+        "type": "error",
+        "severity": "major",
+        "explanation": "Det hebraiske 'קָצִיר' (qatsir) betyr vanlegvis 'avling/grøde' men her i kontekst med eit tre som spirer på nytt, tyder det 'lauv/grøne' snarare enn 'greiner'. 'Skyt lauv' passar betre enn 'set greiner' for å skildre at treet veks som om det var nyplanta."
+      }
+    ]
   },
   {
     "bookId": 18,
@@ -75,7 +83,15 @@
     "bookId": 18,
     "chapterId": 14,
     "verseId": 11,
-    "text": "Som vatnet renn bort frå innsjøen, og elva minkar og tørkar ut,"
+    "text": "Som vatnet forsvinn frå sjøen, og ei elv tørkar ut og blir borte,",
+    "versions": [
+      {
+        "text": "Som vatnet renn bort frå innsjøen, og elva minkar og tørkar ut,",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "Det hebraiske 'יָם' (yam) kan bety 'sjø' eller 'innsjø', men 'sjøen' er meir standard omsetjing. 'אָזְלוּ' (azlu) betyr 'forsvinn/tek slutt' snarare enn berre 'renn bort'. Dessutan har 'יֶחֱרַב וְיָבֵשׁ' to verb – 'tørkar ut og blir tørr/borte' – som bør kome tydelegare fram."
+      }
+    ]
   },
   {
     "bookId": 18,
@@ -111,13 +127,29 @@
     "bookId": 18,
     "chapterId": 14,
     "verseId": 16,
-    "text": "Men no tel du kvart steg eg tek, og vaktar over synda mi."
+    "text": "Men no tel du kvart steg eg tek. Ville du ikkje då la vere å halde auge med synda mi?",
+    "versions": [
+      {
+        "text": "Men no tel du kvart steg eg tek, og vaktar over synda mi.",
+        "type": "error",
+        "severity": "major",
+        "explanation": "Verset er vanskeleg, men den noverande omsettinga presenterer begge linjene som parallelle utsegner. I konteksten av vers 13–15, der Job uttrykkjer eit ønske om at Gud ville gøyme han og seinare hugse han, kan vers 16 lesast som ein retorisk kontrast: 'For då ville du telje stega mine, men ikkje halde vakt over synda mi.' Alternativt kan 'לֹא־תִשְׁמוֹר' lesast som 'du ville ikkje lenger vakte over synda mi'. Fleire tolkingar finst, men den noverande versjonen manglar nyansen i den negative konstruksjonen."
+      }
+    ]
   },
   {
     "bookId": 18,
     "chapterId": 14,
     "verseId": 17,
-    "text": "Brotet mitt er forsegla i ein pung, og du legg meir til mi skuld."
+    "text": "Brotet mitt er forsegla i ein pung, og du smetar over mi skuld.",
+    "versions": [
+      {
+        "text": "Brotet mitt er forsegla i ein pung, og du legg meir til mi skuld.",
+        "type": "error",
+        "severity": "major",
+        "explanation": "Det hebraiske 'וַתִּטְפֹּל' (frå טפל) betyr 'du smetar over / dekker til', ikkje 'legg meir til'. Biletet er at Gud forseglar og gøymer bort synda, ikkje at han legg til meir skuld. Dette er parallelt med 'forsegla i ein pung' – begge bilete handlar om å samle og bevare skulda."
+      }
+    ]
   },
   {
     "bookId": 18,

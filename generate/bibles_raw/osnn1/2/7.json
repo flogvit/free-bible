@@ -57,11 +57,17 @@
     "bookId": 2,
     "chapterId": 7,
     "verseId": 9,
-    "text": "«Når farao seier til dykk: 'Gjer eit under!' – då skal du seia til Aron: 'Ta staven din og kast han framfor farao, så skal han verta til ein drage.'»",
+    "text": "«Når farao seier til dykk: 'Vis eit under!'",
     "versions": [
       {
         "text": "«Når farao seier til dykk: 'Gjer eit under!' – då skal du seia til Aron: 'Ta staven din og kast han framfor farao, så skal han verta til ein slange.'»",
         "explanation": "Det hebraiske ordet תַּנִּין (tannin) refererer til eit stort sjødyr, drage eller havuhyre, ikkje ein vanleg slange (נָחָשׁ, nachash). I vers 15 vert נָחָשׁ brukt og korrekt omsett med 'slange'. Skiljet mellom desse to orda bør bevarast for nøyaktigheit. Alternativt kan 'sjøuhyre' brukast."
+      },
+      {
+        "text": "«Når farao seier til dykk: 'Gjer eit under!' – då skal du seia til Aron: 'Ta staven din og kast han framfor farao, så skal han verta til ein drage.'»",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "Det hebraiske תְּנוּ לָכֶם מוֹפֵת tyder bokstavleg 'gjev eit teikn/under for dykk sjølve', altså 'vis eit under'. 'Gjer eit under' er ikkje feil, men 'vis eit under' er meir presist. Sidan dette verset allereie har éi tidlegare endring (slange→drage), bør ein vera varsam, men denne justeringa gjeld ein annan del av verset."
       }
     ]
   },
@@ -177,7 +183,15 @@
     "bookId": 2,
     "chapterId": 7,
     "verseId": 22,
-    "text": "Men dei egyptiske spåmennene gjorde det same med trolldomskunstene sine. Så hjarta til farao vart hardt, og han høyrde ikkje på dei, slik Herren hadde sagt."
+    "text": "Men dei egyptiske spåmennene gjorde det same med trolldomskunstene sine. Hjarta til farao vart hardt, og han høyrde ikkje på dei, slik Herren hadde sagt.",
+    "versions": [
+      {
+        "text": "Men dei egyptiske spåmennene gjorde det same med trolldomskunstene sine. Så hjarta til farao vart hardt, og han høyrde ikkje på dei, slik Herren hadde sagt.",
+        "type": "grammar",
+        "severity": "minor",
+        "explanation": "'Så hjarta til farao vart hardt' kan lesast som at det var spåmennene sine handlingar som forårsaka det harde hjarta. Det hebraiske וַיֶּחֱזַק brukar ein vanleg narrativ waw-konsekutiv utan kausal tyding. 'Hjarta til farao vart hardt' utan 'Så' er meir nøytralt og passar betre."
+      }
+    ]
   },
   {
     "bookId": 2,
@@ -219,12 +233,28 @@
     "bookId": 2,
     "chapterId": 7,
     "verseId": 28,
-    "text": "Elva skal vrimla av frosk. Dei skal koma opp og gå inn i huset ditt, i soverommet ditt og opp i senga di, i husa til tenarane dine og mellom folket ditt, i omnen din og i bakstetroga dine."
+    "text": "Elva skal vrimla av frosk. Dei skal koma opp og gå inn i huset ditt, i soverommet ditt og opp i senga di, i husa til tenarane dine og mellom folket ditt, i omnane dine og i bakstetroga dine.",
+    "versions": [
+      {
+        "text": "Elva skal vrimla av frosk. Dei skal koma opp og gå inn i huset ditt, i soverommet ditt og opp i senga di, i husa til tenarane dine og mellom folket ditt, i omnen din og i bakstetroga dine.",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "Det hebraiske וּבְתַנּוּרֶיךָ er fleirtal ('omnane dine'). 'Omnen din' (eintal) bør endrast til 'omnane dine' (fleirtal) for å samsvara med grunnteksten."
+      }
+    ]
   },
   {
     "bookId": 2,
     "chapterId": 7,
     "verseId": 29,
-    "text": "På deg sjølv og på folket ditt og på alle tenarane dine skal froskane koma opp.»"
+    "text": "På deg og på folket ditt og på alle tenarane dine skal froskane krypa opp.»",
+    "versions": [
+      {
+        "text": "På deg sjølv og på folket ditt og på alle tenarane dine skal froskane koma opp.»",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "Det hebraiske וּבְכָה tyder enkelt 'og på deg', ikkje 'på deg sjølv'. Dessutan er יַעֲלוּ ('koma/krypa opp') brukt om frosk som kryp på kroppen – 'krypa opp' er meir levande og presist enn 'koma opp'."
+      }
+    ]
   }
 ]

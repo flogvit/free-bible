@@ -27,7 +27,15 @@
     "bookId": 18,
     "chapterId": 24,
     "verseId": 5,
-    "text": "Sjå, som villesel i øydemarka går dei ut til arbeidet sitt, dei leitar etter føde frå morgonen. Audna gjev brød til borna deira."
+    "text": "Sjå, som villesel i øydemarka går dei ut til arbeidet sitt, dei leitar etter føde frå morgonen. Øydemarka gjev brød til borna deira.",
+    "versions": [
+      {
+        "text": "Sjå, som villesel i øydemarka går dei ut til arbeidet sitt, dei leitar etter føde frå morgonen. Audna gjev brød til borna deira.",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "Det hebraiske עֲרָבָה tyder 'ødemark/steppe', ikkje 'audna' (som tyder fattigdom/naud). Poenget er at den aude steppen er det som gjev mat til borna, ikkje at fattigdommen gjev dei brød."
+      }
+    ]
   },
   {
     "bookId": 18,
@@ -51,7 +59,15 @@
     "bookId": 18,
     "chapterId": 24,
     "verseId": 9,
-    "text": "Dei riv den farlause frå brystet, og tek pant frå den fattige."
+    "text": "Dei røvar den farlause barnet, og tek pant frå den fattige.",
+    "versions": [
+      {
+        "text": "Dei riv den farlause frå brystet, og tek pant frå den fattige.",
+        "type": "error",
+        "severity": "major",
+        "explanation": "Det hebraiske מִשֹּׁד (mi-shod) tyder ikkje 'frå brystet' (det ville vore משד med annan vokalisering). Her tyder יִגְזְלוּ מִשֹּׁד יָתוֹם 'dei røvar/plyndrar den farlause' - שֹׁד tyder 'ran/plyndring'. Uttrykket skildrar at dei plyndrar den farlause."
+      }
+    ]
   },
   {
     "bookId": 18,
@@ -87,7 +103,15 @@
     "bookId": 18,
     "chapterId": 24,
     "verseId": 14,
-    "text": "Ved daggryet står drapsmennene opp, dei drep den fattige og hjelpelause, og om natta er dei som tjuvar."
+    "text": "Ved daggryet står drapsmannen opp, han drep den fattige og hjelpelause, og om natta er han som ein tjuv.",
+    "versions": [
+      {
+        "text": "Ved daggryet står drapsmennene opp, dei drep den fattige og hjelpelause, og om natta er dei som tjuvar.",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "Det hebraiske רוֹצֵחַ er eintal, og heile verset skildrar ein enkeltperson (drapsmannen). For å vere tru mot originalen bør eintal brukast."
+      }
+    ]
   },
   {
     "bookId": 18,
@@ -111,7 +135,15 @@
     "bookId": 18,
     "chapterId": 24,
     "verseId": 18,
-    "text": "Lett som vatn flyt han bort, forbanna er deira jordlodd, ingen vender seg mot vegen til vingardane."
+    "text": "Lett flyt han bort på vatnet, forbanna er deira jordlodd, ingen vender seg mot vegen til vingardane.",
+    "versions": [
+      {
+        "text": "Lett som vatn flyt han bort, forbanna er deira jordlodd, ingen vender seg mot vegen til vingardane.",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "Det hebraiske קַל־הוּא עַל־פְּנֵי־מַיִם tyder 'han er lett på vassflata' (flyt fort bort på vatnet), ikkje 'lett som vatn'. Samanlikninga er at han driv fort bort på vatnet, ikkje at han er lett som vatn."
+      }
+    ]
   },
   {
     "bookId": 18,
@@ -141,7 +173,15 @@
     "bookId": 18,
     "chapterId": 24,
     "verseId": 22,
-    "text": "Men han dreg dei mektige med seg ved si kraft, han reiser seg og er ikkje trygg på livet."
+    "text": "Men Gud dreg dei mektige bort ved si kraft. Dei reiser seg, men er ikkje trygge på livet.",
+    "versions": [
+      {
+        "text": "Men han dreg dei mektige med seg ved si kraft, han reiser seg og er ikkje trygg på livet.",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "Subjektet i dette verset er truleg Gud (som dreg dei mektige bort i dom), og dei mektige er dei som ikkje kan stole på livet. Konteksten (v.22-24) skildrar korleis Gud til slutt dømmer dei ugudlege."
+      }
+    ]
   },
   {
     "bookId": 18,
@@ -159,6 +199,14 @@
     "bookId": 18,
     "chapterId": 24,
     "verseId": 25,
-    "text": "Er det ikkje slik? Kven kan då prove at eg lyg, og gjere orda mine til inkjes?"
+    "text": "Kven kan då prove at eg tek feil, og gjere orda mine til inkjes?",
+    "versions": [
+      {
+        "text": "Er det ikkje slik? Kven kan då prove at eg lyg, og gjere orda mine til inkjes?",
+        "type": "grammar",
+        "severity": "minor",
+        "explanation": "'Prove at eg lyg' er for sterkt. Det hebraiske יַכְזִיבֵנִי tyder 'gjere meg til ein løgnar' i tydinga 'motbevise meg'. 'Prove at eg tek feil' er meir presist og naturleg."
+      }
+    ]
   }
 ]

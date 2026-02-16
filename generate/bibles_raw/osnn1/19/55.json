@@ -3,7 +3,15 @@
     "bookId": 19,
     "chapterId": 55,
     "verseId": 1,
-    "text": "Til korleiaren. Med strengespel. Ein læresalme av David."
+    "text": "Til kormeisteren. Med strengespel. Ein læresalme av David.",
+    "versions": [
+      {
+        "text": "Til korleiaren. Med strengespel. Ein læresalme av David.",
+        "type": "grammar",
+        "severity": "minor",
+        "explanation": "'לַמְנַצֵּחַ' vert vanlegvis omsett med 'kormeisteren' eller 'songmeisteren' på norsk. 'Korleiaren' er ikkje feil, men 'kormeisteren' er meir etablert i bibelspråk."
+      }
+    ]
   },
   {
     "bookId": 19,
@@ -21,11 +29,17 @@
     "bookId": 19,
     "chapterId": 55,
     "verseId": 3,
-    "text": "Gjev akt på meg og svar meg! Eg vandrar uroleg i mi klage og stønar høgt.",
+    "text": "Gjev akt på meg og svar meg! Eg er rastlaus i mi klage og stønar høgt.",
     "versions": [
       {
         "text": "Gjev meg øyra di og svar meg! Eg er uroleg i mi klage og stønar høgt.",
         "explanation": "Det hebraiske 'אָרִיד' (arid) tyder meir 'vandrar rastlaust' eller 'er uroleg/kvileløs' enn berre 'er uroleg'. Også 'הַקְשִׁיבָה לִי' er betre omsett med 'gjev akt på meg' enn 'gjev meg øyra di' for meir naturleg nynorsk."
+      },
+      {
+        "text": "Gjev akt på meg og svar meg! Eg vandrar uroleg i mi klage og stønar høgt.",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "'אָרִיד' (arid) tyder 'er rastlaus' eller 'flakkar uroleg'. 'Vandrar uroleg' kan gje inntrykk av fysisk vandring, medan det hebraiske ordet handlar meir om indre uro og kvileløyse. 'Er rastlaus' fangar betre den indre uroa."
       }
     ]
   },
@@ -105,7 +119,15 @@
     "bookId": 19,
     "chapterId": 55,
     "verseId": 14,
-    "text": "Men det er du, eit menneske som meg, min nære ven og fortrulege."
+    "text": "Men det er du, eit menneske som er min like, min nære ven og fortrulege.",
+    "versions": [
+      {
+        "text": "Men det er du, eit menneske som meg, min nære ven og fortrulege.",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "'כְּעֶרְכִּי' tyder 'min like' eller 'av same rang som meg', ikkje berre 'som meg'. Uttrykket understrekar at personen er ein jamlike, ikkje berre eit anna menneske."
+      }
+    ]
   },
   {
     "bookId": 19,
@@ -147,7 +169,15 @@
     "bookId": 19,
     "chapterId": 55,
     "verseId": 20,
-    "text": "Gud skal høyra og svara dei – han som tronar frå eldgammal tid. Sela. For dei vender ikkje om og fryktar ikkje Gud."
+    "text": "Gud skal høyra og audmjuka dei – han som tronar frå eldgammal tid. Sela. For dei endrar seg ikkje og fryktar ikkje Gud.",
+    "versions": [
+      {
+        "text": "Gud skal høyra og svara dei – han som tronar frå eldgammal tid. Sela. For dei vender ikkje om og fryktar ikkje Gud.",
+        "type": "error",
+        "severity": "major",
+        "explanation": "'וְיַעֲנֵם' (ya'anem) kjem frå 'ענה' som i denne samanhengen tyder 'audmjuka' eller 'plaga', ikkje 'svara'. Dessutan tyder 'אֵין חֲלִיפוֹת לָמוֹ' 'dei endrar seg ikkje' (har ingen forandring), ikkje 'dei vender ikkje om'. Det handlar om at dei ikkje forandrar seg eller sin åtferd."
+      }
+    ]
   },
   {
     "bookId": 19,
@@ -183,6 +213,14 @@
     "bookId": 19,
     "chapterId": 55,
     "verseId": 24,
-    "text": "Men du, Gud, skal støyta dei ned i grava si djupe hole. Blodtørstige og svikefulle menn skal ikkje leva ut halve sine dagar. Men eg set mi lit til deg."
+    "text": "Men du, Gud, skal støyta dei ned i den djupaste grav. Blodtørstige og svikefulle menn skal ikkje leva ut halvparten av dagane sine. Men eg set mi lit til deg.",
+    "versions": [
+      {
+        "text": "Men du, Gud, skal støyta dei ned i grava si djupe hole. Blodtørstige og svikefulle menn skal ikkje leva ut halve sine dagar. Men eg set mi lit til deg.",
+        "type": "grammar",
+        "severity": "minor",
+        "explanation": "'Grava si djupe hole' er ein noko klønete konstruksjon. 'Den djupaste grav' er meir naturleg. Også 'halve sine dagar' bør vera 'halvparten av dagane sine' for betre nynorsk."
+      }
+    ]
   }
 ]

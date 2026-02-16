@@ -63,7 +63,15 @@
     "bookId": 13,
     "chapterId": 21,
     "verseId": 9,
-    "text": "Herren tala til Gad, sjåaren til David, og sa:"
+    "text": "Herren tala til Gad, sjåaren åt David, og sa:",
+    "versions": [
+      {
+        "text": "Herren tala til Gad, sjåaren til David, og sa:",
+        "type": "grammar",
+        "severity": "minor",
+        "explanation": "'Sjåaren åt David' er meir idiomatisk nynorsk enn 'sjåaren til David' for å uttrykkja tilhøyrsle til ein person. Begge er grammatisk korrekte, men 'åt' er meir tradisjonelt nynorsk."
+      }
+    ]
   },
   {
     "bookId": 13,
@@ -147,7 +155,15 @@
     "bookId": 13,
     "chapterId": 21,
     "verseId": 20,
-    "text": "Ornan snudde seg og såg engelen, og dei fire sønene hans, som var med han, gøymde seg. Ornan heldt på å treskja kveite."
+    "text": "Ornan snudde seg og såg engelen, og dei fire sønene hans gøymde seg saman med han. Ornan heldt på å treskja kveite.",
+    "versions": [
+      {
+        "text": "Ornan snudde seg og såg engelen, og dei fire sønene hans, som var med han, gøymde seg. Ornan heldt på å treskja kveite.",
+        "type": "error",
+        "severity": "major",
+        "explanation": "Teksten seier at dei fire sønene gøymde seg saman med Ornan (עִמּוֹ מִתְחַבְּאִים). Den noverande omsetjinga med 'som var med han' som relativsetning gjer det uklårt og kan lesast som om sønene berre var saman med Ornan, ikkje at dei gøymde seg saman. Det hebraiske seier at sønene (saman med Ornan) gøymde seg."
+      }
+    ]
   },
   {
     "bookId": 13,
@@ -159,7 +175,15 @@
     "bookId": 13,
     "chapterId": 21,
     "verseId": 22,
-    "text": "David sa til Ornan: «Lat meg få kjøpa denne treskjeplassen av deg, så eg kan byggja eit altar for Herren på han. Sel han til meg for full pris, så plaga kan verta stogga og halda seg borte frå folket.»"
+    "text": "David sa til Ornan: «Lat meg få kjøpa denne treskjeplassen av deg, så eg kan byggja eit altar for Herren på han. Sel han til meg for full pris, så plaga kan stansa og halda seg borte frå folket.»",
+    "versions": [
+      {
+        "text": "David sa til Ornan: «Lat meg få kjøpa denne treskjeplassen av deg, så eg kan byggja eit altar for Herren på han. Sel han til meg for full pris, så plaga kan verta stogga og halda seg borte frå folket.»",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "'Verta stogga' er eit noko uvanleg uttrykk på nynorsk. 'Stansa' er meir naturleg og lettlese."
+      }
+    ]
   },
   {
     "bookId": 13,

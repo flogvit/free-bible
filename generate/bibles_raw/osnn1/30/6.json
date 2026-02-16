@@ -3,11 +3,17 @@
     "bookId": 30,
     "chapterId": 6,
     "verseId": 1,
-    "text": "Ve over dei som lever trygt og sorgfritt i Sion, og dei som kjenner seg sikre på Samaria-fjellet! De fremste menn i det leiande folket, dei som Israels hus kjem til.",
+    "text": "Ve over dei som lever trygt og sorgfritt i Sion, og dei som kjenner seg sikre på Samaria-fjellet! Dei fremste menn i det leiande folket, dei som Israels hus kjem til.",
     "versions": [
       {
         "text": "Ve dei som lever trygt og sorgfritt i Sion, og dei som kjenner seg sikre på Samaria-fjellet! De fremste menn i det leiande folket, dei som Israels hus kjem til.",
         "explanation": "Det hebraiske 'hoy' (הוֹי) er eit ve-rop som tradisjonelt vert omsett med 'Ve over' for å markera profetisk dom og åtvaring. 'Ve dei' er grammatisk ufullstendig på nynorsk."
+      },
+      {
+        "text": "Ve over dei som lever trygt og sorgfritt i Sion, og dei som kjenner seg sikre på Samaria-fjellet! De fremste menn i det leiande folket, dei som Israels hus kjem til.",
+        "type": "grammar",
+        "severity": "minor",
+        "explanation": "'De fremste' bør vera 'Dei fremste' for konsistens med nynorsk rettskriving og resten av verset som brukar 'dei'. 'De' som demonstrativt pronomen er bokmål; på nynorsk skal det vera 'Dei'."
       }
     ]
   },
@@ -45,7 +51,15 @@
     "bookId": 30,
     "chapterId": 6,
     "verseId": 5,
-    "text": "Dei syng til harpespel og diktar songar for seg sjølve, som David gjorde."
+    "text": "Dei improviserer til harpeklang og finn opp instrument for seg sjølve, slik som David.",
+    "versions": [
+      {
+        "text": "Dei syng til harpespel og diktar songar for seg sjølve, som David gjorde.",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "Det hebraiske 'happortim' tyder å improvisera/klimpra (ikkje berre 'synga'), og 'chashvu lahem klei-shir' tyder at dei finn opp/tenkjer ut musikkinstrument for seg sjølve, slik David gjorde. Teksten samanliknar ikkje det å dikta songar med David, men det å finna opp instrument."
+      }
+    ]
   },
   {
     "bookId": 30,
@@ -63,7 +77,15 @@
     "bookId": 30,
     "chapterId": 6,
     "verseId": 8,
-    "text": "Herren Gud har svore ved seg sjølv, seier Herren, allhærs Gud: Eg avskyr Jakobs stoltheit og hatar slotta hans. Eg skal gje opp byen og alt som er i han."
+    "text": "Herren Gud har svore ved seg sjølv, seier Herren, allhærs Gud: Eg avskyr Jakobs stoltheit og hatar borgene hans. Eg skal gje byen over og alt som er i han.",
+    "versions": [
+      {
+        "text": "Herren Gud har svore ved seg sjølv, seier Herren, allhærs Gud: Eg avskyr Jakobs stoltheit og hatar slotta hans. Eg skal gje opp byen og alt som er i han.",
+        "type": "error",
+        "severity": "major",
+        "explanation": "'Armenotav' (אַרְמְנֹתָיו) tyder 'borgene/palassa hans', ikkje 'slotta'. 'Slott' er meir bokmålsprega. 'Borger' eller 'palass' er meir presist. I tillegg tyder 'vehisgartí' (וְהִסְגַּרְתִּי) 'overlevera/utlevera', ikkje 'gje opp'. Gud skal overlevera byen til fienden."
+      }
+    ]
   },
   {
     "bookId": 30,
@@ -75,7 +97,15 @@
     "bookId": 30,
     "chapterId": 6,
     "verseId": 10,
-    "text": "Når ein slektning kjem med den som skal brenna lika, for å henta beina ut or huset, og spør ein som sit inst i huset: 'Er det nokon att hos deg?' Då skal han svara: 'Ingen.' Og den andre skal seia: 'Hysj! For vi må ikkje nemna Herrens namn.'"
+    "text": "Når ein slektning kjem med den som skal brenna lika, for å bera beina ut or huset, og spør ein som sit inst i huset: 'Er det fleire hos deg?' Då skal han svara: 'Ingen.' Og den andre skal seia: 'Hysj! For vi må ikkje nemna Herrens namn.'",
+    "versions": [
+      {
+        "text": "Når ein slektning kjem med den som skal brenna lika, for å henta beina ut or huset, og spør ein som sit inst i huset: 'Er det nokon att hos deg?' Då skal han svara: 'Ingen.' Og den andre skal seia: 'Hysj! For vi må ikkje nemna Herrens namn.'",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "'Ha'od immekha' (הַעוֹד עִמָּךְ) tyder 'er det endå nokon/fleire hos deg?', altså om det finst fleire menneske att. 'Er det nokon att' kan fungera, men 'Er det fleire hos deg' er meir presist. Også 'lehotsi' er meir 'bera ut' enn 'henta ut'."
+      }
+    ]
   },
   {
     "bookId": 30,
@@ -87,17 +117,31 @@
     "bookId": 30,
     "chapterId": 6,
     "verseId": 12,
-    "text": "Spring hestar på fjell? Pløyer ein der med oksar? Men de har gjort rett til gift og rettferds frukt til malurt."
+    "text": "Spring hestar på fjell? Pløyer ein havet med oksar? Men de har gjort rett til gift og rettferds frukt til malurt.",
+    "versions": [
+      {
+        "text": "Spring hestar på fjell? Pløyer ein der med oksar? Men de har gjort rett til gift og rettferds frukt til malurt.",
+        "type": "error",
+        "severity": "major",
+        "explanation": "Det hebraiske 'baselá' tyder 'på klippe/fjell', og 'babbeqarim' kan lesast som 'med oksar' (på sjøen), etter ei vanleg emendert lesing 'babbeqarim yam' = 'pløyer ein havet med oksar'. Men den masoretiske teksten har 'babbeqarim' utan 'yam'. Hovudproblemet er at 'rosh' (רֹאשׁ) tyder 'gift/giftig plante' (ikkje berre 'gift'), og det hebraiske 'mishpat' er 'rettferd/rett' – noverande omsetjing er akseptabel her. Alternativt kan den masoretiske teksten lesast som retoriske spørsmål om absurditetar, og omsetjinga er rimeleg."
+      }
+    ]
   },
   {
     "bookId": 30,
     "chapterId": 6,
     "verseId": 13,
-    "text": "Dei som gleder seg over ingenting, dei som seier: 'Har vi ikkje med eiga makt vunne oss horn?'",
+    "text": "Dei som gleder seg over eit inkjevetta, dei som seier: 'Har vi ikkje med eiga kraft vunne oss horn?'",
     "versions": [
       {
         "text": "De som gleder dykk over ingenting, de som seier: 'Har vi ikkje med eiga makt vunne oss horn?'",
         "explanation": "For konsistens med resten av kapitlet bør dette verset bruka tredje person 'Dei som gleder seg' i staden for andre person 'De som gleder dykk'."
+      },
+      {
+        "text": "Dei som gleder seg over ingenting, dei som seier: 'Har vi ikkje med eiga makt vunne oss horn?'",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "'Lo davar' (לֹא דָבָר) tyder 'ingenting/eit inkjevetta' – det som ikkje er noko. 'Eit inkjevetta' understrekar det latterleg tomme i det dei feirar. 'Kraft' er meir nynorsk enn 'makt' for 'chozeq'."
       }
     ]
   },

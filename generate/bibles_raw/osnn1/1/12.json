@@ -39,11 +39,17 @@
     "bookId": 1,
     "chapterId": 12,
     "verseId": 5,
-    "text": "Abram tok med seg Sarai, kona si, og Lot, brorsonen sin, og alt godset dei hadde samla og alle menneska dei hadde vunne i Harran. Så drog dei ut for å fara til Kanaan, og dei kom til landet Kanaan.",
+    "text": "Abram tok med seg Sarai, kona si, og Lot, brorsonen sin, og alt godset dei hadde samla, og alle menneska dei hadde vunne i Harran. Så drog dei ut for å fara til Kanaan, og dei kom til landet Kanaan.",
     "versions": [
       {
         "text": "Abram tok med seg Sarai, kona si, og Lot, brorsonen sin, og alt godset dei hadde samla og alle tenarane dei hadde fått i Harran. Så drog dei ut for å fara til Kanaan, og dei kom til landet Kanaan.",
         "explanation": "Det hebraiske 'הַנֶּפֶשׁ אֲשֶׁר־עָשׂוּ' (literally 'the souls they had made') refererer tradisjonelt til menneske dei hadde omvendt eller vunne for si sak, ikkje berre tenarar. 'Menneska dei hadde vunne' gjev ei meir nøyaktig og teologisk rik omsetting enn 'tenarane dei hadde fått'."
+      },
+      {
+        "text": "Abram tok med seg Sarai, kona si, og Lot, brorsonen sin, og alt godset dei hadde samla og alle menneska dei hadde vunne i Harran. Så drog dei ut for å fara til Kanaan, og dei kom til landet Kanaan.",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "Det manglar eit komma før 'og alle menneska' for å skilje dei to leddsetningane tydeleg. Dette er ei mindre teiknsetjingssak."
       }
     ]
   },
@@ -105,13 +111,29 @@
     "bookId": 1,
     "chapterId": 12,
     "verseId": 15,
-    "text": "Stormennene til farao såg henne og rosa henne for farao, og kvinna vart henta til huset hans."
+    "text": "Stormennene til farao såg henne og rosa henne for farao, og kvinna vart henta til huset til farao.",
+    "versions": [
+      {
+        "text": "Stormennene til farao såg henne og rosa henne for farao, og kvinna vart henta til huset hans.",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "Hebraisk seier eksplisitt 'bet Par'oh' (huset til farao). 'Huset hans' er litt uklårt sidan det kan refere til farao eller ein stormann. 'Huset til farao' er meir presist og tydelegare."
+      }
+    ]
   },
   {
     "bookId": 1,
     "chapterId": 12,
     "verseId": 16,
-    "text": "Det gjekk Abram vel på grunn av henne. Han fekk småfe og storfe, esel, tenarar og tenestejenter, eselhopper og kamelar."
+    "text": "Det gjekk Abram vel på grunn av henne. Han fekk småfe og storfe, esel, slavar og slavekvinner, eselhopper og kamelar.",
+    "versions": [
+      {
+        "text": "Det gjekk Abram vel på grunn av henne. Han fekk småfe og storfe, esel, tenarar og tenestejenter, eselhopper og kamelar.",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "Hebraisk עֲבָדִים og שְׁפָחֹת tyder 'slavar' og 'slavekvinner', ikkje 'tenarar og tenestejenter'. I konteksten av gåver frå farao i det gamle Egypt er dette eigedom/slavar, ikkje friviljuge tenarar. 'Tenarar' er mildare enn originalteksten tilseier, men dette er ei mindre sak sidan mange omsetjingar brukar begge uttrykka."
+      }
+    ]
   },
   {
     "bookId": 1,

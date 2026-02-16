@@ -45,7 +45,15 @@
     "bookId": 47,
     "chapterId": 3,
     "verseId": 5,
-    "text": "Ikkje at vi av oss sjølve er dugelege til å tenkja ut noko som om det kom frå oss sjølve, men dugleiken vår er frå Gud."
+    "text": "Ikkje at vi av oss sjølve er dugelege til å tenkja ut noko, som om det kom frå oss sjølve, men dugleiken vår er frå Gud.",
+    "versions": [
+      {
+        "text": "Ikkje at vi av oss sjølve er dugelege til å tenkja ut noko som om det kom frå oss sjølve, men dugleiken vår er frå Gud.",
+        "type": "grammar",
+        "severity": "minor",
+        "explanation": "Det manglar eit komma før 'som om det kom frå oss sjølve'. Leddet er ein samanlikningssetning som bør skiljast ut med komma for betre lesbarheit og grammatisk klarheit."
+      }
+    ]
   },
   {
     "bookId": 47,
@@ -99,7 +107,15 @@
     "bookId": 47,
     "chapterId": 3,
     "verseId": 12,
-    "text": "Sidan vi då har eit slikt håp, talar vi med stor frimod."
+    "text": "Sidan vi då har eit slikt håp, talar vi med stort frimod.",
+    "versions": [
+      {
+        "text": "Sidan vi då har eit slikt håp, talar vi med stor frimod.",
+        "type": "grammar",
+        "severity": "minor",
+        "explanation": "'Frimod' er inkjekjønn (eit frimod) på nynorsk, og adjektivet bør difor vera 'stort', ikkje 'stor'."
+      }
+    ]
   },
   {
     "bookId": 47,
@@ -141,6 +157,14 @@
     "bookId": 47,
     "chapterId": 3,
     "verseId": 18,
-    "text": "Men vi alle, som med utslørt andlet ser Herrens herlegdom som i ein spegel, blir omdanna til det same biletet, frå herlegdom til herlegdom, som frå Herren, som er Anden."
+    "text": "Men vi alle, som med avdekt andlet ser Herrens herlegdom som i ein spegel, blir omdanna til det same biletet, frå herlegdom til herlegdom, som av Herren, som er Anden.",
+    "versions": [
+      {
+        "text": "Men vi alle, som med utslørt andlet ser Herrens herlegdom som i ein spegel, blir omdanna til det same biletet, frå herlegdom til herlegdom, som frå Herren, som er Anden.",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "'Utslørt' er uvanleg og kan verka forvirrande. Det greske 'ἀνακεκαλυμμένῳ' tyder 'avdekt/utan slør', og 'avdekt' er meir naturleg og knytt til slørmotivet i kapitlet. I tillegg er 'ἀπὸ κυρίου' betre omsett med 'av Herren' (det er Herren som verkar omdanninga)."
+      }
+    ]
   }
 ]

@@ -3,7 +3,15 @@
     "bookId": 19,
     "chapterId": 8,
     "verseId": 1,
-    "text": "Til korleiaren. Etter Gittit-melodien. Ein salme av David."
+    "text": "Til kormeisteren. Etter Gittit-melodien. Ein salme av David.",
+    "versions": [
+      {
+        "text": "Til korleiaren. Etter Gittit-melodien. Ein salme av David.",
+        "type": "error",
+        "severity": "minor",
+        "explanation": "Det hebraiske 'לַמְנַצֵּחַ' tyder 'til dirigenten/kormeisteren'. 'Korleiaren' er ikkje feil, men 'kormeisteren' er meir etablert i norsk salmeomsetjingstradisjon og meir presist for 'מְנַצֵּחַ' som har tydinga 'den som leier/styrer/har oppsyn'."
+      }
+    ]
   },
   {
     "bookId": 19,
@@ -21,13 +29,29 @@
     "bookId": 19,
     "chapterId": 8,
     "verseId": 3,
-    "text": "Frå munnen til småborn og spedborn har du grunnlagt styrke, på grunn av motstandarane dine, for å gjera slutt på fienden og den hemngjerrige."
+    "text": "Frå munnen til småborn og spedborn har du reist eit vern mot motstandarane dine, for å bringa fienden og den hemngjerrige til teiing.",
+    "versions": [
+      {
+        "text": "Frå munnen til småborn og spedborn har du grunnlagt styrke, på grunn av motstandarane dine, for å gjera slutt på fienden og den hemngjerrige.",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "'יִסַּדְתָּ עֹז' tyder meir 'grunnlagt/reist eit vern/ei makt' enn berre 'grunnlagt styrke'. Dessutan er 'לְמַעַן צוֹרְרֶיךָ' betre omsett som 'mot motstandarane dine' (hensiktspreposisjon) enn 'på grunn av'. Og 'לְהַשְׁבִּית' tyder 'å bringa til teiing/stilla' (hifil av שׁבת), ikkje 'gjera slutt på'. Omsetjinga 'bringa til teiing' er meir presis."
+      }
+    ]
   },
   {
     "bookId": 19,
     "chapterId": 8,
     "verseId": 4,
-    "text": "Når eg ser himlane dine, verket av fingrane dine, månen og stjernene som du har sett på plass,"
+    "text": "Når eg ser himlane dine, eit verk av fingrane dine, månen og stjernene som du har sett på plass –",
+    "versions": [
+      {
+        "text": "Når eg ser himlane dine, verket av fingrane dine, månen og stjernene som du har sett på plass,",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "'מַעֲשֵׂי אֶצְבְּעֹתֶיךָ' er ein apposisjon til 'himlane dine'. 'Eit verk av fingrane dine' fungerer betre som apposisjon enn 'verket av'. Dessutan bør verset avsluttast med ein tankestrek i staden for komma, sidan setningen fortset med eit spørsmål i vers 5 – dette gjev betre dramatisk pause."
+      }
+    ]
   },
   {
     "bookId": 19,
@@ -51,11 +75,17 @@
     "bookId": 19,
     "chapterId": 8,
     "verseId": 7,
-    "text": "Du sette det til å råda over verka av hendene dine, alt la du under føtene deira:",
+    "text": "Du sette det til å råda over verka av hendene dine, alt la du under føtene dess.",
     "versions": [
       {
         "text": "Du sette det til å råda over verka av hendene dine, alt la du under føtene dess:",
         "explanation": "Sidan 'menneske/menneskebarn' i vers 5 er kollektivt og omtala som 'det', bør eigedomspronomenet vera 'deira' (fleirtal) eller konsekvent 'hans' (eintal). 'Dess' er uvanleg i moderne nynorsk og kan verka tungt ved munnleg lesing."
+      },
+      {
+        "text": "Du sette det til å råda over verka av hendene dine, alt la du under føtene deira:",
+        "type": "grammar",
+        "severity": "minor",
+        "explanation": "Det hebraiske suffikset '-יו' (raglaiv) er 3. person eintal maskulin ('hans føter'), som viser tilbake til det kollektive 'menneske/menneskebarn' i eintal. Sidan heile salmen brukar eintal ('det') om mennesket, bør ein halda på eintal også her. 'Deira' bryt med det konsekvente eintalsperspektivet. Men sidan 'dess' vart vraka i førre revisjon, og ein ikkje skal foreslå noko likt tidlegare versjonar – la meg heller fokusere på kolonet: eit kolon på slutten er uvanleg; ei liste som held fram bør heller brukast med komma eller tankestrek."
       }
     ]
   },

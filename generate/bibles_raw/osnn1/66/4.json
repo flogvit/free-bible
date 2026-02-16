@@ -33,7 +33,15 @@
     "bookId": 66,
     "chapterId": 4,
     "verseId": 5,
-    "text": "Frå trona gjekk det ut lyn og drønn og torebrak. Framfor trona brann sju eldsfaklar, som er dei sju Guds ånder."
+    "text": "Frå trona gjekk det ut lyn og røyster og torebrak. Framfor trona brann sju eldsfaklar, som er dei sju Guds ånder.",
+    "versions": [
+      {
+        "text": "Frå trona gjekk det ut lyn og drønn og torebrak. Framfor trona brann sju eldsfaklar, som er dei sju Guds ånder.",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "The Greek 'φωναὶ' means 'voices' or 'sounds/røyster', not 'drønn' (rumbling). 'Drønn' is more of an interpretation. 'Røyster' or 'lydar' would be more accurate. Also, 'βρονταί' means 'thunders/torebrak', so having both 'drønn' and 'torebrak' creates redundancy."
+      }
+    ]
   },
   {
     "bookId": 66,
@@ -51,7 +59,15 @@
     "bookId": 66,
     "chapterId": 4,
     "verseId": 7,
-    "text": "Den første skapningen var lik ei løve, den andre var lik ein okse, den tredje hadde andlet som eit menneske, og den fjerde var lik ein flygande ørn."
+    "text": "Den første skapningen var lik ei løve, den andre var lik ein okse, den tredje hadde eit andlet som eit menneske, og den fjerde var lik ein flygande ørn.",
+    "versions": [
+      {
+        "text": "Den første skapningen var lik ei løve, den andre var lik ein okse, den tredje hadde andlet som eit menneske, og den fjerde var lik ein flygande ørn.",
+        "type": "grammar",
+        "severity": "minor",
+        "explanation": "'Andlet' is a neuter noun in nynorsk (eit andlet), so the article should be 'eit andlet' rather than just 'andlet'. Adding the article makes the phrase more natural and grammatically complete."
+      }
+    ]
   },
   {
     "bookId": 66,
@@ -73,13 +89,29 @@
     "bookId": 66,
     "chapterId": 4,
     "verseId": 9,
-    "text": "Kvar gong dei levande skapningane gjev ære og pris og takk til han som sit på trona, han som lever i all æve,"
+    "text": "Kvar gong dei levande skapningane gjev ære og pris og takk til han som sit på trona, han som lever i all æve og æve,",
+    "versions": [
+      {
+        "text": "Kvar gong dei levande skapningane gjev ære og pris og takk til han som sit på trona, han som lever i all æve,",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "The Greek 'εἰς τοὺς αἰῶνας τῶν αἰώνων' literally means 'unto the ages of the ages' (forever and ever). 'I all æve' is acceptable but 'i all æve og æve' better captures the emphatic double expression of the original."
+      }
+    ]
   },
   {
     "bookId": 66,
     "chapterId": 4,
     "verseId": 10,
-    "text": "då fell dei tjuefire eldste ned framfor han som sit på trona, og tilbed han som lever i all æve. Dei kastar kronene sine ned framfor trona og seier:"
+    "text": "då fell dei tjuefire eldste ned framfor han som sit på trona, og tilbed han som lever i all æve og æve. Dei kastar kronene sine ned framfor trona og seier:",
+    "versions": [
+      {
+        "text": "då fell dei tjuefire eldste ned framfor han som sit på trona, og tilbed han som lever i all æve. Dei kastar kronene sine ned framfor trona og seier:",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "Same issue as verse 9: 'εἰς τοὺς αἰῶνας τῶν αἰώνων' is an emphatic double expression meaning 'forever and ever' / 'i all æve og æve', not simply 'i all æve'. Consistency between v.9 and v.10 is also important."
+      }
+    ]
   },
   {
     "bookId": 66,

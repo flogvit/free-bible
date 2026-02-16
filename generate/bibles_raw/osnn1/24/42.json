@@ -33,7 +33,15 @@
     "bookId": 24,
     "chapterId": 42,
     "verseId": 5,
-    "text": "Då sa dei til Jeremia: «Lat Herren vera eit sant og trufast vitne mot oss om vi ikkje gjer etter alt det ordet Herren din Gud sender deg til oss med."
+    "text": "Då sa dei til Jeremia: «Lat Herren vera eit sant og trufast vitne mot oss om vi ikkje gjer etter kvart ord som Herren din Gud sender deg til oss med.",
+    "versions": [
+      {
+        "text": "Då sa dei til Jeremia: «Lat Herren vera eit sant og trufast vitne mot oss om vi ikkje gjer etter alt det ordet Herren din Gud sender deg til oss med.",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "Det hebraiske כְּכָל־הַדָּבָר betyr 'i samsvar med kvart ord / heile ordet'. 'Alt det ordet' er litt uklart; 'kvart ord' er meir presist og naturleg."
+      }
+    ]
   },
   {
     "bookId": 24,
@@ -75,7 +83,15 @@
     "bookId": 24,
     "chapterId": 42,
     "verseId": 12,
-    "text": "Eg vil visa dykk miskunn, så han får medkjensle med dykk og lèt dykk få bu att i landet dykkar."
+    "text": "Eg vil visa dykk miskunn, så han får medkjensle med dykk og lèt dykk venda attende til landet dykkar.",
+    "versions": [
+      {
+        "text": "Eg vil visa dykk miskunn, så han får medkjensle med dykk og lèt dykk få bu att i landet dykkar.",
+        "type": "error",
+        "severity": "major",
+        "explanation": "Det hebraiske וְהֵשִׁיב אֶתְכֶם אֶל־אַדְמַתְכֶם tyder 'og han skal føra dykk tilbake til jorda/landet dykkar'. Subjektet i verbet er kongen i Babel (han), som skal la dei venda tilbake. 'Lèt dykk få bu att' er ei fortolking som ikkje fangar opp at det handlar om å senda dei tilbake til heimlandet, ikkje berre å la dei bu der dei er."
+      }
+    ]
   },
   {
     "bookId": 24,
@@ -111,11 +127,17 @@
     "bookId": 24,
     "chapterId": 42,
     "verseId": 18,
-    "text": "For så seier Herren over hærskarane, Israels Gud: Liksom min vreide og harme vart rent ut over dei som budde i Jerusalem, slik skal min harme renna ut over dykk når de kjem til Egypt. De skal bli til ein eid og ei øydelegging, til ei forbanning og til spott, og de skal aldri meir sjå denne staden.",
+    "text": "For så seier Herren over hærskarane, Israels Gud: Liksom min vreide og harme vart aust ut over dei som budde i Jerusalem, slik skal min harme ausast ut over dykk når de kjem til Egypt. De skal bli til ein eid og ei øydelegging, til ei forbanning og til spott, og de skal aldri meir sjå denne staden.",
     "versions": [
       {
         "text": "For så seier Herren over hærskarane, Israels Gud: Liksom min vreide og harme vart rent ut over dei som budde i Jerusalem, slik skal min harme rennast ut over dykk når de kjem til Egypt. De skal bli til ein eid og ei øydelegging, til ei forbanning og til spott, og de skal aldri meir sjå denne staden.",
         "explanation": "For betre munnleg flyt er 'renna ut' meir naturleg enn 'rennast ut' på nynorsk."
+      },
+      {
+        "text": "For så seier Herren over hærskarane, Israels Gud: Liksom min vreide og harme vart rent ut over dei som budde i Jerusalem, slik skal min harme renna ut over dykk når de kjem til Egypt. De skal bli til ein eid og ei øydelegging, til ei forbanning og til spott, og de skal aldri meir sjå denne staden.",
+        "type": "grammar",
+        "severity": "minor",
+        "explanation": "Det hebraiske verbet נִתַּךְ/תִּתַּךְ tyder 'å ausa ut' eller 'å renna ut'. 'Rent ut' kan oppfattast som tvetydig (renning vs. reingjering). 'Aust ut' er meir presist og vanleg omsetjing av dette verbet. Men sidan verset har éin tidlegare revisjon der nettopp orda vart endra, og endringa frå 'rennast' til 'renna' var gjord medvite, er dette berre ein mindre merknad."
       }
     ]
   },

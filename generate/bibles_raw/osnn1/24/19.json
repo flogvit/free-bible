@@ -27,7 +27,15 @@
     "bookId": 24,
     "chapterId": 19,
     "verseId": 4,
-    "text": "For dei har forlate meg og gjort denne staden framand. Dei har brent røykjelse her for andre gudar som korkje dei, fedrane deira eller Juda-kongane kjende, og dei har fylt denne staden med blod frå uskuldige."
+    "text": "For dei har forlate meg og vanhelga denne staden. Dei har brent røykjelse her for andre gudar som korkje dei, fedrane deira eller Juda-kongane kjende, og dei har fylt denne staden med blod frå uskuldige.",
+    "versions": [
+      {
+        "text": "For dei har forlate meg og gjort denne staden framand. Dei har brent røykjelse her for andre gudar som korkje dei, fedrane deira eller Juda-kongane kjende, og dei har fylt denne staden med blod frå uskuldige.",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "Det hebraiske verbet 'נכר' i pi'el tyder å 'gjera framand/ukjenneleg', men i konteksten av ein heilag stad handlar det om å vanhelga/profanere han ved å innføre framande gudar. 'Vanhelga' formidlar meininginnhaldet betre og er meir naturleg norsk enn 'gjort framand'."
+      }
+    ]
   },
   {
     "bookId": 24,
@@ -39,11 +47,17 @@
     "bookId": 24,
     "chapterId": 19,
     "verseId": 6,
-    "text": "Sjå, difor kjem det dagar, seier Herren, då denne staden ikkje lenger skal kallast Tofet eller Hinnom-dalen, men Drapsdalen.",
+    "text": "Sjå, difor kjem det dagar, seier Herren, då denne staden ikkje lenger skal kallast Tofet eller Hinnom-son-dalen, men Drapsdalen.",
     "versions": [
       {
         "text": "Sjå, difor kjem dagar, seier Herren, då denne staden ikkje lenger skal kallast Tofet eller Hinnom-dalen, men Drapsdalen.",
         "explanation": "For betre flyt på nynorsk bør det heita 'kjem det dagar' heller enn 'kjem dagar'. Dette gjev ein meir naturleg munnleg rytme."
+      },
+      {
+        "text": "Sjå, difor kjem det dagar, seier Herren, då denne staden ikkje lenger skal kallast Tofet eller Hinnom-dalen, men Drapsdalen.",
+        "type": "error",
+        "severity": "minor",
+        "explanation": "I vers 2 vart 'גֵּיא בֶן־הִנֹּם' medvite omsett til 'Hinnom-son-dalen' (jf. versjonshistorikken). For konsekvens bør same omsetjing brukast her i vers 6."
       }
     ]
   },
@@ -51,13 +65,29 @@
     "bookId": 24,
     "chapterId": 19,
     "verseId": 7,
-    "text": "Eg vil gjera planane til Juda og Jerusalem til inkjes på denne staden. Eg vil la dei falla for sverd framfor fiendane sine og for handa til dei som står dei etter livet. Lika deira vil eg gje til føde for fuglane under himmelen og dyra på jorda."
+    "text": "Eg vil gjera planane til Juda og Jerusalem til inkjes på denne staden. Eg vil la dei falla for sverd framfor fiendane sine og for handa til dei som står dei etter livet. Lika deira vil eg gje til mat for fuglane under himmelen og dyra på jorda.",
+    "versions": [
+      {
+        "text": "Eg vil gjera planane til Juda og Jerusalem til inkjes på denne staden. Eg vil la dei falla for sverd framfor fiendane sine og for handa til dei som står dei etter livet. Lika deira vil eg gje til føde for fuglane under himmelen og dyra på jorda.",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "'Føde' er eit noko gamaldags ord. 'Mat' er meir moderne og lettlese nynorsk, og passar betre med målet om ein moderne og lettlesen tekst."
+      }
+    ]
   },
   {
     "bookId": 24,
     "chapterId": 19,
     "verseId": 8,
-    "text": "Eg vil gjera denne byen til ei øydemark og til spott. Alle som går forbi, skal fasa og spotta over alle plagene hennar."
+    "text": "Eg vil gjera denne byen til ei øydemark og til spott. Alle som går forbi, skal fasa og blåsa av alle plagene hennar.",
+    "versions": [
+      {
+        "text": "Eg vil gjera denne byen til ei øydemark og til spott. Alle som går forbi, skal fasa og spotta over alle plagene hennar.",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "Det hebraiske 'יִשְׁרֹק' tyder å 'blåsa/fløyta' (i forakt/sjokk), ikkje å 'spotta'. Verbet uttrykkjer ei fysisk reaksjon på øydelegging. 'Blåsa av' fangar betre det forundra og foraktfulle i uttrykket."
+      }
+    ]
   },
   {
     "bookId": 24,
@@ -93,7 +123,15 @@
     "bookId": 24,
     "chapterId": 19,
     "verseId": 13,
-    "text": "Husa i Jerusalem og husa til Juda-kongane skal verta ureine som Tofet-staden – alle dei husa der dei på taka brende røykjelse for heile himmelens hær og auste ut drikkoffer for andre gudar."
+    "text": "Husa i Jerusalem og husa til Juda-kongane skal verta ureine som Tofet-staden – alle dei husa der dei på taka har brent røykjelse for heile himmelens hær og aust ut drikkoffer for andre gudar.",
+    "versions": [
+      {
+        "text": "Husa i Jerusalem og husa til Juda-kongane skal verta ureine som Tofet-staden – alle dei husa der dei på taka brende røykjelse for heile himmelens hær og auste ut drikkoffer for andre gudar.",
+        "type": "grammar",
+        "severity": "minor",
+        "explanation": "Sidan dette viser til noko som allereie har skjedd (perfektum i hebraisk), er 'har brent' og 'aust ut' meir korrekt enn 'brende' og 'auste'. Det gjev også betre nynorsk."
+      }
+    ]
   },
   {
     "bookId": 24,

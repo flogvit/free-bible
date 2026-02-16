@@ -69,7 +69,15 @@
     "bookId": 24,
     "chapterId": 18,
     "verseId": 12,
-    "text": "Men dei seier: Det nyttar ikkje! Vi vil følgja våre eigne tankar, og kvar av oss vil handla etter sitt vonde og harde hjarte.»"
+    "text": "Men dei seier: «Det nyttar ikkje! Vi vil følgja våre eigne tankar, og kvar av oss vil handla etter sitt vonde og harde hjarte.»",
+    "versions": [
+      {
+        "text": "Men dei seier: Det nyttar ikkje! Vi vil følgja våre eigne tankar, og kvar av oss vil handla etter sitt vonde og harde hjarte.»",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "The quoted speech from the people should have an opening quotation mark before 'Det nyttar ikkje!' for consistency with Norwegian punctuation conventions. The closing mark is present but the opening one is missing."
+      }
+    ]
   },
   {
     "bookId": 24,
@@ -81,13 +89,29 @@
     "bookId": 24,
     "chapterId": 18,
     "verseId": 14,
-    "text": "Forsvinn vel snøen frå Libanons fjellknausar? Vert vel dei kalde, rennande vatna frå fjerne stader rivne bort?"
+    "text": "Forsvinn vel snøen frå Libanons fjellklipper? Tørkar vel dei kalde, rennande vatna frå fjerne kjelder ut?",
+    "versions": [
+      {
+        "text": "Forsvinn vel snøen frå Libanons fjellknausar? Vert vel dei kalde, rennande vatna frå fjerne stader rivne bort?",
+        "type": "error",
+        "severity": "major",
+        "explanation": "The Hebrew מִצּוּר means 'from the rock/cliff' rather than 'fjellknausar' (mountain peaks), and יִנָּתְשׁוּ means 'be uprooted/dried up' rather than 'rivne bort'. The rhetorical point is about permanent water sources drying up, not being torn away. 'Fjellklipper' is more accurate for צוּר."
+      }
+    ]
   },
   {
     "bookId": 24,
     "chapterId": 18,
     "verseId": 15,
-    "text": "Men folket mitt har gløymt meg, dei brenner røykjelse for det som ingenting er. Dei har snubla på vegane sine, dei eldgamle stigane, og dei går no på stiar, på ein veg som ikkje er opparbeidd."
+    "text": "Men folket mitt har gløymt meg, dei brenner røykjelse for avgudar som er inkje verde. Dei har fått dei til å snubla på vegane sine, dei eldgamle stigane, og dei går no på stiar, på ein veg som ikkje er opparbeidd.",
+    "versions": [
+      {
+        "text": "Men folket mitt har gløymt meg, dei brenner røykjelse for det som ingenting er. Dei har snubla på vegane sine, dei eldgamle stigane, og dei går no på stiar, på ein veg som ikkje er opparbeidd.",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "The Hebrew לַשָּׁוְא ('for vanity/falsehood') refers to false gods/idols, and 'det som ingenting er' is acceptable but 'avgudar som er inkje verde' makes the meaning clearer. Also, וַיַּכְשִׁלוּם has a causative sense — 'they (the false gods) made them stumble' — which the current translation doesn't fully capture."
+      }
+    ]
   },
   {
     "bookId": 24,
@@ -123,7 +147,15 @@
     "bookId": 24,
     "chapterId": 18,
     "verseId": 21,
-    "text": "Gjev difor borna deira til svolt og gjev dei over i hendene på sverdet!"
+    "text": "Gjev difor borna deira til svolt og gjev dei over til sverdet! Lat konene deira bli barnlause og enkjer, lat mennene deira bli drepne av døden, og ungdomane deira bli slått av sverdet i krigen!",
+    "versions": [
+      {
+        "text": "Gjev difor borna deira til svolt og gjev dei over i hendene på sverdet!",
+        "type": "error",
+        "severity": "major",
+        "explanation": "The current translation only covers the first half of verse 21. The Hebrew text continues with significant content about wives becoming bereaved and widows, men being slain by death, and young men struck by the sword in battle. This is a major omission of content."
+      }
+    ]
   },
   {
     "bookId": 24,

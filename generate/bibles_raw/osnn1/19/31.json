@@ -3,7 +3,15 @@
     "bookId": 19,
     "chapterId": 31,
     "verseId": 1,
-    "text": "Til korleiaren. Ein salme av David."
+    "text": "Til kormeisteren. Ein salme av David.",
+    "versions": [
+      {
+        "text": "Til korleiaren. Ein salme av David.",
+        "type": "grammar",
+        "severity": "minor",
+        "explanation": "'Korleiaren' er ikkje eit vanleg nynorsk ord. 'Kormeisteren' eller 'Til musikkmeisteren' er meir etablerte omsetjingar av לַמְנַצֵּחַ og betre nynorsk."
+      }
+    ]
   },
   {
     "bookId": 19,
@@ -15,7 +23,15 @@
     "bookId": 19,
     "chapterId": 31,
     "verseId": 3,
-    "text": "Bøy øyret ditt til meg, skund deg og redd meg! Ver eit berg og ei borg for meg, eit festningsverk som frelser meg!"
+    "text": "Bøy øyret ditt til meg, skund deg og redd meg! Ver ei klippeborg for meg, eit festningsverk som frelser meg!",
+    "versions": [
+      {
+        "text": "Bøy øyret ditt til meg, skund deg og redd meg! Ver eit berg og ei borg for meg, eit festningsverk som frelser meg!",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "Det hebraiske לְֽצוּר־מָ֭עוֹז er éi samanstilling: 'ei befesta klippe' eller 'ei klippeborg' - ikkje to separate ting ('eit berg og ei borg'). Uttrykket peikar på éin metafor, ikkje to."
+      }
+    ]
   },
   {
     "bookId": 19,
@@ -45,7 +61,15 @@
     "bookId": 19,
     "chapterId": 31,
     "verseId": 8,
-    "text": "Eg vil jubla og gleda meg over di miskunn, for du har sett mi naud. Du kjenner mi sjel i trengsler."
+    "text": "Eg vil jubla og gleda meg over di miskunn, for du har sett mi naud. Du kjenner trengslene til mi sjel.",
+    "versions": [
+      {
+        "text": "Eg vil jubla og gleda meg over di miskunn, for du har sett mi naud. Du kjenner mi sjel i trengsler.",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "Omsetjinga 'mi sjel i trengsler' er litt uklår. Hebraisk בְּצָרוֹת נַפְשִׁי betyr 'trengslene til mi sjel' eller 'mi sjels trengsler' - det er trengslene Gud kjenner, ikkje sjela i trengsler."
+      }
+    ]
   },
   {
     "bookId": 19,
@@ -63,11 +87,17 @@
     "bookId": 19,
     "chapterId": 31,
     "verseId": 11,
-    "text": "For livet mitt svinn bort i sorg og åra mine i sukk. Mi kraft sviktar på grunn av mi naud, og beina mine tærest bort.",
+    "text": "For livet mitt svinn bort i sorg og åra mine i sukk. Mi kraft sviktar på grunn av mi liding, og beina mine tærest bort.",
     "versions": [
       {
         "text": "For livet mitt svinn bort i sorg og åra mine i sukk. Mi kraft sviktar på grunn av mi skuld, og beina mine tærest bort.",
         "explanation": "Det hebraiske ordet בַּעֲוֺנִי (ba'avoni) kan bety både 'skuld/synd' og 'liding/naud'. I konteksten av denne salmen, der David klagar over forfølging frå fiendar (ikkje over eiga synd), er 'naud' eller 'liding' ei meir passande omsetjing. Mange moderne omsetjingar vel denne tolkinga."
+      },
+      {
+        "text": "For livet mitt svinn bort i sorg og åra mine i sukk. Mi kraft sviktar på grunn av mi naud, og beina mine tærest bort.",
+        "type": "theological",
+        "severity": "minor",
+        "explanation": "Versjonshistorikken viser at dette vart endra frå 'skuld' til 'naud'. Endringsgrunnen nemner at 'naud' eller 'liding' er passande. Men 'naud' er allereie brukt i v.10 (צַר). 'Liding' ville unngå repetisjon og framleis følgja intensjonen bak endringa."
       }
     ]
   },
@@ -87,13 +117,29 @@
     "bookId": 19,
     "chapterId": 31,
     "verseId": 13,
-    "text": "Eg er gløymd som ein død, borte frå hjarta. Eg har vorte som eit kar som er kasta."
+    "text": "Eg er gløymd som ein død, borte frå hjarta. Eg har vorte som eit kar som er mist.",
+    "versions": [
+      {
+        "text": "Eg er gløymd som ein død, borte frå hjarta. Eg har vorte som eit kar som er kasta.",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "Det hebraiske אֹבֵד betyr 'tapt/mist/gått til grunne', ikkje 'kasta'. 'Eit kar som er mist' eller 'eit bortkomme kar' er nærare originalen."
+      }
+    ]
   },
   {
     "bookId": 19,
     "chapterId": 31,
     "verseId": 14,
-    "text": "For eg høyrer baktalinga frå mange, redsle på alle kantar. Dei samlar seg mot meg og legg planar om å ta livet mitt."
+    "text": "For eg høyrer kviskring frå mange, redsle på alle kantar. Dei samlar seg mot meg og legg planar om å ta livet mitt.",
+    "versions": [
+      {
+        "text": "For eg høyrer baktalinga frå mange, redsle på alle kantar. Dei samlar seg mot meg og legg planar om å ta livet mitt.",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "דִּבַּת betyr meir 'kviskring/sladder' enn 'baktaling'. 'Kviskring' fangar betre opp den løynde og trugande tonen i den hebraiske teksten."
+      }
+    ]
   },
   {
     "bookId": 19,
@@ -159,7 +205,15 @@
     "bookId": 19,
     "chapterId": 31,
     "verseId": 23,
-    "text": "Eg sa i mi angst: «Eg er støytt bort frå dine auge.» Men du høyrde mi bøn då eg ropa til deg."
+    "text": "Eg sa i mi angst: «Eg er riven bort frå dine auge.» Men du høyrde mi bøn då eg ropa til deg.",
+    "versions": [
+      {
+        "text": "Eg sa i mi angst: «Eg er støytt bort frå dine auge.» Men du høyrde mi bøn då eg ropa til deg.",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "Det hebraiske נִגְרַזְתִּי (frå גרז) betyr 'riven bort/avskoren', ikkje 'støytt bort'. 'Riven bort' formidlar den meir dramatiske og desperate kjensla i originalen."
+      }
+    ]
   },
   {
     "bookId": 19,

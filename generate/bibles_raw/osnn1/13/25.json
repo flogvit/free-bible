@@ -15,7 +15,15 @@
     "bookId": 13,
     "chapterId": 25,
     "verseId": 3,
-    "text": "Av Jedutun, sønene til Jedutun: Gedalja, Serji, Jesaja, Hasjabja og Mattitja, seks i alt, under leiing av far deira Jedutun, som profeterte med lyre for å takka og lovsyngja Herren."
+    "text": "Av Jedutun, sønene til Jedutun: Gedalja, Seri, Jesaja, Hasjabja og Mattitja, seks i alt, under leiing av far deira Jedutun, som profeterte med lyre for å takka og lovsyngja Herren.",
+    "versions": [
+      {
+        "text": "Av Jedutun, sønene til Jedutun: Gedalja, Serji, Jesaja, Hasjabja og Mattitja, seks i alt, under leiing av far deira Jedutun, som profeterte med lyre for å takka og lovsyngja Herren.",
+        "type": "error",
+        "severity": "minor",
+        "explanation": "Det hebraiske namnet צְרִי vert vanlegvis transkribert som 'Seri' (eller 'Tseri'), ikkje 'Serji'. Det er ingen j-lyd i det hebraiske namnet."
+      }
+    ]
   },
   {
     "bookId": 13,
@@ -27,11 +35,17 @@
     "bookId": 13,
     "chapterId": 25,
     "verseId": 5,
-    "text": "Alle desse var sønene til Heman, kongens seer, etter Guds ord om å opphøgja hans horn. Gud gav Heman fjorten søner og tre døtrer.",
+    "text": "Alle desse var sønene til Heman, kongens seer, i Guds ord, for å opphøgja hornet. Gud gav Heman fjorten søner og tre døtrer.",
     "versions": [
       {
         "text": "Alle desse var sønene til Heman, kongens seer, for å opphøgja hornet ved Guds ord. Gud gav Heman fjorten søner og tre døtrer.",
         "explanation": "Uttrykket 'for å opphøgja hornet ved Guds ord' er noko uklart. Teksten seier at Heman var seer 'i Guds ord' (בְּדִבְרֵי הָאֱלֹהִים) og formålet var 'å opphøgja hornet' (symbolsk for makt/ære). Ei omformulering gjer meininga tydelegare."
+      },
+      {
+        "text": "Alle desse var sønene til Heman, kongens seer, etter Guds ord om å opphøgja hans horn. Gud gav Heman fjorten søner og tre døtrer.",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "Uttrykket בְּדִבְרֵי הָאֱלֹהִים modifiserer 'seer' (חֹזֵה) og tyder 'i Guds ord/saker', dvs. han var seer i guddommelege saker. לְהָרִים קָרֶן ('for å opphøgja hornet') er eit eige ledd som uttrykkjer formålet. 'Etter Guds ord om å opphøgja hans horn' blandar saman dei to ledda."
       }
     ]
   },
@@ -135,7 +149,15 @@
     "bookId": 13,
     "chapterId": 25,
     "verseId": 22,
-    "text": "Det femtande på Jeremot, sønene og brørne hans, tolv i alt."
+    "text": "Det femtande på Jerimot, sønene og brørne hans, tolv i alt.",
+    "versions": [
+      {
+        "text": "Det femtande på Jeremot, sønene og brørne hans, tolv i alt.",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "I vers 4 er same namn (יְרִימוֹת) transkribert som 'Jerimot', men i vers 22 er varianten יִרֵמוֹת transkribert som 'Jeremot'. For konsekvens og sidan det er same person, bør det skrivast 'Jerimot' begge stader."
+      }
+    ]
   },
   {
     "bookId": 13,

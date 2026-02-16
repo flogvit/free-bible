@@ -27,7 +27,15 @@
     "bookId": 8,
     "chapterId": 3,
     "verseId": 3,
-    "text": "Så bad deg og salv deg, ta på deg finkleda dine og gå ned til treskjeplassen. Men lat deg ikkje sjå av han før han er ferdig med å eta og drikka."
+    "text": "Så bada deg og salv deg, ta på deg finkleda dine og gå ned til treskjeplassen. Men lat deg ikkje sjå av han før han er ferdig med å eta og drikka.",
+    "versions": [
+      {
+        "text": "Så bad deg og salv deg, ta på deg finkleda dine og gå ned til treskjeplassen. Men lat deg ikkje sjå av han før han er ferdig med å eta og drikka.",
+        "type": "grammar",
+        "severity": "major",
+        "explanation": "'bad deg' er feil bøying. Det hebraiske וְרָחַצְתְּ er ein imperativ/perfektum som tyder 'vask deg' eller 'bada deg'. Korrekt nynorsk imperativ av 'bada' er 'bada deg', ikkje 'bad deg'."
+      }
+    ]
   },
   {
     "bookId": 8,
@@ -63,7 +71,15 @@
     "bookId": 8,
     "chapterId": 3,
     "verseId": 8,
-    "text": "Midt på natta vakna mannen brått og bøygde seg fram. Og sjå, ei kvinne låg ved føtene hans!"
+    "text": "Midt på natta kvakk mannen til og bøygde seg fram. Og sjå, ei kvinne låg ved føtene hans!",
+    "versions": [
+      {
+        "text": "Midt på natta vakna mannen brått og bøygde seg fram. Og sjå, ei kvinne låg ved føtene hans!",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "וַיֶּחֱרַד tyder 'skalv/vart skremd' meir enn 'vakna brått'. 'Kvakk til' fangar betre den plutselege skrekken/redselen i det hebraiske verbet חרד."
+      }
+    ]
   },
   {
     "bookId": 8,
@@ -87,11 +103,17 @@
     "bookId": 8,
     "chapterId": 3,
     "verseId": 11,
-    "text": "Og no, dotter mi, ver ikkje redd! Alt det du seier, vil eg gjera for deg. For alle ved byporten i folket mitt veit at du er ei dugande kvinne.",
+    "text": "Og no, dotter mi, ver ikkje redd! Alt det du seier, vil eg gjera for deg. For heile byporten til folket mitt veit at du er ei dugande kvinne.",
     "versions": [
       {
         "text": "Og no, dotter mi, ver ikkje redd! Alt det du seier, vil eg gjera for deg. For heile folket mitt i byen veit at du er ei dugande kvinne.",
         "explanation": "שַׁעַר (sha'ar) tyder 'port', og 'byporten' var staden der dei eldste sat og tok avgjerder. Dette gjev meir presis kulturell kontekst enn berre 'i byen'."
+      },
+      {
+        "text": "Og no, dotter mi, ver ikkje redd! Alt det du seier, vil eg gjera for deg. For alle ved byporten i folket mitt veit at du er ei dugande kvinne.",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "כָּל־שַׁעַר עַמִּי tyder 'heile porten til folket mitt', dvs. alle som samlast ved byporten. 'Alle ved byporten i folket mitt' er litt uklart. 'Heile byporten til folket mitt' er meir idiomatisk og fangar at שַׁעַר her tyder forsamlinga ved porten."
       }
     ]
   },
@@ -99,7 +121,15 @@
     "bookId": 8,
     "chapterId": 3,
     "verseId": 12,
-    "text": "Det er sant at eg er løysar, men det finst ein løysar som er nærare enn eg."
+    "text": "Og no, det er sant at eg er løysar, men det finst òg ein løysar som er nærare enn eg.",
+    "versions": [
+      {
+        "text": "Det er sant at eg er løysar, men det finst ein løysar som er nærare enn eg.",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "Verset startar med וְעַתָּה ('og no'), og וְגַם tyder 'og også/òg'. Begge desse orda manglar i omsettinga. 'Og no' knyt dette til det føregåande, og 'òg' understrekar at det i tillegg finst ein annan løysar."
+      }
+    ]
   },
   {
     "bookId": 8,

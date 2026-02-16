@@ -51,13 +51,29 @@
     "bookId": 12,
     "chapterId": 6,
     "verseId": 8,
-    "text": "Aramearkongen var i krig med Israel. Han rådførte seg med tenarane sine og sa: «På den og den staden vil eg leggja meg i bakhald.»"
+    "text": "Han rådførte seg med tenarane sine og sa: «På den og den staden skal leiren min stå.»",
+    "versions": [
+      {
+        "text": "Aramearkongen var i krig med Israel. Han rådførte seg med tenarane sine og sa: «På den og den staden vil eg leggja meg i bakhald.»",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "Det hebraiske תַּחֲנֹתִי kjem frå חנה (leira/slå leir), ikkje frå 'bakhald'. Kongen fortel tenarane sine kvar han vil slå leir, ikkje kvar han vil leggja seg i bakhald."
+      }
+    ]
   },
   {
     "bookId": 12,
     "chapterId": 6,
     "verseId": 9,
-    "text": "Men gudsmannen sende bod til Israels-kongen og sa: «Vokt deg for å dra forbi den staden, for aramearane ligg i bakhald der.»"
+    "text": "Men gudsmannen sende bod til Israels-kongen og sa: «Vokt deg for å dra forbi den staden, for aramearane har slege leir der.»",
+    "versions": [
+      {
+        "text": "Men gudsmannen sende bod til Israels-kongen og sa: «Vokt deg for å dra forbi den staden, for aramearane ligg i bakhald der.»",
+        "type": "error",
+        "severity": "major",
+        "explanation": "נְחִתִּים kjem frå נחת (gå ned/slå leir). I samanheng med vers 8 (תַּחֲנֹתִי) handlar dette om å slå leir, ikkje bakhald. Omsetjinga bør vere konsekvent."
+      }
+    ]
   },
   {
     "bookId": 12,
@@ -129,7 +145,15 @@
     "bookId": 12,
     "chapterId": 6,
     "verseId": 21,
-    "text": "Då Israels-kongen såg dei, spurde han Elisja: «Skal eg slå dei, skal eg slå dei i hel, far?»"
+    "text": "Då Israels-kongen såg dei, spurde han Elisja: «Skal eg slå dei ned, far? Skal eg slå dei ned?»",
+    "versions": [
+      {
+        "text": "Då Israels-kongen såg dei, spurde han Elisja: «Skal eg slå dei, skal eg slå dei i hel, far?»",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "Den doble forma הַאַכֶּה אַכֶּה er ein retorisk gjentaking for å understreka iveren, ikkje nødvendigvis ei opptrapping frå 'slå' til 'slå i hel'. Grunnteksten seier ikkje eksplisitt 'i hel'. Gjentakinga kan betrare fangast med same uttrykk to gonger."
+      }
+    ]
   },
   {
     "bookId": 12,
@@ -213,6 +237,14 @@
     "bookId": 12,
     "chapterId": 6,
     "verseId": 33,
-    "text": "Medan han enno tala med dei, kom bodet ned til han. Han sa: «Sjå, denne ulukka kjem frå Herren. Kvifor skal eg venta på Herren lenger?»"
+    "text": "Medan han enno tala med dei, kom bodet ned til han. Kongen sa: «Sjå, denne ulukka kjem frå Herren. Kvifor skal eg venta på Herren lenger?»",
+    "versions": [
+      {
+        "text": "Medan han enno tala med dei, kom bodet ned til han. Han sa: «Sjå, denne ulukka kjem frå Herren. Kvifor skal eg venta på Herren lenger?»",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "Det er uklart kven 'han' refererer til. I konteksten er det mest sannsynleg kongen sjølv som kjem (etter bodet, jf. v. 32 'lyden av stega til herren hans bak han') og uttalar desse orda. Å skriva 'Kongen sa' gjer teksten klarare for lesaren."
+      }
+    ]
   }
 ]

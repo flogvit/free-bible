@@ -21,7 +21,15 @@
     "bookId": 26,
     "chapterId": 42,
     "verseId": 4,
-    "text": "Framfor romma var det ein gang på ti alnar i breidd mot innsida, og ein veg på éi aln, og inngangane deira vende mot nord."
+    "text": "Framfor romma var det ein gang på ti alnar i breidd innover, ein veg på éi aln, og dørene deira vende mot nord.",
+    "versions": [
+      {
+        "text": "Framfor romma var det ein gang på ti alnar i breidd mot innsida, og ein veg på éi aln, og inngangane deira vende mot nord.",
+        "type": "error",
+        "severity": "major",
+        "explanation": "Uttrykket 'דֶּרֶךְ אַמָּה אֶחָת' er vanskeleg, men 'ein veg på éi aln' er noko uklar. Dessutan er 'inngangane' litt tungt; 'dørene' (פִּתְחֵיהֶם) er meir naturleg og presist for nynorsk."
+      }
+    ]
   },
   {
     "bookId": 26,
@@ -93,7 +101,15 @@
     "bookId": 26,
     "chapterId": 42,
     "verseId": 16,
-    "text": "Han målte austsida med målestonga: fem hundre stenger, målt med målestonga, rundt omkring."
+    "text": "Han målte austsida med målestonga: fem hundre stenger med målestonga, rundt omkring.",
+    "versions": [
+      {
+        "text": "Han målte austsida med målestonga: fem hundre stenger, målt med målestonga, rundt omkring.",
+        "type": "error",
+        "severity": "major",
+        "explanation": "'Målt med målestonga' er redundant etter 'med målestonga' i starten. Det hebraiske בִּקְנֵה הַמִּדָּה angir eininga (stenger av målestonga), ikkje ein ekstra målehandling. Dessutan er 'rundt omkring' (סָבִיב) her kanskje overflødigt sidan det berre er éi side, men det er eit lite poeng."
+      }
+    ]
   },
   {
     "bookId": 26,
@@ -117,6 +133,14 @@
     "bookId": 26,
     "chapterId": 42,
     "verseId": 20,
-    "text": "Til alle fire sider målte han det. Det var ein mur rundt omkring, fem hundre lang og fem hundre brei, som skulle skilja det heilage frå det vanlege."
+    "text": "Det var ein mur rundt omkring, fem hundre stenger lang og fem hundre stenger brei, til å skilja det heilage frå det vanlege.",
+    "versions": [
+      {
+        "text": "Til alle fire sider målte han det. Det var ein mur rundt omkring, fem hundre lang og fem hundre brei, som skulle skilja det heilage frå det vanlege.",
+        "type": "error",
+        "severity": "minor",
+        "explanation": "Måleeininga (stenger/קָנִים) manglar i den norske teksten. Sidan dei andre versa bruker 'stenger' som eining, bør det stå 'fem hundre stenger' for tydelegheita si skuld."
+      }
+    ]
   }
 ]

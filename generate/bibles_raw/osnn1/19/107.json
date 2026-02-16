@@ -9,11 +9,17 @@
     "bookId": 19,
     "chapterId": 107,
     "verseId": 2,
-    "text": "Lat dei som Herren har løyst ut, seia det – dei han har fria frå fienden si hand.",
+    "text": "Lat dei som Herren har løyst ut, seia det – dei han har fria frå handa til fienden.",
     "versions": [
       {
         "text": "Lat dei som Herren har løyst ut, seia det, dei han har fria frå fienden si hand.",
         "explanation": "For betre munnleg flyt og naturleg rytme kan ein bruka tankestrek i staden for komma før den forklarande setninga. Dette gjer det lettare å lesa høgt med rett pausering."
+      },
+      {
+        "text": "Lat dei som Herren har løyst ut, seia det – dei han har fria frå fienden si hand.",
+        "type": "grammar",
+        "severity": "minor",
+        "explanation": "'Fienden si hand' er ei uvanleg formulering på nynorsk. 'Handa til fienden' er meir naturleg og idiomatisk. Men sidan verset allereie har éin revisjon, er dette berre eit mindre framlegg."
       }
     ]
   },
@@ -63,7 +69,15 @@
     "bookId": 19,
     "chapterId": 107,
     "verseId": 9,
-    "text": "For han metta den som tørsta, og dei svoltne fylte han med det som godt er."
+    "text": "For han metta den tørste sjela og fylte den svoltne sjela med det som godt er.",
+    "versions": [
+      {
+        "text": "For han metta den som tørsta, og dei svoltne fylte han med det som godt er.",
+        "type": "error",
+        "severity": "major",
+        "explanation": "Det hebraiske 'נֶפֶשׁ שֹׁקֵקָה' tyder 'den lengtande/tørstande sjela', og 'נֶפֶשׁ רְעֵבָה' tyder 'den svoltne sjela'. Ordet 'נֶפֶשׁ' (sjel) er sentralt i begge leddane og bør gjenspeglast i omsettinga."
+      }
+    ]
   },
   {
     "bookId": 19,
@@ -111,7 +125,15 @@
     "bookId": 19,
     "chapterId": 107,
     "verseId": 16,
-    "text": "For han braut sund bronseportane og hogg av jern-bommane."
+    "text": "For han braut sund bronseportane og hogg av jernbommane.",
+    "versions": [
+      {
+        "text": "For han braut sund bronseportane og hogg av jern-bommane.",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "'Jern-bommane' bør skrivast som eitt ord 'jernbommane' i samsvar med norsk rettskriving for samansetjingar."
+      }
+    ]
   },
   {
     "bookId": 19,
@@ -261,7 +283,15 @@
     "bookId": 19,
     "chapterId": 107,
     "verseId": 37,
-    "text": "Dei sådde åkrar og planta vingardar og fekk ei rik avling."
+    "text": "Dei sådde åkrar og planta vingardar og hausta rik grøde.",
+    "versions": [
+      {
+        "text": "Dei sådde åkrar og planta vingardar og fekk ei rik avling.",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "'פְּרִי תְבוּאָה' tyder bokstaveleg 'frukt av avling/grøde'. 'Hausta rik grøde' er meir naturleg nynorsk og fangar meininga godt."
+      }
+    ]
   },
   {
     "bookId": 19,
@@ -303,6 +333,14 @@
     "bookId": 19,
     "chapterId": 107,
     "verseId": 43,
-    "text": "Den som er vis, skal merka seg dette og forstå Herrens miskunn."
+    "text": "Den som er vis, lyt merka seg dette og grunna på Herrens miskunn.",
+    "versions": [
+      {
+        "text": "Den som er vis, skal merka seg dette og forstå Herrens miskunn.",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "Det hebraiske 'וְיִתְבּוֹנְנוּ' (yitbonenu) tyder 'grunna på, tenkja djupt over', ikkje berre 'forstå'. 'Grunna på' gjev ei betre attgjeving av det reflekterande aspektet i verbet."
+      }
+    ]
   }
 ]

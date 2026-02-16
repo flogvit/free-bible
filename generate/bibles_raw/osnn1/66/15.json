@@ -9,7 +9,15 @@
     "bookId": 66,
     "chapterId": 15,
     "verseId": 2,
-    "text": "Og eg såg noko som likna eit hav av glas, blanda med eld. Og dei som hadde sigra over dyret og biletet av det og talet for namnet hans, stod ved glashavet og hadde Guds harper."
+    "text": "Og eg såg noko som likna eit hav av glas, blanda med eld. Og dei som hadde sigra over dyret og biletet av det og talet på namnet hans, stod ved glashavet og hadde Guds harper.",
+    "versions": [
+      {
+        "text": "Og eg såg noko som likna eit hav av glas, blanda med eld. Og dei som hadde sigra over dyret og biletet av det og talet for namnet hans, stod ved glashavet og hadde Guds harper.",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "'ἐκ τοῦ ἀριθμοῦ τοῦ ὀνόματος αὐτοῦ' betyr 'frå talet på namnet hans'. Preposisjonen 'på' er meir idiomatisk på norsk nynorsk enn 'for' i denne samanhengen ('talet på namnet' er den vanlege uttrykksmåten)."
+      }
+    ]
   },
   {
     "bookId": 66,
@@ -39,7 +47,15 @@
     "bookId": 66,
     "chapterId": 15,
     "verseId": 5,
-    "text": "Etter dette såg eg, og tempelet med vitnemålsteltet i himmelen vart opna."
+    "text": "Etter dette såg eg, og tempelet – vitnemålsteltet – i himmelen vart opna.",
+    "versions": [
+      {
+        "text": "Etter dette såg eg, og tempelet med vitnemålsteltet i himmelen vart opna.",
+        "type": "error",
+        "severity": "major",
+        "explanation": "Den greske teksten har 'ὁ ναὸς τῆς σκηνῆς τοῦ μαρτυρίου' som betyr 'tempelet til/av vitnemålsteltet', der 'σκηνῆς τοῦ μαρτυρίου' er ein genitivkonstruksjon som identifiserer tempelet nærare. Det er ikkje to separate ting ('tempelet med vitnemålsteltet'), men tempelet som er vitnemålsteltet. Ein apposisjon eller genitivkonstruksjon gjev betre meining."
+      }
+    ]
   },
   {
     "bookId": 66,

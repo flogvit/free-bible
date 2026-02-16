@@ -105,7 +105,15 @@
     "bookId": 1,
     "chapterId": 22,
     "verseId": 15,
-    "text": "Herrens engel ropa til Abraham frå himmelen andre gongen"
+    "text": "Herrens engel ropa til Abraham frå himmelen andre gongen.",
+    "versions": [
+      {
+        "text": "Herrens engel ropa til Abraham frå himmelen andre gongen",
+        "type": "grammar",
+        "severity": "major",
+        "explanation": "Verset manglar punktum på slutten. Det er eit fullstendig vers og bør avsluttast med punktum."
+      }
+    ]
   },
   {
     "bookId": 1,
@@ -123,11 +131,17 @@
     "bookId": 1,
     "chapterId": 22,
     "verseId": 17,
-    "text": "vil eg velsigna deg rikt og gjera ætta di talrik som stjernene på himmelen og som sanden på havstranda. Ætta di skal eiga portane til fiendane sine.",
+    "text": "vil eg rikt velsigna deg og gjera ætta di talrik som stjernene på himmelen og som sanden på havstranda. Ætta di skal erobra portane til fiendane sine.",
     "versions": [
       {
         "text": "vil eg velsigna deg rikt og gjera ætta di talrik som stjernene på himmelen og som sanden på havstranda. Ætta di skal ta over portane til fiendane sine.",
         "explanation": "Det hebraiske וְיִרַשׁ (yarash) betyr 'å eiga' eller 'å ta i eige'. 'Eiga portane' er meir nøyaktig enn 'ta over portane' og gjev betre uttrykk for den permanente eigarskapen som er implisert i lovnaden."
+      },
+      {
+        "text": "vil eg velsigna deg rikt og gjera ætta di talrik som stjernene på himmelen og som sanden på havstranda. Ætta di skal eiga portane til fiendane sine.",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "Det hebraiske וְיִרַשׁ (yarash) i konteksten av krigsmetaforar betyr 'ta i eige / erobra' snarare enn berre 'eiga'. Portane representerer fiendens forsvarsverk, og verbet impliserer aktiv erobring. Merk: versjonshistorikken viser at 'ta over' vart endra til 'eiga', men 'erobra' er eit meir presist alternativ som skil seg frå begge tidlegare versjonar."
       }
     ]
   },
@@ -165,13 +179,29 @@
     "bookId": 1,
     "chapterId": 22,
     "verseId": 22,
-    "text": "Kesed, Hazo, Pildasj, Jidlaf og Betuel.»"
+    "text": "Kesed, Hazo, Pildasj, Jidlaf og Betuel.",
+    "versions": [
+      {
+        "text": "Kesed, Hazo, Pildasj, Jidlaf og Betuel.»",
+        "type": "error",
+        "severity": "minor",
+        "explanation": "Avsluttande hermeteikn (») høyrer ikkje heime her. Lista over søner held fram frå vers 20-21, og det er vers 23 som avsluttar avsnittet om Milka sine born. Hermeteiknet som opnar i vers 20 bør heller lukkast etter vers 23."
+      }
+    ]
   },
   {
     "bookId": 1,
     "chapterId": 22,
     "verseId": 23,
-    "text": "Betuel vart far til Rebekka. Desse åtte fødde Milka til Nahor, bror til Abraham."
+    "text": "Betuel vart far til Rebekka. Desse åtte fødde Milka til Nahor, bror til Abraham.»",
+    "versions": [
+      {
+        "text": "Betuel vart far til Rebekka. Desse åtte fødde Milka til Nahor, bror til Abraham.",
+        "type": "error",
+        "severity": "minor",
+        "explanation": "Det avsluttande hermeteiknet (») bør stå her, ikkje i vers 22, sidan den direkte talen frå vers 20 vert avslutta her."
+      }
+    ]
   },
   {
     "bookId": 1,

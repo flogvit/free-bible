@@ -99,11 +99,17 @@
     "bookId": 20,
     "chapterId": 23,
     "verseId": 14,
-    "text": "Du slår det med riset og bergar livet hans frå dødsriket.",
+    "text": "Du slår det med riset og bergar sjela hans frå dødsriket.",
     "versions": [
       {
         "text": "Du slår det med riset, og bergar livet frå dødsriket.",
         "explanation": "Tillegg av 'hans' gjer det tydelegare at det er barnet sitt liv som blir berga, og gjev betre flyt på nynorsk."
+      },
+      {
+        "text": "Du slår det med riset og bergar livet hans frå dødsriket.",
+        "type": "error",
+        "severity": "minor",
+        "explanation": "Det hebraiske נַפְשׁוֹ betyr 'sjela hans' eller 'livet hans'. Sidan verset brukar 'det' (barnet) i første del, bør pronomenet i andre del vere konsistent. Men viktigare: נֶפֶשׁ er eit sentralt teologisk omgrep og 'sjela hans' er meir presist enn 'livet hans', sjølv om begge er mogelege. I tillegg er det ein inkonsistens mellom 'det' (nøytrum) og 'hans' (maskulin) - men dette blei allereie innført med vilje, så hovudpoenget er נֶפֶשׁ."
       }
     ]
   },
@@ -147,11 +153,17 @@
     "bookId": 20,
     "chapterId": 23,
     "verseId": 20,
-    "text": "Ver ikkje mellom vindrikkarar, eller mellom fråtsarar i kjøt.",
+    "text": "Ver ikkje mellom vindrikkarar, mellom fråtsarar i kjøt.",
     "versions": [
       {
         "text": "Ver ikkje mellom dei som druknar seg i vin, eller mellom fråtsarar i kjøt.",
         "explanation": "סֹבְאֵי־יָיִן betyr dei som drikk mykje vin eller drukkenboltar. 'Druknar seg i vin' er ei litt fri tolking. 'Vindrikkarar' eller 'dei som drikk for mykje vin' er meir direkte."
+      },
+      {
+        "text": "Ver ikkje mellom vindrikkarar, eller mellom fråtsarar i kjøt.",
+        "type": "grammar",
+        "severity": "minor",
+        "explanation": "Det hebraiske originalteksten har ikkje noko tilsvarande til 'eller' – det er ein parallellisme utan konjunksjon. Å fjerne 'eller' gjev ein renare parallell konstruksjon som samsvarar betre med originalen. Alternativt kan 'eller' forsvarast, men det finst ikkje i grunnteksten."
       }
     ]
   },
@@ -177,7 +189,15 @@
     "bookId": 20,
     "chapterId": 23,
     "verseId": 24,
-    "text": "Far til ein rettferdig frydar seg stort, den som får ein vis son, gleder seg over han."
+    "text": "Far til ein rettferdig skal gleda seg stort, og den som føder ein vis son, skal fryda seg over han.",
+    "versions": [
+      {
+        "text": "Far til ein rettferdig frydar seg stort, den som får ein vis son, gleder seg over han.",
+        "type": "error",
+        "severity": "minor",
+        "explanation": "Det hebraiske וְיוֹלֵד betyr 'den som føder/avlar', ikkje 'den som får'. Dessutan er verbformene i originalen meir framtidsretta (jussiv/imperfektum). 'Skal gleda seg' og 'skal fryda seg' gjev betre att tydinga. I tillegg bør konjunksjonen וְ (og) takast med for å binde saman dei to ledda."
+      }
+    ]
   },
   {
     "bookId": 20,
@@ -243,7 +263,15 @@
     "bookId": 20,
     "chapterId": 23,
     "verseId": 33,
-    "text": "Augo dine skal sjå underlege ting, og hjartet ditt skal tala forvirra ord."
+    "text": "Augo dine skal sjå underlege syner, og hjartet ditt skal tala forvrengde ting.",
+    "versions": [
+      {
+        "text": "Augo dine skal sjå underlege ting, og hjartet ditt skal tala forvirra ord.",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "זָרוֹת kan bety 'framande/underlege ting' men i konteksten av drukkenskap kan det også vise til hallusinasjonar eller framande syner. Viktigare: תַּהְפֻּכוֹת betyr 'forvrengde ting' eller 'fordervte ting' (frå rota הפך, å snu opp ned), ikkje 'forvirra ord'. Det handlar om perverse, forvrengde utsegner, ikkje berre forvirring."
+      }
+    ]
   },
   {
     "bookId": 20,

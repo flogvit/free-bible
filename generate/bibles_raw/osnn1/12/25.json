@@ -3,7 +3,21 @@
     "bookId": 12,
     "chapterId": 25,
     "verseId": 1,
-    "text": "I det niande året av Sidkias regjeringstid, den tiande månaden, på den tiande dagen i månaden, kom Nebukadnesar, kongen av Babel, med heile hæren sin mot Jerusalem. Han slo leir utanfor byen og bygde ein beleiringswall rundt han."
+    "text": "I det niande året av Sidkias regjeringstid, den tiande månaden, på den tiande dagen i månaden, kom Nebukadnesar, kongen av Babel, med heile hæren sin mot Jerusalem. Han slo leir utanfor byen og bygde ein beleiringsvoll rundt henne.",
+    "versions": [
+      {
+        "text": "I det niande året av Sidkias regjeringstid, den tiande månaden, på den tiande dagen i månaden, kom Nebukadnesar, kongen av Babel, med heile hæren sin mot Jerusalem. Han slo leir utanfor byen og bygde ein beleiringswall rundt han.",
+        "type": "grammar",
+        "severity": "minor",
+        "explanation": "'beleiringswall' er feilstava – det norske ordet er 'beleiringsvoll' (eller eventuelt 'beleiringsmur'). 'Wall' er ikkje eit nynorsk ord."
+      },
+      {
+        "text": "I det niande året av Sidkias regjeringstid, den tiande månaden, på den tiande dagen i månaden, kom Nebukadnesar, kongen av Babel, med heile hæren sin mot Jerusalem. Han slo leir utanfor byen og bygde ein beleiringsvoll rundt han.",
+        "type": "grammar",
+        "severity": "minor",
+        "explanation": "Jerusalem er grammatisk hokjønn (byen/henne). Pronomenet bør vera 'henne' (eller 'byen'), ikkje 'han'."
+      }
+    ]
   },
   {
     "bookId": 12,
@@ -15,13 +29,29 @@
     "bookId": 12,
     "chapterId": 25,
     "verseId": 3,
-    "text": "På den niande dagen i månaden var hungersnauda så hard i byen at det ikkje fanst brød til folket i landet."
+    "text": "På den niande dagen i den fjerde månaden var hungersnauda så hard i byen at det ikkje fanst brød til folket i landet.",
+    "versions": [
+      {
+        "text": "På den niande dagen i månaden var hungersnauda så hard i byen at det ikkje fanst brød til folket i landet.",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "Konteksten (jf. Jer 52:6) viser at dette er den fjerde månaden. Sjølv om den hebraiske teksten ikkje nemner kva månad det er, gjer mangelen på månadsspesifikasjon at verset blir uklårt. Mange omsetjingar spesifiserer 'fjerde månaden' for klarleik. Likevel er dette ein mindre merknad sidan grunnteksten sjølv ikkje nemner månaden eksplisitt."
+      }
+    ]
   },
   {
     "bookId": 12,
     "chapterId": 25,
     "verseId": 4,
-    "text": "Då vart det slege hol på bymuren, og kongen og alle krigarane flykta om natta gjennom porten mellom dei to murane ved kongens hage, medan kaldearane låg rundt byen. Han tok vegen mot Jordansletta."
+    "text": "Då vart det slege hol på bymuren, og alle krigarane flykta om natta gjennom porten mellom dei to murane ved kongens hage, medan kaldearane låg rundt byen. Kongen tok vegen mot Jordansletta.",
+    "versions": [
+      {
+        "text": "Då vart det slege hol på bymuren, og kongen og alle krigarane flykta om natta gjennom porten mellom dei to murane ved kongens hage, medan kaldearane låg rundt byen. Han tok vegen mot Jordansletta.",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "I grunnteksten er det 'alle krigarane' (כל אנשׁי המלחמה) som flykta – kongen er ikkje nemnd som subjekt i fyrste ledd. I tillegg bør 'Han tok vegen' presiserast til 'Kongen tok vegen' for klarleik, sidan det er tvetydig kven 'han' viser til."
+      }
+    ]
   },
   {
     "bookId": 12,
@@ -61,7 +91,15 @@
     "bookId": 12,
     "chapterId": 25,
     "verseId": 9,
-    "text": "Han brende ned Herrens hus, kongens palass og alle husa i Jerusalem. Kvart stort hus brende han ned med eld."
+    "text": "Han brende ned Herrens hus og kongens palass, og alle husa i Jerusalem – kvart stort hus brende han ned med eld.",
+    "versions": [
+      {
+        "text": "Han brende ned Herrens hus, kongens palass og alle husa i Jerusalem. Kvart stort hus brende han ned med eld.",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "Grunnteksten seier 'alle husa i Jerusalem og kvart stort hus brende han med eld'. Gjeldande versjon deler det i to setningar som gjer det litt uklårt. Ei samanslåing gjev betre flyt og er nærare originalen."
+      }
+    ]
   },
   {
     "bookId": 12,
@@ -97,7 +135,21 @@
     "bookId": 12,
     "chapterId": 25,
     "verseId": 14,
-    "text": "Dei tok også grytene, skuffene, knivane, skålene og alle bronsegjenstander som vart brukte i tenesta."
+    "text": "Dei tok også grytene, skuffene, lysesaksene, skålene og alle bronsegjenstandane som vart brukte i tenesta.",
+    "versions": [
+      {
+        "text": "Dei tok også grytene, skuffene, knivane, skålene og alle bronsegjenstander som vart brukte i tenesta.",
+        "type": "grammar",
+        "severity": "minor",
+        "explanation": "'bronsegjenstander' manglar bestemt artikkel. Det bør vera 'bronsegjenstandane' sidan det viser til bestemte gjenstandar (כָּל־כְּלֵ֧י הַנְּחֹ֛שֶׁת)."
+      },
+      {
+        "text": "Dei tok også grytene, skuffene, knivane, skålene og alle bronsegjenstandane som vart brukte i tenesta.",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "Det hebraiske מְזַמְּרוֹת tyder 'lysesaks' (brukt til å trimma lampevekane), ikkje 'knivar'. Knivar er eit upresist val her."
+      }
+    ]
   },
   {
     "bookId": 12,
@@ -187,7 +239,15 @@
     "bookId": 12,
     "chapterId": 25,
     "verseId": 27,
-    "text": "I det trettisjuande året etter at Jojakin, kongen av Juda, var ført i eksil, i den tolvte månaden, på den tjuesjuande dagen i månaden, lyfte Evil-Merodak, kongen av Babel, i det første året han var konge, hovudet til Jojakin, kongen av Juda, og førte han ut or fengselet."
+    "text": "I det trettisjuande året etter at Jojakin, kongen av Juda, var ført i eksil, i den tolvte månaden, på den tjuesjuande dagen i månaden, gav Evil-Merodak, kongen av Babel, i det første året han var konge, Jojakin, kongen av Juda, oppreising og førte han ut or fengselet.",
+    "versions": [
+      {
+        "text": "I det trettisjuande året etter at Jojakin, kongen av Juda, var ført i eksil, i den tolvte månaden, på den tjuesjuande dagen i månaden, lyfte Evil-Merodak, kongen av Babel, i det første året han var konge, hovudet til Jojakin, kongen av Juda, og førte han ut or fengselet.",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "Uttrykket 'נשׂא ראשׁ' (lyfte hovudet) er eit idiom som tyder 'gje oppreising/nåde' eller 'setje fri'. 'Lyfte hovudet til' er eit direkte og noko uklårt uttrykk på nynorsk. 'Gav oppreising' formidlar meininga betre."
+      }
+    ]
   },
   {
     "bookId": 12,

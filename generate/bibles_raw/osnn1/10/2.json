@@ -87,11 +87,17 @@
     "bookId": 10,
     "chapterId": 2,
     "verseId": 14,
-    "text": "Abner sa til Joab: «Lat dei unge mennene stå fram og tevla framfor oss!» Joab svara: «Lat dei stå fram!»",
+    "text": "«Lat dei unge mennene stå fram og tevlast framfor oss!»",
     "versions": [
       {
         "text": "Abner sa til Joab: «Lat nokre av dei unge mennene stå fram og kjempa framfor oss!» Joab svara: «Lat dei stå fram!»",
         "explanation": "Det hebraiske verbet 'sachaq' (יִשַׂחֲקוּ) tyder 'leika', 'tevla' eller 'konkurrera' - ikkje direkte 'kjempa'. Abner framstiller dette som ein kamp eller tevling, ikkje open krig. 'Tevla' gjev betre att denne nyansen."
+      },
+      {
+        "text": "Abner sa til Joab: «Lat dei unge mennene stå fram og tevla framfor oss!» Joab svara: «Lat dei stå fram!»",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "'Tevla' er ikkje refleksivt nok; 'tevlast' (med -st ending) er meir naturleg nynorsk for gjensidig handling, og passar betre til at dei skal kjempe mot kvarandre."
       }
     ]
   },
@@ -147,7 +153,15 @@
     "bookId": 10,
     "chapterId": 2,
     "verseId": 23,
-    "text": "Men han nekta å gje seg, så Abner stakk han i magen med bakenden av spydet. Spydet gjekk tvers gjennom han, og han fall ned og døydde på staden. Alle som kom til staden der Asael hadde falle og døydd, stansa."
+    "text": "Men han nekta å gje seg, så Abner stakk bakenden av spydet i magen hans.",
+    "versions": [
+      {
+        "text": "Men han nekta å gje seg, så Abner stakk han i magen med bakenden av spydet. Spydet gjekk tvers gjennom han, og han fall ned og døydde på staden. Alle som kom til staden der Asael hadde falle og døydd, stansa.",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "Den noverande formuleringa er litt klønete. Å endra ordstillinga gjer setninga meir naturleg på nynorsk og klarare om kva som skjedde."
+      }
+    ]
   },
   {
     "bookId": 10,
@@ -171,7 +185,15 @@
     "bookId": 10,
     "chapterId": 2,
     "verseId": 27,
-    "text": "Joab svara: «Så sant Gud lever, hadde du ikkje tala, ville ikkje folket ha gjeve opp jakta på brørne sine før i morgon.»"
+    "text": "Joab svara: «Så sant Gud lever, hadde du ikkje tala, ville folket alt frå morgonen av ha trekt seg tilbake, kvar frå å jaga bror sin.»",
+    "versions": [
+      {
+        "text": "Joab svara: «Så sant Gud lever, hadde du ikkje tala, ville ikkje folket ha gjeve opp jakta på brørne sine før i morgon.»",
+        "type": "error",
+        "severity": "major",
+        "explanation": "Omsettinga snur meininga. Originalen seier: 'Hadde du ikkje tala, ville folket (allereie) frå morgonen av ha trekt seg tilbake frå å jaga brørne sine.' Joab seier altså at folket hans ville ha slutta tidlegare om Abner hadde tala tidlegare - ikkje at dei ville ha halde fram til morgonen. Den noverande versjonen gjev inntrykk av det motsette."
+      }
+    ]
   },
   {
     "bookId": 10,
@@ -189,7 +211,15 @@
     "bookId": 10,
     "chapterId": 2,
     "verseId": 30,
-    "text": "Joab kom attende etter å ha forfølgt Abner og samla heile hæren. Av Davids menn mangla det nitten mann og Asael."
+    "text": "Av Davids menn var det nitten mann som mangla, forutan Asael.",
+    "versions": [
+      {
+        "text": "Joab kom attende etter å ha forfølgt Abner og samla heile hæren. Av Davids menn mangla det nitten mann og Asael.",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "'Nitten mann og Asael' kan gje inntrykk av at Asael er ein av dei nitten. Originalen listar Asael separat, så han kjem i tillegg til dei nitten. 'Forutan Asael' gjer dette tydelegare."
+      }
+    ]
   },
   {
     "bookId": 10,

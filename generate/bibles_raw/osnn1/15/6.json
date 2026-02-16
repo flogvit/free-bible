@@ -9,7 +9,7 @@
     "bookId": 15,
     "chapterId": 6,
     "verseId": 2,
-    "text": "I Akmeta, borga i provinsen Media, fann dei ei skriftrull. I ho stod det skrive:",
+    "text": "I Ekbatana, borga i provinsen Media, fann dei ei skriftrull. I ho stod det skrive:",
     "versions": [
       {
         "text": "I Akmeта, borga i provinsen Media, fann dei ei skriftrull. I henne stod det skrive:",
@@ -22,6 +22,12 @@
       {
         "text": "I Akmetа, borga i provinsen Media, fann dei ei skriftrull. I ho stod det skrive:",
         "explanation": "Det er framleis eit kyrillisk teikn (а) i 'Akmetа'. Alle bokstavane bør vera latinske: 'Akmeta'."
+      },
+      {
+        "text": "I Akmeta, borga i provinsen Media, fann dei ei skriftrull. I ho stod det skrive:",
+        "type": "grammar",
+        "severity": "minor",
+        "explanation": "Det arameiske 'אַחְמְתָא' er det historiske byen Ekbatana (moderne Hamadan). 'Akmeta' er ei uvanleg transkripsjon. Dei fleste norske bibelomsetjingar brukar 'Ekbatana'. Men sidan dette verset har 3+ revisjonar, og dette ikkje er ein kritisk feil, kan dette vurderast som eit forslag."
       }
     ]
   },
@@ -41,7 +47,15 @@
     "bookId": 15,
     "chapterId": 6,
     "verseId": 5,
-    "text": "Og dei kar av gull og sølv frå Guds hus som Nebukadnesar tok frå tempelet i Jerusalem og førte til Babel, skal førast attende. Dei skal setjast på plassen sin i tempelet i Jerusalem og leggjast i Guds hus."
+    "text": "Og dei kara av gull og sølv frå Guds hus som Nebukadnesar tok frå tempelet i Jerusalem og førte til Babel, skal førast attende. Dei skal setjast på plassen sin i tempelet i Jerusalem og leggjast ned i Guds hus.",
+    "versions": [
+      {
+        "text": "Og dei kar av gull og sølv frå Guds hus som Nebukadnesar tok frå tempelet i Jerusalem og førte til Babel, skal førast attende. Dei skal setjast på plassen sin i tempelet i Jerusalem og leggjast i Guds hus.",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "'Kar' bør truleg vera 'kara' (fleirtal, bunden form) for å vera grammatisk korrekt nynorsk. Også det arameiske 'וְתַחֵת' tyder 'setja ned/leggja ned', ikkje berre 'leggja'."
+      }
+    ]
   },
   {
     "bookId": 15,
@@ -83,11 +97,17 @@
     "bookId": 15,
     "chapterId": 6,
     "verseId": 11,
-    "text": "Vidare gjev eg ordre om at dersom nokon bryt dette påbodet, skal ei bjelke rivast ut av huset hans, og han skal lyftast opp og naglast fast på ho. Og huset hans skal gjerast til ein søppelhaug på grunn av dette.",
+    "text": "Vidare gjev eg ordre om at dersom nokon bryt dette påbodet, skal ei bjelke rivast ut av huset hans, og han skal reisast opp og spiddast på ho. Og huset hans skal gjerast til ein søppelhaug på grunn av dette.",
     "versions": [
       {
         "text": "Vidare gjev eg ordre om at dersom nokon bryt dette påbodet, skal ei bjelke rivast ut av huset hans, og han skal lyftast opp og naglast fast på henne. Og huset hans skal gjerast til ein ruin på grunn av dette.",
         "explanation": "'Ruin' er akseptabelt, men det arameiske נְוָלוּ tyder meir bokstavleg 'møkkahaug/søppelhaug' - eit sterkare uttrykk for vanære. Også 'henne' bør vera 'ho' (bjelke er hokjønn)."
+      },
+      {
+        "text": "Vidare gjev eg ordre om at dersom nokon bryt dette påbodet, skal ei bjelke rivast ut av huset hans, og han skal lyftast opp og naglast fast på ho. Og huset hans skal gjerast til ein søppelhaug på grunn av dette.",
+        "type": "grammar",
+        "severity": "minor",
+        "explanation": "Det arameiske 'זְקִיף יִתְמְחֵא עֲלֹהִי' tyder at personen skal spiddast/naglast på den oppreiste bjelken. 'Reisast opp og spiddast' er meir presist enn 'lyftast opp og naglast fast' - bjelken blir reist opp og personen blir hengt/spidda på ho. Uttrykket skildrar ei form for henging/spidding."
       }
     ]
   },
@@ -119,7 +139,15 @@
     "bookId": 15,
     "chapterId": 6,
     "verseId": 15,
-    "text": "Tempelet stod ferdig den tredje dagen i månaden adar, i det sjette året av kong Dareios si regjeringstid."
+    "text": "Tempelet stod ferdig den tredje dagen i månaden adar, i det sjette året av regjeringstida til kong Dareios.",
+    "versions": [
+      {
+        "text": "Tempelet stod ferdig den tredje dagen i månaden adar, i det sjette året av kong Dareios si regjeringstid.",
+        "type": "grammar",
+        "severity": "minor",
+        "explanation": "'Kong Dareios si regjeringstid' er grammatisk mogleg, men 'regjeringstida til kong Dareios' flyt betre på nynorsk og unngår den litt kronglete possessivkonstruksjonen med 'si'."
+      }
+    ]
   },
   {
     "bookId": 15,

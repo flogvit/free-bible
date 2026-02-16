@@ -69,7 +69,15 @@
     "bookId": 9,
     "chapterId": 20,
     "verseId": 12,
-    "text": "Jonatan sa til David: «Ved Herren, Israels Gud! Når eg har utforska far min i morgon eller dagen etter, og det ser godt ut for David, skal eg då ikkje senda bod til deg og la deg få vita det?»"
+    "text": "Jonatan sa til David: «Ved Herren, Israels Gud! Når eg har utforska far min i morgon på denne tida, den tredje dagen, og det ser godt ut for David, skal eg då ikkje senda bod til deg og la deg få vita det?»",
+    "versions": [
+      {
+        "text": "Jonatan sa til David: «Ved Herren, Israels Gud! Når eg har utforska far min i morgon eller dagen etter, og det ser godt ut for David, skal eg då ikkje senda bod til deg og la deg få vita det?»",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "Det hebraiske כָּעֵת מָחָר הַשְּׁלִשִׁית tyder 'i morgon på denne tida, den tredje (dagen)' – ikkje 'i morgon eller dagen etter'. Uttrykket viser til den tredje dagen frå no, ikkje eit alternativ mellom to dagar."
+      }
+    ]
   },
   {
     "bookId": 9,
@@ -81,7 +89,15 @@
     "bookId": 9,
     "chapterId": 20,
     "verseId": 14,
-    "text": "«Og om eg enno lever, skal du ikkje då visa meg Herrens truskap, så eg ikkje døyr?»"
+    "text": "«Og medan eg enno lever, vis meg Herrens truskap, så eg ikkje døyr.»",
+    "versions": [
+      {
+        "text": "«Og om eg enno lever, skal du ikkje då visa meg Herrens truskap, så eg ikkje døyr?»",
+        "type": "error",
+        "severity": "major",
+        "explanation": "Verset er ei oppmoding frå Jonatan, ikkje eit spørsmål. Det hebraiske וְלֹא med imperativisk/ønskeleg tyding uttrykker ein bøn: 'Vis meg Herrens truskap så eg ikkje døyr.' Spørsmålsforma i gjeldande omsetjing endrar tydinga til noko usikkert."
+      }
+    ]
   },
   {
     "bookId": 9,
@@ -117,7 +133,15 @@
     "bookId": 9,
     "chapterId": 20,
     "verseId": 20,
-    "text": "«Eg skal skyta tre piler til sides, som om eg sikta mot eit mål.»"
+    "text": "«Eg skal skyta tre piler mot den eine sida, som om eg sikta mot eit mål.»",
+    "versions": [
+      {
+        "text": "«Eg skal skyta tre piler til sides, som om eg sikta mot eit mål.»",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "Det hebraiske צִדָּה betyr 'mot (den eine) sida', ikkje 'til sides' i tydinga 'til sida/bort'. 'Til sides' kan gje inntrykk av at han bommer med vilje, men poenget er at han skyt i ei retning (mot ein side)."
+      }
+    ]
   },
   {
     "bookId": 9,
@@ -147,7 +171,15 @@
     "bookId": 9,
     "chapterId": 20,
     "verseId": 25,
-    "text": "Kongen sette seg på plassen sin som vanleg, ved veggen. Jonatan reiste seg, og Abner sette seg ved sida av Saul. Men Davids plass var tom."
+    "text": "Kongen sette seg på plassen sin som vanleg, ved veggen. Jonatan sette seg på den andre sida, og Abner sette seg ved sida av Saul. Men Davids plass var tom.",
+    "versions": [
+      {
+        "text": "Kongen sette seg på plassen sin som vanleg, ved veggen. Jonatan reiste seg, og Abner sette seg ved sida av Saul. Men Davids plass var tom.",
+        "type": "error",
+        "severity": "major",
+        "explanation": "Det hebraiske וַיָּקָם יְהוֹנָתָן er vanskeleg, men mange kommentarar og versjonar (inkl. LXX) les dette som at Jonatan sat (ikkje 'reiste seg'). Konteksten skildrar korleis folk sette seg ved bordet. At Jonatan 'reiste seg' gjev ikkje meining midt i ei skildring av bordplassering. Dei fleste moderne omsetjingar forstår dette slik at Jonatan sat på den andre sida/framfor."
+      }
+    ]
   },
   {
     "bookId": 9,
@@ -207,7 +239,15 @@
     "bookId": 9,
     "chapterId": 20,
     "verseId": 34,
-    "text": "Jonatan reiste seg frå bordet i brennande vreide. Han åt ikkje mat den andre dagen i månaden, for han var full av sorg for David, og fordi far hans hadde vanæra han."
+    "text": "Jonatan reiste seg frå bordet i brennande vreide. Han åt ikkje mat den andre dagen i månaden, for han var full av sorg for David, fordi far hans hadde vanæra David.",
+    "versions": [
+      {
+        "text": "Jonatan reiste seg frå bordet i brennande vreide. Han åt ikkje mat den andre dagen i månaden, for han var full av sorg for David, og fordi far hans hadde vanæra han.",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "Det hebraiske הִכְלִמוֹ kan visast til David som objekt (far hans hadde vanæra David/han), men 'han' i gjeldande omsetjing er tvitydig – det kan lesast som om far vanæra Jonatan. Sidan konteksten handlar om Jonatans sorg for David, og Saul sine ord var retta mot begge, er det klarare å skriva 'David'."
+      }
+    ]
   },
   {
     "bookId": 9,

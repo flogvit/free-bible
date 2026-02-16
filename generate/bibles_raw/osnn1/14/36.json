@@ -27,7 +27,15 @@
     "bookId": 14,
     "chapterId": 36,
     "verseId": 5,
-    "text": "Jojakim var tjuefem år gammal då han vart konge, og han styrte i Jerusalem i elleve år. Han gjorde det som var vondt i HERRENS, sin Guds, auge."
+    "text": "Jojakim var tjuefem år gammal då han vart konge, og han styrte i Jerusalem i elleve år. Han gjorde det som var vondt i auga til HERREN, sin Gud.",
+    "versions": [
+      {
+        "text": "Jojakim var tjuefem år gammal då han vart konge, og han styrte i Jerusalem i elleve år. Han gjorde det som var vondt i HERRENS, sin Guds, auge.",
+        "type": "grammar",
+        "severity": "minor",
+        "explanation": "'I HERRENS, sin Guds, auge' er grammatisk tungvint på nynorsk. 'I auga til HERREN, sin Gud' flyt betre og er meir naturleg nynorsk."
+      }
+    ]
   },
   {
     "bookId": 14,
@@ -51,17 +59,31 @@
     "bookId": 14,
     "chapterId": 36,
     "verseId": 9,
-    "text": "Jojakin var atten år gammal då han vart konge, og han styrte i Jerusalem i tre månader og ti dagar. Han gjorde det som var vondt i HERRENS auge."
+    "text": "Jojakin var åtte år gammal då han vart konge, og han styrte i Jerusalem i tre månader og ti dagar. Han gjorde det som var vondt i HERRENS auge.",
+    "versions": [
+      {
+        "text": "Jojakin var atten år gammal då han vart konge, og han styrte i Jerusalem i tre månader og ti dagar. Han gjorde det som var vondt i HERRENS auge.",
+        "type": "error",
+        "severity": "critical",
+        "explanation": "Den hebraiske teksten seier 'ben-shmoneh shanim' som tyder 'åtte år gammal', ikkje atten. 2 Kong 24:8 seier derimot atten år, men Krønikebøkene sin tekst seier klårt åtte. Omsetjinga bør følgja grunnteksten i 2 Krøn 36:9."
+      }
+    ]
   },
   {
     "bookId": 14,
     "chapterId": 36,
     "verseId": 10,
-    "text": "Ved årsskiftet sende kong Nebukadnesar bod og henta han til Babel, saman med dei kostbare gjenstandane frå HERRENS hus. Og han gjorde Sidkia, onkel hans, til konge over Juda og Jerusalem.",
+    "text": "Ved årsskiftet sende kong Nebukadnesar bod og henta han til Babel, saman med dei kostbare gjenstandane frå HERRENS hus. Og han gjorde Sidkia, ein slektning av han, til konge over Juda og Jerusalem.",
     "versions": [
       {
         "text": "Ved årsskiftet sende kong Nebukadnesar bod og henta han til Babel, saman med dei kostbare gjenstandane frå HERRENS hus. Og han gjorde Sidkia, bror hans, til konge over Juda og Jerusalem.",
         "explanation": "Hebraisk 'ach' kan bety både 'bror' og 'slektning'. Ifølgje 2. Kongebok 24:17 var Sidkia onkel til Jojakin (bror til Jojakim), ikkje bror. Dette er ein viktig historisk presisering, sjølv om 'bror' er ein bokstavleg omsetjing."
+      },
+      {
+        "text": "Ved årsskiftet sende kong Nebukadnesar bod og henta han til Babel, saman med dei kostbare gjenstandane frå HERRENS hus. Og han gjorde Sidkia, onkel hans, til konge over Juda og Jerusalem.",
+        "type": "error",
+        "severity": "minor",
+        "explanation": "Den hebraiske teksten brukar 'achiv' (bror hans / slektning hans). Sjølv om endringa frå 'bror' til 'onkel' vart gjort med historisk grunngiving, er 'onkel' ei tolking som går utover grunnteksten. 'Slektning' ville vore ein meir nøyaktig mellomveg som respekterer både den hebraiske teksten og den historiske konteksten."
       }
     ]
   },
@@ -75,7 +97,15 @@
     "bookId": 14,
     "chapterId": 36,
     "verseId": 12,
-    "text": "Han gjorde det som var vondt i HERRENS, sin Guds, auge. Han audmjuka seg ikkje for profeten Jeremia, som tala ord frå HERRENS munn."
+    "text": "Han gjorde det som var vondt i auga til HERREN, sin Gud. Han audmjuka seg ikkje for profeten Jeremia, som tala HERRENS ord.",
+    "versions": [
+      {
+        "text": "Han gjorde det som var vondt i HERRENS, sin Guds, auge. Han audmjuka seg ikkje for profeten Jeremia, som tala ord frå HERRENS munn.",
+        "type": "grammar",
+        "severity": "minor",
+        "explanation": "Det hebraiske 'mippi YHWH' tyder 'frå HERRENS munn', men omsetjinga bør henga betre saman. 'Som tala HERRENS ord' er meir idiomatisk på nynorsk og dekkjer meininga godt."
+      }
+    ]
   },
   {
     "bookId": 14,

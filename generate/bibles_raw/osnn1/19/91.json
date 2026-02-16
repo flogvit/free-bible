@@ -27,13 +27,29 @@
     "bookId": 19,
     "chapterId": 91,
     "verseId": 5,
-    "text": "Du skal ikkje frykta for redsla om natta, eller for pila som flyg om dagen,"
+    "text": "Du skal ikkje frykta for redsla om natta, for pila som flyg om dagen,",
+    "versions": [
+      {
+        "text": "Du skal ikkje frykta for redsla om natta, eller for pila som flyg om dagen,",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "Konjunksjonen 'eller' er ikkje i den hebraiske teksten, som berre har preposisjonen מ (frå/for). Vers 5-6 er ei samanhengande opplisting utan 'eller'. Å fjerna 'eller' gjer verset meir tru mot originalen og gjev betre flyt inn i vers 6."
+      }
+    ]
   },
   {
     "bookId": 19,
     "chapterId": 91,
     "verseId": 6,
-    "text": "ikkje for pesten som går i mørkret, eller for farsotta som herjar midt på dagen."
+    "text": "ikkje for pesten som fer fram i mørkret, for øydelegginga som herjar midt på dagen.",
+    "versions": [
+      {
+        "text": "ikkje for pesten som går i mørkret, eller for farsotta som herjar midt på dagen.",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "1) קֶטֶב tyder 'øydelegging/undergang', ikkje 'farsott'. Omsetjinga doblar opp pestmotivet unødvendig sidan דֶּבֶר allereie er 'pest'. 2) 'eller' er igjen lagt til utan grunnlag i originalen. 3) 'går' er litt blekt for יַהֲלֹךְ i denne konteksten; 'fer fram' gjev betre kraft."
+      }
+    ]
   },
   {
     "bookId": 19,
@@ -51,11 +67,17 @@
     "bookId": 19,
     "chapterId": 91,
     "verseId": 9,
-    "text": "For du har sagt: «Herren er mi tilflukt.» Den Høgste har du gjort til din bustad.",
+    "text": "For du, Herre, er mi tilflukt! Den Høgste har du gjort til din bustad.",
     "versions": [
       {
         "text": "Fordi du har Herren som di tilflukt og har gjort Den Høgste til din bustad,",
         "explanation": "Den hebraiske teksten har eit skifte i person - første del er ein utsegn til Herren ('du, Herre, er mi tilflukt'), andre del er om Den Høgste. Noverande omsetjing mister dette og gjer heile verset til ei utsegn om lesaren. Alternativt kan ein tolka verset som fortsetjing av tilsegn, men då bør ein vera konsekvent."
+      },
+      {
+        "text": "For du har sagt: «Herren er mi tilflukt.» Den Høgste har du gjort til din bustad.",
+        "type": "error",
+        "severity": "major",
+        "explanation": "Den hebraiske teksten seier כִּי־אַתָּה יְהוָה מַחְסִי - 'For du, HERREN, er mi tilflukt'. Det er ei direkte tiltale til Gud, ikkje ein indirekte tale ('du har sagt'). Noverande omsetjing legg til 'har sagt' og hermeteikn som ikkje finst i grunnteksten. Versjonhistorikken viser at tidlegare versjon endra for å fanga personskiftet, men den noverande løysinga innfører ord som ikkje finst i originalen."
       }
     ]
   },

@@ -3,11 +3,17 @@
     "bookId": 5,
     "chapterId": 12,
     "verseId": 1,
-    "text": "Dette er forskriftene og lovene de skal akta på og følgja i landet som Herren, fedrane dine sin Gud, gjev deg til eige, alle dei dagane de lever på jorda.",
+    "text": "Dette er forskriftene og lovane de skal akta på og følgja i landet som Herren, fedrane dine sin Gud, gjev deg til eige, alle dei dagane de lever på jorda.",
     "versions": [
       {
         "text": "Dette er forskriftene og lovene de skal halda og følgja i landet som Herren, fedrane dine sin Gud, gjev deg til eige, alle dei dagane de lever på jorda.",
         "explanation": "Det hebraiske uttrykket 'תִּשְׁמְרוּן לַעֲשׂוֹת' tyder 'vakta/akta på for å gjera'. 'Akta på og følgja' gjev betre att den hebraiske tydinga enn 'halda og følgja', som er noko redundant."
+      },
+      {
+        "text": "Dette er forskriftene og lovene de skal akta på og følgja i landet som Herren, fedrane dine sin Gud, gjev deg til eige, alle dei dagane de lever på jorda.",
+        "type": "grammar",
+        "severity": "minor",
+        "explanation": "Det hebraiske 'הַמִּשְׁפָּטִים' (mishpatim) tyder 'domsavgjerder/lovreglar'. Nynorsk-forma 'lovane' (bestemt fleirtal) er meir korrekt enn 'lovene', som er bokmålspåverka bøying."
       }
     ]
   },
@@ -15,7 +21,15 @@
     "bookId": 5,
     "chapterId": 12,
     "verseId": 2,
-    "text": "De skal fullstendig øydeleggja alle stadene der folkeslaga de driv ut, har dyrka gudane sine, på dei høge fjella, på haugane og under kvart grønt tre."
+    "text": "De skal fullstendig øydeleggja alle stadene der folkeslaga de tek over etter, har dyrka gudane sine, på dei høge fjella, på haugane og under kvart grønt tre.",
+    "versions": [
+      {
+        "text": "De skal fullstendig øydeleggja alle stadene der folkeslaga de driv ut, har dyrka gudane sine, på dei høge fjella, på haugane og under kvart grønt tre.",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "Det hebraiske 'יֹרְשִׁים אֹתָם' tyder 'tek over etter' eller 'arvar frå', ikkje 'driv ut'. Sjølv om resultatet kan vera utkasting, er grunntydinga å ta over eigedomen/posisjonen deira."
+      }
+    ]
   },
   {
     "bookId": 5,
@@ -81,7 +95,15 @@
     "bookId": 5,
     "chapterId": 12,
     "verseId": 11,
-    "text": "då skal den staden Herren dykkar Gud vel ut til bustad for namnet sitt, dit skal de føra alt eg byd dykk: brennoffera og slaktoffera dykkar, tiendane og gåvene frå hendene dykkar, og det beste av lovnadsoffera de lovar Herren."
+    "text": "då skal de til den staden Herren dykkar Gud vel ut til bustad for namnet sitt, dit skal de føra alt eg byd dykk: brennoffera og slaktoffera dykkar, tiendane og gåvene frå hendene dykkar, og det beste av lovnadsoffera de lovar Herren.",
+    "versions": [
+      {
+        "text": "då skal den staden Herren dykkar Gud vel ut til bustad for namnet sitt, dit skal de føra alt eg byd dykk: brennoffera og slaktoffera dykkar, tiendane og gåvene frå hendene dykkar, og det beste av lovnadsoffera de lovar Herren.",
+        "type": "grammar",
+        "severity": "minor",
+        "explanation": "Setninga «då skal den staden ... dit skal de føra» manglar eit tydeleg verbalt ledd. Den hebraiske konstruksjonen seier at 'dit (til den staden) skal de bringa'. Setninga kan gjerast klarare ved å omformulera starten."
+      }
+    ]
   },
   {
     "bookId": 5,
@@ -105,7 +127,15 @@
     "bookId": 5,
     "chapterId": 12,
     "verseId": 15,
-    "text": "Men elles kan du slakta og eta kjøt etter hjartelyst, etter den velsigninga Herren din Gud har gjeve deg, i alle byane dine. Både den ureine og den reine kan eta det, som om det var gaselle eller hjort."
+    "text": "Men elles kan du slakta og eta kjøt etter hjartelyst, etter den velsigninga Herren din Gud har gjeve deg, i alle byane dine. Både den ureine og den reine kan eta det, liksom ein et gaselle eller hjort.",
+    "versions": [
+      {
+        "text": "Men elles kan du slakta og eta kjøt etter hjartelyst, etter den velsigninga Herren din Gud har gjeve deg, i alle byane dine. Både den ureine og den reine kan eta det, som om det var gaselle eller hjort.",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "'כַּצְּבִי וְכָאַיָּל' samanliknar måten ein et på (dvs. utan offerkrav), ikkje sjølve kjøtet. 'Liksom ein et gaselle eller hjort' er meir presist enn 'som om det var gaselle eller hjort', som kan gje inntrykk av at ein later som kjøtet er noko anna."
+      }
+    ]
   },
   {
     "bookId": 5,
@@ -183,7 +213,15 @@
     "bookId": 5,
     "chapterId": 12,
     "verseId": 27,
-    "text": "Du skal ofra brennoffera dine, både kjøtet og blodet, på Herrens, din Guds, altar. Blodet av slaktoffera dine skal renna ut på altaret til Herren din Gud, men kjøtet kan du eta."
+    "text": "Du skal ofra brennoffera dine, både kjøtet og blodet, på altaret til Herren din Gud. Blodet av slaktoffera dine skal hellast ut ved altaret til Herren din Gud, men kjøtet kan du eta.",
+    "versions": [
+      {
+        "text": "Du skal ofra brennoffera dine, både kjøtet og blodet, på Herrens, din Guds, altar. Blodet av slaktoffera dine skal renna ut på altaret til Herren din Gud, men kjøtet kan du eta.",
+        "type": "error",
+        "severity": "major",
+        "explanation": "Det hebraiske 'יִשָּׁפֵךְ עַל־מִזְבַּח' tyder 'skal hellast ut ved/på altaret'. 'Renna ut på altaret' er ei upresis omsetjing. Blodet vart hellt ut ved foten av altaret. Dessutan bør den fyrste nemninga av altaret vere konsistent i form med den andre."
+      }
+    ]
   },
   {
     "bookId": 5,

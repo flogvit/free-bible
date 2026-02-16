@@ -3,7 +3,15 @@
     "bookId": 19,
     "chapterId": 9,
     "verseId": 1,
-    "text": "Til korleiaren. Etter «Almut labben». Ein salme av David."
+    "text": "Til kormeisteren. Etter «Almut labben». Ein salme av David.",
+    "versions": [
+      {
+        "text": "Til korleiaren. Etter «Almut labben». Ein salme av David.",
+        "type": "error",
+        "severity": "minor",
+        "explanation": "'לַמְנַצֵּחַ' vert vanlegvis omsett med 'kormeisteren' eller 'songmeisteren' på norsk. 'Korleiaren' er ikkje feil, men det meir tradisjonelle og presise uttrykket er 'kormeisteren'."
+      }
+    ]
   },
   {
     "bookId": 19,
@@ -27,7 +35,15 @@
     "bookId": 19,
     "chapterId": 9,
     "verseId": 5,
-    "text": "For du har ført mi sak og min rett, du sit på trona som ein rettferdig domar."
+    "text": "For du har ført mi sak og min rett, du har sett deg på trona som ein rettferdig domar.",
+    "versions": [
+      {
+        "text": "For du har ført mi sak og min rett, du sit på trona som ein rettferdig domar.",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "Det hebraiske יָשַׁבְתָּ er ein perfektum-form ('du har sett deg / du sette deg'), ikkje presens ('du sit'). I konteksten av at Gud har handla til fordel for salmisten (parallelt med עָשִׂיתָ, 'du har gjort'), bør begge verba stå i same tid."
+      }
+    ]
   },
   {
     "bookId": 19,
@@ -39,11 +55,17 @@
     "bookId": 19,
     "chapterId": 9,
     "verseId": 7,
-    "text": "Fienden er borte – øydelagd til ruinar for alltid. Du har rive ned byane deira, minnet om dei er utsletta.",
+    "text": "Fienden er borte – ruinar for alltid. Du har rive ned byane deira, minnet om dei er utsletta.",
     "versions": [
       {
         "text": "Fienden er borte, øydelagd for alltid. Du har rive ned byane deira, minnet om dei er utsletta.",
         "explanation": "חֳרָבוֹת (choravot) tyder 'ruinar' eller 'øydeleggingar'. Den noverande omsetjinga mistar dette konkrete biletet. Ei meir presis attgjeving fangar meininga betre."
+      },
+      {
+        "text": "Fienden er borte – øydelagd til ruinar for alltid. Du har rive ned byane deira, minnet om dei er utsletta.",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "Den hebraiske teksten seier at fienden har 'teke ende' (תַּמּוּ) og det som er att er 'ruinar for alltid' (חֳרָבוֹת לָנֶצַח). Formuleringa 'øydelagd til ruinar' er litt redundant. 'Ruinar for alltid' er meir presist: det som er att etter fienden er berre evige ruinar."
       }
     ]
   },
@@ -93,7 +115,15 @@
     "bookId": 19,
     "chapterId": 9,
     "verseId": 14,
-    "text": "Ver meg nådig, HERRE! Sjå mi naud frå dei som hatar meg, du som løftar meg opp frå dødens portar."
+    "text": "Ver meg nådig, HERRE! Sjå kor eg lid under dei som hatar meg, du som løftar meg opp frå dødens portar.",
+    "versions": [
+      {
+        "text": "Ver meg nådig, HERRE! Sjå mi naud frå dei som hatar meg, du som løftar meg opp frå dødens portar.",
+        "type": "error",
+        "severity": "major",
+        "explanation": "Det hebraiske עָנְיִי מִשֹּׂנְאָי tyder 'mi liding/naud frå (forårsakast av) dei som hatar meg'. Den noverande omsetjinga 'mi naud frå dei som hatar meg' kan lesast som om nauda kjem 'frå' dei heller enn at det er lidinga som dei påfører. Ei tydelegare formulering viser at det er naud påført av fiendar."
+      }
+    ]
   },
   {
     "bookId": 19,
@@ -105,7 +135,15 @@
     "bookId": 19,
     "chapterId": 9,
     "verseId": 16,
-    "text": "Folkeslaga har sokke ned i grava dei sjølve grov, i garnet dei gøymde, er foten deira fanga."
+    "text": "Folkeslaga har sokke ned i grava dei sjølve grov, i garnet dei sjølve gøymde, er foten deira fanga.",
+    "versions": [
+      {
+        "text": "Folkeslaga har sokke ned i grava dei sjølve grov, i garnet dei gøymde, er foten deira fanga.",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "Det hebraiske בְּרֶשֶׁת־זוּ טָמָנוּ ('i garnet som dei gøymde') understrekar at det er deira eige garn. Tillegget av 'sjølve' gjer parallellen med den første linja tydelegare og framhevar ironien i at dei vert fanga i si eiga felle."
+      }
+    ]
   },
   {
     "bookId": 19,

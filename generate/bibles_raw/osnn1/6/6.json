@@ -63,7 +63,15 @@
     "bookId": 6,
     "chapterId": 6,
     "verseId": 9,
-    "text": "Dei væpna mennene gjekk framfor prestane som bles i horna, og baktroppen følgde etter kista medan dei bles i horna."
+    "text": "Dei væpna mennene gjekk framfor prestane som bles i horna, og baktroppen følgde etter arken medan dei bles i horna.",
+    "versions": [
+      {
+        "text": "Dei væpna mennene gjekk framfor prestane som bles i horna, og baktroppen følgde etter kista medan dei bles i horna.",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "Det hebraiske הָאָרוֹן (ha'aron) viser til paktskista/arken. 'Kista' åleine er litt uformelt og kan verka tvitydig. 'Arken' eller 'paktskista' ville vera meir konsistent med resten av kapittelet der omsetjinga brukar 'paktskista' eller 'Herrens ark'."
+      }
+    ]
   },
   {
     "bookId": 6,
@@ -123,11 +131,17 @@
     "bookId": 6,
     "chapterId": 6,
     "verseId": 18,
-    "text": "Men hald dykk borte frå det som er bannlyst, så de ikkje sjølve vert bannlyste ved å ta noko av det. Då ville de føra ulukke over Israels leir og bringa han i ulukke.",
+    "text": "Men hald dykk borte frå det som er vigt til undergang, så de ikkje sjølve vert råka av forbanninga ved å ta noko av det. Då ville de føra ulukke over Israels leir og bringa han i ulukke.",
     "versions": [
       {
         "text": "Men hald dykk borte frå det som er bannlyst, så de ikkje sjølve vert bannlyste ved å ta noko av det. Då ville de føra ulukke over Israels leir og bringa han i naud.",
         "explanation": "Det hebraiske וְעֲכַרְתֶּם (va'akhartem) frå rota עכר tyder 'føra ulukke/trøbbel over'. Å bruka 'bringa han i naud' er akseptabelt, men 'bringa han i ulukke' svarar betre til det hebraiske og skapar betre samanheng med 'føra ulukke' tidlegare i setninga."
+      },
+      {
+        "text": "Men hald dykk borte frå det som er bannlyst, så de ikkje sjølve vert bannlyste ved å ta noko av det. Då ville de føra ulukke over Israels leir og bringa han i ulukke.",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "I vers 17 og 21 er חֵרֶם konsekvent omsett med 'vigast til undergang' / 'vigde til undergang'. Her i vers 18 vert det same omgrepet omsett med 'bannlyst', noko som bryt med den bevisste terminologiske linja som er etablert elles i kapittelet."
       }
     ]
   },
@@ -177,17 +191,31 @@
     "bookId": 6,
     "chapterId": 6,
     "verseId": 25,
-    "text": "Men Rahab, skjøkja, og heile hennar fars hus og alle som høyrde henne til, lét Josva leva. Ho har budd midt i Israel til denne dag, fordi ho gøymde bodbærarane som Josva sende for å speida ut Jeriko."
+    "text": "Men Rahab, skjøkja, og heile farshuset hennar og alle som høyrde henne til, lét Josva leva.",
+    "versions": [
+      {
+        "text": "Men Rahab, skjøkja, og heile hennar fars hus og alle som høyrde henne til, lét Josva leva. Ho har budd midt i Israel til denne dag, fordi ho gøymde bodbærarane som Josva sende for å speida ut Jeriko.",
+        "type": "grammar",
+        "severity": "minor",
+        "explanation": "'Heile hennar fars hus' er tungt og unaturleg nynorsk. 'Heile farshuset hennar' er meir idiomatisk og lettlese, samstundes som det dekkjer det hebraiske בֵּית אָבִיהָ."
+      }
+    ]
   },
   {
     "bookId": 6,
     "chapterId": 6,
     "verseId": 26,
-    "text": "På den tida svor Josva denne eiden: «Forbanna for Herrens åsyn vere den mannen som reiser seg og byggjer opp att denne byen, Jeriko! Det vil kosta han den førstefødde sonen hans når han legg grunnen, og den yngste sonen hans når han set opp portane.»",
+    "text": "På den tida svor Josva denne eiden: «Forbanna for Herrens åsyn vere den mannen som reiser seg og byggjer opp att denne byen, Jeriko! Det vil kosta han den førstefødde sonen når han legg grunnen, og den yngste sonen når han set opp portane.»",
     "versions": [
       {
         "text": "På den tida svor Josva denne eiden: «Forbanna for Herrens åsyn vere den mannen som reiser seg og byggjer opp att denne byen, Jeriko! Med tap av sin førstefødde son skal han leggja grunnen, og med tap av sin yngste son skal han setja opp portane.»",
         "explanation": "Den hebraiske preposisjonen בְּ (be) med בִּבְכֹרוֹ kan tyda 'med/ved' i tydinga 'til prisen av'. Omsetjinga 'Med tap av' er akseptabel, men 'Det vil kosta han' er meir idiomatisk norsk og formidlar like godt at bygginga vil føra til sønene sin død."
+      },
+      {
+        "text": "På den tida svor Josva denne eiden: «Forbanna for Herrens åsyn vere den mannen som reiser seg og byggjer opp att denne byen, Jeriko! Det vil kosta han den førstefødde sonen hans når han legg grunnen, og den yngste sonen hans når han set opp portane.»",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "'Den førstefødde sonen hans' er redundant sidan 'han' allereie er nemnd i 'kosta han'. Det held med 'den førstefødde sonen' og 'den yngste sonen' for å unngå unødvendig gjentaking."
       }
     ]
   },

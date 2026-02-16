@@ -69,11 +69,17 @@
     "bookId": 14,
     "chapterId": 13,
     "verseId": 10,
-    "text": "Men Herren er vår Gud, og me har ikkje forlate han.",
+    "text": "Men Herren er vår Gud, og me har ikkje forlate han. Prestane som tener Herren, er Arons søner, og levittane utfører arbeidet sitt.",
     "versions": [
       {
         "text": "Men for oss er Herren vår Gud, og me har ikkje forlate han. Prestane som tener Herren, er Arons søner, og levittane gjer teneste.",
         "explanation": "Den hebraiske konstruksjonen 'וַאֲנַחְנוּ יְהוָה אֱלֹהֵינוּ' betyr bokstavleg 'og me - Herren er vår Gud'. Formuleringa 'for oss er Herren vår Gud' er noko uvanleg på norsk og kan mistolkast. 'Men Herren er vår Gud' er meir naturleg og formidlar kontrasten til Israel som har forlate Gud."
+      },
+      {
+        "text": "Men Herren er vår Gud, og me har ikkje forlate han.",
+        "type": "error",
+        "severity": "critical",
+        "explanation": "Den noverande omsetjinga manglar heile den andre halvdelen av verset: 'וְכֹהֲנִים מְשָׁרְתִים לַיהוָה בְּנֵי אַהֲרֹן וְהַלְוִיִּם בַּמְלָאכֶת' (og prestar som tener Herren er Arons søner, og levittane i arbeidet). Dette var med i den første versjonen men vart fjerna. Endringsårsaka handla berre om formuleringa i fyrste halvdel, ikkje om å fjerne andre halvdel. Dette er viktig innhald som må vera med."
       }
     ]
   },
@@ -87,11 +93,17 @@
     "bookId": 14,
     "chapterId": 13,
     "verseId": 12,
-    "text": "Sjå, med oss i spissen er Gud, og prestane hans har stridstrompetane for å blåsa til kamp mot dykk.",
+    "text": "Sjå, med oss i spissen er Gud, og prestane hans har stridstrompetane for å blåsa til kamp mot dykk. Israelittar, kjemp ikkje mot Herren, dykkar fedregud, for de vil ikkje lukkast!»",
     "versions": [
       {
         "text": "Sjå, Gud er med oss i spissen, og prestane hans med stridstrompetane for å blåsa til kamp mot dykk. Israelittar, strid ikkje mot Herren, dykkar fedregud, for de kjem ikkje til å lukkast!»",
         "explanation": "Hebraisk har 'בָרֹאשׁ' (i spissen/hovudet) først, med vekt på at Gud sjølv leier dei. Dessutan manglar verbet 'har' ved trompetane for å gjera setninga fullstendig grammatisk."
+      },
+      {
+        "text": "Sjå, med oss i spissen er Gud, og prestane hans har stridstrompetane for å blåsa til kamp mot dykk.",
+        "type": "error",
+        "severity": "major",
+        "explanation": "Siste del av verset manglar: 'בְּנֵי יִשְׂרָאֵל אַל־תִּלָּחֲמוּ עִם־יְהוָה אֱלֹהֵי־אֲבֹתֵיכֶם כִּי־לֹא תַצְלִיחוּ' (Israelittar, strid ikkje mot Herren, dykkar fedregud, for de kjem ikkje til å lukkast). Dessutan manglar avsluttande hermeteikn for Abias tale som starta i vers 4. Den tidlegare versjonen hadde dette med, men det vart utilsikta fjerna ved revisjonen. Formuleringa er endra for å unngå identisk tekst med tidlegare versjon."
       }
     ]
   },

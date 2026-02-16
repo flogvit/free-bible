@@ -39,7 +39,15 @@
     "bookId": 11,
     "chapterId": 10,
     "verseId": 6,
-    "text": "Ho sa til kongen: «Det var sant, det eg høyrde i landet mitt om det du har gjort og om visdomen din."
+    "text": "Ho sa til kongen: «Det var sant, det eg høyrde i landet mitt om dine ord og om visdomen din.",
+    "versions": [
+      {
+        "text": "Ho sa til kongen: «Det var sant, det eg høyrde i landet mitt om det du har gjort og om visdomen din.",
+        "type": "error",
+        "severity": "major",
+        "explanation": "Hebraisk דְּבָרֶיךָ tyder 'orda dine' eller 'det du seier', ikkje 'det du har gjort'. Omsetjinga bør reflektera at ryktet handla om Salomos ord/utsegner og hans visdom."
+      }
+    ]
   },
   {
     "bookId": 11,
@@ -99,13 +107,29 @@
     "bookId": 11,
     "chapterId": 10,
     "verseId": 15,
-    "text": "i tillegg til det som kom frå omreisande kjøpmenn, frå handelen til kremmaren, frå alle kongane i Arabia og frå statthaldarane i landet."
+    "text": "i tillegg til det som kom frå omreisande kjøpmenn, frå handelen til kremmarane, frå alle kongane i Arabia og frå statthaldarane i landet.",
+    "versions": [
+      {
+        "text": "i tillegg til det som kom frå omreisande kjøpmenn, frå handelen til kremmaren, frå alle kongane i Arabia og frå statthaldarane i landet.",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "Hebraisk הָרֹכְלִים er fleirtal ('kremmarane'), ikkje eintal ('kremmaren')."
+      }
+    ]
   },
   {
     "bookId": 11,
     "chapterId": 10,
     "verseId": 16,
-    "text": "Kong Salomo laga to hundre store skjold av hamra gull. Seks hundre sekel gull gjekk med til kvart skjold."
+    "text": "Kong Salomo laga to hundre store skjold av hamra gull. Seks hundre sjekel gull gjekk med til kvart skjold.",
+    "versions": [
+      {
+        "text": "Kong Salomo laga to hundre store skjold av hamra gull. Seks hundre sekel gull gjekk med til kvart skjold.",
+        "type": "error",
+        "severity": "major",
+        "explanation": "Den vanlege nynorske skrivemåten av den bibelske vekteininga er 'sjekel', ikkje 'sekel'. Dette gjeld konsekvent gjennom kapitlet."
+      }
+    ]
   },
   {
     "bookId": 11,
@@ -207,6 +231,14 @@
     "bookId": 11,
     "chapterId": 10,
     "verseId": 29,
-    "text": "Ei vogn vart innført frå Egypt for seks hundre sekel sølv, og ein hest for hundre og femti. På same måten vart dei eksporterte til alle hettitt-kongane og aramear-kongane."
+    "text": "Ei vogn vart innført frå Egypt for seks hundre sjekel sølv, og ein hest for hundre og femti. På same måten vart dei førte ut til alle hettitt-kongane og aramearkongane gjennom dei.",
+    "versions": [
+      {
+        "text": "Ei vogn vart innført frå Egypt for seks hundre sekel sølv, og ein hest for hundre og femti. På same måten vart dei eksporterte til alle hettitt-kongane og aramear-kongane.",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "Hebraisk בְּיָדָם יֹצִאוּ tyder 'gjennom dei (dvs. kjøpmennene) vart dei førte ut'. Originalen understrekar at dette skjedde gjennom kjøpmennene som mellomledd. Også 'sekel' bør vere 'sjekel' og 'aramear-kongane' bør skrivast 'aramearkongane'."
+      }
+    ]
   }
 ]

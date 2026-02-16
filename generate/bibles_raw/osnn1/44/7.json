@@ -63,7 +63,15 @@
     "bookId": 44,
     "chapterId": 7,
     "verseId": 10,
-    "text": "Han fria han ut frå alle trengslene hans og gav han nåde og visdom framfor farao, kongen i Egypt. Farao sette han til leiar over Egypt og heile huset sitt."
+    "text": "Han fria han ut frå alle trengslene hans og gav han nåde og visdom framfor farao, kongen i Egypt, og han sette han til leiar over Egypt og heile huset sitt.",
+    "versions": [
+      {
+        "text": "Han fria han ut frå alle trengslene hans og gav han nåde og visdom framfor farao, kongen i Egypt. Farao sette han til leiar over Egypt og heile huset sitt.",
+        "type": "error",
+        "severity": "major",
+        "explanation": "Subjektet i κατέστησεν er tvetydig, men i samanhengen med føregåande setningar der Gud er subjekt (ἐξείλατο, ἔδωκεν), er det mest naturleg at Gud (ikkje farao) er subjektet her òg. Originalteksten nemner ikkje farao som subjekt for denne handlinga. Å skriva 'Farao sette han' legg til eit subjektsskifte som ikkje er i grunnteksten."
+      }
+    ]
   },
   {
     "bookId": 44,
@@ -261,7 +269,15 @@
     "bookId": 44,
     "chapterId": 7,
     "verseId": 39,
-    "text": "Men fedrane våre ville ikkje lyda han. Dei støytte han frå seg og vende seg i hjarta attende til Egypt."
+    "text": "Men fedrane våre ville ikkje lyda han. Dei støytte han frå seg og vende seg i hjarto sine attende til Egypt.",
+    "versions": [
+      {
+        "text": "Men fedrane våre ville ikkje lyda han. Dei støytte han frå seg og vende seg i hjarta attende til Egypt.",
+        "type": "grammar",
+        "severity": "minor",
+        "explanation": "'I hjarta' er eintal ubestemt, men originalen har ἐν ταῖς καρδίαις αὐτῶν (i hjarto sine, fleirtal med eigedomsord). 'I hjarto sine' er meir presist og betre nynorsk."
+      }
+    ]
   },
   {
     "bookId": 44,
@@ -303,11 +319,17 @@
     "bookId": 44,
     "chapterId": 7,
     "verseId": 46,
-    "text": "David fann nåde hos Gud og bad om å få finna ein bustad for Jakobs hus.",
+    "text": "David fann nåde hos Gud og bad om å få finna ein bustad for Jakobs Gud.",
     "versions": [
       {
         "text": "David fann nåde hos Gud og bad om å få finna ein bustad for Jakobs Gud.",
         "explanation": "Tekstkritisk note: Nokre handskrifter har 'τῷ οἴκῳ Ἰακώβ' (Jakobs hus) i staden for 'τῷ θεῷ Ἰακώβ' (Jakobs Gud). Hovudteksten har 'θεῷ' (Gud), så noverande omsetjing er korrekt. Dette er berre ein merknad om tekstkritisk variasjon - ingen endring nødvendig dersom ein følgjer hovudteksten."
+      },
+      {
+        "text": "David fann nåde hos Gud og bad om å få finna ein bustad for Jakobs hus.",
+        "type": "theological",
+        "severity": "critical",
+        "explanation": "Hovudteksten (som er den oppgjevne originalteksten) har τῷ θεῷ Ἰακώβ ('Jakobs Gud'), ikkje 'Jakobs hus'. Versjonshistorikken viser at den opphavlege omsetjinga ('Jakobs Gud') var korrekt, men vart endra til 'Jakobs hus' basert på ein feilaktig revisjon. Endringsnotatet sjølv seier at 'hovudteksten har θεῷ (Gud), så noverande omsetjing er korrekt' og at 'ingen endring nødvendig dersom ein følgjer hovudteksten', men endå vart teksten endra bort frå hovudteksten. Den noverande teksten er altså feil i høve til den oppgjevne originalen."
       }
     ]
   },
@@ -327,7 +349,15 @@
     "bookId": 44,
     "chapterId": 7,
     "verseId": 49,
-    "text": "'Himmelen er min kongsstol, og jorda er fotskammelen min. Kva slags hus vil de byggja for meg, seier Herren, eller kvar er staden der eg skal kvila?"
+    "text": "'Himmelen er mi trone, og jorda er fotskammelen min. Kva slags hus vil de byggja for meg, seier Herren, eller kvar er staden der eg skal kvila?",
+    "versions": [
+      {
+        "text": "'Himmelen er min kongsstol, og jorda er fotskammelen min. Kva slags hus vil de byggja for meg, seier Herren, eller kvar er staden der eg skal kvila?",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "θρόνος tyder 'trone', ikkje 'kongsstol'. 'Trone' er det vanlege og meir presise ordet på nynorsk i bibelsk samanheng, og det er lettare å forstå."
+      }
+    ]
   },
   {
     "bookId": 44,
@@ -345,7 +375,15 @@
     "bookId": 44,
     "chapterId": 7,
     "verseId": 52,
-    "text": "Kven av profetane forfølgde ikkje fedrane dykkar? Dei drap dei som føreåt fortalde om at Den rettferdige skulle koma. Og no har de svike og drepe han,"
+    "text": "Kven av profetane forfølgde ikkje fedrane dykkar? Dei drap dei som føreåt fortalde om at Den rettferdige skulle koma. Og no har de vorte hans svikarar og mordarar,",
+    "versions": [
+      {
+        "text": "Kven av profetane forfølgde ikkje fedrane dykkar? Dei drap dei som føreåt fortalde om at Den rettferdige skulle koma. Og no har de svike og drepe han,",
+        "type": "grammar",
+        "severity": "minor",
+        "explanation": "Originalen seier προδόται καὶ φονεῖς ἐγένεσθε – 'de har vorte svikarar og mordarar' (substantiv, ikkje verb). 'Svike og drepe han' er ei fri omskriving som dessutan har grammatisk problem: 'har de svike og drepe' skulle vore 'har de svike og drepe' med partisippformer 'svike' og 'drepe' som er ugrammatisk. Korrekt ville vore 'svike og drepe', men substantivkonstruksjonen er nærare originalen."
+      }
+    ]
   },
   {
     "bookId": 44,

@@ -49,7 +49,15 @@
     "bookId": 24,
     "chapterId": 14,
     "verseId": 6,
-    "text": "Villasna står på dei nakne haugane og snapper etter luft som sjakalar. Augo deira sloknar fordi det ikkje finst grøne vokstrar."
+    "text": "Villasna står på dei nakne haugane og snapper etter luft som sjakalar. Augo deira sloknar fordi det ikkje finst grøde.",
+    "versions": [
+      {
+        "text": "Villasna står på dei nakne haugane og snapper etter luft som sjakalar. Augo deira sloknar fordi det ikkje finst grøne vokstrar.",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "'Grøne vokstrar' er unødvendig tungt. Det hebraiske עֵשֶׂב tyder gras/grøde, og 'grøde' er enklare og meir naturleg nynorsk."
+      }
+    ]
   },
   {
     "bookId": 24,
@@ -121,13 +129,29 @@
     "bookId": 24,
     "chapterId": 14,
     "verseId": 17,
-    "text": "Sei dette ordet til dei: Lat augo mine renna med tårer natt og dag utan stans! For jomfrua, dottera til folket mitt, er knust med eit stort slag, eit svært smertefullt sår."
+    "text": "Sei dette ordet til dei: Lat augo mine renna med tårer natt og dag utan stans! For jomfrua, dottera til folket mitt, er knust med eit stort brot, eit svært smertefullt sår.",
+    "versions": [
+      {
+        "text": "Sei dette ordet til dei: Lat augo mine renna med tårer natt og dag utan stans! For jomfrua, dottera til folket mitt, er knust med eit stort slag, eit svært smertefullt sår.",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "Det hebraiske שֶׁבֶר tyder 'brot/samanbrot' (jf. 'er broten/knust' i same vers med nishberah). 'Slag' er ikkje presist nok – שֶׁבֶר handlar om noko som er brote sund, ikkje eit slag (som ville vore מַכָּה). 'Brot' er meir presist og skil seg frå מַכָּה som følgjer etterpå."
+      }
+    ]
   },
   {
     "bookId": 24,
     "chapterId": 14,
     "verseId": 18,
-    "text": "Går eg ut på marka, sjå, der ligg dei som er drepne med sverd! Kjem eg inn i byen, sjå, der er dei som er utmatta av svolt! Både profet og prest fer kringom i eit land dei ikkje kjenner."
+    "text": "Går eg ut på marka, sjå, der ligg dei som er drepne med sverd! Kjem eg inn i byen, sjå, der er dei som er sjuke av svolt! Både profet og prest dreg kringom i eit land dei ikkje kjenner.",
+    "versions": [
+      {
+        "text": "Går eg ut på marka, sjå, der ligg dei som er drepne med sverd! Kjem eg inn i byen, sjå, der er dei som er utmatta av svolt! Både profet og prest fer kringom i eit land dei ikkje kjenner.",
+        "type": "error",
+        "severity": "major",
+        "explanation": "Det hebraiske תַּחֲלוּאֵי רָעָב tyder 'sjukdommar av svolt' eller 'sjuke av svolt/hunger', ikkje 'utmatta av svolt'. תַּחֲלוּאֵי kjem frå חלה (å vera sjuk), og poenget er sjukdom forårsaka av hungersnaud."
+      }
+    ]
   },
   {
     "bookId": 24,

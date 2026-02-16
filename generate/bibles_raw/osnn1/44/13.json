@@ -33,11 +33,17 @@
     "bookId": 44,
     "chapterId": 13,
     "verseId": 6,
-    "text": "Der fann dei ein jødisk mann, ein trollmann og falsk profet, som heitte Barjesus.",
+    "text": "Dei drog gjennom heile øya til Pafos, og der fann dei ein jødisk mann, ein trollmann og falsk profet, som heitte Barjesus.",
     "versions": [
       {
         "text": "Dei drog gjennom heile øya til Pafos. Der møtte dei ein jødisk mann som var trollmann og falsk profet. Han heitte Barjesus.",
         "explanation": "Gresk εὗρον betyr 'fann', ikkje 'møtte'. Samstundes kan setninga gjerast meir flytande ved å slå saman til éi setning, noko som passar betre for munnleg lesing."
+      },
+      {
+        "text": "Der fann dei ein jødisk mann, ein trollmann og falsk profet, som heitte Barjesus.",
+        "type": "error",
+        "severity": "major",
+        "explanation": "Den noverande omsetjinga manglar den viktige geografiske informasjonen om at dei reiste gjennom heile øya til Pafos (διελθόντες ὅλην τὴν νῆσον ἄχρι Πάφου). Den tidlegare versjonen hadde dette med, men den vart endra for å fiksa eit anna problem (εὗρον). Vi kan kombinere begge rettingane."
       }
     ]
   },
@@ -69,7 +75,15 @@
     "bookId": 44,
     "chapterId": 13,
     "verseId": 10,
-    "text": "og sa: «Du som er full av alt svik og all vondskap, du djevelens son, du fiende av all rettferd! Vil du aldri halda opp med å gjera Herrens rette vegar krokete?"
+    "text": "og sa: «Du som er full av alt svik og all vondskap, du djevelens son, du fiende av all rettferd! Vil du aldri halda opp med å gjera dei rette vegane til Herren krokete?",
+    "versions": [
+      {
+        "text": "og sa: «Du som er full av alt svik og all vondskap, du djevelens son, du fiende av all rettferd! Vil du aldri halda opp med å gjera Herrens rette vegar krokete?",
+        "type": "grammar",
+        "severity": "minor",
+        "explanation": "Gresk τὰς ὁδοὺς κυρίου τὰς εὐθείας har ein etterstilt attributt som understrekar 'dei rette vegane til Herren'. 'Herrens rette vegar' er akseptabelt, men 'dei rette vegane til Herren' flyt litt betre på nynorsk."
+      }
+    ]
   },
   {
     "bookId": 44,
@@ -111,7 +125,15 @@
     "bookId": 44,
     "chapterId": 13,
     "verseId": 17,
-    "text": "Gud åt dette folket Israel valde ut fedrane våre. Han gjorde folket stort medan dei var innflyttarar i Egypt, og med lyft arm førte han dei ut derifrå."
+    "text": "Gud for dette folket Israel valde ut fedrane våre.",
+    "versions": [
+      {
+        "text": "Gud åt dette folket Israel valde ut fedrane våre. Han gjorde folket stort medan dei var innflyttarar i Egypt, og med lyft arm førte han dei ut derifrå.",
+        "type": "grammar",
+        "severity": "minor",
+        "explanation": "'Gud åt dette folket' er uheldig på nynorsk fordi 'åt' kan lesast som fortidsform av 'eta'. Preposisjonen 'for' er meir eintydig og naturleg."
+      }
+    ]
   },
   {
     "bookId": 44,
@@ -153,7 +175,15 @@
     "bookId": 44,
     "chapterId": 13,
     "verseId": 22,
-    "text": "Etter at han hadde avsett han, reiste han opp David til konge for dei. Om han vitna han og sa: 'Eg har funne David, son til Isai, ein mann etter mitt hjarte, som skal gjera heile min vilje.'"
+    "text": "Etter at han hadde avsett han, reiste han opp David til konge for dei. Om han vitna han og sa: 'Eg har funne David, son til Isai, ein mann etter mitt hjarte, som skal gjera alt det eg vil.'",
+    "versions": [
+      {
+        "text": "Etter at han hadde avsett han, reiste han opp David til konge for dei. Om han vitna han og sa: 'Eg har funne David, son til Isai, ein mann etter mitt hjarte, som skal gjera heile min vilje.'",
+        "type": "grammar",
+        "severity": "minor",
+        "explanation": "Gresk πάντα τὰ θελήματά μου betyr 'alle mine viljer/ynskje'. 'Heile min vilje' er akseptabelt, men 'alt det eg vil' er meir naturleg munnleg nynorsk og formidlar det same."
+      }
+    ]
   },
   {
     "bookId": 44,
@@ -231,7 +261,15 @@
     "bookId": 44,
     "chapterId": 13,
     "verseId": 33,
-    "text": "Denne har Gud oppfylt for oss, borna deira, då han reiste opp Jesus, slik det òg står skrive i den andre salmen: 'Du er Son min, eg har født deg i dag.'"
+    "text": "Denne lovnaden har Gud oppfylt for oss, borna deira, ved at han reiste opp Jesus, slik det òg står skrive i den andre salmen: 'Du er Son min, eg har født deg i dag.'",
+    "versions": [
+      {
+        "text": "Denne har Gud oppfylt for oss, borna deira, då han reiste opp Jesus, slik det òg står skrive i den andre salmen: 'Du er Son min, eg har født deg i dag.'",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "'Denne' åleine som setningsstart er litt uklart; 'Denne lovnaden' knyt betre attende til vers 32. Dessutan er 'ved at' meir presist enn 'då' for ἀναστήσας, som uttrykker middelet (korleis lovnaden vart oppfylt), ikkje berre tidspunktet."
+      }
+    ]
   },
   {
     "bookId": 44,
@@ -333,7 +371,15 @@
     "bookId": 44,
     "chapterId": 13,
     "verseId": 48,
-    "text": "Då heidningane høyrde dette, vart dei glade og prisa Herrens ord. Og alle dei som var utvalde til evig liv, kom til tru."
+    "text": "Og alle dei som var bestemte til evig liv, kom til tru.",
+    "versions": [
+      {
+        "text": "Då heidningane høyrde dette, vart dei glade og prisa Herrens ord. Og alle dei som var utvalde til evig liv, kom til tru.",
+        "type": "theological",
+        "severity": "minor",
+        "explanation": "Gresk τεταγμένοι (frå τάσσω) betyr 'ordna/skikka/bestemte'. 'Utvalde' (ἐκλεκτοί) er eit anna gresk omgrep. 'Bestemte' er meir nøytralt og nærmare grunnordet, og overlet den teologiske tolkinga meir open."
+      }
+    ]
   },
   {
     "bookId": 44,

@@ -21,11 +21,17 @@
     "bookId": 1,
     "chapterId": 28,
     "verseId": 3,
-    "text": "Måtte Gud, Den Allmektige, velsigna deg, gjera deg fruktbar og la deg bli tallrik, så du blir til ei samling av folkeslag.",
+    "text": "Måtte El Sjaddai velsigna deg, gjera deg fruktbar og la deg bli tallrik, så du blir til ei samling av folkeslag.",
     "versions": [
       {
         "text": "Måtte Gud Den Allmektige velsigna deg, gjera deg fruktbar og la deg bli tallrik, så du blir til ei samling av folkeslag.",
         "explanation": "Tilnamnet 'Den Allmektige' bør ha komma rundt seg som ei apposisjon til 'Gud'."
+      },
+      {
+        "text": "Måtte Gud, Den Allmektige, velsigna deg, gjera deg fruktbar og la deg bli tallrik, så du blir til ei samling av folkeslag.",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "Det hebraiske אֵל שַׁדַּי er eit spesifikt gudsnamn som ofte vert ståande som 'El Sjaddai' i norske omsetjingar. Men dette er berre eit stilval; den noverande omsetjinga med 'Gud, Den Allmektige' er akseptabel. Vurder gjerne å halde seg til den noverande versjonen sidan ho allereie har éin revisjon."
       }
     ]
   },
@@ -57,7 +63,15 @@
     "bookId": 1,
     "chapterId": 28,
     "verseId": 7,
-    "text": "Jakob hadde lyda far sin og mor si og drege til Paddan-Aram."
+    "text": "Og Jakob lydde far sin og mor si og drog til Paddan-Aram.",
+    "versions": [
+      {
+        "text": "Jakob hadde lyda far sin og mor si og drege til Paddan-Aram.",
+        "type": "error",
+        "severity": "major",
+        "explanation": "Den hebraiske verbforma וַיִּשְׁמַע er vayyiqtol (narrativ fortid), ikkje pluskvamperfektum. Teksten fortel ikkje om ei handling som allereie var fullført, men om at Jakob så lydde (sekvensiell handling). 'Hadde lyda ... drege' gjev feil tempus. Det bør vera 'lydde ... drog'."
+      }
+    ]
   },
   {
     "bookId": 1,
@@ -117,7 +131,15 @@
     "bookId": 1,
     "chapterId": 28,
     "verseId": 14,
-    "text": "Etterkomarane dine skal bli som støvet på jorda, og du skal breie deg ut mot vest og aust, mot nord og sør. I deg og i ætta di skal alle slekter på jorda bli velsigna."
+    "text": "Ætta di skal bli som støvet på jorda, og du skal breie deg ut mot vest og aust, mot nord og sør. I deg og i ætta di skal alle slekter på jorda bli velsigna.",
+    "versions": [
+      {
+        "text": "Etterkomarane dine skal bli som støvet på jorda, og du skal breie deg ut mot vest og aust, mot nord og sør. I deg og i ætta di skal alle slekter på jorda bli velsigna.",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "Det hebraiske זַרְעֲךָ tyder 'sæd/ætt' (kollektivt eintal), ikkje 'etterkomarar' (fleirtal). 'Ætta di' er meir presist og konsistent med bruken av 'ætta di' seinare i same vers."
+      }
+    ]
   },
   {
     "bookId": 1,
@@ -135,7 +157,15 @@
     "bookId": 1,
     "chapterId": 28,
     "verseId": 17,
-    "text": "Han vart gripen av ærefrykt og sa: «Kor skræmande er ikkje denne staden! Dette er ikkje anna enn Guds hus, og her er porten til himmelen.»"
+    "text": "Han vart gripen av ærefrykt og sa: «Kor skremmande er ikkje denne staden! Dette er ikkje anna enn Guds hus, og her er porten til himmelen.»",
+    "versions": [
+      {
+        "text": "Han vart gripen av ærefrykt og sa: «Kor skræmande er ikkje denne staden! Dette er ikkje anna enn Guds hus, og her er porten til himmelen.»",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "'Skræmande' er ikkje standard nynorsk rettskriving. Rett form er 'skremmande'."
+      }
+    ]
   },
   {
     "bookId": 1,

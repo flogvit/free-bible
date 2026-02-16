@@ -75,11 +75,17 @@
     "bookId": 14,
     "chapterId": 33,
     "verseId": 12,
-    "text": "I nauda si bad han til HERREN sin Gud og audmjuka seg djupt for andletet til fedrane sin Gud.",
+    "text": "I nauda si bønfall han HERREN sin Gud og audmjuka seg djupt for andletet til fedrane sin Gud.",
     "versions": [
       {
         "text": "I nauda si bad han til HERREN sin Gud og audmjuka seg djupt for andletet til fedreguden sin.",
         "explanation": "Det hebraiske 'elohei avotav' er fleirtal 'fedrane hans sin Gud', ikkje eintal 'fedreguden'. Dette er ein viktig teologisk distinksjon - det handlar om Gud til fedrane (Abraham, Isak, Jakob), ikkje ein 'fedregud' som kan mistolkast."
+      },
+      {
+        "text": "I nauda si bad han til HERREN sin Gud og audmjuka seg djupt for andletet til fedrane sin Gud.",
+        "type": "error",
+        "severity": "major",
+        "explanation": "Det hebraiske 'chillah et-penei' tyder 'bønfall andletet til' – det er eit sterkare uttrykk enn berre 'bad til'. Det inneber å søkja velvilje/gunst hos nokon. 'Bønfall' gjev betre att intensiteten i den hebraiske frasen. Merk: dette er eit anna poeng enn dei tidlegare revisjonane som handla om 'fedreguden/fedrane sin Gud'."
       }
     ]
   },
@@ -105,7 +111,15 @@
     "bookId": 14,
     "chapterId": 33,
     "verseId": 15,
-    "text": "Han fjerna dei framande gudane og gudebildet frå HERRENS hus, og alle altara han hadde bygd på tempelhøgda og i Jerusalem, og kasta dei utanfor byen."
+    "text": "Han fjerna dei framande gudane og avgudsbiletet frå HERRENS hus, og alle altara han hadde bygd på tempelhøgda og i Jerusalem, og kasta dei utanfor byen.",
+    "versions": [
+      {
+        "text": "Han fjerna dei framande gudane og gudebildet frå HERRENS hus, og alle altara han hadde bygd på tempelhøgda og i Jerusalem, og kasta dei utanfor byen.",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "Det hebraiske 'semel' (סֶמֶל) refererer spesifikt til eit avgudsbilde/avgudsbilete, ikkje berre eit generelt 'gudebilde'. I vers 7 vert det omtala som 'pesel hassemel' (det utskorne gudebildet), men her i vers 15 bør det framgå tydelegare at det dreiar seg om eit avgudsbilde som vart fjerna."
+      }
+    ]
   },
   {
     "bookId": 14,
@@ -117,7 +131,15 @@
     "bookId": 14,
     "chapterId": 33,
     "verseId": 17,
-    "text": "Men folket heldt fram med å ofra på offerhaugane, endå berre til HERREN sin Gud."
+    "text": "Men folket heldt fram med å ofra på offerhaugane, men no berre til HERREN sin Gud.",
+    "versions": [
+      {
+        "text": "Men folket heldt fram med å ofra på offerhaugane, endå berre til HERREN sin Gud.",
+        "type": "grammar",
+        "severity": "minor",
+        "explanation": "Det hebraiske 'rak' (רַק) tyder 'berre/einast' og fungerer som ei innskrenking – folket ofra framleis på offerhaugane, men berre til HERREN deira Gud. 'Endå berre' er litt uklart på norsk; 'men no berre' gjer det tydelegare at det er ei positiv endring samanlikna med tidlegare, sjølv om praksisen med offerhaugar held fram."
+      }
+    ]
   },
   {
     "bookId": 14,

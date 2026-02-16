@@ -27,7 +27,15 @@
     "bookId": 40,
     "chapterId": 23,
     "verseId": 5,
-    "text": "Alle gjerningane sine gjer dei for å bli sett av menneske. Dei gjer bønneremmane sine breie og duskane på kappene sine lange."
+    "text": "For dei gjer bønneremmane sine breie og duskane på kappene sine lange.",
+    "versions": [
+      {
+        "text": "Alle gjerningane sine gjer dei for å bli sett av menneske. Dei gjer bønneremmane sine breie og duskane på kappene sine lange.",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "The Greek γάρ (for) provides the causal connection explaining how they do everything to be seen. The translation omits this connective word, which clarifies that what follows is the reason/explanation."
+      }
+    ]
   },
   {
     "bookId": 40,
@@ -135,7 +143,15 @@
     "bookId": 40,
     "chapterId": 23,
     "verseId": 22,
-    "text": "Og den som sver ved himmelen, sver ved Guds trone og ved han som sit på henne."
+    "text": "Og den som sver ved himmelen, sver ved Guds trone og ved han som sit på han.",
+    "versions": [
+      {
+        "text": "Og den som sver ved himmelen, sver ved Guds trone og ved han som sit på henne.",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "In nynorsk, 'trone' is masculine (ein trone), so the pronoun should be 'han' (referring to the throne), not 'henne' (which would be feminine). Alternatively, this could be rephrased to avoid ambiguity, but the grammatical gender should be correct."
+      }
+    ]
   },
   {
     "bookId": 40,
@@ -165,11 +181,17 @@
     "bookId": 40,
     "chapterId": 23,
     "verseId": 26,
-    "text": "Du blinde farisear! Reinsa først innsida av begeret, så blir utsida òg rein.",
+    "text": "Du blinde farisear! Reinsa først innsida av begeret og fatet, så blir utsida òg rein.",
     "versions": [
       {
         "text": "Du blinde farisear! Reinsa først innsida av begeret og fatet, så blir utsida òg rein.",
         "explanation": "The critical Greek text has 'καὶ τῆς παροψίδος' in brackets or as a variant. Many manuscripts omit 'and the dish' in verse 26, keeping focus on the cup. However, this is a minor textual issue - the current translation follows manuscripts that include it, which is also acceptable."
+      },
+      {
+        "text": "Du blinde farisear! Reinsa først innsida av begeret, så blir utsida òg rein.",
+        "type": "error",
+        "severity": "major",
+        "explanation": "The version history shows that the previous version included 'og fatet' and was then removed with the note that 'many manuscripts omit it.' However, the Greek critical text (as presented in the original) does include 'καὶ τῆς παροψίδος' (and the dish). Since the source text provided here includes it, the translation should reflect it. The version history note itself acknowledges 'the current translation follows manuscripts that include it, which is also acceptable,' suggesting the removal may have been an error. Note: Since there is only 1 previous revision and the change reason was ambiguous (acknowledging both options are acceptable), this warrants reconsideration."
       }
     ]
   },
@@ -201,7 +223,15 @@
     "bookId": 40,
     "chapterId": 23,
     "verseId": 31,
-    "text": "Slik vitnar de mot dykk sjølve at de er born av dei som drap profetane."
+    "text": "Slik vitnar de mot dykk sjølve at de er søner av dei som drap profetane.",
+    "versions": [
+      {
+        "text": "Slik vitnar de mot dykk sjølve at de er born av dei som drap profetane.",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "The Greek υἱοί specifically means 'sons' (not the gender-neutral 'born'/children). While 'born' is often used in modern translations for inclusivity, the original rhetorical force is about lineage from the murderers, and 'søner' better reflects υἱοί. However, this is a minor stylistic choice."
+      }
+    ]
   },
   {
     "bookId": 40,
@@ -249,7 +279,15 @@
     "bookId": 40,
     "chapterId": 23,
     "verseId": 38,
-    "text": "Sjå, huset dykkar skal bli liggjande øyde!"
+    "text": "Sjå, huset dykkar blir liggjande øyde!",
+    "versions": [
+      {
+        "text": "Sjå, huset dykkar skal bli liggjande øyde!",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "The Greek ἀφίεται is present tense ('is left/abandoned'), not future. 'Blir liggjande øyde' better captures the present tense, indicating an immediate reality rather than a future prediction with 'skal bli'."
+      }
+    ]
   },
   {
     "bookId": 40,

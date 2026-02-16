@@ -3,7 +3,15 @@
     "bookId": 19,
     "chapterId": 6,
     "verseId": 1,
-    "text": "Til korleiaren. Med strengespel. Etter den åttande. Ein salme av David."
+    "text": "Til kormeisteren. Med strengespel. Etter den åttande. Ein salme av David.",
+    "versions": [
+      {
+        "text": "Til korleiaren. Med strengespel. Etter den åttande. Ein salme av David.",
+        "type": "error",
+        "severity": "major",
+        "explanation": "'Korleiaren' er ikkje eit korrekt nynorsk ord. Det hebraiske לַמְנַצֵּחַ vert vanlegvis omsett 'kormeisteren' eller 'musikkmeisteren'. 'Kormeisteren' er meir etablert og korrekt."
+      }
+    ]
   },
   {
     "bookId": 19,
@@ -15,11 +23,17 @@
     "bookId": 19,
     "chapterId": 6,
     "verseId": 3,
-    "text": "Ver meg nådig, Herre, for eg er veik. Læk meg, Herre, for beina mine er forskrekka.",
+    "text": "Ver meg nådig, Herre, for eg er kraftlaus. Læk meg, Herre, for beina mine er forskrekka.",
     "versions": [
       {
         "text": "Ver meg nådig, Herre, for eg er veik. Læk meg, Herre, for beina mine skjelv.",
         "explanation": "Det hebraiske ordet נִבְהֲלוּ (nivhalu) tyder 'er forskrekka/rysta' og ikkje 'skjelv'. Same rot (בהל) vert brukt i vers 4 og 11 der det er omsett 'forskrekka'. For konsistens og nøyaktigheit bør same omsetjing brukast her."
+      },
+      {
+        "text": "Ver meg nådig, Herre, for eg er veik. Læk meg, Herre, for beina mine er forskrekka.",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "Det hebraiske אֻמְלַל (umlal) tyder 'svak/visna/kraftlaus' og uttrykkjer ei sterkare fysisk og åndeleg avmakt enn det norske 'veik'. 'Kraftlaus' gjev betre att denne djupe avmakta."
       }
     ]
   },

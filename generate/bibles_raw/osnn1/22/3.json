@@ -39,13 +39,29 @@
     "bookId": 22,
     "chapterId": 3,
     "verseId": 5,
-    "text": "Eg tek dykk i eid, døtrer av Jerusalem, ved gasellene og hindane på marka: Vekkj ikkje og eggj ikkje opp kjærleiken før han sjølv vil det!"
+    "text": "Eg tek dykk i eid, døtrer av Jerusalem, ved gasellene og hindane på marka: Vekk ikkje og eggj ikkje opp kjærleiken før han sjølv vil det!",
+    "versions": [
+      {
+        "text": "Eg tek dykk i eid, døtrer av Jerusalem, ved gasellene og hindane på marka: Vekkj ikkje og eggj ikkje opp kjærleiken før han sjølv vil det!",
+        "type": "grammar",
+        "severity": "minor",
+        "explanation": "'Vekkj' er ei feilstaving på nynorsk. Imperativforma av 'vekkja' er 'vekk', ikkje 'vekkj'."
+      }
+    ]
   },
   {
     "bookId": 22,
     "chapterId": 3,
     "verseId": 6,
-    "text": "Kven er ho som kjem opp frå øydemarka som søyler av røyk, parfymert med myrra og røykjelse, av alt det finaste pulveret frå krydderkrammaren?"
+    "text": "Kven er ho som stig opp frå øydemarka som søyler av røyk, parfymert med myrra og røykjelse, med alt det finaste pulveret frå krydderkrammaren?",
+    "versions": [
+      {
+        "text": "Kven er ho som kjem opp frå øydemarka som søyler av røyk, parfymert med myrra og røykjelse, av alt det finaste pulveret frå krydderkrammaren?",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "'Stig opp' er meir poetisk og dekkjer betre det hebraiske עֹלָה, som har ei meir opphøgd tyding enn berre 'kjem opp'. Dessutan bør 'av alt' vere 'med alt' – det hebraiske מִכֹּל tyder 'av/med alle slags', og det beskriv kva ho er parfymert med, ikkje ein partitiv konstruksjon."
+      }
+    ]
   },
   {
     "bookId": 22,
@@ -75,11 +91,17 @@
     "bookId": 22,
     "chapterId": 3,
     "verseId": 10,
-    "text": "Stolpane laga han av sølv, botn av gull, setet av purpur. Innsida var utsmykka med kjærleik av døtrene i Jerusalem.",
+    "text": "Stolpane laga han av sølv, botn av gull, setet av purpur. Innsida var lagd med kjærleik frå døtrene i Jerusalem.",
     "versions": [
       {
         "text": "Stolpane laga han av sølv, ryggen av gull, setet av purpur. Innsida var utsmykka med kjærleik av døtrene i Jerusalem.",
         "explanation": "Det hebraiske רְפִידָה (refidah) tyder støtte/underlag/botn, ikkje 'rygg'. For ein bærestol gjev 'botn' meir meining enn 'rygg'."
+      },
+      {
+        "text": "Stolpane laga han av sølv, botn av gull, setet av purpur. Innsida var utsmykka med kjærleik av døtrene i Jerusalem.",
+        "type": "theological",
+        "severity": "minor",
+        "explanation": "Det hebraiske רָצוּף tyder 'utlagd/dekt/brulagd', ikkje 'utsmykka'. Dessutan bør 'av døtrene' vere 'frå døtrene' – det hebraiske מִבְּנוֹת tyder 'frå/av døtrene', og 'frå' er meir naturleg på nynorsk her."
       }
     ]
   },

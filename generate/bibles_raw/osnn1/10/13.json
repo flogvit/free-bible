@@ -21,7 +21,15 @@
     "bookId": 10,
     "chapterId": 13,
     "verseId": 4,
-    "text": "Han sa til han: «Kvifor ser du så avmagra ut, kongsemne, morgon etter morgon? Vil du ikkje fortelja meg det?» Amnon sa til han: «Eg elskar Tamar, syster til Absalom, bror min.»"
+    "text": "Han sa til han: «Kvifor ser du så avmagra ut, du som er kongsson, morgon etter morgon? Vil du ikkje fortelja meg det?» Amnon sa til han: «Eg elskar Tamar, syster til Absalom, bror min.»",
+    "versions": [
+      {
+        "text": "Han sa til han: «Kvifor ser du så avmagra ut, kongsemne, morgon etter morgon? Vil du ikkje fortelja meg det?» Amnon sa til han: «Eg elskar Tamar, syster til Absalom, bror min.»",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "Hebraisk 'ben-hammelekh' betyr 'kongsson' (son til kongen), ikkje 'kongsemne' (som impliserer ein tronarvingsposisjon). Amnon var kongsson, og ordet er brukt deskriptivt, ikkje som ein tittel for tronfølgjar."
+      }
+    ]
   },
   {
     "bookId": 10,
@@ -111,7 +119,15 @@
     "bookId": 10,
     "chapterId": 13,
     "verseId": 19,
-    "text": "Tamar tok oske på hovudet sitt og reiv sund den side kjortelen ho hadde på seg. Ho la hendene på hovudet og gjekk bort medan ho skreik."
+    "text": "Tamar tok oske på hovudet sitt og reiv sund den side kjortelen ho hadde på seg. Ho la handa på hovudet og gjekk bort medan ho skreik.",
+    "versions": [
+      {
+        "text": "Tamar tok oske på hovudet sitt og reiv sund den side kjortelen ho hadde på seg. Ho la hendene på hovudet og gjekk bort medan ho skreik.",
+        "type": "grammar",
+        "severity": "minor",
+        "explanation": "Hebraisk 'yadah' (יָדָהּ) er eintal: 'handa si', ikkje fleirtal 'hendene'. Sjølv om det er ein liten detalj, bør omsetjinga vera presis."
+      }
+    ]
   },
   {
     "bookId": 10,
@@ -189,11 +205,17 @@
     "bookId": 10,
     "chapterId": 13,
     "verseId": 32,
-    "text": "«Min herre må ikkje tru at dei har drepe alle dei unge mennene, kongssønene. Berre Amnon er død. Dette har lege i Absaloms tankar heilt sidan den dagen Amnon vanæra Tamar, syster hans.»",
+    "text": "Jonadab, son til Sjima, bror til David, tok til orde og sa: «Min herre må ikkje tru at dei har drepe alle dei unge mennene, kongssønene. Berre Amnon er død. Dette har lege i Absaloms tankar heilt sidan den dagen Amnon vanæra Tamar, syster hans.»",
     "versions": [
       {
         "text": "Men Jonadab, son til Sjima, bror til David, tok til orde og sa: «Herren min må ikkje tru at dei har drepe alle dei unge mennene, kongssønene. Berre Amnon er død. Dette har lege i Absaloms tankar heilt sidan den dagen Amnon vanæra Tamar, syster hans.»",
         "explanation": "Hebraisk 'adoni' (אֲדֹנִי) betyr 'min herre' som høfleg tiltale til kongen, ikkje 'Herren' (YHWH/Adonai i religiøs tyding). 'Herren min' kan skapa teologisk forvirring ved å likna på gudsnamnet. Bør vera 'Min herre' som tydeleg viser til kongen."
+      },
+      {
+        "text": "«Min herre må ikkje tru at dei har drepe alle dei unge mennene, kongssønene. Berre Amnon er død. Dette har lege i Absaloms tankar heilt sidan den dagen Amnon vanæra Tamar, syster hans.»",
+        "type": "error",
+        "severity": "major",
+        "explanation": "Den noverande versjonen manglar innleiinga som identifiserer kven som snakkar (Jonadab, son til Sjima, bror til David). Den førre versjonen hadde dette med, men brukte 'Herren min' i staden for 'Min herre'. Rettinga frå revisjon 1 var korrekt å endra 'Herren min' til 'Min herre', men ein fjerna samtidig heile innleiingsfrasa ved ein feil. Hebraisk tekst har tydeleg: 'Jonadab ben-Shim'ah achi-David vayomer'."
       }
     ]
   },
@@ -243,6 +265,14 @@
     "bookId": 10,
     "chapterId": 13,
     "verseId": 39,
-    "text": "Kong David lengta etter å dra ut til Absalom, for han hadde funne seg til rette med at Amnon var død."
+    "text": "Kong David slutta å forfølgja Absalom, for han var trøysta over Amnon, sidan han var død.",
+    "versions": [
+      {
+        "text": "Kong David lengta etter å dra ut til Absalom, for han hadde funne seg til rette med at Amnon var død.",
+        "type": "theological",
+        "severity": "major",
+        "explanation": "Det hebraiske verbet 'vatekhal' (וַתְּכַל) frå rota כלה kan tyda 'slutta/halda opp med' eller 'lengta etter' (med ulik nyansar). Men den mest vanlege tolkinga av 'vatekhal ... latset' er 'slutta å gå ut mot' i tyding av at han ikkje lenger ville straffa Absalom. 'Funne seg til rette med' er ei litt svak attgjeving av 'nicham' (vart trøysta/hadde sørgt ferdig). 'Var trøysta over' Amnon er meir presist."
+      }
+    ]
   }
 ]

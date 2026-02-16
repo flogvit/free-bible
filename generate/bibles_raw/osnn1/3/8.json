@@ -99,7 +99,15 @@
     "bookId": 3,
     "chapterId": 8,
     "verseId": 15,
-    "text": "Så slakta Moses han og tok blodet og strauk det med fingeren rundt på horna på altaret og reinsa altaret for synd. Resten av blodet auste han ut ved foten av altaret. Slik helga han altaret og gjorde soning for det."
+    "text": "Så slakta han oksen, og Moses tok blodet og strauk det med fingeren rundt på horna på altaret og reinsa altaret for synd. Resten av blodet auste han ut ved foten av altaret. Slik helga han altaret og gjorde soning for det.",
+    "versions": [
+      {
+        "text": "Så slakta Moses han og tok blodet og strauk det med fingeren rundt på horna på altaret og reinsa altaret for synd. Resten av blodet auste han ut ved foten av altaret. Slik helga han altaret og gjorde soning for det.",
+        "type": "error",
+        "severity": "minor",
+        "explanation": "Det hebraiske וַיִּשְׁחָט har ikkje Moses som eksplisitt subjekt – det er truleg Aron eller ein annan som slakta. Moses er først nemnd som subjekt ved 'tok blodet'. Oversettinga 'Så slakta Moses han' er noko upresis. 'Så slakta han oksen, og Moses tok blodet' er meir trufast mot originalteksten."
+      }
+    ]
   },
   {
     "bookId": 3,
@@ -129,7 +137,15 @@
     "bookId": 3,
     "chapterId": 8,
     "verseId": 20,
-    "text": "Han delte veren opp i stykke, og Moses brende hovudet, stykka og feittet."
+    "text": "Veren vart delt opp i stykke, og Moses brende hovudet, stykka og feittet.",
+    "versions": [
+      {
+        "text": "Han delte veren opp i stykke, og Moses brende hovudet, stykka og feittet.",
+        "type": "grammar",
+        "severity": "minor",
+        "explanation": "Det hebraiske נִתַּח er ein nif'al (passiv) form: 'veren vart delt opp i stykke', ikkje aktivt 'han delte'. Den passive forma bør reflekterast i oversettinga."
+      }
+    ]
   },
   {
     "bookId": 3,
@@ -231,12 +247,28 @@
     "bookId": 3,
     "chapterId": 8,
     "verseId": 35,
-    "text": "De skal halda dykk ved inngangen til møteteltet dag og natt i sju dagar og gjera det Herren krev, så de ikkje skal døy. For slik er det pålagt meg.»"
+    "text": "De skal halda dykk ved inngangen til møteteltet dag og natt i sju dagar og vakta det Herren har sett dykk til å vakta, så de ikkje skal døy. For slik har eg fått påbod.»",
+    "versions": [
+      {
+        "text": "De skal halda dykk ved inngangen til møteteltet dag og natt i sju dagar og gjera det Herren krev, så de ikkje skal døy. For slik er det pålagt meg.»",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "Hebraisk 'ushmartem et-mishmeret YHWH' er eit viktig teknisk uttrykk som tyder 'vakta Herrens vakt/teneste'. 'Gjera det Herren krev' er ei forenkling som mister noko av den tekniske meininga. Dessutan er 'צֻוֵּיתִי' (tsuvveiti) 1. person pual 'eg har fått påbod', som bør gjevast att tydelegare."
+      }
+    ]
   },
   {
     "bookId": 3,
     "chapterId": 8,
     "verseId": 36,
-    "text": "Aron og sønene hans gjorde alt det Herren hadde pålagt gjennom Moses."
+    "text": "Aron og sønene hans gjorde alt det som Herren hadde pålagt gjennom Moses.",
+    "versions": [
+      {
+        "text": "Aron og sønene hans gjorde alt det Herren hadde pålagt gjennom Moses.",
+        "type": "error",
+        "severity": "minor",
+        "explanation": "Ei lita grammatisk forbetring: 'alt det som Herren hadde pålagt' er meir naturleg nynorsk enn 'alt det Herren hadde pålagt'."
+      }
+    ]
   }
 ]

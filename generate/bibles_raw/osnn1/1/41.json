@@ -45,11 +45,17 @@
     "bookId": 1,
     "chapterId": 41,
     "verseId": 7,
-    "text": "Dei tynne aksa slukte dei sju fulle og gode aksa. Då vakna farao, og sjå, det var ein draum.",
+    "text": "Dei tynne aksa slukte dei sju kraftige og fulle aksa.",
     "versions": [
       {
         "text": "Dei tynne aksa slukte dei sju fulle og fine aksa. Då vakna farao, og sjå, det var ein draum.",
         "explanation": "Det hebraiske 'הַמְּלֵאֹת' (hamle'ot) betyr 'fulle', og saman med 'הַבְּרִיאוֹת' (habri'ot - 'sunne/kraftige') i vers 5 som er omsett 'gode'. For konsistens med vers 5 og 22 bør 'fine' endrast til 'gode'."
+      },
+      {
+        "text": "Dei tynne aksa slukte dei sju fulle og gode aksa. Då vakna farao, og sjå, det var ein draum.",
+        "type": "grammar",
+        "severity": "minor",
+        "explanation": "Det hebraiske 'הַבְּרִיאוֹת וְהַמְּלֵאוֹת' betyr 'dei kraftige/sunne og fulle'. Her i vers 7 er det to adjektiv: bri'ot (kraftig/sunn) og male'ot (fulle). Omsetjinga har 'fulle og gode', men 'gode' (tovot) finst ikkje i dette verset (det finst i vers 5). Riktig attgjeving bør skilja mellom bri'ot og male'ot."
       }
     ]
   },
@@ -135,7 +141,15 @@
     "bookId": 1,
     "chapterId": 41,
     "verseId": 19,
-    "text": "Og sjå, sju andre kyr steig opp etter dei, skrale og svært stygge og magre. Aldri har eg sett så stygge kyr i heile Egypt."
+    "text": "Og sjå, sju andre kyr steig opp etter dei, skrale og svært stygge å sjå til og magre. Aldri har eg sett så stygge kyr i heile Egypt.",
+    "versions": [
+      {
+        "text": "Og sjå, sju andre kyr steig opp etter dei, skrale og svært stygge og magre. Aldri har eg sett så stygge kyr i heile Egypt.",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "Det hebraiske 'רָעוֹת תֹּאַר' betyr 'stygge å sjå til / stygge av utsjånad'. Uttrykket 'to'ar' (form/utsjånad) er med i originalen og bør takast med for nøyaktigheit, tilsvarande vers 3 og 18 som har 'å sjå til' / 'vakre'."
+      }
+    ]
   },
   {
     "bookId": 1,
@@ -231,7 +245,15 @@
     "bookId": 1,
     "chapterId": 41,
     "verseId": 34,
-    "text": "Farao bør gjera dette: Han bør setja tilsynsmenn over landet og ta ein femtedel av avlinga i Egypt i dei sju åra med overflod."
+    "text": "Farao bør gjera dette: setja tilsynsmenn over landet og ta ein femtedel av avlinga i Egypt i dei sju åra med overflod.",
+    "versions": [
+      {
+        "text": "Farao bør gjera dette: Han bør setja tilsynsmenn over landet og ta ein femtedel av avlinga i Egypt i dei sju åra med overflod.",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "'יַעֲשֶׂה פַרְעֹה' ('Farao bør gjera dette') er allereie gjeve att, men det etterfølgjande 'Han bør' er overflødig. Den hebraiske teksten har berre eitt subjekt - det andre verbet 'וְחִמֵּשׁ' (og ta ein femtedel) er koordinert, ikkje eit nytt hovudsetning."
+      }
+    ]
   },
   {
     "bookId": 1,
@@ -255,7 +277,15 @@
     "bookId": 1,
     "chapterId": 41,
     "verseId": 38,
-    "text": "Farao sa til tenarane sine: «Kan vi finna nokon som denne mannen, ein som har Guds Ande i seg?»"
+    "text": "Farao sa til tenarane sine: «Kan vi finna nokon som denne mannen, ein som har Guds ande i seg?»",
+    "versions": [
+      {
+        "text": "Farao sa til tenarane sine: «Kan vi finna nokon som denne mannen, ein som har Guds Ande i seg?»",
+        "type": "theological",
+        "severity": "minor",
+        "explanation": "Det hebraiske 'רוּחַ אֱלֹהִים' (ruach elohim) i denne GT-konteksten refererer meir til 'guds ande / guddommeleg ande' i generell forstand snarare enn den tredje personen i treeininga. Å skrive 'ande' med liten a er meir nøyaktig i denne GT-konteksten der farao snakkar ut frå sin eigen religiøse forståing. Likevel er dette eit legitimt teologisk val og ikkje nødvendigvis feil."
+      }
+    ]
   },
   {
     "bookId": 1,
@@ -295,11 +325,17 @@
     "bookId": 1,
     "chapterId": 41,
     "verseId": 43,
-    "text": "Han lét han køyra i den nest beste vogna si, og dei ropa framfor han: «Avrek!» Slik sette han Josef over heile Egypt.",
+    "text": "Han lét han køyra i den andre vogna si, og dei ropa framfor han: «Avrek!» Slik sette han Josef over heile Egypt.",
     "versions": [
       {
         "text": "Han lét han køyra i den nest beste vogna si, og dei ropa framfor han: «Bøy kne!» Slik sette han Josef over heile Egypt.",
         "explanation": "Det hebraiske 'אַבְרֵךְ' (avrek) er eit omstridd ord, truleg eit egyptisk låneord eller ærestittel. Tydinga er usikker - det kan tyda 'bøy kne', men mange omsetjingar beheld det som eit eigennamn/utrop. Å behalde 'Avrek' er meir nøytralt og unngår ei tolking som ikkje er sikker."
+      },
+      {
+        "text": "Han lét han køyra i den nest beste vogna si, og dei ropa framfor han: «Avrek!» Slik sette han Josef over heile Egypt.",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "'מִרְכֶּבֶת הַמִּשְׁנֶה' betyr bokstaveleg 'den andre vogna' - dvs. vogna til nestkommandanten/visiren. 'Den nest beste' er ei tolking som impliserer kvalitetsrangering, medan originalen peikar på den offisielle vogna til den som er nr. 2 i rang."
       }
     ]
   },
@@ -385,7 +421,15 @@
     "bookId": 1,
     "chapterId": 41,
     "verseId": 56,
-    "text": "Hungersnauden breidde seg over heile landet. Josef opna alle lagera og selde korn til egyptarane, for hungersnauden var hard i Egypt."
+    "text": "Hungersnauden breidde seg over heile jordoverflata. Josef opna alle lagera og selde korn til egyptarane, for hungersnauden var hard i Egypt.",
+    "versions": [
+      {
+        "text": "Hungersnauden breidde seg over heile landet. Josef opna alle lagera og selde korn til egyptarane, for hungersnauden var hard i Egypt.",
+        "type": "error",
+        "severity": "major",
+        "explanation": "Det hebraiske 'עַל כָּל־פְּנֵי הָאָרֶץ' betyr 'over heile jordoverflata' (bokstaveleg: 'over heile andletet til jorda'). I konteksten der vers 57 skildrar at 'heile verda' kom til Egypt, peikar dette uttrykket på eit vidare geografisk omfang enn berre Egypts land. Det passar betre med den universelle hungersnauden som er skildra."
+      }
+    ]
   },
   {
     "bookId": 1,

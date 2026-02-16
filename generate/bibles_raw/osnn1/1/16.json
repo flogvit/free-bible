@@ -105,11 +105,17 @@
     "bookId": 1,
     "chapterId": 16,
     "verseId": 13,
-    "text": "Ho gav Herren som tala til henne, dette namnet: «Du er ein Gud som ser meg.» For ho sa: «Har eg verkeleg sett han som ser etter meg, her?»",
+    "text": "Ho gav Herren som tala til henne, dette namnet: «Du er ein Gud som ser meg.» For ho sa: «Har eg verkeleg sett etter han som ser meg, her?»",
     "versions": [
       {
         "text": "Ho kalla Herren som tala til henne: «Du er ein Gud som ser meg.» For ho sa: «Har eg verkeleg sett han som ser meg, og framleis lever?»",
         "explanation": "1) 'Kalla' bør utvidast til 'gav dette namnet' for å gjera det klart at ho namngjev Gud. 2) Det hebraiske הֲלֹ֛ם betyr 'her' (på denne staden), ikkje 'og framleis lever'. Uttrykket רֹאִֽי kan tyda 'ser etter meg/vakar over meg'. Spørsmålet handlar om at ho har sett Gud på denne staden."
+      },
+      {
+        "text": "Ho gav Herren som tala til henne, dette namnet: «Du er ein Gud som ser meg.» For ho sa: «Har eg verkeleg sett han som ser etter meg, her?»",
+        "type": "error",
+        "severity": "major",
+        "explanation": "Det hebraiske הֲגַם הֲלֹם רָאִיתִי אַחֲרֵי רֹאִי er vanskeleg, men אַחֲרֵי רֹאִי tyder meir naturleg 'etter at han såg meg' eller 'etter den som ser meg'. Formuleringa 'sett han som ser etter meg' snur forholdet: i originalen er det Hagar som ser etter Gud (רָאִיתִי אַחֲרֵי רֹאִי = 'har eg sett etter han som ser meg'), ikkje Gud som ser etter Hagar. 'Sett etter han som ser meg' er nærare originalen."
       }
     ]
   },
@@ -135,6 +141,14 @@
     "bookId": 1,
     "chapterId": 16,
     "verseId": 16,
-    "text": "Abram var åttiseks år gammal då Hagar fødde Ismael til han."
+    "text": "Abram var åttiseks år gammal då Hagar fødde Ismael til Abram.",
+    "versions": [
+      {
+        "text": "Abram var åttiseks år gammal då Hagar fødde Ismael til han.",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "Det hebraiske לְאַבְרָם seier eksplisitt 'til Abram', ikkje 'til han'. Det hebraiske gjentek namnet Abram med vilje for å understreka farskapet. Likevel er 'til han' ei akseptabel forenkling – dette er ei mindre sak."
+      }
+    ]
   }
 ]

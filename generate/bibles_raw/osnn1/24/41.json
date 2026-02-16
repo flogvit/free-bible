@@ -3,11 +3,17 @@
     "bookId": 24,
     "chapterId": 41,
     "verseId": 1,
-    "text": "I den sjuande månaden kom Jismael, son til Netanja, son til Elisjama, av kongeleg ætt, saman med nokre av kongen sine stormenn og ti andre menn, til Gedalja, son til Ahikam, i Mispa. Der åt dei saman.",
+    "text": "I den sjuande månaden kom Jismael, son til Netanja, son til Elisjama, av kongeleg ætt, og nokre av stormennene til kongen, med ti menn, til Gedalja, son til Ahikam, i Mispa. Der åt dei saman.",
     "versions": [
       {
         "text": "I den sjuande månaden kom Jismael, son til Netanja, son til Elisjama, av kongeleg ætt, saman med nokre av kongen sine stormenn og ti andre menn, til Gedalja, son til Ahikam, i Mispa. Medan dei åt saman der i Mispa,",
         "explanation": "Verset endar midt i ei setning ('Medan dei åt saman der i Mispa,'), noko som er uvanleg og gjer det vanskeleg å lesa som eit fullstendig vers. Det hebraiske verset er fullstendig i seg sjølv. Forslaget gjer verset til ei avslutta setning."
+      },
+      {
+        "text": "I den sjuande månaden kom Jismael, son til Netanja, son til Elisjama, av kongeleg ætt, saman med nokre av kongen sine stormenn og ti andre menn, til Gedalja, son til Ahikam, i Mispa. Der åt dei saman.",
+        "type": "error",
+        "severity": "major",
+        "explanation": "The Hebrew says Ishmael came with 'officers of the king and ten men with him.' The current translation 'stormenn og ti andre menn' implies the ten men are in addition to the officers, but the Hebrew more likely means that the officers/nobles of the king were among the group and ten men were with him total. The phrase 'ti andre menn' ('ten other men') adds 'other' which is not in the Hebrew. However, since this verse already has revision history, this is noted but the severity of reinterpretation is notable."
       }
     ]
   },
@@ -33,13 +39,29 @@
     "bookId": 24,
     "chapterId": 41,
     "verseId": 4,
-    "text": "Dagen etter at Gedalja var drepen, før nokon visste om det,"
+    "text": "Dagen etter at Gedalja var drepen, og ingen enno visste om det,",
+    "versions": [
+      {
+        "text": "Dagen etter at Gedalja var drepen, før nokon visste om det,",
+        "type": "error",
+        "severity": "major",
+        "explanation": "The verse ends with a comma, making it an incomplete sentence that depends on verse 5 to finish. While this reflects the Hebrew narrative flow, it is better to make the clause slightly more self-standing. Also 'før nokon visste om det' is acceptable but 'og ingen enno visste om det' is a more natural nynorsk rendering of וְאִישׁ לֹא יָדָע (literally 'and no man knew')."
+      }
+    ]
   },
   {
     "bookId": 24,
     "chapterId": 41,
     "verseId": 5,
-    "text": "kom det åtti menn frå Sikem, Sjilo og Samaria. Dei hadde raka av seg skjegget, rive sund kleda sine og skore seg. Med seg hadde dei grødeoffergåver og røykjelse som dei ville føra til Herrens hus."
+    "text": "kom det åtti menn frå Sikem, Sjilo og Samaria. Dei hadde raka av skjegget, rive sund kleda sine og skore seg. Med seg hadde dei grødeoffergåver og røykjelse som dei ville føra til Herrens hus.",
+    "versions": [
+      {
+        "text": "kom det åtti menn frå Sikem, Sjilo og Samaria. Dei hadde raka av seg skjegget, rive sund kleda sine og skore seg. Med seg hadde dei grødeoffergåver og røykjelse som dei ville føra til Herrens hus.",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "Minor: 'raka av seg skjegget' – the Hebrew מְגֻלְּחֵי זָקָן means 'with shaved beards,' i.e., the beards were shaved off. 'Raka av skjegget' (without 'seg') is slightly more natural in nynorsk here, but this is a very minor stylistic point."
+      }
+    ]
   },
   {
     "bookId": 24,
@@ -51,7 +73,15 @@
     "bookId": 24,
     "chapterId": 41,
     "verseId": 7,
-    "text": "Men då dei kom inn i byen, slakta Jismael, son til Netanja, dei ned og kasta dei i ein brønn, han og mennene som var med han."
+    "text": "Men då dei kom inn i byen, slo Jismael, son til Netanja, dei i hel og kasta dei i brønnen, han og mennene som var med han.",
+    "versions": [
+      {
+        "text": "Men då dei kom inn i byen, slakta Jismael, son til Netanja, dei ned og kasta dei i ein brønn, han og mennene som var med han.",
+        "type": "error",
+        "severity": "major",
+        "explanation": "The Hebrew וַיִּשְׁחָטֵם ... אֶל־תּוֹךְ הַבּוֹר means 'slaughtered them into the cistern.' The current translation splits this into two actions ('slakta dei ned og kasta dei'), but the Hebrew suggests they were slaughtered and thrown into the cistern as one action. Also הַבּוֹר has the definite article ('the cistern/pit'), not 'ein brønn' (a well/cistern). This is the specific cistern mentioned again in verse 9."
+      }
+    ]
   },
   {
     "bookId": 24,
@@ -105,7 +135,15 @@
     "bookId": 24,
     "chapterId": 41,
     "verseId": 15,
-    "text": "Men Jismael, son til Netanja, kom seg unna med åtte menn og flykta til ammonittane."
+    "text": "Men Jismael, son til Netanja, kom seg unna frå Johanan med åtte menn og flykta til ammonittane.",
+    "versions": [
+      {
+        "text": "Men Jismael, son til Netanja, kom seg unna med åtte menn og flykta til ammonittane.",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "The Hebrew specifies מִפְּנֵי יוֹחָנָן 'from the face of / away from Johanan.' The current translation omits this detail. Adding 'frå Johanan' makes it clearer who he escaped from."
+      }
+    ]
   },
   {
     "bookId": 24,
@@ -117,7 +155,15 @@
     "bookId": 24,
     "chapterId": 41,
     "verseId": 17,
-    "text": "Dei drog av stad og slo seg ned i Kimham sitt herberge nær Betlehem, for å fara vidare til Egypt,"
+    "text": "Dei drog av stad og slo seg ned i Kimhams herberge nær Betlehem, for å fara vidare til Egypt,",
+    "versions": [
+      {
+        "text": "Dei drog av stad og slo seg ned i Kimham sitt herberge nær Betlehem, for å fara vidare til Egypt,",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "Very minor nynorsk style: 'Kimham sitt herberge' uses the analytic genitive, which is fine in nynorsk, but 'Kimhams herberge' (synthetic genitive) is equally acceptable and slightly more concise. This is a stylistic preference only."
+      }
+    ]
   },
   {
     "bookId": 24,

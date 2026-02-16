@@ -9,7 +9,15 @@
     "bookId": 44,
     "chapterId": 3,
     "verseId": 2,
-    "text": "Der var ein mann som hadde vore lam frå han vart fødd. Kvar dag bar dei han dit og sette han ved tempelporten som vart kalla Den fagre, så han kunne be om gåver frå dei som gjekk inn i tempelet."
+    "text": "Der var ein mann som hadde vore lam frå han vart fødd. Kvar dag bar dei han til tempelporten som vart kalla Den fagre, så han kunne be om almisser frå dei som gjekk inn i tempelet.",
+    "versions": [
+      {
+        "text": "Der var ein mann som hadde vore lam frå han vart fødd. Kvar dag bar dei han dit og sette han ved tempelporten som vart kalla Den fagre, så han kunne be om gåver frå dei som gjekk inn i tempelet.",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "The Greek ἐλεημοσύνην specifically means 'alms' (almisser), not just 'gåver' (gifts). Also, 'dit' (there) is vague; the Greek πρὸς τὴν θύραν means 'to the gate', so 'til tempelporten' is more precise."
+      }
+    ]
   },
   {
     "bookId": 44,
@@ -69,7 +77,15 @@
     "bookId": 44,
     "chapterId": 3,
     "verseId": 12,
-    "text": "Då Peter såg det, sa han til folket: «Israelittar, kvifor undrar de dykk over dette? Kvifor stirar de på oss, som om vi med vår eiga kraft eller gudsfrykt hadde fått han til å gå?"
+    "text": "Då Peter såg det, sa han til folket: «Israelittar, kvifor undrar de dykk over dette? Kvifor stirar de på oss, som om vi med vår eiga kraft eller gudsfrykt hadde fått han til å gå?»",
+    "versions": [
+      {
+        "text": "Då Peter såg det, sa han til folket: «Israelittar, kvifor undrar de dykk over dette? Kvifor stirar de på oss, som om vi med vår eiga kraft eller gudsfrykt hadde fått han til å gå?",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "Missing closing quotation mark (») at the end of Peter's rhetorical question. The speech that begins with « needs to be closed."
+      }
+    ]
   },
   {
     "bookId": 44,
@@ -111,7 +127,15 @@
     "bookId": 44,
     "chapterId": 3,
     "verseId": 19,
-    "text": "Så vend om og kom tilbake til Gud, så syndene dykkar kan bli sletta ut."
+    "text": "Så angra og vend om, så syndene dykkar kan bli sletta ut.",
+    "versions": [
+      {
+        "text": "Så vend om og kom tilbake til Gud, så syndene dykkar kan bli sletta ut.",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "The Greek has two distinct imperatives: μετανοήσατε (repent/angra) and ἐπιστρέψατε (turn back/vend om). The current translation renders them as 'vend om og kom tilbake til Gud', which collapses the two concepts into essentially one idea of returning. 'Angra og vend om' better preserves both commands. Also, 'til Gud' is not in the Greek text."
+      }
+    ]
   },
   {
     "bookId": 44,
@@ -135,11 +159,17 @@
     "bookId": 44,
     "chapterId": 3,
     "verseId": 22,
-    "text": "Moses sa: 'Herren dykkar Gud skal reisa opp ein profet for dykk mellom brørne dykkar, ein som meg. Han skal de lytta til i alt han seier til dykk.'",
+    "text": "Moses sa: 'Herren dykkar Gud skal reisa opp ein profet som meg for dykk mellom brørne dykkar. Han skal de lytta til i alt han seier til dykk.'",
     "versions": [
       {
         "text": "Moses sa: 'Herren dykkar Gud skal reisa opp ein profet for dykk frå brørne dykkar, ein som meg. Han skal de lytta til i alt han seier til dykk.",
         "explanation": "The Greek ἐκ τῶν ἀδελφῶν ὑμῶν means 'from among your brothers', indicating origin from within the community. 'Mellom brørne dykkar' captures this nuance better than 'frå brørne dykkar'. Also added closing quotation mark."
+      },
+      {
+        "text": "Moses sa: 'Herren dykkar Gud skal reisa opp ein profet for dykk mellom brørne dykkar, ein som meg. Han skal de lytta til i alt han seier til dykk.'",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "In the Greek, ὡς ἐμέ ('like me') modifies 'prophet' directly, not as a separate clause. Placing 'som meg' closer to 'profet' more accurately reflects the Greek word order and meaning: 'a prophet like me'."
       }
     ]
   },

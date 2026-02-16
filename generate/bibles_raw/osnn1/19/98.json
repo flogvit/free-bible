@@ -3,7 +3,15 @@
     "bookId": 19,
     "chapterId": 98,
     "verseId": 1,
-    "text": "Ein salme. Syng ein ny song for Herren, for han har gjort underfulle gjerningar! Hans høgre hand og hans heilage arm har gjeve han siger."
+    "text": "Ein salme. Syng ein ny song for Herren, for han har gjort underfulle gjerningar! Hans høgre hand og hans heilage arm har gjeve honom siger.",
+    "versions": [
+      {
+        "text": "Ein salme. Syng ein ny song for Herren, for han har gjort underfulle gjerningar! Hans høgre hand og hans heilage arm har gjeve han siger.",
+        "type": "grammar",
+        "severity": "minor",
+        "explanation": "Pronomenet 'han' som objekt bør vera 'honom' på korrekt nynorsk. 'Har gjeve han siger' bør vera 'har gjeve honom siger' sidan det er indirekte objekt."
+      }
+    ]
   },
   {
     "bookId": 19,
@@ -57,11 +65,17 @@
     "bookId": 19,
     "chapterId": 98,
     "verseId": 8,
-    "text": "Lat elvane klappa i hendene, lat fjella jubla i saman!",
+    "text": "Lat elvane klappa i hendene, lat fjella jubla saman!",
     "versions": [
       {
         "text": "Lat elvane klappa i hendene, lat fjella jubla saman",
         "explanation": "Verset manglar avsluttande teikn. Sidan dette er ein oppfordring som del av ein lovprisingssekvens (parallelt med vers 4, 6, 7), bør det ha utropsteikn for konsistens og for å markera den oppfordande tonen."
+      },
+      {
+        "text": "Lat elvane klappa i hendene, lat fjella jubla i saman!",
+        "type": "grammar",
+        "severity": "minor",
+        "explanation": "'Jubla i saman' er grammatisk feil på nynorsk – det skal vera 'jubla saman' (utan 'i'). Det ser ut som ein feil vart introdusert i den siste revisjonen; den førre versjonen hadde korrekt 'jubla saman', og endringa var berre meint å leggja til utropsteikn, ikkje å setja inn eit ekstra 'i'."
       }
     ]
   },

@@ -9,11 +9,17 @@
     "bookId": 18,
     "chapterId": 18,
     "verseId": 2,
-    "text": "Kor lenge vil de setja snarer for ord? Forstå først, så kan vi tala.",
+    "text": "Kor lenge vil de setja endar for ord? Forstå først, så kan vi tala.",
     "versions": [
       {
         "text": "Kor lenge vil de leita etter ord? Forstå først, så kan vi tala.",
         "explanation": "Det hebraiske 'קִנְצֵי' (qintsey) tyder 'endar' eller 'snarer/feller', ikkje 'leita etter'. Bildad kritiserer Job for å leggja feller med orda sine eller for å ikkje ta slutt på talen. 'Setja snarer for ord' gjev betre meining i konteksten."
+      },
+      {
+        "text": "Kor lenge vil de setja snarer for ord? Forstå først, så kan vi tala.",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "קִנְצֵי (qintsey) kjem frå קֵץ og tyder 'endar/sluttar'. Bildad spør kor lenge dei vil prøva å avslutta/setja grenser for talen — altså 'setja endar for ord'. 'Snarer' er ei mistyding. Tydinga er at Bildad klagar over at dei aldri tek slutt med å jakta etter ord, eller at dei set opp hindringar for dialog. 'Endar' er den mest presise omsettinga."
       }
     ]
   },
@@ -39,7 +45,15 @@
     "bookId": 18,
     "chapterId": 18,
     "verseId": 5,
-    "text": "Ja, lyset åt dei gudlause skal sløkkjast, og flammen frå elden hans skal ikkje lysa."
+    "text": "Ja, lyset åt den gudlause skal sløkkjast, og flammen frå elden hans skal ikkje lysa.",
+    "versions": [
+      {
+        "text": "Ja, lyset åt dei gudlause skal sløkkjast, og flammen frå elden hans skal ikkje lysa.",
+        "type": "error",
+        "severity": "major",
+        "explanation": "Hebraisk רְשָׁעִים er fleirtal ('dei gudlause'), men resten av kapittelet omtalar einskildpersonen konsekvent med eintal pronomen ('hans'). Det er likevel eit reelt problem at omsettinga blandar 'dei gudlause' (fleirtal) med 'elden hans' (eintal) i same verset. For intern konsistens bør det vera eintal gjennomgåande, sidan hebraisk her vekslar frå generelt fleirtal til spesifikt eintal."
+      }
+    ]
   },
   {
     "bookId": 18,
@@ -63,7 +77,15 @@
     "bookId": 18,
     "chapterId": 18,
     "verseId": 8,
-    "text": "For han vert driven inn i garnet med føtene sine, og han vandrar på nettverket."
+    "text": "For med føtene sine vert han send inn i eit nett, og han vandrar over eit gitter.",
+    "versions": [
+      {
+        "text": "For han vert driven inn i garnet med føtene sine, og han vandrar på nettverket.",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "שֻׁלַּח tyder 'send/kasta', ikkje 'driven'. בְּרַגְלָיו ('med føtene sine') peikar på at han sjølv går inn i nettet. שְׂבָכָה tyder 'gitter/flettverk', ikkje 'nettverk'. Poenget er at han vandrar over eit fangstnett/gitter — altså ein felle."
+      }
+    ]
   },
   {
     "bookId": 18,
@@ -87,7 +109,15 @@
     "bookId": 18,
     "chapterId": 18,
     "verseId": 12,
-    "text": "Krafta hans vert utsvelta, og ulukka står klar ved sida hans."
+    "text": "Krafta hans vert uttærd av svolt, og ulukka står klar ved sida hans.",
+    "versions": [
+      {
+        "text": "Krafta hans vert utsvelta, og ulukka står klar ved sida hans.",
+        "type": "error",
+        "severity": "minor",
+        "explanation": "יְהִי־רָעֵב אֹנוֹ tyder bokstavleg 'krafta hans vert svolten' — altså at svolten tærer på krafta hans. 'Utsvelta' er eit uvanleg norsk ord. 'Uttærd av svolt' gjev betre meining og er meir naturleg nynorsk."
+      }
+    ]
   },
   {
     "bookId": 18,
@@ -111,7 +141,15 @@
     "bookId": 18,
     "chapterId": 18,
     "verseId": 15,
-    "text": "I teltet hans bur framande, svovel vert strødd over bustaden hans."
+    "text": "I teltet hans bur det som ikkje er hans, svovel vert strødd over bustaden hans.",
+    "versions": [
+      {
+        "text": "I teltet hans bur framande, svovel vert strødd over bustaden hans.",
+        "type": "error",
+        "severity": "major",
+        "explanation": "מִבְּלִי־לוֹ tyder bokstavleg 'av/frå det som ikkje er hans' — altså noko som ikkje tilhøyrer han. Nokre tolkar dette som 'det som ikkje er hans eige' (t.d. eld, øydelegging), ikkje nødvendigvis 'framande' (folk). Uttrykket er tvetydig, men 'framande' er ei tolking som legg til noko som ikkje er tydeleg i originalteksten. Mange kommentatorar les det som at øydelegging/eld bur i teltet hans."
+      }
+    ]
   },
   {
     "bookId": 18,
@@ -141,7 +179,15 @@
     "bookId": 18,
     "chapterId": 18,
     "verseId": 19,
-    "text": "Han har ingen son og ingen etterkomar mellom folket sitt, ingen overlevande der han budde."
+    "text": "Han har korkje barn eller barneborn mellom folket sitt, ingen overlevande der han budde.",
+    "versions": [
+      {
+        "text": "Han har ingen son og ingen etterkomar mellom folket sitt, ingen overlevande der han budde.",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "נִין tyder 'avkom/etterkomar' og נֶכֶד tyder 'barneborn/etterkomarar'. Paret נִין og נֶכֶד tyder 'born og barneborn' og uttrykkjer at heile ætterekka er utsletta. 'Son' er for snevert; det hebraiske ordet er meir generelt. 'Korkje barn eller barneborn' gjev att det poetiske ordparet betre."
+      }
+    ]
   },
   {
     "bookId": 18,

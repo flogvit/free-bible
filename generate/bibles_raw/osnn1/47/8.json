@@ -9,7 +9,7 @@
     "bookId": 47,
     "chapterId": 8,
     "verseId": 2,
-    "text": "Trass i at dei har vore hardt prøvde med trengsler, har den overstrøymande gleda deira og den djupe fattigdomen deira strøymt over i rikdom på gavmild.",
+    "text": "Trass i at dei har vore hardt prøvde med trengsler, har den overstrøymande gleda deira og den djupe fattigdomen deira strøymt over i ein rikdom av gavmilde.",
     "versions": [
       {
         "text": "Trass i at dei har vore hardt prøvde med trengsler, har den overstrøymande gleda deira og den djupe fattigdomen deira strøymt over i rikdom av gavmild.",
@@ -18,6 +18,12 @@
       {
         "text": "Trass i at dei har vore hardt prøvde med trengsler, har den overstrøymande gleda deira og den djupe fattigdomen deira strøymt over i rikdom av gavmilde.",
         "explanation": "Uttrykket 'rikdom av gavmilde' er grammatisk uklart. 'Gavmilde' er substantivert adjektiv fleirtal, men det passar ikkje med 'rikdom av'. Betre alternativ er 'rikdom på gavmild' (der 'gavmild' er substantiv) eller 'rikdom av gavmilde gåver'. Sidan greske ἁπλότητος tyder 'gavmild/einfaldig generøsitet', er 'rikdom på gavmild' meir idiomatisk."
+      },
+      {
+        "text": "Trass i at dei har vore hardt prøvde med trengsler, har den overstrøymande gleda deira og den djupe fattigdomen deira strøymt over i rikdom på gavmild.",
+        "type": "grammar",
+        "severity": "major",
+        "explanation": "'Rikdom på gavmild' er framleis grammatisk problematisk. 'Gavmild' er adjektiv og kan ikkje stå åleine som objekt for preposisjonen 'på'. Gresk ἁπλότητος (haplotes) er eit substantiv som tyder 'gavmild/generøsitet/ærlegdom'. Sidan tidlegare versjonar har brukt 'av gavmilde' og 'på gavmild', og begge er blitt avviste, prøver eg 'ein rikdom av gavmilde' (med ubestemt artikkel for betre flyt). Men sidan vers 2 allereie har 3 versjonar, bør dette berre endrast om det er kritisk. Alternativt kan ein bruka substantivet 'gavmild' (som finst på nynorsk). Men formuleringa 'rikdom på gavmild' er uvanleg og uklar."
       }
     ]
   },
@@ -73,7 +79,15 @@
     "bookId": 47,
     "chapterId": 8,
     "verseId": 10,
-    "text": "Og eg gjev dykk eit råd i denne saka: Det er til gagn for dykk, de som alt i fjor byrja ikkje berre å gjera noko, men også å vilja det."
+    "text": "Og eg gjev dykk eit råd i denne saka: Det er til gagn for dykk, de som alt i fjor var dei første til ikkje berre å vilja, men også å gjera.",
+    "versions": [
+      {
+        "text": "Og eg gjev dykk eit råd i denne saka: Det er til gagn for dykk, de som alt i fjor byrja ikkje berre å gjera noko, men også å vilja det.",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "I den greske teksten kjem 'τὸ ποιῆσαι' (å gjera) før 'τὸ θέλειν' (å vilja), men poenget er at dei byrja ikkje berre å gjera, men også å vilja det – altså rekkjefølga er viktig. Likevel er det ein diskusjon om rekkjefølga. Meir vesentleg: 'προενήρξασθε' tyder 'byrja først/var dei første til å byrja', ikkje berre 'byrja'. Nyansforskyving."
+      }
+    ]
   },
   {
     "bookId": 47,
@@ -127,7 +141,15 @@
     "bookId": 47,
     "chapterId": 8,
     "verseId": 18,
-    "text": "Saman med han sender vi den bror som vert rosa i alle forsamlingane for tenesta si for evangeliet."
+    "text": "Saman med han sender vi den bror som vert rosa i alle forsamlingane for arbeidet sitt med evangeliet.",
+    "versions": [
+      {
+        "text": "Saman med han sender vi den bror som vert rosa i alle forsamlingane for tenesta si for evangeliet.",
+        "type": "error",
+        "severity": "major",
+        "explanation": "Det greske seier at broren vert rosa 'i evangeliet' (ἐν τῷ εὐαγγελίῳ) gjennom alle forsamlingane. Omsetjinga 'for tenesta si for evangeliet' legg til ordet 'tenesta' som ikkje finst i originalen. 'For arbeidet sitt med evangeliet' er nærare originalen og meir naturleg. Hovudpoenget er at rosen er knytt til evangeliet, ikkje til ei uspesifisert teneste."
+      }
+    ]
   },
   {
     "bookId": 47,
@@ -169,7 +191,15 @@
     "bookId": 47,
     "chapterId": 8,
     "verseId": 23,
-    "text": "Når det gjeld Titus, så er han min medarbeidar og medarbeidar for dykk. Og når det gjeld brørne våre, så er dei utsendingar frå forsamlingane, til ære for Kristus."
+    "text": "Når det gjeld Titus, så er han min kompanjong og medarbeidar mellom dykk. Og når det gjeld brørne våre, så er dei utsendingar frå forsamlingane, til ære for Kristus.",
+    "versions": [
+      {
+        "text": "Når det gjeld Titus, så er han min medarbeidar og medarbeidar for dykk. Og når det gjeld brørne våre, så er dei utsendingar frå forsamlingane, til ære for Kristus.",
+        "type": "error",
+        "severity": "major",
+        "explanation": "Det greske skil mellom 'κοινωνὸς' (kompanjong/partnar/medeigar) og 'συνεργός' (medarbeidar). Omsetjinga brukar 'medarbeidar' for begge ord, og mistar nyanseforskjellen. κοινωνός ἐμός = 'min partnar/kompanjong', εἰς ὑμᾶς συνεργός = 'medarbeidar for/mellom dykk'."
+      }
+    ]
   },
   {
     "bookId": 47,

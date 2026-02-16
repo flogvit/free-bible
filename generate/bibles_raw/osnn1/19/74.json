@@ -21,7 +21,15 @@
     "bookId": 19,
     "chapterId": 74,
     "verseId": 3,
-    "text": "Kom til dei evige ruinane! Fienden har øydelagt alt i heilagdomen."
+    "text": "Rett stega dine mot dei evige ruinane! Fienden har øydelagt alt i heilagdomen.",
+    "versions": [
+      {
+        "text": "Kom til dei evige ruinane! Fienden har øydelagt alt i heilagdomen.",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "Hebraisk הָרִימָה פְעָמֶיךָ betyr 'lyft stega dine' eller 'rett stega dine mot', dvs. ei oppmoding til Gud om å kome dit. 'Kom til' manglar bildet med stega/føtene som er eksplisitt i originalen."
+      }
+    ]
   },
   {
     "bookId": 19,
@@ -51,7 +59,15 @@
     "bookId": 19,
     "chapterId": 74,
     "verseId": 7,
-    "text": "Dei har sett fyr på heilagdomen din. Dei har vanhelga bustaden for namnet ditt og rive han ned til grunnen."
+    "text": "Dei har sett fyr på heilagdomen din. Dei har vanhelga bustaden for namnet ditt ned til grunnen.",
+    "versions": [
+      {
+        "text": "Dei har sett fyr på heilagdomen din. Dei har vanhelga bustaden for namnet ditt og rive han ned til grunnen.",
+        "type": "error",
+        "severity": "major",
+        "explanation": "Hebraisk לָאָרֶץ חִלְּלוּ betyr 'til jorda/grunnen har dei vanhelga', dvs. dei har vanhelga bustaden ned til grunnen. Teksten seier ikkje at dei 'reiv han ned' – det er eit tillegg som ikkje finst i originalteksten. Verbet er חִלְּלוּ (vanhelga), ikkje הָרְסוּ (reiv ned)."
+      }
+    ]
   },
   {
     "bookId": 19,
@@ -111,7 +127,15 @@
     "bookId": 19,
     "chapterId": 74,
     "verseId": 16,
-    "text": "Din er dagen, og di er natta. Du har sett opp ljoset og sola."
+    "text": "Din er dagen, og di er natta. Du har grunnfest månen og sola.",
+    "versions": [
+      {
+        "text": "Din er dagen, og di er natta. Du har sett opp ljoset og sola.",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "Hebraisk מָאוֹר kan bety 'lyskjelde/ljos', men sidan det står saman med וָשָׁמֶשׁ (og sola), refererer det mest truleg til månen som den andre store lyskjelda (jf. 1 Mos 1:16). 'Ljoset og sola' vert noko redundant, medan 'månen og sola' gjev betre meining."
+      }
+    ]
   },
   {
     "bookId": 19,
@@ -123,13 +147,29 @@
     "bookId": 19,
     "chapterId": 74,
     "verseId": 18,
-    "text": "Kom i hug dette: Fienden spottar Herren, eit dårlegt folk vanærar namnet ditt."
+    "text": "Kom i hug dette: Fienden spottar, Herre, og eit dårlegt folk vanærar namnet ditt.",
+    "versions": [
+      {
+        "text": "Kom i hug dette: Fienden spottar Herren, eit dårlegt folk vanærar namnet ditt.",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "I originalen er יְהוָה (Herren/HERREN) vokativ – salmisten tiltalar Gud direkte: 'Fienden spottar, Herre'. Det er ikkje at fienden spottar 'Herren' i tredje person, for resten av salmen er direkte tiltale til Gud."
+      }
+    ]
   },
   {
     "bookId": 19,
     "chapterId": 74,
     "verseId": 19,
-    "text": "Gjev ikkje dua di til villdyra! Gløym ikkje livet til dei hjelpelause dine for alltid!"
+    "text": "Gjev ikkje sjela til turteldua di til villdyra! Gløym ikkje livet til dei fattige dine for alltid!",
+    "versions": [
+      {
+        "text": "Gjev ikkje dua di til villdyra! Gløym ikkje livet til dei hjelpelause dine for alltid!",
+        "type": "error",
+        "severity": "major",
+        "explanation": "Hebraisk נֶפֶשׁ תּוֹרֶךָ betyr 'sjela/livet til turteldua di', der turteldua er eit bilete på Guds sårbare folk. Omsetjinga forenklar dette til 'dua di', men det er sjela/livet til dua som ikkje skal gjevast bort. I andre halvdelen er חַיַּת עֲנִיֶּיךָ 'livet til dei fattige/elendige dine', ikkje 'dei hjelpelause'."
+      }
+    ]
   },
   {
     "bookId": 19,

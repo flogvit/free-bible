@@ -15,11 +15,17 @@
     "bookId": 20,
     "chapterId": 31,
     "verseId": 2,
-    "text": "Kva, son min? Kva, son av mitt liv? Kva, son av mine lovnader?",
+    "text": "Kva, son min? Kva, son av mitt morsliv? Kva, son av mine lovnader?",
     "versions": [
       {
         "text": "Kva skal eg seia, son min? Kva, du som eg fødde? Kva, du son av mine lovnader?",
         "explanation": "Det hebraiske 'בְּרִי' (bar-i) tyder 'son min', og 'בַּר־בִּטְנִי' tyder bokstavleg 'son av mitt morsliv/indre'. Omsetjinga legg til 'skal eg seia' som ikkje finst i originalen. Den parallelle strukturen med tre 'מַה' (kva) bør òg speglast betre for munnleg framføring."
+      },
+      {
+        "text": "Kva, son min? Kva, son av mitt liv? Kva, son av mine lovnader?",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "'בִּטְנִי' tyder 'morsliv/mage', ikkje berre 'liv'. 'Son av mitt morsliv' er meir presist og viser til at mora sjølv bar han."
       }
     ]
   },
@@ -45,7 +51,15 @@
     "bookId": 20,
     "chapterId": 31,
     "verseId": 5,
-    "text": "Elles kunne dei drikka og gløyma det som er fastsett i lova, og vrenga retten for alle dei som lid."
+    "text": "Elles kan dei drikka og gløyma det som er fastsett i lova, og vrenga retten for alle dei som lid.",
+    "versions": [
+      {
+        "text": "Elles kunne dei drikka og gløyma det som er fastsett i lova, og vrenga retten for alle dei som lid.",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "Hebraisk 'פֶּן' (at ikkje / for at ikkje) uttrykkjer ei framtidig fare. 'Kan' (presens) passar betre enn 'kunne' (preteritum) for å uttrykkja den vedvarande risikoen."
+      }
+    ]
   },
   {
     "bookId": 20,
@@ -99,11 +113,17 @@
     "bookId": 20,
     "chapterId": 31,
     "verseId": 12,
-    "text": "Ho gjer han godt og ikkje vondt alle sine livs dagar.",
+    "text": "Ho gjer han godt og ikkje vondt alle dagane i livet sitt.",
     "versions": [
       {
         "text": "Ho gjer han godt og ikkje vondt alle sitt livs dagar.",
         "explanation": "Sidan subjektet er 'ho' (hokjønn), bør det eigedomspronomenet vera 'sine' i staden for 'sitt'."
+      },
+      {
+        "text": "Ho gjer han godt og ikkje vondt alle sine livs dagar.",
+        "type": "grammar",
+        "severity": "minor",
+        "explanation": "'כֹּל יְמֵי חַיֶּיהָ' tyder 'alle dagane i livet hennar'. 'Alle sine livs dagar' er uvanleg nynorsk og klagar litt. 'Alle dagane i livet sitt' er meir naturleg nynorsk og lettare å lesa."
       }
     ]
   },
@@ -153,7 +173,15 @@
     "bookId": 20,
     "chapterId": 31,
     "verseId": 19,
-    "text": "Ho retter hendene sine mot rokken, og fingrande hennar held om teinen."
+    "text": "Ho retter hendene sine mot rokken, og fingrane hennar held om teinen.",
+    "versions": [
+      {
+        "text": "Ho retter hendene sine mot rokken, og fingrande hennar held om teinen.",
+        "type": "error",
+        "severity": "major",
+        "explanation": "'fingrande' er ein skrivefeil og skal vera 'fingrane'."
+      }
+    ]
   },
   {
     "bookId": 20,
@@ -177,7 +205,15 @@
     "bookId": 20,
     "chapterId": 31,
     "verseId": 22,
-    "text": "Ho lagar sengetepper til seg sjølv, kleda hennar er av fint lin og purpur."
+    "text": "Ho lagar tepper til seg sjølv, kleda hennar er av fint lin og purpur.",
+    "versions": [
+      {
+        "text": "Ho lagar sengetepper til seg sjølv, kleda hennar er av fint lin og purpur.",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "'מַרְבַדִּים' tyder 'tepper' eller 'deksler', ikkje nødvendigvis 'sengetepper'. Det hebraiske ordet er meir generelt, og 'tepper' er ein meir nøyaktig omsetjing."
+      }
+    ]
   },
   {
     "bookId": 20,

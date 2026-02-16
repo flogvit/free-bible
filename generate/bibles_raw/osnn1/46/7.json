@@ -81,7 +81,15 @@
     "bookId": 46,
     "chapterId": 7,
     "verseId": 14,
-    "text": "For den vantruande mannen er helga ved kona, og den vantruande kona er helga ved den truande mannen. Elles ville borna dykkar vera ureine, men no er dei heilage."
+    "text": "For den vantruande mannen er helga ved kona, og den vantruande kona er helga ved mannen. Elles ville borna dykkar vera ureine, men no er dei heilage.",
+    "versions": [
+      {
+        "text": "For den vantruande mannen er helga ved kona, og den vantruande kona er helga ved den truande mannen. Elles ville borna dykkar vera ureine, men no er dei heilage.",
+        "type": "error",
+        "severity": "major",
+        "explanation": "The Greek ἐν τῷ ἀδελφῷ means 'by the brother' (i.e., by the believing husband). The current translation adds 'den truande' (the believing) which is not in the Greek text. While the meaning is implicit, the addition makes it an interpretive gloss. More importantly, the parallel structure in Greek simply says 'by the brother/husband' without the qualifier 'believing'. A simpler 'ved mannen' preserves the parallel with the first clause ('ved kona')."
+      }
+    ]
   },
   {
     "bookId": 46,
@@ -135,7 +143,15 @@
     "bookId": 46,
     "chapterId": 7,
     "verseId": 23,
-    "text": "De er kjøpte for ein høg pris. Bli ikkje slavar av menneske."
+    "text": "De er kjøpte dyrt. Bli ikkje slavar av menneske.",
+    "versions": [
+      {
+        "text": "De er kjøpte for ein høg pris. Bli ikkje slavar av menneske.",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "The Greek τιμῆς ἠγοράσθητε literally means 'you were bought with a price' - the word τιμῆς means 'price' but does not itself contain the qualifier 'høg' (high). While the implication is a high price, 'kjøpte dyrt' or 'kjøpte for ein pris' would be more faithful to the Greek without adding what is not there. This is a minor point as the meaning is essentially correct."
+      }
+    ]
   },
   {
     "bookId": 46,
@@ -147,11 +163,17 @@
     "bookId": 46,
     "chapterId": 7,
     "verseId": 25,
-    "text": "Når det gjeld dei ugifte, har eg ikkje noko påbod frå Herren, men eg gjev mitt syn som ein som har fått nåde av Herren til å vera truverdig.",
+    "text": "Når det gjeld dei ugifte, har eg ikkje noko påbod frå Herren, men eg gjev mitt råd som ein som har fått nåde av Herren til å vera truverdig.",
     "versions": [
       {
         "text": "Når det gjeld dei ugifte jentene, har eg ikkje noko påbod frå Herren, men eg gjev mitt syn som ein som har fått nåde av Herren til å vera truverdig.",
         "explanation": "Gresk 'παρθένων' (jomfruer) kan referera til både menn og kvinner i denne konteksten, og Paulus si drøfting i det følgjande inkluderer begge kjønn (v. 28 nemner 'du' maskulin og 'jomfrua'). 'Dei ugifte' er meir inkluderande og dekkjer betre konteksten."
+      },
+      {
+        "text": "Når det gjeld dei ugifte, har eg ikkje noko påbod frå Herren, men eg gjev mitt syn som ein som har fått nåde av Herren til å vera truverdig.",
+        "type": "error",
+        "severity": "minor",
+        "explanation": "The Greek γνώμην means 'opinion/advice/counsel' rather than 'syn' (view). 'Råd' would be more accurate. However, since this verse has been revised already, this is a minor point. Also note version history - the change from 'jomfruer' to 'ugifte' was intentional and should be kept."
       }
     ]
   },
@@ -171,7 +193,15 @@
     "bookId": 46,
     "chapterId": 7,
     "verseId": 28,
-    "text": "Men om du giftar deg, syndar du ikkje. Og om ei ugift jente giftar seg, syndar ho ikkje. Men dei som gjer det, vil få trengsel i livet, og eg vil skåna dykk."
+    "text": "Men om du giftar deg, syndar du ikkje. Og om ei jomfru giftar seg, syndar ho ikkje. Men dei som gjer det, vil få trengsel i livet, og eg vil skåna dykk.",
+    "versions": [
+      {
+        "text": "Men om du giftar deg, syndar du ikkje. Og om ei ugift jente giftar seg, syndar ho ikkje. Men dei som gjer det, vil få trengsel i livet, og eg vil skåna dykk.",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "The Greek ἡ παρθένος specifically means 'the virgin/maiden'. Given that verse 36 was intentionally changed to use 'jomfru' for παρθένον, consistency would suggest using 'jomfru' here as well rather than 'ugift jente'."
+      }
+    ]
   },
   {
     "bookId": 46,
@@ -207,7 +237,15 @@
     "bookId": 46,
     "chapterId": 7,
     "verseId": 34,
-    "text": "og han er delt. Den ugifte kvinna og den ugifte jenta er opptekne av det som høyrer Herren til, så dei kan vera heilage både på kropp og ånd. Men den gifte kvinna er oppteken av det som høyrer verda til, korleis ho kan vera til hugnad for mannen sin."
+    "text": "og han er delt. Den ugifte kvinna og jomfrua er opptekne av det som høyrer Herren til, så dei kan vera heilage både på kropp og ånd. Men den gifte kvinna er oppteken av det som høyrer verda til, korleis ho kan vera til hugnad for mannen sin.",
+    "versions": [
+      {
+        "text": "og han er delt. Den ugifte kvinna og den ugifte jenta er opptekne av det som høyrer Herren til, så dei kan vera heilage både på kropp og ånd. Men den gifte kvinna er oppteken av det som høyrer verda til, korleis ho kan vera til hugnad for mannen sin.",
+        "type": "error",
+        "severity": "major",
+        "explanation": "The Greek distinguishes between ἡ γυνὴ ἡ ἄγαμος (the unmarried woman) and ἡ παρθένος (the virgin). The current translation renders both as 'ugifte' (unmarried), losing the distinction. 'Den ugifte kvinna og jomfrua' better reflects the two distinct categories mentioned in the Greek."
+      }
+    ]
   },
   {
     "bookId": 46,
@@ -249,6 +287,14 @@
     "bookId": 46,
     "chapterId": 7,
     "verseId": 40,
-    "text": "Men etter mi meining er ho lukkeleg om ho blir som ho er. Og eg trur at eg òg har Guds Ande."
+    "text": "Men ho er lukkeleg om ho blir som ho er, etter mi meining. Og eg trur at eg òg har Guds Ande.",
+    "versions": [
+      {
+        "text": "Men etter mi meining er ho lukkeleg om ho blir som ho er. Og eg trur at eg òg har Guds Ande.",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "The Greek μακαριωτέρα is comparative ('more blessed/happier'), not just 'lukkeleg' (happy). The verse says she is 'more blessed/happier' if she remains as she is - this is a comparison with remarrying. 'Lykkeleg' or 'meir lukkeleg' would better capture the comparative form."
+      }
+    ]
   }
 ]

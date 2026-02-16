@@ -91,7 +91,15 @@
     "bookId": 1,
     "chapterId": 42,
     "verseId": 13,
-    "text": "Dei svara: «Tenarane dine er tolv brør, søner av same mannen i Kanaan. Den yngste er heime hos far vår i dag, og den eine er ikkje meir.»"
+    "text": "Dei svara: «Tenarane dine er tolv brør, søner av éin mann i Kanaan. Den yngste er heime hos far vår i dag, og den eine er ikkje meir.»",
+    "versions": [
+      {
+        "text": "Dei svara: «Tenarane dine er tolv brør, søner av same mannen i Kanaan. Den yngste er heime hos far vår i dag, og den eine er ikkje meir.»",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "Hebraisk אִישׁ־אֶחָד tyder 'éin mann', ikkje 'same mannen'. For konsistens med vers 11 og 32, der dette allereie er retta til 'éin mann'/'éin far', bør det same gjelda her."
+      }
+    ]
   },
   {
     "bookId": 1,
@@ -205,7 +213,15 @@
     "bookId": 1,
     "chapterId": 42,
     "verseId": 29,
-    "text": "Då dei kom heim til Jakob, far sin, i Kanaan, fortalde dei han alt som hadde hendt dei."
+    "text": "Då dei kom heim til Jakob, far sin, i Kanaan, fortalde dei han alt som hadde hendt dei:",
+    "versions": [
+      {
+        "text": "Då dei kom heim til Jakob, far sin, i Kanaan, fortalde dei han alt som hadde hendt dei.",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "Hebraisk לֵאמֹר ('og sa') markerer at det følgjer direkte tale (vers 30-34). Eit kolon i slutten av vers 29 gjer overgangen til den direkte talen tydelegare."
+      }
+    ]
   },
   {
     "bookId": 1,
@@ -223,11 +239,17 @@
     "bookId": 1,
     "chapterId": 42,
     "verseId": 31,
-    "text": "«Vi sa til han: Vi er ærlege folk, vi er ikkje spionar.»",
+    "text": "«Vi sa til han: 'Vi er ærlege folk, vi er ikkje spionar.'»",
     "versions": [
       {
         "text": "«Men vi sa til han: Vi er ærlege folk. Vi er ikkje spionar.»",
         "explanation": "«Men» er ikkje i originalteksten (וַנֹּאמֶר = 'og vi sa'). Dessutan kan dei to korte setningane med fordel bindast saman med komma for betre flyt ved munnleg lesing."
+      },
+      {
+        "text": "«Vi sa til han: Vi er ærlege folk, vi er ikkje spionar.»",
+        "type": "grammar",
+        "severity": "minor",
+        "explanation": "Sidan dette er tale innanfor tale (brørne fortel Jakob kva dei sa til Josef), bør den indre talen markerast med enkle hermeteikn for klarheit."
       }
     ]
   },
@@ -247,13 +269,29 @@
     "bookId": 1,
     "chapterId": 42,
     "verseId": 33,
-    "text": "«Då sa mannen som er herre over landet, til oss: Slik skal eg vita at de er ærlege: Lat ein av brørne dykkar bli att hos meg, ta med det de treng til dei svoltne heima, og far av stad.»"
+    "text": "«Då sa mannen som er herre over landet, til oss: 'Slik skal eg vita at de er ærlege: Lat ein av brørne dykkar bli att hos meg, ta med det de treng til dei svoltne heima, og far av stad.'»",
+    "versions": [
+      {
+        "text": "«Då sa mannen som er herre over landet, til oss: Slik skal eg vita at de er ærlege: Lat ein av brørne dykkar bli att hos meg, ta med det de treng til dei svoltne heima, og far av stad.»",
+        "type": "grammar",
+        "severity": "minor",
+        "explanation": "Som i vers 31 er dette tale innanfor tale. Josefs ord, siterte av brørne til Jakob, bør markerast med enkle hermeteikn for klarheit."
+      }
+    ]
   },
   {
     "bookId": 1,
     "chapterId": 42,
     "verseId": 34,
-    "text": "«Og før den yngste bror dykkar til meg. Då skal eg vita at de ikkje er spionar, men ærlege folk. Så skal eg gje bror dykkar tilbake til dykk, og de kan ferdast fritt i landet.»"
+    "text": "«'Og før den yngste bror dykkar til meg. Då skal eg vita at de ikkje er spionar, men ærlege folk. Så skal eg gje bror dykkar tilbake til dykk, og de kan ferdast fritt i landet.'»",
+    "versions": [
+      {
+        "text": "«Og før den yngste bror dykkar til meg. Då skal eg vita at de ikkje er spionar, men ærlege folk. Så skal eg gje bror dykkar tilbake til dykk, og de kan ferdast fritt i landet.»",
+        "type": "grammar",
+        "severity": "minor",
+        "explanation": "Vers 34 er ei fortsetjing av Josefs siterte ord innanfor brørne si tale til Jakob. For konsistens med rettinga i vers 33 bør enkle hermeteikn markerast rundt den indre talen."
+      }
+    ]
   },
   {
     "bookId": 1,

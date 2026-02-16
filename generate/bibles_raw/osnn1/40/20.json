@@ -45,7 +45,15 @@
     "bookId": 40,
     "chapterId": 20,
     "verseId": 8,
-    "text": "Då det vart kveld, sa herren over vingarden til forvaltaren sin: 'Kall arbeidarane hit og gje dei løna deira. Byrja med dei siste og end med dei første.'"
+    "text": "Då det vart kveld, sa herren over vingarden til forvaltaren sin: 'Kall arbeidarane hit og gje dei løna deira. Byrja med dei siste og halda fram til dei første.'",
+    "versions": [
+      {
+        "text": "Då det vart kveld, sa herren over vingarden til forvaltaren sin: 'Kall arbeidarane hit og gje dei løna deira. Byrja med dei siste og end med dei første.'",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "'End med dei første' er litt klønete. Gresk 'ἕως τῶν πρώτων' tyder 'fram til dei første'. 'Halda fram til dei første' er meir naturleg nynorsk og nærare originalen."
+      }
+    ]
   },
   {
     "bookId": 40,
@@ -93,7 +101,15 @@
     "bookId": 40,
     "chapterId": 20,
     "verseId": 15,
-    "text": "Har eg ikkje lov til å gjera det eg vil med det som er mitt? Eller er auget ditt vondt fordi eg er god?"
+    "text": "Har eg ikkje lov til å gjera det eg vil med det som er mitt? Eller ser du med vonde auge på at eg er god?",
+    "versions": [
+      {
+        "text": "Har eg ikkje lov til å gjera det eg vil med det som er mitt? Eller er auget ditt vondt fordi eg er god?",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "Uttrykket 'ὁ ὀφθαλμός σου πονηρός ἐστιν' er eit semittisk idiom for misunning/sjalusi. 'Er auget ditt vondt' er ein svært bokstavleg omsetjing som kan vera uforståeleg for moderne lesarar. 'Ser du med vonde auge på' formidlar meininga betre på nynorsk."
+      }
+    ]
   },
   {
     "bookId": 40,
@@ -195,7 +211,15 @@
     "bookId": 40,
     "chapterId": 20,
     "verseId": 31,
-    "text": "Folket tala strengt til dei og bad dei teia, men dei ropa endå høgare: «Herre, Son av David, miskunna deg over oss!»"
+    "text": "Folket tala strengt til dei og bad dei teia, men dei ropa endå høgare: «Herre, du Davids son, miskunna deg over oss!»",
+    "versions": [
+      {
+        "text": "Folket tala strengt til dei og bad dei teia, men dei ropa endå høgare: «Herre, Son av David, miskunna deg over oss!»",
+        "type": "error",
+        "severity": "major",
+        "explanation": "I vers 30 vart formuleringa medvite endra frå 'Son av David' til 'du Davids son' for betre munnleg flyt. Vers 31 bør vera konsistent med vers 30 og bruka same formulering 'du Davids son'. Slik det står no har vers 30 og 31 ulik formulering for same utrop."
+      }
+    ]
   },
   {
     "bookId": 40,

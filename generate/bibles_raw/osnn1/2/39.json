@@ -51,7 +51,15 @@
     "bookId": 2,
     "chapterId": 39,
     "verseId": 9,
-    "text": "Han var firkanta og dobbelt, ei handbreidd lang og ei handbreidd brei når han var bretta."
+    "text": "Han var firkanta og dobbelt, eit spann lang og eit spann brei når han var bretta.",
+    "versions": [
+      {
+        "text": "Han var firkanta og dobbelt, ei handbreidd lang og ei handbreidd brei når han var bretta.",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "The Hebrew 'zeret' (זֶרֶת) is a span (approximately 22-23 cm, the distance from thumb to pinky when spread), not a 'handbreidd' (handbreadth/tefach, approximately 7-8 cm). These are different units of measurement. 'Eit spann' would be more accurate in nynorsk."
+      }
+    ]
   },
   {
     "bookId": 2,
@@ -165,7 +173,15 @@
     "bookId": 2,
     "chapterId": 39,
     "verseId": 28,
-    "text": "Turbanen var av fint lingarn, dei fine huene av fint lingarn, og linkleda av fint tvinna lingarn."
+    "text": "Dei laga turbanen av fint lingarn, dei fine huene av fint lingarn, og linkleda av fint tvinna lingarn.",
+    "versions": [
+      {
+        "text": "Turbanen var av fint lingarn, dei fine huene av fint lingarn, og linkleda av fint tvinna lingarn.",
+        "type": "grammar",
+        "severity": "minor",
+        "explanation": "The verse is part of a list of items that were made (continuation of verse 27 'vayyaʿaśu'). Starting with 'Turbanen var' breaks the flow. Adding 'Dei laga' maintains consistency with the surrounding verses."
+      }
+    ]
   },
   {
     "bookId": 2,
@@ -201,7 +217,15 @@
     "bookId": 2,
     "chapterId": 39,
     "verseId": 34,
-    "text": "dekket av raudfarga vêrskinn, dekket av takasskinn og forhenget,"
+    "text": "dekket av raudfarga vêrskinn, dekket av tahasjskinn og forhenget,",
+    "versions": [
+      {
+        "text": "dekket av raudfarga vêrskinn, dekket av takasskinn og forhenget,",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "'Tahash' is an uncertain term for a type of animal skin. 'Takasskinn' (badger skin) is one interpretation but is debatable. Many modern translations retain a transliteration or use a neutral term like 'fint skinn' or 'tahasjskinn' since the exact meaning is uncertain. However, this is a minor issue as various translations differ."
+      }
+    ]
   },
   {
     "bookId": 2,

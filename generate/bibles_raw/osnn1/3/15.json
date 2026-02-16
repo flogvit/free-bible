@@ -57,11 +57,17 @@
     "bookId": 3,
     "chapterId": 15,
     "verseId": 9,
-    "text": "Kvart ridety som den med utflod rid på, skal vera urein.",
+    "text": "Kvart ridety som den med utflod rid på, skal vera ureint.",
     "versions": [
       {
         "text": "Kvart ridety som den med utflod rid på, skal vera ureint.",
         "explanation": "På nynorsk er 'ridety' (eller 'reidety') eit inkjekjønnsord, men verbet 'vera' med adjektivet 'urein' bør her stå i samsvar med at det er tale om rituell ureinleik. Likevel, for konsistens med vers 4 der 'kvar ting' er hankjønn og 'urein', bør ein vurdera om 'ureint' er korrekt for inkjekjønn. Ved nærare ettersyn: 'ridety' er inkjekjønn (eit ridety), så 'ureint' er faktisk grammatisk korrekt. Denne merkinga trekkjast tilbake - ingen endring nødvendig."
+      },
+      {
+        "text": "Kvart ridety som den med utflod rid på, skal vera urein.",
+        "type": "grammar",
+        "severity": "major",
+        "explanation": "'Ridety' er inkjekjønn (eit ridety), og adjektivet må difor stå i inkjekjønnsform: 'ureint'. Versjonshistorikken viser at ein tidlegare revisjon endra frå 'ureint' til 'urein', men grunngjevinga i revisjonsnotatet konkluderer sjølv med at 'ureint' faktisk er grammatisk korrekt for inkjekjønn og at endringa var unødvendig. Den noverande forma er altså grammatisk feil."
       }
     ]
   },
@@ -207,7 +213,15 @@
     "bookId": 3,
     "chapterId": 15,
     "verseId": 30,
-    "text": "Presten skal ofra den eine som syndoffer og den andre som brennoffer. Slik skal presten gjera soning for henne framfor Herren for hennar ureine utflod."
+    "text": "Presten skal ofra den eine som syndoffer og den andre som brennoffer. Slik skal presten gjera soning for henne framfor Herren for den ureine utfloden hennar.",
+    "versions": [
+      {
+        "text": "Presten skal ofra den eine som syndoffer og den andre som brennoffer. Slik skal presten gjera soning for henne framfor Herren for hennar ureine utflod.",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "For konsistens med den moderne nynorske stilen i resten av teksten (jf. vers 19 og 33 der etterstilt eigedomspronomen er brukt), bør 'hennar ureine utflod' endrast til 'den ureine utfloden hennar'."
+      }
+    ]
   },
   {
     "bookId": 3,

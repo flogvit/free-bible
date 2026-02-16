@@ -57,11 +57,17 @@
     "bookId": 43,
     "chapterId": 4,
     "verseId": 10,
-    "text": "Jesus svara henne: «Visste du kva Guds gåve er, og kven det er som seier til deg: Gjev meg drikke, så hadde du bede han, og han hadde gjeve deg levande vatn.»",
+    "text": "Jesus svara henne: «Om du visste kva Guds gåve er, og kven det er som seier til deg: Gjev meg drikke, så hadde du bede han, og han hadde gjeve deg levande vatn.»",
     "versions": [
       {
         "text": "Jesus svara henne: «Visste du kva Guds gåve er, og kven det er som seier til deg: Gjev meg å drikka, så hadde du bede han, og han hadde gjeve deg levande vatn.»",
         "explanation": "For konsistens med vers 7 og 9 der 'drikke' (substantiv) blir brukt, bør det også her vera 'drikke' i staden for 'å drikka' (infinitiv). Det greske πεῖν kan omsetjast begge vegar, men 'drikke' flyt betre munnleg."
+      },
+      {
+        "text": "Jesus svara henne: «Visste du kva Guds gåve er, og kven det er som seier til deg: Gjev meg drikke, så hadde du bede han, og han hadde gjeve deg levande vatn.»",
+        "type": "grammar",
+        "severity": "minor",
+        "explanation": "Det greske Εἰ ᾔδεις er ein irrealis-kondisjonalsetning: 'Om du visste' (men det gjer du ikkje). 'Visste du' utan 'om' vert oppfatta som eit spørsmål på norsk, ikkje som ein kondisjonalsetning. 'Om du visste' gjev rett meining."
       }
     ]
   },
@@ -225,11 +231,17 @@
     "bookId": 43,
     "chapterId": 4,
     "verseId": 35,
-    "text": "Seier de ikkje: Enno er det fire månader til hausten kjem? Men eg seier dykk: Lyft auga og sjå på markene – dei står alt kvite til haust.",
+    "text": "Seier de ikkje: Enno er det fire månader til hausten kjem? Men eg seier dykk: Lyft auga og sjå på markene – dei står alt kvite til innhausting!",
     "versions": [
       {
         "text": "Seier de ikkje: Enno er det fire månader til hausten kjem? Men eg seier dykk: Lyft auga og sjå på markene – dei står alt kvite til hausting.",
         "explanation": "Det greske 'πρὸς θερισμόν' tyder 'til haust/innhausting'. 'Til haust' er meir naturleg på nynorsk enn 'til hausting' og flyt betre ved opplesing."
+      },
+      {
+        "text": "Seier de ikkje: Enno er det fire månader til hausten kjem? Men eg seier dykk: Lyft auga og sjå på markene – dei står alt kvite til haust.",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "Det greske ἤδη ('allereie') høyrer syntaktisk saman med vers 36 (ἤδη ὁ θερίζων...), ikkje med vers 35. Verset sluttar med πρὸς θερισμόν. 'Alt' (=allereie) bør difor ikkje vera med i vers 35. I tillegg bør 'haust' endrast til 'innhausting' for å gjengje θερισμός meir presist (det er ikkje årstida 'haust', men sjølve haustinga/innhaustinga)."
       }
     ]
   },
@@ -237,7 +249,15 @@
     "bookId": 43,
     "chapterId": 4,
     "verseId": 36,
-    "text": "Den som haustar, får løn og samlar grøde til evig liv, så den som sår og den som haustar, kan gleda seg saman."
+    "text": "Alt no får den som haustar, si løn og samlar grøde til evig liv, så den som sår og den som haustar, kan gleda seg saman.",
+    "versions": [
+      {
+        "text": "Den som haustar, får løn og samlar grøde til evig liv, så den som sår og den som haustar, kan gleda seg saman.",
+        "type": "error",
+        "severity": "minor",
+        "explanation": "Gresk ἤδη frå slutten av vers 35 høyrer grammatisk til vers 36: 'ἤδη ὁ θερίζων μισθὸν λαμβάνει'. Det tyder 'allereie no får den som haustar si løn'. Ordet 'alt' bør flyttast frå vers 35 til vers 36 for å gje rett meining."
+      }
+    ]
   },
   {
     "bookId": 43,
@@ -291,7 +311,15 @@
     "bookId": 43,
     "chapterId": 4,
     "verseId": 44,
-    "text": "For Jesus hadde sjølv vitna at ein profet ikkje blir æra i sitt eige heimland."
+    "text": "For Jesus hadde sjølv vitna om at ein profet ikkje blir æra på sin eigen heimstad.",
+    "versions": [
+      {
+        "text": "For Jesus hadde sjølv vitna at ein profet ikkje blir æra i sitt eige heimland.",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "'Heimland' kan mistolkast som 'land/nasjon', men det greske πατρίς i denne samanhengen tyder meir 'heimstad/heimby'. 'Heimstad' er meir presist. I tillegg er 'vitna om at' meir naturleg nynorsk enn 'vitna at'."
+      }
+    ]
   },
   {
     "bookId": 43,

@@ -51,11 +51,17 @@
     "bookId": 40,
     "chapterId": 19,
     "verseId": 8,
-    "text": "Han sa til dei: «På grunn av hardhjarta dykkar lét Moses dykk skilja dykk frå konene dykkar. Men frå byrjinga var det ikkje slik.»",
+    "text": "Han sa til dei: «Fordi de er så hardhjarta, gav Moses dykk lov til å skilja dykk frå konene dykkar. Men frå byrjinga var det ikkje slik.»",
     "versions": [
       {
         "text": "Han sa til dei: «På grunn av hardhjarta dykkar lét Moses dykk skilja dykk frå konene dykkar. Men frå byrjinga var det ikkje slik.",
         "explanation": "Verset manglar avsluttande hermeteikn."
+      },
+      {
+        "text": "Han sa til dei: «På grunn av hardhjarta dykkar lét Moses dykk skilja dykk frå konene dykkar. Men frå byrjinga var det ikkje slik.»",
+        "type": "grammar",
+        "severity": "minor",
+        "explanation": "The Greek uses ἐπέτρεψεν ('permitted/allowed'), not ἐνετείλατο ('commanded'). The current 'lét' could be read as 'commanded/made', whereas the text explicitly contrasts Moses' permission (v.8) with the Pharisees' word 'commanded' (v.7). Also 'hardhjarta' is not standard nynorsk; 'hardhjarta' as a noun form is awkward. However, note the version history already fixed a punctuation issue, so only the substantive translation issue is raised here."
       }
     ]
   },
@@ -63,13 +69,29 @@
     "bookId": 40,
     "chapterId": 19,
     "verseId": 9,
-    "text": "Eg seier dykk: Den som skil seg frå kona si av annan grunn enn hor og giftar seg med ei anna, driv hor. Og den som giftar seg med ei fråskild kvinne, driv hor.»"
+    "text": "Eg seier dykk: Den som skil seg frå kona si, utan at det er for hor, og giftar seg med ei anna, driv hor. Og den som giftar seg med ei fråskild kvinne, driv hor.»",
+    "versions": [
+      {
+        "text": "Eg seier dykk: Den som skil seg frå kona si av annan grunn enn hor og giftar seg med ei anna, driv hor. Og den som giftar seg med ei fråskild kvinne, driv hor.»",
+        "type": "theological",
+        "severity": "minor",
+        "explanation": "The current phrasing 'av annan grunn enn hor' could be misread as if the divorce itself is 'for' immorality. The Greek μὴ ἐπὶ πορνείᾳ is an exception clause ('except for sexual immorality'). A clearer phrasing would better convey the exception structure. Also, the sentence could be ambiguous about whether 'hor' applies to the divorcing or the remarrying."
+      }
+    ]
   },
   {
     "bookId": 40,
     "chapterId": 19,
     "verseId": 10,
-    "text": "Læresveinane sa til han: «Er tilhøvet mellom mann og kone slik, er det betre å ikkje gifta seg.»"
+    "text": "Læresveinane sa til han: «Er det slik mellom mann og kone, då er det betre å ikkje gifta seg.»",
+    "versions": [
+      {
+        "text": "Læresveinane sa til han: «Er tilhøvet mellom mann og kone slik, er det betre å ikkje gifta seg.»",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "'Tilhøvet' (the relationship) is a somewhat unusual rendering of ἡ αἰτία (the case/situation/cause). The Greek means more 'if such is the case/situation of a man with his wife'. A simpler phrasing would be more natural and closer to the original meaning."
+      }
+    ]
   },
   {
     "bookId": 40,
@@ -183,11 +205,17 @@
     "bookId": 40,
     "chapterId": 19,
     "verseId": 29,
-    "text": "Og kvar den som har forlate hus eller brør eller systrer eller far eller mor eller kone eller born eller åkrar for mitt namn skuld, skal få hundre gonger att og arva evig liv.",
+    "text": "Og kvar den som har forlate hus eller brør eller systrer eller far eller mor eller kone eller born eller åkrar for mitt namns skuld, skal få hundre gonger att og arva evig liv.",
     "versions": [
       {
         "text": "Og kvar den som har forlate hus eller brør eller systrer eller far eller mor eller born eller åkrar for mitt namn skuld, skal få hundre gonger att og arva evig liv.",
         "explanation": "Den greske teksten inkluderer 'γυναῖκα' (kone) i opplistinga. Sjølv om nokre manuskript utelèt dette, er det med i den oppgjevne grunnteksten og bør takast med i omsetjinga."
+      },
+      {
+        "text": "Og kvar den som har forlate hus eller brør eller systrer eller far eller mor eller kone eller born eller åkrar for mitt namn skuld, skal få hundre gonger att og arva evig liv.",
+        "type": "grammar",
+        "severity": "minor",
+        "explanation": "In nynorsk the standard expression is 'for mitt namns skuld' (genitive of 'namn'), not 'for mitt namn skuld'. The genitive 's' is needed to match correct nynorsk grammar for this idiomatic expression."
       }
     ]
   },

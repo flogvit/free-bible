@@ -45,13 +45,29 @@
     "bookId": 5,
     "chapterId": 14,
     "verseId": 7,
-    "text": "Men desse skal de ikkje eta av dei som tygg drøv eller har kløyvde klauver: kamelen, haren og klippe-grevlingen. Dei tygg drøv, men har ikkje kløyvde klauver. Dei skal vera ureine for dykk."
+    "text": "Men desse skal de ikkje eta av dei som tygg drøv eller har kløyvde klauver: kamelen, haren og klippegrevlingen. Dei tygg drøv, men har ikkje kløyvde klauver. Dei skal vera ureine for dykk.",
+    "versions": [
+      {
+        "text": "Men desse skal de ikkje eta av dei som tygg drøv eller har kløyvde klauver: kamelen, haren og klippe-grevlingen. Dei tygg drøv, men har ikkje kløyvde klauver. Dei skal vera ureine for dykk.",
+        "type": "grammar",
+        "severity": "minor",
+        "explanation": "'Klippe-grevlingen' bør skrivast som eitt ord utan bindestrek: 'klippegrevlingen'. Samansetningar med substantiv som førsteledd vert normalt skrivne i eitt på nynorsk."
+      }
+    ]
   },
   {
     "bookId": 5,
     "chapterId": 14,
     "verseId": 8,
-    "text": "Grisen skal òg vera urein for dykk, for han har kløyvde klauver, men tygg ikkje drøv. De skal ikkje eta kjøtet deira og ikkje røra ved dei døde kroppane deira."
+    "text": "Grisen skal òg vera urein for dykk, for han har kløyvde klauver, men tygg ikkje drøv. De skal ikkje eta kjøtet hans og ikkje røra ved den døde kroppen hans.",
+    "versions": [
+      {
+        "text": "Grisen skal òg vera urein for dykk, for han har kløyvde klauver, men tygg ikkje drøv. De skal ikkje eta kjøtet deira og ikkje røra ved dei døde kroppane deira.",
+        "type": "error",
+        "severity": "minor",
+        "explanation": "Sidan det berre er snakk om grisen (eintal), bør pronomenet vera 'hans' i staden for 'deira'. Det hebraiske suffikset i בְּשָׂרָם og נִבְלָתָם refererer tilbake til dei ureine dyra generelt, men i konteksten her handlar det om grisen spesifikt. Eventuelt kan 'deira' bevarast om ein ser det som ei oppsummering av alle ureine dyr, men eintal er meir naturleg i konteksten."
+      }
+    ]
   },
   {
     "bookId": 5,
@@ -81,7 +97,15 @@
     "bookId": 5,
     "chapterId": 14,
     "verseId": 13,
-    "text": "glenta, falken og fleire slag haukar,"
+    "text": "glenta, falken og fleire artar av haukar,",
+    "versions": [
+      {
+        "text": "glenta, falken og fleire slag haukar,",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "Det hebraiske 'לְמִינָהּ' (etter sitt slag) vert brukt i vers 13 og 15 og gjengitt med 'fleire slag haukar'. 'Artar' er eit meir presist ord enn 'slag' i denne samanhengen, men dette er berre eit mindre forslag. Hovudproblemet er at identifiseringa av fugleartane er usikker, men det gjeld dei fleste omsetjingar."
+      }
+    ]
   },
   {
     "bookId": 5,
@@ -165,7 +189,15 @@
     "bookId": 5,
     "chapterId": 14,
     "verseId": 23,
-    "text": "Og du skal eta tienden av kornet ditt, vinen din og oljen din, og dei førstefødde av storfeet og småfeet ditt framfor Herren din Gud, på den staden han vel ut til bustad for namnet sitt. Slik skal du læra å frykta Herren din Gud alle dagar."
+    "text": "Du skal eta tienden av kornet ditt, vinen din og oljen din, og dei førstefødde av storfeet og småfeet ditt, framfor Herren din Gud, på den staden han vel ut til bustad for namnet sitt. Slik skal du læra å frykta Herren din Gud alle dagar.",
+    "versions": [
+      {
+        "text": "Og du skal eta tienden av kornet ditt, vinen din og oljen din, og dei førstefødde av storfeet og småfeet ditt framfor Herren din Gud, på den staden han vel ut til bustad for namnet sitt. Slik skal du læra å frykta Herren din Gud alle dagar.",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "Det hebraiske verset byrjar med 'וְאָכַלְתָּ' (og du skal eta) utan innleiande konjunksjon som krev 'Og' i starten. Å starta med 'Du' gjev betre flyt. I tillegg manglar det eit komma etter 'småfeet ditt' for å skilja objektet frå stadopplysninga."
+      }
+    ]
   },
   {
     "bookId": 5,

@@ -9,11 +9,17 @@
     "bookId": 2,
     "chapterId": 37,
     "verseId": 2,
-    "text": "Han klædde ho med reint gull, både innanfrå og utanfrå, og laga ein gullkant rundt ho.",
+    "text": "Han kledde ho med reint gull, både innanfrå og utanfrå, og laga ein gullkant rundt ho.",
     "versions": [
       {
         "text": "Han klædde henne med reint gull, både innanfrå og utanfrå, og laga ein gullkant rundt henne.",
         "explanation": "På nynorsk bør ein bruke objektsforma 'ho' i staden for 'henne' etter verb. 'Henne' blir mest brukt i dialektar, men standardnynorsk føretrekkjer 'ho' som objekt."
+      },
+      {
+        "text": "Han klædde ho med reint gull, både innanfrå og utanfrå, og laga ein gullkant rundt ho.",
+        "type": "grammar",
+        "severity": "minor",
+        "explanation": "Verbet 'kle' i preteritum på nynorsk er 'kledde', ikkje 'klædde'. 'Klædde' er ei forelda/dansk form. Merk: dette gjeld også vers 4, 11, 26 og 28."
       }
     ]
   },
@@ -51,11 +57,17 @@
     "bookId": 2,
     "chapterId": 37,
     "verseId": 7,
-    "text": "Han laga to kjerubar av gull. Han laga dei i drivne arbeid, ved begge endane av soningslokket.",
+    "text": "Han laga to kjerubar av gull. Han laga dei i drive arbeid, ved begge endane av soningslokket.",
     "versions": [
       {
         "text": "Han laga to kjerubar av gull. Han laga dei i driven arbeid, ved begge endane av soningslokket.",
         "explanation": "Vurder om 'drivne arbeid' (bøygd adjektiv) passar betre enn 'driven arbeid'. Likevel er 'driven arbeid' akseptabelt som eit fast uttrykk."
+      },
+      {
+        "text": "Han laga to kjerubar av gull. Han laga dei i drivne arbeid, ved begge endane av soningslokket.",
+        "type": "grammar",
+        "severity": "minor",
+        "explanation": "Sidan 'arbeid' er inkjekjønn ubunde, bør partisippforma vere 'drive' (ikkje 'drivne' som er fleirtal/bunde). Vers 17 og 22 brukar allereie 'drive arbeid' etter revisjon, så dette bør vere konsekvent."
       }
     ]
   },
@@ -117,17 +129,31 @@
     "bookId": 2,
     "chapterId": 37,
     "verseId": 16,
-    "text": "Han laga også dei kara som skulle stå på bordet: fata, skålene, bollane og kannene som det skulle hellast drikkoffer med – alt av reint gull."
+    "text": "Han laga også dei kara som skulle stå på bordet: fata, skålene, bollane og kannene som det skulle ofrast drikkoffer med – alt av reint gull.",
+    "versions": [
+      {
+        "text": "Han laga også dei kara som skulle stå på bordet: fata, skålene, bollane og kannene som det skulle hellast drikkoffer med – alt av reint gull.",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "Det hebraiske יֻסַּךְ betyr 'det skal hellast ut' (som drikkoffer), men i konteksten handlar det om utstyr til drikkofferet. 'Hellast' er akseptabelt, men 'dei kara' er uvanleg i nynorsk – 'dei kara' bør helst vere 'dei tinga' eller 'det utstyret'. Likevel er dette ein mindre merknad."
+      }
+    ]
   },
   {
     "bookId": 2,
     "chapterId": 37,
     "verseId": 17,
-    "text": "Han laga lysestaken av reint gull. Han laga lysestaken i drive arbeid, både foten og stamma. Skålene, knoppane og blømene var i eitt med han.",
+    "text": "Han laga lysestaken av reint gull. Han laga lysestaken i drive arbeid, både foten og stamma. Begera, knoppane og blømene var i eitt med han.",
     "versions": [
       {
         "text": "Han laga lysestaken av reint gull. Han laga lysestaken i driven arbeid, både foten og stamma. Skålene, knoppane og blømene var i eitt med han.",
         "explanation": "For konsistens med vers 7 som brukar 'drivne arbeid' (partisipp), bør det her også vere bøygd form. Men sidan 'arbeid' er inkjekjønn, blir korrekt form 'drive arbeid' (ubunde) eller 'det drivne arbeidet' (bunde). 'Driven' er hankjønnsform og passar ikkje til inkjekjønnsordet 'arbeid'."
+      },
+      {
+        "text": "Han laga lysestaken av reint gull. Han laga lysestaken i drive arbeid, både foten og stamma. Skålene, knoppane og blømene var i eitt med han.",
+        "type": "grammar",
+        "severity": "minor",
+        "explanation": "Det hebraiske גְּבִיעֶיהָ (gevioteiha) betyr 'beger/kalkar', ikkje 'skåler'. I vers 19 og 20 er same ord omsett med 'skåler' (som er akseptabelt), men det er verdt å merkje seg at det er snakk om begerforma skåler. Denne merknaden er minor."
       }
     ]
   },
@@ -171,11 +197,17 @@
     "bookId": 2,
     "chapterId": 37,
     "verseId": 23,
-    "text": "Han laga dei sju lampene til lysestaken, og lyspussarane og brettene av reint gull.",
+    "text": "Han laga dei sju lampene til lysestaken, med lyspussarane og askebrettene, av reint gull.",
     "versions": [
       {
         "text": "Han laga dei sju lampene til lysestaken, og ljossaksene og brettene av reint gull.",
         "explanation": "'Ljossakser' er eit gammaldags ord. 'Lyspussarar' eller 'veiktrimmarar' er meir forståeleg, men 'ljossakser' kan også forsvarast som tradisjonelt bibelspråk."
+      },
+      {
+        "text": "Han laga dei sju lampene til lysestaken, og lyspussarane og brettene av reint gull.",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "מַחְתֹּת (mahtot) er meir presist 'askebrett' eller 'glopanner' enn berre 'brett'. Dessutan er setningsstrukturen litt uklar – det kan sjå ut som om berre brettene er av reint gull, men i originalen gjeld 'reint gull' alt utstyret."
       }
     ]
   },
@@ -201,7 +233,15 @@
     "bookId": 2,
     "chapterId": 37,
     "verseId": 27,
-    "text": "Han laga to gullringar til det og sette dei under kanten på begge sidene, på to av veggene, til å halda stengene som det skulle berast med."
+    "text": "Han laga to gullringar til det og sette dei under gullkanten, på dei to sidene, til å halda stengene som det skulle berast med.",
+    "versions": [
+      {
+        "text": "Han laga to gullringar til det og sette dei under kanten på begge sidene, på to av veggene, til å halda stengene som det skulle berast med.",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "Originalteksten seier 'under זֵרוֹ' (zero, dvs. gullkanten), og 'på dei to sidene' (עַל שְׁנֵי צִדָּיו). 'På begge sidene, på to av veggene' er litt redundant og upresist. 'Gullkanten' er meir presist enn berre 'kanten'."
+      }
+    ]
   },
   {
     "bookId": 2,

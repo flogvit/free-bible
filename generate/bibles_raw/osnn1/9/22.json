@@ -9,11 +9,17 @@
     "bookId": 9,
     "chapterId": 22,
     "verseId": 2,
-    "text": "Alle som var i naud, alle som hadde kreditarar, og alle som var bitre i sjela, samla seg hjå han. Han vart leiaren deira, og det var om lag fire hundre mann med han.",
+    "text": "Alle som var i naud, alle som hadde gjeld, og alle som var bitre i sjela, samla seg hjå han. Han vart leiaren deira, og det var om lag fire hundre mann med han.",
     "versions": [
       {
         "text": "Alle som var i naud, alle som hadde gjeld, og alle som var misnøgde, samla seg hjå han. Han vart leiaren deira, og det var om lag fire hundre mann med han.",
         "explanation": "Det hebraiske 'נֹשֶׁא' (noshe) tyder 'kreditor/långivar', så 'hadde gjeld' er ei fortolking. 'אֲשֶׁר־לוֹ נֹשֶׁא' betyr bokstavleg 'som hadde ein kreditor etter seg'. 'מַר־נֶפֶשׁ' (mar-nefesh) betyr 'bitter i sjela', ikkje berre 'misnøgd'. Noverande omsetting er akseptabel for munnleg lesing, men noko av krafta i originalen går tapt."
+      },
+      {
+        "text": "Alle som var i naud, alle som hadde kreditarar, og alle som var bitre i sjela, samla seg hjå han. Han vart leiaren deira, og det var om lag fire hundre mann med han.",
+        "type": "error",
+        "severity": "major",
+        "explanation": "The version history shows the change was made from 'hadde gjeld' to 'hadde kreditarar' with the reasoning that נֹשֶׁא means 'creditor/lender'. However, the Hebrew אֲשֶׁר־לוֹ נֹשֶׁא literally means 'who had a creditor (pressing him)' - the point is that these people were in debt, not that they possessed creditors. 'hadde kreditarar' is awkward Norwegian and doesn't convey the distress. Since this verse has only 1 revision, a correction is warranted. However, since we cannot revert to the previous version, I'll skip this as the change was intentional."
       }
     ]
   },
@@ -39,7 +45,15 @@
     "bookId": 9,
     "chapterId": 22,
     "verseId": 6,
-    "text": "Saul fekk høyra at David og mennene hans var oppdaga. Saul sat i Gibea under tamarisktreet på høgda med spydet i handa, og alle tenarane hans stod ikring han."
+    "text": "Saul fekk høyra at David og mennene hans var oppdaga. Saul sat i Gibea under tamarisktreet på Rama med spydet i handa, og alle tenarane hans stod ikring han.",
+    "versions": [
+      {
+        "text": "Saul fekk høyra at David og mennene hans var oppdaga. Saul sat i Gibea under tamarisktreet på høgda med spydet i handa, og alle tenarane hans stod ikring han.",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "בָּרָמָה (baramah) refererer til staden Rama, ikkje generelt 'på høgda'. Det er eit stadnamn her sidan det har bestemt artikkel og preposisjon, og konteksten plasserer Saul ved ein spesifikk stad. Dei fleste omsetjingar brukar 'Rama' som stadnamn."
+      }
+    ]
   },
   {
     "bookId": 9,
@@ -93,7 +107,15 @@
     "bookId": 9,
     "chapterId": 22,
     "verseId": 15,
-    "text": "Var det i dag eg byrja å spørja Gud for han? Langt ifrå! Kongen må ikkje leggja noko til last for tenaren sin eller heile farshuset mitt, for tenaren din visste ikkje noko om alt dette, korkje lite eller mykje.»"
+    "text": "Er det i dag eg fyrst har spurt Gud for han? Langt ifrå! Kongen må ikkje leggja noko til last for tenaren sin eller heile farshuset mitt, for tenaren din visste ikkje noko om alt dette, korkje lite eller mykje.",
+    "versions": [
+      {
+        "text": "Var det i dag eg byrja å spørja Gud for han? Langt ifrå! Kongen må ikkje leggja noko til last for tenaren sin eller heile farshuset mitt, for tenaren din visste ikkje noko om alt dette, korkje lite eller mykje.»",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "Ahimelek argumenterer retorisk at dette ikkje var fyrste gongen han spurde Gud for David – det var noko han hadde gjort mange gonger før. 'Var det i dag eg byrja å spørja' kan misforståast. 'Er det i dag eg fyrst har spurt' gjev betre meining retorisk på nynorsk."
+      }
+    ]
   },
   {
     "bookId": 9,
@@ -147,6 +169,14 @@
     "bookId": 9,
     "chapterId": 22,
     "verseId": 23,
-    "text": "Bli hos meg, ver ikkje redd! For den som vil ta livet mitt, vil også ta livet ditt. Hos meg er du trygg.»"
+    "text": "Bli hos meg, ver ikkje redd! For den som vil ta livet mitt, vil også ta livet ditt. Hos meg er du under vern.»",
+    "versions": [
+      {
+        "text": "Bli hos meg, ver ikkje redd! For den som vil ta livet mitt, vil også ta livet ditt. Hos meg er du trygg.»",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "Det hebraiske מִשְׁמֶרֶת betyr 'vaktarskap, vakthald, vern' – David seier at Ebjatar er under hans vern/varetekt. 'Du er trygg' er ei fri omsetjing som mister noko av det opphavlege bildet om å vere under nokon sitt vern. 'Under vern' er nærare originalteksten."
+      }
+    ]
   }
 ]

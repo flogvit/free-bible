@@ -3,7 +3,15 @@
     "bookId": 10,
     "chapterId": 18,
     "verseId": 1,
-    "text": "David mønstra folket som var med han, og sette over dei førararar for tusen og førararar for hundre."
+    "text": "David mønstra folket som var med han, og sette over dei førarar for tusen og førarar for hundre.",
+    "versions": [
+      {
+        "text": "David mønstra folket som var med han, og sette over dei førararar for tusen og førararar for hundre.",
+        "type": "grammar",
+        "severity": "minor",
+        "explanation": "'førararar' er ein stavefeil – dobbelt 'ar'-ending. Rett form er 'førarar'."
+      }
+    ]
   },
   {
     "bookId": 10,
@@ -75,13 +83,29 @@
     "bookId": 10,
     "chapterId": 18,
     "verseId": 12,
-    "text": "Men mannen sa til Joab: «Om eg så fekk tusen sølvstykke i handa mi, ville eg ikkje leggja hand på kongssonen. For vi høyrde sjølve at kongen baud deg og Abisjai og Ittai: 'Vern den unge mannen Absalom, for mi skuld.'»"
+    "text": "Men mannen sa til Joab: «Om eg så fekk tusen sølvstykke i handa mi, ville eg ikkje leggja hand på kongssonen. For vi høyrde sjølve at kongen baud deg og Abisjai og Ittai: 'Pass på, kven det så er, den unge mannen Absalom!'»",
+    "versions": [
+      {
+        "text": "Men mannen sa til Joab: «Om eg så fekk tusen sølvstykke i handa mi, ville eg ikkje leggja hand på kongssonen. For vi høyrde sjølve at kongen baud deg og Abisjai og Ittai: 'Vern den unge mannen Absalom, for mi skuld.'»",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "Det hebraiske שִׁמְרוּ־מִי betyr 'pass på / vakt, kven det enn måtte vera' (dvs. uansett kven du er). Det er ei formaning om varsemd. Den noverande omsetjinga 'Vern den unge mannen' er ein mogleg tolking, men 'for mi skuld' er eit tillegg som ikkje finst i grunnteksten i dette verset (det finst i v. 5 med לְאַט־לִי). Denne endringa gjev meir nøyaktig attgjeving."
+      }
+    ]
   },
   {
     "bookId": 10,
     "chapterId": 18,
     "verseId": 13,
-    "text": "«Hadde eg handla falsk mot hans liv, ville ingenting vera løynt for kongen, og du ville sjølv stått imot meg.»"
+    "text": "Eller om eg hadde sett livet mitt på spel med svik, ville ingenting vera løynt for kongen, og du ville sjølv stått imot meg.",
+    "versions": [
+      {
+        "text": "«Hadde eg handla falsk mot hans liv, ville ingenting vera løynt for kongen, og du ville sjølv stått imot meg.»",
+        "type": "error",
+        "severity": "major",
+        "explanation": "Det hebraiske בְנַפְשִׁי (benafsji) tyder 'mot mi eiga sjel / mitt eige liv', ikkje 'mot hans liv'. Ketiv har בנפשו ('hans liv'), men Qere (den rette lesemåten) har בנפשי ('mitt liv'). Mannen seier at han ville ha sett sitt eige liv i fare ved å lyga. I tillegg manglar omsetjinga den innleiande partikkelen אוֹ ('eller'), som knyter setninga til det førre verset."
+      }
+    ]
   },
   {
     "bookId": 10,

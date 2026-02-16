@@ -27,11 +27,17 @@
     "bookId": 18,
     "chapterId": 36,
     "verseId": 5,
-    "text": "Han er veldig i hjartets kraft.",
+    "text": "Sjå, Gud er veldig, men han foraktar ingen. Han er veldig i hjartets kraft.",
     "versions": [
       {
         "text": "Sjå, Gud er veldig, men han foraktar ingen. Han er veldig i forstandens kraft.",
         "explanation": "Det hebraiske ordet לֵב (lev) tyder 'hjarte', ikkje 'forstand'. Sjølv om hjartet i hebraisk tenking kan inkludera intellektet, er 'hjartets kraft' meir tru mot grunnteksten."
+      },
+      {
+        "text": "Han er veldig i hjartets kraft.",
+        "type": "error",
+        "severity": "critical",
+        "explanation": "Den noverande omsetjinga manglar den første delen av verset: הֶן־אֵל כַּבִּיר וְלֹא יִמְאָס ('Sjå, Gud er veldig, men han foraktar ingen'). Den førre versjonen hadde dette med, men den vart endra berre for å retta 'forstandens kraft' til 'hjartets kraft'. Den første halvdelen av verset skulle ikkje ha blitt fjerna. Vi tek tilbake den manglande delen samstundes som vi beheld den korrigerte 'hjartets kraft'."
       }
     ]
   },
@@ -81,7 +87,15 @@
     "bookId": 18,
     "chapterId": 36,
     "verseId": 12,
-    "text": "Men om dei ikkje høyrer, skal dei forgå ved sverdet og døy utan kunnskap."
+    "text": "Men om dei ikkje høyrer, skal dei forgå ved kastespydet og døy utan kunnskap.",
+    "versions": [
+      {
+        "text": "Men om dei ikkje høyrer, skal dei forgå ved sverdet og døy utan kunnskap.",
+        "type": "error",
+        "severity": "major",
+        "explanation": "Det hebraiske ordet בְּשֶׁלַח (beshelach) refererer til eit kastevåpen, oftast eit kastespyd eller ei pil, ikkje eit sverd. 'Kastespydet' er meir presist. Mange omsetjingar brukar 'sverd', men grunnteksten peikar mot eit prosjektilvåpen."
+      }
+    ]
   },
   {
     "bookId": 18,
@@ -117,7 +131,15 @@
     "bookId": 18,
     "chapterId": 36,
     "verseId": 17,
-    "text": "Men du er full av den dommen som tilhøyrer den ugudelege. Dom og rettferd held fast ved deg."
+    "text": "Men du er full av den dommen som tilhøyrer den ugudelege. Dom og rett skal gripa deg.",
+    "versions": [
+      {
+        "text": "Men du er full av den dommen som tilhøyrer den ugudelege. Dom og rettferd held fast ved deg.",
+        "type": "error",
+        "severity": "major",
+        "explanation": "Siste del 'dom og rettferd held fast ved deg' kan gje inntrykk av noko positivt. Verbet יִתְמֹכוּ her i konteksten betyr at dommen grip tak i personen – det er negativt, ikkje at rettferd 'held fast ved deg' som noko godt. 'Dom og rett skal gripa deg' formidlar den negative tonen betre."
+      }
+    ]
   },
   {
     "bookId": 18,
@@ -129,7 +151,15 @@
     "bookId": 18,
     "chapterId": 36,
     "verseId": 19,
-    "text": "Kan rikdomen din hjelpa deg så du slepp naud, eller all di kraft og styrke?"
+    "text": "Kan ropet ditt hjelpa deg så du slepp naud, eller all di kraft og styrke?",
+    "versions": [
+      {
+        "text": "Kan rikdomen din hjelpa deg så du slepp naud, eller all di kraft og styrke?",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "Det hebraiske שׁוּעֲךָ (shu'akha) tyder 'ropet ditt' (om hjelp), ikkje 'rikdomen din'. Nokre omsetjingar les שׁוּעֲךָ som avleidd av שׁוֹעַ (rikdom), men den mest naturlege lesinga er 'rop om hjelp'."
+      }
+    ]
   },
   {
     "bookId": 18,
@@ -201,7 +231,15 @@
     "bookId": 18,
     "chapterId": 36,
     "verseId": 30,
-    "text": "Sjå, han spreier lyset sitt rundt seg og dekkjer havdjupet."
+    "text": "Sjå, han spreier lyset sitt over det og dekkjer havbotnens røter.",
+    "versions": [
+      {
+        "text": "Sjå, han spreier lyset sitt rundt seg og dekkjer havdjupet.",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "שָׁרְשֵׁי הַיָּם tyder bokstavleg 'røtene til havet' eller 'havbotnen'. 'Havdjupet' er akseptabelt men mister biletet av 'røter'. עָלָיו ('over det') refererer til skyene/verda, ikkje 'rundt seg'."
+      }
+    ]
   },
   {
     "bookId": 18,
@@ -219,6 +257,14 @@
     "bookId": 18,
     "chapterId": 36,
     "verseId": 33,
-    "text": "Tordenen fortel om han, og buskapen varslar når uver kjem."
+    "text": "Tordenen fortel om han, jamvel buskapen varslar om det som kjem.",
+    "versions": [
+      {
+        "text": "Tordenen fortel om han, og buskapen varslar når uver kjem.",
+        "type": "error",
+        "severity": "major",
+        "explanation": "Det hebraiske מִקְנֶה (miqneh, 'buskap') i samanheng med אַף עַל־עוֹלֶה ('jamvel om det som stig opp') kan visa til at jamvel buskapen merkar det komande uveret. Omsetjinga 'buskapen varslar når uver kjem' er rimeleg, men 'jamvel' fangar betre opp partikkelen אַף."
+      }
+    ]
   }
 ]

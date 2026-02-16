@@ -15,7 +15,15 @@
     "bookId": 9,
     "chapterId": 21,
     "verseId": 3,
-    "text": "David svara presten Ahimelek: «Kongen har gjeve meg eit oppdrag og sa til meg: 'Ingen må få vita noko om det oppdraget eg sender deg ut på, og det eg har bode deg.' Eg har sendt tenarane mine til ein viss stad."
+    "text": "David svara presten Ahimelek: «Kongen har gjeve meg eit oppdrag og sa til meg: 'Ingen må få vita noko om det oppdraget eg sender deg ut på, og det eg har bode deg.' Eg har avtalt med tenarane mine å møtast på ein viss stad.",
+    "versions": [
+      {
+        "text": "David svara presten Ahimelek: «Kongen har gjeve meg eit oppdrag og sa til meg: 'Ingen må få vita noko om det oppdraget eg sender deg ut på, og det eg har bode deg.' Eg har sendt tenarane mine til ein viss stad.",
+        "type": "error",
+        "severity": "minor",
+        "explanation": "Det hebraiske יוֹדַעְתִּי (frå ידע) tyder 'eg har gjort kjent/avtalt', ikkje 'eg har sendt'. David seier han har bede tenarane møta han på ein bestemt stad, ikkje at han allereie har sendt dei dit."
+      }
+    ]
   },
   {
     "bookId": 9,
@@ -33,7 +41,15 @@
     "bookId": 9,
     "chapterId": 21,
     "verseId": 6,
-    "text": "David svara presten og sa til han: «Vi har sanneleg halde oss borte frå kvinner, som alltid når eg dreg ut. Kroppane til mennene er reine, sjølv om dette er ei vanleg ferd – og kor mykje meir vil dei ikkje vera heilage i dag!»"
+    "text": "David svara presten og sa til han: «Vi har sanneleg halde oss borte frå kvinner, som alltid når eg dreg ut. Kroppane til mennene er reine, sjølv om dette er ei vanleg ferd – og kor mykje meir i dag, når brødet vert helga i karet!»",
+    "versions": [
+      {
+        "text": "David svara presten og sa til han: «Vi har sanneleg halde oss borte frå kvinner, som alltid når eg dreg ut. Kroppane til mennene er reine, sjølv om dette er ei vanleg ferd – og kor mykje meir vil dei ikkje vera heilage i dag!»",
+        "type": "error",
+        "severity": "major",
+        "explanation": "Den siste delen av verset (וְאַף כִּי הַיּוֹם יִקְדַּשׁ בַּכֶּלִי) viser til at brødet i dag vert helga i karet/utstyret. Den noverande omsetjinga er for fri og manglar referansen til בַּכֶּלִי (karet/utstyret). Meininga er truleg at sjølv om ferda er vanleg, vil brødet verta heilagt når det vert lagt i deira kar/utstyr."
+      }
+    ]
   },
   {
     "bookId": 9,
@@ -87,11 +103,17 @@
     "bookId": 9,
     "chapterId": 21,
     "verseId": 14,
-    "text": "Han forandra seg og lest som han var galen medan han var i hendene deira. Han rissa på dørene i porten og let siklet renna ned i skjegget.",
+    "text": "Han forandra veremåten sin framfor dei og lest som han var galen medan han var i hendene deira. Han rissa på dørene i porten og let siklet renna ned i skjegget.",
     "versions": [
       {
         "text": "Han endra åtferda si framfor dei og lest som han var galen medan han var i hendene deira. Han rissa på dørene i porten og let siklet renna ned i skjegget.",
         "explanation": "טַעַם kan bety 'smak', 'forstand' eller 'åtferd'. Omsetjinga 'endra åtferda si' er akseptabel, men 'forandra seg' eller 'endra veremåten sin' kan vera meir naturleg på nynorsk."
+      },
+      {
+        "text": "Han forandra seg og lest som han var galen medan han var i hendene deira. Han rissa på dørene i porten og let siklet renna ned i skjegget.",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "בְּעֵינֵיהֶם tyder 'i augo deira' / 'framfor dei', og את טעמו tyder 'åtferda si / veremåten sin'. 'Han forandra seg' er noko upresist – det var åtferda/veremåten han endra, og det var spesifikt framfor dei. Men dette verset har éin tidlegare revisjon, så dette er berre eit mindre forslag."
       }
     ]
   },

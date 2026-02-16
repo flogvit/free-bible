@@ -27,7 +27,15 @@
     "bookId": 43,
     "chapterId": 14,
     "verseId": 4,
-    "text": "Og dit eg går, veit de vegen."
+    "text": "Og dit eg går, kjenner de vegen.",
+    "versions": [
+      {
+        "text": "Og dit eg går, veit de vegen.",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "Det greske οἴδατε inneber ei djupare kjennskap enn berre å 'vita'. 'Kjenner de vegen' er meir naturleg nynorsk og passar betre med konteksten der Jesus snakkar om å kjenna vegen personleg. Likevel er 'veit' også akseptabelt; dette er berre eit forslag."
+      }
+    ]
   },
   {
     "bookId": 43,
@@ -75,7 +83,15 @@
     "bookId": 43,
     "chapterId": 14,
     "verseId": 12,
-    "text": "Sanneleg, sanneleg, eg seier dykk: Den som trur på meg, skal gjera dei same gjerningane som eg gjer, ja, endå større gjerningar skal han gjera, for eg går til Far."
+    "text": "Sanneleg, sanneleg, eg seier dykk: Den som trur på meg, skal gjera dei gjerningane som eg gjer, ja, endå større gjerningar skal han gjera, for eg går til Far.",
+    "versions": [
+      {
+        "text": "Sanneleg, sanneleg, eg seier dykk: Den som trur på meg, skal gjera dei same gjerningane som eg gjer, ja, endå større gjerningar skal han gjera, for eg går til Far.",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "Originalen seier 'τὰ ἔργα ἃ ἐγὼ ποιῶ' (dei gjerningane som eg gjer), ikkje 'dei same gjerningane'. Ordet 'same' er eit tillegg som ikkje står i grunnteksten."
+      }
+    ]
   },
   {
     "bookId": 43,
@@ -93,7 +109,15 @@
     "bookId": 43,
     "chapterId": 14,
     "verseId": 15,
-    "text": "Elskar de meg, så held de boda mine."
+    "text": "Elskar de meg, så kjem de til å halda boda mine.",
+    "versions": [
+      {
+        "text": "Elskar de meg, så held de boda mine.",
+        "type": "error",
+        "severity": "major",
+        "explanation": "Den greske tekstvarianten τηρήσετε er futurum indikativ ('de vil halda/de kjem til å halda'), ikkje imperativ eller presens. Omsettinga 'held de' kan lesast som presens/imperativ, medan originalen har eit løfte/konstatering om framtida: 'de kjem til å halda'. Dette er teologisk viktig fordi det skildrar ein konsekvens av kjærleiken, ikkje eit påbod."
+      }
+    ]
   },
   {
     "bookId": 43,
@@ -207,6 +231,14 @@
     "bookId": 43,
     "chapterId": 14,
     "verseId": 31,
-    "text": "Men verda må få vita at eg elskar Far og gjer som Far har bode meg. Stå opp, lat oss gå herifrå!"
+    "text": "Men det er for at verda skal kjenna at eg elskar Far, og at eg gjer slik Far har bode meg. Stå opp, lat oss gå herifrå!",
+    "versions": [
+      {
+        "text": "Men verda må få vita at eg elskar Far og gjer som Far har bode meg. Stå opp, lat oss gå herifrå!",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "Originalen har ἵνα γνῷ (formålskonjunksjon: 'for at verda skal kjenna'). 'Verda må få vita' er litt annleis i nyansar – det greske uttrykket viser til eit formål, ikkje eit påbod. 'For at verda skal kjenna' er nærare grunnteksten."
+      }
+    ]
   }
 ]

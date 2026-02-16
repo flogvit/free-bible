@@ -117,11 +117,17 @@
     "bookId": 1,
     "chapterId": 46,
     "verseId": 15,
-    "text": "Dette var sønene til Lea, som ho fødde til Jakob i Paddan-Aram, og dessutan Dina, dotter hans. Alle som stamma frå henne, var trettitre.",
+    "text": "Dette var sønene til Lea, som ho fødde til Jakob i Paddan-Aram, og dessutan Dina, dotter hans. Alle som stamma frå henne, var trettitre i talet.",
     "versions": [
       {
         "text": "Dette var sønene til Lea, som ho fødde til Jakob i Paddan-Aram, og dessutan Dina, dotter hans. Talet på søner og døtrer var trettitre.",
         "explanation": "Det hebraiske 'kol-nefeš' (alle sjeler/personar) refererer til heile etterkomarane til Lea, ikkje berre direkte søner og døtrer. 'Talet på søner og døtrer' er upresist sidan det inkluderer barneborn."
+      },
+      {
+        "text": "Dette var sønene til Lea, som ho fødde til Jakob i Paddan-Aram, og dessutan Dina, dotter hans. Alle som stamma frå henne, var trettitre.",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "For konsistens med dei andre samandragsversa (v. 18, 22, 25) som alle bruker formuleringa 'X i talet', bør ein leggja til 'i talet' etter 'trettitre'. Dette gjev ein meir einskapleg stil i ættelistene."
       }
     ]
   },
@@ -225,7 +231,15 @@
     "bookId": 1,
     "chapterId": 46,
     "verseId": 28,
-    "text": "Jakob sende Juda føre seg til Josef for å visa vegen til Gosen. Så kom dei til landet Gosen."
+    "text": "Jakob sende Juda føre seg til Josef for å syna vegen til Gosen. Så kom dei til landet Gosen.",
+    "versions": [
+      {
+        "text": "Jakob sende Juda føre seg til Josef for å visa vegen til Gosen. Så kom dei til landet Gosen.",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "Det hebraiske 'lehōrōt' betyr 'å visa/rettleia'. På nynorsk er 'syna' eit meir tradisjonelt og idiomatisk nynorskord enn 'visa', som er meir bokmålsnært. 'Syna vegen' er god nynorsk."
+      }
+    ]
   },
   {
     "bookId": 1,
@@ -261,7 +275,15 @@
     "bookId": 1,
     "chapterId": 46,
     "verseId": 32,
-    "text": "Mennene er gjetarar, for dei har alltid halde buskap. Sauene og storfeet og alt dei eig, har dei teke med seg."
+    "text": "Mennene er sauegjetarar, for dei har alltid halde buskap. Sauene og storfeet og alt dei eig, har dei teke med seg.",
+    "versions": [
+      {
+        "text": "Mennene er gjetarar, for dei har alltid halde buskap. Sauene og storfeet og alt dei eig, har dei teke med seg.",
+        "type": "error",
+        "severity": "major",
+        "explanation": "Det hebraiske 'rōʿê ṣōʾn' betyr spesifikt 'sauegjetarar' (gjetarar av småfe), ikkje berre 'gjetarar' generelt. Dette er viktig fordi vers 34 eksplisitt nemner at 'sauegjetarar' er ein styggedom for egyptarane. Josef instruerer brørne til å understreka dette for å kunna busetja seg i Gosen."
+      }
+    ]
   },
   {
     "bookId": 1,

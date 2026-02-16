@@ -3,7 +3,15 @@
     "bookId": 51,
     "chapterId": 2,
     "verseId": 1,
-    "text": "For eg vil at de skal vita kor stor kamp eg har for dykk og for dei i Laodikea, og for alle som ikkje har sett andletet mitt personleg."
+    "text": "For eg vil at de skal vita kor stor kamp eg har for dykk og for dei i Laodikea, og for alle som ikkje har sett ansiktet mitt personleg.",
+    "versions": [
+      {
+        "text": "For eg vil at de skal vita kor stor kamp eg har for dykk og for dei i Laodikea, og for alle som ikkje har sett andletet mitt personleg.",
+        "type": "grammar",
+        "severity": "minor",
+        "explanation": "'Andletet' er eit eldre nynorsk ord. For ei moderne og lettlesen omsetjing er 'ansiktet' meir naturleg i moderne nynorsk."
+      }
+    ]
   },
   {
     "bookId": 51,
@@ -33,7 +41,15 @@
     "bookId": 51,
     "chapterId": 2,
     "verseId": 5,
-    "text": "For sjølv om eg er fråverande i kroppen, er eg likevel hos dykk i ånda. Eg gleder meg og ser den gode ordninga dykkar og det faste grunnlaget i trua dykkar på Kristus."
+    "text": "For sjølv om eg er fråverande i kroppen, er eg likevel hos dykk i ånda. Eg gleder meg over den gode ordninga dykkar og den faste grunnvollen i trua dykkar på Kristus.",
+    "versions": [
+      {
+        "text": "For sjølv om eg er fråverande i kroppen, er eg likevel hos dykk i ånda. Eg gleder meg og ser den gode ordninga dykkar og det faste grunnlaget i trua dykkar på Kristus.",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "'στερέωμα' (sterēōma) tyder 'fastheit' eller 'fast grunnvoll'. 'Grunnvollen' er meir presist enn 'grunnlaget'. Dessutan er det meir naturleg nynorsk å seie 'gleder meg over' enn 'gleder meg og ser' som to separate handlingar, sidan χαίρων og βλέπων saman skildrar éi samanhengande glede over det han ser."
+      }
+    ]
   },
   {
     "bookId": 51,
@@ -69,11 +85,17 @@
     "bookId": 51,
     "chapterId": 2,
     "verseId": 11,
-    "text": "I han vart de òg omskorne med ei omskjering som ikkje er gjord med hender, ved å leggja av syndekroppen, i Kristi omskjering.",
+    "text": "I han vart de òg omskorne med ei omskjering som ikkje er gjord med hender, ved å leggja av den syndige kroppen, i Kristi omskjering.",
     "versions": [
       {
         "text": "I han vart de òg omskorne med ei omskjering som ikkje er gjord med hender, ved at de la av den kjøtlege kroppen, i Kristi omskjering.",
         "explanation": "Uttrykket 'τοῦ σώματος τῆς σαρκός' (kroppen av kjøtet) refererer til den syndige naturen, ikkje den fysiske kroppen. 'Syndekroppen' eller 'den syndige naturen' gjev betre teologisk meining og unngår misforståing om at den fysiske kroppen er vond."
+      },
+      {
+        "text": "I han vart de òg omskorne med ei omskjering som ikkje er gjord med hender, ved å leggja av syndekroppen, i Kristi omskjering.",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "'Syndekroppen' er eit uvanleg samansett ord på nynorsk. 'Den syndige kroppen' er meir naturleg og lettlese, og skil seg frå dei tidlegare versjonane."
       }
     ]
   },
@@ -87,7 +109,15 @@
     "bookId": 51,
     "chapterId": 2,
     "verseId": 13,
-    "text": "Og dykk som var døde i syndene dykkar og i uomskjæringa av kjøtet dykkar, dykk gjorde han levande saman med Kristus. Han tilgav oss alle syndene våre."
+    "text": "Og dykk som var døde på grunn av misgjerningane dykkar og uomskjæringa av kjøtet dykkar, dykk gjorde han levande saman med han. Han tilgav oss alle misgjerningane våre.",
+    "versions": [
+      {
+        "text": "Og dykk som var døde i syndene dykkar og i uomskjæringa av kjøtet dykkar, dykk gjorde han levande saman med Kristus. Han tilgav oss alle syndene våre.",
+        "type": "error",
+        "severity": "major",
+        "explanation": "Grunnteksten har 'σὺν αὐτῷ' (saman med han), ikkje 'saman med Kristus'. Dessutan er 'παραπτώμασιν' meir presist 'misgjerningar/overtredingar' enn 'synder' (som ville vore ἁμαρτίαι). Preposisjonen ἐν med dativ her har kausal tyding: 'på grunn av'."
+      }
+    ]
   },
   {
     "bookId": 51,
@@ -111,7 +141,15 @@
     "bookId": 51,
     "chapterId": 2,
     "verseId": 17,
-    "text": "Dette er berre ein skugge av det som skulle koma, men kroppen høyrer Kristus til."
+    "text": "Dette er berre ein skugge av det som skulle koma, men røyndomen finst i Kristus.",
+    "versions": [
+      {
+        "text": "Dette er berre ein skugge av det som skulle koma, men kroppen høyrer Kristus til.",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "'τὸ δὲ σῶμα τοῦ Χριστοῦ' er eit idiomatisk uttrykk der 'σῶμα' (kropp) står i kontrast til 'σκιά' (skugge). Poenget er at skuggen peikar mot den verkelege tingen (røyndomen/substansen), som er Kristus. 'Kroppen høyrer Kristus til' er misvisande og gjev ikkje meining i samanhengen. Det biletlege uttrykket tyder at røyndomen/substansen finst i Kristus."
+      }
+    ]
   },
   {
     "bookId": 51,
@@ -153,6 +191,14 @@
     "bookId": 51,
     "chapterId": 2,
     "verseId": 23,
-    "text": "Slike reglar har nok eit rykte for visdom med si sjølvvalde fromheit, si audmjuke og si harde behandling av kroppen, men dei har ingen verdi mot kjøtets lyster."
+    "text": "Slike reglar har nok eit skin av visdom med si sjølvvalde fromheit, si audmjuke og si harde behandling av kroppen, men dei har ingen verdi mot kjøtets lyster.",
+    "versions": [
+      {
+        "text": "Slike reglar har nok eit rykte for visdom med si sjølvvalde fromheit, si audmjuke og si harde behandling av kroppen, men dei har ingen verdi mot kjøtets lyster.",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "'λόγον ἔχοντα σοφίας' tyder meir bokstavleg 'har eit ord/skin av visdom' - altså eit ytre skin, ikkje eit rykte. 'Skin av visdom' er meir presist enn 'rykte for visdom'."
+      }
+    ]
   }
 ]

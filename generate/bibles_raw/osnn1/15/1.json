@@ -27,11 +27,17 @@
     "bookId": 15,
     "chapterId": 1,
     "verseId": 4,
-    "text": "Alle som har overlevd, uansett kvar dei bur, skal få hjelp frå folket på staden, med sølv og gull, gods og buskap, i tillegg til frivillige gåver til Guds hus i Jerusalem.»",
+    "text": "Alle som har overlevd, kvar dei enn bur, skal folket på staden hjelpa dei med sølv og gull, gods og buskap, i tillegg til frivillige gåver til Guds hus i Jerusalem.»",
     "versions": [
       {
         "text": "Alle som har overlevd og bur mellom framande, skal få hjelp frå folket på staden der dei bur, med sølv og gull, gods og buskap, i tillegg til frivillige gåver til Guds hus i Jerusalem.»",
         "explanation": "Det hebraiske uttrykket 'מִכָּל־הַמְּקֹמוֹת אֲשֶׁר הוּא גָר־שָׁם' tyder 'frå alle stadene der han bur som framand', ikkje 'mellom framande'. Fokuset er på stadene, ikkje på at dei bur blant framande folk."
+      },
+      {
+        "text": "Alle som har overlevd, uansett kvar dei bur, skal få hjelp frå folket på staden, med sølv og gull, gods og buskap, i tillegg til frivillige gåver til Guds hus i Jerusalem.»",
+        "type": "error",
+        "severity": "major",
+        "explanation": "Hebraisk 'יְנַשְּׂאוּהוּ אַנְשֵׁי מְקֹמוֹ' har 'mennene på staden hans' som subjekt og den overlevande som objekt. 'Skal få hjelp frå folket' er passiv og litt upresist. Ei formulering der folket på staden er subjekt er meir tru mot originalen. Denne endringa er ulik dei tidlegare versjonane."
       }
     ]
   },
@@ -45,13 +51,29 @@
     "bookId": 15,
     "chapterId": 1,
     "verseId": 6,
-    "text": "Alle som budde ikring dei, støtta dei med sølvgjenstandar, gull, gods, buskap og kostbare gåver, i tillegg til alt det andre som vart gjeve frivillig."
+    "text": "Alle som budde ikring dei, styrkte hendene deira med sølvkar, gull, gods, buskap og kostbare gåver, i tillegg til alt det andre som vart gjeve frivillig.",
+    "versions": [
+      {
+        "text": "Alle som budde ikring dei, støtta dei med sølvgjenstandar, gull, gods, buskap og kostbare gåver, i tillegg til alt det andre som vart gjeve frivillig.",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "Hebraisk 'חִזְּקוּ בִידֵיהֶם' tyder bokstavleg 'styrkte hendene deira', som er eit vanleg uttrykk for å gje praktisk støtte. 'Støtta dei' er akseptabelt, men 'styrkte hendene deira' er meir presist. Dessutan er 'בִּכְלֵי־כֶסֶף' 'med kar av sølv', ikkje berre 'sølvgjenstandar'."
+      }
+    ]
   },
   {
     "bookId": 15,
     "chapterId": 1,
     "verseId": 7,
-    "text": "Kong Kyros tok òg fram dei kara som høyrde til Herrens hus, som Nebukadnesar hadde ført bort frå Jerusalem og sett i tempelet til guden sin."
+    "text": "Kong Kyros tok òg fram dei kara som høyrde til Herrens hus, dei som Nebukadnesar hadde ført bort frå Jerusalem og sett i tempelet til guden sin.",
+    "versions": [
+      {
+        "text": "Kong Kyros tok òg fram dei kara som høyrde til Herrens hus, som Nebukadnesar hadde ført bort frå Jerusalem og sett i tempelet til guden sin.",
+        "type": "error",
+        "severity": "minor",
+        "explanation": "'dei kara ... som Nebukadnesar hadde ført bort' kan lesast som om det var Kyros som hadde ført dei bort. Det hebraiske relativleddet 'אֲשֶׁר הוֹצִיא נְבוּכַדְנֶצַּר' refererer til kara, ikkje til Kyros. 'dei som Nebukadnesar hadde ført bort' gjer referansen tydelegare."
+      }
+    ]
   },
   {
     "bookId": 15,
@@ -63,7 +85,15 @@
     "bookId": 15,
     "chapterId": 1,
     "verseId": 9,
-    "text": "Dette var talet på dei: tretti gullfat, eitt tusen sølvfat, tjueni knivar,"
+    "text": "Dette var talet på dei: tretti gullfat, eitt tusen sølvfat, tjueni offerknivar,",
+    "versions": [
+      {
+        "text": "Dette var talet på dei: tretti gullfat, eitt tusen sølvfat, tjueni knivar,",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "Hebraisk 'מַחֲלָפִים' refererer truleg til knivar brukte i tempeltenesta (offerknivar), ikkje vanlege knivar. 'Offerknivar' presiserer bruksområdet og gjev betre kontekstuell meining sidan dette er tempelutstyr."
+      }
+    ]
   },
   {
     "bookId": 15,

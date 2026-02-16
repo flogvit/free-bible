@@ -81,11 +81,17 @@
     "bookId": 9,
     "chapterId": 3,
     "verseId": 11,
-    "text": "Herren sa til Samuel: «Sjå, eg gjer noko i Israel som får det til å ringja i begge øyro på kvar den som høyrer om det.",
+    "text": "Herren sa til Samuel: «Sjå, eg gjer noko i Israel som får det til å ringja i begge øyro på kvar den som høyrer om det.»",
     "versions": [
       {
         "text": "Herren sa til Samuel: «Sjå, eg gjer noko i Israel som får begge øyro til å ringja hos kvar den som høyrer om det.",
         "explanation": "Formuleringa 'får begge øyro til å ringja' er litt klumpete. 'Får det til å ringja i begge øyro' gjev betre flyt for munnleg lesing og er meir idiomatisk på nynorsk."
+      },
+      {
+        "text": "Herren sa til Samuel: «Sjå, eg gjer noko i Israel som får det til å ringja i begge øyro på kvar den som høyrer om det.",
+        "type": "grammar",
+        "severity": "minor",
+        "explanation": "Verset manglar avsluttande hermeteikn (»). Setninga startar med «Sjå men blir aldri lukka. Basert på samanhengen ser det ut som talen fortset i vers 12–14 og blir lukka der, men vers 11 åleine ser ufullstendig ut som sjølvstendig vers. Sidan vers 14 endar med avsluttande », kan dette vera tilsikta som ein lang tale over fleire vers. Dersom det er tilsikta, er dette ikkje ein feil."
       }
     ]
   },
@@ -99,7 +105,15 @@
     "bookId": 9,
     "chapterId": 3,
     "verseId": 13,
-    "text": "Eg har kunngjort for han at eg skal døma huset hans for alltid for den skulda han kjenner til: Sønene hans spottar Gud, og han hindra dei ikkje."
+    "text": "Eg har kunngjort for han at eg skal døma huset hans for alltid for den skulda han kjenner til: Sønene hans dreg forbanning over seg, og han hindra dei ikkje.",
+    "versions": [
+      {
+        "text": "Eg har kunngjort for han at eg skal døma huset hans for alltid for den skulda han kjenner til: Sønene hans spottar Gud, og han hindra dei ikkje.",
+        "type": "error",
+        "severity": "major",
+        "explanation": "Det hebraiske מְקַלְלִים (meqallelim) betyr 'bringa forbanning over seg sjølve' eller 'vanæra seg sjølve', ikkje 'spottar Gud'. Qere-lesinga er מְקַלְלִ֤ים לָהֶם֙ – dei dreg forbanning over seg sjølve. Å omsetja med 'spottar Gud' legg til eit objekt (Gud) som ikkje finst i teksten, og endrar meininga."
+      }
+    ]
   },
   {
     "bookId": 9,
@@ -111,7 +125,15 @@
     "bookId": 9,
     "chapterId": 3,
     "verseId": 15,
-    "text": "Samuel vart liggjande til morgonen. Så opna han dørene til Herrens hus. Samuel var redd for å fortelja synet til Eli."
+    "text": "Samuel låg til morgonen. Så opna han dørene til Herrens hus. Men Samuel var redd for å fortelja synet til Eli.",
+    "versions": [
+      {
+        "text": "Samuel vart liggjande til morgonen. Så opna han dørene til Herrens hus. Samuel var redd for å fortelja synet til Eli.",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "Det hebraiske וַיִּשְׁכַּב er wayyiqtol av שׁכב og betyr enkelt 'han låg' – 'vart liggjande' er litt tungt. I tillegg markerer den hebraiske konstruksjonen וּשְׁמוּאֵל יָרֵא ein kontrast (han opna dørene, men var redd for å fortelja), og 'Men' formidlar denne kontrasten betre."
+      }
+    ]
   },
   {
     "bookId": 9,
@@ -153,7 +175,15 @@
     "bookId": 9,
     "chapterId": 3,
     "verseId": 20,
-    "text": "Heile Israel, frå Dan til Be'er-Sjeba, skjøna at Samuel var stadfest som profet for Herren."
+    "text": "Heile Israel, frå Dan til Be'er-Sjeba, visste at Samuel var truverdig som profet for Herren.",
+    "versions": [
+      {
+        "text": "Heile Israel, frå Dan til Be'er-Sjeba, skjøna at Samuel var stadfest som profet for Herren.",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "Det hebraiske וַיֵּדַע betyr 'visste/kjende', ikkje 'skjøna'. Og נֶאֱמָן betyr 'truverdig/påliteleg', ikkje 'stadfest'. Poenget er at heile Israel erkjende at Samuel var ein truverdig profet, ikkje at han vart 'stadfest' i ei stilling."
+      }
+    ]
   },
   {
     "bookId": 9,

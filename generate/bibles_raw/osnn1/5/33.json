@@ -9,11 +9,17 @@
     "bookId": 5,
     "chapterId": 33,
     "verseId": 2,
-    "text": "Han sa: Herren kom frå Sinai, han steig opp frå Se'ir for dei, han stråla fram frå Paran-fjellet og kom med titusental av heilage; frå hans høgre hand kom ein eldlov for dei.",
+    "text": "Han sa: Herren kom frå Sinai, han steig opp frå Se'ir for dei, han stråla fram frå Paran-fjellet og kom frå titusental av heilage. Frå hans høgre hand kom ein eldlov for dei.",
     "versions": [
       {
         "text": "Han sa: Herren kom frå Sinai, han steig opp frå Se'ir for dei, han stråla fram frå Paran-fjellet og kom frå heilage titusental; frå hans høgre hand kom ein eldlov for dei.",
         "explanation": "Hebraisk 'מֵרִבְבֹת קֹדֶשׁ' tyder 'frå titusental av heilage (englar)', ikkje 'heilage titusental'. Preposisjonen 'frå/med' høyrer til 'titusental', og 'heilage' skildrar dei som kjem."
+      },
+      {
+        "text": "Han sa: Herren kom frå Sinai, han steig opp frå Se'ir for dei, han stråla fram frå Paran-fjellet og kom med titusental av heilage; frå hans høgre hand kom ein eldlov for dei.",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "'וְאָתָה מֵרִבְבֹת קֹדֶשׁ' betyr 'og han kom frå titusental av heilage'. Preposisjonen 'מֵ' (frå) er viktig og bør behaldast. 'Med' gjev ein annan nyanse enn originalen som seier 'frå'. Merk at dette er forskjellig frå den tidlegare versjonen som hadde 'frå heilage titusental' med feil ordstilling."
       }
     ]
   },
@@ -39,11 +45,17 @@
     "bookId": 5,
     "chapterId": 33,
     "verseId": 6,
-    "text": "Lat Ruben leva og ikkje døy, sjølv om mennene hans er få.",
+    "text": "Lat Ruben leva og ikkje døy, og lat ikkje mennene hans vera få i tal.",
     "versions": [
       {
         "text": "Lat Ruben leva og ikkje døy, men lat ikkje mennene hans vera få.",
         "explanation": "Den hebraiske teksten er tvetydig og kan lesast som ein bøn om at talet ikkje skal vera få, men den vanlegaste tolkinga (jf. masoretisk aksentuering) er at det er ein konsessiv: 'sjølv om mennene hans er få'. Noverande omsetting med 'lat ikkje' kan mistolkast."
+      },
+      {
+        "text": "Lat Ruben leva og ikkje døy, sjølv om mennene hans er få.",
+        "type": "theological",
+        "severity": "minor",
+        "explanation": "Sjølv om versjonshistorikken grunngjev den konsessive tolkinga, er den alternative tolkinga ('lat ikkje mennene hans vera få') faktisk godt støtta av fleire omsettingar (LXX, fleire moderne omsettingar). Men sidan dette er eit medvite val, kan dette ignererast."
       }
     ]
   },
@@ -99,7 +111,15 @@
     "bookId": 5,
     "chapterId": 33,
     "verseId": 13,
-    "text": "Om Josef sa han: Velsigna av Herren er landet hans, med det beste frå himmelen, med dogg, og med djupet som ligg der nede."
+    "text": "Om Josef sa han: Velsigna av Herren er landet hans, med det beste frå himmelen ovanfor, med dogg, og med djupet som ligg der nede.",
+    "versions": [
+      {
+        "text": "Om Josef sa han: Velsigna av Herren er landet hans, med det beste frå himmelen, med dogg, og med djupet som ligg der nede.",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "Hebraisk 'מִמֶּגֶד שָׁמַיִם' indikerer 'det beste frå himmelen ovanfor' som kontrast til 'djupet som ligg der nede'. Å leggja til 'ovanfor' gjer kontrasten tydelegare, men dette er berre ei mindre forbetringsforslag."
+      }
+    ]
   },
   {
     "bookId": 5,
@@ -165,7 +185,15 @@
     "bookId": 5,
     "chapterId": 33,
     "verseId": 23,
-    "text": "Om Naftali sa han: Naftali er mett av nåde og full av Herrens velsigning. Vest og sør skal han eiga."
+    "text": "Om Naftali sa han: Naftali er mett av nåde og full av Herrens velsigning. Sjøen og sørlandet skal han eiga.",
+    "versions": [
+      {
+        "text": "Om Naftali sa han: Naftali er mett av nåde og full av Herrens velsigning. Vest og sør skal han eiga.",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "'יָם' tyder bokstaveleg 'sjø/hav', og kan visa til Genesaretsjøen som ligg i Naftalis territorium. 'Vest' er ei avleidd tyding av 'yam', men i denne samanhengen er 'sjøen' meir geografisk presist for Naftalis arvelodd."
+      }
+    ]
   },
   {
     "bookId": 5,
@@ -177,7 +205,15 @@
     "bookId": 5,
     "chapterId": 33,
     "verseId": 25,
-    "text": "Av jern og bronse er bommane dine, og styrken din skal vara så lenge du lever."
+    "text": "Av jern og bronse er slåane dine, og styrken din skal vara så lenge du lever.",
+    "versions": [
+      {
+        "text": "Av jern og bronse er bommane dine, og styrken din skal vara så lenge du lever.",
+        "type": "error",
+        "severity": "major",
+        "explanation": "Hebraisk 'מִנְעָלֶיךָ' kjem frå 'מַנְעוּל' som tyder 'slå/lås' (bom for portar). 'Bommane' er ikkje feil i seg sjølv, men 'slåane' er meir presist for portslåar. Men begge delar kan forsvarast."
+      }
+    ]
   },
   {
     "bookId": 5,
@@ -195,7 +231,15 @@
     "bookId": 5,
     "chapterId": 33,
     "verseId": 28,
-    "text": "Israel bur trygt, Jakob-kjelda aleine, i eit land med korn og ny vin, og himmelen dryp av dogg."
+    "text": "Israel bur trygt for seg sjølv. Jakobs auge ser eit land med korn og ny vin, og himmelen dryp av dogg.",
+    "versions": [
+      {
+        "text": "Israel bur trygt, Jakob-kjelda aleine, i eit land med korn og ny vin, og himmelen dryp av dogg.",
+        "type": "error",
+        "severity": "major",
+        "explanation": "'עֵין יַעֲקֹב' er vanskeleg. 'בָּדָד' (aleine/for seg sjølv) høyrer til Israel. 'עֵין יַעֲקֹב' kan tolkast som 'Jakobs auge/kjelde' retta mot landet. 'Jakob-kjelda aleine' er ei uvanleg og utydeleg omsetting. Dei fleste omsettingar les 'Israel bur trygt for seg sjølv; Jakobs kjelde/auge (er retta mot) eit land med korn og vin'."
+      }
+    ]
   },
   {
     "bookId": 5,

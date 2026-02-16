@@ -39,11 +39,17 @@
     "bookId": 11,
     "chapterId": 3,
     "verseId": 6,
-    "text": "Salomo sa: «Du har vist stor nåde mot tenaren din David, far min, fordi han vandra for ditt andlet i truskap, rettferd og med eit ærleg hjarte mot deg. Og du har halde fast ved denne store nåden mot han og gjeve han ein son som no sit på trona hans.»",
+    "text": "Salomo sa: «Du har vist stor nåde mot tenaren din David, far min, fordi han vandra for ditt andlet i truskap og rettferd og med eit ærleg hjarte mot deg. Og du har halde fast ved denne store nåden mot han og gjeve han ein son som no sit på trona hans.»",
     "versions": [
       {
         "text": "Salomo svara: «Du har vist stor nåde mot tenaren din David, far min, fordi han vandra for ditt andlet i truskap, rettferd og med eit ærleg hjarte mot deg. Og du har halde fast ved denne store nåden mot han og gjeve han ein son som no sit på trona hans.»",
         "explanation": "Det hebraiske 'וַיֹּ֣אמֶר' tyder 'og han sa', ikkje 'han svara'. Sjølv om Salomo responderer på Guds spørsmål, er det meir nøyaktig å bruka 'sa' sidan det hebraiske verbet er 'amar' (å seia) og ikkje 'anah' (å svara)."
+      },
+      {
+        "text": "Salomo sa: «Du har vist stor nåde mot tenaren din David, far min, fordi han vandra for ditt andlet i truskap, rettferd og med eit ærleg hjarte mot deg. Og du har halde fast ved denne store nåden mot han og gjeve han ein son som no sit på trona hans.»",
+        "type": "grammar",
+        "severity": "minor",
+        "explanation": "Det hebraiske har tre ledd: 'i truskap' (בֶּאֱמֶ֧ת), 'og i rettferd' (וּבִצְדָקָ֛ה), 'og med eit ærleg hjarte' (וּבְיִשְׁרַ֥ת לֵבָ֖ב). Alle tre er bundne saman med 'og' (ו), så det bør stå 'i truskap og rettferd og med eit ærleg hjarte', ikkje 'i truskap, rettferd og med eit ærleg hjarte'."
       }
     ]
   },
@@ -129,7 +135,15 @@
     "bookId": 11,
     "chapterId": 3,
     "verseId": 17,
-    "text": "Den eine kvinna sa: «Høyr meg, herre! Eg og denne kvinna bur i same huset, og eg fødde eit barn medan ho var der i huset.»"
+    "text": "Den eine kvinna sa: «Høyr meg, herre! Eg og denne kvinna bur i same huset, og eg fødde eit barn medan ho var hos meg i huset.»",
+    "versions": [
+      {
+        "text": "Den eine kvinna sa: «Høyr meg, herre! Eg og denne kvinna bur i same huset, og eg fødde eit barn medan ho var der i huset.»",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "Det hebraiske עִמָּ֖הּ tyder 'med henne', altså at kvinna fødde medan den andre kvinna var saman med henne, ikkje berre 'der'. 'Medan ho var hos meg i huset' gjev ei meir presis attgjeving av at dei var saman."
+      }
+    ]
   },
   {
     "bookId": 11,
@@ -195,7 +209,15 @@
     "bookId": 11,
     "chapterId": 3,
     "verseId": 26,
-    "text": "Då sa kvinna som var mor til det levande barnet, til kongen – for moderkjærleiken brann i henne for sonen – ho sa: «Å, herre, gjev henne det levande barnet og drep det ikkje!» Men den andre sa: «Det skal verken vera mitt eller ditt. Hogg det i to!»"
+    "text": "Då sa kvinna som var mor til det levande barnet, til kongen – for moderkjærleiken brann i henne for sonen – ho sa: «Å, herre, gjev henne det levande barnet og drep det ikkje!» Men den andre sa: «Det skal korkje vera mitt eller ditt. Hogg det i to!»",
+    "versions": [
+      {
+        "text": "Då sa kvinna som var mor til det levande barnet, til kongen – for moderkjærleiken brann i henne for sonen – ho sa: «Å, herre, gjev henne det levande barnet og drep det ikkje!» Men den andre sa: «Det skal verken vera mitt eller ditt. Hogg det i to!»",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "'Korkje ... eller' er meir korrekt nynorsk enn 'verken ... eller'. 'Verken' er ein bokmålsform; den nynorske forma er 'korkje'."
+      }
+    ]
   },
   {
     "bookId": 11,

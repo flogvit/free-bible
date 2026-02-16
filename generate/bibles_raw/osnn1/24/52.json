@@ -15,13 +15,29 @@
     "bookId": 24,
     "chapterId": 52,
     "verseId": 3,
-    "text": "For på grunn av vreiden til HERREN gjekk det slik med Jerusalem og Juda at han til slutt kasta dei bort frå andletet sitt."
+    "text": "For på grunn av vreiden til HERREN gjekk det slik med Jerusalem og Juda at han til slutt kasta dei bort frå andletet sitt. Og Sidkia gjorde opprør mot kongen i Babel.",
+    "versions": [
+      {
+        "text": "For på grunn av vreiden til HERREN gjekk det slik med Jerusalem og Juda at han til slutt kasta dei bort frå andletet sitt.",
+        "type": "error",
+        "severity": "major",
+        "explanation": "Den siste delen av verset, וַיִּמְרֹד צִדְקִיָּהוּ בְּמֶלֶךְ בָּבֶל (og Sidkia gjorde opprør mot kongen i Babel), er utelaten i omsetjinga. Dette er ei viktig opplysing som knyter vreiden til HERREN til det konkrete opprøret."
+      }
+    ]
   },
   {
     "bookId": 24,
     "chapterId": 52,
     "verseId": 4,
-    "text": "I det niande året han var konge, i den tiande månaden, på den tiande dagen i månaden, kom Nebukadnesar, kongen i Babel, med heile hæren sin mot Jerusalem. Dei slo leir mot byen og bygde ein beleiringswall rundt han."
+    "text": "Dei slo leir mot byen og bygde ein beleiringsvoll rundt han.",
+    "versions": [
+      {
+        "text": "I det niande året han var konge, i den tiande månaden, på den tiande dagen i månaden, kom Nebukadnesar, kongen i Babel, med heile hæren sin mot Jerusalem. Dei slo leir mot byen og bygde ein beleiringswall rundt han.",
+        "type": "grammar",
+        "severity": "minor",
+        "explanation": "'beleiringswall' er feilstava. Det rette nynorske ordet er 'beleiringsvoll' (med v og éin l). 'Wall' er ikkje norsk."
+      }
+    ]
   },
   {
     "bookId": 24,
@@ -105,11 +121,17 @@
     "bookId": 24,
     "chapterId": 52,
     "verseId": 18,
-    "text": "Dei tok òg grytene, skuflene, ljossløkkjarane, skålene, skålene til røykjelse og alle bronseréiskapa som vart brukte i tenesta.",
+    "text": "Dei tok òg grytene, skuflene, ljossløkkjarane, skålene, offerskålene og alle bronseréiskapa som vart brukte i tenesta.",
     "versions": [
       {
         "text": "Dei tok òg grytene, skuflene, knivsaksene, skålene, skålene til røykjelse og alle bronseréiskapa som vart brukte i tenesta.",
         "explanation": "מְזַמְּרוֹת er ljossløkkjarar (snuffers) som vart brukte til å trimma lampevekene, ikkje knivsakserar. Dette er eit tempelreiskap."
+      },
+      {
+        "text": "Dei tok òg grytene, skuflene, ljossløkkjarane, skålene, skålene til røykjelse og alle bronseréiskapa som vart brukte i tenesta.",
+        "type": "error",
+        "severity": "minor",
+        "explanation": "Det hebraiske har to ulike ord: מִּזְרָקֹת (offerskåler/sprengskåler) og כַּפּוֹת (skåler/fat). Å omsetja begge med 'skålene' og 'skålene til røykjelse' er upresist. כַּפּוֹת er skåler/fat og מִּזְרָקֹת er offerskåler (sprengskåler brukt til blodsprenginga). Betre å skilja dei tydeleg."
       }
     ]
   },
@@ -135,13 +157,29 @@
     "bookId": 24,
     "chapterId": 52,
     "verseId": 22,
-    "text": "Oppå henne var det eit søylehovud av bronse, og det eine søylehovudet var fem alner høgt. Rundt søylehovudet var det fletta verk og granateple, alt av bronse. Like eins var det på den andre søyla, med granateple."
+    "text": "Oppå henne var det eit søylehovud av bronse, og det eine søylehovudet var fem alner høgt. Rundt søylehovudet var det flettverk og granateple, alt av bronse. Like eins var det på den andre søyla, med granateple.",
+    "versions": [
+      {
+        "text": "Oppå henne var det eit søylehovud av bronse, og det eine søylehovudet var fem alner høgt. Rundt søylehovudet var det fletta verk og granateple, alt av bronse. Like eins var det på den andre søyla, med granateple.",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "'fletta verk' bør vera 'flettverk' som eitt ord, som er meir korrekt og naturleg nynorsk."
+      }
+    ]
   },
   {
     "bookId": 24,
     "chapterId": 52,
     "verseId": 23,
-    "text": "Det var nittiseks granateple som vende utover. I alt var det hundre granateple på fletteverktet rundt."
+    "text": "Det var nittiseks granateple som vende utover. I alt var det hundre granateple på flettverket rundt.",
+    "versions": [
+      {
+        "text": "Det var nittiseks granateple som vende utover. I alt var det hundre granateple på fletteverktet rundt.",
+        "type": "grammar",
+        "severity": "minor",
+        "explanation": "'fletteverktet' er feilstava. Det rette ordet er 'flettverket' (flettverk + bestemt form)."
+      }
+    ]
   },
   {
     "bookId": 24,
@@ -201,7 +239,15 @@
     "bookId": 24,
     "chapterId": 52,
     "verseId": 33,
-    "text": "Han fekk byta fangekleda sine og åt ved bordet hans alle sine levedagar."
+    "text": "Han fekk byta fangekleda sine og åt ved bordet til kongen kvar dag, alle sine levedagar.",
+    "versions": [
+      {
+        "text": "Han fekk byta fangekleda sine og åt ved bordet hans alle sine levedagar.",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "Det hebraiske תָּמִיד (tamid = stadig/kvar dag) er ikkje gjeve att i omsetjinga. 'לְפָנָיו' (framfor han) er omsett med 'ved bordet hans' som er akseptabelt, men 'tamid' bør koma med for fullstendig meining."
+      }
+    ]
   },
   {
     "bookId": 24,

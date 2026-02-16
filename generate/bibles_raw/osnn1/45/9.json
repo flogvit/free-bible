@@ -51,11 +51,17 @@
     "bookId": 45,
     "chapterId": 9,
     "verseId": 7,
-    "text": "Heller ikkje er alle hans born fordi dei er Abrahams ætt, men: «Gjennom Isak skal ætta di nemnast.»",
+    "text": "Heller ikkje er alle Abrahams born fordi dei er hans ætt, men: «Gjennom Isak skal ætta di nemnast.»",
     "versions": [
       {
         "text": "Heller ikkje er alle born fordi dei er Abrahams ætt, men: «Gjennom Isak skal ætta di nemnast.»",
         "explanation": "Det greske πάντες τέκνα refererer til at ikkje alle i Abrahams ætt er hans (Abrahams) born i åndeleg forstand. 'Hans born' gjer dette tydelegare."
+      },
+      {
+        "text": "Heller ikkje er alle hans born fordi dei er Abrahams ætt, men: «Gjennom Isak skal ætta di nemnast.»",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "Det greske seier at ikkje alle som er Abrahams sæd (σπέρμα Ἀβραάμ) er born (τέκνα). Den noverande omsetjinga snur dette: ho seier 'ikkje alle er hans born fordi dei er Abrahams ætt', men det burde vera: ikkje alle i Abrahams ætt er (verkelege) born. Likevel, sidan dette verset allereie har éin revisjon, og den noverande meininga er forståeleg, er dette berre eit forslag."
       }
     ]
   },
@@ -201,7 +207,15 @@
     "bookId": 45,
     "chapterId": 9,
     "verseId": 28,
-    "text": "«For Herren skal fullføra og avkorta sitt ord på jorda.»"
+    "text": "For Herren skal fullføra og avkorta sitt ord på jorda.",
+    "versions": [
+      {
+        "text": "«For Herren skal fullføra og avkorta sitt ord på jorda.»",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "Vers 28 er ikkje eit direkte sitat (det er Paulus' attgjeving av Jesaja-profetien), men den noverande teksten har det i sitatteikn som om det var eit direkte sitat. I konteksten er det ei vidareføring av Jesaja-sitatet frå vers 27, men det greske γάρ ('for') peikar på ei forklaring. Mange omsetjingar tek det likevel som del av sitatet, så dette er ein liten merknad."
+      }
+    ]
   },
   {
     "bookId": 45,
@@ -219,13 +233,29 @@
     "bookId": 45,
     "chapterId": 9,
     "verseId": 31,
-    "text": "Men Israel, som jaga etter ei lov for rettferd, nådde ikkje fram til denne lova."
+    "text": "Men Israel, som jaga etter rettferds lov, nådde ikkje fram til lova.",
+    "versions": [
+      {
+        "text": "Men Israel, som jaga etter ei lov for rettferd, nådde ikkje fram til denne lova.",
+        "type": "error",
+        "severity": "major",
+        "explanation": "Det greske 'νόμον δικαιοσύνης' tyder 'rettferds lov' (ei lov som gjev rettferd). 'Ei lov for rettferd' er litt uklårt og kan gje inntrykk av at dei leita etter ei vilkårleg lov. 'Rettferds lov' er meir presist. Dessutan seier originalen 'εἰς νόμον' – altså 'til lova' utan demonstrativ, men dette er ein liten nyanse."
+      }
+    ]
   },
   {
     "bookId": 45,
     "chapterId": 9,
     "verseId": 32,
-    "text": "Kvifor? Fordi dei ikkje søkte ved tru, men som ved gjerningar. Dei støytte seg på snublesteinen,"
+    "text": "Kvifor? Fordi dei ikkje søkte ved tru, men som om det var ved gjerningar. Dei snubla over snublesteinen,",
+    "versions": [
+      {
+        "text": "Kvifor? Fordi dei ikkje søkte ved tru, men som ved gjerningar. Dei støytte seg på snublesteinen,",
+        "type": "error",
+        "severity": "minor",
+        "explanation": "1) 'ὡς ἐξ ἔργων' = 'som om det var ved gjerningar' – 'ὡς' markerer ei samanlikning/tilsynelatande haldning, ikkje berre 'som ved'. 2) 'προσέκοψαν' tyder 'snubla over/støytte mot', ikkje 'støytte seg på'. Å 'støyta seg på' gjev eit anna bilete enn å snubla over ein stein i vegen. 'Snubla over snublesteinen' passar betre med biletet."
+      }
+    ]
   },
   {
     "bookId": 45,

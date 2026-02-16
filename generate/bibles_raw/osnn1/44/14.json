@@ -51,11 +51,17 @@
     "bookId": 44,
     "chapterId": 14,
     "verseId": 9,
-    "text": "Han høyrde på når Paulus tala. Paulus såg fast på han og såg at han hadde tru til å bli lækt.",
+    "text": "Han høyrde på når Paulus tala. Paulus såg fast på han og såg at han hadde tru til å bli helbreda.",
     "versions": [
       {
         "text": "Han høyrde på når Paulus tala. Paulus såg fast på han og la merke til at han hadde tru til å bli lækt.",
         "explanation": "Греческое ἰδὼν означает просто 'увидев', а не 'заметил' (la merke til). 'Såg' более точно передает оригинал и звучит более естественно для устного чтения."
+      },
+      {
+        "text": "Han høyrde på når Paulus tala. Paulus såg fast på han og såg at han hadde tru til å bli lækt.",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "Gresk σωθῆναι kan bety 'bli frelst/helbreda'. I denne konteksten er 'helbreda' meir presist enn 'lækt' (som er meir uformelt). 'Helbreda' er dessutan det meir tradisjonelle og teologisk presise ordet for denne typen mirakuløs lækjing. Men dette er eit mindre stilistisk poeng - begge er akseptable."
       }
     ]
   },
@@ -87,7 +93,15 @@
     "bookId": 44,
     "chapterId": 14,
     "verseId": 13,
-    "text": "Presten ved Zevs-tempelet utanfor byen kom til portane med oksar og kransar og ville ofra saman med folkemengda."
+    "text": "Presten ved Zevs-tempelet utanfor byen førte oksar og kransar til portane og ville ofra saman med folkemengda.",
+    "versions": [
+      {
+        "text": "Presten ved Zevs-tempelet utanfor byen kom til portane med oksar og kransar og ville ofra saman med folkemengda.",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "Gresk ἐνέγκας (å bera/føra) indikerer at presten førte oksane og kransane til portane, ikkje at han sjølv 'kom til portane med' dei. 'Førte ... til portane' er meir presist enn 'kom til portane med'."
+      }
+    ]
   },
   {
     "bookId": 44,
@@ -183,7 +197,15 @@
     "bookId": 44,
     "chapterId": 14,
     "verseId": 27,
-    "text": "Då dei kom fram, samla dei forsamlinga og fortalde om alt det Gud hadde gjort gjennom dei, og at han hadde opna ei dør til trua for heidningane."
+    "text": "Då dei kom fram, samla dei forsamlinga og fortalde om alt det Gud hadde gjort med dei, og at han hadde opna ei dør til trua for heidningane.",
+    "versions": [
+      {
+        "text": "Då dei kom fram, samla dei forsamlinga og fortalde om alt det Gud hadde gjort gjennom dei, og at han hadde opna ei dør til trua for heidningane.",
+        "type": "error",
+        "severity": "major",
+        "explanation": "Gresk μετʼ αὐτῶν betyr 'med dei', ikkje 'gjennom dei' (som ville vore δι' αὐτῶν). Poenget er at Gud verka saman med dei / handla med dei, ikkje at dei var passive reiskapar. 'Med dei' er den korrekte omsetjinga."
+      }
+    ]
   },
   {
     "bookId": 44,

@@ -57,7 +57,15 @@
     "bookId": 42,
     "chapterId": 17,
     "verseId": 9,
-    "text": "Takkar han vel tenaren fordi han gjorde det han fekk påbod om?"
+    "text": "Takkar han tenaren fordi han gjorde det han fekk påbod om?",
+    "versions": [
+      {
+        "text": "Takkar han vel tenaren fordi han gjorde det han fekk påbod om?",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "Det greske μὴ i starten av spørsmålet forventar eit negativt svar ('Han takkar vel ikkje tenaren?'). Formuleringa med 'vel' kan lesast begge vegar, men ei tydelegare formulering ville vore 'Han takkar vel ikkje tenaren...' for å markera det forventa negative svaret. Alternativt er noverande formulering akseptabel sidan 'vel' i ein spørsmålskontekst kan antyda tvil."
+      }
+    ]
   },
   {
     "bookId": 42,
@@ -147,11 +155,17 @@
     "bookId": 42,
     "chapterId": 17,
     "verseId": 22,
-    "text": "Han sa til læresveinane: «Det skal koma dagar då de lengtar etter å få sjå ein av dagane til Menneskesonen, men de skal ikkje få sjå det.",
+    "text": "Han sa til læresveinane: «Det skal koma dagar då de lengtar etter å få sjå ein av dagane til Menneskesonen, men de kjem ikkje til å sjå det.",
     "versions": [
       {
         "text": "Han sa til læresveinane: «Det skal koma dagar då de lengtar etter å få sjå ein av Menneskesonen sine dagar, men de skal ikkje få sjå han.",
         "explanation": "'Menneskesonen sine dagar' er grammatisk korrekt, men 'ein av dagane til Menneskesonen' flyt betre på nynorsk. Dessutan bør 'han' endrast til 'det' sidan det refererer til 'ein av dagane', ikkje til Menneskesonen direkte."
+      },
+      {
+        "text": "Han sa til læresveinane: «Det skal koma dagar då de lengtar etter å få sjå ein av dagane til Menneskesonen, men de skal ikkje få sjå det.",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "'de skal ikkje få sjå det' er akseptabelt, men 'οὐκ ὄψεσθε' er ein enkel futurum ('de kjem ikkje til å sjå') utan den eksplisitte tydinga 'få' (som ville vore noko anna på gresk). Men sidan dette verset allereie har 2 revisjonar, er dette berre ei mindre tilråding."
       }
     ]
   },
@@ -159,7 +173,15 @@
     "bookId": 42,
     "chapterId": 17,
     "verseId": 23,
-    "text": "Dei skal seia til dykk: 'Sjå der!' eller 'Sjå her!' Men gå ikkje dit og spring ikkje etter dei!"
+    "text": "Dei skal seia til dykk: 'Sjå der!' eller 'Sjå her!' Gå ikkje dit og spring ikkje etter dei!",
+    "versions": [
+      {
+        "text": "Dei skal seia til dykk: 'Sjå der!' eller 'Sjå her!' Men gå ikkje dit og spring ikkje etter dei!",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "Originalen har ikkje noko adversativt 'men' (ἀλλά/δέ) – det er eit direkte forbod (μὴ ἀπέλθητε μηδὲ διώξητε). 'Men' er lagt til i omsettinga og endrar nyansen noko, men dette er ein liten ting."
+      }
+    ]
   },
   {
     "bookId": 42,
@@ -237,11 +259,17 @@
     "bookId": 42,
     "chapterId": 17,
     "verseId": 35,
-    "text": "To kvinner skal mala korn saman. Den eine skal bli henta, den andre bli att.»",
+    "text": "To kvinner skal mala korn saman; den eine skal bli henta, den andre bli att.»",
     "versions": [
       {
         "text": "To kvinner skal mala saman. Den eine skal bli henta, den andre bli att.»",
         "explanation": "Det greske ἀλήθουσαι (malande) refererer til å mala korn med handkvern. Å legga til 'korn' gjer biletet tydelegare for moderne lesarar og forbetrar munnleg formidling."
+      },
+      {
+        "text": "To kvinner skal mala korn saman. Den eine skal bli henta, den andre bli att.»",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "For konsistens med vers 34 og 36 som begge brukar semikolon mellom dei to ledda, bør det vera semikolon i staden for punktum her òg. Vers 34 vart endra frå punktum til semikolon nettopp for konsistens, men vers 35 har framleis punktum."
       }
     ]
   },

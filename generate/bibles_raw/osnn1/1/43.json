@@ -3,7 +3,15 @@
     "bookId": 1,
     "chapterId": 43,
     "verseId": 1,
-    "text": "Hungersnauda var hard i landet."
+    "text": "Hungersnøda var hard i landet.",
+    "versions": [
+      {
+        "text": "Hungersnauda var hard i landet.",
+        "type": "grammar",
+        "severity": "minor",
+        "explanation": "'Hungersnauda' er feil form. Korrekt nynorsk er 'hungersnøda' (eller 'hungersnaud' i ubestemt form, men bestemt form er 'hungersnøda')."
+      }
+    ]
   },
   {
     "bookId": 1,
@@ -57,11 +65,17 @@
     "bookId": 1,
     "chapterId": 43,
     "verseId": 9,
-    "text": "Eg går god for han. Av mi hand kan du krevja han tilbake. Om eg ikkje fører han attende til deg og set han fram for deg, skal eg stå med skuld mot deg alle mine dagar.",
+    "text": "Eg går god for han. Av mi hand kan du krevja han tilbake. Om eg ikkje fører han attende til deg og set han fram for deg, vil eg ha synda mot deg alle mine dagar.",
     "versions": [
       {
         "text": "Eg går god for han. Av mi hand kan du krevja han tilbake. Om eg ikkje fører han attende til deg og set han fram for deg, skal eg bera skulda for det alle mine dagar.",
         "explanation": "Det hebraiske וְחָטָאתִי לְךָ tyder meir bokstavleg 'eg skal ha synda mot deg' eller 'eg skal stå skuldig overfor deg'. 'Bera skulda for det' er litt upresist sidan det ikkje fangar den personlege retninga 'mot deg' (לְךָ) i originalen."
+      },
+      {
+        "text": "Eg går god for han. Av mi hand kan du krevja han tilbake. Om eg ikkje fører han attende til deg og set han fram for deg, skal eg stå med skuld mot deg alle mine dagar.",
+        "type": "grammar",
+        "severity": "minor",
+        "explanation": "Uttrykket 'stå med skuld mot deg' er litt uvanleg nynorsk. Det hebraiske וְחָטָאתִי לְךָ tyder bokstavleg 'eg vil ha synda mot deg'. 'Vil eg ha synda mot deg' er meir presist og naturleg. Men merk at dette verset har éin tidlegare revisjon, så det har vore gjennomgått – dette er ein mindre forbetring."
       }
     ]
   },
@@ -159,7 +173,15 @@
     "bookId": 1,
     "chapterId": 43,
     "verseId": 22,
-    "text": "Vi har også med andre pengar for å kjøpa mat. Vi veit ikkje kven som la pengane våre i sekkene.»"
+    "text": "Vi har også teke med andre pengar for å kjøpa mat. Vi veit ikkje kven som la pengane våre i sekkene.»",
+    "versions": [
+      {
+        "text": "Vi har også med andre pengar for å kjøpa mat. Vi veit ikkje kven som la pengane våre i sekkene.»",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "Det hebraiske הוֹרַדְנוּ ('vi har ført ned') indikerer ein aktiv handling. 'Vi har også med' er litt passivt. 'Vi har også teke med' gjev betre uttrykk for at dei aktivt har ført med seg pengane."
+      }
+    ]
   },
   {
     "bookId": 1,
@@ -219,7 +241,15 @@
     "bookId": 1,
     "chapterId": 43,
     "verseId": 30,
-    "text": "Josef skunda seg bort, for hjartet hans brann av lengsel etter bror sin, og han måtte gråta. Han gjekk inn i eit rom og gret der."
+    "text": "Josef skunda seg bort, for han vart gripen av medkjensle med bror sin, og han måtte gråta. Han gjekk inn i eit rom og gret der.",
+    "versions": [
+      {
+        "text": "Josef skunda seg bort, for hjartet hans brann av lengsel etter bror sin, og han måtte gråta. Han gjekk inn i eit rom og gret der.",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "Det hebraiske נִכְמְרוּ רַחֲמָיו tyder bokstavleg at 'innvollane/medkjensla hans vart rørd/opphissa'. Det handlar om djup medkjensle og kjensler som vert vekte, ikkje om 'lengsel' spesifikt. 'Gripen av medkjensle' fangar betre den hebraiske tydinga."
+      }
+    ]
   },
   {
     "bookId": 1,
@@ -231,11 +261,17 @@
     "bookId": 1,
     "chapterId": 43,
     "verseId": 32,
-    "text": "Dei sette fram for han for seg, og for dei for seg, og for egyptarane som åt med han for seg. For egyptarane kunne ikkje eta saman med hebrearar, det var avskyeleg for dei.",
+    "text": "Dei sette fram mat for han for seg, og for brørne for seg, og for egyptarane som åt med han for seg. For egyptarane kunne ikkje eta saman med hebrearane – det var avskyeleg for dei.",
     "versions": [
       {
         "text": "Dei sette fram for han for seg sjølv, og for dei for seg, og for egyptarane som åt med han for seg. For egyptarane kunne ikkje eta saman med hebrearar, det var avskyeleg for dei.",
         "explanation": "«For han for seg sjølv» er tungt og redundant. «For han for seg» er enklare og flyt betre munnleg, samstundes som meininga er klar."
+      },
+      {
+        "text": "Dei sette fram for han for seg, og for dei for seg, og for egyptarane som åt med han for seg. For egyptarane kunne ikkje eta saman med hebrearar, det var avskyeleg for dei.",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "'Dei sette fram for han' manglar objekt og er litt uklart. 'Mat' bør leggjast til for klarleik. Vidare er 'for dei for seg' tvetydig – det er uklart kven 'dei' er. 'For brørne for seg' gjev betre klarleik. Originalen har også bestemt form הָעִבְרִים (hebrearane)."
       }
     ]
   },

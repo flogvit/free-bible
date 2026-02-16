@@ -9,7 +9,15 @@
     "bookId": 66,
     "chapterId": 10,
     "verseId": 2,
-    "text": "Han hadde ei lita open bok i handa si. Han sette høgre foten sin på havet og den venstre på jorda."
+    "text": "Han hadde ei lita open bok i handa si. Han sette den høgre foten på havet og den venstre på jorda.",
+    "versions": [
+      {
+        "text": "Han hadde ei lita open bok i handa si. Han sette høgre foten sin på havet og den venstre på jorda.",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "'Høgre foten sin' er litt klønete på nynorsk. 'Den høgre foten' er meir naturleg og flytande, og eigeforma er underforstått."
+      }
+    ]
   },
   {
     "bookId": 66,
@@ -33,11 +41,17 @@
     "bookId": 66,
     "chapterId": 10,
     "verseId": 6,
-    "text": "Han svor ved han som lever i all æve, han som skapte himmelen og det som er i han, jorda og det som er i henne, og havet og det som er i det, at det ikkje skal vera meir tid.",
+    "text": "Han svor ved han som lever i all æve, han som skapte himmelen og det som er i han, jorda og det som er på henne, og havet og det som er i det, at det ikkje skal vera meir tid.",
     "versions": [
       {
         "text": "Han svor ved han som lever i all æve, han som skapte himmelen og det som er i han, jorda og det som er i henne, og havet og det som er i det: «Det skal ikkje vera meir tid.»",
         "explanation": "I den greske teksten er 'ὅτι χρόνος οὐκέτι ἔσται' ein underordna setning (at-setning) som er del av eiden, ikkje eit direkte sitat. Å fjerna hermeteikna og bruka 'at' gjer dette tydelegare og meir tru mot originalen."
+      },
+      {
+        "text": "Han svor ved han som lever i all æve, han som skapte himmelen og det som er i han, jorda og det som er i henne, og havet og det som er i det, at det ikkje skal vera meir tid.",
+        "type": "grammar",
+        "severity": "minor",
+        "explanation": "For jorda er det meir naturleg på nynorsk å seia 'det som er på henne' enn 'det som er i henne', sidan vi bur på jordoverflata. Gresk brukar ἐν for alle tre, men norsk skil gjerne mellom 'i himmelen', 'på jorda' og 'i havet'."
       }
     ]
   },
@@ -45,7 +59,15 @@
     "bookId": 66,
     "chapterId": 10,
     "verseId": 7,
-    "text": "Men i dei dagane når den sjuande engelen lèt røysta si høyra og skal til å blåsa i basunen, då er Guds løyndom fullenda, slik han forkynte for tenarane sine, profetane."
+    "text": "Men i dei dagane når den sjuande engelen skal til å blåsa i basunen, då skal Guds løyndom vera fullenda, slik han forkynte det som godt nytt for tenarane sine, profetane.",
+    "versions": [
+      {
+        "text": "Men i dei dagane når den sjuande engelen lèt røysta si høyra og skal til å blåsa i basunen, då er Guds løyndom fullenda, slik han forkynte for tenarane sine, profetane.",
+        "type": "error",
+        "severity": "major",
+        "explanation": "To problem: 1) 'lèt røysta si høyra' er eit tillegg som ikkje finst i grunnteksten – τῆς φωνῆς refererer til lyden av basunen, ikkje ei eiga handling. 2) εὐηγγέλισεν tyder 'forkynte som godt nytt / evangeliet', ikkje berre 'forkynte'. Det greske ordet har ei spesifikk tyding knytt til gledeleg bodskap som bør koma fram."
+      }
+    ]
   },
   {
     "bookId": 66,

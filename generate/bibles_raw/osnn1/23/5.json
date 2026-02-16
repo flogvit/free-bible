@@ -39,11 +39,17 @@
     "bookId": 23,
     "chapterId": 5,
     "verseId": 6,
-    "text": "Eg vil leggja han aude. Han skal ikkje skjerast eller hakkast, og torn og tistel skal veksa opp. Eg vil bya skyene at dei ikkje skal lata regn falla på han.",
+    "text": "Eg vil påby skyene at dei ikkje skal lata regn falla på han.",
     "versions": [
       {
         "text": "Eg vil leggja han aude. Han skal ikkje skjerast eller hakkast, og torn og tistel skal veksa opp. Eg vil bya skyene å ikkje lata regn falla på han.",
         "explanation": "«Bya skyene å ikkje lata» er noko uidiomatisk. «Bya skyene at dei ikkje skal lata» flyt betre på nynorsk og er grammatisk meir korrekt."
+      },
+      {
+        "text": "Eg vil leggja han aude. Han skal ikkje skjerast eller hakkast, og torn og tistel skal veksa opp. Eg vil bya skyene at dei ikkje skal lata regn falla på han.",
+        "type": "grammar",
+        "severity": "major",
+        "explanation": "'Bya' er ikkje eit standard nynorsk ord i denne tydinga. Det korrekte verbet er 'påby' eller 'befala'. 'Bya' kan forståast som 'by' (tilby), noko som gir feil meining. 'Påby' formidlar den rette tydinga av צוה (å befala/påleggja)."
       }
     ]
   },
@@ -51,7 +57,15 @@
     "bookId": 23,
     "chapterId": 5,
     "verseId": 7,
-    "text": "For vingarden til Herren over hærskarane er Israels hus, og Juda-mennene er hagen han hadde si glede i. Han venta rettferd, men sjå, det vart blodsutgyting! Han venta rett, men sjå, det vart skrik!"
+    "text": "Han venta rett, men sjå, det vart blodsutgyting! Han venta rettferd, men sjå, det vart skrik!",
+    "versions": [
+      {
+        "text": "For vingarden til Herren over hærskarane er Israels hus, og Juda-mennene er hagen han hadde si glede i. Han venta rettferd, men sjå, det vart blodsutgyting! Han venta rett, men sjå, det vart skrik!",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "Det hebraiske har eit ordspel: מִשְׁפָּט (mishpat = rett/dom) vs. מִשְׂפָּח (mispach = blodsutgyting), og צְדָקָה (tsedaqah = rettferd) vs. צְעָקָה (tse'aqah = skrik). I den noverande omsetjinga er rekkjefølgja snudd: mishpat (rett/dom) kjem først i hebraisk, men er omsett med 'rettferd', og tsedaqah (rettferd) med 'rett'. Å bytta rekkjefølgja gjer omsetjinga meir trufast mot originalen."
+      }
+    ]
   },
   {
     "bookId": 23,
@@ -123,7 +137,15 @@
     "bookId": 23,
     "chapterId": 5,
     "verseId": 17,
-    "text": "Då skal lam beita som på si eiga mark, og framande skal eta mellom ruinane etter dei feite."
+    "text": "Då skal lam beita som på si eiga mark, og framande skal eta på dei øydelagde markene til dei rike.",
+    "versions": [
+      {
+        "text": "Då skal lam beita som på si eiga mark, og framande skal eta mellom ruinane etter dei feite.",
+        "type": "error",
+        "severity": "major",
+        "explanation": "Hebraisk חָרְבוֹת מֵחִים betyr 'ruinane/øydemark til dei feite (rike)', altså dei tidlegare frodige markene til dei velståande. 'Mellom ruinane etter dei feite' er litt uklart. גָּרִים (garim = framande/innflyttarar) skal eta på dei øydelagde markene som ein gong tilhøyrde dei rike. Omformuleringa gjer meininga tydelegare."
+      }
+    ]
   },
   {
     "bookId": 23,
@@ -207,7 +229,15 @@
     "bookId": 23,
     "chapterId": 5,
     "verseId": 29,
-    "text": "Brølet deira er som ei løve. Dei brølar som unge løver, dei knurrar og grip byttet og ber det bort, og ingen kan frelsa."
+    "text": "Brølet deira er som ei løvinne. Dei brølar som unge løver, dei knurrar og grip byttet og ber det bort, og ingen kan frelsa.",
+    "versions": [
+      {
+        "text": "Brølet deira er som ei løve. Dei brølar som unge løver, dei knurrar og grip byttet og ber det bort, og ingen kan frelsa.",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "כַּלָּבִיא (kallavi) refererer til ei løvinne, ikkje ei løve generelt. Det er ei eiga nemning for holøva i hebraisk, til skilnad frå כְּפִירִים (unge løver) seinare i verset."
+      }
+    ]
   },
   {
     "bookId": 23,

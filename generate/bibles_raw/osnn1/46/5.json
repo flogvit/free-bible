@@ -15,7 +15,15 @@
     "bookId": 46,
     "chapterId": 5,
     "verseId": 3,
-    "text": "For eg, som er fråverande i kroppen men til stades i ånda, har allereie dømt – som om eg var til stades – han som har gjort denne gjerningen."
+    "text": "For eg, som er fråverande i kroppen men til stades i ånda, har allereie dømt han som har gjort dette – som om eg var til stades –",
+    "versions": [
+      {
+        "text": "For eg, som er fråverande i kroppen men til stades i ånda, har allereie dømt – som om eg var til stades – han som har gjort denne gjerningen.",
+        "type": "grammar",
+        "severity": "minor",
+        "explanation": "Plasseringa av parentesen '– som om eg var til stades –' bryt opp setninga på ein unaturleg måte. I originalteksten modifiserer 'ὡς παρὼν' dommen (κέκρικα), ikkje personen. Dessutan er 'τοῦτο κατεργασάμενον' meir direkte 'gjort dette' enn 'gjort denne gjerningen'."
+      }
+    ]
   },
   {
     "bookId": 46,
@@ -67,7 +75,15 @@
     "bookId": 46,
     "chapterId": 5,
     "verseId": 10,
-    "text": "Eg meinte ikkje i det heile dei umoralske i denne verda, eller dei grådige, røvarane eller avgudsdyrkarane, for då måtte de ha gått ut av verda."
+    "text": "Eg meinte ikkje alle dei umoralske i denne verda, eller dei grådige og røvarane, eller avgudsdyrkarane, for då måtte de ha gått ut av verda.",
+    "versions": [
+      {
+        "text": "Eg meinte ikkje i det heile dei umoralske i denne verda, eller dei grådige, røvarane eller avgudsdyrkarane, for då måtte de ha gått ut av verda.",
+        "type": "error",
+        "severity": "major",
+        "explanation": "'οὐ πάντως' tyder 'ikkje i det heile tatt / ikkje alle', men oversettinga 'ikkje i det heile' er litt uklar. Viktigare: den greske teksten har 'πλεονέκταις καὶ ἅρπαξιν' (grådige OG røvarar kopla saman med 'og'), ikkje 'eller'. Og 'εἰδωλολάτραις' er skild ut med 'ἢ' (eller). Strukturen i originalen er: umoralske, ELLER grådige OG røvarar, ELLER avgudsdyrkarar."
+      }
+    ]
   },
   {
     "bookId": 46,
@@ -85,7 +101,15 @@
     "bookId": 46,
     "chapterId": 5,
     "verseId": 12,
-    "text": "For kva har eg med å døma dei som er utanfor? Er det ikkje dei som er innanfor de dømer?"
+    "text": "For kva har vel eg med å døma dei som er utanfor? Er det ikkje dei som er innanfor de dømer?",
+    "versions": [
+      {
+        "text": "For kva har eg med å døma dei som er utanfor? Er det ikkje dei som er innanfor de dømer?",
+        "type": "grammar",
+        "severity": "minor",
+        "explanation": "Tillegget av 'vel' gjev ein meir naturleg retorisk tone på nynorsk som betre fangar den retoriske spørsmålsforma i originalen."
+      }
+    ]
   },
   {
     "bookId": 46,

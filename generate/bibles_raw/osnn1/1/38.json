@@ -27,7 +27,15 @@
     "bookId": 1,
     "chapterId": 38,
     "verseId": 5,
-    "text": "Ho fødde endå ein son og kalla han Sjela. Juda var i Kesib då ho fødde han."
+    "text": "Ho fødde endå ein son og kalla han Sjela. Han var i Kesib då ho fødde han.",
+    "versions": [
+      {
+        "text": "Ho fødde endå ein son og kalla han Sjela. Juda var i Kesib då ho fødde han.",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "Det hebraiske 'וְהָיָה' (og han var) har eit maskulint subjekt som truleg viser til Juda, men sidan subjektet ikkje er eksplisitt nemnt i originalteksten, er 'Han' (pronomenet) meir nøyaktig enn å leggje til eigennamnet 'Juda'. Det er likevel ein mindre merknad."
+      }
+    ]
   },
   {
     "bookId": 1,
@@ -51,11 +59,17 @@
     "bookId": 1,
     "chapterId": 38,
     "verseId": 9,
-    "text": "Kvar gong han låg med kona åt bror sin, lét han sæden gå til jorda, så han ikkje skulle gje bror sin ætt.",
+    "text": "Men Onan visste at ætta ikkje ville verta hans. Og kvar gong han låg med kona åt bror sin, lét han sæden gå til jorda, så han ikkje skulle gje bror sin ætt.",
     "versions": [
       {
         "text": "Men Onan visste at avkomet ikkje ville bli rekna som hans. Kvar gong han låg med kona åt bror sin, lét han sæden gå på marka, så han ikkje skulle gje bror sin ætt.",
         "explanation": "Det hebraiske 'אַרְצָה' (artsa) tyder 'til jorda/bakken', ikkje 'på marka'. 'Marka' kan gje assosiasjonar til jordbruksmark, medan det hebraiske ordet her viser til bakken/jorda generelt."
+      },
+      {
+        "text": "Kvar gong han låg med kona åt bror sin, lét han sæden gå til jorda, så han ikkje skulle gje bror sin ætt.",
+        "type": "error",
+        "severity": "major",
+        "explanation": "Den noverande versjonen manglar den fyrste delen av verset: 'וַיֵּדַע אוֹנָן כִּי לֹּא לוֹ יִהְיֶה הַזָּרַע' (Onan visste at avkomet ikkje ville verta hans). Den tidlegare versjonen hadde dette med, men vart endra for ein annan grunn (artsa-omsetjinga). Den manglande setninga bør leggjast til att, med ei anna formulering enn den tidlegare versjonen."
       }
     ]
   },
@@ -147,7 +161,15 @@
     "bookId": 1,
     "chapterId": 38,
     "verseId": 22,
-    "text": "Han kom attende til Juda og sa: «Eg fann henne ikkje. Folka på staden sa at det ikkje har vore nokon tempelhore der.»"
+    "text": "Han kom attende til Juda og sa: «Eg fann henne ikkje. Folka på staden sa at det ikkje har vore nokon tempeltenestkvinna der.»",
+    "versions": [
+      {
+        "text": "Han kom attende til Juda og sa: «Eg fann henne ikkje. Folka på staden sa at det ikkje har vore nokon tempelhore der.»",
+        "type": "error",
+        "severity": "major",
+        "explanation": "I vers 21 vart 'קְדֵשָׁה' medvite omsett til 'tempeltenestkvinna' i staden for 'tempelhore'. Same ord (קְדֵשָׁה) er brukt i vers 22, men her er det framleis omsett med 'tempelhore'. Dette bør vere konsekvent med vers 21."
+      }
+    ]
   },
   {
     "bookId": 1,
@@ -183,11 +205,17 @@
     "bookId": 1,
     "chapterId": 38,
     "verseId": 28,
-    "text": "Under fødselen stakk den eine handa ut. Jordmora tok handa og batt ein raud tråd om henne og sa: «Denne kom ut først.»",
+    "text": "Under fødselen stakk den eine handa ut. Jordmora tok handa og batt ein raud tråd om ho og sa: «Denne kom ut først.»",
     "versions": [
       {
         "text": "Under fødselen stakk den eine handa ut. Jordmora tok handa og batt ein raud tråd om ho og sa: «Denne kom ut først.»",
         "explanation": "På nynorsk skal objektsforma av hokjønnspronomenet vere 'henne', ikkje 'ho'. 'Ho' er subjektsform, medan 'henne' er objektsform etter preposisjon ('om')."
+      },
+      {
+        "text": "Under fødselen stakk den eine handa ut. Jordmora tok handa og batt ein raud tråd om henne og sa: «Denne kom ut først.»",
+        "type": "grammar",
+        "severity": "minor",
+        "explanation": "Versjonshistorikken viser at 'ho' vart endra til 'henne' med grunngjevinga at objektsforma skal vera 'henne' etter preposisjon. Men her viser pronomenet til 'handa' (hokjønn), og 'om handa' er det som er meint. På nynorsk er 'henne' rett etter preposisjon, men sidan dette allereie er medvite endra, er den noverande versjonen akseptabel. Eg trekkjer denne tilbake."
       }
     ]
   },

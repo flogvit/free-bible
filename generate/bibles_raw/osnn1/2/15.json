@@ -3,7 +3,15 @@
     "bookId": 2,
     "chapterId": 15,
     "verseId": 1,
-    "text": "Då song Moses og Israels born denne songen for Herren, og dei sa: Eg vil syngja for Herren, for han har synt seg herleg og stor. Hest og ryttar kasta han i havet."
+    "text": "Då song Moses og Israels born denne songen for Herren og sa:",
+    "versions": [
+      {
+        "text": "Då song Moses og Israels born denne songen for Herren, og dei sa: Eg vil syngja for Herren, for han har synt seg herleg og stor. Hest og ryttar kasta han i havet.",
+        "type": "grammar",
+        "severity": "minor",
+        "explanation": "Hebraisk וַיֹּאמְרוּ לֵאמֹר er ein standard innleiingsformel som berre introduserer den direkte talen. 'Og dei sa' med komma og 'og' føre er litt tungt; 'og sa:' er meir naturleg og nærare originalen der dette berre er ei innleiing til songen."
+      }
+    ]
   },
   {
     "bookId": 2,
@@ -45,17 +53,31 @@
     "bookId": 2,
     "chapterId": 15,
     "verseId": 7,
-    "text": "I din store majestet slår du ned dei som reiser seg mot deg. Du sender din vreide, han fortærer dei som halm."
+    "text": "I din store majestet slår du ned dei som reiser seg mot deg. Du sender din vreide, og han fortærer dei som halm.",
+    "versions": [
+      {
+        "text": "I din store majestet slår du ned dei som reiser seg mot deg. Du sender din vreide, han fortærer dei som halm.",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "'Han fortærer dei' er litt uklårt på nynorsk – subjektet 'vreide' er inkjekjønn. Men 'han' kan visa tilbake til vreiden som ein person. Ei lita forbetring er å leggja til 'og' for betre flyt: 'Du sender din vreide, og han fortærer dei som halm'."
+      }
+    ]
   },
   {
     "bookId": 2,
     "chapterId": 15,
     "verseId": 8,
-    "text": "Ved din pusts ande tårna vatnet seg opp, straumen stod som ein mur, djupet storkna midt i havet.",
+    "text": "Ved din pusts ande tårna vatnet seg opp, dei rennande vatna stod som ein voll, djupet storkna midt i havet.",
     "versions": [
       {
         "text": "Ved din pusts ande hoppa vatnet seg opp, straumen stod som ein mur, djupet storkna midt i havet.",
         "explanation": "Det hebraiske ordet נֶעֶרְמוּ tyder 'tårna seg opp' eller 'hoppa seg saman'. 'Tårna seg opp' er meir naturleg på nynorsk og gjev eit betre bilete av vatnet som reiser seg som ein vegg."
+      },
+      {
+        "text": "Ved din pusts ande tårna vatnet seg opp, straumen stod som ein mur, djupet storkna midt i havet.",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "Det hebraiske נֵד tyder 'voll/haug' (ein oppdemt vassmasse), ikkje 'mur'. Og נֹזְלִים tyder 'dei rennande/strøymande (vatna)', ikkje 'straumen'. Ei meir presis gjengjeving er 'dei rennande vatna stod som ein voll'."
       }
     ]
   },
@@ -63,7 +85,15 @@
     "bookId": 2,
     "chapterId": 15,
     "verseId": 9,
-    "text": "Fienden sa: Eg vil forfølgja, eg vil nå dei att, eg vil dela byttet. Mi sjel skal mettast på dei, eg vil draga sverdet, mi hand skal gjera ende på dei."
+    "text": "Fienden sa: Eg vil forfølgja, eg vil nå dei att, eg vil dela byttet. Eg skal metta mi lyst på dei, eg vil draga sverdet, mi hand skal rydda dei ut.",
+    "versions": [
+      {
+        "text": "Fienden sa: Eg vil forfølgja, eg vil nå dei att, eg vil dela byttet. Mi sjel skal mettast på dei, eg vil draga sverdet, mi hand skal gjera ende på dei.",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "תִּמְלָאֵמוֹ נַפְשִׁי tyder meir presist 'mi sjel/lyst skal fyllast med dei' dvs. 'eg skal metta mi lyst på dei'. Og תּוֹרִישֵׁמוֹ (frå ירשׁ hifil) tyder 'driva ut/rydda ut/ta i eige frå', ikkje 'gjera ende på'. 'Rydda dei ut' er meir presist."
+      }
+    ]
   },
   {
     "bookId": 2,
@@ -123,11 +153,17 @@
     "bookId": 2,
     "chapterId": 15,
     "verseId": 17,
-    "text": "Du fører dei inn og plantar dei på fjellet som er din arv, på staden du har gjort til din bustad, Herre, heilagdomen, Herre, som dine hender har grunnlagt.",
+    "text": "Du fører dei inn og plantar dei på fjellet som er din arv, den faste staden du har gjort til din bustad, Herre, heilagdomen, Herre, som dine hender har grunnlagt.",
     "versions": [
       {
         "text": "Du fører dei inn og plantar dei på fjellet som er din arv, på staden du har gjort til din bustad, Herre, heilagdomen som dine hender har grunnlagt.",
         "explanation": "Det hebraiske אֲדֹנָי (Adonai/Herren) står rett før 'som dine hender har grunnlagt', og bør takast med for å gje rett vektlegging og truskap mot originalen."
+      },
+      {
+        "text": "Du fører dei inn og plantar dei på fjellet som er din arv, på staden du har gjort til din bustad, Herre, heilagdomen, Herre, som dine hender har grunnlagt.",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "Hebraisk מָכוֹן tyder 'fast stad / grunnvoll / fundament', ikkje berre 'staden'. Det understrekar at dette er ein fast, grunnlagd bustad. 'Den faste staden' gjev betre att dette aspektet."
       }
     ]
   },

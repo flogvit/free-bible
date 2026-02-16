@@ -105,7 +105,15 @@
     "bookId": 42,
     "chapterId": 4,
     "verseId": 17,
-    "text": "Dei gav han boka til profeten Jesaja, og då han opna henne, fann han staden der det står skrive:"
+    "text": "Dei gav han bokrullen til profeten Jesaja, og då han opna henne, fann han staden der det stod skrive:",
+    "versions": [
+      {
+        "text": "Dei gav han boka til profeten Jesaja, og då han opna henne, fann han staden der det står skrive:",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "βιβλίον refererer til ein bokrull (slik v.20 korrekt brukar 'bokrullen'). Dessutan bør 'står skrive' vera 'stod skrive' (ἦν γεγραμμένον er pluperfektum/fortid), sidan vi er i ei forteljing i fortid."
+      }
+    ]
   },
   {
     "bookId": 42,
@@ -201,11 +209,17 @@
     "bookId": 42,
     "chapterId": 4,
     "verseId": 33,
-    "text": "I synagoga var det ein mann som hadde ei urein ånd, ein demon, og han ropa med høg røyst:",
+    "text": "I synagoga var det ein mann som hadde ånda til ein urein demon, og han ropa med høg røyst:",
     "versions": [
       {
         "text": "I synagoga var det ein mann som hadde ei urein demonånd, og han ropa med høg røyst:",
         "explanation": "«πνεῦμα δαιμονίου ἀκαθάρτου» er bokstaveleg 'ei ånd av ein urein demon'. «Demonånd» er eit uvanleg samansett ord. Alternativt kan ein berre skriva «ei urein ånd» som er meir naturleg norsk."
+      },
+      {
+        "text": "I synagoga var det ein mann som hadde ei urein ånd, ein demon, og han ropa med høg røyst:",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "πνεῦμα δαιμονίου ἀκαθάρτου er bokstaveleg 'ei ånd av ein urein demon'. Den noverande omsetjinga med 'ei urein ånd, ein demon' gjer det til to separate ting i apposisjon, noko som er litt uklart. 'Ånda til ein urein demon' er nærare originalen og unngår den tidlegare versjonen 'demonånd'."
       }
     ]
   },
@@ -255,7 +269,15 @@
     "bookId": 42,
     "chapterId": 4,
     "verseId": 39,
-    "text": "Han bøygde seg over henne og truga feberen, og han sleppte henne. Med ein gong stod ho opp og tente dei."
+    "text": "Han bøygde seg over henne og truga feberen, og feberen sleppte henne. Med ein gong stod ho opp og tente dei.",
+    "versions": [
+      {
+        "text": "Han bøygde seg over henne og truga feberen, og han sleppte henne. Med ein gong stod ho opp og tente dei.",
+        "type": "error",
+        "severity": "major",
+        "explanation": "«καὶ ἀφῆκεν αὐτήν» – subjektet er feberen (πυρετός), ikkje Jesus. Det er feberen som sleppte henne. 'Han sleppte henne' er tvitydig og ser ut som det er Jesus som slepper henne, noko som gjev feil meining."
+      }
+    ]
   },
   {
     "bookId": 42,
@@ -267,7 +289,15 @@
     "bookId": 42,
     "chapterId": 4,
     "verseId": 41,
-    "text": "Demonar fór òg ut av mange og ropa: «Du er Guds Son!» Men han truga dei og let dei ikkje tala, for dei visste at han var Kristus."
+    "text": "Demonar fór òg ut av mange og ropa: «Du er Guds Son!» Men han truga dei og let dei ikkje tala, for dei visste at han var Messias.",
+    "versions": [
+      {
+        "text": "Demonar fór òg ut av mange og ropa: «Du er Guds Son!» Men han truga dei og let dei ikkje tala, for dei visste at han var Kristus.",
+        "type": "theological",
+        "severity": "minor",
+        "explanation": "'Kristus' er det greske ordet, men i nynorsk samanheng er 'Messias' meir forståeleg og gjer det klart at tittelen τὸν χριστόν refererer til 'den salva'. Begge er akseptable, men for ein moderne nynorsk omsetjing er 'Messias' vanlegare i denne samanhengen."
+      }
+    ]
   },
   {
     "bookId": 42,

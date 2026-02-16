@@ -15,7 +15,15 @@
     "bookId": 26,
     "chapterId": 43,
     "verseId": 3,
-    "text": "Synet eg såg var likt det synet eg hadde sett då han kom for å øydeleggja byen, og synene var som det synet eg såg ved elva Kebar. Då fall eg ned på mitt andlet."
+    "text": "Synet eg såg var likt det synet eg hadde sett då eg kom for å øydeleggja byen, og synene var som det synet eg såg ved elva Kebar. Då fall eg ned på mitt andlet.",
+    "versions": [
+      {
+        "text": "Synet eg såg var likt det synet eg hadde sett då han kom for å øydeleggja byen, og synene var som det synet eg såg ved elva Kebar. Då fall eg ned på mitt andlet.",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "Det hebraiske בְּבֹאִי er 'då eg kom' (1. person), ikkje 'då han kom'. Det er Esekiel som kom (med bodskap om øydelegging), ikkje Gud direkte."
+      }
+    ]
   },
   {
     "bookId": 26,
@@ -39,11 +47,17 @@
     "bookId": 26,
     "chapterId": 43,
     "verseId": 7,
-    "text": "med sitt horeliv og med lika av kongane sine ved deira død.",
+    "text": "Han sa til meg: Menneske, dette er staden for mi trone og staden for mine fotsolar, der eg vil bu midt iblant Israels born for alltid. Israels hus skal ikkje meir vanhelga mitt heilage namn, korkje dei eller kongane deira, med sitt horeliv og med lika av kongane sine ved deira død.",
     "versions": [
       {
         "text": "Han sa til meg: Menneske, dette er staden for min trone og staden for mine fotsolar, der eg vil bu midt iblant Israels born for alltid. Israels hus skal ikkje meir vanhelga mitt heilage namn, korkje dei eller kongane deira, med sitt horeliv og med lika av kongane sine på offerhaugane.",
         "explanation": "Det hebraiske ordet בָּמוֹתָם (bamotam) kan tolkast som 'ved deira død' (frå מות 'å døy') eller 'på offerhaugane' (frå במה 'offerhaugplass'). Konteksten med 'lika av kongane' (פִגְרֵי מַלְכֵיהֶם) tyder på at det handlar om at kongane blei gravlagde for nær tempelet, ikkje nødvendigvis på offerhaugar. Mange omsetjingar vel 'ved deira død' her."
+      },
+      {
+        "text": "med sitt horeliv og med lika av kongane sine ved deira død.",
+        "type": "error",
+        "severity": "critical",
+        "explanation": "Verset er sterkt kutta og manglar heile den første delen av talen frå Gud. Berre den siste biten av verset er att i den noverande versjonen. Den tidlegare revisjonen hadde heile verset, men med 'på offerhaugane' til slutt. Den nye versjonen beheld endringa frå 'offerhaugane' til 'ved deira død' men mista resten av verset. Heile verset må vera med."
       }
     ]
   },
@@ -81,7 +95,15 @@
     "bookId": 26,
     "chapterId": 43,
     "verseId": 13,
-    "text": "og kanten rundt randa skal vera eitt spann. Dette er sokkelen til altaret."
+    "text": "Dette er måla til altaret i alen – kvar alen er ei vanleg alen og ein handbreidd: Grunnrenna skal vera ei alen djup og ei alen brei, og kanten rundt randa skal vera eitt spann. Dette er sokkelen til altaret.",
+    "versions": [
+      {
+        "text": "og kanten rundt randa skal vera eitt spann. Dette er sokkelen til altaret.",
+        "type": "error",
+        "severity": "major",
+        "explanation": "Den noverande omsetjinga manglar den første delen av verset, som gjev informasjon om måla til altaret, kva alen som vert brukt (ei alen og ein handbreidd), og grunnrenna si djupn og breidd."
+      }
+    ]
   },
   {
     "bookId": 26,
@@ -165,6 +187,14 @@
     "bookId": 26,
     "chapterId": 43,
     "verseId": 27,
-    "text": "Når desse dagane er til ende, skal prestane frå den åttande dagen og framover ofra brennoffera dykkar og takkoffer på altaret. Då vil eg ha velbehag i dykk, seier Herren Gud."
+    "text": "Når desse dagane er til ende, skal prestane frå den åttande dagen og framover ofra brennoffera dykkar og fredsoffer på altaret. Då vil eg ha velbehag i dykk, seier Herren Gud.",
+    "versions": [
+      {
+        "text": "Når desse dagane er til ende, skal prestane frå den åttande dagen og framover ofra brennoffera dykkar og takkoffer på altaret. Då vil eg ha velbehag i dykk, seier Herren Gud.",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "Det hebraiske שַׁלְמֵיכֶם (sjalmekhem) tyder 'fredsoffer' (eller 'måltidsoffer'), ikkje 'takkoffer'. Takkoffer (תּוֹדָה) er ein spesifikk underkategori av fredsofferet. 'Fredsoffer' er meir presist."
+      }
+    ]
   }
 ]

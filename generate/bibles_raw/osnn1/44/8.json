@@ -45,7 +45,15 @@
     "bookId": 44,
     "chapterId": 8,
     "verseId": 7,
-    "text": "For frå mange som hadde ureine ånder, fór dei ut medan dei ropa med høg røyst, og mange lamme og halte vart lækte."
+    "text": "For ureine ånder fór ut frå mange med høg røyst, og mange lamme og halte vart lækte.",
+    "versions": [
+      {
+        "text": "For frå mange som hadde ureine ånder, fór dei ut medan dei ropa med høg røyst, og mange lamme og halte vart lækte.",
+        "type": "error",
+        "severity": "major",
+        "explanation": "Subjektet for 'ropa med høg røyst' (βοῶντα φωνῇ μεγάλῃ) er dei ureine åndene, ikkje menneska. Og det er åndene som for ut (ἐξήρχοντο). Den noverande formuleringa er uklar og kan misforståast. Dessutan er det åndene som ropa, ikkje menneska."
+      }
+    ]
   },
   {
     "bookId": 44,
@@ -57,7 +65,15 @@
     "bookId": 44,
     "chapterId": 8,
     "verseId": 9,
-    "text": "No var det ein mann ved namn Simon som tidlegare hadde drive med trolldom i byen og forbløffa folket i Samaria. Han sa at han var noko stort."
+    "text": "No var det ein mann ved namn Simon som tidlegare hadde drive med trolldom i byen og forbløffa folket i Samaria. Han sa at han sjølv var ein stor mann.",
+    "versions": [
+      {
+        "text": "No var det ein mann ved namn Simon som tidlegare hadde drive med trolldom i byen og forbløffa folket i Samaria. Han sa at han var noko stort.",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "Det greske εἶναί τινα ἑαυτὸν μέγαν betyr at han hevda å vere 'nokon stor' (ein stor person), ikkje 'noko stort'. Det handlar om ein person, ikkje ei abstrakt kraft."
+      }
+    ]
   },
   {
     "bookId": 44,
@@ -171,11 +187,17 @@
     "bookId": 44,
     "chapterId": 8,
     "verseId": 26,
-    "text": "Ein engel frå Herren tala til Filip og sa: «Stå opp og gå mot sør, til vegen som går ned frå Jerusalem til Gaza.» Denne vegen er øyde.",
+    "text": "Ein engel frå Herren tala til Filip og sa: «Stå opp og gå mot sør, til vegen som går ned frå Jerusalem til Gaza.» Dette er ein øydemark.",
     "versions": [
       {
         "text": "Ein engel frå Herren tala til Filip og sa: «Stå opp og gå mot sør, til vegen som går ned frå Jerusalem til Gaza. Dette er ein øydeveg.»",
         "explanation": "Det greske αὕτη ἐστὶν ἔρημος er truleg ein forklarande kommentar frå forfattaren (Lukas), ikkje ein del av engelens tale. Å flytta dette utanfor sitatet og omformulera til 'Denne vegen er øyde' gjev betre meining og samsvarar med korleis mange omsetjingar handterer dette."
+      },
+      {
+        "text": "Ein engel frå Herren tala til Filip og sa: «Stå opp og gå mot sør, til vegen som går ned frå Jerusalem til Gaza.» Denne vegen er øyde.",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "ἔρημος refererer truleg ikkje til at vegen er øyde, men at Gaza-området eller vegen ligg i ein øydemark. 'Øydemark' passar betre enn 'øyde' som adjektiv, men sidan dette verset allereie har ein revisjon, er dette berre eit mindre framlegg."
       }
     ]
   },
@@ -231,11 +253,17 @@
     "bookId": 44,
     "chapterId": 8,
     "verseId": 33,
-    "text": "I fornedring vart dommen hans teken bort. Kven kan skildra hans samtid? For livet hans blir teke bort frå jorda.»",
+    "text": "I fornedring vart dommen hans teken bort. Kven kan fortelja om hans ætt? For livet hans blir teke bort frå jorda.»",
     "versions": [
       {
         "text": "I fornedring vart dommen hans teken bort. Kven kan fortelja om ætta hans? For livet hans blir teke bort frå jorda.»",
         "explanation": "γενεά kan tyda både 'ætt/generasjon' og 'samtid/levetid'. I denne profetiske konteksten (Jesaja 53:8) handlar det truleg om at ingen kan skildra den generasjonen/samtida han levde i, eller at ingen kan granske ut hans levetid/etterkomarar. 'Skildra hans samtid' er ein mogleg tolking som passar konteksten betre."
+      },
+      {
+        "text": "I fornedring vart dommen hans teken bort. Kven kan skildra hans samtid? For livet hans blir teke bort frå jorda.»",
+        "type": "theological",
+        "severity": "minor",
+        "explanation": "Verset har allereie ein revisjon der 'ætt' vart endra til 'samtid'. Men γενεά i konteksten av Jesaja 53:8 handlar tradisjonelt om ætt/etterkomarar — at livet hans vart avskore slik at han ikkje fekk etterkomarar. Dei fleste store omsetjingar har 'generasjon' eller 'ætt'. Sidan endringshistorikken viser at dette var ei medviten endring, er dette berre merka som teologisk observasjon."
       }
     ]
   },
@@ -261,7 +289,15 @@
     "bookId": 44,
     "chapterId": 8,
     "verseId": 37,
-    "text": "Filip sa: «Dersom du trur av heile ditt hjarte, så kan det gjerast.» Han svara: «Eg trur at Jesus Kristus er Guds Son.»"
+    "text": "Filip sa: «Dersom du trur av heile hjartet ditt, er det mogleg.» Han svara: «Eg trur at Jesus Kristus er Guds Son.»",
+    "versions": [
+      {
+        "text": "Filip sa: «Dersom du trur av heile ditt hjarte, så kan det gjerast.» Han svara: «Eg trur at Jesus Kristus er Guds Son.»",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "'Heile ditt hjarte' er bokmålsforma ordstilling. På nynorsk er 'heile hjartet ditt' meir naturleg med etterstilt eigedomspronomen."
+      }
+    ]
   },
   {
     "bookId": 44,

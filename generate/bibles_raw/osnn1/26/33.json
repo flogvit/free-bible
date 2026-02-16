@@ -33,7 +33,15 @@
     "bookId": 26,
     "chapterId": 33,
     "verseId": 6,
-    "text": "Men om vaktaren ser sverdet koma og ikkje blæs i hornet, så folket ikkje blir åtvara, og sverdet kjem og tek livet av nokon av dei – då blir den personen teken bort i si eiga synd, men blodet hans vil eg krevja frå vaktaren."
+    "text": "Men om vaktaren ser sverdet koma og ikkje blæs i hornet, så folket ikkje blir åtvara, og sverdet kjem og tek livet av nokon av dei – den det gjeld, blir teken bort i si eiga synd, men blodet hans vil eg krevja frå vaktaren.",
+    "versions": [
+      {
+        "text": "Men om vaktaren ser sverdet koma og ikkje blæs i hornet, så folket ikkje blir åtvara, og sverdet kjem og tek livet av nokon av dei – då blir den personen teken bort i si eiga synd, men blodet hans vil eg krevja frå vaktaren.",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "'den personen' is a bit vague for הוּא. 'Den det gjeld' is slightly more natural in nynorsk context and avoids the slightly formal/bokmål-tinged 'den personen'."
+      }
+    ]
   },
   {
     "bookId": 26,
@@ -75,13 +83,29 @@
     "bookId": 26,
     "chapterId": 33,
     "verseId": 12,
-    "text": "Og du, menneske, sei til folket ditt: Rettferda til den rettferdige skal ikkje berga han den dagen han syndar, og den ugudelege skal ikkje falla for si gudløyse den dagen han vender om frå gudløysa si. Den rettferdige skal ikkje kunna leva på grunn av si rettferd den dagen han syndar."
+    "text": "Og du, menneske, sei til folket ditt: Rettferda til den rettferdige skal ikkje berga han den dagen han syndar, og den ugudelege skal ikkje snubla i si gudløyse den dagen han vender om frå gudløysa si. Den rettferdige skal ikkje kunna leva på grunn av si rettferd den dagen han syndar.",
+    "versions": [
+      {
+        "text": "Og du, menneske, sei til folket ditt: Rettferda til den rettferdige skal ikkje berga han den dagen han syndar, og den ugudelege skal ikkje falla for si gudløyse den dagen han vender om frå gudløysa si. Den rettferdige skal ikkje kunna leva på grunn av si rettferd den dagen han syndar.",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "The Hebrew לֹא־יִכָּשֶׁל בָּהּ uses כשׁל (stumble/fall). The meaning is that the wicked person will not stumble/be brought down by his wickedness when he turns from it. 'Falla for' could work but 'snubla i' is closer to the Hebrew כשׁל and captures the nuance better."
+      }
+    ]
   },
   {
     "bookId": 26,
     "chapterId": 33,
     "verseId": 13,
-    "text": "Når eg seier til den rettferdige at han skal leva, og han lit på si eiga rettferd og gjer urett, då skal inga av hans rettferdige gjerningar bli hugsa. For den uretten han har gjort, skal han døy."
+    "text": "Når eg seier til den rettferdige at han skal leva, og han lit på si eiga rettferd og gjer urett, då skal inga av dei rettferdige gjerningane hans bli hugsa. For den uretten han har gjort, skal han døy.",
+    "versions": [
+      {
+        "text": "Når eg seier til den rettferdige at han skal leva, og han lit på si eiga rettferd og gjer urett, då skal inga av hans rettferdige gjerningar bli hugsa. For den uretten han har gjort, skal han døy.",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "'hans rettferdige gjerningar' is slightly awkward word order in nynorsk. 'dei rettferdige gjerningane hans' is more natural nynorsk word order with the possessive pronoun at the end."
+      }
+    ]
   },
   {
     "bookId": 26,
@@ -201,7 +225,15 @@
     "bookId": 26,
     "chapterId": 33,
     "verseId": 31,
-    "text": "Dei kjem til deg slik folk plar koma, og dei set seg framfor deg som mitt folk. Dei høyrer orda dine, men dei gjer ikkje etter dei. For med munnen viser dei kjærleik, men hjartet deira følgjer vinning."
+    "text": "Dei kjem til deg slik folk plar koma, og dei set seg framfor deg som mitt folk. Dei høyrer orda dine, men dei gjer ikkje etter dei. For med munnen talar dei om kjærleik, men hjartet deira jagar etter eiga vinning.",
+    "versions": [
+      {
+        "text": "Dei kjem til deg slik folk plar koma, og dei set seg framfor deg som mitt folk. Dei høyrer orda dine, men dei gjer ikkje etter dei. For med munnen viser dei kjærleik, men hjartet deira følgjer vinning.",
+        "type": "error",
+        "severity": "major",
+        "explanation": "The Hebrew עֲגָבִים בְּפִיהֶם הֵמָּה עֹשִׂים means they 'do/make lustful words with their mouth' — i.e., they speak words of love/devotion but don't mean it. 'Viser dei kjærleik' is acceptable but 'talar dei om kjærleik' is slightly more precise for the mouth imagery. Also 'jagar etter eiga vinning' is more dynamic and accurate for אַחֲרֵי בִצְעָם לִבָּם הֹלֵךְ (their heart goes after their gain)."
+      }
+    ]
   },
   {
     "bookId": 26,

@@ -33,7 +33,15 @@
     "bookId": 1,
     "chapterId": 29,
     "verseId": 5,
-    "text": "Han spurde dei: «Kjenner de Laban, son til Nakor?» Dei svara: «Ja, vi kjenner han.»"
+    "text": "Han spurde dei: «Kjenner de Laban, soneson til Nakor?» Dei svara: «Ja, vi kjenner han.»",
+    "versions": [
+      {
+        "text": "Han spurde dei: «Kjenner de Laban, son til Nakor?» Dei svara: «Ja, vi kjenner han.»",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "Laban var ikkje son til Nakor, men soneson (Laban var son til Betuel, som var son til Nakor). Likevel er det hebraiske 'בֶּן' brukt i vid tyding og kan tyda 'etterkomar'. Formuleringa 'son til Nakor' er ei direkte omsetjing, og sidan originalteksten brukar 'בֶּן', er dette akseptabelt – men det kan vera misvisande for lesaren. Dette er ei mindre merknad."
+      }
+    ]
   },
   {
     "bookId": 1,
@@ -81,7 +89,15 @@
     "bookId": 1,
     "chapterId": 29,
     "verseId": 12,
-    "text": "Jakob fortalde Rakel at han var slektning av far hennar, son til Rebekka. Ho sprang av stad og fortalde det til far sin."
+    "text": "Jakob fortalde Rakel at han var bror til far hennar, og at han var son til Rebekka. Ho sprang av stad og fortalde det til far sin.",
+    "versions": [
+      {
+        "text": "Jakob fortalde Rakel at han var slektning av far hennar, son til Rebekka. Ho sprang av stad og fortalde det til far sin.",
+        "type": "error",
+        "severity": "major",
+        "explanation": "Det hebraiske 'אֲחִי אָבִיהָ' tyder 'bror til far hennar' (dvs. farbror), ikkje berre 'slektning av far hennar'. Jakob kalla seg bror (אָח) til Laban, som var eit nært slektsord. Omsetjinga bør reflektera dette meir presist."
+      }
+    ]
   },
   {
     "bookId": 1,
@@ -111,11 +127,17 @@
     "bookId": 1,
     "chapterId": 29,
     "verseId": 17,
-    "text": "Lea hadde veike augo, men Rakel var vakker både i skapnad og andlet.",
+    "text": "Lea hadde veike augo, men Rakel var vakker både i kropp og ansikt.",
     "versions": [
       {
         "text": "Lea hadde milde augo, men Rakel var vakker både i skapnad og andlet.",
         "explanation": "Det hebraiske ordet 'רַכּוֹת' (rakkot) er omdiskutert. Det kan tyda 'mjuke/milde' (positivt) eller 'veike/matte' (negativt). Konteksten set Lea i kontrast til den vakre Rakel, noko som tyder på at 'veike' eller 'matte' er meir sannsynleg. 'Milde' er ei mogleg tolking, men kan vera misvisande."
+      },
+      {
+        "text": "Lea hadde veike augo, men Rakel var vakker både i skapnad og andlet.",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "'יְפַת־תֹּאַר' tyder vakker i figur/kropp, og 'יְפַת מַרְאֶה' tyder vakker å sjå på/i ansikt. 'Skapnad' kan fungera, men 'kropp' er meir direkte og lettare å forstå for moderne lesarar. 'Andlet' er korrekt nynorsk, men 'ansikt' er meir daglegdags og lettlese."
       }
     ]
   },
@@ -235,11 +257,17 @@
     "bookId": 1,
     "chapterId": 29,
     "verseId": 34,
-    "text": "Ho vart med barn att og fødde ein son. Ho sa: «No kjem mannen min til å halda seg til meg, for eg har fødd han tre søner.» Difor kalla han Levi.",
+    "text": "Ho sa: «No kjem mannen min til å halda seg til meg, for eg har fødd han tre søner.» Difor fekk han namnet Levi.",
     "versions": [
       {
         "text": "Ho vart med barn att og fødde ein son. Ho sa: «No kjem mannen min til å halda seg til meg, for eg har fødd han tre søner.» Difor kalla ho han Levi.",
         "explanation": "I den hebraiske teksten er det ikkje 'ho kalla han' (וַתִּקְרָא שְׁמוֹ) som i dei andre versa, men 'han kalla namnet hans' (קָרָא שְׁמוֹ) - ein passiv eller upersonleg konstruksjon. Dette kan tyda at namnet vart gjeve (av begge foreldra eller generelt), ikkje spesifikt av Lea. Alternativt kan 'kalla han' stå utan 'ho' for å reflektera dette."
+      },
+      {
+        "text": "Ho vart med barn att og fødde ein son. Ho sa: «No kjem mannen min til å halda seg til meg, for eg har fødd han tre søner.» Difor kalla han Levi.",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "Den noverande formuleringa 'kalla han Levi' (utan subjekt) er grammatisk uklar – det er ikkje tydeleg kven 'han' viser til: er det Jakob som kalla guten, eller er det guten som vart kalla? 'Fekk han namnet Levi' er ein meir naturleg passiv konstruksjon som speglar den upersonlege hebraiske forma betre."
       }
     ]
   },

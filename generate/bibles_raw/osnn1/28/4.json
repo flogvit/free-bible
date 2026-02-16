@@ -27,7 +27,15 @@
     "bookId": 28,
     "chapterId": 4,
     "verseId": 4,
-    "text": "Men lat ingen koma med skuldingar, lat ingen klaga! For folket ditt er som dei som strir mot presten."
+    "text": "Men lat ingen koma med skuldingar, lat ingen klaga! For folket ditt er som dei som strir mot ein prest.",
+    "versions": [
+      {
+        "text": "Men lat ingen koma med skuldingar, lat ingen klaga! For folket ditt er som dei som strir mot presten.",
+        "type": "error",
+        "severity": "major",
+        "explanation": "Det hebraiske כִּמְרִיבֵ֥י כֹהֵֽן refererer til å stri mot ein prest (ubunden form), ikkje 'presten' (bunden form). Samanhengen handlar om at det å stri mot ein prest var ei alvorleg lovbrot (jf. 5 Mos 17:12), ikkje ein spesifikk prest."
+      }
+    ]
   },
   {
     "bookId": 28,
@@ -69,7 +77,15 @@
     "bookId": 28,
     "chapterId": 4,
     "verseId": 10,
-    "text": "Dei skal eta, men ikkje verta mette. Dei skal driva hor, men ikkje auka i tal. For dei har forlate Herren og ikkje heldt seg til han."
+    "text": "For dei har forlate Herren og slutta å halda seg til han.",
+    "versions": [
+      {
+        "text": "Dei skal eta, men ikkje verta mette. Dei skal driva hor, men ikkje auka i tal. For dei har forlate Herren og ikkje heldt seg til han.",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "Det hebraiske עָזְבוּ לִשְׁמֹר tyder meir bokstaveleg 'dei har slutta å akta på (Herren)'. Den noverande omsetjinga er noko fri. Ei meir presis formulering kan vera 'slutta å halda seg til han', men dette er eit mindre poeng."
+      }
+    ]
   },
   {
     "bookId": 28,
@@ -81,7 +97,15 @@
     "bookId": 28,
     "chapterId": 4,
     "verseId": 12,
-    "text": "Folket mitt spør tresteinen sin til råds, og staven deira gjev dei svar. For ei horande ånd har ført dei på avvegar, og dei har hora seg bort frå sin Gud."
+    "text": "Folket mitt spør trestokken sin til råds, og staven deira gjev dei svar.",
+    "versions": [
+      {
+        "text": "Folket mitt spør tresteinen sin til råds, og staven deira gjev dei svar. For ei horande ånd har ført dei på avvegar, og dei har hora seg bort frå sin Gud.",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "Det hebraiske עֵצוֹ tyder 'treet sitt' eller 'trestokken sin', altså eit avgudsbilde laga av tre. 'Trestein' er ikkje eit naturleg norsk ord og kan verka forvirrande. 'Trestokk' er meir presist og forståeleg."
+      }
+    ]
   },
   {
     "bookId": 28,
@@ -123,12 +147,28 @@
     "bookId": 28,
     "chapterId": 4,
     "verseId": 18,
-    "text": "Når drikkinga deira er over, driv dei hor. Leiarane deira elskar skam framfor ære."
+    "text": "Når drikkinga deira er over, driv dei hor på det grovaste. Skjoldane deira elskar vanære.",
+    "versions": [
+      {
+        "text": "Når drikkinga deira er over, driv dei hor. Leiarane deira elskar skam framfor ære.",
+        "type": "error",
+        "severity": "major",
+        "explanation": "Fleire problem: (1) הַזְנֵה הִזְנוּ er ein infinitivus absolutus-konstruksjon som forsterkar verbet – dei driv hor intenst/på det grovaste. (2) מָגִנֶּיהָ tyder 'skjoldane hennar/deira', som ofte vert tolka som 'leiarane/vernarane deira', men 'leiarar' er ei tolking, ikkje ei omsetjing. (3) אָהֲבוּ הֵבוּ קָלוֹן tyder bokstaveleg 'dei elskar: «Gjev (oss) vanære!»' – altså at dei elskar det som er vanærande. Noverande omsetjing 'skam framfor ære' legg til ein kontrast som ikkje finst i originalen."
+      }
+    ]
   },
   {
     "bookId": 28,
     "chapterId": 4,
     "verseId": 19,
-    "text": "Ein vind har pakka henne inn i vengene sine, og dei skal verta til skamme på grunn av offera sine."
+    "text": "Ein vind har gripe henne med vengene sine, og dei skal verta til skamme på grunn av offera sine.",
+    "versions": [
+      {
+        "text": "Ein vind har pakka henne inn i vengene sine, og dei skal verta til skamme på grunn av offera sine.",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "Det hebraiske צָרַר tyder å binda, snøra saman, gripa – bildet er at vinden grip og fører bort, ikkje 'pakkar inn'. 'Gripe med vengene sine' gjev ei meir dynamisk og presis omsetjing av stormbiletet."
+      }
+    ]
   }
 ]

@@ -69,7 +69,15 @@
     "bookId": 10,
     "chapterId": 15,
     "verseId": 12,
-    "text": "Medan Absalom bar fram offera, sende han bod etter Ahitofel frå Gilo, rådgjevaren til David, frå byen hans Gilo. Samansverjinga vart sterk, og stadig fleire slutta seg til Absalom."
+    "text": "Absalom sende bod etter Ahitofel frå Gilo, rådgjevaren til David, frå byen hans Gilo, medan han bar fram offera. Samansverjinga vart sterk, og stadig fleire slutta seg til Absalom.",
+    "versions": [
+      {
+        "text": "Medan Absalom bar fram offera, sende han bod etter Ahitofel frå Gilo, rådgjevaren til David, frå byen hans Gilo. Samansverjinga vart sterk, og stadig fleire slutta seg til Absalom.",
+        "type": "error",
+        "severity": "major",
+        "explanation": "I den hebraiske teksten er Absalom subjektet som sender bod etter Ahitofel, og dette er hovudhandlinga i verset. Slik den noverande omsetjinga er oppbygd, med 'Medan Absalom bar fram offera' fyrst, blir det uklart kven 'han' viser til i 'sende han bod'. Betre å la hovudhandlinga koma fyrst."
+      }
+    ]
   },
   {
     "bookId": 10,
@@ -105,7 +113,15 @@
     "bookId": 10,
     "chapterId": 15,
     "verseId": 18,
-    "text": "Alle tenarane hans gjekk framom han, og alle kreterarane og peleterarane. Alle gatarane, seks hundre mann som hadde følgt han frå Gat, gjekk framom kongen."
+    "text": "Alle tenarane hans gjekk framom han, og alle kretarane og peletarane. Alle gittitane, seks hundre mann som hadde følgt han frå Gat, gjekk framom kongen.",
+    "versions": [
+      {
+        "text": "Alle tenarane hans gjekk framom han, og alle kreterarane og peleterarane. Alle gatarane, seks hundre mann som hadde følgt han frå Gat, gjekk framom kongen.",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "'Kreterarane' og 'peleterarane' er uvanleg bøying; meir vanleg på nynorsk er 'kretarane' og 'peletarane'. 'Gatarane' er ei uvanleg form for innbyggjarane frå Gat; 'gittitane' (frå hebraisk הַגִּתִּים) er den meir etablerte forma i norsk bibeltradisjon."
+      }
+    ]
   },
   {
     "bookId": 10,
@@ -117,7 +133,15 @@
     "bookId": 10,
     "chapterId": 15,
     "verseId": 20,
-    "text": "Du kom i går, og skulle eg i dag la deg flakka om med oss medan eg går dit eg går? Vend om og ta brørne dine med deg. Nåde og truskap vere med deg!»"
+    "text": "Du kom i går, og skulle eg i dag la deg flakka om med oss medan eg går dit eg går? Vend om og ta brørne dine med deg. Måtte Herren visa deg nåde og truskap!»",
+    "versions": [
+      {
+        "text": "Du kom i går, og skulle eg i dag la deg flakka om med oss medan eg går dit eg går? Vend om og ta brørne dine med deg. Nåde og truskap vere med deg!»",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "Det hebraiske חֶסֶד וֶאֱמֶת (chesed we'emet) er retta mot Ittai som ei velsigning. Oversettinga 'Nåde og truskap vere med deg' er akseptabel, men å leggja til 'Herren' (som er underforstått) gjer det teologisk tydelegare at det er ei velsigning frå Gud, ikkje berre eit generelt ynskje."
+      }
+    ]
   },
   {
     "bookId": 10,
@@ -141,11 +165,17 @@
     "bookId": 10,
     "chapterId": 15,
     "verseId": 24,
-    "text": "Dei sette ned Guds kiste, og Abjatar steig opp til alt folket hadde kome ut frå byen.",
+    "text": "Og sjå, Sadok var der, og alle levittane med han, og dei bar Guds paktkiste. Dei sette ned Guds kiste, og Abjatar steig opp til alt folket hadde kome seg ut frå byen.",
     "versions": [
       {
         "text": "Og sjå, Sadok var der òg, og alle levittane med han bar Guds paktkiste. Dei sette ned Guds kiste, og Abjatar gjekk opp til alt folket hadde kome ut frå byen.",
         "explanation": "Det hebraiske verbet וַיַּעַל (wayya'al) tyder 'steig opp' eller 'gjekk opp'. 'Steig opp' er meir naturleg på nynorsk i denne samanhengen, og gjev betre rytme for munnleg lesing."
+      },
+      {
+        "text": "Dei sette ned Guds kiste, og Abjatar steig opp til alt folket hadde kome ut frå byen.",
+        "type": "error",
+        "severity": "major",
+        "explanation": "Den noverande versjonen manglar opninga av verset som nemner Sadok og levittane som ber paktkista (וְהִנֵּה גַם־צָדוֹק וְכָל־הַלְוִיִּם אִתּוֹ נֹשְׂאִים אֶת־אֲרוֹן בְּרִית הָאֱלֹהִים). Dessutan heiter det 'paktkiste' (אֲרוֹן בְּרִית הָאֱלֹהִים) i fyrste omtale. Denne informasjonen er vesentleg og bør ikkje utelatast."
       }
     ]
   },

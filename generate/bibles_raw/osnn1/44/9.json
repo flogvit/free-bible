@@ -3,7 +3,15 @@
     "bookId": 44,
     "chapterId": 9,
     "verseId": 1,
-    "text": "Saulus anda framleis trugsmål og drap mot Herrens læresveinar. Han gjekk til øvstepresten"
+    "text": "Saulus anda enno av trugsmål og drap mot Herrens læresveinar og gjekk til øvstepresten",
+    "versions": [
+      {
+        "text": "Saulus anda framleis trugsmål og drap mot Herrens læresveinar. Han gjekk til øvstepresten",
+        "type": "grammar",
+        "severity": "minor",
+        "explanation": "Det greske ἔτι ἐμπνέων ἀπειλῆς καὶ φόνου er ein partisippkonstruksjon som skildrar ein pågåande tilstand ('framleis andande/pustande trugsmål og drap'). 'Anda framleis trugsmål og drap' er uvanleg på nynorsk. 'Anda enno av trugsmål og drap' er meir idiomatisk. I tillegg er det éi samanhengande setning i gresk (partisipp + hovudverb), så det er meir korrekt å ikkje dela det i to setningar."
+      }
+    ]
   },
   {
     "bookId": 44,
@@ -39,7 +47,15 @@
     "bookId": 44,
     "chapterId": 9,
     "verseId": 7,
-    "text": "Mennene som reiste saman med han, stod mållause. Dei høyrde røysta, men såg ingen."
+    "text": "Mennene som reiste saman med han, stod mållause. Dei høyrde lyden, men såg ingen.",
+    "versions": [
+      {
+        "text": "Mennene som reiste saman med han, stod mållause. Dei høyrde røysta, men såg ingen.",
+        "type": "error",
+        "severity": "major",
+        "explanation": "Det er ein kjend tekstkritisk og teologisk diskusjon om Apg 9:7 vs 22:9. I 9:7 står det ἀκούοντες τῆς φωνῆς (genitiv) – dei høyrde lyden/røysta, men i 22:9 står det τὴν φωνὴν οὐκ ἤκουσαν (akkusativ) – dei høyrde ikkje røysta/forstod ikkje. For å vere konsistent og unngå tilsynelatande motseiing, kan 'lyden' brukast her for å skilje frå den forståelege talen. Men dette er ei tolkingssak, så dette er eit forslag meir enn ein feil."
+      }
+    ]
   },
   {
     "bookId": 44,
@@ -225,11 +241,17 @@
     "bookId": 44,
     "chapterId": 9,
     "verseId": 36,
-    "text": "I Jaffa var det ei kvinne som var læresvein. Ho heitte Tabita, det tyder Dorkas. Ho var full av gode gjerningar og almisser som ho gjorde.",
+    "text": "I Jaffa var det ei kvinne som var læresvein. Ho heitte Tabita, det tyder Dorkas. Ho var rik på gode gjerningar og gav mange gåver til dei fattige.",
     "versions": [
       {
         "text": "I Jaffa var det ei kvinne som var læresvein. Ho heitte Tabita, som tyder Dorkas. Ho var full av gode gjerningar og almisser som ho gjorde.",
         "explanation": "'Det tyder' er meir naturleg norsk enn 'som tyder' i denne samanhengen. 'Som tyder' antyder at Tabita sjølv tyder noko, medan poenget er at namnet tyder/betyr Dorkas (gaselle)."
+      },
+      {
+        "text": "I Jaffa var det ei kvinne som var læresvein. Ho heitte Tabita, det tyder Dorkas. Ho var full av gode gjerningar og almisser som ho gjorde.",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "'Full av gode gjerningar og almisser som ho gjorde' er noko tungt og redundant ('almisser som ho gjorde'). 'Rik på gode gjerningar og gav mange gåver til dei fattige' er meir naturleg og forklarar 'almisser' (ἐλεημοσυνῶν) for ein moderne lesar. Men sidan verset har éin tidlegare revisjon, bør dette vurderast forsiktig."
       }
     ]
   },

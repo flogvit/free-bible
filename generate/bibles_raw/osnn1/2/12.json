@@ -123,7 +123,15 @@
     "bookId": 2,
     "chapterId": 12,
     "verseId": 16,
-    "text": "Den første dagen skal de halda ei heilag samling, og den sjuande dagen ei heilag samling. Desse dagane skal de ikkje gjera noko arbeid. Berre maten som kvar treng, kan de laga til."
+    "text": "Den første dagen skal de halda ei heilag samling, og den sjuande dagen ei heilag samling. Ingen skal gjera noko arbeid desse dagane. Berre det som kvar treng å eta, det åleine kan de laga til.",
+    "versions": [
+      {
+        "text": "Den første dagen skal de halda ei heilag samling, og den sjuande dagen ei heilag samling. Desse dagane skal de ikkje gjera noko arbeid. Berre maten som kvar treng, kan de laga til.",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "Originalen seier 'כָּל־מְלָאכָה לֹא־יֵעָשֶׂה בָהֶם' – det er eit generelt forbod ('det skal ikkje gjerast'), ikkje berre retta mot 'de'. Dessutan er 'הוּא לְבַדּוֹ' (det åleine) understreka i originalen, noko som bør koma tydelegare fram."
+      }
+    ]
   },
   {
     "bookId": 2,
@@ -219,7 +227,15 @@
     "bookId": 2,
     "chapterId": 12,
     "verseId": 30,
-    "text": "Den natta stod farao opp, han og alle tenarane hans og alle egyptarane, og det lyfte seg eit stort klagerop i Egypt, for det fanst ikkje eit hus utan ein som var død."
+    "text": "Den natta stod farao opp, han og alle tenarane hans og alle egyptarane, og det lyfte seg eit stort klagerop i Egypt, for det fanst ikkje eit hus der det ikkje var ein som var død.",
+    "versions": [
+      {
+        "text": "Den natta stod farao opp, han og alle tenarane hans og alle egyptarane, og det lyfte seg eit stort klagerop i Egypt, for det fanst ikkje eit hus utan ein som var død.",
+        "type": "grammar",
+        "severity": "minor",
+        "explanation": "'Ikkje eit hus utan ein som var død' er litt knapt formulert og kan verka uklart. 'Ikkje eit hus der det ikkje var ein som var død' er tydelegare og meir naturleg nynorsk, sjølv om det har dobbel nekting som i originalen (אֵין בַּיִת אֲשֶׁר אֵין־שָׁם מֵת)."
+      }
+    ]
   },
   {
     "bookId": 2,
@@ -255,19 +271,43 @@
     "bookId": 2,
     "chapterId": 12,
     "verseId": 35,
-    "text": "Israelittane hadde gjort som Moses sa, og bede egyptarane om ting av sølv og gull og om klede."
+    "text": "Israelittane hadde gjort som Moses sa, og bede egyptarane om sølvting og gullting og om klede.",
+    "versions": [
+      {
+        "text": "Israelittane hadde gjort som Moses sa, og bede egyptarane om ting av sølv og gull og om klede.",
+        "type": "error",
+        "severity": "major",
+        "explanation": "Det hebraiske 'כְּלֵי־כֶסֶף וּכְלֵי זָהָב' tyder 'sølvgjenstandar og gullgjenstandar', ikkje 'ting av sølv og gull'. Formuleringa 'ting av sølv og gull' kan oppfattast som éin kategori, men det er to separate kategoriar i originalen."
+      }
+    ]
   },
   {
     "bookId": 2,
     "chapterId": 12,
     "verseId": 36,
-    "text": "Herren gjorde at egyptarane såg med velvilje på folket, så dei gav dei det dei bad om. Slik tok dei med seg rikdom frå egyptarane."
+    "text": "Herren gjorde at egyptarane såg med velvilje på folket, så dei gav dei det dei bad om. Slik tømde dei egyptarane.",
+    "versions": [
+      {
+        "text": "Herren gjorde at egyptarane såg med velvilje på folket, så dei gav dei det dei bad om. Slik tok dei med seg rikdom frå egyptarane.",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "Det hebraiske 'וַיְנַצְּלוּ אֶת־מִצְרָיִם' tyder bokstavleg 'og dei plyndra/tømde Egypt'. 'Tok med seg rikdom' er for mildt – verbet נצל (pi'el) betyr 'å plundra, tøma, bera bort'. 'Tømde dei egyptarane' er sterkare og nærare originalen."
+      }
+    ]
   },
   {
     "bookId": 2,
     "chapterId": 12,
     "verseId": 37,
-    "text": "Israelittane braut opp frå Ramses og drog til Sukkot, om lag seks hundre tusen mann til fots, forutan borna."
+    "text": "Israelittane braut opp frå Ramses og drog til Sukkot, om lag seks hundre tusen mann til fots, forutan kvinner og born.",
+    "versions": [
+      {
+        "text": "Israelittane braut opp frå Ramses og drog til Sukkot, om lag seks hundre tusen mann til fots, forutan borna.",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "Hebraisk 'הַגְּבָרִים' tyder 'mennene/dei vaksne mennene' og 'מִטָּף' tyder 'born/familiar'. Sidan teksten spesifiserer menn (הַגְּבָרִים), er det underforstått at kvinner òg er utelatne frå teljinga. Likevel er 'forutan borna' ei akseptabel forenkling, sidan טַף primært refererer til born."
+      }
+    ]
   },
   {
     "bookId": 2,

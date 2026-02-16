@@ -3,7 +3,15 @@
     "bookId": 23,
     "chapterId": 23,
     "verseId": 1,
-    "text": "Bodskap om Tyrus: Jamra dykk, de skip frå Tarsis! For byen er lagd i grus, utan hus, utan hamn. Frå Kittim-landet fekk dei bodskapen."
+    "text": "Bodskap om Tyrus: Jamra dykk, de skip frå Tarsis! For han er øydelagd, utan hus, utan inngang. Frå Kittim-landet vart det kunngjort for dei.",
+    "versions": [
+      {
+        "text": "Bodskap om Tyrus: Jamra dykk, de skip frå Tarsis! For byen er lagd i grus, utan hus, utan hamn. Frå Kittim-landet fekk dei bodskapen.",
+        "type": "error",
+        "severity": "major",
+        "explanation": "Hebraisk 'שֻׁדַּד' refererer ikkje spesifikt til 'byen', men er eit upersonleg uttrykk ('han er øydelagd'). 'מִבַּיִת' tyder 'frå (å ha) hus' og 'מִבּוֹא' tyder 'frå inngang/innfart' – ikkje 'utan hamn'. 'נִגְלָה־לָמוֹ' betyr 'det vart openbart/kunngjort for dei', ikkje 'dei fekk bodskapen'."
+      }
+    ]
   },
   {
     "bookId": 23,
@@ -51,19 +59,43 @@
     "bookId": 23,
     "chapterId": 23,
     "verseId": 7,
-    "text": "Er dette dykkar glade by, ho som har si opphav frå eldgamle dagar? Føtene hennar bar henne langt bort for å busetja seg."
+    "text": "Er dette dykkar glade by, ho som har si opphav frå eldgamle dagar? Føtene hennar bar henne langt av stad for å bu i det framande.",
+    "versions": [
+      {
+        "text": "Er dette dykkar glade by, ho som har si opphav frå eldgamle dagar? Føtene hennar bar henne langt bort for å busetja seg.",
+        "type": "error",
+        "severity": "major",
+        "explanation": "'לָגוּר' betyr 'å bu som framand/innflyttar', ikkje berre 'å busetja seg'. Det handlar om å bu i eksil eller som framand, noko som er viktig for den teologiske og historiske meininga i verset."
+      }
+    ]
   },
   {
     "bookId": 23,
     "chapterId": 23,
     "verseId": 8,
-    "text": "Kven har planlagt dette mot Tyrus, ho som delte ut kroner, der kjøpmennene var fyrstar og handelsfolka var dei mest æra på jorda?"
+    "text": "Kven har planlagt dette mot Tyrus, ho som krona andre, der kjøpmennene var fyrstar og handelsfolka var dei mest æra på jorda?",
+    "versions": [
+      {
+        "text": "Kven har planlagt dette mot Tyrus, ho som delte ut kroner, der kjøpmennene var fyrstar og handelsfolka var dei mest æra på jorda?",
+        "type": "error",
+        "severity": "major",
+        "explanation": "'הַמַּעֲטִירָה' er ein hif'il partisipp av 'עטר' som betyr 'den kronande' – altså ho som krona (andre med rikdom og makt). 'Delte ut kroner' er noko upresist men akseptabelt; 'krona andre' er meir presist."
+      }
+    ]
   },
   {
     "bookId": 23,
     "chapterId": 23,
     "verseId": 9,
-    "text": "Herren over hærskarane har planlagt det, for å vanæra all stolt prakt, for å audmjuka alle dei æra på jorda."
+    "text": "Herren over hærskarane har planlagt det, for å vanhelga stoltheita til all prakt, for å audmjuka alle dei æra på jorda.",
+    "versions": [
+      {
+        "text": "Herren over hærskarane har planlagt det, for å vanæra all stolt prakt, for å audmjuka alle dei æra på jorda.",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "'לְחַלֵּל' betyr 'å vanhelga/profanera', som er sterkare og meir teologisk presist enn 'vanæra'. 'גְּאוֹן כָּל־צְבִי' betyr meir presist 'stoltheita til all prakt/herlegdom'."
+      }
+    ]
   },
   {
     "bookId": 23,
@@ -75,13 +107,29 @@
     "bookId": 23,
     "chapterId": 23,
     "verseId": 11,
-    "text": "Han rette handa si ut over havet, han fekk kongerika til å skjelva. Herren gav påbod om Kanaan, at festningane der skulle øydeleggjast."
+    "text": "Han rette handa si ut over havet, han fekk kongerika til å skjelva. Herren gav påbod om Kanaan, at festningane hennar skulle øydeleggjast.",
+    "versions": [
+      {
+        "text": "Han rette handa si ut over havet, han fekk kongerika til å skjelva. Herren gav påbod om Kanaan, at festningane der skulle øydeleggjast.",
+        "type": "error",
+        "severity": "minor",
+        "explanation": "'מָעֻזְנֶיהָ' har eit feminint suffiks som viser tilbake til Tyrus (eller Kanaan som feminint), ikkje 'der'. 'Festningane hennar' er meir korrekt."
+      }
+    ]
   },
   {
     "bookId": 23,
     "chapterId": 23,
     "verseId": 12,
-    "text": "Han sa: Du skal ikkje meir gleda deg, du krenkte jomfru, Sidons dotter! Stå opp, far over til Kittim! Men heller ikkje der skal du finna ro."
+    "text": "Han sa: Du skal ikkje lenger jubla, du krenkte jomfru, Sidons dotter! Stå opp, far over til Kittim! Men heller ikkje der skal du finna ro.",
+    "versions": [
+      {
+        "text": "Han sa: Du skal ikkje meir gleda deg, du krenkte jomfru, Sidons dotter! Stå opp, far over til Kittim! Men heller ikkje der skal du finna ro.",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "'לַעְלוֹז' betyr 'jubla/fryda seg' og er eit sterkare uttrykk enn 'gleda seg'. 'Ikkje lenger' er meir idiomatisk nynorsk enn 'ikkje meir' i denne samanhengen."
+      }
+    ]
   },
   {
     "bookId": 23,
@@ -109,7 +157,15 @@
     "bookId": 23,
     "chapterId": 23,
     "verseId": 15,
-    "text": "Den dagen skal det henda at Tyrus blir gløymd i sytti år, like lenge som ein konge lever. Etter sytti år skal det gå med Tyrus som i songen om hora:"
+    "text": "Den dagen skal det henda at Tyrus blir gløymd i sytti år, så lenge som ein konges dagar. Etter sytti år skal det gå med Tyrus som i songen om hora:",
+    "versions": [
+      {
+        "text": "Den dagen skal det henda at Tyrus blir gløymd i sytti år, like lenge som ein konge lever. Etter sytti år skal det gå med Tyrus som i songen om hora:",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "'כִּימֵי מֶלֶךְ אֶחָד' betyr bokstavleg 'som dagane til éin konge'. Omsetjinga 'like lenge som ein konge lever' er fortolkande men rimeleg. 'Så lenge som ein konges dagar' ligg nærare originalen."
+      }
+    ]
   },
   {
     "bookId": 23,

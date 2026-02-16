@@ -21,7 +21,15 @@
     "bookId": 55,
     "chapterId": 1,
     "verseId": 3,
-    "text": "Eg takkar Gud, som eg tener med reint samvit slik forfedrane mine gjorde, når eg stadig hugsar på deg i bønene mine, natt og dag."
+    "text": "Eg takkar Gud, som eg tener med reint samvit slik forfedrane mine gjorde, for at eg utan opphald hugsar på deg i bønene mine, natt og dag.",
+    "versions": [
+      {
+        "text": "Eg takkar Gud, som eg tener med reint samvit slik forfedrane mine gjorde, når eg stadig hugsar på deg i bønene mine, natt og dag.",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "Det greske 'ὡς ἀδιάλειπτον ἔχω τὴν περὶ σοῦ μνείαν' uttrykkjer innhaldet i takka – at han uavbrote hugsar Timoteus. 'Når eg stadig hugsar' gjev inntrykk av at takka skjer samstundes som han hugsar, medan 'for at eg utan opphald hugsar' betre fangar at dette er grunnen til takka, som er ei vanleg tolking av ὡς her."
+      }
+    ]
   },
   {
     "bookId": 55,
@@ -57,7 +65,15 @@
     "bookId": 55,
     "chapterId": 1,
     "verseId": 8,
-    "text": "Skam deg då ikkje over vitnemålet om vår Herre, og heller ikkje over meg som er fange for hans skuld. Men lid vondt saman med meg for evangeliet, i Guds kraft."
+    "text": "Skam deg då ikkje over vitnemålet om vår Herre, og heller ikkje over meg som er fange for hans skuld. Men ber lidingane for evangeliet saman med meg, i Guds kraft.",
+    "versions": [
+      {
+        "text": "Skam deg då ikkje over vitnemålet om vår Herre, og heller ikkje over meg som er fange for hans skuld. Men lid vondt saman med meg for evangeliet, i Guds kraft.",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "Det greske 'συγκακοπάθησον τῷ εὐαγγελίῳ' tyder 'lid saman (med meg) for evangeliet' eller 'ber lidingane for evangeliet saman med meg'. 'Lid vondt saman med meg for evangeliet' er akseptabelt, men 'ber lidingane for evangeliet saman med meg' er meir naturleg nynorsk og framhevar at det er for evangeliet si skuld."
+      }
+    ]
   },
   {
     "bookId": 55,
@@ -69,11 +85,17 @@
     "bookId": 55,
     "chapterId": 1,
     "verseId": 10,
-    "text": "No er denne nåden openberra ved openberringa av frelsaren vår, Jesus Kristus.",
+    "text": "No er denne nåden openberra ved openberringa av frelsaren vår, Jesus Kristus, han som har gjort døden til inkjes og ført liv og uforgjengelegdom fram i lyset gjennom evangeliet.",
     "versions": [
       {
         "text": "No er denne nåden openberra ved at frelsaren vår Jesus Kristus kom til jord. Han har gjort døden til inkjes og ført liv og uforgjengelegdom fram i lyset gjennom evangeliet.",
         "explanation": "Det greske 'ἐπιφανείας' (epifani/openberring) er eit teologisk viktig omgrep som tyder 'framsyning' eller 'openberring'. 'Kom til jord' er ei tolking som mistar noko av den tekniske tydinga. 'Openberringa' held på det bibelske faguttrykket."
+      },
+      {
+        "text": "No er denne nåden openberra ved openberringa av frelsaren vår, Jesus Kristus.",
+        "type": "error",
+        "severity": "critical",
+        "explanation": "Verset manglar den andre halvdelen av den greske teksten: 'καταργήσαντος μὲν τὸν θάνατον φωτίσαντος δὲ ζωὴν καὶ ἀφθαρσίαν διὰ τοῦ εὐαγγελίου' – om at Kristus har gjort døden til inkjes og ført liv og uforgjengelegdom fram i lyset gjennom evangeliet. Dette er svært viktig teologisk innhald som ikkje kan utelatast."
       }
     ]
   },

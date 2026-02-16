@@ -63,7 +63,15 @@
     "bookId": 19,
     "chapterId": 139,
     "verseId": 11,
-    "text": "Og seier eg: «Visst skal mørkret løyna meg, og lyset skal bli natt omkring meg,»"
+    "text": "Og seier eg: «Lat mørkret skjula meg, og lyset bli natt omkring meg,»",
+    "versions": [
+      {
+        "text": "Og seier eg: «Visst skal mørkret løyna meg, og lyset skal bli natt omkring meg,»",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "Det hebraiske 'יְשׁוּפֵנִי' tyder 'skjula/dekka meg' (ikkje 'løyna'). 'Løyna' er ikkje feil, men 'skjula' er meir naturleg nynorsk. Dessutan er 'אוֹר בַּעֲדֵנִי' betre omsett som 'lyset (bli) natt omkring meg', og det hebraiske uttrykket har meir eit ynskje-preg enn eit utsegn om framtida."
+      }
+    ]
   },
   {
     "bookId": 19,
@@ -81,11 +89,17 @@
     "bookId": 19,
     "chapterId": 139,
     "verseId": 14,
-    "text": "Eg takkar deg fordi eg er skapt på eit fryktinngytande og underfullt vis. Underfulle er dine verk, det veit mi sjel så vel.",
+    "text": "Eg takkar deg fordi eg er skapt på eit fryktinngytande og underfullt vis. Underlege er dine gjerningar, det veit mi sjel så vel.",
     "versions": [
       {
         "text": "Eg takkar deg fordi eg er skapt på skræmeleg underfullt vis. Underfulle er dine verk, det veit mi sjel så vel.",
         "explanation": "Ordet 'skræmeleg' er uvanleg i nynorsk og kan verka dialektalt. 'Fryktinngytande' fangar betre det hebraiske 'nora'ot' (ærefrykt, respekt) og er meir tilgjengeleg for moderne lesarar."
+      },
+      {
+        "text": "Eg takkar deg fordi eg er skapt på eit fryktinngytande og underfullt vis. Underfulle er dine verk, det veit mi sjel så vel.",
+        "type": "grammar",
+        "severity": "minor",
+        "explanation": "'נִפְלָאִים מַעֲשֶׂיךָ' tyder meir 'underlege/vidunderlege er dine gjerningar'. 'Underfulle' er eit godt ord, men 'מַעֲשֶׂה' er betre omsett med 'gjerningar' enn 'verk' i nynorsk salmetradisjon. Men sidan dette verset har versionshistorikk med 1 revisjon, er dette berre ein mindre kommentar."
       }
     ]
   },
@@ -93,7 +107,15 @@
     "bookId": 19,
     "chapterId": 139,
     "verseId": 15,
-    "text": "Beina mine var ikkje dulde for deg då eg vart forma i det løynde, då eg vart voven djupt i jorda."
+    "text": "Kroppen min var ikkje dold for deg då eg vart forma i det løynde, då eg vart voven i djupnene av jorda.",
+    "versions": [
+      {
+        "text": "Beina mine var ikkje dulde for deg då eg vart forma i det løynde, då eg vart voven djupt i jorda.",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "'עָצְמִי' (atsmi) tyder bokstavleg 'beina mine' men refererer her til heile kroppen/sjølvet. 'Kroppen min' er meir presist i konteksten. 'בְּתַחְתִּיּוֹת אָרֶץ' er 'i dei lågaste delane av jorda / i djupnene av jorda' – eit poetisk bilete for livmora, ikkje berre 'djupt i jorda'."
+      }
+    ]
   },
   {
     "bookId": 19,
@@ -129,7 +151,15 @@
     "bookId": 19,
     "chapterId": 139,
     "verseId": 20,
-    "text": "Dei som nemner deg med vondskap, som lyfter opp namnet ditt til fåfengd – dine fiendar."
+    "text": "Dei som talar om deg med vonde planar, som misbrukar namnet ditt – dine fiendar.",
+    "versions": [
+      {
+        "text": "Dei som nemner deg med vondskap, som lyfter opp namnet ditt til fåfengd – dine fiendar.",
+        "type": "error",
+        "severity": "major",
+        "explanation": "Det hebraiske 'נָשֻׂא לַשָּׁוְא עָרֶיךָ' refererer til å lyfte opp (Guds namn) til fåfengd, men 'עָרֶיךָ' tyder 'dine fiendar/motstandarar', ikkje 'namnet ditt'. Omsetjinga blandar saman elementa. 'יֹאמְרֻךָ לִמְזִמָּה' betyr 'nemner deg med vonde planar/renkespel'. Dessutan er 'lyfter' uvanleg nynorsk – 'løftar' er meir korrekt. Heile verset treng ei betre attgjeving av den hebraiske strukturen."
+      }
+    ]
   },
   {
     "bookId": 19,

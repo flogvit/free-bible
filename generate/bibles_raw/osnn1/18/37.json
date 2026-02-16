@@ -45,7 +45,15 @@
     "bookId": 18,
     "chapterId": 37,
     "verseId": 7,
-    "text": "Han set segl på kvar manns hand, så alle menneske kan kjenna hans verk."
+    "text": "Han set segl på kvar manns hand, så alle menneske kan kjenna verket hans.",
+    "versions": [
+      {
+        "text": "Han set segl på kvar manns hand, så alle menneske kan kjenna hans verk.",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "På nynorsk er etterstilt eigedomspronomen ('verket hans') meir naturleg enn førestilt ('hans verk'). Dette er i tråd med stilen elles i omsetjinga."
+      }
+    ]
   },
   {
     "bookId": 18,
@@ -63,7 +71,15 @@
     "bookId": 18,
     "chapterId": 37,
     "verseId": 9,
-    "text": "Frå sør kjem stormen, og frå nordavindane kjem kulden."
+    "text": "Frå det indre rommet kjem stormen, og frå nordavindane kjem kulden.",
+    "versions": [
+      {
+        "text": "Frå sør kjem stormen, og frå nordavindane kjem kulden.",
+        "type": "error",
+        "severity": "major",
+        "explanation": "Det hebraiske ordet 'חֶדֶר' (cheder) tyder 'indre rom/kammer', ikkje 'sør'. Det refererer til dei indre kammera i himmelen der stormen kjem frå. 'מְזָרִים' (mezarim) kan visa til spreiande/nordlege vindar, så den delen er akseptabel, men 'sør' for חֶדֶר er feil."
+      }
+    ]
   },
   {
     "bookId": 18,
@@ -81,7 +97,15 @@
     "bookId": 18,
     "chapterId": 37,
     "verseId": 12,
-    "text": "Og dei svingar seg rundt etter hans styring, for å gjera alt det han byd dei over heile jordflata."
+    "text": "Og dei svingar seg rundt etter styringa hans, for å gjera alt det han byd dei over heile jordflata.",
+    "versions": [
+      {
+        "text": "Og dei svingar seg rundt etter hans styring, for å gjera alt det han byd dei over heile jordflata.",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "'Styringa hans' er meir naturleg nynorsk ordstilling enn 'hans styring', og er meir i tråd med resten av omsetjinga."
+      }
+    ]
   },
   {
     "bookId": 18,
@@ -99,7 +123,15 @@
     "bookId": 18,
     "chapterId": 37,
     "verseId": 15,
-    "text": "Veit du korleis Gud legg sin plan for dei og lèt lyset frå skya si skina?"
+    "text": "Veit du korleis Gud legg planen sin for dei og lèt lyset frå skya si skina?",
+    "versions": [
+      {
+        "text": "Veit du korleis Gud legg sin plan for dei og lèt lyset frå skya si skina?",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "'Planen sin' er meir naturleg nynorsk enn 'sin plan', i samsvar med den redigeringa som blei gjort i vers 1 der 'sin stad' blei endra til 'staden sin'."
+      }
+    ]
   },
   {
     "bookId": 18,
@@ -147,11 +179,17 @@
     "bookId": 18,
     "chapterId": 37,
     "verseId": 21,
-    "text": "Og no ser dei ikkje lyset som skin klårt på himmelen, men så fer vinden forbi og reinskar han rein.",
+    "text": "Og no ser dei ikkje lyset som skin klårt på himmelen, men så fer vinden forbi og reinskar himmelen.",
     "versions": [
       {
         "text": "Og no ser dei ikkje lyset som skin klårt på himmelen, men så fer vinden forbi og reinskar han.",
         "explanation": "Setninga er litt uklar. Alternativt kan ein forenkla til 'og reinskar himmelen' for å gjera det tydelegare kva som blir reinsa."
+      },
+      {
+        "text": "Og no ser dei ikkje lyset som skin klårt på himmelen, men så fer vinden forbi og reinskar han rein.",
+        "type": "grammar",
+        "severity": "minor",
+        "explanation": "'Reinskar han rein' er ein redundant tautologi ('reinskar rein'). I tillegg er pronomenet 'han' tvetydig. I den førre revisjonshistorikken blei det foreslått å bruka 'reinskar himmelen' for å gjera det tydelegare, og dette blei nemnt som grunn for endringa, men sjølve endringa resulterte i 'reinskar han rein' i staden for å bruka den klarare formuleringa."
       }
     ]
   },

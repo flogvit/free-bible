@@ -3,13 +3,29 @@
     "bookId": 49,
     "chapterId": 2,
     "verseId": 1,
-    "text": "Også dykk gjorde han levande, de som var døde på grunn av brota og syndene dykkar."
+    "text": "Også dykk, de som var døde på grunn av brota og syndene dykkar, gjorde han levande.",
+    "versions": [
+      {
+        "text": "Også dykk gjorde han levande, de som var døde på grunn av brota og syndene dykkar.",
+        "type": "error",
+        "severity": "major",
+        "explanation": "Verse 1 in Greek is an incomplete sentence that continues into verses 4-5. The phrase 'gjorde han levande' (made alive) is added here anticipating the main verb from v. 5, which is acceptable for readability. However, the current version says 'de som var døde' (those who were dead) which changes the second person 'ὑμᾶς ὄντας νεκρούς' (you being dead) into a relative clause that slightly distances the reader. While this is minor, a more natural restructuring keeps the direct address clearer."
+      }
+    ]
   },
   {
     "bookId": 49,
     "chapterId": 2,
     "verseId": 2,
-    "text": "I dei vandra de ein gong, etter denne verda sin vis, etter herskaren over luftens rike, den ånda som no verkar i dei ulydige."
+    "text": "I dei vandra de ein gong, etter denne verda sin vis, etter herskaren over luftens maktområde, den ånda som no verkar i dei ulydige.",
+    "versions": [
+      {
+        "text": "I dei vandra de ein gong, etter denne verda sin vis, etter herskaren over luftens rike, den ånda som no verkar i dei ulydige.",
+        "type": "grammar",
+        "severity": "minor",
+        "explanation": "The Greek 'τῆς ἐξουσίας τοῦ ἀέρος' means 'of the authority/power of the air', not 'luftens rike' (kingdom of the air). The word 'ἐξουσία' means authority or power/domain, not 'rike' (kingdom). 'Maktområde' (domain of power) is more accurate."
+      }
+    ]
   },
   {
     "bookId": 49,
@@ -21,7 +37,15 @@
     "bookId": 49,
     "chapterId": 2,
     "verseId": 4,
-    "text": "Men Gud, som er rik på miskunn, elska oss med si store kjærleik, og –"
+    "text": "Men Gud, som er rik på miskunn, og på grunn av si store kjærleik som han elska oss med –",
+    "versions": [
+      {
+        "text": "Men Gud, som er rik på miskunn, elska oss med si store kjærleik, og –",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "The Greek 'διὰ τὴν πολλὴν ἀγάπην αὐτοῦ ἣν ἠγάπησεν ἡμᾶς' uses 'διά' + accusative meaning 'because of / on account of' his great love. The current translation 'elska oss med si store kjærleik' (loved us with his great love) loses the causal sense that this great love is the reason for the action in v. 5. The phrase should convey 'because of his great love with which he loved us'."
+      }
+    ]
   },
   {
     "bookId": 49,
@@ -81,7 +105,15 @@
     "bookId": 49,
     "chapterId": 2,
     "verseId": 12,
-    "text": "På den tida var de utan Kristus, utestengde frå borgarretten i Israel og framande for paktene med lovnaden. De var utan von og utan Gud i verda."
+    "text": "På den tida var de utan Kristus, utestengde frå borgarretten i Israel og framande for lovnadspaktene. De var utan von og utan Gud i verda.",
+    "versions": [
+      {
+        "text": "På den tida var de utan Kristus, utestengde frå borgarretten i Israel og framande for paktene med lovnaden. De var utan von og utan Gud i verda.",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "The Greek 'τῶν διαθηκῶν τῆς ἐπαγγελίας' means 'the covenants of the promise' – i.e. the covenants that contain/embody the promise. 'Paktene med lovnaden' (the covenants with the promise) subtly changes the genitive relationship. 'Lovnadspaktene' (the promise-covenants) or 'paktene som ber lovnaden' would be more precise."
+      }
+    ]
   },
   {
     "bookId": 49,
@@ -111,7 +143,15 @@
     "bookId": 49,
     "chapterId": 2,
     "verseId": 16,
-    "text": "Slik kunne han forsona dei begge med Gud i éin kropp gjennom krossen, der han drap fiendskapen."
+    "text": "Slik kunne han forsona dei begge med Gud i éin kropp gjennom krossen, og der drepa fiendskapen.",
+    "versions": [
+      {
+        "text": "Slik kunne han forsona dei begge med Gud i éin kropp gjennom krossen, der han drap fiendskapen.",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "The Greek 'ἀποκτείνας τὴν ἔχθραν ἐν αὐτῷ' uses a participle. The translation 'der han drap fiendskapen' is acceptable, but 'drepa' is more standard nynorsk for the infinitive/past participle form than the colloquial 'drap' used as a finite verb in a relative clause. Minor stylistic point."
+      }
+    ]
   },
   {
     "bookId": 49,

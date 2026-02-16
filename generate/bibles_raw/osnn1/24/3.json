@@ -3,7 +3,15 @@
     "bookId": 24,
     "chapterId": 3,
     "verseId": 1,
-    "text": "Seier ein: Om ein mann sender frå seg kona si, og ho går frå han og vert ein annan manns kone, kan han då venda attende til henne? Ville ikkje det landet då verta heilt vanhelga? Men du har drive hor med mange elskarar, og likevel vil du venda attende til meg, seier Herren."
+    "text": "Det vert sagt: Om ein mann sender frå seg kona si, og ho går frå han og vert ein annan manns kone, kan han då venda attende til henne? Ville ikkje det landet då verta heilt vanhelga? Men du har drive hor med mange elskarar, og likevel – vend attende til meg! seier Herren.",
+    "versions": [
+      {
+        "text": "Seier ein: Om ein mann sender frå seg kona si, og ho går frå han og vert ein annan manns kone, kan han då venda attende til henne? Ville ikkje det landet då verta heilt vanhelga? Men du har drive hor med mange elskarar, og likevel vil du venda attende til meg, seier Herren.",
+        "type": "grammar",
+        "severity": "minor",
+        "explanation": "1) 'Seier ein' er litt uklart som opning; 'Det vert sagt' er meir naturleg nynorsk. 2) Slutten וְשׁוֹב אֵלַי er ein imperativ ('vend attende til meg!'), ikkje ein konstatering ('vil du venda attende'). Herren oppmodar Israel til å venda om trass i utruskap."
+      }
+    ]
   },
   {
     "bookId": 24,
@@ -21,11 +29,17 @@
     "bookId": 24,
     "chapterId": 3,
     "verseId": 3,
-    "text": "Men du har fått ei horepanne, du nektar å skjemmast.",
+    "text": "Difor vart regnskurane haldne attende, og vårregnet kom ikkje. Du har fått ei horepanne, du nektar å skjemmast.",
     "versions": [
       {
         "text": "Difor vart regnskurane haldne attende, og vårregnet kom ikkje. Men du har panna til ei hore, du nektar å skjemmast.",
         "explanation": "Det hebraiske uttrykket מֵצַח אִשָּׁה זוֹנָה (metsach ishah zonah) tyder bokstavleg 'ei horekvinnes panne' - eit idiom for skamløyse. 'Horepanne' er eit meir naturleg norsk uttrykk som fangar idiomets kraft betre enn 'panna til ei hore'."
+      },
+      {
+        "text": "Men du har fått ei horepanne, du nektar å skjemmast.",
+        "type": "error",
+        "severity": "major",
+        "explanation": "Den første delen av verset (om regnet som vart halde attende og vårregnet som ikkje kom) manglar heilt i den noverande omsetjinga. Det hebraiske וַיִּמָּנְעוּ רְבִבִים וּמַלְקוֹשׁ לוֹא הָיָה er ein viktig del av verset som viser Guds dom. Merk at den førre versjonen hadde denne teksten med, men den vart fjerna – truleg ved eit mistak sidan grunngjevinga berre handla om å endra 'panna til ei hore' til 'horepanne'."
       }
     ]
   },
@@ -63,7 +77,15 @@
     "bookId": 24,
     "chapterId": 3,
     "verseId": 9,
-    "text": "Fordi horelivet hennar var så lettvint, vanhelga ho landet. Ho dreiv hor med stein og tre."
+    "text": "Fordi ho tok horelivet så lett, vanhelga ho landet. Ho dreiv hor med stein og tre.",
+    "versions": [
+      {
+        "text": "Fordi horelivet hennar var så lettvint, vanhelga ho landet. Ho dreiv hor med stein og tre.",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "Det hebraiske מִקֹּל זְנוּתָהּ tyder bokstavleg 'frå det lette i horelivet hennar' – dvs. at ho tok horelivet lett/ringakta det. 'Var så lettvint' er litt uklart på nynorsk; 'tok horelivet så lett' er meir idiomatisk og presist."
+      }
+    ]
   },
   {
     "bookId": 24,
@@ -93,7 +115,15 @@
     "bookId": 24,
     "chapterId": 3,
     "verseId": 14,
-    "text": "Vend om, de fråfalne born, seier Herren, for eg er herren dykkar. Eg vil ta dykk, éin frå kvar by og to frå kvar ætt, og føra dykk til Sion."
+    "text": "Vend om, de fråfalne born, seier Herren, for eg er ektemannen dykkar. Eg vil ta dykk, éin frå kvar by og to frå kvar ætt, og føra dykk til Sion.",
+    "versions": [
+      {
+        "text": "Vend om, de fråfalne born, seier Herren, for eg er herren dykkar. Eg vil ta dykk, éin frå kvar by og to frå kvar ætt, og føra dykk til Sion.",
+        "type": "theological",
+        "severity": "major",
+        "explanation": "Det hebraiske בָּעַלְתִּי בָכֶם (ba'alti bakhem) tyder 'eg er herre/ektemann over dykk'. I konteksten av Jeremia, der forholdet mellom Gud og Israel konsekvent vert skildra som eit ekteskapsforhold (jf. v. 1, 20), bør dette omsetjast med 'ektemannen dykkar' heller enn 'herren dykkar' (med liten h) som kan forvekslast med tittelen 'Herren' (YHWH). Dessutan manglar resten av verset i den føreslåtte teksten – det er med i originalen."
+      }
+    ]
   },
   {
     "bookId": 24,

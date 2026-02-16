@@ -33,7 +33,15 @@
     "bookId": 43,
     "chapterId": 17,
     "verseId": 5,
-    "text": "Og no, Far, herleggjer du meg hos deg sjølv med den herlegdomen eg hadde hos deg før verda vart til."
+    "text": "Og no, Far, herleggjer meg hos deg sjølv med den herlegdomen eg hadde hos deg før verda vart til.",
+    "versions": [
+      {
+        "text": "Og no, Far, herleggjer du meg hos deg sjølv med den herlegdomen eg hadde hos deg før verda vart til.",
+        "type": "error",
+        "severity": "major",
+        "explanation": "'δόξασόν με σύ' er ein imperativ (bøn til Faderen). 'herleggjer du meg' kan lesast som ein indikativ påstand ('du herleggjer meg') i staden for ein imperativ ('herleggjer meg!'). Å fjerne 'du' gjer det tydelegare at dette er ei bøn/oppmoding, ikkje ein påstand."
+      }
+    ]
   },
   {
     "bookId": 43,
@@ -117,7 +125,15 @@
     "bookId": 43,
     "chapterId": 17,
     "verseId": 18,
-    "text": "Slik du har sendt meg til verda, har eg sendt dei til verda."
+    "text": "Slik du har sendt meg til verda, har eg òg sendt dei til verda.",
+    "versions": [
+      {
+        "text": "Slik du har sendt meg til verda, har eg sendt dei til verda.",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "Det greske κἀγώ (= καὶ ἐγώ) betyr 'eg òg/eg likeins'. Ordet 'òg' manglar i omsettinga og understrekar parallellen mellom Faderens sending og Jesu sending."
+      }
+    ]
   },
   {
     "bookId": 43,
@@ -135,11 +151,17 @@
     "bookId": 43,
     "chapterId": 17,
     "verseId": 21,
-    "text": "at alle skal vera eitt. Slik du, Far, er i meg og eg i deg, skal dei òg vera i oss, så verda skal tru at du har sendt meg.",
+    "text": "at alle skal vera eitt, slik du, Far, er i meg og eg i deg, så dei òg skal vera i oss, så verda skal tru at du har sendt meg.",
     "versions": [
       {
         "text": "Eg bed at alle skal vera eitt, slik du, Far, er i meg og eg i deg. Slik skal dei òg vera i oss, så verda skal tru at du har sendt meg.",
         "explanation": "Vers 20 og 21 heng grammatisk saman i originalen. Vers 20 sluttar med komma for å vise at vers 21 er ein fortsettelse av bøna ('at alle skal vera eitt...')."
+      },
+      {
+        "text": "at alle skal vera eitt. Slik du, Far, er i meg og eg i deg, skal dei òg vera i oss, så verda skal tru at du har sendt meg.",
+        "type": "grammar",
+        "severity": "minor",
+        "explanation": "Verset startar med liten bokstav ('at') som ein fortsettelse frå v.20, men har punktum etter 'eitt' som bryt setninga. I originalen er dette ein samanhengande setning. Eit komma etter 'eitt' ville betre reflektere den greske syntaksen. Den førre versjonen er ulik denne formuleringa."
       }
     ]
   },

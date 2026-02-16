@@ -39,11 +39,17 @@
     "bookId": 19,
     "chapterId": 103,
     "verseId": 6,
-    "text": "HERREN gjer rettferdige gjerningar og sørgjer for rett til alle som vert undertrykte.",
+    "text": "HERREN gjer rettferd og skaffar rett for alle som vert undertrykte.",
     "versions": [
       {
         "text": "Herren gjer rettferdige gjerningar og sørgjer for rett til alle som vert undertrykte.",
         "explanation": "For konsistens bør HERREN (יְהוָה) skrivast med store bokstavar gjennom heile salmen, slik det er gjort i vers 1, 2, 8, 11 osv."
+      },
+      {
+        "text": "HERREN gjer rettferdige gjerningar og sørgjer for rett til alle som vert undertrykte.",
+        "type": "error",
+        "severity": "major",
+        "explanation": "Det hebraiske צְדָקוֹת tyder 'rettferd/rettferdige handlingar' heller enn 'rettferdige gjerningar'. Dessutan er 'sørgjer for rett' ein unødvendig omskriving av וּמִשְׁפָּטִים som enklare kan gjevast att med 'skaffar rett'. Formuleringa vert meir presis og meir poetisk."
       }
     ]
   },
@@ -57,19 +63,43 @@
     "bookId": 19,
     "chapterId": 103,
     "verseId": 8,
-    "text": "Herren er miskunnsam og nådig, sein til vreide og rik på kjærleik."
+    "text": "HERREN er miskunnsam og nådig, sein til vreide og rik på nåde.",
+    "versions": [
+      {
+        "text": "Herren er miskunnsam og nådig, sein til vreide og rik på kjærleik.",
+        "type": "error",
+        "severity": "major",
+        "explanation": "To problem: (1) For konsistens bør 'Herren' skrivast 'HERREN' med store bokstavar, slik det er gjort i resten av salmen. (2) Det hebraiske חֶסֶד (chesed) er omsett med 'kjærleik' her, men med 'nåde' i vers 11 og 17. חֶסֶד tyder 'trufast nåde/miskunn' og bør omsetjast konsekvent. 'Nåde' passar betre her i den teologiske samanhengen."
+      }
+    ]
   },
   {
     "bookId": 19,
     "chapterId": 103,
     "verseId": 9,
-    "text": "Han går ikkje alltid i rette med oss og held ikkje på vreiden for alltid."
+    "text": "Han kjem ikkje alltid med klagemål, og held ikkje på vreiden for evig.",
+    "versions": [
+      {
+        "text": "Han går ikkje alltid i rette med oss og held ikkje på vreiden for alltid.",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "Det hebraiske יָרִיב tyder 'strir/fører sak/klagemål', ikkje berre 'går i rette'. Og לָנֶצַח og לְעוֹלָם tyder begge 'for evig/for alltid' – dei to ledda i parallellismen bør bruke ulike ord for å spegla den poetiske variasjonen i originalen."
+      }
+    ]
   },
   {
     "bookId": 19,
     "chapterId": 103,
     "verseId": 10,
-    "text": "Han handlar ikkje med oss etter våre synder og løner oss ikkje etter vår skuld."
+    "text": "Han handlar ikkje med oss etter syndene våre og gjev oss ikkje att etter skulda vår.",
+    "versions": [
+      {
+        "text": "Han handlar ikkje med oss etter våre synder og løner oss ikkje etter vår skuld.",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "To forbetringar: (1) Nynorsk føretrekkjer etterstilt eigedomspronomen ('syndene våre', 'skulda vår') framfor førestilt ('våre synder', 'vår skuld'). (2) גָּמַל tyder 'gjev att/gjengjeld', ikkje 'løner' som har for positiv klang her."
+      }
+    ]
   },
   {
     "bookId": 19,
@@ -87,7 +117,15 @@
     "bookId": 19,
     "chapterId": 103,
     "verseId": 13,
-    "text": "Som ein far viser miskunn mot borna sine, slik viser Herren miskunn mot dei som fryktar han."
+    "text": "Som ein far viser miskunn mot borna sine, slik viser HERREN miskunn mot dei som fryktar han.",
+    "versions": [
+      {
+        "text": "Som ein far viser miskunn mot borna sine, slik viser Herren miskunn mot dei som fryktar han.",
+        "type": "error",
+        "severity": "minor",
+        "explanation": "For konsistens bør 'Herren' skrivast 'HERREN' med store bokstavar, slik det er gjort gjennomgåande i resten av salmen (jf. endringane i vers 6, 17, 19–22)."
+      }
+    ]
   },
   {
     "bookId": 19,
@@ -117,7 +155,15 @@
     "bookId": 19,
     "chapterId": 103,
     "verseId": 16,
-    "text": "Når vinden fer over han, er han borte, og staden hans kjenner han ikkje meir."
+    "text": "For vinden fer over det, og det er borte, og staden kjenner det ikkje meir.",
+    "versions": [
+      {
+        "text": "Når vinden fer over han, er han borte, og staden hans kjenner han ikkje meir.",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "Pronomenet bør visa attende til det kollektive 'mennesket'/graset/blomen frå vers 15. Bruken av 'han' er tvetydig – det kan verka som det viser til Gud. Dessutan er כִּי kausal ('for'), ikkje temporal ('når'). Og det er staden som ikkje kjenner att mennesket, ikkje omvendt – subjektet i siste ledd er מְקוֹמוֹ."
+      }
+    ]
   },
   {
     "bookId": 19,
@@ -141,11 +187,17 @@
     "bookId": 19,
     "chapterId": 103,
     "verseId": 19,
-    "text": "HERREN har reist sin kongsstol i himmelen, og hans kongerike rår over alt.",
+    "text": "HERREN har grunnfest trona si i himmelen, og kongedømet hans rår over alt.",
     "versions": [
       {
         "text": "Herren har reist sin kongsstol i himmelen, og hans kongerike rår over alt.",
         "explanation": "For konsistens bør HERREN skrivast med store bokstavar."
+      },
+      {
+        "text": "HERREN har reist sin kongsstol i himmelen, og hans kongerike rår over alt.",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "הֵכִין tyder 'grunnfest/sett fast', ikkje 'reist'. כִּסְאוֹ er 'trona hans' – 'kongsstol' er uvanleg på nynorsk. Dessutan er etterstilt eigedomspronomen meir naturleg nynorsk: 'trona si', 'kongedømet hans'."
       }
     ]
   },

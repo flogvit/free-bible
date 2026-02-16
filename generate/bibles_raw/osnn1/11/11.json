@@ -153,7 +153,15 @@
     "bookId": 11,
     "chapterId": 11,
     "verseId": 23,
-    "text": "Gud reiste også opp ein annan motstandar mot Salomo: Reson, son til Eljada, som hadde flykta frå herren sin, Hadadeser, kongen i Soba."
+    "text": "Gud reiste også opp ein motstandar mot han: Reson, son til Eljada, som hadde flykta frå herren sin, Hadadeser, kongen i Soba.",
+    "versions": [
+      {
+        "text": "Gud reiste også opp ein annan motstandar mot Salomo: Reson, son til Eljada, som hadde flykta frå herren sin, Hadadeser, kongen i Soba.",
+        "type": "error",
+        "severity": "major",
+        "explanation": "Det hebraiske 'לוֹ' tyder 'mot han', ikkje 'mot Salomo'. Teksten nemner ikkje Salomo eksplisitt her. Dessutan står det ikkje 'ein annan' (אחר) i grunnteksten – ordet 'annan' er lagt til. Sjølv om konteksten tilseier at det er Salomo, bør omsettinga ikkje leggja til ord som ikkje finst i originalen."
+      }
+    ]
   },
   {
     "bookId": 11,
@@ -165,7 +173,15 @@
     "bookId": 11,
     "chapterId": 11,
     "verseId": 25,
-    "text": "Han var ein motstandar for Israel så lenge Salomo levde, i tillegg til det vonde Hadad gjorde. Reson avskydde Israel og vart konge over Aram."
+    "text": "Han var ein motstandar for Israel så lenge Salomo levde, i tillegg til det vonde Hadad gjorde. Han avskydde Israel og vart konge over Aram.",
+    "versions": [
+      {
+        "text": "Han var ein motstandar for Israel så lenge Salomo levde, i tillegg til det vonde Hadad gjorde. Reson avskydde Israel og vart konge over Aram.",
+        "type": "error",
+        "severity": "minor",
+        "explanation": "Subjektet 'Reson' er ikkje nemnt eksplisitt i grunnteksten – det er ein fortsetjing av same subjekt (som kan vera Reson eller Hadad, avhengig av tolking). Å bruka 'Han' i staden for 'Reson' er meir tru mot grunnteksten og unngår å leggja til informasjon."
+      }
+    ]
   },
   {
     "bookId": 11,
@@ -213,11 +229,17 @@
     "bookId": 11,
     "chapterId": 11,
     "verseId": 33,
-    "text": "Dette er fordi dei har forlate meg og tilbede Astarte, gudinna til sidonarane, Kemosj, guden til Moab, og Milkom, guden til ammonittane. Dei har ikkje gått på vegane mine og gjort det som er rett i mine auge, og halde forskriftene og lovene mine, slik David, far hans, gjorde.",
+    "text": "Dette er fordi dei har forlate meg og tilbede Astarte, gudinna til sidonarane, Kemosj, guden til Moab, og Milkom, guden til ammonittane. Dei har ikkje gått på vegane mine og gjort det som er rett i mine auge, og ikkje halde forskriftene og lovene mine, slik David, far hans, gjorde.",
     "versions": [
       {
         "text": "Dette er fordi dei har forlate meg og tilbede Astarte, guda til sidonarane, Kemosj, guden til Moab, og Milkom, guden til ammonittane. Dei har ikkje gått på vegane mine og gjort det som er rett i mine auge, og halde forskriftene og lovene mine, slik David, far hans, gjorde.",
         "explanation": "Konsistent med vers 5 - Astarte var ei kvinneleg guddomme."
+      },
+      {
+        "text": "Dette er fordi dei har forlate meg og tilbede Astarte, gudinna til sidonarane, Kemosj, guden til Moab, og Milkom, guden til ammonittane. Dei har ikkje gått på vegane mine og gjort det som er rett i mine auge, og halde forskriftene og lovene mine, slik David, far hans, gjorde.",
+        "type": "grammar",
+        "severity": "minor",
+        "explanation": "Det hebraiske uttrykket 'וְלֹא־הָלְכוּ בִדְרָכַי לַעֲשׂוֹת הַיָּשָׁר בְּעֵינַי וְחֻקֹּתַי וּמִשְׁפָּטַי' har ein negasjon som gjeld heile setninga. I den noverande omsettinga kan 'og halde forskriftene' lesast som om dei faktisk heldt forskriftene. Eit ekstra 'ikkje' gjer det klårare."
       }
     ]
   },
@@ -243,7 +265,15 @@
     "bookId": 11,
     "chapterId": 11,
     "verseId": 37,
-    "text": "Men deg vil eg ta og du skal vera konge over alt det hjarta ditt ønskjer, og du skal vera konge over Israel."
+    "text": "Men deg vil eg ta, og du skal rå over alt det hjarta ditt ønskjer, og du skal vera konge over Israel.",
+    "versions": [
+      {
+        "text": "Men deg vil eg ta og du skal vera konge over alt det hjarta ditt ønskjer, og du skal vera konge over Israel.",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "Uttrykket 'vera konge over alt det hjarta ditt ønskjer' er klønete og gjentek 'konge' to gonger i same verset. Det hebraiske 'וּמָלַכְתָּ בְּכֹל אֲשֶׁר־תְּאַוֶּה נַפְשֶׁךָ' tyder 'du skal herska/rå over alt det sjela di ønskjer'. Å bruka 'rå over' i første del gjev betre flyt."
+      }
+    ]
   },
   {
     "bookId": 11,

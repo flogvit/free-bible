@@ -51,7 +51,15 @@
     "bookId": 9,
     "chapterId": 15,
     "verseId": 9,
-    "text": "Men Saul og folket sparte Agag og det beste av sauene og oksane, dei gjødde dyra og lamma, og alt som var verdfullt. Dei ville ikkje vigsla det til undergang. Men alt som var verdlaust og ringt, det vigde dei til undergang."
+    "text": "Men Saul og folket sparte Agag og det beste av sauene og storfeet, dei næstbeste dyra og lamma, og alt som var verdfullt. Dei ville ikkje vigsla det til undergang. Men alt som var verdlaust og ringt, det vigde dei til undergang.",
+    "versions": [
+      {
+        "text": "Men Saul og folket sparte Agag og det beste av sauene og oksane, dei gjødde dyra og lamma, og alt som var verdfullt. Dei ville ikkje vigsla det til undergang. Men alt som var verdlaust og ringt, det vigde dei til undergang.",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "The Hebrew וְהַמִּשְׁנִים means 'the second best' (fatted/second-rank animals), not 'dei gjødde dyra' (the fattened animals). The word comes from the root שׁנה (second). Also הַכָּרִים means 'the lambs/rams' which is correctly translated. The main issue is 'dei gjødde dyra' which should be 'dei næstbeste dyra' to reflect the Hebrew meaning."
+      }
+    ]
   },
   {
     "bookId": 9,
@@ -99,7 +107,15 @@
     "bookId": 9,
     "chapterId": 15,
     "verseId": 17,
-    "text": "Samuel sa: «Var du ikkje liten i eigne auge då du vart hovding over Israels stammar? Herren salva deg til konge over Israel."
+    "text": "Samuel sa: «Endå du var liten i eigne auge, vart du hovding over Israels stammar. Herren salva deg til konge over Israel.",
+    "versions": [
+      {
+        "text": "Samuel sa: «Var du ikkje liten i eigne auge då du vart hovding over Israels stammar? Herren salva deg til konge over Israel.",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "The Hebrew הֲלוֹא אִם expresses a rhetorical concessive: 'Is it not the case that even though you were small in your own eyes, you became head of the tribes of Israel?' The current phrasing with 'då' (when) slightly weakens the rhetorical force, but 'endå' (even though) better captures the concessive nuance."
+      }
+    ]
   },
   {
     "bookId": 9,
@@ -189,7 +205,15 @@
     "bookId": 9,
     "chapterId": 15,
     "verseId": 32,
-    "text": "Då sa Samuel: «Før Agag, kongen over Amalek, hit til meg!» Og Agag kom til han med lette steg. Agag sa: «Sanneleg, dødens bitterheit er viken bort.»"
+    "text": "Og Agag kom til han med skjelvande steg. Agag sa: «Sanneleg, dødens bitterheit er hard.»",
+    "versions": [
+      {
+        "text": "Då sa Samuel: «Før Agag, kongen over Amalek, hit til meg!» Og Agag kom til han med lette steg. Agag sa: «Sanneleg, dødens bitterheit er viken bort.»",
+        "type": "error",
+        "severity": "major",
+        "explanation": "The word מַעֲדַנֹּת is debated, but many translations render it as something indicating trembling/fearfulness rather than 'light steps.' Also, אָכֵן סָר מַר־הַמָּוֶת is ambiguous - it could mean 'surely the bitterness of death has turned aside/passed' (Agag hoping he'll be spared) or 'surely death is bitter.' The current translation 'er viken bort' (has departed) is actually one valid reading. However, 'lette steg' (light steps) is misleading as it suggests carefree walking, whereas the Hebrew more likely conveys hesitancy or trembling. This is a significant interpretive issue."
+      }
+    ]
   },
   {
     "bookId": 9,
@@ -207,6 +231,14 @@
     "bookId": 9,
     "chapterId": 15,
     "verseId": 35,
-    "text": "Samuel såg ikkje Saul att før sin dødsdag, men han sørgde over Saul. Og Herren angra at han hadde gjort Saul til konge over Israel."
+    "text": "Samuel såg ikkje Saul att før Saul døydde, men han sørgde over Saul. Og Herren angra at han hadde gjort Saul til konge over Israel.",
+    "versions": [
+      {
+        "text": "Samuel såg ikkje Saul att før sin dødsdag, men han sørgde over Saul. Og Herren angra at han hadde gjort Saul til konge over Israel.",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "The phrase 'før sin dødsdag' is ambiguous in Norwegian - it could refer to Samuel's death or Saul's death. The Hebrew עד־יום מותו most likely refers to Samuel's death (Samuel never again saw Saul until the day Samuel died). Clarifying whose death is meant would improve the translation. 'Før Saul døydde' or 'til sin eigen dødsdag' would be clearer."
+      }
+    ]
   }
 ]

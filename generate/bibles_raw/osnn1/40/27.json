@@ -111,7 +111,15 @@
     "bookId": 40,
     "chapterId": 27,
     "verseId": 19,
-    "text": "Medan han sat på domarsetet, sende kona hans bod til han og sa: «Ha ikkje noko med denne rettferdige mannen å gjera! For eg har lidd mykje i ein draum i natt på grunn av han.»"
+    "text": "Medan han sat på domarsetet, sende kona hans bod til han og sa: «Ha ikkje noko med denne rettferdige mannen å gjera! For eg har lidd mykje i dag i ein draum på grunn av han.»",
+    "versions": [
+      {
+        "text": "Medan han sat på domarsetet, sende kona hans bod til han og sa: «Ha ikkje noko med denne rettferdige mannen å gjera! For eg har lidd mykje i ein draum i natt på grunn av han.»",
+        "type": "error",
+        "severity": "minor",
+        "explanation": "σήμερον betyr 'i dag', ikkje 'i natt'. Draumar skjer om natta, men det greske ordet peikar på dagen som heilskap. 'I dag' er meir nøyaktig enn 'i natt'."
+      }
+    ]
   },
   {
     "bookId": 40,
@@ -141,7 +149,15 @@
     "bookId": 40,
     "chapterId": 27,
     "verseId": 24,
-    "text": "Då Pilatus såg at ingenting hjelpte, men at uroa berre auka, tok han vatn og vaska hendene framfor folket og sa: «Eg er uskuldig i denne mannens blod. Det får de sjølve svara for.»"
+    "text": "Då Pilatus såg at ingenting hjelpte, men at uroa berre auka, tok han vatn og vaska hendene framfor folket og sa: «Eg er uskuldig i dette blodet. Det får de sjølve svara for.»",
+    "versions": [
+      {
+        "text": "Då Pilatus såg at ingenting hjelpte, men at uroa berre auka, tok han vatn og vaska hendene framfor folket og sa: «Eg er uskuldig i denne mannens blod. Det får de sjølve svara for.»",
+        "type": "error",
+        "severity": "minor",
+        "explanation": "τούτου (dette) viser til αἵματος (blodet), ikkje til ein person. Gresk tekst seier 'dette blodet' (τοῦ αἵματος τούτου), ikkje 'denne mannens blod'. Å leggja til 'mannens' er eit tillegg som ikkje er i originalteksten."
+      }
+    ]
   },
   {
     "bookId": 40,
@@ -189,7 +205,21 @@
     "bookId": 40,
     "chapterId": 27,
     "verseId": 32,
-    "text": "På vegen ut møtte dei ein mann frå Kyréne som heitte Simon. Han tvinga dei til å bera krossen."
+    "text": "På vegen ut møtte dei ein mann frå Kyréne som heitte Simon. Dei tvinga han til å bera krossen hans.",
+    "versions": [
+      {
+        "text": "På vegen ut møtte dei ein mann frå Kyréne som heitte Simon. Han tvinga dei til å bera krossen.",
+        "type": "error",
+        "severity": "major",
+        "explanation": "'τὸν σταυρὸν αὐτοῦ' betyr 'krossen hans' (dvs. Jesus sin kross). Utan 'hans' er det uklart kva kross det er tale om. Dessutan er subjektet feil: det var soldatane som tvinga Simon (τοῦτον ἠγγάρευσαν = 'dei tvinga denne'). Men sidan 'Han tvinga dei' har same grammatiske problem, bør dette rettast."
+      },
+      {
+        "text": "På vegen ut møtte dei ein mann frå Kyréne som heitte Simon. Han tvinga dei til å bera krossen hans.",
+        "type": "error",
+        "severity": "major",
+        "explanation": "Subjektet er feil i omsetjinga. I gresk er det soldatane (dei) som tvinga Simon (han), ikkje Simon som tvinga dei. 'τοῦτον ἠγγάρευσαν' = 'dei tvinga denne (mannen)'. Gjeldande omsetjing snur meininga."
+      }
+    ]
   },
   {
     "bookId": 40,
@@ -291,7 +321,15 @@
     "bookId": 40,
     "chapterId": 27,
     "verseId": 49,
-    "text": "Men dei andre sa: «Vent, lat oss sjå om Elia kjem og frelser han.»"
+    "text": "Men dei andre sa: «Vent, lat oss sjå om Elia kjem og bergar han.»",
+    "versions": [
+      {
+        "text": "Men dei andre sa: «Vent, lat oss sjå om Elia kjem og frelser han.»",
+        "type": "error",
+        "severity": "minor",
+        "explanation": "σώσων betyr 'berga/redda' i denne samanhengen, ikkje 'frelsa' i teologisk meining. 'Bergar' passar betre for fysisk redning, og er meir konsistent med moderne nynorsk. 'Frelsa' har sterkare soteriologiske konnotasjonar."
+      }
+    ]
   },
   {
     "bookId": 40,
@@ -393,7 +431,15 @@
     "bookId": 40,
     "chapterId": 27,
     "verseId": 65,
-    "text": "Pilatus sa til dei: «De har vakter. Gå og syt for vakthald så godt de kan.»"
+    "text": "Pilatus sa til dei: «De får ein vakt. Gå og syt for vakthald så godt de kan.»",
+    "versions": [
+      {
+        "text": "Pilatus sa til dei: «De har vakter. Gå og syt for vakthald så godt de kan.»",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "Ἔχετε κουστωδίαν kan tolkast som imperativ ('Ta ein vakt!') eller indikativ ('De har ein vakt'). Mange tolkar det som at Pilatus gjev dei ein romersk vakt, sidan dei elles ikkje ville trengt å spørja. 'De får ein vakt' gjev betre meining i konteksten."
+      }
+    ]
   },
   {
     "bookId": 40,

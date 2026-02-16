@@ -21,7 +21,15 @@
     "bookId": 19,
     "chapterId": 24,
     "verseId": 4,
-    "text": "Den som har reine hender og eit reint hjarte, som ikkje har vendt sjela si mot løgn, og ikkje sver falskt."
+    "text": "Den som har reine hender og eit reint hjarte, som ikkje har vendt sjela si mot det som er tomt, og ikkje sver falskt.",
+    "versions": [
+      {
+        "text": "Den som har reine hender og eit reint hjarte, som ikkje har vendt sjela si mot løgn, og ikkje sver falskt.",
+        "type": "error",
+        "severity": "major",
+        "explanation": "Det hebraiske 'לַשָּׁוְא' (lashshav') tyder 'det tomme/fåfengde/det som er utan verdi', ikkje spesifikt 'løgn'. Ordet viser til det som er tomt, fåfengt eller verdlaust – å venda sjela si mot det fåfengde/tomme. 'Løgn' er for snevert og overlappar dessutan med 'falskt' i neste ledd."
+      }
+    ]
   },
   {
     "bookId": 19,
@@ -33,7 +41,7 @@
     "bookId": 19,
     "chapterId": 24,
     "verseId": 6,
-    "text": "Dette er den slekta som søkjer han, som søkjer ditt andlet, du Jakobs Gud. Sela.",
+    "text": "Dette er den slekta som søkjer han, som søkjer ditt andlet, Jakob. Sela.",
     "versions": [
       {
         "text": "Dette er den ætta som søkjer han, som søkjer ditt andlet, Jakobs Gud. Sela.",
@@ -42,6 +50,12 @@
       {
         "text": "Dette er den ætta som søkjer han, som søkjer ditt andlet, du Jakobs Gud. Sela.",
         "explanation": "Det hebraiske 'דּוֹר' (dor) tyder primært 'generasjon' eller 'slekt'. 'Slekta' er meir presist enn 'ætta' og flyt like godt munnleg."
+      },
+      {
+        "text": "Dette er den slekta som søkjer han, som søkjer ditt andlet, du Jakobs Gud. Sela.",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "I den hebraiske teksten står det 'יַעֲקֹב' (Jakob) utan 'Gud'. Teksten seier 'dei som søkjer ditt andlet, Jakob' – dvs. Jakob er eit namn på folket/den som søkjer Gud, ikkje eit tilnamn på Gud. Mange tolkar dette som ein vokativ til Jakob/Israel (folket). 'Du Jakobs Gud' legg til ordet 'Gud' som ikkje finst i originalen."
       }
     ]
   },

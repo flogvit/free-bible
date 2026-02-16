@@ -21,11 +21,17 @@
     "bookId": 2,
     "chapterId": 6,
     "verseId": 3,
-    "text": "Eg synte meg for Abraham, Isak og Jakob som Gud Den Allmektige, men ved mitt namn Herren gjorde eg meg ikkje kjend for dei.",
+    "text": "Eg synte meg for Abraham, Isak og Jakob som El Sjaddai, men ved mitt namn Herren gjorde eg meg ikkje kjend for dei.",
     "versions": [
       {
         "text": "Eg synte meg for Abraham, Isak og Jakob som Gud Den Allmektige, men under mitt namn Herren gjorde eg meg ikkje kjend for dei.",
         "explanation": "Det hebraiske בְּשֵׁם (b'shem) tyder 'ved namnet' heller enn 'under namnet'. 'Ved mitt namn' er meir idiomatisk på nynorsk og nærare originalen."
+      },
+      {
+        "text": "Eg synte meg for Abraham, Isak og Jakob som Gud Den Allmektige, men ved mitt namn Herren gjorde eg meg ikkje kjend for dei.",
+        "type": "theological",
+        "severity": "minor",
+        "explanation": "Det hebraiske בְּאֵל שַׁדַּי (El Shaddai) er eit eigennamn på Gud. Å omsetja det til 'Gud Den Allmektige' er ikkje feil teologisk, men i konteksten der poenget nettopp er skilnaden mellom gudsnamn, ville det vera meir presist å bruka eigennamnet 'El Sjaddai' – slik at kontrasten mellom dei to namna (El Sjaddai vs. JHVH/Herren) kjem tydelegare fram."
       }
     ]
   },
@@ -39,7 +45,15 @@
     "bookId": 2,
     "chapterId": 6,
     "verseId": 5,
-    "text": "No har eg òg høyrt klageropet frå Israels born, som egyptarane held som slavar, og eg har kome i hug pakta mi."
+    "text": "Og eg har òg høyrt klageropet frå Israels born, som egyptarane held som slavar, og eg har kome i hug pakta mi.",
+    "versions": [
+      {
+        "text": "No har eg òg høyrt klageropet frå Israels born, som egyptarane held som slavar, og eg har kome i hug pakta mi.",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "Det hebraiske וְגַם (vegam) tyder 'og òg', ikkje 'no'. Verset er ei framhald av Guds tale frå vers 4 (som byrjar med וְגַם). Å bruka 'No' endrar tidsaspektet og koplar det laus frå samanhengen. 'Og' held den naturlege koplinga til det føregåande verset."
+      }
+    ]
   },
   {
     "bookId": 2,
@@ -69,7 +83,15 @@
     "bookId": 2,
     "chapterId": 6,
     "verseId": 9,
-    "text": "Moses fortalde dette til Israels born, men dei høyrde ikkje på han, fordi dei var motlause og hadde hardt slavearbeid."
+    "text": "Moses sa dette til Israels born, men dei høyrde ikkje på Moses, fordi dei var motlause og utmatta av hardt slavearbeid.",
+    "versions": [
+      {
+        "text": "Moses fortalde dette til Israels born, men dei høyrde ikkje på han, fordi dei var motlause og hadde hardt slavearbeid.",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "Det hebraiske וַיְדַבֵּר (vaydabber) tyder 'tala/sa', ikkje 'fortalde'. Dessutan seier originalen מִקֹּצֶר רוּחַ וּמֵעֲבֹדָה קָשָׁה – 'av kortpust (motløyse) og av hardt arbeid'. Det er to årsaker, og den andre handlar om at dei var utmatta av arbeidet, ikkje berre at dei 'hadde' det."
+      }
+    ]
   },
   {
     "bookId": 2,
@@ -135,7 +157,15 @@
     "bookId": 2,
     "chapterId": 6,
     "verseId": 16,
-    "text": "Dette er namna på Levi sine søner etter ættene deira: Gersjon, Kehat og Merari. Levi levde i hundre og trettisjau år."
+    "text": "Dette er namna på sønene til Levi etter ættene deira: Gersjon, Kehat og Merari. Levi levde i hundre og trettisjau år.",
+    "versions": [
+      {
+        "text": "Dette er namna på Levi sine søner etter ættene deira: Gersjon, Kehat og Merari. Levi levde i hundre og trettisjau år.",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "For konsistens med resten av teksten (t.d. 'sønene til Ruben', 'sønene til Simeon', 'sønene til Kehat' osb.) bør ein bruka 'sønene til Levi' i staden for 'Levi sine søner'."
+      }
+    ]
   },
   {
     "bookId": 2,
@@ -207,7 +237,15 @@
     "bookId": 2,
     "chapterId": 6,
     "verseId": 26,
-    "text": "Det var denne Aron og Moses som Herren sa til: «Før Israels born ut or Egypt, hærflokk for hærflokk.»"
+    "text": "Det var denne Aron og Moses som Herren sa til: «Før Israels born ut or Egypt, flokk for flokk.»",
+    "versions": [
+      {
+        "text": "Det var denne Aron og Moses som Herren sa til: «Før Israels born ut or Egypt, hærflokk for hærflokk.»",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "Det hebraiske צִבְאֹתָם (tsiv'otam) tyder her 'flokkar/skarar' i kontekst av folkegrupper som dreg ut, ikkje nødvendigvis militære hærflokkar. 'Flokk for flokk' er meir nøytralt og dekkjer betre den organiserte utferda av heile folket."
+      }
+    ]
   },
   {
     "bookId": 2,

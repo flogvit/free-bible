@@ -123,11 +123,17 @@
     "bookId": 24,
     "chapterId": 10,
     "verseId": 16,
-    "text": "Han som er Jakobs del, er ikkje som desse, for han er den som har forma alt, og Israel er staven til hans arv. Herren over hærskarane er namnet hans.",
+    "text": "Han som er Jakobs del, er ikkje som desse, for han er den som har forma alt, og Israel er staven i hans arv. Herren over hærskarane er namnet hans.",
     "versions": [
       {
         "text": "Han som er Jakobs del, er ikkje som desse, for han er den som har forma alt, og Israel er hans eige folk. Herren over hærskarane er namnet hans.",
         "explanation": "Det hebraiske 'שֵׁבֶט נַחֲלָתוֹ' betyr bokstavleg 'stav/septer til hans arv' – eit uttrykk for at Israel er Guds spesielle eigedom som han styrer med sin hyrdingestav. 'Hans eige folk' er ei tolking, men mister noko av det konkrete biletspråket."
+      },
+      {
+        "text": "Han som er Jakobs del, er ikkje som desse, for han er den som har forma alt, og Israel er staven til hans arv. Herren over hærskarane er namnet hans.",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "'שֵׁבֶט נַחֲלָתוֹ' betyr 'staven i hans arv' eller 'arvens stav' – preposisjonen bør vera 'i' heller enn 'til' for å markera at Israel er den staven som høyrer til arven hans. Men dette er ein svært liten nyanse."
       }
     ]
   },
@@ -141,11 +147,17 @@
     "bookId": 24,
     "chapterId": 10,
     "verseId": 18,
-    "text": "For så seier Herren: Sjå, denne gongen slyngjer eg ut dei som bur i landet, og eg vil setja dei i naud så dei skal finna det.",
+    "text": "For så seier Herren: Sjå, denne gongen slyngjer eg ut dei som bur i landet, og eg vil trengja dei så dei skal merka det.",
     "versions": [
       {
         "text": "For så seier Herren: Sjå, denne gongen slyngjer eg ut dei som bur i landet, og eg vil trengja dei så dei skal kjenna det.",
         "explanation": "Det hebraiske 'יִמְצָאוּ' (yimtsa'u) betyr 'dei skal finna' – truleg i tydinga at dommen skal råka dei/dei skal oppleva det. 'Kjenna det' er ei fri tolking. 'Finna det' er nærare originalen."
+      },
+      {
+        "text": "For så seier Herren: Sjå, denne gongen slyngjer eg ut dei som bur i landet, og eg vil setja dei i naud så dei skal finna det.",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "'לְמַעַן יִמְצָאוּ' er vanskeleg, men 'finna det' verkar uklart på norsk. 'Merka det' kommuniserer tydinga – at dei verkeleg skal kjenna/oppleva konsekvensane. Men sidan dette allereie er revidert bort frå 'kjenna det', og endringsloggen forklarer valet, kan dette eventuelt stå."
       }
     ]
   },
@@ -171,11 +183,17 @@
     "bookId": 24,
     "chapterId": 10,
     "verseId": 21,
-    "text": "For hyrdingane var vortne som dyr og søkte ikkje Herren. Difor lukkast dei ikkje, og heile flokken deira vart spreidd.",
+    "text": "For hyrdingane var vortne fæaktige og søkte ikkje Herren. Difor lukkast dei ikkje, og heile flokken deira vart spreidd.",
     "versions": [
       {
         "text": "For hyrdingane var utan vit og søkte ikkje Herren. Difor lukkast dei ikkje, og heile flokken deira vart spreidd.",
         "explanation": "Det hebraiske 'נִבְעֲרוּ' (niv'aru) betyr 'vortne brutale/dyriske' (frå same rot som 'dyr'). Dette er sterkare kritikk av leiarane enn berre 'utan vit'."
+      },
+      {
+        "text": "For hyrdingane var vortne som dyr og søkte ikkje Herren. Difor lukkast dei ikkje, og heile flokken deira vart spreidd.",
+        "type": "error",
+        "severity": "major",
+        "explanation": "Det hebraiske נִבְעֲרוּ (niv'aru) kjem frå rota בער som tyder 'vera dum/brutal/uforstandig', ikkje direkte 'vera som dyr'. Medan versjonshistorikken hevdar at rota tyder 'dyrisk', er den primære tydinga i denne konteksten 'uforstandig/tåpeleg'. Det er same ord som i vers 14 (נִבְעַר) der det er omsett 'utan kunnskap'. Å seia 'vortne som dyr' er ei overtolking. Sidan dette allereie er endra frå 'utan vit', og endringsloggen gjev ei forklaring, markerer eg dette men anerkjenner at det er eit bevisst val."
       }
     ]
   },
@@ -201,7 +219,15 @@
     "bookId": 24,
     "chapterId": 10,
     "verseId": 24,
-    "text": "Tukt meg, Herre, men med måte, ikkje i din vreide, så du ikkje gjer meg til inkjes."
+    "text": "Tukt meg, Herre, men med rettferd, ikkje i din vreide, så du ikkje gjer meg til inkjes.",
+    "versions": [
+      {
+        "text": "Tukt meg, Herre, men med måte, ikkje i din vreide, så du ikkje gjer meg til inkjes.",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "Det hebraiske 'אַךְ־בְּמִשְׁפָּט' betyr 'men med rettferd/rett' – altså rettferdig dom, ikkje berre 'med måte'. 'Med måte' er ei fri tolking som endrar meininga frå rettferdig straff til moderat straff. 'Med rettferd' er meir presist."
+      }
+    ]
   },
   {
     "bookId": 24,

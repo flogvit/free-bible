@@ -15,7 +15,15 @@
     "bookId": 5,
     "chapterId": 32,
     "verseId": 2,
-    "text": "Lat læra mi drypa som regn, lat orda mine falla som dogg, som regnskurer over grønt gras, som dropar over grøde."
+    "text": "Lat læra mi drypa som regn, lat talen min falla som dogg, som regnbyer over grønt gras, som dropar over grøde.",
+    "versions": [
+      {
+        "text": "Lat læra mi drypa som regn, lat orda mine falla som dogg, som regnskurer over grønt gras, som dropar over grøde.",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "Hebraisk אִמְרָתִי tyder 'talen min' eller 'det eg seier' – det er ikkje same ord som לִקְחִי (læra mi). 'Orda mine' er akseptabelt, men 'talen min' er meir presist og gjev betre variasjon i parallellismen, slik originalen har."
+      }
+    ]
   },
   {
     "bookId": 5,
@@ -111,7 +119,15 @@
     "bookId": 5,
     "chapterId": 32,
     "verseId": 18,
-    "text": "Klippen som fødde deg, gløymde du, du gløymde Gud som fødde deg."
+    "text": "Klippen som fødde deg, brydde du deg ikkje om, du gløymde Gud som fødde deg.",
+    "versions": [
+      {
+        "text": "Klippen som fødde deg, gløymde du, du gløymde Gud som fødde deg.",
+        "type": "error",
+        "severity": "major",
+        "explanation": "Det hebraiske verbet תֶּשִׁי (frå שׁהה/נשׁה) tyder 'forsømde' eller 'brydde deg ikkje om', ikkje 'gløymde'. 'Gløymde' er brukt i andre del av verset for וַתִּשְׁכַּח. Å bruka 'gløymde' to gonger misser den semantiske skilnaden i originalen."
+      }
+    ]
   },
   {
     "bookId": 5,
@@ -189,7 +205,15 @@
     "bookId": 5,
     "chapterId": 32,
     "verseId": 31,
-    "text": "For klippen deira er ikkje som vår Klippe, det kan fiendane våre sjølve døma om."
+    "text": "For klippen deira er ikkje som vår Klippe, det kan jamvel fiendane våre døma om.",
+    "versions": [
+      {
+        "text": "For klippen deira er ikkje som vår Klippe, det kan fiendane våre sjølve døma om.",
+        "type": "error",
+        "severity": "minor",
+        "explanation": "Det hebraiske וְאֹיְבֵינוּ פְּלִילִים tyder at sjølv fiendane våre kan vera dommarar/vitne om dette. 'Sjølve' er ikkje feil, men 'jamvel' fangar betre den konsessive nyansan – at til og med fiendane innrømmer dette."
+      }
+    ]
   },
   {
     "bookId": 5,
@@ -261,13 +285,29 @@
     "bookId": 5,
     "chapterId": 32,
     "verseId": 42,
-    "text": "Eg skal gjera pilene mine drukne av blod, og sverdet mitt skal eta kjøt – blod frå drepne og fangar, frå det langhåra hovudet til fienden."
+    "text": "Eg skal gjera pilene mine drukne av blod, og sverdet mitt skal eta kjøt – av blod frå drepne og fangar, frå hovudet til fiendens hovdingar.",
+    "versions": [
+      {
+        "text": "Eg skal gjera pilene mine drukne av blod, og sverdet mitt skal eta kjøt – blod frå drepne og fangar, frå det langhåra hovudet til fienden.",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "פַּרְעוֹת er omdiskutert, men tyder truleg 'hovdingar/leiarar' heller enn 'langhåra hovud'. Mange omsetjingar forstår dette som 'fiendanes leiarar'. I tillegg manglar preposisjonen 'av' framfor 'blod' i andre halvdel."
+      }
+    ]
   },
   {
     "bookId": 5,
     "chapterId": 32,
     "verseId": 43,
-    "text": "Jubla, de folkeslag, saman med folket hans! For han hemnar blodet til tenarane sine, han gjev fiendane sine att og sonar landet og folket sitt."
+    "text": "Jubla, de folkeslag, over folket hans! For han hemnar blodet til tenarane sine, han gjev fiendane sine att og sonar landet sitt og folket sitt.",
+    "versions": [
+      {
+        "text": "Jubla, de folkeslag, saman med folket hans! For han hemnar blodet til tenarane sine, han gjev fiendane sine att og sonar landet og folket sitt.",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "Hebraisk הַרְנִינוּ גוֹיִם עַמּוֹ kan tolkast som 'jubla, de folkeslag, over folket hans' (objektskonstruksjon). Dessutan bør 'landet sitt og folket sitt' ha possessiv på begge substantiv for klarheit."
+      }
+    ]
   },
   {
     "bookId": 5,

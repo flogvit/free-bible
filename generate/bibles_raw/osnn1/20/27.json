@@ -99,11 +99,17 @@
     "bookId": 20,
     "chapterId": 27,
     "verseId": 16,
-    "text": "Den som vil halda henne attende, held attende vinden, og olje møter høgrehanda hans.",
+    "text": "Den som vil gøyma henne, gøymer vinden, og olje møter høgrehanda hans.",
     "versions": [
       {
         "text": "Den som vil halda henne attende, held attende vinden, og høgrehanda hans grip etter olje.",
         "explanation": "Det hebraiske 'יִקְרָא' (yiqra) betyr 'møter' eller 'ropar/kallar', ikkje 'grip etter'. Poenget er at olje glir mot handa - det er umogleg å halda fast, akkurat som vinden og den kranglevorne kona."
+      },
+      {
+        "text": "Den som vil halda henne attende, held attende vinden, og olje møter høgrehanda hans.",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "Det hebraiske צֹפְנֶיהָ (tsofneha) kjem frå צָפַן som tyder 'å gøyma/løyna', ikkje 'å halda attende'. Poenget er at det er like umogleg å gøyma/skjula ei kranglevoren kone som å gøyma vinden."
       }
     ]
   },
@@ -111,11 +117,17 @@
     "bookId": 20,
     "chapterId": 27,
     "verseId": 17,
-    "text": "Jern kvesser jern, og den eine mennesket kvesser andletet til den andre.",
+    "text": "Jern kvesser jern, og eit menneske kvesser andletet til eit anna.",
     "versions": [
       {
         "text": "Jern kvesser jern, og eit menneske kvesser eit anna.",
         "explanation": "Det hebraiske ordet 'פְּנֵי' (pnei = andlet/ansikt) er utelate. Biletet er at ein person kvesser/skarpar 'andletet' (karakteren, uttrykket) til den andre, ikkje berre at dei kvesser kvarandre generelt."
+      },
+      {
+        "text": "Jern kvesser jern, og den eine mennesket kvesser andletet til den andre.",
+        "type": "grammar",
+        "severity": "major",
+        "explanation": "«den eine mennesket» er grammatisk feil på nynorsk. Sidan versjonhistorikken viser at ein tidlegare versjon var «eit menneske kvesser eit anna» og vart endra for å inkludera «andletet», bør ein finna ei formulering som inkluderer «andletet» men er grammatisk korrekt. «eit menneske kvesser andletet til eit anna» er både grammatisk rett og tek vare på det hebraiske פְּנֵי."
       }
     ]
   },
@@ -129,7 +141,15 @@
     "bookId": 20,
     "chapterId": 27,
     "verseId": 19,
-    "text": "Som vatn speglar andletet, så speglar hjartet mennesket."
+    "text": "Som vatn speglar andletet, slik speglar hjartet til eit menneske det andre.",
+    "versions": [
+      {
+        "text": "Som vatn speglar andletet, så speglar hjartet mennesket.",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "Den hebraiske teksten seier «slik er hjartet til mennesket overfor mennesket» – altså at det eine menneskets hjarte speglar det andre. Den noverande formuleringa «hjartet speglar mennesket» er tvetydig og kan tolkast som at hjartet speglar ein sjølv, medan originalen handlar om at menneske speglar kvarandre."
+      }
+    ]
   },
   {
     "bookId": 20,
@@ -183,7 +203,15 @@
     "bookId": 20,
     "chapterId": 27,
     "verseId": 26,
-    "text": "Lamma gjev deg klede, og geitene gjev deg betaling for ein åker."
+    "text": "Lamma gjev deg klede, og geitebukkar er betaling for ein åker.",
+    "versions": [
+      {
+        "text": "Lamma gjev deg klede, og geitene gjev deg betaling for ein åker.",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "Det hebraiske עַתּוּדִים (attudim) tyder 'geitebukkar', ikkje 'geiter' generelt. Dessutan er det geitebukkar som er betalinga for åkeren, ikkje at geitene gjev deg betaling."
+      }
+    ]
   },
   {
     "bookId": 20,

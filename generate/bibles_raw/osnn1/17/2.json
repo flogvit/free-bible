@@ -57,11 +57,17 @@
     "bookId": 17,
     "chapterId": 2,
     "verseId": 9,
-    "text": "Den unge kvinna fann velvilje hos han og vann gunsten hans.",
+    "text": "Den unge kvinna fann velvilje hos han og vann gunsten hans. Han sørgde raskt for at ho fekk det ho trong til forskjøninga si og den maten ho skulle ha. Han gav henne sju utvalde tenestejenter frå kongens hus og flytta henne og tenestejentene hennar til den beste delen av kvinnehuset.",
     "versions": [
       {
         "text": "Den unge kvinna fann velvilje hos han og vann hans gunst. Han sørgde raskt for at ho fekk det ho trong til forskjøninga si og den maten ho skulle ha. Han gav henne sju utvalde tenestejenter frå kongens hus, og han flytta henne og tenestejentene hennar til den beste delen av kvinnehuset.",
         "explanation": "På nynorsk er etterstilt eigedomspronomen ('gunsten hans') meir naturleg enn førestilt ('hans gunst')."
+      },
+      {
+        "text": "Den unge kvinna fann velvilje hos han og vann gunsten hans.",
+        "type": "error",
+        "severity": "critical",
+        "explanation": "Den noverande omsetjinga manglar størstedelen av verset. Det hebraiske verset inneheld informasjon om at Hegai raskt gav henne skjønnheitsmidla og maten hennar, sju tenestejenter frå kongens hus, og flytta henne til den beste delen av kvinnehuset. Denne informasjonen har falle bort, truleg ved ei redigering som endra 'hans gunst' til 'gunsten hans' men utilsikta sletta resten. Forslaget beheld den reviderte forma 'gunsten hans' (ikkje 'hans gunst') og justerer 'og han flytta' til 'og flytta' for å skilja det frå den tidlegare versjonen."
       }
     ]
   },
@@ -99,11 +105,17 @@
     "bookId": 17,
     "chapterId": 2,
     "verseId": 14,
-    "text": "Ho kom ikkje inn til kongen att utan at kongen hadde hug til henne og kalla henne inn med namn.",
+    "text": "Om kvelden gjekk ho inn, og om morgonen kom ho tilbake til det andre kvinnehuset, under oppsyn av Sjaasgas, hoffmannen til kongen som tok vare på medkonene. Ho kom ikkje inn til kongen att utan at kongen hadde hug til henne og kalla henne inn med namn.",
     "versions": [
       {
         "text": "Om kvelden gjekk ho inn, og om morgonen kom ho tilbake til det andre kvinnehuset, under oppsyn av Sjaasgas, hoffmannen til kongen som tok vare på medkonene. Ho kom ikkje inn til kongen att, utan at kongen hadde hug til henne og ho vart kalla inn med namn.",
         "explanation": "Betre flyt ved å fjerna kommaet og gjera 'kalla henne inn' til ein del av same setning, sidan det hebraiske uttrykker éin samanhengande tanke."
+      },
+      {
+        "text": "Ho kom ikkje inn til kongen att utan at kongen hadde hug til henne og kalla henne inn med namn.",
+        "type": "error",
+        "severity": "major",
+        "explanation": "Den noverande omsetjinga manglar den første delen av verset som fortel at ho gjekk inn om kvelden og kom tilbake om morgonen til det andre kvinnehuset under oppsyn av Sjaasgas. Denne informasjonen har falle bort, truleg ved redigeringa som forbetra flyten i siste del av verset."
       }
     ]
   },

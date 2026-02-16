@@ -33,11 +33,17 @@
     "bookId": 26,
     "chapterId": 32,
     "verseId": 5,
-    "text": "Eg skal leggje kjøtet ditt på fjella og fylle dalane med den rotne kroppen din.",
+    "text": "Eg skal leggje kjøtet ditt på fjella og fylle dalane med den store kroppen din.",
     "versions": [
       {
         "text": "Eg skal leggje kjøtet ditt på fjella og fylle dalane med leivningane dine.",
         "explanation": "Det hebraiske ordet רָמוּתֶךָ (ramutekha) kjem frå רום og kan bety 'din høgd/storleik' eller 'dine forfalne restar'. 'Leivningane' er akseptabelt, men 'den rotne kroppen din' eller 'kadaveret ditt' fangar betre den groteske bildebruken i konteksten."
+      },
+      {
+        "text": "Eg skal leggje kjøtet ditt på fjella og fylle dalane med den rotne kroppen din.",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "רָמוּתֶךָ (ramutekha) kjem frå רום som tyder 'høgd/storleik'. Noko i retning 'din storleik/masse' er meir presist enn 'den rotne kroppen din', sidan teksten ikkje nemner rotning men heller den enorme mengda av kroppen. Men sidan verset allereie har ein revisjon, er dette berre ein mindre merknad."
       }
     ]
   },
@@ -45,7 +51,15 @@
     "bookId": 26,
     "chapterId": 32,
     "verseId": 6,
-    "text": "Eg skal vatne landet der du sym, med blodet ditt heilt opp til fjella, og bekkefara skal fyllast av deg."
+    "text": "Eg skal vatne landet med det som renn ut av deg, med blodet ditt heilt opp til fjella, og bekkefara skal fyllast av deg.",
+    "versions": [
+      {
+        "text": "Eg skal vatne landet der du sym, med blodet ditt heilt opp til fjella, og bekkefara skal fyllast av deg.",
+        "type": "error",
+        "severity": "major",
+        "explanation": "Det hebraiske צָפָתְךָ (tsafatekha) kjem truleg frå ein rot som tyder 'det som flyt ut/oversvøymer' og refererer til det som renn frå kroppen (blod/veske). 'Landet der du sym' er ei usannsynleg tolking. Mange kommentatorar og omsetjingar forstår dette som 'landet med det som strøymer frå deg.'"
+      }
+    ]
   },
   {
     "bookId": 26,
@@ -63,7 +77,15 @@
     "bookId": 26,
     "chapterId": 32,
     "verseId": 9,
-    "text": "Eg skal uroe hjarta til mange folk når eg fører bodskapen om fallet ditt til folkeslaga, til land du ikkje kjenner."
+    "text": "Eg skal uroe hjarta til mange folk når eg fører fallet ditt inn blant folkeslaga, til land du ikkje kjenner.",
+    "versions": [
+      {
+        "text": "Eg skal uroe hjarta til mange folk når eg fører bodskapen om fallet ditt til folkeslaga, til land du ikkje kjenner.",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "Det hebraiske שִׁבְרְךָ (shivrekha) tyder 'din øydelegging/ditt fall'. Uttrykket בַּהֲבִיאִי שִׁבְרְךָ בַּגּוֹיִם tyder 'når eg fører øydelegginga di blant folkeslaga' — ikkje 'bodskapen om fallet'. Det er sjølve øydelegginga/dei spreidde restane, ikkje bodskapen, som blir ført dit."
+      }
+    ]
   },
   {
     "bookId": 26,
@@ -81,7 +103,15 @@
     "bookId": 26,
     "chapterId": 32,
     "verseId": 12,
-    "text": "Med sverd frå krigarar skal eg felle folkemengda di, dei mest grufulle av folkeslaga er dei alle. Dei skal øydeleggje Egypts stoltheit, og heile folkemengda skal bli utsletta."
+    "text": "Med sverd frå krigarar skal eg felle folkemengda di – dei mest fryktelege blant folkeslaga, alle saman. Dei skal øydeleggje Egypts stoltheit, og heile folkemengda skal bli utsletta.",
+    "versions": [
+      {
+        "text": "Med sverd frå krigarar skal eg felle folkemengda di, dei mest grufulle av folkeslaga er dei alle. Dei skal øydeleggje Egypts stoltheit, og heile folkemengda skal bli utsletta.",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "Formuleringa 'dei mest grufulle av folkeslaga er dei alle' er litt klønete på nynorsk. 'Dei mest fryktelege blant folkeslaga, alle saman' flyt betre og gjev same meining. Ordet עָרִיצֵי tyder 'tyranniske/fryktelege'."
+      }
+    ]
   },
   {
     "bookId": 26,
@@ -171,7 +201,15 @@
     "bookId": 26,
     "chapterId": 32,
     "verseId": 27,
-    "text": "Dei ligg ikkje hos krigarane som fall av dei uomskorne, dei som steig ned til dødsriket med våpna sine og fekk sverda lagde under hovuda og misgjerningane sine over beina. For dei var ein redsle for krigarane i landet til dei levande."
+    "text": "Dei ligg ikkje hos dei falne krigarane frå dei uomskorne, dei som steig ned til dødsriket med våpna sine og fekk sverda lagde under hovuda og misgjerningane sine over beina. For dei spreidde redsle blant krigarane i landet til dei levande.",
+    "versions": [
+      {
+        "text": "Dei ligg ikkje hos krigarane som fall av dei uomskorne, dei som steig ned til dødsriket med våpna sine og fekk sverda lagde under hovuda og misgjerningane sine over beina. For dei var ein redsle for krigarane i landet til dei levande.",
+        "type": "error",
+        "severity": "major",
+        "explanation": "Frasen מֵעֲרֵלִים tyder 'frå/av dei uomskorne', og poenget er at dei falne krigarane (גִּבּוֹרִים נֹפְלִים) er frå dei uomskorne folkeslaga. 'Som fall av dei uomskorne' er misvisande. Dessutan bør כִּי־חִתִּית גִּבּוֹרִים בְּאֶרֶץ חַיִּים omsetjast som 'dei spreidde redsle blant krigarane' heller enn 'dei var ein redsle for krigarane'."
+      }
+    ]
   },
   {
     "bookId": 26,

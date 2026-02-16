@@ -33,7 +33,15 @@
     "bookId": 26,
     "chapterId": 44,
     "verseId": 5,
-    "text": "Herren sa til meg: «Menneske, legg deg dette på hjartet! Sjå med augo dine og høyr med øyro dine alt det eg seier til deg om alle forskriftene for Herrens hus og alle lovene der. Legg vel merke til inngangen til huset og alle utgangane frå heilagdomen."
+    "text": "Herren sa til meg: «Menneske, legg deg dette på hjartet! Sjå med augo dine og høyr med øyro dine alt det eg seier til deg om alle forskriftene for Herrens hus og alle lovene hans. Legg vel merke til inngangen til huset og alle utgangane frå heilagdomen.",
+    "versions": [
+      {
+        "text": "Herren sa til meg: «Menneske, legg deg dette på hjartet! Sjå med augo dine og høyr med øyro dine alt det eg seier til deg om alle forskriftene for Herrens hus og alle lovene der. Legg vel merke til inngangen til huset og alle utgangane frå heilagdomen.",
+        "type": "grammar",
+        "severity": "minor",
+        "explanation": "'alle lovene der' bør vera 'alle lovene hans' – det hebraiske תּוֹרֹתָיו har possessivsuffiks 3. pers. mask. ('hans lover'), ikkje ein stadreferanse."
+      }
+    ]
   },
   {
     "bookId": 26,
@@ -45,11 +53,17 @@
     "bookId": 26,
     "chapterId": 44,
     "verseId": 7,
-    "text": "De har ført inn framande, uomskorne på hjarta og uomskorne på kroppen, så dei kunne vera i heilagdomen min og vanhelga huset mitt medan de bar fram maten min, feittet og blodet. Slik braut de pakta mi med alle styggedomane dykkar.",
+    "text": "De har ført inn framande, uomskorne på hjarta og uomskorne på kroppen, så dei kunne vera i heilagdomen min og vanhelga huset mitt medan de bar fram maten min, feittet og blodet. Slik braut dei pakta mi med alle styggedomane dykkar.",
     "versions": [
       {
         "text": "De har ført inn framande, uomskorne på hjarte og uomskorne på kropp, så dei kunne vera i heilagdomen min og vanhelga huset mitt medan de bar fram maten min, feittet og blodet. Slik braut de pakta mi med alle styggedomane dykkar.",
         "explanation": "For betre flyt ved munnleg lesing bør det vera 'hjarta' og 'kroppen' med bestemt form, som samsvarar med den idiomatiske bruken i vers 9."
+      },
+      {
+        "text": "De har ført inn framande, uomskorne på hjarta og uomskorne på kroppen, så dei kunne vera i heilagdomen min og vanhelga huset mitt medan de bar fram maten min, feittet og blodet. Slik braut de pakta mi med alle styggedomane dykkar.",
+        "type": "grammar",
+        "severity": "minor",
+        "explanation": "Subjektet i 'braut' bør vera 'dei' (3. person, dvs. dei framande/israelittane generelt, viser til וַיָּפֵרוּ som er 3. person fleirtal), ikkje 'de' (2. person). Skiftet frå 'de' (2. pers.) til 'dei' (3. pers.) reflekterer det hebraiske skiftet frå 2. person (בַּהֲבִיאֲכֶם) til 3. person (וַיָּפֵרוּ)."
       }
     ]
   },
@@ -93,7 +107,15 @@
     "bookId": 26,
     "chapterId": 44,
     "verseId": 13,
-    "text": "Dei skal ikkje koma nær meg for å gjera presteteneste for meg, og dei skal ikkje koma nær nokon av dei heilage tinga mine, dei høgheilage tinga. Dei skal bera skamma si og styggedomen dei har gjort."
+    "text": "Dei skal ikkje koma nær meg for å gjera presteteneste for meg, og dei skal ikkje koma nær nokon av dei heilage tinga mine, dei høgheilage tinga. Dei skal bera skamma si og styggedomane dei har gjort.",
+    "versions": [
+      {
+        "text": "Dei skal ikkje koma nær meg for å gjera presteteneste for meg, og dei skal ikkje koma nær nokon av dei heilage tinga mine, dei høgheilage tinga. Dei skal bera skamma si og styggedomen dei har gjort.",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "Det hebraiske וְתוֹעֲבוֹתָם er fleirtal ('styggedomane'), ikkje eintal ('styggedomen')."
+      }
+    ]
   },
   {
     "bookId": 26,
@@ -123,11 +145,17 @@
     "bookId": 26,
     "chapterId": 44,
     "verseId": 18,
-    "text": "Dei skal ha linturbanar på hovudet og linbukser rundt hoftene. Dei skal ikkje binda noko stramt om seg så dei sveittar.",
+    "text": "Dei skal ha linturbanar på hovudet og linbukser rundt hoftene. Dei skal ikkje binda om seg noko som vekkjer sveitte.",
     "versions": [
       {
         "text": "Dei skal ha linturbanar på hovudet og linbukser rundt hoftene. Dei skal ikkje binda noko kring seg som får dei til å sveittast.",
         "explanation": "Formuleringa 'som får dei til å sveittast' er noko klønete. 'Så dei sveittar' er meir naturleg nynorsk og lettare å lesa høgt."
+      },
+      {
+        "text": "Dei skal ha linturbanar på hovudet og linbukser rundt hoftene. Dei skal ikkje binda noko stramt om seg så dei sveittar.",
+        "type": "error",
+        "severity": "major",
+        "explanation": "Det hebraiske uttrykket בַּיָּזַע tyder 'i sveitten' eller 'med sveitte'. Meininga er at dei ikkje skal binda noko om seg på ein måte som framkallar sveitte – altså at kleda ikkje skal vera slik at dei sveittar. Noverande tekst 'binda noko stramt om seg så dei sveittar' legg til 'stramt' som ikkje finst i originalen. 'Noko som vekkjer sveitte' er meir presist og skil seg frå den tidlegare versjonen."
       }
     ]
   },
@@ -195,7 +223,15 @@
     "bookId": 26,
     "chapterId": 44,
     "verseId": 29,
-    "text": "Grødeofferet, syndofferet og skuldofferet skal dei eta. Alt som er vigt til Herren i Israel, skal høyra dei til."
+    "text": "Matofferet, syndofferet og skuldofferet skal dei eta. Alt som er vigt til Herren i Israel, skal høyra dei til.",
+    "versions": [
+      {
+        "text": "Grødeofferet, syndofferet og skuldofferet skal dei eta. Alt som er vigt til Herren i Israel, skal høyra dei til.",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "הַמִּנְחָה er 'matoffer' (cereal/grain offering). 'Grødeoffer' er ikkje feil, men 'matoffer' er den meir etablerte og presise omsetjinga av mincha på norsk, og skil det betre frå generelle førstegrøder i neste vers."
+      }
+    ]
   },
   {
     "bookId": 26,

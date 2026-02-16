@@ -69,11 +69,17 @@
     "bookId": 23,
     "chapterId": 13,
     "verseId": 10,
-    "text": "For stjernene på himmelen og stjernebildeta deira skal ikkje la lyset sitt skina. Sola er mørk når ho står opp, og månen lyser ikkje.",
+    "text": "For stjernene på himmelen og stjernebildea deira skal ikkje la lyset sitt skina. Sola er mørk når ho går opp, og månen lyser ikkje.",
     "versions": [
       {
         "text": "For stjernene på himmelen og stjernebildet deira skal ikkje la lyset sitt skina. Sola er mørk når ho står opp, og månen lyser ikkje.",
         "explanation": "Det hebraiske ordet כְסִילֵיהֶם er fleirtal, så 'stjernebildeta' (fleirtal) er meir korrekt enn 'stjernebildet' (eintal)."
+      },
+      {
+        "text": "For stjernene på himmelen og stjernebildeta deira skal ikkje la lyset sitt skina. Sola er mørk når ho står opp, og månen lyser ikkje.",
+        "type": "grammar",
+        "severity": "minor",
+        "explanation": "'Stjernebildeta' er ikkje standard nynorsk fleirtalsform. Korrekt nynorsk fleirtal av 'stjernebilde' (inkjekjønn) er 'stjernebildea'. I tillegg er בְּצֵאתוֹ (når ho 'går ut/fram') betre omsett med 'går opp' enn 'står opp' om sola."
       }
     ]
   },
@@ -87,7 +93,15 @@
     "bookId": 23,
     "chapterId": 13,
     "verseId": 12,
-    "text": "Eg vil gjera ein mann sjeldnare enn fint gull, eit menneske meir sjeldsynt enn gull frå Ofir."
+    "text": "Eg vil gjera eit menneske sjeldnare enn reint gull, ein mann meir sjeldsynt enn gull frå Ofir.",
+    "versions": [
+      {
+        "text": "Eg vil gjera ein mann sjeldnare enn fint gull, eit menneske meir sjeldsynt enn gull frå Ofir.",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "Det hebraiske פָּז tyder 'reint gull' eller 'luttra gull', ikkje berre 'fint gull'. Dessutan kjem אֱנוֹשׁ ('menneske', generelt) først og אָדָם ('mann/menneske') etterpå i den hebraiske parallelismen. Det er betre å spegla rekkjefølgja."
+      }
+    ]
   },
   {
     "bookId": 23,
@@ -123,11 +137,17 @@
     "bookId": 23,
     "chapterId": 13,
     "verseId": 18,
-    "text": "Bogane deira skal slå ned dei unge. Dei viser ikkje nåde mot fosteret i mors liv, auga deira sparer ikkje born.",
+    "text": "Bogane deira skal knusa dei unge. Dei viser ikkje nåde mot fosteret i mors liv, auga deira sparer ikkje born.",
     "versions": [
       {
         "text": "Bogane deira skal slå ned dei unge. Dei har ikkje medkjensle med frukt frå mors liv, auga deira sparer ikkje born.",
         "explanation": "פְרִי־בֶטֶן (frukt frå mors liv) er eit poetisk uttrykk for foster eller barn i mors liv. 'Viser ikkje nåde mot' er nærare det hebraiske לֹא יְרַחֵמוּ enn 'har ikkje medkjensle med'."
+      },
+      {
+        "text": "Bogane deira skal slå ned dei unge. Dei viser ikkje nåde mot fosteret i mors liv, auga deira sparer ikkje born.",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "תְּרַטַּשְׁנָה kjem frå rota רטש som tyder 'knusa/slå i stykke' (same rot som i vers 16 der 'knusast' er brukt). 'Slå ned' er litt svakare enn originalen; 'knusa' er meir nøyaktig og konsistent med ordbruken i vers 16."
       }
     ]
   },
@@ -153,7 +173,15 @@
     "bookId": 23,
     "chapterId": 13,
     "verseId": 21,
-    "text": "Men ørkenens ville dyr skal liggja der, og husa deira skal fyllast med uglur. Strutsar skal bu der, og raggete bukkar skal hoppa omkring der."
+    "text": "Men ørkenens ville dyr skal liggja der, og husa deira skal fyllast med ugler. Strutsar skal bu der, og raggete bukkar skal hoppa omkring der.",
+    "versions": [
+      {
+        "text": "Men ørkenens ville dyr skal liggja der, og husa deira skal fyllast med uglur. Strutsar skal bu der, og raggete bukkar skal hoppa omkring der.",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "'Uglur' er ikkje standard nynorsk. Korrekt nynorsk fleirtalsform er 'ugler'."
+      }
+    ]
   },
   {
     "bookId": 23,

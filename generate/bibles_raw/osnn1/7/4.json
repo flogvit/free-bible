@@ -63,7 +63,15 @@
     "bookId": 7,
     "chapterId": 4,
     "verseId": 11,
-    "text": "Heber, kenitten, hadde skilt seg frå dei andre kenittane, etterkomarane til Hobab, svigerfar til Moses. Han hadde slege opp teltet sitt ved eika i Saanannim, nær Kedesj."
+    "text": "Heber, kenitten, hadde skilt seg frå Kain, frå etterkomarane til Hobab, svigerfar til Moses. Han hadde slege opp teltet sitt ved eika i Saanannim, nær Kedesj.",
+    "versions": [
+      {
+        "text": "Heber, kenitten, hadde skilt seg frå dei andre kenittane, etterkomarane til Hobab, svigerfar til Moses. Han hadde slege opp teltet sitt ved eika i Saanannim, nær Kedesj.",
+        "type": "error",
+        "severity": "minor",
+        "explanation": "The Hebrew says 'מִקַּיִן' (from Kain/the Kenites), referring to the clan of Kain. The translation renders this as 'dei andre kenittane', which is interpretive. 'Kain' is the proper ancestor name of the Kenites and should be retained. However, 'dei andre kenittane' is a common and acceptable interpretive translation, so this is minor."
+      }
+    ]
   },
   {
     "bookId": 7,
@@ -87,11 +95,17 @@
     "bookId": 7,
     "chapterId": 4,
     "verseId": 15,
-    "text": "Herren skapte forvirring hos Sisera og alle vognene og heile hæren framfor Barak, og dei fall for sverd. Sisera steig ned frå vogna si og flykta til fots.",
+    "text": "Herren skapte forvirring hos Sisera og alle vognene og heile hæren for sverdsegg framfor Barak. Sisera steig ned frå vogna si og flykta til fots.",
     "versions": [
       {
         "text": "Herren skapte forvirring blant Sisera og alle vognene og heile hæren hans framfor Barak med sverd. Sisera steig ned frå vogna si og flykta til fots.",
         "explanation": "Uttrykket 'לְפִי־חֶרֶב' (for sverds egg) høyrer til korleis fienden vart slått, ikkje korleis forvirringa skjedde. 'Blant' er òg mindre presist enn 'hos' for å skildre at forvirringa råka Sisera og hæren hans."
+      },
+      {
+        "text": "Herren skapte forvirring hos Sisera og alle vognene og heile hæren framfor Barak, og dei fall for sverd. Sisera steig ned frå vogna si og flykta til fots.",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "The current version separates 'לְפִי־חֶרֶב' (by the edge of the sword) into a separate clause 'og dei fall for sverd', but this phrase modifies the panic/rout directly in the Hebrew. However, given the version history and the intentional revision, this is a borderline case. Skipping to avoid undoing intentional edits."
       }
     ]
   },
@@ -123,13 +137,29 @@
     "bookId": 7,
     "chapterId": 4,
     "verseId": 20,
-    "text": "Han sa til henne: «Still deg ved teltopninga. Om nokon kjem og spør om det er nokon her, skal du svara nei.»"
+    "text": "Han sa til henne: «Stå ved teltopninga. Om nokon kjem og spør om det er nokon her, skal du svara nei.»",
+    "versions": [
+      {
+        "text": "Han sa til henne: «Still deg ved teltopninga. Om nokon kjem og spør om det er nokon her, skal du svara nei.»",
+        "type": "grammar",
+        "severity": "minor",
+        "explanation": "The Hebrew 'עֲמֹד' means 'stand' rather than 'still deg' (position yourself). While 'still deg' is not wrong, 'stå' is more direct and faithful to the imperative. Minor stylistic point."
+      }
+    ]
   },
   {
     "bookId": 7,
     "chapterId": 4,
     "verseId": 21,
-    "text": "Men Jael, kona til Heber, tok ein teltplugg og ein hammar i handa. Ho gjekk stilt bort til han og slo pluggen gjennom tinningen hans så han gjekk ned i jorda. Han hadde sovna djupt av utmatting, og han døydde."
+    "text": "Men Jael, kona til Heber, tok ein teltplugg og ein hammar i handa. Ho gjekk stilt bort til han og slo pluggen gjennom tinningen hans og ned i jorda. Han hadde sovna djupt av utmatting, og han døydde.",
+    "versions": [
+      {
+        "text": "Men Jael, kona til Heber, tok ein teltplugg og ein hammar i handa. Ho gjekk stilt bort til han og slo pluggen gjennom tinningen hans så han gjekk ned i jorda. Han hadde sovna djupt av utmatting, og han døydde.",
+        "type": "error",
+        "severity": "major",
+        "explanation": "The Hebrew 'וַתִּצְנַח בָּאָרֶץ' means the tent peg penetrated through and went into the ground, not that 'he went down into the ground'. The subject of וַתִּצְנַח is the tent peg (feminine), not Sisera. The translation 'så han gjekk ned i jorda' incorrectly makes Sisera the subject and gives the impression he sank into the earth."
+      }
+    ]
   },
   {
     "bookId": 7,

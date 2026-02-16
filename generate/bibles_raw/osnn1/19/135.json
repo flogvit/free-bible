@@ -3,11 +3,17 @@
     "bookId": 19,
     "chapterId": 135,
     "verseId": 1,
-    "text": "Halleluja! Lovsyng namnet åt Herren! Lovsyng, de Herrens tenarar,",
+    "text": "Halleluja! Lovsyng namnet åt Herren! Lovsyng, de tenarar åt Herren!",
     "versions": [
       {
         "text": "Halleluja! Lovsyng namnet åt Herren! Lovsyng, de tenarar for Herren,",
         "explanation": "Hebraisk har 'tenarar åt Herren' (עַבְדֵי יְהוָה) som ein genitiv-konstruksjon. 'Herrens tenarar' er meir naturleg nynorsk enn 'tenarar for Herren'."
+      },
+      {
+        "text": "Halleluja! Lovsyng namnet åt Herren! Lovsyng, de Herrens tenarar,",
+        "type": "grammar",
+        "severity": "minor",
+        "explanation": "Verset sluttar med eit utropsteikn eller punktum, ikkje komma. Komma på slutten gjer at verset ser ufullstendig ut, men vers 2 er ei relativsetning som utfyller. Likevel bør vers 1 avsluttast med utropsteikn sidan det er ein imperativ."
       }
     ]
   },
@@ -111,11 +117,17 @@
     "bookId": 19,
     "chapterId": 135,
     "verseId": 14,
-    "text": "For Herren skal føra saka til folket sitt og visa medkjensle med tenarane sine.",
+    "text": "For Herren fører saka for folket sitt og viser medkjensle med tenarane sine.",
     "versions": [
       {
         "text": "For Herren skal dømma rettferdig for folket sitt og visa miskunn mot tenarane sine.",
         "explanation": "Hebraisk יָדִין tyder her 'forsvara, føra saka til' (i positiv forstand), ikkje berre 'dømma rettferdig'. Ordet יִתְנֶחָם tyder 'angra, ha medkjensle' - 'miskunn' er ikkje heilt presist. Poenget er at Gud vil stå opp for folket sitt."
+      },
+      {
+        "text": "For Herren skal føra saka til folket sitt og visa medkjensle med tenarane sine.",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "Hebraisk brukar imperfektum (yiqtol) her, som kan lesast som generelle utsegner om Guds karakter (presens), ikkje nødvendigvis futurum. Konteksten i salmen er lovprising av Guds vedvarande eigenskapar. 'Fører saka for' er også betre preposisjon enn 'føra saka til' – ein fører saka for nokon, ikkje til nokon."
       }
     ]
   },

@@ -9,11 +9,17 @@
     "bookId": 20,
     "chapterId": 15,
     "verseId": 2,
-    "text": "Tunga til dei vise formidlar kunnskap vel, men munnen til dårane ause ut dårskap.",
+    "text": "Tunga til dei vise formidlar kunnskap vel, men munnen til dårane auser ut dårskap.",
     "versions": [
       {
         "text": "Tunga til dei vise formidlar kunnskap vel, men munnen til dårane aust ut dårskap.",
         "explanation": "Verbet 'ause' bør stå i presens 'ause' (infinitiv som presensform i nynorsk), ikkje 'aust' som er preteritum."
+      },
+      {
+        "text": "Tunga til dei vise formidlar kunnskap vel, men munnen til dårane ause ut dårskap.",
+        "type": "grammar",
+        "severity": "minor",
+        "explanation": "Verbet 'ause' i presens bør vere 'auser' for å fungere som ei korrekt bøygd presensform i tredje person eintal/fleirtal på nynorsk. 'Ause' er infinitiv, ikkje presensform."
       }
     ]
   },
@@ -21,11 +27,17 @@
     "bookId": 20,
     "chapterId": 15,
     "verseId": 3,
-    "text": "Herrens auge er alle stader og ser over både vonde og gode.",
+    "text": "Herrens augo er alle stader og held vakt over både vonde og gode.",
     "versions": [
       {
         "text": "Herrens auge er alle stader, dei ser over både vonde og gode.",
         "explanation": "Sidan 'auge' er eintal på hebraisk (עֵינֵי er konstruktform, men refererer til Herrens blikk/auge som eitt omgrep), er det meir naturleg å unngå 'dei ser' som refererer til fleire auge. Alternativt kan ein bruke 'augo' (fleirtal) konsekvent."
+      },
+      {
+        "text": "Herrens auge er alle stader og ser over både vonde og gode.",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "Det hebraiske עֵינֵי er konstruktfleirtal ('augo til'), og צֹפוֹת (som vaktar/speiar) er også fleirtal. 'Augo' med 'held vakt over' gjev ei meir presis og naturleg nynorsk omsetjing, og fanger betre den aktive vaktsemda i צֹפוֹת."
       }
     ]
   },
@@ -123,7 +135,15 @@
     "bookId": 20,
     "chapterId": 15,
     "verseId": 17,
-    "text": "Betre eit måltid med grønsaker der kjærleiken bur, enn ein gjødd okse med hat attåt."
+    "text": "Betre eit måltid med grønsaker og kjærleik, enn ein gjødd okse med hat attåt.",
+    "versions": [
+      {
+        "text": "Betre eit måltid med grønsaker der kjærleiken bur, enn ein gjødd okse med hat attåt.",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "Det hebraiske וְאַהֲבָה־שָׁם tyder bokstaveleg 'og kjærleik der'. 'Der kjærleiken bur' er ei god poetisk attgjeving, men 'og kjærleik' er nærare originalen og meir naturleg nynorsk. Begge er akseptable, men dette er enklare."
+      }
+    ]
   },
   {
     "bookId": 20,
@@ -141,7 +161,15 @@
     "bookId": 20,
     "chapterId": 15,
     "verseId": 20,
-    "text": "Ein vis son gjer far sin glad, men ein dårleg son foraktar mor si."
+    "text": "Ein vis son gjer far sin glad, men ein dåraktig mann foraktar mor si.",
+    "versions": [
+      {
+        "text": "Ein vis son gjer far sin glad, men ein dårleg son foraktar mor si.",
+        "type": "error",
+        "severity": "major",
+        "explanation": "Det hebraiske כְסִיל אָדָם tyder 'ein dåraktig mann/eit dåraktig menneske', ikkje 'ein dårleg son'. Ordet כְסִיל (kesil) tyder 'dåre/narr', og אָדָם tyder 'menneske/mann'. Omsetjinga 'dårleg son' er upresis og mistar poenget."
+      }
+    ]
   },
   {
     "bookId": 20,
@@ -195,11 +223,17 @@
     "bookId": 20,
     "chapterId": 15,
     "verseId": 28,
-    "text": "Hjartet til den rettferdige tenkjer før det svarar, men munnen til dei gudlause ause ut vondskap.",
+    "text": "Hjartet til den rettferdige tenkjer før det svarar, men munnen til dei gudlause auser ut vondskap.",
     "versions": [
       {
         "text": "Hjartet til den rettferdige tenkjer før det svarar, men munnen til dei gudlause aust ut vondskap.",
         "explanation": "Same som vers 2: 'ause' bør stå i presens, ikkje preteritum 'aust'."
+      },
+      {
+        "text": "Hjartet til den rettferdige tenkjer før det svarar, men munnen til dei gudlause ause ut vondskap.",
+        "type": "grammar",
+        "severity": "minor",
+        "explanation": "Same problemet som vers 2: 'ause' er infinitiv og fungerer ikkje som presensform. Det bør vere 'auser' i tredje person."
       }
     ]
   },

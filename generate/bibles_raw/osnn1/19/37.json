@@ -39,7 +39,15 @@
     "bookId": 19,
     "chapterId": 37,
     "verseId": 6,
-    "text": "Han skal la di rettferd bryta fram som ljoset, og din rett som middagssola."
+    "text": "Han skal la rettferda di bryta fram som ljoset, og retten din som middagssola.",
+    "versions": [
+      {
+        "text": "Han skal la di rettferd bryta fram som ljoset, og din rett som middagssola.",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "På moderne nynorsk er 'rettferda di' og 'retten din' meir naturleg ordstilling enn 'di rettferd' og 'din rett', som verkar arkaisk."
+      }
+    ]
   },
   {
     "bookId": 19,
@@ -135,7 +143,15 @@
     "bookId": 19,
     "chapterId": 37,
     "verseId": 21,
-    "text": "Den gudlause låner og betaler ikkje attende, men den rettferdige er gavmild og gjev."
+    "text": "Den gudlause låner og betaler ikkje tilbake, men den rettferdige er gavmild og gjev.",
+    "versions": [
+      {
+        "text": "Den gudlause låner og betaler ikkje attende, men den rettferdige er gavmild og gjev.",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "'Attende' er ikkje feil, men 'tilbake' er meir vanleg i moderne nynorsk og lettare å lesa."
+      }
+    ]
   },
   {
     "bookId": 19,
@@ -147,11 +163,17 @@
     "bookId": 19,
     "chapterId": 37,
     "verseId": 23,
-    "text": "Herren gjer stega faste for den han har hugnad i, og han gleder seg over hans veg.",
+    "text": "Herren gjer stega til ein mann faste, og han gleder seg over vegen hans.",
     "versions": [
       {
         "text": "Herren gjer stega faste for ein mann, og han har hugnad i hans veg.",
         "explanation": "Det hebraiske וְדַרְכּ֥וֹ יֶחְפָּֽץ tyder at Herren har hugnad i/gleder seg over mannens veg, ikkje at mannen har hugnad. Subjektet for begge verba er Herren. Noverande omsetjing er grammatisk tvetydig."
+      },
+      {
+        "text": "Herren gjer stega faste for den han har hugnad i, og han gleder seg over hans veg.",
+        "type": "error",
+        "severity": "major",
+        "explanation": "Den noverande omsetjinga seier 'for den han har hugnad i' som om Herren vel ut kven sine steg han gjer faste basert på hugnad. Men det hebraiske seier at Herren gjer ein manns steg faste, OG (separat) han har hugnad i/gleder seg over mannens veg. Subjektet i begge ledd er Herren, men 'hugnad' høyrer til det andre leddet, ikkje det første. Formuleringa bør skilja dei to utsegnene tydelegare."
       }
     ]
   },
@@ -159,17 +181,31 @@
     "bookId": 19,
     "chapterId": 37,
     "verseId": 24,
-    "text": "Om han snublar, fell han ikkje heilt, for Herren held han oppe med handa si."
+    "text": "Om han fell, blir han ikkje liggjande, for Herren held handa hans.",
+    "versions": [
+      {
+        "text": "Om han snublar, fell han ikkje heilt, for Herren held han oppe med handa si.",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "Det hebraiske סוֹמֵךְ יָדוֹ tyder bokstavleg 'støttar/held handa hans' – dvs. Herren grip handa til mannen, ikkje at Herren brukar si eiga hand. Dessutan er יִפֹּל 'fell' meir enn berre 'snublar', og לֹא־יוּטָל tyder 'blir ikkje kasta ned / ikkje liggjande', ikkje 'fell ikkje heilt'."
+      }
+    ]
   },
   {
     "bookId": 19,
     "chapterId": 37,
     "verseId": 25,
-    "text": "Ung har eg vore, og no er eg gammal, men eg har aldri sett ein rettferdig forlaten eller hans ætt be om brød.",
+    "text": "Ung har eg vore, og no er eg gammal, men eg har aldri sett ein rettferdig forlaten eller ætta hans be om brød.",
     "versions": [
       {
         "text": "Ung har eg vore, og no er eg gammal, men eg har aldri sett ein rettferdig forlaten eller hans born be om brød.",
         "explanation": "זַרְעוֹ (zar'o) tyder 'hans ætt/avkom' meir enn spesifikt 'born'. 'Ætt' fangar betre det hebraiske omgrepet som inkluderer etterkomarar generelt."
+      },
+      {
+        "text": "Ung har eg vore, og no er eg gammal, men eg har aldri sett ein rettferdig forlaten eller hans ætt be om brød.",
+        "type": "grammar",
+        "severity": "minor",
+        "explanation": "'Hans ætt' er arkaisk ordstilling; 'ætta hans' er meir naturleg i moderne nynorsk. Dessutan bør det vera bestemt form 'ætta' sidan det er ei bestemd referanse (hans ætt)."
       }
     ]
   },

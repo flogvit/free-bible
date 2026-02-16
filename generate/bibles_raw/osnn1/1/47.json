@@ -87,7 +87,15 @@
     "bookId": 1,
     "chapterId": 47,
     "verseId": 13,
-    "text": "Det fanst ikkje mat i heile landet, for nauda var svært hard. Både Egypt-landet og Kanaan-landet vansmekta på grunn av svolten."
+    "text": "Det fanst ikkje mat i heile landet, for nauda var svært hard. Både Egypt-landet og Kanaan-landet var utmatta av svolten.",
+    "versions": [
+      {
+        "text": "Det fanst ikkje mat i heile landet, for nauda var svært hard. Både Egypt-landet og Kanaan-landet vansmekta på grunn av svolten.",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "Det hebraiske verbet 'tilah' (frå 'la'ah') tyder 'vart utmatta/utmatta seg', ikkje 'vansmekta'. 'Vansmekta' gjev inntrykk av å tynast bort av svolt, medan originalen skildrar ei meir generell utmatting. 'Var utmatta av svolten' er meir presist."
+      }
+    ]
   },
   {
     "bookId": 1,
@@ -105,7 +113,15 @@
     "bookId": 1,
     "chapterId": 47,
     "verseId": 15,
-    "text": "Då pengane tok slutt i Egypt-landet og i Kanaan-landet, kom alle egyptarane til Josef og sa: «Gjev oss mat! Kvifor skal vi døy framfor augo dine? For pengane er borte.»"
+    "text": "Då pengane tok slutt i Egypt-landet og i Kanaan-landet, kom alle egyptarane til Josef og sa: «Gjev oss mat! Kvifor skal vi døy framfor deg? For pengane er borte.»",
+    "versions": [
+      {
+        "text": "Då pengane tok slutt i Egypt-landet og i Kanaan-landet, kom alle egyptarane til Josef og sa: «Gjev oss mat! Kvifor skal vi døy framfor augo dine? For pengane er borte.»",
+        "type": "grammar",
+        "severity": "minor",
+        "explanation": "Det hebraiske 'negdekha' tyder 'framfor deg / i nærværet ditt', ikkje 'framfor augo dine'. Uttrykket 'framfor augo dine' (le'einekha) kjem i vers 19, der det faktisk står slik i originalteksten. Å bruka same uttrykk i begge vers viskar ut denne skilnaden."
+      }
+    ]
   },
   {
     "bookId": 1,
@@ -135,7 +151,15 @@
     "bookId": 1,
     "chapterId": 47,
     "verseId": 20,
-    "text": "Så kjøpte Josef all jorda i Egypt for farao. For alle egyptarane selde åkrane sine, fordi nauda var så hard over dei. Slik vart landet farao sin eigedom."
+    "text": "Så kjøpte Josef all jorda i Egypt for farao. For alle egyptarane selde åkrane sine, fordi nauda var så hard over dei. Slik vart jorda farao sin eigedom.",
+    "versions": [
+      {
+        "text": "Så kjøpte Josef all jorda i Egypt for farao. For alle egyptarane selde åkrane sine, fordi nauda var så hard over dei. Slik vart landet farao sin eigedom.",
+        "type": "grammar",
+        "severity": "minor",
+        "explanation": "I heile kapittelet er 'ha'arets' omsett med 'jorda' (i tydinga jordeigedom), men i siste setninga er det brått omsett med 'landet'. For konsekvens og presisjon bør det stå 'jorda' her også, sidan konteksten handlar om jordeigedom."
+      }
+    ]
   },
   {
     "bookId": 1,
@@ -195,11 +219,17 @@
     "bookId": 1,
     "chapterId": 47,
     "verseId": 29,
-    "text": "Då tida nærma seg at Israel skulle døy, kalla han på Josef, son sin, og sa til han: «Om eg har funne nåde for augo dine, så legg handa di under hofta mi og gjer meg denne velgjerda i truskap: Grav meg ikkje ned i Egypt!»",
+    "text": "Då tida nærma seg at Israel skulle døy, kalla han på Josef, son sin, og sa til han: «Om eg har funne nåde for augo dine, så legg handa di under hofta mi og gjer meg denne velgjerda i truskap: Grav meg ikkje ned i Egypt!",
     "versions": [
       {
         "text": "Då tida nærma seg at Israel skulle døy, kalla han på Josef, son sin, og sa til han: «Om eg har funne nåde for augo dine, så legg handa di under hofta mi og vis meg truskap og miskunn: Grav meg ikkje ned i Egypt!",
         "explanation": "Det hebraiske uttrykket 'chesed ve'emet' (nåde/velgjerning og sanning/truskap) er ein fast frase som tyder 'ei påliteleg velgjerning' eller 'trufast godleik'. 'Vis meg truskap og miskunn' er litt upresist; 'gjer meg denne velgjerda i truskap' fangar betre meininga om ei konkret handling gjort i truskap."
+      },
+      {
+        "text": "Då tida nærma seg at Israel skulle døy, kalla han på Josef, son sin, og sa til han: «Om eg har funne nåde for augo dine, så legg handa di under hofta mi og gjer meg denne velgjerda i truskap: Grav meg ikkje ned i Egypt!»",
+        "type": "grammar",
+        "severity": "minor",
+        "explanation": "Verset manglar avsluttande hermeteikn (»). Sitatet som startar med «Om eg har funne nåde...» held fram i vers 30, men vers 29 endar no med !» som avsluttar sitatet for tidleg. Sidan sitatet held fram i vers 30, bør hermeteiknet fjernast frå slutten av vers 29."
       }
     ]
   },

@@ -15,7 +15,15 @@
     "bookId": 11,
     "chapterId": 6,
     "verseId": 3,
-    "text": "Forhallen framfor tempelhallen var tjue alnar lang, etter breidda på huset, og ti alnar brei, framfor huset."
+    "text": "Forhallen framfor tempelhallen var tjue alnar lang, etter breidda på huset, og ti alnar brei framfor huset.",
+    "versions": [
+      {
+        "text": "Forhallen framfor tempelhallen var tjue alnar lang, etter breidda på huset, og ti alnar brei, framfor huset.",
+        "type": "grammar",
+        "severity": "minor",
+        "explanation": "Det er eit unødvendig komma framfor 'framfor huset'. Setninga flyt betre utan dette kommaet."
+      }
+    ]
   },
   {
     "bookId": 11,
@@ -129,7 +137,15 @@
     "bookId": 11,
     "chapterId": 6,
     "verseId": 20,
-    "text": "Det inste rommet var tjue alnar langt, tjue alnar breitt og tjue alnar høgt. Han kledde det med reint gull, og han kledde altaret med sedertre framfor det."
+    "text": "Det inste rommet var tjue alnar langt, tjue alnar breitt og tjue alnar høgt. Han kledde det med reint gull, og han kledde altaret med sedertre.",
+    "versions": [
+      {
+        "text": "Det inste rommet var tjue alnar langt, tjue alnar breitt og tjue alnar høgt. Han kledde det med reint gull, og han kledde altaret med sedertre framfor det.",
+        "type": "error",
+        "severity": "major",
+        "explanation": "Teksten seier 'וַיְצַף מִזְבֵּחַ אָרֶז' – han kledde altaret med sedertre. Uttrykket 'framfor det' er ikkje i grunnteksten for denne siste setninga. Heile verset handlar om det inste rommet (דְּבִיר), og den siste delen seier berre at han kledde (eit) altar med sedertre. 'Framfor det' er tillagt."
+      }
+    ]
   },
   {
     "bookId": 11,
@@ -141,7 +157,15 @@
     "bookId": 11,
     "chapterId": 6,
     "verseId": 22,
-    "text": "Heile huset kledde han med gull, til alt var ferdig. Også heile altaret som høyrde til det inste rommet, kledde han med gull."
+    "text": "Heile huset kledde han med gull, heilt til alt i huset var dekt. Også heile altaret som høyrde til det inste rommet, kledde han med gull.",
+    "versions": [
+      {
+        "text": "Heile huset kledde han med gull, til alt var ferdig. Også heile altaret som høyrde til det inste rommet, kledde han med gull.",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "Hebraisk 'עַד־תֹּם כָּל־הַבָּיִת' betyr 'til heile huset var fullstendig (dekt/ferdig)', ikkje berre 'til alt var ferdig'. Uttrykket understrekar at heile huset var fullstendig gullkledd."
+      }
+    ]
   },
   {
     "bookId": 11,
@@ -153,7 +177,15 @@
     "bookId": 11,
     "chapterId": 6,
     "verseId": 24,
-    "text": "Fem alnar var den eine vengjen på kjeruben, og fem alnar var den andre vengjen på kjeruben. Det var ti alnar frå den eine vengjespissen til den andre."
+    "text": "Fem alnar var den eine vengjen på den eine kjeruben, og fem alnar var den andre vengjen på den same kjeruben. Det var ti alnar frå den eine vengjespissen til den andre.",
+    "versions": [
+      {
+        "text": "Fem alnar var den eine vengjen på kjeruben, og fem alnar var den andre vengjen på kjeruben. Det var ti alnar frå den eine vengjespissen til den andre.",
+        "type": "error",
+        "severity": "minor",
+        "explanation": "Hebraisk 'הַכְּרוּב הָאֶחָת ... הַכְּרוּב הַשֵּׁנִית' refererer til dei to vengene på same kjeruben (den eine kjeruben), ikkje to ulike kjerubar. Omsetjinga 'den eine vengjen på kjeruben' og 'den andre vengjen på kjeruben' kan misforståast. Meir presist: det handlar om den eine kjeruben sine to venger."
+      }
+    ]
   },
   {
     "bookId": 11,
@@ -201,7 +233,15 @@
     "bookId": 11,
     "chapterId": 6,
     "verseId": 31,
-    "text": "Til inngangen til det inste rommet laga han dører av oliventre. Dørkarmane var femkanta."
+    "text": "Til inngangen til det inste rommet laga han dører av oliventre. Dørstolpane og karmane utgjorde ein femtedel av veggen.",
+    "versions": [
+      {
+        "text": "Til inngangen til det inste rommet laga han dører av oliventre. Dørkarmane var femkanta.",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "Det hebraiske 'הָאַיִל מְזוּזוֹת חֲמִשִׁית' er vanskeleg, men det tyder truleg at dørstolpane (אַיִל) og karmane (מְזוּזוֹת) utgjorde ein femtedel (av veggbreidda), ikkje at dei var 'femkanta'. Dei fleste kommentatorar tolkar 'חֲמִשִׁית' som 'ein femtedel'."
+      }
+    ]
   },
   {
     "bookId": 11,
@@ -213,7 +253,15 @@
     "bookId": 11,
     "chapterId": 6,
     "verseId": 33,
-    "text": "På same måten laga han til inngangen til tempelhallen dørkarmar av oliventre, firkanta."
+    "text": "På same måten laga han til inngangen til tempelhallen dørkarmar av oliventre, som utgjorde ein fjerdedel av veggen.",
+    "versions": [
+      {
+        "text": "På same måten laga han til inngangen til tempelhallen dørkarmar av oliventre, firkanta.",
+        "type": "error",
+        "severity": "minor",
+        "explanation": "Hebraisk 'מֵאֵת רְבִעִית' tyder truleg 'ein fjerdedel' (av veggbreidda), parallelt med 'חֲמִשִׁית' (ein femtedel) i v. 31. 'Firkanta' er ei mogleg men mindre sannsynleg tolking."
+      }
+    ]
   },
   {
     "bookId": 11,

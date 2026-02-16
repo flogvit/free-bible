@@ -93,7 +93,15 @@
     "bookId": 41,
     "chapterId": 9,
     "verseId": 16,
-    "text": "Og han spurde dei: «Kva er det de diskuterer med dei?»"
+    "text": "Og han spurde dei: «Kva er det de diskuterer med kvarandre?»",
+    "versions": [
+      {
+        "text": "Og han spurde dei: «Kva er det de diskuterer med dei?»",
+        "type": "error",
+        "severity": "major",
+        "explanation": "Det greske πρὸς αὑτούς (refleksivt pronomen) betyr 'seg imellom / med kvarandre', ikkje 'med dei' (som ville vera πρὸς αὐτούς med referanse til ein tredje part). Omsetjinga gjev inntrykk av at dei diskuterer med dei skriftlærde, men Jesus spør kva dei diskuterer seg imellom."
+      }
+    ]
   },
   {
     "bookId": 41,
@@ -291,7 +299,15 @@
     "bookId": 41,
     "chapterId": 9,
     "verseId": 47,
-    "text": "Og om auget ditt lokkar deg til fall, så riv det ut! Det er betre for deg å gå einøygd inn i Guds rike enn å ha begge auga og bli kasta i helvete,"
+    "text": "Og om auget ditt lokkar deg til fall, så riv det ut! Det er betre for deg å gå einøygd inn i Guds rike enn å ha begge augo og bli kasta i helvete,",
+    "versions": [
+      {
+        "text": "Og om auget ditt lokkar deg til fall, så riv det ut! Det er betre for deg å gå einøygd inn i Guds rike enn å ha begge auga og bli kasta i helvete,",
+        "type": "grammar",
+        "severity": "minor",
+        "explanation": "På nynorsk er den korrekte fleirtalsforma av 'auge' enten 'augo' eller 'auga' (avhengig av norm), men 'auga' kan forvekslast med bunden eintal. 'Augo' er meir tydeleg fleirtal i nynorsk og difor å føretrekka. Likevel er 'auga' akseptabelt i mange nynorsknormer, så dette er berre eit mindre forslag."
+      }
+    ]
   },
   {
     "bookId": 41,
@@ -315,6 +331,14 @@
     "bookId": 41,
     "chapterId": 9,
     "verseId": 50,
-    "text": "Salt er godt. Men om saltet mistar si kraft, korleis skal de då gjera det salt att? Ha salt i dykk sjølve og hald fred med kvarandre!»"
+    "text": "Salt er godt. Men om saltet mistar krafta si, korleis skal de då gjera det salt att? Ha salt i dykk sjølve og hald fred med kvarandre!»",
+    "versions": [
+      {
+        "text": "Salt er godt. Men om saltet mistar si kraft, korleis skal de då gjera det salt att? Ha salt i dykk sjølve og hald fred med kvarandre!»",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "På nynorsk er 'krafta si' meir naturleg ordstilling enn 'si kraft' i moderne nynorsk. 'Si kraft' kan oppfattast som litt gammalmodig."
+      }
+    ]
   }
 ]

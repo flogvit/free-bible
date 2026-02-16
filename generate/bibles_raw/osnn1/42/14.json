@@ -9,7 +9,15 @@
     "bookId": 42,
     "chapterId": 14,
     "verseId": 2,
-    "text": "Og sjå, framfor han stod det ein mann som leid av vatersott."
+    "text": "Og sjå, det var ein mann framfor han som leid av vatersott.",
+    "versions": [
+      {
+        "text": "Og sjå, framfor han stod det ein mann som leid av vatersott.",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "The Greek ἦν (was) is a simple existential verb. 'stod' (stood) adds information not in the original. 'det var ein mann framfor han' is more faithful to the Greek while remaining natural in nynorsk."
+      }
+    ]
   },
   {
     "bookId": 42,
@@ -45,7 +53,15 @@
     "bookId": 42,
     "chapterId": 14,
     "verseId": 8,
-    "text": "«Når nokon bed deg til bryllaup, skal du ikkje setja deg på heidersplassen. For kanskje har han bode inn ein som er meir æra enn deg."
+    "text": "«Når nokon bed deg til bryllaup, skal du ikkje setja deg på heidersplassen. For kanskje er det bode inn ein som er meir æra enn deg.",
+    "versions": [
+      {
+        "text": "«Når nokon bed deg til bryllaup, skal du ikkje setja deg på heidersplassen. For kanskje har han bode inn ein som er meir æra enn deg.",
+        "type": "grammar",
+        "severity": "minor",
+        "explanation": "'har han bode inn' is somewhat ambiguous about the subject. The Greek uses a passive participle (κεκλημένος), and the point is that someone more honored than you may have been invited. 'er det bode inn' (passive construction) better reflects the Greek and avoids ambiguity."
+      }
+    ]
   },
   {
     "bookId": 42,
@@ -69,11 +85,17 @@
     "bookId": 42,
     "chapterId": 14,
     "verseId": 12,
-    "text": "Han sa òg til den som hadde bode han: «Når du held gjestebod eller måltid, så byd ikkje venene dine eller brørne dine eller slektningane dine eller rike naboar. For dei kan by deg att, og du får løna di.",
+    "text": "Han sa òg til den som hadde bode han: «Når du held middag eller festmåltid, så byd ikkje venene dine eller brørne dine eller slektningane dine eller rike naboar. For dei kan by deg att, og du får løna di.",
     "versions": [
       {
         "text": "Han sa òg til den som hadde bode han: «Når du held lunsj eller kveldsmåltid, så byd ikkje venene dine eller brørne dine eller slektningane dine eller rike naboar. For dei kan by deg att, og du får løna di.",
         "explanation": "Gresk 'ἄριστον' (formiddagsmåltid) og 'δεῖπνον' (hovudmåltid/kveldsmat) er omsett med 'lunsj eller kveldsmåltid'. 'Lunsj' er eit moderne lånord som bryt med stilen. 'Gjestebod eller måltid' passar betre for munnleg lesing og høgtideleg tone."
+      },
+      {
+        "text": "Han sa òg til den som hadde bode han: «Når du held gjestebod eller måltid, så byd ikkje venene dine eller brørne dine eller slektningane dine eller rike naboar. For dei kan by deg att, og du får løna di.",
+        "type": "error",
+        "severity": "major",
+        "explanation": "The Greek distinguishes two types of meals: ἄριστον (a daytime meal/lunch) and δεῖπνον (an evening meal/dinner). The current translation 'gjestebod eller måltid' loses this distinction entirely, making the second term ('måltid') too generic and essentially redundant with 'gjestebod'. 'Middag eller festmåltid' preserves the distinction better while avoiding the previously rejected 'lunsj eller kveldsmåltid'."
       }
     ]
   },
@@ -147,7 +169,15 @@
     "bookId": 42,
     "chapterId": 14,
     "verseId": 24,
-    "text": "For eg seier dykk: Ingen av dei som var bedne, skal smaka måltidet mitt.»"
+    "text": "For eg seier dykk: Ingen av dei mennene som var bedne, skal få smaka måltidet mitt.»",
+    "versions": [
+      {
+        "text": "For eg seier dykk: Ingen av dei som var bedne, skal smaka måltidet mitt.»",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "The Greek ἀνδρῶν ἐκείνων (those men) is more specific than 'dei som var bedne' (those who were invited). Adding 'mennene' reflects the original more accurately. Also 'γεύσεται' (shall taste) is better rendered as 'skal få smaka' to convey the futurity and exclusion more naturally in nynorsk."
+      }
+    ]
   },
   {
     "bookId": 42,
@@ -195,7 +225,15 @@
     "bookId": 42,
     "chapterId": 14,
     "verseId": 30,
-    "text": "og seia: 'Denne mannen tok til å byggja, men greidde ikkje å fullføra.'"
+    "text": "Og seia: 'Denne mannen tok til å byggja, men greidde ikkje å fullføra.'",
+    "versions": [
+      {
+        "text": "og seia: 'Denne mannen tok til å byggja, men greidde ikkje å fullføra.'",
+        "type": "grammar",
+        "severity": "minor",
+        "explanation": "Verse 30 begins a new verse and continues from v. 29 grammatically, but as a separate verse number it should start with a capital letter ('Og' rather than 'og')."
+      }
+    ]
   },
   {
     "bookId": 42,

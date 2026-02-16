@@ -27,11 +27,17 @@
     "bookId": 1,
     "chapterId": 44,
     "verseId": 4,
-    "text": "Dei hadde knapt kome ut av byen og var ikkje langt unna, då Josef sa til hovmeisteren sin: «Skund deg og set etter mennene! Når du når dei att, skal du seia til dei: 'Kvifor har de løna vondt for godt?'",
+    "text": "Dei hadde knapt kome ut av byen og var ikkje langt unna, då Josef sa til hovmeisteren sin: «Skund deg og set etter mennene! Når du når dei att, skal du seia til dei: 'Kvifor har de løna vondt for godt?'»",
     "versions": [
       {
         "text": "Dei hadde knapt kome ut av byen og var ikkje langt unna, då Josef sa til hovmeisteren sin: «Skund deg og set etter mennene! Når du når dei att, skal du seia til dei: 'Kvifor har de løna godt med vondt?'",
         "explanation": "Den hebraiske frasen 'שִׁלַּמְתֶּם רָעָה תַּחַת טוֹבָה' betyr 'løna vondt for godt' (altså: gjort vondt til gjengjeld for godt). Den noverande omsetjinga har det omvendt."
+      },
+      {
+        "text": "Dei hadde knapt kome ut av byen og var ikkje langt unna, då Josef sa til hovmeisteren sin: «Skund deg og set etter mennene! Når du når dei att, skal du seia til dei: 'Kvifor har de løna vondt for godt?'",
+        "type": "grammar",
+        "severity": "minor",
+        "explanation": "Vers 4 manglar ein avsluttande hermeteikn (»). Den direkte talen til Josef held fram i vers 5, men verset sjølv bør framleis vera grammatisk avslutta dersom det er meint som ei sjølvstendig eining. Men sidan vers 5 held fram som del av same direkte tale, kan dette vera tilsikta. Eg ser likevel at vers 5 startar med « som om det er ein ny direkte tale. Denne inkonsekvensen i bruk av hermeteikn bør rettast."
       }
     ]
   },
@@ -39,11 +45,17 @@
     "bookId": 1,
     "chapterId": 44,
     "verseId": 5,
-    "text": "«Er ikkje dette begeret som herren min drikk av, og som han brukar til å spå med? De har gjort vondt.'»",
+    "text": "Er ikkje dette begeret som herren min drikk av, og som han brukar til å spå med? De har gjort vondt.'»",
     "versions": [
       {
         "text": "«Er ikkje dette begeret som herren min drikk av, og som han brukar til å spå med? Det de har gjort, er vondt.'»",
         "explanation": "Den hebraiske frasen 'הֲרֵעֹתֶם אֲשֶׁר עֲשִׂיתֶם' er meir direkte: 'De har gjort vondt' eller 'De har handla ille'. Den noverande omsetjinga er litt omstendleg."
+      },
+      {
+        "text": "«Er ikkje dette begeret som herren min drikk av, og som han brukar til å spå med? De har gjort vondt.'»",
+        "type": "grammar",
+        "severity": "minor",
+        "explanation": "Vers 5 er ei framhald av den direkte talen frå vers 4 (hovmeisteren sitt bodskap). Det bør ikkje starte med « sidan talen alt er opna i vers 4. Alternativt bør vers 4 og 5 ha konsekvent hermeteikn-bruk gjennom heile sekvensen."
       }
     ]
   },
@@ -151,7 +163,15 @@
     "bookId": 1,
     "chapterId": 44,
     "verseId": 20,
-    "text": "Vi svara herren vår: 'Vi har ein gammal far og ein son fødd i alderdommen hans, ein liten gut. Broren hans er død, og han er den einaste att etter mor si. Far hans elskar han høgt.'"
+    "text": "Vi svara herren vår: 'Vi har ein gammal far og ein gut fødd på hans gamle dagar. Broren hans er død, og han er den einaste att etter mor si. Far hans elskar han høgt.'",
+    "versions": [
+      {
+        "text": "Vi svara herren vår: 'Vi har ein gammal far og ein son fødd i alderdommen hans, ein liten gut. Broren hans er død, og han er den einaste att etter mor si. Far hans elskar han høgt.'",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "Det hebraiske יֶלֶד זְקֻנִים קָטָן betyr 'ein liten/ung son fødd i alderdommen'. Omsetjinga 'ein son fødd i alderdommen hans, ein liten gut' er litt klossete med to apposisjonar. 'Ein gut fødd på hans gamle dagar' er meir naturleg og flytande på nynorsk."
+      }
+    ]
   },
   {
     "bookId": 1,
@@ -193,7 +213,15 @@
     "bookId": 1,
     "chapterId": 44,
     "verseId": 27,
-    "text": "Då sa far min, tenaren din, til oss: 'De veit at kona mi fødde meg to søner."
+    "text": "Då sa far min, tenaren din, til oss: 'De veit at kona mi fødde to søner til meg.",
+    "versions": [
+      {
+        "text": "Då sa far min, tenaren din, til oss: 'De veit at kona mi fødde meg to søner.",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "«Fødde meg to søner» er litt uvanleg ordstilling på nynorsk. «Fødde to søner til meg» er meir naturleg og flytande."
+      }
+    ]
   },
   {
     "bookId": 1,
@@ -211,11 +239,17 @@
     "bookId": 1,
     "chapterId": 44,
     "verseId": 30,
-    "text": "Når eg no kjem heim til far min, tenaren din, og guten ikkje er med oss – for livet hans er bunde til livet hans –",
+    "text": "Når eg no kjem heim til far min, tenaren din, og guten ikkje er med oss – for livet hans er knytt til livet til guten –",
     "versions": [
       {
         "text": "Når eg no kjem heim til far min, tenaren din, og guten ikkje er med oss – for sjela hans er bunden til sjela hans –",
         "explanation": "Det hebraiske נֶפֶשׁ (nefesh) kan omsetjast 'sjel' eller 'liv'. I denne konteksten er 'liv' meir naturleg på nynorsk og gjev betre flyt for munnleg framføring."
+      },
+      {
+        "text": "Når eg no kjem heim til far min, tenaren din, og guten ikkje er med oss – for livet hans er bunde til livet hans –",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "«Livet hans er bunde til livet hans» er tvetydig – det er uklårt kven dei to «hans» viser til. Det hebraiske uttrykket viser til at faren sitt liv er knytt til guten sitt liv. «Knytt til livet til guten» gjev klarare meining. Dessutan er «knytt» meir idiomatisk nynorsk enn «bunde» i denne samanhengen."
       }
     ]
   },

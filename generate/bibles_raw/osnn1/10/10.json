@@ -3,7 +3,15 @@
     "bookId": 10,
     "chapterId": 10,
     "verseId": 1,
-    "text": "Ei tid etter hende det at kongen over ammonittane døydde, og Hanun, son hans, vart konge etter han."
+    "text": "Ei tid etter dette hende det at kongen over ammonittane døydde, og Hanun, son hans, vart konge etter han.",
+    "versions": [
+      {
+        "text": "Ei tid etter hende det at kongen over ammonittane døydde, og Hanun, son hans, vart konge etter han.",
+        "type": "grammar",
+        "severity": "minor",
+        "explanation": "Det hebraiske 'אַחֲרֵי־כֵן' tyder 'etter dette', ikkje berre 'etter'. 'Ei tid etter dette' gjev betre att meininga i originalteksten."
+      }
+    ]
   },
   {
     "bookId": 10,
@@ -111,7 +119,15 @@
     "bookId": 10,
     "chapterId": 10,
     "verseId": 18,
-    "text": "Men aramaearane flykta for Israel, og David drap sju hundre vognkøyrarar og førti tusen ryttarar av aramaearane. Han slo òg Sjobak, hærføraren deira, så han døydde der."
+    "text": "Men aramaearane flykta for Israel, og David drap sju hundre stridsvogner og førti tusen ryttarar av aramaearane. Han slo òg Sjobak, hærføraren deira, så han døydde der.",
+    "versions": [
+      {
+        "text": "Men aramaearane flykta for Israel, og David drap sju hundre vognkøyrarar og førti tusen ryttarar av aramaearane. Han slo òg Sjobak, hærføraren deira, så han døydde der.",
+        "type": "error",
+        "severity": "major",
+        "explanation": "Det hebraiske ordet 'רֶכֶב' tyder 'stridsvogner' (chariots), ikkje 'vognkøyrarar'. Teksten seier sju hundre stridsvogner, ikkje sju hundre vognkøyrarar. (Merk: Parallellstaden i 1 Krøn 19:18 har 'sju tusen', men 2 Sam 10:18 har 'sju hundre'.)"
+      }
+    ]
   },
   {
     "bookId": 10,

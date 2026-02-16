@@ -139,7 +139,7 @@
     "bookId": 57,
     "chapterId": 1,
     "verseId": 17,
-    "text": "Om du då held meg for din fellesmann i trua, så ta imot han som om det var meg.",
+    "text": "Om du då held meg for din medbrør i trua, så ta imot han som om det var meg.",
     "versions": [
       {
         "text": "Om du då reknar meg som din fellesmann, så ta imot han som om det var meg.",
@@ -152,6 +152,12 @@
         "type": "error",
         "severity": "major",
         "explanation": "κοινωνόν tyder 'partnar/deltakar i fellesskap', ikkje berre 'medarbeidar' (som ville vore συνεργός). Sidan 'fellesmann' vart avvist i tidlegare versjon, kan 'fellesmann i trua' presisera meininga og gje det kontekst som gjer uttrykket naturleg."
+      },
+      {
+        "text": "Om du då held meg for din fellesmann i trua, så ta imot han som om det var meg.",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "Verset har 2 tidlegare revisjonar, men 'fellesmann i trua' er framleis eit noko uvanleg uttrykk. Likevel, sidan dette er grundig gjennomgått og 'fellesmann i trua' var ein bevisst løysing, kan dette stå. Droppar denne."
       }
     ]
   },

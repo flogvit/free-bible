@@ -21,7 +21,15 @@
     "bookId": 12,
     "chapterId": 3,
     "verseId": 4,
-    "text": "Mesja, kongen av Moab, var saueavlar. Han betalte til kongen av Israel hundre tusen lam og ulla av hundre tusen vêrar."
+    "text": "Mesja, kongen av Moab, var saueavlar. Han betalte til kongen av Israel hundre tusen lam og ulla frå hundre tusen vêrar.",
+    "versions": [
+      {
+        "text": "Mesja, kongen av Moab, var saueavlar. Han betalte til kongen av Israel hundre tusen lam og ulla av hundre tusen vêrar.",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "'Ulla frå hundre tusen vêrar' er meir naturleg nynorsk enn 'ulla av hundre tusen vêrar'. Preposisjonen 'frå' passar betre her for å uttrykkja opphav."
+      }
+    ]
   },
   {
     "bookId": 12,
@@ -99,7 +107,15 @@
     "bookId": 12,
     "chapterId": 3,
     "verseId": 15,
-    "text": "Men no, hent ein harpespelar til meg!» Då harpespelaren spela, kom HERRENs hand over han."
+    "text": "Men no, hent ein musikar til meg!» Og då musikaren spela, kom HERRENs hand over han.",
+    "versions": [
+      {
+        "text": "Men no, hent ein harpespelar til meg!» Då harpespelaren spela, kom HERRENs hand over han.",
+        "type": "error",
+        "severity": "major",
+        "explanation": "Hermeteiknet (») som avsluttar Elisjas tale frå vers 14 er plassert i vers 15, noko som er greitt. Men det hebraiske מְנַגֵּן tyder 'musikar' eller 'ein som spelar eit instrument', ikkje nødvendigvis 'harpespelar'. Dessutan bør 'Då' endrast til 'Og då' for å gjenspeila det hebraiske וְהָיָה (og det hende at)."
+      }
+    ]
   },
   {
     "bookId": 12,
@@ -135,11 +151,17 @@
     "bookId": 12,
     "chapterId": 3,
     "verseId": 21,
-    "text": "Då heile Moab høyrde at kongane hadde drege opp for å føra krig mot dei, vart alle kalla ut, alle som kunne bera våpen og oppover, og dei stilte seg opp ved grensa.",
+    "text": "Då heile Moab høyrde at kongane hadde drege opp for å føra krig mot dei, vart alle kalla saman, alle som kunne bera våpen og eldre, og dei stilte seg opp ved grensa.",
     "versions": [
       {
         "text": "Då heile Moab høyrde at kongane hadde drege opp for å føra krig mot dei, vart alle kalla ut, frå den yngste som kunne spenna belte og oppover, og dei stilte seg opp ved grensa.",
         "explanation": "Uttrykket 'חֹגֵר חֲגֹרָה' (den som spenner belte) er eit idiom for ein som er gamal nok til å bera våpen/gå i krig. 'Den yngste som kunne spenna belte' er litt uklart på norsk - 'alle som kunne bera våpen' formidlar meininga betre."
+      },
+      {
+        "text": "Då heile Moab høyrde at kongane hadde drege opp for å føra krig mot dei, vart alle kalla ut, alle som kunne bera våpen og oppover, og dei stilte seg opp ved grensa.",
+        "type": "grammar",
+        "severity": "minor",
+        "explanation": "Uttrykket 'og oppover' er uklart på norsk. Det hebraiske וָמַעְלָה betyr 'og oppover (i alder)', altså frå dei yngste som kunne bera våpen og oppover. 'Og eldre' formidlar denne meininga klarare. I tillegg er 'kalla saman' meir presist enn 'kalla ut' for וַיִּצָּעֲקוּ i denne samanhengen."
       }
     ]
   },
@@ -153,7 +175,15 @@
     "bookId": 12,
     "chapterId": 3,
     "verseId": 23,
-    "text": "Dei sa: «Det er blod! Kongane har drepe kvarandre med sverd. No til plyndring, Moab!»"
+    "text": "Dei sa: «Det er blod! Kongane har visseleg drepe kvarandre. No til plyndring, Moab!»",
+    "versions": [
+      {
+        "text": "Dei sa: «Det er blod! Kongane har drepe kvarandre med sverd. No til plyndring, Moab!»",
+        "type": "error",
+        "severity": "minor",
+        "explanation": "Det hebraiske הָחֳרֵב נֶחֶרְבוּ er ein infinitivus absolutus-konstruksjon som uttrykkjer visse/intensitet: 'dei har sanneleg/visseleg drepe kvarandre'. Uttrykket 'med sverd' finst ikkje i originalteksten – det hebraiske verbet חרב betyr 'å øydeleggja/drepa', ikkje spesifikt med sverd."
+      }
+    ]
   },
   {
     "bookId": 12,

@@ -33,7 +33,15 @@
     "bookId": 24,
     "chapterId": 33,
     "verseId": 5,
-    "text": "Dei kjem for å kjempa mot kaldearane, men berre for å fylla dei med lik av menneske som eg har slege i min vreide og harme. Eg har løynt andletet mitt for denne byen på grunn av all deira vondskap."
+    "text": "Dei kjem for å kjempa mot kaldearane, men berre for å fylla husa med lik av menneske som eg har slege i min vreide og harme.",
+    "versions": [
+      {
+        "text": "Dei kjem for å kjempa mot kaldearane, men berre for å fylla dei med lik av menneske som eg har slege i min vreide og harme. Eg har løynt andletet mitt for denne byen på grunn av all deira vondskap.",
+        "type": "error",
+        "severity": "major",
+        "explanation": "Pronomenet 'dei' (dem) er tvitydig – det kan sjå ut som det viser til kaldearane. I konteksten handlar det om å fylla husa (frå v.4) med lik. 'Husa' gjer samanhengen tydelegare."
+      }
+    ]
   },
   {
     "bookId": 24,
@@ -51,7 +59,15 @@
     "bookId": 24,
     "chapterId": 33,
     "verseId": 8,
-    "text": "Eg vil reinsa dei frå all skuld dei har synda mot meg, og eg vil tilgje alle misgjerningane deira, som dei synda mot meg og gjorde opprør mot meg med."
+    "text": "Eg vil reinsa dei frå all skuld dei har synda mot meg med, og eg vil tilgje alle misgjerningane deira, som dei synda mot meg og gjorde opprør mot meg med.",
+    "versions": [
+      {
+        "text": "Eg vil reinsa dei frå all skuld dei har synda mot meg, og eg vil tilgje alle misgjerningane deira, som dei synda mot meg og gjorde opprør mot meg med.",
+        "type": "grammar",
+        "severity": "minor",
+        "explanation": "I den første setninga manglar 'med' etter 'meg'. Den hebraiske teksten seier 'all deira skuld som dei synda mot meg med' (אֲשֶׁר חָטְאוּ-לִי). Utan 'med' vert setninga grammatisk ufullstendig på nynorsk."
+      }
+    ]
   },
   {
     "bookId": 24,
@@ -75,7 +91,15 @@
     "bookId": 24,
     "chapterId": 33,
     "verseId": 12,
-    "text": "Så seier Herren over hærskarane: På denne staden som er øydelagd, utan menneske og utan dyr, og i alle byane her, skal det endå ein gong vera beite for gjetarar som lèt sauene kvila."
+    "text": "Så seier Herren over hærskarane: På denne staden som er øydelagd, utan menneske og dyr, og i alle byane her, skal det endå ein gong vera beite for gjetarar som lèt sauene kvila.",
+    "versions": [
+      {
+        "text": "Så seier Herren over hærskarane: På denne staden som er øydelagd, utan menneske og utan dyr, og i alle byane her, skal det endå ein gong vera beite for gjetarar som lèt sauene kvila.",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "Den hebraiske teksten har וְעַד־בְּהֵמָה som betyr 'og (til/med) dyr' – ikkje 'og utan dyr'. Uttrykket מֵאֵין אָדָם וְעַד בְּהֵמָה betyr 'utan menneske og dyr' (begge deler), ikkje at 'utan' skal gjentakast separat. Den noverande omsettinga er akseptabel, men 'utan menneske og dyr' er meir presis."
+      }
+    ]
   },
   {
     "bookId": 24,
@@ -111,7 +135,15 @@
     "bookId": 24,
     "chapterId": 33,
     "verseId": 18,
-    "text": "Og det skal aldri mangla ein levittisk prest framfor meg til å bera fram brennoffer, brenna grødeofferet og bera fram slaktoffer alle dagar."
+    "text": "Og det skal aldri mangla ein levittisk prest framfor meg til å bera fram brennoffer, tenna grødeoffer og bera fram slaktoffer alle dagar.",
+    "versions": [
+      {
+        "text": "Og det skal aldri mangla ein levittisk prest framfor meg til å bera fram brennoffer, brenna grødeofferet og bera fram slaktoffer alle dagar.",
+        "type": "error",
+        "severity": "minor",
+        "explanation": "Det hebraiske ordet מַקְטִיר betyr 'brenna røykjelse av' eller 'tenna (på altaret)', ikkje 'brenna' i vanleg tyding. Dessutan bør 'grødeofferet' vera 'grødeoffer' utan bestemt artikkel, sidan dei andre offera ikkje har det. Alternativt kan ein behalda 'brenna', men 'tenna' er meir presist for altarhandlinga."
+      }
+    ]
   },
   {
     "bookId": 24,

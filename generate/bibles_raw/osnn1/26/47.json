@@ -27,7 +27,15 @@
     "bookId": 26,
     "chapterId": 47,
     "verseId": 5,
-    "text": "Han målte tusen alnar til, og då var det ei elv eg ikkje kunne vada over, for vatnet hadde stige så høgt at ein måtte symja – ei elv som ikkje kunne vadast over."
+    "text": "Han målte tusen alnar til, og då var det ei elv eg ikkje kunne vada over, for vatnet hadde stige – vatn ein måtte symja i – ei elv som ikkje kunne vadast over.",
+    "versions": [
+      {
+        "text": "Han målte tusen alnar til, og då var det ei elv eg ikkje kunne vada over, for vatnet hadde stige så høgt at ein måtte symja – ei elv som ikkje kunne vadast over.",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "Det hebraiske מֵי שָׂחוּ (mei sachu) tyder bokstaveleg 'vatn å symja i' og er ein meir direkte karakteristikk av vatnet, ikkje at det 'hadde stige så høgt at ein måtte symja'. Den noverande omsetjinga er parafraserande der originalen er meir konsis. Likevel er dette ein mindre sak og den noverande formuleringa formidlar meininga godt."
+      }
+    ]
   },
   {
     "bookId": 26,
@@ -51,11 +59,17 @@
     "bookId": 26,
     "chapterId": 47,
     "verseId": 8,
-    "text": "Han sa til meg: «Dette vatnet renn ut mot den austre regionen og ned til Arava-dalen, og når det kjem til havet – til det salte havet – skal vatnet der bli friskt.",
+    "text": "Han sa til meg: «Dette vatnet renn ut mot den austre regionen og ned til Arava-dalen, og når det kjem til havet – det vatnet som er ført ut – skal vatnet der bli friskt.",
     "versions": [
       {
         "text": "Han sa til meg: «Dette vatnet renn ut mot den austre regionen og ned til Jordandalen, og når det kjem til havet – til det salte havet – skal vatnet der bli friskt.",
         "explanation": "הָעֲרָבָה (ha-Arava) er eit spesifikt geografisk namn for dalen sør for Daudehavet, ikkje 'Jordandalen' generelt. 'Arava-dalen' eller 'Arava' ville vore meir presist."
+      },
+      {
+        "text": "Han sa til meg: «Dette vatnet renn ut mot den austre regionen og ned til Arava-dalen, og når det kjem til havet – til det salte havet – skal vatnet der bli friskt.",
+        "type": "grammar",
+        "severity": "minor",
+        "explanation": "Det hebraiske הַמּוּצָאִים tyder 'dei utrenna/utførte (vatna)', og refererer truleg til det ståande, stilleståande vatnet i Daudehavet. Omsetjinga 'det salte havet' er ei tolking som ikkje finst i grunnteksten her – sjølv om det er klart at Daudehavet er meint. Sidan dette er ei tolkande attgjeving, er det ein mindre merknad."
       }
     ]
   },
@@ -75,13 +89,29 @@
     "bookId": 26,
     "chapterId": 47,
     "verseId": 10,
-    "text": "Fiskarar skal stå langs elva frå En-Gedi til En-Eglajim og breie ut garna sine. Fisken skal vera av mange slag, lik fisken i Storhavet, i veldig mengd."
+    "text": "Fiskarar skal stå langs elva frå En-Gedi til En-Eglajim og breie ut garna sine. Fisken skal vera av mange slag, lik fisken i Storhavet, svært mykje.",
+    "versions": [
+      {
+        "text": "Fiskarar skal stå langs elva frå En-Gedi til En-Eglajim og breie ut garna sine. Fisken skal vera av mange slag, lik fisken i Storhavet, i veldig mengd.",
+        "type": "grammar",
+        "severity": "minor",
+        "explanation": "Det hebraiske רַבָּה מְאֹד tyder 'svært mykje/mange' og skildrar mengda, ikkje 'i veldig mengd'. Formuleringa 'i veldig mengd' er litt uvanleg på nynorsk; 'svært mykje' er meir naturleg."
+      }
+    ]
   },
   {
     "bookId": 26,
     "chapterId": 47,
     "verseId": 11,
-    "text": "Men myrområda og sumpane skal ikkje bli friske; dei skal leggjast ut til salt."
+    "text": "Men dei grunne tjønene og myrområda skal ikkje bli friske; dei er gjevne over til salt.",
+    "versions": [
+      {
+        "text": "Men myrområda og sumpane skal ikkje bli friske; dei skal leggjast ut til salt.",
+        "type": "error",
+        "severity": "major",
+        "explanation": "Det hebraiske בִּצֹּאתָיו (bitsotav) tyder 'sumpane/myrområda' og גְבָאָיו (geva'av) tyder 'grunne tjøner/dammar'. Omsetjinga bruker 'myrområda og sumpane' men manglar distinksjonen mellom dei to orda. I tillegg er נִתָּנוּ (nittanu) perfektum passiv ('er gjevne'), ikkje 'skal leggjast ut'."
+      }
+    ]
   },
   {
     "bookId": 26,
@@ -117,7 +147,15 @@
     "bookId": 26,
     "chapterId": 47,
     "verseId": 17,
-    "text": "Grensa skal gå frå havet til Hasar-Enon ved grensa til Damaskus, og mot nord ligg Hamat-grensa. Dette er nordsida."
+    "text": "Grensa skal gå frå havet til Hasar-Enon ved grensa til Damaskus, og nordover er grensa til Hamat. Det er nordsida.",
+    "versions": [
+      {
+        "text": "Grensa skal gå frå havet til Hasar-Enon ved grensa til Damaskus, og mot nord ligg Hamat-grensa. Dette er nordsida.",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "Det hebraiske וְצָפוֹן צָפוֹנָה tyder 'og nordover (er)' – det skildrar retninga, ikkje at noko 'ligg' der. 'Nordover er grensa til Hamat' er meir presist enn 'mot nord ligg Hamat-grensa'."
+      }
+    ]
   },
   {
     "bookId": 26,

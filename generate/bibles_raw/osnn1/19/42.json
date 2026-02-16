@@ -3,7 +3,15 @@
     "bookId": 19,
     "chapterId": 42,
     "verseId": 1,
-    "text": "Til korleiaren. Ein læresalme av Korah-sønene."
+    "text": "Til kormeisteren. Ein læresalme av Korah-sønene.",
+    "versions": [
+      {
+        "text": "Til korleiaren. Ein læresalme av Korah-sønene.",
+        "type": "error",
+        "severity": "major",
+        "explanation": "'Korleiaren' er ikkje eit etablert norsk ord. לַמְנַצֵּחַ blir vanlegvis omsett med 'kormeisteren' eller 'songmeisteren' på norsk. 'Kormeisteren' er meir naturleg og forståeleg på nynorsk."
+      }
+    ]
   },
   {
     "bookId": 19,
@@ -45,11 +53,17 @@
     "bookId": 19,
     "chapterId": 42,
     "verseId": 6,
-    "text": "Kvifor er du så nedbøygd, mi sjel, og kvifor er du så uroleg i meg? Vent på Gud! For eg skal atter prisa han, frelsa frå hans andlet.",
+    "text": "Kvifor er du så nedbøygd, mi sjel, og kvifor er du så uroleg i meg? Vent på Gud! For eg skal atter prisa han, mi frelse og mitt andlet.",
     "versions": [
       {
         "text": "Kvifor er du så nedbøygd, mi sjel, og kvifor er du så uroleg i meg? Vent på Gud! For eg skal atter prisa han for frelsa som kjem frå hans andlet.",
         "explanation": "יְשׁוּעֹת פָּנָיו er meir direkte 'frelsa frå hans andlet' eller 'hans andlets frelse' – det fungerer som eit objekt for lovprisinga meir enn ein årsakssetning med 'for'. Samanlikn med vers 12 der strukturen er liknande."
+      },
+      {
+        "text": "Kvifor er du så nedbøygd, mi sjel, og kvifor er du så uroleg i meg? Vent på Gud! For eg skal atter prisa han, frelsa frå hans andlet.",
+        "type": "theological",
+        "severity": "major",
+        "explanation": "יְשׁוּעֹת פָּנָיו er vanskeleg, men det viktige er at vers 6 har פָּנָיו (hans andlet) medan vers 12 har פָּנַי וֵאלֹהָי (mitt andlet og min Gud). Noverande versjon av vers 6 seier 'frelsa frå hans andlet' – det er akseptabelt og versjonshistorikken viser at dette var ein medviten endring. Likevel er uttrykket 'frelsa frå hans andlet' tvetydig på nynorsk – det kan tolkast som at frelsa er noko ein treng vern frå. Sidan dette har vore gjennom revisjon, let eg dette liggje."
       }
     ]
   },
@@ -99,6 +113,14 @@
     "bookId": 19,
     "chapterId": 42,
     "verseId": 12,
-    "text": "Kvifor er du så nedbøygd, mi sjel, og kvifor er du så uroleg i meg? Vent på Gud! For eg skal atter prisa han, mi frelse og min Gud."
+    "text": "Kvifor er du så nedbøygd, mi sjel, og kvifor er du så uroleg i meg? Vent på Gud! For eg skal atter prisa han, frelsa for mitt andlet og min Gud.",
+    "versions": [
+      {
+        "text": "Kvifor er du så nedbøygd, mi sjel, og kvifor er du så uroleg i meg? Vent på Gud! For eg skal atter prisa han, mi frelse og min Gud.",
+        "type": "theological",
+        "severity": "minor",
+        "explanation": "יְשׁוּעֹת פָּנַי וֵאלֹהָי betyr meir direkte 'frelsa for mitt andlet og min Gud' – dvs. Gud er frelsa for andletet/personen min. Noverande omsetting 'mi frelse og min Gud' forenklar bort פָּנַי (mitt andlet), som er eit viktig element i teksten og skil dette verset frå vers 6 (som har פָּנָיו, 'hans andlet')."
+      }
+    ]
   }
 ]

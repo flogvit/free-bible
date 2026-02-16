@@ -27,7 +27,15 @@
     "bookId": 6,
     "chapterId": 3,
     "verseId": 4,
-    "text": "Men det skal vera ein avstand mellom dykk og henne på om lag to tusen alnar. Kom ikkje nærare henne, så de kan vita kva veg de skal gå, for de har ikkje gått denne vegen før.»"
+    "text": "Men det skal vera ein avstand mellom dykk og henne på om lag to tusen alnar. Kom ikkje nær henne, så de kan vita kva veg de skal gå, for de har ikkje gått denne vegen før.»",
+    "versions": [
+      {
+        "text": "Men det skal vera ein avstand mellom dykk og henne på om lag to tusen alnar. Kom ikkje nærare henne, så de kan vita kva veg de skal gå, for de har ikkje gått denne vegen før.»",
+        "type": "grammar",
+        "severity": "minor",
+        "explanation": "Det hebraiske אַל־תִּקְרְבוּ אֵלָיו tyder 'kom ikkje nær han/henne', ikkje 'kom ikkje nærare'. 'Nærare' (komparativ) er ikkje i originalteksten."
+      }
+    ]
   },
   {
     "bookId": 6,
@@ -45,7 +53,21 @@
     "bookId": 6,
     "chapterId": 3,
     "verseId": 7,
-    "text": "Herren sa til Josva: «I dag vil eg byrja å gjera deg stor i auga til heile Israel, så dei skal forstå at eg er med deg slik eg var med Moses."
+    "text": "Herren sa til Josva: «I dag vil eg byrja å gjera deg stor i auga til heile Israel, så dei skal vita at slik eg var med Moses, vil eg vera med deg.»",
+    "versions": [
+      {
+        "text": "Herren sa til Josva: «I dag vil eg byrja å gjera deg stor i auga til heile Israel, så dei skal forstå at eg er med deg slik eg var med Moses.",
+        "type": "error",
+        "severity": "major",
+        "explanation": "Den hebraiske teksten seier כַּאֲשֶׁר הָיִיתִי עִם־מֹשֶׁה אֶהְיֶה עִמָּךְ – 'slik eg var med Moses, vil eg vera med deg'. Den noverande omsetjinga seier 'eg er med deg slik eg var med Moses', som endrar tidsperspektivet (אֶהְיֶה er futurum/kohortativ, ikkje presens). Dessutan manglar det avsluttande hermeteiknet."
+      },
+      {
+        "text": "Herren sa til Josva: «I dag vil eg byrja å gjera deg stor i auga til heile Israel, så dei skal vita at slik eg var med Moses, vil eg vera med deg.",
+        "type": "grammar",
+        "severity": "minor",
+        "explanation": "Verset manglar avsluttande hermeteikn (»). Sidan Herrens tale held fram i vers 8, kan ein alternativt la hermeteiknet stå ope, men det er meir naturleg å markera at vers 8 innleier ein ny talesekvens."
+      }
+    ]
   },
   {
     "bookId": 6,
@@ -63,7 +85,15 @@
     "bookId": 6,
     "chapterId": 3,
     "verseId": 10,
-    "text": "Josva sa: «På dette skal de kjenna at den levande Gud er midt iblant dykk, og at han verkeleg skal driva ut for dykk kanaanearane, hetittane, hivvittane, perisittane, girgasjittane, amorittane og jebusittane."
+    "text": "Josva sa: «På dette skal de kjenna at den levande Gud er midt iblant dykk, og at han for visst skal driva bort framfor dykk kanaanearane, hetittane, hivvittane, perisittane, girgasjittane, amorittane og jebusittane.",
+    "versions": [
+      {
+        "text": "Josva sa: «På dette skal de kjenna at den levande Gud er midt iblant dykk, og at han verkeleg skal driva ut for dykk kanaanearane, hetittane, hivvittane, perisittane, girgasjittane, amorittane og jebusittane.",
+        "type": "grammar",
+        "severity": "minor",
+        "explanation": "Det hebraiske וְהוֹרֵשׁ יוֹרִישׁ מִפְּנֵיכֶם brukar infinitiv absolutt + finitt verb (ein forsterkande konstruksjon) og tyder 'for visst driva bort framfor dykk'. Preposisjonen מִפְּנֵיכֶם tyder 'framfor dykk / frå andletet dykkar', ikkje berre 'for dykk'. 'Driva bort framfor dykk' er meir presist enn 'driva ut for dykk'."
+      }
+    ]
   },
   {
     "bookId": 6,

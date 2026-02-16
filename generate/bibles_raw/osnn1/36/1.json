@@ -27,7 +27,15 @@
     "bookId": 36,
     "chapterId": 1,
     "verseId": 5,
-    "text": "Eg vil utrydda dei som på hustaka bøyer seg og tilbed himmelhæren, dei som bøyer seg og sver truskap til Herren, men samstundes sver ved Milkom."
+    "text": "Eg vil utrydda dei som på hustaka bøyer seg og tilbed himmelhæren, dei som bøyer seg og sver ved Herren, men samstundes sver ved Milkom.",
+    "versions": [
+      {
+        "text": "Eg vil utrydda dei som på hustaka bøyer seg og tilbed himmelhæren, dei som bøyer seg og sver truskap til Herren, men samstundes sver ved Milkom.",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "Det hebraiske 'הַנִּשְׁבָּעִים לַיהוָה' tyder 'dei som sver ved Herren', ikkje 'sver truskap til Herren'. Det er same verb (נשׁבע) med same preposisjon som i neste ledd. Poenget er at dei sver ved begge – ved Herren og ved Milkom – altså blandar JHVH-tilbeding med avgudsdyrking."
+      }
+    ]
   },
   {
     "bookId": 36,
@@ -81,11 +89,17 @@
     "bookId": 36,
     "chapterId": 1,
     "verseId": 14,
-    "text": "Herrens store dag er nær, han er nær og kjem fort. Høyr! Herrens dag! Bitter skrik den mektige krigsmannen der.",
+    "text": "Herrens store dag er nær, han er nær og kjem fort. Høyr! Herrens dag! Bittert skrik den mektige krigsmannen der.",
     "versions": [
       {
         "text": "Herrens store dag er nær, han er nær og kjem fort. Lyden av Herrens dag er bitter, sjølv den mektige krigsmannen skrik der.",
         "explanation": "Den hebraiske teksten har 'qol' (lyden/høyr!) som ein interjeksjon, og 'mar' (bitter/bittert) er knytt til korleis krigsmannen skrik, ikkje til dagen sjølv. Ei meir idiomatisk og kraftfull attgjeving for munnleg framføring."
+      },
+      {
+        "text": "Herrens store dag er nær, han er nær og kjem fort. Høyr! Herrens dag! Bitter skrik den mektige krigsmannen der.",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "Adverbet 'bittert' er meir korrekt nynorsk her sidan det modifiserer verbet 'skrik' (korleis han skrik), ikkje er eit adjektiv som skildrar krigsmannen. 'Bitter' er adjektivform; adverbforma 'bittert' passar betre."
       }
     ]
   },
@@ -105,7 +119,15 @@
     "bookId": 36,
     "chapterId": 1,
     "verseId": 17,
-    "text": "Eg vil føra trengsle over menneska, og dei skal gå som blinde, for dei har synda mot Herren. Blodet deira skal stenkvast ut som støv, og kjøtet deira som møkk."
+    "text": "Blodet deira skal rennast ut som støv, og innvollane deira som møkk.",
+    "versions": [
+      {
+        "text": "Eg vil føra trengsle over menneska, og dei skal gå som blinde, for dei har synda mot Herren. Blodet deira skal stenkvast ut som støv, og kjøtet deira som møkk.",
+        "type": "error",
+        "severity": "major",
+        "explanation": "Hebraisk 'שׁפך' tyder 'renna ut / ausa ut', ikkje 'stenkja'. Blodet vert hellt ut og vert verdilaust som støv. Vidare tyder 'לְחֻמָם' innvolar/innmat, ikkje 'kjøt'. Det hebraiske ordet er avleidd frå ein rot som peikar på innvolar."
+      }
+    ]
   },
   {
     "bookId": 36,

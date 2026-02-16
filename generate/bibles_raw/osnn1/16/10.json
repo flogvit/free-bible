@@ -57,7 +57,15 @@
     "bookId": 16,
     "chapterId": 10,
     "verseId": 9,
-    "text": "Maasja, Bilgai og Sjemaja. Dette var prestane."
+    "text": "Maasja, Bilgai og Sjemaja. Desse var prestane.",
+    "versions": [
+      {
+        "text": "Maasja, Bilgai og Sjemaja. Dette var prestane.",
+        "type": "error",
+        "severity": "minor",
+        "explanation": "Det hebraiske 'אֵלֶּה' (desse) er eit demonstrativt pronomen som bør omsetjast 'desse', ikkje 'dette'. Det viser til personane som er nemnde, ikkje til eit abstrakt konsept."
+      }
+    ]
   },
   {
     "bookId": 16,
@@ -177,11 +185,17 @@
     "bookId": 16,
     "chapterId": 10,
     "verseId": 29,
-    "text": "Resten av folket – prestane, levittane, portvaktarane, songarane, tempeltenararane og alle som hadde skilt seg frå folka i landa og slutta seg til Guds lov – saman med konene, sønene og døtrene sine, alle som var gamle nok til å forstå,",
+    "text": "Resten av folket – prestane, levittane, portvaktarane, songarane, tempeltenarane og alle som hadde skilt seg frå folka i landa og slutta seg til Guds lov – saman med konene, sønene og døtrene sine, alle som var gamle nok til å forstå,",
     "versions": [
       {
         "text": "Resten av folket, prestane, levittane, portvaktarane, songarane, tempeltenararane og alle som hadde skilt seg frå folka i landa og slutta seg til Guds lov, saman med konene, sønene og døtrene sine – alle som hadde kunnskap og forstand –",
         "explanation": "Uttrykket 'כֹּל יוֹדֵעַ מֵבִין' refererer til dei som var gamle nok til å forstå (dvs. hadde nådd skjelår), ikkje ein generell skildring av 'kunnskap og forstand'. Dette gjeld borna og familiemedlemmene som slutta seg til pakta."
+      },
+      {
+        "text": "Resten av folket – prestane, levittane, portvaktarane, songarane, tempeltenararane og alle som hadde skilt seg frå folka i landa og slutta seg til Guds lov – saman med konene, sønene og døtrene sine, alle som var gamle nok til å forstå,",
+        "type": "grammar",
+        "severity": "minor",
+        "explanation": "'tempeltenararane' bør vera 'tempeltenarane' – det hebraiske 'הַנְּתִינִים' (netiniane/tempeltenarene) vert vanlegvis omsett 'tempeltenarene' på nynorsk. Dobbel r+a+n+e ser ut som ein stavefeil."
       }
     ]
   },
@@ -201,7 +215,15 @@
     "bookId": 16,
     "chapterId": 10,
     "verseId": 32,
-    "text": "Når folka i landet kjem med varer eller korn for å selja på sabbaten, skal vi ikkje kjøpa av dei på sabbaten eller på ein heilag dag. Vi skal la jorda kvila det sjuande året og gje opp alle krav på gjeld."
+    "text": "Vi skal la jorda kvila det sjuande året og ettergjeva alle krav på gjeld.",
+    "versions": [
+      {
+        "text": "Når folka i landet kjem med varer eller korn for å selja på sabbaten, skal vi ikkje kjøpa av dei på sabbaten eller på ein heilag dag. Vi skal la jorda kvila det sjuande året og gje opp alle krav på gjeld.",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "'gje opp alle krav på gjeld' er forståeleg, men 'ettergjeva alle krav på gjeld' er meir presist for det hebraiske 'מַשָּׁא כָל־יָד' som handlar om å ettergjeva/sleppe krav ein held over andre."
+      }
+    ]
   },
   {
     "bookId": 16,
@@ -243,7 +265,15 @@
     "bookId": 16,
     "chapterId": 10,
     "verseId": 38,
-    "text": "Det beste av deigen vår, gåvene våre, frukta av alle tre, ny vin og olje skal vi føra til prestane, til kammera i huset til vår Gud. Tienda av jorda vår skal vi gje til levittane, for det er levittane som samlar inn tienda i alle byane der vi arbeider."
+    "text": "Førstegrøda av deigen vår, løftingsgåvene våre, frukta av alle tre, ny vin og olje skal vi føra til prestane, til kammera i huset til vår Gud. Tienda av jorda vår skal vi gje til levittane, for det er levittane som samlar inn tienda i alle byane der vi arbeider.",
+    "versions": [
+      {
+        "text": "Det beste av deigen vår, gåvene våre, frukta av alle tre, ny vin og olje skal vi føra til prestane, til kammera i huset til vår Gud. Tienda av jorda vår skal vi gje til levittane, for det er levittane som samlar inn tienda i alle byane der vi arbeider.",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "Det hebraiske 'רֵאשִׁית עֲרִיסֹתֵינוּ' tyder 'førstegrøda av deigen vår', ikkje 'det beste av'. Og 'תְרוּמֹתֵינוּ' er 'løftingsgåver/offergåver', ikkje berre generelle 'gåver'. 'Førstegrøda' er meir presist og samsvarar med konteksten."
+      }
+    ]
   },
   {
     "bookId": 16,

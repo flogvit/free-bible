@@ -57,11 +57,17 @@
     "bookId": 43,
     "chapterId": 1,
     "verseId": 9,
-    "text": "Det sanne lyset, som lyser opp kvart menneske, var i ferd med å koma til verda.",
+    "text": "Det sanne lyset, som lyser opp alle menneske, kom til verda.",
     "versions": [
       {
         "text": "Det sanne lyset, som lyser for kvart menneske, var i ferd med å koma til verda.",
         "explanation": "Det greske 'φωτίζει' (photizei) tyder 'lyser opp/opplyser' - det handlar om å gje lys til menneska, ikkje berre lysa 'for' dei. 'Lyser opp' gjev betre meining teologisk og språkleg."
+      },
+      {
+        "text": "Det sanne lyset, som lyser opp kvart menneske, var i ferd med å koma til verda.",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "'πάντα ἄνθρωπον' tyder 'kvart/alle menneske' - begge er akseptable. Men 'var i ferd med å koma til verda' er ein tolkande omsetjing av ἐρχόμενον εἰς τὸν κόσμον. Partisippet kan knytast til lyset (det sanne lyset som kom til verda) heller enn å vera ei progressiv form. 'Kom til verda' er meir direkte og vanleg i omsetjingar. Men sidan dette verset allereie har éin revisjon, dette er berre eit forslag."
       }
     ]
   },
@@ -111,7 +117,15 @@
     "bookId": 43,
     "chapterId": 1,
     "verseId": 16,
-    "text": "Av hans fullnad har vi alle fått, nåde over nåde."
+    "text": "For av hans fullnad har vi alle fått, nåde over nåde.",
+    "versions": [
+      {
+        "text": "Av hans fullnad har vi alle fått, nåde over nåde.",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "Det greske ὅτι i byrjinga av verset tyder 'for' og knyter dette verset til v.14. Det bør takast med for å visa samanhengen i teksten."
+      }
+    ]
   },
   {
     "bookId": 43,
@@ -225,11 +239,17 @@
     "bookId": 43,
     "chapterId": 1,
     "verseId": 34,
-    "text": "Eg har sett det, og eg har vitna: Han er Guds Son.",
+    "text": "Eg har sett det, og eg har vitna: Han er Guds utvalde.",
     "versions": [
       {
         "text": "Eg har sett det, og eg har vitna: Han er Guds utvalde.",
         "explanation": "Tekstvarianten 'ἐκλεκτὸς' (utvalde) finst i nokre handskrifter, men dei fleste moderne kritiske utgåver les 'υἱὸς' (Son). NA28/UBS5 har 'ἐκλεκτὸς', men dette bør merkast eller vurderast då mange omsetjingar brukar 'Son'."
+      },
+      {
+        "text": "Eg har sett det, og eg har vitna: Han er Guds Son.",
+        "type": "theological",
+        "severity": "major",
+        "explanation": "The version history shows a change FROM 'Guds utvalde' TO 'Guds Son' with a note acknowledging that NA28/UBS5 reads ἐκλεκτὸς (utvalde). Since the provided Greek original text explicitly has ἐκλεκτὸς, the translation should follow the source text provided. However, since the version history shows this was an intentional editorial decision and the reason acknowledges the textual variant, this is a case where the translator chose a different reading than the source text supplied. Given that the original text column reads ἐκλεκτὸς, 'Guds utvalde' is the accurate translation of the provided source. But the revision history shows this was intentionally changed - so this is flagged but may be an editorial choice."
       }
     ]
   },
@@ -255,7 +275,15 @@
     "bookId": 43,
     "chapterId": 1,
     "verseId": 38,
-    "text": "Jesus snudde seg, og då han såg at dei følgde etter, sa han til dei: «Kva leitar de etter?» Dei sa til han: «Rabbi» – det tyder meister – «kvar bur du?»"
+    "text": "Jesus snudde seg, og då han såg at dei følgde etter, sa han til dei: «Kva leitar de etter?» Dei sa til han: «Rabbi» – det tyder lærar – «kvar bur du?»",
+    "versions": [
+      {
+        "text": "Jesus snudde seg, og då han såg at dei følgde etter, sa han til dei: «Kva leitar de etter?» Dei sa til han: «Rabbi» – det tyder meister – «kvar bur du?»",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "Det greske Διδάσκαλε tyder 'lærar' (teacher), ikkje 'meister' (master). 'Rabbi' vert forklart som Διδάσκαλε i grunnteksten, som er det vanlege greske ordet for lærar. 'Meister' kan gje feil assosiasjonar på nynorsk."
+      }
+    ]
   },
   {
     "bookId": 43,

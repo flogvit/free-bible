@@ -177,13 +177,29 @@
     "bookId": 3,
     "chapterId": 25,
     "verseId": 29,
-    "text": "Om nokon sel eit bustadhus i ein by med murar, har han rett til å løysa det ut innan eit fullt år etter salet. I denne tida har han innløysingsrett."
+    "text": "Om nokon sel eit bustadhus i ein mura by, har han rett til å løysa det ut innan eit fullt år etter salet. I denne tida har han innløysingsrett.",
+    "versions": [
+      {
+        "text": "Om nokon sel eit bustadhus i ein by med murar, har han rett til å løysa det ut innan eit fullt år etter salet. I denne tida har han innløysingsrett.",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "עִיר חוֹמָה betyr ein by med mur (ein mura by), ikkje 'ein by med murar'. 'Ein mura by' er meir naturleg og presist på nynorsk."
+      }
+    ]
   },
   {
     "bookId": 3,
     "chapterId": 25,
     "verseId": 30,
-    "text": "Men om det ikkje blir løyst ut før det fulle året er gått, skal huset i byen med murane tilhøyra kjøparen og etterkomarane hans for alltid. Det skal ikkje frigjevast i jubelåret."
+    "text": "Men om det ikkje blir løyst ut før det fulle året er gått, skal huset i byen med mur tilhøyra kjøparen og etterkomarane hans for alltid. Det skal ikkje frigjevast i jubelåret.",
+    "versions": [
+      {
+        "text": "Men om det ikkje blir løyst ut før det fulle året er gått, skal huset i byen med murane tilhøyra kjøparen og etterkomarane hans for alltid. Det skal ikkje frigjevast i jubelåret.",
+        "type": "grammar",
+        "severity": "minor",
+        "explanation": "Grunnteksten har חֹמָה (mur) i eintal. 'Murane' (fleirtal med bestemt form) er unøyaktig. 'Mur' i eintal er meir korrekt og samsvarar med vers 29 som seier 'ein by med murar' (עִיר חוֹמָה). Eigentleg er begge versa best omsett med 'mur' i eintal."
+      }
+    ]
   },
   {
     "bookId": 3,
@@ -219,7 +235,15 @@
     "bookId": 3,
     "chapterId": 25,
     "verseId": 35,
-    "text": "Om bror din blir fattig og ikkje kan greia seg hos deg, skal du hjelpa han, anten han er ein innflyttar eller ein framand, så han kan leva hos deg."
+    "text": "Om bror din blir fattig og ikkje kan klara seg hos deg, skal du ta deg av han, om han så er ein framand eller innflyttar, så han kan leva hos deg.",
+    "versions": [
+      {
+        "text": "Om bror din blir fattig og ikkje kan greia seg hos deg, skal du hjelpa han, anten han er ein innflyttar eller ein framand, så han kan leva hos deg.",
+        "type": "error",
+        "severity": "major",
+        "explanation": "Grunnteksten seier «גֵּר וְתוֹשָׁב» (ger ve-toshav), som her ikkje skildrar bror din som anten innflyttar eller framand, men heller at du skal hjelpa han slik at han kan leva – anten han er ein framand eller innflyttar. Omsetjinga er akseptabel i meining, men ordvalet 'anten...eller' kan misforståast som at 'bror din' er ein innflyttar/framand, medan teksten meiner at du skal hjelpa bror din like mykje som ein framand/innflyttar. Elles er dette ein mindre justeringssak."
+      }
+    ]
   },
   {
     "bookId": 3,
@@ -273,7 +297,15 @@
     "bookId": 3,
     "chapterId": 25,
     "verseId": 44,
-    "text": "Når det gjeld dei slavane du skal ha, både menn og kvinner – frå folkeslaga rundt dykk kan de kjøpa slavar."
+    "text": "Når det gjeld slavar og slavinner som du skal ha – frå folkeslaga rundt dykk kan de kjøpa slavar og slavinner.",
+    "versions": [
+      {
+        "text": "Når det gjeld dei slavane du skal ha, både menn og kvinner – frå folkeslaga rundt dykk kan de kjøpa slavar.",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "Grunnteksten nemner eksplisitt עֶבֶד וְאָמָה (mannleg slave og kvinneleg slave/slavinne) og likeins וְעַבְדְּךָ וַאֲמָתְךָ. Noverande omsetjing forenklar til 'slavar, både menn og kvinner', noko som fungerer, men «slavinner» er meir presist for אָמָה."
+      }
+    ]
   },
   {
     "bookId": 3,
@@ -297,7 +329,15 @@
     "bookId": 3,
     "chapterId": 25,
     "verseId": 47,
-    "text": "Om ein innflyttar eller framand hos deg blir rik, og bror din blir fattig hos han og sel seg til innflyttaren eller den framande hos deg, eller til ein som stammar frå ein innflyttar si slekt,"
+    "text": "Om ein innflyttar eller framand hos deg blir rik, og bror din blir fattig hos han og sel seg til innflyttaren eller den framande hos deg, eller til ei grein av ein innflyttar si slekt,",
+    "versions": [
+      {
+        "text": "Om ein innflyttar eller framand hos deg blir rik, og bror din blir fattig hos han og sel seg til innflyttaren eller den framande hos deg, eller til ein som stammar frå ein innflyttar si slekt,",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "עֵקֶר מִשְׁפַּחַת גֵּר betyr bokstavleg 'rota/greina av ein innflyttar si slekt'. 'Ein som stammar frå' er ei akseptabel tolking, men 'ei grein av' er meir ordrett og presist for עֵקֶר (rot/avkom)."
+      }
+    ]
   },
   {
     "bookId": 3,

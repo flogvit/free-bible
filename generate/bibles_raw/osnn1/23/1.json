@@ -15,11 +15,17 @@
     "bookId": 23,
     "chapterId": 1,
     "verseId": 3,
-    "text": "Ein okse kjenner eigaren sin, og eit esel krubba til herren sin. Men Israel kjenner ikkje, folket mitt forstår ikkje.",
+    "text": "Ein okse kjenner eigaren sin, og eit esel kjenner krubba til herren sin. Men Israel kjenner ikkje, folket mitt forstår ikkje.",
     "versions": [
       {
         "text": "Ein okse kjenner eigaren sin, og eit esel veit kvar krubba til herren sin står. Men Israel kjenner ikkje, folket mitt forstår ikkje.",
         "explanation": "Originalteksten seier berre at eselet kjenner krubba til herren sin, ikkje at det 'veit kvar krubba står'. Utvidinga er unødvendig og gjer setninga lengre enn originalen."
+      },
+      {
+        "text": "Ein okse kjenner eigaren sin, og eit esel krubba til herren sin. Men Israel kjenner ikkje, folket mitt forstår ikkje.",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "Setninga 'eit esel krubba til herren sin' manglar eit verb og er grammatisk ufullstendig. Det hebraiske אֵבוּס betyr 'krubba/fôrkrybbe', og verbet 'kjenner' er underforstått frå parallellen. Å leggja til 'kjenner' gjer setninga komplett utan å leggja til noko som ikkje ligg i teksten."
       }
     ]
   },
@@ -51,7 +57,15 @@
     "bookId": 23,
     "chapterId": 1,
     "verseId": 8,
-    "text": "Dottera Sion ligg att som ei hytte i ein vingard, som eit skur på ein agurkåker, som ein kringsett by."
+    "text": "Dottera Sion ligg att som ei hytte i ein vingard, som eit nattskjul på ein agurkåker, som ein kringsett by.",
+    "versions": [
+      {
+        "text": "Dottera Sion ligg att som ei hytte i ein vingard, som eit skur på ein agurkåker, som ein kringsett by.",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "מְלוּנָה tyder 'nattskjul/nattbu', ikkje berre eit vanleg 'skur'. Det er eit enkelt, mellombels ly for nattvakt. 'Nattskjul' er meir presist og skil seg frå סֻכָּה (hytte) i same vers."
+      }
+    ]
   },
   {
     "bookId": 23,
@@ -69,7 +83,15 @@
     "bookId": 23,
     "chapterId": 1,
     "verseId": 11,
-    "text": "Kva skal eg med alle offera dykkar? seier Herren. Eg er mett av brennoffer av vêrar og feitt av gjøfé. Blod av oksar, lam og bukkar har eg ikkje hug til."
+    "text": "Kva skal eg med alle offera dykkar? seier Herren. Eg er mett av brennoffer av vêrar og feitt av gjøfe. Blod av oksar, lam og bukkar har eg ikkje hug til.",
+    "versions": [
+      {
+        "text": "Kva skal eg med alle offera dykkar? seier Herren. Eg er mett av brennoffer av vêrar og feitt av gjøfé. Blod av oksar, lam og bukkar har eg ikkje hug til.",
+        "type": "error",
+        "severity": "major",
+        "explanation": "'gjøfé' er feilstava. Rett nynorsk form er 'gjøfe' (gjødd fe / feitfôra fe). מְרִיאִים tyder 'gjøfôra dyr'."
+      }
+    ]
   },
   {
     "bookId": 23,
@@ -111,7 +133,15 @@
     "bookId": 23,
     "chapterId": 1,
     "verseId": 17,
-    "text": "Lær å gjera godt, søk rett, hjelp den undertrykte, lat den farlause få sin rett, før saka til enkja!"
+    "text": "Lær å gjera godt, søk rett, rett opp den undertrykte, lat den farlause få sin rett, før saka til enkja!",
+    "versions": [
+      {
+        "text": "Lær å gjera godt, søk rett, hjelp den undertrykte, lat den farlause få sin rett, før saka til enkja!",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "Det hebraiske אַשְּׁרוּ חָמוֹץ tyder meir presist 'rett opp / før på rett veg den undertrykte'. Verbet אשר har tydinga å leia/rettleia, ikkje berre 'hjelpa'. 'Rett opp den undertrykte' gjev ein betre parallell til resten av verset."
+      }
+    ]
   },
   {
     "bookId": 23,

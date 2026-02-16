@@ -45,7 +45,15 @@
     "bookId": 44,
     "chapterId": 15,
     "verseId": 7,
-    "text": "Etter mykje ordskifte reiste Peter seg og sa til dei: «Brør, de veit at Gud alt i tidlege dagar valde meg ut mellom dykk, så heidningane skulle få høyra evangelieordet frå min munn og koma til tru."
+    "text": "Etter mykje ordskifte reiste Peter seg og sa til dei: «Brør, de veit at Gud alt i dei fyrste dagane valde meg ut mellom dykk, så heidningane skulle få høyra evangelieordet frå min munn og koma til tru.",
+    "versions": [
+      {
+        "text": "Etter mykje ordskifte reiste Peter seg og sa til dei: «Brør, de veit at Gud alt i tidlege dagar valde meg ut mellom dykk, så heidningane skulle få høyra evangelieordet frå min munn og koma til tru.",
+        "type": "grammar",
+        "severity": "minor",
+        "explanation": "Gresk 'ἀφʼ ἡμερῶν ἀρχαίων' tyder 'frå dei fyrste dagane' – det viser til dei tidlege dagane i den kristne rørsla (ca. Apg 10, Kornelius-hendinga), ikkje berre generelt 'tidlege dagar'. 'I dei fyrste dagane' er meir presist og idiomatisk."
+      }
+    ]
   },
   {
     "bookId": 44,
@@ -87,7 +95,15 @@
     "bookId": 44,
     "chapterId": 15,
     "verseId": 14,
-    "text": "Simeon har fortalt korleis Gud frå først av sørgde for å vinna eit folk av heidningar for sitt namn."
+    "text": "Simeon har fortalt korleis Gud frå først av såg til å ta ut eit folk av heidningar for sitt namn.",
+    "versions": [
+      {
+        "text": "Simeon har fortalt korleis Gud frå først av sørgde for å vinna eit folk av heidningar for sitt namn.",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "Gresk 'ἐπεσκέψατο λαβεῖν' tyder 'såg til å ta' eller 'vitja for å ta'. 'Sørgde for å vinna' legg til ei tolking som går utover originalen. 'Såg til å ta ut' er nærare gresk og meir presist teologisk – det handlar om Guds aktive utval, ikkje berre om å 'vinna'."
+      }
+    ]
   },
   {
     "bookId": 44,
@@ -105,13 +121,29 @@
     "bookId": 44,
     "chapterId": 15,
     "verseId": 17,
-    "text": "så resten av menneska skal søkja Herren, ja, alle heidningfolk som namnet mitt er nemnt over, seier Herren, han som gjer dette"
+    "text": "så resten av menneska skal søkja Herren, ja, alle folkeslaga som namnet mitt er nemnt over, seier Herren, han som gjer dette",
+    "versions": [
+      {
+        "text": "så resten av menneska skal søkja Herren, ja, alle heidningfolk som namnet mitt er nemnt over, seier Herren, han som gjer dette",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "Gresk 'τὰ ἔθνη' tyder 'folkeslaga/nasjonane', ikkje spesifikt 'heidningfolk'. I profetisk samanheng (sitat frå Amos 9:12 via LXX) er 'folkeslaga' meir nøytralt og korrekt enn 'heidningfolk', som har ein noko negativ klang."
+      }
+    ]
   },
   {
     "bookId": 44,
     "chapterId": 15,
     "verseId": 18,
-    "text": "kjent frå eldgamle tider.'"
+    "text": "kjent frå æva av.'",
+    "versions": [
+      {
+        "text": "kjent frå eldgamle tider.'",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "Gresk 'ἀπʼ αἰῶνος' tyder 'frå æva/evigheita'. 'Eldgamle tider' er brukt i vers 21 for 'ἐκ γενεῶν ἀρχαίων', som er eit anna uttrykk. 'Frå æva av' skil betre mellom dei to greske uttrykka og er meir presist."
+      }
+    ]
   },
   {
     "bookId": 44,
@@ -225,11 +257,17 @@
     "bookId": 44,
     "chapterId": 15,
     "verseId": 34,
-    "text": "[Vers 34 bør markerast som tekstkritisk usikkert eller fjernast]",
+    "text": "Men Silas fann å verta verande der. [Verset manglar i dei eldste handskriftene.]",
     "versions": [
       {
         "text": "Men Silas valde å bli verande der.",
         "explanation": "Vers 34 finst ikkje i dei eldste og beste handskriftene (inkludert P74, Sinaiticus, Vaticanus, Alexandrinus). Det er ein sekundær tilføying i nokre handskrifter for å forklara korleis Silas var tilgjengeleg i vers 40. Omsetjinga bør reflektera denne tekstkritiske usikkerheita."
+      },
+      {
+        "text": "[Vers 34 bør markerast som tekstkritisk usikkert eller fjernast]",
+        "type": "error",
+        "severity": "critical",
+        "explanation": "Den noverande teksten er ein redaksjonell merknad, ikkje ei omsetjing. Sjølv om verset er tekstkritisk usikkert, bør ei bibelomsetjing gje sjølve teksten og heller markera usikkerheita i ein fotnote eller parentes, ikkje erstatta heile verset med ein kommentar. Den førre versjonen ('Men Silas valde å bli verande der.') vart fjerna, så eg foreslår ei anna formulering med ein tekstkritisk merknad i klammer."
       }
     ]
   },

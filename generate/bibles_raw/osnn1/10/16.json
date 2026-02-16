@@ -9,7 +9,15 @@
     "bookId": 10,
     "chapterId": 16,
     "verseId": 2,
-    "text": "Kongen spurde Siba: «Kva vil du med dette?» Siba svara: «Esla er til kongens hus å ri på, brødet og sommarfruktene er til gutane å eta, og vinen er til dei som blir utmatta i øydemarka, så dei kan drikka.»"
+    "text": "Kongen sa til Siba: «Kva skal du med dette?»",
+    "versions": [
+      {
+        "text": "Kongen spurde Siba: «Kva vil du med dette?» Siba svara: «Esla er til kongens hus å ri på, brødet og sommarfruktene er til gutane å eta, og vinen er til dei som blir utmatta i øydemarka, så dei kan drikka.»",
+        "type": "grammar",
+        "severity": "minor",
+        "explanation": "Det hebraiske 'mah-elleh lak' tyder bokstavleg 'kva er dette for deg / kva skal dette vera?' – altså eit spørsmål om kva tinga er til, ikkje kva Siba vil. 'Kva vil du med dette' legg til ein intensjon som ikkje er i originalen."
+      }
+    ]
   },
   {
     "bookId": 10,
@@ -27,7 +35,15 @@
     "bookId": 10,
     "chapterId": 16,
     "verseId": 5,
-    "text": "Då kong David kom til Bahurim, kom det ein mann ut derifrå. Han var av same ætta som Sauls hus og heitte Sjimi, son til Gera. Han kom ut og forbanna medan han gjekk."
+    "text": "Då kong David kom til Bahurim, kom det ein mann ut derifrå. Han var av same ætta som Sauls hus og heitte Sjimi, son til Gera. Han kom ut, og han heldt fram med å forbanna.",
+    "versions": [
+      {
+        "text": "Då kong David kom til Bahurim, kom det ein mann ut derifrå. Han var av same ætta som Sauls hus og heitte Sjimi, son til Gera. Han kom ut og forbanna medan han gjekk.",
+        "type": "grammar",
+        "severity": "minor",
+        "explanation": "Det hebraiske 'yotse yatso umqallel' bruker infinitivus absolutus (yatso) for å understreka den pågåande handlinga – han heldt fram og fram med å gå ut og forbanna. 'Medan han gjekk' er lagt til utan grunnlag i teksten."
+      }
+    ]
   },
   {
     "bookId": 10,
@@ -57,7 +73,15 @@
     "bookId": 10,
     "chapterId": 16,
     "verseId": 8,
-    "text": "Herren har late alt blodet frå Sauls hus koma attende over deg, du som tok kongedømet etter han. No har Herren gjeve kongedømet i hendene på Absalom, son din. Sjå, no er du i ulukka di, for du er ein blodsmann!»"
+    "text": "Herren har late alt blodet frå Sauls hus koma attende over deg, du som vart konge i hans stad. Herren har gjeve kongedømet i handa på Absalom, son din. Sjå, no er du ramma av di eiga ulukke, for du er ein blodsmann!»",
+    "versions": [
+      {
+        "text": "Herren har late alt blodet frå Sauls hus koma attende over deg, du som tok kongedømet etter han. No har Herren gjeve kongedømet i hendene på Absalom, son din. Sjå, no er du i ulukka di, for du er ein blodsmann!»",
+        "type": "error",
+        "severity": "major",
+        "explanation": "'Asher malakhta takhtav' tyder 'som du vart konge i hans stad' – ikkje 'tok kongedømet etter han', som impliserer at David tok det med makt. 'Beyad' er eintal 'i handa'. 'Hinnekha bera'atekha' tyder at ulukka hans eiga ulukke råkar han, ikkje berre at han 'er i' ulukka."
+      }
+    ]
   },
   {
     "bookId": 10,
@@ -105,7 +129,15 @@
     "bookId": 10,
     "chapterId": 16,
     "verseId": 14,
-    "text": "Kongen og alt folket som var med han, kom fram utmatta, og dei kvilde seg der."
+    "text": "Kongen og alt folket som var med han, kom fram utmatta, og han kvilde seg der.",
+    "versions": [
+      {
+        "text": "Kongen og alt folket som var med han, kom fram utmatta, og dei kvilde seg der.",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "Det hebraiske 'vayyinnafesh' er 3. person eintal (han kvilde seg), ikkje fleirtal. Subjektet er truleg kongen."
+      }
+    ]
   },
   {
     "bookId": 10,
@@ -129,7 +161,15 @@
     "bookId": 10,
     "chapterId": 16,
     "verseId": 18,
-    "text": "Husjai svara Absalom: «Nei! Den som Herren har valt, og dette folket og alle Israels menn, han vil eg høyra til, og hos han vil eg bli."
+    "text": "Husjai svara Absalom: «Nei! Den som Herren og dette folket og alle Israels menn har valt, han vil eg høyra til, og hos han vil eg bli.",
+    "versions": [
+      {
+        "text": "Husjai svara Absalom: «Nei! Den som Herren har valt, og dette folket og alle Israels menn, han vil eg høyra til, og hos han vil eg bli.",
+        "type": "error",
+        "severity": "minor",
+        "explanation": "I den hebraiske teksten er det Herren, dette folket og alle Israels menn som saman har valt – alle tre er subjekt for verbet 'bachar'. Den noverande omsetjinga gjer det uklart ved å skilja 'Herren har valt' frå folket."
+      }
+    ]
   },
   {
     "bookId": 10,

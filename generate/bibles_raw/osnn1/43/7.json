@@ -45,7 +45,15 @@
     "bookId": 43,
     "chapterId": 7,
     "verseId": 8,
-    "text": "Gå de opp til høgtida! Eg går ikkje opp til denne høgtida, for mi tid er enno ikkje fullenda.»"
+    "text": "Eg går enno ikkje opp til denne høgtida, for mi tid er enno ikkje fullenda.",
+    "versions": [
+      {
+        "text": "Gå de opp til høgtida! Eg går ikkje opp til denne høgtida, for mi tid er enno ikkje fullenda.»",
+        "type": "error",
+        "severity": "major",
+        "explanation": "Mange greske handskrifter har οὔπω ('enno ikkje') i staden for οὐκ ('ikkje'). Sidan den kritiske teksten i parentes markerer nettopp denne varianten (⸀οὐκ), og 'enno ikkje' er teologisk viktig (Jesus gjekk seinare opp til høgtida, v.10), bør 'enno ikkje' brukast for å unngå at det ser ut som Jesus lyg."
+      }
+    ]
   },
   {
     "bookId": 43,
@@ -87,11 +95,17 @@
     "bookId": 43,
     "chapterId": 7,
     "verseId": 15,
-    "text": "Jødane undra seg og sa: «Korleis kan han kunna skriftene når han ikkje har fått opplæring?»",
+    "text": "Korleis kan han ha kunnskap om skriftene utan å ha studert?",
     "versions": [
       {
         "text": "Jødane undra seg og sa: «Korleis kan denne kunna skriftene når han ikkje har fått opplæring?»",
         "explanation": "For betre flyt i munnleg lesing er 'han' meir naturleg enn 'denne'. Det greske 'οὗτος' kan omsetjast begge vegar, men 'han' gjev meir naturleg norsk."
+      },
+      {
+        "text": "Jødane undra seg og sa: «Korleis kan han kunna skriftene når han ikkje har fått opplæring?»",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "Det greske γράμματα οἶδεν μὴ μεμαθηκώς tyder bokstavleg 'kan skrifter utan å ha lært/studert'. 'Fått opplæring' er akseptabelt, men 'utan å ha studert' ligg nærmare det greske μανθάνω som viser til formell rabbinsk opplæring/studium. Sidan verset berre har éin tidlegare revisjon, er dette ei mindre forbetring."
       }
     ]
   },
@@ -219,7 +233,15 @@
     "bookId": 43,
     "chapterId": 7,
     "verseId": 35,
-    "text": "Då sa jødane seg imellom: «Kvar vil han gå, sidan vi ikkje skal finna han? Vil han kanskje gå til jødane som er spreidde mellom grekarane, og undervisa grekarane?"
+    "text": "Vil han kanskje gå til dei spreidde mellom grekarane, og undervisa grekarane?",
+    "versions": [
+      {
+        "text": "Då sa jødane seg imellom: «Kvar vil han gå, sidan vi ikkje skal finna han? Vil han kanskje gå til jødane som er spreidde mellom grekarane, og undervisa grekarane?",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "Det greske τὴν διασπορὰν τῶν Ἑλλήνων ('diasporaen blant grekarane') nemner ikkje eksplisitt 'jødane'. Det refererer til dei (jødane) som er spreidde, men å leggja til 'jødane' er tolkande tillegg. 'Dei spreidde mellom grekarane' er meir teksttru og framleis forståeleg."
+      }
+    ]
   },
   {
     "bookId": 43,
@@ -279,7 +301,15 @@
     "bookId": 43,
     "chapterId": 7,
     "verseId": 45,
-    "text": "Tempeltenarane kom då tilbake til overprestane og farisearane, som spurde dei: «Kvifor henta de han ikkje?»"
+    "text": "Tempeltenestfolka kom då tilbake til overprestane og farisearane, som spurde dei: «Kvifor henta de han ikkje?»",
+    "versions": [
+      {
+        "text": "Tempeltenarane kom då tilbake til overprestane og farisearane, som spurde dei: «Kvifor henta de han ikkje?»",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "I vers 32 vart desse omtala som 'tempeltenestfolk' (etter revisjon). For konsekvens bør same omgrep brukast her i vers 45. Alternativt kan begge vers bruka same form."
+      }
+    ]
   },
   {
     "bookId": 43,

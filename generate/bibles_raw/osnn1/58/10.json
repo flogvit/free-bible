@@ -105,19 +105,43 @@
     "bookId": 58,
     "chapterId": 10,
     "verseId": 15,
-    "text": "Dette vitnar Den Heilage Ande òg for oss. For etter at han har sagt:"
+    "text": "Den Heilage Ande vitnar òg for oss. For etter at han har sagt:",
+    "versions": [
+      {
+        "text": "Dette vitnar Den Heilage Ande òg for oss. For etter at han har sagt:",
+        "type": "error",
+        "severity": "major",
+        "explanation": "'Dette vitnar Den Heilage Ande' er litt uklart fordi 'dette' peikar bakover medan konteksten peikar framover (til sitatet som følgjer). Originalteksten har μαρτυρεῖ δὲ ἡμῖν καὶ τὸ πνεῦμα τὸ ἅγιον – subjektet er Den Heilage Ande, og 'dette' er ikkje til stades i grunnteksten. Betre å la 'Den Heilage Ande' vera subjekt direkte."
+      }
+    ]
   },
   {
     "bookId": 58,
     "chapterId": 10,
     "verseId": 16,
-    "text": "«Dette er pakta eg vil gjera med dei etter desse dagane, seier Herren: Eg vil leggja lovene mine i hjarta deira og skriva dei i sinnet deira,»"
+    "text": "«Dette er pakta eg vil gjera med dei etter desse dagane, seier Herren: Eg vil leggja lovene mine i hjarta deira og skriva dei i sinnet deira.»",
+    "versions": [
+      {
+        "text": "«Dette er pakta eg vil gjera med dei etter desse dagane, seier Herren: Eg vil leggja lovene mine i hjarta deira og skriva dei i sinnet deira,»",
+        "type": "error",
+        "severity": "minor",
+        "explanation": "Verset sluttar med eit komma inni hermeteiknet. Sidan vers 17 held fram med 'seier han:' utanfor hermeteikna, bør vers 16 avsluttast med punktum inni hermeteiknet, ikkje komma. Sitatet i vers 16 er avslutta, og vers 17 innfører eit nytt sitat."
+      }
+    ]
   },
   {
     "bookId": 58,
     "chapterId": 10,
     "verseId": 17,
-    "text": "seier han: «Og syndene deira og lovbrota deira vil eg ikkje minnast meir.»"
+    "text": "legg han til: «Og syndene deira og lovbrota deira vil eg ikkje minnast meir.»",
+    "versions": [
+      {
+        "text": "seier han: «Og syndene deira og lovbrota deira vil eg ikkje minnast meir.»",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "Grunnteksten har ikkje eit nytt 'seier han' her, men fortset frå vers 15-16. Å bruka 'legg han til' i staden for å gjenta 'seier han' kan vera meir presist, men dette er ein mindre stilistisk merknad."
+      }
+    ]
   },
   {
     "bookId": 58,
@@ -219,11 +243,17 @@
     "bookId": 58,
     "chapterId": 10,
     "verseId": 32,
-    "text": "Men minnast dei tidlegare dagane då de vart opplyste og heldt ut ein hard lidingsstrid.",
+    "text": "Men minnast dei første dagane då de vart opplyste og heldt ut ein hard lidingsstrid.",
     "versions": [
       {
         "text": "Men minnast dei tidlegare dagane då de vart opplyste og heldt ut i ein hard lidingsstrid.",
         "explanation": "Setninga manglar imperativform tydeleg uttrykt. 'Heldt ut i ein hard' bør vera 'heldt ut ein hard' - verbet 'halda ut' tek direkte objekt utan preposisjon i denne samanhengen. Eventuelt kan ein skriva 'i ein hard strid', men 'lidingsstrid' fungerer betre som direkte objekt."
+      },
+      {
+        "text": "Men minnast dei tidlegare dagane då de vart opplyste og heldt ut ein hard lidingsstrid.",
+        "type": "error",
+        "severity": "major",
+        "explanation": "Ἀναμιμνῄσκεσθε er imperativ ('minnast!'), og setninga byrjar med 'Men minnast' som er korrekt. Men 'dei tidlegare dagane' er litt tungt. τὰς πρότερον ἡμέρας tyder 'dei tidlegare/første dagane'. 'Dei første dagane' er meir naturleg nynorsk og fangar meininga betre – det viser til starten av trusvandrininga deira."
       }
     ]
   },
@@ -237,7 +267,15 @@
     "bookId": 58,
     "chapterId": 10,
     "verseId": 34,
-    "text": "De leid saman med dei som sat i fengsel, og de tok det med glede då eigedomane dykkar vart røva, for de visste at de hadde ein betre eigedom som varer."
+    "text": "De leid med dei som sat i fengsel, og de tok det med glede då eigedomane dykkar vart røva, for de visste at de hadde ein betre eigedom som varer.",
+    "versions": [
+      {
+        "text": "De leid saman med dei som sat i fengsel, og de tok det med glede då eigedomane dykkar vart røva, for de visste at de hadde ein betre eigedom som varer.",
+        "type": "error",
+        "severity": "minor",
+        "explanation": "συνεπαθήσατε tyder 'hadde medkjensle med' eller 'leid med', ikkje nødvendigvis 'leid saman med'. 'Leid saman med' kan gje inntrykk av at dei sjølve sat i fengsel, medan poenget er at dei viste medkjensle/solidaritet med fangane. 'Leid med' er meir presist."
+      }
+    ]
   },
   {
     "bookId": 58,

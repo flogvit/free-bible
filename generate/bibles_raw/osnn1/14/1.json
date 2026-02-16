@@ -27,11 +27,17 @@
     "bookId": 14,
     "chapterId": 1,
     "verseId": 5,
-    "text": "Bronsealtaret som Besalel, son til Uri, son til Hur, hadde laga, stod der framfor Herrens bustad, og Salomo og forsamlinga søkte han der.",
+    "text": "Bronsealtaret som Besalel, son til Uri, son til Hur, hadde laga, det stod framfor Herrens bustad, og Salomo og forsamlinga søkte dit.",
     "versions": [
       {
         "text": "Bronsealtaret som Besalel, son til Uri, son til Hur, hadde laga, stod der framfor Herrens bustad. Salomo og forsamlinga søkte Herren der.",
         "explanation": "Det hebraiske verbet דרש med suffiks -הו refererer til å søkja altaret/Herren der, ikkje 'søkte Herren der' som ei separat setning. Ei tydelegare kopling med 'og' og 'han' (som kan visa til altaret eller Herren) gjev betre flyt og er nærare originalen."
+      },
+      {
+        "text": "Bronsealtaret som Besalel, son til Uri, son til Hur, hadde laga, stod der framfor Herrens bustad, og Salomo og forsamlinga søkte han der.",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "Hebraisk שָׂם betyr 'der' og indikerer plassering. Gjeldande versjon har allereie 'der' men det er litt uklart kva 'han' refererer til. Likevel, med tanke på versionshistorikken og at endringa var gjort medvite, er dette berre ein mindre merknad. Verset fungerer akseptabelt."
       }
     ]
   },
@@ -63,7 +69,15 @@
     "bookId": 14,
     "chapterId": 1,
     "verseId": 10,
-    "text": "Gjev meg no visdom og kunnskap, så eg kan leia dette folket på rett vis. For kven kan elles dømma dette store folket ditt?»"
+    "text": "Gjev meg no visdom og kunnskap, så eg kan gå ut og inn framfor dette folket. For kven kan elles dømma dette store folket ditt?»",
+    "versions": [
+      {
+        "text": "Gjev meg no visdom og kunnskap, så eg kan leia dette folket på rett vis. For kven kan elles dømma dette store folket ditt?»",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "Det hebraiske uttrykket וְאֵצְאָה לִפְנֵי הָעָם־הַזֶּה וְאָבוֹאָה betyr bokstavleg 'gå ut og inn framfor dette folket', eit idiom for å leia/styra. 'Leia dette folket på rett vis' er ei fri parafrase som legg til 'på rett vis' som ikkje finst i originalen. Å bevara det idiomatiske uttrykket er meir nøyaktig og framleis forståeleg på nynorsk."
+      }
+    ]
   },
   {
     "bookId": 14,
@@ -81,7 +95,15 @@
     "bookId": 14,
     "chapterId": 1,
     "verseId": 13,
-    "text": "Så kom Salomo til Jerusalem frå offerhaugen i Gibeon, frå møteteltet, og han rådde over Israel."
+    "text": "Så kom Salomo frå offerhaugen i Gibeon til Jerusalem, frå møteteltet, og han rådde over Israel.",
+    "versions": [
+      {
+        "text": "Så kom Salomo til Jerusalem frå offerhaugen i Gibeon, frå møteteltet, og han rådde over Israel.",
+        "type": "error",
+        "severity": "major",
+        "explanation": "Ordstillinga i den noverande omsetjinga ('til Jerusalem frå offerhaugen i Gibeon') kan gje inntrykk av at Jerusalem er hovudmålet nemnt først. Den hebraiske teksten nemner offerhaugen i Gibeon og Jerusalem saman i ein konstruksjon som indikerer reisa frå Gibeon til Jerusalem. Ei omstilling gjev betre flyt og er tydelegare."
+      }
+    ]
   },
   {
     "bookId": 14,
@@ -99,13 +121,29 @@
     "bookId": 14,
     "chapterId": 1,
     "verseId": 16,
-    "text": "Hestane til Salomo vart henta frå Egypt og frå Kue. Kjøpmennene til kongen henta dei frå Kue mot betaling."
+    "text": "Hestane til Salomo kom frå Egypt og frå Kue. Kjøpmennene til kongen kjøpte dei frå Kue til fastsett pris.",
+    "versions": [
+      {
+        "text": "Hestane til Salomo vart henta frå Egypt og frå Kue. Kjøpmennene til kongen henta dei frå Kue mot betaling.",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "Hebraisk מוֹצָא betyr 'opphav/kjelde' – altså hestane 'kom frå', ikkje 'vart henta frå'. Vidare betyr בִּמְחִיר 'til ein (fastsett) pris', ikkje berre 'mot betaling'. 'Mot betaling' er akseptabelt men 'til fastsett pris' er meir presist."
+      }
+    ]
   },
   {
     "bookId": 14,
     "chapterId": 1,
     "verseId": 17,
-    "text": "Ei stridsvogn vart henta opp frå Egypt for seks hundre sekel sølv, og ein hest for hundre og femti. På same vis førte dei dei ut til alle hettitt-kongane og aramear-kongane."
+    "text": "Ei stridsvogn vart henta opp frå Egypt for seks hundre sekel sølv, og ein hest for hundre og femti. På same vis førte dei dei vidare til alle hettitt-kongane og aramear-kongane.",
+    "versions": [
+      {
+        "text": "Ei stridsvogn vart henta opp frå Egypt for seks hundre sekel sølv, og ein hest for hundre og femti. På same vis førte dei dei ut til alle hettitt-kongane og aramear-kongane.",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "בְּיָדָם יוֹצִיאוּ betyr 'gjennom dei (dvs. mellommennene) førte dei ut', altså det var ein vidareformidling. 'Førte dei dei ut' er grammatisk tungt med dobbelt 'dei'. 'Førte dei vidare' gjev betre flyt og klarare meining."
+      }
+    ]
   },
   {
     "bookId": 14,

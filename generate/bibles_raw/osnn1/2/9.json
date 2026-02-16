@@ -3,7 +3,15 @@
     "bookId": 2,
     "chapterId": 9,
     "verseId": 1,
-    "text": "Herren sa til Moses: «Gå til farao og sei til han: Så seier Herren, hebrearguden: Lat folket mitt fara, så dei kan tena meg."
+    "text": "Herren sa til Moses: «Gå til farao og sei til han: Så seier Herren, hebrerane sin Gud: Lat folket mitt fara, så dei kan tena meg.",
+    "versions": [
+      {
+        "text": "Herren sa til Moses: «Gå til farao og sei til han: Så seier Herren, hebrearguden: Lat folket mitt fara, så dei kan tena meg.",
+        "type": "theological",
+        "severity": "major",
+        "explanation": "'Hebrearguden' kan oppfattast som om Herren berre er ein guddom blant mange. Det hebraiske אֱלֹהֵי הָעִבְרִים betyr 'hebrerane sin Gud' eller 'Gud til hebrearane'. Det same gjeld vers 13."
+      }
+    ]
   },
   {
     "bookId": 2,
@@ -15,7 +23,15 @@
     "bookId": 2,
     "chapterId": 9,
     "verseId": 3,
-    "text": "så skal Herrens hand koma over feet ditt som er på marka – over hestane, esla, kamelane, storfeet og småfeet – med ein svært alvorleg pest."
+    "text": "så skal Herrens hand koma over feet ditt som er på marka – over hestane, esla, kamelane, storfeet og småfeet – med ein svært alvorleg sjukdom.",
+    "versions": [
+      {
+        "text": "så skal Herrens hand koma over feet ditt som er på marka – over hestane, esla, kamelane, storfeet og småfeet – med ein svært alvorleg pest.",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "דֶּבֶר (dever) er pestsjukdom/dyrepest. 'Pest' er brukbart, men 'sjukdom' eller 'farsott' kan vera meir naturleg på nynorsk. Dette er ei mindre sak."
+      }
+    ]
   },
   {
     "bookId": 2,
@@ -57,7 +73,15 @@
     "bookId": 2,
     "chapterId": 9,
     "verseId": 9,
-    "text": "Det skal bli til fint støv over heile Egypt og føra til byller som bryt ut i sår på menneske og dyr i heile landet.»"
+    "text": "Det skal bli til fint støv over heile Egypt og føra til verkebyllar som bryt ut på menneske og dyr i heile landet.»",
+    "versions": [
+      {
+        "text": "Det skal bli til fint støv over heile Egypt og føra til byller som bryt ut i sår på menneske og dyr i heile landet.»",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "אֲבַעְבֻּעֹת (avav'uot) er sjølve byllane/blemmene, ikkje 'sår'. שְׁחִין פֹּרֵחַ אֲבַעְבֻּעֹת betyr 'byller som bryt ut i blemmer/pustlar'. 'Sår' er ikkje heilt presist."
+      }
+    ]
   },
   {
     "bookId": 2,
@@ -81,7 +105,15 @@
     "bookId": 2,
     "chapterId": 9,
     "verseId": 13,
-    "text": "Herren sa til Moses: «Stå tidleg opp om morgonen og still deg framfor farao og sei til han: Så seier Herren, hebrearguden: Lat folket mitt fara, så dei kan tena meg."
+    "text": "Herren sa til Moses: «Stå tidleg opp om morgonen og still deg framfor farao og sei til han: Så seier Herren, hebrerane sin Gud: Lat folket mitt fara, så dei kan tena meg.",
+    "versions": [
+      {
+        "text": "Herren sa til Moses: «Stå tidleg opp om morgonen og still deg framfor farao og sei til han: Så seier Herren, hebrearguden: Lat folket mitt fara, så dei kan tena meg.",
+        "type": "theological",
+        "severity": "major",
+        "explanation": "Same problemet som i vers 1: 'hebrearguden' bør vera 'hebrerane sin Gud' for å unngå misforståinga at Herren berre er éin gud blant mange."
+      }
+    ]
   },
   {
     "bookId": 2,
@@ -93,7 +125,15 @@
     "bookId": 2,
     "chapterId": 9,
     "verseId": 15,
-    "text": "For no kunne eg ha rekt ut handa mi og slått deg og folket ditt med pest, så du vart utsletta frå jorda."
+    "text": "For no kunne eg ha rekt ut handa mi og slått deg og folket ditt med pest, så du hadde vorte utsletta frå jorda.",
+    "versions": [
+      {
+        "text": "For no kunne eg ha rekt ut handa mi og slått deg og folket ditt med pest, så du vart utsletta frå jorda.",
+        "type": "error",
+        "severity": "major",
+        "explanation": "Verbet וַתִּכָּחֵד er i irrealis (kontrafaktisk) kontekst. 'Så du vart utsletta' kan lesast som noko som faktisk skjedde, medan 'så du hadde vorte utsletta' gjev rett kontrafaktisk meining."
+      }
+    ]
   },
   {
     "bookId": 2,
@@ -195,11 +235,17 @@
     "bookId": 2,
     "chapterId": 9,
     "verseId": 31,
-    "text": "Linet og bygget var øydelagde, for bygget hadde sett aks og linet stod i blom.",
+    "text": "Linet og bygget var øydelagde, for bygget hadde sett aks og linet stod i stengel.",
     "versions": [
       {
         "text": "Linet og bygget var øydelagt, for bygget hadde sett aks og linet stod i blom.",
         "explanation": "Sidan subjektet er fleirtal ('linet og bygget'), bør partisippet vera i fleirtal: 'øydelagde' i staden for 'øydelagt'."
+      },
+      {
+        "text": "Linet og bygget var øydelagde, for bygget hadde sett aks og linet stod i blom.",
+        "type": "error",
+        "severity": "minor",
+        "explanation": "גִּבְעֹל betyr 'stengel' eller 'knupp', ikkje 'blom'. Uttrykket seier at linet hadde utvikla stenglar (og var difor sårbart), ikkje at det stod i blom."
       }
     ]
   },

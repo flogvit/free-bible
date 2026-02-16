@@ -45,7 +45,15 @@
     "bookId": 19,
     "chapterId": 73,
     "verseId": 7,
-    "text": "Auga deira tyt fram av feitt, hjartet flyt over av vonde planar."
+    "text": "Auga deira tyt fram av feitt, dei overgår hjartets innbillingar.",
+    "versions": [
+      {
+        "text": "Auga deira tyt fram av feitt, hjartet flyt over av vonde planar.",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "Den andre halvdelen 'עָבְרוּ מַשְׂכִּיּוֹת לֵבָב' betyr bokstaveleg at innbillingane/tankane i hjartet flyt over, det vil seia at dei går lenger enn det hjartet kan tenkja seg – deira arroganse overskrider all førestelling. 'Hjartet flyt over av vonde planar' er ein tolking, men 'מַשְׂכִּיּוֹת' tyder meir på 'innbillingar/fantasiar' enn 'vonde planar'. Likevel er dette eit mindre problem sidan meininga er liknande."
+      }
+    ]
   },
   {
     "bookId": 19,
@@ -63,7 +71,15 @@
     "bookId": 19,
     "chapterId": 73,
     "verseId": 10,
-    "text": "Difor vender folket hans seg hit, og dei søkk vatn i fulle drag."
+    "text": "Difor vender folket hans seg hit, og dei drikk vatn i fulle drag.",
+    "versions": [
+      {
+        "text": "Difor vender folket hans seg hit, og dei søkk vatn i fulle drag.",
+        "type": "error",
+        "severity": "major",
+        "explanation": "'søkk' er eit uvanleg og utydeleg ordval på nynorsk i denne samanhengen. 'drikk' er meir naturleg og lettare å forstå, og formidlar meininga av det hebraiske 'יִמָּצוּ' (å pressa/suga ut) betre i ein moderne nynorsk kontekst."
+      }
+    ]
   },
   {
     "bookId": 19,
@@ -87,7 +103,15 @@
     "bookId": 19,
     "chapterId": 73,
     "verseId": 14,
-    "text": "For eg har vore plaga heile dagen, og kvar morgon har eg vorte refsa."
+    "text": "Eg har vore plaga heile dagen, og kvar morgon har eg vorte refsa.",
+    "versions": [
+      {
+        "text": "For eg har vore plaga heile dagen, og kvar morgon har eg vorte refsa.",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "Verset byrjar med 'וָאֱהִי' (og eg var/har vore), ikkje med 'כִּי' (for). 'For' som innleiing gjer det til ei grunngjeving, men i den hebraiske teksten held salmisten fram med å skildra si eiga oppleving, ikkje grunngje noko. Det er ein skilnad mellom å fortelja vidare og å gje ei årsak."
+      }
+    ]
   },
   {
     "bookId": 19,
@@ -123,11 +147,17 @@
     "bookId": 19,
     "chapterId": 73,
     "verseId": 20,
-    "text": "Som ein draum når ein vaknar, Herre, så foraktar du biletet av dei når du står opp.",
+    "text": "Som ein draum når ein vaknar, slik foraktar du, Herre, biletet av dei når du reiser deg i byen.",
     "versions": [
       {
         "text": "Som ein draum når ein vaknar, Herre, så foraktar du biletet av dei når du reiser deg.",
         "explanation": "Det hebraiske 'בָּעִיר' betyr 'når du vaknar/står opp' – det passar betre med draumebiletet å bruka 'står opp' enn 'reiser deg', som kan ha andre konnotasjonar."
+      },
+      {
+        "text": "Som ein draum når ein vaknar, Herre, så foraktar du biletet av dei når du står opp.",
+        "type": "error",
+        "severity": "major",
+        "explanation": "Det hebraiske 'בָּעִיר' er tvetydig – det kan bety 'i byen' (frå עִיר) eller 'når du vaknar' (frå עור). Men den gjeldande omsetjinga dupliserer 'vaknar'-konseptet frå 'מֵהָקִיץ' ved å også omsetja 'בָּעִיר' som 'når du står opp'. Mange kommentatorar les 'בָּעִיר' som 'i byen/i Sion', altså at Gud foraktar skuggabiletet deira frå sin bustad. Sidan vers-historikken viser at 'reiser deg' blei endra til 'står opp' – men problemet er djupare: begge er tautologiske med 'når ein vaknar'. Likevel, med tanke på versehistorikken, er dette eit vanskeleg vers å endra utan å falle tilbake til ein tidlegare versjon."
       }
     ]
   },

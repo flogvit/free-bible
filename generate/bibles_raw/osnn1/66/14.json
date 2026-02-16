@@ -81,7 +81,15 @@
     "bookId": 66,
     "chapterId": 14,
     "verseId": 11,
-    "text": "Røyken frå pinsla deira stig opp i all æve, og dei har ikkje kvile dag eller natt, dei som tilbed dyret og biletet av det, og den som tek imot merket med namnet hans.»"
+    "text": "Røyken frå pinsla deira stig opp i all æve, og dei har ikkje kvile dag eller natt, dei som tilbed dyret og biletet av det, og kvar den som tek imot merket med namnet hans.»",
+    "versions": [
+      {
+        "text": "Røyken frå pinsla deira stig opp i all æve, og dei har ikkje kvile dag eller natt, dei som tilbed dyret og biletet av det, og den som tek imot merket med namnet hans.»",
+        "type": "grammar",
+        "severity": "minor",
+        "explanation": "Det greske εἴ τις (om nokon/kvar den som) har ein kondisjonell nyanse som 'den som' ikkje heilt fangar. 'Kvar den som' gjev betre att det greske uttrykket og samsvarar med 'om nokon' (εἴ τις) i vers 9."
+      }
+    ]
   },
   {
     "bookId": 66,
@@ -105,11 +113,17 @@
     "bookId": 66,
     "chapterId": 14,
     "verseId": 15,
-    "text": "Og ein annan engel kom ut frå tempelet og ropa med høg røyst til han som sat på skya: «Send sigden din ut og haust, for timen er komen til å hausta, for grøda på jorda er turka inn.»",
+    "text": "Og ein annan engel kom ut frå tempelet og ropa med høg røyst til han som sat på skya: «Send sigden din ut og haust, for timen er komen til å hausta, for grøda på jorda er moden og tørr.»",
     "versions": [
       {
         "text": "Og ein annan engel kom ut frå tempelet og ropa med høg røyst til han som sat på skya: «Send sigden din ut og haust, for timen er komen til å hausta, for avlinga på jorda er mogen.»",
         "explanation": "ἐξηράνθη tyder 'er turka/tørka' - det viser til at kornet er turt og klart for hausting, ikkje berre 'moge'. 'Turka inn' er meir presist og gjev eit sterkare bilete."
+      },
+      {
+        "text": "Og ein annan engel kom ut frå tempelet og ropa med høg røyst til han som sat på skya: «Send sigden din ut og haust, for timen er komen til å hausta, for grøda på jorda er turka inn.»",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "'Turka inn' gir på norsk eit negativt inntrykk av at grøda er øydelagd/visna, mens det greske ἐξηράνθη i denne konteksten betyr at kornet er tørt og klart for hausting – altså positivt modent. Men sidan dette er ei bevisst endring frå 'mogen' og forklaringa seier 'turka inn er meir presist', lèt eg dette stå som berre eit mindre forslag. Sidan verset allereie har ein revisjon, tek eg omsyn til det."
       }
     ]
   },
@@ -135,7 +149,15 @@
     "bookId": 66,
     "chapterId": 14,
     "verseId": 19,
-    "text": "Og engelen sende sigden sin ut over jorda og hausta druene frå vintreet på jorda og kasta dei i Guds vreidesvinpresse, den store."
+    "text": "Og engelen sende sigden sin ut over jorda og hausta druene frå vintreet på jorda og kasta dei i den store vinpressa for Guds vreide.",
+    "versions": [
+      {
+        "text": "Og engelen sende sigden sin ut over jorda og hausta druene frå vintreet på jorda og kasta dei i Guds vreidesvinpresse, den store.",
+        "type": "error",
+        "severity": "major",
+        "explanation": "Det greske τὴν ληνὸν τοῦ θυμοῦ τοῦ θεοῦ τὸν μέγαν tyder 'den store vinpressa for Guds vreide'. Samansettinga 'vreidesvinpresse' er unaturleg tungt og uklårt på nynorsk. I tillegg er τὸν μέγαν (den store) knytt til vinpressa (ληνόν), ikkje skild ut som etterstilt apposisjon. Ei omskriving gjer verset meir lesbart."
+      }
+    ]
   },
   {
     "bookId": 66,

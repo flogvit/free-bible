@@ -93,13 +93,29 @@
     "bookId": 24,
     "chapterId": 22,
     "verseId": 14,
-    "text": "Han som seier: «Eg vil byggja meg eit stort hus med romslege salar!» Han høgg ut vindauge for seg, kler veggene med sedertre og målar dei raude."
+    "text": "Han som seier: «Eg vil byggja meg eit stort hus med romslege salar!» Han skjer ut vindauge for seg, paneler med sedertre og målar med raudt.",
+    "versions": [
+      {
+        "text": "Han som seier: «Eg vil byggja meg eit stort hus med romslege salar!» Han høgg ut vindauge for seg, kler veggene med sedertre og målar dei raude.",
+        "type": "error",
+        "severity": "major",
+        "explanation": "Hebraisk קָרַע tyder 'skjera ut' (ikkje 'hogga ut'). וְסָפוּן בָּאָרֶז tyder 'panelt med seder' – det handlar om paneling, ikkje å 'kle veggene'. Dessutan er וּמָשׁוֹחַ בַּשָּׁשַׁר 'smurt/måla med raudt' (sjasjar = raud farge), ikkje 'målar dei raude' som legg til eit pronomen."
+      }
+    ]
   },
   {
     "bookId": 24,
     "chapterId": 22,
     "verseId": 15,
-    "text": "Er du konge fordi du kappar om sedertre? Far din åt og drakk, men han gjorde det som var rett og rettferdig. Då gjekk det han godt."
+    "text": "Vert du meir konge fordi du kappar om sedertre? Far din åt og drakk, men han gjorde det som var rett og rettferdig. Då gjekk det han godt.",
+    "versions": [
+      {
+        "text": "Er du konge fordi du kappar om sedertre? Far din åt og drakk, men han gjorde det som var rett og rettferdig. Då gjekk det han godt.",
+        "type": "error",
+        "severity": "major",
+        "explanation": "Hebraisk הֲתִמְלֹךְ כִּי אַתָּה מְתַחֲרֶה בָאָרֶז er eit retorisk spørsmål: 'Gjer det deg til konge at du kappar om sedertre?' / 'Vert du meir konge fordi du kappar om sedertre?' Noverande «Er du konge fordi...» kan misforståast som eit spørsmål om grunnen til at han er konge, ikkje det retoriske poenget om at sedertre ikkje gjer ein til konge."
+      }
+    ]
   },
   {
     "bookId": 24,
@@ -153,7 +169,15 @@
     "bookId": 24,
     "chapterId": 22,
     "verseId": 23,
-    "text": "Du som bur på Libanon, du som har reir mellom sedrane, kor du skal sukka når fødselsrier kjem over deg, verk som hos ei fødande kvinne!"
+    "text": "Du som bur på Libanon, du som har reir mellom sedrane, kor du skal stønna når fødselsrier kjem over deg, verk som hos ei fødande kvinne!",
+    "versions": [
+      {
+        "text": "Du som bur på Libanon, du som har reir mellom sedrane, kor du skal sukka når fødselsrier kjem over deg, verk som hos ei fødande kvinne!",
+        "type": "error",
+        "severity": "major",
+        "explanation": "Hebraisk נֵּחַנְתְּ (frå חנן/אנח) tyder 'stønna/klaga', ikkje 'sukka'. 'Stønna' gjev betre att den intense smerta som samanlikninga med ei fødande kvinne skildrar."
+      }
+    ]
   },
   {
     "bookId": 24,
@@ -183,7 +207,15 @@
     "bookId": 24,
     "chapterId": 22,
     "verseId": 28,
-    "text": "Er denne mannen Konja eit verdlaust, knust kar, eit kar som ingen vil ha? Kvifor er han og ætta hans kasta bort og slengde til eit land dei ikkje kjenner?"
+    "text": "Er denne mannen Konja eit forakta, knust avgudsbilde, eit kar som ingen vil ha? Kvifor er han og ætta hans kasta bort og slengde til eit land dei ikkje kjenner?",
+    "versions": [
+      {
+        "text": "Er denne mannen Konja eit verdlaust, knust kar, eit kar som ingen vil ha? Kvifor er han og ætta hans kasta bort og slengde til eit land dei ikkje kjenner?",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "Hebraisk עֶצֶב tyder 'avgudsbilde' eller 'idol', ikkje 'kar'. Verset bruker to ulike bilete: først עֶצֶב נִבְזֶה נָפוּץ (eit forakta, knust avgudsbilde), deretter כְּלִי אֵין חֵפֶץ בּוֹ (eit kar ingen vil ha). Noverande omsetjing bruker 'kar' for begge og mister det første biletet."
+      }
+    ]
   },
   {
     "bookId": 24,

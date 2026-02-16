@@ -27,7 +27,21 @@
     "bookId": 7,
     "chapterId": 5,
     "verseId": 5,
-    "text": "Fjella skalf for Herrens andlet, sjølv Sinai, for Herren, Israels Gud."
+    "text": "Fjella rann for Herrens andlet, sjølv Sinai, for Herren, Israels Gud.",
+    "versions": [
+      {
+        "text": "Fjella skalf for Herrens andlet, sjølv Sinai, for Herren, Israels Gud.",
+        "type": "error",
+        "severity": "major",
+        "explanation": "'skalf' er feil bøying av verbet 'skalva'. Korrekt preteritumsform på nynorsk er 'skalv'."
+      },
+      {
+        "text": "Fjella skalv for Herrens andlet, sjølv Sinai, for Herren, Israels Gud.",
+        "type": "error",
+        "severity": "minor",
+        "explanation": "Det hebraiske 'nazlu' tyder 'rann' eller 'fløymde' (av vatn), ikkje 'skalv'. Fjella rann/fløymde – det handlar om at fjella løyste seg opp eller vatnet strøymde frå dei. Konteksten med regn og vatn i v.4 støttar dette."
+      }
+    ]
   },
   {
     "bookId": 7,
@@ -69,11 +83,17 @@
     "bookId": 7,
     "chapterId": 5,
     "verseId": 11,
-    "text": "Bort frå røystene til bogeskyttarane ved brønnane! Der fortel dei om Herrens rettferdige gjerningar, dei rettferdige gjerningane til leiarane hans i Israel. Då drog Herrens folk ned til portane.",
+    "text": "Høyr! Ved røystene til dei som deler ut vatn mellom brønnane! Der fortel dei om Herrens rettferdige gjerningar, dei rettferdige gjerningane til leiarane hans i Israel. Då drog Herrens folk ned til portane.",
     "versions": [
       {
         "text": "Lytt til dei som syng ved brønnane! Der fortel dei om Herrens rettferdige gjerningar, dei rettferdige gjerningane til hans leiarar i Israel. Då drog Herrens folk ned til portane.",
         "explanation": "Det hebraiske 'mechatsetim' tyder truleg 'bogeskyttarar' eller 'dei som fordeler', ikkje 'dei som syng'. Omsetjinga bør også ha 'leiarane hans' i staden for 'hans leiarar' for betre nynorsk ordstilling."
+      },
+      {
+        "text": "Bort frå røystene til bogeskyttarane ved brønnane! Der fortel dei om Herrens rettferdige gjerningar, dei rettferdige gjerningane til leiarane hans i Israel. Då drog Herrens folk ned til portane.",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "'miqol' tyder 'frå lyden av / ved røysta til' og innleier ei oppmoding om å lytta, ikkje 'bort frå'. 'mechatsetim' er usikkert, men 'bogeskyttarar' er berre éi mogleg tyding. 'Dei som deler ut vatn' er like mogleg og passar betre med konteksten ved brønnane."
       }
     ]
   },
@@ -87,7 +107,15 @@
     "bookId": 7,
     "chapterId": 5,
     "verseId": 13,
-    "text": "Då steig dei som var att, ned til stormennene. Herrens folk steig ned til meg blant krigarane."
+    "text": "Då steig dei som var att, ned saman med stormennene. Herrens folk steig ned til meg blant krigarane.",
+    "versions": [
+      {
+        "text": "Då steig dei som var att, ned til stormennene. Herrens folk steig ned til meg blant krigarane.",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "Det hebraiske 'le'addirim' med preposisjonen 'le' tyder her 'saman med/blant stormennene', ikkje 'ned til stormennene'. Resten som overlevde steig ned saman med dei mektige."
+      }
+    ]
   },
   {
     "bookId": 7,
@@ -99,7 +127,15 @@
     "bookId": 7,
     "chapterId": 5,
     "verseId": 15,
-    "text": "Førstane i Jissakar var med Debora, og Jissakar var trufast mot Barak. Ut i dalen styrta dei etter han. Men i Rubens ætter var det stor tvil i hjartet."
+    "text": "Førstane i Jissakar var med Debora, og Jissakar, lik Barak, vart send ut i dalen til fots. Men i Rubens ætter var det stor tvil i hjartet.",
+    "versions": [
+      {
+        "text": "Førstane i Jissakar var med Debora, og Jissakar var trufast mot Barak. Ut i dalen styrta dei etter han. Men i Rubens ætter var det stor tvil i hjartet.",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "'ken Barak' tyder 'slik som Barak' / 'lik Barak', og 'ba'emek shullach beraglav' tyder 'i dalen vart han send til fots'. Omsetjinga bør gjenspegle at Jissakar følgde Barak til fots ned i dalen."
+      }
+    ]
   },
   {
     "bookId": 7,
@@ -141,7 +177,15 @@
     "bookId": 7,
     "chapterId": 5,
     "verseId": 22,
-    "text": "Då dunka hovane til hestane frå galopperinga, galopperinga til dei mektige hingstane."
+    "text": "Då dunka hestane sine hovar frå galopperinga, galopperinga til dei mektige hingstane hans.",
+    "versions": [
+      {
+        "text": "Då dunka hovane til hestane frå galopperinga, galopperinga til dei mektige hingstane.",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "'abbirav' har possessivsuffiks (hans), som viser til Sisera eller fienden. 'Hingstane hans' er meir presist enn 'dei mektige hingstane'."
+      }
+    ]
   },
   {
     "bookId": 7,
@@ -183,11 +227,17 @@
     "bookId": 7,
     "chapterId": 5,
     "verseId": 28,
-    "text": "Gjennom vindauget såg ho ut og klaga, mor til Sisera, gjennom gitteret: Kvifor dryger vogna hans med å koma? Kvifor seinkar hjula på vognene hans?",
+    "text": "Gjennom vindauget såg ho ut og klaga, mor til Sisera, gjennom gitteret: Kvifor dryger vogna hans med å koma? Kvifor seinkar stega til vognene hans?",
     "versions": [
       {
         "text": "Gjennom vindauget såg ho ut og ropa, mor til Sisera, gjennom gitteret: Kvifor dryger vogna hans med å koma? Kvifor seinkar hjula på vognene hans?",
         "explanation": "Det hebraiske 'vatteyabbev' tyder 'klaga' eller 'jamra', ikkje berre 'ropa'. Det skildrar ei engsteleg mor som ventar og klagar over at sonen ikkje kjem heim."
+      },
+      {
+        "text": "Gjennom vindauget såg ho ut og klaga, mor til Sisera, gjennom gitteret: Kvifor dryger vogna hans med å koma? Kvifor seinkar hjula på vognene hans?",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "Det hebraiske 'pa'amei' tyder 'stega/trinna til', ikkje 'hjula'. Det refererer til lyden av hovslag eller takt frå vognene. 'Stega til vognene' er meir presist."
       }
     ]
   },

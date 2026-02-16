@@ -3,7 +3,15 @@
     "bookId": 47,
     "chapterId": 12,
     "verseId": 1,
-    "text": "Eg må rosa meg sjølv, endå det ikkje gagnar. Men eg vil koma til syner og openberringar frå Herren."
+    "text": "Å rosa seg må til, endå det ikkje gagnar. Men eg vil koma til syner og openberringar frå Herren.",
+    "versions": [
+      {
+        "text": "Eg må rosa meg sjølv, endå det ikkje gagnar. Men eg vil koma til syner og openberringar frå Herren.",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "Det greske Καυχᾶσθαι δεῖ er ein meir generell konstatering ('å rosa seg må til' / 'ein må rosa seg'), ikkje spesifikt 'eg må rosa meg sjølv'. 'Meg sjølv' er ikkje i grunnteksten her. Men dette er ein mindre nyanseforskjell."
+      }
+    ]
   },
   {
     "bookId": 47,
@@ -27,7 +35,15 @@
     "bookId": 47,
     "chapterId": 12,
     "verseId": 5,
-    "text": "Av eit slikt menneske vil eg rosa meg, men av meg sjølv vil eg ikkje rosa meg, utan av mine veikskapar."
+    "text": "Av eit slikt menneske vil eg rosa meg, men av meg sjølv vil eg ikkje rosa meg, utan av veikskapen min.",
+    "versions": [
+      {
+        "text": "Av eit slikt menneske vil eg rosa meg, men av meg sjølv vil eg ikkje rosa meg, utan av mine veikskapar.",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "Det greske ἐν ταῖς ἀσθενείαις er fleirtal, men den nynorske forma 'veikskapen min' er meir naturleg og idiomatisk enn 'mine veikskapar'. Alternativt kan ein bruka 'veikskapane mine' for å halda fleirtalet, men 'mine veikskapar' er gamaldags ordstilling."
+      }
+    ]
   },
   {
     "bookId": 47,
@@ -63,7 +79,15 @@
     "bookId": 47,
     "chapterId": 12,
     "verseId": 11,
-    "text": "Eg har vorte ein dåre! De tvinga meg til det. For det var eg som burde vorte tilrådd av dykk. Eg stod ikkje tilbake for dei fremste apostlane, endå eg ikkje er noko."
+    "text": "Eg har vorte ein dåre! De tvinga meg til det. For det var de som burde ha tilrådd meg. Eg stod ikkje tilbake for dei fremste apostlane, endå eg ikkje er noko.",
+    "versions": [
+      {
+        "text": "Eg har vorte ein dåre! De tvinga meg til det. For det var eg som burde vorte tilrådd av dykk. Eg stod ikkje tilbake for dei fremste apostlane, endå eg ikkje er noko.",
+        "type": "error",
+        "severity": "major",
+        "explanation": "Det greske ὤφειλον ὑφʼ ὑμῶν συνίστασθαι tyder 'eg burde ha vorte tilrådd (anbefalt) av dykk', dvs. det var korintarane si plikt å anbefala/forsvara Paulus. Den noverande omsettinga 'det var eg som burde vorte tilrådd av dykk' er rett i innhald, men formuleringa er litt uklar. Meir naturleg og tydeleg: 'det var de som burde ha tilrådd meg' – der subjektet (de) gjer handlinga tydelegare."
+      }
+    ]
   },
   {
     "bookId": 47,
@@ -129,13 +153,29 @@
     "bookId": 47,
     "chapterId": 12,
     "verseId": 19,
-    "text": "Trur de framleis at vi forsvarar oss for dykk? Det er for Guds åsyn, i Kristus, vi talar. Men alt, mine kjære, er til dykkar oppbygging."
+    "text": "Har de lenge trudd at vi forsvarar oss for dykk? Det er for Guds åsyn, i Kristus, vi talar. Men alt, mine kjære, er til dykkar oppbygging.",
+    "versions": [
+      {
+        "text": "Trur de framleis at vi forsvarar oss for dykk? Det er for Guds åsyn, i Kristus, vi talar. Men alt, mine kjære, er til dykkar oppbygging.",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "Det greske Πάλαι tyder 'lenge' eller 'heile tida', ikkje 'framleis'. Paulus spør om dei har tenkt dette heile tida, ikkje om dei framleis tenkjer det. 'Framleis' er ei fortolking som ikkje dekkjer grunnordet presist."
+      }
+    ]
   },
   {
     "bookId": 47,
     "chapterId": 12,
     "verseId": 20,
-    "text": "For eg er redd for at når eg kjem, skal eg finna dykk slik eg ikkje ønskjer, og at eg skal vera for dykk slik de ikkje ønskjer – at det skal vera strid, misunning, sinne, sjølvhevding, baktale, sladder, hovmod og uorden."
+    "text": "For eg er redd for at når eg kjem, skal eg finna dykk slik eg ikkje ønskjer, og at eg skal vera for dykk slik de ikkje ønskjer – at det skal vera strid, misunning, sinne, sjølvhevding, baktaling, sladder, hovmod og uorden.",
+    "versions": [
+      {
+        "text": "For eg er redd for at når eg kjem, skal eg finna dykk slik eg ikkje ønskjer, og at eg skal vera for dykk slik de ikkje ønskjer – at det skal vera strid, misunning, sinne, sjølvhevding, baktale, sladder, hovmod og uorden.",
+        "type": "grammar",
+        "severity": "minor",
+        "explanation": "'Baktale' er verb (infinitiv), ikkje substantiv. Det bør vera 'baktaling' som substantiv for å passa med dei andre substantiva i lista (strid, misunning, sinne osv.). Det greske καταλαλιαί er substantiv fleirtal."
+      }
+    ]
   },
   {
     "bookId": 47,

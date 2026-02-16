@@ -27,7 +27,15 @@
     "bookId": 15,
     "chapterId": 8,
     "verseId": 5,
-    "text": "Av Sjekanja sine etterkomarar: Ben-Jahasiel, og med han tre hundre menn."
+    "text": "Av Sjekanja sine etterkomarar: sonen til Jahasiel, og med han tre hundre menn.",
+    "versions": [
+      {
+        "text": "Av Sjekanja sine etterkomarar: Ben-Jahasiel, og med han tre hundre menn.",
+        "type": "error",
+        "severity": "major",
+        "explanation": "Det hebraiske 'בֶּן־יַחֲזִיאֵל' tyder 'son til Jahasiel', ikkje eit eigennamn 'Ben-Jahasiel'. Her er 'ben' eit vanleg hebraisk ord for 'son', og Jahasiel er namnet. Det bør omsetjast som 'sonen til Jahasiel' for å vera konsistent med resten av kapitlet der 'בֶּן' blir omsett med 'son til'."
+      }
+    ]
   },
   {
     "bookId": 15,
@@ -39,7 +47,15 @@
     "bookId": 15,
     "chapterId": 8,
     "verseId": 7,
-    "text": "Av Elam sine etterkomarar: Jesja, son til Atalja, og med han sytti menn."
+    "text": "Av Elam sine etterkomarar: Jesaja, son til Atalja, og med han sytti menn.",
+    "versions": [
+      {
+        "text": "Av Elam sine etterkomarar: Jesja, son til Atalja, og med han sytti menn.",
+        "type": "error",
+        "severity": "minor",
+        "explanation": "Det hebraiske 'יְשַׁעְיָה' (Jeshajah) bør transkriberast som 'Jesaja' på norsk, ikkje 'Jesja'. Same namn førekjem i vers 19, der det også er skrive 'Jesja'. Den vanlege norske forma er 'Jesaja'."
+      }
+    ]
   },
   {
     "bookId": 15,
@@ -57,7 +73,15 @@
     "bookId": 15,
     "chapterId": 8,
     "verseId": 10,
-    "text": "Av Sjelomit sine etterkomarar: Ben-Josifja, og med han hundre og seksti menn."
+    "text": "Av Sjelomit sine etterkomarar: sonen til Josifja, og med han hundre og seksti menn.",
+    "versions": [
+      {
+        "text": "Av Sjelomit sine etterkomarar: Ben-Josifja, og med han hundre og seksti menn.",
+        "type": "error",
+        "severity": "major",
+        "explanation": "Same problem som i vers 5: 'בֶּן־יוֹסִפְיָה' tyder 'son til Josifja', ikkje eit eigennamn 'Ben-Josifja'. Det bør omsetjast konsistent med resten av kapitlet."
+      }
+    ]
   },
   {
     "bookId": 15,
@@ -105,7 +129,15 @@
     "bookId": 15,
     "chapterId": 8,
     "verseId": 17,
-    "text": "Eg sende dei til Iddo, leiaren i staden Kasifja, og la ord i munnen deira som dei skulle tala til Iddo og brørne hans, tempeltenarene, i staden Kasifja, så dei kunne senda oss tenarar til huset åt vår Gud."
+    "text": "Eg sende dei til Iddo, leiaren på staden Kasifja, og la ord i munnen deira som dei skulle tala til Iddo og brørne hans, tempeltenarene, på staden Kasifja, så dei kunne senda oss tenarar til huset åt vår Gud.",
+    "versions": [
+      {
+        "text": "Eg sende dei til Iddo, leiaren i staden Kasifja, og la ord i munnen deira som dei skulle tala til Iddo og brørne hans, tempeltenarene, i staden Kasifja, så dei kunne senda oss tenarar til huset åt vår Gud.",
+        "type": "error",
+        "severity": "minor",
+        "explanation": "'בְּכָסִפְיָא הַמָּקוֹם' tyder 'på staden Kasifja'. Kasifja var truleg ikkje ein by, men ein stad/plass. 'På staden' er meir presist enn 'i staden' og unngår å implisera at Kasifja var ein by."
+      }
+    ]
   },
   {
     "bookId": 15,
@@ -171,11 +203,17 @@
     "bookId": 15,
     "chapterId": 8,
     "verseId": 27,
-    "text": "tjue gullbolleskåler verd tusen darikkar, og to kar av fin, skinande bronse, like kostbare som gull.",
+    "text": "tjue gullskåler verd tusen darikkar, og to kar av fin, skinande bronse, like kostbare som gull.",
     "versions": [
       {
         "text": "tjue gullskåler til ein verdi av tusen darikkar, og to kar av fin, skinande bronse, like verdifulle som gull.",
         "explanation": "Ordet 'כְּפֹרֵי' refererer til ei spesiell type skål (bolle-liknande). 'Kostbare' er meir presist enn 'verdifulle' for 'חֲמוּדֹת'."
+      },
+      {
+        "text": "tjue gullbolleskåler verd tusen darikkar, og to kar av fin, skinande bronse, like kostbare som gull.",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "'Gullbolleskåler' er eit uvant og klønete samansett ord på nynorsk. 'Gullskåler' er meir naturleg og dekkjer tydinga av 'כְּפֹרֵי זָהָב' godt nok. Endringshistorikken viser at ein gjekk frå 'gullskåler' til 'gullbolleskåler', men det samansetne ordet er tungt å lesa."
       }
     ]
   },
@@ -225,7 +263,15 @@
     "bookId": 15,
     "chapterId": 8,
     "verseId": 35,
-    "text": "Dei som kom frå fangenskapet, dei som hadde vore i eksil, bar fram brennoffer til Israels Gud: tolv oksar for heile Israel, nittiseks verar, syttisju lam og tolv geitebukkar til syndoffer. Alt dette var eit brennoffer for Herren."
+    "text": "Dei som kom frå fangenskapet, dei som hadde vore i eksil, bar fram brennoffer til Israels Gud: tolv oksar for heile Israel, nittiseks verar, syttisju lam og tolv geitebukkar som syndoffer — alt saman eit brennoffer for Herren.",
+    "versions": [
+      {
+        "text": "Dei som kom frå fangenskapet, dei som hadde vore i eksil, bar fram brennoffer til Israels Gud: tolv oksar for heile Israel, nittiseks verar, syttisju lam og tolv geitebukkar til syndoffer. Alt dette var eit brennoffer for Herren.",
+        "type": "error",
+        "severity": "minor",
+        "explanation": "Formuleringa 'Alt dette var eit brennoffer' er litt upresis. Det hebraiske 'הַכֹּל עוֹלָה לַיהוָה' seier at alt saman utgjorde brennofferet for Herren. I tillegg bør det stå 'som syndoffer' (ikkje 'til syndoffer') for å uttrykkja at geitebukka var syndofferet."
+      }
+    ]
   },
   {
     "bookId": 15,

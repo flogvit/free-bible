@@ -21,11 +21,17 @@
     "bookId": 2,
     "chapterId": 2,
     "verseId": 3,
-    "text": "Men då ho ikkje kunne gøyma han lenger, tok ho ei korg av papyrus, tetta henne med jordbek og tjøre, la barnet i henne og sette henne i sivet ved elvebredda.",
+    "text": "Men då ho ikkje kunne gøyma han lenger, tok ho ei korg av papyrus, tetta ho med jordbek og tjøre, la barnet i ho og sette ho i sivet ved elvebredda.",
     "versions": [
       {
         "text": "Men då ho ikkje kunne gøyma han lenger, tok ho ei korg av papyrus, tetta henne med bek og tjøre, la barnet i henne og sette henne i sivet ved elvebredda.",
         "explanation": "Det hebraiske 'חֵמָר' (chemar) refererer til jordbek/asfalt, ikkje vanleg bek. For å skilja mellom 'chemar' og 'zefet' (tjøre), er 'jordbek og tjøre' meir presist."
+      },
+      {
+        "text": "Men då ho ikkje kunne gøyma han lenger, tok ho ei korg av papyrus, tetta henne med jordbek og tjøre, la barnet i henne og sette henne i sivet ved elvebredda.",
+        "type": "grammar",
+        "severity": "minor",
+        "explanation": "På nynorsk er 'korg' hokjønnsord, og det korrekte objektspronomenet er 'ho' (ikkje 'henne'). 'Henne' er berre brukt som objektsform av personleg pronomen for personar. For ting brukar ein 'ho' som objektspronomen i nynorsk: 'tetta ho', 'la barnet i ho', 'sette ho'. Alternativt kan ein bruka 'korga' for å unngå pronomenproblem, men 'ho' er den korrekte pronomenforma."
       }
     ]
   },
@@ -39,11 +45,17 @@
     "bookId": 2,
     "chapterId": 2,
     "verseId": 5,
-    "text": "Då kom dotter til farao ned for å bada i elva, medan tenestejentene hennar gjekk langs elvebredda. Ho fekk auge på korga i sivet og sende tenestejenta si for å henta henne.",
+    "text": "Då kom dotter til farao ned for å bada i elva, medan tenestejentene hennar gjekk langs elvebredda. Ho fekk auge på korga i sivet og sende tenestejenta si for å henta ho.",
     "versions": [
       {
         "text": "Då kom dotter til farao ned for å bada i elva, medan tenestejentene hennar gjekk langs elvebredda. Ho fekk auge på korga i sivet og rekte ut armen sin og tok henne.",
         "explanation": "Det hebraiske 'אֲמָתָהּ' kan tyda anten 'armen sin' eller 'tenestejenta si'. Tradisjonen og konteksten (tenestejentene er allereie nemnde) talar for 'tenestejenta si'. Den noverande omsetjinga 'rekte ut armen sin' er éi tolking, men 'sende tenestejenta si' er ei like valid lesing."
+      },
+      {
+        "text": "Då kom dotter til farao ned for å bada i elva, medan tenestejentene hennar gjekk langs elvebredda. Ho fekk auge på korga i sivet og sende tenestejenta si for å henta henne.",
+        "type": "grammar",
+        "severity": "minor",
+        "explanation": "Same problemet som i vers 3: 'korga' er hokjønn, og objektspronomenet bør vera 'ho' i staden for 'henne' når det viser til ein ting."
       }
     ]
   },
@@ -111,7 +123,15 @@
     "bookId": 2,
     "chapterId": 2,
     "verseId": 13,
-    "text": "Dagen etter gjekk han ut att, og då såg han to hebrearar som slåst. Han sa til den som hadde gjort urett: «Kvifor slår du landsmannen din?»"
+    "text": "Dagen etter gjekk han ut att, og då såg han to hebrearar som slåst. Han sa til den skuldige: «Kvifor slår du landsmannen din?»",
+    "versions": [
+      {
+        "text": "Dagen etter gjekk han ut att, og då såg han to hebrearar som slåst. Han sa til den som hadde gjort urett: «Kvifor slår du landsmannen din?»",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "Det hebraiske 'לָרָשָׁע' (la-rasha) tyder 'den skuldige/den urettferdige' og er eit sterkare uttrykk enn 'den som hadde gjort urett'. 'Den skuldige' er meir konsist og nærmare det hebraiske substantivet."
+      }
+    ]
   },
   {
     "bookId": 2,
@@ -183,7 +203,15 @@
     "bookId": 2,
     "chapterId": 2,
     "verseId": 23,
-    "text": "Lang tid etter døydde kongen i Egypt. Israelittane sukka under slaveriet og ropa ut, og ropet deira steig opp til Gud frå slaveriet."
+    "text": "Lang tid etter døydde kongen i Egypt. Israelittane sukka under tvangsarbeidet og ropa ut, og ropet deira steig opp til Gud frå tvangsarbeidet.",
+    "versions": [
+      {
+        "text": "Lang tid etter døydde kongen i Egypt. Israelittane sukka under slaveriet og ropa ut, og ropet deira steig opp til Gud frå slaveriet.",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "Det hebraiske 'עֲבֹדָה' (avodah) tyder 'arbeid/teneste/tvangsarbeid'. I vers 11 er 'tvangsarbeid' brukt for det nærskylde 'סִבְלֹת'. 'Slaveri' er ei sterkare tolking enn det hebraiske ordet. 'Tvangsarbeid' er meir presist og samsvarar betre med resten av omsetjinga."
+      }
+    ]
   },
   {
     "bookId": 2,

@@ -3,7 +3,15 @@
     "bookId": 19,
     "chapterId": 76,
     "verseId": 1,
-    "text": "Til korleiaren. Med strengespel. Ein salme av Asaf. Ein song."
+    "text": "Til kormeisteren. Med strengespel. Ein salme av Asaf. Ein song.",
+    "versions": [
+      {
+        "text": "Til korleiaren. Med strengespel. Ein salme av Asaf. Ein song.",
+        "type": "error",
+        "severity": "minor",
+        "explanation": "'לַמְנַצֵּחַ' tyder 'til kormeisteren/musikkmeisteren', ikkje 'korleiaren'. 'Korleiar' er eit moderne omgrep, medan 'kormeister' betre fangar det hebraiske נָצַח (å leia, ha oppsyn med). Dessutan er 'korleiaren' bokmålsforma; nynorsk bør ha 'kormeisteren'."
+      }
+    ]
   },
   {
     "bookId": 19,
@@ -45,19 +53,43 @@
     "bookId": 19,
     "chapterId": 76,
     "verseId": 6,
-    "text": "Dei modige i hjartet vart plyndra, dei sovna den siste søvnen sin. Ingen av krigarane fann hendene sine."
+    "text": "Dei modige i hjartet vart frårøva sansane, dei sovna sin siste søvn. Ingen av krigarane kunne røra ei hand.",
+    "versions": [
+      {
+        "text": "Dei modige i hjartet vart plyndra, dei sovna den siste søvnen sin. Ingen av krigarane fann hendene sine.",
+        "type": "error",
+        "severity": "major",
+        "explanation": "'אֶשְׁתּוֹלְלוּ' (hitpolel av שׁלל) tyder 'vart berøva/mista sansane', ikkje 'vart plyndra'. Dei tapte kampmot og vart hjelpelause. 'Fann ikkje hendene sine' er ein idiom som tyder at dei var ute av stand til å handla – 'kunne røra ei hand' gjev denne meininga betre på nynorsk."
+      }
+    ]
   },
   {
     "bookId": 19,
     "chapterId": 76,
     "verseId": 7,
-    "text": "Ved trugsmålet ditt, du Jakobs Gud, vart både vogn og hest liggjande i djup søvn."
+    "text": "Ved trugsmålet ditt, du Jakobs Gud, fall både vogn og hest i djup søvn.",
+    "versions": [
+      {
+        "text": "Ved trugsmålet ditt, du Jakobs Gud, vart både vogn og hest liggjande i djup søvn.",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "'נִרְדָּם' tyder 'fall i djup søvn / vart bedøvd'. 'Vart liggjande i djup søvn' er noko tungt og uklart – 'fall i djup søvn' er meir presist og naturleg."
+      }
+    ]
   },
   {
     "bookId": 19,
     "chapterId": 76,
     "verseId": 8,
-    "text": "Du er skremmande, ja du! Kven kan stå framfor deg når vreiden din brenn?"
+    "text": "Du er frykteleg, ja du! Kven kan stå framfor deg når vreiden din flammar opp?",
+    "versions": [
+      {
+        "text": "Du er skremmande, ja du! Kven kan stå framfor deg når vreiden din brenn?",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "'נוֹרָא' tyder 'frykteleg/fryktinngytande', som har ein sterkare teologisk klang enn 'skremmande'. 'מֵאָז אַפֶּךָ' tyder 'frå den stunda vreiden din (flammar opp)', og 'flammar opp' gjev betre att den hebraiske bildebruken enn 'brenn'."
+      }
+    ]
   },
   {
     "bookId": 19,
@@ -105,6 +137,14 @@
     "bookId": 19,
     "chapterId": 76,
     "verseId": 13,
-    "text": "Han tek motet frå fyrstane, han er skremmande for kongane på jorda."
+    "text": "Han tek motet frå fyrstane, han er frykteleg for kongane på jorda.",
+    "versions": [
+      {
+        "text": "Han tek motet frå fyrstane, han er skremmande for kongane på jorda.",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "Av same grunn som i vers 8: 'נוֹרָא' bør omsetjast 'frykteleg' for konsistens og teologisk tyngd, ikkje 'skremmande'."
+      }
+    ]
   }
 ]

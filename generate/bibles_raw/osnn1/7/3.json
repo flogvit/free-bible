@@ -9,7 +9,15 @@
     "bookId": 7,
     "chapterId": 3,
     "verseId": 2,
-    "text": "Det var berre for at dei komande slektene av israelittane skulle læra seg krigskunst, dei som ikkje hadde kjent til dette før."
+    "text": "Det var berre for at dei komande slektene av israelittane skulle læra seg krig, dei som ikkje hadde kjent til dette før.",
+    "versions": [
+      {
+        "text": "Det var berre for at dei komande slektene av israelittane skulle læra seg krigskunst, dei som ikkje hadde kjent til dette før.",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "Det hebraiske ordet 'milchamah' tyder 'krig' eller 'strid', ikkje 'krigskunst'. 'Krigskunst' er ei litt fri tolking som legg til noko som ikkje står i originalteksten."
+      }
+    ]
   },
   {
     "bookId": 7,
@@ -51,7 +59,15 @@
     "bookId": 7,
     "chapterId": 3,
     "verseId": 9,
-    "text": "Då ropa israelittane til Herren, og Herren reiste opp ein frelsar for dei som berga dei: Otniel, son til Kenas, den yngre broren til Kaleb."
+    "text": "Då ropa israelittane til Herren, og Herren reiste opp ein frelsar for dei som berga dei: Otniel, son til Kenas, yngre bror til Kaleb.",
+    "versions": [
+      {
+        "text": "Då ropa israelittane til Herren, og Herren reiste opp ein frelsar for dei som berga dei: Otniel, son til Kenas, den yngre broren til Kaleb.",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "'Den yngre broren til Kaleb' kan tolkast som at teksten refererer til Kenas sin bror, ikkje Otniel sin bror. Setninga er grammatisk litt uklar, men dette er ei mindre sak. Elles er teksten god."
+      }
+    ]
   },
   {
     "bookId": 7,
@@ -93,7 +109,15 @@
     "bookId": 7,
     "chapterId": 3,
     "verseId": 16,
-    "text": "Ehud laga seg eit tvieggja sverd, ein alen langt, og festa det under kleda på høgre låret."
+    "text": "Ehud laga seg eit tvieggja sverd, ein gomed langt, og festa det under kleda på høgre låret.",
+    "versions": [
+      {
+        "text": "Ehud laga seg eit tvieggja sverd, ein alen langt, og festa det under kleda på høgre låret.",
+        "type": "error",
+        "severity": "minor",
+        "explanation": "Det hebraiske ordet 'gomed' er eit uvanleg lengdemål som ikkje er det same som ei vanleg alen (ammah). Tydinga er usikker, men dei fleste forskarar meiner det er kortare enn ei alen. Det er betre å bruka den hebraiske termen 'gomed' enn å omsetja det med 'alen', som er eit anna hebraisk mål."
+      }
+    ]
   },
   {
     "bookId": 7,
@@ -129,11 +153,17 @@
     "bookId": 7,
     "chapterId": 3,
     "verseId": 22,
-    "text": "Jamvel handtaket gjekk inn etter bladet, og feittet slutta seg om bladet. For han drog ikkje sverdet ut or magen, og det kom ut bak.",
+    "text": "Også handtaket gjekk inn etter bladet, og feittet slutta seg om bladet. For han drog ikkje sverdet ut or magen, og det kom ut bak.",
     "versions": [
       {
         "text": "Jamvel handtaket gjekk inn etter bladet, og feittet slutta seg om bladet. For han drog ikkje sverdet ut or magen, og innvollane kom ut.",
         "explanation": "Det hebraiske ordet 'הַפַּרְשְׁדֹנָה' (haparshedona) er eit sjeldant ord med usikker tyding. Mange oversettarar tolkar det som 'bak' eller 'bakdelen' (eufemisme), ikkje nødvendigvis 'innvollane'. 'Det kom ut bak' er meir trufast mot den tradisjonelle tolkinga og mindre eksplisitt."
+      },
+      {
+        "text": "Jamvel handtaket gjekk inn etter bladet, og feittet slutta seg om bladet. For han drog ikkje sverdet ut or magen, og det kom ut bak.",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "'Jamvel' er eit noko gamaldags ord. 'Også' er meir moderne og lettlest nynorsk, i tråd med målsettinga om å vera moderne og lett å lesa."
       }
     ]
   },

@@ -21,13 +21,29 @@
     "bookId": 20,
     "chapterId": 16,
     "verseId": 4,
-    "text": "Herren har skapt alt med eit føremål, jamvel den gudlause til ulukkedagen."
+    "text": "Herren har gjort alt med eit føremål, jamvel den gudlause til ulukkedagen.",
+    "versions": [
+      {
+        "text": "Herren har skapt alt med eit føremål, jamvel den gudlause til ulukkedagen.",
+        "type": "theological",
+        "severity": "minor",
+        "explanation": "פָּעַל (pa'al) betyr 'gjort/verka', ikkje spesifikt 'skapt' (som er בָּרָא). 'Gjort' er meir nøyaktig og unngår teologiske implikasjonar om at Gud 'skapte' den gudlause til ulukke."
+      }
+    ]
   },
   {
     "bookId": 20,
     "chapterId": 16,
     "verseId": 5,
-    "text": "Alle som er hovmodige i hjartet, er ein styggedom for Herren. Visst er det: Dei skal ikkje gå fri."
+    "text": "Alle som er hovmodige i hjartet, er ein styggedom for Herren. Det er visst: Dei skal ikkje gå fri.",
+    "versions": [
+      {
+        "text": "Alle som er hovmodige i hjartet, er ein styggedom for Herren. Visst er det: Dei skal ikkje gå fri.",
+        "type": "grammar",
+        "severity": "minor",
+        "explanation": "Uttrykket יָד לְיָד betyr bokstaveleg 'hand til hand' og er eit idiom for noko sikkert/garantert. 'Visst er det' er litt klønete; 'Det er visst' flyt betre på nynorsk."
+      }
+    ]
   },
   {
     "bookId": 20,
@@ -93,7 +109,15 @@
     "bookId": 20,
     "chapterId": 16,
     "verseId": 15,
-    "text": "I ljoset frå andletet til kongen er det liv, og velviljen hans er som ei sky med vårregn."
+    "text": "I lyset frå andletet til kongen er det liv, og velviljen hans er som ei sky med vårregn.",
+    "versions": [
+      {
+        "text": "I ljoset frå andletet til kongen er det liv, og velviljen hans er som ei sky med vårregn.",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "I moderne nynorsk er 'lyset' meir vanleg enn 'ljoset'. For ein tekst som skal vera moderne og lettlesen, ville 'lyset' vera meir naturleg. Begge former er korrekte nynorsk, men 'lyset' er meir tilgjengeleg."
+      }
+    ]
   },
   {
     "bookId": 20,
@@ -129,11 +153,17 @@
     "bookId": 20,
     "chapterId": 16,
     "verseId": 21,
-    "text": "Den som er vis i hjartet, vert kalla forstandig, og søte lepper aukar læreevne.",
+    "text": "Den som er vis i hjartet, vert kalla forstandig, og søte lepper aukar lærdom.",
     "versions": [
       {
         "text": "Den som er vis i hjartet, vert kalla forstandig, og søte ord aukar overtyding.",
         "explanation": "Hebraisk שְׂפָתַיִם (sefatayim) er 'lepper', ikkje 'ord'. לֶקַח (leqach) betyr 'lærdom' eller 'læreevne' - det handlar om at veltalande framstilling gjer det lettare å ta imot undervisning."
+      },
+      {
+        "text": "Den som er vis i hjartet, vert kalla forstandig, og søte lepper aukar læreevne.",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "לֶקַח (leqach) betyr primært 'lærdom/undervisning' – altså evna til å overtyda og formidla, ikkje 'læreevne' som fokuserer på mottakaren. Meininga er at veltalande framstilling aukar (den formidla) lærdomen. Men sidan førre revisjon valde 'læreevne' medvite, kan dette vera akseptabelt – difor berre 'minor'."
       }
     ]
   },
@@ -147,7 +177,15 @@
     "bookId": 20,
     "chapterId": 16,
     "verseId": 23,
-    "text": "Hjartet til den vise gjer munnen klok og legg overtyding på leppene."
+    "text": "Hjartet til den vise gjer munnen klok og legg lærdom på leppene.",
+    "versions": [
+      {
+        "text": "Hjartet til den vise gjer munnen klok og legg overtyding på leppene.",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "לֶקַח (leqach) betyr 'lærdom/undervisning', ikkje 'overtyding'. Same ord som i vers 21 – det handlar om at den vise legg lærdom (overbevisande undervisning) på leppene sine."
+      }
+    ]
   },
   {
     "bookId": 20,
@@ -165,11 +203,17 @@
     "bookId": 20,
     "chapterId": 16,
     "verseId": 26,
-    "text": "Strevet til arbeidaren strevar for han, for munnen hans pressar han på.",
+    "text": "Svolten til den som strevar, strevar for han, for munnen hans pressar han på.",
     "versions": [
       {
         "text": "Arbeidaren si sult arbeider for han, for munnen hans driv han framover.",
         "explanation": "נֶפֶשׁ עָמֵל betyr bokstaveleg 'sjela/appetitten til den som strevar'. Omsettinga 'sult' er tolkande. אָכַף betyr 'pressa/tvinga', ikkje berre 'driva framover'. Poenget er at behovet for mat tvingar arbeidaren til å halda fram."
+      },
+      {
+        "text": "Strevet til arbeidaren strevar for han, for munnen hans pressar han på.",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "נֶפֶשׁ (nefesh) i denne konteksten har tyding 'appetitt/svolten' – det er hungeren som driv arbeidaren. Den førre versjonen brukte 'sult' og vart endra fordi det var 'tolkande', men 'strevet' er tautologisk ('strevet strevar'). 'Svolten' er eit anna ord enn 'sult' og gir betre meining medan det unngår den tidlegare versjonen."
       }
     ]
   },

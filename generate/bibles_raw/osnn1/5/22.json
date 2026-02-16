@@ -51,11 +51,17 @@
     "bookId": 5,
     "chapterId": 22,
     "verseId": 9,
-    "text": "Du skal ikkje så vingarden din med to slag frø, elles blir heile avlinga heilag – både såkornet du sådde og grøda frå vingarden.",
+    "text": "Du skal ikkje så vingarden din med to slag frø, elles blir heile avlinga innvigd og forboden – både såkornet du sådde og grøda frå vingarden.",
     "versions": [
       {
         "text": "Du skal ikkje så vingarden din med to slag frø, elles går heile avlinga tapt – både såkornet du sådde og grøda frå vingarden.",
         "explanation": "Det hebraiske תִּקְדַּשׁ (tiqdash) tyder 'blir heilag/innvigd' i tydinga at det blir forbode å bruka, ikkje at det 'går tapt'. Avlinga blir utilgjengeleg fordi ho blir heilagdom for Herren. Dette er ein viktig teologisk distinksjon."
+      },
+      {
+        "text": "Du skal ikkje så vingarden din med to slag frø, elles blir heile avlinga heilag – både såkornet du sådde og grøda frå vingarden.",
+        "type": "theological",
+        "severity": "major",
+        "explanation": "Sjølv om den førre revisjonen med rette endra 'går tapt' til 'blir heilag', kan 'heilag' åleine vera misvisande for ein moderne lesar. Det hebraiske תִּקְדַּשׁ betyr at avlinga blir innvigd til heilagdomen og dermed forboden for vanleg bruk. Å presisera med 'innvigd og forboden' gjer den teologiske tydinga klarare utan å gå tilbake til den tidlegare feil."
       }
     ]
   },
@@ -141,11 +147,17 @@
     "bookId": 5,
     "chapterId": 22,
     "verseId": 21,
-    "text": "då skal dei føra den unge kvinna ut til inngangen til huset til far hennar. Mennene i byen skal steina henne til døde, fordi ho har gjort ei skammeleg gjerning i Israel ved å driva hor i huset til far sin. Slik skal du rydda det vonde bort frå deg.",
+    "text": "då skal dei føra den unge kvinna ut til inngangen til huset til far hennar. Mennene i byen skal steina henne til døde, fordi ho har gjort ei skammeleg gjerning i Israel ved å driva hor i huset til far hennar. Slik skal du rydda det vonde bort frå deg.",
     "versions": [
       {
         "text": "då skal dei føra den unge kvinna ut til døra i huset til far hennar. Mennene i byen skal steina henne til døde, fordi ho har gjort ei skammeleg gjerning i Israel ved å driva hor i huset til far sin. Slik skal du rydda det vonde bort frå deg.",
         "explanation": "פֶּתַח tyder 'inngang/opning' meir enn 'dør' (som ville vore דֶּלֶת). 'Inngangen til huset' er meir presist."
+      },
+      {
+        "text": "då skal dei føra den unge kvinna ut til inngangen til huset til far hennar. Mennene i byen skal steina henne til døde, fordi ho har gjort ei skammeleg gjerning i Israel ved å driva hor i huset til far sin. Slik skal du rydda det vonde bort frå deg.",
+        "type": "grammar",
+        "severity": "minor",
+        "explanation": "Teksten brukar 'far hennar' (אָבִיהָ) to gonger – først i 'huset til far hennar' og så att. Omsetjinga vekslar mellom 'far hennar' og 'far sin' i same vers. Sidan det er tredjeperson omtale, bør det konsekvent vera 'far hennar'."
       }
     ]
   },
@@ -201,6 +213,14 @@
     "bookId": 5,
     "chapterId": 22,
     "verseId": 29,
-    "text": "då skal mannen som låg med henne, gje femti sølvstykke til far hennar. Ho skal bli kona hans, fordi han krenkte henne. Han kan ikkje skilja seg frå henne så lenge han lever."
+    "text": "då skal mannen som låg med henne, gje femti sølvstykke til faren hennar. Ho skal bli kona hans, fordi han krenkte henne. Han kan ikkje skilja seg frå henne så lenge han lever.",
+    "versions": [
+      {
+        "text": "då skal mannen som låg med henne, gje femti sølvstykke til far hennar. Ho skal bli kona hans, fordi han krenkte henne. Han kan ikkje skilja seg frå henne så lenge han lever.",
+        "type": "error",
+        "severity": "minor",
+        "explanation": "I vers 19 vart forma endra frå 'far hennar' til 'faren hennar' for konsistens. Same form bør brukast her i vers 29 for å vera konsekvent gjennom kapitlet."
+      }
+    ]
   }
 ]

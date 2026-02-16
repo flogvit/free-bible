@@ -45,11 +45,17 @@
     "bookId": 19,
     "chapterId": 18,
     "verseId": 6,
-    "text": "Band frå dødsriket omgav meg, dødens snarer kom over meg.",
+    "text": "Band frå dødsriket omgav meg, dødssnarer kom over meg.",
     "versions": [
       {
         "text": "Dødsriket sine band omgav meg, dødens snarer kom over meg.",
         "explanation": "Genitiv med 'sine' etter substantiv ('Dødsriket sine band') er ikkje god nynorsk. Bør omformulerast til 'Band frå dødsriket' for korrekt nynorsk."
+      },
+      {
+        "text": "Band frå dødsriket omgav meg, dødens snarer kom over meg.",
+        "type": "grammar",
+        "severity": "minor",
+        "explanation": "Tidlegare vart genitivforma 'Dødsriket sine band' retta bort frå 'sine'-konstruksjon. Men 'dødens snarer' brukar ein liknande gamaldags genitivskonstruksjon ('dødens'). For å vere konsekvent med samansetningar (jf. 'Dødsband' i v.5), bør dette bli 'dødssnarer'."
       }
     ]
   },
@@ -105,7 +111,15 @@
     "bookId": 19,
     "chapterId": 18,
     "verseId": 13,
-    "text": "Ut av glansen framfor han braut skyene fram med hagl og eldgloar."
+    "text": "Av glansen framfor han drog skyene hans forbi, med hagl og eldgloar.",
+    "versions": [
+      {
+        "text": "Ut av glansen framfor han braut skyene fram med hagl og eldgloar.",
+        "type": "error",
+        "severity": "major",
+        "explanation": "Det hebraiske עָבָיו (skyene hans) har possessivsuffiks som ikkje kjem fram i omsetjinga. Dessutan tyder עָבְרוּ 'drog forbi/passerte' heller enn 'braut fram'. Skyene dreg forbi/passerer gjennom glansen framfor han."
+      }
+    ]
   },
   {
     "bookId": 19,
@@ -177,7 +191,15 @@
     "bookId": 19,
     "chapterId": 18,
     "verseId": 24,
-    "text": "Eg var heil i mi ferd med han og vakta meg for mi synd."
+    "text": "Eg var heilhjarta overfor han og vakta meg for mi synd.",
+    "versions": [
+      {
+        "text": "Eg var heil i mi ferd med han og vakta meg for mi synd.",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "תָּמִים עִמּוֹ tyder 'heil/uskyldig overfor han' og ikkje 'heil i mi ferd med han'. 'I mi ferd med han' legg til noko som ikkje står i originalen. 'Heilhjarta overfor han' er meir nøyaktig."
+      }
+    ]
   },
   {
     "bookId": 19,
@@ -207,7 +229,15 @@
     "bookId": 19,
     "chapterId": 18,
     "verseId": 28,
-    "text": "For du frelser eit audmjukt folk, men dei hovmodige augo audmjukar du."
+    "text": "For du frelser eit hjelpelaust folk, men dei hovmodige augo audmjukar du.",
+    "versions": [
+      {
+        "text": "For du frelser eit audmjukt folk, men dei hovmodige augo audmjukar du.",
+        "type": "grammar",
+        "severity": "minor",
+        "explanation": "Det hebraiske עָנִי tyder 'fattig, hjelpelaus, undertrykt' snarare enn 'audmjuk'. Ordet for 'audmjuk' er עָנָו. Her er det snakk om eit folk som lid og treng hjelp."
+      }
+    ]
   },
   {
     "bookId": 19,
@@ -267,7 +297,15 @@
     "bookId": 19,
     "chapterId": 18,
     "verseId": 37,
-    "text": "Du gjev meg rom å gå, og mine anklar vaklar ikkje."
+    "text": "Du gjer stega mine vide under meg, og mine anklar vaklar ikkje.",
+    "versions": [
+      {
+        "text": "Du gjev meg rom å gå, og mine anklar vaklar ikkje.",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "Det hebraiske תַּרְחִיב צַעֲדִי תַחְתָּי tyder meir presist 'du gjer stega mine vide under meg'. 'Du gjev meg rom å gå' er ei for fri omsetjing som misser biletet med 'steg' (צַעֲדִי) og 'under meg' (תַחְתָּי)."
+      }
+    ]
   },
   {
     "bookId": 19,
@@ -303,7 +341,15 @@
     "bookId": 19,
     "chapterId": 18,
     "verseId": 43,
-    "text": "Eg knuser dei til støv for vinden, eg tømer dei ut som søle på gata."
+    "text": "Eg mol dei til støv for vinden, eg tømer dei ut som søle på gatene.",
+    "versions": [
+      {
+        "text": "Eg knuser dei til støv for vinden, eg tømer dei ut som søle på gata.",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "אֶשְׁחָקֵם tyder 'eg mol dei fint / eg gjer dei til fint støv' – eit anna bilete enn å 'knusa' (som er brukt i v.39). Dessutan er חוּצוֹת fleirtal, 'gatene'."
+      }
+    ]
   },
   {
     "bookId": 19,

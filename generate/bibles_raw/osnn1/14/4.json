@@ -9,13 +9,29 @@
     "bookId": 14,
     "chapterId": 4,
     "verseId": 2,
-    "text": "Han laga havet av støypt metall, ti alner frå kant til kant, rundt i forma. Det var fem alner høgt, og ei snor på tretti alner gjekk rundt det."
+    "text": "Han laga havet av støypt metall. Det var ti alner frå kant til kant, rundt i forma. Det var fem alner høgt, og ei snor på tretti alner gjekk rundt det.",
+    "versions": [
+      {
+        "text": "Han laga havet av støypt metall, ti alner frå kant til kant, rundt i forma. Det var fem alner høgt, og ei snor på tretti alner gjekk rundt det.",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "'Rundt i forma' er litt unaturleg på nynorsk. 'Rundt i forma' kan betrast til 'sirkelrundt' eller formulerast annleis, men den viktigaste endringa er flyt. Eventuelt kan 'rundt i forma' stå, men det er ikkje heilt idiomatisk."
+      }
+    ]
   },
   {
     "bookId": 14,
     "chapterId": 4,
     "verseId": 3,
-    "text": "Under det var det figurar som likna oksar rundt heile kanten, ti på kvar alen, og dei gjekk rundt heile havet. Oksane var støypte i to rader, støypte i eitt med havet."
+    "text": "Under det var det figurar som likna oksar rundt heile kanten, ti i kvar alen, som gjekk rundt heile havet. Oksane stod i to rader og var støypte i eitt med havet.",
+    "versions": [
+      {
+        "text": "Under det var det figurar som likna oksar rundt heile kanten, ti på kvar alen, og dei gjekk rundt heile havet. Oksane var støypte i to rader, støypte i eitt med havet.",
+        "type": "error",
+        "severity": "major",
+        "explanation": "Teksten seier 'עֶשֶׂר בָּאַמָּה' som tyder 'ti per alen' (dvs. ti figurar per alen av omkrinsen). Omsetjinga 'ti på kvar alen' er akseptabel, men 'ti i kvar alen' er meir presis. Vidare bør det gå tydelegare fram at oksane stod i to rader, ikkje berre var 'støypte i to rader'."
+      }
+    ]
   },
   {
     "bookId": 14,
@@ -69,7 +85,15 @@
     "bookId": 14,
     "chapterId": 4,
     "verseId": 10,
-    "text": "Havet sette han på høgre sida, mot søraust."
+    "text": "Havet sette han på høgre sida av huset, mot søraust.",
+    "versions": [
+      {
+        "text": "Havet sette han på høgre sida, mot søraust.",
+        "type": "error",
+        "severity": "major",
+        "explanation": "Den hebraiske teksten 'מִכֶּתֶף הַיְמָנִית' tyder 'frå den høgre skuldera (sida) [av huset]'. Det bør presiserast at det er sida av huset/tempelet det er tale om, ikkje berre 'høgre sida' generelt."
+      }
+    ]
   },
   {
     "bookId": 14,
@@ -159,6 +183,14 @@
     "bookId": 14,
     "chapterId": 4,
     "verseId": 22,
-    "text": "knivane, skålene, skjeiene og glopannene av reint gull. Og inngangen til huset, dei indre dørene inn til Det høgheilage, og dørene til hovudhallen var av gull."
+    "text": "ljossløkkjarane, skålene, skjeiene og glopannene av reint gull. Og inngangen til huset, dei indre dørene inn til Det høgheilage, og dørene til hovudhallen var av gull.",
+    "versions": [
+      {
+        "text": "knivane, skålene, skjeiene og glopannene av reint gull. Og inngangen til huset, dei indre dørene inn til Det høgheilage, og dørene til hovudhallen var av gull.",
+        "type": "error",
+        "severity": "major",
+        "explanation": "Hebraisk 'מְזַמְּרוֹת' (mezammerot) tyder 'ljossløkkjarar' eller 'vekesaksene' – reiskapar brukte til å trimma lampevekane. Ordet tyder ikkje 'knivar'. Dette er eit omsetjingsfeil som bør rettast."
+      }
+    ]
   }
 ]

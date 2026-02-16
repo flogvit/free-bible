@@ -3,11 +3,17 @@
     "bookId": 42,
     "chapterId": 10,
     "verseId": 1,
-    "text": "Etter dette peika Herren ut syttiog andre òg, og sende dei ut to og to føre seg til kvar by og kvar stad han sjølv skulle koma.",
+    "text": "Etter dette peika Herren ut syttito andre òg, og sende dei ut to og to føre seg til kvar by og kvar stad han sjølv skulle koma.",
     "versions": [
       {
         "text": "Etter dette peika Herren ut sytti andre òg, og sende dei ut to og to føre seg til kvar by og kvar stad han sjølv skulle koma.",
         "explanation": "Den greske teksten har 'ἑβδομήκοντα δύο' (72), ikkje 70. Tekstkritisk er det usikkert, men den valgte lesemåten i grunnteksten har 'δύο'. Om ein følgjer denne lesemåten, bør det vera 'syttito'."
+      },
+      {
+        "text": "Etter dette peika Herren ut syttiog andre òg, og sende dei ut to og to føre seg til kvar by og kvar stad han sjølv skulle koma.",
+        "type": "grammar",
+        "severity": "minor",
+        "explanation": "'Syttiog' er ikkje eit korrekt norsk talord. Det skal vera 'syttito' (72), i samsvar med endringsloggen som seier at det bør vera 'syttito'."
       }
     ]
   },
@@ -123,7 +129,15 @@
     "bookId": 42,
     "chapterId": 10,
     "verseId": 18,
-    "text": "Han sa til dei: «Eg såg Satan falla ned frå himmelen som eit lyn."
+    "text": "Han sa til dei: «Eg såg Satan falla ned frå himmelen som eit lyn.»",
+    "versions": [
+      {
+        "text": "Han sa til dei: «Eg såg Satan falla ned frå himmelen som eit lyn.",
+        "type": "error",
+        "severity": "major",
+        "explanation": "Det manglar avsluttande hermeteikn (») på slutten av verset. Verset har eit fullstendig utsegn som treng avslutting, eller så må hermeteiknet koma seinare, men vers 19-20 er ei ny utsegn i same tale. Sidan vers 20 avsluttar med '»', er det truleg meininga at heile talen frå v.18-20 er samanhengande. Men v.18 er likevel ufullstendig som sjølvstendig vers utan teikn som viser at talen held fram."
+      }
+    ]
   },
   {
     "bookId": 42,
@@ -141,7 +155,15 @@
     "bookId": 42,
     "chapterId": 10,
     "verseId": 21,
-    "text": "I same stunda jubla han i Den heilage ande og sa: «Eg prisar deg, Far, Herre over himmel og jord, fordi du har løynt dette for vise og forstandige og openberra det for dei små. Ja, Far, for slik var din gode vilje."
+    "text": "I same stunda jubla han i Den heilage ande og sa: «Eg prisar deg, Far, Herre over himmel og jord, fordi du har løynt dette for vise og forstandige og openberra det for dei små. Ja, Far, for slik var din gode vilje.»",
+    "versions": [
+      {
+        "text": "I same stunda jubla han i Den heilage ande og sa: «Eg prisar deg, Far, Herre over himmel og jord, fordi du har løynt dette for vise og forstandige og openberra det for dei små. Ja, Far, for slik var din gode vilje.",
+        "type": "error",
+        "severity": "minor",
+        "explanation": "Det manglar avsluttande hermeteikn. Sjølv om talen kan tenkjast å halda fram i v.22, er v.22 ei ny utsegn som startar med nytt emne (og har eige avsluttande hermeteikn). Talen i v.21 bør avsluttast her, eller v.21-22 bør ha felles hermeteikn. Sidan v.22 allereie har '»', manglar det truleg berre eit skilje her."
+      }
+    ]
   },
   {
     "bookId": 42,
@@ -237,7 +259,15 @@
     "bookId": 42,
     "chapterId": 10,
     "verseId": 35,
-    "text": "Dagen etter tok han fram to denarar, gav dei til verten og sa: 'Stel med han, og det du legg ut meir, skal eg betala deg når eg kjem att.'"
+    "text": "Dagen etter tok han fram to denarar, gav dei til verten og sa: 'Stell med han, og det du legg ut meir, skal eg betala deg når eg kjem att.'",
+    "versions": [
+      {
+        "text": "Dagen etter tok han fram to denarar, gav dei til verten og sa: 'Stel med han, og det du legg ut meir, skal eg betala deg når eg kjem att.'",
+        "type": "grammar",
+        "severity": "minor",
+        "explanation": "'Stel' (imperativ av 'stela') er feil. Det rette ordet er 'stell' (imperativ av 'stella/stela' i tydinga 'ta vare på'). Med éin l vert det tvitydig og kan lesast som 'stel' = 'stjel'."
+      }
+    ]
   },
   {
     "bookId": 42,

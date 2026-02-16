@@ -33,7 +33,15 @@
     "bookId": 19,
     "chapterId": 102,
     "verseId": 5,
-    "text": "Hjartet mitt er slege ned og visna som gras, for eg gløymer å eta maten min."
+    "text": "Hjartet mitt er slege og tørka ut som gras, for eg gløymer å eta maten min.",
+    "versions": [
+      {
+        "text": "Hjartet mitt er slege ned og visna som gras, for eg gløymer å eta maten min.",
+        "type": "grammar",
+        "severity": "minor",
+        "explanation": "Det hebraiske 'הוּכָּה כָעֵשֶׂב וַיִּבַשׁ' seier at hjartet er slege som gras og har tørka inn/visna. 'Visna' er akseptabelt, men 'tørka ut' gjev betre att det hebraiske 'יִבַשׁ' (å tørka/verta turr). I tillegg er det unaturleg å seia 'slege ned og visna som gras' - similen 'som gras' høyrer saman med 'slege' (הוּכָּה כָעֵשֶׂב), ikkje med 'visna'. Ordstillinga bør justerast."
+      }
+    ]
   },
   {
     "bookId": 19,
@@ -159,11 +167,17 @@
     "bookId": 19,
     "chapterId": 102,
     "verseId": 21,
-    "text": "Han høyrde sukket frå fangane og løyste dødsens born.",
+    "text": "Han høyrde klageropet frå fangane og løyste dødsens born.",
     "versions": [
       {
         "text": "Han høyrde sukket frå fangane og sette fri dei som var dømde til døden.",
         "explanation": "Det hebraiske uttrykket 'בְּנֵי תְמוּתָה' (bokstavleg 'dødens born/søner') er eit idiomatisk uttrykk som kunne bevarast meir poetisk. Noverande omsetjing er korrekt i meining, men dette er eit forslag for meir poetisk språk."
+      },
+      {
+        "text": "Han høyrde sukket frå fangane og løyste dødsens born.",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "Det hebraiske 'אֶנְקַת' betyr 'stønning/klagerop' snarare enn 'sukk'. Det er eit sterkare uttrykk enn 'sukk' og refererer til klageropet frå dei som lid i fangenskap."
       }
     ]
   },
@@ -171,7 +185,15 @@
     "bookId": 19,
     "chapterId": 102,
     "verseId": 22,
-    "text": "Så dei kan forkynna Herrens namn på Sion og hans lovsong i Jerusalem."
+    "text": "Så dei kan forkynna Herrens namn i Sion og lovprisa han i Jerusalem.",
+    "versions": [
+      {
+        "text": "Så dei kan forkynna Herrens namn på Sion og hans lovsong i Jerusalem.",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "Det hebraiske 'וּתְהִלָּתוֹ' betyr 'og hans lovprising/lovsong'. 'Hans lovsong' kan tolkast som ei lovsongshandling, og 'lovprisa han' ville gjera det meir naturleg på nynorsk. I tillegg er 'בְּצִיּוֹן' meir naturleg 'i Sion' enn 'på Sion' i denne samanhengen."
+      }
+    ]
   },
   {
     "bookId": 19,
@@ -183,7 +205,15 @@
     "bookId": 19,
     "chapterId": 102,
     "verseId": 24,
-    "text": "Han har bøygd krafta mi ned på vegen og korta av dagane mine."
+    "text": "Han har knekt krafta mi på vegen og korta av dagane mine.",
+    "versions": [
+      {
+        "text": "Han har bøygd krafta mi ned på vegen og korta av dagane mine.",
+        "type": "error",
+        "severity": "major",
+        "explanation": "Det hebraiske 'עִנָּה' betyr 'han plaga/audmjuka' og ikkje 'bøygde ned'. Verbet er frå rota ענה (piel), som tyder å plaga, audmjuka eller knekka. 'Knekt' gjev betre att meininga om at Gud har svekt kreftene hans undervegs."
+      }
+    ]
   },
   {
     "bookId": 19,

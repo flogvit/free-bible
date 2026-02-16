@@ -3,11 +3,17 @@
     "bookId": 54,
     "chapterId": 5,
     "verseId": 1,
-    "text": "Tal ikkje hardt til ein eldre mann, men forman han som ein far. Dei yngre mennene som brør,",
+    "text": "Tal ikkje hardt til ein eldre mann, men forman han som ein far. Forman dei yngre mennene som brør,",
     "versions": [
       {
         "text": "Tal ikkje hardt til ein eldre mann, men forman han som ein far. Tal til dei yngre mennene som brør,",
         "explanation": "Verset sluttar midt i ei setning som held fram i vers 2. 'Tal til' er lagt til i starten av siste leddet, men dette er overflødig sidan verbet frå første ledd gjeld vidare. Alternativt kan ein la det stå for tydelegheit i munnleg lesing."
+      },
+      {
+        "text": "Tal ikkje hardt til ein eldre mann, men forman han som ein far. Dei yngre mennene som brør,",
+        "type": "grammar",
+        "severity": "minor",
+        "explanation": "Setninga 'Dei yngre mennene som brør' manglar verb og vert ein ufullstendig setning. Etter endringa frå v1 vart 'Tal til' fjerna, men det trengst framleis eit verb for at setninga skal vera fullstendig. 'Forman' kan gjentakast frå første leddet for å gje ei komplett setning som også stemmer med den greske teksten (παρακάλει gjeld vidare)."
       }
     ]
   },
@@ -39,7 +45,15 @@
     "bookId": 54,
     "chapterId": 5,
     "verseId": 5,
-    "text": "Den som verkeleg er enkje og står åleine, har sett si von til Gud og held fram med bøner og påkalling natt og dag."
+    "text": "Den som verkeleg er enkje og står åleine, har sett si von til Gud og held fram med bøner og påkallingar natt og dag.",
+    "versions": [
+      {
+        "text": "Den som verkeleg er enkje og står åleine, har sett si von til Gud og held fram med bøner og påkalling natt og dag.",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "Gresk δεήσεσιν (bøner) og προσευχαῖς (påkallingar/bøner) er begge i fleirtal. 'Påkalling' bør vera 'påkallingar' for å samsvara med fleirtalsforma i originalteksten."
+      }
+    ]
   },
   {
     "bookId": 54,
@@ -93,19 +107,43 @@
     "bookId": 54,
     "chapterId": 5,
     "verseId": 12,
-    "text": "og dei dreg på seg dom fordi dei har brote det første løftet sitt."
+    "text": "og dei dreg på seg dom fordi dei har brote det første truløftet sitt.",
+    "versions": [
+      {
+        "text": "og dei dreg på seg dom fordi dei har brote det første løftet sitt.",
+        "type": "error",
+        "severity": "major",
+        "explanation": "Gresk πρώτην πίστιν tyder 'den første trua' eller 'det første truløftet'. Omsetjinga 'det første løftet' er litt for generelt. πίστις har her tydinga 'tru/truskap/truløfte' - altså løftet om truskap mot Kristus. 'Truløftet' formidlar dette betre."
+      }
+    ]
   },
   {
     "bookId": 54,
     "chapterId": 5,
     "verseId": 13,
-    "text": "Samstundes lærer dei seg å vera ørkeslause og gå frå hus til hus. Og ikkje berre ørkeslause, men også skravlande og nysgjerrige, og dei talar om ting dei ikkje burde."
+    "text": "Samstundes lærer dei seg å vera ørkeslause og gå frå hus til hus. Og ikkje berre ørkeslause, men også skravlete og nysgjerrige, og dei talar om ting dei ikkje burde.",
+    "versions": [
+      {
+        "text": "Samstundes lærer dei seg å vera ørkeslause og gå frå hus til hus. Og ikkje berre ørkeslause, men også skravlande og nysgjerrige, og dei talar om ting dei ikkje burde.",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "Gresk φλύαροι tyder 'skravlete/sladrete' som eigenskap. 'Skravlande' er presens partisipp og skildrar ei pågåande handling, medan 'skravlete' er eit adjektiv som betre svarar til den greske adjektivforma og passar med parallelladjektiva 'ørkeslause' og 'nysgjerrige'."
+      }
+    ]
   },
   {
     "bookId": 54,
     "chapterId": 5,
     "verseId": 14,
-    "text": "Difor vil eg at dei yngre enkjene skal gifta seg, få born, styra heimen sin, og ikkje gje motstandaren nokon grunn til å tala vondt om oss."
+    "text": "Difor vil eg at dei yngre enkjene skal gifta seg, få born, styra heimen sin, og ikkje gje motstandaren nokon grunn til å spotta.",
+    "versions": [
+      {
+        "text": "Difor vil eg at dei yngre enkjene skal gifta seg, få born, styra heimen sin, og ikkje gje motstandaren nokon grunn til å tala vondt om oss.",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "Gresk λοιδορίας χάριν tyder 'for spott sin del' eller 'til spott'. Originalteksten seier ikkje 'om oss' - det er eit tillegg som ikkje finst i grunnteksten. 'Å spotta' er meir nøyaktig."
+      }
+    ]
   },
   {
     "bookId": 54,
@@ -171,7 +209,15 @@
     "bookId": 54,
     "chapterId": 5,
     "verseId": 22,
-    "text": "Legg ikkje hendene fort på nokon, og ta ikkje del i syndene til andre. Hald deg sjølv rein."
+    "text": "Legg ikkje hendene hastig på nokon, og ta ikkje del i syndene til andre. Hald deg sjølv rein.",
+    "versions": [
+      {
+        "text": "Legg ikkje hendene fort på nokon, og ta ikkje del i syndene til andre. Hald deg sjølv rein.",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "'Fort' kan misforståast som at ein ikkje skal leggja hendene på nokon raskt (fysisk tempo). Gresk ταχέως tyder her 'for hastig/forhastet' - altså at ein ikkje skal vera for rask med å ordinera nokon. 'Hastig' formidlar dette betre."
+      }
+    ]
   },
   {
     "bookId": 54,

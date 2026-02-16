@@ -33,7 +33,15 @@
     "bookId": 23,
     "chapterId": 60,
     "verseId": 5,
-    "text": "Då skal du sjå det og stråla, hjartet ditt skal beva og vida seg ut. For havets rikdom skal strøyma til deg, folkeslaga sin velstand skal koma til deg."
+    "text": "Då skal du sjå det og stråla, hjartet ditt skal beva og vida seg ut. For havets overflod skal vendast til deg, folkeslaga sin velstand skal koma til deg.",
+    "versions": [
+      {
+        "text": "Då skal du sjå det og stråla, hjartet ditt skal beva og vida seg ut. For havets rikdom skal strøyma til deg, folkeslaga sin velstand skal koma til deg.",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "The Hebrew יֵהָפֵךְ means 'shall be turned/directed toward' rather than 'stream'. הֲמוֹן יָם means 'the abundance/multitude of the sea'. 'Strøyma' is a reasonable dynamic equivalent but 'vendast til deg' better captures the Hebrew verb."
+      }
+    ]
   },
   {
     "bookId": 23,
@@ -45,11 +53,17 @@
     "bookId": 23,
     "chapterId": 60,
     "verseId": 7,
-    "text": "Alle saueflokkane frå Kedar skal samlast til deg, vêrane frå Nebajot skal tena deg. Dei skal koma opp på altaret mitt med velvilje, og eg skal herleggjera mitt herlege hus.",
+    "text": "Alle saueflokkane frå Kedar skal samlast til deg, vêrane frå Nebajot skal tena deg. Dei skal koma opp på altaret mitt med velvilje, og mitt herlege hus vil eg pryde.",
     "versions": [
       {
         "text": "Alle saueflokkane frå Kedar skal samlast til deg, vêrane frå Nebajot skal tena deg. Dei skal koma opp på altaret mitt som eit velkomme offer, og eg skal herleggjera mitt herlege hus.",
         "explanation": "Det hebraiske 'עַל־רָצוֹן' tyder 'med velvilje/velbehag' (at offera blir tekne imot med velvilje), ikkje 'som eit velkomme offer'. Det handlar om Guds aksept av offeret."
+      },
+      {
+        "text": "Alle saueflokkane frå Kedar skal samlast til deg, vêrane frå Nebajot skal tena deg. Dei skal koma opp på altaret mitt med velvilje, og eg skal herleggjera mitt herlege hus.",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "'בֵּית תִּפְאַרְתִּי אֲפָאֵר' means 'my glorious house I will glorify/beautify'. The current translation 'herleggjera mitt herlege hus' is somewhat redundant-sounding. 'Pryde' (adorn/beautify) captures אֲפָאֵר better and avoids the repetitive 'herleg-herleggjera'."
       }
     ]
   },
@@ -93,7 +107,15 @@
     "bookId": 23,
     "chapterId": 60,
     "verseId": 13,
-    "text": "Libanons herlegdom skal koma til deg, sypress, platan og einer saman, for å pryda staden for heilagdomen min. Eg vil æra den staden der føtene mine står."
+    "text": "Libanons herlegdom skal koma til deg, sypress, alm og buksbom saman, for å pryda staden for heilagdomen min. Eg vil æra den staden der føtene mine står.",
+    "versions": [
+      {
+        "text": "Libanons herlegdom skal koma til deg, sypress, platan og einer saman, for å pryda staden for heilagdomen min. Eg vil æra den staden der føtene mine står.",
+        "type": "error",
+        "severity": "minor",
+        "explanation": "The identification of תִּדְהָר and תְּאַשּׁוּר is debated, but 'platan' (plane tree) for תִּדְהָר is unusual. Many translations use 'alm' or 'furu'. Similarly תְּאַשּׁוּר is often identified as 'buksbom' (box tree/sherbin) rather than 'einer' (juniper). This is a minor issue as tree identifications are uncertain."
+      }
+    ]
   },
   {
     "bookId": 23,
@@ -117,11 +139,17 @@
     "bookId": 23,
     "chapterId": 60,
     "verseId": 16,
-    "text": "Du skal dia mjølk frå folkeslaga og suga rikdomen åt kongane. Då skal du kjenna at eg, Herren, er frelsaren din og utløysaren din, Jakobs Mektige.",
+    "text": "Du skal dia mjølk frå folkeslaga og amma ved kongebringa. Då skal du kjenna at eg, Herren, er frelsaren din og utløysaren din, Jakobs Mektige.",
     "versions": [
       {
         "text": "Du skal dia mjølk frå folkeslaga og suga kongebryst. Då skal du kjenna at eg, Herren, er frelsaren din og utløysaren din, Jakobs Mektige.",
         "explanation": "Det hebraiske 'שֹׁד' (shod) tyder 'rikdom/overflod' (same rot som i v. 5 'havets rikdom'). 'Kongebryst' er ei bokstavleg tolking av parallellismen, men kan verka framand. 'Rikdomen åt kongane' gjev same meining og flyt betre munnleg."
+      },
+      {
+        "text": "Du skal dia mjølk frå folkeslaga og suga rikdomen åt kongane. Då skal du kjenna at eg, Herren, er frelsaren din og utløysaren din, Jakobs Mektige.",
+        "type": "error",
+        "severity": "major",
+        "explanation": "The Hebrew שֹׁד (shod) here does not mean 'rikdom/overflod'. That meaning belongs to שׁד (shod) in some contexts, but here with the verb תִּינָקִי ('you shall suck/nurse'), the word שֹׁד means 'breast' (cf. the parallel with חֲלֵב 'milk'). However, the version history shows this was intentionally changed from 'kongebryst' to 'rikdomen åt kongane'. Given the intentional change, and the note that שֹׁד was interpreted as 'rikdom', I will not revert. Actually, looking more carefully: שֹׁד here is indeed 'breast' - the nursing/suckling imagery demands it. The parallel is milk/breast, not milk/riches. The previous change note incorrectly conflated this with a different word. This is a translation error that should be flagged despite the version history."
       }
     ]
   },

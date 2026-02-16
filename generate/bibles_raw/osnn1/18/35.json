@@ -15,11 +15,17 @@
     "bookId": 18,
     "chapterId": 35,
     "verseId": 3,
-    "text": "For du spør: 'Kva gagn har eg av det? Kva betre er det for meg enn om eg synda?'",
+    "text": "For du seier: 'Kva gagn har eg av det? Kva betre er det for meg enn om eg synda?'",
     "versions": [
       {
         "text": "For du spør: 'Kva gagn har eg av det? Kva tener eg på å ikkje synda?'",
         "explanation": "Det hebraiske uttrykket מֵחַטָּאתִי betyr bokstaveleg 'meir enn (om eg hadde) synda' eller 'framfor synd'. Omsetjinga 'å ikkje synda' fangar meininga, men 'kva vinning har eg framfor å synda' er nærare originalen og meir idiomatisk nynorsk."
+      },
+      {
+        "text": "For du spør: 'Kva gagn har eg av det? Kva betre er det for meg enn om eg synda?'",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "Det hebraiske תֹאמַר betyr 'du seier', ikkje 'du spør'. I vers 10 vart det nettopp gjort ei endring frå 'spør' til 'seier' for å vere meir presis med omsyn til det hebraiske verbet אָמַר. Same prinsipp bør gjelde her med תֹאמַר."
       }
     ]
   },
@@ -57,7 +63,15 @@
     "bookId": 18,
     "chapterId": 35,
     "verseId": 9,
-    "text": "Folk ropar under stor undertrykking, dei skrik om hjelp mot dei mektige sin arm."
+    "text": "Under mengda av undertrykking ropar folk, dei skrik om hjelp under dei mektige sin arm.",
+    "versions": [
+      {
+        "text": "Folk ropar under stor undertrykking, dei skrik om hjelp mot dei mektige sin arm.",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "מֵרֹב עֲשׁוּקִים betyr 'frå mengda av undertrykkingar/undertrykkte'. מִזְּרוֹעַ רַבִּים betyr meir presist 'under/frå armen til dei mange/mektige'. Preposisjonen מִן her indikerer årsak/kjelde, ikkje retning ('mot'). 'Under' eller 'frå' er meir presist enn 'mot'."
+      }
+    ]
   },
   {
     "bookId": 18,
@@ -99,7 +113,15 @@
     "bookId": 18,
     "chapterId": 35,
     "verseId": 15,
-    "text": "Men no, fordi vreiden hans ikkje har heimsøkt deg, og han ikkje har gjeve akt på synda i det heile,"
+    "text": "Men no, fordi vreiden hans ikkje straffar, og han ikkje kjenner overmotet så vel,",
+    "versions": [
+      {
+        "text": "Men no, fordi vreiden hans ikkje har heimsøkt deg, og han ikkje har gjeve akt på synda i det heile,",
+        "type": "error",
+        "severity": "major",
+        "explanation": "Det hebraiske פָּקַד אַפּוֹ betyr at 'vreiden hans (ikkje) har straffa/heimsøkt' – men objektet er ikkje spesifisert som 'deg' i originalen. Dessutan er בַּפַּשׁ מְאֹד vanskeleg, men tyder truleg 'overmod/dårskap i stor grad', ikkje 'synda i det heile'. פַּשׁ er ei sjeldan form som truleg tyder 'overmod' eller 'framferd', ikkje direkte 'synd'."
+      }
+    ]
   },
   {
     "bookId": 18,

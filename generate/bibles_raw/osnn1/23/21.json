@@ -33,17 +33,31 @@
     "bookId": 23,
     "chapterId": 21,
     "verseId": 4,
-    "text": "Hjarta mitt flakkar, redsle har overvelde meg. Skumringa eg lengta etter, har han gjort til ei skjelving for meg."
+    "text": "Hjarta mitt flakkar, redsle har overvelde meg. Skumringa eg lengta etter, har vorte til skrekk for meg.",
+    "versions": [
+      {
+        "text": "Hjarta mitt flakkar, redsle har overvelde meg. Skumringa eg lengta etter, har han gjort til ei skjelving for meg.",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "'har han gjort til ei skjelving for meg' er noko klønete. Dessutan er subjektet i den hebraiske teksten uklart – det er ikkje eksplisitt 'han' som gjer det; det er meir passivt/upersonleg. 'Har vorte til skrekk for meg' er meir naturleg og teologisk nøytralt."
+      }
+    ]
   },
   {
     "bookId": 23,
     "chapterId": 21,
     "verseId": 5,
-    "text": "Dei dekkjer bordet, dei set ut vaktposten, dei et og drikk. Reis dykk, de fyrstar, smør skjoldet!",
+    "text": "Dekk bordet, set ut vaktposten, et og drikk! Reis dykk, de fyrstar, smør skjoldet!",
     "versions": [
       {
         "text": "Dei dekkjer bordet, dei breier ut teppet, dei et og drikk. Reis dykk, de fyrstar, smør skjoldet!",
         "explanation": "Det hebraiske 'צָפֹה הַצָּפִית' tyder 'set ut vaktposten' eller 'hald utkik', ikkje 'breier ut teppet'. Rota צפה handlar om å sjå/vakta, ikkje om teppe."
+      },
+      {
+        "text": "Dei dekkjer bordet, dei set ut vaktposten, dei et og drikk. Reis dykk, de fyrstar, smør skjoldet!",
+        "type": "error",
+        "severity": "major",
+        "explanation": "Det hebraiske brukar infinitiv absolutt-former (עָרֹךְ, צָפֹה, אָכוֹל, שָׁתֹה) som fungerer som raske imperativ/utrop, ikkje skildringar i tredje person fleirtal. Teksten har karakter av hastige kommandoar: 'Dekk bordet, set ut vaktposten, et og drikk!' - ikkje ei roleg skildring av kva 'dei' gjer."
       }
     ]
   },
@@ -93,11 +107,17 @@
     "bookId": 23,
     "chapterId": 21,
     "verseId": 10,
-    "text": "Mitt sundtreska folk, mitt treskjegolv-born! Det eg har høyrt frå Herren over hærskarane, Israels Gud, det har eg kunngjort for dykk.",
+    "text": "Du mitt sundtreska folk, barn av mi treskjegolv! Det eg har høyrt frå Herren over hærskarane, Israels Gud, det har eg kunngjort for dykk.",
     "versions": [
       {
         "text": "Mitt sundtreska folk, son av mi treskjegolv! Det eg har høyrt frå Herren over hærskarane, Israels Gud, det har eg kunngjort for dykk.",
         "explanation": "'Son av mi treskjegolv' er grammatisk klønete. Ei meir naturleg formulering ville vera 'mitt treskjegolv-born' eller 'born av mi treskjegolv'."
+      },
+      {
+        "text": "Mitt sundtreska folk, mitt treskjegolv-born! Det eg har høyrt frå Herren over hærskarane, Israels Gud, det har eg kunngjort for dykk.",
+        "type": "suggestion",
+        "severity": "major",
+        "explanation": "'treskjegolv-born' er ei uvanleg samansetjing som framleis er klønete. 'barn av mi treskjegolv' er meir naturleg nynorsk. Dessutan er בֶן-גָּרְנִי singularis ('son/barn av treskjegolvet mitt'), som best vert gjeve att med 'barn av mi treskjegolv'."
       }
     ]
   },
@@ -135,7 +155,15 @@
     "bookId": 23,
     "chapterId": 21,
     "verseId": 15,
-    "text": "For dei flyktar frå sverd, frå drege sverd, frå spent boge og frå den harde striden."
+    "text": "For dei flyktar frå sverd, frå drege sverd, frå spent boge og frå den tunge striden.",
+    "versions": [
+      {
+        "text": "For dei flyktar frå sverd, frå drege sverd, frå spent boge og frå den harde striden.",
+        "type": "error",
+        "severity": "minor",
+        "explanation": "Det hebraiske כֹּבֶד מִלְחָמָה tyder bokstavleg 'tyngda av krigen'. 'Tung' er eit meir presist ordval enn 'hard' for כֹּבֶד (som kjem frå rota כבד = tung/vektig)."
+      }
+    ]
   },
   {
     "bookId": 23,

@@ -3,7 +3,15 @@
     "bookId": 11,
     "chapterId": 15,
     "verseId": 1,
-    "text": "I det attande året Jeroboam, son til Nebat, var konge, vart Abia konge over Juda."
+    "text": "I det attande året Jeroboam, son til Nebat, var konge, vart Abiam konge over Juda.",
+    "versions": [
+      {
+        "text": "I det attande året Jeroboam, son til Nebat, var konge, vart Abia konge over Juda.",
+        "type": "grammar",
+        "severity": "minor",
+        "explanation": "Det hebraiske namnet er אֲבִיָּם (Abijam/Abiam), ikkje Abia (אֲבִיָּה). I 1. Kongebok vert namnet konsekvent skrive Abiam. Abia er forma som vert brukt i Krønikebøkene. For å vera tru mot grunnteksten bør ein bruka Abiam her."
+      }
+    ]
   },
   {
     "bookId": 11,
@@ -33,7 +41,15 @@
     "bookId": 11,
     "chapterId": 15,
     "verseId": 6,
-    "text": "Det var krig mellom Rehabeam og Jeroboam så lenge Abia levde."
+    "text": "Det var krig mellom Rehabeam og Jeroboam så lenge han levde.",
+    "versions": [
+      {
+        "text": "Det var krig mellom Rehabeam og Jeroboam så lenge Abia levde.",
+        "type": "error",
+        "severity": "major",
+        "explanation": "Den hebraiske teksten seier כָּל־יְמֵי חַיָּיו (alle hans levedagar), med eit pronomen, ikkje eit eigennamn. Å setja inn 'Abia' er ei tolking. Omsetjinga bør vera meir ordrett med 'han' i staden for 'Abia', sidan grunnteksten ikkje spesifiserer kven. Dessutan refererer konteksten grammatisk til Rehabeam, ikkje Abia."
+      }
+    ]
   },
   {
     "bookId": 11,
@@ -69,11 +85,17 @@
     "bookId": 11,
     "chapterId": 15,
     "verseId": 12,
-    "text": "Han dreiv tempelprostituerte ut or landet og fjerna alle avgudsbileta som fedrane hans hadde laga.",
+    "text": "Han dreiv dei mannlege tempelprostituerte ut or landet og fjerna alle avgudsbileta som fedrane hans hadde laga.",
     "versions": [
       {
         "text": "Han dreiv tempelprostituertemannane ut or landet og fjerna alle avgudsbileta som fedrane hans hadde laga.",
         "explanation": "Ordet 'tempelprostituertemannane' er grammatisk feil samansett. Det hebraiske 'haqqedeshim' (mannlege tempelprostituerte) bør omsetjast til 'tempelprostituerte' eller 'dei mannlege tempelprostituerte'."
+      },
+      {
+        "text": "Han dreiv tempelprostituerte ut or landet og fjerna alle avgudsbileta som fedrane hans hadde laga.",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "Det hebraiske הַקְּדֵשִׁים (haqqedeshim) er maskulin fleirtal og refererer spesifikt til mannlege tempelprostituerte. Å presisera 'mannlege' gjev ei meir nøyaktig omsetjing av grunnteksten."
       }
     ]
   },
@@ -123,11 +145,17 @@
     "bookId": 11,
     "chapterId": 15,
     "verseId": 19,
-    "text": "«Det er ei pakt mellom meg og deg, mellom far min og far din. Sjå, eg sender deg ei gåve: sølv og gull. Bryt pakta di med Basja, kongen i Israel, så han dreg bort frå meg.»",
+    "text": "«Det er ei pakt mellom meg og deg, mellom far min og far din. Sjå, eg sender deg ei bestikkingsgåve: sølv og gull. Bryt pakta di med Basja, kongen i Israel, så han dreg bort frå meg.»",
     "versions": [
       {
         "text": "«Det er ei pakt mellom meg og deg, mellom far min og far din. Sjå, eg sender deg ei gåve av sølv og gull. Bryt pakta di med Basja, kongen i Israel, så han dreg bort frå meg.»",
         "explanation": "Det hebraiske 'shochad' (שֹׁחַד) tyder bestikkelse eller tributt, og 'sølv og gull' er i apposisjon til gåva, ikkje ein del av ein preposisjonsfrase. Eit kolon gjer dette tydelegare og flyt betre munnleg."
+      },
+      {
+        "text": "«Det er ei pakt mellom meg og deg, mellom far min og far din. Sjå, eg sender deg ei gåve: sølv og gull. Bryt pakta di med Basja, kongen i Israel, så han dreg bort frå meg.»",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "Det hebraiske שֹׁחַד (shochad) tyder spesifikt 'bestikking/bestikkingspengar', ikkje berre 'gåve'. Asa tilbyr ei bestikking for å bryta ein allianse. 'Gåve' åleine formidlar ikkje den negative konnotasjonen i grunnteksten."
       }
     ]
   },

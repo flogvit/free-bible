@@ -39,11 +39,17 @@
     "bookId": 25,
     "chapterId": 1,
     "verseId": 7,
-    "text": "Jerusalem minnest i dagane med naud og liding alle dei dyre skattane ho hadde frå gamle dagar.",
+    "text": "Jerusalem minnest i dagane med naud og liding alle dei dyre skattane ho hadde frå gamle dagar. Då folket hennar fall for fiendens hand utan at nokon hjelpte henne, såg motstandarane henne og lo av fallet hennar.",
     "versions": [
       {
         "text": "Jerusalem minnest i sine dagar av naud og liding alle dei dyre skattane ho hadde frå gamle dagar. Då folket hennar fall i fiendens hand og ingen hjelpte henne, såg fiendane henne og lo av undergangen hennar.",
         "explanation": "Frasen 'i sine dagar av naud' er grammatisk uheldig på nynorsk. 'I dagane med naud' eller 'i naudsdagane' flyt betre og er meir idiomatisk."
+      },
+      {
+        "text": "Jerusalem minnest i dagane med naud og liding alle dei dyre skattane ho hadde frå gamle dagar.",
+        "type": "error",
+        "severity": "critical",
+        "explanation": "The current translation omits the entire second half of the verse (בִּנְפֹל עַמָּהּ בְּיַד־צָר וְאֵין עוֹזֵר לָהּ רָאוּהָ צָרִים שָׂחֲקוּ עַל מִשְׁבַּתֶּהָ), which describes the people falling into the enemy's hand with no one to help, and the enemies laughing at her downfall. The previous version included this content but was revised only for the first phrase; it appears the second half was accidentally deleted. The suggested restoration uses different phrasing from the previous version to respect the revision history."
       }
     ]
   },
@@ -51,7 +57,15 @@
     "bookId": 25,
     "chapterId": 1,
     "verseId": 8,
-    "text": "Alle som æra henne, foraktar henne no, for dei har sett nakenheita hennar."
+    "text": "Jerusalem har synda ei stor synd, difor har ho vorte urein. Alle som æra henne, foraktar henne no, for dei har sett nakenheita hennar. Jamvel ho sjølv sukkar og vender seg bort.",
+    "versions": [
+      {
+        "text": "Alle som æra henne, foraktar henne no, for dei har sett nakenheita hennar.",
+        "type": "error",
+        "severity": "major",
+        "explanation": "The current translation omits the first clause (חֵטְא חָטְאָה יְרוּשָׁלִַם עַל־כֵּן לְנִידָה הָיָתָה — 'Jerusalem has sinned greatly, therefore she has become unclean') and the final clause (גַּם־הִיא נֶאֶנְחָה וַתָּשָׁב אָחוֹר — 'she herself groans and turns away'). These are significant omissions."
+      }
+    ]
   },
   {
     "bookId": 25,
@@ -75,11 +89,17 @@
     "bookId": 25,
     "chapterId": 1,
     "verseId": 12,
-    "text": "Gjeld ikkje dette dykk, alle de som går forbi på vegen?",
+    "text": "Gjeld ikkje dette dykk, alle de som går forbi på vegen? Sjå og sjå om det finst ein smerte som min, ein smerte Herren lét meg lida på sin brennande vreidesday.",
     "versions": [
       {
         "text": "Gjeld det ikkje dykk, alle de som går forbi på vegen? Sjå og sjå om det finst ein smerte lik min smerte, som er påført meg, som Herren lét koma over meg på sin brennande vreidesday.",
         "explanation": "For munnleg framføring flyt 'Gjeld ikkje dette dykk' litt betre enn 'Gjeld det ikkje dykk' på nynorsk, då det gjev ei meir naturleg ordstilling."
+      },
+      {
+        "text": "Gjeld ikkje dette dykk, alle de som går forbi på vegen?",
+        "type": "error",
+        "severity": "critical",
+        "explanation": "The current translation only contains the first clause and omits the bulk of the verse (הַבִּיטוּ וּרְאוּ אִם־יֵשׁ מַכְאוֹב כְּמַכְאֹבִי אֲשֶׁר עוֹלַל לִי אֲשֶׁר הוֹגָה יְהוָה בְּיוֹם חֲרוֹן אַפּוֹ). The previous version had this content, and the revision reason only concerned the opening phrase, so the second half appears to have been accidentally dropped."
       }
     ]
   },
@@ -129,7 +149,15 @@
     "bookId": 25,
     "chapterId": 1,
     "verseId": 20,
-    "text": "Ute gjer sverdet barnlaus, inne er det som døden."
+    "text": "Sjå, Herre, kor stor nauda mi er! Innvollane mine vrid seg, hjartet mitt snur seg i meg, for eg har vore gjenstridig. Ute gjer sverdet barnlaus, inne er det som døden.",
+    "versions": [
+      {
+        "text": "Ute gjer sverdet barnlaus, inne er det som døden.",
+        "type": "error",
+        "severity": "critical",
+        "explanation": "The current translation omits the first half of the verse (רְאֵה יְהוָה כִּי־צַר־לִי מֵעַי חֳמַרְמָרוּ נֶהְפַּךְ לִבִּי בְּקִרְבִּי כִּי מָרוֹ מָרִיתִי), which is a plea to the Lord about inner anguish and an admission of rebellion. Only the final clause is translated."
+      }
+    ]
   },
   {
     "bookId": 25,

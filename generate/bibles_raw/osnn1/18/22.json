@@ -45,13 +45,29 @@
     "bookId": 18,
     "chapterId": 22,
     "verseId": 8,
-    "text": "Den mektige mannen eigde landet, og den høgt æra fekk bu der."
+    "text": "Den mektige mannen eigde landet, og den høgt ære fekk bu der.",
+    "versions": [
+      {
+        "text": "Den mektige mannen eigde landet, og den høgt æra fekk bu der.",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "'Den høgt æra' er ei uvanleg form. Meir korrekt nynorsk ville vera 'den høgt ære' (partisipp av 'æra'), eventuelt 'den høgvyrde'. Men dette er eit mindre poeng og kan diskuterast."
+      }
+    ]
   },
   {
     "bookId": 18,
     "chapterId": 22,
     "verseId": 9,
-    "text": "Enkjer sende du tomhendte bort, og armane til farlause vart knuste."
+    "text": "Enkjer sende du tomhendte bort, og armane på farlause vart knuste.",
+    "versions": [
+      {
+        "text": "Enkjer sende du tomhendte bort, og armane til farlause vart knuste.",
+        "type": "error",
+        "severity": "minor",
+        "explanation": "'Armane til farlause' er ikkje feil, men 'armane på farlause' er meir idiomatisk nynorsk i denne samanhengen, der det er snakk om kroppsdelen (metaforisk for støtte/styrke). Eit lite stilistisk forbetringsforslag."
+      }
+    ]
   },
   {
     "bookId": 18,
@@ -117,7 +133,15 @@
     "bookId": 18,
     "chapterId": 22,
     "verseId": 19,
-    "text": "Dei rettferdige ser det og gleder seg, og den skuldlause spottar dei."
+    "text": "Dei rettferdige ser det og gleder seg, og den skuldlause spottar dei ugudelege.",
+    "versions": [
+      {
+        "text": "Dei rettferdige ser det og gleder seg, og den skuldlause spottar dei.",
+        "type": "error",
+        "severity": "major",
+        "explanation": "Det hebraiske לָמוֹ viser tilbake til dei ugudelege (omtala i vers 18). I den norske omsetjinga kan 'spottar dei' misforståast som at den skuldlause spottar dei rettferdige. Det bør gjerast tydeleg at det er dei ugudelege som blir spotta."
+      }
+    ]
   },
   {
     "bookId": 18,
@@ -189,7 +213,15 @@
     "bookId": 18,
     "chapterId": 22,
     "verseId": 29,
-    "text": "Når dei audmjukar, seier du: 'Det er hovmod!' Men den som slår augo ned, skal han frelsa."
+    "text": "Når folk blir audmjuka, seier du: 'Oppreising!' For den som slår augo ned, frelser han.",
+    "versions": [
+      {
+        "text": "Når dei audmjukar, seier du: 'Det er hovmod!' Men den som slår augo ned, skal han frelsa.",
+        "type": "error",
+        "severity": "major",
+        "explanation": "Det hebraiske גֵּוָה tyder 'oppreising/opphøging', ikkje 'hovmod'. Poenget er at når folk er fornedra, kan den rettferdige forkynna at Gud løftar dei opp igjen. Omsetjinga 'Det er hovmod!' snur meininga på hovudet. I tillegg bør 'dei audmjukar' presiserast med subjekt – den hebraiske verbforma er upersonleg ('når det vert audmjuka/nedtrykt')."
+      }
+    ]
   },
   {
     "bookId": 18,

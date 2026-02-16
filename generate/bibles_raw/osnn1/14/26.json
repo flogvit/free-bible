@@ -117,7 +117,15 @@
     "bookId": 14,
     "chapterId": 26,
     "verseId": 18,
-    "text": "Dei stod opp mot kong Ussia og sa til han: «Det er ikkje di sak, Ussia, å brenna røykjelse for Herren! Det er prestane, Arons søner, som er vigde til å brenna røykjelse. Gå ut frå heilagdomen, for du har vore utru, og det blir deg ikkje til ære frå Herren Gud.»"
+    "text": "Dei stod opp mot kong Ussia og sa til han: «Det er ikkje di sak, Ussia, å brenna røykjelse for Herren! Det er prestane, Arons søner, som er vigde til å brenna røykjelse. Gå ut frå heilagdomen, for du har handla treulaust, og det blir deg ikkje til ære frå Herren Gud.»",
+    "versions": [
+      {
+        "text": "Dei stod opp mot kong Ussia og sa til han: «Det er ikkje di sak, Ussia, å brenna røykjelse for Herren! Det er prestane, Arons søner, som er vigde til å brenna røykjelse. Gå ut frå heilagdomen, for du har vore utru, og det blir deg ikkje til ære frå Herren Gud.»",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "I vers 16 vart מָעַל medvite endra til 'handla treulaust' i staden for 'utru'. Same ordet מָעַלְתָּ førekjem i vers 18, så det bør vera konsistent: 'handla treulaust' i staden for 'vore utru'."
+      }
+    ]
   },
   {
     "bookId": 14,
@@ -135,13 +143,29 @@
     "bookId": 14,
     "chapterId": 26,
     "verseId": 20,
-    "text": "Øvstepresten Asarja og alle prestane vende seg mot han, og sjå, han var spedalsk i panna. Dei skunda han ut derifrå, og sjølv skunda han seg òg med å koma ut, for Herren hadde slege han."
+    "text": "Øvstepresten Asarja og alle prestane vende seg mot han, og sjå, han hadde hudsykdom i panna. Dei skunda han ut derifrå, og sjølv skunda han seg òg med å koma ut, for Herren hadde slege han.",
+    "versions": [
+      {
+        "text": "Øvstepresten Asarja og alle prestane vende seg mot han, og sjå, han var spedalsk i panna. Dei skunda han ut derifrå, og sjølv skunda han seg òg med å koma ut, for Herren hadde slege han.",
+        "type": "error",
+        "severity": "major",
+        "explanation": "I vers 19 vart צָרַעַת medvite endra frå 'spedalskheit' til 'hudsykdom' for å vera meir presis. Same ordet מְצֹרָע blir brukt i vers 20, så for konsistens bør ein bruka 'hudsykdom' her òg."
+      }
+    ]
   },
   {
     "bookId": 14,
     "chapterId": 26,
     "verseId": 21,
-    "text": "Kong Ussia var spedalsk til sin døyande dag. Han budde i eit hus for seg sjølv som spedalsk, for han var utestengd frå Herrens hus. Jotam, son hans, styrte kongehuset og dømde folket i landet."
+    "text": "Kong Ussia hadde hudsykdom til sin døyande dag. Han budde i eit hus for seg sjølv med hudsykdomen, for han var utestengd frå Herrens hus. Jotam, son hans, styrte kongehuset og dømde folket i landet.",
+    "versions": [
+      {
+        "text": "Kong Ussia var spedalsk til sin døyande dag. Han budde i eit hus for seg sjølv som spedalsk, for han var utestengd frå Herrens hus. Jotam, son hans, styrte kongehuset og dømde folket i landet.",
+        "type": "error",
+        "severity": "major",
+        "explanation": "Same konsistensproblem som i vers 20. Sidan vers 19 medvite endra צָרַעַת til 'hudsykdom', bør det same gjelde for מְצֹרָע i vers 21."
+      }
+    ]
   },
   {
     "bookId": 14,
@@ -153,6 +177,14 @@
     "bookId": 14,
     "chapterId": 26,
     "verseId": 23,
-    "text": "Ussia la seg til kvile hos fedrane sine, og dei gravla han hos fedrane hans på gravstaden som høyrde kongane til, for dei sa: «Han er spedalsk.» Og Jotam, son hans, vart konge etter han."
+    "text": "Ussia la seg til kvile hos fedrane sine, og dei gravla han hos fedrane hans på gravjorda som høyrde kongane til, for dei sa: «Han har hudsykdom.» Og Jotam, son hans, vart konge etter han.",
+    "versions": [
+      {
+        "text": "Ussia la seg til kvile hos fedrane sine, og dei gravla han hos fedrane hans på gravstaden som høyrde kongane til, for dei sa: «Han er spedalsk.» Og Jotam, son hans, vart konge etter han.",
+        "type": "error",
+        "severity": "major",
+        "explanation": "Igjen bør מְצוֹרָע omsetjast konsistent med endringa gjort i vers 19. Dessutan er בִּשְׂדֵה הַקְּבוּרָה meir bokstavleg 'gravjorda/gravfeltet' enn 'gravstaden'."
+      }
+    ]
   }
 ]

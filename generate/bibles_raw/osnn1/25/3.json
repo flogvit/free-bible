@@ -27,7 +27,15 @@
     "bookId": 25,
     "chapterId": 3,
     "verseId": 5,
-    "text": "Han har bygd opp mot meg og omringa meg med bitter møde og slit."
+    "text": "Han har bygd opp mot meg og omringa meg med gift og møde.",
+    "versions": [
+      {
+        "text": "Han har bygd opp mot meg og omringa meg med bitter møde og slit.",
+        "type": "error",
+        "severity": "major",
+        "explanation": "Det hebraiske 'רֹאשׁ' tyder 'gift' (som i v. 19), ikkje 'bitter'. Saman med 'תְלָאָה' (møde/slit) gjev dette betre meining: han omringa meg med gift og møde. Noverande omsetjing introduserer 'bitter' utan grunnlag i teksten."
+      }
+    ]
   },
   {
     "bookId": 25,
@@ -81,7 +89,15 @@
     "bookId": 25,
     "chapterId": 3,
     "verseId": 14,
-    "text": "Eg vart til latter for heile folket mitt, dei syng spotteviser om meg heile dagen."
+    "text": "Eg vart til latter for heile folket mitt, spottevisa deira heile dagen.",
+    "versions": [
+      {
+        "text": "Eg vart til latter for heile folket mitt, dei syng spotteviser om meg heile dagen.",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "'נְגִינָתָם' er eit substantiv ('spottevisa deira'), ikkje ein verbsetning. Teksten seier at han er spottevisa deira, ikkje at dei syng. Omsetjinga bør vera meir tru mot den nominale stilen i originalen."
+      }
+    ]
   },
   {
     "bookId": 25,
@@ -291,7 +307,15 @@
     "bookId": 25,
     "chapterId": 3,
     "verseId": 48,
-    "text": "Auga mitt renn med bekker av tårer over undergang for dottera til folket mitt."
+    "text": "Auga mitt renn med bekker av tårer over undergangen til dottera av folket mitt.",
+    "versions": [
+      {
+        "text": "Auga mitt renn med bekker av tårer over undergang for dottera til folket mitt.",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "'בַּת־עַמִּי' er eit fast uttrykk som tyder 'dottera av folket mitt' (dvs. folket mitt personifisert som ei dotter). 'Dottera til folket mitt' er grammatisk litt uklart. 'Dottera av folket mitt' er meir idiomatisk."
+      }
+    ]
   },
   {
     "bookId": 25,
@@ -339,11 +363,17 @@
     "bookId": 25,
     "chapterId": 3,
     "verseId": 56,
-    "text": "Du høyrde røysta mi. Lat ikkje øyret ditt vera lukka for mitt andedrag, mitt rop om hjelp!",
+    "text": "Du høyrde røysta mi. Lat ikkje øyret ditt vera lukka for mi lette, mitt rop om hjelp!",
     "versions": [
       {
         "text": "Du høyrde røysta mi. Lat ikkje øyret ditt vera lukka for mitt sukk, mitt rop!",
         "explanation": "Det hebraiske 'לְרַוְחָתִי' (leravchati) tyder 'for mi lette/mitt andedrag' (i tydinga 'hjelp meg å pusta fritt'), ikkje 'sukk'. Dette gjev betre meining i konteksten."
+      },
+      {
+        "text": "Du høyrde røysta mi. Lat ikkje øyret ditt vera lukka for mitt andedrag, mitt rop om hjelp!",
+        "type": "error",
+        "severity": "major",
+        "explanation": "'לְרַוְחָתִי' tyder 'for mi lette/lindring' (relief/respite), ikkje 'mitt andedrag'. Versjonshistorikken viser at endringa frå 'sukk' var rett, men 'andedrag' er heller ikkje korrekt. 'Mi lette' fangar betre den hebraiske meininga om lindring/utpust av lette."
       }
     ]
   },
@@ -381,7 +411,15 @@
     "bookId": 25,
     "chapterId": 3,
     "verseId": 62,
-    "text": "leppene til motstandarane mine og deira kviskring mot meg heile dagen."
+    "text": "leppene til motstandarane mine og det dei tenkjer ut mot meg heile dagen.",
+    "versions": [
+      {
+        "text": "leppene til motstandarane mine og deira kviskring mot meg heile dagen.",
+        "type": "error",
+        "severity": "minor",
+        "explanation": "'הֶגְיוֹן' tyder 'grunding/det ein tenkjer ut' eller 'mumling', ikkje nødvendigvis 'kviskring'. Det har meir med planlegging/grubling å gjera, og sidan konteksten handlar om fiendtlege planar (jf. v. 60-61), er 'det dei tenkjer ut' meir nøyaktig."
+      }
+    ]
   },
   {
     "bookId": 25,

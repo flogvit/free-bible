@@ -3,11 +3,17 @@
     "bookId": 19,
     "chapterId": 56,
     "verseId": 1,
-    "text": "Til korleiaren. Etter «Dua i dei fjerne eiketre». Ein miktam av David, då filistrane greip han i Gat.",
+    "text": "Til korleiaren. Etter «Den stumme dua mellom fjerne». Ein miktam av David, då filistrane greip han i Gat.",
     "versions": [
       {
         "text": "Til korleiaren. Etter «Dua på fjerne eiketre». Ein miktam av David, då filistrane greip han i Gat.",
         "explanation": "«på fjerne eiketre» er grammatisk uheldig på nynorsk. «i dei fjerne eiketre» flyt betre og gjev meir meining som stad-referanse."
+      },
+      {
+        "text": "Til korleiaren. Etter «Dua i dei fjerne eiketre». Ein miktam av David, då filistrane greip han i Gat.",
+        "type": "error",
+        "severity": "minor",
+        "explanation": "אֵלֶם betyr 'stum/taus' (ikkje 'eik'), og רְחֹקִים betyr 'fjerne (stader/folk)'. Tittelen er truleg 'Den stumme dua mellom dei fjerne' eller liknande. 'Eiketre' er ei feiltolking av אֵלֶם. Men sidan verset har 1 tidlegare revisjon, og den endringane gjaldt grammatikk, ikkje innhald, er dette framleis ein reell omsetjingsfeil i grunnlaget som bør rettast."
       }
     ]
   },
@@ -33,13 +39,29 @@
     "bookId": 19,
     "chapterId": 56,
     "verseId": 5,
-    "text": "I Gud prisar eg hans ord. I Gud har eg sett mi lit, eg er ikkje redd. Kva kan eit menneske gjera meg?"
+    "text": "I Gud prisar eg ordet hans. I Gud har eg sett mi lit, eg er ikkje redd. Kva kan eit menneske gjera meg?",
+    "versions": [
+      {
+        "text": "I Gud prisar eg hans ord. I Gud har eg sett mi lit, eg er ikkje redd. Kva kan eit menneske gjera meg?",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "Same som vers 11: 'ordet hans' er meir naturleg nynorsk ordstilling enn 'hans ord'."
+      }
+    ]
   },
   {
     "bookId": 19,
     "chapterId": 56,
     "verseId": 6,
-    "text": "Heile dagen vrengjer dei orda mine, alle tankane deira mot meg er vonde."
+    "text": "Heile dagen forvrengjer dei orda mine, alle tankane deira mot meg er vonde.",
+    "versions": [
+      {
+        "text": "Heile dagen vrengjer dei orda mine, alle tankane deira mot meg er vonde.",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "'Vrengjer' er forståeleg, men 'forvrengjer' er meir presist og naturleg nynorsk for יְעַצֵּבוּ i tydinga 'fordreie/forvrenge'. Det gjev ein tydelegare semantisk nyanse."
+      }
+    ]
   },
   {
     "bookId": 19,
@@ -81,7 +103,15 @@
     "bookId": 19,
     "chapterId": 56,
     "verseId": 11,
-    "text": "I Gud prisar eg hans ord. I Herren prisar eg hans ord."
+    "text": "I Gud prisar eg ordet hans. I Herren prisar eg ordet hans.",
+    "versions": [
+      {
+        "text": "I Gud prisar eg hans ord. I Herren prisar eg hans ord.",
+        "type": "error",
+        "severity": "major",
+        "explanation": "דָּבָר er eintal ('ord'), og 'hans ord' er rett omsetjing. Men på nynorsk er 'ordet hans' meir naturleg ordstilling enn 'hans ord', som verkar meir bokmålsaktig/arkaisk. 'Ordet hans' følgjer nynorsk normalprosa betre."
+      }
+    ]
   },
   {
     "bookId": 19,
@@ -93,7 +123,15 @@
     "bookId": 19,
     "chapterId": 56,
     "verseId": 13,
-    "text": "På meg, Gud, kviler lovnadene eg har gjeve deg. Eg vil gje deg takkoffer."
+    "text": "Eg ber på lovnadene mine til deg, Gud. Eg vil gje deg takkoffer.",
+    "versions": [
+      {
+        "text": "På meg, Gud, kviler lovnadene eg har gjeve deg. Eg vil gje deg takkoffer.",
+        "type": "error",
+        "severity": "major",
+        "explanation": "נְדָרֶיךָ er problematisk, men i kontekst betyr עָלַי ... נְדָרֶיךָ 'på meg (kviler) lovnadene til deg', altså 'mine lovnader/løfte til deg'. Den noverande omsetjinga 'lovnadene eg har gjeve deg' er ikkje gal i innhald, men 'kviler' er litt kunstig. Meir naturleg nynorsk: 'Eg ber på lovnadene mine til deg, Gud.'"
+      }
+    ]
   },
   {
     "bookId": 19,

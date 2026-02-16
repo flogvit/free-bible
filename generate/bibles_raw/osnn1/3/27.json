@@ -99,11 +99,17 @@
     "bookId": 3,
     "chapterId": 27,
     "verseId": 16,
-    "text": "Vil nokon vie ein del av odelsjorda si til Herren, skal verdien setjast etter kor mykje såkorn som trengst: femti sekel sølv for kvar homer bygg som blir sådd.",
+    "text": "Vil nokon vie ein del av odelsjorda si til Herren, skal verdien setjast etter kor mykje såkorn som trengst: femti sekel sølv for ein homer bygg som blir sådd.",
     "versions": [
       {
         "text": "Vil nokon via ein del av odelsjorda si til Herren, skal verdien setjast etter kor mykje såkorn som trengst: femti sekel sølv for kvar homer bygg som blir sådd.",
         "explanation": "Konsekvent ordbruk: 'vie' er brukt elles i kapitlet (v. 14, 22), så 'via' bør endrast til 'vie' for einskap."
+      },
+      {
+        "text": "Vil nokon vie ein del av odelsjorda si til Herren, skal verdien setjast etter kor mykje såkorn som trengst: femti sekel sølv for kvar homer bygg som blir sådd.",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "Det hebraiske 'זֶרַע חֹמֶר שְׂעֹרִים' talar om éin homer bygg til femti sekel. Det er ikkje 'kvar homer' som om det var ein gjentakande sats, men éin bestemt målestokk: éin homer bygg = femti sekel sølv."
       }
     ]
   },
@@ -183,7 +189,15 @@
     "bookId": 3,
     "chapterId": 27,
     "verseId": 26,
-    "text": "Men det førstefødte av feet, som alt tilhøyrer Herren fordi det er førstefødt, kan ingen via. Anten det er okse eller sau, tilhøyrer det Herren."
+    "text": "Men det førstefødte av feet, som alt tilhøyrer Herren fordi det er førstefødt, kan ingen vie. Anten det er okse eller sau, tilhøyrer det Herren.",
+    "versions": [
+      {
+        "text": "Men det førstefødte av feet, som alt tilhøyrer Herren fordi det er førstefødt, kan ingen via. Anten det er okse eller sau, tilhøyrer det Herren.",
+        "type": "error",
+        "severity": "major",
+        "explanation": "Verbet 'via' bør vera 'vie' for å vera konsekvent med resten av kapitlet (jf. v. 16 der 'via' blei endra til 'vie' nettopp for einskap). Infinitivsforma er 'vie' på nynorsk (å vie)."
+      }
+    ]
   },
   {
     "bookId": 3,

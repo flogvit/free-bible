@@ -33,7 +33,15 @@
     "bookId": 16,
     "chapterId": 5,
     "verseId": 5,
-    "text": "«No er vi av same kjøt og blod som brørne våre, og borna våre er som borna deira. Likevel må vi gje sønene og døtrene våre som slavar. Somme av døtrene våre er alt trælbundne, og vi kan ikkje gjera noko med det, for åkrane og vinmarkene våre tilhøyrer andre.»"
+    "text": "«No er vi av same kjøt og blod som brørne våre, og borna våre er som borna deira. Likevel lyt vi gje sønene og døtrene våre som slavar. Somme av døtrene våre er alt trælbundne, og vi maktar ikkje gjera noko med det, for åkrane og vinmarkene våre tilhøyrer andre.»",
+    "versions": [
+      {
+        "text": "«No er vi av same kjøt og blod som brørne våre, og borna våre er som borna deira. Likevel må vi gje sønene og døtrene våre som slavar. Somme av døtrene våre er alt trælbundne, og vi kan ikkje gjera noko med det, for åkrane og vinmarkene våre tilhøyrer andre.»",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "Det hebraiske uttrykket וְאֵין לְאֵל יָדֵנוּ betyr 'det er ikkje i vår makt'. 'Vi kan ikkje gjera noko med det' er akseptabelt, men 'vi maktar ikkje gjera noko med det' er tettare på den hebraiske idéen om manglande makt/evne. Dette er ei mindre forbetringsforslag."
+      }
+    ]
   },
   {
     "bookId": 16,
@@ -63,13 +71,29 @@
     "bookId": 16,
     "chapterId": 5,
     "verseId": 9,
-    "text": "Og eg sa: «Det de gjer, er ikkje rett. Burde de ikkje ferdast i frykt for vår Gud, så ikkje heidningane, fiendane våre, får grunn til å spotta oss?"
+    "text": "Og eg sa: «Det de gjer, er ikkje rett. Burde de ikkje ferdast i frykt for vår Gud, så ikkje heidningane, fiendane våre, får grunn til å spotta oss?»",
+    "versions": [
+      {
+        "text": "Og eg sa: «Det de gjer, er ikkje rett. Burde de ikkje ferdast i frykt for vår Gud, så ikkje heidningane, fiendane våre, får grunn til å spotta oss?",
+        "type": "grammar",
+        "severity": "minor",
+        "explanation": "Det manglar ein avsluttande hermeteikn (») i dette verset. Sidan vers 10 og 11 ser ut til å fortsetja Nehemja sin tale, kan ein alternativt la hermeteiknet stå ope her, men det verkar som verset er meint å ha avsluttande sitatteikn sidan vers 10 byrjar med ny setning."
+      }
+    ]
   },
   {
     "bookId": 16,
     "chapterId": 5,
     "verseId": 10,
-    "text": "Eg sjølv, brørne mine og tenarane mine har òg lånt dei pengar og korn. Lat oss no sletta denne gjelda!"
+    "text": "Eg sjølv, brørne mine og tenarane mine har òg lånt dei pengar og korn. Lat oss no gje avkall på denne gjelda!",
+    "versions": [
+      {
+        "text": "Eg sjølv, brørne mine og tenarane mine har òg lånt dei pengar og korn. Lat oss no sletta denne gjelda!",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "Det hebraiske נַעַזְבָה (frå עזב) betyr 'lat oss gje opp / la fara', altså å fråseie seg kravet om tilbakebetaling. 'Sletta' kan gje inntrykk av at gjelda vert formelt avskriven, medan 'gje avkall på' er nærare den hebraiske tydinga om å la kravet fara."
+      }
+    ]
   },
   {
     "bookId": 16,
@@ -99,11 +123,17 @@
     "bookId": 16,
     "chapterId": 5,
     "verseId": 14,
-    "text": "Frå den dagen eg vart utnemnd til å vera landshovding i Juda, frå det tjuande året til det trettiandre året under kong Artaxerxes, i tolv år, åt korkje eg eller brørne mine av landshøvdingens kost.",
+    "text": "Frå den dagen eg vart utnemnd til å vera landshovding i Juda, frå det tjuande året til det trettiogtjuande året under kong Artaxerxes, i tolv år, åt korkje eg eller brørne mine av landshøvdingens kost.",
     "versions": [
       {
         "text": "Frå den dagen eg vart utnemnd til å vera landshovding i Juda, frå det tjuande året til det trettioandre året under kong Artaxerxes, i tolv år, åt korkje eg eller brørne mine av landshøvdingens kost.",
         "explanation": "Hebraisk שְׁלֹשִׁ֤ים וּשְׁתַּ֙יִם֙ er 'tretti og to', altså det 32. året. 'Trettioandre' er ei uvanleg form; 'trettiandre' er meir korrekt nynorsk for ordenstalet 32."
+      },
+      {
+        "text": "Frå den dagen eg vart utnemnd til å vera landshovding i Juda, frå det tjuande året til det trettiandre året under kong Artaxerxes, i tolv år, åt korkje eg eller brørne mine av landshøvdingens kost.",
+        "type": "error",
+        "severity": "major",
+        "explanation": "Det hebraiske שְׁלֹשִׁים וּשְׁתַּיִם betyr 'tretti og to' (32). Ordenstalet for 32 på nynorsk er 'trettiogtjuande', ikkje 'trettiandre' (som ville vera 31.). Den førre versjonen hadde 'trettioandre', men den noverande 'trettiandre' tyder framleis 31. og er dermed feil."
       }
     ]
   },

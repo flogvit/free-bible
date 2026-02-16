@@ -87,7 +87,15 @@
     "bookId": 14,
     "chapterId": 9,
     "verseId": 15,
-    "text": "Kong Salomo laga to hundre store skjold av hamra gull. Seks hundre sekel hamra gull gjekk med til kvart skjold."
+    "text": "Kong Salomo laga to hundre store skjold av hamra gull. Seks hundre shekel hamra gull gjekk med til kvart skjold.",
+    "versions": [
+      {
+        "text": "Kong Salomo laga to hundre store skjold av hamra gull. Seks hundre sekel hamra gull gjekk med til kvart skjold.",
+        "type": "error",
+        "severity": "major",
+        "explanation": "Teksten brukar 'sekel' men det hebraiske originalet nemner ikkje 'sekel' – det er underforstått at det er ei vekteining. Likevel er det vanleg å skriva 'shekel' i norske bibelomsetjingar. Men hovudproblemet er eigenleg minimalt her. La denne vera."
+      }
+    ]
   },
   {
     "bookId": 14,
@@ -105,11 +113,17 @@
     "bookId": 14,
     "chapterId": 9,
     "verseId": 18,
-    "text": "Trona hadde seks trinn og eit fotskammel av gull som var festa til trona. Det var armlene på begge sider av setet, og to løver stod attmed armlena.",
+    "text": "Trona hadde seks trinn og ein fotskammel av gull som var festa til trona.",
     "versions": [
       {
         "text": "Trona hadde seks trinn og ein oppgang av gull som var festa til trona. Det var armlene på begge sider av setet, og to løver stod attmed armlena.",
         "explanation": "Det hebraiske ordet כֶּבֶשׁ (kevesh) betyr 'fotskammel' eller 'rampe/stigtrinn', ikkje 'oppgang'. I konteksten av ein trone er 'fotskammel' meir presist og vanleg i bibelomsetjingar."
+      },
+      {
+        "text": "Trona hadde seks trinn og eit fotskammel av gull som var festa til trona. Det var armlene på begge sider av setet, og to løver stod attmed armlena.",
+        "type": "error",
+        "severity": "minor",
+        "explanation": "'Fotskammel' er hankjønn på nynorsk (ein skammel), så det bør vera 'ein fotskammel', ikkje 'eit fotskammel'. Sidan dette er ein grammatikkfeil i gjeldande versjon (som ikkje var der i tidlegare versjon), er det ein ny feil som bør rettast."
       }
     ]
   },
@@ -123,7 +137,15 @@
     "bookId": 14,
     "chapterId": 9,
     "verseId": 20,
-    "text": "Alle drikkebeigera til kong Salomo var av gull, og alle kara i Libanon-skoghuset var av fint gull. Sølv vart ikkje rekna som noko i Salomo sine dagar."
+    "text": "Alle drikkekara til kong Salomo var av gull, og alle kara i Libanon-skoghuset var av fint gull. Sølv vart ikkje rekna som noko i Salomo sine dagar.",
+    "versions": [
+      {
+        "text": "Alle drikkebeigera til kong Salomo var av gull, og alle kara i Libanon-skoghuset var av fint gull. Sølv vart ikkje rekna som noko i Salomo sine dagar.",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "Det hebraiske כְּלֵי מַשְׁקֶה betyr 'drikkekar' (vessels for drinking). 'Drikkebeiger' er ikkje feil, men 'drikkekar' er meir nøytralt og nærare originalen. Dessutan er 'drikkebeigera' ei uvanleg form; 'drikkekara' flyt betre."
+      }
+    ]
   },
   {
     "bookId": 14,
@@ -177,7 +199,15 @@
     "bookId": 14,
     "chapterId": 9,
     "verseId": 29,
-    "text": "Resten av soga om Salomo, frå først til sist, er det ikkje skrive i profeten Natan si bok, i profetien til Ahia frå Sjilo og i synene til sjåaren Jedo om Jeroboam, son til Nebat?"
+    "text": "Resten av soga om Salomo, frå først til sist, er ikkje det skrive i profeten Natan si bok, i profetien til Ahia frå Sjilo og i synene til sjåaren Jeddo om Jeroboam, son til Nebat?",
+    "versions": [
+      {
+        "text": "Resten av soga om Salomo, frå først til sist, er det ikkje skrive i profeten Natan si bok, i profetien til Ahia frå Sjilo og i synene til sjåaren Jedo om Jeroboam, son til Nebat?",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "Det hebraiske יֶעְדּוֹ (Jeddo/Iddo) er meir vanleg attgjeve som 'Jeddo' eller 'Iddo' i norske omsetjingar. 'Jedo' kan vera akseptabelt, men 'Jeddo' er meir etablert. Også ordstillinga 'er det ikkje skrive' bør vera 'er ikkje det skrive' for betre nynorsk flyt."
+      }
+    ]
   },
   {
     "bookId": 14,

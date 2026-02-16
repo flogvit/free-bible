@@ -9,11 +9,17 @@
     "bookId": 18,
     "chapterId": 26,
     "verseId": 2,
-    "text": "Kor godt du har hjelpt den som er utan kraft! Kor du har frelst armen som er utan styrke!",
+    "text": "Kor du har hjelpt den som er utan kraft! Kor du har frelst armen som er utan styrke!",
     "versions": [
       {
         "text": "Kor godt du har hjelpt den som er utan kraft! Kor du har frelst den armen som er utan styrke!",
         "explanation": "Formuleringa 'den armen' er litt klønete på nynorsk. 'Armen' åleine fungerer betre og er meir idiomatisk."
+      },
+      {
+        "text": "Kor godt du har hjelpt den som er utan kraft! Kor du har frelst armen som er utan styrke!",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "Dei hebraiske orda 'מֶה־עָזַרְתָּ' er ironisk-retoriske spørsmål som tyder 'kor mykje har du hjelpt?' (dvs. ikkje i det heile). Å leggje til 'godt' gjer det til eit positivt utsegn i staden for eit ironisk spørsmål. Ironi kjem betre fram utan 'godt'."
       }
     ]
   },
@@ -21,13 +27,29 @@
     "bookId": 18,
     "chapterId": 26,
     "verseId": 3,
-    "text": "Kor godt du har rettleidd den som manglar visdom! Og for ein rikdom av innsikt du har vist!"
+    "text": "Kor du har rettleidd den som manglar visdom! Og for ein rikdom av innsikt du har vist!",
+    "versions": [
+      {
+        "text": "Kor godt du har rettleidd den som manglar visdom! Og for ein rikdom av innsikt du har vist!",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "Same problemet som vers 2: 'godt' er lagt til og svekkar den ironiske tonen i det hebraiske retoriske spørsmålet. 'Kor du har rettleidd' held ironi-nivået konsekvent."
+      }
+    ]
   },
   {
     "bookId": 18,
     "chapterId": 26,
     "verseId": 4,
-    "text": "Kven har du tala desse orda til? Og kven si ånd har kome ut frå deg?"
+    "text": "Kven har du tala desse orda til? Og kven sin ande har kome ut frå deg?",
+    "versions": [
+      {
+        "text": "Kven har du tala desse orda til? Og kven si ånd har kome ut frå deg?",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "Det hebraiske 'נִשְׁמַת' tyder 'pust/ande' (neshamah), ikkje 'ånd' (ruach). Spørsmålet er retorisk: kven sin pust/inspirasjon er det som talar gjennom deg? 'Ande' er meir presist enn 'ånd' her og skil mellom neshamah og ruach."
+      }
+    ]
   },
   {
     "bookId": 18,
@@ -51,7 +73,15 @@
     "bookId": 18,
     "chapterId": 26,
     "verseId": 7,
-    "text": "Han breier ut nordheimen over det tome rom, han heng jorda opp over inkje."
+    "text": "Han breier ut nordhimmelen over det tome rom, han heng jorda opp over inkje.",
+    "versions": [
+      {
+        "text": "Han breier ut nordheimen over det tome rom, han heng jorda opp over inkje.",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "'צָפוֹן' refererer her til den nordlege himmelen, ikkje 'nordheimen'. 'Nordhimmelen' er meir presist i denne kosmologiske konteksten."
+      }
+    ]
   },
   {
     "bookId": 18,
@@ -93,7 +123,15 @@
     "bookId": 18,
     "chapterId": 26,
     "verseId": 12,
-    "text": "Med krafta si rørte han opp havet, med visdomen sin knuste han Rahab."
+    "text": "Med krafta si stilla han havet, med innsikta si knuste han Rahab.",
+    "versions": [
+      {
+        "text": "Med krafta si rørte han opp havet, med visdomen sin knuste han Rahab.",
+        "type": "error",
+        "severity": "major",
+        "explanation": "Det hebraiske verbet 'רָגַע' tyder her 'å stille/roe ned' (jf. Jes 51:15, Jer 31:35), ikkje 'røre opp'. Dette er ein reell omsetjingsfeil som snur tydinga. I tillegg er 'תְבוּנָה' betre omsett med 'innsikt' enn 'visdom' (som er 'חָכְמָה')."
+      }
+    ]
   },
   {
     "bookId": 18,

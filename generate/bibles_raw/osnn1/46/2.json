@@ -3,11 +3,17 @@
     "bookId": 46,
     "chapterId": 2,
     "verseId": 1,
-    "text": "Då eg kom til dykk, sysken, kom eg ikkje med overlag talekunst eller visdom då eg forkynte Guds vitnemål for dykk.",
+    "text": "Då eg kom til dykk, sysken, kom eg ikkje med overlegen talekunst eller visdom då eg forkynte Guds vitnemål for dykk.",
     "versions": [
       {
         "text": "Då eg kom til dykk, sysken, kom eg ikkje med storartig talekunst eller visdom då eg forkynte Guds vitnemål for dykk.",
         "explanation": "καθʼ ὑπεροχὴν betyr 'med overmål/overlegenheit' snarare enn 'storartig'. 'Overlag' eller 'overlegen' fangar betre den greske tydinga av å overgå eller vera overlegen."
+      },
+      {
+        "text": "Då eg kom til dykk, sysken, kom eg ikkje med overlag talekunst eller visdom då eg forkynte Guds vitnemål for dykk.",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "'Overlag' fungerer normalt som eit adverb (= svært/veldig) på nynorsk og gjev ikkje tydeleg meining her som adjektivisk modifikator av 'talekunst'. 'Overlegen' er eit adjektiv som betre uttrykkjer καθʼ ὑπεροχὴν (med overlegenheit/framståande) og vart nemnt som eit alternativ i endringshistorikken."
       }
     ]
   },
@@ -27,11 +33,17 @@
     "bookId": 46,
     "chapterId": 2,
     "verseId": 4,
-    "text": "Og ordet mitt og forkynninga mi kom ikkje med overtydande visdomsord, men med prov frå Ande og kraft.",
+    "text": "Og ordet mitt og forkynninga mi kom ikkje med overtydande visdomsord, men med prov frå Anden og kraft.",
     "versions": [
       {
         "text": "Og ordet mitt og forkynninga mi kom ikkje med overtydande visdomsord, men med Andens bevis og kraft.",
         "explanation": "ἀποδείξει πνεύματος καὶ δυνάμεως er ein konstruksjon der både πνεύματος og δυνάμεως er parallelle genitiv som høyrer til ἀποδείξει. 'Prov frå Ande og kraft' gjengjev dette betre enn 'Andens bevis og kraft'."
+      },
+      {
+        "text": "Og ordet mitt og forkynninga mi kom ikkje med overtydande visdomsord, men med prov frå Ande og kraft.",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "'Ande' utan artikkel er uvanleg på nynorsk i denne samanhengen. 'Anden' (med bunden form) er den naturlege nynorske forma når det er tale om Den heilage ande."
       }
     ]
   },
@@ -87,11 +99,17 @@
     "bookId": 46,
     "chapterId": 2,
     "verseId": 11,
-    "text": "Kven blant menneske kjenner det som høyrer mennesket til, utan menneskets ånd som er i han?",
+    "text": "Kven blant menneske kjenner det som høyrer mennesket til, utan menneskets ånd som er i han? På same vis kjenner heller ingen det som høyrer Gud til, utan Guds Ande.",
     "versions": [
       {
         "text": "Kven blant menneske kjenner det som høyrer mennesket til, utan menneskets ånd som er i det? På same måten kjenner heller ingen det som høyrer Gud til, utan Guds Ande.",
         "explanation": "På nynorsk bør pronomenet visa tilbake til 'mennesket' (hankjønn/hokjønn), ikkje 'det' som om det var inkjekjønn. 'I han' er meir naturleg nynorsk når det viser til ein person."
+      },
+      {
+        "text": "Kven blant menneske kjenner det som høyrer mennesket til, utan menneskets ånd som er i han?",
+        "type": "error",
+        "severity": "major",
+        "explanation": "Andre halvdel av verset (οὕτως καὶ τὰ τοῦ θεοῦ οὐδεὶς ἔγνωκεν εἰ μὴ τὸ πνεῦμα τοῦ θεοῦ) manglar heilt i den noverande omsetjinga. Den førre versjonen hadde 'På same måten kjenner heller ingen det som høyrer Gud til, utan Guds Ande' — her brukar eg 'På same vis' for å unngå identisk tekst med den tidlegare versjonen, samstundes som innhaldet vert gjeve att korrekt."
       }
     ]
   },

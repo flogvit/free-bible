@@ -93,11 +93,17 @@
     "bookId": 4,
     "chapterId": 5,
     "verseId": 15,
-    "text": "då skal mannen føra kona si til presten. Han skal ta med eit offer for henne: ein tiandedel efa byggmjøl. Han skal ikkje hella olje over det eller leggja røykjelse på det, for det er eit sjalusioffer, eit minneoffer som kallar skuld til minne.",
+    "text": "då skal mannen føra kona si til presten. Han skal ta med eit offer for henne: ein tiandedel efa bygg-mjøl. Han skal ikkje hella olje over det eller leggja røykjelse på det, for det er eit sjalusioffer, eit minneoffer som kallar skuld til minne.",
     "versions": [
       {
         "text": "då skal mannen føra kona si til presten. Han skal ta med eit offer for henne: ein tiandedel efa byggmjøl. Han skal ikkje hella olje over det eller leggja røykjelse på det, for det er eit sjalusioffer, eit minneoffer som skal minna om skuld.",
         "explanation": "Det hebraiske 'מַזְכֶּרֶת עָוֺן' (mazkeret avon) tyder meir presist 'som kallar skuld til minne' eller 'som minner om misgjerning'. Formuleringa 'minna om skuld' er akseptabel, men 'kallar skuld til minne' er meir idiomatisk og presist."
+      },
+      {
+        "text": "då skal mannen føra kona si til presten. Han skal ta med eit offer for henne: ein tiandedel efa byggmjøl. Han skal ikkje hella olje over det eller leggja røykjelse på det, for det er eit sjalusioffer, eit minneoffer som kallar skuld til minne.",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "'Byggmjøl' kan lesast tvetydig. Det hebraiske 'קֶמַח שְׂעֹרִים' tyder 'mjøl av bygg' (byggryn/byggmjøl). Sjølv om 'byggmjøl' er forståeleg, ville 'bygmjøl' eller 'mjøl av bygg' vera tydelegare. Men dette er ein svært liten merknad."
       }
     ]
   },
@@ -141,7 +147,15 @@
     "bookId": 4,
     "chapterId": 5,
     "verseId": 21,
-    "text": "då skal presten ta kvinna i forbanningseid og seia til henne: Må Herren gjera deg til eit føredøme på forbanning og eid blant folket ditt, ved at Herren lèt hofta di visna og magen din svulma opp."
+    "text": "Må Herren gjera deg til ei forbanning og ein eid blant folket ditt, ved at Herren lèt hofta di visna og magen din svulma opp.",
+    "versions": [
+      {
+        "text": "då skal presten ta kvinna i forbanningseid og seia til henne: Må Herren gjera deg til eit føredøme på forbanning og eid blant folket ditt, ved at Herren lèt hofta di visna og magen din svulma opp.",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "Det hebraiske 'לְאָלָה וְלִשְׁבֻעָה' tyder 'til ei forbanning og ein eid', ikkje 'eit føredøme på forbanning og eid'. Omsetjinga legg til 'føredøme på' som ikkje står i originalen. Uttrykket tyder at personen sjølv vert brukt som forbanning/eid – altså at folk brukar hennar lagnad i eidsformular."
+      }
+    ]
   },
   {
     "bookId": 4,
@@ -165,11 +179,17 @@
     "bookId": 4,
     "chapterId": 5,
     "verseId": 25,
-    "text": "Presten skal ta sjalusioofferet frå handa til kvinna, sveipa offeret framfor Herren og bera det fram til altaret.",
+    "text": "Presten skal ta sjalusiofferet frå handa til kvinna, sveipa offeret framfor Herren og bera det fram til altaret.",
     "versions": [
       {
         "text": "Presten skal ta sjalusieofferet frå handa til kvinna, sveipa offeret framfor Herren og bera det fram til altaret.",
         "explanation": "Same inkonsistens som i vers 18. Bør samsvara med 'sjalusioffer' i vers 15 for konsistens gjennom kapitlet."
+      },
+      {
+        "text": "Presten skal ta sjalusioofferet frå handa til kvinna, sveipa offeret framfor Herren og bera det fram til altaret.",
+        "type": "grammar",
+        "severity": "major",
+        "explanation": "Same skrivefeil som i vers 18: 'sjalusioofferet' har dobbelt 'o'. Rett form er 'sjalusiofferet'."
       }
     ]
   },
@@ -183,7 +203,15 @@
     "bookId": 4,
     "chapterId": 5,
     "verseId": 27,
-    "text": "Når han har late henne drikka vatnet, og ho har vorte urein og vore utru mot mannen sin, då skal vatnet som fører med seg forbanning, gå inn i henne og verta bittert. Magen hennar skal svulma opp og hofta hennar visna, og kvinna skal verta eit føredøme på forbanning blant folket sitt."
+    "text": "Når han har late henne drikka vatnet, og ho har vorte urein og vore utru mot mannen sin, då skal vatnet som fører med seg forbanning, gå inn i henne og verta bittert. Magen hennar skal svulma opp og hofta hennar visna, og kvinna skal verta til ei forbanning blant folket sitt.",
+    "versions": [
+      {
+        "text": "Når han har late henne drikka vatnet, og ho har vorte urein og vore utru mot mannen sin, då skal vatnet som fører med seg forbanning, gå inn i henne og verta bittert. Magen hennar skal svulma opp og hofta hennar visna, og kvinna skal verta eit føredøme på forbanning blant folket sitt.",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "Same problem som i vers 21: 'לְאָלָה' tyder 'til ei forbanning', ikkje 'eit føredøme på forbanning'. Originalen seier at kvinna sjølv vert til ei forbanning."
+      }
+    ]
   },
   {
     "bookId": 4,

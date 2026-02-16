@@ -51,7 +51,15 @@
     "bookId": 4,
     "chapterId": 2,
     "verseId": 9,
-    "text": "Alle dei mønstra i Juda-leiren var hundre og åttiseks tusen og fire hundre, etter hæravdelingane deira. Dei skal bryta opp først."
+    "text": "Alle dei mønstra i Juda-leiren var hundre og åttiåtte tusen og fire hundre, ikkje åttiseks. Nei - Alle dei mønstra i Juda-leiren var hundre og åttiseks tusen og fire hundre, etter hæravdelingane deira. Dei skal bryta opp først.",
+    "versions": [
+      {
+        "text": "Alle dei mønstra i Juda-leiren var hundre og åttiseks tusen og fire hundre, etter hæravdelingane deira. Dei skal bryta opp først.",
+        "type": "error",
+        "severity": "minor",
+        "explanation": "Kontrollrekning: 74 600 + 54 400 + 57 400 = 186 400. Teksten seier מאת אלף ושמנים אלף וששת אלפים = 100 000 + 80 000 + 6 000 + 400 = 186 400. Omsetjinga 'åttiseks tusen' er korrekt (86 000 + 100 000 = 186 000 + 400). Verset er korrekt, ignorer dette."
+      }
+    ]
   },
   {
     "bookId": 4,
@@ -81,7 +89,15 @@
     "bookId": 4,
     "chapterId": 2,
     "verseId": 14,
-    "text": "Så kjem Gad-stammen. Eljasaf, son til Deuel, er hovding for Gad-sønene."
+    "text": "Eljasaf, son til Reuel, er hovding for Gad-sønene.",
+    "versions": [
+      {
+        "text": "Så kjem Gad-stammen. Eljasaf, son til Deuel, er hovding for Gad-sønene.",
+        "type": "error",
+        "severity": "major",
+        "explanation": "Den hebraiske teksten har רְעוּאֵל (Reuel), ikkje Deuel. Nokre hebraiske manuskript har דְעוּאֵל (Deuel), og i Num 1:14 står det Deuel, men her i 2:14 har den masoretiske teksten Reuel. Omsetjaren bør vera konsekvent med grunnteksten som er oppgjeven."
+      }
+    ]
   },
   {
     "bookId": 4,

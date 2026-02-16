@@ -75,7 +75,15 @@
     "bookId": 19,
     "chapterId": 69,
     "verseId": 11,
-    "text": "Eg gret og fasta frå sjela, men det vart til spott mot meg."
+    "text": "Eg gret og fasta, men det vart til spott mot meg.",
+    "versions": [
+      {
+        "text": "Eg gret og fasta frå sjela, men det vart til spott mot meg.",
+        "type": "error",
+        "severity": "major",
+        "explanation": "'בַצּוֹם נַפְשִׁי' betyr 'med faste (for) sjela mi' – det skildrar at sjela hans fasta/gret i faste. 'Fasta frå sjela' er uforståeleg på nynorsk. Ei enklare og meir presis formulering er 'Eg gret og fasta'. Alternativt 'Eg gret og sjela mi fasta'."
+      }
+    ]
   },
   {
     "bookId": 19,
@@ -117,7 +125,15 @@
     "bookId": 19,
     "chapterId": 69,
     "verseId": 17,
-    "text": "Svar meg, Herre, for din miskunn er god! Vend deg til meg i din store medkjensle!"
+    "text": "Svar meg, Herre, for din nåde er god! Vend deg til meg i din store medkjensle!",
+    "versions": [
+      {
+        "text": "Svar meg, Herre, for din miskunn er god! Vend deg til meg i din store medkjensle!",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "Det hebraiske 'חַסְדֶּךָ' (chasdekha) betyr 'nåde/miskunn'. I same verset brukast 'miskunn' og 'medkjensle' som nærast er synonym. For å unngå repetisjon og betre skilja mellom 'chesed' (nåde/trufast kjærleik) og 'rachamim' (medkjensle/barmhjertigheit), kan ein bruka 'nåde' for chesed og 'medkjensle' for rachamim."
+      }
+    ]
   },
   {
     "bookId": 19,
@@ -159,7 +175,15 @@
     "bookId": 19,
     "chapterId": 69,
     "verseId": 23,
-    "text": "Lat bordet deira bli ei felle for dei, og ein snare for dei som kjennest trygge."
+    "text": "Lat bordet deira bli ei felle for dei, og ein snare når dei kjennest trygge.",
+    "versions": [
+      {
+        "text": "Lat bordet deira bli ei felle for dei, og ein snare for dei som kjennest trygge.",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "Det hebraiske 'וְלִשְׁלוֹמִים' betyr 'og for/når (dei er i) fred/tryggleik'. Det refererer til tilstanden av tryggleik, ikkje til ei bestemt gruppe folk. 'Når dei kjennest trygge' er meir presist enn 'for dei som kjennest trygge'."
+      }
+    ]
   },
   {
     "bookId": 19,
@@ -211,7 +235,15 @@
     "bookId": 19,
     "chapterId": 69,
     "verseId": 30,
-    "text": "Men eg er hjelpelaus og full av smerte. Lat di frelse, Gud, verna meg!"
+    "text": "Men eg er fattig og full av smerte. Lat di frelse, Gud, løfta meg opp!",
+    "versions": [
+      {
+        "text": "Men eg er hjelpelaus og full av smerte. Lat di frelse, Gud, verna meg!",
+        "type": "error",
+        "severity": "major",
+        "explanation": "Det hebraiske 'עָנִי' (ani) betyr 'fattig/elendig', ikkje 'hjelpelaus'. Dessutan betyr 'תְּשַׂגְּבֵנִי' (tesaggeveni) 'setja meg i tryggleik på ein høg stad / løfta meg opp', ikkje berre 'verna'. Verbet sagav handlar om å setja nokon høgt opp, utanfor fare."
+      }
+    ]
   },
   {
     "bookId": 19,
@@ -229,11 +261,17 @@
     "bookId": 19,
     "chapterId": 69,
     "verseId": 33,
-    "text": "Dei audmjuke skal sjå det og gleda seg. Dokker som søkjer Gud, lat hjartet dykkar leva!",
+    "text": "Dei audmjuke ser det og gleder seg. Dokker som søkjer Gud, lat hjartet dykkar leva!",
     "versions": [
       {
         "text": "Dei audmjuke skal sjå det og gleda seg. De som søkjer Gud, hjartet dykkar skal leva!",
         "explanation": "Blandinga av 'De' og 'dykkar' er inkonsekvent. På nynorsk bør ein bruka same form gjennom heile setninga. 'Dokker' og 'dykkar' eller 'De' og 'Dykkar' (høgtideleg). I tillegg er 'lat hjartet leva' meir naturleg som oppfordring."
+      },
+      {
+        "text": "Dei audmjuke skal sjå det og gleda seg. Dokker som søkjer Gud, lat hjartet dykkar leva!",
+        "type": "grammar",
+        "severity": "minor",
+        "explanation": "Det hebraiske 'רָאוּ' og 'יִשְׂמָחוּ' er perfektum + jussiv/imperfektum. Den naturlege tydinga er 'dei ser det og gleder seg' (presens/konstatering), ikkje 'skal sjå' (futurum). Salmen skildrar ei oppmoding til glede i notid."
       }
     ]
   },

@@ -21,7 +21,15 @@
     "bookId": 23,
     "chapterId": 59,
     "verseId": 4,
-    "text": "Ingen fører sak med rettferd, og ingen går til retten med sanning. Dei set si lit til tomheit og talar falskheit. Dei ber fram ulukke og føder vondskap."
+    "text": "Ingen fører sak med rettferd, og ingen går til retten med sanning. Dei set si lit til tomheit og talar falskheit. Dei svangrar med ulukke og føder vondskap.",
+    "versions": [
+      {
+        "text": "Ingen fører sak med rettferd, og ingen går til retten med sanning. Dei set si lit til tomheit og talar falskheit. Dei ber fram ulukke og føder vondskap.",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "Det hebraiske הָרוֹ עָמָל brukar biletspråk om å vera svanger/unnfanga (הָרָה), ikkje berre 'bera fram'. 'Svangrar med' gjev betre att det hebraiske biletspråket om å unnfanga og føda."
+      }
+    ]
   },
   {
     "bookId": 23,
@@ -51,13 +59,29 @@
     "bookId": 23,
     "chapterId": 59,
     "verseId": 9,
-    "text": "Difor er retten langt frå oss, og rettferda når oss ikkje. Vi ventar på lys, men sjå, det er mørker. Vi ventar på solskin, men vi vandrar i skugge."
+    "text": "Difor er retten langt frå oss, og rettferda når oss ikkje. Vi ventar på lys, men sjå, det er mørker. Vi ventar på klårt lys, men vi vandrar i mørker.",
+    "versions": [
+      {
+        "text": "Difor er retten langt frå oss, og rettferda når oss ikkje. Vi ventar på lys, men sjå, det er mørker. Vi ventar på solskin, men vi vandrar i skugge.",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "Det hebraiske לִנְגֹהוֹת (lys, klårt lys) er omsett med 'solskin' som er akseptabelt, men בָּאֲפֵלוֹת tyder 'mørker/djupt mørke', ikkje berre 'skugge'. 'Skugge' er for svakt for det hebraiske ordet som uttrykkjer djupt mørke."
+      }
+    ]
   },
   {
     "bookId": 23,
     "chapterId": 59,
     "verseId": 10,
-    "text": "Vi snublar midt på dagen som i skumringa, blant dei friske er vi som døde."
+    "text": "Vi famlar langs veggen som blinde, vi famlar som dei utan auge. Vi snublar midt på dagen som i skumringa, blant dei friske er vi som døde.",
+    "versions": [
+      {
+        "text": "Vi snublar midt på dagen som i skumringa, blant dei friske er vi som døde.",
+        "type": "error",
+        "severity": "major",
+        "explanation": "Første del av verset manglar i omsetjinga. Det hebraiske נְגַשְׁשָׁה כַעִוְרִים קִיר וּכְאֵין עֵינַיִם נְגַשֵּׁשָׁה ('vi famlar langs veggen som blinde, vi famlar som dei utan auge') er heilt utelate. Dette er ei alvorleg utelating av innhald."
+      }
+    ]
   },
   {
     "bookId": 23,
@@ -117,11 +141,17 @@
     "bookId": 23,
     "chapterId": 59,
     "verseId": 19,
-    "text": "Frå vest skal dei ottast Herrens namn, og frå soloppgangen hans herlegdom. For fienden skal koma som ein flaum, driven fram av Herrens ande.",
+    "text": "Frå vest skal dei ottast Herrens namn, og frå soloppgangen hans herlegdom. For fienden skal koma som ein flaum, men Herrens ande skal reisa eit banner mot han.",
     "versions": [
       {
         "text": "Frå vest skal dei ottast Herrens namn, og frå soloppgangen hans herlegdom. For han skal koma som ein flaum driven fram av Herrens ande.",
         "explanation": "Den hebraiske teksten er tvetydig, men 'צָר' (tsar) tyder 'fiende' eller 'trong/trong stad'. Mange tolkingar forstår dette som at fienden kjem som ein flaum, men Herrens ande driv han bort (løftar eit banner mot han). Alternativt kan det lesast som at Herren sjølv kjem. Noverande omsetjing er uklar om kven 'han' refererer til."
+      },
+      {
+        "text": "Frå vest skal dei ottast Herrens namn, og frå soloppgangen hans herlegdom. For fienden skal koma som ein flaum, driven fram av Herrens ande.",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "Det hebraiske נֹסְסָה kjem frå נוס/נסס som tyder 'løfta eit banner/reisa eit merke mot'. Omsetjinga 'driven fram' gjev eit anna bilete enn det hebraiske, der Herrens ande reiser seg mot fienden som eit banner, altså driv han tilbake, ikkje driv han framover."
       }
     ]
   },

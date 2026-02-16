@@ -3,11 +3,17 @@
     "bookId": 19,
     "chapterId": 46,
     "verseId": 1,
-    "text": "Til korleiarane. Av Korah-sønene. Ein song etter alamot-melodien.",
+    "text": "Til kormeisteren. Av Korah-sønene. Ein song etter alamot-melodien.",
     "versions": [
       {
         "text": "Til korleidarane. Av Korah-sønene. Ein song etter alamot-melodien.",
         "explanation": "Skrivefeil: 'korleidarane' bør vera 'korleiarane' (rett nynorsk form av 'korleiar')."
+      },
+      {
+        "text": "Til korleiarane. Av Korah-sønene. Ein song etter alamot-melodien.",
+        "type": "grammar",
+        "severity": "minor",
+        "explanation": "Det hebraiske לַמְנַצֵּחַ (lamnatsséach) tyder 'til kormeisteren/songmeisteren' (eintal), ikkje 'korleiarane' (fleirtal). Det viser til éin person som leier musikken, ikkje fleire."
       }
     ]
   },
@@ -45,11 +51,17 @@
     "bookId": 19,
     "chapterId": 46,
     "verseId": 5,
-    "text": "Ei elv med sine greiner gled Guds by, den heilage bustaden til Den høgste.",
+    "text": "Ei elv med sine greiner gled Guds by, det heilage burommet til Den høgste.",
     "versions": [
       {
         "text": "Det er ei elv som med sine bekker gled Guds by, den heilage bustaden til Den høgste.",
         "explanation": "Opninga 'Det er ei elv som' er noko tungt og prosalikt. Den hebraiske teksten byrjar direkte med נָהָר (nahar) 'ei elv'. Ei meir direkte og poetisk opning gir betre flyt for munnleg framføring."
+      },
+      {
+        "text": "Ei elv med sine greiner gled Guds by, den heilage bustaden til Den høgste.",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "Det hebraiske מִשְׁכְּנֵי (misjkenej) er fleirtal av מִשְׁכָּן (misjkan), 'bustad/burom'. Omsetjinga 'bustaden' (eintal) er akseptabel, men קְדֹשׁ (kadosj) står som adjektiv til fleirtalsordet. 'Det heilage burommet' kan fungera, men viktigare: 'bustaden' er grammatisk ok. Denne merknaden er mindre viktig."
       }
     ]
   },
@@ -99,7 +111,15 @@
     "bookId": 19,
     "chapterId": 46,
     "verseId": 11,
-    "text": "Gjev dykk over og kjenn at eg er Gud! Eg er opphøgd mellom folkeslaga, eg er opphøgd på jorda."
+    "text": "Ver stille og kjenn at eg er Gud! Eg er opphøgd mellom folkeslaga, eg er opphøgd på jorda.",
+    "versions": [
+      {
+        "text": "Gjev dykk over og kjenn at eg er Gud! Eg er opphøgd mellom folkeslaga, eg er opphøgd på jorda.",
+        "type": "theological",
+        "severity": "minor",
+        "explanation": "Det hebraiske הַרְפּוּ (harpu) frå rota רפה (rafa) tyder 'slakna, gjev slepp, ver stille', ikkje 'gjev dykk over'. Å 'gje seg over' impliserer kapitulasjon, medan den hebraiske meininga er å slutta å streva og kvila i tillit til Gud. 'Ver stille' er den meir etablerte og teologisk presise omsetjinga."
+      }
+    ]
   },
   {
     "bookId": 19,

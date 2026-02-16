@@ -75,7 +75,15 @@
     "bookId": 20,
     "chapterId": 22,
     "verseId": 13,
-    "text": "Den late seier: «Det er ei løve der ute! Eg kan bli drepen midt på torget!»"
+    "text": "Den late seier: «Det er ei løve der ute! Eg kan bli drepen midt på gata!»",
+    "versions": [
+      {
+        "text": "Den late seier: «Det er ei løve der ute! Eg kan bli drepen midt på torget!»",
+        "type": "error",
+        "severity": "minor",
+        "explanation": "Det hebraiske רְחֹבוֹת tyder 'breie gater/opne plassar', ikkje 'torg' (som ville vore שׁוּק). 'Gata' er meir dekkande for det opne området som er meint."
+      }
+    ]
   },
   {
     "bookId": 20,
@@ -87,7 +95,15 @@
     "bookId": 20,
     "chapterId": 22,
     "verseId": 15,
-    "text": "Dårskap sit fast i hjarta til eit barn, men tuktens stav driv henne langt bort."
+    "text": "Dårskap sit fast i hjarta til eit barn, men tuktens stav driv han langt bort.",
+    "versions": [
+      {
+        "text": "Dårskap sit fast i hjarta til eit barn, men tuktens stav driv henne langt bort.",
+        "type": "grammar",
+        "severity": "minor",
+        "explanation": "'Dårskap' er eit inkjekjønnsord på nynorsk, så pronomenet bør vera 'han' (som viser tilbake til dårskapen) eller helst omformulerast. Sidan 'dårskap' i nynorsk er hankjønn/inkjekjønn, bør pronomenet vera 'han' i staden for 'henne'. Alternativt kan ein seia 'driv han bort frå barnet' for klarare referanse."
+      }
+    ]
   },
   {
     "bookId": 20,
@@ -105,7 +121,15 @@
     "bookId": 20,
     "chapterId": 22,
     "verseId": 18,
-    "text": "For det er godt om du tek vare på dei i hjarta ditt, så dei alle er faste på leppene dine."
+    "text": "For det er godt om du tek vare på dei i ditt indre, så dei alle er faste på leppene dine.",
+    "versions": [
+      {
+        "text": "For det er godt om du tek vare på dei i hjarta ditt, så dei alle er faste på leppene dine.",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "Det hebraiske בְּבִטְנֶךָ tyder bokstavleg 'i magen din / i ditt indre', ikkje 'hjarte' (som er לֵב). Sidan 'hjarte' allereie er brukt i vers 17, kan 'ditt indre' gje betre variasjon og vera meir presist."
+      }
+    ]
   },
   {
     "bookId": 20,
@@ -117,11 +141,17 @@
     "bookId": 20,
     "chapterId": 22,
     "verseId": 20,
-    "text": "Har eg ikkje skrive framifrå ting til deg, med råd og kunnskap,",
+    "text": "Har eg ikkje skrive til deg om framifrå ting, med råd og kunnskap,",
     "versions": [
       {
         "text": "Har eg ikkje skrive tretti ord til deg med råd og kunnskap,",
         "explanation": "Det hebraiske שָׁלִישִׁים er omdiskutert - det kan tyda 'tretti' (som i dei tretti visdomsorda), men tydinga er usikker. Nokre tolkar det som 'tidlegare/før' eller 'framståande ting'. Å skriva 'tretti ord' kan vera misvisande sidan det ikkje står 'ord' i grunnteksten. Alternativt kan ein behalde 'tretti' men fjerne 'ord'."
+      },
+      {
+        "text": "Har eg ikkje skrive framifrå ting til deg, med råd og kunnskap,",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "Ordstillinga 'skrive framifrå ting til deg' er litt utydeleg — det kan lesast som om det er 'framifrå ting' som er skrivne til mottakaren. 'Skrive til deg om framifrå ting' gjev betre flyt."
       }
     ]
   },
@@ -189,6 +219,14 @@
     "bookId": 20,
     "chapterId": 22,
     "verseId": 29,
-    "text": "Ser du ein mann som er dyktig i arbeidet sitt? Han skal stå framfor kongar, han skal ikkje stå framfor vanlege folk."
+    "text": "Ser du ein mann som er dyktig i arbeidet sitt? Han skal stå framfor kongar, han skal ikkje stå framfor folk utan rang.",
+    "versions": [
+      {
+        "text": "Ser du ein mann som er dyktig i arbeidet sitt? Han skal stå framfor kongar, han skal ikkje stå framfor vanlege folk.",
+        "type": "error",
+        "severity": "minor",
+        "explanation": "Det hebraiske חֲשֻׁכִּים tyder 'mørke/obskure/ubetydelege' folk, ikkje 'vanlege folk'. 'Vanlege folk' er for nøytralt — poenget er at den dyktige ikkje skal stå framfor folk av låg rang eller ubetydelege folk. 'Folk utan rang' formidlar kontrasten til kongar betre."
+      }
+    ]
   }
 ]

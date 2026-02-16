@@ -15,7 +15,15 @@
     "bookId": 7,
     "chapterId": 7,
     "verseId": 3,
-    "text": "Rop no ut for folket og sei: 'Den som er redd og skjelv, kan snu og fara heim frå Gilead-fjellet.' Då snudde tjueto tusen av folket heim, og ti tusen vart att."
+    "text": "Rop no ut så folket høyrer og sei:",
+    "versions": [
+      {
+        "text": "Rop no ut for folket og sei: 'Den som er redd og skjelv, kan snu og fara heim frå Gilead-fjellet.' Då snudde tjueto tusen av folket heim, og ti tusen vart att.",
+        "type": "grammar",
+        "severity": "minor",
+        "explanation": "Det hebraiske 'b'ozne ha'am' tyder 'i øyra til folket', altså direkte til folket. 'Ut for folket' er akseptabelt men 'så folket høyrer' fangar betre den hebraiske meininga."
+      }
+    ]
   },
   {
     "bookId": 7,
@@ -57,7 +65,15 @@
     "bookId": 7,
     "chapterId": 7,
     "verseId": 9,
-    "text": "Same natta sa Herren til han: «Stå opp og gå ned mot leiren, for eg har gjeve han i hendene dine.»"
+    "text": "Same natta sa Herren til han: «Stå opp og gå ned mot leiren, for eg har gjeve han i handa di.»",
+    "versions": [
+      {
+        "text": "Same natta sa Herren til han: «Stå opp og gå ned mot leiren, for eg har gjeve han i hendene dine.»",
+        "type": "error",
+        "severity": "minor",
+        "explanation": "Det hebraiske בְּיָדֶֽךָ (beyadekha) er eintal 'di hand', ikkje fleirtal 'hendene dine'. Det bør vera 'i handa di' for å vera meir nøyaktig."
+      }
+    ]
   },
   {
     "bookId": 7,
@@ -87,7 +103,15 @@
     "bookId": 7,
     "chapterId": 7,
     "verseId": 13,
-    "text": "Då Gideon kom dit, var det ein mann som fortalde ein draum til kameraten sin. Han sa: «Høyr, eg drøymde ein draum. Eg såg eit byggbrød som rulla inn i Midjan-leiren. Det kom til teltet, slo det ned så det fall, og vende det opp ned, så teltet låg flatt.»"
+    "text": "Då Gideon kom dit, var det ein mann som fortalde ein draum til kameraten sin. Han sa: «Høyr, eg drøymde ein draum. Eg såg eit byggbrød som kom rullande inn i Midjan-leiren. Det kom til teltet, slo det ned så det fall, og vende det opp ned, så teltet låg flatt.»",
+    "versions": [
+      {
+        "text": "Då Gideon kom dit, var det ein mann som fortalde ein draum til kameraten sin. Han sa: «Høyr, eg drøymde ein draum. Eg såg eit byggbrød som rulla inn i Midjan-leiren. Det kom til teltet, slo det ned så det fall, og vende det opp ned, så teltet låg flatt.»",
+        "type": "error",
+        "severity": "minor",
+        "explanation": "Det hebraiske מִתְהַפֵּךְ tyder 'velta seg' eller 'tumla'. 'Rulla' er akseptabelt, men 'kom rullande' gjev betre dynamisk meining og flyt."
+      }
+    ]
   },
   {
     "bookId": 7,
@@ -147,7 +171,15 @@
     "bookId": 7,
     "chapterId": 7,
     "verseId": 22,
-    "text": "Då dei tre hundre bles i horna, lét Herren sverdet til kvar mann i leiren venda seg mot kameraten hans. Hæren flykta til Bet-Hasjjitta mot Serera, heilt til bredda ved Abel-Mehola, nær Tabbat."
+    "text": "Då dei tre hundre bles i horna, vende Herren sverdet til kvar mann mot kameraten hans i heile leiren. Hæren flykta til Bet-Hasjjitta mot Serera, heilt til bredda ved Abel-Mehola, nær Tabbat.",
+    "versions": [
+      {
+        "text": "Då dei tre hundre bles i horna, lét Herren sverdet til kvar mann i leiren venda seg mot kameraten hans. Hæren flykta til Bet-Hasjjitta mot Serera, heilt til bredda ved Abel-Mehola, nær Tabbat.",
+        "type": "error",
+        "severity": "major",
+        "explanation": "Den noverande oversettinga er litt klønete. 'Vende Herren sverdet til kvar mann mot kameraten hans' er meir naturleg nynorsk og fangar den hebraiske meininga betre: Herren sette/retta sverdet til kvar mann mot medkjemparen hans."
+      }
+    ]
   },
   {
     "bookId": 7,

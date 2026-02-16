@@ -3,7 +3,15 @@
     "bookId": 4,
     "chapterId": 29,
     "verseId": 1,
-    "text": "I den sjuande månaden, på den første dagen i månaden, skal de halda ei heilag samling. Då skal de ikkje gjera noko vanleg arbeid. Det skal vera ein dag med hornblåsing for dykk."
+    "text": "I den sjuande månaden, på den første dagen i månaden, skal de halda ei heilag samling. Då skal de ikkje gjera noko vanleg arbeid. Det skal vera ein dag med basunklang for dykk.",
+    "versions": [
+      {
+        "text": "I den sjuande månaden, på den første dagen i månaden, skal de halda ei heilag samling. Då skal de ikkje gjera noko vanleg arbeid. Det skal vera ein dag med hornblåsing for dykk.",
+        "type": "grammar",
+        "severity": "minor",
+        "explanation": "Det hebraiske 'יוֹם תְּרוּעָה' refererer til ein dag med basunklang/trompetlyd (shofar-blåsing). 'Hornblåsing' er ikkje feil, men 'basunklang' er meir presist og meir vanleg i norske bibelomsetjingar for 'תְּרוּעָה'."
+      }
+    ]
   },
   {
     "bookId": 4,
@@ -51,11 +59,17 @@
     "bookId": 4,
     "chapterId": 29,
     "verseId": 8,
-    "text": "De skal bera fram eit brennoffer for Herren, ein vellukt: ein ung okse, ein vêr og sju årsgamle lam. Dei skal vera lytelause for dykk.",
+    "text": "De skal bera fram eit brennoffer for Herren, ein vellukt: ein ung okse, ein vêr og sju årsgamle lam. Dei skal vera utan feil.",
     "versions": [
       {
         "text": "De skal bera fram eit brennoffer for Herren, ein vellukt: ein ung okse, ein vêr og sju årsgamle lam. Dei skal vera utan feil.",
         "explanation": "Det hebraiske 'תְּמִימִם יִהְיוּ לָכֶם' tyder bokstavleg 'dei skal vera lytelause for dykk'. Den noverande omsettinga misser 'לָכֶם' (for dykk), men dette er ein mindre detalj og kan veljast bort for flyt."
+      },
+      {
+        "text": "De skal bera fram eit brennoffer for Herren, ein vellukt: ein ung okse, ein vêr og sju årsgamle lam. Dei skal vera lytelause for dykk.",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "Bruken av 'lytelause for dykk' bryt med den elles gjennomførte konsistensen i heile kapitlet der uttrykket 'utan feil' er brukt (vers 2, 13, 17, 20, 23, 26, 29, 32, 36). Versjonshistorikken viser at den førre versjonen hadde 'utan feil', og endringsårsaka handla om å leggje til 'for dykk' – men dette skapar inkonsistens med resten av kapitlet. Sidan alle andre vers brukar 'utan feil', bør dette verset også gjera det."
       }
     ]
   },

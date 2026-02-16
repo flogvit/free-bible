@@ -15,7 +15,15 @@
     "bookId": 23,
     "chapterId": 19,
     "verseId": 3,
-    "text": "Ånda til Egypt skal tømast ut i brystet deira, og planane deira vil eg gjera til inkjes. Dei skal søkja råd hjå avgudane og dei døde, hjå åndemanarar og spåmenn."
+    "text": "Ånda til Egypt skal tømast ut i brystet deira, og planane deira vil eg gjera til inkjes. Dei skal søkja råd hjå avgudane og dei som mumlar, hjå åndemaningane og spådomsåndene.",
+    "versions": [
+      {
+        "text": "Ånda til Egypt skal tømast ut i brystet deira, og planane deira vil eg gjera til inkjes. Dei skal søkja råd hjå avgudane og dei døde, hjå åndemanarar og spåmenn.",
+        "type": "error",
+        "severity": "major",
+        "explanation": "Det hebraiske har fire ulike kategoriar: אֱלִילִים (avgudar), אִטִּים (dei som mumlar/kviskrar, dvs. frammaningsfolk), אֹבוֹת (åndemanarar/dødemaningsånder) og יִדְּעֹנִים (spådomsånder). Omsetjinga «dei døde» dekkjer ikkje אִטִּים godt. Likevel er hovudpoenget å skilja dei fire kategoriane betre."
+      }
+    ]
   },
   {
     "bookId": 23,
@@ -33,7 +41,15 @@
     "bookId": 23,
     "chapterId": 19,
     "verseId": 6,
-    "text": "Elvane skal stinka, kanalane i Egypt skal minka og tørka ut. Siv og rør skal visna."
+    "text": "Elvane skal stinka, kanalane i Egypt skal minka og tørka ut. Rør og siv skal visna.",
+    "versions": [
+      {
+        "text": "Elvane skal stinka, kanalane i Egypt skal minka og tørka ut. Siv og rør skal visna.",
+        "type": "error",
+        "severity": "major",
+        "explanation": "Det hebraiske קָנֶה וָסוּף har 'rør' (qaneh) først og 'siv' (suf) etterpå. Omsetjinga har dei i omvend rekkjefølgje. Dette er ein mindre ting, men det er korrekt å følgja originalen."
+      }
+    ]
   },
   {
     "bookId": 23,
@@ -105,13 +121,29 @@
     "bookId": 23,
     "chapterId": 19,
     "verseId": 17,
-    "text": "Juda skal bli til skrekk for Egypt. Kvar gong nokon nemner Juda, skal Egypt skjelva på grunn av planen til Herren over hærskarane, som han legg mot dei."
+    "text": "Landet Juda skal bli til skrekk for Egypt. Kvar gong nokon nemner det for dei, skal dei skjelva på grunn av planen til Herren over hærskarane, som han legg mot dei.",
+    "versions": [
+      {
+        "text": "Juda skal bli til skrekk for Egypt. Kvar gong nokon nemner Juda, skal Egypt skjelva på grunn av planen til Herren over hærskarane, som han legg mot dei.",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "Det hebraiske אַדְמַת יְהוּדָה tyder 'landet Juda' (ikkje berre 'Juda'). Ordet אַדְמַת (land/jord) bør koma med i omsetjinga for presisjon."
+      }
+    ]
   },
   {
     "bookId": 23,
     "chapterId": 19,
     "verseId": 18,
-    "text": "Den dagen skal det vera fem byar i Egypt som talar Kanaans språk og sver truskap til Herren over hærskarane. Ein av dei skal kallast Solbyen."
+    "text": "Den dagen skal det vera fem byar i Egypt som talar Kanaans språk og sver truskap til Herren over hærskarane. Ein av dei skal kallast Øydeleggingsbyen.",
+    "versions": [
+      {
+        "text": "Den dagen skal det vera fem byar i Egypt som talar Kanaans språk og sver truskap til Herren over hærskarane. Ein av dei skal kallast Solbyen.",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "Det hebraiske עִיר הַהֶרֶס er omdiskutert. הֶרֶס kan tyda 'øydelegging' (destruction) eller med ein annan vokaliseringstradisjon 'sol' (jf. Heliopolis). Mange oversettingar brukar 'Øydeleggingsbyen' eller lar tvetydinga stå. 'Solbyen' er ein mogleg tolking, men den meir vanlege lesinga er 'Øydeleggingsbyen'. Dette er primært ei teologisk/tekstkritisk merknad."
+      }
+    ]
   },
   {
     "bookId": 23,
@@ -141,7 +173,15 @@
     "bookId": 23,
     "chapterId": 19,
     "verseId": 23,
-    "text": "Den dagen skal det vera ein hovudveg frå Egypt til Assyria. Assyrarane skal koma til Egypt og egyptarane til Assyria, og egyptarane skal tilbe saman med assyrarane."
+    "text": "Den dagen skal det vera ein hovudveg frå Egypt til Assyria. Assyrarane skal koma til Egypt og egyptarane til Assyria, og egyptarane skal tena saman med assyrarane.",
+    "versions": [
+      {
+        "text": "Den dagen skal det vera ein hovudveg frå Egypt til Assyria. Assyrarane skal koma til Egypt og egyptarane til Assyria, og egyptarane skal tilbe saman med assyrarane.",
+        "type": "error",
+        "severity": "major",
+        "explanation": "Det hebraiske וְעָבְדוּ מִצְרַיִם אֶת־אַשּׁוּר kan tyda 'Egypt skal tena/tilbe saman med Assyria' (i meininga 'tena Herren saman med'). Verbet עבד kan tyda både 'tena' og 'tilbe'. Sidan konteksten i vers 21 brukar 'tena' for det same verbet, bør det vera konsistent. Alternativt kan det lesast som at Egypt og Assyria saman tener Herren."
+      }
+    ]
   },
   {
     "bookId": 23,

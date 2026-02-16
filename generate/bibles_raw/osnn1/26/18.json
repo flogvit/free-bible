@@ -63,13 +63,29 @@
     "bookId": 26,
     "chapterId": 18,
     "verseId": 10,
-    "text": "Men om han får ein son som er valdeleg, som utøser blod eller gjer noko av dette:"
+    "text": "Men om han får ein son som er valdeleg, ein som utøser blod og gjer noko av dette:",
+    "versions": [
+      {
+        "text": "Men om han får ein son som er valdeleg, som utøser blod eller gjer noko av dette:",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "Det hebraiske אָח (ach) tyder 'bror' og blir her brukt i tydinga 'ei av desse tinga' (dvs. gjer éi av desse), medan וְעָשָׂה אָח מֵאַחַד מֵאֵלֶּה knyter seg meir til 'og gjer' (konjunksjon) enn 'eller'. Vidare er 'ein som' betre syntaktisk binding enn å gjenta 'som'."
+      }
+    ]
   },
   {
     "bookId": 26,
     "chapterId": 18,
     "verseId": 11,
-    "text": "Han gjer ikkje noko av dette sjølv, men et offermåltid på fjella og vanærar kona til grannen sin."
+    "text": "Sonen gjer ikkje noko av dette gode sjølv, men et offermåltid på fjella og vanærar kona til grannen sin.",
+    "versions": [
+      {
+        "text": "Han gjer ikkje noko av dette sjølv, men et offermåltid på fjella og vanærar kona til grannen sin.",
+        "type": "error",
+        "severity": "major",
+        "explanation": "Verset er uklart slik det står. Det hebraiske «וְהוּא אֶת־כָּל־אֵלֶּה לֹא עָשָׂה» refererer til at sonen ikkje gjer noko av dei gode tinga som er nemnde i vers 5–9. Utan presiseringa 'gode' kan det mistolkast som at han ikkje gjer det vonde, noko som ville motseie resten av verset. Dessutan er det nyttig å presisere 'sonen' for klarheit."
+      }
+    ]
   },
   {
     "bookId": 26,
@@ -87,7 +103,15 @@
     "bookId": 26,
     "chapterId": 18,
     "verseId": 14,
-    "text": "Men sjå, om denne får ein son som ser alle syndene far hans gjer, ser dei, men ikkje gjer det same:"
+    "text": "Men sjå, denne får ein son som ser alle syndene far hans har gjort. Han ser dei, men gjer ikkje det same:",
+    "versions": [
+      {
+        "text": "Men sjå, om denne får ein son som ser alle syndene far hans gjer, ser dei, men ikkje gjer det same:",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "Det hebraiske brukar ikkje 'om' (אם) her; det er ein enkel forteljande konstruksjon med וְהִנֵּה ('og sjå'). Dessutan er 'gjer' presens medan hebraisk har perfektum אֲשֶׁר עָשָׂה ('som han har gjort'). Setninga flyt også betre med eit punktum og ny setning."
+      }
+    ]
   },
   {
     "bookId": 26,
@@ -141,7 +165,15 @@
     "bookId": 26,
     "chapterId": 18,
     "verseId": 22,
-    "text": "Ingen av overtrampinga hans skal minnast mot han. Ved rettferda han har gjort, skal han leva."
+    "text": "Ingen av overtrampa hans skal minnast mot han. Ved rettferda han har gjort, skal han leva.",
+    "versions": [
+      {
+        "text": "Ingen av overtrampinga hans skal minnast mot han. Ved rettferda han har gjort, skal han leva.",
+        "type": "error",
+        "severity": "major",
+        "explanation": "Gjennom heile kapitlet har 'overtrampa' (inkjekjønn fleirtal) blitt brukt konsekvent i staden for 'overtrampinga' (jf. rettingane i vers 28, 30, 31). Her i vers 22 står det framleis 'overtrampinga' og bør rettast til 'overtrampa' for konsekvens."
+      }
+    ]
   },
   {
     "bookId": 26,

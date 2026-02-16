@@ -45,11 +45,17 @@
     "bookId": 9,
     "chapterId": 6,
     "verseId": 7,
-    "text": "No skal de ta og laga ei ny vogn og henta to kyr som har kalva, og som det aldri har vore åk på. Spenn kyrne føre vogna, men før kalvane heim att frå dei.",
+    "text": "No skal de ta og laga ei ny vogn og henta to kyr som gjev mjølk, og som det aldri har vore åk på. Spenn kyrne føre vogna, men før kalvane heim att frå dei.",
     "versions": [
       {
         "text": "Så gjer no ei ny vogn og ta to kyr som har kalva og som det aldri har vore åk på. Spenn kyrne føre vogna, men før kalvane heim att frå dei.",
         "explanation": "Hebraisk 'קְחוּ וַעֲשׂוּ' (ta og gjer/lag) er to imperativ. Den noverande omsetjinga har rekkefølgja omsnudd ('gjer... og ta'). Dessutan manglar verbet for å henta kyrne ('קְחוּ' - ta)."
+      },
+      {
+        "text": "No skal de ta og laga ei ny vogn og henta to kyr som har kalva, og som det aldri har vore åk på. Spenn kyrne føre vogna, men før kalvane heim att frå dei.",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "Det hebraiske 'עָלוֹת' (alot) tyder 'som gjev mjølk / som diar' (dvs. mjølkekyr), ikkje 'som har kalva'. Sjølv om kyr som gjev mjølk naturleg har kalva, er poenget i teksten at dei framleis gjev di til kalvane sine – noko som gjer testen sterkare (kyrne vil naturleg vilja gå tilbake til kalvane, men om dei likevel går mot Bet-Sjemesj, er det eit teikn frå Gud)."
       }
     ]
   },
@@ -87,7 +93,15 @@
     "bookId": 9,
     "chapterId": 6,
     "verseId": 12,
-    "text": "Kyrne gjekk beint fram på vegen mot Bet-Sjemesj. Dei heldt same vegen heile tida, rautande medan dei gjekk, og bøygde ikkje av til høgre eller venstre. Filisterfyrstane følgde etter dei heilt til grensa mot Bet-Sjemesj."
+    "text": "Kyrne gjekk rett fram på vegen mot Bet-Sjemesj. Dei følgde same vegen heile tida, rautande medan dei gjekk, og bøygde ikkje av til høgre eller venstre.",
+    "versions": [
+      {
+        "text": "Kyrne gjekk beint fram på vegen mot Bet-Sjemesj. Dei heldt same vegen heile tida, rautande medan dei gjekk, og bøygde ikkje av til høgre eller venstre. Filisterfyrstane følgde etter dei heilt til grensa mot Bet-Sjemesj.",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "'Beint fram' er ikkje feil, men 'rett fram' er meir naturleg nynorsk i denne samanhengen. 'Heldt same vegen' kan bli 'følgde same vegen' for betre flyt. Dette er ein mindre stilistisk forbetringsforslag."
+      }
+    ]
   },
   {
     "bookId": 9,
@@ -123,17 +137,31 @@
     "bookId": 9,
     "chapterId": 6,
     "verseId": 18,
-    "text": "Og gullmusene svara til talet på alle filistbyane som høyrde til dei fem fyrstane, både festningsbyane og landsbyane. Den store steinen der dei sette Herrens ark, ligg den dag i dag på marka til Josva frå Bet-Sjemesj."
+    "text": "Og gullmusene svara til talet på alle filistbyane som høyrde til dei fem fyrstane, både festningsbyane og landsbyane. Heilt til den store steinen der dei sette ned Herrens ark, som den dag i dag ligg på marka til Josva frå Bet-Sjemesj.",
+    "versions": [
+      {
+        "text": "Og gullmusene svara til talet på alle filistbyane som høyrde til dei fem fyrstane, både festningsbyane og landsbyane. Den store steinen der dei sette Herrens ark, ligg den dag i dag på marka til Josva frå Bet-Sjemesj.",
+        "type": "error",
+        "severity": "major",
+        "explanation": "Omsetjinga har 'Den store steinen' som om det er ei ny setning, men i den hebraiske teksten er 'אָבֵל הַגְּדוֹלָה' (Abel ha-gedolah / den store steinen) ein del av same setninga – det er ei geografisk avgrensing som forklarer omfanget av byane. Dessutan bør 'עַד' (heilt til) koma med for å visa at steinen markerer grensa for opplistinga."
+      }
+    ]
   },
   {
     "bookId": 9,
     "chapterId": 6,
     "verseId": 19,
-    "text": "Men Herren slo ned nokre av mennene i Bet-Sjemesj fordi dei hadde sett inn i Herrens ark. Han slo ned sytti mann av folket, og folket sørgde fordi Herren hadde slege dei med eit stort slag.",
+    "text": "Han slo ned sytti mann av folket, og folket sørgde fordi Herren hadde slege dei med eit stort slag.",
     "versions": [
       {
         "text": "Men Herren slo ned nokre av mennene i Bet-Sjemesj fordi dei hadde sett inn i Herrens ark. Han slo ned sytti mann, og folket sørgde fordi Herren hadde slege dei med eit stort slag.",
         "explanation": "Hebraisk har 'שִׁבְעִים אִישׁ' (sytti mann) og 'חֲמִשִּׁים אֶלֶף אִישׁ' (femti tusen mann). Teksten er notorisk vanskeleg, og mange omsetjingar vel å utelata det store talet. Men 'בָּעָם' (av/blant folket) bør gjengjevast for å visa at det var av folket han slo."
+      },
+      {
+        "text": "Men Herren slo ned nokre av mennene i Bet-Sjemesj fordi dei hadde sett inn i Herrens ark. Han slo ned sytti mann av folket, og folket sørgde fordi Herren hadde slege dei med eit stort slag.",
+        "type": "theological",
+        "severity": "minor",
+        "explanation": "Verset har allereie ei revisjonshistorie og endringa er godt grunngitt. Talet 'חֲמִשִּׁים אֶלֶף אִישׁ' (femti tusen mann) er utelate, noko som er eit legitimt val gitt den tekstkritiske usikkerheita. Ingen endring nødvendig."
       }
     ]
   },

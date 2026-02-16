@@ -51,11 +51,17 @@
     "bookId": 19,
     "chapterId": 129,
     "verseId": 6,
-    "text": "Lat dei bli som gras på taket, som visnar før det blir rive opp.",
+    "text": "Dei skal bli som gras på taket, som visnar før det blir rive opp.",
     "versions": [
       {
         "text": "Lat dei bli som gras på taket, som visnar før det veks opp.",
         "explanation": "Verbet 'שָׁלַף' tyder 'å dra ut, rive opp', ikkje 'å vekse opp'. Graset visnar før nokon kan rive det opp eller hauste det. Dette passar betre med konteksten i vers 7 om haustinga."
+      },
+      {
+        "text": "Lat dei bli som gras på taket, som visnar før det blir rive opp.",
+        "type": "error",
+        "severity": "major",
+        "explanation": "Det hebraiske 'יִהְיוּ' er ein jussiv/yiqtol-form som tyder 'dei skal bli' eller 'måtte dei bli'. Saman med vers 5 ('יֵבֹשׁוּ') som er omsett med 'skal bli til skamme', bør dette verset også bruke 'skal' for konsistens. 'Lat dei bli' er ikkje direkte feil, men det bryt med stilen i vers 5 og er meir av ein oppfordring enn eit ynskje/profetisk utsegn. Sidan vers 5 brukar 'skal', bør vers 6 gjere det same."
       }
     ]
   },

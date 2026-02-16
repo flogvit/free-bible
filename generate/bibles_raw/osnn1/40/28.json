@@ -45,7 +45,15 @@
     "bookId": 40,
     "chapterId": 28,
     "verseId": 8,
-    "text": "Dei skunda seg bort frå grava, fulle av redsle og stor glede, og sprang for å fortelja det til læresveinane hans."
+    "text": "Dei skunda seg bort frå grava med redsle og stor glede, og sprang for å fortelja det til læresveinane hans.",
+    "versions": [
+      {
+        "text": "Dei skunda seg bort frå grava, fulle av redsle og stor glede, og sprang for å fortelja det til læresveinane hans.",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "Gresk μετὰ φόβου καὶ χαρᾶς μεγάλης betyr 'med frykt og stor glede'. 'Fulle av' er eit tillegg som ikkje finst i originalteksten. 'Med redsle og stor glede' er meir tru mot originalen."
+      }
+    ]
   },
   {
     "bookId": 40,
@@ -117,17 +125,31 @@
     "bookId": 40,
     "chapterId": 28,
     "verseId": 19,
-    "text": "Gå difor ut og gjer alle folkeslag til læresveinar, og døyp dei til namnet åt Faderen og Sonen og Den heilage ande,"
+    "text": "Gå difor ut og gjer alle folkeslag til læresveinar, og døyp dei til Faderens og Sonens og Den heilage andens namn,",
+    "versions": [
+      {
+        "text": "Gå difor ut og gjer alle folkeslag til læresveinar, og døyp dei til namnet åt Faderen og Sonen og Den heilage ande,",
+        "type": "theological",
+        "severity": "major",
+        "explanation": "Gresk εἰς τὸ ὄνομα betyr 'i/til namnet åt'. Den noverande formuleringa 'til namnet åt Faderen og Sonen og Den heilage ande' kan lesast som om det berre er eitt namn (Faderens). Betre å seia 'til Faderens og Sonens og Den heilage andens namn' for å gjere det tydeleg at alle tre personane i treeininga er knytte til dette eine namnet. Alternativt er 'i namnet åt Faderen og Sonen og Den heilage ande' den mest vanlege formuleringa."
+      }
+    ]
   },
   {
     "bookId": 40,
     "chapterId": 28,
     "verseId": 20,
-    "text": "og lær dei å halda alt det eg har bode dykk. Og sjå, eg er med dykk alle dagar, heilt til verda endar.»",
+    "text": "og lær dei å halda alt det eg har bode dykk. Og sjå, eg er med dykk alle dagar, heilt til tidsalderen endar.»",
     "versions": [
       {
         "text": "og lær dei å halda alt det eg har bode dykk. Og sjå, eg er med dykk alle dagar, heilt til enden av verda.»",
         "explanation": "Små forbetring for munnleg flyt. 'Heilt til verda endar' er litt meir dynamisk og naturleg på nynorsk enn 'til enden av verda'."
+      },
+      {
+        "text": "og lær dei å halda alt det eg har bode dykk. Og sjå, eg er med dykk alle dagar, heilt til verda endar.»",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "Gresk αἰῶνος betyr 'tidsalder/æon', ikkje 'verda' (som ville vore κόσμος). Συντελείας τοῦ αἰῶνος er 'tidsalderens ende' – eit uttrykk Matteus brukar fleire gonger (13:39, 13:40, 13:49, 24:3). 'Verda endar' er likevel akseptabelt som dynamisk omsetjing, så dette er berre eit forslag."
       }
     ]
   }

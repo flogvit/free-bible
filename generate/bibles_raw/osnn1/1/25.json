@@ -81,11 +81,17 @@
     "bookId": 1,
     "chapterId": 25,
     "verseId": 13,
-    "text": "Dette er namna på sønene til Ismael, i den rekkjefølgja dei vart fødde: Den førstefødde var Nebajot, deretter Kedar, Adbeel og Mibsam,",
+    "text": "Dette er namna på sønene til Ismael, i den rekkjefølgja dei vart fødde: Nebajot, den førstefødde, deretter Kedar, Adbeel og Mibsam,",
     "versions": [
       {
         "text": "Dette er namna på sønene til Ismael, etter namna deira i den rekkjefølgja dei vart fødde: Nebajot, den førstefødde til Ismael, deretter Kedar, Adbeel, Mibsam,",
         "explanation": "Uttrykket 'etter namna deira' er redundant når namna følgjer rett etter. Omstrukturering gir betre flyt og unngår gjentaking. Lagt til 'og' før siste namn i denne delen for naturleg rytme."
+      },
+      {
+        "text": "Dette er namna på sønene til Ismael, i den rekkjefølgja dei vart fødde: Den førstefødde var Nebajot, deretter Kedar, Adbeel og Mibsam,",
+        "type": "grammar",
+        "severity": "minor",
+        "explanation": "Verset sluttar med komma og held fram i vers 14. 'Den førstefødde var Nebajot' bryt listeformatet. I originalen er 'bekhor Yishmael' ein apposisjon til Nebajot. 'Nebajot, den førstefødde' flyt betre som start på ei liste og er nærare den hebraiske syntaksen."
       }
     ]
   },
@@ -117,7 +123,15 @@
     "bookId": 1,
     "chapterId": 25,
     "verseId": 18,
-    "text": "Etterkomarane hans budde frå Havila til Sjur, som ligg aust for Egypt, på vegen mot Assur. Dei slo seg ned framfor alle brørne sine."
+    "text": "Dei budde frå Havila til Sjur, som ligg aust for Egypt, på vegen mot Assur. Han slo seg ned framfor alle brørne sine.",
+    "versions": [
+      {
+        "text": "Etterkomarane hans budde frå Havila til Sjur, som ligg aust for Egypt, på vegen mot Assur. Dei slo seg ned framfor alle brørne sine.",
+        "type": "error",
+        "severity": "major",
+        "explanation": "Hebraisk 'va-yishkenu' (dei budde) refererer til Ismaels etterkomarar, men subjektet er eigentleg Ismael-stammane nemnde i v.16. 'Etterkomarane hans' er ein tillegg som ikkje finst i teksten. Vidare er 'al-penei kol-echav nafal' (נָפָל) eintalsverb med Ismael som subjekt – ikkje 'dei slo seg ned'. Det hebraiske uttrykket betyr at han (Ismael) budde/slo seg ned 'framfor' (i nærleiken av / i strid med) alle brørne sine, og oppfyller lovnaden i 1 Mos 16:12."
+      }
+    ]
   },
   {
     "bookId": 1,
@@ -147,7 +161,15 @@
     "bookId": 1,
     "chapterId": 25,
     "verseId": 23,
-    "text": "Herren sa til henne: «To folkeslag er i magen din, to folk skal skiljast frå kvarandre alt frå du ber dei. Det eine folket skal vera sterkare enn det andre, og den eldste skal tena den yngste.»"
+    "text": "Herren sa til henne: «To folkeslag er i magen din, to folk skal skiljast frå kvarandre alt frå livet ditt. Det eine folket skal vera sterkare enn det andre, og den eldste skal tena den yngste.»",
+    "versions": [
+      {
+        "text": "Herren sa til henne: «To folkeslag er i magen din, to folk skal skiljast frå kvarandre alt frå du ber dei. Det eine folket skal vera sterkare enn det andre, og den eldste skal tena den yngste.»",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "Hebraisk 'mi-me'ayikh yipparedu' betyr 'frå innvollane dine skal dei skiljast'. Uttrykket 'alt frå du ber dei' er ei tolking, men 'frå livet ditt' (= frå morslivet) er nærare originalen og gir same meining på ein meir direkte måte."
+      }
+    ]
   },
   {
     "bookId": 1,
@@ -183,7 +205,15 @@
     "bookId": 1,
     "chapterId": 25,
     "verseId": 28,
-    "text": "Isak elska Esau, for han likte vilt, men Rebekka elska Jakob."
+    "text": "Isak elska Esau, for han hadde smak for viltkjøt, men Rebekka elska Jakob.",
+    "versions": [
+      {
+        "text": "Isak elska Esau, for han likte vilt, men Rebekka elska Jakob.",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "Hebraisk 'ki-tsayid be-fiv' betyr bokstavleg 'for vilt/jaktbytte var i munnen hans' – altså at han åt viltet og likte smaken. 'Han likte vilt' er tvetydig (kan bety han likte jakt). 'Han hadde smak for viltkjøt' er meir presist og nærare det hebraiske biletet."
+      }
+    ]
   },
   {
     "bookId": 1,

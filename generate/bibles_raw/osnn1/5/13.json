@@ -63,11 +63,17 @@
     "bookId": 5,
     "chapterId": 13,
     "verseId": 10,
-    "text": "Nei, du skal sannelig slå han i hel. Di hand skal vera den første som slår han, og sidan handa til heile folket.",
+    "text": "Nei, du skal sanneleg slå han i hel. Di hand skal vera den første som slår han, og sidan handa til heile folket.",
     "versions": [
       {
         "text": "Nei, du skal slå han i hel. Di hand skal vera den første som slår han, og sidan handa til heile folket.",
         "explanation": "Den hebraiske infinitivus absolutus-konstruksjonen (הָרֹג תַּֽהַרְגֶ֔נּוּ) uttrykkjer sterk emfase. Å leggja til 'sannelig' eller liknande gjev att denne emfasen som elles går tapt i oversettinga."
+      },
+      {
+        "text": "Nei, du skal sannelig slå han i hel. Di hand skal vera den første som slår han, og sidan handa til heile folket.",
+        "type": "grammar",
+        "severity": "minor",
+        "explanation": "'Sannelig' er bokmålsform. Korrekt nynorsk er 'sanneleg'."
       }
     ]
   },
@@ -93,7 +99,15 @@
     "bookId": 5,
     "chapterId": 13,
     "verseId": 14,
-    "text": "«Nokre verdlause menn har gått ut frå dykk og har forført innbyggjarane i byen sin og sagt: Lat oss gå og tena andre gudar, som de ikkje kjenner» –"
+    "text": "«Nokre verdlause menn har gått ut frå di eiga midte og har forført innbyggjarane i byen sin og sagt: Lat oss gå og tena andre gudar, som de ikkje kjenner» –",
+    "versions": [
+      {
+        "text": "«Nokre verdlause menn har gått ut frå dykk og har forført innbyggjarane i byen sin og sagt: Lat oss gå og tena andre gudar, som de ikkje kjenner» –",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "Det hebraiske מִקִּרְבֶּךָ tyder 'frå di midte / frå dykkar midte', ikkje berre 'frå dykk'. 'Frå di eiga midte' gjev att den hebraiske formuleringa meir presist og understrekar at trugsmålet kjem innanfrå."
+      }
+    ]
   },
   {
     "bookId": 5,
@@ -105,11 +119,17 @@
     "bookId": 5,
     "chapterId": 13,
     "verseId": 16,
-    "text": "då skal du slå innbyggjarane i den byen med sverd. Du skal bannlysa han og alt som er i han, også feet, med sverd.",
+    "text": "då skal du slå innbyggjarane i den byen med sverd. Du skal bannlysa byen og alt som er i han, også feet, med sverd.",
     "versions": [
       {
         "text": "då skal du slå innbyggjarane i den byen med sverd. Du skal bannstøyta byen og alt som er i han, også feet, med sverd.",
         "explanation": "'Bannstøyta' er eit uvanleg ord på moderne nynorsk. 'Bannlysa' eller 'vigsla til øydelegging' ville vera meir forståeleg for moderne lesarar, samstundes som det bevarer den teologiske meininga av 'חרם' (cherem)."
+      },
+      {
+        "text": "då skal du slå innbyggjarane i den byen med sverd. Du skal bannlysa han og alt som er i han, også feet, med sverd.",
+        "type": "grammar",
+        "severity": "minor",
+        "explanation": "Objektet for חרם er אֹתָהּ (hankjønn/hokjønn for byen). Sidan 'byen' er eksplisitt nemnd i førre setning, er det tydelegare å skriva 'bannlysa byen' enn 'bannlysa han', som kan verka uklart med tanke på kva pronomenet viser til."
       }
     ]
   },

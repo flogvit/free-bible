@@ -9,13 +9,29 @@
     "bookId": 10,
     "chapterId": 17,
     "verseId": 2,
-    "text": "Eg kjem over han medan han er trøytt og motlaus, og skremmer han så alt folket som er med han, rømmer. Så slår eg berre kongen."
+    "text": "Eg kjem over han medan han er trøytt og kraftlaus, og skremmer han så alt folket som er med han, rømmer. Så slår eg berre kongen.",
+    "versions": [
+      {
+        "text": "Eg kjem over han medan han er trøytt og motlaus, og skremmer han så alt folket som er med han, rømmer. Så slår eg berre kongen.",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "Det hebraiske 'וּרְפֵה יָדַיִם' tyder bokstavleg 'slapp i hendene', altså 'kraftlaus' eller 'veik'. 'Motlaus' er ikkje heilt presist – det handlar meir om fysisk svakheit enn om manglande mot."
+      }
+    ]
   },
   {
     "bookId": 10,
     "chapterId": 17,
     "verseId": 3,
-    "text": "Så fører eg heile folket tilbake til deg. Når mannen du søkjer er borte, vil heile folket ha fred.»"
+    "text": "Så fører eg heile folket tilbake til deg. Det er som når alle vender tilbake – det er berre mannen du søkjer. Heile folket vil ha fred.»",
+    "versions": [
+      {
+        "text": "Så fører eg heile folket tilbake til deg. Når mannen du søkjer er borte, vil heile folket ha fred.»",
+        "type": "error",
+        "severity": "major",
+        "explanation": "Den hebraiske teksten er meir nyansert: 'כְּשׁוּב הַכֹּל' ('som tilbakevendinga av alle') forklarar at det å fjerna éin mann er som å føra alle tilbake. Omsetjinga 'Når mannen du søkjer er borte' forenklar teksten og misser poenget om at det å drepa éin mann vil gjera at heile folket kan venda tilbake i fred."
+      }
+    ]
   },
   {
     "bookId": 10,
@@ -57,7 +73,15 @@
     "bookId": 10,
     "chapterId": 17,
     "verseId": 9,
-    "text": "Sjå, no har han nok gøymt seg i ei hole eller ein annan stad. Om nokre av våre fell i det første åtaket, vil folk høyra om det og seia: 'Det er blitt eit nederlag for dei som følgjer Absalom.'"
+    "text": "Sjå, no har han nok gøymt seg i ei av gropene eller ein annan stad.",
+    "versions": [
+      {
+        "text": "Sjå, no har han nok gøymt seg i ei hole eller ein annan stad. Om nokre av våre fell i det første åtaket, vil folk høyra om det og seia: 'Det er blitt eit nederlag for dei som følgjer Absalom.'",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "Det hebraiske 'הַפְּחָתִים' tyder 'groper/grøfter', ikkje 'hole' (som ville vore 'מְעָרָה'). 'Groper' er meir presist."
+      }
+    ]
   },
   {
     "bookId": 10,
@@ -111,7 +135,15 @@
     "bookId": 10,
     "chapterId": 17,
     "verseId": 17,
-    "text": "Jonatan og Ahimaas stod ved En-Rogel. Ei tenestejente gjekk og gav dei bodskap, og dei gjekk av stad og fortalde det til kong David. Dei kunne ikkje visa seg eller gå inn i byen."
+    "text": "Jonatan og Ahimaas stod ved En-Rogel. Ei tenestejente skulle gå og gje dei bodskap, og så skulle dei gå og fortelja det til kong David. For dei kunne ikkje visa seg og gå inn i byen.",
+    "versions": [
+      {
+        "text": "Jonatan og Ahimaas stod ved En-Rogel. Ei tenestejente gjekk og gav dei bodskap, og dei gjekk av stad og fortalde det til kong David. Dei kunne ikkje visa seg eller gå inn i byen.",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "Teksten skildrar eit arrangert system for meldingsformidling (med forteljande framtid / habituell form), ikkje ei einskild avslutta hending. Den hebraiske formen indikerer at dette var den faste ordninga dei hadde sett opp."
+      }
+    ]
   },
   {
     "bookId": 10,
@@ -159,7 +191,15 @@
     "bookId": 10,
     "chapterId": 17,
     "verseId": 25,
-    "text": "Absalom hadde sett Amasa over hæren i staden for Joab. Amasa var son til ein mann som heitte Jitra, ein israelitt som hadde gått inn til Abigajil, dotter til Nahasj og syster til Seruja, mor til Joab."
+    "text": "Absalom hadde sett Amasa over hæren i staden for Joab. Amasa var son til ein mann som heitte Jitra, ein israelitt som hadde gått inn til Abigajil, dotter til Nahasj, syster til Seruja, mor til Joab.",
+    "versions": [
+      {
+        "text": "Absalom hadde sett Amasa over hæren i staden for Joab. Amasa var son til ein mann som heitte Jitra, ein israelitt som hadde gått inn til Abigajil, dotter til Nahasj og syster til Seruja, mor til Joab.",
+        "type": "theological",
+        "severity": "minor",
+        "explanation": "I grunnteksten er 'אֲחוֹת צְרוּיָה' ('syster til Seruja') ein apposisjon til Abigajil, ikkje til Nahasj. Formuleringa 'dotter til Nahasj og syster til Seruja' kan lesast som at Nahasj har to døtrer. Eit komma i staden for 'og' gjer slektskapet tydelegare: Abigajil var dotter til Nahasj, og ho var syster til Seruja."
+      }
+    ]
   },
   {
     "bookId": 10,
@@ -189,6 +229,14 @@
     "bookId": 10,
     "chapterId": 17,
     "verseId": 29,
-    "text": "honning, smør, sauer og ost av kumjølk. Dette bar dei fram for David og folket som var med han, så dei kunne eta. For dei sa: «Folket er svoltne, trøytte og tyrste ute i øydemarka.»"
+    "text": "honning, smør, sauer og ost av kumjølk. Dette bar dei fram for David og folket som var med han, så dei kunne eta. For dei sa: «Folket er svolte, trøytt og tyrst ute i øydemarka.»",
+    "versions": [
+      {
+        "text": "honning, smør, sauer og ost av kumjølk. Dette bar dei fram for David og folket som var med han, så dei kunne eta. For dei sa: «Folket er svoltne, trøytte og tyrste ute i øydemarka.»",
+        "type": "grammar",
+        "severity": "minor",
+        "explanation": "I grunnteksten står 'הָעָם רָעֵב וְעָיֵף וְצָמֵא' med adjektiv i eintal maskulin, sidan 'עם' (folk) er eit kollektivt substantiv i eintal. På nynorsk bør det difor vera 'Folket er svolte, trøytt og tyrst' (eintal/kollektivt), ikkje 'svoltne, trøytte og tyrste' (fleirtal)."
+      }
+    ]
   }
 ]

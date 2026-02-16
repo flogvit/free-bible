@@ -69,7 +69,15 @@
     "bookId": 40,
     "chapterId": 11,
     "verseId": 12,
-    "text": "Frå Johannes døyparen sine dagar og fram til no blir himmelriket storma, og dei som stormar det, riv det til seg."
+    "text": "Frå dagane til Johannes døyparen og fram til no blir himmelriket storma, og dei som stormar det, riv det til seg.",
+    "versions": [
+      {
+        "text": "Frå Johannes døyparen sine dagar og fram til no blir himmelriket storma, og dei som stormar det, riv det til seg.",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "'Johannes døyparen sine dagar' is a somewhat awkward possessive construction in nynorsk. 'Frå dagane til Johannes døyparen' is more natural and idiomatic."
+      }
+    ]
   },
   {
     "bookId": 40,
@@ -99,7 +107,15 @@
     "bookId": 40,
     "chapterId": 11,
     "verseId": 16,
-    "text": "Men kva skal eg likna denne slekta med? Ho er lik born som sit på torget og ropar til dei andre:"
+    "text": "Men kva skal eg likna denne slekta med? Ho liknar born som sit på torget og ropar til dei andre:",
+    "versions": [
+      {
+        "text": "Men kva skal eg likna denne slekta med? Ho er lik born som sit på torget og ropar til dei andre:",
+        "type": "grammar",
+        "severity": "minor",
+        "explanation": "'Ho er lik born' is grammatically acceptable but slightly awkward. 'Ho liknar born' is more idiomatic in modern nynorsk and reads more naturally."
+      }
+    ]
   },
   {
     "bookId": 40,
@@ -123,11 +139,17 @@
     "bookId": 40,
     "chapterId": 11,
     "verseId": 19,
-    "text": "Menneskesonen kom, han et og drikk, og dei seier: 'Sjå, for ein fråtsар og vindrikkar, ein ven av tollarar og syndarar!' Men visdomen får rett av gjerningane sine.",
+    "text": "Menneskesonen kom, han et og drikk, og dei seier: 'Sjå, for ein fråtsar og vindrikkar, ein ven av tollarar og syndarar!' Men visdomen får rett av gjerningane sine.",
     "versions": [
       {
         "text": "Menneskesonen kom, han et og drikk, og dei seier: 'Sjå, for ein storeter og vindrikkar, ein ven av tollarar og syndarar!' Men visdomen får rett av gjerningane sine.",
         "explanation": "The Greek φάγος is a strong term meaning 'glutton'. 'Fråtsar' is a more accurate and vivid nynorsk term than 'storeter', capturing the pejorative sense of the accusation."
+      },
+      {
+        "text": "Menneskesonen kom, han et og drikk, og dei seier: 'Sjå, for ein fråtsар og vindrikkar, ein ven av tollarar og syndarar!' Men visdomen får rett av gjerningane sine.",
+        "type": "grammar",
+        "severity": "minor",
+        "explanation": "There appears to be a character encoding issue in the word 'fråtsар' — the last two characters seem to use Cyrillic letters (а and р) instead of Latin 'a' and 'r'. This should be corrected to proper Latin characters: 'fråtsar'."
       }
     ]
   },
@@ -153,7 +175,15 @@
     "bookId": 40,
     "chapterId": 11,
     "verseId": 23,
-    "text": "Og du, Kapernaum, skal du opphøgast til himmelen? Nei, ned til dødsriket skal du fara. For hadde dei kraftgjerningane som har hendt i deg, hendt i Sodoma, ville byen ha stått den dag i dag."
+    "text": "Og du, Kapernaum, skal du bli opphøgd til himmelen? Nei, ned til dødsriket skal du fara.",
+    "versions": [
+      {
+        "text": "Og du, Kapernaum, skal du opphøgast til himmelen? Nei, ned til dødsriket skal du fara. For hadde dei kraftgjerningane som har hendt i deg, hendt i Sodoma, ville byen ha stått den dag i dag.",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "The Greek ὑψωθήσῃ is future passive. 'Bli opphøgd' is a more precise passive rendering than the s-passive 'opphøgast', and sounds more natural in this rhetorical context in nynorsk."
+      }
+    ]
   },
   {
     "bookId": 40,

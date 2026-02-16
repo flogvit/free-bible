@@ -33,7 +33,15 @@
     "bookId": 18,
     "chapterId": 41,
     "verseId": 6,
-    "text": "Kven kan opna dørene til kjeften hans? Rundt tennene hans rår redsle."
+    "text": "Kven kan opna dørene til andletet hans? Rundt tennene hans rår redsle.",
+    "versions": [
+      {
+        "text": "Kven kan opna dørene til kjeften hans? Rundt tennene hans rår redsle.",
+        "type": "grammar",
+        "severity": "minor",
+        "explanation": "Det hebraiske 'דַּלְתֵי פָנָיו' tyder bokstavleg 'dørene til andletet hans', ikkje 'kjeften'. 'פָנָיו' er 'andlet', ikkje 'kjeft'. Sjølv om det implisitt handlar om kjeften, bør den poetiske formuleringa bevarast."
+      }
+    ]
   },
   {
     "bookId": 18,
@@ -81,11 +89,17 @@
     "bookId": 18,
     "chapterId": 41,
     "verseId": 12,
-    "text": "Frå nasebora hans stig det røyk, som frå ein gryte som kokar over siveld.",
+    "text": "Frå nasebora hans stig det røyk, som frå ein gryte som vert blåsen over siveld.",
     "versions": [
       {
         "text": "Frå nasebora hans stig det røyk, som frå ein kokande gryte over siveld.",
         "explanation": "Betre munnleg flyt med 'ein gryte som kokar' i staden for 'ein kokande gryte'."
+      },
+      {
+        "text": "Frå nasebora hans stig det røyk, som frå ein gryte som kokar over siveld.",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "Det hebraiske 'נָפוּחַ' tyder 'som vert blåsen/pusta på', ikkje 'kokar'. Biletet er ein gryte som vert oppvarma ved at ein blæs på elden under, med siv (אַגְמֹן) som brensel. Noverande omsetjing endrar meininga litt."
       }
     ]
   },
@@ -129,7 +143,15 @@
     "bookId": 18,
     "chapterId": 41,
     "verseId": 18,
-    "text": "Om sverdet råkar han, bit det ikkje, korkje spyd, kastespyd eller pil."
+    "text": "Om sverdet råkar han, bit det ikkje, korkje spyd, kastespyd eller brynje.",
+    "versions": [
+      {
+        "text": "Om sverdet råkar han, bit det ikkje, korkje spyd, kastespyd eller pil.",
+        "type": "error",
+        "severity": "major",
+        "explanation": "Det hebraiske 'שִׁרְיָה' tyder 'brynje/ringbrynje', ikkje 'pil'. Teksten nemner tre våpen som ikkje har verknad: spyd (חֲנִית), kastespyd (מַסָּע) og brynje/panserskjorte (שִׁרְיָה). Pil (בֶן-קֶשֶׁת) vert nemnt i vers 20."
+      }
+    ]
   },
   {
     "bookId": 18,
@@ -171,7 +193,15 @@
     "bookId": 18,
     "chapterId": 41,
     "verseId": 24,
-    "text": "Etter seg let han ein lysande strime; ein skulle tru djupet var gråhåra."
+    "text": "Etter seg let han ein lysande strime; ein skulle tru djupet hadde grått hår.",
+    "versions": [
+      {
+        "text": "Etter seg let han ein lysande strime; ein skulle tru djupet var gråhåra.",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "'Gråhåra' er eit adjektiv som fungerer, men 'hadde grått hår' er litt klarare på nynorsk for å fanga biletet av det kvite skummet på vatnet som liknar grått hår (שֵׂיבָה). Dette er likevel ein mindre sak."
+      }
+    ]
   },
   {
     "bookId": 18,

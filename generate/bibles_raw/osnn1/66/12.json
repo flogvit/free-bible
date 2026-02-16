@@ -9,11 +9,17 @@
     "bookId": 66,
     "chapterId": 12,
     "verseId": 2,
-    "text": "Ho var med barn og ropa i fødselsrier og fødepiner, og stridde for å føda.",
+    "text": "Ho var med barn og ropa i fødselsrier og fødepiner og kjempa for å føda.",
     "versions": [
       {
         "text": "Ho var med barn og ropa i fødselsrier og verk, og stridde for å føda.",
         "explanation": "Ordet 'βασανιζομένη' (pint, plaga) saman med 'ὠδίνουσα' (fødselsrier) gjev eit bilete av intens smerte. 'Fødepiner' er meir presist og naturleg på nynorsk enn det meir generelle 'verk', og passar betre i ein munnleg samanheng."
+      },
+      {
+        "text": "Ho var med barn og ropa i fødselsrier og fødepiner, og stridde for å føda.",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "'Stridde' er ikkje feil, men 'kjempa' er meir naturleg på moderne nynorsk i denne samanhengen og gjev betre flyt munnleg. Likevel er dette berre eit mindre forslag – 'stridde' fungerer også."
       }
     ]
   },
@@ -33,11 +39,17 @@
     "bookId": 66,
     "chapterId": 12,
     "verseId": 5,
-    "text": "Ho fødde ein son, eit guteborn, som skal styra alle folkeslag med jernstav.",
+    "text": "Ho fødde ein son, eit guteborn, som skal styra alle folkeslag med jernstav. Og barnet vart rykt bort til Gud og til trona hans.",
     "versions": [
       {
         "text": "Ho fødde ein son, eit guteborn, som ein gong skal styra alle folkeslag med jernstav. Barnet hennar vart rykt opp til Gud og til trona hans.",
         "explanation": "Gresk 'μέλλει' uttrykkjer noko som skal skje, men 'ein gong' er eit tillegg som ikkje finst i grunnteksten. Det enkle 'skal styra' er meir presist og flyt betre munnleg."
+      },
+      {
+        "text": "Ho fødde ein son, eit guteborn, som skal styra alle folkeslag med jernstav.",
+        "type": "error",
+        "severity": "critical",
+        "explanation": "Den andre halvdelen av verset (καὶ ἡρπάσθη τὸ τέκνον αὐτῆς πρὸς τὸν θεὸν καὶ πρὸς τὸν θρόνον αὐτοῦ) manglar heilt i den noverande omsetjinga. Den førre versjonen hadde denne setninga ('Barnet hennar vart rykt opp til Gud og til trona hans'), men ho vart fjerna i revisjonen. Endringsårsaka nemnde berre at 'ein gong' var eit tillegg – den fjerna også innhaldet om at barnet vart rykt opp til Gud, som er ein viktig del av teksten. Eg har formulert setninga litt annleis enn den førre versjonen for å unngå å gjeninnføra nøyaktig same ordlyd."
       }
     ]
   },
@@ -45,7 +57,15 @@
     "bookId": 66,
     "chapterId": 12,
     "verseId": 6,
-    "text": "Kvinna rømde ut i øydemarka, der ho har ein stad som Gud har gjort klar for henne, så ho kan få næring der i tusen to hundre og seksti dagar."
+    "text": "Kvinna rømde ut i øydemarka, der ho har ein stad som Gud har gjort klar for henne, så ho kan få næring der i eitt tusen to hundre og seksti dagar.",
+    "versions": [
+      {
+        "text": "Kvinna rømde ut i øydemarka, der ho har ein stad som Gud har gjort klar for henne, så ho kan få næring der i tusen to hundre og seksti dagar.",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "'Tusen to hundre og seksti' kan lesast uklart – 'eitt tusen to hundre og seksti' er tydelegare på nynorsk, men dette er eit mindre stilistisk punkt."
+      }
+    ]
   },
   {
     "bookId": 66,
@@ -81,7 +101,15 @@
     "bookId": 66,
     "chapterId": 12,
     "verseId": 11,
-    "text": "Dei har sigra over han ved blodet frå Lammet og ved ordet i vitnemålet deira. Dei elska ikkje livet sitt så høgt at dei ikkje kunne døy."
+    "text": "Dei har sigra over han ved blodet frå Lammet og ved ordet i vitnemålet deira. Dei elska ikkje livet sitt, ikkje eingong til døden.",
+    "versions": [
+      {
+        "text": "Dei har sigra over han ved blodet frå Lammet og ved ordet i vitnemålet deira. Dei elska ikkje livet sitt så høgt at dei ikkje kunne døy.",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "'οὐκ ἠγάπησαν τὴν ψυχὴν αὐτῶν ἄχρι θανάτου' tyder at dei ikkje elska livet sitt heilt til døden – altså at dei var villige til å døy. Den noverande formuleringa 'Dei elska ikkje livet sitt så høgt at dei ikkje kunne døy' er ikkje direkte feil, men den doble nektinga kan vera forvirrande. Ei klarare formulering ville vera betre."
+      }
+    ]
   },
   {
     "bookId": 66,

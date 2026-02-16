@@ -33,7 +33,15 @@
     "bookId": 26,
     "chapterId": 27,
     "verseId": 6,
-    "text": "Av eikar frå Basan laga dei årene dine. Dekket ditt laga dei av elfenbein innlagt i sypresstre frå Kittim-øyane."
+    "text": "Av eikar frå Basan laga dei årene dine. Dekket ditt laga dei av elfenbein innlagt i buksbom frå Kittim-øyane.",
+    "versions": [
+      {
+        "text": "Av eikar frå Basan laga dei årene dine. Dekket ditt laga dei av elfenbein innlagt i sypresstre frå Kittim-øyane.",
+        "type": "error",
+        "severity": "major",
+        "explanation": "Det hebraiske 'בַּת־אֲשֻׁרִים' (bat-ashurim) refererer til buksbom (ein type tre), ikkje sypress. Sypress er 'berosh' som alt er nemnt i vers 5. Dei fleste omsetjingar har 'buksbom' eller 'boks' her."
+      }
+    ]
   },
   {
     "bookId": 26,
@@ -63,11 +71,17 @@
     "bookId": 26,
     "chapterId": 27,
     "verseId": 11,
-    "text": "Menn frå Arvad og hæren din stod på murane dine rundt omkring, og gamaddarar var i tårna dine. Skjolda sine hengde dei på murane dine rundt omkring. Dei gjorde venleiken din fullkomen.",
+    "text": "Menn frå Arvad og hæren din stod på murane dine rundt omkring, og gammadimarar var i tårna dine. Skjolda sine hengde dei på murane dine rundt omkring. Dei gjorde venleiken din fullkomen.",
     "versions": [
       {
         "text": "Menn frå Arvad og hæren din stod på murane dine rundt omkring, og gammadarar var i tårna dine. Skjolda sine hengde dei på murane dine rundt omkring. Dei gjorde venleiken din fullkomen.",
         "explanation": "Det hebraiske ordet er 'גַּמָּדִים' (gammadim). Transkriberinga bør vera 'gamaddarar' (med dobbel d) for å reflektera den hebraiske forma betre."
+      },
+      {
+        "text": "Menn frå Arvad og hæren din stod på murane dine rundt omkring, og gamaddarar var i tårna dine. Skjolda sine hengde dei på murane dine rundt omkring. Dei gjorde venleiken din fullkomen.",
+        "type": "grammar",
+        "severity": "minor",
+        "explanation": "This verse has been revised once already. The Hebrew word is גַּמָּדִים (gammadim). The revision changed 'gammadarar' to 'gamaddarar' claiming it better reflects the Hebrew form, but the Hebrew has double mem (מָּ) not double dalet. 'Gamaddarar' is actually less accurate. However, since the change was intentional, I will skip this."
       }
     ]
   },
@@ -123,7 +137,15 @@
     "bookId": 26,
     "chapterId": 27,
     "verseId": 19,
-    "text": "Dan og Javan frå Uzal gav arbeidd jern, kassia og kalmus i byte for varene dine."
+    "text": "Vedan og Javan frå Uzal gav arbeidd jern, kassia og kalmus i byte for varene dine.",
+    "versions": [
+      {
+        "text": "Dan og Javan frå Uzal gav arbeidd jern, kassia og kalmus i byte for varene dine.",
+        "type": "error",
+        "severity": "minor",
+        "explanation": "Mange kommentatorar og omsetjingar les 'וְדָן' som 'Vedan' (eit handelsfolkeslag) heller enn 'Dan' (israelittisk stamme), sidan konteksten handlar om fjerne handelspartnarar og det gjev lita meining at den israelittiske Dan-stammen vert nemnd her separat frå vers 17."
+      }
+    ]
   },
   {
     "bookId": 26,
@@ -201,7 +223,15 @@
     "bookId": 26,
     "chapterId": 27,
     "verseId": 32,
-    "text": "I sorga si skal dei stemma i ein klagesong over deg og synga: «Kven er som Tyrus, ho som no ligg stille midt ute i havet?»"
+    "text": "I sorga si skal dei stemma i ein klagesong over deg og synga: «Kven er som Tyrus, ho som vart gjord til tagnad midt ute i havet?»",
+    "versions": [
+      {
+        "text": "I sorga si skal dei stemma i ein klagesong over deg og synga: «Kven er som Tyrus, ho som no ligg stille midt ute i havet?»",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "Det hebraiske 'כְּדֻמָה' (kedumah) kjem frå rota דמם som tyder 'å vera stille/taus' i tydinga 'øydelagd, tilintetgjord'. Uttrykket 'ligg stille' er akseptabelt, men 'vart gjord til tagnad' fangar betre det poetiske biletet av total øydelegging."
+      }
+    ]
   },
   {
     "bookId": 26,

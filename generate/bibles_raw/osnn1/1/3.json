@@ -21,11 +21,17 @@
     "bookId": 1,
     "chapterId": 3,
     "verseId": 3,
-    "text": "Men om frukta på treet midt i hagen har Gud sagt: 'De skal ikkje eta av det og ikkje røra ved det, elles døyr de.'»",
+    "text": "Men om frukta på treet midt i hagen har Gud sagt: 'De skal ikkje eta av det og ikkje røra ved det, for då døyr de.'»",
     "versions": [
       {
         "text": "Men om frukta på treet som står midt i hagen, har Gud sagt: De skal ikkje eta av det og ikkje røra ved det, elles skal de døy.»",
         "explanation": "1) 'som står' er ikkje i originalen - berre 'som er midt i hagen'. 2) Kvinna siterer Gud, så det bør markerast med enkle hermeteikn. 3) 'elles døyr de' er meir naturleg munnleg nynorsk enn 'elles skal de døy'."
+      },
+      {
+        "text": "Men om frukta på treet midt i hagen har Gud sagt: 'De skal ikkje eta av det og ikkje røra ved det, elles døyr de.'»",
+        "type": "grammar",
+        "severity": "minor",
+        "explanation": "'Elles døyr de' er akseptabelt, men 'for då døyr de' gjev noko nærare det hebraiske פֶּן ('for at ikkje / av frykt for at'). Likevel er dette ei mindre sak og den noverande versjonen fungerer."
       }
     ]
   },
@@ -179,7 +185,15 @@
     "bookId": 1,
     "chapterId": 3,
     "verseId": 18,
-    "text": "Torn og tistel skal ho bera for deg, og du skal eta vekstane på marka."
+    "text": "Torn og tistel skal ho la veksa for deg, og du skal eta vekstane på marka.",
+    "versions": [
+      {
+        "text": "Torn og tistel skal ho bera for deg, og du skal eta vekstane på marka.",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "Det hebraiske תַּצְמִיחַ (tatsmiah) er hifil av צָמַח ('å gro') og tyder 'la veksa/frambringa', ikkje 'bera'. 'Bera' er meir passande om frukt, medan 'la veksa' betre uttrykkjer at jorda skal frambringa torn og tistel."
+      }
+    ]
   },
   {
     "bookId": 1,
@@ -209,7 +223,15 @@
     "bookId": 1,
     "chapterId": 3,
     "verseId": 22,
-    "text": "Herren Gud sa: «Sjå, mennesket har vorte som ein av oss og kjenner godt og vondt. No må han ikkje få retta ut handa og ta også av livstreet og eta og leva evig.»"
+    "text": "Herren Gud sa: «Sjå, mennesket har vorte som ein av oss og kjenner godt og vondt. Lat han no ikkje retta ut handa og ta også av livstreet og eta og leva evig!»",
+    "versions": [
+      {
+        "text": "Herren Gud sa: «Sjå, mennesket har vorte som ein av oss og kjenner godt og vondt. No må han ikkje få retta ut handa og ta også av livstreet og eta og leva evig.»",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "Det hebraiske פֶּן uttrykker ei uro eller åtvaring: 'for at ikkje' / 'lat det ikkje skje at'. 'No må han ikkje få' er akseptabelt men noko passivt. 'Lat han no ikkje' fangar betre den aktive, oppfordrande tonen i grunnteksten. Dessutan er avslutninga ein aposiopese (ufullstendig setning) i hebraisk, så utropsteikn kan vera meir passande enn punktum."
+      }
+    ]
   },
   {
     "bookId": 1,

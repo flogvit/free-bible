@@ -63,7 +63,15 @@
     "bookId": 10,
     "chapterId": 9,
     "verseId": 11,
-    "text": "Siba sa til kongen: «Alt det herren min, kongen, byd tenaren sin, skal tenaren din gjera.» Og Mefiboset åt ved bordet til kongen som ein av sønene hans."
+    "text": "Siba sa til kongen: «Alt det herren min, kongen, byd tenaren sin, skal tenaren din gjera.» Og Mefiboset åt ved bordet mitt som ein av sønene til kongen.",
+    "versions": [
+      {
+        "text": "Siba sa til kongen: «Alt det herren min, kongen, byd tenaren sin, skal tenaren din gjera.» Og Mefiboset åt ved bordet til kongen som ein av sønene hans.",
+        "type": "error",
+        "severity": "minor",
+        "explanation": "The Hebrew עַל־שֻׁלְחָנִ֔י means 'at my table' (David's own words), not 'at the king's table.' The speaker is David, so the first person should be preserved. Also מִבְּנֵ֥י הַמֶּֽלֶךְ is 'the sons of the king' — the current 'sønene hans' is ambiguous and could refer to Siba. The phrase should clarify it refers to the king's sons."
+      }
+    ]
   },
   {
     "bookId": 10,

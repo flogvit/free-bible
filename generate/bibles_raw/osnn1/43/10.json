@@ -105,7 +105,15 @@
     "bookId": 43,
     "chapterId": 10,
     "verseId": 15,
-    "text": "slik som Far kjenner meg og eg kjenner Far. Og eg gjev livet mitt for sauene."
+    "text": "slik som Far kjenner meg og eg kjenner Far. Og eg legg livet mitt ned for sauene.",
+    "versions": [
+      {
+        "text": "slik som Far kjenner meg og eg kjenner Far. Og eg gjev livet mitt for sauene.",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "Det greske τίθημι τὴν ψυχήν har ei meir spesifikk tyding enn berre 'gjev' — det tyder 'legg ned' (livet). I vers 11 er 'gjev' greitt som variasjon, men her i v.15 og i samanheng med v.17-18 der Jesus snakkar om å 'gje' og 'ta att' livet, kan ein vurdera 'legg ned' for å spegla det greske uttrykket betre. Likevel er dette berre eit forslag — 'gjev' er ikkje direkte feil."
+      }
+    ]
   },
   {
     "bookId": 43,
@@ -147,11 +155,17 @@
     "bookId": 43,
     "chapterId": 10,
     "verseId": 22,
-    "text": "Det var tempelvigslingsfest i Jerusalem. Det var vinter,",
+    "text": "Det var tempelvigslingsfest i Jerusalem, det var vinter,",
     "versions": [
       {
         "text": "Det var då tempelviingsfesten i Jerusalem. Det var vinter,",
         "explanation": "Ordet 'tempelviingsfesten' manglar ein bokstav - det skal vera 'tempelvigslingsfesten' eller kortare 'tempelviingsfest'. Det greske τὰ ἐγκαίνια refererer til Hanukka/innviingsfesten."
+      },
+      {
+        "text": "Det var tempelvigslingsfest i Jerusalem. Det var vinter,",
+        "type": "grammar",
+        "severity": "minor",
+        "explanation": "Verset er éi samanhengande setning i originalen. Å bruka komma i staden for punktum held flyten betre og svarar betre til den greske syntaksen, der semikolon (·) bind saman dei to ledda."
       }
     ]
   },
@@ -243,7 +257,15 @@
     "bookId": 43,
     "chapterId": 10,
     "verseId": 35,
-    "text": "Når lova kallar dei gudar som Guds ord kom til — og Skrifta kan ikkje gjerast ugyldig —"
+    "text": "Kallar lova dei gudar som Guds ord kom til — og Skrifta kan ikkje gjerast ugyldig —",
+    "versions": [
+      {
+        "text": "Når lova kallar dei gudar som Guds ord kom til — og Skrifta kan ikkje gjerast ugyldig —",
+        "type": "error",
+        "severity": "major",
+        "explanation": "Det greske εἰ ἐκείνους εἶπεν θεοὺς er ein kondisjonalsetning ('om/dersom han kalla dei gudar'), ikkje ein temporalsetning ('når'). 'Når' gjer det til ei tidsbestemt utsegn og endrar den retoriske strukturen i argumentet. 'Kallar lova dei gudar' fungerer som ein retorisk kondisjonal på nynorsk."
+      }
+    ]
   },
   {
     "bookId": 43,

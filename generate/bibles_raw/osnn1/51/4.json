@@ -33,7 +33,15 @@
     "bookId": 51,
     "chapterId": 4,
     "verseId": 4,
-    "text": "Be om at eg kan gjera det kjend slik eg bør tala."
+    "text": "Be om at eg kan gjera det kjend slik det er rett at eg talar.",
+    "versions": [
+      {
+        "text": "Be om at eg kan gjera det kjend slik eg bør tala.",
+        "type": "error",
+        "severity": "major",
+        "explanation": "Verset startar med 'Be om at' som ser ut til å vera ei framhald av vers 3, men i gresk er det Paulus som ber om at han skal openberja/gjera kjend løyndomen. Det viktigaste problemet er at 'det' (αὐτὸ) refererer til 'Kristi løyndom' frå vers 3, og dette kjem ikkje tydeleg nok fram. Dessutan er 'slik eg bør tala' noko uklårt – det greske 'ὡς δεῖ με λαλῆσαι' betyr 'slik det er naudsynt/rett at eg talar'. Ei lita justering gjer dette klarare."
+      }
+    ]
   },
   {
     "bookId": 51,
@@ -57,13 +65,29 @@
     "bookId": 51,
     "chapterId": 4,
     "verseId": 7,
-    "text": "Tykikos, den kjære bror og trufaste tenar og medtrell i Herren, vil fortelja dykk alt om korleis det går med meg."
+    "text": "Tykikos, den kjære bror og trufaste medtenar og medtrell i Herren, vil fortelja dykk alt om korleis det går med meg.",
+    "versions": [
+      {
+        "text": "Tykikos, den kjære bror og trufaste tenar og medtrell i Herren, vil fortelja dykk alt om korleis det går med meg.",
+        "type": "error",
+        "severity": "major",
+        "explanation": "Det greske 'διάκονος' betyr 'tenar/medhjelpar', men i konteksten saman med 'σύνδουλος' (medtrell) er det naturleg å sjå at Paulus omtalar Tykikos som ein som tener saman med han. Likevel er hovudproblemet at 'tenar' vert brukt her, medan 'træl' vert brukt i vers 12 for 'δοῦλος'. I vers 12 sin endringshistorikk vart det presisert at 'δοῦλος' = 'træl'. Her er 'διάκονος' eit anna ord, så 'tenar' er forsvarleg. Likevel: 'σύνδουλος' (med-slave) er omsett 'medtrell' medan 'διάκονος' er omsett 'tenar'. Sidan 'σύν-' prefikset på 'δοῦλος' gjev 'medtrell', bør ein vurdera om 'πιστὸς διάκονος' bør vera 'trufast medtenar' for å reflektera at han tener saman med Paulus (sjølv om prefikset 'συν-' ikkje er der i 'διάκονος')."
+      }
+    ]
   },
   {
     "bookId": 51,
     "chapterId": 4,
     "verseId": 8,
-    "text": "Han sender eg til dykk nettopp for at de skal få vita korleis det står til med oss, og for at han skal styrkja hjarto dykkar."
+    "text": "Han har eg sendt til dykk nettopp for at de skal få vita korleis det står til med oss, og for at han skal styrkja hjarta dykkar.",
+    "versions": [
+      {
+        "text": "Han sender eg til dykk nettopp for at de skal få vita korleis det står til med oss, og for at han skal styrkja hjarto dykkar.",
+        "type": "error",
+        "severity": "minor",
+        "explanation": "'ἔπεμψα' er aorist (fortid): 'eg har sendt', ikkje presens 'eg sender'. I tillegg bør 'hjarto' vera 'hjarta' – fleirtalsforma av 'hjarte' på nynorsk er 'hjarta' (eller 'hjarto' i eldre nynorsk, men moderne nynorsk brukar 'hjarta')."
+      }
+    ]
   },
   {
     "bookId": 51,
@@ -81,7 +105,15 @@
     "bookId": 51,
     "chapterId": 4,
     "verseId": 11,
-    "text": "Jesus, som vert kalla Justus, helsar òg. Av dei omskorne er desse dei einaste medarbeidarane for Guds rike som har vore til trøyst for meg."
+    "text": "Jesus, som vert kalla Justus, helsar òg. Desse er dei einaste av dei omskorne som er medarbeidarar for Guds rike, og dei har vore til trøyst for meg.",
+    "versions": [
+      {
+        "text": "Jesus, som vert kalla Justus, helsar òg. Av dei omskorne er desse dei einaste medarbeidarane for Guds rike som har vore til trøyst for meg.",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "Setninga er noko uklar i noverande form. Det greske seier at av dei som er omskorne (jødekristne), er desse tre (Aristarkos, Markus, Justus) dei einaste medarbeidarane for Guds rike – og dei har vore til trøyst. Noverande form kan lesast som om det finst mange omskorne medarbeidarar, men berre desse var til trøyst. Ei omformulering gjer meininga klarare."
+      }
+    ]
   },
   {
     "bookId": 51,
@@ -99,7 +131,15 @@
     "bookId": 51,
     "chapterId": 4,
     "verseId": 13,
-    "text": "For eg vitnar om han at han strevar hardt for dykk og for dei i Laodikea og dei i Hierapolis."
+    "text": "For eg kan vitna om at han strevar hardt for dykk og for dei i Laodikea og dei i Hierapolis.",
+    "versions": [
+      {
+        "text": "For eg vitnar om han at han strevar hardt for dykk og for dei i Laodikea og dei i Hierapolis.",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "'Μαρτυρῶ αὐτῷ' betyr 'eg vitnar for han / eg kan gå god for han'. Noverande 'vitnar om han at' er litt stivt på nynorsk. 'Eg kan vitna om at' flyt betre og fangar meininga."
+      }
+    ]
   },
   {
     "bookId": 51,

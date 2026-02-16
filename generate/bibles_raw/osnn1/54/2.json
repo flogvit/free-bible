@@ -3,11 +3,17 @@
     "bookId": 54,
     "chapterId": 2,
     "verseId": 1,
-    "text": "Først av alt oppmodar eg til at det blir bore fram bøner, påkallingar, forbøner og takkseiingar for alle menneske,",
+    "text": "Først av alt oppmodar eg til at det blir bore fram bøner, påkallingar, forbøner og takkseiingar for alle menneske.",
     "versions": [
       {
         "text": "Først av alt oppmodar eg til at det blir bore fram bøner, påkalling, forbøner og takkseiing for alle menneske,",
         "explanation": "Dei greske orda er alle i fleirtal. 'Påkalling' og 'takkseiing' bør stå i fleirtal for å samsvara med originalen."
+      },
+      {
+        "text": "Først av alt oppmodar eg til at det blir bore fram bøner, påkallingar, forbøner og takkseiingar for alle menneske,",
+        "type": "grammar",
+        "severity": "minor",
+        "explanation": "Verset endar med komma i den noverande teksten. Sjølv om det er ein overgang til neste vers, er det meir vanleg å avslutta med punktum eller ingen teikn, sidan vers 2 byrjar med ein preposisjonsfrase som utdjupar."
       }
     ]
   },
@@ -63,17 +69,31 @@
     "bookId": 54,
     "chapterId": 2,
     "verseId": 8,
-    "text": "Eg vil difor at mennene på kvar stad skal be med heilage hender lyfte opp, utan sinne og tvil."
+    "text": "Eg vil difor at mennene på kvar stad skal be og lyfte opp heilage hender, utan sinne og strid.",
+    "versions": [
+      {
+        "text": "Eg vil difor at mennene på kvar stad skal be med heilage hender lyfte opp, utan sinne og tvil.",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "'Διαλογισμοῦ' i denne konteksten tyder meir 'strid, trette, disputt' enn 'tvil'. Ordet kan tyda 'tvil' i nokre samanhengar, men i samband med bøn og saman med 'ὀργῆς' (sinne) peikar det mot konfliktar og usamd. Dessutan er 'med heilage hender lyfte opp' noko klønete; 'og lyfte opp heilage hender' flyt betre."
+      }
+    ]
   },
   {
     "bookId": 54,
     "chapterId": 2,
     "verseId": 9,
-    "text": "På same vis skal kvinnene pryda seg med sømeleg klednad, med skamkjensle og sjølvtukt, ikkje med fletta hår og gull eller perler eller kostbare klede,",
+    "text": "På same vis skal kvinnene pryda seg med sømeleg klednad, med atterhald og sjølvtukt, ikkje med fletta hår og gull eller perler eller kostbare klede,",
     "versions": [
       {
         "text": "På same vis skal kvinnene pryda seg med sømeleg klednad, med blygsel og måtehald, ikkje med fletta hår og gull eller perler eller kostbare klede,",
         "explanation": "'Blygsel' er eit gamaldags ord som kan vera vanskeleg å forstå. 'Skamkjensle' (αἰδοῦς) og 'sjølvtukt' (σωφροσύνης) er meir forståelege alternativ. Alternativt kan 'måtehald' behaldast for σωφροσύνης, men 'blygsel' bør vurderast for munnleg klarheit."
+      },
+      {
+        "text": "På same vis skal kvinnene pryda seg med sømeleg klednad, med skamkjensle og sjølvtukt, ikkje med fletta hår og gull eller perler eller kostbare klede,",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "'Skamkjensle' er eit uheldig ordval for αἰδοῦς. Det greske ordet tyder 'blygskap, respektfull atterhald, ærefrykt' – ikkje 'skamkjensle' i moderne forstand, som har negative konnotasjonar (skam = noko vondt). 'Atterhald' fangar betre den positive kvaliteten av tilbakehaldande vørdnad som det greske ordet uttrykkjer."
       }
     ]
   },
@@ -99,7 +119,15 @@
     "bookId": 54,
     "chapterId": 2,
     "verseId": 12,
-    "text": "Eg gjev ikkje ei kvinne løyve til å undervisa eller styra over mannen, men ho skal vera i stille."
+    "text": "Eg gjev ikkje ei kvinne løyve til å undervisa eller råda over ein mann, men ho skal vera i stille.",
+    "versions": [
+      {
+        "text": "Eg gjev ikkje ei kvinne løyve til å undervisa eller styra over mannen, men ho skal vera i stille.",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "'Αὐθεντεῖν' er eit sjeldant ord som tyder meir 'å ta seg til rette over, dominera, tilrana seg autoritet' enn generelt 'å styra'. 'Råda over' fanger noko av dette betre. I tillegg har gresk 'ἀνδρός' utan artikkel her, noko som kan tyda 'ein mann' (generelt) heller enn 'mannen' (bestemt)."
+      }
+    ]
   },
   {
     "bookId": 54,

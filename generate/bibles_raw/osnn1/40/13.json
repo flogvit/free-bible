@@ -63,7 +63,15 @@
     "bookId": 40,
     "chapterId": 13,
     "verseId": 11,
-    "text": "Han svara og sa til dei: «Dykk er det gjeve å kjenna løyndomane om himmelriket, men dei har ikkje fått det."
+    "text": "Han svara og sa til dei: «De har fått å kjenna løyndomane om himmelriket, men dei har ikkje fått det.",
+    "versions": [
+      {
+        "text": "Han svara og sa til dei: «Dykk er det gjeve å kjenna løyndomane om himmelriket, men dei har ikkje fått det.",
+        "type": "grammar",
+        "severity": "minor",
+        "explanation": "På nynorsk skal subjektsforma 'de' brukast, ikkje objektsforma 'dykk', når det fungerer som subjekt (her er det frontflyttingsemne). 'Dykk er det gjeve' er grammatisk feil; det bør vera 'De har fått' eller 'Dykk er det gjeve' bør rettast til 'De er det gjeve'. Sidan teksten skal vera moderne og lettlesen, er 'De har fått' det enklaste."
+      }
+    ]
   },
   {
     "bookId": 40,
@@ -153,7 +161,15 @@
     "bookId": 40,
     "chapterId": 13,
     "verseId": 26,
-    "text": "Då kornet voks opp og sette aks, synte ugraset seg òg."
+    "text": "Då grøda voks opp og sette aks, synte ugraset seg òg.",
+    "versions": [
+      {
+        "text": "Då kornet voks opp og sette aks, synte ugraset seg òg.",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "Det greske ὁ χόρτος tyder her 'grøda' eller 'plantene' meir generelt, ikkje spesifikt 'kornet'. 'Grøda' er meir presist, sidan χόρτος viser til dei grøne plantene/graset som spira."
+      }
+    ]
   },
   {
     "bookId": 40,
@@ -189,11 +205,17 @@
     "bookId": 40,
     "chapterId": 13,
     "verseId": 32,
-    "text": "Det er det minste av alle frø, men når det veks opp, er det større enn alle andre hagevekstar og vert til eit tre, så fuglane under himmelen kjem og held til i greinene.",
+    "text": "Det er det minste av alle frø, men når det veks opp, er det større enn alle andre hagevekstar og vert til eit tre, så fuglane under himmelen kjem og held til i greinene på det.",
     "versions": [
       {
         "text": "Det er det minste av alle frø, men når det veks opp, er det større enn alle andre hagevekstar og vert til eit tre, så fuglane under himmelen kjem og byggjer reir i greinene.",
         "explanation": "Det greske 'κατασκηνοῦν' tyder meir generelt 'bu/halda til/finna ly' enn spesifikt 'byggja reir'. 'Held til' er meir presist og flyt like godt."
+      },
+      {
+        "text": "Det er det minste av alle frø, men når det veks opp, er det større enn alle andre hagevekstar og vert til eit tre, så fuglane under himmelen kjem og held til i greinene.",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "Originalen har ἐν τοῖς κλάδοις αὐτοῦ – 'i greinene på det/dets greiner'. Eigedomspronomenet 'αὐτοῦ' (dets) manglar i omsetjinga. Det bør leggast til for fullstendig gjengiving."
       }
     ]
   },
@@ -219,7 +241,15 @@
     "bookId": 40,
     "chapterId": 13,
     "verseId": 35,
-    "text": "Slik skulle det oppfyllast som er tala gjennom profeten: «Eg vil opna munnen min i likningar, eg vil forkynna det som har vore løynt frå verda vart grunnlagd.»"
+    "text": "Slik skulle det oppfyllast som er tala gjennom profeten: «Eg vil opna munnen min med likningar, eg vil kunngjera det som har vore løynt frå verda vart grunnlagd.»",
+    "versions": [
+      {
+        "text": "Slik skulle det oppfyllast som er tala gjennom profeten: «Eg vil opna munnen min i likningar, eg vil forkynna det som har vore løynt frå verda vart grunnlagd.»",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "Det greske ἐρεύξομαι tyder bokstavleg 'spy ut/rope ut/kunngjere' – det er eit sterkare uttrykk enn 'forkynna'. 'Kunngjera' fangar betre den kraftfulle openberinga som ἐρεύξομαι uttrykkjer. Dessutan er 'i likningar' meir presist 'med likningar' (ἐν som instrumentelt)."
+      }
+    ]
   },
   {
     "bookId": 40,
@@ -279,13 +309,29 @@
     "bookId": 40,
     "chapterId": 13,
     "verseId": 45,
-    "text": "Himmelriket er òg likt ein kjøpmann som leita etter fine perler."
+    "text": "Himmelriket er òg likt ein kjøpmann som var på leit etter vakre perler.",
+    "versions": [
+      {
+        "text": "Himmelriket er òg likt ein kjøpmann som leita etter fine perler.",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "Det greske καλοὺς μαργαρίτας tyder 'vakre/gode perler'. 'Fine' fungerer, men 'vakre' er meir presist for καλούς i denne konteksten. I tillegg er ζητοῦντι eit presens partisipp som skildrar ein pågåande aktivitet, og 'var på leit etter' gjev dette betre att enn berre 'leita etter'."
+      }
+    ]
   },
   {
     "bookId": 40,
     "chapterId": 13,
     "verseId": 46,
-    "text": "Då han fann ei verdfull perle, gjekk han bort og selde alt han eigde, og kjøpte henne."
+    "text": "Då han fann ei svært verdifull perle, gjekk han bort og selde alt han eigde, og kjøpte henne.",
+    "versions": [
+      {
+        "text": "Då han fann ei verdfull perle, gjekk han bort og selde alt han eigde, og kjøpte henne.",
+        "type": "error",
+        "severity": "minor",
+        "explanation": "Det greske πολύτιμον tyder 'svært verdifull/kostbar', ikkje berre 'verdifull'. Prefikset πολυ- forsterkar tydinga. 'Svært verdifull' gjev betre att intensiteten i originalen."
+      }
+    ]
   },
   {
     "bookId": 40,

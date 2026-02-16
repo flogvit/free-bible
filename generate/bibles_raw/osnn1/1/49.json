@@ -49,11 +49,17 @@
     "bookId": 1,
     "chapterId": 49,
     "verseId": 6,
-    "text": "I rådet deira skal mi sjel ikkje koma, i forsamlinga deira skal mi ære ikkje blanda seg, for i vreiden sin drap dei ein mann, og etter eige godtykke skamskar dei oksar.",
+    "text": "I rådet deira skal mi sjel ikkje koma, i forsamlinga deira skal mi ære ikkje blanda seg, for i vreiden sin drap dei ein mann, og etter eige godtykke skamskar dei ein okse.",
     "versions": [
       {
         "text": "I rådet deira skal mi sjel ikkje koma, i forsamlinga deira skal mi ære ikkje blanda seg, for i sinnet sitt drap dei menn, og etter eige godtykke skamskar dei oksar.",
         "explanation": "Hebraisk «אִישׁ» (ish) er eintal «ein mann», ikkje fleirtal. Og «בְאַפָּם» tyder «i vreiden sin» meir enn «i sinnet sitt»."
+      },
+      {
+        "text": "I rådet deira skal mi sjel ikkje koma, i forsamlinga deira skal mi ære ikkje blanda seg, for i vreiden sin drap dei ein mann, og etter eige godtykke skamskar dei oksar.",
+        "type": "error",
+        "severity": "minor",
+        "explanation": "Hebraisk «שׁוֹר» er eintal – 'ein okse', ikkje fleirtal 'oksar'. Tilsvarande er «אִישׁ» eintal, som allereie er retta i tidlegare revisjon."
       }
     ]
   },
@@ -61,7 +67,15 @@
     "bookId": 1,
     "chapterId": 49,
     "verseId": 7,
-    "text": "Forbanna vere vreiden deira, for han er hard, og raseriet deira, for det er grumt! Eg skal dela dei opp i Jakob og spreia dei i Israel."
+    "text": "Forbanna vere vreiden deira, for han er hard, og raseriet deira, for det er grumt! Eg skal dela dei opp i Jakob og spreia dei ut i Israel.",
+    "versions": [
+      {
+        "text": "Forbanna vere vreiden deira, for han er hard, og raseriet deira, for det er grumt! Eg skal dela dei opp i Jakob og spreia dei i Israel.",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "'Spreia dei i Israel' er greitt, men 'spreia dei ut i Israel' gjev betre nynorsk og reflekterer den hebraiske betydninga av הֵפִיץ ('spreie utover') meir naturleg."
+      }
+    ]
   },
   {
     "bookId": 1,
@@ -181,11 +195,17 @@
     "bookId": 1,
     "chapterId": 49,
     "verseId": 22,
-    "text": "Josef er eit fruktbart tre, eit fruktbart tre ved ei kjelde, greinene rankar seg over muren.",
+    "text": "Josef er eit fruktbart tre, eit fruktbart tre ved ei kjelde, greinene veks over muren.",
     "versions": [
       {
         "text": "Josef er eit fruktbart tre, eit fruktbart tre ved ei kjelde, greinene strekkjer seg over muren.",
         "explanation": "Hebraisk «בָּנוֹת» tyder bokstavleg «døtrer» (her kanskje «greiner» i poetisk tyding), og «צָעֲדָה» tyder «vandrar/steg». Noverande «greinene strekkjer seg» er ei tolking, men «døtrene vandrar» er nærare originalen."
+      },
+      {
+        "text": "Josef er eit fruktbart tre, eit fruktbart tre ved ei kjelde, greinene rankar seg over muren.",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "Ifølgje endringshistorikken var 'strekkjer seg' endra til 'rankar seg' for å koma nærare originalen. Men 'rankar seg' er uvanleg nynorsk og litt uklårt. 'Veks over muren' er meir naturleg og framleis ulikt den førre versjonen 'strekkjer seg over muren'."
       }
     ]
   },
@@ -193,7 +213,15 @@
     "bookId": 1,
     "chapterId": 49,
     "verseId": 23,
-    "text": "Bogeskodarane gjekk hardt imot han, dei skaut og bar hat mot han."
+    "text": "Bogeskyttarane angreip han bittert, dei skaut og forfølgde han med hat.",
+    "versions": [
+      {
+        "text": "Bogeskodarane gjekk hardt imot han, dei skaut og bar hat mot han.",
+        "type": "error",
+        "severity": "major",
+        "explanation": "«Bogeskodarane» er eit feilstavingsord; det riktige er «bogeskyttarane» (בַּעֲלֵי חִצִּים = 'pilmeistrar/bogeskyttarar'). Dessutan er verbstrukturen betre gjengitt med at dei angreip og forfølgde, der «וַֽיְמָרֲרֻהוּ» tyder 'dei gjorde han bitter / angreip han bittert' og «וָרֹבּוּ» tyder 'dei skaut' og «וַֽיִּשְׂטְמֻהוּ» tyder 'dei hata/forfølgde han'."
+      }
+    ]
   },
   {
     "bookId": 1,
@@ -205,7 +233,15 @@
     "bookId": 1,
     "chapterId": 49,
     "verseId": 25,
-    "text": "ved din fars Gud – måtte han hjelpa deg – og ved Den Allmektige – måtte han velsigna deg med velsigningar frå himmelen der oppe, velsigningar frå djupet som ligg der nede, velsigningar frå bryst og morsliv."
+    "text": "frå din fars Gud, som hjelper deg, og frå Den Allmektige, som velsignar deg med velsigningar frå himmelen der oppe, velsigningar frå djupet som ligg der nede, velsigningar frå bryst og morsliv.",
+    "versions": [
+      {
+        "text": "ved din fars Gud – måtte han hjelpa deg – og ved Den Allmektige – måtte han velsigna deg med velsigningar frå himmelen der oppe, velsigningar frå djupet som ligg der nede, velsigningar frå bryst og morsliv.",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "Hebraisk «מֵאֵל» tyder 'frå Gud', ikkje 'ved Gud'. Verba «וְיַעְזְרֶךָּ» og «וִיבָרְכֶךָּ» er jussiv/ønskjeform, men kan òg lesast som relativ ('som hjelper deg'), noko som gjev meir naturleg nynorsk flyt."
+      }
+    ]
   },
   {
     "bookId": 1,

@@ -9,11 +9,17 @@
     "bookId": 24,
     "chapterId": 23,
     "verseId": 2,
-    "text": "Difor seier Herren, Israels Gud, så om gjetarane som gjeter folket mitt:",
+    "text": "Difor seier Herren, Israels Gud, så om gjetarane som gjeter folket mitt: De har spreidd sauene mine og jaga dei bort og ikkje hatt omsorg for dei. Sjå, no vil eg heimsøkja dykk for dei vonde gjerningane dykkar, seier Herren.",
     "versions": [
       {
         "text": "Difor seier Herren, Israels Gud, så om gjetarane som gjeter folket mitt: De har spreidd sauene mine og jaga dei bort, og de har ikkje hatt omsorg for dei. Sjå, eg vil straffa dykk for dei vonde gjerningane dykkar, seier Herren.",
         "explanation": "The translation is acceptable but 'så om' is slightly awkward. However, it conveys the meaning adequately for oral reading."
+      },
+      {
+        "text": "Difor seier Herren, Israels Gud, så om gjetarane som gjeter folket mitt:",
+        "type": "error",
+        "severity": "critical",
+        "explanation": "The current version is incomplete – it only contains the introductory clause but is missing the entire substance of the verse (the accusation and judgment). The previous version was complete but was revised to only the intro, losing the main content. This is a critical omission of the majority of the verse."
       }
     ]
   },
@@ -117,11 +123,17 @@
     "bookId": 24,
     "chapterId": 23,
     "verseId": 17,
-    "text": "Dei seier stadig til dei som foraktar meg: «Herren har sagt: De skal ha fred.» Og til alle som følgjer sitt stivnakka hjarte, seier dei: «Inga ulukke skal koma over dykk.»",
+    "text": "Dei seier stadig til dei som foraktar meg: «Herren har sagt: De skal ha fred.» Og til alle som følgjer sitt stivsinna hjarte, seier dei: «Inga ulukke skal koma over dykk.»",
     "versions": [
       {
         "text": "Dei seier stadig til dei som foraktar meg: «Herren har sagt: De skal ha fred.» Og til alle som følgjer sitt harde hjarte, seier dei: «Inga ulukke skal koma over dykk.»",
         "explanation": "שְׁרִרוּת לֵב means 'stubbornness of heart' - 'stivnakka hjarte' or 'stivsindig hjarte' captures this better than 'harde hjarte'."
+      },
+      {
+        "text": "Dei seier stadig til dei som foraktar meg: «Herren har sagt: De skal ha fred.» Og til alle som følgjer sitt stivnakka hjarte, seier dei: «Inga ulukke skal koma over dykk.»",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "'Stivnakka' (stiff-necked) is typically used of a person, not a heart. שְׁרִרוּת לִבּוֹ means 'stubbornness of his heart'. 'Stivsinnt hjarte' or 'stivsindig hjarte' would be more natural in nynorsk than 'stivnakka hjarte'. However, this verse has been revised once already so this is only a minor suggestion."
       }
     ]
   },
@@ -231,7 +243,15 @@
     "bookId": 24,
     "chapterId": 23,
     "verseId": 34,
-    "text": "Og den profeten eller presten eller personen i folket som seier «Herrens bodskap», den mannen og hans hus vil eg straffa."
+    "text": "Og den profeten eller presten eller personen i folket som seier «Herrens byrde», den mannen og hans hus vil eg straffa.",
+    "versions": [
+      {
+        "text": "Og den profeten eller presten eller personen i folket som seier «Herrens bodskap», den mannen og hans hus vil eg straffa.",
+        "type": "error",
+        "severity": "major",
+        "explanation": "In verse 33, the revision changed 'bodskap' to 'byrde' to preserve the wordplay with מַשָּׂא. For consistency, verse 34 should also use 'byrde' when referring to the same term מַשָּׂא, since the wordplay continues through these verses."
+      }
+    ]
   },
   {
     "bookId": 24,
@@ -243,7 +263,15 @@
     "bookId": 24,
     "chapterId": 23,
     "verseId": 36,
-    "text": "Men «Herrens bodskap» skal de ikkje nemna meir, for bodskapen blir kvart menneske sitt eige ord. De har forvrengd orda til den levande Gud, Herren over hærskarane, vår Gud."
+    "text": "Men «Herrens byrde» skal de ikkje nemna meir, for byrda blir kvart menneske sitt eige ord. De har forvrengd orda til den levande Gud, Herren over hærskarane, vår Gud.",
+    "versions": [
+      {
+        "text": "Men «Herrens bodskap» skal de ikkje nemna meir, for bodskapen blir kvart menneske sitt eige ord. De har forvrengd orda til den levande Gud, Herren over hærskarane, vår Gud.",
+        "type": "suggestion",
+        "severity": "major",
+        "explanation": "For consistency with the wordplay established in verse 33 (where מַשָּׂא was translated as 'byrde'), this verse should also use 'byrde' rather than 'bodskap'."
+      }
+    ]
   },
   {
     "bookId": 24,
@@ -255,7 +283,15 @@
     "bookId": 24,
     "chapterId": 23,
     "verseId": 38,
-    "text": "Men om de seier «Herrens bodskap», då seier Herren så: Fordi de brukar dette ordet «Herrens bodskap», endå eg sende bod til dykk og sa: «De skal ikkje seia 'Herrens bodskap'» –"
+    "text": "Men om de seier «Herrens byrde», då seier Herren så: Fordi de brukar dette ordet «Herrens byrde», endå eg sende bod til dykk og sa: «De skal ikkje seia 'Herrens byrde'» –",
+    "versions": [
+      {
+        "text": "Men om de seier «Herrens bodskap», då seier Herren så: Fordi de brukar dette ordet «Herrens bodskap», endå eg sende bod til dykk og sa: «De skal ikkje seia 'Herrens bodskap'» –",
+        "type": "suggestion",
+        "severity": "major",
+        "explanation": "For consistency with the wordplay in verse 33, all occurrences of מַשָּׂא in this section should use 'byrde' rather than 'bodskap'."
+      }
+    ]
   },
   {
     "bookId": 24,

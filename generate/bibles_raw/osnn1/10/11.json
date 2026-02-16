@@ -9,7 +9,15 @@
     "bookId": 10,
     "chapterId": 11,
     "verseId": 2,
-    "text": "Ein kveld stod David opp frå leiet sitt og gjekk omkring på taket av kongspalasset. Frå taket såg han ei kvinne som bada, og kvinna var svært vakker."
+    "text": "Ein kveld stod David opp frå leiet sitt og gjekk omkring på taket av kongspalasset. Frå taket fekk han auge på ei kvinne som bada, og kvinna var svært vakker.",
+    "versions": [
+      {
+        "text": "Ein kveld stod David opp frå leiet sitt og gjekk omkring på taket av kongspalasset. Frå taket såg han ei kvinne som bada, og kvinna var svært vakker.",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "'Fekk auge på' gjev betre att det uplanlagde i situasjonen enn 'såg', som kan verka meir intensjonelt. Eit lite stilistisk forslag."
+      }
+    ]
   },
   {
     "bookId": 10,
@@ -45,7 +53,15 @@
     "bookId": 10,
     "chapterId": 11,
     "verseId": 8,
-    "text": "Så sa David til Uria: «Gå heim til huset ditt og vask føtene dine.» Uria gjekk ut frå kongspalasset, og ei gåve frå kongen vart send etter han."
+    "text": "Uria gjekk ut frå kongspalasset, og det følgde ei gåve frå kongen etter han.",
+    "versions": [
+      {
+        "text": "Så sa David til Uria: «Gå heim til huset ditt og vask føtene dine.» Uria gjekk ut frå kongspalasset, og ei gåve frå kongen vart send etter han.",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "Det hebraiske וַתֵּצֵא אַחֲרָיו מַשְׂאַת הַמֶּלֶךְ seier bokstavleg at gåva 'gjekk ut etter han', dvs. følgde etter han. 'Vart send' er ei tolking som ikkje finst i teksten. 'Det følgde ei gåve etter han' er nærare originalen."
+      }
+    ]
   },
   {
     "bookId": 10,
@@ -68,7 +84,8 @@
       {
         "text": "Uria svara David: «Paktskista og Israel og Juda bur i telt, og herren min Joab og tenarane til herren min ligg i leir ute på marka. Skulle då eg gå heim til huset mitt for å eta og drikka og liggja med kona mi? Så sant du lever, så sant du lever, det gjer eg ikkje!»",
         "explanation": "Det hebraiske uttrykket חַיֶּךָ וְחֵי נַפְשֶׁךָ er to ulike eidformular: 'så sant du lever' og 'så sant sjela di lever'. Noverande omsetjing gjentek same frasen to gonger, men originalen har to distinkte uttrykk. Likevel kan den noverande forma fungera retorisk på norsk, så dette er berre eit mindre forslag."
-      }    ]
+      }
+    ]
   },
   {
     "bookId": 10,
@@ -92,11 +109,17 @@
     "bookId": 10,
     "chapterId": 11,
     "verseId": 15,
-    "text": "I brevet skreiv han: «Set Uria fremst der kampen er hardast, og trekk dykk tilbake frå han, så han blir slegen i hel og døyr.»",
+    "text": "I brevet skreiv han: «Still Uria fremst der kampen er hardast, og trekk dykk tilbake frå han, så han blir ramma og døyr.»",
     "versions": [
       {
         "text": "I brevet skreiv han: «Set Uria fremst der kampen er hardast, og trekkk dykk tilbake frå han, så han blir slegen i hel og døyr.»",
         "explanation": "Skrivefeil: 'trekkk' har tre k-ar, skal vera 'trekk' med to k-ar."
+      },
+      {
+        "text": "I brevet skreiv han: «Set Uria fremst der kampen er hardast, og trekk dykk tilbake frå han, så han blir slegen i hel og døyr.»",
+        "type": "error",
+        "severity": "major",
+        "explanation": "Hebraisk הָבוּ betyr 'still/plasser' (imperativ av יהב), ikkje 'set'. Meir presist er 'still'. Vidare er וְנִכָּה וָמֵת 'så han blir ramma/slegen og døyr' – 'slegen i hel' er for sterkt og dobbelt opp med 'døyr'. 'Ramma og døyr' er meir nøyaktig."
       }
     ]
   },
@@ -104,7 +127,15 @@
     "bookId": 10,
     "chapterId": 11,
     "verseId": 16,
-    "text": "Medan Joab heldt byen under oppsikt, plasserte han Uria på den staden der han visste at det var tapre krigarar."
+    "text": "Medan Joab beleira byen, plasserte han Uria på den staden der han visste at det var tapre krigarar.",
+    "versions": [
+      {
+        "text": "Medan Joab heldt byen under oppsikt, plasserte han Uria på den staden der han visste at det var tapre krigarar.",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "Det hebraiske בִּשְׁמֹר יוֹאָב אֶל־הָעִיר betyr 'medan Joab heldt vakt over / beleira byen', ikkje berre 'heldt byen under oppsikt'. I konteksten av ein beleiring er 'beleira' meir presist."
+      }
+    ]
   },
   {
     "bookId": 10,
@@ -134,7 +165,15 @@
     "bookId": 10,
     "chapterId": 11,
     "verseId": 21,
-    "text": "Kven var det som drap Abimelek, son til Jerubbesjet? Var det ikkje ei kvinne som kasta ein kvernstein ned på han frå muren, så han døydde i Tebes? Kvifor gjekk de så nær muren?' Då skal du seia: 'Også tenaren din, hetitten Uria, er død.'»"
+    "text": "Kven var det som slo i hel Abimelek, son til Jerubbesjet? Var det ikkje ei kvinne som kasta ein kvernstein ned på han frå muren, så han døydde i Tebes? Kvifor gjekk de så nær muren?' Då skal du seia: 'Også tenaren din, hetitten Uria, er død.'»",
+    "versions": [
+      {
+        "text": "Kven var det som drap Abimelek, son til Jerubbesjet? Var det ikkje ei kvinne som kasta ein kvernstein ned på han frå muren, så han døydde i Tebes? Kvifor gjekk de så nær muren?' Då skal du seia: 'Også tenaren din, hetitten Uria, er død.'»",
+        "type": "grammar",
+        "severity": "minor",
+        "explanation": "Det hebraiske הִכָּה betyr 'slo' eller 'slo i hel', ikkje nødvendigvis 'drap' (som ville vore הָרַג). 'Slo i hel' fangar betre nyansen i det hebraiske verbet, særleg sidan det var med ein kvernstein."
+      }
+    ]
   },
   {
     "bookId": 10,

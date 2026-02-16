@@ -3,7 +3,15 @@
     "bookId": 19,
     "chapterId": 52,
     "verseId": 1,
-    "text": "Til korleiaren. Ein læresalme av David."
+    "text": "Til kormeisteren. Ein læresalme av David.",
+    "versions": [
+      {
+        "text": "Til korleiaren. Ein læresalme av David.",
+        "type": "grammar",
+        "severity": "minor",
+        "explanation": "'Korleiaren' er ikkje eit vanleg nynorsk ord. 'Kormeisteren' er meir gjenkjenneleg og naturleg på moderne nynorsk, og er i tråd med standard bibelsk terminologi."
+      }
+    ]
   },
   {
     "bookId": 19,
@@ -51,11 +59,17 @@
     "bookId": 19,
     "chapterId": 52,
     "verseId": 7,
-    "text": "Men Gud skal òg riva deg ned for alltid. Han skal gripa deg og rykkja deg ut av teltet ditt, og rykka deg opp med rot frå dei levande si jord. Sela.",
+    "text": "Men Gud skal òg riva deg ned for alltid. Han skal gripa deg og rykkja deg ut av teltet ditt, og rykkja deg opp med rot frå dei levande si jord. Sela.",
     "versions": [
       {
         "text": "Difor skal Gud òg riva deg ned for alltid. Han skal gripa deg og rykkja deg ut av teltet ditt, og rykka deg opp med rot frå dei levande si jord. Sela.",
         "explanation": "Hebraisk 'gam' (גַּם) tyder 'òg' eller 'likeins', men 'Difor' innfører ei årsakssamanheng som ikkje finst i originalen. 'Men' gjev betre kontrast mellom den vonde si åtferd og Guds dom."
+      },
+      {
+        "text": "Men Gud skal òg riva deg ned for alltid. Han skal gripa deg og rykkja deg ut av teltet ditt, og rykka deg opp med rot frå dei levande si jord. Sela.",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "Inkonsekvent stavemåte: 'rykkja' og 'rykka' er brukt om kvarandre i same vers. Bør vere 'rykkja' begge stader for konsistens."
       }
     ]
   },
@@ -63,7 +77,15 @@
     "bookId": 19,
     "chapterId": 52,
     "verseId": 8,
-    "text": "Dei rettferdige skal sjå det og ottast, og dei skal le av han:"
+    "text": "Dei rettferdige skal sjå det og ottast, og dei skal le av han og seia:",
+    "versions": [
+      {
+        "text": "Dei rettferdige skal sjå det og ottast, og dei skal le av han:",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "Kolon på slutten av verset innleier eit sitat i vers 9. Det er meir naturleg på nynorsk å leggja til 'og seia' for å gjere overgangen til sitatet klårare."
+      }
+    ]
   },
   {
     "bookId": 19,
@@ -93,6 +115,14 @@
     "bookId": 19,
     "chapterId": 52,
     "verseId": 11,
-    "text": "Eg vil takka deg til evig tid for det du har gjort. Eg vil vona på ditt namn, for det er godt, framfor dine trugne."
+    "text": "Eg vil takka deg til evig tid for det du har gjort. Eg vil venta på namnet ditt, for det er godt, framfor dine trufaste.",
+    "versions": [
+      {
+        "text": "Eg vil takka deg til evig tid for det du har gjort. Eg vil vona på ditt namn, for det er godt, framfor dine trugne.",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "Hebraisk 'aqavveh' (אֲקַוֶּה) tyder meir 'venta på' i tydinga 'setja si von til' enn berre 'vona på'. 'Namnet ditt' er meir naturleg nynorsk enn 'ditt namn'. 'Trufaste' er meir naturleg nynorsk enn 'trugne' for חֲסִידֶיךָ."
+      }
+    ]
   }
 ]

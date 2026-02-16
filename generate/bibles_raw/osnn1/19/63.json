@@ -75,11 +75,17 @@
     "bookId": 19,
     "chapterId": 63,
     "verseId": 10,
-    "text": "Men dei som vil øydeleggja meg og står meg etter livet, dei skal fara ned i djupet av jorda.",
+    "text": "Men dei som søkjer å øydeleggja livet mitt, dei skal fara ned i djupet av jorda.",
     "versions": [
       {
         "text": "Men dei som står meg etter livet for å øydeleggja det, dei skal fara ned i djupet av jorda.",
         "explanation": "Hebraisk לְשׁוֹאָה ('til øydelegging') står føre verbet og understrekar fiendane sin øydeleggjande intensjon. Noverande ordstilling er akseptabel, men å flytta 'øydeleggja' fram gjev betre vekt i tråd med hebraisk ordstilling."
+      },
+      {
+        "text": "Men dei som vil øydeleggja meg og står meg etter livet, dei skal fara ned i djupet av jorda.",
+        "type": "error",
+        "severity": "major",
+        "explanation": "Den noverande omsetjinga legg til 'og står meg etter livet' som ei eiga setning, men det hebraiske יְבַקְשׁוּ נַפְשִׁי betyr 'søkjer mitt liv/mi sjel' (dvs. vil ta livet mitt). לְשׁוֹאָה ('til øydelegging') modifiserer dette søket. Omsetjinga dobler opp innhaldet ved å både bruka 'øydeleggja meg' og 'står meg etter livet', som begge gjengjev same hebraiske uttrykk. NB: Denne kommentaren er basert på at dobleringa er eit reelt innhaldsproblem, ikkje berre stilistisk."
       }
     ]
   },

@@ -3,7 +3,15 @@
     "bookId": 4,
     "chapterId": 30,
     "verseId": 1,
-    "text": "Moses sa til israelittane alt det Herren hadde bode Moses."
+    "text": "Moses sa til israelittane alt det Herren hadde bode han.",
+    "versions": [
+      {
+        "text": "Moses sa til israelittane alt det Herren hadde bode Moses.",
+        "type": "error",
+        "severity": "major",
+        "explanation": "Det er unaturleg å gjenta namnet 'Moses' på slutten av setninga. Hebraisk brukar 'אֶת־מֹשֶׁה' her, men på norsk er det meir idiomatisk å bruka pronomenet 'han' sidan Moses allereie er subjektet i setninga. Gjentakinga av eigennamnet gjer setninga klønete."
+      }
+    ]
   },
   {
     "bookId": 4,
@@ -45,11 +53,17 @@
     "bookId": 4,
     "chapterId": 30,
     "verseId": 7,
-    "text": "Om ho giftar seg medan lovnadene hennar eller eit tankelaust ord frå leppene hennar, som ho har bunde seg til, framleis gjeld,",
+    "text": "Om ho giftar seg medan lovnadene hennar, eller eit tankelaust ord frå leppene hennar som ho har bunde seg til, framleis gjeld,",
     "versions": [
       {
         "text": "Om ho blir gift medan lovnadene hennar eller eit tankelaust ord frå leppene hennar, som ho har bunde seg til, framleis gjeld,",
         "explanation": "Hebraisk uttrykket 'היו תהיה לאיש' (bokstaveleg: 'blir til ein mann') kan omsetjast meir aktivt som 'giftar seg' i staden for det passive 'blir gift', noko som gjev ein meir naturleg nynorsk stil."
+      },
+      {
+        "text": "Om ho giftar seg medan lovnadene hennar eller eit tankelaust ord frå leppene hennar, som ho har bunde seg til, framleis gjeld,",
+        "type": "grammar",
+        "severity": "minor",
+        "explanation": "Kommaet før 'som ho har bunde seg til' er misvisande fordi det gjer relativsetninga ikkje-restriktiv, medan det hebraiske 'אֲשֶׁר אָסְרָה עַל־נַפְשָׁהּ' er restriktivt og viser til det tankelause ordet spesifikt. Eit komma etter 'hennar' (etter første ledd) og fjerning av kommaet før 'som' gjer setninga klarare."
       }
     ]
   },
@@ -93,11 +107,17 @@
     "bookId": 4,
     "chapterId": 30,
     "verseId": 14,
-    "text": "Kvar lovnad og kvar eid som bind til å plaga seg sjølv, kan mannen hennar stadfesta eller gjera ugyldig.",
+    "text": "Kvar lovnad og kvar eid som bind til å fasta og nekta seg sjølv, kan mannen hennar stadfesta eller gjera ugyldig.",
     "versions": [
       {
         "text": "Kvar lovnad og kvar eid som bind til sjølvfornekting, kan mannen hennar stadfesta eller gjera ugyldig.",
         "explanation": "Det hebraiske uttrykket 'לענת נפש' tyder bokstaveleg 'å plaga/audmjuka sjela/seg sjølv' og refererer til faste og avhald. 'Sjølvfornekting' er akseptabelt, men 'å plaga seg sjølv' er meir direkte og gjev betre forståing av kva slags løfte dette handlar om."
+      },
+      {
+        "text": "Kvar lovnad og kvar eid som bind til å plaga seg sjølv, kan mannen hennar stadfesta eller gjera ugyldig.",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "Det hebraiske uttrykket 'לענת נפש' refererer spesifikt til sjølvpålagd faste og avhald (jf. 3 Mos 16:29, 23:27). 'Å plaga seg sjølv' er for generelt og kan misforståast. 'Å fasta og nekta seg sjølv' gjer det meir konkret og presist kva slags plikt det er tale om."
       }
     ]
   },
@@ -117,6 +137,14 @@
     "bookId": 4,
     "chapterId": 30,
     "verseId": 17,
-    "text": "Dette er forskriftene som Herren baud Moses, om tilhøvet mellom ein mann og kona hans, og mellom ein far og dotter hans medan ho er ung og bur i huset til far sin."
+    "text": "Dette er forskriftene som Herren baud Moses, om tilhøvet mellom ein mann og kona hans, og mellom ein far og dotter hans medan ho er ung, i huset til far sin.",
+    "versions": [
+      {
+        "text": "Dette er forskriftene som Herren baud Moses, om tilhøvet mellom ein mann og kona hans, og mellom ein far og dotter hans medan ho er ung og bur i huset til far sin.",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "Det hebraiske 'בִּנְעֻרֶיהָ בֵּית אָבִיהָ' har to separate tilhøve: 'i ungdommen hennar' og 'i huset til far hennar'. Omsetjinga 'medan ho er ung og bur i huset til far sin' legg til verbet 'bur' som ikkje finst i originalen. Det er betre å halda dei som separate tilhøve med komma, slik som i vers 4 der same uttrykk er nytta."
+      }
+    ]
   }
 ]

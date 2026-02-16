@@ -9,7 +9,15 @@
     "bookId": 10,
     "chapterId": 8,
     "verseId": 2,
-    "text": "Han slo òg moabittane. Han lét dei leggja seg ned på marka og målte dei med eit snøre. To snørelengder målte han ut til å drepast, og éi heil snørelengd til å få leva. Slik vart moabittane undersåttar under David og måtte betala skatt."
+    "text": "Han slo òg moabittane. Han lét dei leggja seg ned på marka og målte dei med eit snøre. To snørelengder målte han ut til å døy, og éi heil snørelengd til å få leva. Slik vart moabittane undersåttar under David og måtte betala skatt.",
+    "versions": [
+      {
+        "text": "Han slo òg moabittane. Han lét dei leggja seg ned på marka og målte dei med eit snøre. To snørelengder målte han ut til å drepast, og éi heil snørelengd til å få leva. Slik vart moabittane undersåttar under David og måtte betala skatt.",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "'Til å drepast' er passiv og litt klønete. Originalen har 'לְהָמִית' (lehåmit) som er kausativ/hifil infinitiv ('for å drepa/døyda'). 'Til å døy' flyt betre og er meir naturleg nynorsk."
+      }
+    ]
   },
   {
     "bookId": 10,
@@ -63,13 +71,29 @@
     "bookId": 10,
     "chapterId": 8,
     "verseId": 10,
-    "text": "sende han son sin Joram til kong David for å helsa han og velsigna han fordi han hadde kjempa mot Hadadeser og slege han. For Hadadeser hadde ofte ført krig mot Toi. Joram hadde med seg ting av sølv, gull og bronse."
+    "text": "Toi sende son sin Joram til kong David for å helsa han og velsigna han fordi han hadde kjempa mot Hadadeser og slege han. For Hadadeser var ein krigsmann mot Toi. Joram hadde med seg ting av sølv, gull og bronse.",
+    "versions": [
+      {
+        "text": "sende han son sin Joram til kong David for å helsa han og velsigna han fordi han hadde kjempa mot Hadadeser og slege han. For Hadadeser hadde ofte ført krig mot Toi. Joram hadde med seg ting av sølv, gull og bronse.",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "Den hebraiske frasen 'כִּי־אִישׁ מִלְחֲמוֹת תֹּעִי הָיָה הֲדַדְעֶזֶר' seier bokstavleg 'for Hadadeser var ein krigsmann/stridsmann mot Toi'. 'Hadde ofte ført krig' legg til 'ofte' som ikkje står i teksten. Ei meir presis omsetjing ville vera 'For Hadadeser låg stadig i strid med Toi' eller 'var ein krigsfiende av Toi'."
+      }
+    ]
   },
   {
     "bookId": 10,
     "chapterId": 8,
     "verseId": 11,
-    "text": "Kong David vigde òg desse tinga til Herren, saman med sølvet og gullet han hadde vigde frå alle dei folka han hadde lagt under seg:"
+    "text": "Kong David vigde òg desse tinga til Herren, saman med sølvet og gullet han hadde vigd frå alle dei folka han hadde lagt under seg:",
+    "versions": [
+      {
+        "text": "Kong David vigde òg desse tinga til Herren, saman med sølvet og gullet han hadde vigde frå alle dei folka han hadde lagt under seg:",
+        "type": "grammar",
+        "severity": "minor",
+        "explanation": "'Vigde' er feil bøying av partisipp. Rett form på nynorsk er 'vigd' (supinum), ikkje 'vigde' etter 'hadde'."
+      }
+    ]
   },
   {
     "bookId": 10,
@@ -81,7 +105,15 @@
     "bookId": 10,
     "chapterId": 8,
     "verseId": 13,
-    "text": "David vann seg eit namn då han kom attende frå å slå aramerane i Saltdalen, atten tusen mann."
+    "text": "David vann seg eit namn då han kom attende frå å slå Edom i Saltdalen, atten tusen mann.",
+    "versions": [
+      {
+        "text": "David vann seg eit namn då han kom attende frå å slå aramerane i Saltdalen, atten tusen mann.",
+        "type": "error",
+        "severity": "major",
+        "explanation": "Det er ein kjend tekstkritisk diskusjon her. Den hebraiske teksten seier 'Aram' (אֲרָם), men parallellstaden i 1 Krøn 18:12 og konteksten (Saltdalen ligg i Edom-området) tilseier at det skal vera 'Edom' (אֱדוֹם). Mange kommentarar og omsetjingar rettar til Edom. Sidan vers 14 held fram med Edom, er det sannsynleg at originalen meinte Edom. Dersom ein vel å følgja MT bokstavleg, bør dette i det minste noterast."
+      }
+    ]
   },
   {
     "bookId": 10,

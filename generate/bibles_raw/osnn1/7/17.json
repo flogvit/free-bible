@@ -15,13 +15,29 @@
     "bookId": 7,
     "chapterId": 17,
     "verseId": 3,
-    "text": "Han gav dei elleve hundre sølvstykka attende til mora si. Då sa mora hans: «Eg har helga dette sølvet til Herren frå mi eiga hand for sonen min, til å laga eit utskore bilete og eit støypt bilete. No gjev eg det attende til deg.»"
+    "text": "Han gav dei elleve hundre sølvstykka attende til mora si. Då sa mora hans: «Eg har vigsla dette sølvet til Herren frå mi eiga hand for sonen min, til å laga eit utskore bilete og eit støypt bilete. No gjev eg det attende til deg.»",
+    "versions": [
+      {
+        "text": "Han gav dei elleve hundre sølvstykka attende til mora si. Då sa mora hans: «Eg har helga dette sølvet til Herren frå mi eiga hand for sonen min, til å laga eit utskore bilete og eit støypt bilete. No gjev eg det attende til deg.»",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "The Hebrew הַקְדֵּשׁ הִקְדַּשְׁתִּי uses the infinitive absolute construction for emphasis - 'I have solemnly consecrated/dedicated'. 'Helga' works but 'vigsla' captures the solemn, deliberate dedication better in this context and is good nynorsk."
+      }
+    ]
   },
   {
     "bookId": 7,
     "chapterId": 17,
     "verseId": 4,
-    "text": "Men då han gav sølvet attende til mora si, tok ho to hundre sølvstykke og gav dei til ein gullsmed. Han laga eit utskore bilete og eit støypt bilete, og det vart sett i huset til Mika."
+    "text": "Men då han gav sølvet attende til mora si, tok ho to hundre sølvstykke og gav dei til ein sølvsmed. Han laga eit utskore bilete og eit støypt bilete, og det vart sett i huset til Mika.",
+    "versions": [
+      {
+        "text": "Men då han gav sølvet attende til mora si, tok ho to hundre sølvstykke og gav dei til ein gullsmed. Han laga eit utskore bilete og eit støypt bilete, og det vart sett i huset til Mika.",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "The Hebrew צוֹרֵף means 'metalworker/silversmith/refiner', not specifically 'gullsmed' (goldsmith). Since the context is working with silver (כֶּסֶף), 'sølvsmed' would be more accurate, or the more general 'smed'. 'Gullsmed' is misleading when the material is silver."
+      }
+    ]
   },
   {
     "bookId": 7,
@@ -51,7 +67,15 @@
     "bookId": 7,
     "chapterId": 17,
     "verseId": 8,
-    "text": "Mannen drog frå byen, frå Betlehem i Juda, for å bu der han kunne finna ein stad. På ferda si kom han til Efraim-fjella, til huset åt Mika."
+    "text": "Mannen drog frå byen, frå Betlehem i Juda, for å bu der han kunne finna ein stad. Og medan han var på veg, kom han til Efraim-fjella, til huset åt Mika.",
+    "versions": [
+      {
+        "text": "Mannen drog frå byen, frå Betlehem i Juda, for å bu der han kunne finna ein stad. På ferda si kom han til Efraim-fjella, til huset åt Mika.",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "The Hebrew לַעֲשׂוֹת דַּרְכּוֹ means 'making/going his way' - it emphasizes that he arrived at Micah's house while he was traveling/on his journey. The current translation 'På ferda si' is acceptable but the connection to the journey could be slightly clearer. This is a minor stylistic suggestion."
+      }
+    ]
   },
   {
     "bookId": 7,
@@ -63,7 +87,7 @@
     "bookId": 7,
     "chapterId": 17,
     "verseId": 10,
-    "text": "Mika sa til han: «Bu hos meg og ver ein far og ein prest for meg. Eg skal gje deg ti sølvstykke om året, klede og mat.» Så gjekk levitten inn.",
+    "text": "Mika sa til han: «Bu hos meg og ver ein far og ein prest for meg. Eg skal gje deg ti sølvstykke om året, klede og mat.» Då gjekk levitten med på det.",
     "versions": [
       {
         "text": "Mika sa til han: «Bu hos meg og ver ein far og ein prest for meg. Eg skal gje deg ti sølvstykke om året, ein heilsett med klede og mat.» Så gjekk levitten med han.",
@@ -72,6 +96,12 @@
       {
         "text": "Mika sa til han: «Bu hos meg og ver ein far og ein prest for meg. Eg skal gje deg ti sølvstykke om året, klede og mat.» Så gjekk levitten med han.",
         "explanation": "Det hebraiske וַיֵּ֖לֶךְ הַלֵּוִֽי tyder bokstavleg 'og levitten gjekk' - altså at han gjekk inn (i huset/tenesta). Neste vers (11) fortel at han gjekk med på å bu der. 'Gjekk med han' kan mistolkast som at han berre følgde etter Mika. 'Gjekk inn' er meir naturleg og korrekt i konteksten."
+      },
+      {
+        "text": "Mika sa til han: «Bu hos meg og ver ein far og ein prest for meg. Eg skal gje deg ti sølvstykke om året, klede og mat.» Så gjekk levitten inn.",
+        "type": "error",
+        "severity": "minor",
+        "explanation": "The version history shows the change from 'gjekk med han' to 'gjekk inn' was intentional, but 'gjekk inn' is somewhat ambiguous (went inside?). The Hebrew וַיֵּלֶךְ הַלֵּוִי simply says 'the Levite went' meaning he accepted/proceeded. Given that verse 11 explicitly states he agreed to stay (וַיּוֹאֶל), this verse more naturally conveys that the Levite went along with the offer. 'Då gjekk levitten med på det' avoids the issues of both previous versions while being clear and idiomatic."
       }
     ]
   },

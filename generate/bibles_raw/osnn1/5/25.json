@@ -3,7 +3,15 @@
     "bookId": 5,
     "chapterId": 25,
     "verseId": 1,
-    "text": "Når det oppstår ein tvist mellom menn og dei går til retten for å få dom, skal dommarane frikjenna den som har rett, og dømma den skuldige."
+    "text": "Når det oppstår ein tvist mellom menn og dei går til retten for å få dom, skal dei frikjenna den som har rett, og dømma den skuldige.",
+    "versions": [
+      {
+        "text": "Når det oppstår ein tvist mellom menn og dei går til retten for å få dom, skal dommarane frikjenna den som har rett, og dømma den skuldige.",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "Det hebraiske וּשְׁפָטוּם ('og dei skal dømma dei') brukar ikkje eit eige ord for 'dommarane' – subjektet er implisitt 'dei' (dvs. dei som dømer). 'Dommarane' er ikkje direkte i teksten her (det kjem først i vers 2 med הַשֹּׁפֵט). Ei meir tekstnær omsetting brukar berre 'dei'. Men dette er ein mindre merknad, då meininga er den same."
+      }
+    ]
   },
   {
     "bookId": 5,
@@ -27,13 +35,29 @@
     "bookId": 5,
     "chapterId": 25,
     "verseId": 5,
-    "text": "Når brør bur saman og ein av dei døyr utan å ha son, skal ikkje kona til den døde gifta seg med ein framand mann utanfrå. Svogeren hennar skal gå inn til henne og ta henne til kone og oppfylla svogerplikta si mot henne."
+    "text": "Når brør bur saman og ein av dei døyr utan å ha son, skal ikkje kona til den døde gifta seg ut med ein framand mann. Svogeren hennar skal gå inn til henne og ta henne til kone og oppfylla svogerplikta si mot henne.",
+    "versions": [
+      {
+        "text": "Når brør bur saman og ein av dei døyr utan å ha son, skal ikkje kona til den døde gifta seg med ein framand mann utanfrå. Svogeren hennar skal gå inn til henne og ta henne til kone og oppfylla svogerplikta si mot henne.",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "Det hebraiske הַחוּצָה ('ut') høyrer til verbet – ho skal ikkje gå ut til ein framand mann. 'Utanfrå' er litt redundant med 'framand'. Betre å seia 'gifta seg ut med ein framand mann' for å reflektera הַחוּצָה knytt til rørsla hennar."
+      }
+    ]
   },
   {
     "bookId": 5,
     "chapterId": 25,
     "verseId": 6,
-    "text": "Den fyrste sonen ho føder, skal reknast som son til den døde bror, så namnet hans ikkje blir utsletta i Israel."
+    "text": "Den fyrstefødde ho føder, skal bera namnet til den døde bror, så namnet hans ikkje blir utsletta i Israel.",
+    "versions": [
+      {
+        "text": "Den fyrste sonen ho føder, skal reknast som son til den døde bror, så namnet hans ikkje blir utsletta i Israel.",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "Det hebraiske יָקוּם עַל־שֵׁם אָחִיו הַמֵּת betyr bokstavleg 'skal stå opp på namnet til den døde bror' – dvs. barnet skal bera namnet / vidareføra namnet til den døde. 'Reknast som son til' er ei tolking, men 'bera namnet til' er nærare originalteksten og den tradisjonelle forståinga av leviratretten."
+      }
+    ]
   },
   {
     "bookId": 5,
@@ -75,11 +99,17 @@
     "bookId": 5,
     "chapterId": 25,
     "verseId": 11,
-    "text": "Når menn slåst med kvarandre, ein mann og bror hans, og kona til den eine kjem for å berga mannen sin frå den som slår han, og ho rekk ut handa si og grip tak i kjønnet hans,",
+    "text": "Når menn slåst med kvarandre, ein mann og bror hans, og kona til den eine kjem for å berga mannen sin frå den som slår han, og ho strekkjer ut handa si og grip tak i kjønnet hans,",
     "versions": [
       {
         "text": "Når to menn slåst med kvarandre, og kona til den eine kjem for å berga mannen sin frå den som slår han, og ho rekk ut handa si og grip tak i kjønnet hans,",
         "explanation": "Den hebraiske teksten spesifiserer 'ein mann og bror hans' (אִישׁ וְאָחִיו), som indikerer at det er ein konflikt mellom brør. Dette er ein detalj som kan vera verdt å ta med."
+      },
+      {
+        "text": "Når menn slåst med kvarandre, ein mann og bror hans, og kona til den eine kjem for å berga mannen sin frå den som slår han, og ho rekk ut handa si og grip tak i kjønnet hans,",
+        "type": "grammar",
+        "severity": "minor",
+        "explanation": "'Rekk ut' er forståeleg, men 'strekkjer ut' er meir naturleg nynorsk for וְשָׁלְחָה יָדָהּ og gjev betre att den aktive handlinga i teksten."
       }
     ]
   },

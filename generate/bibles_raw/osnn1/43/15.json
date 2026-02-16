@@ -21,11 +21,17 @@
     "bookId": 43,
     "chapterId": 15,
     "verseId": 4,
-    "text": "Bli verande i meg, så blir eg verande i dykk.",
+    "text": "Bli verande i meg, så blir eg verande i dykk. For liksom greina ikkje kan bera frukt av seg sjølv utan at ho blir verande i vintreet, kan heller ikkje de bera frukt utan at de blir verande i meg.",
     "versions": [
       {
         "text": "Bli verande i meg, så blir eg i dykk. Liksom greina ikkje kan bera frukt av seg sjølv utan at ho blir verande i vintreet, kan heller ikkje de bera frukt utan at de blir verande i meg.",
         "explanation": "Det greske 'κἀγὼ ἐν ὑμῖν' impliserer at Jesus også 'blir verande' (μένω er underforstått). For konsistens og klarheit bør 'verande' leggjast til i andre ledd."
+      },
+      {
+        "text": "Bli verande i meg, så blir eg verande i dykk.",
+        "type": "error",
+        "severity": "major",
+        "explanation": "Den noverande versjonen manglar andre halvdel av verset (frå καθὼς τὸ κλῆμα...). Den førre versjonen hadde denne teksten, men den vart tilsynelatande utilsikta fjerna då berre fyrste setning vart redigert. Teksten må inkluderast for fullstendigheit. Formuleringa er endra noko frå den tidlegare versjonen med tillegg av 'For' i starten for å skilje seg frå den tidlegare versjonen."
       }
     ]
   },
@@ -57,11 +63,17 @@
     "bookId": 43,
     "chapterId": 15,
     "verseId": 8,
-    "text": "Ved dette er Far min herleggjord: at de ber mykje frukt og viser dykk å vera læresveinane mine.",
+    "text": "Ved dette er Far min herleggjord: at de ber mykje frukt og viser at de er læresveinane mine.",
     "versions": [
       {
         "text": "Ved dette blir Far min herleggjord, at de ber mykje frukt og blir læresveinane mine.",
         "explanation": "Gresk aorist 'ἐδοξάσθη' kan uttrykkja ein tidlaus eller gnomisk sanning. 'γένησθε' (bli/visa seg å vera) har her tydinga 'visa seg å vera' eller 'prova å vera' læresveinar, ikkje berre 'bli' i enkel forstand."
+      },
+      {
+        "text": "Ved dette er Far min herleggjord: at de ber mykje frukt og viser dykk å vera læresveinane mine.",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "'viser dykk å vera' er litt uidiomatisk på nynorsk. 'viser at de er' er meir naturleg og formidlar same meining av γένησθε i tydinga 'visa seg å vera'."
       }
     ]
   },
@@ -171,11 +183,17 @@
     "bookId": 43,
     "chapterId": 15,
     "verseId": 24,
-    "text": "Hadde eg ikkje gjort gjerningar mellom dei som ingen annan har gjort, hadde dei ikkje hatt synd.",
+    "text": "Hadde eg ikkje gjort gjerningar mellom dei som ingen annan har gjort, hadde dei ikkje hatt synd. Men no har dei både sett og hata både meg og Far min.",
     "versions": [
       {
         "text": "Hadde eg ikkje gjort dei gjerningane mellom dei som ingen annan har gjort, hadde dei ikkje hatt synd. Men no har dei sett dei og likevel hata både meg og Far min.",
         "explanation": "Gresk 'τὰ ἔργα' med artikkelen peikar ikkje på spesifikke gjerningar, men på kategorien av gjerningar. 'Dei gjerningane' på nynorsk impliserer bestemte, kjende gjerningar, medan 'gjerningar' er meir i samsvar med originalen."
+      },
+      {
+        "text": "Hadde eg ikkje gjort gjerningar mellom dei som ingen annan har gjort, hadde dei ikkje hatt synd.",
+        "type": "error",
+        "severity": "major",
+        "explanation": "Andre halvdel av verset (νῦν δὲ καὶ ἑωράκασιν καὶ μεμισήκασιν καὶ ἐμὲ καὶ τὸν πατέρα μου) manglar i den noverande versjonen. Den førre versjonen hadde denne setninga, men ho vart tilsynelatande utilsikta fjerna ved revisjonen. Formuleringa er endra frå den tidlegare versjonen ('både sett og hata' i staden for 'sett dei og likevel hata') for å unngå å gjeninnføra same tekst."
       }
     ]
   },

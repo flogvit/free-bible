@@ -141,7 +141,15 @@
     "bookId": 18,
     "chapterId": 31,
     "verseId": 20,
-    "text": "om ikkje lenda hans velsigna meg, då han vart varma av ulla frå sauene mine,"
+    "text": "om ikkje lenda hans har velsigna meg, og han vart varma av ulla frå sauene mine,",
+    "versions": [
+      {
+        "text": "om ikkje lenda hans velsigna meg, då han vart varma av ulla frå sauene mine,",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "Verbet 'בֵרֲכוּנִי' er perfektum, og 'har velsigna' passar betre i samanhengen med dei andre vilkårssetningane. Dessutan er det to parallelle utsegner kopla med 'og' (ו) heller enn eit temporalt 'då'."
+      }
+    ]
   },
   {
     "bookId": 18,
@@ -189,7 +197,15 @@
     "bookId": 18,
     "chapterId": 31,
     "verseId": 28,
-    "text": "då ville også det vera ei misgjerning som fortener dom, for då hadde eg fornekta Gud der oppe."
+    "text": "då ville også det vera ei misgjerning for dommarane, for då hadde eg fornekta Gud der oppe.",
+    "versions": [
+      {
+        "text": "då ville også det vera ei misgjerning som fortener dom, for då hadde eg fornekta Gud der oppe.",
+        "type": "error",
+        "severity": "major",
+        "explanation": "I vers 11 vart 'עָוֺן פְּלִילִים' medvite endra til 'misgjerning for dommarane' fordi det er meir presist. Her i vers 28 er det same hebraiske uttrykket brukt (פְּלִילִי), men omsettinga har den eldre formuleringa 'som fortener dom' som vart forkasta i vers 11. For konsekvens og presisjon bør same formulering brukast."
+      }
+    ]
   },
   {
     "bookId": 18,
@@ -207,11 +223,17 @@
     "bookId": 18,
     "chapterId": 31,
     "verseId": 31,
-    "text": "om ikkje folka i teltet mitt har sagt: 'Kven kan finna nokon som ikkje har vorte mett av maten hans?'",
+    "text": "om ikkje folka i teltet mitt har sagt: 'Kven kan visa oss nokon som ikkje har vorte mett av kjøtet hans?'",
     "versions": [
       {
         "text": "om ikkje folka i teltet mitt har sagt: 'Kven har ikkje vorte mett av kjøtet hans?'",
         "explanation": "Det hebraiske 'מִי יִתֵּן' (mi jitten) er eit idiom som betyr 'kven kan finna' eller 'å om'. Samanhengen handlar om Jobs gjestfridom – husfolket seier at alle har fått mat hos han."
+      },
+      {
+        "text": "om ikkje folka i teltet mitt har sagt: 'Kven kan finna nokon som ikkje har vorte mett av maten hans?'",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "Det hebraiske 'מִבְּשָׂרוֹ' tyder bokstaveleg 'av kjøtet hans', altså Jobs kjøt/mat. Sjølv om 'maten' er ei akseptabel tolking, er 'kjøtet' meir presist og understrekar Jobs rause gjestfridom. Formuleringa 'Kven kan visa oss nokon' er også nærare det hebraiske idiomatiske uttrykket. NB: dette skil seg frå den tidlegare versjonen som hadde ei heilt anna setningsoppbygging."
       }
     ]
   },
@@ -261,7 +283,15 @@
     "bookId": 18,
     "chapterId": 31,
     "verseId": 37,
-    "text": "Eg ville gjera greie for kvart steg eg tek, som ein fyrste ville eg stiga fram for han."
+    "text": "Eg ville leggja fram for han talet på stega mine, som ein fyrste ville eg stiga fram for han.",
+    "versions": [
+      {
+        "text": "Eg ville gjera greie for kvart steg eg tek, som ein fyrste ville eg stiga fram for han.",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "Det hebraiske 'מִסְפַּר צְעָדַי אַגִּידֶנּוּ' tyder meir bokstaveleg 'talet på stega mine ville eg kunngjera for han'. Den noverande omsettinga er noko fri. 'Leggja fram for han talet på stega mine' er meir presist og formidlar det juridiske aspektet betre."
+      }
+    ]
   },
   {
     "bookId": 18,

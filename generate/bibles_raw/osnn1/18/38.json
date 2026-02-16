@@ -129,7 +129,15 @@
     "bookId": 18,
     "chapterId": 38,
     "verseId": 20,
-    "text": "Kan du føra det til grensa si og kjenner du stiane til huset sitt?"
+    "text": "Kan du føra det til grensa dets og kjenner du stiane til heimen dets?",
+    "versions": [
+      {
+        "text": "Kan du føra det til grensa si og kjenner du stiane til huset sitt?",
+        "type": "error",
+        "severity": "major",
+        "explanation": "Pronomena 'si' og 'sitt' er refleksive og viser tilbake til subjektet ('du'), men dei skal visa tilbake til 'det' (lyset/mørkret). På nynorsk bør det vera 'dets' eller ein omskriving for å unngå at det ser ut som det er 'du' si grense og 'du' sitt hus. Konteksten handlar om å føra lyset/mørkret til sin eigen stad."
+      }
+    ]
   },
   {
     "bookId": 18,
@@ -189,11 +197,17 @@
     "bookId": 18,
     "chapterId": 38,
     "verseId": 30,
-    "text": "Vatnet gøymer seg som stein, og overflata på djupet bind seg saman.",
+    "text": "Som stein gøymer vatnet seg, og overflata på djupet bind seg saman.",
     "versions": [
       {
         "text": "Vatnet hardnar som stein, og overflata på djupet frys til.",
         "explanation": "Det hebraiske 'יִתְחַבָּאוּ' tyder 'gøymer seg' - eit poetisk bilete om at vatnet blir skjult under isen. 'יִתְלַכָּדוּ' tyder 'bind seg saman' eller 'grip fast', ikkje berre 'frys til'."
+      },
+      {
+        "text": "Vatnet gøymer seg som stein, og overflata på djupet bind seg saman.",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "Det hebraiske 'כָּאֶבֶן' (som stein) står fyrst i setninga og fungerer som ein simile. 'Vatnet gøymer seg som stein' kan tolkast som at vatnet gøymer seg på same måte som ein stein gøymer seg, medan originalen meiner at vatnet blir hardt/skjult som stein. Å flytta 'som stein' først gjev betre samsvar med ordstillinga i originalen, men dette er ei mindre sak sidan versehistorikken viser at verset allereie er gjennomgått."
       }
     ]
   },
@@ -213,7 +227,15 @@
     "bookId": 18,
     "chapterId": 38,
     "verseId": 33,
-    "text": "Kjenner du lovene for himmelen? Kan du setja deira herredøme over jorda?"
+    "text": "Kjenner du lovene for himmelen? Kan du setja hans herredøme over jorda?",
+    "versions": [
+      {
+        "text": "Kjenner du lovene for himmelen? Kan du setja deira herredøme over jorda?",
+        "type": "error",
+        "severity": "minor",
+        "explanation": "Suffikset i 'מִשְׁטָרוֹ' er eintal maskulin ('hans'), og viser truleg til himmelen (שָׁמָיִם). 'Deira' (fleirtal) er ikkje heilt nøyaktig. 'Hans' (himmelens) gjev betre samsvar med grunnteksten."
+      }
+    ]
   },
   {
     "bookId": 18,

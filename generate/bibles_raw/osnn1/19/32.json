@@ -15,13 +15,29 @@
     "bookId": 19,
     "chapterId": 32,
     "verseId": 2,
-    "text": "Sælt er det mennesket som Herren ikkje tilreknar skuld, og som ikkje har svik i si ånd."
+    "text": "Sælt er det mennesket som Herren ikkje tilreknar skuld, og som ikkje har svik i ånda si.",
+    "versions": [
+      {
+        "text": "Sælt er det mennesket som Herren ikkje tilreknar skuld, og som ikkje har svik i si ånd.",
+        "type": "grammar",
+        "severity": "minor",
+        "explanation": "På nynorsk er den mest naturlege ordstillinga med eigedomspronomenet etter substantivet: 'ånda si' heller enn 'si ånd'. Begge er grammatisk moglege, men 'ånda si' er meir idiomatisk moderne nynorsk."
+      }
+    ]
   },
   {
     "bookId": 19,
     "chapterId": 32,
     "verseId": 3,
-    "text": "Så lenge eg tagde, tærtest beina mine bort medan eg stønna heile dagen."
+    "text": "Så lenge eg tagde, tærtest beina mine bort, for eg stønna heile dagen.",
+    "versions": [
+      {
+        "text": "Så lenge eg tagde, tærtest beina mine bort medan eg stønna heile dagen.",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "Det hebraiske 'בְּשַׁאֲגָתִי' (i/ved mi stønn) skildrar ikkje noko som skjedde samstundes ('medan'), men heller årsaka til at beina tærtest bort – den vedvarande klagestonnen utan vedkjenning av synda. 'For eg stønna' gjev betre meining kausalt og er nærare den hebraiske preposisjonen ב."
+      }
+    ]
   },
   {
     "bookId": 19,
@@ -39,7 +55,15 @@
     "bookId": 19,
     "chapterId": 32,
     "verseId": 6,
-    "text": "Difor skal alle som er trufaste, be til deg medan du er å finna. Om store vassflaum kjem, skal vatnet ikkje nå dei."
+    "text": "Difor skal alle som er trufaste, be til deg medan du er å finna. Når store vassflaumer kjem, skal dei ikkje nå han.",
+    "versions": [
+      {
+        "text": "Difor skal alle som er trufaste, be til deg medan du er å finna. Om store vassflaum kjem, skal vatnet ikkje nå dei.",
+        "type": "error",
+        "severity": "major",
+        "explanation": "Det hebraiske 'אֵלָיו' (til han/han) er eintal, og viser tilbake til 'כָּל־חָסִיד' (kvar trufast), som er eintal. Omsetjinga brukar 'dei' (fleirtal) som objekt, men det bør vera 'han' i eintal. I tillegg er 'vassflaum' eintal men 'מַיִם רַבִּים' (store vatn/flaumer) tyder fleirtal; 'vassflaumer' er meir presist."
+      }
+    ]
   },
   {
     "bookId": 19,

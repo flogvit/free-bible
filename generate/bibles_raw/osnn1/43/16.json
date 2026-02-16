@@ -27,13 +27,29 @@
     "bookId": 43,
     "chapterId": 16,
     "verseId": 4,
-    "text": "Men dette har eg sagt dykk, så de skal minnast det når tida kjem, at eg sa det til dykk."
+    "text": "Men dette har eg sagt dykk, så de skal minnast det når tida kjem, at eg sa det til dykk. Dette sa eg ikkje til dykk frå først av, for eg var hjå dykk.",
+    "versions": [
+      {
+        "text": "Men dette har eg sagt dykk, så de skal minnast det når tida kjem, at eg sa det til dykk.",
+        "type": "error",
+        "severity": "major",
+        "explanation": "Den andre delen av verset manglar heilt: «Ταῦτα δὲ ὑμῖν ἐξ ἀρχῆς οὐκ εἶπον, ὅτι μεθʼ ὑμῶν ἤμην» (Dette sa eg ikkje til dykk frå først av, for eg var hjå dykk). Dette er ein vesentleg utelating."
+      }
+    ]
   },
   {
     "bookId": 43,
     "chapterId": 16,
     "verseId": 5,
-    "text": "Men no går eg bort til han som sende meg, og ingen av dykk spør meg: 'Kvar går du?'"
+    "text": "Men no går eg til han som sende meg, og ingen av dykk spør meg: 'Kvar går du?'",
+    "versions": [
+      {
+        "text": "Men no går eg bort til han som sende meg, og ingen av dykk spør meg: 'Kvar går du?'",
+        "type": "grammar",
+        "severity": "minor",
+        "explanation": "'Går bort til' er litt tungt. Det greske ὑπάγω πρὸς betyr ganske enkelt 'går til'. 'Bort' er ikkje nødvendig og gjer setninga unødig tung."
+      }
+    ]
   },
   {
     "bookId": 43,
@@ -51,11 +67,17 @@
     "bookId": 43,
     "chapterId": 16,
     "verseId": 8,
-    "text": "Og når han kjem, skal han overtyda verda om synd, rettferd og dom.",
+    "text": "Og når han kjem, skal han avsløra for verda kva som er synd, rettferd og dom.",
     "versions": [
       {
         "text": "Og når han kjem, skal han overtyda verda om synd, om rettferd og om dom.",
         "explanation": "For betre munnleg flyt kan ein fjerna dei gjentekne 'om' - den noverande versjonen er grammatisk korrekt, men den kortare forma er meir naturleg ved opplesing."
+      },
+      {
+        "text": "Og når han kjem, skal han overtyda verda om synd, rettferd og dom.",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "Det greske ἐλέγξει har ei sterkare tyding enn 'overtyda'. Det inneber å avsløra, stilla til ansvar, overprøva. 'Overtyda' kan misforståast som 'overtale'. Men sidan verset allereie har éin revisjon, er dette berre eit mindre forslag."
       }
     ]
   },
@@ -153,7 +175,15 @@
     "bookId": 43,
     "chapterId": 16,
     "verseId": 22,
-    "text": "Slik har de òg sorg no. Men eg skal sjå dykk att, og hjarta dykkar skal gleda seg, og gleda dykkar skal ingen ta frå dykk."
+    "text": "Slik har òg de sorg no. Men eg skal sjå dykk att, og hjarta dykkar skal gleda seg, og gleda dykkar skal ingen ta frå dykk.",
+    "versions": [
+      {
+        "text": "Slik har de òg sorg no. Men eg skal sjå dykk att, og hjarta dykkar skal gleda seg, og gleda dykkar skal ingen ta frå dykk.",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "'Slik har de òg sorg no' er greitt, men 'οὖν' (altså/slik) saman med 'καὶ ὑμεῖς' (de òg) peikar på at 'òg' bør stå nær 'de' for å understreka at det er dei som no har sorg, i parallell med kvinna. Liten nyanse, ikkje kritisk."
+      }
+    ]
   },
   {
     "bookId": 43,

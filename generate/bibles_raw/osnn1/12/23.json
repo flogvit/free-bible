@@ -21,11 +21,17 @@
     "bookId": 12,
     "chapterId": 23,
     "verseId": 4,
-    "text": "Kongen baud øvstepresten Hilkia og prestane av andre rang og dørvaktarane å føra ut or Herrens tempel alle dei kara som var laga for Ba'al, for Asjera og for heile himmelens hær. Han brende dei utanfor Jerusalem på markene ved Kedron, og støvet deira førte han til Betel.",
+    "text": "Kongen baud øvstepresten Hilkia og prestane av andre rang og dørvaktarane å føra ut or Herrens tempel alle dei gjenstandane som var laga for Ba'al, for Asjera og for heile himmelens hær. Han brende dei utanfor Jerusalem på markene ved Kedron, og støvet deira førte han til Betel.",
     "versions": [
       {
         "text": "Kongen baud øvstepresten Hilkia og prestane av andre rang og dørvaktarane å føra ut or Herrens tempel alle dei kara som var laga for Ba'al, for Asjera og for heile himmelens hær. Han brende dei utanfor Jerusalem på markene ved Kedron, og støvet førte han til Betel.",
         "explanation": "Det hebraiske 'אֶת־עֲפָרָם' (støvet deira) har eigedomssuffiks som viser tilbake til kara. For klarheit bør 'deira' leggjast til."
+      },
+      {
+        "text": "Kongen baud øvstepresten Hilkia og prestane av andre rang og dørvaktarane å føra ut or Herrens tempel alle dei kara som var laga for Ba'al, for Asjera og for heile himmelens hær. Han brende dei utanfor Jerusalem på markene ved Kedron, og støvet deira førte han til Betel.",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "Det hebraiske כֵּלִים tyder 'gjenstandar, reiskapar, kar'. 'Kara' er ikkje feil, men 'gjenstandane' er meir dekkande, sidan det ikkje berre er snakk om kar, men ulike kultiske gjenstandar."
       }
     ]
   },
@@ -147,7 +153,15 @@
     "bookId": 12,
     "chapterId": 23,
     "verseId": 22,
-    "text": "For ei slik påske hadde ikkje vore halden sidan den tida då domarane dømde i Israel, ikkje i heile den tida det var kongar i Israel og Juda."
+    "text": "For ei slik påske hadde ikkje vore halden sidan den tida då domarane dømde i Israel, og ikkje i heile den tida det var kongar i Israel og Juda.",
+    "versions": [
+      {
+        "text": "For ei slik påske hadde ikkje vore halden sidan den tida då domarane dømde i Israel, ikkje i heile den tida det var kongar i Israel og Juda.",
+        "type": "error",
+        "severity": "major",
+        "explanation": "Hebraisk 'וְכֹל' (og alle) inneheld konjunksjonen 'og', som koplar saman dei to tidsperiodane. 'Og ikkje' gjev ei meir presis attgjeving av at teksten nemner to separate periodar som begge mangla ei slik påske."
+      }
+    ]
   },
   {
     "bookId": 12,
@@ -243,7 +257,15 @@
     "bookId": 12,
     "chapterId": 23,
     "verseId": 36,
-    "text": "Jojakim var tjuefem år gammal då han vart konge, og han styrte i Jerusalem i elleve år. Mor hans heitte Sebuda og var dotter til Pedaja frå Ruma."
+    "text": "Jojakim var tjuefem år gammal då han vart konge, og han styrte i Jerusalem i elleve år. Mor hans heitte Zebuda og var dotter til Pedaja frå Ruma.",
+    "versions": [
+      {
+        "text": "Jojakim var tjuefem år gammal då han vart konge, og han styrte i Jerusalem i elleve år. Mor hans heitte Sebuda og var dotter til Pedaja frå Ruma.",
+        "type": "error",
+        "severity": "minor",
+        "explanation": "Det hebraiske namnet זְבוּדָּה (Zebudda) byrjar med ein z-lyd, ikkje s-lyd. Rett translitterering til nynorsk bør vera 'Zebuda', ikkje 'Sebuda'."
+      }
+    ]
   },
   {
     "bookId": 12,

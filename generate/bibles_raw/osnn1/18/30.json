@@ -33,7 +33,15 @@
     "bookId": 18,
     "chapterId": 30,
     "verseId": 4,
-    "text": "Dei plukka salturt mellom buskane, og gyvelsrøter var maten deira."
+    "text": "Dei plukka salturt mellom buskane, og gyvelrøter var maten deira.",
+    "versions": [
+      {
+        "text": "Dei plukka salturt mellom buskane, og gyvelsrøter var maten deira.",
+        "type": "grammar",
+        "severity": "minor",
+        "explanation": "'Gyvelsrøter' ser ut som ein skrivefeil. Det hebraiske 'רְתָמִים' (retamim) er gyvel (ein buskplante). Fleirtalsforma av rota bør vere 'gyvelrøter' utan ekstra -s-."
+      }
+    ]
   },
   {
     "bookId": 18,
@@ -81,13 +89,29 @@
     "bookId": 18,
     "chapterId": 30,
     "verseId": 11,
-    "text": "For han har løyst bogestrengen min og audmjuka meg, og dei har kasta av seg taumane framfor meg."
+    "text": "For Gud har løyst bogen min og audmjuka meg, og dei har kasta av seg taumane framfor meg.",
+    "versions": [
+      {
+        "text": "For han har løyst bogestrengen min og audmjuka meg, og dei har kasta av seg taumane framfor meg.",
+        "type": "error",
+        "severity": "major",
+        "explanation": "Det hebraiske 'יִתְרִי פִתַּח' tyder 'han har løyst strengen min' (dvs. bogen/boga mi), ikkje 'bogestrengen min'. Poenget er at Gud har gjort Job makteslaus ved å løyse bogen hans (våpenet), ikkje sjølve strengen åleine. Dessutan er det ryddigare å nemne 'Gud' som subjekt for klarleik."
+      }
+    ]
   },
   {
     "bookId": 18,
     "chapterId": 30,
     "verseId": 12,
-    "text": "På høgre sida reiser pakket seg, dei støyter føtene mine bort og byggjer opp øydeleggingsvegar mot meg."
+    "text": "På høgre sida reiser mobben seg, dei støyter føtene mine bort og legg øydeleggingsvegar opp mot meg.",
+    "versions": [
+      {
+        "text": "På høgre sida reiser pakket seg, dei støyter føtene mine bort og byggjer opp øydeleggingsvegar mot meg.",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "'Pakket' er noko uvanleg og kan oppfattast som nedsetjande på ein utydleg måte. 'Mobben' formidlar same tyding men er tydelegare. 'Legg opp' er meir nøyaktig for det hebraiske 'וַיָּסֹלּוּ' (dei jamnar/legg opp ein veg)."
+      }
+    ]
   },
   {
     "bookId": 18,
@@ -105,7 +129,15 @@
     "bookId": 18,
     "chapterId": 30,
     "verseId": 15,
-    "text": "Redsler har vendt seg mot meg, æra mi er blåsen bort som av vinden, og velferda mi har fare forbi som ei sky."
+    "text": "Redsler har vendt seg mot meg, æra mi er driven bort som av vinden, og frelsa mi har fare forbi som ei sky.",
+    "versions": [
+      {
+        "text": "Redsler har vendt seg mot meg, æra mi er blåsen bort som av vinden, og velferda mi har fare forbi som ei sky.",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "Det hebraiske 'נְדִבָתִי' (nedivati) tyder 'mi ære/mitt verd', og 'יְשֻׁעָתִי' (yeshu'ati) tyder 'mi frelse/mi redning', ikkje 'velferda mi'. 'Frelsa' er meir nøyaktig. Dessutan er 'driven bort' meir naturleg nynorsk enn 'blåsen bort'."
+      }
+    ]
   },
   {
     "bookId": 18,
@@ -153,7 +185,15 @@
     "bookId": 18,
     "chapterId": 30,
     "verseId": 21,
-    "text": "Du har vorte hard mot meg, med di sterke hand forfølgjer du meg."
+    "text": "Du har vorte grusom mot meg, med di sterke hand motarbeider du meg.",
+    "versions": [
+      {
+        "text": "Du har vorte hard mot meg, med di sterke hand forfølgjer du meg.",
+        "type": "error",
+        "severity": "major",
+        "explanation": "Det hebraiske 'לְאַכְזָר' (le'akhzar) tyder 'grusom', ikkje berre 'hard'. Og 'תִשְׂטְמֵנִי' (tistmeni) tyder 'du motarbeider meg/er fiendtleg mot meg', ikkje 'forfølgjer'. Desse er viktige nyansar i Jobs klage."
+      }
+    ]
   },
   {
     "bookId": 18,

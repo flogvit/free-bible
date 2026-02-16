@@ -27,11 +27,17 @@
     "bookId": 14,
     "chapterId": 18,
     "verseId": 5,
-    "text": "Dei svara: «Dra opp! Gud vil gje dei i kongens hand.»",
+    "text": "Då samla Israels konge profetane, fire hundre mann, og spurde dei: «Skal vi dra til Ramot i Gilead for å kjempa, eller skal eg la vera?» Dei svara: «Dra opp! Gud vil gje dei i kongens hand.»",
     "versions": [
       {
         "text": "Då samla Israels konge profetane, fire hundre mann, og spurde dei: «Skal vi dra til Ramot i Gilead for å kjempa, eller skal eg la vera?» Dei svara: «Dra opp! Gud vil gje byen i kongens hand.»",
         "explanation": "Den hebraiske teksten seier ikkje 'byen' men brukar eit objekt som viser til fienden. Originalen har berre 'gje i kongens hand' utan å spesifisera 'byen'. Dette er ei lita tilføying som ikkje står i grunnteksten."
+      },
+      {
+        "text": "Dei svara: «Dra opp! Gud vil gje dei i kongens hand.»",
+        "type": "error",
+        "severity": "major",
+        "explanation": "Mesteparten av verset manglar i den noverande omsetjinga. Den første delen som fortel at kongen samla fire hundre profetar og spurde dei, er utelaten. Berre svaret deira er med. Denne informasjonen stod i den førre versjonen men vart fjerna ved redigeringa."
       }
     ]
   },
@@ -57,11 +63,17 @@
     "bookId": 14,
     "chapterId": 18,
     "verseId": 9,
-    "text": "Israels konge og Josjafat, Juda-kongen, sat kvar på sin trone, kledde i kongeklede, på ein open plass ved inngangen til Samaria-porten. Alle profetane profeterte framfor dei.",
+    "text": "Israels konge og Josjafat, Juda-kongen, sat kvar på sin trone, kledde i sine klede, på ein open plass ved inngangen til Samaria-porten. Alle profetane profeterte framfor dei.",
     "versions": [
       {
         "text": "Israels konge og Josjafat, Juda-kongen, sat kvar på sin trone, kledde i kongeklede, på treskjeplassen ved inngangen til Samaria-porten. Alle profetane profeterte framfor dei.",
         "explanation": "Det hebraiske ordet 'goren' tyder eigentleg 'treskjeplass', men i denne samanhengen er det meir sannsynleg ein open plass som vart brukt til offentlege samlingar. 'Open plass' gjev betre meining for moderne lesarar og er meir nøyaktig i konteksten."
+      },
+      {
+        "text": "Israels konge og Josjafat, Juda-kongen, sat kvar på sin trone, kledde i kongeklede, på ein open plass ved inngangen til Samaria-porten. Alle profetane profeterte framfor dei.",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "Det hebraiske 'melubashim begadim' tyder 'kledde i klede/drakter', ikkje spesifikt 'kongeklede'. Ordet for kongeklede (bigdei malkhut) er ikkje brukt her. Å leggja til 'konge-' er ei tilføying som ikkje finst i grunnteksten."
       }
     ]
   },
@@ -87,7 +99,15 @@
     "bookId": 14,
     "chapterId": 18,
     "verseId": 12,
-    "text": "Bodberaren som gjekk for å henta Mikaja, sa til han: «Høyr, profetane lovar samstemt kongen godt. Lat no orda dine vera som orda deira, og tal godt!»"
+    "text": "Sendebodet som gjekk for å henta Mikaja, sa til han: «Høyr, profetane lovar samstemt kongen godt. Lat no orda dine vera som orda deira, og tal godt!»",
+    "versions": [
+      {
+        "text": "Bodberaren som gjekk for å henta Mikaja, sa til han: «Høyr, profetane lovar samstemt kongen godt. Lat no orda dine vera som orda deira, og tal godt!»",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "Det hebraiske 'hammalakh' tyder 'sendebod/bodberar'. 'Bodberaren' er forståeleg, men 'sendebodet' er meir vanleg og naturleg nynorsk i denne samanhengen."
+      }
+    ]
   },
   {
     "bookId": 14,
@@ -147,7 +167,15 @@
     "bookId": 14,
     "chapterId": 18,
     "verseId": 22,
-    "text": "Sjå, no har Herren lagt ei løgnånd i munnen på desse profetane dine, og Herren har fastsett ulukke over deg.»"
+    "text": "Sjå, no har Herren lagt ei løgnånd i munnen på desse profetane dine, og Herren har tala vondt om deg.»",
+    "versions": [
+      {
+        "text": "Sjå, no har Herren lagt ei løgnånd i munnen på desse profetane dine, og Herren har fastsett ulukke over deg.»",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "Det hebraiske 'dibber alekha ra'ah' tyder bokstavleg 'har tala vondt/ulukke over deg'. Verbet er 'dibber' (tala), ikkje eit ord som tyder 'fastsett'. 'Har tala vondt om deg' eller 'har varsla ulukke over deg' ville vera meir presist."
+      }
+    ]
   },
   {
     "bookId": 14,

@@ -3,11 +3,17 @@
     "bookId": 19,
     "chapterId": 62,
     "verseId": 1,
-    "text": "Til korleiaren. Etter Jedutun-melodien. Ein salme av David.",
+    "text": "Til kormeisteren. Etter Jedutun-melodien. Ein salme av David.",
     "versions": [
       {
         "text": "Til korleiaren. Etter Jedutun-visa. Ein salme av David.",
         "explanation": "עַל־יְדוּתוּן refererer truleg til ein melodi eller musikalsk tradisjon knytt til Jedutun, ein av tempelsongarane. 'Melodien' er meir presist enn 'visa' for denne overskriftstypen."
+      },
+      {
+        "text": "Til korleiaren. Etter Jedutun-melodien. Ein salme av David.",
+        "type": "grammar",
+        "severity": "minor",
+        "explanation": "'Korleiaren' er ikkje eit vanleg nynorsk ord. 'Kormeisteren' eller 'musikkmeisteren' er meir etablerte omsetjingar av לַמְנַצֵּחַ. 'Kormeisteren' er meir gjenkjenneleg og presist."
       }
     ]
   },
@@ -51,11 +57,17 @@
     "bookId": 19,
     "chapterId": 62,
     "verseId": 6,
-    "text": "Berre for Gud, ver still, mi sjel, for frå han kjem vona mi.",
+    "text": "Berre hos Gud, ver still, mi sjel, for frå han kjem vona mi.",
     "versions": [
       {
         "text": "Ver still for Gud, mi sjel, for frå han kjem vona mi.",
         "explanation": "Partikkelen אַךְ (berre/åleine) er viktig for parallellen med vers 2. Den noverande omsetjinga manglar dette nøkkelordet som understrekar eksklusiviteten i tilliten til Gud."
+      },
+      {
+        "text": "Berre for Gud, ver still, mi sjel, for frå han kjem vona mi.",
+        "type": "grammar",
+        "severity": "major",
+        "explanation": "Preposisjonen לֵאלֹהִים (til/for Gud) uttrykkjer retninga for stilla – sjela skal vera stille vendt mot Gud. 'Hos Gud' svarar betre til parallellen med vers 2 ('hos Gud finn sjela mi ro') og gjev betre meining på norsk. 'For Gud' kan tolkast som 'for Guds skuld' på norsk, noko som ikkje er meininga her."
       }
     ]
   },
@@ -69,11 +81,17 @@
     "bookId": 19,
     "chapterId": 62,
     "verseId": 8,
-    "text": "På Gud kviler frelsa mi og æra mi. Mi sterke klippe, mi tilflukt er i Gud.",
+    "text": "På Gud kviler frelsa mi og æra mi. Mi sterke klippe – mi tilflukt er i Gud.",
     "versions": [
       {
         "text": "Hos Gud er frelsa mi og æra mi. Mitt sterke berg, mi tilflukt er hos Gud.",
         "explanation": "עַל betyr 'på/kviler på' og viser avhengnad, ikkje berre lokalisering. צוּר־עֻזִּי ('mi sterke klippe') bør ha hankjønn/hokjønnsform konsekvent med det hebraiske."
+      },
+      {
+        "text": "På Gud kviler frelsa mi og æra mi. Mi sterke klippe, mi tilflukt er i Gud.",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "Ein tankestrek i staden for komma mellom 'Mi sterke klippe' og 'mi tilflukt er i Gud' gjev betre rytme og klarare struktur, sidan צוּר־עֻזִּי er ei eiga utsegn som leiar over til den avsluttande påstanden."
       }
     ]
   },
@@ -87,7 +105,15 @@
     "bookId": 19,
     "chapterId": 62,
     "verseId": 10,
-    "text": "Berre ein pust er vanlege folk, ei løgn er storfolk. På vekta stig dei opp, dei veg mindre enn ein pust til saman."
+    "text": "Berre ein pust er vanlege folk, ei løgn er storfolk. På vekta stig dei opp – dei veg mindre enn ein pust, alle til saman.",
+    "versions": [
+      {
+        "text": "Berre ein pust er vanlege folk, ei løgn er storfolk. På vekta stig dei opp, dei veg mindre enn ein pust til saman.",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "Det hebraiske יָחַד ('til saman') understrekar at alle menneske samla veg mindre enn ein pust. 'Alle til saman' gjev denne forsterkinga tydelegare enn berre 'til saman'. Ein tankestrek før den avsluttande frasen gjev betre rytme."
+      }
+    ]
   },
   {
     "bookId": 19,
@@ -117,6 +143,14 @@
     "bookId": 19,
     "chapterId": 62,
     "verseId": 13,
-    "text": "Og hos deg, Herre, er nåde, for du løner kvar mann etter gjerningane hans."
+    "text": "Og hos deg, Herre, er trufast kjærleik, for du løner kvar mann etter gjerningane hans.",
+    "versions": [
+      {
+        "text": "Og hos deg, Herre, er nåde, for du løner kvar mann etter gjerningane hans.",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "Det hebraiske חֶסֶד (hesed) er eit sentralt teologisk omgrep som tyder 'trufast kjærleik' eller 'miskunn i pakt' – meir enn berre generell 'nåde'. 'Trufast kjærleik' fangar betre paktsaspektet ved hesed, som er eit nøkkelord i Salmane."
+      }
+    ]
   }
 ]

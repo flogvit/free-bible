@@ -135,7 +135,15 @@
     "bookId": 42,
     "chapterId": 9,
     "verseId": 21,
-    "text": "Han tala strengt til dei og baud dei ikkje å seia dette til nokon."
+    "text": "Han tala strengt til dei og baud dei å ikkje seia dette til nokon.",
+    "versions": [
+      {
+        "text": "Han tala strengt til dei og baud dei ikkje å seia dette til nokon.",
+        "type": "grammar",
+        "severity": "major",
+        "explanation": "'Baud dei ikkje å seia' kan tolkast som at han ikkje baud dei, altså at han unnlét å gje eit påbod. Meininga i teksten er at han gav eit påbod om å ikkje seia dette. 'Baud dei å ikkje seia dette til nokon' gjer det klart at forbodet er innhaldet i påbodet."
+      }
+    ]
   },
   {
     "bookId": 42,
@@ -171,7 +179,15 @@
     "bookId": 42,
     "chapterId": 9,
     "verseId": 26,
-    "text": "For den som skjemmest ved meg og orda mine, han skal Menneskesonen skjemmast ved når han kjem i sin herlegdom og i herlegdomen til Far sin og dei heilage englane."
+    "text": "For den som skjemmest ved meg og orda mine, han skal Menneskesonen skjemmast ved når han kjem i sin herlegdom og i herlegdomen til Far og dei heilage englane.",
+    "versions": [
+      {
+        "text": "For den som skjemmest ved meg og orda mine, han skal Menneskesonen skjemmast ved når han kjem i sin herlegdom og i herlegdomen til Far sin og dei heilage englane.",
+        "type": "grammar",
+        "severity": "minor",
+        "explanation": "Det greske 'τοῦ πατρὸς' har ikkje noko possessivt pronomen ('αὐτοῦ'). Det tyder berre 'Faren', ikkje 'Far sin'. 'Far sin' kan vere akseptabelt som implisitt, men 'Far' åleine er meir presist. Dette er eit mindre punkt."
+      }
+    ]
   },
   {
     "bookId": 42,
@@ -255,7 +271,15 @@
     "bookId": 42,
     "chapterId": 9,
     "verseId": 38,
-    "text": "Og sjå, ein mann i folkehopen ropa: «Meister, eg bed deg, sjå til son min, for han er einbarnet mitt!"
+    "text": "Og sjå, ein mann i folkehopen ropa: «Meister, eg bed deg, sjå til son min, for han er det einaste barnet mitt!",
+    "versions": [
+      {
+        "text": "Og sjå, ein mann i folkehopen ropa: «Meister, eg bed deg, sjå til son min, for han er einbarnet mitt!",
+        "type": "grammar",
+        "severity": "minor",
+        "explanation": "'Einbarnet mitt' er ei uvanleg formulering på nynorsk. 'Det einaste barnet mitt' er meir naturleg og lettlese, og formidlar den same meininga av μονογενής."
+      }
+    ]
   },
   {
     "bookId": 42,
@@ -297,7 +321,15 @@
     "bookId": 42,
     "chapterId": 9,
     "verseId": 44,
-    "text": "«Lat desse orda søkka inn i øyra dykkar: Menneskesonen skal bli gjeven over i menneskehand.»"
+    "text": "«Lat desse orda søkka inn i øyra dykkar: Menneskesonen skal bli gjeven over i menneskehender.»",
+    "versions": [
+      {
+        "text": "«Lat desse orda søkka inn i øyra dykkar: Menneskesonen skal bli gjeven over i menneskehand.»",
+        "type": "grammar",
+        "severity": "minor",
+        "explanation": "Det greske 'χεῖρας' er fleirtal ('hender'). 'Menneskehand' (eintal) er ikkje direkte feil på norsk, men 'menneskehender' speglar fleirtalet i originalen betre."
+      }
+    ]
   },
   {
     "bookId": 42,
@@ -387,7 +419,15 @@
     "bookId": 42,
     "chapterId": 9,
     "verseId": 58,
-    "text": "Jesus sa til han: «Revane har hi, og fuglane under himmelen har reir, men Menneskesonen har ikkje ein stad der han kan kvila hovudet sitt.»"
+    "text": "Jesus sa til han: «Revane har hi, og fuglane under himmelen har reir, men Menneskesonen har ikkje ein stad der han kan leggja hovudet sitt.»",
+    "versions": [
+      {
+        "text": "Jesus sa til han: «Revane har hi, og fuglane under himmelen har reir, men Menneskesonen har ikkje ein stad der han kan kvila hovudet sitt.»",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "Det greske 'κλίνῃ' tyder 'leggja ned/bøya'. 'Kvila hovudet' er ei tolking som legg til ein nyanseforskjell. 'Leggja hovudet' er meir direkte og presist."
+      }
+    ]
   },
   {
     "bookId": 42,

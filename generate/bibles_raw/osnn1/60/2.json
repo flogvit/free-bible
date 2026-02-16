@@ -39,11 +39,17 @@
     "bookId": 60,
     "chapterId": 2,
     "verseId": 5,
-    "text": "Lat de òg, som levande steinar, byggjast opp til eit åndeleg hus, til eit heilagt presteskap, så de kan bera fram åndelege offer som er velkomne for Gud ved Jesus Kristus.",
+    "text": "Og lat de òg, som levande steinar, byggjast opp til eit åndeleg hus, til eit heilagt presteskap, så de kan bera fram åndelege offer som er velkomne for Gud ved Jesus Kristus.",
     "versions": [
       {
         "text": "Ver de òg som levande steinar som blir bygde opp til eit åndeleg hus, til eit heilagt presteskap, så de kan bera fram åndelege offer som er velkomne for Gud ved Jesus Kristus.",
         "explanation": "Det greske 'οἰκοδομεῖσθε' er passiv imperativ. 'Lat de byggjast opp' fangar betre denne passive forma enn 'Ver de som blir bygde opp'."
+      },
+      {
+        "text": "Lat de òg, som levande steinar, byggjast opp til eit åndeleg hus, til eit heilagt presteskap, så de kan bera fram åndelege offer som er velkomne for Gud ved Jesus Kristus.",
+        "type": "grammar",
+        "severity": "minor",
+        "explanation": "Det greske 'καὶ αὐτοὶ' startar med 'og' (καὶ), som knyter verset til det føregåande. Det kunne vore med, men dette er ein mindre detalj og den noverande versjonen er fullt akseptabel. Lat stå som det er om ein ikkje vil endra."
       }
     ]
   },
@@ -75,7 +81,15 @@
     "bookId": 60,
     "chapterId": 2,
     "verseId": 9,
-    "text": "Men de er ei utvald ætt, eit kongeleg presteskap, eit heilagt folk, eit folk som høyrer Gud til, så de skal forkynna hans storverk, han som kalla dykk frå mørker til sitt underfulle lys."
+    "text": "Men de er ei utvald ætt, eit kongeleg presteskap, eit heilagt folk, eit folk som høyrer Gud til, så de skal forkynna hans storverk, han som kalla dykk ut frå mørkret og inn i sitt underfulle lys.",
+    "versions": [
+      {
+        "text": "Men de er ei utvald ætt, eit kongeleg presteskap, eit heilagt folk, eit folk som høyrer Gud til, så de skal forkynna hans storverk, han som kalla dykk frå mørker til sitt underfulle lys.",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "Det greske 'ἐκ σκότους ... εἰς τὸ θαυμαστὸν αὐτοῦ φῶς' har ein tydeleg ἐκ...εἰς-struktur ('ut frå ... inn i'). Den noverande omsetjinga 'frå mørker til' er akseptabel men mister noko av den dynamiske rørsla. 'Mørkret' med bestemt form er òg betre sidan det er tale om ei bestemt tilstand."
+      }
+    ]
   },
   {
     "bookId": 60,
@@ -93,7 +107,15 @@
     "bookId": 60,
     "chapterId": 2,
     "verseId": 12,
-    "text": "Lat livsferda dykkar mellom heidningane vera god, så dei som baktallar dykk og kallar dykk ugjerningsmenn, kan sjå dei gode gjerningane dykkar og prisa Gud på gjestingsdagen."
+    "text": "Lat livsferda dykkar mellom heidningane vera god, så dei som baktallar dykk som ugjerningsmenn, kan sjå dei gode gjerningane dykkar og prisa Gud på gjestingsdagen.",
+    "versions": [
+      {
+        "text": "Lat livsferda dykkar mellom heidningane vera god, så dei som baktallar dykk og kallar dykk ugjerningsmenn, kan sjå dei gode gjerningane dykkar og prisa Gud på gjestingsdagen.",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "Det greske 'καταλαλοῦσιν ὑμῶν ὡς κακοποιῶν' tyder 'baktallar dykk som ugjerningsmenn' – det er éi handling (baktaling), ikkje to separate handlingar. 'Baktallar dykk og kallar dykk ugjerningsmenn' splittar dette opp unødvendig."
+      }
+    ]
   },
   {
     "bookId": 60,
@@ -111,7 +133,15 @@
     "bookId": 60,
     "chapterId": 2,
     "verseId": 15,
-    "text": "For det er Guds vilje at de ved å gjera godt skal få uvitande og uforstandige menneske til å teia."
+    "text": "For det er Guds vilje at de ved å gjera godt skal bringa dei uforstandige menneska sin vankunne til teiing.",
+    "versions": [
+      {
+        "text": "For det er Guds vilje at de ved å gjera godt skal få uvitande og uforstandige menneske til å teia.",
+        "type": "error",
+        "severity": "major",
+        "explanation": "Det greske teksten seier at ein skal 'kneble (φιμοῦν) uvitskapen (ἀγνωσίαν) til dei uforstandige (ἀφρόνων) menneska'. Det er uvitskapen som skal tiast, ikkje menneska sjølve. Dessutan er 'ἀφρόνων' (uforstandige) éi gruppe, og 'ἀγνωσίαν' (vankunne/uvitenheit) er objektet for φιμοῦν. Den noverande omsetjinga gjer 'uvitande' og 'uforstandige' til to adjektiv for same gruppe, men originalen har berre eitt adjektiv (uforstandige) og eitt substantiv (uvitenheit/vankunne)."
+      }
+    ]
   },
   {
     "bookId": 60,
@@ -147,7 +177,15 @@
     "bookId": 60,
     "chapterId": 2,
     "verseId": 19,
-    "text": "For det er nåde når nokon ber lidingar med urette fordi samvitet er bunde til Gud."
+    "text": "For det er nåde om nokon av samvit for Gud toler sorger og lid med urette.",
+    "versions": [
+      {
+        "text": "For det er nåde når nokon ber lidingar med urette fordi samvitet er bunde til Gud.",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "'διὰ συνείδησιν θεοῦ' tyder 'på grunn av/av samvit for Gud', ikkje 'fordi samvitet er bunde til Gud'. 'λύπας' tyder 'sorger/lidingar', og 'πάσχων ἀδίκως' tyder 'medan ein lid urettferdig'. Den noverande omsetjinga omskriv for mykje."
+      }
+    ]
   },
   {
     "bookId": 60,

@@ -39,7 +39,15 @@
     "bookId": 2,
     "chapterId": 3,
     "verseId": 7,
-    "text": "Herren sa: «Eg har sanneleg sett korleis folket mitt lid i Egypt. Eg har høyrt ropet deira over slavedrivarane, og eg kjenner smertene deira."
+    "text": "Herren sa: «Eg har sanneleg sett korleis folket mitt lid i Egypt. Eg har høyrt ropet deira på grunn av slavedrivarane, og eg kjenner smertene deira.",
+    "versions": [
+      {
+        "text": "Herren sa: «Eg har sanneleg sett korleis folket mitt lid i Egypt. Eg har høyrt ropet deira over slavedrivarane, og eg kjenner smertene deira.",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "The Hebrew מִפְּנֵי means 'because of' or 'on account of', not 'over'. 'På grunn av slavedrivarane' is more accurate than 'over slavedrivarane'."
+      }
+    ]
   },
   {
     "bookId": 2,
@@ -105,13 +113,29 @@
     "bookId": 2,
     "chapterId": 3,
     "verseId": 18,
-    "text": "Dei skal høyra på deg. Så skal du og dei eldste i Israel gå til kongen i Egypt og seia til han: Herren, hebrearguden, har møtt oss. Lat oss no fara tre dagsreiser ut i øydemarka og ofra til Herren, vår Gud."
+    "text": "Dei skal høyra på deg. Så skal du og dei eldste i Israel gå til kongen i Egypt og seia til han: Herren, Gud for hebrearane, har møtt oss. Lat oss no fara tre dagsreiser ut i øydemarka og ofra til Herren, vår Gud.",
+    "versions": [
+      {
+        "text": "Dei skal høyra på deg. Så skal du og dei eldste i Israel gå til kongen i Egypt og seia til han: Herren, hebrearguden, har møtt oss. Lat oss no fara tre dagsreiser ut i øydemarka og ofra til Herren, vår Gud.",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "'Hebrearguden' (the Hebrew god) sounds like it refers to a single ethnic deity. The Hebrew אֱלֹהֵי הָעִבְרִיִּים means 'God of the Hebrews' – better rendered as 'Gud for hebrearane' to convey the relational aspect correctly."
+      }
+    ]
   },
   {
     "bookId": 2,
     "chapterId": 3,
     "verseId": 19,
-    "text": "Men eg veit at kongen i Egypt ikkje vil lata dykk fara, ikkje eingong ved ei sterk hand."
+    "text": "Men eg veit at kongen i Egypt ikkje vil lata dykk fara utan ved ei sterk hand.",
+    "versions": [
+      {
+        "text": "Men eg veit at kongen i Egypt ikkje vil lata dykk fara, ikkje eingong ved ei sterk hand.",
+        "type": "error",
+        "severity": "major",
+        "explanation": "The Hebrew וְלֹא בְּיָד חֲזָקָה is commonly understood as 'not unless by a mighty hand' (i.e., he will not let you go except when compelled by force). The current translation 'ikkje eingong ved ei sterk hand' (not even by a strong hand) reverses the meaning. The correct sense is that only a mighty hand will compel Pharaoh to let them go."
+      }
+    ]
   },
   {
     "bookId": 2,

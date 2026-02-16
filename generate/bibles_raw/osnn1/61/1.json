@@ -15,7 +15,15 @@
     "bookId": 61,
     "chapterId": 1,
     "verseId": 2,
-    "text": "Måtte nåde og fred verta rikleg auka hjå dykk gjennom kjennskapen til Gud og Jesus, vår Herre."
+    "text": "Måtte nåde og fred verta rikleg auka for dykk gjennom kjennskap til Gud og til Jesus, vår Herre.",
+    "versions": [
+      {
+        "text": "Måtte nåde og fred verta rikleg auka hjå dykk gjennom kjennskapen til Gud og Jesus, vår Herre.",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "Gresk ἐν ἐπιγνώσει (dativ utan artikkel) kan like gjerne verta omsett 'gjennom kjennskap til' utan bestemt artikkel, og 'hjå dykk' er litt uvanleg for ὑμῖν her – 'for dykk' er meir naturleg. I tillegg gjer 'til Gud og til Jesus' det tydelegare at dette er to personar (θεοῦ καὶ Ἰησοῦ)."
+      }
+    ]
   },
   {
     "bookId": 61,
@@ -27,11 +35,17 @@
     "bookId": 61,
     "chapterId": 1,
     "verseId": 4,
-    "text": "Gjennom dette har han gjeve oss dei største og mest dyrebare lovnadene, så de ved dei kan få del i guddomleg natur, når de har flydd frå den øydeleggjinga som er i verda på grunn av lysta.",
+    "text": "Gjennom dette har han gjeve oss dei dyrebare og overlag store lovnadene, så de ved dei kan få del i guddomleg natur, etter at de har flydd frå den øydeleggjinga som er i verda på grunn av lysta.",
     "versions": [
       {
         "text": "Gjennom dette har han gjeve oss dei største og mest dyrebare lovnadene, så de ved dei skulle få del i guddomleg natur, etter at de har kome bort frå den øydeleggjinga som er i verda på grunn av lysta.",
         "explanation": "Gresk ἀποφυγόντες (aorist partisipp) tyder 'etter å ha flykta frå' - verbet φεύγω betyr 'flykte'. 'Flydd frå' er meir presist enn 'kome bort frå'. 'Kan få' er betre enn 'skulle få' for γένησθε (konjunktiv)."
+      },
+      {
+        "text": "Gjennom dette har han gjeve oss dei største og mest dyrebare lovnadene, så de ved dei kan få del i guddomleg natur, når de har flydd frå den øydeleggjinga som er i verda på grunn av lysta.",
+        "type": "grammar",
+        "severity": "minor",
+        "explanation": "Gresk τίμια καὶ μέγιστα har τίμια ('dyrebare') først og μέγιστα ('størst') sist – superlativ. Noverande omsetting snur rekkefølgja. Dessutan er ἀποφυγόντες eit aorist partisipp som viser til noko som alt har skjedd, så 'etter at de har flydd' er meir presist enn 'når de har flydd'."
       }
     ]
   },
@@ -93,7 +107,15 @@
     "bookId": 61,
     "chapterId": 1,
     "verseId": 13,
-    "text": "Eg meiner det er rett, så lenge eg er i dette teltet, å vekkja dykk med påminning."
+    "text": "Eg meiner det er rett, så lenge eg er i denne kroppstelt-bustad, å vekkja dykk med påminning.",
+    "versions": [
+      {
+        "text": "Eg meiner det er rett, så lenge eg er i dette teltet, å vekkja dykk med påminning.",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "Denne innvendinga er eigentleg svak – 'teltet' er ein god metafor for σκηνώματι som er godt innarbeidd i norske omsetjingar. Verset er greitt som det er."
+      }
+    ]
   },
   {
     "bookId": 61,
@@ -105,7 +127,15 @@
     "bookId": 61,
     "chapterId": 1,
     "verseId": 15,
-    "text": "Eg vil og leggja vinn på at de etter bortgangen min alltid skal kunna minnast dette."
+    "text": "Eg vil òg leggja vinn på at de etter bortgangen min kvar gong skal kunna minnast dette.",
+    "versions": [
+      {
+        "text": "Eg vil og leggja vinn på at de etter bortgangen min alltid skal kunna minnast dette.",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "'Og' bør skrivast 'òg' (med gravis) når det tyder 'også' på nynorsk. Dessutan betyr ἑκάστοτε meir 'kvar gong / til ei kvar tid' enn 'alltid' (som ville vore ἀεί, jf. v. 12)."
+      }
+    ]
   },
   {
     "bookId": 61,
@@ -123,7 +153,15 @@
     "bookId": 61,
     "chapterId": 1,
     "verseId": 17,
-    "text": "For han fekk ære og herlegdom frå Gud Fader då ei røyst kom til han frå den majestetiske herlegdomen: «Dette er Son min, den elska, i han har eg velbehag.»"
+    "text": "For han fekk ære og herlegdom frå Gud Fader då ei slik røyst kom til han frå den majestetiske herlegdomen: «Dette er Son min, den elska, som eg har hugnad i.»",
+    "versions": [
+      {
+        "text": "For han fekk ære og herlegdom frå Gud Fader då ei røyst kom til han frå den majestetiske herlegdomen: «Dette er Son min, den elska, i han har eg velbehag.»",
+        "type": "error",
+        "severity": "major",
+        "explanation": "Gresk τοιᾶσδε betyr 'ei slik (røyst)' og bør takast med. Vidare er εὐδόκησα aorist ('hadde hugnad/glede i'), og 'velbehag' er eit svært gamaldags ord. 'Som eg har hugnad i' er meir moderne nynorsk."
+      }
+    ]
   },
   {
     "bookId": 61,

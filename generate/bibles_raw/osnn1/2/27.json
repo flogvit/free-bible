@@ -9,7 +9,15 @@
     "bookId": 2,
     "chapterId": 27,
     "verseId": 2,
-    "text": "Du skal laga horn på dei fire hjørna. Horna skal vera i eitt med altaret, og du skal klå det med bronse."
+    "text": "Du skal laga horn på dei fire hjørna av altaret. Horna skal vera i eitt med det, og du skal kle det med bronse.",
+    "versions": [
+      {
+        "text": "Du skal laga horn på dei fire hjørna. Horna skal vera i eitt med altaret, og du skal klå det med bronse.",
+        "type": "grammar",
+        "severity": "minor",
+        "explanation": "'klå' er ikkje standard nynorsk for å dekkje med metall. 'kle' er meir korrekt. Dessutan bør det presiserast at hjørna høyrer til altaret (עַל אַרְבַּע פִּנֹּתָיו)."
+      }
+    ]
   },
   {
     "bookId": 2,
@@ -39,11 +47,17 @@
     "bookId": 2,
     "chapterId": 27,
     "verseId": 6,
-    "text": "Du skal laga berestenger til altaret, stenger av akasieved, og klå dei med bronse.",
+    "text": "Du skal laga berestenger til altaret, stenger av akasieved, og kle dei med bronse.",
     "versions": [
       {
         "text": "Du skal laga berестenger til altaret, stenger av akasieved, og klå dei med bronse.",
         "explanation": "Det er ein skrivefeil i ordet 'berестenger' - det ser ut til å vera ei blanding av kyrilliske og latinske bokstavar. Skal vera 'berestenger'."
+      },
+      {
+        "text": "Du skal laga berestenger til altaret, stenger av akasieved, og klå dei med bronse.",
+        "type": "grammar",
+        "severity": "minor",
+        "explanation": "Same som vers 2: 'klå' bør vera 'kle' for korrekt nynorsk."
       }
     ]
   },
@@ -75,7 +89,15 @@
     "bookId": 2,
     "chapterId": 27,
     "verseId": 10,
-    "text": "Der skal det vera tjue stolpar med tjue fotstykke av bronse. Krokane på stolpane og stengene mellom dei skal vera av sølv."
+    "text": "Det skal vera tjue stolpar med tjue fotstykke av bronse. Krokane på stolpane og tverrstengene mellom dei skal vera av sølv.",
+    "versions": [
+      {
+        "text": "Der skal det vera tjue stolpar med tjue fotstykke av bronse. Krokane på stolpane og stengene mellom dei skal vera av sølv.",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "'Der' er unødvendig og litt klønete som opning. Dessutan er חֲשֻׁקִים betre omsett som 'tverrstenger' for presisjon."
+      }
+    ]
   },
   {
     "bookId": 2,
@@ -93,7 +115,15 @@
     "bookId": 2,
     "chapterId": 27,
     "verseId": 12,
-    "text": "På vestsida skal føregarden ha omheng som er femti alner, med ti stolpar og ti fotstykke."
+    "text": "På vestsida av føregarden skal det vera omheng på femti alner, med ti stolpar og ti fotstykke.",
+    "versions": [
+      {
+        "text": "På vestsida skal føregarden ha omheng som er femti alner, med ti stolpar og ti fotstykke.",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "Formuleringa 'føregarden ha omheng som er femti alner' er litt klønete. 'omheng på femti alner' er meir naturleg og meir i tråd med stilen i dei andre versa."
+      }
+    ]
   },
   {
     "bookId": 2,
@@ -141,7 +171,15 @@
     "bookId": 2,
     "chapterId": 27,
     "verseId": 20,
-    "text": "Du skal påleggja israelittane å koma til deg med rein, pressa olivenolje til lysestaken, så lampa kan brenna heile tida."
+    "text": "Du skal påleggja israelittane å koma til deg med rein, pressa olivenolje til lyset, så ei lampe kan halda fram med å brenna støtt.",
+    "versions": [
+      {
+        "text": "Du skal påleggja israelittane å koma til deg med rein, pressa olivenolje til lysestaken, så lampa kan brenna heile tida.",
+        "type": "theological",
+        "severity": "minor",
+        "explanation": "Hebraisk לַמָּאוֹר tyder 'til lyset' (for belysning), ikkje spesifikt 'til lysestaken' (מְנוֹרָה). Dessutan er תָּמִיד ('støtt/alltid') betre gjengitt med 'støtt' på nynorsk, og 'halda fram med å brenna' gjev betre meining enn berre 'brenna heile tida'."
+      }
+    ]
   },
   {
     "bookId": 2,

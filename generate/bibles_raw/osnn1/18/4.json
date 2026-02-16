@@ -33,11 +33,17 @@
     "bookId": 18,
     "chapterId": 4,
     "verseId": 6,
-    "text": "Er ikkje gudsfrykta di din tryggleik, og von di den ulastelege vegen din?",
+    "text": "Er ikkje gudsfrykta di din tryggleik, og von di grunnlagd på din ulastelege vandel?",
     "versions": [
       {
         "text": "Er ikkje gudsfrykta di den tryggleik du har? Er ikkje von di den ulastelege vegen din?",
         "explanation": "Den hebraiske teksten har ein parallell struktur der 'gudsfrykta di' korresponderer med 'tryggleik' (כִּסְלָתֶךָ) og 'von di' med 'den ulastelege vegen din' (וְתֹם דְּרָכֶיךָ). Å binda saman til éi setning gjev betre flyt ved munnleg lesing og speglar originalen sin poetiske parallellisme."
+      },
+      {
+        "text": "Er ikkje gudsfrykta di din tryggleik, og von di den ulastelege vegen din?",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "The Hebrew תֹּם דְּרָכֶיךָ means 'the integrity/blamelessness of your ways' – it refers to the completeness/integrity of one's conduct (plural 'ways'), not a single 'way/path'. However, the current version was intentionally condensed from a previous two-sentence version, and the meaning is broadly conveyed. This is only a minor nuance issue; the current version is acceptable if brevity is prioritized."
       }
     ]
   },
@@ -57,7 +63,15 @@
     "bookId": 18,
     "chapterId": 4,
     "verseId": 9,
-    "text": "Av Guds ande går dei til grunne, og av hans vreidepust blir dei til inkjes."
+    "text": "Av Guds pust går dei til grunne, og av hans vreidepust blir dei til inkjes.",
+    "versions": [
+      {
+        "text": "Av Guds ande går dei til grunne, og av hans vreidepust blir dei til inkjes.",
+        "type": "error",
+        "severity": "major",
+        "explanation": "The Hebrew נִשְׁמַת אֱלוֹהַ means 'the breath of God' (referring to God's destructive breath/blast), not 'the Spirit of God' (which would be רוּחַ in a theological sense). Translating נְשָׁמָה as 'ande' (spirit) could give a misleading theological impression that the Holy Spirit destroys the wicked. 'Pust' (breath/blast) is more accurate and parallels 'vreidepust' in the second half of the verse."
+      }
+    ]
   },
   {
     "bookId": 18,
@@ -105,7 +119,15 @@
     "bookId": 18,
     "chapterId": 4,
     "verseId": 16,
-    "text": "Han stod der, men eg kjende ikkje att skapnaden hans. Ein skapnad var framfor augo mine. Det var stilt, så høyrde eg ei røyst:"
+    "text": "Han stod stille, men eg kjende ikkje att skapnaden hans. Ei skodesyn var framfor augo mine. Det var stilt, så høyrde eg ei røyst:",
+    "versions": [
+      {
+        "text": "Han stod der, men eg kjende ikkje att skapnaden hans. Ein skapnad var framfor augo mine. Det var stilt, så høyrde eg ei røyst:",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "The Hebrew תְּמוּנָה means 'form/image/likeness' – a vague apparition or visage, not necessarily the same 'skapnad' used to translate מַרְאֵהוּ earlier in the verse. Using the same word twice is slightly redundant. 'Skodesyn' (vision/apparition) distinguishes the two terms. Also, יַעֲמֹד can mean 'stood still' which adds to the eerie atmosphere."
+      }
+    ]
   },
   {
     "bookId": 18,
@@ -117,7 +139,15 @@
     "bookId": 18,
     "chapterId": 4,
     "verseId": 18,
-    "text": "Sjå, ikkje eingong tenarane sine lit han på, og englane sine klandrar han for feil."
+    "text": "Sjå, ikkje eingong tenarane sine lit han på, og på englane sine legg han skuld for vanvit.",
+    "versions": [
+      {
+        "text": "Sjå, ikkje eingong tenarane sine lit han på, og englane sine klandrar han for feil.",
+        "type": "error",
+        "severity": "major",
+        "explanation": "The Hebrew תָּהֳלָה is a rare word meaning 'error/folly/unsoundness' – God attributes folly or error to His angels. The current 'klandrar han for feil' (blames them for mistakes) is not terrible, but 'feil' is too mild. The point is that God finds even angels unreliable and charges them with folly/madness (תָּהֳלָה). Also the grammatical construction 'englane sine klandrar han for feil' is slightly awkward in nynorsk."
+      }
+    ]
   },
   {
     "bookId": 18,

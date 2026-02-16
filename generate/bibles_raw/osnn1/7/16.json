@@ -117,7 +117,15 @@
     "bookId": 7,
     "chapterId": 16,
     "verseId": 16,
-    "text": "Det hende at ho pressa han med orda sine dag etter dag og trengde seg på han, så han vart lei av livet til døden."
+    "text": "Det hende at ho pressa han med orda sine dag etter dag og trengde seg på han, så han vart dødsens lei av livet.",
+    "versions": [
+      {
+        "text": "Det hende at ho pressa han med orda sine dag etter dag og trengde seg på han, så han vart lei av livet til døden.",
+        "type": "grammar",
+        "severity": "minor",
+        "explanation": "Uttrykket 'lei av livet til døden' er noko klønete på nynorsk. 'Dødsens lei av livet' er meir idiomatisk og formidlar same meining – at sjela hans var utmatta til han ville døy."
+      }
+    ]
   },
   {
     "bookId": 7,
@@ -135,7 +143,15 @@
     "bookId": 7,
     "chapterId": 16,
     "verseId": 19,
-    "text": "Ho lét han sovna på fanget sitt, og ho kalla på ein mann og raka av dei sju hårflettene på hovudet hans. Så byrja ho å tvinga han, og styrken hans veik frå han."
+    "text": "Ho lét han sovna på fanget sitt og kalla på ein mann som raka av dei sju hårflettene på hovudet hans. Så byrja ho å tvinga han, og styrken hans veik frå han.",
+    "versions": [
+      {
+        "text": "Ho lét han sovna på fanget sitt, og ho kalla på ein mann og raka av dei sju hårflettene på hovudet hans. Så byrja ho å tvinga han, og styrken hans veik frå han.",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "I den hebraiske teksten er det mannen som rakar (ho kalla på ein mann for at han skulle raka). Slik den noverande teksten står, er det uklart kven som rakar. Det bør gjerast tydelegare at det var mannen ho kalla på som utførte rakinga."
+      }
+    ]
   },
   {
     "bookId": 7,
@@ -171,11 +187,17 @@
     "bookId": 7,
     "chapterId": 16,
     "verseId": 25,
-    "text": "Då dei var i godt humør, sa dei: «Hent Samson så han kan underhalda oss!» Dei henta Samson frå fengselet, og han underhaldna dei. Dei stilte han mellom søylene.",
+    "text": "Då dei var i godt humør, sa dei: «Hent Samson så han kan underhalda oss!» Dei henta Samson frå fengselet, og han underheldt dei. Dei stilte han mellom søylene.",
     "versions": [
       {
         "text": "Då dei var i godt humør, sa dei: «Hent Samson så han kan underhalda oss!» Dei henta Samson frå fengselet, og han underheld dei. Dei stilte han mellom søylene.",
         "explanation": "Verbet bør stå i fortid (preteritum) for å vera konsistent med resten av forteljinga. 'Underheld' er presens, medan 'underhaldna' eller 'underheldt' er preteritum."
+      },
+      {
+        "text": "Då dei var i godt humør, sa dei: «Hent Samson så han kan underhalda oss!» Dei henta Samson frå fengselet, og han underhaldna dei. Dei stilte han mellom søylene.",
+        "type": "grammar",
+        "severity": "minor",
+        "explanation": "'Underhaldna' er ikkje korrekt nynorsk preteritumsform. Rett preteritumsform av 'underhalda' er 'underheldt'. Merk at 'underheld' (presens) allereie vart retta bort, men den nye forma 'underhaldna' er heller ikkje korrekt bøying."
       }
     ]
   },
@@ -195,7 +217,15 @@
     "bookId": 7,
     "chapterId": 16,
     "verseId": 28,
-    "text": "Samson ropa til Herren og sa: «Herre Gud, kom meg i hug! Styrk meg, berre denne eine gongen, Gud, så eg kan hemna meg på filistrane for eitt av dei to augo mine.»"
+    "text": "Samson ropa til Herren og sa: «Herre Gud, kom meg i hug! Styrk meg, berre denne eine gongen, Gud, så eg kan ta éi hemn over filistrane for dei to augo mine.»",
+    "versions": [
+      {
+        "text": "Samson ropa til Herren og sa: «Herre Gud, kom meg i hug! Styrk meg, berre denne eine gongen, Gud, så eg kan hemna meg på filistrane for eitt av dei to augo mine.»",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "Det hebraiske נְקַם־אַחַת מִשְּׁתֵי עֵינַי betyr 'éi hemn for (begge) mine to auge', ikkje 'hemn for eitt av dei to augo mine'. Samson ber om éi samla hemn for tapet av begge augo, ikkje hemn for berre det eine auga."
+      }
+    ]
   },
   {
     "bookId": 7,

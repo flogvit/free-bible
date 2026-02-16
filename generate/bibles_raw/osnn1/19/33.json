@@ -81,7 +81,15 @@
     "bookId": 19,
     "chapterId": 33,
     "verseId": 10,
-    "text": "HERREN gjer planane til folkeslaga til inkjes, han hindrar tankane til folka."
+    "text": "HERREN gjer råda til folkeslaga til inkjes, han hindrar tankane til folka.",
+    "versions": [
+      {
+        "text": "HERREN gjer planane til folkeslaga til inkjes, han hindrar tankane til folka.",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "Det hebraiske עֲצַת (atsát) tyder meir 'råd/rådslaging' enn 'planar'. I vers 11 er same ord omsett med 'plan', men der er det Guds עֲצַת. For å skilje mellom menneskelege råd og Guds evige plan, og for å vere meir nøyaktig, bør ein bruke 'råda' her."
+      }
+    ]
   },
   {
     "bookId": 19,
@@ -147,11 +155,17 @@
     "bookId": 19,
     "chapterId": 33,
     "verseId": 19,
-    "text": "For å fria sjela deira frå døden og halda dei i live i hungertid.",
+    "text": "for å fria sjela deira frå døden og halda dei i live i hungertid.",
     "versions": [
       {
         "text": "for å fria sjela deira frå døden og halda dei i live i hungertid.",
         "explanation": "Verset startar med stor bokstav sidan det er ei ny setning i omsetjinga, sjølv om det grammatisk heng saman med vers 18."
+      },
+      {
+        "text": "For å fria sjela deira frå døden og halda dei i live i hungertid.",
+        "type": "grammar",
+        "severity": "minor",
+        "explanation": "Versjonshistorikken viser at endring til stor bokstav var gjort bevisst, men grammatisk heng verset saman med vers 18 som ein formålssetning (lamed + infinitiv). Stor forbokstav kan forvirre lesaren til å tru det er ei sjølvstendig setning, noko det ikkje er. Likevel, sidan dette allereie er blitt vurdert éin gong, kan det aksepterast. Dette er ei mindre merknad."
       }
     ]
   },

@@ -9,13 +9,29 @@
     "bookId": 44,
     "chapterId": 12,
     "verseId": 2,
-    "text": "Han lét Jakob, bror til Johannes, drapa med sverd."
+    "text": "Han lét drepa Jakob, bror til Johannes, med sverd.",
+    "versions": [
+      {
+        "text": "Han lét Jakob, bror til Johannes, drapa med sverd.",
+        "type": "grammar",
+        "severity": "minor",
+        "explanation": "Ordstillinga 'lét Jakob ... drapa' er uvanleg og litt uklar på nynorsk. Meir naturleg er 'lét drepa Jakob ... med sverd', der verbalet kjem saman."
+      }
+    ]
   },
   {
     "bookId": 44,
     "chapterId": 12,
     "verseId": 3,
-    "text": "Då han såg at dette var til hugnad for jødane, heldt han fram og greip også Peter. Det var i dei usyra brøds dagar."
+    "text": "Då han såg at dette var til hugnad for jødane, gjekk han vidare og greip også Peter. Det var i dei usyra brøds dagar.",
+    "versions": [
+      {
+        "text": "Då han såg at dette var til hugnad for jødane, heldt han fram og greip også Peter. Det var i dei usyra brøds dagar.",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "'heldt han fram og greip' kan gje inntrykk av at han heldt fram med noko pågåande. Det greske προσέθετο tyder 'han gjekk vidare med å' eller 'han tok seg føre i tillegg å'. 'Gjekk han vidare og greip' er litt meir presist."
+      }
+    ]
   },
   {
     "bookId": 44,
@@ -117,7 +133,15 @@
     "bookId": 44,
     "chapterId": 12,
     "verseId": 20,
-    "text": "Herodes var rasande på folket i Tyrus og Sidon. Men dei kom samla til han, og etter å ha vunne Blastus, kongens kammerherre, for seg, bad dei om fred, fordi landet deira fekk mat frå kongens land."
+    "text": "Herodes var rasande på folket i Tyrus og Sidon. Men dei kom samla til han, og etter å ha vunne Blastus, kongens kammerherre, for seg, bad dei om fred, fordi landet deira fekk forsyningar frå kongens land.",
+    "versions": [
+      {
+        "text": "Herodes var rasande på folket i Tyrus og Sidon. Men dei kom samla til han, og etter å ha vunne Blastus, kongens kammerherre, for seg, bad dei om fred, fordi landet deira fekk mat frå kongens land.",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "'Fekk mat' er ikkje gale, men τρέφεσθαι kan ha ein breiare tyding: 'vart forsørga/fekk forsyningar'. 'Forsyningar' dekkjer betre at det gjeld generell økonomisk avhengigheit, ikkje berre mat."
+      }
+    ]
   },
   {
     "bookId": 44,
@@ -147,6 +171,14 @@
     "bookId": 44,
     "chapterId": 12,
     "verseId": 25,
-    "text": "Barnabas og Saulus vende attende frå Jerusalem då dei hadde fullført tenesta si, og dei tok med seg Johannes, som vart kalla Markus."
+    "text": "Barnabas og Saulus vende attende til Jerusalem etter å ha fullført tenesta si, og dei tok med seg Johannes, som vart kalla Markus.",
+    "versions": [
+      {
+        "text": "Barnabas og Saulus vende attende frå Jerusalem då dei hadde fullført tenesta si, og dei tok med seg Johannes, som vart kalla Markus.",
+        "type": "error",
+        "severity": "major",
+        "explanation": "Det greske tekstvarianten som ligg til grunn har εἰς Ἰερουσαλήμ ('til Jerusalem'), ikkje 'frå Jerusalem'. Alternativt kan ein lesa ἐξ Ἰερουσαλήμ ('frå Jerusalem'), men hovudtekstvarianten her er εἰς. Uansett variant er retninga viktig: den mest vanlege lesemåten er at dei vende tilbake til Jerusalem (frå Antiokia, jf. Apg 11:29-30), eventuelt frå Jerusalem. Sidan den noverande oversettinga seier 'frå' men tekstvarianten i grunnteksten har εἰς, bør dette rettast til 'til'."
+      }
+    ]
   }
 ]

@@ -39,7 +39,15 @@
     "bookId": 24,
     "chapterId": 11,
     "verseId": 7,
-    "text": "For eg åtvara fedrene dykkar alvorleg den dagen eg førte dei opp frå Egypt og heilt til denne dag. Tidleg og seint åtvara eg dei og sa: Høyr på mi røyst!"
+    "text": "For eg åtvara fedrene dykkar alvorleg den dagen eg førte dei opp frå Egypt og heilt til denne dag. Gong etter gong åtvara eg dei og sa: Høyr på mi røyst!",
+    "versions": [
+      {
+        "text": "For eg åtvara fedrene dykkar alvorleg den dagen eg førte dei opp frå Egypt og heilt til denne dag. Tidleg og seint åtvara eg dei og sa: Høyr på mi røyst!",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "'הַשְׁכֵּם וְהָעֵד' er eit idiom som tyder 'igjen og igjen' eller 'gong etter gong', ikkje bokstavleg 'tidleg og seint'. Uttrykket viser til vedvarande, uavlateleg åtvaring. 'Gong etter gong' formidlar dette betre på nynorsk."
+      }
+    ]
   },
   {
     "bookId": 24,
@@ -87,7 +95,15 @@
     "bookId": 24,
     "chapterId": 11,
     "verseId": 15,
-    "text": "Kva har min elska å gjera i mitt hus? Ho har drive med vonde planar saman med mange. Heilagt kjøt går bort frå deg. Når ulukka kjem over deg, då jublar du!"
+    "text": "Kva har min elska å gjera i mitt hus når ho driv med vonde planar saman med mange? Kan heilagt kjøt avvenda det frå deg? Når ulukka di kjem, då jublar du!",
+    "versions": [
+      {
+        "text": "Kva har min elska å gjera i mitt hus? Ho har drive med vonde planar saman med mange. Heilagt kjøt går bort frå deg. Når ulukka kjem over deg, då jublar du!",
+        "type": "error",
+        "severity": "major",
+        "explanation": "Verset er svært vanskeleg å tolka, men den noverande omsetjinga deler det opp på ein måte som ikkje fangar samanhengen godt. Uttrykket 'עֲשׂוֹתָהּ הַמְזִמָּתָה הָרַבִּים' høyrer syntaktisk saman med det føregåande. Dessutan er 'וּבְשַׂר־קֹדֶשׁ יַעַבְרוּ מֵעָלָיִךְ' truleg eit retorisk spørsmål om heilagt kjøt kan avvenda straffa, ikkje berre ei utsegn om at det går bort. 'כִּי רָעָתֵכִי' betyr 'når ulukka di (kjem)', ikkje 'Når ulukka kjem over deg'."
+      }
+    ]
   },
   {
     "bookId": 24,
@@ -111,17 +127,31 @@
     "bookId": 24,
     "chapterId": 11,
     "verseId": 18,
-    "text": "Herren lét meg vita det, så eg fekk vita det. Då synte du meg gjerningane deira."
+    "text": "Herren lét meg vita, og eg fekk vita det. Då synte du meg gjerningane deira.",
+    "versions": [
+      {
+        "text": "Herren lét meg vita det, så eg fekk vita det. Då synte du meg gjerningane deira.",
+        "type": "error",
+        "severity": "major",
+        "explanation": "Formuleringa 'lét meg vita det, så eg fekk vita det' er litt klønete med 'det' gjenteke. Det hebraiske har ei enklare form: 'הוֹדִיעַנִי' (lét meg vita) og 'וָאֵדָעָה' (og eg fekk vita). Ei lita justering gjer det meir flytande."
+      }
+    ]
   },
   {
     "bookId": 24,
     "chapterId": 11,
     "verseId": 19,
-    "text": "Eg var som eit tamt lam som blir ført bort for å slaktast. Eg visste ikkje at dei hadde lagt planar mot meg: «Lat oss øydeleggja treet med sevja i det og hogga det bort frå dei levande sitt land, så namnet hans ikkje blir hugsa meir.»",
+    "text": "Eg var som eit tamt lam som blir ført bort for å slaktast. Eg visste ikkje at dei hadde lagt planar mot meg: «Lat oss øydeleggja treet med frukta i det og hogga det bort frå dei levande sitt land, så namnet hans ikkje blir hugsa meir.»",
     "versions": [
       {
         "text": "Eg var som eit spakt lam som blir ført bort for å slaktast. Eg visste ikkje at dei hadde lagt planar mot meg: «Lat oss øydeleggja treet med sevja i det og hogga det bort frå dei levande sitt land, så namnet hans ikkje blir hugsa meir.»",
         "explanation": "'אַלּ֖וּף' tyder 'tam' eller 'tilvent' (eit lam som stolar på menneske), ikkje 'spakt' (som kan tyda sky eller saktmodig). 'Tamt' gjev betre fram biletet av eit lam som ikkje anar faren fordi det er vant til menneske."
+      },
+      {
+        "text": "Eg var som eit tamt lam som blir ført bort for å slaktast. Eg visste ikkje at dei hadde lagt planar mot meg: «Lat oss øydeleggja treet med sevja i det og hogga det bort frå dei levande sitt land, så namnet hans ikkje blir hugsa meir.»",
+        "type": "error",
+        "severity": "minor",
+        "explanation": "Det hebraiske 'בְּלַחְמוֹ' tyder 'med brødet/maten/frukta', ikkje 'med sevja'. 'לֶחֶם' betyr 'brød' eller 'mat/føde'. Mange tolkar dette som 'lat oss øydeleggja treet med frukta i det', altså eit bilete på å drepa Jeremia medan han enno er i sin beste alder. 'Sevje' er ikkje ei korrekt attgjeving av 'לֶחֶם'."
       }
     ]
   },

@@ -87,7 +87,15 @@
     "bookId": 12,
     "chapterId": 14,
     "verseId": 13,
-    "text": "Joasj, kongen i Israel, tok Amasja, kongen i Juda, son til Joasj, son til Akasja, til fange ved Bet-Sjemesj. Så kom han til Jerusalem og reiv ned murane rundt byen frå Efraim-porten til Hjørneporten, eit stykke på fire hundre alner."
+    "text": "Joasj, kongen i Israel, tok Amasja, kongen i Juda, son til Joasj, son til Ahasja, til fange ved Bet-Sjemesj. Så kom han til Jerusalem og reiv ned murane rundt byen frå Efraim-porten til Hjørneporten, eit stykke på fire hundre alner.",
+    "versions": [
+      {
+        "text": "Joasj, kongen i Israel, tok Amasja, kongen i Juda, son til Joasj, son til Akasja, til fange ved Bet-Sjemesj. Så kom han til Jerusalem og reiv ned murane rundt byen frå Efraim-porten til Hjørneporten, eit stykke på fire hundre alner.",
+        "type": "error",
+        "severity": "major",
+        "explanation": "Det hebraiske namnet אֲחַזְיָהוּ bør transkriberast 'Ahasja' (ikkje 'Akasja') på nynorsk, i samsvar med vanleg norsk bibelnamntradisjon."
+      }
+    ]
   },
   {
     "bookId": 12,
@@ -177,11 +185,17 @@
     "bookId": 12,
     "chapterId": 14,
     "verseId": 26,
-    "text": "For HERREN såg at nauda til Israel var svært hard. Det fanst ingen att, korkje ufri eller fri, og ingen som kunne hjelpa Israel.",
+    "text": "For HERREN såg at nauda til Israel var svært bitter. Det fanst ingen att, korkje ufri eller fri, og ingen som kunne hjelpa Israel.",
     "versions": [
       {
         "text": "For Herren såg at nauda til Israel var svært hard. Det fanst ingen att, korkje ufri eller fri, og ingen som kunne hjelpa Israel.",
         "explanation": "For konsistens bør HERREN (יְהוָה) skrivast med store bokstavar som elles i teksten."
+      },
+      {
+        "text": "For HERREN såg at nauda til Israel var svært hard. Det fanst ingen att, korkje ufri eller fri, og ingen som kunne hjelpa Israel.",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "Det hebraiske מֹרֶה מְאֹד tyder 'bitter/beisk i svært stor grad'. Ordet 'hard' fungerer, men 'bitter' er meir presist og nærare det hebraiske uttrykket. Likevel er dette ein mindre sak og ikkje kritisk."
       }
     ]
   },
@@ -201,7 +215,15 @@
     "bookId": 12,
     "chapterId": 14,
     "verseId": 28,
-    "text": "Det som elles er å fortelja om Jeroboam, om alt han gjorde og storverka hans, korleis han stridde og korleis han vann attende Damaskus og Hamat for Juda i Israel, er det ikkje skrive i krønikeboka til kongane i Israel?"
+    "text": "Det som elles er å fortelja om Jeroboam, om alt han gjorde og storverka hans, korleis han stridde og korleis han vann attende Damaskus og Hamat til Juda i Israel, er det ikkje skrive i krønikeboka til kongane i Israel?",
+    "versions": [
+      {
+        "text": "Det som elles er å fortelja om Jeroboam, om alt han gjorde og storverka hans, korleis han stridde og korleis han vann attende Damaskus og Hamat for Juda i Israel, er det ikkje skrive i krønikeboka til kongane i Israel?",
+        "type": "theological",
+        "severity": "minor",
+        "explanation": "Uttrykket לִיהוּדָה בְּיִשְׂרָאֵל er vanskeleg, men 'for Juda' gjev inntrykk av at han gjorde det på vegner av Juda. Teksten seier han førte desse byane tilbake 'til Juda i Israel', dvs. at Damaskus og Hamat vart lagt under Juda-stammen (som del av Israels rike). 'Til Juda i Israel' er meir presist enn 'for Juda i Israel'."
+      }
+    ]
   },
   {
     "bookId": 12,

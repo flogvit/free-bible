@@ -9,11 +9,17 @@
     "bookId": 1,
     "chapterId": 37,
     "verseId": 2,
-    "text": "Dette er soga om Jakob si ætt. Josef var sytten år gammal og gjette småfeet saman med brørne sine, sønene til Bilha og Silpa, konene til far hans. Han var endå ung. Og Josef kom til far sin med vondt rykte om dei.",
+    "text": "Dette er soga om Jakob si ætt. Josef var sytten år gammal og gjette småfeet saman med brørne sine. Han var endå ein ungdom, og var saman med sønene til Bilha og Silpa, konene til far hans. Og Josef kom til far sin med vondt rykte om dei.",
     "versions": [
       {
         "text": "Dette er soga om Jakob si ætt. Josef var sytten år gammal og gjette småfeet saman med brørne sine. Han var tenargut hos sønene til Bilha og Silpa, konene til far hans. Og Josef kom til far sin med vondt rykte om dei.",
         "explanation": "Det hebraiske נַעַר (na'ar) betyr 'ung gut/ungdom', ikkje 'tenargut'. Teksten seier at Josef var ung og gjette saman med sønene til Bilha og Silpa, ikkje at han var tenar hos dei. Dette er ei viktig nyanse - Josef var likestilt bror, ikkje tenar."
+      },
+      {
+        "text": "Dette er soga om Jakob si ætt. Josef var sytten år gammal og gjette småfeet saman med brørne sine, sønene til Bilha og Silpa, konene til far hans. Han var endå ung. Og Josef kom til far sin med vondt rykte om dei.",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "Setninga 'Han var endå ung' kjem litt brått og er fråkopla konteksten. I hebraisk står נַעַר ('ung gut/ungdom') tettare knytt til at han var saman med sønene til Bilha og Silpa. Men sidan dette verset allereie har éin revisjon med ein tydeleg grunn, er dette berre eit mindre forslag."
       }
     ]
   },
@@ -75,11 +81,17 @@
     "bookId": 1,
     "chapterId": 37,
     "verseId": 11,
-    "text": "Brørne hans var sjalu på han, men far hans heldt fast ved saka.",
+    "text": "Brørne hans var sjalu på han, men far hans gøymde saka i minnet.",
     "versions": [
       {
         "text": "Brørne hans var sjalu på han, men far hans gøymde orda i hjarta sitt.",
         "explanation": "Det hebraiske שָׁמַר אֶת־הַדָּבָר betyr 'vakta/heldt fast ved saka/ordet' - at han tenkte over det og venta på utfallet. 'Gøymde orda i hjarta sitt' er ei tolking som ikkje heilt fangar det hebraiske uttrykket. Jakob venta spent på kva draumane kunne bety."
+      },
+      {
+        "text": "Brørne hans var sjalu på han, men far hans heldt fast ved saka.",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "'Heldt fast ved saka' kan høyrast ut som at Jakob heldt fast ved ei bestemt meining. Det hebraiske שָׁמַר אֶת־הַדָּבָר betyr at han 'vakta/tok vare på saka' i tankane - altså hugsa og tenkte over det (jf. Luk 2:19). Men dette verset har allereie éin revisjon, så dette er berre eit mindre forslag."
       }
     ]
   },
@@ -171,7 +183,15 @@
     "bookId": 1,
     "chapterId": 37,
     "verseId": 25,
-    "text": "Så sette dei seg til å eta. Då dei såg opp, fekk dei auge på ei karavane av ismaelittar som kom frå Gilead. Kamelane deira bar krydder, balsam og ladanum på veg ned til Egypt."
+    "text": "Så sette dei seg til å eta. Då dei såg opp, fekk dei auge på ei karavane av ismaelittar som kom frå Gilead. Kamelane deira bar krydder, balsam og ladanum, og dei var på veg ned til Egypt.",
+    "versions": [
+      {
+        "text": "Så sette dei seg til å eta. Då dei såg opp, fekk dei auge på ei karavane av ismaelittar som kom frå Gilead. Kamelane deira bar krydder, balsam og ladanum på veg ned til Egypt.",
+        "type": "grammar",
+        "severity": "minor",
+        "explanation": "'på veg ned til Egypt' heng syntaktisk på kamelane som ber varene, men det er karavanen/ismaelittane som er på veg til Egypt (הוֹלְכִים). Ei lita omformulering gjer setninga klarare."
+      }
+    ]
   },
   {
     "bookId": 1,
@@ -231,7 +251,15 @@
     "bookId": 1,
     "chapterId": 37,
     "verseId": 33,
-    "text": "Han kjende han att og sa: «Det er kjortelen til son min! Eit villdyr har ete han opp! Josef er sønderriven!»"
+    "text": "Han kjende han att og sa: «Det er kjortelen til son min! Eit villdyr har ete han opp! Josef er riven i bitar!»",
+    "versions": [
+      {
+        "text": "Han kjende han att og sa: «Det er kjortelen til son min! Eit villdyr har ete han opp! Josef er sønderriven!»",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "'Sønderriven' er eit gamaldags ord som ikkje passar godt i ein moderne og lettlesen omsetjing. 'Riven i bitar' er meir naturleg nynorsk og formidlar det same kraftige biletet frå det hebraiske טָרֹף טֹרַף (infinitivus absolutus som forsterkar verbet)."
+      }
+    ]
   },
   {
     "bookId": 1,

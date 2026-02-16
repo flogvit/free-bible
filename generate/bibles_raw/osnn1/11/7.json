@@ -33,13 +33,29 @@
     "bookId": 11,
     "chapterId": 7,
     "verseId": 6,
-    "text": "Han laga søylehallen, femti alnar lang og tretti alnar brei. Framfor han var det ein forhall med søyler og eit tak over dei."
+    "text": "Han laga søylehallen, femti alnar lang og tretti alnar brei. Framfor henne var det ein forhall med søyler og eit tak over dei.",
+    "versions": [
+      {
+        "text": "Han laga søylehallen, femti alnar lang og tretti alnar brei. Framfor han var det ein forhall med søyler og eit tak over dei.",
+        "type": "grammar",
+        "severity": "minor",
+        "explanation": "'Han' er brukt som pronomen for 'søylehallen', men 'hall' er hokjønn på nynorsk og bør refererast til med 'henne'."
+      }
+    ]
   },
   {
     "bookId": 11,
     "chapterId": 7,
     "verseId": 7,
-    "text": "Han laga tronhallen der han skulle døma, domshallen, og han kledde han med sedertre frå golv til golv."
+    "text": "Han laga tronhallen der han skulle døma, domshallen, og han kledde henne med sedertre frå golv til tak.",
+    "versions": [
+      {
+        "text": "Han laga tronhallen der han skulle døma, domshallen, og han kledde han med sedertre frå golv til golv.",
+        "type": "error",
+        "severity": "major",
+        "explanation": "Det hebraiske 'מֵהַקַּרְקַע עַד־הַקַּרְקָע' er vanlegvis forstått som 'frå golv til tak' (taket som eit anna golv/flate). 'Frå golv til golv' gjev ikkje god meining på norsk. I tillegg bør pronomenet vera 'henne' sidan 'hallen' er hokjønn."
+      }
+    ]
   },
   {
     "bookId": 11,
@@ -111,7 +127,15 @@
     "bookId": 11,
     "chapterId": 7,
     "verseId": 18,
-    "text": "Han laga søylene med to rader rundt det eine nettverket til å dekkja søylehovuda som var på toppen av granatepla. Det same gjorde han med det andre søylehovudet."
+    "text": "Han laga søylene med to rader granateple rundt det eine nettverket til å dekkja søylehovuda som var på toppen. Det same gjorde han med det andre søylehovudet.",
+    "versions": [
+      {
+        "text": "Han laga søylene med to rader rundt det eine nettverket til å dekkja søylehovuda som var på toppen av granatepla. Det same gjorde han med det andre søylehovudet.",
+        "type": "error",
+        "severity": "major",
+        "explanation": "Teksten fortel at det var rader med granateple (רִמֹּנִים) rundt nettverket for å dekkja søylehovuda. Ordet 'granateple' manglar i omtalen av radene, og formuleringa 'på toppen av granatepla' er misvisande – det er søylehovuda som skal dekkjast, ikkje at dei er på toppen av granatepla."
+      }
+    ]
   },
   {
     "bookId": 11,
@@ -141,7 +165,15 @@
     "bookId": 11,
     "chapterId": 7,
     "verseId": 23,
-    "text": "Han laga havet av støypt metall, ti alnar frå kant til kant, rundt i forma, fem alnar høgt, og eit band på tretti alnar gjekk rundt det."
+    "text": "Han laga havet av støypt metall, ti alnar frå kant til kant, rundt i forma, fem alnar høgt, og ei snor på tretti alnar gjekk rundt det.",
+    "versions": [
+      {
+        "text": "Han laga havet av støypt metall, ti alnar frå kant til kant, rundt i forma, fem alnar høgt, og eit band på tretti alnar gjekk rundt det.",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "Det hebraiske 'קָו' tyder 'snor/line/målesnor', ikkje 'band'. Ei målesnor på tretti alnar skildrar omkrinsen, som stemmer matematisk med ein diameter på ti alnar."
+      }
+    ]
   },
   {
     "bookId": 11,
@@ -297,13 +329,29 @@
     "bookId": 11,
     "chapterId": 7,
     "verseId": 49,
-    "text": "lysestakane, fem på høgre sida og fem på venstre sida framfor det inste rommet, av reint gull, og blomane, lampene og ljossakene av gull,"
+    "text": "lysestakane, fem på høgre sida og fem på venstre sida framfor det inste rommet, av reint gull, og blomane, lampene og tangene av gull.",
+    "versions": [
+      {
+        "text": "lysestakane, fem på høgre sida og fem på venstre sida framfor det inste rommet, av reint gull, og blomane, lampene og ljossakene av gull,",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "Det hebraiske 'מֶלְקָחַיִם' tyder 'tenger/klypetenger' – eit verktøy for å handtera vekene eller glør. 'Ljossakser' vert brukt om 'מְזַמְּרוֹת' i v. 50. Her bør ein skilja mellom dei to ulike reiskapane."
+      }
+    ]
   },
   {
     "bookId": 11,
     "chapterId": 7,
     "verseId": 50,
-    "text": "fatene, knivane, skålene, bolla og glopannene av reint gull, og hengslene til dørene i det indre rommet, Det høgheilage, og til dørene i tempelhallen, av gull."
+    "text": "fatene, ljossakene, skålene, bollene og glopannene av reint gull, og hengslene til dørene i det indre rommet, Det høgheilage, og til dørene i tempelhallen, av gull.",
+    "versions": [
+      {
+        "text": "fatene, knivane, skålene, bolla og glopannene av reint gull, og hengslene til dørene i det indre rommet, Det høgheilage, og til dørene i tempelhallen, av gull.",
+        "type": "error",
+        "severity": "major",
+        "explanation": "Det hebraiske 'מְזַמְּרוֹת' tyder 'ljossakser/veketenger' (instrument for å trimma lampeveken), ikkje 'knivar'. Ordet 'knivane' er ei feiltolking. I tillegg er 'כַּפּוֹת' omsett med 'bolla' (eintal), men det er fleirtal og bør vera 'bollene'."
+      }
+    ]
   },
   {
     "bookId": 11,

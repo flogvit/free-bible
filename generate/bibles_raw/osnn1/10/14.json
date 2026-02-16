@@ -27,7 +27,15 @@
     "bookId": 10,
     "chapterId": 14,
     "verseId": 4,
-    "text": "Kvinna frå Tekoa sa til kongen, og ho fall ned med andletet mot jorda og bøygde seg. Ho sa: «Hjelp meg, konge!»"
+    "text": "Kvinna frå Tekoa kom til kongen og fall ned med andletet mot jorda og bøygde seg. Ho sa: «Hjelp meg, konge!»",
+    "versions": [
+      {
+        "text": "Kvinna frå Tekoa sa til kongen, og ho fall ned med andletet mot jorda og bøygde seg. Ho sa: «Hjelp meg, konge!»",
+        "type": "grammar",
+        "severity": "minor",
+        "explanation": "Den hebraiske teksten brukar ותאמר ... אל המלך ikkje som 'sa til kongen' her, men snarare som 'vende seg til kongen'. Ho talar ikkje to gonger – det er først fallet og bøyinga, så talen. 'sa til kongen, og ho fall ned' er noko klønete; teksten skildrar at ho kom fram for kongen og fall ned."
+      }
+    ]
   },
   {
     "bookId": 10,
@@ -93,11 +101,17 @@
     "bookId": 10,
     "chapterId": 14,
     "verseId": 14,
-    "text": "Vi må alle døy og er som vatn som renn ut på jorda og ikkje kan samlast opp att. Gud tek ikkje berre livet, men tenkjer ut måtar så den som er driven bort, ikkje skal vera bortstøytt frå han for alltid.»",
+    "text": "Vi må alle døy og er som vatn som renn ut på jorda og ikkje kan samlast opp att. Men Gud tek ikkje eit liv utan vidare, han tenkjer ut måtar så den som er driven bort, ikkje skal vera bortstøytt frå han for alltid.»",
     "versions": [
       {
         "text": "Vi må alle døy og er som vatn som renn ut på jorda og ikkje kan samlast opp att. Men Gud tek ikkje livet, han tenkjer ut måtar så den som er driven bort, ikkje skal vera bortstøytt frå han for alltid.»",
         "explanation": "Den hebraiske teksten 'לֹֽא־יִשָּׂ֤א אֱלֹהִים֙ נֶ֔פֶשׁ' er vanskeleg, men tydinga er truleg at Gud ikkje berre tek livet (som menneske gjer), men også planlegg for forsoning. Oversettinga 'Gud tek ikkje livet' er misvisande og gjer teksten uklar."
+      },
+      {
+        "text": "Vi må alle døy og er som vatn som renn ut på jorda og ikkje kan samlast opp att. Gud tek ikkje berre livet, men tenkjer ut måtar så den som er driven bort, ikkje skal vera bortstøytt frå han for alltid.»",
+        "type": "theological",
+        "severity": "major",
+        "explanation": "Den noverande formuleringa 'Gud tek ikkje berre livet' er tvetydig og kan lesast som 'Gud tek ikkje einast livet'. Den hebraiske teksten seier at Gud ikkje (berre) tek livet (som straffehandling), men planlegg forsoning. Formuleringa 'tek ikkje eit liv utan vidare' formidlar betre at Gud ikkje er hastig til å straffe, men søkjer vegar til forsoning. Dette er ulikt den tidlegare versjonen som brukte 'Men Gud tek ikkje livet'."
       }
     ]
   },
@@ -171,7 +185,15 @@
     "bookId": 10,
     "chapterId": 14,
     "verseId": 25,
-    "text": "I heile Israel fanst det ingen så vakker som Absalom, ingen som vart så lovprisa. Frå fotsole til hovud var det ikkje ein lyte på han."
+    "text": "I heile Israel fanst det ingen mann så vakker som Absalom, og han vart storleg lovprisa. Frå fotsole til hovud var det ikkje ein lyte på han.",
+    "versions": [
+      {
+        "text": "I heile Israel fanst det ingen så vakker som Absalom, ingen som vart så lovprisa. Frå fotsole til hovud var det ikkje ein lyte på han.",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "Det hebraiske איש־יפה tyder 'vakker mann', og לְהַלֵּל מְאֹד tyder 'å prisa storleg' – det er ei skildring av korleis Absalom vart omtala, ikkje ein implisitt samanlikning med andre i lovprising. 'ingen som vart så lovprisa' endrar nyanseringa noko."
+      }
+    ]
   },
   {
     "bookId": 10,
@@ -201,7 +223,15 @@
     "bookId": 10,
     "chapterId": 14,
     "verseId": 30,
-    "text": "Då sa han til tenarane sine: «Sjå, Joab har ein åker ved sida av min, og der har han bygg. Gå og sett fyr på han!» Tenarane til Absalom sette fyr på åkeren."
+    "text": "Då sa han til tenarane sine: «Sjå, Joab har eit jordstykke ved sida av mitt, og der har han bygg. Gå og sett fyr på det!» Tenarane til Absalom sette fyr på jordstykket.",
+    "versions": [
+      {
+        "text": "Då sa han til tenarane sine: «Sjå, Joab har ein åker ved sida av min, og der har han bygg. Gå og sett fyr på han!» Tenarane til Absalom sette fyr på åkeren.",
+        "type": "error",
+        "severity": "minor",
+        "explanation": "Det hebraiske חֶלְקָה tyder 'jordstykke/teig', ikkje nødvendigvis 'åker'. Seinare i v. 31 vert det òg brukt חֶלְקָה. Dessutan bør det heita 'sett fyr på det' (jordstykket) og ikkje 'sett fyr på han' (som kan visa til Joab)."
+      }
+    ]
   },
   {
     "bookId": 10,

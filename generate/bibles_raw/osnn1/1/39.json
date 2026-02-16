@@ -15,11 +15,17 @@
     "bookId": 1,
     "chapterId": 39,
     "verseId": 3,
-    "text": "Herren hans såg at Herren var med han, og at Herren lét alt det han gjorde, lukkast.",
+    "text": "Husbonden hans såg at Herren var med han, og at Herren lét alt det han gjorde, lukkast.",
     "versions": [
       {
         "text": "Herren hans såg at Herren var med han, og at Herren lét alt han gjorde, lukkast.",
         "explanation": "For betre flyt på nynorsk bør det heite 'alt det han gjorde' i staden for 'alt han gjorde' i denne samanhengen."
+      },
+      {
+        "text": "Herren hans såg at Herren var med han, og at Herren lét alt det han gjorde, lukkast.",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "The word 'אֲדֹנָיו' (adonav) means 'his master/lord'. Using 'Herren hans' for the master and 'Herren' for YHWH in the same sentence is confusing. Throughout the chapter, 'אֲדֹנָיו' refers to Potiphar. Using 'Husbonden' or similar would disambiguate from 'Herren' (YHWH). This same ambiguity appears in other verses too, but verse 3 is the most problematic since both appear in the same sentence."
       }
     ]
   },
@@ -81,7 +87,15 @@
     "bookId": 1,
     "chapterId": 39,
     "verseId": 10,
-    "text": "Ho snakka til Josef dag etter dag, men han høyrde ikkje på henne og ville ikkje liggja med henne eller vera saman med henne."
+    "text": "Ho snakka til Josef dag etter dag, men han høyrde ikkje på henne, korkje om å liggja med henne eller å vera saman med henne.",
+    "versions": [
+      {
+        "text": "Ho snakka til Josef dag etter dag, men han høyrde ikkje på henne og ville ikkje liggja med henne eller vera saman med henne.",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "The Hebrew 'לִשְׁכַּב אֶצְלָהּ לִהְיוֹת עִמָּהּ' specifies what he would not listen to her about — lying with her or being with her. The current translation with 'ville ikkje' (would not) shifts the meaning slightly by making it about Josef's will rather than his refusal to listen to her requests. A more accurate rendering would connect 'høyrde ikkje på henne' directly to the two infinitives."
+      }
+    ]
   },
   {
     "bookId": 1,
@@ -135,7 +149,15 @@
     "bookId": 1,
     "chapterId": 39,
     "verseId": 17,
-    "text": "Så fortalde ho han det same og sa: «Den hebraiske slaven som du henta til oss, kom inn til meg for å driva gjøn med meg."
+    "text": "Så fortalde ho han det same og sa: «Den hebraiske slaven som du har henta til oss, kom inn til meg for å driva gjøn med meg.",
+    "versions": [
+      {
+        "text": "Så fortalde ho han det same og sa: «Den hebraiske slaven som du henta til oss, kom inn til meg for å driva gjøn med meg.",
+        "type": "error",
+        "severity": "minor",
+        "explanation": "The Hebrew 'הֵבֵאתָ' (heveta) is a perfect tense, which in this context of direct speech refers to a past action with present relevance — 'som du har henta'. The current 'du henta' (simple past) misses the accusatory tone of 'you have brought' directed at her husband, implying ongoing responsibility."
+      }
+    ]
   },
   {
     "bookId": 1,

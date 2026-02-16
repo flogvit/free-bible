@@ -39,7 +39,15 @@
     "bookId": 19,
     "chapterId": 20,
     "verseId": 6,
-    "text": "Då skal vi jubla over frelsa di og lyfte fanene i vår Guds namn. Måtte Herren oppfylla alle bønene dine!"
+    "text": "Vi vil jubla over frelsa di og lyfte fanene i vår Guds namn. Måtte Herren oppfylla alle bønene dine!",
+    "versions": [
+      {
+        "text": "Då skal vi jubla over frelsa di og lyfte fanene i vår Guds namn. Måtte Herren oppfylla alle bønene dine!",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "Det hebraiske נְרַנְּנָה er ein kohortatív (lat oss jubla / vi vil jubla), ikkje ein framtidsform med 'då'. 'Då' legg til ein kondisjonell nyanse som ikkje finst i originalen. 'Vi vil jubla' gjev betre att den voluntative tydinga."
+      }
+    ]
   },
   {
     "bookId": 19,
@@ -63,17 +71,31 @@
     "bookId": 19,
     "chapterId": 20,
     "verseId": 9,
-    "text": "Dei snublar og fell, men vi reiser oss og står støtt."
+    "text": "Dei knela og fall, men vi reiste oss og stod støtt.",
+    "versions": [
+      {
+        "text": "Dei snublar og fell, men vi reiser oss og står støtt.",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "Det hebraiske כָּרְעוּ (kara') tyder 'knela/bøygde seg' heller enn 'snublar'. Orda er dessutan i perfektum (fortid), ikkje presens. Omsetjinga bør reflektera både den rette tydinga og den rette tidsforma."
+      }
+    ]
   },
   {
     "bookId": 19,
     "chapterId": 20,
     "verseId": 10,
-    "text": "Herre, frels! Måtte kongen svara oss den dagen vi ropar!",
+    "text": "Herre, frels! Måtte kongen svara oss den dagen vi ropar til han!",
     "versions": [
       {
         "text": "Herre, frels! Svar oss, du konge, den dagen vi ropar!",
         "explanation": "Det hebraiske har 'kongen' (הַמֶּלֶךְ) som subjekt med jussiv-form 'יַעֲנֵנוּ' (måtte han svara). Noverande omsetjing gjer 'konge' til tiltale ('du konge'), men det er meir truleg ei bøn om at Gud som konge skal svara. Alternativt kan ein tolka det som parallellisme der Herren = kongen."
+      },
+      {
+        "text": "Herre, frels! Måtte kongen svara oss den dagen vi ropar!",
+        "type": "error",
+        "severity": "major",
+        "explanation": "Det hebraiske בְיוֹם־קָרְאֵנוּ tyder 'den dagen vi ropar (til han)'. Noverande omsetjing er akseptabel, men å leggja til 'til han' gjer det tydelegare at det er ei bøn retta mot Gud. Likevel er dette ei mindre sak sidan rettinga i versjonshistorikken allereie adresserte hovudproblemet."
       }
     ]
   }

@@ -9,11 +9,17 @@
     "bookId": 11,
     "chapterId": 1,
     "verseId": 2,
-    "text": "Då sa tenarane hans til han: «Lat oss finna ei ung jomfru til herren vår, kongen. Ho kan stå framfor kongen og stella han, og liggja i fanget ditt, så herren vår, kongen, kan bli varm.»",
+    "text": "Då sa tenarane hans til han: «Lat dei finna ei ung jomfru til herren vår, kongen. Ho kan stå framfor kongen og stella han, og liggja i fanget ditt, så herren vår, kongen, kan bli varm.»",
     "versions": [
       {
         "text": "Då sa tenarane hans til han: «Lat oss finna ei ung jomfru til herren min, kongen. Ho kan stå framfor kongen og stella han, og liggja i fanget ditt, så herren min, kongen, kan bli varm.»",
         "explanation": "Tenarane talar om kongen i tredje person til kongen sjølv, så 'herren vår' (לַאדֹנִי) er meir naturleg enn 'herren min' når fleire tenarar talar saman."
+      },
+      {
+        "text": "Då sa tenarane hans til han: «Lat oss finna ei ung jomfru til herren vår, kongen. Ho kan stå framfor kongen og stella han, og liggja i fanget ditt, så herren vår, kongen, kan bli varm.»",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "Det hebraiske יְבַקְשׁ֞וּ er ein jussiv i tredje person fleirtal: 'lat dei leita' / 'lat dei finna'. Tenarane foreslår at det skal leitast (andre skal leita), ikkje at dei sjølve nødvendigvis skal gjera det. 'Lat oss finna' gjev inntrykk av at tenarane sjølve aktivt skal leita, mens 'lat dei finna' er nærmare originalen."
       }
     ]
   },
@@ -27,13 +33,29 @@
     "bookId": 11,
     "chapterId": 1,
     "verseId": 4,
-    "text": "Den unge jenta var svært vakker. Ho vart pleiar for kongen og tente han, men kongen hadde ikkje samlege med henne."
+    "text": "Den unge jenta var svært vakker. Ho vart pleiar for kongen og tente han, men kongen hadde ikkje samleie med henne.",
+    "versions": [
+      {
+        "text": "Den unge jenta var svært vakker. Ho vart pleiar for kongen og tente han, men kongen hadde ikkje samlege med henne.",
+        "type": "grammar",
+        "severity": "minor",
+        "explanation": "Skrivefeil: 'samlege' skal vera 'samleie'."
+      }
+    ]
   },
   {
     "bookId": 11,
     "chapterId": 1,
     "verseId": 5,
-    "text": "Adonja, son til Haggit, sette seg sjølv opp og sa: «Eg vil vera konge!» Han skaffa seg vogn og hestar og femti mann som sprang framfor han."
+    "text": "Adonja, son til Haggit, opphøgde seg sjølv og sa: «Eg vil vera konge!» Han skaffa seg vogn og ryttarar og femti mann som sprang framfor han.",
+    "versions": [
+      {
+        "text": "Adonja, son til Haggit, sette seg sjølv opp og sa: «Eg vil vera konge!» Han skaffa seg vogn og hestar og femti mann som sprang framfor han.",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "1) מִתְנַשֵּׂא betyr 'opphøgde seg' meir enn 'sette seg opp'. 2) פָרָשִׁים betyr 'ryttarar' (hestmenn), ikkje 'hestar'. Hestane er underforstått, men ordet refererer spesifikt til ryttarar."
+      }
+    ]
   },
   {
     "bookId": 11,
@@ -69,19 +91,43 @@
     "bookId": 11,
     "chapterId": 1,
     "verseId": 10,
-    "text": "Men profeten Natan, Benaja, krigarane og Salomo, bror sin, kalla han ikkje."
+    "text": "Men profeten Natan, Benaja, krigarane og Salomo, bror sin, bad han ikkje.",
+    "versions": [
+      {
+        "text": "Men profeten Natan, Benaja, krigarane og Salomo, bror sin, kalla han ikkje.",
+        "type": "grammar",
+        "severity": "minor",
+        "explanation": "'Kalla han ikkje' kan misforståast som at det var Salomo som ikkje kalla. 'Bad han ikkje' gjer det tydelegare at subjektet er Adonja og at Salomo er objekt. Alternativt kan ein omformulera for klarare syntaks."
+      }
+    ]
   },
   {
     "bookId": 11,
     "chapterId": 1,
     "verseId": 11,
-    "text": "Då sa Natan til Batseba, mor til Salomo: «Har du ikkje høyrt at Adonja, son til Haggit, er blitt konge? Og David, herren vår, veit det ikkje.»"
+    "text": "Då sa Natan til Batseba, mor til Salomo: «Har du ikkje høyrt at Adonja, son til Haggit, har gjort seg til konge? Og David, herren vår, veit det ikkje.»",
+    "versions": [
+      {
+        "text": "Då sa Natan til Batseba, mor til Salomo: «Har du ikkje høyrt at Adonja, son til Haggit, er blitt konge? Og David, herren vår, veit det ikkje.»",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "מָלַךְ kan bety 'har gjort seg til konge' / 'har vorte konge', men sidan Adonja eigentleg ikkje er blitt offisielt innsett, er 'har gjort seg til konge' meir presist og passar betre med samanhengen."
+      }
+    ]
   },
   {
     "bookId": 11,
     "chapterId": 1,
     "verseId": 12,
-    "text": "«Kom no, lat meg gje deg eit råd, så du kan berga livet ditt og livet til son din, Salomo."
+    "text": "Kom no, lat meg gje deg eit råd, så du kan berga livet ditt og livet til son din, Salomo.",
+    "versions": [
+      {
+        "text": "«Kom no, lat meg gje deg eit råd, så du kan berga livet ditt og livet til son din, Salomo.",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "Denne setninga manglar avsluttande hermeteikn (»). Sidan v.12 er ein direkte tale frå Natan som held fram i v.13-14, bør det markerast tydelegare. Men her er det berre eit typografisk problem: starten har « men det manglar avslutt-teikn ved rett stad."
+      }
+    ]
   },
   {
     "bookId": 11,
@@ -129,7 +175,15 @@
     "bookId": 11,
     "chapterId": 1,
     "verseId": 20,
-    "text": "Og du, herre min og konge – heile Israel ser på deg og ventar at du skal fortelja dei kven som skal sitja på trona til herren min, kongen, etter han."
+    "text": "Og du, herre min og konge – auga til heile Israel er retta mot deg, og ventar at du skal fortelja dei kven som skal sitja på trona til herren min, kongen, etter han.",
+    "versions": [
+      {
+        "text": "Og du, herre min og konge – heile Israel ser på deg og ventar at du skal fortelja dei kven som skal sitja på trona til herren min, kongen, etter han.",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "Det hebraiske עֵינֵי כָל־יִשְׂרָאֵל עָלֶיךָ er bokstavleg 'auga til heile Israel er på deg'. Å gjeva att biletet med 'auga' gjev ei rikare og meir presis omsetting."
+      }
+    ]
   },
   {
     "bookId": 11,
@@ -267,7 +321,15 @@
     "bookId": 11,
     "chapterId": 1,
     "verseId": 40,
-    "text": "Alt folket gjekk opp etter han medan dei spela på fløyter og gledde seg med stor glede, så jorda riste av lyden."
+    "text": "Alt folket gjekk opp etter han medan dei spela på fløyter og gledde seg med stor glede, så jorda skalv av lyden.",
+    "versions": [
+      {
+        "text": "Alt folket gjekk opp etter han medan dei spela på fløyter og gledde seg med stor glede, så jorda riste av lyden.",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "'Skalv' er meir idiomatisk nynorsk og betre samsvar med det hebraiske וַתִּבָּקַע ('revna/skalv') enn 'riste'."
+      }
+    ]
   },
   {
     "bookId": 11,

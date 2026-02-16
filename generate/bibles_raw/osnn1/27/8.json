@@ -45,11 +45,17 @@
     "bookId": 27,
     "chapterId": 8,
     "verseId": 8,
-    "text": "I staden voks det fram fire store horn mot dei fire himmelretningane.",
+    "text": "Geitebukken vart svært mektig, men då han stod på sitt sterkaste, vart det store hornet brote av. I staden voks det fram fire store horn mot dei fire himmelretningane.",
     "versions": [
       {
         "text": "Geitebukken vart svært mektig, men då han var på det sterkaste, vart det store hornet brote av. I staden voks det fram fire veldige horn mot dei fire himmelretningane.",
         "explanation": "Hebraisk 'חָזוּת' (khazut) betyr 'synlege/framtredande', ikkje nødvendigvis 'veldige'. 'Store' er meir nøytralt og nærare originalen. 'Veldige' kan oversetja styrken til desse rika som faktisk var svakare enn Aleksander sitt."
+      },
+      {
+        "text": "I staden voks det fram fire store horn mot dei fire himmelretningane.",
+        "type": "error",
+        "severity": "critical",
+        "explanation": "Den noverande versjonen manglar heile den første halvdelen av verset: at geitebukken vart svært mektig og at det store hornet vart brote av då han var på sitt sterkaste. Berre den siste setninga er med. Dette er eit vesentleg innhaldstap."
       }
     ]
   },
@@ -99,7 +105,15 @@
     "bookId": 27,
     "chapterId": 8,
     "verseId": 14,
-    "text": "Han svara meg: «I to tusen tre hundre kveldar og morgnar. Så skal heilagdomen bli reinsa.»"
+    "text": "Han sa til meg: «I to tusen tre hundre kveldar og morgnar. Då skal heilagdomen få si rett att.»",
+    "versions": [
+      {
+        "text": "Han svara meg: «I to tusen tre hundre kveldar og morgnar. Så skal heilagdomen bli reinsa.»",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "Hebraisk 'וְנִצְדַּק' (venitsdaq) kjem frå rota צדק (tsadeq) som betyr 'rettferdiggjera/gje rett'. 'Bli reinsa' er ei tolking påverka av Septuaginta, men det hebraiske ordet peiker meir mot at heilagdomen skal bli rettferdiggjord/oppreist/få si rett att."
+      }
+    ]
   },
   {
     "bookId": 27,
@@ -141,7 +155,15 @@
     "bookId": 27,
     "chapterId": 8,
     "verseId": 20,
-    "text": "«Vêren du såg med dei to horna, er kongane av Media og Persia.»"
+    "text": "«Vêren du såg, han med dei to horna, er kongane av Media og Persia.»",
+    "versions": [
+      {
+        "text": "«Vêren du såg med dei to horna, er kongane av Media og Persia.»",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "Hebraisk 'בַּעַל הַקְּרָנַיִם' (ba'al haqranayim) betyr bokstavleg 'eigar av/herre over horna' og fungerer som ein apposisjon. 'Han med dei to horna' gjev betre att den hebraiske konstruksjonen. Ein liten stilistisk forbetring."
+      }
+    ]
   },
   {
     "bookId": 27,

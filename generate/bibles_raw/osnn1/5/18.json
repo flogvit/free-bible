@@ -75,7 +75,15 @@
     "bookId": 5,
     "chapterId": 18,
     "verseId": 11,
-    "text": "eller nokon som driv med magi, spør dødningar og spådomsånder, eller søkjer råd hjå dei døde."
+    "text": "eller nokon som driv med magi, rådspør ånder og spådomsånder, eller søkjer til dei døde.",
+    "versions": [
+      {
+        "text": "eller nokon som driv med magi, spør dødningar og spådomsånder, eller søkjer råd hjå dei døde.",
+        "type": "error",
+        "severity": "major",
+        "explanation": "Det hebraiske 'אוֹב' (ov) refererer til ein dødningeånd eller eit medium, ikkje 'dødningar' direkte. I tillegg skapar 'spør dødningar ... eller søkjer råd hjå dei døde' ein redundans, sidan begge synest å referera til det same. 'אוֹב' og 'יִדְּעֹנִי' er ulike typar ånder/medium, medan 'דֹרֵשׁ אֶל־הַמֵּתִים' er å søkja til dei døde. Ei betre fordeling av omgrepa gjev meir presis oversetting."
+      }
+    ]
   },
   {
     "bookId": 5,
@@ -93,11 +101,17 @@
     "bookId": 5,
     "chapterId": 18,
     "verseId": 14,
-    "text": "For desse folka som du skal driva ut, høyrer på dei som tolkar teikn og driv med spådom. Men slik har ikkje Herren din Gud gjeve deg lov til å gjera.",
+    "text": "For desse folka som du skal driva ut, høyrer på dei som tolkar teikn og driv med spådom. Men det har ikkje Herren din Gud tillate deg.",
     "versions": [
       {
         "text": "For desse folka som du skal driva ut, høyrer på dei som tolkar teikn og driv med spådom. Men deg har ikkje Herren din Gud gjeve lov til å gjera slik.",
         "explanation": "Ordstillinga 'Men deg har ikkje Herren din Gud gjeve lov til' er noko uvanleg på nynorsk. Ei meir naturleg formulering ville vere 'Men slik har ikkje Herren din Gud gjeve deg lov til å gjera'."
+      },
+      {
+        "text": "For desse folka som du skal driva ut, høyrer på dei som tolkar teikn og driv med spådom. Men slik har ikkje Herren din Gud gjeve deg lov til å gjera.",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "Det hebraiske 'לֹא כֵן נָתַן לְךָ' tyder meir bokstavleg 'slik har ikkje Herren din Gud gjeve/tillate for deg' – det handlar ikkje om å 'gje lov til å gjera', men om at Gud ikkje har gjeve/tildelt deg (slik praksis). Formuleringa er likevel akseptabel, og verset har versionshistorikk, så dette er berre ein mindre merknad."
       }
     ]
   },

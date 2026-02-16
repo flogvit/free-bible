@@ -15,7 +15,15 @@
     "bookId": 6,
     "chapterId": 2,
     "verseId": 2,
-    "text": "Då vart det sagt til kongen i Jeriko: «Sjå, det har kome menn hit i natt frå Israels born for å utforska landet.»"
+    "text": "Då vart det sagt til kongen i Jeriko: «Sjå, det har kome menn hit i natt frå israelittane for å utforska landet.»",
+    "versions": [
+      {
+        "text": "Då vart det sagt til kongen i Jeriko: «Sjå, det har kome menn hit i natt frå Israels born for å utforska landet.»",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "'Israels born' er ein bokstaveleg omsetting av מִבְּנֵי יִשְׂרָאֵל, men for ein moderne og lettlesen nynorsk tekst er 'israelittane' meir naturleg og lettfatteleg."
+      }
+    ]
   },
   {
     "bookId": 6,
@@ -93,7 +101,15 @@
     "bookId": 6,
     "chapterId": 2,
     "verseId": 13,
-    "text": "Lat far min og mor mi leva, og syskena mine, og alle som høyrer dei til, og berg livet vårt frå døden.»"
+    "text": "Lat far min og mor mi leva, og brørne og systrene mine, og alle som høyrer dei til, og berg livet vårt frå døden.»",
+    "versions": [
+      {
+        "text": "Lat far min og mor mi leva, og syskena mine, og alle som høyrer dei til, og berg livet vårt frå døden.»",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "Den hebraiske teksten nemner eksplisitt brør (אַחַי) og systrer (אַחְיוֹתַי) kvar for seg. 'Syskena mine' er ikkje feil, men mister noko av den eksplisitte oppramsinga i originalteksten. Dette er likevel ein mindre ting."
+      }
+    ]
   },
   {
     "bookId": 6,
@@ -147,7 +163,15 @@
     "bookId": 6,
     "chapterId": 2,
     "verseId": 20,
-    "text": "Men om du røper denne saka vår, er vi løyste frå eiden du har late oss sverja.»"
+    "text": "Men om du røper denne saka vår, er vi løyste frå eiden du har teke av oss.»",
+    "versions": [
+      {
+        "text": "Men om du røper denne saka vår, er vi løyste frå eiden du har late oss sverja.»",
+        "type": "error",
+        "severity": "major",
+        "explanation": "I vers 17 vart 'late oss sverja' bevisst endra til 'teke av oss' fordi det er meir presist for den hebraiske hifil-forma הִשְׁבַּעְתָּנוּ. Same uttrykk vert brukt i vers 20, men her er den gamle formuleringa 'late oss sverja' framleis ståande. Det bør vera konsistent med vers 17."
+      }
+    ]
   },
   {
     "bookId": 6,

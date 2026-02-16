@@ -45,7 +45,15 @@
     "bookId": 9,
     "chapterId": 9,
     "verseId": 6,
-    "text": "Men tenaren sa til han: «Sjå, det er ein Guds mann i denne byen. Han er ein høgt akta mann. Alt han seier, slår til. Lat oss gå dit. Kanskje han kan fortelja oss kva veg vi skal gå.»"
+    "text": "Men tenaren sa til han: «Sjå, det er ein Guds mann i denne byen. Han er ein høgt akta mann. Alt han seier, slår alltid til. Lat oss gå dit. Kanskje han kan fortelja oss kva veg vi skal gå.»",
+    "versions": [
+      {
+        "text": "Men tenaren sa til han: «Sjå, det er ein Guds mann i denne byen. Han er ein høgt akta mann. Alt han seier, slår til. Lat oss gå dit. Kanskje han kan fortelja oss kva veg vi skal gå.»",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "Det hebraiske uttrykket 'bo yavo' (בּ֣וֹא יָב֑וֹא) er ein infinitivus absolutus-konstruksjon som forsterkar verbet - det betyr 'slår alltid/heilt sikkert til'. Å legge til 'alltid' fangar denne forsterkinga betre."
+      }
+    ]
   },
   {
     "bookId": 9,
@@ -57,7 +65,15 @@
     "bookId": 9,
     "chapterId": 9,
     "verseId": 8,
-    "text": "Tenaren svara Saul igjen og sa: «Sjå, eg har ein kvart sjekel sølv i handa. Det kan eg gje Guds mann, så han kan visa oss vegen.»"
+    "text": "Tenaren svara Saul igjen og sa: «Sjå, eg har ein kvart sjekel sølv i handa. Det kan eg gje Guds mann, så kan han fortelja oss kva veg vi skal gå.»",
+    "versions": [
+      {
+        "text": "Tenaren svara Saul igjen og sa: «Sjå, eg har ein kvart sjekel sølv i handa. Det kan eg gje Guds mann, så han kan visa oss vegen.»",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "Hebraisk 'vehiggid lanu et-darkenu' betyr 'og han kan fortelja oss vegen vår', ikkje 'visa oss vegen'. Verbet 'higgid' betyr 'fortelja/gjera kjent', ikkje 'visa'. Dessutan harmoniserer dette betre med vers 6 der same uttrykk er brukt."
+      }
+    ]
   },
   {
     "bookId": 9,
@@ -93,7 +109,15 @@
     "bookId": 9,
     "chapterId": 9,
     "verseId": 12,
-    "text": "Jentene svara dei og sa: «Ja, han er her. Sjå, han er rett framfor deg. Skund deg no, for han kom til byen i dag fordi folket har eit offer på offerhaugen i dag.»"
+    "text": "Jentene svara dei og sa: «Ja, han er her. Sjå, han er rett framfor dykk. Skund dykk no, for han kom til byen i dag fordi folket har eit offer på offerhaugen i dag.»",
+    "versions": [
+      {
+        "text": "Jentene svara dei og sa: «Ja, han er her. Sjå, han er rett framfor deg. Skund deg no, for han kom til byen i dag fordi folket har eit offer på offerhaugen i dag.»",
+        "type": "error",
+        "severity": "major",
+        "explanation": "Det hebraiske 'lefanekha' (לְפָנֶ֑יךָ) er riktignok 2. person eintal, men jentene snakkar til fleire personar (Saul og tenaren). I nynorsk bør dette bli 'dykk' for å vera konsekvent med at det er to personar som vert tiltala. Alternativt kan eintalsforma forsvarast, men 'Skund deg' bør i alle fall vera 'Skund dykk' sidan begge skal skunda seg."
+      }
+    ]
   },
   {
     "bookId": 9,
@@ -111,7 +135,15 @@
     "bookId": 9,
     "chapterId": 9,
     "verseId": 14,
-    "text": "Så gjekk dei opp til byen. Då dei kom inn i byen, kom Samuel mot dei på veg opp til offerhaugen."
+    "text": "Så gjekk dei opp til byen. Då dei kom inn i byen, sjå, der kom Samuel mot dei på veg opp til offerhaugen.",
+    "versions": [
+      {
+        "text": "Så gjekk dei opp til byen. Då dei kom inn i byen, kom Samuel mot dei på veg opp til offerhaugen.",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "Det hebraiske 'vehinneh' (וְהִנֵּ֤ה) markerer ei overrasking eller dramatisk vendepunkt - 'sjå, der (kom)'. Dette er narrativt viktig fordi det understrekar det guddomlege samantreffet."
+      }
+    ]
   },
   {
     "bookId": 9,
@@ -123,7 +155,15 @@
     "bookId": 9,
     "chapterId": 9,
     "verseId": 16,
-    "text": "«I morgon på denne tida skal eg senda til deg ein mann frå Benjamin-landet. Han skal du salva til fyrste over folket mitt Israel. Han skal frelsa folket mitt frå filistarane. For eg har sett folket mitt, og ropet deira har nådd meg.»"
+    "text": "«I morgon på denne tida skal eg senda til deg ein mann frå Benjamin-landet. Han skal du salva til fyrste over folket mitt Israel. Han skal frelsa folket mitt frå hendene til filistarane. For eg har sett folket mitt, for ropet deira har nådd meg.»",
+    "versions": [
+      {
+        "text": "«I morgon på denne tida skal eg senda til deg ein mann frå Benjamin-landet. Han skal du salva til fyrste over folket mitt Israel. Han skal frelsa folket mitt frå filistarane. For eg har sett folket mitt, og ropet deira har nådd meg.»",
+        "type": "error",
+        "severity": "minor",
+        "explanation": "Hebraisk 'miyad pelishtim' (מִיַּ֣ד פְּלִשְׁתִּ֑ים) betyr bokstaveleg 'frå handa til filistarane', som er eit idiom for undertrykkjing/makt. 'Frå hendene til filistarane' er meir presist. Dessutan er 'ki' (כִּ֛י) i slutten kausalt - 'for' ropet har nådd, ikkje 'og'."
+      }
+    ]
   },
   {
     "bookId": 9,
@@ -189,7 +229,15 @@
     "bookId": 9,
     "chapterId": 9,
     "verseId": 25,
-    "text": "Dei gjekk ned frå offerhaugen og inn i byen. Og han tala med Saul på taket."
+    "text": "Dei gjekk ned frå offerhaugen til byen. Og Samuel tala med Saul på taket.",
+    "versions": [
+      {
+        "text": "Dei gjekk ned frå offerhaugen og inn i byen. Og han tala med Saul på taket.",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "1) Hebraisk 'ha-ir' (הָעִ֑יר) betyr 'til byen', ikkje 'inn i byen'. 2) Subjektet 'han' er uklart - det bør vera 'Samuel' for tydelegheit, sidan det var Samuel som tala med Saul."
+      }
+    ]
   },
   {
     "bookId": 9,

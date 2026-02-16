@@ -39,7 +39,15 @@
     "bookId": 22,
     "chapterId": 6,
     "verseId": 7,
-    "text": "Som eit granateplekløyv er kinnet ditt bak sløret ditt."
+    "text": "Som eit granatepleklòv er tinningen din bak sløret ditt.",
+    "versions": [
+      {
+        "text": "Som eit granateplekløyv er kinnet ditt bak sløret ditt.",
+        "type": "grammar",
+        "severity": "minor",
+        "explanation": "Hebraisk רַקָּה tyder 'tinning' (sides of the forehead/temple), ikkje 'kinn'. Dessutan er 'granateplekløyv' ei uvanleg samansetjing; 'granatepleklòv' (med ò) er meir korrekt nynorsk for 'kløyvd stykke'."
+      }
+    ]
   },
   {
     "bookId": 22,
@@ -75,6 +83,14 @@
     "bookId": 22,
     "chapterId": 6,
     "verseId": 12,
-    "text": "Før eg visste ordet av det, hadde sjela mi sett meg på vognene til det edle folket mitt."
+    "text": "Før eg visste ordet av det, førte lengten min meg til vognene åt det gjæve folket mitt.",
+    "versions": [
+      {
+        "text": "Før eg visste ordet av det, hadde sjela mi sett meg på vognene til det edle folket mitt.",
+        "type": "error",
+        "severity": "major",
+        "explanation": "Hebraisk נַפְשִׁי שָׂמַתְנִי tyder meir 'sjela mi / lengten min sette/førte meg', ikkje 'sjela mi hadde sett meg'. Verbet שָׂמַתְנִי betyr 'plasserte meg / førte meg', og עַמִּי־נָדִיב er eit samansett uttrykk som kan lesast som eigennamn ('Ammi-Nadib') eller 'det edle/gjæve folket mitt'. 'Sett meg' er tvetydig på norsk og kan lesast som 'sett/observert meg' i staden for 'plassert meg'."
+      }
+    ]
   }
 ]

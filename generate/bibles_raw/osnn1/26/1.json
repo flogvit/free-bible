@@ -57,7 +57,15 @@
     "bookId": 26,
     "chapterId": 1,
     "verseId": 10,
-    "text": "Andleta deira såg slik ut: Alle fire hadde eit menneskeandlet framme, eit løveandlet på høgre side, eit okseandlet på venstre side og eit ørneandlet bak."
+    "text": "Andleta deira såg slik ut: Alle fire hadde eit menneskeandlet framme, eit løveandlet på høgre sida, eit okseandlet på venstre sida og eit ørneandlet bak.",
+    "versions": [
+      {
+        "text": "Andleta deira såg slik ut: Alle fire hadde eit menneskeandlet framme, eit løveandlet på høgre side, eit okseandlet på venstre side og eit ørneandlet bak.",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "The Hebrew uses directional terms (el-hayamin, mehassmol) which mean 'to the right' and 'from the left'. While 'på høgre side' is acceptable, 'på høgre sida' is more natural nynorsk with the definite form. However, this is a very minor stylistic point and the current version is also acceptable."
+      }
+    ]
   },
   {
     "bookId": 26,
@@ -93,7 +101,15 @@
     "bookId": 26,
     "chapterId": 1,
     "verseId": 16,
-    "text": "Hjula såg ut til å vera laga av krysolitt. Alle fire var like, og dei var laga slik at det var eit hjul inne i eit anna hjul."
+    "text": "Hjula såg ut som krysolitt i utsjånad og utforming. Alle fire var like, og dei var laga slik at det var eit hjul inne i eit anna hjul.",
+    "versions": [
+      {
+        "text": "Hjula såg ut til å vera laga av krysolitt. Alle fire var like, og dei var laga slik at det var eit hjul inne i eit anna hjul.",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "The Hebrew כְּעֵין תַּרְשִׁישׁ means 'like the appearance of tarshish (chrysolite)' — describing appearance/color, not material. 'Såg ut til å vera laga av' implies they were actually made of chrysolite, while the text only says they looked like it. A more accurate rendering would convey resemblance in appearance."
+      }
+    ]
   },
   {
     "bookId": 26,
@@ -135,7 +151,15 @@
     "bookId": 26,
     "chapterId": 1,
     "verseId": 23,
-    "text": "Under kvelvinga var vengene deira utrekte mot kvarandre. Kvar skapning hadde to venger som dekte kroppen framme, og to som dekte han bak."
+    "text": "Under kvelvinga var vengene deira utrekte mot kvarandre. Kvar skapning hadde to venger som dekte kroppen på den eine sida, og to som dekte kroppen på den andre sida.",
+    "versions": [
+      {
+        "text": "Under kvelvinga var vengene deira utrekte mot kvarandre. Kvar skapning hadde to venger som dekte kroppen framme, og to som dekte han bak.",
+        "type": "error",
+        "severity": "minor",
+        "explanation": "The Hebrew repeats the same phrase: 'two covering them ... and two covering them' (את גויתיהם — their bodies). The text does not specify 'front' and 'back' but rather says two wings covered their bodies on each side. The translation adds directional information ('framme'/'bak') not present in the original."
+      }
+    ]
   },
   {
     "bookId": 26,

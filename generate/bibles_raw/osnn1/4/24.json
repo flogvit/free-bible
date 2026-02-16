@@ -45,23 +45,45 @@
     "bookId": 4,
     "chapterId": 24,
     "verseId": 6,
-    "text": "Som bekkar breier dei seg ut, som hagar ved ei elv, som aloetre Herren har planta, som sedrar ved vatn."
+    "text": "Som dalar breier dei seg ut, som hagar ved ei elv, som aloetre Herren har planta, som sedrar ved vatn.",
+    "versions": [
+      {
+        "text": "Som bekkar breier dei seg ut, som hagar ved ei elv, som aloetre Herren har planta, som sedrar ved vatn.",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "Det hebraiske ordet 'נְחָלִים' (nechalim) tyder 'dalar' eller 'dalføre' (wadi), ikkje 'bekkar'. Biletet er av palmeplantasjar som breier seg utover i dalar. 'Bekkar' er meir knytt til vatn, medan 'dalar' er meir geografisk korrekt her."
+      }
+    ]
   },
   {
     "bookId": 4,
     "chapterId": 24,
     "verseId": 7,
-    "text": "Vatn skal renna frå bøttene hans, og sædet hans skal ha rikeleg med vatn. Kongen hans skal vera større enn Agag, og kongeriket hans skal opphøgjast."
+    "text": "Vatn skal renna frå bøttene hans, og sædet hans skal veksa ved rikelege vatn. Kongen hans skal vera større enn Agag, og riket hans skal opphøgjast.",
+    "versions": [
+      {
+        "text": "Vatn skal renna frå bøttene hans, og sædet hans skal ha rikeleg med vatn. Kongen hans skal vera større enn Agag, og kongeriket hans skal opphøgjast.",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "'Sædet hans skal ha rikeleg med vatn' er litt klønete. Originalen skildrar at sædet/avkommet er planta ved store vatn – altså veks ved rikelege vatn. Dessutan er 'kongeriket' litt tungt; 'riket' er meir naturleg nynorsk og dekkjer 'מַלְכֻתוֹ' godt."
+      }
+    ]
   },
   {
     "bookId": 4,
     "chapterId": 24,
     "verseId": 8,
-    "text": "Gud førte han ut frå Egypt, han har horn som ein villokse. Han skal eta opp folka som er fiendane hans, knusa beina deira og gjennombora dei med pilene sine.",
+    "text": "Gud førte han ut frå Egypt, han har horn som ein villokse. Han skal eta opp fiendefolka sine, knusa beina deira og gjennombora dei med pilene sine.",
     "versions": [
       {
         "text": "Gud førte han ut frå Egypt, han har kraft som ein villokse. Han skal eta opp folka som er fiendane hans, knusa beina deira og gjennombora dei med pilene sine.",
         "explanation": "Det hebraiske 'תוֹעֲפֹת' refererer meir spesifikt til 'horn' eller 'hornstyrke' enn generell 'kraft'. Biletet er av dei mektige horna til villoksen (re'em), som symboliserer styrke."
+      },
+      {
+        "text": "Gud førte han ut frå Egypt, han har horn som ein villokse. Han skal eta opp folka som er fiendane hans, knusa beina deira og gjennombora dei med pilene sine.",
+        "type": "grammar",
+        "severity": "minor",
+        "explanation": "'Folka som er fiendane hans' er tungt og omstendleg. 'Fiendefolka sine' er meir idiomatisk nynorsk og formidlar same meining meir konsist."
       }
     ]
   },
@@ -81,7 +103,15 @@
     "bookId": 4,
     "chapterId": 24,
     "verseId": 11,
-    "text": "«Kom deg no heim att! Eg sa at eg ville æra deg stort, men sjå, Herren har hindra deg frå å få ære.»"
+    "text": "«Flykt no heim til din stad! Eg sa at eg ville æra deg stort, men sjå, Herren har hindra deg frå å få ære.»",
+    "versions": [
+      {
+        "text": "«Kom deg no heim att! Eg sa at eg ville æra deg stort, men sjå, Herren har hindra deg frå å få ære.»",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "Det hebraiske 'בְּרַח־לְךָ' tyder 'flykt' eller 'røm', ikkje berre 'kom deg'. Balak brukar eit sterkt og formanande ord – han jagar Bileam bort. 'Flykt' fangar den krasse tonen betre."
+      }
+    ]
   },
   {
     "bookId": 4,
@@ -141,7 +171,15 @@
     "bookId": 4,
     "chapterId": 24,
     "verseId": 18,
-    "text": "Edom skal verta eigedom, Seir skal verta eigedom for fiendane sine, medan Israel viser si makt."
+    "text": "Edom skal verta eigedom, og Seir, fiendane hans, skal verta eigedom, medan Israel viser si makt.",
+    "versions": [
+      {
+        "text": "Edom skal verta eigedom, Seir skal verta eigedom for fiendane sine, medan Israel viser si makt.",
+        "type": "error",
+        "severity": "major",
+        "explanation": "I originalen er 'אֹיְבָיו' (fiendane hans) ei apposisjonell skildring av Seir/Edom – det er dei som er Israels fiendar som skal verta eigedom/erobra. Noverande omsetjing seier at Seir skal verta eigedom 'for fiendane sine', som snur meininga. Det er Israel som skal ta Edom/Seir til eigedom, og Edom/Seir er skildra som 'fiendane hans' (dvs. Israels fiendar)."
+      }
+    ]
   },
   {
     "bookId": 4,
@@ -171,7 +209,15 @@
     "bookId": 4,
     "chapterId": 24,
     "verseId": 23,
-    "text": "Han tok til med sin tale og sa: «Å ve! Kven skal leva når Gud gjer dette?"
+    "text": "Han tok til med sin tale og sa: «Å ve! Kven kan leva når Gud set dette i verk?",
+    "versions": [
+      {
+        "text": "Han tok til med sin tale og sa: «Å ve! Kven skal leva når Gud gjer dette?",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "'מִשֻּׂמוֹ אֵל' tyder meir presist 'når Gud set dette i verk / fastset det'. 'Kven kan leva' med 'kan' gjev betre att den retoriske krafta i spørsmålet enn 'skal'."
+      }
+    ]
   },
   {
     "bookId": 4,

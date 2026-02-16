@@ -3,11 +3,17 @@
     "bookId": 42,
     "chapterId": 13,
     "verseId": 1,
-    "text": "Akkurat då kom det nokre som fortalde han om dei galillearane som Pilatus hadde blanda blodet deira med offera deira.",
+    "text": "Akkurat då kom det nokre som fortalde han om dei galillearane som Pilatus hadde blanda blodet til med offera deira.",
     "versions": [
       {
         "text": "Akkurat då kom det nokre som fortalde han om dei galillearane som Pilatus hadde drepe, så blodet deira blanda seg med offerblodet.",
         "explanation": "Den greske teksten seier at Pilatus blanda blodet deira med offera deira (θυσιῶν = offer/slaktoffer), ikkje at blodet blanda seg med 'offerblodet'. Originalen fokuserer på at Pilatus aktivt blanda blodet deira med deira eigne offer, noko som var ei vanæring."
+      },
+      {
+        "text": "Akkurat då kom det nokre som fortalde han om dei galillearane som Pilatus hadde blanda blodet deira med offera deira.",
+        "type": "grammar",
+        "severity": "minor",
+        "explanation": "Setninga 'Pilatus hadde blanda blodet deira med offera deira' er litt uklar på norsk – 'deira' opptrer to gonger og kan verka forvirrande. Ei presisering som 'blodet til' gjer det klårare at det er galillearane sitt blod som er meint. Men dette er ein mindre merknad; den noverande versjonen er forståeleg."
       }
     ]
   },
@@ -39,7 +45,15 @@
     "bookId": 42,
     "chapterId": 13,
     "verseId": 6,
-    "text": "Så fortalde han denne likninga: «Ein mann hadde eit fikentre planta i vingarden sin. Han kom og leita etter frukt på det, men fann inga."
+    "text": "Så fortalde han denne likninga: «Ein mann hadde eit fikentre planta i vingarden sin. Han kom og leita etter frukt på det, men fann ikkje noko.",
+    "versions": [
+      {
+        "text": "Så fortalde han denne likninga: «Ein mann hadde eit fikentre planta i vingarden sin. Han kom og leita etter frukt på det, men fann inga.",
+        "type": "grammar",
+        "severity": "minor",
+        "explanation": "'Fann inga' er grammatisk uheldig på nynorsk. 'Frukt' er hankjønn/inkjekjønn ubunden, så 'fann ikkje noko' eller 'fann ingen' er meir korrekt."
+      }
+    ]
   },
   {
     "bookId": 42,
@@ -123,7 +137,15 @@
     "bookId": 42,
     "chapterId": 13,
     "verseId": 19,
-    "text": "Det er likt eit sennepsfrø som ein mann tok og sådde i hagen sin. Det voks og vart til eit tre, og fuglane under himmelen fann ly i greinene på det.»"
+    "text": "Det er likt eit sennepsfrø som ein mann tok og sådde i hagen sin. Det voks og vart til eit tre, og fuglane under himmelen bygde reir i greinene på det.»",
+    "versions": [
+      {
+        "text": "Det er likt eit sennepsfrø som ein mann tok og sådde i hagen sin. Det voks og vart til eit tre, og fuglane under himmelen fann ly i greinene på det.»",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "Det greske κατεσκήνωσεν tyder 'slo seg ned / bygde reir', ikkje berre 'fann ly'. 'Bygde reir' eller 'heldt til' gjev eit meir presist bilete enn 'fann ly'."
+      }
+    ]
   },
   {
     "bookId": 42,
@@ -165,7 +187,15 @@
     "bookId": 42,
     "chapterId": 13,
     "verseId": 26,
-    "text": "Då skal de seia: 'Vi åt og drakk saman med deg, og du underviste på gatene våre.'"
+    "text": "Då skal de seia: 'Vi åt og drakk framfor deg, og du underviste på gatene våre.'",
+    "versions": [
+      {
+        "text": "Då skal de seia: 'Vi åt og drakk saman med deg, og du underviste på gatene våre.'",
+        "type": "error",
+        "severity": "minor",
+        "explanation": "Det greske ἐνώπιόν σου tyder 'framfor deg / i nærværet ditt', ikkje 'saman med deg'. Skilnaden er teologisk relevant: dei hevdar berre å ha vore i nærleiken, ikkje å ha hatt fellesskap med Jesus."
+      }
+    ]
   },
   {
     "bookId": 42,
@@ -225,6 +255,14 @@
     "bookId": 42,
     "chapterId": 13,
     "verseId": 35,
-    "text": "Sjå, huset dykkar skal bli liggjande audt. Eg seier dykk: De skal ikkje sjå meg før den dagen kjem då de seier: 'Velsigna er han som kjem i Herrens namn!'»"
+    "text": "Sjå, huset dykkar er overlate til dykk. Eg seier dykk: De skal ikkje sjå meg før den dagen kjem då de seier: 'Velsigna er han som kjem i Herrens namn!'»",
+    "versions": [
+      {
+        "text": "Sjå, huset dykkar skal bli liggjande audt. Eg seier dykk: De skal ikkje sjå meg før den dagen kjem då de seier: 'Velsigna er han som kjem i Herrens namn!'»",
+        "type": "error",
+        "severity": "major",
+        "explanation": "Det greske ἀφίεται ὑμῖν ὁ οἶκος ὑμῶν tyder 'huset dykkar er overlate/etterlate til dykk'. Mange manuskript i Lukas manglar tillegget ἔρημος ('audt/øyde') som finst i Matt 23:38. Å legge til 'audt' her er å harmonisera med Matteus. Den meir korrekte gjengivinga er 'huset dykkar er overlate til dykk'."
+      }
+    ]
   }
 ]

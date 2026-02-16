@@ -33,13 +33,29 @@
     "bookId": 46,
     "chapterId": 14,
     "verseId": 5,
-    "text": "Eg ville gjerne at de alle tala i tunger, men heller at de tala profetisk. Den som talar profetisk, er større enn den som talar i tunger, om ikkje den som talar i tunger òg tyder det, så forsamlinga kan bli oppbygd."
+    "text": "Eg ville gjerne at de alle tala i tunger, men heller at de tala profetisk. Den som talar profetisk, er større enn den som talar i tunger – om han ikkje òg tyder det, så forsamlinga kan bli oppbygd.",
+    "versions": [
+      {
+        "text": "Eg ville gjerne at de alle tala i tunger, men heller at de tala profetisk. Den som talar profetisk, er større enn den som talar i tunger, om ikkje den som talar i tunger òg tyder det, så forsamlinga kan bli oppbygd.",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "Den greske teksten har ikkje 'den som talar i tunger' gjenteke i unntakssetjinga. Det er underforstått. Den noverande versjonen er litt tung med gjentakinga. 'om han ikkje òg tyder det' er enklare og meir naturleg."
+      }
+    ]
   },
   {
     "bookId": 46,
     "chapterId": 14,
     "verseId": 6,
-    "text": "Søsken, om eg no kjem til dykk og talar i tunger, kva gagn gjer eg dykk om eg ikkje talar til dykk med openberring, kunnskap, profeti eller lære?"
+    "text": "Søsken, om eg no kjem til dykk og talar i tunger, kva gagn gjer det dykk om eg ikkje talar til dykk med openberring, kunnskap, profeti eller lære?",
+    "versions": [
+      {
+        "text": "Søsken, om eg no kjem til dykk og talar i tunger, kva gagn gjer eg dykk om eg ikkje talar til dykk med openberring, kunnskap, profeti eller lære?",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "'kva gagn gjer eg dykk' er litt uvanleg. 'kva gagn gjer det dykk' er meir idiomatisk nynorsk. Det greske 'τί ὑμᾶς ὠφελήσω' tyder 'kva gagn vil eg gjera dykk', men på norsk er det meir naturleg med 'det' som subjekt."
+      }
+    ]
   },
   {
     "bookId": 46,
@@ -219,7 +235,15 @@
     "bookId": 46,
     "chapterId": 14,
     "verseId": 32,
-    "text": "Og profetane har herredøme over ånda si."
+    "text": "Og profetåndene underordnar seg profetane.",
+    "versions": [
+      {
+        "text": "Og profetane har herredøme over ånda si.",
+        "type": "error",
+        "severity": "major",
+        "explanation": "Den greske teksten seier at 'profetane sine ånder underordnar seg profetane' (πνεύματα προφητῶν προφήταις ὑποτάσσεται). Subjektet er 'πνεύματα προφητῶν' (profetåndene), og verbet er 'ὑποτάσσεται' (underordnar seg). Den noverande omsetjinga 'har herredøme over' endrar retninga/perspektivet og misser det teologiske poenget om at åndeleg gåve ikkje er ukontrollerbar – åndene underordnar seg, noko som tyder at profetane kan kontrollera når dei talar."
+      }
+    ]
   },
   {
     "bookId": 46,
@@ -255,7 +279,15 @@
     "bookId": 46,
     "chapterId": 14,
     "verseId": 37,
-    "text": "Om nokon meiner at han er ein profet eller åndeleg, skal han erkjenna at det eg skriv til dykk, er eit bod frå Herren."
+    "text": "Om nokon meiner at han er ein profet eller åndeleg, skal han erkjenna at det eg skriv til dykk, er Herrens bod.",
+    "versions": [
+      {
+        "text": "Om nokon meiner at han er ein profet eller åndeleg, skal han erkjenna at det eg skriv til dykk, er eit bod frå Herren.",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "'Herrens bod' er meir konsist og følgjer den greske genitivkonstruksjonen (κυρίου ἐστίν) betre enn 'eit bod frå Herren'. Det er også meir idiomatisk nynorsk."
+      }
+    ]
   },
   {
     "bookId": 46,

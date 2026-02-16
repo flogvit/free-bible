@@ -21,7 +21,15 @@
     "bookId": 40,
     "chapterId": 14,
     "verseId": 3,
-    "text": "For Herodes hadde gripe Johannes, bunde han og sett han i fengsel på grunn av Herodias, kona til Filip, bror hans."
+    "text": "For Herodes hadde gripe Johannes, bunde han og sett han i fengsel på grunn av Herodias, kona til Filip, bror sin.",
+    "versions": [
+      {
+        "text": "For Herodes hadde gripe Johannes, bunde han og sett han i fengsel på grunn av Herodias, kona til Filip, bror hans.",
+        "type": "grammar",
+        "severity": "minor",
+        "explanation": "'Bror hans' er tvetydig — det kan sjå ut som det refererer til Filip. Det greske τοῦ ἀδελφοῦ αὐτοῦ refererer til Herodes sin bror. 'Bror sin' (refleksiv) gjer det klårare at Filip er bror til Herodes (subjektet)."
+      }
+    ]
   },
   {
     "bookId": 40,
@@ -99,7 +107,15 @@
     "bookId": 40,
     "chapterId": 14,
     "verseId": 14,
-    "text": "Då han steig i land, såg han ei stor folkemengd. Han fekk inderleg medkjensle med dei og lækte dei sjuke mellom dei."
+    "text": "Då han gjekk ut, såg han ei stor folkemengd. Han fekk inderleg medkjensle med dei og lækte dei sjuke mellom dei.",
+    "versions": [
+      {
+        "text": "Då han steig i land, såg han ei stor folkemengd. Han fekk inderleg medkjensle med dei og lækte dei sjuke mellom dei.",
+        "type": "error",
+        "severity": "minor",
+        "explanation": "ἐξελθὼν tyder 'gjekk ut' (av båten), ikkje nødvendigvis 'steig i land'. 'Gjekk ut' er meir nøyaktig og nøytralt."
+      }
+    ]
   },
   {
     "bookId": 40,
@@ -129,7 +145,15 @@
     "bookId": 40,
     "chapterId": 14,
     "verseId": 19,
-    "text": "Så bad han folkemengdene setja seg ned i graset. Han tok dei fem brøda og dei to fiskane, såg opp mot himmelen og velsigna dei. Så braut han brøda og gav dei til læresveinane, og læresveinane gav dei til folkemengdene."
+    "text": "Så bad han folkemengdene setja seg ned i graset. Han tok dei fem brøda og dei to fiskane, såg opp mot himmelen og bad velsigninga. Så braut han brøda og gav dei til læresveinane, og læresveinane gav dei til folkemengdene.",
+    "versions": [
+      {
+        "text": "Så bad han folkemengdene setja seg ned i graset. Han tok dei fem brøda og dei to fiskane, såg opp mot himmelen og velsigna dei. Så braut han brøda og gav dei til læresveinane, og læresveinane gav dei til folkemengdene.",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "εὐλόγησεν står utan direkte objekt i grunnteksten — han velsigna (takka/bad velsigninga), ikkje nødvendigvis 'velsigna dei' (brøda og fiskane). 'Bad velsigninga' er meir nøyaktig og unngår å leggja til eit objekt som ikkje finst i originalen."
+      }
+    ]
   },
   {
     "bookId": 40,
@@ -147,7 +171,15 @@
     "bookId": 40,
     "chapterId": 14,
     "verseId": 22,
-    "text": "Straks etter fekk han læresveinane til å gå i båten og fara føre han over til den andre sida, medan han sende folkemengdene frå seg."
+    "text": "Straks etter nøydde han læresveinane til å gå i båten og fara føre han over til den andre sida, medan han sende folkemengdene frå seg.",
+    "versions": [
+      {
+        "text": "Straks etter fekk han læresveinane til å gå i båten og fara føre han over til den andre sida, medan han sende folkemengdene frå seg.",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "ἠνάγκασεν tyder 'tvinga/nøydde', eit sterkare ord enn 'fekk ... til å'. Det er eit viktig nyanseord som viser at Jesus var bestemt og insisterande."
+      }
+    ]
   },
   {
     "bookId": 40,
@@ -231,6 +263,14 @@
     "bookId": 40,
     "chapterId": 14,
     "verseId": 36,
-    "text": "Dei bad han om at dei berre måtte få røra ved kanten av kappa hans. Og alle som rørte ved han, vart fullstendig lækte."
+    "text": "Dei bad han om at dei berre måtte få røra ved kanten av kappa hans. Og alle som rørte ved han, vart fullt ut frelste.",
+    "versions": [
+      {
+        "text": "Dei bad han om at dei berre måtte få røra ved kanten av kappa hans. Og alle som rørte ved han, vart fullstendig lækte.",
+        "type": "error",
+        "severity": "minor",
+        "explanation": "διεσώθησαν kjem frå διασῴζω som tyder 'vart berga/frelste/heilbreda'. 'Fullstendig lækte' er akseptabelt, men 'frelste' eller 'berga' fangar betre den breiare tydinga av det greske ordet som inkluderer meir enn berre fysisk lækjing. Alternativt kan 'vart heilbreda' vera eit godt kompromiss."
+      }
+    ]
   }
 ]

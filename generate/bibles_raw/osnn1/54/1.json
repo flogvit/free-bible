@@ -57,7 +57,15 @@
     "bookId": 54,
     "chapterId": 1,
     "verseId": 8,
-    "text": "Vi veit at lova er god dersom ein brukar henne rett,"
+    "text": "Vi veit at lova er god dersom ein brukar ho rett,",
+    "versions": [
+      {
+        "text": "Vi veit at lova er god dersom ein brukar henne rett,",
+        "type": "grammar",
+        "severity": "minor",
+        "explanation": "På nynorsk er det meir naturleg å bruka objektsforma 'ho' enn 'henne' som objekt for 'brukar'. 'Henne' er meir bokmålsprega. Begge former kan forsvarast, men 'ho' er meir idiomatisk nynorsk."
+      }
+    ]
   },
   {
     "bookId": 54,
@@ -81,7 +89,15 @@
     "bookId": 54,
     "chapterId": 1,
     "verseId": 11,
-    "text": "Dette svarar til evangeliet om herlegdomen til den velsigna Gud, det som er blitt tiltrudd meg."
+    "text": "Dette svarar til evangeliet om herlegdomen til den sæle Gud, det som er blitt tiltrudd meg.",
+    "versions": [
+      {
+        "text": "Dette svarar til evangeliet om herlegdomen til den velsigna Gud, det som er blitt tiltrudd meg.",
+        "type": "error",
+        "severity": "major",
+        "explanation": "Gresk μακαρίου tyder 'sæl' (blessed/happy i ei djupare tyding), ikkje 'velsigna' (som ville vera εὐλογητός). 'Sæl' er eit godt nynorsk ord som fangar den rette tydinga av μακάριος. 'Velsigna' er εὐλογητός og har ei anna teologisk tyding (å verta velsigna av nokon), medan μακάριος viser til ein eigenskap ved Gud sjølv."
+      }
+    ]
   },
   {
     "bookId": 54,
@@ -105,13 +121,29 @@
     "bookId": 54,
     "chapterId": 1,
     "verseId": 15,
-    "text": "Dette ordet er truverdig og verdt å ta imot fullt ut: Kristus Jesus kom til verda for å frelsa syndarar, og mellom dei er eg den største."
+    "text": "Dette ordet er truverdig og verdt å ta imot fullt ut: Kristus Jesus kom til verda for å frelsa syndarar, og mellom dei er eg den fyrste.",
+    "versions": [
+      {
+        "text": "Dette ordet er truverdig og verdt å ta imot fullt ut: Kristus Jesus kom til verda for å frelsa syndarar, og mellom dei er eg den største.",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "Gresk πρῶτος tyder 'den fyrste/fremste', ikkje 'den største'. Paulus kallar seg sjølv den fremste/fyrste av syndarar, ikkje den største. 'Den fyrste' er meir nøyaktig og har ein annan nyanse – det peikar mot at han er den fremste, det verste eksempelet, snarare enn størst i omfang."
+      }
+    ]
   },
   {
     "bookId": 54,
     "chapterId": 1,
     "verseId": 16,
-    "text": "Men difor fekk eg miskunn, for at Kristus Jesus skulle visa heile sitt tolmod på meg først, som eit førebilete for dei som seinare skulle koma til tru på han og få evig liv."
+    "text": "Men difor fekk eg miskunn, for at Kristus Jesus først skulle visa alt sitt tolmod med meg, som eit førebilete for dei som seinare skulle koma til tru på han og få evig liv.",
+    "versions": [
+      {
+        "text": "Men difor fekk eg miskunn, for at Kristus Jesus skulle visa heile sitt tolmod på meg først, som eit førebilete for dei som seinare skulle koma til tru på han og få evig liv.",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "To ting: 1) 'visa tolmod på meg' er ikkje idiomatisk nynorsk – det bør vera 'visa tolmod med meg'. 2) ἐν ἐμοὶ πρώτῳ ('i meg først') — 'først' høyrer meir naturleg saman med 'visa' enn å stå etter 'meg'. 3) τὴν ἅπασαν μακροθυμίαν er 'alt sitt tolmod' (ἅπασαν = all/heile), som er litt meir nøyaktig enn 'heile sitt tolmod'."
+      }
+    ]
   },
   {
     "bookId": 54,

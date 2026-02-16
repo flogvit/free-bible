@@ -3,11 +3,17 @@
     "bookId": 23,
     "chapterId": 65,
     "verseId": 1,
-    "text": "Eg lét meg søkja av dei som ikkje spurde, eg lét meg finna av dei som ikkje søkte meg.",
+    "text": "Eg lét meg søkja av dei som ikkje spurde, eg lét meg finna av dei som ikkje søkte meg. Eg sa: «Her er eg, her er eg!» til eit folkeslag som ikkje kalla på namnet mitt.",
     "versions": [
       {
         "text": "Eg lét meg finna av dei som ikkje spurde etter meg, eg lét meg finna av dei som ikkje søkte meg. Eg sa: «Her er eg, her er eg!» til eit folk som ikkje kalla på namnet mitt.",
         "explanation": "Det hebraiske 'נִדְרַשְׁתִּי' (nidrasjti) betyr 'eg lét meg søkja/rådspørja', ikkje 'eg lét meg finna'. Det andre verbet 'נִמְצֵאתִי' (nimtseti) betyr 'eg lét meg finna'. Noverande omsetjing brukar same uttrykk to gonger, men originalen har to ulike verb."
+      },
+      {
+        "text": "Eg lét meg søkja av dei som ikkje spurde, eg lét meg finna av dei som ikkje søkte meg.",
+        "type": "error",
+        "severity": "critical",
+        "explanation": "Den siste delen av verset er utelaten i den noverande omsetjinga: 'אָמַרְתִּי הִנֵּנִי הִנֵּנִי אֶל־גּוֹי לֹא־קֹרָא בִשְׁמִי' ('Eg sa: Her er eg, her er eg! til eit folk som ikkje kalla på namnet mitt'). Dette er ein vesentleg del av verset. Brukar 'folkeslag' i staden for 'folk' for å skilja frå tidlegare versjon og betre fanga 'גּוֹי'."
       }
     ]
   },
@@ -27,11 +33,17 @@
     "bookId": 23,
     "chapterId": 65,
     "verseId": 4,
-    "text": "Dei sit i gravene og held seg i løynde stader om natta. Dei et svinekjøt, og i kara deira er det ureint søl.",
+    "text": "Dei sit i gravene og held seg i løynde stader om natta. Dei et svinekjøt, og i kara deira er det urein suppe.",
     "versions": [
       {
         "text": "Dei sit i gravene og held seg i løynde stader om natta. Dei et svinekjøt, og i skålene deira er det ureint kjøt.",
         "explanation": "Det hebraiske ordet 'מְרַק' (merak) betyr 'søl' eller 'kraft/buljong', ikkje berre 'kjøt'. Ordet 'פִּגֻּלִים' (piggulim) refererer til ureint eller avskyeleg offer/mat. 'כְּלֵיהֶם' (keleihem) betyr 'kara/behaldarane deira', ikkje spesifikt 'skåler'."
+      },
+      {
+        "text": "Dei sit i gravene og held seg i løynde stader om natta. Dei et svinekjøt, og i kara deira er det ureint søl.",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "'מְרַק' (merak) betyr meir spesifikt 'suppe/buljong/kraft' enn 'søl'. 'Søl' er eit litt uvanleg og upresist ord her. 'Urein suppe' eller 'avskyeleg buljong' ville vore meir nøyaktig."
       }
     ]
   },
@@ -51,7 +63,15 @@
     "bookId": 23,
     "chapterId": 65,
     "verseId": 7,
-    "text": "Syndene dykkar og syndene til fedrane dykkar samtidig, seier Herren. Dei brende røykjelse på fjella og spotta meg på haugane. Difor skal eg fyrst måla ut løna deira i fanget på dei."
+    "text": "Syndene dykkar og syndene til fedrane dykkar på same tid, seier Herren. Dei som brende røykjelse på fjella og spotta meg på haugane. Eg skal måla deira tidlegare gjerningar ut i fanget på dei.",
+    "versions": [
+      {
+        "text": "Syndene dykkar og syndene til fedrane dykkar samtidig, seier Herren. Dei brende røykjelse på fjella og spotta meg på haugane. Difor skal eg fyrst måla ut løna deira i fanget på dei.",
+        "type": "error",
+        "severity": "major",
+        "explanation": "'רִאשֹׁנָה' (risjonah) modifiserer 'פְעֻלָּתָם' (pe'ullatam, 'gjerningane deira') og betyr 'dei tidlegare/fyrste gjerningane deira', ikkje 'fyrst' som eit tidsadverb for målinga. Omsetjinga 'fyrst måla ut løna' er misvisande. Det hebraiske poenget er at Gud skal gjengjelda dei for deira tidlegare gjerningar."
+      }
+    ]
   },
   {
     "bookId": 23,
@@ -99,7 +119,15 @@
     "bookId": 23,
     "chapterId": 65,
     "verseId": 14,
-    "text": "Sjå, tenarane mine skal jubla av hjartans glede, men de skal skrika av hjartesorg og jamra dykk av ei sundbroten ånd."
+    "text": "Sjå, tenarane mine skal jubla av hjartans glede, men de skal skrika av hjarteverk og jamma av ei knust ånd.",
+    "versions": [
+      {
+        "text": "Sjå, tenarane mine skal jubla av hjartans glede, men de skal skrika av hjartesorg og jamra dykk av ei sundbroten ånd.",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "'מִכְּאֵב לֵב' betyr 'av smerte/verk i hjartet', altså 'hjarteverk' er meir presist enn 'hjartesorg'. 'שֵׁבֶר רוּחַ' betyr 'ei knust/broten ånd'. 'Sundbroten' er ikkje feil, men 'knust' er meir idiomatisk nynorsk og sterkare."
+      }
+    ]
   },
   {
     "bookId": 23,
@@ -123,7 +151,15 @@
     "bookId": 23,
     "chapterId": 65,
     "verseId": 17,
-    "text": "For sjå, eg skaper ein ny himmel og ei ny jord. Dei tidlegare tinga skal ikkje minnast og ikkje koma opp i hjarta."
+    "text": "For sjå, eg skaper nye himlar og ei ny jord. Dei tidlegare tinga skal ikkje minnast og ikkje koma opp i hjarta.",
+    "versions": [
+      {
+        "text": "For sjå, eg skaper ein ny himmel og ei ny jord. Dei tidlegare tinga skal ikkje minnast og ikkje koma opp i hjarta.",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "Det hebraiske 'שָׁמַיִם חֲדָשִׁים' (sjamajim chadasjim) er fleirtal: 'nye himlar', ikkje 'ein ny himmel'. Dette er teologisk viktig og konsistent med 2 Pet 3:13 og Op 21:1."
+      }
+    ]
   },
   {
     "bookId": 23,

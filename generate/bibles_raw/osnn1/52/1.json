@@ -15,11 +15,17 @@
     "bookId": 52,
     "chapterId": 1,
     "verseId": 2,
-    "text": "Vi takkar alltid Gud for dykk alle, når vi nemner dykk i bønene våre, utan opphald.",
+    "text": "Vi takkar alltid Gud for dykk alle og nemner dykk i bønene våre utan opphald,",
     "versions": [
       {
         "text": "Vi takkar alltid Gud for dykk alle og nemner dykk stadig i bønene våre.",
         "explanation": "Ordet 'ἀδιαλείπτως' (utan opphald) høyrer til vers 2 i grunnteksten, men er flytta til vers 3 i omsetjinga. Dette endrar strukturen i teksten."
+      },
+      {
+        "text": "Vi takkar alltid Gud for dykk alle, når vi nemner dykk i bønene våre, utan opphald.",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "Bruken av 'når vi' gjer at det å nemne dei i bøn vert eit vilkår for takksemd. I grunnteksten er μνείαν ποιούμενοι eit partisipp som skildrar samtidig handling – dei takkar og nemner samstundes. 'Og nemner' gjev betre flyt. Dessutan bør verset ende med komma (ikkje punktum) sidan v.3 held fram den same setninga med partisippet μνημονεύοντες."
       }
     ]
   },
@@ -27,7 +33,21 @@
     "bookId": 52,
     "chapterId": 1,
     "verseId": 3,
-    "text": "Vi kjem i hug truverket dykkar, kjærleiksslitet og det tolmodige håpet de har til vår Herre Jesus Kristus, framfor Gud, vår Far."
+    "text": "vona",
+    "versions": [
+      {
+        "text": "Vi kjem i hug truverket dykkar, kjærleiksslitet og det tolmodige håpet de har til vår Herre Jesus Kristus, framfor Gud, vår Far.",
+        "type": "error",
+        "severity": "major",
+        "explanation": "Grunnteksten har tre genitiv-konstruksjonar: τοῦ ἔργου τῆς πίστεως (trua si gjerning), τοῦ κόπου τῆς ἀγάπης (kjærleiken sitt slit/strev) og τῆς ὑπομονῆς τῆς ἐλπίδος (den uthaldande vona). Orda 'truverket' og 'kjærleiksslitet' er uklare samansetjingar som ikkje er etablerte nynorske ord, og dei skjuler den viktige teologiske strukturen der tru, kjærleik og von kvar fører til gjerning, strev og uthald. Dessutan er ὑπομονή betre omsett med 'uthald' enn 'tolmod', og ἐλπίς er 'von', ikkje 'håp' (som er bokmålsform)."
+      },
+      {
+        "text": "Vi kjem i hug den gjerning trua dykkar ber, det strev kjærleiken kostar og den uthaldande vona de har i vår Herre Jesus Kristus, framfor Gud, vår Far.",
+        "type": "grammar",
+        "severity": "minor",
+        "explanation": "'Håp' er bokmålsform. På nynorsk bør ein nytte 'von' eller 'vona'."
+      }
+    ]
   },
   {
     "bookId": 52,
@@ -45,7 +65,15 @@
     "bookId": 52,
     "chapterId": 1,
     "verseId": 5,
-    "text": "For evangeliet vårt kom ikkje til dykk berre med ord, men òg med kraft og med Den Heilage Ande og med full vissa. De veit sjølve korleis vi var hos dykk for dykkar skuld."
+    "text": "For evangeliet vårt kom ikkje til dykk berre med ord, men òg med kraft, med Den Heilage Ande og med full overtyding. De veit sjølve korleis vi var hos dykk for dykkar skuld.",
+    "versions": [
+      {
+        "text": "For evangeliet vårt kom ikkje til dykk berre med ord, men òg med kraft og med Den Heilage Ande og med full vissa. De veit sjølve korleis vi var hos dykk for dykkar skuld.",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "Grunnteksten har 'καὶ ἐν πνεύματι ἁγίῳ καὶ πληροφορίᾳ πολλῇ' - den siste 'καὶ' koplar 'Den Heilage Ande' og 'full vissa/overtyding' saman, ikkje som tre separate ledd med 'med'. Dessutan er πληροφορίᾳ πολλῇ meir 'full overtyding' enn 'full vissa'. Ei lita justering av strukturen gjev betre samsvar med originalen."
+      }
+    ]
   },
   {
     "bookId": 52,
@@ -87,6 +115,14 @@
     "bookId": 52,
     "chapterId": 1,
     "verseId": 10,
-    "text": "og for å venta på Son hans frå himlane, han som Gud reiste opp frå dei døde, Jesus, som friar oss frå vreiden som kjem."
+    "text": "og for å venta på Son hans frå himlane, han som Gud reiste opp frå dei døde – Jesus, som friar oss frå vreiden som kjem.",
+    "versions": [
+      {
+        "text": "og for å venta på Son hans frå himlane, han som Gud reiste opp frå dei døde, Jesus, som friar oss frå vreiden som kjem.",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "Originalen har eit tankestrek eller eit naturleg brot der 'Ἰησοῦν' står i apposisjon. Eit tankestrek før 'Jesus' kan gjere dette tydelegare i norsk og markere den retoriske oppbygginga. Dette er berre eit mindre stilistisk forslag."
+      }
+    ]
   }
 ]

@@ -15,7 +15,15 @@
     "bookId": 6,
     "chapterId": 13,
     "verseId": 3,
-    "text": "frå Sihor-elva aust for Egypt og nordover til grensa ved Ekron, som vert rekna som kanaaneisk land – dei fem filisterfyrstane i Gaza, Asjdod, Asjkalon, Gat og Ekron – og avvittane."
+    "text": "frå Sihor, som ligg framfor Egypt, og nordover til grensa ved Ekron, som vert rekna som kanaaneisk land – dei fem filisterfyrstane i Gaza, Asjdod, Asjkalon, Gat og Ekron – og avvittane.",
+    "versions": [
+      {
+        "text": "frå Sihor-elva aust for Egypt og nordover til grensa ved Ekron, som vert rekna som kanaaneisk land – dei fem filisterfyrstane i Gaza, Asjdod, Asjkalon, Gat og Ekron – og avvittane.",
+        "type": "error",
+        "severity": "minor",
+        "explanation": "The Hebrew עַל־פְּנֵי מִצְרַיִם means 'east of' or 'before/facing Egypt,' not specifically 'east of Egypt.' More importantly, Shihor is generally understood to be on the eastern border of Egypt (i.e., facing Egypt), so 'aust for' is a reasonable rendering, but the word 'elva' (river) is added without basis in the Hebrew text. The Hebrew just says הַשִּׁיחוֹר (the Shihor). While Shihor may refer to a river/stream, adding 'elva' is an addition to the text."
+      }
+    ]
   },
   {
     "bookId": 6,
@@ -27,7 +35,15 @@
     "bookId": 6,
     "chapterId": 13,
     "verseId": 5,
-    "text": "og gebalittane sitt land og heile Libanon austover, frå Baal-Gad nedanfor Hermon-fjellet til Lebo-Hamat."
+    "text": "og gebalittane sitt land og heile Libanon austover, frå Baal-Gad under Hermon-fjellet til Lebo-Hamat.",
+    "versions": [
+      {
+        "text": "og gebalittane sitt land og heile Libanon austover, frå Baal-Gad nedanfor Hermon-fjellet til Lebo-Hamat.",
+        "type": "error",
+        "severity": "minor",
+        "explanation": "The Hebrew תַּחַת הַר־חֶרְמוֹן means 'under/beneath Mount Hermon,' which 'nedanfor' captures fairly well. However, 'under' is more literal. This is a minor point – 'nedanfor' is acceptable."
+      }
+    ]
   },
   {
     "bookId": 6,
@@ -63,7 +79,15 @@
     "bookId": 6,
     "chapterId": 13,
     "verseId": 11,
-    "text": "og Gilead og området til gesuriittane og maakatiittane, og heile Hermon-fjellet og heile Basan til Salka,"
+    "text": "og Gilead og området til gesuriittane og maakattittane, og heile Hermon-fjellet og heile Basan til Salka,",
+    "versions": [
+      {
+        "text": "og Gilead og området til gesuriittane og maakatiittane, og heile Hermon-fjellet og heile Basan til Salka,",
+        "type": "grammar",
+        "severity": "minor",
+        "explanation": "The spelling 'maakatiittane' in verse 11 is inconsistent with 'maakatiittane' in verse 13. More importantly, the Hebrew גְּבוּל means 'border/territory' – 'området' (area) is an acceptable rendering, but for consistency the spelling of the people group should be uniform throughout."
+      }
+    ]
   },
   {
     "bookId": 6,
@@ -81,7 +105,15 @@
     "bookId": 6,
     "chapterId": 13,
     "verseId": 14,
-    "text": "Berre Levi-stammen gav han ingen arv. Offera til Herren, Israels Gud, er deira arv, slik han hadde sagt til dei."
+    "text": "Berre Levi-stammen gav han ingen arv. Eldoffera til Herren, Israels Gud, er arven hans, slik han hadde sagt til han.",
+    "versions": [
+      {
+        "text": "Berre Levi-stammen gav han ingen arv. Offera til Herren, Israels Gud, er deira arv, slik han hadde sagt til dei.",
+        "type": "theological",
+        "severity": "major",
+        "explanation": "Two issues: (1) אִשֵּׁי specifically means 'fire offerings' (eldoffer), not just 'offerings' (offer) generally. (2) The Hebrew has singular נַחֲלָתוֹ ('his inheritance') and דִּבֶּר־לוֹ ('spoke to him'), referring to the tribe of Levi as a collective singular. The translation uses 'deira' (their) and 'dei' (them), but 'hans'/'han' would be more accurate."
+      }
+    ]
   },
   {
     "bookId": 6,
@@ -147,7 +179,15 @@
     "bookId": 6,
     "chapterId": 13,
     "verseId": 25,
-    "text": "Området deira var Jaser og alle byane i Gilead og halvparten av ammonittane sitt land til Aroer, som ligg aust for Rabba,"
+    "text": "Området deira var Jaser og alle byane i Gilead og halvparten av ammonittane sitt land til Aroer, som ligg framfor Rabba,",
+    "versions": [
+      {
+        "text": "Området deira var Jaser og alle byane i Gilead og halvparten av ammonittane sitt land til Aroer, som ligg aust for Rabba,",
+        "type": "error",
+        "severity": "minor",
+        "explanation": "The Hebrew עַל־פְּנֵי רַבָּה means 'facing Rabba' or 'before Rabba,' not specifically 'east of Rabba.' The expression עַל־פְּנֵי indicates a position facing or in front of, and the direction is not specified as east."
+      }
+    ]
   },
   {
     "bookId": 6,
@@ -195,6 +235,14 @@
     "bookId": 6,
     "chapterId": 13,
     "verseId": 33,
-    "text": "Men til Levi-stammen gav Moses ingen arv. Herren, Israels Gud, er deira arv, slik han hadde sagt til dei."
+    "text": "Men til Levi-stammen gav Moses ingen arv. Herren, Israels Gud, er deira arv, slik han har sagt til dei.",
+    "versions": [
+      {
+        "text": "Men til Levi-stammen gav Moses ingen arv. Herren, Israels Gud, er deira arv, slik han hadde sagt til dei.",
+        "type": "theological",
+        "severity": "minor",
+        "explanation": "Note that verse 33 says נַחֲלָתָם (their inheritance) and לָהֶם (to them), using plural forms, unlike verse 14 which uses singular. The current translation correctly uses plural here. However, דִּבֶּר is perfect tense; 'har sagt' (present perfect) may be slightly more natural than 'hadde sagt' (past perfect), though both are defensible."
+      }
+    ]
   }
 ]

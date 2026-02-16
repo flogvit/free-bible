@@ -21,7 +21,15 @@
     "bookId": 11,
     "chapterId": 9,
     "verseId": 4,
-    "text": "Og om du vandrar for mitt andlet slik David, far din, gjorde – med eit heilt hjarte og med rettferd – og gjer alt det eg har pålagt deg, og held forskriftene og lovene mine,"
+    "text": "Og om du vandrar for mitt andlet slik David, far din, gjorde – heilhjarta og rettferdig – og gjer alt det eg har pålagt deg og held forskriftene og lovene mine,",
+    "versions": [
+      {
+        "text": "Og om du vandrar for mitt andlet slik David, far din, gjorde – med eit heilt hjarte og med rettferd – og gjer alt det eg har pålagt deg, og held forskriftene og lovene mine,",
+        "type": "grammar",
+        "severity": "minor",
+        "explanation": "Små stilforbetringar: 'heilhjarta og rettferdig' er meir naturleg nynorsk enn 'med eit heilt hjarte og med rettferd'. Dessutan er kommaet før 'og held' unødvendig sidan det er ein del av same handlingsrekkja."
+      }
+    ]
   },
   {
     "bookId": 11,
@@ -45,11 +53,17 @@
     "bookId": 11,
     "chapterId": 9,
     "verseId": 8,
-    "text": "Og dette huset skal verta til ruinar. Alle som går forbi, skal stivna og fræsa.",
+    "text": "Og dette huset skal verta til ruinar. Alle som går forbi, skal stivna og fræsa, og dei skal seia: «Kvifor har Herren gjort dette mot dette landet og dette huset?»",
     "versions": [
       {
         "text": "Og dette huset, som var så høgt, skal få alle som går forbi til å stivna og fræsa. Dei skal seia: Kvifor har Herren gjort dette mot dette landet og dette huset?",
         "explanation": "Det hebraiske 'עֶלְיוֹן' (elyon) i denne konteksten er omdiskutert, men mange forstår det som at huset skal verta til ruinar/ruinhaugar (jf. LXX og parallellen i 2 Krøn 7:21). 'Som var så høgt' er ein mogleg tolking, men 'til ruinar' gjev betre meining i samanhengen med øydelegging."
+      },
+      {
+        "text": "Og dette huset skal verta til ruinar. Alle som går forbi, skal stivna og fræsa.",
+        "type": "error",
+        "severity": "major",
+        "explanation": "Den siste delen av verset (וְאָמְרוּ עַל־מֶה עָשָׂה יְהוָה כָּכָה לָאָרֶץ הַזֹּאת וְלַבַּיִת הַזֶּה) er utelate i den noverande omsetjinga. Denne delen var med i versjon 1, men vart fjerna ved redigeringa. Sjølv om tolkinga av 'elyon' vart endra, burde ikkje den siste delen av verset ha blitt fjerna, sidan det er ein sjølvstendig del av teksten."
       }
     ]
   },
@@ -69,7 +83,15 @@
     "bookId": 11,
     "chapterId": 9,
     "verseId": 11,
-    "text": "og Hiram, kongen i Tyrus, hadde hjelpt Salomo med sedertre, sypress-tre og gull, så mykje han ville ha, då gav kong Salomo Hiram tjue byar i Galilea-landet."
+    "text": "og Hiram, kongen i Tyrus, hadde hjelpt Salomo med sedertre, sypresstre og gull, så mykje han ville ha, då gav kong Salomo Hiram tjue byar i Galilea-landet.",
+    "versions": [
+      {
+        "text": "og Hiram, kongen i Tyrus, hadde hjelpt Salomo med sedertre, sypress-tre og gull, så mykje han ville ha, då gav kong Salomo Hiram tjue byar i Galilea-landet.",
+        "type": "grammar",
+        "severity": "minor",
+        "explanation": "'Sypresstre' bør skrivast i eitt ord utan bindestrek, i tråd med nynorsk rettskriving."
+      }
+    ]
   },
   {
     "bookId": 11,
@@ -93,7 +115,15 @@
     "bookId": 11,
     "chapterId": 9,
     "verseId": 15,
-    "text": "Dette er soga om tvangsarbeidet som kong Salomo påla folket for å byggja Herrens hus og sitt eige palass, Millo, Jerusalems-muren, Hasor, Megiddo og Geser."
+    "text": "Dette er soga om det pliktarbeidet som kong Salomo skreiv ut for å byggja Herrens hus og sitt eige palass, Millo, Jerusalems-muren, Hasor, Megiddo og Geser.",
+    "versions": [
+      {
+        "text": "Dette er soga om tvangsarbeidet som kong Salomo påla folket for å byggja Herrens hus og sitt eige palass, Millo, Jerusalems-muren, Hasor, Megiddo og Geser.",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "Hebraisk 'הַמַּס אֲשֶׁר הֶעֱלָה' tyder meir presist 'det pliktarbeidet/tvangsarbeidet som han skreiv ut / la på'. 'Påla folket' legg til 'folket' som ikkje står i originalteksten (folket er nemnt først i v. 20-21)."
+      }
+    ]
   },
   {
     "bookId": 11,

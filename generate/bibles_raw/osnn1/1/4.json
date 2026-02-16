@@ -45,13 +45,29 @@
     "bookId": 1,
     "chapterId": 4,
     "verseId": 7,
-    "text": "Er det ikkje slik at om du gjer det gode, kan du lyfte andletet? Men gjer du ikkje det gode, ligg synda på lur ved døra. Ho har lyst på deg, men du skal herska over henne.»"
+    "text": "Er det ikkje slik at om du gjer det gode, kan du lyfte andletet? Men gjer du ikkje det gode, ligg synda på lur ved døra. Ho ønskjer å råda over deg, men du skal herska over henne.»",
+    "versions": [
+      {
+        "text": "Er det ikkje slik at om du gjer det gode, kan du lyfte andletet? Men gjer du ikkje det gode, ligg synda på lur ved døra. Ho har lyst på deg, men du skal herska over henne.»",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "Det hebraiske תְּשׁוּקָתוֹ (teshuqato) tyder ikkje berre 'lyst' men nærare 'trå/draging/ønske om å kontrollera' – same ordet som i 1 Mos 3:16. 'Ho har lyst på deg' kan misforståast. 'Ho ønskjer å råda over deg' gjev betre att den teologiske meininga: synda vil dominera Kain, men han skal herska over henne."
+      }
+    ]
   },
   {
     "bookId": 1,
     "chapterId": 4,
     "verseId": 8,
-    "text": "Kain sa til Abel, bror sin: «Lat oss gå ut på marka.» Og medan dei var ute på marka, gjekk Kain laus på Abel, bror sin, og drap han."
+    "text": "Kain sa noko til Abel, bror sin. Og medan dei var ute på marka, gjekk Kain laus på Abel, bror sin, og drap han.",
+    "versions": [
+      {
+        "text": "Kain sa til Abel, bror sin: «Lat oss gå ut på marka.» Og medan dei var ute på marka, gjekk Kain laus på Abel, bror sin, og drap han.",
+        "type": "error",
+        "severity": "major",
+        "explanation": "Den hebraiske teksten (den masoretiske) seier berre at Kain 'sa til Abel, bror sin' – men oppgjev ikkje kva han sa. Innhaldet «Lat oss gå ut på marka» finst ikkje i den masoretiske grunnteksten (det finst i Samaritansk Pentateuk, Septuaginta m.m.). Å leggje til dette er å følgje ein annan teksttradisjon utan å gjera merksam på det. Ei meir nøytral attgjeving er å seia at Kain 'sa noko til' eller 'tala til' Abel."
+      }
+    ]
   },
   {
     "bookId": 1,
@@ -87,7 +103,7 @@
     "bookId": 1,
     "chapterId": 4,
     "verseId": 13,
-    "text": "Kain sa til Herren: «Mi straff er for tung å bera.»",
+    "text": "Kain sa til Herren: «Straffa mi er for tung å bera.»",
     "versions": [
       {
         "text": "Kain sa til Herren: «Mi skuld er for stor til å bera.",
@@ -96,6 +112,12 @@
       {
         "text": "Kain sa til Herren: «Mi straff er for tung til å bera.",
         "explanation": "Setninga manglar avsluttande hermeteikn. Dessutan er 'til å bera' litt tungt; 'å bera' er meir naturleg på nynorsk."
+      },
+      {
+        "text": "Kain sa til Herren: «Mi straff er for tung å bera.»",
+        "type": "grammar",
+        "severity": "minor",
+        "explanation": "Verset manglar avsluttande hermeteikn (»). Det vart nemnt som feil i versjon 2, men det ser ut til at det no er retta. Elles: 'Mi straff' er ei uvanleg ordstilling på nynorsk – 'Straffa mi' er meir naturleg i moderne nynorsk. Men sidan verset har 2+ revisjonar, er dette berre ein mindre merknad."
       }
     ]
   },
@@ -157,11 +179,17 @@
     "bookId": 1,
     "chapterId": 4,
     "verseId": 22,
-    "text": "Silla fødde òg ein son, Tubal-Kain. Han var meister i å smi alt av bronse og jern. Syster til Tubal-Kain var Naama.",
+    "text": "Silla fødde òg Tubal-Kain. Han var meister i å smi alt av kopar og jern. Syster til Tubal-Kain var Naama.",
     "versions": [
       {
         "text": "Silla fødde òg ein son, Tubal-Kain. Han smidde alle slags reiskapar av bronse og jern. Syster til Tubal-Kain var Naama.",
         "explanation": "Det hebraiske לֹטֵשׁ tyder 'ein som kvesser/hamrar' og חֹרֵשׁ tyder 'handverkar/smed'. Teksten seier ikkje spesifikt 'reiskapar' - det er ei tolking. 'Meister i å smi alt av bronse og jern' er nærare originalen og flyt betre munnleg."
+      },
+      {
+        "text": "Silla fødde òg ein son, Tubal-Kain. Han var meister i å smi alt av bronse og jern. Syster til Tubal-Kain var Naama.",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "Ordet 'ein son' er lagt til – grunnteksten seier berre at ho fødde Tubal-Kain, ikkje spesifikt 'ein son'. Dessutan er נְחֹשֶׁת meir presist omsett med 'kopar' enn 'bronse'. Kopar er grunnmetallet; bronse er ei legering. Det hebraiske ordet viser til kopar."
       }
     ]
   },

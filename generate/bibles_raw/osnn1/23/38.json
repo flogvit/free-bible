@@ -45,7 +45,15 @@
     "bookId": 23,
     "chapterId": 38,
     "verseId": 8,
-    "text": "Sjå, eg vil la skuggen gå tilbake dei ti stega han har gått ned på Akas' solur.» Og sola gjekk tilbake dei ti stega ho hadde gått ned."
+    "text": "Sjå, eg vil la skuggen gå tilbake dei ti trinna han har gått ned på Akas' trapper, i solskinet.» Og sola gjekk tilbake dei ti trinna ho hadde gått ned.",
+    "versions": [
+      {
+        "text": "Sjå, eg vil la skuggen gå tilbake dei ti stega han har gått ned på Akas' solur.» Og sola gjekk tilbake dei ti stega ho hadde gått ned.",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "Det hebraiske 'מַעֲלוֹת' tyder 'trapper/trinn', ikkje 'steg', og 'בַּשֶּׁמֶשׁ' betyr 'i sola/solskinet'. Dette er ikkje ein solur i moderne forstand, men trapper der skuggen rørte seg med sola. 'Steg' er likevel akseptabelt og brukt i mange omsetjingar, så dette er ei mindre sak."
+      }
+    ]
   },
   {
     "bookId": 23,
@@ -63,11 +71,17 @@
     "bookId": 23,
     "chapterId": 38,
     "verseId": 11,
-    "text": "Eg sa: Eg får ikkje sjå Herren, Herren i dei levande sitt land. Eg får ikkje lenger sjå menneske blant dei som bur i forgjengelege verda.",
+    "text": "Eg sa: Eg får ikkje sjå Herren, Herren i dei levande sitt land. Eg får ikkje lenger sjå menneske blant dei som bur i den forgjengelege verda.",
     "versions": [
       {
         "text": "Eg sa: Eg får ikkje sjå Herren, Herren i dei levande sitt land. Eg får ikkje lenger sjå menneske blant dei som bur i verda.",
         "explanation": "Det hebraiske 'חָדֶל' betyr 'opphøyr, forgjengeleg tilstand' og refererer til den forgjengelege verda eller dei dødelege. 'Verda' åleine mister denne nyansen. 'Den forgjengelege verda' eller 'dei dødelege' ville vore meir presist."
+      },
+      {
+        "text": "Eg sa: Eg får ikkje sjå Herren, Herren i dei levande sitt land. Eg får ikkje lenger sjå menneske blant dei som bur i forgjengelege verda.",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "Grammatisk bør det heita 'den forgjengelege verda' med bestemt artikkel, ikkje 'forgjengelege verda'. Men sidan dette verset allereie har hatt ein revisjon, og endringaer er gjort medvite, markerer eg dette som minor."
       }
     ]
   },
@@ -99,11 +113,17 @@
     "bookId": 23,
     "chapterId": 38,
     "verseId": 15,
-    "text": "Kva skal eg seia? Han har tala til meg, og han har gjort det. Eg skal gå varsamt alle mine år på grunn av mi bitre sjel.",
+    "text": "Eg skal gå varsamt alle mine år på grunn av bitterheita i sjela mi.",
     "versions": [
       {
         "text": "Kva skal eg seia? Han har tala til meg, og han har gjort det. Eg skal gå varsamt alle mine år på grunn av mi sjelebitter.",
         "explanation": "Formuleringa 'mi sjelebitter' er uvanleg på nynorsk. 'Mi bitre sjel' eller 'bitterheita i sjela mi' er meir naturleg."
+      },
+      {
+        "text": "Kva skal eg seia? Han har tala til meg, og han har gjort det. Eg skal gå varsamt alle mine år på grunn av mi bitre sjel.",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "'Mi bitre sjel' er litt uvanleg; 'על מר נפשי' tyder meir 'over bitterheita i sjela mi'. Men sidan verset har gjennomgått revisjon og formuleringa er akseptabel, er dette berre eit mindre forslag."
       }
     ]
   },
@@ -117,11 +137,17 @@
     "bookId": 23,
     "chapterId": 38,
     "verseId": 17,
-    "text": "Sjå, til fred vart mi bitre liding. Du har drege mi sjel ut frå øydelegginga si grav, for du kasta alle syndene mine bak ryggen din.",
+    "text": "Sjå, til fred vart mi bitre liding. Du har drege mi sjel ut frå fortapinga grav, for du kasta alle syndene mine bak ryggen din.",
     "versions": [
       {
         "text": "Sjå, til fred vart mi bitre liding. Du har elska mi sjel ut av øydelegginga si grav, for du kasta alle syndene mine bak ryggen din.",
         "explanation": "Det hebraiske 'חָשַׁקְתָּ' betyr her 'du heldt fast ved / drog ut', ikkje 'elska'. Verbet uttrykkjer at Gud redda sjela frå grava, ikkje at han elska henne. 'Drege ut frå' gir betre meining i konteksten."
+      },
+      {
+        "text": "Sjå, til fred vart mi bitre liding. Du har drege mi sjel ut frå øydelegginga si grav, for du kasta alle syndene mine bak ryggen din.",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "'שַׁחַת בְּלִי' betyr 'grava/fortapinga si grav' eller 'øydeleggingsgrava'. 'Øydelegginga si grav' er litt uklart på nynorsk. 'Fortapinga grav' eller 'undergangens grav' er meir naturleg og teologisk presist."
       }
     ]
   },
@@ -141,7 +167,15 @@
     "bookId": 23,
     "chapterId": 38,
     "verseId": 20,
-    "text": "Herren er her for å frelsa meg. Difor vil vi spela på strengane mine alle våre levedagar i Herrens hus."
+    "text": "Herren er reidd til å frelsa meg. Difor vil vi spela på strengane mine alle våre levedagar i Herrens hus.",
+    "versions": [
+      {
+        "text": "Herren er her for å frelsa meg. Difor vil vi spela på strengane mine alle våre levedagar i Herrens hus.",
+        "type": "error",
+        "severity": "major",
+        "explanation": "Det hebraiske 'יהוה להושיעני' betyr 'Herren er [reidd/klar] til å frelsa meg' eller 'Herren [kom] for å frelsa meg'. 'Er her' legg til eit stadleg element som ikkje finst i originalen. 'Er reidd til å frelsa meg' er meir presist."
+      }
+    ]
   },
   {
     "bookId": 23,

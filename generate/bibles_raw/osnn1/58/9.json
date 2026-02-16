@@ -9,7 +9,15 @@
     "bookId": 58,
     "chapterId": 9,
     "verseId": 2,
-    "text": "For det vart reist eit telt, det fremste rommet, der det stod ein lysestake, eit bord og skodebrøda. Dette rommet vert kalla Det heilage."
+    "text": "For det vart reist eit telt, det fremste rommet, der det stod ein lysestake, eit bord og skodebrøda. Dette vert kalla Det heilage.",
+    "versions": [
+      {
+        "text": "For det vart reist eit telt, det fremste rommet, der det stod ein lysestake, eit bord og skodebrøda. Dette rommet vert kalla Det heilage.",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "Gresk ἥτις refererer tilbake til σκηνή (teltet/rommet), ikkje spesifikt 'rommet'. 'Dette rommet' er ei tilføying som ikkje er naudsynt. 'Dette' er meir nøytralt og dekkjer referansen."
+      }
+    ]
   },
   {
     "bookId": 58,
@@ -63,7 +71,15 @@
     "bookId": 58,
     "chapterId": 9,
     "verseId": 11,
-    "text": "Men Kristus er komen som øvsteprest for dei gode ting som har kome. Han gjekk gjennom det større og meir fullkomne teltet, som ikkje er laga med hender, det vil seia som ikkje høyrer til denne skapningen."
+    "text": "Men Kristus er komen som øvsteprest for dei gode ting som har kome. Gjennom det større og meir fullkomne teltet, som ikkje er laga med hender, det vil seia som ikkje høyrer til denne skapinga,",
+    "versions": [
+      {
+        "text": "Men Kristus er komen som øvsteprest for dei gode ting som har kome. Han gjekk gjennom det større og meir fullkomne teltet, som ikkje er laga med hender, det vil seia som ikkje høyrer til denne skapningen.",
+        "type": "error",
+        "severity": "major",
+        "explanation": "Vers 11 og 12 er éi setning på gresk. Hovudverbet εἰσῆλθεν (gjekk inn) står i vers 12. Ved å starta ei ny setning med 'Han gjekk gjennom' i vers 11, bryt ein samanhengen med vers 12. Dessutan bør διά (gjennom) koplast til εἰσῆλθεν i vers 12. 'Skapningen' bør vera 'skapinga' på korrekt nynorsk."
+      }
+    ]
   },
   {
     "bookId": 58,
@@ -117,13 +133,29 @@
     "bookId": 58,
     "chapterId": 9,
     "verseId": 19,
-    "text": "For då Moses hadde lese opp kvart bod i lova for heile folket, tok han blodet av kalvane saman med vatn, skarlagenraud ull og isop, og skvetta det både på sjølve bokrullen og på heile folket."
+    "text": "For då Moses hadde lese opp kvart bod i lova for heile folket, tok han blodet av kalvane saman med vatn, skarlagenraud ull og isop, og skvetta det på sjølve bokrullen og på heile folket.",
+    "versions": [
+      {
+        "text": "For då Moses hadde lese opp kvart bod i lova for heile folket, tok han blodet av kalvane saman med vatn, skarlagenraud ull og isop, og skvetta det både på sjølve bokrullen og på heile folket.",
+        "type": "error",
+        "severity": "minor",
+        "explanation": "Gresk αὐτό τε ... καὶ brukar τε...καί som ein enkel kopling ('både...og'), men den norske omsetjinga har lagt til 'både' som eit ekstra forsterkande ord. Det er ikkje feil i seg sjølv, men 'på sjølve bokrullen og på heile folket' dekkjer meininga godt utan 'både'."
+      }
+    ]
   },
   {
     "bookId": 58,
     "chapterId": 9,
     "verseId": 20,
-    "text": "Han sa: «Dette er blodet til den pakta som Gud har pålagt dykk å halda.»"
+    "text": "Han sa: «Dette er pakta sitt blod, den pakta som Gud har pålagt dykk.»",
+    "versions": [
+      {
+        "text": "Han sa: «Dette er blodet til den pakta som Gud har pålagt dykk å halda.»",
+        "type": "error",
+        "severity": "major",
+        "explanation": "Gresk ἐνετείλατο πρὸς ὑμᾶς betyr 'har bode/pålagt overfor dykk', ikkje 'pålagt dykk å halda'. Tillegget 'å halda' finst ikkje i originalteksten. Dessutan refererer dette til 2 Mos 24,8, der meininga er at Gud har fastsett/pålagt pakta for dei, ikkje at dei skal 'halda' blodet."
+      }
+    ]
   },
   {
     "bookId": 58,
@@ -171,6 +203,14 @@
     "bookId": 58,
     "chapterId": 9,
     "verseId": 28,
-    "text": "slik vart også Kristus ofra éin gong for å bera syndene til mange. Og han skal syna seg andre gongen, ikkje for synda si skuld, men til frelse for dei som ventar på han."
+    "text": "Og han skal syna seg andre gongen, utan synd, til frelse for dei som ventar på han.",
+    "versions": [
+      {
+        "text": "slik vart også Kristus ofra éin gong for å bera syndene til mange. Og han skal syna seg andre gongen, ikkje for synda si skuld, men til frelse for dei som ventar på han.",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "Gresk χωρὶς ἁμαρτίας betyr 'utan synd' – det er eit kort og presist uttrykk. Omsetjinga 'ikkje for synda si skuld' er ei tolking/parafrase som kan misleia. Poenget er at Kristus ved andre kome ikkje har noko med synd å gjera (den er allereie sona), ikkje berre at han kjem av ein annan grunn."
+      }
+    ]
   }
 ]

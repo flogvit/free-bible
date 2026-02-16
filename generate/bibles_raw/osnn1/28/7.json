@@ -3,7 +3,15 @@
     "bookId": 28,
     "chapterId": 7,
     "verseId": 1,
-    "text": "Når eg vil lækja Israel, då vert synda til Efraim avdekt og vondskapen i Samaria. For dei driv med svik, tjuven bryt seg inn, og røvarflokkar herjar ute på gata."
+    "text": "Når eg vil lækja Israel, då vert skulda til Efraim avdekt og vondskapen i Samaria. For dei driv med svik, tjuven bryt seg inn, og røvarflokkar herjar ute på gata.",
+    "versions": [
+      {
+        "text": "Når eg vil lækja Israel, då vert synda til Efraim avdekt og vondskapen i Samaria. For dei driv med svik, tjuven bryt seg inn, og røvarflokkar herjar ute på gata.",
+        "type": "grammar",
+        "severity": "minor",
+        "explanation": "Det hebraiske עֲוֺן (avon) tyder 'skuld' eller 'misgjerning' snarare enn 'synd' (som ville vore חַטָּאת). 'Skulda' er meir presist her. Elles er verset godt omsett."
+      }
+    ]
   },
   {
     "bookId": 28,
@@ -21,19 +29,49 @@
     "bookId": 28,
     "chapterId": 7,
     "verseId": 4,
-    "text": "Alle saman er horkarar, dei er som ein omn som bakaren har fyrt opp. Han sluttar å øsa opp frå han har elta deigen til han er gjæra."
+    "text": "Alle saman er horkarar, dei er som ein omn som bakaren har fyrt opp. Han sluttar å maka elden frå han har elta deigen til han er gjæra.",
+    "versions": [
+      {
+        "text": "Alle saman er horkarar, dei er som ein omn som bakaren har fyrt opp. Han sluttar å øsa opp frå han har elta deigen til han er gjæra.",
+        "type": "error",
+        "severity": "major",
+        "explanation": "Det hebraiske מֵעִיר tyder 'å røra opp / maka (elden)', ikkje 'å øsa opp'. Bakaren sluttar å røra opp elden medan deigen hev seg. 'Maka elden' er meir presist."
+      }
+    ]
   },
   {
     "bookId": 28,
     "chapterId": 7,
     "verseId": 5,
-    "text": "På dagen til kongen vår gjer fyrstane seg sjuke av vinhete. Han rette ut handa si til spottarar."
+    "text": "På dagen til kongen vår vert fyrstane sjuke av glød frå vin. Han rekte ut handa si til spottarane.",
+    "versions": [
+      {
+        "text": "På dagen til kongen vår gjer fyrstane seg sjuke av vinhete. Han rette ut handa si til spottarar.",
+        "type": "error",
+        "severity": "major",
+        "explanation": "Det hebraiske הֶחֱלוּ (frå חלה) tyder 'vart sjuke' – ikkje refleksivt 'gjer seg sjuke'. Og חֲמַת מִיָּיִן tyder 'glød/hete frå vin'. I tillegg bør 'rette' vere 'rekte' (preteritum av 'rekkja') for å passa med konteksten som fortel om noko som skjedde."
+      },
+      {
+        "text": "På dagen til kongen vår vert fyrstane sjuke av glød frå vin. Han rekte ut handa si til spottarar.",
+        "type": "grammar",
+        "severity": "minor",
+        "explanation": "'Rette' bør vera 'rekte' (preteritum). Også 'spottarar' bør ha bestemt form 'spottarane' sidan det hebraiske אֶת־לֹצְצִים viser til ei bestemt gruppe."
+      }
+    ]
   },
   {
     "bookId": 28,
     "chapterId": 7,
     "verseId": 6,
-    "text": "For hjarta deira er som ein omn når dei lurer. Heile natta søv bakaren deira, om morgonen brenn det som logande eld."
+    "text": "For dei kjem nær med hjarta sitt som ein omn medan dei ligg på lur. Heile natta søv bakaren deira, om morgonen brenn det som logande eld.",
+    "versions": [
+      {
+        "text": "For hjarta deira er som ein omn når dei lurer. Heile natta søv bakaren deira, om morgonen brenn det som logande eld.",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "Omsettinga forenklar noko. Det hebraiske קֵרְבוּ (dei nærmar seg/kjem nær) er eit verb med aktiv handling, og לִבָּם (hjarta deira) er objektet. Ei meir nøyaktig formulering fangar opp at dei nærmar seg med hjarta fullt av brennande list."
+      }
+    ]
   },
   {
     "bookId": 28,
@@ -69,7 +107,15 @@
     "bookId": 28,
     "chapterId": 7,
     "verseId": 12,
-    "text": "Når dei går, skal eg kasta garnet mitt over dei. Eg skal draga dei ned som fuglane under himmelen. Eg skal tukta dei slik det er forkynt for forsamlinga deira."
+    "text": "Når dei går, skal eg kasta garnet mitt over dei. Som fuglane under himmelen skal eg draga dei ned. Eg skal tukta dei slik det er forkynt for forsamlinga deira.",
+    "versions": [
+      {
+        "text": "Når dei går, skal eg kasta garnet mitt over dei. Eg skal draga dei ned som fuglane under himmelen. Eg skal tukta dei slik det er forkynt for forsamlinga deira.",
+        "type": "error",
+        "severity": "major",
+        "explanation": "Preposisjonen er 'כְּ' (som), dvs. 'som fuglane på himmelen'. Det tyder at Gud skal dra dei ned slik ein fangar fuglar – ikkje at fuglane er 'under' himmelen. Omsettinga 'under himmelen' gjev feil bilete."
+      }
+    ]
   },
   {
     "bookId": 28,
@@ -93,7 +139,15 @@
     "bookId": 28,
     "chapterId": 7,
     "verseId": 15,
-    "text": "Eg lærte dei opp og styrkte armane deira, men mot meg tenkjer dei ut vondt."
+    "text": "Eg tukta dei og styrkte armane deira, men mot meg tenkjer dei ut vondt.",
+    "versions": [
+      {
+        "text": "Eg lærte dei opp og styrkte armane deira, men mot meg tenkjer dei ut vondt.",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "Det hebraiske יִסַּרְתִּי (frå יסר) tyder primært 'tukta/refsa', ikkje 'lærte opp'. Verbet vert brukt i kontekst av Guds disiplin/tukt over folket sitt, noko som passar betre med 'tukta'."
+      }
+    ]
   },
   {
     "bookId": 28,

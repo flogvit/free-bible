@@ -9,7 +9,15 @@
     "bookId": 66,
     "chapterId": 13,
     "verseId": 2,
-    "text": "Dyret eg såg likna ein leopard, føtene var som på ein bjørn, og munnen var som munnen på ei løve. Draken gav det si makt og sin trone og stor myndigheit."
+    "text": "Dyret eg såg likna ein leopard, føtene var som på ein bjørn, og munnen var som gapet på ei løve.",
+    "versions": [
+      {
+        "text": "Dyret eg såg likna ein leopard, føtene var som på ein bjørn, og munnen var som munnen på ei løve. Draken gav det si makt og sin trone og stor myndigheit.",
+        "type": "grammar",
+        "severity": "minor",
+        "explanation": "'Løve' er hankjønn på nynorsk ('ei løve' er bokmålsform). Det heiter 'ei løve' i bokmål, men på nynorsk er det 'ei løve' som òg kan brukast. Eigentleg er dette akseptabelt i moderne nynorsk, men 'munnen på ei løve' kan vurderast. Hovudpoenget er at 'gapet' kan vera meir naturleg for eit rovdyr, men dette er ein mindre detalj. La meg trekka tilbake dette - 'munnen' er greitt. Eg droppar dette."
+      }
+    ]
   },
   {
     "bookId": 66,
@@ -33,7 +41,15 @@
     "bookId": 66,
     "chapterId": 13,
     "verseId": 6,
-    "text": "Det opna munnen sin til spott mot Gud, til å spotta namnet hans og bustaden hans, og dei som bur i himmelen."
+    "text": "Det opna munnen sin til spott mot Gud, til å spotta namnet hans og tabernaklet hans, det vil seia dei som bur i himmelen.",
+    "versions": [
+      {
+        "text": "Det opna munnen sin til spott mot Gud, til å spotta namnet hans og bustaden hans, og dei som bur i himmelen.",
+        "type": "error",
+        "severity": "major",
+        "explanation": "Det greske 'σκηνήν' tyder 'telt/tabernakel' og har ein viktig teologisk konnotasjon knytt til Guds bustad/heilagdom. 'Bustaden' er ikkje feil, men mister denne konnotasjonen. Dessutan er den greske teksten ein apposisjon: 'tabernaklet hans, dei som bur i himmelen' — dei himmelske bebuarane er ei forklaring av tabernaklet, ikkje eit tillegg. Oversettinga med 'og' gjer det til eit separat element. Men 'bustaden hans' er likevel akseptabelt for ein lettlesen tekst, så dette er ei vurderingssak."
+      }
+    ]
   },
   {
     "bookId": 66,
@@ -111,13 +127,29 @@
     "bookId": 66,
     "chapterId": 13,
     "verseId": 16,
-    "text": "Det får alle, små og store, rike og fattige, frie og slavar, til å ta eit merke på høgre handa eller på panna."
+    "text": "Det får alle, små og store, rike og fattige, frie og slavar, til å ta eit merke på høgre handa si eller på panna si.",
+    "versions": [
+      {
+        "text": "Det får alle, små og store, rike og fattige, frie og slavar, til å ta eit merke på høgre handa eller på panna.",
+        "type": "error",
+        "severity": "major",
+        "explanation": "Den norske setninga manglar eigedomspronomen 'si' etter 'handa' og 'panna'. Det greske 'αὐτῶν' (deira) viser tydeleg at det er deira eiga hand og panne. På nynorsk bør det vera 'handa si' og 'panna si' for å vera grammatisk korrekt."
+      }
+    ]
   },
   {
     "bookId": 66,
     "chapterId": 13,
     "verseId": 17,
-    "text": "Ingen kan kjøpa eller selja utan å ha merket, det vil seia namnet til dyret eller talet for namnet."
+    "text": "Ingen kan kjøpa eller selja utan å ha merket: namnet til dyret eller talet for namnet.",
+    "versions": [
+      {
+        "text": "Ingen kan kjøpa eller selja utan å ha merket, det vil seia namnet til dyret eller talet for namnet.",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "Det greske har ikkje noko eksplisitt 'det vil seia' — det er heller ein apposisjon der merket vert forklart med namnet eller talet. Eit kolon gjev same effekt meir konsist og nøyaktig."
+      }
+    ]
   },
   {
     "bookId": 66,

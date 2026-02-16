@@ -3,11 +3,17 @@
     "bookId": 5,
     "chapterId": 23,
     "verseId": 1,
-    "text": "Ein mann skal ikkje ta far sin si kone, og han skal ikkje avdekkja far sin si kappe.",
+    "text": "Ein mann skal ikkje ta kona til far sin, og han skal ikkje avdekkja kappe til far sin.",
     "versions": [
       {
         "text": "Ein mann skal ikkje ta far sin si kone, og han skal ikkje vanæra far sin si seng.",
         "explanation": "Det hebraiske uttrykket 'יְגַלֶּה כְּנַף אָבִיו' (galla kenaf aviv) betyr bokstaveleg 'avdekkja faren sin flik/kappe', som er ein eufemisme for seksuell omgang med faren si kone. 'Seng' er ein tolking, men 'kappe' er meir bokstaveleg og bevarer den bibelske metaforen (jf. Rut 3:9)."
+      },
+      {
+        "text": "Ein mann skal ikkje ta far sin si kone, og han skal ikkje avdekkja far sin si kappe.",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "Uttrykket 'far sin si kone' og 'far sin si kappe' er grammatisk tunge doble eigeformer på nynorsk. 'Kona til far sin' og 'kappe til far sin' er meir naturleg nynorsk og lettare å lesa."
       }
     ]
   },
@@ -69,7 +75,15 @@
     "bookId": 5,
     "chapterId": 23,
     "verseId": 11,
-    "text": "Om det er ein mann blant dykk som er urein på grunn av noko som hende om natta, skal han gå ut av leiren. Han skal ikkje koma inn i leiren."
+    "text": "Om det er ein mann blant dykk som er urein på grunn av utsæd om natta, skal han gå ut av leiren. Han skal ikkje koma inn i leiren.",
+    "versions": [
+      {
+        "text": "Om det er ein mann blant dykk som er urein på grunn av noko som hende om natta, skal han gå ut av leiren. Han skal ikkje koma inn i leiren.",
+        "type": "grammar",
+        "severity": "minor",
+        "explanation": "Det hebraiske 'מִקְּרֵה־לָיְלָה' (miqreh-laylah) refererer spesifikt til ufrivillig sædutløysing om natta (ein nattleg hending). 'Noko som hende om natta' er for vagt og kan misforståast. 'Utsæd om natta' er meir presist og framleis diskret."
+      }
+    ]
   },
   {
     "bookId": 5,
@@ -81,13 +95,29 @@
     "bookId": 5,
     "chapterId": 23,
     "verseId": 13,
-    "text": "Du skal ha ein stad utanfor leiren der du kan gå ut og gjera frå deg."
+    "text": "Du skal ha ein plass utanfor leiren, og du skal gå dit ut.",
+    "versions": [
+      {
+        "text": "Du skal ha ein stad utanfor leiren der du kan gå ut og gjera frå deg.",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "Det hebraiske 'יָד' betyr her ein utpeika plass/område. Verset seier berre at ein skal ha ein plass utanfor leiren og gå dit ut – det nemner ikkje eksplisitt 'gjera frå deg', som kjem først i vers 14. Noverande versjon legg til innhald som ikkje er i originalen."
+      }
+    ]
   },
   {
     "bookId": 5,
     "chapterId": 23,
     "verseId": 14,
-    "text": "Du skal ha ein spade med blant utstyret ditt. Når du set deg ute, skal du grava eit hol med han, og etterpå skal du dekkja til det du har lagt frå deg."
+    "text": "Du skal ha ein plugg ved beltet ditt. Når du set deg ute, skal du grava eit hol med han, og etterpå skal du dekkja til det du har lagt frå deg.",
+    "versions": [
+      {
+        "text": "Du skal ha ein spade med blant utstyret ditt. Når du set deg ute, skal du grava eit hol med han, og etterpå skal du dekkja til det du har lagt frå deg.",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "Det hebraiske 'יָתֵד' (yated) betyr 'plugg' eller 'stake', ikkje 'spade'. Og 'עַל־אֲזֵנֶךָ' betyr 'ved/på utstyret ditt' eller meir spesifikt 'ved beltet/våpenet ditt'. 'Spade' er ein anakronisme; det var ein spiss plugg eller stake brukt til å grava med."
+      }
+    ]
   },
   {
     "bookId": 5,
@@ -117,11 +147,17 @@
     "bookId": 5,
     "chapterId": 23,
     "verseId": 19,
-    "text": "Du skal ikkje bera løna til ei hore eller betalinga for ein hundemann inn i huset til Herren din Gud for noko lovnad, for begge delar er avskyelege for Herren din Gud.",
+    "text": "Du skal ikkje bera løna til ei hore eller betalinga for ein hundemann inn i huset til Herren din Gud som gåve for nokon lovnad, for begge delar er avskyelege for Herren din Gud.",
     "versions": [
       {
         "text": "Du skal ikkje bera løna til ei hore eller prisen for ein hund inn i huset til Herren din Gud for noko lovnad, for begge delar er avskyelege for Herren din Gud.",
         "explanation": "Det hebraiske 'כֶּלֶב' (kelev - hund) er her truleg ein eufemisme for ein mannleg prostituert (jf. v.18 om 'קָדֵשׁ'). Mange omsetjingar tolkar dette som 'hundemann' eller gjer det tydeleg at det viser til mannleg prostitusjon, ikkje eit dyr. 'Prisen for ein hund' er bokstaveleg, men kan vera misvisande."
+      },
+      {
+        "text": "Du skal ikkje bera løna til ei hore eller betalinga for ein hundemann inn i huset til Herren din Gud for noko lovnad, for begge delar er avskyelege for Herren din Gud.",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "Det hebraiske 'לְכָל־נֶדֶר' betyr 'for nokon lovnad/noko lyfte', altså som betaling for eit løfte ein har gjeve. 'For noko lovnad' kan misforståast; 'som gåve for nokon lovnad' gjer meininga tydelegare."
       }
     ]
   },
@@ -177,7 +213,15 @@
     "bookId": 5,
     "chapterId": 23,
     "verseId": 25,
-    "text": "Når du går inn i vingarden til grannen din, kan du eta så mange druer du vil til du er mett, men du skal ikkje leggja noko i korga di."
+    "text": "Når du går inn i vingarden til grannen din, kan du eta druer så mykje du vil til du er mett, men du skal ikkje leggja noko i korga di.",
+    "versions": [
+      {
+        "text": "Når du går inn i vingarden til grannen din, kan du eta så mange druer du vil til du er mett, men du skal ikkje leggja noko i korga di.",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "'Eta så mange druer du vil' er litt unaturleg nynorsk. 'Eta druer så mykje du vil' flyt betre og er meir idiomatisk."
+      }
+    ]
   },
   {
     "bookId": 5,

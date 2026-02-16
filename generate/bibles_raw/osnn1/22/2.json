@@ -15,7 +15,15 @@
     "bookId": 22,
     "chapterId": 2,
     "verseId": 3,
-    "text": "Som eit epletre mellom skogstrea, slik er min elska mellom dei unge mennene. I skuggen hans lengta eg og sette meg, og frukta hans er søt for ganen min."
+    "text": "Som eit epletre mellom skogstrea, slik er min elska mellom dei unge mennene. I skuggen hans hadde eg lyst å sitja, og frukta hans er søt for ganen min.",
+    "versions": [
+      {
+        "text": "Som eit epletre mellom skogstrea, slik er min elska mellom dei unge mennene. I skuggen hans lengta eg og sette meg, og frukta hans er søt for ganen min.",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "Det hebraiske חִמַּדְתִּי (frå חמד) betyr 'å ha lyst til, ønskja, begæra', ikkje 'lengta'. Verbet uttrykker at ho ønskte/hadde lyst å sitja der, ikkje at ho lengta. 'Lengta eg og sette meg' er også litt klønete på nynorsk."
+      }
+    ]
   },
   {
     "bookId": 22,
@@ -27,11 +35,17 @@
     "bookId": 22,
     "chapterId": 2,
     "verseId": 5,
-    "text": "Styrk meg med rosinkaker, la meg liggja på eple, for eg er sjuk av kjærleik.",
+    "text": "Styrk meg med rosinkaker, legg meg på eple, for eg er sjuk av kjærleik.",
     "versions": [
       {
         "text": "Styrk meg med rosinkaker, forfrisk meg med eple, for eg er sjuk av kjærleik.",
         "explanation": "Det hebraiske verbet רַפְּדוּנִי betyr 'å breia ut/leggja som underlag', ikkje 'forfriska'. Biletet er at ho ber om å bli lagt på eit underlag av eple, ikkje berre å bli forfrisking."
+      },
+      {
+        "text": "Styrk meg med rosinkaker, la meg liggja på eple, for eg er sjuk av kjærleik.",
+        "type": "grammar",
+        "severity": "minor",
+        "explanation": "'La meg liggja på eple' er passivt og gjev inntrykk av at ho ber om løyve. Imperativforma רַפְּדוּנִי er ein direkte appell/bøn til andre om å gjera noko for henne. 'Legg meg på eple' er meir tru mot imperativforma."
       }
     ]
   },
@@ -45,7 +59,15 @@
     "bookId": 22,
     "chapterId": 2,
     "verseId": 7,
-    "text": "Eg tek dykk i eid, Jerusalems døtrer, ved gasellane og ved hindane på marka: Vekk ikkje kjærleiken og eggja han ikkje før han sjølv vil."
+    "text": "Eg tek dykk i eid, Jerusalems døtrer, ved gasellane og ved hindane på marka: Vekk ikkje kjærleiken, og eggja han ikkje, før han sjølv vil!",
+    "versions": [
+      {
+        "text": "Eg tek dykk i eid, Jerusalems døtrer, ved gasellane og ved hindane på marka: Vekk ikkje kjærleiken og eggja han ikkje før han sjølv vil.",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "Små forbetringer: eit komma etter 'kjærleiken' for betre lesbarheit, og utropsteikn på slutten for å markera den høgtidelege eden/formaninga."
+      }
+    ]
   },
   {
     "bookId": 22,
@@ -81,11 +103,17 @@
     "bookId": 22,
     "chapterId": 2,
     "verseId": 12,
-    "text": "Blomane syner seg i landet, tida for skjering er komen, og turteldua let røysta si høyra i landet vårt.",
+    "text": "Blomane syner seg i landet, tida for skjering er komen, og røysta til turteldua høyrest i landet vårt.",
     "versions": [
       {
         "text": "Blomane syner seg i landet, songtida er komen, og turteldua let røysta si høyra i landet vårt.",
         "explanation": "Det hebraiske זָמִיר kan bety både 'song' og 'skjering/stuving' (av vinranker). I konteksten av vår og vekst i vingarden kan 'tida for skjering' vere meir presist, sjølv om 'songtida' også er ein mogleg tolking."
+      },
+      {
+        "text": "Blomane syner seg i landet, tida for skjering er komen, og turteldua let røysta si høyra i landet vårt.",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "'Let røysta si høyra' er litt tungt. 'Røysta til turteldua høyrest' er meir naturleg nynorsk og lettare å lesa, samstundes som meininga er den same."
       }
     ]
   },
@@ -123,6 +151,14 @@
     "bookId": 22,
     "chapterId": 2,
     "verseId": 17,
-    "text": "Til dagen bles og skyggane flyr, vend om, min elska, ver lik ein gasell eller ein ung hjort på Beter-fjella."
+    "text": "Til dagen bles og skyggane flyr, vend om, min elska, lik ein gasell eller ein ung hjort på Beter-fjella.",
+    "versions": [
+      {
+        "text": "Til dagen bles og skyggane flyr, vend om, min elska, ver lik ein gasell eller ein ung hjort på Beter-fjella.",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "Det hebraiske דְּמֵה־לְךָ betyr 'ver lik/likna', men i samanhengen er det meir naturleg å seia 'lik ein gasell' utan 'ver' — det fungerer som eit adverbial ('vend om... lik ein gasell'). Alternativt kan 'ver lik' stå, men det bryt flyten noko."
+      }
+    ]
   }
 ]

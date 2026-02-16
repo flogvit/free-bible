@@ -3,13 +3,29 @@
     "bookId": 30,
     "chapterId": 7,
     "verseId": 1,
-    "text": "Dette synet viste Herren Gud meg: Sjå, han skapte ein grashoppe-sverm då vårgrøda tok til å veksa – det var etter at kongen hadde teke sin del."
+    "text": "Dette synet viste Herren Gud meg: Sjå, han forma ein grashoppe-sverm då etterveksten tok til å koma opp – det var etterveksten etter at kongen hadde slege sitt.",
+    "versions": [
+      {
+        "text": "Dette synet viste Herren Gud meg: Sjå, han skapte ein grashoppe-sverm då vårgrøda tok til å veksa – det var etter at kongen hadde teke sin del.",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "Fleire omsetjingsproblem: 1) 'יוֹצֵר' betyr 'forma', ikkje 'skapte'. 2) 'לקש' er etterveksten (sein-graset), ikkje 'vårgrøda'. 3) 'גִּזֵּי הַמֶּלֶךְ' er kongens slått/haustklipping, ikkje at kongen 'hadde teke sin del'."
+      }
+    ]
   },
   {
     "bookId": 30,
     "chapterId": 7,
     "verseId": 2,
-    "text": "Då dei hadde ete opp alt graset på marka, sa eg: «Herre Gud, tilgjev! Korleis skal Jakob kunna stå seg? Han er så liten.»"
+    "text": "Då dei heldt på å eta opp alt graset på marka, sa eg: «Herre Gud, tilgjev! Kven kan Jakob bli ståande som? For han er så liten.»",
+    "versions": [
+      {
+        "text": "Då dei hadde ete opp alt graset på marka, sa eg: «Herre Gud, tilgjev! Korleis skal Jakob kunna stå seg? Han er så liten.»",
+        "type": "error",
+        "severity": "major",
+        "explanation": "'אִם־כִּלָּה' indikerer at prosessen var i gang (betingelsesform), ikkje fullført. Og 'מִי יָקוּם' betyr meir bokstaveleg 'kven kan stå opp / korleis kan han stå opp', der poenget er at Jakob er for liten til å overleva – 'kunna stå seg' er akseptabelt men 'Korleis' framfor 'Kven' er ei litt fri omsetjing av 'מי'. Hovudproblemet er tempus-aspektet."
+      }
+    ]
   },
   {
     "bookId": 30,
@@ -21,7 +37,15 @@
     "bookId": 30,
     "chapterId": 7,
     "verseId": 4,
-    "text": "Dette synet viste Herren Gud meg: Sjå, Herren Gud kalla fram eld til dom. Elden åt opp det store djupet og heldt på å eta opp landet."
+    "text": "Dette synet viste Herren Gud meg: Sjå, Herren Gud kalla fram eld til strid. Elden åt opp det store djupet og heldt på å eta opp jordluten.",
+    "versions": [
+      {
+        "text": "Dette synet viste Herren Gud meg: Sjå, Herren Gud kalla fram eld til dom. Elden åt opp det store djupet og heldt på å eta opp landet.",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "'לָרִב' betyr 'til strid/rettssak', ikkje 'til dom'. Og 'הַחֵלֶק' betyr 'jordluten' eller 'eigedomen', ikkje berre 'landet'. Det er eit meir spesifikt ord enn 'land'."
+      }
+    ]
   },
   {
     "bookId": 30,
@@ -69,13 +93,29 @@
     "bookId": 30,
     "chapterId": 7,
     "verseId": 11,
-    "text": "For så har Amos sagt: Jeroboam skal døy for sverd, og Israel skal førast bort frå landet sitt som fangar.»"
+    "text": "For så har Amos sagt: Jeroboam skal døy for sverd, og Israel skal sannleg førast bort frå landet sitt.»",
+    "versions": [
+      {
+        "text": "For så har Amos sagt: Jeroboam skal døy for sverd, og Israel skal førast bort frå landet sitt som fangar.»",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "'גָּלֹה יִגְלֶה' er ein infinitivus absolutus-konstruksjon som forsterkar verbet ('skal sanneleg bli ført i eksil'). 'Som fangar' er lagt til og finst ikkje i grunnteksten. Dessutan fangar infinitiv absolutus-konstruksjonen ei forsterkande tyding."
+      }
+    ]
   },
   {
     "bookId": 30,
     "chapterId": 7,
     "verseId": 12,
-    "text": "Amasja sa til Amos: «Du sjåar, gå din veg! Røm til Juda-landet! Et brødet ditt der og tal profetord der!"
+    "text": "Amasja sa til Amos: «Du sjåar, gå av stad! Røm til Juda-landet! Et brødet ditt der og tal profetord der!",
+    "versions": [
+      {
+        "text": "Amasja sa til Amos: «Du sjåar, gå din veg! Røm til Juda-landet! Et brødet ditt der og tal profetord der!",
+        "type": "grammar",
+        "severity": "minor",
+        "explanation": "'לֵךְ' betyr 'gå', og 'gå din veg' kan fungera, men 'gå av stad' er meir idiomatisk nynorsk og mindre nedsetjande enn det hebraiske uttrykket tilseier. Mindre justeringsforslag."
+      }
+    ]
   },
   {
     "bookId": 30,
@@ -111,6 +151,14 @@
     "bookId": 30,
     "chapterId": 7,
     "verseId": 17,
-    "text": "Difor seier Herren: Kona di skal bli ei hore i byen, sønene og døtrene dine skal falla for sverd, og jorda di skal delast opp med målesnor. Sjølv skal du døy i eit ureint land, og Israel skal førast bort frå landet sitt som fangar.»"
+    "text": "Sjølv skal du døy i eit ureint land, og Israel skal sannleg førast bort frå landet sitt.»",
+    "versions": [
+      {
+        "text": "Difor seier Herren: Kona di skal bli ei hore i byen, sønene og døtrene dine skal falla for sverd, og jorda di skal delast opp med målesnor. Sjølv skal du døy i eit ureint land, og Israel skal førast bort frå landet sitt som fangar.»",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "Same som vers 11: 'גָּלֹה יִגְלֶה' er infinitivus absolutus som forsterkar verbet. 'Som fangar' er ikkje i grunnteksten. Konsistens med korleis denne konstruksjonen blir omsett bør vurderast."
+      }
+    ]
   }
 ]

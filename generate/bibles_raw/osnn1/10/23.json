@@ -21,7 +21,15 @@
     "bookId": 10,
     "chapterId": 23,
     "verseId": 3,
-    "text": "Israels Gud har tala, Israels klippe sa til meg: Den som styrer over menneske med rettferd, den som styrer i gudsfrykt,"
+    "text": "Israels Gud har tala, Israels klippe sa til meg: Den som styrer rettferdig over menneske, den som styrer i gudsfrykt,",
+    "versions": [
+      {
+        "text": "Israels Gud har tala, Israels klippe sa til meg: Den som styrer over menneske med rettferd, den som styrer i gudsfrykt,",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "Hebraisk har 'moshel ba'adam tsaddiq' – 'den som styrer over menneske, rettferdig'. Ordet צַדִּיק er eit adjektiv/predikat som skildrar styraren, ikkje eit adverb som modifiserer styringa. 'Den som styrer rettferdig over menneske' gjev ein noko meir nøyaktig attgjeving, men skilnaden er liten."
+      }
+    ]
   },
   {
     "bookId": 10,
@@ -45,13 +53,29 @@
     "bookId": 10,
     "chapterId": 23,
     "verseId": 7,
-    "text": "Den som vil røra ved dei, må ha jern og spydskaft i handa, og dei blir brende opp med eld der dei ligg."
+    "text": "Den som vil røra ved dei, må ha jern og spydskaft i handa, og dei blir heilt brende opp med eld der dei ligg.",
+    "versions": [
+      {
+        "text": "Den som vil røra ved dei, må ha jern og spydskaft i handa, og dei blir brende opp med eld der dei ligg.",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "Hebraisk שָׂרוֹף יִשָּׂרְפוּ er ein infinitivus absolutus-konstruksjon som forsterkar verbet – 'dei skal sanneleg brennast opp' / 'dei skal heilt brennast opp'. Omsetjinga fangar ikkje opp denne forsterkinga."
+      }
+    ]
   },
   {
     "bookId": 10,
     "chapterId": 23,
     "verseId": 8,
-    "text": "Dette er namna på krigarane til David: Josjeb-Basjebet, takmonitten, hovudet for dei tre. Han var Adino frå Esni, som svinga spydet sitt over åtte hundre falne på ein gong."
+    "text": "Dette er namna på krigarane til David: Josjeb-Basjebet, takmonitten, leiaren for dei tre. Han var Adino frå Esni, som svinga spydet sitt over åtte hundre falne på ein gong.",
+    "versions": [
+      {
+        "text": "Dette er namna på krigarane til David: Josjeb-Basjebet, takmonitten, hovudet for dei tre. Han var Adino frå Esni, som svinga spydet sitt over åtte hundre falne på ein gong.",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "Hebraisk רֹאשׁ הַשָּׁלִשִׁי tyder 'hovudet/leiaren for dei tre' (eller 'for offiserane'). Omsetjinga seier 'hovudet for dei tre' som er eit litt uvanleg uttrykk på nynorsk. 'Leiaren for dei tre' flyt betre."
+      }
+    ]
   },
   {
     "bookId": 10,
@@ -123,7 +147,15 @@
     "bookId": 10,
     "chapterId": 23,
     "verseId": 19,
-    "text": "Han var den mest æra av dei tre og vart leiaren deira, men han nådde ikkje opp til dei tre første."
+    "text": "Han var den mest æra av dei tre og vart leiaren deira, men han nådde ikkje opp til dei tre.",
+    "versions": [
+      {
+        "text": "Han var den mest æra av dei tre og vart leiaren deira, men han nådde ikkje opp til dei tre første.",
+        "type": "error",
+        "severity": "major",
+        "explanation": "Hebraisk seier berre וְעַד־הַשְּׁלֹשָׁה לֹא־בָא – 'til dei tre kom han ikkje'. Ordet 'første' er lagt til i omsetjinga utan grunnlag i grunnteksten, og det kan skapa forvirring om kva gruppe det er tale om."
+      }
+    ]
   },
   {
     "bookId": 10,

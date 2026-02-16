@@ -9,11 +9,17 @@
     "bookId": 45,
     "chapterId": 3,
     "verseId": 2,
-    "text": "Mykje, på alle vis! Først og fremst at Guds ord vart tiltrudd dei.",
+    "text": "Mykje, på alle vis! Først og fremst at Guds ord vart betrudde dei.",
     "versions": [
       {
         "text": "Mykje, på alle vis! Først og fremst at Guds ord vart overgjeve til dei.",
         "explanation": "Det greske 'ἐπιστεύθησαν' (passiv av πιστεύω) betyr 'vart tiltrudd/betrudd', ikkje 'overgjeve'. Jødane fekk Guds ord i forvaring, som ei tillitserklæring. 'Tiltrudd' gjev denne nyansen betre enn 'overgjeve'."
+      },
+      {
+        "text": "Mykje, på alle vis! Først og fremst at Guds ord vart tiltrudd dei.",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "τὰ λόγια τοῦ θεοῦ er fleirtal ('orda' / 'utsegnene'), så partisippet bør stå i fleirtal: 'betrudde' (eller 'tiltrudde' i fleirtal). Sidan 'tiltrudd' er eintal, bør det rettast til fleirtal for å samsvara med 'Guds ord' (som her refererer til fleire utsegner/lovnader)."
       }
     ]
   },
@@ -45,7 +51,15 @@
     "bookId": 45,
     "chapterId": 3,
     "verseId": 7,
-    "text": "Men om Guds sanning ved mi løgn har vorte større til hans ære, kvifor vert eg då framleis dømd som ein syndar?"
+    "text": "Men om Guds sanning ved mi løgn har fløymt over til hans ære, kvifor vert eg då framleis dømd som ein syndar?",
+    "versions": [
+      {
+        "text": "Men om Guds sanning ved mi løgn har vorte større til hans ære, kvifor vert eg då framleis dømd som ein syndar?",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "ἐπερίσσευσεν betyr 'fløymde over, vart rikare, vart endå meir synleg' – ikkje berre 'vorte større'. 'Fløymt over' fangar betre den greske tydinga av overflod og rikdom."
+      }
+    ]
   },
   {
     "bookId": 45,
@@ -57,7 +71,15 @@
     "bookId": 45,
     "chapterId": 3,
     "verseId": 9,
-    "text": "Kva då? Er vi betre enn dei? Ikkje på nokon måte! For vi har alt klaga både jødar og grekarar for å vera under synda,"
+    "text": "Kva då? Har vi noko føremon? Slett ikkje!",
+    "versions": [
+      {
+        "text": "Kva då? Er vi betre enn dei? Ikkje på nokon måte! For vi har alt klaga både jødar og grekarar for å vera under synda,",
+        "type": "error",
+        "severity": "major",
+        "explanation": "οὐ πάντως betyr 'slett ikkje' eller 'på ingen måte', men 'Ikkje på nokon måte' er ein uvanleg formulering på nynorsk. Viktigare: προεχόμεθα i medium tyder helst 'har vi noko føremon?' (ikkje 'er vi betre enn dei?'). Dessutan knyter spørsmålet seg tilbake til v. 1 om jødane sitt føremon, ikkje ei samanlikning med andre."
+      }
+    ]
   },
   {
     "bookId": 45,
@@ -93,7 +115,15 @@
     "bookId": 45,
     "chapterId": 3,
     "verseId": 15,
-    "text": "Føtene deira er snare til å ausa ut blod."
+    "text": "Føtene deira er snare til å utøsa blod.",
+    "versions": [
+      {
+        "text": "Føtene deira er snare til å ausa ut blod.",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "'Ausa ut blod' er litt kvardagsleg for ein bibeltekst som skildrar valdsbruk. 'Utøsa blod' er eit meir passande og etablert uttrykk i norsk bibeltradisjon for ἐκχέαι αἷμα."
+      }
+    ]
   },
   {
     "bookId": 45,
@@ -153,7 +183,15 @@
     "bookId": 45,
     "chapterId": 3,
     "verseId": 25,
-    "text": "Gud sette han fram som soningsoffer ved tru, i hans blod, til å syna si rettferd, fordi han i sitt tolmod hadde bore over med syndene som var gjorde før,"
+    "text": "Gud stilte han fram som soningsoffer ved tru, i hans blod, til å visa si rettferd. For han hadde bore over med syndene som var gjorde før, i sitt tolmod,",
+    "versions": [
+      {
+        "text": "Gud sette han fram som soningsoffer ved tru, i hans blod, til å syna si rettferd, fordi han i sitt tolmod hadde bore over med syndene som var gjorde før,",
+        "type": "error",
+        "severity": "major",
+        "explanation": "'Sette han fram' for προέθετο er akseptabelt, men 'stilte fram' er meir presist for den offentlege framstillinga. Viktigare: 'ἐν τῇ ἀνοχῇ τοῦ θεοῦ' (i Guds tolmod) høyrer grammatisk til 'bore over med' (πάρεσιν), ikkje som ein separat setning. Ordstillinga bør justerast for å knyta 'tolmod' nærare til overbæring med syndene."
+      }
+    ]
   },
   {
     "bookId": 45,

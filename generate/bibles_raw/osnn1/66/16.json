@@ -33,7 +33,15 @@
     "bookId": 66,
     "chapterId": 16,
     "verseId": 5,
-    "text": "Og eg høyrde engelen over vatna seia: «Rettferdig er du, du som er og som var, du heilage, fordi du har dømt slik."
+    "text": "Og eg høyrde engelen over vatna seia: «Rettferdig er du, du som er og som var, du Heilage, fordi du har dømt slik.",
+    "versions": [
+      {
+        "text": "Og eg høyrde engelen over vatna seia: «Rettferdig er du, du som er og som var, du heilage, fordi du har dømt slik.",
+        "type": "grammar",
+        "severity": "minor",
+        "explanation": "'ὁ ὅσιος' (den Heilage) er eit gudsnamn/tittel og bør ha stor forbokstav for å markera at det er ein tittel for Gud, ikkje berre ein eigenskap."
+      }
+    ]
   },
   {
     "bookId": 66,
@@ -87,7 +95,15 @@
     "bookId": 66,
     "chapterId": 16,
     "verseId": 13,
-    "text": "Og eg såg tre ureine ånder, som likna froskar, koma ut frå munnen til draken og frå munnen til dyret og frå munnen til den falske profeten."
+    "text": "Og eg såg tre ureine ånder som likna froskar, koma ut av munnen på draken og ut av munnen på dyret og ut av munnen på den falske profeten.",
+    "versions": [
+      {
+        "text": "Og eg såg tre ureine ånder, som likna froskar, koma ut frå munnen til draken og frå munnen til dyret og frå munnen til den falske profeten.",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "Grunnteksten brukar 'ἐκ τοῦ στόματος' (ut av munnen) tre gonger. Preposisjonen 'ἐκ' tyder 'ut av', ikkje berre 'frå'. 'Ut av munnen på' gjev eit meir presist og levande bilete enn 'frå munnen til'."
+      }
+    ]
   },
   {
     "bookId": 66,
@@ -111,13 +127,29 @@
     "bookId": 66,
     "chapterId": 16,
     "verseId": 16,
-    "text": "Og dei samla dei på den staden som på hebraisk heiter Harmageddon."
+    "text": "Og han samla dei på den staden som på hebraisk heiter Harmageddon.",
+    "versions": [
+      {
+        "text": "Og dei samla dei på den staden som på hebraisk heiter Harmageddon.",
+        "type": "error",
+        "severity": "major",
+        "explanation": "Verbet 'συνήγαγεν' er 3. person eintal (han samla), ikkje fleirtal. Subjektet er implisitt, men det refererer truleg til Gud eller dei demoniske åndene si verksemd under Guds styring. 'Dei samla dei' er uklart og grammatisk forvirrande. 'Han samla dei' er meir korrekt."
+      }
+    ]
   },
   {
     "bookId": 66,
     "chapterId": 16,
     "verseId": 17,
-    "text": "Den sjuande engelen tømde skåla si ut i lufta. Då kom det ei høg røyst frå tempelet, frå trona, som sa: «Det har hendt!»"
+    "text": "Den sjuande engelen tømde skåla si ut i lufta. Då kom det ei høg røyst frå tempelet, frå trona, som sa: «Det er fullsatisfera!»",
+    "versions": [
+      {
+        "text": "Den sjuande engelen tømde skåla si ut i lufta. Då kom det ei høg røyst frå tempelet, frå trona, som sa: «Det har hendt!»",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "'Γέγονεν' (perfektum av γίνομαι) tyder 'det er gjort/fullført' meir enn 'det har hendt'. Likevel er 'Det har hendt' ikkje direkte feil, berre litt svakare. 'Det er fullført!' eller 'Det har skjedd!' kan vera alternativ. Men dette er ein mindre sak."
+      }
+    ]
   },
   {
     "bookId": 66,

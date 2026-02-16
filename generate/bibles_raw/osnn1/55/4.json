@@ -15,11 +15,17 @@
     "bookId": 55,
     "chapterId": 4,
     "verseId": 2,
-    "text": "Forkynn ordet! Ver klar i tide og utide. Overtyd, iretteset og forman, med alt tolmod og undervisning.",
+    "text": "Forkynn ordet! Ver klar i tide og utide. Refs, iretteset og forman, med alt tolmod og undervisning.",
     "versions": [
       {
         "text": "Forkynn ordet! Ver klar i tide og utide. Overtyda, iretteset og forman, med alt tolmod og undervisning.",
         "explanation": "Imperativforma av 'overtyda' på nynorsk er 'overtyd', ikkje 'overtyda'."
+      },
+      {
+        "text": "Forkynn ordet! Ver klar i tide og utide. Overtyd, iretteset og forman, med alt tolmod og undervisning.",
+        "type": "error",
+        "severity": "major",
+        "explanation": "Gresk 'ἔλεγξον' tyder 'refs' eller 'avslør', ikkje 'overtyd'. Det handlar om å konfrontera og avsløra synd/feil, ikkje om å overtyda nokon. 'Iretteset' (ἐπιτίμησον) og 'forman' (παρακάλεσον) er korrekte, men det første leddet bør vera 'refs' for å gje att den korrigerande tydinga."
       }
     ]
   },
@@ -27,7 +33,15 @@
     "bookId": 55,
     "chapterId": 4,
     "verseId": 3,
-    "text": "For det skal koma ei tid då dei ikkje vil tola den sunne læra, men etter sine eigne lyster skal dei samla seg lærarar i hopetal, fordi det klør dei i øyra."
+    "text": "For det skal koma ei tid då dei ikkje vil tola den sunne læra, men etter sine eigne lyster skal dei samla seg lærarar i hopetal, dei som klør dei i øyra.",
+    "versions": [
+      {
+        "text": "For det skal koma ei tid då dei ikkje vil tola den sunne læra, men etter sine eigne lyster skal dei samla seg lærarar i hopetal, fordi det klør dei i øyra.",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "'κνηθόμενοι τὴν ἀκοήν' skildrar folk som har kløe i øyra, dvs. dei vil berre høyra det dei likar. Uttrykket 'fordi det klør dei i øyra' kan tolkast feil (at læringa gjer vondt). Ei formulering som 'dei som klør dei i øyra' eller 'fordi dei har kløe i øyra' er tydelegare."
+      }
+    ]
   },
   {
     "bookId": 55,
@@ -45,11 +59,17 @@
     "bookId": 55,
     "chapterId": 4,
     "verseId": 5,
-    "text": "Men ver du edru i alle ting, lid det som vondt er, gjer gjerning som ein evangelist, og fullfør tenesta di.",
+    "text": "Men ver du nøktern i alle ting, lid det som vondt er, gjer gjerning som ein evangelist, og fullfør tenesta di.",
     "versions": [
       {
         "text": "Men ver du edru i alle ting, lid vondt, gjer gjerning som ein evangelist, og fullfør tenesta di.",
         "explanation": "Uttrykket 'lid vondt' er litt stivt. 'Lid det som vondt er' eller 'ber lidingane' flyt betre på nynorsk for munnleg lesing."
+      },
+      {
+        "text": "Men ver du edru i alle ting, lid det som vondt er, gjer gjerning som ein evangelist, og fullfør tenesta di.",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "'νῆφε' tyder 'ver nøktern/vaktsam' i overført tyding. 'Edru' på nynorsk er primært knytt til fråhald frå alkohol. 'Nøktern' eller 'edrueleg' gjev betre att den overførte tydinga av å vera klårtenkt og vaktsam."
       }
     ]
   },
@@ -111,7 +131,15 @@
     "bookId": 55,
     "chapterId": 4,
     "verseId": 14,
-    "text": "Aleksander, kopparsmeden, har vist meg mykje vondt. Herren skal gje han att etter gjerningane hans."
+    "text": "Aleksander, kopparsmeden, har vist meg mykje vondt. Måtte Herren gje han att etter gjerningane hans!",
+    "versions": [
+      {
+        "text": "Aleksander, kopparsmeden, har vist meg mykje vondt. Herren skal gje han att etter gjerningane hans.",
+        "type": "error",
+        "severity": "major",
+        "explanation": "Tekstvarianten 'ἀποδώσει' (futurum indikativ) finst, men den alternative lesemåten 'ἀποδῷ' (optativ: ynskje/bøn) er godt attest. Uansett lesemåte kan ein forstå utsegna som ei bøn/ynskje. Fleire nyare omsetjingar vel optativ. Sidan det ligg ei innbeden framfor Gud her, er 'Måtte Herren gje han att' teologisk forsiktigare enn det kategoriske 'Herren skal gje han att'."
+      }
+    ]
   },
   {
     "bookId": 55,
@@ -129,7 +157,15 @@
     "bookId": 55,
     "chapterId": 4,
     "verseId": 17,
-    "text": "Men Herren stod med meg og styrkte meg, så forkynninga gjennom meg kunne fullførast, og alle folkeslaga kunne høyra. Og eg vart fria ut or løvegapet."
+    "text": "Men Herren stod med meg og styrkte meg, så forkynninga gjennom meg kunne fullførast, og alle folkeslaga kunne høyra. Og eg vart fria frå løvegapet.",
+    "versions": [
+      {
+        "text": "Men Herren stod med meg og styrkte meg, så forkynninga gjennom meg kunne fullførast, og alle folkeslaga kunne høyra. Og eg vart fria ut or løvegapet.",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "'Ut or' er uvanleg og litt tungt. 'Frå løvegapet' eller 'ut av løvegapet' er meir naturleg nynorsk og gjev same meining."
+      }
+    ]
   },
   {
     "bookId": 55,

@@ -33,11 +33,17 @@
     "bookId": 18,
     "chapterId": 6,
     "verseId": 6,
-    "text": "Kan ein eta smakslaus mat utan salt? Er det nokon smak i slimet av katostplanta?",
+    "text": "Kan ein eta smakslaus mat utan salt? Er det nokon smak i slimet frå katostplanta?",
     "versions": [
       {
         "text": "Kan ein eta smakslaus mat utan salt? Er det nokon smak i eggekvite?",
         "explanation": "Det hebraiske 'ריר חלמות' er usikkert, men tyder truleg på slimet/saften frå ei plante (kanskje katost/malva). 'Eggekvite' er ein tradisjonell tolking, men mange moderne oversetjingar vel 'slimet av ei plante' eller liknande. Dette er ei mindre sak, men kan gjerast meir nøyaktig."
+      },
+      {
+        "text": "Kan ein eta smakslaus mat utan salt? Er det nokon smak i slimet av katostplanta?",
+        "type": "grammar",
+        "severity": "minor",
+        "explanation": "'Slimet av katostplanta' bør vera 'slimet frå katostplanta' – preposisjonen 'frå' er meir naturleg på nynorsk her."
       }
     ]
   },
@@ -45,11 +51,17 @@
     "bookId": 18,
     "chapterId": 6,
     "verseId": 7,
-    "text": "Sjela mi nektar å røra det. Det er som sjukdom i maten min.",
+    "text": "Sjela mi nektar å røra ved det. Det er som sjukdom i maten min.",
     "versions": [
       {
         "text": "Sjela mi nektar å røra det. Slik mat er meg ei vemjing.",
         "explanation": "Det hebraiske 'כִּדְוֵי לַחְמִי' tyder bokstavleg 'som sjukdom i brødet/maten min'. Omsetjinga 'vemjing' tolkar meininga, men mister biletet med sjukdom/kvalme. Ein meir direkte omsetjing formidlar betre Jobs fysiske avsky."
+      },
+      {
+        "text": "Sjela mi nektar å røra det. Det er som sjukdom i maten min.",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "Det hebraiske 'לנגוע' tyder 'å røra ved'. På nynorsk er 'røra ved noko' meir idiomatisk og presist enn berre 'røra det'."
       }
     ]
   },
@@ -69,7 +81,15 @@
     "bookId": 18,
     "chapterId": 6,
     "verseId": 10,
-    "text": "Då hadde eg enno ei trøyst, og eg ville gleda meg i nådelaus smerte, for eg har ikkje fornekta orda frå Den heilage."
+    "text": "Då hadde eg enno ei trøyst: at eg i nådelaus smerte kunne gleda meg over at eg ikkje har fornekta orda frå Den heilage.",
+    "versions": [
+      {
+        "text": "Då hadde eg enno ei trøyst, og eg ville gleda meg i nådelaus smerte, for eg har ikkje fornekta orda frå Den heilage.",
+        "type": "error",
+        "severity": "major",
+        "explanation": "Strukturen i verset er at trøysta Job har, er det faktum at han ikkje har fornekta Guds ord – sjølv midt i nådelaus smerte. Den noverande omsetjinga bryt dette opp i to separate tankar med 'og ... for', men poenget er at det å ikkje ha fornekta Guds ord er sjølve trøysta."
+      }
+    ]
   },
   {
     "bookId": 18,
@@ -93,7 +113,15 @@
     "bookId": 18,
     "chapterId": 6,
     "verseId": 14,
-    "text": "Den som vansmektar, fortener miskunn frå venen sin, sjølv om han forlet frykta for Den allmektige."
+    "text": "Den som held miskunn attende frå venen sin, han forlet frykta for Den allmektige.",
+    "versions": [
+      {
+        "text": "Den som vansmektar, fortener miskunn frå venen sin, sjølv om han forlet frykta for Den allmektige.",
+        "type": "error",
+        "severity": "major",
+        "explanation": "Det hebraiske 'למס מרעהו חסד' er vanskeleg, men den mest naturlege tolkinga er at den som ikkje viser miskunn mot venen sin, forlet frykta for Gud. Jobs poeng er å kritisera venene for at dei manglar medkjensle, noko som er å svikte Gud. Noverande omsetjing snur meininga ved å seia at den lidande 'fortener' miskunn 'sjølv om' han forlet gudsfrykt – dette er teologisk problematisk."
+      }
+    ]
   },
   {
     "bookId": 18,
@@ -105,11 +133,17 @@
     "bookId": 18,
     "chapterId": 6,
     "verseId": 16,
-    "text": "som er grumsa av is, og der snøen løyner seg i dei.",
+    "text": "som er grumsa av is, der snøen løyner seg i dei.",
     "versions": [
       {
         "text": "som er mørke av is, og der snøen gøymer seg.",
         "explanation": "'הקדרים' tyder 'grumsa/mørka' - bekkane blir grumsa/uklåre av smeltande is. 'Mørke av is' er litt uklårt på norsk. Dessutan er det snøen som gøymer seg i bekkane, ikkje ein stad 'der' snøen gøymer seg."
+      },
+      {
+        "text": "som er grumsa av is, og der snøen løyner seg i dei.",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "Kommaet etter 'is' etterfølgt av 'og' er unødvendig tungt. Sidan dette er ei fortsetjing av same bilete, er 'der' åleine nok som relativsetning."
       }
     ]
   },
@@ -153,7 +187,15 @@
     "bookId": 18,
     "chapterId": 6,
     "verseId": 22,
-    "text": "Har eg sagt: 'Gjev meg noko, betal ut av eiga dykkar for meg'?"
+    "text": "Har eg sagt: 'Gjev meg noko,' eller: 'Betal ein bestikkelse for meg av rikdomen dykkar'?",
+    "versions": [
+      {
+        "text": "Har eg sagt: 'Gjev meg noko, betal ut av eiga dykkar for meg'?",
+        "type": "error",
+        "severity": "minor",
+        "explanation": "Det hebraiske 'שחדו' tyder 'gjev ein bestikkelse/gåve' og 'מכחכם' tyder 'av krafta/rikdomen dykkar'. Omsetjinga 'betal ut av eiga dykkar' er upresis – det handlar om bestikkelse, ikkje berre betaling."
+      }
+    ]
   },
   {
     "bookId": 18,
@@ -183,7 +225,15 @@
     "bookId": 18,
     "chapterId": 6,
     "verseId": 27,
-    "text": "De ville til og med kasta lodd om den farlause og pruta om venen dykkar."
+    "text": "De ville til og med kasta dykk over den farlause og greva ei grav for venen dykkar.",
+    "versions": [
+      {
+        "text": "De ville til og med kasta lodd om den farlause og pruta om venen dykkar.",
+        "type": "error",
+        "severity": "major",
+        "explanation": "'תפילו על' tyder å falla over / kasta seg over (dvs. angripa), ikkje 'kasta lodd om'. 'תכרו' kjem frå 'כרה' som tyder å greva (ei grav), ikkje å pruta. Job skuldar venene for å vera hjartelause nok til å angripa foreldrelause og undergrava vener."
+      }
+    ]
   },
   {
     "bookId": 18,

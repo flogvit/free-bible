@@ -15,23 +15,45 @@
     "bookId": 19,
     "chapterId": 146,
     "verseId": 2,
-    "text": "Eg vil lovsynga Herren så lenge eg lever, eg vil prisa min Gud så lenge eg er til."
+    "text": "Eg vil lovsynga HERREN så lenge eg lever, eg vil prisa min Gud så lenge eg er til.",
+    "versions": [
+      {
+        "text": "Eg vil lovsynga Herren så lenge eg lever, eg vil prisa min Gud så lenge eg er til.",
+        "type": "error",
+        "severity": "major",
+        "explanation": "For consistency with the divine name convention used throughout this chapter (verses 7, 8, 9), 'Herren' should be 'HERREN' when translating יְהוָה."
+      }
+    ]
   },
   {
     "bookId": 19,
     "chapterId": 146,
     "verseId": 3,
-    "text": "Set ikkje lit til stormenn, til eit menneske som ikkje kan frelsa."
+    "text": "Set ikkje lit til fyrstane, til eit menneske som ikkje kan frelsa.",
+    "versions": [
+      {
+        "text": "Set ikkje lit til stormenn, til eit menneske som ikkje kan frelsa.",
+        "type": "grammar",
+        "severity": "minor",
+        "explanation": "The Hebrew נְדִיבִים (nedivim) means 'princes/nobles/leaders' rather than 'stormenn' (great men). 'Fyrstane' is a more accurate translation of the Hebrew term, which refers to rulers and people in positions of authority."
+      }
+    ]
   },
   {
     "bookId": 19,
     "chapterId": 146,
     "verseId": 4,
-    "text": "Når anda fer ut, vender mennesket attende til jorda si. Den dagen går alle planane deira til grunne.",
+    "text": "Når anda fer ut, vender mennesket attende til jorda si. Den dagen går alle tankane deira til grunne.",
     "versions": [
       {
         "text": "Når anda fer ut, vender han attende til jorda si. Den dagen går alle planane hans til grunne.",
         "explanation": "The subject in Hebrew is implicit but refers to the 'son of man/human' from verse 3. Using 'han' (he) can be ambiguous - it could be misunderstood as referring to God. 'Mennesket' (the human) clarifies the subject. Also 'deira' keeps consistency with the generic human reference."
+      },
+      {
+        "text": "Når anda fer ut, vender mennesket attende til jorda si. Den dagen går alle planane deira til grunne.",
+        "type": "grammar",
+        "severity": "minor",
+        "explanation": "The Hebrew עֶשְׁתֹּנֹתָיו (eshtonotav) means 'thoughts/intentions' rather than 'plans'. 'Tankane' (thoughts) is a more accurate rendering. The word refers to the thoughts and considerations that cease at death, not necessarily structured plans."
       }
     ]
   },
@@ -97,6 +119,14 @@
     "bookId": 19,
     "chapterId": 146,
     "verseId": 10,
-    "text": "Herren skal vera konge for alltid, din Gud, Sion, frå slekt til slekt. Halleluja!"
+    "text": "HERREN skal vera konge for alltid, din Gud, Sion, frå slekt til slekt. Halleluja!",
+    "versions": [
+      {
+        "text": "Herren skal vera konge for alltid, din Gud, Sion, frå slekt til slekt. Halleluja!",
+        "type": "error",
+        "severity": "major",
+        "explanation": "For consistency with the divine name convention used throughout this chapter (verses 7, 8, 9), 'Herren' should be 'HERREN' when translating יְהוָה."
+      }
+    ]
   }
 ]

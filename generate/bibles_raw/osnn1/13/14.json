@@ -15,7 +15,15 @@
     "bookId": 13,
     "chapterId": 14,
     "verseId": 2,
-    "text": "Då skjøna David at Herren hadde grunnfesta han som konge over Israel, for riket hans var opphøgd for folket hans Israel si skuld."
+    "text": "Då skjøna David at Herren hadde grunnfesta han som konge over Israel, for riket hans var høgt opphøgd for Israel, folket hans, si skuld.",
+    "versions": [
+      {
+        "text": "Då skjøna David at Herren hadde grunnfesta han som konge over Israel, for riket hans var opphøgd for folket hans Israel si skuld.",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "Det hebraiske נִשֵּׂאת לְמַעְלָה betyr 'løfta høgt opp/opphøgd'. Uttrykket לְמַעְלָה ('oppover/høgt') forsterkar opphøginga og bør gjenspeglast i omsettinga. Dessutan er 'folket hans Israel' litt utydeleg på nynorsk; 'Israel, folket hans' er klarare."
+      }
+    ]
   },
   {
     "bookId": 13,
@@ -75,7 +83,15 @@
     "bookId": 13,
     "chapterId": 14,
     "verseId": 12,
-    "text": "Dei hadde late att gudane sine der, og David gav ordre om at dei skulle brennast opp i eld."
+    "text": "Dei lét att gudane sine der, og David sa at dei skulle brennast opp med eld.",
+    "versions": [
+      {
+        "text": "Dei hadde late att gudane sine der, og David gav ordre om at dei skulle brennast opp i eld.",
+        "type": "error",
+        "severity": "major",
+        "explanation": "Verbet וַיַּעַזְבוּ er vayyiqtol (narrativ fortid), ikkje pluskvamperfektum. 'Hadde late att' er eit tolkingsmessig val, men det meir direkte er 'lét att'. Dessutan er וַיֹּאמֶר דָּוִיד rett og slett 'David sa', ikkje 'David gav ordre om'. Sjølv om meininga er nær, er 'sa' meir tru mot grunnteksten."
+      }
+    ]
   },
   {
     "bookId": 13,
@@ -87,11 +103,17 @@
     "bookId": 13,
     "chapterId": 14,
     "verseId": 14,
-    "text": "David spurde Gud att, og Gud sa til han: «Du skal ikkje dra opp etter dei. Vend deg bort frå dei og kom mot dei framanfor bakatrea.",
+    "text": "David spurde Gud att, og Gud sa til han: «Du skal ikkje dra opp etter dei. Vend deg bort frå dei og kom mot dei framanfor bakatrea.»",
     "versions": [
       {
         "text": "David spurde Gud att, og Gud sa til han: «Du skal ikkje dra rett opp etter dei. Gå rundt dei og kom mot dei framanfor bakatrea.",
         "explanation": "Ordet 'rett' er lagt til i omsettinga utan grunnlag i grunnteksten. הָסֵב betyr 'vend deg bort/rundt', ikkje nødvendigvis 'gå rundt'. 'Vend deg bort frå dei' gjev ei meir presis omsetting av הָסֵב֙ מֵֽעֲלֵיהֶ֔ם."
+      },
+      {
+        "text": "David spurde Gud att, og Gud sa til han: «Du skal ikkje dra opp etter dei. Vend deg bort frå dei og kom mot dei framanfor bakatrea.",
+        "type": "grammar",
+        "severity": "minor",
+        "explanation": "Det manglar eit avsluttande hermeteikn (») i verset. Sitatet som opnar med « i dette verset held fram til vers 15, men sidan vers 15 har avsluttande », bør det i det minste vera tydeleg at dette er ein del av same sitatet. Men ser ein på vers 15 som held fram sitatet med avsluttande », kan ein argumentera for at det er ope med vilje. Likevel er det uklart for lesaren."
       }
     ]
   },

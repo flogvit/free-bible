@@ -129,7 +129,7 @@
     "bookId": 1,
     "chapterId": 45,
     "verseId": 18,
-    "text": "Hent far dykkar og familiane dykkar og kom til meg. Eg vil gje dykk det beste i Egypt, og de skal eta av feitmena i landet.'»",
+    "text": "Hent far dykkar og familiane dykkar og kom til meg. Eg vil gje dykk det beste i Egypt, og de skal eta av feitmena i landet.'",
     "versions": [
       {
         "text": "Hent far dykkar og familiane dykkar og kom til meg. Eg vil gje dykk det beste i Egypt, og de skal eta av overfloda i landet.'",
@@ -138,6 +138,12 @@
       {
         "text": "Hent far dykkar og familiane dykkar og kom til meg. Eg vil gje dykk det beste i Egypt, og de skal eta av feitmena i landet.'",
         "explanation": "Det manglar avsluttande hermeteikn (») etter sitatet frå farao som byrja i vers 17. Sitatet strekkjer seg over vers 17-20, men avsluttande teikn manglar her i vers 18 der det står enkelt hermeteikn."
+      },
+      {
+        "text": "Hent far dykkar og familiane dykkar og kom til meg. Eg vil gje dykk det beste i Egypt, og de skal eta av feitmena i landet.'»",
+        "type": "grammar",
+        "severity": "minor",
+        "explanation": "Vers 18 har avsluttande '» men faraoens sitat strekkjer seg vidare til og med vers 20. Det avsluttande hermeteiknet » bør stå etter vers 20, ikkje etter vers 18. Fjern » her. (Merk: versjon 2 la til », men det er feilplassert sidan sitatet held fram.)"
       }
     ]
   },
@@ -157,11 +163,17 @@
     "bookId": 1,
     "chapterId": 45,
     "verseId": 20,
-    "text": "Lat ikkje augo dykkar sjå med medkjensle på eigedelane dykkar, for det beste i heile Egypt skal vera dykkar.",
+    "text": "Lat ikkje augo dykkar sjå med medkjensle på eigedelane dykkar, for det beste i heile Egypt skal vera dykkar.'»",
     "versions": [
       {
         "text": "Bry dykk ikkje om eigedelane dykkar, for det beste i heile Egypt skal vera dykkar.",
         "explanation": "Det hebraiske uttrykket עֵינְכֶם אַל־תָּחֹס (lat ikkje augo dykkar spara/ha medkjensle med) er meir spesifikt enn 'bry dykk ikkje om'. Idiomet handlar om å ikkje vera for oppteken av det dei må la att."
+      },
+      {
+        "text": "Lat ikkje augo dykkar sjå med medkjensle på eigedelane dykkar, for det beste i heile Egypt skal vera dykkar.",
+        "type": "grammar",
+        "severity": "minor",
+        "explanation": "Faraoens sitat byrjar i vers 17 med «, og det indre sitatet byrjar med '. Sitatet avsluttast etter vers 20. Avsluttande hermeteikn '» bør stå her."
       }
     ]
   },
@@ -199,7 +211,15 @@
     "bookId": 1,
     "chapterId": 45,
     "verseId": 26,
-    "text": "Dei fortalde han: «Josef lever enno! Han er herskar over heile Egypt.» Men hjartet hans svimra, for han trudde dei ikkje."
+    "text": "Dei fortalde han: «Josef lever enno! Han er herskar over heile Egypt.» Då stansa hjartet hans, for han trudde dei ikkje.",
+    "versions": [
+      {
+        "text": "Dei fortalde han: «Josef lever enno! Han er herskar over heile Egypt.» Men hjartet hans svimra, for han trudde dei ikkje.",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "Det hebraiske וַיָּפָג לִבּוֹ (vayyafag libbo) tyder at hjartet hans 'vart numment/lamslått/stansa'. 'Svimra' er ikkje heilt presist – det handlar meir om at hjartet hans vart daudkjensle/lamslege. 'Stansa hjartet hans' fangar betre sjokket som er skildra."
+      }
+    ]
   },
   {
     "bookId": 1,

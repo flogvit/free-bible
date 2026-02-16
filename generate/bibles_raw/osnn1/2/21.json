@@ -3,7 +3,15 @@
     "bookId": 2,
     "chapterId": 21,
     "verseId": 1,
-    "text": "Dette er dei lovene du skal leggja fram for dei:"
+    "text": "Dette er dei forskriftene du skal leggja fram for dei:",
+    "versions": [
+      {
+        "text": "Dette er dei lovene du skal leggja fram for dei:",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "Det hebraiske 'הַמִּשְׁפָּטִים' (hamishpatim) tyder 'forskrifter' eller 'rettsreglar' snarare enn berre 'lover'. 'Forskrifter' formidlar betre at dette er juridiske avgjerder og rettsreglar, ikkje generelle lover (som på hebraisk ville vore 'torah' eller 'chuqqim')."
+      }
+    ]
   },
   {
     "bookId": 2,
@@ -21,7 +29,15 @@
     "bookId": 2,
     "chapterId": 21,
     "verseId": 4,
-    "text": "Om herren hans gjev han ei kone, og ho føder han søner eller døtrer, då skal kona og borna hennar høyra til herren hennar, og han skal gå åleine."
+    "text": "Om herren hans gjev han ei kone, og ho føder han søner eller døtrer, då skal kona og borna høyra til herren hans, og han skal gå åleine.",
+    "versions": [
+      {
+        "text": "Om herren hans gjev han ei kone, og ho føder han søner eller døtrer, då skal kona og borna hennar høyra til herren hennar, og han skal gå åleine.",
+        "type": "error",
+        "severity": "major",
+        "explanation": "'Herren hennar' er tvetydig, men i konteksten refererer 'לַאדֹנֶיהָ' til herren åt kvinna, altså same person som herren åt trælen. Hovudproblemet er likevel 'borna hennar' – det hebraiske 'וִילָדֶיהָ' tyder 'borna hennar', men sidan det er sjølvsagt at borna er hennar, bør ein for klarleik seie 'borna' utan 'hennar' sidan det kan skapa forvirring om kven 'hennar' viser til."
+      }
+    ]
   },
   {
     "bookId": 2,
@@ -75,7 +91,15 @@
     "bookId": 2,
     "chapterId": 21,
     "verseId": 12,
-    "text": "Den som slår ein mann så han døyr, skal vissleg døy."
+    "text": "Den som slår eit menneske så det døyr, skal vissleg døy.",
+    "versions": [
+      {
+        "text": "Den som slår ein mann så han døyr, skal vissleg døy.",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "Det hebraiske 'אִישׁ' kan her tyda 'menneske' i generell forstand (ikkje berre ein mann), sidan lova gjeld drap generelt. 'Eit menneske' er meir inkluderande og teologisk korrekt."
+      }
+    ]
   },
   {
     "bookId": 2,
@@ -171,7 +195,15 @@
     "bookId": 2,
     "chapterId": 21,
     "verseId": 25,
-    "text": "brannsår for brannsår, sår for sår, skramme for skramme."
+    "text": "brannsår for brannsår, sår for sår, flengje for flengje.",
+    "versions": [
+      {
+        "text": "brannsår for brannsår, sår for sår, skramme for skramme.",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "Det hebraiske 'חַבּוּרָה' (chaburah) tyder eit blåmerke, ei stripe eller ei flengje – ein alvorlegare skade enn ei 'skramme'. 'Skramme' er for mild; 'flengje' formidlar betre alvoret i skaden."
+      }
+    ]
   },
   {
     "bookId": 2,
@@ -237,7 +269,15 @@
     "bookId": 2,
     "chapterId": 21,
     "verseId": 35,
-    "text": "Når oksen til ein mann skadar oksen til nesten hans så han døyr, skal dei selja den levande oksen og dela pengane. Dei skal òg dela den døde oksen."
+    "text": "Når oksen til ein mann stangar oksen til nesten hans i hel, skal dei selja den levande oksen og dela pengane. Dei skal òg dela den døde oksen.",
+    "versions": [
+      {
+        "text": "Når oksen til ein mann skadar oksen til nesten hans så han døyr, skal dei selja den levande oksen og dela pengane. Dei skal òg dela den døde oksen.",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "Det hebraiske 'יִגֹּף' tyder 'stangar/støyter' – same type åtferd som i dei tidlegare versa om oksar. 'Skadar' er for generelt og mister den spesifikke referansen til stanging. Også 'וָמֵת' tyder 'og han døyr/døydde', så 'stangar i hel' er meir presist."
+      }
+    ]
   },
   {
     "bookId": 2,

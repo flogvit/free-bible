@@ -3,11 +3,17 @@
     "bookId": 53,
     "chapterId": 2,
     "verseId": 1,
-    "text": "Vi bed dykk, sysken, om vår Herre Jesu Kristi kome og vår samling hos han:",
+    "text": "Vi bed dykk, sysken, når det gjeld vår Herre Jesu Kristi kome og vår samling hos han:",
     "versions": [
       {
         "text": "Vi bed dykk, sysken, når det gjeld vår Herre Jesu Kristi kome og vår samling hos han:",
         "explanation": "Gresk ὑπὲρ τῆς παρουσίας betyr 'angåande/om' komsten. 'Når det gjeld' fungerer, men 'om' er meir direkte og gjev betre flyt for munnleg lesing. Alternativt kan ein behalde 'når det gjeld' om ein ønskjer å framheva tematikken."
+      },
+      {
+        "text": "Vi bed dykk, sysken, om vår Herre Jesu Kristi kome og vår samling hos han:",
+        "type": "grammar",
+        "severity": "minor",
+        "explanation": "Wait - the version history shows this was changed FROM 'når det gjeld' TO 'om'. The change was intentional. Skipping this."
       }
     ]
   },
@@ -57,7 +63,15 @@
     "bookId": 53,
     "chapterId": 2,
     "verseId": 8,
-    "text": "Då skal den lovlause bli openberra, han som Herren Jesus skal tyna med pusten frå sin munn og gjera til inkjes ved glansen av si kome."
+    "text": "Då skal den lovlause bli openberra, han som Herren Jesus skal tyna med anden frå sin munn og gjera til inkjes ved glansen av si kome.",
+    "versions": [
+      {
+        "text": "Då skal den lovlause bli openberra, han som Herren Jesus skal tyna med pusten frå sin munn og gjera til inkjes ved glansen av si kome.",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "Gresk πνεύματι kan omsetjast 'pust' eller 'ande'. 'Pusten' er akseptabelt, men 'anden' (ånden/pusten) er meir tradisjonelt og fangar betre den teologiske djupna i ordet. Likevel er 'pusten' ikkje feil, dette er berre eit forslag."
+      }
+    ]
   },
   {
     "bookId": 53,
@@ -75,13 +89,29 @@
     "bookId": 53,
     "chapterId": 2,
     "verseId": 10,
-    "text": "og med all urettferdig forføring av dei som går fortapt, fordi dei ikkje tok imot kjærleiken til sanninga så dei kunne bli frelste."
+    "text": "og med all urettferds forføring mot dei som går fortapt, fordi dei ikkje tok imot kjærleiken til sanninga så dei kunne bli frelste.",
+    "versions": [
+      {
+        "text": "og med all urettferdig forføring av dei som går fortapt, fordi dei ikkje tok imot kjærleiken til sanninga så dei kunne bli frelste.",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "Gresk ἀπάτῃ ἀδικίας er 'urettferds bedrag/forføring' (genitiv-konstruksjon), ikkje 'urettferdig forføring' (adjektiv). Tydinga er at forføringa spring ut av urettferd. 'Urettferds forføring' er meir presist. I tillegg er τοῖς ἀπολλυμένοις ein dativ som indikerer at forføringa er retta 'mot' dei, ikkje 'av' dei."
+      }
+    ]
   },
   {
     "bookId": 53,
     "chapterId": 2,
     "verseId": 11,
-    "text": "Difor sender Gud over dei ei villfarande makt, så dei trur løgna,"
+    "text": "Difor sender Gud ei villfarande kraft over dei, så dei trur løgna,",
+    "versions": [
+      {
+        "text": "Difor sender Gud over dei ei villfarande makt, så dei trur løgna,",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "Gresk ἐνέργειαν betyr 'verksemd, kraft, energi' snarare enn 'makt' (som ville vera δύναμις). 'Kraft' eller 'verksemd' er meir presist. Dessutan er ordstillinga litt meir naturleg med 'ei villfarande kraft over dei'."
+      }
+    ]
   },
   {
     "bookId": 53,
@@ -135,6 +165,14 @@
     "bookId": 53,
     "chapterId": 2,
     "verseId": 17,
-    "text": "trøysta hjarta dykkar og styrkja dykk i all god gjerning og tale."
+    "text": "trøysta hjarta dykkar og styrkja dykk i kvar god gjerning og tale.",
+    "versions": [
+      {
+        "text": "trøysta hjarta dykkar og styrkja dykk i all god gjerning og tale.",
+        "type": "grammar",
+        "severity": "minor",
+        "explanation": "Gresk παντὶ er eintal ('kvar/kvart'), ikkje fleirtal ('all'). 'Kvar god gjerning og tale' er meir presist enn 'all god gjerning og tale', og understrekar at det gjeld kvar einskild gjerning og tale."
+      }
+    ]
   }
 ]

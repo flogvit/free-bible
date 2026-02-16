@@ -37,13 +37,29 @@
     "bookId": 15,
     "chapterId": 9,
     "verseId": 4,
-    "text": "Alle som skalv for orda frå Israels Gud på grunn av truløysa til dei som hadde vore i eksil, samla seg kring meg. Eg sat fortvila til kveldsofferet."
+    "text": "Alle som skalv for orda frå Israels Gud på grunn av truløysa til dei som hadde vore i eksil, samla seg kring meg. Eg sat der fortvila heilt til kveldsofferet.",
+    "versions": [
+      {
+        "text": "Alle som skalv for orda frå Israels Gud på grunn av truløysa til dei som hadde vore i eksil, samla seg kring meg. Eg sat fortvila til kveldsofferet.",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "Tillegget av 'der' og 'heilt' gjev betre flyt og formidlar tidsperspektivet tydelegare – at han sat i denne tilstanden over lengre tid fram til kveldsofferet."
+      }
+    ]
   },
   {
     "bookId": 15,
     "chapterId": 9,
     "verseId": 5,
-    "text": "Ved kveldsofferet reiste eg meg frå mi audmjuking, og med sunderrivne klede og kappe fall eg på kne og rekte hendene mot Herren, min Gud."
+    "text": "Ved kveldsofferet reiste eg meg frå mi audmjuking, og med dei sunderrivne kleda mine og kappa mi fall eg på kne og rekte hendene mot Herren, min Gud.",
+    "versions": [
+      {
+        "text": "Ved kveldsofferet reiste eg meg frå mi audmjuking, og med sunderrivne klede og kappe fall eg på kne og rekte hendene mot Herren, min Gud.",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "Det hebraiske uttrykket har possessivt suffiks ('mine klede og mi kappe'). Dessutan manglar bestemt form som gjev betre flyt sidan kleda og kappa allereie er omtala i vers 3."
+      }
+    ]
   },
   {
     "bookId": 15,
@@ -79,11 +95,17 @@
     "bookId": 15,
     "chapterId": 9,
     "verseId": 9,
-    "text": "For vi er trælar, men vår Gud har ikkje forlate oss i trældomen vår. Han har late oss finna velvilje hos kongane i Persia, så vi har fått livskraft til å reisa opp Guds hus att og byggja det som låg i ruinar, og han har gjeve oss ein mur i Juda og Jerusalem.",
+    "text": "For vi er trælar, men vår Gud har ikkje forlate oss i trældomen vår. Han har late oss finna velvilje hos kongane i Persia, så vi har fått livskraft til å reisa opp att Guds hus og setja i stand det som låg i ruinar, og han har gjeve oss ein mur i Juda og Jerusalem.",
     "versions": [
       {
         "text": "For vi er trælar, men vår Gud har ikkje forlate oss i trældomen vår. Han har late oss finna velvilje hos kongane i Persia, så vi har fått livskraft til å reisa opp Guds hus att og byggja det som låg i ruinar, og han har gjeve oss eit vern i Juda og Jerusalem.",
         "explanation": "Det hebraiske גָדֵ֔ר tyder bokstaveleg 'mur' eller 'gjerde' – eit bilete på vern og tryggleik. 'Ein mur' er meir konkret og nær grunnbetydninga enn 'eit vern'."
+      },
+      {
+        "text": "For vi er trælar, men vår Gud har ikkje forlate oss i trældomen vår. Han har late oss finna velvilje hos kongane i Persia, så vi har fått livskraft til å reisa opp Guds hus att og byggja det som låg i ruinar, og han har gjeve oss ein mur i Juda og Jerusalem.",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "Det hebraiske וּלְהַעֲמִ֣יד אֶת־חָרְבֹתָ֔יו tyder meir presist 'setja i stand ruinane', ikkje 'byggja det som låg i ruinar'. I tillegg er 'reisa opp att' betre ordstilling enn 'reisa opp ... att'."
       }
     ]
   },
@@ -103,7 +125,15 @@
     "bookId": 15,
     "chapterId": 9,
     "verseId": 12,
-    "text": "Difor skal de ikkje gje døtrene dykkar til sønene deira eller ta døtrene deira til sønene dykkar. De skal aldri søkja fred og velstand for dei, så de kan bli sterke og eta det gode i landet og la borna dykkar arva det til evig tid.'"
+    "text": "Difor skal de ikkje gje døtrene dykkar til sønene deira eller ta døtrene deira til koner for sønene dykkar. De skal aldri søkja fred og velstand for dei, så de kan bli sterke og eta det gode i landet og la borna dykkar arva det til evig tid.'",
+    "versions": [
+      {
+        "text": "Difor skal de ikkje gje døtrene dykkar til sønene deira eller ta døtrene deira til sønene dykkar. De skal aldri søkja fred og velstand for dei, så de kan bli sterke og eta det gode i landet og la borna dykkar arva det til evig tid.'",
+        "type": "error",
+        "severity": "major",
+        "explanation": "For klarleik bør det stå 'til koner for sønene dykkar', sidan det hebraiske תִּשְׂאוּ ('ta') her tyder å ta til koner. Men dette er ein mindre klarleiksforbetring."
+      }
+    ]
   },
   {
     "bookId": 15,

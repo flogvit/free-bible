@@ -3,7 +3,15 @@
     "bookId": 25,
     "chapterId": 5,
     "verseId": 1,
-    "text": "Hugs, Herre, kva som har hendt oss! Sjå og legg merke til skamma vår!"
+    "text": "Hugs, Herre, kva som har hendt oss! Sjå på oss og sjå skamma vår!",
+    "versions": [
+      {
+        "text": "Hugs, Herre, kva som har hendt oss! Sjå og legg merke til skamma vår!",
+        "type": "error",
+        "severity": "critical",
+        "explanation": "Ordet 'Hugs' er feil – det ser ut som ein trykkfeil for 'Hugs' (imperativ av 'hugsa'). Men hovudproblemet er at det hebraiske הַבִּיטָה ('sjå hit/sjå på oss') og וּרְאֵה ('og sjå') er to separate verb. Omsetjinga 'Sjå og legg merke til' er ei fri tolking der 'legg merke til' ikkje speglar det hebraiske verbparet. 'Sjå på oss og sjå skamma vår' er meir tru mot originalen."
+      }
+    ]
   },
   {
     "bookId": 25,
@@ -15,7 +23,15 @@
     "bookId": 25,
     "chapterId": 5,
     "verseId": 3,
-    "text": "Me har vorte farlause born, mødrene våre er som enkjer."
+    "text": "Me har vorte farlause, utan far, mødrene våre er som enkjer.",
+    "versions": [
+      {
+        "text": "Me har vorte farlause born, mødrene våre er som enkjer.",
+        "type": "grammar",
+        "severity": "minor",
+        "explanation": "Det hebraiske 'יְתוֹמִים הָיִינוּ וְאֵין אָב' seier bokstaveleg 'me har vorte farlause, og det er ingen far'. Ordet 'born' er lagt til i omsetjinga og finst ikkje i originalen. 'Farlause' åleine dekkjer meininga, og 'utan far' gjev att וְאֵין אָב som ei forsterkande presisering."
+      }
+    ]
   },
   {
     "bookId": 25,
@@ -81,7 +97,15 @@
     "bookId": 25,
     "chapterId": 5,
     "verseId": 12,
-    "text": "Fyrstar vart hengde opp av hendene deira, dei gamle vart ikkje viste respekt."
+    "text": "Fyrstar vart hengde opp etter hendene, andleta til dei gamle vart ikkje æra.",
+    "versions": [
+      {
+        "text": "Fyrstar vart hengde opp av hendene deira, dei gamle vart ikkje viste respekt.",
+        "type": "error",
+        "severity": "major",
+        "explanation": "Hebraisk בְּיָדָם tyder 'etter/ved hendene deira (sine eigne hender)' – det vil seia fyrstane vart hengde opp etter sine eigne hender, ikkje 'av hendene deira' (som kan misforståast som av fiendane sine hender). I tillegg har originalen פְּנֵי זְקֵנִים ('andleta til dei gamle') som er meir spesifikt enn berre 'dei gamle'."
+      }
+    ]
   },
   {
     "bookId": 25,
@@ -99,7 +123,15 @@
     "bookId": 25,
     "chapterId": 5,
     "verseId": 14,
-    "text": "Dei gamle har slutta å sitja i porten, dei unge har slutta med songen sin."
+    "text": "Dei gamle har slutta å sitja i porten, dei unge har slutta med strengjespelet sitt.",
+    "versions": [
+      {
+        "text": "Dei gamle har slutta å sitja i porten, dei unge har slutta med songen sin.",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "Det hebraiske נְגִינָה tyder 'strengjespel/musikk' snarare enn 'song' (som ville vore שִׁיר). I konteksten av Klagesongane er det meir presist å bruka 'strengjespel' for å gjengje den instrumentale musikkforma."
+      }
+    ]
   },
   {
     "bookId": 25,
@@ -123,7 +155,15 @@
     "bookId": 25,
     "chapterId": 5,
     "verseId": 18,
-    "text": "Sionsfjellet ligg audt, revenar spring omkring der."
+    "text": "På Sionsfjellet, som ligg audt, streifar revenar omkring.",
+    "versions": [
+      {
+        "text": "Sionsfjellet ligg audt, revenar spring omkring der.",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "Hebraisk הִלְּכוּ בוֹ tyder 'går/streifar på det', ikkje 'spring omkring'. 'Streifar' er meir presist og gjev betre att biletet av audslege revenar som vandrar fritt. Dessutan markerer originalen 'som ligg audt' (שֶׁשָּׁמֵם) som ein relativsetning, ikkje ein sjølvstendig påstand."
+      }
+    ]
   },
   {
     "bookId": 25,

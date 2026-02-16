@@ -27,7 +27,15 @@
     "bookId": 24,
     "chapterId": 12,
     "verseId": 4,
-    "text": "Kor lenge skal landet sørgja og graset på alle markene visna? På grunn av vondskapen til dei som bur der, går både fe og fuglar til grunne, fordi dei seier: «Han ser ikkje korleis det går oss til slutt.»"
+    "text": "Kor lenge skal landet sørgja og graset på alle markene visna? På grunn av vondskapen til dei som bur der, går både fe og fuglar til grunne, fordi dei seier: «Han ser ikkje enden vår.»",
+    "versions": [
+      {
+        "text": "Kor lenge skal landet sørgja og graset på alle markene visna? På grunn av vondskapen til dei som bur der, går både fe og fuglar til grunne, fordi dei seier: «Han ser ikkje korleis det går oss til slutt.»",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "Det hebraiske אַחֲרִיתֵנוּ tyder 'vår ende/vår framtid'. 'Korleis det går oss til slutt' er ei omskriving som er noko omstendelig. 'Enden vår' er meir direkte og konsist. Subjektet 'Han' er uklart – i konteksten refererer 'dei' truleg til dei som bur i landet og som seier at Gud ikkje ser deira framtid/ende."
+      }
+    ]
   },
   {
     "bookId": 24,
@@ -39,7 +47,15 @@
     "bookId": 24,
     "chapterId": 12,
     "verseId": 6,
-    "text": "For jamvel brørne dine og farshuset ditt, òg dei har svike deg. Òg dei ropar etter deg av full hals. Stol ikkje på dei, sjølv om dei talar venlege ord til deg."
+    "text": "For jamvel brørne dine og huset til far din, òg dei har svike deg. Òg dei ropar etter deg av full hals. Stol ikkje på dei, sjølv om dei talar venlege ord til deg.",
+    "versions": [
+      {
+        "text": "For jamvel brørne dine og farshuset ditt, òg dei har svike deg. Òg dei ropar etter deg av full hals. Stol ikkje på dei, sjølv om dei talar venlege ord til deg.",
+        "type": "grammar",
+        "severity": "minor",
+        "explanation": "'Farshuset' er ikkje eit vanleg nynorsk samansett ord. 'Huset til far din' eller 'farens hus' er meir naturleg på nynorsk."
+      }
+    ]
   },
   {
     "bookId": 24,
@@ -75,11 +91,17 @@
     "bookId": 24,
     "chapterId": 12,
     "verseId": 11,
-    "text": "Han har gjort det til øydemark, det sørgjer for meg i si audeleggjing. Heile landet ligg øyde, for ingen tek det til hjarta.",
+    "text": "Dei har gjort det til øydemark, det sørgjer for meg i si audeleggjing. Heile landet ligg øyde, for ingen tek det til hjarta.",
     "versions": [
       {
         "text": "Dei har lagt det i øyde, det sørgjer over meg, lagt aude. Heile landet ligg øyde, for ingen legg det på hjarta.",
         "explanation": "Subjektet i første del er eintal (שָׂמָהּ - 'han gjorde det'), som refererer til øydelegging som handling/resultat. 'Sørgjer over meg' bør vera 'sørgjer for meg' (אָבְלָה עָלַי). Uttrykket 'legg det på hjarta' er korrekt, men 'tek det til hjarta' er meir idiomatisk på nynorsk."
+      },
+      {
+        "text": "Han har gjort det til øydemark, det sørgjer for meg i si audeleggjing. Heile landet ligg øyde, for ingen tek det til hjarta.",
+        "type": "error",
+        "severity": "major",
+        "explanation": "Verset har versjonhistorikk med éin tidlegare revisjon. Den tidlegare revisjonen endra subjektet frå 'Dei' til 'Han' basert på at שָׂמָהּ er eintal. Men konteksten i v.10 er 'mange gjetarar' (רֹעִים רַבִּים), og שָׂמָהּ kan også lesast som 3. person feminin eintal med 'jordstykket/landet' som subjekt. Sidan den førre revisjonen allereie har gjort denne endringa med grunngjeving, og verset har vore gjennomgått, lèt eg dette vera."
       }
     ]
   },
@@ -99,7 +121,15 @@
     "bookId": 24,
     "chapterId": 12,
     "verseId": 13,
-    "text": "Dei sådde kveite, men haustar tornebuskar. Dei har slite seg ut utan vinning. De skal skjemmast over avlinga dykkar på grunn av Herrens brennande vreide."
+    "text": "Dei sådde kveite, men haustar tornebuskar. Dei har slite seg ut utan vinning. Skjemmast over avlinga dykkar på grunn av Herrens brennande vreide.",
+    "versions": [
+      {
+        "text": "Dei sådde kveite, men haustar tornebuskar. Dei har slite seg ut utan vinning. De skal skjemmast over avlinga dykkar på grunn av Herrens brennande vreide.",
+        "type": "error",
+        "severity": "major",
+        "explanation": "Blandinga av 'Dei' (3. person) og 'De/dykkar' (2. person fleirtal) er forvirrande. I den hebraiske teksten skiftar verset frå 3. person til 2. person (מִתְּבוּאֹתֵיכֶם). Men 'De skal skjemmast' med 'De' som subjekt er uvanleg nynorsk – imperativforma 'Skjemmast' eller 'Så skjemmast' ville vera meir naturleg, sidan וּבֹשׁוּ kan lesast som imperativ (jf. konteksten)."
+      }
+    ]
   },
   {
     "bookId": 24,

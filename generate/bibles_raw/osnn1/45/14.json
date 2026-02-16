@@ -3,11 +3,17 @@
     "bookId": 45,
     "chapterId": 14,
     "verseId": 1,
-    "text": "Ta imot den som er svak i trua, men ikkje for å døma det han tenkjer.",
+    "text": "Ta imot den som er svak i trua, men ikkje for å diskutera tvilsspørsmål.",
     "versions": [
       {
         "text": "Ta imot den som er svak i trua, utan å døma tankane hans.",
         "explanation": "Det greske uttrykket 'διακρίσεις διαλογισμῶν' handlar meir om å ikkje gå inn i disputtar om tvilsspørsmål/meiningar, ikkje om å døma tankane hans. Omsettinga bør reflektera at ein ikkje skal ta imot nokon for å diskutera tvilsspørsmål."
+      },
+      {
+        "text": "Ta imot den som er svak i trua, men ikkje for å døma det han tenkjer.",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "Endringsgrunnen frå versjon 1 seier sjølv at omsettinga bør reflektera at ein ikkje skal ta imot nokon for å diskutera tvilsspørsmål/meiningar. Men den noverande teksten seier 'ikkje for å døma det han tenkjer', som framleis handlar om å døma tankar, ikkje om å unngå disputtar om tvilsspørsmål. 'διακρίσεις διαλογισμῶν' betyr 'disputtar om meiningar/tvilsspørsmål'."
       }
     ]
   },
@@ -39,11 +45,17 @@
     "bookId": 45,
     "chapterId": 14,
     "verseId": 5,
-    "text": "Somme held éin dag for viktigare enn ein annan, andre held kvar dag for like.",
+    "text": "Somme held éin dag for viktigare enn ein annan, andre held kvar dag for like. Kvar og ein må vera fullt overtydd i sitt eige sinn.",
     "versions": [
       {
         "text": "Ein set éin dag høgare enn ein annan, ein annan held alle dagar for like. Kvar og ein må vera fullt overtydd i sitt eige sinn.",
         "explanation": "Bruken av 'Somme ... andre' gjev betre parallellisme og flyt for munnleg lesing. 'Kvar dag' er meir naturleg nynorsk enn 'alle dagar' i denne samanhengen."
+      },
+      {
+        "text": "Somme held éin dag for viktigare enn ein annan, andre held kvar dag for like.",
+        "type": "error",
+        "severity": "major",
+        "explanation": "Den siste setninga i verset (ἕκαστος ἐν τῷ ἰδίῳ νοῒ πληροφορείσθω) er utelaten i den noverande omsettinga. Denne formaninga om at kvar enkelt skal vera fullt overtydd i sitt eige sinn er ein viktig del av verset. NB: Den tidlegare versjonen hadde denne setninga, men ho vart fjerna utan at endringsnotatet nemner at ho bevisst vart teken bort – endringa handla berre om 'Somme ... andre'-strukturen og 'kvar dag' vs. 'alle dagar'. Setninga må vera med, men formuleringa er justert for å passa den nye stilen."
       }
     ]
   },
@@ -93,7 +105,15 @@
     "bookId": 45,
     "chapterId": 14,
     "verseId": 13,
-    "text": "Lat oss difor ikkje lenger døma kvarandre. Avgjerd heller dette: at de ikkje legg stein eller snubleblokk i vegen for bror dykkar."
+    "text": "Lat oss difor ikkje lenger døma kvarandre. Avgjer heller dette: at de ikkje legg stein eller snubleblokk i vegen for bror dykkar.",
+    "versions": [
+      {
+        "text": "Lat oss difor ikkje lenger døma kvarandre. Avgjerd heller dette: at de ikkje legg stein eller snubleblokk i vegen for bror dykkar.",
+        "type": "grammar",
+        "severity": "major",
+        "explanation": "'Avgjerd' er ikkje korrekt nynorsk verbform. Imperativ av 'avgjera' er 'avgjer'."
+      }
+    ]
   },
   {
     "bookId": 45,
@@ -141,7 +161,15 @@
     "bookId": 45,
     "chapterId": 14,
     "verseId": 20,
-    "text": "Riv ikkje ned Guds verk for maten si skuld. Alt er reint, men det er vondt for den som et så det vert til støyt for andre."
+    "text": "Riv ikkje ned Guds verk for maten si skuld. Alt er reint, men det er gale for det mennesket som et med samvitskvalar.",
+    "versions": [
+      {
+        "text": "Riv ikkje ned Guds verk for maten si skuld. Alt er reint, men det er vondt for den som et så det vert til støyt for andre.",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "Det greske 'τῷ διὰ προσκόμματος ἐσθίοντι' tyder 'den som et gjennom/med anstøyt', dvs. den som et trass i samvitskvalar. Det handlar om personen som sjølv har dårleg samvit ved å eta, ikkje om at maten vert til støyt for andre. 'κακὸν' er her betre omsett med 'gale' (moralsk gale) enn 'vondt'."
+      }
+    ]
   },
   {
     "bookId": 45,

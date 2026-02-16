@@ -3,7 +3,15 @@
     "bookId": 19,
     "chapterId": 39,
     "verseId": 1,
-    "text": "Til korleiaren. For Jedutun. Ein salme av David."
+    "text": "Til kormeisteren. For Jedutun. Ein salme av David.",
+    "versions": [
+      {
+        "text": "Til korleiaren. For Jedutun. Ein salme av David.",
+        "type": "grammar",
+        "severity": "minor",
+        "explanation": "'לַמְנַצֵּחַ' tyder 'dirigent' eller 'kormeister' – ein som leier musikken. 'Korleiaren' er ikkje eit standardord på nynorsk; 'kormeisteren' er meir etablert og korrekt."
+      }
+    ]
   },
   {
     "bookId": 19,
@@ -57,11 +65,17 @@
     "bookId": 19,
     "chapterId": 39,
     "verseId": 7,
-    "text": "Sanneleg, mennesket vandrar som ein skugge, sanneleg, dei strævar forgjeves.",
+    "text": "Sanneleg, mennesket vandrar som ein skugge, sanneleg, dei strævar forgjeves. Dei samlar i hop, men veit ikkje kven som skal hausta det.",
     "versions": [
       {
         "text": "Sanneleg, mennesket vandrar som ein skugge, sanneleg, dei stimar rundt forgjeves. Dei samlar saman, men veit ikkje kven som skal få det.",
         "explanation": "Det hebraiske 'יֶהֱמָיוּן' (frå הָמָה) tyder å laga støy, vere uroleg, eller stræva uroleg – ikkje nødvendigvis å 'stima rundt'. 'Strævar forgjeves' gjev betre meining i konteksten om livets tomheit og menneskeleg uro."
+      },
+      {
+        "text": "Sanneleg, mennesket vandrar som ein skugge, sanneleg, dei strævar forgjeves.",
+        "type": "error",
+        "severity": "major",
+        "explanation": "Den siste delen av verset 'יִצְבֹּר וְלֹא־יֵדַע מִי־אֹסְפָם' (dei samlar saman, men veit ikkje kven som får det) er utelaten i gjeldande omsetjing. Den førre versjonen hadde dette med, men vart fjerna – truleg utilsikta. Innhaldet er viktig for den teologiske poenget om livets forgjengelege natur. Formuleringa her er ny og skil seg frå den tidlegare versjonen."
       }
     ]
   },
@@ -87,13 +101,29 @@
     "bookId": 19,
     "chapterId": 39,
     "verseId": 11,
-    "text": "Ta bort plaga di frå meg! Av di hand som slår, er eg i ferd med å gå til grunne."
+    "text": "Ta bort plaga di frå meg! Av slaget frå di hand er eg i ferd med å gå til grunne.",
+    "versions": [
+      {
+        "text": "Ta bort plaga di frå meg! Av di hand som slår, er eg i ferd med å gå til grunne.",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "'מִתִּגְרַת יָדְךָ' tyder 'av slaget / angrepet frå di hand'. 'Di hand som slår' er ei noko fri omskriving; 'av slaget frå di hand' er meir direkte og naturleg på nynorsk."
+      }
+    ]
   },
   {
     "bookId": 19,
     "chapterId": 39,
     "verseId": 12,
-    "text": "Når du refsar mennesket med straff for synd, øydelegg du det dei held kjært, som møll gjer. Sanneleg, kvart menneske er berre ein pust. Sela."
+    "text": "Når du tuktar eit menneske med refs for synd, lèt du det dei held kjært, smelta bort som av møll. Sanneleg, kvart menneske er berre ein pust. Sela.",
+    "versions": [
+      {
+        "text": "Når du refsar mennesket med straff for synd, øydelegg du det dei held kjært, som møll gjer. Sanneleg, kvart menneske er berre ein pust. Sela.",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "Det hebraiske 'יִסַּרְתָּ' tyder 'tukta/oppdra' meir enn berre 'straffa'. Vidare seier 'וַתֶּמֶס כָּעָשׁ חֲמוּדוֹ' at det dei held kjært, smeltar bort (תֶּמֶס = smelta) som av møll (עָשׁ) – ikkje at Gud aktivt 'øydelegg' det. Biletet er meir av ei gradvis oppløysing."
+      }
+    ]
   },
   {
     "bookId": 19,

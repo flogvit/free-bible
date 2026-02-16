@@ -33,11 +33,17 @@
     "bookId": 14,
     "chapterId": 25,
     "verseId": 5,
-    "text": "Han mønstra dei som var tjue år og eldre, og fann tre hundre tusen utvalde menn, skikka til å fara ut i strid, og som kunne handtera spyd og skjold.",
+    "text": "Amasja samla Juda og stilte dei opp etter ættene, under leiarar over tusen og leiarar over hundre, for heile Juda og Benjamin. Han mønstra dei som var tjue år og eldre, og fann tre hundre tusen utvalde menn, skikka til å fara ut i strid, som kunne handtera spyd og skjold.",
     "versions": [
       {
         "text": "Amasja samla Juda og stilte dei opp etter ættene deira, under leiarar over tusen og leiarar over hundre, for heile Juda og Benjamin. Han mønstra dei som var tjue år og eldre, og fann at dei var tre hundre tusen utvalde menn, skikka til strid, som kunne handtera spyd og skjold.",
         "explanation": "Det hebraiske 'יוֹצֵא צָבָא' tyder 'som dreg ut til strid/hær', ikkje berre 'skikka til strid'. Dessutan er 'at dei var' unødvendig og gjer setninga tyngre å lesa høgt."
+      },
+      {
+        "text": "Han mønstra dei som var tjue år og eldre, og fann tre hundre tusen utvalde menn, skikka til å fara ut i strid, og som kunne handtera spyd og skjold.",
+        "type": "error",
+        "severity": "major",
+        "explanation": "Den noverande versjonen manglar den første halvdelen av verset heilt: at Amasja samla Juda og ordna dei etter ætter under leiarar over tusen og hundre, for heile Juda og Benjamin. Dette er vesentleg innhald som ikkje bør utelatast. Den tidlegare versjonen hadde dette med, men vart endra – endringa gjaldt 'skikka til strid' → 'skikka til å fara ut i strid' og fjerning av 'at dei var', men den første halvdelen av verset burde ha vorte ståande."
       }
     ]
   },
@@ -63,7 +69,15 @@
     "bookId": 14,
     "chapterId": 25,
     "verseId": 8,
-    "text": "Men om du går, gjer det og ver sterk til striden! Då skal Gud likevel fella deg framfor fienden, for Gud har makt til å hjelpa og til å fella.»"
+    "text": "Men sjølv om du går og gjer deg sterk til striden, skal Gud fella deg framfor fienden, for Gud har makt til å hjelpa og til å fella.»",
+    "versions": [
+      {
+        "text": "Men om du går, gjer det og ver sterk til striden! Då skal Gud likevel fella deg framfor fienden, for Gud har makt til å hjelpa og til å fella.»",
+        "type": "error",
+        "severity": "major",
+        "explanation": "Originalteksten er ein betinga setning med ei åtvaring: 'Sjølv om du går og kjempar tappert, vil Gud fella deg.' Den noverande omsetjinga kan misleiande lesast som ei oppmoding ('gjer det og ver sterk!'), medan poenget er at sjølv om han gjer seg sterk, vil Gud likevel la han falla."
+      }
+    ]
   },
   {
     "bookId": 14,
@@ -153,7 +167,15 @@
     "bookId": 14,
     "chapterId": 25,
     "verseId": 19,
-    "text": "Du tenkjer at du har slege Edom, og hjarta ditt gjer deg hovmodig og søkjer ære. Men bli no heime! Kvifor vil du leita etter ulukke og falla, både du og Juda med deg?»"
+    "text": "Du seier: Sjå, eg har slege Edom! Og hjarta ditt har gjort deg hovmodig og æresjuk. Men bli no heime! Kvifor vil du leita etter ulukke og falla, både du og Juda med deg?»",
+    "versions": [
+      {
+        "text": "Du tenkjer at du har slege Edom, og hjarta ditt gjer deg hovmodig og søkjer ære. Men bli no heime! Kvifor vil du leita etter ulukke og falla, både du og Juda med deg?»",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "Det hebraiske 'אָמַרְתָּ' tyder 'du sa/seier', ikkje 'du tenkjer'. Og 'הִנֵּה הִכִּיתָ אֶת־אֱדוֹם' er eit direkte sitat: 'Sjå, eg har slege Edom!' Omsetjinga bør reflektera at det er eit sitat som vert attgjeve."
+      }
+    ]
   },
   {
     "bookId": 14,
@@ -183,7 +205,15 @@
     "bookId": 14,
     "chapterId": 25,
     "verseId": 24,
-    "text": "Han tok alt gullet og sølvet og alle kara som fanst i Guds hus, hjå Obed-Edom, og skattane i kongens hus, og dessutan tok han gislar. Så drog han attende til Samaria."
+    "text": "Han tok alt gullet og sølvet og alle kara som fanst i Guds hus, i varetekt hjå Obed-Edom, og skattane i kongens hus, og dessutan tok han gislar. Så drog han attende til Samaria.",
+    "versions": [
+      {
+        "text": "Han tok alt gullet og sølvet og alle kara som fanst i Guds hus, hjå Obed-Edom, og skattane i kongens hus, og dessutan tok han gislar. Så drog han attende til Samaria.",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "Uttrykket 'עִם־עֹבֵד אֱדוֹם' viser til at tempelkara var i varetekt hjå Obed-Edom(-slekta). Det kan vera klarare å skriva 'i varetekt hjå Obed-Edom' for å syna at dette handlar om kven som hadde ansvar for kara."
+      }
+    ]
   },
   {
     "bookId": 14,

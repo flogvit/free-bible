@@ -57,13 +57,29 @@
     "bookId": 23,
     "chapterId": 10,
     "verseId": 9,
-    "text": "Er ikkje Kalno som Karkemisj? Er ikkje Hamat som Arpad? Er ikkje Samaria som Damaskus?"
+    "text": "Er ikkje Karkemisj som Kalno? Er ikkje Hamat som Arpad? Er ikkje Samaria som Damaskus?",
+    "versions": [
+      {
+        "text": "Er ikkje Kalno som Karkemisj? Er ikkje Hamat som Arpad? Er ikkje Samaria som Damaskus?",
+        "type": "error",
+        "severity": "major",
+        "explanation": "Den hebraiske teksten seier 'Er ikkje Kalno som Karkemisj?' (כְּכַרְכְּמִישׁ כַּלְנוֹ) - dvs. Kalno blir samanlikna med Karkemisj, ikkje omvendt. Noverande omsetting snur rekkefølgja. Karkemisj er standarden som Kalno blir målt mot."
+      }
+    ]
   },
   {
     "bookId": 23,
     "chapterId": 10,
     "verseId": 10,
-    "text": "Slik handa mi nådde rika med avgudane, som hadde fleire utskorne bilete enn Jerusalem og Samaria,"
+    "text": "Slik handa mi nådde avgudsrika, der det var fleire utskorne bilete enn i Jerusalem og Samaria,",
+    "versions": [
+      {
+        "text": "Slik handa mi nådde rika med avgudane, som hadde fleire utskorne bilete enn Jerusalem og Samaria,",
+        "type": "error",
+        "severity": "major",
+        "explanation": "Den hebraiske teksten seier at dei rika som var knytte til avgudar (מַמְלְכֹת הָאֱלִיל) hadde utskorne bilete (פְסִילֵיהֶם) som var fleire enn dei i Jerusalem og Samaria (מִירוּשָׁלַ͏ִם וּמִשֹּׁמְרוֹן). Det manglar preposisjonen 'i' før Jerusalem og Samaria i omsettinga."
+      }
+    ]
   },
   {
     "bookId": 23,
@@ -75,7 +91,15 @@
     "bookId": 23,
     "chapterId": 10,
     "verseId": 12,
-    "text": "Når Herren har fullført heile gjeringa si på Sion-fjellet og i Jerusalem, skal eg straffa kongen i Assur for frukta av det hovmodige hjartet hans og for stoltheita i dei høgmodige augo hans."
+    "text": "Når Herren har fullført heile verket sitt på Sion-fjellet og i Jerusalem, skal han straffa kongen i Assur for frukta av det hovmodige hjartet hans og for stoltheita i dei høgmodige augo hans.",
+    "versions": [
+      {
+        "text": "Når Herren har fullført heile gjeringa si på Sion-fjellet og i Jerusalem, skal eg straffa kongen i Assur for frukta av det hovmodige hjartet hans og for stoltheita i dei høgmodige augo hans.",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "Teksten skiftar frå tredje person ('Herren') til første person ('eg') i den noverande omsettinga, men hebraisk brukar her ei blanding som tyder på at dette er profetens forteljing i tredje person. 'Eg' gjev inntrykk av at Gud talar direkte, men dette er ikkje eit direkte sitat. Det er meir naturleg med 'han' for konsekvens. Også 'gjeringa' kan bli 'verket' for betre norsk."
+      }
+    ]
   },
   {
     "bookId": 23,
@@ -93,11 +117,17 @@
     "bookId": 23,
     "chapterId": 10,
     "verseId": 15,
-    "text": "Skal øksa rosa seg over den som høgg med henne? Skal saga gjera seg stor over den som brukar henne? Som om kjeppen kunne svinga den som løftar han, som om staven kunne løfta den som er av tre!",
+    "text": "Skal øksa rosa seg over den som høgg med henne? Skal saga gjera seg stor over den som brukar henne? Som om kjeppen kunne svinga den som løftar han, som om staven kunne løfta den som ikkje er av tre!",
     "versions": [
       {
         "text": "Skal øksa rosa seg over den som høgg med henne? Skal saga gjera seg stor over den som brukar henne? Som om kjeppen kunne svinga den som løftar han, som om staven kunne løfta han som ikkje er av tre!",
         "explanation": "Det hebraiske 'לֹא־עֵץ' (lo-ets) er vanskeleg. Poenget er at staven løftar opp 'den som ikkje er av tre' (altså mennesket). Noverande omsetting seier 'han som ikkje er av tre' som er rett forståing, men flyten kan forbetrast for munnleg lesing."
+      },
+      {
+        "text": "Skal øksa rosa seg over den som høgg med henne? Skal saga gjera seg stor over den som brukar henne? Som om kjeppen kunne svinga den som løftar han, som om staven kunne løfta den som er av tre!",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "Det hebraiske 'לֹא־עֵץ' betyr 'ikkje tre' - poenget er at staven (tre) prøver å løfta den som IKKJE er av tre (altså mennesket). Noverande omsetting seier 'den som er av tre' som snur meininga. Denne feilen vart introdusert i den siste revisjonen - den førre versjonen hadde rett meining ('han som ikkje er av tre')."
       }
     ]
   },
@@ -105,7 +135,15 @@
     "bookId": 23,
     "chapterId": 10,
     "verseId": 16,
-    "text": "Difor skal Herren, Herren over hærskarane, senda tærande sjukdom over dei feite hans, og under herlegdomen hans skal det brenna ein eld, som ein logande eld."
+    "text": "Difor skal Herren, Herren over hærskarane, senda tærande sjukdom over dei feite hans, og under herlegdomen hans skal det tennast ein brann, ein brann som logande eld.",
+    "versions": [
+      {
+        "text": "Difor skal Herren, Herren over hærskarane, senda tærande sjukdom over dei feite hans, og under herlegdomen hans skal det brenna ein eld, som ein logande eld.",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "Det hebraiske 'יֵקַד יְקֹד כִּיקוֹד אֵשׁ' brukar gjentaking for å forsterka (brenne ein brann). Noverande omsetting 'brenna ein eld, som ein logande eld' er litt redundant. Ei lita forbetring for å fanga intensiteten."
+      }
+    ]
   },
   {
     "bookId": 23,
@@ -159,7 +197,15 @@
     "bookId": 23,
     "chapterId": 10,
     "verseId": 25,
-    "text": "For om ei lita stund skal harmen ta slutt, og vreiden min skal retta seg mot å øydeleggja dei.»"
+    "text": "For om ei lita stund skal harmen ta slutt, og vreiden min skal retta seg mot å øydeleggja dei.",
+    "versions": [
+      {
+        "text": "For om ei lita stund skal harmen ta slutt, og vreiden min skal retta seg mot å øydeleggja dei.»",
+        "type": "error",
+        "severity": "major",
+        "explanation": "Vers 25 er framleis ein del av Guds tale som byrja i v. 24, men avsluttande hermeteikn bør ikkje stå her. Guds tale sluttar ikkje naturleg etter v. 25 - v. 26 held fram med skildringa. Avslutande hermeteikn bør fjernast, eller dei bør stå etter v. 25 som del av ein naturleg avslutting av sitatet. Eigentleg er v. 24-25 Guds tale, og v. 26 er profetens skildring att, så hermeteiknet kan stå, men det er diskutabelt."
+      }
+    ]
   },
   {
     "bookId": 23,

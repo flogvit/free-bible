@@ -15,7 +15,15 @@
     "bookId": 42,
     "chapterId": 24,
     "verseId": 3,
-    "text": "Då dei gjekk inn, fann dei ikkje kroppen til Herren Jesus."
+    "text": "Då dei gjekk inn, fann dei ikkje kroppen.",
+    "versions": [
+      {
+        "text": "Då dei gjekk inn, fann dei ikkje kroppen til Herren Jesus.",
+        "type": "theological",
+        "severity": "minor",
+        "explanation": "Grunnteksten i hovudtekstvarianten seier berre «τὸ σῶμα» (kroppen). Orda «til Herren Jesus» (τοῦ κυρίου Ἰησοῦ) finst i nokre handskrifter, men hovudteksten har den kortare forma. Sidan omsetjinga legg til «til Herren Jesus» utan at det står i den grunnteksten som er oppgjeven, bør det vurderast å utelate det. Likevel er dette ei mindre sak sidan nokre tekstkritiske tradisjonar inkluderer det."
+      }
+    ]
   },
   {
     "bookId": 42,
@@ -99,7 +107,15 @@
     "bookId": 42,
     "chapterId": 24,
     "verseId": 17,
-    "text": "Han sa til dei: «Kva er det de går og snakkar om?» Då stansa dei med sorgfulle andlet."
+    "text": "Han sa til dei: «Kva er det for ord de kastar fram og tilbake mellom dykk medan de går?» Då stansa dei med sorgfulle andlet.",
+    "versions": [
+      {
+        "text": "Han sa til dei: «Kva er det de går og snakkar om?» Då stansa dei med sorgfulle andlet.",
+        "type": "error",
+        "severity": "minor",
+        "explanation": "Grunnteksten brukar «ἀντιβάλλετε» (kastar fram og tilbake, utvekslar), som viser til ein gjensidig diskusjon/ordskifte. Omsetjinga 'snakkar om' er noko for generell og fangar ikkje opp nyansen i det greske verbet som tyder på ein pågåande meiningsutveksling."
+      }
+    ]
   },
   {
     "bookId": 42,
@@ -123,11 +139,17 @@
     "bookId": 42,
     "chapterId": 24,
     "verseId": 21,
-    "text": "Vi hadde hatt vårt håp til at han var den som skulle fria ut Israel.",
+    "text": "Vi hadde hatt vårt håp til at han var den som skulle fria ut Israel. Og dessutan er det no alt tredje dagen sidan dette hende.",
     "versions": [
       {
         "text": "Vi hadde hått vårt håp til at han var den som skulle fria ut Israel. Men no er det alt tredje dagen sidan dette hende.",
         "explanation": "Skrivefeil: 'hått' bør vere 'hatt' (perfektum partisipp av 'ha')."
+      },
+      {
+        "text": "Vi hadde hatt vårt håp til at han var den som skulle fria ut Israel.",
+        "type": "error",
+        "severity": "major",
+        "explanation": "Den siste delen av verset er utelaten i den noverande omsetjinga: «ἀλλά γε καὶ σὺν πᾶσιν τούτοις τρίτην ταύτην ἡμέραν ἄγει ἀφʼ οὗ ταῦτα ἐγένετο» – 'men dessutan er det no tredje dagen sidan dette hende'. Den tidlegare versjonen hadde denne setninga, men ho vart fjerna under skrivefeilretting. Setninga må vere med for å gje att heile innhaldet i grunnteksten. Formuleringa her er ulik den tidlegare versjonen."
       }
     ]
   },
@@ -135,7 +157,15 @@
     "bookId": 42,
     "chapterId": 24,
     "verseId": 22,
-    "text": "Nokre av kvinnene våre har også gjort oss forskrekka. Dei var ved grava tidleg i dag,"
+    "text": "Men nokre kvinner blant oss har også gjort oss forskrekka. Dei var ved grava tidleg i morgon,",
+    "versions": [
+      {
+        "text": "Nokre av kvinnene våre har også gjort oss forskrekka. Dei var ved grava tidleg i dag,",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "Grunnteksten har 'ἀλλὰ καὶ' (men også), og omsetjinga manglar 'men' som innleier kontrasten. Dessutan tyder 'ὀρθριναὶ' tidleg om morgonen (same dag), der 'tidleg i morgon' (dvs. tidleg i dag om morgonen) er meir presist enn berre 'tidleg i dag'."
+      }
+    ]
   },
   {
     "bookId": 42,
@@ -189,7 +219,15 @@
     "bookId": 42,
     "chapterId": 24,
     "verseId": 30,
-    "text": "Då han sat til bords med dei, tok han brødet, velsigna det, braut det og gav dei."
+    "text": "Då han sat til bords med dei, tok han brødet, velsigna det, braut det og gav det til dei.",
+    "versions": [
+      {
+        "text": "Då han sat til bords med dei, tok han brødet, velsigna det, braut det og gav dei.",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "'gav dei' manglar objektet 'det' (brødet). Det bør heite 'gav det til dei' for å vere fullstendig og naturleg nynorsk."
+      }
+    ]
   },
   {
     "bookId": 42,
@@ -237,7 +275,15 @@
     "bookId": 42,
     "chapterId": 24,
     "verseId": 37,
-    "text": "Dei vart forfærda og redde og trudde dei såg ei ånd."
+    "text": "Dei vart skremde og redde og trudde dei såg ei ånd.",
+    "versions": [
+      {
+        "text": "Dei vart forfærda og redde og trudde dei såg ei ånd.",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "'Forfærda' er eit noko gamaldags ord. For ein moderne og lettlesen nynorsk kunne 'skremde' eller 'skrekkslagne' fungere betre. Likevel er 'forfærda' ikkje direkte feil, berre eit stilval."
+      }
+    ]
   },
   {
     "bookId": 42,

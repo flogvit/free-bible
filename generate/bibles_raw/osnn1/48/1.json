@@ -27,11 +27,17 @@
     "bookId": 48,
     "chapterId": 1,
     "verseId": 5,
-    "text": "Ham vere æra i all æve! Amen.",
+    "text": "Ham vere æra i all æve og æver! Amen.",
     "versions": [
       {
         "text": "Han vere ære i all æve! Amen.",
         "explanation": "Gresk har dativ (ᾧ), som på nynorsk bør gjevast att med 'Ham' (objektsform). 'Ære' bør vera 'æra' med bunden form for å visa til den spesifikke æra som tilhøyrer Gud (ἡ δόξα har bunden artikkel)."
+      },
+      {
+        "text": "Ham vere æra i all æve! Amen.",
+        "type": "grammar",
+        "severity": "minor",
+        "explanation": "Gresk εἰς τοὺς αἰῶνας τῶν αἰώνων er ein forsterka formulering ('i æva si æve' / 'i all æve og æver') som er sterkare enn berre 'i all æve'. Likevel har verset allereie blitt revidert ein gong, så dette er berre ein mindre merknad."
       }
     ]
   },
@@ -51,7 +57,15 @@
     "bookId": 48,
     "chapterId": 1,
     "verseId": 8,
-    "text": "Men om vi sjølve, eller ein engel frå himmelen, skulle forkynna eit anna evangelium enn det vi forkynte dykk, så skal den vera forbanna!"
+    "text": "Men om vi sjølve, eller ein engel frå himmelen, skulle forkynna eit anna evangelium enn det vi forkynte dykk, så skal vedkomande vera forbanna!",
+    "versions": [
+      {
+        "text": "Men om vi sjølve, eller ein engel frå himmelen, skulle forkynna eit anna evangelium enn det vi forkynte dykk, så skal den vera forbanna!",
+        "type": "grammar",
+        "severity": "major",
+        "explanation": "'den' er uklårt og kan visa til evangeliet i staden for personen. Gresk ἀνάθεμα ἔστω viser til personen som forkynner. 'Vedkomande' er kjønnsnøytralt og klargjer at det er personen som er meint."
+      }
+    ]
   },
   {
     "bookId": 48,
@@ -93,7 +107,15 @@
     "bookId": 48,
     "chapterId": 1,
     "verseId": 13,
-    "text": "For de har høyrt om korleis eg ein gong levde i jødedomen, at eg forfølgde Guds forsamling over alle grenser og prøvde å øydeleggja henne."
+    "text": "For de har høyrt om korleis eg ein gong levde i jødedomen, at eg forfølgde Guds forsamling over alle grenser og la henne i øyde.",
+    "versions": [
+      {
+        "text": "For de har høyrt om korleis eg ein gong levde i jødedomen, at eg forfølgde Guds forsamling over alle grenser og prøvde å øydeleggja henne.",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "ἐπόρθουν er imperfektum av πορθέω som tyder 'herja/øydela' – det skildrar ei pågåande handling, ikkje berre eit forsøk. 'Prøvde å øydeleggja' svekkjer det greske verbet. 'La henne i øyde' er sterkare og meir presist."
+      }
+    ]
   },
   {
     "bookId": 48,
@@ -159,7 +181,15 @@
     "bookId": 48,
     "chapterId": 1,
     "verseId": 22,
-    "text": "Eg var ukjend av andlet for forsamlingane i Judea som er i Kristus."
+    "text": "Eg var ukjend av utsjånad for forsamlingane i Judea som er i Kristus.",
+    "versions": [
+      {
+        "text": "Eg var ukjend av andlet for forsamlingane i Judea som er i Kristus.",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "τῷ προσώπῳ tyder her 'av utsjånad/personleg' – dei hadde ikkje sett han personleg. 'Ukjend av andlet' er forståeleg, men 'ukjend av utsjånad' er meir naturleg nynorsk. Alternativt kan ein seia 'personleg ukjend'."
+      }
+    ]
   },
   {
     "bookId": 48,

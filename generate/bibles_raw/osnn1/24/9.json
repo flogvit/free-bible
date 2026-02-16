@@ -9,11 +9,17 @@
     "bookId": 24,
     "chapterId": 9,
     "verseId": 2,
-    "text": "Dei spenner tunga si som bogen sin med løgn, og ikkje med sanning har dei fått makt i landet. For frå vondt til verre går dei, og meg kjenner dei ikkje, seier Herren.",
+    "text": "Dei spenner tunga si som bogen sin til løgn",
     "versions": [
       {
         "text": "Dei spenner tunga si som ein boge med løgn, og ikkje med sanning har dei fått makt i landet. For frå vondt til verre går dei, og meg kjenner dei ikkje, seier Herren.",
         "explanation": "Den hebraiske teksten har 'קַשְׁתָּם' (bogen sin/bogen deira) med possessivt suffiks. 'Som bogen sin' gjev betre meining og reflekterer at tunga er deira våpen."
+      },
+      {
+        "text": "Dei spenner tunga si som bogen sin med løgn, og ikkje med sanning har dei fått makt i landet. For frå vondt til verre går dei, og meg kjenner dei ikkje, seier Herren.",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "Den hebraiske teksten har 'קַשְׁתָּם שֶׁקֶר' der 'שֶׁקֶר' (løgn) fungerer som eit adverbialt tillegg som beskriv føremålet – altså 'til løgn' snarare enn 'med løgn'. 'Med løgn' kan lesast som instrumentalt, men konteksten tilseier at løgna er det bogen/tunga siktar mot."
       }
     ]
   },
@@ -45,7 +51,15 @@
     "bookId": 24,
     "chapterId": 9,
     "verseId": 7,
-    "text": "Tunga deira er ein kvessa pil, ho talar svik. Med munnen talar ein fred til grannen sin, men i sitt indre legg han baktale for han."
+    "text": "Med munnen talar ein fred til grannen sin, men i sitt indre legg han bakhold for han.",
+    "versions": [
+      {
+        "text": "Tunga deira er ein kvessa pil, ho talar svik. Med munnen talar ein fred til grannen sin, men i sitt indre legg han baktale for han.",
+        "type": "error",
+        "severity": "major",
+        "explanation": "Det hebraiske ordet 'אָרְבּוֹ' tyder 'bakhold' (frå ארב), ikkje 'baktale'. Verset skildrar at ein person talar venleg men i det skjulte planlegg å skada den andre – altså eit bakhold/felle."
+      }
+    ]
   },
   {
     "bookId": 24,
@@ -81,7 +95,15 @@
     "bookId": 24,
     "chapterId": 9,
     "verseId": 12,
-    "text": "Og Herren sa: Fordi dei forlét lova mi, som eg la fram for dei, og ikkje høyrde på røysta mi og ikkje følgde henne."
+    "text": "Og Herren sa: Fordi dei forlét lova mi, som eg la fram for dei, og ikkje høyrde på røysta mi og ikkje følgde ho.",
+    "versions": [
+      {
+        "text": "Og Herren sa: Fordi dei forlét lova mi, som eg la fram for dei, og ikkje høyrde på røysta mi og ikkje følgde henne.",
+        "type": "grammar",
+        "severity": "minor",
+        "explanation": "På nynorsk bør ein bruka pronomenet 'ho' (ikkje 'henne') som objekt når ein viser til eit hokjønnsord som 'lova'. 'Henne' er meir bokmålsforma. 'Ho' er korrekt nynorsk."
+      }
+    ]
   },
   {
     "bookId": 24,
@@ -117,7 +139,15 @@
     "bookId": 24,
     "chapterId": 9,
     "verseId": 17,
-    "text": "Lat dei skunda seg og stemma i klagesong over oss, så augo våre renn med tårer og augneloka våre fløymer over av vatn."
+    "text": "Lat dei skunda seg og stemma i klage over oss, så augo våre renn med tårer og augneloka våre fløymer over av vatn.",
+    "versions": [
+      {
+        "text": "Lat dei skunda seg og stemma i klagesong over oss, så augo våre renn med tårer og augneloka våre fløymer over av vatn.",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "Det hebraiske 'נֶהִי' tyder 'klage/klageskrik', ikkje 'klagesong' (som ville vore 'קִינָה'). Sidan begge omgrepa blir brukte i konteksten (v. 19), er det betre å skilje mellom dei: 'klage' for נֶהִי og 'sørgjesong' for קִינָה."
+      }
+    ]
   },
   {
     "bookId": 24,
@@ -129,7 +159,15 @@
     "bookId": 24,
     "chapterId": 9,
     "verseId": 19,
-    "text": "Høyr, de kvinner, Herrens ord, og lat øyra dykkar ta imot ordet frå hans munn! Lær døtrene dykkar klagesong, og kvar kvinne si venninne ein sørgjesong."
+    "text": "Høyr, de kvinner, Herrens ord, og lat øyra dykkar ta imot ordet frå hans munn! Lær døtrene dykkar klage, og kvar kvinne si venninne ein sørgjesong.",
+    "versions": [
+      {
+        "text": "Høyr, de kvinner, Herrens ord, og lat øyra dykkar ta imot ordet frå hans munn! Lær døtrene dykkar klagesong, og kvar kvinne si venninne ein sørgjesong.",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "Her er same distinksjon som i v. 17: 'נֶהִי' = klage og 'קִינָה' = sørgjesong. Omsetjinga bør skilja mellom desse to orda for presisjon."
+      }
+    ]
   },
   {
     "bookId": 24,
@@ -159,7 +197,15 @@
     "bookId": 24,
     "chapterId": 9,
     "verseId": 23,
-    "text": "Men den som vil rosa seg, skal rosa seg av dette: at han har forstand og kjenner meg, at eg er Herren, som gjer miskunn, rett og rettferd på jorda. For i dette har eg mi glede, seier Herren."
+    "text": "Men den som vil rosa seg, skal rosa seg av dette: at han har forstand og kjenner meg, at eg er Herren, som viser trufast kjærleik, rett og rettferd på jorda. For i dette har eg mi glede, seier Herren.",
+    "versions": [
+      {
+        "text": "Men den som vil rosa seg, skal rosa seg av dette: at han har forstand og kjenner meg, at eg er Herren, som gjer miskunn, rett og rettferd på jorda. For i dette har eg mi glede, seier Herren.",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "Det hebraiske 'חֶסֶד' er eit rikt omgrep som tyder 'trufast kjærleik/paktskjærleik'. 'Miskunn' er ikkje feil, men 'trufast kjærleik' fangar betre inn den djupe tydinga av חֶסֶד som paktstru kjærleik. Dette er også eit teologisk viktig omgrep."
+      }
+    ]
   },
   {
     "bookId": 24,

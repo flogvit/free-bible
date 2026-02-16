@@ -45,7 +45,15 @@
     "bookId": 5,
     "chapterId": 2,
     "verseId": 6,
-    "text": "Mat skal de kjøpa av dei for pengar, og vatn skal de òg kjøpa av dei for pengar, så de kan eta og drikka."
+    "text": "Mat skal de kjøpa av dei for pengar og eta, og vatn skal de òg kjøpa av dei for pengar og drikka.",
+    "versions": [
+      {
+        "text": "Mat skal de kjøpa av dei for pengar, og vatn skal de òg kjøpa av dei for pengar, så de kan eta og drikka.",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "Den hebraiske teksten har ei tydelegare struktur: kjøp mat og et, kjøp vatn og drikk. Den noverande omsettinga samlar 'eta og drikka' på slutten, men originalen koplar kvar handling direkte til sitt objekt (וַאֲכַלְתֶּם etter mat, וּשְׁתִיתֶם etter vatn)."
+      }
+    ]
   },
   {
     "bookId": 5,
@@ -165,7 +173,15 @@
     "bookId": 5,
     "chapterId": 2,
     "verseId": 23,
-    "text": "Og avvittane, som budde i landsbyar heilt til Gaza, vart øydelagde av kaftorittar som kom frå Kaftor, og dei busette seg i landet deira."
+    "text": "Og avvittane, som budde i landsbyar heilt til Gaza – kaftorittane, som kom frå Kaftor, øydela dei og busette seg i landet deira.",
+    "versions": [
+      {
+        "text": "Og avvittane, som budde i landsbyar heilt til Gaza, vart øydelagde av kaftorittar som kom frå Kaftor, og dei busette seg i landet deira.",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "Den noverande omsettinga brukar passiv ('vart øydelagde av') og skiftar så til aktiv ('dei busette seg'). Den hebraiske teksten har kaftorittane som aktivt subjekt for begge verba (הִשְׁמִידֻם וַיֵּשְׁבוּ). Betre å halda konsekvent aktiv form."
+      }
+    ]
   },
   {
     "bookId": 5,
@@ -267,6 +283,14 @@
     "bookId": 5,
     "chapterId": 2,
     "verseId": 37,
-    "text": "Men ammonittane sitt land rørte du ikkje, verken landet langs Jabbok-elva eller byane i fjellområdet eller noko som Herren vår Gud hadde forbode oss."
+    "text": "Men ammonittane sitt land kom du ikkje nær, verken langs Jabbok-elva eller byane i fjellområdet, alt slik Herren vår Gud hadde bode oss.",
+    "versions": [
+      {
+        "text": "Men ammonittane sitt land rørte du ikkje, verken landet langs Jabbok-elva eller byane i fjellområdet eller noko som Herren vår Gud hadde forbode oss.",
+        "type": "error",
+        "severity": "major",
+        "explanation": "Fleire problem: 1) לֹא קָרַבְתָּ betyr 'du kom ikkje nær', ikkje 'rørte du ikkje'. 2) כָּל־יַד נַחַל יַבֹּק betyr 'heile sida langs Jabbok-elva', ikkje 'landet langs'. 3) Viktigast: וְכֹל אֲשֶׁר־צִוָּה betyr 'alt slik [Herren] hadde bode/påbode', ikkje 'noko som Herren hadde forbode'. Teksten seier at dei heldt seg unna alt som Gud hadde befalt dei å halda seg unna – det er ein positiv kommando dei følgde, ikkje eit forbod."
+      }
+    ]
   }
 ]

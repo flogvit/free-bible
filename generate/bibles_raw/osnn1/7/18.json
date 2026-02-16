@@ -39,7 +39,21 @@
     "bookId": 7,
     "chapterId": 18,
     "verseId": 7,
-    "text": "Der såg dei at folket som budde der, levde trygt på sidonisk vis, rolege og trygge. Det var ingen som audmjuka dei på nokon måte i landet, og ingen herskar som truga dei. Dei budde langt frå sidonarane og hadde ikkje noko å gjera med andre folk."
+    "text": "Så drog dei fem mennene av stad og kom til Lajisj. Der såg dei at folket som budde der, levde trygt på sidonisk vis, rolege og trygge. Det var ingen som krenkte dei på nokon måte i landet, og ingen som la tvang på dei. Dei budde langt frå sidonarane og hadde ikkje noko å gjera med andre folk.",
+    "versions": [
+      {
+        "text": "Der såg dei at folket som budde der, levde trygt på sidonisk vis, rolege og trygge. Det var ingen som audmjuka dei på nokon måte i landet, og ingen herskar som truga dei. Dei budde langt frå sidonarane og hadde ikkje noko å gjera med andre folk.",
+        "type": "error",
+        "severity": "major",
+        "explanation": "Byrjinga av verset manglar. Den hebraiske teksten opnar med at dei fem mennene drog av stad og kom til Lajisj, men omsetjinga hoppar rett til skildringa av folket der. Byen Lajisj er heller ikkje nemnd."
+      },
+      {
+        "text": "Så drog dei fem mennene av stad og kom til Lajisj. Der såg dei at folket som budde der, levde trygt på sidonisk vis, rolege og trygge. Det var ingen som audmjuka dei på nokon måte i landet, og ingen herskar som truga dei. Dei budde langt frå sidonarane og hadde ikkje noko å gjera med andre folk.",
+        "type": "error",
+        "severity": "major",
+        "explanation": "Det hebraiske uttrykket 'יוֹרֵשׁ עֶצֶר' betyr bokstaveleg ein som utøver makt/tvang (ein herskar som undertrykker). 'Ingen herskar som truga dei' er ei laus tolking. 'Ingen som la tvang på dei' er meir nøyaktig."
+      }
+    ]
   },
   {
     "bookId": 7,
@@ -81,11 +95,17 @@
     "bookId": 7,
     "chapterId": 18,
     "verseId": 14,
-    "text": "Då tok dei fem mennene som hadde speida ut landet mot Lajisj, til orde og sa til brørne sine: «Visste de at det i desse husa er ein efod, husgudbilete, eit utskore bilete og eit støypt bilete? Tenk no over kva de vil gjera!»",
+    "text": "Då tok dei fem mennene som hadde speida ut landet mot Lajisj, til orde og sa til brørne sine: «Visste de at det i desse husa er ein efod og husgudbilete, eit utskore bilete og eit støypt bilete? Tenk no over kva de vil gjera!»",
     "versions": [
       {
         "text": "Då tok dei fem mennene som hadde speida ut landet mot Lajisj, til orde og sa til brørne sine: «Visste de at det i desse husa er ein efod, husgudebilde, eit utskore bilde og eit støypt bilde? Tenk no over kva de vil gjera!»",
         "explanation": "Inkonsekvent stavemåte: 'husgudebilde' bør vera 'husgudbilete' for å vera konsistent med nynorsk rettskriving og resten av teksten som brukar 'bilete'-forma."
+      },
+      {
+        "text": "Då tok dei fem mennene som hadde speida ut landet mot Lajisj, til orde og sa til brørne sine: «Visste de at det i desse husa er ein efod, husgudbilete, eit utskore bilete og eit støypt bilete? Tenk no over kva de vil gjera!»",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "Den hebraiske teksten listar fire ting med 'og' (vav) mellom efod og terafim. Det hadde vore meir nøyaktig å ha 'og' mellom efod og husgudbilete: 'ein efod og husgudbilete'. Men dette verset har allereie éi revidering, og feilen er mindre."
       }
     ]
   },
@@ -147,7 +167,15 @@
     "bookId": 7,
     "chapterId": 18,
     "verseId": 21,
-    "text": "Så snudde dei og drog av stad. Borna, buskapen og eigedelane sette dei fremst."
+    "text": "Så snudde dei og drog av stad. Dei små borna, buskapen og eigedelane sette dei fremst.",
+    "versions": [
+      {
+        "text": "Så snudde dei og drog av stad. Borna, buskapen og eigedelane sette dei fremst.",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "Det hebraiske 'הַטַּף' (hattaf) refererer spesifikt til dei små borna/spedborna, ikkje berre 'born' generelt. 'Dei små borna' gjev betre att nyansen i det hebraiske ordet."
+      }
+    ]
   },
   {
     "bookId": 7,
@@ -165,7 +193,15 @@
     "bookId": 7,
     "chapterId": 18,
     "verseId": 23,
-    "text": "Dei ropa til Dans søner, og dei snudde seg og sa til Mika: «Kva er det med deg, sidan du har samla så mange folk?»"
+    "text": "Dei ropa til Dans søner, og dei snudde seg og sa til Mika: «Kva er det med deg, sidan du kjem med slik skriking?»",
+    "versions": [
+      {
+        "text": "Dei ropa til Dans søner, og dei snudde seg og sa til Mika: «Kva er det med deg, sidan du har samla så mange folk?»",
+        "type": "error",
+        "severity": "major",
+        "explanation": "Det hebraiske 'כִּי נִזְעָקְתָּ' betyr 'sidan du ropar/skrik', ikkje 'sidan du har samla så mange folk'. Verbet 'נזעק' betyr å ropa/skrika, og spørsmålet handlar om kvifor Mika ropar etter dei, ikkje om at han har samla folk."
+      }
+    ]
   },
   {
     "bookId": 7,
@@ -207,11 +243,17 @@
     "bookId": 7,
     "chapterId": 18,
     "verseId": 30,
-    "text": "Dans søner reiste opp det utskorne biletet for seg. Jonatan, son til Gersjom, son til Manasse, og sønene hans var prestar for Dan-stammen heilt til den dagen då folket vart ført bort frå landet.",
+    "text": "Dans søner reiste opp det utskorne biletet for seg. Jonatan, son til Gersjom, son til Moses, og sønene hans var prestar for Dan-stammen heilt til den dagen då folket vart ført bort frå landet.",
     "versions": [
       {
         "text": "Dans søner reiste opp det utskorne bildet for seg. Jonatan, son til Gersjom, son til Manasse, og sønene hans var prestar for Dan-stammen heilt til den dagen då folket vart ført bort frå landet.",
         "explanation": "Inkonsekvent stavemåte: 'bildet' bør vera 'biletet' for å vera konsistent med nynorsk rettskriving."
+      },
+      {
+        "text": "Dans søner reiste opp det utskorne biletet for seg. Jonatan, son til Gersjom, son til Manasse, og sønene hans var prestar for Dan-stammen heilt til den dagen då folket vart ført bort frå landet.",
+        "type": "theological",
+        "severity": "major",
+        "explanation": "Den hebraiske teksten har ein suspended nun (נ) i מְנַשֶּׁה, noko som er ein kjend masoretisk tradisjon som indikerer at den opphavlege lesemåten er 'Moses' (מֹשֶׁה), ikkje 'Manasse'. Den suspenderte nun-en vart lagt til for å skåna Moses' ære. Dei fleste bibelkommentarar og mange omsetjingar merkar dette. Det bør i det minste nemnast at dette truleg viser til Moses."
       }
     ]
   },

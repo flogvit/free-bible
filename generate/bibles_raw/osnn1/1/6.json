@@ -3,11 +3,17 @@
     "bookId": 1,
     "chapterId": 6,
     "verseId": 1,
-    "text": "Då menneska tok til å bli mange på jorda og det vart født dei døtrer,",
+    "text": "Då menneska tok til å bli mange på jorda og det vart fødd dei døtrer,",
     "versions": [
       {
         "text": "Då menneska tok til å bli mange på jorda, og dei fekk døtrer,",
         "explanation": "Det hebraiske וּבָנ֖וֹת יֻלְּד֥וּ לָהֶֽם brukar passiv form ('døtrer vart fødde til dei'). Den noverande omsetjinga 'dei fekk døtrer' er aktiv og mindre presis. I tillegg bør kommaet før 'og' fjernast for betre flyt."
+      },
+      {
+        "text": "Då menneska tok til å bli mange på jorda og det vart født dei døtrer,",
+        "type": "grammar",
+        "severity": "minor",
+        "explanation": "På nynorsk bør partisippforma vera 'fødd' (ikkje 'født' som er bokmål). 'Fødd' er korrekt nynorsk for passiv form av 'føda'."
       }
     ]
   },
@@ -147,11 +153,17 @@
     "bookId": 1,
     "chapterId": 6,
     "verseId": 16,
-    "text": "Du skal laga eit tak på arka og avslutta det ei aln frå toppen. Døra til arka skal du setja på sida. Du skal byggja henne med tre høgder: ei nedste, ei mellomste og ei øvste.",
+    "text": "Du skal laga eit tak på arka og fullføra det til ei aln frå toppen. Døra til arka skal du setja på sida. Du skal byggja henne med tre høgder: ei nedste, ei mellomste og ei øvste.",
     "versions": [
       {
         "text": "Du skal laga ei opning for lys på arka og avslutta henne ei aln frå toppen. Døra til arka skal du setja på sida. Du skal byggja henne med tre høgder: ei nedste, ei mellomste og ei øvste.",
         "explanation": "צֹהַר (tsohar) er eit vanskeleg ord. Det kan tyda 'lysopning' eller 'tak'. Sidan konteksten handlar om å 'avslutta ei aln frå toppen', kan 'tak' vera ei meir naturleg tolking. Alternativt kan ein halda på 'opning for lys' men formulera setninga klarare."
+      },
+      {
+        "text": "Du skal laga eit tak på arka og avslutta det ei aln frå toppen. Døra til arka skal du setja på sida. Du skal byggja henne med tre høgder: ei nedste, ei mellomste og ei øvste.",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "Det hebraiske תְּכַלֶ֣נָּה (tekhalenna) frå כלה tyder 'fullføra/avslutta'. 'Avslutta det ei aln frå toppen' er litt uklart; 'fullføra det til ei aln frå toppen' gjev betre meining – taket skal avsluttast slik at det er ei aln opning øvst."
       }
     ]
   },
@@ -195,6 +207,14 @@
     "bookId": 1,
     "chapterId": 6,
     "verseId": 22,
-    "text": "Noah gjorde det. Han gjorde alt slik Gud hadde bode han."
+    "text": "Noah gjorde alt slik Gud hadde bode han. Slik gjorde han.",
+    "versions": [
+      {
+        "text": "Noah gjorde det. Han gjorde alt slik Gud hadde bode han.",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "Det hebraiske כְּכֹל אֲשֶׁר צִוָּה אֹתוֹ אֱלֹהִים כֵּן עָשָׂה har strukturen 'alt som Gud baud han, slik gjorde han'. Den noverande omsetjinga deler det opp med 'Noah gjorde det' fyrst, men dette endrar strukturen unødvendig. Originalen har éi setning med emfatisk avslutning כֵּן עָשָׂה ('slik gjorde han') som understrekar den fullstendige lydnaden."
+      }
+    ]
   }
 ]

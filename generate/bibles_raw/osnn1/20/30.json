@@ -3,7 +3,15 @@
     "bookId": 20,
     "chapterId": 30,
     "verseId": 1,
-    "text": "Ord av Agur, son til Jake, frå Massa. Mannen seier til Itiel, til Itiel og Ukal:"
+    "text": "Ord av Agur, son til Jake. Utsegna. Mannen seier til Itiel, til Itiel og Ukal:",
+    "versions": [
+      {
+        "text": "Ord av Agur, son til Jake, frå Massa. Mannen seier til Itiel, til Itiel og Ukal:",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "'הַמַּשָּׂא' kan tolkast anten som eit stadnamn 'Massa' eller som 'utsegna/bodskapen'. Mange moderne omsetjingar tolkar det som 'utsegna' (oracle/utterance) heller enn eit stadnamn. Tolkinga 'frå Massa' er mogleg, men 'utsegna' er ei vel så vanleg og truleg betre tolking."
+      }
+    ]
   },
   {
     "bookId": 20,
@@ -15,7 +23,15 @@
     "bookId": 20,
     "chapterId": 30,
     "verseId": 3,
-    "text": "Eg har ikkje lært visdom, og kunnskap om den Heilage eig eg ikkje."
+    "text": "Eg har ikkje lært visdom, og kunnskap om den Heilage har eg ikkje.",
+    "versions": [
+      {
+        "text": "Eg har ikkje lært visdom, og kunnskap om den Heilage eig eg ikkje.",
+        "type": "theological",
+        "severity": "major",
+        "explanation": "'קְדֹשִׁים' (qedoshim) er fleirtalsforma og kan omsetjast 'den Heilage' (majestetsplural) eller 'dei heilage'. Omsetjinga 'den Heilage' er god teologisk. Men 'eig eg ikkje' er ein litt unaturleg kollokasjon – ein 'eig' ikkje kunnskap, men ein 'har' kunnskap. 'Har eg ikkje' er meir idiomatisk nynorsk."
+      }
+    ]
   },
   {
     "bookId": 20,
@@ -51,7 +67,15 @@
     "bookId": 20,
     "chapterId": 30,
     "verseId": 8,
-    "text": "Hald tomheit og løgnord langt borte frå meg. Gjev meg korkje fattigdom eller rikdom, men lat meg få det brødet eg treng."
+    "text": "Hald løgn og svikefulle ord langt borte frå meg. Gjev meg korkje fattigdom eller rikdom, men lat meg få det brødet eg treng.",
+    "versions": [
+      {
+        "text": "Hald tomheit og løgnord langt borte frå meg. Gjev meg korkje fattigdom eller rikdom, men lat meg få det brødet eg treng.",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "'שָׁוְא' betyr 'falskheit/løgn/tomheit' og 'דְבַר־כָּזָב' betyr 'løgnord/svikefulle ord'. Å omsetje 'שָׁוְא' med 'tomheit' er litt vagt; 'løgn' eller 'falskheit' treff betre. Dermed bør dei to ledda skildrast meir tydeleg frå kvarandre: 'løgn og svikefulle ord' framfor 'tomheit og løgnord'."
+      }
+    ]
   },
   {
     "bookId": 20,
@@ -201,7 +225,15 @@
     "bookId": 20,
     "chapterId": 30,
     "verseId": 29,
-    "text": "Tre ting har stolt gange, ja fire har fin gange:"
+    "text": "Tre ting har staseleg gange, ja fire som skrid fram med verdigheit:",
+    "versions": [
+      {
+        "text": "Tre ting har stolt gange, ja fire har fin gange:",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "'מֵיטִיבֵי צָעַד' og 'מֵיטִבֵי לָכֶת' skildrar noko meir majestetisk enn berre 'stolt gange' og 'fin gange'. 'Fin gange' verkar litt svakt og kvardagsleg. Ei formulering som betre fangar det majestetiske i originalen, og som varierer dei to ledda, ville vere meir presis."
+      }
+    ]
   },
   {
     "bookId": 20,
@@ -213,13 +245,29 @@
     "bookId": 20,
     "chapterId": 30,
     "verseId": 31,
-    "text": "hanen som spankulerer stolt, bukken, og kongen med hæren sin."
+    "text": "hanen som spankulerer stolt, bukken, og ein konge som ingen kan stå imot.",
+    "versions": [
+      {
+        "text": "hanen som spankulerer stolt, bukken, og kongen med hæren sin.",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "'אַלְקוּם עִמּוֹ' er eit vanskeleg uttrykk, men tydinga er truleg 'som ingen kan reise seg imot' eller 'som ingen kan stå imot'. 'Med hæren sin' er éi tolking, men 'som ingen kan stå imot' er ei meir utbreidd tolking og fangar betre den opphavlege tydinga av uovervinneleg autoritet."
+      }
+    ]
   },
   {
     "bookId": 20,
     "chapterId": 30,
     "verseId": 32,
-    "text": "Om du har vore dåraktig og opphøgd deg sjølv, eller om du har tenkt ut vonde planar, legg handa over munnen!"
+    "text": "Om du har vore dåraktig og opphøgd deg sjølv, eller om du har tenkt ut vondt, legg handa over munnen!",
+    "versions": [
+      {
+        "text": "Om du har vore dåraktig og opphøgd deg sjølv, eller om du har tenkt ut vonde planar, legg handa over munnen!",
+        "type": "error",
+        "severity": "minor",
+        "explanation": "'וְאִם־זַמּוֹתָ' betyr 'eller om du har tenkt ut (noko vondt)' – det hebraiske verbet 'זמם' kan stå aleine utan eit objekt som 'planar'. 'Vonde planar' legg til meir enn originalen seier. 'Tenkt ut vondt' er nærare originalen."
+      }
+    ]
   },
   {
     "bookId": 20,

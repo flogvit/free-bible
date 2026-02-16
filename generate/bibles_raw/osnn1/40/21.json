@@ -207,7 +207,15 @@
     "bookId": 40,
     "chapterId": 21,
     "verseId": 35,
-    "text": "Men vinbøndene greip tenarane; ein av dei prygla dei, ein annan drap dei, og ein tredje steina dei."
+    "text": "Men vinbøndene greip tenarane; éin prygla dei, ein annan drap dei, og ein tredje steina dei.",
+    "versions": [
+      {
+        "text": "Men vinbøndene greip tenarane; ein av dei prygla dei, ein annan drap dei, og ein tredje steina dei.",
+        "type": "error",
+        "severity": "major",
+        "explanation": "The Greek ὃν μὲν ... ὃν δὲ ... ὃν δὲ refers to the servants (each one respectively: one they beat, one they killed, one they stoned), not to the vinbøndene. The current translation 'ein av dei prygla dei' is ambiguous and could be read as one of the farmers beat 'them' (plural). The Greek says: one (servant) they beat, another they killed, another they stoned. A minor improvement for clarity, though the phrasing is also acceptable in context. However, the more pressing issue is the first pronoun 'dei' - removing 'av dei' makes it clearer that 'éin' refers to one servant."
+      }
+    ]
   },
   {
     "bookId": 40,
@@ -267,7 +275,15 @@
     "bookId": 40,
     "chapterId": 21,
     "verseId": 44,
-    "text": "Den som fell på denne steinen, skal slå seg i stykke, og den som steinen fell på, skal knusast.»"
+    "text": "Den som fell på denne steinen, skal slå seg i stykke, og den som steinen fell på, skal smuldrast opp.",
+    "versions": [
+      {
+        "text": "Den som fell på denne steinen, skal slå seg i stykke, og den som steinen fell på, skal knusast.»",
+        "type": "error",
+        "severity": "minor",
+        "explanation": "The Greek λικμήσει means 'to winnow, scatter like chaff' — it conveys something being crushed to dust and scattered, not merely 'knusast' (which is closer to συνθλασθήσεται). The two clauses use two different Greek verbs to express an escalation: first broken/crushed (συνθλασθήσεται), then completely pulverized/scattered (λικμήσει). Using 'knusast' for the second loses this distinction since 'slå seg i stykke' and 'knusast' are too similar. 'Smuldrast opp' or 'malast til støv' would better capture the escalation."
+      }
+    ]
   },
   {
     "bookId": 40,

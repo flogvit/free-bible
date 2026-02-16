@@ -15,7 +15,15 @@
     "bookId": 33,
     "chapterId": 7,
     "verseId": 3,
-    "text": "Hendene deira er flinke til å gjera det vonde. Hovdingen krev, dommaren dømer for betaling, og den mektige seier kva han sjølv ønskjer. Slik vrir dei retten."
+    "text": "Hendene deira er flinke til å gjera det vonde. Hovdingen krev, dommaren dømer for betaling, og den mektige talar etter si eiga lyst. Slik vrir dei retten saman.",
+    "versions": [
+      {
+        "text": "Hendene deira er flinke til å gjera det vonde. Hovdingen krev, dommaren dømer for betaling, og den mektige seier kva han sjølv ønskjer. Slik vrir dei retten.",
+        "type": "grammar",
+        "severity": "minor",
+        "explanation": "Det hebraiske 'דֹּבֵר הַוַּת נַפְשׁוֹ' betyr meir presist at den mektige 'talar ut etter sitt eige begjær/si eiga lyst' (הַוָּה = fordervleg begjær). 'Kva han sjølv ønskjer' er litt for mildt. I tillegg betyr 'וַיְעַבְּתוּהָ' at dei fletter/vrir det saman, altså samarbeider om å forvrengja retten."
+      }
+    ]
   },
   {
     "bookId": 33,
@@ -27,11 +35,17 @@
     "bookId": 33,
     "chapterId": 7,
     "verseId": 5,
-    "text": "Lit ikkje på ein ven, set ikkje di tru til ein fortrueleg.",
+    "text": "Lit ikkje på ein ven, set ikkje di tru til ein fortrueleg. Vakta orda dine for henne som ligg i famnen din.",
     "versions": [
       {
         "text": "Lit ikkje på ein ven, set ikkje di tru til ein fortrulege. Vakta orda dine for henne som ligg i armane dine.",
         "explanation": "Rettskriving: 'fortrueleg' er korrekt nynorsk form, ikkje 'fortrulege' som adjektiv/substantiv i eintal."
+      },
+      {
+        "text": "Lit ikkje på ein ven, set ikkje di tru til ein fortrueleg.",
+        "type": "error",
+        "severity": "critical",
+        "explanation": "Den siste delen av verset er utelaten i gjeldande versjon: «שְׁמֹר פִּתְחֵי־פִיךָ מִשֹּׁכֶבֶת חֵיקֶךָ» – 'vakt orda dine for henne som ligg i famnen din'. Denne setninga manglar heilt. Merk: den tidlegare versjonen hadde 'armane dine' og 'fortrulege', men denne nye forslaget brukar 'famnen din' og den korrigerte formen 'fortrueleg', og er dermed ein ny formulering."
       }
     ]
   },
@@ -69,13 +83,29 @@
     "bookId": 33,
     "chapterId": 7,
     "verseId": 11,
-    "text": "Ein dag skal murane dine bli bygde opp att. Den dagen skal grensene utvidast."
+    "text": "Ein dag skal murane dine bli bygde opp att. Den dagen skal grensa bli flytta langt bort.",
+    "versions": [
+      {
+        "text": "Ein dag skal murane dine bli bygde opp att. Den dagen skal grensene utvidast.",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "Det hebraiske 'יִרְחַק־חֹק' tyder bokstaveleg at 'dekretet/grensa skal bli fjern', dvs. at dei pålagde grensene (eller fiendtlege påbod) skal flyttast langt bort. 'Grensene utvidast' fangar noko av meininga, men er litt upresist. 'Grensa bli flytta langt bort' er meir tru mot originalen."
+      }
+    ]
   },
   {
     "bookId": 33,
     "chapterId": 7,
     "verseId": 12,
-    "text": "Den dagen skal dei koma til deg frå Assyria og frå dei befesta byane, frå festningane og til Eufrat, frå hav til hav og frå fjell til fjell."
+    "text": "Den dagen skal dei koma til deg frå Assyria og byane i Egypt, frå Egypt og heilt til Eufrat, frå hav til hav og frå fjell til fjell.",
+    "versions": [
+      {
+        "text": "Den dagen skal dei koma til deg frå Assyria og frå dei befesta byane, frå festningane og til Eufrat, frå hav til hav og frå fjell til fjell.",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "Det hebraiske 'מָצוֹר' i denne konteksten refererer mest sannsynleg til Egypt (jf. Mika 7:12), ikkje til 'befesta byar' eller 'festningar'. Mange kommentatorar og omsetjingar (t.d. ESV, NASB) les dette som Egypt. Parallellen Assyria–Egypt er også naturleg i profetisk kontekst."
+      }
+    ]
   },
   {
     "bookId": 33,

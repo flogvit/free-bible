@@ -33,7 +33,15 @@
     "bookId": 18,
     "chapterId": 15,
     "verseId": 5,
-    "text": "For synda di lærer munnen din, og du vel dei listige si tunge."
+    "text": "For skulda di styrer munnen din, og du vel dei sløge si tunge.",
+    "versions": [
+      {
+        "text": "For synda di lærer munnen din, og du vel dei listige si tunge.",
+        "type": "grammar",
+        "severity": "minor",
+        "explanation": "'יְאַלֵּף' (frå אלף) tyder 'læra opp' i tydinga 'styra, instruera'. 'Lærer' kan fungere, men 'styrer' er klarare på nynorsk. Dessutan er 'listige' eit litt uvanleg nynorsk-ord her; 'sløge' er meir idiomatisk nynorsk for 'עֲרוּמִים' (listige/kloke)."
+      }
+    ]
   },
   {
     "bookId": 18,
@@ -69,7 +77,15 @@
     "bookId": 18,
     "chapterId": 15,
     "verseId": 10,
-    "text": "Mellom oss er det både gråhåra og alderslegne, eldre enn far din."
+    "text": "Mellom oss er det både gråhåra og gamle, eldre av dagar enn far din.",
+    "versions": [
+      {
+        "text": "Mellom oss er det både gråhåra og alderslegne, eldre enn far din.",
+        "type": "error",
+        "severity": "minor",
+        "explanation": "'alderslegne' er eit uvanleg og noko arkaisk ord på nynorsk. 'Gamle' er enklare og meir forståeleg, i tråd med målet om ein moderne og lettlesen tekst. 'כַּבִּיר מֵאָבִיךָ יָמִים' ('eldre av dagar enn far din') kan gjerast noko meir eksplisitt."
+      }
+    ]
   },
   {
     "bookId": 18,
@@ -81,7 +97,15 @@
     "bookId": 18,
     "chapterId": 15,
     "verseId": 12,
-    "text": "Kvifor riv hjartet ditt deg bort? Kvifor blinkar augo dine slik?"
+    "text": "Kvifor riv hjartet ditt deg bort? Kvifor blinkar augne dine slik?",
+    "versions": [
+      {
+        "text": "Kvifor riv hjartet ditt deg bort? Kvifor blinkar augo dine slik?",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "'augo' er ei vanleg dialektform, men den korrekte nynorsk-fleirtalsforma av 'auge' er 'augne' (eller 'auga'). 'Augne' er den klassiske nynorskforma."
+      }
+    ]
   },
   {
     "bookId": 18,
@@ -129,11 +153,17 @@
     "bookId": 18,
     "chapterId": 15,
     "verseId": 20,
-    "text": "Alle sine dagar vrir den gudlause seg i pine, fåe er åra som er gøymde for tyranen.",
+    "text": "Alle sine dagar vrir den gudlause seg i pine, det fastsette talet på år er gøymt for valdsmannen.",
     "versions": [
       {
         "text": "Alle sine dagar vrir den gudlause seg i pine, talet på år som er gøymt for tyranen.",
         "explanation": "Den noverande omsettinga har ein ufullstendig setning i andre ledd. 'Talet på år som er gøymt' manglar eit verb eller predikat. Det hebraiske seier at eit avgrensa (lite) tal på år er lagt til sides/gøymt for undertrykkjaren."
+      },
+      {
+        "text": "Alle sine dagar vrir den gudlause seg i pine, fåe er åra som er gøymde for tyranen.",
+        "type": "error",
+        "severity": "major",
+        "explanation": "'fåe er åra' legg til eit adjektiv ('fåe') som ikkje finst i originalteksten. Det hebraiske seier 'og talet på år (מִסְפַּר שָׁנִים) er gøymt (נִצְפְּנוּ) for undertrykkjaren' – dvs. at det eksakte talet er ukjent/skjult, ikkje nødvendigvis at dei er få. Dessutan bør ein unngå den tidlegare versjonen."
       }
     ]
   },
@@ -183,7 +213,15 @@
     "bookId": 18,
     "chapterId": 15,
     "verseId": 27,
-    "text": "For han har dekt andletet sitt med feitt og samla feitt på sidene sine."
+    "text": "For han har dekt andletet sitt med feitt og lagt feittlag på hoftene sine.",
+    "versions": [
+      {
+        "text": "For han har dekt andletet sitt med feitt og samla feitt på sidene sine.",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "'כָסֶל' tyder 'hofte/lend' snarare enn 'sider'. 'פִּימָה' tyder 'feitt/feittlag'. 'Samla feitt' er litt vagt; 'lagt feittlag på hoftene' er meir presist og skildrar den fysiske overvekta som bilete på hovmod og velstand."
+      }
+    ]
   },
   {
     "bookId": 18,

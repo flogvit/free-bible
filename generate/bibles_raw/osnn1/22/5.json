@@ -3,7 +3,21 @@
     "bookId": 22,
     "chapterId": 5,
     "verseId": 1,
-    "text": "Eg har plukka myrrha mi saman med balsamen min, eg har ete honningkaka mi med honningen min, eg har drukke vinen min med mjølka mi. Et, vener, drikk og rus dykk på kjærleik!"
+    "text": "Eg har kome til hagen min, syster mi, brud! Eg har hausta myrrha mi saman med balsamen min, eg har ete honningkaka mi med honningen min, eg har drukke vinen min med mjølka mi. Et, vener, drikk og rus dykk på kjærleik!",
+    "versions": [
+      {
+        "text": "Eg har plukka myrrha mi saman med balsamen min, eg har ete honningkaka mi med honningen min, eg har drukke vinen min med mjølka mi. Et, vener, drikk og rus dykk på kjærleik!",
+        "type": "error",
+        "severity": "major",
+        "explanation": "Den hebraiske teksten byrjar med בָּאתִי לְגַנִּי אֲחֹתִי כַלָּה – 'Eg har kome til hagen min, syster mi, brud'. Denne viktige opninga manglar heilt i omsetjinga, og med det forsvinn både den stadlege konteksten ('hagen min') og tiltalen ('syster mi, brud')."
+      },
+      {
+        "text": "Eg har kome til hagen min, syster mi, brud! Eg har plukka myrrha mi saman med balsamen min, eg har ete honningkaka mi med honningen min, eg har drukke vinen min med mjølka mi. Et, vener, drikk og rus dykk på kjærleik!",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "Det hebraiske אָרִיתִי (frå ארה) betyr 'hausta/samla', ikkje berre 'plukka'. 'Hausta' gjev eit betre bilete av innhaustinga."
+      }
+    ]
   },
   {
     "bookId": 22,
@@ -45,7 +59,15 @@
     "bookId": 22,
     "chapterId": 5,
     "verseId": 6,
-    "text": "Eg opna for den eg elskar, men han hadde snudd seg bort og gått. Sjela mi fór ut då han tala. Eg leita etter han, men fann han ikkje. Eg ropa på han, men han svara meg ikkje."
+    "text": "Eg opna for den eg elskar, men han hadde smett unna og var borte. Sjela mi fór ut då han tala. Eg leita etter han, men fann han ikkje. Eg ropa på han, men han svara meg ikkje.",
+    "versions": [
+      {
+        "text": "Eg opna for den eg elskar, men han hadde snudd seg bort og gått. Sjela mi fór ut då han tala. Eg leita etter han, men fann han ikkje. Eg ropa på han, men han svara meg ikkje.",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "Det hebraiske חָמַק עָבָר tyder 'smett unna / gleid bort', ikkje 'snudd seg bort'. Verbet חמק betyr å snika seg vekk, gli unna – det er meir plutseleg og mystisk enn 'snudd seg bort'."
+      }
+    ]
   },
   {
     "bookId": 22,
@@ -81,11 +103,17 @@
     "bookId": 22,
     "chapterId": 5,
     "verseId": 12,
-    "text": "Auga hans er som duer ved bekkefar, bada i mjølk, sitjande i si rette innfatning.",
+    "text": "Auga hans er som duer ved vassrike bekker, bada i mjølk, sitjande i si rette innfatning.",
     "versions": [
       {
         "text": "Auga hans er som duer ved bekkefar, bada i mjølk, sitjande ved eit fullt basseng.",
         "explanation": "Det hebraiske מִלֵּאת refererer truleg til ei 'innfatning' eller 'ramme' (som for edelsteinar), ikkje eit 'basseng'. Biletet skildrar auge som sit perfekt i sine innfatningar, lik edelsteinar eller duer som sit ved vatnet."
+      },
+      {
+        "text": "Auga hans er som duer ved bekkefar, bada i mjølk, sitjande i si rette innfatning.",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "Det hebraiske אֲפִיקֵי מָיִם betyr 'vassrike bekker/straumar', ikkje berre 'bekkefar'. Omgrepet understrekar rikdomen av vatn."
       }
     ]
   },
@@ -111,7 +139,15 @@
     "bookId": 22,
     "chapterId": 5,
     "verseId": 15,
-    "text": "Leggane hans er som marmorsøyler, grunnfeste på soklar av fint gull. Skapnaden hans er som Libanon, utsøkt som sedrane."
+    "text": "Leggane hans er som marmorsøyler, grunnfeste på soklar av fint gull. Skapnaden hans er som Libanon, majestetisk som sedrane.",
+    "versions": [
+      {
+        "text": "Leggane hans er som marmorsøyler, grunnfeste på soklar av fint gull. Skapnaden hans er som Libanon, utsøkt som sedrane.",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "Det hebraiske בָּחוּר betyr 'utvald, staseleg, majestetisk' – det skildrar noko opphøgt og imponerande. 'Utsøkt' er ikkje feil, men 'majestetisk' fangar betre det storslåtte biletet av sedrane på Libanon."
+      }
+    ]
   },
   {
     "bookId": 22,

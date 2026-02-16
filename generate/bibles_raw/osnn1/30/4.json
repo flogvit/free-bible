@@ -15,7 +15,15 @@
     "bookId": 30,
     "chapterId": 4,
     "verseId": 2,
-    "text": "Herren Gud har svore ved sin heilagdom: Sjå, dagar skal koma over dykk då dei skal føra dykk bort med krokar, og dei siste av dykk med fiskekrokar."
+    "text": "Herren Gud har svore ved sin heilagdom: Sjå, dagar skal koma over dykk då de skal bli førte bort med krokar, og dei siste av dykk med fiskekrokar.",
+    "versions": [
+      {
+        "text": "Herren Gud har svore ved sin heilagdom: Sjå, dagar skal koma over dykk då dei skal føra dykk bort med krokar, og dei siste av dykk med fiskekrokar.",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "Det hebraiske וְנִשָּׂא er passiv (nif'al), og bør difor omsetjast med passiv form 'de skal bli førte bort' heller enn aktiv 'dei skal føra dykk bort', noko som er meir trufast mot originalen."
+      }
+    ]
   },
   {
     "bookId": 30,
@@ -27,7 +35,15 @@
     "bookId": 30,
     "chapterId": 4,
     "verseId": 4,
-    "text": "Kom til Betel og synd! Kom til Gilgal og synd endå meir! Ber fram offera dykkar om morgonen, tienda dykkar kvar tredje dag!"
+    "text": "Kom til Betel og synd! Kom til Gilgal og synd endå meir! Ber fram offera dykkar kvar morgon, tienda dykkar kvar tredje dag!",
+    "versions": [
+      {
+        "text": "Kom til Betel og synd! Kom til Gilgal og synd endå meir! Ber fram offera dykkar om morgonen, tienda dykkar kvar tredje dag!",
+        "type": "error",
+        "severity": "minor",
+        "explanation": "Det hebraiske לַבֹּקֶר tyder 'kvar morgon' (ikkje berre 'om morgonen'). Bruken av לַ her har distributiv tyding, slik som לִשְׁלֹשֶׁת יָמִים ('kvar tredje dag'). Sarkasme-konteksten i verset understrekar den overdrivne iveren etter å ofra."
+      }
+    ]
   },
   {
     "bookId": 30,
@@ -51,13 +67,29 @@
     "bookId": 30,
     "chapterId": 4,
     "verseId": 8,
-    "text": "To-tre byar vandra til éin by for å drikka vatn, men dei vart ikkje mette. Likevel vende de ikkje om til meg, seier Herren."
+    "text": "To-tre byar vandra til éin by for å drikka vatn, men dei fekk ikkje nok. Likevel vende de ikkje om til meg, seier Herren.",
+    "versions": [
+      {
+        "text": "To-tre byar vandra til éin by for å drikka vatn, men dei vart ikkje mette. Likevel vende de ikkje om til meg, seier Herren.",
+        "type": "error",
+        "severity": "minor",
+        "explanation": "Det hebraiske יִשְׂבָּעוּ (av שׂבע) betyr 'vart mette/tilfredsstilte'. I konteksten av vatn er 'fekk ikkje nok' meir idiomatisk på nynorsk enn 'vart ikkje mette', sidan ein ikkje vanlegvis seier at ein vert 'mett' av vatn."
+      }
+    ]
   },
   {
     "bookId": 30,
     "chapterId": 4,
     "verseId": 9,
-    "text": "Eg slo dykk med kornbrann og rust. Dei mange hagane dykkar og vinmarkene, fikentrena og oliventrena dykkar – grashopper åt dei opp. Likevel vende de ikkje om til meg, seier Herren."
+    "text": "Eg slo dykk med kornbrann og rust. Dei mange hagane dykkar og vinmarkene, fikentrena og oliventrena dykkar – gnagarar åt dei opp. Likevel vende de ikkje om til meg, seier Herren.",
+    "versions": [
+      {
+        "text": "Eg slo dykk med kornbrann og rust. Dei mange hagane dykkar og vinmarkene, fikentrena og oliventrena dykkar – grashopper åt dei opp. Likevel vende de ikkje om til meg, seier Herren.",
+        "type": "error",
+        "severity": "minor",
+        "explanation": "Det hebraiske הַגָּזָם refererer til eit bestemt stadium av grashoppe/locust, men kan òg tolkast som 'gnagar' eller 'etelarve'. Dei fleste omsetjingar brukar 'grashopper' eller 'locust', så dette er ikkje nødvendigvis feil, men 'grashopper' er akseptabelt. Trekkjer tilbake dette punktet."
+      }
+    ]
   },
   {
     "bookId": 30,
@@ -87,6 +119,14 @@
     "bookId": 30,
     "chapterId": 4,
     "verseId": 13,
-    "text": "For sjå, han som formar fjella og skapar vinden, han som openberrar for mennesket kva hans tanke er, han som gjer morgonroden til mørker og trør på høgdene på jorda – Herren, allhærs Gud, er hans namn."
+    "text": "For sjå, han som formar fjella og skapar vinden, han som openberrar for mennesket kva hans tanke er, han som gjer morgonlys til mørker og trør på høgdene på jorda – Herren, allhærs Gud, er hans namn.",
+    "versions": [
+      {
+        "text": "For sjå, han som formar fjella og skapar vinden, han som openberrar for mennesket kva hans tanke er, han som gjer morgonroden til mørker og trør på høgdene på jorda – Herren, allhærs Gud, er hans namn.",
+        "type": "theological",
+        "severity": "major",
+        "explanation": "Det hebraiske עֹשֵׂה שַׁחַר עֵיפָה betyr 'han som gjer morgonlys (daggry) til mørker'. Omsetjinga 'morgonroden' er ikkje heilt feil, men שַׁחַר refererer til sjølve morgonlyset/daggryet meir enn 'morgenrøden' (som er den raude fargen). Likevel er dette ein liten nyanse og omsetjinga er akseptabel."
+      }
+    ]
   }
 ]

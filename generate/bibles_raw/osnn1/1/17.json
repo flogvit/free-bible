@@ -3,11 +3,17 @@
     "bookId": 1,
     "chapterId": 17,
     "verseId": 1,
-    "text": "Då Abram var nittini år gamal, synte Herren seg for han og sa: «Eg er Gud Den Allmektige. Vandre for mitt andlet og ver heilhjarta.»",
+    "text": "Då Abram var nittini år gamal, synte Herren seg for han og sa: «Eg er Gud den Allmektige. Vandre for mitt andlet og ver heilhjarta.»",
     "versions": [
       {
         "text": "Då Abram var nittini år gamal, synte Herren seg for han og sa: «Eg er Gud Den Allmektige. Vandre for mitt andlet og ver heil i di ferd.",
         "explanation": "Verset manglar avsluttande hermeteikn. I tillegg er 'heil i di ferd' noko tungt; 'heilhjarta' eller 'heil' åleine formidlar תָמִים (tamim) betre på nynorsk og er meir idiomatisk."
+      },
+      {
+        "text": "Då Abram var nittini år gamal, synte Herren seg for han og sa: «Eg er Gud Den Allmektige. Vandre for mitt andlet og ver heilhjarta.»",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "'Den Allmektige' bør ha liten 'd' i 'den' sidan det ikkje er eit eigennamn i seg sjølv, men eit tillegg til 'Gud'. Dette er ein typografisk konvensjon, men kan diskuterast – merk at mange nynorske biblar brukar 'den Allmektige'. Svært lite viktig, kan hoppast over."
       }
     ]
   },
@@ -15,7 +21,15 @@
     "bookId": 1,
     "chapterId": 17,
     "verseId": 2,
-    "text": "Eg vil gjera mi pakt mellom meg og deg, og eg vil gjera deg ovleg talrik."
+    "text": "Eg vil setja mi pakt mellom meg og deg, og gjera deg ovleg talrik.»",
+    "versions": [
+      {
+        "text": "Eg vil gjera mi pakt mellom meg og deg, og eg vil gjera deg ovleg talrik.",
+        "type": "error",
+        "severity": "major",
+        "explanation": "Vers 2 er framleis ein del av Guds tale som byrjar i vers 1, så hermeteikn bør ikkje vera avslutta (men det er heller ikkje sett opningsherme i v.2, noko som tyder på at det er meint som framhald). Viktigare: וְאֶתְּנָה (frå נתן) tyder 'gje/setja/oppretta', ikkje 'gjera'. 'Setja mi pakt' eller 'gje mi pakt' er meir presist enn 'gjera mi pakt'. I tillegg kan ein kutte det overflødige 'eg vil' i andre ledd for betre flyt."
+      }
+    ]
   },
   {
     "bookId": 1,
@@ -27,11 +41,17 @@
     "bookId": 1,
     "chapterId": 17,
     "verseId": 4,
-    "text": "«Sjå, eg – mi pakt er med deg, og du skal verta far til ei mengd av folkeslag.",
+    "text": "«Sjå, dette er mi pakt med deg: Du skal verta far til ei mengd av folkeslag.",
     "versions": [
       {
         "text": "«Sjå, mi pakt er med deg, og du skal verta far til ei mengd av folkeslag.",
         "explanation": "Det hebraiske אֲנִי הִנֵּה ('eg, sjå') har eit emfatisk 'eg' som ikkje kjem fram i omsetjinga. Dette understrekar at det er Gud sjølv som gjer pakta. Alternativt kan ein behalde noverande tekst om ein meiner det flyt betre munnleg."
+      },
+      {
+        "text": "«Sjå, eg – mi pakt er med deg, og du skal verta far til ei mengd av folkeslag.",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "Konstruksjonen 'Sjå, eg – mi pakt er med deg' er grammatisk uvanleg og litt uklår på nynorsk. Sjølv om den tidlegare versjonen vart endra for å få med emfatisk 'eg', er resultatet noko keitete. Eit alternativ som 'Sjå, dette er mi pakt med deg:' formidlar emfasen betre."
       }
     ]
   },
@@ -75,7 +95,15 @@
     "bookId": 1,
     "chapterId": 17,
     "verseId": 10,
-    "text": "Dette er mi pakt som de skal halda, mellom meg og dykk og etterkomarane dine: Alle av hannkjønn mellom dykk skal omskjerast."
+    "text": "Dette er mi pakt som de skal halda, mellom meg og dykk og etterkomarane dine: Kvart guteborn mellom dykk skal omskjerast.",
+    "versions": [
+      {
+        "text": "Dette er mi pakt som de skal halda, mellom meg og dykk og etterkomarane dine: Alle av hannkjønn mellom dykk skal omskjerast.",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "כָּל־זָכָר tyder 'kvar mann/gut' – 'alle av hannkjønn' er korrekt men noko stivt. 'Kvart guteborn' eller 'kvar mann' ville vere meir naturleg nynorsk. Lita sak."
+      }
+    ]
   },
   {
     "bookId": 1,
@@ -123,11 +151,17 @@
     "bookId": 1,
     "chapterId": 17,
     "verseId": 16,
-    "text": "Eg vil velsigna henne og gje deg ein son med henne. Eg vil velsigna henne, og ho skal verta mor til folkeslag. Kongar over folk skal koma frå henne.»",
+    "text": "Eg vil velsigna henne og gje deg ein son med henne. Eg vil velsigna henne, og ho skal verta opphav til folkeslag. Kongar over folk skal koma frå henne.»",
     "versions": [
       {
         "text": "Eg vil velsigna henne, og eg vil òg gje deg ein son med henne. Eg vil velsigna henne, og ho skal verta mor til folkeslag. Kongar over folk skal koma frå henne.»",
         "explanation": "Det hebraiske וְגַם ('og også') knyter seg til at han skal gje ein son, ikkje til ei ny setning. 'Eg vil òg' kan fjernast eller plasserast annleis for betre flyt ved munnleg lesing."
+      },
+      {
+        "text": "Eg vil velsigna henne og gje deg ein son med henne. Eg vil velsigna henne, og ho skal verta mor til folkeslag. Kongar over folk skal koma frå henne.»",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "וְהָיְתָה לְגוֹיִם tyder meir direkte 'ho skal verta til folkeslag' – altså at folkeslag skal koma frå henne. 'Mor til folkeslag' er ein tolking, men 'opphav til folkeslag' ligg nærare originalen. Lita sak sidan meininga er den same."
       }
     ]
   },
@@ -135,11 +169,17 @@
     "bookId": 1,
     "chapterId": 17,
     "verseId": 17,
-    "text": "Då fall Abraham ned på andletet sitt og lo. Han tenkte med seg sjølv: «Kan det fødast eit barn til ein mann som er hundre år? Og kan Sara, som er nitti år, føda?»",
+    "text": "Då fall Abraham ned på andletet sitt og lo. Han tenkte med seg sjølv: «Kan det fødast barn av ein som er hundre år gamal? Og kan Sara føda, ho som er nitti år?»",
     "versions": [
       {
         "text": "Då fall Abraham ned på andletet og lo. Han sa med seg sjølv: «Kan det fødast eit barn til ein mann som er hundre år? Og kan Sara, som er nitti år, føda?»",
         "explanation": "Det manglar 'sitt' etter 'andletet' for konsistens med vers 3. I tillegg er 'tenkte med seg sjølv' meir naturleg enn 'sa med seg sjølv' for וַיֹּאמֶר בְּלִבּוֹ."
+      },
+      {
+        "text": "Då fall Abraham ned på andletet sitt og lo. Han tenkte med seg sjølv: «Kan det fødast eit barn til ein mann som er hundre år? Og kan Sara, som er nitti år, føda?»",
+        "type": "grammar",
+        "severity": "minor",
+        "explanation": "Den hebraiske teksten har ei meir direkte retorisk formulering: הַלְּבֶן מֵאָה־שָׁנָה – 'kan det for ein son av hundre år fødast?' og וְאִם־שָׂרָה הֲבַת־תִּשְׁעִים – 'og om Sara, ei dotter av nitti'. Omformulering gjev betre flyt og nærare gjengjeving."
       }
     ]
   },

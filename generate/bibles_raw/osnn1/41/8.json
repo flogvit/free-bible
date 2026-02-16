@@ -45,7 +45,15 @@
     "bookId": 41,
     "chapterId": 8,
     "verseId": 8,
-    "text": "Dei åt og vart mette. Etterpå samla dei opp det som var til overs av brødstykkja, sju store korger."
+    "text": "Dei åt og vart mette. Etterpå samla dei opp det som var til overs av brødstykkja – sju korger.",
+    "versions": [
+      {
+        "text": "Dei åt og vart mette. Etterpå samla dei opp det som var til overs av brødstykkja, sju store korger.",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "Ordet 'store' er ikkje i den greske teksten. σπυρίδας tyder 'korger', ikkje 'store korger'. Sjølv om σπυρίς-korger generelt var større enn κόφινος, legg ikkje teksten til noko adjektiv."
+      }
+    ]
   },
   {
     "bookId": 41,
@@ -123,7 +131,15 @@
     "bookId": 41,
     "chapterId": 8,
     "verseId": 20,
-    "text": "«Og då eg braut dei sju brøda til dei fire tusen, kor mange store korger fulle av brødstykkje samla de då opp?» Dei svara: «Sju.»"
+    "text": "«Og då eg braut dei sju brøda til dei fire tusen, kor mange korger fulle av brødstykkje samla de då opp?» Dei svara: «Sju.»",
+    "versions": [
+      {
+        "text": "«Og då eg braut dei sju brøda til dei fire tusen, kor mange store korger fulle av brødstykkje samla de då opp?» Dei svara: «Sju.»",
+        "type": "error",
+        "severity": "major",
+        "explanation": "Ordet 'store' er lagt til i vers 20, men det greske ordet her er 'σπυρίδων' (same ord som i vers 8). Sjølv om σπυρίς gjerne var større enn κόφινος (vers 19), legg ikkje originalteksten til noko adjektiv her. I vers 8 står det 'store korger' for σπυρίδας, men i vers 20 bør omsetjinga vera konsistent med korleis spørsmålet er stilt – utan ekstra adjektiv som ikkje finst i teksten."
+      }
+    ]
   },
   {
     "bookId": 41,
@@ -225,7 +241,15 @@
     "bookId": 41,
     "chapterId": 8,
     "verseId": 35,
-    "text": "For den som vil berga livet sitt, skal mista det. Men den som mistar livet sitt for mi skuld og for evangeliet si skuld, skal berga det."
+    "text": "For den som vil berga livet sitt, skal mista det. Men den som mistar livet sitt for mi skuld og for evangeliet, skal berga det.",
+    "versions": [
+      {
+        "text": "For den som vil berga livet sitt, skal mista det. Men den som mistar livet sitt for mi skuld og for evangeliet si skuld, skal berga det.",
+        "type": "grammar",
+        "severity": "minor",
+        "explanation": "'For evangeliet si skuld' er grammatisk feil på nynorsk. 'Evangeliet' er inkjekjønn, så possessiven burde vera 'si', men heile konstruksjonen 'for evangeliet si skuld' er klønete. Det greske har berre 'ἕνεκεν ... τοῦ εὐαγγελίου' – éin preposisjon for begge, så 'for mi skuld og for evangeliet' er enklare og meir naturleg."
+      }
+    ]
   },
   {
     "bookId": 41,

@@ -39,11 +39,17 @@
     "bookId": 44,
     "chapterId": 23,
     "verseId": 6,
-    "text": "Det er for vona om oppstoda av døde eg står her og blir dømd.",
+    "text": "Då Paulus skjøna at den eine delen var saddukearar og den andre farisearar, ropa han ut i Rådet: «Brør, eg er farisear, son av farisearar! Det er for vona om oppstoda av døde eg står her og blir dømd.»",
     "versions": [
       {
         "text": "Då Paulus forstod at den eine delen var saddukearar og den andre farisearar, ropa han ut i Rådet: «Brør, eg er farisear, son av farisearar! Det er for vona om oppstoda frå dei døde eg står her og blir dømd.»",
         "explanation": "Det greske har 'νεκρῶν' (døde) utan artikkelen 'τῶν'. 'frå dei døde' legg til ein artikkel som ikkje er i originalen. 'av døde' er meir presist og flyt like godt munnleg."
+      },
+      {
+        "text": "Det er for vona om oppstoda av døde eg står her og blir dømd.",
+        "type": "error",
+        "severity": "critical",
+        "explanation": "Verset manglar heile den første delen av den greske teksten: at Paulus forstod samansetjinga av Rådet, at han ropa ut, og at han identifiserte seg som farisear og son av farisearar. Berre den siste setninga er teken med. Ei tidlegare endring gjaldt berre 'av døde' vs. 'frå dei døde', men det ser ut til at resten av verset vart fjerna ved ein feil. Eg brukar 'skjøna' i staden for 'forstod' for å skilje frå den tidlegare versjonen."
       }
     ]
   },
@@ -57,11 +63,17 @@
     "bookId": 44,
     "chapterId": 23,
     "verseId": 8,
-    "text": "For saddukearane seier at det ikkje finst oppstode, og heller ikkje engel eller ånd, men farisearane vedkjenner seg alt dette.",
+    "text": "For saddukearane seier at det ikkje finst oppstode, og heller ikkje engel eller ånd, men farisearane vedkjenner seg begge delar.",
     "versions": [
       {
         "text": "For saddukearane seier at det ikkje finst oppstode, og heller ikkje englar eller ånder, men farisearane vedkjenner seg alt dette.",
         "explanation": "Det greske har eintal 'ἄγγελον' (engel) og 'πνεῦμα' (ånd), ikkje fleirtal. Dette kan ha teologisk tyding, då det handlar om kategoriar av vesen snarare enn spesifikke englar/ånder."
+      },
+      {
+        "text": "For saddukearane seier at det ikkje finst oppstode, og heller ikkje engel eller ånd, men farisearane vedkjenner seg alt dette.",
+        "type": "error",
+        "severity": "minor",
+        "explanation": "Det greske τὰ ἀμφότερα tyder 'begge delar' (ikkje 'alt dette'). Det viser til to kategoriar: oppstode på den eine sida, og engel/ånd på den andre. 'Alt dette' er upresist og kan misforståast."
       }
     ]
   },
@@ -105,7 +117,15 @@
     "bookId": 44,
     "chapterId": 23,
     "verseId": 14,
-    "text": "Dei gjekk til overprestane og dei eldste og sa: «Vi har lagt oss sjølve under ei streng forbanning om ikkje å smaka noko før vi har drepe Paulus."
+    "text": "Dei gjekk til overprestane og dei eldste og sa: «Vi har lagt oss sjølve under ei streng forbanning om ikkje å smaka noko før vi har drepe Paulus.»",
+    "versions": [
+      {
+        "text": "Dei gjekk til overprestane og dei eldste og sa: «Vi har lagt oss sjølve under ei streng forbanning om ikkje å smaka noko før vi har drepe Paulus.",
+        "type": "grammar",
+        "severity": "minor",
+        "explanation": "Det manglar ei avsluttande hermeteikn (») på slutten av verset."
+      }
+    ]
   },
   {
     "bookId": 44,

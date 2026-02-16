@@ -9,7 +9,15 @@
     "bookId": 44,
     "chapterId": 16,
     "verseId": 2,
-    "text": "Brørne i Lystra og Ikonium gav han godt vitnemål."
+    "text": "Syskena i Lystra og Ikonium gav han godt vitnemål.",
+    "versions": [
+      {
+        "text": "Brørne i Lystra og Ikonium gav han godt vitnemål.",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "Gresk ἀδελφῶν kan omsetjast 'brørne' eller 'syskena'. I moderne nynorsk bibeltekst er det vanleg å bruka det kjønnsnøytrale 'syskena' for å visa at det gjeld heile fellesskapen. Dette er likevel ein mindre merknad, sidan 'brørne' er tradisjonelt akseptert."
+      }
+    ]
   },
   {
     "bookId": 44,
@@ -21,11 +29,17 @@
     "bookId": 44,
     "chapterId": 16,
     "verseId": 4,
-    "text": "Medan dei reiste frå by til by, overleverte dei vedtaka som apostlane og dei eldste i Jerusalem hadde gjort, så dei kunne halda seg til dei.",
+    "text": "Medan dei reiste frå by til by, overleverte dei avgjerdene som apostlane og dei eldste i Jerusalem hadde teke, så folk kunne retta seg etter dei.",
     "versions": [
       {
         "text": "Medan dei reiste frå by til by, overleverte dei vedtaka som apostlane og dei eldste i Jerusalem hadde gjort, og bad dei halda seg til dei.",
         "explanation": "Gresk φυλάσσειν er ein infinitiv som uttrykker føremål ('for at dei skulle halda'), ikkje ei separat bøn. 'Så dei kunne halda seg til dei' formidlar dette betre enn 'og bad dei halda seg til dei'."
+      },
+      {
+        "text": "Medan dei reiste frå by til by, overleverte dei vedtaka som apostlane og dei eldste i Jerusalem hadde gjort, så dei kunne halda seg til dei.",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "Gresk δόγματα τὰ κεκριμένα refererer til 'avgjerder som var tekne', ikkje 'vedtak som var gjort'. 'Avgjerdene som var tekne' er meir presist, og 'retta seg etter' er ein betre formulering enn å repetera 'halda seg til'. Merk: dette er ikkje eit tilbakefall til tidlegare versjon."
       }
     ]
   },
@@ -93,7 +107,15 @@
     "bookId": 44,
     "chapterId": 16,
     "verseId": 14,
-    "text": "Ei kvinne som heitte Lydia, lytta til oss. Ho var purpurhandlar frå byen Tyatira og æra Gud. Herren opna hjartet hennar så ho gav akt på det Paulus sa."
+    "text": "Ei kvinne som heitte Lydia, ein purpurhandlar frå byen Tyatira som dyrka Gud, lytta til oss.",
+    "versions": [
+      {
+        "text": "Ei kvinne som heitte Lydia, lytta til oss. Ho var purpurhandlar frå byen Tyatira og æra Gud. Herren opna hjartet hennar så ho gav akt på det Paulus sa.",
+        "type": "error",
+        "severity": "minor",
+        "explanation": "I originalteksten er 'purpurhandlar frå Tyatira' og 'gudfyrst' (σεβομένη τὸν θεόν) begge karakteristikkar av Lydia som kjem før hovudverbet ἤκουεν (lytta). Den noverande omsetjinga splittar dette opp og endrar tidsforma 'æra' (presens) i staden for 'dyrka' (imperfektum som samsvarar med ἤκουεν). Dessutan er 'lytta til oss' ikkje heilt rett – teksten seier berre ἤκουεν (lytta), ikkje 'lytta til oss'."
+      }
+    ]
   },
   {
     "bookId": 44,
@@ -147,11 +169,17 @@
     "bookId": 44,
     "chapterId": 16,
     "verseId": 22,
-    "text": "Folkemengda reiste seg òg mot dei. Bydommarane reiv sund kleda deira og gav ordre om å piska dei.",
+    "text": "Bydommarane reiv av dei kleda og gav ordre om å slå dei med stavar.",
     "versions": [
       {
         "text": "Folkemengda gjekk òg laus på dei. Bydommarane reiv sund kleda deira og gav ordre om å piska dei.",
         "explanation": "Gresk συνεπέστη betyr 'reiste seg saman mot' eller 'gjekk saman mot'. 'Gjekk laus på' impliserer fysisk vald frå folkemengda, noko teksten ikkje seier direkte. 'Reiste seg mot' er meir presist."
+      },
+      {
+        "text": "Folkemengda reiste seg òg mot dei. Bydommarane reiv sund kleda deira og gav ordre om å piska dei.",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "Gresk περιρήξαντες αὐτῶν τὰ ἱμάτια betyr at dei reiv kleda av dei (ikkje at dei reiv dei i sund), og ῥαβδίζειν betyr 'å slå med stavar/kjepper', ikkje å piska. Pisk (μαστιγόω) er eit anna gresk ord."
       }
     ]
   },
@@ -249,7 +277,15 @@
     "bookId": 44,
     "chapterId": 16,
     "verseId": 35,
-    "text": "Då det vart dag, sende bydommarane rettstenarane med denne meldinga: «Lat desse mennene gå.»"
+    "text": "Då det vart dag, sende bydommarane rettsbetjentane med denne meldinga: «Lat desse mennene gå.»",
+    "versions": [
+      {
+        "text": "Då det vart dag, sende bydommarane rettstenarane med denne meldinga: «Lat desse mennene gå.»",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "Ordet 'rettstenarane' ser ut som ein skrivefeil. Det bør vera 'rettsbetjentane' (ῥαβδοῦχοι = liktorar/rettsbetjentar)."
+      }
+    ]
   },
   {
     "bookId": 44,
@@ -267,18 +303,42 @@
     "bookId": 44,
     "chapterId": 16,
     "verseId": 38,
-    "text": "Rettstenarane melde dette til bydommarane, og dei vart redde då dei høyrde at dei var romarar."
+    "text": "Rettsbetjentane melde dette til bydommarane, og dei vart redde då dei høyrde at dei var romarar.",
+    "versions": [
+      {
+        "text": "Rettstenarane melde dette til bydommarane, og dei vart redde då dei høyrde at dei var romarar.",
+        "type": "error",
+        "severity": "minor",
+        "explanation": "Same skrivefeil som i vers 35: 'Rettstenarane' bør vera 'Rettsbetjentane'."
+      }
+    ]
   },
   {
     "bookId": 44,
     "chapterId": 16,
     "verseId": 39,
-    "text": "Så kom dei og bad dei om orsaking, og etter at dei hadde ført dei ut, bad dei dei forlata byen."
+    "text": "Så kom dei og tala dei til rette, og etter at dei hadde ført dei ut, bad dei dei forlata byen.",
+    "versions": [
+      {
+        "text": "Så kom dei og bad dei om orsaking, og etter at dei hadde ført dei ut, bad dei dei forlata byen.",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "Gresk παρεκάλεσαν betyr her 'formana/tala til rette' eller 'prøvde å roa dei ned', ikkje nødvendigvis 'bad om orsaking'. Konteksten viser at styresmaktene ikkje nødvendigvis var audmjuke, men prøvde å handtera situasjonen diplomatisk."
+      }
+    ]
   },
   {
     "bookId": 44,
     "chapterId": 16,
     "verseId": 40,
-    "text": "Då dei kom ut av fengselet, gjekk dei heim til Lydia. Der møtte dei brørne, oppmuntra dei og drog vidare."
+    "text": "Då dei kom ut av fengselet, gjekk dei heim til Lydia. Der såg dei syskena, oppmuntra dei og drog vidare.",
+    "versions": [
+      {
+        "text": "Då dei kom ut av fengselet, gjekk dei heim til Lydia. Der møtte dei brørne, oppmuntra dei og drog vidare.",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "Gresk ἰδόντες betyr 'då dei såg' ikkje 'møtte'. Og ἀδελφούς bør omsetjast konsekvent (jf. vers 2). Dessutan er 'såg' meir presist enn 'møtte'."
+      }
+    ]
   }
 ]

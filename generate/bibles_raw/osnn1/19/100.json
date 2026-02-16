@@ -3,7 +3,15 @@
     "bookId": 19,
     "chapterId": 100,
     "verseId": 1,
-    "text": "Ein salme til lovprising. Rop med glede for HERREN, heile jorda!"
+    "text": "Ein salme til takksemd. Rop med glede for HERREN, heile jorda!",
+    "versions": [
+      {
+        "text": "Ein salme til lovprising. Rop med glede for HERREN, heile jorda!",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "The Hebrew לְתוֹדָה (letodah) means 'for thanksgiving/gratitude', not 'for praise'. The same root תודה appears in verse 4 where it is correctly translated as 'takkseiing'. Using 'takksemd' here would be more accurate and consistent with the psalm's theme."
+      }
+    ]
   },
   {
     "bookId": 19,
@@ -33,7 +41,15 @@
     "bookId": 19,
     "chapterId": 100,
     "verseId": 4,
-    "text": "Gå inn gjennom portane hans med takkseiing, inn i føregardane hans med lovsong! Takk han og pris namnet hans!"
+    "text": "Gå inn gjennom portane hans med takkseiing, inn i føregardane hans med lovsong! Takk honom og velsign namnet hans!",
+    "versions": [
+      {
+        "text": "Gå inn gjennom portane hans med takkseiing, inn i føregardane hans med lovsong! Takk han og pris namnet hans!",
+        "type": "grammar",
+        "severity": "minor",
+        "explanation": "Two issues: 1) 'han' as object of 'Takk' should be 'honom' in nynorsk (same correction was already applied in verse 3). 2) The Hebrew בָּרֲכוּ (barkhu) means 'bless/velsign', not 'pris' (praise). 'Velsign' is the more accurate translation of this word."
+      }
+    ]
   },
   {
     "bookId": 19,

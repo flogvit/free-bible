@@ -3,11 +3,17 @@
     "bookId": 1,
     "chapterId": 34,
     "verseId": 1,
-    "text": "Dina, dotter til Lea som ho hadde fødd Jakob, gjekk ut for å sjå til kvinnene i landet.",
+    "text": "Dina, dottera til Lea som ho hadde fødd åt Jakob, gjekk ut for å sjå til kvinnene i landet.",
     "versions": [
       {
         "text": "Dina, dotter til Lea som ho hadde fødd til Jakob, gjekk ut for å sjå til kvinnene i landet.",
         "explanation": "Det hebraiske 'יָלְדָה לְיַעֲקֹב' tyder 'fødd åt Jakob' eller 'fødd Jakob', ikkje 'fødd til Jakob'. Preposisjonen 'til' er overflødig på nynorsk i denne samanhengen."
+      },
+      {
+        "text": "Dina, dotter til Lea som ho hadde fødd Jakob, gjekk ut for å sjå til kvinnene i landet.",
+        "type": "grammar",
+        "severity": "minor",
+        "explanation": "Preposisjonen 'לְ' (le-) framfor 'יַעֲקֹב' indikerer 'åt/for Jakob', ikkje berre 'fødd Jakob'. 'Fødd åt Jakob' gjev betre meining – at Lea bar henne for Jakob. I tillegg er 'dottera' meir naturleg nynorsk enn 'dotter' i denne samanhengen (bestemt form). Merk: dette er ikkje det same som den tidlegare versjonen 'fødd til Jakob'."
       }
     ]
   },
@@ -69,7 +75,15 @@
     "bookId": 1,
     "chapterId": 34,
     "verseId": 8,
-    "text": "Hamor tala med dei og sa: «Sikem, son min, lengtar av heile si sjel etter dotter dykkar. Gjev henne til han som kone."
+    "text": "Hamor tala med dei og sa: «Sikem, son min, lengtar av heile si sjel etter dotter dykkar. Gjev henne til han som kone.»",
+    "versions": [
+      {
+        "text": "Hamor tala med dei og sa: «Sikem, son min, lengtar av heile si sjel etter dotter dykkar. Gjev henne til han som kone.",
+        "type": "grammar",
+        "severity": "minor",
+        "explanation": "Det manglar avsluttande hermeteikn (») på slutten av vers 8. Sjølv om talen til Hamor held fram i vers 9-10, er det vanleg praksis i norske bibelomsetjingar å avslutte og opne hermeteikn ved kvar vers-grense viss talen held fram."
+      }
+    ]
   },
   {
     "bookId": 1,
@@ -123,7 +137,15 @@
     "bookId": 1,
     "chapterId": 34,
     "verseId": 15,
-    "text": "Berre på dette vilkåret kan vi gå med på det: at de blir som oss og let alle mennene mellom dykk omskjera seg."
+    "text": "«Berre på dette vilkåret kan vi gå med på det: at de blir som oss og let alle mennene mellom dykk omskjera seg.",
+    "versions": [
+      {
+        "text": "Berre på dette vilkåret kan vi gå med på det: at de blir som oss og let alle mennene mellom dykk omskjera seg.",
+        "type": "grammar",
+        "severity": "minor",
+        "explanation": "Vers 14 avsluttar med hermeteikn (»), men talen til sønene til Jakob held fram i vers 15-17. Det manglar opningshermeteikn («) i starten av vers 15."
+      }
+    ]
   },
   {
     "bookId": 1,
@@ -147,7 +169,15 @@
     "bookId": 1,
     "chapterId": 34,
     "verseId": 19,
-    "text": "Den unge mannen drygde ikkje med å gjera det, for han hadde si glede i dotter til Jakob. Han var den mest æra i heile farshuset."
+    "text": "Den unge mannen drygde ikkje med å gjera det, for han hadde si glede i dotter til Jakob. Han var den mest æra i heile huset til far sin.",
+    "versions": [
+      {
+        "text": "Den unge mannen drygde ikkje med å gjera det, for han hadde si glede i dotter til Jakob. Han var den mest æra i heile farshuset.",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "'Farshuset' er eit uvanleg samansett ord på nynorsk. 'Huset til far sin' er meir naturleg nynorsk og betre forståeleg."
+      }
+    ]
   },
   {
     "bookId": 1,
@@ -189,7 +219,15 @@
     "bookId": 1,
     "chapterId": 34,
     "verseId": 24,
-    "text": "Alle som gjekk ut gjennom byporten, høyrde på Hamor og Sikem, son hans. Alle mennene let seg omskjera, alle som gjekk ut gjennom byporten."
+    "text": "Alle som gjekk ut gjennom byporten, høyrde på Hamor og Sikem, son hans. Og kvar mann som gjekk ut gjennom byporten, let seg omskjera.",
+    "versions": [
+      {
+        "text": "Alle som gjekk ut gjennom byporten, høyrde på Hamor og Sikem, son hans. Alle mennene let seg omskjera, alle som gjekk ut gjennom byporten.",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "Gjentakinga 'Alle mennene let seg omskjera, alle som gjekk ut gjennom byporten' er noko klønete på nynorsk. Det hebraiske 'כָּל־זָכָר כָּל־יֹצְאֵי שַׁעַר עִירוֹ' kan gjevast att meir naturleg med 'kvar mann som gjekk ut gjennom byporten, let seg omskjera'."
+      }
+    ]
   },
   {
     "bookId": 1,

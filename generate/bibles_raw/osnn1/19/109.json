@@ -3,7 +3,15 @@
     "bookId": 19,
     "chapterId": 109,
     "verseId": 1,
-    "text": "Til korleiaren. Ein salme av David. Gud, du som eg lovsyng, ver ikkje taus!"
+    "text": "Til kormeisteren. Ein salme av David. Gud, du som eg lovsyng, ver ikkje taus!",
+    "versions": [
+      {
+        "text": "Til korleiaren. Ein salme av David. Gud, du som eg lovsyng, ver ikkje taus!",
+        "type": "grammar",
+        "severity": "minor",
+        "explanation": "'korleiaren' er eit uvanleg ord. Det meir vanlege og forståelege nynorsk-ordet er 'kormeisteren' eller 'musikkmeisteren' for det hebraiske 'למנצח'."
+      }
+    ]
   },
   {
     "bookId": 19,
@@ -39,11 +47,17 @@
     "bookId": 19,
     "chapterId": 109,
     "verseId": 6,
-    "text": "Set ein ugudleg mann over han, lat ein anklagarar stå ved høgre sida hans.",
+    "text": "Set ein ugudleg mann over han, lat ein anklagar stå ved høgre sida hans.",
     "versions": [
       {
         "text": "Set ein ugudleg mann over han, lat ein motstandar stå ved høgre sida hans.",
         "explanation": "Det hebraiske 'שָׂטָן' (satan) betyr primært 'anklagarar' i juridisk samanheng, ikkje berre 'motstandar'. Konteksten i vers 7 er ein rettssal, så 'anklagarar' gjev betre meining og formidlar den juridiske biletebruken."
+      },
+      {
+        "text": "Set ein ugudleg mann over han, lat ein anklagarar stå ved høgre sida hans.",
+        "type": "grammar",
+        "severity": "major",
+        "explanation": "'anklagarar' er ein skrivefeil. Rett nynorsk eintal ubestemt form er 'anklagar'."
       }
     ]
   },

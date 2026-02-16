@@ -27,7 +27,15 @@
     "bookId": 38,
     "chapterId": 2,
     "verseId": 5,
-    "text": "Eg lyfte blikket og såg, og sjå, det var ein mann med eit målesnor i handa."
+    "text": "Eg lyfte blikket og såg, og sjå, det var ein mann med eit måleband i handa.",
+    "versions": [
+      {
+        "text": "Eg lyfte blikket og såg, og sjå, det var ein mann med eit målesnor i handa.",
+        "type": "grammar",
+        "severity": "minor",
+        "explanation": "'Målesnor' er ikkje eit korrekt norsk samansett ord. Det rette er 'måleband' eller 'målesnøre'. 'Måleband' er meir naturleg på nynorsk."
+      }
+    ]
   },
   {
     "bookId": 38,
@@ -51,13 +59,29 @@
     "bookId": 38,
     "chapterId": 2,
     "verseId": 9,
-    "text": "«Eg sjølv skal vera ein eldmur rundt henne, seier Herren, og eg skal vera hennar herlegdom midt i henne.»"
+    "text": "«Eg sjølv skal vera ein eldmur rundt henne, seier Herren, og til herlegdom skal eg vera midt i henne.»",
+    "versions": [
+      {
+        "text": "«Eg sjølv skal vera ein eldmur rundt henne, seier Herren, og eg skal vera hennar herlegdom midt i henne.»",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "Hebraisk 'ulekavod ehyeh betokhah' tyder 'og til herlegdom skal eg vera midt i henne', ikkje 'eg skal vera hennar herlegdom'. Poenget er at Herrens nærvær midt i byen er til herlegdom, ikkje at han er herlegdomen hennar."
+      }
+    ]
   },
   {
     "bookId": 38,
     "chapterId": 2,
     "verseId": 10,
-    "text": "Sjå, sjå! Røm frå landet i nord, seier Herren, for eg har spreidd dykk som dei fire vindane på himmelen, seier Herren."
+    "text": "Å, å! Røm frå landet i nord, seier Herren, for eg har spreidd dykk som dei fire vindane på himmelen, seier Herren.",
+    "versions": [
+      {
+        "text": "Sjå, sjå! Røm frå landet i nord, seier Herren, for eg har spreidd dykk som dei fire vindane på himmelen, seier Herren.",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "Hebraisk 'hoi hoi' er eit utrop av åtvaring eller ve, ikkje 'sjå'. Det same ordet er omsett med 'Å' i vers 11. For konsekvens og nøyaktigheit bør det vera 'Å, å!' eller 'Ve, ve!' også her."
+      }
+    ]
   },
   {
     "bookId": 38,
@@ -69,13 +93,29 @@
     "bookId": 38,
     "chapterId": 2,
     "verseId": 12,
-    "text": "For så seier Herren over hærskarane: Etter at herlegdomen kom, har han sendt meg til folkeslaga som plyndra dykk."
+    "text": "For så seier Herren over hærskarane: For å vinna herlegdom har han sendt meg til dei folkeslaga som plyndra dykk. For den som rører ved dykk, rører ved augnesteinen hans.",
+    "versions": [
+      {
+        "text": "For så seier Herren over hærskarane: Etter at herlegdomen kom, har han sendt meg til folkeslaga som plyndra dykk.",
+        "type": "error",
+        "severity": "major",
+        "explanation": "Omsetjinga manglar den viktige siste delen av verset: 'ki hanogea bakhem nogea bebabat eino' – 'for den som rører ved dykk, rører ved augnesteinen hans.' Dette er ein teologisk sentral setning som ikkje kan utelatast. I tillegg er 'achar kavod' betre omsett som 'for å vinna herlegdom' (dvs. med herlegdom som føremål) enn 'etter at herlegdomen kom'."
+      }
+    ]
   },
   {
     "bookId": 38,
     "chapterId": 2,
     "verseId": 13,
-    "text": "For sjå, eg lyfter handa mi mot dei, og dei skal bli byte for dei som var trælane deira. Då skal de kjenna at Herren over hærskarane har sendt meg."
+    "text": "For sjå, eg lyfter handa mi mot dei, og dei skal bli byte for slavane sine. Då skal de kjenna at Herren over hærskarane har sendt meg.",
+    "versions": [
+      {
+        "text": "For sjå, eg lyfter handa mi mot dei, og dei skal bli byte for dei som var trælane deira. Då skal de kjenna at Herren over hærskarane har sendt meg.",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "'Le'avdeihem' tyder 'for slavane/tenarane deira', dvs. dei som tente dei undertrykkande folkeslaga. Omsetjinga 'dei som var trælane deira' er upresis og kan misforståast. 'Slavane sine' er meir direkte."
+      }
+    ]
   },
   {
     "bookId": 38,

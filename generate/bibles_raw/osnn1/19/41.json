@@ -3,7 +3,15 @@
     "bookId": 19,
     "chapterId": 41,
     "verseId": 1,
-    "text": "Til korleiaren. Ein salme av David."
+    "text": "Til kormeisteren. Ein salme av David.",
+    "versions": [
+      {
+        "text": "Til korleiaren. Ein salme av David.",
+        "type": "error",
+        "severity": "major",
+        "explanation": "'korleiaren' er ikkje eit korrekt nynorsk ord. Det hebraiske 'לַמְנַצֵּחַ' tyder 'til dirigenten/kormeisteren'. 'Kormeisteren' eller 'musikkleiaren' er meir korrekt. 'Korleiaren' kan vera ei samanblanding."
+      }
+    ]
   },
   {
     "bookId": 19,
@@ -27,11 +35,17 @@
     "bookId": 19,
     "chapterId": 41,
     "verseId": 4,
-    "text": "Herren skal styrkja han på sjukeleiet. Du vender heile sjukeleiet hans.",
+    "text": "Herren skal styrkja han på sjukeleiet. Du lagar om heile leiet hans i sjukdomen.",
     "versions": [
       {
         "text": "Herren skal styrkja han på sjukeleiet. Du gjer om heile senga hans når han ligg sjuk.",
         "explanation": "Det hebraiske 'הָפַכְתָּ' (vende, snu) med 'מִשְׁכָּבוֹ' (senga/leiet hans) og 'בְחָלְיוֹ' (i sjukdomen hans) tyder at Gud 'vender' eller 'snur' sjukeleiet - eit bilete på omsorg og lækjing. 'Gjer om' er litt upresist."
+      },
+      {
+        "text": "Herren skal styrkja han på sjukeleiet. Du vender heile sjukeleiet hans.",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "Den noverande omsetjinga brukar 'sjukeleiet' to gonger, noko som verkar repetitivt. Det hebraiske brukar to ulike ord: 'עֶרֶשׂ דְּוָי' (sjukeseng) og 'מִשְׁכָּבוֹ' (leiet hans). Dessutan manglar 'בְחָלְיוֹ' (i sjukdomen hans) i omsetjinga."
       }
     ]
   },
@@ -51,7 +65,15 @@
     "bookId": 19,
     "chapterId": 41,
     "verseId": 7,
-    "text": "Når nokon kjem og vitjar meg, talar han falskt. Hjartet hans samlar ondskap, og når han går ut, spreier han det."
+    "text": "Når nokon kjem for å sjå meg, talar han falskt. Hjartet hans samlar ondskap, og når han går ut, spreier han det.",
+    "versions": [
+      {
+        "text": "Når nokon kjem og vitjar meg, talar han falskt. Hjartet hans samlar ondskap, og når han går ut, spreier han det.",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "'לִרְאוֹת' tyder 'for å sjå' og ikkje nødvendigvis 'vitja'. 'Vitja' er akseptabelt, men 'sjå' er nærare originalen og formidlar betre det overflatiske ved besøket."
+      }
+    ]
   },
   {
     "bookId": 19,
@@ -111,7 +133,15 @@
     "bookId": 19,
     "chapterId": 41,
     "verseId": 13,
-    "text": "Du held meg oppe fordi eg er ærleg, og du set meg framfor andletet ditt for alltid."
+    "text": "Men eg – i mi uskuldige ferd held du meg oppe, og du set meg framfor andletet ditt for alltid.",
+    "versions": [
+      {
+        "text": "Du held meg oppe fordi eg er ærleg, og du set meg framfor andletet ditt for alltid.",
+        "type": "error",
+        "severity": "major",
+        "explanation": "'בְּתֻמִּי' tyder 'i mi uskuld/integritet', ikkje 'fordi eg er ærleg'. Dessutan byrjar verset med 'וַאֲנִי' (og eg/men eg) som markerer ein kontrast. 'Ærleg' er for snevert og formidlar ikkje 'tom/tamim'-omgrepet (heilskap, integritet) korrekt."
+      }
+    ]
   },
   {
     "bookId": 19,

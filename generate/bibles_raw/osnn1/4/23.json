@@ -57,7 +57,15 @@
     "bookId": 4,
     "chapterId": 23,
     "verseId": 9,
-    "text": "For frå fjelltoppen ser eg dei, frå haugane skuar eg dei. Sjå, eit folk som bur for seg sjølv og ikkje reknar seg blant folkeslaga."
+    "text": "For frå klippetoppen ser eg dei, frå haugane skuar eg dei.",
+    "versions": [
+      {
+        "text": "For frå fjelltoppen ser eg dei, frå haugane skuar eg dei. Sjå, eit folk som bur for seg sjølv og ikkje reknar seg blant folkeslaga.",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "Det hebraiske 'צֻרִים' (tsurim) betyr 'klipper' eller 'berg', ikkje generelt 'fjelltopp'. 'Klippetoppen' er meir nøyaktig."
+      }
+    ]
   },
   {
     "bookId": 4,
@@ -99,7 +107,15 @@
     "bookId": 4,
     "chapterId": 23,
     "verseId": 15,
-    "text": "Bileam sa til Balak: «Bli ståande her ved brennofferet ditt medan eg møter Herren der borte.»"
+    "text": "Bileam sa til Balak: «Bli ståande her ved brennofferet ditt, så skal eg søkja eit møte der borte.»",
+    "versions": [
+      {
+        "text": "Bileam sa til Balak: «Bli ståande her ved brennofferet ditt medan eg møter Herren der borte.»",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "Det hebraiske 'אִקָּרֶה' (iqqareh) tyder 'la seg møta' eller 'søkja eit møte' - det er meir uvisst enn 'medan eg møter Herren'. Dessutan nemner ikkje grunnteksten Herren eksplisitt her, berre 'כֹּה' (der borte). Omsetjinga legg til 'Herren' som ikkje står i originalteksten."
+      }
+    ]
   },
   {
     "bookId": 4,
@@ -135,13 +151,29 @@
     "bookId": 4,
     "chapterId": 23,
     "verseId": 21,
-    "text": "Han ser ikkje synd i Jakob, han skuar ikkje ulukke i Israel. Herren, deira Gud, er med dei, og kongerop lydar blant dei."
+    "text": "Han ser ikkje urett i Jakob, han skuar ikkje ulukke i Israel.",
+    "versions": [
+      {
+        "text": "Han ser ikkje synd i Jakob, han skuar ikkje ulukke i Israel. Herren, deira Gud, er med dei, og kongerop lydar blant dei.",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "Det hebraiske 'אָוֶן' (aven) betyr primært 'urett', 'vondskap' eller 'ulukke/elende', ikkje 'synd' (som på hebraisk oftare er 'חטא'). 'Urett' er ei meir presis omsetjing."
+      }
+    ]
   },
   {
     "bookId": 4,
     "chapterId": 23,
     "verseId": 22,
-    "text": "Gud førte dei ut frå Egypt, han har styrke som ein villokse."
+    "text": "Gud fører dei ut frå Egypt, han har styrke som ein villokse.",
+    "versions": [
+      {
+        "text": "Gud førte dei ut frå Egypt, han har styrke som ein villokse.",
+        "type": "error",
+        "severity": "major",
+        "explanation": "Det hebraiske 'מוֹצִיאָם' er partisipp (pågåande/tidlaus handling), ikkje preteritum. Det bør omsettast med presens 'fører' for å gjenspeila den tidlause, vedvarande handlinga som er typisk for poetisk/profetisk tale."
+      }
+    ]
   },
   {
     "bookId": 4,

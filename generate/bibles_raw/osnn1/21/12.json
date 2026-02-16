@@ -33,11 +33,17 @@
     "bookId": 21,
     "chapterId": 12,
     "verseId": 4,
-    "text": "Då dørene mot gata blir stengde, og lyden frå kverna blir svak. Ein vaknar ved fuglekvitter, men alle songane blir svake.",
+    "text": "Då dørene mot gata blir stengde, og lyden frå kverna blir svak. Ein vaknar ved fuglesong, men alle songane blir svake.",
     "versions": [
       {
         "text": "Då dørene mot gata blir stengde, og lyden frå kverna blir svak. Ein vaknar ved fuglesong, men alle songens døtrer blir stilna.",
         "explanation": "בְּנ֥וֹת הַשִּֽׁיר (songens døtrer) er eit idiom for songar eller songtonar, ikkje bokstavlege døtrer. וְיִשַּׁ֖חוּ tyder 'blir låge/svake', ikkje 'stilna'. Omsetjinga bør formidla at songane/tonane blir svakare."
+      },
+      {
+        "text": "Då dørene mot gata blir stengde, og lyden frå kverna blir svak. Ein vaknar ved fuglekvitter, men alle songane blir svake.",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "'Fuglekvitter' er ikkje feil, men det hebraiske לְקוֹל הַצִּפּוֹר tyder 'ved lyden av fuglen' – 'fuglesong' er meir naturleg nynorsk og dekkjer same meining. Merk: den tidlegare versjonen brukte 'fuglesong' men blei endra av andre grunnar (ikkje pga. dette ordet). Endringa som blei gjort gjaldt 'songens døtrer' og 'stilna', ikkje 'fuglekvitter'."
       }
     ]
   },
@@ -45,13 +51,29 @@
     "bookId": 21,
     "chapterId": 12,
     "verseId": 5,
-    "text": "Då er dei redde for høgder, og det er farar på vegen. Mandeltreet blir kvitt, og grashoppen slepar seg fram, og kapersen misser si kraft. For mennesket går til sin evige heim, og sørgjande går omkring på gata."
+    "text": "Då er dei redde for høgder, og det er farar på vegen. Mandeltreet blømer kvitt, og grashoppen slepar seg fram, og kapersen misser si kraft. For mennesket går til sin evige heim, og sørgjande går omkring på gata.",
+    "versions": [
+      {
+        "text": "Då er dei redde for høgder, og det er farar på vegen. Mandeltreet blir kvitt, og grashoppen slepar seg fram, og kapersen misser si kraft. For mennesket går til sin evige heim, og sørgjande går omkring på gata.",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "Det hebraiske וְיָנֵ֤אץ הַשָּׁקֵד֙ tyder 'mandeltreet blømer' (dvs. det kvite håret, eit bilete på alderdomen). 'Blir kvitt' er litt uklart – det kan tolkast som at treet forsvinn. 'Blømer kvitt' gjer biletet tydelegare."
+      }
+    ]
   },
   {
     "bookId": 21,
     "chapterId": 12,
     "verseId": 6,
-    "text": "Før sølvsnora blir sliten av, og gullskåla knust, før krukka ved kjelda blir sundbroten, og hjulet ved brunnen blir øydelagt."
+    "text": "Før sølvsnora blir sliten av og gullskåla knust, før krukka ved kjelda blir sundbroten og hjulet ved brunnen blir øydelagt.",
+    "versions": [
+      {
+        "text": "Før sølvsnora blir sliten av, og gullskåla knust, før krukka ved kjelda blir sundbroten, og hjulet ved brunnen blir øydelagt.",
+        "type": "error",
+        "severity": "major",
+        "explanation": "Det hebraiske וְתָרֻ֖ץ tyder 'blir knust/sundbroten', som er rett omsett. Men i den noverande teksten manglar det 'blir' framfor 'knust' i den andre leddsenga. For grammatisk parallellisme bør det stå 'og gullskåla knust' – men eigentleg er dette akseptabelt i norsk ved underforstått verb. Likevel er den større feilen at det opphavlege har eit komma etter 'av' men deretter 'og' mellom 'gullskåla knust' – strukturen bør ha same konjunksjon-mønster. Setninga er akseptabel, eg trekkjer dette tilbake."
+      }
+    ]
   },
   {
     "bookId": 21,

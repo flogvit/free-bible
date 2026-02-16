@@ -33,7 +33,15 @@
     "bookId": 18,
     "chapterId": 40,
     "verseId": 5,
-    "text": "Ein gong har eg tala, men eg svarar ikkje meir, ja, to gonger, men eg held no opp."
+    "text": "Éin gong har eg tala, men eg svarar ikkje meir, ja, to gonger, men eg held no opp.",
+    "versions": [
+      {
+        "text": "Ein gong har eg tala, men eg svarar ikkje meir, ja, to gonger, men eg held no opp.",
+        "type": "grammar",
+        "severity": "minor",
+        "explanation": "På nynorsk bør talord 'éin' skrivast med aksent for å skilja det frå den ubestemte artikkelen 'ein'."
+      }
+    ]
   },
   {
     "bookId": 18,
@@ -63,7 +71,15 @@
     "bookId": 18,
     "chapterId": 40,
     "verseId": 10,
-    "text": "Pryd deg då med stordom og opphøging, kle deg i majestet og herlegdom!"
+    "text": "Pryd deg då med stoltheit og høgd, kle deg i majestet og herlegdom!",
+    "versions": [
+      {
+        "text": "Pryd deg då med stordom og opphøging, kle deg i majestet og herlegdom!",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "Det hebraiske גָּאוֹן וָגֹבַהּ tyder 'stoltheit/storheit og høgd/opphøying'. 'Stordom' er ikkje eit etablert nynorsk ord. 'Stoltheit og høgd' er meir presist og naturleg nynorsk."
+      }
+    ]
   },
   {
     "bookId": 18,
@@ -105,7 +121,15 @@
     "bookId": 18,
     "chapterId": 40,
     "verseId": 17,
-    "text": "Han bøyer halen sin som ein seder, senene i låra hans er fletta saman."
+    "text": "Han strekker halen sin stiv som ein seder, senene i låra hans er fletta saman.",
+    "versions": [
+      {
+        "text": "Han bøyer halen sin som ein seder, senene i låra hans er fletta saman.",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "Det hebraiske יַחְפֹּץ (yachpots) tyder å gjera stiv/stram, ikkje å bøya. Poenget er at halen er stiv og kraftig som eit sedertre, ikkje at han bøyer den."
+      }
+    ]
   },
   {
     "bookId": 18,
@@ -117,11 +141,17 @@
     "bookId": 18,
     "chapterId": 40,
     "verseId": 19,
-    "text": "Han er det fremste av Guds verk, skaparen hans kan føra sverdet sitt nær han.",
+    "text": "Han er det fremste av Guds verk; berre skaparen hans kan føra sverdet sitt nær han.",
     "versions": [
       {
         "text": "Han er det fremste av Guds verk, berre skaparen hans kan føra sverdet mot han.",
         "explanation": "Det hebraiske יַגֵּשׁ חַרְבּוֹ tyder meir 'føra sverdet sitt nær' eller 'la sverdet nå han'. Poenget er at berre Gud, som skapte han, har tilgang til å nå han med sverd – ikkje nødvendigvis 'mot han' som impliserer åtak."
+      },
+      {
+        "text": "Han er det fremste av Guds verk, skaparen hans kan føra sverdet sitt nær han.",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "Sjølv om tidlegare versjon brukte 'mot han', er poenget i teksten at *berre* Gud kan nå han med sverd. Innhaldet er rett, men å leggja til 'berre' (som ikkje er same formulering som tidlegare versjon) gjer meininga tydelegare. Semikolon bind dei to ledda betre saman."
       }
     ]
   },

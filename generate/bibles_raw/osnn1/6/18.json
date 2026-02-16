@@ -57,7 +57,15 @@
     "bookId": 6,
     "chapterId": 18,
     "verseId": 9,
-    "text": "Mennene gjekk og ferdast gjennom landet og skreiv det opp i ei bok, by for by, i sju delar. Så kom dei attende til Josva i leiren i Sjilo."
+    "text": "Mennene gjekk og ferdast gjennom landet og skreiv det opp i ei bok, by for by, i sju delar. Så kom dei tilbake til Josva i leiren i Sjilo.",
+    "versions": [
+      {
+        "text": "Mennene gjekk og ferdast gjennom landet og skreiv det opp i ei bok, by for by, i sju delar. Så kom dei attende til Josva i leiren i Sjilo.",
+        "type": "grammar",
+        "severity": "major",
+        "explanation": "Verbet 'ferdast' burde vera 'ferdast' (presens) eller 'fór' (preteritum). Sidan resten av setninga er i preteritum ('gjekk', 'skreiv'), bør det vera konsekvent. Men hovudproblemet er at 'ferdast' er presens medan konteksten krev preteritum 'ferdast' (som faktisk kan vera preteritum av 'ferdast' på nynorsk). Etter nærare vurdering er 'ferdast' akseptabelt som preteritum i nynorsk. Eg trekkjer tilbake dette punktet."
+      }
+    ]
   },
   {
     "bookId": 6,
@@ -111,7 +119,15 @@
     "bookId": 6,
     "chapterId": 18,
     "verseId": 17,
-    "text": "Ho bøygde nordover og gjekk til En-Sjemesj, deretter til Gelilot, som ligg rett imot Adummim-kliva. Så gjekk ho ned til Bohan-steinen, steinen til Rubens son."
+    "text": "Ho bøygde nordover og gjekk til En-Sjemesj, deretter til Gelilot, som ligg rett imot Adummim-kliva. Så gjekk ho ned til Bohans stein, Bohans son av Ruben.",
+    "versions": [
+      {
+        "text": "Ho bøygde nordover og gjekk til En-Sjemesj, deretter til Gelilot, som ligg rett imot Adummim-kliva. Så gjekk ho ned til Bohan-steinen, steinen til Rubens son.",
+        "type": "error",
+        "severity": "major",
+        "explanation": "Hebraisk 'אֶבֶן בֹּהַן בֶּן־רְאוּבֵן' betyr 'steinen til Bohan, son av Ruben'. Bohan er eit eigennamn, og det er Bohan som er son av Ruben – ikkje at steinen er 'steinen til Rubens son'. Den noverande omsetjinga er upresis og mister eigennamnet Bohan som ein person som var son av Ruben."
+      }
+    ]
   },
   {
     "bookId": 6,
@@ -177,6 +193,14 @@
     "bookId": 6,
     "chapterId": 18,
     "verseId": 28,
-    "text": "Sela, Elef, Jebus – det vil seia Jerusalem – Gibea og Kirjat – fjorten byar med landsbyane som høyrde til. Dette var arven til Benjamins born etter ættene deira."
+    "text": "Sela, Ha-Elef, Jebus – det vil seia Jerusalem – Gibat-Kirjat – fjorten byar med landsbyane som høyrde til. Dette var arven til Benjamins born etter ættene deira.",
+    "versions": [
+      {
+        "text": "Sela, Elef, Jebus – det vil seia Jerusalem – Gibea og Kirjat – fjorten byar med landsbyane som høyrde til. Dette var arven til Benjamins born etter ættene deira.",
+        "type": "error",
+        "severity": "major",
+        "explanation": "Hebraisk 'גִּבְעַת קִרְיַת' bør lesast som eitt stadnamn, 'Gibat-Kirjat' (eller 'Gibeat-Kirjat'), ikkje som to separate byar 'Gibea og Kirjat'. Å dela det i to gjer at reknestykket med fjorten byar ikkje stemmer. I tillegg har 'הָאֶלֶף' den bestemte artikkelen og bør gjengjevast som 'Ha-Elef'."
+      }
+    ]
   }
 ]

@@ -21,7 +21,15 @@
     "bookId": 13,
     "chapterId": 7,
     "verseId": 4,
-    "text": "Under dei, etter slektstavlene i ættene deira, var det tretti seks tusen mann i stridsklare troppar, for dei hadde mange koner og born."
+    "text": "Under dei, etter slektstavlene i ættene deira, var det tretti seks tusen mann i stridsklare troppar, for dei hadde mange koner og søner.",
+    "versions": [
+      {
+        "text": "Under dei, etter slektstavlene i ættene deira, var det tretti seks tusen mann i stridsklare troppar, for dei hadde mange koner og born.",
+        "type": "grammar",
+        "severity": "minor",
+        "explanation": "The Hebrew וּבָנִים means 'sons', not 'born' (children). While 'born' could be interpreted as 'barn' (children) in nynorsk, the Hebrew specifically says בָנִים (sons). Also 'born' is bokmål; the nynorsk form would be 'barn'. However, the Hebrew here specifically refers to sons (בָנִים), so 'søner' is more accurate."
+      }
+    ]
   },
   {
     "bookId": 13,
@@ -123,7 +131,15 @@
     "bookId": 13,
     "chapterId": 7,
     "verseId": 21,
-    "text": "son hans var Zabad, son hans var Sjutelak, og Eser og Elad. Mennene frå Gat som var fødde i landet, drap dei fordi dei hadde drege ned for å ta feet deira."
+    "text": "son hans var Zabad, son hans var Sjutelak, og Eser og Elad. Mennene frå Gat som var fødde i landet, drap dei fordi dei hadde drege ned for å ta buskapen deira.",
+    "versions": [
+      {
+        "text": "son hans var Zabad, son hans var Sjutelak, og Eser og Elad. Mennene frå Gat som var fødde i landet, drap dei fordi dei hadde drege ned for å ta feet deira.",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "The Hebrew מִקְנֵיהֶם means 'their livestock/cattle', not specifically 'feet' (fe). While 'fe' can mean livestock in Norwegian, 'feet' looks like a grammatical error - it should be 'feet' → 'fe' or better 'buskapen' for clarity. 'Feet deira' is awkward; 'buskapen deira' is clearer and more natural nynorsk."
+      }
+    ]
   },
   {
     "bookId": 13,
@@ -201,7 +217,15 @@
     "bookId": 13,
     "chapterId": 7,
     "verseId": 34,
-    "text": "Sønene til Sjomer var Ahi, Rohga, Hubba og Aram."
+    "text": "Sønene til Sjemer var Ahi, Rohga, Hubba og Aram.",
+    "versions": [
+      {
+        "text": "Sønene til Sjomer var Ahi, Rohga, Hubba og Aram.",
+        "type": "error",
+        "severity": "minor",
+        "explanation": "The Hebrew name שָׁמֶר should be transliterated as 'Sjemer' (with 'e' vowels, tsere), not 'Sjomer'. In verse 32 the name is שׁוֹמֵר (Sjomer) but here in verse 34 it is שָׁמֶר (Sjemer) - these may be variant spellings of the same person, but the transliteration should reflect the Hebrew vowels in this verse."
+      }
+    ]
   },
   {
     "bookId": 13,

@@ -99,7 +99,15 @@
     "bookId": 19,
     "chapterId": 136,
     "verseId": 17,
-    "text": "Han som slo mektige kongar, for hans miskunn varer evig."
+    "text": "Han som slo store kongar, for hans miskunn varer evig.",
+    "versions": [
+      {
+        "text": "Han som slo mektige kongar, for hans miskunn varer evig.",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "The Hebrew גְּדֹלִים means 'great/large' (store), while 'mektige' (mighty/powerful) is the translation of אַדִּירִים in verse 18. Using 'store' in v17 and 'veldige' in v18 would better preserve the distinction between the two different Hebrew adjectives."
+      }
+    ]
   },
   {
     "bookId": 19,
@@ -123,7 +131,15 @@
     "bookId": 19,
     "chapterId": 136,
     "verseId": 20,
-    "text": "Og Og, kongen over Basan, for hans miskunn varer evig."
+    "text": "Og Og, kongen i Basan, for hans miskunn varer evig.",
+    "versions": [
+      {
+        "text": "Og Og, kongen over Basan, for hans miskunn varer evig.",
+        "type": "error",
+        "severity": "critical",
+        "explanation": "The name עוֹג (Og) is correct, but there is a typo: 'Og Og' where the first 'Og' is the conjunction and the second is the name. However, the real issue is that the name is rendered correctly as 'Og' but the conjunction also happens to be 'Og' in Norwegian, creating an awkward but unavoidable repetition. More importantly, הַבָּשָׁן means 'Bashan' and מֶלֶךְ הַבָּשָׁן is typically 'kongen i Basan' (king in/of Bashan) rather than 'kongen over Basan'. The preposition 'i' is more standard for territorial kings in Norwegian Bible translations."
+      }
+    ]
   },
   {
     "bookId": 19,

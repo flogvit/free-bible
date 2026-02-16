@@ -3,7 +3,15 @@
     "bookId": 38,
     "chapterId": 14,
     "verseId": 1,
-    "text": "Sjå, ein dag kjem for Herren, og byttet ditt skal delast midt i deg."
+    "text": "Sjå, ein dag kjem frå Herren, og byttet ditt skal delast midt i deg.",
+    "versions": [
+      {
+        "text": "Sjå, ein dag kjem for Herren, og byttet ditt skal delast midt i deg.",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "The Hebrew 'יוֹם בָּא לַיהוָה' means 'a day is coming belonging to/for the LORD.' The phrase 'kjem for Herren' is a possible rendering but can be slightly ambiguous in Norwegian. 'Kjem frå Herren' or 'ein Herrens dag kjem' would be clearer, but this is minor."
+      }
+    ]
   },
   {
     "bookId": 38,
@@ -81,7 +89,15 @@
     "bookId": 38,
     "chapterId": 14,
     "verseId": 14,
-    "text": "Også Juda skal kjempa mot Jerusalem, og rikdomen frå alle folka rundt omkring skal samlast: gull, sølv og klede i stor mengd."
+    "text": "Også Juda skal kjempa i Jerusalem, og rikdomen frå alle folka rundt omkring skal samlast: gull, sølv og klede i stor mengd.",
+    "versions": [
+      {
+        "text": "Også Juda skal kjempa mot Jerusalem, og rikdomen frå alle folka rundt omkring skal samlast: gull, sølv og klede i stor mengd.",
+        "type": "error",
+        "severity": "major",
+        "explanation": "The Hebrew phrase 'תִּלָּחֵם בִּירוּשָׁלִָם' is ambiguous – it can mean 'fight against Jerusalem' or 'fight at/in Jerusalem' (i.e., fight at Jerusalem on its behalf). Given the context of chapter 14 where God defends Jerusalem and Judah is allied with God, the more likely reading is that Judah fights *in/at* Jerusalem (defending it), not *against* it. Many translations render this as 'at' or 'in.' The current translation 'mot' (against) could be misleading."
+      }
+    ]
   },
   {
     "bookId": 38,

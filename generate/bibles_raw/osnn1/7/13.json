@@ -27,7 +27,15 @@
     "bookId": 7,
     "chapterId": 13,
     "verseId": 5,
-    "text": "For sjå, du skal verta med barn og føda ein son. Ingen rakekniv skal koma på hovudet hans, for guten skal vera ein Guds nasirear frå mors liv. Han skal byrja å frelsa Israel frå filistrane si hand.»"
+    "text": "For sjå, du skal verta med barn og føda ein son. Ingen rakekniv skal koma på hovudet hans, for guten skal vera ein Guds nasirear frå mors liv. Han skal byrja å frelsa Israel frå filistrane si makt.»",
+    "versions": [
+      {
+        "text": "For sjå, du skal verta med barn og føda ein son. Ingen rakekniv skal koma på hovudet hans, for guten skal vera ein Guds nasirear frå mors liv. Han skal byrja å frelsa Israel frå filistrane si hand.»",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "'Frå filistrane si hand' er svært bokstavleg. 'Frå filistrane si makt' er meir idiomatisk nynorsk og formidlar same meining (מִיַּד = 'frå handa til' = 'frå makta til')."
+      }
+    ]
   },
   {
     "bookId": 7,
@@ -121,7 +129,15 @@
     "bookId": 7,
     "chapterId": 13,
     "verseId": 17,
-    "text": "Manoah sa til Herrens engel: «Kva er namnet ditt, så vi kan æra deg når orda dine går i oppfylling?»"
+    "text": "Manoah sa til Herrens engel: «Kva er namnet ditt, så vi kan æra deg når ordet ditt går i oppfylling?»",
+    "versions": [
+      {
+        "text": "Manoah sa til Herrens engel: «Kva er namnet ditt, så vi kan æra deg når orda dine går i oppfylling?»",
+        "type": "error",
+        "severity": "major",
+        "explanation": "Keri-lesinga (den føretrekte) er דְבָרְךָ (eintal: 'ordet ditt'), ikkje דבריך (fleirtal: 'orda dine'). Omsettinga bør følgja keri og bruka eintal."
+      }
+    ]
   },
   {
     "bookId": 7,
@@ -133,11 +149,17 @@
     "bookId": 7,
     "chapterId": 13,
     "verseId": 19,
-    "text": "Manoah tok kjeet og grødeofferet og ofra det på berget til Herren. Og han gjorde underfulle ting medan Manoah og kona hans såg på.",
+    "text": "Manoah tok kjeet og grødeofferet og ofra det på berget til Herren. Og engelen gjorde underfulle ting medan Manoah og kona hans såg på.",
     "versions": [
       {
         "text": "Manoah tok kjeet og grødeofferet og ofra det på berget til Herren. Og Herren gjorde eit under medan Manoah og kona hans såg på.",
         "explanation": "Det hebraiske מַפְלִא לַעֲשׂוֹת ('underfullt å gjera' / 'gjorde underfulle ting') refererer truleg til engelen (subjektet er uklart men heng saman med v.18 der engelen kallar seg 'underfullt'). Uttrykket er meir generelt enn 'eit under'."
+      },
+      {
+        "text": "Manoah tok kjeet og grødeofferet og ofra det på berget til Herren. Og han gjorde underfulle ting medan Manoah og kona hans såg på.",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "Subjektet 'han' er uklart. Sidan versjonshistorikken nemner at det truleg refererer til engelen, bør dette gjerast meir eksplisitt for ein lettlesen tekst."
       }
     ]
   },

@@ -87,7 +87,15 @@
     "bookId": 3,
     "chapterId": 1,
     "verseId": 13,
-    "text": "Innvollane og føtene skal han vaska i vatn. Så skal presten bera fram alt saman og brenna det på altaret. Det er eit brennoffer, eit eldoffer med god ange for Herren."
+    "text": "Innvollane og føtene skal han vaska i vatn. Så skal presten bera fram alt saman og brenna det på altaret. Det er eit brennoffer, eit eldoffer med velduft for Herren.",
+    "versions": [
+      {
+        "text": "Innvollane og føtene skal han vaska i vatn. Så skal presten bera fram alt saman og brenna det på altaret. Det er eit brennoffer, eit eldoffer med god ange for Herren.",
+        "type": "error",
+        "severity": "major",
+        "explanation": "I vers 9, som bruker same hebraiske uttrykk 'רֵיחַ נִיחֹחַ', vart omsetjinga bevisst endra frå 'god ange' til 'velduft' for å vera meir presis. Same uttrykk bør omsetjast likt i vers 13 for konsistens. 'God ange' vart allereie vurdert som mindre presist i vers 9."
+      }
+    ]
   },
   {
     "bookId": 3,
@@ -105,12 +113,28 @@
     "bookId": 3,
     "chapterId": 1,
     "verseId": 16,
-    "text": "Han skal ta ut kråsen med fjørene og kasta han på austsida av altaret, der oska ligg."
+    "text": "Han skal ta ut kråsen med innhaldet og kasta han på austsida av altaret, der oskehaugen ligg.",
+    "versions": [
+      {
+        "text": "Han skal ta ut kråsen med fjørene og kasta han på austsida av altaret, der oska ligg.",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "Det hebraiske 'בְּנֹצָתָהּ' er omdiskutert, men tyder truleg 'med innhaldet' (dvs. innhaldet i kråsen/magen) snarare enn 'med fjørene'. Vidare er 'מְקוֹם הַדָּשֶׁן' meir spesifikt 'oskeplassen/oskehaugen' enn berre 'der oska ligg'."
+      }
+    ]
   },
   {
     "bookId": 3,
     "chapterId": 1,
     "verseId": 17,
-    "text": "Han skal flengja fuglen mellom vengene utan å riva han heilt sund. Presten skal brenna han på altaret, på veden som ligg på elden. Det er eit brennoffer, eit eldoffer med god ange for Herren.»"
+    "text": "Han skal flengja fuglen mellom vengene utan å riva han heilt sund. Presten skal brenna han på altaret, på veden som ligg på elden. Det er eit brennoffer, eit eldoffer med velduft for Herren.»",
+    "versions": [
+      {
+        "text": "Han skal flengja fuglen mellom vengene utan å riva han heilt sund. Presten skal brenna han på altaret, på veden som ligg på elden. Det er eit brennoffer, eit eldoffer med god ange for Herren.»",
+        "type": "error",
+        "severity": "minor",
+        "explanation": "Same konsistensproblem som vers 13: 'רֵיחַ נִיחֹחַ' bør omsetjast med 'velduft' i tråd med den bevisste endringa i vers 9."
+      }
+    ]
   }
 ]

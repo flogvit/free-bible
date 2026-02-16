@@ -39,11 +39,17 @@
     "bookId": 23,
     "chapterId": 2,
     "verseId": 6,
-    "text": "For du har forlate folket ditt, Jakobs hus, fordi dei er fulle av skikkar frå Austen og driv med spådomskunst som filistarane, og dei slår seg saman med born av framande.",
+    "text": "For du har forlate folket ditt, Jakobs hus, fordi dei er fulle av skikkar frå Austen og driv med spådomskunst som filistrane, og dei slår seg saman med born av framande.",
     "versions": [
       {
         "text": "For du har forlate folket ditt, Jakobs hus, fordi dei er fulle av skikkar frå Austen og driv med spådomskunst som filistarane, og dei gjev seg i lag med framande born.",
         "explanation": "Uttrykket 'gjev seg i lag med framande born' er litt uklart. 'Slår seg saman med born av framande' gjev betre meining om pakter/alliansar med utlendingar."
+      },
+      {
+        "text": "For du har forlate folket ditt, Jakobs hus, fordi dei er fulle av skikkar frå Austen og driv med spådomskunst som filistarane, og dei slår seg saman med born av framande.",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "Den vanlege nynorske forma er 'filistrane' (eller 'filistrar'), ikkje 'filistarane'. 'Filistarane' er ikkje standard nynorsk."
       }
     ]
   },
@@ -63,13 +69,29 @@
     "bookId": 23,
     "chapterId": 2,
     "verseId": 9,
-    "text": "Mennesket vert bøygd ned, mannen vert audmjuka – oppreis dei ikkje!"
+    "text": "Mennesket vert bøygd ned, mannen vert audmjuka – tilgjev dei ikkje!",
+    "versions": [
+      {
+        "text": "Mennesket vert bøygd ned, mannen vert audmjuka – oppreis dei ikkje!",
+        "type": "error",
+        "severity": "major",
+        "explanation": "Det hebraiske אַל־תִּשָּׂא לָהֶם tyder 'ikkje tilgjev dei' (frå נשׂא = bera/tilgje), ikkje 'oppreis dei ikkje'. Verbet נשׂא i denne konteksten med dativ betyr å bera over med / tilgje, ikkje å reisa opp."
+      }
+    ]
   },
   {
     "bookId": 23,
     "chapterId": 2,
     "verseId": 10,
-    "text": "Gå inn i fjellet og gøym deg i støvet for redsla frå Herren og for glansen av hans herlegdom!"
+    "text": "Gå inn i berget og gøym deg i støvet for redsla frå Herren og for glansen av hans majestet!",
+    "versions": [
+      {
+        "text": "Gå inn i fjellet og gøym deg i støvet for redsla frå Herren og for glansen av hans herlegdom!",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "Det hebraiske צוּר tyder 'klippe, berg' meir enn 'fjell' (som er הר). Vidare tyder הֲדַר גְּאוֹנוֹ 'glansen av hans majestet/stordom', ikkje 'herlegdom' (som er כָּבוֹד). 'Majestet' gjev ein meir presis attgjeving av גָּאוֹן."
+      }
+    ]
   },
   {
     "bookId": 23,
@@ -141,11 +163,17 @@
     "bookId": 23,
     "chapterId": 2,
     "verseId": 20,
-    "text": "Den dagen skal mennesket kasta bort sølvavgudane sine og gullgudane sine, som dei laga for å tilbe, kasta dei til moldvarpane og flaggermusene,",
+    "text": "Den dagen skal mennesket kasta bort sølvavgudane sine og gullavgudane sine, som dei laga for å tilbe, kasta dei til moldvarpane og flaggermusene,",
     "versions": [
       {
         "text": "Den dagen skal mennesket kasta bort sølvavgudane sine og gullgudane sine, som dei laga for å tilbe, kasta dei til moldvarpane og flaggermusa,",
         "explanation": "Fleirtal 'flaggermusene' passar betre med 'moldvarpane' og det hebraiske fleirtalet."
+      },
+      {
+        "text": "Den dagen skal mennesket kasta bort sølvavgudane sine og gullgudane sine, som dei laga for å tilbe, kasta dei til moldvarpane og flaggermusene,",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "For konsistens bør 'gullgudane' endrast til 'gullavgudane'. Det hebraiske אֱלִילֵי brukar same ordet (avgudar) for begge, og 'sølvavgudane' er allereie nytta. 'Gullgudane' kan gje inntrykk av at dette er verkelege gudar, medan 'gullavgudane' held den negative verdidommen frå originalteksten."
       }
     ]
   },

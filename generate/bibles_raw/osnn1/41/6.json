@@ -51,7 +51,15 @@
     "bookId": 41,
     "chapterId": 6,
     "verseId": 9,
-    "text": "Dei kunne ha sandalar på føtene, men ikkje ta på seg to kjortlar."
+    "text": "Dei skulle ha sandalar på føtene, men ikkje ta på seg to kjortlar.",
+    "versions": [
+      {
+        "text": "Dei kunne ha sandalar på føtene, men ikkje ta på seg to kjortlar.",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "The Greek participle 'ὑποδεδεμένους σανδάλια' functions as an imperative instruction – they should be shod with sandals. 'Kunne ha' (could have) is too permissive; 'skulle ha' (should have) better reflects the instructional tone of the passage."
+      }
+    ]
   },
   {
     "bookId": 41,
@@ -81,7 +89,15 @@
     "bookId": 41,
     "chapterId": 6,
     "verseId": 14,
-    "text": "Kong Herodes fekk høyra om dette, for namnet til Jesus var blitt kjent. Nokre sa: «Johannes døyparen er reist opp frå dei døde, og difor verkar desse kreftene i han.»"
+    "text": "Kong Herodes fekk høyra om dette, for namnet hans var blitt kjent. Nokre sa: «Johannes døyparen er reist opp frå dei døde, og difor verkar desse kreftene i han.»",
+    "versions": [
+      {
+        "text": "Kong Herodes fekk høyra om dette, for namnet til Jesus var blitt kjent. Nokre sa: «Johannes døyparen er reist opp frå dei døde, og difor verkar desse kreftene i han.»",
+        "type": "error",
+        "severity": "minor",
+        "explanation": "The Greek says 'φανερὸν γὰρ ἐγένετο τὸ ὄνομα αὐτοῦ' – 'his name had become known.' The pronoun 'αὐτοῦ' refers to Jesus, but the Greek uses a pronoun, not the explicit name. The translation adds 'Jesus' explicitly, which is interpretive but not exactly in the original. Using 'namnet hans' preserves the pronoun reference. This is a minor issue since the meaning is the same, but it's more faithful to the text."
+      }
+    ]
   },
   {
     "bookId": 41,
@@ -99,7 +115,15 @@
     "bookId": 41,
     "chapterId": 6,
     "verseId": 17,
-    "text": "For Herodes hadde sjølv sendt folk for å gripa Johannes og kasta han i fengsel på grunn av Herodias, kona til Filip, bror hans, som Herodes hadde gift seg med."
+    "text": "For Herodes hadde sjølv sendt folk for å gripa Johannes og kasta han i fengsel på grunn av Herodias, kona til Filip, bror sin, fordi han hadde gift seg med henne.",
+    "versions": [
+      {
+        "text": "For Herodes hadde sjølv sendt folk for å gripa Johannes og kasta han i fengsel på grunn av Herodias, kona til Filip, bror hans, som Herodes hadde gift seg med.",
+        "type": "grammar",
+        "severity": "minor",
+        "explanation": "'Bror hans' is ambiguous in Norwegian – it could refer to Johannes's brother. Since it is Herodes's brother, 'bror sin' (reflexive possessive) is more correct in nynorsk. Also, 'ὅτι αὐτὴν ἐγάμησεν' is a causal clause ('because he had married her'), better rendered with 'fordi han hadde gift seg med henne' rather than a relative clause."
+      }
+    ]
   },
   {
     "bookId": 41,
@@ -117,7 +141,15 @@
     "bookId": 41,
     "chapterId": 6,
     "verseId": 20,
-    "text": "For Herodes var redd Johannes, fordi han visste at han var ein rettferdig og heilag mann, og han verna han. Når han høyrde på han, vart han uroleg, men han høyrde likevel gjerne på han."
+    "text": "For Herodes var redd Johannes, fordi han visste at han var ein rettferdig og heilag mann, og han verna han. Når han høyrde på han, vart han rådvill, men han høyrde likevel gjerne på han.",
+    "versions": [
+      {
+        "text": "For Herodes var redd Johannes, fordi han visste at han var ein rettferdig og heilag mann, og han verna han. Når han høyrde på han, vart han uroleg, men han høyrde likevel gjerne på han.",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "The Greek 'ἠπόρει' means 'was perplexed/at a loss' rather than 'uroleg' (uneasy/anxious). 'Rådvill' (perplexed, at a loss) is a more accurate translation of the Greek word."
+      }
+    ]
   },
   {
     "bookId": 41,
@@ -177,7 +209,15 @@
     "bookId": 41,
     "chapterId": 6,
     "verseId": 30,
-    "text": "Apostlane samla seg hos Jesus og fortalde han alt dei hadde gjort og undervist."
+    "text": "Apostlane samla seg hos Jesus og fortalde han om alt dei hadde gjort og alt dei hadde undervist.",
+    "versions": [
+      {
+        "text": "Apostlane samla seg hos Jesus og fortalde han alt dei hadde gjort og undervist.",
+        "type": "error",
+        "severity": "major",
+        "explanation": "The Greek text says 'ὅσα ἐποίησαν καὶ ὅσα ἐδίδαξαν' – 'all they had done and all they had taught.' The current translation 'gjort og undervist' is grammatically awkward; 'undervist' needs an object or fuller construction to be idiomatic in Norwegian nynorsk."
+      }
+    ]
   },
   {
     "bookId": 41,

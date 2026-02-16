@@ -9,7 +9,15 @@
     "bookId": 9,
     "chapterId": 30,
     "verseId": 2,
-    "text": "Dei hadde teke til fange alle som var der, både små og store."
+    "text": "Dei hadde teke til fange kvinnene og alle som var der, både små og store. Dei drap ingen, men dreiv dei med seg og drog sin veg.",
+    "versions": [
+      {
+        "text": "Dei hadde teke til fange alle som var der, både små og store.",
+        "type": "error",
+        "severity": "major",
+        "explanation": "Omsetjinga manglar fleire viktige element: 1) הַנָּשִׁים (kvinnene) er ikkje spesifikt nemnt, 2) 'לֹא הֵמִיתוּ אִישׁ' (dei drap ingen) er heilt utelate, og 3) 'וַיִּנְהֲגוּ וַיֵּלְכוּ לְדַרְכָּם' (dei dreiv dei med seg og drog sin veg) er utelate. Dette er vesentlege delar av verset."
+      }
+    ]
   },
   {
     "bookId": 9,
@@ -33,11 +41,17 @@
     "bookId": 9,
     "chapterId": 30,
     "verseId": 6,
-    "text": "David var i stor naud, for folket snakka om å steina han. Heile folket var bitre i sjela, kvar mann for sønene og døtrene sine.",
+    "text": "David var i stor naud, for folket snakka om å steina han. Heile folket var bitre i sjela, kvar mann for sønene og døtrene sine. Men David styrkte seg i Herren sin Gud.",
     "versions": [
       {
         "text": "David var i stor naud, for folket snakka om å steina han. Alle var bitre i sjela, kvar mann på grunn av sønene og døtrene sine. Men David styrkte seg i Herren sin Gud.",
         "explanation": "Hebraisk 'כָּל־הָעָ֔ם' er 'heile folket', ikkje berre 'alle'. Og 'עַל' med personar tyder ofte 'for/over' i sorg-kontekst, meir enn 'på grunn av'."
+      },
+      {
+        "text": "David var i stor naud, for folket snakka om å steina han. Heile folket var bitre i sjela, kvar mann for sønene og døtrene sine.",
+        "type": "error",
+        "severity": "critical",
+        "explanation": "Den siste og svært viktige setninga i verset er utelaten: 'וַיִּתְחַזֵּק דָּוִד בַּיהוָה אֱלֹהָיו' = 'Men David styrkte seg i Herren sin Gud.' Denne setninga er teologisk svært viktig og ein nøkkelsetning i forteljinga. Versjonshistorikken viser at forrige versjon hadde denne setninga med, men ho vart fjerna ved siste redigering. Grunnen for endringa nemnde berre ordval ('heile folket' og 'for'), ikkje fjerning av siste setning, så dette er truleg ein feil."
       }
     ]
   },
@@ -117,7 +131,15 @@
     "bookId": 9,
     "chapterId": 30,
     "verseId": 17,
-    "text": "David slo dei frå morgongryet til kvelden dagen etter."
+    "text": "David slo dei frå morgongryet til kvelden dagen etter. Ingen av dei slapp unna, bortsett frå fire hundre unge menn som reid på kamelar og flykta.",
+    "versions": [
+      {
+        "text": "David slo dei frå morgongryet til kvelden dagen etter.",
+        "type": "error",
+        "severity": "major",
+        "explanation": "Den andre halvdelen av verset er heilt utelaten: 'וְלֹא־נִמְלַט מֵהֶם אִישׁ כִּי אִם־אַרְבַּע מֵאוֹת אִישׁ־נַעַר אֲשֶׁר־רָכְבוּ עַל־הַגְּמַלִּים וַיָּנֻסוּ' = 'Ingen slapp unna bortsett frå fire hundre unge menn som reid på kamelar og flykta.' Dette er viktig narrativ informasjon."
+      }
+    ]
   },
   {
     "bookId": 9,
@@ -147,11 +169,17 @@
     "bookId": 9,
     "chapterId": 30,
     "verseId": 22,
-    "text": "Då tok alle dei vonde og nidkjære mennene som hadde vore med David, til orde og sa: «Sidan dei ikkje gjekk med oss, skal vi ikkje gje dei noko av byttet vi berga. Dei får berre ta kvar si kone og borna sine og gå sin veg.»",
+    "text": "Då tok alle dei vonde og gudlause mennene som hadde vore med David, til orde og sa: «Sidan dei ikkje gjekk med oss, skal vi ikkje gje dei noko av byttet vi berga. Dei får berre ta kvar si kone og borna sine og gå sin veg.»",
     "versions": [
       {
         "text": "Då tok alle dei vonde og dårlege mennene som hadde vore med David, til orde og sa: «Sidan dei ikkje gjekk med oss, skal vi ikkje gje dei noko av byttet vi berga. Dei får berre ta kvar si kone og borna sine og gå sin veg.»",
         "explanation": "Hebraisk 'בְּלִיַּעַל' er eit sterkare uttrykk enn 'dårleg'. Det tyder 'verdlaus, ugudleg, skurk'. 'Nidkjære' eller 'vondskapsfulle' eller 'ugudlege' fangar betre den hebraiske meininga. Alternativt: 'vonde og gudlause'."
+      },
+      {
+        "text": "Då tok alle dei vonde og nidkjære mennene som hadde vore med David, til orde og sa: «Sidan dei ikkje gjekk med oss, skal vi ikkje gje dei noko av byttet vi berga. Dei får berre ta kvar si kone og borna sine og gå sin veg.»",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "Ordet 'nidkjære' tyder 'sjalu/ivrig' og fangar ikkje meininga til 'בְּלִיַּעַל' (verdlaus, ugudleg, skurk). Endringsnotatet frå førre versjon nemnde sjølv 'ugudlege' og 'gudlause' som betre alternativ. 'Gudlause' passar betre saman med 'vonde'."
       }
     ]
   },

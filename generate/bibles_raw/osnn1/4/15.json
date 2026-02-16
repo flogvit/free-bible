@@ -15,11 +15,17 @@
     "bookId": 4,
     "chapterId": 15,
     "verseId": 3,
-    "text": "og de vil bera fram eit eldoffer for Herren, eit brennoffer eller eit slaktoffer, for å oppfylla ein særskild lovnad eller som ei frivillig gåve, eller ved høgtidene dykkar, for å laga ein vellukt for Herren av storfe eller småfe,",
+    "text": "og de vil bera fram eit eldoffer for Herren – eit brennoffer eller eit slaktoffer – for å oppfylla ein særskild lovnad eller som ei frivillig gåve, eller ved høgtidene dykkar, for å laga ein vellukt for Herren av storfe eller småfe,",
     "versions": [
       {
         "text": "og de vil bera fram eit eldoffer for Herren, eit brennoffer eller eit slaktoffer, for å oppfylla ein lovnad eller som ei frivillig gåve, eller ved høgtidene dykkar, for å laga ein vellukt for Herren av storfe eller småfe,",
         "explanation": "Det hebraiske לְפַלֵּא־נֶדֶר (lefalé-neder) inneheld verbet פלא som tyder 'å gjera særskild/ekstraordinær'. Ein 'særskild lovnad' fangar betre den spesielle karakteren av denne typen lovnad."
+      },
+      {
+        "text": "og de vil bera fram eit eldoffer for Herren, eit brennoffer eller eit slaktoffer, for å oppfylla ein særskild lovnad eller som ei frivillig gåve, eller ved høgtidene dykkar, for å laga ein vellukt for Herren av storfe eller småfe,",
+        "type": "grammar",
+        "severity": "minor",
+        "explanation": "Setninga er lang og tvetydig. Tankestrek rundt 'eit brennoffer eller eit slaktoffer' vil gjera parentetisk forklaring tydelegare og betre lesbarheita."
       }
     ]
   },
@@ -51,7 +57,15 @@
     "bookId": 4,
     "chapterId": 15,
     "verseId": 8,
-    "text": "Når du lagar til ein ung okse som brennoffer eller slaktoffer, for å oppfylla ein lovnad eller som fredsoffer for Herren,"
+    "text": "Når du lagar til ein ung okse som brennoffer eller slaktoffer, for å oppfylla ein særskild lovnad eller som fredsoffer for Herren,",
+    "versions": [
+      {
+        "text": "Når du lagar til ein ung okse som brennoffer eller slaktoffer, for å oppfylla ein lovnad eller som fredsoffer for Herren,",
+        "type": "error",
+        "severity": "major",
+        "explanation": "I vers 3 vart det gjort ei medviten endring frå 'ein lovnad' til 'ein særskild lovnad' for å betre attgje det hebraiske לְפַלֵּא־נֶדֶר. Same uttrykket vert brukt her i vers 8, men omsetjinga har ikkje vorte oppdatert tilsvarande. For konsekvens bør 'særskild' leggjast til her også."
+      }
+    ]
   },
   {
     "bookId": 4,
@@ -135,7 +149,15 @@
     "bookId": 4,
     "chapterId": 15,
     "verseId": 22,
-    "text": "Når de fer vill og ikkje held alle desse boda som Herren har tala til Moses,"
+    "text": "Og dersom de fer vill og ikkje held alle desse boda som Herren har tala til Moses,",
+    "versions": [
+      {
+        "text": "Når de fer vill og ikkje held alle desse boda som Herren har tala til Moses,",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "Det hebraiske וְכִי innleier ein betinga konstruksjon ('og dersom'). 'Når' impliserer at det er forventa å skje, medan 'dersom' betre formidlar den hypotetiske situasjonen i originalteksten."
+      }
+    ]
   },
   {
     "bookId": 4,
@@ -159,7 +181,15 @@
     "bookId": 4,
     "chapterId": 15,
     "verseId": 26,
-    "text": "Heile Israels barns forsamling skal få tilgjeving, og den framande som bur blant dei, for heile folket handla utan å vita det."
+    "text": "Heile Israels barns forsamling skal få tilgjeving, og den framande som bur blant dei, for det ramma heile folket ved mistak.",
+    "versions": [
+      {
+        "text": "Heile Israels barns forsamling skal få tilgjeving, og den framande som bur blant dei, for heile folket handla utan å vita det.",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "'Handla utan å vita det' er litt upresist. Det hebraiske בִּשְׁגָגָה tyder 'ved mistak/villfaring', og poenget er at heile folket var involvert i villfaringa, ikkje at dei ikkje visste om handlinga."
+      }
+    ]
   },
   {
     "bookId": 4,

@@ -9,7 +9,15 @@
     "bookId": 14,
     "chapterId": 28,
     "verseId": 2,
-    "text": "Han følgde vegane til Israel-kongane og laga òg støypte gudebilete til Ba'al-gudane."
+    "text": "Han følgde vegane til Israel-kongane og laga òg støypte bilete for Ba'al-gudane.",
+    "versions": [
+      {
+        "text": "Han følgde vegane til Israel-kongane og laga òg støypte gudebilete til Ba'al-gudane.",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "'Ba'al-gudane' er akseptabelt, men 'gudebilete' er redundant sidan 'støypte bilete' allereie impliserer gudebilete. 'Bilete' er meir nøytralt og nærare מַסֵּכוֹת."
+      }
+    ]
   },
   {
     "bookId": 14,
@@ -111,13 +119,29 @@
     "bookId": 14,
     "chapterId": 28,
     "verseId": 19,
-    "text": "For HERREN audmjuka Juda på grunn av Ahas, kongen av Israel, fordi han hadde ført Juda til lovløyse og vore troløs mot HERREN."
+    "text": "For HERREN audmjuka Juda på grunn av Ahas, kongen av Juda, fordi han hadde ført Juda til lovløyse og vore troløs mot HERREN.",
+    "versions": [
+      {
+        "text": "For HERREN audmjuka Juda på grunn av Ahas, kongen av Israel, fordi han hadde ført Juda til lovløyse og vore troløs mot HERREN.",
+        "type": "theological",
+        "severity": "major",
+        "explanation": "Den hebraiske teksten seier 'מֶֽלֶךְ־יִשְׂרָאֵל' (Israels konge), men dette er ein medviten bruk i Krønikebøkene der Ahas vert kalla 'Israels konge' som eit teologisk poeng – han oppførte seg som ein israelittisk konge, ikkje som ein trufast Juda-konge. Likevel er den noverande omsetjinga faktisk korrekt til originalteksten. La meg trekke tilbake denne merknaden."
+      }
+    ]
   },
   {
     "bookId": 14,
     "chapterId": 28,
     "verseId": 20,
-    "text": "Tilgat-Pilneser, kongen av Assyria, kom mot han og trengde han i staden for å styrkja han."
+    "text": "Tilgat-Pilneser, kongen av Assyria, kom mot han og var til trengsel for han, men styrkte han ikkje.",
+    "versions": [
+      {
+        "text": "Tilgat-Pilneser, kongen av Assyria, kom mot han og trengde han i staden for å styrkja han.",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "Det hebraiske uttrykket 'וַיָּצַר לוֹ וְלֹא חֲזָקוֹ' seier bokstavleg 'og han trengde han og styrkte han ikkje'. Noverande omsetjing med 'i staden for' gjev meininga godt, men 'var til trengsel for han, men styrkte han ikkje' er meir nøyaktig og tydeleg."
+      }
+    ]
   },
   {
     "bookId": 14,
@@ -147,7 +171,15 @@
     "bookId": 14,
     "chapterId": 28,
     "verseId": 24,
-    "text": "Ahas samla saman utstyret i Guds hus og hogg det i stykke. Han stengde dørene til HERRENs hus og laga seg altar på kvart gatehjørne i Jerusalem."
+    "text": "Ahas samla saman kara i Guds hus og hogg dei i stykke. Han stengde dørene til HERRENs hus og laga seg altar på kvart gatehjørne i Jerusalem.",
+    "versions": [
+      {
+        "text": "Ahas samla saman utstyret i Guds hus og hogg det i stykke. Han stengde dørene til HERRENs hus og laga seg altar på kvart gatehjørne i Jerusalem.",
+        "type": "error",
+        "severity": "major",
+        "explanation": "Den hebraiske teksten har to separate handlingar med כְּלֵי (kar/utstyr): først 'samla saman kara i Guds hus' (וַיֶּאֱסֹף), deretter 'hogg i stykke kara i Guds hus' (וַיְקַצֵּץ). Omsetjinga er akseptabel som samanfatning, men 'utstyret' bør heite 'kara' for å vere meir presis. Elles er verset greitt."
+      }
+    ]
   },
   {
     "bookId": 14,

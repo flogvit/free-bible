@@ -27,7 +27,15 @@
     "bookId": 4,
     "chapterId": 11,
     "verseId": 5,
-    "text": "Vi hugsar fisken vi åt i Egypt utan å betala, agurkane, melonane, purren, lauk og kvitlauk."
+    "text": "Vi hugsar fisken vi åt i Egypt utan å betala, agurkane, melonane, purren, løken og kvitlauken.",
+    "versions": [
+      {
+        "text": "Vi hugsar fisken vi åt i Egypt utan å betala, agurkane, melonane, purren, lauk og kvitlauk.",
+        "type": "grammar",
+        "severity": "minor",
+        "explanation": "Det hebraiske har bestemt form (הַבְּצָלִים, הַשּׁוּמִים) på alle grønsakene i oppramsinga. Dei to siste bør også ha bestemt form for konsistens: 'løken og kvitlauken' i staden for 'lauk og kvitlauk'."
+      }
+    ]
   },
   {
     "bookId": 4,
@@ -57,7 +65,15 @@
     "bookId": 4,
     "chapterId": 11,
     "verseId": 9,
-    "text": "Når dogga fall over leiren om natta, fall mannaen saman med henne."
+    "text": "Når dogga fall over leiren om natta, fall mannaen ned saman med henne.",
+    "versions": [
+      {
+        "text": "Når dogga fall over leiren om natta, fall mannaen saman med henne.",
+        "type": "grammar",
+        "severity": "minor",
+        "explanation": "Det hebraiske יֵרֵד ('kom ned') indikerer ei nedoverrørsle. Å leggja til 'ned' gjer omsettinga meir presis og naturleg."
+      }
+    ]
   },
   {
     "bookId": 4,
@@ -117,7 +133,15 @@
     "bookId": 4,
     "chapterId": 11,
     "verseId": 18,
-    "text": "Til folket skal du seia: Helga dykk til i morgon, så skal de få kjøt å eta. For de har gråte for øyro til Herren og sagt: Kven kan gje oss kjøt? Vi hadde det betre i Egypt. Herren skal gje dykk kjøt, og de skal eta."
+    "text": "Til folket skal du seia: Helga dykk til i morgon, så skal de få kjøt å eta. For de har gråte for øyro til Herren og sagt: Kven kan gje oss kjøt? Vi hadde det betre i Egypt! Herren skal gje dykk kjøt, og de skal eta.",
+    "versions": [
+      {
+        "text": "Til folket skal du seia: Helga dykk til i morgon, så skal de få kjøt å eta. For de har gråte for øyro til Herren og sagt: Kven kan gje oss kjøt? Vi hadde det betre i Egypt. Herren skal gje dykk kjøt, og de skal eta.",
+        "type": "grammar",
+        "severity": "minor",
+        "explanation": "Mindre stilistisk forbetring: Utsegna 'Vi hadde det betre i Egypt' er eit utrop og passar betre med utropsteikn. Men det hebraiske כִּי־טוֹב לָנוּ בְּמִצְרָיִם er ein påstand, så dette er berre eit forslag."
+      }
+    ]
   },
   {
     "bookId": 4,
@@ -135,7 +159,15 @@
     "bookId": 4,
     "chapterId": 11,
     "verseId": 21,
-    "text": "Moses sa: «Folket eg er i blant, tel seks hundre tusen fotfolk, og du seier: Eg vil gje dei kjøt, og dei skal eta i ein heil månad!"
+    "text": "Moses sa: «Seks hundre tusen fotfolk tel det folket eg er i blant, og du seier: Eg vil gje dei kjøt, og dei skal eta i ein heil månad!",
+    "versions": [
+      {
+        "text": "Moses sa: «Folket eg er i blant, tel seks hundre tusen fotfolk, og du seier: Eg vil gje dei kjøt, og dei skal eta i ein heil månad!",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "I den hebraiske teksten kjem talet 'seks hundre tusen fotfolk' først for retorisk vekt – Moses understrekar det enorme talet. Å flytta dette fram i setninga speglar betre den hebraiske ordstillinga og retoriske krafta."
+      }
+    ]
   },
   {
     "bookId": 4,
@@ -213,7 +245,15 @@
     "bookId": 4,
     "chapterId": 11,
     "verseId": 33,
-    "text": "Men medan kjøtet enno var mellom tennene deira, før det var fortært, flamma vreiden til Herren opp mot folket, og Herren slo folket med ei svært stor plage."
+    "text": "Men medan kjøtet enno var mellom tennene deira, før det var tygt ferdig, flamma vreiden til Herren opp mot folket, og Herren slo folket med ei svært stor plage.",
+    "versions": [
+      {
+        "text": "Men medan kjøtet enno var mellom tennene deira, før det var fortært, flamma vreiden til Herren opp mot folket, og Herren slo folket med ei svært stor plage.",
+        "type": "error",
+        "severity": "major",
+        "explanation": "Det hebraiske יִכָּרֵת (frå כרת, 'skjera av/av') tyder her at kjøtet ikkje var ferdig tygt/kutta ned – altså før dei hadde fått svelgja det. 'Fortært' gjev inntrykk av at heile måltidet var ferdig, medan poenget er at dei knapt hadde byrja tyggja. 'Før det var tygt ferdig' er meir presist."
+      }
+    ]
   },
   {
     "bookId": 4,

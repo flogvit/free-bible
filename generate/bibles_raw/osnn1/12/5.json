@@ -33,7 +33,15 @@
     "bookId": 12,
     "chapterId": 5,
     "verseId": 6,
-    "text": "Han kom med brevet til kongen i Israel. Der stod det: «Når dette brevet kjem til deg, vil du sjå at eg har sendt tenaren min Na'aman til deg, så du kan lækja han for spedalsken hans.»"
+    "text": "Han kom med brevet til kongen i Israel. Der stod det: «Når dette brevet kjem til deg, sjå, eg sender tenaren min Na'aman til deg, så du kan lækja han for spedalsken hans.»",
+    "versions": [
+      {
+        "text": "Han kom med brevet til kongen i Israel. Der stod det: «Når dette brevet kjem til deg, vil du sjå at eg har sendt tenaren min Na'aman til deg, så du kan lækja han for spedalsken hans.»",
+        "type": "error",
+        "severity": "major",
+        "explanation": "Det hebraiske הִנֵּה שָׁלַחְתִּי betyr 'sjå, eg sender' (perfektum med hinne-partikkelen for å markere noko som skjer no/nært framtid). 'Vil du sjå at eg har sendt' er ein unødvendig omskriving som endrar tydinga."
+      }
+    ]
   },
   {
     "bookId": 12,
@@ -63,7 +71,15 @@
     "bookId": 12,
     "chapterId": 5,
     "verseId": 11,
-    "text": "Men Na'aman vart sint og gjekk bort. Han sa: «Sjå, eg tenkte han ville koma ut til meg, stå der og ropa på namnet til Herren sin Gud, sveipa handa si over staden og lækja den spedalske.»"
+    "text": "Men Na'aman vart sint og gjekk bort. Han sa: «Sjå, eg tenkte han ville koma ut til meg, stå der og ropa på namnet til Herren sin Gud, føra handa si over det sjuke staden og lækja spedalsken.»",
+    "versions": [
+      {
+        "text": "Men Na'aman vart sint og gjekk bort. Han sa: «Sjå, eg tenkte han ville koma ut til meg, stå der og ropa på namnet til Herren sin Gud, sveipa handa si over staden og lækja den spedalske.»",
+        "type": "error",
+        "severity": "minor",
+        "explanation": "Det hebraiske אֶל־הַמָּקוֹם betyr 'over staden/plassen' og refererer til den sjuke staden på kroppen, ikkje ein geografisk stad. 'Sveipa' er litt uvanleg; 'føra' er meir naturleg for הֵנִיף. Dessutan er 'den spedalske' tvetydig – det hebraiske הַמְּצֹרָע refererer her til spedalsken/sjukdomen, ikkje personen."
+      }
+    ]
   },
   {
     "bookId": 12,
@@ -99,7 +115,15 @@
     "bookId": 12,
     "chapterId": 5,
     "verseId": 17,
-    "text": "Då sa Na'aman: «Om ikkje, så lat tenaren din få så mykje jord som to muldyr kan bera. For tenaren din vil ikkje lenger ofra brennoffer eller slaktoffer til andre gudar, men berre til Herren."
+    "text": "Då sa Na'aman: «Om ikkje, så lat tenaren din få så mykje jord som to muldyr kan bera. For tenaren din vil ikkje lenger bera fram brennoffer eller slaktoffer til andre gudar, men berre til Herren.",
+    "versions": [
+      {
+        "text": "Då sa Na'aman: «Om ikkje, så lat tenaren din få så mykje jord som to muldyr kan bera. For tenaren din vil ikkje lenger ofra brennoffer eller slaktoffer til andre gudar, men berre til Herren.",
+        "type": "grammar",
+        "severity": "minor",
+        "explanation": "'Bera fram' er ein meir idiomatisk og korrekt norsk nynorsk uttrykksmåte for å ofre enn berre 'ofra'. Dette er ein stilistisk forbetring."
+      }
+    ]
   },
   {
     "bookId": 12,
@@ -111,7 +135,15 @@
     "bookId": 12,
     "chapterId": 5,
     "verseId": 19,
-    "text": "Elisja sa til han: «Gå i fred.» Så drog Na'aman frå han eit stykke."
+    "text": "Elisja sa til han: «Gå i fred.» Og Na'aman drog frå han eit stykke veg.",
+    "versions": [
+      {
+        "text": "Elisja sa til han: «Gå i fred.» Så drog Na'aman frå han eit stykke.",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "'Eit stykke veg' er meir presist for כִּבְרַת־אָרֶץ (eit stykke land/veg) enn berre 'eit stykke'. Dessutan er 'Og' meir forteljande enn 'Så' her, og gjer teksten meir tru mot den hebraiske narrative stilen med vav-konsekutiv."
+      }
+    ]
   },
   {
     "bookId": 12,

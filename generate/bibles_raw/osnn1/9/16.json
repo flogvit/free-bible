@@ -33,7 +33,15 @@
     "bookId": 9,
     "chapterId": 16,
     "verseId": 6,
-    "text": "Då dei kom, såg han Eliab og tenkte: «Sanneleg, her står Herrens salva framfor han.»"
+    "text": "Då dei kom, såg han Eliab og tenkte: «Sanneleg, her framfor Herren står den han har salva.»",
+    "versions": [
+      {
+        "text": "Då dei kom, såg han Eliab og tenkte: «Sanneleg, her står Herrens salva framfor han.»",
+        "type": "error",
+        "severity": "major",
+        "explanation": "Den noverande omsettinga er noko uklar. Det hebraiske 'אַךְ נֶגֶד יְהוָה מְשִׁיחוֹ' betyr 'Sanneleg, framfor Herren står den han har salva' – altså Samuel tenkte at Eliab var den Herren ville salva. 'Herrens salva' er grammatisk uklart på nynorsk. Dessutan er 'framfor han' feil – det hebraiske 'נֶגֶד יְהוָה' betyr 'framfor Herren', ikkje 'framfor han'."
+      }
+    ]
   },
   {
     "bookId": 9,
@@ -87,11 +95,17 @@
     "bookId": 9,
     "chapterId": 16,
     "verseId": 14,
-    "text": "Herrens Ande hadde vike frå Saul, og ei vond ånd send frå Herren skremde han.",
+    "text": "Herrens Ande hadde vike frå Saul, og ei vond ånd sendt frå Herren skremde han.",
     "versions": [
       {
         "text": "Herrens Ande hadde vike frå Saul, og ei vond ånd frå Herren plaga han.",
         "explanation": "Det hebraiske בִּעֲתַתּוּ (frå בעת) betyr 'skremde' eller 'terroriserte', ikkje berre 'plaga'. 'Skremde' er meir presist. I tillegg er 'מֵאֵת' (frå) betre omsett med 'send frå' for å visa at ånda kjem frå Herren."
+      },
+      {
+        "text": "Herrens Ande hadde vike frå Saul, og ei vond ånd send frå Herren skremde han.",
+        "type": "grammar",
+        "severity": "critical",
+        "explanation": "'Send' er feil bøying – det skal vera 'sendt' (perfektum partisipp av 'senda') i denne samanhengen. 'Send' er imperativform, medan 'sendt' er partisippforma som trengst her."
       }
     ]
   },
@@ -99,7 +113,15 @@
     "bookId": 9,
     "chapterId": 16,
     "verseId": 15,
-    "text": "Tenarane til Saul sa til han: «Sjå, ei vond ånd frå Gud plagar deg.»"
+    "text": "Tenarane til Saul sa til han: «Sjå, ei vond ånd frå Gud skremmer deg.»",
+    "versions": [
+      {
+        "text": "Tenarane til Saul sa til han: «Sjå, ei vond ånd frå Gud plagar deg.»",
+        "type": "error",
+        "severity": "minor",
+        "explanation": "Det hebraiske מְבַעִתֶּךָ (frå בעת) betyr 'skremmer deg', ikkje 'plagar deg'. I vers 14 vart dette allereie korrigert frå 'plaga' til 'skremde' for same hebraiske rot. Omsetjinga bør vera konsistent."
+      }
+    ]
   },
   {
     "bookId": 9,

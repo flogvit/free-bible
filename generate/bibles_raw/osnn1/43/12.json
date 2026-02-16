@@ -39,7 +39,15 @@
     "bookId": 43,
     "chapterId": 12,
     "verseId": 7,
-    "text": "Då sa Jesus: «Lat henne vera! Ho har teke vare på salven til gravferdsdagen min."
+    "text": "Lat henne vera! Lat henne få gøyma det til gravferdsdagen min.",
+    "versions": [
+      {
+        "text": "Då sa Jesus: «Lat henne vera! Ho har teke vare på salven til gravferdsdagen min.",
+        "type": "error",
+        "severity": "major",
+        "explanation": "Den greske teksten med ἵνα + konjunktiv (τηρήσῃ) uttrykkjer ein føremålssetning: 'for at ho kan ta vare på det til gravferdsdagen min.' Den noverande omsetjinga 'Ho har teke vare på salven' gjev inntrykk av at ho allereie har gjort det, medan grunnteksten peikar framover mot gravferda. Meininga er at ho skal få lov til å halda av salven (eller bruka salven) med tanke på gravferda hans."
+      }
+    ]
   },
   {
     "bookId": 43,
@@ -171,11 +179,17 @@
     "bookId": 43,
     "chapterId": 12,
     "verseId": 27,
-    "text": "No er sjela mi djupt gripen. Kva skal eg seia? Far, frels meg frå denne timen? Nei, det er difor eg er komen til denne timen.",
+    "text": "No er sjela mi djupt uroa. Kva skal eg seia? Far, frels meg frå denne timen? Nei, det er difor eg er komen til denne timen.",
     "versions": [
       {
         "text": "No er sjela mi full av uro. Kva skal eg seia? Far, frels meg frå denne timen? Nei, det er difor eg er komen til denne timen.",
         "explanation": "Det greske τετάρακται (perfektum av ταράσσω) tyder 'rista opp, uroa, opprørt'. 'Full av uro' er akseptabelt, men 'djupt gripen' eller 'skjelven' kan fanga den djupare kjenslemessige dimensjonen betre for munnleg framføring."
+      },
+      {
+        "text": "No er sjela mi djupt gripen. Kva skal eg seia? Far, frels meg frå denne timen? Nei, det er difor eg er komen til denne timen.",
+        "type": "error",
+        "severity": "minor",
+        "explanation": "Det greske τετάρακται (frå ταράσσω) tyder 'rista opp, uroa, opprørt' – det viser til angst og uro, ikkje å vera 'gripen' (som på norsk ofte har ein positiv klang, som å vera rørt). 'Djupt uroa' eller 'djupt oppørt' fangar den negative, angstfylte tonen betre. NB: Versjonshistorikken viser at 'full av uro' vart endra til 'djupt gripen', men 'djupt uroa' er ein annan og meir presis variant."
       }
     ]
   },
@@ -213,7 +227,15 @@
     "bookId": 43,
     "chapterId": 12,
     "verseId": 33,
-    "text": "Dette sa han for å visa kva slag død han skulle døy."
+    "text": "Dette sa han for å visa kva slags død han skulle døy.",
+    "versions": [
+      {
+        "text": "Dette sa han for å visa kva slag død han skulle døy.",
+        "type": "grammar",
+        "severity": "minor",
+        "explanation": "På nynorsk heiter det 'kva slags' (med -s), ikkje 'kva slag' når det står framfor eit substantiv i ubestemt form."
+      }
+    ]
   },
   {
     "bookId": 43,
@@ -225,7 +247,15 @@
     "bookId": 43,
     "chapterId": 12,
     "verseId": 35,
-    "text": "Jesus sa til dei: «Enno ei lita stund er lyset mellom dykk. Gå medan de har lyset, så ikkje mørkret skal overmanna dykk. Den som går i mørkret, veit ikkje kvar han går."
+    "text": "Gå medan de har lyset, så ikkje mørkret skal overmanna dykk. Den som går i mørkret, veit ikkje kvar han er på veg.",
+    "versions": [
+      {
+        "text": "Jesus sa til dei: «Enno ei lita stund er lyset mellom dykk. Gå medan de har lyset, så ikkje mørkret skal overmanna dykk. Den som går i mørkret, veit ikkje kvar han går.",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "Det greske ποῦ ὑπάγει tyder 'kvar han går' i tydinga 'kvar han er på veg' (retning), ikkje berre 'kvar han går' (stad). Den noverande omsetjinga 'veit ikkje kvar han går' er akseptabel, men 'kvar han er på veg' kan vera noko tydelegare."
+      }
+    ]
   },
   {
     "bookId": 43,
@@ -273,7 +303,15 @@
     "bookId": 43,
     "chapterId": 12,
     "verseId": 42,
-    "text": "Likevel var det mange, jamvel av rådsherrane, som trudde på han. Men på grunn av farisearane vedkjende dei det ikkje, for dei ville ikkje verta utstøytte frå synagogen."
+    "text": "Likevel var det mange, jamvel av rådsherrane, som trudde på han. Men på grunn av farisearane vedkjende dei seg ikkje til det, så dei ikkje skulle verta utstøytte frå synagogen.",
+    "versions": [
+      {
+        "text": "Likevel var det mange, jamvel av rådsherrane, som trudde på han. Men på grunn av farisearane vedkjende dei det ikkje, for dei ville ikkje verta utstøytte frå synagogen.",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "Det greske ἵνα μὴ ἀποσυνάγωγοι γένωνται uttrykkjer ein føremålssetning ('for at dei ikkje skulle'), ikkje ei vilje ('dei ville ikkje'). Dessutan er 'vedkjende dei det ikkje' litt uklart; 'vedkjende dei seg ikkje til det' er meir naturleg nynorsk."
+      }
+    ]
   },
   {
     "bookId": 43,
@@ -315,7 +353,15 @@
     "bookId": 43,
     "chapterId": 12,
     "verseId": 49,
-    "text": "For eg har ikkje tala av meg sjølv. Far som sende meg, han har gjeve meg bod om kva eg skal seia og tala."
+    "text": "Far som sende meg, han har gjeve meg påbod om kva eg skal seia og tala.",
+    "versions": [
+      {
+        "text": "For eg har ikkje tala av meg sjølv. Far som sende meg, han har gjeve meg bod om kva eg skal seia og tala.",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "Det greske ἐντολή tyder 'befaling, påbod, bud'. 'Bod' åleine kan vera tvitydig på nynorsk (kan også tyda 'tilbod, melding'). 'Påbod' er tydelegare og meir presist."
+      }
+    ]
   },
   {
     "bookId": 43,

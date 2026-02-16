@@ -33,11 +33,17 @@
     "bookId": 43,
     "chapterId": 8,
     "verseId": 6,
-    "text": "Men Jesus bøygde seg ned og skreiv med fingeren på jorda.",
+    "text": "Dette sa dei for å setja han på prøve, så dei kunne ha noko å klaga han for. Men Jesus bøygde seg ned og skreiv med fingeren på jorda.",
     "versions": [
       {
         "text": "Dette sa dei for å setja han på prøve, så dei kunne ha noko å klaga han for. Men Jesus bøygde seg ned og skreiv med fingeren på jorda, utan å lata som han høyrde dei.",
         "explanation": "Frasen 'μὴ προσποιούμενος' er tekstkritisk usikker og finst ikkje i dei eldste handskriftene. Mange moderne omsetjingar utelet denne frasen. Om ein vel å ha den med, er 'utan å lata som han høyrde dei' ei tolking som ikkje heilt svarar til den greske teksten (som heller tyder 'utan å bry seg om det' eller 'let som ingenting')."
+      },
+      {
+        "text": "Men Jesus bøygde seg ned og skreiv med fingeren på jorda.",
+        "type": "error",
+        "severity": "major",
+        "explanation": "Den noverande omsetjinga manglar den første delen av verset: 'τοῦτο δὲ ἔλεγον πειράζοντες αὐτόν, ἵνα ἔχωσιν κατηγορεῖν αὐτοῦ'. Det er rett at 'μὴ προσποιούμενος' er utelaten (tekstkritisk grunn), men den første setninga om kvifor dei sa dette bør vera med. Merk at den tidlegare versjonen hadde denne setninga med, men den noverande versjonen har mista ho i revisjonen. Sidan dette er ein vesentleg del av teksten, bør ho leggjast til att, men frasen om 'μὴ προσποιούμενος' er framleis utelaten i samsvar med intensjonen bak revisjonen."
       }
     ]
   },
@@ -69,7 +75,15 @@
     "bookId": 43,
     "chapterId": 8,
     "verseId": 10,
-    "text": "Jesus rette seg opp og såg ingen andre enn kvinna. Han sa til henne: «Kvinne, kvar er dei som klaga deg? Har ingen dømt deg?»"
+    "text": "Jesus rette seg opp og såg ingen andre enn kvinna. Han sa til henne: «Kvinne, kvar er klagarane dine? Har ingen dømt deg?»",
+    "versions": [
+      {
+        "text": "Jesus rette seg opp og såg ingen andre enn kvinna. Han sa til henne: «Kvinne, kvar er dei som klaga deg? Har ingen dømt deg?»",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "Det greske 'οἱ κατήγοροί σου' tyder 'klagarane dine' (substantiv), ikkje 'dei som klaga deg' (relativsetning). 'Klagarane dine' er meir presist og naturleg nynorsk."
+      }
+    ]
   },
   {
     "bookId": 43,
@@ -345,7 +359,15 @@
     "bookId": 43,
     "chapterId": 8,
     "verseId": 50,
-    "text": "Eg søkjer ikkje mi eiga ære. Det finst ein som søkjer henne og dømmer."
+    "text": "Eg søkjer ikkje mi eiga ære. Det finst ein som søkjer henne og dømer.",
+    "versions": [
+      {
+        "text": "Eg søkjer ikkje mi eiga ære. Det finst ein som søkjer henne og dømmer.",
+        "type": "grammar",
+        "severity": "major",
+        "explanation": "'Dømmer' er bokmålsform. På nynorsk skal det vera 'dømer' (presens av 'døma'). Same feil er retta andre stader i teksten (v. 11, 15, 16)."
+      }
+    ]
   },
   {
     "bookId": 43,
@@ -369,7 +391,15 @@
     "bookId": 43,
     "chapterId": 8,
     "verseId": 54,
-    "text": "Jesus svara: «Om eg ærar meg sjølv, er æra mi ingenting. Det er Far min som ærar meg, han som de seier er Gud dykkar."
+    "text": "Jesus svara: «Om eg ærar meg sjølv, er æra mi ingenting. Det er Far min som ærar meg, han som de seier er Guden dykkar.",
+    "versions": [
+      {
+        "text": "Jesus svara: «Om eg ærar meg sjølv, er æra mi ingenting. Det er Far min som ærar meg, han som de seier er Gud dykkar.",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "Tekstvarianten har 'θεὸς ἡμῶν' (Guden vår) men dei fleste kritiske utgåver les 'ὑμῶν' (dykkar). Omsetjinga har rett 'dykkar', men gresk har her artikkelen 'ὁ θεός' implisitt, slik at 'Guden dykkar' er meir presist. Dette er likevel ein mindre detalj."
+      }
+    ]
   },
   {
     "bookId": 43,

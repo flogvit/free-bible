@@ -39,7 +39,15 @@
     "bookId": 9,
     "chapterId": 18,
     "verseId": 6,
-    "text": "Då dei kom heim att, etter at David hadde slege filistaren, gjekk kvinnene ut frå alle byane i Israel for å møta kong Saul med song og dans, med tamburinar, med glede og med trianglar."
+    "text": "kom kvinnene ut frå alle byane i Israel med song og dans for å møta kong Saul, med tamburinar, med glede og med trianglar.",
+    "versions": [
+      {
+        "text": "Då dei kom heim att, etter at David hadde slege filistaren, gjekk kvinnene ut frå alle byane i Israel for å møta kong Saul med song og dans, med tamburinar, med glede og med trianglar.",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "Ordrekkjefølgja i den hebraiske teksten har 'med song og dans' som skildring av korleis kvinnene kom ut, ikkje som formålet med å møta Saul. Ei lita omstokking gjer teksten meir trufast mot originalen. Dessutan er 'kom ... ut' meir nøyaktig enn 'gjekk ... ut' for וַתֵּצֶאנָה i denne konteksten."
+      }
+    ]
   },
   {
     "bookId": 9,
@@ -75,7 +83,15 @@
     "bookId": 9,
     "chapterId": 18,
     "verseId": 11,
-    "text": "Saul kasta spydet og sa: «Eg skal spidda David til veggen!» Men David bøygde seg unna to gonger."
+    "text": "Saul kasta spydet og tenkte: «Eg skal naglia David til veggen!» Men David bøygde seg unna to gonger.",
+    "versions": [
+      {
+        "text": "Saul kasta spydet og sa: «Eg skal spidda David til veggen!» Men David bøygde seg unna to gonger.",
+        "type": "error",
+        "severity": "major",
+        "explanation": "Det hebraiske וַיֹּאמֶר kan bety 'han sa' eller 'han tenkte'. I konteksten er det meir naturleg at Saul tenkte dette for seg sjølv medan han kasta spydet, ikkje at han sa det høgt. Men dette er eit tolkingsspørsmål. Viktigare: 'spidda' er eit uvanleg ord – 'naglia' eller 'festa' er meir naturleg nynorsk."
+      }
+    ]
   },
   {
     "bookId": 9,
@@ -177,13 +193,29 @@
     "bookId": 9,
     "chapterId": 18,
     "verseId": 26,
-    "text": "Då tenarane fortalde David desse orda, var det etter David sitt ynskje å verta svigerson til kongen. Før fristen var ute,"
+    "text": "Då tenarane fortalde David desse orda, tykte David godt om å verta svigerson til kongen. Og dagane var enno ikkje ute,",
+    "versions": [
+      {
+        "text": "Då tenarane fortalde David desse orda, var det etter David sitt ynskje å verta svigerson til kongen. Før fristen var ute,",
+        "type": "error",
+        "severity": "major",
+        "explanation": "Vers 26 og 27 er delt opp slik at vers 26 endar med 'Før fristen var ute,' som ein ufullstendig setning. Den hebraiske teksten har וְלֹא מָלְאוּ הַיָּמִים ('og dagane var ikkje fylte') som ei tidsnemning. Dessutan: sidan vers 20 brukar 'tykte han godt om det' for same uttrykk (וַיִּשַׁר ... בְּעֵינָיו), bør vers 26 bruka tilsvarande uttrykk for samanheng."
+      }
+    ]
   },
   {
     "bookId": 9,
     "chapterId": 18,
     "verseId": 27,
-    "text": "tok David ut og drog av stad med mennene sine og slo to hundre filistarar. David kom med førhuda deira og la dei fram for kongen i fullt tal, så han kunne verta svigerson til kongen. Då gav Saul han Mikal, dotter si, til kone."
+    "text": "drog David ut med mennene sine og slo to hundre filistarar. David kom med førhuda deira og la dei fram for kongen i fullt tal, så han kunne verta svigerson til kongen. Då gav Saul han Mikal, dotter si, til kone.",
+    "versions": [
+      {
+        "text": "tok David ut og drog av stad med mennene sine og slo to hundre filistarar. David kom med førhuda deira og la dei fram for kongen i fullt tal, så han kunne verta svigerson til kongen. Då gav Saul han Mikal, dotter si, til kone.",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "'tok David ut og drog av stad' er redundant. Det hebraiske וַיָּקָם דָּוִד וַיֵּלֶךְ betyr 'David stod opp og gjekk' – 'drog David ut' dekkjer begge verb godt."
+      }
+    ]
   },
   {
     "bookId": 9,

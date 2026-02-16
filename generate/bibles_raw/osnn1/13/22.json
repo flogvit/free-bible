@@ -15,7 +15,15 @@
     "bookId": 13,
     "chapterId": 22,
     "verseId": 3,
-    "text": "David skaffa store mengder jern til naglar og til portdørene og til samanføyingane, og kopar i slike mengder at det ikkje kunne vegast."
+    "text": "David skaffa store mengder jern til naglane for portdørene og til samanføyingane, og kopar i slike mengder at det ikkje kunne vegast.",
+    "versions": [
+      {
+        "text": "David skaffa store mengder jern til naglar og til portdørene og til samanføyingane, og kopar i slike mengder at det ikkje kunne vegast.",
+        "type": "grammar",
+        "severity": "minor",
+        "explanation": "Det hebraiske uttrykket לַֽמִּסְמְרִ֞ים לְדַלְת֧וֹת הַשְּׁעָרִ֛ים tyder 'naglar til portdørene', ikkje 'naglar og portdører' som to separate ting. Naglane er spesifikt til portdørene. Samanføyingane er eit tredje element."
+      }
+    ]
   },
   {
     "bookId": 13,
@@ -135,7 +143,15 @@
     "bookId": 13,
     "chapterId": 22,
     "verseId": 18,
-    "text": "«Er ikkje Herren dykkar Gud med dykk? Han har gjeve dykk fred på alle kantar. For han har gjeve innbyggjarane i landet i mi hand, og landet er lagt under Herren og folket hans."
+    "text": "«Er ikkje Herren dykkar Gud med dykk? Han har gjeve dykk ro på alle kantar. For han har gjeve innbyggjarane i landet i mi hand, og landet er lagt under Herren og folket hans.",
+    "versions": [
+      {
+        "text": "«Er ikkje Herren dykkar Gud med dykk? Han har gjeve dykk fred på alle kantar. For han har gjeve innbyggjarane i landet i mi hand, og landet er lagt under Herren og folket hans.",
+        "type": "error",
+        "severity": "major",
+        "explanation": "Det hebraiske וְהֵנִ֥יחַ (frå נוח) tyder 'gje ro/kvile', ikkje 'gje fred'. Sidan same rot-ordet vert brukt her som i vers 9, der endringa nettopp vart gjort frå 'fred' til 'ro' av same grunn, bør same prinsipp gjelda her for konsistens."
+      }
+    ]
   },
   {
     "bookId": 13,

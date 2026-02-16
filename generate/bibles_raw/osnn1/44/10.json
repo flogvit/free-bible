@@ -111,7 +111,15 @@
     "bookId": 44,
     "chapterId": 10,
     "verseId": 17,
-    "text": "Medan Peter grunda på kva synet han hadde sett kunne tyda, stod dei mennene som var sende frå Kornelius ved porten. Dei hadde spurt seg fram til huset til Simon."
+    "text": "Medan Peter grunda på kva synet han hadde sett kunne tyda, stod brått dei mennene som Kornelius hadde sendt ved porten. Dei hadde spurt seg fram til huset til Simon.",
+    "versions": [
+      {
+        "text": "Medan Peter grunda på kva synet han hadde sett kunne tyda, stod dei mennene som var sende frå Kornelius ved porten. Dei hadde spurt seg fram til huset til Simon.",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "Grunnteksten har 'ἰδοὺ' (sjå/brått) som markerer eit uventa vendepunkt. Dette bør reflekterast i omsetjinga. I tillegg er 'οἱ ἀπεσταλμένοι ὑπὸ τοῦ Κορνηλίου' meir presist 'som Kornelius hadde sendt' enn 'som var sende frå Kornelius'."
+      }
+    ]
   },
   {
     "bookId": 44,
@@ -159,7 +167,15 @@
     "bookId": 44,
     "chapterId": 10,
     "verseId": 25,
-    "text": "Då Peter gjekk inn, kom Kornelius han i møte, fall ned for føtene hans og tilbad."
+    "text": "Då Peter kom inn, gjekk Kornelius han i møte, fall ned for føtene hans og tilbad.",
+    "versions": [
+      {
+        "text": "Då Peter gjekk inn, kom Kornelius han i møte, fall ned for føtene hans og tilbad.",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "Grunnteksten bruker 'εἰσελθεῖν' (å gå inn) om Peter og 'συναντήσας' (gjekk i møte) om Kornelius. Sidan Kornelius er verten som møter gjesten, er det meir naturleg å seia 'Då Peter kom inn' og 'gjekk Kornelius han i møte'."
+      }
+    ]
   },
   {
     "bookId": 44,
@@ -189,7 +205,15 @@
     "bookId": 44,
     "chapterId": 10,
     "verseId": 30,
-    "text": "Kornelius svara: «For fire dagar sidan, på denne tida, bad eg i den niande timen i huset mitt. Då stod det plutseleg ein mann framfor meg i skinande klede.»"
+    "text": "Kornelius svara: «For fire dagar sidan, på denne tida av dagen, bad eg den niande bønetimen i huset mitt. Då stod det plutseleg ein mann framfor meg i skinande klede.»",
+    "versions": [
+      {
+        "text": "Kornelius svara: «For fire dagar sidan, på denne tida, bad eg i den niande timen i huset mitt. Då stod det plutseleg ein mann framfor meg i skinande klede.»",
+        "type": "error",
+        "severity": "major",
+        "explanation": "Uttrykket 'μέχρι ταύτης τῆς ὥρας' tyder 'fram til denne timen/dette klokkeslettet', altså same tid på dagen. 'På denne tida av dagen' formidlar dette meir presist enn berre 'på denne tida'."
+      }
+    ]
   },
   {
     "bookId": 44,
@@ -303,13 +327,29 @@
     "bookId": 44,
     "chapterId": 10,
     "verseId": 44,
-    "text": "Medan Peter enno tala desse orda, fall Den heilage ande på alle som høyrde bodskapen."
+    "text": "Medan Peter enno tala desse orda, fall Den Heilage Ande på alle som høyrde ordet.",
+    "versions": [
+      {
+        "text": "Medan Peter enno tala desse orda, fall Den heilage ande på alle som høyrde bodskapen.",
+        "type": "error",
+        "severity": "major",
+        "explanation": "'Den Heilage Ande' bør skrivast med stor H og A som eigennamn, i samsvar med norsk bibeltradisjon. I tillegg bør 'τὸν λόγον' (ordet) ikkje omsetjast som 'bodskapen'."
+      }
+    ]
   },
   {
     "bookId": 44,
     "chapterId": 10,
     "verseId": 45,
-    "text": "Dei truande av dei omskorne som hadde kome med Peter, vart forskrekka over at Den heilage andens gåve vart aust ut også over heidningane."
+    "text": "Dei truande av dei omskorne som hadde kome med Peter, vart forskrekka over at Den Heilage Andens gåve vart aust ut også over heidningane.",
+    "versions": [
+      {
+        "text": "Dei truande av dei omskorne som hadde kome med Peter, vart forskrekka over at Den heilage andens gåve vart aust ut også over heidningane.",
+        "type": "grammar",
+        "severity": "minor",
+        "explanation": "'Den Heilage Ande' bør konsekvent skrivast med store bokstavar som eigennamn."
+      }
+    ]
   },
   {
     "bookId": 44,
@@ -321,7 +361,15 @@
     "bookId": 44,
     "chapterId": 10,
     "verseId": 47,
-    "text": "«Kan vel nokon nekta desse vatnet og hindra at dei vert døypte, dei som har fått Den heilage ande liksom vi?»"
+    "text": "«Kan vel nokon nekta desse vatnet og hindra at dei vert døypte, dei som har fått Den Heilage Ande liksom vi?»",
+    "versions": [
+      {
+        "text": "«Kan vel nokon nekta desse vatnet og hindra at dei vert døypte, dei som har fått Den heilage ande liksom vi?»",
+        "type": "grammar",
+        "severity": "minor",
+        "explanation": "Konsekvent bruk av store bokstavar i 'Den Heilage Ande' som eigennamn."
+      }
+    ]
   },
   {
     "bookId": 44,

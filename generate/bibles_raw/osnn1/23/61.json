@@ -51,7 +51,15 @@
     "bookId": 23,
     "chapterId": 61,
     "verseId": 5,
-    "text": "Framande skal stå og gjeta sauene dykkar, og utlendingar skal vera bøndene og vingardsarbeidarane dykkar."
+    "text": "Framande skal stå og gjeta småfeet dykkar, og utlendingar skal vera åkerbrukarane og vingardsarbeidarane dykkar.",
+    "versions": [
+      {
+        "text": "Framande skal stå og gjeta sauene dykkar, og utlendingar skal vera bøndene og vingardsarbeidarane dykkar.",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "Det hebraiske 'צֹאנְכֶם' tyder 'småfeet dykkar' (sauer og geiter), ikkje berre 'sauene'. Vidare tyder 'אִכָּרֵיכֶם' meir spesifikt 'åkerbrukarar/jordarbeidarar' enn det generelle 'bønder'. 'Småfeet' og 'åkerbrukarane' er meir presise omsettingar."
+      }
+    ]
   },
   {
     "bookId": 23,
@@ -75,7 +83,15 @@
     "bookId": 23,
     "chapterId": 61,
     "verseId": 8,
-    "text": "For eg, Herren, elskar rett og hatar ran med urett. Eg skal gje dei løna deira i truskap og gjera ei evig pakt med dei."
+    "text": "For eg, Herren, elskar rett og hatar ran og urett. Eg skal gje dei løna deira i truskap og gjera ei evig pakt med dei.",
+    "versions": [
+      {
+        "text": "For eg, Herren, elskar rett og hatar ran med urett. Eg skal gje dei løna deira i truskap og gjera ei evig pakt med dei.",
+        "type": "error",
+        "severity": "major",
+        "explanation": "Det hebraiske 'גָזֵ֖ל בְּעוֹלָ֑ה' er omdiskutert, men 'בְּעוֹלָה' kan lesast som 'med brennoffer' (dvs. ran i samband med brennoffer), eller som 'med urett'. Formuleringa 'ran med urett' er noko uklar på nynorsk. 'Ran og urett' gjev ein meir naturleg parallellstruktur og formidlar meininga klarare. Alternativt: 'ran ved brennoffer' dersom ein følgjer den bokstavelege lesemåten."
+      }
+    ]
   },
   {
     "bookId": 23,
@@ -99,6 +115,14 @@
     "bookId": 23,
     "chapterId": 61,
     "verseId": 11,
-    "text": "For liksom jorda lèt det som er sådd spira, og liksom ein hage får frøa til å veksa, slik skal Herren Gud la rettferd og lovsong spira fram for augo på alle folkeslag."
+    "text": "For liksom jorda lèt vekstane sine spira, og liksom ein hage får det som er sådd til å veksa, slik skal Herren Gud la rettferd og lovsong spira fram for augo på alle folkeslag.",
+    "versions": [
+      {
+        "text": "For liksom jorda lèt det som er sådd spira, og liksom ein hage får frøa til å veksa, slik skal Herren Gud la rettferd og lovsong spira fram for augo på alle folkeslag.",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "I den hebraiske teksten er det 'צִמְחָהּ' (vekstane hennar/grøda hennar) som høyrer til jorda, og 'זֵרוּעֶיהָ' (det som er sådd i henne) som høyrer til hagen. Den noverande omsettinga har bytt om desse to: jorda har fått 'det som er sådd' og hagen har fått 'frøa'. Rett rekkjefølgje er at jorda lèt vekstane sine spira, og hagen får det som er sådd til å veksa."
+      }
+    ]
   }
 ]

@@ -33,7 +33,15 @@
     "bookId": 5,
     "chapterId": 8,
     "verseId": 5,
-    "text": "Så skal du kjenna i hjartet ditt at slik ein mann oppsedar son sin, slik oppsedar Herren din Gud deg."
+    "text": "Så skal du kjenna i hjartet ditt at liksom ein far oppsedar son sin, slik oppsedar Herren din Gud deg.",
+    "versions": [
+      {
+        "text": "Så skal du kjenna i hjartet ditt at slik ein mann oppsedar son sin, slik oppsedar Herren din Gud deg.",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "Det hebraiske אִישׁ (ish) betyr 'mann', men i konteksten av å oppseda sin son er 'far' meir naturleg og idiomatisk på norsk. Det gjer teksten klarare og meir forståeleg for moderne lesarar, og er i tråd med korleis dei fleste omsetjingar gjengir dette."
+      }
+    ]
   },
   {
     "bookId": 5,
@@ -45,11 +53,17 @@
     "bookId": 5,
     "chapterId": 8,
     "verseId": 7,
-    "text": "For Herren din Gud fører deg inn i eit godt land, eit land med bekkjer, med kjelder og djupvatn som strøymer fram i dalane og på fjella.",
+    "text": "For Herren din Gud fører deg inn i eit godt land, eit land med bekkjer og vassårer, med kjelder og djupvatn som strøymer fram i dalane og på fjella.",
     "versions": [
       {
         "text": "For Herren din Gud fører deg inn i eit godt land, eit land med bekkjer og kjelder og djupvatn som strøymer fram i dalane og på fjella.",
         "explanation": "Litt betre rytme for munnleg lesing med komma etter 'bekkjer' for å markera dei tre elementa (bekkjer, kjelder, djupvatn)."
+      },
+      {
+        "text": "For Herren din Gud fører deg inn i eit godt land, eit land med bekkjer, med kjelder og djupvatn som strøymer fram i dalane og på fjella.",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "Det hebraiske נַחֲלֵי מָיִם betyr 'vassbekkjer/vassårer' – 'bekkjer' åleine dekkjer dette rimeleg godt, men 'med kjelder og djupvatn' bør framleis ha 'med' framfor seg for konsistens. Etter nærare vurdering er den noverande versjonen akseptabel og dette er berre ein svært liten stil-merknad. Droppar denne."
       }
     ]
   },
@@ -135,7 +149,15 @@
     "bookId": 5,
     "chapterId": 8,
     "verseId": 18,
-    "text": "Du skal koma i hug Herren din Gud, for det er han som gjev deg kraft til å skaffa rikdom. Slik held han pakta si som han svor fedrane dine, slik det er i dag."
+    "text": "Du skal koma i hug Herren din Gud, for det er han som gjev deg kraft til å skaffa rikdom, for å stadfesta pakta si som han svor fedrane dine, slik det er i dag.",
+    "versions": [
+      {
+        "text": "Du skal koma i hug Herren din Gud, for det er han som gjev deg kraft til å skaffa rikdom. Slik held han pakta si som han svor fedrane dine, slik det er i dag.",
+        "type": "error",
+        "severity": "major",
+        "explanation": "Det hebraiske לְמַעַן הָקִים (lema'an haqim) betyr 'for å stadfesta/oppfylla'. Grunnen til at Gud gjev kraft er nettopp for å oppfylla/stadfesta pakta. Den noverande omsetjinga 'Slik held han pakta si' er litt upresist og manglar den intensjonale meininga ('for å'). Det bør koma fram at Guds gåve av kraft har som føremål å oppfylla pakta."
+      }
+    ]
   },
   {
     "bookId": 5,

@@ -15,7 +15,15 @@
     "bookId": 23,
     "chapterId": 55,
     "verseId": 2,
-    "text": "Kvifor brukar de pengar på det som ikkje er brød, og løna dykkar på det som ikkje mettar? Høyr på meg, så skal de få eta det som godt er, og fryda dykk over feite retter."
+    "text": "Kvifor brukar de pengar på det som ikkje er brød, og strevet dykkar på det som ikkje mettar? Høyr på meg, så skal de få eta det som godt er, og fryda dykk over feite retter.",
+    "versions": [
+      {
+        "text": "Kvifor brukar de pengar på det som ikkje er brød, og løna dykkar på det som ikkje mettar? Høyr på meg, så skal de få eta det som godt er, og fryda dykk over feite retter.",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "Det hebraiske יְגִיעַ (yegia') tyder 'strev/møde/arbeid', ikkje 'løn'. Sjølv om løn kan vera resultatet av strev, er 'strevet dykkar' meir presist og nærmare originalen."
+      }
+    ]
   },
   {
     "bookId": 23,
@@ -33,11 +41,17 @@
     "bookId": 23,
     "chapterId": 55,
     "verseId": 4,
-    "text": "Sjå, eg har sett han til eit vitne for folka, til ein leiar og høvding for folkeslaga.",
+    "text": "Sjå, eg har sett han til eit vitne for folka, til ein leiar og ein som byd over folkeslaga.",
     "versions": [
       {
         "text": "Sjå, eg har sett han til eit vitne for folka, til ein fyrste og befalingsmann for folkeslaga.",
         "explanation": "מְצַוֵּה (metsavveh) tyder 'ein som gjev påbod' eller 'kommandant/høvding'. 'Høvding' er meir naturleg nynorsk enn 'befalingsmann' og passar betre for munnleg framføring."
+      },
+      {
+        "text": "Sjå, eg har sett han til eit vitne for folka, til ein leiar og høvding for folkeslaga.",
+        "type": "error",
+        "severity": "major",
+        "explanation": "Omsetjinga har no 'leiar og høvding', men נָגִיד (nagid) tyder 'leiar/fyrste' og מְצַוֵּה (metsavveh) tyder 'ein som gjev påbod/kommanderer'. Dei to orda vert no nærast synonyme ('leiar' og 'høvding'), medan originalen har to ulike roller: ein leiar og ein som gjev ordre. Likevel, sidan verset allereie er revidert og 'høvding' var valt medvite, er dette eit grensetilfelle."
       }
     ]
   },
@@ -75,7 +89,15 @@
     "bookId": 23,
     "chapterId": 55,
     "verseId": 9,
-    "text": "For så høgt som himmelen er over jorda, så er mine vegar høgare enn dykkar vegar, og mine tankar høgare enn dykkar tankar."
+    "text": "For så høgt som himmelen er over jorda, så mykje høgare er mine vegar enn dykkar vegar, og mine tankar enn dykkar tankar.",
+    "versions": [
+      {
+        "text": "For så høgt som himmelen er over jorda, så er mine vegar høgare enn dykkar vegar, og mine tankar høgare enn dykkar tankar.",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "Gjentakinga av 'høgare' er litt tung. I tillegg manglar 'så mykje' som betre fangar samanlikninga (כֵּן גָּבְהוּ = 'slik er [dei] høge'). Dessutan kan ein unngå å gjenta 'høgare' i siste ledd sidan det er underforstått."
+      }
+    ]
   },
   {
     "bookId": 23,

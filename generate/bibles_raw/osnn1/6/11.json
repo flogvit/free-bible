@@ -69,7 +69,15 @@
     "bookId": 6,
     "chapterId": 11,
     "verseId": 9,
-    "text": "Josva gjorde med dei slik Herren hadde sagt til han: Han skar over hasane på hestane deira og brende vognene deira med eld."
+    "text": "Josva gjorde med dei slik Herren hadde sagt til han: Han skar over hasane på hestane deira og brende vognene deira.",
+    "versions": [
+      {
+        "text": "Josva gjorde med dei slik Herren hadde sagt til han: Han skar over hasane på hestane deira og brende vognene deira med eld.",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "I vers 6 vart 'med eld' medvite fjerna fordi det er redundant ved 'brenna' på nynorsk. Same prinsippet bør gjelda i vers 9 for å vera konsekvent."
+      }
+    ]
   },
   {
     "bookId": 6,
@@ -87,11 +95,17 @@
     "bookId": 6,
     "chapterId": 11,
     "verseId": 11,
-    "text": "Dei slo alle menneske der med sverd og vigde dei til øydelegging. Ikkje ei levande sjel vart att, og han brende Hasor med eld.",
+    "text": "Dei slo alle menneske der med sverd og vigde dei til øydelegging. Ikkje ei levande sjel vart att, og han brende Hasor.",
     "versions": [
       {
         "text": "Dei slo alle menneske der med sverd og vigde dei til øydelegging. Ikkje ein levande skapning vart att, og han brende Hasor med eld.",
         "explanation": "Det hebraiske 'נְשָׁמָה' (neshamah) tyder 'pust' eller 'sjel' og refererer spesifikt til menneske. 'Levande sjel' er meir presist enn 'levande skapning' og held seg nærare originalteksten."
+      },
+      {
+        "text": "Dei slo alle menneske der med sverd og vigde dei til øydelegging. Ikkje ei levande sjel vart att, og han brende Hasor med eld.",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "For å vera konsekvent med endringa i vers 6, der 'med eld' vart fjerna som redundant ved 'brenna', bør same prinsipp gjelda her."
       }
     ]
   },
@@ -129,7 +143,21 @@
     "bookId": 6,
     "chapterId": 11,
     "verseId": 16,
-    "text": "Slik tok Josva heile dette landet: fjellandet, heile Negev, heile Gosjen-landet, låglandet, Jordan-dalen, Israels-fjella og låglandsområda deira."
+    "text": "Slik tok Josva heile dette landet: fjellandet, heile Negev, heile Gosjen-landet, låglandet, Jordan-dalen, Israels-fjella og lågslettene deira.",
+    "versions": [
+      {
+        "text": "Slik tok Josva heile dette landet: fjellandet, heile Negev, heile Gosjen-landet, låglandet, Jordan-dalen, Israels-fjella og låglandsområda deira.",
+        "type": "error",
+        "severity": "minor",
+        "explanation": "Det hebraiske 'הָעֲרָבָה' (ha-Aravah) er eit eigennamn for Arava/Araba-dalen (den store riftdalen sør for Dødehavet). 'Jordan-dalen' er ei tolking som ikkje dekkjer heile Araba-området. Dei fleste omsetjingar brukar eigennamnet 'Araba' her."
+      },
+      {
+        "text": "Slik tok Josva heile dette landet: fjellandet, heile Negev, heile Gosjen-landet, låglandet, Araba-dalen, Israels-fjella og låglandsområda deira.",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "Det hebraiske 'וּשְׁפֵלָתֹה' er ei suffigert form som tyder 'og låglandet deira' (dvs. skråningane/lågslettene som høyrer til Israels-fjella). 'Låglandsområda' er akseptabelt, men 'lågslettene' er enklare og meir presist nynorsk."
+      }
+    ]
   },
   {
     "bookId": 6,

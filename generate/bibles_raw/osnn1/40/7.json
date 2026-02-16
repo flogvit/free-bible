@@ -27,7 +27,15 @@
     "bookId": 40,
     "chapterId": 7,
     "verseId": 5,
-    "text": "Din hyklar! Ta først bjelken ut av ditt eige auge. Då kan du sjå klårt nok til å ta flisa ut av auget til bror din."
+    "text": "Du hyklar! Ta først bjelken ut av ditt eige auge. Då kan du sjå klårt nok til å ta flisa ut av auget til bror din.",
+    "versions": [
+      {
+        "text": "Din hyklar! Ta først bjelken ut av ditt eige auge. Då kan du sjå klårt nok til å ta flisa ut av auget til bror din.",
+        "type": "grammar",
+        "severity": "minor",
+        "explanation": "Tiltaleforma 'Din hyklar!' er idiomatisk norsk, men ὑποκριτά er vokativ ('Hyklar!'). 'Du hyklar!' er meir nøyaktig som direkte tiltale og like naturleg på nynorsk."
+      }
+    ]
   },
   {
     "bookId": 40,
@@ -51,7 +59,15 @@
     "bookId": 40,
     "chapterId": 7,
     "verseId": 9,
-    "text": "Finst det nokon av dykk som gjev son sin ein stein når han bed om brød?"
+    "text": "Finst det nokon av dykk som vil gje son sin ein stein når han bed om brød?",
+    "versions": [
+      {
+        "text": "Finst det nokon av dykk som gjev son sin ein stein når han bed om brød?",
+        "type": "error",
+        "severity": "major",
+        "explanation": "Spørsmålet i originalen forventar eit negativt svar (μὴ): 'han vil vel ikkje gje han ein stein?' Den noverande formuleringa fungerer, men 'vil gje' gjer det tydelegare at dette er ei hypotetisk handling ein forventar eit 'nei' på."
+      }
+    ]
   },
   {
     "bookId": 40,
@@ -81,7 +97,15 @@
     "bookId": 40,
     "chapterId": 7,
     "verseId": 14,
-    "text": "Men trong er porten og smal er vegen som fører til livet, og få er dei som finn han."
+    "text": "For trong er porten og smal er vegen som fører til livet, og få er dei som finn han.",
+    "versions": [
+      {
+        "text": "Men trong er porten og smal er vegen som fører til livet, og få er dei som finn han.",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "Originalen har ὅτι ('for/fordi'), ikkje eit adversativt 'men'. Vers 13 har også ὅτι og er omsett med 'For'. Vers 14 bør ha same konjunksjonen for å vera konsekvent og nøyaktig."
+      }
+    ]
   },
   {
     "bookId": 40,
@@ -129,7 +153,15 @@
     "bookId": 40,
     "chapterId": 7,
     "verseId": 22,
-    "text": "Mange skal seia til meg på den dagen: 'Herre, Herre! Har vi ikkje profetert i ditt namn, dreive ut vonde ånder i ditt namn og gjort mange mektige gjerningar i ditt namn?'"
+    "text": "Mange skal seia til meg på den dagen: 'Herre, Herre! Har vi ikkje profetert i ditt namn, drive ut vonde ånder i ditt namn og gjort mange mektige gjerningar i ditt namn?'",
+    "versions": [
+      {
+        "text": "Mange skal seia til meg på den dagen: 'Herre, Herre! Har vi ikkje profetert i ditt namn, dreive ut vonde ånder i ditt namn og gjort mange mektige gjerningar i ditt namn?'",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "På nynorsk er korrekt partisipp av 'drive' ('å drive ut') 'drive' (eller 'drivi'), ikkje 'dreive'. 'Dreive' er ei bokmålsform/dialektform som ikkje er standard nynorsk."
+      }
+    ]
   },
   {
     "bookId": 40,

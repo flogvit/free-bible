@@ -81,19 +81,43 @@
     "bookId": 1,
     "chapterId": 19,
     "verseId": 12,
-    "text": "Då sa mennene til Lot: «Har du fleire her? Svigersøner, sønene dine og døtrene dine, og alle som høyrer deg til i byen – før dei ut frå denne staden!»"
+    "text": "Kven har du elles her? Svigersøner, søner og døtrer, og alle som høyrer deg til i byen – før dei ut frå denne staden!",
+    "versions": [
+      {
+        "text": "Då sa mennene til Lot: «Har du fleire her? Svigersøner, sønene dine og døtrene dine, og alle som høyrer deg til i byen – før dei ut frå denne staden!»",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "Hebraisk 'עֹד מִי־לְךָ פֹה' tyder meir presist 'kven har du elles her?' enn 'har du fleire her?'. Vidare har den hebraiske teksta ubunden form (søner, døtrer, svigersøner) utan eigedomspronomen på alle tre – 'sønene dine og døtrene dine' legg til unødvendig possessiv som ikkje er i originalen (i motsetning til svigerson som heller ikkje har suffiks)."
+      }
+    ]
   },
   {
     "bookId": 1,
     "chapterId": 19,
     "verseId": 13,
-    "text": "For vi skal øydeleggja denne staden, fordi klageropet over dei har vorte så stort for Herrens andlet. Herren har sendt oss for å øydeleggja byen."
+    "text": "For vi skal øydeleggja denne staden, fordi klageropet over dei har vorte så stort for Herrens åsyn. Herren har sendt oss for å øydeleggja han.",
+    "versions": [
+      {
+        "text": "For vi skal øydeleggja denne staden, fordi klageropet over dei har vorte så stort for Herrens andlet. Herren har sendt oss for å øydeleggja byen.",
+        "type": "grammar",
+        "severity": "minor",
+        "explanation": "'אֶת־פְּנֵי יְהוָה' er betre omsett med 'Herrens åsyn' for å skilja det frå vanleg 'andlet'. Dessutan peikar 'לְשַׁחֲתָהּ' (hankjønn suffiks) tilbake til 'הַמָּקוֹם' (staden), ikkje 'byen', så 'han' er meir presist enn 'byen'."
+      }
+    ]
   },
   {
     "bookId": 1,
     "chapterId": 19,
     "verseId": 14,
-    "text": "Då gjekk Lot ut og tala til svigersønene sine, dei som skulle gifta seg med døtrene hans, og sa: «Stå opp, kom dykk ut frå denne staden, for Herren skal øydeleggja byen!» Men svigersønene meinte han berre spøkte."
+    "text": "Då gjekk Lot ut og tala til svigersønene sine, dei som hadde teke døtrene hans, og sa: «Stå opp, kom dykk ut frå denne staden, for Herren skal øydeleggja byen!» Men svigersønene meinte han berre spøkte.",
+    "versions": [
+      {
+        "text": "Då gjekk Lot ut og tala til svigersønene sine, dei som skulle gifta seg med døtrene hans, og sa: «Stå opp, kom dykk ut frå denne staden, for Herren skal øydeleggja byen!» Men svigersønene meinte han berre spøkte.",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "Hebraisk 'לֹקְחֵי בְנֹתָיו' (partisipp qal av לקח) kan tyda 'dei som tok/hadde teke døtrene hans' (dvs. allereie gifte), ikkje nødvendigvis 'dei som skulle gifta seg'. Tolkinga er omdiskutert, men 'hadde teke' er nærast grunnforma av det hebraiske partisippet."
+      }
+    ]
   },
   {
     "bookId": 1,
@@ -193,7 +217,15 @@
     "bookId": 1,
     "chapterId": 19,
     "verseId": 27,
-    "text": "Abraham stod tidleg opp om morgonen og gjekk til staden der han hadde stått framfor Herrens andlet."
+    "text": "Abraham stod tidleg opp om morgonen og gjekk til staden der han hadde stått framfor Herren.",
+    "versions": [
+      {
+        "text": "Abraham stod tidleg opp om morgonen og gjekk til staden der han hadde stått framfor Herrens andlet.",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "Hebraisk 'אֶת־פְּנֵי יְהוָה' i denne konteksten tyder 'framfor Herren' (å stå framfor Herrens åsyn). 'Herrens andlet' er ei svært bokstavleg omsetjing som er unaturleg på nynorsk her. Vanlege norske omsetjingar brukar 'framfor Herren'."
+      }
+    ]
   },
   {
     "bookId": 1,
@@ -223,7 +255,15 @@
     "bookId": 1,
     "chapterId": 19,
     "verseId": 32,
-    "text": "Kom, lat oss gje far vår vin å drikka, og liggja med han, så vi kan halda oppe ætta til far vår."
+    "text": "«Kom, lat oss gje far vår vin å drikka og liggja med han, så vi kan halda oppe ætta til far vår.»",
+    "versions": [
+      {
+        "text": "Kom, lat oss gje far vår vin å drikka, og liggja med han, så vi kan halda oppe ætta til far vår.",
+        "type": "grammar",
+        "severity": "major",
+        "explanation": "Vers 32 er direkte tale frå den eldste dottera, og det manglar hermeteikn (« og ») rundt sitatet. Vers 31 sluttar talen med », og vers 32 er ei framhald eller ny replikk som også treng hermeteikn."
+      }
+    ]
   },
   {
     "bookId": 1,

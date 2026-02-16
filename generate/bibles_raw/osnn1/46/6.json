@@ -33,7 +33,15 @@
     "bookId": 46,
     "chapterId": 6,
     "verseId": 5,
-    "text": "Til skam for dykk seier eg dette. Finst det verkeleg ingen vis mann blant dykk som kan døma mellom brørne sine?"
+    "text": "Til skam for dykk seier eg dette. Finst det verkeleg ingen vis blant dykk som kan døma mellom bror og bror?",
+    "versions": [
+      {
+        "text": "Til skam for dykk seier eg dette. Finst det verkeleg ingen vis mann blant dykk som kan døma mellom brørne sine?",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "Gresk 'ἀνὰ μέσον τοῦ ἀδελφοῦ αὐτοῦ' tyder 'mellom sin bror (og ein annan)', dvs. mellom to brør. 'Mellom brørne sine' endrar nyanseringa. Dessutan er 'σοφός' adjektiv ('vis'), ikkje nødvendigvis 'vis mann' – meir kjønnsnøytralt å seia 'ingen vis'."
+      }
+    ]
   },
   {
     "bookId": 46,
@@ -63,7 +71,7 @@
     "bookId": 46,
     "chapterId": 6,
     "verseId": 9,
-    "text": "Eller veit de ikkje at dei som gjer urett, ikkje skal arva Guds rike? Lat dykk ikkje føra vill! Verken dei som driv hor, eller avgudsdyrkarar, ekteskapsbrytrarar, menn som lèt seg bruka til unaturleg utukt, menn som ligg med menn,",
+    "text": "Eller veit de ikkje at dei som gjer urett, ikkje skal arva Guds rike? Lat dykk ikkje føra vill! Verken dei som driv hor, eller avgudsdyrkarar, eller ekteskapsbrytrarar, eller menn som lèt seg bruka til unaturleg utukt, eller menn som ligg med menn,",
     "versions": [
       {
         "text": "Eller veit de ikkje at dei som gjer urett, ikkje skal arva Guds rike? Lat dykk ikkje føra vill! Verken dei som driv hor, avgudsdyrkarar, ekteskapsbryrarar, menn som lèt seg bruka til unaturleg utukt, menn som ligg med menn,",
@@ -72,6 +80,12 @@
       {
         "text": "Eller veit de ikkje at dei som gjer urett, ikkje skal arva Guds rike? Lat dykk ikkje føra vill! Verken dei som driv hor, avgudsdyrkarar, ekteskapsbrytrarar, menn som lèt seg bruka til unaturleg utukt, menn som ligg med menn,",
         "explanation": "Grammatisk manglar 'eller' etter 'Verken' for å fullføra konstruksjonen korrekt på nynorsk. 'Verken... eller' er standardforma."
+      },
+      {
+        "text": "Eller veit de ikkje at dei som gjer urett, ikkje skal arva Guds rike? Lat dykk ikkje føra vill! Verken dei som driv hor, eller avgudsdyrkarar, ekteskapsbrytrarar, menn som lèt seg bruka til unaturleg utukt, menn som ligg med menn,",
+        "type": "grammar",
+        "severity": "minor",
+        "explanation": "I konstruksjonen 'verken... eller' med fleire ledd bør kvart ledd ha 'eller' framfor seg for å vera grammatisk konsekvent. Slik det står no, manglar 'eller' framfor fleire av ledda."
       }
     ]
   },
@@ -121,11 +135,17 @@
     "bookId": 46,
     "chapterId": 6,
     "verseId": 16,
-    "text": "Eller veit de ikkje at den som held seg til ei hore, er éin kropp med henne? For det står skrive: «Dei to skal vera eitt kjøt.»",
+    "text": "Eller veit de ikkje at den som held seg til ei hore, er éin kropp med henne? For det står skrive: «Dei to skal verta éin kropp.»",
     "versions": [
       {
         "text": "Eller veit de ikkje at den som held seg til ei hore, er éin kropp med henne? For det står: «Dei to skal vera eitt kjøt.»",
         "explanation": "'φησίν' (det seier/det står) refererer til Skrifta. 'Det står skrive' er ein meir tradisjonell og tydeleg måte å markera skriftsitat på."
+      },
+      {
+        "text": "Eller veit de ikkje at den som held seg til ei hore, er éin kropp med henne? For det står skrive: «Dei to skal vera eitt kjøt.»",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "Gresk 'εἰς σάρκα μίαν' tyder 'til éitt kjøt/éin kropp'. Sidan 'kropp' vert brukt elles i teksten for 'σῶμα/σάρξ', og sitat-konteksten handlar om kropp, er 'éin kropp' meir konsekvent. 'Eitt kjøt' er likevel ein tradisjonell gjengiving – dette er eit mindreverdig forslag."
       }
     ]
   },
@@ -151,6 +171,14 @@
     "bookId": 46,
     "chapterId": 6,
     "verseId": 20,
-    "text": "for de vart kjøpte for ein høg pris. Så ær då Gud med kroppen dykkar!"
+    "text": "for de vart kjøpte for ein høg pris. Så gjev då Gud ære med kroppen dykkar!",
+    "versions": [
+      {
+        "text": "for de vart kjøpte for ein høg pris. Så ær då Gud med kroppen dykkar!",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "'Ær' (imperativ av 'æra') er ei svært uvanleg og arkaisk form som mange nynorsklesarar ikkje vil kjenna att. For ein moderne og lettlesen tekst er 'gjev Gud ære' eit klarare alternativ som formidlar same meining ('δοξάσατε' = 'gje ære/pris')."
+      }
+    ]
   }
 ]

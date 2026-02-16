@@ -33,11 +33,17 @@
     "bookId": 3,
     "chapterId": 5,
     "verseId": 6,
-    "text": "Han skal føra fram skuldofferet sitt til HERREN for synda si, eit hodyr frå småfeet, anten eit lam eller ei geit, som syndoffer. Presten skal gjera soning for han for synda hans.",
+    "text": "Han skal føra fram offeret sitt til HERREN for synda si, eit hodyr frå småfeet, anten eit lam eller ei geit, som syndoffer. Presten skal gjera soning for han for synda hans.",
     "versions": [
       {
         "text": "Han skal føra fram skuldofferet sitt til Herren for synda si, eit hodyr frå småfeet, anten eit lam eller ei geit, som syndoffer. Presten skal gjera soning for han for synda hans.",
         "explanation": "For konsistens med resten av kapittelet bør 'Herren' endrast til 'HERREN'."
+      },
+      {
+        "text": "Han skal føra fram skuldofferet sitt til HERREN for synda si, eit hodyr frå småfeet, anten eit lam eller ei geit, som syndoffer. Presten skal gjera soning for han for synda hans.",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "Omsetjinga av אֲשָׁמוֹ som 'skuldofferet' er misvisande her. I denne konteksten, der dyret er eit syndoffer (חַטָּאת), bør אֲשָׁמוֹ omsetjast meir nøytralt som 'offeret for skulda si' eller berre 'offeret sitt', sidan det som vert ofra faktisk er eit syndoffer (חַטָּאת), ikkje eit skuldoffer (אָשָׁם) i teknisk forstand."
       }
     ]
   },
@@ -75,7 +81,15 @@
     "bookId": 3,
     "chapterId": 5,
     "verseId": 12,
-    "text": "Han skal føra det til presten, og presten skal ta ein handfull av det som minneoffer og brenna det på altaret saman med HERRENS ildoffer. Det er eit syndoffer."
+    "text": "Han skal føra det til presten, og presten skal ta ein handfull av det som minneoffer og brenna det på altaret, oppå HERRENS ildoffer. Det er eit syndoffer.",
+    "versions": [
+      {
+        "text": "Han skal føra det til presten, og presten skal ta ein handfull av det som minneoffer og brenna det på altaret saman med HERRENS ildoffer. Det er eit syndoffer.",
+        "type": "error",
+        "severity": "major",
+        "explanation": "Preposisjonen עַל betyr 'oppå/på toppen av', ikkje 'saman med'. Ildoffera som allereie ligg på altaret er grunnlaget det vert brent oppå. I tillegg manglar siste setning 'Det er eit syndoffer' (חַטָּ֖את הִֽוא) som står i den hebraiske teksten, sjølv om verset kan lesast slik at det er inkludert frå konteksten."
+      }
+    ]
   },
   {
     "bookId": 3,
@@ -103,7 +117,15 @@
     "bookId": 3,
     "chapterId": 5,
     "verseId": 15,
-    "text": "Når nokon er utru og syndar utan å vita det mot det som er heilagt for HERREN, skal han føra fram skuldofferet sitt til HERREN: ein feilfri ver frå småfeet, vurdert i sølvsjekel etter heilagdomsvekt, som skuldoffer."
+    "text": "Når nokon er utru og syndar utan å vita det mot det som er heilagt for HERREN, skal han føra fram skuldofferet sitt til HERREN: ein feilfri ver frå småfeet, vurdert i sølvsjeklar etter heilagdomsvekta, som skuldoffer.",
+    "versions": [
+      {
+        "text": "Når nokon er utru og syndar utan å vita det mot det som er heilagt for HERREN, skal han føra fram skuldofferet sitt til HERREN: ein feilfri ver frå småfeet, vurdert i sølvsjekel etter heilagdomsvekt, som skuldoffer.",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "'Sølvsjekel' bør vera fleirtal 'sølvsjeklar' (כֶּֽסֶף־שְׁקָלִ֥ים er fleirtal), og 'heilagdomsvekt' bør ha bestemt form 'heilagdomsvekta' sidan det viser til ei spesifikk vekt."
+      }
+    ]
   },
   {
     "bookId": 3,

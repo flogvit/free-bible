@@ -69,11 +69,17 @@
     "bookId": 6,
     "chapterId": 15,
     "verseId": 12,
-    "text": "Vestgrensa var Storhavet med kysten.",
+    "text": "Vestgrensa var Storhavet med kysten. Dette var grensa rundt Juda-stammen etter ættene deira.",
     "versions": [
       {
         "text": "Vestgrensa var Storhavet og kysten langs det. Dette var grensene rundt Juda-ætta etter ættene deira.",
         "explanation": "Originalen seier ikkje 'kysten langs det', men berre at Storhavet og grensa (וּגְבוּל) utgjer vestgrensa. 'Med kysten' er enklare og meir presis."
+      },
+      {
+        "text": "Vestgrensa var Storhavet med kysten.",
+        "type": "error",
+        "severity": "major",
+        "explanation": "Den siste delen av verset (זֶה גְּבוּל בְּנֵי־יְהוּדָה סָבִיב לְמִשְׁפְּחֹתָם) er utelaten i den noverande omsetjinga. Denne setninga oppsummerer at dette var grensa rundt Juda-stammen etter ættene deira. Den førre versjonen hadde dette med, men den noverande versjonen mista det ved redigeringa. Formuleringa her er annleis enn den tidlegare versjonen."
       }
     ]
   },
@@ -111,17 +117,31 @@
     "bookId": 6,
     "chapterId": 15,
     "verseId": 18,
-    "text": "Då ho kom dit, overtala ho han til å be far hennar om eit jordstykke."
+    "text": "Då ho kom dit, overtala ho han til å be far hennar om eit jordstykke. Ho steig ned frå eselet, og Kaleb sa til henne: «Kva er det du vil?»",
+    "versions": [
+      {
+        "text": "Då ho kom dit, overtala ho han til å be far hennar om eit jordstykke.",
+        "type": "error",
+        "severity": "minor",
+        "explanation": "Omsetjinga utelèt to viktige detaljar: at ho steig ned frå eselet (וַתִּצְנַח מֵעַל הַחֲמוֹר) og at Kaleb spurde henne «Kva er det du vil?» (וַיֹּאמֶר־לָהּ כָּלֵב מַה־לָּךְ). Desse elementa er i den hebraiske teksten og bør vera med."
+      }
+    ]
   },
   {
     "bookId": 6,
     "chapterId": 15,
     "verseId": 19,
-    "text": "Ho svara: «Gjev meg ei gåve! Du har gjeve meg Negev-landet, så gjev meg òg vasskjelder.»",
+    "text": "Ho sa: «Gjev meg ei gåve! Du har gjeve meg Negev-landet, så gjev meg òg vasskjelder.» Og han gav henne dei øvre kjeldene og dei nedre kjeldene.",
     "versions": [
       {
         "text": "Ho svara: «Gjev meg ei velsigning! Du har gjeve meg Negev-landet, så gjev meg òg vasskjelder.» Og han gav henne dei øvre og dei nedre kjeldene.",
         "explanation": "Hebraisk בְרָכָה i denne samanhengen tyder 'gåve' eller 'avskjedsgåve', ikkje 'velsigning' i religiøs forstand. Ho ber om noko konkret."
+      },
+      {
+        "text": "Ho svara: «Gjev meg ei gåve! Du har gjeve meg Negev-landet, så gjev meg òg vasskjelder.»",
+        "type": "error",
+        "severity": "major",
+        "explanation": "Siste del av verset (וַיִּתֶּן־לָהּ אֵת גֻּלֹּת עִלִּיּוֹת וְאֵת גֻּלֹּת תַּחְתִּיּוֹת) manglar i den noverande omsetjinga. I den førre versjonen var denne setninga med, men ho vart fjerna under redigeringa utan at det var grunngjeve. Formuleringa her er litt annleis enn den tidlegare versjonen."
       }
     ]
   },
@@ -321,7 +341,15 @@
     "bookId": 6,
     "chapterId": 15,
     "verseId": 52,
-    "text": "Arab, Duma og Esjan,"
+    "text": "Arab, Ruma og Esjan,",
+    "versions": [
+      {
+        "text": "Arab, Duma og Esjan,",
+        "type": "error",
+        "severity": "minor",
+        "explanation": "Det hebraiske רוּמָה (Ruma) er feilaktig omsett til 'Duma'. Ruma og Duma er ulike stadnamn. דּוּמָה (Duma) finst i 1 Krøn 4:77, men her står det רוּמָה (Ruma)."
+      }
+    ]
   },
   {
     "bookId": 6,

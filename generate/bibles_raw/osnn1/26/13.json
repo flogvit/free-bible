@@ -15,11 +15,17 @@
     "bookId": 26,
     "chapterId": 13,
     "verseId": 3,
-    "text": "Ve over dei tåpelege profetane som følgjer sin eigen ande og ikkje har sett noko!",
+    "text": "Så seier Herren Gud: Ve over dei tåpelege profetane som følgjer sin eigen ande og ikkje har sett noko!",
     "versions": [
       {
         "text": "Så seier Herren Gud: Ve over dei dårlege profetane som følgjer sin eigen ande og ikkje har sett noko!",
         "explanation": "Det hebraiske ordet 'נְבָלִים' (nevalim) tyder 'tåpelege/dåraktige' snarare enn berre 'dårlege'. Ordet har konnotasjonar av moralsk og åndeleg dårskap, ikkje berre generell dårleg kvalitet."
+      },
+      {
+        "text": "Ve over dei tåpelege profetane som følgjer sin eigen ande og ikkje har sett noko!",
+        "type": "error",
+        "severity": "major",
+        "explanation": "Innleiingsformelen 'כֹּה אָמַר אֲדֹנָי יְהוִה' (Så seier Herren Gud) manglar i den noverande versjonen. Den førre versjonen hadde denne frasen, men ho vart fjerna utan grunn ved siste revisjon (endringa gjaldt berre ordet 'dårlege'→'tåpelege'). Formelen må takast med sidan ho er del av originalteksten."
       }
     ]
   },
@@ -69,7 +75,15 @@
     "bookId": 26,
     "chapterId": 13,
     "verseId": 11,
-    "text": "Sei til dei som kalkar med laus kalk: Han skal falla! Det kjem styrtregn, og de, haglsteinar, skal falla, og ein stormvind skal bryta laus."
+    "text": "Sei til dei som kalkar med laus kalk at han skal falla! Det kjem styrtregn, og haglsteinar skal falla, og ein stormvind skal bryta laus.",
+    "versions": [
+      {
+        "text": "Sei til dei som kalkar med laus kalk: Han skal falla! Det kjem styrtregn, og de, haglsteinar, skal falla, og ein stormvind skal bryta laus.",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "Frasen 'og de, haglsteinar' er noko kryptisk på nynorsk. Det hebraiske 'וְאַתֵּנָה אַבְנֵי אֶלְגָּבִישׁ' tiltalar haglsteinane direkte ('og de, haglsteinar'), men på nynorsk blir det meir naturleg å omformulera. Samstundes kan overgangen til 'han skal falla' verta betre flytande med 'at' i staden for kolon."
+      }
+    ]
   },
   {
     "bookId": 26,
@@ -105,17 +119,31 @@
     "bookId": 26,
     "chapterId": 13,
     "verseId": 17,
-    "text": "Og du, menneske, vend andletet ditt mot døtrene til folket ditt, dei som profeterer ut frå sitt eige hjarte. Profeter mot dei"
+    "text": "Og du, menneske, vend andletet ditt mot døtrene til folket ditt, dei som profeterer ut frå sitt eige hjarte. Profeter mot dei!",
+    "versions": [
+      {
+        "text": "Og du, menneske, vend andletet ditt mot døtrene til folket ditt, dei som profeterer ut frå sitt eige hjarte. Profeter mot dei",
+        "type": "grammar",
+        "severity": "minor",
+        "explanation": "Verset manglar avsluttande punktum eller utropsteikn. Sidan det er ein imperativ (befaling), passar det med utropsteikn."
+      }
+    ]
   },
   {
     "bookId": 26,
     "chapterId": 13,
     "verseId": 18,
-    "text": "Ve dei som syr magiske band til alle albogane og lagar slør til hovud av alle storleikar for å fanga sjeler! Vil de fanga sjelene til folket mitt og halda dykkar eigne sjeler i live?",
+    "text": "og sei: Så seier Herren Gud: Ve dei som syr magiske band til alle albogane og lagar slør til hovud av alle storleikar for å fanga sjeler! Vil de fanga sjelene til folket mitt og halda dykkar eigne sjeler i live?",
     "versions": [
       {
         "text": "og sei: Så seier Herren Gud: Ve dei som syr magiske band til alle handledd og lagar slør til hovud av alle storleikar for å fanga sjeler! Vil de fanga sjelene til folket mitt og halda dykkar eigne sjeler i live?",
         "explanation": "Det hebraiske 'אַצִּילֵי יָדַי' refererer til 'albogane' eller 'armledda' (overarmen), ikkje 'handledda'. Banda vart truleg bundne rundt albogane som ein del av magisk praksis."
+      },
+      {
+        "text": "Ve dei som syr magiske band til alle albogane og lagar slør til hovud av alle storleikar for å fanga sjeler! Vil de fanga sjelene til folket mitt og halda dykkar eigne sjeler i live?",
+        "type": "error",
+        "severity": "major",
+        "explanation": "Innleiinga 'וְאָמַרְתָּ כֹּה־אָמַר אֲדֹנָי יְהוִה' (og sei: Så seier Herren Gud) manglar i den noverande versjonen. Den førre versjonen hadde denne frasen, men ho vart fjerna ved siste revisjon sjølv om endringsgrunnen berre gjaldt 'handledd'→'albogane'. Denne bodskapformelen er viktig teologisk og må vera med."
       }
     ]
   },

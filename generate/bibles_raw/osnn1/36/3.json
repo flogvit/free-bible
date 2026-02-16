@@ -39,13 +39,35 @@
     "bookId": 36,
     "chapterId": 3,
     "verseId": 6,
-    "text": "Eg har utryda folkeslag, festningstårnane deira ligg i ruinar. Eg har lagt gatene deira aude, så ingen går der. Byane deira er øydelagde, utan menneske, utan innbyggjarar."
+    "text": "Eg har utrydda folkeslag, festningstårnane deira ligg i ruinar. Eg har lagt gatene deira aude, så ingen går der. Byane deira er øydelagde, utan menneske, utan innbyggjarar.",
+    "versions": [
+      {
+        "text": "Eg har utryda folkeslag, festningstårnane deira ligg i ruinar. Eg har lagt gatene deira aude, så ingen går der. Byane deira er øydelagde, utan menneske, utan innbyggjarar.",
+        "type": "error",
+        "severity": "major",
+        "explanation": "Verbet 'utryda' manglar ein d – korrekt nynorsk form er 'utrydda' (partisipp/perfektum)."
+      }
+    ]
   },
   {
     "bookId": 36,
     "chapterId": 3,
     "verseId": 7,
-    "text": "Eg sa: «Frykt meg då, ta imot tukt!» Då skulle bustaden hennar ikkje bli utryda, slik eg hadde fastsett for henne. Men dei var ivrige etter å øydeleggja alle sine gjerningar."
+    "text": "Eg sa: «Frykt meg då, ta imot tukt!» Då skulle bustaden hennar ikkje bli utrydda, slik eg hadde fastsett for henne. Men dei stod tidleg opp og forderva alle sine gjerningar.",
+    "versions": [
+      {
+        "text": "Eg sa: «Frykt meg då, ta imot tukt!» Då skulle bustaden hennar ikkje bli utryda, slik eg hadde fastsett for henne. Men dei var ivrige etter å øydeleggja alle sine gjerningar.",
+        "type": "error",
+        "severity": "major",
+        "explanation": "Same skrivefeil som i vers 6: 'utryda' skal vera 'utrydda'."
+      },
+      {
+        "text": "Eg sa: «Frykt meg då, ta imot tukt!» Då skulle bustaden hennar ikkje bli utrydda, slik eg hadde fastsett for henne. Men dei var ivrige etter å øydeleggja alle sine gjerningar.",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "הִשְׁכִּימוּ הִשְׁחִיתוּ betyr bokstavleg 'dei stod tidleg opp og forderva' – eit idiom for at dei ivrig/tidleg forderva alle sine handlingar. 'Ivrige etter å øydeleggja' er akseptabelt som dynamisk omsetting, men 'forderva alle sine gjerningar' gjev betre meining enn 'øydeleggja' som kan verka sjølvmotseiande – poenget er at dei forderva/perverterte alle sine gjerningar, ikkje at dei ønskte å destruere dei."
+      }
+    ]
   },
   {
     "bookId": 36,
@@ -75,7 +97,15 @@
     "bookId": 36,
     "chapterId": 3,
     "verseId": 11,
-    "text": "På den dagen skal du ikkje lenger skjemmast over alle dine gjerningar som du synda mot meg med. For då vil eg fjerna frå deg dei som jublar i hovmod, og du skal ikkje lenger vera stolt på mitt heilage fjell."
+    "text": "På den dagen skal du ikkje lenger skjemmast over alle dine gjerningar som du sette deg opp mot meg med. For då vil eg fjerna frå deg dei som jublar i hovmod, og du skal ikkje lenger vera stolt på mitt heilage fjell.",
+    "versions": [
+      {
+        "text": "På den dagen skal du ikkje lenger skjemmast over alle dine gjerningar som du synda mot meg med. For då vil eg fjerna frå deg dei som jublar i hovmod, og du skal ikkje lenger vera stolt på mitt heilage fjell.",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "פָּשַׁע tyder primært 'gjera opprør, setja seg opp mot', ikkje berre generelt 'synda'. 'Sette deg opp mot meg' eller 'gjorde opprør mot meg' er meir presist."
+      }
+    ]
   },
   {
     "bookId": 36,
@@ -117,7 +147,15 @@
     "bookId": 36,
     "chapterId": 3,
     "verseId": 18,
-    "text": "Dei som sørgjer borte frå høgtida, har eg samla frå deg. Dei bar vanæra som ei bør."
+    "text": "Dei som sørgjer borte frå høgtidene, samlar eg frå deg – dei som bar vanæra som ei bør.",
+    "versions": [
+      {
+        "text": "Dei som sørgjer borte frå høgtida, har eg samla frå deg. Dei bar vanæra som ei bør.",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "מִמּוֹעֵד er eigentleg fleirtal ('høgtidene'). Dessutan kan setninga flyta betre med ein relativsetning som knyt 'vanæra' direkte til dei sørgjande. Verbforma אָסַפְתִּי kan også tolkast som profetisk perfektum ('samlar eg') sidan konteksten er framtidsretta."
+      }
+    ]
   },
   {
     "bookId": 36,

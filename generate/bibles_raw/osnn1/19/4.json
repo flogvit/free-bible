@@ -3,7 +3,15 @@
     "bookId": 19,
     "chapterId": 4,
     "verseId": 1,
-    "text": "Til korleiaren. Med strengespel. Ein salme av David."
+    "text": "Til kormeisteren. Med strengespel. Ein salme av David.",
+    "versions": [
+      {
+        "text": "Til korleiaren. Med strengespel. Ein salme av David.",
+        "type": "error",
+        "severity": "major",
+        "explanation": "'Korleiaren' er ikkje eit korrekt nynorsk ord. Det hebraiske לַמְנַצֵּחַ viser til ein musikalsk leiar eller dirigent. 'Kormeisteren' eller 'musikkmeisteren' er meir korrekte nynorske former. 'Korleiaren' ser ut som ei samanblanding."
+      }
+    ]
   },
   {
     "bookId": 19,
@@ -45,7 +53,15 @@
     "bookId": 19,
     "chapterId": 4,
     "verseId": 5,
-    "text": "Skjelv, men synd ikkje! Tenk etter i hjarta dykkar på leiet og ver stille. Sela"
+    "text": "Skjelv, og synd ikkje! Tal i hjarta dykkar på leiet og ver stille. Sela",
+    "versions": [
+      {
+        "text": "Skjelv, men synd ikkje! Tenk etter i hjarta dykkar på leiet og ver stille. Sela",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "Det hebraiske אִמְרוּ בִלְבַבְכֶם tyder bokstaveleg 'sei i hjarta dykkar' eller 'tal i hjarta dykkar', ikkje 'tenk etter'. Dessutan er den hebraiske konjunksjonen וְ ('og') meir presis enn 'men' for å gje att וְאַל."
+      }
+    ]
   },
   {
     "bookId": 19,
@@ -69,7 +85,15 @@
     "bookId": 19,
     "chapterId": 4,
     "verseId": 8,
-    "text": "Du har gjeve meg større glede i hjarta enn dei har når kornet og vinen deira er i overflod."
+    "text": "Du har gjeve meg glede i hjarta, meir enn når kornet og druemusten deira er i overflod.",
+    "versions": [
+      {
+        "text": "Du har gjeve meg større glede i hjarta enn dei har når kornet og vinen deira er i overflod.",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "Det hebraiske מֵעֵת tyder 'meir enn (på den tida) når', og den noverande omsetjinga legg til 'dei har' som ikkje er i originalen. Dessutan er תִּירוֹשׁ 'druemost' (ny vin/ugjæra druesaft), ikkje vanleg vin (יַיִן). Omsetjinga bør òg ha 'glede i hjarta' utan det tillagde 'meg' som subjekt for gleda, sidan hebraisk seier שִׂמְחָה בְלִבִּי (glede i mitt hjarte)."
+      }
+    ]
   },
   {
     "bookId": 19,

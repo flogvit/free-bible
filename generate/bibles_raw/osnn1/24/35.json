@@ -57,7 +57,15 @@
     "bookId": 24,
     "chapterId": 35,
     "verseId": 8,
-    "text": "Vi har lydt Jonadab, son til Rekab, vår stamfar, i alt han baud oss. Vi drikk aldri vin, korkje vi sjølve, konene våre, sønene våre eller døtrene våre."
+    "text": "Vi har lydt Jonadab, son til Rekab, stamfaren vår, i alt han baud oss.",
+    "versions": [
+      {
+        "text": "Vi har lydt Jonadab, son til Rekab, vår stamfar, i alt han baud oss. Vi drikk aldri vin, korkje vi sjølve, konene våre, sønene våre eller døtrene våre.",
+        "type": "error",
+        "severity": "major",
+        "explanation": "I vers 6 vart 'vår stamfar' endra til 'stamfaren vår' nettopp for konsistens med vers 8, 10 og 18. Men vers 8 har framleis 'vår stamfar' i staden for 'stamfaren vår'. For å vera konsekvent bør dette rettast."
+      }
+    ]
   },
   {
     "bookId": 24,
@@ -99,7 +107,15 @@
     "bookId": 24,
     "chapterId": 35,
     "verseId": 14,
-    "text": "Orda til Jonadab, son til Rekab, som han baud sønene sine – at dei ikkje skulle drikka vin – har vorte haldne. Til denne dag har dei ikkje drukke vin, for dei har lydt bodet frå stamfaren sin. Men eg har tala til dykk, tidleg og seint, og de har ikkje høyrt på meg."
+    "text": "Orda til Jonadab, son til Rekab, som han baud sønene sine – at dei ikkje skulle drikka vin – er haldne. Til denne dag har dei ikkje drukke vin, for dei har lydt bodet frå stamfaren sin. Men eg har tala til dykk, tidleg og seint, og de har ikkje høyrt på meg.",
+    "versions": [
+      {
+        "text": "Orda til Jonadab, son til Rekab, som han baud sønene sine – at dei ikkje skulle drikka vin – har vorte haldne. Til denne dag har dei ikkje drukke vin, for dei har lydt bodet frå stamfaren sin. Men eg har tala til dykk, tidleg og seint, og de har ikkje høyrt på meg.",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "'Har vorte haldne' er ei tung passivkonstruksjon. 'Er haldne' er enklare og meir naturleg nynorsk, og formidlar same meining (הוּקַם er ein Hofal-perfektum)."
+      }
+    ]
   },
   {
     "bookId": 24,
@@ -129,6 +145,14 @@
     "bookId": 24,
     "chapterId": 35,
     "verseId": 19,
-    "text": "difor seier Herren over hærskarane, Israels Gud: Det skal aldri mangla ein mann av ætta til Jonadab, son til Rekab, som tener for mitt andlet i alle dagar.»"
+    "text": "difor seier Herren over hærskarane, Israels Gud: Det skal aldri mangla ein mann av Jonadabs, son til Rekabs, ætt som står for mitt andlet alle dagar.»",
+    "versions": [
+      {
+        "text": "difor seier Herren over hærskarane, Israels Gud: Det skal aldri mangla ein mann av ætta til Jonadab, son til Rekab, som tener for mitt andlet i alle dagar.»",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "Det hebraiske עֹמֵד לְפָנַי betyr 'som står framfor meg/mitt andlet', ikkje 'som tener for mitt andlet'. Å 'stå framfor Herren' er eit uttrykk for teneste, men den meir bokstavlege omsettinga 'som står for mitt andlet' er teologisk meir presis. Likevel er 'tener' ei akseptabel dynamisk omsetting, så dette er berre eit mindre forslag."
+      }
+    ]
   }
 ]

@@ -3,7 +3,15 @@
     "bookId": 4,
     "chapterId": 26,
     "verseId": 1,
-    "text": "Herren sa til Moses og Elasar, son til presten Aron:"
+    "text": "Herren sa til Moses og til Elasar, son til Aron, presten:",
+    "versions": [
+      {
+        "text": "Herren sa til Moses og Elasar, son til presten Aron:",
+        "type": "error",
+        "severity": "major",
+        "explanation": "Grunnteksten seier 'אֶלְעָזָר בֶּן־אַהֲרֹן הַכֹּהֵן' – Elasar, son til Aron, presten. Det er Aron som er presten her (hakkohen modifiserer Aron), ikkje at Elasar er son til 'presten Aron' – sjølv om meininga kan lesast begge vegar, er den naturlege hebraiske lesinga at 'הַכֹּהֵן' står i apposisjon til Aron. Men viktigare: grunnteksten har 'וְאֶל' (og til), som viser at Elasar er ein separat adressat."
+      }
+    ]
   },
   {
     "bookId": 4,
@@ -57,17 +65,31 @@
     "bookId": 4,
     "chapterId": 26,
     "verseId": 9,
-    "text": "Sønene til Eliab var Nemuel, Datan og Abiram. Det var den same Datan og Abiram, utvalde menn i lyden, som sette seg opp mot Moses og Aron saman med Korahs flokk då dei gjorde opprør mot Herren."
+    "text": "Sønene til Eliab var Nemuel, Datan og Abiram. Det var den same Datan og Abiram, dei utkalla i lyden, som sette seg opp mot Moses og Aron saman med Korahs flokk då dei gjorde opprør mot Herren.",
+    "versions": [
+      {
+        "text": "Sønene til Eliab var Nemuel, Datan og Abiram. Det var den same Datan og Abiram, utvalde menn i lyden, som sette seg opp mot Moses og Aron saman med Korahs flokk då dei gjorde opprør mot Herren.",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "Det hebraiske 'קְרִיאֵי הָעֵדָה' tyder 'dei som var utkalla/tilkalla av forsamlinga', altså framståande representantar. 'Utvalde menn' er ei akseptabel tolking, men 'dei utkalla i lyden' er nærare grunnteksten og meir presist."
+      }
+    ]
   },
   {
     "bookId": 4,
     "chapterId": 26,
     "verseId": 10,
-    "text": "Jorda opna gapet sitt og slukte dei saman med Korah, då flokken døydde og elden tok livet av dei 250 mennene. Dei vart til eit åtvarande teikn.",
+    "text": "Jorda opna gapet sitt og slukte dei saman med Korah, då flokken døydde og elden fortærde dei 250 mennene. Dei vart til eit åtvarande teikn.",
     "versions": [
       {
         "text": "Jorda opna seg og slukte dei saman med Korah, då flokken hans døydde og elden tok livet av dei 250 mennene. Dei vart til eit åtvarande teikn.",
         "explanation": "Hebraisk brukar 'אֶת־פִּיהָ' (munnen sin/gapet sitt), som gjev eit sterkare bilete. 'Flokken hans' er ikkje i grunnteksten - det står berre 'העדה' (forsamlinga/flokken)."
+      },
+      {
+        "text": "Jorda opna gapet sitt og slukte dei saman med Korah, då flokken døydde og elden tok livet av dei 250 mennene. Dei vart til eit åtvarande teikn.",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "Hebraisk 'בַּאֲכֹל' kjem frå rota אכל (eta/fortære). 'Fortærde' er meir presist enn 'tok livet av' og formidlar betre den bibelske biletbruken av eld som fortærer."
       }
     ]
   },
@@ -351,7 +373,15 @@
     "bookId": 4,
     "chapterId": 26,
     "verseId": 56,
-    "text": "Ved loddtrekking skal arven delast ut mellom dei store og dei små ættene.»"
+    "text": "Ved loddtrekking skal arven delast ut, anten det gjeld ei stor eller ei lita ætt.",
+    "versions": [
+      {
+        "text": "Ved loddtrekking skal arven delast ut mellom dei store og dei små ættene.»",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "Grunnteksten seier 'mellom mange og få' (רַב og מְעָט), som refererer til storleiken på stammane. Den noverande omsetjinga legg til 'ættene', som ikkje finst i grunnteksten. Ei meir presis omsetjing framhevar at loddtrekkinga gjeld uavhengig av storleik."
+      }
+    ]
   },
   {
     "bookId": 4,
@@ -369,11 +399,17 @@
     "bookId": 4,
     "chapterId": 26,
     "verseId": 59,
-    "text": "Kona til Amram heitte Jokebed. Ho var dotter til Levi, fødd åt han i Egypt. Ho fødde Aron og Moses og syster deira, Mirjam, til Amram.",
+    "text": "Kona til Amram heitte Jokebed. Ho var dotter til Levi, fødd åt han i Egypt. Ho fødde Aron, Moses og syster deira Mirjam til Amram.",
     "versions": [
       {
         "text": "Kona til Amram heitte Jokebed. Ho var dotter til Levi og vart fødd til Levi i Egypt. Ho fødde Aron og Moses og syster deira, Mirjam, til Amram.",
         "explanation": "Formuleringa 'vart fødd til Levi' er noko klønete på nynorsk. 'Fødd åt han' er meir idiomatisk."
+      },
+      {
+        "text": "Kona til Amram heitte Jokebed. Ho var dotter til Levi, fødd åt han i Egypt. Ho fødde Aron og Moses og syster deira, Mirjam, til Amram.",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "Eit lite komma-spørsmål: 'syster deira, Mirjam,' med komma på begge sider av 'Mirjam' kan tolkast som om Mirjam er ein apposisjon, noko som er rett. Men 'Aron og Moses og' bør heller vere 'Aron, Moses og' for betre nynorsk stil ved opprekning av tre eller fleire."
       }
     ]
   },

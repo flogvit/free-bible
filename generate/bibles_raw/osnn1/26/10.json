@@ -45,11 +45,17 @@
     "bookId": 26,
     "chapterId": 10,
     "verseId": 7,
-    "text": "Då rekte kjeruben handa si ut frå mellom kjerubane til elden som var mellom kjerubane, tok av han og la i hendene til den som var kledd i lin. Han tok imot og gjekk ut.",
+    "text": "Då rekte kjeruben handa si ut frå mellom kjerubane til elden som var mellom kjerubane, tok opp og la i hendene til den som var kledd i lin. Han tok imot og gjekk ut.",
     "versions": [
       {
         "text": "Då rekte kjeruben handa si ut frå mellom kjerubane til elden som var mellom kjerubane, tok av han og la i hendene til han som var kledd i lin. Han tok imot og gjekk ut.",
         "explanation": "«den som var kledd i lin» er meir korrekt nynorsk enn «han som var kledd i lin» i denne samanhengen, sidan det refererer tilbake til mannen som er omtalt tidlegare."
+      },
+      {
+        "text": "Då rekte kjeruben handa si ut frå mellom kjerubane til elden som var mellom kjerubane, tok av han og la i hendene til den som var kledd i lin. Han tok imot og gjekk ut.",
+        "type": "grammar",
+        "severity": "minor",
+        "explanation": "«tok av han» er uklart og grammatisk noko rart. Det hebraiske וַיִּשָּׂא tyder 'tok opp' eller 'lyfte'. «Tok opp» gjev betre meining her – kjeruben tok opp eldkol og la dei i hendene."
       }
     ]
   },
@@ -81,7 +87,15 @@
     "bookId": 26,
     "chapterId": 10,
     "verseId": 12,
-    "text": "Heile kroppen deira, ryggen, hendene og vengjene, og hjula var fulle av auge rundt omkring – alle fire hadde slike hjul."
+    "text": "Heile kroppen deira, ryggen, hendene, vengjene og hjula var fulle av auge rundt omkring – alle fire sine hjul.",
+    "versions": [
+      {
+        "text": "Heile kroppen deira, ryggen, hendene og vengjene, og hjula var fulle av auge rundt omkring – alle fire hadde slike hjul.",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "Slik den hebraiske teksten er strukturert, er hjula (אוֹפַנִּים) inkludert i lista over det som var fullt av auge. Dessutan er «alle fire hadde slike hjul» ein laus parafrase av לְאַרְבַּעְתָּם אוֹפַנֵּיהֶם som heller tyder 'alle fire, hjula deira' – altså at det gjeld hjula til alle fire kjerubane."
+      }
+    ]
   },
   {
     "bookId": 26,
@@ -99,7 +113,15 @@
     "bookId": 26,
     "chapterId": 10,
     "verseId": 14,
-    "text": "Kvart vesen hadde fire andlet: Det første var andletet til ein kjerub, det andre var andletet til eit menneske, det tredje var andletet til ei løve, og det fjerde var andletet til ein ørn."
+    "text": "Kvart vesen hadde fire andlet: Det første var andletet til ein okse, det andre var andletet til eit menneske, det tredje var andletet til ei løve, og det fjerde var andletet til ein ørn.",
+    "versions": [
+      {
+        "text": "Kvart vesen hadde fire andlet: Det første var andletet til ein kjerub, det andre var andletet til eit menneske, det tredje var andletet til ei løve, og det fjerde var andletet til ein ørn.",
+        "type": "theological",
+        "severity": "major",
+        "explanation": "I Esekiel 1:10 er det første andletet eit okseandlet (שׁוֹר). Her i 10:14 står det «kjerub» (כְּרוּב), noko som tradisjonelt vert forstått som eit okseanlet/kalveanlet (jf. Esekiel 1:10). Mange omsetjingar klargjer dette. Men den hebraiske teksten seier faktisk פְּנֵי הַכְּרוּב. Det er teologisk viktig å merkja at dette er ei bevisst endring i teksten – anten bør ein omsetja det bokstavleg som «kjerub» eller forklara samanhengen. Å behalde «kjerub» er akseptabelt, men det kan skapa forvirring sidan kjeruben allereie er det levande vesenet. Dette er eit velkjent tekstkritisk spørsmål."
+      }
+    ]
   },
   {
     "bookId": 26,
@@ -129,7 +151,15 @@
     "bookId": 26,
     "chapterId": 10,
     "verseId": 19,
-    "text": "Kjerubane lyfte vengjene sine og steig opp frå jorda medan eg såg på, og hjula følgde med dei. Dei stansa ved inngangen til den austre porten til Herrens hus, og herlegdomen til Israels Gud var over dei."
+    "text": "Kjerubane lyfte vengjene sine og steig opp frå jorda medan eg såg på, og hjula følgde med dei. Dei stansa ved opninga til den austre porten til Herrens hus, og herlegdomen til Israels Gud var over dei.",
+    "versions": [
+      {
+        "text": "Kjerubane lyfte vengjene sine og steig opp frå jorda medan eg såg på, og hjula følgde med dei. Dei stansa ved inngangen til den austre porten til Herrens hus, og herlegdomen til Israels Gud var over dei.",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "Det hebraiske פֶּתַח tyder 'opning/inngang'. Omsetjinga er akseptabel, men det hebraiske verbet וַיַּעֲמֹד er eintal, noko som kan tyda at det refererer til Herrens herlegdom (כְּבוֹד) som stansa, ikkje kjerubane. Men dette er ei mindre sak sidan samanhengen tillèt begge lesingar."
+      }
+    ]
   },
   {
     "bookId": 26,

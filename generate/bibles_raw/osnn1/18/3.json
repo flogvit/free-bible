@@ -99,7 +99,7 @@
     "bookId": 18,
     "chapterId": 3,
     "verseId": 14,
-    "text": "saman med kongar og rådgjevarar på jorda, som bygde seg storslåtte gravminne som no ligg aude,",
+    "text": "saman med kongar og rådgjevarar på jorda, dei som bygde øydelagde stader for seg sjølve,",
     "versions": [
       {
         "text": "saman med kongar og rådgjevarar på jorda, som bygde seg gravstader,",
@@ -108,6 +108,12 @@
       {
         "text": "saman med kongar og rådgjevarar på jorda, som bygde seg ruinar,",
         "explanation": "Sjølv om 'ruinar' er ei mogleg omsetjing av חֳרָבוֹת, gjev det lite meining at kongar 'bygde seg ruinar'. Konteksten handlar om kvifor Job heller ville vore død - han ville kvilt saman med mektige som bygde monument/gravminne som no er øydelagde. Omsetjinga bør formidla denne meininga tydelegare for munnleg lesing."
+      },
+      {
+        "text": "saman med kongar og rådgjevarar på jorda, som bygde seg storslåtte gravminne som no ligg aude,",
+        "type": "error",
+        "severity": "major",
+        "explanation": "Sjølv om vers 14 har 2 tidlegare versjonar, er den noverande omsetjinga problematisk fordi ho legg til mykje som ikkje finst i grunnteksten. Det hebraiske חֳרָבוֹת לָמוֹ tyder enkelt 'øydemarker/ruinar for seg sjølve'. Teksten seier ikkje noko om 'storslåtte gravminne' eller 'som no ligg aude' - dette er tolkande tillegg. Men sidan dette verset har vore gjennom 2 revisjonar, er det grensetilfelle. Likevel er tillegga så store at det er verdt å flagga."
       }
     ]
   },

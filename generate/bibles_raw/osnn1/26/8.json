@@ -99,7 +99,21 @@
     "bookId": 26,
     "chapterId": 8,
     "verseId": 17,
-    "text": "Han sa til meg: «Har du sett dette, menneske? Er det ikkje nok for Judas hus å gjera dei styggedomane dei driv med her? Må dei òg fylla landet med vald og stadig eggja meg til vreide? Sjå, dei held greina opp mot nasen sin."
+    "text": "Han sa til meg: «Har du sett dette, menneske? Er det ikkje nok for Judas hus å gjera dei styggedomane dei har gjort her? Dei har òg fylt landet med vald og stadig eggja meg til vreide. Sjå, dei held greina opp mot nasen sin.»",
+    "versions": [
+      {
+        "text": "Han sa til meg: «Har du sett dette, menneske? Er det ikkje nok for Judas hus å gjera dei styggedomane dei driv med her? Må dei òg fylla landet med vald og stadig eggja meg til vreide? Sjå, dei held greina opp mot nasen sin.",
+        "type": "error",
+        "severity": "minor",
+        "explanation": "The Hebrew uses past tense (עָשׂוּ-פֹה 'they have done here', מָלְאוּ 'they have filled', וַיָּשֻׁבוּ 'and they have returned'). The current translation uses present tense 'dei driv med' and 'Må dei òg fylla' which shifts the meaning. Also the closing quotation mark is missing from verse 17 (it appears to be in verse 18)."
+      },
+      {
+        "text": "Han sa til meg: «Har du sett dette, menneske? Er det ikkje nok for Judas hus å gjera dei styggedomane dei har gjort her? Dei har òg fylt landet med vald og stadig eggja meg til vreide. Sjå, dei held greina opp mot nasen sin.",
+        "type": "grammar",
+        "severity": "minor",
+        "explanation": "Verse 17 is missing the closing quotation mark «». The speech that begins with «Har du sett... should close at the end of verse 17, since verse 18 starts a new statement. Alternatively the closing mark should be placed consistently."
+      }
+    ]
   },
   {
     "bookId": 26,

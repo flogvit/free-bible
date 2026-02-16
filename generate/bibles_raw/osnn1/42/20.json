@@ -21,11 +21,17 @@
     "bookId": 42,
     "chapterId": 20,
     "verseId": 4,
-    "text": "Dåpen til Johannes, var han frå himmelen eller frå menneske?",
+    "text": "Dåpen til Johannes, var han frå himmelen eller frå menneske?»",
     "versions": [
       {
         "text": "Johannes sin dåp, var han frå himmelen eller frå menneske?»",
         "explanation": "«Johannes sin dåp» er ein garpegenitiv som ikkje er god nynorsk. «Dåpen til Johannes» eller «Johannes-dåpen» er betre alternativ for nynorsk."
+      },
+      {
+        "text": "Dåpen til Johannes, var han frå himmelen eller frå menneske?",
+        "type": "grammar",
+        "severity": "minor",
+        "explanation": "Vers 4 avsluttar eit direkte sitat som byrjar i vers 3 med «Sei meg:», men manglar avsluttande hermeteikn (»). Dette bør leggjast til."
       }
     ]
   },
@@ -195,7 +201,15 @@
     "bookId": 42,
     "chapterId": 20,
     "verseId": 30,
-    "text": "Den andre tok henne,"
+    "text": "Den andre òg,",
+    "versions": [
+      {
+        "text": "Den andre tok henne,",
+        "type": "error",
+        "severity": "major",
+        "explanation": "Vers 30 i originalen er svært kort og seier berre «og den andre» – underforstått at han også tok henne og døydde barnlaus. Å leggje til «tok henne» er ikkje feil i seg sjølv, men det gjer at vers 31 (som held fram «og den tredje, og slik alle sju») les meir naturleg om vers 30 også er kort. Likevel er dette ein mindre merknad; den noverande teksten er akseptabel."
+      }
+    ]
   },
   {
     "bookId": 42,
@@ -213,7 +227,15 @@
     "bookId": 42,
     "chapterId": 20,
     "verseId": 33,
-    "text": "Ved oppstoda, kven si kone blir ho då? For alle sju hadde henne til kone.»"
+    "text": "Kven si kone blir kvinna då, ved oppstoda? For alle sju hadde henne til kone.»",
+    "versions": [
+      {
+        "text": "Ved oppstoda, kven si kone blir ho då? For alle sju hadde henne til kone.»",
+        "type": "grammar",
+        "severity": "minor",
+        "explanation": "I originalen er «ἡ γυνή» (kvinna) subjektet i setninga. Den noverande omsetjinga brukar berre pronomenet «ho», men det kan vera uklart kva «ho» viser til sidan ho ikkje er nemnd sidan vers 32. Å ta med «kvinna» gjer setninga klarare og følgjer originalen betre."
+      }
+    ]
   },
   {
     "bookId": 42,
@@ -237,7 +259,15 @@
     "bookId": 42,
     "chapterId": 20,
     "verseId": 37,
-    "text": "Men at dei døde står opp, det viste òg Moses ved tornebusken, der han kallar Herren for Abrahams Gud og Isaks Gud og Jakobs Gud."
+    "text": "Men at dei døde står opp, det viste òg Moses ved tornebusken, der han kallar Herren Abrahams Gud og Isaks Gud og Jakobs Gud.",
+    "versions": [
+      {
+        "text": "Men at dei døde står opp, det viste òg Moses ved tornebusken, der han kallar Herren for Abrahams Gud og Isaks Gud og Jakobs Gud.",
+        "type": "error",
+        "severity": "major",
+        "explanation": "Originalen seier 'λέγει κύριον τὸν θεὸν Ἀβραάμ' – Moses kallar Herren (som) Abrahams Gud. Han kallar ikkje Herren «for» Abrahams Gud (som kan lesast som om han gjev Herren eit namn), men identifiserer Herren som Abrahams Gud. «Kallar Herren Abrahams Gud» er meir presist enn «kallar Herren for Abrahams Gud»."
+      }
+    ]
   },
   {
     "bookId": 42,

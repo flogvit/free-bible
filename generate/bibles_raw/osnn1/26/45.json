@@ -75,11 +75,17 @@
     "bookId": 26,
     "chapterId": 45,
     "verseId": 12,
-    "text": "Ein sjekel skal vera tjue gera. Tjue sjekel, tjuefem sjekel og femten sjekel skal utgjera éin mine for dykk.",
+    "text": "Ein sjekel skal vera tjue gera. Tjue sjekel, tjuefem sjekel og femten sjekel skal til saman utgjera éin mine for dykk.",
     "versions": [
       {
         "text": "Ein sjekel skal vera tjue gera. Tjue sjekel pluss tjuefem sjekel pluss femten sjekel skal vera éin mine for dykk.",
         "explanation": "Originalteksten listar opp tre beløp som til saman utgjer ein mine (20+25+15=60 sjekel). 'Pluss' er moderne matematisk språk. Ei meir naturleg formulering for munnleg lesing er å liste opp tala med 'og'."
+      },
+      {
+        "text": "Ein sjekel skal vera tjue gera. Tjue sjekel, tjuefem sjekel og femten sjekel skal utgjera éin mine for dykk.",
+        "type": "grammar",
+        "severity": "minor",
+        "explanation": "This verse has been revised once, and the current version is mostly fine. However, adding 'til saman' makes it slightly clearer that the three amounts are being summed. This is a very minor suggestion and the current version is acceptable."
       }
     ]
   },
@@ -93,11 +99,17 @@
     "bookId": 26,
     "chapterId": 45,
     "verseId": 14,
-    "text": "Den fastsette avgifta av olje er éin tiandedels bat av kvar kor. Ti bat er ein homer, for ti bat er ein homer.",
+    "text": "Den fastsette avgifta av olje – baten med olje – er ein tiandedel bat frå kvar kor. Ti bat er ein homer, for ti bat er ein homer.",
     "versions": [
       {
         "text": "Den fastsette avgifta av olje er éin bat olje av kvar kor. Ti bat er ein homer, for ti bat er ein homer.",
         "explanation": "Det hebraiske מַעְשַׂ֤ר הַבַּת֙ tyder 'ein tiandedel bat', ikkje 'éin bat'. Avgifta er ein tiandedel bat per kor (som er det same som ein homer)."
+      },
+      {
+        "text": "Den fastsette avgifta av olje er éin tiandedels bat av kvar kor. Ti bat er ein homer, for ti bat er ein homer.",
+        "type": "error",
+        "severity": "major",
+        "explanation": "'Éin tiandedels bat' er grammatisk uheldig på nynorsk. Det bør vera 'ein tiandedel bat'. Dessutan har den hebraiske teksten הַבַּ֣ת הַשֶּׁ֗מֶן (baten med olje) som ei utdjuping/apposisjon, noko som manglar i omsetjinga."
       }
     ]
   },
@@ -111,7 +123,15 @@
     "bookId": 26,
     "chapterId": 45,
     "verseId": 16,
-    "text": "Alt folket i landet skal vera med på denne offergåva til fyrsten i Israel."
+    "text": "Alt folket i landet skal gje denne offergåva til fyrsten i Israel.",
+    "versions": [
+      {
+        "text": "Alt folket i landet skal vera med på denne offergåva til fyrsten i Israel.",
+        "type": "theological",
+        "severity": "major",
+        "explanation": "Den hebraiske teksten seier at folket skal gje/bidra denne offergåva *til* fyrsten (לַנָּשִׂיא). Fyrsten er mottakaren av gåva (som han deretter bruker til offertjenesta, jf. v. 17). 'Vera med på' er for vagt og skjuler at folket gjev offergåva til fyrsten."
+      }
+    ]
   },
   {
     "bookId": 26,

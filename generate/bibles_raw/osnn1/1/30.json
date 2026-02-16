@@ -105,7 +105,15 @@
     "bookId": 1,
     "chapterId": 30,
     "verseId": 15,
-    "text": "Ho svara: «Er det ikkje nok at du har teke mannen min? Vil du ta kjærleiksepla til son min òg?» Rakel sa: «Vel, han kan liggja hos deg i natt som betaling for kjærleiksepla til son din.»"
+    "text": "Rakel sa: «Difor kan han liggja hos deg i natt til gjengjeld for kjærleiksepla til son din.»",
+    "versions": [
+      {
+        "text": "Ho svara: «Er det ikkje nok at du har teke mannen min? Vil du ta kjærleiksepla til son min òg?» Rakel sa: «Vel, han kan liggja hos deg i natt som betaling for kjærleiksepla til son din.»",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "'לָכֵן' tyder 'difor/derfor', ikkje 'vel'. 'Vel' er for uformelt og manglar den logiske koplinga i originalen. 'Til gjengjeld' er meir presist enn 'som betaling'."
+      }
+    ]
   },
   {
     "bookId": 1,
@@ -201,7 +209,15 @@
     "bookId": 1,
     "chapterId": 30,
     "verseId": 31,
-    "text": "Han sa: «Kva skal eg gje deg?» Jakob svara: «Du skal ikkje gje meg noko. Om du gjer dette for meg, skal eg halda fram med å gjeta og vakta sauene dine:"
+    "text": "Han sa: «Kva skal eg gje deg?» Jakob svara: «Du skal ikkje gje meg noko. Om du gjer dette for meg, vil eg igjen gjeta og vakta flokken din:",
+    "versions": [
+      {
+        "text": "Han sa: «Kva skal eg gje deg?» Jakob svara: «Du skal ikkje gje meg noko. Om du gjer dette for meg, skal eg halda fram med å gjeta og vakta sauene dine:",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "Det hebraiske 'אָשׁוּבָה אֶרְעֶה צֹאנְךָ אֶשְׁמֹר' tyder 'eg vil gå attende/venda attende og gjeta flokken din og vakta han'. 'צֹאנְךָ' (tso'ankha) er 'flokken din' (ikkje berre sauer) og 'אָשׁוּבָה' viser til å venda tilbake til gjeting, ikkje 'halda fram'."
+      }
+    ]
   },
   {
     "bookId": 1,
@@ -219,7 +235,15 @@
     "bookId": 1,
     "chapterId": 30,
     "verseId": 33,
-    "text": "Ærlegdomen min skal vitna for meg i framtida. Når du kjem og ser på løna mi, skal alt som ikkje er flekkete eller spraglete mellom geitene eller mørkt mellom lamma, reknast som stole av meg.»"
+    "text": "Ærlegdomen min skal vitna for meg i framtida. Når du kjem og ser på løna mi, skal alt som ikkje er flekkete eller spraglete mellom geitene eller mørkfarga mellom lamma, reknast som stole av meg.»",
+    "versions": [
+      {
+        "text": "Ærlegdomen min skal vitna for meg i framtida. Når du kjem og ser på løna mi, skal alt som ikkje er flekkete eller spraglete mellom geitene eller mørkt mellom lamma, reknast som stole av meg.»",
+        "type": "error",
+        "severity": "minor",
+        "explanation": "For konsistens med vers 32 (der 'חוּם' vart omsett til 'mørkfarga' etter revisjon) bør same ordet brukast her. 'Mørkt' er inkonsistent med den bevisste endringa i vers 32."
+      }
+    ]
   },
   {
     "bookId": 1,
@@ -237,7 +261,15 @@
     "bookId": 1,
     "chapterId": 30,
     "verseId": 36,
-    "text": "Han la tre dagsreiser mellom seg og Jakob. Jakob gjette resten av sauene til Laban."
+    "text": "Han la tre dagsreiser mellom seg og Jakob. Og Jakob gjette resten av flokken til Laban.",
+    "versions": [
+      {
+        "text": "Han la tre dagsreiser mellom seg og Jakob. Jakob gjette resten av sauene til Laban.",
+        "type": "error",
+        "severity": "minor",
+        "explanation": "Det hebraiske 'צֹאן' (tso'n) tyder 'småfe/flokk' og inkluderer både sauer og geiter. Sidan konteksten handlar om både sauer og geiter, er 'flokken' meir presist enn 'sauene'."
+      }
+    ]
   },
   {
     "bookId": 1,

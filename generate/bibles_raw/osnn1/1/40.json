@@ -51,7 +51,15 @@
     "bookId": 1,
     "chapterId": 40,
     "verseId": 7,
-    "text": "Han spurde hovmennene til farao, dei som sat i varetekt saman med han i huset til herren hans: «Kvifor ser de så sorgfulle ut i dag?»"
+    "text": "Han spurde hovmennene til farao, dei som var med han i varetekt i huset til herren hans: «Kvifor ser de så sorgfulle ut i dag?»",
+    "versions": [
+      {
+        "text": "Han spurde hovmennene til farao, dei som sat i varetekt saman med han i huset til herren hans: «Kvifor ser de så sorgfulle ut i dag?»",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "Hebraisk 'אֲשֶׁר אִתּוֹ בְמִשְׁמַר' tyder 'som var med han i varetekt'. Det er ikkje dei som sat i varetekt 'saman med han', men dei som var saman med han (Josef) i varetekta. Ei lita omformulering gjev betre flyt og er nærare originalen."
+      }
+    ]
   },
   {
     "bookId": 1,
@@ -141,17 +149,31 @@
     "bookId": 1,
     "chapterId": 40,
     "verseId": 19,
-    "text": "Om tre dagar skal farao lyfte hovudet ditt av deg og hengje deg på eit tre, og fuglane skal eta kjøtet ditt.»"
+    "text": "Om tre dagar skal farao lyfte hovudet ditt av deg og hengje deg på eit tre, og fuglane skal ete kjøtet ditt.»",
+    "versions": [
+      {
+        "text": "Om tre dagar skal farao lyfte hovudet ditt av deg og hengje deg på eit tre, og fuglane skal eta kjøtet ditt.»",
+        "type": "grammar",
+        "severity": "minor",
+        "explanation": "'Eta' er ikkje standardform på nynorsk. Rett infinitivsform er 'ete' (eventuelt 'eta' finst i somme dialektar, men 'ete' er meir standard nynorsk)."
+      }
+    ]
   },
   {
     "bookId": 1,
     "chapterId": 40,
     "verseId": 20,
-    "text": "Den tredje dagen var det fødselsdagen til farao. Han heldt eit gjestebod for alle tenarane sine, og han tok føre seg saka til øvste munnskjenken og saka til øvste bakaren midt blant tenarane sine.",
+    "text": "Den tredje dagen var det fødselsdagen til farao. Han heldt eit gjestebod for alle tenarane sine, og han kalla fram øvste munnskjenken og øvste bakaren midt blant tenarane sine.",
     "versions": [
       {
         "text": "Den tredje dagen var det fødselsdagen til farao. Han heldt eit gjestebod for alle tenarane sine, og han lyfte hovudet til øvste munnskjenken og hovudet til øvste bakaren framfor tenarane sine.",
         "explanation": "Uttrykket 'lyfte hovudet' (נָשָׂא רֹאשׁ) i vers 20 er eit idiom som tyder 'ta føre seg saka til nokon' eller 'kalle fram'. Her er det ikkje same tyding som i vers 13 og 19 der det har spesifikke tydingar. 'Midt blant' (בְּתוֹךְ) er meir presist enn 'framfor'."
+      },
+      {
+        "text": "Den tredje dagen var det fødselsdagen til farao. Han heldt eit gjestebod for alle tenarane sine, og han tok føre seg saka til øvste munnskjenken og saka til øvste bakaren midt blant tenarane sine.",
+        "type": "theological",
+        "severity": "major",
+        "explanation": "Verset har versjonhistorikk, men den noverande omsetjinga 'tok føre seg saka til' er problematisk fordi den hebraiske frasen 'נָשָׂא אֶת־רֹאשׁ' her refererer til å hente fram/kalle fram personane sjølve, ikkje abstrakt 'ta føre seg saka'. Vers 21-22 forklarer kva som skjedde med kvar av dei. 'Kalla fram' er meir naturleg og presist."
       }
     ]
   },

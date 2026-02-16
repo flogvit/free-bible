@@ -27,11 +27,17 @@
     "bookId": 7,
     "chapterId": 12,
     "verseId": 4,
-    "text": "Gilead-mennene slo Efraim, for efraimmennene hadde sagt: «De er berre flyktningar frå Efraim, de gileadittar, midt mellom Efraim og Manasse!»",
+    "text": "Så samla Jefta alle mennene i Gilead og gjekk til strid mot Efraim. Gilead-mennene slo Efraim, for efraimmennene hadde sagt: «De er berre flyktningar frå Efraim, de gileadittar, midt mellom Efraim og Manasse!»",
     "versions": [
       {
         "text": "Så samla Jefta alle mennene i Gilead og gjekk til strid mot Efraim. Gilead-mennene slo Efraim, for dei hadde sagt: «De er berre flyktningar frå Efraim, de gileadittar, midt mellom Efraim og Manasse!»",
         "explanation": "Det hebraiske כִּי אָמְרוּ refererer til kva efraimmennene hadde sagt (dei håna gileadittane). Subjektet 'dei' er tvitydig på norsk og kan misforståast som gileadittane. Å presisera 'efraimmennene' gjer teksten klarare."
+      },
+      {
+        "text": "Gilead-mennene slo Efraim, for efraimmennene hadde sagt: «De er berre flyktningar frå Efraim, de gileadittar, midt mellom Efraim og Manasse!»",
+        "type": "error",
+        "severity": "major",
+        "explanation": "Den noverande versjonen manglar den første delen av verset: «Så samla Jefta alle mennene i Gilead og gjekk til strid mot Efraim» (וַיִּקְבֹּץ יִפְתָּח אֶת־כָּל־אַנְשֵׁי גִלְעָד וַיִּלָּחֶם אֶת־אֶפְרָיִם). Den førre versjonen hadde dette med, men det vart fjerna – truleg utilsikta – ved siste revisjon som berre skulle presisera subjektet 'efraimmennene'."
       }
     ]
   },
@@ -69,11 +75,17 @@
     "bookId": 7,
     "chapterId": 12,
     "verseId": 9,
-    "text": "Døtrene sende han ut, og tretti døtrer henta han utanfrå til sønene sine.",
+    "text": "Han hadde tretti søner og tretti døtrer. Døtrene sende han ut, og tretti døtrer henta han utanfrå til sønene sine. Han var dommar i Israel i sju år.",
     "versions": [
       {
         "text": "Han hadde tretti søner og tretti døtrer. Døtrene gifta han bort utanfor ætta, og tretti døtrer henta han utanfrå til sønene sine. Han var dommar i Israel i sju år.",
         "explanation": "Det hebraiske שִׁלַּח הַחוּצָה betyr bokstaveleg 'sende ut' (dvs. gifta bort til andre ætter/klanar). 'Gifta bort utanfor ætta' er ei tolking, men 'sende ut' er meir direkte og parallelt med 'henta utanfrå'."
+      },
+      {
+        "text": "Døtrene sende han ut, og tretti døtrer henta han utanfrå til sønene sine.",
+        "type": "error",
+        "severity": "critical",
+        "explanation": "Det manglar to viktige delar av verset: opninga «Han hadde tretti søner og tretti døtrer» (וַיְהִי־לוֹ שְׁלֹשִׁים בָּנִים וּשְׁלֹשִׁים בָּנוֹת) og avslutninga «Han var dommar i Israel i sju år» (וַיִּשְׁפֹּט אֶת־יִשְׂרָאֵל שֶׁבַע שָׁנִים). Desse vart truleg utilsikta fjerna ved siste revisjon som berre gjaldt ordvalet 'sende ut'."
       }
     ]
   },

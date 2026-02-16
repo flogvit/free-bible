@@ -3,7 +3,15 @@
     "bookId": 19,
     "chapterId": 75,
     "verseId": 1,
-    "text": "Til korleiaren. «Øydelegg ikkje.» Ein salme av Asaf. Ein song."
+    "text": "Til kormeisteren. «Øydelegg ikkje.» Ein salme av Asaf. Ein song.",
+    "versions": [
+      {
+        "text": "Til korleiaren. «Øydelegg ikkje.» Ein salme av Asaf. Ein song.",
+        "type": "error",
+        "severity": "major",
+        "explanation": "'Korleiaren' er ikkje eit korrekt nynorskord. Det rette ordet er 'kormeisteren' eller 'korleiar' (men med rett bøying: 'korleiar' → 'korleiaren'). Eigentleg er 'korleiaren' mogleg som bøying av 'korleiar', men den meir vanlege og lettleste forma i moderne nynorsk er 'kormeisteren'."
+      }
+    ]
   },
   {
     "bookId": 19,
@@ -33,7 +41,15 @@
     "bookId": 19,
     "chapterId": 75,
     "verseId": 5,
-    "text": "Eg seier til dei hovmodige: «Ver ikkje hovmodige!» Og til dei ugudelege: «Lyft ikkje hornet dykkar!"
+    "text": "Eg sa til dei hovmodige: «Ver ikkje hovmodige!» Og til dei ugudelege: «Lyft ikkje hornet dykkar!»",
+    "versions": [
+      {
+        "text": "Eg seier til dei hovmodige: «Ver ikkje hovmodige!» Og til dei ugudelege: «Lyft ikkje hornet dykkar!",
+        "type": "grammar",
+        "severity": "minor",
+        "explanation": "Det hebraiske אָמַרְתִּי er perfektum (fortid), altså 'eg sa', ikkje 'eg seier'. I tillegg manglar det eit avsluttande hermeteikn etter siste setning."
+      }
+    ]
   },
   {
     "bookId": 19,
@@ -45,7 +61,15 @@
     "bookId": 19,
     "chapterId": 75,
     "verseId": 7,
-    "text": "For det kjem ikkje frå aust eller vest, ikkje frå øydemarka kjem opphøging."
+    "text": "For opphøging kjem ikkje frå aust eller vest, og ikkje frå øydemarka.",
+    "versions": [
+      {
+        "text": "For det kjem ikkje frå aust eller vest, ikkje frå øydemarka kjem opphøging.",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "Ordet הָרִים (opphøging) finst i den hebraiske teksten, men plasseringa i den noverande omsetjinga er litt klønete. Dessutan er det mest naturleg å la 'opphøging' vera subjekt frå starten for betre flyt. Originalteksten nemner ikkje eksplisitt 'opphøging' som verb, men הָרִים (frå רום) kan tolkast som infinitiv/substantiv. Setninga vert klarare ved å flytta subjektet fram."
+      }
+    ]
   },
   {
     "bookId": 19,
@@ -57,7 +81,15 @@
     "bookId": 19,
     "chapterId": 75,
     "verseId": 9,
-    "text": "For eit beger er i Herrens hand med skummande vin, fullt av krydra drikk. Han skjenker ut av det, og alle dei ugudelege på jorda må drikka det ut til botnen, heilt til bermen."
+    "text": "For eit beger er i Herrens hand, med skummande vin fullt av krydder. Han skjenker ut av det, og bermen må alle dei ugudelege på jorda vrida ut og drikka.",
+    "versions": [
+      {
+        "text": "For eit beger er i Herrens hand med skummande vin, fullt av krydra drikk. Han skjenker ut av det, og alle dei ugudelege på jorda må drikka det ut til botnen, heilt til bermen.",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "Den hebraiske teksten seier שְׁמָרֶיהָ יִמְצוּ יִשְׁתּוּ – 'bermen skal dei vrida/pressa ut og drikka'. Det er bermen dei må vrida ut og drikka, ikkje berre at dei drikk til botnen. Dessutan er מָלֵא מֶסֶךְ betre omsett med 'fullt av krydder/blandingsstoff' enn 'fullt av krydra drikk', sidan מֶסֶךְ er blandinga/krydderet sjølv."
+      }
+    ]
   },
   {
     "bookId": 19,

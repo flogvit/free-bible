@@ -21,7 +21,7 @@
     "bookId": 43,
     "chapterId": 5,
     "verseId": 4,
-    "text": "[Dei eldste handskriftene har ikkje vers 4]",
+    "text": "For ein engel steig ned i dammen frå tid til anna og rørte opp vatnet. Den første som steig ned etter at vatnet var rørt opp, vart frisk, same kva sjukdom han hadde. [Dette verset manglar i dei eldste handskriftene.]",
     "versions": [
       {
         "text": "For ein engel steig ned i dammen frå tid til anna og rørte opp vatnet. Den som først steig nedi etter at vatnet var rørt opp, vart frisk, same kva sjukdom han leid av.",
@@ -30,6 +30,12 @@
       {
         "text": "[Vers 4 bør markerast som tekstkritisk usikkert eller utelatast, då det manglar i dei eldste og mest pålitelege handskriftene]",
         "explanation": "Den noverande teksten er ein redaksjonell kommentar, ikkje ei omsetjing. For munnleg opplesing bør dette vere ein kort, klar parentes eller fotnotemarkering. Alternativt kan verset utelatast heilt med ei fotnote. Den føreslåtte teksten er kortare og meir eigna for opplesing."
+      },
+      {
+        "text": "[Dei eldste handskriftene har ikkje vers 4]",
+        "type": "suggestion",
+        "severity": "major",
+        "explanation": "Den noverande teksten er berre ein redaksjonell kommentar og ikkje ei omsetjing. For munnleg opplesing og fullstendigheit bør sjølve teksten omsetjast, med eit tydeleg tillegg i klammer som markerer den tekstkritiske situasjonen. Slik gjer dei fleste moderne bibelomsetjingar (t.d. NO2011, Bibel 2011)."
       }
     ]
   },
@@ -79,7 +85,15 @@
     "bookId": 43,
     "chapterId": 5,
     "verseId": 12,
-    "text": "Dei spurde han: «Kven er den mannen som sa til deg: Ta båra og gå?»"
+    "text": "Dei spurde han: «Kven er den mannen som sa til deg: Ta henne opp og gå?»",
+    "versions": [
+      {
+        "text": "Dei spurde han: «Kven er den mannen som sa til deg: Ta båra og gå?»",
+        "type": "error",
+        "severity": "minor",
+        "explanation": "I den greske teksten i vers 12 spør dei berre «Ἆρον καὶ περιπάτει» – altså «Ta opp og gå» – utan å nemne «κράβαττον» (båra). Dei unngår med vilje å nemne at han ber båra (som er sabbatsbrotet). Den noverande omsetjinga legg til «båra» som ikkje står i den kritiske greske teksten for dette verset. Ei meir nøyaktig attgjeving bør spegle dette."
+      }
+    ]
   },
   {
     "bookId": 43,
@@ -199,7 +213,15 @@
     "bookId": 43,
     "chapterId": 5,
     "verseId": 31,
-    "text": "Om eg vitnar om meg sjølv, er vitnemålet mitt ikkje gyldig."
+    "text": "Om eg vitnar om meg sjølv, er vitnemålet mitt ikkje sant.",
+    "versions": [
+      {
+        "text": "Om eg vitnar om meg sjølv, er vitnemålet mitt ikkje gyldig.",
+        "type": "theological",
+        "severity": "minor",
+        "explanation": "Det greske ἀληθής tyder 'sann/sant', ikkje 'gyldig'. Omsetjinga «ikkje gyldig» er ei juridisk tolking som ikkje fullt ut svarar til det greske ordet. I Joh 8:14 seier Jesus det motsette – at vitnemålet hans ER sant – noko som vert sjølvmotseiande om ein her omset med 'gyldig'. Å bruke 'sant' er meir nøyaktig og konsistent."
+      }
+    ]
   },
   {
     "bookId": 43,

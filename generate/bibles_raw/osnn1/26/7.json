@@ -63,7 +63,15 @@
     "bookId": 26,
     "chapterId": 7,
     "verseId": 11,
-    "text": "Valden reiser seg til ein stav for vondskapen. Ingenting blir att av dei, ikkje av mengda deira, ikkje av rikdomen deira, og ingen skal sørgja over dei."
+    "text": "Valden reiser seg til ein stav for vondskapen. Ingenting blir att av dei, ikkje av mengda deira, ikkje av overfloda deira, og ingen skal sørgja over dei.",
+    "versions": [
+      {
+        "text": "Valden reiser seg til ein stav for vondskapen. Ingenting blir att av dei, ikkje av mengda deira, ikkje av rikdomen deira, og ingen skal sørgja over dei.",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "Det hebraiske 'mehehemehem' er eit vanskeleg ord, men det er nærare 'overflod/larm' enn 'rikdom'. 'Rikdom' er ikkje direkte feil, men 'overflod' er meir presist og skil seg betre frå 'hamonam' (mengda) i same vers."
+      }
+    ]
   },
   {
     "bookId": 26,
@@ -75,11 +83,17 @@
     "bookId": 26,
     "chapterId": 7,
     "verseId": 13,
-    "text": "Ingen skal kunna styrkja livet sitt ved si skuld.",
+    "text": "For seljaren skal ikkje venda tilbake til det han har selt, sjølv om dei enno er i live. For synet mot heile mengda skal ikkje vendast tilbake, og ingen skal ved si skuld kunna styrkja livet sitt.",
     "versions": [
       {
         "text": "For seljaren skal ikkje få att det som er selt, sjølv om dei enno lever. For synet gjeld heile mengda og skal ikkje takast tilbake. Ingen skal kunna halda på livet på grunn av si skuld.",
         "explanation": "Hebraisk 'lo yitchazzaqu' betyr 'dei skal ikkje styrkja seg' eller 'halda seg oppe'. Den noverande omsettinga er akseptabel, men 'styrkja livet sitt' er nærare grunntydingi og gjev betre meining i konteksten om at synda ikkje gjev dei styrke til å overleva."
+      },
+      {
+        "text": "Ingen skal kunna styrkja livet sitt ved si skuld.",
+        "type": "error",
+        "severity": "critical",
+        "explanation": "Verset er kraftig forkorta i den noverande omsettinga. Heile den fyrste delen om at seljaren ikkje skal venda tilbake til det selde, og at synet mot heile mengda ikkje skal vendast tilbake, manglar. Den tidlegare versjonen hadde denne informasjonen, men vart endra til berre éi setning, noko som gjer at mesteparten av innhaldet forsvinn. Den foreslåtte teksten er ulikt den tidlegare versjonen i ordval og struktur."
       }
     ]
   },
@@ -123,11 +137,17 @@
     "bookId": 26,
     "chapterId": 7,
     "verseId": 20,
-    "text": "Den vakre pryden sin brukte dei til hovmod og laga styggelege gudebilete og avskyelege ting av han.",
+    "text": "Den vakre pryden sin brukte dei til hovmod og laga styggelege gudebilete og avskyelege ting av han. Difor gjer eg han til noko ureint for dei.",
     "versions": [
       {
         "text": "Dei brukte sine vakre smykke til hovmod og laga styggelege gudebilete og avskyelege ting av dei. Difor gjer eg det til noko ureint for dei.",
         "explanation": "Hebraisk har eintal 'tsebi edyo' (hans/dens vakre pryd) som truleg viser til gullet/sølvet frå v.19. Omsettinga til fleirtal 'smykke' og 'dei' er litt unøyaktig. Eintal gjev betre samanheng med konteksten."
+      },
+      {
+        "text": "Den vakre pryden sin brukte dei til hovmod og laga styggelege gudebilete og avskyelege ting av han.",
+        "type": "error",
+        "severity": "major",
+        "explanation": "Den siste setninga i verset, 'al-ken netattiv lahem leniddah' (difor gjer eg det til noko ureint for dei), manglar heilt i den noverande omsettinga. Den tidlegare versjonen hadde denne setninga, og endringa ser ut til å ha vore retta mot eintal/fleirtal-problematikk, ikkje fjerning av siste setning. Setninga må med."
       }
     ]
   },

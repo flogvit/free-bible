@@ -27,11 +27,17 @@
     "bookId": 43,
     "chapterId": 21,
     "verseId": 5,
-    "text": "Jesus sa til dei: «Born, har de noko fisk?» Dei svara: «Nei.»",
+    "text": "Jesus sa til dei: «Born, har de noko fisk?» Dei svara han: «Nei.»",
     "versions": [
       {
         "text": "Jesus sa til dei: «Born, har de noko å eta?» Dei svara han: «Nei.»",
         "explanation": "Ordet προσφάγιον (prosfagion) refererer spesifikt til noko som blir ete saman med brød, typisk fisk. I denne konteksten spør Jesus om dei har fått nokon fisk. 'Noko å eta' er meir generelt enn originalen."
+      },
+      {
+        "text": "Jesus sa til dei: «Born, har de noko fisk?» Dei svara: «Nei.»",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "Grunnteksten har ἀπεκρίθησαν αὐτῷ (dei svara han), med dativobjekt. Den noverande versjonen manglar 'han'. Den førre versjonen hadde 'Dei svara han', så dette var truleg ein utilsikta endring."
       }
     ]
   },
@@ -63,7 +69,15 @@
     "bookId": 43,
     "chapterId": 21,
     "verseId": 9,
-    "text": "Då dei kom i land, såg dei eit bål der med fisk på og brød."
+    "text": "Då dei kom i land, såg dei eit kolbål der, med fisk oppå og brød.",
+    "versions": [
+      {
+        "text": "Då dei kom i land, såg dei eit bål der med fisk på og brød.",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "Det greske ἀνθρακιάν tyder spesifikt 'kolbål' (glør/kol), ikkje berre 'bål'. Dessutan er 'med fisk på' litt klønete; 'med fisk oppå' er meir naturleg og gjev betre att ἐπικείμενον (som ligg oppå)."
+      }
+    ]
   },
   {
     "bookId": 43,
@@ -87,7 +101,15 @@
     "bookId": 43,
     "chapterId": 21,
     "verseId": 13,
-    "text": "Jesus gjekk bort og tok brødet og gav dei, og det same gjorde han med fisken."
+    "text": "Jesus kom og tok brødet og gav dei, og like eins fisken.",
+    "versions": [
+      {
+        "text": "Jesus gjekk bort og tok brødet og gav dei, og det same gjorde han med fisken.",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "ἔρχεται tyder 'kjem', ikkje 'gjekk bort'. Jesus kjem til dei, han går ikkje bort. 'Ὁμοίως' (like eins/på same vis) er også meir presist omsett med 'like eins' enn 'det same gjorde han med'."
+      }
+    ]
   },
   {
     "bookId": 43,
@@ -135,13 +157,29 @@
     "bookId": 43,
     "chapterId": 21,
     "verseId": 19,
-    "text": "Dette sa han for å visa kva slags død Peter skulle æra Gud med. Og då han hadde sagt dette, sa han til han: «Følg meg!»"
+    "text": "Dette sa han for å peika på kva slags død Peter skulle herleggjera Gud med.",
+    "versions": [
+      {
+        "text": "Dette sa han for å visa kva slags død Peter skulle æra Gud med. Og då han hadde sagt dette, sa han til han: «Følg meg!»",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "δοξάσει (frå δοξάζω) tyder meir presist 'herleggjera' enn 'æra'. Det er eit sterkt teologisk omgrep i Johannes-evangeliet som handlar om å gje Gud ære/herlegdom (doxa), ikkje berre 'æra'."
+      }
+    ]
   },
   {
     "bookId": 43,
     "chapterId": 21,
     "verseId": 20,
-    "text": "Peter snudde seg og såg at den læresveinen som Jesus hadde kjær, følgde etter. Det var han som hadde lent seg mot brystet til Jesus under måltidet og spurt: «Herre, kven er det som skal svika deg?»"
+    "text": "Det var han som hadde lent seg inn til brystet hans under måltidet og spurt: «Herre, kven er det som skal svika deg?»",
+    "versions": [
+      {
+        "text": "Peter snudde seg og såg at den læresveinen som Jesus hadde kjær, følgde etter. Det var han som hadde lent seg mot brystet til Jesus under måltidet og spurt: «Herre, kven er det som skal svika deg?»",
+        "type": "grammar",
+        "severity": "minor",
+        "explanation": "ἐπὶ τὸ στῆθος αὐτοῦ tyder 'inn til/mot brystet hans'. 'Brystet til Jesus' er ei unødvendig presisering; pronomenet 'hans' er tilstrekkeleg og meir naturleg nynorsk her, sidan konteksten er klar."
+      }
+    ]
   },
   {
     "bookId": 43,

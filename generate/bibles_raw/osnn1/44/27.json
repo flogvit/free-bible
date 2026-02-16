@@ -39,7 +39,15 @@
     "bookId": 44,
     "chapterId": 27,
     "verseId": 6,
-    "text": "Der fann offiseren eit skip frå Alexandria som skulle til Italia, og han fekk oss om bord i det."
+    "text": "Der fann centurionen eit skip frå Alexandria som skulle til Italia, og han fekk oss om bord i det.",
+    "versions": [
+      {
+        "text": "Der fann offiseren eit skip frå Alexandria som skulle til Italia, og han fekk oss om bord i det.",
+        "type": "error",
+        "severity": "minor",
+        "explanation": "I vers 1 vart termen endra frå 'offiser' til 'centurion' med grunngjevinga at ἑκατοντάρχης tyder spesifikt 'centurion'. Same greske ordet (ἑκατοντάρχης) vert brukt her, men er omsett med 'offiseren'. For å vera konsistent bør det stå 'centurionen' her også."
+      }
+    ]
   },
   {
     "bookId": 44,
@@ -69,7 +77,15 @@
     "bookId": 44,
     "chapterId": 27,
     "verseId": 11,
-    "text": "Men offiseren lydde meir på styrmannen og skipsreeiaren enn på det Paulus sa."
+    "text": "Men centurionen lydde meir på styrmannen og skipsreeiaren enn på det Paulus sa.",
+    "versions": [
+      {
+        "text": "Men offiseren lydde meir på styrmannen og skipsreeiaren enn på det Paulus sa.",
+        "type": "error",
+        "severity": "minor",
+        "explanation": "Same problem som vers 6 – ἑκατοντάρχης er omsett med 'offiseren' her, men 'centurion' vart vald som presist omgrep i vers 1. Bør vera konsistent."
+      }
+    ]
   },
   {
     "bookId": 44,
@@ -159,13 +175,29 @@
     "bookId": 44,
     "chapterId": 27,
     "verseId": 24,
-    "text": "og han sa: 'Ver ikkje redd, Paulus! Du skal stå framfor keisaren. Og sjå, Gud har gjeve deg alle som siglar saman med deg.'»"
+    "text": "og han sa: 'Ver ikkje redd, Paulus! Du skal stå framfor keisaren. Og sjå, Gud har av nåde gjeve deg alle dei som siglar saman med deg.'»",
+    "versions": [
+      {
+        "text": "og han sa: 'Ver ikkje redd, Paulus! Du skal stå framfor keisaren. Og sjå, Gud har gjeve deg alle som siglar saman med deg.'»",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "Det greske κεχάρισταί (frå χαρίζομαι) inneber ein nådegåve – at Gud har 'skjenkt' eller 'av nåde gjeve' liva til medpassasjerane til Paulus. Det er ikkje berre å 'gje', men ei gåve av nåde. Tillegget 'av nåde' fangar denne nyansen betre teologisk."
+      }
+    ]
   },
   {
     "bookId": 44,
     "chapterId": 27,
     "verseId": 25,
-    "text": "«Difor, menn, ver ved godt mot! For eg trur på Gud at det vil gå slik som det vart sagt meg."
+    "text": "Difor, menn, ver ved godt mot! For eg trur på Gud at det vil gå slik som det vart sagt meg.",
+    "versions": [
+      {
+        "text": "«Difor, menn, ver ved godt mot! For eg trur på Gud at det vil gå slik som det vart sagt meg.",
+        "type": "grammar",
+        "severity": "minor",
+        "explanation": "Vers 25 startar med ein ekstra ope-hermeteikn «, men det er ei framhald av talen som starta i vers 22. Sidan det ikkje er nokon avsluttande hermeteikn mellom vers 24 og 25 (talen fortset frå vers 22 til 26), bør ikkje vers 25 ha ein ny opningshermetikk."
+      }
+    ]
   },
   {
     "bookId": 44,
@@ -213,7 +245,15 @@
     "bookId": 44,
     "chapterId": 27,
     "verseId": 31,
-    "text": "Då sa Paulus til offiseren og soldatane: «Dersom ikkje desse blir om bord i skipet, kan de ikkje bli berga.»"
+    "text": "Då sa Paulus til centurionen og soldatane: «Dersom ikkje desse blir om bord i skipet, kan de ikkje bli berga.»",
+    "versions": [
+      {
+        "text": "Då sa Paulus til offiseren og soldatane: «Dersom ikkje desse blir om bord i skipet, kan de ikkje bli berga.»",
+        "type": "error",
+        "severity": "minor",
+        "explanation": "Same inkonsekvens som i vers 6 og 11 – ἑκατοντάρχης bør vera 'centurionen' for å vera konsistent med valet gjort i vers 1."
+      }
+    ]
   },
   {
     "bookId": 44,
@@ -261,11 +301,17 @@
     "bookId": 44,
     "chapterId": 27,
     "verseId": 39,
-    "text": "Då det vart dag, kjende dei ikkje att landet, men dei såg ei vik med ei strand. Dit bestemte dei seg for å prøva å driva skipet i land om dei kunne.",
+    "text": "Då det vart dag, kjende dei ikkje att landet, men dei såg ei vik med ei strand, og dei la planar om å styra skipet inn dit om dei kunne.",
     "versions": [
       {
         "text": "Då det vart dag, kjende dei ikkje att landet, men dei såg ei vik med ei strand. Dit ville dei prøva å setja skipet på grunn om dei kunne.",
         "explanation": "Det greske ἐξῶσαι tyder 'driva/støyta fram' (mot stranda), ikkje nødvendigvis 'setja på grunn'. Poenget var å få skipet trygt inn på stranda, ikkje å grunnstøyta det med vilje."
+      },
+      {
+        "text": "Då det vart dag, kjende dei ikkje att landet, men dei såg ei vik med ei strand. Dit bestemte dei seg for å prøva å driva skipet i land om dei kunne.",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "Setninga 'Dit bestemte dei seg for å prøva å driva skipet i land om dei kunne' er noko klønete. Det greske ἐβουλεύοντο εἰ δύναιντο ἐξῶσαι tyder 'dei rådla om dei kunne driva/styra skipet dit'. Ei omformulering gjer setninga meir naturleg."
       }
     ]
   },
@@ -291,7 +337,15 @@
     "bookId": 44,
     "chapterId": 27,
     "verseId": 43,
-    "text": "Men offiseren ville berga Paulus og hindra dei i å gjera dette. Han baud dei som kunne symja, å kasta seg først i sjøen og koma seg i land."
+    "text": "Men centurionen ville berga Paulus og hindra dei i å gjera dette. Han baud dei som kunne symja, å kasta seg først i sjøen og koma seg i land.",
+    "versions": [
+      {
+        "text": "Men offiseren ville berga Paulus og hindra dei i å gjera dette. Han baud dei som kunne symja, å kasta seg først i sjøen og koma seg i land.",
+        "type": "error",
+        "severity": "minor",
+        "explanation": "Same inkonsekvens – ἑκατοντάρχης bør vera 'centurionen' gjennom heile kapitlet, i samsvar med det bevisste valet i vers 1."
+      }
+    ]
   },
   {
     "bookId": 44,
