@@ -93,10 +93,27 @@ function getSummaryPrompt(language, bookId, chapter, originalText) {
 
 **Key words/images:** 3-5 important concepts, symbols or images in the text with brief explanation (one sentence each).`;
 
+    const refFormatNb = `REFERANSEFORMAT:
+Når du refererer til bibelsteder, bruk formatet: [ref:FORKORTELSE KAPITTEL:VERS|VISNINGSTEKST]
+Eksempel: [ref:Joh 3:16|Johannes 3:16], [ref:1 Mos 1:1-3|1. Mosebok 1:1-3]
+Bruk KVN-forkortelser (1 Mos, Sal, Joh, Åp osv.) i ref-delen og fullt boknavn i visningsteksten.`;
+
+    const refFormatNn = `REFERANSEFORMAT:
+Når du refererer til bibelstader, bruk formatet: [ref:FORKORTING KAPITTEL:VERS|VISNINGSTEKST]
+Eksempel: [ref:Joh 3:16|Johannes 3:16], [ref:1 Mos 1:1-3|1. Mosebok 1:1-3]
+Bruk KVN-forkortingar (1 Mos, Sal, Joh, Åp osv.) i ref-delen og fullt boknamn i visningsteksten.`;
+
+    const refFormatEn = `REFERENCE FORMAT:
+When referring to Bible passages, use the format: [ref:ABBREVIATION CHAPTER:VERSE|DISPLAY TEXT]
+Example: [ref:Joh 3:16|John 3:16], [ref:1 Mos 1:1-3|Genesis 1:1-3]
+Use KVN abbreviations (1 Mos, Sal, Joh, Åp etc.) in the ref part and full book name in the display text.`;
+
     if (langCode === 'nb') {
         return `Lag et sammendrag av ${bibleRef} på norsk, bokmål.
 
 ${structureNb}
+
+${refFormatNb}
 
 Her er den ${originalLanguage}e originalteksten:
 ${originalText}`;
@@ -105,12 +122,16 @@ ${originalText}`;
 
 ${structureNn}
 
+${refFormatNn}
+
 Her er den ${originalLanguage}e originalteksten:
 ${originalText}`;
     } else {
         return `Write a summary of ${bibleRef} in ${language}.
 
 ${structureEn}
+
+${refFormatEn}
 
 Here is the original ${originalLanguageEn} text:
 ${originalText}`;
@@ -168,6 +189,11 @@ Your task is to review the summary and identify:
 - Missing or incorrect structure
 
 ${structureReminder}
+
+REFERANSEFORMAT:
+Bibelreferanser i teksten bruker formatet: [ref:FORKORTELSE KAPITTEL:VERS|VISNINGSTEKST]
+Eksempel: [ref:Joh 3:16|Johannes 3:16]. Bevar dette formatet i revisedSummary.
+Bruk KVN-forkortelser (1 Mos, Sal, Joh, Åp osv.) i ref-delen og fullt boknavn i visningsteksten.
 
 IMPORTANT:
 - If the current summary is good and has no issues, return an empty issues array and no revisedSummary

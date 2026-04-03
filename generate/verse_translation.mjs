@@ -142,6 +142,11 @@ IKKE inkluder:
 - "Filler" som later som det er interessant men egentlig er trivielt
 - Connections til vers i samme kapittel (det er åpenbart for leseren)
 
+REFERANSEFORMAT:
+Når du refererer til bibelsteder, bruk formatet: [ref:FORKORTELSE KAPITTEL:VERS|VISNINGSTEKST]
+Eksempel: [ref:Joh 3:16|Johannes 3:16], [ref:1 Mos 1:1-3|1. Mosebok 1:1-3]
+Bruk KVN-forkortelser (1 Mos, Sal, Joh, Åp osv.) i ref-delen og fullt boknavn i visningsteksten.
+
 Returner et JSON-objekt med en 'verses'-array.
 
 Originalspråk: ${originalLanguage}
@@ -178,6 +183,11 @@ Do NOT include:
 - References to other Bible translations
 - "Filler" that pretends to be interesting but is actually trivial
 - Connections to verses in the same chapter (that's obvious to the reader)
+
+REFERENCE FORMAT:
+When referring to Bible passages, use the format: [ref:ABBREVIATION CHAPTER:VERSE|DISPLAY TEXT]
+Example: [ref:Joh 3:16|John 3:16], [ref:1 Mos 1:1-3|Genesis 1:1-3]
+Use KVN abbreviations (1 Mos, Sal, Joh, Åp etc.) in the ref part and full book name in the display text.
 
 Return a JSON object with a 'verses' array.
 
@@ -289,6 +299,11 @@ KRITISK - FULLSTENDIGE SETNINGER:
   skal suggested være "Dette er riktig om syv ord", IKKE bare "syv ord"
 
 Returner et JSON-objekt med 'issues' (array), 'summary' (string) og 'score' (heltall 1-10).
+
+REFERANSEFORMAT:
+Bibelreferanser i teksten bruker formatet: [ref:FORKORTELSE KAPITTEL:VERS|VISNINGSTEKST]
+Eksempel: [ref:Joh 3:16|Johannes 3:16]. Bevar dette formatet i suggested-tekst.
+Bruk KVN-forkortelser (1 Mos, Sal, Joh, Åp osv.) i ref-delen og fullt boknavn i visningsteksten.
 
 VIKTIG:
 - Les VERSJONSHISTORIKK nøye - ALDRI foreslå tekst som ligner på tidligere versjoner

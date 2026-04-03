@@ -93,6 +93,11 @@ GT-referanser er fra tanach, og NT er fra SBLGNT.
 Den ${originalLanguage}e originalteksten for verset er:
 ${originalText}
 
+REFERANSEFORMAT:
+Når du refererer til bibelsteder i text-feltet, bruk formatet: [ref:FORKORTELSE KAPITTEL:VERS|VISNINGSTEKST]
+Eksempel: [ref:Joh 3:16|Johannes 3:16], [ref:1 Mos 1:1-3|1. Mosebok 1:1-3]
+Bruk KVN-forkortelser (1 Mos, Sal, Joh, Åp osv.) i ref-delen og fullt boknavn i visningsteksten.
+
 Returner et JSON-objekt med en 'references'-array. Hvert element har: bookId (tall), chapterId (tall), fromVerseId (tall), toVerseId (tall), text (forklar hvorfor dette er en kryssreferanse, men ikke start med "Dette er en kryssreferanse fordi"). Hvis du ikke finner kryssreferanser, bruk tom array.`;
     } else if (langCode === 'nn') {
         return `Skriv kryssreferansar for ${ref} på norsk nynorsk.
@@ -101,6 +106,11 @@ GT-referansar er frå tanach, og NT er frå SBLGNT.
 Den ${originalLanguage}e originalteksten for verset er:
 ${originalText}
 
+REFERANSEFORMAT:
+Når du refererer til bibelstader i text-feltet, bruk formatet: [ref:FORKORTING KAPITTEL:VERS|VISNINGSTEKST]
+Eksempel: [ref:Joh 3:16|Johannes 3:16], [ref:1 Mos 1:1-3|1. Mosebok 1:1-3]
+Bruk KVN-forkortingar (1 Mos, Sal, Joh, Åp osv.) i ref-delen og fullt boknamn i visningsteksten.
+
 Returner eit JSON-objekt med ein 'references'-array. Kvart element har: bookId (tal), chapterId (tal), fromVerseId (tal), toVerseId (tal), text (forklar kvifor dette er ein kryssreferanse, men ikkje start med "Dette er ein kryssreferanse fordi"). Dersom du ikkje finn kryssreferansar, bruk tom array.`;
     } else {
         return `Write cross-references for ${ref} in ${language}.
@@ -108,6 +118,11 @@ OT references are from tanach, and NT is from SBLGNT.
 
 The original ${originalLanguageEn} text for the verse is:
 ${originalText}
+
+REFERENCE FORMAT:
+When referring to Bible passages in the text field, use the format: [ref:ABBREVIATION CHAPTER:VERSE|DISPLAY TEXT]
+Example: [ref:Joh 3:16|John 3:16], [ref:1 Mos 1:1-3|Genesis 1:1-3]
+Use KVN abbreviations (1 Mos, Sal, Joh, Åp etc.) in the ref part and full book name in the display text.
 
 Return a JSON object with a 'references' array. Each element has: bookId (number), chapterId (number), fromVerseId (number), toVerseId (number), text (explain why this is a cross-reference, but do not start with "This is a cross-reference because"). If you find no cross-references, use an empty array.`;
     }
@@ -157,6 +172,11 @@ You are given the original ${originalLanguageEn} text to verify accuracy.`;
     return `${basePrompt}
 
 ${taskDescription}
+
+REFERANSEFORMAT:
+Bibelreferanser i text-feltet bruker formatet: [ref:FORKORTELSE KAPITTEL:VERS|VISNINGSTEKST]
+Eksempel: [ref:Joh 3:16|Johannes 3:16]. Bevar dette formatet i revisedReferences.
+Bruk KVN-forkortelser (1 Mos, Sal, Joh, Åp osv.) i ref-delen og fullt boknavn i visningsteksten.
 
 IMPORTANT:
 - If the current references are good, return an empty issues array and empty revisedReferences array

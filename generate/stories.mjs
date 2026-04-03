@@ -219,6 +219,11 @@ Hvis referansene er FEIL (teksten handler om noe annet enn historien):
 - Bruk din bibelkunnskap til å finne de korrekte referansene.
 - bookId-oversikt: 1=1.Mos, 2=2.Mos, 3=3.Mos, 4=4.Mos, 5=5.Mos, 6=Josva, 7=Dommerne, 8=Rut, 9=1.Sam, 10=2.Sam, 11=1.Kong, 12=2.Kong, 13=1.Krøn, 14=2.Krøn, 15=Esra, 16=Nehemja, 17=Ester, 18=Job, 19=Salmene, 20=Ordspråkene, 21=Forkynneren, 22=Høysangen, 23=Jesaja, 24=Jeremia, 25=Klagesangene, 26=Esekiel, 27=Daniel, 28=Hosea, 29=Joel, 30=Amos, 31=Obadja, 32=Jona, 33=Mika, 34=Nahum, 35=Habakkuk, 36=Sefanja, 37=Haggai, 38=Sakarja, 39=Malaki, 40=Matteus, 41=Markus, 42=Lukas, 43=Johannes, 44=Apostlenes gjerninger, 45=Romerne, 46=1.Kor, 47=2.Kor, 48=Galaterne, 49=Efeserne, 50=Filipperne, 51=Kolosserne, 52=1.Tess, 53=2.Tess, 54=1.Tim, 55=2.Tim, 56=Titus, 57=Filemon, 58=Hebreerne, 59=Jakob, 60=1.Peter, 61=2.Peter, 62=1.Johannes, 63=2.Johannes, 64=3.Johannes, 65=Judas, 66=Åpenbaringen
 
+REFERANSEFORMAT:
+Bibelreferanser i description-feltet bruker formatet: [ref:FORKORTELSE KAPITTEL:VERS|VISNINGSTEKST]
+Eksempel: [ref:Joh 3:16|Johannes 3:16]. Bevar dette formatet i revisedStory.
+Bruk KVN-forkortelser (1 Mos, Sal, Joh, Åp osv.) i ref-delen og fullt boknavn i visningsteksten.
+
 VIKTIG:
 - Hvis historien er god som den er, returner en tom issues-array og returner den uendrede historien i revisedStory.
 - Hvis du foreslår endringer, returner den komplette reviderte historien i revisedStory.
@@ -363,6 +368,11 @@ For hver historie, generer:
 - description: 1-2 setningers oppsummering på norsk bokmål
 - category: En av de gyldige kategoriene
 - references: Array med bibelreferanser (bookId 1-39 for GT, 40-66 for NT)
+
+REFERANSEFORMAT:
+Når du refererer til bibelsteder i description-feltet, bruk formatet: [ref:FORKORTELSE KAPITTEL:VERS|VISNINGSTEKST]
+Eksempel: [ref:Joh 3:16|Johannes 3:16], [ref:1 Mos 1:1-3|1. Mosebok 1:1-3]
+Bruk KVN-forkortelser (1 Mos, Sal, Joh, Åp osv.) i ref-delen og fullt boknavn i visningsteksten.
 
 VIKTIG:
 - Hver referanse må ha korrekte bookId, startChapter, startVerse, endChapter, endVerse

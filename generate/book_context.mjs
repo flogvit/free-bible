@@ -139,12 +139,27 @@ List 3-5 important archaeological finds or historical sources that illuminate th
 - Where it was found
 - How it illuminates the book`;
 
+    const refFormatNb = `\n\nREFERANSEFORMAT:
+Når du refererer til bibelsteder, bruk formatet: [ref:FORKORTELSE KAPITTEL:VERS|VISNINGSTEKST]
+Eksempel: [ref:Joh 3:16|Johannes 3:16], [ref:1 Mos 1:1-3|1. Mosebok 1:1-3]
+Bruk KVN-forkortelser (1 Mos, Sal, Joh, Åp osv.) i ref-delen og fullt boknavn i visningsteksten.`;
+
+    const refFormatNn = `\n\nREFERANSEFORMAT:
+Når du refererer til bibelstader, bruk formatet: [ref:FORKORTING KAPITTEL:VERS|VISNINGSTEKST]
+Eksempel: [ref:Joh 3:16|Johannes 3:16], [ref:1 Mos 1:1-3|1. Mosebok 1:1-3]
+Bruk KVN-forkortingar (1 Mos, Sal, Joh, Åp osv.) i ref-delen og fullt boknamn i visningsteksten.`;
+
+    const refFormatEn = `\n\nREFERENCE FORMAT:
+When referring to Bible passages, use the format: [ref:ABBREVIATION CHAPTER:VERSE|DISPLAY TEXT]
+Example: [ref:Joh 3:16|John 3:16], [ref:1 Mos 1:1-3|Genesis 1:1-3]
+Use KVN abbreviations (1 Mos, Sal, Joh, Åp etc.) in the ref part and full book name in the display text.`;
+
     if (langCode === 'nb') {
-        return structureNb;
+        return structureNb + refFormatNb;
     } else if (langCode === 'nn') {
-        return structureNn;
+        return structureNn + refFormatNn;
     } else {
-        return structureEn;
+        return structureEn + refFormatEn;
     }
 }
 
@@ -196,6 +211,11 @@ Your task is to review the context and identify:
 - Missing or incorrect structure
 
 ${structureReminder}
+
+REFERANSEFORMAT:
+Bibelreferanser i teksten bruker formatet: [ref:FORKORTELSE KAPITTEL:VERS|VISNINGSTEKST]
+Eksempel: [ref:Joh 3:16|Johannes 3:16]. Bevar dette formatet i revisedContext.
+Bruk KVN-forkortelser (1 Mos, Sal, Joh, Åp osv.) i ref-delen og fullt boknavn i visningsteksten.
 
 IMPORTANT:
 - If the current context is good and has no issues, return an empty issues array and no revisedContext
