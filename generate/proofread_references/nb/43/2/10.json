@@ -1,0 +1,97 @@
+{
+  "issues": [
+    {
+      "type": "self-reference",
+      "severity": "major",
+      "reference": "Joh 2:1-11",
+      "explanation": "Referansen Joh 2:1-11 inkluderer kildeverset Joh 2:10 og er dermed en selvhenvisning. Det er kontekstverset, men det bør enten fjernes eller begrenses til vers som ikke inkluderer vers 10."
+    },
+    {
+      "type": "error",
+      "severity": "critical",
+      "reference": "Høys 9:17",
+      "explanation": "Høysangen har bare 8 kapitler, så Høysangen 9:17 eksisterer ikke. Det virker som det kan være en forveksling med Høysangen 7:10 (hebraisk 7:9) som taler om vin som 'går rett inn', eller muligens Ordspråkene 9:17 (som handler om stjålet vann). BookId 22 er dessuten Høysangen, som er korrekt, men kapittel 9 finnes ikke."
+    },
+    {
+      "type": "irrelevant",
+      "severity": "minor",
+      "reference": "Ef 5:18",
+      "explanation": "Koblingen mellom Efeserne 5:18 og Johannes 2:10 er svak. Efeserne 5:18 handler om å ikke bli beruset men fylt av Ånden, mens Joh 2:10 handler om kjøkemesterens observasjon om rekkefølgen av vinservering ved bryllupet. Det tematiske båndet er ganske konstruert."
+    },
+    {
+      "type": "self-reference",
+      "severity": "minor",
+      "reference": "Joh 2:6-7",
+      "explanation": "Referansen til Joh 2:6-7 er del av den samme perikopen (bryllupet i Kana) og fungerer mer som kontekstvers enn som en egentlig kryssreferanse. Selv om den ikke er en direkte selvhenvisning til vers 10, er den del av samme fortelling."
+    },
+    {
+      "type": "self-reference",
+      "severity": "minor",
+      "reference": "Joh 2:11",
+      "explanation": "Joh 2:11 er også del av den samme perikopen og fungerer som intern kontekst snarere enn en meningsfull kryssreferanse fra utenfor fortellingen."
+    },
+    {
+      "type": "missing",
+      "severity": "minor",
+      "explanation": "En referanse til Lukas 5:39 mangler: «Ingen som har drukket gammel vin, vil ha ny; for han sier: Den gamle er god.» Dette er direkte relevant som en parallell om preferanse for god/gammel vin og kontrasten med Jesu nye vin."
+    },
+    {
+      "type": "missing",
+      "severity": "minor",
+      "explanation": "En referanse til Forkynneren 9:7 (eller 10:19) om vin som gleder menneskets hjerte kunne vært inkludert, men viktigere er Salme 104:15 som taler om at vin gleder menneskets hjerte – tematisk relevant for bryllupsglede."
+    }
+  ],
+  "summary": "Referansesettet har noen problemer. Det mest kritiske er at Høysangen 9:17 ikke eksisterer (Høysangen har bare 8 kapitler). Det er også flere selvhenvisninger/interne referanser til den samme perikopen (Joh 2:1-11, 2:6-7, 2:11). En viktig kryssreferanse mangler: Lukas 5:39 om gammel vs. ny vin. Efeserne 5:18 har en svak kobling. De profetiske referansene (Jesaja 25:6, Amos 9:13-14, Joel 3:18) og Markus 2:22 er relevante og gode.",
+  "score": 5,
+  "revisedReferences": [
+    {
+      "bookId": 23,
+      "chapterId": 25,
+      "fromVerseId": 6,
+      "toVerseId": 6,
+      "text": "Jesaja profeterer om en fremtidig fest der Herren skal lage et gjestebud med «gammel, klaret vin» – den beste vinen – for alle folk. Jesus som serverer den beste vinen til slutt ved bryllupet i Kana peker mot denne eskatologiske oppfyllelsen ([ref:Jes 25:6|Jesaja 25:6])."
+    },
+    {
+      "bookId": 42,
+      "chapterId": 5,
+      "fromVerseId": 39,
+      "toVerseId": 39,
+      "text": "Jesus sier: «Ingen som har drukket gammel vin, vil ha ny; for han sier: Den gamle er god.» Kjøkemesterens kommentar i Kana snur denne forventningen på hodet – den beste vinen kommer til slutt, som et tegn på at det nye Jesus bringer overgår det gamle ([ref:Luk 5:39|Lukas 5:39])."
+    },
+    {
+      "bookId": 41,
+      "chapterId": 2,
+      "fromVerseId": 22,
+      "toVerseId": 22,
+      "text": "Jesus taler om ny vin som må fylles i nye skinnsekker – det nye kan ikke rommes av det gamle. Den nye, bedre vinen i Kana korresponderer med dette bildet av at det nye i Guds rike overgår det gamle ([ref:Mark 2:22|Markus 2:22])."
+    },
+    {
+      "bookId": 30,
+      "chapterId": 9,
+      "fromVerseId": 13,
+      "toVerseId": 14,
+      "text": "Amos profeterer om en kommende tid med overflod der «fjellene skal dryppe av most» og folket igjen skal plante vingårder og drikke vin. Den gode vinen Jesus skaper kan sees som et tegn på denne messianske oppfyllelsen ([ref:Am 9:13-14|Amos 9:13-14])."
+    },
+    {
+      "bookId": 29,
+      "chapterId": 3,
+      "fromVerseId": 18,
+      "toVerseId": 18,
+      "text": "Joel profeterer om en dag da «fjellene skal dryppe av most», et bilde på Guds rike overflod i den messianske tiden. Jesu under med den gode vinen peker frem mot denne oppfyllelsen ([ref:Joel 3:18|Joel 3:18])."
+    },
+    {
+      "bookId": 43,
+      "chapterId": 2,
+      "fromVerseId": 11,
+      "toVerseId": 11,
+      "text": "Johannes oppsummerer at dette var begynnelsen på Jesu tegn, og at han åpenbarte sin herlighet. Den gode vinen som ble spart til sist er selve tegnet som åpenbarer Jesu guddommelige herlighet ([ref:Joh 2:11|Johannes 2:11])."
+    },
+    {
+      "bookId": 19,
+      "chapterId": 104,
+      "fromVerseId": 15,
+      "toVerseId": 15,
+      "text": "Salmisten priser Gud som gir «vin som gleder menneskets hjerte.» Den gode vinen Jesus skaper ved bryllupet reflekterer Guds gavmilde omsorg og glede ([ref:Sal 104:15|Salmene 104:15])."
+    }
+  ]
+}

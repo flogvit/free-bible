@@ -1,0 +1,24 @@
+{
+  "issues": [
+    {
+      "type": "error",
+      "severity": "minor",
+      "reference": "Sal 142:5",
+      "explanation": "Salmenes bok (bookId 19) har bare 150 kapitler, men chapterId 142 refererer til Salme 142, som faktisk finnes. Imidlertid er det vers 5 (142:5) som i den hebraiske nummereringen kan være vers 4 i noen bibeloversettelser. I de fleste norske oversettelser er Salme 142:5 korrekt. Dette er teknisk sett greit, men bør verifiseres."
+    },
+    {
+      "type": "text",
+      "severity": "minor",
+      "reference": "Sal 22:12",
+      "explanation": "Salme 22:12 (hebraisk 22:12) sier 'Vær ikke langt fra meg, for nøden er nær, og ingen hjelper' – dette er en god parallell, men i noen oversettelser er verset nummerert som 22:11. Den norske Bibelen (2011) har dette som 22:12, så referansen er korrekt."
+    },
+    {
+      "type": "missing",
+      "severity": "minor",
+      "explanation": "En mulig kryssreferanse til 2 Kongebok 5:10-14 (Naaman som helbredes ved å bade i Jordan) kunne vært relevant som et eksempel på helbredelse knyttet til vann, men dette er ikke en kritisk mangel."
+    }
+  ],
+  "summary": "Kryssreferansene er gjennomgående gode og relevante for Johannes 5:7. De dekker den umiddelbare konteksten (Joh 5:3-4, 5-6, 8-9), parallelle helbredelsesberetninger (Joh 9:1-7, Mark 2:3-5, Apg 3:1-8), og gammeltestamentlige temaer om hjelpeløshet (Jes 25:4, Sal 142:5, Sal 22:12). Salme 142:5 har chapterId 142 som er teknisk korrekt for Salmenes bok. Ingen alvorlige feil ble funnet.",
+  "score": 88,
+  "revisedReferences": []
+}

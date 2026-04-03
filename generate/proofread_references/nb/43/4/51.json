@@ -1,0 +1,78 @@
+{
+  "issues": [
+    {
+      "type": "self-reference",
+      "severity": "major",
+      "reference": "Joh 4:50",
+      "explanation": "Johannes 4:50 er naboverset til kildeverset 4:51 og fungerer mer som umiddelbar kontekst enn en egentlig kryssreferanse. Det er vanlig å inkludere slike, men det er i grenseland for selvhenvisning."
+    },
+    {
+      "type": "self-reference",
+      "severity": "major",
+      "reference": "Joh 4:52-53",
+      "explanation": "Johannes 4:52-53 er versene rett etter kildeverset 4:51. Dette er direkte kontekst snarere enn en kryssreferanse fra en annen passasje. Bør fjernes til fordel for mer meningsfulle referanser fra andre steder i Bibelen."
+    },
+    {
+      "type": "irrelevant",
+      "severity": "minor",
+      "reference": "Joh 11:20",
+      "explanation": "Koblingen basert utelukkende på verbbruken ὑπαντάω er ganske svak. Konteksten i Johannes 11:20 (Marta møter Jesus ved Lasarus' død) er vesentlig forskjellig fra tjenere som møter sin herre med gode nyheter om helbredelse. Kan beholdes men er ikke en sterk kryssreferanse."
+    },
+    {
+      "type": "missing",
+      "severity": "minor",
+      "explanation": "Mangler referanse til Salme 107:20 ('Han sendte sitt ord og helbredet dem'), som tematisk passer godt til at Jesu ord alene helbreder på avstand."
+    },
+    {
+      "type": "missing",
+      "severity": "minor",
+      "explanation": "Mangler referanse til Matteus 8:8 der offiseren sier at Jesus bare behøver å si et ord for at tjeneren skal bli frisk – relevant for temaet helbredelse ved Jesu ord på avstand."
+    }
+  ],
+  "summary": "Referansene har to problematiske selvhenvisninger/nabovershevninger (Joh 4:50 og 4:52-53) som bør fjernes eller erstattes. Johannes 11:20-referansen er svak (kun basert på verblikhet). De tre synoptiske parallellene (Mark 5:35-36, Matt 8:13, Luk 7:10) og GT-referansen (2 Kong 5:10-14) er alle relevante og gode. Noen viktige referanser mangler, som Salme 107:20 og Matt 8:8.",
+  "score": 5,
+  "revisedReferences": [
+    {
+      "bookId": 40,
+      "chapterId": 8,
+      "fromVerseId": 8,
+      "toVerseId": 8,
+      "text": "I [ref:Matt 8:8|Matteus 8:8] uttrykker den romerske offiseren sin tro på at Jesus bare trenger å si et ord for at tjeneren hans skal bli frisk. Denne tilliten til Jesu ords kraft på avstand speiler embetsmannens erfaring i Johannes 4:51."
+    },
+    {
+      "bookId": 40,
+      "chapterId": 8,
+      "fromVerseId": 13,
+      "toVerseId": 13,
+      "text": "I [ref:Matt 8:13|Matteus 8:13] helbreder Jesus den romerske offiserens tjener på avstand, og helbredelsen skjer i samme stund som Jesus uttaler sitt ord – en tydelig parallell til helbredelsen av embetsmannens sønn."
+    },
+    {
+      "bookId": 41,
+      "chapterId": 5,
+      "fromVerseId": 35,
+      "toVerseId": 36,
+      "text": "I [ref:Mark 5:35-36|Markus 5:35-36] kommer det budbringere fra synagogeforstanderens hus med budskap om datterens tilstand, mens Jesus oppfordrer til tro. Lignende situasjon der budbringere bringer nyheter om et sykt barns tilstand."
+    },
+    {
+      "bookId": 42,
+      "chapterId": 7,
+      "fromVerseId": 10,
+      "toVerseId": 10,
+      "text": "I [ref:Luk 7:10|Lukas 7:10] finner de utsendte tjenerne den syke helbredet da de kommer tilbake til huset, tilsvarende det som skjer i Johannes 4:51 der tjenerne bekrefter at gutten lever."
+    },
+    {
+      "bookId": 12,
+      "chapterId": 5,
+      "fromVerseId": 10,
+      "toVerseId": 14,
+      "text": "I [ref:2 Kong 5:10-14|2. Kongebok 5:10-14] ble Na'aman helbredet for spedalskhet ved å adlyde Elisjas ord, og tjenerne hans spilte en nøkkelrolle. Helbredelse gjennom lydighet mot profetens ord og tjenernes involvering er paralleller til Johannes 4:51."
+    },
+    {
+      "bookId": 19,
+      "chapterId": 107,
+      "fromVerseId": 20,
+      "toVerseId": 20,
+      "text": "I [ref:Sal 107:20|Salme 107:20] står det at Herren sendte sitt ord og helbredet dem. Denne salmen peker profetisk mot Jesu helbredende ord som bekreftes i Johannes 4:51, der tjenerne melder at gutten lever etter Jesu utsagn."
+    }
+  ]
+}

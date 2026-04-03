@@ -1,0 +1,101 @@
+{
+  "issues": [
+    {
+      "type": "self-reference",
+      "severity": "critical",
+      "reference": "Johannes 2:12",
+      "explanation": "Den første referansen (bookId 43, chapterId 2, fromVerseId 12, toVerseId 12) er en selvhenvisning til kildeverset Johannes 2:12."
+    },
+    {
+      "type": "text",
+      "severity": "minor",
+      "reference": "Matteus 4:13",
+      "explanation": "Teksten i referansen til Matt 4:13 refererer tilbake til Joh 2:12, men dette er akseptabelt som kontekstuell kobling. Imidlertid er det en selvhenvisning i den første oppføringen som denne egentlig erstatter/dupliserer."
+    },
+    {
+      "type": "text",
+      "severity": "minor",
+      "reference": "Markus 2:1",
+      "explanation": "Teksten sier at dette 'bekrefter at Kapernaum fungerte som Jesu hjemby', noe som er en rimelig tolkning, men referansen tilbake til Joh 2:12 er litt redundant i en kryssreferanseliste for nettopp det verset."
+    },
+    {
+      "type": "irrelevant",
+      "severity": "minor",
+      "reference": "Johannes 6:17",
+      "explanation": "Joh 6:17 nevner Kapernaum som reisemål, men koblingen er svak — det handler om en helt annen episode (disiplene alene på sjøen). Det finnes sterkere referanser som kunne erstatte denne."
+    },
+    {
+      "type": "missing",
+      "severity": "minor",
+      "reference": "Johannes 2:11",
+      "explanation": "Joh 2:11 nevner at Jesus utførte sitt første tegn i Kana, og vers 12 følger umiddelbart etter som en overgang. Dette gir viktig kontekst for reisen til Kapernaum."
+    }
+  ],
+  "summary": "Hovedproblemet er en selvhenvisning (Joh 2:12 refererer til seg selv). De øvrige referansene er stort sett relevante og dekker Kapernaum-temaet og familiemedlemmene som nevnes i verset. Joh 6:17 er en noe svak kobling. Joh 2:1 og 2:11 gir god umiddelbar kontekst. Referanselisten er ellers solid med gode koblinger til synoptikerne og Apostlenes gjerninger.",
+  "score": 6,
+  "revisedReferences": [
+    {
+      "bookId": 40,
+      "chapterId": 4,
+      "fromVerseId": 13,
+      "toVerseId": 13,
+      "text": "Jesus forlot Nasaret og bosatte seg i Kapernaum ved sjøen, i Sebulons og Naftalis land. Både her og i [ref:Joh 2:12|Johannes 2:12] fremstår Kapernaum som Jesu tilholdssted i Galilea."
+    },
+    {
+      "bookId": 41,
+      "chapterId": 2,
+      "fromVerseId": 1,
+      "toVerseId": 1,
+      "text": "Jesus kom tilbake til Kapernaum etter noen dager, og folk hørte at han var hjemme. Dette bekrefter at Kapernaum fungerte som Jesu hjemby under hans virke."
+    },
+    {
+      "bookId": 42,
+      "chapterId": 4,
+      "fromVerseId": 31,
+      "toVerseId": 31,
+      "text": "Jesus dro ned til Kapernaum, en by i Galilea, og underviste der på sabbatene. Uttrykket «dro ned» (κατέβη) brukes også i [ref:Joh 2:12|Johannes 2:12], og viser Kapernaums sentrale rolle i Jesu tjeneste."
+    },
+    {
+      "bookId": 43,
+      "chapterId": 2,
+      "fromVerseId": 1,
+      "toVerseId": 2,
+      "text": "Bryllupet i Kana i Galilea, der Jesu mor var til stede, danner den umiddelbare konteksten før reisen ned til Kapernaum. Både moren og disiplene nevnes begge steder."
+    },
+    {
+      "bookId": 40,
+      "chapterId": 12,
+      "fromVerseId": 46,
+      "toVerseId": 46,
+      "text": "Jesu mor og brødre nevnes her, i likhet med [ref:Joh 2:12|Johannes 2:12] der Jesus drar til Kapernaum sammen med sin mor, sine brødre og sine disipler."
+    },
+    {
+      "bookId": 41,
+      "chapterId": 3,
+      "fromVerseId": 31,
+      "toVerseId": 31,
+      "text": "Jesu mor og brødre kom for å snakke med ham. Reisefølget i [ref:Joh 2:12|Johannes 2:12] inkluderer nettopp de samme familiemedlemmene — moren og brødrene."
+    },
+    {
+      "bookId": 43,
+      "chapterId": 7,
+      "fromVerseId": 3,
+      "toVerseId": 5,
+      "text": "Jesu brødre oppfordret ham til å dra til Judea, og Johannes bemerker at heller ikke hans brødre trodde på ham. I [ref:Joh 2:12|Johannes 2:12] er brødrene en del av reisefølget, men deres forhold til Jesus utvikler seg gjennom evangeliet."
+    },
+    {
+      "bookId": 44,
+      "chapterId": 1,
+      "fromVerseId": 14,
+      "toVerseId": 14,
+      "text": "Etter Jesu himmelfart holdt disiplene trofast sammen i bønn, sammen med noen kvinner og Maria, Jesu mor, og hans brødre. De samme gruppene — mor, brødre, disipler — som nevnes i [ref:Joh 2:12|Johannes 2:12], er igjen samlet."
+    },
+    {
+      "bookId": 43,
+      "chapterId": 2,
+      "fromVerseId": 11,
+      "toVerseId": 11,
+      "text": "Jesus utførte sitt første tegn i Kana i Galilea. Dette er den umiddelbare forløperen til reisen ned til Kapernaum i vers 12, og viser overgangen fra Kana til Kapernaum i Jesu tidlige virke."
+    }
+  ]
+}

@@ -1,0 +1,91 @@
+{
+  "issues": [
+    {
+      "type": "self-reference",
+      "severity": "major",
+      "reference": "Joh 1:19",
+      "explanation": "Johannes 1:19 er svært nær kildeverset (Joh 1:22) og fungerer som en del av den umiddelbare konteksten snarere enn en selvstendig kryssreferanse. Det er likevel en nyttig kontekstuell referanse, men teksten presiserer at det er 'det samme spørsmålet som gjentas her i vers 22', noe som gjør det mer til en intern kontekstreferanse enn en ekte kryssreferanse."
+    },
+    {
+      "type": "self-reference",
+      "severity": "major",
+      "reference": "Joh 1:20-21",
+      "explanation": "Johannes 1:20-21 er umiddelbar kontekst til vers 22 og fungerer primært som narrativ bakgrunn snarere enn en meningsfull kryssreferanse. Selv om det gir kontekst, er det svært nær kildeverset."
+    },
+    {
+      "type": "self-reference",
+      "severity": "major",
+      "reference": "Joh 1:23",
+      "explanation": "Johannes 1:23 er verset rett etter kildeverset og er den direkte fortsettelsen av narrativet. Det er nyttig som kontekst, men er egentlig bare neste vers i samme fortelling."
+    },
+    {
+      "type": "irrelevant",
+      "severity": "minor",
+      "reference": "Matt 21:23-27",
+      "explanation": "Matteus 21:23-27 handler om spørsmål til Jesus om hans fullmakt, ikke om Johannes Døperens identitet. Koblingen er tematisk svak – det dreier seg om en annen person (Jesus) i en annen situasjon, selv om mønsteret med religiøse ledere som stiller spørsmål er likt."
+    },
+    {
+      "type": "missing",
+      "severity": "minor",
+      "explanation": "Mal 4:5 (3:23 i hebraisk nummerering) mangler – profetien om at Elia skal komme tilbake, noe som er direkte relevant for hvorfor utsendingene spør Johannes om hans identitet (de lurte på om han var Elia)."
+    },
+    {
+      "type": "missing",
+      "severity": "minor",
+      "explanation": "Joh 5:33-35 mangler – Jesus omtaler Johannes Døperen og hans vitnesbyrd, noe som er relevant for spørsmålet om Johannes' identitet og rolle."
+    }
+  ],
+  "summary": "Referansesettet har en blanding av nær kontekst (Joh 1:19, 20-21, 23) som fungerer mer som intern kontekst enn selvstendige kryssreferanser, samt gode tematiske referanser (Jes 40:3, 5 Mos 18:15-18, Luk 3:15, Matt 3:1-3). Matt 21:23-27 har en svak kobling. Noen relevante profetier som Mal 4:5 mangler. Anbefaler å fjerne de mest kontekstnære referansene og erstatte med sterkere kryssreferanser.",
+  "score": 5,
+  "revisedReferences": [
+    {
+      "bookId": 23,
+      "chapterId": 40,
+      "fromVerseId": 3,
+      "toVerseId": 3,
+      "text": "[ref:Jes 40:3|Jesaja 40:3] er profetien som Johannes Døperen siterer som svar på spørsmålet om hvem han er – «en røst som roper i ødemarken: Rydd Herrens vei»."
+    },
+    {
+      "bookId": 5,
+      "chapterId": 18,
+      "fromVerseId": 15,
+      "toVerseId": 18,
+      "text": "I [ref:5 Mos 18:15-18|5. Mosebok 18:15–18] lover Moses at Herren skal la det fremstå en profet som ham. Utsendingene fra fariseerne ville vite om Johannes var denne profeten, og krevde derfor at han forklarte hvem han var."
+    },
+    {
+      "bookId": 39,
+      "chapterId": 4,
+      "fromVerseId": 5,
+      "toVerseId": 5,
+      "text": "[ref:Mal 4:5|Malaki 4:5] profeterer at Elia skal sendes før Herrens store dag. Denne forventningen er bakgrunnen for at utsendingene spør Johannes om hans identitet – de ønsket å vite om han var den lovede Elia."
+    },
+    {
+      "bookId": 42,
+      "chapterId": 3,
+      "fromVerseId": 15,
+      "toVerseId": 15,
+      "text": "[ref:Luk 3:15|Lukas 3:15] forteller at folket undret seg i sine hjerter om Johannes kanskje var Messias. Denne usikkerheten gjenspeiler det presserende spørsmålet i Johannes 1:22 om hans identitet."
+    },
+    {
+      "bookId": 40,
+      "chapterId": 3,
+      "fromVerseId": 1,
+      "toVerseId": 3,
+      "text": "[ref:Matt 3:1-3|Matteus 3:1–3] beskriver Johannes Døperens virksomhet og identifiserer ham som den Jesaja profeterte om – røsten som roper i ødemarken. Dette er det synoptiske parallellstedet til svaret Johannes gir på spørsmålet i Joh 1:22."
+    },
+    {
+      "bookId": 43,
+      "chapterId": 1,
+      "fromVerseId": 23,
+      "toVerseId": 23,
+      "text": "[ref:Joh 1:23|Johannes 1:23] er det direkte svaret Johannes gir på spørsmålet i vers 22. Han identifiserer seg som «en røst som roper i ødemarken», med henvisning til Jesaja 40:3."
+    },
+    {
+      "bookId": 43,
+      "chapterId": 5,
+      "fromVerseId": 33,
+      "toVerseId": 35,
+      "text": "I [ref:Joh 5:33-35|Johannes 5:33–35] omtaler Jesus Johannes Døperen som den som vitnet om sannheten – et vitnesbyrd som er nært knyttet til spørsmålet om Johannes' identitet og oppdrag."
+    }
+  ]
+}

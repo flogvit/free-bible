@@ -1,0 +1,107 @@
+{
+  "issues": [
+    {
+      "type": "self-reference",
+      "severity": "minor",
+      "reference": "1 Kor 1:22 text",
+      "explanation": "Forklaringsteksten refererer tilbake til kildeverset Joh 4:48 med [ref:Joh 4:48|Johannes 4:48], som er en selvhenvisning i teksten."
+    },
+    {
+      "type": "self-reference",
+      "severity": "minor",
+      "reference": "Apg 2:22 text",
+      "explanation": "Forklaringsteksten refererer tilbake til kildeverset Joh 4:48 med [ref:Joh 4:48|Johannes 4:48], som er en selvhenvisning i teksten."
+    },
+    {
+      "type": "irrelevant",
+      "severity": "minor",
+      "reference": "2 Mos 7:3",
+      "explanation": "Denne referansen handler om at Gud hardner faraos hjerte og viser tegn i Egypt. Koblingen til Joh 4:48 er svak – konteksten i Joh 4:48 er Jesu irettesettelse av folk som krever tegn for å tro, ikke Guds bruk av tegn for å overbevise farao."
+    },
+    {
+      "type": "irrelevant",
+      "severity": "minor",
+      "reference": "5 Mos 4:34",
+      "explanation": "Denne referansen handler om Guds mektige gjerninger i Egypt. Koblingen er nokså svak til Jesu irettesettelse av kravet om tegn og under for å tro."
+    },
+    {
+      "type": "irrelevant",
+      "severity": "minor",
+      "reference": "Apg 2:22",
+      "explanation": "Apg 2:22 handler om at Gud stadfestet Jesus gjennom tegn og under. Selv om ordparet σημεῖα καὶ τέρατα er felles, er konteksten annerledes – Peters forkynnelse bruker tegn positivt, mens Joh 4:48 irettesetter kravet om tegn. Koblingen er primært verbal, ikke tematisk."
+    },
+    {
+      "type": "irrelevant",
+      "severity": "minor",
+      "reference": "Jes 7:11-12",
+      "explanation": "Jesaja 7:11-12 handler om at Akas nekter å be om et tegn Gud tilbyr, mens Joh 4:48 handler om folk som krever tegn for å tro. Mønstrene er nesten motsatte – Akas avviser tegnet, mens folkene i Joh 4:48 krever det."
+    }
+  ],
+  "summary": "Kryssreferansene er generelt gode og relevante. Hovedproblemene er: (1) to forklaringstekster inneholder selvhenvisninger tilbake til Joh 4:48, (2) noen GT-referanser og Apg 2:22 har svakere tematisk kobling. Kjerne-referansene (Joh 2:18, 6:30, 20:29, Matt 12:38-39, Matt 16:1-4, Mark 8:11-12, 1 Kor 1:22, Joh 4:50) er sterke og relevante. Jeg fjerner de svakeste referansene og retter selvhenvisninger i tekstene.",
+  "score": 7,
+  "revisedReferences": [
+    {
+      "bookId": 43,
+      "chapterId": 2,
+      "fromVerseId": 18,
+      "toVerseId": 18,
+      "text": "Jødene krevde tegn fra Jesus som bevis på hans autoritet, noe som viser det samme mønsteret av å kreve tegn for å tro: [ref:Joh 2:18|Johannes 2:18]."
+    },
+    {
+      "bookId": 43,
+      "chapterId": 6,
+      "fromVerseId": 30,
+      "toVerseId": 30,
+      "text": "Folkemengden ba Jesus om et tegn for at de skulle tro på ham, til tross for at de allerede hadde sett hans undergjerninger: [ref:Joh 6:30|Johannes 6:30]."
+    },
+    {
+      "bookId": 43,
+      "chapterId": 20,
+      "fromVerseId": 29,
+      "toVerseId": 29,
+      "text": "Jesus sier til Tomas at de som tror uten å ha sett, er salige – en kontrast til dem som krever tegn og under for å tro: [ref:Joh 20:29|Johannes 20:29]."
+    },
+    {
+      "bookId": 46,
+      "chapterId": 1,
+      "fromVerseId": 22,
+      "toVerseId": 22,
+      "text": "Paulus skriver at jødene krever tegn, noe som gjenspeiler holdningen Jesus irettesetter her: [ref:1 Kor 1:22|1. Korinterbrev 1:22]."
+    },
+    {
+      "bookId": 40,
+      "chapterId": 12,
+      "fromVerseId": 38,
+      "toVerseId": 39,
+      "text": "De skriftlærde og fariseerne ber Jesus om et tegn, og Jesus kaller dem en ond og utro slekt som søker tegn: [ref:Matt 12:38-39|Matteus 12:38-39]."
+    },
+    {
+      "bookId": 40,
+      "chapterId": 16,
+      "fromVerseId": 1,
+      "toVerseId": 4,
+      "text": "Fariseerne og saddukeerne prøver Jesus ved å be om et tegn fra himmelen, og Jesus avviser deres krav: [ref:Matt 16:1-4|Matteus 16:1-4]."
+    },
+    {
+      "bookId": 41,
+      "chapterId": 8,
+      "fromVerseId": 11,
+      "toVerseId": 12,
+      "text": "Fariseerne krever et tegn fra himmelen, og Jesus sukker i sin ånd og spør hvorfor denne slekten krever tegn: [ref:Mark 8:11-12|Markus 8:11-12]."
+    },
+    {
+      "bookId": 43,
+      "chapterId": 4,
+      "fromVerseId": 50,
+      "toVerseId": 50,
+      "text": "Embetsmannen trodde Jesu ord uten å først se tegnet – i kontrast til irettesettelsen i vers 48, og viser troens lydighet: [ref:Joh 4:50|Johannes 4:50]."
+    },
+    {
+      "bookId": 42,
+      "chapterId": 11,
+      "fromVerseId": 29,
+      "toVerseId": 29,
+      "text": "Jesus kaller den slekten en ond slekt som krever tegn, parallelt med hans irettesettelse av tegnkravet: [ref:Luk 11:29|Lukas 11:29]."
+    }
+  ]
+}

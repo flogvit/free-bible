@@ -1,0 +1,89 @@
+{
+  "issues": [
+    {
+      "type": "self-reference",
+      "severity": "critical",
+      "reference": "Johannes 3:10",
+      "explanation": "Den første referansen (bookId 43, chapterId 3, fromVerseId 10, toVerseId 10) er en selvhenvisning til kildeverset Johannes 3:10. Denne bør fjernes."
+    },
+    {
+      "type": "irrelevant",
+      "severity": "minor",
+      "reference": "Johannes 1:49",
+      "explanation": "Koblingen mellom Natanaels bekjennelse av Jesus som 'Israels konge' og Jesu irettesettelse av Nikodemus som 'Israels lærer' er svak. Verset handler om Natanaels trosbekjennelse, ikke om lærernes manglende forståelse. Referansen kan fjernes til fordel for mer relevante referanser."
+    },
+    {
+      "type": "text",
+      "severity": "minor",
+      "reference": "Salmene 51:12-14",
+      "explanation": "Salme 51 i den hebraiske nummereringen er vers 10-12 i mange oversettelser (inkl. norske). Teksten refererer til 'Sal 51:12-14', men i de fleste norske oversettelser er de relevante versene 51:12-14 (med overskriften som vers 1-2). Nummereringen bør sjekkes mot KJV/norsk tradisjon. I norsk bibeloversettelse stemmer 51:12-14, men i noen systemer kan dette avvike."
+    }
+  ],
+  "summary": "Kryssreferansene er generelt gode og relevante. Hovedproblemet er en selvhenvisning til Johannes 3:10 (den første referansen), som må fjernes. Referansen til Johannes 1:49 (Natanael) har svak kobling og kan erstattes. De øvrige referansene (Esekiel 36:25-27, Esekiel 37:1-14, Jeremia 31:31-34, Jesaja 44:3, Johannes 1:10-11, Romerne 2:20-21, 1 Korinter 2:14, Salmene 51:12-14) er alle relevante og godt forklart. De dekker GT-profetiene om åndelig fornyelse som Nikodemus burde ha kjent, samt NT-paralleller om åndelig blindhet.",
+  "score": 78,
+  "revisedReferences": [
+    {
+      "bookId": 26,
+      "chapterId": 36,
+      "fromVerseId": 25,
+      "toVerseId": 27,
+      "text": "Esekiel profeterte om Guds løfte om å gi sitt folk et nytt hjerte og en ny ånd – nettopp den åndelige fornyelsen som Jesus forventet at Nikodemus som Israels lærer skulle kjenne til: «Jeg vil stenke rent vann på dere ... Jeg vil gi dere et nytt hjerte og en ny ånd» ([ref:Esek 36:25-27|Esekiel 36:25-27])."
+    },
+    {
+      "bookId": 26,
+      "chapterId": 37,
+      "fromVerseId": 1,
+      "toVerseId": 14,
+      "text": "Esekiels syn om de tørre beinene som fikk liv ved Ånden, illustrerer den åndelige gjenfødelsen som Jesus snakker om. Guds Ånd gir liv til det som var dødt ([ref:Esek 37:1-14|Esekiel 37:1-14]). En Israels lærer burde ha forstått dette."
+    },
+    {
+      "bookId": 24,
+      "chapterId": 31,
+      "fromVerseId": 31,
+      "toVerseId": 34,
+      "text": "Jeremias profeti om den nye pakten, der Gud skriver sin lov i hjertene, peker mot den indre fornyelse Jesus taler om. Nikodemus som skriftlærd burde ha kjent dette løftet ([ref:Jer 31:31-34|Jeremia 31:31-34])."
+    },
+    {
+      "bookId": 23,
+      "chapterId": 44,
+      "fromVerseId": 3,
+      "toVerseId": 3,
+      "text": "Jesaja profeterte at Gud ville utøse sin Ånd over Israels ætt: «Jeg vil utøse vann over det tørste og bekker over det tørre. Jeg vil utøse min Ånd over din ætt» ([ref:Jes 44:3|Jesaja 44:3]). Også dette er et løfte som Nikodemus burde ha kjent."
+    },
+    {
+      "bookId": 43,
+      "chapterId": 1,
+      "fromVerseId": 10,
+      "toVerseId": 11,
+      "text": "Parallellen med prologen: Jesus kom til sitt eget, men hans egne tok ikke imot ham ([ref:Joh 1:10-11|Johannes 1:10-11]). Nikodemus representerer Israels ledere som ikke forstår hvem Jesus er og hva han lærer."
+    },
+    {
+      "bookId": 45,
+      "chapterId": 2,
+      "fromVerseId": 20,
+      "toVerseId": 21,
+      "text": "Paulus omtaler jødene som var overbevist om å være veiledere for blinde og lærere for uforstandige, men som ikke lærte seg selv ([ref:Rom 2:20-21|Romerne 2:20-21]). Dette speiler Jesu irettesettelse av Nikodemus som Israels lærer."
+    },
+    {
+      "bookId": 46,
+      "chapterId": 2,
+      "fromVerseId": 14,
+      "toVerseId": 14,
+      "text": "«Et naturlig menneske tar ikke imot det som hører Guds Ånd til, for det er dårskap for ham, og han kan ikke forstå det» ([ref:1 Kor 2:14|1. Korinterbrev 2:14]). Nikodemus' manglende forståelse illustrerer at åndelige sannheter krever åndelig innsikt."
+    },
+    {
+      "bookId": 19,
+      "chapterId": 51,
+      "fromVerseId": 12,
+      "toVerseId": 14,
+      "text": "Davids bønn om et rent hjerte og en ny, stadig ånd ([ref:Sal 51:12-14|Salmene 51:12-14]) peker mot den åndelige fornyelsen Jesus snakker om – noe en israelsk lærer burde ha forstått fra Skriftene."
+    },
+    {
+      "bookId": 43,
+      "chapterId": 3,
+      "fromVerseId": 1,
+      "toVerseId": 2,
+      "text": "Nikodemus var en fariseer og en av jødenes rådsherrer som kom til Jesus om natten ([ref:Joh 3:1-2|Johannes 3:1-2]). Som en ledende lærer i Israel hadde han tilgang til Skriftene, men forstod likevel ikke den åndelige gjenfødelsen."
+    }
+  ]
+}

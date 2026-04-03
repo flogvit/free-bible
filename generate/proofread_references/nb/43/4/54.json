@@ -1,0 +1,67 @@
+{
+  "issues": [
+    {
+      "type": "text",
+      "severity": "minor",
+      "reference": "Joh 2:1-11",
+      "explanation": "Forklaringsteksten er god, men gjentar informasjon som allerede finnes i den neste referansen (Joh 2:11). De to referansene overlapper betydelig."
+    },
+    {
+      "type": "irrelevant",
+      "severity": "minor",
+      "reference": "Joh 2:11",
+      "explanation": "Denne referansen overlapper sterkt med Joh 2:1-11 som allerede er inkludert. Joh 2:11 er allerede dekket av den første referansen (Joh 2:1-11). Det er unødvendig å ha begge, selv om Joh 2:11 spesifikt nevner 'begynnelsen på sine tegn'."
+    },
+    {
+      "type": "irrelevant",
+      "severity": "minor",
+      "reference": "Joh 6:2",
+      "explanation": "Koblingen er ganske svak. Joh 6:2 handler generelt om at folk fulgte Jesus på grunn av tegnene, men har ingen direkte kobling til tellingen av tegnene eller til det andre tegnet spesifikt."
+    },
+    {
+      "type": "irrelevant",
+      "severity": "minor",
+      "reference": "Joh 12:37",
+      "explanation": "Koblingen er tematisk relevant for tegnteologien i Johannes, men er nokså fjern fra det spesifikke innholdet i Joh 4:54, som handler om tellingen av det andre tegnet etter ankomsten fra Judea til Galilea."
+    }
+  ],
+  "summary": "Kryssreferansene er generelt relevante og korrekte. Hovedproblemene er overlapping mellom Joh 2:1-11 og Joh 2:11, og at noen av de mer perifere referansene (Joh 6:2, Joh 12:37) har svakere kobling til kildeverset. De sentrale referansene (Joh 2:1-11, Joh 4:43-45, Joh 4:46-53, Joh 20:30-31) er velvalgte og relevante. Jeg foreslår å slå sammen de to første referansene og fjerne de svakeste, samt eventuelt legge til en referanse til Joh 2:23 som nevner tegn i Jerusalem.",
+  "score": 72,
+  "revisedReferences": [
+    {
+      "bookId": 43,
+      "chapterId": 2,
+      "fromVerseId": 1,
+      "toVerseId": 11,
+      "text": "Jesu første tegn i Kana i Galilea, der han forvandlet vann til vin. Johannes kaller dette «begynnelsen på sine tegn» ([ref:Joh 2:11|Johannes 2:11]), og i 4:54 telles helbredelsen av embetsmannens sønn eksplisitt som det «andre tegnet» Jesus gjorde da han kom fra Judea til Galilea, noe som viser at Johannes bevisst teller tegnene."
+    },
+    {
+      "bookId": 43,
+      "chapterId": 2,
+      "fromVerseId": 23,
+      "toVerseId": 23,
+      "text": "Under påskehøytiden i Jerusalem gjorde Jesus tegn som fikk mange til å tro ([ref:Joh 2:23|Johannes 2:23]). Disse tegnene i Judea utgjør bakgrunnen for det andre tegnet i Galilea, og understreker den geografiske bevegelsen fra Judea til Galilea som 4:54 fremhever."
+    },
+    {
+      "bookId": 43,
+      "chapterId": 4,
+      "fromVerseId": 43,
+      "toVerseId": 45,
+      "text": "Konteksten for det andre tegnet: Jesus dro fra Judea til Galilea ([ref:Joh 4:43-45|Johannes 4:43-45]), og galileerne tok imot ham fordi de hadde sett det han gjorde i Jerusalem. Vers 54 knytter helbredelsen direkte til denne reisen fra Judea til Galilea."
+    },
+    {
+      "bookId": 43,
+      "chapterId": 4,
+      "fromVerseId": 46,
+      "toVerseId": 53,
+      "text": "Selve beretningen om det andre tegnet – helbredelsen av embetsmannens sønn i Kapernaum mens Jesus var i Kana ([ref:Joh 4:46-53|Johannes 4:46-53]). Vers 54 fungerer som en avsluttende oppsummering av dette underet."
+    },
+    {
+      "bookId": 43,
+      "chapterId": 20,
+      "fromVerseId": 30,
+      "toVerseId": 31,
+      "text": "Johannes forklarer at Jesus gjorde mange andre tegn som ikke er nedskrevet, men at de som er skrevet ned, er skrevet for at leserne skal tro ([ref:Joh 20:30-31|Johannes 20:30-31]). Tellingen av tegnene i 4:54 henger sammen med dette overordnede formålet med Johannesevangeliet."
+    }
+  ]
+}

@@ -1,0 +1,84 @@
+{
+  "issues": [
+    {
+      "type": "self-reference",
+      "severity": "critical",
+      "reference": "Johannes 4:36",
+      "explanation": "Den første kryssreferansen (bookId 43, chapterId 4, fromVerseId 36, toVerseId 36) refererer til kildeverset selv (Joh 4:36). Referanseteksten nevner Lukas 10:7, men selve referanseobjektet peker på Joh 4:36. Dette bør erstattes med Lukas 10:7 som selve referansen."
+    }
+  ],
+  "summary": "Én kritisk feil ble funnet: den første kryssreferansen er en selvhenvisning til Joh 4:36, selv om teksten diskuterer Lukas 10:7. De øvrige kryssreferansene er relevante og korrekte. Referansen bør endres til å peke på Luk 10:7 i stedet.",
+  "score": 8,
+  "revisedReferences": [
+    {
+      "bookId": 42,
+      "chapterId": 10,
+      "fromVerseId": 7,
+      "toVerseId": 7,
+      "text": "Jesus taler om at den som høster, mottar lønn (μισθὸν λαμβάνει). Dette knytter an til prinsippet om arbeiderens lønn, som også nevnes i [ref:Luk 10:7|Lukas 10:7] der Jesus sier at «arbeideren er sin lønn verd»."
+    },
+    {
+      "bookId": 27,
+      "chapterId": 12,
+      "fromVerseId": 3,
+      "toVerseId": 3,
+      "text": "I [ref:Dan 12:3|Daniel 12:3] loves det at de som fører mange til rettferdighet, skal skinne som stjernene – en parallell til den evige lønnen for den som samler frukt til evig liv."
+    },
+    {
+      "bookId": 20,
+      "chapterId": 11,
+      "fromVerseId": 30,
+      "toVerseId": 30,
+      "text": "[ref:Ordsp 11:30|Ordspråkene 11:30] sier at «den rettferdiges frukt er et livets tre, og den som vinner sjeler, er vis». Dette berører det samme bildet av å høste frukt som fører til liv."
+    },
+    {
+      "bookId": 43,
+      "chapterId": 4,
+      "fromVerseId": 37,
+      "toVerseId": 38,
+      "text": "Den umiddelbare konteksten i [ref:Joh 4:37-38|Johannes 4:37-38] utdyper forholdet mellom den som sår og den som høster, og viser at de har ulike roller men deler i gleden."
+    },
+    {
+      "bookId": 46,
+      "chapterId": 3,
+      "fromVerseId": 6,
+      "toVerseId": 8,
+      "text": "I [ref:1 Kor 3:6-8|1. Korinterbrev 3:6-8] skriver Paulus om at én planter, en annen vanner, men Gud gir vekst – og at hver skal få sin lønn etter sitt arbeid. Dette gjenspeiler Jesu ord om at den som sår og den som høster, gleder seg sammen."
+    },
+    {
+      "bookId": 43,
+      "chapterId": 6,
+      "fromVerseId": 27,
+      "toVerseId": 27,
+      "text": "Uttrykket «frukt til evig liv» (καρπὸν εἰς ζωὴν αἰώνιον) har en nær parallell i [ref:Joh 6:27|Johannes 6:27], der Jesus oppfordrer til å arbeide for den mat som varer til evig liv."
+    },
+    {
+      "bookId": 19,
+      "chapterId": 126,
+      "fromVerseId": 5,
+      "toVerseId": 6,
+      "text": "[ref:Sal 126:5-6|Salmene 126:5-6] beskriver hvordan den som sår med tårer, skal høste med jubel – et bilde på at såing og høsting ender i felles glede, slik Jesus sier at den som sår og den som høster, gleder seg sammen."
+    },
+    {
+      "bookId": 30,
+      "chapterId": 9,
+      "fromVerseId": 13,
+      "toVerseId": 13,
+      "text": "I [ref:Am 9:13|Amos 9:13] profeteres det om en tid da «den som pløyer, skal nå den som høster», et eskatologisk bilde av overflod der såing og høsting møtes – parallelt med Jesu ord om at den som sår og den som høster, gleder seg på samme tid."
+    },
+    {
+      "bookId": 48,
+      "chapterId": 6,
+      "fromVerseId": 8,
+      "toVerseId": 9,
+      "text": "[ref:Gal 6:8-9|Galaterne 6:8-9] taler om å så i Ånden og høste evig liv, og om ikke å bli trette av å gjøre godt, for «vi skal høste i sin tid». Parallellen til å samle frukt til evig liv er tydelig."
+    },
+    {
+      "bookId": 40,
+      "chapterId": 9,
+      "fromVerseId": 37,
+      "toVerseId": 38,
+      "text": "I [ref:Matt 9:37-38|Matteus 9:37-38] taler Jesus om at høsten er stor men arbeiderne få, og oppfordrer til å be om arbeidere til høsten – det samme bildet av åndelig høst som i Johannes 4:36."
+    }
+  ]
+}
