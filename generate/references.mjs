@@ -7,15 +7,11 @@ const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 dotenv.config()
 
-import Anthropic from '@anthropic-ai/sdk';
-import {books, anthropicModel, maxTokens, normalizeLanguage, getLanguageCode, getBookName} from "./constants.js";
+import {books, normalizeLanguage, getLanguageCode, getBookName} from "./constants.js";
 import {getOriginalVerse, getOriginalChapter, getRef} from "./lib.js";
+import {callWithRetry} from "./llm.js";
 
-const anthropic = new Anthropic({
-    apiKey: process.env.ANTHROPIC_API_KEY
-});
-
-const MAX_RETRIES = 3;
+let useLocal = false;
 
 const REFERENCE_SCHEMA = {
     type: "object",
@@ -86,13 +82,37 @@ function getReferencePrompt(language, bookId, chapterId, verseId, originalText) 
     const originalLanguage = bookId <= 39 ? 'hebraisk' : 'gresk';
     const originalLanguageEn = bookId <= 39 ? 'Hebrew' : 'Greek';
 
+    const bookList = books.map(b => `${b.id}=${b.name}`).join(', ');
+
+    const strictNb = useLocal ? `
+KVALITETSKRAV:
+- Inkluder KUN referanser med sterk, direkte kobling til kildeverset
+- Maks 5-8 referanser. Kvalitet over kvantitet.
+- Hver referanse må dele et spesifikt tema, nøkkelord eller motiv med kildeverset
+- Ikke inkluder generelle tematiske koblinger (f.eks. «handler også om tro»)
+
+BOOK ID-LISTE (bruk ALLTID denne for å finne riktig bookId):
+${bookList}
+` : '';
+
+    const strictEn = useLocal ? `
+QUALITY REQUIREMENTS:
+- Include ONLY references with a strong, direct connection to the source verse
+- Maximum 5-8 references. Quality over quantity.
+- Each reference must share a specific theme, keyword or motif with the source verse
+- Do not include generic thematic connections (e.g. "also about faith")
+
+BOOK ID LIST (ALWAYS use this to find the correct bookId):
+${bookList}
+` : '';
+
     if (langCode === 'nb') {
         return `Skriv kryssreferanser for ${ref} på norsk bokmål.
 GT-referanser er fra tanach, og NT er fra SBLGNT.
 
 Den ${originalLanguage}e originalteksten for verset er:
 ${originalText}
-
+${strictNb}
 REFERANSEFORMAT:
 Når du refererer til bibelsteder i text-feltet, bruk formatet: [ref:FORKORTELSE KAPITTEL:VERS|VISNINGSTEKST]
 Eksempel: [ref:Joh 3:16|Johannes 3:16], [ref:1 Mos 1:1-3|1. Mosebok 1:1-3]
@@ -118,7 +138,7 @@ OT references are from tanach, and NT is from SBLGNT.
 
 The original ${originalLanguageEn} text for the verse is:
 ${originalText}
-
+${strictEn}
 REFERENCE FORMAT:
 When referring to Bible passages in the text field, use the format: [ref:ABBREVIATION CHAPTER:VERSE|DISPLAY TEXT]
 Example: [ref:Joh 3:16|John 3:16], [ref:1 Mos 1:1-3|Genesis 1:1-3]
@@ -178,7 +198,14 @@ Bibelreferanser i text-feltet bruker formatet: [ref:FORKORTELSE KAPITTEL:VERS|VI
 Eksempel: [ref:Joh 3:16|Johannes 3:16]. Bevar dette formatet i revisedReferences.
 Bruk KVN-forkortelser (1 Mos, Sal, Joh, Åp osv.) i ref-delen og fullt boknavn i visningsteksten.
 
-IMPORTANT:
+${useLocal ? `VIKTIG FOR KVALITETSKONTROLL:
+- Fjern KUN referanser som er direkte feil (feil bookId/chapterId/verseId) eller helt irrelevante
+- IKKE legg til nye referanser — det gjøres i et eget steg
+- IKKE fjern referanser bare fordi de er "svake" — behold alt som har en rimelig kobling
+- Hvis alle referansene er akseptable, returner tom issues-array og tom revisedReferences-array
+- Maks 5 issues. Fokuser på det viktigste.
+- score skal være 0-10 (0 = helt feil, 10 = perfekt)
+` : ''}IMPORTANT:
 - If the current references are good, return an empty issues array and empty revisedReferences array
 - The revisedReferences must use the same format: [{bookId, chapterId, fromVerseId, toVerseId, text}]
 - bookId values: OT books 1-39, NT books 40-66
@@ -189,41 +216,6 @@ ${originalText}
 
 Current cross-references:
 ${refsJson}`;
-}
-
-async function doAnthropicCall(content, schema) {
-    const options = {
-        model: anthropicModel,
-        max_tokens: maxTokens,
-        messages: [{role: "user", content}]
-    };
-    if (schema) {
-        options.output_config = {format: {type: "json_schema", schema}};
-    }
-    return anthropic.messages.create(options);
-}
-
-async function doAnthropicCallWithRetry(content, schema, context = '') {
-    let lastError;
-
-    for (let attempt = 1; attempt <= MAX_RETRIES; attempt++) {
-        try {
-            const completion = await doAnthropicCall(content, schema);
-            if (completion.stop_reason === 'max_tokens') {
-                throw new Error('Response truncated due to max_tokens limit');
-            }
-            return JSON.parse(completion.content[0].text);
-        } catch (error) {
-            lastError = error;
-            if (attempt < MAX_RETRIES) {
-                console.log(`  Attempt ${attempt} failed (${error.message}), retrying...`);
-                await new Promise(resolve => setTimeout(resolve, 1000));
-            }
-        }
-    }
-
-    console.error(`Failed after ${MAX_RETRIES} attempts for ${context}`);
-    throw lastError;
 }
 
 function getOutputPath(language, bookId, chapterId, verseId) {
@@ -273,7 +265,7 @@ async function generateReferences(language, bookId, chapterId, verseId, filename
     const prompt = getReferencePrompt(language, bookId, chapterId, verseId, verseOrg.text);
 
     console.log(`Generating references for ${bookName} ${chapterId}:${verseId}...`);
-    const result = await doAnthropicCallWithRetry(prompt, REFERENCE_SCHEMA, `${bookId}:${chapterId}:${verseId}`);
+    const result = await callWithRetry(prompt, {schema: REFERENCE_SCHEMA, local: useLocal, context: `${bookId}:${chapterId}:${verseId}`});
 
     const references = normalizeReferences(result.references);
 
@@ -313,7 +305,7 @@ async function proofreadReferences(language, bookId, chapterId, verseId, refFile
     console.log(`Proofreading references for ${bookName} ${chapterId}:${verseId}...`);
 
     const prompt = getProofreadPrompt(language, bookId, chapterId, verseId, verseOrg.text, currentReferences);
-    const result = await doAnthropicCallWithRetry(prompt, REFERENCE_PROOFREAD_SCHEMA, `proofread ${bookId}:${chapterId}:${verseId}`);
+    const result = await callWithRetry(prompt, {schema: REFERENCE_PROOFREAD_SCHEMA, local: useLocal, context: `proofread ${bookId}:${chapterId}:${verseId}`});
 
     // Save proofread results if requested
     if (saveToFile) {
@@ -455,6 +447,8 @@ function parseArgs(args) {
             const range = parseRange(args[++i]);
             options.verseStart = range.start;
             options.verseEnd = range.end;
+        } else if (arg === '--local') {
+            options.local = true;
         } else if (arg === '--force') {
             options.force = true;
         } else if (arg === '--help') {
@@ -469,6 +463,7 @@ function parseArgs(args) {
 async function main() {
     const args = process.argv.slice(2);
     const options = parseArgs(args);
+    useLocal = options.local || false;
 
     options.language = normalizeLanguage(options.language);
 

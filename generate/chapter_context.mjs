@@ -7,14 +7,10 @@ const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 dotenv.config()
 
-import Anthropic from '@anthropic-ai/sdk';
-import {books, anthropicModel, maxTokens, normalizeLanguage, getLanguageCode, getBookName} from "./constants.js";
+import {books, normalizeLanguage, getLanguageCode, getBookName} from "./constants.js";
+import {callWithRetry} from "./llm.js";
 
-const anthropic = new Anthropic({
-    apiKey: process.env.ANTHROPIC_API_KEY
-});
-
-const MAX_RETRIES = 3;
+let useLocal = false;
 
 const PROOFREAD_CONTEXT_SCHEMA = {
     type: "object",
@@ -320,42 +316,6 @@ Current context:
 ${currentContext}`;
 }
 
-async function doAnthropicCall(content, schema) {
-    const options = {
-        model: anthropicModel,
-        max_tokens: maxTokens,
-        messages: [{ role: "user", content }]
-    };
-    if (schema) {
-        options.output_config = { format: { type: "json_schema", schema } };
-    }
-    return anthropic.messages.create(options);
-}
-
-async function doAnthropicCallWithRetry(content, context = '', schema = null) {
-    let lastError;
-
-    for (let attempt = 1; attempt <= MAX_RETRIES; attempt++) {
-        try {
-            const completion = await doAnthropicCall(content, schema);
-            if (completion.stop_reason === 'max_tokens') {
-                throw new Error(`Response truncated (hit ${maxTokens} token limit).`);
-            }
-            const text = completion.content[0].text;
-            return schema ? JSON.parse(text) : text;
-        } catch (error) {
-            lastError = error;
-            if (attempt < MAX_RETRIES) {
-                console.log(`  Attempt ${attempt} failed (${error.message}), retrying...`);
-                await new Promise(resolve => setTimeout(resolve, 1000));
-            }
-        }
-    }
-
-    console.error(`Failed after ${MAX_RETRIES} attempts for ${context}`);
-    throw lastError;
-}
-
 function getOutputPath(language, bookId, chapterId) {
     const langCode = getLanguageCode(language);
     return path.join(__dirname, `chapter_context/${langCode}/${bookId}-${chapterId}.md`);
@@ -389,7 +349,7 @@ async function generateChapterContext(language, bookId, chapter, filename) {
     const prompt = getContextPrompt(language, bookId, chapter, originalText, bookContext);
 
     console.log(`Generating context for ${bookName} ${chapter}...`);
-    const text = await doAnthropicCallWithRetry(prompt, `${bookId}:${chapter}`);
+    const text = await callWithRetry(prompt, {local: useLocal, context: `${bookId}:${chapter}`});
 
     const dir = path.dirname(filename);
     if (!fs.existsSync(dir)) {
@@ -420,7 +380,7 @@ async function proofreadChapterContext(language, bookId, chapter, contextFilenam
     console.log(`Proofreading context for ${bookName} ${chapter}...`);
 
     const prompt = getProofreadPrompt(language, bookId, chapter, currentContext, originalText);
-    const result = await doAnthropicCallWithRetry(prompt, `proofread ${bookId}:${chapter}`, PROOFREAD_CONTEXT_SCHEMA);
+    const result = await callWithRetry(prompt, {schema: PROOFREAD_CONTEXT_SCHEMA, local: useLocal, context: `proofread ${bookId}:${chapter}`});
 
     // Save proofread results if requested
     if (saveToFile) {
@@ -564,6 +524,8 @@ function parseArgs(args) {
             const range = parseRange(args[++i]);
             options.chapterStart = range.start;
             options.chapterEnd = range.end;
+        } else if (arg === '--local') {
+            options.local = true;
         } else if (arg === '--force') {
             options.force = true;
         } else if (arg === '--help') {
@@ -581,6 +543,7 @@ async function main() {
 
     // Normalize language (accept both codes like 'nb' and full names like 'Norwegian bokmål')
     options.language = normalizeLanguage(options.language);
+    useLocal = options.local || false;
 
     if (options.help) {
         printUsage();
