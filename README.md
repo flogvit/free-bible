@@ -98,6 +98,7 @@ generate/
 ├── references/          # Cross references
 ├── verse_translation/   # Verse translation explanations
 ├── word4word/           # Word-for-word translations
+├── number_symbolism/    # Biblical number symbolism
 └── [scripts]            # Generation scripts
 ```
 
@@ -115,6 +116,9 @@ generate/
 | `bible_persons.mjs` | Generate Bible persons encyclopedia |
 | `generate_reading_plans.mjs` | Generate reading plans |
 | `references.mjs` | Generate cross references |
+| `number_symbolism.mjs` | Generate and index biblical number symbolism |
+| `stories.mjs` | Generate Bible story summaries |
+| `convert-refs.mjs` | Convert plain-text references to `[ref:...\|...]` markup |
 | `make_tanach.mjs` | Process Tanach source files |
 | `make_sblgnt.mjs` | Process SBLGNT source files |
 
@@ -124,6 +128,7 @@ generate/
 |------|-------------|
 | `constants.js` | Book definitions, language mappings, model config |
 | `lib.js` | Shared utilities: `bookRanges`, `getChaptersForRange()`, `getChaptersForBooks()`, `resolveBookRange()` |
+| `llm.js` | Shared LLM module — supports both Claude (Anthropic) and Ollama |
 | `reading_plans_config.js` | Configuration for all 36 reading plans |
 
 ---
@@ -251,12 +256,45 @@ node bible_persons.mjs "Set (Adams sønn)"
 node bible_persons.mjs all
 ```
 
+### Number Symbolism
+
+```bash
+# Generate symbolism for a specific number
+node number_symbolism.mjs --number 7
+
+# Index entire bible — extract numbers from every verse with Ollama
+node number_symbolism.mjs --bible osnb2 --index
+
+# Index specific book/chapter
+node number_symbolism.mjs --bible osnb2 --index --book 11 --chapter 10
+
+# Proofread existing data
+node number_symbolism.mjs --all --proofread --apply
+```
+
 ### Reading Plans
 
 ```bash
 # Generate all reading plans
 node generate_reading_plans.mjs
 ```
+
+---
+
+## Local Model (Ollama)
+
+All generation scripts support `--local` to use a local Ollama model instead of Claude:
+
+```bash
+node references.mjs --book 43 --chapter 1 --local
+node chapter_summary.mjs --nt --local
+```
+
+Configuration in `constants.js`:
+- `ollamaModel` — default: `qwen3.5:122b`
+- `ollamaBaseUrl` — default: `http://localhost:11434`
+
+The `number_symbolism.mjs --index` mode always uses Ollama for verse scanning regardless of `--local`.
 
 ---
 
