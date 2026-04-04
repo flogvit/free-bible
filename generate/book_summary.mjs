@@ -209,7 +209,8 @@ Du får også den ${originalLanguage}e originalteksten for å verifisere nøyakt
 - **Innholdsoversikt:** (liste med hovedoverskrifter og kapittelnummer)
 - **Nøkkeltemaer:** (3-5 temaer med én setning forklaring hver)
 
-Hvis sammendraget mangler strukturen eller har feil, må revisedSummary korrigere dette.`;
+Hvis sammendraget mangler strukturen eller har feil, må revisedSummary korrigere dette.
+- ALDRI nevn spesifikke bibelutgaver, bibelselskap eller forlag (f.eks. "Bibelen 2011", "Bibelselskapet", "NIV", "ESV"). Skriv nøytralt uten referanse til bestemte oversettelser eller organisasjoner.`;
     } else if (langCode === 'nn') {
         basePrompt = `Du er ein korrekturlesar for bibelsamandrag. Gå gjennom følgjande samandrag av ${bookName}.
 Du får også den ${originalLanguage}e originalteksten for å verifisere nøyaktigheita.`;
@@ -219,7 +220,8 @@ Du får også den ${originalLanguage}e originalteksten for å verifisere nøyakt
 - **Innhaldsoversikt:** (liste med hovudoverskrifter og kapitteltal)
 - **Nøkkeltema:** (3-5 tema med éi setning forklaring kvar)
 
-Dersom samandraget manglar strukturen eller har feil, må revisedSummary korrigere dette.`;
+Dersom samandraget manglar strukturen eller har feil, må revisedSummary korrigere dette.
+- ALDRI nemn spesifikke bibelutgåver, bibelselskap eller forlag (t.d. "Bibelen 2011", "Bibelselskapet", "NIV", "ESV"). Skriv nøytralt utan referanse til bestemte omsetjingar eller organisasjonar.`;
     } else {
         basePrompt = `You are a proofreader for Bible summaries. Review the following summary of ${bookName}.
 You are also given the original ${bookId <= 39 ? 'Hebrew' : 'Greek'} text to verify accuracy.`;
@@ -229,7 +231,8 @@ You are also given the original ${bookId <= 39 ? 'Hebrew' : 'Greek'} text to ver
 - **Content overview:** (list of main headings with chapter numbers)
 - **Key themes:** (3-5 themes with one sentence explanation each)
 
-If the summary lacks the structure or has errors, revisedSummary must correct this.`;
+If the summary lacks the structure or has errors, revisedSummary must correct this.
+- NEVER mention specific Bible editions, Bible societies, or publishers (e.g., "NIV", "ESV", "KJV", "Bibelen 2011", "Bibelselskapet"). Write neutrally without referencing specific translations or organizations.`;
     }
 
     return `${basePrompt}

@@ -228,7 +228,8 @@ VIKTIG:
 - Hvis historien er god som den er, returner en tom issues-array og returner den uendrede historien i revisedStory.
 - Hvis du foreslår endringer, returner den komplette reviderte historien i revisedStory.
 - Feil referanser er KRITISK og skal gi lav score.
-- score er 0-10 der 10 er perfekt.`;
+- score er 0-10 der 10 er perfekt.
+- ALDRI nevn spesifikke bibelutgaver, bibelselskap eller forlag (f.eks. "Bibelen 2011", "Bibelselskapet", "NIV", "ESV"). Skriv nøytralt uten referanse til bestemte oversettelser eller organisasjoner.`;
 }
 
 async function proofreadStory(story, filename) {
@@ -378,7 +379,8 @@ VIKTIG:
 - Hver referanse må ha korrekte bookId, startChapter, startVerse, endChapter, endVerse
 - Sjekk at kapitlene og versene faktisk eksisterer i Bibelen
 - Velg historier som er tydelig avgrenset i teksten
-- Ikke dupliser eksisterende historier`;
+- Ikke dupliser eksisterende historier
+- ALDRI nevn spesifikke bibelutgaver, bibelselskap eller forlag (f.eks. "Bibelen 2011", "Bibelselskapet", "NIV", "ESV"). Skriv nøytralt uten referanse til bestemte oversettelser eller organisasjoner.`;
 }
 
 async function generateStories(existingTitles, category) {

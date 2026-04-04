@@ -192,6 +192,7 @@ IMPORTANT:
 - NEVER undo a change that was intentionally made (check the reason).
 - If a word has 3+ revisions, it has been extensively reviewed - only suggest changes for CRITICAL errors.
 - If the current explanation is acceptable, SKIP that word entirely - do not include it in issues.
+- NEVER mention specific Bible editions, Bible societies, or publishers (e.g., "NIV", "ESV", "KJV", "Bibelen 2011", "Bibelselskapet"). Write neutrally without referencing specific translations or organizations.
 
 If there are no issues, return an empty issues array with a summary and score of 10.
 

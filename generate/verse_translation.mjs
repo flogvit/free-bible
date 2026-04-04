@@ -141,6 +141,7 @@ IKKE inkluder:
 - Referanser til andre bibeloversettelser
 - "Filler" som later som det er interessant men egentlig er trivielt
 - Connections til vers i samme kapittel (det er åpenbart for leseren)
+- ALDRI nevn spesifikke bibelutgaver, bibelselskap eller forlag (f.eks. "Bibelen 2011", "Bibelselskapet", "NIV", "ESV"). Skriv nøytralt uten referanse til bestemte oversettelser eller organisasjoner.
 
 REFERANSEFORMAT:
 Når du refererer til bibelsteder, bruk formatet: [ref:FORKORTELSE KAPITTEL:VERS|VISNINGSTEKST]
@@ -183,6 +184,7 @@ Do NOT include:
 - References to other Bible translations
 - "Filler" that pretends to be interesting but is actually trivial
 - Connections to verses in the same chapter (that's obvious to the reader)
+- NEVER mention specific Bible editions, Bible societies, or publishers (e.g., "NIV", "ESV", "KJV", "Bibelen 2011", "Bibelselskapet"). Write neutrally without referencing specific translations or organizations.
 
 REFERENCE FORMAT:
 When referring to Bible passages, use the format: [ref:ABBREVIATION CHAPTER:VERSE|DISPLAY TEXT]
@@ -312,6 +314,7 @@ VIKTIG:
 - Ved type "addition": current skal være tom streng, suggested er teksten som legges til
 - Ved type "filler" eller "redundant": suggested skal være tom streng for å fjerne feltet
 - ALDRI foreslå sletting av "explanation"-feltet - det er obligatorisk. Foreslå heller en kortere versjon.
+- ALDRI nevn spesifikke bibelutgaver, bibelselskap eller forlag (f.eks. "Bibelen 2011", "Bibelselskapet", "NIV", "ESV"). Skriv nøytralt uten referanse til bestemte oversettelser eller organisasjoner.
 
 Språk: ${language}
 

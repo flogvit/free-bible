@@ -168,7 +168,8 @@ Du får den ${originalLanguage}e originalteksten for å verifisere nøyaktighete
 - Kryssreferanser som ikke er relevante eller har svak kobling til kildeverset
 - Viktige kryssreferanser som mangler
 - Unøyaktige eller misvisende forklaringstekster
-- Selvhenvisninger (referanser tilbake til kildeverset selv)`;
+- Selvhenvisninger (referanser tilbake til kildeverset selv)
+- ALDRI nevn spesifikke bibelutgaver, bibelselskap eller forlag (f.eks. "Bibelen 2011", "Bibelselskapet", "NIV", "ESV"). Skriv nøytralt uten referanse til bestemte oversettelser eller organisasjoner.`;
     } else if (langCode === 'nn') {
         basePrompt = `Du er ein korrekturlesar for bibelske kryssreferansar. Gå gjennom følgjande kryssreferansar for ${ref}.
 Du får den ${originalLanguage}e originalteksten for å verifisere nøyaktigheita.`;
@@ -177,7 +178,8 @@ Du får den ${originalLanguage}e originalteksten for å verifisere nøyaktigheit
 - Kryssreferansar som ikkje er relevante eller har svak kopling til kjeldeverset
 - Viktige kryssreferansar som manglar
 - Unøyaktige eller misvisande forklaringstekstar
-- Sjølvhenvisingar (referansar tilbake til kjeldeverset sjølv)`;
+- Sjølvhenvisingar (referansar tilbake til kjeldeverset sjølv)
+- ALDRI nemn spesifikke bibelutgåver, bibelselskap eller forlag (t.d. "Bibelen 2011", "Bibelselskapet", "NIV", "ESV"). Skriv nøytralt utan referanse til bestemte omsetjingar eller organisasjonar.`;
     } else {
         basePrompt = `You are a proofreader for biblical cross-references. Review the following cross-references for ${ref}.
 You are given the original ${originalLanguageEn} text to verify accuracy.`;
@@ -186,7 +188,8 @@ You are given the original ${originalLanguageEn} text to verify accuracy.`;
 - Cross-references that are not relevant or have weak connection to the source verse
 - Important cross-references that are missing
 - Inaccurate or misleading explanation texts
-- Self-references (references back to the source verse itself)`;
+- Self-references (references back to the source verse itself)
+- NEVER mention specific Bible editions, Bible societies, or publishers (e.g., "NIV", "ESV", "KJV", "Bibelen 2011", "Bibelselskapet"). Write neutrally without referencing specific translations or organizations.`;
     }
 
     return `${basePrompt}

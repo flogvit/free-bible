@@ -155,6 +155,7 @@ IMPORTANT:
 - If the current version is acceptable, SKIP that verse entirely - do not include it in issues.
 - Focus only on verses WITHOUT version history, or verses with genuine new errors.
 - Some verses may already have footnotes. Review existing footnotes and only suggest new ones if they add value. Do not duplicate existing footnotes.
+- NEVER mention specific Bible editions, Bible societies, or publishers (e.g., "NIV", "ESV", "KJV", "Bibelen 2011", "Bibelselskapet"). Write neutrally without referencing specific translations or organizations.
 
 If there are no issues (or all issues are in well-reviewed verses), return an empty issues array.`;
 };
@@ -475,7 +476,8 @@ Review the translation of THIS VERSE and:
 3. Score 0-10.
 
 ${verse.versions?.length >= 3 ? 'This verse has 3+ revisions — only suggest changes for CRITICAL errors.' : ''}
-${verse.versions?.length ? 'NEVER suggest text matching any previous version.' : ''}`;
+${verse.versions?.length ? 'NEVER suggest text matching any previous version.' : ''}
+NEVER mention specific Bible editions, Bible societies, or publishers (e.g., "NIV", "ESV", "KJV", "Bibelen 2011", "Bibelselskapet"). Write neutrally without referencing specific translations or organizations.`;
 }
 
 async function proofreadChapterPerVerse(bible, bookId, chapterId, style, filename) {
@@ -494,7 +496,20 @@ async function proofreadChapterPerVerse(bible, bookId, chapterId, style, filenam
         return null;
     }
 
-    console.log(`Proofreading ${bookId}:${chapterId} (${translatedVerses.length} verses, per-verse mode)`);
+    // Skip verses that already have footnotes (allows resuming after Ctrl+C)
+    const versesNeedingProofread = translatedVerses.filter(v => !v.footnotes || v.footnotes.length === 0);
+    const skipped = translatedVerses.length - versesNeedingProofread.length;
+
+    if (skipped > 0) {
+        console.log(`Proofreading ${bookId}:${chapterId} (${versesNeedingProofread.length} of ${translatedVerses.length} verses, ${skipped} already done)`);
+    } else {
+        console.log(`Proofreading ${bookId}:${chapterId} (${translatedVerses.length} verses, per-verse mode)`);
+    }
+
+    if (versesNeedingProofread.length === 0) {
+        console.log(`  All verses already proofread — skipping`);
+        return { issues: [], footnotes: [], score: 10, appliedCount: 0, footnoteCount: 0 };
+    }
 
     const allIssues = [];
     const allFootnotes = [];
@@ -504,6 +519,10 @@ async function proofreadChapterPerVerse(bible, bookId, chapterId, style, filenam
 
     for (let i = 0; i < translatedVerses.length; i++) {
         const verse = translatedVerses[i];
+
+        // Skip already proofread verses
+        if (verse.footnotes && verse.footnotes.length > 0) continue;
+
         const originalVerse = originalVerses.find(v => +v.verseId === +verse.verseId);
         if (!originalVerse) continue;
 
@@ -544,7 +563,6 @@ async function proofreadChapterPerVerse(bible, bookId, chapterId, style, filenam
 
             // Apply footnotes directly (replace for this verse)
             if (result.footnotes && result.footnotes.length > 0) {
-                const oldCount = verse.footnotes?.length || 0;
                 verse.footnotes = result.footnotes;
                 footnoteCount += result.footnotes.length;
 
@@ -552,13 +570,13 @@ async function proofreadChapterPerVerse(bible, bookId, chapterId, style, filenam
                     allFootnotes.push({ verseId: verse.verseId, ...fn });
                 }
             }
+
+            // Save after each verse so progress is preserved on Ctrl+C
+            fs.writeFileSync(filename, JSON.stringify(translatedVerses, null, 2));
         } catch (error) {
             console.warn(`\n  Error on verse ${verse.verseId}: ${error.message}`);
         }
     }
-
-    // Save after all verses processed
-    fs.writeFileSync(filename, JSON.stringify(translatedVerses, null, 2));
 
     process.stdout.write('\r' + ''.padEnd(60) + '\r');
     const avgScore = scores.length > 0 ? Math.round(scores.reduce((a, b) => a + b, 0) / scores.length) : null;

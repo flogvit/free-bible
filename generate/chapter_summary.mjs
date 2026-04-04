@@ -153,7 +153,8 @@ Du får også den ${originalLanguage}e originalteksten for å verifisere nøyakt
 - **Innhold:** (maks 3-5 setninger – vær konsis, ikke gjenfortell vers for vers)
 - **Nøkkelord/bilder:** (3-5 begreper med én setning forklaring hver)
 
-Hvis det nåværende sammendraget mangler strukturen eller er for langt, må revisedSummary korrigere dette.`;
+Hvis det nåværende sammendraget mangler strukturen eller er for langt, må revisedSummary korrigere dette.
+- ALDRI nevn spesifikke bibelutgaver, bibelselskap eller forlag (f.eks. "Bibelen 2011", "Bibelselskapet", "NIV", "ESV"). Skriv nøytralt uten referanse til bestemte oversettelser eller organisasjoner.`;
     } else if (langCode === 'nn') {
         basePrompt = `Du er ein korrekturlesar for bibelsamandrag. Gå gjennom følgjande samandrag av ${bibleRef}.
 Du får også den ${originalLanguage}e originalteksten for å verifisere nøyaktigheita.`;
@@ -162,7 +163,8 @@ Du får også den ${originalLanguage}e originalteksten for å verifisere nøyakt
 - **Innhald:** (maks 3-5 setningar – ver kortfatta, ikkje gjenfortell vers for vers)
 - **Nøkkelord/bilete:** (3-5 omgrep med éi setning forklaring kvar)
 
-Dersom det noverande samandraget manglar strukturen eller er for langt, må revisedSummary korrigere dette.`;
+Dersom det noverande samandraget manglar strukturen eller er for langt, må revisedSummary korrigere dette.
+- ALDRI nemn spesifikke bibelutgåver, bibelselskap eller forlag (t.d. "Bibelen 2011", "Bibelselskapet", "NIV", "ESV"). Skriv nøytralt utan referanse til bestemte omsetjingar eller organisasjonar.`;
     } else {
         basePrompt = `You are a proofreader for Bible summaries. Review the following summary of ${bibleRef}.
 You are also given the original ${originalLanguageEn} text to verify accuracy.`;
@@ -171,7 +173,8 @@ You are also given the original ${originalLanguageEn} text to verify accuracy.`;
 - **Content:** (max 3-5 sentences – be concise, do not retell verse by verse)
 - **Key words/images:** (3-5 concepts with one sentence explanation each)
 
-If the current summary lacks the structure or is too long, revisedSummary must correct this.`;
+If the current summary lacks the structure or is too long, revisedSummary must correct this.
+- NEVER mention specific Bible editions, Bible societies, or publishers (e.g., "NIV", "ESV", "KJV", "Bibelen 2011", "Bibelselskapet"). Write neutrally without referencing specific translations or organizations.`;
     }
 
     return `${basePrompt}

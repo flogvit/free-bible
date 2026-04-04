@@ -250,7 +250,8 @@ Sjekk spesielt at:
 1. Ingen generell bok-informasjon er inkludert (dette hører til book_context)
 2. Alle fakta er korrekte
 3. Informasjonen er faktisk relevant for dette kapittelet
-4. Seksjoner uten innhold er utelatt`;
+4. Seksjoner uten innhold er utelatt
+- ALDRI nevn spesifikke bibelutgaver, bibelselskap eller forlag (f.eks. "Bibelen 2011", "Bibelselskapet", "NIV", "ESV"). Skriv nøytralt uten referanse til bestemte oversettelser eller organisasjoner.`;
     } else if (langCode === 'nn') {
         basePrompt = `Du er ein korrekturlesar for bibelkontekst. Gå gjennom følgjande kapittel-kontekst for ${bibleRef}.
 Du får også den ${originalLanguage}e originalteksten for å verifisere nøyaktigheita.`;
@@ -267,7 +268,8 @@ Sjekk spesielt at:
 1. Ingen generell bok-informasjon er inkludert (dette høyrer til book_context)
 2. Alle fakta er korrekte
 3. Informasjonen er faktisk relevant for dette kapitlet
-4. Seksjonar utan innhald er utelatne`;
+4. Seksjonar utan innhald er utelatne
+- ALDRI nemn spesifikke bibelutgåver, bibelselskap eller forlag (t.d. "Bibelen 2011", "Bibelselskapet", "NIV", "ESV"). Skriv nøytralt utan referanse til bestemte omsetjingar eller organisasjonar.`;
     } else {
         basePrompt = `You are a proofreader for Bible context. Review the following chapter-context for ${bibleRef}.
 You are also given the original ${originalLanguageEn} text to verify accuracy.`;
@@ -284,7 +286,8 @@ Check especially that:
 1. No general book-level information is included (this belongs in book_context)
 2. All facts are correct
 3. The information is actually relevant to this chapter
-4. Sections without content are omitted`;
+4. Sections without content are omitted
+- NEVER mention specific Bible editions, Bible societies, or publishers (e.g., "NIV", "ESV", "KJV", "Bibelen 2011", "Bibelselskapet"). Write neutrally without referencing specific translations or organizations.`;
     }
 
     return `${basePrompt}

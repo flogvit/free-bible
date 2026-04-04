@@ -262,7 +262,8 @@ VIKTIG:
 - revised skal inneholde: title, era, lifespan, summary, roles, family, keyEvents
 - IKKE endre id, name, references eller aliases
 - score skal være et heltall fra 0 til 10
-- Hvis det er ${personData.versions?.length || 0} tidligere versjoner, vær strengere${versionContext}
+- Hvis det er ${personData.versions?.length || 0} tidligere versjoner, vær strengere
+- ALDRI nevn spesifikke bibelutgaver, bibelselskap eller forlag (f.eks. "Bibelen 2011", "Bibelselskapet", "NIV", "ESV"). Skriv nøytralt uten referanse til bestemte oversettelser eller organisasjoner.${versionContext}
 
 Nåværende data:
 ${dataJson}`;

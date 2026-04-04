@@ -175,7 +175,8 @@ function getProofreadPrompt(language, bookId, currentContext) {
 - ## Kulturell bakgrunn (2-3 avsnitt)
 - ## Arkeologi og historiske kilder (3-5 funn med detaljer)
 
-Hvis konteksten mangler strukturen eller har faktafeil, må revisedContext korrigere dette.`;
+Hvis konteksten mangler strukturen eller har faktafeil, må revisedContext korrigere dette.
+- ALDRI nevn spesifikke bibelutgaver, bibelselskap eller forlag (f.eks. "Bibelen 2011", "Bibelselskapet", "NIV", "ESV"). Skriv nøytralt uten referanse til bestemte oversettelser eller organisasjoner.`;
     } else if (langCode === 'nn') {
         basePrompt = `Du er ein korrekturlesar for bibelkontekst. Gå gjennom følgjande bok-kontekst for ${bookName}.`;
         structureReminder = `VIKTIG: Konteksten MÅ behalde følgjande struktur:
@@ -184,7 +185,8 @@ Hvis konteksten mangler strukturen eller har faktafeil, må revisedContext korri
 - ## Kulturell bakgrunn (2-3 avsnitt)
 - ## Arkeologi og historiske kjelder (3-5 funn med detaljar)
 
-Dersom konteksten manglar strukturen eller har faktafeil, må revisedContext korrigere dette.`;
+Dersom konteksten manglar strukturen eller har faktafeil, må revisedContext korrigere dette.
+- ALDRI nemn spesifikke bibelutgåver, bibelselskap eller forlag (t.d. "Bibelen 2011", "Bibelselskapet", "NIV", "ESV"). Skriv nøytralt utan referanse til bestemte omsetjingar eller organisasjonar.`;
     } else {
         basePrompt = `You are a proofreader for Bible context. Review the following book-level context for ${bookName}.`;
         structureReminder = `IMPORTANT: The context MUST maintain this structure:
@@ -193,7 +195,8 @@ Dersom konteksten manglar strukturen eller har faktafeil, må revisedContext kor
 - ## Cultural Background (2-3 paragraphs)
 - ## Archaeology and Historical Sources (3-5 finds with details)
 
-If the context lacks the structure or has factual errors, revisedContext must correct this.`;
+If the context lacks the structure or has factual errors, revisedContext must correct this.
+- NEVER mention specific Bible editions, Bible societies, or publishers (e.g., "NIV", "ESV", "KJV", "Bibelen 2011", "Bibelselskapet"). Write neutrally without referencing specific translations or organizations.`;
     }
 
     return `${basePrompt}

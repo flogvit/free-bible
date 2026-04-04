@@ -193,7 +193,8 @@ VIKTIG:
 - Kun foreslå endringer ved reelle feil. Ikke endre for å endre.
 - score: 0-10 (10 = perfekt)
 - revised: den korrigerte listen (kan være identisk med nåværende)
-- Hvis ${currentTags._versions?.length || 0} tidligere versjoner finnes, vær strengere${versionContext}
+- Hvis ${currentTags._versions?.length || 0} tidligere versjoner finnes, vær strengere
+- ALDRI nevn spesifikke bibelutgaver, bibelselskap eller forlag (f.eks. "Bibelen 2011", "Bibelselskapet", "NIV", "ESV"). Skriv nøytralt uten referanse til bestemte oversettelser eller organisasjoner.${versionContext}
 
 Teksten:
 ${chapterText}`;
@@ -217,7 +218,8 @@ IMPORTANT:
 - Only suggest changes for real errors. Don't change for the sake of change.
 - score: 0-10 (10 = perfect)
 - revised: the corrected list (can be identical to current)
-- If ${currentTags._versions?.length || 0} previous versions exist, be stricter${versionContext}
+- If ${currentTags._versions?.length || 0} previous versions exist, be stricter
+- NEVER mention specific Bible editions, Bible societies, or publishers (e.g., "NIV", "ESV", "KJV", "Bibelen 2011", "Bibelselskapet"). Write neutrally without referencing specific translations or organizations.${versionContext}
 
 Text:
 ${chapterText}`;

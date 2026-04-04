@@ -310,7 +310,8 @@ VIKTIG:
 - Hvis alt er bra, returner tomt issues-array og uendret revised
 - revised skal inneholde number, meaning, description og footnotes
 - score skal være et heltall fra 0 til 10 (0 = helt feil, 10 = perfekt)
-- Hvis det er ${currentData.versions?.length || 0} tidligere versjoner, vær strengere: kun foreslå endringer ved reelle feil${versionContext}
+- Hvis det er ${currentData.versions?.length || 0} tidligere versjoner, vær strengere: kun foreslå endringer ved reelle feil
+- ALDRI nevn spesifikke bibelutgaver, bibelselskap eller forlag (f.eks. "Bibelen 2011", "Bibelselskapet", "NIV", "ESV"). Skriv nøytralt uten referanse til bestemte oversettelser eller organisasjoner.${versionContext}
 
 Nåværende data:
 ${dataJson}`;
@@ -329,7 +330,8 @@ IMPORTANT:
 - If everything is good, return empty issues array and unchanged revised
 - revised should contain number, meaning, description and footnotes
 - score must be an integer from 0 to 10 (0 = completely wrong, 10 = perfect)
-- If there are ${currentData.versions?.length || 0} previous versions, be stricter: only suggest changes for real errors${versionContext}
+- If there are ${currentData.versions?.length || 0} previous versions, be stricter: only suggest changes for real errors
+- NEVER mention specific Bible editions, Bible societies, or publishers (e.g., "NIV", "ESV", "KJV", "Bibelen 2011", "Bibelselskapet"). Write neutrally without referencing specific translations or organizations.${versionContext}
 
 Current data:
 ${dataJson}`;
