@@ -107,7 +107,13 @@ function readOriginalChapter(bookId, chapterId) {
 // === Prompts ===
 
 function getTagPrompt(langCode, bookName, chapterId, chapterText, days) {
-    const dayList = days.map(d => `- ${d.id}: ${d.name} — ${d.description}`).join('\n');
+    const dayList = days.map(d => {
+        let entry = `### ${d.id}: ${d.name}\n${d.description}`;
+        if (d.biblicalBasis) entry += `\nBibelske tekster: ${d.biblicalBasis}`;
+        if (d.significance) entry += `\nBetydning: ${d.significance}`;
+        if (d.otConnections) entry += `\nGT-forbilder: ${d.otConnections}`;
+        return entry;
+    }).join('\n\n');
 
     if (langCode === 'nb') {
         return `Hvilke av disse kirkelige/bibelske dagene er ${bookName} ${chapterId} relevant for?
@@ -148,6 +154,7 @@ ${chapterText}`;
 
 function getProofreadPrompt(langCode, bookName, chapterId, chapterText, currentTags, days) {
     const dayList = days.map(d => `- ${d.id}: ${d.name} — ${d.description}`).join('\n');
+    // Proofread uses compact day list (full context already informed the initial tagging)
     const tagsJson = JSON.stringify(currentTags, null, 2);
 
     // Build version history context
