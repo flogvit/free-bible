@@ -1002,7 +1002,7 @@ async function main() {
             while (iteration < maxIterations) {
                 iteration++;
                 const saveToFile = !options.apply;
-                const proofreadResult = await proofreadSymbolism(options.language, number, filename, options.noRefs || false, saveToFile);
+                const proofreadResult = await proofreadSymbolism(options.language, number, filename, options.noRefs || false, saveToFile, options.bible);
 
                 lastScore = proofreadResult?.score ?? 10;
 
