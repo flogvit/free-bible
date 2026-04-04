@@ -7,6 +7,10 @@ export const bibles = {
 export const anthropicModel = "claude-opus-4-6";
 export const maxTokens = 16384;
 
+// Local Ollama models for lightweight tasks
+export const ollamaModel = "qwen3.5:122b";
+export const ollamaBaseUrl = "http://localhost:11434";
+
 // Language name to code mapping
 export const languageCodes = {
     'Norwegian bokmål': 'nb',
