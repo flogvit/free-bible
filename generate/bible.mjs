@@ -56,10 +56,23 @@ const PROOFREAD_SCHEMA = {
                 additionalProperties: false
             }
         },
+        footnotes: {
+            type: "array",
+            items: {
+                type: "object",
+                properties: {
+                    verseId: {type: "integer"},
+                    text: {type: "string"},
+                    source: {type: "string", enum: ["lingvistisk", "teologisk", "historisk", "tekstkritisk", "liturgisk", "annet"]}
+                },
+                required: ["verseId", "text", "source"],
+                additionalProperties: false
+            }
+        },
         summary: {type: "string"},
         score: {type: "integer"}
     },
-    required: ["issues", "summary", "score"],
+    required: ["issues", "footnotes", "summary", "score"],
     additionalProperties: false
 };
 
@@ -89,6 +102,15 @@ Your task is to review the translation and identify:
 - Missing or added content
 - Grammar or spelling errors
 
+You should also suggest FOOTNOTES for verses where there are interesting details that enrich the reader's understanding but don't belong in the translation text itself. Good footnotes include:
+- Alternative translations or readings from the original language (lingvistisk)
+- Theological nuances or interpretive choices (teologisk)
+- Historical or cultural context that illuminates the text (historisk)
+- Textual variants between manuscripts (tekstkritisk)
+- Liturgical usage or significance (liturgisk)
+Each footnote has: verseId, text (the footnote content), source (one of: lingvistisk, teologisk, historisk, tekstkritisk, liturgisk, annet).
+Only add footnotes where they genuinely add value — not every verse needs one.
+
 IMPORTANT:
 - The "suggested" field must contain the ENTIRE corrected verse, not just the changed phrase.
 - Some verses have VERSION HISTORY showing previous revisions. Read the history carefully.
@@ -97,6 +119,7 @@ IMPORTANT:
 - If a verse has 3+ revisions, it has been extensively reviewed - only suggest changes for CRITICAL errors.
 - If the current version is acceptable, SKIP that verse entirely - do not include it in issues.
 - Focus only on verses WITHOUT version history, or verses with genuine new errors.
+- Some verses may already have footnotes. Review existing footnotes and only suggest new ones if they add value. Do not duplicate existing footnotes.
 
 If there are no issues (or all issues are in well-reviewed verses), return an empty issues array.`;
 };
@@ -247,6 +270,12 @@ ${text}`;
 function getProofreadPrompt(language, style, bookId, chapterId, originalText, translatedVerses) {
     const formattedTranslation = translatedVerses.map(v => {
         let entry = `${v.verseId}: ${v.text}`;
+        if (v.footnotes && v.footnotes.length > 0) {
+            entry += `\n   EXISTING FOOTNOTES:`;
+            v.footnotes.forEach((fn, i) => {
+                entry += `\n   [${fn.source}] ${fn.text}`;
+            });
+        }
         if (v.versions && v.versions.length > 0) {
             entry += `\n   VERSION HISTORY (${v.versions.length} previous revisions - DO NOT suggest any of these):`;
             v.versions.forEach((ver, i) => {
@@ -267,7 +296,7 @@ Book ID: ${bookId}, Chapter: ${chapterId}
 Original text:
 ${originalText}
 
-Current translation (with version history where available):
+Current translation (with version history and existing footnotes where available):
 ${formattedTranslation}`;
 }
 
@@ -379,6 +408,7 @@ async function proofreadChapter(bible, bookId, chapterId, style, filename, saveT
     console.log(`Proofreading ${bookId}:${chapterId} (${translatedVerses.length} verses in ${batches.length} batch(es))`);
 
     const allIssues = [];
+    const allFootnotes = [];
     const summaries = [];
     const scores = [];
 
@@ -399,6 +429,9 @@ async function proofreadChapter(bible, bookId, chapterId, style, filename, saveT
         if (batchResult.issues) {
             allIssues.push(...batchResult.issues);
         }
+        if (batchResult.footnotes) {
+            allFootnotes.push(...batchResult.footnotes);
+        }
         if (batchResult.summary) {
             summaries.push(batchResult.summary);
         }
@@ -409,6 +442,7 @@ async function proofreadChapter(bible, bookId, chapterId, style, filename, saveT
 
     let result = {
         issues: allIssues,
+        footnotes: allFootnotes,
         summary: batches.length > 1
             ? `Combined from ${batches.length} batches: ${summaries.join(' | ')}`
             : (summaries[0] || (allIssues.length === 0 ? "No issues found" : `Found ${allIssues.length} issue(s)`)),
@@ -437,6 +471,12 @@ async function proofreadChapter(bible, bookId, chapterId, style, filename, saveT
             console.log(`     ${issue.explanation}`);
         });
     }
+    if (result.footnotes && result.footnotes.length > 0) {
+        console.log(`Footnotes: ${result.footnotes.length}`);
+        result.footnotes.forEach((fn, i) => {
+            console.log(`  ${i + 1}. Verse ${fn.verseId} [${fn.source}]: ${fn.text.substring(0, 80)}${fn.text.length > 80 ? '...' : ''}`);
+        });
+    }
 
     return result;
 }
@@ -457,46 +497,77 @@ function applyProofreadChanges(bible, bookId, chapterId, filename, proofreadResu
     }
 
     const verses = JSON.parse(fs.readFileSync(filename, 'utf-8'));
+    const hasIssues = proofreadResult.issues && proofreadResult.issues.length > 0;
+    const hasFootnotes = proofreadResult.footnotes && proofreadResult.footnotes.length > 0;
 
-    if (!proofreadResult.issues || proofreadResult.issues.length === 0) {
+    if (!hasIssues && !hasFootnotes) {
         return;
     }
 
     let appliedCount = 0;
+    let footnoteCount = 0;
 
-    for (const issue of proofreadResult.issues) {
-        if (!issue.suggested) continue;
+    if (hasIssues) {
+        for (const issue of proofreadResult.issues) {
+            if (!issue.suggested) continue;
 
-        const verse = verses.find(v => +v.verseId === +issue.verseId);
-        if (!verse) {
-            console.log(`  Verse ${issue.verseId} not found, skipping`);
-            continue;
+            const verse = verses.find(v => +v.verseId === +issue.verseId);
+            if (!verse) {
+                console.log(`  Verse ${issue.verseId} not found, skipping`);
+                continue;
+            }
+
+            if (verse.text === issue.suggested) {
+                continue;
+            }
+
+            if (!verse.versions) {
+                verse.versions = [];
+            }
+
+            verse.versions.push({
+                text: verse.text,
+                type: issue.type,
+                severity: issue.severity,
+                explanation: issue.explanation
+            });
+
+            verse.text = issue.suggested;
+            appliedCount++;
+
+            console.log(`  Applied: Verse ${issue.verseId} [${issue.type}/${issue.severity}]`);
         }
-
-        if (verse.text === issue.suggested) {
-            continue;
-        }
-
-        if (!verse.versions) {
-            verse.versions = [];
-        }
-
-        verse.versions.push({
-            text: verse.text,
-            type: issue.type,
-            severity: issue.severity,
-            explanation: issue.explanation
-        });
-
-        verse.text = issue.suggested;
-        appliedCount++;
-
-        console.log(`  Applied: Verse ${issue.verseId} [${issue.type}/${issue.severity}]`);
     }
 
-    if (appliedCount > 0) {
+    if (hasFootnotes) {
+        for (const fn of proofreadResult.footnotes) {
+            const verse = verses.find(v => +v.verseId === +fn.verseId);
+            if (!verse) continue;
+
+            if (!verse.footnotes) {
+                verse.footnotes = [];
+            }
+
+            // Skip duplicates (same source + similar text)
+            const isDuplicate = verse.footnotes.some(existing =>
+                existing.source === fn.source && existing.text === fn.text
+            );
+            if (isDuplicate) continue;
+
+            verse.footnotes.push({
+                text: fn.text,
+                source: fn.source
+            });
+            footnoteCount++;
+        }
+    }
+
+    if (appliedCount > 0 || footnoteCount > 0) {
         fs.writeFileSync(filename, JSON.stringify(verses, null, 2));
-        console.log(`Applied ${appliedCount} changes to ${bookId}:${chapterId}`);
+        const parts = [];
+        if (appliedCount > 0) parts.push(`${appliedCount} changes`);
+        if (footnoteCount > 0) parts.push(`${footnoteCount} footnotes`);
+        console.log(`Applied ${parts.join(', ')} to ${bookId}:${chapterId}`);
     }
 }
 
@@ -510,7 +581,9 @@ Arguments:
 Options:
   --style <type>     Translation style: standard, oral (default: standard)
   --proofread        Run proofreading after translation (can combine with translation)
-  --apply            Apply proofread suggestions (requires prior --proofread run)
+  --apply            Apply proofread suggestions (enables feedback loop)
+  --min-score <n>    Minimum acceptable score (default: 8, range 0-10)
+  --max-iter <n>     Max proofread iterations per chapter (default: 3)
   --ot               Process only Old Testament (books 1-39)
   --nt               Process only New Testament (books 40-66)
   --book <range>     Process book(s): single (43) or range (1-20)
@@ -572,6 +645,10 @@ function parseArgs(args) {
             const range = parseRange(args[++i]);
             options.chapterStart = range.start;
             options.chapterEnd = range.end;
+        } else if (arg === '--min-score' && i + 1 < args.length) {
+            options.minScore = parseInt(args[++i], 10);
+        } else if (arg === '--max-iter' && i + 1 < args.length) {
+            options.maxIterations = parseInt(args[++i], 10);
         } else if (arg === '--force') {
             options.force = true;
         } else if (arg === '--help') {
@@ -631,6 +708,9 @@ async function main() {
     console.log(`Bible: ${options.bible}`);
     console.log(`Style: ${options.style}`);
     console.log(`Mode: ${modes.join(' → ')}`);
+    if (options.proofread && options.apply) {
+        console.log(`Feedback loop: min score ${options.minScore || 8}/10, max ${options.maxIterations || 3} iterations`);
+    }
     console.log(`Books: ${startBook}-${endBook}`);
     if (options.chapterStart !== null) {
         console.log(`Chapters: ${options.chapterStart}-${options.chapterEnd}`);
@@ -655,14 +735,32 @@ async function main() {
             }
             await translateChapter(options.bible, bookId, chapterId, options.style, existingVerses, filename);
 
-            let proofreadResult = null;
             if (options.proofread) {
-                const saveToFile = !options.apply;
-                proofreadResult = await proofreadChapter(options.bible, bookId, chapterId, options.style, filename, saveToFile);
-            }
+                const minScore = options.minScore || 8;
+                const maxIterations = options.maxIterations || 3;
+                let iteration = 0;
 
-            if (options.apply) {
-                applyProofreadChanges(options.bible, bookId, chapterId, filename, proofreadResult);
+                while (iteration < maxIterations) {
+                    iteration++;
+                    const saveToFile = !options.apply;
+                    const proofreadResult = await proofreadChapter(options.bible, bookId, chapterId, options.style, filename, saveToFile);
+
+                    const lastScore = proofreadResult?.score ?? 10;
+
+                    if (options.apply && proofreadResult) {
+                        applyProofreadChanges(options.bible, bookId, chapterId, filename, proofreadResult);
+                    }
+
+                    if (lastScore >= minScore) {
+                        break;
+                    }
+
+                    if (iteration < maxIterations) {
+                        console.log(`  Score ${lastScore}/10 < ${minScore} — re-proofreading (iteration ${iteration + 1}/${maxIterations})...`);
+                    } else {
+                        console.log(`  Score ${lastScore}/10 — max iterations (${maxIterations}) reached`);
+                    }
+                }
             }
         }
     }
