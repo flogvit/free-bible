@@ -18,6 +18,7 @@
 ## Ideer
 
 - [ ] Sangreferanser per vers — koble bibelvers til sanger (salmer, lovsanger, klassisk kirkemusikk) som er basert på eller inspirert av verset. Norsk Salmebok-numre, internasjonale hymner, eventuelt Spotify-lenker. Eksempel: Salme 23 → "Herren er min hyrde" (NoS 480).
+- [ ] Quiz per kapittel — generer flervalgsquiz (1 riktig + 3 gale svar) basert direkte på kapittelteksten. Spørsmålene må være fakta fra teksten (hvem sa/gjorde hva, hva skjedde, hvilke steder/tall nevnes), ikke teologisk tolkning eller synsing. Eksempel: "Hvem møtte Jesus ved brønnen i Sykar?" a) Maria Magdalena b) En samaritansk kvinne c) Marta d) Lydia. Lagres som `quiz/<lang>/<bookId>/<chapterId>.json`.
 
 ## Pågående
 
