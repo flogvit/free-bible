@@ -35,12 +35,26 @@ const NUMBER_WORDS_NB = {
     666: ['sekshundreogsekstiseks'],
 };
 
+const FOOTNOTE_SCHEMA = {
+    type: "object",
+    properties: {
+        text: {type: "string"},
+        source: {type: "string", enum: ["rabbinsk", "kabbalistisk", "historisk", "arkeologisk", "lingvistisk", "liturgisk", "teologisk", "annet"]},
+    },
+    required: ["text", "source"],
+    additionalProperties: false
+};
+
 const SYMBOLISM_SCHEMA = {
     type: "object",
     properties: {
         number: {type: "integer"},
         meaning: {type: "string"},
         description: {type: "string"},
+        footnotes: {
+            type: "array",
+            items: FOOTNOTE_SCHEMA
+        },
         references: {
             type: "array",
             items: {
@@ -56,7 +70,7 @@ const SYMBOLISM_SCHEMA = {
             }
         }
     },
-    required: ["number", "meaning", "description", "references"],
+    required: ["number", "meaning", "description", "footnotes", "references"],
     additionalProperties: false
 };
 
@@ -84,6 +98,10 @@ const PROOFREAD_SCHEMA = {
                 number: {type: "integer"},
                 meaning: {type: "string"},
                 description: {type: "string"},
+                footnotes: {
+                    type: "array",
+                    items: FOOTNOTE_SCHEMA
+                },
                 references: {
                     type: "array",
                     items: {
@@ -99,7 +117,7 @@ const PROOFREAD_SCHEMA = {
                     }
                 }
             },
-            required: ["number", "meaning", "description"],
+            required: ["number", "meaning", "description", "footnotes"],
             additionalProperties: false
         }
     },
@@ -231,65 +249,103 @@ function getGeneratePrompt(language, number, scanResults) {
 Inkluder:
 - En kort, presis formulering av tallets symbolske betydning (meaning-feltet)
 - En utfyllende beskrivelse (2-4 setninger) som forklarer symbolikken med eksempler fra Bibelen og jødisk tradisjon
+- Fotnoter (footnotes) for interessante fakta som ikke passer naturlig i hovedteksten, men som er nyttige å vite. For eksempel rabbinske tradisjoner, kabbalistiske tolkninger, historiske kontekster, eller lingvistiske detaljer. Hovedteksten skal flyte godt uten fotnotene.
 - Referanser til bibelsteder der tallet har symbolsk betydning (ikke bare steder der tallet nevnes tilfeldig)
+
+Hver fotnote har: text (selve fotnoten) og source (én av: rabbinsk, kabbalistisk, historisk, arkeologisk, lingvistisk, liturgisk, teologisk, annet).
 
 bookId-verdier: GT-bøker 1-39, NT-bøker 40-66.
 Velg referanser som virkelig illustrerer den symbolske bruken av tallet, ikke bare tilfeldige forekomster.${scanContext}
 
-Returner et JSON-objekt med: number (tall), meaning (kort symbolsk betydning), description (utfyllende beskrivelse), references (array med {bookId, chapterId, fromVerseId, toVerseId}).`;
+Returner et JSON-objekt med: number (tall), meaning (kort symbolsk betydning), description (utfyllende beskrivelse), footnotes (array med {text, source}), references (array med {bookId, chapterId, fromVerseId, toVerseId}).`;
     } else {
         return `Write about the symbolic meaning of the number ${number} in biblical and Jewish tradition in ${language}.
 
 Include:
 - A concise formulation of the number's symbolic meaning (meaning field)
 - A fuller description (2-4 sentences) explaining the symbolism with examples from the Bible and Jewish tradition
+- Footnotes for interesting facts that don't fit naturally in the main text, but are useful to know. For example rabbinic traditions, kabbalistic interpretations, historical contexts, or linguistic details. The main text should flow well without the footnotes.
 - References to Bible passages where the number has symbolic significance (not just random mentions)
+
+Each footnote has: text (the footnote itself) and source (one of: rabbinsk, kabbalistisk, historisk, arkeologisk, lingvistisk, liturgisk, teologisk, annet).
 
 bookId values: OT books 1-39, NT books 40-66.
 Choose references that truly illustrate the symbolic use of the number, not just random occurrences.${scanContext}
 
-Return a JSON object with: number (integer), meaning (short symbolic meaning), description (fuller description), references (array of {bookId, chapterId, fromVerseId, toVerseId}).`;
+Return a JSON object with: number (integer), meaning (short symbolic meaning), description (fuller description), footnotes (array of {text, source}), references (array of {bookId, chapterId, fromVerseId, toVerseId}).`;
     }
 }
 
 function getProofreadPrompt(language, number, currentData, noRefs) {
     const langCode = getLanguageCode(language);
 
+    // Build version history context
+    let versionContext = '';
+    if (currentData.versions && currentData.versions.length > 0) {
+        const historyEntries = currentData.versions.map((v, i) => {
+            const parts = [`  Versjon ${i + 1}: meaning="${v.meaning}"`];
+            if (v.description) parts.push(`  description="${v.description.substring(0, 150)}..."`);
+            if (v.reason) parts.push(`  Grunn til endring: ${v.reason}`);
+            return parts.join('\n');
+        }).join('\n\n');
+
+        if (langCode === 'nb') {
+            versionContext = `\n\nTIDLIGERE VERSJONER (ikke foreslå tekst som ligner på disse):
+${historyEntries}
+`;
+        } else {
+            versionContext = `\n\nPREVIOUS VERSIONS (do not suggest text similar to these):
+${historyEntries}
+`;
+        }
+    }
+
     if (noRefs) {
         const proofreadData = {
             number: currentData.number,
             meaning: currentData.meaning,
-            description: currentData.description
+            description: currentData.description,
+            footnotes: currentData.footnotes || []
         };
         const dataJson = JSON.stringify(proofreadData, null, 2);
 
         if (langCode === 'nb') {
-            return `Du er en korrekturleser for bibelsk tallsymbolikk. Gå gjennom meaning og description for tallet ${number}.
+            return `Du er en korrekturleser for bibelsk tallsymbolikk. Gå gjennom meaning, description og footnotes for tallet ${number}.
 
 Din oppgave er å verifisere:
 - At meaning-feltet er presist og dekkende for tallets symbolske betydning
 - At description-feltet er teologisk korrekt, godt formulert og informativt
+- At description flyter godt som sammenhengende tekst
 - At det ikke er faktafeil eller misvisende påstander
+- At fotnoter (footnotes) brukes for interessante fakta som ikke passer i hovedteksten: rabbinske tradisjoner, kabbalistiske tolkninger, historiske kontekster, lingvistiske detaljer osv.
+- At informasjon som bryter flyten i description heller flyttes til fotnoter
+- At hver fotnote har riktig source-kategori (rabbinsk, kabbalistisk, historisk, arkeologisk, lingvistisk, liturgisk, teologisk, annet)
 
 VIKTIG:
-- Hvis meaning og description er gode, returner tomt issues-array og uendret revised
-- revised skal inneholde number, meaning og description (ikke references)
+- Hvis alt er bra, returner tomt issues-array og uendret revised
+- revised skal inneholde number, meaning, description og footnotes (ikke references)
 - score skal være et heltall fra 0 til 10 (0 = helt feil, 10 = perfekt)
+- Hvis det er ${currentData.versions?.length || 0} tidligere versjoner, vær strengere: kun foreslå endringer ved reelle feil${versionContext}
 
 Nåværende data:
 ${dataJson}`;
         } else {
-            return `You are a proofreader for biblical number symbolism. Review the meaning and description for the number ${number}.
+            return `You are a proofreader for biblical number symbolism. Review the meaning, description and footnotes for the number ${number}.
 
 Your task is to verify:
 - That the meaning field is precise and covers the number's symbolic significance
 - That the description is theologically correct, well-written and informative
+- That the description flows well as coherent text
 - That there are no factual errors or misleading claims
+- That footnotes are used for interesting facts that don't fit in the main text: rabbinic traditions, kabbalistic interpretations, historical contexts, linguistic details, etc.
+- That information breaking the flow of description is moved to footnotes instead
+- That each footnote has the correct source category (rabbinsk, kabbalistisk, historisk, arkeologisk, lingvistisk, liturgisk, teologisk, annet)
 
 IMPORTANT:
-- If meaning and description are good, return empty issues array and unchanged revised
-- revised should contain number, meaning and description (not references)
+- If everything is good, return empty issues array and unchanged revised
+- revised should contain number, meaning, description and footnotes (not references)
 - score must be an integer from 0 to 10 (0 = completely wrong, 10 = perfect)
+- If there are ${currentData.versions?.length || 0} previous versions, be stricter: only suggest changes for real errors${versionContext}
 
 Current data:
 ${dataJson}`;
@@ -305,6 +361,9 @@ ${dataJson}`;
 Din oppgave er å verifisere:
 - At meaning-feltet er presist og dekkende
 - At description-feltet er teologisk korrekt og godt formulert
+- At description flyter godt som sammenhengende tekst
+- At fotnoter (footnotes) brukes for interessante fakta som ikke passer i hovedteksten
+- At informasjon som bryter flyten i description heller flyttes til fotnoter
 - At referansene er relevante (viser symbolsk bruk, ikke tilfeldig forekomst)
 - At bookId, chapterId, fromVerseId og toVerseId er korrekte
 - Om det mangler viktige referanser som burde være med
@@ -315,6 +374,7 @@ VIKTIG:
 - bookId-verdier: GT-bøker 1-39, NT-bøker 40-66
 - Fokuser på at referansene viser SYMBOLSK bruk av tallet, ikke bare tilfeldige forekomster
 - score skal være et heltall fra 0 til 10 (0 = helt feil, 10 = perfekt)
+- Hvis det er ${currentData.versions?.length || 0} tidligere versjoner, vær strengere: kun foreslå endringer ved reelle feil${versionContext}
 
 Nåværende data:
 ${dataJson}`;
@@ -324,6 +384,9 @@ ${dataJson}`;
 Your task is to verify:
 - That the meaning field is precise and accurate
 - That the description is theologically correct and well-written
+- That the description flows well as coherent text
+- That footnotes are used for interesting facts that don't fit in the main text
+- That information breaking the flow of description is moved to footnotes instead
 - That the references are relevant (showing symbolic use, not random occurrences)
 - That bookId, chapterId, fromVerseId and toVerseId are correct
 - Whether important references are missing
@@ -334,6 +397,7 @@ IMPORTANT:
 - bookId values: OT books 1-39, NT books 40-66
 - Focus on references showing SYMBOLIC use of the number
 - score must be an integer from 0 to 10 (0 = completely wrong, 10 = perfect)
+- If there are ${currentData.versions?.length || 0} previous versions, be stricter: only suggest changes for real errors${versionContext}
 
 Current data:
 ${dataJson}`;
@@ -382,7 +446,27 @@ async function generateSymbolism(language, number, filename, bible) {
     console.log(`  Saved: ${filename} (${result.references.length} references)`);
 }
 
-async function proofreadSymbolism(language, number, filename, noRefs = false, saveToFile = true) {
+// Look up verse texts for references from a bible translation
+function getVerseTexts(bible, references) {
+    if (!bible || !references || references.length === 0) return null;
+    const bibleDir = path.join(__dirname, 'bibles_raw', bible);
+    if (!fs.existsSync(bibleDir)) return null;
+
+    const texts = [];
+    for (const ref of references) {
+        const chapterFile = path.join(bibleDir, String(ref.bookId), `${ref.chapterId}.json`);
+        if (!fs.existsSync(chapterFile)) continue;
+        const verses = JSON.parse(fs.readFileSync(chapterFile, 'utf-8'));
+        const matched = verses.filter(v => v.verseId >= ref.fromVerseId && v.verseId <= ref.toVerseId);
+        const bookName = getBookName(ref.bookId, 'Norwegian bokmål');
+        for (const v of matched) {
+            texts.push(`  ${bookName} ${ref.chapterId}:${v.verseId}: ${v.text}`);
+        }
+    }
+    return texts.length > 0 ? texts : null;
+}
+
+async function proofreadSymbolism(language, number, filename, noRefs = false, saveToFile = true, bible = null) {
     if (!fileExists(filename)) {
         console.log(`No symbolism file found for number ${number}`);
         return null;
@@ -390,9 +474,18 @@ async function proofreadSymbolism(language, number, filename, noRefs = false, sa
 
     const currentData = JSON.parse(fs.readFileSync(filename, 'utf-8'));
 
+    // If refs are included and there are ≤5, look up the actual verse texts
+    let verseContext = '';
+    if (!noRefs && bible && currentData.references && currentData.references.length <= 5) {
+        const verseTexts = getVerseTexts(bible, currentData.references);
+        if (verseTexts) {
+            verseContext = `\n\nVersene fra referansene:\n${verseTexts.join('\n')}`;
+        }
+    }
+
     console.log(`Proofreading symbolism for number ${number}${noRefs ? ' (text only)' : ''}...`);
 
-    const prompt = getProofreadPrompt(language, number, currentData, noRefs);
+    const prompt = getProofreadPrompt(language, number, currentData, noRefs) + verseContext;
     const result = await callWithRetry(prompt, {schema: PROOFREAD_SCHEMA, local: useLocal, context: `proofread number ${number}`});
 
     if (saveToFile) {
@@ -436,8 +529,40 @@ function applyProofreadChanges(language, number, filename, proofreadResult = nul
     }
 
     const currentData = JSON.parse(fs.readFileSync(filename, 'utf-8'));
+
+    // Check if anything actually changed
+    const meaningChanged = currentData.meaning !== proofreadResult.revised.meaning;
+    const descChanged = currentData.description !== proofreadResult.revised.description;
+    const footnotesChanged = JSON.stringify(currentData.footnotes || []) !== JSON.stringify(proofreadResult.revised.footnotes || []);
+
+    if (meaningChanged || descChanged || footnotesChanged) {
+        // Save current version to history before overwriting
+        if (!currentData.versions) {
+            currentData.versions = [];
+        }
+        const version = {
+            meaning: currentData.meaning,
+            description: currentData.description,
+        };
+        if (currentData.footnotes && currentData.footnotes.length > 0) {
+            version.footnotes = currentData.footnotes;
+        }
+        // Summarize why it changed from the proofread issues
+        if (proofreadResult.issues && proofreadResult.issues.length > 0) {
+            version.reason = proofreadResult.issues.map(i => `[${i.severity}] ${i.explanation}`).join('; ');
+        }
+        version.score = proofreadResult.score;
+        version.date = new Date().toISOString().split('T')[0];
+        currentData.versions.push(version);
+    }
+
     currentData.meaning = proofreadResult.revised.meaning;
     currentData.description = proofreadResult.revised.description;
+
+    // Update footnotes
+    if (proofreadResult.revised.footnotes) {
+        currentData.footnotes = proofreadResult.revised.footnotes;
+    }
 
     // If revised includes references, update those too
     if (proofreadResult.revised.references) {
@@ -445,7 +570,7 @@ function applyProofreadChanges(language, number, filename, proofreadResult = nul
     }
 
     fs.writeFileSync(filename, JSON.stringify(currentData, null, 2));
-    console.log(`  Applied revisions to number ${number}`);
+    console.log(`  Applied revisions to number ${number} (version ${currentData.versions?.length || 0})`);
 }
 
 // Ask Ollama to extract symbolic numbers from a verse
@@ -678,7 +803,9 @@ Options:
   --index            Index entire bible with Ollama: extract numbers from every verse
                      and update/create JSON files. Requires --bible.
   --proofread        Run proofreading after generation
-  --apply            Apply proofread suggestions
+  --apply            Apply proofread suggestions (enables feedback loop)
+  --min-score <n>    Minimum acceptable score (default: 8, range 0-10)
+  --max-iter <n>     Max proofread iterations per number (default: 3)
   --force            Force re-generation even if file exists
   --help             Show this help message
 
@@ -693,7 +820,8 @@ Examples:
   node number_symbolism.mjs --number 7 --bible osnb2              # Generate with bible scan
   node number_symbolism.mjs --number 7 --bible osnb2 --scan       # Only scan, no AI
   node number_symbolism.mjs --all --bible osnb2                   # Generate all with scan
-  node number_symbolism.mjs --all --proofread --apply             # Generate → proofread → apply
+  node number_symbolism.mjs --all --proofread --apply             # Generate → proofread loop → apply
+  node number_symbolism.mjs --number 7 --proofread --apply --min-score 9  # Higher quality bar
   node number_symbolism.mjs --number 3 --force                    # Re-generate number 3
   node number_symbolism.mjs --bible osnb2 --index                 # Index entire bible with Ollama
 `);
@@ -765,6 +893,10 @@ function parseArgs(args) {
             options.apply = true;
         } else if (arg === '--no-refs') {
             options.noRefs = true;
+        } else if (arg === '--min-score' && i + 1 < args.length) {
+            options.minScore = parseInt(args[++i], 10);
+        } else if (arg === '--max-iter' && i + 1 < args.length) {
+            options.maxIterations = parseInt(args[++i], 10);
         } else if (arg === '--local') {
             options.local = true;
         } else if (arg === '--force') {
@@ -842,9 +974,15 @@ async function main() {
 
     console.log(`Language: ${options.language}`);
     console.log(`Mode: ${modes.join(' → ')}`);
+    if (options.proofread && options.apply) {
+        console.log(`Feedback loop: min score ${options.minScore || 8}/10, max ${options.maxIterations || 3} iterations`);
+    }
     console.log(`Numbers: ${numbers.join(', ')}`);
     if (options.bible) console.log(`Bible scan: ${options.bible}`);
     console.log('---');
+
+    const minScore = options.minScore || 8;
+    const maxIterations = options.maxIterations || 3;
 
     for (const number of numbers) {
         const filename = getOutputPath(options.language, number);
@@ -856,16 +994,33 @@ async function main() {
             console.log(`Skipping number ${number} (already exists)`);
         }
 
-        // Step 2: Proofread
-        let proofreadResult = null;
+        // Step 2: Proofread (with feedback loop if --apply)
         if (options.proofread && fileExists(filename)) {
-            const saveToFile = !options.apply;
-            proofreadResult = await proofreadSymbolism(options.language, number, filename, options.noRefs || false, saveToFile);
-        }
+            let iteration = 0;
+            let lastScore = 0;
 
-        // Step 3: Apply
-        if (options.apply) {
-            applyProofreadChanges(options.language, number, filename, proofreadResult);
+            while (iteration < maxIterations) {
+                iteration++;
+                const saveToFile = !options.apply;
+                const proofreadResult = await proofreadSymbolism(options.language, number, filename, options.noRefs || false, saveToFile);
+
+                lastScore = proofreadResult?.score ?? 10;
+
+                if (options.apply && proofreadResult) {
+                    applyProofreadChanges(options.language, number, filename, proofreadResult);
+                }
+
+                // Stop if score is good enough or no more iterations
+                if (lastScore >= minScore) {
+                    break;
+                }
+
+                if (iteration < maxIterations) {
+                    console.log(`  Score ${lastScore}/10 < ${minScore} — re-proofreading (iteration ${iteration + 1}/${maxIterations})...`);
+                } else {
+                    console.log(`  Score ${lastScore}/10 — max iterations (${maxIterations}) reached`);
+                }
+            }
         }
     }
 
