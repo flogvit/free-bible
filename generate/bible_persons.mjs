@@ -7,12 +7,10 @@ const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 dotenv.config()
 
-import Anthropic from '@anthropic-ai/sdk';
-import {anthropicModel, maxTokens} from "./constants.js";
+import {books, normalizeLanguage, getLanguageCode, getBookName} from "./constants.js";
+import {callWithRetry, callOllamaRaw} from "./llm.js";
 
-const anthropic = new Anthropic({
-    apiKey: process.env.ANTHROPIC_API_KEY
-});
+let useLocal = false;
 
 // Persons to generate - Tier 1 (main characters)
 const personsList = [
@@ -138,20 +136,8 @@ const PERSON_SCHEMA = {
     additionalProperties: false
 };
 
-async function doAnthropicCall(content, schema) {
-    const options = {
-        model: anthropicModel,
-        max_tokens: maxTokens,
-        messages: [{ role: "user", content }]
-    };
-    if (schema) {
-        options.output_config = { format: { type: "json_schema", schema } };
-    }
-    return anthropic.messages.create(options);
-}
-
 async function generatePerson(personConfig) {
-    const { id, name, searchTerms } = personConfig;
+    const { id, name } = personConfig;
     const outputPath = path.join(__dirname, "persons", "nb", `${id}.json`);
 
     // Skip if already exists
@@ -197,20 +183,348 @@ Important guidelines:
 4. All descriptions and text should be in Norwegian bokmål
 5. Be historically and biblically accurate
 6. Include both OT and NT references where relevant (e.g., for Abraham include Hebrews references)
-
 `;
 
     try {
-        const completion = await doAnthropicCall(prompt, PERSON_SCHEMA);
-        const personData = JSON.parse(completion.content[0].text);
-
-        // Write to file
+        const personData = await callWithRetry(prompt, {schema: PERSON_SCHEMA, local: useLocal, context: `person ${id}`});
         fs.writeFileSync(outputPath, JSON.stringify(personData, null, 2));
         console.log(`  Written: ${outputPath}`);
-
     } catch (error) {
         console.error(`Error generating ${name}:`, error.message);
     }
+}
+
+// --- Index mode: scan bible for person names ---
+
+const VALIDATE_NAME_SCHEMA = {
+    type: "object",
+    properties: {
+        isPerson: {type: "boolean"},
+        canonicalName: {type: "string"},
+        aliases: {type: "array", items: {type: "string"}},
+        aliasFor: {type: ["string", "null"]},
+        explanation: {type: "string"}
+    },
+    required: ["isPerson", "canonicalName"],
+    additionalProperties: false
+};
+
+const DISAMBIGUATE_SCHEMA = {
+    type: "object",
+    properties: {
+        existingId: {type: ["string", "null"]},
+        isNew: {type: "boolean"},
+        disambiguation: {type: "string"}
+    },
+    required: ["existingId", "isNew"],
+    additionalProperties: false
+};
+
+async function ollamaExtractPersons(verse) {
+    const prompt = `List opp alle personnavn i dette bibelverset.
+
+INKLUDER: Navn på mennesker, engler og guddommelige personer (f.eks. "Abram", "Sarai", "Gabriel", "Jesus").
+IKKE INKLUDER: Stedsnavn (Egypt, Salem, Jordan), folkeslag (egyptere, kanaaneere), nasjonaliteter, titler brukt alene (Herren, Gud, kongen, farao).
+
+Bruk grunnformen av navnet (f.eks. "Abram" ikke "Abrams", "Sara" ikke "Saras").
+
+"${verse}"
+
+Svar BARE med en kommaseparert liste av personnavn i grunnform, eller "ingen".`;
+
+    try {
+        const answer = await callOllamaRaw(prompt, {numPredict: 200});
+        if (!answer || answer.toLowerCase() === 'ingen' || answer.toLowerCase() === 'none') return [];
+        return answer.split(',').map(n => n.trim()).filter(n => n.length > 0 && !n.match(/^\d+$/));
+    } catch (error) {
+        console.warn(`\n  Ollama error: ${error.message}`);
+        return [];
+    }
+}
+
+// Ask Claude to validate if a name is actually a person
+async function claudeValidateName(name, verse) {
+    const prompt = `I dette bibelverset forekommer "${name}":
+"${verse}"
+
+Er "${name}" et personnavn (menneske, engel, guddommelig person)?
+Ikke godkjenn stedsnavn, folkeslag, nasjonaliteter eller titler.
+Hvis det er et personnavn:
+- canonicalName: den mest kjente formen av navnet (f.eks. "Abrams" → "Abraham", "Sarai" → "Sara")
+- aliases: alle andre kjente former av navnet (f.eks. Abraham → ["Abram"], Sara → ["Sarai"], Peter → ["Simon", "Kefas"])
+- aliasFor: hvis navnet er et alias/eldre form, sett dette til det kanoniske navnet (f.eks. for "Sarai" → aliasFor: "Sara", for "Abram" → aliasFor: "Abraham"). Null hvis dette allerede er det kanoniske navnet.`;
+
+    try {
+        return await callWithRetry(prompt, {schema: VALIDATE_NAME_SCHEMA, local: useLocal, context: `validate ${name}`});
+    } catch {
+        return {isPerson: false, canonicalName: name};
+    }
+}
+
+// Ask Claude to disambiguate a name against existing persons
+async function claudeDisambiguate(name, verse, existingPersons) {
+    const personSummaries = existingPersons.map(p =>
+        `- id="${p.id}": ${p.name} — ${p.title || ''} (${p.era || ''})`
+    ).join('\n');
+
+    const prompt = `I dette bibelverset nevnes "${name}":
+"${verse}"
+
+Vi har allerede disse personene med lignende navn:
+${personSummaries}
+
+Er personen i verset en av de ovennevnte, eller en ny/annen person?
+Hvis kjent, sett existingId til personens id. Hvis ny, sett isNew=true og gi en kort disambiguation (f.eks. "Kleopas' hustru").`;
+
+    try {
+        return await callWithRetry(prompt, {schema: DISAMBIGUATE_SCHEMA, local: useLocal, context: `disambiguate ${name}`});
+    } catch {
+        return {existingId: null, isNew: false};
+    }
+}
+
+function findExistingPersonFiles(name, personsDir) {
+    const slug = nameToId(name);
+    const files = fs.readdirSync(personsDir).filter(f => f.endsWith('.json'));
+    return files.filter(f => f === `${slug}.json` || f.startsWith(`${slug}-`));
+}
+
+function addReference(personFile, bookId, chapterId, verseId) {
+    const data = JSON.parse(fs.readFileSync(personFile, 'utf-8'));
+    if (!data.references) data.references = [];
+
+    const refKey = `${bookId}:${chapterId}:${verseId}`;
+    const exists = data.references.some(r =>
+        `${r.bookId}:${r.chapterId}:${r.verseId}` === refKey
+    );
+    if (exists) return false;
+
+    data.references.push({bookId, chapterId, verseId});
+    fs.writeFileSync(personFile, JSON.stringify(data, null, 2));
+    return true;
+}
+
+function countBibleVerses(bible, bookStart, bookEnd, chapterStart, chapterEnd) {
+    const bibleDir = path.join(__dirname, 'bibles_raw', bible);
+    let total = 0;
+    for (const book of books) {
+        if (book.id < bookStart || book.id > bookEnd) continue;
+        const bookDir = path.join(bibleDir, String(book.id));
+        if (!fs.existsSync(bookDir)) continue;
+        const startCh = (book.id === bookStart && chapterStart) ? chapterStart : 1;
+        const endCh = (book.id === bookEnd && chapterEnd) ? Math.min(chapterEnd, book.chapters) : book.chapters;
+        for (let chapterId = startCh; chapterId <= endCh; chapterId++) {
+            const chapterFile = path.join(bookDir, `${chapterId}.json`);
+            if (!fs.existsSync(chapterFile)) continue;
+            const verses = JSON.parse(fs.readFileSync(chapterFile, 'utf-8'));
+            total += verses.length;
+        }
+    }
+    return total;
+}
+
+async function indexBible(bible, options = {}) {
+    const bibleDir = path.join(__dirname, 'bibles_raw', bible);
+    if (!fs.existsSync(bibleDir)) {
+        console.error(`Bible translation not found: ${bibleDir}`);
+        return;
+    }
+
+    const personsDir = path.join(__dirname, 'persons', 'nb');
+    if (!fs.existsSync(personsDir)) {
+        fs.mkdirSync(personsDir, {recursive: true});
+    }
+
+    const bookStart = options.bookStart || 1;
+    const bookEnd = options.bookEnd || 66;
+    const chapterStart = options.chapterStart || null;
+    const chapterEnd = options.chapterEnd || null;
+
+    const totalVerses = countBibleVerses(bible, bookStart, bookEnd, chapterStart, chapterEnd);
+    console.log(`\nIndexing persons in ${bible} (${totalVerses} verses)...`);
+    if (bookStart !== 1 || bookEnd !== 66) console.log(`  Books: ${bookStart}-${bookEnd}`);
+    if (chapterStart) console.log(`  Chapters: ${chapterStart}-${chapterEnd}`);
+    console.log('');
+
+    // Map: lowercase name/alias → person file path (for quick lookup)
+    const nameToFile = {};
+    // Set of names we've validated as NOT persons (skip in future)
+    const notPersons = new Set();
+
+    const existingFiles = fs.readdirSync(personsDir).filter(f => f.endsWith('.json'));
+    for (const f of existingFiles) {
+        const filePath = path.join(personsDir, f);
+        const data = JSON.parse(fs.readFileSync(filePath, 'utf-8'));
+        nameToFile[data.name.toLowerCase()] = filePath;
+        // Register aliases too
+        if (data.aliases) {
+            for (const alias of data.aliases) {
+                nameToFile[alias.toLowerCase()] = filePath;
+            }
+        }
+    }
+    console.log(`  ${existingFiles.length} existing persons loaded (${Object.keys(nameToFile).length} names/aliases)\n`);
+
+    let processed = 0;
+    let newPersons = 0;
+    let refsAdded = 0;
+    const startTime = Date.now();
+
+    for (const book of books) {
+        if (book.id < bookStart || book.id > bookEnd) continue;
+        const bookDir = path.join(bibleDir, String(book.id));
+        if (!fs.existsSync(bookDir)) continue;
+
+        const bookName = getBookName(book.id, 'Norwegian bokmål');
+        const startCh = (book.id === bookStart && chapterStart) ? chapterStart : 1;
+        const endCh = (book.id === bookEnd && chapterEnd) ? Math.min(chapterEnd, book.chapters) : book.chapters;
+
+        for (let chapterId = startCh; chapterId <= endCh; chapterId++) {
+            const chapterFile = path.join(bookDir, `${chapterId}.json`);
+            if (!fs.existsSync(chapterFile)) continue;
+
+            const verses = JSON.parse(fs.readFileSync(chapterFile, 'utf-8'));
+            for (const verse of verses) {
+                processed++;
+                const pct = Math.round((processed / totalVerses) * 100);
+                const elapsed = (Date.now() - startTime) / 1000;
+                const rate = processed / elapsed;
+                const remaining = Math.round((totalVerses - processed) / rate);
+                const mins = Math.floor(remaining / 60);
+                const secs = remaining % 60;
+                process.stdout.write(`\r  [${pct}%] ${processed}/${totalVerses} — ${bookName} ${chapterId}:${verse.verseId} — ${refsAdded} refs, ${newPersons} new — ~${mins}m${secs}s left${''.padEnd(10)}`);
+
+                const names = await ollamaExtractPersons(verse.text);
+
+                for (const rawName of names) {
+                    const nameLower = rawName.toLowerCase();
+
+                    // Skip names we've already rejected
+                    if (notPersons.has(nameLower)) continue;
+
+                    // Known person — just add reference
+                    if (nameToFile[nameLower]) {
+                        const added = addReference(nameToFile[nameLower], verse.bookId, verse.chapterId, verse.verseId);
+                        if (added) refsAdded++;
+                        continue;
+                    }
+
+                    // Unknown name — check existing files by slug
+                    const matchingFiles = findExistingPersonFiles(rawName, personsDir);
+
+                    if (matchingFiles.length >= 1) {
+                        // Slug matches but name differs — disambiguate with Claude
+                        const existingPersons = matchingFiles.map(f =>
+                            JSON.parse(fs.readFileSync(path.join(personsDir, f), 'utf-8'))
+                        );
+                        process.stdout.write(`\n  Disambiguating "${rawName}" — asking Claude...`);
+                        const result = await claudeDisambiguate(rawName, verse.text, existingPersons);
+
+                        if (result.existingId) {
+                            // Known person — map name and add reference
+                            const file = path.join(personsDir, `${result.existingId}.json`);
+                            if (fs.existsSync(file)) {
+                                nameToFile[nameLower] = file;
+                                addReference(file, verse.bookId, verse.chapterId, verse.verseId);
+                                refsAdded++;
+                            }
+                            process.stdout.write(` → ${result.existingId}\n`);
+                        } else if (result.isNew && result.disambiguation) {
+                            const newId = nameToId(rawName) + '-' + nameToId(result.disambiguation);
+                            process.stdout.write(` → new: ${newId}\n`);
+                            await generatePerson({id: newId, name: `${rawName} (${result.disambiguation})`});
+                            const file = path.join(personsDir, `${newId}.json`);
+                            if (fs.existsSync(file)) {
+                                nameToFile[nameLower] = file;
+                                addReference(file, verse.bookId, verse.chapterId, verse.verseId);
+                                refsAdded++;
+                            }
+                            newPersons++;
+                        } else {
+                            nameToFile[nameLower] = path.join(personsDir, matchingFiles[0]);
+                            addReference(nameToFile[nameLower], verse.bookId, verse.chapterId, verse.verseId);
+                            refsAdded++;
+                        }
+                        continue;
+                    }
+
+                    // Completely new name — validate with Claude first
+                    process.stdout.write(`\n  New name "${rawName}" — validating with Claude...`);
+                    const validation = await claudeValidateName(rawName, verse.text);
+
+                    if (!validation.isPerson) {
+                        notPersons.add(nameLower);
+                        process.stdout.write(` → not a person\n`);
+                        continue;
+                    }
+
+                    // Claude confirmed it's a person
+                    const canonicalName = validation.canonicalName || rawName;
+                    const aliases = validation.aliases || [];
+                    const aliasFor = validation.aliasFor || null;
+                    const id = nameToId(canonicalName);
+                    const file = path.join(personsDir, `${id}.json`);
+
+                    // Check if canonical name, aliasFor, or any alias already exists
+                    const allNames = [canonicalName, ...aliases];
+                    if (aliasFor) allNames.push(aliasFor);
+                    let existingFile = null;
+                    for (const n of allNames) {
+                        if (nameToFile[n.toLowerCase()]) {
+                            existingFile = nameToFile[n.toLowerCase()];
+                            break;
+                        }
+                    }
+
+                    if (existingFile) {
+                        // Map all names/aliases to this file
+                        nameToFile[nameLower] = existingFile;
+                        for (const a of aliases) nameToFile[a.toLowerCase()] = existingFile;
+                        addReference(existingFile, verse.bookId, verse.chapterId, verse.verseId);
+                        refsAdded++;
+                        // Add aliases to the existing file if not already there
+                        const existingData = JSON.parse(fs.readFileSync(existingFile, 'utf-8'));
+                        const existingAliases = existingData.aliases || [];
+                        let aliasesChanged = false;
+                        for (const a of aliases) {
+                            if (!existingAliases.includes(a) && a.toLowerCase() !== existingData.name.toLowerCase()) {
+                                existingAliases.push(a);
+                                aliasesChanged = true;
+                            }
+                        }
+                        if (aliasesChanged) {
+                            existingData.aliases = existingAliases;
+                            fs.writeFileSync(existingFile, JSON.stringify(existingData, null, 2));
+                        }
+                        process.stdout.write(` → exists as ${path.basename(existingFile, '.json')}\n`);
+                        continue;
+                    }
+
+                    process.stdout.write(` → generating ${id}...`);
+                    await generatePerson({id, name: canonicalName});
+                    if (fs.existsSync(file)) {
+                        // Add aliases to the new file
+                        if (aliases.length > 0) {
+                            const data = JSON.parse(fs.readFileSync(file, 'utf-8'));
+                            data.aliases = aliases;
+                            fs.writeFileSync(file, JSON.stringify(data, null, 2));
+                        }
+                        nameToFile[nameLower] = file;
+                        nameToFile[canonicalName.toLowerCase()] = file;
+                        for (const a of aliases) nameToFile[a.toLowerCase()] = file;
+                        addReference(file, verse.bookId, verse.chapterId, verse.verseId);
+                        refsAdded++;
+                    }
+                    newPersons++;
+                    process.stdout.write(` done\n`);
+                }
+            }
+        }
+    }
+
+    process.stdout.write('\r' + ''.padEnd(100) + '\r');
+    const elapsed = Math.round((Date.now() - startTime) / 1000);
+    console.log(`\nDone in ${Math.floor(elapsed / 60)}m${elapsed % 60}s — ${processed} verses, ${refsAdded} refs added, ${newPersons} new persons`);
 }
 
 function nameToId(name) {
@@ -223,49 +537,127 @@ function nameToId(name) {
         .replace(/[^a-z0-9-]/g, "");
 }
 
+function parseRange(value) {
+    if (value.includes('-')) {
+        const [start, end] = value.split('-').map(n => parseInt(n, 10));
+        return {start, end};
+    }
+    const num = parseInt(value, 10);
+    return {start: num, end: num};
+}
+
+function printUsage() {
+    console.log(`
+Usage: node bible_persons.mjs [options] [person-id|name|all]
+
+Modes:
+  <person-id|name>     Generate a single person profile
+  all                  Generate all pre-defined persons
+  --index              Scan bible for person names with Ollama
+
+Options:
+  --bible <name>       Bible translation to scan (required for --index, e.g., osnb2)
+  --book <range>       Process book(s): single (43) or range (1-20)
+  --chapter <range>    Process chapter(s): single (1) or range (1-10)
+  --ot                 Process only Old Testament (books 1-39)
+  --nt                 Process only New Testament (books 40-66)
+  --local              Use Ollama instead of Claude for generation
+  --help               Show this help message
+
+Examples:
+  node bible_persons.mjs abraham                            # Generate Abraham
+  node bible_persons.mjs "Set (Adams sønn)"                 # Generate new person
+  node bible_persons.mjs all                                # Generate all pre-defined
+  node bible_persons.mjs --bible osnb2 --index              # Index entire bible
+  node bible_persons.mjs --bible osnb2 --index --book 1     # Index Genesis only
+  node bible_persons.mjs --bible osnb2 --index --nt         # Index NT only
+`);
+}
+
 async function main() {
     const args = process.argv.slice(2);
 
-    if (args.length === 0) {
-        console.log("Usage: node bible_persons.mjs <person-id|name|all>");
-        console.log("\nExamples:");
-        console.log('  node bible_persons.mjs "Set (Adams sønn)"');
-        console.log('  node bible_persons.mjs abraham');
-        console.log('  node bible_persons.mjs all');
-        console.log("\nPre-defined persons:");
-        personsList.forEach(p => console.log(`  ${p.id} - ${p.name}`));
+    const options = {
+        index: false,
+        bible: null,
+        bookStart: null,
+        bookEnd: null,
+        chapterStart: null,
+        chapterEnd: null,
+        local: false,
+        help: false,
+    };
+    const positional = [];
+
+    let i = 0;
+    while (i < args.length) {
+        const arg = args[i];
+        if (arg === '--index') {
+            options.index = true;
+        } else if (arg === '--bible' && i + 1 < args.length) {
+            options.bible = args[++i];
+        } else if (arg === '--book' && i + 1 < args.length) {
+            const range = parseRange(args[++i]);
+            options.bookStart = range.start;
+            options.bookEnd = range.end;
+        } else if (arg === '--chapter' && i + 1 < args.length) {
+            const range = parseRange(args[++i]);
+            options.chapterStart = range.start;
+            options.chapterEnd = range.end;
+        } else if (arg === '--ot') {
+            options.bookStart = 1;
+            options.bookEnd = 39;
+        } else if (arg === '--nt') {
+            options.bookStart = 40;
+            options.bookEnd = 66;
+        } else if (arg === '--local') {
+            options.local = true;
+        } else if (arg === '--help') {
+            options.help = true;
+        } else {
+            positional.push(arg);
+        }
+        i++;
+    }
+
+    useLocal = options.local;
+
+    if (options.help) {
+        printUsage();
         return;
     }
 
-    const input = args.join(" "); // Support names with spaces
+    if (options.index) {
+        if (!options.bible) {
+            console.error('--index requires --bible <name>');
+            return;
+        }
+        await indexBible(options.bible, options);
+        return;
+    }
+
+    const input = positional.join(" ");
+
+    if (!input) {
+        printUsage();
+        return;
+    }
 
     if (input === "all") {
-        // Generate all persons
         for (const person of personsList) {
             await generatePerson(person);
-            // Small delay to avoid rate limiting
             await new Promise(resolve => setTimeout(resolve, 1000));
         }
     } else {
-        // Check if it's a predefined person by id
         let person = personsList.find(p => p.id === input);
-
         if (!person) {
-            // Check if name matches a predefined person
             person = personsList.find(p => p.name.toLowerCase() === input.toLowerCase());
         }
-
         if (!person) {
-            // Create a new person config from the provided name
             const id = nameToId(input);
-            person = {
-                id: id,
-                name: input,
-                searchTerms: [input]
-            };
+            person = {id, name: input, searchTerms: [input]};
             console.log(`Creating new person: ${input} (id: ${id})`);
         }
-
         await generatePerson(person);
     }
 }
