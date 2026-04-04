@@ -7,7 +7,7 @@ const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 dotenv.config()
 
-import {books, normalizeLanguage, getLanguageCode, getBookName} from "./constants.js";
+import {books, normalizeLanguage, getLanguageCode, getBookName, anthropicModel, ollamaModel} from "./constants.js";
 import {callWithRetry, callOllamaRaw} from "./llm.js";
 
 let useLocal = false;
@@ -135,6 +135,212 @@ const PERSON_SCHEMA = {
     required: ["id", "name", "title", "era", "summary", "roles", "family", "relatedPersons", "keyEvents"],
     additionalProperties: false
 };
+
+const PERSON_PROOFREAD_SCHEMA = {
+    type: "object",
+    properties: {
+        issues: {
+            type: "array",
+            items: {
+                type: "object",
+                properties: {
+                    field: {type: "string"},
+                    type: {type: "string", enum: ["error", "suggestion", "theological", "grammar", "missing"]},
+                    severity: {type: "string", enum: ["critical", "major", "minor"]},
+                    explanation: {type: "string"}
+                },
+                required: ["field", "type", "severity", "explanation"],
+                additionalProperties: false
+            }
+        },
+        footnotes: {
+            type: "array",
+            items: {
+                type: "object",
+                properties: {
+                    text: {type: "string"},
+                    source: {type: "string", enum: ["historisk", "arkeologisk", "lingvistisk", "teologisk", "rabbinsk", "annet"]}
+                },
+                required: ["text", "source"],
+                additionalProperties: false
+            }
+        },
+        revised: {
+            type: "object",
+            properties: {
+                title: {type: "string"},
+                era: {type: "string", enum: ["creation", "patriarchs", "exodus", "conquest", "judges", "united-kingdom", "divided-kingdom", "exile", "return", "intertestamental", "jesus", "early-church"]},
+                lifespan: {type: "string"},
+                summary: {type: "string"},
+                roles: {type: "array", items: {type: "string"}},
+                family: {
+                    type: "object",
+                    properties: {
+                        father: {type: ["string", "null"]},
+                        mother: {type: ["string", "null"]},
+                        siblings: {type: "array", items: {type: "string"}},
+                        spouse: {type: ["string", "null"]},
+                        children: {type: "array", items: {type: "string"}}
+                    },
+                    required: ["father", "mother", "siblings", "spouse", "children"],
+                    additionalProperties: false
+                },
+                keyEvents: {
+                    type: "array",
+                    items: {
+                        type: "object",
+                        properties: {
+                            title: {type: "string"},
+                            description: {type: "string"},
+                            verses: {
+                                type: "array",
+                                items: {
+                                    type: "object",
+                                    properties: {
+                                        bookId: {type: "integer"},
+                                        chapter: {type: "integer"},
+                                        verses: {type: "array", items: {type: "integer"}}
+                                    },
+                                    required: ["bookId", "chapter", "verses"],
+                                    additionalProperties: false
+                                }
+                            }
+                        },
+                        required: ["title", "description", "verses"],
+                        additionalProperties: false
+                    }
+                }
+            },
+            required: ["title", "era", "lifespan", "summary", "roles", "family", "keyEvents"],
+            additionalProperties: false
+        },
+        summary: {type: "string"},
+        score: {type: "integer"}
+    },
+    required: ["issues", "footnotes", "revised", "summary", "score"],
+    additionalProperties: false
+};
+
+function getPersonProofreadPrompt(personData) {
+    // Send only proofreadable fields, never references/aliases
+    const proofreadData = {
+        id: personData.id,
+        name: personData.name,
+        title: personData.title,
+        era: personData.era,
+        lifespan: personData.lifespan,
+        summary: personData.summary,
+        roles: personData.roles,
+        family: personData.family,
+        keyEvents: personData.keyEvents,
+        footnotes: personData.footnotes || []
+    };
+    const dataJson = JSON.stringify(proofreadData, null, 2);
+
+    let versionContext = '';
+    if (personData.versions && personData.versions.length > 0) {
+        const entries = personData.versions.map((v, i) =>
+            `  Versjon ${i + 1}: summary="${v.summary?.substring(0, 100)}..." (score: ${v.score})`
+        ).join('\n');
+        versionContext = `\n\nTIDLIGERE VERSJONER (ikke foreslå tekst som ligner på disse):\n${entries}\n`;
+    }
+
+    return `Du er en korrekturleser for bibelske personprofiler. Gå gjennom følgende data om ${personData.name}.
+
+Din oppgave er å verifisere:
+- At title er presis og beskrivende
+- At era er korrekt tidsepoke
+- At lifespan er rimelig
+- At summary er teologisk korrekt, godt formulert og informativt
+- At roles er korrekte og fullstendige
+- At family-relasjoner er korrekte (bruk lowercase id-er)
+- At keyEvents er korrekte med riktige bibelreferanser (bookId: GT 1-39, NT 40-66)
+- At fotnoter dekker interessante historiske, arkeologiske, lingvistiske eller teologiske detaljer
+
+VIKTIG:
+- Hvis alt er bra, returner tomt issues-array og uendret revised
+- revised skal inneholde: title, era, lifespan, summary, roles, family, keyEvents
+- IKKE endre id, name, references eller aliases
+- score skal være et heltall fra 0 til 10
+- Hvis det er ${personData.versions?.length || 0} tidligere versjoner, vær strengere${versionContext}
+
+Nåværende data:
+${dataJson}`;
+}
+
+async function proofreadPerson(personFile) {
+    const personData = JSON.parse(fs.readFileSync(personFile, 'utf-8'));
+    console.log(`Proofreading ${personData.name}...`);
+
+    const prompt = getPersonProofreadPrompt(personData);
+    const result = await callWithRetry(prompt, {schema: PERSON_PROOFREAD_SCHEMA, local: useLocal, context: `proofread ${personData.id}`});
+
+    if (result.score !== null && result.score !== undefined) {
+        process.stdout.write(`  Score: ${result.score}/10`);
+    }
+    if (result.issues && result.issues.length > 0) {
+        console.log(` | Issues: ${result.issues.length}`);
+        result.issues.forEach((issue, i) => {
+            console.log(`    ${i + 1}. [${issue.severity}] ${issue.field}: ${issue.explanation}`);
+        });
+    } else {
+        console.log(' | No issues');
+    }
+    if (result.footnotes && result.footnotes.length > 0) {
+        console.log(`  Footnotes: ${result.footnotes.length}`);
+    }
+
+    return result;
+}
+
+function applyPersonProofread(personFile, proofreadResult) {
+    if (!proofreadResult?.revised) return { changed: false, footnotesChanged: false };
+
+    const data = JSON.parse(fs.readFileSync(personFile, 'utf-8'));
+    const revised = proofreadResult.revised;
+
+    const summaryChanged = data.summary !== revised.summary;
+    const titleChanged = data.title !== revised.title;
+    const footnotesChanged = JSON.stringify(data.footnotes || []) !== JSON.stringify(proofreadResult.footnotes || []);
+    const changed = summaryChanged || titleChanged ||
+        data.era !== revised.era ||
+        data.lifespan !== revised.lifespan ||
+        JSON.stringify(data.roles) !== JSON.stringify(revised.roles) ||
+        JSON.stringify(data.family) !== JSON.stringify(revised.family) ||
+        JSON.stringify(data.keyEvents) !== JSON.stringify(revised.keyEvents);
+
+    if (changed || footnotesChanged) {
+        // Save version history
+        if (!data.versions) data.versions = [];
+        if (changed) {
+            data.versions.push({
+                summary: data.summary,
+                title: data.title,
+                score: proofreadResult.score,
+                reason: proofreadResult.issues?.map(i => `[${i.severity}] ${i.explanation}`).join('; ') || '',
+                date: new Date().toISOString().split('T')[0]
+            });
+        }
+
+        data.title = revised.title;
+        data.era = revised.era;
+        data.lifespan = revised.lifespan;
+        data.summary = revised.summary;
+        data.roles = revised.roles;
+        data.family = revised.family;
+        data.keyEvents = revised.keyEvents;
+
+        if (proofreadResult.footnotes && proofreadResult.footnotes.length > 0) {
+            data.footnotes = proofreadResult.footnotes;
+        }
+
+        // Never touch references or aliases
+        fs.writeFileSync(personFile, JSON.stringify(data, null, 2));
+        console.log(`  Applied revisions to ${data.name} (version ${data.versions.length})`);
+    }
+
+    return { changed, footnotesChanged };
+}
 
 async function generatePerson(personConfig) {
     const { id, name } = personConfig;
@@ -554,6 +760,8 @@ Modes:
   <person-id|name>     Generate a single person profile
   all                  Generate all pre-defined persons
   --index              Scan bible for person names with Ollama
+  --proofread          Proofread all existing person profiles
+  --apply              Apply proofread suggestions (enables feedback loop)
 
 Options:
   --bible <name>       Bible translation to scan (required for --index, e.g., osnb2)
@@ -561,6 +769,8 @@ Options:
   --chapter <range>    Process chapter(s): single (1) or range (1-10)
   --ot                 Process only Old Testament (books 1-39)
   --nt                 Process only New Testament (books 40-66)
+  --min-score <n>      Minimum acceptable score (default: 8, range 0-10)
+  --max-iter <n>       Max proofread iterations per person (default: 3)
   --local              Use Ollama instead of Claude for generation
   --help               Show this help message
 
@@ -571,6 +781,8 @@ Examples:
   node bible_persons.mjs --bible osnb2 --index              # Index entire bible
   node bible_persons.mjs --bible osnb2 --index --book 1     # Index Genesis only
   node bible_persons.mjs --bible osnb2 --index --nt         # Index NT only
+  node bible_persons.mjs --proofread --apply                # Proofread all persons
+  node bible_persons.mjs --proofread --apply --min-score 9  # Higher quality bar
 `);
 }
 
@@ -579,6 +791,10 @@ async function main() {
 
     const options = {
         index: false,
+        proofread: false,
+        apply: false,
+        minScore: null,
+        maxIterations: null,
         bible: null,
         bookStart: null,
         bookEnd: null,
@@ -610,6 +826,14 @@ async function main() {
         } else if (arg === '--nt') {
             options.bookStart = 40;
             options.bookEnd = 66;
+        } else if (arg === '--proofread') {
+            options.proofread = true;
+        } else if (arg === '--apply') {
+            options.apply = true;
+        } else if (arg === '--min-score' && i + 1 < args.length) {
+            options.minScore = parseInt(args[++i], 10);
+        } else if (arg === '--max-iter' && i + 1 < args.length) {
+            options.maxIterations = parseInt(args[++i], 10);
         } else if (arg === '--local') {
             options.local = true;
         } else if (arg === '--help') {
@@ -633,6 +857,54 @@ async function main() {
             return;
         }
         await indexBible(options.bible, options);
+        return;
+    }
+
+    if (options.proofread) {
+        const personsDir = path.join(__dirname, 'persons', 'nb');
+        const files = fs.readdirSync(personsDir).filter(f => f.endsWith('.json')).sort();
+        const minScore = options.minScore || 8;
+        const maxIterations = options.maxIterations || 3;
+
+        console.log(`Model: ${useLocal ? ollamaModel : anthropicModel}`);
+        console.log(`Proofreading ${files.length} persons`);
+        if (options.apply) {
+            console.log(`Feedback loop: min score ${minScore}/10, max ${maxIterations} iterations`);
+        }
+        console.log('---');
+
+        for (const file of files) {
+            const filePath = path.join(personsDir, file);
+            let iteration = 0;
+            let newFootnotes = false;
+
+            while (iteration < maxIterations) {
+                iteration++;
+                const result = await proofreadPerson(filePath);
+                const lastScore = result?.score ?? 10;
+
+                if (options.apply && result) {
+                    const applyResult = applyPersonProofread(filePath, result);
+                    newFootnotes = applyResult?.footnotesChanged || false;
+                }
+
+                if (lastScore >= minScore && !newFootnotes) {
+                    break;
+                }
+
+                if (newFootnotes && lastScore >= minScore) {
+                    console.log(`  New footnotes added — re-proofreading (iteration ${iteration + 1}/${maxIterations})...`);
+                } else if (iteration < maxIterations) {
+                    console.log(`  Score ${lastScore}/10 < ${minScore} — re-proofreading (iteration ${iteration + 1}/${maxIterations})...`);
+                } else {
+                    console.log(`  Score ${lastScore}/10 — max iterations (${maxIterations}) reached`);
+                }
+
+                newFootnotes = false;
+            }
+        }
+
+        console.log('Done!');
         return;
     }
 
