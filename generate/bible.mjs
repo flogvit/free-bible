@@ -76,6 +76,39 @@ const PROOFREAD_SCHEMA = {
     additionalProperties: false
 };
 
+// Per-verse proofread schema (simpler, no verseId needed)
+const VERSE_PROOFREAD_SCHEMA = {
+    type: "object",
+    properties: {
+        issue: {
+            type: ["object", "null"],
+            properties: {
+                type: {type: "string", enum: ["error", "suggestion", "theological", "grammar"]},
+                severity: {type: "string", enum: ["critical", "major", "minor"]},
+                suggested: {type: "string"},
+                explanation: {type: "string"}
+            },
+            required: ["type", "severity", "suggested", "explanation"],
+            additionalProperties: false
+        },
+        footnotes: {
+            type: "array",
+            items: {
+                type: "object",
+                properties: {
+                    text: {type: "string"},
+                    source: {type: "string", enum: ["oversettelse", "lingvistisk", "teologisk", "historisk", "tekstkritisk", "liturgisk", "annet"]}
+                },
+                required: ["text", "source"],
+                additionalProperties: false
+            }
+        },
+        score: {type: "integer"}
+    },
+    required: ["issue", "footnotes", "score"],
+    additionalProperties: false
+};
+
 // Translation style prompts
 const TRANSLATION_PROMPTS = {
     standard: (language) => `Translation must be ${language} in a modern, easy to read, language. But you should emphasize translating theologically correct.`,
@@ -396,6 +429,156 @@ function createProofreadBatches(translatedVerses, originalVerses) {
     return batches;
 }
 
+function getVerseProofreadPrompt(language, style, bookId, chapterId, verse, originalVerse, prevVerse, nextVerse, prevOriginal, nextOriginal) {
+    const styleDescription = style === 'oral'
+        ? 'optimized for oral reading with natural rhythm and flow'
+        : 'modern and easy to read while being theologically correct';
+
+    let context = '';
+    if (prevVerse && prevOriginal) {
+        context += `Previous verse (${prevVerse.verseId}):\n  Original: ${prevOriginal.text}\n  Translation: ${prevVerse.text}\n\n`;
+    }
+    context += `THIS VERSE (${verse.verseId}):\n  Original: ${originalVerse.text}\n  Translation: ${verse.text}\n`;
+    if (verse.footnotes && verse.footnotes.length > 0) {
+        context += `  EXISTING FOOTNOTES:\n`;
+        verse.footnotes.forEach(fn => { context += `    [${fn.source}] ${fn.text}\n`; });
+    }
+    if (verse.versions && verse.versions.length > 0) {
+        context += `  VERSION HISTORY (${verse.versions.length} revisions - DO NOT suggest any of these):\n`;
+        verse.versions.forEach((ver, i) => {
+            const typeInfo = ver.type ? ` [${ver.type}/${ver.severity || 'unknown'}]` : '';
+            context += `    ${i + 1}.${typeInfo} "${ver.text}"\n`;
+            if (ver.explanation) context += `      Reason: ${ver.explanation}\n`;
+        });
+    }
+    if (nextVerse && nextOriginal) {
+        context += `\nNext verse (${nextVerse.verseId}):\n  Original: ${nextOriginal.text}\n  Translation: ${nextVerse.text}\n`;
+    }
+
+    return `You are a Bible translation proofreader. Review ONE verse.
+Book ${bookId}, Chapter ${chapterId}, Verse ${verse.verseId}.
+The translation should be ${language}, ${styleDescription}.
+
+${context}
+
+Review the translation of THIS VERSE and:
+1. If there is an error, return it as "issue" with type, severity, suggested (ENTIRE corrected verse), explanation. If acceptable, set issue to null.
+2. Provide footnotes. The source categories have distinct purposes — do not overlap:
+   - oversettelse: REQUIRED — explain why the translation reads the way it does. What choices were made, what alternatives exist.
+   - lingvistisk: About the original language — etymology, wordplay, grammar, idioms.
+   - teologisk: Theological discussion — different interpretations, doctrinal weight.
+   - historisk: Historical/cultural background.
+   - tekstkritisk: Manuscript variants.
+   - liturgisk: Liturgical usage.
+   The footnote text can be multiple sentences. Always include at least one «oversettelse» footnote.
+   ${verse.footnotes?.length ? 'Existing footnotes are shown above. Replace them with improved versions if needed, or keep them as-is by returning them unchanged.' : ''}
+3. Score 0-10.
+
+${verse.versions?.length >= 3 ? 'This verse has 3+ revisions — only suggest changes for CRITICAL errors.' : ''}
+${verse.versions?.length ? 'NEVER suggest text matching any previous version.' : ''}`;
+}
+
+async function proofreadChapterPerVerse(bible, bookId, chapterId, style, filename) {
+    const language = bibles[bible];
+
+    if (!fs.existsSync(filename)) {
+        console.log(`No translation file found for ${bookId}:${chapterId}`);
+        return null;
+    }
+
+    const translatedVerses = JSON.parse(fs.readFileSync(filename, 'utf-8'));
+    const originalVerses = readOriginalText(bookId, chapterId, []);
+
+    if (originalVerses.length === 0) {
+        console.log(`No original text found for ${bookId}:${chapterId}`);
+        return null;
+    }
+
+    console.log(`Proofreading ${bookId}:${chapterId} (${translatedVerses.length} verses, per-verse mode)`);
+
+    const allIssues = [];
+    const allFootnotes = [];
+    const scores = [];
+    let appliedCount = 0;
+    let footnoteCount = 0;
+
+    for (let i = 0; i < translatedVerses.length; i++) {
+        const verse = translatedVerses[i];
+        const originalVerse = originalVerses.find(v => +v.verseId === +verse.verseId);
+        if (!originalVerse) continue;
+
+        const prevVerse = i > 0 ? translatedVerses[i - 1] : null;
+        const nextVerse = i < translatedVerses.length - 1 ? translatedVerses[i + 1] : null;
+        const prevOriginal = prevVerse ? originalVerses.find(v => +v.verseId === +prevVerse.verseId) : null;
+        const nextOriginal = nextVerse ? originalVerses.find(v => +v.verseId === +nextVerse.verseId) : null;
+
+        const prompt = getVerseProofreadPrompt(language, style, bookId, chapterId, verse, originalVerse, prevVerse, nextVerse, prevOriginal, nextOriginal);
+        const shouldValidate = !isEnglishLanguage(language);
+
+        process.stdout.write(`\r  Verse ${verse.verseId}/${translatedVerses[translatedVerses.length - 1].verseId}${''.padEnd(20)}`);
+
+        try {
+            const result = await doAnthropicCallWithRetry(prompt, VERSE_PROOFREAD_SCHEMA, `proofread ${bookId}:${chapterId}:${verse.verseId}`, shouldValidate);
+
+            if (result.score !== null && result.score !== undefined) {
+                scores.push(result.score);
+            }
+
+            // Apply issue directly
+            if (result.issue && result.issue.suggested && result.issue.suggested !== verse.text) {
+                if (!verse.versions) verse.versions = [];
+                verse.versions.push({
+                    text: verse.text,
+                    type: result.issue.type,
+                    severity: result.issue.severity,
+                    explanation: result.issue.explanation
+                });
+                verse.text = result.issue.suggested;
+                appliedCount++;
+
+                allIssues.push({
+                    verseId: verse.verseId,
+                    ...result.issue
+                });
+            }
+
+            // Apply footnotes directly (replace for this verse)
+            if (result.footnotes && result.footnotes.length > 0) {
+                const oldCount = verse.footnotes?.length || 0;
+                verse.footnotes = result.footnotes;
+                footnoteCount += result.footnotes.length;
+
+                for (const fn of result.footnotes) {
+                    allFootnotes.push({ verseId: verse.verseId, ...fn });
+                }
+            }
+        } catch (error) {
+            console.warn(`\n  Error on verse ${verse.verseId}: ${error.message}`);
+        }
+    }
+
+    // Save after all verses processed
+    fs.writeFileSync(filename, JSON.stringify(translatedVerses, null, 2));
+
+    process.stdout.write('\r' + ''.padEnd(60) + '\r');
+    const avgScore = scores.length > 0 ? Math.round(scores.reduce((a, b) => a + b, 0) / scores.length) : null;
+
+    console.log(`  Score: ${avgScore}/10 | Changes: ${appliedCount} | Footnotes: ${footnoteCount}`);
+    if (allIssues.length > 0) {
+        allIssues.forEach((issue, i) => {
+            console.log(`    ${i + 1}. [${issue.severity}] Verse ${issue.verseId}: ${issue.type} — ${issue.explanation}`);
+        });
+    }
+
+    return {
+        issues: allIssues,
+        footnotes: allFootnotes,
+        score: avgScore,
+        appliedCount,
+        footnoteCount
+    };
+}
+
 async function proofreadChapter(bible, bookId, chapterId, style, filename, saveToFile = true) {
     const language = bibles[bible];
 
@@ -570,25 +753,21 @@ function applyProofreadChanges(bible, bookId, chapterId, filename, proofreadResu
     }
 
     if (hasFootnotes) {
+        // Group new footnotes by verseId
+        const footnotesByVerse = {};
         for (const fn of proofreadResult.footnotes) {
-            const verse = verses.find(v => +v.verseId === +fn.verseId);
+            if (!footnotesByVerse[fn.verseId]) footnotesByVerse[fn.verseId] = [];
+            footnotesByVerse[fn.verseId].push({ text: fn.text, source: fn.source });
+        }
+
+        // Replace all footnotes for each verse that has new ones
+        for (const [verseId, newFootnotes] of Object.entries(footnotesByVerse)) {
+            const verse = verses.find(v => +v.verseId === +verseId);
             if (!verse) continue;
 
-            if (!verse.footnotes) {
-                verse.footnotes = [];
-            }
-
-            // Skip duplicates (same source + similar text)
-            const isDuplicate = verse.footnotes.some(existing =>
-                existing.source === fn.source && existing.text === fn.text
-            );
-            if (isDuplicate) continue;
-
-            verse.footnotes.push({
-                text: fn.text,
-                source: fn.source
-            });
-            footnoteCount++;
+            const oldCount = verse.footnotes?.length || 0;
+            verse.footnotes = newFootnotes;
+            footnoteCount += newFootnotes.length - oldCount;
         }
     }
 
@@ -769,38 +948,9 @@ async function main() {
             await translateChapter(options.bible, bookId, chapterId, options.style, existingVerses, filename);
 
             if (options.proofread) {
-                const minScore = options.minScore || 8;
-                const maxIterations = options.maxIterations || 3;
-                let iteration = 0;
-                let newFootnotes = false;
-
-                while (iteration < maxIterations) {
-                    iteration++;
-                    const saveToFile = !options.apply;
-                    const proofreadResult = await proofreadChapter(options.bible, bookId, chapterId, options.style, filename, saveToFile);
-
-                    const lastScore = proofreadResult?.score ?? 10;
-
-                    if (options.apply && proofreadResult) {
-                        const result = applyProofreadChanges(options.bible, bookId, chapterId, filename, proofreadResult);
-                        newFootnotes = result?.footnoteCount > 0;
-                    }
-
-                    // Re-proofread if score too low OR new footnotes were added (to review them)
-                    if (lastScore >= minScore && !newFootnotes) {
-                        break;
-                    }
-
-                    if (newFootnotes && lastScore >= minScore) {
-                        console.log(`  New footnotes added — re-proofreading to review them (iteration ${iteration + 1}/${maxIterations})...`);
-                    } else if (iteration < maxIterations) {
-                        console.log(`  Score ${lastScore}/10 < ${minScore} — re-proofreading (iteration ${iteration + 1}/${maxIterations})...`);
-                    } else {
-                        console.log(`  Score ${lastScore}/10 — max iterations (${maxIterations}) reached`);
-                    }
-
-                    newFootnotes = false; // Only force one extra round for footnotes
-                }
+                // Per-verse mode: proofread each verse individually with neighbor context
+                // Applies changes and footnotes directly — no separate apply step needed
+                await proofreadChapterPerVerse(options.bible, bookId, chapterId, options.style, filename);
             }
         }
     }
