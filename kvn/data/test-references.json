@@ -1,0 +1,256 @@
+{
+  "description": "Curated test cases for KVN mapping between osnb2 and dnb_2011_nb numbering systems. Coordinates are osnb2 (basis) and translation.",
+  "generated": "2026-02-11",
+  "categories": {
+    "identity": [
+      {
+        "description": "1 Mos 1:1 - First verse in the Bible",
+        "osnb2": { "book": 1, "chapter": 1, "verse": 1 },
+        "translation": { "book": 1, "chapter": 1, "verse": 1 }
+      },
+      {
+        "description": "Åp 22:21 - Last verse in the Bible",
+        "osnb2": { "book": 66, "chapter": 22, "verse": 21 },
+        "translation": { "book": 66, "chapter": 22, "verse": 21 }
+      },
+      {
+        "description": "Joh 3:16 - Well-known verse, no numbering difference",
+        "osnb2": { "book": 43, "chapter": 3, "verse": 16 },
+        "translation": { "book": 43, "chapter": 3, "verse": 16 }
+      },
+      {
+        "description": "2 Mos 7:25 - Last identity verse in ch 7 before shift",
+        "osnb2": { "book": 2, "chapter": 7, "verse": 25 },
+        "translation": { "book": 2, "chapter": 7, "verse": 25 }
+      },
+      {
+        "description": "Sal 23:1 - Psalms, identical in both systems",
+        "osnb2": { "book": 19, "chapter": 23, "verse": 1 },
+        "translation": { "book": 19, "chapter": 23, "verse": 1 }
+      },
+      {
+        "description": "1 Mos 1:31 - Last verse of Genesis 1",
+        "osnb2": { "book": 1, "chapter": 1, "verse": 31 },
+        "translation": { "book": 1, "chapter": 1, "verse": 31 }
+      },
+      {
+        "description": "Matt 1:1 - First NT verse",
+        "osnb2": { "book": 40, "chapter": 1, "verse": 1 },
+        "translation": { "book": 40, "chapter": 1, "verse": 1 }
+      }
+    ],
+    "chain_shift": [
+      {
+        "description": "1 Mos 32:2 -> 32:1 - Chain -1 after cross-chapter 32:1->31:55",
+        "osnb2": { "book": 1, "chapter": 32, "verse": 2 },
+        "translation": { "book": 1, "chapter": 32, "verse": 1 }
+      },
+      {
+        "description": "1 Mos 32:33 -> 32:32 - Last verse in 1 Mos 32 chain",
+        "osnb2": { "book": 1, "chapter": 32, "verse": 33 },
+        "translation": { "book": 1, "chapter": 32, "verse": 32 }
+      },
+      {
+        "description": "2 Mos 8:1 -> 8:5 - Chain +4 after forward shift 7:26-29->8:1-4",
+        "osnb2": { "book": 2, "chapter": 8, "verse": 1 },
+        "translation": { "book": 2, "chapter": 8, "verse": 5 }
+      },
+      {
+        "description": "2 Mos 8:28 -> 8:32 - Last verse in 2 Mos 8 chain",
+        "osnb2": { "book": 2, "chapter": 8, "verse": 28 },
+        "translation": { "book": 2, "chapter": 8, "verse": 32 }
+      },
+      {
+        "description": "2 Mos 22:1 -> 22:2 - Chain +1 after forward shift 21:37->22:1",
+        "osnb2": { "book": 2, "chapter": 22, "verse": 1 },
+        "translation": { "book": 2, "chapter": 22, "verse": 2 }
+      },
+      {
+        "description": "Neh 4:1 -> 4:7 - Chain +6 after forward block 3:33-38->4:1-6",
+        "osnb2": { "book": 16, "chapter": 4, "verse": 1 },
+        "translation": { "book": 16, "chapter": 4, "verse": 7 }
+      },
+      {
+        "description": "1 Krøn 6:1 -> 6:16 - Chain +15 after forward block 5:27-41->6:1-15",
+        "osnb2": { "book": 13, "chapter": 6, "verse": 1 },
+        "translation": { "book": 13, "chapter": 6, "verse": 16 }
+      },
+      {
+        "description": "Dan 4:1 -> 4:4 - Chain +3 after forward block 3:31-33->4:1-3",
+        "osnb2": { "book": 27, "chapter": 4, "verse": 1 },
+        "translation": { "book": 27, "chapter": 4, "verse": 4 }
+      }
+    ],
+    "cross_chapter_backward": [
+      {
+        "description": "1 Mos 32:1 -> 31:55 - First verse of ch 32 maps to end of ch 31",
+        "osnb2": { "book": 1, "chapter": 32, "verse": 1 },
+        "translation": { "book": 1, "chapter": 31, "verse": 55 }
+      },
+      {
+        "description": "1 Mos 43:1 -> 42:39 - First verse of ch 43 maps to end of ch 42",
+        "osnb2": { "book": 1, "chapter": 43, "verse": 1 },
+        "translation": { "book": 1, "chapter": 42, "verse": 39 }
+      },
+      {
+        "description": "2 Sam 19:1 -> 18:33 - First verse of ch 19 maps to end of ch 18",
+        "osnb2": { "book": 10, "chapter": 19, "verse": 1 },
+        "translation": { "book": 10, "chapter": 18, "verse": 33 }
+      },
+      {
+        "description": "Hos 2:1 -> 1:10 - First verse of ch 2 maps to end of ch 1",
+        "osnb2": { "book": 28, "chapter": 2, "verse": 1 },
+        "translation": { "book": 28, "chapter": 1, "verse": 10 }
+      },
+      {
+        "description": "1 Kong 5:1 -> 4:21 - First verse of ch 5 maps to ch 4",
+        "osnb2": { "book": 11, "chapter": 5, "verse": 1 },
+        "translation": { "book": 11, "chapter": 4, "verse": 21 }
+      },
+      {
+        "description": "Esek 21:1 -> 20:45 - First verse of ch 21 maps to end of ch 20",
+        "osnb2": { "book": 26, "chapter": 21, "verse": 1 },
+        "translation": { "book": 26, "chapter": 20, "verse": 45 }
+      },
+      {
+        "description": "Job 40:1 -> 39:34 - Job cascade: ch 40 start maps backward to ch 39",
+        "osnb2": { "book": 18, "chapter": 40, "verse": 1 },
+        "translation": { "book": 18, "chapter": 39, "verse": 34 }
+      },
+      {
+        "description": "Job 41:1 -> 40:28 - Job cascade: ch 41 start maps backward to ch 40",
+        "osnb2": { "book": 18, "chapter": 41, "verse": 1 },
+        "translation": { "book": 18, "chapter": 40, "verse": 28 }
+      }
+    ],
+    "same_chapter_backward": [
+      {
+        "description": "1 Krøn 12:5 -> 12:4 - Within-chapter -1 shift (verse split at v4)",
+        "osnb2": { "book": 13, "chapter": 12, "verse": 5 },
+        "translation": { "book": 13, "chapter": 12, "verse": 4 }
+      },
+      {
+        "description": "1 Krøn 12:41 -> 12:40 - Last verse in 1 Krøn 12 chain",
+        "osnb2": { "book": 13, "chapter": 12, "verse": 41 },
+        "translation": { "book": 13, "chapter": 12, "verse": 40 }
+      },
+      {
+        "description": "Dan 10:19 -> 10:18 - Within-chapter -1 shift (verse merge at v18)",
+        "osnb2": { "book": 27, "chapter": 10, "verse": 19 },
+        "translation": { "book": 27, "chapter": 10, "verse": 18 }
+      },
+      {
+        "description": "Dan 10:21 -> 10:20 - Last verse in Dan 10 chain",
+        "osnb2": { "book": 27, "chapter": 10, "verse": 21 },
+        "translation": { "book": 27, "chapter": 10, "verse": 20 }
+      }
+    ],
+    "overflow_chapter": [
+      {
+        "description": "2 Mos 7:26 -> 8:1 - Forward: osnb2 ch 7 extras map to start of b2011 ch 8",
+        "osnb2": { "book": 2, "chapter": 7, "verse": 26 },
+        "translation": { "book": 2, "chapter": 8, "verse": 1 }
+      },
+      {
+        "description": "5 Mos 28:69 -> 29:1 - Forward: osnb2 ch 28 extra maps to b2011 ch 29",
+        "osnb2": { "book": 5, "chapter": 28, "verse": 69 },
+        "translation": { "book": 5, "chapter": 29, "verse": 1 }
+      },
+      {
+        "description": "2 Krøn 1:18 -> 2:1 - Forward: osnb2 ch 1 extra maps to b2011 ch 2",
+        "osnb2": { "book": 14, "chapter": 1, "verse": 18 },
+        "translation": { "book": 14, "chapter": 2, "verse": 1 }
+      },
+      {
+        "description": "Dan 3:31 -> 4:1 - Forward: osnb2 ch 3 extras map to start of b2011 ch 4",
+        "osnb2": { "book": 27, "chapter": 3, "verse": 31 },
+        "translation": { "book": 27, "chapter": 4, "verse": 1 }
+      },
+      {
+        "description": "Mal 3:19 -> 4:1 - Forward: osnb2 ch 3 extras map to b2011 ch 4",
+        "osnb2": { "book": 39, "chapter": 3, "verse": 19 },
+        "translation": { "book": 39, "chapter": 4, "verse": 1 }
+      }
+    ],
+    "multi_chapter_block": [
+      {
+        "description": "Job 38:39 -> 39:1 - Job cascade: ch 38 overflow to ch 39",
+        "osnb2": { "book": 18, "chapter": 38, "verse": 39 },
+        "translation": { "book": 18, "chapter": 39, "verse": 1 }
+      },
+      {
+        "description": "Job 39:1 -> 39:4 - Job cascade: ch 39 chain shift +3",
+        "osnb2": { "book": 18, "chapter": 39, "verse": 1 },
+        "translation": { "book": 18, "chapter": 39, "verse": 4 }
+      },
+      {
+        "description": "Job 39:30 -> 39:33 - Job cascade: last osnb2 ch 39 verse",
+        "osnb2": { "book": 18, "chapter": 39, "verse": 30 },
+        "translation": { "book": 18, "chapter": 39, "verse": 33 }
+      },
+      {
+        "description": "Job 40:6 -> 40:1 - Job cascade: ch 40 chain shift -5",
+        "osnb2": { "book": 18, "chapter": 40, "verse": 6 },
+        "translation": { "book": 18, "chapter": 40, "verse": 1 }
+      },
+      {
+        "description": "Job 41:2 -> 41:1 - Job cascade: ch 41 chain shift -1",
+        "osnb2": { "book": 18, "chapter": 41, "verse": 2 },
+        "translation": { "book": 18, "chapter": 41, "verse": 1 }
+      },
+      {
+        "description": "Job 41:26 -> 41:25 - Job cascade: last verse",
+        "osnb2": { "book": 18, "chapter": 41, "verse": 26 },
+        "translation": { "book": 18, "chapter": 41, "verse": 25 }
+      }
+    ],
+    "phantom": [
+      {
+        "description": "b2011 1 Mos 31:55 = kvn 32:1 - osnb2 ch 31 has only 54 verses",
+        "osnb2": { "book": 1, "chapter": 31, "verse": 55 },
+        "translation": { "book": 1, "chapter": 32, "verse": 1 },
+        "osnb2MaxVerse": 54
+      },
+      {
+        "description": "b2011 4 Mos 16:36 = kvn 17:1 - osnb2 ch 16 has only 35 verses",
+        "osnb2": { "book": 4, "chapter": 16, "verse": 36 },
+        "translation": { "book": 4, "chapter": 17, "verse": 1 },
+        "osnb2MaxVerse": 35
+      },
+      {
+        "description": "b2011 2 Sam 18:33 = kvn 19:1 - osnb2 ch 18 has only 32 verses",
+        "osnb2": { "book": 10, "chapter": 18, "verse": 33 },
+        "translation": { "book": 10, "chapter": 19, "verse": 1 },
+        "osnb2MaxVerse": 32
+      },
+      {
+        "description": "b2011 Mal 4:1 = kvn 3:19 - osnb2 has no chapter 4",
+        "osnb2": { "book": 39, "chapter": 4, "verse": 1 },
+        "translation": { "book": 39, "chapter": 3, "verse": 19 },
+        "osnb2MaxVerse": 0
+      }
+    ],
+    "unmapped": [
+      {
+        "description": "Rom 16:25 - Only in DNB 2011, no osnb2 equivalent",
+        "translation": { "book": 45, "chapter": 16, "verse": 25 }
+      },
+      {
+        "description": "Rom 16:26 - Only in DNB 2011, no osnb2 equivalent",
+        "translation": { "book": 45, "chapter": 16, "verse": 26 }
+      },
+      {
+        "description": "Rom 16:27 - Only in DNB 2011, no osnb2 equivalent",
+        "translation": { "book": 45, "chapter": 16, "verse": 27 }
+      },
+      {
+        "description": "Joel 3:6 - Only in DNB 2011, osnb2 Joel 3 has only 5 verses",
+        "translation": { "book": 29, "chapter": 3, "verse": 6 }
+      },
+      {
+        "description": "Neh 7:68 - Only in DNB 2011 (horses/mules verse)",
+        "translation": { "book": 16, "chapter": 7, "verse": 68 }
+      }
+    ]
+  }
+}
