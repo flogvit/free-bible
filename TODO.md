@@ -15,6 +15,10 @@
 
 - [ ] bible_persons.mjs — strukturert faktaekstraksjon, men trenger verifisering
 
+## Ideer
+
+- [ ] Sangreferanser per vers — koble bibelvers til sanger (salmer, lovsanger, klassisk kirkemusikk) som er basert på eller inspirert av verset. Norsk Salmebok-numre, internasjonale hymner, eventuelt Spotify-lenker. Eksempel: Salme 23 → "Herren er min hyrde" (NoS 480).
+
 ## Pågående
 
 - [ ] number_symbolism.mjs — fullindeksering av osnb2 med Ollama 122b

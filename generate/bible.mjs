@@ -10,7 +10,7 @@ import {bibles, books, anthropicModel, maxTokens} from "./constants.js";
 const anthropic = new Anthropic();
 
 const MAX_VERSES_PER_BATCH = 100;
-const MAX_PROOFREAD_CHARS = 20000; // Target max input chars per proofread batch
+const MAX_PROOFREAD_CHARS = 10000; // Target max input chars per proofread batch (lowered to account for footnotes)
 
 // --- JSON Schemas for structured outputs ---
 
@@ -63,7 +63,7 @@ const PROOFREAD_SCHEMA = {
                 properties: {
                     verseId: {type: "integer"},
                     text: {type: "string"},
-                    source: {type: "string", enum: ["lingvistisk", "teologisk", "historisk", "tekstkritisk", "liturgisk", "annet"]}
+                    source: {type: "string", enum: ["oversettelse", "lingvistisk", "teologisk", "historisk", "tekstkritisk", "liturgisk", "annet"]}
                 },
                 required: ["verseId", "text", "source"],
                 additionalProperties: false
@@ -102,14 +102,16 @@ Your task is to review the translation and identify:
 - Missing or added content
 - Grammar or spelling errors
 
-You should also suggest FOOTNOTES for verses where there are interesting details that enrich the reader's understanding but don't belong in the translation text itself. Good footnotes include:
-- Alternative translations or readings from the original language (lingvistisk)
-- Theological nuances or interpretive choices (teologisk)
-- Historical or cultural context that illuminates the text (historisk)
-- Textual variants between manuscripts (tekstkritisk)
-- Liturgical usage or significance (liturgisk)
-Each footnote has: verseId, text (the footnote content), source (one of: lingvistisk, teologisk, historisk, tekstkritisk, liturgisk, annet).
-Only add footnotes where they genuinely add value — not every verse needs one.
+You should also suggest FOOTNOTES for verses where there are interesting details that enrich the reader's understanding but don't belong in the translation text itself. The source categories have distinct purposes — do not overlap:
+- oversettelse: REQUIRED FOR EVERY VERSE — explain why the current translation reads the way it does. Every verse involves translation choices: word selection, word order, how idioms are rendered, what nuance was prioritized. For example: why «Rabbi» is kept untranslated, why «tegn» rather than «mirakler» for σημεῖα, why a particular sentence structure was chosen. These notes help the reader understand what they are reading and what alternatives exist.
+- lingvistisk: About the original language itself — etymology, wordplay, grammar, idioms in Hebrew/Greek that enrich understanding regardless of how it was translated.
+- teologisk: Theological discussion — different doctrinal interpretations, how traditions disagree, what theological weight a passage carries.
+- historisk: Historical or cultural background — customs, places, events that illuminate the text.
+- tekstkritisk: Manuscript variants — differences between textual witnesses, which readings are better attested.
+- liturgisk: Liturgical usage — how the passage is used in worship, church calendar, or prayer traditions.
+Each footnote has: verseId, text (the footnote content), source (one of: oversettelse, lingvistisk, teologisk, historisk, tekstkritisk, liturgisk, annet).
+The footnote text can be multiple sentences — be thorough.
+Every verse MUST have at least one «oversettelse» footnote. The other categories are optional and should only be added where they genuinely add value.
 
 IMPORTANT:
 - The "suggested" field must contain the ENTIRE corrected verse, not just the changed phrase.
@@ -347,6 +349,13 @@ function estimateVerseSize(verse, originalVerse) {
 
     size += `${verse.verseId}: ${verse.text}\n`.length;
 
+    if (verse.footnotes && verse.footnotes.length > 0) {
+        size += `   EXISTING FOOTNOTES:`.length;
+        verse.footnotes.forEach(fn => {
+            size += `\n   [${fn.source}] ${fn.text}`.length;
+        });
+    }
+
     if (verse.versions && verse.versions.length > 0) {
         size += `   VERSION HISTORY (${verse.versions.length} previous revisions - DO NOT suggest any of these):`.length;
         verse.versions.forEach((ver, i) => {
@@ -412,31 +421,52 @@ async function proofreadChapter(bible, bookId, chapterId, style, filename, saveT
     const summaries = [];
     const scores = [];
 
-    for (let batchIndex = 0; batchIndex < batches.length; batchIndex++) {
-        const batch = batches[batchIndex];
+    // Process batches with automatic splitting on timeout
+    const queue = batches.map((batch, i) => ({ batch, label: `${i + 1}/${batches.length}` }));
+
+    while (queue.length > 0) {
+        const { batch, label } = queue.shift();
         const batchVerseIds = batch.map(v => v.verseId);
         const batchOriginal = originalVerses.filter(v => batchVerseIds.includes(+v.verseId));
 
-        if (batches.length > 1) {
-            console.log(`  Batch ${batchIndex + 1}/${batches.length}: verses ${batchVerseIds[0]}-${batchVerseIds[batchVerseIds.length - 1]}`);
+        if (batches.length > 1 || label.includes('/')) {
+            console.log(`  Batch ${label}: verses ${batchVerseIds[0]}-${batchVerseIds[batchVerseIds.length - 1]} (${batch.length} verses)`);
         }
 
         const formattedOriginal = batchOriginal.map(v => `${v.verseId}: ${v.text}`).join("\n");
         const content = getProofreadPrompt(language, style, bookId, chapterId, formattedOriginal, batch);
         const shouldValidate = !isEnglishLanguage(language);
-        const batchResult = await doAnthropicCallWithRetry(content, PROOFREAD_SCHEMA, `proofread ${bookId}:${chapterId} batch ${batchIndex + 1}`, shouldValidate);
 
-        if (batchResult.issues) {
-            allIssues.push(...batchResult.issues);
-        }
-        if (batchResult.footnotes) {
-            allFootnotes.push(...batchResult.footnotes);
-        }
-        if (batchResult.summary) {
-            summaries.push(batchResult.summary);
-        }
-        if (batchResult.score !== null && batchResult.score !== undefined) {
-            scores.push(batchResult.score);
+        try {
+            const batchResult = await doAnthropicCallWithRetry(content, PROOFREAD_SCHEMA, `proofread ${bookId}:${chapterId} batch ${label}`, shouldValidate);
+
+            if (batchResult.issues) {
+                allIssues.push(...batchResult.issues);
+            }
+            if (batchResult.footnotes) {
+                allFootnotes.push(...batchResult.footnotes);
+            }
+            if (batchResult.summary) {
+                summaries.push(batchResult.summary);
+            }
+            if (batchResult.score !== null && batchResult.score !== undefined) {
+                scores.push(batchResult.score);
+            }
+        } catch (error) {
+            if (error.message.includes('timed out') || error.message.includes('timeout') || error.message.includes('max_tokens')) {
+                if (batch.length <= 2) {
+                    console.error(`  Batch ${label} failed even with ${batch.length} verses, skipping`);
+                    continue;
+                }
+                const mid = Math.ceil(batch.length / 2);
+                console.log(`  Batch ${label} timed out with ${batch.length} verses — splitting into two smaller batches`);
+                queue.unshift(
+                    { batch: batch.slice(mid), label: `${label}b` },
+                    { batch: batch.slice(0, mid), label: `${label}a` }
+                );
+            } else {
+                throw error;
+            }
         }
     }
 
@@ -569,6 +599,8 @@ function applyProofreadChanges(bible, bookId, chapterId, filename, proofreadResu
         if (footnoteCount > 0) parts.push(`${footnoteCount} footnotes`);
         console.log(`Applied ${parts.join(', ')} to ${bookId}:${chapterId}`);
     }
+
+    return { appliedCount, footnoteCount };
 }
 
 function printUsage() {
@@ -706,6 +738,7 @@ async function main() {
     if (options.apply) modes.push('Apply');
 
     console.log(`Bible: ${options.bible}`);
+    console.log(`Model: ${anthropicModel}`);
     console.log(`Style: ${options.style}`);
     console.log(`Mode: ${modes.join(' → ')}`);
     if (options.proofread && options.apply) {
@@ -739,6 +772,7 @@ async function main() {
                 const minScore = options.minScore || 8;
                 const maxIterations = options.maxIterations || 3;
                 let iteration = 0;
+                let newFootnotes = false;
 
                 while (iteration < maxIterations) {
                     iteration++;
@@ -748,18 +782,24 @@ async function main() {
                     const lastScore = proofreadResult?.score ?? 10;
 
                     if (options.apply && proofreadResult) {
-                        applyProofreadChanges(options.bible, bookId, chapterId, filename, proofreadResult);
+                        const result = applyProofreadChanges(options.bible, bookId, chapterId, filename, proofreadResult);
+                        newFootnotes = result?.footnoteCount > 0;
                     }
 
-                    if (lastScore >= minScore) {
+                    // Re-proofread if score too low OR new footnotes were added (to review them)
+                    if (lastScore >= minScore && !newFootnotes) {
                         break;
                     }
 
-                    if (iteration < maxIterations) {
+                    if (newFootnotes && lastScore >= minScore) {
+                        console.log(`  New footnotes added — re-proofreading to review them (iteration ${iteration + 1}/${maxIterations})...`);
+                    } else if (iteration < maxIterations) {
                         console.log(`  Score ${lastScore}/10 < ${minScore} — re-proofreading (iteration ${iteration + 1}/${maxIterations})...`);
                     } else {
                         console.log(`  Score ${lastScore}/10 — max iterations (${maxIterations}) reached`);
                     }
+
+                    newFootnotes = false; // Only force one extra round for footnotes
                 }
             }
         }
