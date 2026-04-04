@@ -7,7 +7,7 @@ const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 dotenv.config()
 
-import {books, normalizeLanguage, getLanguageCode, getBookName, ollamaBaseUrl, ollamaModel} from "./constants.js";
+import {books, normalizeLanguage, getLanguageCode, getBookName, ollamaBaseUrl, ollamaModel, anthropicModel} from "./constants.js";
 import {callWithRetry, callOllamaRaw} from "./llm.js";
 
 // Norwegian number words for scanning bible text
@@ -500,6 +500,8 @@ function applyProofreadChanges(language, number, filename, proofreadResult = nul
 
     fs.writeFileSync(filename, JSON.stringify(currentData, null, 2));
     console.log(`  Applied revisions to number ${number} (version ${currentData.versions?.length || 0})`);
+
+    return { changed: meaningChanged || descChanged, footnotesChanged };
 }
 
 // Ask Ollama to extract symbolic numbers from a verse
@@ -900,6 +902,7 @@ async function main() {
     if (options.apply) modes.push('Apply');
 
     console.log(`Language: ${options.language}`);
+    console.log(`Model: ${useLocal ? ollamaModel : anthropicModel}`);
     console.log(`Mode: ${modes.join(' → ')}`);
     if (options.proofread && options.apply) {
         console.log(`Feedback loop: min score ${options.minScore || 8}/10, max ${options.maxIterations || 3} iterations`);
@@ -925,6 +928,7 @@ async function main() {
         if (options.proofread && fileExists(filename)) {
             let iteration = 0;
             let lastScore = 0;
+            let newFootnotes = false;
 
             while (iteration < maxIterations) {
                 iteration++;
@@ -934,19 +938,24 @@ async function main() {
                 lastScore = proofreadResult?.score ?? 10;
 
                 if (options.apply && proofreadResult) {
-                    applyProofreadChanges(options.language, number, filename, proofreadResult);
+                    const result = applyProofreadChanges(options.language, number, filename, proofreadResult);
+                    newFootnotes = result?.footnotesChanged || false;
                 }
 
-                // Stop if score is good enough or no more iterations
-                if (lastScore >= minScore) {
+                // Re-proofread if score too low OR new footnotes were added (to review them)
+                if (lastScore >= minScore && !newFootnotes) {
                     break;
                 }
 
-                if (iteration < maxIterations) {
+                if (newFootnotes && lastScore >= minScore) {
+                    console.log(`  New footnotes added — re-proofreading to review them (iteration ${iteration + 1}/${maxIterations})...`);
+                } else if (iteration < maxIterations) {
                     console.log(`  Score ${lastScore}/10 < ${minScore} — re-proofreading (iteration ${iteration + 1}/${maxIterations})...`);
                 } else {
                     console.log(`  Score ${lastScore}/10 — max iterations (${maxIterations}) reached`);
                 }
+
+                newFootnotes = false; // Only force one extra round for footnotes
             }
         }
     }
