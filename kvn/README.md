@@ -1,214 +1,130 @@
 # KVN — Kanonisk Versnummer
 
 KVN er et kanonisk nummereringssystem for bibelvers. Hvert vers i Bibelen
-får et unikt tall som koder bok, kapittel, vers og delvers i ett enkelt
-JavaScript-tall (27 bit).
+får et unikt tall basert på osmain-koordinater (bok, kapittel, vers, del).
 
-## Bit-layout
+## osmain
+
+osmain er masterbibeloversettelsen som definerer KVN-koordinatsystemet.
+Den er bygget fra osnb2 (tanach/sblgnt) og utvidet med vers fra alle
+kjente bibeltradisjoner. Teksten er på norsk bokmål.
+
+- **31 069 vers** fra osnb2 (`source: tanach/sblgnt`)
+- **56 oversatte vers** fra andre tradisjoner (`source: translated`)
+- Nummerering følger flertallet av 1148 bibler (europeisk/protestantisk)
+- Salmeoverskrifter er innbakt i vers 1 (norsk tradisjon)
+
+osmain ligger i `generate/bibles_raw/osmain/`.
+
+## KVN Encoding
+
+KVN er et vanlig JavaScript-tall (BIGINT i MySQL):
 
 ```
-book (7 bit) | chapter (8 bit) | verse (8 bit) | part (4 bit)
+KVN = book * M_ch + chapter * M_v + verse * PART_SIZE + part
 ```
 
-- **book**: 1–127 (1–66 brukes, 1 Mos=1 ... Åp=66)
-- **chapter**: 0–255
-- **verse**: 0–255
-- **part**: 0–15 (0=helt vers, 1=a, 2=b, 3=c)
+Konstanter:
+- `PART_SIZE = 16`
+- `MAX_VERSE = 177`, `M_v = 177 * 16 = 2832`
+- `MAX_CHAPTER = 151`, `M_ch = 151 * 2832 = 427632`
 
-Encoding: `(book << 20) | (chapter << 12) | (verse << 4) | part`
+Part-feltet (0-15) er setningsposisjon: 0=helt vers, 1=a (1. setning), 2=b (2. setning), osv.
 
-### Eksempler
+## Mappingfiler
 
-| Vers | Encoding |
-|------|----------|
-| 1 Mos 1:1 | `(1 << 20) \| (1 << 12) \| (1 << 4)` = 1052688 |
-| 2 Mos 8:1 | `(2 << 20) \| (8 << 12) \| (1 << 4)` = 2129936 |
-| Mika 5:1a | `(33 << 20) \| (5 << 12) \| (1 << 4) \| 1` = 34623505 |
+Hver oversettelse har en mappingfil (`mappings/*.ukvn.json`) som beskriver
+avvik fra osmain. Vers med identisk nummerering trenger ingen entry.
 
-## kvn og tkvn
-
-- **kvn** = basis-referanse. Direkte 1:1 med osnb2 (tanach/sblgnt) koordinater.
-  Hvert vers i osnb2 har nøyaktig én kvn, og den er simpelthen de encodede koordinatene.
-- **tkvn** = translation KVN. Oversettelsens koordinater (f.eks. DNB 2011),
-  encodet med samme bit-layout.
-
-osnb2 er master — kvn er bare en encoding av osnb2-koordinater, ingen mapping
-involvert. Mappingfilen beskriver kun hvordan en oversettelse avviker fra basis.
-
-De fleste vers har samme posisjon i basis og oversettelse (kvn = tkvn).
-Mappingfilen inneholder bare vers som er forskjellige.
-
-### Eksempel på forskjeller
-
-Ulike bibeloversettelser nummererer noen vers forskjellig:
-
-| osnb2 (kvn) | DNB 2011 (tkvn) | Forklaring |
-|-------------|-------------------|------------|
-| 2 Mos 8:1 | 2 Mos 7:26 | Backward shift: 4 vers fra kap 8 til kap 7 |
-| 2 Mos 8:5 | 2 Mos 8:1 | Chain shift: resten forskyves ned |
-| 1 Mos 32:1 | 1 Mos 32:2 | Forward shift: +1 pga phantom-vers |
-| Neh 7:69 | Neh 7:68 | Same-chapter backward |
-
-## Mappingfil
-
+Entry-format:
 ```json
 {
-  "version": 1,
-  "system": "dnb_2011_nb",
-  "name": "DNB 2011",
-  "bookNames": { "1 Mos": 1, "2 Mos": 2, ... },
-  "map": [
-    [kvn, tkvn, "kvn-lesbar", "tkvn-lesbar"],
-    ...
-  ],
-  "extraVerses": [
-    [tkvn, "lesbar", afterKvn],
-    ...
-  ]
+  "kvnFrom": 427648,
+  "kvnTo": 427648,
+  "kvnRef": "1 Mos 1:1",
+  "tkvnFrom": 427648,
+  "tkvnTo": 427648,
+  "tkvnRef": "1 Mos 1,1",
+  "order": 0
 }
 ```
 
-- **map**: Vers der kvn != tkvn. 4-tuple: `[kvn, tkvn, "2 Mos 8:1", "2 Mos 7:26"]`
-- **extraVerses**: Vers som bare finnes i oversettelsen (f.eks. Rom 16:25–27).
-  `afterKvn` angir hvilken basis-kvn verset kommer etter.
+## Skript
 
-## KVNConverter
+### Bygge osmain
 
-```typescript
-import { KVNConverter } from './src/kvn.js';
-import { loadKvnMapping } from './src/load-mapping.js';
+```bash
+# 1. Analyser alle 1148 bibler, finn flertallsnummerering
+npx tsx scripts/build-osnb3.ts
 
-const mapping = loadKvnMapping();
-const converter = new KVNConverter(mapping);
+# 2. Kopier osnb2 → osmain med renummerering og placeholders
+npx tsx scripts/create-osnb3.ts
 
-// Basis → oversettelse
-converter.toTkvn(kvn)       // Returnerer tkvn (identity hvis ikke i map)
+# 3. Fyll boundary-shift-vers fra osnb2
+npx tsx scripts/fix-osmain-boundaries.ts
 
-// Oversettelse → basis
-converter.toKvn(tkvn)       // Returnerer kvn, eller null for ekstravers
+# 4. Legg til source-felt (tanach/sblgnt) på alle vers
+npx tsx scripts/add-source-field.ts
 
-// Sjekk ekstravers
-converter.isExtra(tkvn)     // true for vers uten basis-ekvivalent
+# 5. Fiks renummerering via Ollama (salmeoverskrifter, kapittelskift)
+npx tsx scripts/fix-all-renumbering.ts
 
-// Ekstravers-posisjonering
-converter.getAfterKvn(tkvn)    // Returnerer afterKvn for ekstravers, null ellers
-converter.toSortableKvn(tkvn)  // Sorterbar kvn (bruker part-bits for ekstravers)
-
-// Kollisjonsoppslag
-converter.isCollision(kvn)           // true hvis identitetsposisjon er okkupert
-converter.getCollisionSource(kvn)    // Returnerer kilde-kvn ved kollisjon, null ellers
+# 6. Oversett manglende vers via Claude API (krever ANTHROPIC_API_KEY i generate/.env)
+npx tsx scripts/translate-missing.ts --translate
 ```
 
-### toSortableKvn
+### Generere mappinger
 
-For ekstravers (f.eks. Rom 16:25–27 som ikke finnes i basis) gir `toSortableKvn`
-en sorterbar verdi som plasserer dem etter basis-verset de hører til:
+```bash
+# DNB 2011 (fra txt-fil)
+npx tsx scripts/generate-mapping.ts --source dnb2011_nb --format txt
 
-```typescript
-const rom16_25 = encode(45, 16, 25);  // Ekstravers
-converter.toSortableKvn(rom16_25)      // → encode(45, 16, 24, 1) — etter vers 24
+# NB88 (fra txt-fil)
+npx tsx scripts/generate-mapping.ts --source nb88_nb --format txt
+
+# Engelsk KJV (fra raw JSON)
+npx tsx scripts/generate-mapping.ts --source english_kj --format raw
+
+# Enkelt kapittel (for testing)
+npx tsx scripts/generate-mapping.ts --source dnb2011_nb --format txt --chapter 19:3
+
+# Dry run (vis hva som trengs uten å kjøre Ollama)
+npx tsx scripts/generate-mapping.ts --source dnb2011_nb --format txt --dry-run
+
+# Annen Ollama-modell
+npx tsx scripts/generate-mapping.ts --source dnb2011_nb --format txt --model qwen3.5:122b
 ```
 
-### getCollisionSource
+Mapping-generering bruker gemma4:31b (lokal Ollama) for bulk-matching.
+Kapitler der gemma4 finner avvik (extra_content, merged, split, missing)
+sendes automatisk til Claude API for verifisering.
 
-Noen kvn-posisjoner er "okkupert" av en annen mappings tkvn. `getCollisionSource`
-returnerer hvilken kvn som mapper dit:
+Resume-støtte: Skriptet hopper over kapitler som allerede er prosessert
+(sjekker `data/mapping-results/<source>/`). Trygt å stoppe og starte på nytt.
 
-```typescript
-const gen32_33 = encode(1, 32, 33);
-converter.getCollisionSource(gen32_33)  // → encode(1, 32, 32)  (fordi 32:32 → 32:33)
+### Hjelpeskript
+
+```bash
+# Benchmark Ollama-modeller for mapping-kvalitet
+npx tsx scripts/benchmark-mapping-models.ts --warmup
+
+# Verifiser osmain-dekning mot alle bibler
+npx tsx scripts/verify-osmain.ts
+
+# Analyser spacing-behov (historisk, ikke lenger relevant)
+npx tsx scripts/analyze-spacing.ts
 ```
 
-## Referanseparsing
+## Gammel KVN (v1)
 
-```typescript
-import { parseRef, refsToKvn, formatRefs, convertRef } from './src/kvn.js';
+Det gamle 27-bit systemet (`book << 20 | chapter << 12 | verse << 4 | part`)
+ligger i `src/kvn.ts` og `src/types.ts` med 204 tester. Det bruker osnb2 som
+basis med en separat mappingfil for DNB 2011 (`mappings/dnb_2011_nb.kvn.json`).
 
-// Enkle referanser
-parseRef("Ordsp 8,1-2.22-31")
-parseRef("Mika 5,1-4a")        // Sub-vers (a = første del)
-parseRef("1 Mos 1,1-31")
-
-// Semikolon for flere kapitler
-parseRef("Apg 13,1–4;14,22–23")
-
-// Krysskapittel-ranges (krever maxVerse-callback)
-parseRef("Joh 18,1–19,42", { maxVerse: getMaxVerse })
-parseRef("Jes 8,23b–9,6", { maxVerse: getMaxVerse })
-
-// "og/eller" normaliseres til range
-parseRef("Apg 17,22–25 og/eller 26–31")  // → 17,22–31
-
-// Konverter til kvn-tall
-const kvns = refsToKvn(parseRef("Joh 3,16-21"));
-
-// Formater tilbake til lesbar streng
-formatRefs(kvns)  // "Joh 3,16–21"
-
-// Flerbok-output
-formatRefs([...refsToKvn(parseRef("1 Mos 50,1-3")),
-            ...refsToKvn(parseRef("2 Mos 1,1-3"))])
-// → "1 Mos 50,1–3; 2 Mos 1,1–3"
-
-// Konverter referanse mellom systemer
-convertRef("2 Mos 8,1-4", converter, 'toTkvn')  // Basis → DNB 2011
-convertRef("2 Mos 7,26-29", converter, 'toKvn')  // DNB 2011 → basis
-```
-
-### MaxVerseProvider
-
-Krysskapittel-ranges krever en callback som returnerer maks versnummer per kapittel.
-Uten callback kastes en feil.
-
-```typescript
-import type { MaxVerseProvider } from './src/types.js';
-
-const maxVerse: MaxVerseProvider = (book, chapter) => getMaxVerse(book, chapter);
-parseRef("Joh 18,1–19,42", { maxVerse })
-```
-
-### Referanseformat
-
-```
-Bok kapittel,vers[-vers][.vers[-vers]]
-```
-
-- Komma skiller kapittel fra vers: `8,1`
-- Bindestrek/tankestrek for rekkevidde: `1-10` eller `1–10`
-- Punktum for flere segmenter: `1-2.22-31`
-- Bokstav for delvers: `4a`, `6b`
-- Semikolon for flere kapitler: `13,1-4;14,22-23`
-- Krysskapittel med maxVerse: `1,26–2,2`
-- "og/eller" → range: `22–25 og/eller 26–31` → `22–31`
-
-## Laste mappingfiler
-
-```typescript
-import { loadKvnMapping, listMappingSystems } from './src/load-mapping.js';
-
-// Standard: laster dnb_2011_nb
-const mapping = loadKvnMapping();
-
-// Last med systemnavn
-const mapping2 = loadKvnMapping('dnb_2011_nb');
-
-// Last fra full sti
-const mapping3 = loadKvnMapping('/path/to/custom.kvn.json');
-
-// List tilgjengelige systemer
-listMappingSystems()  // → ["dnb_2011_nb"]
-```
+Det nye systemet bruker osmain som basis og aritmetisk encoding uten bitpakking.
 
 ## Tester
 
 ```bash
 npm test
 ```
-
-6 testfiler med 156 tester:
-- **mapping-integrity** — Validerer mappingfilens struktur
-- **kvn-library** — Tester KVNConverter med kuraterte testcases
-- **kvn-verses** — Verifiserer mot osnb2-kildefiler
-- **kvn-references** — Roundtrip-tester med bibelreferanser
-- **kvn-lesetekster** — Parser og roundtripper alle 780 DNK-lesetekster
-- **kvn-parseref-enhanced** — Utvidet parseRef, formatRefs, nye KVNConverter-metoder
