@@ -1,0 +1,83 @@
+{
+  "days": [
+    {
+      "id": "julaften",
+      "fromVerseId": 18,
+      "toVerseId": 25,
+      "relevance": "primary",
+      "reason": "Dette er den sentrale teksten for julaften i mange kirkesamfunn (særlig i den norske kirkes tradisjon). Den forteller om Jesu fødsel, engelen som oppfordrer Josef til å ta Maria hjem, og navngivingen av Jesus. Vers 23 siterte også profetien om Immanuel som er sentral i juleforkynnelsen."
+    },
+    {
+      "id": "juledag",
+      "fromVerseId": 18,
+      "toVerseId": 25,
+      "relevance": "secondary",
+      "reason": "Teksten understreker inkarnasjonens mysterium (Gud blir menneske) og at Jesus er 'Gud med oss' (Immanuel), som er hovedtemaet for juledag. Den bekrefter at den historiske fødselen er oppfyllelsen av profetien."
+    },
+    {
+      "id": "kristi-aapenbaringsdag",
+      "fromVerseId": 1,
+      "toVerseId": 17,
+      "relevance": "secondary",
+      "reason": "Slektslisten (vers 1-17) viser at Jesus er 'Davids sønn' og 'Abrahams sønn', noe som bekrefter hans identitet som den lovede Messias for både jøder og hedninger. Listen viser at han tilhører den historiske frelseshistorien som nå åpnes for alle folkeslag."
+    },
+    {
+      "id": "nyttårsdag",
+      "fromVerseId": 21,
+      "toVerseId": 25,
+      "relevance": "primary",
+      "reason": "Teksten beskriver eksplicit navngivingen av Jesus (vers 21 og 25). Nyttårsdag feirer Jesu navnedag og omskjæring, og denne delen av teksten er den direkte bibelgrunnlaget for denne feiringen."
+    },
+    {
+      "id": "advent-4",
+      "fromVerseId": 18,
+      "toVerseId": 25,
+      "relevance": "secondary",
+      "reason": "Advent 4 fokuserer på Maria og inkarnasjonen. Teksten beskriver Josefs rolle, engelen som forkynner at barnet er av Den Hellige Ånd, og Marias tilstand som 'med barn'. Dette er den direkte forberedelsen til fødselen som feires i adventstidens siste uke."
+    }
+  ],
+  "_versions": [
+    {
+      "days": [
+        {
+          "id": "julaften",
+          "fromVerseId": 18,
+          "toVerseId": 25,
+          "relevance": "primary",
+          "reason": "Dette er den sentrale teksten for julaften i mange kirkesamfunn (særlig i den norske kirkes tradisjon). Den forteller om Jesu fødsel, engelen som oppfordrer Josef til å ta Maria hjem, og navngivingen av Jesus. Vers 23 siterte også profetien om Immanuel som er sentral i juleforkynnelsen."
+        },
+        {
+          "id": "juledag",
+          "fromVerseId": 18,
+          "toVerseId": 25,
+          "relevance": "secondary",
+          "reason": "Teksten understreker inkarnasjonens mysterium (Gud blir menneske) og at Jesus er 'Gud med oss' (Immanuel), som er hovedtemaet for juledag. Den bekrefter at den historiske fødselen er oppfyllelsen av profetien."
+        },
+        {
+          "id": "kristi-aapenbaringsdag",
+          "fromVerseId": 1,
+          "toVerseId": 17,
+          "relevance": "secondary",
+          "reason": "Slektslisten (vers 1-17) viser at Jesus er 'Davids sønn' og 'Abrahams sønn', noe som bekrefter hans identitet som den lovede Messias for både jøder og hedninger (som vismennene representerer). Listen viser at han tilhører den historiske frelseshistorien som nå åpnes for alle folkeslag."
+        },
+        {
+          "id": "advent-4",
+          "fromVerseId": 18,
+          "toVerseId": 25,
+          "relevance": "secondary",
+          "reason": "Advent 4 fokuserer på Maria og inkarnasjonen. Teksten beskriver Josefs rolle, engelen som forkynner at barnet er av Den Hellige Ånd, og Marias tilstand som 'med barn'. Dette er den direkte forberedelsen til fødselen som feires i adventstidens siste uke."
+        },
+        {
+          "id": "kristi-forklarelsesdag",
+          "fromVerseId": 1,
+          "toVerseId": 1,
+          "relevance": "secondary",
+          "reason": "Tekstens første vers identifiserer Jesus som 'Davids sønn' og 'Abrahams sønn'. På forklarelsesdagen åpenbares Jesu guddommelighet, men han bekreftes også som den lovede Messias fra Davids slekt, noe som er grunnlaget for hans kongeverdighet som åpenbares på fjellet."
+        }
+      ],
+      "score": 6,
+      "reason": "[major] Koblingen til Kristi forklarelsesdag er feilaktig. Forklarelsesdagen handler om Jesus som åpenbares i herlighet på fjellet (Matt 17), ikke om slektslisten eller hans messianske tittler i fødselsberetningen. Slektslisten bekrefter hans menneskelige slektslinje, men dette er ikke det sentrale temaet for forklarelsesdagen. Dette er en 'false positive'.; [minor] Det mangler en kobling til Nyttårsdag (Jesu navnedag). Vers 21 og 25 beskriver eksplicit at Josef ga barnet navnet 'Jesus'. Dette er den liturgiske grunnen for å lese denne teksten på Nyttårsdag (8. dag etter jul), hvor vi feirer Jesu navngiving og omskjæring. Teksten er primær for denne dagen.; [minor] Selv om slektslisten (1-17) er koblet til Kristi åpenbaringsdag, er det ofte hele kapitlet (inkludert fødselsberetningen) som leses på denne dagen i mange tradisjoner for å vise at Jesus er den lovede Messias for alle folkeslag (Abrahams løfte). Koblingen til vers 1-17 er korrekt, men det kan argumenteres for at hele kapitlet er relevant. Jeg vil beholde den eksisterende koblingen til 1-17 som 'secondary' siden den fokuserer på slektslisten, men det er verdt å merke seg at teksten ofte leses i sin helhet på denne dagen.; [minor] Advent 4 fokuserer ofte på Maria og engelen Gabriel (Lukas 1), men Matteus 1:18-25 er også en sterk kandidat. Imidlertid, i den norske kirkes tradisjon er Matteus 1:18-25 primært knyttet til **julaften** (som allerede er merket som primary). Å merke den som 'secondary' for advent-4 er ikke feil, men det er en svak kobling sammenlignet med julaften. Det er ikke en grov feil, men det er verdt å vurdere om den bør fjernes for å unngå overtagging, eller beholdes som en svak sekundær kobling. Jeg vil beholde den som 'secondary' fordi teksten handler om forberedelsen til fødselen, men det er en svak kobling.",
+      "date": "2026-04-04"
+    }
+  ]
+}
