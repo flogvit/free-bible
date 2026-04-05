@@ -11,6 +11,43 @@ export const maxTokens = 16384;
 export const ollamaModel = "qwen3.5:122b";
 export const ollamaBaseUrl = "http://localhost:11434";
 
+// Model-specific configuration
+export const ollamaModelConfig = {
+  'gemma4:31b': {
+    options: { temperature: 1.0, top_p: 0.95, top_k: 64 },
+    noThinkPrefix: '<|think|>\n',  // prepend to prompt to disable thinking
+    thinkParam: false,              // don't use think: false in API
+  },
+  'qwen3.5:122b': {
+    options: { temperature: 0 },
+    noThinkPrefix: '/no_think\n',
+    thinkParam: true,               // uses think: false in API
+  },
+  'qwen3.5:27b': {
+    options: { temperature: 0 },
+    noThinkPrefix: '/no_think\n',
+    thinkParam: true,
+  },
+  'qwen3.5:9b': {
+    options: { temperature: 0 },
+    noThinkPrefix: '/no_think\n',
+    thinkParam: true,
+  },
+  'gpt-oss:120b': {
+    options: { temperature: 0.1 },
+    noThinkPrefix: '',
+    thinkParam: false,
+  },
+};
+
+export function getOllamaConfig(model) {
+  return ollamaModelConfig[model] || {
+    options: { temperature: 0 },
+    noThinkPrefix: '',
+    thinkParam: false,
+  };
+}
+
 // Language name to code mapping
 export const languageCodes = {
     'Norwegian bokmål': 'nb',

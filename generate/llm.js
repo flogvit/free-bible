@@ -1,5 +1,5 @@
 import Anthropic from '@anthropic-ai/sdk';
-import {anthropicModel, maxTokens, ollamaModel, ollamaBaseUrl} from "./constants.js";
+import {anthropicModel, maxTokens, ollamaModel, ollamaBaseUrl, getOllamaConfig} from "./constants.js";
 
 const MAX_RETRIES = 3;
 
@@ -29,16 +29,15 @@ async function callAnthropic(content, schema) {
 }
 
 async function callOllama(content, schema) {
+    const config = getOllamaConfig(ollamaModel);
     const body = {
         model: ollamaModel,
-        prompt: content,
+        prompt: config.noThinkPrefix + content,
         stream: false,
-        think: false,
-        options: {temperature: 0, num_predict: 16384}
+        options: {...config.options, num_predict: 16384}
     };
-    if (schema) {
-        body.format = schema;
-    }
+    if (config.thinkParam) body.think = false;
+    if (schema) body.format = schema;
     const response = await fetch(`${ollamaBaseUrl}/api/generate`, {
         method: 'POST',
         headers: {'Content-Type': 'application/json'},
@@ -97,16 +96,18 @@ export async function callWithRetry(content, {schema, local, context = ''} = {})
  * Always uses local model, no retries, no schema parsing.
  */
 export async function callOllamaRaw(prompt, {numPredict = 50} = {}) {
+    const config = getOllamaConfig(ollamaModel);
+    const body = {
+        model: ollamaModel,
+        prompt: config.noThinkPrefix + prompt,
+        stream: false,
+        options: {...config.options, num_predict: numPredict}
+    };
+    if (config.thinkParam) body.think = false;
     const response = await fetch(`${ollamaBaseUrl}/api/generate`, {
         method: 'POST',
         headers: {'Content-Type': 'application/json'},
-        body: JSON.stringify({
-            model: ollamaModel,
-            prompt,
-            stream: false,
-            think: false,
-            options: {temperature: 0, num_predict: numPredict}
-        })
+        body: JSON.stringify(body)
     });
     const data = await response.json();
     return (data.response || '').trim();
