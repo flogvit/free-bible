@@ -1,0 +1,41 @@
+{
+  "issues": [
+    {
+      "type": "irrelevant",
+      "severity": "major",
+      "explanation": "Referansen til Markus 6:45-46 er en selvhenvisning til samme kapittel (Johannes 6) i en parallell beretning, men den beskriver en senere hendelse (etter brødmiraklet) hvor Jesus sender disiplene over sjøen. Dette er ikke en direkte referanse til innledningen i Johannes 6:1, men snarere en referanse til slutten av samme kapittel i en annen evangelium. Koblingen er svak som en kryssreferanse for vers 1, da det handler om en annen del av fortellingen.",
+      "reference": "Markus 6:45-46"
+    },
+    {
+      "type": "irrelevant",
+      "severity": "minor",
+      "explanation": "Referansen til Lukas 5:1 er geografisk relevant (Gennesaretsjøen/Galileasjøen), men kontekstuell svak. Lukas 5:1 handler om Jesu lære fra båten og kall av disiplene, mens Johannes 6:1 innleder en reise til en øde plass før brødmiraklet. Koblingen er begrenset til geografien og mangler den narrative parallellen som finnes i Matteus og Markus.",
+      "reference": "Lukas 5:1"
+    }
+  ],
+  "summary": "Referansene til Matteus 14:13 og Markus 6:32 er sterke og korrekte paralleller til Johannes 6:1. Referansen til Lukas 5:1 er geografisk korrekt men kontekstuell svak. Referansen til Markus 6:45-46 er misvisende som en referanse til vers 1, da den beskriver en senere hendelse i samme kapittel i Markus' evangelium (etter brødmiraklet), og fungerer mer som en oppsummering av kapittelets slutt enn en innledende referanse.",
+  "score": 6,
+  "revisedReferences": [
+    {
+      "bookId": 40,
+      "chapterId": 14,
+      "fromVerseId": 13,
+      "toVerseId": 13,
+      "text": "Matteus 14:13 forteller om Jesu flukt over sjøen til en øde plass etter dødsdommen over Johannes, en parallell hendelse med samme reisemønster."
+    },
+    {
+      "bookId": 41,
+      "chapterId": 6,
+      "fromVerseId": 32,
+      "toVerseId": 32,
+      "text": "Markus 6:32 bruker nesten identisk formulering om Jesu reise over havet til en øde plass, og deler den geografiske beskrivelsen av Galileasjøen."
+    },
+    {
+      "bookId": 42,
+      "chapterId": 5,
+      "fromVerseId": 1,
+      "toVerseId": 1,
+      "text": "Lukas 5:1 beskriver Jesus ved Gennesaretsjøen (Galileasjøen) og bruker samme geografiske setting som grunnlag for en ny begivenhet."
+    }
+  ]
+}
