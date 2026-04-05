@@ -1,6 +1,7 @@
 import { describe, it, expect } from 'vitest';
 import { ukvnEncode, ukvnDecode, UKVN_PART_SIZE, UKVN_MAX_VERSE, UKVN_MAX_CHAPTER } from '../src/ukvn-types.js';
 import { UkvnMapper } from '../src/ukvn-mapper.js';
+import { loadUkvnMapping, listUkvnMappings } from '../src/ukvn-loader.js';
 import { readFileSync } from 'fs';
 import { join, dirname } from 'path';
 import { fileURLToPath } from 'url';
@@ -119,5 +120,24 @@ describe('UkvnMapper', () => {
     it('has more than 1000 entries', () => {
       expect(mapper.entryCount).toBeGreaterThan(1000);
     });
+  });
+});
+
+describe('ukvn-loader', () => {
+  it('loads english_kj mapping by name', () => {
+    const mapping = loadUkvnMapping('english_kj');
+    expect(mapping.system).toBe('english_kj');
+    expect(mapping.map.length).toBeGreaterThan(0);
+  });
+
+  it('lists available mappings', () => {
+    const names = listUkvnMappings();
+    expect(names).toContain('english_kj');
+    expect(names).toContain('dnb2011_nb');
+    expect(names).toContain('osnb2');
+  });
+
+  it('throws for unknown mapping', () => {
+    expect(() => loadUkvnMapping('nonexistent')).toThrow();
   });
 });
