@@ -772,6 +772,7 @@ Options:
   --nt                 Process only New Testament (books 40-66)
   --min-score <n>      Minimum acceptable score (default: 8, range 0-10)
   --max-iter <n>       Max proofread iterations per person (default: 3)
+  --continue           Skip persons that already have score >= min-score
   --local              Use Ollama instead of Claude for generation
   --help               Show this help message
 
@@ -783,6 +784,7 @@ Examples:
   node bible_persons.mjs --bible osnb2 --index --book 1     # Index Genesis only
   node bible_persons.mjs --bible osnb2 --index --nt         # Index NT only
   node bible_persons.mjs --proofread --apply                # Proofread all persons
+  node bible_persons.mjs --proofread --apply --continue      # Resume from where you left off
   node bible_persons.mjs --proofread --apply --min-score 9  # Higher quality bar
 `);
 }
@@ -801,6 +803,7 @@ async function main() {
         bookEnd: null,
         chapterStart: null,
         chapterEnd: null,
+        continue_: false,
         local: false,
         help: false,
     };
@@ -835,6 +838,8 @@ async function main() {
             options.minScore = parseInt(args[++i], 10);
         } else if (arg === '--max-iter' && i + 1 < args.length) {
             options.maxIterations = parseInt(args[++i], 10);
+        } else if (arg === '--continue') {
+            options.continue_ = true;
         } else if (arg === '--local') {
             options.local = true;
         } else if (arg === '--help') {
@@ -863,19 +868,42 @@ async function main() {
 
     if (options.proofread) {
         const personsDir = path.join(__dirname, 'persons', 'nb');
-        const files = fs.readdirSync(personsDir).filter(f => f.endsWith('.json')).sort();
+        let files = fs.readdirSync(personsDir).filter(f => f.endsWith('.json')).sort();
         const minScore = options.minScore || 8;
         const maxIterations = options.maxIterations || 3;
 
+        // Filter to specific person(s) if given as positional arg
+        const filterInput = positional.join(" ");
+        if (filterInput) {
+            const filterId = nameToId(filterInput);
+            files = files.filter(f => f === `${filterId}.json` || f.startsWith(`${filterId}-`));
+            if (files.length === 0) {
+                console.error(`No person file found for "${filterInput}" (tried ${filterId}.json)`);
+                return;
+            }
+        }
+
         console.log(`Model: ${useLocal ? ollamaModel : anthropicModel}`);
-        console.log(`Proofreading ${files.length} persons`);
+        console.log(`Proofreading ${files.length} person${files.length !== 1 ? 's' : ''}`);
         if (options.apply) {
             console.log(`Feedback loop: min score ${minScore}/10, max ${maxIterations} iterations`);
         }
         console.log('---');
 
+        let skipped = 0;
         for (const file of files) {
             const filePath = path.join(personsDir, file);
+
+            if (options.continue_) {
+                const data = JSON.parse(fs.readFileSync(filePath, 'utf-8'));
+                const lastVersion = data.versions?.[data.versions.length - 1];
+                const hasFootnotes = data.footnotes && data.footnotes.length > 0;
+                if (lastVersion?.score >= minScore && hasFootnotes) {
+                    skipped++;
+                    continue;
+                }
+            }
+
             let iteration = 0;
             let newFootnotes = false;
 
@@ -905,6 +933,9 @@ async function main() {
             }
         }
 
+        if (skipped > 0) {
+            console.log(`Skipped ${skipped} person(s) already at score >= ${minScore}`);
+        }
         console.log('Done!');
         return;
     }
