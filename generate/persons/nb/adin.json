@@ -1,12 +1,13 @@
 {
   "id": "adin",
   "name": "Adin",
-  "title": "Overhode for en israelittisk slekt som vendte tilbake fra eksilet",
+  "title": "Stamfar for en israelittisk slekt som vendte tilbake fra eksilet",
   "era": "return",
   "lifespan": "ca. 500-tallet f.Kr.",
-  "summary": "Adin var stamfaren til en israelittisk slekt som vendte tilbake fra det babylonske eksilet til Jerusalem. Hans etterkommere er nevnt både i Esras og Nehemjas bøker som en del av de som returnerte til det lovede land. Noen av hans etterkommere var også blant dem som beseglet pakten med Gud under Nehemja.",
+  "summary": "Adin er kjent som opphavet til en av de mange israelittiske slektene som vendte hjem fra Babylon til Juda etter det persiske rikets frigjøringspolitikk. Navnet hans opptrer i de sentrale listene over hjemvendte familier: Esras fortegnelse nevner 454 etterkommere som dro tilbake med Serubabel, mens Nehemjas parallelle oppregning teller 655 – en forskjell som gjenspeiler listenes komplekse tilblivelseshistorie. I en senere bølge av hjemvendelse fulgte ytterligere 50 menn under ledelse av Ebed, sønn av Jonatan. Slektens betydning i det gjenreiste samfunnet bekreftes ved at en representant for Adins hus var blant dem som beseglet den høytidelige pakten under Nehemja, en forpliktelse til å leve etter Guds torah, holde sabbaten og bevare fellesskapets integritet. Gjennom disse kildene fremstår Adins slekt som et konkret eksempel på hvordan genealogisk tilhørighet utgjorde selve grunnlaget for jødisk identitet og rettigheter i den ettereksilske perioden.",
   "roles": [
-    "leder"
+    "stamfar",
+    "slektsoverhode"
   ],
   "family": {
     "father": null,
@@ -23,7 +24,7 @@
   "keyEvents": [
     {
       "title": "Adins etterkommere i Serubabels karavane",
-      "description": "454 av Adins etterkommere vendte tilbake fra Babylon til Jerusalem med Serubabel i den første hjemvendelsen.",
+      "description": "454 av Adins etterkommere vendte tilbake fra Babylon til Jerusalem med Serubabel i den første hjemvendelsen etter det babylonske eksilet.",
       "verses": [
         {
           "bookId": 15,
@@ -36,7 +37,7 @@
     },
     {
       "title": "Registrering i Nehemjas fortegnelse",
-      "description": "Adins slekt er oppført med 655 personer i Nehemjas fortegnelse over dem som vendte tilbake fra eksilet.",
+      "description": "Adins slekt er oppført med 655 personer i Nehemjas parallelle fortegnelse over dem som vendte tilbake fra eksilet. Avviket fra Esras tall på 454 kan skyldes ulike tidspunkter for registrering eller variasjoner i manuskripttradisjonen.",
       "verses": [
         {
           "bookId": 16,
@@ -49,7 +50,7 @@
     },
     {
       "title": "Ytterligere etterkommere vender tilbake med Esra",
-      "description": "En annen gruppe av Adins etterkommere, ledet av Ebed, sønn av Jonatan, vendte tilbake med Esra. Denne gruppen besto av 50 menn.",
+      "description": "En gruppe av Adins etterkommere, ledet av Ebed, sønn av Jonatan, vendte tilbake med Esra i en senere hjemvendelse. Denne gruppen besto av 50 menn.",
       "verses": [
         {
           "bookId": 15,
@@ -62,26 +63,13 @@
     },
     {
       "title": "Besegling av pakten",
-      "description": "Adin var blant lederne som beseglet pakten med Gud under Nehemjas ledelse, og forpliktet seg til å følge Guds lov.",
+      "description": "En representant for Adins slekt var blant lederne som beseglet pakten med Gud under Nehemjas ledelse, og forpliktet seg til å følge Guds lov, holde sabbaten og leve atskilt fra de omkringliggende folkeslagene.",
       "verses": [
         {
           "bookId": 16,
           "chapter": 10,
           "verses": [
             16
-          ]
-        }
-      ]
-    },
-    {
-      "title": "Parallell liste i 1. Esdras",
-      "description": "Adins etterkommere er også nevnt i den apokryfe boken 1. Esdras som en del av listen over hjemvendte fra Babylon, noe som bekrefter slektens historiske betydning.",
-      "verses": [
-        {
-          "bookId": 15,
-          "chapter": 2,
-          "verses": [
-            15
           ]
         }
       ]
@@ -97,6 +85,55 @@
       "bookId": 16,
       "chapterId": 10,
       "verseId": 17
+    }
+  ],
+  "versions": [
+    {
+      "summary": "Adin var stamfaren til en israelittisk slekt som vendte tilbake fra det babylonske eksilet til Jerusalem. Hans etterkommere er nevnt både i Esras og Nehemjas bøker som en del av de som returnerte til det lovede land. Noen av hans etterkommere var også blant dem som beseglet pakten med Gud under Nehemja.",
+      "title": "Overhode for en israelittisk slekt som vendte tilbake fra eksilet",
+      "score": 6,
+      "reason": "[major] Antallet av Adins etterkommere i Esra 2:15 er 454, men dette varierer mellom ulike manuskripter. Noen har 454, andre har andre tall. 454 er korrekt i den masoretiske teksten.; [minor] Det er mer presist å si at det var en av Adins etterkommere (eller en som bar navnet Adin) som beseglet pakten, ikke nødvendigvis stamfaren selv, gitt tidsrammen.; [critical] 1. Esdras er en apokryf/deuterokanonisk bok som ikke er del av den protestantiske kanon og har heller ikke et bookId i standardnummereringen 1-66. Referansen peker feilaktig til Esra 2:15 (bookId 15) som allerede er dekket i keyEvents[0]. Denne hendelsen bør fjernes da den er duplikativ og refererer til en bok utenfor den kanoniske bibelske kanon uten korrekt referanse.; [minor] Rollen 'leder' er noe upresis. Adin var primært kjent som 'slektsoverhode' eller 'stamfar'. Det kan være nyttig å legge til 'slektsoverhode' for å presisere.; [minor] Sammendraget er godt, men det kan presiseres at Adin selv mest sannsynlig var stamfaren som levde før eksilet, og at det var hans etterkommere som vendte tilbake. Tittelen sier 'overhode' men sammendraget bør reflektere denne nyanseringen.; [minor] I Esra 8:6 nevnes lederen som 'Ebed, sønn av Jonatan'. Dette stemmer med den masoretiske teksten. Beskrivelsen er korrekt.; [minor] Neh 10:16 (vers 17 i noen tekster) – versnummereringen kan variere litt mellom ulike tradisjoner. I den hebraiske teksten kan dette være 10:17. Verdt å merke seg.",
+      "date": "2026-04-04"
+    },
+    {
+      "summary": "Adin var stamfaren til en israelittisk slekt som vendte tilbake fra det babylonske eksilet til Jerusalem. Hans etterkommere er nevnt både i Esras og Nehemjas bøker som en del av dem som returnerte til det lovede land. I den første hjemvendelsen med Serubabel var det 454 av hans etterkommere, og senere kom ytterligere 50 menn med Esra. En av slektens ledere var også blant dem som beseglet pakten med Gud under Nehemjas ledelse, og forpliktet seg til å følge Guds lov.",
+      "title": "Overhode for en israelittisk slekt som vendte tilbake fra eksilet",
+      "score": 7,
+      "reason": "[minor] Antallet 50 menn i Esra 8:6 refererer til 50 mannlige familiemedlemmer som vendte tilbake med Ebed, sønn av Jonatan. Formuleringen er korrekt, men sammendraget kunne med fordel nevne at Nehemjas liste oppgir et annet tall (655) enn Esras liste (454), noe som er en interessant tekstkritisk detalj.; [minor] Nehemja 7:20 oppgir 655 personer for Adins slekt. Dette tallet avviker fra Esra 2:15 som oppgir 454. Det er bra at dette er nevnt i fotnotene, men det kunne også kort bemerkes i selve hendelsen for klarhet.; [minor] Skrivefeil i fotnoten: 'etteksilsk' bør være 'ettereksilsk'.; [minor] Rollen 'leder' er noe generell. 'Stamfar' kunne vært et bedre rollebegrep, siden Adin primært er kjent som stamfaren til en slekt snarere enn en aktiv leder selv.; [minor] Nehemja 10:16 (i noen versnummertradisjoner 10:17) nevner Adin blant dem som beseglet pakten. Versnummereringen kan variere mellom ulike tradisjoner, men referansen er akseptabel.",
+      "date": "2026-04-04"
+    },
+    {
+      "summary": "Adin var stamfaren til en israelittisk slekt som vendte tilbake fra det babylonske eksilet til Jerusalem. Hans etterkommere er nevnt i Esras og Nehemjas bøker blant dem som returnerte til det lovede land. I Esras fortegnelse telles 454 av hans etterkommere i den første hjemvendelsen med Serubabel, mens Nehemjas parallelle liste oppgir 655 personer. Senere vendte ytterligere 50 menn tilbake med Esra, ledet av Ebed, sønn av Jonatan. En av slektens representanter var også blant dem som beseglet pakten med Gud under Nehemjas ledelse, og dermed forpliktet seg til å leve etter Guds lov. Adins slekt illustrerer den bredere bevegelsen av israelittiske familier som søkte å gjenoppbygge fellesskapet i Juda etter eksilet.",
+      "title": "Stamfar for en israelittisk slekt som vendte tilbake fra eksilet",
+      "score": 8,
+      "reason": "[minor] I Nehemja 10 varierer versnummereringen avhengig av manuskripttradisjon. Noen tekster plasserer Adin i vers 16, mens andre har vers 17. Vers 16 ser ut til å være korrekt i de fleste hebraiske tekster (Neh 10:17 i noen nummerordninger). Bør verifiseres, men lar stå som det er.; [minor] Sammendraget er grundig og godt formulert, men ligner mye på de to tidligere versjonene. Siden dette er tredje versjon og bedømmingen skal være strengere, bør teksten omformuleres for å tilby et friskere perspektiv og skille seg tydeligere fra tidligere versjoner.; [minor] Siden Adins etterkommere er nevnt som deltagere i paktsbeseglingen og hjemvendelsen, kunne rollen 'eksilsslekt' eller lignende vurderes for å tydeliggjøre den historiske konteksten, men de nåværende rollene er akseptable.",
+      "date": "2026-04-04"
+    }
+  ],
+  "footnotes": [
+    {
+      "text": "Navnet Adin (עָדִין) er hebraisk og betyr sannsynligvis 'utsøkt', 'delikat' eller 'nytelsessyk'. Det kan også tolkes som 'den som lever i velstand'. Navnet forekommer utelukkende i ettereksilske tekster i Den hebraiske bibelen, noe som kan tyde på at det ble mer vanlig i persisk tid.",
+      "source": "lingvistisk"
+    },
+    {
+      "text": "Forskjellen i antall mellom Esra 2:15 (454 personer) og Nehemja 7:20 (655 personer) er en av flere tallforskjeller mellom disse parallelle listene. Slike avvik kan forklares ved at registreringene ble foretatt på forskjellige tidspunkter, at slekten vokste gjennom tilslutning eller ekteskap, eller at det finnes variasjoner mellom ulike manuskripter. Lignende tallforskjeller forekommer også for andre slekter i de samme listene.",
+      "source": "historisk"
+    },
+    {
+      "text": "Beseglingen av pakten i Nehemja 10 var en høytidelig seremoni der israelittiske ledere og slektsoverhoder satte sitt segl på et skriftlig dokument. Forpliktelsene inkluderte overholdelse av Moseloven, betaling av tempelskatt, sabbatshelligholdelse og forbud mot blandingsekteskap med omkringliggende folkeslag. Denne seremonien representerte en fornyet forpliktelse til pakten i en ettereksilsk kontekst der jødisk identitet måtte redefineres uten kongelig suverenitet.",
+      "source": "teologisk"
+    },
+    {
+      "text": "De genealogiske listene i Esra og Nehemja tjente en avgjørende funksjon i det ettereksilske samfunnet: de etablerte hvem som hadde legitim rett til å bosette seg i Juda og delta i tempeltjenesten. Slektstilhørighet var den primære identitetsmarkøren, og de som ikke kunne dokumentere sin herkomst ble ekskludert fra visse rettigheter (jf. Esra 2:59–63).",
+      "source": "historisk"
+    },
+    {
+      "text": "Kyros-sylinderen, et leirdokument funnet i Babylon i 1879, bekrefter den persiske politikken med å la deporterte folkegrupper vende tilbake til sine hjemland og gjenoppbygge sine helligdommer. Selv om sylinderen ikke nevner jødene eksplisitt, gir den viktig historisk kontekst for hjemvendelsen beskrevet i Esra og Nehemja, og støtter den bibelske fremstillingen av Kyros' dekret (Esra 1:1–4).",
+      "source": "arkeologisk"
+    },
+    {
+      "text": "I 1 Esdras (3 Esra), en apokryf/deuterokanonisk bok, finnes en parallell liste der Adins slekt også nevnes. Dette vitner om at de genealogiske tradisjonene ble bevart og videreført i ulike litterære tradisjoner i sen-persisk og hellenistisk tid.",
+      "source": "historisk"
     }
   ]
 }

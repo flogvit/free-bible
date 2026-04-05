@@ -1,15 +1,18 @@
 {
   "id": "abdi",
   "name": "Abdi",
-  "title": "Levitt i tempeltjeneste",
-  "era": "return",
-  "lifespan": "ca. 500-tallet f.Kr.",
-  "summary": "Abdi er et navn som forekommer flere steder i Det gamle testamentet og refererer til ulike levitter og israelitter. Den mest fremtredende Abdi er far til Kish, en levitt som deltok i renselsen av tempelet under kong Hiskia, samt en Abdi som nevnes i Esras bok blant dem som hadde tatt fremmede hustruer etter eksilet. Navnet betyr 'min tjener' på hebraisk og peker på en hengiven tjeneste for Gud.",
+  "title": "Levitter og israelitter ved navn Abdi",
+  "era": "divided-kingdom",
+  "lifespan": "ca. 1000-tallet f.Kr. (Davids tid), ca. 700-tallet f.Kr. (Hiskias tid) og ca. 450-tallet f.Kr. (Esras tid)",
+  "summary": "Det hebraiske navnet Abdi (עַבְדִּי), som betyr 'min tjener' og sannsynligvis er en kortform av Obadja ('Herrens tjener'), tilhører minst tre ulike personer i Det gamle testamentet. Den første opptrer i den levittiske slektslinjen i 1. Krønikebok som sønn av Malluk blant Meraritene, og regnes blant forfedrene til tempelsangeren Etan, som virket i helligdommens musikktjeneste under kong David. Den andre – og mest fremtredende – Abdi er far til levitten Kish av Meraris slekt. Kish deltok aktivt i den gjennomgripende renselsen av Jerusalems tempel under kong Hiskias reform på 700-tallet f.Kr., en reform som tok sikte på å gjenreise ren tilbedelse etter den utbredte avgudsdyrkelsen under kong Ahas. Den tredje personen med dette navnet var sønn av Elam, ikke levitt men en alminnelig israelitt som levde etter hjemkomsten fra det babylonske eksilet. Han nevnes blant dem som hadde giftet seg med fremmede kvinner og som under Esras veiledning forpliktet seg til å oppløse disse ekteskapene av troskap mot pakten med Gud. Disse tre skikkelsene belyser til sammen sentrale aspekter ved Israels troshistorie: den liturgiske tjenestens kontinuitet gjennom generasjonene, kampen for religiøs fornyelse og reform, og utfordringene ved å opprettholde religiøs identitet i møte med kulturell blanding.",
   "roles": [
-    "prest"
+    "levitt (Meraritenes slekt)",
+    "forfader til tempelsangeren Etan",
+    "far til levitten Kish",
+    "israelitt av Elams slekt i ettereksilsk tid"
   ],
   "family": {
-    "father": null,
+    "father": "malluk",
     "mother": null,
     "siblings": [],
     "spouse": null,
@@ -25,7 +28,7 @@
   "keyEvents": [
     {
       "title": "Abdi i Meraritenes slektslinje",
-      "description": "Abdi nevnes som sønn av Malluk i levittenes slektslinje, i Meraritenes gren, og som forfar til tempelsangeren Etan.",
+      "description": "I den levittiske genealogien i 1. Krønikebok nevnes Abdi som sønn av Malluk i Meraritenes gren av Levis stamme. Han var en av forfedrene til tempelsangeren Etan, som hadde en viktig rolle i helligdommens musikktjeneste under kong David.",
       "verses": [
         {
           "bookId": 13,
@@ -38,8 +41,8 @@
       ]
     },
     {
-      "title": "Far til Kish, levitt under Hiskia",
-      "description": "Abdi var far til Kish, en levitt fra Meraris slekt, som deltok i renselsen og helligelsen av tempelet under kong Hiskias religiøse reform.",
+      "title": "Far til Kish under Hiskias tempelreform",
+      "description": "En annen Abdi fra Meraris slekt var far til Kish, en levitt som deltok aktivt i renselsen og helligelsen av tempelet under kong Hiskias religiøse reform. Levittene ble samlet for å fjerne all urenhet fra helligdommen og gjenopprette den rette gudstjenesten etter forfallet under kong Ahas' styre.",
       "verses": [
         {
           "bookId": 14,
@@ -48,19 +51,7 @@
             12,
             13,
             14,
-            15
-          ]
-        }
-      ]
-    },
-    {
-      "title": "Tempelet renses under Hiskia",
-      "description": "Levittene, inkludert Abdis sønn Kish, gikk inn i tempelet for å rense det fra all urenhet, slik kong Hiskia hadde befalt.",
-      "verses": [
-        {
-          "bookId": 14,
-          "chapter": 29,
-          "verses": [
+            15,
             16,
             17,
             18,
@@ -70,8 +61,8 @@
       ]
     },
     {
-      "title": "Abdi blant dem som tok fremmede hustruer",
-      "description": "En annen Abdi, sønn av Elam, nevnes blant de israelittene som hadde tatt fremmede hustruer og som forpliktet seg til å sende dem bort etter Esras formaninger.",
+      "title": "Abdi blant dem som hadde tatt fremmede hustruer",
+      "description": "En tredje Abdi, sønn av Elam, nevnes blant de israelittene som hadde giftet seg med fremmede kvinner etter hjemkomsten fra det babylonske eksilet. I tråd med Esras formaninger forpliktet disse mennene seg til å sende bort sine fremmede hustruer for å bevare folkets religiøse identitet og troskap mot pakten med Gud.",
       "verses": [
         {
           "bookId": 15,
@@ -98,6 +89,84 @@
       "bookId": 15,
       "chapterId": 10,
       "verseId": 26
+    }
+  ],
+  "versions": [
+    {
+      "summary": "Abdi er et navn som forekommer flere steder i Det gamle testamentet og refererer til ulike levitter og israelitter. Den mest fremtredende Abdi er far til Kish, en levitt som deltok i renselsen av tempelet under kong Hiskia, samt en Abdi som nevnes i Esras bok blant dem som hadde tatt fremmede hustruer etter eksilet. Navnet betyr 'min tjener' på hebraisk og peker på en hengiven tjeneste for Gud.",
+      "title": "Levitt i tempeltjeneste",
+      "score": 4,
+      "reason": "[minor] Tittelen 'Levitt i tempeltjeneste' dekker bare én av de ulike personene som bærer navnet Abdi. Siden profilen omhandler flere personer med samme navn, bør tittelen reflektere dette bredere.; [major] Era er satt til 'return' (tilbakevendingen fra eksilet), men den mest fremtredende Abdi – far til Kish – levde under kong Hiskias tid, som tilhører perioden 'divided-kingdom' (det delte kongedømmet, ca. 700-tallet f.Kr.). Selv om én Abdi nevnes i Esras bok (etteksilsk tid), bør era reflektere den primære/mest fremtredende personen, eller i det minste den tidligste.; [major] 'ca. 500-tallet f.Kr.' passer kun for Abdi i Esras bok. Abdi som var far til Kish under Hiskia levde ca. 700-tallet f.Kr., og Abdi i 1. Krønikebok 6 er enda eldre. Levetiden bør justeres for å dekke de ulike personene.; [major] Abdi omtales som 'prest', men han var levitt, ikke prest. Levitter og prester hadde ulike funksjoner i tempelet. I tillegg var én Abdi (sønn av Elam) trolig en vanlig israelitt, ikke levitt. Rollene bør korrigeres.; [minor] Abdi i 1 Krøn 6:29-30 er far til Etan (en tempelsanger), ikke bare Kish. Det kan være verdt å inkludere dette, selv om det er ulike personer med navnet Abdi.; [minor] Sammendraget er ganske godt, men det kan presiseres at det dreier seg om minst tre ulike personer med navnet Abdi, og at rollen som 'prest' bør korrigeres til 'levitt'.; [minor] Hendelsen 'Tempelet renses under Hiskia' (2 Krøn 29:16-19) handler primært om levittenes arbeid generelt, ikke spesifikt om Abdi. Det er akseptabelt som kontekst, men kan tydeliggjøres.; [minor] Det mangler fotnoter med interessante historiske, lingvistiske eller teologiske detaljer om navnet Abdi og dets betydning, samt kontekst rundt de ulike personene.",
+      "date": "2026-04-04"
+    },
+    {
+      "summary": "Abdi er et navn som forekommer flere steder i Det gamle testamentet og refererer til ulike levitter og israelitter. I 1. Krønikebok nevnes Abdi som sønn av Malluk i Meraritenes slektslinje, og som forfar til tempelsangeren Etan. Den mest fremtredende Abdi er far til Kish, en levitt som deltok i renselsen av tempelet under kong Hiskias religiøse reform på 700-tallet f.Kr. I tillegg nevnes en Abdi, sønn av Elam, blant de israelittene som hadde tatt fremmede hustruer etter eksilet i Esras tid. Navnet betyr 'min tjener' på hebraisk og er en kortform av Obadja ('Herrens tjener'), noe som peker på en hengiven tjeneste for Gud.",
+      "title": "Levitter og israelitter med navnet Abdi",
+      "score": 6,
+      "reason": "[minor] Tittelen er grei, men kan gjøres litt mer presis og elegant. 'Levitter og israelitter med navnet Abdi' er noe upersonlig. En formulering som klarere knytter til den mest fremtredende Abdi kan forbedre profilen.; [major] Profilen dekker flere personer fra ulike epoker: Abdi i Meraritenes slektslinje (muligens fra Davids tid/det forente kongedømmet), Abdi far til Kish (delt kongerike/Hiskias tid), og Abdi sønn av Elam (etter eksilet/return). 'divided-kingdom' dekker kun én av disse. Siden den mest fremtredende Abdi tilhører Hiskias tid i det delte kongedømmet, kan 'divided-kingdom' forsvares, men det er verdt å notere at profilen spenner over flere epoker.; [major] Family-objektet blander sammen flere ulike personer med navnet Abdi. Far 'malluk' gjelder Abdi i Meraritenes slektslinje (1 Krøn 6), mens barnet 'kish' gjelder Abdi som levitt under Hiskia (2 Krøn 29). Disse er sannsynligvis ikke samme person. I tillegg mangler Abdi sønn av Elam (Esra 10:26) - hans far 'elam' er ikke nevnt i family. Profilen bør primært fokusere på den mest fremtredende Abdi, eller tydelig markere at dette er sammensatt.; [minor] Det tredje key event ('Tempelet renses under Hiskia') er en utvidelse av det andre eventet og handler egentlig om Kish' handling, ikke direkte om Abdi. Det kan vurderes om dette skal slås sammen eller gjøres tydeligere som kontekst.; [minor] Rollene kan forbedres. 'far til Kish' er mer en relasjon enn en rolle. Roller som 'forfar til tempelsangeren Etan' eller 'medlem av Meraritenes levittslekt' kunne vurderes.; [minor] Sammendraget er godt, men påstanden om at Abdi er en kortform av Obadja er en vanlig etymologisk tolkning, men ikke helt sikker. Det bør formuleres mer forsiktig, f.eks. 'muligens en kortform av'.; [major] I 1 Krøn 6:29-30 (etter hebraisk nummerering) omtales Meraritenes slektslinje, men versenes nummerering varierer mellom oversettelser. I mange oversettelser er det 1 Krøn 6:44-45 (LXX/engelsk nummerering) som nevner Abdi. Vers 29-30 i noen oversettelser handler om Meraris barn (Mahli og Mushi), ikke Abdi direkte. Dette bør verifiseres nøyere - i den hebraiske teksten er Abdi nevnt i 1 Krøn 6:29 (hebraisk nummerering) som tilsvarer 6:44 i mange oversettelser.",
+      "date": "2026-04-04"
+    },
+    {
+      "summary": "Abdi er et navn som bæres av flere personer i Det gamle testamentet. I 1. Krønikebok nevnes en Abdi som sønn av Malluk i Meraritenes levittiske slektslinje og som forfar til tempelsangeren Etan. Den mest fremtredende Abdi er far til Kish, en levitt fra Meraris slekt som deltok aktivt i renselsen av tempelet under kong Hiskias gjennomgripende religiøse reform på 700-tallet f.Kr. En tredje Abdi, sønn av Elam, nevnes blant israelittene som hadde giftet seg med fremmede kvinner og som forpliktet seg til å oppløse disse ekteskapene i Esras tid etter hjemkomsten fra det babylonske eksilet. Navnet betyr 'min tjener' på hebraisk og er trolig en kortform av Obadja ('Herrens tjener'), et teoforisk navn som uttrykker hengivenhet overfor Gud.",
+      "title": "Levitter og israelitt ved navn Abdi",
+      "score": 7,
+      "reason": "[minor] Tittelen 'Levitter og israelitt ved navn Abdi' er litt klønete formulert. Det bør presiseres at det dreier seg om flere personer med dette navnet.; [major] Profilen dekker tre ulike personer som spenner over flere tidsperioder: den genealogiske Abdi i 1 Krøn 6 (som er vanskelig å tidfeste presist men knyttet til Davids tid), Abdi i Hiskias tid (divided-kingdom), og Abdi i Esras tid (return). 'divided-kingdom' dekker bare én av disse personene. Siden profilen samler flere personer, bør man vurdere hvilken era som er mest representative, men 'divided-kingdom' er akseptabel for den mest fremtredende Abdi.; [major] Family-objektet blander sammen flere ulike personer som heter Abdi. 'father: malluk' gjelder Abdi i 1 Krøn 6:29-30 (genealogisk linje), mens 'children: [kish]' gjelder Abdi i 2 Krøn 29:12 (Hiskias tid). Den tredje Abdi (Esra 10:26) har far Elam, men dette er ikke reflektert. Profilen bør tydeligere skille mellom de ulike personene i family-feltet, eller velge den mest fremtredende personen.; [minor] Rollene blander sammen egenskaper fra ulike Abdi-personer. 'israelitt' gjelder den tredje Abdi (Esra 10:26) som kanskje ikke var levitt. Rollene bør tydeliggjøres.; [minor] Sammendraget er godt og informativt, men det ligner strukturelt på de to tidligere versjonene som også åpner med 'Abdi er et navn som...'. Tredje versjon bør ha en mer distinkt åpning.; [minor] Referansen 1 Krøn 6:29-30 følger den hebraiske (masoretiske) versinndelingen. I mange oversettelser tilsvarer dette 1 Krøn 6:44-45. Fotnotene nevner dette, men det kan skape forvirring. Versnummereringen i seg selv er ikke feil, men bør verifiseres mot den hebraiske teksten.; [minor] Den siste fotnoten om versinndeling nevner implisitt forskjeller mellom oversettelser. Formuleringen er nøytral nok, men bør være forsiktig med å ikke peke mot spesifikke utgaver.",
+      "date": "2026-04-04"
+    },
+    {
+      "summary": "Flere personer i Det gamle testamentet bærer navnet Abdi, som på hebraisk betyr 'min tjener' og trolig er en kortform av Obadja ('Herrens tjener'). Den tidligste forekomsten finnes i 1. Krønikeboks genealogi, der en Abdi nevnes som sønn av Malluk i Meraritenes levittiske slektslinje og som forfar til tempelsangeren Etan, som tjente i helligdommen under Davids tid. Den mest fremtredende Abdi er kjent som far til Kish, en levitt fra Meraris slekt som spilte en aktiv rolle under renselsen av tempelet i forbindelse med kong Hiskias gjennomgripende religiøse reform på 700-tallet f.Kr. I denne reformbevegelsen ble levittene samlet for å gjenopprette ren gudstjeneste etter en periode med utbredt avgudsdyrkelse under kong Ahas. En tredje person med navnet Abdi, sønn av Elam, nevnes blant israelittene som i Esras tid hadde tatt fremmede hustruer og som forpliktet seg til å oppløse disse ekteskapene for å bevare folkets religiøse renhet etter hjemkomsten fra det babylonske eksilet.",
+      "title": "Levitter og israelitt med navnet Abdi",
+      "score": 8,
+      "reason": "[major] Family-objektet har kun 'kish' som barn, men profilen omhandler tre ulike personer med navnet Abdi. Den tredje Abdi (Esras tid) har 'Elam' som far, ikke 'Malluk'. Family-objektet blander sammen de ulike personene. Siden profilen behandler den mest fremtredende Abdi (far til Kish) som hovedperson, bør family-objektet reflektere dette tydelig, men father bør da være ukjent for denne Abdi (far til Kish), siden Malluk er far til den genealogiske Abdi i 1 Krøn 6. Disse er trolig ulike personer.; [major] 'malluk' er oppgitt som far, men dette gjelder Abdi i Meraritenes genealogi (1 Krøn 6:29). Abdi som er far til Kish (2 Krøn 29:12) er sannsynligvis en annen person, og Abdi sønn av Elam (Esra 10:26) er en tredje person. Når profilen dekker flere personer, bør family-feltet enten tydeliggjøre hvilken Abdi det gjelder, eller dekke den mest fremtredende.; [minor] 1 Krøn 6:29-30 refererer til Abdi i den hebraiske nummereringen. I mange oversettelser tilsvarer dette 1 Krøn 6:44-45 (Septuaginta-nummereringen). Fotnotene nevner dette, men det kan være verdt å merke seg at vers 29 i den masoretiske teksten brukes her.; [minor] Rollene er formulert som beskrivelser snarere enn roller. De kunne vært mer konsise, f.eks. 'levitt', 'tempeltjener', 'israelitt'. Nåværende format blander roller med relasjoner (f.eks. 'far til Kish').; [minor] Era er satt til 'divided-kingdom', som passer for Abdi far til Kish (Hiskias tid). Men Abdi i Esras tid hører til 'return'-epoken, og Abdi i genealogien (forfar til Etan) peker tilbake til 'united-kingdom'. Siden profilen dekker flere personer, kan det argumenteres for at den mest fremtredende (Hiskias tid) bør bestemme era, men dette bør noteres.; [minor] Tittelen 'Levitter og israelitt med navnet Abdi' er grammatisk litt uheldig - 'Levitter' er flertall mens 'israelitt' er entall. Bør harmoniseres.",
+      "date": "2026-04-05"
+    },
+    {
+      "summary": "Navnet Abdi, som på hebraisk (עַבְדִּי) betyr 'min tjener' og trolig er en kortform av Obadja ('Herrens tjener'), bæres av minst tre ulike personer i Det gamle testamentet. Den første Abdi opptrer i den levittiske genealogien i 1. Krønikebok, der han nevnes som sønn av Malluk i Meraritenes slektslinje og som en av forfedrene til tempelsangeren Etan, som tjenestegjorde i helligdommen under kong David. Den andre og mest fremtredende Abdi er far til levitten Kish av Meraris slekt. Kish var blant de levittene som tok aktivt del i den gjennomgripende renselsen av Jerusalems tempel under kong Hiskias religiøse reform på 700-tallet f.Kr. – en reform som søkte å gjenreise ren tilbedelse etter utbredt avgudsdyrkelse under kong Ahas. Den tredje personen med dette navnet, en sønn av Elam, var ikke levitt men en vanlig israelitt som levde i tiden etter hjemkomsten fra det babylonske eksilet. Han er nevnt blant dem som hadde giftet seg med fremmede kvinner og som forpliktet seg til å oppløse disse ekteskapene etter Esras inntrengende formaninger om troskap mot pakten. Til sammen illustrerer disse tre skikkelsene ulike aspekter ved Israels troshistorie: den liturgiske tjenestens kontinuitet, kampene for religiøs reform og utfordringene ved å bevare religiøs identitet i en flerkulturell kontekst.",
+      "title": "Levitter og israelitt ved navn Abdi",
+      "score": 9,
+      "reason": "[minor] Skrivefeil i rollen 'forfar til tempelsangeren Etan' – skal være 'forfader til tempelsangeren Etan'.; [minor] Skrivefeil i rollen 'israelitt i etteksilsk tid' – skal være 'israelitt i ettereksilsk tid'.; [minor] Family-objektet representerer kun én av de tre personene som bærer navnet Abdi. Siden dette er en sammensatt profil, kunne man vurdere å inkludere 'etan' blant children (for den første Abdi som forfader) eller tydeliggjøre at family-feltet primært gjelder den andre Abdi (far til Kish). Men gitt strukturens begrensninger er dette akseptabelt.; [minor] Versnummereringen i 1 Krøn 6 kan variere mellom den hebraiske masoretiske teksten og andre tradisjoner. I mange oversettelser er Abdi nevnt i 6:44 (som tilsvarer MT 6:29). Fotnotene dekker dette, men det er verdt å bemerke at versreferansen 6:29-30 følger MT-nummereringen.; [minor] Tittelen 'Levitter og israelitt ved navn Abdi' er grammatisk litt klosset. 'Levitter' er flertall mens 'israelitt' er entall. Bedre å skrive f.eks. 'Levitter og israelitter ved navn Abdi' eller omformulere.",
+      "date": "2026-04-05"
+    },
+    {
+      "summary": "Det hebraiske navnet Abdi (עַבְדִּי), som betyr 'min tjener' og sannsynligvis er en kortform av Obadja ('Herrens tjener'), tilhører minst tre ulike personer i Det gamle testamentet. Den første opptrer i den levittiske slektslinjen i 1. Krønikebok som sønn av Malluk blant Meraritene, og regnes blant forfedrene til tempelsangeren Etan, som virket i helligdommens musikktjeneste under kong David. Den andre – og mest fremtredende – Abdi er far til levitten Kish av Meraris slekt. Kish deltok aktivt i den gjennomgripende renselsen av Jerusalems tempel under kong Hiskias reform på 700-tallet f.Kr., en reform som tok sikte på å gjenreise ren tilbedelse etter den utbredte avgudsdyrkelsen under kong Ahas. Den tredje personen med dette navnet var sønn av Elam, ikke levitt men en alminnelig israelitt som levde etter hjemkomsten fra det babylonske eksilet. Han nevnes blant dem som hadde giftet seg med fremmede kvinner og som under Esras veiledning forpliktet seg til å oppløse disse ekteskapene av troskap mot pakten med Gud. Disse tre skikkelsene belyser tilsammen sentrale aspekter ved Israels troshistorie: den liturgiske tjenestens kontinuitet gjennom generasjonene, kampen for religiøs fornyelse og reform, og utfordringene ved å opprettholde religiøs identitet i møte med kulturell blanding.",
+      "title": "Levitter og israelitter ved navn Abdi",
+      "score": 9,
+      "reason": "[major] Profilen samler tre ulike personer under ett familieoppslag. 'father' er satt til 'malluk' (som gjelder den første Abdi), mens 'children' inneholder 'kish' (som gjelder den andre Abdi). Den tredje Abdi har 'elam' som far. Når man har én samlet profil for flere personer, bør familiefeltet reflektere alle tre, eller i det minste tydeliggjøre at det gjelder ulike personer. Nå blander det to ulike personers familierelasjoner i ett felt.; [minor] Rollen 'israelitt i ettereksilsk tid' er litt vag. Det kan presiseres til f.eks. 'israelitt av Elams slekt i ettereksilsk tid' for bedre å identifisere den tredje Abdi.; [minor] Era er satt til 'divided-kingdom', men profilen dekker tre ulike tidsperioder: Davids tid (forent kongedømme), det delte kongedømmet (Hiskias tid) og ettereksilsk tid. Siden profilen omhandler flere personer fra ulike epoker, er det vanskelig å velge én era. 'divided-kingdom' er rimelig som den mest fremtredende, men det kan nevnes i en fotnote at profilen spenner over flere epoker.; [minor] 1 Krøn 6:29-30 i den hebraiske teksten er riktig referanse, men som fotnoten selv nevner, tilsvarer dette 6:44 i andre tradsjoner. Det er greit å beholde den hebraiske nummereringen, men vers 29-30 bør verifiseres – i noen oppslag er det vers 44 som nevner Abdi. Referansen er akseptabel, men leseren bør være klar over forskjellen.; [minor] Sammendraget er svært godt, men setningen 'tilsammen' bør skrives 'til sammen' (to ord) for korrekt norsk rettskrivning.",
+      "date": "2026-04-05"
+    }
+  ],
+  "footnotes": [
+    {
+      "text": "Navnet Abdi (עַבְדִּי) betyr 'min tjener' på hebraisk og er trolig en kortform av det teoforiske navnet Obadja (עֹבַדְיָה), som betyr 'Herrens tjener'. Slike forkortede navneformer var vanlige i det gamle Israel og er attestert på segl og ostraka fra jernalderen funnet i arkeologiske utgravninger.",
+      "source": "lingvistisk"
+    },
+    {
+      "text": "Merari-levittene utgjorde en av de tre hovedgrenene av Levis stamme, ved siden av Kehat og Gershon. De hadde ansvar for transport og vedlikehold av tabernakelets ytre strukturer, og senere for ulike tjenester i tempelet, inkludert musikktjeneste.",
+      "source": "teologisk"
+    },
+    {
+      "text": "Kong Hiskias tempelreform (ca. 715–686 f.Kr.) var en av de mest gjennomgripende religiøse reformene i Juda rike. Levittene spilte en sentral rolle i å rense tempelet fra avgudsdyrkelse som hadde fått innpass under forgjengeren Ahas. Assyriske annaler fra Sankerib bekrefter Hiskias betydning som hersker, noe som indirekte støtter den bibelske fremstillingen av hans reformer.",
+      "source": "historisk"
+    },
+    {
+      "text": "Problemet med fremmede hustruer i Esras tid (ca. 458 f.Kr.) handlet om faren for religiøs synkretisme. Esra krevde at israelittiske menn som hadde giftet seg med kvinner fra omkringliggende folk, skulle oppløse disse ekteskapene for å bevare folkets religiøse og kulturelle identitet etter hjemkomsten fra det babylonske eksilet.",
+      "source": "teologisk"
+    },
+    {
+      "text": "Ifølge rabbinsk tradisjon (Talmud Bavli, Arakhin 11a) var tempelsangen en uunnværlig del av gudstjenesten, sidestilt med ofringene. Meraritenes slektslinje, som den første Abdi tilhørte, var knyttet til denne liturgiske musikktjenesten.",
+      "source": "rabbinsk"
+    },
+    {
+      "text": "Versinndelingen i 1. Krønikebok kapittel 6 varierer mellom den hebraiske masoretiske teksten og andre teksttradisjoner. I den hebraiske teksten finner vi Abdi i 6:29, mens dette tilsvarer 6:44 i oversettelser som følger en annen kapittelinndeling. Dette er viktig å ta hensyn til ved oppslag i ulike teksttradisjoner.",
+      "source": "lingvistisk"
+    },
+    {
+      "text": "Arkeologiske funn fra Tell Arad og Lakhish inkluderer ostraka med personnavn som inneholder elementet 'abd' (tjener), noe som bekrefter at navnetypen Abdi var utbredt i det gamle Juda. Slike funn gir verdifull kontekst for å forstå navngivningspraksis i bibelsk tid.",
+      "source": "arkeologisk"
+    },
+    {
+      "text": "Profilen omhandler tre ulike personer med navnet Abdi fra tre forskjellige tidsperioder: det forente kongedømmet under David (ca. 1000-tallet f.Kr.), det delte kongedømmet under Hiskia (ca. 700-tallet f.Kr.) og den ettereksilske perioden under Esra (ca. 450-tallet f.Kr.). Epoketilordningen 'divided-kingdom' reflekterer den mest fremtredende av de tre.",
+      "source": "annet"
     }
   ]
 }

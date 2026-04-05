@@ -1,20 +1,22 @@
 {
   "id": "adaja",
   "name": "Adaja",
-  "title": "Levittisk stamfar og prest",
+  "title": "Far til Jedida og navn båret av flere bibelske personer",
   "era": "divided-kingdom",
-  "lifespan": "ca. 800–700 f.Kr.",
-  "summary": "Adaja er et navn som forekommer flere steder i Det gamle testamente og refererer til ulike personer. Den mest kjente Adaja var far til Maaseja og farfar til kong Josias' mor Jedida, samt en levitt i Judas stamme. Navnet betyr 'Herren har prydet' eller 'Herren har smykket'.",
+  "lifespan": "ca. 700–600 f.Kr. (Adaja fra Boskat)",
+  "summary": "Adaja er et hebraisk personnavn som betyr 'Jahve har prydet', og det bæres av flere ulike personer i Det gamle testamente. Den mest fremtredende blant disse er Adaja fra Boskat i Judas lavland, far til Jedida, som ble mor til reformkongen Josia av Juda. Gjennom denne tilknytningen hadde Adaja en indirekte, men betydningsfull rolle i den davidiske kongelinjen og i Judas religiøse fornyelse under Josia. Andre bærere av navnet omfatter en levitt i Asafs slektslinje med tilknytning til tempelmusikken, en prest kalt Adaja, sønn av Jeroham, som tjenestegjorde i Jerusalem etter hjemkomsten fra det babylonske eksilet, samt to menn som ble pålagt å sende bort sine fremmede hustruer under Esras reformer. At navnet forekommer over et spenn på flere århundrer, fra det delte rikets tid til den etteksilske perioden, vitner om dets vedvarende popularitet som et uttrykk for tillit til Jahves godhet og omsorg.",
   "roles": [
-    "prest"
+    "far til kongemor",
+    "prest",
+    "levitt"
   ],
   "family": {
-    "father": "ethan",
+    "father": null,
     "mother": null,
     "siblings": [],
     "spouse": null,
     "children": [
-      "maaseja"
+      "jedida"
     ]
   },
   "relatedPersons": [
@@ -25,22 +27,21 @@
   ],
   "keyEvents": [
     {
-      "title": "Adaja i Josias' slektslinje",
-      "description": "Adaja nevnes som farfar til Jedida, mor til den gudfryktige kong Josia av Juda. Gjennom sin slektslinje bidro han til den davidiske kongelinjen.",
+      "title": "Adaja som far til Jedida",
+      "description": "Adaja fra Boskat nevnes som far til Jedida, som ble mor til den gudfryktige kong Josia av Juda. Gjennom sin datter hadde Adaja en indirekte tilknytning til den davidiske kongelinjen og til Josias viktige religiøse reformer.",
       "verses": [
         {
           "bookId": 12,
           "chapter": 22,
           "verses": [
-            1,
-            2
+            1
           ]
         }
       ]
     },
     {
       "title": "Adaja blant de levittiske slektene",
-      "description": "En Adaja nevnes blant levittene i Kronikebøkenes slektstavler, som en del av den levittiske tjenesten i tempelet.",
+      "description": "En Adaja nevnes blant levittene i Kronikebøkenes slektstavler, knyttet til Asafs slektslinje og den levittiske tjenesten ved tempelet.",
       "verses": [
         {
           "bookId": 13,
@@ -53,8 +54,8 @@
       ]
     },
     {
-      "title": "Adaja i Nehemjas tid",
-      "description": "En person ved navn Adaja, sønn av Jeroham, nevnes blant prestene som bosatte seg i Jerusalem etter tilbakekomsten fra det babylonske eksilet.",
+      "title": "Adaja som prest i Jerusalem etter eksilet",
+      "description": "En prest ved navn Adaja, sønn av Jeroham, nevnes blant prestene som bosatte seg i Jerusalem etter tilbakekomsten fra det babylonske eksilet, med oppgave å tjenestegjøre i det gjenreiste tempelet.",
       "verses": [
         {
           "bookId": 16,
@@ -67,8 +68,8 @@
       ]
     },
     {
-      "title": "Adaja i Kronikebøkene som prest",
-      "description": "I 1. Krønikebok nevnes Adaja som en av prestene som tjenestegjorde i Jerusalem, sønn av Jeroham, som deltok i gjenoppbyggingen av det religiøse livet.",
+      "title": "Adaja som prest i Kronikebøkene",
+      "description": "I 1. Krønikebok nevnes Adaja, sønn av Jeroham, som en av prestene som tjenestegjorde i Jerusalem. Dette er trolig samme person som nevnes i Nehemjas parallelle liste.",
       "verses": [
         {
           "bookId": 13,
@@ -82,7 +83,7 @@
     },
     {
       "title": "Adaja blant dem som hadde tatt fremmede hustruer",
-      "description": "I Esras tid nevnes en Adaja blant dem som hadde tatt seg fremmede hustruer og ble pålagt å sende dem bort for å bevare folkets renhet.",
+      "description": "I Esras tid nevnes to menn ved navn Adaja blant dem som hadde tatt fremmede hustruer og ble pålagt å sende dem bort som del av Esras religiøse reformer for å bevare folkets troskap mot Jahve.",
       "verses": [
         {
           "bookId": 15,
@@ -140,6 +141,59 @@
       "bookId": 16,
       "chapterId": 11,
       "verseId": 12
+    }
+  ],
+  "versions": [
+    {
+      "summary": "Adaja er et navn som forekommer flere steder i Det gamle testamente og refererer til ulike personer. Den mest kjente Adaja var far til Maaseja og farfar til kong Josias' mor Jedida, samt en levitt i Judas stamme. Navnet betyr 'Herren har prydet' eller 'Herren har smykket'.",
+      "title": "Levittisk stamfar og prest",
+      "score": 4,
+      "reason": "[minor] Tittelen 'Levittisk stamfar og prest' er noe misvisende siden profilen omhandler flere ulike personer med navnet Adaja, ikke bare levitter/prester. En bredere tittel ville vært mer presis.; [major] Siden profilen omhandler flere personer med navnet Adaja fra ulike tidsperioder (delt rike, eksil, tilbakekomst), er det misvisende å kun angi 'divided-kingdom'. Den mest fremtredende Adaja (farfar til Jedida) tilhører delt-rike-perioden, men andre tilhører retur-epoken. For en samleprofil bør man velge den mest sentrale personens epoke, men dette bør tydeliggjøres.; [minor] Lifespan 'ca. 800–700 f.Kr.' passer for Adaja som farfar til Jedida (Josias mor), men profilen samler flere personer, så dette kan være forvirrende. Josias regjerte ca. 640–609 f.Kr., og hans mor Jedida var datter av Adaja fra Boskat (2 Kong 22:1). Farfar-relasjonen til Jedida er usikker – teksten sier at Jedida var 'datter av Adaja', ikke datter av Maaseja. Tidsrammen bør justeres.; [major] Oppsummeringen sier at Adaja var 'far til Maaseja og farfar til kong Josias' mor Jedida'. Men ifølge 2 Kong 22:1 var Jedida 'datter av Adaja fra Boskat' – altså var Adaja Jedidas far, ikke farfar. Maaseja nevnes ikke i denne sammenhengen. Teksten blander tilsynelatende to ulike personer/relasjoner.; [major] Faren er satt til 'ethan', men dette stemmer ikke for den mest kjente Adaja. I 1 Krøn 6:41 nevnes en Ethan i levittenes slektstavle, men koblingen til akkurat denne Adaja er usikker. For Adaja presten (Neh 11:12, 1 Krøn 9:12) er faren Jeroham. Familierelasjonene bør presiseres basert på hvilken Adaja som er primærfokus.; [major] Barn er satt til 'maaseja', men 2 Kong 22:1 sier at Jedida var datter av Adaja – det er altså Jedida, ikke Maaseja, som er barnet til den Adaja som er knyttet til Josias' slektslinje. Maaseja er ikke nevnt som barn av denne Adaja i Bibelen.; [minor] Rollene inkluderer bare 'prest', men profilen beskriver flere Adaja-er med ulike roller. Noen var prester, en var stamfar til kongemoderen Jedida, og en annen nevnes i forbindelse med å ha tatt fremmed hustru. 'Stamfar' eller 'levitt' kunne legges til.; [major] Hendelsen sier Adaja var 'farfar til Jedida', men 2 Kong 22:1 sier at Jedida var 'datter av Adaja fra Boskat'. Adaja var altså Jedidas far, ikke farfar. Beskrivelsen må korrigeres.; [minor] Versreferansen Esra 10:29,39 lister vers 29 og 39 som separate vers. Det finnes faktisk to ulike Adaja-er i Esra 10 – en i vers 29 (blant Bani-sønnene) og en i vers 39 (blant Shimei-sønnene). Det kan være verdt å presisere dette, og formateringen bør vise at dette er to separate forekomster.",
+      "date": "2026-04-04"
+    },
+    {
+      "summary": "Adaja er et navn som forekommer flere steder i Det gamle testamente og refererer til ulike personer. Den mest kjente er Adaja fra Boskat, far til Jedida, som var mor til den gudfryktige kong Josia av Juda. En annen fremtredende Adaja var en prest, sønn av Jeroham, som tjenestegjorde i Jerusalem. I tillegg nevnes personer med dette navnet blant levittene i slektstavlene og blant dem som hadde tatt fremmede hustruer i Esras tid. Navnet betyr 'Jahve har prydet' eller 'Jahve har smykket'.",
+      "title": "Bibelsk personnavn båret av flere personer",
+      "score": 7,
+      "reason": "[minor] Tittelen 'Bibelsk personnavn båret av flere personer' er noe generisk og upersonlig. En mer beskrivende tittel som knytter navnet til den mest kjente personen ville gi bedre kontekst.; [major] Siden profilen dekker flere personer fra ulike tidsperioder (delt rike, eksil, etter eksilet), er 'divided-kingdom' for snevert. Profilen fokuserer primært på Adaja fra Boskat (delt rike-perioden), men inkluderer også etterksilske personer. Dersom profilen primært handler om Adaja fra Boskat, er 'divided-kingdom' akseptabelt, men det bør tydeliggjøres.; [minor] I Esra 10:29 og 10:39 nevnes to forskjellige Adaja-er. Versreferansen lister vers 29 og 39 som separate vers i samme referanse, men dette er korrekt i den forstand at begge versene er i samme kapittel. Det bør imidlertid gjøres tydelig at dette representerer to ulike personer.; [minor] Family-objektet representerer kun Adaja fra Boskat, noe som er rimelig gitt at han er den mest fremtredende, men dette bør gjenspeiles bedre i profilen.; [minor] Sammendraget er godt formulert men kan forbedres med tydeligere struktur og litt mer dybde om den viktigste Adaja (fra Boskat) og hans betydning i den davidiske kongelinjen.; [minor] I 1 Krøn 6:41-42 (hebraisk nummerering) - det bør verifiseres at versreferansen er korrekt. I noen oversettelser kan nummereringen i 1 Krøn 6 variere. Adaja nevnes som levitt i Asafs slektslinje i 1 Krøn 6:26 (hebraisk 6:41).",
+      "date": "2026-04-04"
+    },
+    {
+      "summary": "Adaja er et hebraisk personnavn som betyr 'Jahve har prydet' og bæres av flere personer i Det gamle testamente. Den mest fremtredende er Adaja fra Boskat i Judas lavland, som var far til Jedida – mor til den gudfryktige reformkongen Josia av Juda. Gjennom denne forbindelsen spilte Adaja en indirekte rolle i den davidiske kongelinjen og i Judas religiøse fornyelse. Blant andre med dette navnet finner vi en levitt i Asafs slektslinje, en prest ved navn Adaja, sønn av Jeroham, som tjenestegjorde i Jerusalem etter det babylonske eksilet, samt to menn som hadde tatt fremmede hustruer i Esras reformtid. Navnets utbredelse over flere århundrer vitner om dets vedvarende popularitet som uttrykk for tillit til Jahves omsorg og velvilje.",
+      "title": "Far til Jedida og navn båret av flere bibelske personer",
+      "score": 8,
+      "reason": "[minor] Profilen fokuserer primært på Adaja fra Boskat, men family-objektet gjenspeiler kun denne ene personen. Det kunne vært nyttig å eksplisitt nevne at family-relasjonene gjelder den fremste Adaja (fra Boskat), men dette er akseptabelt slik det står.; [minor] Referansen til 1 Krøn 6:41-42 for en levitt i Asafs slektslinje bør verifiseres nøye. Avhengig av versnummereringen i ulike tradisjoner kan det variere noe. I den hebraiske teksten tilsvarer versene i 1 Krøn 6 andre numre enn i enkelte oversettelser. Verset bør sjekkes mot den aktuelle nummereringen. I mange tradisjoner er det 1 Krøn 6:26 (hebraisk) eller tilsvarende. Likevel er det ikke nødvendigvis feil, da nummerering varierer.; [minor] Sammendraget er godt og innholdsrikt, men er relativt langt. Det dekker imidlertid alle viktige aspekter ved navnet Adaja og de ulike personene. Ettersom to tidligere versjoner har brukt lignende åpninger, er den nåværende formuleringen tilstrekkelig differensiert.; [minor] Rollen 'stamfar til kongemor' er litt uvanlig formulert. Man kunne vurdere 'bestefar til kong Josia' eller 'morfar til kong Josia', men 'stamfar til kongemor' er ikke direkte feil – det beskriver relasjonen til Jedida. 'Far til kongemor' ville imidlertid vært mer presist enn 'stamfar'.; [minor] Referansen 1 Krøn 6:41-42 for den levittiske Adaja i Asafs slektslinje er problematisk. I mange bibeloversettelser finnes Adaja (Iddo/Adaja) i 1 Krøn 6:26 (hebraisk nummerering) eller 6:41 (LXX/engelsk nummerering). Versnummereringen bør sjekkes, men dette kan variere mellom tradisjoner.",
+      "date": "2026-04-04"
+    }
+  ],
+  "footnotes": [
+    {
+      "text": "Navnet Adaja (hebraisk: עֲדָיָה, ʿĂdāyāh) betyr 'Jahve har prydet' eller 'Jahve har smykket'. Det er sammensatt av roten עדה (ʿādāh, 'å pryde/smykke') og det teofore elementet יה (Yah, en kortform av JHVH). Teofore navn med Jah/Yah-elementet var svært utbredt i det gamle Israel og Juda, og vitner om en sterk tradisjon for å uttrykke gudstillit gjennom navngivning.",
+      "source": "lingvistisk"
+    },
+    {
+      "text": "Adaja fra Boskat nevnes som far til Jedida, kong Josias mor (2 Kong 22:1). Boskat (hebraisk: בָּצְקַת) var en by i Juda lavland (Sjefela), nevnt i Jos 15:39. Arkeologisk har området blitt identifisert med Tell el-Baṣṣi, sørøst for Lakisj, noe som plasserer denne Adaja i det sørlige Juda-rikets kjerneområde.",
+      "source": "arkeologisk"
+    },
+    {
+      "text": "Flere personer med navnet Adaja forekommer i de bibelske skriftene, noe som var vanlig med teofore navn i Israel. Det at navnet dukker opp i ulike tidsperioder – fra det delte rikets tid til etter det babylonske eksilet – viser navnets vedvarende popularitet som uttrykk for tro på Jahves velvilje og omsorg.",
+      "source": "teologisk"
+    },
+    {
+      "text": "I Neh 11:12 og 1 Krøn 9:12 nevnes en prest Adaja, sønn av Jeroham. Disse to tekstene inneholder parallelle slektslister for prester som tjenestegjorde i Jerusalem etter tilbakekomsten fra Babylon. Slike lister var avgjørende for å bekrefte prestelinjens legitimitet i den gjenreiste tempelkulten.",
+      "source": "historisk"
+    },
+    {
+      "text": "I Esra 10:29 og 10:39 nevnes to ulike menn ved navn Adaja blant dem som hadde tatt fremmede hustruer. Esras reformer var motivert av frykten for religiøs synkretisme, og kravet om å skille seg fra ikke-israelittiske koner reflekterer en streng fortolkning av Toraens forbud mot blandingsekteskap med kanaaneiske folkegrupper.",
+      "source": "teologisk"
+    },
+    {
+      "text": "Den levittiske Adaja som nevnes i 1 Krønikebok 6 knyttes til Asafs slektslinje. Asaf var en av de fremste tempelmusikerne under kong David, og hans etterkommere hadde en fremtredende rolle i tempelmusikken og den liturgiske tradisjonen gjennom flere generasjoner.",
+      "source": "historisk"
+    },
+    {
+      "text": "I rabbinsk tradisjon ble kong Josias fremhevet som en av de mest gudfryktige kongene i Judas historie. At hans mors slektsbakgrunn spesifikt nevnes i teksten – med hennes far Adaja fra Boskat – antyder at morens og hennes families fromhet ble ansett som medvirkende til Josias karakter og reformvilje.",
+      "source": "rabbinsk"
     }
   ]
 }

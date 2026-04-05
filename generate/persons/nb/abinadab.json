@@ -3,11 +3,11 @@
   "name": "Abinadab (Sauls sønn)",
   "title": "Israels falne prins",
   "era": "united-kingdom",
-  "lifespan": "ca. 1050-1010 f.Kr.",
-  "summary": "Abinadab var den andre sønnen til kong Saul og tjente trofast ved sin fars side i kampen mot filisterne. Han falt sammen med sin far og brødrene Jonatan og Malkisua i det katastrofale slaget ved Gilboa-fjellet, et slag som markerte slutten på Sauls dynasti.",
+  "lifespan": "ca. 1050–1010 f.Kr.",
+  "summary": "Abinadab var sønn av kong Saul og kjempet lojalt ved sin fars side i Israels mange konfrontasjoner med filisterne. Ved det skjebnesvangre slaget på Gilboa-fjellet falt han sammen med sin far og brødrene Jonatan og Malkisua (1 Sam 31:2), et ødeleggende nederlag som i praksis knuste Sauls kongehus og åpnet veien for at David kunne samle hele Israel under sitt styre. Selv om Isj-Bosjet ble innsatt som konge over nordriket for en kort periode, representerte katastrofen ved Gilboa det avgjørende vendepunktet. Abinadabs navn, som betyr 'min far er edel', peker mot den kongelige arven han bar med seg – en arv som endte på slagmarken fremfor på tronen.",
   "roles": [
-    "kriger",
-    "prins"
+    "prins",
+    "kriger"
   ],
   "family": {
     "father": "saul",
@@ -31,52 +31,49 @@
   "keyEvents": [
     {
       "title": "Nevnt blant Sauls sønner",
-      "description": "Abinadab nevnes som en av Sauls fire sønner, født av hans hustru Akinoam.",
+      "description": "Abinadab nevnes som en av Sauls sønner. I 1 Krøn 8:33 og 9:39 listes han som den andre sønnen etter Jonatan, og identifiseres gjerne med Jisjvi nevnt i 1 Sam 14:49.",
       "verses": [
         {
           "bookId": 9,
           "chapter": 14,
-          "verse": [
+          "verses": [
             49
           ]
-        }
-      ]
-    },
-    {
-      "title": "I kamp mot filisterne",
-      "description": "Abinadab deltok sammen med sin far og brødre i de pågående krigene mot filisterne som preget Sauls regjeringstid.",
-      "verses": [
+        },
         {
-          "bookId": 9,
-          "chapter": 31,
-          "verse": [
-            2
+          "bookId": 13,
+          "chapter": 8,
+          "verses": [
+            33
+          ]
+        },
+        {
+          "bookId": 13,
+          "chapter": 9,
+          "verses": [
+            39
           ]
         }
       ]
     },
     {
-      "title": "Slaget ved Gilboa",
-      "description": "I det avgjørende slaget ved Gilboa-fjellet kjempet Abinadab side om side med sin far og brødre mot den overveldende filisterhæren.",
+      "title": "Slaget ved Gilboa og fallet",
+      "description": "I det avgjørende slaget ved Gilboa-fjellet kjempet Abinadab side om side med sin far Saul og brødrene Jonatan og Malkisua mot den overveldende filisterhæren. Alle tre brødrene falt i kampen, og Saul tok deretter sitt eget liv.",
       "verses": [
         {
           "bookId": 9,
           "chapter": 31,
-          "verse": [
+          "verses": [
             1,
-            2
+            2,
+            6
           ]
-        }
-      ]
-    },
-    {
-      "title": "Falt i kamp",
-      "description": "Abinadab ble drept av filisterne sammen med brødrene Jonatan og Malkisua, like før hans far Saul tok sitt eget liv.",
-      "verses": [
+        },
         {
-          "bookId": 9,
-          "chapter": 31,
-          "verse": [
+          "bookId": 13,
+          "chapter": 10,
+          "verses": [
+            1,
             2,
             6
           ]
@@ -84,19 +81,62 @@
       ]
     },
     {
-      "title": "Davids klagesang",
-      "description": "Etter at David mottok nyheten om nederlaget, sang han en klagesang over Saul og Jonatan som også omfattet de andre falne.",
+      "title": "Davids klagesang over de falne",
+      "description": "Etter at David mottok nyheten om nederlaget ved Gilboa, sang han en gripende klagesang over Saul og Jonatan. Abinadab nevnes ikke ved navn i klagesangen, men som en av de falne sønnene av Saul var han utvilsomt blant dem som ble sørget over i denne nasjonale katastrofen.",
       "verses": [
         {
           "bookId": 10,
           "chapter": 1,
-          "verse": [
+          "verses": [
             17,
+            19,
             25,
             27
           ]
         }
       ]
+    }
+  ],
+  "versions": [
+    {
+      "summary": "Abinadab var den andre sønnen til kong Saul og tjente trofast ved sin fars side i kampen mot filisterne. Han falt sammen med sin far og brødrene Jonatan og Malkisua i det katastrofale slaget ved Gilboa-fjellet, et slag som markerte slutten på Sauls dynasti.",
+      "title": "Israels falne prins",
+      "score": 6,
+      "reason": "[critical] Feltet heter 'verse' i input, men skal være 'verses' (array) i henhold til JSON-skjemaet. Alle keyEvents har 'verse' i stedet for 'verses'. Dette må rettes.; [minor] Davids klagesang i 2 Sam 1:17-27 nevner ikke Abinadab eksplisitt ved navn. Klagesangen er rettet mot Saul og Jonatan. Det kan være misvisende å inkludere dette som en nøkkelhendelse for Abinadab. Beskrivelsen bør nyanseres, eller hendelsen kan fjernes.; [minor] Hendelsen 'I kamp mot filisterne' og 'Slaget ved Gilboa' overlapper betydelig – begge refererer til 1 Sam 31:1-2. Det kan være bedre å slå dem sammen for å unngå redundans.; [minor] Oppsummeringen sier at Abinadab var 'den andre sønnen' til Saul. 1 Sam 14:49 lister sønnene som Jonatan, Jisjvi og Malkisua. I 1 Krøn 8:33 og 9:39 listes Abinadab som andre sønn. Det er noe uklarhet rundt rekkefølgen, men det er rimelig å kalle ham den andre sønnen basert på Krønikebøkene.; [minor] Isj-Bosjet (Esjbaal/Isjbosjet) identifiseres ofte med Jisjvi nevnt i 1 Sam 14:49. Denne identifikasjonen er ikke helt sikker, men er en vanlig tolkning. En fotnote kan belyse dette.; [minor] Tittelen 'Israels falne prins' er dramatisk og poetisk, men fungerer godt for å beskrive hans skjebne. Ingen endring nødvendig, men man kan vurdere noe mer nøytralt som 'Sauls sønn og kriger'.; [major] Det mangler fotnoter. En profil bør ha fotnoter som dekker lingvistiske, historiske eller teologiske detaljer – for eksempel navnets betydning, forholdet mellom Jisjvi og Abinadab/Isj-Bosjet, og den historiske konteksten rundt slaget ved Gilboa.; [minor] Parallellberetningen i 1 Krøn 10:1-6 om slaget ved Gilboa og Abinadabs død bør nevnes som en referanse, da den bekrefter opplysningene i 1 Samuel.",
+      "date": "2026-04-04"
+    },
+    {
+      "summary": "Abinadab var en av sønnene til kong Saul og tjente trofast ved sin fars side gjennom de mange kampene mot filisterne. Han falt sammen med sin far og brødrene Jonatan og Malkisua i det katastrofale slaget ved Gilboa-fjellet (1 Sam 31:2), en hendelse som markerte slutten på Sauls dynasti og banet vei for Davids kongedømme over hele Israel. Hans navn, som betyr 'min far er edel', vitner om den kongelige verdigheten han var født inn i, men som endte i tragedie.",
+      "title": "Israels falne prins",
+      "score": 8,
+      "reason": "[minor] Sammendraget er godt skrevet, men det sier at nederlaget 'markerte slutten på Sauls dynasti'. Teknisk sett overlevde Isj-Bosjet og ble innsatt som konge over nordriket i en kort periode (2 Sam 2:8-10), så dynastiet endte ikke umiddelbart med Gilboa. Formuleringen bør nyanseres.; [minor] Det tredje nøkkeleventen ('Davids klagesang over Saul og Jonatan') nevner selv at Abinadab ikke nevnes ved navn i klagesangen. Selv om dette er en relevant kontekst-hendelse, bør beskrivelsen formuleres noe mer nøkternt for å tydeliggjøre den indirekte koblingen.; [minor] Rekkefølgen på søsknene kan justeres for å samsvare bedre med den kronologiske rekkefølgen i Krønikebøkene (1 Krøn 8:33): Jonatan, Malkisua, Abinadab, deretter Isj-Bosjet. Nåværende rekkefølge plasserer Malkisua etter Jonatan men før Isj-Bosjet, noe som stemmer, men det kan være verdt å vurdere konsistens.",
+      "date": "2026-04-04"
+    }
+  ],
+  "footnotes": [
+    {
+      "text": "Navnet Abinadab (אֲבִינָדָב) er sammensatt av de hebraiske elementene 'avi' (אבי, 'min far') og 'nadav' (נדב, 'edel, gavmild'). Betydningen blir dermed 'min far er edel' eller 'edelhetens far'. Navnet forekommer hos flere personer i Det gamle testamentet, blant annet en mann fra Kirjat-Jearim som huset paktskisten (1 Sam 7:1) og en av Isais sønner (1 Sam 16:8).",
+      "source": "lingvistisk"
+    },
+    {
+      "text": "Identifiseringen av Abinadab med Jisjvi (1 Sam 14:49) er en utbredt, men ikke helt sikker, tolkning. I 1 Krøn 8:33 og 9:39 listes Sauls sønner som Jonatan, Malkisua, Abinadab og Esjbaal, mens 1 Sam 14:49 nevner Jonatan, Jisjvi og Malkisua. Navneskiftet fra Esjbaal ('Baals mann') til Isj-Bosjet ('skammens mann') representerer en bevisst redaksjonell praksis der Ba'al-elementet ble erstattet med 'bosjet' (skam), noe som også sees i navnet Mefibosjet (opprinnelig Meribaal).",
+      "source": "teologisk"
+    },
+    {
+      "text": "Gilboa-fjellet (moderne Har Gilboa) ligger sørøst for Jisreel-dalen i det nordlige Israel. Området var strategisk viktig som en naturlig barriere mellom kystsletten og det sentrale høylandet. Arkeologiske undersøkelser har bekreftet betydelig bosetning og militær aktivitet i jernalderen i dette området. Filisternes seier her ga dem midlertidig kontroll over viktige handelsruter og jordbruksland i nord.",
+      "source": "arkeologisk"
+    },
+    {
+      "text": "Parallellberetningen i 1 Krøn 10:1-14 gjenforteller slaget ved Gilboa med en tydelig teologisk fortolkningsramme. Mens 1 Samuel-beretningen fokuserer på det narrative hendelsesforløpet, legger Krønikebøkene eksplisitt til en teologisk vurdering: Sauls død skyldtes hans utroskap mot Herren, inkludert hans konsultasjon av dødningemanersken i En-Dor (1 Krøn 10:13-14).",
+      "source": "teologisk"
+    },
+    {
+      "text": "Filisterne tilhørte de såkalte 'Sjøfolkene' som slo seg ned langs den sørlige kysten av Kanaan i det 12. århundre f.Kr. Arkeologiske utgravninger i byer som Gat (Tell es-Safi), Ekron (Tel Miqne) og Asjkelon har avdekket en sofistikert materiell kultur med tydelige egéiske trekk, inkludert karakteristisk keramikk og arkitektoniske stiler som bekrefter deres opprinnelse i det østlige Middelhavsområdet.",
+      "source": "historisk"
+    },
+    {
+      "text": "Ifølge rabbinsk tradisjon anses Sauls sønner som rettferdige menn som fulgte sin far i lojalitet helt til døden. Talmudiske og midrashiske kilder drøfter Sauls dynasti i sammenheng med spørsmålet om Guds suverenitet over kongemakten og det spenningsfulle forholdet mellom menneskelig lojalitet og guddommelig vilje.",
+      "source": "rabbinsk"
     }
   ]
 }

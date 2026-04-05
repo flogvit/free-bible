@@ -1,11 +1,15 @@
 {
   "id": "adriel",
   "name": "Adriel",
-  "title": "Merabas ektemann fra Mehola",
+  "title": "Merabs ektemann fra Mehola",
   "era": "united-kingdom",
   "lifespan": "ca. 1050–1000 f.Kr.",
-  "summary": "Adriel var sønn av Barsillai fra Mehola. Han ble gift med Merab, Sauls eldste datter, som opprinnelig var blitt lovet til David. Adriels fem sønner ble senere utlevert til gibeonittene og henrettet som soning for Sauls blodskyld mot dem.",
-  "roles": [],
+  "summary": "Adriel, sønn av meholatitten Barsillai, fikk Merab til hustru – kong Sauls eldste datter – etter at kongen brøt sitt løfte om å gi henne til David. Giftermålet hadde sannsynligvis en politisk dimensjon i Sauls strategi for å svekke Davids innflytelse. Adriels navn er imidlertid mest forbundet med den sorgtunge hendelsen som utspilte seg under Davids kongetid: En langvarig hungersnød ble tilskrevet Sauls paktbrudd mot gibeonittene, og som soning utleverte David syv av Sauls etterkommere – blant dem de fem sønnene Merab hadde født Adriel. Denne fortellingen reiser dyptgripende spørsmål om arvet skyld, paktens ufravikelige karakter og hvordan kongers handlinger kunne ramme kommende generasjoner i det israelittiske samfunnet.",
+  "roles": [
+    "Ektemann til Merab",
+    "Svigersønn av kong Saul",
+    "Far til fem sønner som ble utlevert til gibeonittene"
+  ],
   "family": {
     "father": "barsillai-hameholatiten",
     "mother": null,
@@ -21,8 +25,8 @@
   ],
   "keyEvents": [
     {
-      "title": "Merab loves bort til David",
-      "description": "Kong Saul lovet sin eldste datter Merab til David som hustru etter at han hadde utmerket seg i kamp, men Saul hadde baktanker og ønsket at filistrene skulle drepe David.",
+      "title": "Saul lover Merab til David",
+      "description": "Kong Saul lovet sin eldste datter Merab til David som hustru etter at David hadde utmerket seg i kamp mot filistrene. Saul hadde imidlertid baktanker og håpet at filistrene ville ta Davids liv i strid.",
       "verses": [
         {
           "bookId": 9,
@@ -34,8 +38,8 @@
       ]
     },
     {
-      "title": "Merab giftes med Adriel i stedet for David",
-      "description": "Til tross for løftet til David, ga Saul sin datter Merab til Adriel fra Mehola som hustru, noe som var et svik mot David.",
+      "title": "Merab giftes med Adriel",
+      "description": "I strid med løftet til David ga Saul datteren Merab til Adriel, sønn av meholatitten Barsillai. Dette paktssviktet var en del av Sauls vedvarende forsøk på å undergrave Davids posisjon og innflytelse.",
       "verses": [
         {
           "bookId": 9,
@@ -48,7 +52,7 @@
     },
     {
       "title": "Gibeonittenes krav om soning",
-      "description": "Gibeonittene krevde utlevering av syv av Sauls etterkommere som soning for Sauls forsøk på å utrydde dem. David utleverte blant andre Adriels fem sønner med Merab.",
+      "description": "Under en treårig hungersnød søkte David Herren og fikk vite at årsaken var Sauls blodskyld mot gibeonittene. Gibeonittene krevde at syv av Sauls etterkommere ble utlevert til dem for å gjøre soning.",
       "verses": [
         {
           "bookId": 10,
@@ -66,7 +70,7 @@
     },
     {
       "title": "Adriels fem sønner henrettes",
-      "description": "De fem sønnene til Adriel og Merab ble utlevert til gibeonittene og hengt på fjellet for Herrens åsyn, som soning for Sauls blodskyld.",
+      "description": "David utleverte de fem sønnene som Merab hadde født Adriel, sammen med Rispas to sønner, til gibeonittene. De syv ble henrettet på fjellet for Herrens åsyn ved begynnelsen av bygginnhøstingen.",
       "verses": [
         {
           "bookId": 10,
@@ -79,8 +83,8 @@
       ]
     },
     {
-      "title": "Rispas våking over de døde",
-      "description": "Etter henrettelsen av Adriels sønner og andre av Sauls etterkommere, holdt Rispa, Sauls medhustru, vakt over likene for å beskytte dem mot rovdyr, noe som rørte David dypt.",
+      "title": "Rispas våking og begravelsen",
+      "description": "Etter henrettelsen holdt Rispa, mor til to av de drepte, trofast vakt over alle syv likene for å verne dem mot rovfugler og villdyr. Hennes standhaftige hengivenhet rørte kong David, som samlet beinene til de henrettede sammen med beinene til Saul og Jonatan og sørget for en verdig begravelse i Kish' familiengrav.",
       "verses": [
         {
           "bookId": 10,
@@ -106,6 +110,55 @@
       "bookId": 10,
       "chapterId": 21,
       "verseId": 8
+    }
+  ],
+  "versions": [
+    {
+      "summary": "Adriel var sønn av Barsillai fra Mehola. Han ble gift med Merab, Sauls eldste datter, som opprinnelig var blitt lovet til David. Adriels fem sønner ble senere utlevert til gibeonittene og henrettet som soning for Sauls blodskyld mot dem.",
+      "title": "Merabas ektemann fra Mehola",
+      "score": 6,
+      "reason": "[major] Roles-arrayet er tomt. Adriel bør ha minst én rolle, som f.eks. 'Ektemann til Merab' eller 'Svigersønn av Saul'. Selv om han ikke har en fremtredende politisk eller religiøs rolle, bør hans familiære tilknytning beskrives.; [major] Ifølge 2 Sam 21:8 hadde Adriel fem sønner med Merab som ble utlevert til gibeonittene. Selv om navnene deres ikke er nevnt i teksten, bør dette reflekteres i children-feltet, eller det bør noteres at han hadde fem unavngitte sønner.; [minor] Rispas våking er en viktig narrativ detalj, men den handler primært om Rispa (Sauls medhustru og mor til to av de andre henrettede), ikke direkte om Adriel. Det er verdt å presisere at Rispa ikke var mor til Adriels sønner – hun våket over sine egne to sønner samt Adriels fem sønner.; [minor] I beskrivelsen står det 'syv av Sauls etterkommere' – dette er korrekt totalt, men det kan presiseres at det var fem sønner av Adriel og Merab samt to sønner av Rispa og Saul.; [minor] Det mangler fotnoter. Det finnes flere interessante tekstkritiske og lingvistiske detaljer knyttet til Adriel, bl.a. den kjente tekstvarianten i 2 Sam 21:8 der noen manuskripter leser 'Mikal' i stedet for 'Merab'.",
+      "date": "2026-04-04"
+    },
+    {
+      "summary": "Adriel var sønn av Barsillai fra Mehola. Han ble gift med Merab, Sauls eldste datter, som opprinnelig var blitt lovet til David. Sauls brudd på dette løftet var et ledd i hans politiske manøvrer mot David. Adriels fem sønner med Merab ble senere utlevert til gibeonittene og henrettet som soning for Sauls blodskyld mot dem – en hendelse som illustrerer det gammeltestamentlige prinsippet om kollektiv skyld og konsekvensene av paktsbrudd.",
+      "title": "Merabas ektemann fra Mehola",
+      "score": 7,
+      "reason": "[major] Ifølge 2 Sam 21:8 hadde Adriel fem sønner med Merab. Selv om navnene deres ikke er oppgitt i teksten, bør children-feltet reflektere at han hadde fem sønner, eller i det minste ikke stå tomt når keyEvents eksplisitt omtaler dem.; [minor] Sammendraget ligner i stor grad på den tidligere versjonen (versjon 1) og bør omformuleres mer for å gi en friskere fremstilling.; [minor] Beskrivelsen sier 'David utleverte Adriels fem sønner med Merab samt to sønner av Rispa og Saul', men i 2 Sam 21:8 er det David som utleverer dem. Formuleringen er korrekt, men det kan presiseres at dette er sønnene Merab fødte for Adriel.; [minor] Tittelen 'Merabas ektemann fra Mehola' er grei, men kan forbedres til en mer naturlig norsk form, f.eks. 'Merabs ektemann fra Mehola'.",
+      "date": "2026-04-04"
+    },
+    {
+      "summary": "Adriel, sønn av meholatitten Barsillai, ble gift med Merab – kong Sauls eldste datter – etter at Saul brøt sitt løfte om å gi henne til David. Ekteskapet var trolig motivert av politiske hensyn i Sauls kamp for å marginalisere David. Adriels skjebne er uløselig knyttet til en tragisk hendelse under Davids regjeringstid: Da en langvarig hungersnød rammet landet, krevde gibeonittene soning for Sauls overgrep mot dem. De fem sønnene som Merab hadde født Adriel, ble sammen med to av Rispas sønner utlevert og henrettet. Denne hendelsen belyser alvorlige spørsmål om kollektiv skyld, paktbrudd og de vidtrekkende konsekvensene av kongers handlinger i det gamle Israel.",
+      "title": "Merabs ektemann fra Mehola",
+      "score": 8,
+      "reason": "[major] Ifølge 2 Sam 21:8 hadde Adriel fem sønner med Merab som ble utlevert til gibeonittene. Selv om navnene deres ikke er kjent, bør children-feltet reflektere dette. Siden navnene ikke er registrert i Bibelen, kan feltet stå tomt, men det er en inkonsistens med summary og roles som nevner fem sønner. Ideelt sett bør dette kommenteres eller children-feltet oppdateres med en indikasjon.; [minor] ID-en 'barsillai-hameholatiten' bør verifiseres mot den faktiske ID-en i databasen. Hvis det ikke finnes en egen profil for denne Barsillai, kan null være mer passende, eller ID-en bør standardiseres.; [minor] Tittelen 'Merab loves bort til David' har en grammatisk uklarhet. 'Loves bort' er uvanlig norsk – mer presist ville det være 'Merab loves bort til David' → 'Saul lover Merab til David' eller 'Merab blir lovet til David'.; [minor] Sammendraget er godt og grundig, men gitt at dette er tredje versjon bør det skille seg mer fra tidligere versjoner. Det kan strammes noe og gjøres enda mer distinkt i formuleringene.",
+      "date": "2026-04-04"
+    }
+  ],
+  "footnotes": [
+    {
+      "text": "I 2 Sam 21:8 leser den masoretiske teksten «Mikal» i stedet for «Merab» som mor til Adriels fem sønner. De fleste tekstforskere anser dette som en avskriverfeil, ettersom 1 Sam 18:19 tydelig sier at Merab ble gitt til Adriel. Mikal var gift med Paltiel (1 Sam 25:44). Flere gamle manuskripter og oversettelser korrigerer til «Merab».",
+      "source": "lingvistisk"
+    },
+    {
+      "text": "Adriels far Barsillai kalles «meholatitten», noe som knytter familien til Abel-Mehola i Jordandalen. Dette er samme sted som profeten Elisja kom fra (1 Kong 19:16). Byen lå sannsynligvis i den nordlige delen av Jordandalen, et fruktbart jordbruksområde.",
+      "source": "arkeologisk"
+    },
+    {
+      "text": "Gibeonittenes krav om blodhevn (2 Sam 21:1–9) reflekterer en gammel semittisk rettsoppfatning om kollektiv skyld og stedfortredende soning. Sauls brudd på pakten med gibeonittene (Jos 9:15–27) hadde ifølge fortellingen konsekvenser som gikk utover hans egen generasjon.",
+      "source": "teologisk"
+    },
+    {
+      "text": "Navnet Adriel (hebraisk: עַדְרִיאֵל) betyr sannsynligvis «Guds hjord» eller «Guds flokk», sammensatt av עֵדֶר (eder, «hjord/flokk») og אֵל (El, «Gud»). Navnet kan reflektere en pastoral bakgrunn og passer med at familien holdt til i det fruktbare jordbrukslandet ved Jordandalen.",
+      "source": "lingvistisk"
+    },
+    {
+      "text": "Barsillai, Adriels far, bør ikke forveksles med den langt mer kjente Barsillai fra Gilead som hjalp David under Absaloms opprør (2 Sam 17:27; 19:31–39). Tilnavnet «meholatitten» skiller ham tydelig fra den gileadittiske Barsillai.",
+      "source": "historisk"
+    },
+    {
+      "text": "Henrettelsen av Adriels sønner fant sted ved begynnelsen av bygginnhøstingen (2 Sam 21:9). Tidspunktet kan ha hatt rituell betydning i en agrarkontekst, der soningen symbolsk ble knyttet til landets fruktbarhet og Guds velsignelse over avlingen.",
+      "source": "teologisk"
     }
   ]
 }

@@ -3,9 +3,11 @@
   "name": "Abel",
   "title": "Den første martyren",
   "era": "creation",
-  "summary": "Abel var Adams og Evas andre sønn og den første som døde i historien - drept av sin egen bror Kain. Han var sauegjeter og bar fram et offer av de førstefødte fra flokken, som Gud så med velvilje på. Hebreerbrevet kaller ham en troens helt som fremdeles taler gjennom sin tro.",
+  "summary": "Abel var den andre sønnen til Adam og Eva, og den første som ifølge den bibelske fortellingen ble myrdet – drept av sin egen bror Kain. Som sauegjeter bar han fram et offer av de førstefødte fra flokken med fettet, og Gud så med velvilje på offeret hans, til forskjell fra Kains offer. Abels rettferdighet og tro gjør ham til en nøkkelfigur gjennom hele Skriften: Jesus kaller ham 'den rettferdige Abel' (Matt 23:35) og peker på ham som den første i rekken av rettferdige martyrer. Hebreerbrevet fremhever ham som et forbilde på tro, en som fremdeles taler gjennom sin tro selv etter døden (Hebr 11:4). Hans blod ropte fra jorden om rettferdighet – et rop som i kristen teologi peker frem mot Kristi blod, som taler om nåde og forsoning.",
   "roles": [
-    "martyr"
+    "sauegjeter",
+    "martyr",
+    "troens forbilde"
   ],
   "family": {
     "father": "adam",
@@ -38,20 +40,21 @@
     },
     {
       "title": "Det velkomne offeret",
-      "description": "Abel bar fram de førstefødte av sauene sine med fettet, og Gud så med velvilje på hans offer.",
+      "description": "Abel bar fram de førstefødte av sauene sine med fettet, og Gud så med velvilje på hans offer, mens han ikke så med velvilje på Kains offer.",
       "verses": [
         {
           "bookId": 1,
           "chapter": 4,
           "verses": [
-            4
+            4,
+            5
           ]
         }
       ]
     },
     {
       "title": "Drept av Kain",
-      "description": "Kain ble sjalu og lokket Abel ut på marken hvor han drepte ham - det første mordet i historien.",
+      "description": "Kain ble sjalu og lokket Abel ut på marken hvor han drepte ham – det første mordet i den bibelske fortellingen.",
       "verses": [
         {
           "bookId": 1,
@@ -63,28 +66,42 @@
       ]
     },
     {
-      "title": "Blodet roper",
-      "description": "Gud sa til Kain at Abels blod ropte til ham fra jorden og krevde rettferdighet.",
+      "title": "Blodet roper fra jorden",
+      "description": "Gud konfronterte Kain og sa at Abels blod ropte til ham fra jorden. Kain ble forbannet bort fra den åkerjorden som hadde åpnet munnen for å ta imot Abels blod.",
       "verses": [
         {
           "bookId": 1,
           "chapter": 4,
           "verses": [
             10,
-            11
+            11,
+            12
           ]
         }
       ]
     },
     {
       "title": "Troens forbilde",
-      "description": "Hebreerbrevet sier at Abel ved tro bar fram et bedre offer enn Kain, og at han fremdeles taler gjennom sin tro.",
+      "description": "Hebreerbrevet fremhever at Abel ved tro bar fram et bedre offer enn Kain, og at han gjennom dette fikk vitnesbyrd om at han var rettferdig. Han taler fremdeles gjennom sin tro, selv om han er død.",
       "verses": [
         {
           "bookId": 58,
           "chapter": 11,
           "verses": [
             4
+          ]
+        }
+      ]
+    },
+    {
+      "title": "Den rettferdige Abel",
+      "description": "Jesus omtaler Abel som 'den rettferdige Abel' og plasserer ham som den første i rekken av rettferdige som ble drept, fra Abel til Sakarja, sønn av Barakhja.",
+      "verses": [
+        {
+          "bookId": 40,
+          "chapter": 23,
+          "verses": [
+            35
           ]
         }
       ]
@@ -135,6 +152,45 @@
       "bookId": 58,
       "chapterId": 12,
       "verseId": 24
+    }
+  ],
+  "versions": [
+    {
+      "summary": "Abel var Adams og Evas andre sønn og den første som døde i historien - drept av sin egen bror Kain. Han var sauegjeter og bar fram et offer av de førstefødte fra flokken, som Gud så med velvilje på. Hebreerbrevet kaller ham en troens helt som fremdeles taler gjennom sin tro.",
+      "title": "Den første martyren",
+      "score": 6,
+      "reason": "[minor] Tittelen 'Den første martyren' er teologisk interessant, men begrepet 'martyr' innebærer at man dør for sin tro. Abel ble drept av misunnelse, ikke fordi han nektet å fornekte sin tro. En mer presis tittel kunne være 'Den første som ble drept' eller 'Adams og Evas andre sønn'. Likevel er 'Den første martyren' en etablert tradisjon, og Jesus selv refererer til Abel som den første rettferdige som ble drept (Matt 23:35), så tittelen kan forsvares.; [major] Abel hadde flere roller enn bare 'martyr'. Han var sauegjeter (1 Mos 4:2), og han er et troens forbilde ifølge Hebreerbrevet 11:4. Rollene bør utvides til å inkludere minst 'sauegjeter' og 'troens forbilde'.; [minor] Sammendraget er godt, men det kunne også nevne at Jesus selv refererer til Abel som 'den rettferdige Abel' (Matt 23:35), noe som understreker hans bibelske betydning.; [major] Moren til Abel bør refereres med lowercase id 'eva'. Det hebraiske navnet er Havva/Eva. Sjekk at id-en 'eva' stemmer med systemets konvensjoner – hvis systemet bruker 'havva' eller lignende, bør dette oppdateres. Her beholdes 'eva' da det er mest vanlig på norsk.; [minor] Det kunne vært nyttig å inkludere Jesu referanse til Abel i Matt 23:35 som en nøkkelhendelse, der Jesus kaller ham 'den rettferdige Abel' og plasserer ham som den første i rekken av rettferdige som ble drept.; [major] Det mangler fotnoter. En profil om Abel bør ha fotnoter om f.eks. navnets betydning, det teologiske i offerhandlingen, typologisk tolkning av Abel som forbilde på Kristus, og rabbinske tolkninger av Kain og Abel-fortellingen.; [minor] Lifespan-feltet mangler i dataene. Det bør settes til en rimelig verdi, selv om Bibelen ikke oppgir Abels nøyaktige alder. En formulering som 'Ukjent' er passende.",
+      "date": "2026-04-04"
+    },
+    {
+      "summary": "Abel var Adams og Evas andre sønn og den første som ble drept i historien – myrdet av sin egen bror Kain. Han var sauegjeter og bar fram et offer av de førstefødte fra flokken med fettet, som Gud så med velvilje på, i motsetning til Kains offer. Jesus kaller ham 'den rettferdige Abel' (Matt 23:35), og Hebreerbrevet fremhever ham som et troens forbilde som fremdeles taler gjennom sin tro, selv om han er død. Hans blod ropte fra jorden om rettferdighet – et rop som i kristen teologi finner sitt endelige svar i Kristus.",
+      "title": "Den første martyren",
+      "score": 8,
+      "reason": "[minor] Set (hebraisk: שֵׁת) skrives vanligvis 'set' som id, men det kan bemerkes at den norske formen ofte er 'Set'. Som id er lowercase 'set' korrekt. Ingen endring nødvendig.; [minor] Sammendraget er godt, men formuleringen 'den første som ble drept i historien' kan nyanseres litt. Bibelteksten presenterer det som det første mordet i den bibelske fortellingen. En liten presisering til 'den første som ble drept ifølge den bibelske fortellingen' kan være mer presis, men dette er en mindre detalj.; [minor] Fotnotene er grundige og velformulerte. Den fjerde og femte fotnoten overlapper noe med innholdet i summary og med hverandre (begge handler om Abel i NT-perspektiv). De kunne vært slått sammen for å unngå repetisjon, men det er ikke en feil.",
+      "date": "2026-04-05"
+    }
+  ],
+  "lifespan": "Ukjent",
+  "footnotes": [
+    {
+      "text": "Navnet Abel (hebraisk: הֶבֶל, Hevel) betyr 'pust', 'damp' eller 'forgjengelig'. Navnet kan tolkes som et forvarsel om hans korte liv, eller som en teologisk kommentar på livets forgjengelighet – det samme ordet brukes gjentatte ganger i Forkynneren ('tomhet' / 'forgjengelig').",
+      "source": "lingvistisk"
+    },
+    {
+      "text": "Abels offer av de førstefødte fra flokken med fettet (1 Mos 4:4) anses av mange teologer som en forløper til det bibelske prinsippet om førstegrøde-offer og blodsofferet. Noen ser dette som en typologisk pekepinn mot Kristus som Guds Lam – den ultimate offergaven.",
+      "source": "teologisk"
+    },
+    {
+      "text": "I rabbinsk tradisjon (Bereshit Rabba, Targum Pseudo-Jonathan) finnes det omfattende diskusjoner om hva konflikten mellom Kain og Abel egentlig dreide seg om. Noen tradisjoner hevder at de kranglet om fordeling av verden, om Guds nærvær (Shekhina), eller til og med om en kvinne. Talmud (Sanhedrin 37b) bruker Abels blod (som står i flertall på hebraisk: 'blodet ditt' = דָּמֶיךָ) til å lære at å drepe ett menneske er som å drepe en hel verden.",
+      "source": "rabbinsk"
+    },
+    {
+      "text": "Hebreerbrevet 11:4 sier at Abel 'ennå taler, selv om han er død'. Abels blod ropte om rettferdighet fra jorden (1 Mos 4:10), mens Kristi blod ifølge Hebreerbrevet 12:24 'taler sterkere enn Abels blod' – det taler om nåde og tilgivelse snarere enn hevn. Jesus omtaler ham som 'den rettferdige Abel' (Matt 23:35) og plasserer ham som den første i rekken av rettferdige martyrer, noe som etablerer Abel som en sentral skikkelse i frelseshistorien.",
+      "source": "teologisk"
+    },
+    {
+      "text": "Arkeologisk sett reflekterer fortellingen om Kain og Abel den tidlige spenningen mellom nomadisk gjeterkultur og fast jordbrukskultur i det gamle Midtøsten. Denne konflikten mellom herder og bønder er godt dokumentert i sumeriske og mesopotamiske kilder, som fortellingen om Dumuzi (gjeter) og Enkimdu (bonde).",
+      "source": "arkeologisk"
     }
   ]
 }
