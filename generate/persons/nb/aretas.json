@@ -1,21 +1,20 @@
 {
   "id": "aretas",
   "name": "Aretas",
-  "title": "Nabateisk konge",
+  "title": "Nabateisk konge på Paulus' tid",
   "era": "early-church",
   "lifespan": "ca. 9 f.Kr. – 40 e.Kr.",
-  "summary": "Aretas IV var en nabateisk konge som styrte over et rike med hovedstad i Petra. Han er nevnt i Det nye testamentet i forbindelse med apostelen Paulus' flukt fra Damaskus. Hans stattholders forsøk på å gripe Paulus er et viktig vitnesbyrd om de tidlige forfølgelsene av den kristne kirken.",
+  "summary": "Aretas IV, med tilnavnet Philopatris ('den som elsker sitt folk'), var hersker over det nabateiske riket med sete i klippebyen Petra. I Bibelen forekommer hans navn i Paulus' andre brev til korinterne, der apostelen forteller at kongens stattholder (ethnark) voktet byen Damaskus for å pågripe ham. Paulus unnslapp ved å bli firt ned i en kurv gjennom en åpning i bymuren (2 Kor 11:32–33). Denne hendelsen kaster lys over de politiske farene de første kristne forkynnerne sto overfor, og over den nabateiske kongens innflytelse langt utenfor sitt eget kjerneområde. I forkant av sin omvendelse hadde Paulus oppholdt seg i 'Arabia' – sannsynligvis nabateisk territorium – noe som kan ha bidratt til den fiendtligheten han senere møtte. Den jødiske historikeren Josefus beretter at Aretas kom i væpnet konflikt med Herodes Antipas etter at Herodes skilte seg fra Aretas' datter for å gifte seg med Herodias, en begivenhet som også gjenspeiles i evangelienes kritikk av dette ekteskapet.",
   "roles": [
-    "konge"
+    "konge",
+    "nabateisk hersker"
   ],
   "family": {
     "father": null,
     "mother": null,
     "siblings": [],
     "spouse": null,
-    "children": [
-      "herodias-datter"
-    ]
+    "children": []
   },
   "relatedPersons": [
     "paulus",
@@ -23,11 +22,11 @@
   ],
   "keyEvents": [
     {
-      "title": "Aretas' stattholders vakthold i Damaskus",
-      "description": "Kong Aretas' stattholter holdt vakt over byen Damaskus for å gripe apostelen Paulus, som hadde begynt å forkynne evangeliet etter sin omvendelse.",
+      "title": "Stattholderens forsøk på å pågripe Paulus i Damaskus",
+      "description": "Kong Aretas' stattholder (ethnark) holdt vakt over byen Damaskus med det formål å gripe apostelen Paulus. Paulus unngikk pågripelse ved å bli senket ned i en kurv gjennom en åpning i bymuren. Hendelsen vitner om den politiske faren de første kristne forkynnerne møtte fra ulike maktinstanser.",
       "verses": [
         {
-          "bookId": 54,
+          "bookId": 47,
           "chapter": 11,
           "verses": [
             32,
@@ -37,22 +36,21 @@
       ]
     },
     {
-      "title": "Paulus' flukt fra Damaskus",
-      "description": "Paulus ble senket ned i en kurv gjennom en åpning i bymuren for å unnslippe Aretas' stattholders grep, et tidlig eksempel på forfølgelse mot de kristne.",
+      "title": "Paulus' opphold i Arabia",
+      "description": "Etter sin omvendelse dro Paulus til Arabia, et område under nabateisk styre. Bibelen utdyper ikke hva Paulus foretok seg der, men flere forskere har foreslått at dette oppholdet kan ha vekket nabateisk motstand og bidratt til den fiendtligheten han senere opplevde i Damaskus under Aretas' stattholder.",
       "verses": [
         {
-          "bookId": 54,
-          "chapter": 11,
+          "bookId": 48,
+          "chapter": 1,
           "verses": [
-            32,
-            33
+            17
           ]
         }
       ]
     },
     {
-      "title": "Konflikten med Herodes Antipas",
-      "description": "Aretas IV var svigerfar til Herodes Antipas, og etter at Herodes forlot Aretas' datter for å gifte seg med Herodias, førte dette til en militær konflikt mellom de to herskerne.",
+      "title": "Bakgrunnen for konflikten med Herodes Antipas",
+      "description": "Herodes Antipas giftet seg med Herodias etter å ha forlatt sin hustru, som var datter av Aretas IV. Evangelienes omtale av dette ekteskapet danner den bibelske bakgrunnen for den militære konflikten mellom Aretas og Herodes som den jødiske historikeren Josefus beskriver i detalj. Det bør bemerkes at Aretas ikke nevnes ved navn i evangeliene i denne sammenhengen.",
       "verses": [
         {
           "bookId": 41,
@@ -60,19 +58,6 @@
           "verses": [
             17,
             18
-          ]
-        }
-      ]
-    },
-    {
-      "title": "Paulus' opphold i Arabia",
-      "description": "Etter sin omvendelse dro Paulus til Arabia, som var under Aretas' herredømme, noe som kan forklare den nabateiske kongens fiendtlighet mot ham.",
-      "verses": [
-        {
-          "bookId": 55,
-          "chapter": 1,
-          "verses": [
-            17
           ]
         }
       ]
@@ -86,6 +71,59 @@
       "bookId": 47,
       "chapterId": 11,
       "verseId": 32
+    }
+  ],
+  "versions": [
+    {
+      "summary": "Aretas IV var en nabateisk konge som styrte over et rike med hovedstad i Petra. Han er nevnt i Det nye testamentet i forbindelse med apostelen Paulus' flukt fra Damaskus. Hans stattholders forsøk på å gripe Paulus er et viktig vitnesbyrd om de tidlige forfølgelsene av den kristne kirken.",
+      "title": "Nabateisk konge",
+      "score": 4,
+      "reason": "[critical] Bibelreferansen er feil. 2. Korinterbrev har bookId 47, ikke 54. BookId 54 tilsvarer 1. Timoteus. Paulus' flukt fra Damaskus er beskrevet i 2 Kor 11:32-33.; [critical] Samme feil som ovenfor. BookId skal være 47 (2. Korinterbrev), ikke 54 (1. Timoteus).; [critical] Galaterbrevet har bookId 48, ikke 55. BookId 55 tilsvarer 2. Timoteus. Paulus' opphold i Arabia er nevnt i Gal 1:17.; [major] Aretas IV hadde en datter som var gift med Herodes Antipas, men 'herodias-datter' er feil id. Herodias var ikke Aretas' datter – hun var Herodes Antipas' nye kone. Aretas' datter (som Herodes forlot) har ikke et kjent bibelsk navn. Feltet bør enten tømmes eller bruke en korrekt referanse. Det finnes ingen bibelsk id for Aretas' datter.; [minor] Markus 6:17-18 nevner at Herodes tok Herodias, men omtaler ikke Aretas direkte. Referansen gir kontekst for konflikten, men det bør presiseres at Aretas selv ikke er nevnt i dette verset. Konflikten er primært kjent fra Josefus, ikke fra Bibelen.; [minor] Det kan være nyttig å legge til 'hersker' eller 'nabateisk konge' for å presisere rollen, men 'konge' er akseptabelt.; [minor] Sammendraget er godt, men det kan forbedres ved å nevne at Aretas IV også er kjent fra utenombibelske kilder (Josefus) og at konflikten med Herodes Antipas gir viktig historisk kontekst.",
+      "date": "2026-04-05"
+    },
+    {
+      "summary": "Aretas IV var en nabateisk konge som styrte over et rike med hovedstad i Petra. Han er nevnt i Det nye testamentet i forbindelse med apostelen Paulus' flukt fra Damaskus, der kongens stattholder forsøkte å gripe Paulus (2 Kor 11:32-33). Aretas er også kjent fra utenombibelske kilder, særlig historikeren Josefus, som beretter om konflikten mellom Aretas og Herodes Antipas etter at Herodes forlot Aretas' datter for å gifte seg med Herodias. Hendelsene rundt Aretas gir verdifull historisk kontekst for de tidlige forfølgelsene mot den kristne bevegelsen.",
+      "title": "Nabateisk konge",
+      "score": 7,
+      "reason": "[minor] Sammendraget ligner mye på den forrige versjonen (versjon 1) med tilnærmet samme åpningssetning og struktur. Det bør omformuleres mer markant for å skille seg fra tidligere versjoner.; [minor] Koblingen mellom Paulus' opphold i Arabia og Aretas' fiendtlighet er spekulativ. Beskrivelsen bør tydeliggjøre at dette er en mulig, men ikke sikker sammenheng.; [minor] Konflikten med Herodes Antipas er primært kjent fra Josefus, ikke fra Bibelen. Mark 6:17-18 omtaler Herodes' ekteskap med Herodias, men nevner ikke Aretas direkte. Beskrivelsen bør gjøre dette enda tydeligere.; [minor] Rollen 'konge' er korrekt, men det kunne vært nyttig å legge til 'hersker' eller mer spesifikt 'nabateisk hersker' for å gi bedre kontekst.; [minor] Tittelen 'Nabateisk konge' er korrekt, men kunne være mer beskrivende, for eksempel 'Nabateisk konge nevnt i forbindelse med Paulus' flukt'.",
+      "date": "2026-04-05"
+    },
+    {
+      "summary": "Aretas IV, med tilnavnet Philopatris, var hersker over det nabateiske riket med sete i klippebyen Petra. I Bibelen møter vi hans navn i Paulus' andre brev til korinterne, der apostelen forteller hvordan kongens stattholder (ethnark) voktet Damaskus for å pågripe ham, og Paulus måtte flykte ved å bli firt ned i en kurv gjennom bymuren (2 Kor 11:32–33). Denne episoden belyser de farene tidlige kristne forkynnere sto overfor, og den nabateiske kongens politiske innflytelse langt utenfor sitt eget kjerneområde. Ifølge den jødiske historikeren Josefus kom Aretas i konflikt med Herodes Antipas etter at Herodes skilte seg fra Aretas' datter til fordel for Herodias – en begivenhet som også har bibelske berøringspunkter i evangelienes omtale av dette ekteskapet.",
+      "title": "Nabateisk konge på Paulus' tid",
+      "score": 8,
+      "reason": "[minor] Aretas IV hadde en navngitt datter som var gift med Herodes Antipas. Selv om hennes navn ikke er kjent med sikkerhet, kunne det vært nyttig å nevne henne i children-feltet som 'ukjent datter' (eller liknende). Dette ville styrke sammenhengen med keyEvents om konflikten med Herodes Antipas.; [minor] Rollen 'nabateisk hersker' overlapper i stor grad med 'konge'. Vurder å erstatte med noe mer spesifikt som 'politisk rival av Herodes Antipas' eller beholde kun 'konge' supplert med f.eks. 'handelsmonark'.; [minor] Selv om det er korrekt at Bibelen ikke nevner Aretas ved navn i forbindelse med Herodes' ekteskap med Herodias, er dette keyEvent primært basert på Josefus og bibelrelasjonen er indirekte. Beskrivelsen er ærlig om dette, men bør tydeliggjøre dette enda mer for leseren.",
+      "date": "2026-04-05"
+    }
+  ],
+  "footnotes": [
+    {
+      "text": "Aretas IV Philopatris ('den som elsker sitt folk') regjerte det nabateiske riket fra ca. 9 f.Kr. til 40 e.Kr. Nabateerne var et arabisk folk som kontrollerte viktige handelsruter mellom Den arabiske halvøy, Egypt og Middelhavsområdet, med Petra som sin berømte hovedstad hugget ut i sandsteinsfjell.",
+      "source": "historisk"
+    },
+    {
+      "text": "Arkeologiske funn i Petra, inkludert innskrifter og mynter preget med Aretas IVs navn og portrett, bekrefter hans regjeringstid og rikets velstand. Nabateernes sofistikerte vannsystemer, terrasser og monumentale gravfasader vitner om en avansert sivilisasjon.",
+      "source": "arkeologisk"
+    },
+    {
+      "text": "Navnet 'Aretas' er den greske formen av det nabateiske navnet Ḥāritat (חָרִתַת). Det greske Ἁρέτας (Haretas) forekommer i 2 Kor 11:32. Navnet kan bety 'den som behager' eller 'den dydige' på nabateisk.",
+      "source": "lingvistisk"
+    },
+    {
+      "text": "Den jødiske historikeren Josefus (Antiquitates Judaicae 18.5.1–3) gir en detaljert beretning om konflikten mellom Aretas IV og Herodes Antipas. Ifølge Josefus beseiret Aretas Herodes militært, og mange jøder tolket nederlaget som Guds straff over Herodes for henrettelsen av Johannes døperen.",
+      "source": "historisk"
+    },
+    {
+      "text": "Paulus' omtale av Aretas' stattholder (ethnark) i Damaskus (2 Kor 11:32) reiser komplekse historiske spørsmål om nabateisk innflytelse over byen. Noen forskere hevder at Aretas oppnådde kontroll over Damaskus i en periode da romersk overherredømme var svekket, mens andre mener stattholderen ledet et nabateisk handelskvarter innenfor byens murer.",
+      "source": "historisk"
+    },
+    {
+      "text": "At Paulus dro til 'Arabia' (Gal 1:17) etter sin omvendelse betyr sannsynligvis at han reiste til det nabateiske riket. Flere teologer har foreslått at Paulus kan ha drevet misjonsvirksomhet i dette området, noe som potensielt provoserte nabateiske myndigheter og bidro til den fiendtligheten han senere møtte i Damaskus.",
+      "source": "teologisk"
+    },
+    {
+      "text": "Det nabateiske riket ble til slutt annektert av Romerriket i 106 e.Kr. under keiser Trajan og ble den romerske provinsen Arabia Petraea. På Aretas IVs tid var riket imidlertid fortsatt en viktig klientstat med betydelig autonomi og innflytelse i regionen.",
+      "source": "historisk"
     }
   ]
 }

@@ -1,21 +1,22 @@
 {
   "id": "arkelaus",
   "name": "Arkelaus (Herodes' sønn)",
-  "title": "Etnark over Judea",
+  "title": "Etnark over Judea, Samaria og Idumea",
   "era": "jesus",
-  "lifespan": "23 f.Kr. - ca. 18 e.Kr.",
-  "summary": "Arkelaus var sønn av Herodes den store og Maltake, og arvet herredømme over Judea, Samaria og Idumea etter farens død i 4 f.Kr. Han var kjent for sin brutale styremåte, noe som fikk Josef til å bosette seg i Galilea i stedet for Judea da familien vendte tilbake fra Egypt.",
+  "lifespan": "23 f.Kr. – ca. 18 e.Kr.",
+  "summary": "Da Herodes den store døde i 4 f.Kr., fordelte keiser Augustus hans rike mellom tre sønner. Arkelaus, født av Herodes og hans samaritanske hustru Maltake, mottok den mest betydningsfulle delen – Judea, Samaria og Idumea – men fikk bare rang som etnark, ikke den kongetittelen han hadde søkt om. Hans styre ble preget av brutalitet og vilkårlighet fra første stund, og nettopp frykten for denne herskeren er årsaken til at Josef, veiledet av Gud gjennom en drøm, valgte å føre Maria og Jesusbarnet til Nasaret i Galilea i stedet for å vende tilbake til Judea (Matt 2:22–23). Misnøyen med Arkelaus var så utbredt at delegasjoner av både jøder og samaritanere reiste til Roma for å kreve ham avsatt. I 6 e.Kr. grep Augustus inn, avsatte Arkelaus og forviste ham til Gallia. Judea ble deretter lagt direkte under romerske prefekter – en administrativ endring som fikk vidtrekkende konsekvenser for det politiske landskapet i Jesu samtid.",
   "roles": [
-    "konge"
+    "etnark",
+    "hersker"
   ],
   "family": {
     "father": "herodes-den-store",
-    "mother": null,
+    "mother": "maltake",
     "siblings": [
       "herodes-antipas",
       "filip"
     ],
-    "spouse": null,
+    "spouse": "glafyra",
     "children": []
   },
   "relatedPersons": [
@@ -25,22 +26,8 @@
   ],
   "keyEvents": [
     {
-      "title": "Josef frykter Arkelaus",
-      "description": "Da Josef hørte at Arkelaus var blitt konge i Judea etter sin far Herodes, var han redd for å dra dit. Etter å ha blitt varslet i en drøm, dro han i stedet til Galilea.",
-      "verses": [
-        {
-          "bookId": 40,
-          "chapter": 2,
-          "verses": [
-            22,
-            23
-          ]
-        }
-      ]
-    },
-    {
-      "title": "Arvet Judea etter Herodes",
-      "description": "Etter Herodes den stores død ble riket hans delt mellom sønnene. Arkelaus fikk Judea, Samaria og Idumea med tittelen etnark, men ikke kongetittel.",
+      "title": "Arkelaus innsettes som etnark over Judea",
+      "description": "Etter Herodes den stores død i 4 f.Kr. reiste Arkelaus til Roma for å få sitt styre godkjent av keiser Augustus. Keiseren delte riket mellom Herodes' sønner og ga Arkelaus den største delen – Judea, Samaria og Idumea – men bare med tittelen etnark, ikke konge. Matteus bruker likevel det greske verbet 'basileuei' (regjerer som konge) om hans styre, noe som gjenspeiler hans faktiske maktposisjon slik folket opplevde den.",
       "verses": [
         {
           "bookId": 40,
@@ -52,13 +39,14 @@
       ]
     },
     {
-      "title": "Den hellige families bosetting i Nasaret",
-      "description": "På grunn av Arkelaus' brutale styre valgte Josef å bosette seg i byen Nasaret i Galilea, som var under Herodes Antipas' mildere styre. Dette oppfylte profetien om at Jesus skulle kalles nasareer.",
+      "title": "Josef unngår Judea og bosetter seg i Nasaret",
+      "description": "Da Josef fikk vite at Arkelaus hersket i Judea etter sin far, fryktet han å ta familien dit. Advart gjennom en drøm, førte han Maria og Jesusbarnet til Galilea og slo seg ned i byen Nasaret, som lå under Herodes Antipas' mildere jurisdiksjon. Matteus knytter dette til en profetisk tradisjon om at Messias skulle kalles nasareer – et uttrykk som trolig har sammenheng med det hebraiske 'netser' (skudd/kvist) fra Jesaja 11:1.",
       "verses": [
         {
           "bookId": 40,
           "chapter": 2,
           "verses": [
+            22,
             23
           ]
         }
@@ -70,6 +58,59 @@
       "bookId": 40,
       "chapterId": 2,
       "verseId": 22
+    }
+  ],
+  "versions": [
+    {
+      "summary": "Arkelaus var sønn av Herodes den store og Maltake, og arvet herredømme over Judea, Samaria og Idumea etter farens død i 4 f.Kr. Han var kjent for sin brutale styremåte, noe som fikk Josef til å bosette seg i Galilea i stedet for Judea da familien vendte tilbake fra Egypt.",
+      "title": "Etnark over Judea",
+      "score": 5,
+      "reason": "[major] Arkelaus hadde ikke tittelen 'konge'. Augustus nektet ham kongetittelen og ga ham i stedet tittelen 'etnark'. Rollen bør korrigeres til 'etnark' for å være historisk korrekt. Selv om Matt 2:22 bruker verbet 'basileuei' (regjerer som konge), var hans offisielle tittel etnark.; [major] Arkelaus' mor var Maltake (også stavet Malthake), en samaritansk kvinne som var en av Herodes den stores koner. Dette nevnes til og med i summary-teksten, men mangler i family-objektet.; [minor] Arkelaus var gift med Glafyra (Glaphyra), datter av kong Arkelaus av Kappadokia. Dette ekteskapet var kontroversielt fordi hun tidligere hadde vært gift med hans halvbror Aleksander. Det ville styrke profilen å inkludere dette.; [minor] De to første hendelsene ('Josef frykter Arkelaus' og 'Arvet Judea etter Herodes') overlapper betydelig, da begge refererer til Matt 2:22. Disse kunne med fordel slås sammen til én hendelse for å unngå redundans.; [minor] Sammendraget er godt, men kunne med fordel nevne at Arkelaus ble avsatt av romerne i 6 e.Kr. på grunn av sin brutale styremåte og sendt i eksil til Gallia. Dette er en viktig historisk detalj som understreker hans karakter.; [minor] Beskrivelsen sier at Arkelaus ble 'konge', men han fikk aldri kongetittelen – han ble etnark. Selv om det greske ordet i Matt 2:22 er 'basileuei', bør beskrivelsen presisere at han regjerte (uten kongetittel) for historisk nøyaktighet.; [minor] Formuleringen 'profetien om at Jesus skulle kalles nasareer' er omdiskutert. Det finnes ingen enkelt GT-profeti med denne ordlyden. Matteus refererer trolig til en bredere profetisk tradisjon, muligens knyttet til det hebraiske ordet 'netser' (skudd/kvist) i Jes 11:1. Beskrivelsen bør nyanseres.",
+      "date": "2026-04-05"
+    },
+    {
+      "summary": "Arkelaus var sønn av Herodes den store og Maltake, og overtok herredømmet over Judea, Samaria og Idumea etter farens død i 4 f.Kr. Keiser Augustus ga ham tittelen etnark, men nektet ham kongetittelen. Han var kjent for sin brutale og undertrykkende styremåte, noe som fikk Josef til å bosette seg i Nasaret i Galilea i stedet for Judea da den hellige familien vendte tilbake fra Egypt (Matt 2:22–23). I 6 e.Kr. ble Arkelaus avsatt av romerne etter klager fra hans undersåtter og sendt i eksil til Gallia, hvoretter Judea ble underlagt direkte romersk styre.",
+      "title": "Etnark over Judea, Samaria og Idumea",
+      "score": 7,
+      "reason": "[minor] Sammendraget ligner mye på versjon 1 i struktur og innhold ('sønn av Herodes den store og Maltake, og overtok herredømmet over Judea, Samaria og Idumea...'). Det bør omformuleres mer markant for å skille seg fra den tidligere versjonen.; [minor] De to nøkkelhendelsene overlapper sterkt – begge refererer til Matt 2:22-23 og handler om Josefs reaksjon på Arkelaus' styre. Den første hendelsen kunne fokusere mer rent på Arkelaus' maktovertagelse uten å nevne Josef, mens den andre dekker Josefs reaksjon.; [minor] Filip-referansen er noe tvetydig. Arkelaus hadde en halvbror Filip (sønn av Kleopatra fra Jerusalem) som ble tetrark, men den Filip som var fullbror (sønn av Maltake) omtales noen ganger som 'Herodes Filip'. Det kan være nyttig å presisere hvilken Filip som menes, eventuelt inkludere begge.; [minor] Rollen 'hersker' er svært generell. En mer spesifikk rolle som 'tetrark' (selv om hans tittel var etnark) eller 'regent' kunne vurderes, eventuelt 'avsatt hersker' for å fange hele hans karriere.",
+      "date": "2026-04-05"
+    },
+    {
+      "summary": "Etter at Herodes den store døde i 4 f.Kr., delte keiser Augustus riket hans mellom tre av sønnene. Arkelaus, som var barn av Herodes og den samaritanske Maltake, fikk den største delen – Judea, Samaria og Idumea – men kun med rang av etnark, ikke konge. Han ble raskt beryktet for voldelig og vilkårlig maktutøvelse, og hans undertrykkende styre er bakgrunnen for at Josef, etter guddommelig veiledning i en drøm, valgte å slå seg ned med Maria og Jesusbarnet i Nasaret i Galilea fremfor å vende tilbake til Judea (Matt 2:22–23). Arkelaus' ry var så dårlig at både jøder og samaritanere til slutt sendte delegasjoner til Roma for å be om hans avsettelse. I 6 e.Kr. ble han fjernet fra makten og forvist til Gallia av Augustus, og Judea ble omdannet til en romersk provins under direkte styre av prefekter.",
+      "title": "Etnark over Judea, Samaria og Idumea",
+      "score": 9,
+      "reason": "[minor] Filip (Herodes Filips) er korrekt som halvbror, men det kan presiseres at det finnes flere halvbrødre (f.eks. Herodes II/Filip). Den nåværende listen er akseptabel som en forenklet fremstilling av de mest kjente fullbrødrene og halvbrødrene.; [minor] Formuleringen 'slo seg ned' bør være 'slo seg ned' – men dette er korrekt norsk. Derimot er koblingen mellom 'nasareer' og 'netser' en tolkning som bør presenteres forsiktig. Nåværende formulering er akseptabel.; [minor] Rollen 'byggherre' kunne vært lagt til gitt fotnotene om byggeprosjekter, men dette er en sekundær rolle og ikke nødvendig å inkludere.",
+      "date": "2026-04-05"
+    }
+  ],
+  "footnotes": [
+    {
+      "text": "Det greske ordet 'basileuei' (βασιλεύει) i Matt 2:22 betyr 'regjerer som konge', men historisk sett fikk Arkelaus aldri kongetittelen. Keiser Augustus ga ham kun tittelen 'etnark' (folkehersker), med løfte om kongetittel hvis han viste seg verdig – noe som aldri skjedde.",
+      "source": "lingvistisk"
+    },
+    {
+      "text": "Arkelaus ble avsatt av keiser Augustus i 6 e.Kr. etter klager fra jødiske og samaritanske delegasjoner om hans brutale styre. Han ble forvist til Vienne i Gallia (dagens Frankrike), og Judea ble deretter underlagt direkte romersk styre gjennom prefekter – den første var Coponius.",
+      "source": "historisk"
+    },
+    {
+      "text": "Josefus (Jødenes oldtidshistorie 17.13.2) beskriver hvordan Arkelaus startet sitt styre med å massakrere rundt 3000 jøder i tempelet under påskefeiringen, noe som bekrefter det bibelske bildet av ham som en brutal hersker Josef fryktet.",
+      "source": "historisk"
+    },
+    {
+      "text": "Maltake (Malthake) var en samaritansk kvinne og en av Herodes den stores ti koner. Hun var mor til både Arkelaus og Herodes Antipas. Hennes samaritanske opprinnelse kan ha bidratt til den negative holdningen jødene hadde til Arkelaus' styre.",
+      "source": "historisk"
+    },
+    {
+      "text": "Betegnelsen 'nasareer' i Matt 2:23 har vært gjenstand for mye diskusjon. Mange forskere knytter det til det hebraiske ordet 'netser' (נֵצֶר), som betyr 'skudd' eller 'kvist', brukt i Jesaja 11:1 om Messias. Andre har foreslått en kobling til 'nazir' (innviet) eller til byen Nasarets lave status.",
+      "source": "teologisk"
+    },
+    {
+      "text": "Arkeologiske utgravninger har avdekket at Arkelaus videreførte flere av farens byggeprosjekter, blant annet utvidelsen av vinterpalasset i Jeriko og konstruksjonen av en akvedukt til palmeplantasjer nær byen. Dette vitner om at han forsøkte å legitimere sin makt gjennom storstilte byggeprosjekter, i tråd med herodisk tradisjon.",
+      "source": "arkeologisk"
+    },
+    {
+      "text": "Arkelaus giftet seg med Glafyra, datter av kong Arkhelaos av Kappadokia, som tidligere hadde vært gift med hans halvbror Aleksander. Ifølge Josefus var dette ekteskapet kontroversielt fordi det ble ansett som et brudd på jødisk lov, ettersom Glafyra hadde barn med hans avdøde bror.",
+      "source": "historisk"
     }
   ]
 }

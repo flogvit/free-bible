@@ -1,24 +1,26 @@
 {
   "id": "alemet",
   "name": "Alemet",
-  "title": "Etterkommer av Benjamin",
+  "title": "Sønn av Bekar, etterkommer av Benjamin",
   "era": "united-kingdom",
   "lifespan": "?",
-  "summary": "Alemet er en person nevnt i Bibelens slektsregistre. Han forekommer som en etterkommer av Benjamin gjennom Bekers linje (1 Krønikebok 7:8) og også som en levittisk by nevnt i forbindelse med Arons etterkommere (1 Krønikebok 6:60). Som en del av Benjamins stamme hører han til en viktig slektslinje i Israels historie.",
-  "roles": [],
+  "summary": "Alemet er en person som forekommer i slektsregisteret i 1 Krønikebok 7:8, oppført som en av de ni sønnene til Bekar, Benjamins sønn. Han tilhørte Benjamins stamme, kjent for sine dyktige krigsmenn og militære betydning i Israels tidlige historie. Bekars slektslinje beskrives som svært tallrik; ved mønstring ble det registrert 20 200 stridsdyktige menn (1 Krøn 7:9). Utover denne registreringen i slektslistene fortelles det ikke noe mer om Alemets personlige liv eller gjerninger. Det er verdt å merke seg at navnet Alemet også forekommer som stedsnavn for en levittisk by i Benjamins stammeområde (1 Krøn 6:60), men personen og stedet bør ikke forveksles.",
+  "roles": [
+    "Etterkommer av Benjamin",
+    "Sønn av Bekar"
+  ],
   "family": {
     "father": "bekar",
     "mother": null,
     "siblings": [
-      "semira",
+      "zemira",
       "joas",
       "elieser",
       "eljoenai",
       "omri",
       "jeremot",
       "abia",
-      "anatot",
-      "alemet"
+      "anatot"
     ],
     "spouse": null,
     "children": []
@@ -30,7 +32,7 @@
   "keyEvents": [
     {
       "title": "Nevnt i Benjamins slektsregister",
-      "description": "Alemet er oppført som en av sønnene til Bekar, sønn av Benjamin, i slektsregisteret i 1 Krønikebok.",
+      "description": "Alemet er oppført som en av de ni sønnene til Bekar, sønn av Benjamin, i slektsregisteret i 1 Krønikebok.",
       "verses": [
         {
           "bookId": 13,
@@ -42,21 +44,8 @@
       ]
     },
     {
-      "title": "Levittisk by Alemet",
-      "description": "Navnet Alemet forekommer også som en levittisk by gitt til Arons etterkommere fra Benjamins stammes område.",
-      "verses": [
-        {
-          "bookId": 13,
-          "chapter": 6,
-          "verses": [
-            60
-          ]
-        }
-      ]
-    },
-    {
-      "title": "Benjamins slektslinje etableres",
-      "description": "Benjamins sønner og deres etterkommere ble registrert som mektige krigere, og Bekars linje talte mange stridsdyktige menn.",
+      "title": "Bekars slekt mønstret som stridsdyktige menn",
+      "description": "Bekars etterkommere, inkludert Alemets linje, ble registrert som mektige krigere. Ved mønstring talte de 20 200 stridsdyktige menn.",
       "verses": [
         {
           "bookId": 13,
@@ -64,24 +53,6 @@
           "verses": [
             8,
             9
-          ]
-        }
-      ]
-    },
-    {
-      "title": "Slektsregistrenes betydning",
-      "description": "Slektsregistrene i 1 Krønikebok ble utarbeidet for å dokumentere Israels stammers arv og landfordeling etter hjemkomsten fra eksil.",
-      "verses": [
-        {
-          "bookId": 13,
-          "chapter": 7,
-          "verses": [
-            6,
-            7,
-            8,
-            9,
-            10,
-            11
           ]
         }
       ]
@@ -106,6 +77,51 @@
       "bookId": 13,
       "chapterId": 9,
       "verseId": 42
+    }
+  ],
+  "versions": [
+    {
+      "summary": "Alemet er en person nevnt i Bibelens slektsregistre. Han forekommer som en etterkommer av Benjamin gjennom Bekers linje (1 Krønikebok 7:8) og også som en levittisk by nevnt i forbindelse med Arons etterkommere (1 Krønikebok 6:60). Som en del av Benjamins stamme hører han til en viktig slektslinje i Israels historie.",
+      "title": "Etterkommer av Benjamin",
+      "score": 4,
+      "reason": "[major] Sammendraget blander sammen personen Alemet (sønn av Bekar) med byen Alemet (en levittisk by). Dette er to forskjellige ting – en person og et stedsnavn. Profilen handler om personen, og bør ikke presentere byen som om det er samme entitet.; [major] Det andre nøkkelhendelseselementet handler om den levittiske byen Alemet, ikke om personen Alemet. Dette bør enten fjernes eller tydelig markeres som en fotnote/tilleggsinfo, ikke som en nøkkelhendelse for personen.; [minor] Roles-arrayet er tomt. Selv for en genealogisk figur bør det inneholde minst en rolle, f.eks. 'Etterkommer av Benjamin' eller 'Sønn av Bekar'.; [major] Alemet er listet blant sine egne søsken. Han bør ikke stå i sin egen søskenliste. 'alemet' må fjernes fra siblings-arrayet.; [minor] Den fjerde nøkkelhendelsen ('Slektsregistrenes betydning') er veldig generell og handler ikke spesifikt om Alemet. Den beskriver hele slektsregisteret i 1 Krønikebok. Denne bør enten strammes inn til å handle mer om Alemet, eller fjernes.; [minor] Era 'united-kingdom' er rimelig dersom man daterer Bekar-linjen til denne perioden, men det er usikkert. Siden personen primært er kjent fra genealogien i 1 Krønikebok uten nærmere tidsangivelse, er dette akseptabelt men usikkert.; [minor] Sjekk at alle søskennavn er korrekte og i riktig format. I 1 Krøn 7:8 nevnes ni sønner av Bekar: Semira, Joas, Elieser, Eljoenai, Omri, Jeremot, Abia, Anatot og Alemet. Når Alemet fjernes fra listen (han er jo personen selv), gjenstår åtte søsken.",
+      "date": "2026-04-05"
+    },
+    {
+      "summary": "Alemet er en person nevnt i slektsregisteret i 1 Krønikebok 7:8 som en av sønnene til Bekar, som igjen var sønn av Benjamin. Han tilhørte dermed Benjamins stamme, en stamme som spilte en viktig rolle i Israels historie. Bekars slektslinje beskrives som tallrik og stridsdyktig. Navnet Alemet forekommer også som navn på en levittisk by i Benjamins stammeområde (1 Krøn 6:60), men dette er et stedsnavn og bør ikke forveksles med personen.",
+      "title": "Sønn av Bekar, etterkommer av Benjamin",
+      "score": 7,
+      "reason": "[minor] Alemet er nevnt i slektsregistrene i 1 Krønikebok, men det er ikke klart at han levde i perioden for det forente kongedømmet. Slektsregistrene går tilbake til patriarktiden, og Bekars generasjon (sønn av Benjamin, sønnesønn av Jakob) plasserer Alemet nærmere patriarktiden eller Egypts-oppholdet. Det kan argumenteres for 'patriarchs' eller 'judges' som mer passende. Imidlertid, siden det er usikkert og han nevnes i Krønikebøkenes kontekst, kan 'united-kingdom' forsvares. Beholdes uendret men merkes.; [minor] I den tredje fotnoten står det 'etterksilistisk' som er en skrivefeil for 'ettereksilsk' (eller 'etter-eksilsk').; [major] Ifølge 1 Krøn 7:8 er Bekars sønner: Semira, Joas, Elieser, Eljoenai, Omri, Jeremot, Abia, Anatot og Alemet. Det er altså 8 brødre, og listen i siblings inneholder alle de 8 andre, men noen av navnene bør kontrolleres mot ID-konvensjoner. 'semira' bør muligens være 'zemira' (hebraisk: זמירה). Flere norske oversettelser bruker formen 'Semira' eller 'Zemira'.; [minor] Sammendraget er godt, men referansen til den levittiske byen i 1 Krøn 6:60 er en fin detalj. Det kan presiseres at byen i Jos 21:18 kalles Almon for helhetens skyld – dette er allerede nevnt i fotnoten, men duplikasjonen i summary er akseptabel. Ellers er sammendraget informativt og godt formulert.",
+      "date": "2026-04-05"
+    },
+    {
+      "summary": "Alemet er en person som forekommer i slektsregisteret i 1 Krønikebok 7:8 som en av de ni sønnene til Bekar, sønnesønn av Benjamin. Han tilhørte Benjamins stamme, en stamme som var kjent for sine dyktige krigsmenn. Bekars slektslinje beskrives som tallrik og stridsdyktig, og ble ved mønstring registrert med 20 200 stridsdyktige menn (1 Krøn 7:9). Utover registreringen i slektslistene fortelles det ikke noe mer om Alemets liv eller gjerninger. Navnet Alemet forekommer også som stedsnavn på en levittisk by i Benjamins stammeområde (1 Krøn 6:60), men dette bør ikke forveksles med personen.",
+      "title": "Sønn av Bekar, etterkommer av Benjamin",
+      "score": 8,
+      "reason": "[minor] Alemet er kjent kun fra slektsregistre som trolig reflekterer en tidlig periode i Israels historie. 'united-kingdom' er ikke urimelig gitt at mønstringen kan knyttes til denne perioden, men det er usikkert. 'patriarchs' eller 'judges' kunne også vært aktuelt. Beholdes som det er, da det ikke er klart feil.; [major] Ifølge 1 Krøn 7:8 er Bekars ni sønner: Semira, Joas, Elieser, Eljoenai, Omri, Jeremot, Abia, Anatot og Alemet. Søskenlisten mangler korrekt verifisering av navneformer. 'semira' bør muligens være 'zemira' (hebraisk: זְמִירָה). Ulike oversettelser gjengir dette ulikt, men den vanligste formen er Zemira.; [minor] Sammendraget er godt og informativt. Kunne presisere at det er åtte søsken (ikke åtte andre sønner) for klarhetens skyld, men dette er en marginal detalje.; [minor] Rollene er korrekte men minimale. For en person som bare er kjent fra slektsregistre er dette likevel tilstrekkelig.",
+      "date": "2026-04-05"
+    }
+  ],
+  "footnotes": [
+    {
+      "text": "Navnet Alemet (hebraisk: עַלְמֶת, 'Alemeth') kan bety 'skjul' eller 'skjulested'. Det samme navnet brukes også om en levittisk by i Benjamins stammeområde (1 Krøn 6:60), som i Josva 21:18 kalles Almon. Det er usikkert om byen er oppkalt etter personen.",
+      "source": "lingvistisk"
+    },
+    {
+      "text": "Bekar, Alemets far, er en av Benjamins sønner. Ifølge 1 Krøn 7:9 talte Bekars slekt 20 200 stridsdyktige menn ved mønstring, noe som tyder på en stor og militært viktig klan i Israel.",
+      "source": "historisk"
+    },
+    {
+      "text": "Slektsregistrene i 1 Krønikebok ble trolig sammenstilt i ettereksilsk tid for å dokumentere stammenes arverett og legitimere landfordeling, prestedømme og tempelvirksomhet etter hjemkomsten fra Babylon.",
+      "source": "historisk"
+    },
+    {
+      "text": "Benjamins stamme hadde sitt kjerneområde nord for Jerusalem og spilte en sentral rolle i Israels tidlige historie. Stammen var kjent for sine dyktige krigere, og flere fremtredende bibelske skikkelser, deriblant Saul og Paulus, tilhørte denne stammen.",
+      "source": "teologisk"
+    },
+    {
+      "text": "Navnene i Bekars slektslinje i 1 Krøn 7:8 viser interessante lingvistiske trekk. Flere av navnene, som Anatot og Alemet, deles med kjente stedsnavn i Benjamins stammeområde, noe som kan tyde på en forbindelse mellom klaner og de stedene de bosatte seg.",
+      "source": "lingvistisk"
     }
   ]
 }

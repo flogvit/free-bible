@@ -1,12 +1,13 @@
 {
   "id": "ammon-lots-sonn",
   "name": "Ammon (Lots sønn)",
-  "title": "Ammonittenes stamfar",
+  "title": "Ben-Ammi – stamfar til ammonittene",
   "era": "patriarchs",
   "lifespan": "ca. 2000 f.Kr.",
-  "summary": "Ammon var den yngste sønnen til Lot, født gjennom en incestuøs forbindelse med hans yngste datter etter ødeleggelsen av Sodoma og Gomorra. Han ble stamfar til ammonittene, et folk som senere skulle bli Israels fiender gjennom store deler av Det gamle testamente.",
+  "summary": "Ben-Ammi var sønn av Lot og hans yngste datter, unnfanget etter ødeleggelsen av Sodoma og Gomorra. Etter katastrofen søkte Lot og hans to døtre tilflukt i en fjellhule. Døtrene, som trodde at det ikke fantes andre menn igjen, fikk sin far beruset på vin for å sikre videre etterkommere. Den yngste datteren fødte en sønn hun ga navnet Ben-Ammi – et hebraisk navn som betyr 'sønn av mitt folk'. Gjennom ham ble et helt folk til: ammonittene, som slo seg ned øst for Jordan-elven og etablerte et selvstendig kongedømme med Rabbat-Ammon (nåværende Amman i Jordan) som hovedstad. I bibelsk sammenheng viser Ben-Ammis opphav det komplekse slektskapet mellom ammonittene og Israel – begge knyttet gjennom Abraham og Lot. Selv om ammonittene ofte sto i motsetning til Israel gjennom Det gamle testamentes historie, ble deres rett til sitt landområde anerkjent av Gud som en arv gitt til Lots etterkommere.",
   "roles": [
-    "patriark"
+    "stamfar",
+    "eponym"
   ],
   "family": {
     "father": "lot",
@@ -24,14 +25,19 @@
   ],
   "keyEvents": [
     {
-      "title": "Fødsel i Soars fjellhuler",
-      "description": "Etter at Lot og hans døtre flyktet fra Sodoma, bodde de i en hule i fjellene. Lots yngste datter fikk ham full på vin og ble gravid, og fødte en sønn hun kalte Ben-Ammi, som betyr 'sønn av mitt folk'.",
+      "title": "Fødsel i fjellhulene etter flukten fra Sodoma",
+      "description": "Etter at Lot og hans døtre flyktet fra Sodoma, slo de seg ned i en hule i fjellene fordi Lot fryktet å bli i Soar. Lots døtre, som trodde det ikke fantes andre menn igjen på jorden, fikk sin far beruset på vin for å sikre etterkommere. Den yngste datteren ble gravid og fødte en sønn hun kalte Ben-Ammi, som betyr 'sønn av mitt folk'. Hans bror Moab ble født av den eldste datteren.",
       "verses": [
         {
           "bookId": 1,
           "chapter": 19,
           "verses": [
             30,
+            31,
+            32,
+            33,
+            34,
+            35,
             36,
             37,
             38
@@ -40,8 +46,8 @@
       ]
     },
     {
-      "title": "Ammonittenes opprinnelse",
-      "description": "Ben-Ammi ble stamfar til ammonittene, et folk som bosatte seg øst for Jordan-elven og som skulle spille en betydelig rolle i Israels historie som både nabofolk og fiender.",
+      "title": "Stamfar til ammonittene",
+      "description": "Ben-Ammi ble stamfar til ammonittene (hebraisk: בְּנֵי עַמּוֹן, bene ammon, 'Ammons sønner'), et folk som bosatte seg øst for Jordan-elven i området rundt det som i dag er det sentrale Jordan. De utviklet seg til et selvstendig folk med egen kultur, religion og kongedømme, med Rabbat-Ammon som sin hovedstad.",
       "verses": [
         {
           "bookId": 1,
@@ -53,18 +59,77 @@
       ]
     },
     {
-      "title": "Ammonittene nevnt i Israels vandring",
-      "description": "Da israelittene vandret mot det lovede land, fikk de beskjed fra Gud om ikke å angripe ammonittene, fordi landet var gitt til Lots etterkommere.",
+      "title": "Guds beskyttelse av ammonittenes landområde",
+      "description": "Da israelittene vandret mot det lovede land, fikk de uttrykkelig beskjed fra Gud om ikke å angripe eller provosere ammonittene, fordi Gud hadde gitt dette landet til Lots etterkommere som deres eiendom. Dette viser at slektskapet mellom Israel og ammonittene gjennom Abraham og Lot ble anerkjent.",
       "verses": [
         {
           "bookId": 5,
           "chapter": 2,
           "verses": [
             19,
+            20,
+            21,
             37
           ]
         }
       ]
+    }
+  ],
+  "versions": [
+    {
+      "summary": "Ammon var den yngste sønnen til Lot, født gjennom en incestuøs forbindelse med hans yngste datter etter ødeleggelsen av Sodoma og Gomorra. Han ble stamfar til ammonittene, et folk som senere skulle bli Israels fiender gjennom store deler av Det gamle testamente.",
+      "title": "Ammonittenes stamfar",
+      "score": 5,
+      "reason": "[minor] Tittelen er presis, men kunne vært litt mer beskrivende ved å inkludere navnet Ben-Ammi, som er det faktiske navnet brukt i Bibelen.; [major] Ammon (Ben-Ammi) var sønnen til Lots yngste datter, ikke den yngste sønnen. Moab var sønnen til den eldste datteren, og Ben-Ammi var sønnen til den yngste. Teksten sier 'den yngste sønnen til Lot' som er misvisende - Lot hadde kun disse to sønnene, og Ben-Ammi var den som ble født sist (av den yngste datteren), men formuleringen bør presiseres.; [major] Moren til Ammon/Ben-Ammi er kjent som Lots yngste datter. Selv om hun ikke har et navngitt ID, bør dette feltet ikke være null. Det bør settes til en beskrivende verdi eller en id som representerer henne.; [minor] Versreferansene hopper fra vers 30 til 36. Det mangler viktige mellomvers (31-35) som beskriver selve hendelsesforløpet med at døtrene fikk Lot full på vin. Vers 36 nevner at begge døtrene ble gravide, mens vers 37-38 navngir sønnene. Rekkevidden bør være mer komplett.; [minor] 5. Mosebok 2:37 handler om at Israel unngikk ammonittenes land, men det er vers 19 og 2:37 som er mest relevante. Vers 19 er korrekt. Vers 37 refererer spesifikt til unngåelsen av ammonittenes grense. Referansene er akseptable, men vers 19-21 gir et mer komplett bilde.; [minor] Rollen 'patriark' er noe upresis for en person som primært er kjent som stamfar til et fiendtlig folk. Rollen 'stamfar' ville vært mer presis. I tillegg kunne 'eponym' (navngiver for et folk) vært en relevant rolle.; [major] Det mangler fotnoter. Det finnes viktige historiske, arkeologiske og lingvistiske detaljer om ammonittene som bør dekkes: etymologien til Ben-Ammi, arkeologiske funn fra ammonittisk kultur, og deres hovedstad Rabbat-Ammon (dagens Amman i Jordan).",
+      "date": "2026-04-05"
+    },
+    {
+      "summary": "Ben-Ammi (også kalt Ammon) var sønn av Lot og hans yngste datter, født gjennom en incestuøs forbindelse etter ødeleggelsen av Sodoma og Gomorra. Lots to døtre trodde ifølge beretningen at verden var gått under, og fikk sin far full på vin for å sikre etterkommere. Den yngste datteren fødte Ben-Ammi, et navn som betyr 'sønn av mitt folk'. Han ble stamfar til ammonittene, et folk som bosatte seg øst for Jordan-elven med Rabbat-Ammon (dagens Amman) som hovedstad. Ammonittene skulle gjennom store deler av Det gamle testamente stå i et spenningsfylt forhold til Israel – som nabofolk, fiender og tidvis også gjennom ekteskapelige forbindelser med Israels kongehus.",
+      "title": "Ben-Ammi – stamfar til ammonittene",
+      "score": 8,
+      "reason": "[minor] Tittelen er god, men Ben-Ammi ble født etter at de slo seg ned i en hule – det er presist nok som det står.; [major] 1 Mos 19:37 handler om Moab (den eldste datterens sønn), mens vers 38 handler om Ben-Ammi (den yngste datterens sønn). Hendelsen om Ben-Ammis fødsel er spesifikt i vers 38, men versene 30-38 dekker hele konteksten, så det er akseptabelt å inkludere alle. Imidlertid er det viktig å merke at vers 37 omhandler Moab, ikke Ben-Ammi.; [major] Mor til Ben-Ammi er Lots yngste datter. Selv om hun ikke har et eget bibelsk navn, bør feltet ikke være null – det bør angi identiteten hennes som 'lots-yngste-datter' eller lignende for å skille henne fra Moabs mor (den eldste datteren).; [minor] Fotnoten refererer til 5 Mos 23:4, men det korrekte verset som nevner ammonitter varierer mellom versnummereringer (23:3-4 i hebraisk tekst vs. 23:4 i andre tradisjoner). Referansen bør presiseres. Dessuten gjelder forbudet i 5 Mos 23:4 spesifikt ammonitter og moabitter, noe som er korrekt angitt.; [minor] Fotnoten nevner at Rut var fra Moab som 'Ben-Ammis brors etterkommere'. Teknisk sett var Moab Ben-Ammis halvbror (begge var sønner av Lot, men med forskjellige mødre – den eldste og yngste datteren). Formuleringen 'halvbror' ville vært mer presis. Ellers er den teologiske observasjonen om Naamah som ammonittisk kvinne og mor til Rehabeam svært relevant og korrekt.; [minor] Sammendraget er velskrevet og informativt. Det dekker opprinnelsen, navnets betydning og ammonittenes videre historie på en god måte. En liten forbedring kunne være å tydeliggjøre at det var den yngste datteren som var Lots yngste datter (ikke bare 'yngste datteren'), men dette er allerede klart i konteksten.; [minor] Rollene 'stamfar' og 'eponym' er korrekte. Man kunne vurdere å legge til rollen 'folkegrunnlegger' for å tydeliggjøre at han grunnla et helt folk, men 'stamfar' dekker dette tilstrekkelig.",
+      "date": "2026-04-05"
+    },
+    {
+      "summary": "Ben-Ammi (også kalt Ammon) var sønn av Lot og hans yngste datter, unnfanget gjennom en incestuøs forbindelse etter ødeleggelsen av Sodoma og Gomorra. Da Lot og hans to døtre hadde søkt tilflukt i en fjellhule etter katastrofen, trodde døtrene at det ikke fantes andre menn igjen på jorden. For å sikre etterkommere fikk de sin far beruset på vin. Den yngste datteren ble gravid og fødte en sønn hun kalte Ben-Ammi, et navn som betyr 'sønn av mitt folk'. Han ble stamfar til ammonittene – et folk som slo seg ned øst for Jordan-elven med Rabbat-Ammon (nåværende Amman i Jordan) som sin hovedstad. Ammonittene utviklet seg til et selvstendig kongedømme med egen religion og kultur. Gjennom store deler av Det gamle testamentes historie sto ammonittene i et spenningsfylt forhold til Israel som nabofolk og hyppige motstandere, men også gjennom ekteskapelige forbindelser med Israels kongehus, som da den ammonittiske Naamah ble mor til kong Rehabeam.",
+      "title": "Ben-Ammi – stamfar til ammonittene",
+      "score": 9,
+      "reason": "[major] Moren til Ben-Ammi var Lots yngste datter. Selv om hun ikke har et eget navn i Bibelen, bør dette feltet reflektere dette faktum i stedet for å være null. Det er imidlertid vanskelig å lage en lowercase id for en navnløs person, så dette kan aksepteres som en konvensjon – men det bør i det minste vurderes om 'lots-yngste-datter' eller liknende kunne brukes.; [minor] Beskrivelsen sier at Moab var Ben-Ammis 'halvbror', men teknisk sett var de begge sønner av Lot (bare med forskjellige mødre – den eldste og yngste datteren). Begrepet 'halvbror' er korrekt i biologisk forstand, men det kan virke forvirrende gitt den uvanlige konteksten. Det er likevel akseptabelt.; [minor] Det andre nøkkelhendelsen ('Stamfar til ammonittene') overlapper betydelig med informasjon i sammendraget og det første nøkkelhendelsen. Det refererer kun til 1 Mos 19:38 som allerede er inkludert i den første hendelsen. Vurder om dette bør erstattes med en mer distinkt hendelse, for eksempel ammonittenes konflikter med Israel som er beskrevet i fotnotene.; [minor] Sammendraget er godt og informativt, men den siste setningen om Naamah og Rehabeam, selv om den er interessant kontekst, handler strengt tatt ikke om Ben-Ammi personlig, men om hans etterkommere mange generasjoner senere. For en personprofil om Ben-Ammi kan dette være litt utenfor kjerneinnholdet, men det gir god kontekstuell informasjon.; [minor] Fotnoten refererer til '5. Mosebok 23:4' – det korrekte verset i mange oversettelser er 23:4 (eller 23:3 i noen nummereringstradisjoner). Vær oppmerksom på at versnummereringen kan variere. I den hebraiske teksten er dette 23:4, men i noen oversettelser 23:3.",
+      "date": "2026-04-05"
+    }
+  ],
+  "footnotes": [
+    {
+      "text": "Navnet Ben-Ammi (בֶּן־עַמִּי) betyr bokstavelig 'sønn av mitt folk' eller 'sønn av min slektning'. Dette navnet fungerer som en etiologisk forklaring på ammonittenes opprinnelse og deres slektskap med Israel gjennom Lot, Abrahams nevø.",
+      "source": "lingvistisk"
+    },
+    {
+      "text": "Ammonittenes hovedstad var Rabbat-Ammon (også kalt Rabbah), som ligger på stedet der Jordans hovedstad Amman ligger i dag. Navnet Amman er en direkte videreføring av det antikke navnet Ammon, noe som gjør dette til et av de eldste kontinuerlig brukte stedsnavnene i verden.",
+      "source": "arkeologisk"
+    },
+    {
+      "text": "Arkeologiske funn viser at ammonittene utviklet en egen kultur med distinkt keramikk, skulpturer og innskrifter fra rundt 1000-tallet f.Kr. Ammonittiske segl og innskrifter er funnet i stort antall i området rundt dagens Amman.",
+      "source": "arkeologisk"
+    },
+    {
+      "text": "I Det gamle testamente er ammonittene gjennomgående fremstilt som Israels fiender. De er nevnt i forbindelse med konflikter under dommertiden (Dom 10–11), kong Sauls tid (1 Sam 11), og Davids kriger (2 Sam 10–12). Loven i 5. Mosebok 23:4 forbyr ammonitter å bli opptatt i Herrens forsamling.",
+      "source": "teologisk"
+    },
+    {
+      "text": "Til tross for forbudet mot ammonitter i forsamlingen, var Naamah, en ammonittisk kvinne, mor til kong Rehabeam (1 Kong 14:21). Rut fra Moab – etterkommere av Ben-Ammis halvbror Moab – ble stammor til kong David. Dette viser at grensene mellom folkegruppene ikke alltid var absolutte i praksis.",
+      "source": "teologisk"
+    },
+    {
+      "text": "Ifølge rabbinsk tradisjon tolkes Lots døtres handlinger med en viss ambivalens. Noen rabbinere mente at døtrene handlet i god tro fordi de trodde hele verden var ødelagt (lik i Noahs tid), mens andre fordømte handlingen. Talmud (Horayot 10b) diskuterer den eldste datterens intensjoner og motiver.",
+      "source": "rabbinsk"
+    },
+    {
+      "text": "Ammonittenes guddom var Milkom (også kalt Molok), som er nevnt flere steder i Det gamle testamente. Kong Salomo bygde en offerhøyde for Milkom i Jerusalem (1 Kong 11:5,33), noe som ble regnet som en alvorlig synd. Arkeologiske funn fra området bekrefter Milkom-kultens sentrale rolle i ammonittisk religion.",
+      "source": "historisk"
+    },
+    {
+      "text": "Betegnelsen 'ammonitter' på hebraisk er בְּנֵי עַמּוֹן (bene ammon), som bokstavelig betyr 'Ammons sønner/barn'. Denne patronymiske navngivningspraksisen var vanlig blant semittiske folk i den antikke Levanten, der hele folkegrupper ble identifisert gjennom sin stamfar.",
+      "source": "lingvistisk"
     }
   ]
 }

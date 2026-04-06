@@ -1,11 +1,13 @@
 {
   "id": "anat",
   "name": "Anat",
-  "title": "Far til Sjamgar, dommeren",
+  "title": "Far til Sjamgar",
   "era": "judges",
   "lifespan": "?",
-  "summary": "Anat er kjent i Bibelen utelukkende som faren til Sjamgar, en av Israels dommere. Han nevnes i Dommernes bok som faren til den helten som slo ned 600 filistere med en oksedriverstav. Navnet Anat kan også ha en tilknytning til den kanaaneiske gudinnen Anat, noe som kan tyde på en blandet kulturell bakgrunn.",
-  "roles": [],
+  "summary": "Anat er i Bibelen kun kjent som faren til Sjamgar, en av Israels dommere. Han nevnes i Dommernes bok som far til helten som slo ned 600 filistere med en oksedriverstav. Navnet «Anat» er identisk med navnet på den kanaaneiske krigs- og fruktbarhetsgudinnen Anat, og uttrykket «sønn av Anat» kan tolkes som et patronym, en klanbenevnelse eller en ærestittel for en krigersk person. Denne koblingen kan tyde på en blandet kulturell bakgrunn eller påvirkning fra kanaaneisk kultur i Sjamgars hjemområde.",
+  "roles": [
+    "Far til Sjamgar"
+  ],
   "family": {
     "father": null,
     "mother": null,
@@ -36,40 +38,13 @@
     },
     {
       "title": "Sjamgar nevnt i Deboras sang",
-      "description": "I Deboras og Baraks triumfsang nevnes «i Sjamgars, Anats sønns, dager» som en tid da veiene lå øde og vandrerne måtte ta omveier, noe som beskriver den vanskelige situasjonen i Israel.",
+      "description": "I Deboras og Baraks triumfsang nevnes «i Sjamgars, Anats sønns, dager» som en tid da veiene lå øde og vandrerne måtte ta omveier, noe som beskriver den vanskelige situasjonen i Israel før Deboras tid.",
       "verses": [
         {
           "bookId": 7,
           "chapter": 5,
           "verses": [
             6
-          ]
-        }
-      ]
-    },
-    {
-      "title": "Kontekst: Etter Ehuds tid",
-      "description": "Anat levde i en periode etter dommeren Ehud, da Israel igjen var truet av fiendtlige folk, og hans sønn Sjamgar sto opp som befrier.",
-      "verses": [
-        {
-          "bookId": 7,
-          "chapter": 3,
-          "verses": [
-            30,
-            31
-          ]
-        }
-      ]
-    },
-    {
-      "title": "Filisternes undertrykkelse",
-      "description": "I Anats levetid var filisterne en alvorlig trussel mot Israel, noe som førte til at hans sønn Sjamgar måtte gripe til våpen for å forsvare folket.",
-      "verses": [
-        {
-          "bookId": 7,
-          "chapter": 3,
-          "verses": [
-            31
           ]
         }
       ]
@@ -89,5 +64,32 @@
   ],
   "aliases": [
     "Anats"
+  ],
+  "versions": [
+    {
+      "summary": "Anat er kjent i Bibelen utelukkende som faren til Sjamgar, en av Israels dommere. Han nevnes i Dommernes bok som faren til den helten som slo ned 600 filistere med en oksedriverstav. Navnet Anat kan også ha en tilknytning til den kanaaneiske gudinnen Anat, noe som kan tyde på en blandet kulturell bakgrunn.",
+      "title": "Far til Sjamgar, dommeren",
+      "score": 5,
+      "reason": "[minor] Tittelen er funksjonell, men 'Far til Sjamgar, dommeren' kan misforstås som at Anat selv var dommer. En liten omformulering kan tydeliggjøre at det er Sjamgar som var dommer.; [major] Roles-arrayet er tomt. Selv om Anat kun er kjent som far til Sjamgar, bør han ha minst én rolle, f.eks. 'Far til Sjamgar'.; [minor] Sammendraget er godt, men formuleringen 'kjent i Bibelen utelukkende som faren til Sjamgar' kunne nyanseres litt. 'Ben Anat' (sønn av Anat) kan også tolkes som en klanbenevnelse eller ærestittel knyttet til gudinnen Anat, ikke nødvendigvis et biologisk farsnavn. Dette bør nevnes for å gi en mer fullstendig fremstilling.; [minor] De to siste hendelsene ('Kontekst: Etter Ehuds tid' og 'Filisternes undertrykkelse') er i stor grad overlappende med den første hendelsen og er mer kontekstuell bakgrunn enn egne hendelser knyttet til Anat. Profilen ville vært sterkere med færre, mer presise hendelser.; [minor] Hendelsen 'Kontekst: Etter Ehuds tid' inkluderer vers 30, men dette verset handler om Ehuds seier over Moab, ikke direkte om Anat eller Sjamgar. Det er kontekst, men strengt tatt ikke en hendelse der Anat er involvert.; [major] Det mangler fotnoter. Anat-navnet har svært interessante lingvistiske og arkeologiske tilknytninger til den kanaaneiske gudinnen Anat, og dette bør dekkes i fotnoter.",
+      "date": "2026-04-05"
+    }
+  ],
+  "footnotes": [
+    {
+      "text": "Navnet «Anat» er identisk med navnet på den kanaaneiske krigs- og fruktbarhetsgudinnen Anat, kjent fra ugarittiske tekster funnet i Ras Shamra (det gamle Ugarit) i Syria. Det er omdiskutert om «sønn av Anat» (ben Anat) er et patronym (farsnavn), en klanbenevnelse, eller en ærestittel som betyr «kriger» etter gudinnen Anats krigerske karakter.",
+      "source": "lingvistisk"
+    },
+    {
+      "text": "I ugarittiske tekster fra ca. 1400–1200 f.Kr. fremstilles gudinnen Anat som en voldsom krigerinne. Noen forskere mener at betegnelsen «sønn av Anat» kan ha vært en ærestittel for en spesielt dyktig kriger, snarere enn en referanse til en faktisk far.",
+      "source": "arkeologisk"
+    },
+    {
+      "text": "Stedsnavnet Bet-Anat (Dom 1,33; Jos 19,38) og personnavnet Anat forekommer i et område med sterk kanaaneisk kulturpåvirkning. Dette kan tyde på at Sjamgars familie hadde tilknytning til et kulturelt og religiøst blandingsmiljø i grenseområdene mellom israelittisk og kanaaneisk bosetting.",
+      "source": "historisk"
+    },
+    {
+      "text": "I rabbinsk tradisjon er det lite diskusjon om Anat som person, men Sjamgar regnes blant de mindre dommerne. Noen rabbinske kilder diskuterer om Sjamgar egentlig var israelitt, nettopp på grunn av det kanaaneisk-klingende navnet «ben Anat».",
+      "source": "rabbinsk"
+    }
   ]
 }

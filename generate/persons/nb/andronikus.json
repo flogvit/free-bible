@@ -1,13 +1,14 @@
 {
   "id": "andronikus",
   "name": "Andronikus (slektning av Paulus)",
-  "title": "Apostel før Paulus",
+  "title": "Tidlig apostel og medfange med Paulus",
   "era": "early-church",
   "lifespan": "1. århundre e.Kr.",
-  "summary": "Andronikus var en jødisk kristen som Paulus omtaler som sin slektning og medfange. Han og Junia var høyt ansett blant apostlene og hadde kommet til tro på Kristus før Paulus selv.",
+  "summary": "Andronikus nevnes i Romerbrevet 16:7 som en høyt respektert skikkelse i den tidlige kristne bevegelsen. Han var av jødisk herkomst og ble av Paulus omtalt som både slektning og medfange, noe som vitner om felles lidelse for evangeliets skyld. Sammen med Junia ble han regnet som fremstående blant apostlene – et uttrykk som i kristen tradisjon har blitt forstått som at de to hadde apostolisk anerkjennelse, selv om noen forskere tolker det annerledes. Bemerkelsesverdig er det at begge hadde kommet til tro på Kristus før Paulus, noe som plasserer dem blant de aller første kristne. Deres relasjon til hverandre – om de var ektefeller, søsken eller medarbeidere – er ikke nærmere spesifisert i teksten, men kristen tradisjon har ofte antatt at de var et ektepar.",
   "roles": [
     "apostel",
-    "tjener"
+    "misjonær",
+    "medfange"
   ],
   "family": {
     "father": null,
@@ -23,58 +24,112 @@
   "keyEvents": [
     {
       "title": "Hilsen fra Paulus",
-      "description": "Paulus hilser Andronikus og Junia i sitt brev til menigheten i Roma, og omtaler dem med stor respekt og kjærlighet.",
+      "description": "Paulus hilser Andronikus og Junia i sitt brev til menigheten i Roma og omtaler dem med stor respekt og varme, noe som tyder på et nært og langvarig forhold mellom dem.",
       "verses": [
         {
           "bookId": 45,
           "chapter": 16,
-          "verse": 7
+          "verses": [
+            7
+          ]
         }
       ]
     },
     {
-      "title": "Slektning av Paulus",
-      "description": "Paulus identifiserer Andronikus som sin slektning, noe som indikerer at han var av jødisk herkomst og muligens fra samme stamme eller familie som Paulus.",
+      "title": "Identifisert som Paulus' slektning og medfange",
+      "description": "Paulus kaller Andronikus sin slektning (gresk: syngenēs) og medfange (gresk: synaichmalōtos). Det første uttrykket indikerer jødisk herkomst og muligens slektskap, mens det andre viser at Andronikus på et ukjent tidspunkt delte fangenskap med Paulus for evangeliets skyld.",
       "verses": [
         {
           "bookId": 45,
           "chapter": 16,
-          "verse": 7
+          "verses": [
+            7
+          ]
         }
       ]
     },
     {
-      "title": "Medfange med Paulus",
-      "description": "Andronikus hadde på et tidspunkt vært i fangenskap sammen med Paulus for evangeliets skyld, noe som vitner om hans lidelse og utholdenhet for troen.",
+      "title": "Fremstående blant apostlene",
+      "description": "Paulus beskriver Andronikus og Junia som fremstående blant apostlene (gresk: episēmoi en tois apostolois). Dette har tradisjonelt blitt forstått som at de selv ble regnet som apostler med en betydelig rolle i den tidlige kirken, selv om noen forskere tolker det som at de var vel ansett av apostlene.",
       "verses": [
         {
           "bookId": 45,
           "chapter": 16,
-          "verse": 7
-        }
-      ]
-    },
-    {
-      "title": "Høyt ansett blant apostlene",
-      "description": "Paulus beskriver Andronikus og Junia som fremstående blant apostlene, noe som indikerer at de hadde en betydelig rolle i den tidlige kirken.",
-      "verses": [
-        {
-          "bookId": 45,
-          "chapter": 16,
-          "verse": 7
+          "verses": [
+            7
+          ]
         }
       ]
     },
     {
       "title": "Tidlig omvendelse til Kristus",
-      "description": "Andronikus og Junia var kommet til tro på Kristus før Paulus, noe som gjør dem til noen av de første kristne og pionerer i misjonsarbeidet.",
+      "description": "Andronikus og Junia var kommet til tro på Kristus før Paulus, noe som plasserer deres omvendelse i den aller tidligste perioden av den kristne bevegelsen, muligens allerede rundt år 30–33 e.Kr., kanskje i forbindelse med den første pinsedagen i Jerusalem.",
       "verses": [
         {
           "bookId": 45,
           "chapter": 16,
-          "verse": 7
+          "verses": [
+            7
+          ]
         }
       ]
+    }
+  ],
+  "versions": [
+    {
+      "summary": "Andronikus var en jødisk kristen som Paulus omtaler som sin slektning og medfange. Han og Junia var høyt ansett blant apostlene og hadde kommet til tro på Kristus før Paulus selv.",
+      "title": "Apostel før Paulus",
+      "score": 5,
+      "reason": "[minor] Tittelen 'Apostel før Paulus' kan gi inntrykk av at han var apostel i en formell rang før Paulus, men det Paulus skriver er at han kom til tro før ham og var fremstående blant apostlene. En litt mer nyansert tittel kan være bedre.; [minor] Det er en utbredt tolkning at Andronikus og Junia var ektefeller, men dette er ikke eksplisitt bekreftet i bibelteksten. Romerbrevet 16:7 nevner dem sammen, men sier ikke at de var gift. Dette bør noteres som en tolkning, selv om det er den mest vanlige.; [major] Alle keyEvents bruker 'verse' (entall) i stedet for 'verses' (flertall som array) i sine versreferanser. Skjemaet krever 'verses' som en array av heltall.; [minor] Rollen 'tjener' er generisk. 'Misjonær' eller 'evangelist' kan være mer passende gitt at han var medfange med Paulus og fremstående blant apostlene, noe som tyder på aktiv misjonsvirksomhet.; [major] Det mangler fotnoter. Denne profilen har flere interessante teologiske, lingvistiske og historiske aspekter som burde dekkes, f.eks. debatten om 'episēmoi en tois apostolois' (fremstående blant apostlene vs. kjent av apostlene), og debatten om Junia/Junias (kvinne/mann).",
+      "date": "2026-04-05"
+    },
+    {
+      "summary": "Andronikus var en jødisk kristen som Paulus omtaler som sin slektning og medfange i Romerbrevet 16:7. Sammen med Junia var han fremstående blant apostlene og hadde kommet til tro på Kristus før Paulus selv, noe som plasserer hans omvendelse i den aller tidligste fasen av den kristne bevegelsen. Hans fangenskap for troens skyld vitner om hans hengivenhet og lidelse for evangeliet.",
+      "title": "Tidlig apostel og medfange med Paulus",
+      "score": 7,
+      "reason": "[minor] Sammendraget er svært likt den tidligere versjonen (versjon 1) og bør omformuleres for å unngå repetisjon. Det begynner med nøyaktig samme setning: 'Andronikus var en jødisk kristen som Paulus omtaler som sin slektning og medfange i Romerbrevet 16:7.'; [minor] Det er ikke sikkert at Junia var Andronikus' ektefelle. Bibelteksten sier ikke eksplisitt at de var gift – de kan ha vært søsken, medarbeidere eller et ektepar. Mange forskere antar ekteskap, men det bør nyanseres eller i det minste nevnes at dette er en vanlig antakelse snarere enn en bibelsk bekreftelse.; [minor] Fotnotet om syngenēs er kategorisert som 'teologisk', men innholdet er primært lingvistisk – det handler om betydningen av et gresk ord. Bør reklassifiseres til 'lingvistisk'.; [minor] Alle fem hendelser refererer til nøyaktig samme vers (Rom 16:7). Selv om dette er den eneste bibelteksten som nevner Andronikus, kan det vurderes å slå sammen noen av hendelsene for å unngå redundans.",
+      "date": "2026-04-05"
+    },
+    {
+      "summary": "Andronikus nevnes av Paulus i Romerbrevet 16:7 som en høyt respektert skikkelse i den tidlige kristne bevegelsen. Han var av jødisk herkomst og ble av Paulus kalt både slektning og medfange, noe som vitner om felles lidelse for evangeliets skyld. Sammen med Junia ble han regnet som fremstående blant apostlene – et uttrykk som i kristen tradisjon har blitt forstått som at de to selv hadde apostolisk anerkjennelse. Bemerkelsesverdig er det at begge hadde kommet til tro på Kristus før Paulus, noe som plasserer dem blant de aller første kristne, muligens fra Jerusalemmenigheten i årene umiddelbart etter Jesu oppstandelse.",
+      "title": "Tidlig apostel og medfange med Paulus",
+      "score": 8,
+      "reason": "[minor] At Junia var Andronikus' ektefelle er en vanlig antakelse, men det er ikke eksplisitt bekreftet i Bibelen. Romerbrevet 16:7 nevner dem sammen, men spesifiserer ikke deres relasjon som ektefeller. De kan ha vært søsken, medarbeidere eller partnere i tjeneste. Det bør vurderes å sette spouse til null eller i det minste gjøre det tydelig i sammendraget at dette er en antakelse.; [minor] Sammendraget er godt formulert og teologisk presist, men refererer eksplisitt til 'Romerbrevet 16:7'. Selv om dette er en korrekt bibelhenvisning (og ikke en bestemt bibelutgave), kan man vurdere å integrere referansen mer naturlig. Dette er imidlertid en svært liten detalj.; [minor] Alle fire keyEvents refererer til nøyaktig samme vers (Rom 16:7), noe som er korrekt da all informasjon om Andronikus stammer fra dette ene verset. Likevel kunne man vurdere å slå sammen noen av hendelsene for å unngå repetisjon, eller beholde dem som separate tematiske punkter – noe som faktisk gir god oversikt.",
+      "date": "2026-04-05"
+    }
+  ],
+  "footnotes": [
+    {
+      "text": "Det greske uttrykket 'episēmoi en tois apostolois' i Romerbrevet 16:7 har vært gjenstand for betydelig debatt. Det kan oversettes enten som 'fremstående blant apostlene' (inkluderende tolkning, dvs. at de selv var apostler) eller 'vel ansett av apostlene' (ekskluderende tolkning). De fleste tidlige kirkefedre, inkludert Johannes Chrysostomos, tolket det som at Andronikus og Junia var fremstående apostler.",
+      "source": "lingvistisk"
+    },
+    {
+      "text": "Navnet Andronikus (gresk: Ἀνδρόνικος) betyr 'mannlig seier' eller 'seierherre'. Det var et vanlig gresk navn i den hellenistiske verden, noe som tyder på at han var en hellenistisk jøde – en jøde som hadde tatt opp gresk kultur og språk.",
+      "source": "lingvistisk"
+    },
+    {
+      "text": "Paulus bruker det greske ordet 'syngenēs' (slektning) om Andronikus. Dette kan bety faktisk blodsslektning, men brukes også i bredere forstand om en landsmann eller medisraelitt (jf. Rom 9:3). Det er usikkert om Paulus mener en nær familierelasjon eller ganske enkelt at Andronikus var jøde.",
+      "source": "lingvistisk"
+    },
+    {
+      "text": "At Andronikus kom til tro 'før' Paulus plasserer hans omvendelse svært tidlig, muligens i forbindelse med den første pinsedagen eller den aller tidligste misjonsvirksomheten i Jerusalem etter Jesu oppstandelse (ca. 30–33 e.Kr.).",
+      "source": "historisk"
+    },
+    {
+      "text": "Paulus kaller Andronikus sin 'medfange' (gresk: synaichmalōtos), noe som bokstavelig betyr 'medkrigssfange'. Uttrykket indikerer at Andronikus hadde sittet i fengsel for troens skyld. Paulus satt i fengsel ved flere anledninger (jf. 2 Kor 11:23), og det er ukjent når de delte fangenskap.",
+      "source": "historisk"
+    },
+    {
+      "text": "Debatten om Junias/Junia har vært sentral i diskusjonen om kvinner i apostolisk tjeneste. Navnet i akkusativ (Iounian) kan tolkes som enten den kvinnelige formen Junia eller den mannlige Junias. Nyere forskning og de tidligste kildene støtter sterkt den kvinnelige lesningen Junia, noe som gjør paret Andronikus og Junia til et viktig vitnesbyrd om kvinners rolle i den tidlige kirken.",
+      "source": "teologisk"
+    },
+    {
+      "text": "I østkirkelig tradisjon regnes Andronikus blant de sytti disiplene som Jesus sendte ut (Luk 10:1). Ifølge denne tradisjonen ble han senere biskop i Pannonia (dagens Ungarn). Disse tradisjonene kan ikke bekreftes historisk, men vitner om den store respekten for Andronikus i tidlig kristendom.",
+      "source": "historisk"
+    },
+    {
+      "text": "Ordet 'apostel' (gresk: apostolos) brukes i Det nye testamentet i ulike betydninger – både om de tolv nærmeste disiplene til Jesus og i en bredere forstand om utsendinger eller misjonærer. At Andronikus kalles fremstående blant apostlene antyder trolig den bredere bruken av begrepet, og viser at apostelbegrepet i den tidlige kirken var mer fleksibelt enn det ofte fremstår i senere kirkelig tradisjon.",
+      "source": "teologisk"
     }
   ]
 }
