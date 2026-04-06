@@ -1,4 +1,5 @@
 import type { UkvnMappingFile } from './ukvn-types.js';
+import { UKVN_PART_SIZE } from './ukvn-types.js';
 
 export class UkvnMapper {
   private kvnToTkvn = new Map<number, number>();
@@ -16,11 +17,25 @@ export class UkvnMapper {
   }
 
   toTkvn(kvn: number): number {
-    return this.kvnToTkvn.get(kvn) ?? kvn;
+    const exact = this.kvnToTkvn.get(kvn);
+    if (exact !== undefined) return exact;
+    const part = kvn % UKVN_PART_SIZE;
+    if (part > 0) {
+      const base = this.kvnToTkvn.get(kvn - part);
+      if (base !== undefined) return base + part;
+    }
+    return kvn;
   }
 
   toKvn(tkvn: number): number {
-    return this.tkvnToKvn.get(tkvn) ?? tkvn;
+    const exact = this.tkvnToKvn.get(tkvn);
+    if (exact !== undefined) return exact;
+    const part = tkvn % UKVN_PART_SIZE;
+    if (part > 0) {
+      const base = this.tkvnToKvn.get(tkvn - part);
+      if (base !== undefined) return base + part;
+    }
+    return tkvn;
   }
 
   get entryCount(): number {
