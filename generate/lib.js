@@ -11,7 +11,7 @@ const cache = {}
 export function getOriginalVerse(bookId, chapterId, verseId) {
     let filename = ""
     if (bookId<40) {
-        filename = path.join(__dirname, "bibles_raw", "tanach", `${bookId}`, `${chapterId}.json`)
+        filename = path.join(__dirname, "bibles_raw", "hebrew", `${bookId}`, `${chapterId}.json`)
     } else {
         filename = path.join(__dirname, "bibles_raw", "sblgnt", `${bookId}`, `${chapterId}.json`)
     }
@@ -28,7 +28,7 @@ export function getRef(bookId, chapterId, verseId) {
 export function getOriginalChapter(bookId, chapterId) {
     let filename = ""
     if (bookId<40) {
-        filename = path.join(__dirname, "bibles_raw", "tanach", `${bookId}`, `${chapterId}.json`)
+        filename = path.join(__dirname, "bibles_raw", "hebrew", `${bookId}`, `${chapterId}.json`)
     } else {
         filename = path.join(__dirname, "bibles_raw", "sblgnt", `${bookId}`, `${chapterId}.json`)
     }

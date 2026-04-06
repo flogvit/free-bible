@@ -159,7 +159,7 @@ export const books = [
     {"id": 26, "file": "external/bibles/tanach/Ezekiel.txt", "name": "Ezekiel", "chapters": 48},
     {"id": 27, "file": "external/bibles/tanach/Daniel.txt", "name": "Daniel", "chapters": 12},
     {"id": 28, "file": "external/bibles/tanach/Hosea.txt", "name": "Hosea", "chapters": 14},
-    {"id": 29, "file": "external/bibles/tanach/Joel.txt", "name": "Joel", "chapters": 3},
+    {"id": 29, "file": "external/bibles/tanach/Joel.txt", "name": "Joel", "chapters": 4},
     {"id": 30, "file": "external/bibles/tanach/Amos.txt", "name": "Amos", "chapters": 9},
     {"id": 31, "file": "external/bibles/tanach/Obadiah.txt", "name": "Obadiah", "chapters": 1},
     {"id": 32, "file": "external/bibles/tanach/Jonah.txt", "name": "Jonah", "chapters": 4},

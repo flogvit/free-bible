@@ -80,7 +80,7 @@ const WORD_PROOFREAD_SCHEMA = {
 };
 
 // Original sources (not translations)
-const ORIGINAL_SOURCES = ['tanach', 'sblgnt'];
+const ORIGINAL_SOURCES = ['hebrew', 'tanach', 'wlc', 'sblgnt'];
 
 // Check if bible is an original source (not a translation)
 function isOriginalSource(bible) {
@@ -93,7 +93,7 @@ function getOriginalLanguage(bookId) {
 }
 
 function getOriginalSource(bookId) {
-    return bookId <= 39 ? 'tanach' : 'sblgnt';
+    return bookId <= 39 ? 'hebrew' : 'sblgnt';
 }
 
 // Word explanation prompt for ORIGINAL language texts (tanach/sblgnt)
@@ -731,7 +731,7 @@ async function main() {
     let endBook = 66;
 
     // For original sources, restrict to valid book ranges
-    if (options.source === 'tanach') {
+    if (options.source === 'hebrew' || options.source === 'tanach' || options.source === 'wlc') {
         startBook = 1;
         endBook = 39;
     } else if (options.source === 'sblgnt') {

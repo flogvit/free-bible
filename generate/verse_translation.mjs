@@ -70,7 +70,7 @@ const EXPLANATION_PROOFREAD_SCHEMA = {
 };
 
 function getOriginalSource(bookId) {
-    return bookId <= 39 ? 'tanach' : 'sblgnt';
+    return bookId <= 39 ? 'hebrew' : 'sblgnt';
 }
 
 function readOriginalChapter(bookId, chapterId) {

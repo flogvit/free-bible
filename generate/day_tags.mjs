@@ -97,7 +97,7 @@ function readTranslatedChapter(bible, bookId, chapterId) {
 }
 
 function readOriginalChapter(bookId, chapterId) {
-    const source = bookId <= 39 ? 'tanach' : 'sblgnt';
+    const source = bookId <= 39 ? 'hebrew' : 'sblgnt';
     const file = path.join(__dirname, `bibles_raw/${source}/${bookId}/${chapterId}.json`);
     if (!fs.existsSync(file)) return null;
     const verses = JSON.parse(fs.readFileSync(file, 'utf-8'));

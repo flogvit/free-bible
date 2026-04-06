@@ -40,7 +40,7 @@ const PROOFREAD_SUMMARY_SCHEMA = {
 
 // Get original source based on book ID
 function getOriginalSource(bookId) {
-    return bookId <= 39 ? 'tanach' : 'sblgnt';
+    return bookId <= 39 ? 'hebrew' : 'sblgnt';
 }
 
 // Read all chapters of a book from bibles_raw
