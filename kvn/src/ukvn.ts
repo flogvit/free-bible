@@ -1,5 +1,5 @@
-export { ukvnEncode, ukvnDecode, ukvnFormat, UKVN_PART_SIZE, UKVN_MAX_VERSE, UKVN_MAX_CHAPTER } from './ukvn-types.js';
-export type { UkvnMappingFile, UkvnEntry } from './ukvn-types.js';
+export { ukvnEncode, ukvnDecode, ukvnFormat, UKVN_PART_SIZE, UKVN_MAX_VERSE, UKVN_MAX_CHAPTER, MAPPING_META, resolveMappingId } from './ukvn-types.js';
+export type { UkvnMappingFile, UkvnEntry, MappingMeta } from './ukvn-types.js';
 export { UkvnMapper } from './ukvn-mapper.js';
 export { CrossMapper } from './ukvn-cross-mapper.js';
 export type { CrossMapResult } from './ukvn-cross-mapper.js';

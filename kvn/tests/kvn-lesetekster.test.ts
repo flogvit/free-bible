@@ -52,6 +52,18 @@ interface LeseDag {
   readings: Reading[];
 }
 
+/**
+ * Extract the plain reference from a ref markup string.
+ * "[ref:Rom 13,11-12@dnb2024|Rom 13,11–12]" -> "Rom 13,11-12"
+ * "Rom 13,11–12" -> "Rom 13,11–12" (passthrough for plain refs)
+ */
+function extractRef(ref: string): string {
+  // [ref:Rom 13,11-12@dnb2024|display] or [ref:Rom 13,11-12@dnb2024]
+  const m = ref.match(/^\[ref:(.+?)(?:@[^\]|]+)?(?:\|[^\]]+)?\]$/);
+  if (m) return m[1];
+  return ref;
+}
+
 function loadAllReferences(): { ref: string; context: string }[] {
   const result: { ref: string; context: string }[] = [];
   const files = readdirSync(LESETEKSTER_DIR).filter(f => f.endsWith('.json')).sort();
@@ -59,7 +71,7 @@ function loadAllReferences(): { ref: string; context: string }[] {
     const data: LeseDag[] = JSON.parse(readFileSync(join(LESETEKSTER_DIR, file), 'utf-8'));
     for (const dag of data) {
       for (const reading of dag.readings) {
-        result.push({ ref: reading.reference, context: `${file}: ${dag.name}` });
+        result.push({ ref: extractRef(reading.reference), context: `${file}: ${dag.name}` });
       }
     }
   }

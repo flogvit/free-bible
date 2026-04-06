@@ -45,3 +45,52 @@ export interface UkvnMappingFile {
   stats: Record<string, number>;
   map: UkvnEntry[];
 }
+
+export interface MappingMeta {
+  shortname: string;
+  displayName: string;
+}
+
+/**
+ * Metadata for known mapping systems: short aliases for inline references
+ * (e.g. ref:1.mos 1@dnb2024) and display names for UI.
+ */
+export const MAPPING_META: Record<string, MappingMeta> = {
+  osnb2:          { shortname: 'osnb2',   displayName: 'osnb2 (hebraisk/gresk)' },
+  osnn1:          { shortname: 'osnn1',   displayName: 'osnn1 (hebraisk/gresk nynorsk)' },
+  dnb2024:        { shortname: 'dnb2024', displayName: 'Bibelselskapets 2024' },
+  dnb2011_nb:     { shortname: 'dnb2011', displayName: 'Bibelselskapets 2011' },
+  dnb30:          { shortname: 'dnb1930', displayName: 'Bibelselskapets 1930' },
+  nb1978:         { shortname: 'nb1978',  displayName: 'Bibelselskapets 1978' },
+  nb88_nb:        { shortname: 'nb88',    displayName: 'Norsk Bibel 1988' },
+  nb94_nn:        { shortname: 'nb94',    displayName: 'Norsk Bibel 1994 (nynorsk)' },
+  english_kj:     { shortname: 'kjv',     displayName: 'King James Version' },
+  norwegian1921:  { shortname: 'n1921',   displayName: 'Norsk 1921' },
+  norwegian1938:  { shortname: 'n1938',   displayName: 'Norsk 1938' },
+  norwegian_bgo:  { shortname: 'bgo',     displayName: 'Bibelen Guds Ord' },
+};
+
+// Reverse lookup: shortname → mapping id
+const SHORTNAME_TO_ID = new Map<string, string>();
+for (const [id, meta] of Object.entries(MAPPING_META)) {
+  SHORTNAME_TO_ID.set(meta.shortname, id);
+}
+
+// Legacy aliases for renamed mapping files
+const LEGACY_ALIASES: Record<string, string> = {
+  dnb2024_nb: 'dnb2024',
+  dnb2024_nn: 'dnb2024',
+};
+
+/**
+ * Resolve a mapping shortname (e.g. "dnb2024") or full id to the canonical mapping id.
+ * Returns undefined if not found.
+ */
+export function resolveMappingId(shortnameOrId: string): string | undefined {
+  if (MAPPING_META[shortnameOrId]) return shortnameOrId;
+  const fromShortname = SHORTNAME_TO_ID.get(shortnameOrId);
+  if (fromShortname) return fromShortname;
+  const legacy = LEGACY_ALIASES[shortnameOrId];
+  if (legacy) return resolveMappingId(legacy);
+  return undefined;
+}

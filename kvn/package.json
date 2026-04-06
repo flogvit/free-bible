@@ -3,6 +3,11 @@
   "version": "1.0.0",
   "description": "KVN (Kanonisk Versnummer) library and test infrastructure",
   "type": "module",
+  "exports": {
+    ".": "./src/ukvn.ts",
+    "./ref": "./src/ref-markup.ts",
+    "./types": "./src/types.ts"
+  },
   "scripts": {
     "test": "vitest run",
     "test:watch": "vitest"

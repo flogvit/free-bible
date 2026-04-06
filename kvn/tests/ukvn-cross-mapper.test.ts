@@ -15,7 +15,7 @@ function loadMapping(name: string): UkvnMappingFile {
 
 describe('CrossMapper', () => {
   const kjv = new UkvnMapper(loadMapping('english_kj'));
-  const dnb2024 = new UkvnMapper(loadMapping('dnb2024_nb'));
+  const dnb2024 = new UkvnMapper(loadMapping('dnb2024'));
 
   describe('KJV -> DNB2024', () => {
     const cross = new CrossMapper(kjv, dnb2024);

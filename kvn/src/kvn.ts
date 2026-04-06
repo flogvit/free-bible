@@ -145,8 +145,8 @@ export function parseRef(ref: string, options?: ParseRefOptions): VerseRef[] {
   // Split on semicolons for multi-chapter references
   const semiParts = ref.split(';').map(s => s.trim());
 
-  // Extract book name from first part
-  const firstMatch = semiParts[0].match(/^(.+?)\s+(\d+),(.+)$/);
+  // Extract book name from first part — supports "Book ch,verses" or "Book ch" (whole chapter)
+  const firstMatch = semiParts[0].match(/^(.+?)\s+(\d+)(?:,(.+))?$/);
   if (!firstMatch) throw new Error(`Invalid reference: ${ref}`);
   const bookName = firstMatch[1];
   const book = BOOK_IDS[bookName];
@@ -158,19 +158,40 @@ export function parseRef(ref: string, options?: ParseRefOptions): VerseRef[] {
     let chapterVerses: string;
 
     if (i === 0) {
-      chapterVerses = `${firstMatch[2]},${firstMatch[3]}`;
+      if (firstMatch[3]) {
+        chapterVerses = `${firstMatch[2]},${firstMatch[3]}`;
+      } else {
+        // Whole chapter reference like "Matt 4" — needs maxVerse
+        if (!options?.maxVerse) {
+          throw new Error(`Whole-chapter reference requires maxVerse callback: ${ref}`);
+        }
+        const ch = parseInt(firstMatch[2]);
+        const max = options.maxVerse(book, ch);
+        for (let v = 1; v <= max; v++) allRefs.push({ book, chapter: ch, verse: v, part: 0 });
+        continue;
+      }
     } else {
       chapterVerses = semiParts[i].trim();
     }
 
-    // Parse chapter,verseSpec
-    const m = chapterVerses.match(/^(\d+),(.+)$/);
+    // Parse chapter,verseSpec — or just chapter number (whole chapter after semicolon)
+    const m = chapterVerses.match(/^(\d+)(?:,(.+))?$/);
     if (!m) throw new Error(`Invalid reference part: ${chapterVerses}`);
     const chapter = parseInt(m[1]);
     const verseSpec = m[2];
 
+    if (!verseSpec) {
+      // Whole chapter: "Matt 4;5" — second part is just "5"
+      if (!options?.maxVerse) {
+        throw new Error(`Whole-chapter reference requires maxVerse callback: ${ref}`);
+      }
+      const max = options.maxVerse(book, chapter);
+      for (let v = 1; v <= max; v++) allRefs.push({ book, chapter, verse: v, part: 0 });
+      continue;
+    }
+
     // Detect cross-chapter range: verseSpec like "1–19,42" or "26–2,2"
-    const crossMatch = verseSpec.match(/^(\d+[a-c]?)\s*[–-]\s*(\d+),(\d+[a-c]?)$/);
+    const crossMatch = verseSpec.match(/^(\d+[a-c]?f{0,2})\s*[–-]\s*(\d+),(\d+[a-c]?f{0,2})$/);
     if (crossMatch) {
       if (!options?.maxVerse) {
         throw new Error(`Cross-chapter range requires maxVerse callback: ${ref}`);
@@ -196,8 +217,19 @@ function parseSingleChapterVerses(book: number, chapter: number, verseSpec: stri
     const rangeParts = segment.split(/[–-]/);
 
     if (rangeParts.length === 1) {
-      const { verse, part } = parseVersePart(rangeParts[0]);
-      refs.push({ book, chapter, verse, part });
+      const { verse, part, f } = parseVersePart(rangeParts[0]);
+      if (f === 'f') {
+        // "5f" = verse 5 and 6
+        refs.push({ book, chapter, verse, part });
+        refs.push({ book, chapter, verse: verse + 1, part: 0 });
+      } else if (f === 'ff') {
+        // "5ff" = verse 5 and following (~3 verses)
+        for (let v = verse; v <= verse + 2; v++) {
+          refs.push({ book, chapter, verse: v, part: v === verse ? part : 0 });
+        }
+      } else {
+        refs.push({ book, chapter, verse, part });
+      }
     } else {
       // Use first and last parts (handles og/eller merging like "22–25–26–31" → 22–31)
       const start = parseVersePart(rangeParts[0]);
@@ -238,13 +270,14 @@ function parseCrossChapterRange(
   return refs;
 }
 
-function parseVersePart(s: string): { verse: number; part: number } {
+function parseVersePart(s: string): { verse: number; part: number; f?: 'f' | 'ff' } {
   const trimmed = s.trim();
-  const match = trimmed.match(/^(\d+)([a-c])?$/);
+  const match = trimmed.match(/^(\d+)([a-c])?(ff?)?$/);
   if (!match) throw new Error(`Invalid verse: ${trimmed}`);
   const verse = parseInt(match[1]);
   const part = match[2] ? match[2].charCodeAt(0) - 96 : 0; // a=1, b=2, c=3
-  return { verse, part };
+  const f = match[3] as 'f' | 'ff' | undefined;
+  return { verse, part, f };
 }
 
 /** Convert VerseRef[] to kvn numbers. */

@@ -432,3 +432,48 @@ describe('loadKvnMapping system support', () => {
     expect(m.map.length).toBeGreaterThan(0);
   });
 });
+
+// ============================================================
+// "f" and "ff" suffix support
+// ============================================================
+
+describe('parseRef with f/ff suffix', () => {
+  it('Matt 4,5f = Matt 4,5-6', () => {
+    const refs = parseRef('Matt 4,5f');
+    expect(refs).toHaveLength(2);
+    expect(refs[0]).toEqual({ book: 40, chapter: 4, verse: 5, part: 0 });
+    expect(refs[1]).toEqual({ book: 40, chapter: 4, verse: 6, part: 0 });
+  });
+
+  it('Matt 4,5ff = Matt 4,5-7 (3 verses)', () => {
+    const refs = parseRef('Matt 4,5ff');
+    expect(refs).toHaveLength(3);
+    expect(refs[0]).toEqual({ book: 40, chapter: 4, verse: 5, part: 0 });
+    expect(refs[2]).toEqual({ book: 40, chapter: 4, verse: 7, part: 0 });
+  });
+
+  it('Rom 10,8bf = Rom 10,8b and 10,9', () => {
+    const refs = parseRef('Rom 10,8bf');
+    expect(refs).toHaveLength(2);
+    expect(refs[0]).toEqual({ book: 45, chapter: 10, verse: 8, part: 2 });
+    expect(refs[1]).toEqual({ book: 45, chapter: 10, verse: 9, part: 0 });
+  });
+});
+
+// ============================================================
+// Whole-chapter and semicolon references
+// ============================================================
+
+describe('parseRef whole-chapter and semicolons', () => {
+  it('1 Kong 19,3b-13;24,10-21 = two ranges in same book', () => {
+    const refs = parseRef('1 Kong 19,3b-13;24,10-21');
+    // First part: 1 Kong 19,3b-13
+    expect(refs[0]).toEqual({ book: 11, chapter: 19, verse: 3, part: 2 });
+    expect(refs[refs.length - 1]).toEqual({ book: 11, chapter: 24, verse: 21, part: 0 });
+    // Check the split point
+    const ch19 = refs.filter(r => r.chapter === 19);
+    const ch24 = refs.filter(r => r.chapter === 24);
+    expect(ch19).toHaveLength(11); // v3b through v13
+    expect(ch24).toHaveLength(12); // v10 through v21
+  });
+});

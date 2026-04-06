@@ -32,6 +32,7 @@ import Anthropic from '@anthropic-ai/sdk';
 
 const OSMAIN_DIR = join(import.meta.dirname, '../../generate/bibles_raw/osmain');
 const RAW_DIR = join(import.meta.dirname, '../../external/closed/raw');
+const BIBLES_RAW_DIR = join(import.meta.dirname, '../../generate/bibles_raw');
 const TXT_DIR = join(import.meta.dirname, '../../external/closed');
 const MAPPINGS_DIR = join(import.meta.dirname, '../mappings');
 const RESULTS_DIR = join(import.meta.dirname, '../data/mapping-results');
@@ -157,7 +158,7 @@ function loadTxtBible(filename: string): Map<string, VerseData[]> {
 }
 
 function loadRawBible(name: string): Map<string, VerseData[]> {
-  const dir = join(RAW_DIR, name);
+  const dir = existsSync(join(RAW_DIR, name)) ? join(RAW_DIR, name) : join(BIBLES_RAW_DIR, name);
   const byChapter = new Map<string, VerseData[]>();
   if (!existsSync(dir)) return byChapter;
 
