@@ -8,7 +8,7 @@ const __dirname = path.dirname(__filename);
 dotenv.config()
 
 import {books, normalizeLanguage, getLanguageCode, getBookName} from "./constants.js";
-import {getOriginalVerse, getOriginalChapter, getRef} from "./lib.js";
+import {getOriginalVerse, getOriginalChapter, getRef, getOsnb2VerseRange} from "./lib.js";
 import {callWithRetry} from "./llm.js";
 
 let useLocal = false;
@@ -148,6 +148,40 @@ Return a JSON object with a 'references' array. Each element has: bookId (number
     }
 }
 
+/**
+ * Build context text for each cross-reference by looking up ±2 verses from osnb2.
+ * Returns a formatted string showing the actual Bible text around each referenced verse.
+ */
+function buildReferenceContext(currentReferences) {
+    const CONTEXT_RANGE = 2; // ±2 verses
+    const sections = [];
+
+    for (const ref of currentReferences) {
+        const refBookId = ref.bookId;
+        const refChapter = ref.chapterId;
+        const fromVerse = ref.fromVerseId;
+        const toVerse = ref.toVerseId || ref.fromVerseId;
+
+        const rangeStart = Math.max(1, fromVerse - CONTEXT_RANGE);
+        const rangeEnd = toVerse + CONTEXT_RANGE;
+
+        const verses = getOsnb2VerseRange(refBookId, refChapter, rangeStart, rangeEnd);
+        if (verses.length === 0) {
+            sections.push(`  [${refBookId}:${refChapter}:${fromVerse}-${toVerse}] — vers ikke funnet i osnb2`);
+            continue;
+        }
+
+        const bookName = getBookName(refBookId, 'Norwegian bokmål');
+        const lines = verses.map(v => {
+            const marker = (v.verseId >= fromVerse && v.verseId <= toVerse) ? '>>>' : '   ';
+            return `  ${marker} ${bookName} ${refChapter}:${v.verseId}: ${v.text}`;
+        });
+        sections.push(lines.join('\n'));
+    }
+
+    return sections.join('\n\n');
+}
+
 function getProofreadPrompt(language, bookId, chapterId, verseId, originalText, currentReferences) {
     const bookName = getBookName(bookId, language);
     const ref = `${bookName} ${chapterId}:${verseId}`;
@@ -218,7 +252,12 @@ Original text:
 ${originalText}
 
 Current cross-references:
-${refsJson}`;
+${refsJson}
+
+FAKTISK BIBELTEKST FOR REFERANSENE (±2 vers fra osnb2):
+Linjer merket med >>> er de refererte versene. Sjekk om referansen peker til riktig vers,
+eller om et nabovers er et bedre treff. Hvis et vers ikke finnes, er referansen sannsynligvis feil.
+${buildReferenceContext(currentReferences)}`;
 }
 
 function getOutputPath(language, bookId, chapterId, verseId) {

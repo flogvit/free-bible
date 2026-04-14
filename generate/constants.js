@@ -17,26 +17,31 @@ export const ollamaModelConfig = {
     options: { temperature: 1.0, top_p: 0.95, top_k: 64 },
     noThinkPrefix: '<|think|>\n',  // prepend to prompt to disable thinking
     thinkParam: false,              // don't use think: false in API
+    jsonFormat: false,              // gemma4 degrades badly with format:"json"
   },
   'qwen3.5:122b': {
     options: { temperature: 0 },
     noThinkPrefix: '/no_think\n',
     thinkParam: true,               // uses think: false in API
+    jsonFormat: true,
   },
   'qwen3.5:27b': {
     options: { temperature: 0 },
     noThinkPrefix: '/no_think\n',
     thinkParam: true,
+    jsonFormat: true,
   },
   'qwen3.5:9b': {
     options: { temperature: 0 },
     noThinkPrefix: '/no_think\n',
     thinkParam: true,
+    jsonFormat: true,
   },
   'gpt-oss:120b': {
     options: { temperature: 0.1 },
     noThinkPrefix: '',
     thinkParam: false,
+    jsonFormat: true,
   },
 };
 
@@ -45,6 +50,7 @@ export function getOllamaConfig(model) {
     options: { temperature: 0 },
     noThinkPrefix: '',
     thinkParam: false,
+    jsonFormat: true,
   };
 }
 

@@ -38,6 +38,30 @@ export function getOriginalChapter(bookId, chapterId) {
     return verses.filter( verse => +verse.bookId===+bookId && +verse.chapterId===+chapterId)
 }
 
+/**
+ * Get osnb2 verse text by bookId, chapterId, verseId.
+ * Returns { bookId, chapterId, verseId, text } or null.
+ */
+export function getOsnb2Verse(bookId, chapterId, verseId) {
+    const filename = path.join(__dirname, "bibles_raw", "osnb2", `${bookId}`, `${chapterId}.json`);
+    if (!fs.existsSync(filename)) return null;
+    const verses = cache[filename] ? cache[filename] : JSON.parse(fs.readFileSync(filename, 'utf-8'));
+    if (!(filename in cache)) cache[filename] = verses;
+    return verses.find(v => +v.bookId === +bookId && +v.chapterId === +chapterId && +v.verseId === +verseId) || null;
+}
+
+/**
+ * Get osnb2 verses in a range [verseStart..verseEnd] for a chapter.
+ * Returns array of { bookId, chapterId, verseId, text }.
+ */
+export function getOsnb2VerseRange(bookId, chapterId, verseStart, verseEnd) {
+    const filename = path.join(__dirname, "bibles_raw", "osnb2", `${bookId}`, `${chapterId}.json`);
+    if (!fs.existsSync(filename)) return [];
+    const verses = cache[filename] ? cache[filename] : JSON.parse(fs.readFileSync(filename, 'utf-8'));
+    if (!(filename in cache)) cache[filename] = verses;
+    return verses.filter(v => +v.bookId === +bookId && +v.chapterId === +chapterId && +v.verseId >= verseStart && +v.verseId <= verseEnd);
+}
+
 // Book ranges for convenient reference
 export const bookRanges = {
     // GT sections
