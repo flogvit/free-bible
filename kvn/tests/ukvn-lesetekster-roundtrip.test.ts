@@ -124,9 +124,15 @@ function parseLesetekstRef(ref: string): VerseRef[] {
 
 // --- Load lesetekster ---
 
+interface LesetekstPart {
+  refs: string[];
+  title: string;
+}
+interface LesetekstOption { parts: LesetekstPart[]; }
+interface LesetekstSlot { options: LesetekstOption[]; }
 interface LesetekstEntry {
   name: string;
-  readings: { reference: string; title: string }[];
+  slots: LesetekstSlot[];
 }
 
 function loadAllLesetekster(): { ref: string; context: string }[] {
@@ -137,8 +143,14 @@ function loadAllLesetekster(): { ref: string; context: string }[] {
   for (const file of files) {
     const data: LesetekstEntry[] = JSON.parse(readFileSync(join(dir, file), 'utf-8'));
     for (const entry of data) {
-      for (const reading of entry.readings) {
-        all.push({ ref: reading.reference, context: `${entry.name} - ${reading.title} (${file})` });
+      for (const slot of entry.slots) {
+        for (const option of slot.options) {
+          for (const part of option.parts) {
+            for (const ref of part.refs) {
+              all.push({ ref, context: `${entry.name} - ${part.title} (${file})` });
+            }
+          }
+        }
       }
     }
   }

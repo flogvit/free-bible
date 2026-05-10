@@ -40,16 +40,24 @@ function getTranslationMaxVerse(book: number, chapter: number): number {
   return max;
 }
 
-interface Reading {
-  reference: string;
+interface Part {
+  refs: string[];
   title: string;
+}
+
+interface Option {
+  parts: Part[];
+}
+
+interface Slot {
+  options: Option[];
 }
 
 interface LeseDag {
   name: string;
   date: string;
   series: string;
-  readings: Reading[];
+  slots: Slot[];
 }
 
 /**
@@ -58,7 +66,6 @@ interface LeseDag {
  * "Rom 13,11–12" -> "Rom 13,11–12" (passthrough for plain refs)
  */
 function extractRef(ref: string): string {
-  // [ref:Rom 13,11-12@dnb2024|display] or [ref:Rom 13,11-12@dnb2024]
   const m = ref.match(/^\[ref:(.+?)(?:@[^\]|]+)?(?:\|[^\]]+)?\]$/);
   if (m) return m[1];
   return ref;
@@ -70,8 +77,14 @@ function loadAllReferences(): { ref: string; context: string }[] {
   for (const file of files) {
     const data: LeseDag[] = JSON.parse(readFileSync(join(LESETEKSTER_DIR, file), 'utf-8'));
     for (const dag of data) {
-      for (const reading of dag.readings) {
-        result.push({ ref: extractRef(reading.reference), context: `${file}: ${dag.name}` });
+      for (const slot of dag.slots) {
+        for (const option of slot.options) {
+          for (const part of option.parts) {
+            for (const ref of part.refs) {
+              result.push({ ref: extractRef(ref), context: `${file}: ${dag.name}` });
+            }
+          }
+        }
       }
     }
   }
@@ -154,9 +167,18 @@ function parseLesetekstRef(ref: string): number[] | null {
 
   const parts = ref.split(';').map(s => s.trim());
 
-  // Extract book name from first part
-  const firstMatch = parts[0].match(/^(.+?)\s+(\d+),(.+)$/);
-  if (!firstMatch) return null;
+  // Extract book name from first part. Two forms:
+  //  - "Book chapter,verse..." (most refs)
+  //  - "Book verse" (single-chapter books like 3 Joh 11 — implicit chapter 1)
+  let firstMatch = parts[0].match(/^(.+?)\s+(\d+),(.+)$/);
+  let implicitChapterOne = false;
+  if (!firstMatch) {
+    const noCommaMatch = parts[0].match(/^(.+?)\s+(\d+[a-c]?(?:[–-]\d+[a-c]?)?(?:\.\d+[a-c]?(?:[–-]\d+[a-c]?)?)*)$/);
+    if (!noCommaMatch) return null;
+    firstMatch = [noCommaMatch[0], noCommaMatch[1], '1', noCommaMatch[2]] as RegExpMatchArray;
+    implicitChapterOne = true;
+  }
+  void implicitChapterOne;
   const bookName = firstMatch[1];
   const book = BOOK_IDS[bookName];
   if (book === undefined) return null;
