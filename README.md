@@ -59,7 +59,9 @@ Background information for each book including author, date, setting, and themes
 Detailed explanations of translation choices for each verse.
 
 ### Cross References
-Reference lists connecting related verses throughout the Bible.
+Reference lists connecting related verses throughout the Bible. Two complementary scripts:
+- `references.mjs` — LLM-knowledge-based (Claude or Ollama generates references from training data)
+- `references_semantic.mjs` — Semantic discovery (bge-m3 embeddings + LLM verification finds parallels not in standard cross-reference works)
 
 ### Reading Plans
 36 different reading plans for Bible study (see Developer section for full list).
@@ -96,6 +98,7 @@ generate/
 ├── proofread/           # Proofread results
 ├── reading_plans/       # Generated reading plan JSON files
 ├── references/          # Cross references
+├── embeddings/          # Cached vector embeddings (per corpus)
 ├── verse_translation/   # Verse translation explanations
 ├── word4word/           # Word-for-word translations
 ├── number_symbolism/    # Biblical number symbolism
@@ -115,7 +118,8 @@ generate/
 | `verse_translation.mjs` | Generate verse translation explanations |
 | `bible_persons.mjs` | Generate Bible persons encyclopedia |
 | `generate_reading_plans.mjs` | Generate reading plans |
-| `references.mjs` | Generate cross references |
+| `references.mjs` | Generate cross references (LLM-knowledge based) |
+| `references_semantic.mjs` | Semantic cross references via embeddings + LLM verify |
 | `number_symbolism.mjs` | Generate and index biblical number symbolism |
 | `stories.mjs` | Generate Bible story summaries |
 | `convert-refs.mjs` | Convert plain-text references to `[ref:...\|...]` markup |
@@ -129,6 +133,7 @@ generate/
 | `constants.js` | Book definitions, language mappings, model config |
 | `lib.js` | Shared utilities: `bookRanges`, `getChaptersForRange()`, `getChaptersForBooks()`, `resolveBookRange()` |
 | `llm.js` | Shared LLM module — supports both Claude (Anthropic) and Ollama |
+| `embeddings.js` | Reusable embedding library — `buildEmbeddings`, `loadEmbeddings`, `topK`, `embedQuery` (corpus-agnostic; works for verses, songs, etc.) |
 | `reading_plans_config.js` | Configuration for all 36 reading plans |
 
 ---
@@ -278,6 +283,45 @@ node number_symbolism.mjs --all --proofread --apply
 # Generate all reading plans
 node generate_reading_plans.mjs
 ```
+
+### Semantic Cross References
+
+`references_semantic.mjs` finds cross references via vector search over osnb2 verse embeddings, then LLM-verifies each candidate. Complements `references.mjs` (which generates from LLM knowledge) by surfacing parallels that don't appear in standard cross-reference works.
+
+**Pipeline:** bge-m3 embeddings + LLM theme summary + LLM concept questions → unique candidate set → qwen3.5:122b verifies each → merged into `references/nb/<book>/<chapter>/<verse>.json`.
+
+**Recommended production command:**
+```bash
+node references_semantic.mjs --top-k 30 --threshold 0.65 --theme --concepts --resume
+```
+
+This config was chosen by evaluating 9 variants on 10 test verses with Claude as independent judge:
+- 75% high-quality (≥4/5) accepted, ~5.6 good refs added per verse
+- ~14 min per verse on local qwen3.5:122b
+- Projection for full osnb2 (31 167 verses): ~175 000 good refs, ~73 days
+
+**Setup:**
+```bash
+ollama pull bge-m3
+ollama pull qwen3.5:122b   # or already pulled
+node references_semantic.mjs --build-only   # one-time: build embeddings (128 MB, ~15 min)
+```
+
+**Key flags:**
+- `--top-k <n>` — Vector candidates per verse (default 10; tested 30 is sweet spot)
+- `--threshold <x>` — Min cosine similarity (default 0.60; 0.65 recommended for bge-m3)
+- `--theme` — Add LLM-generated thematic summary as additional embed query
+- `--concepts` — Add 4 LLM-generated facet queries (different angles on the verse)
+- `--resume` — Skip already-processed verses (tracked in `embeddings/osnb2/semantic_progress.json`); essential for multi-day runs that get interrupted
+- `--skip-existing` — Skip verses that already have a references file (don't augment manual refs)
+- `--book <range>` / `--chapter <range>` / `--verse <range>` — Scope to subset
+
+**Resume behavior:** progress file is updated after each verse completes. Ctrl+C is safe — restart with `--resume` and it picks up from the next unprocessed verse. Delete `embeddings/osnb2/semantic_progress.json` to start fresh.
+
+**Known limitations:**
+- Prophecy → fulfillment (e.g. Gen 3:15 → Rom 16:20) — fulfillment language is too different from prophetic language for embedding similarity to find it
+- Famous short verses (e.g. Ps 23:1) — too little text to embed meaningfully
+- For these, fall back to `references.mjs` (LLM-knowledge based)
 
 ---
 

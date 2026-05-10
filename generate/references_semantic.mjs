@@ -7,7 +7,7 @@ dotenv.config();
 import {books} from './constants.js';
 import {getRef} from './lib.js';
 import {callWithRetry} from './llm.js';
-import {hasEmbeddings, buildEmbeddings, loadEmbeddings, topKByIndex} from './embeddings.js';
+import {hasEmbeddings, buildEmbeddings, loadEmbeddings, topK, topKByIndex, embedQuery} from './embeddings.js';
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
@@ -15,6 +15,44 @@ const __dirname = path.dirname(__filename);
 const EMBED_MODEL = 'bge-m3';
 const CORPUS = 'osnb2';
 const REFERENCES_LANG_DIR = path.join(__dirname, 'references', 'nb');
+const PROGRESS_FILE = path.join(__dirname, 'embeddings', CORPUS, 'semantic_progress.json');
+
+function verseKey(v) { return `${v.bookId}-${v.chapterId}-${v.verseId}`; }
+
+function loadProgress() {
+    if (!fs.existsSync(PROGRESS_FILE)) return new Set();
+    try {
+        const data = JSON.parse(fs.readFileSync(PROGRESS_FILE, 'utf-8'));
+        return new Set(data.processed || []);
+    } catch {
+        return new Set();
+    }
+}
+
+function saveProgress(progressSet) {
+    const dir = path.dirname(PROGRESS_FILE);
+    if (!fs.existsSync(dir)) fs.mkdirSync(dir, {recursive: true});
+    fs.writeFileSync(PROGRESS_FILE, JSON.stringify({processed: [...progressSet]}, null, 2));
+}
+
+const THEME_SCHEMA = {
+    type: 'object',
+    properties: {theme: {type: 'string'}},
+    required: ['theme'],
+    additionalProperties: false
+};
+
+const CONCEPTS_SCHEMA = {
+    type: 'object',
+    properties: {
+        queries: {
+            type: 'array',
+            items: {type: 'string'}
+        }
+    },
+    required: ['queries'],
+    additionalProperties: false
+};
 
 const VERIFY_SCHEMA = {
     type: 'object',
@@ -115,6 +153,32 @@ function mergeReferences(existing, fresh) {
     return merged;
 }
 
+async function extractConcepts(verse) {
+    const prompt = `Du er bibelforsker. Dette verset skal kobles med ekte kryssreferanser. Generer 4 søkespørsmål som hver fanger en *fasett* av verset — f.eks. teologisk hovedtema, narrativ kontekst, person eller motiv, profetisk sammenheng, kontrasterende ide, etc. Hvert spørsmål skal være en kort norsk setning (15-25 ord) som beskriver hva slags vers vi leter etter for å belyse denne fasetten.
+
+VERS: ${verse.text}
+
+Returner 4 søkespørsmål som dekker forskjellige fasetter — ikke parafraser, men *hva slags annet vers ville utdype dette*.`;
+    const result = await callWithRetry(prompt, {
+        schema: CONCEPTS_SCHEMA,
+        local: true,
+        context: `concepts ${verse.bookId}:${verse.chapterId}:${verse.verseId}`
+    });
+    return result.queries || [];
+}
+
+async function extractTheme(verse) {
+    const prompt = `Du er bibelforsker. Skriv en kort tematisk oppsummering (2-3 setninger på norsk) av kjernekonseptene, teologien og de sentrale motivene i dette verset. Tenk: hvilke teologiske begreper, motiver, personer og handlinger gjør verset til det det er? Vær konkret og presis — denne oppsummeringen brukes til å finne tematisk parallelle vers.
+
+VERS: ${verse.text}`;
+    const result = await callWithRetry(prompt, {
+        schema: THEME_SCHEMA,
+        local: true,
+        context: `theme ${verse.bookId}:${verse.chapterId}:${verse.verseId}`
+    });
+    return result.theme;
+}
+
 async function verifyVerse(verse, state, options) {
     const outFile = path.join(REFERENCES_LANG_DIR, `${verse.bookId}`, `${verse.chapterId}`, `${verse.verseId}.json`);
 
@@ -124,19 +188,65 @@ async function verifyVerse(verse, state, options) {
     }
 
     const skip = options.neighborSkip || 0;
-    const candidates = topKByIndex(state, verse.idx, {
+    const filter = (item) => {
+        if (skip > 0 && item.bookId === verse.bookId && item.chapterId === verse.chapterId
+            && Math.abs(item.verseId - verse.verseId) <= skip) {
+            return false;
+        }
+        return true;
+    };
+
+    // Text-based candidates
+    const textCands = topKByIndex(state, verse.idx, {
         k: options.topK,
         threshold: options.threshold,
-        filter: (item) => {
-            if (skip > 0 && item.bookId === verse.bookId && item.chapterId === verse.chapterId
-                && Math.abs(item.verseId - verse.verseId) <= skip) {
-                return false;
-            }
-            return true;
-        }
+        filter
     });
 
-    if (candidates.length === 0) return {found: 0, kept: 0};
+    // Theme-based candidates (if enabled)
+    let themeCands = [];
+    if (options.useTheme) {
+        try {
+            const theme = await extractTheme(verse);
+            const themeQuery = await embedQuery(state, theme);
+            themeCands = topK(state, themeQuery, {
+                k: options.topK,
+                threshold: options.threshold,
+                filter: (item) => filter(item) && item.idx !== verse.idx
+            });
+        } catch (err) {
+            console.warn(`\n  Theme extraction failed for ${getRef(verse.bookId, verse.chapterId, verse.verseId)}: ${err.message}`);
+        }
+    }
+
+    // Concept-question candidates (if enabled): LLM generates 4 facet-queries, each gets top-K/2
+    let conceptCands = [];
+    if (options.useConcepts) {
+        try {
+            const queries = await extractConcepts(verse);
+            const perQuery = Math.max(3, Math.ceil(options.topK / queries.length));
+            for (const q of queries) {
+                const qEmb = await embedQuery(state, q);
+                const got = topK(state, qEmb, {
+                    k: perQuery,
+                    threshold: options.threshold,
+                    filter: (item) => filter(item) && item.idx !== verse.idx
+                });
+                conceptCands.push(...got);
+            }
+        } catch (err) {
+            console.warn(`\n  Concepts extraction failed for ${getRef(verse.bookId, verse.chapterId, verse.verseId)}: ${err.message}`);
+        }
+    }
+
+    // Merge unique candidates from all sources
+    const seenIdx = new Set();
+    const candidates = [];
+    for (const c of [...textCands, ...themeCands, ...conceptCands]) {
+        if (!seenIdx.has(c.idx)) { seenIdx.add(c.idx); candidates.push(c); }
+    }
+
+    if (candidates.length === 0) return {found: 0, kept: 0, total: existing?.references?.length || 0};
 
     const candidateItems = candidates.map(c => state.items[c.idx]);
     const prompt = buildVerifyPrompt(verse, candidateItems);
@@ -150,7 +260,7 @@ async function verifyVerse(verse, state, options) {
         });
     } catch (err) {
         console.warn(`\n  Failed verify ${getRef(verse.bookId, verse.chapterId, verse.verseId)}: ${err.message}`);
-        return {found: candidates.length, kept: 0};
+        return {found: candidates.length, kept: 0, total: existing?.references?.length || 0};
     }
 
     const fresh = [];
@@ -178,7 +288,7 @@ async function verifyVerse(verse, state, options) {
         references: merged
     }, null, 2));
 
-    return {found: candidates.length, kept: fresh.length};
+    return {found: candidates.length, kept: fresh.length, total: merged.length};
 }
 
 function printUsage() {
@@ -195,6 +305,10 @@ Options:
   --verify-only        Only verify; assumes embeddings exist
   --top-k <n>          Candidate count per verse (default: 10)
   --threshold <x>      Min cosine similarity (default: 0.60 — bge-m3 typically scores related verses 0.60-0.70)
+  --theme              Add theme-extraction step: LLM summarizes verse, embed summary, search for thematic parallels (in addition to text-based)
+  --concepts           Add concept-question step: LLM generates 4 facet-queries, each searched separately
+  --resume             Skip verses already processed in a prior semantic run (tracked in embeddings/<corpus>/semantic_progress.json)
+  --skip-existing      Skip verses that already have a references file (don't augment existing manual refs)
   --neighbor-skip <n>  Skip same-chapter verses within N (default: 5)
   --book <range>       Verify only these books: single (43) or range (1-20)
   --chapter <range>    Verify only these chapters
@@ -225,6 +339,10 @@ function parseArgs(args) {
         topK: 10,
         threshold: 0.60,
         neighborSkip: 5,
+        useTheme: false,
+        useConcepts: false,
+        resume: false,
+        skipExisting: false,
         bookStart: null, bookEnd: null,
         chapterStart: null, chapterEnd: null,
         verseStart: null, verseEnd: null,
@@ -248,6 +366,10 @@ function parseArgs(args) {
         else if (a === '--verse' && i + 1 < args.length) {
             const r = parseRange(args[++i]); opts.verseStart = r.start; opts.verseEnd = r.end;
         }
+        else if (a === '--theme') opts.useTheme = true;
+        else if (a === '--concepts') opts.useConcepts = true;
+        else if (a === '--resume') opts.resume = true;
+        else if (a === '--skip-existing') opts.skipExisting = true;
         else if (a === '--force') opts.force = true;
         else if (a === '--help' || a === '-h') opts.help = true;
         i++;
@@ -290,17 +412,40 @@ async function main() {
         return true;
     };
 
-    const versesToProcess = state.items.filter(inScope);
-    console.log(`Verifying ${versesToProcess.length} verses (top-${opts.topK}, threshold ${opts.threshold}, neighbor-skip ${opts.neighborSkip})`);
+    const progress = opts.resume ? loadProgress() : new Set();
+    let allInScope = state.items.filter(inScope);
+    let versesToProcess = allInScope;
+
+    if (opts.resume) {
+        versesToProcess = versesToProcess.filter(v => !progress.has(verseKey(v)));
+    }
+    if (opts.skipExisting) {
+        versesToProcess = versesToProcess.filter(v => {
+            const f = path.join(REFERENCES_LANG_DIR, `${v.bookId}`, `${v.chapterId}`, `${v.verseId}.json`);
+            return !fs.existsSync(f);
+        });
+    }
+
+    const skippedResume = opts.resume ? (allInScope.length - versesToProcess.length - (opts.skipExisting ? 0 : 0)) : 0;
+    const flagInfo = [];
+    if (opts.resume) flagInfo.push(`resume: ${progress.size} done`);
+    if (opts.skipExisting) flagInfo.push('skip-existing');
+    if (opts.useTheme) flagInfo.push('+theme');
+    if (opts.useConcepts) flagInfo.push('+concepts');
+    console.log(`Verifying ${versesToProcess.length}/${allInScope.length} verses (top-${opts.topK}, threshold ${opts.threshold}, neighbor-skip ${opts.neighborSkip}${flagInfo.length ? ', ' + flagInfo.join(', ') : ''})`);
 
     let totalFound = 0;
     let totalKept = 0;
     for (let i = 0; i < versesToProcess.length; i++) {
         const v = versesToProcess[i];
-        const {found, kept} = await verifyVerse(v, state, opts);
+        const {found, kept, total} = await verifyVerse(v, state, opts);
         totalFound += found;
         totalKept += kept;
-        process.stdout.write(`\r  ${i + 1}/${versesToProcess.length} ${getRef(v.bookId, v.chapterId, v.verseId)} — found ${found}, kept ${kept}${' '.repeat(20)}`);
+        if (opts.resume) {
+            progress.add(verseKey(v));
+            saveProgress(progress);
+        }
+        process.stdout.write(`\r  ${i + 1}/${versesToProcess.length} ${getRef(v.bookId, v.chapterId, v.verseId)} — found ${found}, kept ${kept}, total ${total}${' '.repeat(20)}`);
     }
     process.stdout.write('\n');
     const pct = totalFound > 0 ? Math.round(totalKept * 100 / totalFound) : 0;

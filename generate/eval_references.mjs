@@ -11,7 +11,12 @@ import {getRef} from './lib.js';
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 
-const TEST_VERSES = [
+const TEST_VERSES = process.env.EVAL_VERSES === 'extra' ? [
+    {bookId: 1, chapterId: 3, verseId: 15},     // Gen 3:15 protoevangelium
+    {bookId: 23, chapterId: 53, verseId: 5},    // Isa 53:5 by his stripes
+    {bookId: 19, chapterId: 23, verseId: 1},    // Ps 23:1 the Lord is shepherd (NB: may need to check)
+    {bookId: 44, chapterId: 2, verseId: 38},    // Acts 2:38 repent and be baptized
+] : [
     {bookId: 1, chapterId: 1, verseId: 1},      // Gen 1:1 (creation)
     {bookId: 40, chapterId: 5, verseId: 3},     // Mt 5:3 (beatitudes)
     {bookId: 40, chapterId: 28, verseId: 19},   // Great commission
@@ -59,7 +64,11 @@ async function runPipelineOnVerse(verse, extraArgs = '') {
     const after = JSON.parse(fs.readFileSync(refFile, 'utf-8'));
     const newRefs = after.references.filter(r => !beforeKeys.has(refKey(r)));
 
-    if (beforeContent !== null) fs.writeFileSync(refFile, beforeContent);
+    if (beforeContent !== null) {
+        fs.writeFileSync(refFile, beforeContent);
+    } else if (fs.existsSync(refFile)) {
+        fs.unlinkSync(refFile);
+    }
 
     return {newRefs, elapsed, output};
 }
