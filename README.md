@@ -122,6 +122,7 @@ generate/
 | `references_semantic.mjs` | Semantic cross references via embeddings + LLM verify |
 | `number_symbolism.mjs` | Generate and index biblical number symbolism |
 | `stories.mjs` | Generate Bible story summaries |
+| `scan_stories.mjs` | Systematically scan Bible chapter-by-chapter for missing stories (proposals to `stories_proposed/`) |
 | `convert-refs.mjs` | Convert plain-text references to `[ref:...\|...]` markup |
 | `make_tanach.mjs` | Process Tanach source files |
 | `make_sblgnt.mjs` | Process SBLGNT source files |
