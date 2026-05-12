@@ -15,6 +15,13 @@ dist
 dist-ssr
 *.local
 
+# Runtime artifacts
+generate/embeddings/
+generate/.playwright-mcp/
+.playwright/
+docs/superpowers/
+generate/stories_proposed/*/.scan_state.json
+
 # Editor directories and files
 .vscode/*
 !.vscode/extensions.json
