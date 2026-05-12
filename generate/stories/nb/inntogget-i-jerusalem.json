@@ -1,5 +1,5 @@
 {
-  "slug": "inntogget-i-jerusalem",
+  "slug": "inntoget-i-jerusalem",
   "title": "Jesu inntog i Jerusalem",
   "keywords": [
     "palmesøndag",
@@ -11,7 +11,7 @@
     "davids sønn",
     "palmegreiner"
   ],
-  "description": "Jesus rir inn i Jerusalem på et esel mens folkemengden legger kapper og greiner på veien og roper «Hosianna! Velsignet er han som kommer i Herrens navn!»",
+  "description": "Jesus rir inn i Jerusalem på en eselfole mens folkemengden brer kappene sine ut på veien, vifter med greiner og roper: «Hosianna! Velsignet er han som kommer i Herrens navn!»",
   "category": "jesus-liv",
   "references": [
     {
@@ -33,7 +33,7 @@
       "startChapter": 19,
       "startVerse": 28,
       "endChapter": 19,
-      "endVerse": 44
+      "endVerse": 40
     },
     {
       "bookId": 43,
@@ -41,6 +41,26 @@
       "startVerse": 12,
       "endChapter": 12,
       "endVerse": 19
+    }
+  ],
+  "versions": [
+    {
+      "title": "Jesu inntog i Jerusalem",
+      "description": "Jesus rir inn i Jerusalem på et esel mens folkemengden legger kapper og greiner på veien og roper «Hosianna! Velsignet er han som kommer i Herrens navn!»",
+      "category": "jesus-liv",
+      "score": 8,
+      "verdict": "revise",
+      "reason": "[major] slug: Slug har skrivefeil: 'inntogget' bør være 'inntoget'.",
+      "date": "2026-05-11"
+    },
+    {
+      "title": "Jesu inntog i Jerusalem",
+      "description": "Jesus rir inn i Jerusalem på en eselfole mens folkemengden brer kappene sine ut på veien, vifter med greiner og roper: «Hosianna! Velsignet er han som kommer i Herrens navn!»",
+      "category": "jesus-liv",
+      "score": 8,
+      "verdict": "merge",
+      "reason": "[critical] duplicate_of: Dette forslaget dekker samme narrativ som eksisterende 'inntogget-i-jerusalem'. Det er praktisk talt identisk i innhold og referanser (forslaget har Luk 19:28-40, eksisterende har Luk 19:28-44).",
+      "date": "2026-05-11"
     }
   ]
 }
