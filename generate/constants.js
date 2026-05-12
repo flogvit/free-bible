@@ -4,7 +4,7 @@ export const bibles = {
     "osnn1": "Norwegian nynorsk",
 }
 
-export const anthropicModel = "claude-opus-4-6";
+export const anthropicModel = process.env.ANTHROPIC_MODEL || "claude-opus-4-7";
 export const maxTokens = 16384;
 
 // Local Ollama models for lightweight tasks
