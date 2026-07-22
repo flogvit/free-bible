@@ -17,7 +17,10 @@ export function loadUkvnMapping(systemOrPath: string): UkvnMappingFile {
 }
 
 export function listUkvnMappings(): string[] {
+  // Sortert: readdir-rekkefølge er filsystemavhengig og ga ulik rekkefølge på
+  // ulike maskiner/disker.
   return readdirSync(MAPPINGS_DIR)
     .filter(f => f.endsWith('.ukvn.json'))
-    .map(f => f.replace('.ukvn.json', ''));
+    .map(f => f.replace('.ukvn.json', ''))
+    .sort();
 }

@@ -18,8 +18,8 @@ function splitByReference(text: string, part: number, refTexts: string[]): strin
   const boundaries = [0];
 
   for (let i = 1; i < refTexts.length; i++) {
-    const searchStart = boundaries[boundaries.length - 1] + 1;
-    const needle = refTexts[i].slice(0, 20).trim();
+    const searchStart = boundaries[boundaries.length - 1]! + 1;
+    const needle = refTexts[i]!.slice(0, 20).trim();
     const pos = text.indexOf(needle, searchStart);
     if (pos >= 0) {
       boundaries.push(pos);
