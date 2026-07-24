@@ -53,6 +53,9 @@ const dryRun = args.includes('--dry-run');
 // (identity chapters contribute no mapping entries anyway). Opt-in; without it
 // every chapter is sent to Ollama so text-level splits/merges are also detected.
 const fast = args.includes('--fast');
+// --no-verify: skip the Claude API verification step. Flagged (non-exact) chapters
+// are instead marked "needsReview: true" in their result file for manual/agent review.
+const noVerify = args.includes('--no-verify');
 
 console.log(`Source: ${sourceName} (format: ${sourceFormat})`);
 console.log(`Model: ${ollamaModel}`);
@@ -493,7 +496,12 @@ for (const key of diffChapters) {
 
     // Claude verification for non-trivial findings
     let claudeNote = '';
-    if (needsVerification(result)) {
+    let needsReview = false;
+    if (needsVerification(result) && noVerify) {
+      // Skip the API; flag for manual/agent review instead.
+      needsReview = true;
+      claudeNote = ' [needs-review]';
+    } else if (needsVerification(result)) {
       process.stdout.write(`gemma ${ollamaElapsed}s → Claude... `);
       try {
         const verification = await verifyWithClaude(
@@ -531,7 +539,7 @@ for (const key of diffChapters) {
     // Save result (with Claude verification note)
     writeFileSync(
       join(sourceResultsDir, `${book}-${chapter}.json`),
-      JSON.stringify({ key, result, claudeNote, timestamp: new Date().toISOString() }, null, 2)
+      JSON.stringify({ key, result, claudeNote, needsReview, timestamp: new Date().toISOString() }, null, 2)
     );
 
     // Convert to mapping entries
