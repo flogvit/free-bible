@@ -9,7 +9,7 @@ The full license statement for each is also stored in `generate/bibles_raw/<modu
 No changes are made to the verse text; only file structure is reformatted and (optionally) a KVN
 canonical verse-number overlay is provided while the original numbering remains available.
 
-## CC BY-SA 4.0 (16)
+## CC BY-SA 4.0 (13)
 
 ### ইন্ডিয়ান রিভাইজড ভার্সন (IRV) - বেঙ্গলী  — Bengali (`bn_irv`)
 
@@ -51,10 +51,6 @@ canonical verse-number overlay is provided while the original numbering remains 
 
 > Copyright © 2017, 2019 Bridge Connectivity Solutions This Bible is made available under the terms of the Creative Commons Attribution-ShareAlike 4.0 International (CC BY-SA 4.0) license . This work has been reformated to work with Bible SuperSearch However, no changes to the text or punctuation have been made.
 
-### अनलक शाब्दिक बाइबल — Nepali (`ne_ulb`)
-
-> Copyright © 2019 Door43 World Missions Community This Bible is made available under the terms of the Creative Commons Attribution-ShareAlike 4.0 International (CC BY-SA 4.0) license . This work has been reformated to work with Bible SuperSearch However, no changes to the text or punctuation have been made.
-
 ### ਇੰਡਿਅਨ ਰਿਵਾਇਜ਼ਡ ਵਰਜ਼ਨ (IRV) - ਪੰਜਾਬੀ — Punjabi, Panjabi (`pa_irv`)
 
 > Copyright © 2017, 2019 Bridge Connectivity Solutions This Bible is made available under the terms of the Creative Commons Attribution-ShareAlike 4.0 International (CC BY-SA 4.0) license . This work has been reformated to work with Bible SuperSearch However, no changes to the text or punctuation have been made.
@@ -63,21 +59,7 @@ canonical verse-number overlay is provided while the original numbering remains 
 
 > Copyright © 2017, 2019 Bridge Connectivity Solutions This Bible is made available under the terms of the Creative Commons Attribution-ShareAlike 4.0 International (CC BY-SA 4.0) license . This work has been reformated to work with Bible SuperSearch However, no changes to the text or punctuation have been made.
 
-### திறந்தநிலை தமிழ் சமகால பதிப்பு — Tamil (`ta_oitce`)
-
-> Biblica® திறந்தநிலை தமிழ் சமகால பதிப்பு™ பதிப்புரிமை © 2005, 2020, 2022 Biblica, Inc. Biblica® Open Indian Tamil Contemporary Version™ Copyright © 2005, 2020, 2022 by Biblica, Inc. This work is made available under the Creative Commons Attribution-ShareAlike 4.0 International License (CC BY-SA). To view a copy of this license, visit https://creativecommons.org/licenses/by-sa/4.0 or send a letter to Creative Commons, PO Box 1866, Mountain View, CA 94042, USA.
-
 ### ఇండియన్ రివైజ్డ్ వెర్షన్ (IRV) - తెలుగు — Telugu (`te_irv`)
 
 > Copyright © 2017, 2019 Bridge Connectivity Solutions This Bible is made available under the terms of the Creative Commons Attribution-ShareAlike 4.0 International (CC BY-SA 4.0) license . This work has been reformated to work with Bible SuperSearch However, no changes to the text or punctuation have been made.
-
-### مۇقېددېس‭ ‬كالام (‭‬يەنگى‭ ‬يېزىق‭ ‬ ) — Uighur, Uyghur (`ug_ara`)
-
-> Copyright © 2010 Mukeddes Kalam - Uyghur Bible Translation Committee This Bible is made available under the terms of the Creative Commons Attribution-ShareAlike 4.0 International (CC BY-SA 4.0) license . This work has been reformated to work with Bible SuperSearch However, no changes to the text or punctuation have been made.
-
-## CC BY 4.0 (1)
-
-### Biblia Livre — Portuguese (`blivre`)
-
-> This Bible is made available under the terms of the Creative Commons Attribution 3.0 Brazil License (CC BY 3.0 BR) license . This work has been reformated to work with Bible SuperSearch However, no changes to the text or punctuation have been made.
 

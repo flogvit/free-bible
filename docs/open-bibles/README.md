@@ -4,16 +4,20 @@ Translations we are allowed to publish, with their license. Source of truth: **`
 
 ## Summary
 
-83 translations across 44 languages are cleared for publishing — all commercially usable
-(Public Domain, or CC BY / CC BY-SA with attribution):
+70 translations across 35 languages are published — all commercially usable
+(Public Domain or CC BY-SA with attribution):
 
 | Count | License | Usage |
 |------:|---------|-------|
-| 66 | Public Domain | No restrictions. |
-| 16 | CC BY-SA | Attribution required; derived/combined output stays CC BY-SA. |
-| 1 | CC BY | Attribution required. |
+| 57 | Public Domain | No restrictions. |
+| 13 | CC BY-SA | Attribution required; derived/combined output stays CC BY-SA. |
 
-All 83 allow commercial use and KVN renumbering. Each translation directory carries a
+66 of the 70 have a KVN mapping; the other 4 (`wlc`, `oster`, `martin`, `rv_1909_strongs`)
+have Psalm-title / Hebrew versification differences and are pending. A further **13
+translations were removed for data-quality problems** (corrupt or missing content) — see
+[`DATA-QUALITY.md`](DATA-QUALITY.md).
+
+All 70 allow commercial use and KVN renumbering. Each translation directory carries a
 `license.json` with the full statement and terms. These are exact code-matches against catalogs
 that publish per-translation license text (BibleSuperSearch, openbible.com, eBible.org).
 Classification is driven by the **license statement text**, not BSS's `copyright` flag — that
