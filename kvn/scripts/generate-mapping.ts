@@ -49,6 +49,10 @@ const sourceFormat = getArg('format') ?? 'raw'; // 'txt' or 'raw'
 const chapterFilter = getArg('chapter');
 const ollamaModel = getArg('model') ?? 'gemma4:31b';
 const dryRun = args.includes('--dry-run');
+// --fast: skip Ollama for chapters whose verse-ID set is identical to osmain
+// (identity chapters contribute no mapping entries anyway). Opt-in; without it
+// every chapter is sent to Ollama so text-level splits/merges are also detected.
+const fast = args.includes('--fast');
 
 console.log(`Source: ${sourceName} (format: ${sourceFormat})`);
 console.log(`Model: ${ollamaModel}`);
@@ -392,7 +396,19 @@ for (const key of [...allKeys].sort((a, b) => {
     continue;
   }
 
-  // All chapters go through Ollama — even with same verse IDs,
+  // In --fast mode, skip Ollama when the verse-ID set is identical to osmain:
+  // such chapters are a clean 1:1 identity and contribute no mapping entries.
+  if (fast) {
+    const osIds = osmainVerses.map(v => v.verseId).sort((a, b) => a - b);
+    const trIds = transVerses.map(v => v.verseId).sort((a, b) => a - b);
+    const identical = osIds.length === trIds.length && osIds.every((v, i) => v === trIds[i]);
+    if (identical) {
+      identityChapters.push(key);
+      continue;
+    }
+  }
+
+  // Otherwise go through Ollama — even with same verse count,
   // text content may differ (extra sentences, merges, etc.)
   diffChapters.push(key);
 }

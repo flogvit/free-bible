@@ -4,20 +4,26 @@ Translations we are allowed to publish, with their license. Source of truth: **`
 
 ## Summary
 
-90 translations across 50 languages are cleared for publishing:
+83 translations across 44 languages are cleared for publishing — all commercially usable
+(Public Domain, or CC BY / CC BY-SA with attribution):
 
-| Tier | Count | License | Usage |
-|------|------:|---------|-------|
-| **A** | 83 | Public Domain (66), CC BY-SA (16), CC BY (1) | Publish + KVN renumbering. CC requires attribution; CC BY-SA output stays BY-SA. |
-| **B** | 7 | CC BY-ND | Publish verbatim + reformat OK. KVN **renumbering is a legal grey area** (NoDerivatives) — keep original numbering canonical, KVN as optional overlay only. |
+| Count | License | Usage |
+|------:|---------|-------|
+| 66 | Public Domain | No restrictions. |
+| 16 | CC BY-SA | Attribution required; derived/combined output stays CC BY-SA. |
+| 1 | CC BY | Attribution required. |
 
-These 90 are exact code-matches against catalogs that publish per-translation license text
-(BibleSuperSearch, openbible.com, eBible.org). Classification is driven by the **license
-statement text**, not BSS's `copyright` flag — that flag is unreliable (e.g. the NET Bible has
-`copyright=0` but reads "© … used with permission" and is therefore **excluded**).
+All 83 allow commercial use and KVN renumbering. Each translation directory carries a
+`license.json` with the full statement and terms. These are exact code-matches against catalogs
+that publish per-translation license text (BibleSuperSearch, openbible.com, eBible.org).
+Classification is driven by the **license statement text**, not BSS's `copyright` flag — that
+flag is unreliable (e.g. the NET Bible has `copyright=0` but reads "© … used with permission").
 
 ## Not in this list
 
+- **7 CC BY-NC-ND** — matched and free-ish, but **NonCommercial + NoDerivatives**: incompatible
+  with a freemium/commercial platform. Excluded (`jv_jvn`, `so_jimale`, `tg_tgk`, `bo_ntb`,
+  `ur_geo`, `wo_kyg`, `wo_wol_nt_2010`).
 - **14 excluded** — confirmed copyrighted / permission-only (NET Bible, NVI, several national
   Bible-society editions).
 - **1041 unmatched** — the bulk of the downloaded collection. Their descriptive module names
@@ -29,10 +35,12 @@ statement text**, not BSS's `copyright` flag — that flag is unreliable (e.g. t
 
 | Column | Meaning |
 |--------|---------|
-| `module` | local module id (matches `external/closed/raw/<module>/`) |
+| `module` | local module id (matches `generate/bibles_raw/<module>/`) |
 | `name`, `language` | translation title and language |
-| `license` | Public Domain / CC BY / CC BY-SA / CC BY-ND |
-| `tier` | A (free incl. KVN) or B (verbatim, KVN uncertain) |
-| `kvn_ok` | whether KVN verse-renumbering is safe under the license |
+| `license` | Public Domain / CC BY / CC BY-SA |
 | `attribution` | whether attribution is required (all CC) |
+| `kvn_ok` | whether KVN verse-renumbering is allowed (true for all 83) |
+| `status`, `raw_added`, `kvn_mapping` | per-translation progress trackers |
 | `source` | catalog the license was confirmed from |
+
+Each translation directory also contains a `license.json` with the full license statement.
