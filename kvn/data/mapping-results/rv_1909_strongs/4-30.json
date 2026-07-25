@@ -1,0 +1,150 @@
+{
+  "key": "4:30",
+  "result": {
+    "mappings": [
+      {
+        "translationVerse": 1,
+        "osmainVerses": [],
+        "matchType": "missing",
+        "note": "Translation v1 introduces the context ('Y MOISÉS dijo á los hijos de Israel...') which is not present in OSMAIN. OSMAIN starts directly with Moses speaking to the heads of tribes (v2 equivalent)."
+      },
+      {
+        "translationVerse": 2,
+        "osmainVerses": [
+          1
+        ],
+        "matchType": "exact",
+        "note": "Translation v2 ('Y habló Moisés á los príncipes...') matches OSMAIN v1 content exactly."
+      },
+      {
+        "translationVerse": 3,
+        "osmainVerses": [
+          2
+        ],
+        "matchType": "partial",
+        "note": "Translation v3 covers the first half of OSMAIN v2 (the rule for a man making a vow). It stops before 'Alt som går ut av hans munn...' which is included in OSMAIN v2 but not fully reflected as a separate clause here, though the semantic content is largely there. However, looking closely at the structure: OSMAIN v2 contains two sentences. Translation v3 covers the first sentence ('Cuando alguno hiciere voto... no violará su palabra'). The second part of OSMAIN v2 ('Alt som går ut av hans munn, skal han holde') corresponds to 'todo lo que salió de sus labios' in later verses or is implied. Actually, looking at the Hebrew structure often split here: Translation v3 covers the general rule for a man. OSMAIN v2 combines the man's rule and the specific instruction 'Alt som går ut av hans munn'. This is a close match, but let's check if it splits. No, it seems to cover the whole concept of the man's vow in one verse."
+      },
+      {
+        "translationVerse": 4,
+        "osmainVerses": [
+          3
+        ],
+        "matchType": "exact",
+        "note": "Translation v4 ('Mas la mujer... en casa de su padre') matches OSMAIN v3 exactly."
+      },
+      {
+        "translationVerse": 5,
+        "osmainVerses": [
+          4
+        ],
+        "matchType": "partial",
+        "note": "Translation v5 covers the condition where the father hears and remains silent. It ends abruptly ('y...') missing the conclusion 'todos sus votos serán firmes' which appears in the next verse or is cut off. Wait, looking at the provided text: Translation v5 ends with 'y'. The sentence continues in v6? No, v6 starts with 'Mas si'. Let's re-read carefully. Translation v5: 'Si su padre oyere... y callare á ello, todos los votos de ella serán firmes, y [cut off]'. It seems the text provided for v5 is incomplete or merged with v6 in the source display? Actually, looking at standard numbering, v5 usually ends with 'firmes'. The provided text cuts off. However, assuming the content intended: Translation v5 covers OSMAIN v4 (Father hears and stays silent -> vows stand). It seems to cover the full thought if we assume the cut-off is a typo in the prompt's display of v5, but strictly based on the text provided, it ends with 'y'. Let's assume it maps to OSMAIN v4."
+      },
+      {
+        "translationVerse": 6,
+        "osmainVerses": [
+          5
+        ],
+        "matchType": "partial",
+        "note": "Translation v6 covers the condition where the father forbids. It ends with 'no será' (will not be). This corresponds to OSMAIN v5 ('Men dersom hennes far forbyr...'). The text in translation v6 is cut off, missing the consequence 'stå ved makt' and the forgiveness clause which starts in v8? No, the forgiveness clause is usually at the end of the verse. In OSMAIN v5, it ends with 'Herren vil tilgi henne'. Translation v6 cuts off at 'no será'. The rest of the thought (forgiveness) seems to be missing or split."
+      },
+      {
+        "translationVerse": 7,
+        "osmainVerses": [
+          6
+        ],
+        "matchType": "exact",
+        "note": "Translation v7 ('Empero si fuere casada...') matches OSMAIN v6 (If she marries while under vows) exactly."
+      },
+      {
+        "translationVerse": 8,
+        "osmainVerses": [
+          7
+        ],
+        "matchType": "exact",
+        "note": "Translation v8 ('Si su marido lo oyere...') matches OSMAIN v7 (Husband hears and stays silent -> vows stand) exactly."
+      },
+      {
+        "translationVerse": 9,
+        "osmainVerses": [
+          8
+        ],
+        "matchType": "exact",
+        "note": "Translation v9 ('Pero si cuando su marido lo oyó...') matches OSMAIN v8 (Husband forbids -> vows void) exactly."
+      },
+      {
+        "translationVerse": 10,
+        "osmainVerses": [
+          9
+        ],
+        "matchType": "exact",
+        "note": "Translation v10 ('Mas todo voto de viuda...') matches OSMAIN v9 (Widow/divorced woman's vows stand) exactly."
+      },
+      {
+        "translationVerse": 11,
+        "osmainVerses": [
+          10
+        ],
+        "matchType": "exact",
+        "note": "Translation v11 ('Y si hubiere hecho voto en casa de su marido...') matches OSMAIN v10 (Vow made in husband's house) exactly."
+      },
+      {
+        "translationVerse": 12,
+        "osmainVerses": [
+          11
+        ],
+        "matchType": "exact",
+        "note": "Translation v12 ('Si su marido oyó...') matches OSMAIN v11 (Husband hears and stays silent -> vows stand) exactly."
+      },
+      {
+        "translationVerse": 13,
+        "osmainVerses": [
+          12
+        ],
+        "matchType": "exact",
+        "note": "Translation v13 ('Mas si su marido los anuló...') matches OSMAIN v12 (Husband annuls -> nothing stands) exactly."
+      },
+      {
+        "translationVerse": 14,
+        "osmainVerses": [
+          13
+        ],
+        "matchType": "exact",
+        "note": "Translation v14 ('Todo voto... su marido lo confirmará...') matches OSMAIN v13 (General rule: husband confirms or annuls) exactly."
+      },
+      {
+        "translationVerse": 15,
+        "osmainVerses": [
+          14
+        ],
+        "matchType": "exact",
+        "note": "Translation v15 ('Empero si su marido callare...') matches OSMAIN v14 (Husband stays silent day to day -> confirms) exactly."
+      },
+      {
+        "translationVerse": 16,
+        "osmainVerses": [
+          15
+        ],
+        "matchType": "exact",
+        "note": "Translation v16 ('Mas si las anulare después...') matches OSMAIN v15 (Husband annuls later -> bears guilt) exactly."
+      },
+      {
+        "translationVerse": 17,
+        "osmainVerses": [
+          16
+        ],
+        "matchType": "exact",
+        "note": "Translation v17 ('Estas son las ordenanzas...') matches OSMAIN v16 (Summary of regulations) exactly."
+      }
+    ],
+    "extraContent": [
+      {
+        "translationVerse": 1,
+        "description": "The entire verse 'Y MOISÉS dijo á los hijos de Israel, conforme á todo lo que Jehová le había mandado.' is extra content not found in OSMAIN. OSMAIN begins with Moses speaking to the heads of tribes (v2 equivalent), skipping the introductory address to all Israel."
+      }
+    ]
+  },
+  "claudeNote": " [needs-review]",
+  "needsReview": true,
+  "timestamp": "2026-07-25T10:35:10.044Z"
+}
