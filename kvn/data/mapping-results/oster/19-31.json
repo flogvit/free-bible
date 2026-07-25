@@ -1,0 +1,186 @@
+{
+  "key": "19:31",
+  "result": {
+    "mappings": [
+      {
+        "translationVerse": 1,
+        "osmainVerses": [],
+        "matchType": "missing",
+        "note": "Translation v1 is a title/header ('Au maître-chantre. Psaume de David.') which corresponds to the header of OSMAIN but is not numbered as verse 1 in the OSMAIN text provided (OSMAIN starts numbering at 'For sangmesteren...' as v1). However, looking closely, OSMAIN v1 *contains* this title: 'For sangmesteren. En salme av David.' The translation separates the title into its own verse 1, while OSMAIN includes it in verse 1. This is a structural difference. Let's re-evaluate based on content flow. \n\nCorrection: In OSMAIN, v1 starts with 'For sangmesteren...'. In Translation, v1 is ONLY the title. Translation v2 starts with 'Éternel, je me suis retiré...'.\nOSMAIN v1: 'For sangmesteren. En salme av David. Hos deg, HERRE, søker jeg tilflukt...' \nTranslation v1: Title only.\nTranslation v2: 'Éternel, je me suis retiré vers toi...' (Matches OSMAIN v1 second half).\n\nActually, let's look at the standard numbering of Psalm 31. \nStandard Hebrew/Protestant numbering: \nTitle = not numbered or part of v1.\nv1 = 'In you O Lord I seek refuge...'\nv2 = 'Turn your ear to me...'\n...\nv6 = 'Into your hand I commit my spirit...'\n\nLet's trace the content carefully:\nOSMAIN v1: Title + 'Hos deg, HERRE, søker jeg tilflukt. La meg aldri bli til skamme! Redd meg i din rettferdighet!'\nTranslation v1: Title only.\nTranslation v2: 'Éternel, je me suis retiré vers toi; que je ne sois jamais confus! Délivre-moi par ta justice!' (Matches OSMAIN v1 content excluding title).\n\nWait, the prompt says OSMAIN has 24 verses. Translation has 25. \nLet's map by semantic content:\n\nOSMAIN v1: Title + 'Hos deg... rettferdighet!'\nTranslation v1: Title.\nTranslation v2: 'Éternel, je me suis retiré...' (This is the body of OSMAIN v1).\nSo Translation v1 is a split of OSMAIN v1? Or is Translation v1 considered 'extra' because it separates the title?\nThe prompt asks to match content. \nIf I map Translation v2 to OSMAIN v1, then Translation v1 has no matching *content* in OSMAIN's numbered verses if we consider the title part of v1. But the title IS in OSMAIN v1.\nLet's assume the user wants to know which OSMAIN verse corresponds to the text in Translation v1. \nText: 'Au maître-chantre. Psaume de David.'\nOSMAIN v1 contains this text. So it maps to OSMAIN v1, but it is a **split** (Translation separates title from body).\n\nLet's re-read the mapping rules. \n- split: translation verse is part of a split osmain verse.\nYes. Translation v1 is the first part of OSMAIN v1.\n\nNow let's look at the rest:\nOSMAIN v2: 'Vend ditt øre... fast borg til å frelse meg!'\nTranslation v3: 'Incline ton oreille... ma forteresse où je puisse me sauver!'\nMatch: Exact (v2 -> v3).\n\nOSMAIN v3: 'For du er min klippe... led meg og før meg!'\nTranslation v4: 'Car tu es mon rocher... tu me guideras et me conduiras.'\nMatch: Exact (v3 -> v4).\n\nOSMAIN v4: 'Befri meg fra garnet... for du er min tilflukt.'\nTranslation v5: 'Tu me tireras du piège qu'on m'a tendu; car tu es ma retraite.'\nMatch: Exact (v4 -> v5).\n\nOSMAIN v5: 'I din hånd overgir jeg min ånd. Du har løst meg ut, HERRE, du trofaste Gud.'\nTranslation v6: 'Je remets mon esprit entre tes mains; tu m'as racheté, ô Éternel, Dieu de vérité!'\nMatch: Exact (v5 -> v6).\n\nOSMAIN v6: 'Jeg hater dem som holder seg til tomme avguder, men jeg setter min lit til HERREN.'\nTranslation v7: 'Je hais ceux qui s'adonnent aux vanités trompeuses; pour moi, je me confie en l'Éternel.'\nMatch: Exact (v6 -> v7).\n\nOSMAIN v7: 'Jeg vil juble og glede meg over din nåde, for du har sett min nød. Du kjenner min sjels trengsler.'\nTranslation v8: 'Je triompherai, je me réjouirai en ta bonté, toi qui as regardé mon affliction, qui as pris connaissance des détresses de mon âme.'\nMatch: Exact (v7 -> v8).\n\nOSMAIN v8: 'Du overgav meg ikke i fiendens hånd, men stilte mine føtter på åpent land.'\nTranslation v9: 'Tu ne m'as pas livré aux mains de l'ennemi; tu as mis au large et tu as assuré mes pas.'\nMatch: Exact (v8 -> v9).\n\nOSMAIN v9: 'Vær meg nådig, HERRE, for jeg er i nød! Mitt øye tæres bort av fortvilelse, ja, min sjel og min mage likeså.'\nTranslation v10: 'Éternel, aie pitié de moi, car je suis dans la détresse! Mon œil dépérit de chagrin, mon âme aussi et mes entrailles.'\nMatch: Exact (v9 -> v10).\n\nOSMAIN v10: 'For mitt liv svinner hen i sorg og mine år i sukk. Min kraft svikter på grunn av min synd, og mine ben tæres bort.'\nTranslation v11: 'Car ma vie se consume dans la douleur, et mes ans dans les soupirs; ma force est déchue à cause de mon iniquité, et mes os dépérissent.'\nMatch: Exact (v10 -> v11).\n\nOSMAIN v11: 'For alle mine fiender er jeg blitt til spott, ja, særlig for mine naboer, og en redsel for mine kjente. De som ser meg på gaten, flykter fra meg.'\nTranslation v12: 'A cause de tous mes ennemis je suis un objet d'opprobre, de grand opprobre pour mes voisins, et un objet d'horreur pour mes amis; ceux qui me voient dehors s'enfuient loin de moi.'\nMatch: Exact (v11 -> v12).\n\nOSMAIN v12: 'Jeg er glemt som en død, ute av sinnet. Jeg er blitt som et knust kar.'\nTranslation v13: 'J'ai été mis en oubli dans les cœurs comme un mort; je suis comme un vase de rebut.'\nMatch: Exact (v12 -> v13).\n\nOSMAIN v13: 'For jeg hører mange som hvisker, det er redsel på alle kanter. De rådslår sammen mot meg og legger planer om å ta mitt liv.'\nTranslation v14: 'Car j'entends les propos secrets de beaucoup de gens; la frayeur m'environne; ils se concertent ensemble contre moi, et complotent de m'ôter la vie.'\nMatch: Exact (v13 -> v14).\n\nOSMAIN v14: 'Men jeg setter min lit til deg, HERRE. Jeg sier: «Du er min Gud.»'\nTranslation v15: 'Mais moi, Éternel, je me confie en toi; j'ai dit: Tu es mon Dieu.'\nMatch: Exact (v14 -> v15).\n\nOSMAIN v15: 'Mine tider er i din hånd. Redd meg fra mine fienders hånd og fra dem som forfølger meg!'\nTranslation v16: 'Mes temps sont en ta main; délivre-moi de la main de mes ennemis et de mes persécuteurs.'\nMatch: Exact (v15 -> v16).\n\nOSMAIN v16: 'La ditt ansikt lyse over din tjener! Frels meg i din nåde!'\nTranslation v17: 'Fais luire ta face sur ton serviteur; délivre-moi par ta bonté.'\nMatch: Exact (v16 -> v17).\n\nOSMAIN v17: 'HERRE, la meg ikke bli til skamme, for jeg roper til deg. La de ugudelige bli til skamme, la dem tie i dødsriket!'\nTranslation v18: 'Éternel, que je ne sois point confus, car je t'ai invoqué; que les méchants soient confus, qu'ils aient la bouche fermée dans le Sépulcre!'\nMatch: Exact (v17 -> v18).\n\nOSMAIN v18: 'La de løgnaktige lepper bli stumme, de som taler overmodig mot den rettferdige med hovmod og forakt.'\nTranslation v19: 'Qu'elles soient muettes, les lèvres menteuses qui profèrent contre le juste des paroles impudentes, avec orgueil et mépris!'\nMatch: Exact (v18 -> v19).\n\nOSMAIN v19: 'Hvor stor er din godhet som du har gjemt for dem som frykter deg, som du har vist mot dem som søker tilflukt hos deg, for menneskers øyne!'\nTranslation v20: 'Oh! qu'ils sont grands, les biens que tu as réservés pour ceux qui te craignent; que tu répands, aux yeux des fils des hommes, sur ceux qui se retirent vers toi!'\nMatch: Exact (v19 -> v20).\n\nOSMAIN v20: 'Du skjuler dem i ditt ansikts skjul mot menneskers angrep. Du gjemmer dem i din hytte mot stridende tunger.'\nTranslation v21: 'Tu les caches dans le secret de ta face, loin des complots des hommes; tu les abrites dans ta tente contre les langues qui les attaquent.'\nMatch: Exact (v20 -> v21).\n\nOSMAIN v21: 'Velsignet være HERREN, for han har vist meg sin underfulle nåde som i en beleiret by.'\nTranslation v22: 'Béni soit l'Éternel! Car il a signalé sa bonté envers moi, et m'a mis comme dans une ville forte.'\nMatch: Exact (v21 -> v22).\n\nOSMAIN v22: 'I min angst sa jeg: «Jeg er støtt bort fra dine øyne.» Men du hørte mine bønner da jeg ropte til deg.'\nTranslation v23: 'Je disais dans ma précipitation: Je suis retranché de devant tes yeux; mais tu as exaucé la voix de mes supplications, quand j'ai crié à toi.'\nMatch: Exact (v22 -> v23).\n\nOSMAIN v23: 'Elsk HERREN, alle dere hans hellige! HERREN bevarer de trofaste, men gjengjelder den som handler i hovmod, i fullt mål.'\nTranslation v24: 'Aimez l'Éternel, vous tous ses bien-aimés! L'Éternel garde les fidèles, mais il rend à celui qui agit avec orgueil tout ce qu'il a mérité.'\nMatch: Exact (v23 -> v24).\n\nOSMAIN v24: 'Vær sterke, og la hjertet være frimodig, alle dere som håper på HERREN!'\nTranslation v25: 'Demeurez fermes, et que votre cœur se fortifie, vous tous qui vous attendez à l'Éternel!'\nMatch: Exact (v24 -> v25).\n\nSummary of the shift:\nThe Translation splits OSMAIN v1 into two parts: \n1. The title ('Au maître-chantre...') becomes Translation v1.\n2. The body ('Éternel, je me suis retiré...') becomes Translation v2.\nThis causes a +1 offset for all subsequent verses (Translation v3 = OSMAIN v2, etc.).\n\nLet's verify the 'extra_content' rule. \nDoes Translation v1 contain text NOT in any OSMAIN verse? No, it is part of OSMAIN v1.\nDoes Translation v2 contain extra content? No, it matches the body of OSMAIN v1.\nSo no 'extra_content' is needed, just a 'split'.\n\nWait, let's re-read OSMAIN v1 carefully: \n'v1: For sangmesteren. En salme av David. Hos deg, HERRE, søker jeg tilflukt...'\nThe title is included in the text of verse 1.\nTranslation v1 is ONLY the title.\nTranslation v2 starts with 'Éternel...' (the body).\nSo Translation v1 is a **split** of OSMAIN v1. \nAnd Translation v2 is the other part of that split? Or is Translation v2 considered 'exact' to the *body* of OSMAIN v1, but since the verse number changed, it's a shift?\nThe prompt asks for mapping types.\nIf I map Trans v1 -> OSMAIN v1 (partial/split) and Trans v2 -> OSMAIN v1 (partial/split), that works. \nBut usually, in these tasks, if a translation splits one source verse into two target verses, we report both as 'split' or 'partial'.\nHowever, looking at the list of types: 'split' is defined as 'translation verse is part of a split osmain verse'. This fits perfectly for v1 and v2.\n\nLet's double check if there are any other splits. \nOSMAIN v6: 'Jeg hater dem... avguder, men jeg setter min lit til HERREN.'\nTranslation v7: 'Je hais ceux qui s'adonnent aux vanités trompeuses; pour moi, je me confie en l'Éternel.'\nThis is one sentence in both. No split.\n\nOSMAIN v12: 'Jeg er glemt som en død, ute av sinnet. Jeg er blitt som et knust kar.' (Two sentences)\nTranslation v13: 'J'ai été mis en oubli dans les cœurs comme un mort; je suis comme un vase de rebut.' (One sentence with semicolon). No split.\n\nSo the only structural change is the title separation at the beginning. \n\nMapping Plan:\nTrans v1 -> OSMAIN v1 (split)\nTrans v2 -> OSMAIN v1 (split) - Wait, can one source verse map to two target verses? Yes, that's what 'split' implies.\nBut usually, we list the mapping for each translation verse. \nTrans v1: matches part of OSMAIN v1. Type: split.\nTrans v2: matches rest of OSMAIN v1. Type: split.\nTrans v3 -> OSMAIN v2 (exact)\n... and so on.\n\nWait, is 'split' the right term for both? \nDefinition: "
+      },
+      {
+        "translationVerse": 2,
+        "osmainVerses": [
+          1
+        ],
+        "matchType": "split",
+        "note": "Translation v2 contains the body of OSMAIN v1 (starting 'Hos deg...'), while Translation v1 contains the title. Together they form OSMAIN v1."
+      },
+      {
+        "translationVerse": 3,
+        "osmainVerses": [
+          2
+        ],
+        "matchType": "exact"
+      },
+      {
+        "translationVerse": 4,
+        "osmainVerses": [
+          3
+        ],
+        "matchType": "exact"
+      },
+      {
+        "translationVerse": 5,
+        "osmainVerses": [
+          4
+        ],
+        "matchType": "exact"
+      },
+      {
+        "translationVerse": 6,
+        "osmainVerses": [
+          5
+        ],
+        "matchType": "exact"
+      },
+      {
+        "translationVerse": 7,
+        "osmainVerses": [
+          6
+        ],
+        "matchType": "exact"
+      },
+      {
+        "translationVerse": 8,
+        "osmainVerses": [
+          7
+        ],
+        "matchType": "exact"
+      },
+      {
+        "translationVerse": 9,
+        "osmainVerses": [
+          8
+        ],
+        "matchType": "exact"
+      },
+      {
+        "translationVerse": 10,
+        "osmainVerses": [
+          9
+        ],
+        "matchType": "exact"
+      },
+      {
+        "translationVerse": 11,
+        "osmainVerses": [
+          10
+        ],
+        "matchType": "exact"
+      },
+      {
+        "translationVerse": 12,
+        "osmainVerses": [
+          11
+        ],
+        "matchType": "exact"
+      },
+      {
+        "translationVerse": 13,
+        "osmainVerses": [
+          12
+        ],
+        "matchType": "exact"
+      },
+      {
+        "translationVerse": 14,
+        "osmainVerses": [
+          13
+        ],
+        "matchType": "exact"
+      },
+      {
+        "translationVerse": 15,
+        "osmainVerses": [
+          14
+        ],
+        "matchType": "exact"
+      },
+      {
+        "translationVerse": 16,
+        "osmainVerses": [
+          15
+        ],
+        "matchType": "exact"
+      },
+      {
+        "translationVerse": 17,
+        "osmainVerses": [
+          16
+        ],
+        "matchType": "exact"
+      },
+      {
+        "translationVerse": 18,
+        "osmainVerses": [
+          17
+        ],
+        "matchType": "exact"
+      },
+      {
+        "translationVerse": 19,
+        "osmainVerses": [
+          18
+        ],
+        "matchType": "exact"
+      },
+      {
+        "translationVerse": 20,
+        "osmainVerses": [
+          19
+        ],
+        "matchType": "exact"
+      },
+      {
+        "translationVerse": 21,
+        "osmainVerses": [
+          20
+        ],
+        "matchType": "exact"
+      },
+      {
+        "translationVerse": 22,
+        "osmainVerses": [
+          21
+        ],
+        "matchType": "exact"
+      },
+      {
+        "translationVerse": 23,
+        "osmainVerses": [
+          22
+        ],
+        "matchType": "exact"
+      },
+      {
+        "translationVerse": 24,
+        "osmainVerses": [
+          23
+        ],
+        "matchType": "exact"
+      },
+      {
+        "translationVerse": 25,
+        "osmainVerses": [
+          24
+        ],
+        "matchType": "exact"
+      }
+    ],
+    "extraContent": []
+  },
+  "claudeNote": " [needs-review]",
+  "needsReview": true,
+  "timestamp": "2026-07-25T14:10:22.867Z"
+}

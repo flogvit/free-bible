@@ -1,0 +1,182 @@
+{
+  "key": "19:77",
+  "result": {
+    "mappings": [
+      {
+        "translationVerse": 1,
+        "osmainVerses": [
+          1
+        ],
+        "matchType": "exact",
+        "note": "Title/Superscription matches exactly in content (To the choirmaster: According to Jeduthun. A Psalm of Asaph)."
+      },
+      {
+        "translationVerse": 2,
+        "osmainVerses": [
+          2
+        ],
+        "matchType": "exact",
+        "note": "Content matches: 'I cry aloud to God... he listens to me'."
+      },
+      {
+        "translationVerse": 3,
+        "osmainVerses": [
+          3
+        ],
+        "matchType": "exact",
+        "note": "Content matches: 'In the day of my trouble I sought the Lord... my soul refused to be comforted'."
+      },
+      {
+        "translationVerse": 4,
+        "osmainVerses": [
+          4
+        ],
+        "matchType": "exact",
+        "note": "Content matches: 'I thought of God, and I moaned... Sela'."
+      },
+      {
+        "translationVerse": 5,
+        "osmainVerses": [
+          5
+        ],
+        "matchType": "exact",
+        "note": "Content matches: 'You kept my eyes awake... I could not speak'."
+      },
+      {
+        "translationVerse": 6,
+        "osmainVerses": [
+          6
+        ],
+        "matchType": "exact",
+        "note": "Content matches: 'I thought of days of old...'."
+      },
+      {
+        "translationVerse": 7,
+        "osmainVerses": [
+          7
+        ],
+        "matchType": "exact",
+        "note": "Content matches: 'I remember my song in the night... my spirit searches'."
+      },
+      {
+        "translationVerse": 8,
+        "osmainVerses": [
+          8
+        ],
+        "matchType": "exact",
+        "note": "Content matches: 'Will the Lord cast off forever?...'."
+      },
+      {
+        "translationVerse": 9,
+        "osmainVerses": [
+          9
+        ],
+        "matchType": "exact",
+        "note": "Content matches: 'Is his steadfast love gone for ever?...'"
+      },
+      {
+        "translationVerse": 10,
+        "osmainVerses": [
+          10
+        ],
+        "matchType": "exact",
+        "note": "Content matches: 'Has God forgotten to be gracious?... Sela'."
+      },
+      {
+        "translationVerse": 11,
+        "osmainVerses": [
+          11
+        ],
+        "matchType": "exact",
+        "note": "Content matches: 'Then I said, 'It is my grief that the right hand of the Most High has changed''."
+      },
+      {
+        "translationVerse": 12,
+        "osmainVerses": [
+          12
+        ],
+        "matchType": "exact",
+        "note": "Content matches: 'I will remember the deeds of the Lord...'"
+      },
+      {
+        "translationVerse": 13,
+        "osmainVerses": [
+          13
+        ],
+        "matchType": "exact",
+        "note": "Content matches: 'I will ponder all your work...'."
+      },
+      {
+        "translationVerse": 14,
+        "osmainVerses": [
+          14
+        ],
+        "matchType": "exact",
+        "note": "Content matches: 'Your way, O God, is holy...'"
+      },
+      {
+        "translationVerse": 15,
+        "osmainVerses": [
+          15
+        ],
+        "matchType": "exact",
+        "note": "Content matches: 'You are the God who works wonders...'."
+      },
+      {
+        "translationVerse": 16,
+        "osmainVerses": [
+          16
+        ],
+        "matchType": "exact",
+        "note": "Content matches: 'With your arm you redeemed your people... Sela'."
+      },
+      {
+        "translationVerse": 17,
+        "osmainVerses": [
+          17
+        ],
+        "matchType": "exact",
+        "note": "Content matches: 'The waters saw you, O God...'."
+      },
+      {
+        "translationVerse": 18,
+        "osmainVerses": [
+          18
+        ],
+        "matchType": "exact",
+        "note": "Content matches: 'The clouds poured out water... your arrows flashed...'."
+      },
+      {
+        "translationVerse": 19,
+        "osmainVerses": [
+          19
+        ],
+        "matchType": "exact",
+        "note": "Content matches: 'The thunder rolled in the heavens...'"
+      },
+      {
+        "translationVerse": 20,
+        "osmainVerses": [
+          20
+        ],
+        "matchType": "exact",
+        "note": "Content matches: 'Your way was through the sea...'."
+      },
+      {
+        "translationVerse": 21,
+        "osmainVerses": [],
+        "matchType": "missing",
+        "note": "This verse ('You led your people like a flock by the hand of Moses and Aaron') is present in the translation but has no corresponding text in the provided OSMAIN text (which ends at v20). This indicates the OSMAIN source text is truncated or this translation includes an additional verse found in other versions (e.g., Psalm 77:21 in many English Bibles corresponds to the end of the psalm, while some Hebrew manuscripts split verses differently, but here it appears as a distinct extra verse not present in the provided Norwegian master text). However, looking closely at standard Psalm 77 structures, v20 and v21 are often combined or split. In this specific mapping task, since OSMAIN stops at 'footprints were not seen' (v20) and Translation adds 'You led your people... Moses and Aaron', this is an **extra_content** situation relative to the provided OSMAIN list, but technically the match type for the *verse* itself is 'missing' from OSMAIN. The instruction says: 'If a translation verse contains text that is NOT in any osmain verse, report it in the extraContent array.' Since the whole verse 21 is new content relative to the provided OSMAIN list, we flag it as missing/extra."
+      }
+    ],
+    "extraContent": [
+      {
+        "translationVerse": 21,
+        "description": "The entire verse 'Tu as conduit ton peuple comme un troupeau, par la main de Moïse et d'Aaron' is present in the translation but completely absent from the provided OSMAIN text (which ends at verse 20). This suggests the OSMAIN source text provided is incomplete or follows a numbering scheme where this content is merged into v20 or omitted. In standard Hebrew numbering, Psalm 77:21 often includes this shepherd imagery."
+      }
+    ]
+  },
+  "claudeNote": " [needs-review]",
+  "needsReview": true,
+  "timestamp": "2026-07-25T15:01:10.458Z"
+}

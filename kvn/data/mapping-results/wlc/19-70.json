@@ -1,0 +1,59 @@
+{
+  "key": "19:70",
+  "result": {
+    "mappings": [
+      {
+        "translationVerse": 1,
+        "osmainVerses": [
+          1
+        ],
+        "matchType": "partial",
+        "note": "Translation v1 contains only the superscription (title) found at the beginning of OSMAIN v1. The main text ('Gud, fri meg ut!...') is missing from this translation verse."
+      },
+      {
+        "translationVerse": 2,
+        "osmainVerses": [
+          1
+        ],
+        "matchType": "partial",
+        "note": "Translation v2 contains the plea for help ('Gud, fri meg ut! Herre, skynd deg å hjelpe me!') which is the second half of OSMAIN v1."
+      },
+      {
+        "translationVerse": 3,
+        "osmainVerses": [
+          2
+        ],
+        "matchType": "exact",
+        "note": "Translation v3 corresponds exactly to OSMAIN v2 ('La dem som står meg etter livet...')."
+      },
+      {
+        "translationVerse": 4,
+        "osmainVerses": [
+          3
+        ],
+        "matchType": "exact",
+        "note": "Translation v4 corresponds exactly to OSMAIN v3 ('La dem som sier «Ha, ha!»...')."
+      },
+      {
+        "translationVerse": 5,
+        "osmainVerses": [
+          4
+        ],
+        "matchType": "exact",
+        "note": "Translation v5 corresponds exactly to OSMAIN v4 ('Men la alle som søker deg...')."
+      },
+      {
+        "translationVerse": 6,
+        "osmainVerses": [
+          5
+        ],
+        "matchType": "extra_content",
+        "note": "Translation v6 contains the full text of OSMAIN v5. However, it includes a final phrase 'יְהוָה אַל־תְּאַחַר' (Lord, do not delay) which is rendered in OSMAIN as 'Herre, dryg ikke!' at the very end of verse 5. Since the translation splits this into v6 while keeping it attached to the previous thought structure differently or simply numbering it separately without adding new semantic content beyond what is in OSMAIN v5, strictly speaking, there is no *new* text missing from OSMAIN. However, looking closely at the Hebrew: 'וַאֲנִי... אַל־תְּאַחַר' maps to 'Men jeg er fattig... Herre, dryg ikke!'. The mapping is 1-to-1 in content but split across verse numbers. Wait, let me re-evaluate the 'extra_content' rule.\n\nRe-evaluation: OSMAIN v5 ends with 'Herre, dryg ikke!' (Lord, do not delay). Translation v6 ends with 'יְהוָה אַל־תְּאַחַר' (Lord, do not delay). The content is identical. There is no extra text in the translation that is missing from OSMAIN.\n\nCorrection on Match Type: It should be **exact** because the semantic content of Translation v6 matches OSMAIN v5 perfectly. The difference is purely structural (OSMAIN combines title + plea into v1, while WLC splits them; OSMAIN keeps the final verse as one unit). \n\nLet's re-read the prompt constraints carefully: "
+      }
+    ],
+    "extraContent": []
+  },
+  "claudeNote": " [needs-review]",
+  "needsReview": true,
+  "timestamp": "2026-07-25T18:09:55.214Z"
+}

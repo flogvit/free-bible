@@ -1,0 +1,104 @@
+{
+  "key": "19:64",
+  "result": {
+    "mappings": [
+      {
+        "translationVerse": 1,
+        "osmainVerses": [
+          1
+        ],
+        "matchType": "exact",
+        "note": "Title and attribution match perfectly."
+      },
+      {
+        "translationVerse": 2,
+        "osmainVerses": [
+          2
+        ],
+        "matchType": "exact",
+        "note": "Content matches: 'Hør min røst... Vern mitt liv...' vs 'O Dieu, écoute ma voix... garantis ma vie...'."
+      },
+      {
+        "translationVerse": 3,
+        "osmainVerses": [
+          3
+        ],
+        "matchType": "exact",
+        "note": "Content matches: 'Skjul meg for de ondes hemmelige råd...' vs 'Mets-moi à couvert du complot des méchants...'."
+      },
+      {
+        "translationVerse": 4,
+        "osmainVerses": [
+          4
+        ],
+        "matchType": "exact",
+        "note": "Content matches: 'De har hvesset sin tunge som et sverd...' vs 'Qui aiguisent leur langue comme une épée...'."
+      },
+      {
+        "translationVerse": 5,
+        "osmainVerses": [
+          5
+        ],
+        "matchType": "exact",
+        "note": "Content matches: 'De skyter fra skjul mot den uskyldige...' vs 'Pour tirer en secret sur l'innocent...'."
+      },
+      {
+        "translationVerse": 6,
+        "osmainVerses": [
+          6
+        ],
+        "matchType": "exact",
+        "note": "Content matches: 'De styrker hverandre i ondt forsett... De sier: «Hvem kan se oss?»' vs 'Ils s'affermissent dans un mauvais dessein... ils disent: Qui le verra?'."
+      },
+      {
+        "translationVerse": 7,
+        "osmainVerses": [
+          7
+        ],
+        "matchType": "extra_content",
+        "note": "The translation includes the phrase 'Nous voilà prêts; le plan est formé!' ('We are ready; the plan is formed!') which is NOT present in the OSMAIN text. The OSMAIN text jumps from 'De pønsker ut urett' (They plot injustice) directly to 'de gjennomfører en utspekulert plan' (they carry out a calculated plan), missing the intermediate declaration of readiness found in the French translation."
+      },
+      {
+        "translationVerse": 8,
+        "osmainVerses": [
+          8
+        ],
+        "matchType": "exact",
+        "note": "Content matches: 'Men Gud skyter sin pil mot dem...' vs 'Mais Dieu leur lance une flèche...'."
+      },
+      {
+        "translationVerse": 9,
+        "osmainVerses": [
+          9
+        ],
+        "matchType": "partial",
+        "note": "The OSMAIN text says: 'Alle som ser dem, flykter bort' (All who see them flee away). The translation says: 'tous ceux qui les voient hochent la tête' (all who see them shake their heads). While the first part matches ('Deres egen tunge fører dem i fall'), the reaction of the observers is different. However, looking closer at the structure, this is likely a translation variance rather than missing content, but strictly speaking, 'flee away' != 'shake head'. Given the instruction to map based on content, this is a partial match with significant semantic divergence in the second clause."
+      },
+      {
+        "translationVerse": 10,
+        "osmainVerses": [
+          10
+        ],
+        "matchType": "partial",
+        "note": "The OSMAIN verse 10 contains three distinct thoughts: (1) Fear and proclaiming God's work, (2) The righteous rejoicing in the Lord, (3) All with upright hearts praising Him. The translation splits this into two verses (v10 and v11). Therefore, Translation v10 only covers the first part of OSMAIN v10."
+      },
+      {
+        "translationVerse": 11,
+        "osmainVerses": [
+          10
+        ],
+        "matchType": "split",
+        "note": "This verse contains the second and third parts of OSMAIN v10 ('Le juste se réjouira...' / 'tous ceux qui ont le cœur droit...'). It is a split of the single OSMAIN verse 10."
+      }
+    ],
+    "extraContent": [
+      {
+        "translationVerse": 7,
+        "description": "The phrase 'Nous voilà prêts; le plan est formé!' (We are ready; the plan is formed!) appears in the translation but has no corresponding text in OSMAIN v7."
+      }
+    ]
+  },
+  "claudeNote": " [needs-review]",
+  "needsReview": true,
+  "timestamp": "2026-07-25T14:39:21.595Z"
+}

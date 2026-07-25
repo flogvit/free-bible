@@ -1,0 +1,133 @@
+{
+  "key": "19:60",
+  "result": {
+    "mappings": [
+      {
+        "translationVerse": 1,
+        "osmainVerses": [
+          1
+        ],
+        "matchType": "exact",
+        "note": "Both contain the full superscription (title, author, historical context). The Norwegian text combines them into one verse, while the French translation also keeps it as v1."
+      },
+      {
+        "translationVerse": 2,
+        "osmainVerses": [
+          2
+        ],
+        "matchType": "exact",
+        "note": "Content matches: 'God, you have rejected us...'"
+      },
+      {
+        "translationVerse": 3,
+        "osmainVerses": [
+          3
+        ],
+        "matchType": "exact",
+        "note": "Content matches: 'You made the earth tremble...'"
+      },
+      {
+        "translationVerse": 4,
+        "osmainVerses": [
+          4
+        ],
+        "matchType": "exact",
+        "note": "Content matches: 'You let your people experience hard times...'"
+      },
+      {
+        "translationVerse": 5,
+        "osmainVerses": [
+          5
+        ],
+        "matchType": "partial",
+        "note": "The translation stops at 'étendard' (banner). The Osmain verse continues with 'å løfte høyt, for sannhetens skyld. Sela' (to lift high, for the sake of truth. Selah)."
+      },
+      {
+        "translationVerse": 6,
+        "osmainVerses": [
+          5
+        ],
+        "matchType": "split",
+        "note": "This verse contains the second half of Osmain v5 ('Afin que tes bien-aimés soient délivrés...') combined with the start of Osmain v6. However, looking closely at the French structure: v6 ends with 'étendard', and v7 starts with 'Afin que...'. Wait, let's re-examine the French text provided in the prompt."
+      },
+      {
+        "translationVerse": 7,
+        "osmainVerses": [
+          5,
+          6
+        ],
+        "matchType": "merged",
+        "note": "The French v7 ('Afin que tes bien-aimés soient délivrés; sauve-nous par ta droite...') combines the second half of Osmain v5 (implied from the split in v6) and all of Osmain v6. Actually, looking at the provided text: French v6 is 'Mais tu as donné à ceux qui te craignent un étendard'. French v7 is 'Afin que tes bien-aimés soient délivrés; sauve-nous par ta droite...'. This splits Osmain v5 into two parts (v6 and start of v7) and includes Osmain v6 in v7. Let's refine the mapping based on standard Hebrew numbering vs these translations."
+      },
+      {
+        "translationVerse": 8,
+        "osmainVerses": [
+          7
+        ],
+        "matchType": "exact",
+        "note": "Content matches: 'God has spoken in his holiness...'"
+      },
+      {
+        "translationVerse": 9,
+        "osmainVerses": [
+          8
+        ],
+        "matchType": "exact",
+        "note": "Content matches: 'Gilead is mine...'"
+      },
+      {
+        "translationVerse": 10,
+        "osmainVerses": [
+          9
+        ],
+        "matchType": "exact",
+        "note": "Content matches: 'Moab is my washbasin...'"
+      },
+      {
+        "translationVerse": 11,
+        "osmainVerses": [
+          10
+        ],
+        "matchType": "exact",
+        "note": "Content matches: 'Who will bring me to the fortified city?'"
+      },
+      {
+        "translationVerse": 12,
+        "osmainVerses": [
+          11
+        ],
+        "matchType": "exact",
+        "note": "Content matches: 'Is it not you, God...'"
+      },
+      {
+        "translationVerse": 13,
+        "osmainVerses": [
+          12
+        ],
+        "matchType": "split",
+        "note": "French v13 contains the first half of Osmain v12 ('Gi oss hjelp mot fienden...'). The text ends abruptly with 'car' (for)."
+      },
+      {
+        "translationVerse": 14,
+        "osmainVerses": [
+          12
+        ],
+        "matchType": "split",
+        "note": "French v14 contains the second half of Osmain v12 ('...i menneskers hjelp er forgjeves. Med Gud skal vi gjøre storverk...'). Note: The French text 'En Dieu nous combattrons avec vaillance' corresponds to 'Med Gud skal vi gjøre storverk'. The phrase 'car' at the end of v13 connects to v14."
+      }
+    ],
+    "extraContent": [
+      {
+        "translationVerse": 5,
+        "description": "The translation stops mid-sentence at 'étendard', missing 'to lift high, for the sake of truth. Selah' found in Osmain v5."
+      },
+      {
+        "translationVerse": 13,
+        "description": "The text ends with 'car' (for), which is a conjunction leading into the next verse, indicating a split rather than extra content, but the sentence is incomplete without v14."
+      }
+    ]
+  },
+  "claudeNote": " [needs-review]",
+  "needsReview": true,
+  "timestamp": "2026-07-25T14:34:59.708Z"
+}

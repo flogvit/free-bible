@@ -1,0 +1,121 @@
+{
+  "key": "19:76",
+  "result": {
+    "mappings": [
+      {
+        "translationVerse": 1,
+        "osmainVerses": [
+          1
+        ],
+        "matchType": "partial",
+        "note": "Translation v1 contains the title/heading elements ('Au maître-chantre', 'Psaume d'Asaph; cantique avec instruments à cordes') which correspond to the introductory text of OSMAIN v1, but the translation splits this header from the first sentence of the psalm. The content matches the start of OSMAIN v1."
+      },
+      {
+        "translationVerse": 2,
+        "osmainVerses": [
+          1
+        ],
+        "matchType": "partial",
+        "note": "Translation v2 ('Dieu est connu en Juda...') corresponds to the second half of OSMAIN v1. The translation has split the introductory header (v1) from the first sentence of the psalm (v2)."
+      },
+      {
+        "translationVerse": 3,
+        "osmainVerses": [
+          2
+        ],
+        "matchType": "exact",
+        "note": "Content matches OSMAIN v2 perfectly."
+      },
+      {
+        "translationVerse": 4,
+        "osmainVerses": [
+          3
+        ],
+        "matchType": "exact",
+        "note": "Content matches OSMAIN v3 perfectly (including the 'Sélah' marker)."
+      },
+      {
+        "translationVerse": 5,
+        "osmainVerses": [
+          4
+        ],
+        "matchType": "partial",
+        "note": "Translation v5 ('Tu es brillant et magnifique...') corresponds to OSMAIN v4. However, the translation adds 'des ravisseurs' (of the robbers) at the end of the sentence ('plus que les montagnes des ravisseurs'), whereas OSMAIN says 'de evige fjellene' (the eternal mountains). This is a significant content difference."
+      },
+      {
+        "translationVerse": 6,
+        "osmainVerses": [
+          5
+        ],
+        "matchType": "exact",
+        "note": "Content matches OSMAIN v5 perfectly."
+      },
+      {
+        "translationVerse": 7,
+        "osmainVerses": [
+          6
+        ],
+        "matchType": "exact",
+        "note": "Content matches OSMAIN v6 perfectly."
+      },
+      {
+        "translationVerse": 8,
+        "osmainVerses": [
+          7
+        ],
+        "matchType": "exact",
+        "note": "Content matches OSMAIN v7 perfectly."
+      },
+      {
+        "translationVerse": 9,
+        "osmainVerses": [
+          8
+        ],
+        "matchType": "partial",
+        "note": "Translation v9 ('Lorsque des cieux tu fais entendre ton jugement...') corresponds to OSMAIN v8. However, the translation adds 'la terre est effrayée et se tient en repos' (the earth feared and held still) which is present in OSMAIN v8, but the structure suggests a split or slight rephrasing. Actually, looking closer: OSMAIN v8 is 'Fra himmelen lot du din dom lyde. Jorden fryktet og ble stille.' Translation v9 covers this fully. Wait, let's re-evaluate v10."
+      },
+      {
+        "translationVerse": 10,
+        "osmainVerses": [
+          8,
+          9
+        ],
+        "matchType": "merged",
+        "note": "Translation v10 ('Quand tu te lèves...') combines the end of OSMAIN v8 (implied context) and all of OSMAIN v9. Specifically, OSMAIN v8 ends with 'ble stille'. Translation v9 covers v8. Translation v10 starts with 'Quand tu te lèves' which is the start of OSMAIN v9 ('da Gud reiste seg'). However, looking at the French text: v9 ends with 'se tient en repos'. v10 starts with 'Quand tu te lèves...'. This looks like a split of the thought process or a standard verse break. Let's look closer at the content flow.\n\nOSMAIN v8: From heaven you let your judgment sound. The earth feared and was still.\nOSMAIN v9: When God rose up for judgment to save all the humble on earth. Sela.\n\nTranslation v9: 'Lorsque des cieux tu fais entendre ton jugement, la terre est effrayée et se tient en repos;' (Matches OSMAIN v8).\nTranslation v10: 'Quand tu te lèves, ô Dieu, pour juger, pour délivrer tous les affligés de la terre. (Sélah.)' (Matches OSMAIN v9).\n\nCorrection: The mapping is actually **exact** for both 9->8 and 10->9. My previous 'merged' thought was incorrect. Let's re-verify the split between 9 and 10.\n\nTranslation v9 ends with 'repos'. Translation v10 starts with 'Quand tu te lèves'. This is a clean split matching OSMAIN v8 and v9 exactly."
+      },
+      {
+        "translationVerse": 11,
+        "osmainVerses": [
+          10
+        ],
+        "matchType": "exact",
+        "note": "Content matches OSMAIN v10 perfectly."
+      },
+      {
+        "translationVerse": 12,
+        "osmainVerses": [
+          11
+        ],
+        "matchType": "exact",
+        "note": "Content matches OSMAIN v11 perfectly."
+      },
+      {
+        "translationVerse": 13,
+        "osmainVerses": [
+          12
+        ],
+        "matchType": "exact",
+        "note": "Content matches OSMAIN v12 perfectly."
+      }
+    ],
+    "extraContent": [
+      {
+        "translationVerse": 5,
+        "description": "The phrase 'des ravisseurs' (of the robbers) in 'plus que les montagnes des ravisseurs' is not present in OSMAIN v4 ('de evige fjellene' - of the eternal mountains). This changes the meaning significantly."
+      }
+    ]
+  },
+  "claudeNote": " [needs-review]",
+  "needsReview": true,
+  "timestamp": "2026-07-25T14:59:28.412Z"
+}

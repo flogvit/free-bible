@@ -1,0 +1,90 @@
+{
+  "key": "19:12",
+  "result": {
+    "mappings": [
+      {
+        "translationVerse": 1,
+        "osmainVerses": [],
+        "matchType": "missing",
+        "note": "The translation verse contains the title/heading ('Au maître-chantre. Psaume de David. Sur Shéminith.') which corresponds to the first half of OSMAIN v1. However, the second half of OSMAIN v1 (the actual prayer 'Frels, Herre...') is missing from this translation verse and appears in Translation v2."
+      },
+      {
+        "translationVerse": 2,
+        "osmainVerses": [
+          1
+        ],
+        "matchType": "split",
+        "note": "Translation v2 contains the second half of OSMAIN v1 ('Délivre-nous...'). The first half (the title) is in Translation v1."
+      },
+      {
+        "translationVerse": 3,
+        "osmainVerses": [
+          2
+        ],
+        "matchType": "exact",
+        "note": "Matches OSMAIN v2 content exactly ('De taler løgn...')."
+      },
+      {
+        "translationVerse": 4,
+        "osmainVerses": [
+          3
+        ],
+        "matchType": "exact",
+        "note": "Matches OSMAIN v3 content exactly ('Herren skal utrydde...')."
+      },
+      {
+        "translationVerse": 5,
+        "osmainVerses": [
+          4
+        ],
+        "matchType": "exact",
+        "note": "Matches OSMAIN v4 content exactly ('De som sier...')."
+      },
+      {
+        "translationVerse": 6,
+        "osmainVerses": [
+          5
+        ],
+        "matchType": "partial",
+        "note": "Translation v6 covers the first part of OSMAIN v5 ('På grunn av undertrykkelsen...'). However, it ends with 'je mettrai en sûreté celui qu'on insulte' (I will set in safety him who is insulted), whereas OSMAIN v5 ends with 'Jeg vil gi frelse til den som lengter etter det' (I will give salvation to the one who longs for it). The translation uses different wording ('insulted' vs 'longs for it') and potentially truncates or alters the specific promise found in the Norwegian text."
+      },
+      {
+        "translationVerse": 7,
+        "osmainVerses": [
+          6
+        ],
+        "matchType": "exact",
+        "note": "Matches OSMAIN v6 content exactly ('Herrens ord er rene...')."
+      },
+      {
+        "translationVerse": 8,
+        "osmainVerses": [
+          7
+        ],
+        "matchType": "exact",
+        "note": "Matches OSMAIN v7 content exactly ('Du, Herre, skal bevare dem...')."
+      },
+      {
+        "translationVerse": 9,
+        "osmainVerses": [
+          8
+        ],
+        "matchType": "partial",
+        "note": "Translation v9 corresponds to OSMAIN v8 but splits the sentence structure. OSMAIN v8 says 'Overalt vandrer de ugudelige omkring når det lave opphøyes blant menneskene' (The wicked walk on every side when the vile are exalted). Translation v9 reverses the clause order: 'Lorsque des gens abjects s'élèvent... les méchants se promènent...' (When vile people rise... the wicked walk...). While semantically similar, the translation splits the single OSMAIN verse into a conditional structure that emphasizes the cause first. More critically, looking at the mapping logic of 8 vs 9 verses: The title in Trans v1 + Prayer start in Trans v2 creates a split of OSMAIN v1. This shifts everything by one. Translation v9 is the final verse corresponding to OSMAIN v8."
+      }
+    ],
+    "extraContent": [
+      {
+        "translationVerse": 1,
+        "description": "The title 'Au maître-chantre. Psaume de David. Sur Shéminith.' appears in Translation v1 but is only the first half of OSMAIN v1. The second half (the prayer) is missing from v1 and moved to v2."
+      },
+      {
+        "translationVerse": 6,
+        "description": "The phrase 'je mettrai en sûreté celui qu'on insulte' (I will set in safety him who is insulted) differs significantly from OSMAIN v5's ending 'Jeg vil gi frelse til den som lengter etter det' (I will give salvation to the one who longs for it). The translation introduces the concept of being 'insulted' which is not explicitly present in the Norwegian text."
+      }
+    ]
+  },
+  "claudeNote": " [needs-review]",
+  "needsReview": true,
+  "timestamp": "2026-07-25T12:51:43.216Z"
+}

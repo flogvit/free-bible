@@ -1,0 +1,104 @@
+{
+  "key": "19:52",
+  "result": {
+    "mappings": [
+      {
+        "translationVerse": 1,
+        "osmainVerses": [],
+        "matchType": "missing",
+        "note": "This verse contains the title and historical introduction ('Au maître-chantre... Ahimélec') which corresponds to the text found in OSMAIN v1 *before* the poetic start 'Hvorfor skryter du...'. However, since OSMAIN v1 includes this text as part of its first line, we must analyze if it is split or missing. Looking closely: OSMAIN v1 starts with 'Til korlederen...' and ends with 'Guds trofasthet varer hele'. The French translation splits the title/intro (v1) from the poetic question (v3). Wait, let's re-read OSMAIN v1 carefully. It contains the full intro AND the start of the poem. The French Translation has split this single OSMAIN verse into two parts: Title/Intro (v1-v2 in French?) and Poem (v3+)."
+      },
+      {
+        "translationVerse": 2,
+        "osmainVerses": [],
+        "matchType": "missing",
+        "note": "This verse ('Lorsque Doëg...') is the continuation of the historical introduction. In OSMAIN, this text is contained entirely within v1. The French translation has split the content of OSMAIN v1 into multiple verses."
+      },
+      {
+        "translationVerse": 3,
+        "osmainVerses": [
+          1
+        ],
+        "matchType": "partial",
+        "note": "Matches the second half of OSMAIN v1 ('Hvorfor skryter du...'). The first part of OSMAIN v1 (Title/Intro) is mapped to French v1 and v2."
+      },
+      {
+        "translationVerse": 4,
+        "osmainVerses": [
+          2
+        ],
+        "matchType": "exact",
+        "note": "Matches OSMAIN v2 ('Din tunge planlegger ødeleggelse...')."
+      },
+      {
+        "translationVerse": 5,
+        "osmainVerses": [
+          3
+        ],
+        "matchType": "exact",
+        "note": "Matches OSMAIN v3 ('Du elsker ondt mer enn godt... Sela')."
+      },
+      {
+        "translationVerse": 6,
+        "osmainVerses": [
+          4
+        ],
+        "matchType": "exact",
+        "note": "Matches OSMAIN v4 ('Du elsker alle ødeleggende ord...')."
+      },
+      {
+        "translationVerse": 7,
+        "osmainVerses": [
+          5
+        ],
+        "matchType": "exact",
+        "note": "Matches OSMAIN v5 ('Så skal også Gud rive deg ned... Sela')."
+      },
+      {
+        "translationVerse": 8,
+        "osmainVerses": [
+          6
+        ],
+        "matchType": "exact",
+        "note": "Matches OSMAIN v6 ('De rettferdige skal se det og frykte...')."
+      },
+      {
+        "translationVerse": 9,
+        "osmainVerses": [
+          7
+        ],
+        "matchType": "partial",
+        "note": "Matches the first part of OSMAIN v7. The French text ends abruptly at 'méchanceté!' while OSMAIN v7 continues with a full sentence structure that seems to be split or truncated in the translation provided."
+      },
+      {
+        "translationVerse": 10,
+        "osmainVerses": [
+          8
+        ],
+        "matchType": "partial",
+        "note": "Matches the first part of OSMAIN v8. The French text 'dans la maison à perpétuité' seems to cut off or merge the end of the verse differently than the Norwegian 'i Guds hus... for evig og alltid'. It is a partial match."
+      },
+      {
+        "translationVerse": 11,
+        "osmainVerses": [
+          9
+        ],
+        "matchType": "exact",
+        "note": "Matches OSMAIN v9 ('Jeg vil takke deg for evig...')."
+      }
+    ],
+    "extraContent": [
+      {
+        "translationVerse": 1,
+        "description": "Title and historical context: 'Au maître-chantre. Maskil (cantique) de David; Lorsque Doëg, l'Iduméen, vint avertir Saül...'"
+      },
+      {
+        "translationVerse": 2,
+        "description": "Continuation of historical context: 'et lui dit que David s'était rendu dans la maison d'Achimélec.'"
+      }
+    ]
+  },
+  "claudeNote": " [needs-review]",
+  "needsReview": true,
+  "timestamp": "2026-07-25T14:26:00.613Z"
+}

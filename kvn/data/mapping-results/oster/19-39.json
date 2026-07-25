@@ -1,0 +1,126 @@
+{
+  "key": "19:39",
+  "result": {
+    "mappings": [
+      {
+        "translationVerse": 1,
+        "osmainVerses": [
+          1
+        ],
+        "matchType": "exact",
+        "note": "Header matches exactly (For korlederen... vs Au maître-chantre...)."
+      },
+      {
+        "translationVerse": 2,
+        "osmainVerses": [
+          2
+        ],
+        "matchType": "exact",
+        "note": "Content matches: 'Jeg sa: Jeg vil vokte mine veier...' vs 'J'ai dit: Je prendrai garde à mes voies...'"
+      },
+      {
+        "translationVerse": 3,
+        "osmainVerses": [
+          3
+        ],
+        "matchType": "exact",
+        "note": "Content matches: 'Jeg ble stum og stille...' vs 'Je suis resté muet, dans le silence...'"
+      },
+      {
+        "translationVerse": 4,
+        "osmainVerses": [
+          4
+        ],
+        "matchType": "exact",
+        "note": "Content matches: 'Mitt hjerte brant...' vs 'Mon cœur s'est échauffé...'"
+      },
+      {
+        "translationVerse": 5,
+        "osmainVerses": [
+          5
+        ],
+        "matchType": "exact",
+        "note": "Content matches: 'Herre, la meg kjenne min ende...' vs 'Éternel, fais-moi connaître ma fin...'"
+      },
+      {
+        "translationVerse": 6,
+        "osmainVerses": [
+          6
+        ],
+        "matchType": "partial",
+        "note": "Translation v6 includes the phrase 'tout homme debout sur la terre n'est que vanité!' (every man standing on earth is but vanity). The OSMAIN text for v6 ends with 'Sannelig, hvert menneske står der bare som en pust' (Surely every man stands there only as a breath) and does not contain the specific phrase about 'vanity' found in the French translation at this point. However, looking closely, the OSMAIN v6 says 'som en pust' (like a breath). The French adds 'n'est que vanité'. This is a slight semantic shift/addition, but structurally it maps to v6. Wait, let's re-read carefully. OSMAIN v6: 'Sannelig, hvert menneske står der bare som en pust.' Translation v6: 'tout homme debout sur la terre n'est que vanité!'. This is a translation variation of the same concept (breath/vanity), but the French text explicitly adds 'vanity' where Norwegian says 'pust'. However, looking at v12 in OSMAIN, it repeats 'Sannelig, hvert menneske er bare en pust.' The French v6 and v12 both use 'vanité'. This is likely a translation choice rather than extra content from a missing verse. But wait, the prompt asks for `extra_content` if text is NOT in any osmain verse. Is 'vanity' (tomhet/vanité) present? No, OSMAIN uses 'pust' (breath). However, this is likely a theological equivalence in translation rather than an extra verse. Let's look at the structure. The French v6 ends with Sélah. OSMAIN v6 ends with Sela. This maps to v6. I will mark as exact but note the semantic difference if necessary, or check if it's actually a split/merge issue. Actually, looking at standard Psalm 39 numbering: Verse 6 in most Bibles contains 'vanity'. The Norwegian text provided here seems to have translated 'hevel' (vanity) as 'pust' (breath) or the source text used is different. But strictly comparing the *provided* texts: French has 'n'est que vanité', Norwegian has 'bare som en pust'. This is a translation difference, not an extra verse. I will treat it as `exact` mapping to v6, assuming 'pust' and 'vanity' are treated as equivalent in this context by the translator, or that the user wants strict text matching. If strict text matching: The French phrase 'n'est que vanité' is not in the Norwegian text. But usually, these tasks look for verse boundaries. Let's assume `exact` for boundary mapping, but if the instruction implies strict string inclusion, it might be partial. Given the context of Bible mapping, semantic equivalence is usually accepted unless a whole clause is added. I will stick to `exact` as the verse boundary aligns perfectly with v6 in both."
+      },
+      {
+        "translationVerse": 7,
+        "osmainVerses": [
+          7
+        ],
+        "matchType": "exact",
+        "note": "Content matches: 'Sannelig, mennesket vandrer...' vs 'Oui, l'homme se promène...'"
+      },
+      {
+        "translationVerse": 8,
+        "osmainVerses": [
+          8
+        ],
+        "matchType": "exact",
+        "note": "Content matches: 'Og nå, Herre, hva venter jeg på?' vs 'Et maintenant, qu'ai-je attendu...'"
+      },
+      {
+        "translationVerse": 9,
+        "osmainVerses": [
+          9
+        ],
+        "matchType": "exact",
+        "note": "Content matches: 'Frels meg fra alle mine overtredelser!' vs 'Délivre-moi de toutes mes transgressions...'"
+      },
+      {
+        "translationVerse": 10,
+        "osmainVerses": [
+          10
+        ],
+        "matchType": "exact",
+        "note": "Content matches: 'Jeg er blitt stum...' vs 'Je me suis tu...'"
+      },
+      {
+        "translationVerse": 11,
+        "osmainVerses": [
+          11
+        ],
+        "matchType": "exact",
+        "note": "Content matches: 'Ta din plage bort fra meg!' vs 'Détourne de moi tes châtiments!'"
+      },
+      {
+        "translationVerse": 12,
+        "osmainVerses": [
+          12
+        ],
+        "matchType": "exact",
+        "note": "Content matches: 'Når du tukter et menneske...' vs 'Lorsque tu châties l'homme...'"
+      },
+      {
+        "translationVerse": 13,
+        "osmainVerses": [
+          13
+        ],
+        "matchType": "exact",
+        "note": "Content matches: 'Hør min bønn...' vs 'Éternel, écoute ma requête...'"
+      },
+      {
+        "translationVerse": 14,
+        "osmainVerses": [],
+        "matchType": "missing",
+        "note": "This verse exists in the French translation but has no corresponding text in the provided OSMAIN list (which ends at v13). The content 'Détourne de moi ton regard...' is an addition found in some versions of Psalm 39 (often verse 14) but is missing from this specific Norwegian master text."
+      }
+    ],
+    "extraContent": [
+      {
+        "translationVerse": 14,
+        "description": "The entire verse 14 ('Détourne de moi ton regard, et que je reprenne mes forces...') is present in the French translation but completely missing from the OSMAIN text provided."
+      }
+    ]
+  },
+  "claudeNote": " [needs-review]",
+  "needsReview": true,
+  "timestamp": "2026-07-25T14:13:57.846Z"
+}
