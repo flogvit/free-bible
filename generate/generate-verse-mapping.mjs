@@ -1,12 +1,12 @@
 /**
- * Generate verse mapping between a Bible translation and osnb2 (tanach/sblgnt numbering).
+ * Generate verse mapping between a Bible translation and osnb (tanach/sblgnt numbering).
  *
  * Usage:
  *   node generate-verse-mapping.mjs <input-file> <mapping-id> [--use-ai]
  *
  * Example:
- *   node generate-verse-mapping.mjs ../bibel2011.txt dnb_2011_nb
- *   node generate-verse-mapping.mjs ../bibel2011.txt dnb_2011_nb --use-ai
+ *   node generate-verse-mapping.mjs ../dnb2011.txt dnb_2011_nb
+ *   node generate-verse-mapping.mjs ../dnb2011.txt dnb_2011_nb --use-ai
  *
  * The input file should have one verse per line in the format:
  *   BookName chapter,verse text
@@ -113,10 +113,10 @@ function parseInputFile(filePath, format) {
   return verses;
 }
 
-// --- Load osnb2 data ---
+// --- Load osnb data ---
 
 function loadOsnb2Chapter(bookId, chapter) {
-  const filePath = path.join(__dirname, 'bibles_raw', 'osnb2', `${bookId}`, `${chapter}.json`);
+  const filePath = path.join(__dirname, 'bibles_raw', 'osnb', `${bookId}`, `${chapter}.json`);
   if (!fs.existsSync(filePath)) return null;
   return JSON.parse(fs.readFileSync(filePath, 'utf-8'));
 }
@@ -154,7 +154,7 @@ function groupByChapter(verses) {
 
 // --- Find differences ---
 
-function findDifferences(srcGroups, osnb2Counts) {
+function findDifferences(srcGroups, osnbCounts) {
   const diffs = [];
 
   // Collect all unique bookId+chapter pairs from both sides
@@ -169,38 +169,38 @@ function findDifferences(srcGroups, osnb2Counts) {
       .map(k => parseInt(k.split('-')[1]))
       .sort((a, b) => a - b);
 
-    const osnb2Chapters = Object.keys(osnb2Counts)
+    const osnbChapters = Object.keys(osnbCounts)
       .filter(k => k.startsWith(`${bookId}-`))
       .map(k => parseInt(k.split('-')[1]))
       .sort((a, b) => a - b);
 
     const maxSrcCh = Math.max(...srcChapters, 0);
-    const maxOsnb2Ch = Math.max(...osnb2Chapters, 0);
+    const maxOsnb2Ch = Math.max(...osnbChapters, 0);
     const maxCh = Math.max(maxSrcCh, maxOsnb2Ch);
 
     for (let ch = 1; ch <= maxCh; ch++) {
       const srcKey = `${bookId}-${ch}`;
       const srcVerses = srcGroups[srcKey] || [];
-      const osnb2Info = osnb2Counts[srcKey];
+      const osnbInfo = osnbCounts[srcKey];
 
-      if (srcVerses.length === 0 && !osnb2Info) continue;
+      if (srcVerses.length === 0 && !osnbInfo) continue;
 
-      if (srcVerses.length === 0 && osnb2Info) {
-        // Chapter exists in osnb2 but not in source
+      if (srcVerses.length === 0 && osnbInfo) {
+        // Chapter exists in osnb but not in source
         diffs.push({
           bookId, chapter: ch, type: 'missing_in_source',
-          srcCount: 0, osnb2Count: osnb2Info.verseCount,
+          srcCount: 0, osnbCount: osnbInfo.verseCount,
         });
-      } else if (!osnb2Info && srcVerses.length > 0) {
-        // Chapter exists in source but not in osnb2
+      } else if (!osnbInfo && srcVerses.length > 0) {
+        // Chapter exists in source but not in osnb
         diffs.push({
-          bookId, chapter: ch, type: 'missing_in_osnb2',
-          srcCount: srcVerses.length, osnb2Count: 0,
+          bookId, chapter: ch, type: 'missing_in_osnb',
+          srcCount: srcVerses.length, osnbCount: 0,
         });
-      } else if (srcVerses.length !== osnb2Info.verseCount) {
+      } else if (srcVerses.length !== osnbInfo.verseCount) {
         diffs.push({
           bookId, chapter: ch, type: 'verse_count_mismatch',
-          srcCount: srcVerses.length, osnb2Count: osnb2Info.verseCount,
+          srcCount: srcVerses.length, osnbCount: osnbInfo.verseCount,
         });
       }
     }
@@ -211,7 +211,7 @@ function findDifferences(srcGroups, osnb2Counts) {
 
 // --- AI-based verse matching ---
 
-async function matchVersesWithAI(srcVerses, osnb2Verses, bookId, srcChapter, osnb2Chapter) {
+async function matchVersesWithAI(srcVerses, osnbVerses, bookId, srcChapter, osnbChapter) {
   const Anthropic = (await import('@anthropic-ai/sdk')).default;
   const anthropic = new Anthropic({ apiKey: process.env.ANTHROPIC_API_KEY });
 
@@ -221,26 +221,26 @@ async function matchVersesWithAI(srcVerses, osnb2Verses, bookId, srcChapter, osn
     .map(v => `${v.srcChapter}:${v.srcVerse} ${v.text}`)
     .join('\n');
 
-  const osnb2Text = osnb2Verses
+  const osnbText = osnbVerses
     .map(v => `${v.chapterId}:${v.verseId} ${v.text}`)
     .join('\n');
 
-  const prompt = `I have two Bible translations of ${bookName} with different verse numbering. I need you to map each verse from the SOURCE to the corresponding verse in OSNB2 (which follows Hebrew/Greek original numbering).
+  const prompt = `I have two Bible translations of ${bookName} with different verse numbering. I need you to map each verse from the SOURCE to the corresponding verse in OSNB (which follows Hebrew/Greek original numbering).
 
 SOURCE verses (chapters ${[...new Set(srcVerses.map(v => v.srcChapter))].join(',')}):
 ${srcText}
 
-OSNB2 verses (chapters ${[...new Set(osnb2Verses.map(v => v.chapterId))].join(',')}):
-${osnb2Text}
+OSNB verses (chapters ${[...new Set(osnbVerses.map(v => v.chapterId))].join(',')}):
+${osnbText}
 
-For each SOURCE verse, determine which OSNB2 verse it corresponds to based on content.
+For each SOURCE verse, determine which OSNB verse it corresponds to based on content.
 
 Rules:
 - Most verses will be 1:1 matches with just shifted numbering
-- Some verses might be split (1 source → 2 osnb2) or merged (2 source → 1 osnb2)
-- For splits: map the source verse to the first osnb2 verse of the split
-- For merges: map each source verse to the same osnb2 verse
-- If a source verse has no match in osnb2, use null
+- Some verses might be split (1 source → 2 osnb) or merged (2 source → 1 osnb)
+- For splits: map the source verse to the first osnb verse of the split
+- For merges: map each source verse to the same osnb verse
+- If a source verse has no match in osnb, use null
 
 Return a JSON object with a 'mappings' array, one entry per source verse:
 {
@@ -273,10 +273,10 @@ If dst is null (no match), use: { "src": [chapter, verse], "dst": null }`;
 
 /**
  * Apply sequential 1:1 mapping for a group of consecutive chapters.
- * All source verses are laid out in order, and mapped to all osnb2 verses in order.
+ * All source verses are laid out in order, and mapped to all osnb verses in order.
  * Only adds entries where the mapping differs from identity (same chapter + verse).
  */
-function mapChapterGroupSequentially(bookId, srcChapters, osnb2Chapters, srcGroups, osnb2Counts, verseMap) {
+function mapChapterGroupSequentially(bookId, srcChapters, osnbChapters, srcGroups, osnbCounts, verseMap) {
   // Build sequential list of source refs
   const srcRefs = [];
   for (const ch of srcChapters) {
@@ -286,22 +286,22 @@ function mapChapterGroupSequentially(bookId, srcChapters, osnb2Chapters, srcGrou
     }
   }
 
-  // Build sequential list of osnb2 refs
-  const osnb2Refs = [];
-  for (const ch of osnb2Chapters) {
-    const info = osnb2Counts[`${bookId}-${ch}`];
+  // Build sequential list of osnb refs
+  const osnbRefs = [];
+  for (const ch of osnbChapters) {
+    const info = osnbCounts[`${bookId}-${ch}`];
     if (info) {
       for (let v = 1; v <= info.maxVerse; v++) {
-        osnb2Refs.push({ chapter: ch, verse: v });
+        osnbRefs.push({ chapter: ch, verse: v });
       }
     }
   }
 
   // Map 1:1 sequentially
-  const count = Math.min(srcRefs.length, osnb2Refs.length);
+  const count = Math.min(srcRefs.length, osnbRefs.length);
   for (let i = 0; i < count; i++) {
     const src = srcRefs[i];
-    const dst = osnb2Refs[i];
+    const dst = osnbRefs[i];
     if (src.chapter !== dst.chapter || src.verse !== dst.verse) {
       verseMap[`${bookId}-${src.chapter}-${src.verse}`] = `${bookId}-${dst.chapter}-${dst.verse}`;
     }
@@ -317,7 +317,7 @@ function mapChapterGroupSequentially(bookId, srcChapters, osnb2Chapters, srcGrou
  * 2. Multi-chapter blocks (e.g. Job 38-41) where totals match
  * 3. Overflow chapters (e.g. Malachi 4 → Malachi 3:19-24)
  */
-function tryDeterministicMapping(diffs, srcGroups, osnb2Counts) {
+function tryDeterministicMapping(diffs, srcGroups, osnbCounts) {
   const verseMap = {};
   const handled = new Set();
 
@@ -353,63 +353,63 @@ function tryDeterministicMapping(diffs, srcGroups, osnb2Counts) {
 
       // Calculate totals for the group
       let srcTotal = 0;
-      let osnb2Total = 0;
+      let osnbTotal = 0;
       const srcChapters = [];
-      const osnb2Chapters = [];
+      const osnbChapters = [];
 
       for (const d of group) {
         srcTotal += d.srcCount;
         if (d.srcCount > 0) srcChapters.push(d.chapter);
 
-        if (d.type !== 'missing_in_osnb2') {
-          osnb2Total += d.osnb2Count;
+        if (d.type !== 'missing_in_osnb') {
+          osnbTotal += d.osnbCount;
         }
-        if (d.osnb2Count > 0) osnb2Chapters.push(d.chapter);
+        if (d.osnbCount > 0) osnbChapters.push(d.chapter);
       }
 
-      // For "missing_in_osnb2" chapters (like Mal 4), check if they overflow
-      // into an adjacent osnb2 chapter that has extra verses
-      const hasMissingOsnb2 = group.some(d => d.type === 'missing_in_osnb2');
+      // For "missing_in_osnb" chapters (like Mal 4), check if they overflow
+      // into an adjacent osnb chapter that has extra verses
+      const hasMissingOsnb2 = group.some(d => d.type === 'missing_in_osnb');
       if (hasMissingOsnb2) {
-        // Find the osnb2 chapter(s) that contain the overflow
-        // E.g., Mal 4 missing → Mal 3 in osnb2 has extra verses
+        // Find the osnb chapter(s) that contain the overflow
+        // E.g., Mal 4 missing → Mal 3 in osnb has extra verses
         const firstCh = chapters[0];
         const lastCh = chapters[chapters.length - 1];
 
         // Check if previous chapter absorbs the overflow
         const prevKey = `${bookId}-${firstCh - 1}`;
-        const prevOsnb2 = osnb2Counts[prevKey];
+        const prevOsnb2 = osnbCounts[prevKey];
         const prevSrc = srcGroups[prevKey];
         if (prevOsnb2 && prevSrc) {
           // Include the previous chapter in the group
           const prevSrcCount = prevSrc.length;
           if (prevSrcCount < prevOsnb2.verseCount) {
-            // Previous osnb2 chapter has more verses - it absorbs the overflow
+            // Previous osnb chapter has more verses - it absorbs the overflow
             srcTotal += prevSrcCount;
-            osnb2Total += prevOsnb2.verseCount;
+            osnbTotal += prevOsnb2.verseCount;
             srcChapters.unshift(firstCh - 1);
-            osnb2Chapters.unshift(firstCh - 1);
+            osnbChapters.unshift(firstCh - 1);
           }
         }
       }
 
-      if (srcTotal === osnb2Total && srcTotal > 0) {
+      if (srcTotal === osnbTotal && srcTotal > 0) {
         // Totals match - do sequential mapping
-        mapChapterGroupSequentially(bookId, srcChapters, osnb2Chapters, srcGroups, osnb2Counts, verseMap);
+        mapChapterGroupSequentially(bookId, srcChapters, osnbChapters, srcGroups, osnbCounts, verseMap);
         for (const ch of chapters) handled.add(`${bookId}-${ch}`);
       } else if (group.length === 2 && !hasMissingOsnb2) {
         // Two adjacent chapters, totals match - handle as simple pair
         const d1 = group[0];
         const d2 = group[1];
         const pairSrcTotal = d1.srcCount + d2.srcCount;
-        const pairOsnb2Total = d1.osnb2Count + d2.osnb2Count;
+        const pairOsnb2Total = d1.osnbCount + d2.osnbCount;
 
         if (pairSrcTotal === pairOsnb2Total) {
           mapChapterGroupSequentially(
             bookId,
             [d1.chapter, d2.chapter],
             [d1.chapter, d2.chapter],
-            srcGroups, osnb2Counts, verseMap
+            srcGroups, osnbCounts, verseMap
           );
           handled.add(`${bookId}-${d1.chapter}`);
           handled.add(`${bookId}-${d2.chapter}`);
@@ -449,15 +449,15 @@ async function main() {
   const srcVerses = parseInputFile(inputFile, format);
   console.log(`Parsed ${srcVerses.length} verses`);
 
-  console.log('Loading osnb2 chapter data...');
-  const osnb2Counts = getOsnb2ChapterCounts();
-  console.log(`Loaded ${Object.keys(osnb2Counts).length} chapters from osnb2`);
+  console.log('Loading osnb chapter data...');
+  const osnbCounts = getOsnb2ChapterCounts();
+  console.log(`Loaded ${Object.keys(osnbCounts).length} chapters from osnb`);
 
   const srcGroups = groupByChapter(srcVerses);
   console.log(`Source has ${Object.keys(srcGroups).length} chapters`);
 
   console.log('\nFinding differences...');
-  const diffs = findDifferences(srcGroups, osnb2Counts);
+  const diffs = findDifferences(srcGroups, osnbCounts);
 
   if (diffs.length === 0) {
     console.log('No differences found! All verses map 1:1.');
@@ -478,19 +478,19 @@ async function main() {
   console.log(`Found ${diffs.length} chapters with differences:\n`);
   for (const d of diffs) {
     const bookName = books.find(b => b.id === d.bookId)?.name || `Book ${d.bookId}`;
-    console.log(`  ${bookName} ch${d.chapter}: ${d.type} (src=${d.srcCount}, osnb2=${d.osnb2Count})`);
+    console.log(`  ${bookName} ch${d.chapter}: ${d.type} (src=${d.srcCount}, osnb=${d.osnbCount})`);
   }
 
   // Try deterministic mapping first
   console.log('\nAttempting deterministic mapping for simple shifts...');
-  const { verseMap, unhandled } = tryDeterministicMapping(diffs, srcGroups, osnb2Counts);
+  const { verseMap, unhandled } = tryDeterministicMapping(diffs, srcGroups, osnbCounts);
 
   console.log(`Deterministic mapping created ${Object.keys(verseMap).length} entries`);
   if (unhandled.length > 0) {
     console.log(`${unhandled.length} chapters could not be mapped deterministically:`);
     for (const d of unhandled) {
       const bookName = books.find(b => b.id === d.bookId)?.name || `Book ${d.bookId}`;
-      console.log(`  ${bookName} ch${d.chapter}: ${d.type} (src=${d.srcCount}, osnb2=${d.osnb2Count})`);
+      console.log(`  ${bookName} ch${d.chapter}: ${d.type} (src=${d.srcCount}, osnb=${d.osnbCount})`);
     }
   }
 
@@ -536,21 +536,21 @@ async function main() {
           }
         }
 
-        // Collect all osnb2 verses for these chapters
+        // Collect all osnb verses for these chapters
         const allOsnb2Verses = [];
         for (const d of group) {
-          if (d.type !== 'missing_in_osnb2') {
+          if (d.type !== 'missing_in_osnb') {
             const ov = loadOsnb2Chapter(bookId, d.chapter) || [];
             allOsnb2Verses.push(...ov);
           }
         }
 
         if (allOsnb2Verses.length === 0) {
-          console.log(`  Skipping ${bookName} ch${chapters.join(',')} (no osnb2 data)`);
+          console.log(`  Skipping ${bookName} ch${chapters.join(',')} (no osnb data)`);
           for (const d of group) {
             unmapped.push({
               bookId, chapter: d.chapter,
-              reason: `No osnb2 data for chapter (source has ${d.srcCount} verses)`,
+              reason: `No osnb data for chapter (source has ${d.srcCount} verses)`,
             });
           }
           continue;
@@ -561,13 +561,13 @@ async function main() {
           for (const d of group) {
             unmapped.push({
               bookId, chapter: d.chapter,
-              reason: `No source data for chapter (osnb2 has ${d.osnb2Count} verses)`,
+              reason: `No source data for chapter (osnb has ${d.osnbCount} verses)`,
             });
           }
           continue;
         }
 
-        console.log(`  Matching ${bookName} ch${chapters.join(',')} (${allSrcVerses.length} src → ${allOsnb2Verses.length} osnb2)...`);
+        console.log(`  Matching ${bookName} ch${chapters.join(',')} (${allSrcVerses.length} src → ${allOsnb2Verses.length} osnb)...`);
 
         try {
           const aiMapping = await matchVersesWithAI(
@@ -580,7 +580,7 @@ async function main() {
               unmapped.push({
                 bookId,
                 srcRef: `${entry.src[0]}:${entry.src[1]}`,
-                reason: 'No match in osnb2',
+                reason: 'No match in osnb',
               });
             } else {
               mapped++;
@@ -612,7 +612,7 @@ async function main() {
         chapter: d.chapter,
         type: d.type,
         srcCount: d.srcCount,
-        osnb2Count: d.osnb2Count,
+        osnbCount: d.osnbCount,
         reason: 'Not mapped (run with --use-ai to use AI matching)',
       });
     }

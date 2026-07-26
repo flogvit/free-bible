@@ -2,7 +2,7 @@ import fs from 'fs';
 import path from 'path';
 
 const parallelsData = JSON.parse(fs.readFileSync('gospel_parallels/parallels.json', 'utf-8'));
-const biblePath = 'bibles_raw/osnb2';
+const biblePath = 'bibles_raw/osnb';
 
 const gospelNames = {
   matthew: 'Matteus',
