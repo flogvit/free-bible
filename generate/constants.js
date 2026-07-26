@@ -1,15 +1,57 @@
 export const bibles = {
-    "osnb1": "Norwegian bokmål",
-    "osnb2": "Norwegian bokmål",
-    "osnn1": "Norwegian nynorsk",
+    "osnb": "Norwegian bokmål",
+    "osnn": "Norwegian nynorsk",
+    "osen": "English",
 }
 
-export const anthropicModel = process.env.ANTHROPIC_MODEL || "claude-opus-4-7";
-export const maxTokens = 16384;
+/**
+ * Oversettelsesstil per bibel. Stilen hører til oversettelsen, ikke til kommandolinjen:
+ * glemmer man --style på en kjøring blir teksten stille produsert etter feil brief, og
+ * stilen lagres ikke i versdataene, så feilen kan ikke oppdages i ettertid.
+ * --style på kommandolinjen overstyrer fortsatt, for eksperimenter.
+ *
+ * Navnekonvensjon: grunnformen er språkkoden (osnb, osnn, osen). Varianter får suffiks,
+ * f.eks. osnb-child.
+ */
+export const bibleStyles = {
+    osnb: "oral",
+    osnn: "oral",
+    osen: "oral",
+};
+
+export function getBibleStyle(bible) {
+    return bibleStyles[bible] || "standard";
+}
+
+export const anthropicModel = process.env.ANTHROPIC_MODEL || "claude-opus-5";
+// Opus 5 tenker som standard, og max_tokens dekker tenkning + svar under ett.
+// Doblet fra 16384 for å gi plass til begge deler.
+export const maxTokens = 32000;
 
 // Local Ollama models for lightweight tasks
 export const ollamaModel = "qwen3.5:122b";
 export const ollamaBaseUrl = "http://localhost:11434";
+
+// Default local model per task. Heavy jobs that get the whole machine (typically
+// overnight) use the large model; per-verse jobs that just need a yes/no verdict use
+// a smaller one so they stay usable while the machine is doing something else.
+// Note: gemma4:31b is deliberately not used for anything needing structured output —
+// see ollamaModelConfig, it degrades badly with format:"json".
+export const taskModels = {
+    triage: "qwen3.5:27b",
+    tags: "qwen3.5:27b",
+    references: "qwen3.5:122b",
+    translate: "qwen3.5:122b",
+    embeddings: "bge-m3"
+};
+
+/**
+ * Local model for a task. OLLAMA_MODEL overrides everything (useful when the machine
+ * is busy); otherwise the task default, falling back to ollamaModel.
+ */
+export function getTaskModel(task) {
+    return process.env.OLLAMA_MODEL || taskModels[task] || ollamaModel;
+}
 
 // Model-specific configuration
 export const ollamaModelConfig = {
@@ -45,8 +87,23 @@ export const ollamaModelConfig = {
   },
 };
 
+// Familiestandarder for modeller som ikke står eksplisitt over. Uten dette faller en
+// nyhentet qwen til fallback-configen, som verken sender think:false eller /no_think —
+// og da bruker den hele output-budsjettet på resonnering og blir kuttet.
+const ollamaFamilyConfig = [
+  [/^qwen/, { options: { temperature: 0 }, noThinkPrefix: '/no_think\n', thinkParam: true, jsonFormat: true }],
+  [/^gemma/, { options: { temperature: 1.0, top_p: 0.95, top_k: 64 }, noThinkPrefix: '<|think|>\n', thinkParam: false, jsonFormat: false }],
+  [/^gpt-oss/, { options: { temperature: 0.1 }, noThinkPrefix: '', thinkParam: false, jsonFormat: true }],
+];
+
 export function getOllamaConfig(model) {
-  return ollamaModelConfig[model] || {
+  if (ollamaModelConfig[model]) return ollamaModelConfig[model];
+
+  for (const [pattern, config] of ollamaFamilyConfig) {
+    if (pattern.test(model)) return config;
+  }
+
+  return {
     options: { temperature: 0 },
     noThinkPrefix: '',
     thinkParam: false,
