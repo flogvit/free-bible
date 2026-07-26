@@ -1,0 +1,99 @@
+[
+  {
+    "bookId": 19,
+    "chapterId": 95,
+    "verseId": 1,
+    "text": "Come, let us sing for joy to the LORD; let us shout aloud to the rock of our salvation."
+  },
+  {
+    "bookId": 19,
+    "chapterId": 95,
+    "verseId": 2,
+    "text": "Let us come before him with thanksgiving, and shout to him with songs of praise."
+  },
+  {
+    "bookId": 19,
+    "chapterId": 95,
+    "verseId": 3,
+    "text": "For the LORD is a great God, a great King above all gods."
+  },
+  {
+    "bookId": 19,
+    "chapterId": 95,
+    "verseId": 4,
+    "text": "In his hand are the depths of the earth, and the heights of the mountains are his."
+  },
+  {
+    "bookId": 19,
+    "chapterId": 95,
+    "verseId": 5,
+    "text": "The sea is his, for he made it, and his hands formed the dry land."
+  },
+  {
+    "bookId": 19,
+    "chapterId": 95,
+    "verseId": 6,
+    "text": "Come, let us worship and bow low; let us kneel before the LORD our Maker.",
+    "versions": [
+      {
+        "text": "Come, let us bow down in worship, let us kneel before the LORD our Maker.",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "The Hebrew stacks three distinct verbs of reverence (prostrate oneself, bow down, kneel). The current rendering collapses the first two into one phrase; keeping all three preserves the cumulative, rhythmic build of the call to worship."
+      }
+    ]
+  },
+  {
+    "bookId": 19,
+    "chapterId": 95,
+    "verseId": 7,
+    "text": "For he is our God, and we are the people of his pasture, the flock under his hand. Today, if only you would listen to his voice!"
+  },
+  {
+    "bookId": 19,
+    "chapterId": 95,
+    "verseId": 8,
+    "text": "Do not harden your hearts as you did at Meribah, as on that day at Massah in the wilderness,[^1]\n\n[^1]: Meribah means \"quarreling\" and Massah means \"testing\"; the place names echo the accusation being made.",
+    "versions": [
+      {
+        "text": "Do not harden your hearts as you did at Meribah, as on that day at Massah in the wilderness,",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "The place names carry meanings that are essential to the verse's wordplay with the following line (\"your ancestors tested me\"). A brief footnote helps hearers catch the connection without altering the readable text."
+      }
+    ]
+  },
+  {
+    "bookId": 19,
+    "chapterId": 95,
+    "verseId": 9,
+    "text": "where your ancestors tested me; they tried me, though they had seen what I did."
+  },
+  {
+    "bookId": 19,
+    "chapterId": 95,
+    "verseId": 10,
+    "text": "For forty years I loathed that generation, and I said, \"They are a people whose hearts go astray; they have not known my ways.\"",
+    "versions": [
+      {
+        "text": "For forty years I was angry with that generation, and I said, \"They are a people whose hearts go astray; they have not known my ways.\"",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "The verb here denotes disgust or loathing rather than simple anger; using \"loathed\" also avoids repeating \"anger\" in the very next verse, where a different Hebrew word (nostril/wrath) is used."
+      },
+      {
+        "text": "For forty years I loathed that generation,",
+        "type": "error",
+        "severity": "critical",
+        "explanation": "More than half the Hebrew verse is missing: וָאֹמַר עַם תֹּעֵי לֵבָב הֵם וְהֵם לֹא־יָדְעוּ דְרָכָי (\"and I said, 'They are a people whose hearts go astray; they have not known my ways'\"). The dropped clause is essential — it supplies the reason for the oath in verse 11 — and the current text also ends with a comma leading nowhere. The verb \"loathed\" from the intentional earlier revision is retained.",
+        "alternative": false
+      }
+    ]
+  },
+  {
+    "bookId": 19,
+    "chapterId": 95,
+    "verseId": 11,
+    "text": "So I swore in my anger, \"They shall never enter my rest.\""
+  }
+]
