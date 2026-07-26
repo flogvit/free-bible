@@ -10,7 +10,7 @@ const MAPPINGS_DIR = join(__dirname, '../mappings');
  * Load a KVN mapping file.
  *
  * - No argument: loads dnb_2011_nb (default)
- * - System name (e.g. "osnn1"): loads mappings/<system>.kvn.json
+ * - System name (e.g. "osnn"): loads mappings/<system>.kvn.json
  * - Full path (contains '/' or '.json'): loads directly from that path
  */
 export function loadKvnMapping(systemOrPath?: string): KvnMappingFile {
@@ -27,7 +27,7 @@ export function loadKvnMapping(systemOrPath?: string): KvnMappingFile {
 
 /**
  * List available mapping system names by scanning the mappings directory.
- * Returns names like ["dnb_2011_nb", "osnn1"] (without .kvn.json suffix).
+ * Returns names like ["dnb_2011_nb", "osnn"] (without .kvn.json suffix).
  */
 export function listMappingSystems(): string[] {
   return readdirSync(MAPPINGS_DIR)

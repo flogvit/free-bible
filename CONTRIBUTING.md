@@ -21,7 +21,7 @@ Have an idea for a new feature or improvement? Open a [Feature Request](https://
 
 If you find errors in a Bible translation, please open an issue with:
 
-- The translation code (e.g., OSNB1, OSNB2)
+- The translation code (e.g., OSNB1, OSNB)
 - Book, chapter, and verse reference
 - The current text and suggested correction
 - Explanation of why the correction is needed

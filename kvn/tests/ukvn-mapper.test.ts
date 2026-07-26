@@ -134,7 +134,7 @@ describe('ukvn-loader', () => {
     const names = listUkvnMappings();
     expect(names).toContain('english_kj');
     expect(names).toContain('dnb2011_nb');
-    expect(names).toContain('osnb2');
+    expect(names).toContain('osnb');
   });
 
   it('throws for unknown mapping', () => {

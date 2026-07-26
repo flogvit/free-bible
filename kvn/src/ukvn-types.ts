@@ -56,8 +56,8 @@ export interface MappingMeta {
  * (e.g. ref:1.mos 1@dnb2024) and display names for UI.
  */
 export const MAPPING_META: Record<string, MappingMeta> = {
-  osnb2:          { shortname: 'osnb2',   displayName: 'osnb2 (hebraisk/gresk)' },
-  osnn1:          { shortname: 'osnn1',   displayName: 'osnn1 (hebraisk/gresk nynorsk)' },
+  osnb:          { shortname: 'osnb',   displayName: 'osnb (hebraisk/gresk)' },
+  osnn:          { shortname: 'osnn',   displayName: 'osnn (hebraisk/gresk nynorsk)' },
   dnb2024:        { shortname: 'dnb2024', displayName: 'Bibelselskapets 2024' },
   dnb2011_nb:     { shortname: 'dnb2011', displayName: 'Bibelselskapets 2011' },
   dnb30:          { shortname: 'dnb1930', displayName: 'Bibelselskapets 1930' },

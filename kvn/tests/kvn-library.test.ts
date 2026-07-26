@@ -33,7 +33,7 @@ describe('identity mappings', () => {
     '%s',
     (_desc, tc) => {
       const typedTc = tc as TestCase;
-      const kvn = toKvn(typedTc.osnb2);
+      const kvn = toKvn(typedTc.osnb);
       const tkvn = toKvn(typedTc.translation);
 
       // Identity: kvn should equal tkvn
@@ -53,7 +53,7 @@ describe('chain shift mappings', () => {
     '%s',
     (_desc, tc) => {
       const typedTc = tc as TestCase;
-      const kvn = toKvn(typedTc.osnb2);
+      const kvn = toKvn(typedTc.osnb);
       const expectedTkvn = toKvn(typedTc.translation);
 
       expect(converter.toTkvn(kvn)).toBe(expectedTkvn);
@@ -62,7 +62,7 @@ describe('chain shift mappings', () => {
 
   it('reverse mapping works for chain shifts', () => {
     for (const tc of testData.categories.chain_shift) {
-      const kvn = toKvn(tc.osnb2);
+      const kvn = toKvn(tc.osnb);
       const tkvn = toKvn(tc.translation);
       expect(converter.toKvn(tkvn)).toBe(kvn);
     }
@@ -74,7 +74,7 @@ describe('cross-chapter backward mappings', () => {
     '%s',
     (_desc, tc) => {
       const typedTc = tc as TestCase;
-      const kvn = toKvn(typedTc.osnb2);
+      const kvn = toKvn(typedTc.osnb);
       const expectedTkvn = toKvn(typedTc.translation);
 
       expect(converter.toTkvn(kvn)).toBe(expectedTkvn);
@@ -83,7 +83,7 @@ describe('cross-chapter backward mappings', () => {
 
   it('reverse mapping works for cross-chapter backward', () => {
     for (const tc of testData.categories.cross_chapter_backward) {
-      const kvn = toKvn(tc.osnb2);
+      const kvn = toKvn(tc.osnb);
       const tkvn = toKvn(tc.translation);
       expect(converter.toKvn(tkvn)).toBe(kvn);
     }
@@ -91,8 +91,8 @@ describe('cross-chapter backward mappings', () => {
 
   it('source and target are in different chapters', () => {
     for (const tc of testData.categories.cross_chapter_backward) {
-      expect(tc.osnb2.chapter).not.toBe(tc.translation.chapter);
-      expect(tc.translation.chapter).toBe(tc.osnb2.chapter - 1);
+      expect(tc.osnb.chapter).not.toBe(tc.translation.chapter);
+      expect(tc.translation.chapter).toBe(tc.osnb.chapter - 1);
     }
   });
 });
@@ -102,7 +102,7 @@ describe('same-chapter backward mappings', () => {
     '%s',
     (_desc, tc) => {
       const typedTc = tc as TestCase;
-      const kvn = toKvn(typedTc.osnb2);
+      const kvn = toKvn(typedTc.osnb);
       const expectedTkvn = toKvn(typedTc.translation);
 
       expect(converter.toTkvn(kvn)).toBe(expectedTkvn);
@@ -111,8 +111,8 @@ describe('same-chapter backward mappings', () => {
 
   it('source and target are in same chapter', () => {
     for (const tc of testData.categories.same_chapter_backward) {
-      expect(tc.osnb2.chapter).toBe(tc.translation.chapter);
-      expect(tc.translation.verse).toBeLessThan(tc.osnb2.verse);
+      expect(tc.osnb.chapter).toBe(tc.translation.chapter);
+      expect(tc.translation.verse).toBeLessThan(tc.osnb.verse);
     }
   });
 });
@@ -122,7 +122,7 @@ describe('overflow chapter mappings', () => {
     '%s',
     (_desc, tc) => {
       const typedTc = tc as TestCase;
-      const kvn = toKvn(typedTc.osnb2);
+      const kvn = toKvn(typedTc.osnb);
       const expectedTkvn = toKvn(typedTc.translation);
 
       expect(converter.toTkvn(kvn)).toBe(expectedTkvn);
@@ -135,7 +135,7 @@ describe('multi-chapter block mappings', () => {
     '%s',
     (_desc, tc) => {
       const typedTc = tc as TestCase;
-      const kvn = toKvn(typedTc.osnb2);
+      const kvn = toKvn(typedTc.osnb);
       const expectedTkvn = toKvn(typedTc.translation);
 
       expect(converter.toTkvn(kvn)).toBe(expectedTkvn);
@@ -160,7 +160,7 @@ describe('unmapped (extra) verses', () => {
 
   it('regular verses are not flagged as extra', () => {
     for (const tc of testData.categories.identity) {
-      const kvn = toKvn(tc.osnb2);
+      const kvn = toKvn(tc.osnb);
       expect(converter.isExtra(kvn)).toBe(false);
     }
   });
@@ -178,7 +178,7 @@ describe('round-trip consistency', () => {
     ];
 
     for (const tc of allCases) {
-      const kvn = toKvn(tc.osnb2);
+      const kvn = toKvn(tc.osnb);
       const tkvn = converter.toTkvn(kvn);
       const roundTrip = converter.toKvn(tkvn);
       expect(roundTrip).toBe(kvn);

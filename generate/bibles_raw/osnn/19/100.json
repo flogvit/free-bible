@@ -1,0 +1,54 @@
+[
+  {
+    "bookId": 19,
+    "chapterId": 100,
+    "verseId": 1,
+    "text": "Ein salme til takksemd. Rop med glede for HERREN, heile jorda!",
+    "versions": [
+      {
+        "text": "Ein salme til lovprising. Rop med glede for HERREN, heile jorda!",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "The Hebrew לְתוֹדָה (letodah) means 'for thanksgiving/gratitude', not 'for praise'. The same root תודה appears in verse 4 where it is correctly translated as 'takkseiing'. Using 'takksemd' here would be more accurate and consistent with the psalm's theme."
+      }
+    ]
+  },
+  {
+    "bookId": 19,
+    "chapterId": 100,
+    "verseId": 2,
+    "text": "Ten HERREN med glede! Kom fram for han med jubelsong!"
+  },
+  {
+    "bookId": 19,
+    "chapterId": 100,
+    "verseId": 3,
+    "text": "Kjenn at HERREN er Gud! Han har skapt oss, og vi høyrer honom til – vi er folket hans og sauene på beitet hans.",
+    "versions": [
+      {
+        "text": "Kjenn at HERREN er Gud! Han har skapt oss, og vi høyrer han til, vi er folket hans og sauene på beitet hans.",
+        "explanation": "1) 'han' as object should be 'honom' in formal nynorsk. 2) A dash before the final clause improves rhythm for oral reading by marking the poetic parallelism between 'belonging to him' and 'being his people/flock'."
+      }
+    ]
+  },
+  {
+    "bookId": 19,
+    "chapterId": 100,
+    "verseId": 4,
+    "text": "Gå inn gjennom portane hans med takkseiing, inn i føregardane hans med lovsong! Takk honom og velsign namnet hans!",
+    "versions": [
+      {
+        "text": "Gå inn gjennom portane hans med takkseiing, inn i føregardane hans med lovsong! Takk han og pris namnet hans!",
+        "type": "grammar",
+        "severity": "minor",
+        "explanation": "Two issues: 1) 'han' as object of 'Takk' should be 'honom' in nynorsk (same correction was already applied in verse 3). 2) The Hebrew בָּרֲכוּ (barkhu) means 'bless/velsign', not 'pris' (praise). 'Velsign' is the more accurate translation of this word."
+      }
+    ]
+  },
+  {
+    "bookId": 19,
+    "chapterId": 100,
+    "verseId": 5,
+    "text": "For HERREN er god, hans miskunn varer til evig tid, og hans truskap frå slekt til slekt."
+  }
+]

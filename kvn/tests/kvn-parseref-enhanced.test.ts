@@ -8,8 +8,8 @@ import type { MaxVerseProvider } from '../src/types.js';
 const mapping = loadKvnMapping();
 const converter = new KVNConverter(mapping);
 
-// MaxVerseProvider using osnb2 data (basis coordinates)
-const osnb2MaxVerse: MaxVerseProvider = (book, chapter) => getMaxVerse(book, chapter);
+// MaxVerseProvider using osnb data (basis coordinates)
+const osnbMaxVerse: MaxVerseProvider = (book, chapter) => getMaxVerse(book, chapter);
 
 // ============================================================
 // BOOK_NAMES bugfix verification
@@ -106,7 +106,7 @@ describe('parseRef sub-verse', () => {
 
 describe('parseRef cross-chapter', () => {
   it('Joh 18,1–19,42', () => {
-    const refs = parseRef('Joh 18,1–19,42', { maxVerse: osnb2MaxVerse });
+    const refs = parseRef('Joh 18,1–19,42', { maxVerse: osnbMaxVerse });
     // Joh 18 has 40 verses, Joh 19 has 42
     expect(refs).toHaveLength(40 + 42);
     expect(refs[0]).toEqual({ book: 43, chapter: 18, verse: 1, part: 0 });
@@ -116,7 +116,7 @@ describe('parseRef cross-chapter', () => {
   });
 
   it('1 Mos 1,26–2,2', () => {
-    const refs = parseRef('1 Mos 1,26–2,2', { maxVerse: osnb2MaxVerse });
+    const refs = parseRef('1 Mos 1,26–2,2', { maxVerse: osnbMaxVerse });
     // 1 Mos 1 has 31 verses, so 26-31 = 6, plus 2:1-2 = 2
     expect(refs).toHaveLength(6 + 2);
     expect(refs[0]).toEqual({ book: 1, chapter: 1, verse: 26, part: 0 });
@@ -126,7 +126,7 @@ describe('parseRef cross-chapter', () => {
   });
 
   it('1 Pet 3,18–4,2', () => {
-    const refs = parseRef('1 Pet 3,18–4,2', { maxVerse: osnb2MaxVerse });
+    const refs = parseRef('1 Pet 3,18–4,2', { maxVerse: osnbMaxVerse });
     // 1 Pet 3 has 22 verses: 18-22 = 5, plus 4:1-2 = 2
     expect(refs).toHaveLength(5 + 2);
     expect(refs[0]).toEqual({ book: 60, chapter: 3, verse: 18, part: 0 });
@@ -136,7 +136,7 @@ describe('parseRef cross-chapter', () => {
   });
 
   it('Jes 8,23b–9,6', () => {
-    const refs = parseRef('Jes 8,23b–9,6', { maxVerse: osnb2MaxVerse });
+    const refs = parseRef('Jes 8,23b–9,6', { maxVerse: osnbMaxVerse });
     // Jes 8 has 23 verses: 23b only = 1, plus 9:1-6 = 6
     expect(refs).toHaveLength(1 + 6);
     expect(refs[0]).toEqual({ book: 23, chapter: 8, verse: 23, part: 2 }); // 23b
@@ -219,7 +219,7 @@ describe('parseRef og/eller', () => {
 
 describe('parseRef combinations', () => {
   it('cross-chapter + sub-vers: Jes 8,23b–9,6', () => {
-    const refs = parseRef('Jes 8,23b–9,6', { maxVerse: osnb2MaxVerse });
+    const refs = parseRef('Jes 8,23b–9,6', { maxVerse: osnbMaxVerse });
     expect(refs[0]).toEqual({ book: 23, chapter: 8, verse: 23, part: 2 });
     expect(refs[refs.length - 1]).toEqual({ book: 23, chapter: 9, verse: 6, part: 0 });
   });
@@ -237,8 +237,8 @@ describe('parseRef combinations', () => {
   });
 
   it('semicolon + cross-chapter: Matt 26,30–27,50;28,1–10', () => {
-    const refs = parseRef('Matt 26,30–27,50;28,1–10', { maxVerse: osnb2MaxVerse });
-    // Matt 26 has: use osnb2 max for 26
+    const refs = parseRef('Matt 26,30–27,50;28,1–10', { maxVerse: osnbMaxVerse });
+    // Matt 26 has: use osnb max for 26
     const matt26max = getMaxVerse(40, 26);
     const expectedPart1 = (matt26max - 30 + 1) + 50; // 26:30-max + 27:1-50
     expect(refs[0]).toEqual({ book: 40, chapter: 26, verse: 30, part: 0 });
@@ -334,7 +334,7 @@ describe('toSortableKvn', () => {
   });
 
   it('mapped regular verse returns kvn', () => {
-    // 2 Mos 7:26 osnb2 maps to 2 Mos 8:1 in translation
+    // 2 Mos 7:26 osnb maps to 2 Mos 8:1 in translation
     const kvn = encode(2, 7, 26);
     const tkvn = converter.toTkvn(kvn);
     expect(tkvn).toBe(encode(2, 8, 1));

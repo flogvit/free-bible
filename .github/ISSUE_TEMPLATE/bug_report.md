@@ -26,7 +26,7 @@ What actually happened.
 
 ## Translation/Language (if applicable)
 
-- Translation code (e.g., OSNB1, OSNB2):
+- Translation code (e.g., OSNB1, OSNB):
 - Book/Chapter/Verse:
 
 ## Environment (if running locally)

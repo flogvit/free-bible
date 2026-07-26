@@ -23,7 +23,7 @@ function testRef(ref: string) {
   for (const kvn of kvns) {
     const d = decode(kvn);
     expect(verseExists(d.book, d.chapter, d.verse),
-      `${ref}: osnb2 ${d.book}:${d.chapter}:${d.verse} should exist in source`
+      `${ref}: osnb ${d.book}:${d.chapter}:${d.verse} should exist in source`
     ).toBe(true);
 
     if (converter.isCollision(kvn)) continue;

@@ -1,6 +1,6 @@
 /**
  * Diagnostic script: Cross-checks all osmain boundary verses against
- * osnb2 mapping, KJV, and nb-2024 to identify wrong texts.
+ * osnb mapping, KJV, and nb-2024 to identify wrong texts.
  *
  * Does NOT modify any files.
  */
@@ -27,8 +27,8 @@ function decode(kvn: number) {
   return { book, chapter, verse, part };
 }
 
-// Load osnb2 mapping
-const mappingPath = join(__dirname, '../mappings/osnb2.ukvn.json');
+// Load osnb mapping
+const mappingPath = join(__dirname, '../mappings/osnb.ukvn.json');
 const mapping = JSON.parse(readFileSync(mappingPath, 'utf-8'));
 const bookNamesReverse: Record<number, string> = {};
 for (const [name, id] of Object.entries(mapping.bookNames)) {
@@ -78,7 +78,7 @@ if (existsSync(nb2024Path)) {
   }
 }
 
-// Helper to read osmain/osnb2 verse text
+// Helper to read osmain/osnb verse text
 function readVerseText(bible: string, bookId: number, chapter: number, verseId: number): string | null {
   const filePath = join(__dirname, `../../generate/bibles_raw/${bible}/${bookId}/${chapter}.json`);
   if (!existsSync(filePath)) return null;
@@ -87,12 +87,12 @@ function readVerseText(bible: string, bookId: number, chapter: number, verseId: 
   return verse?.text ?? null;
 }
 
-// Find boundary entries: where osmain chapter ≠ osnb2 chapter
+// Find boundary entries: where osmain chapter ≠ osnb chapter
 const boundaryEntries = mapping.map.filter((entry: any) => {
   const osmain = decode(entry.kvnFrom);
-  const osnb2 = decode(entry.tkvnFrom);
+  const osnb = decode(entry.tkvnFrom);
   // Cross-chapter boundary (different chapter)
-  return osmain.chapter !== osnb2.chapter;
+  return osmain.chapter !== osnb.chapter;
 });
 
 console.log(`\n=== OSMAIN BOUNDARY VERSE DIAGNOSTIC ===`);
@@ -104,35 +104,35 @@ let missingCount = 0;
 
 for (const entry of boundaryEntries) {
   const osmain = decode(entry.kvnFrom);
-  const osnb2Target = decode(entry.tkvnFrom);
+  const osnbTarget = decode(entry.tkvnFrom);
   const bookName = bookNamesReverse[osmain.book] || String(osmain.book);
 
   // Read texts
   const osmainText = readVerseText('osmain', osmain.book, osmain.chapter, osmain.verse);
-  const osnb2Text = readVerseText('osnb2', osnb2Target.book, osnb2Target.chapter, osnb2Target.verse);
+  const osnbText = readVerseText('osnb', osnbTarget.book, osnbTarget.chapter, osnbTarget.verse);
   const kjvKey = `${osmain.book}:${osmain.chapter}:${osmain.verse}`;
   const kjvText = kjvLookup[kjvKey] || null;
   const nb2024Key = `${osmain.book}:${osmain.chapter}:${osmain.verse}`;
   const nb2024Text = nb2024Lookup[nb2024Key] || null;
 
-  if (!osmainText || !osnb2Text) {
+  if (!osmainText || !osnbText) {
     missingCount++;
-    console.log(`MISSING: ${bookName} ${osmain.chapter}:${osmain.verse} → osnb2 ${osnb2Target.chapter}:${osnb2Target.verse}`);
+    console.log(`MISSING: ${bookName} ${osmain.chapter}:${osmain.verse} → osnb ${osnbTarget.chapter}:${osnbTarget.verse}`);
     if (!osmainText) console.log(`  osmain file missing`);
-    if (!osnb2Text) console.log(`  osnb2 file missing`);
+    if (!osnbText) console.log(`  osnb file missing`);
     continue;
   }
 
   // Compare: strip versions/metadata, just compare main text
-  const textsMatch = osmainText.trim() === osnb2Text.trim();
+  const textsMatch = osmainText.trim() === osnbText.trim();
 
   if (textsMatch) {
     correctCount++;
   } else {
     wrongCount++;
-    console.log(`WRONG: ${bookName} ${osmain.chapter}:${osmain.verse} (osmain) → osnb2 ${osnb2Target.chapter}:${osnb2Target.verse}`);
+    console.log(`WRONG: ${bookName} ${osmain.chapter}:${osmain.verse} (osmain) → osnb ${osnbTarget.chapter}:${osnbTarget.verse}`);
     console.log(`  osmain has:  "${osmainText.substring(0, 80)}..."`);
-    console.log(`  osnb2 has:   "${osnb2Text.substring(0, 80)}..."`);
+    console.log(`  osnb has:   "${osnbText.substring(0, 80)}..."`);
     if (kjvText) {
       console.log(`  KJV has:     "${kjvText.substring(0, 80)}..."`);
     }

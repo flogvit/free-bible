@@ -12,7 +12,7 @@ export interface RefMarkup {
   book: string;       // KVN abbreviation, e.g. "Joh", "1 Mos"
   chapter: number;
   verseSpec: string;  // e.g. "16", "1-3", "1-4a", "1:26-2:2", "1-2.22-31", or "" for whole chapter
-  system?: string;    // e.g. "dnb_2011_nb", undefined = osnb2
+  system?: string;    // e.g. "dnb_2011_nb", undefined = osnb
   displayText: string;
 }
 

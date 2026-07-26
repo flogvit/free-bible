@@ -2,7 +2,7 @@
 
 ## Problem
 
-osmain har flere vers enn osnb2 i ~60 kapitler. De ekstra versene er ved
+osmain har flere vers enn osnb i ~60 kapitler. De ekstra versene er ved
 kapittelgrensene — der flertallet av oversettelser plasserer et vers i et
 annet kapittel enn hebraisk/gresk nummerering.
 
@@ -13,14 +13,14 @@ som Exodus 8:30.
 
 ## Hva som gikk galt
 
-Osmain ble bygget fra osnb2 med renummerering. For versene som skifter
-kapittel mellom hebraisk og europeisk nummerering, trengs teksten fra osnb2
+Osmain ble bygget fra osnb med renummerering. For versene som skifter
+kapittel mellom hebraisk og europeisk nummerering, trengs teksten fra osnb
 nabokappittel. Men byggescriptet kopierte feil vers i mange tilfeller.
 
 ## Hva som IKKE er feil
 
 - Selve **versantallene** i osmain er korrekte (verifisert mot 1148 oversettelser)
-- **osnb2** og **osnn1** er korrekte (1:1 med tanach/sblgnt)
+- **osnb** og **osnn** er korrekte (1:1 med tanach/sblgnt)
 - **Mapping-filene** (.ukvn.json) er korrekte for versifikasjonsforskjellene
 
 ## Typer grensevers
@@ -28,28 +28,28 @@ nabokappittel. Men byggescriptet kopierte feil vers i mange tilfeller.
 Det er to forskjellige mønstre for hvordan grenseversene fungerer:
 
 ### Type 1: Sekvensiell shift
-osnb2 ch N+1 v1 → osmain ch N siste vers.
-Eksempel: Jona 1:17 i osmain = osnb2 Jona 2:1 ("Herren lot en stor fisk sluke Jona")
+osnb ch N+1 v1 → osmain ch N siste vers.
+Eksempel: Jona 1:17 i osmain = osnb Jona 2:1 ("Herren lot en stor fisk sluke Jona")
 
 ### Type 2: Wrap-around
-Versene i osmain kapittelet er omorganisert vs osnb2.
+Versene i osmain kapittelet er omorganisert vs osnb.
 Eksempel: 2 Mos 8:29-32 i osmain. Her følger osmain en nummerering der hebraisk
 7:26-29 (= "la mitt folk dra" osv.) legges på slutten av kapittel 8,
-mens osnb2 har dem som 8:1-4. Riktig tekst for osmain 8:29-32 er
-IKKE osnb2 9:1-4, men osnb2 8:1-4 (wrap-around innenfor kapittelet).
+mens osnb har dem som 8:1-4. Riktig tekst for osmain 8:29-32 er
+IKKE osnb 9:1-4, men osnb 8:1-4 (wrap-around innenfor kapittelet).
 
 ## Slik fikses det
 
 Hvert vers må sjekkes manuelt mot:
 1. **KJV** (som følger samme nummerering som osmain i de fleste tilfeller)
 2. **tanach/sblgnt** (grunnteksten, som definerer hva innholdet faktisk er)
-3. **osnb2** (for å finne riktig norsk oversettelse av det korrekte verset)
+3. **osnb** (for å finne riktig norsk oversettelse av det korrekte verset)
 
 **IKKE bruk et script.** Scriptet vi prøvde antok alle var Type 1, men mange er Type 2.
 
 ## Fullstendig liste over vers med feil tekst
 
-133 grensevers totalt, 131 med tekst som ikke matcher osnb2 neste-kapittelet.
+133 grensevers totalt, 131 med tekst som ikke matcher osnb neste-kapittelet.
 Noen av disse 131 kan ha riktig tekst allerede (Type 2 der teksten riktig
 hentes fra et annet sted), men alle bør verifiseres.
 

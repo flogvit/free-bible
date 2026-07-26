@@ -1,8 +1,8 @@
 # Verse Mapping – Bibeloversettelser
 
 Forskjellige bibeloversettelser har ulik versinndeling. Vår interne standard følger
-den hebraiske (Tanach) og greske (SBLGNT) originalnummereringen via `osnb2`.
-For å støtte andre oversettelser trenger vi en mapping mellom deres nummerering og osnb2.
+den hebraiske (Tanach) og greske (SBLGNT) originalnummereringen via `osnb`.
+For å støtte andre oversettelser trenger vi en mapping mellom deres nummerering og osnb.
 
 ## Kort oversikt
 
@@ -35,7 +35,7 @@ Alle 31 000+ vers skal være med, fra 1. Mosebok til Åpenbaringen.
 
 ```js
 const KNOWN_FORMATS = {
-  bibel2011: { /* ... eksisterende ... */ },
+  dnb_2011_nb: { /* ... eksisterende ... */ },
 
   // Ny oversettelse:
   mittformat: {
@@ -74,7 +74,7 @@ AI krever `ANTHROPIC_API_KEY` i `generate/.env`.
 ## Hva skriptet gjør
 
 1. **Parser** tekstfilen og teller vers per bok/kapittel
-2. **Sammenligner** med osnb2 JSON-filene i `bibles_raw/osnb2/`
+2. **Sammenligner** med osnb JSON-filene i `bibles_raw/osnb/`
 3. **Deterministisk mapping** for:
    - Kapittelsgrense-skift mellom to nabokaptiler (f.eks. 1 Mos 31–32)
    - Flerkaptittel-blokker der totalt versantall matcher (f.eks. Job 38–41)
@@ -88,8 +88,8 @@ Mappingen lagres som JSON i `generate/mappings/<id>.json`:
 
 ```json
 {
-  "id": "bibel2011",
-  "name": "Bibel 2011",
+  "id": "dnb_2011_nb",
+  "name": "Det Norske Bibelselskap 2011 Bokmål",
   "description": "Bibelselskapets oversettelse 2011",
   "bookNames": {
     "1 Mos": 1,
@@ -102,15 +102,15 @@ Mappingen lagres som JSON i `generate/mappings/<id>.json`:
     "39-4-1": "39-3-19"
   },
   "unmapped": [
-    { "bookId": 45, "srcRef": "16:25", "reason": "No match in osnb2" }
+    { "bookId": 45, "srcRef": "16:25", "reason": "No match in osnb" }
   ]
 }
 ```
 
 - **bookNames**: Boknavn i kildefilen → intern book ID (1–66)
-- **verseMap**: `"bookId-srcKapittel-srcVers"` → `"bookId-osnb2Kapittel-osnb2Vers"`.
+- **verseMap**: `"bookId-srcKapittel-srcVers"` → `"bookId-osnbKapittel-osnbVers"`.
   Vers som ikke er i mappen har identisk nummerering.
-- **unmapped**: Vers i kilden som ikke finnes i osnb2 (tekstkritiske varianter, manglende data)
+- **unmapped**: Vers i kilden som ikke finnes i osnb (tekstkritiske varianter, manglende data)
 
 ## Typiske forskjeller
 
@@ -119,9 +119,9 @@ Mappingen lagres som JSON i `generate/mappings/<id>.json`:
 | Kapittelsgrense-skift | 1 Mos 31:55 → 32:1 | Siste vers i et kapittel er første vers i neste i hebraisk |
 | Flerkaptittel-blokk | Job 38–41 | 4 kapitler med ulik intern inndeling, men totalt likt |
 | Kapittel-split | Mal 3+4 vs Mal 3 | Bibel2011 har Mal 4:1–6, hebraisk har Mal 3:19–24 |
-| Isolert forskjell | 4 Mos 25 | osnb2 har 19 vers, Bibel2011 har 18 (vers 19 er absorbert i neste kapittel) |
+| Isolert forskjell | 4 Mos 25 | osnb har 19 vers, Bibel2011 har 18 (vers 19 er absorbert i neste kapittel) |
 | Tekstkritisk variant | Rom 16:25–27 | Doksologien finnes i noen manuskripter men ikke i SBLGNT |
-| Manglende data | Joel 3:6–26 → 4:1–21 | Mapping er klar, men osnb2 mangler Joel kap 4 |
+| Manglende data | Joel 3:6–26 → 4:1–21 | Mapping er klar, men osnb mangler Joel kap 4 |
 
 ## Tips
 

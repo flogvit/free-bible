@@ -13,13 +13,13 @@ const LESETEKSTER_DIR = join(__dirname, '../../generate/dnk_lesetekster');
 const mapping = loadKvnMapping();
 const converter = new KVNConverter(mapping);
 
-// Precompute translation max verse per chapter from osnb2 data + mapping
+// Precompute translation max verse per chapter from osnb data + mapping
 const translationMaxVerse = new Map<string, number>();
 function getTranslationMaxVerse(book: number, chapter: number): number {
   const key = `${book}-${chapter}`;
   if (translationMaxVerse.has(key)) return translationMaxVerse.get(key)!;
 
-  // Start with osnb2 max
+  // Start with osnb max
   let max = getMaxVerse(book, chapter);
 
   // Check mapping for tkvn values in this chapter with higher verse numbers

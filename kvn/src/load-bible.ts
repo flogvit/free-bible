@@ -3,7 +3,7 @@ import { join, dirname } from 'path';
 import { fileURLToPath } from 'url';
 
 const __dirname = dirname(fileURLToPath(import.meta.url));
-const BIBLES_DIR = join(__dirname, '../../generate/bibles_raw/osnb2');
+const BIBLES_DIR = join(__dirname, '../../generate/bibles_raw/osnb');
 
 interface RawVerse {
   bookId: number;
@@ -13,7 +13,7 @@ interface RawVerse {
 }
 
 /**
- * Get number of chapters for a book in osnb2.
+ * Get number of chapters for a book in osnb.
  */
 export function getChapterCount(bookId: number): number {
   const bookDir = join(BIBLES_DIR, String(bookId));
@@ -22,7 +22,7 @@ export function getChapterCount(bookId: number): number {
 }
 
 /**
- * Get max verse number for a specific chapter in osnb2.
+ * Get max verse number for a specific chapter in osnb.
  */
 export function getMaxVerse(bookId: number, chapter: number): number {
   const filePath = join(BIBLES_DIR, String(bookId), `${chapter}.json`);
@@ -33,7 +33,7 @@ export function getMaxVerse(bookId: number, chapter: number): number {
 }
 
 /**
- * Check if a specific verse exists in osnb2.
+ * Check if a specific verse exists in osnb.
  */
 export function verseExists(bookId: number, chapter: number, verse: number): boolean {
   const filePath = join(BIBLES_DIR, String(bookId), `${chapter}.json`);
@@ -43,7 +43,7 @@ export function verseExists(bookId: number, chapter: number, verse: number): boo
 }
 
 /**
- * Get total verse count across all books in osnb2.
+ * Get total verse count across all books in osnb.
  */
 export function getTotalVerseCount(): number {
   let total = 0;

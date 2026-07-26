@@ -26,8 +26,8 @@ View the current state at: https://bibel.flogvit.no
 | Code | Language | Status |
 |------|----------|--------|
 | OSNB1 | Norwegian Bokmål (v1) | CHECKING |
-| OSNB2 | Norwegian Bokmål (v2, oral style) | IN PROGRESS |
-| OSNN1 | Norwegian Nynorsk | IN PROGRESS |
+| OSNB | Norwegian Bokmål (v2, oral style) | IN PROGRESS |
+| OSNN | Norwegian Nynorsk | IN PROGRESS |
 
 ## Features
 
@@ -96,7 +96,7 @@ generate/
 ├── chapter_summaries/   # Generated chapter summaries
 ├── persons/             # Bible persons encyclopedia
 ├── proofread/           # Proofread results
-├── reading_plans/       # Generated reading plan JSON files
+├── reading_plans/       # Generated reading plan JSON files (per language: nb/, en/, ...)
 ├── references/          # Cross references
 ├── embeddings/          # Cached vector embeddings (per corpus)
 ├── verse_translation/   # Verse translation explanations
@@ -124,6 +124,7 @@ generate/
 | `stories.mjs` | Generate Bible story summaries |
 | `scan_stories.mjs` | Systematically scan Bible chapter-by-chapter for missing stories (proposals to `stories_proposed/`) |
 | `convert-refs.mjs` | Convert plain-text references to `[ref:...\|...]` markup |
+| `translate.mjs` | Translate generated content (summaries, context, insights) from nb to other languages with local Ollama |
 | `make_tanach.mjs` | Process Tanach source files |
 | `make_sblgnt.mjs` | Process SBLGNT source files |
 
@@ -150,19 +151,19 @@ cd generate
 
 ```bash
 # Translate entire NT with oral style
-node bible.mjs osnb2 --style oral --nt
+node bible.mjs osnb --style oral --nt
 
 # Translate specific books
-node bible.mjs osnb2 --style oral --book 1-20
+node bible.mjs osnb --style oral --book 1-20
 
 # Translate specific chapters
-node bible.mjs osnb2 --book 43 --chapter 1-11
+node bible.mjs osnb --book 43 --chapter 1-11
 
 # Translate, proofread, and apply corrections
-node bible.mjs osnb2 --nt --proofread --apply
+node bible.mjs osnb --nt --proofread --apply
 
 # Force re-translation
-node bible.mjs osnb2 --book 1 --force
+node bible.mjs osnb --book 1 --force
 ```
 
 **Options:**
@@ -233,8 +234,8 @@ node book_context.mjs --book 1-5
 
 ```bash
 # From Bible translation (uses existing translation)
-node word4word.mjs osnb2 --nt
-node word4word.mjs osnb2 --book 43 --chapter 1 --verse 1-11
+node word4word.mjs osnb --nt
+node word4word.mjs osnb --book 43 --chapter 1 --verse 1-11
 
 # Direct from source texts (generates fresh translation)
 node word4word.mjs tanach --ot                    # Hebrew OT → Norwegian
@@ -246,9 +247,9 @@ node word4word.mjs sblgnt --nt                    # Greek NT → Norwegian
 
 ```bash
 # Explain translation choices
-node verse_translation.mjs osnb2 --book 1 --chapter 1
-node verse_translation.mjs osnb2 --book 43
-node verse_translation.mjs osnb2 --nt
+node verse_translation.mjs osnb --book 1 --chapter 1
+node verse_translation.mjs osnb --book 43
+node verse_translation.mjs osnb --nt
 ```
 
 ### Bible Persons
@@ -269,10 +270,10 @@ node bible_persons.mjs all
 node number_symbolism.mjs --number 7
 
 # Index entire bible — extract numbers from every verse with Ollama
-node number_symbolism.mjs --bible osnb2 --index
+node number_symbolism.mjs --bible osnb --index
 
 # Index specific book/chapter
-node number_symbolism.mjs --bible osnb2 --index --book 11 --chapter 10
+node number_symbolism.mjs --bible osnb --index --book 11 --chapter 10
 
 # Proofread existing data
 node number_symbolism.mjs --all --proofread --apply
@@ -285,9 +286,42 @@ node number_symbolism.mjs --all --proofread --apply
 node generate_reading_plans.mjs
 ```
 
+### Content Translation
+
+`translate.mjs` translates generated content from `<dir>/nb/` to `<dir>/<lang>/` using the local Ollama model (free, ~20-60 s per file). Unlike re-generating per language, translation keeps the content identical across languages.
+
+Covered dirs (processed in this order; see `CONTENT_DIRS` in the script): `chapter_summaries`, `book_summaries`, `chapter_context`, `book_context`, `chapter_insights`, `days`, `day_tags`, `tags`, `themes`, `timeline`, `stories`, `persons`, `number_symbolism`, `prophecies`, `important_words`, `verse_prayer`, `verse_sermon`, `reading_plans`, `daily_verse`, `gospel_parallels`, and `references` last (10k+ files, plan for multi-day runtime). Handles `.md`, `.json` (structure-validated, machine keys preserved) and `.txt`. Not translated on purpose: internal pipeline artifacts (`proofread_*`, `stories_proposed`, `stories_rejected`), and `important_verses` (quotes Bible verse text - machine translation would reproduce copyrighted English versions; build the en variant by verse lookup once an English Bible text exists).
+
+```bash
+# Show status per dir (current / stale / untracked / missing)
+node translate.mjs --language en --status
+
+# List what would be translated
+node translate.mjs --language en --dry-run
+
+# Translate everything missing or stale
+node translate.mjs --language en
+
+# Pilot run: one dir, one book, limited count
+node translate.mjs --language en --dirs chapter_summaries --book 43 --limit 10
+```
+
+**Change tracking:** the sha256 of each nb source file is recorded in `translate_state/<lang>.json` when translated. If the nb file later changes, the next run marks it `stale` and re-translates it automatically — no manual bookkeeping. Earlier versions (hash, model, timestamp) are kept in a `history` list per file. State is saved after every file, so interrupted runs resume where they left off.
+
+**Key flags:**
+- `--language <lang>` — Target language (required); codes or full names from `constants.js`
+- `--source <lang>` — Source language code (default: nb)
+- `--dirs <a,b,c>` — Restrict to specific content dirs
+- `--book <n|n-m>` — Restrict to specific book(s)
+- `--limit <n>` — Max files this run (for pilots)
+- `--force` — Re-translate even if source is unchanged
+- `--status` / `--dry-run` — Inspect without translating
+
+**Quality safeguards:** markdown structure (headings/bullets/bold) is fingerprint-compared against the source and mismatches are logged as warnings in the state file; JSON files are validated for identical structure (keys, array lengths, numbers) and machine values like `"type"` are copied from the source untouched; « » quotes are converted to target-language style deterministically after translation. Bible quotes inside the texts are translated as plain wording — the model is instructed not to reproduce ESV/NIV/KJV phrasing (and since this is original prose, it has no canonical English text to fall back on).
+
 ### Semantic Cross References
 
-`references_semantic.mjs` finds cross references via vector search over osnb2 verse embeddings, then LLM-verifies each candidate. Complements `references.mjs` (which generates from LLM knowledge) by surfacing parallels that don't appear in standard cross-reference works.
+`references_semantic.mjs` finds cross references via vector search over osnb verse embeddings, then LLM-verifies each candidate. Complements `references.mjs` (which generates from LLM knowledge) by surfacing parallels that don't appear in standard cross-reference works.
 
 **Pipeline:** bge-m3 embeddings + LLM theme summary + LLM concept questions → unique candidate set → qwen3.5:122b verifies each → merged into `references/nb/<book>/<chapter>/<verse>.json`.
 
@@ -299,7 +333,7 @@ node references_semantic.mjs --top-k 30 --threshold 0.65 --theme --concepts --re
 This config was chosen by evaluating 9 variants on 10 test verses with Claude as independent judge:
 - 75% high-quality (≥4/5) accepted, ~5.6 good refs added per verse
 - ~14 min per verse on local qwen3.5:122b
-- Projection for full osnb2 (31 167 verses): ~175 000 good refs, ~73 days
+- Projection for full osnb (31 167 verses): ~175 000 good refs, ~73 days
 
 **Setup:**
 ```bash
@@ -313,11 +347,11 @@ node references_semantic.mjs --build-only   # one-time: build embeddings (128 MB
 - `--threshold <x>` — Min cosine similarity (default 0.60; 0.65 recommended for bge-m3)
 - `--theme` — Add LLM-generated thematic summary as additional embed query
 - `--concepts` — Add 4 LLM-generated facet queries (different angles on the verse)
-- `--resume` — Skip already-processed verses (tracked in `embeddings/osnb2/semantic_progress.json`); essential for multi-day runs that get interrupted
+- `--resume` — Skip already-processed verses (tracked in `embeddings/osnb/semantic_progress.json`); essential for multi-day runs that get interrupted
 - `--skip-existing` — Skip verses that already have a references file (don't augment manual refs)
 - `--book <range>` / `--chapter <range>` / `--verse <range>` — Scope to subset
 
-**Resume behavior:** progress file is updated after each verse completes. Ctrl+C is safe — restart with `--resume` and it picks up from the next unprocessed verse. Delete `embeddings/osnb2/semantic_progress.json` to start fresh.
+**Resume behavior:** progress file is updated after each verse completes. Ctrl+C is safe — restart with `--resume` and it picks up from the next unprocessed verse. Delete `embeddings/osnb/semantic_progress.json` to start fresh.
 
 **Known limitations:**
 - Prophecy → fulfillment (e.g. Gen 3:15 → Rom 16:20) — fulfillment language is too different from prophetic language for embedding similarity to find it
@@ -349,10 +383,10 @@ For faster processing, run multiple instances in separate terminals:
 
 ```bash
 # Terminal 1
-node bible.mjs osnb2 --book 1-20 &
+node bible.mjs osnb --book 1-20 &
 
 # Terminal 2
-node bible.mjs osnb2 --book 21-39 &
+node bible.mjs osnb --book 21-39 &
 ```
 
 ---
@@ -367,12 +401,12 @@ All main scripts support a three-step workflow:
 
 ```bash
 # All in one command
-node bible.mjs osnb2 --nt --proofread --apply
+node bible.mjs osnb --nt --proofread --apply
 
 # Or separately
-node bible.mjs osnb2 --nt
-node bible.mjs osnb2 --nt --proofread
-node bible.mjs osnb2 --nt --apply
+node bible.mjs osnb --nt
+node bible.mjs osnb --nt --proofread
+node bible.mjs osnb --nt --apply
 ```
 
 Proofread results are saved in `proofread/<bible>/<book>/<chapter>.json`.

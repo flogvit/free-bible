@@ -1,5 +1,5 @@
 /**
- * Add "source" field to all osmain verses that came from osnb2.
+ * Add "source" field to all osmain verses that came from osnb.
  * Books 1-39 (OT) = "tanach", Books 40-66 (NT) = "sblgnt"
  * Only adds to verses that don't already have a source field.
  */

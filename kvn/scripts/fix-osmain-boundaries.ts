@@ -1,5 +1,5 @@
 /**
- * Fix osmain boundary-shift placeholders by copying text from osnb2.
+ * Fix osmain boundary-shift placeholders by copying text from osnb.
  *
  * Pattern: create-osnb3.ts dropped verses from the end of chapter N
  * (renumber_boundary) and added placeholders at the end of chapter N+1
@@ -8,14 +8,14 @@
  *
  * This script:
  * 1. Pairs boundary drops with add_verses in adjacent chapters
- * 2. Copies the text from the dropped osnb2 verses into the placeholders
+ * 2. Copies the text from the dropped osnb verses into the placeholders
  * 3. Reports new chapters that genuinely need translation (books 1-66)
  */
 
 import { readFileSync, readdirSync, existsSync, statSync, writeFileSync } from 'fs';
 import { join } from 'path';
 
-const OSNB2_DIR = join(import.meta.dirname, '../../generate/bibles_raw/osnb2');
+const OSNB_DIR = join(import.meta.dirname, '../../generate/bibles_raw/osnb');
 const OSMAIN_DIR = join(import.meta.dirname, '../../generate/bibles_raw/osmain');
 const RAW_DIR = join(import.meta.dirname, '../../external/closed/raw');
 const LOG_FILE = join(import.meta.dirname, '../data/osnb3-renumber-log.json');
@@ -75,14 +75,14 @@ for (const drop of boundaryDrops) {
     // Still try to pair what we can
   }
 
-  // Load the osnb2 source chapter to get the dropped verse texts
-  const osnb2File = join(OSNB2_DIR, String(book), `${chapter}.json`);
-  if (!existsSync(osnb2File)) {
-    console.log(`  osnb2 file not found: ${osnb2File}`);
+  // Load the osnb source chapter to get the dropped verse texts
+  const osnbFile = join(OSNB_DIR, String(book), `${chapter}.json`);
+  if (!existsSync(osnbFile)) {
+    console.log(`  osnb file not found: ${osnbFile}`);
     continue;
   }
-  const osnb2Verses: VerseData[] = JSON.parse(readFileSync(osnb2File, 'utf-8'));
-  const osnb2ByVerse = new Map(osnb2Verses.map(v => [v.verseId, v]));
+  const osnbVerses: VerseData[] = JSON.parse(readFileSync(osnbFile, 'utf-8'));
+  const osnbByVerse = new Map(osnbVerses.map(v => [v.verseId, v]));
 
   // Load the osmain target chapter
   const osmainFile = join(OSMAIN_DIR, String(book), `${targetChapter}.json`);
@@ -100,9 +100,9 @@ for (const drop of boundaryDrops) {
     const droppedVerseId = droppedVerses[i];
     const targetVerseId = addedVerseIds[i];
 
-    const source = osnb2ByVerse.get(droppedVerseId);
+    const source = osnbByVerse.get(droppedVerseId);
     if (!source) {
-      console.log(`  Source verse not found: osnb2 ${book}:${chapter}:${droppedVerseId}`);
+      console.log(`  Source verse not found: osnb ${book}:${chapter}:${droppedVerseId}`);
       continue;
     }
 
@@ -126,7 +126,7 @@ for (const drop of boundaryDrops) {
 
   if (chapterFixed > 0) {
     writeFileSync(osmainFile, JSON.stringify(osmainVerses, null, 2));
-    console.log(`  ✓ ${drop.key} → ${addEntry.key}: filled ${chapterFixed} verses from osnb2`);
+    console.log(`  ✓ ${drop.key} → ${addEntry.key}: filled ${chapterFixed} verses from osnb`);
   }
 }
 

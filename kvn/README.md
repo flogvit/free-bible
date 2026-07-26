@@ -28,25 +28,25 @@ så konvertering av 1000 vers tar under 1ms.
 ## osmain
 
 osmain er masterbibeloversettelsen som definerer KVN-koordinatsystemet.
-Den er bygget fra osnb2 (tanach/sblgnt) og utvidet med vers fra alle
+Den er bygget fra osnb (tanach/sblgnt) og utvidet med vers fra alle
 kjente bibeltradisjoner. Teksten er på norsk bokmål.
 
-- **31 069 vers** fra osnb2 (`source: tanach/sblgnt`)
+- **31 069 vers** fra osnb (`source: tanach/sblgnt`)
 - **56 oversatte vers** fra andre tradisjoner (`source: translated`)
 - Nummerering følger flertallet av ~1148 bibler (europeisk/protestantisk)
 - Salmeoverskrifter er innbakt i vers 1 (slått sammen med innholdet)
 
 osmain ligger i `generate/bibles_raw/osmain/`.
 
-### Forholdet mellom osmain og osnb2
+### Forholdet mellom osmain og osnb
 
-osnb2 er kildebibelen (hebraisk/gresk nummerering). osmain er bygget
-fra osnb2 men renummerert til flertallsnummereringen. Forskjellene:
+osnb er kildebibelen (hebraisk/gresk nummerering). osmain er bygget
+fra osnb men renummerert til flertallsnummereringen. Forskjellene:
 
-- **62 salmer**: osmain slår sammen overskrift (osnb2 v1) med innhold (osnb2 v2) i v1
+- **62 salmer**: osmain slår sammen overskrift (osnb v1) med innhold (osnb v2) i v1
 - **33 hebraiske versifikasjonspar**: vers flyttes mellom nabokapitler
   (f.eks. 2 Mos 7:26-29 → 8:1-4, Joel 3-kapitlers vs 4-kapitlers inndeling)
-- **8 sammenslåinger**: osmain slår sammen to osnb2-vers til ett
+- **8 sammenslåinger**: osmain slår sammen to osnb-vers til ett
   (f.eks. 2 Mos 21:36+37, Neh 10:1+2)
 
 ## KVN Encoding (v2)
@@ -84,7 +84,7 @@ Tilgjengelige mappinger:
 | `nb1978.ukvn.json` | Bibelselskapets 1978 | ~1241 | 2011 + 4 Mos 25 |
 | `nb88_nb.ukvn.json` | Norsk Bibel 1988 (bokmål) | ~1254 | 2011 + Joh 1:38 split |
 | `nb94_nn.ukvn.json` | Norsk Bibel 1994 (nynorsk) | ~1254 | Identisk med NB88 |
-| `osnb2.ukvn.json` | osnb2 (hebraisk/gresk) | ~1090 | Kildebibelen |
+| `osnb.ukvn.json` | osnb (hebraisk/gresk) | ~1090 | Kildebibelen |
 
 Entry-format:
 ```json
@@ -107,7 +107,7 @@ oversettelsesvers.
 
 Eksempel: Sal 92 — osmain slår sammen overskrift og innhold i v1:
 
-| Oversettelse (f.eks. osnb2) | osmain | part |
+| Oversettelse (f.eks. osnb) | osmain | part |
 |-----------------------------|--------|------|
 | v1: "En salme, en sang for sabbatsdagen." | v1a | 1 |
 | v2: "Det er godt å takke Herren..." | v1b | 2 |
@@ -191,12 +191,10 @@ og `sliceVersePart()` for å hente riktig tekst-utsnitt.
 
 ```bash
 # 1. Analyser alle 1148 bibler, finn flertallsnummerering
-npx tsx scripts/build-osnb3.ts
 
-# 2. Kopier osnb2 → osmain med renummerering og placeholders
-npx tsx scripts/create-osnb3.ts
+# 2. Kopier osnb → osmain med renummerering og placeholders
 
-# 3. Fyll boundary-shift-vers fra osnb2
+# 3. Fyll boundary-shift-vers fra osnb
 npx tsx scripts/fix-osmain-boundaries.ts
 
 # 4. Legg til source-felt (tanach/sblgnt) på alle vers
@@ -215,7 +213,7 @@ npx tsx scripts/translate-missing.ts --translate
 # Fra raw JSON (støtter både external/closed/raw/ og generate/bibles_raw/)
 npx tsx scripts/generate-mapping.ts --source dnb2011_nb --format txt
 npx tsx scripts/generate-mapping.ts --source english_kj --format raw
-npx tsx scripts/generate-mapping.ts --source osnb2 --format raw
+npx tsx scripts/generate-mapping.ts --source osnb --format raw
 
 # Enkelt kapittel (for testing)
 npx tsx scripts/generate-mapping.ts --source dnb2011_nb --format txt --chapter 19:3
@@ -238,7 +236,7 @@ Resume-støtte: Skriptet hopper over kapitler som allerede er prosessert
 ## Gammel KVN (v1)
 
 Det gamle 27-bit systemet (`book << 20 | chapter << 12 | verse << 4 | part`)
-ligger i `src/kvn.ts` og `src/types.ts` med 204 tester. Det bruker osnb2 som
+ligger i `src/kvn.ts` og `src/types.ts` med 204 tester. Det bruker osnb som
 basis med en separat mappingfil for DNB 2011 (`mappings/dnb_2011_nb.kvn.json`).
 
 Det nye v2-systemet bruker osmain som basis og aritmetisk encoding uten bitpakking.

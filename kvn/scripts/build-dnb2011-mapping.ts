@@ -1,11 +1,11 @@
 /**
- * Build a universal KVN mapping for DNB 2011 by comparing against osnb2.
+ * Build a universal KVN mapping for DNB 2011 by comparing against osnb.
  *
  * Strategy:
  * 1. Parse dnb2011_nb.txt to get all (book, chapter, verse) → text
- * 2. Parse osnb2 to get all (book, chapter, verse) → text
+ * 2. Parse osnb to get all (book, chapter, verse) → text
  * 3. For each chapter where verse counts differ, use text similarity
- *    to match DNB2011 verses to osnb2 verses
+ *    to match DNB2011 verses to osnb verses
  * 4. Generate mapping entries where tkvn ≠ kvn
  */
 
@@ -13,10 +13,10 @@ import { readFileSync, readdirSync, existsSync, statSync, writeFileSync } from '
 import { join } from 'path';
 
 const DNB2011_FILE = join(import.meta.dirname, '../../external/closed/dnb2011_nb.txt');
-const OSNB2_DIR = join(import.meta.dirname, '../../generate/bibles_raw/osnb2');
+const OSNB_DIR = join(import.meta.dirname, '../../generate/bibles_raw/osnb');
 const OUT_FILE = join(import.meta.dirname, '../mappings/dnb2011_nb.ukvn.json');
 
-// === Universal KVN encoding (same as osnb2 mapping) ===
+// === Universal KVN encoding (same as osnb mapping) ===
 const PART_SIZE = 16;
 const MAX_VERSE_SPACED = 1770;
 const MAX_CHAPTER_SPACED = 1510;
@@ -97,17 +97,17 @@ function parseDnb2011(): Verse[] {
   return verses;
 }
 
-// === Load osnb2 ===
+// === Load osnb ===
 function loadOsnb2(): Map<string, Verse[]> {
   const result = new Map<string, Verse[]>();
 
-  const bookDirs = readdirSync(OSNB2_DIR)
-    .filter(d => /^\d+$/.test(d) && statSync(join(OSNB2_DIR, d)).isDirectory())
+  const bookDirs = readdirSync(OSNB_DIR)
+    .filter(d => /^\d+$/.test(d) && statSync(join(OSNB_DIR, d)).isDirectory())
     .map(d => parseInt(d))
     .sort((a, b) => a - b);
 
   for (const bookId of bookDirs) {
-    const bookDir = join(OSNB2_DIR, String(bookId));
+    const bookDir = join(OSNB_DIR, String(bookId));
     const chapterFiles = readdirSync(bookDir)
       .filter(f => f.endsWith('.json'))
       .map(f => parseInt(f.replace('.json', '')))
@@ -162,8 +162,8 @@ console.log('Parsing DNB 2011...');
 const dnb2011Verses = parseDnb2011();
 console.log(`DNB 2011: ${dnb2011Verses.length} verses`);
 
-console.log('Loading osnb2...');
-const osnb2Chapters = loadOsnb2();
+console.log('Loading osnb...');
+const osnbChapters = loadOsnb2();
 
 // Group DNB2011 by book:chapter
 const dnb2011Chapters = new Map<string, Verse[]>();
@@ -174,35 +174,35 @@ for (const v of dnb2011Verses) {
 }
 
 console.log(`DNB 2011: ${dnb2011Chapters.size} chapters`);
-console.log(`osnb2: ${osnb2Chapters.size} chapters`);
+console.log(`osnb: ${osnbChapters.size} chapters`);
 
 // === Find differences ===
 // For each chapter, compare verse ranges
 const mapEntries: Array<{
   tkvn: number;       // DNB2011 coordinate as KVN
-  kvn: number;        // osnb2 coordinate as KVN
+  kvn: number;        // osnb coordinate as KVN
   tRef: string;       // human-readable tkvn
   kvnRef: string;     // human-readable kvn
   sim: number;        // text similarity score
 }> = [];
 
 const dnb2011Only: Array<{ tkvn: number; ref: string; text: string }> = [];
-const osnb2Only: Array<{ kvn: number; ref: string; text: string }> = [];
+const osnbOnly: Array<{ kvn: number; ref: string; text: string }> = [];
 
 // Get all chapter keys
-const allChapterKeys = new Set([...dnb2011Chapters.keys(), ...osnb2Chapters.keys()]);
+const allChapterKeys = new Set([...dnb2011Chapters.keys(), ...osnbChapters.keys()]);
 
 let identityCount = 0;
 let mappedCount = 0;
 
 for (const key of [...allChapterKeys].sort()) {
   const dnbVerses = dnb2011Chapters.get(key);
-  const osnbVerses = osnb2Chapters.get(key);
+  const osnbVerses = osnbChapters.get(key);
 
   if (!dnbVerses && osnbVerses) {
-    // Chapter only in osnb2
+    // Chapter only in osnb
     for (const v of osnbVerses) {
-      osnb2Only.push({
+      osnbOnly.push({
         kvn: encode(v.book, v.chapter, v.verse),
         ref: `${BOOK_NAMES[v.book] ?? v.book} ${v.chapter}:${v.verse}`,
         text: v.text.slice(0, 60),
@@ -246,8 +246,8 @@ for (const key of [...allChapterKeys].sort()) {
       }
     }
 
-    // Verse number doesn't match or content is different — find best match in osnb2
-    // Search this chapter and adjacent chapters in osnb2
+    // Verse number doesn't match or content is different — find best match in osnb
+    // Search this chapter and adjacent chapters in osnb
     let bestMatch: { verse: Verse; sim: number; chKey: string } | null = null;
 
     const [bStr, cStr] = key.split(':');
@@ -256,7 +256,7 @@ for (const key of [...allChapterKeys].sort()) {
 
     // Search in current chapter and neighbors
     for (const searchKey of [`${b}:${c - 1}`, `${b}:${c}`, `${b}:${c + 1}`]) {
-      const searchVerses = osnb2Chapters.get(searchKey);
+      const searchVerses = osnbChapters.get(searchKey);
       if (!searchVerses) continue;
 
       for (const candidate of searchVerses) {
@@ -284,7 +284,7 @@ for (const key of [...allChapterKeys].sort()) {
         identityCount++;
       }
     } else {
-      // No match found in osnb2
+      // No match found in osnb
       dnb2011Only.push({
         tkvn: encode(dnbVerse.book, dnbVerse.chapter, dnbVerse.verse),
         ref: `${BOOK_NAMES[dnbVerse.book] ?? dnbVerse.book} ${dnbVerse.chapter},${dnbVerse.verse}`,
@@ -293,14 +293,14 @@ for (const key of [...allChapterKeys].sort()) {
     }
   }
 
-  // Check for osnb2 verses not in DNB2011
+  // Check for osnb verses not in DNB2011
   for (const [verseId, osnbVerse] of osnbByVerse) {
     if (!dnbByVerse.has(verseId)) {
       // Check if it was already mapped from a different DNB2011 verse
       const kvn = encode(osnbVerse.book, osnbVerse.chapter, osnbVerse.verse);
       const alreadyMapped = mapEntries.some(e => e.kvn === kvn);
       if (!alreadyMapped) {
-        osnb2Only.push({
+        osnbOnly.push({
           kvn,
           ref: `${BOOK_NAMES[osnbVerse.book] ?? osnbVerse.book} ${osnbVerse.chapter}:${osnbVerse.verse}`,
           text: osnbVerse.text.slice(0, 60),
@@ -314,15 +314,15 @@ for (const key of [...allChapterKeys].sort()) {
 console.log('\n=== MAPPING RESULTS ===');
 console.log(`Identity (same coord, similar text): ${identityCount}`);
 console.log(`Mapped (different coord): ${mappedCount}`);
-console.log(`DNB2011-only (no osnb2 match): ${dnb2011Only.length}`);
-console.log(`osnb2-only (no DNB2011 match): ${osnb2Only.length}`);
+console.log(`DNB2011-only (no osnb match): ${dnb2011Only.length}`);
+console.log(`osnb-only (no DNB2011 match): ${osnbOnly.length}`);
 
 // Sort map entries by kvn
 mapEntries.sort((a, b) => a.kvn - b.kvn);
 
 console.log('\n=== SAMPLE MAPPINGS (first 30) ===');
 for (const entry of mapEntries.slice(0, 30)) {
-  console.log(`  DNB2011 ${entry.tRef.padEnd(18)} → osnb2 ${entry.kvnRef.padEnd(18)} (sim: ${entry.sim.toFixed(2)})`);
+  console.log(`  DNB2011 ${entry.tRef.padEnd(18)} → osnb ${entry.kvnRef.padEnd(18)} (sim: ${entry.sim.toFixed(2)})`);
 }
 if (mapEntries.length > 30) {
   console.log(`  ... and ${mapEntries.length - 30} more`);
@@ -336,12 +336,12 @@ if (dnb2011Only.length > 0) {
   if (dnb2011Only.length > 20) console.log(`  ... and ${dnb2011Only.length - 20} more`);
 }
 
-if (osnb2Only.length > 0) {
-  console.log('\n=== OSNB2-ONLY VERSES (first 20) ===');
-  for (const v of osnb2Only.slice(0, 20)) {
+if (osnbOnly.length > 0) {
+  console.log('\n=== OSNB-ONLY VERSES (first 20) ===');
+  for (const v of osnbOnly.slice(0, 20)) {
     console.log(`  ${v.ref}: ${v.text}`);
   }
-  if (osnb2Only.length > 20) console.log(`  ... and ${osnb2Only.length - 20} more`);
+  if (osnbOnly.length > 20) console.log(`  ... and ${osnbOnly.length - 20} more`);
 }
 
 // Low-similarity matches (potential errors)
@@ -349,7 +349,7 @@ const lowSim = mapEntries.filter(e => e.sim < 0.5);
 if (lowSim.length > 0) {
   console.log(`\n=== LOW SIMILARITY MATCHES (<0.5) — ${lowSim.length} ===`);
   for (const entry of lowSim.slice(0, 20)) {
-    console.log(`  DNB2011 ${entry.tRef} → osnb2 ${entry.kvnRef} (sim: ${entry.sim.toFixed(2)})`);
+    console.log(`  DNB2011 ${entry.tRef} → osnb ${entry.kvnRef} (sim: ${entry.sim.toFixed(2)})`);
   }
 }
 
@@ -365,7 +365,7 @@ const mapping = {
   },
   map: mapEntries.map(e => [e.tkvn, e.kvn, e.tRef, e.kvnRef]),
   extraVerses: dnb2011Only.map(v => [v.tkvn, v.ref]),
-  missingVerses: osnb2Only.map(v => [v.kvn, v.ref]),
+  missingVerses: osnbOnly.map(v => [v.kvn, v.ref]),
 };
 
 writeFileSync(OUT_FILE, JSON.stringify(mapping, null, 2));

@@ -64,10 +64,10 @@ function findDuplicateTkvnEntries(mapping: UkvnMappingFile): Set<number> {
 
 const allSystems = listUkvnMappings();
 
-// Load osnb2 once as the hub for cross-translation round-trips
-const osnb2Mapping = loadUkvnMapping('osnb2');
-const osnb2Mapper = new UkvnMapper(osnb2Mapping);
-const osnb2DuplicateKvns = findDuplicateTkvnEntries(osnb2Mapping);
+// Load osnb once as the hub for cross-translation round-trips
+const osnbMapping = loadUkvnMapping('osnb');
+const osnbMapper = new UkvnMapper(osnbMapping);
+const osnbDuplicateKvns = findDuplicateTkvnEntries(osnbMapping);
 
 for (const system of allSystems) {
   const mapping = loadUkvnMapping(system);
@@ -128,35 +128,35 @@ for (const system of allSystems) {
     );
   });
 
-  // Round-trip through osnb2: translation -> osmain -> osnb2 -> osmain -> translation
-  if (system !== 'osnb2') {
-    // Also exclude entries whose osmain kvn hits a many-to-one in osnb2
+  // Round-trip through osnb: translation -> osmain -> osnb -> osmain -> translation
+  if (system !== 'osnb') {
+    // Also exclude entries whose osmain kvn hits a many-to-one in osnb
     const roundTripEntries = testableEntries.filter(
-      (e) => !osnb2DuplicateKvns.has(e.kvnFrom)
+      (e) => !osnbDuplicateKvns.has(e.kvnFrom)
     );
 
-    describe(`${system}: round-trip through osnb2 (${roundTripEntries.length} testable)`, () => {
+    describe(`${system}: round-trip through osnb (${roundTripEntries.length} testable)`, () => {
       if (roundTripEntries.length === 0) {
-        it('all cross-chapter entries are ambiguous through osnb2 (skipped)', () => {
+        it('all cross-chapter entries are ambiguous through osnb (skipped)', () => {
           expect(true).toBe(true);
         });
         return;
       }
 
-      const crossToOsnb2 = new CrossMapper(mapper, osnb2Mapper);
-      const crossBack = new CrossMapper(osnb2Mapper, mapper);
+      const crossToOsnb2 = new CrossMapper(mapper, osnbMapper);
+      const crossBack = new CrossMapper(osnbMapper, mapper);
 
       const entries = roundTripEntries.map((e) => [
-        `${e.tkvnRef} -> osnb2 -> back`,
+        `${e.tkvnRef} -> osnb -> back`,
         e.tkvnFrom,
       ] as const);
 
       it.each(entries)(
         '%s',
         (_, tkvnFrom) => {
-          // Step 1: translation tkvn -> osmain -> osnb2
+          // Step 1: translation tkvn -> osmain -> osnb
           const toOsnb2 = crossToOsnb2.map(tkvnFrom);
-          // Step 2: osnb2 tkvn -> osmain -> translation
+          // Step 2: osnb tkvn -> osmain -> translation
           const backToSource = crossBack.map(toOsnb2.tkvn);
           expect(backToSource.tkvn).toBe(tkvnFrom);
         }

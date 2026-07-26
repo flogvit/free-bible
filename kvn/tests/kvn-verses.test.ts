@@ -15,7 +15,7 @@ const converter = new KVNConverter(mapping);
 const raw = readFileSync(join(__dirname, '../data/test-references.json'), 'utf-8');
 const testData: TestReferenceData = JSON.parse(raw);
 
-describe('osnb2 source data sanity', () => {
+describe('osnb source data sanity', () => {
   it('has 66 books', () => {
     let count = 0;
     for (let book = 1; book <= 66; book++) {
@@ -31,39 +31,39 @@ describe('osnb2 source data sanity', () => {
   });
 });
 
-describe('mapped osnb2 verses exist in source data', () => {
-  it('all explicitly mapped osnb2 verses exist in source', () => {
+describe('mapped osnb verses exist in source data', () => {
+  it('all explicitly mapped osnb verses exist in source', () => {
     for (const [kvn] of mapping.map) {
       const d = decode(kvn);
       const exists = verseExists(d.book, d.chapter, d.verse);
-      expect(exists, `${d.book}:${d.chapter}:${d.verse} should exist in osnb2`).toBe(true);
+      expect(exists, `${d.book}:${d.chapter}:${d.verse} should exist in osnb`).toBe(true);
     }
   });
 });
 
-describe('phantom verses do not exist in osnb2 source', () => {
+describe('phantom verses do not exist in osnb source', () => {
   it.each(testData.categories.phantom.map(tc => [tc.description, tc]))(
     '%s',
     (_desc, tc) => {
       const phantom = tc as typeof testData.categories.phantom[0];
-      const exists = verseExists(phantom.osnb2.book, phantom.osnb2.chapter, phantom.osnb2.verse);
+      const exists = verseExists(phantom.osnb.book, phantom.osnb.chapter, phantom.osnb.verse);
       expect(exists).toBe(false);
     }
   );
 
-  it('phantom osnb2MaxVerse matches actual source data', () => {
+  it('phantom osnbMaxVerse matches actual source data', () => {
     for (const tc of testData.categories.phantom) {
-      const actual = getMaxVerse(tc.osnb2.book, tc.osnb2.chapter);
-      if (tc.osnb2MaxVerse === 0) {
+      const actual = getMaxVerse(tc.osnb.book, tc.osnb.chapter);
+      if (tc.osnbMaxVerse === 0) {
         expect(actual).toBe(0);
       } else {
-        expect(actual).toBe(tc.osnb2MaxVerse);
+        expect(actual).toBe(tc.osnbMaxVerse);
       }
     }
   });
 });
 
-describe('non-phantom test case verses exist in osnb2 source', () => {
+describe('non-phantom test case verses exist in osnb source', () => {
   const realCases = [
     ...testData.categories.identity,
     ...testData.categories.chain_shift,
@@ -73,10 +73,10 @@ describe('non-phantom test case verses exist in osnb2 source', () => {
     ...testData.categories.multi_chapter_block,
   ];
 
-  it('all osnb2 coordinates in test cases exist in source data', () => {
+  it('all osnb coordinates in test cases exist in source data', () => {
     for (const tc of realCases) {
-      const exists = verseExists(tc.osnb2.book, tc.osnb2.chapter, tc.osnb2.verse);
-      expect(exists, `${tc.description}: osnb2 ${tc.osnb2.book}:${tc.osnb2.chapter}:${tc.osnb2.verse} should exist`).toBe(true);
+      const exists = verseExists(tc.osnb.book, tc.osnb.chapter, tc.osnb.verse);
+      expect(exists, `${tc.description}: osnb ${tc.osnb.book}:${tc.osnb.chapter}:${tc.osnb.verse} should exist`).toBe(true);
     }
   });
 });
@@ -84,13 +84,13 @@ describe('non-phantom test case verses exist in osnb2 source', () => {
 describe('mapping covers all verse differences completely', () => {
   it('all cross-chapter backward targets are in a previous chapter', () => {
     for (const tc of testData.categories.cross_chapter_backward) {
-      expect(tc.translation.chapter).toBeLessThan(tc.osnb2.chapter);
+      expect(tc.translation.chapter).toBeLessThan(tc.osnb.chapter);
     }
   });
 
   it('chain shift verses have different verse numbers', () => {
     for (const tc of testData.categories.chain_shift) {
-      expect(tc.osnb2.verse).not.toBe(tc.translation.verse);
+      expect(tc.osnb.verse).not.toBe(tc.translation.verse);
     }
   });
 });

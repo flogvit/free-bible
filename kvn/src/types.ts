@@ -2,7 +2,7 @@
 // KVN bit layout: book (7) | chapter (8) | verse (8) | part (4)
 // Total: 27 bits, fits in a regular JS number
 //
-// kvn  = basis-referanse (osnb2/tanach/sblgnt koordinater)
+// kvn  = basis-referanse (osnb/tanach/sblgnt koordinater)
 // tkvn = translation KVN (oversettelsens koordinater)
 // ============================================================
 
@@ -129,7 +129,7 @@ export interface VerseCoord {
 
 export interface TestCase {
   description: string;
-  osnb2: VerseCoord;
+  osnb: VerseCoord;
   translation: VerseCoord;
 }
 
@@ -140,9 +140,9 @@ export interface UnmappedTestCase {
 
 export interface PhantomTestCase {
   description: string;
-  osnb2: VerseCoord;
+  osnb: VerseCoord;
   translation: VerseCoord;
-  osnb2MaxVerse: number;
+  osnbMaxVerse: number;
 }
 
 export interface TestReferenceData {

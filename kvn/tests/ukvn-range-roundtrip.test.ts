@@ -96,12 +96,12 @@ function formatMappedRef(bookId: number, verses: MappedVerse[]): string {
 // --- Setup ---
 
 const dnb2024 = new UkvnMapper(loadUkvnMapping('dnb2024'));
-const osnb2 = new UkvnMapper(loadUkvnMapping('osnb2'));
+const osnb = new UkvnMapper(loadUkvnMapping('osnb'));
 
 // Build an osmain identity mapper (no mapping = identity for everything)
 const osmainMapper = new UkvnMapper({ version: 2, system: 'osmain', name: 'osmain',
   encoding: { partSize: 16, maxVerse: 177, maxChapter: 151 },
-  bookNames: loadUkvnMapping('osnb2').bookNames, stats: {}, map: [] });
+  bookNames: loadUkvnMapping('osnb').bookNames, stats: {}, map: [] });
 
 // --- Tests ---
 

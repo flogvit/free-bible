@@ -1,7 +1,7 @@
 /**
  * Analyze all raw bibles to determine optimal spacing for universal KVN encoding.
  *
- * Scans external/closed/raw/* and generate/bibles_raw/osnb2 to find:
+ * Scans external/closed/raw/* and generate/bibles_raw/osnb to find:
  * - All unique book IDs and how many exist
  * - Max chapters per book across all translations
  * - Max verses per chapter across all translations
@@ -13,7 +13,7 @@ import { readFileSync, readdirSync, existsSync, statSync } from 'fs';
 import { join, basename } from 'path';
 
 const RAW_DIR = join(import.meta.dirname, '../../external/closed/raw');
-const OSNB2_DIR = join(import.meta.dirname, '../../generate/bibles_raw/osnb2');
+const OSNB_DIR = join(import.meta.dirname, '../../generate/bibles_raw/osnb');
 
 interface VerseData {
   bookId: number;
@@ -107,9 +107,9 @@ for (const bible of rawBibles) {
   processBible(join(RAW_DIR, bible), bible);
 }
 
-// Also process osnb2
-if (existsSync(OSNB2_DIR)) {
-  processBible(OSNB2_DIR, 'osnb2');
+// Also process osnb
+if (existsSync(OSNB_DIR)) {
+  processBible(OSNB_DIR, 'osnb');
 }
 
 console.log(`\nScanned ${bibleCount} bibles\n`);

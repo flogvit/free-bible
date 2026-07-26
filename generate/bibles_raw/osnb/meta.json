@@ -1,0 +1,86 @@
+{
+  "module": "osnb",
+  "name": {
+    "native": "Open Source Norsk Bokmål",
+    "en": "Open Source Norwegian Bokmål"
+  },
+  "abbreviation": "OSNB",
+  "language": {
+    "iso639_3": "nob",
+    "iso639_1": "nb",
+    "script": "Latn",
+    "direction": "ltr"
+  },
+  "philosophy": "dynamic",
+  "tradition": "nondenominational",
+  "textual_basis": {
+    "ot": [
+      "mt"
+    ],
+    "nt": [
+      "sblgnt"
+    ]
+  },
+  "body": "free-bible project",
+  "work": {
+    "method": [
+      "ai_assisted"
+    ],
+    "source_languages": [
+      "hbo",
+      "grc"
+    ],
+    "review": "none"
+  },
+  "links": {
+    "homepage": "https://bibel.flogvit.no"
+  },
+  "legacy": [
+    {
+      "tag": "distinctive",
+      "text": "Optimalisert for høytlesning: naturlig rytme og flyt framfor ordrett gjengivelse."
+    },
+    {
+      "tag": "distinctive",
+      "text": "Følger hebraisk og gresk versnummerering, ikke den vanlige europeiske."
+    }
+  ],
+  "coverage": {
+    "testament": "both",
+    "books": 66,
+    "chapters": 1189,
+    "verses": 31167,
+    "deuterocanonical": false,
+    "missing_books": []
+  },
+  "features": {
+    "strongs": false,
+    "alt_versions": true
+  },
+  "provenance": {
+    "method": "manual",
+    "verified": [
+      "name.en",
+      "abbreviation",
+      "language.iso639_3",
+      "philosophy",
+      "textual_basis",
+      "work.method",
+      "work.source_languages",
+      "legacy",
+      "links"
+    ],
+    "sources": [
+      {
+        "url": "https://github.com/flogvit/free-bible",
+        "fields": [
+          "work.method",
+          "work.source_languages",
+          "textual_basis",
+          "legacy"
+        ]
+      }
+    ],
+    "generated": "2026-07-25"
+  }
+}

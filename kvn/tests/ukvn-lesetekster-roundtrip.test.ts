@@ -161,15 +161,15 @@ function loadAllLesetekster(): { ref: string; context: string }[] {
 // --- Tests ---
 
 const dnb2024Mapping = loadUkvnMapping('dnb2024');
-const osnb2Mapping = loadUkvnMapping('osnb2');
+const osnbMapping = loadUkvnMapping('osnb');
 const dnb2024 = new UkvnMapper(dnb2024Mapping);
-const osnb2 = new UkvnMapper(osnb2Mapping);
-const toOsnb2 = new CrossMapper(dnb2024, osnb2);
-const toDnb2024 = new CrossMapper(osnb2, dnb2024);
+const osnb = new UkvnMapper(osnbMapping);
+const toOsnb2 = new CrossMapper(dnb2024, osnb);
+const toDnb2024 = new CrossMapper(osnb, dnb2024);
 
-const osnb2Names: Record<number, string> = {};
-for (const [name, id] of Object.entries(osnb2Mapping.bookNames)) {
-  if (!osnb2Names[id as number]) osnb2Names[id as number] = name;
+const osnbNames: Record<number, string> = {};
+for (const [name, id] of Object.entries(osnbMapping.bookNames)) {
+  if (!osnbNames[id as number]) osnbNames[id as number] = name;
 }
 
 // Collect all unique verses from lesetekster
@@ -188,7 +188,7 @@ for (const { ref, context } of allLesetekster) {
   }
 }
 
-describe(`Lesetekster round-trip: dnb2024 -> osnb2 -> dnb2024 (${allVerseRefs.length} unique verses)`, () => {
+describe(`Lesetekster round-trip: dnb2024 -> osnb -> dnb2024 (${allVerseRefs.length} unique verses)`, () => {
   it('has lesetekster to test', () => {
     expect(allVerseRefs.length).toBeGreaterThan(100);
   });
@@ -240,7 +240,7 @@ describe('Composite reference tests (full lesetekst references)', () => {
       });
 
       it.each(verses.map(v => ({ name: v.label, ...v })))(
-        '$name round-trips through osnb2',
+        '$name round-trips through osnb',
         ({ book, chapter, verse, part }) => {
           const tkvn = ukvnEncode(book, chapter, verse, part);
           const mapped = toOsnb2.map(tkvn);

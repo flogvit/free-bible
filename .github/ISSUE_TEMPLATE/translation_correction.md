@@ -8,7 +8,7 @@ assignees: ''
 
 ## Translation
 
-- Translation code (e.g., OSNB1, OSNB2):
+- Translation code (e.g., OSNB1, OSNB):
 - Language:
 
 ## Reference

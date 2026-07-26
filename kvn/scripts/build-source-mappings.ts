@@ -6,7 +6,7 @@ const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 
 const MAPPINGS_DIR = path.join(__dirname, '..', 'mappings');
-const SOURCE_FILE = path.join(MAPPINGS_DIR, 'osnb2.ukvn.json');
+const SOURCE_FILE = path.join(MAPPINGS_DIR, 'osnb.ukvn.json');
 
 interface MapEntry {
     kvnFrom: number;

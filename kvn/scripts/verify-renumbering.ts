@@ -2,7 +2,7 @@
  * Verify osmain renumbering using Ollama.
  *
  * For chapters that were renumbered (boundary shifts, header merges),
- * send osmain verses + the original osnb2 verses to Ollama and ask
+ * send osmain verses + the original osnb verses to Ollama and ask
  * it to verify the mapping is correct.
  *
  * Usage:
@@ -14,7 +14,7 @@
 import { readFileSync, readdirSync, existsSync, statSync, writeFileSync, mkdirSync } from 'fs';
 import { join } from 'path';
 
-const OSNB2_DIR = join(import.meta.dirname, '../../generate/bibles_raw/osnb2');
+const OSNB_DIR = join(import.meta.dirname, '../../generate/bibles_raw/osnb');
 const OSMAIN_DIR = join(import.meta.dirname, '../../generate/bibles_raw/osmain');
 const LOG_FILE = join(import.meta.dirname, '../data/osnb3-renumber-log.json');
 const RESULTS_DIR = join(import.meta.dirname, '../data/verify-renumber');
@@ -79,11 +79,11 @@ const responseSchema = {
         type: 'object' as const,
         properties: {
           osmainVerse: { type: 'number' as const },
-          osnb2Verse: { type: 'number' as const },
-          osnb2Chapter: { type: 'number' as const },
+          osnbVerse: { type: 'number' as const },
+          osnbChapter: { type: 'number' as const },
           match: { type: 'string' as const, enum: ['exact', 'partial', 'merged', 'wrong'] },
         },
-        required: ['osmainVerse', 'osnb2Verse', 'osnb2Chapter', 'match'],
+        required: ['osmainVerse', 'osnbVerse', 'osnbChapter', 'match'],
       },
     },
     issues: {
@@ -129,12 +129,12 @@ for (const entry of toVerify) {
   const osmainPrev = loadChapter(OSMAIN_DIR, book, chapter - 1);
   const osmainNext = loadChapter(OSMAIN_DIR, book, chapter + 1);
 
-  // Load osnb2 chapter and neighbors
-  const osnb2Ch = loadChapter(OSNB2_DIR, book, chapter);
-  const osnb2Prev = loadChapter(OSNB2_DIR, book, chapter - 1);
-  const osnb2Next = loadChapter(OSNB2_DIR, book, chapter + 1);
+  // Load osnb chapter and neighbors
+  const osnbCh = loadChapter(OSNB_DIR, book, chapter);
+  const osnbPrev = loadChapter(OSNB_DIR, book, chapter - 1);
+  const osnbNext = loadChapter(OSNB_DIR, book, chapter + 1);
 
-  if (osmainCh.length === 0 || osnb2Ch.length === 0) {
+  if (osmainCh.length === 0 || osnbCh.length === 0) {
     console.log(`  ${entry.key}: SKIP (missing data)`);
     continue;
   }
@@ -144,36 +144,36 @@ for (const entry of toVerify) {
     verses.map(v => `  ${label} ${v.verseId}: ${v.text.slice(0, 150)}`).join('\n');
 
   const osmainText = formatVerses(osmainCh, `v`);
-  const osnb2Text = formatVerses(osnb2Ch, `v`);
+  const osnbText = formatVerses(osnbCh, `v`);
 
   // Include neighbors for context
   let contextText = '';
-  if (osnb2Prev.length > 0) {
-    const lastFew = osnb2Prev.slice(-3);
-    contextText += `\nosnb2 chapter ${chapter - 1} (last 3 verses):\n${formatVerses(lastFew, 'v')}\n`;
+  if (osnbPrev.length > 0) {
+    const lastFew = osnbPrev.slice(-3);
+    contextText += `\nosnb chapter ${chapter - 1} (last 3 verses):\n${formatVerses(lastFew, 'v')}\n`;
   }
-  if (osnb2Next.length > 0) {
-    const firstFew = osnb2Next.slice(0, 3);
-    contextText += `\nosnb2 chapter ${chapter + 1} (first 3 verses):\n${formatVerses(firstFew, 'v')}\n`;
+  if (osnbNext.length > 0) {
+    const firstFew = osnbNext.slice(0, 3);
+    contextText += `\nosnb chapter ${chapter + 1} (first 3 verses):\n${formatVerses(firstFew, 'v')}\n`;
   }
 
   const prompt = `You are verifying Bible verse renumbering between two systems.
-OSMAIN is the new master numbering. OSNB2 is the original (Hebrew/Tanach numbering).
+OSMAIN is the new master numbering. OSNB is the original (Hebrew/Tanach numbering).
 Both texts are in Norwegian.
 
 OSMAIN chapter ${chapter} (${osmainCh.length} verses):
 ${osmainText}
 
-OSNB2 chapter ${chapter} (${osnb2Ch.length} verses):
-${osnb2Text}
+OSNB chapter ${chapter} (${osnbCh.length} verses):
+${osnbText}
 ${contextText}
-For each verse in OSMAIN, find the matching verse in OSNB2.
+For each verse in OSMAIN, find the matching verse in OSNB.
 The match may be in the same chapter or an adjacent chapter.
 Report whether the renumbering is correct.
 
 "exact" = same text content, just different verse number
 "partial" = text partially matches (e.g. header merged into verse)
-"merged" = multiple osnb2 verses merged into one osmain verse
+"merged" = multiple osnb verses merged into one osmain verse
 "wrong" = text does not match at all`;
 
   process.stdout.write(`  ${entry.key} [${entry.type}]... `);
@@ -199,7 +199,7 @@ Report whether the renumbering is correct.
     // Show any 'wrong' mappings
     const wrongMappings = (result.mappings ?? []).filter((m: any) => m.match === 'wrong');
     for (const m of wrongMappings) {
-      console.log(`    → osmain v${m.osmainVerse} ≠ osnb2 ${m.osnb2Chapter}:${m.osnb2Verse}`);
+      console.log(`    → osmain v${m.osmainVerse} ≠ osnb ${m.osnbChapter}:${m.osnbVerse}`);
     }
   } catch (err: any) {
     console.log(`ERROR: ${err.message}`);

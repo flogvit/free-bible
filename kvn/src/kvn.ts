@@ -4,7 +4,7 @@ import type { KvnMappingFile, MaxVerseProvider } from './types.js';
 /**
  * Converts between basis KVN and translation KVN (tkvn).
  *
- * kvn  = basis reference (osnb2/tanach/sblgnt coordinates encoded as bitfield)
+ * kvn  = basis reference (osnb/tanach/sblgnt coordinates encoded as bitfield)
  * tkvn = translation reference (e.g. dnb_2011_nb coordinates encoded as bitfield)
  */
 export class KVNConverter {

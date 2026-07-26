@@ -6,7 +6,7 @@
 import { readFileSync, existsSync } from 'fs';
 import { join } from 'path';
 
-const OSNB2_DIR = join(import.meta.dirname, '../../generate/bibles_raw/osnb2');
+const OSNB_DIR = join(import.meta.dirname, '../../generate/bibles_raw/osnb');
 const RAW_DIR = join(import.meta.dirname, '../../external/closed/raw');
 const OLLAMA_URL = 'http://localhost:11434/api/generate';
 const OLLAMA_MODEL = 'qwen3.5:122b';
@@ -34,10 +34,10 @@ const schema = {
         type: 'object' as const,
         properties: {
           targetVerse: { type: 'number' as const },
-          osnb2Verses: { type: 'array' as const, items: { type: 'number' as const } },
+          osnbVerses: { type: 'array' as const, items: { type: 'number' as const } },
           mergeType: { type: 'string' as const, enum: ['single', 'merged'] },
         },
-        required: ['targetVerse', 'osnb2Verses', 'mergeType'],
+        required: ['targetVerse', 'osnbVerses', 'mergeType'],
       },
     },
   },
@@ -79,49 +79,49 @@ for (const tc of testCases) {
   console.log(`TEST: ${tc.name}`);
   console.log(`${'='.repeat(60)}`);
 
-  const osnb2 = loadChapter(OSNB2_DIR, tc.book, tc.chapter);
+  const osnb = loadChapter(OSNB_DIR, tc.book, tc.chapter);
   const ref = loadChapter(join(RAW_DIR, tc.refBible), tc.book, tc.chapter);
 
-  if (osnb2.length === 0) { console.log('  SKIP: no osnb2 data'); continue; }
+  if (osnb.length === 0) { console.log('  SKIP: no osnb data'); continue; }
   if (ref.length === 0) { console.log('  SKIP: no reference data'); continue; }
 
-  console.log(`  osnb2: ${osnb2.length} verses (${osnb2[0].verseId}-${osnb2[osnb2.length-1].verseId})`);
+  console.log(`  osnb: ${osnb.length} verses (${osnb[0].verseId}-${osnb[osnb.length-1].verseId})`);
   console.log(`  ref:   ${ref.length} verses (${ref[0].verseId}-${ref[ref.length-1].verseId})`);
 
-  if (osnb2.length === ref.length) {
+  if (osnb.length === ref.length) {
     console.log('  SKIP: same verse count, no renumbering needed');
     continue;
   }
 
-  // Also load osnb2 adjacent chapters for context
-  const osnb2Prev = loadChapter(OSNB2_DIR, tc.book, tc.chapter - 1);
-  const osnb2Next = loadChapter(OSNB2_DIR, tc.book, tc.chapter + 1);
+  // Also load osnb adjacent chapters for context
+  const osnbPrev = loadChapter(OSNB_DIR, tc.book, tc.chapter - 1);
+  const osnbNext = loadChapter(OSNB_DIR, tc.book, tc.chapter + 1);
 
-  const osnb2Text = osnb2.map(v => `v${v.verseId}: ${v.text}`).join('\n');
+  const osnbText = osnb.map(v => `v${v.verseId}: ${v.text}`).join('\n');
   const refText = ref.map(v => `v${v.verseId}: ${v.text}`).join('\n');
 
   let contextText = '';
-  if (osnb2Prev.length > 0) {
-    const last3 = osnb2Prev.slice(-3);
-    contextText += `\nosnb2 chapter ${tc.chapter - 1} (last 3 verses):\n${last3.map(v => `v${v.verseId}: ${v.text}`).join('\n')}\n`;
+  if (osnbPrev.length > 0) {
+    const last3 = osnbPrev.slice(-3);
+    contextText += `\nosnb chapter ${tc.chapter - 1} (last 3 verses):\n${last3.map(v => `v${v.verseId}: ${v.text}`).join('\n')}\n`;
   }
-  if (osnb2Next.length > 0) {
-    const first3 = osnb2Next.slice(0, 3);
-    contextText += `\nosnb2 chapter ${tc.chapter + 1} (first 3 verses):\n${first3.map(v => `v${v.verseId}: ${v.text}`).join('\n')}\n`;
+  if (osnbNext.length > 0) {
+    const first3 = osnbNext.slice(0, 3);
+    contextText += `\nosnb chapter ${tc.chapter + 1} (first 3 verses):\n${first3.map(v => `v${v.verseId}: ${v.text}`).join('\n')}\n`;
   }
 
   const prompt = `You are mapping Bible verse numbering.
 
-OSNB2 (Hebrew/Tanach numbering, Norwegian text, ${osnb2.length} verses):
-${osnb2Text}
+OSNB (Hebrew/Tanach numbering, Norwegian text, ${osnb.length} verses):
+${osnbText}
 
 REFERENCE (ESV, English, ${ref.length} verses):
 ${refText}
 ${contextText}
 The target numbering should have ${ref.length} verses (matching the reference structure).
-For each target verse number (1-${ref.length}), tell me which osnb2 verse(s) from chapter ${tc.chapter} it corresponds to.
-If a target verse combines multiple osnb2 verses, list all of them.
-If an osnb2 verse was moved to an adjacent chapter, it may not appear in the mapping — that is fine.
+For each target verse number (1-${ref.length}), tell me which osnb verse(s) from chapter ${tc.chapter} it corresponds to.
+If a target verse combines multiple osnb verses, list all of them.
+If an osnb verse was moved to an adjacent chapter, it may not appear in the mapping — that is fine.
 
 Compare the CONTENT of the verses to determine the mapping. Do not just match by verse number.`;
 
@@ -132,9 +132,9 @@ Compare the CONTENT of the verses to determine the mapping. Do not just match by
 
     console.log(`  Ollama response (${elapsed}s):`);
     for (const m of result.mappings) {
-      const osnb2Refs = m.osnb2Verses.join('+');
+      const osnbRefs = m.osnbVerses.join('+');
       const marker = m.mergeType === 'merged' ? ' *** MERGED ***' : '';
-      console.log(`    target v${m.targetVerse} ← osnb2 v${osnb2Refs}${marker}`);
+      console.log(`    target v${m.targetVerse} ← osnb v${osnbRefs}${marker}`);
     }
 
     // Validate: every target verse should be present
@@ -143,11 +143,11 @@ Compare the CONTENT of the verses to determine the mapping. Do not just match by
       if (!targetVerses.has(i)) console.log(`    ⚠ MISSING target v${i}`);
     }
 
-    // Check for osnb2 verses not mapped
-    const mappedOsnb2 = new Set(result.mappings.flatMap((m: any) => m.osnb2Verses));
-    const unmapped = osnb2.filter(v => !mappedOsnb2.has(v.verseId));
+    // Check for osnb verses not mapped
+    const mappedOsnb2 = new Set(result.mappings.flatMap((m: any) => m.osnbVerses));
+    const unmapped = osnb.filter(v => !mappedOsnb2.has(v.verseId));
     if (unmapped.length > 0) {
-      console.log(`    Unmapped osnb2 verses: [${unmapped.map(v => v.verseId).join(',')}] (moved to adjacent chapter)`);
+      console.log(`    Unmapped osnb verses: [${unmapped.map(v => v.verseId).join(',')}] (moved to adjacent chapter)`);
     }
   } catch (err: any) {
     console.log(`  ERROR: ${err.message}`);

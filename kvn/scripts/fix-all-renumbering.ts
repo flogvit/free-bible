@@ -2,8 +2,8 @@
  * Fix all renumbered chapters in osmain using Ollama.
  *
  * For each renumbered chapter (books 1-66):
- * 1. Send osnb2 verses + ESV reference to Ollama
- * 2. Get verse mapping (which osnb2 verses map to which target verses)
+ * 1. Send osnb verses + ESV reference to Ollama
+ * 2. Get verse mapping (which osnb verses map to which target verses)
  * 3. Rebuild the osmain chapter with correct text
  *
  * Skips chapters that already look correct (no [NEEDS_TRANSLATION], same structure as reference).
@@ -17,7 +17,7 @@
 import { readFileSync, readdirSync, existsSync, statSync, writeFileSync, mkdirSync } from 'fs';
 import { join } from 'path';
 
-const OSNB2_DIR = join(import.meta.dirname, '../../generate/bibles_raw/osnb2');
+const OSNB_DIR = join(import.meta.dirname, '../../generate/bibles_raw/osnb');
 const OSMAIN_DIR = join(import.meta.dirname, '../../generate/bibles_raw/osmain');
 const RAW_DIR = join(import.meta.dirname, '../../external/closed/raw');
 const LOG_FILE = join(import.meta.dirname, '../data/osnb3-renumber-log.json');
@@ -75,10 +75,10 @@ const schema = {
         type: 'object' as const,
         properties: {
           targetVerse: { type: 'number' as const },
-          osnb2Verses: { type: 'array' as const, items: { type: 'number' as const } },
+          osnbVerses: { type: 'array' as const, items: { type: 'number' as const } },
           mergeType: { type: 'string' as const, enum: ['single', 'merged'] },
         },
-        required: ['targetVerse', 'osnb2Verses', 'mergeType'],
+        required: ['targetVerse', 'osnbVerses', 'mergeType'],
       },
     },
   },
@@ -115,11 +115,11 @@ for (const entry of toFix) {
   const book = parseInt(bookStr);
   const chapter = parseInt(chStr);
 
-  const osnb2 = loadChapter(OSNB2_DIR, book, chapter);
+  const osnb = loadChapter(OSNB_DIR, book, chapter);
   const ref = findReference(book, chapter);
 
-  if (osnb2.length === 0) {
-    console.log(`  ${entry.key}: SKIP (no osnb2 data)`);
+  if (osnb.length === 0) {
+    console.log(`  ${entry.key}: SKIP (no osnb data)`);
     skipped++;
     continue;
   }
@@ -128,45 +128,45 @@ for (const entry of toFix) {
     skipped++;
     continue;
   }
-  if (osnb2.length === ref.verses.length) {
+  if (osnb.length === ref.verses.length) {
     console.log(`  ${entry.key}: SKIP (same verse count as ${ref.bible})`);
     unchanged++;
     continue;
   }
 
   // Build prompt
-  const osnb2Text = osnb2.map(v => `v${v.verseId}: ${v.text}`).join('\n');
+  const osnbText = osnb.map(v => `v${v.verseId}: ${v.text}`).join('\n');
   const refText = ref.verses.map(v => `v${v.verseId}: ${v.text}`).join('\n');
 
   // Context from adjacent chapters
-  const osnb2Prev = loadChapter(OSNB2_DIR, book, chapter - 1);
-  const osnb2Next = loadChapter(OSNB2_DIR, book, chapter + 1);
+  const osnbPrev = loadChapter(OSNB_DIR, book, chapter - 1);
+  const osnbNext = loadChapter(OSNB_DIR, book, chapter + 1);
   let contextText = '';
-  if (osnb2Prev.length > 0) {
-    const last3 = osnb2Prev.slice(-3);
-    contextText += `\nosnb2 chapter ${chapter - 1} (last 3 verses):\n${last3.map(v => `v${v.verseId}: ${v.text}`).join('\n')}\n`;
+  if (osnbPrev.length > 0) {
+    const last3 = osnbPrev.slice(-3);
+    contextText += `\nosnb chapter ${chapter - 1} (last 3 verses):\n${last3.map(v => `v${v.verseId}: ${v.text}`).join('\n')}\n`;
   }
-  if (osnb2Next.length > 0) {
-    const first3 = osnb2Next.slice(0, 3);
-    contextText += `\nosnb2 chapter ${chapter + 1} (first 3 verses):\n${first3.map(v => `v${v.verseId}: ${v.text}`).join('\n')}\n`;
+  if (osnbNext.length > 0) {
+    const first3 = osnbNext.slice(0, 3);
+    contextText += `\nosnb chapter ${chapter + 1} (first 3 verses):\n${first3.map(v => `v${v.verseId}: ${v.text}`).join('\n')}\n`;
   }
 
   const prompt = `You are mapping Bible verse numbering.
 
-OSNB2 (Hebrew/Tanach numbering, Norwegian text, ${osnb2.length} verses):
-${osnb2Text}
+OSNB (Hebrew/Tanach numbering, Norwegian text, ${osnb.length} verses):
+${osnbText}
 
 REFERENCE (${ref.bible}, ${ref.verses.length} verses):
 ${refText}
 ${contextText}
 The target numbering should have ${ref.verses.length} verses (matching the reference structure).
-For each target verse number (1-${ref.verses.length}), tell me which osnb2 verse(s) from chapter ${chapter} it corresponds to.
-If a target verse combines multiple osnb2 verses, list all of them.
-If an osnb2 verse was moved to an adjacent chapter, it may not appear in the mapping — that is fine.
+For each target verse number (1-${ref.verses.length}), tell me which osnb verse(s) from chapter ${chapter} it corresponds to.
+If a target verse combines multiple osnb verses, list all of them.
+If an osnb verse was moved to an adjacent chapter, it may not appear in the mapping — that is fine.
 
 Compare the CONTENT of the verses to determine the mapping. Do not just match by verse number.`;
 
-  process.stdout.write(`  ${entry.key} (osnb2:${osnb2.length}v → ref:${ref.verses.length}v)... `);
+  process.stdout.write(`  ${entry.key} (osnb:${osnb.length}v → ref:${ref.verses.length}v)... `);
 
   try {
     const start = Date.now();
@@ -174,21 +174,21 @@ Compare the CONTENT of the verses to determine the mapping. Do not just match by
     const elapsed = ((Date.now() - start) / 1000).toFixed(1);
 
     // Validate mapping
-    const mappings: Array<{ targetVerse: number; osnb2Verses: number[]; mergeType: string }> = result.mappings;
+    const mappings: Array<{ targetVerse: number; osnbVerses: number[]; mergeType: string }> = result.mappings;
     if (mappings.length !== ref.verses.length) {
       console.log(`⚠ mapping count mismatch (got ${mappings.length}, expected ${ref.verses.length}) [${elapsed}s]`);
     }
 
     // Build new osmain chapter
-    const osnb2ByVerse = new Map(osnb2.map(v => [v.verseId, v]));
+    const osnbByVerse = new Map(osnb.map(v => [v.verseId, v]));
     const newOsmain: VerseData[] = [];
     let mergeCount = 0;
 
     for (const m of mappings) {
       const texts: string[] = [];
       let source = 'tanach';
-      for (const vId of m.osnb2Verses) {
-        const v = osnb2ByVerse.get(vId);
+      for (const vId of m.osnbVerses) {
+        const v = osnbByVerse.get(vId);
         if (v) {
           texts.push(v.text);
           source = v.source ?? (book <= 39 ? 'tanach' : 'sblgnt');
@@ -205,9 +205,9 @@ Compare the CONTENT of the verses to determine the mapping. Do not just match by
       });
     }
 
-    // Check for unmapped osnb2 verses
-    const mappedOsnb2 = new Set(mappings.flatMap(m => m.osnb2Verses));
-    const unmapped = osnb2.filter(v => !mappedOsnb2.has(v.verseId));
+    // Check for unmapped osnb verses
+    const mappedOsnb2 = new Set(mappings.flatMap(m => m.osnbVerses));
+    const unmapped = osnb.filter(v => !mappedOsnb2.has(v.verseId));
 
     const summary = [
       `${elapsed}s`,

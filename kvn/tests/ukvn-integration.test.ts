@@ -46,12 +46,12 @@ describe('Full pipeline: KJV -> DNB2024', () => {
   });
 });
 
-describe('Full pipeline: DNB2011 -> osnb2', () => {
+describe('Full pipeline: DNB2011 -> osnb', () => {
   const dnb2011Mapper = new UkvnMapper(loadUkvnMapping('dnb2011_nb'));
-  const osnb2Mapper = new UkvnMapper(loadUkvnMapping('osnb2'));
-  const cross = new CrossMapper(dnb2011Mapper, osnb2Mapper);
+  const osnbMapper = new UkvnMapper(loadUkvnMapping('osnb'));
+  const cross = new CrossMapper(dnb2011Mapper, osnbMapper);
 
-  it('maps DNB2011 Sal 92:3 -> osnb2 Sal 92:3', () => {
+  it('maps DNB2011 Sal 92:3 -> osnb Sal 92:3', () => {
     const dnbVerse = ukvnEncode(19, 92, 3);
     const result = cross.map(dnbVerse);
     expect(result.tkvn).toBe(ukvnEncode(19, 92, 3));
@@ -60,7 +60,7 @@ describe('Full pipeline: DNB2011 -> osnb2', () => {
 
 describe('All mappings load successfully', () => {
   const systems = ['english_kj', 'dnb2011_nb', 'dnb2024',
-                    'dnb30', 'nb1978', 'nb88_nb', 'nb94_nn', 'osnb2',
+                    'dnb30', 'nb1978', 'nb88_nb', 'nb94_nn', 'osnb',
                     'norwegian1921', 'norwegian1938', 'norwegian_bgo'];
 
   it.each(systems)('loads %s without errors', (system) => {
