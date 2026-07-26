@@ -541,7 +541,7 @@ Generates explanations for translation choices, comparing original text
 (Hebrew/Greek) with the translated text.
 
 Arguments:
-  bible              Bible version to explain (e.g., osnb1, osnb2, osnn1)
+  bible              Bible version to explain (e.g., osnb, osnn, osen)
 
 Options:
   --proofread        Run proofreading after generation
@@ -555,17 +555,17 @@ Options:
 
 Output structure:
   verse_translation/<bible>/<book>/<chapter>.json
-  e.g., verse_translation/osnb2/1/1.json (Genesis 1)
+  e.g., verse_translation/osnb/1/1.json (Genesis 1)
 
 Examples:
-  node verse_translation.mjs osnb2 --book 1 --chapter 1    # Explain Genesis 1
-  node verse_translation.mjs osnb2 --book 43               # Explain all of John
-  node verse_translation.mjs osnb2 --nt                    # Explain entire NT
-  node verse_translation.mjs osnn1 --book 1 --force        # Re-generate Genesis
+  node verse_translation.mjs osnb --book 1 --chapter 1    # Explain Genesis 1
+  node verse_translation.mjs osnb --book 43               # Explain all of John
+  node verse_translation.mjs osnb --nt                    # Explain entire NT
+  node verse_translation.mjs osnn --book 1 --force        # Re-generate Genesis
 
 Parallel processing (run in separate terminals):
-  node verse_translation.mjs osnb2 --book 1-20 &           # terminal 1
-  node verse_translation.mjs osnb2 --book 21-39 &          # terminal 2
+  node verse_translation.mjs osnb --book 1-20 &           # terminal 1
+  node verse_translation.mjs osnb --book 21-39 &          # terminal 2
 `);
 }
 

@@ -10,7 +10,7 @@ dotenv.config();
 import {books, getBookName} from './constants.js';
 import {callWithRetry} from './llm.js';
 
-const OSNB2_DIR = path.join(__dirname, 'bibles_raw', 'osnb2');
+const OSNB_DIR = path.join(__dirname, 'bibles_raw', 'osnb');
 const STORIES_DIR_BASE = path.join(__dirname, 'stories');
 const PROPOSED_DIR_BASE = path.join(__dirname, 'stories_proposed');
 const REJECTED_DIR_BASE = path.join(__dirname, 'stories_rejected');
@@ -172,7 +172,7 @@ function ensureDir(dir) {
 }
 
 function loadChapter(bookId, chapterId) {
-    const file = path.join(OSNB2_DIR, String(bookId), `${chapterId}.json`);
+    const file = path.join(OSNB_DIR, String(bookId), `${chapterId}.json`);
     if (!fileExists(file)) return null;
     return JSON.parse(fs.readFileSync(file, 'utf-8'));
 }
@@ -657,7 +657,7 @@ async function scanChapter({bookId, chapterId, lang, existingStories, proposedSt
     const bookName = getBookName(bookId, 'Norwegian bokmål');
     const verses = loadChapter(bookId, chapterId);
     if (!verses || verses.length === 0) {
-        console.log(`  ${bookName} ${chapterId}: skip (no osnb2 text)`);
+        console.log(`  ${bookName} ${chapterId}: skip (no osnb text)`);
         return {proposed: 0, skipped: 0};
     }
 

@@ -121,7 +121,7 @@ ${originalLanguage} text:
 ${originalText}`;
 }
 
-// Word explanation prompt for TRANSLATED texts (osnb1, osnb2, etc)
+// Word explanation prompt for TRANSLATED texts (osnb, osnn, etc)
 function getTranslationWordExplanationPrompt(language, originalLanguage, bookId, chapterId, verseId, originalText, translatedText) {
     return `You will be given a verse in the original ${originalLanguage} language and a translation.
 You should explain every word in the translated text.
@@ -592,7 +592,7 @@ Usage: node word4word.mjs <source> [options]
 
 Arguments:
   source             Bible version or original source to work with
-                     Translations: osnb1, osnb2, osnn1 (explains translated words)
+                     Translations: osnb, osnn, osen (explains translated words)
                      Originals: tanach, sblgnt (explains original Hebrew/Greek words)
 
 Options:
@@ -611,16 +611,16 @@ Options:
 
 Output structure:
   Translations:  word4word/<bible>/<book>/<chapter>/<verse>.json
-                 e.g., word4word/osnb2/43/1/1.json
+                 e.g., word4word/osnb/43/1/1.json
 
   Originals:     word4word/<source>/<lang>/<book>/<chapter>/<verse>.json
                  e.g., word4word/tanach/nb/1/1/1.json
 
 Examples:
   # Translation mode (explains translated words with reference to original)
-  node word4word.mjs osnb2 --nt                                # → word4word/osnb2/...
-  node word4word.mjs osnb2 --book 43 --chapter 1 --verse 1-11  # John 1:1-11
-  node word4word.mjs osnb2 --nt --proofread --apply            # generate → proofread → apply
+  node word4word.mjs osnb --nt                                # → word4word/osnb/...
+  node word4word.mjs osnb --book 43 --chapter 1 --verse 1-11  # John 1:1-11
+  node word4word.mjs osnb --nt --proofread --apply            # generate → proofread → apply
 
   # Original source mode (explains Hebrew/Greek words directly)
   node word4word.mjs tanach --ot                               # → word4word/tanach/nb/...
@@ -629,8 +629,8 @@ Examples:
   node word4word.mjs sblgnt --nt                               # → word4word/sblgnt/nb/...
 
 Parallel processing (run in separate terminals):
-  node word4word.mjs osnb2 --book 1-20 &                       # terminal 1
-  node word4word.mjs osnb2 --book 21-39 &                      # terminal 2
+  node word4word.mjs osnb --book 1-20 &                       # terminal 1
+  node word4word.mjs osnb --book 21-39 &                      # terminal 2
 `);
 }
 
@@ -797,7 +797,7 @@ async function main() {
                 }
 
                 // For original sources, include language code in path
-                // word4word/tanach/nb/1/1/1.json vs word4word/osnb2/43/1/1.json
+                // word4word/tanach/nb/1/1/1.json vs word4word/osnb/43/1/1.json
                 const langCode = isOriginal ? getLanguageCode(options.language) : null;
                 const outputDir = isOriginal
                     ? `word4word/${options.source}/${langCode}/${bookId}/${chapterId}`

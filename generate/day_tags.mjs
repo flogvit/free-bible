@@ -399,7 +399,7 @@ Usage: node day_tags.mjs [options]
 
 Options:
   --language <lang>    Language (default: nb)
-  --bible <name>       Bible translation (e.g., osnb2) [required]
+  --bible <name>       Bible translation (e.g., osnb) [required]
   --book <range>       Process book(s): single (43) or range (1-20)
   --chapter <range>    Process chapter(s): single (1) or range (1-10)
   --ot                 Process only Old Testament (books 1-39)
@@ -417,11 +417,11 @@ Output structure:
   days/<lang>/<dayId>.json                     (updated with references)
 
 Examples:
-  node day_tags.mjs --bible osnb2 --book 43                # Tag John's gospel
-  node day_tags.mjs --bible osnb2 --nt --local              # Tag NT with Ollama
-  node day_tags.mjs --bible osnb2 --book 40 --chapter 27    # Tag Matt 27
-  node day_tags.mjs --bible osnb2 --nt --proofread --apply  # Tag + proofread loop
-  node day_tags.mjs --bible osnb2 --force --book 43         # Re-tag John
+  node day_tags.mjs --bible osnb --book 43                # Tag John's gospel
+  node day_tags.mjs --bible osnb --nt --local              # Tag NT with Ollama
+  node day_tags.mjs --bible osnb --book 40 --chapter 27    # Tag Matt 27
+  node day_tags.mjs --bible osnb --nt --proofread --apply  # Tag + proofread loop
+  node day_tags.mjs --bible osnb --force --book 43         # Re-tag John
 `);
 }
 
@@ -500,7 +500,7 @@ async function main() {
     }
 
     if (!options.bible) {
-        console.error('--bible <name> is required (e.g., --bible osnb2)');
+        console.error('--bible <name> is required (e.g., --bible osnb)');
         return;
     }
 

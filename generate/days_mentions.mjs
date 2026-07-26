@@ -14,10 +14,10 @@ const SOURCES_DIR = path.join(__dirname, 'bibles_raw');
 const OUTPUT_BASE = path.join(__dirname, 'days_mentions');
 
 // === Parallel verse lookup ===
-// For bibles whose verse numbering matches hebrew/sblgnt directly (e.g. osnb2),
+// For bibles whose verse numbering matches hebrew/sblgnt directly (e.g. osnb),
 // lookup is identity. For others, a chain through kvn would be required.
 
-const IDENTITY_PARALLEL_BIBLES = new Set(['osnb2']);
+const IDENTITY_PARALLEL_BIBLES = new Set(['osnb']);
 
 const chapterCache = new Map();
 function loadSourceChapter(sourceName, bookId, chapterId) {
@@ -214,7 +214,7 @@ Pass 1: scan each verse with qwen3.5:122b and extract Bible day/feast mentions.
 Output is per-chapter JSON with day occurrences (Norwegian + original-language term).
 
 Options:
-  --bible <name>       Bible translation to scan (e.g., osnb2) [required]
+  --bible <name>       Bible translation to scan (e.g., osnb) [required]
   --book <range>       Process book(s): single (43) or range (1-20)
   --chapter <range>    Process chapter(s): single (12) or range (1-10) [requires single --book]
   --ot                 Process only Old Testament (books 1-39)
@@ -226,10 +226,10 @@ Output structure:
   generate/days_mentions/<bible>/<bookId>/<chapterId>.json
 
 Examples:
-  node days_mentions.mjs --bible osnb2 --book 40 --chapter 12
-  node days_mentions.mjs --bible osnb2 --book 40
-  node days_mentions.mjs --bible osnb2 --nt
-  node days_mentions.mjs --bible osnb2
+  node days_mentions.mjs --bible osnb --book 40 --chapter 12
+  node days_mentions.mjs --bible osnb --book 40
+  node days_mentions.mjs --bible osnb --nt
+  node days_mentions.mjs --bible osnb
 `);
 }
 

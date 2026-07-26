@@ -40,7 +40,7 @@ function refKey(r) {
 }
 
 function getOsnb2Text(bookId, chapterId, verseId) {
-    const file = path.join(__dirname, 'bibles_raw', 'osnb2', `${bookId}`, `${chapterId}.json`);
+    const file = path.join(__dirname, 'bibles_raw', 'osnb', `${bookId}`, `${chapterId}.json`);
     if (!fs.existsSync(file)) return null;
     const verses = JSON.parse(fs.readFileSync(file, 'utf-8'));
     return verses.find(v => +v.verseId === +verseId)?.text || null;

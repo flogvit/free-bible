@@ -283,7 +283,7 @@ Usage: node chapter_tags.mjs [options]
 
 Options:
   --language <lang>    Language (default: nb)
-  --bible <name>       Bible translation for readable text (e.g., osnb2)
+  --bible <name>       Bible translation for readable text (e.g., osnb)
   --book <range>       Process book(s): single (43) or range (1-20)
   --chapter <range>    Process chapter(s): single (1) or range (1-10)
   --ot                 Process only Old Testament (books 1-39)
@@ -300,10 +300,10 @@ Output structure:
   tags/<lang>/sentiment/<tag>.json
 
 Examples:
-  node chapter_tags.mjs --bible osnb2 --book 1                # Tag Genesis
-  node chapter_tags.mjs --bible osnb2 --nt --local             # Tag NT with Ollama
-  node chapter_tags.mjs --bible osnb2 --book 19 --chapter 23   # Tag Psalm 23
-  node chapter_tags.mjs --bible osnb2 --force                  # Re-tag everything
+  node chapter_tags.mjs --bible osnb --book 1                # Tag Genesis
+  node chapter_tags.mjs --bible osnb --nt --local             # Tag NT with Ollama
+  node chapter_tags.mjs --bible osnb --book 19 --chapter 23   # Tag Psalm 23
+  node chapter_tags.mjs --bible osnb --force                  # Re-tag everything
 `);
 }
 
@@ -370,7 +370,7 @@ async function main() {
     }
 
     if (!options.bible) {
-        console.error('--bible <name> is required (e.g., --bible osnb2)');
+        console.error('--bible <name> is required (e.g., --bible osnb)');
         return;
     }
 

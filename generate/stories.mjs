@@ -18,7 +18,7 @@ const MAX_RETRIES = 3;
 
 const STORIES_DIR = path.join(__dirname, 'stories', 'nb');
 const PROOFREAD_DIR = path.join(__dirname, 'proofread_stories', 'nb');
-const OSNB2_DIR = path.join(__dirname, 'bibles_raw', 'osnb2');
+const OSNB_DIR = path.join(__dirname, 'bibles_raw', 'osnb');
 
 const VALID_CATEGORIES = [
     "skapelsen", "patriarkene", "moses", "oerkenvandringen", "landnaam",
@@ -109,7 +109,7 @@ function ensureDir(filepath) {
 }
 
 function getOsnb2Verses(bookId, chapterId) {
-    const filepath = path.join(OSNB2_DIR, `${bookId}`, `${chapterId}.json`);
+    const filepath = path.join(OSNB_DIR, `${bookId}`, `${chapterId}.json`);
     if (!fileExists(filepath)) return [];
     return JSON.parse(fs.readFileSync(filepath, 'utf-8'));
 }
@@ -199,7 +199,7 @@ Gå gjennom følgende historie og verifiser at alt er korrekt.
 Historien:
 ${storyJson}
 
-Bibeltekst (osnb2) for de refererte passasjene:
+Bibeltekst (osnb) for de refererte passasjene:
 ${passageTexts}
 
 Din oppgave er å verifisere:
@@ -233,7 +233,7 @@ VIKTIG:
 }
 
 async function proofreadStory(story, filename) {
-    // Build passage texts from osnb2
+    // Build passage texts from osnb
     const passageParts = [];
     let missingPassage = false;
 
@@ -243,7 +243,7 @@ async function proofreadStory(story, filename) {
             passageParts.push(text);
         } else {
             const bookName = getBookName(ref.bookId, 'Norwegian bokmål');
-            passageParts.push(`[Mangler osnb2-tekst for ${bookName} ${ref.startChapter}:${ref.startVerse}-${ref.endChapter}:${ref.endVerse}]`);
+            passageParts.push(`[Mangler osnb-tekst for ${bookName} ${ref.startChapter}:${ref.startVerse}-${ref.endChapter}:${ref.endVerse}]`);
             missingPassage = true;
         }
     }
@@ -489,11 +489,11 @@ function validateStory(story, filename) {
                 issues.push(`endVerse (${ref.endVerse}) < startVerse (${ref.startVerse}) in same chapter`);
             }
 
-            // Check that osnb2 text exists for the reference
+            // Check that osnb text exists for the reference
             const text = getPassageText(ref.bookId, ref.startChapter, ref.startVerse, ref.endChapter, ref.endVerse);
             if (!text) {
                 const bookName = getBookName(ref.bookId, 'Norwegian bokmål');
-                issues.push(`No osnb2 text for ${bookName} ${ref.startChapter}:${ref.startVerse}-${ref.endChapter}:${ref.endVerse}`);
+                issues.push(`No osnb text for ${bookName} ${ref.startChapter}:${ref.startVerse}-${ref.endChapter}:${ref.endVerse}`);
             }
         }
     }
@@ -509,7 +509,7 @@ Usage: node stories.mjs [options]
 
 Modes:
   --validate           Run local validation (no AI, checks format & references)
-  --proofread          AI proofread stories against osnb2 text
+  --proofread          AI proofread stories against osnb text
   --apply              Apply proofread suggestions
   --generate           Generate new stories
   --generate --category <cat>  Generate stories for a specific category
@@ -658,7 +658,7 @@ async function main() {
             if (options.apply && result) {
                 const applyResult = applyProofreadChanges(story.filename, result, options.minScore);
 
-                // If references changed, do a second proofread to verify the new references against osnb2
+                // If references changed, do a second proofread to verify the new references against osnb
                 if (applyResult && applyResult.refsChanged) {
                     const verifyFilename = applyResult.newFilename;
                     const verifyFile = path.join(STORIES_DIR, verifyFilename);

@@ -765,7 +765,7 @@ Modes:
   --apply              Apply proofread suggestions (enables feedback loop)
 
 Options:
-  --bible <name>       Bible translation to scan (required for --index, e.g., osnb2)
+  --bible <name>       Bible translation to scan (required for --index, e.g., osnb)
   --book <range>       Process book(s): single (43) or range (1-20)
   --chapter <range>    Process chapter(s): single (1) or range (1-10)
   --ot                 Process only Old Testament (books 1-39)
@@ -780,9 +780,9 @@ Examples:
   node bible_persons.mjs abraham                            # Generate Abraham
   node bible_persons.mjs "Set (Adams sønn)"                 # Generate new person
   node bible_persons.mjs all                                # Generate all pre-defined
-  node bible_persons.mjs --bible osnb2 --index              # Index entire bible
-  node bible_persons.mjs --bible osnb2 --index --book 1     # Index Genesis only
-  node bible_persons.mjs --bible osnb2 --index --nt         # Index NT only
+  node bible_persons.mjs --bible osnb --index              # Index entire bible
+  node bible_persons.mjs --bible osnb --index --book 1     # Index Genesis only
+  node bible_persons.mjs --bible osnb --index --nt         # Index NT only
   node bible_persons.mjs --proofread --apply                # Proofread all persons
   node bible_persons.mjs --proofread --apply --continue      # Resume from where you left off
   node bible_persons.mjs --proofread --apply --min-score 9  # Higher quality bar

@@ -13,7 +13,7 @@ const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 
 const EMBED_MODEL = 'bge-m3';
-const CORPUS = 'osnb2';
+const CORPUS = 'osnb';
 const REFERENCES_LANG_DIR = path.join(__dirname, 'references', 'nb');
 const PROGRESS_FILE = path.join(__dirname, 'embeddings', CORPUS, 'semantic_progress.json');
 
@@ -80,7 +80,7 @@ function loadAllOsnb2Verses() {
     const all = [];
     for (const book of books) {
         for (let ch = 1; ch <= book.chapters; ch++) {
-            const file = path.join(__dirname, 'bibles_raw', 'osnb2', `${book.id}`, `${ch}.json`);
+            const file = path.join(__dirname, 'bibles_raw', 'osnb', `${book.id}`, `${ch}.json`);
             if (!fs.existsSync(file)) continue;
             const verses = JSON.parse(fs.readFileSync(file, 'utf-8'));
             for (const v of verses) {
@@ -295,7 +295,7 @@ function printUsage() {
     console.log(`
 Usage: node references_semantic.mjs [options]
 
-Two-phase semantic cross-reference builder for osnb2:
+Two-phase semantic cross-reference builder for osnb:
   1. Build embeddings of all verses (bge-m3 via Ollama)
   2. For each verse, fetch top-K semantic candidates and verify each with a local LLM (qwen3.5:122b).
      Verified pairs are merged into references/nb/<book>/<chapter>/<verse>.json.
@@ -382,7 +382,7 @@ async function main() {
     if (opts.help) { printUsage(); return; }
 
     const verses = loadAllOsnb2Verses();
-    console.log(`Loaded ${verses.length} osnb2 verses`);
+    console.log(`Loaded ${verses.length} osnb verses`);
 
     if (!opts.verifyOnly) {
         if (opts.force || !hasEmbeddings(CORPUS)) {

@@ -149,7 +149,7 @@ Return a JSON object with a 'references' array. Each element has: bookId (number
 }
 
 /**
- * Build context text for each cross-reference by looking up ±2 verses from osnb2.
+ * Build context text for each cross-reference by looking up ±2 verses from osnb.
  * Returns a formatted string showing the actual Bible text around each referenced verse.
  */
 function buildReferenceContext(currentReferences) {
@@ -167,7 +167,7 @@ function buildReferenceContext(currentReferences) {
 
         const verses = getOsnb2VerseRange(refBookId, refChapter, rangeStart, rangeEnd);
         if (verses.length === 0) {
-            sections.push(`  [${refBookId}:${refChapter}:${fromVerse}-${toVerse}] — vers ikke funnet i osnb2`);
+            sections.push(`  [${refBookId}:${refChapter}:${fromVerse}-${toVerse}] — vers ikke funnet i osnb`);
             continue;
         }
 
@@ -254,7 +254,7 @@ ${originalText}
 Current cross-references:
 ${refsJson}
 
-FAKTISK BIBELTEKST FOR REFERANSENE (±2 vers fra osnb2):
+FAKTISK BIBELTEKST FOR REFERANSENE (±2 vers fra osnb):
 Linjer merket med >>> er de refererte versene. Sjekk om referansen peker til riktig vers,
 eller om et nabovers er et bedre treff. Hvis et vers ikke finnes, er referansen sannsynligvis feil.
 ${buildReferenceContext(currentReferences)}`;

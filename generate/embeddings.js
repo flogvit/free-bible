@@ -41,7 +41,7 @@ export function hasEmbeddings(corpus) {
  * Build embeddings for a corpus.
  *
  * @param {object}   args
- * @param {string}   args.corpus     Storage namespace (e.g. "osnb2", "songs/main"). Becomes a path under embeddings/.
+ * @param {string}   args.corpus     Storage namespace (e.g. "osnb", "songs/main"). Becomes a path under embeddings/.
  * @param {Array}    args.items      Array of arbitrary metadata objects, one per text.
  * @param {string}   args.model      Ollama embed model (e.g. "bge-m3").
  * @param {Function} args.getText    (item) => string  — text to embed for each item.

@@ -731,7 +731,7 @@ Options:
   --number <n>       Process a specific number (e.g., 7)
   --number <n-m>     Process a range of numbers (e.g., 1-12)
   --all              Process all known symbolic numbers
-  --bible <name>     Bible translation to scan for references (e.g., osnb2)
+  --bible <name>     Bible translation to scan for references (e.g., osnb)
   --scan             Only scan the bible for number occurrences (no AI generation)
   --index            Index entire bible with Ollama: extract numbers from every verse
                      and update/create JSON files. Requires --bible.
@@ -750,13 +750,13 @@ Output structure:
 
 Examples:
   node number_symbolism.mjs --number 7                            # Generate symbolism for 7
-  node number_symbolism.mjs --number 7 --bible osnb2              # Generate with bible scan
-  node number_symbolism.mjs --number 7 --bible osnb2 --scan       # Only scan, no AI
-  node number_symbolism.mjs --all --bible osnb2                   # Generate all with scan
+  node number_symbolism.mjs --number 7 --bible osnb              # Generate with bible scan
+  node number_symbolism.mjs --number 7 --bible osnb --scan       # Only scan, no AI
+  node number_symbolism.mjs --all --bible osnb                   # Generate all with scan
   node number_symbolism.mjs --all --proofread --apply             # Generate → proofread loop → apply
   node number_symbolism.mjs --number 7 --proofread --apply --min-score 9  # Higher quality bar
   node number_symbolism.mjs --number 3 --force                    # Re-generate number 3
-  node number_symbolism.mjs --bible osnb2 --index                 # Index entire bible with Ollama
+  node number_symbolism.mjs --bible osnb --index                 # Index entire bible with Ollama
 `);
 }
 
