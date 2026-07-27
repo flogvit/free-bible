@@ -32,12 +32,30 @@ const doiToId = (doi) => doi.toLowerCase().trim()
   .replace(/^https?:\/\/(dx\.)?doi\.org\//, '')
   .replace(/\//g, '_');
 
-function workIdFor(target) {
+function slugify(text) {
+  return text.toLowerCase()
+    .replace(/æ/g, 'ae').replace(/ø/g, 'o').replace(/å/g, 'a')
+    .normalize('NFD').replace(/[\u0300-\u036f]/g, '')
+    .replace(/[^a-z0-9]+/g, '-').replace(/^-+|-+$/g, '')
+    .slice(0, 60);
+}
+
+function workIdFor(kind, target) {
   if (target.catalog_id) return target.catalog_id;
   if (target.doi) return doiToId(target.doi);
   if (target.isbn13) return target.isbn13;
   if (target.isbn10) return target.isbn10;
   if (target.openlibrary_id) return target.openlibrary_id;
+  if (kind === 'song_verse_refs') {
+    // Sanger mangler global id: free-bible-katalogens song-NNNN, ellers slug
+    // av tittel+artist (sang-prefiks saa navnerommet ikke krasjer med song-NNNN).
+    if (target.song_id) return target.song_id;
+    const title = target.freetext?.title;
+    if (title) {
+      const artist = target.freetext?.authors?.[0];
+      return 'sang-' + slugify(artist ? `${title}-${artist}` : title);
+    }
+  }
   return null;
 }
 
@@ -101,7 +119,7 @@ fs.mkdirSync(OUT_DIR, {recursive: true});
 
 let exported = 0;
 for (const {name, doc} of docs) {
-  const workId = workIdFor(doc.target ?? {});
+  const workId = workIdFor(doc.kind, doc.target ?? {});
   if (!workId) {
     console.error(`  ! ${name}: approved uten konkret target-id — skulle vært stoppet av approve-vakten`);
     continue;
@@ -155,6 +173,7 @@ for (const {name, doc} of docs) {
 
   const target = {};
   if (doc.target?.doi) target.doi = doc.target.doi;
+  if (doc.target?.song_id) target.song_id = doc.target.song_id;
   if (doc.target?.isbn13) target.isbn13 = doc.target.isbn13;
   if (doc.target?.isbn10) target.isbn10 = doc.target.isbn10;
   if (doc.target?.openlibrary_id) target.openlibrary_id = doc.target.openlibrary_id;
@@ -162,7 +181,7 @@ for (const {name, doc} of docs) {
 
   const out = {
     id: workId,
-    kind: doc.kind === 'book_verse_refs' ? 'book' : 'article',
+    kind: doc.kind === 'book_verse_refs' ? 'book' : doc.kind === 'song_verse_refs' ? 'song' : 'article',
     target: Object.keys(target).length ? target : (existing?.target ?? {}),
     ...(meta.title ? {title: meta.title} : {}),
     ...(meta.authors?.length ? {authors: meta.authors} : {}),

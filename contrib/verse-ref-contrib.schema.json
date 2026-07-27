@@ -9,8 +9,8 @@
   "properties": {
     "schema": { "const": "free-bible-contrib/1" },
     "kind": {
-      "enum": ["article_verse_refs", "book_verse_refs"],
-      "description": "What the target is. Same refs model for both."
+      "enum": ["article_verse_refs", "book_verse_refs", "song_verse_refs"],
+      "description": "What the target is. Same refs model for all kinds."
     },
     "target": {
       "description": "Identification of the article/book. Give the strongest identifier you have; free-text fallback forces the reviewer to resolve or create a catalog entry.",
@@ -23,6 +23,7 @@
         "isbn13": { "type": "string", "pattern": "^97[89]\\d{10}$", "description": "Strongest for books." },
         "isbn10": { "type": "string", "pattern": "^\\d{9}[\\dXx]$" },
         "openlibrary_id": { "type": "string", "description": "e.g. 'OL12345M'." },
+        "song_id": { "type": "string", "pattern": "^song-\\d+$", "description": "free-bible song catalog id (generate/songs/song-NNNN.json). Strongest for songs; songs have no global identifier, so freetext title+artist is the usual fallback (exporter slugs it)." },
         "url": { "type": "string", "format": "uri", "description": "Where the contributor found the work." },
         "freetext": {
           "type": "object",

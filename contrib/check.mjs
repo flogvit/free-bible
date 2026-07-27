@@ -36,10 +36,10 @@ const args = process.argv.slice(2);
 const onlyId = args.includes('--id') ? args[args.indexOf('--id') + 1] : null;
 const doLookup = args.includes('--target-lookup');
 
-const KINDS = ['article_verse_refs', 'book_verse_refs'];
+const KINDS = ['article_verse_refs', 'book_verse_refs', 'song_verse_refs'];
 const REF_KINDS = ['cites', 'discusses', 'covers_passage'];
 const STATUSES = ['pending', 'needs_info', 'approved', 'rejected'];
-const TARGET_KEYS = ['catalog_id', 'doi', 'isbn13', 'isbn10', 'openlibrary_id', 'url', 'freetext'];
+const TARGET_KEYS = ['catalog_id', 'doi', 'isbn13', 'isbn10', 'openlibrary_id', 'song_id', 'url', 'freetext'];
 const REF_KEYS = ['raw', 'context_translation', 'kvnFrom', 'kvnTo', 'kvnRef', 'resolved_by',
   'confirmed_by_contributor', 'kind', 'where'];
 

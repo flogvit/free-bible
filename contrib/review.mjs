@@ -50,8 +50,13 @@ function targetSummary(doc) {
     target.openlibrary_id || target.url || target.catalog_id || '—';
 }
 
-function hasConcreteId(target) {
-  return !!(target?.catalog_id || target?.doi || target?.isbn13 || target?.isbn10 || target?.openlibrary_id);
+function hasConcreteId(doc) {
+  const target = doc.target ?? {};
+  if (target.catalog_id || target.doi || target.isbn13 || target.isbn10 || target.openlibrary_id) return true;
+  // Sanger har ingen global identifikator: katalog-id eller tittel (sluggeres
+  // av export.mjs) er det konkreteste som finnes.
+  if (doc.kind === 'song_verse_refs') return !!(target.song_id || target.freetext?.title);
+  return false;
 }
 
 // ---------------------------------------------------------------------------
@@ -63,7 +68,7 @@ if (flag('--list')) {
     const unresolved = refs.filter((r) => !Number.isInteger(r.kvnFrom)).length;
     console.log(
       `${path.basename(file, '.json').padStart(6)}  ${String(doc.review?.status).padEnd(10)}` +
-        `  ${doc.kind === 'book_verse_refs' ? 'bok     ' : 'artikkel'}` +
+        `  ${doc.kind === 'book_verse_refs' ? 'bok     ' : doc.kind === 'song_verse_refs' ? 'sang    ' : 'artikkel'}` +
         `  refs=${refs.length} (${unresolved} uoppløst)  ${targetSummary(doc)}`,
     );
   }
@@ -84,7 +89,7 @@ if (flag('--llm')) {
   for (const file of queueFiles()) {
     const doc = load(file);
     if (doc.review?.status !== 'pending') continue;
-    const prompt = `Du er reviewer for free-bible sitt bidragssystem: brukere melder inn artikler/bøker
+    const prompt = `Du er reviewer for free-bible sitt bidragssystem: brukere melder inn artikler/bøker/sanger
 som omtaler bibelvers, og godkjente bidrag publiseres som vers→verk-lenker.
 
 Vurder innsendingen under. Kriterier:
@@ -133,8 +138,8 @@ if (verdict === 'approved') {
       '\nKjør contrib/check.mjs eller fyll inn manuelt først.');
     process.exit(1);
   }
-  if (!hasConcreteId(doc.target)) {
-    console.error('Kan ikke godkjenne: target mangler konkret id (doi/isbn/openlibrary_id/catalog_id).' +
+  if (!hasConcreteId(doc)) {
+    console.error('Kan ikke godkjenne: target mangler konkret id (doi/isbn/openlibrary_id/catalog_id — for sang: song_id eller tittel).' +
       '\nSlå opp verket og legg inn id-en i target først.');
     process.exit(1);
   }

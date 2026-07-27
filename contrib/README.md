@@ -1,6 +1,6 @@
 # contrib — crowd-innsendte artikler/bøker med versreferanser
 
-Brukere på bible.flogvit.com melder inn artikler/bøker som omtaler bibelvers
+Brukere på bible.flogvit.com melder inn artikler/bøker/sanger som omtaler bibelvers
 (issues #15/#16). Kontrakten er `verse-ref-contrib.schema.json`
 (`free-bible-contrib/1`), eksempler i `examples/`.
 
@@ -45,7 +45,8 @@ deploy/deploy-bibel-data.sh works work_verse_refs
 
 Approve-vakten i `review.mjs` håndhever skjemaets regel: godkjenning krever at
 hver ref har `kvnFrom`/`kvnTo` og at target har en konkret id (DOI/ISBN/
-OpenLibrary/katalog-id — fritekst/URL alene er ikke nok). `needs_info` sendes
+OpenLibrary/katalog-id — fritekst/URL alene er ikke nok; for sang holder song_id
+eller tittel, som export.mjs slugger til `sang-<slug>`). `needs_info` sendes
 tilbake til bidragsyteren i frontend-UI-et og blir `pending` igjen når de
 svarer.
 
