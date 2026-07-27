@@ -1,0 +1,37 @@
+{
+  "schema": "free-bible-contrib/1",
+  "kind": "book_verse_refs",
+  "target": {
+    "isbn13": "9780800660611",
+    "freetext": {
+      "title": "Psalms 51-100 (Hermeneia)",
+      "authors": ["Frank-Lothar Hossfeld", "Erich Zenger"],
+      "year": 2005,
+      "publisher_or_journal": "Fortress Press"
+    }
+  },
+  "refs": [
+    {
+      "raw": "Ps 51:5 (MT)",
+      "context_translation": "wlc",
+      "kind": "covers_passage",
+      "where": { "chapter_or_section": "Kommentaren til Salme 51", "page": 11 }
+    },
+    {
+      "raw": "Sal 51,3",
+      "context_translation": "dnb2011",
+      "kvnFrom": 20131888,
+      "kvnTo": 20131888,
+      "kvnRef": "Sal 51:3",
+      "resolved_by": "reviewer",
+      "kind": "discusses"
+    }
+  ],
+  "comment": "Første referanse er uoppløst: bidragsyter oppga MT-nummerering (wlc har 2-vers tittel i Sal 51, så MT 51:5 = kanonisk 51:4 — må løses av reviewer via wlc.ukvn.json, IKKE antas identisk). Andre referanse viser samme salme sitert fra dnb2011-kontekst.",
+  "submitted": {
+    "at": "2026-07-27T12:05:00Z",
+    "by": { "user_id": "u_2mm91", "credit": false },
+    "client": "bible.flogvit.com"
+  },
+  "review": { "status": "needs_info", "reviewer": "flogvit", "at": "2026-07-27T14:00:00Z", "note": "Bekreft at kommentarens MT 51:5 er verset om 'i synd ble jeg født' — da er kanonisk 51:4 korrekt." }
+}
