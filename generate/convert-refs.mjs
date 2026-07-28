@@ -589,64 +589,63 @@ function main() {
 
     // 2. References
     console.log('Processing reference files...');
-    for (const f of findFiles(path.join(generateDir, 'references'), '.json')) {
+    for (const f of findFiles(path.join(generateDir, 'references', 'nb'), '.json')) {
       const count = processReferences(f, regex, nameMap, options.dryRun);
       trackStats('references', f, count);
     }
 
     // 3. Chapter summaries
     console.log('Processing chapter_summaries files...');
-    for (const f of findFiles(path.join(generateDir, 'chapter_summaries'), '.md')) {
+    for (const f of findFiles(path.join(generateDir, 'chapter_summaries', 'nb'), '.md')) {
       const count = processMarkdown(f, regex, nameMap, options.dryRun);
       trackStats('chapter_summaries', f, count);
     }
 
     // 4. Book summaries
     console.log('Processing book_summaries files...');
-    for (const f of findFiles(path.join(generateDir, 'book_summaries'), '.md')) {
+    for (const f of findFiles(path.join(generateDir, 'book_summaries', 'nb'), '.md')) {
       const count = processMarkdown(f, regex, nameMap, options.dryRun);
       trackStats('book_summaries', f, count);
     }
 
     // 5. Chapter context
     console.log('Processing chapter_context files...');
-    for (const f of findFiles(path.join(generateDir, 'chapter_context'), '.md')) {
+    for (const f of findFiles(path.join(generateDir, 'chapter_context', 'nb'), '.md')) {
       const count = processMarkdown(f, regex, nameMap, options.dryRun);
       trackStats('chapter_context', f, count);
     }
 
     // 6. Book context
     console.log('Processing book_context files...');
-    for (const f of findFiles(path.join(generateDir, 'book_context'), '.md')) {
+    for (const f of findFiles(path.join(generateDir, 'book_context', 'nb'), '.md')) {
       const count = processMarkdown(f, regex, nameMap, options.dryRun);
       trackStats('book_context', f, count);
     }
 
     // 7. Prophecies
     console.log('Processing prophecies...');
-    const prophFile = path.join(generateDir, 'prophecies/prophecies.json');
-    if (fs.existsSync(prophFile)) {
-      const count = processProphecies(prophFile, regex, nameMap, options.dryRun);
-      trackStats('prophecies', prophFile, count);
+    for (const f of findFiles(path.join(generateDir, 'prophecies', 'nb'), '.json')) {
+      const count = processProphecies(f, regex, nameMap, options.dryRun);
+      trackStats('prophecies', f, count);
     }
 
     // 8. Stories
     console.log('Processing story files...');
-    for (const f of findFiles(path.join(generateDir, 'stories'), '.json')) {
+    for (const f of findFiles(path.join(generateDir, 'stories', 'nb'), '.json')) {
       const count = processStory(f, regex, nameMap, options.dryRun);
       trackStats('stories', f, count);
     }
 
     // 9. Themes
     console.log('Processing theme files...');
-    for (const f of findFiles(path.join(generateDir, 'themes'), '.json')) {
+    for (const f of findFiles(path.join(generateDir, 'themes', 'nb'), '.json')) {
       const count = processTheme(f, regex, nameMap, options.dryRun);
       trackStats('themes', f, count);
     }
 
     // 10. Persons
     console.log('Processing person files...');
-    for (const f of findFiles(path.join(generateDir, 'persons'), '.json')) {
+    for (const f of findFiles(path.join(generateDir, 'persons', 'nb'), '.json')) {
       const count = processPerson(f, regex, nameMap, options.dryRun);
       trackStats('persons', f, count);
     }
@@ -659,17 +658,16 @@ function main() {
 
     const allFiles = [
       ...findFiles(path.join(generateDir, 'verse_translation'), '.json'),
-      ...findFiles(path.join(generateDir, 'references'), '.json'),
-      ...findFiles(path.join(generateDir, 'chapter_summaries'), '.md'),
-      ...findFiles(path.join(generateDir, 'book_summaries'), '.md'),
-      ...findFiles(path.join(generateDir, 'chapter_context'), '.md'),
-      ...findFiles(path.join(generateDir, 'book_context'), '.md'),
-      ...findFiles(path.join(generateDir, 'stories'), '.json'),
-      ...findFiles(path.join(generateDir, 'themes'), '.json'),
-      ...findFiles(path.join(generateDir, 'persons'), '.json'),
+      ...findFiles(path.join(generateDir, 'references', 'nb'), '.json'),
+      ...findFiles(path.join(generateDir, 'chapter_summaries', 'nb'), '.md'),
+      ...findFiles(path.join(generateDir, 'book_summaries', 'nb'), '.md'),
+      ...findFiles(path.join(generateDir, 'chapter_context', 'nb'), '.md'),
+      ...findFiles(path.join(generateDir, 'book_context', 'nb'), '.md'),
+      ...findFiles(path.join(generateDir, 'stories', 'nb'), '.json'),
+      ...findFiles(path.join(generateDir, 'themes', 'nb'), '.json'),
+      ...findFiles(path.join(generateDir, 'persons', 'nb'), '.json'),
+      ...findFiles(path.join(generateDir, 'prophecies', 'nb'), '.json'),
     ];
-    const prophFile = path.join(generateDir, 'prophecies/prophecies.json');
-    if (fs.existsSync(prophFile)) allFiles.push(prophFile);
 
     for (const f of allFiles) {
       const errors = validateConvertedRefs(f);
