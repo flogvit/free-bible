@@ -138,8 +138,10 @@ describe('Range round-trip: dnb2024 -> osmain -> dnb2024', () => {
     testRangeRoundTrip('Jes 9,1a.2.6-7');
   });
 
-  it('Jes 9,1-7 with boundary shift', () => {
-    testRangeRoundTrip('Jes 9,1-7', 'Jes 9,21.1-6');
+  // osmain laa ombrutt her fram til 2026-07-28 (dens 9,1 var europeisk 9,2 og
+  // 9,21 var 9,1). Den foelger naa europeisk rekkefolge, som dnb2024_nb.
+  it('Jes 9,1-7 uten ombryting', () => {
+    testRangeRoundTrip('Jes 9,1-7', 'Jes 9,1-7');
   });
 
   it('Joel 3,1-5 crosses osmain chapter', () => {

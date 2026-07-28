@@ -2,8 +2,8 @@
  "summary": {
   "modules": 1158,
   "verses": 27854553,
-  "failed": 722,
-  "cleanModules": 1074
+  "failed": 948,
+  "cleanModules": 1009
  },
  "worstChapters": [
   [
@@ -11,8 +11,16 @@
    205
   ],
   [
+   "13:6",
+   120
+  ],
+  [
    "26:21",
    50
+  ],
+  [
+   "5:29",
+   44
   ],
   [
    "19:91",
@@ -21,6 +29,10 @@
   [
    "19:68",
    36
+  ],
+  [
+   "23:9",
+   25
   ],
   [
    "4:29",
@@ -47,8 +59,12 @@
    13
   ],
   [
-   "27:4",
-   11
+   "14:14",
+   10
+  ],
+  [
+   "14:2",
+   10
   ],
   [
    "19:51",
@@ -61,6 +77,10 @@
   [
    "19:93",
    10
+  ],
+  [
+   "27:4",
+   9
   ],
   [
    "13:5",
@@ -85,6 +105,10 @@
   [
    "19:96",
    8
+  ],
+  [
+   "2:22",
+   7
   ],
   [
    "19:119",
@@ -116,6 +140,10 @@
   ],
   [
    "19:107",
+   5
+  ],
+  [
+   "21:5",
    5
   ],
   [
@@ -177,42 +205,16 @@
   [
    "19:38",
    3
-  ],
-  [
-   "19:80",
-   3
-  ],
-  [
-   "19:9",
-   3
-  ],
-  [
-   "4:2",
-   3
-  ],
-  [
-   "9:24",
-   3
-  ],
-  [
-   "19:63",
-   3
-  ],
-  [
-   "7:14",
-   3
-  ],
-  [
-   "14:16",
-   3
   ]
  ],
  "modules": {
   "aceh": {
    "verses": 30042,
-   "failed": 0,
+   "failed": 1,
    "merged": 0,
-   "examples": []
+   "examples": [
+    "14:14,15"
+   ]
   },
   "adilabad_gondi": {
    "verses": 7395,
@@ -332,7 +334,7 @@
   },
   "amharic": {
    "verses": 30574,
-   "failed": 5,
+   "failed": 6,
    "merged": 0,
    "examples": [
     "26:21,1",
@@ -452,9 +454,13 @@
   },
   "amharic_nst": {
    "verses": 30573,
-   "failed": 0,
+   "failed": 3,
    "merged": 0,
-   "examples": []
+   "examples": [
+    "21:5,20",
+    "2:22,31",
+    "5:29,29"
+   ]
   },
   "amharic_tigrinya": {
    "verses": 30033,
@@ -478,12 +484,10 @@
   },
   "arabic": {
    "verses": 30785,
-   "failed": 3,
+   "failed": 1,
    "merged": 0,
    "examples": [
-    "27:4,1",
-    "27:4,2",
-    "27:4,3"
+    "5:29,29"
    ]
   },
   "arabic1978": {
@@ -707,27 +711,47 @@
   },
   "awadhi": {
    "verses": 30760,
-   "failed": 0,
+   "failed": 1,
    "merged": 0,
-   "examples": []
+   "examples": [
+    "5:29,29"
+   ]
   },
   "aymara": {
    "verses": 30815,
-   "failed": 0,
+   "failed": 11,
    "merged": 0,
-   "examples": []
+   "examples": [
+    "23:9,21",
+    "13:6,67",
+    "13:6,68",
+    "13:6,70",
+    "13:6,71"
+   ]
   },
   "aymara1986": {
    "verses": 30817,
-   "failed": 0,
+   "failed": 11,
    "merged": 0,
-   "examples": []
+   "examples": [
+    "23:9,21",
+    "13:6,67",
+    "13:6,68",
+    "13:6,70",
+    "13:6,71"
+   ]
   },
   "aymara1997": {
    "verses": 30699,
-   "failed": 0,
+   "failed": 11,
    "merged": 0,
-   "examples": []
+   "examples": [
+    "23:9,21",
+    "13:6,67",
+    "13:6,68",
+    "13:6,70",
+    "13:6,71"
+   ]
   },
   "azerbaijan": {
    "verses": 31057,
@@ -803,9 +827,15 @@
   },
   "baoule1998": {
    "verses": 30803,
-   "failed": 0,
+   "failed": 15,
    "merged": 0,
-   "examples": []
+   "examples": [
+    "13:6,1",
+    "13:6,2",
+    "13:6,3",
+    "13:6,4",
+    "13:6,5"
+   ]
   },
   "bashkir": {
    "verses": 7948,
@@ -923,9 +953,11 @@
   },
   "bengali_erv": {
    "verses": 30669,
-   "failed": 0,
+   "failed": 1,
    "merged": 0,
-   "examples": []
+   "examples": [
+    "5:29,29"
+   ]
   },
   "bengali_irvben": {
    "verses": 31096,
@@ -935,18 +967,22 @@
   },
   "bengali_mbcl": {
    "verses": 30240,
-   "failed": 1,
+   "failed": 3,
    "merged": 0,
    "examples": [
-    "4:2,2"
+    "4:2,2",
+    "5:29,29",
+    "14:2,18"
    ]
   },
   "bengali_sbcl": {
    "verses": 30229,
-   "failed": 1,
+   "failed": 3,
    "merged": 0,
    "examples": [
-    "4:2,2"
+    "4:2,2",
+    "5:29,29",
+    "14:2,18"
    ]
   },
   "berber": {
@@ -1023,9 +1059,11 @@
   },
   "bugis": {
    "verses": 29668,
-   "failed": 0,
+   "failed": 1,
    "merged": 0,
-   "examples": []
+   "examples": [
+    "14:14,15"
+   ]
   },
   "bulgarian": {
    "verses": 31101,
@@ -1083,9 +1121,11 @@
   },
   "bungo": {
    "verses": 31075,
-   "failed": 0,
+   "failed": 1,
    "merged": 0,
-   "examples": []
+   "examples": [
+    "14:2,18"
+   ]
   },
   "burmese": {
    "verses": 30843,
@@ -1095,43 +1135,57 @@
   },
   "burmese1928": {
    "verses": 29046,
-   "failed": 0,
+   "failed": 5,
    "merged": 0,
-   "examples": []
+   "examples": [
+    "33:5,15",
+    "27:4,35",
+    "27:4,36",
+    "27:4,37",
+    "14:14,15"
+   ]
   },
   "burmese2021": {
    "verses": 30770,
-   "failed": 4,
+   "failed": 19,
    "merged": 0,
    "examples": [
-    "13:5,1",
-    "13:5,4",
-    "13:5,5",
-    "13:5,7"
+    "13:6,67",
+    "13:6,68",
+    "13:6,69",
+    "13:6,70",
+    "13:6,71"
    ]
   },
   "burmese_bcl": {
    "verses": 29768,
-   "failed": 0,
+   "failed": 2,
    "merged": 0,
-   "examples": []
+   "examples": [
+    "5:29,29",
+    "14:2,18"
+   ]
   },
   "burmese_jbzv": {
    "verses": 30774,
-   "failed": 4,
+   "failed": 19,
    "merged": 0,
    "examples": [
-    "13:5,1",
-    "13:5,4",
-    "13:5,5",
-    "13:5,7"
+    "13:6,67",
+    "13:6,68",
+    "13:6,69",
+    "13:6,70",
+    "13:6,71"
    ]
   },
   "burmese_mclzv": {
    "verses": 29732,
-   "failed": 0,
+   "failed": 2,
    "merged": 0,
-   "examples": []
+   "examples": [
+    "5:29,29",
+    "14:2,18"
+   ]
   },
   "burmese_msbu": {
    "verses": 31049,
@@ -1189,7 +1243,7 @@
   },
   "cebuano_apsd": {
    "verses": 30552,
-   "failed": 5,
+   "failed": 6,
    "merged": 0,
    "examples": [
     "26:21,1",
@@ -1297,33 +1351,43 @@
   },
   "chin_tb77": {
    "verses": 30758,
-   "failed": 0,
+   "failed": 1,
    "merged": 0,
-   "examples": []
+   "examples": [
+    "23:9,21"
+   ]
   },
   "chin_tbr17": {
    "verses": 30706,
-   "failed": 0,
+   "failed": 1,
    "merged": 0,
-   "examples": []
+   "examples": [
+    "23:9,21"
+   ]
   },
   "chin_tdb": {
    "verses": 30706,
-   "failed": 0,
+   "failed": 1,
    "merged": 0,
-   "examples": []
+   "examples": [
+    "23:9,21"
+   ]
   },
   "chin_tedim": {
    "verses": 30758,
-   "failed": 0,
+   "failed": 1,
    "merged": 0,
-   "examples": []
+   "examples": [
+    "23:9,21"
+   ]
   },
   "chin_tedim2011": {
    "verses": 30706,
-   "failed": 0,
+   "failed": 1,
    "merged": 0,
-   "examples": []
+   "examples": [
+    "23:9,21"
+   ]
   },
   "chinese1886": {
    "verses": 7935,
@@ -1387,15 +1451,19 @@
   },
   "chinese_cunpss": {
    "verses": 31021,
-   "failed": 0,
+   "failed": 1,
    "merged": 0,
-   "examples": []
+   "examples": [
+    "5:29,29"
+   ]
   },
   "chinese_cunpst": {
    "verses": 31021,
-   "failed": 0,
+   "failed": 1,
    "merged": 0,
-   "examples": []
+   "examples": [
+    "5:29,29"
+   ]
   },
   "chinese_nanking": {
    "verses": 7940,
@@ -1423,9 +1491,11 @@
   },
   "chinese_simplified": {
    "verses": 31021,
-   "failed": 0,
+   "failed": 1,
    "merged": 0,
-   "examples": []
+   "examples": [
+    "5:29,29"
+   ]
   },
   "chinese_simplified_new": {
    "verses": 31011,
@@ -1435,15 +1505,19 @@
   },
   "chinese_tcv2019t": {
    "verses": 30104,
-   "failed": 0,
+   "failed": 1,
    "merged": 0,
-   "examples": []
+   "examples": [
+    "5:29,29"
+   ]
   },
   "chinese_thv2012": {
    "verses": 30297,
-   "failed": 0,
+   "failed": 1,
    "merged": 0,
-   "examples": []
+   "examples": [
+    "5:29,29"
+   ]
   },
   "chinese_traditional": {
    "verses": 31101,
@@ -1465,15 +1539,19 @@
   },
   "chinese_ttvh": {
    "verses": 30773,
-   "failed": 0,
+   "failed": 1,
    "merged": 0,
-   "examples": []
+   "examples": [
+    "5:29,29"
+   ]
   },
   "chinese_ttvr": {
    "verses": 30771,
-   "failed": 0,
+   "failed": 1,
    "merged": 0,
-   "examples": []
+   "examples": [
+    "5:29,29"
+   ]
   },
   "chinese_union2010": {
    "verses": 31033,
@@ -1543,7 +1621,7 @@
   },
   "chuvash": {
    "verses": 31054,
-   "failed": 52,
+   "failed": 54,
    "merged": 0,
    "examples": [
     "19:106,1",
@@ -1819,9 +1897,11 @@
   },
   "dutch2007": {
    "verses": 29098,
-   "failed": 0,
+   "failed": 1,
    "merged": 0,
-   "examples": []
+   "examples": [
+    "14:14,15"
+   ]
   },
   "dutch_bb": {
    "verses": 31173,
@@ -1859,11 +1939,12 @@
   },
   "dutch_htb": {
    "verses": 28980,
-   "failed": 2,
+   "failed": 3,
    "merged": 0,
    "examples": [
     "16:1,1",
-    "16:1,2"
+    "16:1,2",
+    "14:14,15"
    ]
   },
   "dutch_nbg": {
@@ -1968,9 +2049,11 @@
   },
   "english_easy": {
    "verses": 30924,
-   "failed": 0,
+   "failed": 1,
    "merged": 0,
-   "examples": []
+   "examples": [
+    "5:29,29"
+   ]
   },
   "english_erv": {
    "verses": 31088,
@@ -2371,10 +2454,11 @@
   },
   "fulfulde_adamawa": {
    "verses": 30855,
-   "failed": 1,
+   "failed": 2,
    "merged": 0,
    "examples": [
-    "26:41,23"
+    "26:41,23",
+    "2:22,1"
    ]
   },
   "fulfulde_alkawal": {
@@ -2669,9 +2753,11 @@
   },
   "greek_tgv": {
    "verses": 28262,
-   "failed": 0,
+   "failed": 1,
    "merged": 0,
-   "examples": []
+   "examples": [
+    "2:22,1"
+   ]
   },
   "greek_thgnt": {
    "verses": 7929,
@@ -2719,9 +2805,15 @@
   },
   "guarani2001": {
    "verses": 30923,
-   "failed": 0,
+   "failed": 10,
    "merged": 0,
-   "examples": []
+   "examples": [
+    "13:6,67",
+    "13:6,68",
+    "13:6,70",
+    "13:6,71",
+    "13:6,72"
+   ]
   },
   "guarani2015": {
    "verses": 31088,
@@ -2755,9 +2847,11 @@
   },
   "gujarati2016": {
    "verses": 30183,
-   "failed": 0,
+   "failed": 1,
    "merged": 0,
-   "examples": []
+   "examples": [
+    "14:2,18"
+   ]
   },
   "gujarati2017": {
    "verses": 31104,
@@ -2791,9 +2885,11 @@
   },
   "hadiyya": {
    "verses": 30719,
-   "failed": 0,
+   "failed": 1,
    "merged": 0,
-   "examples": []
+   "examples": [
+    "5:29,29"
+   ]
   },
   "haitian": {
    "verses": 31059,
@@ -2929,9 +3025,11 @@
   },
   "hindi_erv": {
    "verses": 30751,
-   "failed": 0,
+   "failed": 1,
    "merged": 0,
-   "examples": []
+   "examples": [
+    "5:29,29"
+   ]
   },
   "hindi_fiji": {
    "verses": 7865,
@@ -3013,13 +3111,9 @@
   },
   "hungarian_efo": {
    "verses": 30344,
-   "failed": 3,
+   "failed": 0,
    "merged": 0,
-   "examples": [
-    "27:4,1",
-    "27:4,2",
-    "27:4,3"
-   ]
+   "examples": []
   },
   "hungarian_eiv": {
    "verses": 7957,
@@ -3029,13 +3123,9 @@
   },
   "hungarian_erv": {
    "verses": 30363,
-   "failed": 3,
+   "failed": 0,
    "merged": 0,
-   "examples": [
-    "27:4,1",
-    "27:4,2",
-    "27:4,3"
-   ]
+   "examples": []
   },
   "hungarian_karoli": {
    "verses": 31065,
@@ -3108,9 +3198,15 @@
   },
   "icelandic": {
    "verses": 31136,
-   "failed": 0,
+   "failed": 15,
    "merged": 0,
-   "examples": []
+   "examples": [
+    "13:6,1",
+    "13:6,2",
+    "13:6,3",
+    "13:6,4",
+    "13:6,5"
+   ]
   },
   "icelandic1981": {
    "verses": 31145,
@@ -3168,7 +3264,7 @@
   },
   "ilonggo_apd": {
    "verses": 30322,
-   "failed": 5,
+   "failed": 6,
    "merged": 0,
    "examples": [
     "26:21,1",
@@ -3417,10 +3513,14 @@
   },
   "japanese_jcb": {
    "verses": 27976,
-   "failed": 1,
+   "failed": 5,
    "merged": 0,
    "examples": [
-    "19:42,11"
+    "27:4,35",
+    "27:4,36",
+    "27:4,37",
+    "19:42,11",
+    "14:14,15"
    ]
   },
   "javanese": {
@@ -3545,9 +3645,11 @@
   },
   "kannada_kncl": {
    "verses": 30769,
-   "failed": 0,
+   "failed": 1,
    "merged": 0,
-   "examples": []
+   "examples": [
+    "23:9,21"
+   ]
   },
   "karakalpak2004": {
    "verses": 7898,
@@ -3653,9 +3755,15 @@
   },
   "kiche1995": {
    "verses": 30792,
-   "failed": 0,
+   "failed": 11,
    "merged": 0,
-   "examples": []
+   "examples": [
+    "23:9,21",
+    "13:6,67",
+    "13:6,68",
+    "13:6,70",
+    "13:6,71"
+   ]
   },
   "kiche2022": {
    "verses": 7957,
@@ -3805,12 +3913,9 @@
   },
   "korean_nkrv": {
    "verses": 31060,
-   "failed": 2,
+   "failed": 0,
    "merged": 0,
-   "examples": [
-    "27:4,1",
-    "27:4,2"
-   ]
+   "examples": []
   },
   "korean_nltnk": {
    "verses": 7955,
@@ -4213,9 +4318,11 @@
   },
   "luo1985": {
    "verses": 31098,
-   "failed": 0,
+   "failed": 1,
    "merged": 0,
-   "examples": []
+   "examples": [
+    "2:22,31"
+   ]
   },
   "luo2015": {
    "verses": 30899,
@@ -4321,9 +4428,11 @@
   },
   "madurese": {
    "verses": 29701,
-   "failed": 0,
+   "failed": 1,
    "merged": 0,
-   "examples": []
+   "examples": [
+    "14:14,15"
+   ]
   },
   "maithili": {
    "verses": 7925,
@@ -4399,9 +4508,11 @@
   },
   "malayalam": {
    "verses": 30964,
-   "failed": 0,
+   "failed": 1,
    "merged": 0,
-   "examples": []
+   "examples": [
+    "23:9,21"
+   ]
   },
   "malayalam1910": {
    "verses": 31098,
@@ -4423,15 +4534,19 @@
   },
   "malayalam_bsi": {
    "verses": 30622,
-   "failed": 0,
+   "failed": 1,
    "merged": 0,
-   "examples": []
+   "examples": [
+    "23:9,21"
+   ]
   },
   "malayalam_cv": {
    "verses": 30940,
-   "failed": 0,
+   "failed": 1,
    "merged": 0,
-   "examples": []
+   "examples": [
+    "23:9,21"
+   ]
   },
   "malayalam_malov": {
    "verses": 31098,
@@ -4483,15 +4598,20 @@
   },
   "marathi": {
    "verses": 30441,
-   "failed": 0,
+   "failed": 2,
    "merged": 0,
-   "examples": []
+   "examples": [
+    "24:9,26",
+    "23:9,21"
+   ]
   },
   "marathi2015": {
    "verses": 31046,
-   "failed": 0,
+   "failed": 1,
    "merged": 0,
-   "examples": []
+   "examples": [
+    "23:9,21"
+   ]
   },
   "marathi_bsi": {
    "verses": 7888,
@@ -4752,15 +4872,20 @@
   },
   "nepali": {
    "verses": 30548,
-   "failed": 0,
+   "failed": 2,
    "merged": 0,
-   "examples": []
+   "examples": [
+    "24:9,26",
+    "23:9,21"
+   ]
   },
   "nepali2008": {
    "verses": 30097,
-   "failed": 0,
+   "failed": 1,
    "merged": 0,
-   "examples": []
+   "examples": [
+    "5:29,29"
+   ]
   },
   "nepali2012": {
    "verses": 31103,
@@ -4914,9 +5039,11 @@
   },
   "odia_erv": {
    "verses": 30816,
-   "failed": 0,
+   "failed": 1,
    "merged": 0,
-   "examples": []
+   "examples": [
+    "5:29,29"
+   ]
   },
   "odia_irv": {
    "verses": 31104,
@@ -5052,7 +5179,7 @@
   },
   "papua_new_guinea_tok_pisin": {
    "verses": 30362,
-   "failed": 5,
+   "failed": 7,
    "merged": 0,
    "examples": [
     "26:21,1",
@@ -5088,9 +5215,12 @@
   },
   "persian2005": {
    "verses": 28428,
-   "failed": 0,
+   "failed": 2,
    "merged": 0,
-   "examples": []
+   "examples": [
+    "23:9,21",
+    "14:14,15"
+   ]
   },
   "persian2014": {
    "verses": 31103,
@@ -5106,9 +5236,11 @@
   },
   "persian_tpv": {
    "verses": 30270,
-   "failed": 0,
+   "failed": 1,
    "merged": 0,
-   "examples": []
+   "examples": [
+    "5:29,29"
+   ]
   },
   "pol_nbg": {
    "verses": 31162,
@@ -5274,11 +5406,12 @@
   },
   "portuguese_ol": {
    "verses": 30667,
-   "failed": 2,
+   "failed": 3,
    "merged": 0,
    "examples": [
     "19:58,10",
-    "19:58,11"
+    "19:58,11",
+    "5:29,29"
    ]
   },
   "portuguese_tb": {
@@ -5337,9 +5470,11 @@
   },
   "punjabi_erv": {
    "verses": 30729,
-   "failed": 0,
+   "failed": 1,
    "merged": 0,
-   "examples": []
+   "examples": [
+    "5:29,29"
+   ]
   },
   "punjabi_irv": {
    "verses": 31104,
@@ -5361,15 +5496,23 @@
   },
   "quechuan2010": {
    "verses": 30871,
-   "failed": 0,
+   "failed": 10,
    "merged": 0,
-   "examples": []
+   "examples": [
+    "13:6,67",
+    "13:6,68",
+    "13:6,70",
+    "13:6,71",
+    "13:6,72"
+   ]
   },
   "quechuan_qvbm": {
    "verses": 31045,
-   "failed": 0,
+   "failed": 1,
    "merged": 0,
-   "examples": []
+   "examples": [
+    "5:29,29"
+   ]
   },
   "quechuan_qvs": {
    "verses": 7883,
@@ -5385,9 +5528,11 @@
   },
   "quechuan_qxo": {
    "verses": 31047,
-   "failed": 0,
+   "failed": 1,
    "merged": 0,
-   "examples": []
+   "examples": [
+    "5:29,29"
+   ]
   },
   "romani": {
    "verses": 7931,
@@ -5469,10 +5614,12 @@
   },
   "romani_rom6": {
    "verses": 30589,
-   "failed": 1,
+   "failed": 3,
    "merged": 0,
    "examples": [
-    "26:41,23"
+    "26:41,23",
+    "23:9,1",
+    "5:29,1"
    ]
   },
   "romani_ser": {
@@ -5483,10 +5630,12 @@
   },
   "romani_sint2024": {
    "verses": 30595,
-   "failed": 1,
+   "failed": 3,
    "merged": 0,
    "examples": [
-    "26:41,23"
+    "26:41,23",
+    "23:9,1",
+    "5:29,1"
    ]
   },
   "romanian": {
@@ -5641,7 +5790,7 @@
   },
   "russian_rsp": {
    "verses": 30842,
-   "failed": 8,
+   "failed": 9,
    "merged": 0,
    "examples": [
     "19:82,1",
@@ -5729,10 +5878,12 @@
   },
   "santali_bangladesh": {
    "verses": 30292,
-   "failed": 1,
+   "failed": 3,
    "merged": 0,
    "examples": [
-    "4:2,2"
+    "4:2,2",
+    "5:29,29",
+    "14:2,18"
    ]
   },
   "santali_common": {
@@ -5893,9 +6044,11 @@
   },
   "sidamo": {
    "verses": 30335,
-   "failed": 0,
+   "failed": 1,
    "merged": 0,
-   "examples": []
+   "examples": [
+    "21:5,20"
+   ]
   },
   "sindhi": {
    "verses": 31103,
@@ -5917,9 +6070,12 @@
   },
   "sindhi_muslim": {
    "verses": 30573,
-   "failed": 0,
+   "failed": 2,
    "merged": 0,
-   "examples": []
+   "examples": [
+    "33:5,15",
+    "5:29,29"
+   ]
   },
   "sinhala_nrsv": {
    "verses": 31102,
@@ -6222,9 +6378,12 @@
   },
   "spanish_nbv": {
    "verses": 29035,
-   "failed": 0,
+   "failed": 2,
    "merged": 0,
-   "examples": []
+   "examples": [
+    "5:29,29",
+    "14:14,15"
+   ]
   },
   "spanish_ntbiz": {
    "verses": 7952,
@@ -6306,9 +6465,13 @@
   },
   "spanish_tla": {
    "verses": 26541,
-   "failed": 0,
+   "failed": 3,
    "merged": 0,
-   "examples": []
+   "examples": [
+    "2:8,29",
+    "2:8,30",
+    "2:8,32"
+   ]
   },
   "spanish_vbl": {
    "verses": 7950,
@@ -6552,7 +6715,7 @@
   },
   "tagalog2015": {
    "verses": 30155,
-   "failed": 5,
+   "failed": 6,
    "merged": 0,
    "examples": [
     "26:21,1",
@@ -6636,9 +6799,11 @@
   },
   "tamil_wbtc": {
    "verses": 30728,
-   "failed": 0,
+   "failed": 1,
    "merged": 0,
-   "examples": []
+   "examples": [
+    "5:29,29"
+   ]
   },
   "tanach": {
    "verses": 23192,
@@ -6690,9 +6855,11 @@
   },
   "te_irv": {
    "verses": 31004,
-   "failed": 0,
+   "failed": 1,
    "merged": 0,
-   "examples": []
+   "examples": [
+    "23:9,21"
+   ]
   },
   "telugu": {
    "verses": 31100,
@@ -6702,9 +6869,13 @@
   },
   "telugu2016": {
    "verses": 30316,
-   "failed": 0,
+   "failed": 3,
    "merged": 0,
-   "examples": []
+   "examples": [
+    "27:4,35",
+    "27:4,36",
+    "27:4,37"
+   ]
   },
   "telugu2019": {
    "verses": 7875,
@@ -6720,9 +6891,12 @@
   },
   "telugu_wbtc": {
    "verses": 30736,
-   "failed": 0,
+   "failed": 2,
    "merged": 0,
-   "examples": []
+   "examples": [
+    "2:22,31",
+    "5:29,29"
+   ]
   },
   "teso": {
    "verses": 31103,
@@ -6768,9 +6942,11 @@
   },
   "thai_erv": {
    "verses": 30944,
-   "failed": 0,
+   "failed": 1,
    "merged": 0,
-   "examples": []
+   "examples": [
+    "5:29,29"
+   ]
   },
   "thai_kjv": {
    "verses": 31102,
@@ -6852,9 +7028,11 @@
   },
   "tshivenda": {
    "verses": 30688,
-   "failed": 0,
+   "failed": 1,
    "merged": 0,
-   "examples": []
+   "examples": [
+    "5:29,29"
+   ]
   },
   "tsonga": {
    "verses": 31110,
@@ -6924,9 +7102,12 @@
   },
   "turkish": {
    "verses": 30182,
-   "failed": 0,
+   "failed": 2,
    "merged": 0,
-   "examples": []
+   "examples": [
+    "21:5,20",
+    "23:9,21"
+   ]
   },
   "turkish2018": {
    "verses": 31087,
@@ -6946,9 +7127,12 @@
   },
   "turkish_kkdeu": {
    "verses": 30697,
-   "failed": 0,
+   "failed": 2,
    "merged": 0,
-   "examples": []
+   "examples": [
+    "21:5,20",
+    "23:9,21"
+   ]
   },
   "turkish_kmeya": {
    "verses": 31087,
@@ -6964,9 +7148,12 @@
   },
   "turkish_tkk": {
    "verses": 30209,
-   "failed": 0,
+   "failed": 2,
    "merged": 0,
-   "examples": []
+   "examples": [
+    "21:5,20",
+    "23:9,21"
+   ]
   },
   "turkish_ttt": {
    "verses": 7896,
@@ -6982,7 +7169,7 @@
   },
   "turkmen2016": {
    "verses": 30540,
-   "failed": 61,
+   "failed": 63,
    "merged": 0,
    "examples": [
     "19:51,10",
@@ -7006,7 +7193,7 @@
   },
   "turkmen_latin2017": {
    "verses": 30537,
-   "failed": 61,
+   "failed": 63,
    "merged": 0,
    "examples": [
     "19:51,10",
@@ -7054,10 +7241,11 @@
   },
   "ug_ara": {
    "verses": 30824,
-   "failed": 1,
+   "failed": 2,
    "merged": 0,
    "examples": [
-    "11:22,43"
+    "11:22,43",
+    "14:2,18"
    ]
   },
   "ukrainian": {
@@ -7146,9 +7334,11 @@
   },
   "ur_geo": {
    "verses": 30668,
-   "failed": 0,
+   "failed": 1,
    "merged": 0,
-   "examples": []
+   "examples": [
+    "5:29,29"
+   ]
   },
   "urdu": {
    "verses": 7862,
@@ -7164,15 +7354,19 @@
   },
   "urdu_dgv": {
    "verses": 30645,
-   "failed": 0,
+   "failed": 1,
    "merged": 0,
-   "examples": []
+   "examples": [
+    "5:29,29"
+   ]
   },
   "urdu_gvr": {
    "verses": 30645,
-   "failed": 0,
+   "failed": 1,
    "merged": 0,
-   "examples": []
+   "examples": [
+    "5:29,29"
+   ]
   },
   "urdu_irvurd": {
    "verses": 31103,
@@ -7206,9 +7400,11 @@
   },
   "urdu_urdgvh": {
    "verses": 30645,
-   "failed": 0,
+   "failed": 1,
    "merged": 0,
-   "examples": []
+   "examples": [
+    "5:29,29"
+   ]
   },
   "urdu_urdr55": {
    "verses": 31102,
