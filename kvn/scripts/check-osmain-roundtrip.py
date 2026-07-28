@@ -76,6 +76,10 @@ for f in sorted(os.listdir(M)):
         k = to_kvn(t)
         back = to_tkvn(k)
         if back == t: continue
+        # delvers: verset er flettet av flere osmain-vers og modellert med
+        # part paa tkvn-siden (Apg 19,40a/b). Rundturen lander paa 19,40a,
+        # altsaa samme vers — det er en treffende rundtur, ikke en feil.
+        if back - back % PART == t: continue
         # flettet: flere osmain-vers peker hit -> reversen velger ett
         if sum(1 for kk, tt in fwd.items() if tt == t) > 1: merged += 1; continue
         bad.append((b, c, v))

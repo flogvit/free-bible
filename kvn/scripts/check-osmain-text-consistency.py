@@ -20,7 +20,7 @@ bare grove avvik (helt annet innhold) skal slå ut.
 Bruk: python3 scripts/check-osmain-text-consistency.py [--ref NAVN]
 Skriver kvn/data/osmain-text-inconsistencies.json
 """
-import json, os, sys, collections
+import json, os, re, sys, collections
 from difflib import SequenceMatcher
 
 REPO = os.path.join(os.path.dirname(__file__), '..', '..')
@@ -41,8 +41,23 @@ def chapter(mod, b, c):
     try: return {x['verseId']: x['text'] for x in json.load(open(p))}
     except Exception: return {}
 
+def tokens(t):
+    """Tall og egennavn — de overlever ulik ordlyd mellom oversettelser."""
+    out = set(re.findall(r'\d+', t))
+    for w in re.findall(r'\b[A-ZÆØÅ][a-zæøå]{2,}', t)[1:]:   # hopp over ordet som starter verset
+        out.add(w.lower())
+    return out
+
 def sim(a, b):
-    return SequenceMatcher(None, ' '.join(a.split())[:200], ' '.join(b.split())[:200]).ratio()
+    """Kombinerer tegnlikhet med overlapp av tall/egennavn. To uavhengige
+    norske oversettelser av SAMME vers deler navn og tall selv om ordlyden
+    er ulik; to ULIKE vers gjør det sjelden."""
+    ch = SequenceMatcher(None, ' '.join(a.split())[:200], ' '.join(b.split())[:200]).ratio()
+    ta, tb = tokens(a), tokens(b)
+    if ta or tb:
+        jac = len(ta & tb) / max(1, len(ta | tb))
+        return max(ch, jac)
+    return ch
 
 mappers = {}
 for r in REFS:
