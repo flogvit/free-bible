@@ -7,7 +7,9 @@ dotenv.config()
 import Anthropic from '@anthropic-ai/sdk';
 import {bibles, books, anthropicModel, maxTokens, getBibleStyle} from "./constants.js";
 
-const anthropic = new Anthropic();
+// SDK-en prøver selv på nytt ved 429/5xx; hev taket, siden lange kjøringer treffer
+// overbelastning som varer lenger enn standardens to forsøk.
+const anthropic = new Anthropic({maxRetries: 5});
 
 const MAX_VERSES_PER_BATCH = 100;
 // En foreslått tekst som er mye kortere enn den den erstatter har som regel mistet
@@ -217,7 +219,22 @@ Score the chapter from 0 to 10, where 10 means the translation is faithful and r
 If there are no issues (or all issues are in well-reviewed verses), return an empty issues array.`;
 };
 
-const MAX_RETRIES = 3;
+const MAX_RETRIES = 8;
+
+// Overbelastning og rate limit er forbigående og varer typisk lenger enn sekunder.
+// Faste ett-sekunds pauser brant opp forsøkene før tjenesten rakk å komme tilbake.
+function isTransient(error) {
+    const type = error?.error?.error?.type || error?.error?.type || '';
+    return ['overloaded_error', 'rate_limit_error', 'api_error'].includes(type)
+        || [429, 500, 502, 503, 529].includes(error?.status)
+        || /overloaded|rate.?limit|timeout|ECONNRESET|socket hang up/i.test(error?.message || '');
+}
+
+function backoffMs(attempt, transient) {
+    if (!transient) return 1000;
+    const base = Math.min(60000, 2000 * 2 ** (attempt - 1));   // 2s, 4s, 8s … taket 60s
+    return Math.round(base * (0.5 + Math.random()));            // jitter, så parallelle kjøringer ikke synkroniserer
+}
 
 // Akkumulert tokenforbruk for hele kjøringen, skrives ut til slutt.
 const usageTotals = {input: 0, output: 0, calls: 0};
@@ -265,6 +282,32 @@ function extractText(completion) {
 function isEnglishLanguage(language) {
     const lower = language.toLowerCase();
     return lower === 'english' || lower === 'en';
+}
+
+// Verse text can carry footnote definitions at the end ("... [^fn]\n\n[^fn]: ...").
+// Length comparisons must ignore that block, or every correction to a footnoted
+// verse looks like a truncation. Application must keep the block when the
+// suggestion drops it - otherwise an accepted fix would silently delete footnotes.
+function splitFootnoteDefs(text) {
+    const m = (text || '').match(/\n\n\[\^[^\]]+\]:[\s\S]*$/);
+    if (!m) return {body: text || '', defs: ''};
+    return {body: text.slice(0, m.index), defs: text.slice(m.index)};
+}
+
+const FOOTNOTE_MARKER = /\[\^[^\]]+\]/;
+
+// Evaluates a suggested replacement for a verse text:
+// - ratio compares only the visible body (footnote defs excluded on both sides)
+// - newText re-attaches the original footnote block if the suggestion dropped it
+// - dropsMarker is true when the suggestion lost an inline [^fn] marker, which
+//   would orphan the definitions - such suggestions must be rejected
+function evaluateSuggestion(currentText, suggestedText) {
+    const current = splitFootnoteDefs(currentText);
+    const suggested = splitFootnoteDefs(suggestedText);
+    const ratio = current.body.length ? suggested.body.length / current.body.length : 1;
+    const dropsMarker = FOOTNOTE_MARKER.test(current.body) && !FOOTNOTE_MARKER.test(suggested.body);
+    const newText = suggested.defs ? suggestedText : suggested.body + current.defs;
+    return {ratio, newText, dropsMarker};
 }
 
 const HALLUCINATION_PATTERNS = [
@@ -347,8 +390,11 @@ async function doAnthropicCallWithRetry(content, schema, context = '', validate 
         } catch (error) {
             lastError = error;
             if (attempt < MAX_RETRIES) {
-                console.log(`  Attempt ${attempt} failed (${error.message}), retrying...`);
-                await new Promise(resolve => setTimeout(resolve, 1000));
+                const transient = isTransient(error);
+                const wait = backoffMs(attempt, transient);
+                const reason = (error.message || '').slice(0, 90);
+                console.log(`  Attempt ${attempt}/${MAX_RETRIES} failed (${reason}) — waiting ${Math.round(wait / 1000)}s`);
+                await new Promise(resolve => setTimeout(resolve, wait));
             }
         }
     }
@@ -745,12 +791,14 @@ async function proofreadChapterPerVerse(bible, bookId, chapterId, style, filenam
                 });
                 if (result.score !== null && result.score !== undefined) verseScore = result.score;
 
-                const suggestedRatio = result.issue?.suggested && verse.text.length
-                    ? result.issue.suggested.length / verse.text.length
-                    : 1;
-                if (result.issue?.suggested && suggestedRatio < MIN_LENGTH_RATIO) {
-                    console.warn(`\n  Verse ${verse.verseId}: rejected suggestion at ${Math.round(suggestedRatio * 100)}% of current length — likely truncated`);
-                } else if (result.issue && result.issue.suggested && result.issue.suggested !== verse.text) {
+                const evaluated = result.issue?.suggested
+                    ? evaluateSuggestion(verse.text, result.issue.suggested)
+                    : {ratio: 1, newText: verse.text, dropsMarker: false};
+                if (result.issue?.suggested && evaluated.ratio < MIN_LENGTH_RATIO) {
+                    console.warn(`\n  Verse ${verse.verseId}: rejected suggestion at ${Math.round(evaluated.ratio * 100)}% of current body length (footnotes excluded) — likely truncated`);
+                } else if (result.issue?.suggested && evaluated.dropsMarker) {
+                    console.warn(`\n  Verse ${verse.verseId}: rejected suggestion — dropped inline footnote marker`);
+                } else if (result.issue && result.issue.suggested && evaluated.newText !== verse.text) {
                     if (!verse.versions) verse.versions = [];
                     verse.versions.push({
                         text: verse.text,
@@ -761,7 +809,7 @@ async function proofreadChapterPerVerse(bible, bookId, chapterId, style, filenam
                         // korrekturen svinger tilbake — men bare alternativene vises for leseren.
                         alternative: result.issue.previousWasDefensible === true
                     });
-                    verse.text = result.issue.suggested;
+                    verse.text = evaluated.newText;
                     appliedCount++;
                     allIssues.push({ verseId: verse.verseId, ...result.issue });
                 }
@@ -1032,10 +1080,18 @@ function applyProofreadChanges(bible, bookId, chapterId, filename, proofreadResu
                 continue;
             }
 
-            const ratio = verse.text.length ? issue.suggested.length / verse.text.length : 1;
+            const {ratio, newText, dropsMarker} = evaluateSuggestion(verse.text, issue.suggested);
             if (ratio < MIN_LENGTH_RATIO) {
-                console.log(`  REJECTED: Verse ${issue.verseId} — suggestion is ${Math.round(ratio * 100)}% of the current length (${verse.text.length} → ${issue.suggested.length} chars); likely a truncated verse, not a correction`);
+                console.log(`  REJECTED: Verse ${issue.verseId} — suggestion body is ${Math.round(ratio * 100)}% of the current body length (footnotes excluded); likely a truncated verse, not a correction`);
                 rejected++;
+                continue;
+            }
+            if (dropsMarker) {
+                console.log(`  REJECTED: Verse ${issue.verseId} — suggestion dropped the inline footnote marker; applying it would orphan the footnote`);
+                rejected++;
+                continue;
+            }
+            if (newText === verse.text) {
                 continue;
             }
 
@@ -1056,7 +1112,7 @@ function applyProofreadChanges(bible, bookId, chapterId, filename, proofreadResu
                 alternative: issue.previousWasDefensible === true && ratio < (1 / MIN_LENGTH_RATIO)
             });
 
-            verse.text = issue.suggested;
+            verse.text = newText;
             appliedCount++;
 
             console.log(`  Applied: Verse ${issue.verseId} [${issue.type}/${issue.severity}]`);
@@ -1098,6 +1154,42 @@ function applyProofreadChanges(bible, bookId, chapterId, filename, proofreadResu
 }
 
 /**
+ * Per-chapter proofread state: the score it reached, how many rounds it took, and
+ * whether it converged or simply ran out of rounds. Nothing recorded this before, so a
+ * run with --max-iter 2 could leave chapters below the threshold with no trace of which.
+ *
+ * The signature is verse count + total text length, so any later change to the chapter
+ * invalidates the record and it gets looked at again.
+ */
+function stateFile(bible) {
+    return `proofread/${bible}/state.json`;
+}
+
+function readState(bible) {
+    const f = stateFile(bible);
+    if (!fs.existsSync(f)) return {};
+    try {
+        return JSON.parse(fs.readFileSync(f, 'utf-8'));
+    } catch {
+        return {};
+    }
+}
+
+function chapterSignature(filename) {
+    if (!fs.existsSync(filename)) return null;
+    const verses = JSON.parse(fs.readFileSync(filename, 'utf-8'));
+    return `${verses.length}:${verses.reduce((n, v) => n + (v.text || '').length, 0)}`;
+}
+
+function writeState(bible, key, record) {
+    const f = stateFile(bible);
+    fs.mkdirSync(path.dirname(f), {recursive: true});
+    const state = readState(bible);
+    state[key] = record;
+    fs.writeFileSync(f, JSON.stringify(state, null, 2));
+}
+
+/**
  * Batch proofread with a feedback loop — the method behind osnb.
  *
  * proofreadChapter sends the chapter in a few large batches and gets back only the
@@ -1105,7 +1197,18 @@ function applyProofreadChanges(bible, bookId, chapterId, filename, proofreadResu
  * versions[]. Repeat until the chapter scores at least minScore or the rounds run out.
  * Keeping versions[] is what stops a later round swinging the text back again.
  */
-async function proofreadChapterBatched(bible, bookId, chapterId, style, filename, {minScore = 8, maxIterations = 3, textOnly = false, changedTypes = null, checkLength = null} = {}) {
+async function proofreadChapterBatched(bible, bookId, chapterId, style, filename, {minScore = 8, maxIterations = 3, textOnly = false, changedTypes = null, checkLength = null, force = false} = {}) {
+    const key = `${bookId}:${chapterId}`;
+    const signature = chapterSignature(filename);
+
+    // Et kapittel som allerede har nådd terskelen og er uendret siden, skal ikke kjøres
+    // om igjen. Det er dette som gjør en full gjenkjøring billig etter første pass.
+    if (!force && !changedTypes && !checkLength) {
+        const prior = readState(bible)[key];
+        if (prior?.signature === signature && prior.converged && prior.score >= minScore) return null;
+    }
+
+    let last = null;
     for (let round = 1; round <= maxIterations; round++) {
         const result = await proofreadChapter(bible, bookId, chapterId, style, filename, false, textOnly, changedTypes, checkLength);
         if (!result) return null;
@@ -1132,10 +1235,23 @@ async function proofreadChapterBatched(bible, bookId, chapterId, style, filename
 
         console.log(`  ${chapterLabel(bookId, chapterId)} round ${round}: score ${result.score ?? '?'}/10, ${changes} changes [${formatUsage()}]`);
 
-        if (!changes) return result;                       // nothing left to fix
-        if (result.score !== null && result.score >= minScore) return result;
+        last = result;
+        const converged = !changes || (result.score !== null && result.score >= minScore);
+        if (converged || round === maxIterations) {
+            writeState(bible, key, {
+                score: result.score,
+                rounds: round,
+                converged,
+                signature: chapterSignature(filename),
+                at: new Date().toISOString()
+            });
+            if (!converged) {
+                console.log(`  ${chapterLabel(bookId, chapterId)}: ran out of rounds at score ${result.score}/10 — not converged`);
+            }
+            return converged ? result : null;
+        }
     }
-    return null;
+    return last;
 }
 
 function printUsage() {
@@ -1318,6 +1434,8 @@ async function main() {
     }
     console.log('---');
 
+    const failed = [];
+
     for (let bookId = startBook; bookId <= endBook; bookId++) {
         const book = books.find(b => b.id === bookId);
         if (!book) continue;
@@ -1340,6 +1458,7 @@ async function main() {
                 await translateChapter(options.bible, bookId, chapterId, options.style, existingVerses, filename);
             }
 
+            try {
             if (options.proofread && options.batch) {
                 // Batch mode: the whole chapter goes in a few calls, and only the issues
                 // come back — not a verdict per verse. This is the method that produced
@@ -1350,7 +1469,8 @@ async function main() {
                     maxIterations: options.maxIterations || 3,
                     textOnly: options.textOnly,
                     changedTypes: options.changedTypes,
-                    checkLength: options.checkLength
+                    checkLength: options.checkLength,
+                    force: options.force
                 });
             } else if (options.proofread) {
                 // Per-verse mode: proofread each verse individually with neighbor context
@@ -1364,10 +1484,24 @@ async function main() {
                     verseEnd: options.verseEnd
                 });
             }
+            } catch (error) {
+                // En kjøring over mange kapitler skal ikke gå tapt fordi ett kapittel feilet.
+                // Alt som er skrevet så langt ligger på disk, og --skip-existing eller
+                // merkene i versdataene gjør at en ny kjøring tar igjen det som mangler.
+                failed.push(`${chapterLabel(bookId, chapterId)}`);
+                console.error(`\n${chapterLabel(bookId, chapterId)} FAILED: ${(error.message || error).toString().slice(0, 160)}`);
+                console.error(`  continuing with the next chapter — re-run to pick this one up\n`);
+            }
         }
     }
 
     console.log(`Done! Usage: ${formatUsage()}`);
+    if (failed.length) {
+        console.log(`\n${failed.length} chapter(s) failed and were skipped:`);
+        for (const f of failed) console.log(`  ${f}`);
+        console.log(`Re-run the same command to pick them up.`);
+        process.exitCode = 1;
+    }
 }
 
 main().catch(console.error);

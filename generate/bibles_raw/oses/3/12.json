@@ -1,0 +1,74 @@
+[
+  {
+    "bookId": 3,
+    "chapterId": 12,
+    "verseId": 1,
+    "text": "El Señor habló a Moisés y le dijo:"
+  },
+  {
+    "bookId": 3,
+    "chapterId": 12,
+    "verseId": 2,
+    "text": "«Habla a los israelitas y diles: Cuando una mujer conciba y dé a luz un hijo varón, quedará impura durante siete días, como en los días de su menstruación."
+  },
+  {
+    "bookId": 3,
+    "chapterId": 12,
+    "verseId": 3,
+    "text": "Al octavo día se circuncidará la carne del prepucio del niño.",
+    "versions": [
+      {
+        "text": "Al octavo día se circuncidará al niño.",
+        "type": "error",
+        "severity": "major",
+        "explanation": "El hebreo dice explícitamente «se circuncidará la carne de su prepucio» (בְּשַׂר עָרְלָתוֹ). La traducción actual omite esa precisión, que es parte del mandato legal y aparece igual en otros pasajes de la Ley. Conviene restituir el contenido sin perder fluidez oral.",
+        "alternative": false
+      }
+    ],
+    "checked": {
+      "changed": "1:61"
+    }
+  },
+  {
+    "bookId": 3,
+    "chapterId": 12,
+    "verseId": 4,
+    "text": "Luego ella permanecerá treinta y tres días más purificándose de su sangre; no tocará nada sagrado ni entrará en el santuario hasta que se cumplan los días de su purificación."
+  },
+  {
+    "bookId": 3,
+    "chapterId": 12,
+    "verseId": 5,
+    "text": "Si da a luz una hija, quedará impura dos semanas, como en su menstruación, y permanecerá sesenta y seis días purificándose de su sangre."
+  },
+  {
+    "bookId": 3,
+    "chapterId": 12,
+    "verseId": 6,
+    "text": "Cuando se cumplan los días de su purificación, ya sea por un hijo o por una hija, llevará al sacerdote, a la entrada de la Tienda del Encuentro, un cordero de un año para el holocausto y un pichón de paloma o una tórtola para el sacrificio por el pecado."
+  },
+  {
+    "bookId": 3,
+    "chapterId": 12,
+    "verseId": 7,
+    "text": "El sacerdote lo ofrecerá ante el Señor y hará expiación por ella, y quedará purificada de su flujo de sangre. Esta es la ley para la mujer que da a luz, sea varón o hembra.",
+    "versions": [
+      {
+        "text": "El sacerdote los ofrecerá ante el Señor y hará expiación por ella, y quedará purificada de su flujo de sangre. Esta es la ley para la mujer que da a luz, sea varón o hembra.",
+        "type": "grammar",
+        "severity": "minor",
+        "explanation": "El sufijo pronominal hebreo es singular («lo ofrecerá»), refiriéndose a la ofrenda presentada. El plural es comprensible porque en el v. 6 se mencionan dos animales, pero el singular refleja mejor el texto.",
+        "alternative": true
+      }
+    ],
+    "checked": {
+      "changed": "1:172"
+    }
+  },
+  {
+    "bookId": 3,
+    "chapterId": 12,
+    "verseId": 8,
+    "text": "Y si no tiene recursos para un cordero, tomará dos tórtolas o dos pichones de paloma: uno para el holocausto y otro para el sacrificio por el pecado. El sacerdote hará expiación por ella, y quedará purificada»."
+  }
+]

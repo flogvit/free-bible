@@ -1,0 +1,80 @@
+[
+  {
+    "bookId": 19,
+    "chapterId": 93,
+    "verseId": 1,
+    "text": "El Señor reina, se ha vestido de majestad; el Señor se ha vestido y ceñido de poder. Ciertamente el mundo está firme, no será conmovido.",
+    "versions": [
+      {
+        "text": "El Señor reina, se ha vestido de majestad; el Señor se ha vestido y ceñido de poder. Por eso el mundo está firme, no será sacudido.",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "La partícula אַף es enfática (\"ciertamente, en verdad\"), no causal; \"por eso\" introduce una relación de causa que el hebreo no explicita. Además, \"conmovido\" recoge mejor el sentido de תִּמּוֹט (tambalearse, moverse de su lugar) que \"sacudido\".",
+        "alternative": true
+      }
+    ]
+  },
+  {
+    "bookId": 19,
+    "chapterId": 93,
+    "verseId": 2,
+    "text": "Firme está tu trono desde antiguo; tú existes desde la eternidad.",
+    "versions": [
+      {
+        "text": "Firme está tu trono desde siempre; tú eres desde la eternidad.",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "מֵאָז significa \"desde antaño, desde tiempo antiguo\"; traducirlo \"desde siempre\" lo iguala a מֵעוֹלָם del segundo hemistiquio y borra la progresión del paralelismo. \"Tú existes\" también suena más natural al oído que \"tú eres desde la eternidad\", que queda suspendido.",
+        "alternative": true
+      }
+    ]
+  },
+  {
+    "bookId": 19,
+    "chapterId": 93,
+    "verseId": 3,
+    "text": "Alzan los ríos, Señor, alzan los ríos su voz; alzarán los ríos su estruendo.",
+    "versions": [
+      {
+        "text": "Alzan los ríos, Señor, alzan los ríos su voz; alzan los ríos su estruendo.",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "El hebreo cambia de perfecto (נָשְׂאוּ, dos veces) a imperfecto (יִשְׂאוּ) en el tercer verso, creando una progresión que el texto actual aplana con tres presentes idénticos. El futuro en la última línea conserva el clímax rítmico del original.",
+        "alternative": true
+      }
+    ]
+  },
+  {
+    "bookId": 19,
+    "chapterId": 93,
+    "verseId": 4,
+    "text": "Más que el fragor de aguas caudalosas, más que las poderosas olas del mar, poderoso es el Señor en las alturas.",
+    "versions": [
+      {
+        "text": "Más que el fragor de aguas caudalosas, más potente que las olas del mar, es el poder del Señor en las alturas.",
+        "type": "error",
+        "severity": "major",
+        "explanation": "El hebreo declara que el Señor mismo es poderoso (אַדִּיר בַּמָּרוֹם יְהוָה), no que \"su poder\" esté en las alturas; el sujeto de la comparación es la persona del Señor, y sustituirlo por un atributo debilita la afirmación. Además, אַדִּירִים califica a las olas (\"poderosas olas\"), término que conviene mantener para reflejar el eco con אַדִּיר aplicado al Señor.",
+        "alternative": false
+      }
+    ],
+    "checked": {
+      "changed": "1:111"
+    }
+  },
+  {
+    "bookId": 19,
+    "chapterId": 93,
+    "verseId": 5,
+    "text": "Tus testimonios son del todo fieles; la santidad conviene a tu casa, Señor, por todos los días.",
+    "versions": [
+      {
+        "text": "Tus testimonios son del todo fieles; la santidad es el adorno de tu casa, Señor, por siempre.",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "נַאֲוָה expresa lo que es propio o adecuado (\"conviene a\"), no un ornamento añadido; \"adorno\" desplaza el sentido hacia lo decorativo. Asimismo, לְאֹרֶךְ יָמִים es literalmente \"por largura de días\", que \"por todos los días\" recoge con más fidelidad que \"por siempre\".",
+        "alternative": true
+      }
+    ]
+  }
+]

@@ -1,0 +1,59 @@
+[
+  {
+    "bookId": 18,
+    "chapterId": 25,
+    "verseId": 1,
+    "text": "Entonces Bildad el suhita respondió:"
+  },
+  {
+    "bookId": 18,
+    "chapterId": 25,
+    "verseId": 2,
+    "text": "«Suyos son el dominio y el temor; él impone la paz en sus alturas."
+  },
+  {
+    "bookId": 18,
+    "chapterId": 25,
+    "verseId": 3,
+    "text": "¿Acaso pueden contarse sus ejércitos? ¿Y sobre quién no se levanta su luz?"
+  },
+  {
+    "bookId": 18,
+    "chapterId": 25,
+    "verseId": 4,
+    "text": "¿Cómo, entonces, podrá el hombre ser justo ante Dios? ¿Cómo será puro el nacido de mujer?"
+  },
+  {
+    "bookId": 18,
+    "chapterId": 25,
+    "verseId": 5,
+    "text": "Si ni siquiera la luna brilla con pureza, ni las estrellas son limpias a sus ojos,",
+    "versions": [
+      {
+        "text": "Si ni la luna resplandece a sus ojos, ni las estrellas son limpias delante de él,",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "En el hebreo «a sus ojos» (בְעֵינָיו) pertenece al segundo miembro (las estrellas), mientras que del primero solo se dice que la luna «no brilla». La versión actual traslada la expresión al primer verso y la sustituye por «delante de él» en el segundo, invirtiendo el paralelismo.",
+        "alternative": true
+      }
+    ]
+  },
+  {
+    "bookId": 18,
+    "chapterId": 25,
+    "verseId": 6,
+    "text": "¡cuánto menos el hombre, que es larva, y el hijo del hombre, que no es más que un gusano!»",
+    "versions": [
+      {
+        "text": "¡cuánto menos el hombre, que es gusano, y el hijo de Adán, que no es más que un vil insecto!»",
+        "type": "error",
+        "severity": "major",
+        "explanation": "תּוֹלֵעָה significa «gusano», no «insecto»; además se añade el calificativo «vil», que no está en el hebreo. Conviene reservar «gusano» para תולעה y usar «larva» para רמה (gusano de podredumbre). Asimismo, בֶּן־אָדָם es la expresión hebrea corriente para «el hijo del hombre»/«el mortal»; «hijo de Adán» sugiere una referencia genealógica ausente del texto.",
+        "alternative": false
+      }
+    ],
+    "checked": {
+      "changed": "1:90"
+    }
+  }
+]

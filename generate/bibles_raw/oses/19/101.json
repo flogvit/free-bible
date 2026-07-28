@@ -1,0 +1,101 @@
+[
+  {
+    "bookId": 19,
+    "chapterId": 101,
+    "verseId": 1,
+    "text": "Salmo de David. Cantaré el amor y la justicia; a ti, Señor, entonaré alabanzas.",
+    "versions": [
+      {
+        "text": "Salmo de David. Cantaré al amor y a la justicia; a ti, Señor, entonaré mi música.",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "El hebreo dice «cantaré (acerca de) el amor y la justicia»: el objeto del canto son esas cualidades, no el destinatario. «Cantaré al amor» sugiere que se canta *a* ellos. Además, «entonaré mi música» resulta plano; «entonaré alabanzas» refleja mejor el verbo זמר y fluye mejor al leerse en voz alta.",
+        "alternative": true
+      }
+    ]
+  },
+  {
+    "bookId": 19,
+    "chapterId": 101,
+    "verseId": 2,
+    "text": "Quiero andar con prudencia por el camino de la integridad. ¿Cuándo vendrás a mí? Caminaré con corazón íntegro dentro de mi casa."
+  },
+  {
+    "bookId": 19,
+    "chapterId": 101,
+    "verseId": 3,
+    "text": "No pondré ante mis ojos ninguna cosa perversa. Detesto la conducta torcida; no se aferrará a mí."
+  },
+  {
+    "bookId": 19,
+    "chapterId": 101,
+    "verseId": 4,
+    "text": "El corazón perverso se apartará de mí; del mal no quiero saber nada.",
+    "versions": [
+      {
+        "text": "Lejos de mí el corazón retorcido; no quiero saber nada del mal.",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "El hebreo emplea un verbo finito (יָסוּר, «se apartará»), afirmación que la versión actual convierte en una exclamación nominal. Recuperar el verbo mantiene el tono declarativo del salmo y el paralelismo con los demás compromisos del rey; además, «del mal no quiero saber nada» cierra el verso con mejor cadencia oral.",
+        "alternative": true
+      }
+    ]
+  },
+  {
+    "bookId": 19,
+    "chapterId": 101,
+    "verseId": 5,
+    "text": "Al que calumnia en secreto a su prójimo, lo destruiré; al de mirada altiva y corazón soberbio, no lo soportaré.",
+    "versions": [
+      {
+        "text": "Al que calumnia en secreto a su prójimo, lo haré callar; al de mirada altiva y corazón soberbio, no lo soportaré.",
+        "type": "error",
+        "severity": "major",
+        "explanation": "El verbo אַצְמִית significa «exterminar, destruir, acabar con», no simplemente «hacer callar». La versión actual suaviza notablemente la fuerza del texto y rompe el paralelo con el mismo verbo en el v. 8.",
+        "alternative": true
+      }
+    ],
+    "checked": {
+      "changed": "1:111"
+    }
+  },
+  {
+    "bookId": 19,
+    "chapterId": 101,
+    "verseId": 6,
+    "text": "Mis ojos están puestos en los fieles de la tierra, para que habiten conmigo; el que anda por el camino de la integridad, ese me servirá.",
+    "versions": [
+      {
+        "text": "Mis ojos buscan a los fieles de la tierra, para que vivan conmigo; el que anda por el camino de la integridad, ese me servirá.",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "La expresión «עֵינַי בְּ…» indica mirada puesta sobre alguien (favor, atención), no la acción de buscar; «buscan» añade un matiz de búsqueda ausente en el texto. Asimismo, «habiten» refleja mejor לָשֶׁבֶת («morar, residir») en el entorno de la corte real.",
+        "alternative": true
+      }
+    ]
+  },
+  {
+    "bookId": 19,
+    "chapterId": 101,
+    "verseId": 7,
+    "text": "No habitará en mi casa el que practica el engaño; el que dice mentiras no permanecerá ante mis ojos."
+  },
+  {
+    "bookId": 19,
+    "chapterId": 101,
+    "verseId": 8,
+    "text": "Cada mañana destruiré a todos los malvados de la tierra, para extirpar de la ciudad del Señor a todos los que hacen iniquidad.",
+    "versions": [
+      {
+        "text": "Cada mañana silenciaré a todos los malvados de la tierra, para extirpar de la ciudad del Señor a todos los que hacen iniquidad.",
+        "type": "error",
+        "severity": "major",
+        "explanation": "«Silenciar» no traduce אַצְמִית («exterminar, aniquilar»), y el paralelismo con לְהַכְרִית («extirpar, cortar») del segundo hemistiquio confirma que se trata de destrucción, no de silencio.",
+        "alternative": false
+      }
+    ],
+    "checked": {
+      "changed": "1:126"
+    }
+  }
+]

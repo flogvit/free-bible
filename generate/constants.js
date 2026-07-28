@@ -2,6 +2,7 @@ export const bibles = {
     "osnb": "Norwegian bokmål",
     "osnn": "Norwegian nynorsk",
     "osen": "English",
+    "oses": "Spanish",
 }
 
 /**
@@ -17,6 +18,7 @@ export const bibleStyles = {
     osnb: "oral",
     osnn: "oral",
     osen: "oral",
+    oses: "oral",
 };
 
 export function getBibleStyle(bible) {
@@ -179,6 +181,21 @@ export const bookNames = {
         52: "1. Tessalonikarane", 53: "2. Tessalonikarane", 54: "1. Timoteus", 55: "2. Timoteus",
         56: "Titus", 57: "Filemon", 58: "Hebrearane", 59: "Jakob", 60: "1. Peter", 61: "2. Peter",
         62: "1. Johannes", 63: "2. Johannes", 64: "3. Johannes", 65: "Judas", 66: "Openberringa"
+    },
+    es: {
+        1: "Génesis", 2: "Éxodo", 3: "Levítico", 4: "Números", 5: "Deuteronomio",
+        6: "Josué", 7: "Jueces", 8: "Rut", 9: "1 Samuel", 10: "2 Samuel",
+        11: "1 Reyes", 12: "2 Reyes", 13: "1 Crónicas", 14: "2 Crónicas",
+        15: "Esdras", 16: "Nehemías", 17: "Ester", 18: "Job", 19: "Salmos", 20: "Proverbios",
+        21: "Eclesiastés", 22: "Cantares", 23: "Isaías", 24: "Jeremías", 25: "Lamentaciones",
+        26: "Ezequiel", 27: "Daniel", 28: "Oseas", 29: "Joel", 30: "Amós", 31: "Abdías",
+        32: "Jonás", 33: "Miqueas", 34: "Nahúm", 35: "Habacuc", 36: "Sofonías", 37: "Hageo",
+        38: "Zacarías", 39: "Malaquías", 40: "Mateo", 41: "Marcos", 42: "Lucas", 43: "Juan",
+        44: "Hechos", 45: "Romanos", 46: "1 Corintios", 47: "2 Corintios",
+        48: "Gálatas", 49: "Efesios", 50: "Filipenses", 51: "Colosenses",
+        52: "1 Tesalonicenses", 53: "2 Tesalonicenses", 54: "1 Timoteo", 55: "2 Timoteo",
+        56: "Tito", 57: "Filemón", 58: "Hebreos", 59: "Santiago", 60: "1 Pedro", 61: "2 Pedro",
+        62: "1 Juan", 63: "2 Juan", 64: "3 Juan", 65: "Judas", 66: "Apocalipsis"
     }
 };
 

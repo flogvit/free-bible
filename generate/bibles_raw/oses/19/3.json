@@ -1,0 +1,86 @@
+[
+  {
+    "bookId": 19,
+    "chapterId": 3,
+    "verseId": 1,
+    "text": "Salmo de David, cuando huía de su hijo Absalón."
+  },
+  {
+    "bookId": 19,
+    "chapterId": 3,
+    "verseId": 2,
+    "text": "Señor, ¡cuántos son mis adversarios! Muchos se levantan contra mí."
+  },
+  {
+    "bookId": 19,
+    "chapterId": 3,
+    "verseId": 3,
+    "text": "Muchos dicen de mí: «Para él no hay salvación en Dios». Selah"
+  },
+  {
+    "bookId": 19,
+    "chapterId": 3,
+    "verseId": 4,
+    "text": "Pero tú, Señor, eres escudo en torno a mí; tú eres mi gloria, y levantas mi cabeza."
+  },
+  {
+    "bookId": 19,
+    "chapterId": 3,
+    "verseId": 5,
+    "text": "Con mi voz clamo al Señor, y él me respondió desde su monte santo. Selah",
+    "versions": [
+      {
+        "text": "En voz alta clamo al Señor, y él me responde desde su monte santo. Selah",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "קוֹלִי es literalmente «mi voz»; «en voz alta» pierde el matiz personal. Además, וַיַּעֲנֵנִי es una forma narrativa que indica respuesta ya recibida, lo cual encaja con el testimonio del versículo siguiente («me acosté y dormí»).",
+        "alternative": true
+      }
+    ]
+  },
+  {
+    "bookId": 19,
+    "chapterId": 3,
+    "verseId": 6,
+    "text": "Yo me acosté y dormí, y desperté, porque el Señor me sostiene."
+  },
+  {
+    "bookId": 19,
+    "chapterId": 3,
+    "verseId": 7,
+    "text": "No temeré a las multitudes del pueblo que por todos lados se han puesto contra mí.",
+    "versions": [
+      {
+        "text": "No temeré a los miles y miles que me rodean y se han puesto contra mí.",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "רִבְבוֹת עָם designa «miríadas de gente/pueblo»; «miles y miles» diluye la idea de multitud innumerable y omite עָם. La versión sugerida también fluye mejor al leerse en voz alta.",
+        "alternative": true
+      }
+    ]
+  },
+  {
+    "bookId": 19,
+    "chapterId": 3,
+    "verseId": 8,
+    "text": "¡Levántate, Señor! ¡Sálvame, Dios mío! Porque tú has golpeado en la mejilla a todos mis enemigos; has quebrado los dientes de los impíos.",
+    "versions": [
+      {
+        "text": "¡Levántate, Señor! ¡Sálvame, Dios mío! Tú golpeas en la mejilla a todos mis enemigos; tú rompes los dientes de los impíos.",
+        "type": "error",
+        "severity": "major",
+        "explanation": "Se omite la conjunción כִּי («porque»), que da la base de la petición: el salmista pide salvación apoyándose en lo que Dios ya ha hecho. Además, los verbos hebreos están en perfecto (acción cumplida), no en presente habitual.",
+        "alternative": false
+      }
+    ],
+    "checked": {
+      "changed": "1:137"
+    }
+  },
+  {
+    "bookId": 19,
+    "chapterId": 3,
+    "verseId": 9,
+    "text": "Del Señor viene la salvación; tu bendición sea sobre tu pueblo. Selah"
+  }
+]
