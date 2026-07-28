@@ -7,7 +7,7 @@ import { ukvnEncode, ukvnDecode } from '../src/ukvn-types.js';
 
 describe('Full pipeline: KJV -> DNB2024', () => {
   const kjvMapper = new UkvnMapper(loadUkvnMapping('english_kj'));
-  const dnb2024Mapper = new UkvnMapper(loadUkvnMapping('dnb2024'));
+  const dnb2024Mapper = new UkvnMapper(loadUkvnMapping('dnb2024_nb'));
   const cross = new CrossMapper(kjvMapper, dnb2024Mapper);
 
   it('maps all 66 books chapter 1 verse 1 as identity', () => {
@@ -59,8 +59,8 @@ describe('Full pipeline: DNB2011 -> osnb', () => {
 });
 
 describe('All mappings load successfully', () => {
-  const systems = ['english_kj', 'dnb2011_nb', 'dnb2024',
-                    'dnb30', 'nb1978', 'nb88_nb', 'nb94_nn', 'osnb',
+  const systems = ['english_kj', 'dnb2011_nb', 'dnb2024_nb', 'dnb2024_nn',
+                    'dnb30', 'dnb1978_nb', 'nb88_nb', 'nb94_nn', 'osnb',
                     'norwegian1921', 'norwegian1938', 'norwegian_bgo'];
 
   it.each(systems)('loads %s without errors', (system) => {

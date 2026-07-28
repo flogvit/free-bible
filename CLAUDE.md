@@ -34,6 +34,12 @@ Consequences that are easy to get wrong:
 Naming: the base form is the language code. Variants take a suffix (`osnb-child`). Never a
 running number — `osnb2`/`osnn1`/`osnb1` were renamed away 2026-07-26 and osnb1 deleted.
 
+Norwegian publisher prefixes: `nb` is **Norsk Bibel** (nb88_nb, nb94_nn); Bibelselskapet
+is `dnb` (dnb30, dnb2011_nb, dnb1978_nb, dnb2024_nb, dnb2024_nn). Module and KVN-mapping
+names are written out in full with language suffix — `kvn/mappings/<module>.ukvn.json`
+matches the module name exactly; old short names (`dnb2024`, `nb1978`) resolve via
+`LEGACY_ALIASES` in `kvn/src/ukvn-types.ts`.
+
 Style lives in `constants.js` → `bibleStyles`, not in a CLI default. A forgotten `--style`
 would silently produce text against the wrong brief, and the style is not recorded in the
 verse data, so the mistake could not be found afterwards.

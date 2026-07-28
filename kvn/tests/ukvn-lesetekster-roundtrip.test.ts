@@ -160,7 +160,7 @@ function loadAllLesetekster(): { ref: string; context: string }[] {
 
 // --- Tests ---
 
-const dnb2024Mapping = loadUkvnMapping('dnb2024');
+const dnb2024Mapping = loadUkvnMapping('dnb2024_nb');
 const osnbMapping = loadUkvnMapping('osnb');
 const dnb2024 = new UkvnMapper(dnb2024Mapping);
 const osnb = new UkvnMapper(osnbMapping);

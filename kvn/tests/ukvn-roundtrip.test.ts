@@ -25,7 +25,7 @@ function roundTrip(
 }
 
 describe('Round-trip: dnb2024 -> osnb -> dnb2024', () => {
-  const dnb2024 = new UkvnMapper(loadUkvnMapping('dnb2024'));
+  const dnb2024 = new UkvnMapper(loadUkvnMapping('dnb2024_nb'));
   const osnb = new UkvnMapper(loadUkvnMapping('osnb'));
 
   describe('Isaiah 9 boundary (Hebrew 8:23 / European 9:1)', () => {
@@ -202,7 +202,7 @@ describe('Round-trip: norwegian1938 (has Acts 19:41)', () => {
 });
 
 describe('Part propagation through mappings', () => {
-  const dnb2024 = new UkvnMapper(loadUkvnMapping('dnb2024'));
+  const dnb2024 = new UkvnMapper(loadUkvnMapping('dnb2024_nb'));
   const osnb = new UkvnMapper(loadUkvnMapping('osnb'));
 
   it('parts propagate for cross-chapter boundary (Jes 9,1a)', () => {

@@ -58,10 +58,11 @@ export interface MappingMeta {
 export const MAPPING_META: Record<string, MappingMeta> = {
   osnb:          { shortname: 'osnb',   displayName: 'osnb (hebraisk/gresk)' },
   osnn:          { shortname: 'osnn',   displayName: 'osnn (hebraisk/gresk nynorsk)' },
-  dnb2024:        { shortname: 'dnb2024', displayName: 'Bibelselskapets 2024' },
+  dnb2024_nb:     { shortname: 'dnb2024', displayName: 'Bibelselskapets 2024' },
+  dnb2024_nn:     { shortname: 'dnb2024nn', displayName: 'Bibelselskapets 2024 (nynorsk)' },
   dnb2011_nb:     { shortname: 'dnb2011', displayName: 'Bibelselskapets 2011' },
   dnb30:          { shortname: 'dnb1930', displayName: 'Bibelselskapets 1930' },
-  nb1978:         { shortname: 'nb1978',  displayName: 'Bibelselskapets 1978' },
+  dnb1978_nb:     { shortname: 'dnb1978', displayName: 'Bibelselskapets 1978' },
   nb88_nb:        { shortname: 'nb88',    displayName: 'Norsk Bibel 1988' },
   nb94_nn:        { shortname: 'nb94',    displayName: 'Norsk Bibel 1994 (nynorsk)' },
   english_kj:     { shortname: 'kjv',     displayName: 'King James Version' },
@@ -76,10 +77,12 @@ for (const [id, meta] of Object.entries(MAPPING_META)) {
   SHORTNAME_TO_ID.set(meta.shortname, id);
 }
 
-// Legacy aliases for renamed mapping files
+// Legacy aliases for renamed mapping files.
+// «nb» er Norsk Bibel (nb88/nb94); Bibelselskapet bruker «dnb», fullt utskrevet
+// med språksuffiks. Gamle navn holdes oppslagbare her.
 const LEGACY_ALIASES: Record<string, string> = {
-  dnb2024_nb: 'dnb2024',
-  dnb2024_nn: 'dnb2024',
+  dnb2024: 'dnb2024_nb',
+  nb1978: 'dnb1978_nb',
 };
 
 /**
