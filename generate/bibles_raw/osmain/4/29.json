@@ -338,7 +338,14 @@
     "bookId": 4,
     "chapterId": 29,
     "verseId": 40,
-    "text": "Dette er forskriftene som Herren ga Moses om forholdet mellom en mann og hans hustru, og mellom en far og hans datter mens hun er ung og bor i sin fars hus.",
-    "source": "tanach"
+    "text": "Moses sa til Israels barn alt det Herren hadde befalt Moses.",
+    "versions": [
+      {
+        "text": "Moses sa dette til Israels barn, slik Herren hadde befalt ham.",
+        "type": "error",
+        "severity": "major",
+        "explanation": "Den hebraiske teksten sier bokstavelig 'i samsvar med alt som Herren hadde befalt Moses' (כְּכֹל אֲשֶׁר־צִוָּה יְהוָה אֶת־מֹשֶׁה). Ordet 'dette' er lagt til uten grunnlag i originalen, og 'ham' bør gjenspeile at det eksplisitt står 'Moses' i originalen, ikke et pronomen. Uttrykket 'alt det' gjenspeiler כְּכֹל bedre."
+      }
+    ]
   }
 ]
