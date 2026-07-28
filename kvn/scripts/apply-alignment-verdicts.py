@@ -9,6 +9,11 @@ Verdikt-format (liste av objekter):
     "alignment": [[osV, trCh, trV], ...],     # tom liste = identitet
     "note": "..." }
 
+Et fjerde element angir delvers: [osV, trCh, trV, part]. Brukes når
+modulen deler et osmain-vers i to — uten en slik entry har modulens
+ekstra vers ingen reversoppslag og faller tilbake på identitet, som
+peker feil (samme klasse som LXX-tittelversene).
+
 Sikkerhet (lærdommer fra 2026-07-28):
  - osmain-familien (osnb/osnn/osen/oster) får ALDRI gruppedommer.
  - Originale (ikke-utledede) mappinger krever klar forbedring
@@ -81,16 +86,26 @@ for vd in verdicts:
         old_score, _ = chapter_score(mod, book, ch, old_map)
         bn = next((n for n, bid in m['bookNames'].items() if bid == book), str(book))
         new_entries = []; new_map = {}
-        for ov, tc, tv in vd['alignment']:
+        for row in vd['alignment']:
+            ov, tc, tv = row[0], row[1], row[2]
+            part = row[3] if len(row) > 3 else 0
             if tv not in tr_ids(mod, book, tc): continue
-            new_map[ov] = (tc, tv)
-            if tc == ch and tv == ov: continue
-            new_entries.append({'kvnFrom': enc(book, ch, ov), 'kvnTo': enc(book, ch, ov),
-                'kvnRef': f'{bn} {ch}:{ov}', 'tkvnFrom': enc(book, tc, tv), 'tkvnTo': enc(book, tc, tv),
+            if not part: new_map[ov] = (tc, tv)
+            if not part and tc == ch and tv == ov: continue
+            suffix = chr(96 + part) if part else ''
+            new_entries.append({'kvnFrom': enc(book, ch, ov) + part, 'kvnTo': enc(book, ch, ov) + part,
+                'kvnRef': f'{bn} {ch}:{ov}{suffix}', 'tkvnFrom': enc(book, tc, tv), 'tkvnTo': enc(book, tc, tv),
                 'tkvnRef': f'{bn} {tc},{tv}', 'order': 0})
         new_score, np_ = chapter_score(mod, book, ch, new_map)
         bar = old_score + (0.05 if not derived else -0.02)
-        if np_ < 4 or new_score < bar:
+        # Når forover-mappingen er uendret legger dommen bare til delvers
+        # (reversoppslag for modulens ekstra vers). Det endrer ikke
+        # korrelasjonen, så vakten ville blokkert et rent tillegg.
+        # Sammenlign bare ikke-identiske par: dommen lister ofte identitets-
+        # rader eksplisitt, mens mappingen ikke lagrer dem som entries.
+        norm = lambda d: {v: t for v, t in d.items() if t != (ch, v)}
+        same_forward = norm(new_map) == norm(old_map)
+        if np_ < 4 or (new_score < bar and not same_forward):
             rejected += 1; continue
         m['map'] = [e for e in m['map'] if dec(e['kvnFrom'])[:2] != (book, ch)] + new_entries
         touched[mod] = m

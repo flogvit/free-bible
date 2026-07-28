@@ -3,6 +3,14 @@
  "sist_oppdatert": "2026-07-28",
  "funn": [
   {
+   "module": "osmain",
+   "book": null,
+   "severity": "blocking",
+   "finding": "62 vers finnes i osnb men har ikke eget versnummer i osmain (58 salmer der osmain fletter to vers, pluss grensetilfeller som 4 Mos 25,19 og 2 Mos 21,36-37). Full liste i kvn/data/osmain-missing-verses.json.",
+   "consequence": "osmain skal være supersettet alle oversettelser mappes gjennom. Der et vers mangler kan det ikke refereres, og oversettelser som har verset må nøye seg med delvers-modellering.",
+   "action": "Utvid osmain med disse versene, og kjør mappingene på nytt."
+  },
+  {
    "module": "lithuanian_kj",
    "book": 19,
    "severity": "blocking",
@@ -27,7 +35,14 @@
    "action": "Rehøst 2 Krøn, eller splitt kapittel 13 ved vers 23 i split-scriptet."
   },
   {
-   "modules": ["czech_ekumenicky", "hebrew_leningrad_codex", "lt_heritage", "malagasy1865", "turkish", "zarma"],
+   "modules": [
+    "czech_ekumenicky",
+    "hebrew_leningrad_codex",
+    "lt_heritage",
+    "malagasy1865",
+    "turkish",
+    "zarma"
+   ],
    "book": 39,
    "severity": "gap",
    "finding": "Malaki har 3 kapitler fordi kapittel 4 mangler helt (kapittel 3 har 17-18 vers, ikke 24 som i hebraisk inndeling).",
