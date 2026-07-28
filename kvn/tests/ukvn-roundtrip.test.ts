@@ -80,9 +80,13 @@ describe('Round-trip: dnb2024 -> osnb -> dnb2024', () => {
   });
 
   describe('Hosea 11-12 boundary', () => {
-    it('Hos 11,12 -> osnb 12:1 -> back', () => {
-      const r = roundTrip(dnb2024, osnb, 28, 11, 12);
+    // dnb2024_nb foelger hebraisk nummerering her: Hos 11 slutter paa vers 11,
+    // og osmain 11:12 er dens 12,1. Verset aa teste er derfor 12,1 — 11,12
+    // finnes ikke i modulen.
+    it('Hos 12,1 -> osnb 11:12 -> back', () => {
+      const r = roundTrip(dnb2024, osnb, 28, 12, 1);
       expect(r.ok).toBe(true);
+      expect(r.osnbRef).toBe('28 12:1');
     });
   });
 
