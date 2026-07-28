@@ -35,10 +35,8 @@ lengths = json.load(open(LENGTHS_FILE))
 verdicts = json.load(open(os.path.join(REPO, 'kvn', 'data', 'alignment-verdicts.json')))
 queue = json.load(open(os.path.join(REPO, 'kvn', 'data', 'alignment-judgment-queue.json')))
 
-qidx = {}
-for e in queue:
-    for var in e['variants']:
-        qidx[(e['key'], tuple(var['trIds']))] = var['members']
+# Køen er flat: ett innslag per (kapittel × versstruktur)-gruppe
+qidx = {(e['key'], tuple(e['trIds'])): e['members'] for e in queue}
 
 def corr(pairs):
     n = len(pairs)

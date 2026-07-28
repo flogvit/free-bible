@@ -1,0 +1,70 @@
+{
+ "_om": "Datakvalitetsfunn oppdaget under KVN-mappingarbeidet (issue #18). Dette er funn i KILDEDATAENE, ikke i mappingene — de kan ikke fikses med entries. Moduler med 'severity': 'blocking' har mapping som ikke kan bli riktig før dataene rehostes; disse har også derived.dataWarning i sin egen mappingfil.",
+ "sist_oppdatert": "2026-07-28",
+ "funn": [
+  {
+   "module": "lithuanian_kj",
+   "book": 19,
+   "severity": "blocking",
+   "finding": "Salmene er feilmontert: kapittel 22 inneholder Sal 16, kapittel 23 inneholder Sal 17, men kapittel 51 inneholder Sal 50. Forskyvet ulikt gjennom boka.",
+   "consequence": "Ingen kapittelmapping kan være riktig. Modulen ble feilklassifisert som LXX og fikk kapittelforskjøvet mapping; den er fjernet.",
+   "action": "Rehøst Salmene fra kilden."
+  },
+  {
+   "module": "ndebele",
+   "book": null,
+   "severity": "blocking",
+   "finding": "Versene er systematisk avkortet i høstingen — median verselengde 68 mot 96 i ndebele2012. Sal 23 er kuttet midt i setningene ('ingumelusi wami' = bare 'er min hyrde').",
+   "consequence": "Lengdebaserte metoder gir meningsløse resultater for modulen. Ble feilklassifisert som LXX på grunn av dette.",
+   "action": "Rehøst hele modulen, eller bruk ndebele2012 i stedet."
+  },
+  {
+   "module": "polish_gdansk",
+   "book": 14,
+   "severity": "blocking",
+   "finding": "2 Krøn 13 og 14 er slått sammen til ett kapittel (37 vers = 22+15), så boka har 35 kapitler i stedet for 36 og alt fra kapittel 14 og utover er forskjøvet ett hakk.",
+   "consequence": "Mappingen for 2 Krøn er ubrukelig fra kapittel 13 og ut boka.",
+   "action": "Rehøst 2 Krøn, eller splitt kapittel 13 ved vers 23 i split-scriptet."
+  },
+  {
+   "modules": ["czech_ekumenicky", "hebrew_leningrad_codex", "lt_heritage", "malagasy1865", "turkish", "zarma"],
+   "book": 39,
+   "severity": "gap",
+   "finding": "Malaki har 3 kapitler fordi kapittel 4 mangler helt (kapittel 3 har 17-18 vers, ikke 24 som i hebraisk inndeling).",
+   "consequence": "Ser ut som hebraisk kapittelinndeling, men er et hull. Skilt ut fra tradisjonsmappingen på versantall.",
+   "action": "Rehøst Malaki."
+  },
+  {
+   "module": "norwegian2018",
+   "book": null,
+   "severity": "gap",
+   "finding": "Fri parafrase med store hull — Mark 16 har 9 av 20 vers. Lengdekorrelasjon fordeler seg jevnt over alle kapittelforskyv (198 av 690 kapitler på null), altså ren støy.",
+   "consequence": "Modulen dominerer falske funn i kapittelforskyv-deteksjonen.",
+   "action": "Ingen — dokumentert slik at senere analyser kan se bort fra den."
+  },
+  {
+   "module": "osmain",
+   "book": 26,
+   "severity": "canonical",
+   "finding": "Esek 20/21-grensen er feilmontert: 20:45-49 inneholder Ammon-blokken (= europeisk 21:28-32), mens sør-profetien ligger i 21:1ff.",
+   "consequence": "Alle mappinger arver feilen, siden osmain er referansen.",
+   "action": "Hører til grensevers-prosjektet (de 133 kjente grenseversene)."
+  },
+  {
+   "module": "osmain",
+   "book": 13,
+   "severity": "canonical",
+   "finding": "1 Krøn 5:1 tilsvarer to vers i KJV-skjemaet (5,1-2) men mappes bare til det første, så 5,1 blir foreldreløst i alle KJV-baserte mappinger.",
+   "consequence": "Ett vers uten reversoppslag i ~500 moduler.",
+   "action": "Entry bør bli en range (kvnTo != kvnFrom)."
+  },
+  {
+   "module": "osmain",
+   "book": 4,
+   "severity": "canonical",
+   "finding": "4 Mos 25 har 18 vers; halvverset som andre oversettelser har som 25,19 ('Da det var slutt på pesten') mangler — det er slått sammen i 26:1.",
+   "consequence": "Moduler med 19 vers får ett vers uten motstykke (expansion-klassen).",
+   "action": "Vurder osmain-utvidelse."
+  }
+ ]
+}
