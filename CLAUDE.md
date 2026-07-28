@@ -116,6 +116,19 @@ Targeted second passes, both free to re-run because they write resume markers:
 
 ## KVN
 
+**Read `kvn/README.md` before touching anything under `kvn/`** — it documents the
+architecture (osmain as the pivot every translation maps through), the part-field for
+sub-verses, the Type A/B/C psalm deviations, and the exact osmain↔osnb differences (62
+psalms, 33 versification pairs, 8 merges). `kvn/BOUNDARY-VERSE-ISSUES.md` lists osmain's
+known bad boundary verses. A PreToolUse hook in `.claude/settings.json` blocks the first
+edit under `kvn/` each session as a reminder; that hook exists because this was
+rediscovered empirically once instead of read.
+
+osmain's *numbering* is not sacred — it exists to keep mapping files small by resembling
+the majority of translations. What matters is that every verse in every translation has a
+slot in osmain and round-trips: translation → osmain → translation returns the same verse.
+Verses missing from osmain are defects to fix by extending osmain.
+
 `kvn/` is the canonical verse-numbering layer. A mapping maps **canonical → that
 translation's numbering**: `kvnFrom` "1 Mos 31:55" → `tkvnFrom` "1 Mos 32,1" for a
 translation following the Hebrew. Use `CrossMapper` from `kvn/src/ukvn.ts` — do not

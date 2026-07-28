@@ -1,0 +1,16 @@
+{
+  "hooks": {
+    "PreToolUse": [
+      {
+        "matcher": "Edit|Write",
+        "hooks": [
+          {
+            "type": "command",
+            "statusMessage": "Sjekker kvn-dokumentasjon",
+            "command": "input=$(cat); f=$(printf '%s' \"$input\" | jq -r '.tool_input.file_path // empty'); case \"$f\" in */kvn/*) sid=$(printf '%s' \"$input\" | jq -r '.session_id // \"nosid\"'); m=\"/tmp/claude-kvn-docs-$sid\"; [ -f \"$m\" ] || { touch \"$m\"; printf '%s' '{\"hookSpecificOutput\":{\"hookEventName\":\"PreToolUse\",\"permissionDecision\":\"deny\",\"permissionDecisionReason\":\"STOPP: les kvn/README.md (arkitektur, osmain som nav, part-feltet, Type A/B/C-salmeavvik), kvn/KVN-REDESIGN.md og kvn/BOUNDARY-VERSE-ISSUES.md (kjente feil i osmains grensevers) FOER du endrer noe under kvn/. osmain er nummereringsnavet alle oversettelser mappes gjennom, saa endringer der paavirker alle mappingene. Naar du har lest dem, gjenta operasjonen - denne sperren utloeses bare en gang per oekt.\"}}'; };; esac; exit 0"
+          }
+        ]
+      }
+    ]
+  }
+}
