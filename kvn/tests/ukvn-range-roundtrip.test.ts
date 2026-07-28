@@ -189,8 +189,17 @@ describe('Range conversion shows correct osmain chapters', () => {
     }
   });
 
-  it('Joel 3,1-5 maps to osmain chapter 3', () => {
+  // dnb2024_nb samler europeisk 2,28-32 og 3,1-21 i ett kapittel 3 paa 26 vers,
+  // saa dens 3,1-5 er osmain 2,28-32 — ikke kapittel 3.
+  it('Joel 3,1-5 maps to osmain chapter 2', () => {
     const vs = mapReference('Joel 3,1-5', dnb2024, osmainMapper);
+    for (const v of vs) {
+      expect(v.chapter).toBe(2);
+    }
+  });
+
+  it('Joel 3,6-26 maps to osmain chapter 3', () => {
+    const vs = mapReference('Joel 3,6-26', dnb2024, osmainMapper);
     for (const v of vs) {
       expect(v.chapter).toBe(3);
     }

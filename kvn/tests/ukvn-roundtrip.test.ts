@@ -91,18 +91,22 @@ describe('Round-trip: dnb2024 -> osnb -> dnb2024', () => {
   });
 
   describe('Joel 2-3 boundary (Spirit poured out)', () => {
-    it('Joel 2,28 -> osnb 3:1 -> back', () => {
-      const r = roundTrip(dnb2024, osnb, 29, 2, 28);
-      expect(r.ok).toBe(true);
-    });
-
-    it('Joel 2,32 -> osnb 3:5 -> back', () => {
-      const r = roundTrip(dnb2024, osnb, 29, 2, 32);
-      expect(r.ok).toBe(true);
-    });
-
-    it('Joel 3,1 -> osnb 4:1 -> back', () => {
+    // dnb2024_nb har 27 vers i Joel 2; utgytelsen av Aanden ligger i dens
+    // kapittel 3,1-5 (osmain 2,28-32 / osnb 3,1-5).
+    it('Joel 3,1 -> osnb 3:1 -> back', () => {
       const r = roundTrip(dnb2024, osnb, 29, 3, 1);
+      expect(r.ok).toBe(true);
+      expect(r.osnbRef).toBe('29 3:1');
+    });
+
+    it('Joel 3,5 -> osnb 3:5 -> back', () => {
+      const r = roundTrip(dnb2024, osnb, 29, 3, 5);
+      expect(r.ok).toBe(true);
+      expect(r.osnbRef).toBe('29 3:5');
+    });
+
+    it('Joel 3,6 -> osnb 4:1 -> back', () => {
+      const r = roundTrip(dnb2024, osnb, 29, 3, 6);
       expect(r.ok).toBe(true);
     });
 
@@ -138,22 +142,22 @@ describe('Round-trip: dnb2024 -> osnb -> dnb2024', () => {
       expect(r.ok).toBe(true);
     });
 
-    it('Job 40,20 (= osmain 41:27, Leviathan opening) -> back', () => {
+    it('Job 40,20 (= osmain 41:1, Leviathan opening) -> back', () => {
       const r = roundTrip(dnb2024, osnb, 18, 40, 20);
       expect(r.ok).toBe(true);
     });
 
-    it('Job 40,28 (= osmain 41:1, hope dashed) -> back', () => {
+    it('Job 40,28 (= osmain 41:9, hope dashed) -> back', () => {
       const r = roundTrip(dnb2024, osnb, 18, 40, 28);
       expect(r.ok).toBe(true);
     });
 
-    it('Job 41,1 (= osmain 41:2, who dares wake) -> back', () => {
+    it('Job 41,1 (= osmain 41:10, who dares wake) -> back', () => {
       const r = roundTrip(dnb2024, osnb, 18, 41, 1);
       expect(r.ok).toBe(true);
     });
 
-    it('Job 41,25 (= osmain 41:26, king of proud) -> back', () => {
+    it('Job 41,25 (= osmain 41:34, king of proud) -> back', () => {
       const r = roundTrip(dnb2024, osnb, 18, 41, 25);
       expect(r.ok).toBe(true);
     });
