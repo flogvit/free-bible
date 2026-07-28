@@ -2,7 +2,7 @@ import { describe, it, expect } from 'vitest';
 import { UkvnMapper } from '../src/ukvn-mapper.js';
 import { CrossMapper } from '../src/ukvn-cross-mapper.js';
 import { loadUkvnMapping, listUkvnMappings } from '../src/ukvn-loader.js';
-import { ukvnDecode } from '../src/ukvn-types.js';
+import { ukvnDecode, UKVN_PART_SIZE } from '../src/ukvn-types.js';
 import type { UkvnMappingFile } from '../src/ukvn-types.js';
 
 /**
@@ -62,12 +62,28 @@ function findDuplicateTkvnEntries(mapping: UkvnMappingFile): Set<number> {
   return duplicateKvns;
 }
 
+/**
+ * Find osmain verses that osnb splits into parts (Sal 19:1a / 19:1b).
+ * The reverse lookup returns the part, not the whole verse, so a round-trip
+ * through osnb cannot come back to the part-less verse it started from.
+ * Lossy by design — same class as the many-to-one exclusion above.
+ */
+function findPartSplitBaseKvns(mapping: UkvnMappingFile): Set<number> {
+  const bases = new Set<number>();
+  for (const entry of mapping.map) {
+    const part = entry.kvnFrom % UKVN_PART_SIZE;
+    if (part > 0) bases.add(entry.kvnFrom - part);
+  }
+  return bases;
+}
+
 const allSystems = listUkvnMappings();
 
 // Load osnb once as the hub for cross-translation round-trips
 const osnbMapping = loadUkvnMapping('osnb');
 const osnbMapper = new UkvnMapper(osnbMapping);
 const osnbDuplicateKvns = findDuplicateTkvnEntries(osnbMapping);
+const osnbPartSplitKvns = findPartSplitBaseKvns(osnbMapping);
 
 for (const system of allSystems) {
   const mapping = loadUkvnMapping(system);
@@ -132,7 +148,7 @@ for (const system of allSystems) {
   if (system !== 'osnb') {
     // Also exclude entries whose osmain kvn hits a many-to-one in osnb
     const roundTripEntries = testableEntries.filter(
-      (e) => !osnbDuplicateKvns.has(e.kvnFrom)
+      (e) => !osnbDuplicateKvns.has(e.kvnFrom) && !osnbPartSplitKvns.has(e.kvnFrom)
     );
 
     describe(`${system}: round-trip through osnb (${roundTripEntries.length} testable)`, () => {
