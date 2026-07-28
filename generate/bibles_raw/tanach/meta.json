@@ -1,0 +1,66 @@
+{
+  "module": "tanach",
+  "name": {
+    "native": "תנ\"ך",
+    "en": "Tanach"
+  },
+  "language": {
+    "iso639_3": "hbo",
+    "iso639_1": "he",
+    "script": "Hebr",
+    "direction": "rtl"
+  },
+  "philosophy": "source_text",
+  "tradition": "jewish",
+  "textual_basis": {
+    "ot": [
+      "mt"
+    ]
+  },
+  "publisher": "Tanach.us",
+  "work": {
+    "method": [
+      "committee"
+    ],
+    "source_languages": [
+      "hbo"
+    ]
+  },
+  "links": {
+    "homepage": "https://tanach.us"
+  },
+  "coverage": {
+    "testament": "ot",
+    "books": 39,
+    "chapters": 928,
+    "verses": 23192,
+    "deuterocanonical": false,
+    "missing_books": []
+  },
+  "features": {
+    "strongs": false,
+    "alt_versions": false
+  },
+  "provenance": {
+    "method": "manual",
+    "verified": [
+      "name.en",
+      "language.iso639_3",
+      "philosophy",
+      "textual_basis",
+      "publisher",
+      "links"
+    ],
+    "sources": [
+      {
+        "url": "https://tanach.us",
+        "fields": [
+          "publisher",
+          "textual_basis",
+          "links"
+        ]
+      }
+    ],
+    "generated": "2026-07-25"
+  }
+}

@@ -1,0 +1,77 @@
+{
+  "module": "erv",
+  "name": {
+    "native": "English Revised Version",
+    "en": "English Revised Version"
+  },
+  "abbreviation": "RV",
+  "language": {
+    "iso639_3": "eng",
+    "iso639_1": "en",
+    "script": "Latn",
+    "direction": "ltr"
+  },
+  "year": {
+    "published": 1885
+  },
+  "place": {
+    "city": "London",
+    "country_iso": "GB"
+  },
+  "body": "British and American revision committees",
+  "philosophy": "formal",
+  "tradition": "protestant",
+  "textual_basis": {
+    "ot": [
+      "mt"
+    ],
+    "nt": [
+      "wh"
+    ]
+  },
+  "derived_from": {
+    "module": "kjv",
+    "relation": "revision_of"
+  },
+  "work": {
+    "started": 1870,
+    "completed": 1885,
+    "method": [
+      "committee",
+      "revision"
+    ],
+    "source_languages": [
+      "hbo",
+      "arc",
+      "grc"
+    ]
+  },
+  "editions": [
+    {
+      "year": 1881,
+      "label": "new_testament"
+    },
+    {
+      "year": 1885,
+      "label": "complete_bible"
+    }
+  ],
+  "coverage": {
+    "testament": "both",
+    "books": 66,
+    "chapters": 1189,
+    "verses": 31086,
+    "deuterocanonical": false,
+    "missing_books": []
+  },
+  "features": {
+    "strongs": false,
+    "alt_versions": false
+  },
+  "provenance": {
+    "method": "llm",
+    "verified": [],
+    "sources": [],
+    "generated": "2026-07-25"
+  }
+}

@@ -1,0 +1,76 @@
+{
+  "module": "oses",
+  "name": {
+    "native": "Open Source Español",
+    "en": "Open Source Spanish"
+  },
+  "abbreviation": "OSES",
+  "language": {
+    "iso639_3": "spa",
+    "iso639_1": "es",
+    "script": "Latn",
+    "direction": "ltr"
+  },
+  "philosophy": "dynamic",
+  "tradition": "nondenominational",
+  "textual_basis": {
+    "ot": [
+      "mt"
+    ],
+    "nt": [
+      "sblgnt"
+    ]
+  },
+  "body": "free-bible project",
+  "work": {
+    "method": [
+      "ai_assisted"
+    ],
+    "source_languages": [
+      "hbo",
+      "grc"
+    ],
+    "review": "none"
+  },
+  "links": {
+    "homepage": "https://bibel.flogvit.no"
+  },
+  "legacy": [
+    {
+      "tag": "distinctive",
+      "text": "Optimizado para la lectura en voz alta: ritmo natural y fluidez más que una correspondencia palabra por palabra."
+    },
+    {
+      "tag": "distinctive",
+      "text": "Sigue la numeración de versículos hebrea y griega, no la europea habitual."
+    }
+  ],
+  "coverage": {
+    "testament": "both",
+    "books": 0,
+    "chapters": 0,
+    "verses": 0,
+    "deuterocanonical": false,
+    "missing_books": []
+  },
+  "features": {
+    "strongs": false,
+    "alt_versions": true
+  },
+  "provenance": {
+    "method": "manual",
+    "verified": [],
+    "sources": [
+      {
+        "url": "https://github.com/flogvit/free-bible",
+        "fields": [
+          "work.method",
+          "work.source_languages",
+          "textual_basis",
+          "legacy"
+        ]
+      }
+    ],
+    "generated": "2026-07-26"
+  }
+}

@@ -1,0 +1,41 @@
+{
+  "module": "trparsed",
+  "name": {
+    "native": "Textus Receptus Parsed NT",
+    "en": "Textus Receptus, parsed"
+  },
+  "language": {
+    "iso639_3": "grc",
+    "iso639_1": "el",
+    "script": "Grek",
+    "direction": "ltr"
+  },
+  "philosophy": "source_text",
+  "textual_basis": {
+    "nt": [
+      "tr"
+    ]
+  },
+  "derived_from": {
+    "module": "tr",
+    "relation": "edition_of"
+  },
+  "coverage": {
+    "testament": "nt",
+    "books": 27,
+    "chapters": 260,
+    "verses": 7958,
+    "deuterocanonical": false,
+    "missing_books": []
+  },
+  "features": {
+    "strongs": false,
+    "alt_versions": false
+  },
+  "provenance": {
+    "method": "llm",
+    "verified": [],
+    "sources": [],
+    "generated": "2026-07-25"
+  }
+}

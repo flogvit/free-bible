@@ -1,0 +1,90 @@
+{
+  "module": "osmain",
+  "name": {
+    "native": "osmain",
+    "en": "osmain reference bible"
+  },
+  "language": {
+    "iso639_3": "nob",
+    "iso639_1": "nb",
+    "script": "Latn",
+    "direction": "ltr"
+  },
+  "philosophy": "dynamic",
+  "tradition": "nondenominational",
+  "textual_basis": {
+    "ot": [
+      "mt"
+    ],
+    "nt": [
+      "sblgnt"
+    ]
+  },
+  "body": "free-bible project",
+  "derived_from": {
+    "module": "osnb",
+    "relation": "renumbering_of"
+  },
+  "work": {
+    "method": [
+      "ai_assisted"
+    ],
+    "source_languages": [
+      "hbo",
+      "grc"
+    ],
+    "review": "none"
+  },
+  "links": {
+    "homepage": "https://bibel.flogvit.no"
+  },
+  "legacy": [
+    {
+      "tag": "distinctive",
+      "text": "Definerer KVN-koordinatsystemet: alle andre oversettelser mappes til osmain for å kunne slå opp vers på tvers."
+    },
+    {
+      "tag": "distinctive",
+      "text": "Renummerert fra osnb til den nummereringen flertallet av bibler bruker, og utvidet med vers fra andre bibeltradisjoner."
+    },
+    {
+      "tag": "limitation",
+      "text": "Teksten er osnb med sammenslåtte og flyttede vers; den er et referansegrunnlag, ikke en egen oversettelse."
+    }
+  ],
+  "coverage": {
+    "testament": "both",
+    "books": 69,
+    "chapters": 1234,
+    "verses": 32168,
+    "deuterocanonical": true,
+    "missing_books": []
+  },
+  "features": {
+    "strongs": false,
+    "alt_versions": true
+  },
+  "provenance": {
+    "method": "manual",
+    "verified": [
+      "name.en",
+      "language.iso639_3",
+      "philosophy",
+      "textual_basis",
+      "derived_from",
+      "work.method",
+      "legacy",
+      "links"
+    ],
+    "sources": [
+      {
+        "url": "https://github.com/flogvit/free-bible/blob/main/kvn/README.md",
+        "fields": [
+          "derived_from",
+          "legacy"
+        ]
+      }
+    ],
+    "generated": "2026-07-25"
+  }
+}

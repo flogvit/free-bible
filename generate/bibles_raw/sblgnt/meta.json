@@ -1,0 +1,78 @@
+{
+  "module": "sblgnt",
+  "name": {
+    "native": "SBL Greek New Testament",
+    "en": "SBL Greek New Testament"
+  },
+  "abbreviation": "SBLGNT",
+  "language": {
+    "iso639_3": "grc",
+    "iso639_1": "el",
+    "script": "Grek",
+    "direction": "ltr"
+  },
+  "year": {
+    "published": 2010
+  },
+  "translators": [
+    "Michael W. Holmes"
+  ],
+  "body": "Society of Biblical Literature",
+  "philosophy": "source_text",
+  "tradition": "nondenominational",
+  "textual_basis": {
+    "nt": [
+      "sblgnt"
+    ]
+  },
+  "work": {
+    "method": [
+      "single_translator"
+    ],
+    "source_languages": [
+      "grc"
+    ],
+    "review": "society_review"
+  },
+  "links": {
+    "homepage": "https://sblgnt.com"
+  },
+  "coverage": {
+    "testament": "nt",
+    "books": 27,
+    "chapters": 260,
+    "verses": 7954,
+    "deuterocanonical": false,
+    "missing_books": []
+  },
+  "features": {
+    "strongs": false,
+    "alt_versions": false
+  },
+  "provenance": {
+    "method": "manual",
+    "verified": [
+      "name.en",
+      "abbreviation",
+      "language.iso639_3",
+      "year.published",
+      "translators",
+      "body",
+      "philosophy",
+      "textual_basis",
+      "links"
+    ],
+    "sources": [
+      {
+        "url": "https://sblgnt.com",
+        "fields": [
+          "year.published",
+          "translators",
+          "body",
+          "links"
+        ]
+      }
+    ],
+    "generated": "2026-07-25"
+  }
+}
