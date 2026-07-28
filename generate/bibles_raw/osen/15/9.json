@@ -27,13 +27,20 @@
     "bookId": 15,
     "chapterId": 9,
     "verseId": 5,
-    "text": "At the evening offering I rose from my fasting, with my garment and my robe torn, and I fell on my knees and spread out my hands to the LORD my God.",
+    "text": "At the evening offering I rose from my fasting, and having torn my garment and my robe, I fell on my knees and spread out my hands to the LORD my God.",
     "versions": [
       {
         "text": "At the evening offering I rose from my humiliation, with my garment and robe torn, and fell on my knees and spread out my hands to the LORD my God.",
         "type": "error",
         "severity": "major",
         "explanation": "תַּעֲנִית denotes fasting/self-affliction, not \"humiliation\" in the modern English sense of being shamed. \"Fasting\" (or \"self-abasement\") conveys the act Ezra rose from; \"humiliation\" misleads the hearer."
+      },
+      {
+        "text": "At the evening offering I rose from my fasting, with my garment and my robe torn, and I fell on my knees and spread out my hands to the LORD my God.",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "The Hebrew infinitive construct with waw (וּבְקָרְעִי) describes an action Ezra performs in sequence — tearing his garment and robe — rather than a state in which they already were. Rendering it as an action keeps the chain of verbs (rose, tore, knelt, spread) moving, which also reads more naturally aloud. The existing wording is a defensible paraphrase of the same idea.",
+        "alternative": true
       }
     ]
   },
@@ -55,7 +62,10 @@
         "severity": "minor",
         "explanation": "The Hebrew lists three groups in sequence (we, our kings, our priests). The em-dash construction turns the kings and priests into an appositive that redefines \"we,\" which is inaccurate and reads awkwardly aloud."
       }
-    ]
+    ],
+    "checked": {
+      "changed": "1:247"
+    }
   },
   {
     "bookId": 15,

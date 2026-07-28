@@ -53,13 +53,20 @@
     "bookId": 66,
     "chapterId": 14,
     "verseId": 8,
-    "text": "Then another angel, a second, followed, saying: \"Fallen, fallen is Babylon the great, who made all the nations drink the wine of the passion of her immorality.\"",
+    "text": "Then another angel, a second, followed, saying: \"Fallen, fallen is Babylon the great, who made all the nations drink the maddening wine of her immorality.\"",
     "versions": [
       {
         "text": "A second angel followed, saying: \"Fallen, fallen is Babylon the great, who made all the nations drink the wine of the passion of her immorality.\"",
         "type": "error",
         "severity": "minor",
         "explanation": "The Greek has both ἄλλος (\"another\") and δεύτερος (\"a second\"), matching the sequence pattern of verses 6, 9, 15, 17, 18. The opening καί also links this angel to the preceding one; the current rendering drops the connective and the word \"another,\" weakening the chain of angels."
+      },
+      {
+        "text": "Then another angel, a second, followed, saying: \"Fallen, fallen is Babylon the great, who made all the nations drink the wine of the passion of her immorality.\"",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "The stacked genitive chain \"the wine of the passion of her immorality\" is hard to follow when read aloud. Rendering θυμοῦ adjectivally (\"maddening wine\") keeps the sense of intoxicating passion/fury while giving the clause a cleaner spoken rhythm. The existing wording is a legitimate literal rendering, so it remains a valid alternative.",
+        "alternative": true
       }
     ]
   },

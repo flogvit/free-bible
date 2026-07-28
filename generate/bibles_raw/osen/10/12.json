@@ -63,13 +63,20 @@
     "bookId": 10,
     "chapterId": 12,
     "verseId": 11,
-    "text": "This is what the LORD says: I am going to raise up evil against you out of your own house. I will take your wives before your very eyes and give them to your own neighbor, and he will lie with your wives in broad daylight.",
+    "text": "This is what the LORD says: I am going to raise up disaster against you out of your own house. I will take your wives before your very eyes and give them to your own neighbor, and he will lie with your wives in broad daylight.",
     "versions": [
       {
         "text": "This is what the LORD says: I am going to raise up evil against you out of your own house. I will take your wives before your very eyes and give them to another, and he will lie with your wives in broad daylight.",
         "type": "error",
         "severity": "minor",
         "explanation": "The Hebrew לְרֵעֶיךָ means \"to your neighbor/companion\" — someone close to David, which is central to the fulfillment of the oracle. \"To another\" loses this pointed nuance."
+      },
+      {
+        "text": "This is what the LORD says: I am going to raise up evil against you out of your own house. I will take your wives before your very eyes and give them to your own neighbor, and he will lie with your wives in broad daylight.",
+        "type": "theological",
+        "severity": "minor",
+        "explanation": "רָעָה here denotes calamity or disaster brought as judgment, not moral evil. Saying the LORD raises up \"evil\" risks the impression that God authors wickedness; \"disaster\" (or \"calamity\") conveys the punitive sense clearly while keeping the same rhythm.",
+        "alternative": true
       }
     ]
   },
@@ -139,13 +146,27 @@
     "bookId": 10,
     "chapterId": 12,
     "verseId": 21,
-    "text": "His servants said to him, \"What is this you have done? While the child was alive you fasted and wept, but now that the child is dead you get up and eat.\"",
+    "text": "His servants said to him, \"What is this you have done? While the child was alive you fasted and wept, but now that the child is dead you got up and ate food.\"",
     "versions": [
       {
         "text": "His servants said to him, \"What is this you are doing? While the child was alive you fasted and wept, but now that the child is dead you get up and eat.\"",
         "type": "grammar",
         "severity": "minor",
         "explanation": "The Hebrew verb is a completed action (\"that you have done\"), matching the following clauses that look back on David's fasting and weeping."
+      },
+      {
+        "text": "His servants said to him, \"What is this you have done? While the child was alive you fasted and wept, but now that the child is dead you get up and eat.\"",
+        "type": "grammar",
+        "severity": "minor",
+        "explanation": "The verbs קַמְתָּ and וַתֹּאכַל are completed actions, like עָשִׂיתָה earlier in the verse, which was already corrected to a completed sense. Keeping the final clause in the simple present is inconsistent with that correction; a perfect form matches the servants looking back on what David has just done.",
+        "alternative": true
+      },
+      {
+        "text": "His servants said to him, \"What is this you have done? While the child was alive you fasted and wept, but now that the child is dead you have gotten up and eaten.\"",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "\"you have gotten up and eaten\" is accurate but heavy on the tongue; the simple past \"you got up and ate food\" keeps the completed sense that earlier revisions established while reading more smoothly aloud, and it renders the object לָחֶם (\"food/bread\") that the Hebrew supplies.",
+        "alternative": true
       }
     ]
   },

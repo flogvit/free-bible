@@ -23,7 +23,10 @@
         "severity": "major",
         "explanation": "The Hebrew text here reads only \"on the ninth of the month\" — no month number is given. The word \"fourth\" is supplied from a parallel account and should not stand in the text without a note. If the number is retained, it should be marked and explained in a footnote."
       }
-    ]
+    ],
+    "checked": {
+      "changed": "1:124"
+    }
   },
   {
     "bookId": 12,
@@ -135,13 +138,20 @@
     "bookId": 12,
     "chapterId": 25,
     "verseId": 19,
-    "text": "From the city he took the officer who was in charge of the fighting men, five of the royal advisers who were found in the city, the scribe of the army commander who mustered the people of the land, and sixty of the common people who were found in the city.",
+    "text": "From the city he took a court official who was in charge of the fighting men, five of the king's personal advisers who were found in the city, the secretary of the army commander who mustered the people of the land, and sixty men of the people of the land who were found in the city.",
     "versions": [
       {
         "text": "From the city he took the officer who was in charge of the fighting men, five of the royal advisers who were found in the city, the scribe who was the commander's officer in charge of conscripting the people of the land, and sixty of the common people who were found in the city.",
         "type": "error",
         "severity": "major",
         "explanation": "\"the commander's officer\" misrepresents שַׂר הַצָּבָא, which means \"the commander of the army.\" The phrase as it stands is also awkward for oral reading."
+      },
+      {
+        "text": "From the city he took the officer who was in charge of the fighting men, five of the royal advisers who were found in the city, the scribe of the army commander who mustered the people of the land, and sixty of the common people who were found in the city.",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "Two small refinements: (1) the Hebrew סָרִיס אֶחָד is indefinite (\"one court official\"), so \"the officer\" wrongly implies a previously known figure; (2) עַם הָאָרֶץ occurs twice in this verse and is rendered inconsistently (\"the people of the land\" / \"the common people\"), which obscures for a listener that the same group is meant, and it also matches the wording in verse 3.",
+        "alternative": true
       }
     ]
   },

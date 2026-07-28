@@ -101,7 +101,10 @@
         "severity": "major",
         "explanation": "אָוֶן means \"iniquity/wickedness,\" not \"worthless,\" and the parallel שָׁוְא (\"falsehood, emptiness\") is what carries the sense of nothingness. As it stands, the two halves of the line say nearly the same thing and the moral indictment of Gilead is lost."
       }
-    ]
+    ],
+    "checked": {
+      "changed": "1:165"
+    }
   },
   {
     "bookId": 28,
@@ -119,14 +122,24 @@
     "bookId": 28,
     "chapterId": 12,
     "verseId": 15,
-    "text": "Ephraim has provoked him bitterly; so his blood will remain upon him, and his Lord will bring his own disgrace back upon him.",
+    "text": "Ephraim has provoked him bitterly; so his Lord will leave his blood upon him and turn his disgrace back on him.",
     "versions": [
       {
         "text": "Ephraim has given bitter provocation; so his Lord will leave his bloodguilt upon him and repay him for his contempt.",
         "type": "error",
         "severity": "minor",
         "explanation": "חֶרְפָּתוֹ means \"his reproach/disgrace\" — the shame Ephraim has earned is turned back on him — rather than \"his contempt,\" which shifts the noun's meaning to Ephraim's attitude. \"Bloodguilt\" is an interpretive expansion of דָּמָיו; \"his blood\" with \"remain upon him\" conveys the idiom more directly."
+      },
+      {
+        "text": "Ephraim has provoked him bitterly; so his blood will remain upon him, and his Lord will bring his own disgrace back upon him.",
+        "type": "grammar",
+        "severity": "minor",
+        "explanation": "יִטּוֹשׁ is an active third-person singular verb, while דָּמָיו (\"his blood\") is grammatically plural; the subject of both verbs in the line is אֲדֹנָיו (\"his Lord\"), named at the end. Rendering the first clause as an intransitive \"his blood will remain\" obscures that the Lord is the actor in both halves and slightly weakens the parallelism of leaving the blood / turning back the disgrace. Making the Lord the subject of both verbs also lets the sentence read as one balanced pair for the ear.",
+        "alternative": true
       }
-    ]
+    ],
+    "checked": {
+      "changed": "2:111"
+    }
   }
 ]

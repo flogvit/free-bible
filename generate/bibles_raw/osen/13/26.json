@@ -47,7 +47,10 @@
         "severity": "minor",
         "explanation": "Minor stylistic smoothing; the Hebrew places 'capable men' with the relatives, and the current rendering is slightly clotted for oral reading. The revised order reads more naturally aloud."
       }
-    ]
+    ],
+    "checked": {
+      "changed": "1:118"
+    }
   },
   {
     "bookId": 13,
@@ -77,13 +80,20 @@
     "bookId": 13,
     "chapterId": 26,
     "verseId": 12,
-    "text": "To these divisions of the gatekeepers, to the chief men, were given guard duties alongside their brothers, to serve in the house of the LORD.",
+    "text": "These were the divisions of the gatekeepers: the chief men held guard duties, like their brothers, to serve in the house of the LORD.",
     "versions": [
       {
         "text": "These were the divisions of the gatekeepers, assigned by their chief men to guard duties alongside their brothers, serving in the house of the LORD.",
         "type": "error",
         "severity": "major",
         "explanation": "The Hebrew says the guard duties belonged 'to the chief men' (לְרָאשֵׁי הַגְּבָרִים), not that the divisions were 'assigned by' them. The current wording reverses the sense."
+      },
+      {
+        "text": "To these divisions of the gatekeepers, to the chief men, were given guard duties alongside their brothers, to serve in the house of the LORD.",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "The sense (duties belonging to the chief men) is right, but the double 'To these... to the chief men' opening is heavy and hard to follow when read aloud. Recasting keeps the Hebrew's attribution of the duties to the chief men while giving the sentence a clear subject and smoother rhythm.",
+        "alternative": true
       }
     ]
   },
@@ -105,7 +115,10 @@
         "severity": "minor",
         "explanation": "The Hebrew has only the directions 'eastward' and 'northward' without the word 'gate'; verses 15-16 likewise. Keeping 'east' and 'north' matches the text and the parallel phrasing in verses 15-18."
       }
-    ]
+    ],
+    "checked": {
+      "changed": "1:136"
+    }
   },
   {
     "bookId": 13,
@@ -119,7 +132,10 @@
         "severity": "minor",
         "explanation": "'Gate' is not in the Hebrew here (only נֶגְבָּה, 'southward'); consistency with the directional pattern of the surrounding verses is preferable."
       }
-    ]
+    ],
+    "checked": {
+      "changed": "1:60"
+    }
   },
   {
     "bookId": 13,
@@ -217,7 +233,10 @@
         "severity": "major",
         "explanation": "פְּקֻדַּת יִשְׂרָאֵל is the oversight of Israel's affairs; adding 'the affairs of' clarifies. Also, spelling out 'one thousand seven hundred' reads more clearly aloud and matches the Hebrew idiom."
       }
-    ]
+    ],
+    "checked": {
+      "changed": "1:199"
+    }
   },
   {
     "bookId": 13,
@@ -244,6 +263,9 @@
         "explanation": "The second half of the verse was dropped in the earlier revision. The Hebrew continues with וַיַּפְקִידֵם דָּוִיד הַמֶּלֶךְ... ('King David put them in charge of the Reubenites, the Gadites, and the half-tribe of Manasseh for every matter of God and matter of the king'). The intended change was only replacing 'twenty-seven hundred' with 'two thousand seven hundred'; the rest of the verse must be restored.",
         "alternative": false
       }
-    ]
+    ],
+    "checked": {
+      "changed": "2:240"
+    }
   }
 ]

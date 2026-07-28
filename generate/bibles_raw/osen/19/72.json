@@ -89,13 +89,20 @@
     "bookId": 19,
     "chapterId": 72,
     "verseId": 14,
-    "text": "He will redeem their lives from oppression and violence, for their blood is precious in his sight.",
+    "text": "He will redeem their lives from oppression and violence, and their blood is precious in his sight.",
     "versions": [
       {
         "text": "He will redeem them from oppression and violence, for their blood is precious in his sight.",
         "type": "error",
         "severity": "minor",
         "explanation": "The object in Hebrew is נַפְשָׁם, \"their life/lives,\" which parallels \"their blood\" in the second line; \"them\" loses this deliberate life/blood pairing."
+      },
+      {
+        "text": "He will redeem their lives from oppression and violence, for their blood is precious in his sight.",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "The Hebrew connective is a simple waw, not a causal particle. Rendering it \"for\" makes the preciousness of their blood the reason for the redemption, which is an interpretive addition; \"and\" keeps the two parallel statements side by side as the Hebrew does, and reads just as smoothly aloud.",
+        "alternative": true
       }
     ]
   },
@@ -109,13 +116,20 @@
     "bookId": 19,
     "chapterId": 72,
     "verseId": 16,
-    "text": "May grain abound throughout the land; on the tops of the mountains may its fruit wave like Lebanon, and may the people thrive in the cities like the grass of the field.",
+    "text": "May grain abound throughout the land; on the tops of the mountains may its fruit wave like Lebanon, and may the people thrive in the cities like the grass of the earth.",
     "versions": [
       {
         "text": "May grain abound throughout the land; on the tops of the hills may it sway. May its fruit flourish like Lebanon, and may the people thrive in the cities like the grass of the field.",
         "type": "error",
         "severity": "major",
         "explanation": "The Hebrew has a single verb (יִרְעַשׁ, \"wave/sway\") whose subject is \"its fruit\"; the current rendering splits this into two clauses (\"may it sway\" plus \"may its fruit flourish\"), effectively duplicating the verb and adding content. Also הָרִים is \"mountains\" (rendered \"mountains\" in v. 3), so \"hills\" is inconsistent."
+      },
+      {
+        "text": "May grain abound throughout the land; on the tops of the mountains may its fruit wave like Lebanon, and may the people thrive in the cities like the grass of the field.",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "כְּעֵשֶׂב הָאָרֶץ is \"like the grass of the earth/land\" (הָאָרֶץ), the same word already rendered \"the land\" earlier in this verse; \"field\" would render שָׂדֶה, a different word. Keeping \"earth\" preserves the internal echo of the verse.",
+        "alternative": true
       }
     ]
   },

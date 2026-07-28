@@ -29,7 +29,10 @@
         "severity": "minor",
         "explanation": "The Hebrew verb is the emphatic infinitive of עשה, \"do\" (carry out the command of v.3), not \"obey a word.\" Also the closing pronouns are singular in Hebrew (\"he, his servants, and his people\"), referring to the individual king; the plural \"they, their\" blurs this."
       }
-    ]
+    ],
+    "checked": {
+      "changed": "1:193"
+    }
   },
   {
     "bookId": 24,
@@ -105,19 +108,29 @@
         "severity": "minor",
         "explanation": "\"Paints it in vermilion\" is awkward English; the preposition בַּ here is instrumental, so \"paints it with vermilion\" (or \"paints it red with vermilion\") reads more naturally aloud."
       }
-    ]
+    ],
+    "checked": {
+      "changed": "1:156"
+    }
   },
   {
     "bookId": 24,
     "chapterId": 22,
     "verseId": 15,
-    "text": "Are you a king because you outdo others in cedar? Did not your father eat and drink, and also do justice and righteousness? Then all went well for him.",
+    "text": "Do you think you are a king because you compete in cedar? Did not your father eat and drink, and also do justice and righteousness? Then all went well for him.",
     "versions": [
       {
         "text": "Does it make you a king to surround yourself with cedar? Your father ate and drank, but he did justice and righteousness, and all went well for him.",
         "type": "error",
         "severity": "minor",
         "explanation": "מְתַחֲרֶה means \"compete, vie, outdo,\" which the paraphrase \"surround yourself with cedar\" loses. The second clause is a rhetorical question in Hebrew (הֲלוֹא), and \"but he did justice\" wrongly implies a contrast with eating and drinking rather than an addition."
+      },
+      {
+        "text": "Are you a king because you outdo others in cedar? Did not your father eat and drink, and also do justice and righteousness? Then all went well for him.",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "The Hebrew הֲתִמְלֹךְ is a verb (\"do you reign?\") with a sarcastic force, and מְתַחֲרֶה means \"compete, vie.\" \"Outdo others in cedar\" adds an object (\"others\") not in the Hebrew and is opaque when read aloud; \"Do you think you are a king because you compete in cedar?\" keeps the verbal sense and the sarcasm while flowing better orally.",
+        "alternative": true
       }
     ]
   },

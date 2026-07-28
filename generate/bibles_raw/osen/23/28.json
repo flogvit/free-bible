@@ -53,13 +53,20 @@
     "bookId": 23,
     "chapterId": 28,
     "verseId": 8,
-    "text": "Every table is covered with vomit and filth; there is not a spot left untouched.",
+    "text": "For every table is covered with vomit and filth; there is not a spot left untouched.",
     "versions": [
       {
         "text": "Every table is covered with vomit and filth; there is not a clean place left.",
         "type": "error",
         "severity": "minor",
         "explanation": "בְּלִי מָקוֹם means \"without a place [free]\" — no space remains. The word \"clean\" is an addition; \"not a spot left untouched\" keeps the sense without adding a term absent from the Hebrew."
+      },
+      {
+        "text": "Every table is covered with vomit and filth; there is not a spot left untouched.",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "The Hebrew opens with כִּי, a causal connective tying this verse to the description of the drunken priests and prophets in the previous verse. Restoring \"For\" preserves the logical link and helps an oral reader hear the sentence as explanation rather than a fresh statement.",
+        "alternative": true
       }
     ]
   },

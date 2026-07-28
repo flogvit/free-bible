@@ -36,7 +36,10 @@
         "explanation": "The entire content of the LORD's promise has been dropped. The Hebrew continues with the conditional clause (אִם־יִשְׁמְרוּ בָנֶיךָ אֶת־דַּרְכָּם... בְּכָל־לְבָבָם וּבְכָל־נַפְשָׁם) and its apodosis (לֹא־יִכָּרֵת לְךָ אִישׁ מֵעַל כִּסֵּא יִשְׂרָאֵל). The introductory colon in the current text points to a quotation that is no longer there, leaving the verse incomplete. The intentional purpose-clause opening (\"Do this so that...\") is retained.",
         "alternative": false
       }
-    ]
+    ],
+    "checked": {
+      "changed": "2:229"
+    }
   },
   {
     "bookId": 11,
@@ -207,7 +210,10 @@
         "explanation": "The final clause of the verse has been lost: וַיָּשֶׁב בְּנָיָהוּ אֶת־הַמֶּלֶךְ דָּבָר לֵאמֹר כֹּה־דִבֶּר יוֹאָב וְכֹה עָנָנִי, Benaiah's report back to the king. Without it the narrative jumps to Solomon's reply in verse 31 with no reported speech to answer. The intentional clarification \"said to Joab\" is kept.",
         "alternative": false
       }
-    ]
+    ],
+    "checked": {
+      "changed": "2:220"
+    }
   },
   {
     "bookId": 11,
@@ -299,13 +305,20 @@
     "bookId": 11,
     "chapterId": 2,
     "verseId": 44,
-    "text": "The king also said to Shimei, \"You know in your own heart all the evil you did to my father David. So the LORD will bring your evil back on your own head.",
+    "text": "The king also said to Shimei, \"You know—your own heart knows—all the evil you did to my father David. So the LORD will bring your evil back on your own head.",
     "versions": [
       {
         "text": "The king also said to Shimei, \"You know in your own heart all the evil you did to my father David. Now the LORD brings your evil back on your own head.",
         "type": "grammar",
         "severity": "minor",
         "explanation": "The verb וְהֵשִׁיב is a waw-consecutive perfect with future force, parallel to the identical construction in verse 32 (rendered there as \"will bring\"). The present tense \"brings\" breaks that parallel and weakens the declarative force of the pronouncement."
+      },
+      {
+        "text": "The king also said to Shimei, \"You know in your own heart all the evil you did to my father David. So the LORD will bring your evil back on your own head.",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "The Hebrew has a deliberate double statement of knowing: \"you know\" (אַתָּה יָדַעְתָּ) followed by the relative clause \"which your heart knows\" (אֲשֶׁר יָדַע לְבָבְךָ). The current rendering compresses both into a single clause, losing the emphatic repetition that drives Solomon's accusation. An appositional dash keeps the doubling while remaining easy to read aloud.",
+        "alternative": true
       }
     ]
   },

@@ -27,13 +27,20 @@
     "bookId": 30,
     "chapterId": 9,
     "verseId": 5,
-    "text": "The Lord, the GOD of hosts—he touches the earth and it melts, and all who dwell in it mourn; all of it rises like the Nile and sinks again like the Nile of Egypt.",
+    "text": "The Lord GOD of hosts—he touches the earth and it melts, and all who dwell in it mourn; all of it rises like the Nile and sinks again like the Nile of Egypt.",
     "versions": [
       {
         "text": "The Lord, the LORD of hosts—he touches the earth and it melts, and all who dwell in it mourn; all of it rises like the Nile and sinks again like the Nile of Egypt.",
         "type": "error",
         "severity": "minor",
         "explanation": "The divine title here is the same combination rendered \"the Lord GOD\" in verse 8 (Adonai YHWH). Rendering it \"the Lord, the LORD of hosts\" both breaks internal consistency within the chapter and reads awkwardly aloud. \"the GOD of hosts\" preserves the small-caps convention for the divine name and matches verse 8."
+      },
+      {
+        "text": "The Lord, the GOD of hosts—he touches the earth and it melts, and all who dwell in it mourn; all of it rises like the Nile and sinks again like the Nile of Egypt.",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "The Hebrew presents Adonai YHWH tseva'ot as a single unified divine title, not two titles in apposition. The comma and repeated article break the title in two and add a pause that is not in the source; removing them keeps the consistency with the divine title elsewhere in the chapter and reads more smoothly aloud.",
+        "alternative": true
       }
     ]
   },

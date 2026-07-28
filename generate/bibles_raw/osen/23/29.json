@@ -18,7 +18,10 @@
         "explanation": "The second half of the verse is missing: סְפוּ שָׁנָה עַל־שָׁנָה חַגִּים יִנְקֹפוּ (\"Add year to year, let the festivals run their round\"). This clause is essential — it sets up the ironic contrast with the siege announced in verse 2, and the dash carries the thought forward. The omission drops roughly half the Hebrew text of the verse.",
         "alternative": false
       }
-    ]
+    ],
+    "checked": {
+      "changed": "2:107"
+    }
   },
   {
     "bookId": 23,
@@ -48,13 +51,20 @@
     "bookId": 23,
     "chapterId": 29,
     "verseId": 6,
-    "text": "She will be visited by the LORD of hosts—with thunder and earthquake and a great roar, with whirlwind and tempest and the flame of a devouring fire.",
+    "text": "She will be visited in judgment by the LORD of hosts—with thunder and earthquake and a great roar, with whirlwind and tempest and the flame of a devouring fire.",
     "versions": [
       {
         "text": "the LORD of hosts will come with thunder and earthquake and a great roar, with whirlwind and tempest and the flame of a devouring fire.",
         "type": "error",
         "severity": "major",
         "explanation": "The Hebrew verb תִּפָּקֵד is passive with a feminine singular subject (the city/Ariel, or the horde of v.5): 'she will be visited/punished by the LORD of hosts.' The current rendering makes the LORD the subject who 'comes,' losing the idea of visitation upon the object and the connection to the preceding verse."
+      },
+      {
+        "text": "She will be visited by the LORD of hosts—with thunder and earthquake and a great roar, with whirlwind and tempest and the flame of a devouring fire.",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "The niphal תִּפָּקֵד here carries the sense of punitive visitation. In spoken English, 'visited' alone can be heard as a friendly visit; adding 'in judgment' preserves the passive construction and the feminine subject while making the sense unmistakable to a listener.",
+        "alternative": true
       }
     ]
   },
@@ -114,7 +124,10 @@
         "severity": "major",
         "explanation": "The causal יַעַן כִּי ('because') has been dropped, which breaks the logical link with the 'Therefore' of verse 14. Restoring the causal clause keeps the argument intact for the listener."
       }
-    ]
+    ],
+    "checked": {
+      "changed": "1:193"
+    }
   },
   {
     "bookId": 23,

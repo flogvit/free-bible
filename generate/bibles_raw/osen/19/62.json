@@ -42,7 +42,10 @@
         "explanation": "The final clauses of the Hebrew verse — בְּפִיו יְבָרֵכוּ ('with his/their mouth they bless'), וּבְקִרְבָּם יְקַלְלוּ ('and inwardly they curse'), and the liturgical marker סֶלָה ('Selah') — are entirely absent from the current text. Roughly half the verse has been dropped. The wording is restored from the earlier revision, which the previous editorial pass had retained.",
         "alternative": false
       }
-    ]
+    ],
+    "checked": {
+      "changed": "2:147"
+    }
   },
   {
     "bookId": 19,
@@ -60,15 +63,25 @@
     "bookId": 19,
     "chapterId": 62,
     "verseId": 8,
-    "text": "My salvation and my honor rest on God; my mighty rock, my refuge is in God.",
+    "text": "My salvation and my honor rest on God; my mighty rock, my refuge, is in God.",
     "versions": [
       {
         "text": "My salvation and my honor rest on God; he is my mighty rock, my refuge.",
         "type": "error",
         "severity": "minor",
         "explanation": "The Hebrew ends with בֵּאלֹהִים (\"in God\"), which the current rendering drops, and it adds \"he is\" which is not in the text. The suggested wording preserves the closing emphasis on God."
+      },
+      {
+        "text": "My salvation and my honor rest on God; my mighty rock, my refuge is in God.",
+        "type": "grammar",
+        "severity": "minor",
+        "explanation": "In the Hebrew, \"the rock of my strength\" and \"my refuge\" stand in apposition, both completed by \"in God.\" Without a comma after \"my refuge,\" the English can be misread as two separate clauses (\"my mighty rock\" left hanging). The added comma clarifies the apposition and gives the line a clearer cadence when read aloud.",
+        "alternative": true
       }
-    ]
+    ],
+    "checked": {
+      "changed": "2:76"
+    }
   },
   {
     "bookId": 19,
@@ -88,7 +101,10 @@
         "severity": "major",
         "explanation": "The Hebrew contrasts בְּנֵי־אָדָם (common people) with בְּנֵי אִישׁ (people of rank); \"mortals\" and \"children of men\" lose the contrast. Also מֵהֶבֶל יָחַד means \"together lighter than a breath,\" echoing הֶבֶל at the start, not \"less than nothing.\""
       }
-    ]
+    ],
+    "checked": {
+      "changed": "1:141"
+    }
   },
   {
     "bookId": 19,

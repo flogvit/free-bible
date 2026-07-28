@@ -109,13 +109,20 @@
     "bookId": 25,
     "chapterId": 3,
     "verseId": 16,
-    "text": "He has ground my teeth on gravel and pressed me down into the ashes.",
+    "text": "He has broken my teeth with gravel and pressed me down into the ashes.",
     "versions": [
       {
         "text": "He has ground my teeth on gravel and trampled me into the dust.",
         "type": "error",
         "severity": "minor",
         "explanation": "אֵפֶר means \"ashes\" (a mourning image), not \"dust\" (עָפָר, which is used in v. 29). Keeping the distinction preserves both the imagery and the contrast between the two verses."
+      },
+      {
+        "text": "He has ground my teeth on gravel and pressed me down into the ashes.",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "The verb גרס means to crush or shatter; the image is of teeth being broken by grit in food. In English, \"ground my teeth\" is an idiom for grinding teeth in anger or anguish, which shifts the picture from what God does to the sufferer to what the sufferer does. \"Broken my teeth with gravel\" keeps the causative force and reads cleanly aloud.",
+        "alternative": true
       }
     ]
   },

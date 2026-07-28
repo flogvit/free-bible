@@ -83,13 +83,20 @@
     "bookId": 9,
     "chapterId": 30,
     "verseId": 13,
-    "text": "David asked him, \"Whose man are you, and where do you come from?\" He answered, \"I am a young Egyptian, the slave of an Amalekite. My master abandoned me three days ago because I fell ill.",
+    "text": "David asked him, \"Who do you belong to, and where are you from?\" He answered, \"I am a young Egyptian, the slave of an Amalekite. My master abandoned me three days ago because I fell ill.",
     "versions": [
       {
         "text": "David asked him, \"Whose man are you, and where do you come from?\" He answered, \"I am an Egyptian, the slave of an Amalekite. My master abandoned me three days ago because I fell ill.",
         "type": "error",
         "severity": "minor",
         "explanation": "The Hebrew נַעַר (\"young man, lad\") is dropped. Including \"young\" preserves the detail and matches the description of the fleeing \"young men\" in verse 17."
+      },
+      {
+        "text": "David asked him, \"Whose man are you, and where do you come from?\" He answered, \"I am a young Egyptian, the slave of an Amalekite. My master abandoned me three days ago because I fell ill.",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "The Hebrew לְמִי־אַתָּה literally asks \"to whom do you belong?\" — a question of ownership, which fits the reply \"the slave of an Amalekite.\" \"Whose man are you\" is understandable but reads stiffly aloud; \"Who do you belong to\" is more natural for oral reading and keeps the sense of possession. \"Where are you from\" is also tighter than \"where do you come from.\"",
+        "alternative": true
       }
     ]
   },

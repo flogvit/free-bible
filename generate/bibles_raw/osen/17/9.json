@@ -176,7 +176,10 @@
         "explanation": "The second half of the verse was dropped: עַל־כֵּן עַל־כָּל־דִּבְרֵי הָאִגֶּרֶת הַזֹּאת וּמָה־רָאוּ עַל־כָּכָה וּמָה הִגִּיעַ אֲלֵיהֶם ('and so, because of all the words of this letter, and what they had seen concerning this, and what had happened to them'). Without it the sentence no longer leads into verse 27, where the main clause ('the Jews established...') follows. The earlier revision's wording is restored while keeping the intentional change to 'after the name Pur.'",
         "alternative": false
       }
-    ]
+    ],
+    "checked": {
+      "changed": "2:177"
+    }
   },
   {
     "bookId": 17,
@@ -196,7 +199,10 @@
         "severity": "minor",
         "explanation": "The Hebrew uses active participles (נִזְכָּרִים וְנַעֲשִׂים) describing an ongoing observance, followed by imperfect verbs of assurance. Rendering it as past obligation ('were to be') weakens the enduring force of the statement and reads less naturally aloud."
       }
-    ]
+    ],
+    "checked": {
+      "changed": "1:218"
+    }
   },
   {
     "bookId": 17,
@@ -214,13 +220,20 @@
     "bookId": 17,
     "chapterId": 9,
     "verseId": 31,
-    "text": "to confirm these days of Purim at their appointed times, just as Mordecai the Jew and Queen Esther had established for them, and just as they had taken upon themselves and upon their descendants the matter of their fasting and their lamentation.",
+    "text": "to confirm these days of Purim at their appointed times, just as Mordecai the Jew and Queen Esther had established for them, and just as they had taken upon themselves and upon their descendants the matters of the fasts and their cries of lament.",
     "versions": [
       {
         "text": "to confirm these days of Purim at their appointed times, just as Mordecai the Jew and Queen Esther had established for them, and just as they had established for themselves and their descendants, with the matters of fasting and lamentation.",
         "type": "error",
         "severity": "minor",
         "explanation": "In Hebrew \"דברי הצמות וזעקתם\" is the direct object of \"קיימו\" (what they ordained), not a separate prepositional phrase; rendering it as \"with the matters of\" obscures the syntax. Also the possessive suffix in \"וזעקתם\" (\"their lamentation\") is dropped. The revised wording restores both and reads more smoothly aloud."
+      },
+      {
+        "text": "to confirm these days of Purim at their appointed times, just as Mordecai the Jew and Queen Esther had established for them, and just as they had taken upon themselves and upon their descendants the matter of their fasting and their lamentation.",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "הַצֹּמוֹת is a definite plural noun without a possessive suffix ('the fasts'), while the suffix belongs only to זַעֲקָתָם ('their outcry'). The current wording shifts the possessive onto 'fasting' and flattens the plural; 'matters' also matches the plural דִּבְרֵי and keeps consistency with verse 32.",
+        "alternative": true
       }
     ]
   },

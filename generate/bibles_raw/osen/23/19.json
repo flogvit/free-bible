@@ -35,7 +35,10 @@
         "severity": "minor",
         "explanation": "\"will run dry and parched\" mixes a verb phrase with a bare adjective, which is ungrammatical and stumbles when read aloud. The Hebrew has two parallel verbs (יֶחֱרַב וְיָבֵשׁ)."
       }
-    ]
+    ],
+    "checked": {
+      "changed": "1:74"
+    }
   },
   {
     "bookId": 23,
@@ -91,13 +94,20 @@
     "bookId": 23,
     "chapterId": 19,
     "verseId": 13,
-    "text": "The officials of Zoan have become fools, the officials of Memphis are deceived; they who are the cornerstone of her tribes have led Egypt astray.",
+    "text": "The officials of Zoan have become fools, the officials of Memphis are deceived; the cornerstones of her tribes have led Egypt astray.",
     "versions": [
       {
         "text": "The officials of Zoan have become fools, the officials of Memphis are deceived; the leaders of Egypt have led her astray.",
         "type": "error",
         "severity": "minor",
         "explanation": "The phrase פִּנַּת שְׁבָטֶיהָ (\"the cornerstone of her tribes\") describes the very officials just named; \"the leaders of Egypt\" flattens the image and loses the irony that Egypt's foundation stones are the ones misleading her."
+      },
+      {
+        "text": "The officials of Zoan have become fools, the officials of Memphis are deceived; they who are the cornerstone of her tribes have led Egypt astray.",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "The relative construction \"they who are the cornerstone of her tribes\" is heavy for oral reading and stacks a pronoun, a relative clause and a predicate before the main verb. Rendering the appositional phrase directly as the subject keeps the intended irony (Egypt's own foundation stones mislead her) while reading more smoothly aloud.",
+        "alternative": true
       }
     ]
   },
@@ -144,7 +154,10 @@
         "explanation": "The current text drops the entire first half of the verse: the time marker \"on that day,\" the five cities in the land of Egypt, their speaking the language of Canaan, and their swearing to the LORD of hosts. Also, with the opening clause missing, \"one of them\" has no antecedent. The earlier correction of \"City of the Sun\" to \"City of Destruction\" is retained.",
         "alternative": false
       }
-    ]
+    ],
+    "checked": {
+      "changed": "2:173"
+    }
   },
   {
     "bookId": 23,
@@ -194,6 +207,9 @@
         "severity": "minor",
         "explanation": "The Hebrew uses a relative clause with a completed-action verb (אֲשֶׁר בֵּרֲכוֹ), pronouncing the blessing as already spoken; \"for ... will bless them\" changes both the syntax and the tense of the declaration."
       }
-    ]
+    ],
+    "checked": {
+      "changed": "1:130"
+    }
   }
 ]

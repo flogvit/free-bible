@@ -27,13 +27,20 @@
     "bookId": 66,
     "chapterId": 19,
     "verseId": 5,
-    "text": "And a voice came from the throne, saying: \"Praise our God, all you his servants, and you who fear him, both small and great.\"",
+    "text": "And a voice went out from the throne, saying: \"Praise our God, all you his servants, and all who fear him, both small and great!\"",
     "versions": [
       {
         "text": "And a voice came from the throne, saying: \"Praise our God, all you his servants, you who fear him, both small and great.\"",
         "type": "grammar",
         "severity": "minor",
         "explanation": "The Greek has the connective καί joining the two groups addressed (\"his servants\" and \"those who fear him\"). Without \"and\" the second phrase reads as an appositive redefining the first, which slightly narrows the sense; adding it also improves the spoken cadence."
+      },
+      {
+        "text": "And a voice came from the throne, saying: \"Praise our God, all you his servants, and you who fear him, both small and great.\"",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "ἐξῆλθεν is more precisely \"went out\" than the flatter \"came,\" and the summons is an imperative acclamation, so an exclamation point better matches the tone for oral reading. \"All who fear him\" also reads more smoothly aloud than repeating \"you who.\" The existing rendering is defensible.",
+        "alternative": true
       }
     ]
   },

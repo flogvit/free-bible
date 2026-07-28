@@ -89,13 +89,20 @@
     "bookId": 6,
     "chapterId": 5,
     "verseId": 14,
-    "text": "\"Neither,\" he replied. \"I am the commander of the LORD's army. Now I have come.\" Then Joshua fell facedown to the ground in worship and said to him, \"What does my Lord have to say to his servant?\"",
+    "text": "\"Neither,\" he replied. \"I am the commander of the LORD's army. Now I have come.\" Then Joshua fell facedown to the ground in worship and said to him, \"What does my lord have to say to his servant?\"",
     "versions": [
       {
         "text": "\"Neither,\" he replied. \"I have come as commander of the army of the LORD.\" Then Joshua fell facedown to the ground in worship and said to him, \"What does my Lord have to say to his servant?\"",
         "type": "error",
         "severity": "major",
         "explanation": "The Hebrew contains two distinct statements: an identification (\"I am the commander of the LORD's army\") and an announcement of arrival (\"now I have come\"). Collapsing them into \"I have come as commander\" loses the emphatic self-identification and the temporal \"now,\" which carries the sense that his appearing is a decisive moment."
+      },
+      {
+        "text": "\"Neither,\" he replied. \"I am the commander of the LORD's army. Now I have come.\" Then Joshua fell facedown to the ground in worship and said to him, \"What does my Lord have to say to his servant?\"",
+        "type": "theological",
+        "severity": "minor",
+        "explanation": "The Hebrew here is אֲדֹנִי (adoni), the ordinary respectful address to a superior, not the divine title. Capitalizing \"Lord\" resolves an ambiguity the narrative deliberately leaves open at this point and can be confused with the small-caps LORD used for the divine name earlier in the same verse. Lowercase \"my lord\" keeps Joshua's deferential address without prejudging the figure's identity.",
+        "alternative": true
       }
     ]
   },

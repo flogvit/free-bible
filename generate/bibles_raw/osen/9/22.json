@@ -103,13 +103,20 @@
     "bookId": 9,
     "chapterId": 22,
     "verseId": 15,
-    "text": "Is today the first time I have inquired of God for him? Far be it from me! Let the king not charge his servant or anyone in my father's household with anything, for your servant knew nothing at all about this whole matter, great or small.",
+    "text": "Is today the first time I have inquired of God for him? Far be it from me! Let the king not charge his servant or anyone in my father's household with anything, for your servant knew nothing of all this, small or great.",
     "versions": [
       {
         "text": "Was that day the first time I inquired of God for him? Far be it from me! Let the king not charge his servant or anyone in my father's household with anything, for your servant knew nothing at all about this whole matter, great or small.\"",
         "type": "error",
         "severity": "minor",
         "explanation": "הַיּוֹם means \"today\"; Ahimelech is arguing that inquiring for David was his ongoing, customary practice, not a one-time act on some past day. The present-tense rendering preserves his defense."
+      },
+      {
+        "text": "Is today the first time I have inquired of God for him? Far be it from me! Let the king not charge his servant or anyone in my father's household with anything, for your servant knew nothing at all about this whole matter, great or small.",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "The Hebrew idiom is קָטֹן אוֹ גָדוֹל, \"small or great,\" and keeping that order preserves the source's rhetorical build-up; \"knew nothing of all this\" also renders בְּכָל־זֹאת more closely than the added noun \"whole matter.\" The current wording is defensible English idiom but reverses the Hebrew pairing.",
+        "alternative": true
       }
     ]
   },

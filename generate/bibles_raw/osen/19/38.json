@@ -45,15 +45,25 @@
     "bookId": 19,
     "chapterId": 38,
     "verseId": 8,
-    "text": "My inmost parts are filled with burning, and there is no soundness in my flesh.",
+    "text": "For my inmost parts are filled with burning, and there is no soundness in my flesh.",
     "versions": [
       {
         "text": "My body burns with fever, and there is no soundness in my flesh.",
         "type": "error",
         "severity": "minor",
         "explanation": "The Hebrew כְסָלַי refers specifically to the loins/inner parts, and נִקְלֶה is a burning or inflammation, not necessarily 'fever' (a diagnostic term not in the text). Rendering the inner body and the burning keeps the image concrete without adding a medical claim."
+      },
+      {
+        "text": "My inmost parts are filled with burning, and there is no soundness in my flesh.",
+        "type": "error",
+        "severity": "minor",
+        "explanation": "The opening particle כִּי (\"for\") is untranslated. It links this verse causally to the preceding description of bending and mourning, and restoring it preserves the logical flow of the lament without disturbing the rhythm.",
+        "alternative": true
       }
-    ]
+    ],
+    "checked": {
+      "changed": "2:83"
+    }
   },
   {
     "bookId": 19,
@@ -85,7 +95,10 @@
         "severity": "minor",
         "explanation": "קְרוֹבַי denotes near kin/relatives rather than 'neighbors'; the point is that even close family withdraws, which heightens the isolation of the lament."
       }
-    ]
+    ],
+    "checked": {
+      "changed": "1:93"
+    }
   },
   {
     "bookId": 19,

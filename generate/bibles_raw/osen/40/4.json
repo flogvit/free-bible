@@ -87,7 +87,10 @@
         "severity": "minor",
         "explanation": "The emphatic ἰδού (\"behold\") is dropped, losing the narrative surprise Matthew builds in. Also διηκόνουν here means caring for/waiting on him (attending to his needs), which \"attend to\" conveys better than the more generic \"serve.\""
       }
-    ]
+    ],
+    "checked": {
+      "changed": "1:76"
+    }
   },
   {
     "bookId": 40,
@@ -117,15 +120,25 @@
     "bookId": 40,
     "chapterId": 4,
     "verseId": 16,
-    "text": "the people who sat in darkness have seen a great light; and on those who sat in the land and shadow of death a light has dawned.",
+    "text": "the people who sat in darkness have seen a great light; and on those who sat in the land and shadow of death a light has dawned.\"",
     "versions": [
       {
         "text": "the people who sat in darkness have seen a great light; on those who sat in the land of the shadow of death a light has dawned.\"",
         "type": "error",
         "severity": "minor",
         "explanation": "The Greek has χώρᾳ καὶ σκιᾷ θανάτου (\"the land and shadow of death\"); the translation collapses the two nouns into one construction, dropping καί and altering the quotation's structure."
+      },
+      {
+        "text": "the people who sat in darkness have seen a great light; and on those who sat in the land and shadow of death a light has dawned.",
+        "type": "grammar",
+        "severity": "minor",
+        "explanation": "The prophetic quotation opened with a quotation mark in verse 15 but is never closed. Since the citation ends here, a closing quotation mark is needed so readers (and anyone reading aloud from the printed text) can see where Jesus'/the narrator's citation of the prophet ends.",
+        "alternative": true
       }
-    ]
+    ],
+    "checked": {
+      "changed": "2:129"
+    }
   },
   {
     "bookId": 40,

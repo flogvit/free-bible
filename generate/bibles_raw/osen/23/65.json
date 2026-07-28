@@ -11,7 +11,10 @@
         "severity": "major",
         "explanation": "The two verbs are reversed. Hebrew pairs נִדְרַשְׁתִּי (\"I let myself be sought\") with \"those who did not ask,\" and נִמְצֵאתִי (\"I was found\") with \"those who did not seek me.\" The current wording swaps the verbs, obscuring the deliberate sought/found progression."
       }
-    ]
+    ],
+    "checked": {
+      "changed": "1:185"
+    }
   },
   {
     "bookId": 23,
@@ -47,15 +50,25 @@
     "bookId": 23,
     "chapterId": 65,
     "verseId": 7,
-    "text": "your own sins together with the sins of your fathers, says the LORD. Because they burned incense on the mountains and defied me on the hills, I will measure out into their lap the full payment for their former deeds.",
+    "text": "your own sins together with the sins of your fathers, says the LORD. Because they burned incense on the mountains and defied me on the hills, I will measure out into their lap the wages of their former deeds.",
     "versions": [
       {
         "text": "your own sins together with the sins of your fathers, says the LORD. Because they burned incense on the mountains and defied me on the hills, I will measure out into their lap the full payment for what they have done.",
         "type": "error",
         "severity": "minor",
         "explanation": "רִאשֹׁנָה (\"former/earlier,\" or \"first of all\") is dropped and replaced with \"full,\" which is not in the Hebrew. Retaining \"former deeds\" preserves the link to the fathers' sins mentioned earlier in the verse."
+      },
+      {
+        "text": "your own sins together with the sins of your fathers, says the LORD. Because they burned incense on the mountains and defied me on the hills, I will measure out into their lap the full payment for their former deeds.",
+        "type": "error",
+        "severity": "minor",
+        "explanation": "The word \"full\" has no counterpart in the Hebrew; פְעֻלָּתָם simply means \"their work/wages/recompense.\" The earlier revision already noted this addition but left it in place. \"The wages of their former deeds\" keeps the measuring image and the \"former\" link to the fathers' sins without importing an intensifier.",
+        "alternative": true
       }
-    ]
+    ],
+    "checked": {
+      "changed": "2:208"
+    }
   },
   {
     "bookId": 23,
@@ -141,7 +154,10 @@
         "severity": "major",
         "explanation": "הַחוֹטֶא means \"the sinner.\" Rendering it \"the one who fails to reach a hundred\" removes the moral element and makes the clause redundant with the first half; the point is that even a full century of life will be seen as a curse cut short for the sinner."
       }
-    ]
+    ],
+    "checked": {
+      "changed": "1:237"
+    }
   },
   {
     "bookId": 23,

@@ -189,7 +189,10 @@
         "severity": "minor",
         "explanation": "The Hebrew has a spoken claim (אָמְרוּ, \"they have said\"), not merely a thought; quoting it directly preserves the taunt the LORD is answering. Also, וִידַעְתֶּם is plural (\"you all will know\"), addressed beyond the king alone, in contrast with the singular form in verse 13."
       }
-    ]
+    ],
+    "checked": {
+      "changed": "1:262"
+    }
   },
   {
     "bookId": 11,
@@ -289,13 +292,20 @@
     "bookId": 11,
     "chapterId": 20,
     "verseId": 42,
-    "text": "He said to the king, \"This is what the LORD says: Because you have let slip out of your hand the man I had devoted to destruction, your life will be given for his life, your people for his people.\"",
+    "text": "He said to the king, \"This is what the LORD says: Because you set free from your hand the man I had devoted to destruction, your life shall stand in place of his life, and your people in place of his people.\"",
     "versions": [
       {
         "text": "He said to the king, \"This is what the LORD says: Because you have let go the man I had devoted to destruction, your life will be given for his life, your people for his people.\"",
         "type": "error",
         "severity": "minor",
         "explanation": "The phrase מִיָּד (\"from the hand\") is not represented in the current rendering. Restoring it sharpens the accusation—the king personally released a man already under the LORD's ban—and adds rhythmic weight to the oracle."
+      },
+      {
+        "text": "He said to the king, \"This is what the LORD says: Because you have let slip out of your hand the man I had devoted to destruction, your life will be given for his life, your people for his people.\"",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "The verb שִׁלַּחְתָּ denotes a deliberate act of releasing, but \"let slip\" in English suggests carelessness or accident, which softens the charge against the king. \"Set free from your hand\" keeps the מִיָּד element restored in the earlier revision while preserving the intentionality of the act. Also, תַּחַת is a substitution formula (\"in place of\"), which \"stand in place of\" renders more precisely than \"be given for,\" and it lets the parallel clause about the people carry the same weight for oral reading.",
+        "alternative": true
       }
     ]
   },

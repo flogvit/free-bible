@@ -79,13 +79,20 @@
     "bookId": 26,
     "chapterId": 6,
     "verseId": 11,
-    "text": "This is what the Lord GOD says: Clap your hands, stamp your foot, and cry out, \"Alas!\" over all the evil and detestable practices of the house of Israel, for they will fall by sword, famine, and plague.",
+    "text": "This is what the Lord GOD says: Clap your hands, stamp your foot, and cry out, \"Alas!\" over all the wicked abominations of the house of Israel, for they will fall by sword, famine, and plague.",
     "versions": [
       {
         "text": "This is what the Lord GOD says: Clap your hands, stamp your foot, and cry out, \"Alas!\" over all the vile and detestable practices of the house of Israel, for they will fall by sword, famine, and plague.",
         "type": "error",
         "severity": "minor",
         "explanation": "\"Vile\" and \"detestable\" are near-synonyms in English, blurring the two Hebrew words תּוֹעֲבוֹת (detestable things) and רָעוֹת (evil). \"Evil and detestable\" renders the pair more clearly."
+      },
+      {
+        "text": "This is what the Lord GOD says: Clap your hands, stamp your foot, and cry out, \"Alas!\" over all the evil and detestable practices of the house of Israel, for they will fall by sword, famine, and plague.",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "In Hebrew תּוֹעֲבוֹת רָעוֹת is a noun with a qualifying adjective (\"evil abominations\"), not two coordinated nouns. Rendering it as an adjective plus noun (\"wicked abominations\") keeps the two Hebrew words distinct — the concern that prompted the earlier revision — while reflecting the grammatical relationship and reading more tightly aloud.",
+        "alternative": true
       }
     ]
   },

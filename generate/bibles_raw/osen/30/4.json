@@ -65,13 +65,20 @@
     "bookId": 30,
     "chapterId": 4,
     "verseId": 10,
-    "text": "I sent plagues among you as I did to Egypt; I killed your young men with the sword, and your horses were carried away captive. I filled your nostrils with the stench of your camps, yet you did not return to me, declares the LORD.",
+    "text": "I sent plagues among you as I did to Egypt; I killed your young men with the sword, and your horses were carried away captive. I made the stench of your camps rise into your nostrils, yet you did not return to me, declares the LORD.",
     "versions": [
       {
         "text": "I sent plagues among you as I did to Egypt; I killed your young men with the sword, along with the horses you had captured. I filled your nostrils with the stench of your camps, yet you did not return to me, declares the LORD.",
         "type": "error",
         "severity": "major",
         "explanation": "The Hebrew עִם שְׁבִי סוּסֵיכֶם means \"with the captivity of your horses\"—the horses of Israel were taken as spoil by the enemy. The current rendering \"the horses you had captured\" reverses the sense, making Israel the captor rather than the victim, and turns a judgment into a description of Israel's plunder."
+      },
+      {
+        "text": "I sent plagues among you as I did to Egypt; I killed your young men with the sword, and your horses were carried away captive. I filled your nostrils with the stench of your camps, yet you did not return to me, declares the LORD.",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "The Hebrew verb וָאַעֲלֶה is causative, \"I made to go up/rise,\" picturing the stench ascending into the nostrils. \"I filled your nostrils\" conveys the sense but loses the vivid rising image and the natural subject-verb movement that reads well aloud. The existing rendering is defensible, not wrong.",
+        "alternative": true
       }
     ]
   },

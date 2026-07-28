@@ -87,13 +87,20 @@
     "bookId": 37,
     "chapterId": 1,
     "verseId": 11,
-    "text": "I called for a drought on the land and the hills, on the grain, the new wine, and the oil, on everything the ground brings forth, on man and beast, and on all the labor of your hands.",
+    "text": "I called for a drought on the land and on the mountains, on the grain, the new wine, and the oil, on everything the ground brings forth, on man and beast, and on all the labor of your hands.",
     "versions": [
       {
         "text": "I called for a drought on the fields and the hills, on the grain, the new wine, and the oil, on everything the ground brings forth, on man and beast, and on all the labor of your hands.",
         "type": "error",
         "severity": "minor",
         "explanation": "הָאָרֶץ means \"the land\" (the whole country), not \"the fields.\" The broader term matches the sweeping scope of the list that follows, and it avoids duplicating \"the ground\" later in the verse."
+      },
+      {
+        "text": "I called for a drought on the land and the hills, on the grain, the new wine, and the oil, on everything the ground brings forth, on man and beast, and on all the labor of your hands.",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "הֶהָרִים means \"the mountains,\" the standard term for the hill country's higher terraced slopes; \"hills\" softens the image. Repeating \"on\" also preserves the piled-up rhythm of the Hebrew list, which reads well aloud.",
+        "alternative": true
       }
     ]
   },

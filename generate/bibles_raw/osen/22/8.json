@@ -27,15 +27,25 @@
     "bookId": 22,
     "chapterId": 8,
     "verseId": 5,
-    "text": "Who is this coming up from the wilderness, leaning on the one she loves? Under the apple tree I awakened you; there your mother was in labor with you, there she who bore you brought you forth.",
+    "text": "Who is this coming up from the wilderness, leaning on the one she loves? Under the apple tree I awakened you; there your mother travailed with you, there she travailed who gave you birth.",
     "versions": [
       {
         "text": "Who is this coming up from the wilderness, leaning on the one she loves? Under the apple tree I awakened you; there your mother conceived you, there she who bore you was in labor.",
         "type": "error",
         "severity": "minor",
         "explanation": "The verb חבל in both clauses refers to labor pains, not conception. Rendering the first occurrence as \"conceived\" weakens the parallelism and introduces a meaning the Hebrew does not carry."
+      },
+      {
+        "text": "Who is this coming up from the wilderness, leaning on the one she loves? Under the apple tree I awakened you; there your mother was in labor with you, there she who bore you brought you forth.",
+        "type": "error",
+        "severity": "minor",
+        "explanation": "The repeated verb חבל (\"to be in labor, travail\") governs both clauses, and the parallelism turns on that repetition. Rendering the second occurrence as \"brought you forth\" shifts the sense to the act of delivery and effectively duplicates \"bore you,\" flattening the deliberate echo the earlier revision was made to preserve. Keeping a form of \"travail\" in both halves restores the balance while keeping the participle יְלָדַתְךָ as the subject.",
+        "alternative": true
       }
-    ]
+    ],
+    "checked": {
+      "changed": "2:187"
+    }
   },
   {
     "bookId": 22,
@@ -55,7 +65,10 @@
         "severity": "minor",
         "explanation": "The pronoun לוֹ most naturally refers back to the man (אִישׁ), and this also echoes the same verb used of the speaker in verse 1 (\"no one would despise me\"). \"He would be utterly scorned\" keeps that link audible."
       }
-    ]
+    ],
+    "checked": {
+      "changed": "1:144"
+    }
   },
   {
     "bookId": 22,
@@ -81,7 +94,10 @@
         "severity": "major",
         "explanation": "The participle מוֹצְאֵת is active \"one who finds,\" not \"one who brings.\" The bride finds peace (or favor) in his sight; the current wording reverses the direction of the action."
       }
-    ]
+    ],
+    "checked": {
+      "changed": "1:97"
+    }
   },
   {
     "bookId": 22,
@@ -121,6 +137,9 @@
         "severity": "minor",
         "explanation": "בְּרַח carries the sense of hastening away or fleeing, which fits the following image of the gazelle bounding off to the mountains. \"Hurry\" alone loses the direction of movement."
       }
-    ]
+    ],
+    "checked": {
+      "changed": "1:87"
+    }
   }
 ]

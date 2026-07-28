@@ -143,13 +143,20 @@
     "bookId": 46,
     "chapterId": 9,
     "verseId": 23,
-    "text": "I do all this for the sake of the gospel, so that I may share in its blessings.",
+    "text": "I do all this for the sake of the gospel, so that I too may have a share in it.",
     "versions": [
       {
         "text": "I do all this for the sake of the gospel, that I may share in it together with them.",
         "type": "error",
         "severity": "minor",
         "explanation": "\"together with them\" introduces a pronoun with no antecedent in the context and adds content not present in the Greek. συγκοινωνὸς αὐτοῦ γένωμαι means \"become a fellow partaker of it (the gospel)\"; rendering it without an unexplained \"them\" is clearer for oral reading."
+      },
+      {
+        "text": "I do all this for the sake of the gospel, so that I may share in its blessings.",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "The Greek says only συγκοινωνὸς αὐτοῦ γένωμαι, \"that I may become a fellow sharer of it\"; \"blessings\" is supplied and not in the text. Rendering the σύγ- prefix with \"I too\" preserves the idea of sharing along with others without adding a noun, and keeps the pronoun referring clearly back to \"the gospel\".",
+        "alternative": true
       }
     ]
   },

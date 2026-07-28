@@ -43,13 +43,20 @@
     "bookId": 30,
     "chapterId": 8,
     "verseId": 5,
-    "text": "saying, \"When will the New Moon be over, so we can sell grain? When will the Sabbath end, so we can open the wheat market—shrinking the measure, weighting the shekel, cheating with crooked scales,",
+    "text": "saying, \"When will the New Moon be over, so we can sell grain? When will the Sabbath end, so we can open the wheat market—shrinking the measure, enlarging the shekel weight, cheating with crooked scales,",
     "versions": [
       {
         "text": "saying, \"When will the New Moon be over, so we can sell grain? When will the Sabbath end, so we can open the wheat market—shrinking the measure, inflating the price, cheating with rigged scales,",
         "type": "error",
         "severity": "minor",
         "explanation": "\"Inflating the price\" loses the concrete image: the merchants use an undersized ephah (grain measure) and an oversized shekel weight for the silver. Keeping the shekel weight makes the fraud clear and parallels the following mention of scales."
+      },
+      {
+        "text": "saying, \"When will the New Moon be over, so we can sell grain? When will the Sabbath end, so we can open the wheat market—shrinking the measure, weighting the shekel, cheating with crooked scales,",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "The Hebrew pair is symmetrical: \"make the ephah small\" / \"make the shekel great.\" \"Weighting the shekel\" is vague in English and can be misread as a metaphor for price; \"enlarging the shekel weight\" preserves the concrete fraud (an oversized weight for the silver) and matches the intended parallel with the shrunken measure and the crooked scales.",
+        "alternative": true
       }
     ]
   },
@@ -69,13 +76,20 @@
     "bookId": 30,
     "chapterId": 8,
     "verseId": 8,
-    "text": "\"Will not the land tremble for this, and everyone who lives in it mourn? The whole land will rise like the Nile, heave up and sink again like the river of Egypt.\"",
+    "text": "\"Will not the land tremble for this, and everyone who lives in it mourn? The whole land will rise like the Nile, churn and sink again like the river of Egypt.\"",
     "versions": [
       {
         "text": "Will not the land tremble for this, and everyone who lives in it mourn? The whole land will rise like the Nile, heave up and sink again like the river of Egypt.\"",
         "type": "grammar",
         "severity": "minor",
         "explanation": "The divine speech opened in verse 7 continues here and is closed at the end of this verse, but no opening quotation mark begins the continued quotation. Adding an opening quote at the start of the verse keeps the punctuation consistent for readers and lectors."
+      },
+      {
+        "text": "\"Will not the land tremble for this, and everyone who lives in it mourn? The whole land will rise like the Nile, heave up and sink again like the river of Egypt.\"",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "\"Heave up\" duplicates the preceding \"rise\" and misses the sense of נִגְרְשָׁה, which describes water being driven or tossed about; \"churn\" keeps the three-stage picture (rise—churn—sink) and reads more cleanly aloud.",
+        "alternative": true
       }
     ]
   },

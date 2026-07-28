@@ -53,13 +53,20 @@
     "bookId": 7,
     "chapterId": 15,
     "verseId": 8,
-    "text": "He struck them down with great slaughter, hip and thigh. Then he went down and stayed in the cleft of the rock of Etam.",
+    "text": "He struck them down, hip and thigh, with great slaughter. Then he went down and stayed in the cleft of the rock of Etam.",
     "versions": [
       {
         "text": "He struck them down with great slaughter, hip and thigh. Then he went down and stayed in a cave in the rock of Etam.",
         "type": "error",
         "severity": "minor",
         "explanation": "סְעִיף means a cleft, crevice, or crag, not a cave (מְעָרָה). \"Cleft of the rock\" is both more accurate and reads naturally."
+      },
+      {
+        "text": "He struck them down with great slaughter, hip and thigh. Then he went down and stayed in the cleft of the rock of Etam.",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "The Hebrew places the idiom שׁוֹק עַל־יָרֵךְ (\"leg upon thigh\") immediately after the verb, with מַכָּה גְדוֹלָה (\"a great blow/slaughter\") as the closing summary. Restoring that order gives a smoother spoken cadence and avoids the trailing, tacked-on feel of \"...great slaughter, hip and thigh.\" A brief footnote noting that \"hip and thigh\" renders an obscure Hebrew idiom for a thorough, brutal defeat would also help the listener.",
+        "alternative": true
       }
     ]
   },
@@ -87,7 +94,10 @@
         "severity": "minor",
         "explanation": "Consistency with verse 8: סְעִיף is a cleft or crag, not a cave. Also מַה־זֹּאת עָשִׂיתָ לָּנוּ carries the force of \"What is this you have done to us?\""
       }
-    ]
+    ],
+    "checked": {
+      "changed": "1:231"
+    }
   },
   {
     "bookId": 7,

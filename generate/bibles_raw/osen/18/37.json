@@ -33,13 +33,20 @@
     "bookId": 18,
     "chapterId": 37,
     "verseId": 6,
-    "text": "He says to the snow, \"Fall to the earth,\" and to the rain shower, \"Pour down,\" and to the driving rains of his strength.",
+    "text": "He says to the snow, \"Fall to the earth,\" and to the rain shower and the mighty downpour, \"Pour down.\"",
     "versions": [
       {
         "text": "He says to the snow, \"Fall to the earth,\" and to the showers and the driving rains of his strength.",
         "type": "error",
         "severity": "major",
         "explanation": "As it stands the second half of the verse is a dangling phrase with no verb, which is confusing when read aloud. The Hebrew repeats the command implicitly to the rain shower and the mighty downpours; supplying the verb makes the parallelism clear and the line readable."
+      },
+      {
+        "text": "He says to the snow, \"Fall to the earth,\" and to the rain shower, \"Pour down,\" and to the driving rains of his strength.",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "As now punctuated, the closing phrase \"and to the driving rains of his strength\" still trails after the quotation with nothing to govern it, which stumbles when read aloud. Grouping both rain terms as the addressees before a single supplied command keeps the Hebrew's paired nouns (גֶשֶׁם מָטָר / גֶשֶׁם מִטְרוֹת עֻזּוֹ) intact while giving the sentence one clean shape.",
+        "alternative": true
       }
     ]
   },

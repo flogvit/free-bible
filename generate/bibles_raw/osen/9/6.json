@@ -27,13 +27,20 @@
     "bookId": 9,
     "chapterId": 6,
     "verseId": 5,
-    "text": "Make images of your tumors and images of your mice that are ravaging the land, and give glory to the God of Israel. Perhaps he will lift his hand from you, from your gods, and from your land.",
+    "text": "Make images of your tumors and images of your mice that are ravaging the land, and give glory to the God of Israel. Perhaps he will lighten his hand upon you, upon your gods, and upon your land.",
     "versions": [
       {
         "text": "Make images of your tumors and images of the mice that are ravaging the land, and give glory to the God of Israel. Perhaps he will lift his hand from you, from your gods, and from your land.",
         "type": "error",
         "severity": "minor",
         "explanation": "The Hebrew has the possessive suffix on both nouns (\"your tumors\" and \"your mice\"). Keeping the parallel possessive preserves the rhetorical balance of the sentence and matches the source."
+      },
+      {
+        "text": "Make images of your tumors and images of your mice that are ravaging the land, and give glory to the God of Israel. Perhaps he will lift his hand from you, from your gods, and from your land.",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "The verb יָקֵל means \"lighten, make light\" rather than \"lift, remove\"; the Philistines hope for relief from the pressure of God's hand, and the preposition מֵעַל is idiomatically caught by \"lighten his hand upon.\" \"Lift his hand from\" is a defensible dynamic rendering but loses the image of a weight being eased.",
+        "alternative": true
       }
     ]
   },

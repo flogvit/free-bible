@@ -77,13 +77,20 @@
     "bookId": 25,
     "chapterId": 2,
     "verseId": 12,
-    "text": "They cry to their mothers, \"Where are grain and wine?\" as they faint like the wounded in the streets of the city, as their lives ebb away in their mothers' arms.",
+    "text": "They cry to their mothers, \"Where are grain and wine?\" as they faint like the wounded in the streets of the city, as their lives ebb away on their mothers' bosom.",
     "versions": [
       {
         "text": "They cry to their mothers, \"Where is bread and wine?\" as they faint like the wounded in the streets of the city, as their lives ebb away in their mothers' arms.",
         "type": "grammar",
         "severity": "minor",
         "explanation": "דָּגָן is \"grain,\" not \"bread\" (a different word, לֶחֶם), and the compound subject \"bread and wine\" requires a plural verb in English."
+      },
+      {
+        "text": "They cry to their mothers, \"Where are grain and wine?\" as they faint like the wounded in the streets of the city, as their lives ebb away in their mothers' arms.",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "חֵיק means \"bosom/lap\" rather than \"arms\"; the image is of the child collapsing against the mother's breast, which is slightly more concrete and preserves the poetic force. \"Arms\" is a reasonable idiomatic rendering, so it remains a defensible alternative.",
+        "alternative": true
       }
     ]
   },

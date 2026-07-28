@@ -73,7 +73,10 @@
         "severity": "minor",
         "explanation": "Quotation marks are unbalanced in the chapter: the speech that began in verse 5 is closed at the end of verse 9, but the continuing divine speech from verse 10 onward has no opening quotation mark, while verse 27 ends with a closing quotation mark. Adding an opening quote at verse 10 restores consistency for readers and for those reading aloud."
       }
-    ]
+    ],
+    "checked": {
+      "changed": "1:95"
+    }
   },
   {
     "bookId": 26,
@@ -99,13 +102,20 @@
     "bookId": 26,
     "chapterId": 7,
     "verseId": 13,
-    "text": "The seller will not return to what he sold, as long as they remain among the living. For the vision concerning the whole multitude will not be revoked, and no one will preserve his life by his iniquity.",
+    "text": "For the seller will not return to what he sold, as long as they remain among the living; the vision concerning the whole multitude will not be revoked, and no one will preserve his life by his iniquity.",
     "versions": [
       {
         "text": "The seller will not return to what he sold, as long as they both still live. For the vision concerning the whole multitude will not be revoked, and no one will preserve his life by his iniquity.",
         "type": "error",
         "severity": "minor",
         "explanation": "The word 'both' is added content not present in the Hebrew, which simply says 'while their life is still among the living.' Removing it keeps the rendering faithful without losing clarity."
+      },
+      {
+        "text": "The seller will not return to what he sold, as long as they remain among the living. For the vision concerning the whole multitude will not be revoked, and no one will preserve his life by his iniquity.",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "The verse opens with the connective כִּי, which links it back to the reason given in verse 12; the translation currently drops it, leaving the sentence to start abruptly. Restoring an opening 'For' and turning the second clause link into a semicolon keeps both logical connections without a jarring repetition of 'For' when read aloud.",
+        "alternative": true
       }
     ]
   },

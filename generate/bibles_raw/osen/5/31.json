@@ -123,13 +123,20 @@
     "bookId": 5,
     "chapterId": 31,
     "verseId": 21,
-    "text": "And when many disasters and calamities come upon them, this song will testify against them, for their descendants will not forget it. For I know what they are inclined to do even now, before I bring them into the land I promised them on oath.\"",
+    "text": "And when many disasters and calamities come upon them, this song will testify against them, for it will not be lost from the lips of their descendants. For I know what they are inclined to do even now, before I bring them into the land I promised them on oath.",
     "versions": [
       {
         "text": "And when many disasters and calamities come upon them, this song will testify against them, for their descendants will not forget it. I know what they are inclined to do, even before I bring them into the land I promised them on oath.\"",
         "type": "error",
         "severity": "minor",
         "explanation": "The Hebrew הַיּוֹם (\"today,\" i.e., already now) is not represented; the point is that God knows their disposition even before they enter the land. Adding \"even now\" restores the sense and keeps the rhythm."
+      },
+      {
+        "text": "And when many disasters and calamities come upon them, this song will testify against them, for their descendants will not forget it. For I know what they are inclined to do even now, before I bring them into the land I promised them on oath.\"",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "The Hebrew literally says the song \"will not be forgotten from the mouth of their offspring\" — the image is of continued recitation aloud, which fits the oral function of the song as a witness. Rendering it with \"lips\" preserves that imagery and reads well aloud, whereas \"their descendants will not forget it\" reduces it to mental memory.",
+        "alternative": true
       }
     ]
   },

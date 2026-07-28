@@ -95,13 +95,20 @@
     "bookId": 24,
     "chapterId": 16,
     "verseId": 15,
-    "text": "but rather, \"As surely as the LORD lives, who brought the people of Israel up out of the land of the north and out of all the lands where he had driven them.\" For I will bring them back to their own soil, which I gave to their fathers.",
+    "text": "but rather, \"As surely as the LORD lives, who brought the people of Israel up out of the land of the north and out of all the lands where he had driven them.\" For I will bring them back to their own land, which I gave to their fathers.",
     "versions": [
       {
         "text": "but rather, \"As surely as the LORD lives, who brought the people of Israel up out of the land of the north and out of all the lands where he had driven them.\" For I will bring them back to the land I gave their fathers.",
         "type": "error",
         "severity": "minor",
         "explanation": "The Hebrew אַדְמָתָם means \"their own soil/land\" — the possessive is significant here, since the promise is restoration to the land that belongs to them. The present rendering drops the possessive."
+      },
+      {
+        "text": "but rather, \"As surely as the LORD lives, who brought the people of Israel up out of the land of the north and out of all the lands where he had driven them.\" For I will bring them back to their own soil, which I gave to their fathers.",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "\"Soil\" is a literal rendering of אַדְמָתָם, but in English it evokes dirt rather than territory and stumbles when read aloud. \"Their own land\" preserves the possessive force that the earlier revision rightly insisted on while reading naturally in public reading.",
+        "alternative": true
       }
     ]
   },

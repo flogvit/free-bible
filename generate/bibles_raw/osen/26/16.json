@@ -65,7 +65,10 @@
         "severity": "minor",
         "explanation": "The verb חבש means to bind or wrap (as a turban/headdress), and שֵׁשׁ is specifically fine linen (rendered \"fine linen\" in v.13). \"Wrapped you in linen\" loses both the head-covering image and the quality of the fabric, and creates an inconsistency with verse 13."
       }
-    ]
+    ],
+    "checked": {
+      "changed": "1:135"
+    }
   },
   {
     "bookId": 26,
@@ -311,13 +314,20 @@
     "bookId": 26,
     "chapterId": 16,
     "verseId": 47,
-    "text": "You not only walked in their ways and copied their abominations, but in no time at all you became more corrupt than they in all your ways.",
+    "text": "You not only walked in their ways and copied their abominations, but as if that were too small a thing, you became more corrupt than they in all your ways.",
     "versions": [
       {
         "text": "You not only walked in their ways and copied their abominations; in no time at all you were more corrupt than they in all your ways.",
         "type": "grammar",
         "severity": "minor",
         "explanation": "\"Not only\" requires a following \"but\" to complete the construction; the semicolon leaves the sentence grammatically incomplete and breaks the oral flow."
+      },
+      {
+        "text": "You not only walked in their ways and copied their abominations, but in no time at all you became more corrupt than they in all your ways.",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "כִּמְעַט קָט most naturally functions here as an expression of understatement (\"as if that were a very little thing\") rather than a statement about elapsed time; the temporal rendering \"in no time at all\" is possible but weakens the ironic force that leads into the comparison with Sodom and Samaria.",
+        "alternative": true
       }
     ]
   },
@@ -387,13 +397,20 @@
     "bookId": 26,
     "chapterId": 16,
     "verseId": 57,
-    "text": "before your own wickedness was exposed? Now you are like the time when the daughters of Aram and all her neighbors reproached you, and the daughters of the Philistines—all those around you who despise you.",
+    "text": "before your own wickedness was exposed? Now it is as at the time of the reproach of the daughters of Aram and all her neighbors, and of the daughters of the Philistines—all those around you who despise you.",
     "versions": [
       {
         "text": "before your own wickedness was exposed? Now you yourself are scorned by the daughters of Edom and all her neighbors, and by the daughters of the Philistines—all those around you who despise you.",
         "type": "error",
         "severity": "major",
         "explanation": "The Hebrew text reads אֲרָם (Aram/Syria), not Edom; the received text should be followed, with a footnote noting that some manuscripts and versions read \"Edom.\" Also, the phrase \"like the time of the reproach of...\" has been dropped and replaced with a paraphrase."
+      },
+      {
+        "text": "before your own wickedness was exposed? Now you are like the time when the daughters of Aram and all her neighbors reproached you, and the daughters of the Philistines—all those around you who despise you.",
+        "type": "suggestion",
+        "severity": "major",
+        "explanation": "The comparison in the Hebrew (כְּמוֹ עֵת חֶרְפַּת) is between the present situation and \"the time of the reproach,\" not between the woman and a time; \"you are like the time when...\" compares a person to a period, which reads oddly aloud. The revised wording keeps the restored phrase \"the time of the reproach\" while making the comparison coherent. Note also that the earlier revision called for a footnote on the textual variant: a note such as \"Some manuscripts and ancient versions read 'Edom'\" would still be helpful, since it appears not to have been added.",
+        "alternative": true
       }
     ]
   },

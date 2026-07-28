@@ -125,13 +125,20 @@
     "bookId": 13,
     "chapterId": 12,
     "verseId": 20,
-    "text": "Some men of Manasseh also went over to David when he marched with the Philistines against Saul—though in the end they did not help the Philistines, for the Philistine rulers took counsel and sent David away, saying, \"He may go over to his master Saul at the cost of our heads.\"",
+    "text": "Some men of Manasseh also went over to David when he marched with the Philistines against Saul—though they did not help the Philistines, for the Philistine rulers, after taking counsel, sent David away, saying, \"He may go over to his master Saul at the cost of our heads.\"",
     "versions": [
       {
         "text": "Some men of Manasseh also went over to David when he marched with the Philistines against Saul—though in the end they did not help the Philistines, for their rulers sent David away, saying, \"He may go over to his master Saul at the cost of our heads.\"",
         "type": "error",
         "severity": "minor",
         "explanation": "The phrase בְעֵצָה (\"after taking counsel / by deliberate decision\") is omitted, and \"their rulers\" is ambiguous immediately after \"the Philistines\" (it could be read as the Manassites' rulers). Naming the Philistine rulers and restoring the sense of deliberation is clearer for oral reading."
+      },
+      {
+        "text": "Some men of Manasseh also went over to David when he marched with the Philistines against Saul—though in the end they did not help the Philistines, for the Philistine rulers took counsel and sent David away, saying, \"He may go over to his master Saul at the cost of our heads.\"",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "The Hebrew וְלֹא עֲזָרֻם is simply \"but they did not help them\"; the phrase \"in the end\" adds a temporal nuance not in the text. Placing the deliberation as \"after taking counsel\" keeps בְעֵצָה while trimming the added words, which also tightens the sentence for reading aloud.",
+        "alternative": true
       }
     ]
   },
@@ -255,7 +262,10 @@
         "severity": "minor",
         "explanation": "עֹדְרֵי מַעֲרָכָה describes men who could keep or form battle ranks; \"volunteered\" introduces an idea not present in the Hebrew (and slightly duplicates the \"whole heart\" clause that follows)."
       }
-    ]
+    ],
+    "checked": {
+      "changed": "1:207"
+    }
   },
   {
     "bookId": 13,

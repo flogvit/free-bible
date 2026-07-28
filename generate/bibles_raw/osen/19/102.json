@@ -27,13 +27,20 @@
     "bookId": 19,
     "chapterId": 102,
     "verseId": 5,
-    "text": "My heart is struck down and withered like grass, for I forget to eat my bread.",
+    "text": "My heart is struck down and withered like grass, for I have forgotten to eat my bread.",
     "versions": [
       {
         "text": "My heart is struck down and withered like grass; I forget to eat my bread.",
         "type": "error",
         "severity": "minor",
         "explanation": "The Hebrew כִּי introduces a causal clause. The current semicolon loses the explicit connection between the withered heart and the failure to eat."
+      },
+      {
+        "text": "My heart is struck down and withered like grass, for I forget to eat my bread.",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "שָׁכַחְתִּי is a perfect form describing a settled condition the speaker has fallen into; \"I have forgotten\" matches the completed aspect and the surrounding perfect verbs (\"struck,\" \"withered\") better than the simple present \"I forget,\" and it reads more naturally aloud after the causal \"for.\"",
+        "alternative": true
       }
     ]
   },
@@ -191,7 +198,10 @@
         "severity": "major",
         "explanation": "וְיַחֲלֹפוּ echoes the preceding verb (change/pass on); it means \"they pass away,\" not \"they are discarded,\" which adds an idea of rejection not present in the Hebrew."
       }
-    ]
+    ],
+    "checked": {
+      "changed": "1:133"
+    }
   },
   {
     "bookId": 19,

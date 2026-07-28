@@ -77,7 +77,10 @@
         "severity": "minor",
         "explanation": "Verse 11 ends with a colon introducing Moses' direct speech, but no opening quotation mark is supplied. Adding it keeps the quotation punctuation consistent with the rest of the chapter (verses 1–8, 9–10, 15–26)."
       }
-    ]
+    ],
+    "checked": {
+      "changed": "1:150"
+    }
   },
   {
     "bookId": 5,
@@ -89,13 +92,20 @@
     "bookId": 5,
     "chapterId": 27,
     "verseId": 14,
-    "text": "Then the Levites shall declare in a loud voice to every man of Israel:\"",
+    "text": "Then the Levites shall respond, calling out in a loud voice to every man of Israel:\"",
     "versions": [
       {
         "text": "Then the Levites shall declare in a loud voice to every man of Israel:",
         "type": "grammar",
         "severity": "minor",
         "explanation": "If an opening quotation mark is added at verse 12, Moses' speech should be closed here so that the Levites' pronouncements in verses 15–26 stand as their own quoted material."
+      },
+      {
+        "text": "Then the Levites shall declare in a loud voice to every man of Israel:\"",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "The Hebrew has two verbs, וְעָנוּ (\"shall answer/respond\") and וְאָמְרוּ (\"and say\"). Collapsing both into the single verb \"declare\" loses the antiphonal, call-and-response character of the ceremony, which is essential to the liturgy of verses 15-26 where the people answer \"Amen.\" Keeping \"respond\" preserves that nuance while still reading smoothly aloud.",
+        "alternative": false
       }
     ]
   },

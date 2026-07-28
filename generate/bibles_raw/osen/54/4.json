@@ -65,15 +65,25 @@
     "bookId": 54,
     "chapterId": 4,
     "verseId": 10,
-    "text": "For this is why we labor and suffer reproach: we have set our hope on the living God, who is the Savior of all people, especially of those who believe.",
+    "text": "For to this end we labor and suffer reproach, because we have set our hope on the living God, who is the Savior of all people, especially of those who believe.",
     "versions": [
       {
         "text": "For this is why we labor and struggle: we have set our hope on the living God, who is the Savior of all people, especially of those who believe.",
         "type": "error",
         "severity": "major",
         "explanation": "The base Greek text reads ὀνειδιζόμεθα, \"we are reviled / suffer reproach,\" not the variant ἀγωνιζόμεθα (\"we strive/struggle\"). \"Struggle\" renders the variant rather than the text being translated and loses the note of enduring insult for the gospel."
+      },
+      {
+        "text": "For this is why we labor and suffer reproach: we have set our hope on the living God, who is the Savior of all people, especially of those who believe.",
+        "type": "grammar",
+        "severity": "minor",
+        "explanation": "The ὅτι clause states the ground of the labor and reproach (\"because we have set our hope\"), whereas the colon in the current rendering makes the hope look like the content of \"this,\" i.e. the goal toward which Paul labors. Rendering εἰς τοῦτο as \"to this end\" and ὅτι as \"because\" preserves the logical relation while keeping a clean oral cadence.",
+        "alternative": true
       }
-    ]
+    ],
+    "checked": {
+      "changed": "2:159"
+    }
   },
   {
     "bookId": 54,
@@ -99,7 +109,10 @@
         "severity": "minor",
         "explanation": "παράκλησις means exhortation or encouragement, a distinct activity from teaching in this triad; \"preaching\" is a broader term that blurs the distinction and is not what the Greek word denotes."
       }
-    ]
+    ],
+    "checked": {
+      "changed": "1:94"
+    }
   },
   {
     "bookId": 54,

@@ -29,7 +29,10 @@
         "severity": "minor",
         "explanation": "\"as he had year by year\" is elliptical and stumbles when read aloud; adding \"done\" completes the comparison naturally without changing the sense."
       }
-    ]
+    ],
+    "checked": {
+      "changed": "1:236"
+    }
   },
   {
     "bookId": 12,
@@ -79,13 +82,20 @@
     "bookId": 12,
     "chapterId": 17,
     "verseId": 11,
-    "text": "There, on every high place, they burned incense, as the nations had done whom the LORD had carried into exile before them. They did wicked things that provoked the LORD to anger.",
+    "text": "There, on every high place, they burned incense, just like the nations whom the LORD had carried into exile before them. They did wicked things that provoked the LORD to anger.",
     "versions": [
       {
         "text": "There, on every high place, they burned incense, as the nations had done whom the LORD had driven out before them. They did wicked things that provoked the LORD to anger.",
         "type": "error",
         "severity": "minor",
         "explanation": "The verb here is \"exiled/carried away,\" not the \"dispossessed/drove out\" verb of v. 8; the distinction is significant in a chapter about exile, and the wordplay with Israel's own deportation is lost when both are rendered \"driven out.\""
+      },
+      {
+        "text": "There, on every high place, they burned incense, as the nations had done whom the LORD had carried into exile before them. They did wicked things that provoked the LORD to anger.",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "The comparison particle כַּגּוֹיִם simply likens Israel to the nations; the inserted \"had done\" pushes the relative clause \"whom the LORD had carried into exile\" far from its antecedent and makes the sentence stumble when read aloud. \"Just like the nations whom...\" keeps the same sense and the exile verb while flowing more smoothly.",
+        "alternative": true
       }
     ]
   },
@@ -157,7 +167,10 @@
         "severity": "minor",
         "explanation": "The verb here denotes affliction/oppression as judgment, not the positive-sounding \"humbled\"; \"afflicted\" better matches the context of being handed over to plunderers."
       }
-    ]
+    ],
+    "checked": {
+      "changed": "1:153"
+    }
   },
   {
     "bookId": 12,
@@ -231,7 +244,10 @@
         "severity": "minor",
         "explanation": "The verse begins with a lowercase letter. Since verses are often read aloud on their own, the sentence should begin with a capital letter, even though the Hebrew continues the list from the previous verse."
       }
-    ]
+    ],
+    "checked": {
+      "changed": "1:144"
+    }
   },
   {
     "bookId": 12,

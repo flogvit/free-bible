@@ -53,7 +53,10 @@
         "severity": "minor",
         "explanation": "In the first clause the Hebrew verb יִבְצָע has the godless man as its subject (\"when he is cut off\" or \"when he gains by violence\"); God is named only in the second clause. Naming God as the agent in both clauses adds words not in the text and blunts the parallelism."
       }
-    ]
+    ],
+    "checked": {
+      "changed": "1:79"
+    }
   },
   {
     "bookId": 18,
@@ -119,13 +122,20 @@
     "bookId": 18,
     "chapterId": 27,
     "verseId": 19,
-    "text": "He lies down rich, and he is gathered no more; he opens his eyes, and all of it is gone.",
+    "text": "He lies down rich, but he will not be gathered; he opens his eyes, and it is gone.",
     "versions": [
       {
         "text": "He lies down rich, but not for long; he opens his eyes, and everything is gone.",
         "type": "error",
         "severity": "major",
         "explanation": "\"But not for long\" paraphrases away the Hebrew idiom וְלֹא יֵאָסֵף, \"and he is not gathered\" (i.e., not gathered to his fathers, left unburied / gone for good). The rendering loses a concrete image of the wicked man's end."
+      },
+      {
+        "text": "He lies down rich, and he is gathered no more; he opens his eyes, and all of it is gone.",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "\"Gathered no more\" can suggest he had been gathered previously and then ceased to be; the Hebrew וְלֹא יֵאָסֵף simply denies that he will be gathered (to his fathers / to burial) at all. \"But he will not be gathered\" states the idiom cleanly and keeps the contrast with \"lies down rich.\" \"All of it\" also adds a quantifier not in the terse וְאֵינֶנּוּ; \"and it is gone\" is shorter and reads better aloud.",
+        "alternative": true
       }
     ]
   },

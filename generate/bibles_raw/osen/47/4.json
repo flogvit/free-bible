@@ -43,7 +43,10 @@
         "severity": "minor",
         "explanation": "The Greek reads Χριστὸν Ἰησοῦν (\"Christ Jesus\"), and the word order carries emphasis; the translation reverses it to \"Jesus Christ.\""
       }
-    ]
+    ],
+    "checked": {
+      "changed": "1:107"
+    }
   },
   {
     "bookId": 47,
@@ -97,15 +100,25 @@
     "bookId": 47,
     "chapterId": 4,
     "verseId": 14,
-    "text": "knowing that the one who raised Jesus will raise us also with Jesus and present us with you in his presence.",
+    "text": "knowing that the one who raised Jesus will raise us also with Jesus and present us together with you.",
     "versions": [
       {
         "text": "knowing that the one who raised the Lord Jesus will raise us also with Jesus and bring us into his presence together with you.",
         "type": "error",
         "severity": "minor",
         "explanation": "The base text reads simply τὸν Ἰησοῦν (\"Jesus\"); \"the Lord\" reflects a variant reading and adds content not in the text used here."
+      },
+      {
+        "text": "knowing that the one who raised Jesus will raise us also with Jesus and present us with you in his presence.",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "The phrase \"present us with you in his presence\" is redundant and awkward for oral reading: \"present\" already carries the sense of being set before God, so \"in his presence\" repeats the idea and also stacks two prepositional phrases at the end of the clause. The Greek καὶ παραστήσει σὺν ὑμῖν says simply \"and will present us together with you.\" Removing the redundancy tightens the rhythm without losing meaning.",
+        "alternative": true
       }
-    ]
+    ],
+    "checked": {
+      "length": "2:101"
+    }
   },
   {
     "bookId": 47,

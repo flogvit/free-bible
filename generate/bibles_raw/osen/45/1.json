@@ -51,15 +51,25 @@
     "bookId": 45,
     "chapterId": 1,
     "verseId": 9,
-    "text": "God, whom I serve with my spirit in the gospel of his Son, is my witness how constantly I remember you",
+    "text": "For God is my witness — the God I serve with my spirit in the gospel of his Son — how constantly I remember you",
     "versions": [
       {
         "text": "God, whom I serve with my whole spirit in the gospel of his Son, is my witness how constantly I remember you",
         "type": "error",
         "severity": "minor",
         "explanation": "The Greek reads simply ἐν τῷ πνεύματί μου, \"in/with my spirit.\" The word \"whole\" is an addition not present in the text and slightly shifts the sense toward intensity rather than the sphere of service."
+      },
+      {
+        "text": "God, whom I serve with my spirit in the gospel of his Son, is my witness how constantly I remember you",
+        "type": "error",
+        "severity": "minor",
+        "explanation": "The connective γάρ is left untranslated; it grounds verse 9 in the thanksgiving of verse 8, the same concern that prompted the revision at verse 18. Recasting the long appositive as a parenthetical also keeps the subject and verb close together, which reads far better aloud than an eighteen-word gap between \"God\" and \"is my witness.\"",
+        "alternative": true
       }
-    ]
+    ],
+    "checked": {
+      "changed": "2:111"
+    }
   },
   {
     "bookId": 45,
@@ -121,13 +131,20 @@
     "bookId": 45,
     "chapterId": 1,
     "verseId": 18,
-    "text": "For the wrath of God is being revealed from heaven against all the ungodliness and wickedness of those who suppress the truth by their wickedness,",
+    "text": "For the wrath of God is being revealed from heaven against all the ungodliness and wickedness of people who suppress the truth by their wickedness,",
     "versions": [
       {
         "text": "The wrath of God is being revealed from heaven against all the ungodliness and wickedness of those who suppress the truth by their wickedness,",
         "type": "error",
         "severity": "minor",
         "explanation": "The connective γάρ is untranslated. It ties verse 18 logically to the revelation of God's righteousness in verse 17; dropping it breaks the argument's flow, which is especially noticeable when read aloud."
+      },
+      {
+        "text": "For the wrath of God is being revealed from heaven against all the ungodliness and wickedness of those who suppress the truth by their wickedness,",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "ἀνθρώπων (\"of people, of human beings\") is absorbed into the vague \"of those,\" losing the explicit reference to humanity that sets up the indictment of the human race in the following verses. \"People who\" restores it without adding length.",
+        "alternative": true
       }
     ]
   },

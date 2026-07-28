@@ -21,13 +21,20 @@
     "bookId": 27,
     "chapterId": 5,
     "verseId": 4,
-    "text": "They drank the wine and praised the gods of gold and silver, bronze, iron, wood, and stone.",
+    "text": "They drank wine and praised the gods of gold and silver, bronze, iron, wood, and stone.",
     "versions": [
       {
         "text": "They drank the wine and praised their gods of gold and silver, bronze, iron, wood, and stone.",
         "type": "error",
         "severity": "minor",
         "explanation": "The Aramaic has simply \"the gods of gold and silver\"; the possessive \"their\" is an addition. Removing it also matches the wording used in verse 23 (\"You praised gods of silver and gold...\"), keeping the two parallel passages consistent."
+      },
+      {
+        "text": "They drank the wine and praised the gods of gold and silver, bronze, iron, wood, and stone.",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "The Aramaic determined form חַמְרָא here functions generically, as reflected in verse 23 where the same expression is rendered \"drank wine.\" Dropping \"the\" keeps the two parallel passages consistent and reads slightly more crisply aloud.",
+        "alternative": true
       }
     ]
   },
@@ -165,13 +172,20 @@
     "bookId": 27,
     "chapterId": 5,
     "verseId": 24,
-    "text": "So from his presence the hand was sent, and this writing was inscribed.",
+    "text": "So the hand was sent from his presence, and this writing was inscribed.",
     "versions": [
       {
         "text": "So he sent the hand that wrote this inscription.",
         "type": "error",
         "severity": "minor",
         "explanation": "The Aramaic has two clauses: the hand was sent \"from before him,\" and \"this writing was inscribed.\" The current rendering compresses both and loses the passive, reverent \"from his presence,\" which links the hand directly to the God just named in verse 23."
+      },
+      {
+        "text": "So from his presence the hand was sent, and this writing was inscribed.",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "Both clauses of the Aramaic are preserved either way, but the fronted prepositional phrase (\"from his presence the hand was sent\") creates a slight stumble for a reader; placing the subject first gives a smoother, more natural spoken rhythm while keeping the reverent passive and the link back to God in verse 23.",
+        "alternative": true
       }
     ]
   },

@@ -143,13 +143,20 @@
     "bookId": 24,
     "chapterId": 38,
     "verseId": 23,
-    "text": "All your wives and children will be led out to the Chaldeans, and you yourself will not escape their hands. You will be captured by the king of Babylon, and because of you this city will be burned down.\"",
+    "text": "All your wives and children will be led out to the Chaldeans, and you yourself will not escape their hands. You will be captured by the king of Babylon, and you will burn this city down with fire.\"",
     "versions": [
       {
         "text": "All your wives and children will be led out to the Chaldeans, and you yourself will not escape their hands. You will be captured by the king of Babylon, and this city will be burned down.\"",
         "type": "error",
         "severity": "minor",
         "explanation": "The Hebrew verb תִּשְׂרֹף is second person masculine singular (\"you will burn this city with fire\"), placing responsibility on Zedekiah; the passive rendering loses this. If the passive is retained for readability, a footnote noting the literal Hebrew (\"you will burn this city with fire\") would be helpful."
+      },
+      {
+        "text": "All your wives and children will be led out to the Chaldeans, and you yourself will not escape their hands. You will be captured by the king of Babylon, and because of you this city will be burned down.\"",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "The Hebrew verb is second person masculine singular with 'this city' as its object, so the sharpest rendering keeps Zedekiah as the acting subject rather than adding the explanatory phrase 'because of you' to a passive clause. The direct form also reads more forcefully aloud. The present rendering is a legitimate interpretive compromise, but the active form matches the Hebrew word-for-word without adding words.",
+        "alternative": true
       }
     ]
   },

@@ -59,13 +59,20 @@
     "bookId": 66,
     "chapterId": 8,
     "verseId": 9,
-    "text": "a third of the creatures in the sea, the ones having life, died, and a third of the ships were destroyed.",
+    "text": "a third of the creatures in the sea, those that had life, died, and a third of the ships were destroyed.",
     "versions": [
       {
         "text": "a third of the living creatures in the sea died, and a third of the ships were destroyed.",
         "type": "error",
         "severity": "minor",
         "explanation": "The Greek distinguishes \"creatures in the sea\" from the qualifying phrase \"those having life/souls.\" The current rendering collapses this, though it is acceptable; a slight expansion preserves the fuller sense."
+      },
+      {
+        "text": "a third of the creatures in the sea, the ones having life, died, and a third of the ships were destroyed.",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "The appositional phrase τὰ ἔχοντα ψυχάς is accurately represented, but \"the ones having life\" is a wooden participial construction that stumbles when read aloud, especially wedged between subject and verb. \"Those that had life\" keeps the same distinction while reading more smoothly.",
+        "alternative": true
       }
     ]
   },
@@ -93,7 +100,10 @@
         "severity": "minor",
         "explanation": "The purpose clause (ἵνα) governs both the darkening and the loss of light, so breaking it into a separate sentence weakens the link. Also \"and the night as well\" should carry the sense \"a third of the night likewise.\""
       }
-    ]
+    ],
+    "checked": {
+      "changed": "1:231"
+    }
   },
   {
     "bookId": 66,

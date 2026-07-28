@@ -87,13 +87,20 @@
     "bookId": 5,
     "chapterId": 29,
     "verseId": 15,
-    "text": "You know how we lived in the land of Egypt, and how we passed through the nations you traveled among.",
+    "text": "For you know how we lived in the land of Egypt, and how we passed through the nations you traveled among.",
     "versions": [
       {
         "text": "You know how we lived in the land of Egypt, and how we passed through the midst of the nations along the way.",
         "type": "error",
         "severity": "minor",
         "explanation": "The Hebrew ends with a second verb, \"the nations through which you passed,\" which the vague phrase \"along the way\" drops. Restoring the relative clause keeps the content while staying readable."
+      },
+      {
+        "text": "You know how we lived in the land of Egypt, and how we passed through the nations you traveled among.",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "The opening כִּי links this verse explanatorily to the preceding covenant statement. Dropping it leaves the sentence floating; restoring \"For\" preserves the logical connective and helps the flow when read aloud.",
+        "alternative": true
       }
     ]
   },
@@ -145,7 +152,10 @@
         "severity": "minor",
         "explanation": "The Hebrew has two nouns, \"his anger and his wrath\"; \"his fierce anger\" collapses the pair and loses the intensity of the doubled expression."
       }
-    ]
+    ],
+    "checked": {
+      "changed": "1:227"
+    }
   },
   {
     "bookId": 5,
@@ -169,13 +179,20 @@
     "bookId": 5,
     "chapterId": 29,
     "verseId": 26,
-    "text": "So the LORD's anger burned against that land, and he brought upon it every curse written in this book.",
+    "text": "So the LORD's anger burned against that land, bringing upon it every curse written in this book.",
     "versions": [
       {
         "text": "So the LORD's anger burned against this land, and he brought upon it every curse written in this book.",
         "type": "error",
         "severity": "minor",
         "explanation": "Hebrew הַהִוא means \"that land,\" matching the distant reference in verse 21; \"this land\" wrongly shifts the perspective to the speaker's present location."
+      },
+      {
+        "text": "So the LORD's anger burned against that land, and he brought upon it every curse written in this book.",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "The Hebrew uses an infinitive of purpose/result (לְהָבִיא), not a second finite verb. A participial phrase keeps the subordinate, result-oriented sense while reading smoothly; \"and he brought\" turns it into an independent action.",
+        "alternative": true
       }
     ]
   },

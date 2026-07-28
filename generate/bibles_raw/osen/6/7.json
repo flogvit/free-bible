@@ -155,13 +155,20 @@
     "bookId": 6,
     "chapterId": 7,
     "verseId": 25,
-    "text": "Joshua said, \"Why have you brought this disaster on us? Today the LORD brings disaster on you.\" Then all Israel stoned him to death, and they burned them with fire and stoned them with stones.",
+    "text": "Joshua said, \"Why have you brought this disaster on us? Today the LORD brings disaster on you.\" Then all Israel pelted him with stones, and they burned them with fire and stoned them with stones.",
     "versions": [
       {
         "text": "Joshua said, \"Why have you brought this disaster on us? Today the LORD brings disaster on you.\" Then all Israel stoned him, and after they had stoned the rest, they burned them.",
         "type": "error",
         "severity": "minor",
         "explanation": "The current rendering reverses the Hebrew sequence (stoning, then burning, then stoning) and adds \"the rest,\" which is not in the text and reads as an interpretive expansion. A rendering that keeps the Hebrew order avoids adding content."
+      },
+      {
+        "text": "Joshua said, \"Why have you brought this disaster on us? Today the LORD brings disaster on you.\" Then all Israel stoned him to death, and they burned them with fire and stoned them with stones.",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "The Hebrew simply says all Israel pelted him with stone(s); \"to death\" is an added interpretive element, and it sits awkwardly before the burning and further stoning that follow. Rendering the first verb as \"pelted him with stones\" keeps the content exact and also varies the three verbs naturally for oral reading.",
+        "alternative": true
       }
     ]
   },

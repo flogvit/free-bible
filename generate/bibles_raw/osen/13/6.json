@@ -75,13 +75,20 @@
     "bookId": 13,
     "chapterId": 6,
     "verseId": 13,
-    "text": "The sons of Samuel: Joel the firstborn, and Abijah the second.",
+    "text": "The sons of Samuel: Joel the firstborn, and Abijah the second. [Footnote: The Hebrew here reads \"the firstborn, Vashni, and Abijah\"; the name Joel is supplied from other lists of Samuel's sons, and \"Vashni\" is understood as \"and the second.\"]",
     "versions": [
       {
         "text": "The sons of Samuel: the firstborn, Joel, and the second, Abijah.",
         "type": "error",
         "severity": "major",
         "explanation": "The Hebrew text as preserved reads only \"the firstborn, Vashni, and Abijah\"; the name Joel is supplied from the parallel lists (see v. 18). The current wording awkwardly places the name after the title and gives no indication that \"Joel\" is a supplied reading. Recommend the smoother word order plus a footnote such as: \"The Hebrew here reads 'the firstborn, Vashni'; the name Joel is supplied from other lists of Samuel's sons.\""
+      },
+      {
+        "text": "The sons of Samuel: Joel the firstborn, and Abijah the second.",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "The reading is defensible and reads well aloud, but as it stands the English gives no hint that \"Joel\" is supplied from parallel lists and that the Hebrew consonants behind \"the second\" are traditionally read as the name Vashni. A brief footnote (recommended when this verse was revised, but not yet present) would inform the reader without disturbing the rhythm of the line.",
+        "alternative": false
       }
     ]
   },
@@ -254,7 +261,10 @@
         "explanation": "Nearly the whole verse is missing. The Hebrew contains \"And these are their dwelling places according to their settlements within their territory, for the sons of Aaron, of the clan of the Kohathites, for theirs was the lot.\" Only the final clause survives in the current text. The earlier wording is restored, keeping the intentional removal of the unsupported word \"first.\"",
         "alternative": false
       }
-    ]
+    ],
+    "checked": {
+      "changed": "2:155"
+    }
   },
   {
     "bookId": 13,
@@ -372,7 +382,10 @@
         "severity": "minor",
         "explanation": "The Hebrew מִמִּשְׁפַּחַת is singular (\"from the clan/family of\"); the plural \"clans\" slightly overstates the text. The singular also reads more smoothly aloud alongside \"half-tribe.\""
       }
-    ]
+    ],
+    "checked": {
+      "changed": "1:154"
+    }
   },
   {
     "bookId": 13,

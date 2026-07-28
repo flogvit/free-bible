@@ -41,7 +41,10 @@
         "severity": "minor",
         "explanation": "The Hebrew has the plural 'your brothers' (אַחֶיךָ), and 'חִנָּם' means 'without cause / for no reason,' not 'for nothing' — which in English can be misread as 'you gained nothing by it.'"
       }
-    ]
+    ],
+    "checked": {
+      "changed": "1:95"
+    }
   },
   {
     "bookId": 18,
@@ -83,13 +86,20 @@
     "bookId": 18,
     "chapterId": 22,
     "verseId": 13,
-    "text": "Yet you say, 'What does God know? Can he judge through such darkness?",
+    "text": "Yet you say, 'What does God know? Can he judge through the thick darkness?",
     "versions": [
       {
         "text": "Yet you say, \"What does God know? Can he judge through such darkness?",
         "type": "grammar",
         "severity": "minor",
         "explanation": "This is a quotation inside Eliphaz's speech, which itself opened with double quotation marks in verse 2. Nested speech should use single quotation marks for consistency and clarity when read aloud."
+      },
+      {
+        "text": "Yet you say, 'What does God know? Can he judge through such darkness?",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "עֲרָפֶל denotes dense, gloomy cloud-darkness; 'the thick darkness' preserves that image and links directly to the 'thick clouds' of the next verse, whereas 'such darkness' is a vaguer paraphrase with an added demonstrative not in the Hebrew.",
+        "alternative": true
       }
     ]
   },
@@ -105,7 +115,10 @@
         "severity": "minor",
         "explanation": "Closing mark must match the nested quotation opened in verse 13; use a single closing quotation mark for the quoted words of Job inside Eliphaz's speech."
       }
-    ]
+    ],
+    "checked": {
+      "changed": "1:74"
+    }
   },
   {
     "bookId": 18,

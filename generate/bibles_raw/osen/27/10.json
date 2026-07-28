@@ -87,7 +87,10 @@
         "severity": "minor",
         "explanation": "The emphatic \"now\" (עַתָּה) is omitted, and the Hebrew participle דֹבֵר is present (\"I am speaking\"), not future (\"about to speak\"). Restoring both keeps the immediacy of the messenger's words."
       }
-    ]
+    ],
+    "checked": {
+      "changed": "1:204"
+    }
   },
   {
     "bookId": 27,
@@ -163,13 +166,20 @@
     "bookId": 27,
     "chapterId": 10,
     "verseId": 21,
-    "text": "But I will tell you what is written in the book of truth. No one stands with me against these except Michael, your prince.",
+    "text": "But I will tell you what is written in the book of truth. No one supports me against these princes except Michael, your prince.",
     "versions": [
       {
         "text": "But first I will tell you what is written in the book of truth. No one stands with me against these except Michael, your prince.",
         "type": "error",
         "severity": "minor",
         "explanation": "\"First\" adds a sequence not present in the Hebrew; אֲבָל is simply a contrastive \"however, but.\""
+      },
+      {
+        "text": "But I will tell you what is written in the book of truth. No one stands with me against these except Michael, your prince.",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "In oral reading, the bare demonstrative \"these\" leaves the hearer with no referent; the Hebrew עַל־אֵלֶּה points back to the princes of Persia and Greece just named, so making that explicit aids comprehension without changing the sense. \"Supports\" also renders מִתְחַזֵּק עִמִּי (\"strengthens himself with me\") a shade more precisely than \"stands with.\"",
+        "alternative": true
       }
     ]
   }

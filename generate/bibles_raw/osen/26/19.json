@@ -17,7 +17,10 @@
         "severity": "minor",
         "explanation": "The Hebrew has two parallel clauses: 'among lions she lay down' and 'among young lions she reared her cubs.' The current rendering attaches 'among the lions' to the opening exclamation and shifts 'young lions' into the first clause, blurring the parallelism. The restored parallel structure is also stronger for oral reading."
       }
-    ]
+    ],
+    "checked": {
+      "changed": "1:101"
+    }
   },
   {
     "bookId": 26,
@@ -75,7 +78,10 @@
         "severity": "minor",
         "explanation": "The verb is again 'they brought him,' and מְצֹדוֹת means 'strongholds/fortresses,' not 'prison.' The repetition of 'brought' is deliberate in the Hebrew and reads well aloud."
       }
-    ]
+    ],
+    "checked": {
+      "changed": "1:181"
+    }
   },
   {
     "bookId": 26,
@@ -113,13 +119,20 @@
     "bookId": 26,
     "chapterId": 19,
     "verseId": 14,
-    "text": "Fire went out from the stem of its branches and consumed its fruit, so that no strong branch was left in it, no scepter for ruling. This is a lament, and a lament it shall remain.",
+    "text": "Fire went out from the stem of its branches and consumed its fruit, and no strong rod was left in it, no scepter for ruling. This is a lament, and a lament it shall remain.",
     "versions": [
       {
         "text": "Fire went out from its stem and consumed its shoots and its fruit, so that no strong branch was left in it, no scepter for ruling. This is a lament, and a lament it shall remain.",
         "type": "error",
         "severity": "minor",
         "explanation": "In the Hebrew, 'its branches' belongs to the phrase 'from the stem of its branches'; the only object of 'consumed' is 'its fruit.' The current wording turns the shoots into an additional object, adding content not in the text."
+      },
+      {
+        "text": "Fire went out from the stem of its branches and consumed its fruit, so that no strong branch was left in it, no scepter for ruling. This is a lament, and a lament it shall remain.",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "מַטֵּה־עֹז pairs with שֵׁבֶט ('scepter'), so 'strong rod' keeps the royal imagery that 'branch' obscures, and it avoids using 'branch' for both בַּדֶּיהָ and מַטֵּה in the same verse. Rendering the Hebrew waw as 'and' rather than 'so that' also avoids importing a causal link the text only implies.",
+        "alternative": true
       }
     ]
   }

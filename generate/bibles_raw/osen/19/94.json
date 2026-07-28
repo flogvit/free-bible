@@ -47,15 +47,25 @@
     "bookId": 19,
     "chapterId": 94,
     "verseId": 7,
-    "text": "And they say, \"The LORD does not see; the God of Jacob pays no heed.\"",
+    "text": "And they say, \"The LORD does not see; the God of Jacob does not perceive.\"",
     "versions": [
       {
         "text": "And they say, \"The LORD does not see; the God of Jacob takes no notice.\"",
         "type": "error",
         "severity": "minor",
         "explanation": "The Hebrew verb יבין means 'understand/perceive'; 'takes no notice' is a loose paraphrase. Also, verse 7 uses the short divine name יָהּ rather than the full name; a footnote noting 'Hebrew: Yah, a short form of the LORD's name' would help readers."
+      },
+      {
+        "text": "And they say, \"The LORD does not see; the God of Jacob pays no heed.\"",
+        "type": "error",
+        "severity": "minor",
+        "explanation": "The revision replaced 'takes no notice' with 'pays no heed,' but this repeats the very problem that prompted the change: יָבִין means 'understand / perceive,' not 'pay attention.' A cognitive verb ('does not perceive' or 'understands nothing') renders the Hebrew accurately and still reads smoothly aloud. A footnote on the divine name here (Hebrew 'Yah,' a short form of the LORD's name) would also still be helpful, as it has not yet been added.",
+        "alternative": false
       }
-    ]
+    ],
+    "checked": {
+      "changed": "2:74"
+    }
   },
   {
     "bookId": 19,
@@ -171,7 +181,10 @@
         "severity": "minor",
         "explanation": "The Hebrew reads 'innocent blood' (דָּם נָקִי) and the verb is 'condemn / declare guilty'; 'to death' is an addition not present in the text."
       }
-    ]
+    ],
+    "checked": {
+      "changed": "1:80"
+    }
   },
   {
     "bookId": 19,
@@ -191,6 +204,9 @@
         "severity": "major",
         "explanation": "The Hebrew 'turns back upon them their iniquity' expresses that their own evil recoils on them, which is lost in 'repay them for their wickedness.' Also אוֹנָם ('their iniquity') and רָעָתָם ('their evil') are rendered with the words reversed."
       }
-    ]
+    ],
+    "checked": {
+      "changed": "1:112"
+    }
   }
 ]

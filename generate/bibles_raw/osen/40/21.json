@@ -221,13 +221,20 @@
     "bookId": 40,
     "chapterId": 21,
     "verseId": 32,
-    "text": "For John came to you in the way of righteousness, and you did not believe him, but the tax collectors and the prostitutes did believe him. And even when you saw it, you still would not change your minds afterward and believe him.",
+    "text": "For John came to you in the way of righteousness, and you did not believe him, but the tax collectors and the prostitutes did believe him. You saw it, and even afterward you would not change your minds and believe him.",
     "versions": [
       {
         "text": "For John came to you in the way of righteousness, and you did not believe him, but the tax collectors and the prostitutes did believe him. And even when you saw it, you did not change your minds and believe him.",
         "type": "error",
         "severity": "minor",
         "explanation": "The word ὕστερον (\"afterward,\" \"later\") is left untranslated. It is significant here because it echoes the son in verse 29 who \"later changed his mind,\" tying the parable to its application."
+      },
+      {
+        "text": "For John came to you in the way of righteousness, and you did not believe him, but the tax collectors and the prostitutes did believe him. And even when you saw it, you still would not change your minds afterward and believe him.",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "In the Greek, οὐδέ attaches to the verb (\"did not even change your minds\") rather than to the participle \"seeing.\" The current wording also stacks \"still... afterward,\" which is slightly redundant and clumsy when read aloud. Placing \"even\" with \"afterward\" keeps the emphasis where the Greek puts it and smooths the rhythm while preserving the important word ὕστερον.",
+        "alternative": true
       }
     ]
   },

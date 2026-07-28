@@ -27,13 +27,20 @@
     "bookId": 6,
     "chapterId": 20,
     "verseId": 5,
-    "text": "If the avenger of blood pursues him, they must not hand the killer over to him, since he struck down his neighbor without intent and without prior hatred.",
+    "text": "If the avenger of blood pursues him, they must not hand the killer over to him, since he struck down his neighbor unintentionally and had borne him no hatred before.",
     "versions": [
       {
         "text": "If the avenger of blood pursues him, they must not hand the killer over, since he struck down his neighbor without intent and without prior hatred.",
         "type": "error",
         "severity": "minor",
         "explanation": "The Hebrew says they must not surrender the killer 'into his hand' (i.e., to the avenger). The phrase 'to him' clarifies the recipient and is currently omitted."
+      },
+      {
+        "text": "If the avenger of blood pursues him, they must not hand the killer over to him, since he struck down his neighbor without intent and without prior hatred.",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "The Hebrew closes with a clause about the man himself (\"he was not his enemy beforehand\"), not an abstract noun phrase. Turning it back into a verbal clause matches the source more closely and gives the sentence a stronger spoken cadence than the two parallel \"without...\" phrases. The current wording is a legitimate compression of the sense.",
+        "alternative": true
       }
     ]
   },

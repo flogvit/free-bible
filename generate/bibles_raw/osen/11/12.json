@@ -71,13 +71,20 @@
     "bookId": 11,
     "chapterId": 12,
     "verseId": 11,
-    "text": "And now: my father loaded you with a heavy yoke; I will add to your yoke. My father disciplined you with whips; I will discipline you with scorpions.\"",
+    "text": "Now then, my father loaded you with a heavy yoke; I will add to your yoke. My father disciplined you with whips; I will discipline you with scorpions.\"",
     "versions": [
       {
         "text": "My father loaded you with a heavy yoke; I will add to your yoke. My father disciplined you with whips; I will discipline you with scorpions.\"",
         "type": "error",
         "severity": "minor",
         "explanation": "The opening וְעַתָּה (\"and now\") is untranslated. It marks the turn from the report of the people's request to the harsh reply and also helps the oral rhythm of the taunt."
+      },
+      {
+        "text": "And now: my father loaded you with a heavy yoke; I will add to your yoke. My father disciplined you with whips; I will discipline you with scorpions.\"",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "The colon after \"And now\" is a visual punctuation mark that gives no guidance to a reader speaking the line aloud; \"Now then,\" carries the same discourse force of וְעַתָּה while flowing naturally in speech. The rest of the verse is accurate and unchanged.",
+        "alternative": true
       }
     ]
   },
@@ -243,6 +250,9 @@
         "severity": "major",
         "explanation": "The verb בָּדָא means to invent or fabricate; 'devised in his own heart' captures the narrator's criticism that Jeroboam concocted this month himself, which 'of his own choosing' weakens. Also לְהַקְטִיר here refers broadly to burning offerings on the altar, not specifically incense."
       }
-    ]
+    ],
+    "checked": {
+      "changed": "1:221"
+    }
   }
 ]

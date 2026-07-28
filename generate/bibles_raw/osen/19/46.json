@@ -65,13 +65,20 @@
     "bookId": 19,
     "chapterId": 46,
     "verseId": 10,
-    "text": "He puts an end to wars to the ends of the earth; he breaks the bow and shatters the spear, he burns the war chariots with fire.",
+    "text": "He makes wars cease to the ends of the earth; he breaks the bow and shatters the spear, he burns the war chariots with fire.",
     "versions": [
       {
         "text": "He puts an end to wars to the ends of the earth; he breaks the bow and shatters the spear, he burns the shields with fire.",
         "type": "error",
         "severity": "major",
         "explanation": "The Hebrew word עֲגָלוֹת means \"wagons\" or \"(war) carts/chariots,\" not \"shields.\" The rendering \"shields\" follows an ancient version rather than the Hebrew text supplied here. \"War chariots\" preserves the sense of destroying the instruments of war and reads well aloud."
+      },
+      {
+        "text": "He puts an end to wars to the ends of the earth; he breaks the bow and shatters the spear, he burns the war chariots with fire.",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "The doubled \"to...to\" (\"puts an end to wars to the ends\") is clumsy when read aloud. \"Makes wars cease\" renders the participle מַשְׁבִּית just as accurately and removes the stumbling repetition, while keeping the rest of the verse unchanged.",
+        "alternative": true
       }
     ]
   },

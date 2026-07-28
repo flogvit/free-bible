@@ -3,13 +3,20 @@
     "bookId": 36,
     "chapterId": 3,
     "verseId": 1,
-    "text": "Woe to the rebellious and defiled city, the city that oppresses!",
+    "text": "Woe to the rebellious and defiled one — the city that oppresses!",
     "versions": [
       {
         "text": "Woe to the rebellious, defiled city, the city of violence!",
         "type": "error",
         "severity": "minor",
         "explanation": "הַיּוֹנָה derives from the root ינה, \"to oppress, mistreat,\" not from a word for violence (חמס). \"The city that oppresses\" is more accurate and keeps the three-part indictment (rebellious / defiled / oppressive) clear for the ear."
+      },
+      {
+        "text": "Woe to the rebellious and defiled city, the city that oppresses!",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "The Hebrew names the object of the woe with two feminine participles (מֹרְאָה וְנִגְאָלָה) and only then supplies the noun הָעִיר, so the word \"city\" occurs once, not twice. Keeping a single \"city\" avoids the slightly clumsy doubling in oral reading while preserving the three-part indictment (rebellious / defiled / oppressive).",
+        "alternative": true
       }
     ]
   },

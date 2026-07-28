@@ -17,7 +17,10 @@
         "severity": "major",
         "explanation": "The Hebrew makes הַבַּיִת and דִיבֹן the subjects going up to the high places (הַבָּמוֹת) to weep. The current rendering turns Dibon — a Moabite city — into a destination alongside \"the temple,\" which distorts the sense. Treating both as place-names (or, if \"the temple\" is retained, keeping Dibon as the one going up) reflects the syntax more accurately."
       }
-    ]
+    ],
+    "checked": {
+      "changed": "1:138"
+    }
   },
   {
     "bookId": 23,
@@ -41,13 +44,20 @@
     "bookId": 23,
     "chapterId": 15,
     "verseId": 6,
-    "text": "For the waters of Nimrim will become a wasteland; the grass is withered, the growth is gone, nothing green is left.",
+    "text": "For the waters of Nimrim will become a wasteland, since the grass is withered, the new growth is gone, and nothing green is left.",
     "versions": [
       {
         "text": "The waters of Nimrim are desolate; the grass is withered, the growth is gone, nothing green is left.",
         "type": "error",
         "severity": "minor",
         "explanation": "יִהְיוּ is imperfect (\"will become\"), and the opening כִּי links this verse to the preceding lament as its ground. The present-tense \"are desolate\" loses both the future orientation and the connective."
+      },
+      {
+        "text": "For the waters of Nimrim will become a wasteland; the grass is withered, the growth is gone, nothing green is left.",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "The second כִּי in the verse is left untranslated, so the causal link between the drying up of the waters and the failure of the vegetation disappears. Rendering it with \"since\" (avoiding a second \"for\") preserves the logic while keeping the line readable aloud; \"new growth\" is a slightly closer sense of דֶשֶׁא.",
+        "alternative": true
       }
     ]
   },

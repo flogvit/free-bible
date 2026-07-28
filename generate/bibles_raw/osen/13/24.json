@@ -165,7 +165,10 @@
         "severity": "minor",
         "explanation": "The Hebrew has the plural בְּנֵי (\"sons of\"), as elsewhere in this list (vv. 26, 27, 30). Keeping the plural preserves the fixed formula of the register and its oral rhythm."
       }
-    ]
+    ],
+    "checked": {
+      "changed": "1:58"
+    }
   },
   {
     "bookId": 13,
@@ -177,15 +180,25 @@
     "bookId": 13,
     "chapterId": 24,
     "verseId": 26,
-    "text": "The sons of Merari: Mahli and Mushi. The sons of Jaaziah his son: [^fn]\n\n[^fn]: Or \"The sons of Jaaziah: Beno\"; the Hebrew word beno can be read either as a personal name or as \"his son.\"",
+    "text": "The sons of Merari: Mahli and Mushi, and the sons of Jaaziah his son. [^fn]\n\n[^fn]: Or \"The sons of Jaaziah: Beno\"; the Hebrew word beno can be read either as a personal name or as \"his son.\"",
     "versions": [
       {
         "text": "The sons of Merari: Mahli and Mushi. The son of Jaaziah: Beno.",
         "type": "error",
         "severity": "major",
         "explanation": "The same Hebrew word בְּנוֹ is treated as the personal name \"Beno\" here but as \"his son\" in the very next verse, which is inconsistent. Rendering it the same way in both verses (with a footnote for the alternative) removes the contradiction."
+      },
+      {
+        "text": "The sons of Merari: Mahli and Mushi. The sons of Jaaziah his son: [^fn]\n\n[^fn]: Or \"The sons of Jaaziah: Beno\"; the Hebrew word beno can be read either as a personal name or as \"his son.\"",
+        "type": "grammar",
+        "severity": "minor",
+        "explanation": "The trailing colon promises a list that does not follow, since the next verse restarts with \"The sons of Merari through Jaaziah his son.\" For oral reading this leaves the sentence hanging. Closing the clause with a period (and joining it to the preceding list with \"and\") keeps the same information while giving the verse a complete cadence.",
+        "alternative": true
       }
-    ]
+    ],
+    "checked": {
+      "changed": "2:191"
+    }
   },
   {
     "bookId": 13,
@@ -203,13 +216,20 @@
     "bookId": 13,
     "chapterId": 24,
     "verseId": 29,
-    "text": "From Kish: of the sons of Kish, Jerahmeel.",
+    "text": "From Kish: from the sons of Kish, Jerahmeel.",
     "versions": [
       {
         "text": "From Kish: the son of Kish, Jerahmeel.",
         "type": "error",
         "severity": "minor",
         "explanation": "The Hebrew reads the plural בְּנֵי־קִישׁ (\"sons of Kish\"); the singular narrows the sense beyond what the text says and breaks the pattern used in the neighboring verses."
+      },
+      {
+        "text": "From Kish: of the sons of Kish, Jerahmeel.",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "\"From Kish: of the sons of Kish\" mixes two prepositions awkwardly when read aloud; \"from the sons of\" matches the formula already used in verses 24 and 25 and keeps the register's rhythm consistent.",
+        "alternative": true
       }
     ]
   },

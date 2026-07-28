@@ -53,7 +53,10 @@
         "severity": "minor",
         "explanation": "The Greek φύσει (\"by nature\") is a key qualifier that is replaced by the vaguer intensifier \"at all.\" Paul's point is that these beings are not gods in their essential nature, which the rendering should preserve."
       }
-    ]
+    ],
+    "checked": {
+      "changed": "1:89"
+    }
   },
   {
     "bookId": 48,
@@ -195,13 +198,20 @@
     "bookId": 48,
     "chapterId": 4,
     "verseId": 29,
-    "text": "But just as then the son born according to the flesh persecuted the son born according to the Spirit, so it is also now.",
+    "text": "But just as at that time the son born according to the flesh persecuted the son born according to the Spirit, so it is also now.",
     "versions": [
       {
         "text": "But just as the son born in the ordinary way persecuted the son born by the Spirit, so it is now.",
         "type": "error",
         "severity": "major",
         "explanation": "The deliberate flesh/Spirit antithesis (κατὰ σάρκα / κατὰ πνεῦμα) is broken by rendering the first phrase \"in the ordinary way\"; the parallel wording should be matched. \"Then\" (τότε) is also missing."
+      },
+      {
+        "text": "But just as then the son born according to the flesh persecuted the son born according to the Spirit, so it is also now.",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "\"just as then\" stacks two short adverbs awkwardly at the head of the sentence and reads poorly aloud; \"at that time\" renders τότε just as accurately while restoring the rhythm of the flesh/Spirit parallel that follows.",
+        "alternative": true
       }
     ]
   },

@@ -47,13 +47,20 @@
     "bookId": 58,
     "chapterId": 11,
     "verseId": 7,
-    "text": "By faith Noah, warned by God about things not yet seen, built an ark in reverent fear to save his household. By his faith he condemned the world and became heir of the righteousness that comes by faith.",
+    "text": "By faith Noah, warned by God about things not yet seen, in reverent fear built an ark to save his household. Through it he condemned the world and became heir of the righteousness that comes by faith.",
     "versions": [
       {
         "text": "By faith Noah, warned about things not yet seen, took God at his word and built an ark to save his household. By his faith he condemned the world and became heir of the righteousness that comes by faith.",
         "type": "error",
         "severity": "major",
         "explanation": "εὐλαβηθείς means \"moved with reverent/holy fear,\" a note of godly awe that \"took God at his word\" flattens into mere belief. Also, χρηματισθείς implies divine warning, which \"warned by God\" makes explicit."
+      },
+      {
+        "text": "By faith Noah, warned by God about things not yet seen, built an ark in reverent fear to save his household. By his faith he condemned the world and became heir of the righteousness that comes by faith.",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "The feminine relative pronoun ἧς most naturally takes the nearest feminine antecedent, κιβωτόν (\"ark\"), so \"through it\" keeps the intended ambiguity of the Greek rather than resolving it to faith, and avoids the stylistic pile-up of \"by his faith ... by faith\" in one sentence. Moving \"in reverent fear\" before the verb also lets the participial phrase modify the building action more clearly for a listener, instead of trailing after \"ark\".",
+        "alternative": true
       }
     ]
   },

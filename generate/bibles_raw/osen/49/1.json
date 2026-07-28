@@ -27,13 +27,20 @@
     "bookId": 49,
     "chapterId": 1,
     "verseId": 5,
-    "text": "He destined us beforehand to be adopted as his sons to himself through Jesus Christ, according to the good pleasure of his will,",
+    "text": "He destined us beforehand for adoption as sons through Jesus Christ, bringing us to himself, according to the good pleasure of his will,",
     "versions": [
       {
         "text": "In love he destined us beforehand to be adopted as his sons through Jesus Christ, according to the good pleasure of his will,",
         "type": "error",
         "severity": "major",
         "explanation": "The phrase ἐν ἀγάπῃ (\"in love\") occurs only once in the Greek (end of v. 4), but it is rendered twice — at the close of v. 4 (\"blameless before him in love\") and again at the start of v. 5 (\"In love he destined us\"). One of the two must be removed to avoid adding content. Also, εἰς αὐτόν (\"to himself\") is currently untranslated."
+      },
+      {
+        "text": "He destined us beforehand to be adopted as his sons to himself through Jesus Christ, according to the good pleasure of his will,",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "The current wording stacks \"as his sons to himself\" awkwardly, so the possessive and the reflexive compete with each other and the phrase stumbles when read aloud. Separating εἰς αὐτόν into its own clause (\"bringing us to himself\") keeps the element that was rightly restored in the earlier revision while letting the line breathe in three clear beats.",
+        "alternative": true
       }
     ]
   },
@@ -81,7 +88,10 @@
         "severity": "minor",
         "explanation": "The closing ἐν αὐτῷ (\"in him\") of the Greek is dropped; restoring it also gives the sentence the emphatic cadence of the original and prepares for \"In him\" at the start of v. 11."
       }
-    ]
+    ],
+    "checked": {
+      "changed": "1:140"
+    }
   },
   {
     "bookId": 49,

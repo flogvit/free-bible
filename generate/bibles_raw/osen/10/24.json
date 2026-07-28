@@ -27,13 +27,20 @@
     "bookId": 10,
     "chapterId": 24,
     "verseId": 5,
-    "text": "They crossed the Jordan and camped near Aroer, south of the town in the middle of the valley of Gad, and then went on to Jazer.",
+    "text": "They crossed the Jordan and camped at Aroer, south of the town that lies in the middle of the valley of Gad, and then went on to Jazer.",
     "versions": [
       {
         "text": "They crossed the Jordan and camped near Aroer, south of the town in the middle of the valley, and then went on toward Gad and Jazer.",
         "type": "error",
         "severity": "minor",
         "explanation": "In the Hebrew, \"Gad\" belongs with \"the valley\" (the valley/wadi of Gad, i.e., Gadite territory), not as a separate destination alongside Jazer. Treating Gad as a place they traveled \"toward\" alongside Jazer misreads the geography."
+      },
+      {
+        "text": "They crossed the Jordan and camped near Aroer, south of the town in the middle of the valley of Gad, and then went on to Jazer.",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "The Hebrew preposition on Aroer is 'in/at' (בַעֲרוֹעֵר), not 'near'; 'at' is closer to the source. Adding the relative 'that lies' also clarifies that the phrase describes the town rather than the camp site, which helps the sentence read cleanly aloud. The existing wording is understandable, so this is a refinement rather than a correction.",
+        "alternative": true
       }
     ]
   },

@@ -95,7 +95,10 @@
         "severity": "minor",
         "explanation": "The Hebrew בְּנַפְשָׁם means 'into their soul/life,' not merely 'among them.' The current rendering loses the sense that the leanness afflicted them personally/inwardly."
       }
-    ]
+    ],
+    "checked": {
+      "changed": "1:82"
+    }
   },
   {
     "bookId": 19,
@@ -133,7 +136,10 @@
         "severity": "minor",
         "explanation": "שׁוֹר is normally 'ox' — the point is the contrast with a domestic grass-eating animal. 'Bull' carries connotations of strength that work against the psalm's mockery."
       }
-    ]
+    ],
+    "checked": {
+      "changed": "1:66"
+    }
   },
   {
     "bookId": 19,
@@ -249,13 +255,20 @@
     "bookId": 19,
     "chapterId": 106,
     "verseId": 38,
-    "text": "They shed innocent blood, the blood of their sons and daughters, whom they sacrificed to the idols of Canaan, and the land was polluted with their blood.",
+    "text": "They shed innocent blood, the blood of their sons and daughters, whom they sacrificed to the idols of Canaan, and the land was polluted with the blood they shed.",
     "versions": [
       {
         "text": "They shed innocent blood, the blood of their sons and daughters, whom they sacrificed to the idols of Canaan, and the land was defiled with blood.",
         "type": "error",
         "severity": "minor",
         "explanation": "בַּדָּמִים is plural ('bloods'/bloodshed) and refers back to the blood just shed; 'polluted with their blood' better captures חנף (to profane/pollute) and the specific reference."
+      },
+      {
+        "text": "They shed innocent blood, the blood of their sons and daughters, whom they sacrificed to the idols of Canaan, and the land was polluted with their blood.",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "'Their blood' is momentarily ambiguous when read aloud, since the nearest plural antecedents are the Canaanite idols and the parents themselves. Making the referent explicit ('the blood they shed') preserves the backward link to the shed blood that בַּדָּמִים carries, while keeping the plural/bloodshed force of the Hebrew.",
+        "alternative": true
       }
     ]
   },
@@ -295,7 +308,10 @@
         "severity": "major",
         "explanation": "The Hebrew says they were rebellious 'in their counsel/plans' (בַעֲצָתָם) — a deliberate contrast with God's counsel (v.13). 'Bent on rebellion' drops the reference to their own schemes."
       }
-    ]
+    ],
+    "checked": {
+      "changed": "1:97"
+    }
   },
   {
     "bookId": 19,

@@ -3,13 +3,20 @@
     "bookId": 44,
     "chapterId": 16,
     "verseId": 1,
-    "text": "Paul came also to Derbe and then to Lystra. And there was a disciple there named Timothy, the son of a believing Jewish woman, but his father was a Greek.",
+    "text": "Paul came also to Derbe and then to Lystra. And there was a disciple named Timothy, the son of a believing Jewish woman, but his father was a Greek.",
     "versions": [
       {
         "text": "Paul came to Derbe and then to Lystra. A disciple named Timothy lived there, the son of a believing Jewish woman, but his father was a Greek.",
         "type": "error",
         "severity": "minor",
         "explanation": "The Greek καὶ ἰδοὺ (\"and behold\") introduces Timothy; \"lived there\" adds information not in the text (ἦν ἐκεῖ = \"was there\"). \"Also\" reflects καὶ, marking a return visit."
+      },
+      {
+        "text": "Paul came also to Derbe and then to Lystra. And there was a disciple there named Timothy, the son of a believing Jewish woman, but his father was a Greek.",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "The doubled \"there... there\" in \"there was a disciple there\" stumbles when read aloud. Dropping the second \"there\" keeps the presentative force of καὶ ἰδοὺ ... ἦν without the echo, and the location is already established by the previous sentence.",
+        "alternative": true
       }
     ]
   },
@@ -29,13 +36,20 @@
     "bookId": 44,
     "chapterId": 16,
     "verseId": 4,
-    "text": "As they traveled from town to town, they handed on to the people the decisions reached by the apostles and elders in Jerusalem, telling them to observe these rules.",
+    "text": "As they traveled from town to town, they handed on to them the decisions reached by the apostles and elders in Jerusalem, telling them to observe these.",
     "versions": [
       {
         "text": "As they traveled from town to town, they delivered to the believers the decisions reached by the apostles and elders in Jerusalem, for them to observe.",
         "type": "error",
         "severity": "minor",
         "explanation": "\"the believers\" is an interpretive addition (the Greek has only αὐτοῖς); \"delivered ... for them to observe\" is stilted for oral reading."
+      },
+      {
+        "text": "As they traveled from town to town, they handed on to the people the decisions reached by the apostles and elders in Jerusalem, telling them to observe these rules.",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "The Greek has only αὐτοῖς (\"to them\"), so \"the people\" supplies a recipient not in the text; and after rendering τὰ δόγματα as \"decisions,\" the follow-up \"these rules\" introduces a second, stronger term for the same thing. Keeping one term is both more accurate and cleaner aloud.",
+        "alternative": true
       }
     ]
   },
@@ -89,7 +103,10 @@
         "severity": "minor",
         "explanation": "ἐζητήσαμεν means \"we sought/tried,\" not \"we set out\"; the actual departure is described in verse 11."
       }
-    ]
+    ],
+    "checked": {
+      "changed": "1:139"
+    }
   },
   {
     "bookId": 44,
@@ -185,7 +202,10 @@
         "severity": "minor",
         "explanation": "The Greek says the magistrates themselves tore off their garments (περιρήξαντες), which the passive \"ordered them stripped\" obscures."
       }
-    ]
+    ],
+    "checked": {
+      "changed": "1:141"
+    }
   },
   {
     "bookId": 44,
@@ -271,7 +291,10 @@
         "severity": "minor",
         "explanation": "\"to the jailer\" is not in the Greek text; the officers are simply sent with the message."
       }
-    ]
+    ],
+    "checked": {
+      "changed": "1:92"
+    }
   },
   {
     "bookId": 44,
@@ -291,7 +314,10 @@
         "severity": "minor",
         "explanation": "\"the officers\" specifies an antecedent the Greek leaves general (αὐτούς); the reply is addressed to those bringing the message."
       }
-    ]
+    ],
+    "checked": {
+      "changed": "1:230"
+    }
   },
   {
     "bookId": 44,
@@ -311,7 +337,10 @@
         "severity": "minor",
         "explanation": "\"of the prison\" is added; the Greek simply says they led them out. Also παρεκάλεσαν here carries the sense of conciliation/apology given the magistrates' fear."
       }
-    ]
+    ],
+    "checked": {
+      "changed": "1:98"
+    }
   },
   {
     "bookId": 44,

@@ -55,7 +55,10 @@
         "severity": "minor",
         "explanation": "The Greek simply says he 'was with' (σὺν) the proconsul; 'attendant' imports a specific role not in the text. Also, repeating the full name 'Sergius Paulus' in the second sentence is redundant for oral reading; 'the proconsul' flows better."
       }
-    ]
+    ],
+    "checked": {
+      "changed": "1:135"
+    }
   },
   {
     "bookId": 44,
@@ -249,13 +252,20 @@
     "bookId": 44,
     "chapterId": 13,
     "verseId": 38,
-    "text": "Therefore, brothers, know this: through him forgiveness of sins is proclaimed to you—and from everything from which the law of Moses could not justify you,",
+    "text": "Therefore, brothers, know this: through him forgiveness of sins is proclaimed to you—and from everything from which you could not be justified by the law of Moses,",
     "versions": [
       {
         "text": "Therefore, brothers, know this: through him forgiveness of sins is proclaimed to you. And from everything the law of Moses could not justify you,",
         "type": "grammar",
         "severity": "minor",
         "explanation": "The relative clause is incomplete in English ('justify you from everything...'); adding 'from which' restores the grammar and keeps the link to verse 39 clear when read aloud."
+      },
+      {
+        "text": "Therefore, brothers, know this: through him forgiveness of sins is proclaimed to you—and from everything from which the law of Moses could not justify you,",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "The Greek keeps the passive (οὐκ ἠδυνήθητε ... δικαιωθῆναι, \"you could not be justified\"), with the law as instrument (ἐν νόμῳ). The passive also matches the passive \"is justified\" in verse 39, so the two clauses chime together when read aloud. The current active reversal (\"the law of Moses could not justify you\") is a legitimate paraphrase but slightly shifts the emphasis and reads more heavily after the double \"from ... from which.\"",
+        "alternative": true
       }
     ]
   },
@@ -329,7 +339,10 @@
         "severity": "minor",
         "explanation": "The emphatic ἰδοὺ (\"look/behold\") is dropped, weakening the solemn declaration. Restoring it also gives the sentence a stronger oral cadence; the present tense στρεφόμεθα is well rendered as \"we are turning.\""
       }
-    ]
+    ],
+    "checked": {
+      "changed": "1:217"
+    }
   },
   {
     "bookId": 44,

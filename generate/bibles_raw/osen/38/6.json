@@ -15,15 +15,25 @@
     "bookId": 38,
     "chapterId": 6,
     "verseId": 3,
-    "text": "the third white horses, and the fourth dappled horses, strong ones.",
+    "text": "the third white horses, and the fourth dappled, powerful horses.",
     "versions": [
       {
         "text": "the third white horses, and the fourth dappled horses — all of them powerful.",
         "type": "error",
         "severity": "major",
         "explanation": "In the Hebrew, אֲמֻצִּים (\"strong/powerful\") modifies only the horses of the fourth chariot, not all four teams. \"All of them powerful\" adds content and also blurs the link with verse 7, where \"the powerful horses\" are a specific group."
+      },
+      {
+        "text": "the third white horses, and the fourth dappled horses, strong ones.",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "The trailing appositive \"strong ones\" is grammatically fine but reads as an afterthought when spoken aloud. Placing both adjectives before the noun keeps the Hebrew's double description of the fourth team (בְּרֻדִּים אֲמֻצִּים) attached to that team only, and matches the wording \"the powerful horses\" in verse 7.",
+        "alternative": true
       }
-    ]
+    ],
+    "checked": {
+      "length": "2:64"
+    }
   },
   {
     "bookId": 38,
@@ -49,7 +59,10 @@
         "severity": "minor",
         "explanation": "The verse mixes progressive (\"is going\") and simple present (\"go out\") for parallel clauses; a consistent tense reads more smoothly aloud. \"The white ones\" also avoids repeating \"horses\" three times in one breath."
       }
-    ]
+    ],
+    "checked": {
+      "changed": "1:156"
+    }
   },
   {
     "bookId": 38,

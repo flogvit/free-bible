@@ -61,13 +61,20 @@
     "bookId": 11,
     "chapterId": 6,
     "verseId": 8,
-    "text": "The entrance to the lowest story was on the south side of the house, and a stairway led up to the middle story, and from the middle to the third.[^ The Hebrew text reads \"middle story\"; \"lowest\" follows the ancient versions.]",
+    "text": "The entrance to the lowest story was on the south side of the house; a winding stairway led up to the middle story, and from the middle story to the third.[^ The Hebrew text reads \"middle story\"; \"lowest\" follows the ancient versions.]",
     "versions": [
       {
         "text": "The entrance to the lowest story was on the south side of the house, and a stairway led up to the middle story, and from the middle to the third.",
         "type": "error",
         "severity": "minor",
         "explanation": "The Hebrew here reads \"middle\" rather than \"lowest.\" The rendering adopted (following the ancient versions) is defensible, but a brief footnote is needed to alert the reader that the Hebrew differs."
+      },
+      {
+        "text": "The entrance to the lowest story was on the south side of the house, and a stairway led up to the middle story, and from the middle to the third.[^ The Hebrew text reads \"middle story\"; \"lowest\" follows the ancient versions.]",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "The Hebrew term for the stairs (bĕlullim) denotes winding or spiral stairs, and rendering it as \"winding stairway\" preserves that detail; repeating \"story\" in the second clause also reads more smoothly aloud. The existing rendering is defensible but less specific.",
+        "alternative": true
       }
     ]
   },

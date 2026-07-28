@@ -127,13 +127,20 @@
     "bookId": 7,
     "chapterId": 16,
     "verseId": 19,
-    "text": "She had him fall asleep on her lap, then called for a man, and she shaved off the seven braids of his head. So she began to subdue him, and his strength left him.",
+    "text": "She lulled him to sleep on her lap, then called for a man, and she herself shaved off the seven braids of his head. Then she began to torment him, and his strength left him.",
     "versions": [
       {
         "text": "She had him fall asleep on her lap, then called for a man to shave off the seven braids of his head. So she began to subdue him, and his strength left him.",
         "type": "error",
         "severity": "major",
         "explanation": "In the Hebrew the verb 'shaved' (וַתְּגַלַּח) is third-person feminine singular: Delilah herself does the shaving after summoning the man. The current wording assigns the act to the man, which reverses the agency of the Hebrew text."
+      },
+      {
+        "text": "She had him fall asleep on her lap, then called for a man, and she shaved off the seven braids of his head. So she began to subdue him, and his strength left him.",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "Adding \"herself\" makes the Hebrew agency of the feminine verb וַתְּגַלַּח unmistakable when read aloud, since the immediately preceding mention of \"a man\" can still be heard as the subject. \"Lulled him to sleep\" renders the causative וַתְּיַשְּׁנֵהוּ more idiomatically, and לְעַנּוֹתוֹ carries the sense of afflicting/tormenting rather than merely subduing.",
+        "alternative": true
       }
     ]
   },
@@ -185,7 +192,10 @@
         "severity": "minor",
         "explanation": "The Hebrew has two requests: 'Let me be (release me)' and 'let me feel the pillars.' The first clause (הַנִּיחָה אוֹתִי) is missing. Also הַמַּחֲזִיק בְּיָדוֹ means 'holding his hand' rather than 'leading him by the hand.'"
       }
-    ]
+    ],
+    "checked": {
+      "changed": "1:144"
+    }
   },
   {
     "bookId": 7,
@@ -217,7 +227,10 @@
         "severity": "minor",
         "explanation": "The verse begins with a lowercase \"and,\" which is awkward when the verse is read aloud or quoted on its own. Capitalizing keeps the sentence self-contained while preserving the narrative connective."
       }
-    ]
+    ],
+    "checked": {
+      "changed": "1:203"
+    }
   },
   {
     "bookId": 7,
@@ -231,6 +244,9 @@
         "severity": "minor",
         "explanation": "The Hebrew has two verbs of motion in contrast: they \"went down\" (וַיֵּרְדוּ) and then \"carried him up\" (וַיַּעֲלוּ). \"Carried him back\" loses the up/down contrast that frames the burial journey."
       }
-    ]
+    ],
+    "checked": {
+      "changed": "1:181"
+    }
   }
 ]

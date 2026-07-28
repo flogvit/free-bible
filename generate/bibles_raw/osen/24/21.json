@@ -47,13 +47,20 @@
     "bookId": 24,
     "chapterId": 21,
     "verseId": 7,
-    "text": "After that, declares the LORD, I will hand over Zedekiah king of Judah, his officials, and the people—those left in this city who survive the plague, the sword, and the famine—to Nebuchadnezzar king of Babylon, to their enemies, to those who seek their lives. He will put them to the sword; he will show them no pity, no compassion, no mercy.",
+    "text": "After that, declares the LORD, I will hand over Zedekiah king of Judah, his officials, the people, and all who are left in this city after the plague, the sword, and the famine, into the hand of Nebuchadnezzar king of Babylon, into the hand of their enemies, into the hand of those who seek their lives. He will put them to the sword; he will show them no pity, no compassion, no mercy.",
     "versions": [
       {
         "text": "After that, declares the LORD, I will hand over Zedekiah king of Judah, his officials, and the people of this city who survive the plague, the sword, and the famine, to Nebuchadnezzar king of Babylon, to their enemies, to those who seek their lives. He will put them to the sword; he will show them no pity, no compassion, no mercy.",
         "type": "error",
         "severity": "minor",
         "explanation": "The Hebrew lists three groups: 'his servants, the people, and those remaining in this city.' The current rendering collapses 'the people' and 'those who remain' into one phrase, dropping a distinct element of the list."
+      },
+      {
+        "text": "After that, declares the LORD, I will hand over Zedekiah king of Judah, his officials, and the people—those left in this city who survive the plague, the sword, and the famine—to Nebuchadnezzar king of Babylon, to their enemies, to those who seek their lives. He will put them to the sword; he will show them no pity, no compassion, no mercy.",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "The em dash turns 'those left in this city' into an appositional restatement of 'the people,' which partly undoes the earlier correction distinguishing the three groups ('his servants, the people, and those remaining'). A simple serial list keeps them distinct. Also, the Hebrew מִן ('from the plague, from the sword, from the famine') indicates those left over after these calamities, and בְּיַד is the idiomatic 'into the hand of.'",
+        "alternative": true
       }
     ]
   },
@@ -105,6 +112,9 @@
         "severity": "minor",
         "explanation": "The Hebrew suffixes on 'forest' and 'around' are feminine singular (referring to the city/Jerusalem addressed in v. 13), not second person plural. Rendering them as 'your...you' loses the deliberate shift from direct address to the third-person image of the city and its surroundings being devoured."
       }
-    ]
+    ],
+    "checked": {
+      "changed": "1:138"
+    }
   }
 ]

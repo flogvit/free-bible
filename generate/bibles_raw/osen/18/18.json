@@ -57,7 +57,10 @@
         "severity": "minor",
         "explanation": "The Hebrew here is אוֹר (\"light\"), while נֵר (\"lamp\") appears only in the next verse. Rendering אוֹר as \"lamp\" blurs the deliberate progression from \"light\" (v. 5) to \"his lamp\" (v. 6) and duplicates the imagery unnecessarily. The revision retains the improved rhythm of the second line while restoring the correct noun."
       }
-    ]
+    ],
+    "checked": {
+      "changed": "2:88"
+    }
   },
   {
     "bookId": 18,
@@ -75,7 +78,7 @@
     "bookId": 18,
     "chapterId": 18,
     "verseId": 8,
-    "text": "By his own feet he is thrust into a net; he walks straight into the mesh.",
+    "text": "For by his own feet he is thrust into a net; he walks about upon the netting.",
     "versions": [
       {
         "text": "For his own feet drive him into a net; he wanders onto its mesh.",
@@ -88,8 +91,18 @@
         "type": "error",
         "severity": "minor",
         "explanation": "The Hebrew verb שֻׁלַּח is passive (\"he is sent/thrust\"), with בְּרַגְלָיו indicating the means (\"by his feet\"); \"his feet carry him\" turns it into an active clause and loses the sense of the man being caught by an outside power. Also, the שְׂבָכָה is a separate snare, not the netting belonging to the previously mentioned net, so the possessive \"its mesh\" should be avoided."
+      },
+      {
+        "text": "By his own feet he is thrust into a net; he walks straight into the mesh.",
+        "type": "error",
+        "severity": "minor",
+        "explanation": "Two small points: (1) the opening כִּי (\"for\") is dropped, though it gives the ground for the preceding line about his schemes throwing him down; restoring it keeps the logical link and reads well aloud. (2) The second colon is עַל־שְׂבָכָה יִתְהַלָּךְ, \"he walks about upon the netting\" — the image is of a man treading over the covering of a concealed pit, not of walking \"into\" something. \"Straight into\" imports a directional idea the Hebrew does not have.",
+        "alternative": true
       }
-    ]
+    ],
+    "checked": {
+      "changed": "3:77"
+    }
   },
   {
     "bookId": 18,
@@ -185,13 +198,20 @@
     "bookId": 18,
     "chapterId": 18,
     "verseId": 20,
-    "text": "Those who come after are appalled at his fate; those who went before are seized with horror.",
+    "text": "Those who come after are appalled at his day; those who went before are seized with horror.",
     "versions": [
       {
         "text": "Those in the west are appalled at his fate; those in the east are seized with horror.",
         "type": "error",
         "severity": "major",
         "explanation": "אַחֲרֹנִים/קַדְמֹנִים most naturally mean \"later ones/earlier ones\" (generations) in this context; the geographical rendering \"west/east\" is a secondary sense and obscures the temporal contrast, which fits the theme of his memory perishing (v. 17). A footnote could note the alternative \"in the west... in the east.\""
+      },
+      {
+        "text": "Those who come after are appalled at his fate; those who went before are seized with horror.",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "יוֹמוֹ is literally \"his day\" — the day of his downfall — and the concrete image carries well in oral reading; \"his fate\" is an interpretation that flattens the wordplay with the temporal contrast of \"later ones\"/\"earlier ones\" in the same verse. A footnote could also note the alternative sense of אַחֲרֹנִים/קַדְמֹנִים as \"those in the west\"/\"those in the east.\"",
+        "alternative": true
       }
     ]
   },

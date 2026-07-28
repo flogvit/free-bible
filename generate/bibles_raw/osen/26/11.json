@@ -111,13 +111,20 @@
     "bookId": 26,
     "chapterId": 11,
     "verseId": 15,
-    "text": "\"Son of man, your brothers — your brothers, your own kin, and the whole house of Israel, all of them — are the ones to whom the inhabitants of Jerusalem have said, 'Keep far away from the LORD! This land has been given to us as our possession.'",
+    "text": "\"Son of man, your brothers — your brothers, your own kin, and the whole house of Israel, all of them — are the ones to whom the inhabitants of Jerusalem have said, 'Keep far away from the LORD! It is to us that this land has been given as a possession.'",
     "versions": [
       {
         "text": "\"Son of man, it is your brothers — your brothers, your own kin, the whole house of Israel, all of them — of whom the inhabitants of Jerusalem have said, 'They are far from the LORD; this land has been given to us as our possession.'",
         "type": "error",
         "severity": "major",
         "explanation": "The Hebrew has אָמְרוּ לָהֶם ('said to them'), a direct address to the exiles, and רַחֲקוּ is an imperative ('Go/keep far away'), not a statement about them. Rendering it as 'of whom ... have said, \"They are far from the LORD\"' turns a taunt spoken to the exiles into a third-person description and loses the imperative force."
+      },
+      {
+        "text": "\"Son of man, your brothers — your brothers, your own kin, and the whole house of Israel, all of them — are the ones to whom the inhabitants of Jerusalem have said, 'Keep far away from the LORD! This land has been given to us as our possession.'",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "The Hebrew fronts לָנוּ ('to us') for emphasis, which is the whole point of the taunt: the land belongs to those who stayed, not to the exiles. The current word order flattens that contrast; the taunt reads more forcefully aloud when the emphasis is preserved.",
+        "alternative": true
       }
     ]
   },
@@ -133,7 +140,10 @@
         "severity": "major",
         "explanation": "מְעַט here indicates degree or extent ('a little/in some measure'), not duration. 'If only for a while' introduces a temporal limitation not present in the Hebrew and weakens the promise of God's abiding presence with the exiles."
       }
-    ]
+    ],
+    "checked": {
+      "changed": "1:226"
+    }
   },
   {
     "bookId": 26,
@@ -211,6 +221,9 @@
         "severity": "minor",
         "explanation": "The Hebrew has כָּל־דִּבְרֵי יְהוָה, 'all the words of the LORD'; 'everything the LORD had shown me' drops the noun 'words', which is significant here since the prophet reports spoken revelation as well as vision."
       }
-    ]
+    ],
+    "checked": {
+      "changed": "1:69"
+    }
   }
 ]

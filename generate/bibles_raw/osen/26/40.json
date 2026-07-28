@@ -81,13 +81,20 @@
     "bookId": 26,
     "chapterId": 40,
     "verseId": 14,
-    "text": "He made the jambs sixty cubits, and the court reached to the jambs all around the gateway.",
+    "text": "He made the jambs sixty cubits high, and the court reached to the jambs all around the gateway.",
     "versions": [
       {
         "text": "He measured the jambs: sixty cubits; and the court reached to the jambs all around the gateway.",
         "type": "error",
         "severity": "minor",
         "explanation": "The Hebrew verb here is וַיַּעַשׂ (\"he made\"), not the verb \"to measure\" (מדד/מוד) used elsewhere in the chapter (vv. 5, 6, 8, 9, 11, 13, 19, 20, 23, 24, 27, 28, 32). Rendering it \"measured\" obscures the change of verb in the Hebrew text; if an interpretive rendering is preferred, a footnote noting the literal \"he made\" would be helpful."
+      },
+      {
+        "text": "He made the jambs sixty cubits, and the court reached to the jambs all around the gateway.",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "The bare \"sixty cubits\" leaves the reader guessing which dimension is meant; since the jambs (pilasters) are elsewhere given in width, the sixty cubits is most naturally understood as height. Adding \"high\" removes the ambiguity for a listener without changing the sense. The Hebrew itself is terse and somewhat obscure here, so the previous rendering was defensible.",
+        "alternative": true
       }
     ]
   },
@@ -277,7 +284,10 @@
         "severity": "major",
         "explanation": "The phrase לָעוֹלֶה (\"for the one going up\") is left untranslated, and כָּתֵף is better rendered \"side wall\" (a projecting shoulder of the gate structure) rather than simply \"wall.\" The second \"on the other side\" should also reflect הַכָּתֵף הָאַחֶרֶת (\"the other side wall\")."
       }
-    ]
+    ],
+    "checked": {
+      "changed": "1:178"
+    }
   },
   {
     "bookId": 26,

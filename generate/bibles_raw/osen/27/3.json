@@ -203,13 +203,20 @@
     "bookId": 27,
     "chapterId": 3,
     "verseId": 29,
-    "text": "Therefore I decree that any people, nation, or language that speaks anything amiss against the God of Shadrach, Meshach, and Abednego shall be torn limb from limb and their houses reduced to rubble, for there is no other god who can rescue like this.\"",
+    "text": "Therefore I decree that any people, nation, or language that speaks offensively against the God of Shadrach, Meshach, and Abednego shall be torn limb from limb and their houses reduced to rubble, for there is no other god who can rescue like this.\"",
     "versions": [
       {
         "text": "Therefore I decree that any people, nation, or language that speaks anything against the God of Shadrach, Meshach, and Abednego shall be torn limb from limb and his house reduced to rubble, for there is no other god who can rescue like this.\"",
         "type": "error",
         "severity": "minor",
         "explanation": "The Aramaic שָׁלוּ means \"an error, something offensive/amiss,\" which \"anything\" alone loses. Also, the shift from plural subject (\"any people, nation, or language\") to singular \"his house\" reads awkwardly aloud; harmonizing the number improves oral flow."
+      },
+      {
+        "text": "Therefore I decree that any people, nation, or language that speaks anything amiss against the God of Shadrach, Meshach, and Abednego shall be torn limb from limb and their houses reduced to rubble, for there is no other god who can rescue like this.\"",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "\"Anything amiss\" preserves the sense of שָׁלוּ (an error, something offensive), but \"amiss\" is archaic and, read aloud, the sequence \"speaks anything amiss against\" is hard to follow. \"Speaks offensively against\" keeps the same nuance in plainer, more speakable English.",
+        "alternative": true
       }
     ]
   },

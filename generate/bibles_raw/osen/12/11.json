@@ -11,7 +11,10 @@
         "severity": "major",
         "explanation": "The Hebrew verbs are completed actions: \"she arose and destroyed.\" \"Set out to destroy\" turns an accomplished slaughter into a mere attempt, weakening the text (the narrative depends on the fact that all the royal seed except Joash was actually killed)."
       }
-    ]
+    ],
+    "checked": {
+      "changed": "1:114"
+    }
   },
   {
     "bookId": 12,
@@ -113,13 +116,20 @@
     "bookId": 12,
     "chapterId": 11,
     "verseId": 18,
-    "text": "All the people of the land went to the temple of Baal and tore it down. They smashed its altars and its images to pieces and killed Mattan the priest of Baal in front of the altars. Then Jehoiada the priest posted guards over the house of the LORD.",
+    "text": "All the people of the land went to the temple of Baal and tore it down. They smashed its altars and its images to pieces and killed Mattan the priest of Baal in front of the altars. Then Jehoiada the priest appointed officers to oversee the house of the LORD.",
     "versions": [
       {
         "text": "All the people of the land went to the temple of Baal and tore it down. They smashed the altars and the images to pieces and killed Mattan the priest of Baal in front of the altars. Then Jehoiada the priest posted guards over the house of the LORD.",
         "type": "error",
         "severity": "minor",
         "explanation": "The Hebrew has possessive suffixes (\"its altars and its images\"), tying them explicitly to the Baal temple; \"the altars and the images\" loses that connection."
+      },
+      {
+        "text": "All the people of the land went to the temple of Baal and tore it down. They smashed its altars and its images to pieces and killed Mattan the priest of Baal in front of the altars. Then Jehoiada the priest posted guards over the house of the LORD.",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "The Hebrew noun פְּקֻדּוֹת denotes appointed offices or overseers of the temple service, not merely armed guards. \"Appointed officers to oversee\" captures the administrative sense of restoring proper temple order after the purge, while \"posted guards\" narrows it to military watch. It also avoids repeating \"guards\" so close to the \"palace guards\" of the next verse.",
+        "alternative": true
       }
     ]
   },

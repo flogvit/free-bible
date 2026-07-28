@@ -71,13 +71,20 @@
     "bookId": 38,
     "chapterId": 5,
     "verseId": 11,
-    "text": "He answered, \"To the land of Shinar, to build a house for it. When the house is ready, the basket will be set there on its pedestal.\"",
+    "text": "He answered, \"To build a house for it in the land of Shinar.[^1] When the house is ready, the basket will be set there on its pedestal.\"\n\n[^1]: Shinar: the ancient name for the region of Babylonia (see Genesis 11:2).",
     "versions": [
       {
         "text": "He answered, \"To the land of Babylonia, to build a house for it. When the house is ready, the basket will be set there on its pedestal.\"",
         "type": "error",
         "severity": "major",
         "explanation": "The Hebrew has שִׁנְעָר (Shinar), the ancient name evoking Babel/Babylon (cf. Genesis 11:2). Rendering it as \"Babylonia\" removes the deliberate allusion; keep \"Shinar\" and add a footnote such as: \"Shinar: the region of Babylonia.\""
+      },
+      {
+        "text": "He answered, \"To the land of Shinar, to build a house for it. When the house is ready, the basket will be set there on its pedestal.\"",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "The Hebrew word order leads with the purpose (\"to build a house for it\") and names Shinar as the location; keeping that order follows the source more closely and still reads smoothly aloud. A brief footnote on \"Shinar\" is worth adding, since the proper name alone may not communicate the Babylon allusion to a listener; no footnote appears to be attached yet.",
+        "alternative": false
       }
     ]
   }

@@ -9,15 +9,25 @@
     "bookId": 19,
     "chapterId": 109,
     "verseId": 2,
-    "text": "For the mouth of the wicked and the mouth of deceit have opened against me; they speak against me with a lying tongue.",
+    "text": "For the mouth of the wicked and the mouth of deceit have opened against me; they have spoken against me with a lying tongue.",
     "versions": [
       {
         "text": "For the mouth of the wicked, the mouth of deceit, has opened against me; they speak to me with lying tongues.",
         "type": "grammar",
         "severity": "minor",
         "explanation": "The Hebrew verb פָּתָחוּ is plural, matching the two subjects (\"mouth of the wicked\" and \"mouth of deceit\"), so \"have opened\" is more accurate than \"has opened\"; לְשׁוֹן שָׁקֶר is singular (\"a lying tongue\"). Also, אִתִּי here carries a hostile sense, better rendered \"against me.\""
+      },
+      {
+        "text": "For the mouth of the wicked and the mouth of deceit have opened against me; they speak against me with a lying tongue.",
+        "type": "grammar",
+        "severity": "minor",
+        "explanation": "Both Hebrew verbs (פָּתָחוּ and דִּבְּרוּ) are perfects in parallel. The line currently shifts from perfect (\"have opened\") to present (\"they speak\"), breaking the parallelism; matching the tense keeps the couplet balanced for oral reading.",
+        "alternative": true
       }
-    ]
+    ],
+    "checked": {
+      "changed": "2:124"
+    }
   },
   {
     "bookId": 19,
@@ -73,7 +83,10 @@
         "severity": "minor",
         "explanation": "The Hebrew verb דָּרַשׁ means \"seek (food)\", not \"be driven out\"; the rendering \"driven from the ruins\" follows an ancient version rather than the Hebrew text. A rendering based on the Hebrew keeps the parallel with \"beg\"."
       }
-    ]
+    ],
+    "checked": {
+      "changed": "1:74"
+    }
   },
   {
     "bookId": 19,

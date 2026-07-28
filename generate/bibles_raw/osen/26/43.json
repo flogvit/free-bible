@@ -23,13 +23,20 @@
     "bookId": 26,
     "chapterId": 43,
     "verseId": 3,
-    "text": "The vision I saw was like the vision I had seen when I came to destroy the city, and like the visions I had seen by the Kebar River. And I fell on my face.",
+    "text": "The appearance of the vision I saw was like the vision I had seen when I came to destroy the city, and the visions were like the vision I had seen by the Kebar River. And I fell on my face.",
     "versions": [
       {
         "text": "The vision I saw was like the vision I had seen when he came to destroy the city, and like the vision I had seen by the Kebar River. And I fell on my face.",
         "type": "error",
         "severity": "major",
         "explanation": "The Hebrew verb form בְּבֹאִי is first person singular (\"when I came\"), not third person. The prophet is identified with the destroying word he was sent to proclaim (cf. Jer 1:10). If the third-person reading from ancient versions is preferred, it should at least be marked with a footnote; the plain Hebrew text should be rendered in the main line. Also מַרְאוֹת is plural (\"visions\")."
+      },
+      {
+        "text": "The vision I saw was like the vision I had seen when I came to destroy the city, and like the visions I had seen by the Kebar River. And I fell on my face.",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "In the Hebrew the plural מַרְאוֹת (\"visions\") is the subject compared to the singular \"vision I saw by the Kebar,\" whereas the current wording reverses the comparison and makes \"visions\" the thing seen at the Kebar. Restoring the opening \"the appearance of the vision\" also reflects the doubled מַרְאֵה הַמַּרְאֶה. The present reading is a defensible simplification but slightly flattens the Hebrew.",
+        "alternative": false
       }
     ]
   },
@@ -99,7 +106,10 @@
         "severity": "minor",
         "explanation": "The closing clause וְזֶה גַּב הַמִּזְבֵּחַ describes the structure just measured (the base/back of the altar), not the altar's overall height; as it stands the sentence contradicts itself, since a one-cubit base cannot be the height of an altar that is several cubits tall (vv. 14-15). Also, \"in long cubits ... each cubit being a cubit and a handbreadth\" is redundant when read aloud; the explanatory clause already conveys the long cubit."
       }
-    ]
+    ],
+    "checked": {
+      "changed": "1:218"
+    }
   },
   {
     "bookId": 26,
@@ -131,7 +141,10 @@
         "severity": "major",
         "explanation": "The verse is left unfinished, ending with an ellipsis. An unfinished sentence cannot be read aloud and omits content of the verse (the half-cubit rim, the cubit-wide base, and the steps facing east). The verse should be completed."
       }
-    ]
+    ],
+    "checked": {
+      "changed": "1:186"
+    }
   },
   {
     "bookId": 26,

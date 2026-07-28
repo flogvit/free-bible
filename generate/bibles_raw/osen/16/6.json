@@ -79,13 +79,20 @@
     "bookId": 16,
     "chapterId": 6,
     "verseId": 11,
-    "text": "But I said, \"Should a man like me run away? And who, being such as I, could go into the temple and live? I will not go!\"",
+    "text": "But I said, \"Should a man like me run away? And who like me could enter the temple and live? I will not go!\"",
     "versions": [
       {
         "text": "But I said, \"Should a man like me run away? Should a man like me go into the temple to save his life? I will not go!\"",
         "type": "error",
         "severity": "major",
         "explanation": "The Hebrew וָחָי (\"and live\") does not say \"to save his life\"; the point is that a layman like Nehemiah entering the sanctuary would not survive, not that he would be preserved by entering. The current wording reverses the sense of the clause."
+      },
+      {
+        "text": "But I said, \"Should a man like me run away? And who, being such as I, could go into the temple and live? I will not go!\"",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "The clause \"who, being such as I,\" is stiff and hard to read aloud; the Hebrew מִי כָמוֹנִי is a simple \"who like me,\" which preserves the parallel with \"a man like me\" in the previous clause and flows better in oral reading.",
+        "alternative": true
       }
     ]
   },

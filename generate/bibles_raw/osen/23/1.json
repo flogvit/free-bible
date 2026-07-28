@@ -47,13 +47,27 @@
     "bookId": 23,
     "chapterId": 1,
     "verseId": 7,
-    "text": "Your land is desolate, your cities burned with fire. Strangers devour your fields before your very eyes; it lies desolate, overthrown by strangers.",
+    "text": "Your land is desolate, your cities burned with fire. Before your very eyes strangers devour your soil, and it lies desolate, like a land overthrown by strangers.",
     "versions": [
       {
         "text": "Your land is desolate, your cities burned with fire. Strangers devour your fields before your very eyes; the desolation is like that of Sodom overthrown.",
         "type": "error",
         "severity": "major",
         "explanation": "The Hebrew reads כְּמַהְפֵּכַת זָרִים, \"as overthrown by strangers/foreigners.\" \"Sodom\" is not in the text (it appears only in v. 9-10); introducing it here adds content not present in the Hebrew."
+      },
+      {
+        "text": "Your land is desolate, your cities burned with fire. Strangers devour your fields before your very eyes; it lies desolate, overthrown by strangers.",
+        "type": "grammar",
+        "severity": "minor",
+        "explanation": "The pronoun \"it\" has no clear singular antecedent after the plural \"your fields,\" which stumbles when read aloud. Hebrew אַדְמַתְכֶם is a singular collective (\"your soil/ground\"), matching the singular suffix in אֹכְלִים אֹתָהּ; rendering it as a singular noun makes the following \"it lies desolate\" grammatically coherent, and fronting \"before your very eyes\" reproduces the Hebrew emphasis (לְנֶגְדְּכֶם) while improving rhythm.",
+        "alternative": true
+      },
+      {
+        "text": "Your land is desolate, your cities burned with fire. Before your very eyes strangers devour your soil, and it lies desolate, overthrown by strangers.",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "The Hebrew כְּמַהְפֵּכַת carries the comparative particle כְּ, presenting the ruin as a simile (\"like an overthrow by strangers\"), not a flat statement of what happened. Restoring the comparison keeps the force of the image and also avoids the slight redundancy of saying strangers devour the soil and then that strangers overthrew it. The current wording is a defensible compression, but the simile reads more naturally aloud and matches the source.",
+        "alternative": true
       }
     ]
   },
@@ -131,7 +145,10 @@
         "severity": "major",
         "explanation": "\"Set the oppressed straight\" is misleading in English—it suggests correcting or rebuking the victim. The Hebrew imperative אַשְּׁרוּ חָמוֹץ calls for setting right the wrong done to the oppressed, i.e., bringing them relief or redress. Also, לִמְדוּ הֵיטֵב is more naturally \"learn to do good.\""
       }
-    ]
+    ],
+    "checked": {
+      "changed": "1:106"
+    }
   },
   {
     "bookId": 23,

@@ -51,15 +51,26 @@
     "bookId": 18,
     "chapterId": 24,
     "verseId": 9,
-    "text": "The fatherless child is torn from the breast; the poor are seized for their debts.",
+    "text": "They tear the fatherless from the breast, and take a pledge from the poor.",
     "versions": [
       {
         "text": "The fatherless child is torn from the breast; the infant of the poor is seized as a pledge.",
         "type": "error",
         "severity": "minor",
         "explanation": "The second line reads literally \"and against the poor they take a pledge.\" The word \"infant\" is not in the Hebrew and imports content from the first line into the second. Keeping the parallelism as debt-seizure against the poor is closer to the text and still reads well aloud."
+      },
+      {
+        "text": "The fatherless child is torn from the breast; the poor are seized for their debts.",
+        "type": "error",
+        "severity": "minor",
+        "explanation": "The second line says literally \"and against the poor they take a pledge\" — it is the pledge (property) that is taken, not the persons of the poor, so \"the poor are seized\" overstates the Hebrew. Restoring the active verb in both lines also keeps the wicked as the acting subject, matching the surrounding verses, and reads more crisply aloud.",
+        "alternative": false
       }
-    ]
+    ],
+    "checked": {
+      "length": "2:74",
+      "changed": "2:74"
+    }
   },
   {
     "bookId": 18,

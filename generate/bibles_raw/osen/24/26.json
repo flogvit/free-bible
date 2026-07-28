@@ -135,7 +135,10 @@
         "severity": "major",
         "explanation": "The Hebrew participle with עַל־נַפְשׁוֹתֵינוּ speaks of the elders bringing guilt/harm upon their own lives (souls), not merely of future disaster. \"On ourselves\" loses the force of נַפְשׁוֹתֵינוּ, and \"are about to\" overstates the participle."
       }
-    ]
+    ],
+    "checked": {
+      "changed": "1:231"
+    }
   },
   {
     "bookId": 24,
@@ -163,7 +166,10 @@
         "severity": "minor",
         "explanation": "The Hebrew says he fled and came/went to Egypt; \"escaped\" adds a nuance not in the text and is ironic given he was later brought back and killed."
       }
-    ]
+    ],
+    "checked": {
+      "changed": "1:184"
+    }
   },
   {
     "bookId": 24,
@@ -175,13 +181,20 @@
     "bookId": 24,
     "chapterId": 26,
     "verseId": 23,
-    "text": "They brought Uriah out of Egypt and took him to King Jehoiakim, who struck him down with the sword and threw his corpse into the burial place of the common people.",
+    "text": "They brought Uriah out of Egypt and took him to King Jehoiakim, who struck him down with the sword and threw his corpse among the graves of the common people.",
     "versions": [
       {
         "text": "They brought Uriah out of Egypt and took him to King Jehoiakim, who put him to the sword and threw his body into the burial place of the common people.",
         "type": "error",
         "severity": "minor",
         "explanation": "נִבְלָתוֹ is a stronger word than \"body\" (corpse/carcass), conveying the indignity of the act; \"struck him down with the sword\" also renders וַיַּכֵּהוּ בֶּחָרֶב more precisely."
+      },
+      {
+        "text": "They brought Uriah out of Egypt and took him to King Jehoiakim, who struck him down with the sword and threw his corpse into the burial place of the common people.",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "קִבְרֵי is plural (\"graves\"), and אֶל here has the sense of casting the body among the common graves rather than into a single burial place. \"Among the graves of the common people\" is slightly more precise and reads with a stronger cadence aloud.",
+        "alternative": true
       }
     ]
   },

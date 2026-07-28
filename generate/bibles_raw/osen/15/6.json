@@ -41,7 +41,10 @@
         "severity": "minor",
         "explanation": "The phrase \"and you their associates\" mixes second and third person awkwardly; the Aramaic has simply \"and their associates.\" Removing \"you\" reads more smoothly aloud and matches the source. \"Keep far away\" also renders רַחִיקִין הֲווֹ a little more forcefully."
       }
-    ]
+    ],
+    "checked": {
+      "changed": "1:162"
+    }
   },
   {
     "bookId": 15,
@@ -89,13 +92,20 @@
     "bookId": 15,
     "chapterId": 6,
     "verseId": 14,
-    "text": "So the elders of the Jews went on building and prospering through the prophesying of Haggai the prophet and Zechariah son of Iddo. They finished the building according to the command of the God of Israel and the decrees of Cyrus, Darius, and Artaxerxes king of Persia.",
+    "text": "So the elders of the Jews went on building and prospering through the prophesying of Haggai the prophet and Zechariah son of Iddo. They finished the building according to the command of the God of Israel and the decree of Cyrus, Darius, and Artaxerxes king of Persia.",
     "versions": [
       {
         "text": "So the elders of the Jews went on building and prospering, encouraged by the preaching of Haggai the prophet and Zechariah son of Iddo. They finished the building according to the command of the God of Israel and the decrees of Cyrus, Darius, and Artaxerxes, kings of Persia.",
         "type": "error",
         "severity": "minor",
         "explanation": "The Aramaic reads מֶלֶךְ פָּרָס, singular \"king of Persia,\" attached to Artaxerxes; the plural \"kings of Persia\" adds an interpretation not in the text. Also בִּנְבוּאַת is \"prophesying/prophecy\" rather than the more generic \"preaching.\""
+      },
+      {
+        "text": "So the elders of the Jews went on building and prospering through the prophesying of Haggai the prophet and Zechariah son of Iddo. They finished the building according to the command of the God of Israel and the decrees of Cyrus, Darius, and Artaxerxes king of Persia.",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "The Aramaic וּמִטְּעֵם is singular, matching the singular מִן־טַעַם earlier in the verse; a single decree is envisioned as renewed by successive kings. The singular also keeps the parallel with \"the command of the God of Israel\" and reads more evenly aloud.",
+        "alternative": true
       }
     ]
   },

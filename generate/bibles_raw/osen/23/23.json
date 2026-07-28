@@ -17,7 +17,10 @@
         "severity": "major",
         "explanation": "In the Hebrew the coastland dwellers are the ones addressed and 'filled' (מִלְאוּךְ, 2nd fem. sg. referring to the coast/island), while the merchants of Sidon are the ones doing the filling. The current rendering addresses the merchants themselves as being filled and then adds a separate class of 'traders' not present in the text, blurring the referent."
       }
-    ]
+    ],
+    "checked": {
+      "changed": "1:100"
+    }
   },
   {
     "bookId": 23,
@@ -91,7 +94,7 @@
     "bookId": 23,
     "chapterId": 23,
     "verseId": 13,
-    "text": "Look at the land of the Chaldeans—that people who came to nothing! Assyria made it a place for desert creatures; they raised their siege towers, stripped its palaces bare, and left it a heap of ruins.",
+    "text": "Look at the land of the Chaldeans—that people who came to nothing! Assyria made it a place for desert creatures; they raised siege towers against it, stripped its palaces bare, and left it a heap of ruins.",
     "versions": [
       {
         "text": "Look at the land of the Chaldeans—a people no longer! Assyria made it a place for desert creatures; they raised their siege towers, stripped its palaces bare, and left it a heap of ruins.",
@@ -105,6 +108,13 @@
         "severity": "critical",
         "explanation": "More than half the verse is missing. The Hebrew continues with אַשּׁוּר יְסָדָהּ לְצִיִּים (\"Assyria founded/appointed it for desert creatures\"), הֵקִימוּ בַחוּנָיו (\"they raised its siege towers\"), עֹרְרוּ אַרְמְנוֹתֶיהָ (\"they stripped/laid bare its palaces\"), and שָׂמָהּ לְמַפֵּלָה (\"made it a ruin\"). The intentionally revised opening clause is retained; only the dropped material is restored.",
         "alternative": false
+      },
+      {
+        "text": "Look at the land of the Chaldeans—that people who came to nothing! Assyria made it a place for desert creatures; they raised their siege towers, stripped its palaces bare, and left it a heap of ruins.",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "The Hebrew suffix on בַחוּנָיו is third person ('its siege works'), not 'their'. In oral reading 'their siege towers' makes the towers belong to the attackers rather than marking the siege as directed against the city, and it also clashes with the surrounding 'its palaces' / 'it a heap of ruins'. Rendering it as siege towers raised against the city keeps the pronoun reference consistent throughout the line.",
+        "alternative": true
       }
     ]
   },

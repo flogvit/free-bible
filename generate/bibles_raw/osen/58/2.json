@@ -121,13 +121,20 @@
     "bookId": 58,
     "chapterId": 2,
     "verseId": 18,
-    "text": "Because he himself suffered when he was tempted, he is able to help those who are being tempted.",
+    "text": "For he himself suffered when he was tempted, and so he is able to help those who are being tempted.",
     "versions": [
       {
         "text": "For because he himself suffered when he was tempted, he is able to help those who are being tempted.",
         "type": "grammar",
         "severity": "minor",
         "explanation": "\"For because\" stacks two conjunctions and is awkward to read aloud; a single causal conjunction carries the sense of the Greek clearly."
+      },
+      {
+        "text": "Because he himself suffered when he was tempted, he is able to help those who are being tempted.",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "The Greek γάρ links this sentence back to verse 17, explaining why the Son had to be made like his brothers. Rendering it as \"Because\" turns the connective inward and loses the tie to the preceding verse. \"For ... and so\" keeps both the link to verse 17 and the internal cause-and-result, and it reads smoothly aloud. The present reading is a defensible rendering of the causal force.",
+        "alternative": true
       }
     ]
   }

@@ -17,7 +17,10 @@
         "severity": "minor",
         "explanation": "The Hebrew has \"his men\" (וַאֲנָשָׁיו, singular suffix); \"their men\" is a smoothing but \"along with\" adds bulk. Tightening also improves oral rhythm. A footnote could note the Hebrew reads \"his men.\""
       }
-    ]
+    ],
+    "checked": {
+      "changed": "1:108"
+    }
   },
   {
     "bookId": 38,
@@ -31,7 +34,10 @@
         "severity": "major",
         "explanation": "אֶבְכֶּה is \"weep,\" and הִנָּזֵר means \"abstain/separate oneself,\" not specifically \"fast.\" The current rendering flattens two distinct verbs and imports \"fast\" from later verses."
       }
-    ]
+    ],
+    "checked": {
+      "changed": "1:168"
+    }
   },
   {
     "bookId": 38,
@@ -123,19 +129,29 @@
         "severity": "major",
         "explanation": "Two issues: (1) קָרָא is third person (\"he called\"), not first person; (2) the imperfect יִקְרְאוּ / אֶשְׁמָע here describes past habitual action, as shown by the following narrative verb in v. 14 (\"and I drove them out\"). Rendering it as a future threat (\"when they call I will not listen\") misplaces the events, which already occurred in the exile."
       }
-    ]
+    ],
+    "checked": {
+      "changed": "1:113"
+    }
   },
   {
     "bookId": 38,
     "chapterId": 7,
     "verseId": 14,
-    "text": "\"I drove them out with a whirlwind among all the nations they had not known, and the land was left desolate behind them, with no one passing through. So a pleasant land was made a desolation.\"",
+    "text": "\"I drove them out with a whirlwind among all the nations they had not known, and the land was left desolate behind them, with none passing to and fro. So a pleasant land was made a desolation.\"",
     "versions": [
       {
         "text": "\"I scattered them with a whirlwind among all the nations they had not known, and the land was left desolate behind them, with no one coming or going. So they made the pleasant land a wasteland.\"",
         "type": "error",
         "severity": "minor",
         "explanation": "מֵעֹבֵר וּמִשָּׁב is an idiom for \"none passing to and fro\"; also the final clause is best read impersonally (\"a pleasant land was made desolate\") since \"they\" is ambiguous between exiles and nations. \"Drove them out\" better renders the storm-verb than \"scattered.\""
+      },
+      {
+        "text": "\"I drove them out with a whirlwind among all the nations they had not known, and the land was left desolate behind them, with no one passing through. So a pleasant land was made a desolation.\"",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "מֵעֹבֵר וּמִשָּׁב is the fixed idiom for movement in both directions (\"passing to and fro\"); \"passing through\" conveys only one direction and loses the picture of a road emptied of all traffic. \"None passing to and fro\" also reads with a tighter rhythm for oral delivery.",
+        "alternative": true
       }
     ]
   }

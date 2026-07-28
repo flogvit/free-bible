@@ -109,7 +109,10 @@
         "severity": "major",
         "explanation": "The Hebrew says \"the case I did not know, I investigated it\" (אֶחְקְרֵהוּ, 'I searched out'). \"Stranger\" introduces a person not in the text and drops the key verb of careful investigation, which is the point of Job's claim to judicial diligence."
       }
-    ]
+    ],
+    "checked": {
+      "changed": "1:83"
+    }
   },
   {
     "bookId": 18,
@@ -141,7 +144,10 @@
         "severity": "minor",
         "explanation": "The Hebrew has the possessive \"my bow\" (וְקַשְׁתִּי); the definite article \"the bow\" weakens the parallel with \"my glory\" and \"my hand.\""
       }
-    ]
+    ],
+    "checked": {
+      "changed": "1:66"
+    }
   },
   {
     "bookId": 18,
@@ -159,13 +165,20 @@
     "bookId": 18,
     "chapterId": 29,
     "verseId": 23,
-    "text": "They waited for me as for the rain and opened their mouths wide as for the spring showers.",
+    "text": "They waited for me as for the rain, and opened their mouths wide for the showers of spring.",
     "versions": [
       {
         "text": "They waited for me as for the rain and drank in my words like spring showers.",
         "type": "error",
         "severity": "major",
         "explanation": "The second line reads \"they opened their mouths wide for the latter rain.\" The vivid image of open, thirsty mouths is lost, and \"my words\" is added to the Hebrew."
+      },
+      {
+        "text": "They waited for me as for the rain and opened their mouths wide as for the spring showers.",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "In the second line the Hebrew preposition is simple purpose/direction (לְמַלְקוֹשׁ, 'for the latter rain'), not a comparison; repeating 'as for' turns a direct image of thirsty mouths into a second simile. Adding the comma also gives the couplet a clearer breath break for oral reading.",
+        "alternative": true
       }
     ]
   },

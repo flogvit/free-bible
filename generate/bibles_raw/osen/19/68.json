@@ -229,13 +229,20 @@
     "bookId": 19,
     "chapterId": 68,
     "verseId": 36,
-    "text": "Awesome are you, O God, from your sanctuary; the God of Israel—he gives power and strength to his people. Blessed be God!",
+    "text": "Awesome are you, O God, from your sanctuary; the God of Israel—he gives power and strength to the people. Blessed be God!",
     "versions": [
       {
         "text": "Awesome is God from his sanctuary, the God of Israel—he gives power and strength to his people. Blessed be God!",
         "type": "error",
         "severity": "major",
         "explanation": "The Hebrew מִמִּקְדָּשֶׁיךָ carries a second-person suffix (\"from your sanctuary\"), which is a direct address to God. Rendering it as \"his sanctuary\" loses the shift to direct address that the Hebrew clearly marks, and the closing doxology gains force from the vocative."
+      },
+      {
+        "text": "Awesome are you, O God, from your sanctuary; the God of Israel—he gives power and strength to his people. Blessed be God!",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "Hebrew לָעָם is simply \"to the people\" with the definite article; the possessive \"his\" is an interpretive addition. The sense is close, but the plainer rendering keeps to the text and still reads smoothly aloud.",
+        "alternative": true
       }
     ]
   }

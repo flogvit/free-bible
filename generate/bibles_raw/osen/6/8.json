@@ -91,7 +91,10 @@
         "severity": "minor",
         "explanation": "The Hebrew has וַיֵּלֶךְ ... בְּתוֹךְ הָעֵמֶק, \"went into the midst of the valley.\" \"Went down into\" adds a direction not in the text; \"the middle of the valley\" preserves בְּתוֹךְ."
       }
-    ]
+    ],
+    "checked": {
+      "changed": "1:158"
+    }
   },
   {
     "bookId": 6,
@@ -221,13 +224,20 @@
     "bookId": 6,
     "chapterId": 8,
     "verseId": 32,
-    "text": "There, in the presence of the Israelites, Joshua wrote on the stones a copy of the law of Moses, the law that Moses had written.",
+    "text": "There, in the presence of the Israelites, Joshua wrote on the stones a copy of the law that Moses had written.",
     "versions": [
       {
         "text": "There, in the presence of the Israelites, Joshua wrote on the stones a copy of the law of Moses.",
         "type": "error",
         "severity": "minor",
         "explanation": "The relative clause אֲשֶׁר כָּתַב (\"which he had written\") is dropped from the translation; restoring it preserves the full content of the verse."
+      },
+      {
+        "text": "There, in the presence of the Israelites, Joshua wrote on the stones a copy of the law of Moses, the law that Moses had written.",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "The current wording repeats \"Moses\" three times in one short clause (\"the law of Moses, the law that Moses had written\"), which is heavy for oral reading and slightly redundant. Merging the construct phrase with the relative clause keeps both elements of the Hebrew (מִשְׁנֵה תּוֹרַת מֹשֶׁה and אֲשֶׁר כָּתַב) while reading more naturally aloud.",
+        "alternative": true
       }
     ]
   },

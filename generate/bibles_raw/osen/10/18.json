@@ -75,15 +75,25 @@
     "bookId": 10,
     "chapterId": 18,
     "verseId": 13,
-    "text": "\"If I had treacherously taken his life—and nothing is hidden from the king—you yourself would have stood aloof.\"",
+    "text": "\"Or if I had dealt treacherously against my own life—and nothing is hidden from the king—you yourself would have stood aloof.\"",
     "versions": [
       {
         "text": "If I had treacherously taken his life—and nothing is hidden from the king—you yourself would have stood aloof.\"",
         "type": "grammar",
         "severity": "minor",
         "explanation": "The man's speech begun in verse 12 is left open (the closing quotation mark is only at the end of v. 13), but verse 13 has no opening quotation mark. Standard convention requires re-opening the quotation when a speech continues into a new verse/paragraph, otherwise the reader (and especially an oral reader following the printed text) loses track of who is speaking."
+      },
+      {
+        "text": "\"If I had treacherously taken his life—and nothing is hidden from the king—you yourself would have stood aloof.\"",
+        "type": "error",
+        "severity": "minor",
+        "explanation": "The vocalized (read) Hebrew text has בְנַפְשִׁי, \"against my own life,\" which makes the man's point: risking his own neck by disobeying the king. The written consonants (בנפשו, \"his life\") are an attested alternative, but the pointed text supports \"my own life.\" The opening אוֹ (\"or else / otherwise\") is also worth reflecting, since it links this sentence to the refusal in v. 12.",
+        "alternative": true
       }
-    ]
+    ],
+    "checked": {
+      "changed": "2:126"
+    }
   },
   {
     "bookId": 10,
@@ -221,6 +231,9 @@
         "severity": "minor",
         "explanation": "קָמוּ is a perfect verb, matching the past-tense phrasing in verse 31 (\"rose up\"). Consistency in tense also strengthens the oral parallel between the two verses."
       }
-    ]
+    ],
+    "checked": {
+      "changed": "1:193"
+    }
   }
 ]

@@ -39,13 +39,20 @@
     "bookId": 43,
     "chapterId": 10,
     "verseId": 7,
-    "text": "So Jesus said to them again, \"I tell you the truth: I am the gate for the sheep.",
+    "text": "So Jesus said to them again, \"Truly, truly, I tell you: I am the gate for the sheep.",
     "versions": [
       {
         "text": "So Jesus said again, \"I tell you the truth: I am the gate for the sheep.",
         "type": "error",
         "severity": "minor",
         "explanation": "The Greek includes αὐτοῖς (\"to them\"), which identifies the audience after the narrator's aside in verse 6. Including it also reads more naturally aloud, restoring the addressee before the renewed discourse."
+      },
+      {
+        "text": "So Jesus said to them again, \"I tell you the truth: I am the gate for the sheep.",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "The Greek has the emphatic doubled ἀμὴν ἀμήν, a solemn formula characteristic of this Gospel. \"I tell you the truth\" conveys the sense but flattens the doubling; \"Truly, truly, I tell you\" preserves the emphasis and the rhythmic repetition, which is effective when read aloud.",
+        "alternative": true
       }
     ]
   },

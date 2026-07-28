@@ -75,13 +75,27 @@
     "bookId": 11,
     "chapterId": 14,
     "verseId": 13,
-    "text": "All Israel will mourn for him and bury him. He alone of Jeroboam's house will be laid in a grave, because in him was found something good toward the LORD, the God of Israel.",
+    "text": "All Israel will mourn for him and bury him. He alone of Jeroboam's house will be laid in a grave, because in him, of all the house of Jeroboam, something good toward the LORD, the God of Israel, was found.",
     "versions": [
       {
         "text": "All Israel will mourn for him and bury him. He alone of Jeroboam's house will be laid in a grave, because in him alone the LORD, the God of Israel, found something good.",
         "type": "error",
         "severity": "minor",
         "explanation": "The Hebrew is passive (\"something good was found in him toward the LORD\"), not the LORD actively finding; and \"alone\" is repeated needlessly from the previous clause, where it renders לְבַדּוֹ."
+      },
+      {
+        "text": "All Israel will mourn for him and bury him. He alone of Jeroboam's house will be laid in a grave, because in him was found something good toward the LORD, the God of Israel.",
+        "type": "error",
+        "severity": "minor",
+        "explanation": "The closing Hebrew phrase בְּבֵית יָרָבְעָם (\"in the house of Jeroboam\") is not represented. It qualifies where the good thing was found, heightening the contrast with the rest of the dynasty; the earlier \"of Jeroboam's house\" renders לְיָרָבְעָם and does not cover it. The current rendering is defensible as a conflation but drops a distinct clause element.",
+        "alternative": true
+      },
+      {
+        "text": "All Israel will mourn for him and bury him. He alone of Jeroboam's house will be laid in a grave, because in him, in the house of Jeroboam, something good was found toward the LORD, the God of Israel.",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "The phrase דָּבָר טוֹב אֶל־יְהוָה is a unit (\"something good toward the LORD\"); separating it with the verb (\"something good was found toward the LORD\") can be misread as though the finding, not the good thing, is directed toward the LORD. Keeping the modifier attached and moving the verb to the end also smooths the double prepositional stack for oral reading, while still representing בְּבֵית יָרָבְעָם as a distinct element.",
+        "alternative": true
       }
     ]
   },
@@ -103,7 +117,10 @@
         "severity": "major",
         "explanation": "כַּאֲשֶׁר means \"as/just as,\" introducing a comparison, not a temporal limit. \"Until it sways\" misconstrues the image: the striking causes Israel to be shaken like a reed; it does not continue until swaying begins."
       }
-    ]
+    ],
+    "checked": {
+      "changed": "1:250"
+    }
   },
   {
     "bookId": 11,

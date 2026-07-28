@@ -55,13 +55,20 @@
     "bookId": 28,
     "chapterId": 8,
     "verseId": 7,
-    "text": "They sow the wind and reap the whirlwind. There is no standing grain for them; the sprout yields no flour. And if it did, strangers would swallow it down.",
+    "text": "For they sow the wind, and they reap the whirlwind. He has no standing grain; the sprout yields no flour. And if it should yield, strangers would swallow it down.",
     "versions": [
       {
         "text": "They sow the wind and reap the whirlwind. The standing grain has no heads; it yields no flour. And if it did, strangers would swallow it down.",
         "type": "error",
         "severity": "major",
         "explanation": "The Hebrew says \"standing grain he has none\" — the crop itself is absent, not lacking heads. The current rendering introduces \"heads,\" which is not in the text, and reverses the clause's subject."
+      },
+      {
+        "text": "They sow the wind and reap the whirlwind. There is no standing grain for them; the sprout yields no flour. And if it did, strangers would swallow it down.",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "The opening כִּי links this verse to the judgment announced before it and is currently dropped; also the Hebrew suffix in אֵין־לוֹ is singular (\"he has none\"), matching the collective Ephraim/Israel, while \"for them\" flattens the shift. Rendering אוּלַי יַעֲשֶׂה as \"if it should yield\" also reads more smoothly aloud than the clipped \"and if it did.\"",
+        "alternative": true
       }
     ]
   },
@@ -125,7 +132,10 @@
         "severity": "major",
         "explanation": "רֻבֵּי תּוֹרָתִי refers to the many precepts/parts of the law, not to writing it repeatedly; also נֶחְשָׁבוּ is plural, matching the many precepts, so \"it is treated\" should be \"they are treated.\""
       }
-    ]
+    ],
+    "checked": {
+      "changed": "1:99"
+    }
   },
   {
     "bookId": 28,
@@ -145,6 +155,9 @@
         "severity": "minor",
         "explanation": "The pronoun shifts from \"his cities\" to \"their strongholds\" without a clear antecedent; the Hebrew suffix is singular feminine (\"her citadels\"), keeping the reference to the city/nation consistent."
       }
-    ]
+    ],
+    "checked": {
+      "changed": "1:163"
+    }
   }
 ]

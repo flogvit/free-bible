@@ -15,13 +15,20 @@
     "bookId": 4,
     "chapterId": 19,
     "verseId": 3,
-    "text": "Give it to Eleazar the priest, and he shall bring it outside the camp, and it shall be slaughtered in his presence.",
+    "text": "Give it to Eleazar the priest, and he shall take it outside the camp, and it shall be slaughtered in his presence.",
     "versions": [
       {
         "text": "Give it to Eleazar the priest, and it shall be led outside the camp and slaughtered in his presence.",
         "type": "error",
         "severity": "minor",
         "explanation": "The Hebrew verb וְהוֹצִיא is active with Eleazar as subject (\"he shall bring it out\"). The fully passive rendering obscures the priest's role and blurs the shift to the following impersonal verb (\"it shall be slaughtered\")."
+      },
+      {
+        "text": "Give it to Eleazar the priest, and he shall bring it outside the camp, and it shall be slaughtered in his presence.",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "\"Bring\" normally implies motion toward the speaker, which works against the sense of הוֹצִיא (\"lead/take out\"). \"Take it outside the camp\" is clearer when read aloud while keeping Eleazar as the active subject, as the earlier revision intended.",
+        "alternative": true
       }
     ]
   },
@@ -74,7 +81,10 @@
         "explanation": "The entire first half of the verse has been lost: וְאָסַף אִישׁ טָהוֹר אֵת אֵפֶר הַפָּרָה וְהִנִּיחַ מִחוּץ לַמַּחֲנֶה בְּמָקוֹם טָהוֹר (\"A man who is clean shall gather up the ashes of the heifer and put them outside the camp in a clean place\"). Without it the pronoun \"They\" has no antecedent and the instruction about who gathers the ashes and where they are stored is missing, which also breaks the link to verse 10 (\"the one who gathers the ashes\"). The intentional changes from the earlier revision (\"for the community of the Israelites\" and the clarifying \"to make\") are retained; the redundant \"in safekeeping\" is trimmed since \"kept\" already carries לְמִשְׁמֶרֶת.",
         "alternative": false
       }
-    ]
+    ],
+    "checked": {
+      "changed": "2:228"
+    }
   },
   {
     "bookId": 4,

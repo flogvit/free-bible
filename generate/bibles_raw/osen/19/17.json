@@ -43,7 +43,10 @@
         "severity": "major",
         "explanation": "The Hebrew verb תָּמֹךְ is an imperative (or infinitive absolute used as imperative) addressed to God, and בַּל־נָמוֹטּוּ expresses purpose/result ('so that my footsteps do not slip'). The current rendering turns a petition into a self-affirming statement, which loses the prayer's dependence on God."
       }
-    ]
+    ],
+    "checked": {
+      "changed": "1:62"
+    }
   },
   {
     "bookId": 19,
@@ -63,13 +66,20 @@
     "bookId": 19,
     "chapterId": 17,
     "verseId": 7,
-    "text": "Show the wonder of your faithful love, Savior of all who take refuge in you; by your right hand save them from those who rise against them.",
+    "text": "Show the wonder of your faithful love, Savior of all who take refuge in you, saving them by your right hand from those who rise against them.",
     "versions": [
       {
         "text": "Show the wonder of your mercy, Savior of all who take refuge at your right hand from those who rise against them.",
         "type": "error",
         "severity": "major",
         "explanation": "The phrase בִּימִינֶךָ ('by your right hand') modifies the saving action, not the place of refuge. Attaching it to 'take refuge' misconstrues the Hebrew and creates an awkward, ambiguous clause when read aloud."
+      },
+      {
+        "text": "Show the wonder of your faithful love, Savior of all who take refuge in you; by your right hand save them from those who rise against them.",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "The Hebrew has a single imperative (הַפְלֵה) followed by a participial title, מוֹשִׁיעַ ('one who saves'), with the prepositional phrases attached to that participle. Rendering it with a second imperative ('save them') adds a verb the source does not have and slightly blunts the appositional address to God. A participial continuation keeps one petition and one flowing title, which also reads more smoothly aloud.",
+        "alternative": true
       }
     ]
   },
@@ -95,13 +105,20 @@
     "bookId": 19,
     "chapterId": 17,
     "verseId": 11,
-    "text": "They have tracked down our steps; now they surround us, their eyes fixed to bring us to the ground.",
+    "text": "Now they have closed in around us, dogging our every step, their eyes fixed to bring us to the ground.",
     "versions": [
       {
         "text": "They have tracked me down; now they surround me, their eyes fixed to bring me to the ground.",
         "type": "error",
         "severity": "minor",
         "explanation": "The Hebrew (following the qere סְבָבוּנוּ and the suffix on אַשֻּׁרֵינוּ) is first person plural: 'our steps ... they have surrounded us.' The translation shifts to the singular without warrant and also drops the explicit reference to 'steps,' which links this verse to the 'steps/feet' imagery of verse 5."
+      },
+      {
+        "text": "They have tracked down our steps; now they surround us, their eyes fixed to bring us to the ground.",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "The Hebrew has only one verb for the adversaries' movement (סְבָבוּנוּ, 'they have surrounded us'), with אַשֻּׁרֵינוּ ('our steps') as its fronted object or adverbial phrase. The current rendering supplies an extra clause ('They have tracked down') alongside 'now they surround us,' producing two verbs where the source has one. Keeping a single main verb preserves the compact force of the line while retaining the 'steps' imagery that links back to verse 5.",
+        "alternative": true
       }
     ]
   },
@@ -117,7 +134,10 @@
         "severity": "minor",
         "explanation": "דִּמְיֹנוֹ ('his likeness') is singular, focusing on one chief adversary. The plural 'they' also leaves the singular pronouns of verse 13 ('Confront him, bring him down') without an antecedent when the psalm is read aloud."
       }
-    ]
+    ],
+    "checked": {
+      "changed": "1:73"
+    }
   },
   {
     "bookId": 19,

@@ -201,13 +201,20 @@
     "bookId": 5,
     "chapterId": 11,
     "verseId": 30,
-    "text": "They lie beyond the Jordan, toward the setting sun, in the land of the Canaanites who live in the Arabah, opposite Gilgal, near the oaks of Moreh.",
+    "text": "Are they not beyond the Jordan, toward the setting sun, in the land of the Canaanites who live in the Arabah, opposite Gilgal, near the oaks of Moreh?",
     "versions": [
       {
         "text": "They lie beyond the Jordan, west of the road, in the land of the Canaanites who live in the Arabah, opposite Gilgal, near the oaks of Moreh.",
         "type": "error",
         "severity": "minor",
         "explanation": "The Hebrew phrase means \"behind (i.e., in the direction of) the way of the sun's going down\"—a directional note meaning westward. \"West of the road\" mistakenly makes the road a fixed landmark and obscures the sense."
+      },
+      {
+        "text": "They lie beyond the Jordan, toward the setting sun, in the land of the Canaanites who live in the Arabah, opposite Gilgal, near the oaks of Moreh.",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "The Hebrew opens with הֲלֹא, a rhetorical question ('Are they not...?') that appeals to what the hearers already know. Rendering it as a flat statement loses this rhetorical force, which is especially effective in oral reading. The declarative rendering is a defensible way of conveying the sense, but the question form is closer to the Hebrew.",
+        "alternative": true
       }
     ]
   },

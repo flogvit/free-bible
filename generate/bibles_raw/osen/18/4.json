@@ -113,13 +113,20 @@
     "bookId": 18,
     "chapterId": 4,
     "verseId": 14,
-    "text": "dread and trembling came over me and made all my bones shake.",
+    "text": "dread and trembling came over me, and terror filled all my bones.",
     "versions": [
       {
         "text": "dread came over me, and trembling, and made all my bones shake.",
         "type": "grammar",
         "severity": "minor",
         "explanation": "The current word order strands \"and trembling\" awkwardly after the verb, and the subsequent clause lacks a clear subject. Combining the subjects fixes the grammar and improves the oral flow."
+      },
+      {
+        "text": "dread and trembling came over me and made all my bones shake.",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "The verb הִפְחִיד is causative of 'to dread/fear' (to terrify), not 'to shake'. Rendering it with 'terror' preserves the repetition of the פחד root that frames the line (פַּחַד ... הִפְחִיד) and keeps the fear imagery, while the added comma aids oral phrasing. The existing rendering conveys the sense but shifts the image from terror to physical trembling, which duplicates 'trembling' earlier in the line.",
+        "alternative": true
       }
     ]
   },

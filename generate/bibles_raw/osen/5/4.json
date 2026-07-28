@@ -9,13 +9,20 @@
     "bookId": 5,
     "chapterId": 4,
     "verseId": 2,
-    "text": "Do not add to the word I am commanding you, and do not take away from it, but keep the commandments of the LORD your God that I am commanding you.",
+    "text": "Do not add to the word I am commanding you, and do not take away from it, so that you keep the commandments of the LORD your God that I am commanding you.",
     "versions": [
       {
         "text": "Do not add to the word I am commanding you, and do not take away from it, but keep the commandments of the LORD your God that I am giving you.",
         "type": "error",
         "severity": "minor",
         "explanation": "The Hebrew repeats the same verb (מְצַוֶּה, \"command\") in both halves of the verse; rendering the second occurrence as \"giving\" weakens the deliberate repetition and slightly softens the sense of divine command."
+      },
+      {
+        "text": "Do not add to the word I am commanding you, and do not take away from it, but keep the commandments of the LORD your God that I am commanding you.",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "לִשְׁמֹר is an infinitive of purpose (\"so as to keep\"), stating the aim of the prohibition rather than a third, separate command. \"but keep\" turns it into a new imperative and slightly obscures the logic of the verse.",
+        "alternative": true
       }
     ]
   },
@@ -37,7 +44,10 @@
         "severity": "minor",
         "explanation": "הַדְּבֵקִים is a present participle describing the present state of the hearers, matching \"are all alive today.\" The past tense \"held fast\" creates a tense mismatch within the sentence."
       }
-    ]
+    ],
+    "checked": {
+      "changed": "1:63"
+    }
   },
   {
     "bookId": 5,
@@ -145,13 +155,20 @@
     "bookId": 5,
     "chapterId": 4,
     "verseId": 22,
-    "text": "I am going to die in this land; I will not cross the Jordan. But you will cross over and take possession of this good land.",
+    "text": "For I am going to die in this land; I will not cross the Jordan. But you will cross over and take possession of this good land.",
     "versions": [
       {
         "text": "I am going to die in this land; I will not cross the Jordan. But you will cross over and take possession of that good land.",
         "type": "error",
         "severity": "minor",
         "explanation": "The Hebrew demonstrative is הַזֹּאת (\"this\"), pointing to the land in view; \"that\" distances it unnecessarily and loses the parallel with \"this land\" earlier in the verse."
+      },
+      {
+        "text": "I am going to die in this land; I will not cross the Jordan. But you will cross over and take possession of this good land.",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "The verse opens with כִּי, which links this statement causally to the preceding oath that Moses would not cross the Jordan. Restoring \"For\" preserves the connective and helps oral flow between the two verses.",
+        "alternative": true
       }
     ]
   },
@@ -320,7 +337,10 @@
         "explanation": "The opening of the verse has been dropped: בְּעֵבֶר הַיַּרְדֵּן בַּגַּיְא מוּל בֵּית פְּעוֹר בְּאֶרֶץ סִיחֹן מֶלֶךְ הָאֱמֹרִי (\"east of the Jordan, in the valley opposite Beth Peor, in the land of Sihon king of the Amorites\"). Without it the relative clause \"who lived in Heshbon\" has no antecedent and the geographic setting is lost. The restoration keeps the intentional earlier changes (\"lived\" rather than \"reigned\" and the active \"whom Moses and the Israelites defeated\").",
         "alternative": false
       }
-    ]
+    ],
+    "checked": {
+      "changed": "2:187"
+    }
   },
   {
     "bookId": 5,

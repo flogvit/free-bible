@@ -55,13 +55,20 @@
     "bookId": 19,
     "chapterId": 6,
     "verseId": 7,
-    "text": "I am worn out with groaning. All night long I flood my bed; I drench my couch with my tears.",
+    "text": "I am worn out with my groaning. All night long I flood my bed; with my tears I drench my couch.",
     "versions": [
       {
         "text": "I am worn out with groaning. All night long I flood my bed with weeping and drench my couch with tears.",
         "type": "error",
         "severity": "minor",
         "explanation": "The Hebrew places 'with my tears' (בְּדִמְעָתִי) only in the second line; the first line simply says 'every night I make my bed swim.' Adding 'with weeping' to the first clause introduces wording not in the text and blurs the two parallel lines. The revised form preserves the balanced parallelism and reads well aloud."
+      },
+      {
+        "text": "I am worn out with groaning. All night long I flood my bed; I drench my couch with my tears.",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "Two small gains: אַנְחָתִי carries the first-person suffix ('my groaning'), which the current rendering drops; and the Hebrew fronts בְּדִמְעָתִי ('with my tears') in the final line, so placing the phrase first mirrors the source and gives the closing line a stronger cadence for reading aloud.",
+        "alternative": true
       }
     ]
   },

@@ -63,13 +63,20 @@
     "bookId": 23,
     "chapterId": 45,
     "verseId": 11,
-    "text": "This is what the LORD says, the Holy One of Israel, the one who formed him: Will you question me about things to come, about my children, or give me orders concerning the work of my hands?",
+    "text": "This is what the LORD says, the Holy One of Israel, the one who formed him: Ask me about the things to come! Concerning my children and the work of my hands, would you give me orders?",
     "versions": [
       {
         "text": "This is what the LORD says, the Holy One of Israel, the one who formed him: Would you question me about my children, or give me orders about the work of my hands?",
         "type": "error",
         "severity": "major",
         "explanation": "The Hebrew הָאֹתִיּוֹת (\"the things to come\") is left untranslated. This is a significant element of the verse, since the whole passage concerns the LORD's power to announce the future, and it should be represented in the English."
+      },
+      {
+        "text": "This is what the LORD says, the Holy One of Israel, the one who formed him: Will you question me about things to come, about my children, or give me orders concerning the work of my hands?",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "In the Hebrew, שְׁאָלוּנִי is a plural imperative (\"ask me\"), and the reproach falls on the second clause (\"would you command me?\"). Rendering both clauses as a single rhetorical question is a possible reading, but it flattens the imperative and loses the contrast between the LORD's invitation to ask and his rebuke of those who would instruct him. The suggested wording keeps the imperative and reads well aloud.",
+        "alternative": true
       }
     ]
   },

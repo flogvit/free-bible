@@ -43,7 +43,10 @@
         "severity": "minor",
         "explanation": "The Hebrew object suffixes are plural, referring back to the listed items (wealth, earnings, treasures, riches), not to the city. 'Them' matches the antecedents and avoids the impression that the city itself is carried to Babylon."
       }
-    ]
+    ],
+    "checked": {
+      "changed": "1:208"
+    }
   },
   {
     "bookId": 24,
@@ -55,13 +58,20 @@
     "bookId": 24,
     "chapterId": 20,
     "verseId": 7,
-    "text": "You enticed me, LORD, and I was enticed; you overpowered me and prevailed. I am a laughingstock all day long; everyone mocks me.",
+    "text": "You enticed me, LORD, and I was enticed; you overpowered me and prevailed. I have become a laughingstock all day long; everyone mocks me.",
     "versions": [
       {
         "text": "You persuaded me, LORD, and I was persuaded; you overpowered me and prevailed. I am a laughingstock all day long; everyone mocks me.",
         "type": "error",
         "severity": "major",
         "explanation": "The verb פתה in the Piel means to entice, seduce, or even deceive; it is deliberately strong and stands in parallel with the forceful חזקתני ('you overpowered me'). 'Persuaded' flattens the complaint into a neutral statement and loses the sense of irresistible pressure that drives Jeremiah's lament."
+      },
+      {
+        "text": "You enticed me, LORD, and I was enticed; you overpowered me and prevailed. I am a laughingstock all day long; everyone mocks me.",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "The Hebrew perfect הייתי ('I have become') reports a state that has come about as a result of the LORD's action described in the first half of the verse. 'I have become' preserves that cause-and-effect link with the preceding clauses, while the flat present 'I am' loses the sense of a change brought on by God. The present tense is a defensible rendering of the Hebrew stative perfect.",
+        "alternative": true
       }
     ]
   },

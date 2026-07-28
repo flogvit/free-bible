@@ -185,13 +185,20 @@
     "bookId": 40,
     "chapterId": 24,
     "verseId": 30,
-    "text": "Then the sign of the Son of Man will appear in the sky, and all the tribes of the earth will mourn, and they will see the Son of Man coming on the clouds of heaven with power and great glory.",
+    "text": "Then the sign of the Son of Man will appear in the sky, and then all the tribes of the earth will mourn, and they will see the Son of Man coming on the clouds of heaven with power and great glory.",
     "versions": [
       {
         "text": "Then the sign of the Son of Man will appear in the sky, and all the tribes of the earth will mourn as they see the Son of Man coming on the clouds of heaven with power and great glory.",
         "type": "error",
         "severity": "minor",
         "explanation": "The Greek has two coordinated future verbs (κόψονται ... καὶ ὄψονται): they will mourn, and they will see. Rendering the second as a subordinate clause (\"as they see\") reverses the logical order and subordinates a main statement. Keeping both as parallel clauses is more accurate and reads well aloud."
+      },
+      {
+        "text": "Then the sign of the Son of Man will appear in the sky, and all the tribes of the earth will mourn, and they will see the Son of Man coming on the clouds of heaven with power and great glory.",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "The Greek repeats τότε (\"and then\") before the mourning clause, marking a second stage in the sequence. Restoring the second \"then\" preserves the emphatic repetition of the source and gives the sentence a clearer forward movement when read aloud, without disturbing the two parallel main verbs established in the earlier revision.",
+        "alternative": true
       }
     ]
   },
@@ -213,7 +220,10 @@
         "severity": "minor",
         "explanation": "The Greek subject is singular (ὁ κλάδος, \"its branch\"). The singular also keeps the image concrete and the rhythm crisp for oral reading."
       }
-    ]
+    ],
+    "checked": {
+      "changed": "1:123"
+    }
   },
   {
     "bookId": 40,

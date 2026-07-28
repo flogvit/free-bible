@@ -97,7 +97,10 @@
         "severity": "minor",
         "explanation": "The Hebrew imperfect תוֹשִׁעַ expresses capability in a hypothetical condition, not a completed past act; \"had saved\" also clashes in tense with \"would praise.\""
       }
-    ]
+    ],
+    "checked": {
+      "changed": "1:68"
+    }
   },
   {
     "bookId": 18,
@@ -133,13 +136,20 @@
     "bookId": 18,
     "chapterId": 40,
     "verseId": 20,
-    "text": "The mountains yield him their produce, and all the wild animals play there.",
+    "text": "For the mountains yield him their produce, and all the wild animals play there.",
     "versions": [
       {
         "text": "The hills yield him their produce, and all the wild animals play there.",
         "type": "error",
         "severity": "minor",
         "explanation": "הָרִים means \"mountains\"; \"hills\" understates the term, and elsewhere the translation keeps such distinctions."
+      },
+      {
+        "text": "The mountains yield him their produce, and all the wild animals play there.",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "The opening particle כִּי is left untranslated. Restoring the causal connective (\"For\") ties the verse to the preceding description of Behemoth's greatness and helps the oral flow between verses.",
+        "alternative": true
       }
     ]
   },

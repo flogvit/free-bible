@@ -17,7 +17,10 @@
         "severity": "minor",
         "explanation": "The Hebrew has two verbs, קוּם (\"arise/get up\") followed by וְיָרַדְתָּ (\"and go down\"). The opening imperative is dropped in the current rendering; restoring it preserves the urgency and the rhythm of the command."
       }
-    ]
+    ],
+    "checked": {
+      "changed": "1:83"
+    }
   },
   {
     "bookId": 24,
@@ -53,13 +56,20 @@
     "bookId": 24,
     "chapterId": 18,
     "verseId": 8,
-    "text": "and that nation I have warned turns from its evil, then I will relent of the disaster I intended to bring on it.",
+    "text": "and that nation against which I have spoken turns from its evil, then I will relent of the disaster I intended to bring on it.",
     "versions": [
       {
         "text": "and that nation turns from its evil, then I will relent of the disaster I intended to bring on it.",
         "type": "error",
         "severity": "minor",
         "explanation": "The clause אֲשֶׁר דִּבַּרְתִּי עָלָיו (\"against which I have spoken\") is missing. It ties the nation's repentance to the prior announcement of judgment in verse 7 and should be represented."
+      },
+      {
+        "text": "and that nation I have warned turns from its evil, then I will relent of the disaster I intended to bring on it.",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "The relative clause אֲשֶׁר דִּבַּרְתִּי עָלָיו is literally \"against which I have spoken,\" tying back to the announced judgment of verse 7. \"I have warned\" is a fair paraphrase but softens the link to God's spoken word; a closer rendering keeps the verbal echo of \"I speak\" in verse 7 and reads just as smoothly aloud.",
+        "alternative": true
       }
     ]
   },
@@ -97,13 +107,20 @@
     "bookId": 24,
     "chapterId": 18,
     "verseId": 14,
-    "text": "Does the snow of Lebanon ever leave the rocky slopes? Do the cold waters that flow from the mountains ever run dry?",
+    "text": "Does the snow of Lebanon ever leave the rocky slopes? Do the cold waters that flow from afar ever run dry?",
     "versions": [
       {
         "text": "Does the snow of Lebanon ever leave the rocky slopes? Do the cold, flowing streams ever run dry?",
         "type": "error",
         "severity": "minor",
         "explanation": "The adjective זָרִים (\"foreign, from elsewhere/from afar\") is left untranslated. Including the sense of waters coming from distant heights completes the image of unfailing mountain streams."
+      },
+      {
+        "text": "Does the snow of Lebanon ever leave the rocky slopes? Do the cold waters that flow from the mountains ever run dry?",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "זָרִים means \"foreign, from elsewhere/from afar\"; \"from the mountains\" supplies a detail not in the Hebrew (and duplicates the Lebanon imagery of the first line). \"From afar\" carries the intended sense of distant, unfailing sources without adding new content.",
+        "alternative": true
       }
     ]
   },
@@ -111,13 +128,20 @@
     "bookId": 24,
     "chapterId": 18,
     "verseId": 15,
-    "text": "Yet my people have forgotten me; they burn incense to worthless idols. They have been made to stumble in their ways, off the ancient roads, to walk on side paths, on a road never paved,",
+    "text": "Yet my people have forgotten me; they burn incense to worthless idols. Those idols have made them stumble in their ways, off the ancient roads, to walk on side paths, on a road never paved,",
     "versions": [
       {
         "text": "Yet my people have forgotten me; they burn incense to worthless idols. They have stumbled off their paths, off the ancient roads, to walk on trails, on a way not built up,",
         "type": "error",
         "severity": "major",
         "explanation": "וַיַּכְשִׁלוּם is a causative (hiphil) form — the idols cause the people to stumble; the current rendering makes it simply intransitive and loses the agency of the false worship. Also \"a way not built up\" is awkward English for לֹא סְלוּלָה (\"not paved, no highway\")."
+      },
+      {
+        "text": "Yet my people have forgotten me; they burn incense to worthless idols. They have been made to stumble in their ways, off the ancient roads, to walk on side paths, on a road never paved,",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "The correction to a causative sense was right, but the English passive still hides the agent. Naming the idols as the cause makes the hiphil force audible and keeps the sentence rhythm clear when read aloud.",
+        "alternative": true
       }
     ]
   },

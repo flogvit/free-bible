@@ -9,13 +9,20 @@
     "bookId": 40,
     "chapterId": 18,
     "verseId": 2,
-    "text": "So he called a child over and stood him among them,",
+    "text": "So he called a child over and had him stand among them,",
     "versions": [
       {
         "text": "So he called a child over, stood him in front of them,",
         "type": "error",
         "severity": "minor",
         "explanation": "ἐν μέσῳ αὐτῶν means \"in their midst / among them,\" not \"in front of them.\" The picture is the child placed in the middle of the circle of disciples. Adding \"and\" also smooths the oral rhythm."
+      },
+      {
+        "text": "So he called a child over and stood him among them,",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "The transitive \"stood him\" is unusual in contemporary English and can trip a reader aloud. \"Had him stand\" preserves the causative force of ἔστησεν while keeping the corrected \"among them\" for ἐν μέσῳ αὐτῶν and the natural oral rhythm.",
+        "alternative": true
       }
     ]
   },
@@ -127,7 +134,10 @@
         "severity": "minor",
         "explanation": "The ἀμήν (\"truly\") of the solemn formula is dropped here, though it is rendered consistently elsewhere in the chapter (vv. 3, 13, 18)."
       }
-    ]
+    ],
+    "checked": {
+      "changed": "1:129"
+    }
   },
   {
     "bookId": 40,

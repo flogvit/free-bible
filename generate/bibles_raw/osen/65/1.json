@@ -27,13 +27,20 @@
     "bookId": 65,
     "chapterId": 1,
     "verseId": 5,
-    "text": "Now I want to remind you, though you already know it all, that Jesus, having once saved a people out of the land of Egypt, afterward destroyed those who did not believe;",
+    "text": "Now I want to remind you, though you already know all this, that Jesus, who saved a people out of the land of Egypt, later destroyed those who did not believe;",
     "versions": [
       {
         "text": "Now I want to remind you, though you know it all already, that the Lord, having once saved a people out of the land of Egypt, afterward destroyed those who did not believe;",
         "type": "error",
         "severity": "major",
         "explanation": "The base Greek text printed here reads Ἰησοῦς (\"Jesus\"), not κύριος (\"the Lord\"). The translation should follow the text it is based on, with a footnote noting that some manuscripts read \"the Lord\" (e.g., \"Some manuscripts read 'the Lord'\"). Also, 'though you know it all already' reads more smoothly as 'though you already know it all'."
+      },
+      {
+        "text": "Now I want to remind you, though you already know it all, that Jesus, having once saved a people out of the land of Egypt, afterward destroyed those who did not believe;",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "In the Greek, ἅπαξ (\"once for all\") modifies εἰδότας (\"knowing\"), which the current rendering already captures with \"already.\" Adding \"once\" again to the saving clause introduces a second temporal qualifier that is not in the source and can be misread as limiting the exodus deliverance. Dropping it and using \"later\" for τὸ δεύτερον keeps the contrast clear and reads smoothly aloud. A footnote is also still worth adding at \"Jesus\": some manuscripts read \"the Lord.\"",
+        "alternative": true
       }
     ]
   },

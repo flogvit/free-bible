@@ -119,13 +119,20 @@
     "bookId": 44,
     "chapterId": 22,
     "verseId": 19,
-    "text": "I said, 'Lord, they themselves know that I went from synagogue to synagogue, imprisoning and beating those who believed in you.",
+    "text": "And I said, 'Lord, they themselves know that I went from synagogue to synagogue, imprisoning and beating those who believed in you.",
     "versions": [
       {
         "text": "I said, 'Lord, they themselves know that I went from synagogue to synagogue, imprisoning and beating those who believe in you.",
         "type": "grammar",
         "severity": "minor",
         "explanation": "The surrounding narrative is in past tense ('I went... imprisoning and beating'), so the present 'believe' clashes with the sequence; 'believed' keeps the tense consistent for the listener."
+      },
+      {
+        "text": "I said, 'Lord, they themselves know that I went from synagogue to synagogue, imprisoning and beating those who believed in you.",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "The Greek opens with κἀγὼ ('and I'), which links Paul's reply to the Lord's command in the previous verse. Restoring the connective 'And' helps a listener hear the exchange as a dialogue rather than an isolated statement. The existing rendering is defensible, since English narrative often drops such connectives.",
+        "alternative": true
       }
     ]
   },

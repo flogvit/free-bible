@@ -21,13 +21,20 @@
     "bookId": 23,
     "chapterId": 59,
     "verseId": 4,
-    "text": "No one calls for justice; no one pleads a case honestly. They trust in emptiness and speak lies; they conceive trouble and give birth to evil.",
+    "text": "No one calls for justice; no one pleads a case honestly. They trust in emptiness and speak worthless words; they conceive trouble and give birth to evil.",
     "versions": [
       {
         "text": "No one calls for justice; no one pleads a case honestly. They rely on empty words and speak falsehood; they conceive trouble and give birth to evil.",
         "type": "error",
         "severity": "minor",
         "explanation": "The Hebrew has two distinct objects: trusting in 'emptiness/nothingness' (תֹּהוּ) and speaking 'falsehood' (שָׁוְא). Rendering the first as 'empty words' duplicates the second clause and loses the sense of trusting in what is void."
+      },
+      {
+        "text": "No one calls for justice; no one pleads a case honestly. They trust in emptiness and speak lies; they conceive trouble and give birth to evil.",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "The Hebrew here is שָׁוְא ('vanity, worthlessness, empty talk'), not שֶׁקֶר ('lie'), which was already used in the previous verse ('your lips speak lies'). Rendering it as 'worthless words' preserves the distinction between the two Hebrew terms and avoids the impression of mere repetition when read aloud.",
+        "alternative": true
       }
     ]
   },

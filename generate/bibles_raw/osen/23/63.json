@@ -39,13 +39,20 @@
     "bookId": 23,
     "chapterId": 63,
     "verseId": 7,
-    "text": "I will recount the steadfast love of the LORD, the praises of the LORD, according to all that the LORD has done for us—the great goodness he has shown the house of Israel according to his compassion and the abundance of his faithful love.",
+    "text": "I will recount the steadfast love of the LORD, the praises of the LORD, for all that the LORD has done for us—the great goodness he has shown the house of Israel, according to his compassion and his abundant steadfast love.",
     "versions": [
       {
         "text": "I will recount the steadfast love of the LORD, the praises of the LORD, according to all that the LORD has done for us—the great goodness he has shown the house of Israel according to his compassion and the abundance of his mercies.",
         "type": "error",
         "severity": "minor",
         "explanation": "The final phrase is וּכְרֹב חֲסָדָיו (chesed, the same word rendered \"steadfast love\" at the start of the verse), not רַחֲמִים (\"mercies/compassion\"), which appears just before it. As it stands the two Hebrew terms are effectively swapped/duplicated; rendering the last one with a chesed word restores the distinction."
+      },
+      {
+        "text": "I will recount the steadfast love of the LORD, the praises of the LORD, according to all that the LORD has done for us—the great goodness he has shown the house of Israel according to his compassion and the abundance of his faithful love.",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "The single Hebrew term chesed opens and closes the verse (חַסְדֵי ... חֲסָדָיו); rendering it the same way in both places lets the hearer catch the deliberate bracketing, which two different English phrases obscure. Trimming \"according to all that\" to \"for all that\" and adding a comma before the final clause also give the long sentence a clearer breathing point for oral reading. The current wording is a legitimate rendering, just less rhythmic and less consistent.",
+        "alternative": true
       }
     ]
   },

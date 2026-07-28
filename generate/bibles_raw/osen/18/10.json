@@ -53,7 +53,10 @@
         "severity": "minor",
         "explanation": "The Hebrew phrase יַחַד סָבִיב (\"altogether, all around\") is left untranslated. Adding \"every part of me\" restores the sense that God formed the whole of Job, which sharpens the contrast with \"destroy me,\" and it keeps the line short enough for oral reading."
       }
-    ]
+    ],
+    "checked": {
+      "changed": "1:85"
+    }
   },
   {
     "bookId": 18,
@@ -111,7 +114,10 @@
         "severity": "minor",
         "explanation": "The Hebrew has a form of רָאָה (\"to see/look upon\") — Job is \"sated with shame and looking on my affliction.\" \"Drowned in\" introduces an image (drowning) that is not in the text; \"see nothing but my affliction\" keeps the seeing imagery while remaining natural for reading aloud."
       }
-    ]
+    ],
+    "checked": {
+      "changed": "1:140"
+    }
   },
   {
     "bookId": 18,
@@ -153,13 +159,20 @@
     "bookId": 18,
     "chapterId": 10,
     "verseId": 22,
-    "text": "to the land of deep gloom and darkest shadow, a land without order, where even the light is like darkness.",
+    "text": "to a land of gloom, dark as night itself, of deathly shadow and no order, where even the light is like darkness.",
     "versions": [
       {
         "text": "to the land of gloom and chaos, where even the light is like darkness.",
         "type": "error",
         "severity": "minor",
         "explanation": "The Hebrew piles up three terms — עֵיפָתָה (gloom), אֹפֶל (thick darkness), צַלְמָוֶת (deathly shadow) — before \"and no order.\" The current rendering drops צַלְמָוֶת entirely, flattening the verse's cumulative effect; restoring it preserves the content and the rhythmic build of the closing line."
+      },
+      {
+        "text": "to the land of deep gloom and darkest shadow, a land without order, where even the light is like darkness.",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "The Hebrew has an explicit simile in the first clause — עֵיפָתָה כְּמוֹ אֹפֶל, \"gloom like thick darkness\" — which the current rendering absorbs into the adjective \"deep,\" leaving the comparison unexpressed. Restoring the simile preserves the deliberate doubling of the like-darkness image (it recurs at the end of the verse) and keeps the three-fold pile-up of gloom, shadow and disorder that gives the closing line its build. The current reading is not wrong in sense, only compressed.",
+        "alternative": true
       }
     ]
   }

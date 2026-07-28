@@ -39,13 +39,20 @@
     "bookId": 53,
     "chapterId": 2,
     "verseId": 7,
-    "text": "For the mystery of lawlessness is already at work; only there is one who restrains it now, until he is taken out of the way.",
+    "text": "For the mystery of lawlessness is already at work; only the one who restrains it is holding it back for now, until he is taken out of the way.",
     "versions": [
       {
         "text": "For the mystery of lawlessness is already at work; only the one who restrains it must first be taken out of the way.",
         "type": "error",
         "severity": "minor",
         "explanation": "The Greek ἄρτι (\"now\") describes the restrainer as presently at work, and the clause with ἕως expresses continuation \"until he is removed.\" The current rendering drops \"now\" and adds \"first,\" turning a statement about ongoing restraint into a requirement of sequence."
+      },
+      {
+        "text": "For the mystery of lawlessness is already at work; only there is one who restrains it now, until he is taken out of the way.",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "The Greek clause is elliptical (μόνον ὁ κατέχων ἄρτι ἕως...), and the current rendering fills the gap with \"only there is one who...\", which stumbles when read aloud because \"only\" and \"there is\" collide. Making the restrainer the subject of a verb of restraining keeps both the adverb ἄρτι (\"now\") and the ἕως clause intact while giving a smoother oral rhythm.",
+        "alternative": true
       }
     ]
   },

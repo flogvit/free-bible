@@ -103,13 +103,20 @@
     "bookId": 7,
     "chapterId": 4,
     "verseId": 15,
-    "text": "And the LORD routed Sisera and all his chariots and all his army by the edge of the sword before Barak. Sisera got down from his chariot and fled on foot.",
+    "text": "And the LORD routed Sisera and all the chariots and all the army by the edge of the sword before Barak. Sisera got down from his chariot and fled on foot.",
     "versions": [
       {
         "text": "And the LORD threw Sisera and all his chariots and all his army into a panic before the edge of Barak's sword. Sisera got down from his chariot and fled on foot.",
         "type": "error",
         "severity": "major",
         "explanation": "The Hebrew has two distinct phrases: \"by the edge of the sword\" (לְפִי־חֶרֶב) and \"before Barak\" (לִפְנֵי בָרָק). The current rendering collapses them into \"before the edge of Barak's sword,\" which is not what the text says and obscures that Barak is the one before whom the rout takes place."
+      },
+      {
+        "text": "And the LORD routed Sisera and all his chariots and all his army by the edge of the sword before Barak. Sisera got down from his chariot and fled on foot.",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "The Hebrew has the definite article (כָּל־הָרֶכֶב, כָּל־הַמַּחֲנֶה), \"all the chariots... all the army,\" not possessive pronouns. The possessives are a small addition; the definite forms also read just as smoothly aloud and keep the focus on the whole force rather than only Sisera's personal holdings.",
+        "alternative": true
       }
     ]
   },

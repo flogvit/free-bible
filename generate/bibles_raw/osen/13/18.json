@@ -29,13 +29,20 @@
     "bookId": 13,
     "chapterId": 18,
     "verseId": 4,
-    "text": "David captured from him a thousand chariots, seven thousand horsemen, and twenty thousand foot soldiers. He hamstrung all the chariot horses except a hundred, which he kept.",
+    "text": "David captured from him a thousand chariots, seven thousand horsemen, and twenty thousand foot soldiers. He hamstrung all the chariot horses, but kept a hundred chariots for himself.",
     "versions": [
       {
         "text": "David captured from him a thousand chariots, seven thousand charioteers, and twenty thousand foot soldiers. He hamstrung all the chariot horses except a hundred, which he kept.",
         "type": "error",
         "severity": "minor",
         "explanation": "פָּרָשִׁים normally denotes mounted horsemen, a category distinct from the chariots already listed; rendering it \"charioteers\" blurs the three-part listing of chariots, cavalry, and infantry."
+      },
+      {
+        "text": "David captured from him a thousand chariots, seven thousand horsemen, and twenty thousand foot soldiers. He hamstrung all the chariot horses except a hundred, which he kept.",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "In the Hebrew the hundred that David spared are explicitly \"a hundred chariots\" (מֵאָה רָכֶב), not a hundred horses. As written, \"except a hundred\" most naturally attaches to \"chariot horses,\" obscuring what was retained. Naming the chariots keeps the accounting clear and reads smoothly aloud.",
+        "alternative": true
       }
     ]
   },

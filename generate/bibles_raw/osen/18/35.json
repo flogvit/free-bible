@@ -47,13 +47,20 @@
     "bookId": 18,
     "chapterId": 35,
     "verseId": 7,
-    "text": "If you are righteous, what do you give him? What does he receive from your hand?",
+    "text": "If you are righteous, what do you give him? Or what does he receive from your hand?",
     "versions": [
       {
         "text": "If you are righteous, what have you given him? What does he receive from your hand?",
         "type": "grammar",
         "severity": "minor",
         "explanation": "The Hebrew verb תִּתֶּן is imperfect, parallel to יִקָּח (\"does he receive\"), which the second clause already renders as present. \"What have you given him\" shifts to a completed past action and breaks the parallel rhythm of the couplet."
+      },
+      {
+        "text": "If you are righteous, what do you give him? What does he receive from your hand?",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "The Hebrew has the connective אוֹ (\"or\") joining the two questions, which ties the couplet together and heightens the rhetorical force. Restoring it also reads well aloud, since the second question then flows from the first rather than standing as a separate assertion.",
+        "alternative": true
       }
     ]
   },

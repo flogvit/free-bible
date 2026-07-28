@@ -23,7 +23,10 @@
         "severity": "minor",
         "explanation": "The Hebrew אֵיל־הַפֶּתַח is singular here (unlike the plural הָאֵילִים in v. 1); the singular also matches the single measurement given."
       }
-    ]
+    ],
+    "checked": {
+      "changed": "1:153"
+    }
   },
   {
     "bookId": 26,
@@ -161,13 +164,20 @@
     "bookId": 26,
     "chapterId": 41,
     "verseId": 22,
-    "text": "an altar of wood, three cubits high and two cubits long, with its corners, its base, and its sides all of wood. And he said to me, \"This is the table that stands before the LORD.\"",
+    "text": "an altar of wood, three cubits high and two cubits long, with its corners, its base, and its sides all of wood.* And he said to me, \"This is the table that stands before the LORD.\" [*Footnote: The Hebrew here reads \"its length and its walls were wood\"; \"its base\" follows the ancient Greek reading.]",
     "versions": [
       {
         "text": "an altar of wood, three cubits high and two cubits square, with its corners, its base, and its sides all of wood. And he said to me, \"This is the table that stands before the LORD.\"",
         "type": "error",
         "severity": "minor",
         "explanation": "The Hebrew gives only the height and the length (\"its length two cubits\"); \"two cubits square\" supplies a width that is not in the text. If the square shape is retained, it should be marked as an inference."
+      },
+      {
+        "text": "an altar of wood, three cubits high and two cubits long, with its corners, its base, and its sides all of wood. And he said to me, \"This is the table that stands before the LORD.\"",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "The rendering \"its base\" reflects the ancient Greek witness rather than the Hebrew consonantal text, which repeats \"its length\" (אָרְכּוֹ). The reading is defensible and reads smoothly, but since it departs from the Hebrew a brief note would let the reader see the textual basis, in keeping with the earlier revision's principle of marking inferences.",
+        "alternative": false
       }
     ]
   },

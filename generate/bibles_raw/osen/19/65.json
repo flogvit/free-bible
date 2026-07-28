@@ -21,13 +21,20 @@
     "bookId": 19,
     "chapterId": 65,
     "verseId": 4,
-    "text": "When iniquities overwhelm me, you atone for our transgressions.",
+    "text": "Deeds of iniquity overwhelm me; our transgressions—you yourself atone for them.",
     "versions": [
       {
         "text": "When our sins overwhelm me, you atone for our transgressions.",
         "type": "error",
         "severity": "major",
         "explanation": "The Hebrew has no possessive on עֲוֺנֹת (\"iniquities\"); the pronoun shift only comes with פְּשָׁעֵינוּ (\"our transgressions\"). Saying \"our sins overwhelm me\" creates an awkward and unwarranted clash of persons within one clause."
+      },
+      {
+        "text": "When iniquities overwhelm me, you atone for our transgressions.",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "The Hebrew sets two independent clauses side by side rather than a temporal subordinate clause; rendering the first as \"When...\" adds a connective the source lacks. It also leaves דִּבְרֵי (\"deeds/matters of\") unrepresented, and it flattens the emphatic pronoun אַתָּה (\"you yourself\"), which carries the contrast between human guilt and divine atonement. The revised line keeps the parallel structure and reads well aloud.",
+        "alternative": false
       }
     ]
   },

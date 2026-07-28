@@ -77,13 +77,20 @@
     "bookId": 9,
     "chapterId": 24,
     "verseId": 12,
-    "text": "Look, my father, see the corner of your robe in my hand! I cut off the corner of your robe and did not kill you. Know then and understand that there is no evil or rebellion in my hand. I have not wronged you, yet you are hunting me down to take my life.",
+    "text": "See, my father—yes, see the corner of your robe in my hand! For I cut off the corner of your robe and did not kill you. Know and see that there is no evil or rebellion in my hand. I have not sinned against you, yet you are hunting me down to take my life.",
     "versions": [
       {
         "text": "Look, my father, see the corner of your robe in my hand! I cut off the corner of your robe and did not kill you. Know then and understand that there is no evil or rebellion in my hands. I have not wronged you, yet you are hunting me down to take my life.",
         "type": "error",
         "severity": "minor",
         "explanation": "The Hebrew is singular (\"in my hand\"), matching the repeated \"hand\" imagery of the verse and chapter (\"the corner of your robe in my hand\"). The plural breaks that deliberate echo."
+      },
+      {
+        "text": "Look, my father, see the corner of your robe in my hand! I cut off the corner of your robe and did not kill you. Know then and understand that there is no evil or rebellion in my hand. I have not wronged you, yet you are hunting me down to take my life.",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "The Hebrew doubles the imperative (re'eh gam re'eh, 'see, yes see') and repeats the verb 'see' again in 'know and see' (da' ur'eh). Rendering the second pair as 'know then and understand' loses the deliberate repetition of seeing that binds the verse together; 'For I cut off' also restores the causal ki. 'I have not sinned against you' reflects chata'ti more directly. The current wording is a legitimate rendering but flattens the rhetorical repetition.",
+        "alternative": true
       }
     ]
   },

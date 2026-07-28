@@ -225,7 +225,10 @@
         "severity": "minor",
         "explanation": "The Hebrew includes the verb אֶהְיֶה ('I will be'), a pledge of future loyalty, which is dropped in 'I am your servant.' Also הַמֶּלֶךְ is a vocative address ('O king') rather than the possessive 'my king,' and the second clause repeats 'your servant' for emphasis."
       }
-    ]
+    ],
+    "checked": {
+      "changed": "1:210"
+    }
   },
   {
     "bookId": 10,
@@ -237,13 +240,20 @@
     "bookId": 10,
     "chapterId": 15,
     "verseId": 36,
-    "text": "Their two sons are with them, Ahimaaz son of Zadok and Jonathan son of Abiathar. Through them send word to me of everything you hear.\"",
+    "text": "Their two sons are with them, Ahimaaz son of Zadok and Jonathan son of Abiathar. Send me word through them of everything you hear.\"",
     "versions": [
       {
         "text": "Their two sons are with them, Ahimaaz son of Zadok and Jonathan son of Abiathar. Send them to me with everything you hear.\"",
         "type": "grammar",
         "severity": "minor",
         "explanation": "The Hebrew says to send the message 'by their hand' — the sons are the couriers, not the thing sent. 'Send them to me' reads as if the sons themselves are the object of the sending, which blurs the sense. Note also that the speech ends with a closing quotation mark here, but no opening quotation mark appears at the start of the quoted speech in verses 34-35, which is inconsistent for oral reading."
+      },
+      {
+        "text": "Their two sons are with them, Ahimaaz son of Zadok and Jonathan son of Abiathar. Through them send word to me of everything you hear.\"",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "The clause \"send word to me of everything you hear\" separates \"word\" from its complement \"of everything you hear,\" which stumbles when read aloud. Placing the indirect object first (\"Send me word through them...\") keeps the sense identical while flowing more naturally, and still preserves the point that the sons are the couriers (\"by their hand\").",
+        "alternative": true
       }
     ]
   },

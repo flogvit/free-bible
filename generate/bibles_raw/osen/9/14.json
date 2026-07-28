@@ -241,13 +241,20 @@
     "bookId": 9,
     "chapterId": 14,
     "verseId": 38,
-    "text": "Saul said, \"Come here, all you leaders of the army, and find out how this sin has come about today.",
+    "text": "Saul said, \"Come here, all you leaders of the army; look into it and see how this sin came about today.",
     "versions": [
       {
         "text": "Saul said, \"Come here, all you leaders of the army, and let us find out what sin has been committed today.",
         "type": "grammar",
         "severity": "minor",
         "explanation": "The Hebrew has two plural imperatives addressed to the leaders (\"know and see\"), not a first-person cohortative (\"let us find out\"). Also בַּמָּה asks \"how/in what way\" this sin came about, not merely \"what sin\" was committed."
+      },
+      {
+        "text": "Saul said, \"Come here, all you leaders of the army, and find out how this sin has come about today.",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "The Hebrew has two coordinated imperatives (\"know and see\"), an emphatic doublet that the single verb \"find out\" flattens. Rendering both verbs preserves the urgency of Saul's command and reads well aloud; the simple past \"came about\" also flows more naturally in oral reading than the perfect \"has come about.\" The current reading is a legitimate condensation of the doublet.",
+        "alternative": true
       }
     ]
   },

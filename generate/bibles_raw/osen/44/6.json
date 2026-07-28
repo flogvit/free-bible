@@ -9,13 +9,20 @@
     "bookId": 44,
     "chapterId": 6,
     "verseId": 2,
-    "text": "So the Twelve called the whole company of disciples together and said, \"It is not right for us to give up preaching the word of God in order to wait on tables.",
+    "text": "So the Twelve called the whole company of disciples together and said, \"It is not right for us to abandon the word of God in order to wait on tables.",
     "versions": [
       {
         "text": "So the Twelve called the whole company of disciples together and said, \"It is not right for us to neglect the word of God in order to wait on tables.",
         "type": "error",
         "severity": "minor",
         "explanation": "καταλείψαντας means 'to leave behind, abandon, forsake' — stronger than 'neglect'; the sense is abandoning the ministry of the word for table service."
+      },
+      {
+        "text": "So the Twelve called the whole company of disciples together and said, \"It is not right for us to give up preaching the word of God in order to wait on tables.",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "The Greek object of καταλείψαντας is simply τὸν λόγον τοῦ θεοῦ, 'the word of God'; 'preaching' is supplied and not in the text. 'Abandon' carries the force of καταλείπω that the earlier revision aimed for while keeping the object as the Greek has it, and it reads cleanly aloud.",
+        "alternative": true
       }
     ]
   },
@@ -75,7 +82,10 @@
         "severity": "minor",
         "explanation": "'Jews from Cyrene and Alexandria' adds the word 'Jews', which is not in the Greek; the text simply lists Cyrenians and Alexandrians. The long dashes also hinder oral reading."
       }
-    ]
+    ],
+    "checked": {
+      "changed": "1:182"
+    }
   },
   {
     "bookId": 44,

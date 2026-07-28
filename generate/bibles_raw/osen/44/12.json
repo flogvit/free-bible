@@ -47,7 +47,10 @@
         "severity": "minor",
         "explanation": "The comma in \"Get up, quickly!\" interrupts the urgency of the command and reads awkwardly aloud. Placing the adverb first gives a crisper, more natural spoken rhythm."
       }
-    ]
+    ],
+    "checked": {
+      "changed": "1:177"
+    }
   },
   {
     "bookId": 44,
@@ -163,13 +166,20 @@
     "bookId": 44,
     "chapterId": 12,
     "verseId": 25,
-    "text": "And Barnabas and Saul, having completed their mission to Jerusalem, returned, taking with them John, also called Mark.",
+    "text": "When Barnabas and Saul had completed their mission to Jerusalem, they returned, taking with them John, also called Mark.",
     "versions": [
       {
         "text": "And Barnabas and Saul, having completed their mission, returned from Jerusalem, taking with them John, also called Mark.",
         "type": "error",
         "severity": "major",
         "explanation": "The Greek text here reads εἰς Ἰερουσαλήμ (\"to Jerusalem\"), not \"from Jerusalem.\" In this reading the prepositional phrase belongs with \"having completed their mission,\" describing the relief service delivered to Jerusalem (cf. 11:29-30). Rendering it \"returned from Jerusalem\" follows a different manuscript reading and reverses the direction stated in the base text. A footnote could note that some manuscripts read \"returned to Jerusalem\" or \"from Jerusalem.\""
+      },
+      {
+        "text": "And Barnabas and Saul, having completed their mission to Jerusalem, returned, taking with them John, also called Mark.",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "The current wording is accurate, but stacking the participial phrase before a bare \"returned\" leaves the main verb stranded and hard to deliver aloud; a temporal clause followed by \"they returned\" gives a clearer, more speakable rhythm while preserving the same sense of the prepositional phrase belonging with the completed service. A footnote noting that some manuscripts read \"returned to Jerusalem\" or \"returned from Jerusalem\" would also help the reader.",
+        "alternative": true
       }
     ]
   }

@@ -9,13 +9,20 @@
     "bookId": 26,
     "chapterId": 9,
     "verseId": 2,
-    "text": "And there came six men from the direction of the upper gate, which faces north, each with his weapon for smashing in his hand; and among them was one man clothed in linen, with a writing case at his side. They came in and stood beside the bronze altar.",
+    "text": "And behold, six men came from the direction of the upper gate, which faces north, each with his weapon for smashing in his hand; and among them was one man clothed in linen, with a writing case at his side. They came in and stood beside the bronze altar.",
     "versions": [
       {
         "text": "And there came six men from the direction of the upper gate, which faces north, each with his weapon for slaughter in his hand; and among them was one man clothed in linen, with a writing case at his side. They came in and stood beside the bronze altar.",
         "type": "error",
         "severity": "minor",
         "explanation": "The Hebrew מַפָּץ denotes a shattering or smashing instrument (a club or mace), not simply \"slaughter.\" Rendering it as \"smashing\" also keeps it distinct from the different phrase in verse 1 (כְּלִי מַשְׁחֵתוֹ, \"weapon of destruction\")."
+      },
+      {
+        "text": "And there came six men from the direction of the upper gate, which faces north, each with his weapon for smashing in his hand; and among them was one man clothed in linen, with a writing case at his side. They came in and stood beside the bronze altar.",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "The Hebrew opens with וְהִנֵּה, a presentational marker that heightens the vision's immediacy. Rendering it explicitly (\"And behold\") preserves the dramatic effect and gives the sentence a stronger opening beat for oral reading. The existing rendering absorbs the particle into \"there came,\" which is defensible but flatter.",
+        "alternative": true
       }
     ]
   },
@@ -61,13 +68,20 @@
     "bookId": 26,
     "chapterId": 9,
     "verseId": 8,
-    "text": "While they were striking, I was left alone; and I fell on my face and cried out, \"Ah, Lord GOD! Will you destroy the entire remnant of Israel as you pour out your wrath on Jerusalem?\"",
+    "text": "While they were striking them down, I was left alone; and I fell on my face and cried out, \"Ah, Lord GOD! Will you destroy the entire remnant of Israel as you pour out your wrath on Jerusalem?\"",
     "versions": [
       {
         "text": "While they were striking, and I was left alone, I fell on my face and cried out, \"Ah, Lord GOD! Will you destroy the entire remnant of Israel as you pour out your wrath on Jerusalem?\"",
         "type": "grammar",
         "severity": "minor",
         "explanation": "The \"While... and I was left alone, I fell\" construction is ungrammatical and stumbles when read aloud. Separating the two clauses preserves the Hebrew sequence and reads smoothly."
+      },
+      {
+        "text": "While they were striking, I was left alone; and I fell on my face and cried out, \"Ah, Lord GOD! Will you destroy the entire remnant of Israel as you pour out your wrath on Jerusalem?\"",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "The Hebrew infinitive כְּהַכּוֹתָם carries an implied object (the people of the city, as in verse 7). \"While they were striking\" leaves the verb dangling without an object, which sounds incomplete when read aloud; \"striking them down\" matches the wording of verse 7 and completes the sense.",
+        "alternative": true
       }
     ]
   },

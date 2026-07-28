@@ -35,7 +35,10 @@
         "severity": "major",
         "explanation": "The Hebrew phrase 'ish negdo' means 'each man straight before him' — i.e., each man advances at the point opposite where he is standing. 'Each man ahead of him' is confusing English (the pronoun has no clear referent) and reads as if the men are ahead of someone else. It is also redundant beside 'charge straight in.'"
       }
-    ]
+    ],
+    "checked": {
+      "changed": "1:216"
+    }
   },
   {
     "bookId": 6,
@@ -133,13 +136,20 @@
     "bookId": 6,
     "chapterId": 6,
     "verseId": 20,
-    "text": "So the people shouted, and the trumpets sounded. When the people heard the blast of the trumpet, they raised a great shout, and the wall collapsed. The people charged into the city, each man where he stood, and they captured it.",
+    "text": "So the people shouted, and the trumpets sounded. When the people heard the blast of the trumpet, they raised a great shout, and the wall fell down flat. The people charged into the city, each man where he stood, and they captured it.",
     "versions": [
       {
         "text": "So the people shouted, and the trumpets sounded. When the people heard the blast of the trumpet, they raised a great shout, and the wall collapsed. The people charged straight into the city, each man ahead of him, and they captured it.",
         "type": "error",
         "severity": "major",
         "explanation": "Same issue as verse 5: 'each man ahead of him' is unclear English for 'ish negdo' ('each straight before him'). The correction also removes the redundancy with 'charged straight into.'"
+      },
+      {
+        "text": "So the people shouted, and the trumpets sounded. When the people heard the blast of the trumpet, they raised a great shout, and the wall collapsed. The people charged into the city, each man where he stood, and they captured it.",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "The Hebrew adds tachteha, 'under it / in its place,' stressing that the wall dropped flat where it stood rather than merely giving way. 'Fell down flat' captures this without lengthening the line, and the strong monosyllables read well aloud.",
+        "alternative": true
       }
     ]
   },

@@ -33,13 +33,20 @@
     "bookId": 38,
     "chapterId": 12,
     "verseId": 6,
-    "text": "On that day I will make the clans of Judah like a blazing pot among wood, like a flaming torch among sheaves. They will devour all the surrounding peoples, to the right and to the left, and Jerusalem will once again be inhabited in her own place, in Jerusalem.",
+    "text": "On that day I will make the clans of Judah like a blazing pot among wood, like a flaming torch among sheaves. They will devour all the surrounding peoples, to the right and to the left, and Jerusalem will dwell again in her own place, in Jerusalem.",
     "versions": [
       {
         "text": "On that day I will make the clans of Judah like a blazing pot among wood, like a flaming torch among sheaves. They will devour all the surrounding peoples, to the right and to the left, and Jerusalem will remain secure in her place, in Jerusalem.",
         "type": "error",
         "severity": "minor",
         "explanation": "The Hebrew verb יָשְׁבָה with עוֹד means \"will dwell/be inhabited again\" in her own place; \"remain secure\" introduces the idea of security, which is not in the text, and drops the force of עוֹד (\"again/still\")."
+      },
+      {
+        "text": "On that day I will make the clans of Judah like a blazing pot among wood, like a flaming torch among sheaves. They will devour all the surrounding peoples, to the right and to the left, and Jerusalem will once again be inhabited in her own place, in Jerusalem.",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "The Hebrew verb is active with Jerusalem as the subject (\"Jerusalem shall dwell again\"), personifying the city; the passive \"be inhabited\" shifts the focus to unnamed inhabitants and reads more heavily aloud. The active form also keeps the force of עוֹד clearly attached to the verb.",
+        "alternative": true
       }
     ]
   },

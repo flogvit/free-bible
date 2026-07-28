@@ -63,13 +63,20 @@
     "bookId": 24,
     "chapterId": 48,
     "verseId": 11,
-    "text": "Moab has been at ease from his youth, settled like wine on its dregs, never poured from vessel to vessel, never gone into exile. So his taste has remained unchanged, and his aroma has not altered.",
+    "text": "Moab has been at ease from his youth, settled like wine on its dregs, never poured from vessel to vessel, never gone into exile. So his taste has remained unchanged, and his aroma has not changed.",
     "versions": [
       {
         "text": "Moab has been at ease from his youth, settled like wine on its dregs, never poured from vessel to vessel, never gone into exile. So his taste has remained unchanged, and his aroma is not altered.",
         "type": "grammar",
         "severity": "minor",
         "explanation": "The two parallel clauses shift tense (\"has remained\" / \"is not altered\"), which breaks the rhythm; matching the perfect tense in both keeps the parallelism smooth when read aloud."
+      },
+      {
+        "text": "Moab has been at ease from his youth, settled like wine on its dregs, never poured from vessel to vessel, never gone into exile. So his taste has remained unchanged, and his aroma has not altered.",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "Intransitive \"altered\" is stiff when read aloud; \"changed\" renders נָמָר (from מור, \"to change\") just as accurately and flows better while keeping the perfect-tense parallelism established in the previous revision.",
+        "alternative": true
       }
     ]
   },
@@ -121,7 +128,10 @@
         "severity": "minor",
         "explanation": "The Hebrew יֹשֶׁבֶת simply means \"the one sitting/enthroned/dwelling\"; \"secure\" is an added nuance not present in the text and it weakens the contrast with \"come down\" and \"sit in thirst.\""
       }
-    ]
+    ],
+    "checked": {
+      "changed": "1:168"
+    }
   },
   {
     "bookId": 24,
@@ -189,7 +199,10 @@
         "severity": "minor",
         "explanation": "פַּחַת denotes a pit, chasm or gorge, not a cave; the image is of a dove nesting on the ledges above a ravine, which also gives a stronger picture for oral reading."
       }
-    ]
+    ],
+    "checked": {
+      "changed": "1:126"
+    }
   },
   {
     "bookId": 24,

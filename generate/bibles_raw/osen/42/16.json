@@ -3,13 +3,20 @@
     "bookId": 42,
     "chapterId": 16,
     "verseId": 1,
-    "text": "He also said to the disciples: \"There was a rich man who had a manager, and charges were brought to him that this manager was squandering his possessions.",
+    "text": "He also said to the disciples: \"There was a rich man who had a manager, and charges were brought to him that this manager was squandering his master's possessions.",
     "versions": [
       {
         "text": "He also said to the disciples: \"There was a rich man who had a manager, and this manager was accused of squandering his property.",
         "type": "error",
         "severity": "minor",
         "explanation": "The Greek αὐτῷ ('to him') indicates the accusation was reported to the rich man; the current wording drops this detail and leaves 'his property' ambiguous as to whose property it is."
+      },
+      {
+        "text": "He also said to the disciples: \"There was a rich man who had a manager, and charges were brought to him that this manager was squandering his possessions.",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "The pronoun chain 'brought to him ... squandering his possessions' leaves 'his' ambiguous when read aloud, since the nearest antecedent is the manager. Since αὐτοῦ refers to the rich man, naming him as 'his master' clarifies the sense without adding content. The existing wording is a defensible literal rendering of αὐτοῦ.",
+        "alternative": true
       }
     ]
   },

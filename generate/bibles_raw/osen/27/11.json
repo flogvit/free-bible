@@ -65,13 +65,20 @@
     "bookId": 27,
     "chapterId": 11,
     "verseId": 10,
-    "text": "His sons will prepare for war and assemble a great host of forces, which will sweep on like an overwhelming flood; then he will return and press the attack as far as his enemy's fortress.",
+    "text": "His sons will prepare for war and assemble a great host of forces; one of them will surely advance and sweep on like an overwhelming flood, then return and press the attack as far as his enemy's fortress.",
     "versions": [
       {
         "text": "His sons will prepare for war and assemble a great host of forces, which will sweep on like an overwhelming flood and carry the battle as far as his fortress.",
         "type": "error",
         "severity": "minor",
         "explanation": "The Hebrew has two verbs at the end, וְיָשֹׁב (\"he will return / come back again\") and וְיִתְגָּרֶה (\"he will wage war\"). The idea of a renewed, second advance is lost in the present rendering."
+      },
+      {
+        "text": "His sons will prepare for war and assemble a great host of forces, which will sweep on like an overwhelming flood; then he will return and press the attack as far as his enemy's fortress.",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "The Hebrew וּבָא בוֹא is an emphatic singular (\"he will surely come/advance\"), naming a single advancing figure, not the assembled forces. Attaching the sweeping action to \"forces\" with a relative clause blurs the shift to the singular subject that governs the following verbs (\"he will return... press the attack\"). Restoring a singular subject makes the pronoun reference clear when read aloud and preserves the emphatic infinitive.",
+        "alternative": true
       }
     ]
   },
@@ -203,7 +210,10 @@
         "severity": "minor",
         "explanation": "The Hebrew contrasts both \"the former\" and \"the latter\" (כָרִאשֹׁנָה וְכָאַחֲרֹנָה). The present translation drops the second element entirely."
       }
-    ]
+    ],
+    "checked": {
+      "changed": "1:138"
+    }
   },
   {
     "bookId": 27,
@@ -265,7 +275,10 @@
         "severity": "minor",
         "explanation": "The phrase עַל־כַּנּוֹ (\"in its/his place\") is not clearly rendered. \"Instead\" is vague; \"in their place\" preserves the link with verse 37 (the gods he rejects) while keeping the sentence short for reading aloud."
       }
-    ]
+    ],
+    "checked": {
+      "changed": "1:153"
+    }
   },
   {
     "bookId": 27,
@@ -292,7 +305,10 @@
         "explanation": "The entire first half of the verse is missing: וּבְעֵת קֵץ (\"at the time of the end\"), יִתְנַגַּח עִמּוֹ מֶלֶךְ הַנֶּגֶב (\"the king of the South will clash with him\"), and וְיִשְׂתָּעֵר עָלָיו מֶלֶךְ הַצָּפוֹן בְּרֶכֶב וּבְפָרָשִׁים וּבָאֳנִיּוֹת רַבּוֹת (\"the king of the North will storm against him with chariots and horsemen and many ships\"). The stated reason for the earlier revision concerned only the placement of \"many\" (רַבּוֹת) with the ships rather than the lands; the loss of the two clauses about the kings of the South and North was unintended. The restored text keeps the corrected placement of \"many\" with the ships.",
         "alternative": false
       }
-    ]
+    ],
+    "checked": {
+      "changed": "2:219"
+    }
   },
   {
     "bookId": 27,
@@ -312,7 +328,10 @@
         "severity": "minor",
         "explanation": "\"Many\" is again added without warrant, and \"stretch out his hand\" preserves the Hebrew idiom while still reading naturally aloud."
       }
-    ]
+    ],
+    "checked": {
+      "changed": "1:86"
+    }
   },
   {
     "bookId": 27,

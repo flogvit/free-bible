@@ -157,13 +157,20 @@
     "bookId": 18,
     "chapterId": 12,
     "verseId": 24,
-    "text": "He strips the leaders of the peoples of the earth of their reason and sends them wandering through a trackless waste.",
+    "text": "He takes away the understanding of the leaders of the people of the earth, and sends them wandering in a trackless waste.",
     "versions": [
       {
         "text": "He strips the leaders of the earth of their reason and sends them wandering through a trackless waste.",
         "type": "error",
         "severity": "minor",
         "explanation": "The Hebrew reads רָאשֵׁי עַם־הָאָרֶץ, \"the heads of the people(s) of the earth.\" The word \"people\" is omitted in the current rendering; including it keeps the full sense of leadership over nations."
+      },
+      {
+        "text": "He strips the leaders of the peoples of the earth of their reason and sends them wandering through a trackless waste.",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "The split construction \"strips the leaders of the peoples of the earth of their reason\" stacks three \"of\" phrases before the object arrives, which is hard to follow when read aloud. Moving the object forward (\"takes away the understanding of...\") restores a natural rhythm. Also, Hebrew עַם is singular here, so \"the people of the earth\" is the closer rendering, and לֵב in this idiom denotes mind or understanding.",
+        "alternative": true
       }
     ]
   },

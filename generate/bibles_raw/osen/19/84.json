@@ -25,7 +25,10 @@
         "severity": "minor",
         "explanation": "The Hebrew noun מִשְׁכְּנוֹתֶיךָ is plural, and the predicate יְדִידוֹת agrees with it in the plural. The plural also reads well aloud and preserves the poetic fullness of the temple imagery."
       }
-    ]
+    ],
+    "checked": {
+      "changed": "1:51"
+    }
   },
   {
     "bookId": 19,
@@ -49,13 +52,20 @@
     "bookId": 19,
     "chapterId": 84,
     "verseId": 6,
-    "text": "Blessed are those whose strength is in you, in whose hearts are the pilgrim highways.",
+    "text": "Blessed are those whose strength is in you, in whose hearts are the pilgrim highways.<note>Hebrew reads simply \"highways in their hearts\"; the image is of roads leading up to the sanctuary, hence the sense of a pilgrim's journey.</note>",
     "versions": [
       {
         "text": "Blessed are those whose strength is in you, in whose hearts are the highways to Zion.",
         "type": "error",
         "severity": "minor",
         "explanation": "\"to Zion\" is not in the Hebrew, which reads simply \"highways in their hearts.\" If the interpretive expansion is kept, it should be marked; \"pilgrim highways\" conveys the sense without adding a place name absent from the text."
+      },
+      {
+        "text": "Blessed are those whose strength is in you, in whose hearts are the pilgrim highways.",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "The wording is a fair rendering, but the qualifier \"pilgrim\" is interpretive and not present in the Hebrew. A short footnote lets the hearer know what the bare Hebrew says and why the image is understood as a journey to the sanctuary, without altering the smooth oral reading.",
+        "alternative": false
       }
     ]
   },

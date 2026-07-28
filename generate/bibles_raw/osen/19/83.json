@@ -59,13 +59,20 @@
     "bookId": 19,
     "chapterId": 83,
     "verseId": 9,
-    "text": "Even Assyria has joined them; they have become an arm of strength for the sons of Lot. Selah",
+    "text": "Even Assyria has joined them; they are the strong arm of Lot's descendants. Selah",
     "versions": [
       {
         "text": "Even Assyria has joined them, lending its strength to the sons of Lot. Selah",
         "type": "error",
         "severity": "minor",
         "explanation": "The Hebrew verb הָיוּ is plural, referring to the whole coalition, not to Assyria alone. The current rendering makes Assyria the sole subject and softens the vivid image of the 'arm' (strength) supporting Lot's descendants."
+      },
+      {
+        "text": "Even Assyria has joined them; they have become an arm of strength for the sons of Lot. Selah",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "The Hebrew has simply זְרוֹעַ ('arm'), an idiom that already carries the sense of might; 'an arm of strength' adds a noun not present and reads heavily aloud. 'The strong arm of Lot's descendants' keeps the plural subject and the vivid image while flowing better in oral reading.",
+        "alternative": true
       }
     ]
   },

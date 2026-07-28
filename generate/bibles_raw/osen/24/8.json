@@ -49,13 +49,20 @@
     "bookId": 24,
     "chapterId": 8,
     "verseId": 6,
-    "text": "I have listened and heard: they do not speak what is right. No one repents of his wickedness, saying, \"What have I done?\" Each keeps to his own course like a horse charging into battle.",
+    "text": "I have listened and heard: they do not speak what is right. No one repents of his wickedness, saying, \"What have I done?\" Every one of them turns to his own course, like a horse plunging into battle.",
     "versions": [
       {
         "text": "I have listened closely, but they do not speak the truth. No one repents of his wickedness, saying, \"What have I done?\" Each keeps to his own course like a horse charging into battle.",
         "type": "error",
         "severity": "minor",
         "explanation": "The Hebrew has two verbs, \"I gave heed and I heard,\" which the current rendering collapses into one. Also, לוֹא־כֵן means \"not rightly / not what is right\" rather than specifically \"not the truth\" (a different word, שֶׁקֶר, is used for falsehood elsewhere in the chapter, e.g., vv. 8, 10)."
+      },
+      {
+        "text": "I have listened and heard: they do not speak what is right. No one repents of his wickedness, saying, \"What have I done?\" Each keeps to his own course like a horse charging into battle.",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "The Hebrew verb שָׁב (\"turns\") echoes the key root שוב that runs through vv. 4-6 (\"turned away,\" \"refuse to return\"); \"keeps to\" obscures this deliberate wordplay. \"Turns to his own course\" preserves the link, and the added comma before the simile helps the oral rhythm.",
+        "alternative": true
       }
     ]
   },

@@ -15,15 +15,25 @@
     "bookId": 47,
     "chapterId": 11,
     "verseId": 3,
-    "text": "But I am afraid that, just as the serpent deceived Eve by his cunning, your thoughts may be corrupted and drawn away from the sincere and pure devotion that belongs to Christ.",
+    "text": "But I am afraid that, just as the serpent deceived Eve by his cunning, your thoughts may be corrupted and drawn away from the sincerity and purity of your devotion to Christ.",
     "versions": [
       {
         "text": "But I am afraid that, just as the serpent deceived Eve by his cunning, your minds may be led astray from a sincere and pure devotion to Christ.",
         "type": "error",
         "severity": "minor",
         "explanation": "The verb φθαρῇ means \"be corrupted/ruined,\" which is stronger than \"led astray.\" Retaining the idea of corruption preserves the force of Paul's warning while keeping the sentence readable aloud."
+      },
+      {
+        "text": "But I am afraid that, just as the serpent deceived Eve by his cunning, your thoughts may be corrupted and drawn away from the sincere and pure devotion that belongs to Christ.",
+        "type": "error",
+        "severity": "minor",
+        "explanation": "τῆς εἰς τὸν Χριστόν marks the direction of the believers' sincerity and purity — devotion directed toward Christ — not something belonging to Christ. The phrase \"devotion that belongs to Christ\" reverses the relationship; the corrected wording keeps the intentional \"corrupted\" rendering while restoring the sense of the Greek preposition.",
+        "alternative": true
       }
-    ]
+    ],
+    "checked": {
+      "changed": "2:174"
+    }
   },
   {
     "bookId": 47,
@@ -79,7 +89,10 @@
         "severity": "minor",
         "explanation": "The Greek is simply \"God knows.\" The added \"I do\" is a reasonable clarification, but as it stands the sentence reads as if God's knowledge is the object of the previous clause. Punctuating it as its own emphatic statement makes the sense clearer for a listener."
       }
-    ]
+    ],
+    "checked": {
+      "changed": "1:52"
+    }
   },
   {
     "bookId": 47,
@@ -218,7 +231,10 @@
         "explanation": "The first of Paul's two paired rhetorical questions, τίς ἀσθενεῖ, καὶ οὐκ ἀσθενῶ; (\"Who is weak, and I am not weak?\"), has been dropped from the verse. Restoring it recovers the missing clause and the deliberate parallelism, while keeping the intentionally chosen \"inwardly burn\" for πυροῦμαι.",
         "alternative": false
       }
-    ]
+    ],
+    "checked": {
+      "changed": "2:83"
+    }
   },
   {
     "bookId": 47,

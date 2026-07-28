@@ -51,13 +51,20 @@
     "bookId": 34,
     "chapterId": 3,
     "verseId": 9,
-    "text": "Cush was her strength, and Egypt without limit; Put and the Libyans were your helpers.",
+    "text": "Cush was her strength, and Egypt beyond measure; Put and the Libyans were your helpers.",
     "versions": [
       {
         "text": "Cush was her strength, and Egypt without limit; Put and the Libyans were among her helpers.",
         "type": "error",
         "severity": "minor",
         "explanation": "The Hebrew text reads בְּעֶזְרָתֵךְ, \"your helpers\" (second person), a deliberate shift in address within the verse. If \"her\" is retained on the basis of other textual witnesses, a footnote should note the Hebrew reading."
+      },
+      {
+        "text": "Cush was her strength, and Egypt without limit; Put and the Libyans were your helpers.",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "The clause וְאֵין קֵצֶה describes strength that has no end. \"Egypt without limit\" reads as if Egypt itself were limitless and is slightly opaque when read aloud; \"beyond measure\" conveys the idea of boundless strength more naturally while keeping the compact rhythm of the line and the second-person address retained in the previous revision.",
+        "alternative": true
       }
     ]
   },
@@ -99,7 +106,10 @@
         "severity": "major",
         "explanation": "The Hebrew suffix in בְּרִיחָיִךְ is second person feminine singular (\"your bars\"), addressing Nineveh, not \"their bars.\" The current wording wrongly makes the enemies the owners of the gate bars and breaks the consistent second-person address of the verse."
       }
-    ]
+    ],
+    "checked": {
+      "changed": "1:134"
+    }
   },
   {
     "bookId": 34,

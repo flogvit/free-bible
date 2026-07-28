@@ -51,7 +51,8 @@
       }
     ],
     "checked": {
-      "length": "2:83"
+      "length": "2:83",
+      "changed": "2:83"
     }
   },
   {
@@ -64,13 +65,20 @@
     "bookId": 23,
     "chapterId": 21,
     "verseId": 7,
-    "text": "When he sees a chariot with a pair of horsemen, riders on donkeys, riders on camels, let him listen closely, very closely.\"",
+    "text": "When he sees a chariot, a pair of horsemen, riders on donkeys, riders on camels, let him listen closely, very closely.\"",
     "versions": [
       {
         "text": "When he sees riders, horsemen in pairs, riders on donkeys, riders on camels, let him listen closely, very closely.\"",
         "type": "error",
         "severity": "minor",
         "explanation": "רֶכֶב here denotes a chariot/mounted troop; rendering it 'riders' and then repeating 'riders on donkeys' loses the parallel structure of רֶכֶב חֲמוֹר / רֶכֶב גָּמָל. Suggest 'chariot' for the first item."
+      },
+      {
+        "text": "When he sees a chariot with a pair of horsemen, riders on donkeys, riders on camels, let him listen closely, very closely.\"",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "The Hebrew presents a list of four items in apposition (chariot / pair of horsemen / donkey-riders / camel-riders); the added connective \"with\" fuses the first two into a single unit, which is not in the text and breaks the parallel four-beat rhythm. It also matches the report in the next section, where the same phrase is rendered as two items (\"a chariot of men, a pair of horsemen\"), preserving the deliberate link between instruction and report.",
+        "alternative": true
       }
     ]
   },
@@ -86,7 +94,10 @@
         "severity": "major",
         "explanation": "The word אַרְיֵה ('a lion') is omitted; the Hebrew says he cried out like a lion (i.e., with a roar). The current rendering drops content present in the text."
       }
-    ]
+    ],
+    "checked": {
+      "changed": "1:140"
+    }
   },
   {
     "bookId": 23,
@@ -180,6 +191,9 @@
         "severity": "minor",
         "explanation": "בְנֵי־קֵדָר ('the sons of Kedar') is flattened to 'Kedar'; also מִסְפַּר־קֶשֶׁת conveys 'the number of the bows,' so 'remnant of the bowmen' is closer than 'survivors of the archers.'"
       }
-    ]
+    ],
+    "checked": {
+      "changed": "1:124"
+    }
   }
 ]

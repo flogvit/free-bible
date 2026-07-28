@@ -15,13 +15,20 @@
     "bookId": 7,
     "chapterId": 14,
     "verseId": 3,
-    "text": "But his father and mother said to him, \"Is there no woman among the daughters of your own kin or among all my people, that you must go and take a wife from the uncircumcised Philistines?\" Samson answered his father, \"Get her for me, for she is the one who pleases me.\"",
+    "text": "But his father and mother said to him, \"Is there no woman among the daughters of your own kin or among all my people, that you must go and take a wife from the uncircumcised Philistines?\" Samson answered his father, \"Get her for me, for she is the right one in my eyes.\"",
     "versions": [
       {
         "text": "But his father and mother said to him, \"Is there no woman among the daughters of your own relatives or among all our people, that you must go and take a wife from the uncircumcised Philistines?\" Samson answered his father, \"Get her for me, for she is the one who pleases me.\"",
         "type": "error",
         "severity": "minor",
         "explanation": "The Hebrew reads \"my people\" (singular possessive), not \"our people.\" Keeping the singular preserves the wording of the text; \"kin\" also renders אַחֶיךָ (\"your brothers\") a little more naturally than \"relatives\" for oral reading."
+      },
+      {
+        "text": "But his father and mother said to him, \"Is there no woman among the daughters of your own kin or among all my people, that you must go and take a wife from the uncircumcised Philistines?\" Samson answered his father, \"Get her for me, for she is the one who pleases me.\"",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "The Hebrew idiom יָשְׁרָה בְעֵינָי (\"she is right in my eyes\") carries the sense of Samson's own judgment overriding his parents', which is thematically important in the Samson narrative. \"The one who pleases me\" conveys the general sense but loses the \"in my eyes\" imagery that recurs in Judges. The suggested wording keeps the idiom while reading smoothly aloud.",
+        "alternative": true
       }
     ]
   },
@@ -103,7 +110,10 @@
         "severity": "minor",
         "explanation": "The final הֲלֹא (\"is it not so?\") of the Hebrew is omitted. Adding it renders the full clause and sharpens the taunting tone."
       }
-    ]
+    ],
+    "checked": {
+      "changed": "1:208"
+    }
   },
   {
     "bookId": 7,

@@ -85,15 +85,25 @@
     "bookId": 26,
     "chapterId": 47,
     "verseId": 12,
-    "text": "Along the river, on both banks, all kinds of fruit trees will grow. Their leaves will not wither, and their fruit will never fail. Every month they will bear fresh fruit, because the water for them flows from the sanctuary. Their fruit will be for food and their leaves for healing.\"",
+    "text": "Along the river, on both banks, all kinds of fruit trees will grow. Their leaves will not wither, and their fruit will never fail. Every month they will bear fresh fruit, because its waters flow from the sanctuary. Their fruit will be for food and their leaves for healing.\"",
     "versions": [
       {
         "text": "Along the river, on both banks, every kind of fruit tree will grow. Their leaves will not wither, and their fruit will never fail. Every month they will bear fresh fruit, because the water for them flows from the sanctuary. Their fruit will be for food and their leaves for healing.\"",
         "type": "grammar",
         "severity": "minor",
         "explanation": "Number disagreement: the singular subject \"every kind of fruit tree\" is followed by the plural pronoun \"their\" throughout the verse. Making the subject plural (\"all kinds of fruit trees\") resolves the mismatch without changing any other wording."
+      },
+      {
+        "text": "Along the river, on both banks, all kinds of fruit trees will grow. Their leaves will not wither, and their fruit will never fail. Every month they will bear fresh fruit, because the water for them flows from the sanctuary. Their fruit will be for food and their leaves for healing.\"",
+        "type": "error",
+        "severity": "minor",
+        "explanation": "The Hebrew suffix in מֵימָיו is masculine singular and refers back to the river (הַנַּחַל), not to the trees: \"its waters flow out from the sanctuary.\" Rendering it \"the water for them\" shifts the referent to the plural trees and introduces a benefit relationship not present in the Hebrew. \"Its waters\" also keeps the sentence rhythm tight for reading aloud.",
+        "alternative": false
       }
-    ]
+    ],
+    "checked": {
+      "changed": "2:274"
+    }
   },
   {
     "bookId": 26,
@@ -135,13 +145,20 @@
     "bookId": 26,
     "chapterId": 47,
     "verseId": 19,
-    "text": "On the south side it runs from Tamar to the waters of Meribath-kadesh, then along the Wadi of Egypt to the Great Sea. This is the south side, toward the Negev.",
+    "text": "On the south side it runs from Tamar to the waters of Meribath-kadesh, then along the wadi to the Great Sea. This is the south side, toward the Negev.",
     "versions": [
       {
         "text": "On the south side it runs from Tamar to the waters of Meribath-kadesh, then along the Brook of Egypt to the Great Sea. This is the south side, toward the Negev.",
         "type": "error",
         "severity": "minor",
         "explanation": "The Hebrew has only \"the wadi/brook\" with no place name; \"of Egypt\" is a supplied identification. Using \"Wadi\" (the standard term for this seasonal watercourse) and, if desired, a footnote noting that the Hebrew reads simply \"the wadi\" would be more transparent to the reader."
+      },
+      {
+        "text": "On the south side it runs from Tamar to the waters of Meribath-kadesh, then along the Wadi of Egypt to the Great Sea. This is the south side, toward the Negev.",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "The stated reason for the earlier revision was that the Hebrew reads simply \"the wadi\" and that \"of Egypt\" is a supplied identification, yet the current text still carries the added place name. Dropping \"of Egypt\" (optionally with a footnote noting the traditional identification with the border wadi at Egypt) makes the line transparent to the source while reading just as smoothly.",
+        "alternative": true
       }
     ]
   },

@@ -97,15 +97,25 @@
     "bookId": 12,
     "chapterId": 19,
     "verseId": 14,
-    "text": "Hezekiah took the letters from the hand of the messengers and read them. Then he went up to the house of the LORD and spread them out before the LORD.",
+    "text": "Hezekiah took the letters from the hand of the messengers and read them. Then he went up to the house of the LORD and spread it out before the LORD.",
     "versions": [
       {
         "text": "Hezekiah took the letter from the hand of the messengers and read it. Then he went up to the house of the LORD and spread it out before the LORD.",
         "type": "error",
         "severity": "minor",
         "explanation": "The Hebrew nouns and verb suffixes are plural (\"the letters ... read them\"); the singular obscures the plural of the original."
+      },
+      {
+        "text": "Hezekiah took the letters from the hand of the messengers and read them. Then he went up to the house of the LORD and spread them out before the LORD.",
+        "type": "error",
+        "severity": "minor",
+        "explanation": "While the earlier nouns and verb suffix are plural (\"the letters ... read them\"), the final verb has a third masculine singular suffix (\"spread it out\"), treating the correspondence as a single document laid before the LORD. Keeping the plural in the first clause but the singular here reflects the Hebrew exactly.",
+        "alternative": true
       }
-    ]
+    ],
+    "checked": {
+      "changed": "2:148"
+    }
   },
   {
     "bookId": 12,
@@ -191,13 +201,20 @@
     "bookId": 12,
     "chapterId": 19,
     "verseId": 27,
-    "text": "But I know your sitting down, your going out and your coming in, and how you rage against me.",
+    "text": "But I know when you sit and when you go out and when you come in, and how you rage against me.",
     "versions": [
       {
         "text": "But I know where you dwell, when you come and when you go, and how you rage against me.",
         "type": "error",
         "severity": "minor",
         "explanation": "The Hebrew sequence is \"your sitting, your going out, your coming in\"; the current rendering reverses the order of going out and coming in."
+      },
+      {
+        "text": "But I know your sitting down, your going out and your coming in, and how you rage against me.",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "The chain of verbal nouns (\"your sitting down, your going out, your coming in\") is stiff for reading aloud. Rendering them as finite clauses keeps the Hebrew order (sit, go out, come in) while giving a natural spoken rhythm.",
+        "alternative": true
       }
     ]
   },
@@ -219,7 +236,10 @@
         "severity": "minor",
         "explanation": "The name \"Hezekiah\" is not in the Hebrew text; the addressee is already clear from the context."
       }
-    ]
+    ],
+    "checked": {
+      "changed": "1:197"
+    }
   },
   {
     "bookId": 12,

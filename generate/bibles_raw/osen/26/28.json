@@ -27,13 +27,20 @@
     "bookId": 26,
     "chapterId": 28,
     "verseId": 5,
-    "text": "By your great wisdom in trade you increased your wealth, and your heart grew proud because of your wealth.",
+    "text": "By your great wisdom in your trading you increased your wealth, and your heart grew proud because of your wealth.",
     "versions": [
       {
         "text": "By your great skill in trading you increased your wealth, and your heart grew proud because of it.",
         "type": "error",
         "severity": "minor",
         "explanation": "The Hebrew repeats חָכְמָה (\"wisdom\"), the key word of the whole oracle (vv. 3-4, 7, 12, 17); \"skill\" obscures that link. Also בְּחֵילֶךָ names \"your wealth\" explicitly, and the repetition is deliberate and reads well aloud."
+      },
+      {
+        "text": "By your great wisdom in trade you increased your wealth, and your heart grew proud because of your wealth.",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "רְכֻלָּתְךָ carries the second-person suffix (\"your trading\"), matching the personalized indictment running through the oracle (\"your wisdom,\" \"your wealth,\" \"your heart\"). \"In trade\" generalizes and loses that possessive thread; restoring it also strengthens the cadence of the four-fold \"your\" when read aloud.",
+        "alternative": true
       }
     ]
   },
@@ -67,7 +74,10 @@
         "severity": "minor",
         "explanation": "The Hebrew clause is a present-tense nominal statement (\"you are a man and not a god\"), echoing verse 2 word for word; the future \"You will be\" weakens the deliberate repetition. The particle וְ here is contrastive (\"yet\")."
       }
-    ]
+    ],
+    "checked": {
+      "changed": "1:141"
+    }
   },
   {
     "bookId": 26,
@@ -135,7 +145,10 @@
         "severity": "minor",
         "explanation": "The Hebrew subject is \"all who knew you among the peoples\" (individuals among the peoples), not the nations themselves; the current wording shifts the subject and drops the prepositional phrase."
       }
-    ]
+    ],
+    "checked": {
+      "changed": "1:116"
+    }
   },
   {
     "bookId": 26,

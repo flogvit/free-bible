@@ -267,13 +267,20 @@
     "bookId": 24,
     "chapterId": 49,
     "verseId": 37,
-    "text": "I will terrify Elam before their enemies, before those who seek their life. I will bring disaster upon them, my fierce anger, declares the LORD. I will send the sword after them until I have made an end of them.",
+    "text": "I will terrify Elam before their enemies, before those who seek their life. I will bring disaster upon them, even the heat of my anger, declares the LORD. I will send the sword after them until I have made an end of them.",
     "versions": [
       {
         "text": "I will shatter Elam before their enemies, before those who seek their life. I will bring disaster upon them, my fierce anger, declares the LORD. I will send the sword after them until I have made an end of them.",
         "type": "error",
         "severity": "minor",
         "explanation": "The verb הַחְתַּתִּי means to dismay, terrify, or break in spirit, not to shatter physically. 'Shatter' also duplicates the imagery of 'break' in verse 35 and obscures the psychological sense of the Hebrew."
+      },
+      {
+        "text": "I will terrify Elam before their enemies, before those who seek their life. I will bring disaster upon them, my fierce anger, declares the LORD. I will send the sword after them until I have made an end of them.",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "The Hebrew places רָעָה in apposition to אֶת־חֲרוֹן אַפִּי; an explicit 'even' makes the appositional relationship audible when read aloud, since the bare comma can sound like a list of two separate things. 'The heat of my anger' also renders חֲרוֹן אַף a little more concretely.",
+        "alternative": true
       }
     ]
   },
@@ -289,7 +296,10 @@
         "severity": "minor",
         "explanation": "The Hebrew has מִשָּׁם ('from there'), which is untranslated, and the nouns 'king' and 'officials' carry no possessive suffix; the indefinite form stresses the abolition of the institution itself rather than particular individuals."
       }
-    ]
+    ],
+    "checked": {
+      "changed": "1:91"
+    }
   },
   {
     "bookId": 24,

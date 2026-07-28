@@ -86,7 +86,10 @@
         "explanation": "Two full clauses of the Hebrew were dropped: אֲדַבְּרָה בְּצַר רוּחִי (\"I will speak in the distress of my spirit\") and אָשִׂיחָה בְּמַר נַפְשִׁי (\"I will complain in the bitterness of my soul\"). The emphatic \"I, for my part\" from the earlier revision is retained, and the missing parallel lines are restored.",
         "alternative": false
       }
-    ]
+    ],
+    "checked": {
+      "changed": "2:134"
+    }
   },
   {
     "bookId": 18,
@@ -140,13 +143,20 @@
     "bookId": 18,
     "chapterId": 7,
     "verseId": 20,
-    "text": "If I have sinned, what have I done to you, you watcher of mankind? Why have you made me your target, so that I have become a burden to myself?",
+    "text": "If I have sinned, what can I do to you, you watcher of mankind? Why have you made me your target, so that I have become a burden to myself?",
     "versions": [
       {
         "text": "If I have sinned, what have I done to you, you watcher of mankind? Why have you made me your target? Have I become a burden to you?",
         "type": "error",
         "severity": "major",
         "explanation": "The Hebrew text reads עָלַי (\"to myself\"), not \"to you.\" The rendering \"a burden to you\" follows an ancient scribal tradition rather than the received text, and turning the clause into a separate question obscures its connection to the preceding line. A footnote could note the ancient tradition that read \"a burden to you.\""
+      },
+      {
+        "text": "If I have sinned, what have I done to you, you watcher of mankind? Why have you made me your target, so that I have become a burden to myself?",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "אֶפְעַל is an imperfect verb, so the sense is present/future — \"what do I do to you?\" or \"what can I do to you?\" — i.e. how can my sin possibly harm you? The past-tense \"what have I done to you\" shifts the argument from the powerlessness of Job's sin to affect God toward a simple protest of innocence. A footnote could still be added noting that an ancient scribal tradition read \"a burden to you\" at the end of the verse.",
+        "alternative": true
       }
     ]
   },

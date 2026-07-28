@@ -71,7 +71,10 @@
         "severity": "minor",
         "explanation": "The Hebrew begins with a singular subject and verb (\"his son came and told him\") before shifting to the plural (\"they told them to their father\"). Rendering the first clause as plural flattens the movement of the Hebrew; keeping the singular first and then the plural preserves both without losing readability."
       }
-    ]
+    ],
+    "checked": {
+      "changed": "1:198"
+    }
   },
   {
     "bookId": 11,
@@ -219,7 +222,7 @@
     "bookId": 11,
     "chapterId": 13,
     "verseId": 33,
-    "text": "Even after this, Jeroboam did not turn from his evil way, but went on appointing priests for the high places from among the common people. Anyone who wanted it he ordained, and so became a priest of the high places.",
+    "text": "Even after this, Jeroboam did not turn from his evil way, but went on appointing priests for the high places from among the common people. Anyone who wanted it he ordained, and that man became one of the priests of the high places.",
     "versions": [
       {
         "text": "Even after this, Jeroboam did not turn from his evil way, but went on appointing priests for the high places from among all sorts of people. Anyone who wanted to be a priest he consecrated for the high places.",
@@ -233,8 +236,18 @@
         "severity": "critical",
         "explanation": "The opening clause of the verse has been lost: אַחַר הַדָּבָר הַזֶּה לֹא־שָׁב יָרָבְעָם מִדַּרְכּוֹ הָרָעָה ('After this thing Jeroboam did not turn from his evil way'). Without it the verse begins with a dangling 'but' and has no subject, so the reader cannot tell who is appointing the priests. The wording is restored from the earlier revision, keeping the intentional improvements ('from among the common people' and the separate final clause).",
         "alternative": false
+      },
+      {
+        "text": "Even after this, Jeroboam did not turn from his evil way, but went on appointing priests for the high places from among the common people. Anyone who wanted it he ordained, and so became a priest of the high places.",
+        "type": "grammar",
+        "severity": "minor",
+        "explanation": "In the current wording the clause 'and so became a priest of the high places' has no stated subject, so on a first hearing it can sound as though Jeroboam himself became a priest. Naming the subject ('that man') removes the ambiguity, and the plural 'one of the priests' matches כֹּהֲנֵי בָמוֹת while keeping the sentence rhythm.",
+        "alternative": true
       }
-    ]
+    ],
+    "checked": {
+      "changed": "3:231"
+    }
   },
   {
     "bookId": 11,
@@ -248,6 +261,9 @@
         "severity": "minor",
         "explanation": "The opening 'by this thing' (בַּדָּבָר הַזֶּה) is not rendered, and 'the sin of the house of Jeroboam' shifts the sense: the Hebrew says this act became sin for his house. The two verbs 'cut off and destroy' are also better preserved than the paraphrase 'downfall and destruction,' and the revised wording flows more naturally when read aloud."
       }
-    ]
+    ],
+    "checked": {
+      "changed": "1:115"
+    }
   }
 ]

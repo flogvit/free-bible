@@ -77,7 +77,10 @@
         "severity": "minor",
         "explanation": "The Hebrew has two elements: the infinitive absolute שָׁמוֹר (\"observe/guard\") and the purpose clause לְקַדְּשׁוֹ (\"to make it holy\"). The current rendering collapses them into one verb, losing the distinctive emphasis on observing the day, which is the characteristic wording of this version of the commandment."
       }
-    ]
+    ],
+    "checked": {
+      "changed": "1:81"
+    }
   },
   {
     "bookId": 5,
@@ -207,13 +210,20 @@
     "bookId": 5,
     "chapterId": 5,
     "verseId": 31,
-    "text": "But you stand here with me, and I will tell you the whole commandment — the statutes and the judgments — that you are to teach them, so that they may keep them in the land I am giving them to possess.",
+    "text": "But as for you, stand here with me, and I will tell you the whole commandment — the statutes and the judgments — that you are to teach them, so that they may keep them in the land I am giving them to possess.",
     "versions": [
       {
         "text": "But you stand here with me, and I will tell you all the commandments, the statutes, and the judgments you are to teach them, so that they may keep them in the land I am giving them to possess.",
         "type": "error",
         "severity": "minor",
         "explanation": "הַמִּצְוָה is singular (\"the whole commandment\"), functioning as a summary term that the statutes and judgments unfold; rendering it as a plural list obscures this structure that recurs throughout the book."
+      },
+      {
+        "text": "But you stand here with me, and I will tell you the whole commandment — the statutes and the judgments — that you are to teach them, so that they may keep them in the land I am giving them to possess.",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "Hebrew וְאַתָּה ... עֲמֹד places emphatic focus on the pronoun followed by an imperative. \"But you stand here with me\" can be misheard as a statement of fact rather than a command; \"But as for you, stand here with me\" preserves the emphatic contrast with the people who were sent back to their tents (v. 30) and reads unambiguously as a command aloud.",
+        "alternative": true
       }
     ]
   },

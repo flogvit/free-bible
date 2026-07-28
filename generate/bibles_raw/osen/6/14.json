@@ -85,13 +85,20 @@
     "bookId": 6,
     "chapterId": 14,
     "verseId": 12,
-    "text": "So give me this hill country the LORD spoke of that day. You heard then that the Anakites are there, with large fortified cities. It may be that the LORD will be with me, and I will drive them out, just as the LORD said.\"",
+    "text": "So give me this hill country the LORD spoke of that day, for you yourself heard then that the Anakites are there, with large fortified cities. It may be that the LORD will be with me, and I will drive them out, just as the LORD said.\"",
     "versions": [
       {
         "text": "So give me this hill country the LORD spoke of that day. You heard then that the Anakites are there, with large fortified cities. But if the LORD is with me, I will drive them out, just as the LORD said.\"",
         "type": "error",
         "severity": "major",
         "explanation": "אוּלַי expresses hopeful expectation (\"perhaps / it may be that\"), not a condition. \"If\" turns Caleb's confident hope into a conditional statement and slightly weakens the sense of trust in the LORD's promise."
+      },
+      {
+        "text": "So give me this hill country the LORD spoke of that day. You heard then that the Anakites are there, with large fortified cities. It may be that the LORD will be with me, and I will drive them out, just as the LORD said.\"",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "The Hebrew has the causal particle כִּי plus the emphatic independent pronoun אַתָּה (\"for you yourself heard\"). Caleb is grounding his request in Joshua's own knowledge, and joining the clauses with \"for\" also reads more smoothly aloud than two flat sentences. The current rendering drops both the connective and the emphasis.",
+        "alternative": true
       }
     ]
   },

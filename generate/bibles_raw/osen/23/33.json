@@ -17,7 +17,10 @@
         "severity": "minor",
         "explanation": "The Hebrew reads \"their arm\" (זְרֹעָם), shifting from second to third person; \"our strength\" silently harmonizes the pronoun. Either restore the Hebrew reading or retain the smoother reading with a footnote such as \"Hebrew: their arm.\""
       }
-    ]
+    ],
+    "checked": {
+      "changed": "1:104"
+    }
   },
   {
     "bookId": 23,
@@ -31,7 +34,10 @@
         "severity": "minor",
         "explanation": "הָמוֹן means \"tumult, uproar, roar of a multitude\"; \"your voice\" is not in the Hebrew of the first clause (the second-person suffix appears only in the second clause)."
       }
-    ]
+    ],
+    "checked": {
+      "changed": "1:83"
+    }
   },
   {
     "bookId": 23,
@@ -69,7 +75,7 @@
     "bookId": 23,
     "chapterId": 33,
     "verseId": 8,
-    "text": "The highways lie deserted; no traveler is on the road. The treaty is broken, its witnesses despised, and no one is held in regard.",
+    "text": "The highways lie deserted; no traveler is on the road. The treaty is broken, the cities are despised, and no one is held in regard.",
     "versions": [
       {
         "text": "The highways lie deserted; no traveler is on the road. The treaty is broken, its witnesses despised, and no one is regarded.",
@@ -83,8 +89,18 @@
         "severity": "critical",
         "explanation": "The first half of the Hebrew verse (נָשַׁמּוּ מְסִלּוֹת שָׁבַת עֹבֵר אֹרַח, \"the highways lie desolate, the wayfarer has ceased\") was dropped in the last revision. It must be restored; the second clause about the broken treaty and the improved \"held in regard\" are retained as intentionally revised.",
         "alternative": false
+      },
+      {
+        "text": "The highways lie deserted; no traveler is on the road. The treaty is broken, its witnesses despised, and no one is held in regard.",
+        "type": "error",
+        "severity": "minor",
+        "explanation": "The traditional Hebrew text reads עָרִים, \"cities\"; \"witnesses\" follows a variant reading attested in an ancient scroll. The main text should follow the received Hebrew, with a note such as \"Or: witnesses, following an ancient scroll\" if the alternative is retained. This was flagged in an earlier review round but never carried out.",
+        "alternative": true
       }
-    ]
+    ],
+    "checked": {
+      "changed": "3:131"
+    }
   },
   {
     "bookId": 23,
@@ -170,7 +186,10 @@
         "severity": "minor",
         "explanation": "In the Hebrew, אַדִּיר describes the LORD (\"the majestic LORD\"), and what he is \"for us\" is the place of broad rivers; the current dash makes the rivers an awkward appositive to \"our Mighty One.\""
       }
-    ]
+    ],
+    "checked": {
+      "changed": "1:153"
+    }
   },
   {
     "bookId": 23,

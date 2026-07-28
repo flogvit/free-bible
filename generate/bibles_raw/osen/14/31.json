@@ -9,13 +9,20 @@
     "bookId": 14,
     "chapterId": 31,
     "verseId": 2,
-    "text": "Hezekiah assigned the priests and Levites to their divisions, each according to his duty, whether priest or Levite, for burnt offerings and fellowship offerings, to minister, to give thanks, and to sing praises at the gates of the LORD's camp.",
+    "text": "Hezekiah assigned the priests and Levites to their divisions, each according to his duty, whether priest or Levite, for burnt offerings and fellowship offerings, to minister, to give thanks, and to sing praises at the gates of the LORD's camps.",
     "versions": [
       {
         "text": "Hezekiah assigned the priests and Levites to their divisions, each according to his duty, whether priest or Levite, for burnt offerings and fellowship offerings, to minister, to give thanks, and to sing praises at the gates of the LORD's dwelling.",
         "type": "error",
         "severity": "minor",
         "explanation": "The Hebrew reads \"the camps of the LORD\" (maḥanot), a term echoing the wilderness encampment around the tabernacle. \"Dwelling\" loses this image and blurs the distinction from the temple building itself; \"camp\" is closer to the text while still reading naturally."
+      },
+      {
+        "text": "Hezekiah assigned the priests and Levites to their divisions, each according to his duty, whether priest or Levite, for burnt offerings and fellowship offerings, to minister, to give thanks, and to sing praises at the gates of the LORD's camp.",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "The Hebrew noun maḥanot is plural (\"camps\"). Rendering it as a plural preserves the picture of the several encampments of Israel surrounding the sanctuary, which was the stated reason for moving away from \"dwelling\" in the earlier revision. The singular is a defensible collective rendering but slightly flattens the image.",
+        "alternative": true
       }
     ]
   },
@@ -111,7 +118,10 @@
         "severity": "minor",
         "explanation": "The Hebrew says simply \"to their brothers,\" which in context includes both priests and Levites (see verse 19); limiting it to \"fellow priests\" narrows the sense beyond what the text supports."
       }
-    ]
+    ],
+    "checked": {
+      "changed": "1:212"
+    }
   },
   {
     "bookId": 14,

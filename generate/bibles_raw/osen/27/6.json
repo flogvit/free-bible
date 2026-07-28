@@ -109,13 +109,20 @@
     "bookId": 27,
     "chapterId": 6,
     "verseId": 16,
-    "text": "Then these men came as a body to the king and said to him, \"Know, O king, that by the law of the Medes and Persians no ban or decree the king issues can be changed.\"",
+    "text": "Then these men crowded in on the king and said to him, \"Know, O king, that by the law of the Medes and Persians no ban or decree the king issues can be changed.\"",
     "versions": [
       {
         "text": "Then these men came as a body to the king and said to him, \"Remember, O king, that by the law of the Medes and Persians no ban or decree the king issues can be changed.\"",
         "type": "error",
         "severity": "minor",
         "explanation": "The verb דַּע means 'know' (be aware), not 'remember'. The accusers are pressing a legal fact on the king rather than recalling something to his memory."
+      },
+      {
+        "text": "Then these men came as a body to the king and said to him, \"Know, O king, that by the law of the Medes and Persians no ban or decree the king issues can be changed.\"",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "The Aramaic הַרְגִּשׁוּ עַל suggests a noisy, pressing throng converging on the king; \"came as a body\" is a defensible rendering but sounds stiff and dated when read aloud. \"Crowded in on\" carries the sense of pressure and reads more naturally in oral delivery.",
+        "alternative": true
       }
     ]
   },

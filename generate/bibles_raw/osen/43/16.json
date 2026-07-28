@@ -23,7 +23,10 @@
         "severity": "minor",
         "explanation": "The comma before 'or me' interrupts the flow unnecessarily and does not reflect the single negated pair in the Greek (οὐδὲ)."
       }
-    ]
+    ],
+    "checked": {
+      "changed": "1:63"
+    }
   },
   {
     "bookId": 43,
@@ -109,7 +112,10 @@
         "severity": "minor",
         "explanation": "Quotation marks are used inconsistently: the speech opened in verse 1 is never closed, yet verse 16 opens and closes a fresh quotation within the same continuous discourse. Removing the marks here keeps the punctuation consistent for reading aloud."
       }
-    ]
+    ],
+    "checked": {
+      "changed": "1:93"
+    }
   },
   {
     "bookId": 43,
@@ -169,13 +175,20 @@
     "bookId": 43,
     "chapterId": 16,
     "verseId": 26,
-    "text": "On that day you will ask in my name, and I do not say that I will have to ask the Father on your behalf,",
+    "text": "On that day you will ask in my name, and I do not say to you that I will ask the Father on your behalf,",
     "versions": [
       {
         "text": "On that day you will ask in my name, and I will not need to ask the Father on your behalf,",
         "type": "error",
         "severity": "major",
         "explanation": "The Greek negates the saying (οὐ λέγω ὑμῖν ὅτι...), not the asking. As rendered, the translation states that Jesus will not intercede, which conflicts with the wider witness of Scripture to Christ's intercession. Keeping 'I do not say' preserves the sense that the disciples' direct access to the Father is being stressed, not the denial of Jesus' intercession."
+      },
+      {
+        "text": "On that day you will ask in my name, and I do not say that I will have to ask the Father on your behalf,",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "The Greek verb ἐρωτήσω is a simple future, \"I will ask\"; the added \"have to\" introduces a note of necessity that is not in the text. Restoring the plain future keeps the emphasis where the Greek places it — on the negated saying — while also rendering ὑμῖν (\"to you\"), which is currently dropped.",
+        "alternative": true
       }
     ]
   },

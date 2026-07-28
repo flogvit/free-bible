@@ -21,13 +21,20 @@
     "bookId": 14,
     "chapterId": 3,
     "verseId": 4,
-    "text": "The portico across the front, along the width of the house, was twenty cubits wide, and its height a hundred and twenty cubits; and he overlaid the inside with pure gold.",
+    "text": "The portico in front, running the full width of the house, measured twenty cubits across, and its height was a hundred and twenty cubits; and he overlaid the inside with pure gold.",
     "versions": [
       {
         "text": "The portico across the front, along the width of the house, was twenty cubits, and its height was a hundred and twenty; and he overlaid the inside with pure gold.",
         "type": "error",
         "severity": "minor",
         "explanation": "The measurement \"a hundred and twenty\" is left without a unit, which is confusing when read aloud; supplying \"cubits\" matches the preceding measurements. A footnote could also note that some ancient witnesses read twenty cubits for the height."
+      },
+      {
+        "text": "The portico across the front, along the width of the house, was twenty cubits wide, and its height a hundred and twenty cubits; and he overlaid the inside with pure gold.",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "The Hebrew has a doubled phrase (\"in front of the length, in front of the width of the house\"), indicating that the portico spanned the whole front breadth of the building. \"Twenty cubits wide\" can be misread as the portico's depth; \"twenty cubits across\" makes clear it is the span matching the house's width. The current reading is a defensible rendering but slightly ambiguous when heard aloud.",
+        "alternative": true
       }
     ]
   },

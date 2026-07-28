@@ -15,13 +15,20 @@
     "bookId": 26,
     "chapterId": 27,
     "verseId": 3,
-    "text": "Say to Tyre, who sits at the gateway to the sea, merchant of the peoples to many coastlands: This is what the Lord GOD says: Tyre, you said, \"I am perfect in beauty.\"",
+    "text": "Say to Tyre, who sits at the gateways to the sea, merchant of the peoples to many coastlands: This is what the Lord GOD says: Tyre, you said, \"I am perfect in beauty.\"",
     "versions": [
       {
         "text": "Say to Tyre, who sits at the gateway to the sea, merchant to the peoples of many coastlands: This is what the Lord GOD says: Tyre, you said, \"I am perfect in beauty.\"",
         "type": "error",
         "severity": "minor",
         "explanation": "The Hebrew has two distinct phrases: Tyre is merchant \"of the peoples\" and trades outward \"to many coastlands.\" The current wording collapses them into one phrase and makes the peoples belong to the coastlands, which is not the sense of the Hebrew."
+      },
+      {
+        "text": "Say to Tyre, who sits at the gateway to the sea, merchant of the peoples to many coastlands: This is what the Lord GOD says: Tyre, you said, \"I am perfect in beauty.\"",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "מְבוֹאֹת is plural (\"entrances, approaches\"), fitting Tyre's two harbors and its position at the sea's several approaches. The plural \"gateways\" is more accurate and reads just as naturally aloud; the singular is a defensible collective rendering.",
+        "alternative": true
       }
     ]
   },
@@ -181,13 +188,20 @@
     "bookId": 26,
     "chapterId": 27,
     "verseId": 28,
-    "text": "At the sound of your pilots' cry, the mainland shores will tremble.",
+    "text": "At the sound of your pilots' cry, the settlements on the mainland will tremble.",
     "versions": [
       {
         "text": "At the sound of your pilots' cry, the coastlands will tremble.",
         "type": "error",
         "severity": "major",
         "explanation": "מִגְרֹשׁוֹת refers to the surrounding open lands or settlements on the mainland, not to \"coastlands.\" The word \"coastlands\" is used throughout this chapter for אִיִּים (vv. 3, 6, 7, 15, 35), so using it here obscures the distinction in the Hebrew."
+      },
+      {
+        "text": "At the sound of your pilots' cry, the mainland shores will tremble.",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "The word מִגְרֹשׁוֹת denotes the open lands, pasturelands, or outlying settlements around a city, which is precisely the distinction the earlier revision aimed to preserve. Retaining \"shores\" reintroduces the coastal sense that the revision sought to remove; \"settlements on the mainland\" keeps the intended contrast with the \"coastlands\" (אִיִּים) elsewhere in the chapter while still reading smoothly aloud.",
+        "alternative": false
       }
     ]
   },

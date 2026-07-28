@@ -27,15 +27,25 @@
     "bookId": 28,
     "chapterId": 6,
     "verseId": 5,
-    "text": "So I have hewn them down by the prophets; I have slain them with the words of my mouth, and my judgments go forth like the light.[^1]\n\n[^1]: The Hebrew text reads \"your judgments\"; some ancient versions read \"my judgment.\"",
+    "text": "So I have hewn them down by the prophets; I have slain them with the words of my mouth, and your judgments go forth like the light.[^1]\n\n[^1]: Some ancient versions read \"my judgment goes forth like the light.\"",
     "versions": [
       {
         "text": "So I have hewn them down by the prophets; I have slain them with the words of my mouth, and my judgment goes forth like the light.",
         "type": "error",
         "severity": "minor",
         "explanation": "The Hebrew has a second-person suffix (\"your judgments\") with a plural noun. Rendering it as \"my judgment\" follows an ancient variant reading, which should be signaled in a footnote; the plural \"judgments\" also better reflects the Hebrew noun form."
+      },
+      {
+        "text": "So I have hewn them down by the prophets; I have slain them with the words of my mouth, and my judgments go forth like the light.[^1]\n\n[^1]: The Hebrew text reads \"your judgments\"; some ancient versions read \"my judgment.\"",
+        "type": "error",
+        "severity": "minor",
+        "explanation": "The main text and the footnote currently contradict each other: the footnote states that the Hebrew reads \"your judgments,\" yet the text prints \"my judgments,\" which is neither the Hebrew (second-person suffix, מִשְׁפָּטֶיךָ) nor the ancient variant (singular \"my judgment\"). Placing the Hebrew reading \"your judgments\" in the text and noting the variant in the footnote resolves the inconsistency while preserving the plural noun form of the Hebrew.",
+        "alternative": false
       }
-    ]
+    ],
+    "checked": {
+      "changed": "2:210"
+    }
   },
   {
     "bookId": 28,

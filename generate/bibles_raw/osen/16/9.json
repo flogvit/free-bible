@@ -101,13 +101,20 @@
     "bookId": 16,
     "chapterId": 9,
     "verseId": 16,
-    "text": "But they and our fathers became arrogant and stiff-necked, and they did not obey your commandments.",
+    "text": "But they and our fathers acted arrogantly; they stiffened their necks and did not obey your commandments.",
     "versions": [
       {
         "text": "But they, our fathers, became arrogant and stiff-necked, and they did not obey your commandments.",
         "type": "error",
         "severity": "minor",
         "explanation": "The Hebrew has a conjunction (\"they and our fathers\"), naming two groups rather than placing \"our fathers\" in apposition to \"they.\" The conjunction should be preserved."
+      },
+      {
+        "text": "But they and our fathers became arrogant and stiff-necked, and they did not obey your commandments.",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "The Hebrew has two finite verbs — הֵזִידוּ (\"acted presumptuously/arrogantly\") and וַיַּקְשׁוּ אֶת־עָרְפָּם (\"they stiffened their neck\"). Rendering the second as the adjective \"stiff-necked\" flattens the deliberate action into a description. Keeping both as verbs preserves the force of the confession and gives a stronger three-beat rhythm for reading aloud.",
+        "alternative": true
       }
     ]
   },
@@ -178,7 +185,10 @@
         "explanation": "Two whole clauses of the Hebrew were dropped in the previous revision: the opening \"they captured fortified cities and fertile land\" (וַיִּלְכְּדוּ עָרִים בְּצֻרוֹת וַאֲדָמָה שְׁמֵנָה) and the closing \"they ate and were satisfied; they grew fat and delighted themselves in your great goodness\" (וַיֹּאכְלוּ וַיִּשְׂבְּעוּ וַיַּשְׁמִינוּ וַיִּתְעַדְּנוּ בְּטוּבְךָ הַגָּדוֹל). These are restored here, while the intentional change from \"wells already dug\" to \"cisterns already hewn\" is preserved. The final clause is also essential for the contrast with verse 26's rebellion.",
         "alternative": false
       }
-    ]
+    ],
+    "checked": {
+      "changed": "2:266"
+    }
   },
   {
     "bookId": 16,

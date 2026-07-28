@@ -61,13 +61,20 @@
     "bookId": 66,
     "chapterId": 4,
     "verseId": 8,
-    "text": "Each of the four living creatures had six wings and was covered with eyes all around and within. Day and night they never stop saying: \"Holy, holy, holy is the Lord God Almighty, who was, and who is, and who is to come.\"",
+    "text": "Each of the four living creatures had six wings and was full of eyes all around and within. Day and night they never stop saying: \"Holy, holy, holy is the Lord God Almighty, who was, and who is, and who is to come.\"",
     "versions": [
       {
         "text": "Each of the four living creatures had six wings and was covered with eyes all around, even under its wings. Day and night they never stop saying: \"Holy, holy, holy is the Lord God Almighty, who was, and who is, and who is to come.\"",
         "type": "error",
         "severity": "minor",
         "explanation": "The Greek ἔσωθεν means \"within/inside,\" not \"under its wings.\" The current wording imports an interpretation not present in the text; a more literal rendering keeps the image open and reads just as smoothly aloud."
+      },
+      {
+        "text": "Each of the four living creatures had six wings and was covered with eyes all around and within. Day and night they never stop saying: \"Holy, holy, holy is the Lord God Almighty, who was, and who is, and who is to come.\"",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "γέμουσιν means \"are full of\"; \"covered with\" suggests only the surface, whereas the Greek (reinforced by ἔσωθεν, \"within\") describes the creatures as filled with eyes inside as well as outside. \"Full of eyes all around and within\" is both more accurate and equally smooth for reading aloud.",
+        "alternative": true
       }
     ]
   },

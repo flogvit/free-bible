@@ -157,13 +157,20 @@
     "bookId": 42,
     "chapterId": 11,
     "verseId": 24,
-    "text": "When an unclean spirit comes out of a person, it wanders through waterless places seeking rest, and finding none it says, 'I will return to the house I left.'",
+    "text": "When an unclean spirit comes out of a person, it wanders through waterless places seeking rest, and finding none it says, 'I will go back to my house, the one I came out of.'",
     "versions": [
       {
         "text": "\"When an unclean spirit comes out of a person, it wanders through waterless places seeking rest, and finding none it says, 'I will return to the house I left.'",
         "type": "grammar",
         "severity": "minor",
         "explanation": "Punctuation inconsistency: the quotation opened at verse 17 was never closed (verse 23 ends without a closing quotation mark), so the new opening quotation mark here starts a second, unclosed quote. Since the speech is continuous, the opening mark should be removed."
+      },
+      {
+        "text": "When an unclean spirit comes out of a person, it wanders through waterless places seeking rest, and finding none it says, 'I will return to the house I left.'",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "The Greek has the possessive τὸν οἶκόν μου (\"my house\"), which is significant: the spirit claims the person as its own dwelling. The current rendering drops the possessive and flattens the claim of ownership. Restoring \"my house\" keeps the force of the image while remaining easy to read aloud.",
+        "alternative": true
       }
     ]
   },
@@ -227,7 +234,10 @@
         "severity": "minor",
         "explanation": "The quotation begun in verse 29 is still open (verse 32 has no closing mark), so this extra opening quotation mark is inconsistent. The discourse continues, so no new quote should be opened here."
       }
-    ]
+    ],
+    "checked": {
+      "changed": "1:140"
+    }
   },
   {
     "bookId": 42,
@@ -321,7 +331,10 @@
         "severity": "minor",
         "explanation": "The Greek οὐ προσψαύετε is present tense, describing habitual practice, not a future refusal; also ἑνὶ τῶν δακτύλων ὑμῶν is \"one of your fingers.\" The revised wording keeps the sense and reads more naturally aloud."
       }
-    ]
+    ],
+    "checked": {
+      "changed": "1:161"
+    }
   },
   {
     "bookId": 42,

@@ -295,21 +295,34 @@
         "severity": "minor",
         "explanation": "The base text reads simply \"the god Rephan\" without the possessive pronoun; \"your\" reflects a different manuscript reading and adds content not in the text being translated."
       }
-    ]
+    ],
+    "checked": {
+      "changed": "1:145"
+    }
   },
   {
     "bookId": 44,
     "chapterId": 7,
     "verseId": 44,
-    "text": "\"Our fathers had the tent of testimony in the wilderness, made just as the one who spoke to Moses directed, according to the pattern he had seen.",
+    "text": "Our fathers had the tent of testimony in the wilderness, made just as the one who spoke to Moses directed, according to the pattern he had seen.",
     "versions": [
       {
         "text": "\"Our fathers had the tent of testimony in the wilderness, made just as God directed when he spoke to Moses, according to the pattern he had seen.",
         "type": "error",
         "severity": "minor",
         "explanation": "The Greek uses the participial phrase \"the one who spoke to Moses\" rather than naming God; preserving the original phrasing keeps the reverent circumlocution of Stephen's speech while remaining clear and readable."
+      },
+      {
+        "text": "\"Our fathers had the tent of testimony in the wilderness, made just as the one who spoke to Moses directed, according to the pattern he had seen.",
+        "type": "grammar",
+        "severity": "minor",
+        "explanation": "The verse opens with an unmatched double quotation mark. Stephen's speech is already in progress (verses 42-43 use single quotes for the quotation from the prophets nested inside it), so re-opening a double quote here is inconsistent punctuation and can confuse a reader preparing to read aloud.",
+        "alternative": false
       }
-    ]
+    ],
+    "checked": {
+      "changed": "2:144"
+    }
   },
   {
     "bookId": 44,

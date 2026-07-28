@@ -27,13 +27,20 @@
     "bookId": 38,
     "chapterId": 13,
     "verseId": 5,
-    "text": "Each will say, \"I am no prophet. I am a man who works the soil, for a man bought me as a slave in my youth.\"",
+    "text": "Each will say, \"I am no prophet. I am a man who works the soil, for a man has owned me since my youth.\"",
     "versions": [
       {
         "text": "Each will say, \"I am no prophet. I work the soil; I have been a servant on the land since my youth.\"",
         "type": "error",
         "severity": "minor",
         "explanation": "The final clause (כִּי אָדָם הִקְנַנִי מִנְּעוּרָי) says a man acquired/purchased him from his youth; the current rendering ('I have been a servant on the land') blends this with the previous clause and loses the sense of being bought. A footnote could note the alternative reading 'the land has been my possession since my youth.'"
+      },
+      {
+        "text": "Each will say, \"I am no prophet. I am a man who works the soil, for a man bought me as a slave in my youth.\"",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "מִנְּעוּרָי means 'from/since my youth' — an ongoing state, not a single event 'in my youth'; the perfect הִקְנַנִי with the preposition min indicates lasting possession. 'as a slave' also adds an interpretive word not in the Hebrew, though the sense of servitude is implied. Rendering it 'has owned me since my youth' keeps the acquisition sense (preserved deliberately in the earlier revision) while matching the temporal force of the Hebrew.",
+        "alternative": true
       }
     ]
   },

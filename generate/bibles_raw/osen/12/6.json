@@ -107,13 +107,20 @@
     "bookId": 12,
     "chapterId": 6,
     "verseId": 17,
-    "text": "Then Elisha prayed, \"LORD, open his eyes so he may see.\" The LORD opened the servant's eyes, and he looked and saw the mountainside full of horses and chariots of fire all around Elisha.",
+    "text": "Then Elisha prayed, \"LORD, open his eyes so he may see.\" The LORD opened the servant's eyes, and he looked, and there was the mountain, full of horses and chariots of fire all around Elisha.",
     "versions": [
       {
         "text": "Then Elisha prayed, \"LORD, open his eyes so he may see.\" The LORD opened the servant's eyes, and he looked and saw the hills full of horses and chariots of fire all around Elisha.",
         "type": "error",
         "severity": "minor",
         "explanation": "The Hebrew הָהָר is singular, referring to the particular mountain around Dothan; \"the hills\" loses that specificity."
+      },
+      {
+        "text": "Then Elisha prayed, \"LORD, open his eyes so he may see.\" The LORD opened the servant's eyes, and he looked and saw the mountainside full of horses and chariots of fire all around Elisha.",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "The Hebrew הָהָר is simply \"the mountain,\" not specifically its slope; \"mountainside\" adds a detail not in the text. Rendering וְהִנֵּה with \"and there was\" also preserves the sudden, vivid disclosure of the vision, which reads well aloud.",
+        "alternative": true
       }
     ]
   },
@@ -191,7 +198,10 @@
         "severity": "major",
         "explanation": "The Hebrew אַל־יוֹשִׁעֵךְ is a negative jussive: \"May the LORD not save/help you.\" As it stands, the English reverses the sense of the king's bitter reply, which sets up his following question about having no grain or wine to give. If the ironic reading is preferred, a footnote should note the literal negative."
       }
-    ]
+    ],
+    "checked": {
+      "changed": "1:124"
+    }
   },
   {
     "bookId": 12,

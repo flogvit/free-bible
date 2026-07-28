@@ -105,13 +105,20 @@
     "bookId": 40,
     "chapterId": 9,
     "verseId": 18,
-    "text": "While he was saying this, a ruler came and knelt before him, saying, \"My daughter has just died. But come and lay your hand on her, and she will live.\"",
+    "text": "While he was saying these things to them, a ruler came and knelt before him, saying, \"My daughter has just died. But come and lay your hand on her, and she will live.\"",
     "versions": [
       {
         "text": "While he was saying this, a synagogue leader came and knelt before him, saying, \"My daughter has just died. But come and lay your hand on her, and she will live.\"",
         "type": "error",
         "severity": "minor",
         "explanation": "Matthew's text says simply ἄρχων ('a ruler'); the identification as a synagogue leader comes from the parallel accounts and is an interpretive addition here. If the fuller identification is desired, it is better placed in a footnote."
+      },
+      {
+        "text": "While he was saying this, a ruler came and knelt before him, saying, \"My daughter has just died. But come and lay your hand on her, and she will live.\"",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "The Greek has αὐτοῖς (\"to them\"), which keeps the audience of the preceding wineskin sayings in view and links the scene to the previous paragraph; the plural Ταῦτα (\"these things\") also covers the whole exchange rather than a single statement. The omission is a small loss of content, though the shorter rendering reads smoothly.",
+        "alternative": true
       }
     ]
   },
@@ -127,7 +134,10 @@
         "severity": "minor",
         "explanation": "The Greek says Jesus followed the man (ἠκολούθει αὐτῷ), with the disciples doing the same; the current rendering reverses the picture by having the disciples follow Jesus rather than both following the ruler."
       }
-    ]
+    ],
+    "checked": {
+      "changed": "1:59"
+    }
   },
   {
     "bookId": 40,
@@ -208,7 +218,10 @@
         "explanation": "The first clause of the verse, καὶ ἠνεῴχθησαν αὐτῶν οἱ ὀφθαλμοί (\"and their eyes were opened\"), has been dropped. This is the actual report of the healing and must be restored; without it the miracle itself is missing from the narrative. The corrected wording keeps the earlier revision's improvement of \"knows about this\" for γινωσκέτω.",
         "alternative": false
       }
-    ]
+    ],
+    "checked": {
+      "changed": "2:95"
+    }
   },
   {
     "bookId": 40,

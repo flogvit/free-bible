@@ -17,7 +17,10 @@
         "severity": "minor",
         "explanation": "The Hebrew uses imperatives (\"eat what is good\") and a jussive (\"let your soul delight\"), which the translation flattens into future statements. Restoring the invitational force also improves the rhythm of the call and avoids the slightly awkward doubling \"Listen to me, listen well.\""
       }
-    ]
+    ],
+    "checked": {
+      "changed": "1:172"
+    }
   },
   {
     "bookId": 23,
@@ -35,13 +38,20 @@
     "bookId": 23,
     "chapterId": 55,
     "verseId": 5,
-    "text": "See, you will summon a nation you do not know, and a nation that does not know you will hasten to you, because of the LORD your God, and for the Holy One of Israel, for he has glorified you.",
+    "text": "See, you will summon a nation you do not know, and a nation that does not know you will run to you, for the sake of the LORD your God, and of the Holy One of Israel, because he has glorified you.",
     "versions": [
       {
         "text": "See, you will summon a nation you do not know, and a nation that does not know you will hasten to you, because of the LORD your God, the Holy One of Israel, for he has glorified you.",
         "type": "error",
         "severity": "minor",
         "explanation": "The Hebrew has two coordinated objects of לְמַעַן (\"for the sake of the LORD your God, and for the Holy One of Israel\"). The current rendering turns the second phrase into an appositive, losing the parallel structure of the line."
+      },
+      {
+        "text": "See, you will summon a nation you do not know, and a nation that does not know you will hasten to you, because of the LORD your God, and for the Holy One of Israel, for he has glorified you.",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "The revision rightly restored the two coordinated objects of לְמַעַן, but the English now pairs unlike prepositions (\"because of ... and for ...\"), which blurs the parallel it was meant to recover, and it stacks a third \"for\" at the head of the causal clause. Matching the two objects under one preposition (\"for the sake of ... and of ...\") and using \"because\" for כִּי keeps the parallelism audible when read aloud. \"Run\" also renders יָרוּצוּ more concretely than the flatter \"hasten.\"",
+        "alternative": true
       }
     ]
   },
@@ -99,6 +109,9 @@
         "severity": "minor",
         "explanation": "לְשֵׁם means \"for a name/renown,\" not \"a memorial,\" which suggests a monument to the dead. Also יִכָּרֵת means \"be cut off,\" fitting the plant imagery of the verse better than \"destroyed.\""
       }
-    ]
+    ],
+    "checked": {
+      "changed": "1:175"
+    }
   }
 ]

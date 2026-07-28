@@ -27,13 +27,20 @@
     "bookId": 19,
     "chapterId": 93,
     "verseId": 5,
-    "text": "Your decrees are wholly trustworthy; holiness adorns your house, O LORD, for endless days.",
+    "text": "Your decrees are wholly trustworthy; holiness befits your house, O LORD, for endless days.",
     "versions": [
       {
         "text": "Your decrees stand firm; holiness adorns your house, O LORD, for all the length of days.",
         "type": "error",
         "severity": "minor",
         "explanation": "The Hebrew intensifier מְאֹד (\"very, exceedingly\") is not represented in \"stand firm\"; the sense is that the testimonies are utterly reliable. Also, \"for all the length of days\" is a stiff calque of לְאֹרֶךְ יָמִים; \"for endless days\" reads more naturally aloud while keeping the temporal image."
+      },
+      {
+        "text": "Your decrees are wholly trustworthy; holiness adorns your house, O LORD, for endless days.",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "The Hebrew נָאוָה means \"is fitting, comely, becoming\" — the sense is that holiness is what suits or belongs to God's house, rather than that it decorates it. \"Befits\" captures the predicate adjective more precisely while keeping the same rhythm for reading aloud. The existing rendering is a long-standing and defensible interpretive choice.",
+        "alternative": true
       }
     ]
   }

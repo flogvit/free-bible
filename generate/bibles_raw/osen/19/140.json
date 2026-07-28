@@ -41,7 +41,10 @@
         "severity": "minor",
         "explanation": "The Hebrew has 'with cords they spread a net' — the cords are the means, not the material being formed 'into a net.' The revised wording is both more accurate and smoother for reading aloud."
       }
-    ]
+    ],
+    "checked": {
+      "changed": "1:118"
+    }
   },
   {
     "bookId": 19,
@@ -65,13 +68,20 @@
     "bookId": 19,
     "chapterId": 140,
     "verseId": 10,
-    "text": "As for the heads of those who surround me—let the trouble their own lips cause cover them.",
+    "text": "As for the head of those who surround me—let the malice of their own lips cover them.",
     "versions": [
       {
         "text": "As for those who surround me—let the mischief of their own lips cover their heads.",
         "type": "error",
         "severity": "minor",
         "explanation": "In the Hebrew, 'head' belongs to the first clause ('the head of those who surround me'), and the verb is 'cover them,' not 'cover their heads.' The suggested rendering keeps both elements in their proper places while remaining natural for oral reading."
+      },
+      {
+        "text": "As for the heads of those who surround me—let the trouble their own lips cause cover them.",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "The relative clause \"the trouble their own lips cause cover them\" stacks two verbs (\"cause cover\") back to back, which stumbles badly when read aloud. A simple noun phrase (\"the malice of their own lips\") renders עֲמַל שְׂפָתֵימוֹ just as accurately and flows cleanly. Hebrew רֹאשׁ is also singular here, so \"the head\" better matches the source while keeping the collective sense.",
+        "alternative": true
       }
     ]
   },

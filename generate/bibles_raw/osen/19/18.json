@@ -109,7 +109,10 @@
         "severity": "minor",
         "explanation": "The Hebrew here reads אֲפִיקֵי מַיִם, \"channels of waters,\" not \"of the sea\" (the parallel passage elsewhere reads \"sea,\" but this text does not). \"Waters\" also echoes verse 17 (\"deep waters\") in the same poem."
       }
-    ]
+    ],
+    "checked": {
+      "changed": "1:150"
+    }
   },
   {
     "bookId": 19,
@@ -299,13 +302,20 @@
     "bookId": 19,
     "chapterId": 18,
     "verseId": 45,
-    "text": "As soon as they hear of me, they obey me; foreigners cower before me.",
+    "text": "As soon as they hear of me, they obey me; foreigners come cringing to me.",
     "versions": [
       {
         "text": "At the sound of my voice they obey me; foreigners cower before me.",
         "type": "error",
         "severity": "minor",
         "explanation": "The Hebrew idiom \"at the hearing of the ear\" means merely hearing a report of the king, not hearing his voice directly; \"the sound of my voice\" adds a detail not in the text."
+      },
+      {
+        "text": "As soon as they hear of me, they obey me; foreigners cower before me.",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "The verb יְכַחֲשׁוּ (from a root meaning \"to be false, feign\") describes submission that is forced or insincere — foreigners \"come cringing\" or \"submit with feigned obedience\" — rather than fear as such. \"Cower\" shifts the sense to terror and also blurs the distinction from the trembling described in the next verse. The revised wording keeps the natural rhythm while matching the idiom more closely.",
+        "alternative": true
       }
     ]
   },

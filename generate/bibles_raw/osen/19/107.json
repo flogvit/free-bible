@@ -117,13 +117,20 @@
     "bookId": 19,
     "chapterId": 107,
     "verseId": 20,
-    "text": "He sent out his word and healed them, and rescued them from the grave.",
+    "text": "He sent out his word and healed them, and rescued them from their destruction.",
     "versions": [
       {
         "text": "He sent out his word and healed them, and delivered them from the pit.",
         "type": "error",
         "severity": "minor",
         "explanation": "שְׁחִיתוֹתָם is plural (\"their pits/destructions\"); rendering as \"the pit\" loses the possessive. \"Rescued them from the grave\" (or \"from their destruction\") better conveys the Hebrew while keeping the oral rhythm."
+      },
+      {
+        "text": "He sent out his word and healed them, and rescued them from the grave.",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "The revision was made specifically to preserve the possessive suffix of מִשְּׁחִיתוֹתָם (\"their pits/destructions\"), but \"the grave\" still drops it. \"Their destruction\" keeps the possessive and the plural sense while reading smoothly aloud. The current wording is a defensible idiomatic rendering of the pit/Sheol imagery, so it remains a legitimate alternative.",
+        "alternative": true
       }
     ]
   },
@@ -198,7 +205,8 @@
     ],
     "lengthChecked": 60,
     "checked": {
-      "length": "1:60"
+      "length": "1:60",
+      "changed": "1:60"
     }
   },
   {
@@ -275,7 +283,10 @@
         "severity": "minor",
         "explanation": "The verse is transitional, setting up verses 40-41; 'Then' suggests a new independent action, while the Hebrew connects the decline to what follows. Also 'calamity' and 'disaster' are equally valid, but the sentence flow benefits from a subordinate opening."
       }
-    ]
+    ],
+    "checked": {
+      "changed": "1:75"
+    }
   },
   {
     "bookId": 19,

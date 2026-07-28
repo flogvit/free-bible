@@ -23,19 +23,29 @@
         "severity": "minor",
         "explanation": "The Hebrew עֲבֻדָּה denotes a large body of servants/workforce, not a 'household' in the sense of family members. 'A great many servants' is more accurate and keeps the list of possessions consistent."
       }
-    ]
+    ],
+    "checked": {
+      "changed": "1:191"
+    }
   },
   {
     "bookId": 18,
     "chapterId": 1,
     "verseId": 4,
-    "text": "His sons used to go and hold a feast in the house of each one, each on his appointed day, and they would send word and invite their three sisters to eat and drink with them.",
+    "text": "His sons used to go and hold a feast, each in his own house on his appointed day, and they would send word and invite their three sisters to eat and drink with them.",
     "versions": [
       {
         "text": "His sons used to hold a feast in the house of each one on his own day, and they would send for their three sisters and invite them to eat and drink with them.",
         "type": "suggestion",
         "severity": "minor",
         "explanation": "'In the house of each one on his own day' is ambiguous and stumbles when read aloud; the added 'go' also reflects וְהָלְכוּ, and 'send word and invite' reads more smoothly than 'send for... and invite'."
+      },
+      {
+        "text": "His sons used to go and hold a feast in the house of each one, each on his appointed day, and they would send word and invite their three sisters to eat and drink with them.",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "The current wording piles up two distributive expressions ('in the house of each one, each on his appointed day'), which is redundant and stumbles when read aloud. Attaching both 'his own house' and 'his appointed day' to a single 'each' renders בֵּית אִישׁ יוֹמוֹ just as accurately and flows better orally.",
+        "alternative": true
       }
     ]
   },
@@ -79,13 +89,20 @@
     "bookId": 18,
     "chapterId": 1,
     "verseId": 11,
-    "text": "But stretch out your hand now and touch everything he has, and he will surely curse you to your face.\"",
+    "text": "But stretch out your hand now and touch everything he has, and he will surely curse you to your face.\" [Footnote: The Hebrew verb here is literally \"bless,\" used as a reverent substitute for \"curse.\"]",
     "versions": [
       {
         "text": "But stretch out your hand and strike everything he has, and he will surely curse you to your face.\"",
         "type": "error",
         "severity": "major",
         "explanation": "The verb נגע means 'touch'. The understatement is deliberate and is echoed in 1:12 and 2:5; rendering it 'strike' loses the ironic force of the accuser's proposal."
+      },
+      {
+        "text": "But stretch out your hand now and touch everything he has, and he will surely curse you to your face.\"",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "The Hebrew uses יְבָרֲכֶךָּ, 'bless,' as a deliberate euphemism for cursing God. 'Curse' is the correct sense for the reader, but a brief footnote preserves the wordplay, which recurs in 1:5, 2:5 and 2:9.",
+        "alternative": false
       }
     ]
   },

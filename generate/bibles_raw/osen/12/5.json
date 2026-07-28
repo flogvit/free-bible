@@ -39,13 +39,20 @@
     "bookId": 12,
     "chapterId": 5,
     "verseId": 7,
-    "text": "When the king of Israel read the letter, he tore his clothes and said, \"Am I God, to kill and to make alive, that this man sends word to me to cure a man of his leprosy? Just look at how he is picking a quarrel with me!\"",
+    "text": "When the king of Israel read the letter, he tore his clothes and said, \"Am I God, to kill and to make alive, that this man sends word to me to cure someone of his leprosy? Only see now, and mark how he is looking for a quarrel with me!\"",
     "versions": [
       {
         "text": "When the king of Israel read the letter, he tore his clothes and said, \"Am I God, to kill and to make alive, that this man sends someone to me to be cured of his leprosy? Just look at how he is picking a quarrel with me!\"",
         "type": "error",
         "severity": "major",
         "explanation": "The Hebrew says the king of Aram is sending to the king of Israel asking him to cure a man of his leprosy; the present wording (\"sends someone to me to be cured\") reverses the sense, making Naaman rather than the king of Israel the focus of the demand and obscuring the king's outrage at being asked to do what only God can do."
+      },
+      {
+        "text": "When the king of Israel read the letter, he tore his clothes and said, \"Am I God, to kill and to make alive, that this man sends word to me to cure a man of his leprosy? Just look at how he is picking a quarrel with me!\"",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "The clause reads awkwardly aloud because \"this man\" and \"a man\" fall within the same breath; \"someone\" keeps the indefinite sense of אִישׁ without the echo. Also, the Hebrew doubles the imperatives (דְּעוּ־נָא וּרְאוּ, \"know now and see\"), and rendering both preserves the king's rhetorical build-up. The existing reading is a legitimate simplification.",
+        "alternative": true
       }
     ]
   },

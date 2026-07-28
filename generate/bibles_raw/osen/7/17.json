@@ -81,13 +81,20 @@
     "bookId": 7,
     "chapterId": 17,
     "verseId": 10,
-    "text": "Then Micah said to him, \"Stay with me and be my father and priest, and I will give you ten pieces of silver a year, along with your clothing and your food.\" So the Levite went in.",
+    "text": "Then Micah said to him, \"Stay with me and be my father and priest, and I will give you ten pieces of silver a year, along with a set of clothes and your food.\" So the Levite went in.",
     "versions": [
       {
         "text": "Then Micah said to him, \"Stay with me and be my father and priest, and I will give you ten pieces of silver a year, along with your clothing and your food.\" So the Levite went in with him.",
         "type": "error",
         "severity": "minor",
         "explanation": "The Hebrew reads only \"and the Levite went (in).\" The added \"with him\" supplies information not present in the text; the shorter form preserves the terse Hebrew and still flows naturally."
+      },
+      {
+        "text": "Then Micah said to him, \"Stay with me and be my father and priest, and I will give you ten pieces of silver a year, along with your clothing and your food.\" So the Levite went in.",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "The Hebrew עֵרֶךְ בְּגָדִים denotes a set or outfit of clothing, a specified item in the wage offer. \"Your clothing\" loses the sense of a measured allowance and blurs the concreteness of the terms Micah offers.",
+        "alternative": true
       }
     ]
   },

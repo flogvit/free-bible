@@ -41,7 +41,10 @@
         "severity": "minor",
         "explanation": "The Hebrew opens with the exclamatory אֵיךְ (\"How...!\"), matching the same word in verse 5. Rendering it as \"But\" loses the rhetorical exclamation that drives the oracle's rhythm."
       }
-    ]
+    ],
+    "checked": {
+      "changed": "1:60"
+    }
   },
   {
     "bookId": 31,
@@ -59,13 +62,20 @@
     "bookId": 31,
     "chapterId": 1,
     "verseId": 9,
-    "text": "Your warriors will be shattered, Teman, so that everyone on the mountain of Esau will be cut off in the slaughter.",
+    "text": "Your warriors will be filled with terror, Teman, so that everyone will be cut off from the mountain of Esau by the slaughter.",
     "versions": [
       {
         "text": "Your warriors will be shattered, Teman, and everyone on the mountain of Esau will be cut down in the slaughter.",
         "type": "error",
         "severity": "minor",
         "explanation": "לְמַעַן marks purpose or result (\"so that\"), which is dropped in the current rendering; also יִכָּרֵת is the same verb translated \"cut off\" in verse 10, and consistency helps the hearer connect the two lines."
+      },
+      {
+        "text": "Your warriors will be shattered, Teman, so that everyone on the mountain of Esau will be cut off in the slaughter.",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "The verb חתת denotes being dismayed or terror-stricken rather than physically shattered, which better fits warriors losing their courage. Also, מֵהַר עֵשָׂו most naturally goes with the verb 'be cut off' as a separative ('cut off from the mountain of Esau'), not as a locative describing where the people live; and מִקָּטֶל indicates the means ('by the slaughter'). Both nuances read smoothly aloud.",
+        "alternative": true
       }
     ]
   },

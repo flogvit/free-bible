@@ -57,15 +57,25 @@
     "bookId": 19,
     "chapterId": 73,
     "verseId": 10,
-    "text": "And so the people turn to them and drink in waters overflowing to the last drop.",
+    "text": "And so his people turn back here, and they drain a cup of waters brimming full.",
     "versions": [
       {
         "text": "And so the people turn to them and drink their words down to the last drop.",
         "type": "error",
         "severity": "major",
         "explanation": "The Hebrew reads \"waters of abundance/of a full cup are drained by them\" (וּמֵי מָלֵא יִמָּצוּ לָמוֹ). \"Their words\" is an added interpretation not present in the text; keeping the water imagery preserves the metaphor while remaining readable aloud."
+      },
+      {
+        "text": "And so the people turn to them and drink in waters overflowing to the last drop.",
+        "type": "error",
+        "severity": "minor",
+        "explanation": "The Hebrew has עַמּוֹ, \"his people\" (God's own people), which sharpens the scandal of the verse; the current \"the people\" loses the possessive. Also הֲלֹם means \"hither, to this place\" rather than \"to them,\" though that rendering is a recognized interpretive option. The revised line keeps the water imagery and the sense of draining (יִמָּצוּ) while reading smoothly aloud.",
+        "alternative": true
       }
-    ]
+    ],
+    "checked": {
+      "changed": "2:79"
+    }
   },
   {
     "bookId": 19,
@@ -103,7 +113,10 @@
         "severity": "minor",
         "explanation": "The word דוֹר (\"generation\") is omitted. Including it preserves the sense of the psalmist's responsibility toward the whole community of the faithful."
       }
-    ]
+    ],
+    "checked": {
+      "changed": "1:94"
+    }
   },
   {
     "bookId": 19,

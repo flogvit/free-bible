@@ -59,13 +59,20 @@
     "bookId": 24,
     "chapterId": 33,
     "verseId": 9,
-    "text": "Then this city will bring me renown, joy, praise, and honor before all the nations of the earth, when they hear of all the good I do for my people. They will tremble in awe at all the good and all the peace I provide for it.",
+    "text": "Then this city will bring me joyful renown, praise, and honor before all the nations of the earth, when they hear of all the good I do for my people. They will tremble in awe at all the good and all the peace I provide for it.",
     "versions": [
       {
         "text": "Then this city will bring me renown, joy, praise, and honor before all the nations of the earth, when they hear of all the good I do for it. They will tremble in awe at all the good and all the peace I provide for it.",
         "type": "error",
         "severity": "minor",
         "explanation": "The Hebrew distinguishes two objects: the first is plural ('the good I do for them', i.e. the people), while the second is feminine singular ('for her', the city). Rendering both as 'for it' loses the distinction the Hebrew makes."
+      },
+      {
+        "text": "Then this city will bring me renown, joy, praise, and honor before all the nations of the earth, when they hear of all the good I do for my people. They will tremble in awe at all the good and all the peace I provide for it.",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "The Hebrew has a construct phrase, 'a name of joy' (שֵׁם שָׂשׂוֹן), followed by two further nouns introduced by ל ('for praise and for glory'). Listing four flat items ('renown, joy, praise, and honor') breaks the construct and turns a three-part expression into a four-part one. 'Joyful renown' preserves the construct while keeping the rhythm for oral reading.",
+        "alternative": true
       }
     ]
   },
@@ -177,6 +184,9 @@
         "severity": "minor",
         "explanation": "The Hebrew 'אֶל־זֶרַע' indicates rulers set over the descendants of Abraham, Isaac and Jacob, not merely 'for' them; 'take' also matches מִקַּחַת more closely than 'choose'."
       }
-    ]
+    ],
+    "checked": {
+      "changed": "1:239"
+    }
   }
 ]

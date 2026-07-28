@@ -23,7 +23,10 @@
         "severity": "minor",
         "explanation": "The second clause renders דַּדֵּי בְּתוּלֵיהֶן (\"the breasts of their virginity\") as \"their young bodies,\" which generalizes and loses the parallelism of the Hebrew. \"Maiden breasts\" keeps the image while remaining readable aloud, and matches the same phrase rendered as \"young breasts\" in verse 8."
       }
-    ]
+    ],
+    "checked": {
+      "changed": "1:148"
+    }
   },
   {
     "bookId": 26,
@@ -37,7 +40,10 @@
         "severity": "minor",
         "explanation": "\"Their names mean this\" adds an interpretive gloss not present in the Hebrew, which simply repeats \"and their names were.\" The Hebrew word order also places the city first as the subject of identification."
       }
-    ]
+    ],
+    "checked": {
+      "changed": "1:173"
+    }
   },
   {
     "bookId": 26,
@@ -193,13 +199,20 @@
     "bookId": 26,
     "chapterId": 23,
     "verseId": 30,
-    "text": "All this comes on you because you played the whore after the nations and defiled yourself with their idols.",
+    "text": "All this will come upon you because you played the whore after the nations and defiled yourself with their idols.",
     "versions": [
       {
         "text": "All this comes on you because you chased after the nations and defiled yourself with their idols.",
         "type": "error",
         "severity": "minor",
         "explanation": "בִּזְנוֹתֵךְ is the verb for prostitution, consistently rendered \"played the whore\" elsewhere in the chapter; \"chased after\" weakens the sexual-covenantal imagery central to the oracle and breaks the chapter's lexical consistency."
+      },
+      {
+        "text": "All this comes on you because you played the whore after the nations and defiled yourself with their idols.",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "The infinitive absolute עָשֹׂה introduces the announced judgment, which the surrounding oracle states in the future (\"They will deal with you... I will put her cup into your hand\"). The present-tense \"comes on you\" breaks that temporal frame when the passage is read aloud; \"will come upon you\" keeps the sequence consistent without adding content.",
+        "alternative": true
       }
     ]
   },
@@ -281,13 +294,27 @@
     "bookId": 26,
     "chapterId": 23,
     "verseId": 42,
-    "text": "The noise of a carefree crowd was around her—men from the great throng, and drunkards brought in from the desert—and they put bracelets on the women's wrists and beautiful crowns on their heads.",
+    "text": "The noise of a carefree crowd was around her—men out of the great throng, and drunkards* brought to them from the desert—and they put bracelets on the women's wrists and crowns of splendor on their heads.\n\n*Footnote: The written Hebrew text reads \"drunkards\"; the traditional reading tradition points the word as \"Sabeans,\" a people from the desert regions.",
     "versions": [
       {
         "text": "The noise of a carefree crowd surrounded her; men were brought in from the desert along with a great throng, and they put bracelets on the women's wrists and beautiful crowns on their heads.",
         "type": "error",
         "severity": "minor",
         "explanation": "The Hebrew word סובאים/סָבָאִים (written form \"drunkards,\" read form \"Sabeans\") is left untranslated; the current rendering flattens the phrase to a generic \"men.\" A footnote could note the alternate reading \"Sabeans.\" Also, בָהּ is better rendered \"around/with her\" than \"surrounded her.\""
+      },
+      {
+        "text": "The noise of a carefree crowd was around her—men from the great throng, and drunkards brought in from the desert—and they put bracelets on the women's wrists and beautiful crowns on their heads.",
+        "type": "error",
+        "severity": "minor",
+        "explanation": "In the Hebrew the participle מוּבָאִים governs the drunkards being brought to the men (אֶל־אֲנָשִׁים), not two parallel groups arriving side by side; \"brought to them\" restores that relation. \"Crowns of splendor\" also renders עֲטֶרֶת תִּפְאֶרֶת more precisely than the flat \"beautiful crowns.\" Consider a footnote at \"drunkards\" noting that the traditional reading tradition points the word as \"Sabeans,\" since the current text leaves the well-known textual variant unmarked.",
+        "alternative": true
+      },
+      {
+        "text": "The noise of a carefree crowd was around her—men out of the great throng, and drunkards brought to them from the desert—and they put bracelets on the women's wrists and crowns of splendor on their heads.",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "The rendering itself is accurate, but the well-known textual variant here (written form \"drunkards\" / read form \"Sabeans\") is still left unmarked, as flagged in two earlier review passes. A short footnote preserves the alternative without disturbing the oral flow of the line.",
+        "alternative": false
       }
     ]
   },

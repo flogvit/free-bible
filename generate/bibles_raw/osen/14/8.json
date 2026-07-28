@@ -51,13 +51,20 @@
     "bookId": 14,
     "chapterId": 8,
     "verseId": 9,
-    "text": "But Solomon made none of the Israelites slaves for his work; they were his fighting men, his officers and captains, and the commanders of his chariots and cavalry.",
+    "text": "But Solomon did not make slaves of any of the Israelites for his work; they were his fighting men, his officers and captains, and the commanders of his chariots and cavalry.",
     "versions": [
       {
         "text": "But Solomon made none of the Israelites slaves for his work; they were his soldiers, the commanders of his officers, and the commanders of his chariots and cavalry.",
         "type": "error",
         "severity": "minor",
         "explanation": "\"The commanders of his officers\" is opaque in English; שָׁלִישָׁיו refers to chariot officers/adjutants, so a clearer rendering such as \"his officers and captains\" reads better aloud without losing the sense."
+      },
+      {
+        "text": "But Solomon made none of the Israelites slaves for his work; they were his fighting men, his officers and captains, and the commanders of his chariots and cavalry.",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "\"made none of the Israelites slaves\" stacks two objects awkwardly for a reader speaking aloud; \"did not make slaves of any of the Israelites\" carries the same sense with a smoother spoken rhythm. The existing rendering is accurate, only less fluent.",
+        "alternative": true
       }
     ]
   },

@@ -121,13 +121,27 @@
     "bookId": 23,
     "chapterId": 37,
     "verseId": 18,
-    "text": "It is true, LORD, that the kings of Assyria have laid waste all the countries and their lands,",
+    "text": "It is true, LORD, that the kings of Assyria have laid waste all the lands, and every land of theirs,",
     "versions": [
       {
         "text": "It is true, LORD, that the kings of Assyria have laid waste all the nations and their lands,",
         "type": "error",
         "severity": "minor",
         "explanation": "הָאֲרָצוֹת means \"the lands/countries,\" not \"the nations\" (which would be גּוֹיִם). The current wording also creates an odd pairing (\"nations and their lands\") that reverses the sense of the Hebrew."
+      },
+      {
+        "text": "It is true, LORD, that the kings of Assyria have laid waste all the countries and their lands,",
+        "type": "error",
+        "severity": "minor",
+        "explanation": "The second noun אַרְצָם is singular (\"their land\"), not plural, and the two terms are the same Hebrew word, so repeating \"lands\"/\"land\" preserves the deliberate echo of the original. Rendering the first as \"countries\" and the second as \"their lands\" both obscures that echo and makes the plural inaccurate.",
+        "alternative": true
+      },
+      {
+        "text": "It is true, LORD, that the kings of Assyria have laid waste all the lands and their own land,",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "The word \"own\" is not in the Hebrew and, in English, steers the reader toward hearing this as Assyria's own homeland, which reverses the sense: אַרְצָם refers to the territory belonging to the peoples whose lands were devastated. Dropping \"own\" (and making the referent explicit) keeps the singular noun and the deliberate echo of אֶרֶץ while removing the misleading pronoun reference.",
+        "alternative": true
       }
     ]
   },

@@ -117,7 +117,10 @@
         "severity": "minor",
         "explanation": "The Hebrew pronoun is plural (\"gave them\"), referring to the stripped metal overlay from the doors and doorposts; \"the gold\" adds a specification the text does not state."
       }
-    ]
+    ],
+    "checked": {
+      "changed": "1:161"
+    }
   },
   {
     "bookId": 12,
@@ -215,19 +218,29 @@
         "severity": "minor",
         "explanation": "Verse 35 closes the speech with a double quotation mark, but the continuing speech here has no opening quotation mark. Adding an opening quote at the start of this paragraph of speech makes the punctuation consistent and helps a public reader track who is speaking. (A footnote noting that 'make peace with me' renders a Hebrew idiom, literally 'make a blessing with me,' i.e., accept terms of surrender, would also aid the reader.)"
       }
-    ]
+    ],
+    "checked": {
+      "changed": "1:211"
+    }
   },
   {
     "bookId": 12,
     "chapterId": 18,
     "verseId": 32,
-    "text": "until I come and take you away to a land like your own—a land of grain and new wine, a land of bread and vineyards, a land of olive trees and honey. Live, and do not die! Do not listen to Hezekiah when he misleads you by saying, 'The LORD will deliver us.'",
+    "text": "until I come and take you away to a land like your own—a land of grain and new wine, a land of bread and vineyards, a land of olive oil and honey. Live, and do not die! Do not listen to Hezekiah when he misleads you by saying, 'The LORD will deliver us.'",
     "versions": [
       {
         "text": "until I come and take you away to a land like your own—a land of grain and new wine, a land of bread and vineyards, a land of olive trees and honey. Choose life, not death! Do not listen to Hezekiah when he misleads you by saying, 'The LORD will deliver us.'",
         "type": "error",
         "severity": "minor",
         "explanation": "The Hebrew imperatives are 'live and do not die'; 'Choose life, not death' introduces the idea of choosing, which is not in the text, and it echoes a well-known covenant formula from Deuteronomy that is not being used here. The simpler rendering is both more accurate and just as rhythmic."
+      },
+      {
+        "text": "until I come and take you away to a land like your own—a land of grain and new wine, a land of bread and vineyards, a land of olive trees and honey. Live, and do not die! Do not listen to Hezekiah when he misleads you by saying, 'The LORD will deliver us.'",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "The Hebrew phrase זֵית יִצְהָר specifies the olive as the source of fresh oil; rendering it simply as 'olive trees' drops the element of produce (oil) that parallels the grain, wine, bread and honey in the surrounding list. 'Olive oil' keeps the parallelism of harvested goods and reads just as smoothly aloud.",
+        "alternative": true
       }
     ]
   },

@@ -179,19 +179,29 @@
         "severity": "minor",
         "explanation": "The Hebrew distinguishes two parties: \"any individual person\" (כָל־הָאָדָם) and \"all your people Israel\" (כֹל עַמְּךָ יִשְׂרָאֵל). The current rendering collapses them into one, losing the deliberate contrast between the individual and the whole nation."
       }
-    ]
+    ],
+    "checked": {
+      "changed": "1:172"
+    }
   },
   {
     "bookId": 14,
     "chapterId": 6,
     "verseId": 30,
-    "text": "then hear from heaven, the place where you dwell, and forgive. Deal with each person according to all his ways, since you know his heart—for you alone know the hearts of all people.",
+    "text": "then hear from heaven, the place where you dwell, and forgive. Deal with each person, whose heart you know, according to all his ways—for you alone know the hearts of all people.",
     "versions": [
       {
         "text": "then hear from heaven, the place where you dwell, and forgive. Deal with each person according to all his ways, for you alone know the human heart.",
         "type": "error",
         "severity": "major",
         "explanation": "The clause אֲשֶׁר תֵּדַע אֶת־לְבָבוֹ (\"whose heart you know\") has been dropped, so the verse loses one of its two parallel statements about God's knowledge of the heart."
+      },
+      {
+        "text": "then hear from heaven, the place where you dwell, and forgive. Deal with each person according to all his ways, since you know his heart—for you alone know the hearts of all people.",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "אֲשֶׁר תֵּדַע אֶת־לְבָבוֹ is a relative clause describing the person (\"whose heart you know\"), not a causal clause. Rendering it with \"since\" creates two stacked causal statements (\"since... for...\"), which is slightly redundant and blurs the parallel. Restoring the relative force keeps both statements about God's knowledge intact and reads more cleanly aloud.",
+        "alternative": true
       }
     ]
   },

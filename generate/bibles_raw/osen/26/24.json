@@ -27,13 +27,20 @@
     "bookId": 26,
     "chapterId": 24,
     "verseId": 5,
-    "text": "Take the choicest of the flock, and pile the wood beneath it. Bring it to a boil, and cook the bones inside it as well.",
+    "text": "Take the choicest of the flock, and pile the wood beneath it. Bring it to a boil, and cook its bones inside it as well.",
     "versions": [
       {
         "text": "Take the choicest of the flock, and pile the logs beneath it. Bring it to a boil, and cook the bones inside it as well.",
         "type": "error",
         "severity": "minor",
         "explanation": "The Hebrew here reads \"the bones\" (הָעֲצָמִים), not \"logs\"; \"logs\" reflects a conjectural emendation to עֵצִים. \"Wood\" is a smoother rendering of that emendation, but a footnote should be added noting that the Hebrew text reads \"bones\" and that many understand it as wood for the fire, so readers are not misled about the underlying text."
+      },
+      {
+        "text": "Take the choicest of the flock, and pile the wood beneath it. Bring it to a boil, and cook the bones inside it as well.",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "In the last clause the Hebrew has the suffixed form עֲצָמֶיהָ (\"its bones,\" i.e. the pot's contents), so \"its bones\" is more precise than the bare \"the bones.\" Also, the footnote called for in the previous revision has not been added: a brief note stating that the Hebrew text of the second clause reads \"bones\" and that many understand it as wood for the fire would keep readers from being misled by the rendering \"wood.\"",
+        "alternative": true
       }
     ]
   },
@@ -74,7 +81,10 @@
         "explanation": "The opening two-thirds of the verse has been dropped: לָכֵן כֹּה אָמַר אֲדֹנָי יְהוִה (\"Therefore thus says the Lord GOD\") and אוֹי עִיר הַדָּמִים (\"Woe to the city of blood\"). The divine speech formula and the woe-oracle address are essential content; only the final clause remains. The earlier revision's intentional change (naming the fire rather than \"the pile\") is preserved.",
         "alternative": false
       }
-    ]
+    ],
+    "checked": {
+      "changed": "2:96"
+    }
   },
   {
     "bookId": 26,
@@ -137,7 +147,10 @@
         "explanation": "Three clauses of the Hebrew have been lost: הֵאָנֵק דֹּם (\"Groan in silence\"), מֵתִים אֵבֶל לֹא־תַעֲשֶׂה (\"make no mourning for the dead\"), and פְאֵרְךָ חֲבוֹשׁ עָלֶיךָ וּנְעָלֶיךָ תָּשִׂים בְּרַגְלֶיךָ (\"bind your turban on you and put your sandals on your feet\"). Only the last two commands remain. The restored wording keeps the intentional change from \"cover your mustache\" to \"cover your lips.\"",
         "alternative": false
       }
-    ]
+    ],
+    "checked": {
+      "changed": "2:171"
+    }
   },
   {
     "bookId": 26,
@@ -185,13 +198,20 @@
     "bookId": 26,
     "chapterId": 24,
     "verseId": 25,
-    "text": "And you, son of man—will it not be on the day I take from them their stronghold, their joy and their glory, the delight of their eyes and the longing of their souls, their sons and their daughters—",
+    "text": "And you, son of man—will it not be on the day I take from them their stronghold, the joy of their glory, the delight of their eyes and the longing of their souls, their sons and their daughters—",
     "versions": [
       {
         "text": "And you, son of man: on the day I take from them their stronghold, their joy and glory, the delight of their eyes and the longing of their souls—their sons and their daughters—",
         "type": "error",
         "severity": "minor",
         "explanation": "The interrogative particle הֲלוֹא (\"is it not?\") is dropped, losing the rhetorical force that binds verse 25 to verse 26. Restoring it also smooths the transition into \"on that day\" in the following verse."
+      },
+      {
+        "text": "And you, son of man—will it not be on the day I take from them their stronghold, their joy and their glory, the delight of their eyes and the longing of their souls, their sons and their daughters—",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "מְשׂוֹשׂ תִּפְאַרְתָּם is a construct chain (\"the joy of their glory\"), not two coordinated nouns; rendering it as \"their joy and their glory\" inserts a conjunction the Hebrew does not have and turns one epithet into two. Keeping it as a single phrase also preserves the rhythm of the following pairs (\"the delight of their eyes,\" \"the longing of their souls\"). The restored הֲלוֹא from the earlier revision is untouched.",
+        "alternative": true
       }
     ]
   },

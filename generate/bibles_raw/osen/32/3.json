@@ -53,13 +53,20 @@
     "bookId": 32,
     "chapterId": 3,
     "verseId": 8,
-    "text": "Let both people and animals be covered with sackcloth. Let them cry out to God with all their strength, and let each one turn from his evil way and from the violence in his hands.",
+    "text": "Let people and animals alike cover themselves with sackcloth. Let them cry out to God with all their strength, and let each one turn from his evil way and from the violence in his hands.",
     "versions": [
       {
         "text": "Let both people and animals be covered with sackcloth. Let everyone call on God with all their strength, and let each one turn from his evil way and from the violence in his hands.",
         "type": "grammar",
         "severity": "minor",
         "explanation": "\"Everyone... their\" followed by \"each one... his\" is inconsistent in number and person; the Hebrew verb is plural (\"let them cry out\"), which also reads more smoothly aloud."
+      },
+      {
+        "text": "Let both people and animals be covered with sackcloth. Let them cry out to God with all their strength, and let each one turn from his evil way and from the violence in his hands.",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "The Hebrew verb is a reflexive form (\"let them cover themselves\"), and the active reflexive keeps the whole verse in the same active mood as the following clauses (\"let them cry out\", \"let each one turn\"), which reads more evenly aloud. The passive rendering is a legitimate option, since animals are covered by others.",
+        "alternative": true
       }
     ]
   },

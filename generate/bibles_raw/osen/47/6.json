@@ -77,17 +77,24 @@
     "bookId": 47,
     "chapterId": 6,
     "verseId": 12,
-    "text": "You are not cramped by us; you are cramped in your own affections.",
+    "text": "You are not cramped by us; you are cramped by your own affections.",
     "versions": [
       {
         "text": "There is no narrowness in our affection for you; the narrowness is in your own.",
         "type": "error",
         "severity": "major",
         "explanation": "Both verbs in Greek are second person plural with \"you\" as subject (\"you are not restricted in us, but you are restricted in your own affections\"). The current rendering turns the first clause into a statement about the apostles' affection and makes the sentence abstract, losing the direct address that drives the appeal in verse 13."
+      },
+      {
+        "text": "You are not cramped by us; you are cramped in your own affections.",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "The Greek δέ sets the two clauses in explicit contrast, and the semicolon alone carries this adequately for oral reading. The one small gain is prepositional consistency: \"cramped in your own affections\" can be misread as locating the constriction inside the affections rather than identifying them as its source, whereas \"by\" parallels the first clause and makes the point land clearly when heard aloud. The existing wording is a legitimate rendering of ἐν τοῖς σπλάγχνοις ὑμῶν.",
+        "alternative": true
       }
     ],
     "checked": {
-      "length": "1:66"
+      "length": "2:66"
     }
   },
   {
@@ -108,7 +115,10 @@
         "severity": "minor",
         "explanation": "ἑτεροζυγοῦντες means to be yoked with a mismatched partner; the word carries the sense of inequality, which the current wording omits. \"Unequally yoked\" preserves the force of the metaphor."
       }
-    ]
+    ],
+    "checked": {
+      "changed": "1:162"
+    }
   },
   {
     "bookId": 47,

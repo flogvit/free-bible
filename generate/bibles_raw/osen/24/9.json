@@ -9,13 +9,20 @@
     "bookId": 24,
     "chapterId": 9,
     "verseId": 2,
-    "text": "They bend their tongues like bows; falsehood is their weapon. It is not for truth that they grow strong in the land. They go from evil to evil, and me they do not know, declares the LORD.",
+    "text": "They bend their tongues like bows; falsehood is their weapon. It is not for truth that they grow strong in the land. For they press on from evil to evil, and me they do not know, declares the LORD.",
     "versions": [
       {
         "text": "They bend their tongues like bows; lies, not truth, hold sway in the land. They go from evil to evil, and me they do not know, declares the LORD.",
         "type": "error",
         "severity": "minor",
         "explanation": "The Hebrew keeps the people as the subject: \"they have grown strong in the land, but not for truth.\" The current rendering makes \"lies\" the subject and loses the accusation against the people themselves. It also drops the parallel image of falsehood as the bow they draw."
+      },
+      {
+        "text": "They bend their tongues like bows; falsehood is their weapon. It is not for truth that they grow strong in the land. They go from evil to evil, and me they do not know, declares the LORD.",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "The causal particle כִּי that introduces the final clause is unrepresented, so the logical link between their failure to grow strong for truth and their advance from evil to evil is lost. The verb יָצָאוּ also carries a sense of going forth or advancing rather than plain motion. Adding the connective preserves the argument without lengthening the line for oral reading.",
+        "alternative": true
       }
     ]
   },
@@ -61,7 +68,10 @@
         "severity": "minor",
         "explanation": "The Hebrew has a plural (\"for these things\"), summing up the whole catalog of sins listed above, not a single act."
       }
-    ]
+    ],
+    "checked": {
+      "changed": "1:108"
+    }
   },
   {
     "bookId": 24,

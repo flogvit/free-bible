@@ -107,13 +107,20 @@
     "bookId": 44,
     "chapterId": 17,
     "verseId": 17,
-    "text": "So he reasoned in the synagogue with the Jews and the God-fearing Gentiles, and every day in the marketplace with whoever happened to be there.",
+    "text": "So he reasoned in the synagogue with the Jews and the God-fearers, and every day in the marketplace with whoever happened to be there.",
     "versions": [
       {
         "text": "So he reasoned in the synagogue with the Jews and the devout Greeks, and every day in the marketplace with whoever happened to be there.",
         "type": "error",
         "severity": "minor",
         "explanation": "The Greek here reads simply τοῖς σεβομένοις (\"the devout ones,\" i.e., God-fearers); unlike verse 4, it does not include Ἑλλήνων (\"Greeks\"). Rendering it as \"God-fearing Gentiles\" or simply \"the devout\" avoids adding a word not present in the text."
+      },
+      {
+        "text": "So he reasoned in the synagogue with the Jews and the God-fearing Gentiles, and every day in the marketplace with whoever happened to be there.",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "The Greek has only τοῖς σεβομένοις (\"those who worship/revere,\" i.e., God-fearers). \"God-fearing Gentiles\" supplies the noun \"Gentiles,\" which is not in the text; the term \"God-fearers\" conveys the same technical sense without adding a word, and reads more crisply aloud.",
+        "alternative": true
       }
     ]
   },

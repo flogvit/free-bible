@@ -73,7 +73,10 @@
         "severity": "minor",
         "explanation": "φησίν is third person singular, pointing to an individual critic rather than a group. \"Someone says\" (or \"it is said\") preserves the singular and keeps the sharpness of the quoted charge."
       }
-    ]
+    ],
+    "checked": {
+      "changed": "1:128"
+    }
   },
   {
     "bookId": 47,
@@ -85,13 +88,20 @@
     "bookId": 47,
     "chapterId": 10,
     "verseId": 12,
-    "text": "For we do not dare to class or compare ourselves with certain people who commend themselves. But when they measure themselves by themselves and compare themselves with themselves, they show no understanding.",
+    "text": "For we do not dare to rank or compare ourselves with certain people who commend themselves. But when they measure themselves by themselves and compare themselves with themselves, they show no understanding.",
     "versions": [
       {
         "text": "We would not dare to classify or compare ourselves with some who commend themselves. But when they measure themselves by themselves and compare themselves with themselves, they show no understanding.",
         "type": "error",
         "severity": "minor",
         "explanation": "τολμῶμεν is present indicative (\"we do not dare\"), not a conditional \"would not dare,\" and the connective γάρ links this verse to the preceding argument; both are dropped in the current rendering."
+      },
+      {
+        "text": "For we do not dare to class or compare ourselves with certain people who commend themselves. But when they measure themselves by themselves and compare themselves with themselves, they show no understanding.",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "ἐγκρῖναι means to reckon or number oneself among a group; \"rank\" carries that sense more clearly than \"class,\" which is dated and slightly ambiguous when read aloud, and it preserves the wordplay with the following \"compare\" (συγκρῖναι). The rest of the verse is unchanged.",
+        "alternative": true
       }
     ]
   },

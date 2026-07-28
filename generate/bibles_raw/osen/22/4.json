@@ -15,13 +15,20 @@
     "bookId": 22,
     "chapterId": 4,
     "verseId": 3,
-    "text": "Your lips are like a scarlet thread, and your mouth is lovely. Behind your veil your temple is like a slice of pomegranate.",
+    "text": "Your lips are like a scarlet thread, and your mouth is lovely. Your cheek behind your veil is like a slice of pomegranate.",
     "versions": [
       {
         "text": "Your lips are like a scarlet thread, and your mouth is lovely. Behind your veil your brow is like a slice of pomegranate.",
         "type": "error",
         "severity": "minor",
         "explanation": "Hebrew רַקָּה refers to the temple of the head (the side of the face), not the forehead/brow. The comparison to a pomegranate slice concerns the rounded, ruddy cheek/temple area."
+      },
+      {
+        "text": "Your lips are like a scarlet thread, and your mouth is lovely. Behind your veil your temple is like a slice of pomegranate.",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "The sense of רַקָּה (the side of the head/face) is correct, but in English read aloud, \"your temple\" is easily heard as a building rather than part of the face. Rendering it as the cheek keeps the intended ruddy, rounded side of the face while removing the aural ambiguity, and restoring the clause order (subject before the prepositional phrase) matches the Hebrew flow.",
+        "alternative": true
       }
     ]
   },

@@ -119,13 +119,20 @@
     "bookId": 42,
     "chapterId": 19,
     "verseId": 19,
-    "text": "To this one he said, 'You too—take charge of five cities.'",
+    "text": "He said to this one as well, 'You too—take charge of five cities.'",
     "versions": [
       {
         "text": "To him he said, 'You take charge of five cities.'",
         "type": "error",
         "severity": "minor",
         "explanation": "The Greek καὶ σὺ (\"you also/you too\") is not rendered, losing the parallel with the first servant's reward. The added emphasis also improves the oral rhythm."
+      },
+      {
+        "text": "To this one he said, 'You too—take charge of five cities.'",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "The Greek has two occurrences of καί: καὶ τούτῳ ('to this one also/as well') and καὶ σύ ('you too'). The current rendering captures the second but drops the first, which marks the parallel between the master's two responses. 'He said to this one as well' also flows more naturally for oral reading than the fronted 'To this one he said.'",
+        "alternative": true
       }
     ]
   },

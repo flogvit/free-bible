@@ -53,13 +53,20 @@
     "bookId": 11,
     "chapterId": 5,
     "verseId": 8,
-    "text": "They also brought barley and straw for the chariot horses and the swift steeds to the place where they were needed, each according to his assigned duty.",
+    "text": "They also brought barley and straw for the horses and the swift steeds to the place where they were needed, each according to his assigned duty.",
     "versions": [
       {
         "text": "They also brought barley and straw for the chariot horses and the swift steeds to whatever place he was, each according to his assignment.",
         "type": "grammar",
         "severity": "minor",
         "explanation": "\"to whatever place he was\" is ungrammatical and unclear in English (a missing relative pronoun, and an ambiguous \"he\"). The Hebrew means the supplies were delivered to the place where they were required. The revision reads smoothly aloud and preserves the sense of each officer fulfilling his appointed obligation."
+      },
+      {
+        "text": "They also brought barley and straw for the chariot horses and the swift steeds to the place where they were needed, each according to his assigned duty.",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "The Hebrew סוּסִים simply means \"horses\"; the qualifier \"chariot\" is an added specification not present in the text, and it also blurs the distinction with רָכֶשׁ (\"swift steeds\"), which is the term more often associated with chariotry. Dropping \"chariot\" is both more accurate and slightly tighter for reading aloud.",
+        "alternative": true
       }
     ]
   },

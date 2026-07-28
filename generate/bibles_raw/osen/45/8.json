@@ -103,13 +103,20 @@
     "bookId": 45,
     "chapterId": 8,
     "verseId": 15,
-    "text": "For you did not receive a spirit of slavery, to fall back into fear; you received the Spirit of adoption, by whom we cry, \"Abba! Father!\"",
+    "text": "For you did not receive a spirit of slavery, to fall back into fear, but you received the Spirit of adoption, in whom we cry, \"Abba! Father!\"",
     "versions": [
       {
         "text": "The Spirit you received does not make you slaves, so that you live in fear again; rather, you received the Spirit of adoption, by whom we cry, \"Abba! Father!\"",
         "type": "error",
         "severity": "minor",
         "explanation": "The Greek is a past-tense statement about what was received (\"you did not receive a spirit of slavery\"), and it opens with the connective γάρ. The present-tense paraphrase loses both the aorist and the link to the previous verse."
+      },
+      {
+        "text": "For you did not receive a spirit of slavery, to fall back into fear; you received the Spirit of adoption, by whom we cry, \"Abba! Father!\"",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "The Greek ἀλλά is a strong adversative that carries the weight of the sentence; rendering it with only a semicolon leaves the contrast implicit and slightly flattens the rhythm when read aloud. Making it explicit with \"but\" preserves the οὐ… ἀλλά structure. \"in whom\" also reflects ἐν ᾧ a shade more closely.",
+        "alternative": true
       }
     ]
   },
@@ -149,7 +156,10 @@
         "severity": "minor",
         "explanation": "διὰ with the accusative means \"because of\"; \"by the will of\" adds a word not in the Greek and shifts the sense toward agency rather than cause."
       }
-    ]
+    ],
+    "checked": {
+      "changed": "1:109"
+    }
   },
   {
     "bookId": 45,

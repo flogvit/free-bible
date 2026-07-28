@@ -83,13 +83,20 @@
     "bookId": 6,
     "chapterId": 3,
     "verseId": 13,
-    "text": "And when the feet of the priests who carry the ark of the LORD, the Lord of all the earth, come to rest in the waters of the Jordan, the waters of the Jordan will be cut off—the water flowing down from upstream—and they will stand in a single heap.\"",
+    "text": "And when the feet of the priests who carry the ark of the LORD, the Lord of all the earth, come to rest in the waters of the Jordan, the waters of the Jordan will be cut off—the waters flowing down from upstream—and they will stand in a single heap.",
     "versions": [
       {
         "text": "And when the feet of the priests who carry the ark of the LORD, the Lord of all the earth, come to rest in the waters of the Jordan, the water flowing down from upstream will be cut off and stand in a single heap.\"",
         "type": "error",
         "severity": "minor",
         "explanation": "The Hebrew has two clauses: \"the waters of the Jordan will be cut off\" followed by the appositional \"the waters flowing down from above.\" The current rendering collapses them, losing the emphatic naming of the Jordan's waters that anchors the promise."
+      },
+      {
+        "text": "And when the feet of the priests who carry the ark of the LORD, the Lord of all the earth, come to rest in the waters of the Jordan, the waters of the Jordan will be cut off—the water flowing down from upstream—and they will stand in a single heap.\"",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "The appositional phrase renders the same Hebrew plural noun (הַמַּיִם) as the preceding clause, so \"the waters\" keeps the number consistent and makes the plural pronoun \"they\" in the following clause read smoothly aloud.",
+        "alternative": true
       }
     ]
   },

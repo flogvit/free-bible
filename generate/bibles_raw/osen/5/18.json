@@ -3,13 +3,20 @@
     "bookId": 5,
     "chapterId": 18,
     "verseId": 1,
-    "text": "The Levitical priests—indeed, the whole tribe of Levi—shall have no portion or inheritance with Israel. They shall live on the offerings made by fire to the LORD, for that is the portion he has assigned them.",
+    "text": "The Levitical priests—indeed, the whole tribe of Levi—shall have no portion or inheritance with Israel. They shall eat the offerings made by fire to the LORD and the dues that belong to him.",
     "versions": [
       {
         "text": "The Levitical priests—indeed, the whole tribe of Levi—shall have no portion or inheritance with Israel. They shall live on the offerings made by fire to the LORD, which are his rightful share.",
         "type": "error",
         "severity": "minor",
         "explanation": "In the Hebrew, \"his inheritance\" most naturally refers to what belongs to the LORD (the dues brought to him), which the priests then eat. The phrase \"which are his rightful share\" leaves \"his\" ambiguous and, read aloud, sounds as if it refers to Levi rather than the LORD. Rewording clarifies the sense without adding content."
+      },
+      {
+        "text": "The Levitical priests—indeed, the whole tribe of Levi—shall have no portion or inheritance with Israel. They shall live on the offerings made by fire to the LORD, for that is the portion he has assigned them.",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "The Hebrew names two things the priests eat: the LORD's fire offerings and \"his inheritance\" (the dues brought to him). Turning the second phrase into an explanatory clause (\"for that is the portion he has assigned them\") collapses the two objects into one and adds an idea of assignment not in the verse. Keeping both objects preserves the content while still making clear, as the earlier revision intended, that the inheritance is the LORD's.",
+        "alternative": true
       }
     ]
   },
@@ -31,7 +38,10 @@
         "severity": "minor",
         "explanation": "The Hebrew dual לְּחָיַיִם refers to the two cheeks (the fleshy portion), not the jawbones. \"The two cheeks\" is more accurate and reads clearly aloud."
       }
-    ]
+    ],
+    "checked": {
+      "changed": "1:186"
+    }
   },
   {
     "bookId": 5,

@@ -141,7 +141,10 @@
         "severity": "minor",
         "explanation": "The Hebrew specifies \"on the second capital\" (הַכֹּתֶרֶת הַשֵּׁנִית), parallel to the pattern in vv. 16–18. Rendering it \"on both capitals\" changes the count implication (200 per capital vs. 200 total) and adds an interpretation not in the text."
       }
-    ]
+    ],
+    "checked": {
+      "changed": "1:160"
+    }
   },
   {
     "bookId": 11,
@@ -195,15 +198,25 @@
     "bookId": 11,
     "chapterId": 7,
     "verseId": 29,
-    "text": "and on the panels between the frames were lions, oxen, and cherubim, and on the frames likewise; above and below the lions and oxen were wreaths of hanging work.",
+    "text": "and on the panels between the frames were lions, oxen, and cherubim, and on the frames likewise above; beneath the lions and oxen were wreaths of hanging work.",
     "versions": [
       {
         "text": "and on the panels between the frames were lions, oxen, and cherubim, and on the frames likewise, above and below the lions and oxen, there were wreaths of hammered work.",
         "type": "error",
         "severity": "minor",
         "explanation": "מַעֲשֵׂה מוֹרָד means work that hangs down or descends, not \"hammered work.\" Splitting the long sentence also makes the clause easier to read aloud."
+      },
+      {
+        "text": "and on the panels between the frames were lions, oxen, and cherubim, and on the frames likewise; above and below the lions and oxen were wreaths of hanging work.",
+        "type": "error",
+        "severity": "minor",
+        "explanation": "In the Hebrew, מִמָּעַל (\"above\") belongs to the clause about the frames (\"and on the frames likewise, above\"), while the wreaths are located only מִתַּחַת (\"beneath\") the lions and oxen. Placing \"above\" with the wreaths states that wreaths were both above and below, which the text does not say. The revision keeps the earlier correction of מַעֲשֵׂה מוֹרָד as \"hanging work\" and preserves the shorter oral clauses.",
+        "alternative": true
       }
-    ]
+    ],
+    "checked": {
+      "changed": "2:159"
+    }
   },
   {
     "bookId": 11,
@@ -217,7 +230,10 @@
         "severity": "minor",
         "explanation": "פַעֲמֹתָיו means \"its feet/legs,\" not \"its corners.\" \"Corners\" (פִּנּוֹת) appears separately in v. 34, so using it here blurs the distinction between the two features."
       }
-    ]
+    ],
+    "checked": {
+      "changed": "1:162"
+    }
   },
   {
     "bookId": 11,

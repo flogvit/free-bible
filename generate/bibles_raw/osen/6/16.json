@@ -41,13 +41,20 @@
     "bookId": 6,
     "chapterId": 16,
     "verseId": 6,
-    "text": "and from there out to the sea. Michmethath lay to the north, and the boundary turned eastward to Taanath-shiloh and passed by it on the east of Janoah.",
+    "text": "From there the boundary ran westward, with Michmethath on the north, and it turned eastward to Taanath-shiloh and passed by it on the east of Janoah.",
     "versions": [
       {
         "text": "and from there out to the sea. Michmethath lay to the north, and the boundary turned eastward to Taanath-shiloh and passed by it on the east to Janoah.",
         "type": "error",
         "severity": "minor",
         "explanation": "The Hebrew מִמִּזְרַח יָנוֹחָה means \"on the east of Janoah,\" describing the location of the boundary relative to Janoah, not motion toward it. \"On the east to Janoah\" is ambiguous and can be misheard when read aloud."
+      },
+      {
+        "text": "and from there out to the sea. Michmethath lay to the north, and the boundary turned eastward to Taanath-shiloh and passed by it on the east of Janoah.",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "הַיָּמָּה here functions directionally (\"seaward\" = westward) rather than indicating that the border actually reached the Mediterranean; the sea itself is only reached in verse 8 (\"ended at the sea\"). Rendering it \"westward\" avoids the impression of two separate arrivals at the sea and keeps the itinerary clear for hearers. Joining the clauses also removes the abrupt full stop mid-itinerary, which reads more smoothly aloud.",
+        "alternative": true
       }
     ]
   },
@@ -76,7 +83,10 @@
         "explanation": "The second half of the Hebrew verse — זֹאת נַחֲלַת מַטֵּה בְנֵי־אֶפְרַיִם לְמִשְׁפְּחֹתָם, \"This was the inheritance of the tribe of the sons of Ephraim according to their clans\" — was dropped in an earlier revision. It must be restored; it is also needed as the antecedent for the continuation in verse 9. The improved \"Kanah Ravine\" wording is retained.",
         "alternative": false
       }
-    ]
+    ],
+    "checked": {
+      "changed": "2:140"
+    }
   },
   {
     "bookId": 6,

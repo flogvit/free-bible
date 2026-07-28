@@ -121,13 +121,20 @@
     "bookId": 19,
     "chapterId": 71,
     "verseId": 18,
-    "text": "Even to old age and gray hair, God, do not forsake me, until I proclaim your power to the next generation, your mighty acts to all who are to come.",
+    "text": "Even to old age and gray hair, God, do not forsake me, until I proclaim your arm to the next generation, your might to all who are to come.",
     "versions": [
       {
         "text": "Even now, in old age and gray hairs, God, do not forsake me, until I proclaim your power to the next generation, your mighty acts to all who are to come.",
         "type": "error",
         "severity": "major",
         "explanation": "The Hebrew עַד־זִקְנָה וְשֵׂיבָה means 'until/to old age and gray hair' — a forward-looking petition covering the whole span of life. 'Even now, in old age' wrongly presents the speaker as already aged and loses the temporal reach of עַד."
+      },
+      {
+        "text": "Even to old age and gray hair, God, do not forsake me, until I proclaim your power to the next generation, your mighty acts to all who are to come.",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "The Hebrew has two distinct terms, זְרוֹעֲךָ ('your arm') and גְּבוּרָתֶךָ ('your might'). Rendering the first as 'your power' and the second as 'your mighty acts' blurs the parallel and creates near-redundancy in English. Keeping the concrete image 'arm' preserves the poetic pairing and reads well aloud.",
+        "alternative": true
       }
     ]
   },

@@ -84,13 +84,20 @@
     "bookId": 6,
     "chapterId": 17,
     "verseId": 12,
-    "text": "But the descendants of Manasseh could not take possession of these towns, for the Canaanites were determined to go on living in that land.",
+    "text": "But the descendants of Manasseh could not dispossess these towns, for the Canaanites were determined to go on living in this land.",
     "versions": [
       {
         "text": "But the descendants of Manasseh could not take possession of these towns, for the Canaanites managed to remain living in that land.",
         "type": "error",
         "severity": "minor",
         "explanation": "The verb יואל conveys determination or persistence on the part of the Canaanites, not merely that they 'managed' to stay. 'Were determined' captures the sense better and reads well aloud."
+      },
+      {
+        "text": "But the descendants of Manasseh could not take possession of these towns, for the Canaanites were determined to go on living in that land.",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "The verb לְהוֹרִישׁ means to dispossess or drive out, which also links this verse to the same root in v. 13 (\"did not drive them out\"); \"take possession of\" blurs that connection. Also, הָאָרֶץ הַזֹּאת is \"this land,\" the near demonstrative, matching \"these towns\" earlier in the sentence.",
+        "alternative": true
       }
     ]
   },

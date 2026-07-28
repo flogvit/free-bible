@@ -23,7 +23,10 @@
         "severity": "minor",
         "explanation": "The Hebrew has the comparative particle כִּגְאוֹן (\"like the splendor of\"), which the current rendering drops, turning a comparison into a simple apposition."
       }
-    ]
+    ],
+    "checked": {
+      "changed": "1:143"
+    }
   },
   {
     "bookId": 34,
@@ -59,13 +62,20 @@
     "bookId": 34,
     "chapterId": 2,
     "verseId": 9,
-    "text": "Nineveh is like a pool of water, its waters draining away. Now they are fleeing! \"Stop! Stop!\" but no one turns back.",
+    "text": "Nineveh has been like a pool of water from her earliest days, but now they are fleeing! \"Stop! Stop!\" but no one turns back.",
     "versions": [
       {
         "text": "Nineveh is like a pool, and its water is draining away. \"Stop! Stop!\" they cry, but no one turns back.",
         "type": "error",
         "severity": "major",
         "explanation": "The clause וְהֵמָּה נָסִים (\"but they are fleeing\") refers to the inhabitants, not to the water; the current version absorbs it into the water metaphor and loses the picture of people running away, which is what makes the cry \"Stop! Stop!\" intelligible."
+      },
+      {
+        "text": "Nineveh is like a pool of water, its waters draining away. Now they are fleeing! \"Stop! Stop!\" but no one turns back.",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "The Hebrew מִימֵי הִיא most naturally means \"from the days she has been\" (i.e., from of old), describing Nineseh's long-standing fullness; \"its waters draining away\" supplies a verb that is not in the text. Keeping the temporal sense preserves the contrast with the sudden flight in the next clause. The current rendering follows a well-attested interpretive tradition, so it remains a legitimate alternative.",
+        "alternative": true
       }
     ]
   },

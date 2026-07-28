@@ -31,7 +31,10 @@
         "severity": "minor",
         "explanation": "The Hebrew sha'agah is a strong word (roaring, as of a lion), and the clause is causal/instrumental: the wasting came 'through my groaning all day long.' The current rendering breaks the connection into two independent statements and weakens the verb."
       }
-    ]
+    ],
+    "checked": {
+      "changed": "1:78"
+    }
   },
   {
     "bookId": 19,
@@ -65,7 +68,10 @@
         "severity": "major",
         "explanation": "The Hebrew has raq ('surely/only'), which is unrepresented, and the pronouns in the second clause are singular ('to him'), matching 'all the faithful' as a collective singular. 'At a time when you may be found' better reflects le'et metzo."
       }
-    ]
+    ],
+    "checked": {
+      "changed": "1:133"
+    }
   },
   {
     "bookId": 19,
@@ -83,13 +89,20 @@
     "bookId": 19,
     "chapterId": 32,
     "verseId": 9,
-    "text": "Do not be like a horse or a mule, without understanding, whose trappings must be bit and bridle to hold it back, or it will not come near you.",
+    "text": "Do not be like a horse or a mule, without understanding, whose only trappings are bit and bridle to curb it, else it will not come near you.",
     "versions": [
       {
         "text": "Do not be like a horse or a mule, without understanding, that must be curbed with bit and bridle or it will not come to you.",
         "type": "error",
         "severity": "major",
         "explanation": "'edyo ('its trappings/harness') is not represented, and qerov elekha is 'come near you.' The current 'that must be curbed' loses the sense that the animal's only ornament is restraining gear."
+      },
+      {
+        "text": "Do not be like a horse or a mule, without understanding, whose trappings must be bit and bridle to hold it back, or it will not come near you.",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "The sense of 'edyo livlom is that the animal's harness serves only to restrain it. 'whose trappings must be bit and bridle to hold it back' is grammatically strained for oral reading ('trappings must be bit'); recasting as 'whose only trappings are bit and bridle to curb it' keeps the required element while flowing more naturally when read aloud.",
+        "alternative": true
       }
     ]
   },

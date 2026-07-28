@@ -3,13 +3,20 @@
     "bookId": 28,
     "chapterId": 10,
     "verseId": 1,
-    "text": "Israel is a luxuriant vine that yields his fruit for himself. The more his fruit increased, the more altars he built; the richer his land became, the finer he made his sacred pillars.",
+    "text": "Israel is a luxuriant vine, yielding fruit for himself. The more his fruit increased, the more altars he built; the richer his land became, the finer he made his sacred pillars.",
     "versions": [
       {
         "text": "Israel is a luxuriant vine that yields its fruit for itself. The more his fruit increased, the more altars he built; the richer his land became, the finer he made his sacred pillars.",
         "type": "grammar",
         "severity": "minor",
         "explanation": "The verse switches from \"its fruit for itself\" to \"his fruit ... he built ... his land,\" which is jarring when read aloud. Keeping one pronoun set (masculine, as in the Hebrew) makes the rhythm consistent."
+      },
+      {
+        "text": "Israel is a luxuriant vine that yields his fruit for himself. The more his fruit increased, the more altars he built; the richer his land became, the finer he made his sacred pillars.",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "The doubled possessives \"his fruit for himself\" stumble when read aloud, and \"his fruit\" is then repeated immediately in the next clause. Dropping the first possessive keeps the masculine pronoun pattern chosen in the earlier revision while smoothing the rhythm; the sense of פְּרִי יְשַׁוֶּה־לּוֹ (\"he produces fruit for himself\") is unchanged.",
+        "alternative": true
       }
     ]
   },
@@ -51,7 +58,10 @@
         "severity": "minor",
         "explanation": "עֶגְלוֹת is plural (\"calves\"), and כְּמָרִים is a distinct term for idolatrous priests, not the ordinary word for priests; making this explicit avoids the impression that legitimate priests are meant."
       }
-    ]
+    ],
+    "checked": {
+      "changed": "1:180"
+    }
   },
   {
     "bookId": 28,
@@ -113,7 +123,10 @@
         "severity": "minor",
         "explanation": "בְּעַמֶּךָ means \"among/in your people\" — the tumult arises within Israel itself. \"Against your people\" shifts the sense to an external attacker."
       }
-    ]
+    ],
+    "checked": {
+      "changed": "1:200"
+    }
   },
   {
     "bookId": 28,

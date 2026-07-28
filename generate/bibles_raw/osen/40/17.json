@@ -119,7 +119,10 @@
         "severity": "minor",
         "explanation": "Τότε means \"then\" (at that point in the sequence), not \"later,\" which implies a vaguer and longer interval. \"Then\" also keeps the narrative rhythm consistent with verse 13, where the same word is rendered \"Then.\""
       }
-    ]
+    ],
+    "checked": {
+      "changed": "1:85"
+    }
   },
   {
     "bookId": 40,
@@ -139,7 +142,10 @@
         "severity": "major",
         "explanation": "Verse 20 closes Jesus' speech with a closing quotation mark, yet verse 21 continues his words with no quotation marks at all. The punctuation must be consistent: either remove the closing quotation mark at the end of verse 20 and place it here, or mark verse 21 as direct speech as suggested. As it stands, an oral reader cannot tell that verse 21 is still Jesus speaking. A footnote noting that this sentence is absent from the earliest manuscripts would also help the reader."
       }
-    ]
+    ],
+    "checked": {
+      "changed": "1:61"
+    }
   },
   {
     "bookId": 40,
@@ -175,13 +181,20 @@
     "bookId": 40,
     "chapterId": 17,
     "verseId": 27,
-    "text": "But so that we do not offend them, go to the sea, throw out a hook, and take the first fish you catch. Open its mouth and you will find a coin. Take it and give it to them for me and for you.",
+    "text": "But so that we do not offend them, go to the sea and cast a hook, and take the first fish that comes up. Open its mouth and you will find a coin. Take it and give it to them for me and for you.",
     "versions": [
       {
         "text": "But so that we do not give offense, go to the sea, throw out a hook, and take the first fish you catch. Open its mouth and you will find a coin. Take it and give it to them for me and for you.\"",
         "type": "error",
         "severity": "minor",
         "explanation": "The object αὐτούς (\"them,\" i.e. the tax collectors) is dropped in the current rendering, leaving \"give offense\" vague; restoring \"them\" ties the sentence to the collectors mentioned in verse 24 and reads more naturally aloud. Consider also a footnote on \"a coin\": the Greek stater was worth four drachmas—exactly the temple tax for two people."
+      },
+      {
+        "text": "But so that we do not offend them, go to the sea, throw out a hook, and take the first fish you catch. Open its mouth and you will find a coin. Take it and give it to them for me and for you.",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "ἀναβάντα is a participle meaning \"that comes up\" — the image is of the fish rising to the line, which \"you catch\" flattens into a generic idea. \"Cast a hook\" is also smoother aloud than \"throw out a hook,\" and joining it to \"go to the sea\" with \"and\" avoids a three-item comma string that reads as a list rather than a sequence.",
+        "alternative": true
       }
     ]
   }

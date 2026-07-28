@@ -163,7 +163,10 @@
         "severity": "minor",
         "explanation": "The pronoun \"he\" is ambiguous for a listener, since the sentence begins with Mephibosheth as its subject; the Hebrew refers to the king's safe return. Naming the king removes the ambiguity in oral reading."
       }
-    ]
+    ],
+    "checked": {
+      "changed": "1:201"
+    }
   },
   {
     "bookId": 10,
@@ -205,13 +208,20 @@
     "bookId": 10,
     "chapterId": 19,
     "verseId": 32,
-    "text": "Barzillai the Gileadite came down from Rogelim and crossed the Jordan with the king, to send him on his way.",
+    "text": "Barzillai the Gileadite came down from Rogelim and crossed the Jordan with the king, to escort him across the river.",
     "versions": [
       {
         "text": "Barzillai the Gileadite came down from Rogelim and went with the king to the Jordan to see him on his way across.",
         "type": "error",
         "severity": "minor",
         "explanation": "The Hebrew says Barzillai actually crossed the Jordan with the king (וַיַּעֲבֹר... הַיַּרְדֵּן), not merely that he accompanied him as far as the river. Verse 40 then shows Barzillai turning back after the crossing."
+      },
+      {
+        "text": "Barzillai the Gileadite came down from Rogelim and crossed the Jordan with the king, to send him on his way.",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "The Hebrew infinitive לְשַׁלְּחוֹ אֶת־הַיַּרְדֵּן specifies the escorting as being 'over the Jordan'; 'to send him on his way' loses the sense of accompanying him across. 'To escort him across the river' keeps the object without repeating 'Jordan' awkwardly and reads smoothly aloud. The current rendering is a defensible general translation of שַׁלַּח.",
+        "alternative": true
       }
     ]
   },

@@ -9,13 +9,20 @@
     "bookId": 24,
     "chapterId": 17,
     "verseId": 2,
-    "text": "while their children remember their altars and their Asherah poles beside the green trees, on the high hills.",
+    "text": "while their children remember their altars and their Asherah poles beside a green tree, on the high hills.",
     "versions": [
       {
         "text": "while their children remember their altars and their Asherah poles beside every green tree, on the high hills.",
         "type": "error",
         "severity": "minor",
         "explanation": "The Hebrew has no word for \"every\"; it reads simply \"by a green tree.\" Removing the added quantifier keeps the line faithful without losing the rhythm."
+      },
+      {
+        "text": "while their children remember their altars and their Asherah poles beside the green trees, on the high hills.",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "The Hebrew has the singular indefinite phrase 'a green tree' (עֵץ רַעֲנָן). The definite plural 'the green trees' introduces a specificity and number not in the source; the singular also preserves the idiomatic cadence of the paired lines. A collective plural is a defensible reading, but the singular is closer to the text.",
+        "alternative": true
       }
     ]
   },
@@ -183,6 +190,9 @@
         "severity": "minor",
         "explanation": "As written, \"do not listen to me and keep the Sabbath day holy\" can be misheard as a command to keep the Sabbath. A comma clarifies the infinitive of purpose. Also, \"her gates\" is unclear when read aloud; \"its gates\" and naming \"the fire\" as the subject removes the ambiguity."
       }
-    ]
+    ],
+    "checked": {
+      "changed": "1:260"
+    }
   }
 ]

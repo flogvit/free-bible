@@ -73,13 +73,20 @@
     "bookId": 66,
     "chapterId": 12,
     "verseId": 10,
-    "text": "And I heard a loud voice in heaven saying: \"Now have come the salvation and the power and the kingdom of our God, and the authority of his Christ. For the accuser of our brothers has been thrown down—the one who accuses them before our God day and night.",
+    "text": "And I heard a loud voice in heaven saying: \"Now the salvation and the power and the kingdom of our God have come, and the authority of his Christ. For the accuser of our brothers has been thrown down—the one who accuses them before our God day and night.",
     "versions": [
       {
         "text": "And I heard a loud voice in heaven saying: \"Now have come the salvation and the power and the kingdom of our God, and the authority of his Christ. For the accuser of our brothers has been thrown down—the one who accused them before our God day and night.",
         "type": "error",
         "severity": "minor",
         "explanation": "The Greek present participle ὁ κατηγορῶν describes the devil's characteristic, ongoing activity ('the one who accuses'). The past tense narrows this to completed action and blunts the contrast with his being cast down."
+      },
+      {
+        "text": "And I heard a loud voice in heaven saying: \"Now have come the salvation and the power and the kingdom of our God, and the authority of his Christ. For the accuser of our brothers has been thrown down—the one who accuses them before our God day and night.",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "The inverted verb-first construction (\"Now have come the salvation...\") is a Greek word-order carryover that reads stiffly aloud, especially since the reader must hold three subjects before reaching the verb. Placing the verb after the compound subject keeps the emphatic \"Now\" at the head of the clause while giving a more natural English cadence for oral reading. No change of meaning is involved.",
+        "alternative": true
       }
     ]
   },

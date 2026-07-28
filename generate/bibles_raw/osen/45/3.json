@@ -53,13 +53,20 @@
     "bookId": 45,
     "chapterId": 3,
     "verseId": 8,
-    "text": "And why not say—as we are slandered, and as some claim that we say—\"Let us do evil so that good may come\"? Their condemnation is deserved.",
+    "text": "And why not say—as we are slandered, and as some claim that we say—\"Let us do evil so that good may come\"? The condemnation of such people is just.",
     "versions": [
       {
         "text": "And why not say—as we are slanderously accused of saying—\"Let us do evil so that good may come\"? Those who say such things deserve their condemnation.",
         "type": "error",
         "severity": "minor",
         "explanation": "The Greek has two parallel clauses (\"as we are slandered\" and \"as some claim that we say\"); the translation collapses them into one, losing the reference to the specific accusers. The final clause is also smoother and closer to ὧν τὸ κρίμα ἔνδικόν ἐστιν when rendered concisely."
+      },
+      {
+        "text": "And why not say—as we are slandered, and as some claim that we say—\"Let us do evil so that good may come\"? Their condemnation is deserved.",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "The relative pronoun ὧν points back to the slanderers who make this charge, but the bare pronoun \"Their\" in English can be misheard as referring to Paul and his companions (the nearest \"we\"). Naming the referent removes the ambiguity for a listener, and \"is just\" reflects ἔνδικον closely.",
+        "alternative": true
       }
     ]
   },
@@ -99,7 +106,10 @@
         "severity": "minor",
         "explanation": "ὑπό with the accusative means \"under,\" not \"on\"; the image is of poison stored beneath the lips, ready to strike. Also ἀσπίς is the asp/cobra rather than the generic viper."
       }
-    ]
+    ],
+    "checked": {
+      "changed": "1:104"
+    }
   },
   {
     "bookId": 45,

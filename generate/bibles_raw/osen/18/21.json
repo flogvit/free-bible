@@ -69,13 +69,20 @@
     "bookId": 18,
     "chapterId": 21,
     "verseId": 12,
-    "text": "They lift their voices to the tambourine and the lyre and rejoice at the sound of the pipe.",
+    "text": "They lift their voices with tambourine and lyre, and rejoice at the sound of the pipe.",
     "versions": [
       {
         "text": "They sing to the tambourine and the lyre and rejoice at the sound of the flute.",
         "type": "error",
         "severity": "minor",
         "explanation": "The Hebrew יִשְׂאוּ ('they lift up') is idiomatic for lifting the voice in song; 'lift their voices' captures this better than the flat 'sing to.' Also עוּגָב is a pipe-type instrument, not necessarily a flute."
+      },
+      {
+        "text": "They lift their voices to the tambourine and the lyre and rejoice at the sound of the pipe.",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "The prefixed כְּ on תֹף marks accompaniment ('with timbrel and lyre'); 'to the tambourine and the lyre' reads as though the instruments were the addressees. Dropping the repeated definite articles and adding the comma also gives a cleaner two-beat cadence for oral reading.",
+        "alternative": true
       }
     ]
   },
@@ -91,7 +98,10 @@
         "severity": "minor",
         "explanation": "The Hebrew בְּרֶגַע means 'in a moment/instant,' emphasizing a swift, painless descent, not 'in peace.' The current rendering substitutes an interpretive idea not in the text."
       }
-    ]
+    ],
+    "checked": {
+      "changed": "1:73"
+    }
   },
   {
     "bookId": 18,
@@ -165,7 +175,10 @@
         "severity": "minor",
         "explanation": "The Hebrew describes his flanks/pails filled with milk (fat) and the marrow of his bones being watered/moist; 'well nourished' loses the vivid concrete imagery, and 'bones rich with marrow' reverses the sense of moistened marrow."
       }
-    ]
+    ],
+    "checked": {
+      "changed": "1:68"
+    }
   },
   {
     "bookId": 18,
@@ -203,7 +216,10 @@
         "severity": "minor",
         "explanation": "אֹתֹתָם means 'their signs' or 'tokens'; 'what they report' loses the specific term, and 'recognize' better renders תְנַכֵּרוּ."
       }
-    ]
+    ],
+    "checked": {
+      "changed": "1:90"
+    }
   },
   {
     "bookId": 18,
@@ -217,7 +233,10 @@
         "severity": "major",
         "explanation": "'Delivered' is ambiguous in English (it can mean 'handed over' or 'rescued'), which obscures Job's argument that the wicked escape judgment. A clearer rendering such as 'led away safe' preserves the intended sense of יוּבָלוּ here."
       }
-    ]
+    ],
+    "checked": {
+      "changed": "1:86"
+    }
   },
   {
     "bookId": 18,
@@ -243,7 +262,10 @@
         "severity": "minor",
         "explanation": "The Hebrew contrasts the innumerable multitude that preceded him with the throng that follows; 'countless others went before' is acceptable but the sentence reads unevenly. Balancing the two clauses improves rhythm and accuracy of מִסְפָּר ('beyond number')."
       }
-    ]
+    ],
+    "checked": {
+      "changed": "1:121"
+    }
   },
   {
     "bookId": 18,
@@ -257,6 +279,9 @@
         "severity": "minor",
         "explanation": "מַעַל denotes faithlessness or treachery/falsehood rather than plain 'lies'; the revised wording is closer to the Hebrew and reads with better cadence for oral reading."
       }
-    ]
+    ],
+    "checked": {
+      "changed": "1:92"
+    }
   }
 ]

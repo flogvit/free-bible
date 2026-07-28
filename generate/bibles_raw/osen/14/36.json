@@ -59,13 +59,20 @@
     "bookId": 14,
     "chapterId": 36,
     "verseId": 9,
-    "text": "Jehoiachin was eight years old when he became king, and he reigned three months and ten days in Jerusalem. He did what was evil in the eyes of the LORD.",
+    "text": "Jehoiachin was eight years old when he became king, and he reigned three months and ten days in Jerusalem. He did what was evil in the eyes of the LORD. [Footnote: The Hebrew text reads \"eight years\"; the parallel account and some ancient witnesses read \"eighteen years.\"]",
     "versions": [
       {
         "text": "Jehoiachin was eighteen years old when he became king, and he reigned three months and ten days in Jerusalem. He did what was evil in the eyes of the LORD.",
         "type": "error",
         "severity": "critical",
         "explanation": "The Hebrew text reads שְׁמוֹנֶה שָׁנִים, \"eight years,\" not eighteen. If the higher number is preferred on the basis of the parallel account and some ancient witnesses, that should be handled in a footnote rather than silently changing the number in the text."
+      },
+      {
+        "text": "Jehoiachin was eight years old when he became king, and he reigned three months and ten days in Jerusalem. He did what was evil in the eyes of the LORD.",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "The reading \"eight\" correctly follows the Hebrew, but the well-known variant \"eighteen\" in the parallel account and several ancient witnesses is worth noting for the reader, as anticipated in the earlier revision note. Only a footnote is added; the verse text is unchanged.",
+        "alternative": false
       }
     ]
   },
@@ -105,15 +112,25 @@
     "bookId": 14,
     "chapterId": 36,
     "verseId": 14,
-    "text": "And all the leaders of the priests, and the people, multiplied their treachery, following all the detestable practices of the nations, and they defiled the house of the LORD, which he had made holy in Jerusalem.",
+    "text": "And all the leaders of the priests and the people multiplied their treachery, following all the detestable practices of the nations, and they defiled the house of the LORD, which he had made holy in Jerusalem.",
     "versions": [
       {
         "text": "And all the leaders, the priests, and the people multiplied their treachery, following all the detestable practices of the nations, and they defiled the house of the LORD, which he had made holy in Jerusalem.",
         "type": "error",
         "severity": "major",
         "explanation": "The Hebrew construct chain שָׂרֵי הַכֹּהֲנִים means \"the chiefs/leaders of the priests,\" not two separate groups (\"the leaders\" and \"the priests\"). The current rendering adds a group not present in the text."
+      },
+      {
+        "text": "And all the leaders of the priests, and the people, multiplied their treachery, following all the detestable practices of the nations, and they defiled the house of the LORD, which he had made holy in Jerusalem.",
+        "type": "grammar",
+        "severity": "minor",
+        "explanation": "The commas isolating \"and the people\" break the compound subject and make the sentence stumble when read aloud; the Hebrew simply joins the two subjects with a conjunction. Removing the commas keeps the same sense with a smoother rhythm.",
+        "alternative": true
       }
-    ]
+    ],
+    "checked": {
+      "changed": "2:209"
+    }
   },
   {
     "bookId": 14,
@@ -159,7 +176,10 @@
         "severity": "minor",
         "explanation": "The Hebrew כְּלֵי מַחֲמַדֶּיהָ refers specifically to the 'precious vessels/articles' of the city, echoing the vessels mentioned in vv. 7, 10, and 18. 'Everything of value' generalizes and loses the concrete link to the temple and palace furnishings."
       }
-    ]
+    ],
+    "checked": {
+      "changed": "1:131"
+    }
   },
   {
     "bookId": 14,

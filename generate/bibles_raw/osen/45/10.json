@@ -35,13 +35,27 @@
     "bookId": 45,
     "chapterId": 10,
     "verseId": 5,
-    "text": "Moses writes of the righteousness that comes from the law: \"The person who does it will live by it.\"",
+    "text": "For Moses writes that the person who practices the righteousness based on the law will live by it.",
     "versions": [
       {
         "text": "Moses writes of the righteousness that comes from the law: \"The person who does these things will live by them.\"",
         "type": "error",
         "severity": "minor",
         "explanation": "The Greek here reads ἐν αὐτῇ (feminine singular), pointing back to 'righteousness' (or the law), not to a plural 'these things...them.' A singular rendering matches the underlying text and keeps the link with the preceding clause clear."
+      },
+      {
+        "text": "Moses writes of the righteousness that comes from the law: \"The person who does it will live by it.\"",
+        "type": "error",
+        "severity": "minor",
+        "explanation": "The connective γάρ is untranslated, so the logical link with the preceding statement about Christ and the law is lost in oral reading; restoring \"For\" keeps the argument's chain audible. \"Practices\" also renders ποιήσας naturally while preserving the singular reference established in the earlier revision.",
+        "alternative": true
+      },
+      {
+        "text": "For Moses writes of the righteousness that comes from the law: \"The person who practices it will live by it.\"",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "In the text as given, τὴν δικαιοσύνην is the accusative object of ὁ ποιήσας (\"the one who does/practices the righteousness from the law\"), and ὅτι introduces indirect statement rather than a topic heading followed by a quotation. Making the righteousness the direct object clarifies the sense and lets the singular \"it\" (ἐν αὐτῇ) refer back naturally, while still reading smoothly aloud. The present rendering is defensible if ὅτι is treated as introducing a quotation with an anticipated topic, so it remains a reasonable alternative.",
+        "alternative": true
       }
     ]
   },

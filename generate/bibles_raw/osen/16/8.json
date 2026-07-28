@@ -57,13 +57,20 @@
     "bookId": 16,
     "chapterId": 8,
     "verseId": 10,
-    "text": "He said to them, \"Go, eat rich food and drink sweet drinks, and send portions to those who have nothing prepared, for this day is holy to our Lord. Do not grieve, for the joy of the LORD is your strength.\"",
+    "text": "He said to them, \"Go, eat what is rich and drink what is sweet, and send portions to those who have nothing prepared, for this day is holy to our Lord. Do not grieve, for the joy of the LORD is your strength.\"",
     "versions": [
       {
         "text": "He said to them, \"Go, eat rich food and drink sweet wine, and send portions to those who have nothing prepared, for this day is holy to our Lord. Do not grieve, for the joy of the LORD is your strength.\"",
         "type": "error",
         "severity": "minor",
         "explanation": "The Hebrew מַמְתַקִּים means 'sweet things/sweet drinks'; the word for wine is not present. 'Sweet drinks' keeps the pairing with 'rich food' and avoids adding content not in the text."
+      },
+      {
+        "text": "He said to them, \"Go, eat rich food and drink sweet drinks, and send portions to those who have nothing prepared, for this day is holy to our Lord. Do not grieve, for the joy of the LORD is your strength.\"",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "The phrase 'drink sweet drinks' repeats the same root word and stumbles when read aloud. 'Eat what is rich and drink what is sweet' preserves the Hebrew's parallel pair of substantivized plurals (מַשְׁמַנִּים / מַמְתַקִּים) without adding content, and flows better in oral reading.",
+        "alternative": true
       }
     ]
   },

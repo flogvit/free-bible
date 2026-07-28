@@ -153,7 +153,10 @@
         "severity": "minor",
         "explanation": "The comma after \"up\" wrongly separates the verb from its object and breaks the rhythm when read aloud."
       }
-    ]
+    ],
+    "checked": {
+      "changed": "1:76"
+    }
   },
   {
     "bookId": 7,
@@ -237,13 +240,20 @@
     "bookId": 7,
     "chapterId": 1,
     "verseId": 36,
-    "text": "The territory of the Amorites ran from the Ascent of Akrabbim, from Sela on upward.",
+    "text": "The border of the Amorites ran from the Ascent of Akrabbim and from Sela on upward.",
     "versions": [
       {
         "text": "The territory of the Amorites extended from the Ascent of Akrabbim to Sela and beyond.",
         "type": "error",
         "severity": "minor",
         "explanation": "The Hebrew has two parallel phrases beginning with \"from\" (מִמַּעֲלֵה ... מֵהַסֶּלַע), not \"from ... to\"; the current rendering makes Sela the endpoint rather than a second reference point."
+      },
+      {
+        "text": "The territory of the Amorites ran from the Ascent of Akrabbim, from Sela on upward.",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "Adding the connective \"and\" between the two parallel \"from\" phrases makes the parallelism audible when read aloud, where a bare comma can sound like a correction or restatement rather than a second reference point. \"Border\" also renders גְּבוּל a shade more precisely here, since the verse describes a boundary line rather than an area of land.",
+        "alternative": true
       }
     ]
   }

@@ -33,13 +33,20 @@
     "bookId": 23,
     "chapterId": 30,
     "verseId": 6,
-    "text": "An oracle concerning the beasts of the Negev: Through a land of trouble and distress, where lioness and lion prowl, where viper and darting serpent dwell, they carry their wealth on the backs of donkeys and their treasures on the humps of camels, to a people who cannot help.",
+    "text": "An oracle concerning the beasts of the Negev: Through a land of trouble and distress, where lioness and lion prowl, where viper and darting serpent dwell, they carry their wealth on the shoulders of young donkeys and their treasures on the humps of camels, to a people who cannot help.",
     "versions": [
       {
         "text": "An oracle concerning the beasts of the Negev: Through a land of trouble and distress, of lioness and roaring lion, of viper and darting serpent, they carry their wealth on the backs of donkeys and their treasures on the humps of camels, to a people who cannot help.",
         "type": "error",
         "severity": "minor",
         "explanation": "The Hebrew has simply לָבִיא וָלַיִשׁ (\"lioness and lion\"); \"roaring\" is added without warrant. The phrase מֵהֶם (\"from them\" / where they come from) is also unrepresented; rendering the creatures as inhabiting the land captures the sense and reads more naturally aloud."
+      },
+      {
+        "text": "An oracle concerning the beasts of the Negev: Through a land of trouble and distress, where lioness and lion prowl, where viper and darting serpent dwell, they carry their wealth on the backs of donkeys and their treasures on the humps of camels, to a people who cannot help.",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "The Hebrew has עַל־כֶּתֶף (\"on the shoulder\") and עֲיָרִים, which denotes young donkeys/colts rather than donkeys generally. \"Shoulders of young donkeys\" preserves both details and also balances the parallel image of the camels' humps in the next clause, without lengthening the line for oral reading.",
+        "alternative": true
       }
     ]
   },
@@ -111,7 +118,10 @@
         "severity": "minor",
         "explanation": "The prophetic messenger formula כֹּה אָמַר is rendered \"says\" in verse 12; using the past tense here creates an inconsistency in the chapter's voice."
       }
-    ]
+    ],
+    "checked": {
+      "changed": "1:173"
+    }
   },
   {
     "bookId": 23,

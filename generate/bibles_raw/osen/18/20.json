@@ -169,13 +169,20 @@
     "bookId": 18,
     "chapterId": 20,
     "verseId": 26,
-    "text": "Utter darkness lies in wait for his treasures; a fire no one kindled will consume him, and it will go badly for whoever is left in his tent.",
+    "text": "Utter darkness lies in wait for his treasures; a fire that no breath has fanned will consume him, and it will go badly for whoever is left in his tent.",
     "versions": [
       {
         "text": "Utter darkness lies in wait for his treasures; a fire no one kindled will consume him and devour whatever is left in his tent.",
         "type": "error",
         "severity": "minor",
         "explanation": "שָׂרִיד normally denotes a surviving person, and the verb יֵרַע means \"it will go badly\"; the current wording reduces the survivors to impersonal leftovers consumed by fire."
+      },
+      {
+        "text": "Utter darkness lies in wait for his treasures; a fire no one kindled will consume him, and it will go badly for whoever is left in his tent.",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "נֻפָּח is from נפח, \"to blow/fan,\" picturing a fire burning without any human breath to fan it, rather than one that was never lit. \"No one kindled\" loses the image of a self-sustaining, supernatural fire, though it conveys the general sense.",
+        "alternative": true
       }
     ]
   },
@@ -189,13 +196,20 @@
     "bookId": 18,
     "chapterId": 20,
     "verseId": 28,
-    "text": "The increase of his house will be swept away, carried off in torrents on the day of God's wrath.",
+    "text": "The produce of his house will be carried away, poured out in torrents on the day of God's wrath.",
     "versions": [
       {
         "text": "A flood will carry off his house, torrents on the day of God's wrath.",
         "type": "error",
         "severity": "major",
         "explanation": "The Hebrew subject is יְבוּל (\"produce, increase, harvest\") of his house, which \"departs/is carried away\"; the current rendering turns the produce into \"a flood\" and makes the house itself the object, losing the point that his accumulated wealth is what is lost."
+      },
+      {
+        "text": "The increase of his house will be swept away, carried off in torrents on the day of God's wrath.",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "\"Swept away... carried off in torrents\" doubles the same idea for a terse two-clause Hebrew line, slowing the oral rhythm. יִגֶל (\"goes away, is carried off\") and נִגָּרוֹת (\"poured out\") are distinct images and read more crisply when kept separate.",
+        "alternative": true
       }
     ]
   },

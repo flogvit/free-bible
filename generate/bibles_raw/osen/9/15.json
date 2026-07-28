@@ -223,13 +223,20 @@
     "bookId": 9,
     "chapterId": 15,
     "verseId": 35,
-    "text": "Samuel never saw Saul again until the day of his death, for Samuel grieved over Saul. And the LORD regretted that he had made Saul king over Israel.",
+    "text": "Samuel did not see Saul again until the day of his death, for Samuel grieved over Saul. And the LORD regretted that he had made Saul king over Israel.",
     "versions": [
       {
         "text": "Samuel never saw Saul again until the day of his death, though he mourned for him. And the LORD regretted that he had made Saul king over Israel.",
         "type": "error",
         "severity": "minor",
         "explanation": "The Hebrew particle כִּי here is causal (\"for/because\"), giving the reason Samuel stayed away. \"Though\" reverses the logic into a concession. Naming Samuel also clarifies the pronoun, since \"his death\" in the preceding clause refers to Saul."
+      },
+      {
+        "text": "Samuel never saw Saul again until the day of his death, for Samuel grieved over Saul. And the LORD regretted that he had made Saul king over Israel.",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "\"Never ... until\" is logically self-contradictory when read aloud (it implies a meeting after that day). The Hebrew לֹא־יָסַף (\"did not again\") is better carried by \"did not see Saul again,\" which keeps the same sense while reading more smoothly.",
+        "alternative": true
       }
     ]
   }

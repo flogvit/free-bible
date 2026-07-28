@@ -139,13 +139,20 @@
     "bookId": 7,
     "chapterId": 20,
     "verseId": 21,
-    "text": "The Benjaminites came out of Gibeah and struck down twenty-two thousand men of Israel to the ground that day.",
+    "text": "The Benjaminites came out of Gibeah, and that day they laid twenty-two thousand men of Israel dead on the ground.",
     "versions": [
       {
         "text": "The Benjaminites came out of Gibeah and cut down twenty-two thousand Israelites on the battlefield that day.",
         "type": "error",
         "severity": "minor",
         "explanation": "The Hebrew אָרְצָה means \"to the ground,\" a vivid idiom for the slain falling; \"on the battlefield\" is an added interpretation not in the text."
+      },
+      {
+        "text": "The Benjaminites came out of Gibeah and struck down twenty-two thousand men of Israel to the ground that day.",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "\"Struck down ... to the ground\" is redundant and stumbles when read aloud; the idiom אָרְצָה is preserved more naturally with \"dead on the ground,\" and moving the time phrase forward matches the Hebrew word order and improves the rhythm.",
+        "alternative": true
       }
     ]
   },
@@ -233,13 +240,20 @@
     "bookId": 7,
     "chapterId": 20,
     "verseId": 34,
-    "text": "Ten thousand of Israel's finest men took up position opposite Gibeah. The fighting was fierce, and Benjamin did not realize how close disaster was.",
+    "text": "Ten thousand of the finest men from all Israel came up opposite Gibeah. The fighting was fierce, and Benjamin did not realize how close disaster was.",
     "versions": [
       {
         "text": "Ten thousand of Israel's finest men advanced against Gibeah from the front. The fighting was fierce, and Benjamin did not realize how close disaster was.",
         "type": "error",
         "severity": "minor",
         "explanation": "מִנֶּגֶד לַגִּבְעָה means \"opposite/facing Gibeah,\" describing their position rather than an attack \"from the front.\" \"Advanced against ... from the front\" is both inaccurate and awkward for oral reading."
+      },
+      {
+        "text": "Ten thousand of Israel's finest men took up position opposite Gibeah. The fighting was fierce, and Benjamin did not realize how close disaster was.",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "The Hebrew has both the verb וַיָּבֹאוּ (\"came\") and the phrase מִכָּל־יִשְׂרָאֵל (\"from all Israel\"). The current wording drops the sense of coming/arriving and the emphasis on \"all Israel,\" which underscores that the picked troops were drawn from the whole nation.",
+        "alternative": true
       }
     ]
   },
@@ -273,19 +287,29 @@
         "severity": "minor",
         "explanation": "הַמּוֹעֵד here is the prearranged sign/signal; the current wording loses the idea of an agreed signal, which is essential to the narrative logic of the following verses."
       }
-    ]
+    ],
+    "checked": {
+      "changed": "1:121"
+    }
   },
   {
     "bookId": 7,
     "chapterId": 20,
     "verseId": 39,
-    "text": "Then the men of Israel turned in the battle. Benjamin had begun to strike down the Israelites, killing about thirty of them, for they said, \"Surely they are being beaten before us, as in the first battle!\"",
+    "text": "Then the men of Israel turned in the battle. Benjamin had begun to strike down the Israelites, killing about thirty of them, for they said, \"Surely Israel is being beaten before us, as in the first battle!\"",
     "versions": [
       {
         "text": "Then the men of Israel turned in the battle. Benjamin had begun to strike down the Israelites, killing about thirty of them, and they had said, \"We are defeating them as in the first battle.\"",
         "type": "error",
         "severity": "minor",
         "explanation": "The Hebrew is a passive statement about Israel being struck down before Benjamin (\"they are surely being defeated before us\"), with the emphatic infinitive absolute. The active rendering also weakens the causal connection (כִּי, \"for they said\")."
+      },
+      {
+        "text": "Then the men of Israel turned in the battle. Benjamin had begun to strike down the Israelites, killing about thirty of them, for they said, \"Surely they are being beaten before us, as in the first battle!\"",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "In oral reading \"they said ... they are being beaten\" makes the two pronouns ambiguous, since the speakers are the Benjaminites and the ones being beaten are the Israelites. The Hebrew subject הוּא is the collective \"man of Israel,\" so naming Israel removes the confusion without changing the passive force.",
+        "alternative": true
       }
     ]
   },
@@ -357,6 +381,9 @@
         "severity": "major",
         "explanation": "Two problems: שָׁבוּ אֶל means they turned back \"against\" the Benjaminites (hostile action), not simply \"went back to Benjamin\"; and the object of the sword in Hebrew is the people (מְתִם, the men of the city) along with the animals, whereas the current rendering puts \"towns\" to the sword and omits the people entirely."
       }
-    ]
+    ],
+    "checked": {
+      "changed": "1:212"
+    }
   }
 ]

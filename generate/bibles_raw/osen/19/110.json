@@ -41,13 +41,20 @@
     "bookId": 19,
     "chapterId": 110,
     "verseId": 6,
-    "text": "He will judge among the nations, heaping up the corpses; he will shatter the head over all the wide earth.",
+    "text": "He will judge among the nations, heaping up corpses; he will shatter the head over the wide earth.",
     "versions": [
       {
         "text": "He will judge among the nations, filling the field with corpses; he will shatter the head over all the wide earth.",
         "type": "error",
         "severity": "minor",
         "explanation": "The Hebrew has only \"filled with corpses\" (מָלֵא גְוִיּוֹת) with no noun for \"field\"; the added object is interpretive. A rendering without supplying an unstated noun stays closer to the text and reads well aloud."
+      },
+      {
+        "text": "He will judge among the nations, heaping up the corpses; he will shatter the head over all the wide earth.",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "Two small additions to the Hebrew: גְוִיּוֹת is indefinite (\"corpses,\" not \"the corpses\"), and עַל־אֶרֶץ רַבָּה is \"over the wide earth\" with no word corresponding to \"all.\" Removing both keeps the line closer to the text and tightens the rhythm for reading aloud, in line with the earlier decision not to supply unstated words.",
+        "alternative": true
       }
     ]
   },

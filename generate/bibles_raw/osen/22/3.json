@@ -47,7 +47,10 @@
         "severity": "minor",
         "explanation": "מִטָּה means a bed, couch, or portable litter, not a wheeled carriage. Using \"carriage\" here also blurs the distinction with the different word אַפִּרְיוֹן (\"palanquin\") in verse 9. \"Couch\" (or \"litter\") is both more accurate and keeps the two objects distinct for the listener."
       }
-    ]
+    ],
+    "checked": {
+      "changed": "1:83"
+    }
   },
   {
     "bookId": 22,
@@ -73,13 +76,20 @@
     "bookId": 22,
     "chapterId": 3,
     "verseId": 10,
-    "text": "Its posts he made of silver, its base of gold, its seat of purple; its interior inlaid with love by the daughters of Jerusalem.",
+    "text": "Its posts he made of silver, its base of gold, its seat of purple; its interior inlaid with love from the daughters of Jerusalem.",
     "versions": [
       {
         "text": "Its posts he made of silver, its back of gold, its seat of purple; its interior was inlaid with love by the daughters of Jerusalem.",
         "type": "error",
         "severity": "minor",
         "explanation": "רְפִידָה denotes a support or base rather than a \"back\"; \"base of gold\" is more accurate and pairs naturally with \"posts\" and \"seat.\" Dropping \"was\" also tightens the rhythm of the line for reading aloud."
+      },
+      {
+        "text": "Its posts he made of silver, its base of gold, its seat of purple; its interior inlaid with love by the daughters of Jerusalem.",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "The preposition מִן most naturally reads as source (\"from\") rather than agent (\"by\"): the love is what the daughters of Jerusalem give, rather than their being the ones who did the inlaying (the verse's other verbs have Solomon as subject). \"From\" preserves the ambiguity of the Hebrew and reads just as smoothly aloud. The agent reading is defensible and widely followed, so it can remain as an alternative.",
+        "alternative": true
       }
     ]
   },

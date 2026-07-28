@@ -51,13 +51,20 @@
     "bookId": 5,
     "chapterId": 25,
     "verseId": 9,
-    "text": "his brother's widow shall step up to him in the presence of the elders, pull the sandal off his foot, spit in his face, and declare, \"This is what is done to the man who will not build up his brother's house.\"",
+    "text": "his brother's widow shall step up to him in the presence of the elders, pull his sandal off his foot, spit in his face, and declare, \"So shall it be done to the man who will not build up his brother's house.\"",
     "versions": [
       {
         "text": "his brother's widow shall go up to him in the presence of the elders, pull the sandal off his foot, spit in his face, and declare, \"This is what is done to the man who will not build up his brother's house.\"",
         "type": "error",
         "severity": "minor",
         "explanation": "The verb here is נגש (draw near/approach), not עלה (go up), which was used in verse 7 for going up to the gate. Using \"go up\" again blurs the distinction; \"step up to him\" keeps the movement natural for oral reading while reflecting the different verb."
+      },
+      {
+        "text": "his brother's widow shall step up to him in the presence of the elders, pull the sandal off his foot, spit in his face, and declare, \"This is what is done to the man who will not build up his brother's house.\"",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "The Hebrew has the possessive suffix on נַעֲלוֹ (\"his sandal\"), which the definite \"the sandal\" flattens; keeping the possessive also strengthens the link to verse 10's \"the house of the man whose sandal was pulled off.\" The imperfect יֵעָשֶׂה is prescriptive (\"so shall it be done\"), a declaration of the standing penalty rather than a report of custom, and the imperative rhythm reads well aloud.",
+        "alternative": true
       }
     ]
   },

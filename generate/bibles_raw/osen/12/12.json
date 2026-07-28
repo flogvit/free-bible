@@ -41,13 +41,20 @@
     "bookId": 12,
     "chapterId": 12,
     "verseId": 6,
-    "text": "let the priests take it for themselves, each from those who deal with him, and let them repair whatever damage is found in the temple.\"",
+    "text": "let the priests take it for themselves, each from his own acquaintance, and let them repair whatever damage is found in the house.",
     "versions": [
       {
         "text": "let the priests receive it, each from those who deal with him, and let them repair whatever damage is found in the temple.\"",
         "type": "error",
         "severity": "minor",
         "explanation": "The reflexive לָהֶם ('for themselves') is not represented. This detail matters for the narrative, since the king later forbids the priests to take money from their acquaintances (v. 8); 'take it for themselves' preserves the point."
+      },
+      {
+        "text": "let the priests take it for themselves, each from those who deal with him, and let them repair whatever damage is found in the temple.\"",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "The Hebrew מַכָּרוֹ is singular ('his acquaintance', the one he knows or does business with); the plural 'those who deal with him' blurs the one-to-one picture that verse 8 later reverses. Also, verse 5 has just said 'the house of the LORD', so keeping 'the house' here (Hebrew הַבַּיִת) preserves the verbal link and reads more smoothly aloud.",
+        "alternative": true
       }
     ]
   },

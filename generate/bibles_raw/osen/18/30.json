@@ -83,13 +83,20 @@
     "bookId": 18,
     "chapterId": 30,
     "verseId": 13,
-    "text": "They tear up my path; they push forward my ruin, and they need no help to do it.",
+    "text": "They tear up my path; they further my ruin, and no one need help them.",
     "versions": [
       {
         "text": "They tear up my path; they profit from my ruin, and no one holds them back.",
         "type": "error",
         "severity": "minor",
         "explanation": "Two points: (1) יֹעִילוּ with לְהַוָּתִי means they 'further/promote' his destruction rather than 'profit from' it; (2) לֹא עֹזֵר לָמוֹ literally means 'there is no helper for them' — i.e., they need no one's help — not that no one restrains them. 'No one holds them back' reverses the sense of the clause."
+      },
+      {
+        "text": "They tear up my path; they push forward my ruin, and they need no help to do it.",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "The sense is accurate, but 'push forward my ruin' is an awkward collocation for oral reading; 'further my ruin' renders יֹעִילוּ לְהַוָּתִי idiomatically, and the shorter final clause keeps the line's rhythm while preserving the corrected sense of לֹא עֹזֵר לָמוֹ ('they have no need of a helper').",
+        "alternative": true
       }
     ]
   },

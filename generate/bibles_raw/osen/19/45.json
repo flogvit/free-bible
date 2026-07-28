@@ -75,13 +75,20 @@
     "bookId": 19,
     "chapterId": 45,
     "verseId": 13,
-    "text": "The daughter of Tyre comes with a gift; the richest among the people will seek your favor.",
+    "text": "The daughter of Tyre will come with a gift; the richest among the people will seek your favor.",
     "versions": [
       {
         "text": "The daughter of Tyre comes with a gift; the wealthiest of peoples seek your favor.",
         "type": "error",
         "severity": "minor",
         "explanation": "עָם is singular (\"the people\"), not plural \"peoples.\" The Hebrew phrase עֲשִׁירֵי עָם means \"the rich ones of the people.\" The correction also keeps the future/imperfect sense of יְחַלּוּ."
+      },
+      {
+        "text": "The daughter of Tyre comes with a gift; the richest among the people will seek your favor.",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "The Hebrew has a single verb (יְחַלּוּ, imperfect) governing both clauses; the supplied verb in the first clause reads more smoothly if it matches the future sense of the second clause. As written, the shift from present \"comes\" to future \"will seek\" is slightly jarring when read aloud.",
+        "alternative": true
       }
     ]
   },

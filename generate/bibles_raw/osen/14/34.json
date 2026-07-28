@@ -59,7 +59,7 @@
     "bookId": 14,
     "chapterId": 34,
     "verseId": 9,
-    "text": "They went to Hilkiah the high priest and handed over the money that had been brought into the house of God, which the Levites who guarded the thresholds had collected from Manasseh and Ephraim and from all the remnant of Israel, and from all Judah and Benjamin and the inhabitants of Jerusalem.",
+    "text": "They went to Hilkiah the high priest and handed over the money that had been brought into the house of God, which the Levites who guarded the thresholds had collected from Manasseh and Ephraim and from all the remnant of Israel, and from all Judah and Benjamin and the inhabitants of Jerusalem.[^1]\n\n[^1]: The written Hebrew text reads \"the inhabitants of Jerusalem\"; the traditional reading is \"and they returned to Jerusalem.\"",
     "versions": [
       {
         "text": "They went to Hilkiah the high priest and handed over the money that had been brought into the house of God, which the Levites who guarded the thresholds had collected from Manasseh and Ephraim and from all the remnant of Israel, and from all Judah and Benjamin and the inhabitants of Jerusalem.",
@@ -73,6 +73,13 @@
         "severity": "critical",
         "explanation": "Almost the entire verse has been lost: the arrival before Hilkiah the high priest, the handing over of the money brought into the house of God, and the collection by the Levites who guarded the thresholds from Manasseh, Ephraim and all the remnant of Israel. Only the final clause survives. The wording is restored from the earlier revision, and the existing footnote on the textual variant still applies.",
         "alternative": false
+      },
+      {
+        "text": "They went to Hilkiah the high priest and handed over the money that had been brought into the house of God, which the Levites who guarded the thresholds had collected from Manasseh and Ephraim and from all the remnant of Israel, and from all Judah and Benjamin and the inhabitants of Jerusalem.",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "The Hebrew here has a written/read variant. A short footnote noting the alternative reading serves the reader without changing the translation; the note appears to have been lost when the verse text was restored.",
+        "alternative": false
       }
     ]
   },
@@ -80,13 +87,20 @@
     "bookId": 14,
     "chapterId": 34,
     "verseId": 10,
-    "text": "They put it into the hands of the men appointed to oversee the work in the house of the LORD, and those who were doing the work in the house of the LORD spent it to restore and repair the temple.",
+    "text": "They handed it over to those doing the work, the men appointed over the house of the LORD, and those who were doing the work in the house of the LORD used it to restore and repair the temple.",
     "versions": [
       {
         "text": "They put it into the hands of the supervisors who were appointed over the house of the LORD, and these paid it out to the workmen laboring in the house of the LORD, to restore and repair the temple.",
         "type": "error",
         "severity": "major",
         "explanation": "In the Hebrew the second clause has the workers themselves paying out the money for the repairs; the current rendering introduces an extra step (supervisors paying the workmen) that the text does not contain, and it also blurs that both clauses speak of 'those doing the work.'"
+      },
+      {
+        "text": "They put it into the hands of the men appointed to oversee the work in the house of the LORD, and those who were doing the work in the house of the LORD spent it to restore and repair the temple.",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "The Hebrew of the first clause is literally \"into the hand of the doers of the work, who were appointed over the house of the LORD.\" The present rendering turns them into overseers of the work rather than the workers themselves, which slightly obscures the deliberate repetition of \"those doing the work\" across both clauses.",
+        "alternative": true
       }
     ]
   },
@@ -169,7 +183,10 @@
         "explanation": "The first half of the verse has been dropped: the king's actual command, \"Go, inquire of the LORD for me and for those who remain in Israel and Judah concerning the words of the book that has been found.\" Without it the following clause beginning with \"For\" has nothing to attach to. The clause is restored from the earlier revision while keeping the intentional \"For\" connective.",
         "alternative": false
       }
-    ]
+    ],
+    "checked": {
+      "changed": "2:293"
+    }
   },
   {
     "bookId": 14,
@@ -219,7 +236,10 @@
         "severity": "minor",
         "explanation": "The Hebrew opens with הִנְנִי (\"behold, I am about to\"), a presentative particle that carries rhetorical weight and signals the imminence of the promise. Omitting it loses both the emphasis and a natural oral cue that this is the climax of the LORD's answer."
       }
-    ]
+    ],
+    "checked": {
+      "changed": "1:219"
+    }
   },
   {
     "bookId": 14,

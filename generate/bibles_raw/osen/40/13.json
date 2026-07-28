@@ -113,15 +113,25 @@
     "bookId": 40,
     "chapterId": 13,
     "verseId": 18,
-    "text": "You, then, hear what the parable of the sower means.",
+    "text": "You, then, listen to the parable of the sower.",
     "versions": [
       {
         "text": "So listen, then, to what the parable of the sower means.",
         "type": "grammar",
         "severity": "minor",
         "explanation": "'So... then' is redundant; only one connective renders οὖν. The emphatic Ὑμεῖς ('you' in contrast to the crowds) is also lost in the current wording."
+      },
+      {
+        "text": "You, then, hear what the parable of the sower means.",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "The Greek imperative ἀκούσατε takes τὴν παραβολήν as its direct object; 'hear what the parable ... means' adds an interpretive clause not in the text. 'Listen to' also flows better than the bare imperative 'hear' after the pronoun, keeping the emphatic Ὑμεῖς and the single connective οὖν intact.",
+        "alternative": true
       }
-    ]
+    ],
+    "checked": {
+      "length": "2:46"
+    }
   },
   {
     "bookId": 40,
@@ -255,7 +265,10 @@
         "severity": "minor",
         "explanation": "ὁ σπείρας is an aorist participle referring back to the completed sowing in the parable (v. 25); 'sows' (present) obscures the tense. Note the same participle is correctly rendered as past elsewhere in the narrative."
       }
-    ]
+    ],
+    "checked": {
+      "changed": "1:108"
+    }
   },
   {
     "bookId": 40,
@@ -275,7 +288,10 @@
         "severity": "minor",
         "explanation": "τοὺς ποιοῦντας τὴν ἀνομίαν is specifically 'those who practice lawlessness,' a stronger and more precise phrase than the generic 'do evil.' Also, συλλέξουσιν is the same verb used of gathering the weeds in vv. 28-30, so 'gather' keeps the parable's imagery consistent."
       }
-    ]
+    ],
+    "checked": {
+      "changed": "1:141"
+    }
   },
   {
     "bookId": 40,

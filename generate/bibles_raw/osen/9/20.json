@@ -163,7 +163,10 @@
         "severity": "minor",
         "explanation": "The Hebrew says Jonathan \"rose\" (stood up); \"opposite him\" follows an ancient version rather than the Hebrew text. If the alternate reading is kept intentionally, a footnote should note that the Hebrew reads \"Jonathan rose.\""
       }
-    ]
+    ],
+    "checked": {
+      "changed": "1:114"
+    }
   },
   {
     "bookId": 9,
@@ -232,7 +235,10 @@
         "explanation": "The opening clause of the Hebrew verse — \"Jonathan rose from the table in fierce anger\" — was dropped in the last revision. Without it the verse has no stated subject (\"He\" has no antecedent within the verse) and a whole action of the narrative is lost. Restoring the wording from the earlier version keeps the intentional rephrasing of the final clause intact.",
         "alternative": false
       }
-    ]
+    ],
+    "checked": {
+      "changed": "2:169"
+    }
   },
   {
     "bookId": 9,
@@ -290,13 +296,20 @@
     "bookId": 9,
     "chapterId": 20,
     "verseId": 41,
-    "text": "When the boy had gone, David rose from beside the mound to the south, fell facedown on the ground, and bowed three times. Then they kissed each other and wept together—David wept the longest.",
+    "text": "When the boy had gone, David rose from his hiding place to the south, fell facedown on the ground, and bowed three times. Then they kissed each other and wept together—David wept the longest.",
     "versions": [
       {
         "text": "When the boy had gone, David rose from the south side of the stone, fell facedown on the ground, and bowed three times. Then they kissed each other and wept together—David wept the longest.",
         "type": "error",
         "severity": "minor",
         "explanation": "The Hebrew reads \"from beside the Negev/south\"; there is no word for \"stone\" in the Masoretic text (that reading comes from other textual traditions). Either drop \"of the stone\" or add a footnote noting the textual variant."
+      },
+      {
+        "text": "When the boy had gone, David rose from beside the mound to the south, fell facedown on the ground, and bowed three times. Then they kissed each other and wept together—David wept the longest.",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "The Hebrew has only \"from beside the south\" — no noun for a physical object. \"The mound\" still supplies an object that is absent from the Hebrew text (much as \"the stone\" did in the earlier revision). \"His hiding place to the south\" fills the ellipsis from the immediate context (David hid in the field, v. 24) without inventing a physical feature.",
+        "alternative": true
       }
     ]
   },
@@ -312,6 +325,9 @@
         "severity": "minor",
         "explanation": "The Hebrew says only \"The LORD will be between me and you\"; \"witness\" is an interpretive addition. If retained, it should be marked or footnoted."
       }
-    ]
+    ],
+    "checked": {
+      "changed": "1:172"
+    }
   }
 ]

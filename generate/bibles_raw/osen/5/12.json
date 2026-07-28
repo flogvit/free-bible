@@ -15,13 +15,20 @@
     "bookId": 5,
     "chapterId": 12,
     "verseId": 3,
-    "text": "Tear down their altars, smash their sacred pillars, burn their Asherah poles in the fire, and cut down the carved images of their gods, wiping out their name from that place.",
+    "text": "Tear down their altars, smash their sacred pillars, burn their Asherah poles in the fire, cut down the carved images of their gods, and wipe out their name from that place.",
     "versions": [
       {
         "text": "Tear down their altars, smash their sacred pillars, burn their Asherah poles in the fire, and cut down the carved images of their gods, wiping their names from those places.",
         "type": "error",
         "severity": "minor",
         "explanation": "The Hebrew has the singular \"from that place\" (מן המקום ההוא) and \"their name\" (שמם, singular), pointing back to each cult site individually. Also, \"wipe out\" better renders אבד (destroy/annihilate) than the weaker \"wiping.\""
+      },
+      {
+        "text": "Tear down their altars, smash their sacred pillars, burn their Asherah poles in the fire, and cut down the carved images of their gods, wiping out their name from that place.",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "In Hebrew the final clause (וְאִבַּדְתֶּם) is another command in the same chain of consecutive perfects, not a subordinate result. Rendering it as a finite imperative parallel to the others keeps the five-fold command structure and reads with a stronger, more even rhythm aloud; the participle 'wiping out' subordinates what the source coordinates.",
+        "alternative": true
       }
     ]
   },

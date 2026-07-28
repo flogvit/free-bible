@@ -11,7 +11,10 @@
         "severity": "minor",
         "explanation": "The Hebrew verb דִּבֶּר is a perfect ('has spoken'), and the preposition עֲלֵיכֶם means 'concerning/against you' rather than simply 'to you.' The present tense weakens the sense of an already delivered oracle."
       }
-    ]
+    ],
+    "checked": {
+      "changed": "1:66"
+    }
   },
   {
     "bookId": 24,
@@ -129,13 +132,20 @@
     "bookId": 24,
     "chapterId": 10,
     "verseId": 18,
-    "text": "For this is what the LORD says: Look, this time I am about to sling out the inhabitants of the land, and I will bring distress on them so that they may be found.",
+    "text": "For this is what the LORD says: Look, this time I am about to sling out the inhabitants of the land, and I will bring distress on them so that they will feel it.",
     "versions": [
       {
         "text": "For this is what the LORD says: Look, I am about to sling out the inhabitants of this land, and I will bring distress on them so that they may be found.",
         "type": "error",
         "severity": "major",
         "explanation": "The phrase בַּפַּעַם הַזֹּאת ('at this time / this once') has been dropped, and the demonstrative has instead been attached to 'land' (Hebrew has simply 'the land'). The temporal emphasis is significant to the oracle."
+      },
+      {
+        "text": "For this is what the LORD says: Look, this time I am about to sling out the inhabitants of the land, and I will bring distress on them so that they may be found.",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "The Hebrew יִמְצָאוּ is an active Qal ('they will find'), not a passive ('they will be found'), which would require יִמָּצְאוּ. The active sense — the people 'finding'/feeling the blow, i.e. learning what the distress means — fits the clause and reads more naturally aloud. The passive rendering is a recognized interpretive option but obscures the grammar.",
+        "alternative": true
       }
     ]
   },

@@ -127,13 +127,20 @@
     "bookId": 41,
     "chapterId": 14,
     "verseId": 19,
-    "text": "They began to be grieved, and one after another they said to him, \"Surely not I?\"",
+    "text": "They began to grieve, and one after another they said to him, \"Surely not I?\"",
     "versions": [
       {
         "text": "They were distressed, and one after another they said to him, \"Surely not I?\"",
         "type": "error",
         "severity": "minor",
         "explanation": "The Greek ἤρξαντο (\"they began\") is dropped. Mark's inceptive verb marks the moment their grief starts, and it governs both \"be grieved\" and \"say to him.\""
+      },
+      {
+        "text": "They began to be grieved, and one after another they said to him, \"Surely not I?\"",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "\"Began to be grieved\" is a wooden passive that stumbles when read aloud; \"began to grieve\" keeps the inceptive force of ἤρξαντο while flowing more naturally in oral reading.",
+        "alternative": true
       }
     ]
   },
@@ -209,7 +216,10 @@
         "severity": "minor",
         "explanation": "The emphatic doubling σήμερον ταύτῃ τῇ νυκτί (\"today, this very night\") is reduced to a single phrase; including both preserves Mark's characteristic emphasis."
       }
-    ]
+    ],
+    "checked": {
+      "changed": "1:124"
+    }
   },
   {
     "bookId": 41,
@@ -313,7 +323,10 @@
         "severity": "minor",
         "explanation": "The Greek has two distinct actions: ἐπέβαλαν τὰς χεῖρας αὐτῷ (\"laid hands on him\") and ἐκράτησαν αὐτόν (\"seized/arrested him\"). Rendering both as \"seized... arrested\" is redundant and flat; \"laid hands on him\" preserves the idiom and reads better aloud."
       }
-    ]
+    ],
+    "checked": {
+      "changed": "1:45"
+    }
   },
   {
     "bookId": 41,
@@ -465,13 +478,20 @@
     "bookId": 41,
     "chapterId": 14,
     "verseId": 70,
-    "text": "Again he denied it. After a little while, those standing nearby said to Peter, \"You certainly are one of them, for you are a Galilean, and your accent gives you away.\"",
+    "text": "Again he denied it. After a little while, those standing nearby said to Peter, \"You certainly are one of them, for you are a Galilean, and your accent sounds just like theirs.\"",
     "versions": [
       {
         "text": "Again he denied it. After a little while, those standing nearby said to Peter, \"You certainly are one of them, for you are a Galilean.\"",
         "type": "error",
         "severity": "major",
         "explanation": "The final clause of the source text (καὶ ἡ λαλιά σου ὁμοιάζει, \"and your speech/accent is like theirs\") is missing from the translation. It supplies the reason the bystanders were certain and should be included."
+      },
+      {
+        "text": "Again he denied it. After a little while, those standing nearby said to Peter, \"You certainly are one of them, for you are a Galilean, and your accent gives you away.\"",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "The verb ὁμοιάζει means \"is similar/alike,\" pointing to the resemblance between Peter's speech and that of the Galileans. \"Gives you away\" is an idiomatic paraphrase that conveys the force but loses the comparison itself; a rendering that keeps the idea of likeness is closer to the source while still reading naturally aloud.",
+        "alternative": true
       }
     ]
   },

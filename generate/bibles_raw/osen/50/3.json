@@ -115,13 +115,20 @@
     "bookId": 50,
     "chapterId": 3,
     "verseId": 17,
-    "text": "Become imitators of me, brothers, and keep your eyes on those who live as we do, the pattern we have given you.",
+    "text": "Together, become imitators of me, brothers, and keep your eyes on those who live as we do, for you have us as a pattern.",
     "versions": [
       {
         "text": "Join with me in imitating Christ, brothers, and keep your eyes on those who live as we do, the pattern we have given you.",
         "type": "error",
         "severity": "major",
         "explanation": "The Greek says \"become imitators of me\" (συμμιμηταί μου); \"Christ\" is not in the text and shifts the object of imitation, which also breaks the parallel with the rest of the verse (\"those who live as we do... the pattern we have given\")."
+      },
+      {
+        "text": "Become imitators of me, brothers, and keep your eyes on those who live as we do, the pattern we have given you.",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "Two small gains in accuracy: the compound συμ-μιμηταί carries the sense of imitating together, as a community, which can be signaled without introducing anything foreign to the text; and καθὼς ἔχετε τύπον ἡμᾶς says 'as you have us as a pattern' rather than 'the pattern we have given you,' which shifts the grammar from what the readers possess to what the apostles bestow. Both changes keep the sentence easy to read aloud.",
+        "alternative": true
       }
     ]
   },

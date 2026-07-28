@@ -179,13 +179,20 @@
     "bookId": 49,
     "chapterId": 5,
     "verseId": 29,
-    "text": "For no one ever hated his own body; instead, he feeds and cares for it, just as Christ does the church,",
+    "text": "For no one ever hated his own flesh; instead, he feeds and cares for it, just as Christ does the church,",
     "versions": [
       {
         "text": "For no one ever hated his own flesh, but nourishes and cares for it, just as Christ does the church,",
         "type": "grammar",
         "severity": "minor",
         "explanation": "The English shifts from past tense (\"hated\") to present tense (\"nourishes\") without a subject, which is grammatically strained and hard to follow when read aloud. Supplying \"he\" and starting a new clause preserves the Greek's tense shift while reading naturally."
+      },
+      {
+        "text": "For no one ever hated his own body; instead, he feeds and cares for it, just as Christ does the church,",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "The Greek here uses σάρξ (flesh), deliberately different from σῶμα (body) in the surrounding verses (28, 30). Rendering it as \"body\" flattens the distinction and loses the echo of \"one flesh\" from Genesis, which the argument depends on. \"Flesh\" keeps the link while the improved clause structure (\"instead, he feeds and cares for it\") is retained.",
+        "alternative": true
       }
     ]
   },

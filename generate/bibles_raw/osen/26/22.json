@@ -23,13 +23,20 @@
     "bookId": 26,
     "chapterId": 22,
     "verseId": 3,
-    "text": "Say: This is what the Lord GOD says: City that sheds blood in her midst, so bringing on her hour, city that has made idols for herself and so defiled herself—",
+    "text": "Say: This is what the Lord GOD says: City that sheds blood in her midst, so bringing on her hour, city that has made idols against herself and so defiled herself—",
     "versions": [
       {
         "text": "Say: This is what the Lord GOD says: City that sheds blood within herself, so that her hour has come, city that has made idols for herself and so defiled herself—",
         "type": "error",
         "severity": "minor",
         "explanation": "The infinitive לָבוֹא עִתָּהּ expresses purpose/result ('so that her time may come'), not a completed event; 'her hour has come' states it as already accomplished. Also 'within herself' is better rendered 'in her midst' (בְּתוֹכָהּ), matching the phrase elsewhere in the chapter."
+      },
+      {
+        "text": "Say: This is what the Lord GOD says: City that sheds blood in her midst, so bringing on her hour, city that has made idols for herself and so defiled herself—",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "The preposition עָלֶיהָ in this context carries the sense of what she brings upon herself, matching the judgment tone of the oracle ('bringing on her hour'). 'For herself' reads as simple possession and loses the note of self-inflicted harm.",
+        "alternative": true
       }
     ]
   },
@@ -117,15 +124,25 @@
     "bookId": 26,
     "chapterId": 22,
     "verseId": 16,
-    "text": "You will be defiled in the eyes of the nations, and you will know that I am the LORD.\"",
+    "text": "Through your own doing you will be profaned in the sight of the nations, and you will know that I am the LORD.\"",
     "versions": [
       {
         "text": "You will be defiled in the eyes of the nations, and you will know that I am the LORD.",
         "type": "grammar",
         "severity": "minor",
         "explanation": "The quoted speech opened in verse 2 is never closed. The other two oracles in the chapter close their quotation marks (verses 22 and 31), so a closing quotation mark is needed here for consistency."
+      },
+      {
+        "text": "You will be defiled in the eyes of the nations, and you will know that I am the LORD.\"",
+        "type": "error",
+        "severity": "minor",
+        "explanation": "The verb here derives from the root for 'profane/dishonor' (חלל), not from the root for ritual uncleanness (טמא) used in verses 3-4 and 15. Rendering it 'defiled' clashes with the immediately preceding line, where God says he will purge her uncleanness from her — she cannot be purged of uncleanness and then made unclean in the same breath. 'Profaned/dishonored' also renders the reflexive בָּךְ ('through yourself, by your own doing') more clearly.",
+        "alternative": false
       }
-    ]
+    ],
+    "checked": {
+      "changed": "2:111"
+    }
   },
   {
     "bookId": 26,

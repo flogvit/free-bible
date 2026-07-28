@@ -9,13 +9,20 @@
     "bookId": 27,
     "chapterId": 9,
     "verseId": 2,
-    "text": "in the first year of his reign, I, Daniel, understood from the books the number of years that, according to the word of the LORD to Jeremiah the prophet, must pass before the desolation of Jerusalem would end—seventy years.",
+    "text": "in the first year of his reign, I, Daniel, understood from the books the number of years that must pass before the desolations of Jerusalem would be completed—seventy years, as the word of the LORD had come to Jeremiah the prophet.",
     "versions": [
       {
         "text": "in the first year of his reign, I, Daniel, understood from the books the number of years that the word of the LORD had given to Jeremiah the prophet: that the desolation of Jerusalem would last seventy years.",
         "type": "error",
         "severity": "major",
         "explanation": "The Hebrew says the word of the LORD 'came to' Jeremiah (הָיָה ... אֶל), not that the word 'gave' the number to Jeremiah. The current wording is grammatically confused ('the word ... had given to Jeremiah'). Also לְמַלֹּאות means 'to fulfill/complete' the desolations, i.e., seventy years must be completed."
+      },
+      {
+        "text": "in the first year of his reign, I, Daniel, understood from the books the number of years that, according to the word of the LORD to Jeremiah the prophet, must pass before the desolation of Jerusalem would end—seventy years.",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "The present sentence buries the main clause inside a long parenthetical insertion ('that, according to the word ... must pass'), which is hard to follow when read aloud. Recasting it puts the count of years and the number together and lets the reference to Jeremiah come as a closing clause. It also restores the Hebrew plural חָרְבוֹת ('desolations') and the sense of לְמַלֹּאות ('to be completed').",
+        "alternative": true
       }
     ]
   },
@@ -43,7 +50,10 @@
         "severity": "minor",
         "explanation": "Minor: 'judgments' can be misread as God's acts of judgment; מִשְׁפָּטִים here means legal ordinances/rulings given to Israel. Optional clarification for oral clarity."
       }
-    ]
+    ],
+    "checked": {
+      "changed": "1:122"
+    }
   },
   {
     "bookId": 27,
@@ -75,7 +85,10 @@
         "severity": "minor",
         "explanation": "Verse 9 runs directly into verse 10 ('and have not obeyed'), so it should end with a comma rather than no punctuation. Currently the sentence has no terminal punctuation at all."
       }
-    ]
+    ],
+    "checked": {
+      "changed": "1:86"
+    }
   },
   {
     "bookId": 27,
@@ -95,7 +108,10 @@
         "severity": "minor",
         "explanation": "Subject–verb agreement: a compound subject ('the curse and the oath') requires 'have been poured out.'"
       }
-    ]
+    ],
+    "checked": {
+      "changed": "1:224"
+    }
   },
   {
     "bookId": 27,
@@ -115,13 +131,20 @@
     "bookId": 27,
     "chapterId": 9,
     "verseId": 13,
-    "text": "Just as it is written in the law of Moses, all this disaster has come upon us. Yet we did not entreat the favor of the LORD our God by turning from our iniquity and giving heed to your truth.",
+    "text": "Just as it is written in the law of Moses, all this disaster has come upon us. Yet we did not entreat the favor of the LORD our God by turning from our iniquity and gaining insight into your truth.",
     "versions": [
       {
         "text": "Just as it is written in the law of Moses, all this disaster has come upon us. Yet we did not entreat the favor of the LORD our God by turning from our sins and giving heed to your truth.",
         "type": "error",
         "severity": "minor",
         "explanation": "עֲוֺנֵנוּ is 'our iniquity/guilt' (singular), distinct from חַטָּאת ('sin') used elsewhere in the chapter; keeping the distinction preserves the vocabulary of the prayer."
+      },
+      {
+        "text": "Just as it is written in the law of Moses, all this disaster has come upon us. Yet we did not entreat the favor of the LORD our God by turning from our iniquity and giving heed to your truth.",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "הַשְׂכִּיל denotes gaining wisdom or insight, not merely paying attention; 'gaining insight into your truth' better conveys the verb while keeping the rhythm of the line.",
+        "alternative": true
       }
     ]
   },

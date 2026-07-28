@@ -29,7 +29,10 @@
         "severity": "major",
         "explanation": "The Hebrew reads \"ten cubits wide... a way of one cubit,\" not \"a hundred cubits long.\" The rendering \"a hundred cubits\" follows an ancient version rather than the Hebrew text; if that reading is preferred, it should be marked in a footnote rather than silently replacing the Hebrew measurement."
       }
-    ]
+    ],
+    "checked": {
+      "changed": "1:132"
+    }
   },
   {
     "bookId": 26,
@@ -75,7 +78,8 @@
       }
     ],
     "checked": {
-      "length": "1:121"
+      "length": "1:121",
+      "changed": "1:121"
     }
   },
   {
@@ -136,13 +140,20 @@
     "bookId": 26,
     "chapterId": 42,
     "verseId": 20,
-    "text": "So he measured it on all four sides. It had a wall all around it, five hundred rods long and five hundred rods wide, to separate the holy from the common.",
+    "text": "So he measured it on all four sides. It had a wall all around it, five hundred rods long and five hundred wide, to separate the holy from the common.",
     "versions": [
       {
         "text": "So he measured it on all four sides. It had a wall all around it, five hundred cubits long and five hundred cubits wide, to separate the holy from the common.",
         "type": "error",
         "severity": "major",
         "explanation": "The Hebrew gives no unit here, but verses 16-19 have just measured five hundred rods on each side. Supplying \"cubits\" contradicts the immediately preceding measurements; \"rods\" (or simply \"five hundred long and five hundred wide\") keeps the passage internally consistent."
+      },
+      {
+        "text": "So he measured it on all four sides. It had a wall all around it, five hundred rods long and five hundred rods wide, to separate the holy from the common.",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "The Hebrew simply says \"length five hundred and breadth five hundred\" with no unit repeated. Dropping the second \"rods\" mirrors the terseness of the Hebrew and reads more smoothly aloud, while the unit is still clear from the first mention.",
+        "alternative": true
       }
     ]
   }

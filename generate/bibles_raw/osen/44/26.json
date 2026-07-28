@@ -165,13 +165,20 @@
     "bookId": 44,
     "chapterId": 26,
     "verseId": 24,
-    "text": "While Paul was making this defense, Festus broke in with a loud voice: \"You are out of your mind, Paul! Your great learning is driving you insane.\"",
+    "text": "While Paul was making this defense, Festus said in a loud voice, \"You are out of your mind, Paul! Your great learning is driving you insane.\"",
     "versions": [
       {
         "text": "At this point Festus interrupted in a loud voice: \"You are out of your mind, Paul! Your great learning is driving you insane.\"",
         "type": "error",
         "severity": "minor",
         "explanation": "The genitive absolute \"αὐτοῦ ἀπολογουμένου\" (while he was making his defense) is dropped in favor of the vague \"At this point.\" Restoring it keeps the link to Paul's ongoing defense and preserves the participial detail of the Greek."
+      },
+      {
+        "text": "While Paul was making this defense, Festus broke in with a loud voice: \"You are out of your mind, Paul! Your great learning is driving you insane.\"",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "The Greek verb is simply φησίν (\"said\"); the idea of interrupting is inferred from context rather than stated. Since the genitive absolute already conveys that Paul was still speaking, the plain \"said in a loud voice\" keeps the addition out while preserving the sense, and it reads cleanly aloud.",
+        "alternative": true
       }
     ]
   },
@@ -229,6 +236,9 @@
         "severity": "minor",
         "explanation": "The comma before the conditional clause is unnecessary and breaks the rhythm of the closing line when read aloud."
       }
-    ]
+    ],
+    "checked": {
+      "changed": "1:97"
+    }
   }
 ]

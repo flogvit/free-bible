@@ -15,13 +15,20 @@
     "bookId": 18,
     "chapterId": 41,
     "verseId": 3,
-    "text": "Who has ever given me anything first, that I should repay him? Everything under heaven is mine.",
+    "text": "Who has ever given me anything first, that I should repay him? Whatever is under all the heavens is mine.",
     "versions": [
       {
         "text": "Who has ever confronted me, that I should repay him? Everything under heaven is mine.",
         "type": "error",
         "severity": "minor",
         "explanation": "הִקְדִּימַנִי here carries the sense of 'giving beforehand / putting me in debt' rather than hostile confrontation; the following clause ('that I should repay') requires the idea of a prior gift or claim, which 'confronted' obscures."
+      },
+      {
+        "text": "Who has ever given me anything first, that I should repay him? Everything under heaven is mine.",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "The Hebrew כָּל־הַשָּׁמַיִם ('all the heavens') is fully represented by rendering the totality, and לִי־הוּא reads naturally as 'whatever is under... is mine.' The current wording is defensible but flattens the emphatic 'all.'",
+        "alternative": true
       }
     ]
   },

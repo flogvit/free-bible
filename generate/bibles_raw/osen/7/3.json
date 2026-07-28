@@ -3,13 +3,20 @@
     "bookId": 7,
     "chapterId": 3,
     "verseId": 1,
-    "text": "These are the nations the LORD left in place to test Israel by them—all those Israelites who had not known any of the wars of Canaan.",
+    "text": "These are the nations the LORD left in place to test Israel through them—all those Israelites who had not known any of the wars of Canaan.",
     "versions": [
       {
         "text": "These are the nations the LORD left in place to test Israel by them—all those Israelites who had not known any of the wars for Canaan.",
         "type": "error",
         "severity": "minor",
         "explanation": "The Hebrew construct מִלְחֲמוֹת כְּנָעַן means \"the wars of Canaan\" (i.e., the wars fought in Canaan). \"Wars for Canaan\" introduces a purpose idea not present in the Hebrew and reads awkwardly aloud."
+      },
+      {
+        "text": "These are the nations the LORD left in place to test Israel by them—all those Israelites who had not known any of the wars of Canaan.",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "The instrumental בָּם is more naturally rendered \"through them\" in English; \"by them\" can momentarily read as an agent-of-passive or a locative phrase when heard aloud, whereas \"through them\" keeps the instrumental sense clear in oral reading.",
+        "alternative": true
       }
     ]
   },

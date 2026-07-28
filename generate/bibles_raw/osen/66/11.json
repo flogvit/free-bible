@@ -59,13 +59,20 @@
     "bookId": 66,
     "chapterId": 11,
     "verseId": 9,
-    "text": "For three and a half days people from every people and tribe and tongue and nation will gaze at their bodies and refuse to let them be laid in a tomb.",
+    "text": "And for three and a half days some from among the peoples and tribes and tongues and nations will gaze at their bodies and refuse to let them be laid in a tomb.",
     "versions": [
       {
         "text": "For three and a half days people from every tribe and tongue and nation will look at their bodies and refuse to let them be laid in a tomb.",
         "type": "error",
         "severity": "major",
         "explanation": "The Greek lists four groups (λαῶν, φυλῶν, γλωσσῶν, ἐθνῶν); the translation drops \"peoples,\" leaving only three. This fourfold formula is a recurring, deliberate pattern in this book and should be preserved in full."
+      },
+      {
+        "text": "For three and a half days people from every people and tribe and tongue and nation will gaze at their bodies and refuse to let them be laid in a tomb.",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "The Greek ἐκ τῶν λαῶν is partitive (\"some from among the peoples\") and has no word for \"every\"; the current \"people from every people\" both adds a quantifier and produces a jarring repetition of the same English word when read aloud. Rendering all four nouns as plurals keeps the fourfold formula intact while smoothing the rhythm, and the opening \"And\" restores the καί that links the verse to the preceding one.",
+        "alternative": true
       }
     ]
   },

@@ -9,13 +9,20 @@
     "bookId": 46,
     "chapterId": 16,
     "verseId": 2,
-    "text": "On the first day of every week each of you should set something aside at home, saving up in keeping with however he has prospered, so that no collections need to be made when I come.",
+    "text": "On the first day of every week each of you should set something aside at home, saving up in keeping with his income, so that no collections need to be made when I come.",
     "versions": [
       {
         "text": "On the first day of every week each of you should set something aside, saving up whatever he has prospered, so that no collections need to be made when I come.",
         "type": "grammar",
         "severity": "major",
         "explanation": "\"Saving up whatever he has prospered\" is not grammatical English (one does not \"prosper\" something); the Greek ὅ τι ἐὰν εὐοδῶται means \"as much as he may prosper / in keeping with his income.\" Also, παρʼ ἑαυτῷ (\"by himself,\" i.e., at home / in his own keeping) is currently unrepresented, which weakens the sense that the money is laid aside privately before being gathered."
+      },
+      {
+        "text": "On the first day of every week each of you should set something aside at home, saving up in keeping with however he has prospered, so that no collections need to be made when I come.",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "The sense of ὅ τι ἐὰν εὐοδῶται is well captured, but stacking \"in keeping with\" and \"however\" makes for a clunky mouthful when read aloud. \"In keeping with his income\" conveys the same proportional giving more smoothly and keeps the sentence's rhythm.",
+        "alternative": true
       }
     ]
   },
@@ -111,7 +118,10 @@
         "severity": "minor",
         "explanation": "The Greek ἐστίν is present tense (\"they are the firstfruits\"), describing their standing, not merely a past event. The present tense also reads more smoothly alongside the following present-perfect \"have devoted themselves.\""
       }
-    ]
+    ],
+    "checked": {
+      "changed": "1:149"
+    }
   },
   {
     "bookId": 46,

@@ -45,13 +45,20 @@
     "bookId": 4,
     "chapterId": 18,
     "verseId": 8,
-    "text": "The LORD said to Aaron: \"I myself have put you in charge of the contributions made to me. All the holy gifts of the Israelites I give to you as your anointed portion, and to your sons as a perpetual statute.",
+    "text": "The LORD said to Aaron: \"See, I myself have given you charge of the contributions made to me. All the holy gifts of the Israelites I give to you as your anointed portion, and to your sons as a perpetual statute.",
     "versions": [
       {
         "text": "The LORD said to Aaron: \"I myself have put you in charge of the contributions made to me. All the holy gifts of the Israelites I give to you and your sons as your portion, a perpetual statute.",
         "type": "error",
         "severity": "minor",
         "explanation": "The Hebrew distinguishes two phrases: the gifts are given to Aaron 'as an anointed (consecrated) portion' (לְמָשְׁחָה) and to his sons 'as a perpetual statute.' The current rendering collapses them and drops the sense of 'anointed/consecrated portion.'"
+      },
+      {
+        "text": "The LORD said to Aaron: \"I myself have put you in charge of the contributions made to me. All the holy gifts of the Israelites I give to you as your anointed portion, and to your sons as a perpetual statute.",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "The presentative הִנֵּה ('see/behold') is dropped, which flattens the emphatic opening of the divine grant; restoring it also lets the verb 'given' echo the giving language that follows.",
+        "alternative": true
       }
     ]
   },
@@ -109,7 +116,10 @@
         "severity": "minor",
         "explanation": "The verb 'you shall redeem' (תִּפְדֶּה) and the phrase 'at your valuation' (בְּעֶרְכְּךָ) are both omitted; the command becomes a mere statement of price."
       }
-    ]
+    ],
+    "checked": {
+      "changed": "1:150"
+    }
   },
   {
     "bookId": 4,
@@ -151,15 +161,25 @@
     "bookId": 4,
     "chapterId": 18,
     "verseId": 23,
-    "text": "The Levites alone shall do the work of the tent of meeting, and they shall bear the guilt for any offense against it. This is a perpetual statute throughout your generations: among the Israelites they shall receive no inheritance.",
+    "text": "The Levites alone shall do the work of the tent of meeting, and they shall bear their guilt. This is a perpetual statute throughout your generations: among the Israelites they shall receive no inheritance.",
     "versions": [
       {
         "text": "The Levites alone shall do the work of the tent of meeting, and they shall bear the responsibility for it. This is a perpetual statute throughout your generations: among the Israelites they shall receive no inheritance.",
         "type": "error",
         "severity": "minor",
         "explanation": "The Hebrew idiom 'bear their guilt' is the same expression translated 'bear the guilt' in verse 1; 'bear the responsibility' weakens it and loses the internal consistency of the chapter."
+      },
+      {
+        "text": "The Levites alone shall do the work of the tent of meeting, and they shall bear the guilt for any offense against it. This is a perpetual statute throughout your generations: among the Israelites they shall receive no inheritance.",
+        "type": "error",
+        "severity": "minor",
+        "explanation": "The Hebrew reads simply 'and they shall bear their guilt.' The phrase 'for any offense against it' has no counterpart in the text and narrows the sense by interpretation; the plain idiom also preserves the verbal link with verse 1 that the earlier revision aimed to restore.",
+        "alternative": true
       }
-    ]
+    ],
+    "checked": {
+      "changed": "2:205"
+    }
   },
   {
     "bookId": 4,
@@ -173,7 +193,10 @@
         "severity": "minor",
         "explanation": "לָהֶם is 'to them,' addressed to the Levites, not 'of them.'"
       }
-    ]
+    ],
+    "checked": {
+      "changed": "1:203"
+    }
   },
   {
     "bookId": 4,

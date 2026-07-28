@@ -111,7 +111,10 @@
         "severity": "minor",
         "explanation": "γράμματα οἶδεν refers specifically to formal scriptural learning or literacy, not general knowledge. \"Know so much\" is vaguer than the Greek and loses the contrast with rabbinic training implied by μεμαθηκώς."
       }
-    ]
+    ],
+    "checked": {
+      "changed": "1:110"
+    }
   },
   {
     "bookId": 43,
@@ -137,7 +140,10 @@
         "severity": "minor",
         "explanation": "ἀδικία means unrighteousness or dishonesty, not \"falsehood\" (which duplicates \"truthful\" and narrows the sense). A word for wrongdoing preserves the breadth of the Greek."
       }
-    ]
+    ],
+    "checked": {
+      "changed": "1:155"
+    }
   },
   {
     "bookId": 43,
@@ -363,13 +369,20 @@
     "bookId": 43,
     "chapterId": 7,
     "verseId": 53,
-    "text": "Then each of them went home to his own house.",
+    "text": "Then each of them went to his own home.",
     "versions": [
       {
         "text": "Then they all went home,",
         "type": "error",
         "severity": "minor",
         "explanation": "The Greek ἕκαστος (\"each one\") individualizes the departure rather than saying \"they all,\" and the sentence should close with a period rather than a comma since it completes a full clause. A footnote noting that the earliest manuscripts do not contain 7:53—8:11 would also serve readers well."
+      },
+      {
+        "text": "Then each of them went home to his own house.",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "\"Went home to his own house\" is redundant in English, since \"home\" and \"his own house\" render the same phrase (εἰς τὸν οἶκον αὐτοῦ). A single expression keeps the individualizing force of ἕκαστος while reading cleanly aloud. (A note that the earliest manuscripts lack 7:53—8:11 would still be worth adding, as none is currently present.)",
+        "alternative": true
       }
     ]
   }

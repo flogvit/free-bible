@@ -181,13 +181,20 @@
     "bookId": 5,
     "chapterId": 33,
     "verseId": 28,
-    "text": "So Israel dwells in safety, alone and unafraid, Jacob's fountain secure, in a land of grain and new wine, where the heavens drop their dew.",
+    "text": "So Israel dwells in safety, set apart, Jacob's fountain secure, in a land of grain and new wine, where his heavens drop their dew.",
     "versions": [
       {
         "text": "So Israel dwells in safety, Jacob's fountain secure, in a land of grain and new wine, where the heavens drop their dew.",
         "type": "error",
         "severity": "major",
         "explanation": "The Hebrew word בָּדָד (\"alone, apart, undisturbed\") is not represented in the translation. It is a significant idea in the blessing (Israel set apart and secure among the nations) and should be rendered."
+      },
+      {
+        "text": "So Israel dwells in safety, alone and unafraid, Jacob's fountain secure, in a land of grain and new wine, where the heavens drop their dew.",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "Two small points: (1) \"unafraid\" is an added element — the Hebrew has only בֶּטַח (\"in safety\") and בָּדָד (\"alone, apart\"), so \"unafraid\" restates the first word rather than translating anything new; \"set apart\" captures בָּדָד's sense of Israel dwelling separate among the nations. (2) שָׁמָיו is a possessive form (\"his heavens,\" i.e. Jacob's/the land's own skies), which the generic \"the heavens\" loses. Both changes keep the rhythm of the line.",
+        "alternative": true
       }
     ]
   },

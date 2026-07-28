@@ -131,13 +131,20 @@
     "bookId": 43,
     "chapterId": 18,
     "verseId": 21,
-    "text": "Why do you question me? Question those who heard what I said to them. Look, they know what I said.",
+    "text": "Why do you question me? Question those who heard what I said to them. Look, these men know what I said.",
     "versions": [
       {
         "text": "Why do you question me? Question those who heard me. They know what I said.\"",
         "type": "error",
         "severity": "minor",
         "explanation": "Two elements of the Greek are dropped: τί ἐλάλησα αὐτοῖς (\"what I spoke to them\") is reduced to \"heard me,\" and the emphatic ἴδε (\"look\"/\"behold\") is omitted. Restoring them keeps the full sense and the rhetorical force for oral reading."
+      },
+      {
+        "text": "Why do you question me? Question those who heard what I said to them. Look, they know what I said.",
+        "type": "suggestion",
+        "severity": "minor",
+        "explanation": "The demonstrative οὗτοι is emphatic and points to the actual hearers present in the situation; rendering it as \"these men\" (rather than the unstressed \"they\") preserves the force of Jesus' gesture toward his audience and clarifies the pronoun's reference for a listener. The current reading is a legitimate rendering, just less pointed.",
+        "alternative": true
       }
     ]
   },
@@ -231,7 +238,10 @@
         "severity": "minor",
         "explanation": "The Greek has the article with ἀρχιερεῖς (\"the chief priests\"), not a possessive tied to the nation. \"Its chief priests\" adds a relationship not in the text."
       }
-    ]
+    ],
+    "checked": {
+      "changed": "1:112"
+    }
   },
   {
     "bookId": 43,
