@@ -1,8 +1,7 @@
 import { describe, it, expect } from 'vitest';
 import { UkvnMapper } from '../src/ukvn-mapper.js';
-import { CrossMapper } from '../src/ukvn-cross-mapper.js';
 import { loadUkvnMapping, listUkvnMappings } from '../src/ukvn-loader.js';
-import { ukvnDecode, UKVN_PART_SIZE } from '../src/ukvn-types.js';
+import { ukvnDecode } from '../src/ukvn-types.js';
 import type { UkvnMappingFile } from '../src/ukvn-types.js';
 
 /**
@@ -62,28 +61,7 @@ function findDuplicateTkvnEntries(mapping: UkvnMappingFile): Set<number> {
   return duplicateKvns;
 }
 
-/**
- * Find osmain verses that osnb splits into parts (Sal 19:1a / 19:1b).
- * The reverse lookup returns the part, not the whole verse, so a round-trip
- * through osnb cannot come back to the part-less verse it started from.
- * Lossy by design — same class as the many-to-one exclusion above.
- */
-function findPartSplitBaseKvns(mapping: UkvnMappingFile): Set<number> {
-  const bases = new Set<number>();
-  for (const entry of mapping.map) {
-    const part = entry.kvnFrom % UKVN_PART_SIZE;
-    if (part > 0) bases.add(entry.kvnFrom - part);
-  }
-  return bases;
-}
-
 const allSystems = listUkvnMappings();
-
-// Load osnb once as the hub for cross-translation round-trips
-const osnbMapping = loadUkvnMapping('osnb');
-const osnbMapper = new UkvnMapper(osnbMapping);
-const osnbDuplicateKvns = findDuplicateTkvnEntries(osnbMapping);
-const osnbPartSplitKvns = findPartSplitBaseKvns(osnbMapping);
 
 for (const system of allSystems) {
   const mapping = loadUkvnMapping(system);
@@ -144,39 +122,26 @@ for (const system of allSystems) {
     );
   });
 
-  // Round-trip through osnb: translation -> osmain -> osnb -> osmain -> translation
-  if (system !== 'osnb') {
-    // Also exclude entries whose osmain kvn hits a many-to-one in osnb
-    const roundTripEntries = testableEntries.filter(
-      (e) => !osnbDuplicateKvns.has(e.kvnFrom) && !osnbPartSplitKvns.has(e.kvnFrom)
-    );
+  // Round-trip through osmain: translation -> osmain -> translation.
+  //
+  // osmain er navet all kryssmapping skal gå gjennom. Tidligere gikk denne
+  // testen via osnb, men osnb er bare enda en oversettelse — med egne hull —
+  // så den testet osnb sin mapping like mye som modulens egen.
+  describe(`${system}: round-trip through osmain (${testableEntries.length} testable)`, () => {
+    if (testableEntries.length === 0) {
+      it('all cross-chapter entries have duplicate tkvnFrom (skipped)', () => {
+        expect(true).toBe(true);
+      });
+      return;
+    }
 
-    describe(`${system}: round-trip through osnb (${roundTripEntries.length} testable)`, () => {
-      if (roundTripEntries.length === 0) {
-        it('all cross-chapter entries are ambiguous through osnb (skipped)', () => {
-          expect(true).toBe(true);
-        });
-        return;
-      }
+    const entries = testableEntries.map((e) => [
+      `${e.tkvnRef} -> osmain -> back`,
+      e.tkvnFrom,
+    ] as const);
 
-      const crossToOsnb2 = new CrossMapper(mapper, osnbMapper);
-      const crossBack = new CrossMapper(osnbMapper, mapper);
-
-      const entries = roundTripEntries.map((e) => [
-        `${e.tkvnRef} -> osnb -> back`,
-        e.tkvnFrom,
-      ] as const);
-
-      it.each(entries)(
-        '%s',
-        (_, tkvnFrom) => {
-          // Step 1: translation tkvn -> osmain -> osnb
-          const toOsnb2 = crossToOsnb2.map(tkvnFrom);
-          // Step 2: osnb tkvn -> osmain -> translation
-          const backToSource = crossBack.map(toOsnb2.tkvn);
-          expect(backToSource.tkvn).toBe(tkvnFrom);
-        }
-      );
+    it.each(entries)('%s', (_, tkvnFrom) => {
+      expect(mapper.toTkvn(mapper.toKvn(tkvnFrom))).toBe(tkvnFrom);
     });
-  }
+  });
 }
