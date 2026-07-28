@@ -1,0 +1,177 @@
+{
+  "id": "annas",
+  "name": "Annas",
+  "title": "High Priest and influential leader of a priestly dynasty",
+  "era": "jesus",
+  "lifespan": "Unknown birth year – c. 40 AD",
+  "summary": "Annas was one of the most influential Jewish religious leaders in the first century. He was appointed high priest around 6 AD by the Roman governor Quirinius in Syria, and held the office formally until about 15 AD. Despite being deposed by the Romans, he continued to wield considerable power behind the scenes in Jewish society. His influence was so pervasive that five of his sons and his son-in-law Caiaphas all served as high priests after him—a priestly dynasty without parallel in the Second Temple period. In the New Testament, Annas appears as a figure with real authority: Jesus was brought to him first after his arrest, before being sent on to Caiaphas. Luke mentions Annas and Caiaphas side by side as high priests, underscoring his continued status. After Pentecost, Annas was also present in the council that interrogated the apostles Peter and John. Rabbinic sources refer critically to his family’s exercise of power at key moments, and together the sources portray a powerful figure operating at the intersection of Jewish religion and Roman politics.",
+  "roles": [
+    "High Priest",
+    "Political powerbroker",
+    "Head of the priestly dynasty",
+    "Member of the Jewish council"
+  ],
+  "family": {
+    "father": null,
+    "mother": null,
+    "siblings": [],
+    "spouse": null,
+    "children": [
+      "Eleazar son of Annas",
+      "Jonathan son of Annas",
+      "Theophilus son of Annas",
+      "Matthias son of Annas",
+      "Annas",
+      "Unknown daughter married to Caiaphas"
+    ]
+  },
+  "relatedPersons": [
+    "Caiaphas",
+    "Jesus",
+    "Peter",
+    "John the Baptist"
+  ],
+  "keyEvents": [
+    {
+      "title": "Annas mentioned as high priest alongside Caiaphas",
+      "description": "Annas is named together with Caiaphas as high priest when God's word came to John the Baptist in the fifteenth year of Emperor Tiberius. The mention of two high priests at the same time is unusual and reflects Annas' continued religious and political influence even after his formal removal by the Romans.",
+      "verses": [
+        {
+          "bookId": 42,
+          "chapter": 3,
+          "verses": [
+            1,
+            2
+          ]
+        }
+      ]
+    },
+    {
+      "title": "Jesus is brought to Annas after his arrest",
+      "description": "After Jesus was arrested in Gethsemane, he was first taken to Annas, the father-in-law of the reigning high priest Caiaphas. The fact that Jesus was brought to Annas first shows that he was still regarded as the true power within the circle of high priests.",
+      "verses": [
+        {
+          "bookId": 43,
+          "chapter": 18,
+          "verses": [
+            12,
+            13
+          ]
+        }
+      ]
+    },
+    {
+      "title": "Annas interrogates Jesus",
+      "description": "Annas questioned Jesus about his disciples and his teaching. Jesus answered that he had always spoken openly and urged Annas to ask those who had heard him. One of the guards then struck Jesus for this answer, which was seen as disrespectful toward the high priest.",
+      "verses": [
+        {
+          "bookId": 43,
+          "chapter": 18,
+          "verses": [
+            19,
+            20,
+            21,
+            22,
+            23
+          ]
+        }
+      ]
+    },
+    {
+      "title": "Annas sends Jesus on to Caiaphas",
+      "description": "After the initial interrogation, Annas sent Jesus bound onward to the high priest Caiaphas for the formal trial before the Jewish council.",
+      "verses": [
+        {
+          "bookId": 43,
+          "chapter": 18,
+          "verses": [
+            24
+          ]
+        }
+      ]
+    },
+    {
+      "title": "Annas in the council assembly against the apostles",
+      "description": "After Pentecost, Peter and John were brought before the Jewish council. Annas was present, and the text refers to him with the title high priest – an expression of his enduring status – along with Caiaphas and others from the high-priestly family. They questioned the apostles about the healing of the lame man at the temple gate.",
+      "verses": [
+        {
+          "bookId": 44,
+          "chapter": 4,
+          "verses": [
+            5,
+            6,
+            7
+          ]
+        }
+      ]
+    }
+  ],
+  "aliases": [
+    "Hannas",
+    "Ananus"
+  ],
+  "references": [
+    {
+      "bookId": 42,
+      "chapterId": 3,
+      "verseId": 2
+    },
+    {
+      "bookId": 43,
+      "chapterId": 18,
+      "verseId": 13
+    },
+    {
+      "bookId": 43,
+      "chapterId": 18,
+      "verseId": 24
+    },
+    {
+      "bookId": 44,
+      "chapterId": 4,
+      "verseId": 6
+    }
+  ],
+  "versions": [
+    {
+      "summary": "Annas (also called Hananiah) was a Jewish high priest from approximately 6 to 15 AD, appointed by the Roman legate Quirinius. Even after he was removed from office, he retained enormous political and religious influence, and five of his sons as well as his son-in-law Caiaphas served as high priests after him. He played a central role in the trial of Jesus and in the persecution of the early apostles.",
+      "title": "High Priest and Political Powerbroker",
+      "score": 6,
+      "reason": "[critical] Caiaphas was Annas's son-in-law, not his child. 'caifas-svigersonn' is not a valid reference. Caiaphas should be listed under a different relationship. Since the JSON schema does not have a dedicated field for sons-in-law, the children list should instead contain Caiaphas's wife (Annas's daughter), whose name is unknown. Alternatively, the children list can remain empty and the relationship to Caiaphas described in the summary. The Bible does not directly mention the names of Annas's children, but Josephus mentions five sons who became high priests.; [major] According to Josephus, Annas had five sons who all became high priests: Eleazar, Jonathan, Theophilus, Matthias, and Annas the younger. These should not necessarily be listed as biblical IDs, but the current field with 'caifas-svigersonn' is incorrect and misleading.; [minor] Annas was specifically a high priest, not just a general 'priest'. The role 'high priest' should be added for precision, possibly replacing 'priest'.; [minor] Annas's birth date is unknown. It is known that he was appointed high priest around 6 AD and remained active at least until the 30s AD. A lifespan of 'around 6 BC – 40 AD' suggests a birth in 6 BC, but this is speculative. A formulation such as 'high priest around 6–15 AD, active until around 36 AD' or 'unknown – around 40 AD' would be more precise.; [minor] The last event concerning Caiaphas's prophecy primarily concerns Caiaphas, not Annas. The connection to Annas is indirect ('the circle around Annas'). This is not incorrect, but somewhat weak as a key event specifically for Annas. The description can be adjusted to clarify Annas's role.; [minor] The name 'Hananja' as an alternative name for Annas is a reasonable Hebrew reconstruction (חנן/חנניה), but it should be clarified that this is the assumed Hebrew form of the Greek name Annas/Ἅννας. It is not a documented biblical alternative name.; [major] Footnotes are missing. A profile on Annas should include historical notes about Josephus's mention of him, the political context of Roman appointment of high priests, and linguistic background for the name.",
+      "date": "2026-04-05"
+    },
+    {
+      "summary": "Annas (Greek form of the Hebrew Hananiah) was the Jewish high priest from about 6 to 15 AD, appointed by the Roman legate Quirinius. Even after he was removed from office by the Romans, he retained enormous political and religious influence in the Jewish community. According to the historian Josephus, five of his sons as well as his son-in-law Caiaphas served as high priests after him, which testifies to the family's exceptional position of power. Annas played a central role in the trial of Jesus, who was first brought to him after his arrest, and he was also present when the Jewish council interrogated the apostles Peter and John after Pentecost.",
+      "title": "High Priest and Political Powerbroker",
+      "score": 6,
+      "reason": "[minor] The title is accurate but could be refined to reflect that Annas was a former high priest who retained his influence. 'Political powerholder' is somewhat generic.; [major] The roles lack important aspects. Annas was not only high priest and leader, but also a political power figure behind the scenes and patriarch of a priestly dynastic family. 'Political powerholder' or 'head of the priestly dynasty' should be included.; [major] The Bible explicitly states that Caiaphas was Annas's son-in-law (John 18:13), and Josephus mentions five sons. Although we do not know the name of his wife, the children field should include the known sons and the unknown daughter (Caiaphas's wife), and the son-in-law relationship to Caiaphas should be reflected.; [minor] The summary is good and informative but begins very similarly to version 1 with '(Greek form of the Hebrew Hananiah) was a Jewish high priest from about 6 to 15 AD, appointed by the Roman legate Quirinius'. To avoid repetition, the text should be rephrased with a different angle.; [minor] The last event (Caiaphas's prophecy) is primarily connected to Caiaphas, not directly to Annas. Although Annas's influence in the background is implied, his direct connection to this event is weak. The description should be adjusted or the event removed.; [minor] In the event 'Annas at the council against the apostles', Annas is described as 'high priest', but at that time he was formally deposed. Although Acts 4:6 does call him high priest, the description should nuance this to avoid confusion.",
+      "date": "2026-04-05"
+    }
+  ],
+  "footnotes": [
+    {
+      "text": "Annas (Greek: Ἅννας) is likely a shortened form of the Hebrew name Hananiah (חֲנַנְיָה), meaning 'the Lord is gracious.' The name appears in Greek form in the New Testament, reflecting the widespread Hellenization of Jewish names in the first century.",
+      "source": "lingvistisk"
+    },
+    {
+      "text": "The Jewish historian Josephus (Ant. 18.2.1–2; 20.9.1) provides important additional information about Annas (Ananus). He was appointed high priest by Quirinius, the Roman legate of Syria, around 6 AD, and was deposed by Valerius Gratus around 15 AD. Josephus describes him as extremely fortunate because five of his sons—Eleazar, Jonathan, Theophilus, Matthias, and Annas the Younger—all became high priests after him. This priestly dynasty is unique in the Second Temple period.",
+      "source": "historisk"
+    },
+    {
+      "text": "Under Roman rule, the high priest was appointed and removed by the Roman authorities, breaking with the biblical tradition where the office of high priest was originally a lifelong position (Num 35:25). Even after his deposition, Annas continued to be recognized as high priest by many Jews, which explains why Luke mentions him alongside Caiaphas and why Jesus was first brought to him after his arrest.",
+      "source": "historisk"
+    },
+    {
+      "text": "Archaeological excavations in Jerusalem have uncovered numerous richly decorated burial chambers and ossuaries (bone boxes) from the first century belonging to high-priestly families. Although none of these are directly linked to Annas, they provide a picture of the immense wealth and power these families held. An inscription with the name 'Caiaphas' has also been found on an ossuary, closely linking the archaeological material to Annas's son-in-law.",
+      "source": "arkeologisk"
+    },
+    {
+      "text": "In rabbinic literature (Talmud, Pesachim 57a), there are complaints about the high-priestly families and their abuse of power. The 'House of Hanin' (identified with Annas's family) is specifically mentioned for its whispering evil and violence against the people. This suggests that the family's negative reputation was well known in Jewish tradition and provides independent testimony to the power the family wielded.",
+      "source": "rabbinsk"
+    },
+    {
+      "text": "The term 'high priest' is used in the New Testament in a broader sense than the strictly formal office. In Acts 4:6, Annas is called high priest even though he had formally been deposed. This extended usage reflects that in Jewish practice, the title could refer to someone who had held the office and still enjoyed its associated authority and recognition.",
+      "source": "teologisk"
+    }
+  ]
+}

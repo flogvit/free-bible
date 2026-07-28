@@ -13,7 +13,9 @@ import { bookRanges, getChaptersForRange, getChaptersForBooks, resolveBookRange 
 import { planDefinitions, categoryOrder } from './reading_plans_config.js';
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
-const outputDir = path.join(__dirname, 'reading_plans');
+// Plans are generated in Norwegian (the config language) into reading_plans/nb/;
+// other languages are produced from there with translate.mjs
+const outputDir = path.join(__dirname, 'reading_plans/nb');
 
 // Ensure output directory exists
 if (!fs.existsSync(outputDir)) {

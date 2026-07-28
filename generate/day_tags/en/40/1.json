@@ -1,0 +1,83 @@
+{
+  "days": [
+    {
+      "id": "julaften",
+      "fromVerseId": 18,
+      "toVerseId": 25,
+      "relevance": "primary",
+      "reason": "This is the central text for Christmas Eve in many church communities (especially in the tradition of the Church of Norway). It tells of Jesus' birth, the angel who urges Joseph to take Mary home, and the naming of Jesus. Verse 23 also quotes the prophecy about Immanuel, which is central to Christmas preaching."
+    },
+    {
+      "id": "juledag",
+      "fromVerseId": 18,
+      "toVerseId": 25,
+      "relevance": "secondary",
+      "reason": "The text emphasizes the mystery of the incarnation (God becoming human) and that Jesus is 'God with us' (Immanuel), which is the main theme of Christmas Day. It confirms that the historical birth is the fulfillment of the prophecy."
+    },
+    {
+      "id": "kristi-aapenbaringsdag",
+      "fromVerseId": 1,
+      "toVerseId": 17,
+      "relevance": "secondary",
+      "reason": "The genealogy (verses 1-17) shows that Jesus is 'the son of David' and 'the son of Abraham', confirming his identity as the promised Messiah for both Jews and Gentiles. The list shows that he belongs to the historical story of salvation, which is now opened to all nations."
+    },
+    {
+      "id": "nyttårsdag",
+      "fromVerseId": 21,
+      "toVerseId": 25,
+      "relevance": "primary",
+      "reason": "The text explicitly describes the naming of Jesus (verses 21 and 25). New Year's Day celebrates Jesus' name day and circumcision, and this part of the text is the direct biblical basis for this celebration."
+    },
+    {
+      "id": "advent-4",
+      "fromVerseId": 18,
+      "toVerseId": 25,
+      "relevance": "secondary",
+      "reason": "Advent 4 focuses on Mary and the incarnation. The text describes Joseph's role, the angel announcing that the child is conceived by the Holy Spirit, and Mary's state as 'with child'. This is the direct preparation for the birth celebrated in the last week of Advent."
+    }
+  ],
+  "_versions": [
+    {
+      "days": [
+        {
+          "id": "julaften",
+          "fromVerseId": 18,
+          "toVerseId": 25,
+          "relevance": "primary",
+          "reason": "This is the central text for Christmas Eve in many church communities (especially in the tradition of the Church of Norway). It tells of Jesus' birth, the angel who urges Joseph to take Mary home, and the naming of Jesus. Verse 23 also quotes the prophecy about Immanuel, which is central to Christmas preaching."
+        },
+        {
+          "id": "juledag",
+          "fromVerseId": 18,
+          "toVerseId": 25,
+          "relevance": "secondary",
+          "reason": "The text emphasizes the mystery of the incarnation (God becoming human) and that Jesus is 'God with us' (Immanuel), which is the main theme of Christmas Day. It confirms that the historical birth is the fulfillment of the prophecy."
+        },
+        {
+          "id": "kristi-aapenbaringsdag",
+          "fromVerseId": 1,
+          "toVerseId": 17,
+          "relevance": "secondary",
+          "reason": "The genealogy (verses 1-17) shows that Jesus is 'the son of David' and 'the son of Abraham', confirming his identity as the promised Messiah for both Jews and Gentiles (represented by the wise men). The list shows that he belongs to the historical story of salvation, which is now opened to all nations."
+        },
+        {
+          "id": "advent-4",
+          "fromVerseId": 18,
+          "toVerseId": 25,
+          "relevance": "secondary",
+          "reason": "Advent 4 focuses on Mary and the incarnation. The text describes Joseph's role, the angel announcing that the child is conceived by the Holy Spirit, and Mary's state as 'with child'. This is the direct preparation for the birth celebrated in the last week of Advent."
+        },
+        {
+          "id": "kristi-forklarelsesdag",
+          "fromVerseId": 1,
+          "toVerseId": 1,
+          "relevance": "secondary",
+          "reason": "The first verse of the text identifies Jesus as 'the son of David' and 'the son of Abraham'. On Transfiguration Day, Jesus' divinity is revealed, but he is also confirmed as the promised Messiah from the line of David, which is the basis for his kingship revealed on the mountain."
+        }
+      ],
+      "score": 6,
+      "reason": "[major] The connection to the Feast of the Transfiguration is incorrect. The Transfiguration concerns Jesus being revealed in glory on the mountain (Matt 17), not the genealogy or his messianic titles in the birth narrative. The genealogy confirms his human lineage, but this is not the central theme of the Transfiguration. This is a 'false positive'.; [minor] There is a missing connection to New Year's Day (Jesus' name day). Verses 21 and 25 explicitly state that Joseph gave the child the name 'Jesus'. This is the liturgical reason for reading this text on New Year's Day (the eighth day after Christmas), where we celebrate Jesus' naming and circumcision. The text is primary for this day.; [minor] Although the genealogy (1-17) is linked to Epiphany, it is often the entire chapter (including the birth narrative) that is read on this day in many traditions to show that Jesus is the promised Messiah for all nations (Abraham's promise). The connection to verses 1-17 is correct, but one could argue that the whole chapter is relevant. I will keep the existing connection to 1-17 as 'secondary' since it focuses on the genealogy, but it is worth noting that the text is often read in its entirety on this day.; [minor] Advent 4 often focuses on Mary and the angel Gabriel (Luke 1), but Matthew 1:18-25 is also a strong candidate. However, in the tradition of the Church of Norway, Matthew 1:18-25 is primarily associated with **Christmas Eve** (already marked as primary). Marking it as 'secondary' for Advent 4 is not wrong, but it is a weak connection compared to Christmas Eve. It is not a gross error, but it is worth considering whether it should be removed to avoid over-tagging or kept as a weak secondary link. I will keep it as 'secondary' because the text deals with preparation for the birth, but it is a weak connection.",
+      "date": "2026-04-04"
+    }
+  ]
+}

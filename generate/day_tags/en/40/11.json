@@ -1,0 +1,55 @@
+{
+  "days": [
+    {
+      "id": "advent-3",
+      "fromVerseId": 1,
+      "toVerseId": 30,
+      "relevance": "primary",
+      "reason": "The entire pericope (Matt 11:1–30) is the liturgical text for the Third Sunday of Advent (Gaudete). The text begins with John's question and Jesus' answer concerning the signs (vv. 2–6), continues with Jesus' testimony about John (vv. 7–15), the parable of the unresponsive generation (vv. 16–19), the rebuke of the unrepentant cities (vv. 20–24), and concludes with Jesus' invitation to rest (vv. 25–30). All these parts belong together in a coherent proclamation about recognizing the Messiah and receiving him. There is no reason to split up the text or primarily associate it with St. John's Day in this context."
+    }
+  ],
+  "_versions": [
+    {
+      "days": [
+        {
+          "id": "advent-3",
+          "fromVerseId": 1,
+          "toVerseId": 6,
+          "relevance": "primary",
+          "reason": "This is the central text for the Third Sunday of Advent (Gaudete). John the Baptist's question from prison and Jesus' answer concerning the signs (the blind see, the lame walk, etc.) are the main Gospel reading for this day, marking the joy that the Messiah's prophecies are being fulfilled through mercy."
+        },
+        {
+          "id": "sankthansdagen",
+          "fromVerseId": 7,
+          "toVerseId": 15,
+          "relevance": "primary",
+          "reason": "The text contains Jesus' testimony about John the Baptist, where he confirms that John is more than a prophet and identifies him as the Elijah who was to come (v. 14). This is one of the most important biblical texts for understanding John's role as the forerunner, which is central to St. John's Day."
+        },
+        {
+          "id": "advent-3",
+          "fromVerseId": 7,
+          "toVerseId": 15,
+          "relevance": "secondary",
+          "reason": "Although verses 1–6 are the main text, Jesus' praise of John (v. 11) and his identification of him as Elijah (v. 14) are an integral part of the liturgical text for the Third Sunday of Advent, which often reads the entire pericope."
+        }
+      ],
+      "score": 4,
+      "reason": "[critical] The current tagging incorrectly splits up the text. Verses 1–6 are correctly marked as 'advent-3' (main text). However, verses 7–15, which contain Jesus' testimony about John the Baptist (an integral part of the same pericope for the Third Sunday of Advent), are only marked as 'sankthansdagen' (primary) and 'advent-3' (secondary). In liturgical practice for the Third Sunday of Advent, one often reads the entire pericope (Matt 11:2–19 or 11:2–30) as one continuous text. Splitting off verses 7–15 as 'primary' for St. John's Day is incorrect, since St. John's Day usually has its own pericope (often John 1, Matt 14, or Luke 1). Here the text is primarily part of the Advent pericope. Therefore, verses 7–15 should have 'advent-3' as 'primary' and no 'sankthansdag' tag, or at least that 'advent-3' is primary for the entire text 1–15 (or 1–30).; [major] Tagging verses 7–15 as 'sankthansdagen' with 'primary' relevance is incorrect in this context. Although the text concerns John the Baptist, it is part of a continuous pericope that liturgically belongs to the Third Sunday of Advent. St. John's Day (June 24) has its own liturgical texts. Linking this part of Matthew 11 as 'primary' for St. John's Day creates a false association that this is the main text for that day, which does not align with the structure of the church year.; [minor] Verses 16–30 (the parable of the children in the marketplace, the rebuke of Chorazin/Bethsaida/Capernaum, and Jesus' invitation to rest) are not tagged. These verses are often part of the extended pericope for the Third Sunday of Advent (Matt 11:2–30). Although verses 1–6 are the core, verses 7–30 are a natural continuation of the theme of recognizing Jesus and receiving him. It should be considered whether the entire chapter (or at least 1–30) should have 'advent-3' as 'primary' or 'secondary' to correctly cover the whole pericope.",
+      "date": "2026-04-04"
+    },
+    {
+      "days": [
+        {
+          "id": "advent-3",
+          "fromVerseId": 1,
+          "toVerseId": 30,
+          "relevance": "primary",
+          "reason": "The entire pericope (Matt 11:1–30) is the liturgical text for the Third Sunday of Advent. It begins with John's question and Jesus' answer concerning the signs (vv. 2–6), continues with Jesus' testimony about John (vv. 7–15), the parable of the unresponsive generation (vv. 16–19), the rebuke of the unrepentant cities (vv. 20–24), and concludes with Jesus' invitation to rest (vv. 25–30). All these parts belong together in a coherent proclamation about recognizing the Messiah and receiving him."
+        }
+      ],
+      "score": 4,
+      "reason": "[critical] Tagging verses 7–15 as 'sankthansdagen' with 'primary' relevance is incorrect. Although the text concerns John the Baptist, it is an integral part of the liturgical pericope for the Third Sunday of Advent (Matt 11:2–19 or 11:2–30). St. John's Day (June 24) has its own liturgical texts (often John 1, Matt 14, or Luke 1). Linking this part of Matthew 11 as the main text for St. John's Day creates a false association. In a day-tagging context, the text should primarily be assigned to the day it liturgically belongs to.; [major] Verses 16–30 lack tagging. The entire chapter (Matt 11:1–30) constitutes the continuous pericope for the Third Sunday of Advent. The parts concerning the parable of the children in the marketplace (vv. 16–19), the rebuke of the cities (vv. 20–24), and the invitation to rest (vv. 25–30) are essential for the message of recognizing the Messiah and receiving him, which is the theme of the day. These should be included in the 'advent-3' tag.; [major] Verses 7–15 were marked as 'secondary' for 'advent-3' in the previous version. This is incorrect. Since the entire pericope (1–30) is read together for the Third Sunday of Advent, all parts should have 'primary' relevance for this day, or at least that 'advent-3' covers the entire text as one continuous unit.; [minor] Verses 1–6 are correctly marked, but it is unnecessary to split the text into multiple tags for the same day (1–6 and 7–15). It is better to have one continuous tag for the entire pericope (1–30) to reflect liturgical practice.",
+      "date": "2026-04-04"
+    }
+  ]
+}

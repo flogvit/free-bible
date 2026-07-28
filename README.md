@@ -290,6 +290,8 @@ node generate_reading_plans.mjs
 
 `translate.mjs` translates generated content from `<dir>/nb/` to `<dir>/<lang>/` using the local Ollama model (free, ~20-60 s per file). Unlike re-generating per language, translation keeps the content identical across languages.
 
+**Convention:** content is generated in Norwegian (`nb/`) and translated to other languages. For dirs covered by translate.mjs, do not run the generator scripts with `--language en` directly - a generated `en/` file would be untracked by the translation state and overwritten on the next translate run.
+
 Covered dirs (processed in this order; see `CONTENT_DIRS` in the script): `chapter_summaries`, `book_summaries`, `chapter_context`, `book_context`, `chapter_insights`, `days`, `day_tags`, `tags`, `themes`, `timeline`, `stories`, `persons`, `number_symbolism`, `prophecies`, `important_words`, `verse_prayer`, `verse_sermon`, `reading_plans`, `daily_verse`, `gospel_parallels`, and `references` last (10k+ files, plan for multi-day runtime). Handles `.md`, `.json` (structure-validated, machine keys preserved) and `.txt`. Not translated on purpose: internal pipeline artifacts (`proofread_*`, `stories_proposed`, `stories_rejected`), and `important_verses` (quotes Bible verse text - machine translation would reproduce copyrighted English versions; build the en variant by verse lookup once an English Bible text exists).
 
 ```bash
