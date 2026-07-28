@@ -1,0 +1,62 @@
+{
+  "settings": {
+    "email": "flogvit@gmail.com",
+    "delayMs": 1000
+  },
+  "collections": {
+    "wikisource-da-salmer": {
+      "type": "wikisource",
+      "site": "da.wikisource.org",
+      "category": "Kategori:Salmer",
+      "recurseSubcats": true,
+      "language": "da-no-historic",
+      "comment": "PD Danish hymns incl. Kingo/Brorson/Grundtvig tradition"
+    },
+    "wikisource-no-salmer": {
+      "type": "wikisource",
+      "site": "no.wikisource.org",
+      "category": "Kategori:Salmer",
+      "recurseSubcats": true,
+      "language": "nb",
+      "comment": "PD Norwegian hymns"
+    },
+    "kalliope-kingo": {
+      "type": "kalliope",
+      "poet": "kingo",
+      "language": "da-no-historic",
+      "comment": "Thomas Kingo (1634-1703) — collection marked incomplete on Kalliope but clean text"
+    },
+    "kalliope-dass": {
+      "type": "kalliope",
+      "poet": "dass",
+      "language": "da-no-historic",
+      "comment": "Petter Dass (1647-1707)"
+    },
+    "kalliope-brorson": {
+      "type": "kalliope",
+      "poet": "brorson",
+      "language": "da-no-historic",
+      "comment": "Hans Adolph Brorson (1694-1764)"
+    },
+    "kalliope-grundtvig": {
+      "type": "kalliope",
+      "poet": "grundtvig",
+      "language": "da",
+      "comment": "N.F.S. Grundtvig (1783-1872)"
+    },
+    "kalliope-ingemann": {
+      "type": "kalliope",
+      "poet": "ingemann",
+      "language": "da",
+      "comment": "B.S. Ingemann (1789-1862)"
+    },
+    "wikisource-sv-psalmer": {
+      "type": "wikisource",
+      "site": "sv.wikisource.org",
+      "category": "Kategori:Psalmer",
+      "recurseSubcats": true,
+      "language": "sv",
+      "comment": "PD Swedish hymns (1819/1937 psalmbok tradition)"
+    }
+  }
+}

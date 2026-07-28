@@ -1,0 +1,479 @@
+#!/usr/bin/env node
+/**
+ * Open-access article harvester for the article→verse linking project (issue #15).
+ *
+ * Harvests metadata + full text for openly licensed biblical-studies journals so
+ * we can later parse them for Bible references (KVN) and link verses → articles.
+ * We never republish article content; the frontend only links out via DOI/URL.
+ *
+ * Data lives in external/articles/ (GITIGNORED — must never be pushed):
+ *   catalog.jsonl          one JSON line per article: the master catalog (all core
+ *                          metadata incl. exact source URLs, license, file paths)
+ *   meta/<shard>/<id>.json COMPLETE raw API responses (crossref/doaj/unpaywall)
+ *                          + download provenance, so we never have to re-scrape
+ *   pdf/<shard>/<id>.pdf   original PDF as downloaded
+ *   text/<shard>/<id>.txt  extracted plain text (pdftotext) — parse this later
+ *   state/harvest-state.json  per-journal incremental cursors
+ *
+ * <id> = DOI with '/' → '_' (lowercased), or doaj_<id> when no DOI exists.
+ * <shard> = first 2 hex chars of sha256(id), 256 buckets.
+ *
+ * Usage:
+ *   node articles/harvest.mjs meta   [--journal key] [--limit N] [--full]
+ *   node articles/harvest.mjs pdf    [--journal key] [--limit N]
+ *   node articles/harvest.mjs text   [--journal key] [--limit N]
+ *   node articles/harvest.mjs all    [--journal key] [--limit N]
+ *   node articles/harvest.mjs status
+ *   node articles/harvest.mjs prune  [--journal key]   # delete PDFs whose text is
+ *                                    # extracted (explicit user decision only)
+ *
+ * Text files keep pdftotext page breaks (\f) so a parser can locate the PDF page
+ * of any match and deep-link via url_pdf#page=N. PDFs larger than maxPdfMb are
+ * NOT downloaded but tracked as status=pdf_skipped_size with url+bytes, so they
+ * can be fetched later by decision. Hosts that block bots (e.g. Silverchair for
+ * TC) end up status=pdf_failed with pdf_last_error — metadata/links still work.
+ *
+ * All phases are idempotent + resumable: re-running skips what exists, and
+ * `meta` runs incrementally (Crossref from-index-date since last run, minus 2
+ * days of safety margin). Fetching NEW articles later = just run `all` again.
+ * Journals are added by editing articles/journals.json.
+ *
+ * APIs (all free): Crossref (per-ISSN works), DOAJ (abstracts + fulltext links),
+ * Unpaywall (legal OA PDF resolution). Polite: ~1 req/s + mailto identification.
+ */
+import fs from 'fs';
+import { join, dirname } from 'path';
+import { createHash } from 'crypto';
+import { spawnSync } from 'child_process';
+import { fileURLToPath } from 'url';
+
+const __dirname = dirname(fileURLToPath(import.meta.url));
+const REPO = join(__dirname, '..');
+const DATA = join(REPO, 'external/articles');
+const CATALOG = join(DATA, 'catalog.jsonl');
+const STATE_FILE = join(DATA, 'state/harvest-state.json');
+
+const CONFIG = JSON.parse(fs.readFileSync(join(__dirname, 'journals.json'), 'utf8'));
+const { email, apiDelayMs, pdfDelayMs, maxPdfMb } = CONFIG.settings;
+const UA = `free-bible-articles/1.0 (https://github.com/flogvit/free-bible; mailto:${email})`;
+
+// ---------- helpers ----------
+const sleep = ms => new Promise(r => setTimeout(r, ms));
+const sha256 = s => createHash('sha256').update(s).digest('hex');
+const shard = id => sha256(id).slice(0, 2);
+const doiToId = doi => doi.toLowerCase().trim().replace(/^https?:\/\/(dx\.)?doi\.org\//, '').replace(/\//g, '_');
+const decodeEntities = s => (s || '')
+  .replace(/&lt;/g, '<').replace(/&gt;/g, '>').replace(/&quot;/g, '"').replace(/&#(\d+);/g, (_, n) => String.fromCodePoint(+n)).replace(/&amp;/g, '&');
+const stripXml = s => decodeEntities(s).replace(/<[^>]+>/g, ' ').replace(/\s+/g, ' ').trim();
+const ensure = p => fs.mkdirSync(p, { recursive: true });
+
+function metaPath(id) { return join(DATA, 'meta', shard(id), `${id}.json`); }
+function pdfPath(id) { return join(DATA, 'pdf', shard(id), `${id}.pdf`); }
+function textPath(id) { return join(DATA, 'text', shard(id), `${id}.txt`); }
+
+function loadMeta(id) {
+  try { return JSON.parse(fs.readFileSync(metaPath(id), 'utf8')); } catch { return { id, sources: {}, fetched: {} }; }
+}
+function saveMeta(m) {
+  ensure(dirname(metaPath(m.id)));
+  fs.writeFileSync(metaPath(m.id), JSON.stringify(m, null, 2) + '\n');
+}
+
+async function fetchWithRetry(url, opts = {}, tries = 3) {
+  for (let i = 0; i < tries; i++) {
+    try {
+      const ctl = new AbortController();
+      const t = setTimeout(() => ctl.abort(), opts.timeoutMs ?? 60000);
+      const res = await fetch(url, { headers: { 'User-Agent': UA, ...(opts.headers || {}) }, signal: ctl.signal, redirect: 'follow' });
+      clearTimeout(t);
+      if (res.status === 429 || res.status >= 500) { await sleep(5000 * (i + 1) * (i + 1)); continue; }
+      return res;
+    } catch (e) {
+      if (i === tries - 1) throw e;
+      await sleep(5000 * (i + 1));
+    }
+  }
+  throw new Error(`retries exhausted: ${url}`);
+}
+async function fetchJson(url) {
+  const res = await fetchWithRetry(url);
+  if (!res.ok) { const err = new Error(`HTTP ${res.status} ${url}`); err.status = res.status; throw err; }
+  return res.json();
+}
+
+// ---------- catalog ----------
+const catalog = new Map(); // id -> entry
+function loadCatalog() {
+  if (!fs.existsSync(CATALOG)) return;
+  for (const line of fs.readFileSync(CATALOG, 'utf8').split('\n')) {
+    if (!line.trim()) continue;
+    const e = JSON.parse(line);
+    catalog.set(e.id, e);
+  }
+}
+let dirty = 0;
+function flushCatalog(force = false) {
+  if (!force && dirty === 0) return;
+  const tmp = CATALOG + '.tmp';
+  fs.writeFileSync(tmp, [...catalog.values()].map(e => JSON.stringify(e)).join('\n') + '\n');
+  fs.renameSync(tmp, CATALOG);
+  dirty = 0;
+}
+function upsert(id, patch) {
+  const e = catalog.get(id) || { id, status: 'meta_only' };
+  Object.assign(e, patch);
+  catalog.set(id, e);
+  if (++dirty >= 50) flushCatalog();
+  return e;
+}
+
+// ---------- state ----------
+function loadState() { try { return JSON.parse(fs.readFileSync(STATE_FILE, 'utf8')); } catch { return { journals: {} }; } }
+function saveState(s) { ensure(dirname(STATE_FILE)); fs.writeFileSync(STATE_FILE, JSON.stringify(s, null, 2) + '\n'); }
+
+// ---------- phase: meta ----------
+async function harvestCrossref(j, since, limit) {
+  let count = 0;
+  for (const issn of j.issns) {
+    let cursor = '*';
+    while (true) {
+      const filter = ['type:journal-article', since ? `from-index-date:${since}` : null].filter(Boolean).join(',');
+      const url = `https://api.crossref.org/journals/${issn}/works?rows=100&cursor=${encodeURIComponent(cursor)}&filter=${filter}&mailto=${email}`;
+      let data;
+      try { data = await fetchJson(url); }
+      catch (e) { if (e.status === 404) { console.log(`  crossref: ISSN ${issn} not found, skipping`); break; } throw e; }
+      const items = data.message?.items || [];
+      for (const item of items) {
+        if (!item.DOI) continue;
+        const id = doiToId(item.DOI);
+        const m = loadMeta(id);
+        m.doi = item.DOI.toLowerCase();
+        m.journalKey = j.key;
+        m.sources.crossref = item; // full raw record
+        m.fetched.crossref = new Date().toISOString();
+        saveMeta(m);
+        upsert(id, {
+          doi: m.doi,
+          journal: j.key,
+          title: stripXml((item.title || [])[0]) || null,
+          authors: (item.author || []).map(a => [a.given, a.family].filter(Boolean).join(' ')).filter(Boolean),
+          year: item.issued?.['date-parts']?.[0]?.[0] ?? null,
+          venue: (item['container-title'] || [])[0] || j.name,
+          publisher: item.publisher || null,
+          language: item.language || null,
+          license: (item.license || [])[0]?.URL || null,
+          abstract: stripXml(item.abstract) || catalog.get(id)?.abstract || null,
+          url_doi: `https://doi.org/${m.doi}`,
+          url_landing: item.resource?.primary?.URL || item.URL || null,
+        });
+        count++;
+        if (limit && count >= limit) return count;
+      }
+      cursor = data.message?.['next-cursor'];
+      if (!cursor || items.length === 0) break;
+      await sleep(apiDelayMs);
+    }
+    await sleep(apiDelayMs);
+  }
+  return count;
+}
+
+// DOAJ caps deep paging at 1000 results per query (HTTP 400 beyond page 10).
+// For journals with more articles we slice the query per publication year so
+// every slice stays under the cap.
+async function harvestDoaj(j, limit) {
+  let count = 0;
+  for (const issn of j.issns) {
+    // probe total first
+    let total = 0;
+    try {
+      const probe = await fetchJson(`https://doaj.org/api/search/articles/${encodeURIComponent(`issn:"${issn}"`)}?page=1&pageSize=1`);
+      total = probe.total ?? 0;
+    } catch { /* fall through to plain sweep */ }
+    await sleep(apiDelayMs);
+    const queries = [];
+    if (total > 1000) {
+      const thisYear = new Date().getFullYear();
+      for (let y = 1900; y <= thisYear; y++) queries.push(`issn:"${issn}" AND year:${y}`);
+    } else {
+      queries.push(`issn:"${issn}"`);
+    }
+    for (const query of queries) {
+      const n = await doajSweep(query, j, limit ? limit - count : null);
+      count += n;
+      if (limit && count >= limit) return count;
+    }
+    await sleep(apiDelayMs);
+  }
+  return count;
+}
+
+async function doajSweep(query, j, limit) {
+  let count = 0;
+  let page = 1;
+  while (true) {
+    const url = `https://doaj.org/api/search/articles/${encodeURIComponent(query)}?page=${page}&pageSize=100`;
+    let data;
+    try { data = await fetchJson(url); }
+    catch (e) { console.log(`  doaj: "${query}" page ${page} failed (${e.message}), moving on`); break; }
+    const results = data.results || [];
+    {
+      for (const r of results) {
+        const bj = r.bibjson || {};
+        const doi = (bj.identifier || []).find(x => x.type === 'doi')?.id;
+        const id = doi ? doiToId(doi) : `doaj_${r.id}`;
+        const m = loadMeta(id);
+        if (doi) m.doi = doi.toLowerCase().replace(/^https?:\/\/(dx\.)?doi\.org\//, '');
+        m.journalKey = j.key;
+        m.sources.doaj = r; // full raw record
+        m.fetched.doaj = new Date().toISOString();
+        saveMeta(m);
+        const existing = catalog.get(id) || {};
+        upsert(id, {
+          doi: m.doi || existing.doi || null,
+          journal: j.key,
+          title: existing.title || bj.title || null,
+          authors: existing.authors?.length ? existing.authors : (bj.author || []).map(a => a.name).filter(Boolean),
+          year: existing.year || (bj.year ? +bj.year : null),
+          venue: existing.venue || bj.journal?.title || j.name,
+          language: existing.language || (bj.journal?.language || [])[0] || null,
+          abstract: existing.abstract || stripXml(bj.abstract) || null,
+          url_doi: existing.url_doi || (m.doi ? `https://doi.org/${m.doi}` : null),
+          url_landing: existing.url_landing || (bj.link || []).find(l => l.type === 'fulltext')?.url || null,
+          url_fulltext_doaj: (bj.link || []).find(l => l.type === 'fulltext')?.url || existing.url_fulltext_doaj || null,
+        });
+        count++;
+        if (limit && count >= limit) return count;
+      }
+    }
+    const total = data.total ?? 0;
+    const cap = Math.min(total, 1000); // DOAJ deep-paging cap
+    if (page * 100 >= cap || results.length === 0) break;
+    page++;
+    await sleep(apiDelayMs);
+  }
+  return count;
+}
+
+// ---------- phase: pdf ----------
+function pdfCandidates(entry, m) {
+  const urls = [];
+  const up = m.sources.unpaywall;
+  if (up) {
+    if (up.best_oa_location?.url_for_pdf) urls.push(up.best_oa_location.url_for_pdf);
+    for (const loc of up.oa_locations || []) if (loc.url_for_pdf) urls.push(loc.url_for_pdf);
+    if (up.best_oa_location?.url) urls.push(up.best_oa_location.url);
+  }
+  if (entry.url_fulltext_doaj) urls.push(entry.url_fulltext_doaj);
+  for (const l of m.sources.crossref?.link || []) {
+    if (l['content-type'] === 'application/pdf' && l.URL) urls.push(l.URL);
+  }
+  return [...new Set(urls)];
+}
+
+async function phasePdf(journalFilter, limit) {
+  let done = 0;
+  for (const entry of catalog.values()) {
+    if (journalFilter && entry.journal !== journalFilter) continue;
+    if (entry.files?.pdf) continue;
+    if (entry.status === 'no_oa' || (entry.pdf_attempts || 0) >= 3) continue;
+    if (limit && done >= limit) break;
+
+    const m = loadMeta(entry.id);
+
+    // 1. resolve via Unpaywall (once per article)
+    if (entry.doi && !m.sources.unpaywall) {
+      try {
+        m.sources.unpaywall = await fetchJson(`https://api.unpaywall.org/v2/${entry.doi}?email=${email}`);
+        m.fetched.unpaywall = new Date().toISOString();
+        saveMeta(m);
+        upsert(entry.id, {
+          oa_status: m.sources.unpaywall.oa_status || null,
+          license: entry.license || m.sources.unpaywall.best_oa_location?.license || null,
+        });
+      } catch (e) {
+        console.log(`  unpaywall miss ${entry.doi}: ${e.message}`);
+      }
+      await sleep(apiDelayMs);
+    }
+
+    // 2. try candidates until one is a real PDF
+    const candidates = pdfCandidates(entry, m);
+    if (candidates.length === 0) {
+      upsert(entry.id, { status: m.sources.unpaywall?.is_oa === false ? 'no_oa' : entry.status, pdf_attempts: (entry.pdf_attempts || 0) + 1 });
+      continue;
+    }
+    let saved = false;
+    let sizeSkipped = null;
+    let lastError = null;
+    for (const url of candidates) {
+      try {
+        const res = await fetchWithRetry(url, { timeoutMs: 120000 }, 2);
+        if (!res.ok) { lastError = `HTTP ${res.status} @ ${url}`; continue; }
+        // size guard: track oversized ones so they can be fetched later by decision
+        const cl = +(res.headers.get('content-length') || 0);
+        if (cl > maxPdfMb * 1024 * 1024) { sizeSkipped = { url, bytes: cl }; break; }
+        const buf = Buffer.from(await res.arrayBuffer());
+        if (buf.length > maxPdfMb * 1024 * 1024) { sizeSkipped = { url, bytes: buf.length }; break; }
+        if (!buf.subarray(0, 5).toString().startsWith('%PDF')) { lastError = `not a PDF @ ${url}`; continue; } // HTML landing page etc.
+        ensure(dirname(pdfPath(entry.id)));
+        fs.writeFileSync(pdfPath(entry.id), buf);
+        m.pdfDownload = {
+          url,
+          ts: new Date().toISOString(),
+          contentType: res.headers.get('content-type'),
+          etag: res.headers.get('etag'),
+          lastModified: res.headers.get('last-modified'),
+          bytes: buf.length,
+          sha256: sha256(buf),
+        };
+        saveMeta(m);
+        upsert(entry.id, {
+          url_pdf: url,
+          files: { ...(entry.files || {}), pdf: `pdf/${shard(entry.id)}/${entry.id}.pdf`, pdf_sha256: m.pdfDownload.sha256, pdf_bytes: buf.length },
+          status: 'pdf_ok',
+        });
+        saved = true;
+        done++;
+        if (done % 25 === 0) console.log(`  pdf: ${done} downloaded...`);
+        break;
+      } catch (e) {
+        lastError = `${e.message} @ ${url.slice(0, 100)}`;
+        console.log(`  pdf fail ${entry.id}: ${lastError.slice(0, 140)}`);
+      }
+    }
+    if (!saved) {
+      if (sizeSkipped) {
+        console.log(`  size-skipped (${(sizeSkipped.bytes / 1e6).toFixed(0)}MB > ${maxPdfMb}MB): ${entry.id}`);
+        upsert(entry.id, { status: 'pdf_skipped_size', pdf_skipped: sizeSkipped });
+      } else {
+        upsert(entry.id, { pdf_attempts: (entry.pdf_attempts || 0) + 1, pdf_last_error: lastError, status: entry.status === 'meta_only' ? 'pdf_failed' : entry.status });
+      }
+    }
+    await sleep(pdfDelayMs);
+  }
+  return done;
+}
+
+// ---------- phase: text ----------
+function phaseText(journalFilter, limit) {
+  let done = 0;
+  for (const entry of catalog.values()) {
+    if (journalFilter && entry.journal !== journalFilter) continue;
+    if (!entry.files?.pdf || entry.files?.text) continue;
+    if (limit && done >= limit) break;
+    const pdf = join(DATA, entry.files.pdf);
+    if (!fs.existsSync(pdf)) continue;
+    ensure(dirname(textPath(entry.id)));
+    const out = textPath(entry.id);
+    // NOTE: no -nopgbrk — form feeds (\f) mark page boundaries, so a later
+    // reference parser can compute the page of a match (pages before it + 1)
+    // and deep-link into the PDF with url_pdf#page=N.
+    const r = spawnSync('pdftotext', ['-enc', 'UTF-8', pdf, out], { timeout: 120000 });
+    const ok = r.status === 0 && fs.existsSync(out) && fs.statSync(out).size > 200;
+    upsert(entry.id, {
+      files: { ...entry.files, text: ok ? `text/${shard(entry.id)}/${entry.id}.txt` : undefined },
+      text_pages: ok ? true : undefined,
+      status: ok ? 'text_ok' : 'text_empty',
+    });
+    done++;
+    if (done % 100 === 0) console.log(`  text: ${done} extracted...`);
+  }
+  return done;
+}
+
+// ---------- phase: prune ----------
+// Deletes local PDFs for articles whose text is already extracted, to save disk.
+// NEVER run automatically — explicit user decision only. Provenance survives:
+// meta/<id>.json keeps the exact download URL, sha256, size and headers, and the
+// catalog keeps pdf_sha256/pdf_bytes + pruned timestamp, so any PDF can be
+// re-fetched and verified bit-for-bit later.
+function phasePrune(journalFilter) {
+  let n = 0, freed = 0;
+  for (const entry of catalog.values()) {
+    if (journalFilter && entry.journal !== journalFilter) continue;
+    if (!entry.files?.pdf || !entry.files?.text || entry.status !== 'text_ok') continue;
+    const p = join(DATA, entry.files.pdf);
+    if (!fs.existsSync(p)) continue;
+    freed += fs.statSync(p).size;
+    fs.unlinkSync(p);
+    const files = { ...entry.files };
+    delete files.pdf;
+    upsert(entry.id, { files, pruned: { ts: new Date().toISOString(), sha256: entry.files.pdf_sha256, bytes: entry.files.pdf_bytes } });
+    n++;
+  }
+  console.log(`pruned ${n} PDFs, freed ${(freed / 1e9).toFixed(2)} GB (text + provenance kept)`);
+}
+
+// ---------- phase: status ----------
+function phaseStatus() {
+  const byStatus = {}, byJournal = {};
+  for (const e of catalog.values()) {
+    byStatus[e.status] = (byStatus[e.status] || 0) + 1;
+    const j = byJournal[e.journal] ||= { total: 0, pdf: 0, text: 0 };
+    j.total++;
+    if (e.files?.pdf) j.pdf++;
+    if (e.files?.text) j.text++;
+  }
+  console.log(`\n${catalog.size} articles in catalog`);
+  console.log('by status:', JSON.stringify(byStatus));
+  console.log('per journal:');
+  for (const [k, v] of Object.entries(byJournal).sort()) console.log(`  ${k.padEnd(12)} total ${String(v.total).padStart(5)}  pdf ${String(v.pdf).padStart(5)}  text ${String(v.text).padStart(5)}`);
+}
+
+// ---------- main ----------
+async function main() {
+  const args = process.argv.slice(2);
+  const phase = args[0];
+  const flag = (name) => { const i = args.indexOf(name); return i >= 0 ? args[i + 1] : null; };
+  const journalFilter = flag('--journal');
+  const limit = flag('--limit') ? +flag('--limit') : null;
+  const full = args.includes('--full');
+
+  if (!['meta', 'pdf', 'text', 'all', 'status', 'prune'].includes(phase)) {
+    console.log('Usage: node articles/harvest.mjs <meta|pdf|text|all|status|prune> [--journal key] [--limit N] [--full]');
+    process.exit(1);
+  }
+
+  ensure(join(DATA, 'state'));
+  loadCatalog();
+  process.on('SIGINT', () => { flushCatalog(true); process.exit(130); });
+  process.on('SIGTERM', () => { flushCatalog(true); process.exit(143); });
+
+  if (phase === 'status') { phaseStatus(); return; }
+  if (phase === 'prune') { phasePrune(journalFilter); flushCatalog(true); phaseStatus(); return; }
+
+  const state = loadState();
+  const journals = CONFIG.journals.filter(j => j.enabled && (!journalFilter || j.key === journalFilter));
+
+  if (phase === 'meta' || phase === 'all') {
+    for (const j of journals) {
+      const st = state.journals[j.key] ||= {};
+      // incremental: since last successful run, minus 2 days safety margin
+      const since = !full && st.lastMetaRun ? new Date(Date.parse(st.lastMetaRun) - 2 * 86400000).toISOString().slice(0, 10) : null;
+      console.log(`=== meta: ${j.key} (${j.name})${since ? ` since ${since}` : ' [full]'} ===`);
+      const nCr = await harvestCrossref(j, since, limit);
+      const nDo = await harvestDoaj(j, limit);
+      console.log(`  crossref ${nCr}, doaj ${nDo}`);
+      // a --limit run is a partial sweep — must not advance the incremental cursor
+      if (!limit) { st.lastMetaRun = new Date().toISOString(); saveState(state); }
+      flushCatalog(true);
+    }
+  }
+  if (phase === 'pdf' || phase === 'all') {
+    console.log(`=== pdf ===`);
+    const n = await phasePdf(journalFilter, limit);
+    console.log(`  ${n} PDFs downloaded`);
+    flushCatalog(true);
+  }
+  if (phase === 'text' || phase === 'all') {
+    console.log(`=== text ===`);
+    const n = phaseText(journalFilter, limit);
+    console.log(`  ${n} texts extracted`);
+    flushCatalog(true);
+  }
+  phaseStatus();
+  flushCatalog(true);
+}
+
+main().catch(e => { flushCatalog(true); console.error(e); process.exit(1); });

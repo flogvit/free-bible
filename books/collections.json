@@ -1,0 +1,32 @@
+{
+  "settings": {
+    "email": "flogvit@gmail.com",
+    "apiDelayMs": 1200,
+    "textDelayMs": 2500,
+    "yearMax": 9999,
+    "_yearMax_note": "Policy decision 2026-07-27: no year gate. We never republish text — the corpus is private input for reference extraction and the frontend only links out — so we download whatever archive.org freely serves as _djvu.txt (lending-restricted items have no such file and are skipped naturally)."
+  },
+  "collections": [
+    { "key": "matthew_henry", "name": "Matthew Henry — Commentary on the Whole Bible", "query": "creator:(henry, matthew) AND title:(commentary OR exposition) AND mediatype:texts" },
+    { "key": "calvin", "name": "John Calvin — Commentaries (Calvin Translation Society)", "query": "creator:(calvin, john) AND title:(commentar*) AND mediatype:texts" },
+    { "key": "keil_delitzsch", "name": "Keil & Delitzsch — Biblical Commentary on the Old Testament", "query": "creator:(keil) AND title:(commentary) AND mediatype:texts" },
+    { "key": "barnes", "name": "Albert Barnes — Notes on the Old and New Testaments", "query": "creator:(barnes, albert) AND title:(notes) AND mediatype:texts" },
+    { "key": "jfb", "name": "Jamieson, Fausset & Brown — Commentary Critical and Explanatory", "query": "title:(\"commentary critical and explanatory\") AND mediatype:texts" },
+    { "key": "icc", "name": "International Critical Commentary (pre-1930 volumes)", "query": "title:(\"international critical commentary\") AND mediatype:texts" },
+    { "key": "pulpit", "name": "The Pulpit Commentary", "query": "title:(\"pulpit commentary\") AND mediatype:texts" },
+    { "key": "cambridge_bible", "name": "Cambridge Bible for Schools and Colleges", "query": "title:(\"cambridge bible for schools\") AND mediatype:texts" },
+    { "key": "ellicott", "name": "Ellicott — Commentary for English Readers", "query": "creator:(ellicott) AND title:(commentary) AND mediatype:texts" },
+    { "key": "expositors_greek", "name": "The Expositor's Greek Testament", "query": "title:(\"expositor's greek testament\") AND mediatype:texts" },
+    { "key": "lange", "name": "Lange — Commentary on the Holy Scriptures", "query": "creator:(lange, johann peter) AND title:(commentary) AND mediatype:texts" },
+    { "key": "treasury_david", "name": "Spurgeon — The Treasury of David (Psalms)", "query": "creator:(spurgeon) AND title:(\"treasury of david\") AND mediatype:texts" },
+    { "key": "spurgeon_mtp", "name": "Spurgeon — Metropolitan Tabernacle Pulpit sermons", "query": "title:(\"metropolitan tabernacle pulpit\") AND mediatype:texts" },
+    { "key": "ante_nicene", "name": "Ante-Nicene Fathers", "query": "title:(\"ante-nicene fathers\") AND mediatype:texts" },
+    { "key": "npnf", "name": "Nicene and Post-Nicene Fathers", "query": "title:(\"nicene and post-nicene\") AND mediatype:texts" },
+    { "key": "expositors_bible", "name": "The Expositor's Bible", "query": "title:(\"expositor's bible\") AND mediatype:texts" },
+    { "key": "clarke", "name": "Adam Clarke — Commentary on the Holy Bible", "query": "creator:(clarke, adam) AND title:(commentary) AND mediatype:texts" },
+    { "key": "gill", "name": "John Gill — Exposition of the Old and New Testaments", "query": "creator:(gill, john) AND title:(exposition) AND mediatype:texts" },
+    { "key": "pg_bible", "source": "gutenberg", "name": "Project Gutenberg — topic: bible", "topic": "bible" },
+    { "key": "pg_commentaries", "source": "gutenberg", "name": "Project Gutenberg — topic: commentaries", "topic": "commentaries" },
+    { "key": "pg_sermons", "source": "gutenberg", "name": "Project Gutenberg — topic: sermons", "topic": "sermons" }
+  ]
+}

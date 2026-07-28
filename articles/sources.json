@@ -1,0 +1,68 @@
+{
+  "_purpose": "Landscape of biblical-studies journals for the article→verse project (#15): what we harvest, what we could add (OA), and what is closed (metadata-only) incl. access pricing. Promote a candidate by adding it to journals.json. Prices are estimates unless price_verified=true — always verify before buying.",
+  "_updated": "2026-07-27",
+
+  "_active_note": "homepage/publisher/license verified against the DOAJ journals API 2026-07-27 (except tc: not in DOAJ, filled manually). This is the journal-level metadata the frontend needs to credit/promote the journals we link to.",
+  "active": [
+    { "key": "hts", "name": "HTS Teologiese Studies / Theological Studies", "country": "ZA", "languages": ["af", "en"], "platform": "AOSIS", "homepage": "https://www.hts.org.za", "publisher": "AOSIS", "license": "CC BY" },
+    { "key": "jhs", "name": "Journal of Hebrew Scriptures", "country": "CA", "languages": ["en"], "platform": "University of Alberta Library", "homepage": "https://jhsonline.org/", "publisher": "University of Alberta Library", "license": "CC BY" },
+    { "key": "ote", "name": "Old Testament Essays", "country": "ZA", "languages": ["af", "en", "fr", "de", "st", "ve", "xh", "zu"], "platform": "OTSSA", "homepage": "https://ote-journal.otwsa-otssa.org.za/", "publisher": "Old Testament Society of South Africa", "license": "CC BY" },
+    { "key": "verbum", "name": "Verbum et Ecclesia", "country": "ZA", "languages": ["de", "en", "nl", "af"], "platform": "AOSIS", "homepage": "https://verbumetecclesia.org.za/index.php/ve", "publisher": "AOSIS", "license": "CC BY" },
+    { "key": "ids", "name": "In die Skriflig / In Luce Verbi", "country": "ZA", "languages": ["de", "nl", "en", "af"], "platform": "AOSIS", "homepage": "https://www.indieskriflig.org.za", "publisher": "AOSIS", "license": "CC BY" },
+    { "key": "actat", "name": "Acta Theologica", "country": "ZA", "languages": ["en"], "platform": "University of the Free State", "homepage": "https://journals.ufs.ac.za/index.php/at", "publisher": "University of the Free State", "license": "CC BY" },
+    { "key": "scriptura", "name": "Scriptura", "country": "ZA", "languages": ["en", "af"], "platform": "Stellenbosch University", "homepage": "https://scriptura.journals.ac.za/pub/index", "publisher": "Stellenbosch University", "license": "CC BY-NC-ND", "license_note": "NC-ND is fine for us: we only link out and extract facts (verse references), never reuse article text." },
+    { "key": "opth", "name": "Open Theology", "country": "PL/DE", "languages": ["en"], "platform": "De Gruyter (gold OA)", "homepage": "https://www.degruyter.com/journal/key/opth/html", "publisher": "De Gruyter", "license": "CC BY" },
+    { "key": "tc", "name": "TC: A Journal of Biblical Textual Criticism", "country": "US", "languages": ["en"], "platform": "SBL / Silverchair — PDFs bot-blocked, fetch via Chrome (jbtc.org also 403s bots)", "homepage": "https://jbtc.org/", "publisher": "Society of Biblical Literature", "license": "free to read (rights retained)", "not_in_doaj": true }
+  ],
+
+  "candidates_oa": [
+    { "name": "The Biblical Annals", "country": "PL", "languages": ["en", "pl"], "platform": "KUL (Lublin), DOAJ", "issn_hint": "2451-2168", "verify_issn": true, "note": "Genuinely biblical studies, gold OA. Top pick for next expansion." },
+    { "name": "Verbum Vitae", "country": "PL", "languages": ["en", "pl"], "platform": "KUL (Lublin), DOAJ", "issn_hint": "2451-280X", "verify_issn": true, "note": "Biblical theology, gold OA." },
+    { "name": "Svensk Exegetisk Årsbok", "country": "SE", "languages": ["sv", "en"], "platform": "Uppsala", "issn_hint": "1100-2298", "verify_issn": true, "note": "OA yearbook; Crossref coverage must be checked." },
+    { "name": "Biblica", "country": "VA/IT", "languages": ["en", "de", "fr", "it", "es"], "platform": "Pontifical Biblical Institute — free online", "issn_hint": "0006-0887", "verify_issn": true, "note": "Free on bsw.org; DOI/Crossref coverage uncertain — may need custom scraper." },
+    { "name": "Revista Bíblica", "country": "AR", "languages": ["es"], "platform": "OA", "issn_hint": "2683-7153", "verify_issn": true, "note": "Spanish-language biblical studies." },
+    { "name": "Estudos Teológicos", "country": "BR", "languages": ["pt"], "platform": "Faculdades EST / SciELO", "issn_hint": "2237-6461", "verify_issn": true },
+    { "name": "Horizonte", "country": "BR", "languages": ["pt"], "platform": "PUC Minas, DOAJ", "issn_hint": "2175-5841", "verify_issn": true },
+    { "name": "Caminhando", "country": "BR", "languages": ["pt"], "platform": "Metodista", "issn_hint": "2176-3828", "verify_issn": true },
+    { "name": "Teologisk tidsskrift", "country": "NO", "languages": ["nb", "nn"], "platform": "Universitetsforlaget/Idunn", "note": "Believed OA on Idunn after Norwegian OA push — VERIFY before adding; Idunn harvesting untested." },
+    { "name": "Journal of Greco-Roman Christianity and Judaism", "country": "CA", "languages": ["en"], "platform": "free online", "note": "Free PDFs but likely no Crossref/DOIs — custom scraper if wanted." },
+    { "name": "Religions (MDPI)", "country": "CH", "languages": ["en"], "platform": "MDPI, DOAJ", "note": "Already in journals.json with enabled:false — broad religion, 20k+ articles; enable after core corpus." }
+  ],
+
+  "closed_metadata_only": [
+    { "name": "Journal of Biblical Literature (JBL)", "publisher": "SBL Press", "country": "US",
+      "access": { "model": "membership", "price_estimate": "SBL membership ~USD 60–225/yr (income-tiered)", "price_verified": false,
+        "includes": "JBL online + full JBL archive + JSTOR Religion & Theology collection (benefit confirmed on sbl-site.org)",
+        "order_url": "https://www.sbl-site.org/membership/join-or-renew/" },
+      "note": "Cheapest legal deep access in the field per krone — one membership covers JBL + JSTOR religion collection." },
+    { "name": "Catholic Biblical Quarterly (CBQ)", "publisher": "Catholic Biblical Association", "country": "US",
+      "access": { "model": "membership/subscription", "price_estimate": "~USD 60/yr", "price_verified": false } },
+    { "name": "New Testament Studies (NTS)", "publisher": "Cambridge UP", "country": "UK",
+      "access": { "model": "pay-per-view or subscription", "price_estimate": "~USD 25–40 per article", "price_verified": false } },
+    { "name": "Vetus Testamentum", "publisher": "Brill", "country": "NL",
+      "access": { "model": "pay-per-view", "price_estimate": "~EUR 30–40 per article", "price_verified": false } },
+    { "name": "Novum Testamentum", "publisher": "Brill", "country": "NL",
+      "access": { "model": "pay-per-view", "price_estimate": "~EUR 30–40 per article", "price_verified": false } },
+    { "name": "Biblical Interpretation", "publisher": "Brill", "country": "NL",
+      "access": { "model": "pay-per-view", "price_estimate": "~EUR 30–40 per article", "price_verified": false } },
+    { "name": "ZAW (Zeitschrift für die alttestamentliche Wissenschaft)", "publisher": "De Gruyter", "country": "DE",
+      "access": { "model": "pay-per-view", "price_estimate": "~EUR 30–40 per article", "price_verified": false } },
+    { "name": "ZNW (Zeitschrift für die neutestamentliche Wissenschaft)", "publisher": "De Gruyter", "country": "DE",
+      "access": { "model": "pay-per-view", "price_estimate": "~EUR 30–40 per article", "price_verified": false } },
+    { "name": "Journal of Theological Studies (JTS)", "publisher": "Oxford UP", "country": "UK",
+      "access": { "model": "pay-per-view", "price_estimate": "~USD 40 per article", "price_verified": false } },
+    { "name": "JSOT / JSNT (Journal for the Study of the Old/New Testament)", "publisher": "SAGE", "country": "UK",
+      "access": { "model": "pay-per-view", "price_estimate": "~USD 37.50 per article", "price_verified": false } },
+    { "name": "Ephemerides Theologicae Lovanienses (ETL)", "publisher": "Peeters", "country": "BE",
+      "access": { "model": "pay-per-view (Peeters Online Journals)", "price_estimate": "~EUR 15–20 per article", "price_verified": false } },
+    { "name": "Neotestamentica", "publisher": "New Testament Society of Southern Africa (recent volumes via Project MUSE)", "country": "ZA",
+      "access": { "model": "subscription/MUSE", "price_estimate": "older volumes partly free via SciELO SA — check", "price_verified": false } }
+  ],
+
+  "cheap_access_routes": {
+    "green_oa": "Many closed articles have legal free copies in university repositories — Unpaywall finds these automatically for us; coverage grows over time, so re-running `pdf` later catches more.",
+    "jstor_jpass": "JSTOR JPASS (~USD 20/month or ~200/yr, estimate) gives personal reading access to large parts of the JBL/CBQ archives; no bulk download, but fine for manual follow-up of specific articles.",
+    "sbl_membership": "See JBL entry — one membership covers the most important closed journal + JSTOR religion collection.",
+    "abstracts": "For everything closed we already store Crossref abstracts + DOI links; many verse references appear in title/abstract, so the corpus still links useful closed articles without buying anything."
+  }
+}
