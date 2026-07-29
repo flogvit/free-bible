@@ -185,7 +185,15 @@ export const META_SCHEMA = {
                 additionalProperties: false,
                 properties: {
                     tag: enumOf(LEGACY_TAG),
-                    text: { type: 'string' }
+                    // Keyed by ISO 639-1 language code. `en` is required: it is the
+                    // floor the website falls back to, so a missing language shows
+                    // English rather than the translation's own language.
+                    text: {
+                        type: 'object',
+                        propertyNames: { pattern: '^[a-z]{2,3}$' },
+                        additionalProperties: { type: 'string' },
+                        required: ['en']
+                    }
                 },
                 required: ['tag', 'text']
             }
@@ -262,8 +270,21 @@ export function validateMeta(meta) {
     const verified = new Set(meta.provenance?.verified ?? []);
     for (const item of meta.legacy ?? []) {
         check(LEGACY_TAG.includes(item.tag), `legacy: unknown tag "${item.tag}"`);
-        check(typeof item.text === 'string' && item.text.length <= 300,
-            `legacy: text must be a single sentence under 300 chars ("${item.tag}")`);
+        // `text` is a language map, not a string. The statement is about the
+        // translation but it is read by whoever is on the site, so it belongs to
+        // the reader's language, not the translation's.
+        const text = item.text;
+        check(text !== null && typeof text === 'object' && !Array.isArray(text),
+            `legacy: text must be an object keyed by language code ("${item.tag}")`);
+        if (text && typeof text === 'object' && !Array.isArray(text)) {
+            check(typeof text.en === 'string' && text.en.length > 0,
+                `legacy: text.en is required — it is the fallback every other language lands on ("${item.tag}")`);
+            for (const [lang, value] of Object.entries(text)) {
+                check(/^[a-z]{2,3}$/.test(lang), `legacy: "${lang}" is not a language code ("${item.tag}")`);
+                check(typeof value === 'string' && value.length <= 300,
+                    `legacy: text.${lang} must be a single sentence under 300 chars ("${item.tag}")`);
+            }
+        }
         check(verified.has('legacy'), 'legacy: present but not listed in provenance.verified (sources required)');
     }
 

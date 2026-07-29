@@ -12,7 +12,7 @@ It uses Claude (Anthropic) to translate from already free versions of the Bible.
 
 ## Preview
 
-View the current state at: https://bibel.flogvit.no
+View the current state at: https://bible.flogvit.com
 
 ## Bible Source Texts
 

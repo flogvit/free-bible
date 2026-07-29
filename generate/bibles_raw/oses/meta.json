@@ -33,16 +33,34 @@
     "review": "none"
   },
   "links": {
-    "homepage": "https://bibel.flogvit.no"
+    "homepage": "https://bible.flogvit.com"
   },
   "legacy": [
     {
       "tag": "distinctive",
-      "text": "Optimizado para la lectura en voz alta: ritmo natural y fluidez más que una correspondencia palabra por palabra."
+      "text": {
+        "en": "Optimised for reading aloud: natural rhythm and flow rather than a word-for-word rendering.",
+        "nb": "Optimalisert for høytlesning: naturlig rytme og flyt framfor ordrett gjengivelse.",
+        "nn": "Optimalisert for høgtlesing: naturleg rytme og flyt framfor ordrett attgjeving.",
+        "sv": "Optimerad för högläsning: naturlig rytm och flyt snarare än ordagrann återgivning.",
+        "de": "Für das Vorlesen optimiert: natürlicher Rhythmus und Fluss statt wortwörtlicher Wiedergabe.",
+        "fr": "Optimisée pour la lecture à voix haute : rythme et fluidité naturels plutôt qu'une restitution mot à mot.",
+        "es": "Optimizado para la lectura en voz alta: ritmo natural y fluidez más que una correspondencia palabra por palabra.",
+        "fi": "Optimoitu ääneen luettavaksi: luonnollinen rytmi ja sujuvuus ennemmin kuin sanatarkka käännös."
+      }
     },
     {
       "tag": "distinctive",
-      "text": "Sigue la numeración de versículos hebrea y griega, no la europea habitual."
+      "text": {
+        "en": "Follows the Hebrew and Greek verse numbering, not the usual European numbering.",
+        "nb": "Følger hebraisk og gresk versnummerering, ikke den vanlige europeiske.",
+        "nn": "Følgjer hebraisk og gresk versnummerering, ikkje den vanlege europeiske.",
+        "sv": "Följer hebreisk och grekisk versnumrering, inte den vanliga europeiska.",
+        "de": "Folgt der hebräischen und griechischen Verszählung, nicht der üblichen europäischen.",
+        "fr": "Suit la numérotation des versets hébraïque et grecque, et non la numérotation européenne habituelle.",
+        "es": "Sigue la numeración de versículos hebrea y griega, no la europea habitual.",
+        "fi": "Noudattaa heprealaista ja kreikkalaista jaenumerointia, ei tavanomaista eurooppalaista."
+      }
     }
   ],
   "coverage": {
@@ -59,7 +77,17 @@
   },
   "provenance": {
     "method": "manual",
-    "verified": [],
+    "verified": [
+      "name.en",
+      "abbreviation",
+      "language.iso639_3",
+      "philosophy",
+      "textual_basis",
+      "work.method",
+      "work.source_languages",
+      "legacy",
+      "links"
+    ],
     "sources": [
       {
         "url": "https://github.com/flogvit/free-bible",
