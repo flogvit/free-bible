@@ -39,10 +39,6 @@ const CONTENT_DIRS = {
     'gospel_parallels': {ext: '.json', keepKeys: ['id', 'section']},
     'references': {ext: '.json', keepKeys: []},
 };
-// NOT in CONTENT_DIRS: important_verses/nb - it quotes actual Bible verse text,
-// and machine-translating famous verses reproduces copyrighted translations
-// (ESV/NIV). The en version must be built by looking the verses up in an
-// English Bible text once one exists.
 
 // Target-language quote style. « » in the source is converted to these after
 // translation. null = keep « » as-is.
