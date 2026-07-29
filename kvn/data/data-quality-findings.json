@@ -1,6 +1,6 @@
 {
  "_om": "Datakvalitetsfunn oppdaget under KVN-mappingarbeidet (issue #18). Dette er funn i KILDEDATAENE, ikke i mappingene — de kan ikke fikses med entries. Moduler med 'severity': 'blocking' har mapping som ikke kan bli riktig før dataene rehostes; disse har også derived.dataWarning i sin egen mappingfil.",
- "sist_oppdatert": "2026-07-28",
+ "sist_oppdatert": "2026-07-29",
  "funn": [
   {
    "module": "osmain",
@@ -80,6 +80,30 @@
    "finding": "4 Mos 25 har 18 vers; halvverset som andre oversettelser har som 25,19 ('Da det var slutt på pesten') mangler — det er slått sammen i 26:1.",
    "consequence": "Moduler med 19 vers får ett vers uten motstykke (expansion-klassen).",
    "action": "Vurder osmain-utvidelse."
+  },
+  {
+   "module": "ukrainian2004",
+   "book": 19,
+   "severity": "blocking",
+   "finding": "Sal 73 mangler i hostingen; kapitlene fra 72 og ut ligger to forskjovet i stedet for ett",
+   "evidence": "kap 71 = Sal 72 (Om Salomo), kap 72 = Sal 74 («Kvifor, Gud, har du forkasta oss»), kap 75 = Sal 77 (Jedutun/Asaf), kap 76 = Sal 78 (72 vers) — bekreftet paa salmetitler, ikke bare versantall",
+   "action": "salmemappingen fjernet og dataWarning satt 2026-07-29; boka maa rehostes"
+  },
+  {
+   "module": "albanian",
+   "book": 64,
+   "severity": "blocking",
+   "finding": "3 Joh, Judas og Aap 1-12 er forskjovet over bokgrensene; Aap 13-22 er riktige",
+   "evidence": "alb 3 Joh 1,1 = osmain 3 Joh 1,3 (1-2 mangler helt); alb 3 Joh 1,14 = Judas 1,1; alb Judas 1,25 = Aap 1,1; alb Aap 1,1 = osmain Aap 1,2 og hvert kapittel slutter med neste kapittels forste vers; albansk Aap 12 har 17 vers mot osmains 18, og fra kap 13 er modulen paa linje igjen",
+   "action": "dataWarning satt 2026-07-29. Kan ikke mappes: 3 Joh 1,14 tilhorer en annen bok og kvn har ingen kryssbok-poster. Boekene 64-66 maa rehostes"
+  },
+  {
+   "module": "flere",
+   "book": null,
+   "severity": "info",
+   "finding": "*** brukes som plassholder for vers hostingen ikke fikk; 65 forekomster i english_darby alene, og i mange andre moduler",
+   "evidence": "english_darby 4 Mos 30,2 er «***»; osmain har ikke noe tilsvarende vers",
+   "action": "ingen — plassholderne har ingen motpart i osmain og kan ikke mappes"
   }
  ]
 }

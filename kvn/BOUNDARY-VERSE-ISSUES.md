@@ -1,5 +1,14 @@
 # Osmain Boundary Verse Issues
 
+> **Status juli 2026:** de 16 ombrutte kapitlene (Type 2 under) er rettet, og
+> osmain ligger nå i europeisk rekkefølge i alle. Se `FUNN.md` for hele
+> oversikten over hva som ble funnet.
+>
+> To påstander nedenfor holdt ikke: **mappingfilene var ikke korrekte** for
+> versifikasjonsforskjellene — 190 300 poster kodet osmains ombrytning og kunne
+> fjernes da den ble rettet — og **osmains versantall var ikke gjennomgående
+> korrekte**: fem vers hadde duplisert tekst og flere manglet innhold.
+
 ## Problem
 
 osmain har flere vers enn osnb i ~60 kapitler. De ekstra versene er ved
