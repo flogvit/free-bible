@@ -37,3 +37,8 @@ generate/stories_proposed/*/.scan_state.json
 *.sw?
 .env
 
+
+# Generert av kvn/scripts/verify-text-report.ts og check-mapping-coverage.ts.
+# Ingen verstekst, men stor og regenererbar.
+kvn/data/text-verification-worklist.json
+kvn/data/mapping-coverage.json
