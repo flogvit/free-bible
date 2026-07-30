@@ -142,11 +142,21 @@ duplicates, no cross-book maps. Nothing verifies that a mapped entry points at
 corresponding *text*. That gap is real: osnn's mapping was missing 21 of 26 Joel entries
 and pointed Jonah 1:17 at the wrong verse, and every structural test passed.
 
+**That gap is what `kvn/scripts/verify-text.ts` closes** — it reads the text instead
+of counting numbers. Run `kvn/scripts/run-verification.sh` (see `kvn/README.md` →
+*Verifisere mappingene mot teksten*). Two things are easy to get wrong:
+`check-mapping-coverage.ts` must run first — it finds, for free, the 168k verses
+where the lookup cannot succeed at all — and the five passes must run one at a
+time, because two models resident at once takes throughput from 3.5 s/verse to 11.
+
 ## Scripts: live, one-off, and dead
 
 Live and used regularly: `bible.mjs`, `translate.mjs`, `references.mjs`,
 `references_semantic.mjs`, `chapter_tags.mjs`, `bible_persons.mjs`, `translations_index.mjs`
 (regenerate after any `meta.json`/`license.json` change), `glossary.mjs`, `triage.mjs`.
+
+Under `kvn/scripts/`: `run-verification.sh` (entry point), `check-mapping-coverage.ts`,
+`verify-text.ts`, `verify-text-report.ts` — the text verification of the mappings.
 
 Known stale, do not trust without reading:
 

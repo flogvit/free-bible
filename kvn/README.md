@@ -233,6 +233,76 @@ forskjellene er små og forutsigbare.
 Resume-støtte: Skriptet hopper over kapitler som allerede er prosessert
 (sjekker `data/mapping-results/<source>/`).
 
+### Verifisere mappingene mot teksten
+
+**Ett sted å starte — skriptet forklarer seg selv:**
+
+```bash
+cd kvn && ./scripts/run-verification.sh
+```
+
+Uten argumenter skriver det ut kjørerekkefølgen, fallgruvene og hvilke modeller
+som trengs. Du behøver ikke huske noe av det som står nedenfor; det er der for å
+forklare *hvorfor*.
+
+Rundturskontrollen (`check-osmain-roundtrip.py`) teller **tall**: en mapping som
+er bijektiv består den selv om den peker på feil vers. `basque` Sal 110 pekte på
+feil kapittel og besto; `albanian` Åp 1–12 ligger ett vers ned hele veien og
+består. «1157 av 1158 rene» er derfor en påstand om aritmetikk, ikke om tekst.
+
+Tekstverifiseringen leser teksten. Kjør i denne rekkefølgen:
+
+```bash
+./scripts/run-verification.sh maal        # mål farten på maskinen (~30 min)
+./scripts/run-verification.sh struktur    # gratis, ingen modell
+./scripts/run-verification.sh pri1        # de 81 åpne oversettelsene
+./scripts/run-verification.sh rapport --list
+```
+
+**`struktur` må gå først.** `check-mapping-coverage.ts` finner osmain-vers som
+slås opp til et versnummer oversettelsen ikke har — 168 774 vers i 1 119
+oversettelser ved første kjøring. Årsaken er parafraser som fletter vers og
+merker blokken med det første versnummeret (`norwegian2018` 1 Mos 1 har 17 vers
+med numrene 1,3,6,9,…), så oppslaget returnerer ingenting. Uten denne runden
+brukes måneder med GPU-tid på vers der oppslaget ikke kan lykke uansett.
+
+`verify-text.ts` kjører fem lag, ELLER-koblet, i **fem pass — ett per modell**:
+
+| pass | modell | hva |
+|---|---|---|
+| `prep` | bge-m3 | basislinjer og kalibreringseksempler per oversettelse |
+| `mech` | bge-m3 | likhet, lengde, leddekning, tegnsetting for hvert vers |
+| `judge1` | gemma4:31b | dom, kalibrert med oversettelsens egne eksempler |
+| `judge2` | granite4.1:30b | annen modellfamilie — halverer bomraten |
+| `verdict` | — | ren regning: endelig dom per vers |
+
+Passene er delt per modell fordi to modeller i minnet samtidig gir utkasting og
+innlasting mellom kallene: målt 11 s/vers mot 3,5. Ikke kjør to pass samtidig.
+Alt er gjenopptakbart per kapittel — Ctrl-C koster ingenting.
+
+Logg: `data/text-verification/<oversettelse>/<bok>/<kapittel>.json`. Kapittelnivå,
+ikke per vers: 27,5 M filer à ~150 byte legger beslag på 110 GB på 4 KB-blokker.
+Loggen er gitignorert — `_baseline.json` inneholder kalibreringseksempler med
+verstekst, og for de lukkede oversettelsene er det opphavsrettsbeskyttet.
+
+Dommen skrives, ikke bare ja/nei, fordi typen peker nesten entydig på feilklassen:
+`DIFFERENT` → feil vers (100 % i testsettet), `B_EXTRA` → fletting (99 %),
+`B_MISSING` → avkortet (85 %). Arbeidslisten kommer derfor sortert etter hva som
+må gjøres: `WRONG` trenger en forskyvning, `MERGED` en flettings- eller
+delverspost, `SHORT` at man finner ut hvor resten av teksten ble av.
+
+Målt på 1 831 par fra 12 språk: **bomrate 0,07 %** (1 av 1 351, og den ene var en
+feilmerking i testsettet), eskalering 16,5 %. Validert mot de 13 dokumenterte
+mappingfeilene i `FUNN.md`: 13 av 13 — ingen enkeltdel klarte det alene.
+
+Rekkefølgen på oversettelsene står i `research/text-verification/priority.txt`.
+Forskningsgrunnlaget — testsett, benchmark, ensemble-analyse — ligger i samme
+katalog; skriptene er sporet, dataene gitignorert.
+
+Forbehold: de bge-m3-baserte lagene er målt på oversettelser med kryssspråklig
+likhet 0,66–0,87. `hcv` ligger på 0,573 og `maori` på 0,607, og der er de
+svakere. Tegnsetting, lengde og dommerne er upåvirket. Ikke målt ennå.
+
 ## Gammel KVN (v1)
 
 Det gamle 27-bit systemet (`book << 20 | chapter << 12 | verse << 4 | part`)

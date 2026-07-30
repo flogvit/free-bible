@@ -128,6 +128,19 @@ generate/
 | `make_tanach.mjs` | Process Tanach source files |
 | `make_sblgnt.mjs` | Process SBLGNT source files |
 
+### Verifying the KVN mappings against the text
+
+The round-trip check counts numbers, so a mapping that is bijective passes even
+when it points at the wrong verse. The text verification reads the text instead.
+One entry point, which explains itself when run with no arguments:
+
+```bash
+cd kvn && ./scripts/run-verification.sh
+```
+
+It prints the run order, the pitfalls and the models it needs. Details and the
+measured accuracy are in `kvn/README.md` → *Verifisere mappingene mot teksten*.
+
 ### Shared Libraries
 
 | File | Description |
