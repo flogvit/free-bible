@@ -28,7 +28,13 @@ const CONTENT_DIRS = {
     'themes': {ext: '.json', keepKeys: ['id']},
     'timeline': {ext: '.json', keepKeys: ['id', 'importance', 'period', 'section', 'color', 'eventsFile']},
     'stories': {ext: '.json', keepKeys: ['slug', 'id', 'category', 'verdict', 'date']},
-    'persons': {ext: '.json', keepKeys: ['id', 'era', 'source', 'father', 'mother', 'spouse', 'date']},
+    // relatedPersons/siblings/children er ID-REFERANSER, ikke navn. De sto
+    // utenfor keepKeys, og modellen oversatte dem til visningsnavn: «paulus» ble
+    // «Paul», «johannes-apostel» ble «John the Apostle». 1869 av 2029 engelske
+    // personfiler hadde dermed referansefelt som ikke kunne slås opp. father,
+    // mother og spouse sto i lista og var derfor uskadd — det er forskjellen som
+    // avslørte det.
+    'persons': {ext: '.json', keepKeys: ['id', 'era', 'source', 'father', 'mother', 'spouse', 'date', 'relatedPersons', 'siblings', 'children']},
     'number_symbolism': {ext: '.json', keepKeys: ['id', 'source', 'date']},
     'prophecies': {ext: '.json', keepKeys: ['id', 'category']},
     'important_words': {ext: '.txt'},
