@@ -48,6 +48,23 @@ import { spawnSync } from 'child_process';
 import { fileURLToPath } from 'url';
 
 const __dirname = dirname(fileURLToPath(import.meta.url));
+
+// journals.ufs.ac.za and www.scielo.org.za (actat, ote, and doi.org links that
+// redirect there) serve an incomplete TLS chain: the Sectigo intermediate is
+// missing. curl chases it via the cert's AIA field, Node does not, so every
+// fetch there dies with "unable to verify the first certificate" — which the
+// PDF phase records as a normal failure and, after 3 attempts, locks the entry
+// out for good. NODE_EXTRA_CA_CERTS is only read at startup, so re-exec once
+// with the intermediate supplied. Without this the loss is silent.
+const CA_CERT = join(__dirname, 'ca/sectigo-ovr36.pem');
+if (!process.env.NODE_EXTRA_CA_CERTS && fs.existsSync(CA_CERT)) {
+  const r = spawnSync(process.execPath, [fileURLToPath(import.meta.url), ...process.argv.slice(2)], {
+    stdio: 'inherit',
+    env: { ...process.env, NODE_EXTRA_CA_CERTS: CA_CERT },
+  });
+  process.exit(r.status ?? 1);
+}
+
 const REPO = join(__dirname, '..');
 const DATA = join(REPO, 'external/articles');
 const CATALOG = join(DATA, 'catalog.jsonl');
