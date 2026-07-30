@@ -32,31 +32,65 @@ export const maxTokens = 32000;
 
 // Local Ollama models for lightweight tasks
 export const ollamaModel = "qwen3.5:122b";
-export const ollamaBaseUrl = "http://localhost:11434";
+export const ollamaBaseUrl = process.env.OLLAMA_BASE_URL || "http://localhost:11434";
 
-// Default local model per task. Heavy jobs that get the whole machine (typically
-// overnight) use the large model; per-verse jobs that just need a yes/no verdict use
-// a smaller one so they stay usable while the machine is doing something else.
+// Foretrukket lokal modell per task. Tunge jobber som får hele maskinen (typisk om
+// natta) bruker den store modellen; per-vers-arbeid som bare trenger en ja/nei-dom
+// bruker en mindre, så maskinen er brukbar mens den holder på.
+//
+// Dette er et ØNSKE, ikke et vedtak: resolveLocalModel i llm.js bruker en større
+// modell som allerede ligger i minnet i stedet, framfor å kaste den ut. Se
+// kommentaren der for hvorfor.
+//
 // Note: gemma4:31b is deliberately not used for anything needing structured output —
 // see ollamaModelConfig, it degrades badly with format:"json".
 export const taskModels = {
     triage: "qwen3.5:27b",
-    tags: "qwen3.5:27b",
+    // Kapitteltagging har i praksis kjørt på 122b hele tiden — chapter_tags.mjs
+    // sendte aldri noe modellvalg, så den falt til ollamaModel. Tabellen sa 27b,
+    // og det var død config. Satt til det som faktisk har produsert tag-dataene.
+    tags: "qwen3.5:122b",
     // Nøkkelordekstraksjon per kapittel (#5). 27b og ikke 122b med vilje: dette
-    // er samme klasse arbeid som tags, og den store modellen er opptatt med
-    // nattjobber — to modeller residente samtidig halverer gjennomstrømningen.
+    // er samme klasse arbeid som tags, og trenger ikke den store modellen når
+    // den er ledig.
     words: "qwen3.5:27b",
     references: "qwen3.5:122b",
     translate: "qwen3.5:122b",
+    songs: "gemma4:31b",
     embeddings: "bge-m3"
 };
 
 /**
- * Local model for a task. OLLAMA_MODEL overrides everything (useful when the machine
- * is busy); otherwise the task default, falling back to ollamaModel.
+ * Foretrukket lokal modell for en task. OLLAMA_MODEL pinner alt (nyttig når maskinen
+ * er opptatt); ellers task-standarden, med fallback til ollamaModel.
+ *
+ * Dette er ikke nødvendigvis modellen kallet ender med å bruke — se
+ * resolveLocalModel i llm.js.
  */
 export function getTaskModel(task) {
     return process.env.OLLAMA_MODEL || taskModels[task] || ollamaModel;
+}
+
+/**
+ * Rangering av de lokale modellene, minst først. Avgjør om en modell som allerede
+ * ligger i minnet kan brukes i stedet for den en task foretrekker.
+ *
+ * Rekkefølgen står eksplisitt fordi navnene ikke sorterer etter størrelse
+ * (gpt-oss:120b < qwen3.5:122b). En modell som ikke står her blir aldri adoptert:
+ * vi vet ikke om den er god nok til å erstatte noe annet.
+ */
+export const localModelRanking = [
+    'qwen3.5:9b',
+    'qwen3.5:27b',
+    'gemma4:31b',
+    'gpt-oss:120b',
+    'qwen3.5:122b',
+];
+
+/** Plass i localModelRanking, eller null for en modell vi ikke har rangert. */
+export function localModelRank(model) {
+    const index = localModelRanking.indexOf(model);
+    return index === -1 ? null : index;
 }
 
 // Model-specific configuration

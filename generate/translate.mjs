@@ -8,7 +8,7 @@ const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 dotenv.config()
 
-import {normalizeLanguage, getLanguageCode, ollamaModel, anthropicModel, bibles, getBookName} from "./constants.js";
+import {normalizeLanguage, getLanguageCode, getTaskModel, anthropicModel, bibles, getBookName} from "./constants.js";
 import {callWithRetry} from "./llm.js";
 
 // Directories under generate/ with translatable content in <dir>/<lang>/
@@ -175,6 +175,8 @@ function quotePromptParts(language) {
 // chapter_context files can exceed 16k total tokens and get truncated
 const OLLAMA_OPTIONS = {num_ctx: 32768};
 
+const TASK = 'translate';
+
 function getStatePath(langCode) {
     return path.join(__dirname, `translate_state/${langCode}.json`);
 }
@@ -272,8 +274,11 @@ function chapterIdOf(filename) {
 
 let useRemote = false;
 
+// Havner i translate_state per fil. taskModels.translate ligger øverst i
+// localModelRanking, så adopsjonen i resolveLocalModel kan ikke bytte den ut —
+// senkes den noen gang, må denne hente den faktisk brukte modellen i stedet.
 function activeModel() {
-    return useRemote ? anthropicModel : ollamaModel;
+    return useRemote ? anthropicModel : getTaskModel(TASK);
 }
 
 function getMarkdownPrompt(language, sourceText) {
@@ -428,7 +433,7 @@ async function translateStringChunk(language, langCode, items, context) {
         && out.translations.length === items.length
         && out.translations.every(s => typeof s === 'string');
 
-    const out = await callWithRetry(prompt, {schema: BATCH_SCHEMA, local: !useRemote, think: false, ollamaOptions: OLLAMA_OPTIONS, context});
+    const out = await callWithRetry(prompt, {schema: BATCH_SCHEMA, local: !useRemote, task: TASK, think: false, ollamaOptions: OLLAMA_OPTIONS, context});
     if (valid(out)) {
         return out.translations;
     }
@@ -450,10 +455,10 @@ const LONG_STRING_CHARS = 500;
 
 async function translateLongString(language, langCode, text, context) {
     const prompt = getTextPrompt(language, text);
-    let raw = await callWithRetry(prompt, {local: !useRemote, think: false, ollamaOptions: OLLAMA_OPTIONS, context});
+    let raw = await callWithRetry(prompt, {local: !useRemote, task: TASK, think: false, ollamaOptions: OLLAMA_OPTIONS, context});
     if (looksTruncated(stripFences(raw))) {
         console.log(`  long string looks truncated, retrying with temperature...`);
-        raw = await callWithRetry(prompt, {local: !useRemote, think: false, ollamaOptions: {...OLLAMA_OPTIONS, temperature: 0.4}, context});
+        raw = await callWithRetry(prompt, {local: !useRemote, task: TASK, think: false, ollamaOptions: {...OLLAMA_OPTIONS, temperature: 0.4}, context});
     }
     return stripFences(raw);
 }
@@ -579,10 +584,10 @@ function restoreQuotedInlineBold(sourceText, text, langCode) {
 
 async function translateMarkdown(language, langCode, sourceText, keepKeys, context) {
     const prompt = getMarkdownPrompt(language, sourceText);
-    let raw = await callWithRetry(prompt, {local: !useRemote, think: false, ollamaOptions: OLLAMA_OPTIONS, context});
+    let raw = await callWithRetry(prompt, {local: !useRemote, task: TASK, think: false, ollamaOptions: OLLAMA_OPTIONS, context});
     if (looksTruncated(stripFences(raw))) {
         console.log(`  output looks truncated, retrying with temperature...`);
-        raw = await callWithRetry(prompt, {local: !useRemote, think: false, ollamaOptions: {...OLLAMA_OPTIONS, temperature: 0.4}, context});
+        raw = await callWithRetry(prompt, {local: !useRemote, task: TASK, think: false, ollamaOptions: {...OLLAMA_OPTIONS, temperature: 0.4}, context});
         if (looksTruncated(stripFences(raw))) {
             throw new Error('output truncated after temperature retry');
         }
@@ -629,10 +634,10 @@ ${sourceText}`;
 
 async function translateTxt(language, langCode, sourceText, keepKeys, context) {
     const prompt = getTextPrompt(language, sourceText);
-    let raw = await callWithRetry(prompt, {local: !useRemote, think: false, ollamaOptions: OLLAMA_OPTIONS, context});
+    let raw = await callWithRetry(prompt, {local: !useRemote, task: TASK, think: false, ollamaOptions: OLLAMA_OPTIONS, context});
     if (looksTruncated(stripFences(raw))) {
         console.log(`  output looks truncated, retrying with temperature...`);
-        raw = await callWithRetry(prompt, {local: !useRemote, think: false, ollamaOptions: {...OLLAMA_OPTIONS, temperature: 0.4}, context});
+        raw = await callWithRetry(prompt, {local: !useRemote, task: TASK, think: false, ollamaOptions: {...OLLAMA_OPTIONS, temperature: 0.4}, context});
         if (looksTruncated(stripFences(raw))) {
             throw new Error('output truncated after temperature retry');
         }
@@ -826,7 +831,7 @@ function printUsage() {
 Usage: node translate.mjs --language <lang> [options]
 
 Translates content under <dir>/${'<source>'}/ to <dir>/<lang>/ using the local
-Ollama model (${ollamaModel}). Tracks the source hash of every translated file in
+Ollama model (${getTaskModel(TASK)}). Tracks the source hash of every translated file in
 translate_state/<lang>.json, so files whose source changes are re-translated
 on the next run.
 
@@ -850,7 +855,7 @@ Options:
                      normal run re-translates them
   --help             Show this help message
 
-When the target language has a project Bible (${Object.entries(BIBLE_TRANSLATIONS).map(([code, translation]) => `${code}: ${translation}`).join(', ')}),
+When the target language has a project Bible (${Object.entries(BIBLE_TRANSLATIONS).map(([code, translation]) => `: `).join(', ')}),
 quoted Bible text is translated with the wording of that Bible, looked up via the
 file's verse references or its book-chapter filename.
 

@@ -307,7 +307,7 @@ async function generateReferences(language, bookId, chapterId, verseId, filename
     const prompt = getReferencePrompt(language, bookId, chapterId, verseId, verseOrg.text);
 
     console.log(`Generating references for ${bookName} ${chapterId}:${verseId}...`);
-    const result = await callWithRetry(prompt, {schema: REFERENCE_SCHEMA, local: useLocal, context: `${bookId}:${chapterId}:${verseId}`});
+    const result = await callWithRetry(prompt, {schema: REFERENCE_SCHEMA, local: useLocal, task: 'references', context: `${bookId}:${chapterId}:${verseId}`});
 
     const references = normalizeReferences(result.references);
 
@@ -347,7 +347,7 @@ async function proofreadReferences(language, bookId, chapterId, verseId, refFile
     console.log(`Proofreading references for ${bookName} ${chapterId}:${verseId}...`);
 
     const prompt = getProofreadPrompt(language, bookId, chapterId, verseId, verseOrg.text, currentReferences);
-    const result = await callWithRetry(prompt, {schema: REFERENCE_PROOFREAD_SCHEMA, local: useLocal, context: `proofread ${bookId}:${chapterId}:${verseId}`});
+    const result = await callWithRetry(prompt, {schema: REFERENCE_PROOFREAD_SCHEMA, local: useLocal, task: 'references', context: `proofread ${bookId}:${chapterId}:${verseId}`});
 
     // Save proofread results if requested
     if (saveToFile) {

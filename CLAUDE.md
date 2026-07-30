@@ -168,10 +168,28 @@ Known stale, do not trust without reading:
 - `generate/word4word/` is only correct for `tanach` and `sblgnt`. The `osnb1` directory
   was wrong and was deleted.
 
-Local models: `constants.js` → `taskModels` sets a default per task; `OLLAMA_MODEL`
-overrides. Small models handle per-verse yes/no work so the machine stays usable; the large
-one is for overnight jobs. `gemma*` is unusable for anything needing structured output
-(`jsonFormat: false`).
+Local models: `constants.js` → `taskModels` sets a **preferred** model per task;
+`OLLAMA_MODEL` pins it. Small models handle per-verse yes/no work so the machine stays
+usable; the large one is for overnight jobs. `gemma*` is unusable for anything needing
+structured output (`jsonFormat: false`).
+
+**Two jobs must never want different models at once.** Ollama keeps one runner, and
+qwen3.5:122b (81 GB) plus qwen3.5:27b (17 GB) do not fit side by side on 128 GB — so it
+reloads on *every call*: measured 17–19 s for the 122b runner, ~6 s for 27b, with a cold
+prompt cache each time (`task 0` in `~/.ollama/logs/server.log`). That is what made
+`translate.mjs` take 179 s per file on 2026-07-30 while `important_words_chapter.mjs` ran
+alongside it.
+
+`resolveLocalModel` in `llm.js` handles this: it asks `/api/ps` what is already loaded and
+uses that model instead when it ranks at or above the task's preference in
+`localModelRanking`. Both jobs then share one runner and the requests queue. The rule only
+ever upgrades, so a tag job cannot drag a translation down onto 27b, and a model that isn't
+in `localModelRanking` is never adopted. `OLLAMA_NO_ADOPT=1` turns just the adoption off.
+
+Pass `task:` to `callWithRetry`/`call`/`callOllamaRaw`, not `model:` — `model:` is a pin and
+skips adoption. Scripts that pass neither get `ollamaModel` as before. Scripts that record
+which model ran (`triage.mjs`, `song_references.mjs`) must resolve it themselves via
+`resolveLocalModel` and store *that* value.
 
 **Local triage does not work for judging translation quality** — measured recall against
 Claude's actual corrections was 31% (qwen3.5:27b) and 8% (qwen3.6:35b). Both miss exactly

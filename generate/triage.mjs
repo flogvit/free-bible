@@ -39,7 +39,7 @@ import {fileURLToPath} from 'url';
 dotenv.config();
 
 import {bibles, books, getTaskModel, getLanguageCode} from './constants.js';
-import {callWithRetry} from './llm.js';
+import {callWithRetry, resolveLocalModel} from './llm.js';
 import {loadUkvnMapping, UkvnMapper, CrossMapper, ukvnEncode, ukvnDecode} from '../kvn/src/ukvn.ts';
 
 // Same-language comparison translation, per target language. Chosen for closeness in
@@ -298,13 +298,18 @@ async function triageChapter(bible, bookId, chapterId, options) {
         if (issues.length) totals.mechanical++;
 
         let score = 10;
+        // Modellen løses opp per vers, ikke én gang: en annen jobb kan starte
+        // underveis, og da adopterer vi dens modell framfor å kaste den ut. Verdien
+        // havner i verse.triage.model, så det er den faktisk brukte som skal lagres.
+        let usedModel = options.model || getTaskModel('triage');
         if (verse.text && verse.text.trim()) {
             try {
                 const prompt = buildPrompt(language, original.text, verse, peerText, referenceText, options.referenceLanguage);
+                usedModel = await resolveLocalModel('triage', {model: options.model, needsSchema: true});
                 const result = await callWithRetry(prompt, {
                     schema: TRIAGE_SCHEMA,
                     local: true,
-                    model: options.model,
+                    model: usedModel,
                     context: `triage ${bookId}:${chapterId}:${verse.verseId}`
                 });
                 score = typeof result.score === 'number' ? result.score : 10;
@@ -327,7 +332,7 @@ async function triageChapter(bible, bookId, chapterId, options) {
             score,
             issues,
             flagged: score < options.minScore,
-            model: options.model,
+            model: usedModel,
             at: new Date().toISOString()
         };
         if (previous) {
@@ -402,7 +407,10 @@ Examples:
 async function main() {
     const args = process.argv.slice(2);
     const options = {
-        bible: null, model: getTaskModel('triage'), minScore: 8, drop: false, recheck: false,
+        // model står null med vilje: bare --model skal pinne modellen. Står den
+        // fylt ut på forhånd, ser resolveLocalModel det som et pin og lar være å
+        // adoptere en modell som alt ligger i minnet.
+        bible: null, model: null, minScore: 8, drop: false, recheck: false,
         peer: null, noPeer: false, reference: 'osnb',
         ot: false, nt: false, bookStart: null, bookEnd: null,
         chapterStart: null, chapterEnd: null, verseStart: null, verseEnd: null, help: false
@@ -452,7 +460,7 @@ async function main() {
     else if (options.nt && !options.ot) startBook = 40;
 
     console.log(`Bible: ${options.bible} (${language})`);
-    console.log(`Model: ${options.model} (local)`);
+    console.log(`Model: ${options.model || `${getTaskModel('triage')} (eller en større som alt ligger i minnet)`} (local)`);
     console.log(`Peer: ${options.peer || 'none'} | Reference: ${options.reference || 'none'}`);
     console.log(`Flagging below score ${options.minScore}${options.drop ? ', dropping flagged text for re-translation' : ''}`);
     console.log('---');

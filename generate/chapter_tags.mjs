@@ -450,7 +450,7 @@ async function main() {
             const prompt = getTagPrompt(options.language, book.id, chapterId, chapterText);
 
             try {
-                const result = await callWithRetry(prompt, {schema: TAG_SCHEMA, local: useLocal, context: `${book.id}:${chapterId}`});
+                const result = await callWithRetry(prompt, {schema: TAG_SCHEMA, local: useLocal, task: 'tags', context: `${book.id}:${chapterId}`});
 
                 for (const genre of result.genres) {
                     addReference(tagDir, 'genre', genre, genreNames, genreDescriptions, book.id, chapterId);

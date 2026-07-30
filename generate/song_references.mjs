@@ -23,15 +23,18 @@
 import fs from 'fs';
 import path from 'path';
 import { fileURLToPath } from 'url';
-import { ollamaBaseUrl, getOllamaConfig, bookNames, books } from './constants.js';
+import { ollamaBaseUrl, getOllamaConfig, getTaskModel, bookNames, books } from './constants.js';
+import { resolveLocalModel } from './llm.js';
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const SONGS_DIR = path.join(__dirname, '..', 'external', 'songs', 'master');
 const OUTPUT_DIR = path.join(__dirname, 'songs');
 const OSMAIN_DIR = path.join(__dirname, 'bibles_raw', 'osmain');
 
-// Default model — override with --model
-let ollamaModel = 'gemma4:31b';
+// --model pinner modellen. Uten den løses den opp per sang, så en større modell
+// som alt ligger i minnet blir brukt framfor å kaste den ut — se resolveLocalModel.
+let pinnedModel = null;
+let ollamaModel = getTaskModel('songs');
 
 // ── Helpers ──────────────────────────────────────────────────────────────────
 
@@ -403,7 +406,8 @@ function parseArgs() {
         } else if (args[i] === '--limit' && i + 1 < args.length) {
             options.limit = parseInt(args[++i], 10);
         } else if (args[i] === '--model' && i + 1 < args.length) {
-            ollamaModel = args[++i];
+            pinnedModel = args[++i];
+            ollamaModel = pinnedModel;
         } else if (args[i] === '--force') {
             options.force = true;
         } else if (args[i] === '--help') {
@@ -411,7 +415,8 @@ function parseArgs() {
   --lang <nb|en|da-no-historic>  Filter by language
   --id <song-XXXX>               Process one song
   --limit <n>                    Max songs to process
-  --model <name>                 Ollama model (default: gemma4:31b)
+  --model <name>                 Pin Ollama model (default: ${getTaskModel('songs')},
+                                 eller en større som alt ligger i minnet)
   --force                        Re-process existing results
   --help                         Show this help`);
             process.exit(0);
@@ -462,6 +467,12 @@ async function main() {
     for (const song of songs) {
         const outFile = path.join(OUTPUT_DIR, `${song.id}.json`);
         try {
+            // Per sang, ikke én gang: en annen jobb kan starte underveis, og da
+            // følger vi etter i stedet for å kaste modellen dens ut av minnet.
+            // output.model under leser samme variabel, så det som lagres er det
+            // som faktisk kjørte.
+            ollamaModel = await resolveLocalModel('songs', {model: pinnedModel});
+
             // Step 1: identify references
             process.stdout.write(`${song.id}: "${song.title}" ... `);
             const step1 = await step1_identifyReferences(song);

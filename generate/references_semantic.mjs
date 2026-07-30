@@ -162,6 +162,7 @@ Returner 4 søkespørsmål som dekker forskjellige fasetter — ikke parafraser,
     const result = await callWithRetry(prompt, {
         schema: CONCEPTS_SCHEMA,
         local: true,
+        task: 'references',
         context: `concepts ${verse.bookId}:${verse.chapterId}:${verse.verseId}`
     });
     return result.queries || [];
@@ -174,6 +175,7 @@ VERS: ${verse.text}`;
     const result = await callWithRetry(prompt, {
         schema: THEME_SCHEMA,
         local: true,
+        task: 'references',
         context: `theme ${verse.bookId}:${verse.chapterId}:${verse.verseId}`
     });
     return result.theme;
@@ -256,6 +258,7 @@ async function verifyVerse(verse, state, options) {
         result = await callWithRetry(prompt, {
             schema: VERIFY_SCHEMA,
             local: true,
+            task: 'references',
             context: `verify ${verse.bookId}:${verse.chapterId}:${verse.verseId}`
         });
     } catch (err) {

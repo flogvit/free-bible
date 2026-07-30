@@ -1,7 +1,87 @@
 import Anthropic from '@anthropic-ai/sdk';
-import {anthropicModel, maxTokens, ollamaModel, ollamaBaseUrl, getOllamaConfig} from "./constants.js";
+import {anthropicModel, maxTokens, ollamaBaseUrl, getOllamaConfig, getTaskModel, localModelRank} from "./constants.js";
 
 const MAX_RETRIES = 3;
+
+// ── Modellvalg: to jobber skal ikke kaste hverandres modell ut av minnet ─────────
+//
+// Ollama holder én runner. Kjører translate (qwen3.5:122b, 81 GB) samtidig som
+// f.eks. important_words (qwen3.5:27b, 17 GB), går de ikke inn ved siden av
+// hverandre på 128 GB, og Ollama laster modellen om for HVERT kall. Målt
+// 2026-07-30 i ~/.ollama/logs/server.log: 17–19 s for å starte 122b-runneren,
+// ~6 s for 27b, og `task 0` hver gang — altså kald prompt-cache også. Det var
+// det som gjorde translate til 179 s per fil.
+//
+// Derfor: spør Ollama hva som allerede ligger i minnet, og bruk den hvis den er
+// minst like stor som den tasken foretrekker. Da havner begge jobbene på samme
+// runner og forespørslene køes i stedet for å bytte modell.
+//
+// Regelen kan bare oppgradere, aldri nedgradere. Det er poenget med å sammenlikne
+// mot rangeringen framfor bare å ta det som ligger der: en tag-jobb som startet
+// først skal ikke kunne dra translate ned på 27b.
+//
+// OLLAMA_MODEL pinner modellen og slår av adopsjon. OLLAMA_NO_ADOPT=1 slår av
+// bare adopsjonen.
+
+// Kort nok til å oppdage at en annen jobb har startet, lang nok til at en serie
+// kall ikke spør for hvert vers. OLLAMA_PS_CACHE_MS=0 slår cachen av.
+const PS_CACHE_MS = Number(process.env.OLLAMA_PS_CACHE_MS ?? 10000);
+let psCache = {at: 0, models: []};
+let announcedAdoption = null;
+
+/** Modellene Ollama har lastet nå. Cachet kort, siden hvert kall spør. */
+async function residentModels() {
+    const now = Date.now();
+    if (now - psCache.at < PS_CACHE_MS) return psCache.models;
+    let models = [];
+    try {
+        const response = await fetch(`${ollamaBaseUrl}/api/ps`, {signal: AbortSignal.timeout(5000)});
+        const data = await response.json();
+        models = (data.models || []).map(entry => entry.model).filter(Boolean);
+    } catch {
+        // Ollama nede eller treg: fall tilbake på tasken sin egen modell. Selve
+        // generate-kallet gir en tydeligere feilmelding enn vi kan gi herfra.
+    }
+    psCache = {at: now, models};
+    return models;
+}
+
+/**
+ * Modellen et lokalt kall faktisk skal bruke.
+ *
+ * @param {string} [task] - Task-navn, se taskModels i constants.js. Uten task blir
+ *                          det ollamaModel, som før.
+ * @param {object} [options]
+ * @param {string} [options.model] - Eksplisitt modell. Pinnes: ingen adopsjon.
+ * @param {boolean} [options.needsSchema] - Kallet ber om strukturert output, så en
+ *                          modell med jsonFormat:false kan ikke adopteres.
+ * @returns {Promise<string>}
+ */
+export async function resolveLocalModel(task, {model, needsSchema = false} = {}) {
+    if (model) return model;
+
+    const preferred = getTaskModel(task);
+    if (process.env.OLLAMA_MODEL || process.env.OLLAMA_NO_ADOPT) return preferred;
+
+    const preferredRank = localModelRank(preferred);
+    if (preferredRank === null) return preferred;
+
+    let best = preferred;
+    let bestRank = preferredRank;
+    for (const resident of await residentModels()) {
+        const rank = localModelRank(resident);
+        if (rank === null || rank < bestRank) continue;
+        if (needsSchema && !getOllamaConfig(resident).jsonFormat) continue;
+        best = resident;
+        bestRank = rank;
+    }
+
+    if (best !== preferred && announcedAdoption !== best) {
+        console.log(`  bruker ${best} — den ligger allerede i minnet (foretrukket: ${preferred})`);
+        announcedAdoption = best;
+    }
+    return best;
+}
 
 let anthropic = null;
 
@@ -28,8 +108,8 @@ async function callAnthropic(content, schema) {
     return completion.content[0].text;
 }
 
-async function callOllama(content, schema, {think = false, ollamaOptions = {}, model} = {}) {
-    const activeModel = model || ollamaModel;
+async function callOllama(content, schema, {think = false, ollamaOptions = {}, model, task} = {}) {
+    const activeModel = await resolveLocalModel(task, {model, needsSchema: Boolean(schema)});
     const config = getOllamaConfig(activeModel);
     const body = {
         model: activeModel,
@@ -69,12 +149,13 @@ async function callOllama(content, schema, {think = false, ollamaOptions = {}, m
  * @param {object} [options]
  * @param {object} [options.schema] - JSON schema for structured output
  * @param {boolean} [options.local] - Use Ollama instead of Anthropic
- * @param {string} [options.model] - Override the local model (see getTaskModel in constants.js)
+ * @param {string} [options.task] - Task name for local model choice (see taskModels)
+ * @param {string} [options.model] - Pin the local model, skipping adoption
  * @returns {string} Raw text response
  */
-export async function call(content, {schema, local, think, ollamaOptions, model} = {}) {
+export async function call(content, {schema, local, think, ollamaOptions, model, task} = {}) {
     if (local) {
-        return callOllama(content, schema, {think, ollamaOptions, model});
+        return callOllama(content, schema, {think, ollamaOptions, model, task});
     }
     return callAnthropic(content, schema);
 }
@@ -85,15 +166,17 @@ export async function call(content, {schema, local, think, ollamaOptions, model}
  * @param {object} [options]
  * @param {object} [options.schema] - JSON schema for structured output
  * @param {boolean} [options.local] - Use Ollama instead of Anthropic
+ * @param {string} [options.task] - Task name for local model choice (see taskModels)
+ * @param {string} [options.model] - Pin the local model, skipping adoption
  * @param {string} [options.context] - Context string for error messages
  * @returns {object|string} Parsed JSON if schema, raw text otherwise
  */
-export async function callWithRetry(content, {schema, local, think, ollamaOptions, model, context = ''} = {}) {
+export async function callWithRetry(content, {schema, local, think, ollamaOptions, model, task, context = ''} = {}) {
     let lastError;
 
     for (let attempt = 1; attempt <= MAX_RETRIES; attempt++) {
         try {
-            const text = await call(content, {schema, local, think, ollamaOptions, model});
+            const text = await call(content, {schema, local, think, ollamaOptions, model, task});
             return schema ? JSON.parse(text) : text;
         } catch (error) {
             lastError = error;
@@ -191,10 +274,11 @@ export async function embedTexts(texts, model) {
  * Call Ollama directly for lightweight tasks (number extraction, classification).
  * Always uses local model, no retries, no schema parsing.
  */
-export async function callOllamaRaw(prompt, {numPredict = 50} = {}) {
-    const config = getOllamaConfig(ollamaModel);
+export async function callOllamaRaw(prompt, {numPredict = 50, model, task} = {}) {
+    const activeModel = await resolveLocalModel(task, {model});
+    const config = getOllamaConfig(activeModel);
     const body = {
-        model: ollamaModel,
+        model: activeModel,
         prompt: config.noThinkPrefix + prompt,
         stream: false,
         options: {...config.options, num_predict: numPredict}
