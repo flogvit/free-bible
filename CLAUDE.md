@@ -153,6 +153,12 @@ time, because two models resident at once takes throughput from 3.5 s/verse to 1
 
 ## Scripts: live, one-off, and dead
 
+**`docs/lokale-jobber.md` is the inventory of local-LLM work** — every job, which script
+runs it, which model, how much remains (measured, not estimated), and whether it fits the
+64 GB machine or needs the 128 GB one at night. Read it before planning or estimating any
+local run, and re-measure with the commands at the bottom rather than trusting the numbers.
+
+
 Live and used regularly: `bible.mjs`, `translate.mjs`, `references.mjs`,
 `references_semantic.mjs`, `chapter_tags.mjs`, `bible_persons.mjs`, `translations_index.mjs`
 (regenerate after any `meta.json`/`license.json` change), `glossary.mjs`, `triage.mjs`.
@@ -170,8 +176,11 @@ Known stale, do not trust without reading:
 
 Local models: `constants.js` → `taskModels` sets a **preferred** model per task;
 `OLLAMA_MODEL` pins it. Small models handle per-verse yes/no work so the machine stays
-usable; the large one is for overnight jobs. `gemma*` is unusable for anything needing
-structured output (`jsonFormat: false`).
+usable; the large one is for overnight jobs. `gemma*` is held back from **open** schemas
+only — unbounded arrays, free-text fields (`openSchema: false`). It handles closed ones
+fine: measured 64/64 valid answers on the four-value enum in `verify-text.ts`, catching
+more than it did without the schema. `isClosedSchema` in `llm.js` draws the line, and
+`node --test generate/*.test.mjs` covers it.
 
 **Two jobs must never want different models at once.** Ollama keeps one runner, and
 qwen3.5:122b (81 GB) plus qwen3.5:27b (17 GB) do not fit side by side on 128 GB — so it

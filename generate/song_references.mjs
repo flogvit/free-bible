@@ -144,7 +144,7 @@ async function callOllama(prompt, retries = 2) {
         stream: false,
         options: { ...config.options, num_predict: 8192 },
     };
-    if (config.jsonFormat) body.format = 'json';
+    if (config.openSchema) body.format = 'json';
     if (config.thinkParam) body.think = false;
 
     for (let attempt = 0; attempt <= retries; attempt++) {

@@ -42,8 +42,8 @@ export const ollamaBaseUrl = process.env.OLLAMA_BASE_URL || "http://localhost:11
 // modell som allerede ligger i minnet i stedet, framfor å kaste den ut. Se
 // kommentaren der for hvorfor.
 //
-// Note: gemma4:31b is deliberately not used for anything needing structured output —
-// see ollamaModelConfig, it degrades badly with format:"json".
+// Note: gemma4:31b is held back only from OPEN schemas — see `openSchema` in
+// ollamaModelConfig. It handles closed ones (enums, fixed objects) fine.
 export const taskModels = {
     triage: "qwen3.5:27b",
     // Kapitteltagging har i praksis kjørt på 122b hele tiden — chapter_tags.mjs
@@ -93,37 +93,50 @@ export function localModelRank(model) {
     return index === -1 ? null : index;
 }
 
-// Model-specific configuration
+// Model-specific configuration.
+//
+// `openSchema` says whether the model can be trusted with an OPEN schema under
+// forced decoding — one with unbounded arrays or free-text string fields. It is
+// not a claim that the model cannot emit JSON.
+//
+// gemma4:31b is the only false. The flag came in 2026-04-14 from one observation
+// on REFERENCE_PROOFREAD_SCHEMA (an unbounded array of objects with free-text
+// fields), where gemma4 degraded — and was then generalised to all structured
+// output. The generalisation is wrong: measured 2026-07-29 on the closed
+// four-value enum in `kvn/scripts/verify-text.ts`, gemma4 returned 64/64 valid
+// answers and caught MORE boundary errors with the schema than without
+// (37/39 vs 33/39, at 3/25 false alarms). The line runs between open and closed
+// generation, not between models.
 export const ollamaModelConfig = {
   'gemma4:31b': {
     options: { temperature: 1.0, top_p: 0.95, top_k: 64 },
     noThinkPrefix: '<|think|>\n',  // prepend to prompt to disable thinking
     thinkParam: false,              // don't use think: false in API
-    jsonFormat: false,              // gemma4 degrades badly with format:"json"
+    openSchema: false,              // degrades on unbounded arrays / free text
   },
   'qwen3.5:122b': {
     options: { temperature: 0 },
     noThinkPrefix: '/no_think\n',
     thinkParam: true,               // uses think: false in API
-    jsonFormat: true,
+    openSchema: true,
   },
   'qwen3.5:27b': {
     options: { temperature: 0 },
     noThinkPrefix: '/no_think\n',
     thinkParam: true,
-    jsonFormat: true,
+    openSchema: true,
   },
   'qwen3.5:9b': {
     options: { temperature: 0 },
     noThinkPrefix: '/no_think\n',
     thinkParam: true,
-    jsonFormat: true,
+    openSchema: true,
   },
   'gpt-oss:120b': {
     options: { temperature: 0.1 },
     noThinkPrefix: '',
     thinkParam: false,
-    jsonFormat: true,
+    openSchema: true,
   },
 };
 
@@ -131,9 +144,9 @@ export const ollamaModelConfig = {
 // nyhentet qwen til fallback-configen, som verken sender think:false eller /no_think —
 // og da bruker den hele output-budsjettet på resonnering og blir kuttet.
 const ollamaFamilyConfig = [
-  [/^qwen/, { options: { temperature: 0 }, noThinkPrefix: '/no_think\n', thinkParam: true, jsonFormat: true }],
-  [/^gemma/, { options: { temperature: 1.0, top_p: 0.95, top_k: 64 }, noThinkPrefix: '<|think|>\n', thinkParam: false, jsonFormat: false }],
-  [/^gpt-oss/, { options: { temperature: 0.1 }, noThinkPrefix: '', thinkParam: false, jsonFormat: true }],
+  [/^qwen/, { options: { temperature: 0 }, noThinkPrefix: '/no_think\n', thinkParam: true, openSchema: true }],
+  [/^gemma/, { options: { temperature: 1.0, top_p: 0.95, top_k: 64 }, noThinkPrefix: '<|think|>\n', thinkParam: false, openSchema: false }],
+  [/^gpt-oss/, { options: { temperature: 0.1 }, noThinkPrefix: '', thinkParam: false, openSchema: true }],
 ];
 
 export function getOllamaConfig(model) {
@@ -147,7 +160,7 @@ export function getOllamaConfig(model) {
     options: { temperature: 0 },
     noThinkPrefix: '',
     thinkParam: false,
-    jsonFormat: true,
+    openSchema: true,
   };
 }
 

@@ -305,7 +305,7 @@ async function triageChapter(bible, bookId, chapterId, options) {
         if (verse.text && verse.text.trim()) {
             try {
                 const prompt = buildPrompt(language, original.text, verse, peerText, referenceText, options.referenceLanguage);
-                usedModel = await resolveLocalModel('triage', {model: options.model, needsSchema: true});
+                usedModel = await resolveLocalModel('triage', {model: options.model, schema: TRIAGE_SCHEMA});
                 const result = await callWithRetry(prompt, {
                     schema: TRIAGE_SCHEMA,
                     local: true,

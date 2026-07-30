@@ -47,17 +47,65 @@ async function residentModels() {
 }
 
 /**
+ * Er skjemaet LUKKET — altså er hvert felt begrenset til et lite, oppregnet rom?
+ *
+ * Dette er skillet som avgjør om en modell uten `openSchema` kan brukes. Et
+ * lukket skjema lar tvungen dekoding gjøre jobben: modellen velger mellom fire
+ * enum-verdier, den skriver ikke fritt. Et åpent skjema — ubegrensede arrays,
+ * fritekstfelter — krever at modellen selv holder styr på strukturen mens den
+ * genererer innhold, og det er dét gemma4 ble målt til å degradere på.
+ *
+ * `verdict: enum[4]` er lukket. `issues: array<{explanation: string}>` er åpent.
+ * Er skjemaet ukjent i formen, regnes det som åpent.
+ */
+export function isClosedSchema(schema) {
+    if (!schema || typeof schema !== 'object') return false;
+
+    // enum/const binder verdien uansett hvilken type som står oppgitt
+    if (Array.isArray(schema.enum) || 'const' in schema) return true;
+
+    for (const branch of ['anyOf', 'oneOf', 'allOf']) {
+        if (Array.isArray(schema[branch])) return schema[branch].every(isClosedSchema);
+    }
+
+    switch (schema.type) {
+        case 'boolean':
+        case 'integer':
+        case 'number':
+        case 'null':
+            return true;
+        case 'string':
+            return false;                     // fritekst med mindre enum/const fanget den over
+        case 'array':
+            return Number.isFinite(schema.maxItems) && isClosedSchema(schema.items);
+        case 'object': {
+            if (schema.additionalProperties === true) return false;
+            const properties = Object.values(schema.properties || {});
+            if (!properties.length) return false;
+            return properties.every(isClosedSchema)
+                && (schema.additionalProperties === undefined
+                    || schema.additionalProperties === false
+                    || isClosedSchema(schema.additionalProperties));
+        }
+        default:
+            return false;
+    }
+}
+
+/**
  * Modellen et lokalt kall faktisk skal bruke.
  *
  * @param {string} [task] - Task-navn, se taskModels i constants.js. Uten task blir
  *                          det ollamaModel, som før.
  * @param {object} [options]
  * @param {string} [options.model] - Eksplisitt modell. Pinnes: ingen adopsjon.
- * @param {boolean} [options.needsSchema] - Kallet ber om strukturert output, så en
- *                          modell med jsonFormat:false kan ikke adopteres.
+ * @param {object} [options.schema] - Skjemaet kallet skal dekode mot. Er det ÅPENT,
+ *                          kan en modell med openSchema:false ikke adopteres.
+ * @param {boolean} [options.needsSchema] - Eldre form: «kallet bruker et skjema, jeg
+ *                          vet ikke hvilket». Behandles som et åpent skjema.
  * @returns {Promise<string>}
  */
-export async function resolveLocalModel(task, {model, needsSchema = false} = {}) {
+export async function resolveLocalModel(task, {model, schema, needsSchema = false} = {}) {
     if (model) return model;
 
     const preferred = getTaskModel(task);
@@ -66,12 +114,15 @@ export async function resolveLocalModel(task, {model, needsSchema = false} = {})
     const preferredRank = localModelRank(preferred);
     if (preferredRank === null) return preferred;
 
+    // Et lukket skjema stenger ingen ute. Bare åpen generering gjør det.
+    const openGeneration = schema ? !isClosedSchema(schema) : Boolean(needsSchema);
+
     let best = preferred;
     let bestRank = preferredRank;
     for (const resident of await residentModels()) {
         const rank = localModelRank(resident);
         if (rank === null || rank < bestRank) continue;
-        if (needsSchema && !getOllamaConfig(resident).jsonFormat) continue;
+        if (openGeneration && !getOllamaConfig(resident).openSchema) continue;
         best = resident;
         bestRank = rank;
     }
@@ -109,7 +160,7 @@ async function callAnthropic(content, schema) {
 }
 
 async function callOllama(content, schema, {think = false, ollamaOptions = {}, model, task} = {}) {
-    const activeModel = await resolveLocalModel(task, {model, needsSchema: Boolean(schema)});
+    const activeModel = await resolveLocalModel(task, {model, schema});
     const config = getOllamaConfig(activeModel);
     const body = {
         model: activeModel,
