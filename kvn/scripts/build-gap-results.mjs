@@ -9,7 +9,7 @@
  *    or manual review — left untouched here.
  *
  * Writes a result file for each pure-gap chapter into
- * kvn/data/mapping-results/<module>/<book>-<chapter>.json so that
+ * kvn/data/mapping-results/<translation>/<book>-<chapter>.json so that
  * generate-mapping.ts (resume) never sends them to Ollama. Reports the
  * remaining "real" chapters per translation.
  *
@@ -29,9 +29,9 @@ const verses = p => JSON.parse(fs.readFileSync(p, 'utf8')).map(v => v.verseId);
 
 const report = [];
 for (const r of inv) {
-  if (only && !only.includes(r.module)) continue;
-  const dir = join(base, r.module);
-  const outDir = join(resultsBase, r.module);
+  if (only && !only.includes(r.translation)) continue;
+  const dir = join(base, r.translation);
+  const outDir = join(resultsBase, r.translation);
   fs.mkdirSync(outDir, { recursive: true });
   let gaps = 0; const real = [];
   for (const b of fs.readdirSync(dir).filter(f => /^[0-9]+$/.test(f))) {
@@ -51,13 +51,13 @@ for (const r of inv) {
       } else real.push(`${b}:${c}`);
     }
   }
-  report.push({ module: r.module, gaps, real: real.length, realChapters: real });
+  report.push({ translation: r.translation, gaps, real: real.length, realChapters: real });
 }
 const noReal = report.filter(r => r.real === 0);
 console.log(`Processed ${report.length} translations.`);
 console.log(`Gap result files written. ${noReal.length} translations have NO real-renumbering chapters (buildable GPU-free now):`);
-console.log('  ' + noReal.map(r => r.module).join(', '));
+console.log('  ' + noReal.map(r => r.translation).join(', '));
 console.log('\nTranslations with real chapters remaining (need LLM/manual):');
 for (const r of report.filter(r => r.real > 0).sort((a, b) => a.real - b.real))
-  console.log(`  ${r.module}: ${r.real} — ${r.realChapters.slice(0, 8).join(', ')}${r.real > 8 ? ' …' : ''}`);
+  console.log(`  ${r.translation}: ${r.real} — ${r.realChapters.slice(0, 8).join(', ')}${r.real > 8 ? ' …' : ''}`);
 fs.writeFileSync(join(REPO, 'kvn/data/gap-classification.json'), JSON.stringify(report, null, 1) + '\n');

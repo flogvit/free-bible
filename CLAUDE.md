@@ -25,7 +25,7 @@ Consequences that are easy to get wrong:
 
 ## Translations
 
-| module | language | style | notes |
+| translation | language | style | notes |
 |---|---|---|---|
 | `osnb` | Norwegian bokmål | oral | |
 | `osnn` | Norwegian nynorsk | oral | |
@@ -35,9 +35,9 @@ Naming: the base form is the language code. Variants take a suffix (`osnb-child`
 running number — `osnb2`/`osnn1`/`osnb1` were renamed away 2026-07-26 and osnb1 deleted.
 
 Norwegian publisher prefixes: `nb` is **Norsk Bibel** (nb88_nb, nb94_nn); Bibelselskapet
-is `dnb` (dnb30, dnb2011_nb, dnb1978_nb, dnb2024_nb, dnb2024_nn). Module and KVN-mapping
-names are written out in full with language suffix — `kvn/mappings/<module>.ukvn.json`
-matches the module name exactly; old short names (`dnb2024`, `nb1978`) resolve via
+is `dnb` (dnb30, dnb2011_nb, dnb1978_nb, dnb2024_nb, dnb2024_nn). Translation and KVN-mapping
+names are written out in full with language suffix — `kvn/mappings/<translation>.ukvn.json`
+matches the translation name exactly; old short names (`dnb2024`, `nb1978`) resolve via
 `LEGACY_ALIASES` in `kvn/src/ukvn-types.ts`.
 
 Style lives in `constants.js` → `bibleStyles`, not in a CLI default. A forgotten `--style`
@@ -50,11 +50,13 @@ verses), not the common European numbering. Their KVN mappings are therefore ide
 ## Data layout
 
 ```
-generate/bibles_raw/<module>/<book>/<chapter>.json   verses, 1..66 / 1..n
-generate/bibles_raw/<module>/meta.json               editorial metadata
-generate/bibles_raw/<module>/license.json            licence — required, or the module is
-                                                     silently left out of translations/index.json
-kvn/mappings/<module>.ukvn.json                      canonical numbering ↔ this module
+generate/bibles_raw/<translation>/<book>/<chapter>.json   verses, 1..66 / 1..n
+generate/bibles_raw/<translation>/meta.json               editorial metadata
+generate/bibles_raw/<translation>/license.json            licence — required, or the
+                                                          translation is silently left out
+                                                          of translations/index.json
+kvn/mappings/<translation>.ukvn.json                      canonical numbering ↔ this
+                                                          translation
 ```
 
 A verse:

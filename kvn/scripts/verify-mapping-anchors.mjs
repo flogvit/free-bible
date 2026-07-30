@@ -12,7 +12,7 @@
  * mapped to a far-away osmain verse. (Works for Latin-script translations;
  * Hebrew/other scripts share fewer anchors so fewer verses are checkable.)
  *
- * Usage: node scripts/verify-mapping-anchors.mjs <module>
+ * Usage: node scripts/verify-mapping-anchors.mjs <translation>
  */
 import fs from 'fs';
 import { join, dirname } from 'path';
@@ -20,7 +20,7 @@ import { fileURLToPath } from 'url';
 const __dirname = dirname(fileURLToPath(import.meta.url));
 const REPO = join(__dirname, '../..');
 const mod = process.argv[2];
-if (!mod) { console.error('usage: verify-mapping-anchors.mjs <module>'); process.exit(1); }
+if (!mod) { console.error('usage: verify-mapping-anchors.mjs <translation>'); process.exit(1); }
 
 const strip = s => s.normalize('NFD').replace(/[̀-ͯ]/g, '');
 const anchors = text => {

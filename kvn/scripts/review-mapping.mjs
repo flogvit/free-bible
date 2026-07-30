@@ -4,7 +4,7 @@
  * osmain text, translation text, and the proposed mapping from its result file,
  * so a human can verify the alignment is correct.
  *
- * Usage: node scripts/review-mapping.mjs <module> [chapter]
+ * Usage: node scripts/review-mapping.mjs <translation> [chapter]
  */
 import fs from 'fs';
 import { join, dirname } from 'path';
@@ -12,7 +12,7 @@ import { fileURLToPath } from 'url';
 const __dirname = dirname(fileURLToPath(import.meta.url));
 const REPO = join(__dirname, '../..');
 const [mod, chapterFilter] = process.argv.slice(2);
-if (!mod) { console.error('usage: review-mapping.mjs <module> [book:chapter]'); process.exit(1); }
+if (!mod) { console.error('usage: review-mapping.mjs <translation> [book:chapter]'); process.exit(1); }
 
 const resultsDir = join(REPO, 'kvn/data/mapping-results', mod);
 const verses = (m, b, c) => JSON.parse(fs.readFileSync(join(REPO, 'generate/bibles_raw', m, b, `${c}.json`), 'utf8'));

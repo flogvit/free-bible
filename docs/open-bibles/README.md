@@ -30,7 +30,7 @@ flag is unreliable (e.g. the NET Bible has `copyright=0` but reads "© … used 
   `ur_geo`, `wo_kyg`, `wo_wol_nt_2010`).
 - **14 excluded** — confirmed copyrighted / permission-only (NET Bible, NVI, several national
   Bible-society editions).
-- **1041 unmatched** — the bulk of the downloaded collection. Their descriptive module names
+- **1041 unmatched** — the bulk of the downloaded collection. Their descriptive translation names
   (`afrikaans1983`, `spanish_nvi`, `amharic_dawro_dfblvl`) don't match catalog codes, so their
   license is unverified. At least 289 are clearly modern (year ≥ 1950) and copyright-risky.
   **None may be published until individually verified** — tracked as a separate license-audit task.
@@ -39,7 +39,7 @@ flag is unreliable (e.g. the NET Bible has `copyright=0` but reads "© … used 
 
 | Column | Meaning |
 |--------|---------|
-| `module` | local module id (matches `generate/bibles_raw/<module>/`) |
+| `translation` | local translation id (matches `generate/bibles_raw/<translation>/`) |
 | `name`, `language` | translation title and language |
 | `license` | Public Domain / CC BY / CC BY-SA |
 | `attribution` | whether attribution is required (all CC) |

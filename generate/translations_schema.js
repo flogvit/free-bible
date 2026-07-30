@@ -2,8 +2,9 @@
  * Schema and controlled vocabularies for translation metadata (meta.json).
  *
  * Design rules:
- * - Every field except `module` is optional. An omitted field means "unknown",
- *   never "does not apply" and never a guess.
+ * - Every field is optional. An omitted field means "unknown", never "does not
+ *   apply" and never a guess. The translation's id is its directory name, not a
+ *   field — a field could disagree with the directory, and nothing would notice.
  * - Values that a website needs to display are codes, not prose, so the site
  *   localises the labels itself. Only `legacy[].text` and a few proper nouns
  *   are free text.
@@ -142,10 +143,10 @@ export const META_SCHEMA = {
             type: 'object',
             additionalProperties: false,
             properties: {
-                module: { type: 'string' },
+                translation: { type: 'string' },
                 relation: enumOf(RELATION)
             },
-            required: ['module', 'relation']
+            required: ['translation', 'relation']
         },
 
         work: {
@@ -246,8 +247,6 @@ export function validateMeta(meta) {
     const problems = [];
     const check = (ok, message) => { if (!ok) problems.push(message); };
 
-    check(typeof meta.module === 'string' && meta.module.length > 0, 'module is required');
-
     check(inEnum(meta.philosophy, PHILOSOPHY), `philosophy: unknown value "${meta.philosophy}"`);
     check(inEnum(meta.tradition, TRADITION), `tradition: unknown value "${meta.tradition}"`);
     check(inEnum(meta.language?.direction, SCRIPT_DIRECTION),
@@ -305,15 +304,15 @@ export function validateMeta(meta) {
         check(inEnum(testament, TESTAMENT), `coverage.testament: unknown value "${testament}"`);
 
         if (testament === 'ot' && meta.textual_basis?.nt) {
-            problems.push('textual_basis.nt claimed, but the module has no New Testament books');
+            problems.push('textual_basis.nt claimed, but the translation has no New Testament books');
         }
         if (testament === 'nt' && meta.textual_basis?.ot) {
-            problems.push('textual_basis.ot claimed, but the module has no Old Testament books');
+            problems.push('textual_basis.ot claimed, but the translation has no Old Testament books');
         }
         const editionLabels = (meta.editions ?? []).map(edition => edition.label);
         if (testament === 'both' && editionLabels.length && !editionLabels.includes('complete_bible')
             && editionLabels.every(label => label === 'new_testament')) {
-            problems.push('only a new_testament edition is listed, but the module has both testaments');
+            problems.push('only a new_testament edition is listed, but the translation has both testaments');
         }
     }
 

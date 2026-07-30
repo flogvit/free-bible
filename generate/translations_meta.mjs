@@ -1,10 +1,10 @@
 /**
- * Generate bibles_raw/<module>/meta.json — publishable metadata about each
+ * Generate bibles_raw/<translation>/meta.json — publishable metadata about each
  * translation (who, when, where, how it was made).
  *
  * Three sources of truth, in descending order of trust:
  *   1. computed  — coverage and features, read straight off the bible data
- *   2. manual    — translations_seed.json, for modules this repo produces itself
+ *   2. manual    — translations_seed.json, for translations this repo produces itself
  *   3. llm+web   — pass 1 fills what the model knows and flags what it is unsure
  *                  of; pass 2 web-searches only the flagged fields and keeps
  *                  what a retrieved page actually supports
@@ -12,8 +12,8 @@
  * An omitted field means unknown. Nothing is ever guessed into place.
  * license.json is read but never written — licence data stays where it is.
  *
- *   node translations_meta.mjs                     # all modules missing meta.json
- *   node translations_meta.mjs --only kjv,geneva   # named modules
+ *   node translations_meta.mjs                     # all translations missing meta.json
+ *   node translations_meta.mjs --only kjv,geneva   # named translations
  *   node translations_meta.mjs --force             # regenerate existing
  *   node translations_meta.mjs --recount           # refresh coverage only, no LLM
  *   node translations_meta.mjs --no-web            # pass 1 only (cheap dry run)
@@ -43,7 +43,7 @@ const NT_LAST = 66;
 
 // ---------------------------------------------------------------- computed ---
 
-export function listModules() {
+export function listTranslations() {
     return fs.readdirSync(RAW_DIR, {withFileTypes: true})
         .filter(entry => entry.isDirectory())
         .map(entry => entry.name)
@@ -58,12 +58,12 @@ function numericEntries(dir) {
 }
 
 /**
- * Read the whole module once: book/chapter/verse counts plus feature detection.
+ * Read the whole translation once: book/chapter/verse counts plus feature detection.
  * Pure file IO — no LLM involved, so these numbers are always trustworthy.
  */
-export function computeCoverage(module) {
-    const moduleDir = path.join(RAW_DIR, module);
-    const bookIds = numericEntries(moduleDir);
+export function computeCoverage(translation) {
+    const translationDir = path.join(RAW_DIR, translation);
+    const bookIds = numericEntries(translationDir);
 
     let chapters = 0;
     let verses = 0;
@@ -71,7 +71,7 @@ export function computeCoverage(module) {
     let altVersions = false;
 
     for (const bookId of bookIds) {
-        const bookDir = path.join(moduleDir, `${bookId}`);
+        const bookDir = path.join(translationDir, `${bookId}`);
         const chapterFiles = fs.readdirSync(bookDir).filter(name => name.endsWith('.json'));
         chapters += chapterFiles.length;
 
@@ -139,20 +139,20 @@ const RULES = `Rules:
   (hbo = biblical Hebrew, arc = Aramaic, grc = Koine Greek, lat = Latin).
   Set work.pivot_from only when the work was made from another translation
   rather than from the original languages.
-- derived_from.module must be one of the module ids listed under Sibling modules.
+- derived_from.translation must be one of the translation ids listed under Sibling translations.
 - legacy[].text is exactly one factual sentence, in Norwegian bokmål.
 - editions[] is the revision history, one entry per published edition.`;
 
-function pass1Prompt(module, license, computed, siblings) {
+function pass1Prompt(translation, license, computed, siblings) {
     return `You are cataloguing a Bible translation for a public reference website.
 
-Module id: ${module}
+Translation id: ${translation}
 ${license ? `Known from the licence catalogue:
   name: ${license.name}
   language: ${license.language}
   licence: ${license.license}
   statement: ${license.statement}
-  catalogue: ${license.source}` : 'No licence record exists for this module.'}
+  catalogue: ${license.source}` : 'No licence record exists for this translation.'}
 
 Measured from the actual text files (do not contradict these):
   testament: ${computed.coverage.testament}
@@ -160,7 +160,7 @@ Measured from the actual text files (do not contradict these):
   deuterocanonical books present: ${computed.coverage.deuterocanonical}
   Strong's numbers in the text: ${computed.features.strongs}
 
-Sibling modules in this collection (for derived_from / work.pivot_from):
+Sibling translations in this collection (for derived_from / work.pivot_from):
 ${siblings.join(', ')}
 
 Vocabulary:
@@ -176,12 +176,12 @@ ${KNOWLEDGE_FIELDS.join(', ')}
 For an obscure translation it is correct to return almost nothing. Do not pad.`;
 }
 
-function pass2SearchPrompt(module, license, draft) {
+function pass2SearchPrompt(translation, license, draft) {
     const uncertain = draft.uncertain?.length ? draft.uncertain.join(', ') : '(none flagged)';
     return `Verify facts about a Bible translation by searching the web.
 
-Module id: ${module}
-Name: ${draft.name?.native || license?.name || module}
+Translation id: ${translation}
+Name: ${draft.name?.native || license?.name || translation}
 Language: ${license?.language || draft.language?.iso639_3 || 'unknown'}
 
 A first pass filled this in from memory. Treat it as a hypothesis, not as fact:
@@ -200,8 +200,8 @@ Do not report a fact you did not find on a page you retrieved. "Not found" is a
 useful and expected answer.`;
 }
 
-function pass2MergePrompt(module, draft, findings, urls) {
-    return `Produce the final catalogue record for Bible translation "${module}".
+function pass2MergePrompt(translation, draft, findings, urls) {
+    return `Produce the final catalogue record for Bible translation "${translation}".
 
 Draft from memory:
 ${JSON.stringify(stripEmpty({...draft, uncertain: undefined}) ?? {}, null, 2)}
@@ -257,16 +257,16 @@ const today = () => new Date().toISOString().slice(0, 10);
 /** Keep only field paths the schema knows about, so provenance stays meaningful. */
 const knownPaths = (paths) => [...new Set((paths ?? []).filter(p => KNOWLEDGE_FIELDS.includes(p)))];
 
-function buildFromSeed(module, seed, computed, license) {
+function buildFromSeed(translation, seed, computed, license) {
     const {provenance, ...facts} = seed;
-    return assemble(module, facts, computed, license, {
+    return assemble(facts, computed, license, {
         ...provenance,
         verified: knownPaths(provenance?.verified),
         generated: today()
     });
 }
 
-function assemble(module, facts, computed, license, provenance) {
+function assemble(facts, computed, license, provenance) {
     // Only the fact blocks get emptied out — for those, absent means unknown.
     // coverage, features and provenance are always measured or always known, so
     // they are attached verbatim: an empty missing_books means "complete", not
@@ -277,8 +277,9 @@ function assemble(module, facts, computed, license, provenance) {
         name: stripEmpty({native: license?.name, ...facts.name})
     }) ?? {};
 
+    // No id field: the translation's id is its directory name. Writing it here
+    // too would let the two disagree, and nothing reads it.
     return {
-        module,
         ...cleanFacts,
         coverage: computed.coverage,
         features: computed.features,
@@ -291,16 +292,16 @@ function assemble(module, facts, computed, license, provenance) {
     };
 }
 
-async function generate(module, {useWeb, license, computed, siblings}) {
-    const draft = await callWithRetry(pass1Prompt(module, license, computed, siblings), {
+async function generate(translation, {useWeb, license, computed, siblings}) {
+    const draft = await callWithRetry(pass1Prompt(translation, license, computed, siblings), {
         schema: META_SCHEMA,
-        context: `${module} (pass 1)`
+        context: `${translation} (pass 1)`
     });
 
     const flagged = knownPaths(draft.uncertain);
     if (!useWeb || flagged.length === 0) {
         const {uncertain, ...facts} = draft;
-        return assemble(module, facts, computed, license, {
+        return assemble(facts, computed, license, {
             method: 'llm',
             verified: [],
             sources: [],
@@ -309,15 +310,15 @@ async function generate(module, {useWeb, license, computed, siblings}) {
     }
 
     console.log(`  web-verifying ${flagged.length} field(s): ${flagged.join(', ')}`);
-    const search = await callWithWebSearch(pass2SearchPrompt(module, license, draft), {
-        context: `${module} (pass 2 search)`
+    const search = await callWithWebSearch(pass2SearchPrompt(translation, license, draft), {
+        context: `${translation} (pass 2 search)`
     });
     const retrieved = [...new Set(search.sources.map(s => s.url))];
     console.log(`  retrieved ${retrieved.length} page(s)`);
 
     const merged = await callWithRetry(
-        pass2MergePrompt(module, draft, search.text, retrieved),
-        {schema: MERGE_SCHEMA, context: `${module} (pass 2 merge)`}
+        pass2MergePrompt(translation, draft, search.text, retrieved),
+        {schema: MERGE_SCHEMA, context: `${translation} (pass 2 merge)`}
     );
 
     const {verified, sources, ...facts} = merged;
@@ -329,7 +330,7 @@ async function generate(module, {useWeb, license, computed, siblings}) {
         .map(source => ({url: source.url, fields: knownPaths(source.fields)}));
 
     const supported = new Set(keptSources.flatMap(source => source.fields));
-    return assemble(module, facts, computed, license, {
+    return assemble(facts, computed, license, {
         method: 'llm+web',
         verified: knownPaths(verified).filter(field => supported.has(field)),
         sources: keptSources,
@@ -355,18 +356,18 @@ function parseArgs(argv) {
 async function main() {
     const args = parseArgs(process.argv.slice(2));
     const seeds = readJson(SEED_FILE) ?? {};
-    const allModules = listModules();
+    const allTranslations = listTranslations();
 
     if (args.only) {
-        const unknown = args.only.filter(m => !allModules.includes(m));
-        if (unknown.length) throw new Error(`No such module(s) in bibles_raw: ${unknown.join(', ')}`);
+        const unknown = args.only.filter(m => !allTranslations.includes(m));
+        if (unknown.length) throw new Error(`No such translation(s) in bibles_raw: ${unknown.join(', ')}`);
     }
-    const modules = args.only ?? allModules;
+    const translations = args.only ?? allTranslations;
 
     let written = 0, skipped = 0, failed = 0;
 
-    for (const module of modules) {
-        const metaFile = path.join(RAW_DIR, module, 'meta.json');
+    for (const translation of translations) {
+        const metaFile = path.join(RAW_DIR, translation, 'meta.json');
         const existing = readJson(metaFile);
 
         if (existing && !args.force && !args.recount) {
@@ -375,23 +376,23 @@ async function main() {
         }
 
         try {
-            const license = readJson(path.join(RAW_DIR, module, 'license.json'));
-            process.stdout.write(`${module}: counting... `);
-            const computed = computeCoverage(module);
+            const license = readJson(path.join(RAW_DIR, translation, 'license.json'));
+            process.stdout.write(`${translation}: counting... `);
+            const computed = computeCoverage(translation);
             console.log(`${computed.coverage.books} books, ${computed.coverage.verses} verses`);
 
             let meta;
             if (args.recount && existing) {
                 meta = {...existing, coverage: computed.coverage, features: computed.features};
-            } else if (seeds[module]) {
+            } else if (seeds[translation]) {
                 console.log('  seeded (manual facts from this repo)');
-                meta = buildFromSeed(module, seeds[module], computed, license);
+                meta = buildFromSeed(translation, seeds[translation], computed, license);
             } else {
-                meta = await generate(module, {
+                meta = await generate(translation, {
                     useWeb: args.useWeb,
                     license,
                     computed,
-                    siblings: allModules
+                    siblings: allTranslations
                 });
             }
 
@@ -407,7 +408,7 @@ async function main() {
             console.log(`  wrote meta.json (${meta.provenance?.method}, ${verified} verified field(s))`);
             written++;
         } catch (error) {
-            console.error(`${module}: FAILED — ${error.message}`);
+            console.error(`${translation}: FAILED — ${error.message}`);
             failed++;
         }
     }
@@ -416,7 +417,7 @@ async function main() {
     if (failed) process.exitCode = 1;
 }
 
-// Guarded so computeCoverage/listModules can be imported without running a build.
+// Guarded so computeCoverage/listTranslations can be imported without running a build.
 if (process.argv[1] && path.resolve(process.argv[1]) === fileURLToPath(import.meta.url)) {
     main();
 }

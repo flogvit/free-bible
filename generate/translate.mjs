@@ -73,18 +73,18 @@ function translationExamples(langCode) {
     return BIBLE_TRANSLATION_EXAMPLES[langCode] || 'ESV, NIV, KJV';
 }
 
-// Project Bible module per language code (en → osen, es → oses, ...), derived
-// from constants so a new module is picked up without touching this file
-const BIBLE_MODULES = Object.fromEntries(
-    Object.entries(bibles).map(([module, language]) => [getLanguageCode(language), module])
+// Project Bible translation per language code (en → osen, es → oses, ...), derived
+// from constants so a new translation is picked up without touching this file
+const BIBLE_TRANSLATIONS = Object.fromEntries(
+    Object.entries(bibles).map(([translation, language]) => [getLanguageCode(language), translation])
 );
 
 const bibleChapterCache = new Map();
 
-function loadBibleChapter(module, bookId, chapterId) {
-    const key = `${module}/${bookId}/${chapterId}`;
+function loadBibleChapter(translation, bookId, chapterId) {
+    const key = `${translation}/${bookId}/${chapterId}`;
     if (!bibleChapterCache.has(key)) {
-        const chapterPath = path.join(__dirname, 'bibles_raw', module, String(bookId), `${chapterId}.json`);
+        const chapterPath = path.join(__dirname, 'bibles_raw', translation, String(bookId), `${chapterId}.json`);
         bibleChapterCache.set(key, fs.existsSync(chapterPath) ? JSON.parse(fs.readFileSync(chapterPath, 'utf-8')) : null);
     }
     return bibleChapterCache.get(key);
@@ -120,8 +120,8 @@ let quoteContext = null;
 // filename (markdown/txt); book-level files are skipped - a whole book does
 // not fit in the prompt.
 function buildQuoteContext(item, langCode, language) {
-    const module = BIBLE_MODULES[langCode];
-    if (!module || !item.sourceText.includes('«')) return null;
+    const translation = BIBLE_TRANSLATIONS[langCode];
+    if (!translation || !item.sourceText.includes('«')) return null;
 
     let refs;
     if (item.config.ext === '.json') {
@@ -138,7 +138,7 @@ function buildQuoteContext(item, langCode, language) {
     for (const ref of refs) {
         const endChapter = ref.endChapter ?? ref.startChapter;
         for (let ch = ref.startChapter; ch <= endChapter; ch++) {
-            const verses = loadBibleChapter(module, ref.bookId, ch);
+            const verses = loadBibleChapter(translation, ref.bookId, ch);
             if (!verses) continue;
             for (const v of verses) {
                 if (ch === ref.startChapter && v.verseId < ref.startVerse) continue;
@@ -850,7 +850,7 @@ Options:
                      normal run re-translates them
   --help             Show this help message
 
-When the target language has a project Bible (${Object.entries(BIBLE_MODULES).map(([code, module]) => `${code}: ${module}`).join(', ')}),
+When the target language has a project Bible (${Object.entries(BIBLE_TRANSLATIONS).map(([code, translation]) => `${code}: ${translation}`).join(', ')}),
 quoted Bible text is translated with the wording of that Bible, looked up via the
 file's verse references or its book-chapter filename.
 

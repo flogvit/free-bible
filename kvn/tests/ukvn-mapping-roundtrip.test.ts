@@ -126,7 +126,7 @@ for (const system of allSystems) {
   //
   // osmain er navet all kryssmapping skal gå gjennom. Tidligere gikk denne
   // testen via osnb, men osnb er bare enda en oversettelse — med egne hull —
-  // så den testet osnb sin mapping like mye som modulens egen.
+  // så den testet osnb sin mapping like mye som oversettelsens egen.
   describe(`${system}: round-trip through osmain (${testableEntries.length} testable)`, () => {
     if (testableEntries.length === 0) {
       it('all cross-chapter entries have duplicate tkvnFrom (skipped)', () => {

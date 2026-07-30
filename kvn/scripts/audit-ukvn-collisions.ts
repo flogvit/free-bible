@@ -11,7 +11,7 @@
  *  - DANGLING: entry peker på oversettelsesvers som ikke finnes i dataene
  *
  * Bruk: npx tsx scripts/audit-ukvn-collisions.ts [mappingnavn ...]
- * Uten argumenter auditeres alle mappinger som har datamodul med samme navn.
+ * Uten argumenter auditeres alle mappinger som har bibeldata med samme navn.
  */
 import { readFileSync, existsSync } from 'fs';
 import { join } from 'path';
@@ -21,8 +21,8 @@ import { ukvnDecode } from '../src/ukvn-types.js';
 const REPO = join(import.meta.dirname, '../..');
 const RAW = join(REPO, 'generate/bibles_raw');
 
-function verseIds(module: string, book: number, chapter: number): Set<number> | null {
-  const p = join(RAW, module, String(book), `${chapter}.json`);
+function verseIds(translation: string, book: number, chapter: number): Set<number> | null {
+  const p = join(RAW, translation, String(book), `${chapter}.json`);
   if (!existsSync(p)) return null;
   try {
     return new Set(JSON.parse(readFileSync(p, 'utf8')).map((v: { verseId: number }) => v.verseId));
@@ -104,4 +104,4 @@ for (const name of names) {
     if (r.collisions.length > 20 || r.dangling.length > 10) console.log('  … (kuttet)');
   }
 }
-console.log(`\n${names.length} mappinger sjekket, ${bad} med funn, ${skipped} uten datamodul (hoppet over)`);
+console.log(`\n${names.length} mappinger sjekket, ${bad} med funn, ${skipped} uten bibeldata (hoppet over)`);

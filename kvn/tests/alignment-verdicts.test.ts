@@ -15,7 +15,7 @@ import { ukvnEncode, ukvnDecode } from '../src/ukvn-types.js';
  * stille — dommen ville da være tapt uten at noe feiler.
  *
  * Testen sjekker at mappingen fortsatt gir dommens resultat for hver
- * modul i gruppen. Moduler der vakten avviste dommen (fordi mappingen
+ * oversettelse i gruppen. Oversettelser der vakten avviste dommen (fordi mappingen
  * allerede var bedre) hoppes over: de har aldri fått entriene.
  */
 
@@ -70,12 +70,12 @@ describe('tekstverifiserte justeringsdommer holder', () => {
       }
     });
 
-    it(`${v.key} (${members.length} moduler): ${v.note.slice(0, 60)}`, () => {
-      expect(rep, `ingen modul i gruppen følger dommen for ${v.key}`).toBeTruthy();
+    it(`${v.key} (${members.length} oversettelser): ${v.note.slice(0, 60)}`, () => {
+      expect(rep, `ingen oversettelse i gruppen følger dommen for ${v.key}`).toBeTruthy();
       const mapper = new UkvnMapper(loadUkvnMapping(rep!));
       for (const [ov, tc, tv, part] of v.alignment) {
         const got = ukvnDecode(mapper.toTkvn(ukvnEncode(book, chapter, ov, part ?? 0)));
-        // mål som ikke finnes i modulens data ble hoppet over ved applisering
+        // mål som ikke finnes i oversettelsens data ble hoppet over ved applisering
         if (got.chapter === chapter && got.verse === ov && !(tc === chapter && tv === ov)) continue;
         const label = part ? `${ov}${String.fromCharCode(96 + part)}` : `${ov}`;
         expect(

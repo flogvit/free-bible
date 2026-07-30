@@ -1,8 +1,8 @@
 /**
  * Deterministisk masseproduksjon av ukvn-mappinger (issue #17/#18).
  *
- * Mappinger avhenger kun av versifikasjonsskjema. For hver modul uten mapping:
- *  - kapittel der modulens versnummer-sett ⊆ osmains → identitet, ingen entries
+ * Mappinger avhenger kun av versifikasjonsskjema. For hver oversettelse uten mapping:
+ *  - kapittel der oversettelsens versnummer-sett ⊆ osmains → identitet, ingen entries
  *  - ellers: finn en donor blant eksisterende mappinger med identisk
  *    versstruktur i HELE boka, og lån donorens entries for boka
  *  - bøker uten donor → residual (må gjennom generate-mapping.ts/qwen senere)
@@ -10,13 +10,13 @@
  * Boknivå (ikke kapittelnivå) fordi entries kan krysse kapittelgrenser
  * (f.eks. Esek 20:45–49 → 21,33–37).
  *
- * Skriver kvn/mappings/<modul>.ukvn.json med proveniens i "derived"-feltet,
+ * Skriver kvn/mappings/<oversettelse>.ukvn.json med proveniens i "derived"-feltet,
  * og en samlerapport i kvn/data/derived-mappings-report.json.
  *
  * Bruk:
  *   npx tsx scripts/build-derived-mappings.ts --fingerprints <fil> [--dry-run]
  *
- * Fingerprint-fila: { modul: { "bok:kap": [verseId, ...] } } — bygges av en
+ * Fingerprint-fila: { <oversettelse>: { "bok:kap": [verseId, ...] } } — bygges av en
  * engangs-scan over generate/bibles_raw (se issue #17).
  */
 import { readFileSync, writeFileSync, existsSync } from 'fs';
@@ -75,12 +75,12 @@ const untouchable = new Set(listUkvnMappings().filter(name => {
     return m.derived?.generatedBy !== 'build-derived-mappings';
   } catch { return true; }
 }));
-const modules = Object.keys(fps).filter(m => m !== 'osmain' && !untouchable.has(m) && Object.keys(fps[m]).length > 0);
+const translations = Object.keys(fps).filter(m => m !== 'osmain' && !untouchable.has(m) && Object.keys(fps[m]).length > 0);
 
 const report: Record<string, { donors: Record<string, string>; residual: string[]; identity: number; borrowed: number }> = {};
 let written = 0;
 
-for (const mod of modules) {
+for (const mod of translations) {
   const fp = fps[mod];
   const books = new Set(Object.keys(fp).map(k => Number(k.split(':')[0])));
   const donors: Record<string, string> = {};
@@ -100,9 +100,9 @@ for (const mod of modules) {
     });
     if (deviant.length === 0) { identityChapters += chapters.length; continue; }
 
-    // finn donor med identisk struktur i alle modulens kapitler i boka;
-    // fallback: modulens sett ⊆ donorens i alle kapitler (samme skjema,
-    // modulen mangler bare vers pga. hull i kilden) — merkes med ~
+    // finn donor med identisk struktur i alle oversettelsens kapitler i boka;
+    // fallback: oversettelsens sett ⊆ donorens i alle kapitler (samme skjema,
+    // oversettelsen mangler bare vers pga. hull i kilden) — merkes med ~
     let found: string | null = null;
     for (const a of anchors) {
       const afp = fps[a];
@@ -165,5 +165,5 @@ const clean = Object.values(report).filter(r => r.residual.length === 0).length;
 if (!dryRun) {
   writeFileSync(join(REPO, 'kvn/data/derived-mappings-report.json'), JSON.stringify(report, null, 2));
 }
-console.log(`${modules.length} moduler behandlet, ${written} mappinger skrevet`);
-console.log(`${clean} moduler uten residual; ${totalResidual} residual-kapitler totalt (til qwen-fasen)`);
+console.log(`${translations.length} oversettelser behandlet, ${written} mappinger skrevet`);
+console.log(`${clean} oversettelser uten residual; ${totalResidual} residual-kapitler totalt (til qwen-fasen)`);

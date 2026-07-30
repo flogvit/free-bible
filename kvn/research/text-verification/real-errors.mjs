@@ -63,10 +63,10 @@ DIFFERENT   — not the same passage`,
  *   rett  = osmain-koordinat som faktisk svarer til oversettelsens vers
  */
 const FASIT = [
-  // albanian: Åp 1-12 ligger ett vers ned. Modulens v_n er osmain v_(n+1).
+  // albanian: Åp 1-12 ligger ett vers ned. Oversettelsens v_n er osmain v_(n+1).
   ...[[1, 5], [1, 12], [5, 3], [5, 9], [9, 4], [9, 15], [12, 2], [12, 10]]
     .map(([c, v]) => ({ tr: 'albanian', b: 66, c, trV: v, feil: v, rett: v + 1, hva: `albanian Åp ${c},${v} — hele 1-12 ett vers ned` })),
-  // basque: modulens Sal 110 er osmain Sal 111.
+  // basque: oversettelsens Sal 110 er osmain Sal 111.
   ...[1, 2, 3, 4, 5].map(v => ({ tr: 'basque', b: 19, c: 110, trV: v, feil: v, rett: v, feilKap: 110, rettKap: 111, hva: `basque Sal 110,${v} — er osmain 111` })),
 ];
 

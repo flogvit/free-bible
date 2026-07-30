@@ -7,7 +7,7 @@
  *   - an osmain verse left uncovered (no translation verse maps to it)
  *   - a non-monotonic sequence
  * These are the signatures of a bad auto-alignment (e.g. identity where an
- * offset was needed). Usage: node scripts/verify-mapping-coverage.mjs <module>
+ * offset was needed). Usage: node scripts/verify-mapping-coverage.mjs <translation>
  */
 import fs from 'fs';
 import { join, dirname } from 'path';

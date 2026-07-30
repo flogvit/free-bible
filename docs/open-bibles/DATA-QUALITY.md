@@ -2,7 +2,7 @@
 
 These translations were **removed from `generate/bibles_raw/`** because their source data
 (from the original BSS/openbible download) is missing content or corrupt. The uploaded
-`external/closed/raw/<module>/` sources are kept (gitignored), so any of these can be
+`external/closed/raw/<translation>/` sources are kept (gitignored), so any of these can be
 **reinstated after re-downloading from a clean source** (e.g. eBible.org) and passing the
 integrity check.
 
@@ -13,7 +13,7 @@ benign and were **not** grounds for removal).
 
 ## Severe (corruption / whole chapters / large gaps)
 
-| Module | Name | Language | License | Issue |
+| Translation | Name | Language | License | Issue |
 |--------|------|----------|---------|-------|
 | `afri` | Afrikaans 1953 | Afrikaans | Public Domain | 4 chapters with duplicated verses (corrupt) |
 | `ta_oitce` | திறந்தநிலை தமிழ் சமகால பதிப்பு | Tamil | CC BY-SA | 1 chapters with duplicated verses (corrupt) |
@@ -27,7 +27,7 @@ benign and were **not** grounds for removal).
 
 ## Minor (a few scattered OT gaps — reinstate once filled)
 
-| Module | Name | Language | License | Issue |
+| Translation | Name | Language | License | Issue |
 |--------|------|----------|---------|-------|
 | `bishops` | Bishops Bible | English | Public Domain | 6 empty OT verses |
 | `blivre` | Biblia Livre | Portuguese | CC BY | 2 empty OT verses |

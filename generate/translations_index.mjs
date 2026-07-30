@@ -2,12 +2,15 @@
  * Build generate/translations/index.json — one merged record per translation,
  * ready for a website to fetch once and use for both list and detail views.
  *
- * Sources, merged per module:
- *   bibles_raw/<module>/meta.json     editorial metadata (translations_meta.mjs)
- *   bibles_raw/<module>/license.json  licence terms (existing, untouched)
+ * Sources, merged per translation:
+ *   bibles_raw/<translation>/meta.json     editorial metadata (translations_meta.mjs)
+ *   bibles_raw/<translation>/license.json  licence terms (existing, untouched)
+ *
+ * A translation's id is its directory name — that is the only place it is
+ * recorded, so it cannot drift out of step with itself.
  *
  * The index is generated output: never edit it by hand, edit meta.json and
- * rebuild. Modules without meta.json are reported and left out.
+ * rebuild. Translations without meta.json are reported and left out.
  *
  *   node translations_index.mjs
  */
@@ -25,7 +28,7 @@ function readJson(file) {
     return JSON.parse(fs.readFileSync(file, 'utf-8'));
 }
 
-/** Licence fields a website may need; `module` and `name` come from meta.json. */
+/** Licence fields a website may need; `translation` and `name` come from elsewhere. */
 function licenceBlock(license) {
     if (!license) return undefined;
     return {
@@ -40,7 +43,7 @@ function licenceBlock(license) {
 }
 
 function main() {
-    const modules = fs.readdirSync(RAW_DIR, {withFileTypes: true})
+    const translations = fs.readdirSync(RAW_DIR, {withFileTypes: true})
         .filter(entry => entry.isDirectory())
         .map(entry => entry.name)
         .sort();
@@ -50,35 +53,34 @@ function main() {
     const missingLicense = [];
     const withheld = [];
 
-    for (const module of modules) {
-        const meta = readJson(path.join(RAW_DIR, module, 'meta.json'));
+    for (const translation of translations) {
+        const meta = readJson(path.join(RAW_DIR, translation, 'meta.json'));
         if (!meta) {
-            missingMeta.push(module);
+            missingMeta.push(translation);
             continue;
         }
 
-        // `published: false` in meta.json withholds a module from the published
-        // index — superseded drafts, or anything not cleared for the website.
-        // The bible data and its meta.json stay in the tree either way.
+        // `published: false` in meta.json withholds a translation from the
+        // published index — superseded drafts, or anything not cleared for the
+        // website. The bible data and its meta.json stay in the tree either way.
         if (meta.published === false) {
-            withheld.push(module);
+            withheld.push(translation);
             continue;
         }
 
-        const license = readJson(path.join(RAW_DIR, module, 'license.json'));
-        if (!license) missingLicense.push(module);
+        const license = readJson(path.join(RAW_DIR, translation, 'license.json'));
+        if (!license) missingLicense.push(translation);
 
         // Licence sits under its own key so it stays visibly separate from the
         // editorial facts — different provenance, different trust level.
-        const {module: _id, ...rest} = meta;
-        entries.push({module, ...rest, licence: licenceBlock(license)});
+        entries.push({translation, ...meta, licence: licenceBlock(license)});
     }
 
-    // Group by language for list pages, falling back to the module id.
+    // Group by language for list pages, falling back to the translation id.
     entries.sort((a, b) => {
         const langA = a.language?.iso639_3 ?? 'zzz';
         const langB = b.language?.iso639_3 ?? 'zzz';
-        return langA.localeCompare(langB) || a.module.localeCompare(b.module);
+        return langA.localeCompare(langB) || a.translation.localeCompare(b.translation);
     });
 
     fs.mkdirSync(OUT_DIR, {recursive: true});

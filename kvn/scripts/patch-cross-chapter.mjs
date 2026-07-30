@@ -6,7 +6,7 @@
  * chapter (e.g. Numbers 13:1 in a Hebrew-versified bible = osmain 12:16).
  *
  * Run AFTER the final build (rebuilding drops these). Usage:
- *   node scripts/patch-cross-chapter.mjs <module> <book> <transCh:transV>=<osmCh:osmV> ...
+ *   node scripts/patch-cross-chapter.mjs <translation> <book> <transCh:transV>=<osmCh:osmV> ...
  *   e.g.  node scripts/patch-cross-chapter.mjs rv_1909_strongs 4 13:1=12:16
  * Only same-book adjacent chapters (|osmCh-transCh| == 1) are accepted.
  */

@@ -3,7 +3,7 @@
  "sist_oppdatert": "2026-07-29",
  "funn": [
   {
-   "module": "osmain",
+   "translation": "osmain",
    "book": null,
    "severity": "blocking",
    "finding": "62 vers finnes i osnb men har ikke eget versnummer i osmain (58 salmer der osmain fletter to vers, pluss grensetilfeller som 4 Mos 25,19 og 2 Mos 21,36-37). Full liste i kvn/data/osmain-missing-verses.json.",
@@ -11,7 +11,7 @@
    "action": "Utvid osmain med disse versene, og kjør mappingene på nytt."
   },
   {
-   "module": "lithuanian_kj",
+   "translation": "lithuanian_kj",
    "book": 19,
    "severity": "blocking",
    "finding": "Salmene er feilmontert: kapittel 22 inneholder Sal 16, kapittel 23 inneholder Sal 17, men kapittel 51 inneholder Sal 50. Forskyvet ulikt gjennom boka.",
@@ -19,7 +19,7 @@
    "action": "Rehøst Salmene fra kilden."
   },
   {
-   "module": "ndebele",
+   "translation": "ndebele",
    "book": null,
    "severity": "blocking",
    "finding": "Versene er systematisk avkortet i høstingen — median verselengde 68 mot 96 i ndebele2012. Sal 23 er kuttet midt i setningene ('ingumelusi wami' = bare 'er min hyrde').",
@@ -27,7 +27,7 @@
    "action": "Rehøst hele modulen, eller bruk ndebele2012 i stedet."
   },
   {
-   "module": "polish_gdansk",
+   "translation": "polish_gdansk",
    "book": 14,
    "severity": "blocking",
    "finding": "2 Krøn 13 og 14 er slått sammen til ett kapittel (37 vers = 22+15), så boka har 35 kapitler i stedet for 36 og alt fra kapittel 14 og utover er forskjøvet ett hakk.",
@@ -35,7 +35,7 @@
    "action": "Rehøst 2 Krøn, eller splitt kapittel 13 ved vers 23 i split-scriptet."
   },
   {
-   "modules": [
+   "translations": [
     "czech_ekumenicky",
     "hebrew_leningrad_codex",
     "lt_heritage",
@@ -50,7 +50,7 @@
    "action": "Rehøst Malaki."
   },
   {
-   "module": "norwegian2018",
+   "translation": "norwegian2018",
    "book": null,
    "severity": "gap",
    "finding": "Fri parafrase med store hull — Mark 16 har 9 av 20 vers. Lengdekorrelasjon fordeler seg jevnt over alle kapittelforskyv (198 av 690 kapitler på null), altså ren støy.",
@@ -58,7 +58,7 @@
    "action": "Ingen — dokumentert slik at senere analyser kan se bort fra den."
   },
   {
-   "module": "osmain",
+   "translation": "osmain",
    "book": 26,
    "severity": "canonical",
    "finding": "Esek 20/21-grensen er feilmontert: 20:45-49 inneholder Ammon-blokken (= europeisk 21:28-32), mens sør-profetien ligger i 21:1ff.",
@@ -66,7 +66,7 @@
    "action": "Hører til grensevers-prosjektet (de 133 kjente grenseversene)."
   },
   {
-   "module": "osmain",
+   "translation": "osmain",
    "book": 13,
    "severity": "canonical",
    "finding": "1 Krøn 5:1 tilsvarer to vers i KJV-skjemaet (5,1-2) men mappes bare til det første, så 5,1 blir foreldreløst i alle KJV-baserte mappinger.",
@@ -74,7 +74,7 @@
    "action": "Entry bør bli en range (kvnTo != kvnFrom)."
   },
   {
-   "module": "osmain",
+   "translation": "osmain",
    "book": 4,
    "severity": "canonical",
    "finding": "4 Mos 25 har 18 vers; halvverset som andre oversettelser har som 25,19 ('Da det var slutt på pesten') mangler — det er slått sammen i 26:1.",
@@ -82,7 +82,7 @@
    "action": "Vurder osmain-utvidelse."
   },
   {
-   "module": "ukrainian2004",
+   "translation": "ukrainian2004",
    "book": 19,
    "severity": "blocking",
    "finding": "Sal 73 mangler i hostingen; kapitlene fra 72 og ut ligger to forskjovet i stedet for ett",
@@ -90,7 +90,7 @@
    "action": "salmemappingen fjernet og dataWarning satt 2026-07-29; boka maa rehostes"
   },
   {
-   "module": "albanian",
+   "translation": "albanian",
    "book": 64,
    "severity": "blocking",
    "finding": "3 Joh, Judas og Aap 1-12 er forskjovet over bokgrensene; Aap 13-22 er riktige",
@@ -98,7 +98,7 @@
    "action": "dataWarning satt 2026-07-29. Kan ikke mappes: 3 Joh 1,14 tilhorer en annen bok og kvn har ingen kryssbok-poster. Boekene 64-66 maa rehostes"
   },
   {
-   "module": "flere",
+   "translation": "flere",
    "book": null,
    "severity": "info",
    "finding": "*** brukes som plassholder for vers hostingen ikke fikk; 65 forekomster i english_darby alene, og i mange andre moduler",

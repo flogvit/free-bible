@@ -17,9 +17,9 @@
  * nettopp tittelsalme-klassen og blir UNCLEAR/AUTOFIX.
  *
  * Bruk:
- *   npx tsx scripts/screen-alignment.ts --lengths <fil> [--apply] [moduler...]
+ *   npx tsx scripts/screen-alignment.ts --lengths <fil> [--apply] [oversettelser...]
  *
- * Lengdefila: { modul: { "bok:kap": [[verseId, tekstlengde], ...] } }
+ * Lengdefila: { <oversettelse>: { "bok:kap": [[verseId, tekstlengde], ...] } }
  * (bygges av en scan over generate/bibles_raw). Rapport skrives til
  * kvn/data/alignment-screen.json (sammendrag + alle ikke-PASS-celler).
  */
@@ -74,10 +74,10 @@ function screen(name: string): { pass: number; skipped: number; cells: Cell[] } 
     for (let v = k.verse, tv = t.verse; v <= k2.verse; v++, tv++) entryMap.get(key)!.set(v, tv);
   }
 
-  // Pass 1: score alle kapitler, og bygg modulens egen baseline fra
+  // Pass 1: score alle kapitler, og bygg oversettelsens egen baseline fra
   // identisk-nummererte kapitler (de er nesten alltid riktig justert).
   // Frie oversettelser (parafraser) korrelerer svakt over hele linja —
-  // absolutte terskler ville flagget hele modulen som støy.
+  // absolutte terskler ville flagget hele oversettelsen som støy.
   interface Scored { key: string; mapScore: number; bestShift: number; bestScore: number; pairs: number; cv: number; identical: boolean; shiftIsMapping: boolean }
   const scored: Scored[] = [];
   let skipped = 0;
@@ -116,7 +116,7 @@ function screen(name: string): { pass: number; skipped: number; cells: Cell[] } 
   const idScores = scored.filter(s => s.identical && s.cv >= MIN_CV).map(s => s.mapScore).sort((a, b) => a - b);
   const baseline = idScores.length >= 20 ? idScores[Math.floor(idScores.length / 2)] : PASS_SCORE;
 
-  // Pass 2: verdikter relativt til modulens baseline
+  // Pass 2: verdikter relativt til oversettelsens baseline
   let pass = 0;
   const cells: Cell[] = [];
   for (const s of scored) {
@@ -129,11 +129,11 @@ function screen(name: string): { pass: number; skipped: number; cells: Cell[] } 
     if (!s.shiftIsMapping && s.bestScore >= AUTOFIX_SCORE && s.bestScore - s.mapScore >= AUTOFIX_MARGIN) {
       cell.verdict = 'AUTOFIX'; cells.push(cell); continue;
     }
-    // mappingen er (nesten) beste hypotese og normal for modulen → friskmeldt
+    // mappingen er (nesten) beste hypotese og normal for oversettelsen → friskmeldt
     if (s.mapScore >= s.bestScore - 0.05 && s.mapScore >= baseline - 0.25) { pass++; continue; }
     // noe annet er merkbart bedre, men ikke autofiks-sikkert
     if (s.bestScore - s.mapScore >= 0.15) { cells.push(cell); continue; }
-    // ingen ren hypotese passer, målt mot modulens egen standard → fletting/splitting?
+    // ingen ren hypotese passer, målt mot oversettelsens egen standard → fletting/splitting?
     if (s.bestScore < baseline - 0.25) { cells.push(cell); continue; }
     pass++;
   }
@@ -198,7 +198,7 @@ for (const name of names) {
 writeFileSync(join(REPO, 'kvn/data/alignment-screen.json'), JSON.stringify({
   thresholds: { MIN_PAIRS, PASS_SCORE, AUTOFIX_SCORE, AUTOFIX_MARGIN, MIN_CV },
   totals: { pass: totPass, autofix: totFix, unclear: totUnclear, lowsignal: totLow },
-  modules: report,
+  translations: report,
 }, null, 2));
 
 console.log(`${names.length} mappinger screenet`);

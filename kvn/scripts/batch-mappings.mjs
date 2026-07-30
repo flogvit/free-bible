@@ -24,12 +24,12 @@ const only = arg('only')?.split(',').map(s => s.trim());
 
 const inv = JSON.parse(readFileSync(INV, 'utf8'));
 let todo = inv.filter(r => r.kvn_ok);            // only translations allowed to renumber
-if (only) todo = todo.filter(r => only.includes(r.module));
+if (only) todo = todo.filter(r => only.includes(r.translation));
 
 console.log(`Batch KVN mapping — ${todo.length} translations, model=${model}\n`);
 let done = 0, failed = [];
 for (const r of todo) {
-  const m = r.module;
+  const m = r.translation;
   const mapFile = join(MAPPINGS, `${m}.ukvn.json`);
   if (existsSync(mapFile)) {
     console.log(`[skip] ${m} (mapping exists)`);

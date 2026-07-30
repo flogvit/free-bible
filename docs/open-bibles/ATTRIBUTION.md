@@ -1,7 +1,7 @@
 # Attribution — CC-licensed translations
 
 These translations are published under a Creative Commons license and **require attribution**.
-The full license statement for each is also stored in `generate/bibles_raw/<module>/license.json`.
+The full license statement for each is also stored in `generate/bibles_raw/<translation>/license.json`.
 
 - **CC BY 4.0** — attribution required.
 - **CC BY-SA 4.0** — attribution required; any adapted/redistributed form must stay under CC BY-SA 4.0.
