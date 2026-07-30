@@ -9,6 +9,7 @@ dotenv.config()
 
 import {books, normalizeLanguage, getLanguageCode, getBookName, anthropicModel, ollamaModel} from "./constants.js";
 import {callWithRetry, callOllamaRaw} from "./llm.js";
+import {nameToId} from "./lib.js";
 
 let useLocal = false;
 
@@ -732,16 +733,6 @@ async function indexBible(bible, options = {}) {
     process.stdout.write('\r' + ''.padEnd(100) + '\r');
     const elapsed = Math.round((Date.now() - startTime) / 1000);
     console.log(`\nDone in ${Math.floor(elapsed / 60)}m${elapsed % 60}s — ${processed} verses, ${refsAdded} refs added, ${newPersons} new persons`);
-}
-
-function nameToId(name) {
-    return name
-        .replace(/\s*\([^)]*\)/g, "") // Remove parentheses and their content
-        .trim()
-        .toLowerCase()
-        .normalize("NFD").replace(/[\u0300-\u036f]/g, "") // Remove accents
-        .replace(/\s+/g, "-")
-        .replace(/[^a-z0-9-]/g, "");
 }
 
 function parseRange(value) {

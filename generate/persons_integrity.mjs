@@ -16,6 +16,7 @@
 import * as fs from 'fs';
 import path from 'path';
 import { fileURLToPath } from 'url';
+import { nameToId } from './lib.js';
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const PERSONS_DIR = path.join(__dirname, 'persons', 'nb');
@@ -27,13 +28,10 @@ const WORKLIST = worklistIdx >= 0 ? args[worklistIdx + 1] : null;
 
 // --- normalization ---------------------------------------------------------
 
-// Bare display->slug, mirroring the generator's nameToId (strip parens, diacritics)
-export function baseSlug(s) {
-  return String(s).toLowerCase()
-    .replace(/\s*\([^)]*\)/g, '')
-    .normalize('NFD').replace(/[̀-ͯ]/g, '')
-    .replace(/[^a-z0-9]+/g, '-').replace(/^-|-$/g, '');
-}
+// Display->slug. Delegerer til generatorens egen nameToId framfor å speile den:
+// denne kopien manglet translitterasjonen av ø og æ, så mirroret drev fra
+// originalen uten at noe kunne oppdage det (#25).
+export const baseSlug = (s) => nameToId(s);
 
 // Aggressive transliteration key: collapses the spelling drift between the slugs
 // the generator emitted in relations and the actual profile slugs.

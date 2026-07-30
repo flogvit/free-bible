@@ -132,3 +132,36 @@ export function resolveBookRange(config) {
     }
     return config;
 }
+/**
+ * Navn → id. ÉN implementasjon; den fantes i tre kopier med samme feil (#25).
+ *
+ * Rekkefølgen er det som betyr noe. `ø` og `æ` er egne bokstaver uten kanonisk
+ * dekomponering, så NFD lar dem stå — og et etterfølgende `[^a-z0-9]`-filter
+ * SLETTER dem framfor å translitterere. Resultatet var id-er som `akabs-snn`,
+ * `jakobs-sster` og `fbe` (Føbe). `å` og `é` gikk klar, fordi de ER base pluss
+ * diakritisk tegn, og det er derfor feilen så vilkårlig ut.
+ *
+ * Derfor: eksplisitt translitterasjon FØR NFD. `ø → o` og ikke `oe`, fordi det
+ * er formen de id-ene som alt var riktige følger (`akabs-sonn`).
+ *
+ * `+` på tegnfilteret er den andre halvdelen: uten den forsvant `/` sporløst og
+ * smeltet sammen alternative navn — `Abed-Nego/Asarja` ble `abed-negoasarja`.
+ * Nå blir skilletegn én bindestrek.
+ *
+ * Samme regel som `slugify()` i `contrib/export.mjs`, som avkorter til 60 tegn
+ * for verk-id-er. Person-id-er avkortes ikke — de er allerede publiserte URL-er.
+ */
+export function nameToId(name) {
+    return String(name)
+        // Bare balanserte, innerste parenteser. `[^)]*` spiste fra ytre `(` til
+        // indre `)`, så «Jotam (Jerubbaals (Gideons) yngste sønn …)» mistet
+        // «Jerubbaals» og ble `jotam-yngste-sonn-…`. Full nøstet fjerning er
+        // også feil: da blir «Mattatias (… sønn av Amos)» bare `mattatias`, som
+        // kolliderer med en annen Mattatias. Parentesen BÆRER disambigueringen.
+        .replace(/\s*\([^()]*\)/g, '')
+        .toLowerCase()
+        .replace(/æ/g, 'ae').replace(/ø/g, 'o').replace(/å/g, 'a')
+        .normalize('NFD').replace(/[̀-ͯ]/g, '')
+        .replace(/[^a-z0-9]+/g, '-')
+        .replace(/^-+|-+$/g, '');
+}

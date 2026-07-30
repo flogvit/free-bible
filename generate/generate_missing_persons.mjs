@@ -9,20 +9,11 @@ dotenv.config()
 
 import Anthropic from '@anthropic-ai/sdk';
 import {anthropicModel, maxTokens} from "./constants.js";
+import {nameToId} from "./lib.js";
 
 const anthropic = new Anthropic({
     apiKey: process.env.ANTHROPIC_API_KEY
 });
-
-function nameToId(name) {
-    return name
-        .replace(/\s*\([^)]*\)/g, "") // Remove parentheses and their content
-        .trim()
-        .toLowerCase()
-        .normalize("NFD").replace(/[\u0300-\u036f]/g, "") // Remove accents
-        .replace(/\s+/g, "-")
-        .replace(/[^a-z0-9-]/g, "");
-}
 
 function parseMissingPersons() {
     const mdPath = path.join(__dirname, "persons", "PERSONER.md");
