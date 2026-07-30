@@ -15,6 +15,34 @@
   "links": {
     "homepage": "https://bible.flogvit.com"
   },
+  "legacy": [
+    {
+      "tag": "innovation",
+      "text": {
+        "en": "A canonical verse numbering: every verse in every translation has a slot here, so a verse found in one translation can be located in any other however that one divides its chapters.",
+        "nb": "En kanonisk versnummerering: hvert vers i hver oversettelse har en plass her, så et vers funnet i én oversettelse kan finnes igjen i hvilken som helst annen, uansett hvordan den deler kapitlene sine.",
+        "nn": "Ei kanonisk versnummerering: kvart vers i kvar omsetjing har ein plass her, så eit vers funne i éi omsetjing kan finnast att i kva som helst anna, uansett korleis ho deler kapitla sine.",
+        "sv": "En kanonisk versnumrering: varje vers i varje översättning har en plats här, så att en vers funnen i en översättning kan återfinnas i vilken annan som helst, oavsett hur den delar sina kapitel.",
+        "de": "Eine kanonische Verszählung: Jeder Vers jeder Übersetzung hat hier einen Platz, sodass ein in einer Übersetzung gefundener Vers in jeder anderen wiederzufinden ist, gleich wie diese ihre Kapitel einteilt.",
+        "fr": "Une numérotation canonique des versets : chaque verset de chaque traduction y a une place, si bien qu'un verset trouvé dans une traduction se retrouve dans n'importe quelle autre, quelle que soit sa division en chapitres.",
+        "es": "Una numeración canónica de versículos: cada versículo de cada traducción tiene aquí un lugar, de modo que un versículo hallado en una traducción puede localizarse en cualquier otra, sea cual sea su división en capítulos.",
+        "fi": "Kanoninen jaenumerointi: jokaisella jakeella jokaisessa käännöksessä on täällä paikkansa, joten yhdestä käännöksestä löytynyt jae löytyy mistä tahansa toisesta riippumatta siitä, miten se jakaa lukunsa."
+      }
+    },
+    {
+      "tag": "distinctive",
+      "text": {
+        "en": "Not a translation to read, but the reference text the mappings point at — the layer that lets any translation be held up against any other.",
+        "nb": "Ikke en oversettelse å lese, men referanseteksten mappingene peker på — laget som lar hvilken som helst oversettelse holdes opp mot en annen.",
+        "nn": "Ikkje ei omsetjing å lesa, men referanseteksten mappingane peikar på — laget som lèt kva som helst omsetjing haldast opp mot ei anna.",
+        "sv": "Ingen översättning att läsa, utan den referenstext som mappningarna pekar på — lagret som låter vilken översättning som helst hållas mot en annan.",
+        "de": "Keine Übersetzung zum Lesen, sondern der Referenztext, auf den die Zuordnungen zeigen – die Schicht, die es erlaubt, jede Übersetzung gegen jede andere zu halten.",
+        "fr": "Non pas une traduction à lire, mais le texte de référence vers lequel pointent les correspondances — la couche qui permet de confronter n'importe quelle traduction à n'importe quelle autre.",
+        "es": "No es una traducción para leer, sino el texto de referencia al que apuntan las correspondencias: la capa que permite contrastar cualquier traducción con cualquier otra.",
+        "fi": "Ei luettava käännös vaan viiteteksti, johon kartoitukset osoittavat – kerros, jonka ansiosta mitä tahansa käännöstä voi verrata mihin tahansa toiseen."
+      }
+    }
+  ],
   "coverage": {
     "testament": "both",
     "books": 66,
@@ -30,9 +58,17 @@
   "provenance": {
     "method": "manual",
     "verified": [
-      "language.iso639_3"
+      "language.iso639_3",
+      "legacy"
     ],
-    "sources": [],
+    "sources": [
+      {
+        "url": "https://github.com/flogvit/free-bible",
+        "fields": [
+          "legacy"
+        ]
+      }
+    ],
     "generated": "2026-07-25"
   }
 }

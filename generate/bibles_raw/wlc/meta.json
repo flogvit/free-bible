@@ -19,6 +19,47 @@
     ]
   },
   "publisher": "J. Alan Groves Center for Advanced Biblical Research",
+  "legacy": [
+    {
+      "tag": "distinctive",
+      "text": {
+        "en": "Not a translation but the Hebrew source: the Leningrad Codex, written in Cairo in 1008/1009, is the oldest complete manuscript of the Hebrew Bible, with Tiberian vowel points and cantillation.",
+        "nb": "Ikke en oversettelse, men den hebraiske kilden: Leningrad-kodeksen, skrevet i Kairo i 1008/1009, er det eldste fullstendige håndskriftet av den hebraiske bibelen, med tiberiensiske vokaltegn og kantillasjon.",
+        "nn": "Ikkje ei omsetjing, men den hebraiske kjelda: Leningrad-kodeksen, skriven i Kairo i 1008/1009, er det eldste fullstendige handskriftet av den hebraiske bibelen, med tiberiensiske vokalteikn og kantillasjon.",
+        "sv": "Ingen översättning utan den hebreiska källan: Leningradkodexen, skriven i Kairo 1008/1009, är det äldsta fullständiga handskriftet av den hebreiska bibeln, med tiberiensiska vokaltecken och kantillation.",
+        "de": "Keine Übersetzung, sondern die hebräische Quelle: Der Codex Leningradensis, 1008/1009 in Kairo geschrieben, ist die älteste vollständige Handschrift der hebräischen Bibel, mit tiberischer Vokalisation und Kantillation.",
+        "fr": "Non pas une traduction mais la source hébraïque : le Codex de Leningrad, écrit au Caire en 1008/1009, est le plus ancien manuscrit complet de la Bible hébraïque, avec vocalisation et cantillation tibériennes.",
+        "es": "No es una traducción sino la fuente hebrea: el Códice de Leningrado, escrito en El Cairo en 1008/1009, es el manuscrito completo más antiguo de la Biblia hebrea, con vocalización y cantilación tiberienses.",
+        "fi": "Ei käännös vaan heprealainen lähde: Leningradin koodeksi, kirjoitettu Kairossa 1008/1009, on heprealaisen raamatun vanhin täydellinen käsikirjoitus tiberiaanisine vokaalimerkkeineen ja kantillaatioineen."
+      }
+    },
+    {
+      "tag": "distinctive",
+      "text": {
+        "en": "The Westminster edition is the digital transcription of that manuscript, made at the J. Alan Groves Center from the Biblia Hebraica Stuttgartensia, with notes and tools for analysing the syntax.",
+        "nb": "Westminster-utgaven er den digitale transkripsjonen av det håndskriftet, laget ved J. Alan Groves Center ut fra Biblia Hebraica Stuttgartensia, med noter og verktøy for å analysere syntaksen.",
+        "nn": "Westminster-utgåva er den digitale transkripsjonen av det handskriftet, laga ved J. Alan Groves Center ut frå Biblia Hebraica Stuttgartensia, med notar og verktøy for å analysera syntaksen.",
+        "sv": "Westminster-utgåvan är den digitala transkriptionen av det handskriftet, gjord vid J. Alan Groves Center utifrån Biblia Hebraica Stuttgartensia, med noter och verktyg för att analysera syntaxen.",
+        "de": "Die Westminster-Ausgabe ist die digitale Transkription dieser Handschrift, am J. Alan Groves Center nach der Biblia Hebraica Stuttgartensia erstellt, mit Anmerkungen und Werkzeugen zur Syntaxanalyse.",
+        "fr": "L'édition Westminster est la transcription numérique de ce manuscrit, réalisée au J. Alan Groves Center à partir de la Biblia Hebraica Stuttgartensia, avec des notes et des outils d'analyse syntaxique.",
+        "es": "La edición Westminster es la transcripción digital de ese manuscrito, hecha en el J. Alan Groves Center a partir de la Biblia Hebraica Stuttgartensia, con notas y herramientas para analizar la sintaxis.",
+        "fi": "Westminster-laitos on tuon käsikirjoituksen digitaalinen transkriptio, tehty J. Alan Groves Centerissä Biblia Hebraica Stuttgartensian pohjalta, mukanaan huomautukset ja työkalut syntaksin analysointiin."
+      }
+    },
+    {
+      "tag": "limitation",
+      "text": {
+        "en": "The Old Testament only — there is no New Testament in a Hebrew Masoretic codex.",
+        "nb": "Bare Det gamle testamentet — et hebraisk masoretisk kodeks har ikke noe nytestamente.",
+        "nn": "Berre Det gamle testamentet — eit hebraisk masoretisk kodeks har ikkje noko nytestamente.",
+        "sv": "Endast Gamla testamentet — en hebreisk masoretisk kodex har inget Nya testamente.",
+        "de": "Nur das Alte Testament – ein hebräischer masoretischer Kodex enthält kein Neues Testament.",
+        "fr": "L'Ancien Testament seul — un codex massorétique hébreu ne comporte pas de Nouveau Testament.",
+        "es": "Solo el Antiguo Testamento: un códice masorético hebreo no contiene Nuevo Testamento.",
+        "fi": "Vain Vanha testamentti – heprealaisessa masoreettisessa koodeksissa ei ole Uutta testamenttia."
+      }
+    }
+  ],
   "coverage": {
     "testament": "ot",
     "books": 39,
@@ -33,8 +74,17 @@
   },
   "provenance": {
     "method": "llm",
-    "verified": [],
-    "sources": [],
+    "verified": [
+      "legacy"
+    ],
+    "sources": [
+      {
+        "url": "https://en.wikipedia.org/wiki/Leningrad_Codex",
+        "fields": [
+          "legacy"
+        ]
+      }
+    ],
     "generated": "2026-07-25"
   }
 }

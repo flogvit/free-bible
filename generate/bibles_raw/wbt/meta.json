@@ -40,6 +40,47 @@
     ],
     "review": "none"
   },
+  "legacy": [
+    {
+      "tag": "distinctive",
+      "text": {
+        "en": "Noah Webster — the dictionary man — corrected the King James Version's language instead of retranslating it: \"why\" for \"wherefore\", \"its\" for \"his\" of lifeless things, \"male child\" for \"manchild\", and American spellings throughout.",
+        "nb": "Noah Webster — ordbokmannen — rettet språket i King James Version i stedet for å oversette på nytt: «why» for «wherefore», «its» for «his» om livløse ting, «male child» for «manchild», og amerikansk rettskrivning gjennomgående.",
+        "nn": "Noah Webster — ordbokmannen — retta språket i King James Version i staden for å omsetja på nytt: «why» for «wherefore», «its» for «his» om livlause ting, «male child» for «manchild», og amerikansk rettskriving gjennomgåande.",
+        "sv": "Noah Webster — ordboksmannen — rättade King James Versions språk i stället för att översätta på nytt: ”why” för ”wherefore”, ”its” för ”his” om livlösa ting, ”male child” för ”manchild”, och amerikansk stavning genomgående.",
+        "de": "Noah Webster – der Mann des Wörterbuchs – besserte die Sprache der King James Version aus, statt neu zu übersetzen: „why“ statt „wherefore“, „its“ statt „his“ für Lebloses, „male child“ statt „manchild“ und durchgehend amerikanische Schreibung.",
+        "fr": "Noah Webster — l'homme du dictionnaire — a corrigé la langue de la King James Version au lieu de retraduire : « why » pour « wherefore », « its » pour « his » à propos des choses inanimées, « male child » pour « manchild », et l'orthographe américaine partout.",
+        "es": "Noah Webster, el hombre del diccionario, corrigió la lengua de la King James Version en vez de traducir de nuevo: «why» por «wherefore», «its» por «his» para lo inanimado, «male child» por «manchild», y ortografía estadounidense en todo el texto.",
+        "fi": "Noah Webster – sanakirjan mies – korjasi King James Versionin kieltä sen sijaan että olisi kääntänyt uudelleen: ”why” eikä ”wherefore”, ”its” eikä ”his” elottomista, ”male child” eikä ”manchild”, ja läpi tekstin amerikkalainen oikeinkirjoitus."
+      }
+    },
+    {
+      "tag": "distinctive",
+      "text": {
+        "en": "Changed \"Easter\" to \"Passover\" in Acts 12:4 and \"Holy Ghost\" to \"Holy Spirit\" throughout, holding that the older wording misled readers.",
+        "nb": "Endret «Easter» til «Passover» i Apg 12,4 og «Holy Ghost» til «Holy Spirit» gjennomgående, fordi han mente den eldre ordlyden villedet leserne.",
+        "nn": "Endra «Easter» til «Passover» i Apg 12,4 og «Holy Ghost» til «Holy Spirit» gjennomgåande, fordi han meinte den eldre ordlyden villeidde lesarane.",
+        "sv": "Ändrade ”Easter” till ”Passover” i Apg 12:4 och ”Holy Ghost” till ”Holy Spirit” genomgående, då han menade att den äldre ordalydelsen vilseledde läsarna.",
+        "de": "Änderte in Apg 12,4 „Easter“ zu „Passover“ und durchgehend „Holy Ghost“ zu „Holy Spirit“, weil er den älteren Wortlaut für irreführend hielt.",
+        "fr": "A changé « Easter » en « Passover » en Ac 12,4 et « Holy Ghost » en « Holy Spirit » partout, estimant que l'ancienne formulation induisait le lecteur en erreur.",
+        "es": "Cambió «Easter» por «Passover» en Hch 12:4 y «Holy Ghost» por «Holy Spirit» en todo el texto, por considerar que la redacción antigua inducía a error.",
+        "fi": "Muutti Apt 12:4:ssä sanan ”Easter” sanaksi ”Passover” ja läpi tekstin ”Holy Ghost” muotoon ”Holy Spirit”, koska piti vanhempaa sanamuotoa harhaanjohtavana."
+      }
+    },
+    {
+      "tag": "limitation",
+      "text": {
+        "en": "A deliberately conservative revision — close enough to the King James Version to be nearly indistinguishable from it — and Webster also softened expressions he found indelicate, turning \"whore\" into \"lewd woman\".",
+        "nb": "En bevisst forsiktig revisjon — så nær King James Version at den er nesten ikke til å skille fra den — og Webster dempet dessuten uttrykk han fant usømmelige, slik at «whore» ble «lewd woman».",
+        "nn": "Ein medviten forsiktig revisjon — så nær King James Version at han nesten ikkje er til å skilja frå han — og Webster dempa dessutan uttrykk han fann usømelege, slik at «whore» vart «lewd woman».",
+        "sv": "En medvetet försiktig revision — så nära King James Version att den knappt går att skilja från den — och Webster mildrade dessutom uttryck han fann oanständiga, så att ”whore” blev ”lewd woman”.",
+        "de": "Eine bewusst behutsame Revision – der King James Version so nah, dass sie kaum von ihr zu unterscheiden ist – und Webster milderte zudem Ausdrücke, die er für unschicklich hielt: aus „whore“ wurde „lewd woman“.",
+        "fr": "Une révision volontairement prudente — assez proche de la King James Version pour s'en distinguer à peine — et Webster a de plus adouci les expressions qu'il jugeait inconvenantes, « whore » devenant « lewd woman ».",
+        "es": "Una revisión deliberadamente cauta, tan próxima a la King James Version que apenas se distingue de ella; además Webster suavizó expresiones que consideraba indecorosas, y «whore» pasó a «lewd woman».",
+        "fi": "Tarkoituksella varovainen tarkistus – niin lähellä King James Versionia, että sitä tuskin erottaa siitä – ja lisäksi Webster pehmensi sopimattomina pitämiään ilmauksia: ”whore” muuttui muotoon ”lewd woman”."
+      }
+    }
+  ],
   "coverage": {
     "testament": "both",
     "books": 66,
@@ -54,8 +95,17 @@
   },
   "provenance": {
     "method": "llm",
-    "verified": [],
-    "sources": [],
+    "verified": [
+      "legacy"
+    ],
+    "sources": [
+      {
+        "url": "https://en.wikipedia.org/wiki/Webster%27s_Revision",
+        "fields": [
+          "legacy"
+        ]
+      }
+    ],
     "generated": "2026-07-25"
   }
 }

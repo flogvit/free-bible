@@ -11,6 +11,47 @@
     "direction": "ltr"
   },
   "philosophy": "dynamic",
+  "legacy": [
+    {
+      "tag": "distinctive",
+      "text": {
+        "en": "A complete Bible in the language Haitians actually speak, rendered for sense rather than word by word: John 3:16 opens \"Paske, Bondye sitèlman renmen lèzòm\".",
+        "nb": "En fullstendig bibel på språket haitiere faktisk snakker, gjengitt etter mening framfor ord for ord: Joh 3,16 åpner «Paske, Bondye sitèlman renmen lèzòm».",
+        "nn": "Ein fullstendig bibel på språket haitiarar faktisk talar, gjeven att etter meining framfor ord for ord: Joh 3,16 opnar «Paske, Bondye sitèlman renmen lèzòm».",
+        "sv": "En fullständig bibel på det språk haitier faktiskt talar, återgiven efter mening snarare än ord för ord: Joh 3:16 inleds ”Paske, Bondye sitèlman renmen lèzòm”.",
+        "de": "Eine vollständige Bibel in der Sprache, die Haitianer tatsächlich sprechen, sinngemäß statt Wort für Wort wiedergegeben: Joh 3,16 beginnt „Paske, Bondye sitèlman renmen lèzòm“.",
+        "fr": "Une bible complète dans la langue que les Haïtiens parlent réellement, rendue selon le sens plutôt que mot à mot : Jn 3,16 s'ouvre par « Paske, Bondye sitèlman renmen lèzòm ».",
+        "es": "Una Biblia completa en la lengua que los haitianos hablan de veras, vertida por el sentido más que palabra por palabra: Jn 3:16 empieza «Paske, Bondye sitèlman renmen lèzòm».",
+        "fi": "Täydellinen raamattu sillä kielellä, jota haitilaiset todella puhuvat, käännettynä merkityksen mukaan eikä sanasta sanaan: Joh. 3:16 alkaa ”Paske, Bondye sitèlman renmen lèzòm”."
+      }
+    },
+    {
+      "tag": "distinctive",
+      "text": {
+        "en": "It follows the official Haitian Creole orthography settled in 1979 — grave accents on è and ò and no other accent marks — but keeps the apostrophe that the later revisions dropped.",
+        "nb": "Den følger den offisielle haitisk-kreolske rettskrivningen fra 1979 — gravis på è og ò og ingen andre aksenttegn — men beholder apostrofen som senere revisjoner sløyfet.",
+        "nn": "Han følgjer den offisielle haitisk-kreolske rettskrivinga frå 1979 — gravis på è og ò og ingen andre aksentteikn — men held på apostrofen som seinare revisjonar sløyfa.",
+        "sv": "Den följer den officiella haitiska kreolortografin från 1979 — grav accent på è och ò och inga andra accenttecken — men behåller apostrofen som senare revisioner strök.",
+        "de": "Sie folgt der 1979 festgelegten offiziellen haitianisch-kreolischen Rechtschreibung – Gravis auf è und ò, sonst keine Akzentzeichen –, behält aber den Apostroph, den spätere Fassungen strichen.",
+        "fr": "Elle suit l'orthographe officielle du créole haïtien fixée en 1979 — accent grave sur è et ò, aucun autre signe — mais conserve l'apostrophe que les révisions ultérieures ont abandonnée.",
+        "es": "Sigue la ortografía oficial del criollo haitiano fijada en 1979 —acento grave en è y ò y ningún otro signo—, pero conserva el apóstrofo que las revisiones posteriores suprimieron.",
+        "fi": "Se noudattaa vuonna 1979 vahvistettua virallista haitinkreolin oikeinkirjoitusta – gravis è:n ja ò:n päällä eikä muita tarkkeita – mutta säilyttää heittomerkin, jonka myöhemmät tarkistukset poistivat."
+      }
+    },
+    {
+      "tag": "limitation",
+      "text": {
+        "en": "Nothing is recorded about who made this translation or when: it carries no translator, no year and no textual basis.",
+        "nb": "Ingenting er registrert om hvem som laget denne oversettelsen eller når: den har verken oversetter, årstall eller tekstgrunnlag.",
+        "nn": "Ingenting er registrert om kven som laga denne omsetjinga eller når: ho har korkje omsetjar, årstal eller tekstgrunnlag.",
+        "sv": "Ingenting är noterat om vem som gjorde denna översättning eller när: den saknar översättare, årtal och textgrund.",
+        "de": "Über Urheberschaft und Zeit dieser Übersetzung ist nichts verzeichnet: Sie nennt weder Übersetzer noch Jahr noch Textgrundlage.",
+        "fr": "Rien n'est consigné sur l'auteur de cette traduction ni sur sa date : elle ne porte ni traducteur, ni année, ni base textuelle.",
+        "es": "No consta nada sobre quién hizo esta traducción ni cuándo: no lleva traductor, ni año, ni base textual.",
+        "fi": "Tästä käännöksestä ei ole merkintää tekijästä eikä ajankohdasta: siinä ei ole kääntäjää, vuotta eikä tekstipohjaa."
+      }
+    }
+  ],
   "coverage": {
     "testament": "both",
     "books": 66,
@@ -25,8 +66,23 @@
   },
   "provenance": {
     "method": "llm",
-    "verified": [],
-    "sources": [],
+    "verified": [
+      "legacy"
+    ],
+    "sources": [
+      {
+        "url": "https://en.wikipedia.org/wiki/Haitian_Creole",
+        "fields": [
+          "legacy"
+        ]
+      },
+      {
+        "url": "https://github.com/flogvit/free-bible/blob/main/generate/bibles_raw/hcv",
+        "fields": [
+          "legacy"
+        ]
+      }
+    ],
     "generated": "2026-07-25"
   }
 }

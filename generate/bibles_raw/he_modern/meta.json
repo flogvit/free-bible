@@ -9,6 +9,34 @@
   "name": {
     "native": "תנ ך עברי מודרני"
   },
+  "legacy": [
+    {
+      "tag": "distinctive",
+      "text": {
+        "en": "A complete Bible in modern Hebrew, New Testament included — John 3:16 reads \"כי ככה אהב האלהים את העולם\" — so the Gospels can be read in the language of the Old Testament.",
+        "nb": "En fullstendig bibel på moderne hebraisk, med Det nye testamentet — Joh 3,16 lyder «כי ככה אהב האלהים את העולם» — så evangeliene kan leses på Det gamle testamentets språk.",
+        "nn": "Ein fullstendig bibel på moderne hebraisk, med Det nye testamentet — Joh 3,16 lyder «כי ככה אהב האלהים את העולם» — så evangelia kan lesast på språket til Det gamle testamentet.",
+        "sv": "En fullständig bibel på modern hebreiska, Nya testamentet inbegripet — Joh 3:16 lyder ”כי ככה אהב האלהים את העולם” — så att evangelierna kan läsas på Gamla testamentets språk.",
+        "de": "Eine vollständige Bibel auf modernem Hebräisch samt Neuem Testament – Joh 3,16 lautet „כי ככה אהב האלהים את העולם“ –, sodass sich die Evangelien in der Sprache des Alten Testaments lesen lassen.",
+        "fr": "Une bible complète en hébreu moderne, Nouveau Testament compris — Jn 3,16 porte « כי ככה אהב האלהים את העולם » —, de sorte que les Évangiles se lisent dans la langue de l'Ancien Testament.",
+        "es": "Una Biblia completa en hebreo moderno, Nuevo Testamento incluido —Jn 3:16 dice «כי ככה אהב האלהים את העולם»—, de modo que los Evangelios pueden leerse en la lengua del Antiguo Testamento.",
+        "fi": "Täydellinen nykyhepreankielinen raamattu, Uusi testamentti mukaan luettuna – Joh. 3:16 kuuluu ”כי ככה אהב האלהים את העולם” – joten evankeliumit voi lukea Vanhan testamentin kielellä."
+      }
+    },
+    {
+      "tag": "limitation",
+      "text": {
+        "en": "Nothing is recorded about who made this translation or when: it carries no translator, no year, no textual basis, and not even a name in English.",
+        "nb": "Ingenting er registrert om hvem som laget denne oversettelsen eller når: den har verken oversetter, årstall, tekstgrunnlag eller navn på engelsk.",
+        "nn": "Ingenting er registrert om kven som laga denne omsetjinga eller når: ho har korkje omsetjar, årstal, tekstgrunnlag eller namn på engelsk.",
+        "sv": "Ingenting är noterat om vem som gjorde denna översättning eller när: den saknar översättare, årtal, textgrund och till och med namn på engelska.",
+        "de": "Über Urheberschaft und Zeit dieser Übersetzung ist nichts verzeichnet: Sie nennt weder Übersetzer noch Jahr noch Textgrundlage, nicht einmal einen englischen Namen.",
+        "fr": "Rien n'est consigné sur l'auteur de cette traduction ni sur sa date : elle ne porte ni traducteur, ni année, ni base textuelle, ni même un nom en anglais.",
+        "es": "No consta nada sobre quién hizo esta traducción ni cuándo: no lleva traductor, ni año, ni base textual, ni siquiera un nombre en inglés.",
+        "fi": "Tästä käännöksestä ei ole merkintää tekijästä eikä ajankohdasta: siinä ei ole kääntäjää, vuotta, tekstipohjaa eikä edes englanninkielistä nimeä."
+      }
+    }
+  ],
   "coverage": {
     "testament": "both",
     "books": 66,
@@ -23,8 +51,17 @@
   },
   "provenance": {
     "method": "llm",
-    "verified": [],
-    "sources": [],
+    "verified": [
+      "legacy"
+    ],
+    "sources": [
+      {
+        "url": "https://github.com/flogvit/free-bible/blob/main/generate/bibles_raw/he_modern",
+        "fields": [
+          "legacy"
+        ]
+      }
+    ],
     "generated": "2026-07-25"
   }
 }

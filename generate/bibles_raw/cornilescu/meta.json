@@ -23,6 +23,47 @@
       "single_translator"
     ]
   },
+  "legacy": [
+    {
+      "tag": "distinctive",
+      "text": {
+        "en": "Dumitru Cornilescu, a Romanian archdeacon, made it because the Romanian Bibles then in use were in an archaic form of the language — his is in the Romanian people actually read.",
+        "nb": "Dumitru Cornilescu, en rumensk erkediakon, laget den fordi de rumenske biblene som fantes, var i en arkaisk språkform — hans er på det rumenske folk faktisk leser.",
+        "nn": "Dumitru Cornilescu, ein rumensk erkediakon, laga henne fordi dei rumenske biblane som fanst, var i ei arkaisk språkform — hans er på det rumenske folk faktisk les.",
+        "sv": "Dumitru Cornilescu, en rumänsk ärkediakon, gjorde den för att de rumänska biblar som fanns var på en ålderdomlig språkform — hans är på den rumänska folk faktiskt läser.",
+        "de": "Dumitru Cornilescu, ein rumänischer Erzdiakon, schuf sie, weil die damaligen rumänischen Bibeln in einer altertümlichen Sprachform standen – seine ist in dem Rumänisch, das die Leute tatsächlich lesen.",
+        "fr": "Dumitru Cornilescu, archidiacre roumain, l'a faite parce que les bibles roumaines alors en usage employaient une forme archaïque de la langue — la sienne est dans le roumain que l'on lit vraiment.",
+        "es": "Dumitru Cornilescu, arcediano rumano, la hizo porque las biblias rumanas entonces en uso empleaban una forma arcaica de la lengua: la suya está en el rumano que la gente lee de veras.",
+        "fi": "Romanialainen arkkidiakoni Dumitru Cornilescu teki sen, koska tuolloin käytössä olleet romaniankieliset raamatut olivat vanhahtavalla kielellä – hänen raamattunsa on sitä romaniaa, jota ihmiset todella lukevat."
+      }
+    },
+    {
+      "tag": "distinctive",
+      "text": {
+        "en": "The revised 1924 edition became the British and Foreign Bible Society's official Romanian text, and it is still the standard Protestant Bible in Romania.",
+        "nb": "Den reviderte utgaven fra 1924 ble British and Foreign Bible Societys offisielle rumenske tekst, og den er fortsatt standardbibelen for protestanter i Romania.",
+        "nn": "Den reviderte utgåva frå 1924 vart British and Foreign Bible Societys offisielle rumenske tekst, og ho er framleis standardbibelen for protestantar i Romania.",
+        "sv": "Den reviderade utgåvan från 1924 blev British and Foreign Bible Societys officiella rumänska text, och den är alltjämt standardbibeln för protestanter i Rumänien.",
+        "de": "Die überarbeitete Ausgabe von 1924 wurde zum offiziellen rumänischen Text der British and Foreign Bible Society und ist bis heute die Standardbibel der Protestanten in Rumänien.",
+        "fr": "L'édition révisée de 1924 est devenue le texte roumain officiel de la British and Foreign Bible Society, et reste la bible protestante de référence en Roumanie.",
+        "es": "La edición revisada de 1924 se convirtió en el texto rumano oficial de la British and Foreign Bible Society, y sigue siendo la Biblia protestante estándar en Rumanía.",
+        "fi": "Vuoden 1924 tarkistetusta laitoksesta tuli British and Foreign Bible Societyn virallinen romaniankielinen teksti, ja se on yhä Romanian protestanttien vakioraamattu."
+      }
+    },
+    {
+      "tag": "limitation",
+      "text": {
+        "en": "Contested where it touches Orthodox doctrine: rendering presbyteroi as \"elders\" rather than \"priests\" bore on apostolic succession, distribution in the countryside was forbidden by 1933, and the church commissioned its own version in 1938.",
+        "nb": "Omstridt der den berører ortodoks lære: å gjengi presbyteroi som «eldste» og ikke «prester» rørte ved den apostoliske suksesjonen, spredning på landsbygda ble forbudt innen 1933, og kirken bestilte sin egen utgave i 1938.",
+        "nn": "Omstridd der ho kjem nær ortodoks lære: å gje att presbyteroi som «eldste» og ikkje «prestar» rørte ved den apostoliske suksesjonen, spreiing på landsbygda vart forboden innan 1933, og kyrkja tinga si eiga utgåve i 1938.",
+        "sv": "Omstridd där den rör ortodox lära: att återge presbyteroi med ”äldste” och inte ”präster” berörde den apostoliska successionen, spridning på landsbygden förbjöds till 1933, och kyrkan beställde en egen version 1938.",
+        "de": "Umstritten, wo sie orthodoxe Lehre berührt: presbyteroi mit „Älteste“ statt „Priester“ wiederzugeben, betraf die apostolische Sukzession; die Verbreitung auf dem Land wurde bis 1933 untersagt, und die Kirche gab 1938 eine eigene Fassung in Auftrag.",
+        "fr": "Contestée là où elle touche la doctrine orthodoxe : rendre presbyteroi par « anciens » plutôt que « prêtres » engageait la succession apostolique ; sa diffusion dans les campagnes fut interdite dès 1933, et l'Église commanda sa propre version en 1938.",
+        "es": "Discutida allí donde toca la doctrina ortodoxa: verter presbyteroi como «ancianos» y no «sacerdotes» afectaba a la sucesión apostólica; su difusión en el campo se prohibió hacia 1933 y la Iglesia encargó su propia versión en 1938.",
+        "fi": "Kiistelty siellä, missä se koskettaa ortodoksista oppia: presbyteroin kääntäminen sanalla ”vanhimmat” eikä ”papit” liittyi apostoliseen suksessioon, levitys maaseudulla kiellettiin vuoteen 1933 mennessä, ja kirkko tilasi oman laitoksensa 1938."
+      }
+    }
+  ],
   "coverage": {
     "testament": "both",
     "books": 66,
@@ -37,8 +78,17 @@
   },
   "provenance": {
     "method": "llm",
-    "verified": [],
-    "sources": [],
+    "verified": [
+      "legacy"
+    ],
+    "sources": [
+      {
+        "url": "https://en.wikipedia.org/wiki/Dumitru_Cornilescu",
+        "fields": [
+          "legacy"
+        ]
+      }
+    ],
     "generated": "2026-07-25"
   }
 }

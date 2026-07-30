@@ -41,6 +41,47 @@
     ],
     "review": "none"
   },
+  "legacy": [
+    {
+      "tag": "distinctive",
+      "text": {
+        "en": "The reference Bible of Italian Protestantism. Giovanni Diodati, a Calvinist and professor at the Academy of Geneva, translated from Hebrew, Greek, Latin and Syriac.",
+        "nb": "Referansebibelen for italiensk protestantisme. Giovanni Diodati, kalvinist og professor ved akademiet i Genève, oversatte fra hebraisk, gresk, latin og syrisk.",
+        "nn": "Referansebibelen for italiensk protestantisme. Giovanni Diodati, kalvinist og professor ved akademiet i Genève, omsette frå hebraisk, gresk, latin og syrisk.",
+        "sv": "Den italienska protestantismens referensbibel. Giovanni Diodati, kalvinist och professor vid akademin i Genève, översatte från hebreiska, grekiska, latin och syriska.",
+        "de": "Die Referenzbibel des italienischen Protestantismus. Giovanni Diodati, Calvinist und Professor an der Genfer Akademie, übersetzte aus dem Hebräischen, Griechischen, Lateinischen und Syrischen.",
+        "fr": "La bible de référence du protestantisme italien. Giovanni Diodati, calviniste et professeur à l'Académie de Genève, a traduit de l'hébreu, du grec, du latin et du syriaque.",
+        "es": "La biblia de referencia del protestantismo italiano. Giovanni Diodati, calvinista y profesor de la Academia de Ginebra, tradujo del hebreo, el griego, el latín y el siríaco.",
+        "fi": "Italialaisen protestantismin viiteraamattu. Giovanni Diodati, kalvinisti ja Geneven akatemian professori, käänsi hepreasta, kreikasta, latinasta ja syyriasta."
+      }
+    },
+    {
+      "tag": "distinctive",
+      "text": {
+        "en": "The 1607 edition came with Diodati's own annotations, giving Italian Protestants a commentary alongside the text; the 1641 revision added metrical psalms for singing.",
+        "nb": "Utgaven fra 1607 kom med Diodatis egne noter, som ga italienske protestanter en kommentar ved siden av teksten; revisjonen fra 1641 la til salmer på versemål til sang.",
+        "nn": "Utgåva frå 1607 kom med Diodatis eigne notar, som gav italienske protestantar ein kommentar attmed teksten; revisjonen frå 1641 la til salmar på versemål til song.",
+        "sv": "Utgåvan från 1607 kom med Diodatis egna noter, som gav italienska protestanter en kommentar vid sidan av texten; revisionen 1641 lade till psaltarpsalmer på versmått för sång.",
+        "de": "Die Ausgabe von 1607 erschien mit Diodatis eigenen Anmerkungen, die den italienischen Protestanten einen Kommentar neben dem Text boten; die Revision von 1641 fügte Psalmen in Versmaß zum Singen hinzu.",
+        "fr": "L'édition de 1607 parut avec les annotations de Diodati lui-même, offrant aux protestants italiens un commentaire à côté du texte ; la révision de 1641 y ajouta des psaumes métriques à chanter.",
+        "es": "La edición de 1607 salió con las anotaciones del propio Diodati, que dieron a los protestantes italianos un comentario junto al texto; la revisión de 1641 añadió salmos métricos para el canto.",
+        "fi": "Vuoden 1607 laitos ilmestyi Diodatin omien selitysten kera, mikä antoi italialaisille protestanteille kommentaarin tekstin rinnalle; vuoden 1641 tarkistus lisäsi mitalliset psalmit laulettavaksi."
+      }
+    },
+    {
+      "tag": "limitation",
+      "text": {
+        "en": "The Italian is that of the early seventeenth century, and reads as old as it is.",
+        "nb": "Italiensken er fra tidlig 1600-tall, og leses som den alderen den har.",
+        "nn": "Italiensken er frå tidleg 1600-tal, og blir lesen som den alderen han har.",
+        "sv": "Italienskan är från tidigt 1600-tal och läses som den ålder den har.",
+        "de": "Das Italienisch stammt vom Beginn des 17. Jahrhunderts und liest sich auch so.",
+        "fr": "L'italien est celui du début du XVIIe siècle, et il se lit comme tel.",
+        "es": "El italiano es el de comienzos del siglo XVII, y se lee con esa antigüedad.",
+        "fi": "Italia on 1600-luvun alusta, ja se myös tuntuu lukiessa siltä."
+      }
+    }
+  ],
   "coverage": {
     "testament": "both",
     "books": 66,
@@ -55,8 +96,17 @@
   },
   "provenance": {
     "method": "llm",
-    "verified": [],
-    "sources": [],
+    "verified": [
+      "legacy"
+    ],
+    "sources": [
+      {
+        "url": "https://en.wikipedia.org/wiki/Giovanni_Diodati",
+        "fields": [
+          "legacy"
+        ]
+      }
+    ],
     "generated": "2026-07-25"
   }
 }

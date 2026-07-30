@@ -32,6 +32,47 @@
       "revision"
     ]
   },
+  "legacy": [
+    {
+      "tag": "distinctive",
+      "text": {
+        "en": "David Martin's revision of the Geneva Bible, published with notes: the New Testament in 1696, the whole Bible in 1707.",
+        "nb": "David Martins revisjon av Genève-bibelen, utgitt med noter: Det nye testamentet i 1696, hele bibelen i 1707.",
+        "nn": "David Martins revisjon av Genève-bibelen, utgjeven med notar: Det nye testamentet i 1696, heile bibelen i 1707.",
+        "sv": "David Martins revision av Genèvebibeln, utgiven med noter: Nya testamentet 1696, hela bibeln 1707.",
+        "de": "David Martins Revision der Genfer Bibel, mit Anmerkungen herausgegeben: das Neue Testament 1696, die ganze Bibel 1707.",
+        "fr": "La révision par David Martin de la Bible de Genève, publiée avec des notes : le Nouveau Testament en 1696, la Bible entière en 1707.",
+        "es": "La revisión de la Biblia de Ginebra hecha por David Martin, publicada con notas: el Nuevo Testamento en 1696 y la Biblia entera en 1707.",
+        "fi": "David Martinin tarkistus Geneven raamatusta, julkaistu selityksin: Uusi testamentti 1696, koko raamattu 1707."
+      }
+    },
+    {
+      "tag": "distinctive",
+      "text": {
+        "en": "Revised again and again after him — by the pastor Pierre Roques in 1736 and once more in 1855 — a measure of how long it stayed in use.",
+        "nb": "Revidert gang på gang etter ham — av presten Pierre Roques i 1736 og enda en gang i 1855 — et mål på hvor lenge den holdt seg i bruk.",
+        "nn": "Revidert gong på gong etter han — av presten Pierre Roques i 1736 og endå ein gong i 1855 — eit mål på kor lenge han heldt seg i bruk.",
+        "sv": "Reviderad gång på gång efter honom — av pastorn Pierre Roques 1736 och än en gång 1855 — ett mått på hur länge den höll sig i bruk.",
+        "de": "Nach ihm immer wieder überarbeitet – 1736 durch den Pfarrer Pierre Roques und nochmals 1855 –, ein Maß dafür, wie lange sie in Gebrauch blieb.",
+        "fr": "Révisée encore et encore après lui — par le pasteur Pierre Roques en 1736, puis de nouveau en 1855 — signe de sa longévité dans l'usage.",
+        "es": "Revisada una y otra vez después de él —por el pastor Pierre Roques en 1736 y de nuevo en 1855—, medida de cuánto tiempo se mantuvo en uso.",
+        "fi": "Tarkistettu hänen jälkeensä yhä uudelleen – pastori Pierre Roquesin toimesta 1736 ja vielä kerran 1855 – mikä kertoo, kuinka kauan se pysyi käytössä."
+      }
+    },
+    {
+      "tag": "limitation",
+      "text": {
+        "en": "A revision within the Geneva Bible line rather than a fresh translation from the original languages — and the French is that of 1707.",
+        "nb": "En revisjon innenfor Genève-linjen heller enn en ny oversettelse fra originalspråkene — og fransken er fra 1707.",
+        "nn": "Ein revisjon innanfor Genève-linja heller enn ei ny omsetjing frå originalspråka — og fransken er frå 1707.",
+        "sv": "En revision inom Genèvelinjen snarare än en nyöversättning från originalspråken — och franskan är från 1707.",
+        "de": "Eine Revision innerhalb der Genfer Linie und keine Neuübersetzung aus den Ursprachen – und das Französisch stammt von 1707.",
+        "fr": "Une révision au sein de la lignée genevoise plutôt qu'une traduction nouvelle depuis les langues d'origine — et le français est celui de 1707.",
+        "es": "Una revisión dentro de la línea ginebrina antes que una traducción nueva desde las lenguas originales, y el francés es el de 1707.",
+        "fi": "Tarkistus Geneven suvun sisällä eikä uusi käännös alkukielistä – ja ranska on vuodelta 1707."
+      }
+    }
+  ],
   "coverage": {
     "testament": "both",
     "books": 66,
@@ -46,8 +87,17 @@
   },
   "provenance": {
     "method": "llm",
-    "verified": [],
-    "sources": [],
+    "verified": [
+      "legacy"
+    ],
+    "sources": [
+      {
+        "url": "https://en.wikipedia.org/wiki/Bible_translations_into_French",
+        "fields": [
+          "legacy"
+        ]
+      }
+    ],
     "generated": "2026-07-25"
   }
 }

@@ -32,6 +32,34 @@
       "revision"
     ]
   },
+  "legacy": [
+    {
+      "tag": "distinctive",
+      "text": {
+        "en": "A revision of the 1871 Elberfelder, the German counterpart of the Darby Bible, carrying on its rule that the faithful rendering of the original outweighs every other consideration.",
+        "nb": "En revisjon av Elberfelder 1871, den tyske motparten til Darby-bibelen, som fører videre regelen om at troskap mot originalen veier tyngre enn alle andre hensyn.",
+        "nn": "Ein revisjon av Elberfelder 1871, den tyske motparten til Darby-bibelen, som fører vidare regelen om at truskap mot originalen veg tyngre enn alle andre omsyn.",
+        "sv": "En revision av Elberfelder 1871, den tyska motsvarigheten till Darbybibeln, som för vidare regeln att trohet mot originalet väger tyngre än alla andra hänsyn.",
+        "de": "Eine Revision der Elberfelder von 1871, des deutschen Gegenstücks zur Darby-Bibel, die deren Grundsatz fortführt: Treue zum Urtext wiegt schwerer als jede andere Rücksicht.",
+        "fr": "Une révision de l'Elberfelder de 1871, pendant allemand de la Bible Darby, qui en reprend la règle : la fidélité à l'original l'emporte sur toute autre considération.",
+        "es": "Una revisión de la Elberfelder de 1871, contraparte alemana de la Biblia Darby, que prolonga su regla: la fidelidad al original pesa más que cualquier otra consideración.",
+        "fi": "Vuoden 1871 Elberfelderin, Darbyn raamatun saksalaisen vastineen, tarkistus, joka jatkaa sen sääntöä: uskollisuus alkutekstille painaa enemmän kuin mikään muu."
+      }
+    },
+    {
+      "tag": "limitation",
+      "text": {
+        "en": "Like the edition it revises, it puts fidelity before elegance — the German follows the shape of the Hebrew and Greek rather than the shape of German.",
+        "nb": "Som utgaven den reviderer, setter den troskap foran eleganse — tysken følger formen i hebraisk og gresk heller enn formen i tysk.",
+        "nn": "Som utgåva han reviderer, set han truskap framfor eleganse — tysken følgjer forma i hebraisk og gresk heller enn forma i tysk.",
+        "sv": "Liksom utgåvan den reviderar sätter den trohet före elegans — tyskan följer hebreiskans och grekiskans form snarare än tyskans.",
+        "de": "Wie die Ausgabe, die sie überarbeitet, stellt sie Treue über Eleganz – das Deutsch folgt der Gestalt des Hebräischen und Griechischen statt der des Deutschen.",
+        "fr": "Comme l'édition qu'elle révise, elle place la fidélité avant l'élégance : l'allemand suit la forme de l'hébreu et du grec plutôt que celle de l'allemand.",
+        "es": "Como la edición que revisa, antepone la fidelidad a la elegancia: el alemán sigue la forma del hebreo y el griego más que la del propio alemán.",
+        "fi": "Kuten tarkistamansa laitos, sekin asettaa uskollisuuden kauneuden edelle – saksa seuraa heprean ja kreikan muotoa eikä saksan omaa."
+      }
+    }
+  ],
   "coverage": {
     "testament": "both",
     "books": 66,
@@ -46,8 +74,17 @@
   },
   "provenance": {
     "method": "llm",
-    "verified": [],
-    "sources": [],
+    "verified": [
+      "legacy"
+    ],
+    "sources": [
+      {
+        "url": "https://en.wikipedia.org/wiki/Darby_Bible",
+        "fields": [
+          "legacy"
+        ]
+      }
+    ],
     "generated": "2026-07-25"
   }
 }

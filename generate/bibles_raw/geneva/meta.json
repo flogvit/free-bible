@@ -56,6 +56,47 @@
       "label": "revision"
     }
   ],
+  "legacy": [
+    {
+      "tag": "distinctive",
+      "text": {
+        "en": "The first complete English Bible translated entirely from Hebrew, Aramaic and Greek — and the first to number the verses and print in roman type rather than blackletter.",
+        "nb": "Den første fullstendige engelske bibelen som er oversatt helt fra hebraisk, arameisk og gresk — og den første med versnumre og med antikva i stedet for fraktur.",
+        "nn": "Den første fullstendige engelske bibelen som er omsett heilt frå hebraisk, arameisk og gresk — og den første med versnummer og med antikva i staden for fraktur.",
+        "sv": "Den första fullständiga engelska bibeln översatt helt från hebreiska, arameiska och grekiska — och den första med versnummer och med antikva i stället för frakturstil.",
+        "de": "Die erste vollständige englische Bibel, die ganz aus dem Hebräischen, Aramäischen und Griechischen übersetzt wurde – und die erste mit Versnummern und in Antiqua statt in Fraktur.",
+        "fr": "La première bible anglaise complète traduite entièrement de l'hébreu, de l'araméen et du grec — et la première à numéroter les versets et à être imprimée en caractères romains plutôt qu'en gothique.",
+        "es": "La primera biblia inglesa completa traducida enteramente del hebreo, el arameo y el griego, y la primera en numerar los versículos e imprimirse en letra redonda en lugar de gótica.",
+        "fi": "Ensimmäinen täydellinen englanninkielinen raamattu, joka on käännetty kokonaan hepreasta, arameasta ja kreikasta – ja ensimmäinen, jossa on jaenumerot ja joka painettiin antiikvalla eikä fraktuuralla."
+      }
+    },
+    {
+      "tag": "distinctive",
+      "text": {
+        "en": "Its marginal notes are outspokenly Calvinist. This was the Bible of Shakespeare, John Knox and Oliver Cromwell, and the one the Separatists carried aboard the Mayflower in 1620.",
+        "nb": "Marginnotene er utpreget kalvinistiske. Dette var bibelen til Shakespeare, John Knox og Oliver Cromwell, og den separatistene tok med om bord på Mayflower i 1620.",
+        "nn": "Margnotane er utprega kalvinistiske. Dette var bibelen til Shakespeare, John Knox og Oliver Cromwell, og den separatistane tok med om bord på Mayflower i 1620.",
+        "sv": "Marginalnoterna är uttalat kalvinistiska. Detta var Shakespeares, John Knox och Oliver Cromwells bibel, och den separatisterna tog med ombord på Mayflower 1620.",
+        "de": "Die Randnoten sind ausgesprochen calvinistisch. Dies war die Bibel Shakespeares, John Knox' und Oliver Cromwells und jene, welche die Separatisten 1620 an Bord der Mayflower mitnahmen.",
+        "fr": "Ses notes marginales sont ouvertement calvinistes. C'était la bible de Shakespeare, de John Knox et d'Oliver Cromwell, et celle que les séparatistes emportèrent à bord du Mayflower en 1620.",
+        "es": "Sus notas marginales son abiertamente calvinistas. Fue la biblia de Shakespeare, John Knox y Oliver Cromwell, y la que los separatistas llevaron a bordo del Mayflower en 1620.",
+        "fi": "Sen reunahuomautukset ovat avoimen kalvinistisia. Tämä oli Shakespearen, John Knoxin ja Oliver Cromwellin raamattu ja se, jonka separatistit veivät Mayflowerin kyytiin vuonna 1620."
+      }
+    },
+    {
+      "tag": "limitation",
+      "text": {
+        "en": "James I called the notes \"very partial, untrue, seditious\" and commissioned the King James Version to replace it — though its translators still leaned on Geneva for perhaps a fifth of their wording.",
+        "nb": "Jakob I kalte notene «very partial, untrue, seditious» og bestilte King James Version for å erstatte den — men oversetterne der lente seg likevel på Genève for kanskje en femtedel av ordlyden.",
+        "nn": "Jakob I kalla notane «very partial, untrue, seditious» og tinga King James Version for å erstatta henne — men omsetjarane der lente seg likevel på Genève for kanskje ein femtedel av ordlyden.",
+        "sv": "Jakob I kallade noterna ”very partial, untrue, seditious” och beställde King James Version för att ersätta den — ändå lutade sig dess översättare mot Genève för kanske en femtedel av ordalydelsen.",
+        "de": "Jakob I. nannte die Noten „very partial, untrue, seditious“ und gab die King James Version in Auftrag, um sie zu ersetzen – deren Übersetzer stützten sich dennoch für vielleicht ein Fünftel des Wortlauts auf Genf.",
+        "fr": "Jacques Ier qualifia ces notes de « very partial, untrue, seditious » et commanda la King James Version pour la remplacer — ses traducteurs s'appuyèrent pourtant sur Genève pour peut-être un cinquième de leur formulation.",
+        "es": "Jacobo I calificó las notas de «very partial, untrue, seditious» y encargó la King James Version para sustituirla; aun así, sus traductores se apoyaron en Ginebra para quizá una quinta parte de su redacción.",
+        "fi": "Jaakko I kutsui huomautuksia sanoin ”very partial, untrue, seditious” ja tilasi King James Versionin sen korvaajaksi – silti sen kääntäjät nojasivat Geneveen ehkä viidenneksessä sanamuodoistaan."
+      }
+    }
+  ],
   "coverage": {
     "testament": "both",
     "books": 66,
@@ -70,8 +111,17 @@
   },
   "provenance": {
     "method": "llm",
-    "verified": [],
-    "sources": [],
+    "verified": [
+      "legacy"
+    ],
+    "sources": [
+      {
+        "url": "https://en.wikipedia.org/wiki/Geneva_Bible",
+        "fields": [
+          "legacy"
+        ]
+      }
+    ],
     "generated": "2026-07-25"
   }
 }

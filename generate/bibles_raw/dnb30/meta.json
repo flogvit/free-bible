@@ -31,6 +31,47 @@
     ],
     "review": "society_review"
   },
+  "legacy": [
+    {
+      "tag": "distinctive",
+      "text": {
+        "en": "The Bible Society's 1930 revision drew together the New Testament of 1904 and the Old Testament of 1891, and Norwegianised the language further so the two testaments would speak alike.",
+        "nb": "Bibelselskapets revisjon fra 1930 førte sammen Det nye testamentet fra 1904 og Det gamle testamentet fra 1891, og fornorsket språket ytterligere så de to testamentene skulle tale likt.",
+        "nn": "Revisjonen til Bibelselskapet frå 1930 førte saman Det nye testamentet frå 1904 og Det gamle testamentet frå 1891, og fornorska språket ytterlegare så dei to testamenta skulle tala likt.",
+        "sv": "Bibelsällskapets revision 1930 förde samman Nya testamentet från 1904 och Gamla testamentet från 1891 och förnorskade språket ytterligare så att de båda testamentena skulle tala likadant.",
+        "de": "Die Revision der Bibelgesellschaft von 1930 führte das Neue Testament von 1904 und das Alte Testament von 1891 zusammen und norwegisierte die Sprache weiter, damit beide Testamente gleich sprechen.",
+        "fr": "La révision de 1930 de la Société biblique a réuni le Nouveau Testament de 1904 et l'Ancien Testament de 1891, et a norvégianisé davantage la langue pour que les deux Testaments parlent d'une même voix.",
+        "es": "La revisión de 1930 de la Sociedad Bíblica reunió el Nuevo Testamento de 1904 y el Antiguo Testamento de 1891, y noruegizó más la lengua para que ambos Testamentos hablaran igual.",
+        "fi": "Raamattuseuran vuoden 1930 tarkistus liitti yhteen vuoden 1904 Uuden testamentin ja vuoden 1891 Vanhan testamentin ja norjalaisti kieltä edelleen, jotta testamentit puhuisivat samalla tavalla."
+      }
+    },
+    {
+      "tag": "distinctive",
+      "text": {
+        "en": "It stood as the common Norwegian standard for more than forty years.",
+        "nb": "Den sto som den felles norske standarden i over førti år.",
+        "nn": "Han stod som den felles norske standarden i over førti år.",
+        "sv": "Den stod som den gemensamma norska standarden i över fyrtio år.",
+        "de": "Sie galt über vierzig Jahre lang als der gemeinsame norwegische Standard.",
+        "fr": "Elle a fait office de norme norvégienne commune pendant plus de quarante ans.",
+        "es": "Fue la norma noruega común durante más de cuarenta años.",
+        "fi": "Se oli yli neljäkymmentä vuotta norjalaisten yhteinen vakiolaitos."
+      }
+    },
+    {
+      "tag": "limitation",
+      "text": {
+        "en": "The language is the bokmål of 1930, and has not been revised since.",
+        "nb": "Språket er bokmålet fra 1930, og er ikke revidert siden.",
+        "nn": "Språket er bokmålet frå 1930, og er ikkje revidert sidan.",
+        "sv": "Språket är 1930 års bokmål och har inte reviderats sedan dess.",
+        "de": "Die Sprache ist das Bokmål von 1930 und wurde seither nicht überarbeitet.",
+        "fr": "La langue est le bokmål de 1930 et n'a pas été révisée depuis.",
+        "es": "La lengua es el bokmål de 1930 y no se ha revisado desde entonces.",
+        "fi": "Kieli on vuoden 1930 bokmålia, eikä sitä ole sen jälkeen tarkistettu."
+      }
+    }
+  ],
   "coverage": {
     "testament": "both",
     "books": 66,
@@ -45,8 +86,17 @@
   },
   "provenance": {
     "method": "llm",
-    "verified": [],
-    "sources": [],
+    "verified": [
+      "legacy"
+    ],
+    "sources": [
+      {
+        "url": "https://en.wikipedia.org/wiki/Bible_translations_into_Norwegian",
+        "fields": [
+          "legacy"
+        ]
+      }
+    ],
     "generated": "2026-07-25"
   }
 }

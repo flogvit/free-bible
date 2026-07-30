@@ -46,6 +46,60 @@
       "label": "complete_bible"
     }
   ],
+  "legacy": [
+    {
+      "tag": "distinctive",
+      "text": {
+        "en": "Made for readers without Greek or Hebrew: Darby wanted \"the unlearned\" to have as exact a translation as possible, and put faithfulness above elegance.",
+        "nb": "Laget for lesere uten gresk eller hebraisk: Darby ville at «de ulærde» skulle ha en så nøyaktig oversettelse som mulig, og satte troskap foran eleganse.",
+        "nn": "Laga for lesarar utan gresk eller hebraisk: Darby ville at «dei ulærde» skulle ha ei så nøyaktig omsetjing som mogleg, og sette truskap framfor eleganse.",
+        "sv": "Gjord för läsare utan grekiska eller hebreiska: Darby ville att ”de olärda” skulle få en så exakt översättning som möjligt och satte trohet före elegans.",
+        "de": "Für Leser ohne Griechisch und Hebräisch gemacht: Darby wollte den „Ungelehrten“ eine möglichst genaue Übersetzung geben und stellte Treue über Eleganz.",
+        "fr": "Faite pour des lecteurs sans grec ni hébreu : Darby voulait donner aux « non-savants » une traduction aussi exacte que possible, en plaçant la fidélité avant l'élégance.",
+        "es": "Hecha para lectores sin griego ni hebreo: Darby quería que «los no doctos» tuvieran una traducción lo más exacta posible, y puso la fidelidad por encima de la elegancia.",
+        "fi": "Tehty lukijoille, jotka eivät osaa kreikkaa tai hepreaa: Darby halusi antaa ”oppimattomille” mahdollisimman tarkan käännöksen ja asetti uskollisuuden kauneuden edelle."
+      }
+    },
+    {
+      "tag": "distinctive",
+      "text": {
+        "en": "Writes the covenant name as \"Jehovah\" throughout the Old Testament instead of \"LORD\", a choice later translations took up.",
+        "nb": "Skriver paktsnavnet som «Jehovah» gjennom hele Det gamle testamentet i stedet for «LORD» — et valg senere oversettelser tok opp.",
+        "nn": "Skriv paktnamnet som «Jehovah» gjennom heile Det gamle testamentet i staden for «LORD» — eit val seinare omsetjingar tok opp.",
+        "sv": "Skriver förbundsnamnet som ”Jehovah” genom hela Gamla testamentet i stället för ”LORD” — ett val som senare översättningar tog upp.",
+        "de": "Schreibt den Bundesnamen im gesamten Alten Testament als „Jehovah“ statt „LORD“ – eine Entscheidung, die spätere Übersetzungen übernahmen.",
+        "fr": "Écrit le nom de l'alliance « Jehovah » dans tout l'Ancien Testament au lieu de « LORD », un choix repris par des traductions ultérieures.",
+        "es": "Escribe el nombre del pacto como «Jehovah» en todo el Antiguo Testamento en lugar de «LORD», una opción que recogieron traducciones posteriores.",
+        "fi": "Kirjoittaa liitonnimen läpi Vanhan testamentin muodossa ”Jehovah” eikä ”LORD” – valinta, jonka myöhemmät käännökset omaksuivat."
+      }
+    },
+    {
+      "tag": "distinctive",
+      "text": {
+        "en": "The New Testament carries detailed footnotes comparing manuscript readings, built on Tregelles' critical work.",
+        "nb": "Det nye testamentet har detaljerte fotnoter som sammenligner håndskriftlesemåter, bygd på Tregelles' tekstkritiske arbeid.",
+        "nn": "Det nye testamentet har detaljerte fotnotar som samanliknar handskriftlesemåtar, bygde på Tregelles' tekstkritiske arbeid.",
+        "sv": "Nya testamentet har utförliga fotnoter som jämför handskriftsläsarter, byggda på Tregelles textkritiska arbete.",
+        "de": "Das Neue Testament führt ausführliche Fußnoten mit Handschriftenvarianten, gestützt auf die textkritische Arbeit von Tregelles.",
+        "fr": "Le Nouveau Testament comporte des notes détaillées comparant les leçons des manuscrits, appuyées sur les travaux critiques de Tregelles.",
+        "es": "El Nuevo Testamento lleva notas detalladas que comparan lecturas de los manuscritos, apoyadas en el trabajo crítico de Tregelles.",
+        "fi": "Uudessa testamentissa on yksityiskohtaiset alaviitteet käsikirjoitusten lukutavoista, Tregellesin tekstikriittisen työn pohjalta."
+      }
+    },
+    {
+      "tag": "limitation",
+      "text": {
+        "en": "Meant for private study rather than reading aloud — the word order follows the original languages rather than English.",
+        "nb": "Ment for privat studium heller enn høytlesning — ordstillingen følger originalspråkene, ikke engelsk.",
+        "nn": "Meint for privat studium heller enn høgtlesing — ordstillinga følgjer originalspråka, ikkje engelsk.",
+        "sv": "Avsedd för enskilt studium snarare än högläsning — ordföljden följer originalspråken, inte engelskan.",
+        "de": "Für das private Studium gedacht, nicht für das Vorlesen – die Wortstellung folgt den Ursprachen, nicht dem Englischen.",
+        "fr": "Destinée à l'étude personnelle plutôt qu'à la lecture à voix haute : l'ordre des mots suit les langues d'origine, non l'anglais.",
+        "es": "Pensada para el estudio privado más que para la lectura en voz alta: el orden de las palabras sigue las lenguas originales, no el inglés.",
+        "fi": "Tarkoitettu yksityiseen tutkiskeluun eikä ääneen luettavaksi – sanajärjestys seuraa alkukieliä, ei englantia."
+      }
+    }
+  ],
   "coverage": {
     "testament": "both",
     "books": 66,
@@ -60,8 +114,17 @@
   },
   "provenance": {
     "method": "llm",
-    "verified": [],
-    "sources": [],
+    "verified": [
+      "legacy"
+    ],
+    "sources": [
+      {
+        "url": "https://en.wikipedia.org/wiki/Darby_Bible",
+        "fields": [
+          "legacy"
+        ]
+      }
+    ],
     "generated": "2026-07-25"
   }
 }

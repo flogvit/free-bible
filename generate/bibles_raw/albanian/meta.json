@@ -9,6 +9,34 @@
   "name": {
     "native": "Albanian"
   },
+  "legacy": [
+    {
+      "tag": "distinctive",
+      "text": {
+        "en": "A complete Albanian Bible — a late arrival in the language: Kostandin Kristoforidhi, working with the British and Foreign Bible Society, got no further than the New Testament in Gheg (1872) and Tosk (1879) and parts of the Old.",
+        "nb": "En fullstendig albansk bibel — sent ute i språket: Kostandin Kristoforidhi, i samarbeid med British and Foreign Bible Society, kom ikke lenger enn til Det nye testamentet på gegisk (1872) og toskisk (1879) og deler av Det gamle.",
+        "nn": "Ein fullstendig albansk bibel — sein ute i språket: Kostandin Kristoforidhi, i samarbeid med British and Foreign Bible Society, kom ikkje lenger enn til Det nye testamentet på gegisk (1872) og toskisk (1879) og delar av Det gamle.",
+        "sv": "En fullständig albansk bibel — sent ute i språket: Kostandin Kristoforidhi, i samarbete med British and Foreign Bible Society, kom inte längre än till Nya testamentet på gegiska (1872) och toskiska (1879) samt delar av Gamla.",
+        "de": "Eine vollständige albanische Bibel – spät in dieser Sprache: Kostandin Kristoforidhi kam in Zusammenarbeit mit der British and Foreign Bible Society nicht über das Neue Testament auf Gegisch (1872) und Toskisch (1879) sowie Teile des Alten hinaus.",
+        "fr": "Une bible albanaise complète — tardive dans cette langue : Kostandin Kristoforidhi, avec la British and Foreign Bible Society, n'alla pas au-delà du Nouveau Testament en guègue (1872) et en tosque (1879) et de portions de l'Ancien.",
+        "es": "Una Biblia albanesa completa, tardía en esa lengua: Kostandin Kristoforidhi, junto con la British and Foreign Bible Society, no pasó del Nuevo Testamento en gego (1872) y tosco (1879) y de partes del Antiguo.",
+        "fi": "Täydellinen albaniankielinen raamattu – myöhäinen tulokas tässä kielessä: Kostandin Kristoforidhi ei British and Foreign Bible Societyn kanssa päässyt Uutta testamenttia gegiksi (1872) ja toskiksi (1879) sekä osia Vanhasta pidemmälle."
+      }
+    },
+    {
+      "tag": "limitation",
+      "text": {
+        "en": "Which Albanian Bible this is has not been established: it carries no translator, no year and no textual basis, and the complete Albanian Bibles are later than Kristoforidhi's work.",
+        "nb": "Hvilken albansk bibel dette er, er ikke fastslått: oversettelsen har verken oversetter, årstall eller tekstgrunnlag, og de fullstendige albanske biblene er yngre enn Kristoforidhis arbeid.",
+        "nn": "Kva albansk bibel dette er, er ikkje fastslått: omsetjinga har korkje omsetjar, årstal eller tekstgrunnlag, og dei fullstendige albanske biblane er yngre enn arbeidet til Kristoforidhi.",
+        "sv": "Vilken albansk bibel detta är har inte fastställts: översättningen saknar översättare, årtal och textgrund, och de fullständiga albanska biblarna är yngre än Kristoforidhis arbete.",
+        "de": "Welche albanische Bibel dies ist, wurde nicht geklärt: Die Übersetzung nennt weder Übersetzer noch Jahr noch Textgrundlage, und die vollständigen albanischen Bibeln sind jünger als Kristoforidhis Arbeit.",
+        "fr": "L'identité de cette bible albanaise n'est pas établie : la traduction ne porte ni traducteur, ni année, ni base textuelle, et les bibles albanaises complètes sont postérieures aux travaux de Kristoforidhi.",
+        "es": "No se ha establecido qué Biblia albanesa es esta: la traducción no lleva traductor, ni año, ni base textual, y las Biblias albanesas completas son posteriores al trabajo de Kristoforidhi.",
+        "fi": "Ei ole selvitetty, mikä albaniankielinen raamattu tämä on: käännöksessä ei ole kääntäjää, vuotta eikä tekstipohjaa, ja täydelliset albaniankieliset raamatut ovat Kristoforidhin työtä myöhempiä."
+      }
+    }
+  ],
   "coverage": {
     "testament": "both",
     "books": 66,
@@ -23,8 +51,17 @@
   },
   "provenance": {
     "method": "llm",
-    "verified": [],
-    "sources": [],
+    "verified": [
+      "legacy"
+    ],
+    "sources": [
+      {
+        "url": "https://en.wikipedia.org/wiki/Bible_translations_into_Albanian",
+        "fields": [
+          "legacy"
+        ]
+      }
+    ],
     "generated": "2026-07-25"
   }
 }

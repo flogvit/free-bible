@@ -56,6 +56,60 @@
       "label": "complete_bible"
     }
   ],
+  "legacy": [
+    {
+      "tag": "distinctive",
+      "text": {
+        "en": "The only officially authorised revision of the King James Version ever made in Britain.",
+        "nb": "Den eneste offisielt autoriserte revisjonen av King James Version som er laget i Storbritannia.",
+        "nn": "Den einaste offisielt autoriserte revisjonen av King James Version som er laga i Storbritannia.",
+        "sv": "Den enda officiellt auktoriserade revisionen av King James Version som gjorts i Storbritannien.",
+        "de": "Die einzige offiziell autorisierte Revision der King James Version, die in Großbritannien je vorgenommen wurde.",
+        "fr": "La seule révision officiellement autorisée de la King James Version jamais réalisée en Grande-Bretagne.",
+        "es": "La única revisión oficialmente autorizada de la King James Version hecha en Gran Bretaña.",
+        "fi": "Ainoa virallisesti valtuutettu King James Versionin tarkistus, joka Britanniassa on tehty."
+      }
+    },
+    {
+      "tag": "distinctive",
+      "text": {
+        "en": "The first major English Bible to leave the Textus Receptus for the Westcott–Hort text: over 30,000 changes in the New Testament, more than 5,000 of them from older manuscripts such as Vaticanus and Sinaiticus.",
+        "nb": "Den første store engelske bibelen som forlot Textus Receptus til fordel for Westcott–Hort-teksten: over 30 000 endringer i Det nye testamentet, mer enn 5 000 av dem fra eldre håndskrifter som Vaticanus og Sinaiticus.",
+        "nn": "Den første store engelske bibelen som forlét Textus Receptus til fordel for Westcott–Hort-teksten: over 30 000 endringar i Det nye testamentet, meir enn 5 000 av dei frå eldre handskrifter som Vaticanus og Sinaiticus.",
+        "sv": "Den första stora engelska bibeln som lämnade Textus Receptus för Westcott–Hort-texten: över 30 000 ändringar i Nya testamentet, mer än 5 000 av dem från äldre handskrifter som Vaticanus och Sinaiticus.",
+        "de": "Die erste große englische Bibel, die den Textus Receptus zugunsten des Westcott-Hort-Textes verließ: über 30 000 Änderungen im Neuen Testament, mehr als 5 000 davon aus älteren Handschriften wie Vaticanus und Sinaiticus.",
+        "fr": "La première grande bible anglaise à quitter le Textus Receptus pour le texte de Westcott et Hort : plus de 30 000 modifications dans le Nouveau Testament, dont plus de 5 000 issues de manuscrits plus anciens comme le Vaticanus et le Sinaiticus.",
+        "es": "La primera gran biblia inglesa que abandonó el Textus Receptus por el texto de Westcott y Hort: más de 30 000 cambios en el Nuevo Testamento, más de 5000 de ellos procedentes de manuscritos más antiguos como el Vaticano y el Sinaítico.",
+        "fi": "Ensimmäinen suuri englanninkielinen raamattu, joka hylkäsi Textus Receptuksen Westcott–Hortin tekstin hyväksi: yli 30 000 muutosta Uudessa testamentissa, niistä yli 5 000 vanhemmista käsikirjoituksista, kuten Vaticanuksesta ja Sinaiticuksesta."
+      }
+    },
+    {
+      "tag": "distinctive",
+      "text": {
+        "en": "Introduced paragraphs, indented poetry and marginal notes on manuscript variants — a page layout later English Bibles kept.",
+        "nb": "Innførte avsnitt, innrykket poesi og marginnoter om håndskriftvarianter — et sideoppsett senere engelske bibler beholdt.",
+        "nn": "Innførte avsnitt, innrykt poesi og margnotar om handskriftvariantar — eit sideoppsett seinare engelske biblar heldt fast på.",
+        "sv": "Införde stycken, indragen poesi och marginalnoter om handskriftsvarianter — en sidlayout som senare engelska biblar behöll.",
+        "de": "Führte Absätze, eingerückte Poesie und Randnoten zu Handschriftenvarianten ein – ein Seitenlayout, das spätere englische Bibeln beibehielten.",
+        "fr": "A introduit les paragraphes, la poésie en retrait et les notes marginales sur les variantes des manuscrits — une mise en page que les bibles anglaises suivantes ont conservée.",
+        "es": "Introdujo párrafos, poesía sangrada y notas marginales sobre variantes de los manuscritos: una maquetación que conservaron las biblias inglesas posteriores.",
+        "fi": "Toi mukanaan kappalejaon, sisennetyn runouden ja reunahuomautukset käsikirjoitusvarianteista – taiton, jonka myöhemmät englanninkieliset raamatut säilyttivät."
+      }
+    },
+    {
+      "tag": "limitation",
+      "text": {
+        "en": "Met heavy opposition on publication: John William Burgon and others attacked both the Greek text behind it and the English it produced.",
+        "nb": "Møtte kraftig motstand da den kom: John William Burgon og andre angrep både den greske teksten bak den og engelsken den ga.",
+        "nn": "Møtte kraftig motstand då ho kom: John William Burgon og andre gjekk laus på både den greske teksten bak henne og engelsken ho gav.",
+        "sv": "Möttes av kraftigt motstånd vid utgivningen: John William Burgon och andra angrep både den grekiska texten bakom den och engelskan den gav.",
+        "de": "Stieß bei ihrem Erscheinen auf heftigen Widerstand: John William Burgon und andere griffen sowohl den zugrunde liegenden griechischen Text als auch das entstandene Englisch an.",
+        "fr": "A rencontré une vive opposition à sa parution : John William Burgon et d'autres ont attaqué à la fois le texte grec qui la sous-tend et l'anglais qu'elle produit.",
+        "es": "Encontró fuerte oposición al publicarse: John William Burgon y otros atacaron tanto el texto griego que la sustenta como el inglés resultante.",
+        "fi": "Kohtasi ilmestyessään voimakasta vastustusta: John William Burgon ja muut hyökkäsivät sekä sen taustalla olevaa kreikankielistä tekstiä että sen tuottamaa englantia vastaan."
+      }
+    }
+  ],
   "coverage": {
     "testament": "both",
     "books": 66,
@@ -70,8 +124,17 @@
   },
   "provenance": {
     "method": "llm",
-    "verified": [],
-    "sources": [],
+    "verified": [
+      "legacy"
+    ],
+    "sources": [
+      {
+        "url": "https://en.wikipedia.org/wiki/Revised_Version",
+        "fields": [
+          "legacy"
+        ]
+      }
+    ],
     "generated": "2026-07-25"
   }
 }

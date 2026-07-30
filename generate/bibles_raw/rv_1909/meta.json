@@ -55,6 +55,47 @@
       "label": "revision"
     }
   ],
+  "legacy": [
+    {
+      "tag": "distinctive",
+      "text": {
+        "en": "Goes back to Casiodoro de Reina's Biblia del Oso of 1569, the first complete printed Spanish Bible, revised in 1602 by his pupil Cipriano de Valera because words had changed meaning or fallen out of use.",
+        "nb": "Går tilbake til Casiodoro de Reinas Biblia del Oso fra 1569, den første fullstendige trykte spanske bibelen, revidert i 1602 av eleven hans Cipriano de Valera fordi ord hadde skiftet betydning eller gått ut av bruk.",
+        "nn": "Går tilbake til Casiodoro de Reinas Biblia del Oso frå 1569, den første fullstendige prenta spanske bibelen, revidert i 1602 av eleven hans Cipriano de Valera fordi ord hadde skift tyding eller gått ut av bruk.",
+        "sv": "Går tillbaka på Casiodoro de Reinas Biblia del Oso från 1569, den första fullständiga tryckta spanska bibeln, reviderad 1602 av hans elev Cipriano de Valera eftersom ord bytt betydelse eller fallit ur bruk.",
+        "de": "Geht auf Casiodoro de Reinas Biblia del Oso von 1569 zurück, die erste vollständig gedruckte spanische Bibel, 1602 von seinem Schüler Cipriano de Valera überarbeitet, weil Wörter ihre Bedeutung geändert hatten oder außer Gebrauch gekommen waren.",
+        "fr": "Remonte à la Biblia del Oso de Casiodoro de Reina (1569), première bible espagnole complète imprimée, révisée en 1602 par son élève Cipriano de Valera parce que des mots avaient changé de sens ou étaient tombés en désuétude.",
+        "es": "Se remonta a la Biblia del Oso de Casiodoro de Reina (1569), la primera Biblia española completa impresa, revisada en 1602 por su discípulo Cipriano de Valera porque algunas palabras habían cambiado de sentido o caído en desuso.",
+        "fi": "Juontuu Casiodoro de Reinan vuoden 1569 Biblia del Osoon, ensimmäiseen kokonaan painettuun espanjankieliseen raamattuun, jonka hänen oppilaansa Cipriano de Valera tarkisti 1602, koska sanat olivat vaihtaneet merkitystä tai jääneet pois käytöstä."
+      }
+    },
+    {
+      "tag": "distinctive",
+      "text": {
+        "en": "The Spanish Bible of Protestantism: even with more than thirty modern Spanish translations available, the Reina-Valera keeps its place in Hispanic churches.",
+        "nb": "Protestantismens spanske bibel: selv med mer enn tretti moderne spanske oversettelser tilgjengelig holder Reina-Valera stillingen i spansktalende kirker.",
+        "nn": "Den spanske bibelen til protestantismen: sjølv med meir enn tretti moderne spanske omsetjingar tilgjengelege held Reina-Valera stillinga i spansktalande kyrkjer.",
+        "sv": "Protestantismens spanska bibel: trots att det finns fler än trettio moderna spanska översättningar behåller Reina-Valera sin plats i spansktalande kyrkor.",
+        "de": "Die spanische Bibel des Protestantismus: Obwohl mehr als dreißig moderne spanische Übersetzungen vorliegen, behauptet die Reina-Valera ihren Platz in den hispanischen Kirchen.",
+        "fr": "La bible espagnole du protestantisme : malgré plus de trente traductions espagnoles modernes, la Reina-Valera garde sa place dans les Églises hispanophones.",
+        "es": "La Biblia española del protestantismo: pese a existir más de treinta traducciones españolas modernas, la Reina-Valera conserva su lugar en las iglesias hispanas.",
+        "fi": "Protestanttisuuden espanjankielinen raamattu: vaikka nykyaikaisia espanjannoksia on yli kolmekymmentä, Reina-Valera pitää paikkansa espanjankielisissä kirkoissa."
+      }
+    },
+    {
+      "tag": "limitation",
+      "text": {
+        "en": "The Castilian is sixteenth-century in its bones — memorable, and hard going where the vocabulary has aged.",
+        "nb": "Kastiljansken er 1500-talls i bunnen — minneverdig, og tung der ordforrådet har eldet.",
+        "nn": "Kastiljansken er 1500-tals i botnen — minneverdig, og tung der ordtilfanget har elda.",
+        "sv": "Kastilianskan är 1500-tal i grunden — minnesvärd, och tung där ordförrådet åldrats.",
+        "de": "Das Kastilische ist im Kern das des 16. Jahrhunderts – einprägsam und schwer, wo der Wortschatz gealtert ist.",
+        "fr": "Le castillan est, au fond, celui du XVIe siècle : mémorable, et ardu là où le vocabulaire a vieilli.",
+        "es": "El castellano es, en el fondo, el del siglo XVI: memorable, y arduo allí donde el vocabulario ha envejecido.",
+        "fi": "Kastilia on pohjimmiltaan 1500-luvun kieltä – mieleenpainuvaa ja raskasta siellä, missä sanasto on vanhentunut."
+      }
+    }
+  ],
   "coverage": {
     "testament": "both",
     "books": 66,
@@ -69,8 +110,17 @@
   },
   "provenance": {
     "method": "llm",
-    "verified": [],
-    "sources": [],
+    "verified": [
+      "legacy"
+    ],
+    "sources": [
+      {
+        "url": "https://en.wikipedia.org/wiki/Reina-Valera",
+        "fields": [
+          "legacy"
+        ]
+      }
+    ],
     "generated": "2026-07-25"
   }
 }

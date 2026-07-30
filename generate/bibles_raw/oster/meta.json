@@ -32,6 +32,34 @@
       "revision"
     ]
   },
+  "legacy": [
+    {
+      "tag": "distinctive",
+      "text": {
+        "en": "Jean-Frédéric Ostervald's revision of the Geneva Bible, which won wide currency and was still the popular Bible among French-speaking Protestants through the nineteenth century.",
+        "nb": "Jean-Frédéric Ostervalds revisjon av Genève-bibelen, som fikk stor utbredelse og fortsatt var folkebibelen blant fransktalende protestanter gjennom 1800-tallet.",
+        "nn": "Jean-Frédéric Ostervalds revisjon av Genève-bibelen, som fekk stor utbreiing og framleis var folkebibelen blant fransktalande protestantar gjennom 1800-talet.",
+        "sv": "Jean-Frédéric Ostervalds revision av Genèvebibeln, som fick stor spridning och ännu under 1800-talet var folkbibeln bland fransktalande protestanter.",
+        "de": "Jean-Frédéric Ostervalds Revision der Genfer Bibel, die weite Verbreitung fand und im 19. Jahrhundert noch immer die Volksbibel der französischsprachigen Protestanten war.",
+        "fr": "La révision par Jean-Frédéric Ostervald de la Bible de Genève, qui connut une large diffusion et resta la bible populaire des protestants francophones tout au long du XIXe siècle.",
+        "es": "La revisión de la Biblia de Ginebra hecha por Jean-Frédéric Ostervald, que alcanzó gran difusión y siguió siendo la Biblia popular de los protestantes francófonos durante todo el siglo XIX.",
+        "fi": "Jean-Frédéric Ostervaldin tarkistus Geneven raamatusta; se levisi laajalle ja oli vielä 1800-luvulla ranskankielisten protestanttien kansanraamattu."
+      }
+    },
+    {
+      "tag": "limitation",
+      "text": {
+        "en": "A revision of a sixteenth-century text rather than a fresh translation from Hebrew and Greek — and the French is that of 1744.",
+        "nb": "En revisjon av en tekst fra 1500-tallet heller enn en ny oversettelse fra hebraisk og gresk — og fransken er fra 1744.",
+        "nn": "Ein revisjon av ein tekst frå 1500-talet heller enn ei ny omsetjing frå hebraisk og gresk — og fransken er frå 1744.",
+        "sv": "En revision av en 1500-talstext snarare än en nyöversättning från hebreiska och grekiska — och franskan är från 1744.",
+        "de": "Eine Revision eines Textes aus dem 16. Jahrhundert und keine Neuübersetzung aus dem Hebräischen und Griechischen – und das Französisch stammt von 1744.",
+        "fr": "Une révision d'un texte du XVIe siècle plutôt qu'une traduction nouvelle depuis l'hébreu et le grec — et le français est celui de 1744.",
+        "es": "Una revisión de un texto del siglo XVI antes que una traducción nueva del hebreo y el griego, y el francés es el de 1744.",
+        "fi": "Pikemmin 1500-luvun tekstin tarkistus kuin uusi käännös hepreasta ja kreikasta – ja ranska on vuodelta 1744."
+      }
+    }
+  ],
   "coverage": {
     "testament": "both",
     "books": 66,
@@ -46,8 +74,17 @@
   },
   "provenance": {
     "method": "llm",
-    "verified": [],
-    "sources": [],
+    "verified": [
+      "legacy"
+    ],
+    "sources": [
+      {
+        "url": "https://en.wikipedia.org/wiki/Bible_translations_into_French",
+        "fields": [
+          "legacy"
+        ]
+      }
+    ],
     "generated": "2026-07-25"
   }
 }

@@ -29,6 +29,47 @@
       "note": "Taisho-kaiyaku New Testament"
     }
   ],
+  "legacy": [
+    {
+      "tag": "distinctive",
+      "text": {
+        "en": "The literary-style Japanese Bible: the Meiji version of 1887 was made by a missionary committee from the Greek and the King James Version, and the Taisho revision of the New Testament (1917) rests on the Nestle-Aland Greek and the English Revised Version.",
+        "nb": "Den japanske bibelen i litterær stil: Meiji-utgaven fra 1887 ble laget av en misjonærkomité ut fra gresk og King James Version, og Taisho-revisjonen av Det nye testamentet (1917) hviler på Nestle-Aland-gresken og English Revised Version.",
+        "nn": "Den japanske bibelen i litterær stil: Meiji-utgåva frå 1887 vart laga av ein misjonærkomité ut frå gresk og King James Version, og Taisho-revisjonen av Det nye testamentet (1917) kviler på Nestle-Aland-gresken og English Revised Version.",
+        "sv": "Den japanska bibeln i litterär stil: Meiji-utgåvan från 1887 gjordes av en missionärskommitté utifrån grekiskan och King James Version, och Taisho-revisionen av Nya testamentet (1917) vilar på Nestle-Alands grekiska och English Revised Version.",
+        "de": "Die japanische Bibel im literarischen Stil: Die Meiji-Fassung von 1887 erarbeitete ein Missionarskomitee aus dem Griechischen und der King James Version, und die Taisho-Revision des Neuen Testaments (1917) beruht auf dem Nestle-Aland-Text und der English Revised Version.",
+        "fr": "La bible japonaise de style littéraire : la version Meiji de 1887 fut réalisée par un comité de missionnaires à partir du grec et de la King James Version, et la révision Taisho du Nouveau Testament (1917) s'appuie sur le grec de Nestle-Aland et l'English Revised Version.",
+        "es": "La Biblia japonesa de estilo literario: la versión Meiji de 1887 la hizo un comité de misioneros a partir del griego y de la King James Version, y la revisión Taisho del Nuevo Testamento (1917) se apoya en el griego de Nestle-Aland y en la English Revised Version.",
+        "fi": "Kirjallistyylinen japaninkielinen raamattu: vuoden 1887 Meiji-laitoksen teki lähetystyöntekijöiden komitea kreikasta ja King James Versionista, ja Uuden testamentin Taisho-tarkistus (1917) nojaa Nestle–Alandin kreikkaan ja English Revised Versioniin."
+      }
+    },
+    {
+      "tag": "distinctive",
+      "text": {
+        "en": "The Taisho revision was read well beyond Christian circles in Japan.",
+        "nb": "Taisho-revisjonen ble lest langt utenfor kristne kretser i Japan.",
+        "nn": "Taisho-revisjonen vart lesen langt utanfor kristne krinsar i Japan.",
+        "sv": "Taisho-revisionen lästes långt utanför kristna kretsar i Japan.",
+        "de": "Die Taisho-Revision wurde in Japan weit über christliche Kreise hinaus gelesen.",
+        "fr": "La révision Taisho fut lue bien au-delà des milieux chrétiens du Japon.",
+        "es": "La revisión Taisho se leyó mucho más allá de los círculos cristianos de Japón.",
+        "fi": "Taisho-tarkistusta luettiin Japanissa laajalti myös kristillisten piirien ulkopuolella."
+      }
+    },
+    {
+      "tag": "limitation",
+      "text": {
+        "en": "Written in bungo, the classical literary register — not the Japanese anyone speaks today.",
+        "nb": "Skrevet på bungo, det klassiske litterære stilleiet — ikke det japanske noen snakker i dag.",
+        "nn": "Skriven på bungo, det klassiske litterære stilleiet — ikkje det japanske nokon talar i dag.",
+        "sv": "Skriven på bungo, det klassiska litterära stilläget — inte den japanska någon talar i dag.",
+        "de": "In Bungo geschrieben, dem klassischen literarischen Register – nicht das Japanisch, das heute gesprochen wird.",
+        "fr": "Écrite en bungo, le registre littéraire classique — non le japonais que l'on parle aujourd'hui.",
+        "es": "Escrita en bungo, el registro literario clásico, no el japonés que hoy se habla.",
+        "fi": "Kirjoitettu bungolla, klassisella kirjallisella tyylilajilla – ei sillä japanilla, jota nykyään puhutaan."
+      }
+    }
+  ],
   "coverage": {
     "testament": "both",
     "books": 66,
@@ -43,8 +84,17 @@
   },
   "provenance": {
     "method": "llm",
-    "verified": [],
-    "sources": [],
+    "verified": [
+      "legacy"
+    ],
+    "sources": [
+      {
+        "url": "https://en.wikipedia.org/wiki/Japanese_Bible_translations",
+        "fields": [
+          "legacy"
+        ]
+      }
+    ],
     "generated": "2026-07-25"
   }
 }

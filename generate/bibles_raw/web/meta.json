@@ -37,6 +37,47 @@
   "links": {
     "homepage": "https://worldenglish.bible"
   },
+  "legacy": [
+    {
+      "tag": "distinctive",
+      "text": {
+        "en": "A modernisation of the American Standard Version (1901) with the copyright deliberately waived: \"walketh not\" becomes \"doesn't walk\", \"begat\" becomes \"became the father of\".",
+        "nb": "En modernisering av American Standard Version (1901) der opphavsretten bevisst er gitt avkall på: «walketh not» blir «doesn't walk», «begat» blir «became the father of».",
+        "nn": "Ei modernisering av American Standard Version (1901) der opphavsretten medvite er gitt avkall på: «walketh not» blir «doesn't walk», «begat» blir «became the father of».",
+        "sv": "En modernisering av American Standard Version (1901) där upphovsrätten medvetet avsagts: ”walketh not” blir ”doesn't walk”, ”begat” blir ”became the father of”.",
+        "de": "Eine Modernisierung der American Standard Version (1901), auf deren Urheberrecht bewusst verzichtet wurde: aus „walketh not“ wird „doesn't walk“, aus „begat“ wird „became the father of“.",
+        "fr": "Une modernisation de l'American Standard Version (1901) dont les droits ont été délibérément abandonnés : « walketh not » devient « doesn't walk », « begat » devient « became the father of ».",
+        "es": "Una modernización de la American Standard Version (1901) cuyos derechos se cedieron deliberadamente: «walketh not» pasa a «doesn't walk», y «begat» a «became the father of».",
+        "fi": "American Standard Versionin (1901) nykyaikaistus, jonka tekijänoikeudesta on tietoisesti luovuttu: ”walketh not” on nyt ”doesn't walk” ja ”begat” on ”became the father of”."
+      }
+    },
+    {
+      "tag": "distinctive",
+      "text": {
+        "en": "The Classic edition writes the divine name as \"Yahweh\" throughout the Old Testament; the other editions use \"LORD\".",
+        "nb": "Classic-utgaven skriver gudsnavnet som «Yahweh» gjennom hele Det gamle testamentet; de andre utgavene bruker «LORD».",
+        "nn": "Classic-utgåva skriv gudsnamnet som «Yahweh» gjennom heile Det gamle testamentet; dei andre utgåvene bruker «LORD».",
+        "sv": "Classic-utgåvan skriver gudsnamnet som ”Yahweh” genom hela Gamla testamentet; övriga utgåvor använder ”LORD”.",
+        "de": "Die Classic-Ausgabe schreibt den Gottesnamen im gesamten Alten Testament als „Yahweh“; die übrigen Ausgaben verwenden „LORD“.",
+        "fr": "L'édition Classic écrit le nom divin « Yahweh » dans tout l'Ancien Testament ; les autres éditions emploient « LORD ».",
+        "es": "La edición Classic escribe el nombre divino como «Yahweh» en todo el Antiguo Testamento; las demás ediciones usan «LORD».",
+        "fi": "Classic-laitos kirjoittaa Jumalan nimen läpi Vanhan testamentin muodossa ”Yahweh”; muissa laitoksissa lukee ”LORD”."
+      }
+    },
+    {
+      "tag": "distinctive",
+      "text": {
+        "en": "Comes in both American and British English, and with or without the deuterocanonical books.",
+        "nb": "Finnes både i amerikansk og britisk engelsk, og med eller uten de deuterokanoniske bøkene.",
+        "nn": "Finst både i amerikansk og britisk engelsk, og med eller utan dei deuterokanoniske bøkene.",
+        "sv": "Finns på både amerikansk och brittisk engelska, och med eller utan de deuterokanoniska böckerna.",
+        "de": "Liegt in amerikanischem wie britischem Englisch vor, mit oder ohne die deuterokanonischen Bücher.",
+        "fr": "Existe en anglais américain comme britannique, avec ou sans les livres deutérocanoniques.",
+        "es": "Existe en inglés americano y británico, con o sin los libros deuterocanónicos.",
+        "fi": "Saatavana sekä amerikan- että britannianenglanniksi, deuterokanonisten kirjojen kanssa tai ilman."
+      }
+    }
+  ],
   "coverage": {
     "testament": "both",
     "books": 66,
@@ -51,8 +92,17 @@
   },
   "provenance": {
     "method": "llm",
-    "verified": [],
-    "sources": [],
+    "verified": [
+      "legacy"
+    ],
+    "sources": [
+      {
+        "url": "https://en.wikipedia.org/wiki/World_English_Bible",
+        "fields": [
+          "legacy"
+        ]
+      }
+    ],
     "generated": "2026-07-25"
   }
 }

@@ -18,6 +18,34 @@
       "committee"
     ]
   },
+  "legacy": [
+    {
+      "tag": "distinctive",
+      "text": {
+        "en": "Part of the Indian Revised Version, one revision programme carried across the major languages of India by Bridge Connectivity Solutions. This is the Telugu edition, from 2017.",
+        "nb": "Del av Indian Revised Version, ett revisjonsprogram ført gjennom de store språkene i India av Bridge Connectivity Solutions. Dette er telugu-utgaven, fra 2017.",
+        "nn": "Del av Indian Revised Version, eitt revisjonsprogram ført gjennom dei store språka i India av Bridge Connectivity Solutions. Dette er telugu-utgåva, frå 2017.",
+        "sv": "Del av Indian Revised Version, ett revisionsprogram fört genom Indiens större språk av Bridge Connectivity Solutions. Detta är teluguutgåvan, från 2017.",
+        "de": "Teil der Indian Revised Version, eines Revisionsprogramms, das Bridge Connectivity Solutions durch die großen Sprachen Indiens führt. Dies ist die Telugu-Ausgabe von 2017.",
+        "fr": "Fait partie de l'Indian Revised Version, un même programme de révision mené par Bridge Connectivity Solutions à travers les grandes langues de l'Inde. Voici l'édition télougou, de 2017.",
+        "es": "Forma parte de la Indian Revised Version, un mismo programa de revisión llevado por Bridge Connectivity Solutions a las principales lenguas de la India. Esta es la edición en telugu, de 2017.",
+        "fi": "Osa Indian Revised Versionia, Bridge Connectivity Solutionsin yhtä tarkistusohjelmaa, joka viedään läpi Intian suurten kielten. Tämä on telugunkielinen laitos vuodelta 2017."
+      }
+    },
+    {
+      "tag": "distinctive",
+      "text": {
+        "en": "Released under CC BY-SA 4.0: anyone may reuse and build on it, commercial use included, provided the result carries the same licence.",
+        "nb": "Utgitt under CC BY-SA 4.0: hvem som helst kan gjenbruke og bygge videre på den, kommersiell bruk inkludert, så lenge resultatet bærer samme lisens.",
+        "nn": "Gjeven ut under CC BY-SA 4.0: kven som helst kan gjenbruka og byggja vidare på henne, kommersiell bruk inkludert, så lenge resultatet ber same lisensen.",
+        "sv": "Utgiven under CC BY-SA 4.0: vem som helst får återanvända och bygga vidare på den, kommersiellt bruk inbegripet, så länge resultatet bär samma licens.",
+        "de": "Unter CC BY-SA 4.0 veröffentlicht: Jede und jeder darf sie weiterverwenden und darauf aufbauen, auch kommerziell, sofern das Ergebnis dieselbe Lizenz trägt.",
+        "fr": "Publiée sous licence CC BY-SA 4.0 : chacun peut la réutiliser et s'en servir de base, usage commercial compris, pourvu que le résultat porte la même licence.",
+        "es": "Publicada bajo CC BY-SA 4.0: cualquiera puede reutilizarla y construir sobre ella, incluido el uso comercial, siempre que el resultado lleve la misma licencia.",
+        "fi": "Julkaistu CC BY-SA 4.0 -lisenssillä: kuka tahansa saa käyttää sitä uudelleen ja rakentaa sen varaan, myös kaupallisesti, kunhan tulos kantaa saman lisenssin."
+      }
+    }
+  ],
   "coverage": {
     "testament": "both",
     "books": 66,
@@ -32,8 +60,17 @@
   },
   "provenance": {
     "method": "llm",
-    "verified": [],
-    "sources": [],
+    "verified": [
+      "legacy"
+    ],
+    "sources": [
+      {
+        "url": "https://github.com/flogvit/free-bible/blob/main/generate/bibles_raw/te_irv/license.json",
+        "fields": [
+          "legacy"
+        ]
+      }
+    ],
     "generated": "2026-07-25"
   }
 }

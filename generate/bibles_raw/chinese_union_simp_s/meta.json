@@ -16,6 +16,47 @@
     "translation": "chinese_union_simp",
     "relation": "strongs_edition_of"
   },
+  "legacy": [
+    {
+      "tag": "distinctive",
+      "text": {
+        "en": "The Chinese Union Version in simplified characters with a Strong's number on every word, so each rendering can be traced back to the Hebrew or Greek behind it.",
+        "nb": "Chinese Union Version med forenklede tegn og et Strong-nummer på hvert ord, så hver gjengivelse kan spores tilbake til hebraisken eller gresken bak den.",
+        "nn": "Chinese Union Version med forenkla teikn og eit Strong-nummer på kvart ord, så kvar attgjeving kan sporast attende til hebraisken eller gresken bak henne.",
+        "sv": "Chinese Union Version med förenklade tecken och ett Strong-nummer på varje ord, så att varje återgivning kan spåras tillbaka till hebreiskan eller grekiskan bakom den.",
+        "de": "Die Chinese Union Version in vereinfachten Zeichen mit einer Strong-Nummer an jedem Wort, sodass sich jede Wiedergabe auf das dahinterstehende Hebräisch oder Griechisch zurückführen lässt.",
+        "fr": "La Chinese Union Version en caractères simplifiés avec un numéro Strong sur chaque mot, de sorte que toute traduction se laisse remonter à l'hébreu ou au grec sous-jacent.",
+        "es": "La Chinese Union Version en caracteres simplificados con un número de Strong en cada palabra, de modo que cada versión puede rastrearse hasta el hebreo o el griego que la sustenta.",
+        "fi": "Chinese Union Version yksinkertaistetuin merkein, jossa jokaisella sanalla on Strongin numero, joten jokainen käännösratkaisu on jäljitettävissä taustalla olevaan hepreaan tai kreikkaan."
+      }
+    },
+    {
+      "tag": "distinctive",
+      "text": {
+        "en": "Strong's numbering covers 8,674 Hebrew and 5,624 Greek root words, so a reader with neither language can look up what stands behind a word and see everywhere else it is used.",
+        "nb": "Strong-nummereringen dekker 8 674 hebraiske og 5 624 greske rotord, så en leser uten noen av språkene kan slå opp hva som står bak et ord og se hvor ellers det brukes.",
+        "nn": "Strong-nummereringa dekkjer 8 674 hebraiske og 5 624 greske rotord, så ein lesar utan noko av språka kan slå opp kva som står bak eit ord og sjå kvar elles det blir brukt.",
+        "sv": "Strongs numrering täcker 8 674 hebreiska och 5 624 grekiska rotord, så att en läsare utan något av språken kan slå upp vad som står bakom ett ord och se var det annars används.",
+        "de": "Strongs Nummerierung erfasst 8 674 hebräische und 5 624 griechische Wurzelwörter, sodass Lesende ohne diese Sprachen nachschlagen können, was hinter einem Wort steht und wo es sonst vorkommt.",
+        "fr": "La numérotation de Strong couvre 8 674 racines hébraïques et 5 624 racines grecques : un lecteur ignorant ces langues peut ainsi voir ce qui se tient derrière un mot et partout ailleurs où il paraît.",
+        "es": "La numeración de Strong abarca 8674 raíces hebreas y 5624 griegas, de modo que un lector que no conozca esas lenguas puede consultar qué hay detrás de una palabra y dónde más aparece.",
+        "fi": "Strongin numerointi kattaa 8 674 heprean ja 5 624 kreikan juurisanaa, joten lukija, joka ei osaa kumpaakaan kieltä, voi katsoa, mikä sanan takana on ja missä muualla se esiintyy."
+      }
+    },
+    {
+      "tag": "limitation",
+      "text": {
+        "en": "The numbers are a lexicon key, not a parsing: they say which original word lies behind a rendering, not how it functions in its sentence.",
+        "nb": "Numrene er en ordboknøkkel, ikke en grammatisk analyse: de sier hvilket originalord som ligger bak en gjengivelse, ikke hvordan det fungerer i setningen.",
+        "nn": "Nummera er ein ordboknøkkel, ikkje ein grammatisk analyse: dei seier kva originalord som ligg bak ei attgjeving, ikkje korleis det fungerer i setninga.",
+        "sv": "Numren är en lexikonnyckel, inte en grammatisk analys: de säger vilket originalord som ligger bakom en återgivning, inte hur det fungerar i meningen.",
+        "de": "Die Nummern sind ein Lexikonschlüssel, keine Formbestimmung: Sie nennen das Ursprungswort hinter einer Wiedergabe, nicht dessen Funktion im Satz.",
+        "fr": "Les numéros sont une clé de lexique, non une analyse grammaticale : ils indiquent le mot d'origine derrière une traduction, non sa fonction dans la phrase.",
+        "es": "Los números son una clave léxica, no un análisis gramatical: dicen qué palabra original hay detrás de una versión, no cómo funciona en su frase.",
+        "fi": "Numerot ovat sanakirja-avain eivätkä muoto-oppia: ne kertovat, mikä alkukielen sana käännöksen takana on, eivät sitä, miten se toimii virkkeessään."
+      }
+    }
+  ],
   "coverage": {
     "testament": "both",
     "books": 66,
@@ -30,8 +71,17 @@
   },
   "provenance": {
     "method": "llm",
-    "verified": [],
-    "sources": [],
+    "verified": [
+      "legacy"
+    ],
+    "sources": [
+      {
+        "url": "https://en.wikipedia.org/wiki/Strong%27s_Concordance",
+        "fields": [
+          "legacy"
+        ]
+      }
+    ],
     "generated": "2026-07-25"
   }
 }

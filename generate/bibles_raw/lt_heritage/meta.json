@@ -9,6 +9,34 @@
   "name": {
     "native": "Tikinčiųjų Paveldo Vertimas"
   },
+  "legacy": [
+    {
+      "tag": "distinctive",
+      "text": {
+        "en": "A Lithuanian translation from the Believers' Bible Society, worked on between 2022 and 2024 and released under CC BY-SA 4.0 — one of the newest editions here.",
+        "nb": "En litauisk oversettelse fra Believers' Bible Society, arbeidet fram mellom 2022 og 2024 og utgitt under CC BY-SA 4.0 — en av de nyeste utgavene her.",
+        "nn": "Ei litauisk omsetjing frå Believers' Bible Society, arbeidd fram mellom 2022 og 2024 og gjeven ut under CC BY-SA 4.0 — ei av dei nyaste utgåvene her.",
+        "sv": "En litauisk översättning från Believers' Bible Society, framarbetad mellan 2022 och 2024 och utgiven under CC BY-SA 4.0 — en av de nyaste utgåvorna här.",
+        "de": "Eine litauische Übersetzung der Believers' Bible Society, zwischen 2022 und 2024 erarbeitet und unter CC BY-SA 4.0 veröffentlicht – eine der jüngsten Ausgaben hier.",
+        "fr": "Une traduction lituanienne de la Believers' Bible Society, élaborée entre 2022 et 2024 et publiée sous CC BY-SA 4.0 — l'une des éditions les plus récentes ici.",
+        "es": "Una traducción lituana de la Believers' Bible Society, elaborada entre 2022 y 2024 y publicada bajo CC BY-SA 4.0: una de las ediciones más recientes aquí.",
+        "fi": "Believers' Bible Societyn liettuannos, työstetty vuosina 2022–2024 ja julkaistu CC BY-SA 4.0 -lisenssillä – yksi täkäläisistä uusimmista laitoksista."
+      }
+    },
+    {
+      "tag": "limitation",
+      "text": {
+        "en": "Still unfinished: the books are all listed, but only part of the text is present — 767 chapters and about 7,100 verses of the roughly 31,000 a complete Bible holds.",
+        "nb": "Ennå ikke ferdig: bøkene er alle oppført, men bare deler av teksten finnes — 767 kapitler og rundt 7 100 vers av de omtrent 31 000 en fullstendig bibel har.",
+        "nn": "Enno ikkje ferdig: bøkene er alle førde opp, men berre delar av teksten finst — 767 kapittel og kring 7 100 vers av dei om lag 31 000 ein fullstendig bibel har.",
+        "sv": "Ännu inte färdig: böckerna är alla upptagna, men bara delar av texten finns — 767 kapitel och omkring 7 100 verser av de ungefär 31 000 en fullständig bibel har.",
+        "de": "Noch unvollendet: Alle Bücher sind verzeichnet, doch nur ein Teil des Textes liegt vor – 767 Kapitel und rund 7 100 Verse von den etwa 31 000 einer vollständigen Bibel.",
+        "fr": "Encore inachevée : tous les livres sont répertoriés, mais une partie seulement du texte est présente — 767 chapitres et environ 7 100 versets sur les quelque 31 000 d'une bible complète.",
+        "es": "Aún inacabada: todos los libros figuran, pero solo hay parte del texto: 767 capítulos y unos 7100 versículos de los cerca de 31 000 que tiene una Biblia completa.",
+        "fi": "Yhä kesken: kaikki kirjat on lueteltu, mutta tekstistä on vain osa – 767 lukua ja noin 7 100 jaetta täydellisen raamatun noin 31 000:sta."
+      }
+    }
+  ],
   "coverage": {
     "testament": "both",
     "books": 66,
@@ -23,8 +51,17 @@
   },
   "provenance": {
     "method": "llm",
-    "verified": [],
-    "sources": [],
+    "verified": [
+      "legacy"
+    ],
+    "sources": [
+      {
+        "url": "https://github.com/flogvit/free-bible/blob/main/generate/bibles_raw/lt_heritage/license.json",
+        "fields": [
+          "legacy"
+        ]
+      }
+    ],
     "generated": "2026-07-25"
   }
 }

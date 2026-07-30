@@ -39,6 +39,60 @@
     ],
     "review": "none"
   },
+  "legacy": [
+    {
+      "tag": "distinctive",
+      "text": {
+        "en": "Literal to the last degree: Young cut the King James Version's 67 ways of rendering the Hebrew verb down to ten, aiming for one English word per original word.",
+        "nb": "Ordrett til det ytterste: Young skar King James Versions 67 måter å gjengi det hebraiske verbet på ned til ti, med sikte på ett engelsk ord per originalord.",
+        "nn": "Ordrett til det ytste: Young skar King James Versions 67 måtar å gje att det hebraiske verbet på ned til ti, med sikte på eitt engelsk ord per originalord.",
+        "sv": "Ordagrann in i det yttersta: Young skar ned King James Versions 67 sätt att återge det hebreiska verbet till tio, med sikte på ett engelskt ord per originalord.",
+        "de": "Wörtlich bis zum Äußersten: Young reduzierte die 67 Wiedergaben des hebräischen Verbs in der King James Version auf zehn, mit dem Ziel eines englischen Wortes je Wort des Originals.",
+        "fr": "Littérale à l'extrême : Young a ramené à dix les 67 manières dont la King James Version rendait le verbe hébreu, visant un mot anglais par mot d'origine.",
+        "es": "Literal hasta el extremo: Young redujo a diez las 67 maneras en que la King James Version vertía el verbo hebreo, buscando una palabra inglesa por cada palabra original.",
+        "fi": "Kirjaimellinen äärimmilleen: Young karsi King James Versionin 67 tapaa kääntää heprean verbi kymmeneen, tavoitteena yksi englannin sana kutakin alkukielen sanaa kohti."
+      }
+    },
+    {
+      "tag": "distinctive",
+      "text": {
+        "en": "Hebrew and Greek tenses are kept as they stand, so the narrative runs in the present: \"and God saith, 'Let light be'\".",
+        "nb": "Hebraiske og greske tider er beholdt som de står, så fortellingen går i presens: «and God saith, 'Let light be'».",
+        "nn": "Hebraiske og greske tider er haldne som dei står, så forteljinga går i presens: «and God saith, 'Let light be'».",
+        "sv": "Hebreiskans och grekiskans tempus behålls som de står, så berättelsen löper i presens: ”and God saith, 'Let light be'”.",
+        "de": "Die hebräischen und griechischen Zeitformen bleiben stehen, sodass die Erzählung im Präsens läuft: „and God saith, ‚Let light be‘“.",
+        "fr": "Les temps hébreux et grecs sont conservés tels quels, si bien que le récit se déroule au présent : « and God saith, 'Let light be' ».",
+        "es": "Los tiempos hebreos y griegos se conservan tal cual, de modo que la narración corre en presente: «and God saith, 'Let light be'».",
+        "fi": "Heprean ja kreikan aikamuodot on säilytetty sellaisinaan, joten kerronta kulkee preesensissä: ”and God saith, 'Let light be'”."
+      }
+    },
+    {
+      "tag": "distinctive",
+      "text": {
+        "en": "Young stayed with the Textus Receptus and the Masoretic Text and refused text-critical emendation, so the reader always knows which source text is being rendered.",
+        "nb": "Young holdt seg til Textus Receptus og den masoretiske teksten og avviste tekstkritiske rettelser, så leseren alltid vet hvilken kildetekst som gjengis.",
+        "nn": "Young heldt seg til Textus Receptus og den masoretiske teksten og avviste tekstkritiske rettingar, så lesaren alltid veit kva kjeldetekst som blir gjeven att.",
+        "sv": "Young höll sig till Textus Receptus och den masoretiska texten och avvisade textkritiska ändringar, så att läsaren alltid vet vilken källtext som återges.",
+        "de": "Young hielt sich an den Textus Receptus und den masoretischen Text und lehnte textkritische Eingriffe ab, sodass stets klar bleibt, welcher Ausgangstext wiedergegeben wird.",
+        "fr": "Young s'en est tenu au Textus Receptus et au texte massorétique en refusant toute correction critique : le lecteur sait toujours quel texte source est rendu.",
+        "es": "Young se atuvo al Textus Receptus y al texto masorético y rechazó las enmiendas críticas, de modo que el lector siempre sabe qué texto fuente se está vertiendo.",
+        "fi": "Young pitäytyi Textus Receptuksessa ja masoreettisessa tekstissä ja torjui tekstikriittiset korjaukset, joten lukija tietää aina, mitä lähdetekstiä käännetään."
+      }
+    },
+    {
+      "tag": "limitation",
+      "text": {
+        "en": "The same choice costs it readability — the handling of Hebrew tenses makes stretches of its Old Testament virtually unreadable as English.",
+        "nb": "Det samme valget koster lesbarhet — behandlingen av hebraiske tider gjør strekk av Det gamle testamentet nærmest uleselige som engelsk.",
+        "nn": "Det same valet kostar lesbarheit — handsaminga av hebraiske tider gjer strekk av Det gamle testamentet nesten uleselege som engelsk.",
+        "sv": "Samma val kostar läsbarhet — hanteringen av hebreiskans tempus gör partier av Gamla testamentet närmast oläsliga som engelska.",
+        "de": "Derselbe Entschluss kostet Lesbarkeit: Die Behandlung der hebräischen Zeitformen macht Passagen des Alten Testaments als Englisch nahezu unlesbar.",
+        "fr": "Ce même choix coûte en lisibilité : le traitement des temps hébreux rend des pans de son Ancien Testament quasi illisibles en anglais.",
+        "es": "Esa misma decisión cuesta legibilidad: el tratamiento de los tiempos hebreos vuelve casi ilegibles en inglés tramos enteros de su Antiguo Testamento.",
+        "fi": "Sama valinta maksaa luettavuudessa: heprean aikamuotojen käsittely tekee osista Vanhaa testamenttia englantina lähes lukukelvottomia."
+      }
+    }
+  ],
   "coverage": {
     "testament": "both",
     "books": 66,
@@ -53,8 +107,17 @@
   },
   "provenance": {
     "method": "llm",
-    "verified": [],
-    "sources": [],
+    "verified": [
+      "legacy"
+    ],
+    "sources": [
+      {
+        "url": "https://en.wikipedia.org/wiki/Young%27s_Literal_Translation",
+        "fields": [
+          "legacy"
+        ]
+      }
+    ],
     "generated": "2026-07-25"
   }
 }

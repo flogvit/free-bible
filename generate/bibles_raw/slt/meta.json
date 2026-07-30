@@ -39,6 +39,47 @@
     ],
     "review": "none"
   },
+  "legacy": [
+    {
+      "tag": "distinctive",
+      "text": {
+        "en": "The first complete English Bible translated by a woman — and still the only one a woman has translated unaided. Julia Smith worked alone from 1847 to 1855 and paid for the 1876 printing herself, at 84.",
+        "nb": "Den første fullstendige engelske bibelen oversatt av en kvinne — og fortsatt den eneste en kvinne har oversatt alene. Julia Smith arbeidet på egen hånd fra 1847 til 1855 og betalte trykkingen i 1876 selv, 84 år gammel.",
+        "nn": "Den første fullstendige engelske bibelen omsett av ei kvinne — og framleis den einaste ei kvinne har omsett åleine. Julia Smith arbeidde på eiga hand frå 1847 til 1855 og betalte prentinga i 1876 sjølv, 84 år gammal.",
+        "sv": "Den första fullständiga engelska bibeln översatt av en kvinna — och alltjämt den enda en kvinna översatt på egen hand. Julia Smith arbetade ensam från 1847 till 1855 och bekostade tryckningen 1876 själv, 84 år gammal.",
+        "de": "Die erste vollständige englische Bibel, die von einer Frau übersetzt wurde – und bis heute die einzige, die eine Frau ohne Hilfe übersetzt hat. Julia Smith arbeitete von 1847 bis 1855 allein und bezahlte den Druck von 1876 mit 84 Jahren selbst.",
+        "fr": "La première bible anglaise complète traduite par une femme — et toujours la seule qu'une femme ait traduite sans aide. Julia Smith y travailla seule de 1847 à 1855 et finança elle-même l'impression de 1876, à 84 ans.",
+        "es": "La primera biblia inglesa completa traducida por una mujer, y aún la única que una mujer ha traducido sin ayuda. Julia Smith trabajó sola de 1847 a 1855 y costeó ella misma la impresión de 1876, a los 84 años.",
+        "fi": "Ensimmäinen naisen kääntämä täydellinen englanninkielinen raamattu – ja yhä ainoa, jonka nainen on kääntänyt yksin. Julia Smith työskenteli omin päin 1847–1855 ja kustansi vuoden 1876 painatuksen itse 84-vuotiaana."
+      }
+    },
+    {
+      "tag": "distinctive",
+      "text": {
+        "en": "Renders a given Hebrew or Greek word by the same English word wherever it can — a stricter consistency than any committee version attempts.",
+        "nb": "Gjengir et gitt hebraisk eller gresk ord med samme engelske ord der det lar seg gjøre — en strengere konsekvens enn noen komitéutgave forsøker seg på.",
+        "nn": "Gjev att eit gitt hebraisk eller gresk ord med same engelske ordet der det let seg gjera — ein strengare konsekvens enn nokon komitéutgåve prøver seg på.",
+        "sv": "Återger ett givet hebreiskt eller grekiskt ord med samma engelska ord där det går — en strängare konsekvens än någon kommittéutgåva försöker sig på.",
+        "de": "Gibt ein bestimmtes hebräisches oder griechisches Wort, wo immer möglich, mit demselben englischen Wort wieder – eine strengere Konsequenz, als sie eine Kommissionsausgabe je anstrebt.",
+        "fr": "Rend un mot hébreu ou grec donné par le même mot anglais partout où c'est possible — une constance plus stricte que celle à laquelle prétend toute version de comité.",
+        "es": "Vierte una palabra hebrea o griega dada con la misma palabra inglesa siempre que puede: una coherencia más estricta que la que intenta cualquier versión de comisión.",
+        "fi": "Kääntää tietyn heprean tai kreikan sanan samalla englannin sanalla aina kun mahdollista – tiukempi johdonmukaisuus kuin mihin mikään komitealaitos pyrkii."
+      }
+    },
+    {
+      "tag": "limitation",
+      "text": {
+        "en": "The rigid method costs the English dearly: tenses shift inside a single sentence, as in Genesis 4:1, and much of the result reads mechanically.",
+        "nb": "Den stive metoden koster engelsken dyrt: tidene skifter inne i én og samme setning, som i 1 Mos 4,1, og mye av resultatet leses mekanisk.",
+        "nn": "Den stive metoden kostar engelsken dyrt: tidene skiftar inne i ei og same setninga, som i 1 Mos 4,1, og mykje av resultatet blir mekanisk å lesa.",
+        "sv": "Den stela metoden kostar engelskan dyrt: tempus skiftar inom en och samma mening, som i 1 Mos 4:1, och mycket av resultatet läses mekaniskt.",
+        "de": "Die starre Methode kostet das Englische viel: Innerhalb eines Satzes wechseln die Zeitformen, wie in Gen 4,1, und vieles liest sich mechanisch.",
+        "fr": "La méthode rigide coûte cher à l'anglais : les temps changent à l'intérieur d'une même phrase, comme en Gn 4,1, et l'ensemble se lit souvent de façon mécanique.",
+        "es": "El método rígido le cuesta caro al inglés: los tiempos cambian dentro de una misma frase, como en Gn 4:1, y buena parte del resultado se lee de forma mecánica.",
+        "fi": "Jäykkä menetelmä maksaa englannille paljon: aikamuodot vaihtuvat yhden virkkeen sisällä, kuten 1. Moos. 4:1:ssä, ja suuri osa tuloksesta on mekaanista luettavaa."
+      }
+    }
+  ],
   "coverage": {
     "testament": "both",
     "books": 66,
@@ -53,8 +94,17 @@
   },
   "provenance": {
     "method": "llm",
-    "verified": [],
-    "sources": [],
+    "verified": [
+      "legacy"
+    ],
+    "sources": [
+      {
+        "url": "https://en.wikipedia.org/wiki/Julia_E._Smith_Parker_Translation",
+        "fields": [
+          "legacy"
+        ]
+      }
+    ],
     "generated": "2026-07-25"
   }
 }

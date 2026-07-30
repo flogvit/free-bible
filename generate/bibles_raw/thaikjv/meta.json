@@ -30,6 +30,47 @@
     ],
     "pivot_from": "kjv"
   },
+  "legacy": [
+    {
+      "tag": "distinctive",
+      "text": {
+        "en": "A Thai Bible made from the King James Version rather than from Hebrew and Greek, so it carries the Textus Receptus tradition into Thai.",
+        "nb": "En thailandsk bibel laget fra King James Version i stedet for fra hebraisk og gresk, så den fører Textus Receptus-tradisjonen over i thai.",
+        "nn": "Ein thailandsk bibel laga frå King James Version i staden for frå hebraisk og gresk, så han fører Textus Receptus-tradisjonen over i thai.",
+        "sv": "En thailändsk bibel gjord utifrån King James Version i stället för från hebreiska och grekiska, och för därmed Textus Receptus-traditionen in i thai.",
+        "de": "Eine thailändische Bibel, aus der King James Version statt aus dem Hebräischen und Griechischen gearbeitet; sie trägt damit die Textus-Receptus-Tradition ins Thai.",
+        "fr": "Une bible thaïe faite à partir de la King James Version et non de l'hébreu et du grec : elle transporte ainsi la tradition du Textus Receptus en thaï.",
+        "es": "Una Biblia tailandesa hecha a partir de la King James Version y no del hebreo y el griego, con lo que traslada al tailandés la tradición del Textus Receptus.",
+        "fi": "Thainkielinen raamattu, joka on tehty King James Versionista eikä hepreasta ja kreikasta, ja tuo näin Textus Receptus -perinteen thain kieleen."
+      }
+    },
+    {
+      "tag": "distinctive",
+      "text": {
+        "en": "It stands apart from the main Thai line: the Thailand Bible Society's Bible goes back to John Taylor Jones's New Testament from the Greek (printed 1846) and the complete Bible of 1894, later revised against the Revised Standard Version.",
+        "nb": "Den står utenfor hovedlinjen i Thailand: bibelen fra det thailandske bibelselskapet går tilbake til John Taylor Jones' nytestamente fra gresk (trykt 1846) og den fullstendige bibelen fra 1894, senere revidert mot Revised Standard Version.",
+        "nn": "Han står utanfor hovudlina i Thailand: bibelen frå det thailandske bibelselskapet går tilbake til John Taylor Jones' nytestamente frå gresk (prenta 1846) og den fullstendige bibelen frå 1894, seinare revidert mot Revised Standard Version.",
+        "sv": "Den står vid sidan av huvudlinjen i Thailand: bibeln från thailändska bibelsällskapet går tillbaka på John Taylor Jones Nya testamente från grekiskan (tryckt 1846) och den fullständiga bibeln 1894, senare reviderad mot Revised Standard Version.",
+        "de": "Sie steht abseits der thailändischen Hauptlinie: Die Bibel der Thailändischen Bibelgesellschaft geht auf John Taylor Jones' Neues Testament aus dem Griechischen (Druck 1846) und die vollständige Bibel von 1894 zurück, später an der Revised Standard Version überarbeitet.",
+        "fr": "Elle se tient à l'écart de la lignée thaïe principale : la bible de la Société biblique de Thaïlande remonte au Nouveau Testament de John Taylor Jones traduit du grec (imprimé en 1846) et à la bible complète de 1894, révisée plus tard d'après la Revised Standard Version.",
+        "es": "Queda al margen de la línea tailandesa principal: la Biblia de la Sociedad Bíblica de Tailandia se remonta al Nuevo Testamento de John Taylor Jones desde el griego (impreso en 1846) y a la Biblia completa de 1894, revisada después con la Revised Standard Version.",
+        "fi": "Se jää thainkielisen valtalinjan ulkopuolelle: Thaimaan raamattuseuran raamattu juontuu John Taylor Jonesin kreikasta kääntämään Uuteen testamenttiin (painettu 1846) ja vuoden 1894 koko raamattuun, jota myöhemmin tarkistettiin Revised Standard Versionin mukaan."
+      }
+    },
+    {
+      "tag": "limitation",
+      "text": {
+        "en": "Being made from an English translation, it stands one step further from the sources and inherits the King James Version's textual basis.",
+        "nb": "Siden den er laget fra en engelsk oversettelse, står den ett skritt lenger fra kildene og arver King James Versions tekstgrunnlag.",
+        "nn": "Sidan han er laga frå ei engelsk omsetjing, står han eitt steg lenger frå kjeldene og arvar tekstgrunnlaget til King James Version.",
+        "sv": "Eftersom den är gjord utifrån en engelsk översättning står den ett steg längre från källorna och ärver King James Versions textgrund.",
+        "de": "Da sie aus einer englischen Übersetzung gearbeitet ist, steht sie einen Schritt weiter von den Quellen entfernt und erbt die Textgrundlage der King James Version.",
+        "fr": "Faite d'après une traduction anglaise, elle se situe un pas de plus des sources et hérite de la base textuelle de la King James Version.",
+        "es": "Al estar hecha desde una traducción inglesa, queda un paso más lejos de las fuentes y hereda la base textual de la King James Version.",
+        "fi": "Koska se on tehty englanninkielisestä käännöksestä, se on askeleen kauempana lähteistä ja perii King James Versionin tekstipohjan."
+      }
+    }
+  ],
   "coverage": {
     "testament": "both",
     "books": 66,
@@ -44,8 +85,17 @@
   },
   "provenance": {
     "method": "llm",
-    "verified": [],
-    "sources": [],
+    "verified": [
+      "legacy"
+    ],
+    "sources": [
+      {
+        "url": "https://en.wikipedia.org/wiki/Bible_translations_into_Thai",
+        "fields": [
+          "legacy"
+        ]
+      }
+    ],
     "generated": "2026-07-25"
   }
 }

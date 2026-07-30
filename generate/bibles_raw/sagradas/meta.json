@@ -20,6 +20,34 @@
       "tr"
     ]
   },
+  "legacy": [
+    {
+      "tag": "distinctive",
+      "text": {
+        "en": "Stands in the line of the first complete Spanish Bible, Casiodoro de Reina's Biblia del Oso printed in Basel in 1569 and revised by Cipriano de Valera for the Amsterdam edition of 1602.",
+        "nb": "Står i linjen fra den første fullstendige spanske bibelen, Casiodoro de Reinas Biblia del Oso trykt i Basel i 1569 og revidert av Cipriano de Valera til Amsterdam-utgaven fra 1602.",
+        "nn": "Står i linja frå den første fullstendige spanske bibelen, Casiodoro de Reinas Biblia del Oso prenta i Basel i 1569 og revidert av Cipriano de Valera til Amsterdam-utgåva frå 1602.",
+        "sv": "Står i linjen från den första fullständiga spanska bibeln, Casiodoro de Reinas Biblia del Oso tryckt i Basel 1569 och reviderad av Cipriano de Valera till Amsterdamutgåvan 1602.",
+        "de": "Steht in der Linie der ersten vollständigen spanischen Bibel, Casiodoro de Reinas Biblia del Oso, 1569 in Basel gedruckt und von Cipriano de Valera für die Amsterdamer Ausgabe von 1602 überarbeitet.",
+        "fr": "S'inscrit dans la lignée de la première bible espagnole complète, la Biblia del Oso de Casiodoro de Reina imprimée à Bâle en 1569 et révisée par Cipriano de Valera pour l'édition d'Amsterdam de 1602.",
+        "es": "Se inscribe en la línea de la primera Biblia española completa, la Biblia del Oso de Casiodoro de Reina, impresa en Basilea en 1569 y revisada por Cipriano de Valera para la edición de Ámsterdam de 1602.",
+        "fi": "Kuuluu ensimmäisen täydellisen espanjankielisen raamatun sukuun: Casiodoro de Reinan Biblia del Oso painettiin Baselissa 1569, ja Cipriano de Valera tarkisti sen Amsterdamin vuoden 1602 laitosta varten."
+      }
+    },
+    {
+      "tag": "limitation",
+      "text": {
+        "en": "Textually it sits very close to the Reina-Valera of 1909 that is also held here — in John 3:16 the two differ only in spelling and accents.",
+        "nb": "Tekstlig ligger den svært nær Reina-Valera 1909 som også finnes her — i Joh 3,16 skiller de to seg bare i staving og aksenter.",
+        "nn": "Tekstleg ligg han svært nær Reina-Valera 1909 som òg finst her — i Joh 3,16 skil dei to seg berre i staving og aksentar.",
+        "sv": "Textmässigt ligger den mycket nära den Reina-Valera 1909 som också finns här — i Joh 3:16 skiljer sig de två endast i stavning och accenter.",
+        "de": "Textlich steht sie der hier ebenfalls vorhandenen Reina-Valera von 1909 sehr nahe – in Joh 3,16 unterscheiden sich beide nur in Schreibung und Akzenten.",
+        "fr": "Textuellement, elle est très proche de la Reina-Valera de 1909 également présente ici — en Jn 3,16, les deux ne diffèrent que par l'orthographe et les accents.",
+        "es": "Textualmente está muy cerca de la Reina-Valera de 1909 que también figura aquí: en Jn 3:16 ambas solo difieren en ortografía y acentos.",
+        "fi": "Tekstiltään se on hyvin lähellä täälläkin olevaa vuoden 1909 Reina-Valeraa – Joh. 3:16:ssa ne eroavat vain oikeinkirjoituksessa ja tarkkeissa."
+      }
+    }
+  ],
   "coverage": {
     "testament": "both",
     "books": 66,
@@ -34,8 +62,23 @@
   },
   "provenance": {
     "method": "llm",
-    "verified": [],
-    "sources": [],
+    "verified": [
+      "legacy"
+    ],
+    "sources": [
+      {
+        "url": "https://en.wikipedia.org/wiki/Bible_translations_into_Spanish",
+        "fields": [
+          "legacy"
+        ]
+      },
+      {
+        "url": "https://github.com/flogvit/free-bible/blob/main/generate/bibles_raw/sagradas",
+        "fields": [
+          "legacy"
+        ]
+      }
+    ],
     "generated": "2026-07-25"
   }
 }

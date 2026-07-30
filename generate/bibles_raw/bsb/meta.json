@@ -39,6 +39,34 @@
   "links": {
     "homepage": "https://berean.bible"
   },
+  "legacy": [
+    {
+      "tag": "distinctive",
+      "text": {
+        "en": "A contemporary English translation placed in the public domain — unusual, since nearly every modern English Bible is held under restrictive copyright.",
+        "nb": "En moderne engelsk oversettelse lagt i det fri — uvanlig, siden nesten alle moderne engelske bibler holdes under streng opphavsrett.",
+        "nn": "Ei moderne engelsk omsetjing lagd i det frie — uvanleg, sidan nesten alle moderne engelske biblar blir haldne under streng opphavsrett.",
+        "sv": "En samtida engelsk översättning som släppts fri — ovanligt, eftersom nästan alla moderna engelska biblar hålls under restriktiv upphovsrätt.",
+        "de": "Eine zeitgenössische englische Übersetzung, die gemeinfrei gestellt wurde – ungewöhnlich, da fast jede moderne englische Bibel unter striktem Urheberrecht steht.",
+        "fr": "Une traduction anglaise contemporaine versée dans le domaine public — chose rare, presque toutes les bibles anglaises modernes étant sous droits restrictifs.",
+        "es": "Una traducción inglesa contemporánea puesta en el dominio público, algo inusual, ya que casi todas las biblias inglesas modernas están bajo derechos restrictivos.",
+        "fi": "Nykyaikainen englanninkielinen käännös, joka on luovutettu vapaaseen käyttöön – harvinaista, sillä lähes kaikki nykyiset englanninkieliset raamatut ovat tiukan tekijänoikeuden alaisia."
+      }
+    },
+    {
+      "tag": "distinctive",
+      "text": {
+        "en": "Published through Bible Hub, and built to sit alongside that site's interlinear and study apparatus rather than to stand alone as a printed edition.",
+        "nb": "Utgitt gjennom Bible Hub, og laget for å stå sammen med interlinearen og studieapparatet der heller enn som en selvstendig trykt utgave.",
+        "nn": "Utgjeven gjennom Bible Hub, og laga for å stå saman med interlinearen og studieapparatet der heller enn som ei sjølvstendig prenta utgåve.",
+        "sv": "Utgiven via Bible Hub och gjord för att stå tillsammans med sajtens interlinjära text och studieapparat snarare än som en fristående tryckt utgåva.",
+        "de": "Über Bible Hub veröffentlicht und darauf angelegt, neben der dortigen Interlinearfassung und dem Studienapparat zu stehen, nicht als eigenständige Druckausgabe.",
+        "fr": "Publiée via Bible Hub et conçue pour accompagner l'interlinéaire et l'appareil d'étude du site plutôt que pour exister seule en édition imprimée.",
+        "es": "Publicada a través de Bible Hub y pensada para acompañar el interlineal y el aparato de estudio de ese sitio más que para sostenerse sola como edición impresa.",
+        "fi": "Julkaistu Bible Hubin kautta ja tehty kulkemaan sivuston interlineaarin ja tutkimusaineiston rinnalla pikemmin kuin itsenäisenä painettuna laitoksena."
+      }
+    }
+  ],
   "coverage": {
     "testament": "both",
     "books": 66,
@@ -53,8 +81,17 @@
   },
   "provenance": {
     "method": "llm",
-    "verified": [],
-    "sources": [],
+    "verified": [
+      "legacy"
+    ],
+    "sources": [
+      {
+        "url": "https://en.wikipedia.org/wiki/Berean_Standard_Bible",
+        "fields": [
+          "legacy"
+        ]
+      }
+    ],
     "generated": "2026-07-25"
   }
 }

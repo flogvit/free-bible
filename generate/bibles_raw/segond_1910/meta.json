@@ -52,6 +52,47 @@
       "label": "revision"
     }
   ],
+  "legacy": [
+    {
+      "tag": "distinctive",
+      "text": {
+        "en": "Louis Segond, a Swiss theologian, translated from Hebrew and Greek at the request of the Compagnie des Pasteurs de Genève — the Old Testament came out in 1871, the whole Bible in 1880.",
+        "nb": "Louis Segond, en sveitsisk teolog, oversatte fra hebraisk og gresk på oppdrag fra Compagnie des Pasteurs de Genève — Det gamle testamentet kom i 1871, hele bibelen i 1880.",
+        "nn": "Louis Segond, ein sveitsisk teolog, omsette frå hebraisk og gresk på oppdrag frå Compagnie des Pasteurs de Genève — Det gamle testamentet kom i 1871, heile bibelen i 1880.",
+        "sv": "Louis Segond, en schweizisk teolog, översatte från hebreiska och grekiska på uppdrag av Compagnie des Pasteurs de Genève — Gamla testamentet kom 1871, hela bibeln 1880.",
+        "de": "Louis Segond, ein Schweizer Theologe, übersetzte im Auftrag der Compagnie des Pasteurs de Genève aus dem Hebräischen und Griechischen – das Alte Testament erschien 1871, die ganze Bibel 1880.",
+        "fr": "Louis Segond, théologien suisse, a traduit de l'hébreu et du grec à la demande de la Compagnie des Pasteurs de Genève : l'Ancien Testament parut en 1871, la Bible entière en 1880.",
+        "es": "Louis Segond, teólogo suizo, tradujo del hebreo y del griego por encargo de la Compagnie des Pasteurs de Genève: el Antiguo Testamento salió en 1871 y la Biblia completa en 1880.",
+        "fi": "Sveitsiläinen teologi Louis Segond käänsi hepreasta ja kreikasta Compagnie des Pasteurs de Genèven pyynnöstä – Vanha testamentti ilmestyi 1871, koko raamattu 1880."
+      }
+    },
+    {
+      "tag": "distinctive",
+      "text": {
+        "en": "The 1910 revision was commissioned and published by the British and Foreign Bible Society, and it is that text which became the standard Bible of French-speaking Protestants.",
+        "nb": "Revisjonen fra 1910 ble bestilt og utgitt av British and Foreign Bible Society, og det er den teksten som ble standardbibelen for fransktalende protestanter.",
+        "nn": "Revisjonen frå 1910 vart tinga og utgjeven av British and Foreign Bible Society, og det er den teksten som vart standardbibelen for fransktalande protestantar.",
+        "sv": "Revisionen från 1910 beställdes och gavs ut av British and Foreign Bible Society, och det är den texten som blev standardbibeln för fransktalande protestanter.",
+        "de": "Die Revision von 1910 wurde von der British and Foreign Bible Society in Auftrag gegeben und herausgebracht; dieser Text wurde zur Standardbibel der französischsprachigen Protestanten.",
+        "fr": "La révision de 1910 a été commandée et publiée par la British and Foreign Bible Society, et c'est ce texte qui est devenu la bible de référence des protestants francophones.",
+        "es": "La revisión de 1910 fue encargada y publicada por la British and Foreign Bible Society, y es ese texto el que se convirtió en la biblia estándar de los protestantes francófonos.",
+        "fi": "Vuoden 1910 tarkistuksen tilasi ja julkaisi British and Foreign Bible Society, ja juuri siitä tekstistä tuli ranskankielisten protestanttien vakioraamattu."
+      }
+    },
+    {
+      "tag": "limitation",
+      "text": {
+        "en": "The wording is that of 1910: careful and scholarly, but a century away from the French anyone speaks now.",
+        "nb": "Ordlyden er fra 1910: nøyaktig og lærd, men et århundre unna fransken noen snakker i dag.",
+        "nn": "Ordlyden er frå 1910: nøyaktig og lærd, men eit hundreår unna fransken nokon talar i dag.",
+        "sv": "Ordalydelsen är från 1910: noggrann och lärd, men ett sekel från den franska någon talar i dag.",
+        "de": "Der Wortlaut stammt von 1910: sorgfältig und gelehrt, aber ein Jahrhundert entfernt vom Französisch, das heute gesprochen wird.",
+        "fr": "La formulation est celle de 1910 : soignée et savante, mais à un siècle du français que l'on parle aujourd'hui.",
+        "es": "La redacción es la de 1910: cuidadosa y erudita, pero a un siglo del francés que hoy se habla.",
+        "fi": "Sanamuoto on vuodelta 1910: huolellista ja oppinutta, mutta vuosisadan päässä nykyään puhutusta ranskasta."
+      }
+    }
+  ],
   "coverage": {
     "testament": "both",
     "books": 66,
@@ -66,8 +107,17 @@
   },
   "provenance": {
     "method": "llm",
-    "verified": [],
-    "sources": [],
+    "verified": [
+      "legacy"
+    ],
+    "sources": [
+      {
+        "url": "https://en.wikipedia.org/wiki/Louis_Segond",
+        "fields": [
+          "legacy"
+        ]
+      }
+    ],
     "generated": "2026-07-25"
   }
 }

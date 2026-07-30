@@ -23,6 +23,47 @@
       "committee"
     ]
   },
+  "legacy": [
+    {
+      "tag": "distinctive",
+      "text": {
+        "en": "The standard Protestant Vietnamese Bible, translated chiefly by Grace Hazenberg Cadman and John Drange Olsen — the New Testament in 1923, the Old in 1926 — while William Cadman ran the printing in Hanoi.",
+        "nb": "Standardbibelen for vietnamesiske protestanter, hovedsakelig oversatt av Grace Hazenberg Cadman og John Drange Olsen — Det nye testamentet i 1923, Det gamle i 1926 — mens William Cadman drev trykkeriet i Hanoi.",
+        "nn": "Standardbibelen for vietnamesiske protestantar, hovudsakleg omsett av Grace Hazenberg Cadman og John Drange Olsen — Det nye testamentet i 1923, Det gamle i 1926 — medan William Cadman dreiv prenteverket i Hanoi.",
+        "sv": "Standardbibeln för vietnamesiska protestanter, huvudsakligen översatt av Grace Hazenberg Cadman och John Drange Olsen — Nya testamentet 1923, Gamla 1926 — medan William Cadman skötte tryckeriet i Hanoi.",
+        "de": "Die Standardbibel der vietnamesischen Protestanten, vor allem von Grace Hazenberg Cadman und John Drange Olsen übersetzt – das Neue Testament 1923, das Alte 1926 –, während William Cadman den Druck in Hanoi leitete.",
+        "fr": "La bible protestante vietnamienne de référence, traduite principalement par Grace Hazenberg Cadman et John Drange Olsen — le Nouveau Testament en 1923, l'Ancien en 1926 —, tandis que William Cadman dirigeait l'impression à Hanoï.",
+        "es": "La Biblia protestante vietnamita estándar, traducida sobre todo por Grace Hazenberg Cadman y John Drange Olsen —el Nuevo Testamento en 1923 y el Antiguo en 1926—, mientras William Cadman dirigía la imprenta en Hanói.",
+        "fi": "Vietnamilaisten protestanttien vakioraamattu, jonka käänsivät pääosin Grace Hazenberg Cadman ja John Drange Olsen – Uusi testamentti 1923, Vanha 1926 – Williamin Cadmanin johtaessa painatusta Hanoissa."
+      }
+    },
+    {
+      "tag": "distinctive",
+      "text": {
+        "en": "Published complete in 1934 and still issued by the Bible Society in Vietnam as the Old Version.",
+        "nb": "Utgitt fullstendig i 1934 og fortsatt utgitt av bibelselskapet i Vietnam som «den gamle utgaven».",
+        "nn": "Gjeven ut fullstendig i 1934 og framleis gjeven ut av bibelselskapet i Vietnam som «den gamle utgåva».",
+        "sv": "Utgiven i fullständigt skick 1934 och alltjämt utgiven av bibelsällskapet i Vietnam som ”den gamla versionen”.",
+        "de": "1934 vollständig erschienen und bis heute von der Bibelgesellschaft in Vietnam als „alte Fassung“ herausgegeben.",
+        "fr": "Parue en entier en 1934 et toujours éditée par la Société biblique du Viêt Nam comme « ancienne version ».",
+        "es": "Publicada completa en 1934 y aún editada por la Sociedad Bíblica de Vietnam como «versión antigua».",
+        "fi": "Ilmestyi kokonaisuudessaan 1934 ja on yhä Vietnamin raamattuseuran julkaisema ”vanha laitos”."
+      }
+    },
+    {
+      "tag": "limitation",
+      "text": {
+        "en": "The Vietnamese is archaic and traditional in its vocabulary.",
+        "nb": "Vietnamesisken er arkaisk og tradisjonell i ordforrådet.",
+        "nn": "Vietnamesisken er arkaisk og tradisjonell i ordtilfanget.",
+        "sv": "Vietnamesiskan är ålderdomlig och traditionell i ordförrådet.",
+        "de": "Das Vietnamesische ist im Wortschatz altertümlich und traditionell.",
+        "fr": "Le vietnamien y est archaïque et traditionnel dans son vocabulaire.",
+        "es": "El vietnamita es arcaico y tradicional en su vocabulario.",
+        "fi": "Vietnamin kieli on sanastoltaan vanhahtavaa ja perinteistä."
+      }
+    }
+  ],
   "coverage": {
     "testament": "both",
     "books": 66,
@@ -37,8 +78,17 @@
   },
   "provenance": {
     "method": "llm",
-    "verified": [],
-    "sources": [],
+    "verified": [
+      "legacy"
+    ],
+    "sources": [
+      {
+        "url": "https://en.wikipedia.org/wiki/Bible_translations_into_Vietnamese",
+        "fields": [
+          "legacy"
+        ]
+      }
+    ],
     "generated": "2026-07-25"
   }
 }

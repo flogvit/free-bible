@@ -9,6 +9,47 @@
   "name": {
     "native": "Old Persian Translation"
   },
+  "legacy": [
+    {
+      "tag": "distinctive",
+      "text": {
+        "en": "The Old Persian Version — Tarjome-ye Qadim — the standard Persian Bible for decades: Henry Martyn's New Testament of 1815, joined to the Old Testament of William Glen and Mīrzā Moḥammad Jaʿfar, and revised into more contemporary Persian by Robert Bruce in 1895.",
+        "nb": "Den gamle persiske utgaven — Tarjome-ye Qadim — standardbibelen på persisk i flere tiår: Henry Martyns nytestamente fra 1815, føyd sammen med Det gamle testamentet til William Glen og Mīrzā Moḥammad Jaʿfar, og revidert til mer samtidig persisk av Robert Bruce i 1895.",
+        "nn": "Den gamle persiske utgåva — Tarjome-ye Qadim — standardbibelen på persisk i fleire tiår: Henry Martyns nytestamente frå 1815, føydd saman med Det gamle testamentet til William Glen og Mīrzā Moḥammad Jaʿfar, og revidert til meir samtidig persisk av Robert Bruce i 1895.",
+        "sv": "Den gamla persiska versionen — Tarjome-ye Qadim — persiskans standardbibel i årtionden: Henry Martyns Nya testamente från 1815, sammanfogat med William Glens och Mīrzā Moḥammad Jaʿfars Gamla testamente och reviderat till mer samtida persiska av Robert Bruce 1895.",
+        "de": "Die Alte Persische Fassung – Tardschome-je Qadim – jahrzehntelang die persische Standardbibel: Henry Martyns Neues Testament von 1815, verbunden mit dem Alten Testament von William Glen und Mīrzā Moḥammad Dschaʿfar und 1895 von Robert Bruce in zeitgemäßeres Persisch überarbeitet.",
+        "fr": "L'ancienne version persane — Tarjome-ye Qadim — bible persane de référence pendant des décennies : le Nouveau Testament d'Henry Martyn (1815), joint à l'Ancien Testament de William Glen et Mīrzā Moḥammad Jaʿfar, puis révisé en persan plus contemporain par Robert Bruce en 1895.",
+        "es": "La antigua versión persa —Tarjome-ye Qadim—, Biblia persa de referencia durante décadas: el Nuevo Testamento de Henry Martyn (1815), unido al Antiguo Testamento de William Glen y Mīrzā Moḥammad Yaʿfar, y revisado a un persa más actual por Robert Bruce en 1895.",
+        "fi": "Vanha persialainen laitos – Tarjome-ye Qadim – vuosikymmeniä persian vakioraamattu: Henry Martynin vuoden 1815 Uusi testamentti liitettynä William Glenin ja Mīrzā Moḥammad Jaʿfarin Vanhaan testamenttiin, ja Robert Bruce tarkisti sen nykyaikaisemmalle persialle 1895."
+      }
+    },
+    {
+      "tag": "distinctive",
+      "text": {
+        "en": "Martyn worked with Mīrzā Sayyed ʿAlī Khan and sent a copy of the finished New Testament to the Shah of Persia.",
+        "nb": "Martyn arbeidet sammen med Mīrzā Sayyed ʿAlī Khan og sendte et eksemplar av det ferdige nytestamentet til sjahen av Persia.",
+        "nn": "Martyn arbeidde saman med Mīrzā Sayyed ʿAlī Khan og sende eit eksemplar av det ferdige nytestamentet til sjahen av Persia.",
+        "sv": "Martyn arbetade tillsammans med Mīrzā Sayyed ʿAlī Khan och sände ett exemplar av det färdiga Nya testamentet till shahen av Persien.",
+        "de": "Martyn arbeitete mit Mīrzā Sayyed ʿAlī Khan und sandte ein Exemplar des fertigen Neuen Testaments an den Schah von Persien.",
+        "fr": "Martyn a travaillé avec Mīrzā Sayyed ʿAlī Khan et a envoyé un exemplaire du Nouveau Testament achevé au chah de Perse.",
+        "es": "Martyn trabajó con Mīrzā Sayyed ʿAlī Jan y envió un ejemplar del Nuevo Testamento terminado al sah de Persia.",
+        "fi": "Martyn työskenteli Mīrzā Sayyed ʿAlī Khanin kanssa ja lähetti valmiin Uuden testamentin kappaleen Persian šaahille."
+      }
+    },
+    {
+      "tag": "limitation",
+      "text": {
+        "en": "Its name says it: this is the old version, and the Persian is that of 1895 at the latest.",
+        "nb": "Navnet sier det: dette er den gamle utgaven, og persisken er fra 1895 i beste fall.",
+        "nn": "Namnet seier det: dette er den gamle utgåva, og persisken er frå 1895 i beste fall.",
+        "sv": "Namnet säger det: detta är den gamla versionen, och persiskan är från 1895 i bästa fall.",
+        "de": "Der Name sagt es: Dies ist die alte Fassung, und das Persische stammt bestenfalls von 1895.",
+        "fr": "Le nom le dit : c'est l'ancienne version, et le persan est au mieux celui de 1895.",
+        "es": "El nombre lo dice: esta es la versión antigua, y el persa es, como mucho, el de 1895.",
+        "fi": "Nimi kertoo sen: tämä on vanha laitos, ja persia on parhaimmillaankin vuodelta 1895."
+      }
+    }
+  ],
   "coverage": {
     "testament": "both",
     "books": 66,
@@ -23,8 +64,17 @@
   },
   "provenance": {
     "method": "llm",
-    "verified": [],
-    "sources": [],
+    "verified": [
+      "legacy"
+    ],
+    "sources": [
+      {
+        "url": "https://en.wikipedia.org/wiki/Bible_translations_into_Persian",
+        "fields": [
+          "legacy"
+        ]
+      }
+    ],
     "generated": "2026-07-25"
   }
 }

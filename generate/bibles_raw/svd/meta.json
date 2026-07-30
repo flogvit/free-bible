@@ -40,6 +40,47 @@
       "grc"
     ]
   },
+  "legacy": [
+    {
+      "tag": "distinctive",
+      "text": {
+        "en": "Begun by Eli Smith in Beirut in 1847 and finished under Cornelius Van Dyck, with the Arabic scholars Nasif al-Yaziji, Butrus al-Bustani and Yusuf al-Asir: the New Testament in 1860, the Old Testament in 1865.",
+        "nb": "Påbegynt av Eli Smith i Beirut i 1847 og fullført under Cornelius Van Dyck, sammen med de arabiske lærde Nasif al-Yaziji, Butrus al-Bustani og Yusuf al-Asir: Det nye testamentet i 1860, Det gamle i 1865.",
+        "nn": "Påbyrja av Eli Smith i Beirut i 1847 og fullført under Cornelius Van Dyck, saman med dei arabiske lærde Nasif al-Yaziji, Butrus al-Bustani og Yusuf al-Asir: Det nye testamentet i 1860, Det gamle i 1865.",
+        "sv": "Påbörjad av Eli Smith i Beirut 1847 och fullbordad under Cornelius Van Dyck, tillsammans med de arabiska lärde Nasif al-Yaziji, Butrus al-Bustani och Yusuf al-Asir: Nya testamentet 1860, Gamla 1865.",
+        "de": "1847 von Eli Smith in Beirut begonnen und unter Cornelius Van Dyck vollendet, zusammen mit den arabischen Gelehrten Nasif al-Yaziji, Butrus al-Bustani und Yusuf al-Asir: das Neue Testament 1860, das Alte 1865.",
+        "fr": "Commencée par Eli Smith à Beyrouth en 1847 et achevée sous Cornelius Van Dyck, avec les savants arabes Nasif al-Yaziji, Boutros al-Boustani et Yusuf al-Asir : le Nouveau Testament en 1860, l'Ancien en 1865.",
+        "es": "Iniciada por Eli Smith en Beirut en 1847 y terminada bajo Cornelius Van Dyck, con los eruditos árabes Nasif al-Yaziyi, Butrus al-Bustani y Yusuf al-Asir: el Nuevo Testamento en 1860 y el Antiguo en 1865.",
+        "fi": "Eli Smithin Beirutissa 1847 aloittama ja Cornelius Van Dyckin johdolla valmistunut, arabialaisten oppineiden Nasif al-Yazijin, Butrus al-Bustanin ja Yusuf al-Asirin kanssa: Uusi testamentti 1860, Vanha 1865."
+      }
+    },
+    {
+      "tag": "distinctive",
+      "text": {
+        "en": "Received by the Coptic Church, the Syriac Orthodox Church and the Protestant churches alike; some ten million copies have gone out since 1865, and it is still reckoned among the best Arabic Bibles.",
+        "nb": "Tatt imot av den koptiske kirken, den syrisk-ortodokse kirken og de protestantiske kirkene i like grad; rundt ti millioner eksemplarer er spredt siden 1865, og den regnes fortsatt blant de beste arabiske biblene.",
+        "nn": "Motteken av den koptiske kyrkja, den syrisk-ortodokse kyrkja og dei protestantiske kyrkjene i like stor grad; kring ti millionar eksemplar er spreidde sidan 1865, og han blir framleis rekna blant dei beste arabiske biblane.",
+        "sv": "Mottagen av den koptiska kyrkan, den syrisk-ortodoxa kyrkan och de protestantiska kyrkorna i lika mån; omkring tio miljoner exemplar har spritts sedan 1865, och den räknas alltjämt bland de bästa arabiska biblarna.",
+        "de": "Von der koptischen Kirche, der syrisch-orthodoxen Kirche und den protestantischen Kirchen gleichermaßen angenommen; seit 1865 wurden rund zehn Millionen Exemplare verbreitet, und sie gilt noch heute als eine der besten arabischen Bibeln.",
+        "fr": "Reçue aussi bien par l'Église copte, l'Église syriaque orthodoxe que par les Églises protestantes ; quelque dix millions d'exemplaires ont circulé depuis 1865, et elle compte toujours parmi les meilleures bibles arabes.",
+        "es": "Aceptada por igual por la Iglesia copta, la Iglesia siríaca ortodoxa y las iglesias protestantes; se han distribuido unos diez millones de ejemplares desde 1865, y sigue contándose entre las mejores Biblias árabes.",
+        "fi": "Koptilainen kirkko, syyrialais-ortodoksinen kirkko ja protestanttiset kirkot ovat kaikki ottaneet sen vastaan; vuodesta 1865 on levinnyt noin kymmenen miljoonaa kappaletta, ja sitä pidetään yhä yhtenä parhaista arabiankielisistä raamatuista."
+      }
+    },
+    {
+      "tag": "limitation",
+      "text": {
+        "en": "The Arabic has aged: a recent Bible Society edition carries a glossary of some 3,000 words its readers no longer recognise.",
+        "nb": "Arabisken har eldet: en nyere bibelselskapsutgave har en ordliste på rundt 3 000 ord leserne ikke lenger kjenner igjen.",
+        "nn": "Arabisken har elda: ei nyare bibelselskapsutgåve har ei ordliste på kring 3 000 ord lesarane ikkje lenger kjenner att.",
+        "sv": "Arabiskan har åldrats: en nyare bibelsällskapsutgåva har en ordlista på omkring 3 000 ord som läsarna inte längre känner igen.",
+        "de": "Das Arabisch ist gealtert: Eine neuere Ausgabe der Bibelgesellschaft enthält ein Glossar von rund 3 000 Wörtern, die ihre Leser nicht mehr kennen.",
+        "fr": "L'arabe a vieilli : une édition récente de la Société biblique comporte un glossaire d'environ 3 000 mots que ses lecteurs ne reconnaissent plus.",
+        "es": "El árabe ha envejecido: una edición reciente de la Sociedad Bíblica lleva un glosario de unas 3000 palabras que sus lectores ya no reconocen.",
+        "fi": "Arabia on vanhentunut: eräässä tuoreessa raamattuseuran laitoksessa on noin 3 000 sanan sanasto sanoista, joita lukijat eivät enää tunnista."
+      }
+    }
+  ],
   "coverage": {
     "testament": "both",
     "books": 66,
@@ -54,8 +95,17 @@
   },
   "provenance": {
     "method": "llm",
-    "verified": [],
-    "sources": [],
+    "verified": [
+      "legacy"
+    ],
+    "sources": [
+      {
+        "url": "https://en.wikipedia.org/wiki/Bible_translations_into_Arabic",
+        "fields": [
+          "legacy"
+        ]
+      }
+    ],
     "generated": "2026-07-25"
   }
 }

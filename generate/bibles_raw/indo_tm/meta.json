@@ -12,6 +12,34 @@
   },
   "philosophy": "formal",
   "tradition": "protestant",
+  "legacy": [
+    {
+      "tag": "distinctive",
+      "text": {
+        "en": "The Terjemahan Lama — the \"old translation\" — listed among Indonesian Bibles as published in 1954, and the name by which it is still distinguished from the newer Indonesian versions.",
+        "nb": "Terjemahan Lama — «den gamle oversettelsen» — oppført blant indonesiske bibler som utgitt i 1954, og navnet den fortsatt skilles fra de nyere indonesiske utgavene med.",
+        "nn": "Terjemahan Lama — «den gamle omsetjinga» — ført opp blant indonesiske biblar som gjeven ut i 1954, og namnet han framleis blir skild frå dei nyare indonesiske utgåvene med.",
+        "sv": "Terjemahan Lama — ”den gamla översättningen” — upptagen bland indonesiska biblar som utgiven 1954, och namnet den alltjämt skiljs från de nyare indonesiska utgåvorna med.",
+        "de": "Die Terjemahan Lama – die „alte Übersetzung“ – unter den indonesischen Bibeln mit dem Erscheinungsjahr 1954 geführt; unter diesem Namen wird sie bis heute von den neueren indonesischen Ausgaben unterschieden.",
+        "fr": "La Terjemahan Lama — l'« ancienne traduction » — répertoriée parmi les bibles indonésiennes comme parue en 1954, et le nom sous lequel on la distingue encore des versions indonésiennes plus récentes.",
+        "es": "La Terjemahan Lama —la «traducción antigua»—, registrada entre las Biblias indonesias como publicada en 1954, y el nombre con que aún se la distingue de las versiones indonesias más nuevas.",
+        "fi": "Terjemahan Lama – ”vanha käännös” – luetteloitu indonesialaisten raamattujen joukkoon vuonna 1954 julkaistuna, ja nimi, jolla se yhä erotetaan uudemmista indonesiannoksista."
+      }
+    },
+    {
+      "tag": "limitation",
+      "text": {
+        "en": "Little is recorded about this translation: it carries no translator, no year and no textual basis, and the reference works say scarcely more.",
+        "nb": "Lite er registrert om denne oversettelsen: den har verken oversetter, årstall eller tekstgrunnlag, og oppslagsverkene sier knapt mer.",
+        "nn": "Lite er registrert om denne omsetjinga: ho har korkje omsetjar, årstal eller tekstgrunnlag, og oppslagsverka seier knapt meir.",
+        "sv": "Föga är noterat om denna översättning: den saknar översättare, årtal och textgrund, och uppslagsverken säger knappt mer.",
+        "de": "Über diese Übersetzung ist wenig verzeichnet: Sie nennt weder Übersetzer noch Jahr noch Textgrundlage, und die Nachschlagewerke sagen kaum mehr.",
+        "fr": "On sait peu de chose de cette traduction : elle ne porte ni traducteur, ni année, ni base textuelle, et les ouvrages de référence n'en disent guère plus.",
+        "es": "Poco consta sobre esta traducción: no lleva traductor, ni año, ni base textual, y las obras de referencia apenas dicen más.",
+        "fi": "Tästä käännöksestä on kirjattu vähän: siinä ei ole kääntäjää, vuotta eikä tekstipohjaa, eivätkä hakuteoksetkaan kerro juuri enempää."
+      }
+    }
+  ],
   "coverage": {
     "testament": "both",
     "books": 66,
@@ -26,8 +54,17 @@
   },
   "provenance": {
     "method": "llm",
-    "verified": [],
-    "sources": [],
+    "verified": [
+      "legacy"
+    ],
+    "sources": [
+      {
+        "url": "https://en.wikipedia.org/wiki/Bible_translations_into_Indonesian",
+        "fields": [
+          "legacy"
+        ]
+      }
+    ],
     "generated": "2026-07-25"
   }
 }

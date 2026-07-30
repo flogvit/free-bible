@@ -9,6 +9,34 @@
   "name": {
     "native": "Litafi Mai-tsarki"
   },
+  "legacy": [
+    {
+      "tag": "distinctive",
+      "text": {
+        "en": "A Hausa New Testament from the Door43 World Missions Community (2020), released under CC BY-SA 4.0 so that others may reuse and revise it.",
+        "nb": "Et hausa-nytestamente fra Door43 World Missions Community (2020), utgitt under CC BY-SA 4.0 så andre kan gjenbruke og revidere det.",
+        "nn": "Eit hausa-nytestamente frå Door43 World Missions Community (2020), gjeve ut under CC BY-SA 4.0 så andre kan gjenbruka og revidera det.",
+        "sv": "Ett hausiskt Nya testamente från Door43 World Missions Community (2020), utgivet under CC BY-SA 4.0 så att andra får återanvända och revidera det.",
+        "de": "Ein Hausa-Neues-Testament der Door43 World Missions Community (2020), unter CC BY-SA 4.0 veröffentlicht, damit andere es weiterverwenden und überarbeiten können.",
+        "fr": "Un Nouveau Testament haoussa de la Door43 World Missions Community (2020), publié sous CC BY-SA 4.0 pour que d'autres puissent le réutiliser et le réviser.",
+        "es": "Un Nuevo Testamento hausa de la Door43 World Missions Community (2020), publicado bajo CC BY-SA 4.0 para que otros puedan reutilizarlo y revisarlo.",
+        "fi": "Door43 World Missions Communityn hausankielinen Uusi testamentti (2020), julkaistu CC BY-SA 4.0 -lisenssillä, jotta muut voivat käyttää ja tarkistaa sitä."
+      }
+    },
+    {
+      "tag": "limitation",
+      "text": {
+        "en": "The New Testament only: 27 books, with no Old Testament in this edition.",
+        "nb": "Bare Det nye testamentet: 27 bøker, uten noe gammeltestamente i denne utgaven.",
+        "nn": "Berre Det nye testamentet: 27 bøker, utan noko gamaltestamente i denne utgåva.",
+        "sv": "Endast Nya testamentet: 27 böcker, utan något Gamla testamente i denna utgåva.",
+        "de": "Nur das Neue Testament: 27 Bücher, ohne Altes Testament in dieser Ausgabe.",
+        "fr": "Le Nouveau Testament seul : 27 livres, sans Ancien Testament dans cette édition.",
+        "es": "Solo el Nuevo Testamento: 27 libros, sin Antiguo Testamento en esta edición.",
+        "fi": "Vain Uusi testamentti: 27 kirjaa, ilman Vanhaa testamenttia tässä laitoksessa."
+      }
+    }
+  ],
   "coverage": {
     "testament": "nt",
     "books": 27,
@@ -23,8 +51,17 @@
   },
   "provenance": {
     "method": "llm",
-    "verified": [],
-    "sources": [],
+    "verified": [
+      "legacy"
+    ],
+    "sources": [
+      {
+        "url": "https://github.com/flogvit/free-bible/blob/main/generate/bibles_raw/ha_lit/license.json",
+        "fields": [
+          "legacy"
+        ]
+      }
+    ],
     "generated": "2026-07-25"
   }
 }

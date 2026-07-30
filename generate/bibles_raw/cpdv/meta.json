@@ -37,6 +37,47 @@
     ],
     "review": "none"
   },
+  "legacy": [
+    {
+      "tag": "distinctive",
+      "text": {
+        "en": "A Catholic Bible in modern English translated from the Latin Vulgate and placed in the public domain — the Douay-Rheims tradition without the seventeenth-century wording.",
+        "nb": "En katolsk bibel på moderne engelsk oversatt fra den latinske Vulgata og lagt i det fri — Douay-Rheims-tradisjonen uten 1600-tallsordlyden.",
+        "nn": "Ein katolsk bibel på moderne engelsk omsett frå den latinske Vulgata og lagd i det frie — Douay-Rheims-tradisjonen utan 1600-talsordlyden.",
+        "sv": "En katolsk bibel på modern engelska översatt från den latinska Vulgatan och släppt fri — Douay-Rheims-traditionen utan 1600-talsordalydelsen.",
+        "de": "Eine katholische Bibel in modernem Englisch, aus der lateinischen Vulgata übersetzt und gemeinfrei gestellt – die Douay-Rheims-Tradition ohne den Wortlaut des 17. Jahrhunderts.",
+        "fr": "Une bible catholique en anglais moderne traduite de la Vulgate latine et versée dans le domaine public — la tradition de Douay-Rheims sans la langue du XVIIe siècle.",
+        "es": "Una Biblia católica en inglés moderno traducida de la Vulgata latina y puesta en el dominio público: la tradición de Douay-Rheims sin la redacción del siglo XVII.",
+        "fi": "Katolinen nykyenglantinen raamattu, käännetty latinankielisestä Vulgatasta ja luovutettu vapaaseen käyttöön – Douay-Rheimsin perinne ilman 1600-luvun sanamuotoa."
+      }
+    },
+    {
+      "tag": "limitation",
+      "text": {
+        "en": "It has not been granted an imprimatur, so it carries no ecclesiastical approval despite calling itself a Catholic Bible.",
+        "nb": "Den har ikke fått imprimatur, så den bærer ingen kirkelig godkjenning selv om den kaller seg en katolsk bibel.",
+        "nn": "Ho har ikkje fått imprimatur, så ho ber inga kyrkjeleg godkjenning sjølv om ho kallar seg ein katolsk bibel.",
+        "sv": "Den har inte tilldelats imprimatur och bär alltså inget kyrkligt godkännande, trots att den kallar sig en katolsk bibel.",
+        "de": "Sie hat kein Imprimatur erhalten und trägt somit keine kirchliche Billigung, obwohl sie sich katholische Bibel nennt.",
+        "fr": "Elle n'a pas reçu d'imprimatur : elle ne porte donc aucune approbation ecclésiastique, bien qu'elle se dise bible catholique.",
+        "es": "No ha recibido imprimátur, por lo que carece de aprobación eclesiástica pese a llamarse Biblia católica.",
+        "fi": "Sille ei ole myönnetty imprimaturia, joten sillä ei ole kirkollista hyväksyntää, vaikka se kutsuu itseään katoliseksi raamatuksi."
+      }
+    },
+    {
+      "tag": "limitation",
+      "text": {
+        "en": "The full version carries the 73-book Catholic canon; what is held here is the 66-book subset, without the deuterocanonical books.",
+        "nb": "Den fullstendige utgaven har den katolske kanon på 73 bøker; det som ligger her, er utvalget på 66, uten de deuterokanoniske bøkene.",
+        "nn": "Den fullstendige utgåva har den katolske kanonen på 73 bøker; det som ligg her, er utvalet på 66, utan dei deuterokanoniske bøkene.",
+        "sv": "Den fullständiga utgåvan bär den katolska kanon på 73 böcker; det som finns här är urvalet på 66, utan de deuterokanoniska böckerna.",
+        "de": "Die vollständige Fassung enthält den katholischen Kanon mit 73 Büchern; hier liegt die Auswahl von 66 Büchern ohne die deuterokanonischen vor.",
+        "fr": "La version complète porte le canon catholique de 73 livres ; ce qui figure ici est le sous-ensemble de 66, sans les livres deutérocanoniques.",
+        "es": "La versión completa lleva el canon católico de 73 libros; lo que aquí consta es el subconjunto de 66, sin los libros deuterocanónicos.",
+        "fi": "Täydellisessä laitoksessa on katolinen 73 kirjan kaanon; tässä on 66 kirjan osajoukko ilman deuterokanonisia kirjoja."
+      }
+    }
+  ],
   "coverage": {
     "testament": "both",
     "books": 66,
@@ -51,8 +92,17 @@
   },
   "provenance": {
     "method": "llm",
-    "verified": [],
-    "sources": [],
+    "verified": [
+      "legacy"
+    ],
+    "sources": [
+      {
+        "url": "https://en.wikipedia.org/wiki/Modern_English_Bible_translations",
+        "fields": [
+          "legacy"
+        ]
+      }
+    ],
     "generated": "2026-07-25"
   }
 }

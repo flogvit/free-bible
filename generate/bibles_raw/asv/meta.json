@@ -45,6 +45,47 @@
       "grc"
     ]
   },
+  "legacy": [
+    {
+      "tag": "distinctive",
+      "text": {
+        "en": "Writes the divine name as \"Jehovah\" in 6,823 places in the Old Testament, where the King James Version has \"LORD\".",
+        "nb": "Skriver gudsnavnet som «Jehovah» 6 823 steder i Det gamle testamentet, der King James Version har «LORD».",
+        "nn": "Skriv gudsnamnet som «Jehovah» 6 823 stader i Det gamle testamentet, der King James Version har «LORD».",
+        "sv": "Skriver gudsnamnet som ”Jehovah” på 6 823 ställen i Gamla testamentet, där King James Version har ”LORD”.",
+        "de": "Schreibt den Gottesnamen an 6 823 Stellen des Alten Testaments als „Jehovah“, wo die King James Version „LORD“ hat.",
+        "fr": "Écrit le nom divin « Jehovah » en 6 823 endroits de l'Ancien Testament, là où la King James Version porte « LORD ».",
+        "es": "Escribe el nombre divino como «Jehovah» en 6823 lugares del Antiguo Testamento, donde la King James Version pone «LORD».",
+        "fi": "Kirjoittaa Jumalan nimen muodossa ”Jehovah” 6 823 kohdassa Vanhaa testamenttia, missä King James Versionissa lukee ”LORD”."
+      }
+    },
+    {
+      "tag": "distinctive",
+      "text": {
+        "en": "The American answer to the English Revised Version, and the stem most later English translations grew from — the Revised Standard Version and the New American Standard Bible among them.",
+        "nb": "Det amerikanske svaret på English Revised Version, og stammen de fleste senere engelske oversettelsene vokste ut av — blant dem Revised Standard Version og New American Standard Bible.",
+        "nn": "Det amerikanske svaret på English Revised Version, og stomnen dei fleste seinare engelske omsetjingane voks ut av — mellom dei Revised Standard Version og New American Standard Bible.",
+        "sv": "Det amerikanska svaret på English Revised Version, och stammen som de flesta senare engelska översättningar vuxit fram ur — bland dem Revised Standard Version och New American Standard Bible.",
+        "de": "Die amerikanische Antwort auf die English Revised Version und der Stamm, aus dem die meisten späteren englischen Übersetzungen hervorgingen – darunter die Revised Standard Version und die New American Standard Bible.",
+        "fr": "La réponse américaine à l'English Revised Version, et la souche dont sont issues la plupart des traductions anglaises ultérieures — dont la Revised Standard Version et la New American Standard Bible.",
+        "es": "La respuesta estadounidense a la English Revised Version, y el tronco del que nacieron la mayoría de las traducciones inglesas posteriores, entre ellas la Revised Standard Version y la New American Standard Bible.",
+        "fi": "Amerikkalainen vastaus English Revised Versionille ja runko, josta useimmat myöhemmät englanninkieliset käännökset kasvoivat – niiden joukossa Revised Standard Version ja New American Standard Bible."
+      }
+    },
+    {
+      "tag": "limitation",
+      "text": {
+        "en": "The English is only lightly modernised from the King James Version, and follows the sentence shape of Hebrew and Greek closely enough to read stiffly.",
+        "nb": "Engelsken er bare lett modernisert fra King James Version, og følger setningsbygningen i hebraisk og gresk så tett at den blir stiv å lese.",
+        "nn": "Engelsken er berre lett modernisert frå King James Version, og følgjer setningsbygnaden i hebraisk og gresk så tett at han blir stiv å lesa.",
+        "sv": "Engelskan är bara lätt moderniserad från King James Version och följer hebreiskans och grekiskans satsbyggnad så nära att den blir stel att läsa.",
+        "de": "Das Englisch ist gegenüber der King James Version nur leicht modernisiert und folgt dem Satzbau des Hebräischen und Griechischen so eng, dass es steif wirkt.",
+        "fr": "L'anglais n'est que légèrement modernisé par rapport à la King James Version et suit la construction des phrases hébraïques et grecques d'assez près pour paraître raide.",
+        "es": "El inglés está solo levemente modernizado respecto a la King James Version y sigue la construcción de las frases hebreas y griegas tan de cerca que resulta rígido.",
+        "fi": "Englanti on vain kevyesti nykyaikaistettu King James Versionista ja seuraa heprean ja kreikan lauserakennetta niin tarkasti, että teksti on kankeaa."
+      }
+    }
+  ],
   "coverage": {
     "testament": "both",
     "books": 66,
@@ -59,8 +100,17 @@
   },
   "provenance": {
     "method": "llm",
-    "verified": [],
-    "sources": [],
+    "verified": [
+      "legacy"
+    ],
+    "sources": [
+      {
+        "url": "https://en.wikipedia.org/wiki/American_Standard_Version",
+        "fields": [
+          "legacy"
+        ]
+      }
+    ],
     "generated": "2026-07-25"
   }
 }

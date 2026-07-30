@@ -37,6 +37,47 @@
   "links": {
     "homepage": "https://sblgnt.com"
   },
+  "legacy": [
+    {
+      "tag": "distinctive",
+      "text": {
+        "en": "Not a translation but the Greek source: Michael W. Holmes built it in 2010 by starting from Westcott and Hort and comparing that against Tregelles, Robinson-Pierpont and the text behind the NIV.",
+        "nb": "Ikke en oversettelse, men den greske kilden: Michael W. Holmes bygde den i 2010 ved å ta utgangspunkt i Westcott og Hort og sammenligne det mot Tregelles, Robinson-Pierpont og teksten bak NIV.",
+        "nn": "Ikkje ei omsetjing, men den greske kjelda: Michael W. Holmes bygde han i 2010 ved å ta utgangspunkt i Westcott og Hort og samanlikna det mot Tregelles, Robinson-Pierpont og teksten bak NIV.",
+        "sv": "Ingen översättning utan den grekiska källan: Michael W. Holmes byggde den 2010 med utgångspunkt i Westcott och Hort, jämförd mot Tregelles, Robinson-Pierpont och texten bakom NIV.",
+        "de": "Keine Übersetzung, sondern die griechische Quelle: Michael W. Holmes erstellte sie 2010, ausgehend von Westcott und Hort im Vergleich mit Tregelles, Robinson-Pierpont und dem Text hinter der NIV.",
+        "fr": "Non pas une traduction mais la source grecque : Michael W. Holmes l'a établie en 2010 en partant de Westcott et Hort, comparés à Tregelles, Robinson-Pierpont et au texte sous-jacent à la NIV.",
+        "es": "No es una traducción sino la fuente griega: Michael W. Holmes la construyó en 2010 partiendo de Westcott y Hort y cotejándolos con Tregelles, Robinson-Pierpont y el texto que subyace a la NIV.",
+        "fi": "Ei käännös vaan kreikankielinen lähde: Michael W. Holmes rakensi sen 2010 lähtien Westcottista ja Hortista ja verraten sitä Tregellesiin, Robinson–Pierpontiin sekä NIV:n taustatekstiin."
+      }
+    },
+    {
+      "tag": "distinctive",
+      "text": {
+        "en": "Its apparatus records differences from other printed editions rather than from manuscripts — a reading edition that shows where the modern editors disagree.",
+        "nb": "Apparatet noterer forskjeller fra andre trykte utgaver, ikke fra håndskrifter — en leseutgave som viser hvor de moderne utgiverne er uenige.",
+        "nn": "Apparatet noterer skilnader frå andre prenta utgåver, ikkje frå handskrifter — ei leseutgåve som viser kvar dei moderne utgjevarane er usamde.",
+        "sv": "Apparaten noterar skillnader mot andra tryckta utgåvor, inte mot handskrifter — en läsutgåva som visar var de moderna utgivarna är oense.",
+        "de": "Ihr Apparat verzeichnet Abweichungen von anderen gedruckten Ausgaben statt von Handschriften – eine Leseausgabe, die zeigt, wo die modernen Herausgeber uneins sind.",
+        "fr": "Son apparat relève les écarts avec d'autres éditions imprimées, non avec les manuscrits — une édition de lecture qui montre où les éditeurs modernes divergent.",
+        "es": "Su aparato registra diferencias respecto de otras ediciones impresas, no de los manuscritos: una edición de lectura que muestra dónde discrepan los editores modernos.",
+        "fi": "Sen apparaatti kirjaa eroja muihin painettuihin laitoksiin eikä käsikirjoituksiin – lukulaitos, joka näyttää, missä nykyiset toimittajat ovat eri mieltä."
+      }
+    },
+    {
+      "tag": "distinctive",
+      "text": {
+        "en": "Open licensing was a design goal: it is released under CC BY 4.0 and may be used commercially without a fee.",
+        "nb": "Åpen lisens var et mål i seg selv: den er utgitt under CC BY 4.0 og kan brukes kommersielt uten vederlag.",
+        "nn": "Open lisens var eit mål i seg sjølv: han er gjeven ut under CC BY 4.0 og kan brukast kommersielt utan vederlag.",
+        "sv": "Öppen licens var ett uttalat mål: den ges ut under CC BY 4.0 och får användas kommersiellt utan avgift.",
+        "de": "Die offene Lizenzierung war ein erklärtes Ziel: Sie erscheint unter CC BY 4.0 und darf entgeltfrei kommerziell genutzt werden.",
+        "fr": "La licence ouverte était un objectif assumé : elle paraît sous CC BY 4.0 et peut être utilisée commercialement sans redevance.",
+        "es": "La licencia abierta fue un objetivo declarado: se publica bajo CC BY 4.0 y puede usarse comercialmente sin pago alguno.",
+        "fi": "Avoin lisensointi oli tietoinen tavoite: se julkaistaan CC BY 4.0 -lisenssillä ja sitä saa käyttää kaupallisesti maksutta."
+      }
+    }
+  ],
   "coverage": {
     "testament": "nt",
     "books": 27,
@@ -60,9 +101,16 @@
       "body",
       "philosophy",
       "textual_basis",
-      "links"
+      "links",
+      "legacy"
     ],
     "sources": [
+      {
+        "url": "https://en.wikipedia.org/wiki/SBL_Greek_New_Testament",
+        "fields": [
+          "legacy"
+        ]
+      },
       {
         "url": "https://sblgnt.com",
         "fields": [

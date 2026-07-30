@@ -31,6 +31,47 @@
     ],
     "review": "ecclesiastical_approval"
   },
+  "legacy": [
+    {
+      "tag": "distinctive",
+      "text": {
+        "en": "The Bible shared across Russian Christianity — Orthodox, Catholics and Protestants read the same text.",
+        "nb": "Bibelen som er felles for russisk kristendom — ortodokse, katolikker og protestanter leser samme tekst.",
+        "nn": "Bibelen som er felles for russisk kristendom — ortodokse, katolikkar og protestantar les same teksten.",
+        "sv": "Bibeln som är gemensam för rysk kristenhet — ortodoxa, katoliker och protestanter läser samma text.",
+        "de": "Die Bibel, die das russische Christentum teilt – Orthodoxe, Katholiken und Protestanten lesen denselben Text.",
+        "fr": "La bible commune à tout le christianisme russe : orthodoxes, catholiques et protestants lisent le même texte.",
+        "es": "La biblia común a todo el cristianismo ruso: ortodoxos, católicos y protestantes leen el mismo texto.",
+        "fi": "Venäläisen kristikunnan yhteinen raamattu – ortodoksit, katolilaiset ja protestantit lukevat samaa tekstiä."
+      }
+    },
+    {
+      "tag": "distinctive",
+      "text": {
+        "en": "Its Old Testament follows the Hebrew Masoretic Text, which the Synod approved in 1862 — a break with the Septuagint basis of the Church Slavonic tradition.",
+        "nb": "Det gamle testamentet følger den hebraiske masoretiske teksten, som synoden godkjente i 1862 — et brudd med septuaginta-grunnlaget i den kirkeslaviske tradisjonen.",
+        "nn": "Det gamle testamentet følgjer den hebraiske masoretiske teksten, som synoden godkjende i 1862 — eit brot med septuaginta-grunnlaget i den kyrkjeslaviske tradisjonen.",
+        "sv": "Dess Gamla testamente följer den hebreiska masoretiska texten, som synoden godkände 1862 — ett brott med septuagintagrunden i den kyrkoslaviska traditionen.",
+        "de": "Ihr Altes Testament folgt dem hebräischen masoretischen Text, den die Synode 1862 billigte – ein Bruch mit der Septuaginta-Grundlage der kirchenslawischen Überlieferung.",
+        "fr": "Son Ancien Testament suit le texte massorétique hébreu, approuvé par le Synode en 1862 — une rupture avec la base septantique de la tradition slavonne.",
+        "es": "Su Antiguo Testamento sigue el texto masorético hebreo, aprobado por el Sínodo en 1862: una ruptura con la base septuagintal de la tradición eslava eclesiástica.",
+        "fi": "Sen Vanha testamentti seuraa heprealaista masoreettista tekstiä, jonka synodi hyväksyi 1862 – katkos kirkkoslaavilaisen perinteen Septuaginta-pohjaan."
+      }
+    },
+    {
+      "tag": "limitation",
+      "text": {
+        "en": "It carries so much Church Slavonic vocabulary and cadence into modern Russian that scholars call it a linguistic phenomenon of its own kind — solemn, and not the Russian anyone speaks.",
+        "nb": "Den bærer så mye kirkeslavisk ordforråd og tonefall inn i moderne russisk at forskere kaller den et språklig fenomen av eget slag — høytidelig, og ikke det russiske noen snakker.",
+        "nn": "Han ber så mykje kyrkjeslavisk ordtilfang og tonefall inn i moderne russisk at forskarar kallar han eit språkleg fenomen av eige slag — høgtideleg, og ikkje det russiske nokon talar.",
+        "sv": "Den bär in så mycket kyrkoslaviskt ordförråd och tonfall i modern ryska att forskare kallar den ett språkligt fenomen av eget slag — högtidlig, och inte den ryska någon talar.",
+        "de": "Sie trägt so viel kirchenslawischen Wortschatz und Tonfall ins moderne Russisch, dass Fachleute sie ein sprachliches Phänomen eigener Art nennen – feierlich und nicht das Russisch, das jemand spricht.",
+        "fr": "Elle introduit tant de vocabulaire et de cadence slavons dans le russe moderne que les spécialistes y voient un phénomène linguistique en soi — solennel, et non le russe que l'on parle.",
+        "es": "Introduce tanto léxico y tanta cadencia eslava eclesiástica en el ruso moderno que los estudiosos la llaman un fenómeno lingüístico de su propia especie: solemne, y no el ruso que nadie habla.",
+        "fi": "Se tuo niin paljon kirkkoslaavin sanastoa ja poljentoa nykyvenäjään, että tutkijat kutsuvat sitä omanlaisekseen kielelliseksi ilmiöksi – juhlavaa, eikä sitä venäjää, jota kukaan puhuu."
+      }
+    }
+  ],
   "coverage": {
     "testament": "both",
     "books": 66,
@@ -45,8 +86,17 @@
   },
   "provenance": {
     "method": "llm",
-    "verified": [],
-    "sources": [],
+    "verified": [
+      "legacy"
+    ],
+    "sources": [
+      {
+        "url": "https://en.wikipedia.org/wiki/Russian_Synodal_Bible",
+        "fields": [
+          "legacy"
+        ]
+      }
+    ],
     "generated": "2026-07-25"
   }
 }

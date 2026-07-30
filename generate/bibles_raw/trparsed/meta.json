@@ -20,6 +20,47 @@
     "translation": "tr",
     "relation": "edition_of"
   },
+  "legacy": [
+    {
+      "tag": "distinctive",
+      "text": {
+        "en": "The Textus Receptus with every word parsed — each form tagged for part of speech, case, tense and the rest, so the grammar can be read off the text directly.",
+        "nb": "Textus Receptus med hvert ord grammatisk analysert — hver form merket med ordklasse, kasus, tid og resten, så grammatikken kan leses rett av teksten.",
+        "nn": "Textus Receptus med kvart ord grammatisk analysert — kvar form merkt med ordklasse, kasus, tid og resten, så grammatikken kan lesast rett av teksten.",
+        "sv": "Textus Receptus med varje ord grammatiskt analyserat — varje form märkt med ordklass, kasus, tempus och det övriga, så att grammatiken kan avläsas direkt ur texten.",
+        "de": "Der Textus Receptus mit vollständiger Wortanalyse – jede Form nach Wortart, Kasus, Tempus und Übrigem ausgezeichnet, sodass sich die Grammatik direkt am Text ablesen lässt.",
+        "fr": "Le Textus Receptus entièrement analysé : chaque forme est étiquetée en catégorie grammaticale, cas, temps et le reste, de sorte que la grammaire se lit à même le texte.",
+        "es": "El Textus Receptus con cada palabra analizada: cada forma etiquetada por categoría, caso, tiempo y lo demás, de modo que la gramática se lee directamente del texto.",
+        "fi": "Textus Receptus, jossa jokainen sana on jäsennetty – jokainen muoto merkitty sanaluokan, sijan, aikamuodon ja muun mukaan, joten kieliopin voi lukea suoraan tekstistä."
+      }
+    },
+    {
+      "tag": "distinctive",
+      "text": {
+        "en": "The same Greek text the Reformation Bibles rest on, going back to Erasmus's edition of 1516 — here in a form meant for study rather than reading.",
+        "nb": "Den samme greske teksten reformasjonens bibler hviler på, tilbake til Erasmus' utgave fra 1516 — her i en form ment for studium heller enn lesning.",
+        "nn": "Den same greske teksten biblane til reformasjonen kviler på, attende til Erasmus' utgåve frå 1516 — her i ei form meint for studium heller enn lesing.",
+        "sv": "Samma grekiska text som reformationens biblar vilar på, tillbaka till Erasmus utgåva 1516 — här i en form avsedd för studium snarare än läsning.",
+        "de": "Derselbe griechische Text, auf dem die Bibeln der Reformation ruhen, zurück bis zu Erasmus' Ausgabe von 1516 – hier in einer Form für das Studium statt für die Lektüre.",
+        "fr": "Le même texte grec sur lequel reposent les bibles de la Réforme, jusqu'à l'édition d'Érasme de 1516 — ici sous une forme destinée à l'étude plutôt qu'à la lecture.",
+        "es": "El mismo texto griego en que descansan las Biblias de la Reforma, hasta la edición de Erasmo de 1516, aquí en una forma pensada para el estudio más que para la lectura.",
+        "fi": "Sama kreikankielinen teksti, jolle uskonpuhdistuksen raamatut nojaavat, aina Erasmuksen vuoden 1516 laitokseen asti – tässä tutkimiseen eikä lukemiseen tarkoitetussa muodossa."
+      }
+    },
+    {
+      "tag": "limitation",
+      "text": {
+        "en": "It carries the Textus Receptus's known weaknesses with it: readings such as the Comma Johanneum and the longer ending of Mark are now held to be later additions.",
+        "nb": "Den bærer med seg Textus Receptus' kjente svakheter: lesemåter som Comma Johanneum og den lange Markus-slutten regnes nå som senere tilføyelser.",
+        "nn": "Han ber med seg dei kjende veikskapane til Textus Receptus: lesemåtar som Comma Johanneum og den lange Markus-slutten blir no rekna som seinare tillegg.",
+        "sv": "Den bär med sig Textus Receptus kända svagheter: läsarter som Comma Johanneum och det långa Markusslutet räknas nu som senare tillägg.",
+        "de": "Sie trägt die bekannten Schwächen des Textus Receptus mit sich: Lesarten wie das Comma Johanneum und der längere Markusschluss gelten heute als spätere Zusätze.",
+        "fr": "Il en hérite les faiblesses connues : des leçons comme le Comma Johanneum et la finale longue de Marc sont aujourd'hui tenues pour des ajouts postérieurs.",
+        "es": "Arrastra las debilidades conocidas del Textus Receptus: lecturas como la Coma Joánica y el final largo de Marcos se tienen hoy por añadidos posteriores.",
+        "fi": "Se kantaa mukanaan Textus Receptuksen tunnetut heikkoudet: lukutapoja kuten Comma Johanneum ja Markuksen pitkä loppu pidetään nykyään myöhempinä lisäyksinä."
+      }
+    }
+  ],
   "coverage": {
     "testament": "nt",
     "books": 27,
@@ -34,8 +75,17 @@
   },
   "provenance": {
     "method": "llm",
-    "verified": [],
-    "sources": [],
+    "verified": [
+      "legacy"
+    ],
+    "sources": [
+      {
+        "url": "https://en.wikipedia.org/wiki/Textus_Receptus",
+        "fields": [
+          "legacy"
+        ]
+      }
+    ],
     "generated": "2026-07-25"
   }
 }

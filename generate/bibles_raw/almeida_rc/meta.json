@@ -44,6 +44,47 @@
       "label": "complete_bible"
     }
   ],
+  "legacy": [
+    {
+      "tag": "distinctive",
+      "text": {
+        "en": "João Ferreira de Almeida (1628–1691) became a Protestant at 14 and began translating at 16, working from Beza's Latin and the Textus Receptus. His New Testament appeared in 1681, the complete Bible in 1753.",
+        "nb": "João Ferreira de Almeida (1628–1691) ble protestant som 14-åring og begynte å oversette som 16-åring, med Bezas latin og Textus Receptus som grunnlag. Hans nytestamente kom i 1681, hele bibelen i 1753.",
+        "nn": "João Ferreira de Almeida (1628–1691) vart protestant som 14-åring og tok til å omsetja som 16-åring, med Bezas latin og Textus Receptus som grunnlag. Nytestamentet hans kom i 1681, heile bibelen i 1753.",
+        "sv": "João Ferreira de Almeida (1628–1691) blev protestant vid 14 och började översätta vid 16, med Bezas latin och Textus Receptus som grund. Hans Nya testamente kom 1681, hela bibeln 1753.",
+        "de": "João Ferreira de Almeida (1628–1691) wurde mit 14 Protestant und begann mit 16 zu übersetzen, auf der Grundlage von Bezas Latein und des Textus Receptus. Sein Neues Testament erschien 1681, die ganze Bibel 1753.",
+        "fr": "João Ferreira de Almeida (1628-1691) devint protestant à 14 ans et se mit à traduire à 16, à partir du latin de Bèze et du Textus Receptus. Son Nouveau Testament parut en 1681, la Bible entière en 1753.",
+        "es": "João Ferreira de Almeida (1628-1691) se hizo protestante a los 14 años y empezó a traducir a los 16, partiendo del latín de Beza y del Textus Receptus. Su Nuevo Testamento salió en 1681 y la Biblia completa en 1753.",
+        "fi": "João Ferreira de Almeida (1628–1691) kääntyi protestantiksi 14-vuotiaana ja alkoi kääntää 16-vuotiaana Bezan latinan ja Textus Receptuksen pohjalta. Hänen Uusi testamenttinsa ilmestyi 1681, koko raamattu 1753."
+      }
+    },
+    {
+      "tag": "distinctive",
+      "text": {
+        "en": "The Revista e Corrigida is the conservative branch of the Almeida line — the one that stays closest to the older wording, where the Revista e Atualizada modernises.",
+        "nb": "Revista e Corrigida er den konservative grenen av Almeida-linjen — den som holder seg nærmest den eldre ordlyden, der Revista e Atualizada moderniserer.",
+        "nn": "Revista e Corrigida er den konservative greina av Almeida-linja — den som held seg nærmast den eldre ordlyden, der Revista e Atualizada moderniserer.",
+        "sv": "Revista e Corrigida är den konservativa grenen av Almeida-linjen — den som håller sig närmast den äldre ordalydelsen, där Revista e Atualizada moderniserar.",
+        "de": "Die Revista e Corrigida ist der konservative Zweig der Almeida-Linie – jener, der dem älteren Wortlaut am nächsten bleibt, wo die Revista e Atualizada modernisiert.",
+        "fr": "La Revista e Corrigida est la branche conservatrice de la lignée Almeida — celle qui reste au plus près de l'ancienne formulation, là où la Revista e Atualizada modernise.",
+        "es": "La Revista e Corrigida es la rama conservadora de la línea Almeida: la que se mantiene más cerca de la redacción antigua, mientras la Revista e Atualizada moderniza.",
+        "fi": "Revista e Corrigida on Almeidan suvun konservatiivinen haara – se, joka pysyy lähimpänä vanhaa sanamuotoa siellä, missä Revista e Atualizada nykyaikaistaa."
+      }
+    },
+    {
+      "tag": "limitation",
+      "text": {
+        "en": "Almeida's Portuguese is classical and learned: it keeps the form and register of the source rather than bringing them into everyday speech.",
+        "nb": "Almeidas portugisisk er klassisk og lærd: det beholder formen og stilleiet i kilden heller enn å føre dem over i dagligtale.",
+        "nn": "Portugisisken til Almeida er klassisk og lærd: han held på forma og stilleiet i kjelda heller enn å føra dei over i daglegtale.",
+        "sv": "Almeidas portugisiska är klassisk och lärd: den behåller källans form och stilnivå snarare än att föra över dem i vardagsspråk.",
+        "de": "Almeidas Portugiesisch ist klassisch und gelehrt: Es bewahrt Form und Register der Vorlage, statt sie in die Alltagssprache zu überführen.",
+        "fr": "Le portugais d'Almeida est classique et savant : il conserve la forme et le registre de la source au lieu de les faire passer dans la langue courante.",
+        "es": "El portugués de Almeida es clásico y erudito: conserva la forma y el registro de la fuente en vez de llevarlos al habla corriente.",
+        "fi": "Almeidan portugali on klassista ja oppinutta: se säilyttää lähteen muodon ja tyylilajin sen sijaan että toisi ne arkikieleen."
+      }
+    }
+  ],
   "coverage": {
     "testament": "both",
     "books": 66,
@@ -58,8 +99,17 @@
   },
   "provenance": {
     "method": "llm",
-    "verified": [],
-    "sources": [],
+    "verified": [
+      "legacy"
+    ],
+    "sources": [
+      {
+        "url": "https://en.wikipedia.org/wiki/Jo%C3%A3o_Ferreira_de_Almeida",
+        "fields": [
+          "legacy"
+        ]
+      }
+    ],
     "generated": "2026-07-25"
   }
 }

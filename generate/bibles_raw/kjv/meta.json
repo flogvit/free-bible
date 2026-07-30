@@ -58,6 +58,47 @@
       "note": "Benjamin Blayney's Oxford standardisation of spelling and punctuation"
     }
   ],
+  "legacy": [
+    {
+      "tag": "distinctive",
+      "text": {
+        "en": "About 84% of its New Testament is word for word from Tyndale (1526–1534); its phrasing has shaped everyday English ever since.",
+        "nb": "Om lag 84 % av Det nye testamentet er ord for ord fra Tyndale (1526–1534), og formuleringene har preget engelsk dagligtale siden.",
+        "nn": "Om lag 84 % av Det nye testamentet er ord for ord frå Tyndale (1526–1534), og formuleringane har prega engelsk daglegtale sidan.",
+        "sv": "Omkring 84 % av Nya testamentet är ord för ord hämtat från Tyndale (1526–1534), och formuleringarna har präglat engelskt vardagsspråk sedan dess.",
+        "de": "Rund 84 % des Neuen Testaments stammen wörtlich von Tyndale (1526–1534); seine Formulierungen prägen die englische Alltagssprache bis heute.",
+        "fr": "Environ 84 % du Nouveau Testament reprend mot pour mot Tyndale (1526-1534) ; ses formules ont marqué l'anglais courant depuis lors.",
+        "es": "Cerca del 84 % del Nuevo Testamento reproduce palabra por palabra a Tyndale (1526-1534); sus fórmulas han marcado el inglés cotidiano desde entonces.",
+        "fi": "Noin 84 % Uudesta testamentista on sanasta sanaan Tyndalelta (1526–1534), ja sen sanonnat ovat muovanneet arkienglantia siitä lähtien."
+      }
+    },
+    {
+      "tag": "distinctive",
+      "text": {
+        "en": "Words with no counterpart in the Hebrew or Greek are set in italics, so the reader can see what the translators supplied.",
+        "nb": "Ord som ikke har noe motstykke i hebraisk eller gresk, står i kursiv, så leseren ser hva oversetterne har lagt til.",
+        "nn": "Ord som ikkje har noko motstykke i hebraisk eller gresk, står i kursiv, så lesaren ser kva omsetjarane har lagt til.",
+        "sv": "Ord som saknar motsvarighet i hebreiskan eller grekiskan står i kursiv, så att läsaren ser vad översättarna har lagt till.",
+        "de": "Wörter ohne Entsprechung im Hebräischen oder Griechischen stehen kursiv, sodass erkennbar bleibt, was die Übersetzer ergänzt haben.",
+        "fr": "Les mots sans équivalent dans l'hébreu ou le grec sont en italique : le lecteur voit ainsi ce que les traducteurs ont ajouté.",
+        "es": "Las palabras sin equivalente en el hebreo o el griego van en cursiva, de modo que el lector ve lo que añadieron los traductores.",
+        "fi": "Sanat, joilla ei ole vastinetta hepreassa tai kreikassa, on kursivoitu, joten lukija näkee, mitä kääntäjät ovat lisänneet."
+      }
+    },
+    {
+      "tag": "limitation",
+      "text": {
+        "en": "Early Modern English from 1611: many words have shifted meaning since, and the New Testament follows the Textus Receptus, a Greek text later manuscript finds have superseded.",
+        "nb": "Tidlig moderne engelsk fra 1611: mange ord har skiftet betydning siden, og Det nye testamentet følger Textus Receptus, en gresk tekst senere håndskriftfunn har erstattet.",
+        "nn": "Tidleg moderne engelsk frå 1611: mange ord har skift tyding sidan, og Det nye testamentet følgjer Textus Receptus, ein gresk tekst seinare handskriftfunn har erstatta.",
+        "sv": "Tidigmodern engelska från 1611: många ord har sedan dess bytt betydelse, och Nya testamentet följer Textus Receptus, en grekisk text som senare handskriftsfynd har ersatt.",
+        "de": "Frühneuenglisch von 1611: Viele Wörter haben seither ihre Bedeutung geändert, und das Neue Testament folgt dem Textus Receptus, einem griechischen Text, den spätere Handschriftenfunde überholt haben.",
+        "fr": "Anglais de la première modernité (1611) : beaucoup de mots ont changé de sens depuis, et le Nouveau Testament suit le Textus Receptus, un texte grec dépassé par des découvertes de manuscrits ultérieures.",
+        "es": "Inglés moderno temprano de 1611: muchas palabras han cambiado de sentido desde entonces, y el Nuevo Testamento sigue el Textus Receptus, un texto griego superado por hallazgos de manuscritos posteriores.",
+        "fi": "Varhaisnykyenglantia vuodelta 1611: monen sanan merkitys on sittemmin muuttunut, ja Uusi testamentti seuraa Textus Receptusta, jonka myöhemmät käsikirjoituslöydöt ovat ohittaneet."
+      }
+    }
+  ],
   "coverage": {
     "testament": "both",
     "books": 66,
@@ -72,8 +113,17 @@
   },
   "provenance": {
     "method": "llm",
-    "verified": [],
-    "sources": [],
+    "verified": [
+      "legacy"
+    ],
+    "sources": [
+      {
+        "url": "https://en.wikipedia.org/wiki/King_James_Version",
+        "fields": [
+          "legacy"
+        ]
+      }
+    ],
     "generated": "2026-07-25"
   }
 }

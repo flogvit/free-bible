@@ -37,6 +37,47 @@
     ],
     "review": "society_review"
   },
+  "legacy": [
+    {
+      "tag": "distinctive",
+      "text": {
+        "en": "João Ferreira de Almeida (1628–1691) became a Protestant at 14 and began translating at 16. He finished the New Testament and most of the Old; Jacobus op den Akker completed the rest after his death.",
+        "nb": "João Ferreira de Almeida (1628–1691) ble protestant som 14-åring og begynte å oversette som 16-åring. Han fullførte Det nye testamentet og det meste av Det gamle; Jacobus op den Akker gjorde ferdig resten etter hans død.",
+        "nn": "João Ferreira de Almeida (1628–1691) vart protestant som 14-åring og tok til å omsetja som 16-åring. Han fullførte Det nye testamentet og det meste av Det gamle; Jacobus op den Akker gjorde ferdig resten etter hans død.",
+        "sv": "João Ferreira de Almeida (1628–1691) blev protestant vid 14 och började översätta vid 16. Han fullbordade Nya testamentet och största delen av Gamla; Jacobus op den Akker slutförde resten efter hans död.",
+        "de": "João Ferreira de Almeida (1628–1691) wurde mit 14 Protestant und begann mit 16 zu übersetzen. Er vollendete das Neue Testament und den größten Teil des Alten; Jacobus op den Akker stellte den Rest nach seinem Tod fertig.",
+        "fr": "João Ferreira de Almeida (1628-1691) devint protestant à 14 ans et se mit à traduire à 16. Il acheva le Nouveau Testament et la plus grande partie de l'Ancien ; Jacobus op den Akker termina le reste après sa mort.",
+        "es": "João Ferreira de Almeida (1628-1691) se hizo protestante a los 14 años y empezó a traducir a los 16. Terminó el Nuevo Testamento y la mayor parte del Antiguo; Jacobus op den Akker completó el resto tras su muerte.",
+        "fi": "João Ferreira de Almeida (1628–1691) kääntyi protestantiksi 14-vuotiaana ja alkoi kääntää 16-vuotiaana. Hän sai valmiiksi Uuden testamentin ja suurimman osan Vanhaa; Jacobus op den Akker viimeisteli lopun hänen kuoltuaan."
+      }
+    },
+    {
+      "tag": "distinctive",
+      "text": {
+        "en": "The Almeida line is the most used translation among Portuguese-speaking evangelicals, above all in Brazil. This is the Revista e Atualizada, the Brazilian Bible Society's updated revision.",
+        "nb": "Almeida-linjen er den mest brukte oversettelsen blant portugisisktalende evangelikale, framfor alt i Brasil. Dette er Revista e Atualizada, den oppdaterte revisjonen fra det brasilianske bibelselskapet.",
+        "nn": "Almeida-linja er den mest brukte omsetjinga blant portugisisktalande evangelikale, framfor alt i Brasil. Dette er Revista e Atualizada, den oppdaterte revisjonen frå det brasilianske bibelselskapet.",
+        "sv": "Almeida-linjen är den mest använda översättningen bland portugisisktalande evangelikala, framför allt i Brasilien. Detta är Revista e Atualizada, brasilianska bibelsällskapets uppdaterade revision.",
+        "de": "Die Almeida-Linie ist die meistgenutzte Übersetzung unter portugiesischsprachigen Evangelikalen, vor allem in Brasilien. Dies ist die Revista e Atualizada, die aktualisierte Revision der brasilianischen Bibelgesellschaft.",
+        "fr": "La lignée Almeida est la traduction la plus utilisée par les évangéliques lusophones, surtout au Brésil. Il s'agit ici de la Revista e Atualizada, révision mise à jour par la Société biblique du Brésil.",
+        "es": "La línea Almeida es la traducción más usada entre los evangélicos de habla portuguesa, sobre todo en Brasil. Esta es la Revista e Atualizada, la revisión actualizada de la Sociedad Bíblica de Brasil.",
+        "fi": "Almeidan suku on portugalinkielisten evankelikaalien käytetyin käännös, ennen kaikkea Brasiliassa. Tämä on Revista e Atualizada, Brasilian raamattuseuran ajantasaistettu tarkistus."
+      }
+    },
+    {
+      "tag": "limitation",
+      "text": {
+        "en": "Almeida's Portuguese is classical and learned: it keeps the form and register of the source rather than bringing them into everyday speech.",
+        "nb": "Almeidas portugisisk er klassisk og lærd: det beholder formen og stilleiet i kilden heller enn å føre dem over i dagligtale.",
+        "nn": "Portugisisken til Almeida er klassisk og lærd: han held på forma og stilleiet i kjelda heller enn å føra dei over i daglegtale.",
+        "sv": "Almeidas portugisiska är klassisk och lärd: den behåller källans form och stilnivå snarare än att föra över dem i vardagsspråk.",
+        "de": "Almeidas Portugiesisch ist klassisch und gelehrt: Es bewahrt Form und Register der Vorlage, statt sie in die Alltagssprache zu überführen.",
+        "fr": "Le portugais d'Almeida est classique et savant : il conserve la forme et le registre de la source au lieu de les faire passer dans la langue courante.",
+        "es": "El portugués de Almeida es clásico y erudito: conserva la forma y el registro de la fuente en vez de llevarlos al habla corriente.",
+        "fi": "Almeidan portugali on klassista ja oppinutta: se säilyttää lähteen muodon ja tyylilajin sen sijaan että toisi ne arkikieleen."
+      }
+    }
+  ],
   "coverage": {
     "testament": "both",
     "books": 66,
@@ -51,8 +92,17 @@
   },
   "provenance": {
     "method": "llm",
-    "verified": [],
-    "sources": [],
+    "verified": [
+      "legacy"
+    ],
+    "sources": [
+      {
+        "url": "https://en.wikipedia.org/wiki/Jo%C3%A3o_Ferreira_de_Almeida",
+        "fields": [
+          "legacy"
+        ]
+      }
+    ],
     "generated": "2026-07-25"
   }
 }

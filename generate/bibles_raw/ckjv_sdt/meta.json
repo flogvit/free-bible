@@ -30,6 +30,47 @@
     ],
     "pivot_from": "kjv"
   },
+  "legacy": [
+    {
+      "tag": "distinctive",
+      "text": {
+        "en": "A Chinese Bible made from the King James Version rather than from Hebrew and Greek — the reader gets the 1611 English tradition at one remove.",
+        "nb": "En kinesisk bibel laget fra King James Version i stedet for fra hebraisk og gresk — leseren får den engelske 1611-tradisjonen i annen hånd.",
+        "nn": "Ein kinesisk bibel laga frå King James Version i staden for frå hebraisk og gresk — lesaren får den engelske 1611-tradisjonen i andre hand.",
+        "sv": "En kinesisk bibel gjord utifrån King James Version i stället för från hebreiska och grekiska — läsaren får den engelska 1611-traditionen i andra hand.",
+        "de": "Eine chinesische Bibel, aus der King James Version statt aus dem Hebräischen und Griechischen gearbeitet – die englische Tradition von 1611 aus zweiter Hand.",
+        "fr": "Une bible chinoise faite à partir de la King James Version et non de l'hébreu et du grec — la tradition anglaise de 1611 parvient ici de seconde main.",
+        "es": "Una Biblia china hecha a partir de la King James Version y no del hebreo y el griego: la tradición inglesa de 1611 llega aquí de segunda mano.",
+        "fi": "Kiinankielinen raamattu, joka on tehty King James Versionista eikä hepreasta ja kreikasta – englantilainen 1611-perinne toisen käden kautta."
+      }
+    },
+    {
+      "tag": "distinctive",
+      "text": {
+        "en": "This is the Shang-Di edition in traditional characters — Chinese Bibles split over which word to use for God, and this line uses Shang-Di. Released under CC BY-SA 3.0.",
+        "nb": "Dette er Shang-Di-utgaven med tradisjonelle tegn — kinesiske bibler deler seg i hvilket ord de bruker for Gud, og denne linjen bruker Shang-Di. Utgitt under CC BY-SA 3.0.",
+        "nn": "Dette er Shang-Di-utgåva med tradisjonelle teikn — kinesiske biblar deler seg i kva ord dei bruker for Gud, og denne linja bruker Shang-Di. Gjeven ut under CC BY-SA 3.0.",
+        "sv": "Detta är Shang-Di-utgåvan med traditionella tecken — kinesiska biblar skiljer sig i vilket ord de använder för Gud, och denna linje använder Shang-Di. Utgiven under CC BY-SA 3.0.",
+        "de": "Dies ist die Shang-Di-Ausgabe in traditionellen Zeichen – chinesische Bibeln unterscheiden sich im Wort für Gott, und diese Linie verwendet Shang-Di. Unter CC BY-SA 3.0 veröffentlicht.",
+        "fr": "Voici l'édition Shang-Di en caractères traditionnels — les bibles chinoises divergent sur le mot à employer pour Dieu, et cette lignée retient Shang-Di. Publiée sous CC BY-SA 3.0.",
+        "es": "Esta es la edición Shang-Di en caracteres tradicionales: las Biblias chinas se dividen sobre qué palabra usar para Dios, y esta línea emplea Shang-Di. Publicada bajo CC BY-SA 3.0.",
+        "fi": "Tämä on Shang-Di-laitos perinteisin merkein – kiinankieliset raamatut jakautuvat sen mukaan, mitä sanaa ne käyttävät Jumalasta, ja tämä suku käyttää Shang-Dita. Julkaistu CC BY-SA 3.0 -lisenssillä."
+      }
+    },
+    {
+      "tag": "limitation",
+      "text": {
+        "en": "Being made from an English translation, it carries the King James Version's textual basis and its known weaknesses with it, at a further remove from the sources.",
+        "nb": "Siden den er laget fra en engelsk oversettelse, bærer den med seg King James Versions tekstgrunnlag og kjente svakheter, ett skritt lenger fra kildene.",
+        "nn": "Sidan han er laga frå ei engelsk omsetjing, ber han med seg tekstgrunnlaget og dei kjende veikskapane til King James Version, eitt steg lenger frå kjeldene.",
+        "sv": "Eftersom den är gjord utifrån en engelsk översättning bär den med sig King James Versions textgrund och kända svagheter, ett steg längre från källorna.",
+        "de": "Da sie aus einer englischen Übersetzung gearbeitet ist, trägt sie die Textgrundlage der King James Version samt deren bekannten Schwächen mit sich – einen Schritt weiter von den Quellen entfernt.",
+        "fr": "Faite d'après une traduction anglaise, elle en hérite la base textuelle de la King James Version et ses faiblesses connues, à un pas de plus des sources.",
+        "es": "Al estar hecha desde una traducción inglesa, arrastra la base textual de la King James Version y sus debilidades conocidas, a un paso más de las fuentes.",
+        "fi": "Koska se on tehty englanninkielisestä käännöksestä, se kantaa mukanaan King James Versionin tekstipohjan ja sen tunnetut heikkoudet – askeleen kauempana lähteistä."
+      }
+    }
+  ],
   "coverage": {
     "testament": "both",
     "books": 66,
@@ -44,8 +85,17 @@
   },
   "provenance": {
     "method": "llm",
-    "verified": [],
-    "sources": [],
+    "verified": [
+      "legacy"
+    ],
+    "sources": [
+      {
+        "url": "https://github.com/flogvit/free-bible/blob/main/generate/bibles_raw/ckjv_sdt/license.json",
+        "fields": [
+          "legacy"
+        ]
+      }
+    ],
     "generated": "2026-07-25"
   }
 }

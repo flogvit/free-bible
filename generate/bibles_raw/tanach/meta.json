@@ -29,6 +29,47 @@
   "links": {
     "homepage": "https://tanach.us"
   },
+  "legacy": [
+    {
+      "tag": "distinctive",
+      "text": {
+        "en": "Not a translation but the Hebrew source itself: the Masoretic Text, the authoritative Hebrew and Aramaic text of the Tanakh in rabbinic Judaism.",
+        "nb": "Ikke en oversettelse, men den hebraiske kilden selv: den masoretiske teksten, den autoritative hebraiske og arameiske teksten til Tanakh i rabbinsk jødedom.",
+        "nn": "Ikkje ei omsetjing, men den hebraiske kjelda sjølv: den masoretiske teksten, den autoritative hebraiske og arameiske teksten til Tanakh i rabbinsk jødedom.",
+        "sv": "Ingen översättning utan den hebreiska källan själv: den masoretiska texten, den auktoritativa hebreiska och arameiska texten till Tanach inom rabbinsk judendom.",
+        "de": "Keine Übersetzung, sondern die hebräische Quelle selbst: der masoretische Text, der maßgebliche hebräische und aramäische Text des Tanach im rabbinischen Judentum.",
+        "fr": "Non pas une traduction mais la source hébraïque même : le texte massorétique, texte hébreu et araméen faisant autorité pour le Tanakh dans le judaïsme rabbinique.",
+        "es": "No es una traducción sino la fuente hebrea misma: el texto masorético, el texto hebreo y arameo autoritativo del Tanaj en el judaísmo rabínico.",
+        "fi": "Ei käännös vaan heprealainen lähde itse: masoreettinen teksti, rabbiinisen juutalaisuuden arvovaltainen heprean- ja arameankielinen Tanakin teksti."
+      }
+    },
+    {
+      "tag": "distinctive",
+      "text": {
+        "en": "The Masoretes — scribal schools at work between the seventh and eleventh centuries — added vowel points, pronunciation marks and accents to the consonants, and counted letters, words and verses in the margins as a check on copying.",
+        "nb": "Masoretene — skriverskoler i arbeid mellom 600- og 1000-tallet — la vokaltegn, uttalemerker og aksenter til konsonantene, og talte bokstaver, ord og vers i margen som kontroll av avskriften.",
+        "nn": "Masoretane — skrivarskular i arbeid mellom 600- og 1000-talet — la vokalteikn, uttalemerke og aksentar til konsonantane, og talde bokstavar, ord og vers i margen som kontroll av avskrifta.",
+        "sv": "Masoreterna — skrivarskolor verksamma mellan 600- och 1000-talet — lade vokaltecken, uttalsmarkeringar och accenter till konsonanterna och räknade bokstäver, ord och verser i marginalen som kontroll av avskriften.",
+        "de": "Die Masoreten – Schreiberschulen zwischen dem 7. und 11. Jahrhundert – fügten den Konsonanten Vokalzeichen, Aussprachehilfen und Akzente hinzu und zählten am Rand Buchstaben, Wörter und Verse als Kontrolle der Abschrift.",
+        "fr": "Les massorètes — écoles de scribes actives entre le VIIe et le XIe siècle — ont ajouté aux consonnes les points-voyelles, les signes de prononciation et les accents, et compté en marge lettres, mots et versets pour contrôler la copie.",
+        "es": "Los masoretas —escuelas de escribas activas entre los siglos VII y XI— añadieron a las consonantes los puntos vocálicos, las marcas de pronunciación y los acentos, y contaron en los márgenes letras, palabras y versículos como control de la copia.",
+        "fi": "Masoreetit – 600–1000-luvuilla toimineet kirjurikoulut – lisäsivät konsonantteihin vokaalimerkit, ääntämysmerkit ja korot sekä laskivat reunoihin kirjaimet, sanat ja jakeet jäljentämisen tarkistukseksi."
+      }
+    },
+    {
+      "tag": "limitation",
+      "text": {
+        "en": "The Old Testament only — and the Dead Sea Scrolls show this was not the sole Hebrew text in circulation at the end of the Second Temple period.",
+        "nb": "Bare Det gamle testamentet — og Dødehavsrullene viser at dette ikke var den eneste hebraiske teksten i omløp ved slutten av det andre tempels tid.",
+        "nn": "Berre Det gamle testamentet — og Dødehavsrullane viser at dette ikkje var den einaste hebraiske teksten i omløp ved slutten av det andre tempelets tid.",
+        "sv": "Endast Gamla testamentet — och Dödahavsrullarna visar att detta inte var den enda hebreiska text som cirkulerade vid slutet av andra templets tid.",
+        "de": "Nur das Alte Testament – und die Schriftrollen vom Toten Meer zeigen, dass dies am Ende der Zeit des Zweiten Tempels nicht der einzige umlaufende hebräische Text war.",
+        "fr": "L'Ancien Testament seul — et les manuscrits de la mer Morte montrent que ce n'était pas le seul texte hébreu en circulation à la fin de l'époque du Second Temple.",
+        "es": "Solo el Antiguo Testamento, y los Rollos del Mar Muerto muestran que no era el único texto hebreo en circulación al final del período del Segundo Templo.",
+        "fi": "Vain Vanha testamentti – ja Kuolleenmeren kääröt osoittavat, ettei tämä ollut ainoa liikkeellä ollut heprealainen teksti toisen temppelin ajan lopulla."
+      }
+    }
+  ],
   "coverage": {
     "testament": "ot",
     "books": 39,
@@ -49,9 +90,16 @@
       "philosophy",
       "textual_basis",
       "publisher",
-      "links"
+      "links",
+      "legacy"
     ],
     "sources": [
+      {
+        "url": "https://en.wikipedia.org/wiki/Masoretic_Text",
+        "fields": [
+          "legacy"
+        ]
+      },
       {
         "url": "https://tanach.us",
         "fields": [

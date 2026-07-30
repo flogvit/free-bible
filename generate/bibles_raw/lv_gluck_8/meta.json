@@ -34,6 +34,47 @@
       "label": "complete_bible"
     }
   ],
+  "legacy": [
+    {
+      "tag": "distinctive",
+      "text": {
+        "en": "The first Bible in Latvian. Ernst Glück finished it in 1694, working entirely in Marienburg (Alūksne) in Livonia, in a building that is now the Ernst Glück Bible Museum.",
+        "nb": "Den første bibelen på latvisk. Ernst Glück fullførte den i 1694, i sin helhet i Marienburg (Alūksne) i Livland, i en bygning som i dag er Ernst Glücks bibelmuseum.",
+        "nn": "Den første bibelen på latvisk. Ernst Glück fullførte han i 1694, i sin heilskap i Marienburg (Alūksne) i Livland, i ein bygning som i dag er Ernst Glücks bibelmuseum.",
+        "sv": "Den första bibeln på lettiska. Ernst Glück fullbordade den 1694, helt och hållet i Marienburg (Alūksne) i Livland, i en byggnad som i dag är Ernst Glücks bibelmuseum.",
+        "de": "Die erste Bibel auf Lettisch. Ernst Glück vollendete sie 1694, zur Gänze in Marienburg (Alūksne) in Livland, in einem Gebäude, das heute das Ernst-Glück-Bibelmuseum ist.",
+        "fr": "La première bible en letton. Ernst Glück l'acheva en 1694, entièrement à Marienburg (Alūksne) en Livonie, dans un bâtiment qui abrite aujourd'hui le musée biblique Ernst Glück.",
+        "es": "La primera Biblia en letón. Ernst Glück la terminó en 1694, íntegramente en Marienburg (Alūksne), en Livonia, en un edificio que hoy alberga el Museo Bíblico Ernst Glück.",
+        "fi": "Ensimmäinen latviankielinen raamattu. Ernst Glück sai sen valmiiksi 1694 kokonaan Marienburgissa (Alūksne) Liivinmaalla, rakennuksessa, jossa nykyään toimii Ernst Glückin raamattumuseo."
+      }
+    },
+    {
+      "tag": "distinctive",
+      "text": {
+        "en": "Glück had founded the first Latvian-language schools in Livonia in 1683, before the Bible was done — the translation and the literacy were one undertaking.",
+        "nb": "Glück hadde grunnlagt de første latviskspråklige skolene i Livland i 1683, før bibelen var ferdig — oversettelsen og lesekyndigheten var ett og samme foretak.",
+        "nn": "Glück hadde grunnlagt dei første latviskspråklege skulane i Livland i 1683, før bibelen var ferdig — omsetjinga og lesekunna var eitt og same føretak.",
+        "sv": "Glück hade grundat de första lettiskspråkiga skolorna i Livland 1683, innan bibeln var färdig — översättningen och läskunnigheten var ett och samma företag.",
+        "de": "Glück hatte 1683, noch vor Vollendung der Bibel, die ersten lettischsprachigen Schulen in Livland gegründet – Übersetzung und Alphabetisierung waren ein und dasselbe Werk.",
+        "fr": "Glück avait fondé en 1683 les premières écoles de langue lettone en Livonie, avant l'achèvement de la bible — la traduction et l'alphabétisation formaient une seule entreprise.",
+        "es": "Glück había fundado en 1683 las primeras escuelas en lengua letona de Livonia, antes de terminar la Biblia: la traducción y la alfabetización fueron una sola empresa.",
+        "fi": "Glück oli perustanut ensimmäiset latviankieliset koulut Liivinmaalle 1683, ennen kuin raamattu valmistui – käännös ja lukutaito olivat yksi ja sama hanke."
+      }
+    },
+    {
+      "tag": "limitation",
+      "text": {
+        "en": "The Latvian is that of the seventeenth century; this is the eighth edition of that text, not a modern translation.",
+        "nb": "Latvisken er fra 1600-tallet; dette er åttende utgave av den teksten, ikke en moderne oversettelse.",
+        "nn": "Latvisken er frå 1600-talet; dette er åttande utgåve av den teksten, ikkje ei moderne omsetjing.",
+        "sv": "Lettiskan är från 1600-talet; detta är åttonde utgåvan av den texten, inte en modern översättning.",
+        "de": "Das Lettische stammt aus dem 17. Jahrhundert; dies ist die achte Ausgabe dieses Textes, keine moderne Übersetzung.",
+        "fr": "Le letton est celui du XVIIe siècle ; il s'agit de la huitième édition de ce texte, non d'une traduction moderne.",
+        "es": "El letón es el del siglo XVII; esta es la octava edición de aquel texto, no una traducción moderna.",
+        "fi": "Latvia on 1600-luvun kieltä; tämä on tuon tekstin kahdeksas laitos, ei nykyaikainen käännös."
+      }
+    }
+  ],
   "coverage": {
     "testament": "both",
     "books": 66,
@@ -48,8 +89,17 @@
   },
   "provenance": {
     "method": "llm",
-    "verified": [],
-    "sources": [],
+    "verified": [
+      "legacy"
+    ],
+    "sources": [
+      {
+        "url": "https://en.wikipedia.org/wiki/Ernst_Gl%C3%BCck",
+        "fields": [
+          "legacy"
+        ]
+      }
+    ],
     "generated": "2026-07-25"
   }
 }

@@ -20,6 +20,47 @@
       "committee"
     ]
   },
+  "legacy": [
+    {
+      "tag": "distinctive",
+      "text": {
+        "en": "The first Protestant Bible in Tagalog, published in 1905 — before it, only portions translated by Spanish friars for catechisms existed.",
+        "nb": "Den første protestantiske bibelen på tagalog, utgitt i 1905 — før den fantes bare deler oversatt av spanske munker til katekismebruk.",
+        "nn": "Den første protestantiske bibelen på tagalog, gjeven ut i 1905 — før han fanst berre delar omsette av spanske munkar til katekismebruk.",
+        "sv": "Den första protestantiska bibeln på tagalog, utgiven 1905 — dessförinnan fanns endast delar översatta av spanska munkar för katekesbruk.",
+        "de": "Die erste protestantische Bibel auf Tagalog, 1905 erschienen – zuvor gab es nur Teilstücke, die spanische Ordensleute für Katechismen übersetzt hatten.",
+        "fr": "La première bible protestante en tagalog, parue en 1905 — auparavant n'existaient que des portions traduites par des religieux espagnols pour les catéchismes.",
+        "es": "La primera Biblia protestante en tagalo, publicada en 1905; antes solo existían porciones traducidas por frailes españoles para los catecismos.",
+        "fi": "Ensimmäinen protestanttinen tagaloginkielinen raamattu, julkaistu 1905 – sitä ennen oli vain espanjalaisten munkkien katekismuksia varten kääntämiä osia."
+      }
+    },
+    {
+      "tag": "distinctive",
+      "text": {
+        "en": "Made after the American Standard Version and the Spanish Protestant canon, and revised by the Philippine Bible Society in 2001.",
+        "nb": "Laget etter American Standard Version og den spanske protestantiske kanon, og revidert av Filippinenes bibelselskap i 2001.",
+        "nn": "Laga etter American Standard Version og den spanske protestantiske kanonen, og revidert av Filippinane sitt bibelselskap i 2001.",
+        "sv": "Gjord efter American Standard Version och den spanska protestantiska kanon, och reviderad av Filippinernas bibelsällskap 2001.",
+        "de": "Nach der American Standard Version und dem spanischen protestantischen Kanon gearbeitet und 2001 von der Philippinischen Bibelgesellschaft überarbeitet.",
+        "fr": "Établie d'après l'American Standard Version et le canon protestant espagnol, puis révisée par la Société biblique des Philippines en 2001.",
+        "es": "Hecha a partir de la American Standard Version y del canon protestante español, y revisada por la Sociedad Bíblica Filipina en 2001.",
+        "fi": "Tehty American Standard Versionin ja espanjalaisen protestanttisen kaanonin pohjalta, ja Filippiinien raamattuseura tarkisti sen 2001."
+      }
+    },
+    {
+      "tag": "limitation",
+      "text": {
+        "en": "Most Protestant churches in the Philippines now prefer other translations; this is the 1905 text.",
+        "nb": "De fleste protestantiske kirkene på Filippinene foretrekker nå andre oversettelser; dette er teksten fra 1905.",
+        "nn": "Dei fleste protestantiske kyrkjene på Filippinane føretrekkjer no andre omsetjingar; dette er teksten frå 1905.",
+        "sv": "De flesta protestantiska kyrkor i Filippinerna föredrar numera andra översättningar; detta är 1905 års text.",
+        "de": "Die meisten protestantischen Kirchen auf den Philippinen bevorzugen heute andere Übersetzungen; dies ist der Text von 1905.",
+        "fr": "La plupart des Églises protestantes des Philippines préfèrent aujourd'hui d'autres traductions ; voici le texte de 1905.",
+        "es": "La mayoría de las iglesias protestantes de Filipinas prefiere hoy otras traducciones; este es el texto de 1905.",
+        "fi": "Useimmat Filippiinien protestanttiset kirkot suosivat nykyään muita käännöksiä; tämä on vuoden 1905 teksti."
+      }
+    }
+  ],
   "coverage": {
     "testament": "both",
     "books": 66,
@@ -34,8 +75,17 @@
   },
   "provenance": {
     "method": "llm",
-    "verified": [],
-    "sources": [],
+    "verified": [
+      "legacy"
+    ],
+    "sources": [
+      {
+        "url": "https://en.wikipedia.org/wiki/Bible_translations_into_the_languages_of_the_Philippines",
+        "fields": [
+          "legacy"
+        ]
+      }
+    ],
     "generated": "2026-07-25"
   }
 }

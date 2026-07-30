@@ -25,6 +25,34 @@
       "revision"
     ]
   },
+  "legacy": [
+    {
+      "tag": "distinctive",
+      "text": {
+        "en": "Its renderings depart sharply from the French Protestant tradition where doctrine is at stake: John 3:16 reads \"Dieu a tant aimé ceux qu'il a disposés\" — those he has disposed — where Martin and Ostervald both have \"le monde\", the world.",
+        "nb": "Gjengivelsene bryter skarpt med den franske protestantiske tradisjonen der læren står på spill: Joh 3,16 lyder «Dieu a tant aimé ceux qu'il a disposés» — dem han har beredt — der både Martin og Ostervald har «le monde», verden.",
+        "nn": "Attgjevingane bryt skarpt med den franske protestantiske tradisjonen der læra står på spel: Joh 3,16 lyder «Dieu a tant aimé ceux qu'il a disposés» — dei han har budd til — der både Martin og Ostervald har «le monde», verda.",
+        "sv": "Dess återgivningar bryter skarpt med den franska protestantiska traditionen där läran står på spel: Joh 3:16 lyder ”Dieu a tant aimé ceux qu'il a disposés” — dem han har berett — där både Martin och Ostervald har ”le monde”, världen.",
+        "de": "Ihre Wiedergaben brechen dort scharf mit der französischen protestantischen Überlieferung, wo Lehre im Spiel ist: Joh 3,16 lautet „Dieu a tant aimé ceux qu'il a disposés“ – die er bereitet hat –, wo Martin wie Ostervald „le monde“, die Welt, haben.",
+        "fr": "Ses choix rompent nettement avec la tradition protestante française là où la doctrine est en jeu : Jn 3,16 porte « Dieu a tant aimé ceux qu'il a disposés », là où Martin comme Ostervald lisent « le monde ».",
+        "es": "Sus opciones rompen con claridad con la tradición protestante francesa allí donde está en juego la doctrina: Jn 3:16 dice «Dieu a tant aimé ceux qu'il a disposés» —aquellos que ha dispuesto—, donde tanto Martin como Ostervald ponen «le monde», el mundo.",
+        "fi": "Sen käännösratkaisut poikkeavat jyrkästi ranskalaisesta protestanttisesta perinteestä siellä, missä oppi on pelissä: Joh. 3:16 kuuluu ”Dieu a tant aimé ceux qu'il a disposés” – niitä, jotka hän on valmistanut – kun sekä Martinilla että Ostervaldilla on ”le monde”, maailma."
+      }
+    },
+    {
+      "tag": "limitation",
+      "text": {
+        "en": "Nothing is recorded about who revised this translation or when: it carries no translator and no year, so the reader cannot weigh the choices against a known editor.",
+        "nb": "Ingenting er registrert om hvem som reviderte denne oversettelsen eller når: den har verken oversetter eller årstall, så leseren kan ikke veie valgene mot en kjent utgiver.",
+        "nn": "Ingenting er registrert om kven som reviderte denne omsetjinga eller når: ho har korkje omsetjar eller årstal, så lesaren kan ikkje vega vala mot ein kjend utgjevar.",
+        "sv": "Ingenting är noterat om vem som reviderade denna översättning eller när: den saknar översättare och årtal, så läsaren kan inte väga valen mot en känd utgivare.",
+        "de": "Über Bearbeiter und Zeit dieser Übersetzung ist nichts verzeichnet: Sie nennt weder Übersetzer noch Jahr, sodass sich die Entscheidungen keinem bekannten Herausgeber zuordnen lassen.",
+        "fr": "Rien n'est consigné sur l'auteur de cette révision ni sur sa date : elle ne porte ni traducteur ni année, et le lecteur ne peut donc rapporter ces choix à un éditeur identifié.",
+        "es": "No consta nada sobre quién revisó esta traducción ni cuándo: no lleva traductor ni año, de modo que el lector no puede contrastar esas opciones con un editor conocido.",
+        "fi": "Tämän käännöksen tarkistajasta tai ajankohdasta ei ole merkintää: siinä ei ole kääntäjää eikä vuotta, joten lukija ei voi suhteuttaa valintoja tunnettuun toimittajaan."
+      }
+    }
+  ],
   "coverage": {
     "testament": "both",
     "books": 66,
@@ -39,8 +67,17 @@
   },
   "provenance": {
     "method": "llm",
-    "verified": [],
-    "sources": [],
+    "verified": [
+      "legacy"
+    ],
+    "sources": [
+      {
+        "url": "https://github.com/flogvit/free-bible/blob/main/generate/bibles_raw/epee",
+        "fields": [
+          "legacy"
+        ]
+      }
+    ],
     "generated": "2026-07-25"
   }
 }

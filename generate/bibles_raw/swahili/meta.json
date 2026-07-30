@@ -10,6 +10,34 @@
   "name": {
     "native": "Swahili NT"
   },
+  "legacy": [
+    {
+      "tag": "limitation",
+      "text": {
+        "en": "The New Testament only — and not all of it: Philippians is absent, so 26 of the 27 books are present.",
+        "nb": "Bare Det nye testamentet — og ikke engang hele: Filipperbrevet mangler, så 26 av de 27 bøkene er med.",
+        "nn": "Berre Det nye testamentet — og ikkje eingong heile: Filipparbrevet manglar, så 26 av dei 27 bøkene er med.",
+        "sv": "Endast Nya testamentet — och inte ens hela: Filipperbrevet saknas, så 26 av de 27 böckerna finns med.",
+        "de": "Nur das Neue Testament – und nicht einmal vollständig: Der Philipperbrief fehlt, es liegen 26 der 27 Bücher vor.",
+        "fr": "Le Nouveau Testament seul — et pas en entier : l'épître aux Philippiens manque, soit 26 livres sur 27.",
+        "es": "Solo el Nuevo Testamento, y ni siquiera completo: falta Filipenses, de modo que están 26 de los 27 libros.",
+        "fi": "Vain Uusi testamentti – eikä sitäkään kokonaan: Filippiläiskirje puuttuu, joten mukana on 26 kirjaa 27:stä."
+      }
+    },
+    {
+      "tag": "limitation",
+      "text": {
+        "en": "Nothing is recorded about who made this translation or when: it carries no translator, no year and no textual basis.",
+        "nb": "Ingenting er registrert om hvem som laget denne oversettelsen eller når: den har verken oversetter, årstall eller tekstgrunnlag.",
+        "nn": "Ingenting er registrert om kven som laga denne omsetjinga eller når: ho har korkje omsetjar, årstal eller tekstgrunnlag.",
+        "sv": "Ingenting är noterat om vem som gjorde denna översättning eller när: den saknar översättare, årtal och textgrund.",
+        "de": "Über Urheberschaft und Zeit dieser Übersetzung ist nichts verzeichnet: Sie nennt weder Übersetzer noch Jahr noch Textgrundlage.",
+        "fr": "Rien n'est consigné sur l'auteur de cette traduction ni sur sa date : elle ne porte ni traducteur, ni année, ni base textuelle.",
+        "es": "No consta nada sobre quién hizo esta traducción ni cuándo: no lleva traductor, ni año, ni base textual.",
+        "fi": "Tästä käännöksestä ei ole merkintää tekijästä eikä ajankohdasta: siinä ei ole kääntäjää, vuotta eikä tekstipohjaa."
+      }
+    }
+  ],
   "coverage": {
     "testament": "nt",
     "books": 26,
@@ -26,8 +54,17 @@
   },
   "provenance": {
     "method": "llm",
-    "verified": [],
-    "sources": [],
+    "verified": [
+      "legacy"
+    ],
+    "sources": [
+      {
+        "url": "https://github.com/flogvit/free-bible/blob/main/generate/bibles_raw/swahili",
+        "fields": [
+          "legacy"
+        ]
+      }
+    ],
     "generated": "2026-07-25"
   }
 }

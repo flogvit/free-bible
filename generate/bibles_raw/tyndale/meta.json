@@ -47,6 +47,47 @@
       "label": "revision"
     }
   ],
+  "legacy": [
+    {
+      "tag": "distinctive",
+      "text": {
+        "en": "The first English New Testament translated straight from Greek, and the first mass-produced on a printing press. Around 90% of the King James New Testament goes back to it.",
+        "nb": "Det første engelske nytestamentet oversatt direkte fra gresk, og det første masseprodusert på trykkpresse. Rundt 90 % av King James' nytestamente går tilbake til det.",
+        "nn": "Det første engelske nytestamentet omsett direkte frå gresk, og det første masseprodusert på trykkpresse. Kring 90 % av King James' nytestamente går tilbake til det.",
+        "sv": "Det första engelska Nya testamentet översatt direkt från grekiskan, och det första massproducerat på tryckpress. Omkring 90 % av King James Nya testamente går tillbaka på det.",
+        "de": "Das erste englische Neue Testament, das unmittelbar aus dem Griechischen übersetzt und als erstes im Druck massenhaft hergestellt wurde. Rund 90 % des Neuen Testaments der King James Version gehen darauf zurück.",
+        "fr": "Le premier Nouveau Testament anglais traduit directement du grec, et le premier produit en masse à l'imprimerie. Environ 90 % du Nouveau Testament de la King James en découle.",
+        "es": "El primer Nuevo Testamento inglés traducido directamente del griego y el primero producido en masa en imprenta. Cerca del 90 % del Nuevo Testamento de la King James procede de él.",
+        "fi": "Ensimmäinen suoraan kreikasta käännetty englanninkielinen Uusi testamentti ja ensimmäinen kirjapainossa massatuotettu. Noin 90 % King James Versionin Uudesta testamentista juontuu siitä."
+      }
+    },
+    {
+      "tag": "distinctive",
+      "text": {
+        "en": "Gave English the words \"passover\", \"scapegoat\" and \"atonement\", and rendered ekklesia as \"congregation\" and presbyteros as \"elder\" — choices that struck at the authority of the church and cost Tyndale his life in 1536.",
+        "nb": "Ga engelsk ordene «passover», «scapegoat» og «atonement», og gjenga ekklesia som «congregation» og presbyteros som «elder» — valg som traff kirkens autoritet og kostet Tyndale livet i 1536.",
+        "nn": "Gav engelsk orda «passover», «scapegoat» og «atonement», og gav att ekklesia som «congregation» og presbyteros som «elder» — val som trefte autoriteten til kyrkja og kosta Tyndale livet i 1536.",
+        "sv": "Gav engelskan orden ”passover”, ”scapegoat” och ”atonement”, och återgav ekklesia med ”congregation” och presbyteros med ”elder” — val som träffade kyrkans auktoritet och kostade Tyndale livet 1536.",
+        "de": "Schenkte dem Englischen die Wörter „passover“, „scapegoat“ und „atonement“ und gab ekklesia mit „congregation“, presbyteros mit „elder“ wieder – Entscheidungen, die die Autorität der Kirche trafen und Tyndale 1536 das Leben kosteten.",
+        "fr": "A donné à l'anglais les mots « passover », « scapegoat » et « atonement », et rendu ekklesia par « congregation » et presbyteros par « elder » — des choix qui visaient l'autorité de l'Église et coûtèrent la vie à Tyndale en 1536.",
+        "es": "Dio al inglés las palabras «passover», «scapegoat» y «atonement», y vertió ekklesia como «congregation» y presbyteros como «elder»: decisiones que golpeaban la autoridad de la Iglesia y le costaron la vida a Tyndale en 1536.",
+        "fi": "Antoi englannille sanat ”passover”, ”scapegoat” ja ”atonement” ja käänsi ekklesian sanalla ”congregation” ja presbyteroksen sanalla ”elder” – valintoja, jotka kävivät kirkon auktoriteetin kimppuun ja maksoivat Tyndalelle hengen vuonna 1536."
+      }
+    },
+    {
+      "tag": "limitation",
+      "text": {
+        "en": "Never finished. What exists is the New Testament, the five books of Moses and Jonah — the rest of the Old Testament was unpublished at Tyndale's death.",
+        "nb": "Aldri fullført. Det som finnes, er Det nye testamentet, Mosebøkene og Jona — resten av Det gamle testamentet var upublisert da Tyndale døde.",
+        "nn": "Aldri fullført. Det som finst, er Det nye testamentet, Mosebøkene og Jona — resten av Det gamle testamentet var upublisert då Tyndale døydde.",
+        "sv": "Aldrig färdigställd. Det som finns är Nya testamentet, Moseböckerna och Jona — resten av Gamla testamentet var opublicerat när Tyndale dog.",
+        "de": "Nie vollendet. Erhalten sind das Neue Testament, die fünf Bücher Mose und Jona – der Rest des Alten Testaments blieb bei Tyndales Tod unveröffentlicht.",
+        "fr": "Jamais achevée. Il en subsiste le Nouveau Testament, les cinq livres de Moïse et Jonas — le reste de l'Ancien Testament était inédit à la mort de Tyndale.",
+        "es": "Nunca terminada. Lo que existe es el Nuevo Testamento, los cinco libros de Moisés y Jonás; el resto del Antiguo Testamento quedó inédito a la muerte de Tyndale.",
+        "fi": "Ei koskaan valmistunut. Jäljellä ovat Uusi testamentti, Mooseksen viisi kirjaa ja Joona – muu Vanha testamentti jäi julkaisematta Tyndalen kuollessa."
+      }
+    }
+  ],
   "coverage": {
     "testament": "both",
     "books": 33,
@@ -95,8 +136,17 @@
   },
   "provenance": {
     "method": "llm",
-    "verified": [],
-    "sources": [],
+    "verified": [
+      "legacy"
+    ],
+    "sources": [
+      {
+        "url": "https://en.wikipedia.org/wiki/Tyndale_Bible",
+        "fields": [
+          "legacy"
+        ]
+      }
+    ],
     "generated": "2026-07-25"
   }
 }

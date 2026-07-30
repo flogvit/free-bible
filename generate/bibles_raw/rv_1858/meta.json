@@ -24,6 +24,34 @@
     "translation": "rv_1909",
     "relation": "revision_of"
   },
+  "legacy": [
+    {
+      "tag": "distinctive",
+      "text": {
+        "en": "Stands in the Reina-Valera line that goes back to Casiodoro de Reina's Biblia del Oso of 1569 and Cipriano de Valera's revision of 1602 — the Spanish Bible of Protestantism.",
+        "nb": "Står i Reina-Valera-linjen som går tilbake til Casiodoro de Reinas Biblia del Oso fra 1569 og Cipriano de Valeras revisjon fra 1602 — protestantismens spanske bibel.",
+        "nn": "Står i Reina-Valera-linja som går tilbake til Casiodoro de Reinas Biblia del Oso frå 1569 og Cipriano de Valeras revisjon frå 1602 — den spanske bibelen til protestantismen.",
+        "sv": "Står i den Reina-Valera-linje som går tillbaka på Casiodoro de Reinas Biblia del Oso från 1569 och Cipriano de Valeras revision från 1602 — protestantismens spanska bibel.",
+        "de": "Steht in der Reina-Valera-Linie, die auf Casiodoro de Reinas Biblia del Oso von 1569 und Cipriano de Valeras Revision von 1602 zurückgeht – die spanische Bibel des Protestantismus.",
+        "fr": "S'inscrit dans la lignée Reina-Valera remontant à la Biblia del Oso de Casiodoro de Reina (1569) et à la révision de Cipriano de Valera (1602) — la bible espagnole du protestantisme.",
+        "es": "Se inscribe en la línea Reina-Valera que se remonta a la Biblia del Oso de Casiodoro de Reina (1569) y a la revisión de Cipriano de Valera (1602): la Biblia española del protestantismo.",
+        "fi": "Kuuluu Reina-Valeran sukuun, joka juontuu Casiodoro de Reinan vuoden 1569 Biblia del Osoon ja Cipriano de Valeran vuoden 1602 tarkistukseen – protestanttisuuden espanjankieliseen raamattuun."
+      }
+    },
+    {
+      "tag": "limitation",
+      "text": {
+        "en": "The New Testament only: 27 books, with no Old Testament in this edition.",
+        "nb": "Bare Det nye testamentet: 27 bøker, uten noe gammeltestamente i denne utgaven.",
+        "nn": "Berre Det nye testamentet: 27 bøker, utan noko gamaltestamente i denne utgåva.",
+        "sv": "Endast Nya testamentet: 27 böcker, utan något Gamla testamente i denna utgåva.",
+        "de": "Nur das Neue Testament: 27 Bücher, ohne Altes Testament in dieser Ausgabe.",
+        "fr": "Le Nouveau Testament seul : 27 livres, sans Ancien Testament dans cette édition.",
+        "es": "Solo el Nuevo Testamento: 27 libros, sin Antiguo Testamento en esta edición.",
+        "fi": "Vain Uusi testamentti: 27 kirjaa, ilman Vanhaa testamenttia tässä laitoksessa."
+      }
+    }
+  ],
   "coverage": {
     "testament": "nt",
     "books": 27,
@@ -38,8 +66,17 @@
   },
   "provenance": {
     "method": "llm",
-    "verified": [],
-    "sources": [],
+    "verified": [
+      "legacy"
+    ],
+    "sources": [
+      {
+        "url": "https://en.wikipedia.org/wiki/Reina-Valera",
+        "fields": [
+          "legacy"
+        ]
+      }
+    ],
     "generated": "2026-07-25"
   }
 }

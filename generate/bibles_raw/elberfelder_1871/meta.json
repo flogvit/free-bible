@@ -48,6 +48,47 @@
       "label": "complete_bible"
     }
   ],
+  "legacy": [
+    {
+      "tag": "distinctive",
+      "text": {
+        "en": "The German counterpart of the Darby Bible: Darby, Carl Brockhaus and Julius Anton von Poseck brought out the New Testament in 1855, and the Old Testament followed between 1869 and 1871 with the Dutch Hebraist Hermanus Cornelis Voorhoeve.",
+        "nb": "Den tyske motparten til Darby-bibelen: Darby, Carl Brockhaus og Julius Anton von Poseck ga ut Det nye testamentet i 1855, og Det gamle testamentet fulgte mellom 1869 og 1871 sammen med den nederlandske hebraisten Hermanus Cornelis Voorhoeve.",
+        "nn": "Den tyske motparten til Darby-bibelen: Darby, Carl Brockhaus og Julius Anton von Poseck gav ut Det nye testamentet i 1855, og Det gamle testamentet følgde mellom 1869 og 1871 saman med den nederlandske hebraisten Hermanus Cornelis Voorhoeve.",
+        "sv": "Den tyska motsvarigheten till Darbybibeln: Darby, Carl Brockhaus och Julius Anton von Poseck gav ut Nya testamentet 1855, och Gamla testamentet följde mellan 1869 och 1871 tillsammans med den nederländske hebraisten Hermanus Cornelis Voorhoeve.",
+        "de": "Das deutsche Gegenstück zur Darby-Bibel: Darby, Carl Brockhaus und Julius Anton von Poseck brachten 1855 das Neue Testament heraus, das Alte Testament folgte zwischen 1869 und 1871 zusammen mit dem niederländischen Hebraisten Hermanus Cornelis Voorhoeve.",
+        "fr": "Le pendant allemand de la Bible Darby : Darby, Carl Brockhaus et Julius Anton von Poseck ont publié le Nouveau Testament en 1855, l'Ancien Testament suivant de 1869 à 1871 avec l'hébraïsant néerlandais Hermanus Cornelis Voorhoeve.",
+        "es": "La contraparte alemana de la Biblia Darby: Darby, Carl Brockhaus y Julius Anton von Poseck publicaron el Nuevo Testamento en 1855, y el Antiguo Testamento siguió entre 1869 y 1871 con el hebraísta neerlandés Hermanus Cornelis Voorhoeve.",
+        "fi": "Darbyn raamatun saksalainen vastine: Darby, Carl Brockhaus ja Julius Anton von Poseck julkaisivat Uuden testamentin vuonna 1855, ja Vanha testamentti seurasi 1869–1871 hollantilaisen heprean tutkijan Hermanus Cornelis Voorhoeven kanssa."
+      }
+    },
+    {
+      "tag": "distinctive",
+      "text": {
+        "en": "Built on the same rule Darby stated for his English Bible: \"the faithful rendering of the original text outweighs every other consideration\".",
+        "nb": "Bygd på samme regel som Darby formulerte for den engelske bibelen sin: «the faithful rendering of the original text outweighs every other consideration».",
+        "nn": "Bygd på same regelen som Darby formulerte for den engelske bibelen sin: «the faithful rendering of the original text outweighs every other consideration».",
+        "sv": "Byggd på samma regel som Darby formulerade för sin engelska bibel: ”the faithful rendering of the original text outweighs every other consideration”.",
+        "de": "Nach derselben Regel gearbeitet, die Darby für seine englische Bibel aufstellte: „the faithful rendering of the original text outweighs every other consideration“.",
+        "fr": "Bâtie sur la règle même que Darby énonçait pour sa bible anglaise : « the faithful rendering of the original text outweighs every other consideration ».",
+        "es": "Construida sobre la misma regla que Darby enunció para su biblia inglesa: «the faithful rendering of the original text outweighs every other consideration».",
+        "fi": "Rakennettu samalle säännölle, jonka Darby esitti englanninkielisestä raamatustaan: ”the faithful rendering of the original text outweighs every other consideration”."
+      }
+    },
+    {
+      "tag": "limitation",
+      "text": {
+        "en": "Fidelity comes before elegance, so the German follows the shape of the Hebrew and Greek rather than the shape of German.",
+        "nb": "Troskap går foran eleganse, så tysken følger formen i hebraisk og gresk heller enn formen i tysk.",
+        "nn": "Truskap går framfor eleganse, så tysken følgjer forma i hebraisk og gresk heller enn forma i tysk.",
+        "sv": "Trohet går före elegans, så tyskan följer hebreiskans och grekiskans form snarare än tyskans.",
+        "de": "Treue geht vor Eleganz, deshalb folgt das Deutsch der Gestalt des Hebräischen und Griechischen statt der des Deutschen.",
+        "fr": "La fidélité passe avant l'élégance : l'allemand suit la forme de l'hébreu et du grec plutôt que celle de l'allemand.",
+        "es": "La fidelidad va antes que la elegancia, de modo que el alemán sigue la forma del hebreo y el griego más que la del propio alemán.",
+        "fi": "Uskollisuus menee kauneuden edelle, joten saksa seuraa heprean ja kreikan muotoa eikä saksan omaa."
+      }
+    }
+  ],
   "coverage": {
     "testament": "both",
     "books": 66,
@@ -62,8 +103,17 @@
   },
   "provenance": {
     "method": "llm",
-    "verified": [],
-    "sources": [],
+    "verified": [
+      "legacy"
+    ],
+    "sources": [
+      {
+        "url": "https://en.wikipedia.org/wiki/Darby_Bible",
+        "fields": [
+          "legacy"
+        ]
+      }
+    ],
     "generated": "2026-07-25"
   }
 }

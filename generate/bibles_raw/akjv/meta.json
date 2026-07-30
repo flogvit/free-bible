@@ -38,6 +38,34 @@
     ],
     "review": "none"
   },
+  "legacy": [
+    {
+      "tag": "distinctive",
+      "text": {
+        "en": "The King James Version with the archaic pronouns and verb endings swapped out and nothing else touched: \"whosoever believeth\" becomes \"whoever believes\", \"pray ye\" becomes \"pray you\", \"thy name\" becomes \"your name\".",
+        "nb": "King James Version med de arkaiske pronomenene og verbendelsene byttet ut og ingenting annet rørt: «whosoever believeth» blir «whoever believes», «pray ye» blir «pray you», «thy name» blir «your name».",
+        "nn": "King James Version med dei arkaiske pronomena og verbendingane bytte ut og ingenting anna rørt: «whosoever believeth» blir «whoever believes», «pray ye» blir «pray you», «thy name» blir «your name».",
+        "sv": "King James Version med de ålderdomliga pronomenen och verbändelserna utbytta och inget annat rört: ”whosoever believeth” blir ”whoever believes”, ”pray ye” blir ”pray you”, ”thy name” blir ”your name”.",
+        "de": "Die King James Version mit ausgetauschten altertümlichen Pronomen und Verbendungen, sonst unangetastet: aus „whosoever believeth“ wird „whoever believes“, aus „pray ye“ wird „pray you“, aus „thy name“ wird „your name“.",
+        "fr": "La King James Version dont on a remplacé les pronoms et désinences archaïques sans rien toucher d'autre : « whosoever believeth » devient « whoever believes », « pray ye » devient « pray you », « thy name » devient « your name ».",
+        "es": "La King James Version con los pronombres y las desinencias arcaicas sustituidos y nada más tocado: «whosoever believeth» pasa a «whoever believes», «pray ye» a «pray you» y «thy name» a «your name».",
+        "fi": "King James Version, jossa vanhahtavat pronominit ja verbipäätteet on vaihdettu eikä muuhun ole koskettu: ”whosoever believeth” on ”whoever believes”, ”pray ye” on ”pray you”, ”thy name” on ”your name”."
+      }
+    },
+    {
+      "tag": "limitation",
+      "text": {
+        "en": "The substitution is mechanical, and it shows: Matthew 6:9 comes out as \"Our Father which are in heaven\", where the old \"which art\" was correct and the new form is not.",
+        "nb": "Utbyttingen er mekanisk, og det synes: Matt 6,9 blir til «Our Father which are in heaven», der det gamle «which art» var riktig og den nye formen ikke er det.",
+        "nn": "Utbytinga er mekanisk, og det syner seg: Matt 6,9 blir til «Our Father which are in heaven», der det gamle «which art» var rett og den nye forma ikkje er det.",
+        "sv": "Utbytet är mekaniskt, och det märks: Matt 6:9 blir ”Our Father which are in heaven”, där det gamla ”which art” var korrekt och den nya formen inte är det.",
+        "de": "Der Austausch ist mechanisch, und man merkt es: Mt 6,9 lautet „Our Father which are in heaven“, wo das alte „which art“ richtig war und die neue Form es nicht ist.",
+        "fr": "La substitution est mécanique, et cela se voit : Mt 6,9 donne « Our Father which are in heaven », là où l'ancien « which art » était correct et la forme nouvelle ne l'est pas.",
+        "es": "La sustitución es mecánica y se nota: Mt 6:9 queda como «Our Father which are in heaven», donde el antiguo «which art» era correcto y la forma nueva no lo es.",
+        "fi": "Korvaus on mekaaninen, ja se näkyy: Matt. 6:9 kuuluu ”Our Father which are in heaven”, kun vanha ”which art” oli oikein eikä uusi muoto ole."
+      }
+    }
+  ],
   "coverage": {
     "testament": "both",
     "books": 66,
@@ -52,8 +80,17 @@
   },
   "provenance": {
     "method": "llm",
-    "verified": [],
-    "sources": [],
+    "verified": [
+      "legacy"
+    ],
+    "sources": [
+      {
+        "url": "https://github.com/flogvit/free-bible/blob/main/generate/bibles_raw/akjv",
+        "fields": [
+          "legacy"
+        ]
+      }
+    ],
     "generated": "2026-07-25"
   }
 }

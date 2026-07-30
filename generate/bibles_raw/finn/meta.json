@@ -23,6 +23,47 @@
       "tr"
     ]
   },
+  "legacy": [
+    {
+      "tag": "distinctive",
+      "text": {
+        "en": "The first Bible in modern Finnish, and the first meant for reading at home as well as in church — following Agricola's New Testament of 1548 and the complete Bible of 1642.",
+        "nb": "Den første bibelen på moderne finsk, og den første som var ment for lesning hjemme så vel som i kirken — etter Agricolas nytestamente fra 1548 og den fullstendige bibelen fra 1642.",
+        "nn": "Den første bibelen på moderne finsk, og den første som var meint for lesing heime så vel som i kyrkja — etter Agricolas nytestamente frå 1548 og den fullstendige bibelen frå 1642.",
+        "sv": "Den första bibeln på modern finska, och den första avsedd för läsning i hemmet lika väl som i kyrkan — efter Agricolas Nya testamente 1548 och den fullständiga bibeln 1642.",
+        "de": "Die erste Bibel in modernem Finnisch und die erste, die ebenso für das Lesen zu Hause wie in der Kirche gedacht war – nach Agricolas Neuem Testament von 1548 und der vollständigen Bibel von 1642.",
+        "fr": "La première bible en finnois moderne, et la première destinée à la lecture à la maison autant qu'à l'église — après le Nouveau Testament d'Agricola (1548) et la bible complète de 1642.",
+        "es": "La primera Biblia en finés moderno y la primera pensada tanto para la lectura en casa como en la iglesia, tras el Nuevo Testamento de Agricola (1548) y la Biblia completa de 1642.",
+        "fi": "Ensimmäinen nykysuomenkielinen raamattu ja ensimmäinen, joka oli tarkoitettu luettavaksi kotona yhtä lailla kuin kirkossa – Agricolan vuoden 1548 Uuden testamentin ja vuoden 1642 koko raamatun jälkeen."
+      }
+    },
+    {
+      "tag": "distinctive",
+      "text": {
+        "en": "Rests on the Textus Receptus, as the King James Version does — and that is exactly why the Laestadians and the Beseechers still use it rather than the newer Finnish translations.",
+        "nb": "Hviler på Textus Receptus, slik King James Version gjør — og nettopp derfor bruker læstadianerne og «bedende» den fortsatt framfor de nyere finske oversettelsene.",
+        "nn": "Kviler på Textus Receptus, slik King James Version gjer — og nettopp difor bruker læstadianarane og «bedande» henne framleis framfor dei nyare finske omsetjingane.",
+        "sv": "Vilar på Textus Receptus, liksom King James Version — och just därför använder laestadianerna och ”bedjarna” den alltjämt hellre än de nyare finska översättningarna.",
+        "de": "Beruht auf dem Textus Receptus wie die King James Version – und genau deshalb gebrauchen die Laestadianer und die „Beter“ sie weiterhin statt der neueren finnischen Übersetzungen.",
+        "fr": "Repose sur le Textus Receptus, comme la King James Version — et c'est précisément pourquoi les laestadiens et les « suppliants » l'emploient encore de préférence aux traductions finnoises plus récentes.",
+        "es": "Se apoya en el Textus Receptus, igual que la King James Version, y precisamente por eso los laestadianos y los «rogadores» la siguen usando en lugar de las traducciones finesas más nuevas.",
+        "fi": "Nojaa Textus Receptukseen kuten King James Version – ja juuri siksi lestadiolaiset ja rukoilevaiset käyttävät sitä yhä uudempien suomennosten sijaan."
+      }
+    },
+    {
+      "tag": "limitation",
+      "text": {
+        "en": "The Finnish is that of 1776, revised in 1859 and no further.",
+        "nb": "Finsken er fra 1776, revidert i 1859 og ikke siden.",
+        "nn": "Finsken er frå 1776, revidert i 1859 og ikkje sidan.",
+        "sv": "Finskan är från 1776, reviderad 1859 och inte därefter.",
+        "de": "Das Finnisch stammt von 1776, 1859 überarbeitet und seither nicht mehr.",
+        "fr": "Le finnois est celui de 1776, révisé en 1859 et pas au-delà.",
+        "es": "El finés es el de 1776, revisado en 1859 y no más allá.",
+        "fi": "Suomi on vuodelta 1776, tarkistettu 1859 eikä sen jälkeen."
+      }
+    }
+  ],
   "coverage": {
     "testament": "both",
     "books": 66,
@@ -37,8 +78,17 @@
   },
   "provenance": {
     "method": "llm",
-    "verified": [],
-    "sources": [],
+    "verified": [
+      "legacy"
+    ],
+    "sources": [
+      {
+        "url": "https://en.wikipedia.org/wiki/Bible_translations_into_Finnish",
+        "fields": [
+          "legacy"
+        ]
+      }
+    ],
     "generated": "2026-07-25"
   }
 }

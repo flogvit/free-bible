@@ -33,6 +33,34 @@
       "label": "complete_bible"
     }
   ],
+  "legacy": [
+    {
+      "tag": "distinctive",
+      "text": {
+        "en": "The Japan Bible Society's Bible in colloquial Japanese — New Testament 1954, Old Testament 1955 — made with the Revised Standard Version as its model, and the first break from the old literary style.",
+        "nb": "Det japanske bibelselskapets bibel på dagligtalens japansk — Det nye testamentet i 1954, Det gamle i 1955 — laget med Revised Standard Version som mønster, og det første bruddet med den gamle litterære stilen.",
+        "nn": "Bibelen til det japanske bibelselskapet på daglegtalens japansk — Det nye testamentet i 1954, Det gamle i 1955 — laga med Revised Standard Version som mønster, og det første brotet med den gamle litterære stilen.",
+        "sv": "Japanska bibelsällskapets bibel på talspråklig japanska — Nya testamentet 1954, Gamla 1955 — gjord med Revised Standard Version som förebild, och det första brottet med den gamla litterära stilen.",
+        "de": "Die Bibel der Japanischen Bibelgesellschaft in umgangssprachlichem Japanisch – Neues Testament 1954, Altes Testament 1955 – nach dem Vorbild der Revised Standard Version und der erste Bruch mit dem alten literarischen Stil.",
+        "fr": "La bible de la Société biblique du Japon en japonais courant — Nouveau Testament en 1954, Ancien en 1955 — établie sur le modèle de la Revised Standard Version, et première rupture avec l'ancien style littéraire.",
+        "es": "La Biblia de la Sociedad Bíblica de Japón en japonés coloquial —Nuevo Testamento en 1954, Antiguo en 1955—, hecha sobre el modelo de la Revised Standard Version y primera ruptura con el viejo estilo literario.",
+        "fi": "Japanin raamattuseuran puhekielinen japaninnos – Uusi testamentti 1954, Vanha 1955 – tehty Revised Standard Versionin mallin mukaan ja ensimmäinen irtiotto vanhasta kirjallisesta tyylistä."
+      }
+    },
+    {
+      "tag": "limitation",
+      "text": {
+        "en": "Taken up by some Protestant churches but never widely popular, and judged by critics to be written in poor literary style.",
+        "nb": "Tatt i bruk av noen protestantiske kirker, men aldri særlig utbredt, og av kritikere regnet som skrevet i dårlig litterær stil.",
+        "nn": "Teken i bruk av nokre protestantiske kyrkjer, men aldri særleg utbreidd, og av kritikarar rekna som skriven i dårleg litterær stil.",
+        "sv": "Antagen av vissa protestantiska kyrkor men aldrig särskilt populär, och av kritiker ansedd vara skriven i dålig litterär stil.",
+        "de": "Von einigen protestantischen Kirchen übernommen, doch nie sehr verbreitet und von Kritikern als in schlechtem literarischem Stil geschrieben beurteilt.",
+        "fr": "Adoptée par certaines Églises protestantes mais jamais très répandue, et jugée par la critique d'un style littéraire médiocre.",
+        "es": "Adoptada por algunas iglesias protestantes pero nunca muy difundida, y considerada por la crítica de estilo literario pobre.",
+        "fi": "Jotkin protestanttiset kirkot ottivat sen käyttöön, mutta se ei koskaan yleistynyt laajalti, ja arvostelijat pitivät sen kirjallista tyyliä heikkona."
+      }
+    }
+  ],
   "coverage": {
     "testament": "both",
     "books": 66,
@@ -47,8 +75,17 @@
   },
   "provenance": {
     "method": "llm",
-    "verified": [],
-    "sources": [],
+    "verified": [
+      "legacy"
+    ],
+    "sources": [
+      {
+        "url": "https://en.wikipedia.org/wiki/Japanese_Bible_translations",
+        "fields": [
+          "legacy"
+        ]
+      }
+    ],
     "generated": "2026-07-25"
   }
 }

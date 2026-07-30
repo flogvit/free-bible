@@ -29,6 +29,47 @@
     ],
     "review": "none"
   },
+  "legacy": [
+    {
+      "tag": "distinctive",
+      "text": {
+        "en": "The first complete Bible printed in English (1535); the 1537 folio was the first English translation to carry royal approval.",
+        "nb": "Den første fullstendige bibelen trykt på engelsk (1535); folioutgaven fra 1537 var den første engelske oversettelsen med kongelig godkjenning.",
+        "nn": "Den første fullstendige bibelen prenta på engelsk (1535); folioutgåva frå 1537 var den første engelske omsetjinga med kongeleg godkjenning.",
+        "sv": "Den första fullständiga bibeln tryckt på engelska (1535); folioutgåvan från 1537 var den första engelska översättningen med kungligt godkännande.",
+        "de": "Die erste vollständig auf Englisch gedruckte Bibel (1535); die Folioausgabe von 1537 war die erste englische Übersetzung mit königlicher Billigung.",
+        "fr": "La première bible complète imprimée en anglais (1535) ; l'in-folio de 1537 fut la première traduction anglaise à recevoir l'approbation royale.",
+        "es": "La primera biblia completa impresa en inglés (1535); el folio de 1537 fue la primera traducción inglesa con aprobación real.",
+        "fi": "Ensimmäinen kokonaan englanniksi painettu raamattu (1535); vuoden 1537 foliolaitos oli ensimmäinen kuninkaan hyväksymä englanninkielinen käännös."
+      }
+    },
+    {
+      "tag": "distinctive",
+      "text": {
+        "en": "Coverdale's psalms outlived his Bible: they stayed in the Book of Common Prayer from 1662 and remained in Episcopal use until 1979.",
+        "nb": "Coverdales salmer overlevde bibelen hans: de ble stående i Book of Common Prayer fra 1662 og var i bruk i Den episkopale kirke helt til 1979.",
+        "nn": "Salmane til Coverdale overlevde bibelen hans: dei vart ståande i Book of Common Prayer frå 1662 og var i bruk i Den episkopale kyrkja heilt til 1979.",
+        "sv": "Coverdales psaltarpsalmer överlevde hans bibel: de stod kvar i Book of Common Prayer från 1662 och var i episkopalt bruk ända till 1979.",
+        "de": "Coverdales Psalmen überlebten seine Bibel: Sie blieben ab 1662 im Book of Common Prayer und standen in der Episkopalkirche bis 1979 in Gebrauch.",
+        "fr": "Les psaumes de Coverdale ont survécu à sa bible : ils sont restés dans le Book of Common Prayer à partir de 1662 et en usage épiscopalien jusqu'en 1979.",
+        "es": "Los salmos de Coverdale sobrevivieron a su biblia: permanecieron en el Book of Common Prayer desde 1662 y en uso episcopaliano hasta 1979.",
+        "fi": "Coverdalen psalmit elivät hänen raamattuaan pidempään: ne säilyivät Book of Common Prayerissa vuodesta 1662 ja olivat episkopaalisessa käytössä vuoteen 1979 asti."
+      }
+    },
+    {
+      "tag": "limitation",
+      "text": {
+        "en": "Coverdale had neither Hebrew nor Greek. He worked from Luther's German, a Swiss-German Bible and the Latin Vulgate, using Tyndale for the New Testament — so the Old Testament reaches the reader at second hand.",
+        "nb": "Coverdale kunne verken hebraisk eller gresk. Han arbeidet ut fra Luthers tysk, en sveitsertysk bibel og den latinske Vulgata, og brukte Tyndale for Det nye testamentet — så Det gamle testamentet når leseren i annen hånd.",
+        "nn": "Coverdale kunne korkje hebraisk eller gresk. Han arbeidde ut frå Luthers tysk, ein sveitsartysk bibel og den latinske Vulgata, og brukte Tyndale for Det nye testamentet — så Det gamle testamentet når lesaren i andre hand.",
+        "sv": "Coverdale kunde varken hebreiska eller grekiska. Han arbetade utifrån Luthers tyska, en schweizertysk bibel och den latinska Vulgatan, och använde Tyndale för Nya testamentet — Gamla testamentet når alltså läsaren i andra hand.",
+        "de": "Coverdale beherrschte weder Hebräisch noch Griechisch. Er arbeitete nach Luthers Deutsch, einer schweizerdeutschen Bibel und der lateinischen Vulgata und nutzte für das Neue Testament Tyndale – das Alte Testament erreicht den Leser also aus zweiter Hand.",
+        "fr": "Coverdale ne connaissait ni l'hébreu ni le grec. Il a travaillé d'après l'allemand de Luther, une bible suisse-allemande et la Vulgate latine, en reprenant Tyndale pour le Nouveau Testament : l'Ancien Testament parvient donc au lecteur de seconde main.",
+        "es": "Coverdale no sabía hebreo ni griego. Trabajó a partir del alemán de Lutero, una biblia suizo-alemana y la Vulgata latina, y usó a Tyndale para el Nuevo Testamento: el Antiguo Testamento llega, pues, al lector de segunda mano.",
+        "fi": "Coverdale ei osannut hepreaa eikä kreikkaa. Hän työskenteli Lutherin saksan, sveitsinsaksalaisen raamatun ja latinankielisen Vulgatan pohjalta ja käytti Uuteen testamenttiin Tyndalea – Vanha testamentti tavoittaa lukijan siis toisen käden kautta."
+      }
+    }
+  ],
   "coverage": {
     "testament": "both",
     "books": 66,
@@ -43,8 +84,17 @@
   },
   "provenance": {
     "method": "llm",
-    "verified": [],
-    "sources": [],
+    "verified": [
+      "legacy"
+    ],
+    "sources": [
+      {
+        "url": "https://en.wikipedia.org/wiki/Coverdale_Bible",
+        "fields": [
+          "legacy"
+        ]
+      }
+    ],
     "generated": "2026-07-25"
   }
 }

@@ -28,6 +28,34 @@
       "label": "complete_bible"
     }
   ],
+  "legacy": [
+    {
+      "tag": "distinctive",
+      "text": {
+        "en": "The first complete Bible in Norwegian Nynorsk, published by Studentmållaget and known as the Studentmållagsbibelen. Alexander Seippel and Peter Hognestad did most of the translating.",
+        "nb": "Den første fullstendige bibelen på nynorsk, utgitt av Studentmållaget og kjent som Studentmållagsbibelen. Alexander Seippel og Peter Hognestad gjorde det meste av oversettelsesarbeidet.",
+        "nn": "Den første fullstendige bibelen på nynorsk, gjeven ut av Studentmållaget og kjend som Studentmållagsbibelen. Alexander Seippel og Peter Hognestad gjorde det meste av omsetjingsarbeidet.",
+        "sv": "Den första fullständiga bibeln på nynorska, utgiven av Studentmållaget och känd som Studentmållagsbibelen. Alexander Seippel och Peter Hognestad gjorde merparten av översättningsarbetet.",
+        "de": "Die erste vollständige Bibel auf Nynorsk, herausgegeben vom Studentmållaget und bekannt als Studentmållagsbibelen. Den größten Teil der Übersetzungsarbeit leisteten Alexander Seippel und Peter Hognestad.",
+        "fr": "La première bible complète en néo-norvégien, publiée par le Studentmållaget et connue sous le nom de Studentmållagsbibelen. Alexander Seippel et Peter Hognestad en ont fait l'essentiel de la traduction.",
+        "es": "La primera Biblia completa en nynorsk, publicada por el Studentmållaget y conocida como Studentmållagsbibelen. Alexander Seippel y Peter Hognestad hicieron la mayor parte de la traducción.",
+        "fi": "Ensimmäinen täydellinen nynorskinkielinen raamattu, jonka julkaisi Studentmållaget ja joka tunnetaan nimellä Studentmållagsbibelen. Alexander Seippel ja Peter Hognestad tekivät suurimman osan käännöstyöstä."
+      }
+    },
+    {
+      "tag": "limitation",
+      "text": {
+        "en": "A preliminary edition — the fyrebilsbibel — superseded in 1938 by the Bible Society's own Nynorsk Bible.",
+        "nb": "En foreløpig utgave — fyrebilsbibelen — som ble avløst i 1938 av Bibelselskapets egen nynorskbibel.",
+        "nn": "Ei førebels utgåve — fyrebilsbibelen — som vart avløyst i 1938 av Bibelselskapet sin eigen nynorskbibel.",
+        "sv": "En preliminär utgåva — fyrebilsbibelen — som 1938 ersattes av Bibelsällskapets egen nynorska bibel.",
+        "de": "Eine vorläufige Ausgabe – der fyrebilsbibel –, die 1938 von der eigenen Nynorsk-Bibel der Bibelgesellschaft abgelöst wurde.",
+        "fr": "Une édition provisoire — le fyrebilsbibel — remplacée en 1938 par la bible néo-norvégienne de la Société biblique.",
+        "es": "Una edición provisional —el fyrebilsbibel— sustituida en 1938 por la Biblia en nynorsk de la propia Sociedad Bíblica.",
+        "fi": "Alustava laitos – fyrebilsbibel – jonka korvasi 1938 Raamattuseuran oma nynorskinkielinen raamattu."
+      }
+    }
+  ],
   "coverage": {
     "testament": "both",
     "books": 66,
@@ -42,8 +70,17 @@
   },
   "provenance": {
     "method": "llm",
-    "verified": [],
-    "sources": [],
+    "verified": [
+      "legacy"
+    ],
+    "sources": [
+      {
+        "url": "https://en.wikipedia.org/wiki/Bible_translations_into_Norwegian",
+        "fields": [
+          "legacy"
+        ]
+      }
+    ],
     "generated": "2026-07-25"
   }
 }

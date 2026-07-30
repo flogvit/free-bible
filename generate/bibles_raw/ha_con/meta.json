@@ -17,6 +17,34 @@
       "committee"
     ]
   },
+  "legacy": [
+    {
+      "tag": "distinctive",
+      "text": {
+        "en": "Biblica's contemporary Hausa Bible from 2020, made to be understood rather than to preserve older church wording.",
+        "nb": "Biblicas moderne hausabibel fra 2020, laget for å bli forstått heller enn for å bevare eldre kirkelig ordlyd.",
+        "nn": "Biblicas moderne hausabibel frå 2020, laga for å bli forstått heller enn for å ta vare på eldre kyrkjeleg ordlyd.",
+        "sv": "Biblicas samtida hausabibel från 2020, gjord för att förstås snarare än för att bevara äldre kyrklig ordalydelse.",
+        "de": "Biblicas zeitgenössische Hausa-Bibel von 2020, auf Verständlichkeit hin gearbeitet statt auf die Bewahrung älterer kirchlicher Formulierungen.",
+        "fr": "La bible haoussa contemporaine de Biblica (2020), faite pour être comprise plutôt que pour conserver les formules ecclésiastiques anciennes.",
+        "es": "La Biblia hausa contemporánea de Biblica (2020), hecha para ser entendida más que para conservar la redacción eclesiástica antigua.",
+        "fi": "Biblican nykyaikainen hausankielinen raamattu vuodelta 2020, tehty ymmärrettäväksi eikä vanhan kirkollisen sanamuodon säilyttämiseksi."
+      }
+    },
+    {
+      "tag": "distinctive",
+      "text": {
+        "en": "Released under CC BY-SA 4.0 and available free at open.bible — a modern translation a publisher chose to open rather than lock.",
+        "nb": "Utgitt under CC BY-SA 4.0 og fritt tilgjengelig på open.bible — en moderne oversettelse et forlag valgte å åpne heller enn å låse.",
+        "nn": "Gjeven ut under CC BY-SA 4.0 og fritt tilgjengeleg på open.bible — ei moderne omsetjing eit forlag valde å opna heller enn å låsa.",
+        "sv": "Utgiven under CC BY-SA 4.0 och fritt tillgänglig på open.bible — en modern översättning som ett förlag valde att öppna i stället för att låsa.",
+        "de": "Unter CC BY-SA 4.0 veröffentlicht und frei auf open.bible zugänglich – eine moderne Übersetzung, die ein Verlag geöffnet statt verschlossen hat.",
+        "fr": "Publiée sous CC BY-SA 4.0 et librement accessible sur open.bible — une traduction moderne qu'un éditeur a choisi d'ouvrir plutôt que de verrouiller.",
+        "es": "Publicada bajo CC BY-SA 4.0 y disponible gratis en open.bible: una traducción moderna que una editorial decidió abrir en lugar de cerrar.",
+        "fi": "Julkaistu CC BY-SA 4.0 -lisenssillä ja vapaasti saatavilla osoitteessa open.bible – nykyaikainen käännös, jonka kustantaja päätti avata eikä lukita."
+      }
+    }
+  ],
   "coverage": {
     "testament": "both",
     "books": 66,
@@ -31,8 +59,17 @@
   },
   "provenance": {
     "method": "llm",
-    "verified": [],
-    "sources": [],
+    "verified": [
+      "legacy"
+    ],
+    "sources": [
+      {
+        "url": "https://github.com/flogvit/free-bible/blob/main/generate/bibles_raw/ha_con/license.json",
+        "fields": [
+          "legacy"
+        ]
+      }
+    ],
     "generated": "2026-07-25"
   }
 }

@@ -36,6 +36,47 @@
       "label": "complete_bible"
     }
   ],
+  "legacy": [
+    {
+      "tag": "distinctive",
+      "text": {
+        "en": "The Norwegian Bible Society's Nynorsk Bible, prepared by Gustav Indrebø and his brother Ragnvald.",
+        "nb": "Bibelselskapets nynorskbibel, utarbeidet av Gustav Indrebø og broren Ragnvald.",
+        "nn": "Nynorskbibelen til Bibelselskapet, utarbeidd av Gustav Indrebø og broren Ragnvald.",
+        "sv": "Norska bibelsällskapets nynorska bibel, utarbetad av Gustav Indrebø och hans bror Ragnvald.",
+        "de": "Die Nynorsk-Bibel der Norwegischen Bibelgesellschaft, erarbeitet von Gustav Indrebø und seinem Bruder Ragnvald.",
+        "fr": "La bible néo-norvégienne de la Société biblique de Norvège, préparée par Gustav Indrebø et son frère Ragnvald.",
+        "es": "La Biblia en nynorsk de la Sociedad Bíblica de Noruega, preparada por Gustav Indrebø y su hermano Ragnvald.",
+        "fi": "Norjan raamattuseuran nynorskinkielinen raamattu, jonka laativat Gustav Indrebø ja hänen veljensä Ragnvald."
+      }
+    },
+    {
+      "tag": "distinctive",
+      "text": {
+        "en": "Largely a revision of the 1921 Nynorsk Bible, but Seippel's strongly idiomatic Nynorsk was toned down to bring it into line with the 1930 Bokmål Bible.",
+        "nb": "I hovedsak en revisjon av nynorskbibelen fra 1921, men Seippels sterkt idiomatiske nynorsk ble dempet for å bringe den på linje med bokmålsbibelen fra 1930.",
+        "nn": "I hovudsak ein revisjon av nynorskbibelen frå 1921, men den sterkt idiomatiske nynorsken til Seippel vart dempa for å få han på line med bokmålsbibelen frå 1930.",
+        "sv": "I huvudsak en revision av 1921 års nynorska bibel, men Seippels starkt idiomatiska nynorska tonades ned för att bringas i linje med 1930 års bokmålsbibel.",
+        "de": "Im Wesentlichen eine Revision der Nynorsk-Bibel von 1921, doch Seippels stark idiomatisches Nynorsk wurde abgemildert, um sie der Bokmål-Bibel von 1930 anzugleichen.",
+        "fr": "Pour l'essentiel une révision de la bible néo-norvégienne de 1921, mais le néo-norvégien très idiomatique de Seippel y a été atténué pour s'accorder à la bible en bokmål de 1930.",
+        "es": "En lo esencial una revisión de la Biblia en nynorsk de 1921, pero el nynorsk muy idiomático de Seippel se atenuó para armonizarla con la Biblia en bokmål de 1930.",
+        "fi": "Pääosin vuoden 1921 nynorskinkielisen raamatun tarkistus, mutta Seippelin vahvasti idiomaattista nynorskia hillittiin, jotta se sopisi yhteen vuoden 1930 bokmålinkielisen raamatun kanssa."
+      }
+    },
+    {
+      "tag": "limitation",
+      "text": {
+        "en": "The language is the Nynorsk of 1938, and has not been revised since.",
+        "nb": "Språket er nynorsken fra 1938, og er ikke revidert siden.",
+        "nn": "Språket er nynorsken frå 1938, og er ikkje revidert sidan.",
+        "sv": "Språket är 1938 års nynorska och har inte reviderats sedan dess.",
+        "de": "Die Sprache ist das Nynorsk von 1938 und wurde seither nicht überarbeitet.",
+        "fr": "La langue est le néo-norvégien de 1938 et n'a pas été révisée depuis.",
+        "es": "La lengua es el nynorsk de 1938 y no se ha revisado desde entonces.",
+        "fi": "Kieli on vuoden 1938 nynorskia, eikä sitä ole sen jälkeen tarkistettu."
+      }
+    }
+  ],
   "coverage": {
     "testament": "both",
     "books": 66,
@@ -50,8 +91,17 @@
   },
   "provenance": {
     "method": "llm",
-    "verified": [],
-    "sources": [],
+    "verified": [
+      "legacy"
+    ],
+    "sources": [
+      {
+        "url": "https://en.wikipedia.org/wiki/Bible_translations_into_Norwegian",
+        "fields": [
+          "legacy"
+        ]
+      }
+    ],
     "generated": "2026-07-25"
   }
 }
