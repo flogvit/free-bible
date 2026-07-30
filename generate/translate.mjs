@@ -200,6 +200,32 @@ function contentHash(text) {
     return crypto.createHash('sha256').update(text).digest('hex');
 }
 
+/**
+ * Resume-markøren for en kildefil. Dekker DET SOM OVERSETTES, ikke hele fila.
+ *
+ * Hele fila var feil grunnlag: keepKeys sier at en verdi er en maskinverdi og
+ * ikke skal oversettes, men en endring i nøyaktig de verdiene gjorde likevel
+ * oversettelsen foreldet. Da person-id-ene ble rettet (#25) endret 229 nb-filer
+ * seg i `id` og i referansefeltene — alt maskinverdier — og 154 oversettelser
+ * ble stale uten at ett oversettbart tegn hadde flyttet seg.
+ *
+ * collectStringPaths er samme funksjon som bestemmer hva som SENDES til modellen,
+ * så hashen og arbeidet kan ikke drive fra hverandre. Stien er med i hashen, ikke
+ * bare teksten: dukker det opp et nytt oversettbart felt, må fila oversettes selv
+ * om de gamle strengene står urørt.
+ */
+function sourceHash(sourceText, config) {
+    if (config.ext !== '.json') return contentHash(sourceText);
+    let parsed;
+    try {
+        parsed = JSON.parse(sourceText);
+    } catch {
+        return contentHash(sourceText);   // ugyldig JSON: fall tilbake til hele fila
+    }
+    const items = collectStringPaths(parsed, config.keepKeys || []);
+    return contentHash(items.map(i => `${i.path.join('.')}\t${i.text}`).join('\n'));
+}
+
 // Natural sort: "1-2.md" before "1-10.md", "books/2.json" before "books/10.json"
 function sortNatural(a, b) {
     return a.localeCompare(b, undefined, {numeric: true});
@@ -661,7 +687,7 @@ function collectWork(options, state) {
             const outPath = path.join(__dirname, dir, options.langCode, filename);
             const key = `${dir}/${filename}`;
             const sourceText = fs.readFileSync(srcPath, 'utf-8');
-            const srcHash = contentHash(sourceText);
+            const srcHash = sourceHash(sourceText, config);
 
             let status;
             if (!fs.existsSync(outPath)) {
@@ -1010,4 +1036,10 @@ async function main() {
     }
 }
 
-main().catch(console.error);
+// Kjør bare som program. Migreringsskriptet for resume-markørene importerer
+// sourceHash og collectStringPaths herfra framfor å duplisere dem.
+if (process.argv[1] && path.resolve(process.argv[1]) === __filename) {
+    main().catch(console.error);
+}
+
+export {sourceHash, contentHash, collectStringPaths, CONTENT_DIRS};
