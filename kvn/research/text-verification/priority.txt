@@ -1,0 +1,138 @@
+# Rekkefølge for tekstverifisering av mappingene.
+#
+# Dette er en PRIORITERING, ikke en avgrensning. Alle 1158 oversettelser med
+# mapping skal gjennom til slutt; dette er hva som går først.
+#
+# pri1  åpne oversettelser i bibles_raw (har license.json). Objektiv liste.
+# pri2  de mest brukte i hvert språk, der vi har teksten liggende lokalt.
+#       FORSLAG — bygget på alminnelig kunnskap om hvilke utgaver som faktisk
+#       brukes, ikke på data i repoet. Skal rettes av den som kan feltet.
+# pri3  alt annet.
+
+# ---------------------------------------------------------------- pri1 (81)
+# Alle med license.json og mapping. osmain er selve navet og verifiseres ikke
+# mot seg selv.
+pri1	akjv
+pri1	albanian
+pri1	almeida_ra
+pri1	almeida_rc
+pri1	asv
+pri1	asvs
+pri1	bn_irv
+pri1	bsb
+pri1	bungo
+pri1	cadman
+pri1	chinese_union_simp
+pri1	chinese_union_simp_s
+pri1	chinese_union_trad
+pri1	chinese_union_trad_s
+pri1	ckjv_sds
+pri1	ckjv_sdt
+pri1	cornilescu
+pri1	coverdale
+pri1	cpdv
+pri1	dbt
+pri1	diodati
+pri1	dnb30
+pri1	drb
+pri1	elberfelder_1871
+pri1	elberfelder_1905
+pri1	epee
+pri1	erv
+pri1	finn
+pri1	geneva
+pri1	gu_irv
+pri1	ha_con
+pri1	ha_lit
+pri1	hcv
+pri1	he_modern
+pri1	hebrew
+pri1	indo_tm
+pri1	irv
+pri1	jps
+pri1	kjv
+pri1	kjv_strongs
+pri1	kn_irv
+pri1	kougo
+pri1	kvn
+pri1	lt_heritage
+pri1	luther_1912
+pri1	lv_gluck_8
+pri1	maori
+pri1	martin
+pri1	mr_irv
+pri1	my_judson
+pri1	norwegian1921
+pri1	norwegian1938
+pri1	opt
+pri1	osen
+pri1	osnb
+pri1	osnn
+pri1	oster
+pri1	pa_irv
+pri1	rv_1858
+pri1	rv_1909
+pri1	rv_1909_strongs
+pri1	sagradas
+pri1	sblgnt
+pri1	segond_1910
+pri1	slt
+pri1	svd
+pri1	swahili
+pri1	synodal
+pri1	ta_irv
+pri1	tagab
+pri1	tanach
+pri1	te_irv
+pri1	thaikjv
+pri1	tr
+pri1	trparsed
+pri1	tyndale
+pri1	wbt
+pri1	web
+pri1	weymouth
+pri1	wlc
+pri1	ylt
+
+# ---------------------------------------------------------------- pri2
+# Mest brukte per språk, blant dem vi har liggende. Språk som allerede er dekket
+# av pri1 med sin dominerende utgave er utelatt her (russisk har synodal, fransk
+# har segond_1910, arabisk har svd, hindi har irv, osv.) — de står bare oppført
+# der en NYERE utgave er den som faktisk brukes i dag.
+
+pri2	spanish_rvr1960		# Reina-Valera 1960 — den dominerende i hele spansktalende verden
+pri2	spanish_nvi		# Nueva Versión Internacional — den ledende moderne
+pri2	chinese_cunpss		# Union Version m/tegnsetting, forenklet — standarden
+pri2	chinese_cunpst		# samme, tradisjonell
+pri2	chinese_union2010	# RCUV, den moderne revisjonen
+pri2	german_lut17		# Luther 2017 — standarden i tysk kirkeliv
+pri2	german_schlachter2000	# den ledende blant evangelikale
+pri2	german_hfa		# Hoffnung für alle — mest brukte lettleste
+pri2	korean_nkrv		# New Korean Revised — dominerende i Korea
+pri2	portuguese_arc		# Almeida Revista e Corrigida
+pri2	portuguese_nvi		# NVI portugisisk
+pri2	french_s21		# Segond 21 — den moderne Segond
+pri2	french_bds		# Bible du Semeur
+pri2	italian_cei2008		# CEI — den katolske standarden i Italia
+pri2	italian_nr1994		# Nuova Riveduta
+pri2	dutch_hsv		# Herziene Statenvertaling
+pri2	dutch_nbg		# NBG 1951
+pri2	japanese1987		# Shinkaiyaku
+pri2	japanese_jcb		# Living Bible japansk
+pri2	polish_gdansk2017	# Uwspółcześniona Biblia Gdańska
+pri2	czech_ekumenicky	# Český ekumenický překlad
+pri2	czech_kralichka1613	# Bible kralická — den klassiske
+pri2	hungarian_karoli	# Károli — den klassiske ungarske
+pri2	swedish2000		# Bibel 2000
+pri2	swedish_sfb		# Svenska Folkbibeln
+pri2	danish2015		# den autoriserte danske
+pri2	turkish2018		# Kutsal Kitap
+pri2	thai_ths		# Thai Standard Version
+pri2	vietnamese1994		# Vietnamesisk 1934/1994-tradisjonen
+pri2	urdu_ugv		# Urdu Geo Version
+pri2	persian2014		# Persisk, moderne
+pri2	amharic			# Amharisk 1962
+pri2	ukrainian2011		# Ukrainsk, moderne
+pri2	indonesian		# Terjemahan Baru
+pri2	tagalog2001		# Ang Biblia
+pri2	russian_nrt		# Novyj Russkij Perevod (synodal er allerede pri1)
