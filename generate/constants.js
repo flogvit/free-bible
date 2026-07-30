@@ -42,6 +42,10 @@ export const ollamaBaseUrl = "http://localhost:11434";
 export const taskModels = {
     triage: "qwen3.5:27b",
     tags: "qwen3.5:27b",
+    // Nøkkelordekstraksjon per kapittel (#5). 27b og ikke 122b med vilje: dette
+    // er samme klasse arbeid som tags, og den store modellen er opptatt med
+    // nattjobber — to modeller residente samtidig halverer gjennomstrømningen.
+    words: "qwen3.5:27b",
     references: "qwen3.5:122b",
     translate: "qwen3.5:122b",
     embeddings: "bge-m3"

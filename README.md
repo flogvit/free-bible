@@ -118,6 +118,7 @@ generate/
 | `verse_translation.mjs` | Generate verse translation explanations |
 | `bible_persons.mjs` | Generate Bible persons encyclopedia |
 | `generate_reading_plans.mjs` | Generate reading plans |
+| `important_words_chapter.mjs` | Key words per chapter with explanations (`--local` for Ollama) |
 | `references.mjs` | Generate cross references (LLM-knowledge based) |
 | `references_semantic.mjs` | Semantic cross references via embeddings + LLM verify |
 | `number_symbolism.mjs` | Generate and index biblical number symbolism |
