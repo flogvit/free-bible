@@ -11,11 +11,49 @@ import {books, getBookName, normalizeLanguage, getLanguageCode, anthropicModel, 
 import {callWithRetry} from "./llm.js";
 
 // Nøkkelordekstraksjon er strukturert nok for en lokal modell, og 300 av 1189
-// kapitler gjensto per språk da flagget kom (#5). `words` er ikke i taskModels,
-// så getTaskModel faller til ollamaModel — sett OLLAMA_MODEL for å styre det.
+// kapitler gjensto per språk da flagget kom (#5). taskModels.words er 27b, men
+// resolveLocalModel bruker en større modell hvis en annen jobb alt har den lastet
+// — sett OLLAMA_MODEL for å pinne valget.
 const TASK = 'words';
 
 let useLocal = false;
+
+// De to linjene prompten bruker som MAL. En liten lokal modell svarer av og til
+// med malen i stedet for å gjøre jobben — Åp 2 kom tilbake som nøyaktig disse to
+// linjene. Uten en vakt skrives den fila, og fileExists() hopper over den for
+// alltid siden den bare måler størrelse: ett dårlig svar blir permanent.
+const TEMPLATE_WORDS = ['Gud', 'Skapte'];
+const MIN_ENTRIES = 4;
+
+const isEntry = (line) => /^[^:]{1,60}:.+/.test(line);
+
+/**
+ * Bare linjene på formen ord:forklaring.
+ *
+ * Prompten sier «ikke noe før og etter», men modellen skriver likevel en
+ * innledning i 88 av 1778 filer — «Salme 121 er en av de vakreste …», og i noen
+ * tilfeller en direkte gal påstand om at kapitlet ikke finnes. Innholdet under
+ * er som regel helt brukbart, så å avvise fila ville kastet gode oppføringer for
+ * en kosmetisk feil.
+ *
+ * Målt på alle eksisterende filer: samtlige 88 ikke-oppføringslinjer står FØRST,
+ * ingen midt i eller sist. Det finnes altså ingen forklaringer som går over flere
+ * linjer, og filtreringen kan ikke miste innhold.
+ */
+function entryLines(text) {
+    return text.split('\n').map(l => l.trim()).filter(Boolean).filter(isEntry);
+}
+
+function rejectReason(entries) {
+    if (entries.length < MIN_ENTRIES) {
+        return `bare ${entries.length} oppføringer på formen ord:forklaring`;
+    }
+    const words = entries.map(l => l.slice(0, l.indexOf(':')).trim());
+    if (words.length === TEMPLATE_WORDS.length && TEMPLATE_WORDS.every((w, i) => words[i] === w)) {
+        return 'svaret er promptens egen mal, ikke kapitlet';
+    }
+    return null;
+}
 
 function fileExists(language, bookNr, chapterNr) {
     const filePath = path.join(__dirname, `important_words/${language}/${bookNr}-${chapterNr}.txt`);
@@ -36,9 +74,16 @@ Skapte:Begrepet brukt til å beskrive Guds handling av å bringe universet og al
     console.log(`Generating important words for ${bibleRef}...`);
     const text = await callWithRetry(prompt, {
         local: useLocal,
-        model: useLocal ? getTaskModel(TASK) : undefined,
+        task: TASK,
         context: `important words ${bibleRef}`,
     });
+
+    const entries = entryLines(text);
+    const problem = rejectReason(entries);
+    if (problem) {
+        console.log(`  SKIPPED ${bibleRef}: ${problem}`);
+        return false;
+    }
 
     const outputDir = path.join(__dirname, `important_words/${language}`);
     if (!fs.existsSync(outputDir)) {
@@ -46,8 +91,9 @@ Skapte:Begrepet brukt til å beskrive Guds handling av å bringe universet og al
     }
 
     const filename = path.join(outputDir, `${bookId}-${chapter}.txt`);
-    fs.writeFileSync(filename, text.replaceAll("\n\n", "\n"));
-    console.log(`Saved: ${filename}`);
+    fs.writeFileSync(filename, entries.join('\n') + '\n');
+    console.log(`Saved: ${filename} (${entries.length} ord)`);
+    return true;
 }
 
 function printUsage() {
@@ -123,8 +169,11 @@ async function main() {
     }
 
     console.log(`Language: ${language}`);
-    console.log(`Model: ${useLocal ? getTaskModel(TASK) : anthropicModel}`);
+    console.log(`Model: ${useLocal ? `${getTaskModel(TASK)} (eller en større som alt ligger i minnet)` : anthropicModel}`);
     console.log(`Starting from book ${startBook}, chapter ${startChapter}`);
+
+    let written = 0;
+    let rejected = 0;
 
     for (let bookId = startBook; bookId <= 66; bookId++) {
         const book = books.find(b => b.id === bookId);
@@ -137,8 +186,15 @@ async function main() {
                 continue;
             }
 
-            await generateImportantWords(language, bookId, chapter);
+            if (await generateImportantWords(language, bookId, chapter)) written++;
+            else rejected++;
         }
+    }
+
+    console.log('---');
+    console.log(`Skrevet: ${written}, avvist: ${rejected}`);
+    if (rejected > 0) {
+        console.log('Avviste kapitler er IKKE skrevet, så en ny kjøring forsøker dem igjen.');
     }
 }
 
