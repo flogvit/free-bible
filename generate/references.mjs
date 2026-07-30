@@ -281,8 +281,89 @@ function ensureDir(filepath) {
     }
 }
 
-function normalizeReferences(refs) {
-    return refs.map(ref => {
+/**
+ * Peker referansen på et vers som faktisk finnes?
+ *
+ * Kildesiden har alltid vært avgrenset — løkka i main() går ikke forbi
+ * `book.chapters`. Måladressen bestemmer modellen, og der fantes ingen port:
+ * 560 referanser i prod pekte på et kapittel målboka ikke har (#26).
+ *
+ * Men en adresse som ikke finnes hos oss er ikke uten videre feil. Vi følger
+ * hebraisk/gresk versnummerering; modellen svarer ofte i den europeiske. «Mal 4:5»
+ * finnes ikke — Malaki har 3 kapitler her — men det ER Mal 3:23, og referansen er
+ * riktig. Målt på nb: 182 av de ugyldige er gyldige osmain-adresser, 556 finnes i
+ * ingen nummerering. Bare de siste er bokforvekslingen #26 beskriver (`Høy 105:33`
+ * for `Sal 105:33`). Derfor to utfall: 'renumber' skal rettes gjennom KVN,
+ * 'drop' skal bort.
+ *
+ * Merk at dette bare fanger de som lander UTENFOR rekkevidde. En forvekslet bok
+ * der kapittel og vers tilfeldigvis finnes gir en levende lenke til et urelatert
+ * vers, og den gruppa er trolig større. Å fange den krever at man leser målverset
+ * og sammenlikner med beskrivelsen — se punkt 3 i #26.
+ *
+ * @returns {{verdict: 'ok'|'renumber'|'drop', reason?: string}}
+ */
+export function checkTarget(ref) {
+    const {bookId, chapterId, fromVerseId, toVerseId} = ref;
+    const drop = reason => ({verdict: 'drop', reason});
+
+    if (!Number.isInteger(bookId)) return drop(`bookId ${bookId} er ikke et heltall`);
+    const book = books.find(b => b.id === bookId);
+    if (!book) return drop(`bok ${bookId} finnes ikke`);
+
+    if (!Number.isInteger(chapterId)) return drop(`chapterId ${chapterId} er ikke et heltall`);
+    if (!Number.isInteger(fromVerseId)) return drop(`fromVerseId ${fromVerseId} er ikke et heltall`);
+    const to = Number.isInteger(toVerseId) ? toVerseId : fromVerseId;
+    if (to < fromVerseId) return drop(`toVerseId ${to} er mindre enn fromVerseId ${fromVerseId}`);
+
+    if (chapterId >= 1 && chapterId <= book.chapters) {
+        const present = versesIn(getOriginalChapter, bookId, chapterId);
+        if (present && present.has(fromVerseId) && present.has(to)) return {verdict: 'ok'};
+    }
+
+    // Finnes adressen i osmain, er den riktig — bare skrevet i europeisk nummerering.
+    const euro = versesIn(getOsmainChapter, bookId, chapterId);
+    if (euro && euro.has(fromVerseId) && euro.has(to)) {
+        return {
+            verdict: 'renumber',
+            reason: `${book.name} ${chapterId}:${fromVerseId} finnes bare i europeisk nummerering`
+        };
+    }
+
+    return drop(chapterId > book.chapters
+        ? `${book.name} har ${book.chapters} kapitler, referansen peker på ${chapterId}`
+        : `${book.name} ${chapterId} har ikke vers ${fromVerseId}${to !== fromVerseId ? `-${to}` : ''}`);
+}
+
+/** Versnumrene i et kapittel, eller null om kapittelet ikke finnes. */
+function versesIn(loader, bookId, chapterId) {
+    try {
+        const verses = loader(bookId, chapterId);
+        if (!verses || !verses.length) return null;
+        return new Set(verses.map(v => +v.verseId));
+    } catch {
+        return null;
+    }
+}
+
+const osmainCache = {};
+
+/** osmain følger den europeiske nummereringen, og er fasiten for «er dette en gyldig adresse der». */
+function getOsmainChapter(bookId, chapterId) {
+    const file = path.join(__dirname, 'bibles_raw', 'osmain', `${bookId}`, `${chapterId}.json`);
+    if (!(file in osmainCache)) {
+        osmainCache[file] = fs.existsSync(file) ? JSON.parse(fs.readFileSync(file, 'utf-8')) : null;
+    }
+    return osmainCache[file];
+}
+
+/**
+ * Retter feltnavn og forkaster referanser som peker på et vers som ikke finnes.
+ * Begge skriveveiene — generering og anvendt korrektur — går gjennom her.
+ */
+function normalizeReferences(refs, context = '') {
+    const kept = [];
+    for (const ref of refs) {
         // Fix common issue: verseId instead of fromVerseId
         if (ref.verseId !== undefined && ref.fromVerseId === undefined) {
             ref.fromVerseId = ref.verseId;
@@ -292,8 +373,21 @@ function normalizeReferences(refs) {
         if (ref.toVerseId === undefined && ref.fromVerseId !== undefined) {
             ref.toVerseId = ref.fromVerseId;
         }
-        return ref;
-    });
+
+        const {verdict, reason} = checkTarget(ref);
+        const where = context ? ` i ${context}` : '';
+        if (verdict === 'drop') {
+            console.log(`  forkastet referanse${where}: ${reason}`);
+            continue;
+        }
+        if (verdict === 'renumber') {
+            // Riktig referanse, feil nummerering. Den beholdes — å slette den er å
+            // miste en god kryssreferanse — men den skal gjennom KVN.
+            console.log(`  NB${where}: ${reason}`);
+        }
+        kept.push(ref);
+    }
+    return kept;
 }
 
 async function generateReferences(language, bookId, chapterId, verseId, filename) {
@@ -309,7 +403,7 @@ async function generateReferences(language, bookId, chapterId, verseId, filename
     console.log(`Generating references for ${bookName} ${chapterId}:${verseId}...`);
     const result = await callWithRetry(prompt, {schema: REFERENCE_SCHEMA, local: useLocal, task: 'references', context: `${bookId}:${chapterId}:${verseId}`});
 
-    const references = normalizeReferences(result.references);
+    const references = normalizeReferences(result.references, `${bookName} ${chapterId}:${verseId}`);
 
     const verse = {
         bookId,
@@ -394,7 +488,7 @@ function applyProofreadChanges(language, bookId, chapterId, verseId, refFilename
     }
 
     const currentData = JSON.parse(fs.readFileSync(refFilename, 'utf-8'));
-    const revisedRefs = normalizeReferences(proofreadResult.revisedReferences);
+    const revisedRefs = normalizeReferences(proofreadResult.revisedReferences, `${getBookName(bookId, language)} ${chapterId}:${verseId} (korrektur)`);
     currentData.references = revisedRefs;
 
     fs.writeFileSync(refFilename, JSON.stringify(currentData, null, 2));
@@ -460,6 +554,8 @@ function parseArgs(args) {
         verseStart: null,
         verseEnd: null,
         force: false,
+        validate: false,
+        fix: false,
         help: false
     };
 
@@ -493,6 +589,10 @@ function parseArgs(args) {
             options.local = true;
         } else if (arg === '--force') {
             options.force = true;
+        } else if (arg === '--validate') {
+            options.validate = true;
+        } else if (arg === '--fix') {
+            options.fix = true;
         } else if (arg === '--help') {
             options.help = true;
         }
@@ -500,6 +600,77 @@ function parseArgs(args) {
     }
 
     return options;
+}
+
+/**
+ * Sveiper referansefilene som alt ligger på disk med samme port som skrivingen.
+ * Rapporterer som standard; `--fix` fjerner de ugyldige.
+ */
+function validateExisting(options) {
+    const langCode = getLanguageCode(options.language);
+    const root = path.join(__dirname, 'references', langCode);
+    if (!fs.existsSync(root)) {
+        console.log(`Ingen referanser for ${langCode} (${root} finnes ikke)`);
+        return;
+    }
+
+    const bookDirs = fs.readdirSync(root).filter(n => /^\d+$/.test(n)).map(Number).sort((a, b) => a - b);
+    let files = 0, total = 0, dropped = 0, renumber = 0, filesTouched = 0;
+    const deadTargets = new Map();
+    const renumberBooks = new Map();
+
+    for (const bookId of bookDirs) {
+        for (const chapterName of fs.readdirSync(path.join(root, `${bookId}`))) {
+            const chapterDir = path.join(root, `${bookId}`, chapterName);
+            if (!fs.statSync(chapterDir).isDirectory()) continue;
+            for (const verseFile of fs.readdirSync(chapterDir).filter(n => n.endsWith('.json'))) {
+                const file = path.join(chapterDir, verseFile);
+                const data = JSON.parse(fs.readFileSync(file, 'utf-8'));
+                if (!Array.isArray(data.references)) continue;
+                files++;
+                total += data.references.length;
+
+                const kept = [];
+                for (const ref of data.references) {
+                    const {verdict, reason} = checkTarget(ref);
+                    const src = `${getBookName(data.bookId, options.language)} ${data.chapterId}:${data.verseId}`;
+                    if (verdict === 'ok') {
+                        kept.push(ref);
+                        continue;
+                    }
+                    if (verdict === 'renumber') {
+                        renumber++;
+                        const book = books.find(b => b.id === ref.bookId);
+                        renumberBooks.set(book?.name ?? ref.bookId, (renumberBooks.get(book?.name ?? ref.bookId) || 0) + 1);
+                        kept.push(ref);   // riktig referanse — skal rettes, ikke slettes
+                        continue;
+                    }
+                    dropped++;
+                    const key = `${ref.bookId}:${ref.chapterId}`;
+                    deadTargets.set(key, (deadTargets.get(key) || 0) + 1);
+                    console.log(`  ${src} → ${reason}`);
+                }
+
+                if (kept.length !== data.references.length) {
+                    filesTouched++;
+                    if (options.fix) {
+                        data.references = kept;
+                        fs.writeFileSync(file, JSON.stringify(data, null, 2));
+                    }
+                }
+            }
+        }
+    }
+
+    console.log('---');
+    console.log(`${langCode}: ${total} referanser i ${files} filer`);
+    console.log(`${dropped} døde adresser i ${filesTouched} filer, ${deadTargets.size} unike døde mål`);
+    if (renumber) {
+        const top = [...renumberBooks.entries()].sort((a, b) => b[1] - a[1]).slice(0, 6)
+            .map(([name, n]) => `${name} ${n}`).join(', ');
+        console.log(`${renumber} i europeisk nummerering — BEHOLDT, skal rettes gjennom KVN (${top})`);
+    }
+    if (dropped && !options.fix) console.log('Kjør med --fix for å fjerne de døde.');
 }
 
 async function main() {
@@ -511,6 +682,11 @@ async function main() {
 
     if (options.help) {
         printUsage();
+        return;
+    }
+
+    if (options.validate) {
+        validateExisting(options);
         return;
     }
 
@@ -591,4 +767,8 @@ async function main() {
     console.log('Done!');
 }
 
-main().catch(console.error);
+// Guard slik at checkTarget kan importeres (av tester, eller av et annet skript)
+// uten at hele genereringen starter. Samme mønster som translations_meta.mjs.
+if (process.argv[1] && path.resolve(process.argv[1]) === __filename) {
+    main().catch(console.error);
+}
