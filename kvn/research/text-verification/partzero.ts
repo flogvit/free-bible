@@ -11,16 +11,20 @@
 import { readFileSync, readdirSync, existsSync } from 'fs';
 import { join, dirname } from 'path';
 import { fileURLToPath } from 'url';
+import type { Chapter } from '../../src/bible-types.js';
+
+/** Dekodet KVN-nøkkel: bok, kapittel, vers, delvers. */
+interface Decoded { b: number; c: number; v: number; p: number }
 
 const HERE = dirname(fileURLToPath(import.meta.url));
 const REPO = join(HERE, '../../..');
 const RAW = join(REPO, 'generate/bibles_raw');
 const MAPS = join(REPO, 'kvn/mappings');
 const PART = 16, MAXV = 177, MAXC = 151, MV = MAXV * PART, MC = MAXC * MV;
-const dec = k => { const p = k % PART, r1 = (k - p) / PART, v = r1 % MAXV, r2 = (r1 - v) / MAXV; return { b: (r2 - r2 % MAXC) / MAXC, c: r2 % MAXC, v, p }; };
+const dec = (k: number): Decoded => { const p = k % PART, r1 = (k - p) / PART, v = r1 % MAXV, r2 = (r1 - v) / MAXV; return { b: (r2 - r2 % MAXC) / MAXC, c: r2 % MAXC, v, p }; };
 
-const cache = new Map();
-function txt(tr, k) {
+const cache = new Map<string, Chapter | null>();
+function txt(tr: string, k: number): string | null {
   const { b, c, v } = dec(k);
   const key = `${tr}/${b}/${c}`;
   if (!cache.has(key)) {
@@ -30,14 +34,14 @@ function txt(tr, k) {
   return cache.get(key)?.find(x => x.verseId === v)?.text ?? null;
 }
 
-const embed = async t => {
+const embed = async (t: string[]): Promise<Float32Array[]> => {
   const r = await fetch('http://localhost:11434/api/embed', {
     method: 'POST', headers: { 'Content-Type': 'application/json' },
     body: JSON.stringify({ model: 'bge-m3', input: t }),
   });
-  return (await r.json()).embeddings.map(v => { let s = 0; for (const x of v) s += x * x; s = Math.sqrt(s) || 1; return Float32Array.from(v, x => x / s); });
+  return (await r.json()).embeddings.map((v: number[]) => { let s = 0; for (const x of v) s += x * x; s = Math.sqrt(s) || 1; return Float32Array.from(v, x => x / s); });
 };
-const dot = (a, b) => { let s = 0; for (let i = 0; i < a.length; i++) s += a[i] * b[i]; return s; };
+const dot = (a: Float32Array, b: Float32Array) => { let s = 0; for (let i = 0; i < a.length; i++) s += a[i] * b[i]; return s; };
 
 // samle tilfeller: helvers-post ≠ delvers-a-post
 const want = Number(process.argv[2] ?? 60);
@@ -47,7 +51,7 @@ for (const f of readdirSync(MAPS).filter(x => x.endsWith('.ukvn.json'))) {
   const tr = f.replace('.ukvn.json', '');
   if (!existsSync(join(RAW, tr))) continue;
   let m; try { m = JSON.parse(readFileSync(join(MAPS, f), 'utf8')); } catch { continue; }
-  const whole = new Map(), first = new Map(), second = new Map();
+  const whole = new Map<number, number>(), first = new Map<number, number>(), second = new Map<number, number>();
   for (const e of m.map) {
     const d = dec(e.kvnFrom);
     if (d.p === 0) whole.set(e.kvnFrom, e.tkvnFrom);
@@ -64,7 +68,7 @@ for (const f of readdirSync(MAPS).filter(x => x.endsWith('.ukvn.json'))) {
 console.log(`${cases.length} tilfeller\n`);
 
 let winA = 0, winB = 0, winAB = 0, n = 0;
-const L = p => p ? String.fromCharCode(96 + p) : '';
+const L = (p: number) => p ? String.fromCharCode(96 + p) : '';
 console.log(`${'oversettelse'.padEnd(22)} ${'osmain'.padEnd(12)} ${'mot a'.padStart(7)} ${'mot b'.padStart(7)} ${'mot a+b'.padStart(8)}  vinner`);
 for (const c of cases) {
   const os = txt('osmain', c.kvn);

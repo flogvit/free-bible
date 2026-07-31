@@ -12,6 +12,34 @@ import { readFileSync, readdirSync, existsSync } from 'fs';
 import { join, dirname } from 'path';
 import { fileURLToPath } from 'url';
 
+/** Feiltypene som er lagt inn i testsettet; OK er kontrollgruppa. */
+type Kind = 'OK' | 'GRENSE' | 'AVKORTET' | 'FEILVERS' | 'FLETTET';
+
+/** En rad i testset.json: osmain-verset A mot oversettelsens vers B. */
+interface TestRow {
+  tr: string;
+  kind: Kind;
+  sim?: number;
+  simZ?: number;
+  len?: number;
+  A: string;
+  B: string;
+}
+
+/** Ett par slik dommeren dømte det; flag er null når kallet feilet. */
+interface VerdictCase {
+  id: string;
+  tr: string;
+  kind: Kind;
+  flag: boolean | null;
+}
+
+/** En verdict-fil: én kjøring av én konfigurasjon. */
+interface VerdictRun {
+  config: string;
+  cases: VerdictCase[];
+}
+
 const HERE = dirname(fileURLToPath(import.meta.url));
 const DIRARG = process.argv.indexOf('--dir');
 const VERDICTS = join(HERE, DIRARG >= 0 ? process.argv[DIRARG + 1] : 'verdicts-n6');
@@ -24,10 +52,10 @@ if (!file) {
   process.exit(1);
 }
 
-const run = JSON.parse(readFileSync(join(VERDICTS, file.replace(/^.*\//, '')), 'utf8'));
-const rows = JSON.parse(readFileSync(join(HERE, 'testset.json'), 'utf8'));
-const caseId = r => `${r.tr}|${r.kind}|${r.A.length}|${r.B.length}|${r.B.slice(0, 24)}`;
-const byId = new Map();
+const run: VerdictRun = JSON.parse(readFileSync(join(VERDICTS, file.replace(/^.*\//, '')), 'utf8'));
+const rows: TestRow[] = JSON.parse(readFileSync(join(HERE, 'testset.json'), 'utf8'));
+const caseId = (r: TestRow): string => `${r.tr}|${r.kind}|${r.A.length}|${r.B.length}|${r.B.slice(0, 24)}`;
+const byId = new Map<string, TestRow>();
 for (const r of rows) if (!byId.has(caseId(r))) byId.set(caseId(r), r);
 
 const trArg = argv.includes('--tr') ? argv[argv.indexOf('--tr') + 1].split(',') : null;
@@ -39,10 +67,10 @@ const want = (MISSES
 console.log(`${run.config}: ${want.length} ${MISSES ? 'ekte feil som slapp gjennom' : 'falske alarmer'}\n`);
 
 // vis bredt over oversettelser, ikke bare de første
-const perTr = new Map();
+const perTr = new Map<string, VerdictCase[]>();
 for (const c of want) {
   if (!perTr.has(c.tr)) perTr.set(c.tr, []);
-  perTr.get(c.tr).push(c);
+  perTr.get(c.tr)!.push(c);
 }
 let shown = 0;
 outer:

@@ -17,28 +17,83 @@
  *   bun bench.ts --report
  */
 import { readFileSync, writeFileSync, existsSync } from 'fs';
+
+/** Feiltypene som er lagt inn i matrix.json; OK er kontrollgruppa. */
+type Kind = 'OK' | 'GRENSE' | 'AVKORTET' | 'FEILVERS' | 'FLETTET';
+
+/** En rad i matrix.json: osmain-verset A mot oversettelsens vers B. */
+interface MatrixRow {
+  tr: string;
+  kind: Kind;
+  A: string;
+  B: string;
+}
+
+/** Et par fra det stratifiserte utvalget. */
+interface Case {
+  tr: string;
+  kind: Kind;
+  A: string;
+  B: string;
+}
+
+/** Svaret fra dommeren, slik de to skjemaene former det. */
+interface Judgement {
+  verdict?: string;
+  same?: boolean;
+}
+
+/** En promptvariant: skjema, hva som teller som flagg, og teksten. */
+interface Prompt {
+  schema: Record<string, unknown>;
+  flag: (j: Judgement) => boolean;
+  build: (A: string, B: string) => string;
+}
+
+/** Ett kall til dommeren: enten et flagg eller en feil, alltid en tid. */
+interface AskResult {
+  flag?: boolean;
+  err?: string;
+  ms: number;
+}
+
+interface KindStats { n: number; flagged: number }
+interface TrStats { ok: number; okFlag: number; bad: number; badFlag: number }
+
+/** En ferdig målt konfigurasjon i bench-results.json. */
+interface RunResult {
+  model: string;
+  prompt: string;
+  think: boolean;
+  per: Record<string, KindStats>;
+  perTr: Record<string, TrStats>;
+  errs: number;
+  secs: number;
+  n: number;
+}
+
 const DIR = '/private/tmp/claude-501/-Users-vhanssen-WebstormProjects-flogvit-free-bible/d75e4318-6f77-4d5f-a6f5-6476f4c272c0/scratchpad';
 const RESULTS = `${DIR}/bench-results.json`;
-const KINDS = ['OK', 'GRENSE', 'AVKORTET', 'FEILVERS', 'FLETTET'];
+const KINDS: Kind[] = ['OK', 'GRENSE', 'AVKORTET', 'FEILVERS', 'FLETTET'];
 
 const args = process.argv.slice(2);
-const flag = (n, d) => { const i = args.indexOf(n); return i >= 0 ? args[i + 1] : d; };
+const flag = <T>(n: string, d: T): string | T => { const i = args.indexOf(n); return i >= 0 ? args[i + 1] : d; };
 const N_PER = Number(flag('--n', 4));
 const THINK = args.includes('--think');
 const PROMPTS_ARG = flag('--prompts', 'E,YN').split(',');
 
 // -------------------------------------------------------------- stratifisert utvalg
-function sample() {
-  const rows = JSON.parse(readFileSync(`${DIR}/matrix.json`, 'utf8'));
-  const byTr = new Map();
+function sample(): Case[] {
+  const rows: MatrixRow[] = JSON.parse(readFileSync(`${DIR}/matrix.json`, 'utf8'));
+  const byTr = new Map<string, Map<Kind, MatrixRow[]>>();
   for (const r of rows) {
-    if (!byTr.has(r.tr)) byTr.set(r.tr, new Map(KINDS.map(k => [k, []])));
-    byTr.get(r.tr).get(r.kind)?.push(r);
+    if (!byTr.has(r.tr)) byTr.set(r.tr, new Map(KINDS.map(k => [k, []] as [Kind, MatrixRow[]])));
+    byTr.get(r.tr)!.get(r.kind)?.push(r);
   }
-  const out = [];
+  const out: Case[] = [];
   for (const [tr, m] of byTr) {
     for (const k of KINDS) {
-      const pool = m.get(k);
+      const pool = m.get(k)!;
       // GRENSE og AVKORTET har identisk B-tekst; ta bare GRENSE for LLM-en,
       // den kan uansett ikke skille dem uten å se naboen.
       if (k === 'AVKORTET') continue;
@@ -55,11 +110,11 @@ function sample() {
 const SCHEMA_E = { type: 'object', properties: { verdict: { type: 'string', enum: ['EQUIVALENT', 'B_MISSING', 'B_EXTRA', 'DIFFERENT'] } }, required: ['verdict'] };
 const SCHEMA_YN = { type: 'object', properties: { same: { type: 'boolean' } }, required: ['same'] };
 
-const PROMPTS = {
+const PROMPTS: Record<string, Prompt> = {
   E: {
     schema: SCHEMA_E,
     flag: j => j.verdict !== 'EQUIVALENT',
-    build: (A, B) => `A and B are two renderings of the same Bible verse in different languages.
+    build: (A: string, B: string) => `A and B are two renderings of the same Bible verse in different languages.
 
 A: ${A}
 B: ${B}
@@ -74,7 +129,7 @@ DIFFERENT   — not the same passage`,
   YN: {
     schema: SCHEMA_YN,
     flag: j => j.same === false,
-    build: (A, B) => `A and B are two renderings of the same Bible verse in different languages.
+    build: (A: string, B: string) => `A and B are two renderings of the same Bible verse in different languages.
 
 A: ${A}
 B: ${B}
@@ -85,7 +140,7 @@ Wording and language differ; that does not matter.`,
 };
 
 // --------------------------------------------------------------------------- kjør
-async function ask(model, p, A, B, think) {
+async function ask(model: string, p: Prompt, A: string, B: string, think: boolean): Promise<AskResult> {
   const t0 = Date.now();
   try {
     const r = await fetch('http://localhost:11434/api/generate', {
@@ -101,7 +156,7 @@ async function ask(model, p, A, B, think) {
   } catch (e) { return { err: String(e).slice(0, 60), ms: Date.now() - t0 }; }
 }
 
-const load = () => existsSync(RESULTS) ? JSON.parse(readFileSync(RESULTS, 'utf8')) : {};
+const load = (): Record<string, RunResult> => existsSync(RESULTS) ? JSON.parse(readFileSync(RESULTS, 'utf8')) : {};
 
 if (args.includes('--report')) {
   const all = load();
@@ -110,7 +165,7 @@ if (args.includes('--report')) {
   for (const k of keys) {
     const r = all[k];
     const fa = r.per.OK ? 100 * r.per.OK.flagged / r.per.OK.n : 0;
-    const cell = kk => r.per[kk] ? `${(100 * r.per[kk].flagged / r.per[kk].n).toFixed(0)}%`.padStart(9) : '-'.padStart(9);
+    const cell = (kk: string): string => r.per[kk] ? `${(100 * r.per[kk].flagged / r.per[kk].n).toFixed(0)}%`.padStart(9) : '-'.padStart(9);
     console.log(`${k.padEnd(34)} ${(fa.toFixed(1) + '%').padStart(12)} ${['GRENSE', 'FEILVERS', 'FLETTET'].map(cell).join('')} ${r.secs.toFixed(1).padStart(7)}`);
   }
   process.exit(0);
@@ -130,8 +185,8 @@ for (const model of models) {
     const key = `${model} ${pn}${THINK ? ' think' : ''}`;
     if (all[key]) { console.log(`${key} — allerede målt, hopper over`); continue; }
 
-    const per = Object.fromEntries(KINDS.map(k => [k, { n: 0, flagged: 0 }]));
-    const perTr = {};
+    const per: Record<string, KindStats> = Object.fromEntries(KINDS.map(k => [k, { n: 0, flagged: 0 }]));
+    const perTr: Record<string, TrStats> = {};
     let ms = 0, errs = 0;
     const t0 = Date.now();
     for (let i = 0; i < cases.length; i++) {

@@ -7,9 +7,8 @@
     "esModuleInterop": true,
     "skipLibCheck": true,
     "resolveJsonModule": true,
-    "declaration": true,
-    "outDir": "dist",
-    "rootDir": "."
+    "noEmit": true,
+    "types": ["bun"]
   },
   "include": ["src/**/*.ts", "tests/**/*.ts", "scripts/**/*.ts", "research/**/*.ts"]
 }

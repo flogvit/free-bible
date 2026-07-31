@@ -14,18 +14,35 @@ import { readFileSync, writeFileSync, existsSync, mkdirSync } from 'fs';
 import { join, dirname } from 'path';
 import { fileURLToPath } from 'url';
 
+/** En rad i backtranslations.json: A på norsk, B på kildespråket, bt = B tilbakeoversatt. */
+interface BackCase {
+  id: string;
+  tr: string;
+  kind: string;
+  A: string;
+  B: string;
+  bt: string;
+}
+/** Én dom per par; flag er null når modellen ikke svarte. */
+interface Verdict {
+  id: string;
+  tr: string;
+  kind: string;
+  flag: boolean | null;
+}
+
 const HERE = dirname(fileURLToPath(import.meta.url));
 const VERDICTS = join(HERE, 'verdicts-n6');
 const SRC = join(HERE, 'backtranslations.json');
 if (!existsSync(SRC)) { console.error('backtranslations.json mangler — kjør backtranslate.mjs først'); process.exit(1); }
 
 const model = process.argv[2] ?? 'gemma4:31b';
-const cases = JSON.parse(readFileSync(SRC, 'utf8'));
+const cases: BackCase[] = JSON.parse(readFileSync(SRC, 'utf8'));
 console.log(`${cases.length} par, dømmer norsk mot norsk med ${model}\n`);
 
 const schema = { type: 'object', properties: { verdict: { type: 'string', enum: ['EQUIVALENT', 'B_MISSING', 'B_EXTRA', 'DIFFERENT'] } }, required: ['verdict'] };
 
-async function ask(A, B) {
+async function ask(A: string, B: string): Promise<boolean | null> {
   try {
     const r = await fetch('http://localhost:11434/api/generate', {
       method: 'POST', headers: { 'Content-Type': 'application/json' },
@@ -51,7 +68,7 @@ DIFFERENT   — det er ikke samme avsnitt`,
   } catch { return null; }
 }
 
-const rows = [];
+const rows: Verdict[] = [];
 const t0 = Date.now();
 for (let i = 0; i < cases.length; i++) {
   const c = cases[i];
@@ -66,5 +83,5 @@ process.stdout.write('\r' + ' '.repeat(60) + '\r');
 mkdirSync(VERDICTS, { recursive: true });
 const name = `judge-nb-${model.replace(/[:.]/g, '_')}`;
 writeFileSync(join(VERDICTS, `${name}.json`), JSON.stringify({ config: name, model, cases: rows }));
-const pc = k => { const s = rows.filter(x => x.kind === k && x.flag !== null); return s.length ? `${(100 * s.filter(x => x.flag).length / s.length).toFixed(0)}%` : '-'; };
+const pc = (k: string) => { const s = rows.filter(x => x.kind === k && x.flag !== null); return s.length ? `${(100 * s.filter(x => x.flag).length / s.length).toFixed(0)}%` : '-'; };
 console.log(`${name}  falsk alarm ${pc('OK')}   GRENSE ${pc('GRENSE')}  FEILVERS ${pc('FEILVERS')}  FLETTET ${pc('FLETTET')}  ${((Date.now() - t0) / 1000 / cases.length).toFixed(1)}s/par`);

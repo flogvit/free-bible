@@ -134,4 +134,7 @@ function main(): void {
   console.log(`\n${names.length} mappinger sjekket, ${bad} med funn, ${skipped} uten bibeldata (hoppet over)`);
 }
 
-main();
+// Kjører bare når fila startes direkte, slik at import ikke har bivirkninger (#108).
+if (import.meta.main) {
+    main();
+}

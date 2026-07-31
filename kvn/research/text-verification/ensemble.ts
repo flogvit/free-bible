@@ -17,6 +17,43 @@ import { readFileSync, readdirSync, existsSync } from 'fs';
 import { join, dirname } from 'path';
 import { fileURLToPath } from 'url';
 
+/** De tre konstruerte feiltypene — det er disse et nett skal fange. */
+type BadKind = 'GRENSE' | 'FEILVERS' | 'FLETTET';
+/** `OK` er paret slik det står; resten er konstruerte feil. */
+type Kind = 'OK' | BadKind;
+
+/** Én lagret dom, slik run.ts skriver den. `flag: null` = modellen svarte ikke. */
+interface Row {
+  id: string;
+  tr: string;
+  kind: Kind;
+  flag: boolean | null;
+}
+
+/** Én lagret kjøring: navnet på konfigurasjonen og dommene den ga. */
+interface Run {
+  config: string;
+  cases: Row[];
+}
+
+/** Målene for én konfigurasjon eller ett nett. Alle i prosent, `NaN` = ingen data. */
+interface Stat {
+  /** falsk alarm: andel av de riktige parene som ble flagget */
+  fa: number;
+  /** andel fanget, per feiltype */
+  rec: Record<BadKind, number>;
+  /** bomrate: andel ekte feil som ingen detektor slo ut på */
+  miss: number;
+  nBad: number;
+  nOk: number;
+}
+
+/** Et kandidatnett under søk: indeksene i `runs` og målene de gir. */
+interface Candidate {
+  combo: number[];
+  s: Stat;
+}
+
 const HERE = dirname(fileURLToPath(import.meta.url));
 const DIRARG = process.argv.indexOf('--dir');
 const VERDICTS = join(HERE, DIRARG >= 0 ? process.argv[DIRARG + 1] : 'verdicts-n6');
@@ -27,22 +64,22 @@ const PER_TR = argv.includes('--per-tr');
 // bare filnavn — ikke flagg, og ikke verdien etter et flagg
 const named = argv.filter((a, i) => !a.startsWith('--') && !(i > 0 && argv[i - 1].startsWith('--')));
 const files = named.length ? named : readdirSync(VERDICTS).filter(f => f.endsWith('.json'));
-const runs = files.map(f => JSON.parse(readFileSync(join(VERDICTS, f.replace(/^.*\//, '')), 'utf8')));
-const KINDS = ['GRENSE', 'FEILVERS', 'FLETTET'];
+const runs: Run[] = files.map(f => JSON.parse(readFileSync(join(VERDICTS, f.replace(/^.*\//, '')), 'utf8')));
+const KINDS: BadKind[] = ['GRENSE', 'FEILVERS', 'FLETTET'];
 
-function stat(rows) {
-  const g = k => rows.filter(r => r.kind === k && r.flag !== null);
+function stat(rows: Row[]): Stat {
+  const g = (k: Kind) => rows.filter(r => r.kind === k && r.flag !== null);
   const ok = g('OK');
   const bad = rows.filter(r => r.kind !== 'OK' && r.flag !== null);
   return {
     fa: ok.length ? 100 * ok.filter(r => r.flag).length / ok.length : NaN,
-    rec: Object.fromEntries(KINDS.map(k => { const s = g(k); return [k, s.length ? 100 * s.filter(r => r.flag).length / s.length : NaN]; })),
+    rec: Object.fromEntries(KINDS.map(k => { const s = g(k); return [k, s.length ? 100 * s.filter(r => r.flag).length / s.length : NaN]; })) as Record<BadKind, number>,
     miss: bad.length ? 100 * bad.filter(r => !r.flag).length / bad.length : NaN,
     nBad: bad.length, nOk: ok.length,
   };
 }
 
-const line = (name, s) =>
+const line = (name: string, s: Stat) =>
   `${name.slice(0, 34).padEnd(34)} ${(s.fa.toFixed(1) + '%').padStart(11)} ` +
   KINDS.map(k => (isNaN(s.rec[k]) ? '-' : s.rec[k].toFixed(0) + '%').padStart(10)).join('') +
   `${(s.miss.toFixed(1) + '%').padStart(11)}`;
@@ -52,8 +89,8 @@ console.log('-'.repeat(86));
 for (const r of runs.sort((a, b) => stat(a.cases).miss - stat(b.cases).miss)) console.log(line(r.config, stat(r.cases)));
 
 /** ELLER: slår ut hvis noen konfigurasjon slår ut. null teller som «sa ingenting». */
-function union(sel) {
-  const byId = new Map();
+function union(sel: Run[]): Row[] {
+  const byId = new Map<string, Row>();
   for (const r of sel) for (const c of r.cases) {
     const cur = byId.get(c.id);
     if (!cur) byId.set(c.id, { ...c });
@@ -64,18 +101,18 @@ function union(sel) {
 }
 
 console.log('\n--- ELLER-nett, grådig på bomrate ---');
-const chosen = [];
+const chosen: Run[] = [];
 let remaining = [...runs];
 while (remaining.length) {
-  let best = null;
+  let best: { r: Run; s: Stat } | null = null;
   for (const r of remaining) {
     const s = stat(union([...chosen, r]));
     if (!best || s.miss < best.s.miss - 1e-9 || (Math.abs(s.miss - best.s.miss) < 1e-9 && s.fa < best.s.fa)) best = { r, s };
   }
-  if (chosen.length && best.s.miss >= stat(union(chosen)).miss - 1e-9) break;
-  chosen.push(best.r);
-  remaining = remaining.filter(x => x !== best.r);
-  console.log(line('+ ' + best.r.config, best.s));
+  if (chosen.length && best!.s.miss >= stat(union(chosen)).miss - 1e-9) break;
+  chosen.push(best!.r);
+  remaining = remaining.filter(x => x !== best!.r);
+  console.log(line('+ ' + best!.r.config, best!.s));
 }
 
 const net = union(chosen);
@@ -88,7 +125,7 @@ if (PER_TR) {
   console.log(`\n--- per oversettelse ---`);
   console.log(`${'oversettelse'.padEnd(20)} ${'bomrate'.padStart(9)} ${'eskalert'.padStart(10)} ${'n feil'.padStart(8)}`);
   const trs = [...new Set(net.map(r => r.tr))].sort();
-  const rowsFor = tr => net.filter(r => r.tr === tr);
+  const rowsFor = (tr: string) => net.filter(r => r.tr === tr);
   for (const tr of trs) {
     const s = stat(rowsFor(tr));
     const warn = s.miss > fin.miss * 2 ? '   ← svakt her' : '';
@@ -103,9 +140,9 @@ if (PER_TR) {
 // kombinasjoner opp til fire lag.
 if (argv.includes('--cheapest')) {
   const idx = runs.map((_, i) => i);
-  let best = null;
-  const combos = [];
-  const rec = (start, cur) => {
+  let best: Candidate | null = null;
+  const combos: number[][] = [];
+  const rec = (start: number, cur: number[]) => {
     if (cur.length) combos.push([...cur]);
     if (cur.length === 4) return;
     for (let i = start; i < idx.length; i++) { cur.push(i); rec(i + 1, cur); cur.pop(); }
@@ -135,13 +172,13 @@ if (argv.includes('--holdout')) {
   const trs = [...new Set(runs[0].cases.map(c => c.tr))].sort();
   const A = new Set(trs.filter((_, i) => i % 2 === 0));
   const B = new Set(trs.filter((_, i) => i % 2 === 1));
-  const slice = (r, set) => ({ ...r, cases: r.cases.filter(c => set.has(c.tr)) });
+  const slice = (r: Run, set: Set<string>): Run => ({ ...r, cases: r.cases.filter(c => set.has(c.tr)) });
 
-  const search = set => {
+  const search = (set: Set<string>): Candidate | null => {
     const sub = runs.map(r => slice(r, set));
-    let best = null;
-    const combos = [];
-    const rec = (start, cur) => {
+    let best: Candidate | null = null;
+    const combos: number[][] = [];
+    const rec = (start: number, cur: number[]) => {
       if (cur.length) combos.push([...cur]);
       if (cur.length === 4) return;
       for (let i = start; i < sub.length; i++) { cur.push(i); rec(i + 1, cur); cur.pop(); }
@@ -155,7 +192,7 @@ if (argv.includes('--holdout')) {
     return best;
   };
 
-  for (const [navn, fit, test] of [['A→B', A, B], ['B→A', B, A]]) {
+  for (const [navn, fit, test] of [['A→B', A, B], ['B→A', B, A]] as [string, Set<string>, Set<string>][]) {
     const best = search(fit);
     console.log(`\n--- holdout ${navn} ---`);
     if (!best) { console.log('  fant ikke noe nett uten bom på treningshalvdelen'); continue; }

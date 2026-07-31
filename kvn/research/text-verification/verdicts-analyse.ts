@@ -19,6 +19,32 @@ import { readFileSync, readdirSync, writeFileSync } from 'fs';
 import { join, dirname } from 'path';
 import { fileURLToPath } from 'url';
 
+/** En rad i testset.json: et par (A = osmain-vers, B = oversettelsens vers). */
+interface Row {
+  tr: string;
+  kind: string;
+  sim: number;
+  simZ: number;
+  len: number;
+  A: string;
+  B: string;
+}
+
+/** Én dom over ett par, slik den ligger i domsfilene under DIR. */
+interface VerdictCase {
+  id: string;
+  tr: string;
+  kind: string;
+  flag: boolean | null;
+  verdict?: string;
+}
+
+/** Én kjøring: en konfigurasjon med dommene sine. */
+interface Run {
+  config: string;
+  cases: VerdictCase[];
+}
+
 const HERE = dirname(fileURLToPath(import.meta.url));
 const DIRARG = process.argv.indexOf('--dir');
 const DIR = join(HERE, DIRARG >= 0 ? process.argv[DIRARG + 1] : 'verdicts-n6');
@@ -33,13 +59,13 @@ const files = named.length
   : readdirSync(DIR).filter(f => f.endsWith('.json'));
 
 // lengde per par, til å skille ekte fletting fra osmain-terserhet
-const rows = JSON.parse(readFileSync(join(HERE, 'testset.json'), 'utf8'));
-const caseId = r => `${r.tr}|${r.kind}|${r.A.length}|${r.B.length}|${r.B.slice(0, 24)}`;
-const lenById = new Map();
+const rows: Row[] = JSON.parse(readFileSync(join(HERE, 'testset.json'), 'utf8'));
+const caseId = (r: Row): string => `${r.tr}|${r.kind}|${r.A.length}|${r.B.length}|${r.B.slice(0, 24)}`;
+const lenById = new Map<string, number>();
 for (const r of rows) if (!lenById.has(caseId(r))) lenById.set(caseId(r), r.len);
 
 for (const f of files) {
-  const j = JSON.parse(readFileSync(join(DIR, f), 'utf8'));
+  const j: Run = JSON.parse(readFileSync(join(DIR, f), 'utf8'));
   if (!j.cases.some(c => c.verdict)) continue;
 
   console.log(`\n=== ${j.config} ===`);
@@ -55,7 +81,7 @@ for (const f of files) {
 
   // regelvarianter
   const LEN_HI = 1.35;   // fletting gir et helt ekstra vers → tydelig lengre
-  const regler = {
+  const regler: Record<string, (c: VerdictCase) => boolean> = {
     'alt som ikke er EQUIVALENT': c => c.verdict !== 'EQUIVALENT',
     'uten B_EXTRA':               c => c.verdict === 'B_MISSING' || c.verdict === 'DIFFERENT',
     'B_EXTRA kun når lang':       c => c.verdict === 'B_MISSING' || c.verdict === 'DIFFERENT'
@@ -63,8 +89,8 @@ for (const f of files) {
   };
   console.log(`\n${'regel'.padEnd(28)} ${'falsk alarm'.padStart(12)} ${['GRENSE', 'FEILVERS', 'FLETTET'].map(k => k.padStart(10)).join('')} ${'bomrate'.padStart(10)}`);
   for (const [navn, fn] of Object.entries(regler)) {
-    const g = k => j.cases.filter(c => c.kind === k && c.verdict);
-    const pc = k => { const s = g(k); return s.length ? `${(100 * s.filter(fn).length / s.length).toFixed(0)}%` : '-'; };
+    const g = (k: string): VerdictCase[] => j.cases.filter(c => c.kind === k && c.verdict);
+    const pc = (k: string): string => { const s = g(k); return s.length ? `${(100 * s.filter(fn).length / s.length).toFixed(0)}%` : '-'; };
     const bad = j.cases.filter(c => c.kind !== 'OK' && c.verdict);
     const miss = 100 * bad.filter(c => !fn(c)).length / bad.length;
     console.log(`${navn.padEnd(28)} ${pc('OK').padStart(12)} ${['GRENSE', 'FEILVERS', 'FLETTET'].map(k => pc(k).padStart(10)).join('')} ${(miss.toFixed(1) + '%').padStart(10)}`);

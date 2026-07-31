@@ -16,9 +16,24 @@ import { join, dirname } from 'path';
 import { fileURLToPath } from 'url';
 import { parseArgs, formatHelp, COMMON_FLAGS } from '../../generate/cli.js';
 import type { FlagSpec } from '../../generate/cli.js';
+import type { Chapter } from '../src/bible-types.js';
 const __dirname = dirname(fileURLToPath(import.meta.url));
 const REPO = join(__dirname, '../..');
-const verses = (m, b, c) => JSON.parse(fs.readFileSync(join(REPO, 'generate/bibles_raw', m, b, `${c}.json`), 'utf8'));
+const verses = (m: string, b: string, c: string): Chapter => JSON.parse(fs.readFileSync(join(REPO, 'generate/bibles_raw', m, b, `${c}.json`), 'utf8'));
+
+/** Formen på kvn/data/mapping-results/<oversettelse>/<bok>-<kapittel>.json,
+ *  slik generate-mapping.ts skriver den (se ollamaSchema der). */
+interface MappingResultEntry {
+  translationVerse: number;
+  osmainVerses: number[];
+  matchType: string;
+  note?: string;
+}
+
+interface MappingResultFile {
+  key: string;
+  result: { mappings?: MappingResultEntry[] };
+}
 
 const SPEC: Record<string, FlagSpec> = {
   help: COMMON_FLAGS.help,
@@ -49,18 +64,18 @@ function main(): void {
 
   let flaggedChapters = 0;
   for (const f of fs.readdirSync(dir).filter(f => f.endsWith('.json') && !f.startsWith('_')).sort()) {
-    const { key, result } = JSON.parse(fs.readFileSync(join(dir, f), 'utf8'));
+    const { key, result } = JSON.parse(fs.readFileSync(join(dir, f), 'utf8')) as MappingResultFile;
     const [b, c] = key.split(':');
     const os = verses('osmain', b, c), tr = verses(mod, b, c);
     const trSet = new Set(tr.map(v => v.verseId));
     if (os.length === tr.length && os.every(v => trSet.has(v.verseId))) continue; // identity
     const osCount = os.length;
-    const explicit = new Map((result.mappings || []).map(m => [m.translationVerse, m]));
-    const covered = new Set(); const issues = [];
+    const explicit = new Map((result.mappings || []).map((m): [number, MappingResultEntry] => [m.translationVerse, m]));
+    const covered = new Set<number>(); const issues: string[] = [];
     let prev = 0;
     for (const t of tr) {
       const m = explicit.get(t.verseId);
-      let targets;
+      let targets: number[];
       if (m) { if (m.matchType === 'missing' || !m.osmainVerses.length) continue; targets = m.osmainVerses; }
       else targets = [t.verseId]; // identity default
       for (const o of targets) {
@@ -71,7 +86,7 @@ function main(): void {
       if (mn < prev) issues.push(`non-monotonic t${t.verseId}->osm${targets.join(',')} after ${prev}`);
       prev = Math.max(prev, ...targets);
     }
-    const uncovered = [];
+    const uncovered: number[] = [];
     for (let o = 1; o <= osCount; o++) if (!covered.has(o)) uncovered.push(o);
     // classify: uncovered ONLY at the edges (first/last, contiguous) = cross-chapter boundary (expected);
     // uncovered in the middle, or a target beyond osmain, or non-monotonic = a real alignment error.
@@ -86,4 +101,7 @@ function main(): void {
   process.exit(flaggedChapters ? 1 : 0);
 }
 
-main();
+// Kjører bare når fila startes direkte, slik at import ikke har bivirkninger (#108).
+if (import.meta.main) {
+    main();
+}

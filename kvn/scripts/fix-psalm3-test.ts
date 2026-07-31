@@ -190,4 +190,7 @@ Compare the CONTENT of the verses to determine the mapping. Do not just match by
   }
 }
 
-await main();
+// Kjører bare når fila startes direkte, slik at import ikke har bivirkninger (#108).
+if (import.meta.main) {
+    await main();
+}

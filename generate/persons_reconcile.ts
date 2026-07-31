@@ -105,13 +105,17 @@ interface Proposal {
   refBy: RefBy[];
 }
 
-// catalog
-const catalog = new Map<string, CatalogEntry>(); // id -> {name, title, aliases}
-for (const f of fs.readdirSync(PERSONS_DIR).filter(f => f.endsWith('.json'))) {
-  const d: PersonProfile = JSON.parse(fs.readFileSync(path.join(PERSONS_DIR, f), 'utf-8'));
-  catalog.set(d.id, { name: d.name, title: d.title || '', aliases: d.aliases || [] });
+// catalog: id -> {name, title, aliases}. Leses inne i main(), ikke ved import —
+// hele persons-katalogen er ~2000 filer, og `--help` skal ikke koste noen av dem.
+function loadCatalog(): Map<string, CatalogEntry> {
+  const catalog = new Map<string, CatalogEntry>();
+  for (const f of fs.readdirSync(PERSONS_DIR).filter(f => f.endsWith('.json'))) {
+    const d: PersonProfile = JSON.parse(fs.readFileSync(path.join(PERSONS_DIR, f), 'utf-8'));
+    catalog.set(d.id, { name: d.name, title: d.title || '', aliases: d.aliases || [] });
+  }
+  return catalog;
 }
-const ids = [...catalog.keys()];
+
 const base = (s: string) => String(s).toLowerCase().replace(/\s*\([^)]*\)/g, '').normalize('NFD').replace(/[̀-ͯ]/g, '').replace(/[^a-z0-9]/g, '');
 
 function editDist(a: string, b: string): number {
@@ -123,14 +127,22 @@ function editDist(a: string, b: string): number {
   return dp[m][n];
 }
 
+/** En katalogoppføring redusert til basisformene den kan gjenkjennes på. */
+interface CatalogKeys {
+  id: string;
+  keys: string[];
+}
+
 // precompute base slugs of catalog (id, name, and each alias) so known
 // equivalences with a different name (Kefas=Peter, Jerubbaal=Gideon) also match
-const catBase = ids.map(id => ({
-  id,
-  keys: [base(id), base(catalog.get(id)!.name), ...catalog.get(id)!.aliases.map(base)].filter(Boolean),
-}));
+function catalogKeys(catalog: Map<string, CatalogEntry>): CatalogKeys[] {
+  return [...catalog.keys()].map(id => ({
+    id,
+    keys: [base(id), base(catalog.get(id)!.name), ...catalog.get(id)!.aliases.map(base)].filter(Boolean),
+  }));
+}
 
-function shortlist(slug: string): string[] {
+function shortlist(slug: string, catBase: CatalogKeys[]): string[] {
   const sb = base(slug);
   const scored: { id: string; d: number }[] = [];
   for (const c of catBase) {
@@ -143,13 +155,6 @@ function shortlist(slug: string): string[] {
   return scored.slice(0, 12).map(x => x.id);
 }
 
-const work: Worklist = JSON.parse(fs.readFileSync(WORKLIST, 'utf-8'));
-const all: WorkItem[] = [
-  ...work.references.variant.map<WorkItem>(x => ({ ...x, kind: 'variant' })),
-  ...work.references.ambiguous.map<WorkItem>(x => ({ ...x, kind: 'ambiguous' })),
-  ...work.references.missing.map<WorkItem>(x => ({ ...x, kind: 'missing' })),
-];
-
 const SCHEMA = {
   type: 'object',
   properties: {
@@ -161,14 +166,66 @@ const SCHEMA = {
   additionalProperties: false
 };
 
-const proposals: Proposal[] = [];
-let i = 0;
-for (const item of all) {
-  i++;
-  const cands = shortlist(item.slug);
-  const candLines = cands.map(id => `  ${id}  —  ${catalog.get(id)!.name}${catalog.get(id)!.title ? ' ('+catalog.get(id)!.title+')' : ''}`).join('\n') || '  (none)';
-  const ctx = item.refBy.slice(0, 4).map(r => `${catalog.get(r.by)?.name || r.by} [${r.rel}]`).join('; ');
-  const prompt = `Du avstemmer en bibelsk person-referanse mot en katalog av eksisterende personer.
+async function main(): Promise<void> {
+  // Hjelpen svares før katalogen leses og før arbeidslista åpnes: `--help` skal
+  // ikke gjøre arbeid.
+  const { flags, positional } = parseArgs(process.argv.slice(2), SPEC);
+  if (flags.help) {
+    console.log(formatHelp(
+      'generate/persons_reconcile.ts',
+      'foreslår hvilken eksisterende person hver uløste referanse i <worklist.json> sikter til (eller NEW), og skriver forslagene til <out.json> for menneskelig gjennomgang — persons-dataene røres ikke',
+      SPEC,
+      HELP_EXAMPLES,
+    ));
+    process.exit(0);
+  }
+
+  const WORKLIST = positional[0];
+  const OUT = positional[1];
+  if (!WORKLIST || !OUT) { console.error('usage: node persons_reconcile.mjs <worklist.json> <out.json>'); process.exit(1); }
+
+  const catalog = loadCatalog();
+  const catBase = catalogKeys(catalog);
+
+  const work: Worklist = JSON.parse(fs.readFileSync(WORKLIST, 'utf-8'));
+  const all: WorkItem[] = [
+    ...work.references.variant.map<WorkItem>(x => ({ ...x, kind: 'variant' })),
+    ...work.references.ambiguous.map<WorkItem>(x => ({ ...x, kind: 'ambiguous' })),
+    ...work.references.missing.map<WorkItem>(x => ({ ...x, kind: 'missing' })),
+  ];
+
+  const proposals: Proposal[] = [];
+  let i = 0;
+  for (const item of all) {
+    i++;
+    const cands = shortlist(item.slug, catBase);
+    const candLines = cands.map(id => `  ${id}  —  ${catalog.get(id)!.name}${catalog.get(id)!.title ? ' ('+catalog.get(id)!.title+')' : ''}`).join('\n') || '  (none)';
+    const ctx = item.refBy.slice(0, 4).map(r => `${catalog.get(r.by)?.name || r.by} [${r.rel}]`).join('; ');
+    const prompt = buildPrompt(item, candLines, ctx);
+    try {
+      // `callWithRetry` er typet `object | string`; med skjema er det skjemaets form.
+      const r = await callWithRetry(prompt, { schema: SCHEMA, local: true, context: item.slug }) as ReconcileResult;
+      const match = r.match && (r.match === 'NEW' || catalog.has(r.match)) ? r.match : 'NEW';
+      proposals.push({ slug: item.slug, count: item.count, kind: item.kind, match, confidence: r.confidence, reason: r.reason, shortlist: cands, refBy: item.refBy.slice(0, 5) });
+    } catch (e) {
+      proposals.push({ slug: item.slug, count: item.count, kind: item.kind, match: 'NEW', confidence: 'low', reason: 'ERROR: ' + (e as Error).message, shortlist: cands, refBy: item.refBy.slice(0, 5) });
+    }
+    if (i % 25 === 0) { process.stderr.write(`  ${i}/${all.length}\n`); fs.writeFileSync(OUT, JSON.stringify(proposals, null, 1)); }
+  }
+  fs.writeFileSync(OUT, JSON.stringify(proposals, null, 1));
+  console.log(`proposals: ${proposals.length} -> ${OUT}`);
+  const nEW = proposals.filter(p => p.match === 'NEW').length;
+  console.log(`  matched existing: ${proposals.length - nEW}  |  NEW (missing): ${nEW}`);
+}
+
+// Kjører bare når fila startes direkte. Uten vakten kjører jobben ved IMPORT.
+if (import.meta.main) {
+  main();
+}
+
+/** Ledeteksten til modellen. Teksten er uendret — bare flyttet ut av løkka. */
+function buildPrompt(item: WorkItem, candLines: string, ctx: string): string {
+  return `Du avstemmer en bibelsk person-referanse mot en katalog av eksisterende personer.
 
 Referert slug: "${item.slug}"
 Denne slugen er brukt som relasjon (${item.refBy[0]?.rel}) av: ${ctx}
@@ -183,17 +240,4 @@ Oppgave: Avgjør hvilken EKSISTERENDE person slugen sikter til. Slugen er ofte e
 - Bruk konteksten (hvem som refererer og relasjonstypen) til å skille.
 
 Returner JSON: { match, confidence, reason (kort) }.`;
-  try {
-    // `callWithRetry` er typet `object | string`; med skjema er det skjemaets form.
-    const r = await callWithRetry(prompt, { schema: SCHEMA, local: true, context: item.slug }) as ReconcileResult;
-    const match = r.match && (r.match === 'NEW' || catalog.has(r.match)) ? r.match : 'NEW';
-    proposals.push({ slug: item.slug, count: item.count, kind: item.kind, match, confidence: r.confidence, reason: r.reason, shortlist: cands, refBy: item.refBy.slice(0, 5) });
-  } catch (e) {
-    proposals.push({ slug: item.slug, count: item.count, kind: item.kind, match: 'NEW', confidence: 'low', reason: 'ERROR: ' + (e as Error).message, shortlist: cands, refBy: item.refBy.slice(0, 5) });
-  }
-  if (i % 25 === 0) { process.stderr.write(`  ${i}/${all.length}\n`); fs.writeFileSync(OUT, JSON.stringify(proposals, null, 1)); }
 }
-fs.writeFileSync(OUT, JSON.stringify(proposals, null, 1));
-console.log(`proposals: ${proposals.length} -> ${OUT}`);
-const nEW = proposals.filter(p => p.match === 'NEW').length;
-console.log(`  matched existing: ${proposals.length - nEW}  |  NEW (missing): ${nEW}`);

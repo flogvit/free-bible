@@ -18,8 +18,13 @@
 import {readFileSync, writeFileSync, existsSync} from 'fs';
 import {dirname, join, relative} from 'path';
 import {fileURLToPath} from 'url';
-import {COMMON_FLAGS} from './cli.js';
+import {parseArgs, formatHelp, COMMON_FLAGS} from './cli.js';
 import type {FlagSpec} from './cli.js';
+
+const SPEC: Record<string, FlagSpec> = {
+    check: {kind: 'boolean', help: 'ikke skriv — feil hvis docs/skript.md er utdatert'},
+    help: COMMON_FLAGS.help,
+};
 
 const ROOT = join(dirname(fileURLToPath(import.meta.url)), '..');
 
@@ -65,17 +70,56 @@ function extractSpec(src: string): Record<string, FlagSpec> | null {
     const m = src.match(/const SPEC:\s*Record<string,\s*FlagSpec>\s*=\s*(\{[\s\S]*?\n\};)/);
     if (!m) return null;
     try {
-        const fn = new Function('COMMON_FLAGS', `return ${m[1].replace(/;$/, '')}`);
-        return fn(COMMON_FLAGS) as Record<string, FlagSpec>;
-    } catch {
+        // Flere SPEC-er bruker modulens egne konstanter som standardverdi
+        // (`CHECK_LENGTH_DEFAULT`, `getTaskModel('triage')`). Å importere
+        // modulen for å få tak i dem ville kjørt skriptet — se toppkommentaren.
+        // I stedet får ukjente navn en sentinel som også kan kalles, slik at
+        // både `X` og `f(x)` går gjennom. Verdien rapporteres da som «fra
+        // koden» framfor å bli gjettet på.
+        const body = m[1].replace(/;$/, '');
+        // `with` er ikke lov i strict mode, og ES-moduler er alltid strict.
+        // Så: finn de frie navnene i teksten og send dem inn som parametre.
+        const KJENTE = new Set(['COMMON_FLAGS', 'true', 'false', 'null', 'undefined']);
+        // Bare navn som ser ut som modulkonstanter (STORE_BOKSTAVER) eller
+        // getters (`getTaskModel`). Å ta ALLE identifikatorer ville fanget
+        // objektnøklene i SPEC-en selv.
+        const frie = [...new Set(
+            (body.match(/\b[A-Za-z_$][A-Za-z0-9_$]*\b/g) || [])
+                .filter(n => !KJENTE.has(n) && (/^[A-Z][A-Z0-9_]*$/.test(n) || /^get[A-Z]/.test(n))),
+        )];
+        const fn = new Function('COMMON_FLAGS', ...frie, `return ${body}`);
+        return fn(COMMON_FLAGS, ...frie.map(() => UKJENT)) as Record<string, FlagSpec>;
+    } catch (e) {
+        if (process.env.DEBUG_DOCS) console.error("SPEC-eval feilet:", e instanceof Error ? e.message : e);
         return null;
     }
 }
 
+/**
+ * Standardverdi som kommer fra en modulkonstant vi ikke kan lese herfra.
+ *
+ * Symboler må gå gjennom uendret: returnerer man sentinelen for
+ * `Symbol.toPrimitive`, kaster JS «Symbol.toPrimitive returned an object» så
+ * snart verdien skal koersjoneres.
+ */
+const UKJENT: any = new Proxy(function () {} as any, {
+    get: (_t, k) => {
+        if (k === Symbol.toPrimitive) return () => '(fra koden)';
+        if (k === 'toString' || k === Symbol.toStringTag) return () => '(fra koden)';
+        if (typeof k === 'symbol') return undefined;
+        return UKJENT;
+    },
+    apply: () => UKJENT,
+});
+
 function flagTable(spec: Record<string, FlagSpec>): string[] {
     const rows = Object.entries(spec).map(([name, s]) => {
-        const def = s.default !== undefined && s.default !== false ? `\`${s.default}\`` : '—';
-        return `| \`--${name}\` | ${s.kind} | ${def} | ${s.help} |`;
+        const def = s.default === UKJENT ? '*fra koden*'
+            : s.default !== undefined && s.default !== false ? `\`${s.default}\`` : '—';
+        // Står et boolsk flagg PÅ som standard, er det `--no-<flagg>` brukeren
+        // trenger — `--<flagg>` ville vært en no-op.
+        const vist = s.kind === 'boolean' && s.default === true ? `no-${name}` : name;
+        return `| \`--${vist}\` | ${s.kind} | ${def} | ${s.help} |`;
     });
     return ['| flagg | type | standard | betydning |', '|---|---|---|---|', ...rows];
 }
@@ -159,10 +203,21 @@ function build(): string {
     return out.join('\n') + '\n';
 }
 
+const {flags} = parseArgs(process.argv.slice(2), SPEC);
+if (flags.help) {
+    console.log(formatHelp(
+        'generate/make_script_docs.ts',
+        'genererer docs/skript.md fra SPEC-en i hvert skript',
+        SPEC,
+        ['bun generate/make_script_docs.ts', 'bun generate/make_script_docs.ts --check'],
+    ));
+    process.exit(0);
+}
+
 const target = join(ROOT, 'docs', 'skript.md');
 const generated = build();
 
-if (process.argv.includes('--check')) {
+if (flags.check) {
     const current = existsSync(target) ? readFileSync(target, 'utf-8') : '';
     if (current !== generated) {
         console.error(`${relative(ROOT, target)} er utdatert — kjør: bun generate/make_script_docs.ts`);

@@ -23,9 +23,40 @@ import { readFileSync, writeFileSync, mkdirSync } from 'fs';
 import { join, dirname } from 'path';
 import { fileURLToPath } from 'url';
 
+/** Feiltypene `matrix.ts` lager. */
+type Kind = 'OK' | 'GRENSE' | 'AVKORTET' | 'FEILVERS' | 'FLETTET';
+
+/** En rad i `testset.json`, slik `matrix.ts` skriver den. */
+interface Row {
+  tr: string;
+  kind: Kind;
+  sim: number;
+  simZ: number;
+  len: number;
+  A: string;
+  B: string;
+}
+
+/** En rad med en id som holder gjennom skrivingen av dommene. */
+interface Case extends Row {
+  id: string;
+}
+
+/** Et par med leddekningen målt. */
+interface OutRow extends Case {
+  covA: number | null;
+  covB: number | null;
+  /** Settes i en egen runde, etter at hele oversettelsens fordeling er kjent. */
+  zA?: number | null;
+  zB?: number | null;
+}
+
+/** Henter ut avviket som skal terskles, eller `null` når paret ikke ble målt. */
+type Getter = (r: OutRow) => number | null | undefined;
+
 const HERE = dirname(fileURLToPath(import.meta.url));
 const VERDICTS = join(HERE, `verdicts-n${Number(process.argv[2] ?? 6)}`);
-const KINDS = ['OK', 'GRENSE', 'AVKORTET', 'FEILVERS', 'FLETTET'];
+const KINDS: Kind[] = ['OK', 'GRENSE', 'AVKORTET', 'FEILVERS', 'FLETTET'];
 const N_PER = Number(process.argv[2] ?? 6);
 
 /**
@@ -38,9 +69,9 @@ const N_PER = Number(process.argv[2] ?? 6);
  * kontrollfordelingen brer seg ut og terskelen faller. Målt: minLen=15 tok
  * covA-fa1 fra 23 % til 3 % på GRENSE og fra 58 % til 4 % på FEILVERS.
  */
-function clauses(text, minLen = 30) {
+function clauses(text: string, minLen = 30): string[] {
   const parts = text.split(/(?<=[,;:.!?।॥။၊、，；：])\s+/);
-  const out = [];
+  const out: string[] = [];
   for (const p of parts) {
     if (out.length && out[out.length - 1].length < minLen) out[out.length - 1] += ' ' + p;
     else out.push(p);
@@ -58,43 +89,43 @@ function clauses(text, minLen = 30) {
   return [t.slice(0, cut).trim(), t.slice(cut).trim()].filter(s => s.length >= 8);
 }
 
-const embed = async texts => {
+const embed = async (texts: string[]): Promise<Float32Array[]> => {
   const r = await fetch('http://localhost:11434/api/embed', {
     method: 'POST', headers: { 'Content-Type': 'application/json' },
     body: JSON.stringify({ model: 'bge-m3', input: texts, keep_alive: '30m' }),
   });
   if (!r.ok) throw new Error(await r.text());
-  return (await r.json()).embeddings.map(v => {
+  return (await r.json()).embeddings.map((v: number[]) => {
     let s = 0; for (const x of v) s += x * x; s = Math.sqrt(s) || 1;
     return Float32Array.from(v, x => x / s);
   });
 };
-const dot = (a, b) => { let s = 0; for (let i = 0; i < a.length; i++) s += a[i] * b[i]; return s; };
+const dot = (a: Float32Array, b: Float32Array): number => { let s = 0; for (let i = 0; i < a.length; i++) s += a[i] * b[i]; return s; };
 
-const rows = JSON.parse(readFileSync(join(HERE, 'testset.json'), 'utf8'));
-const caseId = r => `${r.tr}|${r.kind}|${r.A.length}|${r.B.length}|${r.B.slice(0, 24)}`;
-const byTr = new Map();
+const rows: Row[] = JSON.parse(readFileSync(join(HERE, 'testset.json'), 'utf8'));
+const caseId = (r: Row): string => `${r.tr}|${r.kind}|${r.A.length}|${r.B.length}|${r.B.slice(0, 24)}`;
+const byTr = new Map<string, Map<Kind, Row[]>>();
 for (const r of rows) {
-  if (!byTr.has(r.tr)) byTr.set(r.tr, new Map(KINDS.map(k => [k, []])));
-  byTr.get(r.tr).get(r.kind)?.push(r);
+  if (!byTr.has(r.tr)) byTr.set(r.tr, new Map<Kind, Row[]>(KINDS.map(k => [k, []])));
+  byTr.get(r.tr)!.get(r.kind)?.push(r);
 }
-const cases = [];
+const cases: Case[] = [];
 for (const [tr, m] of byTr) {
   for (const k of KINDS) {
     if (k === 'AVKORTET') continue;
-    const pool = m.get(k).slice(4);
+    const pool = m.get(k)!.slice(4);
     const step = Math.max(1, Math.floor(pool.length / N_PER));
     for (let i = 0, n = 0; i < pool.length && n < N_PER; i += step, n++) cases.push({ ...pool[i], id: caseId(pool[i]) });
   }
 }
 console.log(`${cases.length} par\n`);
 
-const out = [];
+const out: OutRow[] = [];
 let done = 0, skipped = 0;
 for (const c of cases) {
   const ca = clauses(c.A), cb = clauses(c.B);
   if (ca.length < 2 || !cb.length) { out.push({ ...c, covA: null, covB: null }); skipped++; continue; }
-  let embs;
+  let embs: Float32Array[];
   try { embs = await embed([...ca, ...cb]); } catch { out.push({ ...c, covA: null, covB: null }); continue; }
   const ea = embs.slice(0, ca.length), eb = embs.slice(ca.length);
   out.push({
@@ -107,14 +138,14 @@ for (const c of cases) {
 process.stdout.write('\r' + ' '.repeat(40) + '\r');
 console.log(`${skipped} par uten brukbar oppdeling\n`);
 
-const median = a => { if (!a.length) return 0; const s = [...a].sort((x, y) => x - y); return s.length % 2 ? s[(s.length - 1) / 2] : (s[s.length / 2 - 1] + s[s.length / 2]) / 2; };
-const q = (a, p) => { const s = [...a].sort((x, y) => x - y); return s[Math.min(s.length - 1, Math.max(0, Math.floor(s.length * p)))]; };
+const median = (a: number[]): number => { if (!a.length) return 0; const s = [...a].sort((x, y) => x - y); return s.length % 2 ? s[(s.length - 1) / 2] : (s[s.length / 2 - 1] + s[s.length / 2]) / 2; };
+const q = (a: number[], p: number): number => { const s = [...a].sort((x, y) => x - y); return s[Math.min(s.length - 1, Math.max(0, Math.floor(s.length * p)))]; };
 
-const base = new Map();
+const base = new Map<string, { a: number[]; b: number[] }>();
 for (const r of out) {
   if (r.kind !== 'OK' || r.covA === null) continue;
   if (!base.has(r.tr)) base.set(r.tr, { a: [], b: [] });
-  base.get(r.tr).a.push(r.covA); base.get(r.tr).b.push(r.covB);
+  base.get(r.tr)!.a.push(r.covA); base.get(r.tr)!.b.push(r.covB!);
 }
 for (const r of out) {
   const s = base.get(r.tr);
@@ -124,15 +155,15 @@ for (const r of out) {
 
 mkdirSync(VERDICTS, { recursive: true });
 console.log(`${'variant'.padEnd(18)} ${'falsk alarm'.padStart(12)} ${['GRENSE', 'FEILVERS', 'FLETTET'].map(k => k.padStart(10)).join('')}`);
-for (const [name, get] of [['covA', r => r.zA], ['covB', r => r.zB]]) {
+for (const [name, get] of [['covA', r => r.zA], ['covB', r => r.zB]] as [string, Getter][]) {
   for (const FA of [0.01, 0.05, 0.10]) {
-    const ok = out.filter(r => r.kind === 'OK' && get(r) !== null).map(get);
+    const ok = out.filter(r => r.kind === 'OK' && get(r) !== null).map(get) as number[];
     if (!ok.length) continue;
     const th = q(ok, FA);
-    const verd = out.map(r => ({ id: r.id, tr: r.tr, kind: r.kind, flag: get(r) === null ? null : get(r) < th }));
+    const verd = out.map(r => ({ id: r.id, tr: r.tr, kind: r.kind, flag: get(r) === null ? null : get(r)! < th }));
     const key = `${name}-fa${Math.round(FA * 100)}`;
     writeFileSync(join(VERDICTS, `signal-${key}.json`), JSON.stringify({ config: `signal-${key}`, threshold: th, cases: verd }));
-    const pc = k => { const s = verd.filter(x => x.kind === k && x.flag !== null); return s.length ? `${(100 * s.filter(x => x.flag).length / s.length).toFixed(0)}%` : '-'; };
+    const pc = (k: Kind) => { const s = verd.filter(x => x.kind === k && x.flag !== null); return s.length ? `${(100 * s.filter(x => x.flag).length / s.length).toFixed(0)}%` : '-'; };
     console.log(`${key.padEnd(18)} ${pc('OK').padStart(12)} ${[pc('GRENSE'), pc('FEILVERS'), pc('FLETTET')].map(x => x.padStart(10)).join('')}`);
   }
 }

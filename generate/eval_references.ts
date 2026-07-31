@@ -7,10 +7,55 @@ dotenv.config();
 
 import {callWithRetry} from './llm.js';
 import {getRef} from './lib.js';
+import {parseArgs, formatHelp, COMMON_FLAGS} from './cli.js';
+import type {FlagSpec} from './cli.js';
 import type {Chapter} from '../kvn/src/bible-types.js';
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
+
+/**
+ * Alle flaggene her er innstillinger for rørledningen som evalueres — de sendes
+ * ordrett videre til `references_semantic` og lagres i `eval/results.json` som
+ * `extraArgs`, slik at en kjøring kan gjenskapes. Speilet av SPEC-en der.
+ *
+ * `--help` måtte inn fordi den før var bare enda et gjennomstikksargument:
+ * `bun generate/eval_references.ts --help` startet en full LLM-evaluering (#109).
+ *
+ * `--threshold` er `string` av samme grunn som i `references_semantic`:
+ * kontraktens `number` er `parseInt`, og «0.60» ville blitt 0.
+ */
+const SPEC: Record<string, FlagSpec> = {
+    'build-only': {kind: 'boolean', help: 'bygg bare vektorene, hopp over verifiseringen'},
+    'verify-only': {kind: 'boolean', help: 'verifiser bare (evalueringen sender denne selv)'},
+    'top-k': {kind: 'number', help: 'antall kandidater per vers'},
+    threshold: {kind: 'string', help: 'minste cosinuslikhet (bge-m3 gir beslektede vers 0.60–0.70)'},
+    'neighbor-skip': {kind: 'number', help: 'hopp over vers i samme kapittel innenfor N'},
+    theme: {kind: 'boolean', help: 'la modellen oppsummere verset og søk også på oppsummeringen'},
+    concepts: {kind: 'boolean', help: 'la modellen lage 4 fasettspørsmål og søk på hvert av dem'},
+    resume: {kind: 'boolean', help: 'hopp over vers som alt er kjørt'},
+    'skip-existing': {kind: 'boolean', help: 'hopp over vers som alt har en referansefil'},
+    // Evalueringen setter selv --book/--chapter/--verse per testvers. Sendes de
+    // inn her, havner de BAK og overstyrer testverset — kjøringen måler da noe
+    // annet enn den rapporterer. De står her fordi de ble godtatt før.
+    book: COMMON_FLAGS.book,
+    chapter: COMMON_FLAGS.chapter,
+    verse: COMMON_FLAGS.verse,
+    force: {kind: 'boolean', help: 'bygg vektorene på nytt'},
+    help: COMMON_FLAGS.help,
+};
+
+const HELP_EXAMPLES = [
+    'bun generate/eval_references.ts',
+    'bun generate/eval_references.ts --top-k 10 --threshold 0.78',
+    'bun generate/eval_references.ts --concepts --theme',
+    'EVAL_VERSES=extra bun generate/eval_references.ts',
+    '',
+    'EVAL_VERSES=extra bytter testsettet fra 6 til 4 andre vers.',
+    'Referansefilene som rørledningen rører, skrives tilbake etterpå;',
+    'det eneste som blir liggende er generate/eval/results.json.',
+    'Dommeren er Claude, så en kjøring koster API-kall.',
+];
 
 /** Ett vers evalueringen kjører rørledningen på. */
 interface TestVerse {
@@ -108,7 +153,11 @@ async function runPipelineOnVerse(verse: TestVerse, extraArgs = '') {
     const beforeContent = fs.existsSync(refFile) ? fs.readFileSync(refFile, 'utf-8') : null;
     const beforeKeys = beforeContent ? new Set((JSON.parse(beforeContent) as ReferenceFile).references.map(refKey)) : new Set<string>();
 
-    const cmd = `node references_semantic.mjs --verify-only --book ${verse.bookId} --chapter ${verse.chapterId} --verse ${verse.verseId} ${extraArgs}`;
+    // Var `node references_semantic.mjs`. Fila har hett `.ts` siden da4e64e08,
+    // så `execSync` feilet alltid — og catch-en svelget feilen ned i `output`,
+    // hvorpå `readFileSync(refFile)` kastet for testvers uten referansefil.
+    // Evalueringen kunne altså ikke kjøre i det hele tatt.
+    const cmd = `bun ${path.join(__dirname, 'references_semantic.ts')} --verify-only --book ${verse.bookId} --chapter ${verse.chapterId} --verse ${verse.verseId} ${extraArgs}`;
     const t0 = Date.now();
     let output = '';
     try {
@@ -161,7 +210,25 @@ Vær streng. En score på 4-5 betyr referansen tilfører reell verdi som ikke er
 }
 
 async function main() {
-    const extraArgs = process.argv.slice(2).join(' ');
+    const argv = process.argv.slice(2);
+
+    // Hjelpen skal ut før første API-kall og før rørledningen startes.
+    const {flags} = parseArgs(argv, SPEC);
+    if (flags.help) {
+        console.log(formatHelp(
+            'generate/eval_references.ts',
+            'måler kvaliteten på den semantiske referanserørledningen: kjører references_semantic på et fast testsett, lar Claude gi hver nye referanse 1–5, og skriver oppsummeringen til generate/eval/results.json',
+            SPEC,
+            HELP_EXAMPLES,
+        ));
+        process.exit(0);
+    }
+
+    // Argumentene sendes ordrett videre, ikke gjenskapt fra `flags`. Parsingen
+    // over er der for å avvise skrivefeil før en betalt kjøring starter — en
+    // gjenskapt streng ville i tillegg kunne skrive verdien annerledes enn
+    // `references_semantic` leser den.
+    const extraArgs = argv.join(' ');
     console.log(`Eval over ${TEST_VERSES.length} verses (extra args: "${extraArgs}")`);
     console.log('Judge: Claude (independent of pipeline LLM)\n');
 

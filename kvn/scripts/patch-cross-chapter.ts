@@ -16,12 +16,13 @@ import { join, dirname } from 'path';
 import { fileURLToPath } from 'url';
 import { parseArgs, formatHelp, COMMON_FLAGS } from '../../generate/cli.js';
 import type { FlagSpec } from '../../generate/cli.js';
+import type { UkvnMappingFile } from '../src/ukvn-types.js';
 
 const __dirname = dirname(fileURLToPath(import.meta.url));
 const REPO = join(__dirname, '../..');
 
 const PART_SIZE = 16, MAX_VERSE = 177, M_v = MAX_VERSE * PART_SIZE, MAX_CHAPTER = 151, M_ch = MAX_CHAPTER * M_v;
-const encode = (b, c, v) => b * M_ch + c * M_v + v * PART_SIZE;
+const encode = (b: number, c: number, v: number) => b * M_ch + c * M_v + v * PART_SIZE;
 
 const SPEC: Record<string, FlagSpec> = {
   help: COMMON_FLAGS.help,
@@ -53,7 +54,7 @@ function main() {
   }
   const book = +bookStr;
   const file = join(REPO, 'kvn/mappings', `${mod}.ukvn.json`);
-  const m = JSON.parse(fs.readFileSync(file, 'utf8'));
+  const m = JSON.parse(fs.readFileSync(file, 'utf8')) as UkvnMappingFile;
   const bookName = m.bookNames ? Object.keys(m.bookNames).find(n => m.bookNames[n] === book) || book : book;
 
   let added = 0;
@@ -74,4 +75,7 @@ function main() {
   console.log(`${mod}: added ${added} cross-chapter entries, ${m.map.length} total`);
 }
 
-main();
+// Kjører bare når fila startes direkte, slik at import ikke har bivirkninger (#108).
+if (import.meta.main) {
+    main();
+}

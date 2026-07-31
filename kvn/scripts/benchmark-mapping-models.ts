@@ -323,4 +323,7 @@ If a translation verse contains text NOT in any osmain verse, report it in extra
   }
 }
 
-await main();
+// Kjører bare når fila startes direkte, slik at import ikke har bivirkninger (#108).
+if (import.meta.main) {
+    await main();
+}

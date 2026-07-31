@@ -91,4 +91,7 @@ function main(): void {
   fs.writeFileSync(join(REPO, 'kvn/data/gap-classification.json'), JSON.stringify(report, null, 1) + '\n');
 }
 
-main();
+// Kjører bare når fila startes direkte, slik at import ikke har bivirkninger (#108).
+if (import.meta.main) {
+    main();
+}

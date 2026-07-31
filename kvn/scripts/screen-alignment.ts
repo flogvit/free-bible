@@ -235,4 +235,7 @@ function main(): void {
   if (apply) console.log(`Applisert: ${totApplied} entries`);
 }
 
-main();
+// Kjører bare når fila startes direkte, slik at import ikke har bivirkninger (#108).
+if (import.meta.main) {
+    main();
+}

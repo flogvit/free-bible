@@ -20,6 +20,7 @@ import { join, dirname } from 'path';
 import { fileURLToPath } from 'url';
 import { parseArgs, formatHelp, COMMON_FLAGS } from '../../generate/cli.js';
 import type { FlagSpec } from '../../generate/cli.js';
+import type { Verse } from '../src/bible-types.js';
 
 const __dirname = dirname(fileURLToPath(import.meta.url));
 const base = join(__dirname, '../../generate/bibles_raw');
@@ -42,7 +43,7 @@ const NT_VARIANTS = new Set([
   '44:28:29', '45:16:24',
 ]);
 
-function main() {
+function main(): void {
   // Hjelpesjekken står først: skanningen leser hver eneste kapittelfil under
   // bibles_raw, og `--help` skal ikke koste noe av det.
   const { flags } = parseArgs(process.argv.slice(2), SPEC);
@@ -65,11 +66,11 @@ function main() {
 
   for (const m of targets) {
     const dir = join(base, m);
-    let dupCh = 0, emptyCh = 0, otEmpty = 0, ntVariant = 0; const parse = []; const samples = [];
+    let dupCh = 0, emptyCh = 0, otEmpty = 0, ntVariant = 0; const parse: string[] = []; const samples: string[] = [];
     for (const b of fs.readdirSync(dir).filter(f => /^[0-9]+$/.test(f))) {
       for (const f of fs.readdirSync(join(dir, b)).filter(f => f.endsWith('.json'))) {
         const c = f.replace('.json', '');
-        let v;
+        let v: Verse[];
         try { v = JSON.parse(fs.readFileSync(join(dir, b, f), 'utf8')); }
         catch { parse.push(`${b}/${f}`); continue; }
         const ids = v.map(x => x.verseId);
@@ -98,4 +99,7 @@ function main() {
   process.exit(problems ? 1 : 0);
 }
 
-main();
+// Kjører bare når fila startes direkte, slik at import ikke har bivirkninger (#108).
+if (import.meta.main) {
+    main();
+}

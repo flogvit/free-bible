@@ -25,6 +25,40 @@
 import { readFileSync, writeFileSync, existsSync, readdirSync, mkdirSync } from 'fs';
 import { join, dirname } from 'path';
 import { fileURLToPath } from 'url';
+import type { Chapter } from '../../src/bible-types.js';
+import type { UkvnMappingFile } from '../../src/ukvn-types.js';
+
+/** Ett kandidatpar: osmain-verset (A) mot oversettelsens vers (B). */
+interface Candidate {
+  b: number;
+  c: number;
+  v: number;
+  A: string;
+  B: string;
+  /** Settes først i det mekaniske filteret, av `embed`/`dot`. */
+  sim?: number;
+}
+
+/** Et kandidatpar som har vært gjennom det mekaniske filteret. */
+type ScoredCandidate = Candidate & { sim: number };
+
+/** Et flagget par, tatt vare på så tallet kan ettergås. */
+interface CompetenceExample {
+  ref: string;
+  verdict: string;
+  A: string;
+  B: string;
+}
+
+/** Målingen for én oversettelse, slik den lagres i competence.json. */
+interface CompetenceResult {
+  model: string;
+  n: number;
+  flagged: number;
+  fa: number;
+  simMedian: number;
+  examples: CompetenceExample[];
+}
 
 const HERE = dirname(fileURLToPath(import.meta.url));
 const REPO = join(HERE, '../../..');
@@ -33,49 +67,49 @@ const MAPS = join(REPO, 'kvn/mappings');
 const OUT = join(HERE, 'competence.json');
 
 const argv = process.argv.slice(2);
-const opt = (n, d) => { const i = argv.indexOf(n); return i >= 0 ? argv[i + 1] : d; };
+const opt = <T>(n: string, d: T): string | T => { const i = argv.indexOf(n); return i >= 0 ? argv[i + 1] : d; };
 const N = Number(opt('--n', 40));
 const model = opt('--model', 'gemma4:31b');
 const names = (argv.find(a => !a.startsWith('--')) ?? '').split(',').filter(Boolean);
 if (!names.length) { console.error('oppgi oversettelse(r)'); process.exit(1); }
 
 const PART = 16, MAXV = 177, MAXC = 151, MV = MAXV * PART, MC = MAXC * MV;
-const enc = (b, c, v) => b * MC + c * MV + v * PART;
-const dec = k => { const p = k % PART, r1 = (k - p) / PART, v = r1 % MAXV, r2 = (r1 - v) / MAXV; return { b: (r2 - r2 % MAXC) / MAXC, c: r2 % MAXC, v, p }; };
+const enc = (b: number, c: number, v: number): number => b * MC + c * MV + v * PART;
+const dec = (k: number) => { const p = k % PART, r1 = (k - p) / PART, v = r1 % MAXV, r2 = (r1 - v) / MAXV; return { b: (r2 - r2 % MAXC) / MAXC, c: r2 % MAXC, v, p }; };
 
-function mapperFor(name) {
+function mapperFor(name: string): { toKvn: (t: number) => number } | null {
   const f = join(MAPS, `${name}.ukvn.json`);
   if (!existsSync(f)) return null;
-  const m = JSON.parse(readFileSync(f, 'utf8'));
-  const k2t = new Map(), t2k = new Map();
+  const m = JSON.parse(readFileSync(f, 'utf8')) as UkvnMappingFile;
+  const k2t = new Map<number, number>(), t2k = new Map<number, number>();
   for (const e of m.map) { k2t.set(e.kvnFrom, e.tkvnFrom); if (!t2k.has(e.tkvnFrom)) t2k.set(e.tkvnFrom, e.kvnFrom); }
-  const lift = (map, x) => { const h = map.get(x); if (h !== undefined) return h; const p = x % PART; if (p > 0) { const b = map.get(x - p); if (b !== undefined) return b + p; } return x; };
-  return { toKvn: t => lift(t2k, t) };
+  const lift = (map: Map<number, number>, x: number): number => { const h = map.get(x); if (h !== undefined) return h; const p = x % PART; if (p > 0) { const b = map.get(x - p); if (b !== undefined) return b + p; } return x; };
+  return { toKvn: (t: number) => lift(t2k, t) };
 }
 
-const cache = new Map();
-function chap(tr, b, c) {
+const cache = new Map<string, Chapter | null>();
+function chap(tr: string, b: number, c: number): Chapter | null {
   const key = `${tr}/${b}/${c}`;
   if (!cache.has(key)) {
     const f = join(RAW, tr, String(b), `${c}.json`);
     cache.set(key, existsSync(f) ? JSON.parse(readFileSync(f, 'utf8')) : null);
   }
-  return cache.get(key);
+  return cache.get(key)!;
 }
 
-const embed = async texts => {
+const embed = async (texts: string[]): Promise<Float32Array[]> => {
   const r = await fetch('http://localhost:11434/api/embed', {
     method: 'POST', headers: { 'Content-Type': 'application/json' },
     body: JSON.stringify({ model: 'bge-m3', input: texts, keep_alive: '30m' }),
   });
   if (!r.ok) throw new Error(await r.text());
-  return (await r.json()).embeddings.map(v => { let s = 0; for (const x of v) s += x * x; s = Math.sqrt(s) || 1; return Float32Array.from(v, x => x / s); });
+  return (await r.json()).embeddings.map((v: number[]) => { let s = 0; for (const x of v) s += x * x; s = Math.sqrt(s) || 1; return Float32Array.from(v, x => x / s); });
 };
-const dot = (a, b) => { let s = 0; for (let i = 0; i < a.length; i++) s += a[i] * b[i]; return s; };
-const median = a => { if (!a.length) return 0; const s = [...a].sort((x, y) => x - y); return s[Math.floor(s.length / 2)]; };
+const dot = (a: Float32Array, b: Float32Array): number => { let s = 0; for (let i = 0; i < a.length; i++) s += a[i] * b[i]; return s; };
+const median = (a: number[]): number => { if (!a.length) return 0; const s = [...a].sort((x, y) => x - y); return s[Math.floor(s.length / 2)]; };
 
 const schema = { type: 'object', properties: { verdict: { type: 'string', enum: ['EQUIVALENT', 'B_MISSING', 'B_EXTRA', 'DIFFERENT'] } }, required: ['verdict'] };
-async function judge(A, B) {
+async function judge(A: string, B: string): Promise<string | null> {
   try {
     const r = await fetch('http://localhost:11434/api/generate', {
       method: 'POST', headers: { 'Content-Type': 'application/json' },
@@ -105,14 +139,14 @@ const SPREAD = [[1, 12], [2, 14], [5, 8], [6, 6], [9, 17], [11, 18], [13, 16], [
                 [19, 34], [20, 15], [23, 40], [24, 31], [26, 37], [27, 3], [40, 13], [41, 9],
                 [42, 10], [43, 11], [44, 16], [45, 5], [46, 13], [49, 4], [58, 11], [60, 2], [66, 5]];
 
-const results = existsSync(OUT) ? JSON.parse(readFileSync(OUT, 'utf8')) : {};
+const results: Record<string, CompetenceResult> = existsSync(OUT) ? JSON.parse(readFileSync(OUT, 'utf8')) : {};
 
 for (const tr of names) {
   const mp = mapperFor(tr);
   if (!mp || !existsSync(join(RAW, tr))) { console.log(`${tr}: mangler data eller mapping`); continue; }
 
   // 1. samle kandidatpar via mappingen
-  const cand = [];
+  const cand: Candidate[] = [];
   for (const [b, c] of SPREAD) {
     const t = chap(tr, b, c);
     if (!t) continue;
@@ -132,16 +166,16 @@ for (const tr of names) {
   const lens = cand.map(x => x.B.length / x.A.length);
   const med = median(lens);
   const lo = median(lens.filter(x => x < med)), hi = median(lens.filter(x => x > med));
-  const keep = [];
+  const keep: ScoredCandidate[] = [];
   for (let i = 0; i < cand.length; i += 24) {
     const batch = cand.slice(i, i + 24);
-    let embs;
+    let embs: Float32Array[];
     try { embs = await embed(batch.flatMap(x => [x.A, x.B])); } catch { continue; }
     batch.forEach((x, j) => {
       const ratio = (x.B.length / x.A.length) / med;
       if (ratio < lo / med || ratio > hi / med) return;      // uvanlig lengde → kan være ekte feil
       x.sim = dot(embs[2 * j], embs[2 * j + 1]);
-      keep.push(x);
+      keep.push(x as ScoredCandidate);
     });
   }
   const simMed = median(keep.map(x => x.sim));
@@ -150,7 +184,7 @@ for (const tr of names) {
 
   // 3. døm dem. Alt som flagges her er falsk alarm.
   let n = 0, flagged = 0;
-  const examples = [];
+  const examples: CompetenceExample[] = [];
   for (const x of sample) {
     const v = await judge(x.A, x.B);
     if (!v) continue;

@@ -118,4 +118,7 @@ function main() {
     console.log(`Total: ${tanach.map.length + sblgnt.map.length} vs source ${source.map.length}`);
 }
 
-main();
+// Kjører bare når fila startes direkte, slik at import ikke har bivirkninger (#108).
+if (import.meta.main) {
+    main();
+}

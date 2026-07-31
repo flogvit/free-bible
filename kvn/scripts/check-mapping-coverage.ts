@@ -189,4 +189,7 @@ function main(): void {
   console.log(`\nRapport: kvn/data/mapping-coverage.json`);
 }
 
-main();
+// Kjører bare når fila startes direkte, slik at import ikke har bivirkninger (#108).
+if (import.meta.main) {
+    main();
+}

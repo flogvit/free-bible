@@ -24,16 +24,16 @@ når `credit=true`.
 CONTRIB_TOKEN=… bun scripts/contrib-pull.ts
 
 # 2. Maskinsjekk: strukturvalidering + KVN-oppløsning + target-oppslag:
-bun contrib/check.mjs --target-lookup
+bun contrib/check.ts --target-lookup
 
 # 3. Review — LLM-anbefaling i note, menneske setter status:
-bun contrib/review.mjs --llm
-bun contrib/review.mjs --list
-bun contrib/review.mjs --approve --id <id>
-bun contrib/review.mjs --needs-info --id <id> --note "spørsmål"
+bun contrib/review.ts --llm
+bun contrib/review.ts --list
+bun contrib/review.ts --approve --id <id>
+bun contrib/review.ts --needs-info --id <id> --note "spørsmål"
 
 # 4. Eksporter godkjente til kuratert data (FØR apply):
-bun contrib/export.mjs --lookup        # → generate/verse_works/<workId>.json
+bun contrib/export.ts --lookup        # → generate/verse_works/<workId>.json
 
 # 5. Skriv status tilbake til bibel-DB og arkiver køfilene (i bibel/):
 CONTRIB_TOKEN=… bun scripts/contrib-apply.ts
@@ -43,10 +43,10 @@ bun scripts/import-bible.ts
 deploy/deploy-bibel-data.sh works work_verse_refs
 ```
 
-Approve-vakten i `review.mjs` håndhever skjemaets regel: godkjenning krever at
+Approve-vakten i `review.ts` håndhever skjemaets regel: godkjenning krever at
 hver ref har `kvnFrom`/`kvnTo` og at target har en konkret id (DOI/ISBN/
 OpenLibrary/katalog-id — fritekst/URL alene er ikke nok; for sang holder song_id
-eller tittel, som export.mjs slugger til `sang-<slug>`). `needs_info` sendes
+eller tittel, som export.ts slugger til `sang-<slug>`). `needs_info` sendes
 tilbake til bidragsyteren i frontend-UI-et og blir `pending` igjen når de
 svarer.
 

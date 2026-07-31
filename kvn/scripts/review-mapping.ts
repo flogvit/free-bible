@@ -12,9 +12,35 @@ import { join, dirname } from 'path';
 import { fileURLToPath } from 'url';
 import { parseArgs, formatHelp, COMMON_FLAGS } from '../../generate/cli.js';
 import type { FlagSpec } from '../../generate/cli.js';
+import type { Chapter } from '../src/bible-types.js';
 
 const __dirname = dirname(fileURLToPath(import.meta.url));
 const REPO = join(__dirname, '../..');
+
+/** Formen på kvn/data/mapping-results/<oversettelse>/<bok>-<kapittel>.json,
+ *  slik generate-mapping.ts skriver den (se ollamaSchema der). */
+interface MappingResultEntry {
+  translationVerse: number;
+  osmainVerses: number[];
+  matchType: string;
+  note?: string;
+}
+
+interface MappingExtraContent {
+  translationVerse: number;
+  description: string;
+}
+
+interface MappingResult {
+  mappings?: MappingResultEntry[];
+  extraContent?: MappingExtraContent[];
+}
+
+interface MappingResultFile {
+  key: string;
+  result: MappingResult;
+  needsReview?: boolean;
+}
 
 const SPEC: Record<string, FlagSpec> = {
   help: COMMON_FLAGS.help,
@@ -45,11 +71,11 @@ function main() {
   if (!mod) { console.error('usage: bun kvn/scripts/review-mapping.ts <translation> [book:chapter]'); process.exit(1); }
 
   const resultsDir = join(REPO, 'kvn/data/mapping-results', mod);
-  const verses = (m, b, c) => JSON.parse(fs.readFileSync(join(REPO, 'generate/bibles_raw', m, b, `${c}.json`), 'utf8'));
+  const verses = (m: string, b: string, c: string): Chapter => JSON.parse(fs.readFileSync(join(REPO, 'generate/bibles_raw', m, b, `${c}.json`), 'utf8'));
 
   const files = fs.readdirSync(resultsDir).filter(f => f.endsWith('.json') && !f.startsWith('_'));
   for (const f of files.sort((a, b) => a.localeCompare(b, undefined, { numeric: true }))) {
-    const { key, result, needsReview } = JSON.parse(fs.readFileSync(join(resultsDir, f), 'utf8'));
+    const { key, result, needsReview } = JSON.parse(fs.readFileSync(join(resultsDir, f), 'utf8')) as MappingResultFile;
     const [b, c] = key.split(':');
     if (chapterFilter && key !== chapterFilter) continue;
     // only show non-identity chapters (those with a real mapping)
@@ -57,9 +83,9 @@ function main() {
     const osSet = new Set(os.map(v => v.verseId)), trSet = new Set(tr.map(v => v.verseId));
     const identity = os.length === tr.length && os.every(v => trSet.has(v.verseId));
     if (identity) continue;
-    const map = Object.fromEntries((result.mappings || []).map(m => [m.translationVerse, m]));
+    const map = Object.fromEntries((result.mappings || []).map((m): [number, MappingResultEntry] => [m.translationVerse, m]));
     console.log(`\n===== ${mod} ${key} (osmain ${os.length}v, trans ${tr.length}v)${needsReview ? ' [needsReview]' : ''} =====`);
-    const osById = Object.fromEntries(os.map(v => [v.verseId, v.text]));
+    const osById = Object.fromEntries(os.map((v): [number, string] => [v.verseId, v.text]));
     for (const t of tr) {
       const m = map[t.verseId];
       const to = m ? `-> osm ${m.osmainVerses.join(',')} (${m.matchType})` : '-> (identity)';
@@ -70,4 +96,7 @@ function main() {
   }
 }
 
-main();
+// Kjører bare når fila startes direkte, slik at import ikke har bivirkninger (#108).
+if (import.meta.main) {
+    main();
+}

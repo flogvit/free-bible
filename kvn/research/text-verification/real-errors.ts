@@ -14,24 +14,25 @@
 import { readFileSync, existsSync } from 'fs';
 import { join, dirname } from 'path';
 import { fileURLToPath } from 'url';
+import type { Chapter } from '../../src/bible-types.js';
 
 const HERE = dirname(fileURLToPath(import.meta.url));
 const RAW = join(HERE, '../../../generate/bibles_raw');
-const ch = (m, b, c) => { const f = join(RAW, m, String(b), `${c}.json`); return existsSync(f) ? JSON.parse(readFileSync(f, 'utf8')) : null; };
-const txt = (m, b, c, v) => ch(m, b, c)?.find(x => x.verseId === v)?.text ?? null;
+const ch = (m: string, b: number, c: number): Chapter | null => { const f = join(RAW, m, String(b), `${c}.json`); return existsSync(f) ? JSON.parse(readFileSync(f, 'utf8')) : null; };
+const txt = (m: string, b: number, c: number, v: number): string | null => ch(m, b, c)?.find(x => x.verseId === v)?.text ?? null;
 
-const embed = async t => {
+const embed = async (t: string[]): Promise<Float32Array[]> => {
   const r = await fetch('http://localhost:11434/api/embed', {
     method: 'POST', headers: { 'Content-Type': 'application/json' },
     body: JSON.stringify({ model: 'bge-m3', input: t }),
   });
-  return (await r.json()).embeddings.map(v => { let s = 0; for (const x of v) s += x * x; s = Math.sqrt(s) || 1; return Float32Array.from(v, x => x / s); });
+  return (await r.json() as { embeddings: number[][] }).embeddings.map(v => { let s = 0; for (const x of v) s += x * x; s = Math.sqrt(s) || 1; return Float32Array.from(v, x => x / s); });
 };
-const dot = (a, b) => { let s = 0; for (let i = 0; i < a.length; i++) s += a[i] * b[i]; return s; };
+const dot = (a: Float32Array, b: Float32Array): number => { let s = 0; for (let i = 0; i < a.length; i++) s += a[i] * b[i]; return s; };
 
 const schema = { type: 'object', properties: { verdict: { type: 'string', enum: ['EQUIVALENT', 'B_MISSING', 'B_EXTRA', 'DIFFERENT'] } }, required: ['verdict'] };
 const model = process.argv[2] ?? 'gemma4:31b';
-async function judge(A, B) {
+async function judge(A: string, B: string): Promise<string> {
   try {
     const r = await fetch('http://localhost:11434/api/generate', {
       method: 'POST', headers: { 'Content-Type': 'application/json' },
@@ -62,7 +63,20 @@ DIFFERENT   — not the same passage`,
  *   feil  = osmain-koordinat mappingen ga (galt)
  *   rett  = osmain-koordinat som faktisk svarer til oversettelsens vers
  */
-const FASIT = [
+interface Fasit {
+  tr: string;
+  b: number;
+  c: number;
+  /** versnummeret i oversettelsen */
+  trV: number;
+  feil: number;
+  rett: number;
+  hva: string;
+  /** settes bare når feilen ligger i kapittelnummeret; ellers gjelder `c` */
+  feilKap?: number;
+  rettKap?: number;
+}
+const FASIT: Fasit[] = [
   // albanian: Åp 1-12 ligger ett vers ned. Oversettelsens v_n er osmain v_(n+1).
   ...[[1, 5], [1, 12], [5, 3], [5, 9], [9, 4], [9, 15], [12, 2], [12, 10]]
     .map(([c, v]) => ({ tr: 'albanian', b: 66, c, trV: v, feil: v, rett: v + 1, hva: `albanian Åp ${c},${v} — hele 1-12 ett vers ned` })),
@@ -111,7 +125,7 @@ console.log(`  dommeren lot det RIKTIGE paret være      : ${judgeQuiet}/${n}   
 const OPEN = /[,;:،؛۔॥।၊、，；：]\s*$/;
 
 /** Rangering: er det mapper-utpekte osmain-verset det som likner mest i kapitlet? */
-async function rankFlag(trText, b, c, v) {
+async function rankFlag(trText: string, b: number, c: number, v: number): Promise<boolean | null> {
   const chap = ch('osmain', b, c)?.filter(x => x.text?.length > 20);
   if (!chap || chap.length < 4) return null;
   const i = chap.findIndex(x => x.verseId === v);
@@ -134,10 +148,10 @@ for (const f of FASIT) {
   // lengdesignal trenger oversettelsens egen normal — regnes fra kapitlet
   const trChap = ch(f.tr, f.b, f.c) ?? [];
   const osChap = ch('osmain', f.b, f.feilKap ?? f.c) ?? [];
-  const ratios = trChap.map(x => {
+  const ratios = (trChap.map(x => {
     const o = osChap.find(y => y.verseId === x.verseId);
     return o && x.text?.length > 40 && o.text.length > 40 ? x.text.length / o.text.length : null;
-  }).filter(Boolean).sort((a, b2) => a - b2);
+  }).filter(Boolean) as number[]).sort((a, b2) => a - b2);   // filter(Boolean) fjerner null-ene, men snevrer ikke typen
   const med = ratios.length ? ratios[Math.floor(ratios.length / 2)] : 1;
 
   const dJudge = (await judge(osFeil, tr)) !== 'EQUIVALENT';

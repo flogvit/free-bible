@@ -155,18 +155,26 @@ const BOOK_IDS: Record<string, number> = {
   '1 Tim': 54, '2 Tim': 55, 'Tit': 56, 'Filem': 57, 'Hebr': 58,
   'Jak': 59, '1 Pet': 60, '2 Pet': 61, '1 Joh': 62, '2 Joh': 63,
   '3 Joh': 64, 'Jud': 65, 'Åp': 66,
-  // English names (for nb88/nb94)
+  // English names (for nb88/nb94).
+  //
+  // Tretten av dem staves likt som i den norske blokka over — Neh, Jer, Dan,
+  // Hos, Joel, Nah, Hab, Hag, Mal, Matt, Mark, Rom og Gal — og sto her en gang
+  // til, med SAMME bok-id begge steder. En duplisert nøkkel i en objektliteral
+  // gir bare én egenskap ved kjøring, så de andre oppføringene var død kode:
+  // nøkkelsettet, verdiene og innsettingsrekkefølgen er identiske uten dem.
+  // Rekkefølgen er verdt å merke seg, for BOOK_NAMES under plukker det FØRSTE
+  // navnet per id, og BOOK_IDS skrives rått som `bookNames` i mappingfila.
   'Gen': 1, 'Exod': 2, 'Ex': 2, 'Lev': 3, 'Num': 4, 'Deut': 5,
   'Josh': 6, 'Judg': 7, 'Ruth': 8, '1Sam': 9, '2Sam': 10,
   '1Kgs': 11, '1Kings': 11, '2Kgs': 12, '2Kings': 12,
-  '1Chr': 13, '2Chr': 14, 'Ezra': 15, 'Neh': 16, 'Esth': 17,
+  '1Chr': 13, '2Chr': 14, 'Ezra': 15, 'Esth': 17,
   'Ps': 19, 'Prov': 20, 'Eccl': 21, 'Song': 22,
-  'Isa': 23, 'Jer': 24, 'Lam': 25, 'Ezek': 26, 'Dan': 27,
-  'Hos': 28, 'Joel': 29, 'Amos': 30, 'Obad': 31, 'Jonah': 32,
-  'Mic': 33, 'Nah': 34, 'Hab': 35, 'Zeph': 36, 'Hag': 37,
-  'Zech': 38, 'Mal': 39, 'Matt': 40, 'Mark': 41, 'Luke': 42,
-  'John': 43, 'Acts': 44, 'Rom': 45, '1Cor': 46, '2Cor': 47,
-  'Gal': 48, 'Eph': 49, 'Phil': 50, 'Col': 51,
+  'Isa': 23, 'Lam': 25, 'Ezek': 26,
+  'Amos': 30, 'Obad': 31, 'Jonah': 32,
+  'Mic': 33, 'Zeph': 36,
+  'Zech': 38, 'Luke': 42,
+  'John': 43, 'Acts': 44, '1Cor': 46, '2Cor': 47,
+  'Eph': 49, 'Phil': 50, 'Col': 51,
   '1Thess': 52, '1Thes': 52, '2Thess': 53, '2Thes': 53,
   '1Tim': 54, '2Tim': 55, 'Titus': 56, 'Phlm': 57, 'Philem': 57,
   'Heb': 58, 'Jas': 59, '1Pet': 60, '2Pet': 61,

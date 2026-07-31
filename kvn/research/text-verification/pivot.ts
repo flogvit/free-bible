@@ -12,6 +12,39 @@
  */
 import { readFileSync, existsSync, writeFileSync } from 'fs';
 import { join } from 'path';
+import type { Chapter } from '../../src/bible-types.js';
+
+/** De fire feiltypene B-siden konstrueres med — «OK» er verset uendret. */
+type Kind = 'OK' | 'GRENSE' | 'FEILVERS' | 'FLETTET';
+
+/** kvn ↔ tkvn for én oversettelse. `null` betyr «A-siden er allerede i kvn». */
+interface Mapper {
+  toTkvn: (k: number) => number;
+  toKvn: (t: number) => number;
+}
+
+/** Ett par som dommeren skal vurdere: A-tekst fra hver kilde, mot én B-tekst. */
+interface Case {
+  tr: string;
+  kind: Kind;
+  A: Record<string, string>;
+  B: string;
+}
+
+/** Teller for én feiltype: `n` vurderte par, `f` av dem flagget. */
+interface Count {
+  n: number;
+  f: number;
+}
+
+/** Teller per oversettelse: riktige par (`ok`) og konstruerte feil (`bad`). */
+interface TrCount {
+  ok: number;
+  okF: number;
+  bad: number;
+  badF: number;
+}
+
 const REPO = '/Users/vhanssen/WebstormProjects/flogvit/free-bible';
 const RAW = join(REPO, 'generate/bibles_raw');
 const MAPS = join(REPO, 'kvn/mappings');
@@ -20,47 +53,47 @@ const OUT = '/private/tmp/claude-501/-Users-vhanssen-WebstormProjects-flogvit-fr
 // --- ukvn-koding (speiler kvn/src/ukvn-types.ts) ---
 const PART = 16, MAXV = 177, MAXC = 151;
 const MV = MAXV * PART, MC = MAXC * MV;
-const enc = (b, c, v, p = 0) => b * MC + c * MV + v * PART + p;
+const enc = (b: number, c: number, v: number, p = 0) => b * MC + c * MV + v * PART + p;
 
 /** kvn → oversettelsens tkvn, med delvers-fallback (speiler UkvnMapper.toTkvn) */
-function mapperFor(name) {
+function mapperFor(name: string): Mapper | null {
   const f = join(MAPS, `${name}.ukvn.json`);
   if (!existsSync(f)) return null;
   const m = JSON.parse(readFileSync(f, 'utf8'));
-  const k2t = new Map(), t2k = new Map();
+  const k2t = new Map<number, number>(), t2k = new Map<number, number>();
   for (const e of m.map) {
     k2t.set(e.kvnFrom, e.tkvnFrom);
     if (!t2k.has(e.tkvnFrom)) t2k.set(e.tkvnFrom, e.kvnFrom);
   }
-  const lift = (map, x) => {
+  const lift = (map: Map<number, number>, x: number) => {
     const hit = map.get(x); if (hit !== undefined) return hit;
     const p = x % PART;
     if (p > 0) { const base = map.get(x - p); if (base !== undefined) return base + p; }
     return x;
   };
-  return { toTkvn: k => lift(k2t, k), toKvn: t => lift(t2k, t) };
+  return { toTkvn: (k: number) => lift(k2t, k), toKvn: (t: number) => lift(t2k, t) };
 }
 
-const chCache = new Map();
-function ch(tr, b, c) {
+const chCache = new Map<string, Chapter | null>();
+function ch(tr: string, b: number, c: number): Chapter | null {
   const key = `${tr}/${b}/${c}`;
-  if (chCache.has(key)) return chCache.get(key);
+  if (chCache.has(key)) return chCache.get(key) as Chapter | null;
   const f = join(RAW, tr, String(b), `${c}.json`);
   const v = existsSync(f) ? JSON.parse(readFileSync(f, 'utf8')) : null;
   chCache.set(key, v);
   return v;
 }
-const dec = kvn => {
+const dec = (kvn: number) => {
   const p = kvn % PART, r1 = (kvn - p) / PART, v = r1 % MAXV, r2 = (r1 - v) / MAXV;
   return { book: (r2 - r2 % MAXC) / MAXC, chapter: r2 % MAXC, verse: v, part: p };
 };
-function textAt(tr, kvn) {
+function textAt(tr: string, kvn: number): string | null {
   const { book, chapter, verse } = dec(kvn);
   const c = ch(tr, book, chapter);
   return c?.find(x => x.verseId === verse)?.text ?? null;
 }
 
-function splitLast(text) {
+function splitLast(text: string): string | null {
   const m = [...text.matchAll(/[,;:.!?।॥။၊]\s+/g)];
   if (!m.length) return null;
   const c = m[m.length - 1];
@@ -69,16 +102,16 @@ function splitLast(text) {
   return head;
 }
 
-const SIDES = { osmain: null, bsb: mapperFor('bsb'), osen: mapperFor('osen') };
+const SIDES: Record<string, Mapper | null> = { osmain: null, bsb: mapperFor('bsb'), osen: mapperFor('osen') };
 const TR = ['korean', 'thai', 'burmese', 'vietnamese_vie', 'amharic', 'awadhi', 'bashkir2023', 'swahili1850', 'russian_synodal', 'spanish'];
 const CH = [[1, 22], [2, 20], [9, 17], [19, 23], [40, 5], [41, 4], [42, 15], [44, 2], [45, 8], [66, 7]];
 const N_PER = 5;
 
-const cases = [];
+const cases: Case[] = [];
 for (const tr of TR) {
   const tm = mapperFor(tr);
   if (!tm) { console.log(`${tr}: ingen mapping`); continue; }
-  const picked = { OK: 0, GRENSE: 0, FEILVERS: 0, FLETTET: 0 };
+  const picked: Record<Kind, number> = { OK: 0, GRENSE: 0, FEILVERS: 0, FLETTET: 0 };
   for (const [b, c] of CH) {
     const verses = ch(tr, b, c);
     if (!verses) continue;
@@ -86,7 +119,7 @@ for (const tr of TR) {
       if (!v.text || v.text.length < 40) continue;
       const kvn = tm.toKvn(enc(b, c, v.verseId));
       // A-tekst fra alle tre kilder; hopp over hvis en av dem mangler
-      const A = {};
+      const A: Record<string, string> = {};
       let ok = true;
       for (const [name, mp] of Object.entries(SIDES)) {
         const t = textAt(name, mp ? mp.toTkvn(kvn) : kvn);
@@ -97,7 +130,7 @@ for (const tr of TR) {
 
       const next = verses.find(x => x.verseId === v.verseId + 1)?.text;
       const head = splitLast(v.text);
-      const variants = [['OK', v.text]];
+      const variants: [Kind, string][] = [['OK', v.text]];
       if (head) variants.push(['GRENSE', head]);
       if (next) { variants.push(['FEILVERS', next]); variants.push(['FLETTET', v.text + ' ' + next]); }
       for (const [kind, B] of variants) {
@@ -113,7 +146,7 @@ writeFileSync(`${OUT}/pivot-cases.json`, JSON.stringify(cases));
 
 // ------------------------------------------------------------------- dommeren
 const schema = { type: 'object', properties: { verdict: { type: 'string', enum: ['EQUIVALENT', 'B_MISSING', 'B_EXTRA', 'DIFFERENT'] } }, required: ['verdict'] };
-const build = (A, B) => `A and B are two renderings of the same Bible verse in different languages.
+const build = (A: string, B: string) => `A and B are two renderings of the same Bible verse in different languages.
 
 A: ${A}
 B: ${B}
@@ -125,7 +158,7 @@ B_MISSING   — B leaves out something A states
 B_EXTRA     — B states something beyond A
 DIFFERENT   — not the same passage`;
 
-async function ask(model, A, B) {
+async function ask(model: string, A: string, B: string): Promise<boolean | null> {
   try {
     const r = await fetch('http://localhost:11434/api/generate', {
       method: 'POST', headers: { 'Content-Type': 'application/json' },
@@ -136,14 +169,14 @@ async function ask(model, A, B) {
 }
 
 const model = process.argv[2] ?? 'gemma4:31b';
-const KINDS = ['OK', 'GRENSE', 'FEILVERS', 'FLETTET'];
+const KINDS: Kind[] = ['OK', 'GRENSE', 'FEILVERS', 'FLETTET'];
 console.log(`=== ${model} ===`);
 console.log(`${'A-side'.padEnd(10)} ${'falsk alarm'.padStart(12)} ${['GRENSE', 'FEILVERS', 'FLETTET'].map(k => k.padStart(10)).join('')}`);
 
-const perSide = {};
+const perSide: Record<string, { per: Record<Kind, Count>; perTr: Record<string, TrCount> }> = {};
 for (const side of Object.keys(SIDES)) {
-  const per = Object.fromEntries(KINDS.map(k => [k, { n: 0, f: 0 }]));
-  const perTr = {};
+  const per = Object.fromEntries(KINDS.map(k => [k, { n: 0, f: 0 }])) as Record<Kind, Count>;
+  const perTr: Record<string, TrCount> = {};
   for (const c of cases) {
     const f = await ask(model, c.A[side], c.B);
     if (f === null) continue;
@@ -153,8 +186,8 @@ for (const side of Object.keys(SIDES)) {
     else { perTr[c.tr].bad++; if (f) perTr[c.tr].badF++; }
   }
   perSide[side] = { per, perTr };
-  const pc = k => `${(100 * per[k].f / (per[k].n || 1)).toFixed(0)}%`.padStart(10);
-  console.log(`${side.padEnd(10)} ${((100 * per.OK.f / (per.OK.n || 1)).toFixed(1) + '%').padStart(12)} ${['GRENSE', 'FEILVERS', 'FLETTET'].map(pc).join('')}`);
+  const pc = (k: Kind) => `${(100 * per[k].f / (per[k].n || 1)).toFixed(0)}%`.padStart(10);
+  console.log(`${side.padEnd(10)} ${((100 * per.OK.f / (per.OK.n || 1)).toFixed(1) + '%').padStart(12)} ${(['GRENSE', 'FEILVERS', 'FLETTET'] as const).map(pc).join('')}`);
 }
 
 console.log(`\nper oversettelse — falsk alarm / fanget:`);

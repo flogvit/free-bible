@@ -15,30 +15,58 @@ import { readFileSync, writeFileSync, existsSync, mkdirSync, readdirSync } from 
 import { join, dirname } from 'path';
 import { fileURLToPath } from 'url';
 
+/** Feilklassene i testsettet — fasiten hver rad er merket med. */
+type Kind = 'OK' | 'GRENSE' | 'AVKORTET' | 'FEILVERS' | 'FLETTET';
+
+/** En rad i testset.json: paret A (osmain) mot B (oversettelsen), med signalene. */
+interface TestRow {
+  tr: string;
+  kind: Kind;
+  sim: number;
+  simZ: number;
+  len: number;
+  A: string;
+  B: string;
+}
+
+/** En rad plukket ut til kjøringen, med den stabile id-en fra `caseId`. */
+interface TestCase extends TestRow {
+  id: string;
+}
+
+/** Én dom, slik den lagres per par i verdicts-fila. */
+interface VerdictRow {
+  id: string;
+  tr: string;
+  kind: Kind;
+  flag: boolean | null;
+  verdict: string | null;
+}
+
 const HERE = dirname(fileURLToPath(import.meta.url));
 const VERDICTS = join(HERE, `verdicts-n${Number((process.argv.indexOf('--n')>=0)?process.argv[process.argv.indexOf('--n')+1]:6)}`);
-const KINDS = ['OK', 'GRENSE', 'AVKORTET', 'FEILVERS', 'FLETTET'];
+const KINDS: Kind[] = ['OK', 'GRENSE', 'AVKORTET', 'FEILVERS', 'FLETTET'];
 
 const args = process.argv.slice(2);
-const opt = (n, d) => { const i = args.indexOf(n); return i >= 0 ? args[i + 1] : d; };
-const has = n => args.includes(n);
+const opt = <T>(n: string, d: T): string | T => { const i = args.indexOf(n); return i >= 0 ? args[i + 1] : d; };
+const has = (n: string): boolean => args.includes(n);
 
 /** Stabil id per par, så ulike kjøringer kan sammenliknes rad for rad. */
-const caseId = c => `${c.tr}|${c.kind}|${c.A.length}|${c.B.length}|${c.B.slice(0, 24)}`;
+const caseId = (c: TestRow): string => `${c.tr}|${c.kind}|${c.A.length}|${c.B.length}|${c.B.slice(0, 24)}`;
 
-function loadCases() {
-  const rows = JSON.parse(readFileSync(join(HERE, 'testset.json'), 'utf8'));
-  const byTr = new Map();
+function loadCases(): TestCase[] {
+  const rows = JSON.parse(readFileSync(join(HERE, 'testset.json'), 'utf8')) as TestRow[];
+  const byTr = new Map<string, Map<Kind, TestRow[]>>();
   for (const r of rows) {
-    if (!byTr.has(r.tr)) byTr.set(r.tr, new Map(KINDS.map(k => [k, []])));
-    byTr.get(r.tr).get(r.kind)?.push(r);
+    if (!byTr.has(r.tr)) byTr.set(r.tr, new Map(KINDS.map(k => [k, []] as [Kind, TestRow[]])));
+    byTr.get(r.tr)!.get(r.kind)?.push(r);
   }
   const N = Number(opt('--n', 6));
-  const out = [];
+  const out: TestCase[] = [];
   for (const [tr, m] of byTr) {
     for (const k of KINDS) {
       if (k === 'AVKORTET') continue;           // identisk B-tekst med GRENSE
-      const pool = m.get(k).slice(4);           // 0-3 er reservert til kalibreringseksempler
+      const pool = m.get(k)!.slice(4);          // 0-3 er reservert til kalibreringseksempler
       const step = Math.max(1, Math.floor(pool.length / N));
       for (let i = 0, n = 0; i < pool.length && n < N; i += step, n++) {
         const c = { tr, kind: k, A: pool[i].A, B: pool[i].B, sim: pool[i].sim, simZ: pool[i].simZ, len: pool[i].len };
@@ -55,7 +83,7 @@ mkdirSync(VERDICTS, { recursive: true });
 // ------------------------------------------------- mekaniske signaler (ingen LLM)
 if (has('--signals')) {
   const ok = cases.filter(c => c.kind === 'OK');
-  const q = (arr, p) => { const s = [...arr].sort((a, b) => a - b); return s[Math.floor(s.length * p)]; };
+  const q = (arr: number[], p: number): number => { const s = [...arr].sort((a, b) => a - b); return s[Math.floor(s.length * p)]; };
   // terskler settes på kontrollgruppa, ikke på feilene
   const th = {
     simZ: q(ok.map(c => c.simZ), 0.02),
@@ -63,10 +91,10 @@ if (has('--signals')) {
     lenHi: q(ok.map(c => c.len), 0.98),
   };
   for (const [name, fn] of [
-    ['simZ', c => c.simZ < th.simZ],
-    ['lenLo', c => c.len < th.lenLo],
-    ['lenHi', c => c.len > th.lenHi],
-  ]) {
+    ['simZ', (c: TestCase) => c.simZ < th.simZ],
+    ['lenLo', (c: TestCase) => c.len < th.lenLo],
+    ['lenHi', (c: TestCase) => c.len > th.lenHi],
+  ] as [string, (c: TestCase) => boolean][]) {
     const rows = cases.map(c => ({ id: c.id, tr: c.tr, kind: c.kind, flag: fn(c) }));
     writeFileSync(join(VERDICTS, `signal-${name}.json`), JSON.stringify({ config: `signal-${name}`, thresholds: th, cases: rows }));
     const fa = 100 * rows.filter(r => r.kind === 'OK' && r.flag).length / rows.filter(r => r.kind === 'OK').length;
@@ -106,13 +134,13 @@ DIFFERENT   — not the same passage`;
 //              oversettelsens egen normal. De er nesten sikkert riktige, og
 //              valget krever ingen fasit. Dette er varianten som kan brukes.
 const SHOTS_AUTO = has('--shots-auto');
-let shotsFor = new Map();
+let shotsFor = new Map<string, string>();
 if (SHOTS_AUTO) {
-  const rows = JSON.parse(readFileSync(join(HERE, 'testset.json'), 'utf8'));
-  const g = new Map();
+  const rows = JSON.parse(readFileSync(join(HERE, 'testset.json'), 'utf8')) as TestRow[];
+  const g = new Map<string, TestRow[]>();
   for (const r of rows) {
     if (!g.has(r.tr)) g.set(r.tr, []);
-    g.get(r.tr).push(r);
+    g.get(r.tr)!.push(r);
   }
   for (const [tr, all] of g) {
     // kandidatene er ALLE par, uten å vite hvilke som er riktige
@@ -130,16 +158,17 @@ if (SHOTS_AUTO) {
   }
 }
 if (SHOTS) {
-  const rows = JSON.parse(readFileSync(join(HERE, 'testset.json'), 'utf8'));
-  const g = new Map();
+  const rows = JSON.parse(readFileSync(join(HERE, 'testset.json'), 'utf8')) as TestRow[];
+  // Bare OK og FEILVERS får en bøtte; `?.` under er det som stille dropper resten.
+  const g = new Map<string, Partial<Record<Kind, TestRow[]>>>();
   for (const r of rows) {
     if (!g.has(r.tr)) g.set(r.tr, { OK: [], FEILVERS: [] });
-    g.get(r.tr)[r.kind]?.push(r);
+    g.get(r.tr)![r.kind]?.push(r);
   }
   for (const [tr, m] of g) {
-    if (m.OK.length < 4 || m.FEILVERS.length < 1) continue;
-    shotsFor.set(tr, [...m.OK.slice(0, 3).map(x => `A: ${x.A}\nB: ${x.B}\n→ EQUIVALENT`),
-                      `A: ${m.FEILVERS[0].A}\nB: ${m.FEILVERS[0].B}\n→ DIFFERENT`].join('\n\n'));
+    if (m.OK!.length < 4 || m.FEILVERS!.length < 1) continue;
+    shotsFor.set(tr, [...m.OK!.slice(0, 3).map(x => `A: ${x.A}\nB: ${x.B}\n→ EQUIVALENT`),
+                      `A: ${m.FEILVERS![0].A}\nB: ${m.FEILVERS![0].B}\n→ DIFFERENT`].join('\n\n'));
   }
 }
 
@@ -161,7 +190,7 @@ Ignore wording, idiom, sentence structure and length — those differ between
 languages. Answer false only if a statement, action or detail present in A is
 absent from B, or if B contains a statement absent from A.`;
 
-function buildPrompt(c) {
+function buildPrompt(c: TestCase): string {
   const head = `A and B are two renderings of the same Bible verse in different languages.`;
   const pair = `A: ${c.A}\nB: ${c.B}`;
   const rub = PROMPT === 'YN'
@@ -188,7 +217,7 @@ ${rub}`;
 // tilfeldig utslagsgivende formulering er det ikke.
 const SWAP = has('--swap');
 
-async function ask(c) {
+async function ask(c: TestCase): Promise<boolean | null> {
   if (SWAP) {
     const fwd = await ask1({ ...c });
     if (fwd !== true) return fwd;                       // ikke flagget den ene veien → ferdig
@@ -197,9 +226,9 @@ async function ask(c) {
   return ask1(c);
 }
 
-let lastVerdict = null;
+let lastVerdict: string | null = null;
 
-async function ask1(c) {
+async function ask1(c: TestCase): Promise<boolean | null> {
   lastVerdict = null;
   try {
     const r = await fetch('http://localhost:11434/api/generate', {
@@ -233,7 +262,7 @@ const outFile = join(VERDICTS, `${name}.json`);
 if (existsSync(outFile) && !has('--force')) { console.log(`${name} finnes — bruk --force`); process.exit(0); }
 
 console.log(`${name}: ${cases.length} par`);
-const rows = [];
+const rows: VerdictRow[] = [];
 const t0 = Date.now();
 for (let i = 0; i < cases.length; i++) {
   const flag = await ask(cases[i]);
@@ -246,6 +275,6 @@ for (let i = 0; i < cases.length; i++) {
 process.stdout.write('\r' + ' '.repeat(78) + '\r');
 writeFileSync(outFile, JSON.stringify({ config: name, model, prompt: PROMPT, think: THINK, pivot: PIVOT, shots: SHOTS, secs: (Date.now() - t0) / 1000 / cases.length, cases: rows }));
 
-const nk = k => rows.filter(r => r.kind === k && r.flag !== null);
-const pc = k => { const s = nk(k); return s.length ? `${(100 * s.filter(r => r.flag).length / s.length).toFixed(0)}%` : '-'; };
+const nk = (k: Kind): VerdictRow[] => rows.filter(r => r.kind === k && r.flag !== null);
+const pc = (k: Kind): string => { const s = nk(k); return s.length ? `${(100 * s.filter(r => r.flag).length / s.length).toFixed(0)}%` : '-'; };
 console.log(`${name}  falsk alarm ${pc('OK')}   GRENSE ${pc('GRENSE')}  FEILVERS ${pc('FEILVERS')}  FLETTET ${pc('FLETTET')}  ${((Date.now() - t0) / 1000 / cases.length).toFixed(1)}s/par`);

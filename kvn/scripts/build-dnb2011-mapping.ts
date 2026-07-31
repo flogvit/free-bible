@@ -396,4 +396,7 @@ function main(): void {
   console.log(`\nMapping written to ${OUT_FILE}`);
 }
 
-main();
+// Kjører bare når fila startes direkte, slik at import ikke har bivirkninger (#108).
+if (import.meta.main) {
+    main();
+}

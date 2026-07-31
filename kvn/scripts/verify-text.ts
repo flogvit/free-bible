@@ -702,4 +702,7 @@ async function main() {
   console.log(`\n${totC} kapitler · ${totV} vers · ${totS} uendret · ${((Date.now() - t0) / 3600e3).toFixed(2)} t`);
 }
 
-await main();
+// Kjører bare når fila startes direkte, slik at import ikke har bivirkninger (#108).
+if (import.meta.main) {
+    await main();
+}

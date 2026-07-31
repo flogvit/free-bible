@@ -18,25 +18,53 @@ import { readFileSync, writeFileSync, mkdirSync } from 'fs';
 import { join, dirname } from 'path';
 import { fileURLToPath } from 'url';
 
+/** Feiltypene som er lagt inn i testsettet; OK er kontrollgruppa. */
+type Kind = 'OK' | 'GRENSE' | 'AVKORTET' | 'FEILVERS' | 'FLETTET';
+
+/** En rad i testset.json: osmain-verset A mot oversettelsens vers B. */
+interface TestRow {
+  tr: string;
+  kind: Kind;
+  sim?: number;
+  simZ?: number;
+  len?: number;
+  A: string;
+  B: string;
+}
+
+/** Et utvalgt par, med id slik at verdicts kan slås tilbake mot testsettet. */
+interface CaseRow extends TestRow {
+  id: string;
+}
+
+/** Resultatraden: paret pluss tilbakeoversettelsen og målingene på den. */
+interface OutRow extends CaseRow {
+  bt?: string | null;
+  sim2: number | null;
+  cov2: number | null;
+  zs?: number | null;
+  zc?: number | null;
+}
+
 const HERE = dirname(fileURLToPath(import.meta.url));
 const VERDICTS = join(HERE, `verdicts-n${Number(process.argv.includes('--n') ? process.argv[process.argv.indexOf('--n')+1] : 6)}`);
-const KINDS = ['OK', 'GRENSE', 'AVKORTET', 'FEILVERS', 'FLETTET'];
+const KINDS: Kind[] = ['OK', 'GRENSE', 'AVKORTET', 'FEILVERS', 'FLETTET'];
 const argv = process.argv.slice(2);
 const model = argv.find(a => !a.startsWith('--')) ?? 'gemma4:31b';
 const N_PER = Number(argv.includes('--n') ? argv[argv.indexOf('--n') + 1] : 6);
 
-const rows = JSON.parse(readFileSync(join(HERE, 'testset.json'), 'utf8'));
-const caseId = r => `${r.tr}|${r.kind}|${r.A.length}|${r.B.length}|${r.B.slice(0, 24)}`;
-const byTr = new Map();
+const rows: TestRow[] = JSON.parse(readFileSync(join(HERE, 'testset.json'), 'utf8'));
+const caseId = (r: TestRow): string => `${r.tr}|${r.kind}|${r.A.length}|${r.B.length}|${r.B.slice(0, 24)}`;
+const byTr = new Map<string, Map<Kind, TestRow[]>>();
 for (const r of rows) {
-  if (!byTr.has(r.tr)) byTr.set(r.tr, new Map(KINDS.map(k => [k, []])));
-  byTr.get(r.tr).get(r.kind)?.push(r);
+  if (!byTr.has(r.tr)) byTr.set(r.tr, new Map(KINDS.map(k => [k, []] as [Kind, TestRow[]])));
+  byTr.get(r.tr)!.get(r.kind)?.push(r);
 }
-const cases = [];
+const cases: CaseRow[] = [];
 for (const [tr, m] of byTr) {
   for (const k of KINDS) {
     if (k === 'AVKORTET') continue;
-    const pool = m.get(k).slice(4);
+    const pool = m.get(k)!.slice(4);
     const step = Math.max(1, Math.floor(pool.length / N_PER));
     for (let i = 0, n = 0; i < pool.length && n < N_PER; i += step, n++) cases.push({ ...pool[i], id: caseId(pool[i]) });
   }
@@ -44,7 +72,7 @@ for (const [tr, m] of byTr) {
 console.log(`${cases.length} par, tilbakeoversetter med ${model}\n`);
 
 const schema = { type: 'object', properties: { norwegian: { type: 'string' } }, required: ['norwegian'] };
-async function backtranslate(text) {
+async function backtranslate(text: string): Promise<string | null> {
   try {
     const r = await fetch('http://localhost:11434/api/generate', {
       method: 'POST', headers: { 'Content-Type': 'application/json' },
@@ -66,18 +94,18 @@ ${text}`,
   } catch { return null; }
 }
 
-const embed = async t => {
+const embed = async (t: string[]): Promise<Float32Array[]> => {
   const r = await fetch('http://localhost:11434/api/embed', {
     method: 'POST', headers: { 'Content-Type': 'application/json' },
     body: JSON.stringify({ model: 'bge-m3', input: t }),
   });
-  return (await r.json()).embeddings.map(v => { let s = 0; for (const x of v) s += x * x; s = Math.sqrt(s) || 1; return Float32Array.from(v, x => x / s); });
+  return (await r.json()).embeddings.map((v: number[]) => { let s = 0; for (const x of v) s += x * x; s = Math.sqrt(s) || 1; return Float32Array.from(v, x => x / s); });
 };
-const dot = (a, b) => { let s = 0; for (let i = 0; i < a.length; i++) s += a[i] * b[i]; return s; };
+const dot = (a: Float32Array, b: Float32Array): number => { let s = 0; for (let i = 0; i < a.length; i++) s += a[i] * b[i]; return s; };
 
-function clauses(text, minLen = 15) {
+function clauses(text: string, minLen = 15): string[] {
   const parts = text.split(/(?<=[,;:.!?])\s+/);
-  const out = [];
+  const out: string[] = [];
   for (const p of parts) {
     if (out.length && out[out.length - 1].length < minLen) out[out.length - 1] += ' ' + p;
     else out.push(p);
@@ -86,7 +114,7 @@ function clauses(text, minLen = 15) {
   return out.map(s => s.trim()).filter(s => s.length >= 8);
 }
 
-const out = [];
+const out: OutRow[] = [];
 const t0 = Date.now();
 for (let i = 0; i < cases.length; i++) {
   const c = cases[i];
@@ -95,7 +123,7 @@ for (let i = 0; i < cases.length; i++) {
   const ca = clauses(c.A), cb = clauses(bt);
   const embs = await embed([c.A, bt, ...ca, ...cb]);
   const sim2 = dot(embs[0], embs[1]);
-  let cov2 = null;
+  let cov2: number | null = null;
   if (ca.length && cb.length) {
     const ea = embs.slice(2, 2 + ca.length), eb = embs.slice(2 + ca.length);
     cov2 = Math.min(...ea.map(a => Math.max(...eb.map(b => dot(a, b)))));
@@ -109,14 +137,14 @@ for (let i = 0; i < cases.length; i++) {
 process.stdout.write('\r' + ' '.repeat(78) + '\r');
 
 // normalisér per oversettelse, terskel på kontrollgruppa
-const median = a => { if (!a.length) return 0; const s = [...a].sort((x, y) => x - y); return s.length % 2 ? s[(s.length - 1) / 2] : (s[s.length / 2 - 1] + s[s.length / 2]) / 2; };
-const q = (a, p) => { const s = [...a].sort((x, y) => x - y); return s[Math.min(s.length - 1, Math.max(0, Math.floor(s.length * p)))]; };
-const base = new Map();
+const median = (a: number[]): number => { if (!a.length) return 0; const s = [...a].sort((x, y) => x - y); return s.length % 2 ? s[(s.length - 1) / 2] : (s[s.length / 2 - 1] + s[s.length / 2]) / 2; };
+const q = (a: number[], p: number): number => { const s = [...a].sort((x, y) => x - y); return s[Math.min(s.length - 1, Math.max(0, Math.floor(s.length * p)))]; };
+const base = new Map<string, { s: number[]; c: number[] }>();
 for (const r of out) {
   if (r.kind !== 'OK' || r.sim2 === null) continue;
   if (!base.has(r.tr)) base.set(r.tr, { s: [], c: [] });
-  base.get(r.tr).s.push(r.sim2);
-  if (r.cov2 !== null) base.get(r.tr).c.push(r.cov2);
+  base.get(r.tr)!.s.push(r.sim2);
+  if (r.cov2 !== null) base.get(r.tr)!.c.push(r.cov2);
 }
 for (const r of out) {
   const b = base.get(r.tr);
@@ -135,15 +163,16 @@ writeFileSync(join(HERE, 'backtranslations.json'), JSON.stringify(
 ));
 
 console.log(`${'variant'.padEnd(22)} ${'falsk alarm'.padStart(12)} ${['GRENSE', 'FEILVERS', 'FLETTET'].map(k => k.padStart(10)).join('')}`);
-for (const [name, get] of [['bt-sim', r => r.zs], ['bt-dekning', r => r.zc]]) {
+for (const [name, get] of [['bt-sim', (r: OutRow) => r.zs], ['bt-dekning', (r: OutRow) => r.zc]] as [string, (r: OutRow) => number | null][]) {
   for (const FA of [0.01, 0.05]) {
-    const ok = out.filter(r => r.kind === 'OK' && get(r) !== null).map(get);
+    // filteret over garanterer at ingen er null
+    const ok = out.filter(r => r.kind === 'OK' && get(r) !== null).map(get) as number[];
     if (!ok.length) continue;
     const th = q(ok, FA);
-    const verd = out.map(r => ({ id: r.id, tr: r.tr, kind: r.kind, flag: get(r) === null ? null : get(r) < th }));
+    const verd = out.map(r => ({ id: r.id, tr: r.tr, kind: r.kind, flag: get(r) === null ? null : get(r)! < th }));
     const key = `${name}-fa${Math.round(FA * 100)}`;
     writeFileSync(join(VERDICTS, `signal-${key}.json`), JSON.stringify({ config: `signal-${key}`, model, threshold: th, cases: verd }));
-    const pc = k => { const s = verd.filter(x => x.kind === k && x.flag !== null); return s.length ? `${(100 * s.filter(x => x.flag).length / s.length).toFixed(0)}%` : '-'; };
+    const pc = (k: Kind): string => { const s = verd.filter(x => x.kind === k && x.flag !== null); return s.length ? `${(100 * s.filter(x => x.flag).length / s.length).toFixed(0)}%` : '-'; };
     console.log(`${key.padEnd(22)} ${pc('OK').padStart(12)} ${[pc('GRENSE'), pc('FEILVERS'), pc('FLETTET')].map(x => x.padStart(10)).join('')}`);
   }
 }
@@ -152,5 +181,5 @@ console.log(`\neksempel på tilbakeoversettelse:`);
 for (const r of out.filter(r => r.bt && r.kind === 'OK').slice(0, 2)) {
   console.log(`  osmain : ${r.A.slice(0, 100)}`);
   console.log(`  ${r.tr} : ${r.B.slice(0, 100)}`);
-  console.log(`  tilbake: ${r.bt.slice(0, 100)}\n`);
+  console.log(`  tilbake: ${r.bt!.slice(0, 100)}\n`);
 }
