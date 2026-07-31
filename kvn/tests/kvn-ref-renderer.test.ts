@@ -1,4 +1,4 @@
-import { describe, it, expect } from 'vitest';
+import { describe, it, expect } from 'bun:test';
 import { renderRefMarkup, renderAllRefMarkups } from '../src/ref-renderer.js';
 
 describe('renderRefMarkup', () => {

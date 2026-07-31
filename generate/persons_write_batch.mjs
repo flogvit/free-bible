@@ -1,4 +1,4 @@
-#!/usr/bin/env node
+#!/usr/bin/env bun
 // Write hand-authored person profiles. Reads a JSON array of person objects and
 // writes each to persons/nb/<id>.json. Skips ids that already exist (never
 // overwrites). Validates required fields and that id matches filename.

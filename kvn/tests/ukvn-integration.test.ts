@@ -1,4 +1,4 @@
-import { describe, it, expect } from 'vitest';
+import { describe, it, expect } from 'bun:test';
 import { UkvnMapper } from '../src/ukvn-mapper.js';
 import { CrossMapper } from '../src/ukvn-cross-mapper.js';
 import { loadUkvnMapping, listUkvnMappings } from '../src/ukvn-loader.js';

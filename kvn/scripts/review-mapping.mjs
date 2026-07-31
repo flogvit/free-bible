@@ -1,4 +1,4 @@
-#!/usr/bin/env node
+#!/usr/bin/env bun
 /**
  * Review helper: for a translation, print each real (non-identity) chapter with
  * osmain text, translation text, and the proposed mapping from its result file,

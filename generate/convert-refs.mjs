@@ -1,4 +1,4 @@
-#!/usr/bin/env node
+#!/usr/bin/env bun
 /**
  * convert-refs.mjs — Convert plain-text Bible references to [ref:...|...] markup.
  *

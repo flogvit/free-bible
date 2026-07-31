@@ -1,4 +1,4 @@
-import { describe, it, expect } from 'vitest';
+import { describe, it, expect } from 'bun:test';
 import { sliceVersePart } from '../src/ukvn-text-slicer.js';
 
 describe('sliceVersePart', () => {

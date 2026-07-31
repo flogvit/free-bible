@@ -1,4 +1,4 @@
-#!/usr/bin/env node
+#!/usr/bin/env bun
 // Maskinsjekk av contrib-køfiler (contrib/queue/*.json, free-bible-contrib/1):
 //
 //   1. strukturvalidering mot kontrakten (håndrullet — ingen ajv-avhengighet)

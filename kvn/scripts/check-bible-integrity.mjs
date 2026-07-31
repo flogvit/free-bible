@@ -1,4 +1,4 @@
-#!/usr/bin/env node
+#!/usr/bin/env bun
 /**
  * Data-integrity check for translations in generate/bibles_raw/.
  *

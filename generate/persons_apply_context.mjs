@@ -1,4 +1,4 @@
-#!/usr/bin/env node
+#!/usr/bin/env bun
 // Apply AUDITED per-context reconciliations. Each entry is
 // { referrer, field, slug, match }. In the referrer's file, the exact slug is
 // replaced with `match` in the given relation field only. Entries with

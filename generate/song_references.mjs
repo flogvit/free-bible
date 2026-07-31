@@ -1,4 +1,4 @@
-#!/usr/bin/env node
+#!/usr/bin/env bun
 
 /**
  * Map songs to Bible verse references using LLM.
@@ -136,44 +136,130 @@ function parseReference(ref) {
 
 // ── LLM calls ────────────────────────────────────────────────────────────────
 
+// Hvor lenge modellen får være STILLE før vi antar at den har stanset. Dette er
+// ikke en frist for hele kallet: en frist på forespørselen dreper et kall som
+// gjør framgang, og det var nettopp feilen — 300 s delt på målte 8,6 t/s ga et
+// tak på ~2 500 tokens, mens en sang med ni referanser genererer 1 800+. Alt
+// arbeidet ble kastet i det sekundet fristen løp ut. Tida MELLOM tokens sier det
+// vi faktisk vil vite: lever den, eller har den stoppet?
+const IDLE_TIMEOUT_MS = Number(process.env.SONG_IDLE_TIMEOUT_MS) || 60000;
+
+/**
+ * Les en strømmet ollama-respons og sett sammen `response`-bitene.
+ *
+ * @param stream    async iterable av Uint8Array/streng — ollama sender ett
+ *                  JSON-objekt per linje.
+ * @param idleMs    stillhet som skal til før kallet regnes som stanset.
+ * @param abort     kalles når det skjer, så forespørselen faktisk avbrytes.
+ */
+/**
+ * @param {AsyncIterable<Uint8Array>} stream
+ * @param {{ idleMs?: number, abort?: () => void }} [opts]
+ * @returns {Promise<string>}
+ */
+export async function readOllamaStream(stream, { idleMs = IDLE_TIMEOUT_MS, abort } = {}) {
+    const decoder = new TextDecoder();
+    const iterator = stream[Symbol.asyncIterator]();
+    let out = '';
+    let rest = '';
+
+    // Vi kappløper hver enkelt bit mot fristen selv, framfor å sette en timer og
+    // stole på at abort() river strømmen. Gjør den ikke det — en tjener som
+    // ignorerer avbruddet, en strøm som ikke er en fetch-body — ville vi ellers
+    // ventet for alltid på neste bit som aldri kommer.
+    const stall = Symbol('stall');
+    let timer = null;
+    const deadline = () => new Promise(resolve => {
+        timer = setTimeout(() => resolve(stall), idleMs);
+    });
+
+    try {
+        for (;;) {
+            // Når fristen vinner kappløpet, avvises next() like etter fordi vi
+            // avbryter strømmen. Uten denne catch-en er det en ubehandlet
+            // avvisning, og Node avslutter prosessen på dem.
+            const next = iterator.next();
+            next.catch(() => {});
+
+            const step = await Promise.race([next, deadline()]);
+            clearTimeout(timer);
+
+            if (step === stall) {
+                abort?.();
+                iterator.return?.().catch(() => {});
+                throw new Error(`Ollama sendte ingen tokens på ${idleMs / 1000} s — antatt stanset`);
+            }
+            if (step.done) break;
+
+            const chunk = step.value;
+            rest += typeof chunk === 'string' ? chunk : decoder.decode(chunk, { stream: true });
+            const lines = rest.split('\n');
+            rest = lines.pop() ?? '';
+            for (const line of lines) {
+                if (!line.trim()) continue;
+                let obj;
+                try { obj = JSON.parse(line); } catch { continue; }
+                if (obj.error) throw new Error(`ollama: ${obj.error}`);
+                if (obj.response) out += obj.response;
+            }
+        }
+    } finally {
+        clearTimeout(timer);
+    }
+
+    return out;
+}
+
+/** Hent JSON ut av et svar som kan være pakket i ```json-blokker. */
+export function extractJson(text) {
+    const trimmed = (text || '').trim();
+    try { return JSON.parse(trimmed); } catch {}
+
+    const fenced = trimmed.match(/```(?:json)?\s*([\s\S]*?)```/);
+    if (fenced) {
+        try { return JSON.parse(fenced[1].trim()); } catch {}
+    }
+    const bare = trimmed.match(/[\[{][\s\S]*[\]}]/);
+    if (bare) {
+        try { return JSON.parse(bare[0]); } catch {}
+    }
+    return null;
+}
+
 async function callOllama(prompt, retries = 2) {
     const config = getOllamaConfig(ollamaModel);
     const body = {
         model: ollamaModel,
         prompt: config.noThinkPrefix + prompt,
-        stream: false,
+        stream: true,
         options: { ...config.options, num_predict: 8192 },
     };
     if (config.openSchema) body.format = 'json';
     if (config.thinkParam) body.think = false;
 
+    let lastError;
     for (let attempt = 0; attempt <= retries; attempt++) {
-        const response = await fetch(`${ollamaBaseUrl}/api/generate`, {
-            method: 'POST',
-            headers: { 'Content-Type': 'application/json' },
-            body: JSON.stringify(body),
-            signal: AbortSignal.timeout(300000), // 5 min timeout
-        });
-        const data = await response.json();
-        const text = (data.response || '').trim();
-
-        // Try to extract JSON from response (may be wrapped in ```json blocks)
+        // fetch ligger INNE i try-en. Lå den utenfor, gjaldt `retries` bare når
+        // svaret ikke lot seg parse, og hvert eneste tidsavbrudd ble fatalt.
         try {
-            return JSON.parse(text);
-        } catch {}
+            const controller = new AbortController();
+            const response = await fetch(`${ollamaBaseUrl}/api/generate`, {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify(body),
+                signal: controller.signal,
+            });
+            if (!response.ok) throw new Error(`ollama svarte ${response.status}`);
 
-        const m = text.match(/```(?:json)?\s*([\s\S]*?)```/);
-        if (m) {
-            try { return JSON.parse(m[1].trim()); } catch {}
+            const text = await readOllamaStream(response.body, { abort: () => controller.abort() });
+            const parsed = extractJson(text);
+            if (parsed) return parsed;
+            lastError = new Error(`Could not parse JSON from LLM response: ${text.substring(0, 200)}`);
+        } catch (err) {
+            lastError = err;
         }
-        const m2 = text.match(/[\[{][\s\S]*[\]}]/);
-        if (m2) {
-            try { return JSON.parse(m2[0]); } catch {}
-        }
-
-        if (attempt < retries) continue;
-        throw new Error(`Could not parse JSON from LLM response: ${text.substring(0, 200)}`);
     }
+    throw lastError;
 }
 
 /** Normalize step 1 result: ensure { references: [...], themes: [...] } */
@@ -263,10 +349,11 @@ async function step1_identifyReferences(song) {
     const prompt = `Du er en bibelkyndig. Analyser denne ${lang} salmen/sangen og identifiser bibelversreferanser.
 
 For hver referanse, oppgi:
-- "line": den relevante linjen/linjene fra sangen
 - "verse": bibelreferansen i formatet "Bok Kapittel:Vers" eller "Bok Kapittel:VersStart-VersSlutt"
 - "confidence": "high" (direkte sitat/allusjon), "medium" (tematisk), eller "low" (mulig)
-- "reason": kort forklaring på norsk av sammenhengen
+- "reason": én kort setning på norsk om sammenhengen
+
+Ikke gjenta linjer fra sangen i svaret — vi har teksten.
 
 Bruk standard boknavn (f.eks. "Matt 6:28", "Sal 23:1", "Jes 40:6", "Åp 21:4").
 
@@ -279,7 +366,7 @@ Tekst:
 ${text}
 
 Svar med JSON i dette eksakte formatet:
-{"references":[{"line":"eksempel linje","verse":"Sal 23:1","confidence":"high","reason":"forklaring"}],"themes":["tema1","tema2"]}`;
+{"references":[{"verse":"Sal 23:1","confidence":"high","reason":"forklaring"}],"themes":["tema1","tema2"]}`;
 
     const raw = await callOllama(prompt);
     return normalizeStep1(raw);
@@ -324,7 +411,6 @@ async function step2_verifyReferences(song, step1Result) {
                 error: 'Could not parse reference',
                 confidence: ref.confidence,
                 reason: ref.reason,
-                line: ref.line,
             });
             continue;
         }
@@ -343,7 +429,6 @@ async function step2_verifyReferences(song, step1Result) {
             found: verses.length > 0,
             confidence: ref.confidence,
             reason: ref.reason,
-            line: ref.line,
         });
     }
 
@@ -516,7 +601,11 @@ async function main() {
     console.log(`Done. Processed: ${processed}, Errors: ${errors}`);
 }
 
-main().catch(err => {
-    console.error(err);
-    process.exit(1);
-});
+// Bare når fila kjøres direkte — testene importerer readOllamaStream herfra, og
+// uten denne vakten ville en import startet hele jobben.
+if (process.argv[1] && path.resolve(process.argv[1]) === fileURLToPath(import.meta.url)) {
+    main().catch(err => {
+        console.error(err);
+        process.exit(1);
+    });
+}

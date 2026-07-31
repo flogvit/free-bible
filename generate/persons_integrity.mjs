@@ -1,4 +1,4 @@
-#!/usr/bin/env node
+#!/usr/bin/env bun
 // Read-only integrity validator for the persons/ dataset.
 //
 // Guarantees the data foundation the website relies on:

@@ -1,4 +1,4 @@
-import { describe, it, expect } from 'vitest';
+import { describe, it, expect } from 'bun:test';
 import { loadKvnMapping } from '../src/load-mapping.js';
 import { decode } from '../src/types.js';
 import type { KvnMappingFile } from '../src/types.js';

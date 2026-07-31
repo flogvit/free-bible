@@ -1,4 +1,4 @@
-#!/usr/bin/env node
+#!/usr/bin/env bun
 // Eksporterer GODKJENTE contrib-innsendinger til kuratert data:
 // generate/verse_works/<workId>.json — språknøytral, flat katalog (som
 // generate/mappings/). bibel-importøren leser denne inn i works/

@@ -1,4 +1,4 @@
-#!/usr/bin/env node
+#!/usr/bin/env bun
 // Per-context reconciliation for AMBIGUOUS bare names (jakob, josef, maria, ...)
 // where the correct target depends on WHO references the slug. For each
 // (referrer, field, slug) it gives the LLM the referrer's full context + the

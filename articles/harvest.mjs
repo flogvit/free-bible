@@ -1,4 +1,4 @@
-#!/usr/bin/env node
+#!/usr/bin/env bun
 /**
  * Open-access article harvester for the article→verse linking project (issue #15).
  *

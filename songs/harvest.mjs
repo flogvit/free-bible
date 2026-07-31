@@ -1,4 +1,4 @@
-#!/usr/bin/env node
+#!/usr/bin/env bun
 /**
  * PD song/hymn harvester for the song→verse linking project.
  * Same layout rule as articles/ and books/: scripts TRACKED here, data

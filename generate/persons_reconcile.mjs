@@ -1,4 +1,4 @@
-#!/usr/bin/env node
+#!/usr/bin/env bun
 // First-pass reconciliation proposer. For each unresolved reference slug it asks
 // the local LLM to pick the canonical person id from a similarity shortlist, or
 // say NEW (genuinely missing). Output is a PROPOSAL to be audited by a human —

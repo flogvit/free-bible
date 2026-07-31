@@ -1,4 +1,4 @@
-#!/usr/bin/env node
+#!/usr/bin/env bun
 // Apply an AUDITED reconciliation map to persons data. Deterministic and narrow:
 // it only rewrites exact slug matches inside the known relation fields
 // (family.father/mother/spouse, family.siblings[], family.children[],

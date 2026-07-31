@@ -1,4 +1,4 @@
-#!/usr/bin/env node
+#!/usr/bin/env bun
 /**
  * Unified reading plan generator
  * Generates all reading plans from configuration

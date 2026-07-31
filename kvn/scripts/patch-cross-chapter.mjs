@@ -1,4 +1,4 @@
-#!/usr/bin/env node
+#!/usr/bin/env bun
 /**
  * Add same-book, adjacent-chapter cross-chapter entries to a built .ukvn.json.
  * The per-chapter generate-mapping build can only emit within-chapter entries;

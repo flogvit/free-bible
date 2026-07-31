@@ -1,4 +1,4 @@
-#!/usr/bin/env node
+#!/usr/bin/env bun
 // Review av contrib-køfiler. Mennesket setter status; LLM-en gir bare en
 // anbefaling i review.note (skjemaets regel: alt menneske-reviewes).
 //

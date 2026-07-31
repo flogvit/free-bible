@@ -1,0 +1,17 @@
+{
+  "compilerOptions": {
+    "target": "ES2022",
+    "module": "ES2022",
+    "moduleResolution": "bundler",
+    "strict": true,
+    "esModuleInterop": true,
+    "skipLibCheck": true,
+    "resolveJsonModule": true,
+    "allowJs": true,
+    "checkJs": false,
+    "noEmit": true,
+    "types": ["bun"]
+  },
+  "include": ["generate/**/*.ts", "articles/**/*.ts", "books/**/*.ts", "contrib/**/*.ts", "songs/**/*.ts"],
+  "exclude": ["node_modules", "kvn", "external", "generate/bibles_raw"]
+}

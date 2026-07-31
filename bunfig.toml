@@ -1,0 +1,5 @@
+[test]
+# Uten en eksplisitt rot vandrer bun test hele treet, inkludert
+# external/ (21 G) og generate/bibles_raw/. node --test slapp unna fordi
+# skallet ekspanderte globben foerst.
+root = "generate"

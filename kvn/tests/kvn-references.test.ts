@@ -1,4 +1,4 @@
-import { describe, it, expect } from 'vitest';
+import { describe, it, expect } from 'bun:test';
 import { KVNConverter, parseRef, refsToKvn } from '../src/kvn.js';
 import { loadKvnMapping } from '../src/load-mapping.js';
 import { verseExists, getMaxVerse, getChapterCount } from '../src/load-bible.js';

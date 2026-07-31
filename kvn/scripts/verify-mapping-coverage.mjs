@@ -1,4 +1,4 @@
-#!/usr/bin/env node
+#!/usr/bin/env bun
 /**
  * Structural coverage check for a translation's mapping result files.
  * For each non-identity chapter, reconstruct which osmain verse each translation

@@ -1,13 +1,13 @@
 /**
- * node --test generate/
+ * bun test
  *
  * Dekker isClosedSchema, som avgjør om en modell uten `openSchema` kan adopteres.
  * Skjemaene under er de faktiske i repoet: JUDGE_SCHEMA er det gemma4 ble målt
  * til 64/64 gyldige svar på, REFERENCE_PROOFREAD_SCHEMA er det den degraderte på
  * og som ga opphav til flagget.
  */
-import test from 'node:test';
-import assert from 'node:assert/strict';
+import { test, expect } from 'bun:test';
+
 import {isClosedSchema} from './llm.js';
 
 // kvn/scripts/verify-text.ts
@@ -57,40 +57,40 @@ const TRIAGE_SCHEMA = {
 };
 
 test('lukket: enum binder verdien', () => {
-    assert.equal(isClosedSchema(JUDGE_SCHEMA), true);
+    expect(isClosedSchema(JUDGE_SCHEMA)).toBe(true);
 });
 
 test('lukket: tall og boolske verdier', () => {
-    assert.equal(isClosedSchema({type: 'object', properties: {hit: {type: 'boolean'}}}), true);
-    assert.equal(isClosedSchema({type: 'object', properties: {n: {type: 'integer'}}}), true);
+    expect(isClosedSchema({type: 'object', properties: {hit: {type: 'boolean'}}})).toBe(true);
+    expect(isClosedSchema({type: 'object', properties: {n: {type: 'integer'}}})).toBe(true);
 });
 
 test('lukket: array med maxItems og enum-elementer', () => {
-    assert.equal(isClosedSchema({
+    expect(isClosedSchema({
         type: 'object',
         properties: {tags: {type: 'array', maxItems: 3, items: {type: 'string', enum: ['a', 'b']}}},
-    }), true);
+    })).toBe(true);
 });
 
 test('åpen: fritekstfelt', () => {
-    assert.equal(isClosedSchema({type: 'object', properties: {note: {type: 'string'}}}), false);
+    expect(isClosedSchema({type: 'object', properties: {note: {type: 'string'}}})).toBe(false);
 });
 
 test('åpen: ubegrenset array, selv med enum-elementer', () => {
-    assert.equal(isClosedSchema({
+    expect(isClosedSchema({
         type: 'object',
         properties: {tags: {type: 'array', items: {type: 'string', enum: ['a', 'b']}}},
-    }), false);
+    })).toBe(false);
 });
 
 test('åpen: skjemaene flagget faktisk kom fra', () => {
-    assert.equal(isClosedSchema(REFERENCE_PROOFREAD_SCHEMA), false);
-    assert.equal(isClosedSchema(TRIAGE_SCHEMA), false);
+    expect(isClosedSchema(REFERENCE_PROOFREAD_SCHEMA)).toBe(false);
+    expect(isClosedSchema(TRIAGE_SCHEMA)).toBe(false);
 });
 
 test('åpen ved tvil: ukjent eller tomt', () => {
-    assert.equal(isClosedSchema(undefined), false);
-    assert.equal(isClosedSchema({}), false);
-    assert.equal(isClosedSchema({type: 'object'}), false);
-    assert.equal(isClosedSchema({type: 'object', additionalProperties: true, properties: {n: {type: 'integer'}}}), false);
+    expect(isClosedSchema(undefined)).toBe(false);
+    expect(isClosedSchema({})).toBe(false);
+    expect(isClosedSchema({type: 'object'})).toBe(false);
+    expect(isClosedSchema({type: 'object', additionalProperties: true, properties: {n: {type: 'integer'}}})).toBe(false);
 });

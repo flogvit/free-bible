@@ -1,4 +1,4 @@
-#!/usr/bin/env node
+#!/usr/bin/env bun
 /**
  * GPU-free pre-pass for KVN mapping generation.
  *

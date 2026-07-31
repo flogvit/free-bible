@@ -1,4 +1,4 @@
-#!/usr/bin/env node
+#!/usr/bin/env bun
 /**
  * Public-domain book harvester for the book→verse linking project (issue #16).
  * Same style as articles/harvest.mjs: tracked scripts here, data GITIGNORED in

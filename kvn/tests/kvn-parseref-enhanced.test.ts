@@ -1,4 +1,4 @@
-import { describe, it, expect } from 'vitest';
+import { describe, it, expect } from 'bun:test';
 import { KVNConverter, parseRef, refsToKvn, kvnToRefs, formatRefs } from '../src/kvn.js';
 import { loadKvnMapping, listMappingSystems } from '../src/load-mapping.js';
 import { getMaxVerse } from '../src/load-bible.js';

@@ -1,4 +1,4 @@
-#!/usr/bin/env node
+#!/usr/bin/env bun
 // Read-only audit of reconciliation proposals. Surfaces the entries a human must
 // eyeball (semantic merges, low confidence) and groups the NEW slugs by phonetic
 // key so genuinely-missing persons can be created once (not duplicated).

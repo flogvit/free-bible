@@ -1,4 +1,4 @@
-#!/usr/bin/env node
+#!/usr/bin/env bun
 /**
  * Generate KVN mappings for every open-licensed translation listed in
  * docs/open-bibles/inventory.json, using qwen3.5:122b via generate-mapping.ts
