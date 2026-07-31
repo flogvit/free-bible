@@ -55,7 +55,7 @@ interface Options {
  * Flaggkontrakten for dette skriptet (#51, #52, #53).
  *
  * `--local` sto ikke i den gamle bruksmeldingen selv om parseren tok imot det,
- * og docs/lokale-jobber.md måtte skrive det opp separat: uten flagget går hele
+ * og docs/running-jobs.md måtte skrive det opp separat: uten flagget går hele
  * jobben på Claude API. Nå står det i `--help` som alle de andre.
  */
 const SPEC: Record<string, FlagSpec> = {
