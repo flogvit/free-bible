@@ -4,7 +4,7 @@
 // (referrer, field, slug) it gives the LLM the referrer's full context + the
 // candidate persons and asks which one is meant. Writes proposals only.
 //
-// Usage: node persons-reconcile-context.mjs <worklist.json> <out.json>
+// Usage: bun generate/persons-reconcile-context.ts <worklist.json> <out.json>
 import * as fs from 'fs';
 import path from 'path';
 import { fileURLToPath } from 'url';
@@ -145,7 +145,7 @@ async function main(): Promise<void> {
 
   const WORKLIST = positional[0];
   const OUT = positional[1];
-  if (!WORKLIST || !OUT) { console.error('usage: node persons-reconcile-context.mjs <worklist.json> <out.json>'); process.exit(1); }
+  if (!WORKLIST || !OUT) { console.error('usage: bun generate/persons-reconcile-context.ts <worklist.json> <out.json>'); process.exit(1); }
 
   const byId = loadPersons();
   const catalog = new Set(byId.keys());

@@ -151,7 +151,7 @@ function main(): void {
     }
     if (missingMeta.length) {
         console.log(`\nNo meta.json, left out of the index (${missingMeta.length}): ${missingMeta.join(', ')}`);
-        console.log('Run: node build-translations-meta.mjs');
+        console.log('Run: bun generate/build-translations-meta.ts');
     }
 }
 

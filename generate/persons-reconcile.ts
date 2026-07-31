@@ -4,7 +4,7 @@
 // say NEW (genuinely missing). Output is a PROPOSAL to be audited by a human —
 // it writes nothing to persons data.
 //
-// Usage: node persons-reconcile.mjs <worklist.json> <out-proposals.json>
+// Usage: bun generate/persons-reconcile.ts <worklist.json> <out-proposals.json>
 import * as fs from 'fs';
 import path from 'path';
 import { fileURLToPath } from 'url';
@@ -182,7 +182,7 @@ async function main(): Promise<void> {
 
   const WORKLIST = positional[0];
   const OUT = positional[1];
-  if (!WORKLIST || !OUT) { console.error('usage: node persons-reconcile.mjs <worklist.json> <out.json>'); process.exit(1); }
+  if (!WORKLIST || !OUT) { console.error('usage: bun generate/persons-reconcile.ts <worklist.json> <out.json>'); process.exit(1); }
 
   const catalog = loadCatalog();
   const catBase = catalogKeys(catalog);

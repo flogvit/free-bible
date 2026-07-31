@@ -152,7 +152,7 @@ async function runPipelineOnVerse(verse: TestVerse, extraArgs = '') {
     const beforeContent = fs.existsSync(refFile) ? fs.readFileSync(refFile, 'utf-8') : null;
     const beforeKeys = beforeContent ? new Set((JSON.parse(beforeContent) as ReferenceFile).references.map(refKey)) : new Set<string>();
 
-    // Var `node references-semantic.mjs`. Fila har hett `.ts` siden da4e64e08,
+    // Var `node references_semantic.mjs`. Fila har hett `.ts` siden da4e64e08,
     // så `execSync` feilet alltid — og catch-en svelget feilen ned i `output`,
     // hvorpå `readFileSync(refFile)` kastet for testvers uten referansefil.
     // Evalueringen kunne altså ikke kjøre i det hele tatt.

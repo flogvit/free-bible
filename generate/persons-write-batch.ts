@@ -3,7 +3,7 @@
 // writes each to persons/nb/<id>.json. Skips ids that already exist (never
 // overwrites). Validates required fields and that id matches filename.
 //
-// Usage: node persons-write-batch.mjs <batch.json>
+// Usage: bun generate/persons-write-batch.ts <batch.json>
 import * as fs from 'fs';
 import path from 'path';
 import { fileURLToPath } from 'url';
@@ -44,7 +44,7 @@ function main(): void {
   }
 
   const BATCH = positional[0];
-  if (!BATCH) { console.error('usage: node persons-write-batch.mjs <batch.json>'); process.exit(1); }
+  if (!BATCH) { console.error('usage: bun generate/persons-write-batch.ts <batch.json>'); process.exit(1); }
 
   const arr = JSON.parse(fs.readFileSync(BATCH, 'utf-8'));
 
