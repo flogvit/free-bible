@@ -168,13 +168,17 @@ Under `kvn/scripts/`: `run-verification.sh` (entry point), `check-mapping-covera
 
 Known stale, do not trust without reading:
 
-- `kvn/scripts/build-osnb-mapping.ts` — **produces an identity mapping**, i.e. wipes the
-  real one. Its comparison function `loadRawBible` is defined but never called. It does not
-  use `osmain`, which is the canonical reference it would need. Back up before running.
 - `generate/word4word/` is only correct for `tanach` and `sblgnt`. The `osnb1` directory
   was wrong and was deleted.
 
-Local models: `constants.js` → `taskModels` sets a **preferred** model per task;
+`kvn/scripts/build-osnb-mapping.ts` was **deleted** 2026-07-31 (#58). The warning here
+understated it: it did not produce an identity mapping, it wrote a different *schema*
+entirely — `books[book][chapter] = {max, missing}` instead of the `map: [...]` entry list
+`UkvnMapper` reads — so running it would have made every osnb lookup fail, not merely
+return the wrong verse. `kvn/mappings/osnb.ukvn.json` was checked and is intact: 1 640
+entries, none of them identity. The live generator is `generate-mapping.ts`.
+
+Local models: `constants.ts` → `taskModels` sets a **preferred** model per task;
 `OLLAMA_MODEL` pins it. Small models handle per-verse yes/no work so the machine stays
 usable; the large one is for overnight jobs. `gemma*` is held back from **open** schemas
 only — unbounded arrays, free-text fields (`openSchema: false`). It handles closed ones
@@ -212,6 +216,11 @@ the valuable class: Hebrew morphology, cross-verse term consistency. Determinist
   runs before `bun test` in both `package.json`.
 - `bun test` needs an explicit root (`bunfig.toml`); without it the discovery walks
   `external/` and `generate/bibles_raw/`.
+- **As few npm packages as possible — ideally none.** If a dependency would only save a
+  few lines, write those lines instead. Bun covers a lot of what used to need a package
+  (`.env`, test runner, TypeScript with no build step). The exception is a real client for
+  an external API: `@anthropic-ai/sdk` stays, because hand-rolling the Messages API with
+  retry and streaming is not "a small thing".
 - Never `cp`/`mv` over an existing file without asking.
 - Data fixes: prefer fixing them by hand over writing a script — scripts against bible data
   have repeatedly caused errors here.
