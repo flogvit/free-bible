@@ -40,7 +40,7 @@ names are written out in full with language suffix — `kvn/mappings/<translatio
 matches the translation name exactly; old short names (`dnb2024`, `nb1978`) resolve via
 `LEGACY_ALIASES` in `kvn/src/ukvn-types.ts`.
 
-Style lives in `constants.js` → `bibleStyles`, not in a CLI default. A forgotten `--style`
+Style lives in `constants.ts` → `bibleStyles`, not in a CLI default. A forgotten `--style`
 would silently produce text against the wrong brief, and the style is not recorded in the
 verse data, so the mistake could not be found afterwards.
 
@@ -85,7 +85,7 @@ the translation's own language. Most other enums are English (`type`, `severity`
 
 ## Pipeline
 
-`generate/bible.mjs` — translate, then proofread. Two proofread modes:
+`generate/bible.ts` — translate, then proofread. Two proofread modes:
 
 - **`--batch`** sends the chapter in a few calls and gets back only the findings, in a
   feedback loop until the chapter scores `--min-score` or the rounds run out. **This is
@@ -159,9 +159,9 @@ runs it, which model, how much remains (measured, not estimated), and whether it
 local run, and re-measure with the commands at the bottom rather than trusting the numbers.
 
 
-Live and used regularly: `bible.mjs`, `translate.ts`, `references.mjs`,
-`references-semantic.mjs`, `chapter-tags.mjs`, `bible-persons.mjs`, `build-translations-index.mjs`
-(regenerate after any `meta.json`/`license.json` change), `glossary.mjs`, `triage.mjs`.
+Live and used regularly: `bible.ts`, `translate.ts`, `references.ts`,
+`references-semantic.ts`, `chapter-tags.ts`, `bible-persons.ts`, `build-translations-index.ts`
+(regenerate after any `meta.json`/`license.json` change), `glossary.ts`, `triage.ts`.
 
 Under `kvn/scripts/`: `run-verification.sh` (entry point), `check-mapping-coverage.ts`,
 `verify-text.ts`, `verify-text-report.ts` — the text verification of the mappings.
@@ -183,17 +183,17 @@ Local models: `constants.ts` → `taskModels` sets a **preferred** model per tas
 usable; the large one is for overnight jobs. `gemma*` is held back from **open** schemas
 only — unbounded arrays, free-text fields (`openSchema: false`). It handles closed ones
 fine: measured 64/64 valid answers on the four-value enum in `verify-text.ts`, catching
-more than it did without the schema. `isClosedSchema` in `llm.js` draws the line, and
+more than it did without the schema. `isClosedSchema` in `llm.ts` draws the line, and
 `bun test` covers it.
 
 **Two jobs must never want different models at once.** Ollama keeps one runner, and
 qwen3.5:122b (81 GB) plus qwen3.5:27b (17 GB) do not fit side by side on 128 GB — so it
 reloads on *every call*: measured 17–19 s for the 122b runner, ~6 s for 27b, with a cold
 prompt cache each time (`task 0` in `~/.ollama/logs/server.log`). That is what made
-`translate.ts` take 179 s per file on 2026-07-30 while `important-words-chapter.mjs` ran
+`translate.ts` take 179 s per file on 2026-07-30 while `important-words-chapter.ts` ran
 alongside it.
 
-`resolveLocalModel` in `llm.js` handles this: it asks `/api/ps` what is already loaded and
+`resolveLocalModel` in `llm.ts` handles this: it asks `/api/ps` what is already loaded and
 uses that model instead when it ranks at or above the task's preference in
 `localModelRanking`. Both jobs then share one runner and the requests queue. The rule only
 ever upgrades, so a tag job cannot drag a translation down onto 27b, and a model that isn't
@@ -201,7 +201,7 @@ in `localModelRanking` is never adopted. `OLLAMA_NO_ADOPT=1` turns just the adop
 
 Pass `task:` to `callWithRetry`/`call`/`callOllamaRaw`, not `model:` — `model:` is a pin and
 skips adoption. Scripts that pass neither get `ollamaModel` as before. Scripts that record
-which model ran (`triage.mjs`, `song-references.mjs`) must resolve it themselves via
+which model ran (`triage.ts`, `song-references.ts`) must resolve it themselves via
 `resolveLocalModel` and store *that* value.
 
 **Local triage does not work for judging translation quality** — measured recall against
@@ -216,6 +216,13 @@ the valuable class: Hebrew morphology, cross-verse term consistency. Determinist
   runs before `bun test` in both `package.json`.
 - `bun test` needs an explicit root (`bunfig.toml`); without it the discovery walks
   `external/` and `generate/bibles_raw/`.
+- **Every filename the docs name must exist**, and `generate/docs-filnavn.test.ts`
+  enforces it. The `.mjs`→`.ts` rename left CLAUDE.md pointing at nine files that were
+  gone and `docs/lokale-jobber.md` at nine more — including `bun triage.mjs osnb`, a
+  command an operator is meant to paste. The guard is structural (any backticked
+  filename must resolve, whatever the suffix), so the next rename is caught too.
+  Deliberate non-existence — a deleted script, a quoted error message — goes in
+  `BEVISST_BORTE` with a reason.
 - **As few npm packages as possible — ideally none.** If a dependency would only save a
   few lines, write those lines instead. Bun covers a lot of what used to need a package
   (`.env`, test runner, TypeScript with no build step). The exception is a real client for

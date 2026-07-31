@@ -23,7 +23,7 @@ import "./env.js";
  * Two ways to act on a low score:
  *   (default)   mark only — verse gets triage.flagged, nothing else changes
  *   --drop      retire the text: current text moves into versions[], text is cleared,
- *               and the next `bible.mjs` run re-translates it with the rejected
+ *               and the next `bible.ts` run re-translates it with the rejected
  *               attempts in the prompt. Re-translating costs ~1/16 of proofreading.
  *
  * Usage:
@@ -516,7 +516,7 @@ async function triageChapter(bible: string, bookId: number, chapterId: number, o
         verse.triage = verdict;
         if (verdict.flagged) totals.flagged++;
 
-        // --drop: retire the text so bible.mjs re-translates it, keeping the rejected
+        // --drop: retire the text so bible.ts re-translates it, keeping the rejected
         // attempt and its reason so the next attempt does not repeat it.
         if (verdict.flagged && options.drop) {
             if (!verse.versions) verse.versions = [];

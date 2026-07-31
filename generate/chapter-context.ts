@@ -438,7 +438,7 @@ async function generateChapterContext(language: string, bookId: number, chapter:
     // Read book context if available
     const bookContext = readBookContext(language, bookId);
     if (!bookContext) {
-        console.log(`Note: No book context found for ${bookName}. Consider running book-context.mjs first.`);
+        console.log(`Note: No book context found for ${bookName}. Consider running book-context.ts first.`);
     }
 
     const prompt = getContextPrompt(language, bookId, chapter, originalText, bookContext);

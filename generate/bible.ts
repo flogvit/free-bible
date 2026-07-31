@@ -642,7 +642,7 @@ function readOriginalText(bookId: number, chapterId: number, existingVerses: Cha
 
     const allVerses: Chapter = JSON.parse(fs.readFileSync(sourceFile, 'utf-8'));
 
-    // Et vers teller som gjort bare hvis det faktisk har tekst. triage.mjs --drop
+    // Et vers teller som gjort bare hvis det faktisk har tekst. triage.ts --drop
     // tømmer teksten på vers som skal oversettes på nytt, men beholder posten med
     // historikken, så den må ikke regnes som ferdig her.
     return allVerses.filter(verse =>

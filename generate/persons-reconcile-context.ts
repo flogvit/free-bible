@@ -35,7 +35,7 @@ const HELP_EXAMPLES = [
 /**
  * En personprofil slik den ligger i generate/persons/nb/<slug>.json. Bare
  * feltene dette skriptet leser er tatt med; `id` er påkrevd fordi skriptet
- * bruker den som nøkkel (persons-integrity.mjs er den som leter etter
+ * bruker den som nøkkel (persons-integrity.ts er den som leter etter
  * profiler uten id).
  */
 interface PersonProfile {
@@ -53,7 +53,7 @@ interface WorklistRefBy {
 }
 
 /**
- * En oppføring i worklisten fra persons-integrity.mjs. `candidates` kommer fra
+ * En oppføring i worklisten fra persons-integrity.ts. `candidates` kommer fra
  * `ambiguous`-bolken, `candidate` fra `variant`-bolken.
  */
 interface WorklistEntry {
@@ -64,7 +64,7 @@ interface WorklistEntry {
   candidate?: string;
 }
 
-/** Worklisten slik persons-integrity.mjs --worklist skriver den. */
+/** Worklisten slik persons-integrity.ts --worklist skriver den. */
 interface Worklist {
   references: {
     variant: WorklistEntry[];

@@ -181,7 +181,7 @@ export function resolveBookRange(config: string | BookRange): BookRange {
  * smeltet sammen alternative navn — `Abed-Nego/Asarja` ble `abed-negoasarja`.
  * Nå blir skilletegn én bindestrek.
  *
- * Samme regel som `slugify()` i `contrib/export.mjs`, som avkorter til 60 tegn
+ * Samme regel som `slugify()` i `contrib/export.ts`, som avkorter til 60 tegn
  * for verk-id-er. Person-id-er avkortes ikke — de er allerede publiserte URL-er.
  */
 export function nameToId(name: string): string {

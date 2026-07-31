@@ -3,7 +3,7 @@
  * ready for a website to fetch once and use for both list and detail views.
  *
  * Sources, merged per translation:
- *   bibles_raw/<translation>/meta.json     editorial metadata (build-translations-meta.mjs)
+ *   bibles_raw/<translation>/meta.json     editorial metadata (build-translations-meta.ts)
  *   bibles_raw/<translation>/license.json  licence terms (existing, untouched)
  *
  * A translation's id is its directory name — that is the only place it is

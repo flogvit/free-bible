@@ -68,7 +68,7 @@ interface PersonProfile {
   relatedPersons?: string[];
 }
 
-/** Ett forslag fra persons-reconcile-context.mjs, etter revisjon. */
+/** Ett forslag fra persons-reconcile-context.ts, etter revisjon. */
 interface ContextProposal {
   referrer: string;
   field: string;

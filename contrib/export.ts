@@ -51,7 +51,7 @@ const doLookup = flags.lookup as boolean;
 const UA = 'free-bible-contrib/1.0 (https://github.com/flogvit/free-bible; mailto:flogvit@gmail.com)';
 const sleep = (ms: number) => new Promise((resolve) => setTimeout(resolve, ms));
 
-// Samme id-regel som articles/harvest.mjs.
+// Samme id-regel som articles/harvest.ts.
 const doiToId = (doi: string) => doi.toLowerCase().trim()
   .replace(/^https?:\/\/(dx\.)?doi\.org\//, '')
   .replace(/\//g, '_');

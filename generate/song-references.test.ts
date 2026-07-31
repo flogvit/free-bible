@@ -1,7 +1,7 @@
 /**
  * bun test
  *
- * Dekker lesinga av den strømmede ollama-responsen i song-references.mjs.
+ * Dekker lesinga av den strømmede ollama-responsen i song-references.ts.
  *
  * Regresjonen som ga opphav til testene: kallet hadde én frist for HELE
  * forespørselen (`AbortSignal.timeout(300000)`). Målt genereringsfart var 8,6

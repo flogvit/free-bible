@@ -824,7 +824,7 @@ async function main(): Promise<void> {
 }
 
 // Guard slik at checkTarget kan importeres (av tester, eller av et annet skript)
-// uten at hele genereringen starter. Samme mønster som build-translations-meta.mjs.
+// uten at hele genereringen starter. Samme mønster som build-translations-meta.ts.
 if (process.argv[1] && path.resolve(process.argv[1]) === __filename) {
     // Avslutt med kode 1, ikke 0: et ukjent flagg skal stoppe et køskript, ikke
     // bare skrive en linje det ingen leser. Samme mønster som

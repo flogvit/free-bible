@@ -17,7 +17,7 @@ const JUDGE_SCHEMA = {
     required: ['verdict'],
 };
 
-// generate/references.mjs
+// generate/references.ts
 const REFERENCE_PROOFREAD_SCHEMA = {
     type: 'object',
     properties: {
@@ -38,7 +38,7 @@ const REFERENCE_PROOFREAD_SCHEMA = {
     },
 };
 
-// generate/triage.mjs
+// generate/triage.ts
 const TRIAGE_SCHEMA = {
     type: 'object',
     properties: {

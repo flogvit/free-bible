@@ -10,7 +10,7 @@
  * This script does two jobs:
  *   --audit   report which key terms are rendered inconsistently, and where
  *   --write   emit glossary/<bible>.json with the dominant rendering per term, which
- *             bible.mjs then injects into the translation prompt so later chapters
+ *             bible.ts then injects into the translation prompt so later chapters
  *             follow the established choice instead of re-deciding
  *
  * Terms are matched on the source text, so this needs no word alignment: find every

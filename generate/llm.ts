@@ -194,7 +194,7 @@ function getAnthropic(): Anthropic {
 }
 
 // Med tenkning på ligger tenkeblokker først i content — teksten må hentes ut,
-// ikke leses fra content[0]. Samme funksjon som i bible.mjs.
+// ikke leses fra content[0]. Samme funksjon som i bible.ts.
 function extractText(completion: Anthropic.Message): string {
     const block = completion.content.find((b): b is Anthropic.TextBlock => b.type === 'text');
     if (!block) {
@@ -216,7 +216,7 @@ async function callAnthropic(content: string, schema?: OutputSchema): Promise<st
     // max_tokens og nekter å kjøre non-streaming når den overstiger 10 minutter
     // (calculateNonstreamingTimeout). Taket er 128000 × 10/60 ≈ 21 333 tokens, og
     // maxTokens er 32000 — så HVERT non-streaming-kall kastet, uansett hvor kort
-    // svaret faktisk ble. bible.mjs har strømmet av samme grunn siden februar.
+    // svaret faktisk ble. bible.ts har strømmet av samme grunn siden februar.
     const completion = await getAnthropic().messages.stream(options).finalMessage();
     if (completion.stop_reason === 'max_tokens') {
         throw new Error('Response truncated due to max_tokens limit');

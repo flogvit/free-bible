@@ -42,11 +42,11 @@ sier hvilken modell det valgte i første linje — les den før du lar en jobb s
 over natta.
 
 To skript er motsatt og har `--remote` i stedet, fordi lokalt er standarden der:
-`translate.ts` og `headings.mjs`. Tre skript har ingen bryter i det hele tatt og
-er alltid lokale: `song-references.mjs`, `days-mentions.mjs` og
+`translate.ts` og `headings.ts`. Tre skript har ingen bryter i det hele tatt og
+er alltid lokale: `song-references.ts`, `days-mentions.ts` og
 `persons-reconcile*.ts`.
 
-**2. `triage.mjs` må kjøres med `bun`, ikke `node`.** Den importerer
+**2. `triage.ts` må kjøres med `bun`, ikke `node`.** Den importerer
 KVN-laget, som er TypeScript. Med `node` får du
 `ERR_MODULE_NOT_FOUND: kvn/src/ukvn-types.js` — som ser ut som en manglende fil,
 men er feil kjøremåte. Samme gjelder alt under `kvn/scripts/*.ts`.
@@ -68,7 +68,7 @@ Sortert etter hvor den kan kjøre. «Gjenstår» er målte tall per 2026-07-30.
 | Sangreferanser | `bun song-references.ts` | gemma4:31b | **5 622 av 6 076 sanger** | #8 |
 | KVN-tekstverifisering | `kvn/scripts/run-verification.sh pri1` | bge-m3 + gemma4:31b + granite4.1:30b | **så godt som alt** — 138 oversettelser i prioritetslista, 5 filer produsert | #35 |
 | Nøkkelord per kapittel | `bun important-words-chapter.ts --local` | qwen3.5:27b | **278 av 1 189 kapitler** | #34 |
-| Triage av korrektur | `bun triage.mjs osnb` | qwen3.5:27b | etter behov (mekanisk lag, ikke en køjobb) | — |
+| Triage av korrektur | `bun triage.ts osnb` | qwen3.5:27b | etter behov (mekanisk lag, ikke en køjobb) | — |
 | osmain-verifisering | `bun kvn/scripts/verify-osmain.ts` | qwen3.5:27b | etter behov | — |
 | Mappinggenerering | `bun kvn/scripts/build-mapping.ts --source <navn>` | gemma4:31b | etter behov for nye oversettelser | — |
 
@@ -83,16 +83,16 @@ Sortert etter hvor den kan kjøre. «Gjenstår» er målte tall per 2026-07-30.
 | Kapitteltagging | `bun chapter-tags.ts --local --bible osnb` | ferdig for nb/en (16 tagsett) | #2, #3 |
 
 `translate.ts` er lokal som standard — `--remote` er bryteren dit, ikke hit.
-`references.mjs` godtar `--local`, men **nevner det ikke i `--help`**; uten flagget
-går den til Claude API.
+`references.ts` går til Claude API uten `--local`. Flagget står nå i `--help`
+(det manglet der fram til flaggkontrakten i `5f0c5ea73`).
 
 ### Faller til 122b uten at noen har bestemt det
 
 Disse skriptene sender verken `task:` eller `model:`, og treffer derfor
-`ollamaModel` (= qwen3.5:122b) i `generate/constants.js:34`. **Det er ikke en
+`ollamaModel` (= qwen3.5:122b) i `generate/constants.ts`. **Det er ikke en
 vurdering av at de trenger den store modellen** — det er samme dødkonfigurasjon
-som `chapter-tags.mjs` hadde til tabellen ble rettet (se kommentaren
-`constants.js:49-52`). Hvor mye de faktisk trenger er **ikke målt**.
+som `chapter-tags.ts` hadde til tabellen ble rettet (se kommentaren over `tags`
+i `constants.ts`). Hvor mye de faktisk trenger er **ikke målt**.
 
 | jobb | kommando (fra `generate/`) | gjenstår | trolig klasse | issue |
 |---|---|---|---|---|
@@ -112,7 +112,7 @@ som `chapter-tags.mjs` hadde til tabellen ble rettet (se kommentaren
 | Personprofiler | `bun bible-persons.ts --local` | 2 029 personer | profilene skrives av Claude, ikke lokalt | — |
 
 Å flytte en av disse ned er én linje i `taskModels` — men gjør det etter en
-måling, ikke på antakelse. `triage.mjs`-erfaringen (31 % gjenkall på 27b mot
+måling, ikke på antakelse. `triage.ts`-erfaringen (31 % gjenkall på 27b mot
 Claude) viser at nedflytting kan koste stille. Samlet i **#37**.
 
 ### Jobber uten skript
@@ -121,8 +121,8 @@ Disse er bestilt, men det finnes ingen kode som gjør dem. Bare høsting er bygg
 
 | jobb | datagrunnlag | status | issue |
 |---|---|---|---|
-| Finne versreferanser i artikler | 13 226 hentede artikkeltekster i `external/articles/text/` | **skript mangler** — `articles/harvest.mjs` henter bare | #15 |
-| Finne versreferanser i bøker | 2 357 boktekster i `external/books/text/` | **skript mangler** — `books/harvest.mjs` henter bare | #16 |
+| Finne versreferanser i artikler | 13 226 hentede artikkeltekster i `external/articles/text/` | **skript mangler** — `articles/harvest.ts` henter bare | #15 |
+| Finne versreferanser i bøker | 2 357 boktekster i `external/books/text/` | **skript mangler** — `books/harvest.ts` henter bare | #16 |
 | Dagsomtaler pass 2 (dedupe) | 541 kapittelfiler i `generate/days_mentions/osnb/` | **skript mangler** | #33 |
 | Kapittelinnsikter | 96 av 1 189 filer finnes | **generatorskript finnes ikke i repoet** — bare `translate.ts` kjenner katalogen | #39 |
 | Versbønn / verspreken | 4 og 5 filer | **generatorskript finnes ikke i repoet** | #39 |
@@ -197,8 +197,7 @@ bun generate/references.ts --local --book 10-39
 40–43 (evangeliene). Det er 92 % av versene i nettopp de bøkene, og 35 % av bibelen.
 20 349 vers gjenstår.
 
-`--local` står ikke i `--help` for dette skriptet, men parseren tar imot det
-(`references.mjs:588`). Uten flagget går hele jobben på Claude API.
+Uten `--local` går hele jobben på Claude API. Flagget står i `--help`.
 
 ### Nøkkelord per kapittel — 911 av 1 189
 
@@ -206,8 +205,8 @@ bun generate/references.ts --local --book 10-39
 bun generate/important-words-chapter.ts --local
 ```
 
-278 kapitler igjen. Går på qwen3.5:27b med vilje (`constants.js:53-56`), så den
-kan stå på 64 GB-maskinen.
+278 kapitler igjen. Går på qwen3.5:27b med vilje (se kommentaren over `words` i
+`constants.ts`), så den kan stå på 64 GB-maskinen.
 
 `--book`/`--chapter` er INTERVALLER, som i alle andre skript (#51): `--book 66
 --chapter 3` er Åp 3 og ingenting annet. Fram til flaggkontrakten var de
@@ -232,7 +231,7 @@ ganger, og en nøkkel ville stille kastet den ene. Formatet var `.txt` med
 
 ## Går ikke lokalt
 
-`generate/bible.mjs` — oversettelse og korrektur av bibeltekstene — har ingen
+`generate/bible.ts` — oversettelse og korrektur av bibeltekstene — har ingen
 `--local`. Den går på Claude API, og hører derfor ikke hjemme i planlegginga over.
 Tatt med her fordi det er lett å tro noe annet.
 
@@ -254,7 +253,7 @@ valg (**#28**).
 ## Planleggingsregler
 
 **Modelladopsjon flytter jobber oppover, aldri nedover.** `resolveLocalModel`
-(`generate/llm.js:60`) bruker en større modell som allerede ligger i minnet
+i `generate/llm.ts` bruker en større modell som allerede ligger i minnet
 framfor å kaste den ut. Kjører du nøkkelordjobben ved siden av en
 122b-oversettelse, får nøkkelordjobben 122b. Det er meningen — én runner er
 raskere enn to som kaster hverandre ut. Men det betyr at «denne kan kjøre på 27b»
@@ -271,15 +270,15 @@ siden av hverandre på 128 GB, så den laster om for hvert kall: 17–19 s for
 går på skjemaets form, ikke på modellen (**#38**, rettet 2026-07-30). `openSchema:
 false` i `ollamaModelConfig` stenger gemma4 ute bare når kallet dekoder mot et
 *åpent* skjema — ubegrensede arrays eller fritekstfelter. `isClosedSchema` i
-`llm.js` avgjør, og `bun test` dekker grensen.
+`llm.ts` avgjør, og `bun test` dekker grensen.
 
 I praksis, mens sangreferansene (gemma4) kjører:
 
 | jobb | skjema | deler runner |
 |---|---|---|
 | KVN-tekstverifisering (`verify-text.ts`) | `verdict`: enum × 4 → lukket | ja |
-| Triage (`triage.mjs`) | array med fritekst `detail` → åpent | nei |
-| Kryssreferanser (`references.mjs`) | array med `explanation` → åpent | nei |
+| Triage (`triage.ts`) | array med fritekst `detail` → åpent | nei |
+| Kryssreferanser (`references.ts`) | array med `explanation` → åpent | nei |
 
 Det gamle flagget het `jsonFormat` og kom inn 2026-04-14 fra én observasjon på
 `REFERENCE_PROOFREAD_SCHEMA`. Generaliseringen holdt ikke: gemma4 leverte 64/64
