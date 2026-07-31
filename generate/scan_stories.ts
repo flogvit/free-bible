@@ -9,6 +9,8 @@ dotenv.config();
 
 import {books, getBookName} from './constants.js';
 import {callWithRetry} from './llm.js';
+import {parseArgs, formatHelp, COMMON_FLAGS} from './cli.js';
+import type {FlagSpec, Range} from './cli.js';
 import type {Chapter} from '../kvn/src/bible-types.js';
 
 // --- Types ---
@@ -157,15 +159,57 @@ interface Options {
     limit: number | null;
     resume: boolean;
     dryRun: boolean;
-    help: boolean;
     proofread: boolean;
     apply: boolean;
     minScore: number;
     rejectScore: number;
     maxIter: number;
     continue_: boolean;
-    source: string;
+    /** Hvilken filsamling korrekturen leser: proposed | existing | both. */
+    pool: string;
 }
+
+/**
+ * Flaggkontrakten for dette skriptet (#51, #52, #53).
+ *
+ * To flagg måtte skifte navn for å komme inn under kontrakten:
+ *
+ *   - `--remote` er borte. Skanningen kjører lokalt UTEN flagg, og `--remote`
+ *     var avmeldingen — altså motsatt fortegn av `--local`, som er nettopp
+ *     grunnen til at kontrakten avviser navnet. Aksen heter `--local`, står på
+ *     som standard her, og **Claude-veien velges med `--no-local`**.
+ *
+ *     Første migrering mistet den veien: med `default: true` ble `--local` en
+ *     no-op, og ingenting kunne slå den av. `--no-local` finnes i kontrakten
+ *     nettopp for dette — ett navn på aksen, begge retninger tilgjengelige,
+ *     uten å gjenskape toveisaksen `--remote` var.
+ *   - `--source` het det samme som kontraktens gamle alias for `--bible`, og
+ *     ville blitt oversatt dit. Den heter `--pool` nå; verdiene er de samme
+ *     (proposed | existing | both).
+ */
+const SPEC: Record<string, FlagSpec> = {
+    book: COMMON_FLAGS.book,
+    chapter: COMMON_FLAGS.chapter,
+    ot: COMMON_FLAGS.ot,
+    nt: COMMON_FLAGS.nt,
+    language: COMMON_FLAGS.language,
+    limit: COMMON_FLAGS.limit,
+    'dry-run': {kind: 'boolean', help: 'kjør modellen, men ikke skriv forslagsfiler'},
+    // Hjelpeteksten beskriver `--no-local`, siden det er den formen som vises
+    // når flagget står på som standard.
+    local: {kind: 'boolean', help: 'kjør mot Claude i stedet for lokal Ollama', default: true},
+    'include-poetic': {kind: 'boolean', help: 'ta òg med Salmene, Ordspråkene, Forkynneren, Høysangen og Klagesangene'},
+    'include-epistles': {kind: 'boolean', help: 'ta òg med brevene i NT (Romerne–Judas)'},
+    resume: {kind: 'boolean', help: 'hopp over kapitlene som alt står i .scan_state.json'},
+    proofread: {kind: 'boolean', help: 'korrekturmodus i stedet for skanning'},
+    pool: {kind: 'string', help: 'hvilke filer korrekturen leser: proposed, existing eller both', default: 'proposed'},
+    apply: {kind: 'boolean', help: 'skriv resultatet av korrekturen; uten den logges bare dommene'},
+    'min-score': {kind: 'number', help: 'score på approve-dom som godkjenner fortellingen', default: 8},
+    'reject-score': {kind: 'number', help: 'score på reject-dom som forkaster fortellingen', default: 4},
+    'max-iter': {kind: 'number', help: 'maks antall korrekturrunder per fil', default: 3},
+    continue: {kind: 'boolean', help: 'hopp over filer som alt er godkjent med score ≥ --min-score'},
+    help: COMMON_FLAGS.help,
+};
 
 interface ScanChapterArgs {
     bookId: number;
@@ -1004,123 +1048,77 @@ function shouldSkipBook(bookId: number, opts: Options): string | null {
 
 // --- CLI ---
 
-function parseArgs(args: string[]): Options {
-    const opts: Options = {
-        bookStart: null,
-        bookEnd: null,
-        chapterStart: null,
-        chapterEnd: null,
-        lang: 'nb',
-        includePoetic: false,
-        includeEpistles: false,
-        useLocal: true,
-        limit: null,
-        resume: false,
-        dryRun: false,
-        help: false,
-        proofread: false,
-        apply: false,
-        minScore: 8,
-        rejectScore: 4,
-        maxIter: 3,
-        continue_: false,
-        source: 'proposed'
+const HELP_PURPOSE =
+    'skann Bibelen kapittel for kapittel etter fortellinger som mangler, og les korrektur på forslagene';
+
+const HELP_EXAMPLES = [
+    'bun generate/scan_stories.ts                                    # skann alle fortellende bøker',
+    'bun generate/scan_stories.ts --book 1 --chapter 12              # bare 1. Mosebok 12',
+    'bun generate/scan_stories.ts --proofread --apply                # korrektur på forslagene',
+    'bun generate/scan_stories.ts --proofread --pool existing --apply',
+    'bun generate/scan_stories.ts --proofread --pool both --apply',
+    'bun generate/scan_stories.ts --proofread --apply --continue     # fortsett en avbrutt kjøring',
+    'bun generate/scan_stories.ts --proofread --book 41              # bare marker, ingen skriving',
+    '',
+    'Skanning foreslår fortellinger som ikke alt er dekket av stories/<språk>/;',
+    'forslagene havner i stories_proposed/<språk>/.',
+    '',
+    'Korrekturen leser forslagene mot den faktiske kapittelteksten. Godkjent går til',
+    'stories/<språk>/, forkastet til stories_rejected/<språk>/, og det som havner',
+    'midt imellom blir liggende i stories_proposed/<språk>/ med historikk i versions[].',
+    'Filer fra stories/<språk>/ (--pool existing) flyttes aldri automatisk: en',
+    'reject-dom blir en flagging i .flagged_existing.json. Sammenslåinger foreslås',
+    'bare — de logges til .merge_candidates.json og utføres aldri av skriptet.',
+];
+
+/**
+ * Leser kommandolinja gjennom den felles kontrakten og oversetter til `Options`.
+ *
+ * `--ot`/`--nt` setter fortsatt `bookStart`/`bookEnd`, og det er med vilje: resten
+ * av main() leser `bookStart !== null` som «brukeren valgte bøker selv», og det er
+ * den testen som slår av den stille hoppingen over poetiske bøker og brev.
+ */
+function readOptions(flags: ReturnType<typeof parseArgs>['flags']): Options {
+    const book = flags.book as Range | undefined;
+    const chapter = flags.chapter as Range | undefined;
+
+    // Den gamle parseren lot det siste flagget vinne, fordi --ot/--nt skrev rett i
+    // bookStart/bookEnd mens den gikk gjennom argv. Kontrakten gir booleans uten
+    // rekkefølge, så presedensen er nå den samme som i references.ts: et eksplisitt
+    // --book vinner over --ot/--nt.
+    let bookStart: number | null = null;
+    let bookEnd: number | null = null;
+    if (book) {
+        bookStart = book.start;
+        bookEnd = book.end;
+    } else if (flags.nt) {
+        bookStart = 40;
+        bookEnd = 66;
+    } else if (flags.ot) {
+        bookStart = 1;
+        bookEnd = 39;
+    }
+
+    return {
+        bookStart,
+        bookEnd,
+        chapterStart: chapter?.start ?? null,
+        chapterEnd: chapter?.end ?? null,
+        lang: flags.language as string,
+        includePoetic: flags['include-poetic'] as boolean,
+        includeEpistles: flags['include-epistles'] as boolean,
+        useLocal: flags.local as boolean,
+        limit: (flags.limit as number | undefined) ?? null,
+        resume: flags.resume as boolean,
+        dryRun: flags['dry-run'] as boolean,
+        proofread: flags.proofread as boolean,
+        apply: flags.apply as boolean,
+        minScore: flags['min-score'] as number,
+        rejectScore: flags['reject-score'] as number,
+        maxIter: flags['max-iter'] as number,
+        continue_: flags.continue as boolean,
+        pool: flags.pool as string,
     };
-    let i = 0;
-    while (i < args.length) {
-        const a = args[i];
-        if (a === '--book' && i + 1 < args.length) {
-            const r = parseRange(args[++i]);
-            opts.bookStart = r.start;
-            opts.bookEnd = r.end;
-        }
-        else if (a === '--chapter' && i + 1 < args.length) {
-            const r = parseRange(args[++i]);
-            opts.chapterStart = r.start;
-            opts.chapterEnd = r.end;
-        }
-        else if (a === '--ot') { opts.bookStart = 1; opts.bookEnd = 39; }
-        else if (a === '--nt') { opts.bookStart = 40; opts.bookEnd = 66; }
-        else if (a === '--lang' && i + 1 < args.length) opts.lang = args[++i];
-        else if (a === '--include-poetic') opts.includePoetic = true;
-        else if (a === '--include-epistles') opts.includeEpistles = true;
-        else if (a === '--remote') opts.useLocal = false;
-        else if (a === '--local') opts.useLocal = true;
-        else if (a === '--limit' && i + 1 < args.length) opts.limit = parseInt(args[++i], 10);
-        else if (a === '--resume') opts.resume = true;
-        else if (a === '--dry-run') opts.dryRun = true;
-        else if (a === '--proofread') opts.proofread = true;
-        else if (a === '--apply') opts.apply = true;
-        else if (a === '--min-score' && i + 1 < args.length) opts.minScore = parseInt(args[++i], 10);
-        else if (a === '--reject-score' && i + 1 < args.length) opts.rejectScore = parseInt(args[++i], 10);
-        else if (a === '--max-iter' && i + 1 < args.length) opts.maxIter = parseInt(args[++i], 10);
-        else if (a === '--continue') opts.continue_ = true;
-        else if (a === '--source' && i + 1 < args.length) opts.source = args[++i];
-        else if (a === '--help' || a === '-h') opts.help = true;
-        i++;
-    }
-    return opts;
-}
-
-function parseRange(value: string): {start: number, end: number} {
-    if (value.includes('-')) {
-        const [start, end] = value.split('-').map(n => parseInt(n, 10));
-        return {start, end};
-    }
-    const num = parseInt(value, 10);
-    return {start: num, end: num};
-}
-
-function printUsage() {
-    console.log(`
-Usage: bun scan_stories.ts [options]
-
-Scan mode (default): systematically scan the Bible chapter by chapter and propose
-new stories not yet covered by stories/<lang>/*.json. Proposals land in
-stories_proposed/<lang>/.
-
-Proofread mode (--proofread): proofread proposals in stories_proposed/<lang>/ against
-the actual chapter text. Approved -> stories/<lang>/. Rejected -> stories_rejected/<lang>/.
-Borderline cases stay in stories_proposed/<lang>/ with versions[] history.
-
-Scan options:
-  --book <range>       Scan book(s): single (40) or range (40-66).
-  --chapter <range>    Scan chapter(s): single (3) or range (3-10). Requires --book.
-  --ot                 Books 1-39 (Old Testament).
-  --nt                 Books 40-66 (New Testament).
-  --include-poetic     Also scan Salmer/Ordspråk/Forkynneren/Høysangen/Klagesangene.
-  --include-epistles   Also scan NT epistles (Romerne–Judas).
-  --limit <n>          Stop after processing this many chapters.
-  --resume             Skip chapters already in .scan_state.json.
-  --dry-run            Run the LLM but do not write proposal files.
-
-Proofread options:
-  --proofread          Switch to proofread mode.
-  --source <kind>      proposed (default) | existing | both. existing = stories/<lang>/,
-                       proposed = stories_proposed/<lang>/. Existing files are never
-                       auto-moved; reject becomes flag (logged to .flagged_existing.json).
-  --apply              Apply revisions and finalize. Without --apply, proofread runs
-                       read-only and only logs verdicts.
-  --min-score <n>      Score >= n on approve verdict -> finalize (default: 8).
-  --reject-score <n>   Score <= n on reject verdict -> finalize (default: 4).
-  --max-iter <n>       Max proofread iterations per file (default: 3).
-  --continue           Skip files whose last version score >= min-score with approve verdict.
-                       Merge candidates: flagged to .merge_candidates.json — never auto-merged.
-
-Common options:
-  --lang <code>        Language code (default: nb).
-  --remote             Use Anthropic Claude (default: local Ollama).
-  --help               Show this help.
-
-Examples:
-  bun scan_stories.ts                             # Scan all narrative books
-  bun scan_stories.ts --book 1 --chapter 12       # Scan Genesis 12
-  bun scan_stories.ts --proofread --apply                       # Proofread proposals, apply
-  bun scan_stories.ts --proofread --source existing --apply     # Proofread existing stories
-  bun scan_stories.ts --proofread --source both --apply         # Both proposed and existing
-  bun scan_stories.ts --proofread --apply --continue            # Resume
-  bun scan_stories.ts --proofread --book 41                     # Mark only, dry-run
-`);
 }
 
 function loadState(lang: string): ScanState {
@@ -1287,9 +1285,9 @@ async function runProofread(opts: Options): Promise<void> {
     const lang = opts.lang;
     const existingStories = loadExistingStories(lang);
 
-    const source = opts.source;
+    const source = opts.pool;
     if (!['proposed', 'existing', 'both'].includes(source)) {
-        console.error(`Unknown --source ${source}. Use proposed|existing|both.`);
+        console.error(`Unknown --pool ${source}. Use proposed|existing|both.`);
         process.exit(1);
     }
 
@@ -1330,8 +1328,15 @@ async function runProofread(opts: Options): Promise<void> {
 }
 
 async function main(): Promise<void> {
-    const opts = parseArgs(process.argv.slice(2));
-    if (opts.help) { printUsage(); return; }
+    // Hjelpen skal stå før alt annet: den skal kunne kjøres uten at en eneste fil
+    // blir lest eller skrevet.
+    const {flags} = parseArgs(process.argv.slice(2), SPEC);
+    if (flags.help) {
+        console.log(formatHelp('generate/scan_stories.ts', HELP_PURPOSE, SPEC, HELP_EXAMPLES));
+        process.exit(0);
+    }
+
+    const opts = readOptions(flags);
     if (opts.proofread) {
         await runProofread(opts);
         return;
@@ -1417,7 +1422,12 @@ async function main(): Promise<void> {
     console.log(`Review proposals in: ${path.relative(__dirname, path.join(PROPOSED_DIR_BASE, lang))}/`);
 }
 
-main().catch(err => {
+// Kjører bare når fila startes direkte. Uten vakten kjører jobben ved IMPORT —
+// det er grunnen til at days.ts slettet data bare man lastet modulen (#108),
+// og det gjør skriptene umulige å teste.
+if (import.meta.main) {
+    main().catch(err => {
     console.error(err);
     process.exit(1);
 });
+}

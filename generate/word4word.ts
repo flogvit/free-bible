@@ -7,6 +7,8 @@ dotenv.config()
 import Anthropic from '@anthropic-ai/sdk';
 import {bibles, books, anthropicModel, maxTokens, normalizeLanguage, getLanguageCode} from "./constants.js";
 import type {Chapter} from '../kvn/src/bible-types.js';
+import {parseArgs, formatHelp, COMMON_FLAGS} from './cli.js';
+import type {FlagSpec, Range} from './cli.js';
 
 const anthropic = new Anthropic();
 
@@ -313,7 +315,7 @@ const HALLUCINATION_PATTERNS = [
     /\bthat\s+is\b/i,
 ];
 
-function detectHallucinations(text: string): string[] {
+export function detectHallucinations(text: string): string[] {
     const found: string[] = [];
     for (const pattern of HALLUCINATION_PATTERNS) {
         const match = text.match(pattern);
@@ -326,9 +328,14 @@ function detectHallucinations(text: string): string[] {
 
 // `any` her er tilsiktet: funksjonen kalles med begge svarformene (generering
 // og korrektur) og plukker ut felter som bare finnes i én av dem.
-function validateWordExplanationResult(result: any): boolean {
-    // Check array of verse data
-    const verses = Array.isArray(result) ? result : [result];
+export function validateWordExplanationResult(result: any): boolean {
+    // Genereringssvaret er pakket som `{verses: [...]}`, korrektursvaret har
+    // `issues` på toppnivå. Uten utpakkingen ble `[result]` til
+    // `[{verses: [...]}]`, der verken `.words` eller `.issues` finnes — så
+    // hallusinasjonssjekken var en no-op i HELE genereringsløpet (#109).
+    // Korrekturløpet virket, fordi `issues` ligger der funksjonen så etter.
+    const unwrapped = result && Array.isArray(result.verses) ? result.verses : result;
+    const verses = Array.isArray(unwrapped) ? unwrapped : [unwrapped];
 
     for (const verse of verses) {
         // Check word explanations
@@ -656,8 +663,8 @@ function applyProofreadChanges(bible: string, bookId: number, chapterId: number,
 }
 
 /**
- * Kommandolinjevalgene. Feltene starter som `null`/`false` og settes av
- * argumentløkka, så typen må romme begge — ellers låser den seg til `null`.
+ * Kommandolinjevalgene, slik `readOptions` setter dem sammen av de tolkede
+ * flaggene. `null` betyr «ikke avgrenset» og leses av main som hele området.
  */
 interface CliOptions {
     source: string | null;
@@ -673,138 +680,98 @@ interface CliOptions {
     verseStart: number | null;
     verseEnd: number | null;
     force: boolean;
-    help: boolean;
 }
 
-function printUsage() {
-    console.log(`
-Usage: node word4word.mjs <source> [options]
+/**
+ * Flaggkontrakten for dette skriptet (#51, #52, #53).
+ *
+ * Kilden er fortsatt et posisjonsargument — `bun generate/word4word.ts osnb` —
+ * men `--bible osnb` gjør det samme nå, slik at begrepet heter det samme her
+ * som i de andre skriptene. Skriptet har aldri hatt `--local`: det går mot
+ * Claude, og det finnes ingen lokal vei gjennom det.
+ */
+const SPEC: Record<string, FlagSpec> = {
+    bible: {kind: 'string', help: 'kilden, som posisjonsargumentet: osnb, osnn, osen, tanach, sblgnt'},
+    language: COMMON_FLAGS.language,   // 'nb' → normalizeLanguage → 'Norwegian bokmål', som før
+    proofread: {kind: 'boolean', help: 'kjør korrektur etter genereringen'},
+    apply: {kind: 'boolean', help: 'skriv korrekturens forslag inn i fila'},
+    book: COMMON_FLAGS.book,
+    chapter: COMMON_FLAGS.chapter,
+    verse: COMMON_FLAGS.verse,
+    ot: COMMON_FLAGS.ot,
+    nt: COMMON_FLAGS.nt,
+    force: COMMON_FLAGS.force,
+    help: COMMON_FLAGS.help,
+};
 
-Arguments:
-  source             Bible version or original source to work with
-                     Translations: osnb, osnn, osen (explains translated words)
-                     Originals: tanach, sblgnt (explains original Hebrew/Greek words)
+const HELP_EXAMPLES = [
+    '# Oversettelsesmodus — forklarer de oversatte ordene mot originalen',
+    'bun generate/word4word.ts osnb --nt                                # → word4word/osnb/...',
+    'bun generate/word4word.ts osnb --book 43 --chapter 1 --verse 1-11  # Johannes 1:1-11',
+    'bun generate/word4word.ts osnb --nt --proofread --apply            # generer → korrektur → skriv inn',
+    '',
+    '# Originalkildemodus — forklarer de hebraiske/greske ordene direkte',
+    'bun generate/word4word.ts tanach --ot                              # → word4word/tanach/nb/...',
+    'bun generate/word4word.ts tanach --language en --book 1            # → word4word/tanach/en/...',
+    'bun generate/word4word.ts sblgnt --nt                              # → word4word/sblgnt/nb/...',
+    '',
+    '# Parallellkjøring i hvert sitt skall',
+    'bun generate/word4word.ts osnb --book 1-20 &',
+    'bun generate/word4word.ts osnb --book 21-39 &',
+    '',
+    'Kilden er posisjonsargumentet (eller --bible): oversettelsene osnb, osnn, osen,',
+    'eller originalkildene tanach og sblgnt. --language brukes bare av originalkildene.',
+    '',
+    'Filene havner i word4word/<kilde>/<bok>/<kapittel>/<vers>.json for oversettelser',
+    'og word4word/<kilde>/<språkkode>/<bok>/<kapittel>/<vers>.json for originalkilder.',
+];
 
-Options:
-  --language <lang>  Language for explanations (default: nb)
-                     Accepts codes (nb, nn, en, de, es, fr, sv, da) or full names
-                     Only used for original sources (tanach/sblgnt)
-  --proofread        Run proofreading after generation (can combine with generation)
-  --apply            Apply proofread suggestions (requires prior --proofread run)
-  --ot               Process only Old Testament (books 1-39)
-  --nt               Process only New Testament (books 40-66)
-  --book <range>     Process book(s): single (43) or range (1-20)
-  --chapter <range>  Process chapter(s): single (1) or range (1-10)
-  --verse <range>    Process verse(s): single (1) or range (1-10)
-  --force            Force re-generation even if file exists
-  --help             Show this help message
+/** Oversetter de tolkede flaggene til `CliOptions`. */
+function readOptions(
+    flags: ReturnType<typeof parseArgs>['flags'],
+    positional: string[],
+): CliOptions {
+    const book = flags.book as Range | undefined;
+    const chapter = flags.chapter as Range | undefined;
+    const verse = flags.verse as Range | undefined;
 
-Output structure:
-  Translations:  word4word/<bible>/<book>/<chapter>/<verse>.json
-                 e.g., word4word/osnb/43/1/1.json
-
-  Originals:     word4word/<source>/<lang>/<book>/<chapter>/<verse>.json
-                 e.g., word4word/tanach/nb/1/1/1.json
-
-Examples:
-  # Translation mode (explains translated words with reference to original)
-  node word4word.mjs osnb --nt                                # → word4word/osnb/...
-  node word4word.mjs osnb --book 43 --chapter 1 --verse 1-11  # John 1:1-11
-  node word4word.mjs osnb --nt --proofread --apply            # generate → proofread → apply
-
-  # Original source mode (explains Hebrew/Greek words directly)
-  node word4word.mjs tanach --ot                               # → word4word/tanach/nb/...
-  node word4word.mjs tanach --language en --book 1             # → word4word/tanach/en/...
-  node word4word.mjs tanach --language nn --book 1             # → word4word/tanach/nn/...
-  node word4word.mjs sblgnt --nt                               # → word4word/sblgnt/nb/...
-
-Parallel processing (run in separate terminals):
-  node word4word.mjs osnb --book 1-20 &                       # terminal 1
-  node word4word.mjs osnb --book 21-39 &                      # terminal 2
-`);
-}
-
-function parseRange(value: string): {start: number, end: number} {
-    if (value.includes('-')) {
-        const [start, end] = value.split('-').map((n: string) => parseInt(n, 10));
-        return { start, end };
-    }
-    const num = parseInt(value, 10);
-    return { start: num, end: num };
-}
-
-function parseArgs(args: string[]): CliOptions {
-    const options: CliOptions = {
-        source: null,
-        language: 'Norwegian bokmål',
-        proofread: false,
-        apply: false,
-        ot: false,
-        nt: false,
-        bookStart: null,
-        bookEnd: null,
-        chapterStart: null,
-        chapterEnd: null,
-        verseStart: null,
-        verseEnd: null,
-        force: false,
-        help: false
+    return {
+        // Kilden har alltid vært posisjonsargumentet; `--bible` er det nye,
+        // felles navnet på det samme og vinner når begge er gitt.
+        source: (flags.bible as string | undefined) ?? positional[0] ?? null,
+        language: normalizeLanguage(flags.language as string),
+        proofread: flags.proofread as boolean,
+        apply: flags.apply as boolean,
+        ot: flags.ot as boolean,
+        nt: flags.nt as boolean,
+        bookStart: book?.start ?? null,
+        bookEnd: book?.end ?? null,
+        chapterStart: chapter?.start ?? null,
+        chapterEnd: chapter?.end ?? null,
+        verseStart: verse?.start ?? null,
+        verseEnd: verse?.end ?? null,
+        force: flags.force as boolean,
     };
-
-    let i = 0;
-    while (i < args.length) {
-        const arg = args[i];
-
-        if (arg === '--language' && i + 1 < args.length) {
-            options.language = args[++i];
-        } else if (arg === '--proofread') {
-            options.proofread = true;
-        } else if (arg === '--apply') {
-            options.apply = true;
-        } else if (arg === '--ot') {
-            options.ot = true;
-        } else if (arg === '--nt') {
-            options.nt = true;
-        } else if (arg === '--book' && i + 1 < args.length) {
-            const range = parseRange(args[++i]);
-            options.bookStart = range.start;
-            options.bookEnd = range.end;
-        } else if (arg === '--chapter' && i + 1 < args.length) {
-            const range = parseRange(args[++i]);
-            options.chapterStart = range.start;
-            options.chapterEnd = range.end;
-        } else if (arg === '--verse' && i + 1 < args.length) {
-            const range = parseRange(args[++i]);
-            options.verseStart = range.start;
-            options.verseEnd = range.end;
-        } else if (arg === '--force') {
-            options.force = true;
-        } else if (arg === '--help') {
-            options.help = true;
-        } else if (!arg.startsWith('--') && !options.source) {
-            options.source = arg;
-        }
-        i++;
-    }
-
-    return options;
 }
 
 async function main() {
-    const args = process.argv.slice(2);
-    const options = parseArgs(args);
-
-    // Normalize language (accept both codes like 'nb' and full names like 'Norwegian bokmål')
-    options.language = normalizeLanguage(options.language);
-
-    if (options.help) {
-        printUsage();
-        return;
+    // Hjelpen skal ut før noe leses fra disk eller sendes over nettet.
+    const {flags, positional} = parseArgs(process.argv.slice(2), SPEC);
+    if (flags.help) {
+        console.log(formatHelp(
+            'generate/word4word.ts',
+            'ord-for-ord-forklaringer per vers, generert og korrekturlest av en modell',
+            SPEC,
+            HELP_EXAMPLES,
+        ));
+        process.exit(0);
     }
 
+    const options = readOptions(flags, positional);
+
     if (!options.source) {
-        console.error("Error: Source is required (bible version or original source)");
-        printUsage();
+        console.error('Feil: kilden mangler (oversettelse eller originalkilde).');
+        console.error('Kjør med --help for bruken.');
         process.exit(1);
     }
 
@@ -919,4 +886,15 @@ async function main() {
     console.log('Done!');
 }
 
-main().catch(console.error);
+// Avslutt med kode 1, ikke 0: et ukjent flagg skal stoppe et køskript, ikke
+// bare skrive en linje det ingen leser. Samme mønster som references.ts.
+// Tidligere var dette `.catch(console.error)`.
+// Kjører bare når fila startes direkte. Uten vakten kjører jobben ved IMPORT —
+// det er grunnen til at days.ts slettet data bare man lastet modulen (#108),
+// og det gjør skriptene umulige å teste.
+if (import.meta.main) {
+    main().catch(err => {
+    console.error(err);
+    process.exit(1);
+});
+}

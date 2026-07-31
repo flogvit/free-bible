@@ -39,10 +39,12 @@ export function getOriginalVerse(bookId: number, chapterId: number, verseId: num
 }
 
 export function getRef(bookId: number, chapterId: number, verseId: number): string {
-    // `!` er en ren typepåstand og endrer ingenting: finnes ikke bok-id-en i
-    // `books`, kastet dette uttrykket på `.name` også før typene kom til.
-    // Påstanden dokumenterer den eksisterende oppførselen, den innfører den ikke.
-    return `${books.find(book => book.id===+bookId)!.name} ${chapterId}:${verseId}`
+    // Kastet før en `TypeError: Cannot read properties of undefined (reading
+    // 'name')`, som ikke sier hvilken bok-id som var ukjent. Feilen er den
+    // samme — bare lesbar (#112).
+    const book = books.find(book => book.id === +bookId)
+    if (!book) throw new Error(`getRef: ukjent bok-id ${bookId} (gyldige er 1–66)`)
+    return `${book.name} ${chapterId}:${verseId}`
 }
 
 export function getOriginalChapter(bookId: number, chapterId: number): Chapter {
@@ -150,7 +152,16 @@ export function getChaptersForBooks(bookIds: number[]): ChapterRef[] {
  */
 export function resolveBookRange(config: string | BookRange): BookRange {
     if (typeof config === 'string') {
-        return bookRanges[config];
+        const range = bookRanges[config];
+        // Ga før `undefined` for en ukjent nøkkel, mens signaturen lovte en
+        // BookRange. Den udefinerte verdien gikk rett videre til
+        // getChaptersForRange i generate_reading_plans, som feilet et helt
+        // annet sted (#112).
+        if (!range) {
+            const kjente = Object.keys(bookRanges).sort().join(', ');
+            throw new Error(`resolveBookRange: ukjent område «${config}»\nkjente: ${kjente}`);
+        }
+        return range;
     }
     return config;
 }

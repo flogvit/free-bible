@@ -20,7 +20,13 @@
  * usynlig.
  */
 
-export type FlagKind = 'boolean' | 'string' | 'number' | 'range';
+/**
+ * `number` er heltall (`parseInt`). Bruk `float` for desimaltall.
+ *
+ * Skillet er ikke pedanteri: `parseInt('0.60')` gir `0`, som er falsy. En
+ * terskel på 0.60 ville blitt til «ingen terskel» uten at noe klaget.
+ */
+export type FlagKind = 'boolean' | 'string' | 'number' | 'float' | 'range';
 
 export interface FlagSpec {
     kind: FlagKind;
@@ -119,6 +125,23 @@ export function parseArgs(argv: string[], spec: Record<string, FlagSpec>): Parse
 
         let name = arg.slice(2);
 
+        // `--no-<flagg>` slår AV et boolsk flagg som står på som standard.
+        //
+        // Uten denne var kontrakten for stiv: et skript der `local` er
+        // standarden hadde ingen måte å velge Claude-veien på, siden `--local`
+        // da er en no-op. Det gjaldt `scan_stories`, der `--remote` var eneste
+        // vei til Claude — og å innføre et nytt motsatt flagg ville gjenskapt
+        // nettopp toveisaksen kontrakten avskaffer.
+        if (name.startsWith('no-')) {
+            const target = name.slice(3);
+            const ts = spec[target];
+            if (ts?.kind === 'boolean') {
+                flags[target] = false;
+                i++;
+                continue;
+            }
+        }
+
         if (name === 'remote') {
             throw new Error(
                 '--remote er fjernet. Aksen heter --local: uten flagget kjøres jobben ' +
@@ -143,6 +166,18 @@ export function parseArgs(argv: string[], spec: Record<string, FlagSpec>): Parse
         if (s.kind === 'boolean') {
             flags[name] = true;
             i++;
+            continue;
+        }
+
+        if (s.kind === 'float') {
+            const value = argv[i + 1];
+            if (value === undefined || value.startsWith('--')) {
+                throw new Error(`--${name} mangler verdi`);
+            }
+            const n = parseFloat(value);
+            if (Number.isNaN(n)) throw new Error(`--${name}: «${value}» er ikke et tall`);
+            flags[name] = n;
+            i += 2;
             continue;
         }
 
@@ -183,7 +218,10 @@ export function formatHelp(
         const shown = s.default !== undefined && s.default !== false
             ? `${s.help} (standard: ${s.default})`
             : s.help;
-        return `  --${name.padEnd(width)} ${shown}`;
+        // Står et boolsk flagg PÅ som standard, er det `--no-<flagg>` brukeren
+        // trenger — å vise `--<flagg>` ville vært å dokumentere en no-op.
+        const shownName = s.kind === 'boolean' && s.default === true ? `no-${name}` : name;
+        return `  --${shownName.padEnd(width)} ${shown}`;
     });
     const parts = [
         `${script} — ${purpose}`,
