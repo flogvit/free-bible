@@ -1,19 +1,32 @@
-import dotenv from 'dotenv'
+import "./env.js";
 import * as fs from 'fs';
 import path from 'path';
 import {fileURLToPath} from 'url';
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
-dotenv.config()
 
 import Anthropic from '@anthropic-ai/sdk';
 import {bibles, books, anthropicModel, maxTokens, getBookName} from "./constants.js";
+import {parseArgs, formatHelp, COMMON_FLAGS} from './cli.js';
+import type {FlagSpec, Range} from './cli.js';
 import type {Chapter, Verse} from '../kvn/src/bible-types.js';
 
-const anthropic = new Anthropic({
-    apiKey: process.env.ANTHROPIC_API_KEY
-});
+/**
+ * Klienten lages først når den faktisk skal brukes.
+ *
+ * Konstruktøren kaster når ANTHROPIC_API_KEY mangler, og sto den på modulnivå
+ * skjedde det før `--help` rakk å skrive noe — hjelpen krevde altså en API-nøkkel
+ * for et kall den aldri gjør.
+ */
+let anthropic: Anthropic | null = null;
+
+function getAnthropic(): Anthropic {
+    if (!anthropic) {
+        anthropic = new Anthropic({apiKey: process.env.ANTHROPIC_API_KEY});
+    }
+    return anthropic;
+}
 
 /**
  * Feltene i en forklaringspost. Rekkefølgen her er den samme som `fields` i
@@ -285,7 +298,7 @@ async function doAnthropicCall(content: string, schema: JsonSchema | null | unde
     if (schema) {
         options.output_config = { format: { type: "json_schema", schema } };
     }
-    return anthropic.messages.create(options);
+    return getAnthropic().messages.create(options);
 }
 
 // T er formen kallstedet forventer tilbake fra JSON-svaret; skjemaet håndheves
@@ -606,54 +619,44 @@ async function generateExplanations(bible: string, bookId: number, chapterId: nu
     console.log(`Saved: ${filename}`);
 }
 
-function printUsage(): void {
-    console.log(`
-Usage: node verse_translation.mjs <bible> [options]
+/**
+ * Flaggkontrakten for dette skriptet (#51, #52, #53).
+ *
+ * Skriptet har ingen `--local`: forklaringene skrives alltid av Claude.
+ * Det har heller ingen `--verse` — enheten er kapittelet.
+ */
+const SPEC: Record<string, FlagSpec> = {
+    book: COMMON_FLAGS.book,
+    chapter: COMMON_FLAGS.chapter,
+    ot: COMMON_FLAGS.ot,
+    nt: COMMON_FLAGS.nt,
+    force: COMMON_FLAGS.force,
+    proofread: {kind: 'boolean', help: 'kjør korrektur etter genereringen'},
+    apply: {kind: 'boolean', help: 'skriv korrekturens forslag inn i forklaringsfila'},
+    help: COMMON_FLAGS.help,
+};
 
-Generates explanations for translation choices, comparing original text
-(Hebrew/Greek) with the translated text.
+const HELP_EXAMPLES = [
+    'bun generate/verse_translation.ts osnb --book 1 --chapter 1   # 1. Mosebok 1',
+    'bun generate/verse_translation.ts osnb --book 43              # hele Johannes',
+    'bun generate/verse_translation.ts osnb --nt                   # hele NT',
+    'bun generate/verse_translation.ts osnn --book 1 --force       # generer på nytt',
+    'bun generate/verse_translation.ts osnb --book 1-20 &          # parallelt, terminal 1',
+    'bun generate/verse_translation.ts osnb --book 21-39 &         # parallelt, terminal 2',
+    '',
+    'Oversettelsen oppgis som posisjonsargument (osnb, osnn, osen …).',
+    'Filene havner i verse_translation/<bibel>/<bok>/<kapittel>.json,',
+    'f.eks. verse_translation/osnb/1/1.json.',
+];
 
-Arguments:
-  bible              Bible version to explain (e.g., osnb, osnn, osen)
-
-Options:
-  --proofread        Run proofreading after generation
-  --apply            Apply proofread suggestions (requires prior --proofread run)
-  --ot               Process only Old Testament (books 1-39)
-  --nt               Process only New Testament (books 40-66)
-  --book <range>     Process book(s): single (43) or range (1-20)
-  --chapter <range>  Process chapter(s): single (1) or range (1-10)
-  --force            Force re-generation even if file exists
-  --help             Show this help message
-
-Output structure:
-  verse_translation/<bible>/<book>/<chapter>.json
-  e.g., verse_translation/osnb/1/1.json (Genesis 1)
-
-Examples:
-  node verse_translation.mjs osnb --book 1 --chapter 1    # Explain Genesis 1
-  node verse_translation.mjs osnb --book 43               # Explain all of John
-  node verse_translation.mjs osnb --nt                    # Explain entire NT
-  node verse_translation.mjs osnn --book 1 --force        # Re-generate Genesis
-
-Parallel processing (run in separate terminals):
-  node verse_translation.mjs osnb --book 1-20 &           # terminal 1
-  node verse_translation.mjs osnb --book 21-39 &          # terminal 2
-`);
-}
-
-interface Range {
-    start: number;
-    end: number;
-}
-
-function parseRange(value: string): Range {
-    if (value.includes('-')) {
-        const [start, end] = value.split('-').map((n: string) => parseInt(n, 10));
-        return {start, end};
-    }
-    const num = parseInt(value, 10);
-    return {start: num, end: num};
+/** Hjelpeteksten, som både `--help` og «mangler bibel» skriver ut. */
+function usage(): string {
+    return formatHelp(
+        'generate/verse_translation.ts',
+        'forklarer hvorfor oversettelsen ble som den ble, ved å sammenlikne grunnteksten med oversettelsen',
+        SPEC,
+        HELP_EXAMPLES,
+    );
 }
 
 interface Options {
@@ -667,69 +670,36 @@ interface Options {
     chapterStart: number | null;
     chapterEnd: number | null;
     force: boolean;
-    help: boolean;
-}
-
-function parseArgs(args: string[]): Options {
-    const options: Options = {
-        bible: null,
-        proofread: false,
-        apply: false,
-        ot: false,
-        nt: false,
-        bookStart: null,
-        bookEnd: null,
-        chapterStart: null,
-        chapterEnd: null,
-        force: false,
-        help: false
-    };
-
-    let i = 0;
-    while (i < args.length) {
-        const arg = args[i];
-
-        if (arg === '--proofread') {
-            options.proofread = true;
-        } else if (arg === '--apply') {
-            options.apply = true;
-        } else if (arg === '--ot') {
-            options.ot = true;
-        } else if (arg === '--nt') {
-            options.nt = true;
-        } else if (arg === '--book' && i + 1 < args.length) {
-            const range = parseRange(args[++i]);
-            options.bookStart = range.start;
-            options.bookEnd = range.end;
-        } else if (arg === '--chapter' && i + 1 < args.length) {
-            const range = parseRange(args[++i]);
-            options.chapterStart = range.start;
-            options.chapterEnd = range.end;
-        } else if (arg === '--force') {
-            options.force = true;
-        } else if (arg === '--help') {
-            options.help = true;
-        } else if (!arg.startsWith('--') && !options.bible) {
-            options.bible = arg;
-        }
-        i++;
-    }
-
-    return options;
 }
 
 async function main(): Promise<void> {
-    const args = process.argv.slice(2);
-    const options = parseArgs(args);
-
-    if (options.help) {
-        printUsage();
-        return;
+    // Hjelpen skal ut før noe leses fra disk eller sendes over nettet.
+    const {flags, positional} = parseArgs(process.argv.slice(2), SPEC);
+    if (flags.help) {
+        console.log(usage());
+        process.exit(0);
     }
+
+    const book = flags.book as Range | undefined;
+    const chapter = flags.chapter as Range | undefined;
+
+    const options: Options = {
+        // Bibelen er posisjonsargumentet, som før: `bun generate/verse_translation.ts osnb`.
+        bible: positional[0] ?? null,
+        proofread: flags.proofread as boolean,
+        apply: flags.apply as boolean,
+        ot: flags.ot as boolean,
+        nt: flags.nt as boolean,
+        bookStart: book?.start ?? null,
+        bookEnd: book?.end ?? null,
+        chapterStart: chapter?.start ?? null,
+        chapterEnd: chapter?.end ?? null,
+        force: flags.force as boolean,
+    };
 
     if (!options.bible) {
         console.error("Error: Bible version is required");
-        printUsage();
+        console.log(usage());
         process.exit(1);
     }
 
@@ -802,4 +772,15 @@ async function main(): Promise<void> {
     console.log('Done!');
 }
 
-main().catch(console.error);
+// Avslutt med kode 1, ikke 0: et ukjent flagg skal stoppe et køskript, ikke bare
+// skrive en linje det ingen leser. Tidligere var dette `.catch(console.error)`,
+// som ga kode 0. Samme mønster som references.ts.
+// Kjører bare når fila startes direkte. Uten vakten kjører jobben ved IMPORT —
+// det er grunnen til at days.ts slettet data bare man lastet modulen (#108),
+// og det gjør skriptene umulige å teste.
+if (import.meta.main) {
+    main().catch(err => {
+    console.error(err);
+    process.exit(1);
+});
+}

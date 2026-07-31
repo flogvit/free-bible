@@ -1,15 +1,54 @@
-import dotenv from 'dotenv';
+import "./env.js";
 import * as fs from 'fs';
 import path from 'path';
 import {fileURLToPath} from 'url';
 
-const __filename = fileURLToPath(import.meta.url);
-const __dirname = path.dirname(__filename);
-dotenv.config();
-
 import {books, getBookName} from './constants.js';
 import {callWithRetry} from './llm.js';
+import {parseArgs, formatHelp, COMMON_FLAGS} from './cli.js';
+import type {FlagSpec, Range} from './cli.js';
 import type {Verse, Chapter} from '../kvn/src/bible-types.js';
+
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = path.dirname(__filename);
+
+/**
+ * Flaggene skriptet godtar, i den rekkefølgen `--help` viser dem.
+ *
+ * Bare de felles flaggene skriptet faktisk bruker står her — kontrakten kaster
+ * på ukjent flagg, så et flagg som ikke er erklært finnes ikke. Merk at
+ * `--local` med vilje mangler: dagsomtaler kjøres ALLTID lokalt (`local: true`
+ * er hardkodet i `processVerse`), så en bryter ville vært en løgn.
+ */
+const SPEC: Record<string, FlagSpec> = {
+    bible: COMMON_FLAGS.bible,
+    book: COMMON_FLAGS.book,
+    chapter: {...COMMON_FLAGS.chapter, help: 'kapittel eller kapittelintervall (krever én enkelt bok)'},
+    ot: COMMON_FLAGS.ot,
+    nt: COMMON_FLAGS.nt,
+    force: COMMON_FLAGS.force,
+    help: COMMON_FLAGS.help,
+};
+
+const SCRIPT = 'generate/days_mentions.ts';
+const PURPOSE = 'pass 1: skann hvert vers med lokal modell og hent ut dager, høytider og '
+    + 'tidsbegreper → generate/days_mentions/<bible>/<bokId>/<kapittelId>.json';
+const EXAMPLES = [
+    'bun generate/days_mentions.ts --bible osnb --book 40 --chapter 12',
+    'bun generate/days_mentions.ts --bible osnb --book 40',
+    'bun generate/days_mentions.ts --bible osnb --nt',
+    'bun generate/days_mentions.ts --bible osnb',
+];
+
+// Hjelpesjekken står først — før dotenv og før enhver fil- eller
+// nettverksoperasjon. `--help` skal svare på hva skriptet tar, ikke begynne å
+// gjøre det.
+const {flags} = parseArgs(process.argv.slice(2), SPEC);
+if (flags.help) {
+    console.log(formatHelp(SCRIPT, PURPOSE, SPEC, EXAMPLES));
+    process.exit(0);
+}
+
 
 const SOURCES_DIR = path.join(__dirname, 'bibles_raw');
 const OUTPUT_BASE = path.join(__dirname, 'days_mentions');
@@ -272,127 +311,67 @@ async function processChapter(bible: string, bookId: number, chapterId: number, 
     console.log(`  ${bookName} ${chapterId}: ${totalDays} dag-forekomster i ${verses.length} vers (${dt}s)`);
 }
 
-function printUsage(): void {
-    console.log(`
-Usage: node days_mentions.mjs --bible <name> [options]
-
-Pass 1: scan each verse with qwen3.5:122b and extract Bible day/feast mentions.
-Output is per-chapter JSON with day occurrences (Norwegian + original-language term).
-
-Options:
-  --bible <name>       Bible translation to scan (e.g., osnb) [required]
-  --book <range>       Process book(s): single (43) or range (1-20)
-  --chapter <range>    Process chapter(s): single (12) or range (1-10) [requires single --book]
-  --ot                 Process only Old Testament (books 1-39)
-  --nt                 Process only New Testament (books 40-66)
-  --force              Re-process even if chapter already has output
-  --help               Show this help message
-
-Output structure:
-  generate/days_mentions/<bible>/<bookId>/<chapterId>.json
-
-Examples:
-  node days_mentions.mjs --bible osnb --book 40 --chapter 12
-  node days_mentions.mjs --bible osnb --book 40
-  node days_mentions.mjs --bible osnb --nt
-  node days_mentions.mjs --bible osnb
-`);
-}
-
-function parseRange(value: string): {start: number; end: number} {
-    if (value.includes('-')) {
-        const [start, end] = value.split('-').map(n => parseInt(n, 10));
-        return {start, end};
-    }
-    const n = parseInt(value, 10);
-    return {start: n, end: n};
-}
-
-/** Flaggene skriptet kjenner. `null` = ikke oppgitt, ikke «tom». */
-interface DaysMentionsOptions {
-    bible: string | null;
-    bookStart: number | null;
-    bookEnd: number | null;
-    chapterStart: number | null;
-    chapterEnd: number | null;
-    force: boolean;
-    help: boolean;
-}
-
 async function main(): Promise<void> {
-    const args = process.argv.slice(2);
-    const options: DaysMentionsOptions = {
-        bible: null,
-        bookStart: null,
-        bookEnd: null,
-        chapterStart: null,
-        chapterEnd: null,
-        force: false,
-        help: false
-    };
-
-    let i = 0;
-    while (i < args.length) {
-        const arg = args[i];
-        if (arg === '--bible' && i + 1 < args.length) {
-            options.bible = args[++i];
-        } else if (arg === '--book' && i + 1 < args.length) {
-            const r = parseRange(args[++i]);
-            options.bookStart = r.start;
-            options.bookEnd = r.end;
-        } else if (arg === '--chapter' && i + 1 < args.length) {
-            const r = parseRange(args[++i]);
-            options.chapterStart = r.start;
-            options.chapterEnd = r.end;
-        } else if (arg === '--ot') {
-            options.bookStart = 1;
-            options.bookEnd = 39;
-        } else if (arg === '--nt') {
-            options.bookStart = 40;
-            options.bookEnd = 66;
-        } else if (arg === '--force') {
-            options.force = true;
-        } else if (arg === '--help') {
-            options.help = true;
-        } else {
-            console.error(`Unknown argument: ${arg}`);
-            options.help = true;
-        }
-        i++;
+    const bible = flags.bible as string | undefined;
+    if (!bible) {
+        // Samme som før: manglende --bible skriver bruksteksten og gir exit 1.
+        console.error(formatHelp(SCRIPT, PURPOSE, SPEC, EXAMPLES));
+        process.exit(1);
     }
 
-    if (options.help || !options.bible) {
-        printUsage();
-        process.exit(options.help ? 0 : 1);
-    }
-
-    const bibleDir = path.join(SOURCES_DIR, options.bible);
+    const bibleDir = path.join(SOURCES_DIR, bible);
     if (!fs.existsSync(bibleDir)) {
         console.error(`Bible not found: ${bibleDir}`);
         process.exit(1);
     }
 
-    const bookStart = options.bookStart ?? 1;
-    const bookEnd = options.bookEnd ?? 66;
+    const bookRange = flags.book as Range | undefined;
+    const chapterRange = flags.chapter as Range | undefined;
 
-    if ((options.chapterStart || options.chapterEnd) && bookStart !== bookEnd) {
+    // `--ot`/`--nt` er snarveier for `--book`. Den gamle parseren leste
+    // argumentene i rekkefølge og lot det siste vinne; kontrakten beholder ikke
+    // rekkefølgen, så et eksplisitt `--book` går foran, og `--nt` foran `--ot`.
+    // I praksis brukes de hver for seg, så resultatet er det samme.
+    let bookStart = 1;
+    let bookEnd = 66;
+    if (flags.ot) {
+        bookStart = 1;
+        bookEnd = 39;
+    }
+    if (flags.nt) {
+        bookStart = 40;
+        bookEnd = 66;
+    }
+    if (bookRange) {
+        bookStart = bookRange.start;
+        bookEnd = bookRange.end;
+    }
+
+    if (chapterRange && bookStart !== bookEnd) {
         console.error('--chapter requires a single book (use --book <id>)');
         process.exit(1);
     }
 
+    const force = flags.force as boolean;
+
     for (const book of books) {
         if (book.id < bookStart || book.id > bookEnd) continue;
         const bookName = getBookName(book.id, 'nb');
-        const startCh = options.chapterStart ?? 1;
-        const endCh = options.chapterEnd ?? book.chapters;
+        const startCh = chapterRange?.start ?? 1;
+        const endCh = chapterRange?.end ?? book.chapters;
         console.log(`\n=== ${bookName} (${book.id}), kapittel ${startCh}-${Math.min(endCh, book.chapters)} ===`);
         for (let ch = startCh; ch <= Math.min(endCh, book.chapters); ch++) {
-            await processChapter(options.bible, book.id, ch, options.force);
+            await processChapter(bible, book.id, ch, force);
         }
     }
 }
 
-main().catch(err => {
+// Kjører bare når fila startes direkte. Uten vakten kjører jobben ved IMPORT —
+// det er grunnen til at days.ts slettet data bare man lastet modulen (#108),
+// og det gjør skriptene umulige å teste.
+if (import.meta.main) {
+    main().catch(err => {
     console.error(err);
     process.exit(1);
 });
+}

@@ -4,18 +4,18 @@
  * Tests each model on a few chapters with known correct mappings.
  * Measures: speed, JSON compliance, mapping accuracy.
  *
- * Usage:
- *   bun scripts/benchmark-mapping-models.ts
- *   bun scripts/benchmark-mapping-models.ts --models qwen3.5:122b,gemma4:31b
- *   bun scripts/benchmark-mapping-models.ts --warmup   # warmup each model first
+ * Flaggene går gjennom den felles kontrakten i generate/cli.ts; `--help` viser dem.
  */
 
 import { readFileSync, existsSync } from 'fs';
 import { join } from 'path';
+import { parseArgs, formatHelp, COMMON_FLAGS } from '../../generate/cli.js';
+import type { FlagSpec } from '../../generate/cli.js';
 
 const OSMAIN_DIR = join(import.meta.dirname, '../../generate/bibles_raw/osmain');
 const TXT_DIR = join(import.meta.dirname, '../../external/closed');
 const OLLAMA_URL = 'http://localhost:11434/api/generate';
+const OLLAMA_TAGS_URL = 'http://localhost:11434/api/tags';
 
 interface VerseData {
   bookId: number;
@@ -25,9 +25,17 @@ interface VerseData {
   [key: string]: any;
 }
 
-const args = process.argv.slice(2);
-const doWarmup = args.includes('--warmup');
-const modelsArg = args.find(a => a.startsWith('--models='));
+const SPEC: Record<string, FlagSpec> = {
+  models: { kind: 'string', help: 'kommaseparert liste med modeller (standard: alle Ollama har)' },
+  warmup: { kind: 'boolean', help: 'varm opp hver modell med en kort forespørsel først' },
+  help: COMMON_FLAGS.help,
+};
+
+const HELP_EXAMPLES = [
+  'bun kvn/scripts/benchmark-mapping-models.ts',
+  'bun kvn/scripts/benchmark-mapping-models.ts --models qwen3.5:122b,gemma4:31b',
+  'bun kvn/scripts/benchmark-mapping-models.ts --warmup',
+];
 
 function loadChapter(dir: string, book: number, chapter: number): VerseData[] {
   const file = join(dir, String(book), `${chapter}.json`);
@@ -183,37 +191,53 @@ const testCases = [
   },
 ];
 
-// Get available models
-const tagsResp = await fetch('http://localhost:11434/api/tags');
-const tags = await tagsResp.json() as { models: Array<{ name: string }> };
-const allModels = tags.models.map(m => m.name);
-const models = modelsArg ? modelsArg.split('=')[1].split(',') : allModels;
+async function main(): Promise<void> {
+  // Hjelpen skal ut før noe leses fra disk og før modellene lastes i VRAM.
+  const { flags } = parseArgs(process.argv.slice(2), SPEC);
+  if (flags.help) {
+    console.log(formatHelp(
+      'kvn/scripts/benchmark-mapping-models.ts',
+      'måler fart, JSON-etterlevelse og treffsikkerhet for lokale modeller på mappingoppgaven',
+      SPEC,
+      HELP_EXAMPLES,
+    ));
+    process.exit(0);
+  }
 
-console.log(`Available models: ${allModels.join(', ')}`);
-console.log(`Testing: ${models.join(', ')}\n`);
+  const doWarmup = flags.warmup as boolean;
+  const modelsArg = flags.models as string | undefined;
 
-// Run benchmarks — one model at a time to avoid memory issues
-const results: Array<{
-  model: string;
-  test: string;
-  durationMs: number;
-  jsonOk: boolean;
-  mappingCount: number;
-  keyCheckOk: boolean;
-  error?: string;
-}> = [];
+  // Get available models
+  const tagsResp = await fetch(OLLAMA_TAGS_URL);
+  const tags = await tagsResp.json() as { models: Array<{ name: string }> };
+  const allModels = tags.models.map(m => m.name);
+  const models = modelsArg ? modelsArg.split(',') : allModels;
 
-// Pre-build prompts
-const prompts: Array<{ tc: typeof testCases[0]; prompt: string; osmain: VerseData[]; trans: VerseData[] }> = [];
-for (const tc of testCases) {
-  const osmain = loadChapter(OSMAIN_DIR, tc.book, tc.chapter);
-  const trans = loadDnb2011Chapter(tc.book, tc.chapter);
-  if (osmain.length === 0 || trans.length === 0) continue;
+  console.log(`Available models: ${allModels.join(', ')}`);
+  console.log(`Testing: ${models.join(', ')}\n`);
 
-  const osmainText = osmain.map(v => `v${v.verseId}: ${v.text.slice(0, 200)}`).join('\n');
-  const transText = trans.map(v => `v${v.verseId}: ${v.text.slice(0, 200)}`).join('\n');
+  // Run benchmarks — one model at a time to avoid memory issues
+  const results: Array<{
+    model: string;
+    test: string;
+    durationMs: number;
+    jsonOk: boolean;
+    mappingCount: number;
+    keyCheckOk: boolean;
+    error?: string;
+  }> = [];
 
-  const prompt = `You are mapping Bible verse numbering between two translations.
+  // Pre-build prompts
+  const prompts: Array<{ tc: typeof testCases[0]; prompt: string; osmain: VerseData[]; trans: VerseData[] }> = [];
+  for (const tc of testCases) {
+    const osmain = loadChapter(OSMAIN_DIR, tc.book, tc.chapter);
+    const trans = loadDnb2011Chapter(tc.book, tc.chapter);
+    if (osmain.length === 0 || trans.length === 0) continue;
+
+    const osmainText = osmain.map(v => `v${v.verseId}: ${v.text.slice(0, 200)}`).join('\n');
+    const transText = trans.map(v => `v${v.verseId}: ${v.text.slice(0, 200)}`).join('\n');
+
+    const prompt = `You are mapping Bible verse numbering between two translations.
 
 OSMAIN (Norwegian master text, ${osmain.length} verses, book ${tc.book} chapter ${tc.chapter}):
 ${osmainText}
@@ -234,66 +258,69 @@ Match types:
 
 If a translation verse contains text NOT in any osmain verse, report it in extraContent.`;
 
-  prompts.push({ tc, prompt, osmain, trans });
-}
-
-for (const model of models) {
-  console.log(`\n${'='.repeat(60)}`);
-  console.log(`MODEL: ${model}`);
-  console.log(`${'='.repeat(60)}`);
-
-  // Warmup this model
-  if (doWarmup) {
-    await warmup(model);
+    prompts.push({ tc, prompt, osmain, trans });
   }
 
-  for (const { tc, prompt } of prompts) {
-    process.stdout.write(`  ${tc.name.padEnd(40)} `);
+  for (const model of models) {
+    console.log(`\n${'='.repeat(60)}`);
+    console.log(`MODEL: ${model}`);
+    console.log(`${'='.repeat(60)}`);
 
-    try {
-      const { result, durationMs } = await askOllama(model, prompt);
-      const mappings = result.mappings ?? [];
-      const keyCheckOk = tc.expected.keyCheck(mappings);
+    // Warmup this model
+    if (doWarmup) {
+      await warmup(model);
+    }
 
-      const status = keyCheckOk ? '✓' : '✗';
-      const extras = result.extraContent?.length > 0 ? ` +${result.extraContent.length}extra` : '';
-      console.log(`${(durationMs / 1000).toFixed(1)}s | ${mappings.length} mappings | ${status}${extras}`);
+    for (const { tc, prompt } of prompts) {
+      process.stdout.write(`  ${tc.name.padEnd(40)} `);
 
-      if (!keyCheckOk) {
-        for (const m of mappings.slice(0, 3)) {
-          console.log(`      trans v${m.translationVerse} ← osmain ${JSON.stringify(m.osmainVerses)} [${m.matchType}]`);
+      try {
+        const { result, durationMs } = await askOllama(model, prompt);
+        const mappings = result.mappings ?? [];
+        const keyCheckOk = tc.expected.keyCheck(mappings);
+
+        const status = keyCheckOk ? '✓' : '✗';
+        const extras = result.extraContent?.length > 0 ? ` +${result.extraContent.length}extra` : '';
+        console.log(`${(durationMs / 1000).toFixed(1)}s | ${mappings.length} mappings | ${status}${extras}`);
+
+        if (!keyCheckOk) {
+          for (const m of mappings.slice(0, 3)) {
+            console.log(`      trans v${m.translationVerse} ← osmain ${JSON.stringify(m.osmainVerses)} [${m.matchType}]`);
+          }
+          if (mappings.length > 3) console.log(`      ... (${mappings.length - 3} more)`);
         }
-        if (mappings.length > 3) console.log(`      ... (${mappings.length - 3} more)`);
-      }
 
-      results.push({
-        model, test: tc.name, durationMs,
-        jsonOk: true, mappingCount: mappings.length,
-        keyCheckOk,
-      });
-    } catch (err: any) {
-      console.log(`ERROR: ${err.message.slice(0, 60)}`);
-      results.push({
-        model, test: tc.name, durationMs: 0,
-        jsonOk: false, mappingCount: 0, keyCheckOk: false,
-        error: err.message,
-      });
+        results.push({
+          model, test: tc.name, durationMs,
+          jsonOk: true, mappingCount: mappings.length,
+          keyCheckOk,
+        });
+      } catch (err: any) {
+        console.log(`ERROR: ${err.message.slice(0, 60)}`);
+        results.push({
+          model, test: tc.name, durationMs: 0,
+          jsonOk: false, mappingCount: 0, keyCheckOk: false,
+          error: err.message,
+        });
+      }
     }
   }
+
+  // Summary table
+  console.log(`${'='.repeat(60)}`);
+  console.log('SUMMARY');
+  console.log(`${'='.repeat(60)}`);
+  console.log(`${'Model'.padEnd(20)} ${'Avg Time'.padEnd(10)} ${'JSON OK'.padEnd(10)} ${'Accuracy'.padEnd(10)}`);
+
+  for (const model of models) {
+    const modelResults = results.filter(r => r.model === model);
+    const avgTime = modelResults.reduce((s, r) => s + r.durationMs, 0) / modelResults.length / 1000;
+    const jsonOk = modelResults.filter(r => r.jsonOk).length;
+    const accurate = modelResults.filter(r => r.keyCheckOk).length;
+    console.log(
+      `${model.padEnd(20)} ${avgTime.toFixed(1).padEnd(10)}s ${(jsonOk + '/' + modelResults.length).padEnd(10)} ${(accurate + '/' + modelResults.length).padEnd(10)}`
+    );
+  }
 }
 
-// Summary table
-console.log(`${'='.repeat(60)}`);
-console.log('SUMMARY');
-console.log(`${'='.repeat(60)}`);
-console.log(`${'Model'.padEnd(20)} ${'Avg Time'.padEnd(10)} ${'JSON OK'.padEnd(10)} ${'Accuracy'.padEnd(10)}`);
-
-for (const model of models) {
-  const modelResults = results.filter(r => r.model === model);
-  const avgTime = modelResults.reduce((s, r) => s + r.durationMs, 0) / modelResults.length / 1000;
-  const jsonOk = modelResults.filter(r => r.jsonOk).length;
-  const accurate = modelResults.filter(r => r.keyCheckOk).length;
-  console.log(
-    `${model.padEnd(20)} ${avgTime.toFixed(1).padEnd(10)}s ${(jsonOk + '/' + modelResults.length).padEnd(10)} ${(accurate + '/' + modelResults.length).padEnd(10)}`
-  );
-}
+await main();

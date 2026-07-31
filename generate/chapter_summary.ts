@@ -1,14 +1,15 @@
-import dotenv from 'dotenv'
+import "./env.js";
 import * as fs from 'fs';
 import path from 'path';
 import {fileURLToPath} from 'url';
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
-dotenv.config()
 
 import {books, normalizeLanguage, getLanguageCode, getBookName} from "./constants.js";
 import {callWithRetry} from "./llm.js";
+import {parseArgs, formatHelp, COMMON_FLAGS} from './cli.js';
+import type {FlagSpec, Range} from './cli.js';
 import type {Chapter} from '../kvn/src/bible-types.js';
 
 let useLocal = false;
@@ -34,7 +35,7 @@ interface ProofreadSummaryResult {
     revisedSummary: string;
 }
 
-/** Flaggene `parseArgs` under kjenner. */
+/** Flaggene fra kommandolinja, etter at `parseArgs` har tolket dem. */
 interface Options {
     language: string;
     proofread: boolean;
@@ -46,14 +47,29 @@ interface Options {
     chapterStart: number | null;
     chapterEnd: number | null;
     force: boolean;
-    help: boolean;
-    /**
-     * Valgfritt fordi feltet ikke står i initialiseringen: det finnes bare når
-     * brukeren faktisk sender `--local`. Typen beskriver den oppførselen slik
-     * den er i dag, den endrer den ikke.
-     */
-    local?: boolean;
+    /** Alltid satt nå — kontrakten initialiserer boolske flagg til `false`. */
+    local: boolean;
 }
+
+/**
+ * Flaggkontrakten for dette skriptet (#51, #52, #53).
+ *
+ * `--local` sto ikke i den gamle bruksmeldingen selv om parseren tok imot det,
+ * og docs/lokale-jobber.md måtte skrive det opp separat: uten flagget går hele
+ * jobben på Claude API. Nå står det i `--help` som alle de andre.
+ */
+const SPEC: Record<string, FlagSpec> = {
+    language: COMMON_FLAGS.language,   // 'nb' → normalizeLanguage → 'Norwegian bokmål', som før
+    book: COMMON_FLAGS.book,
+    chapter: COMMON_FLAGS.chapter,
+    ot: COMMON_FLAGS.ot,
+    nt: COMMON_FLAGS.nt,
+    force: COMMON_FLAGS.force,
+    local: COMMON_FLAGS.local,
+    proofread: {kind: 'boolean', help: 'kjør korrektur etter genereringen'},
+    apply: {kind: 'boolean', help: 'skriv korrekturens reviderte sammendrag tilbake til fila'},
+    help: COMMON_FLAGS.help,
+};
 
 const PROOFREAD_SUMMARY_SCHEMA = {
     type: "object",
@@ -367,111 +383,56 @@ function applyProofreadChanges(language: string, bookId: number, chapter: number
     console.log(`Applied revisions to ${bookName} ${chapter}`);
 }
 
-function printUsage(): void {
-    console.log(`
-Usage: node chapter_summary.mjs [options]
+const HELP_EXAMPLES = [
+    'bun generate/chapter_summary.ts --nt                              # NT, norsk bokmål',
+    'bun generate/chapter_summary.ts --language nn --ot                # GT, nynorsk',
+    'bun generate/chapter_summary.ts --language en --book 43           # Johannes, engelsk',
+    'bun generate/chapter_summary.ts --book 43 --chapter 1-11          # Johannes 1-11',
+    'bun generate/chapter_summary.ts --nt --proofread --apply          # generer → korrektur → skriv inn',
+    'bun generate/chapter_summary.ts --book 1 --force                  # lag 1. Mosebok på nytt',
+    'bun generate/chapter_summary.ts --local --book 1-20               # lokal Ollama i stedet for Claude',
+    '',
+    'Sammendragene havner i chapter_summaries/<språkkode>/<bok>-<kapittel>.md,',
+    'f.eks. chapter_summaries/nb/43-1.md. Korrekturen legges i',
+    'proofread_summaries/<språkkode>/<bok>-<kapittel>.json når --apply ikke er med.',
+];
 
-Options:
-  --language <lang>  Language for summaries (default: nb)
-                     Accepts codes (nb, nn, en, de, es, fr, sv, da) or full names
-  --proofread        Run proofreading after generation
-  --apply            Apply proofread suggestions (requires prior --proofread run)
-  --ot               Process only Old Testament (books 1-39)
-  --nt               Process only New Testament (books 40-66)
-  --book <range>     Process book(s): single (43) or range (1-20)
-  --chapter <range>  Process chapter(s): single (1) or range (1-10)
-  --force            Force re-generation even if file exists
-  --help             Show this help message
+/** Oversetter de tolkede flaggene til `Options`. */
+function readOptions(flags: ReturnType<typeof parseArgs>['flags']): Options {
+    const book = flags.book as Range | undefined;
+    const chapter = flags.chapter as Range | undefined;
 
-Output structure:
-  chapter_summaries/<lang>/<book>-<chapter>.md
-  e.g., chapter_summaries/nb/43-1.md
-
-Examples:
-  node chapter_summary.mjs --nt                              # Generate NT summaries (Norwegian bokmål)
-  node chapter_summary.mjs --language nn --ot                # Generate OT summaries (Norwegian nynorsk)
-  node chapter_summary.mjs --language en --book 43           # Generate John summaries (English)
-  node chapter_summary.mjs --book 43 --chapter 1-11          # Generate John 1-11 summaries
-  node chapter_summary.mjs --nt --proofread --apply          # Generate → proofread → apply
-  node chapter_summary.mjs --book 1 --force                  # Re-generate Genesis summaries
-
-Parallel processing (run in separate terminals):
-  node chapter_summary.mjs --book 1-20 &                     # terminal 1
-  node chapter_summary.mjs --book 21-39 &                    # terminal 2
-`);
-}
-
-function parseRange(value: string): {start: number, end: number} {
-    if (value.includes('-')) {
-        const [start, end] = value.split('-').map((n: string) => parseInt(n, 10));
-        return {start, end};
-    }
-    const num = parseInt(value, 10);
-    return {start: num, end: num};
-}
-
-function parseArgs(args: string[]): Options {
-    const options: Options = {
-        language: 'Norwegian bokmål',
-        proofread: false,
-        apply: false,
-        ot: false,
-        nt: false,
-        bookStart: null,
-        bookEnd: null,
-        chapterStart: null,
-        chapterEnd: null,
-        force: false,
-        help: false
+    return {
+        // Godtar både koder ('nb') og fulle navn ('Norwegian bokmål'), som før.
+        language: normalizeLanguage(flags.language as string),
+        proofread: flags.proofread as boolean,
+        apply: flags.apply as boolean,
+        ot: flags.ot as boolean,
+        nt: flags.nt as boolean,
+        bookStart: book?.start ?? null,
+        bookEnd: book?.end ?? null,
+        chapterStart: chapter?.start ?? null,
+        chapterEnd: chapter?.end ?? null,
+        force: flags.force as boolean,
+        local: flags.local as boolean,
     };
-
-    let i = 0;
-    while (i < args.length) {
-        const arg = args[i];
-
-        if (arg === '--language' && i + 1 < args.length) {
-            options.language = args[++i];
-        } else if (arg === '--proofread') {
-            options.proofread = true;
-        } else if (arg === '--apply') {
-            options.apply = true;
-        } else if (arg === '--ot') {
-            options.ot = true;
-        } else if (arg === '--nt') {
-            options.nt = true;
-        } else if (arg === '--book' && i + 1 < args.length) {
-            const range = parseRange(args[++i]);
-            options.bookStart = range.start;
-            options.bookEnd = range.end;
-        } else if (arg === '--chapter' && i + 1 < args.length) {
-            const range = parseRange(args[++i]);
-            options.chapterStart = range.start;
-            options.chapterEnd = range.end;
-        } else if (arg === '--local') {
-            options.local = true;
-        } else if (arg === '--force') {
-            options.force = true;
-        } else if (arg === '--help') {
-            options.help = true;
-        }
-        i++;
-    }
-
-    return options;
 }
 
 async function main(): Promise<void> {
-    const args = process.argv.slice(2);
-    const options = parseArgs(args);
-
-    // Normalize language (accept both codes like 'nb' and full names like 'Norwegian bokmål')
-    options.language = normalizeLanguage(options.language);
-    useLocal = options.local || false;
-
-    if (options.help) {
-        printUsage();
-        return;
+    // Hjelpen skal ut før noe leses fra disk eller sendes over nettet.
+    const {flags} = parseArgs(process.argv.slice(2), SPEC);
+    if (flags.help) {
+        console.log(formatHelp(
+            'generate/chapter_summary.ts',
+            'sammendrag per kapittel, generert og korrekturlest av en modell',
+            SPEC,
+            HELP_EXAMPLES,
+        ));
+        process.exit(0);
     }
+
+    const options = readOptions(flags);
+    useLocal = options.local;
 
     // Determine book range
     let startBook = 1;
@@ -538,4 +499,15 @@ async function main(): Promise<void> {
     console.log('Done!');
 }
 
-main().catch(console.error);
+// Avslutt med kode 1, ikke 0: et ukjent flagg skal stoppe et køskript, ikke
+// bare skrive en linje det ingen leser. Tidligere var dette
+// `.catch(console.error)`, som lot skallet tro at jobben gikk bra.
+// Kjører bare når fila startes direkte. Uten vakten kjører jobben ved IMPORT —
+// det er grunnen til at days.ts slettet data bare man lastet modulen (#108),
+// og det gjør skriptene umulige å teste.
+if (import.meta.main) {
+    main().catch(err => {
+    console.error(err);
+    process.exit(1);
+});
+}

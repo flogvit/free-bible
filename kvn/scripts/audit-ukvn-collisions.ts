@@ -10,16 +10,30 @@
  *  - KOLLISJON: identitetsfallback treffer samme oversettelsesvers som en entry
  *  - DANGLING: entry peker på oversettelsesvers som ikke finnes i dataene
  *
- * Bruk: bun scripts/audit-ukvn-collisions.ts [mappingnavn ...]
+ * Bruk: bun kvn/scripts/audit-ukvn-collisions.ts [mappingnavn ...]
  * Uten argumenter auditeres alle mappinger som har bibeldata med samme navn.
+ *
+ * Flaggene går gjennom den felles kontrakten i generate/cli.ts; `--help` viser dem.
  */
 import { readFileSync, existsSync } from 'fs';
 import { join } from 'path';
 import { loadUkvnMapping, listUkvnMappings } from '../src/ukvn-loader.js';
 import { ukvnDecode } from '../src/ukvn-types.js';
+import { parseArgs, formatHelp, COMMON_FLAGS } from '../../generate/cli.js';
+import type { FlagSpec } from '../../generate/cli.js';
 
 const REPO = join(import.meta.dirname, '../..');
 const RAW = join(REPO, 'generate/bibles_raw');
+
+// Skriptet tar mappingnavn som posisjonsargumenter, ikke som flagg.
+const SPEC: Record<string, FlagSpec> = {
+  help: COMMON_FLAGS.help,
+};
+
+const HELP_EXAMPLES = [
+  'bun kvn/scripts/audit-ukvn-collisions.ts',
+  'bun kvn/scripts/audit-ukvn-collisions.ts osnb osnn',
+];
 
 function verseIds(translation: string, book: number, chapter: number): Set<number> | null {
   const p = join(RAW, translation, String(book), `${chapter}.json`);
@@ -91,17 +105,33 @@ function audit(name: string): { collisions: string[]; dangling: string[] } | nul
   return { collisions, dangling };
 }
 
-const names = process.argv.slice(2).length ? process.argv.slice(2) : listUkvnMappings();
-let bad = 0, skipped = 0;
-for (const name of names) {
-  const r = audit(name);
-  if (!r) { skipped++; continue; }
-  if (r.collisions.length || r.dangling.length) {
-    bad++;
-    console.log(`\n== ${name}: ${r.collisions.length} kollisjoner, ${r.dangling.length} dangling`);
-    for (const c of r.collisions.slice(0, 20)) console.log('  K: ' + c);
-    for (const d of r.dangling.slice(0, 10)) console.log('  D: ' + d);
-    if (r.collisions.length > 20 || r.dangling.length > 10) console.log('  … (kuttet)');
+function main(): void {
+  // Hjelpen skal ut før noe leses fra disk.
+  const { flags, positional } = parseArgs(process.argv.slice(2), SPEC);
+  if (flags.help) {
+    console.log(formatHelp(
+      'kvn/scripts/audit-ukvn-collisions.ts [mappingnavn ...]',
+      'finner kollisjoner og dangling mål i ukvn-mappingene; uten mappingnavn sjekkes alle',
+      SPEC,
+      HELP_EXAMPLES,
+    ));
+    process.exit(0);
   }
+
+  const names = positional.length ? positional : listUkvnMappings();
+  let bad = 0, skipped = 0;
+  for (const name of names) {
+    const r = audit(name);
+    if (!r) { skipped++; continue; }
+    if (r.collisions.length || r.dangling.length) {
+      bad++;
+      console.log(`\n== ${name}: ${r.collisions.length} kollisjoner, ${r.dangling.length} dangling`);
+      for (const c of r.collisions.slice(0, 20)) console.log('  K: ' + c);
+      for (const d of r.dangling.slice(0, 10)) console.log('  D: ' + d);
+      if (r.collisions.length > 20 || r.dangling.length > 10) console.log('  … (kuttet)');
+    }
+  }
+  console.log(`\n${names.length} mappinger sjekket, ${bad} med funn, ${skipped} uten bibeldata (hoppet over)`);
 }
-console.log(`\n${names.length} mappinger sjekket, ${bad} med funn, ${skipped} uten bibeldata (hoppet over)`);
+
+main();

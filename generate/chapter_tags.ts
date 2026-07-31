@@ -1,14 +1,15 @@
-import dotenv from 'dotenv'
+import "./env.js";
 import * as fs from 'fs';
 import path from 'path';
 import {fileURLToPath} from 'url';
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
-dotenv.config()
 
 import {books, normalizeLanguage, getLanguageCode, getBookName} from "./constants.js";
 import {callWithRetry, callOllamaRaw} from "./llm.js";
+import {parseArgs, formatHelp, COMMON_FLAGS} from './cli.js';
+import type {FlagSpec, Range} from './cli.js';
 import type {Chapter} from '../kvn/src/bible-types.js';
 
 let useLocal = false;
@@ -322,44 +323,40 @@ function countChapters(bookStart: number, bookEnd: number, chapterStart: number 
     return total;
 }
 
-function printUsage(): void {
-    console.log(`
-Usage: node chapter_tags.mjs [options]
+/**
+ * Flaggkontrakten for dette skriptet (#51, #52, #53).
+ *
+ * Skriptet tar nøyaktig de samme flaggene som før — den gamle bruksmeldingen og
+ * den gamle parseren var enige om listen. Forskjellen er at et ukjent flagg nå
+ * stopper jobben i stedet for å bli ignorert, og at `--help` kommer ut før noe
+ * leses fra disk.
+ */
+const SPEC: Record<string, FlagSpec> = {
+    language: COMMON_FLAGS.language,   // 'nb' → normalizeLanguage → 'Norwegian bokmål', som før
+    bible: COMMON_FLAGS.bible,
+    book: COMMON_FLAGS.book,
+    chapter: COMMON_FLAGS.chapter,
+    ot: COMMON_FLAGS.ot,
+    nt: COMMON_FLAGS.nt,
+    local: COMMON_FLAGS.local,
+    force: COMMON_FLAGS.force,
+    help: COMMON_FLAGS.help,
+};
 
-Options:
-  --language <lang>    Language (default: nb)
-  --bible <name>       Bible translation for readable text (e.g., osnb)
-  --book <range>       Process book(s): single (43) or range (1-20)
-  --chapter <range>    Process chapter(s): single (1) or range (1-10)
-  --ot                 Process only Old Testament (books 1-39)
-  --nt                 Process only New Testament (books 40-66)
-  --local              Use Ollama instead of Claude
-  --force              Re-tag even if chapter already tagged
-  --help               Show this help message
-
-Genre tags: ${GENRE_TAGS.join(', ')}
-Sentiment tags: ${SENTIMENT_TAGS.join(', ')}
-
-Output structure:
-  tags/<lang>/genre/<tag>.json
-  tags/<lang>/sentiment/<tag>.json
-
-Examples:
-  node chapter_tags.mjs --bible osnb --book 1                # Tag Genesis
-  node chapter_tags.mjs --bible osnb --nt --local             # Tag NT with Ollama
-  node chapter_tags.mjs --bible osnb --book 19 --chapter 23   # Tag Psalm 23
-  node chapter_tags.mjs --bible osnb --force                  # Re-tag everything
-`);
-}
-
-function parseRange(value: string): {start: number; end: number} {
-    if (value.includes('-')) {
-        const [start, end] = value.split('-').map(n => parseInt(n, 10));
-        return {start, end};
-    }
-    const num = parseInt(value, 10);
-    return {start: num, end: num};
-}
+const HELP_EXAMPLES = [
+    'bun generate/chapter_tags.ts --bible osnb --book 1                # tagg 1. Mosebok',
+    'bun generate/chapter_tags.ts --bible osnb --nt --local            # tagg NT med lokal Ollama',
+    'bun generate/chapter_tags.ts --bible osnb --book 19 --chapter 23  # tagg Salme 23',
+    'bun generate/chapter_tags.ts --bible osnb --force                 # tagg alt på nytt',
+    '',
+    'Taggene havner i tags/<språkkode>/<kategori>/<tagg>.json, med kategoriene',
+    'genre, sentiment, theme og liturgy.',
+    '',
+    `Sjangre:    ${GENRE_TAGS.join(', ')}`,
+    `Sentiment:  ${SENTIMENT_TAGS.join(', ')}`,
+    `Temaer:     ${THEME_TAGS.join(', ')}`,
+    `Liturgi:    ${LITURGY_TAGS.join(', ')}`,
+];
 
 /** Flaggene skriptet kjenner. `null` = ikke oppgitt, ikke «tom». */
 interface TagOptions {
@@ -371,7 +368,42 @@ interface TagOptions {
     chapterEnd: number | null;
     local: boolean;
     force: boolean;
-    help: boolean;
+}
+
+/**
+ * Leser kommandolinja gjennom den felles kontrakten og oversetter til `TagOptions`.
+ *
+ * `--ot`/`--nt` satte bok-intervallet direkte i den gamle parseren, så det
+ * flagget som sto sist på linja vant over `--book`. Rekkefølgen finnes ikke i
+ * kontrakten, og et eksplisitt `--book` er det mest presise ønsket — derfor
+ * vinner det her. Samme presedens som references.ts.
+ */
+function readOptions(flags: ReturnType<typeof parseArgs>['flags']): TagOptions {
+    const book = flags.book as Range | undefined;
+    const chapter = flags.chapter as Range | undefined;
+
+    let bookStart = book?.start ?? null;
+    let bookEnd = book?.end ?? null;
+    if (book === undefined) {
+        if (flags.ot && !flags.nt) {
+            bookStart = 1;
+            bookEnd = 39;
+        } else if (flags.nt && !flags.ot) {
+            bookStart = 40;
+            bookEnd = 66;
+        }
+    }
+
+    return {
+        language: normalizeLanguage(flags.language as string),
+        bible: (flags.bible as string | undefined) ?? null,
+        bookStart,
+        bookEnd,
+        chapterStart: chapter?.start ?? null,
+        chapterEnd: chapter?.end ?? null,
+        local: flags.local as boolean,
+        force: flags.force as boolean,
+    };
 }
 
 /** Svaret fra modellen, dekodet mot `TAG_SCHEMA`. */
@@ -383,57 +415,20 @@ interface TagResult {
 }
 
 async function main(): Promise<void> {
-    const args = process.argv.slice(2);
-    const options: TagOptions = {
-        language: 'Norwegian bokmål',
-        bible: null,
-        bookStart: null,
-        bookEnd: null,
-        chapterStart: null,
-        chapterEnd: null,
-        local: false,
-        force: false,
-        help: false
-    };
-
-    let i = 0;
-    while (i < args.length) {
-        const arg = args[i];
-        if (arg === '--language' && i + 1 < args.length) {
-            options.language = args[++i];
-        } else if (arg === '--bible' && i + 1 < args.length) {
-            options.bible = args[++i];
-        } else if (arg === '--book' && i + 1 < args.length) {
-            const range = parseRange(args[++i]);
-            options.bookStart = range.start;
-            options.bookEnd = range.end;
-        } else if (arg === '--chapter' && i + 1 < args.length) {
-            const range = parseRange(args[++i]);
-            options.chapterStart = range.start;
-            options.chapterEnd = range.end;
-        } else if (arg === '--ot') {
-            options.bookStart = 1;
-            options.bookEnd = 39;
-        } else if (arg === '--nt') {
-            options.bookStart = 40;
-            options.bookEnd = 66;
-        } else if (arg === '--local') {
-            options.local = true;
-        } else if (arg === '--force') {
-            options.force = true;
-        } else if (arg === '--help') {
-            options.help = true;
-        }
-        i++;
+    // Hjelpen skal ut før noe leses fra disk eller sendes over nettet.
+    const {flags} = parseArgs(process.argv.slice(2), SPEC);
+    if (flags.help) {
+        console.log(formatHelp(
+            'generate/chapter_tags.ts',
+            'sjanger-, sentiment-, tema- og liturgitagger per kapittel',
+            SPEC,
+            HELP_EXAMPLES,
+        ));
+        process.exit(0);
     }
 
-    options.language = normalizeLanguage(options.language);
+    const options = readOptions(flags);
     useLocal = options.local;
-
-    if (options.help) {
-        printUsage();
-        return;
-    }
 
     if (!options.bible) {
         console.error('--bible <name> is required (e.g., --bible osnb)');
@@ -547,4 +542,14 @@ async function main(): Promise<void> {
     console.log(`\nDone in ${Math.floor(elapsed / 60)}m${elapsed % 60}s — ${tagged} tagged, ${skipped} skipped`);
 }
 
-main().catch(console.error);
+// Avslutt med kode 1, ikke 0: et ukjent flagg skal stoppe et køskript, ikke bare
+// skrive en linje ingen leser. Tidligere var dette `.catch(console.error)`.
+// Kjører bare når fila startes direkte. Uten vakten kjører jobben ved IMPORT —
+// det er grunnen til at days.ts slettet data bare man lastet modulen (#108),
+// og det gjør skriptene umulige å teste.
+if (import.meta.main) {
+    main().catch(err => {
+    console.error(err);
+    process.exit(1);
+});
+}

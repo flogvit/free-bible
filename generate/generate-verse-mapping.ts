@@ -1,12 +1,13 @@
+import "./env.js";
 /**
  * Generate verse mapping between a Bible translation and osnb (tanach/sblgnt numbering).
  *
  * Usage:
- *   bun generate-verse-mapping.ts <input-file> <mapping-id> [--use-ai]
+ *   bun generate/generate-verse-mapping.ts <input-file> <mapping-id> [--use-ai]
  *
  * Example:
- *   bun generate-verse-mapping.ts ../dnb2011.txt dnb_2011_nb
- *   bun generate-verse-mapping.ts ../dnb2011.txt dnb_2011_nb --use-ai
+ *   bun generate/generate-verse-mapping.ts ../dnb2011.txt dnb_2011_nb
+ *   bun generate/generate-verse-mapping.ts ../dnb2011.txt dnb_2011_nb --use-ai
  *
  * The input file should have one verse per line in the format:
  *   BookName chapter,verse text
@@ -16,16 +17,16 @@
  * different numbering.
  */
 
-import dotenv from 'dotenv';
 import * as fs from 'fs';
 import path from 'path';
 import { fileURLToPath } from 'url';
 import { books, maxTokens } from './constants.js';
 import type { Verse, Chapter } from '../kvn/src/bible-types.js';
+import { parseArgs, formatHelp, COMMON_FLAGS } from './cli.js';
+import type { FlagSpec } from './cli.js';
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
-dotenv.config({ path: path.join(__dirname, '.env') });
 
 /** Ett vers slik det står i inndatafila, før noen mapping. */
 interface SourceVerse {
@@ -130,6 +131,44 @@ const KNOWN_FORMATS: Record<string, InputFormat | undefined> = {
     },
   },
 };
+
+// --- Kommandolinje ---
+
+/**
+ * Flaggkontrakten for dette skriptet (#51, #52, #53).
+ *
+ * Inndatafil og mapping-id er posisjonsargumenter, som før. Den gamle koden
+ * leste dem som `args[0]`/`args[1]` i den rå argumentlista, så `--use-ai` foran
+ * dem stjal plassen og skriptet lette etter en fil som het «--use-ai».
+ * Kontrakten skiller flagg fra posisjonsargumenter, så rekkefølgen er fri.
+ */
+const SPEC: Record<string, FlagSpec> = {
+  'use-ai': {kind: 'boolean', help: 'la Claude matche versene som ikke lar seg mappe deterministisk'},
+  help: COMMON_FLAGS.help,
+};
+
+const HELP_EXAMPLES = [
+  'bun generate/generate-verse-mapping.ts ../dnb2011.txt dnb_2011_nb',
+  'bun generate/generate-verse-mapping.ts ../dnb2011.txt dnb_2011_nb --use-ai',
+  '',
+  `Kjente mapping-id-er: ${Object.keys(KNOWN_FORMATS).join(', ')}`,
+  'Inndatafila har ett vers per linje: «Boknavn kapittel,vers tekst».',
+  'Resultatet skrives til generate/mappings/<mapping-id>.json.',
+];
+
+// Hjelpen svares FØR .env leses og før inndatafila eller osnb-dataene åpnes:
+// `--help` skal ikke gjøre arbeid. `KNOWN_FORMATS` over er ren data, ingen I/O.
+const { flags, positional } = parseArgs(process.argv.slice(2), SPEC);
+if (flags.help) {
+  console.log(formatHelp(
+    'generate/generate-verse-mapping.ts <input-file> <mapping-id>',
+    'bygger versmapping mellom en oversettelse og osnb (hebraisk/gresk nummerering)',
+    SPEC,
+    HELP_EXAMPLES,
+  ));
+  process.exit(0);
+}
+
 
 const VERSE_MAPPING_SCHEMA = {
     type: "object",
@@ -525,17 +564,16 @@ function tryDeterministicMapping(
 // --- Main ---
 
 async function main(): Promise<void> {
-  const args = process.argv.slice(2);
-  if (args.length < 2) {
-    console.log('Usage: bun generate-verse-mapping.ts <input-file> <mapping-id> [--use-ai]');
+  if (positional.length < 2) {
+    console.log('Usage: bun generate/generate-verse-mapping.ts <input-file> <mapping-id> [--use-ai]');
     console.log('');
     console.log('Known mapping IDs:', Object.keys(KNOWN_FORMATS).join(', '));
     process.exit(1);
   }
 
-  const inputFile = args[0];
-  const mappingId = args[1];
-  const useAI = args.includes('--use-ai');
+  const inputFile = positional[0];
+  const mappingId = positional[1];
+  const useAI = flags['use-ai'] as boolean;
 
   const format = KNOWN_FORMATS[mappingId];
   if (!format) {
@@ -735,7 +773,12 @@ async function main(): Promise<void> {
   }
 }
 
-main().catch(err => {
+// Kjører bare når fila startes direkte. Uten vakten kjører jobben ved IMPORT —
+// det er grunnen til at days.ts slettet data bare man lastet modulen (#108),
+// og det gjør skriptene umulige å teste.
+if (import.meta.main) {
+    main().catch(err => {
   console.error(err);
   process.exit(1);
 });
+}

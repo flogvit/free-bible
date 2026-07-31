@@ -1,14 +1,15 @@
-import dotenv from 'dotenv'
+import "./env.js";
 import * as fs from 'fs';
 import path from 'path';
 import {fileURLToPath} from 'url';
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
-dotenv.config()
 
 import Anthropic from '@anthropic-ai/sdk';
 import {books, anthropicModel, maxTokens, getBookName} from "./constants.js";
+import {parseArgs, formatHelp, COMMON_FLAGS} from './cli.js';
+import type {FlagSpec} from './cli.js';
 import type {Chapter, Verse} from '../kvn/src/bible-types.js';
 
 const anthropic = new Anthropic({
@@ -567,38 +568,6 @@ function validateStory(story: Story, filename: string): string[] {
 
 // --- CLI ---
 
-function printUsage(): void {
-    console.log(`
-Usage: node stories.mjs [options]
-
-Modes:
-  --validate           Run local validation (no AI, checks format & references)
-  --proofread          AI proofread stories against osnb text
-  --apply              Apply proofread suggestions
-  --generate           Generate new stories
-  --generate --category <cat>  Generate stories for a specific category
-
-Options:
-  --file <slug>        Process only a specific story file (e.g., isaks-binding)
-  --min-score <n>      Only apply changes if score < n (default: 7)
-  --help               Show this help message
-
-Directories:
-  stories/nb/                Story files
-  proofread_stories/nb/      Proofread results
-
-Examples:
-  node stories.mjs --validate                       # Validate all stories locally
-  node stories.mjs --proofread                      # AI proofread all stories
-  node stories.mjs --proofread --file isaks-binding  # Proofread one story
-  node stories.mjs --proofread --apply               # Proofread and apply changes
-  node stories.mjs --apply                           # Apply previously saved proofread results
-  node stories.mjs --generate                        # Generate 10 new stories
-  node stories.mjs --generate --category paulus      # Generate stories in a category
-  node stories.mjs --generate --proofread --apply    # Generate, proofread, and apply
-`);
-}
-
 interface Options {
     validate: boolean;
     proofread: boolean;
@@ -607,55 +576,65 @@ interface Options {
     category: string | null;
     file: string | null;
     minScore: number;
-    help: boolean;
 }
 
-function parseArgs(args: string[]): Options {
-    const options: Options = {
-        validate: false,
-        proofread: false,
-        apply: false,
-        generate: false,
-        category: null,
-        file: null,
-        minScore: 7,
-        help: false,
+/**
+ * Flaggkontrakten for dette skriptet (#51, #52, #53).
+ *
+ * Ingen av navnene måtte skifte: skriptet hadde ingen `--remote`, og ingen av
+ * flaggene kolliderer med de gamle navnene kontrakten oversetter. Det som endrer
+ * seg er at et ukjent flagg nå feiler i stedet for å bli stille ignorert.
+ */
+const SPEC: Record<string, FlagSpec> = {
+    validate: {kind: 'boolean', help: 'lokal kontroll av format og referanser, uten modellkall'},
+    proofread: {kind: 'boolean', help: 'les korrektur på historiene mot osnb-teksten'},
+    apply: {kind: 'boolean', help: 'skriv korrekturens reviderte historie tilbake til fila'},
+    generate: {kind: 'boolean', help: 'generer ti nye historier som ikke finnes fra før'},
+    category: {kind: 'string', help: 'begrens --generate til én kategori, f.eks. paulus'},
+    file: {kind: 'string', help: 'behandle bare denne historien, oppgitt som slug'},
+    'min-score': {kind: 'number', help: 'bruk endringene bare når scoren er lavere enn dette', default: 7},
+    help: COMMON_FLAGS.help,
+};
+
+const HELP_PURPOSE = 'valider, korrekturles og generer bibelhistoriene i stories/nb/';
+
+const HELP_EXAMPLES = [
+    'bun generate/stories.ts --validate                        # valider alle historiene lokalt',
+    'bun generate/stories.ts --proofread                       # korrektur på alle historiene',
+    'bun generate/stories.ts --proofread --file isaks-binding  # korrektur på én historie',
+    'bun generate/stories.ts --proofread --apply               # korrektur, og skriv endringene inn',
+    'bun generate/stories.ts --apply                           # bruk korrektur som alt er lagret',
+    'bun generate/stories.ts --generate                        # ti nye historier',
+    'bun generate/stories.ts --generate --category paulus      # nye historier i én kategori',
+    'bun generate/stories.ts --generate --proofread --apply    # generer, korrekturles og skriv inn',
+    '',
+    'Historiene ligger i stories/nb/, og korrekturresultatene i proofread_stories/nb/.',
+    'Uten en av modusene --validate/--proofread/--apply/--generate gjør skriptet ingenting.',
+];
+
+/** Leser kommandolinja gjennom den felles kontrakten og oversetter til `Options`. */
+function readOptions(flags: ReturnType<typeof parseArgs>['flags']): Options {
+    return {
+        validate: flags.validate as boolean,
+        proofread: flags.proofread as boolean,
+        apply: flags.apply as boolean,
+        generate: flags.generate as boolean,
+        category: (flags.category as string | undefined) ?? null,
+        file: (flags.file as string | undefined) ?? null,
+        minScore: flags['min-score'] as number,
     };
-
-    let i = 0;
-    while (i < args.length) {
-        const arg = args[i];
-        if (arg === '--validate') {
-            options.validate = true;
-        } else if (arg === '--proofread') {
-            options.proofread = true;
-        } else if (arg === '--apply') {
-            options.apply = true;
-        } else if (arg === '--generate') {
-            options.generate = true;
-        } else if (arg === '--category' && i + 1 < args.length) {
-            options.category = args[++i];
-        } else if (arg === '--file' && i + 1 < args.length) {
-            options.file = args[++i];
-        } else if (arg === '--min-score' && i + 1 < args.length) {
-            options.minScore = parseInt(args[++i], 10);
-        } else if (arg === '--help') {
-            options.help = true;
-        }
-        i++;
-    }
-
-    return options;
 }
 
 async function main(): Promise<void> {
-    const args = process.argv.slice(2);
-    const options = parseArgs(args);
-
-    if (options.help) {
-        printUsage();
-        return;
+    // Hjelpen skal stå før alt annet: den skal kunne kjøres uten at en eneste fil
+    // blir lest eller skrevet.
+    const {flags} = parseArgs(process.argv.slice(2), SPEC);
+    if (flags.help) {
+        console.log(formatHelp('generate/stories.ts', HELP_PURPOSE, SPEC, HELP_EXAMPLES));
+        process.exit(0);
     }
+
+    const options = readOptions(flags);
 
     if (!options.validate && !options.proofread && !options.apply && !options.generate) {
         console.log('No mode specified. Use --help for usage.');
@@ -764,4 +743,14 @@ async function main(): Promise<void> {
     console.log('\nDone!');
 }
 
-main().catch(console.error);
+// Avslutningskoden må følge feilen: et ukjent flagg skal stoppe et køskript, og
+// `catch(console.error)` ga exit 0 og lot køen gå videre som om alt gikk bra.
+// Kjører bare når fila startes direkte. Uten vakten kjører jobben ved IMPORT —
+// det er grunnen til at days.ts slettet data bare man lastet modulen (#108),
+// og det gjør skriptene umulige å teste.
+if (import.meta.main) {
+    main().catch(err => {
+    console.error(err);
+    process.exit(1);
+});
+}

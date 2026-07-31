@@ -4,16 +4,49 @@
 // replaced with `match` in the given relation field only. Entries with
 // match "NEW"/empty/missing-from-catalog are skipped.
 //
-// Usage: node persons_apply_context.mjs <proposals.json> [--dry]
+// Usage: bun persons_apply_context.ts <proposals.json> [--dry-run]
 import * as fs from 'fs';
 import path from 'path';
 import { fileURLToPath } from 'url';
+import { parseArgs, formatHelp, COMMON_FLAGS } from './cli.js';
+import type { FlagSpec } from './cli.js';
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const PERSONS_DIR = path.join(__dirname, 'persons', 'nb');
-const [, , PROP, ...rest] = process.argv;
-const DRY = rest.includes('--dry');
-if (!PROP) { console.error('usage: node persons_apply_context.mjs <proposals.json> [--dry]'); process.exit(1); }
+
+/**
+ * Flaggkontrakten for dette skriptet (#51, #52, #53).
+ *
+ * Skriptet tok `<proposals.json> [--dry]`. `--dry` heter nå `--dry-run` — det
+ * gamle navnet går fortsatt gjennom som alias, med en advarsel. Uten flagget
+ * skrives endringene til disk, som før.
+ */
+const SPEC: Record<string, FlagSpec> = {
+    'dry-run': COMMON_FLAGS['dry-run'],
+    help: COMMON_FLAGS.help,
+};
+
+const HELP_EXAMPLES = [
+    'bun generate/persons_apply_context.ts proposals.json --dry-run   # vis hva som ville blitt endret',
+    'bun generate/persons_apply_context.ts proposals.json             # skriv endringene',
+];
+
+// Hjelpesjekken står før alt annet: skriptet leser og JSON-parser hele
+// persons-katalogen ved oppstart, og `--help` skal ikke koste noe av det.
+const { flags, positional } = parseArgs(process.argv.slice(2), SPEC);
+if (flags.help) {
+    console.log(formatHelp(
+        'generate/persons_apply_context.ts',
+        'skriver reviderte per-kontekst-avstemminger fra <proposals.json> inn i det ene relasjonsfeltet hver post peker på',
+        SPEC,
+        HELP_EXAMPLES,
+    ));
+    process.exit(0);
+}
+
+const PROP = positional[0];
+const DRY = flags['dry-run'] as boolean;
+if (!PROP) { console.error('usage: bun generate/persons_apply_context.ts <proposals.json> [--dry-run]'); process.exit(1); }
 
 /** Slektsfeltene i en profil. Alle er valgfrie — de fleste har bare noen. */
 interface PersonFamily {

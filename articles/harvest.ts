@@ -47,7 +47,47 @@ import { createHash } from 'crypto';
 import { spawnSync } from 'child_process';
 import { fileURLToPath } from 'url';
 
+import { parseArgs, formatHelp, COMMON_FLAGS } from '../generate/cli.js';
+import type { FlagSpec, ParsedArgs } from '../generate/cli.js';
+
 const __dirname = dirname(fileURLToPath(import.meta.url));
+
+// Flaggkontrakten kjører FØRST — før journals.json leses, før external/articles/
+// røres, og før re-exec-en under. Ellers ville `--help` lest fil og startet en
+// underprosess bare for å skrive ut en hjelpetekst.
+const SPEC: Record<string, FlagSpec> = {
+  journal: { kind: 'string', help: 'bare denne journalen (key i articles/journals.json)' },
+  limit: COMMON_FLAGS.limit,
+  full: { kind: 'boolean', help: 'full sveip i stedet for inkrementell — ignorer lastMetaRun' },
+  help: COMMON_FLAGS.help,
+};
+
+let parsed: ParsedArgs;
+try {
+  parsed = parseArgs(process.argv.slice(2), SPEC);
+} catch (e) {
+  console.error((e as Error).message);
+  process.exit(1);
+}
+const { flags, positional } = parsed;
+
+const PHASES = ['meta', 'pdf', 'text', 'all', 'status', 'prune'];
+
+if (flags.help) {
+  console.log(formatHelp(
+    'articles/harvest.ts',
+    'høster metadata, PDF og tekst for åpent lisensierte bibelfaglige tidsskrifter (#15)',
+    SPEC,
+    [
+      'bun articles/harvest.ts meta --journal ote --limit 50',
+      'bun articles/harvest.ts all',
+      'bun articles/harvest.ts status',
+    ],
+  ));
+  console.log(`\nFase (første posisjonsargument): ${PHASES.join(' | ')}`);
+  console.log('  prune sletter PDF-er som allerede er tekstuttrukket — bare etter eksplisitt beslutning.');
+  process.exit(0);
+}
 
 // journals.ufs.ac.za and www.scielo.org.za (actat, ote, and doi.org links that
 // redirect there) serve an incomplete TLS chain: the Sectigo intermediate is
@@ -605,15 +645,13 @@ function phaseStatus() {
 
 // ---------- main ----------
 async function main() {
-  const args = process.argv.slice(2);
-  const phase = args[0];
-  const flag = (name: string): string | null => { const i = args.indexOf(name); return i >= 0 ? args[i + 1] : null; };
-  const journalFilter = flag('--journal');
-  const limit = flag('--limit') ? +flag('--limit')! : null;
-  const full = args.includes('--full');
+  const phase = positional[0];
+  const journalFilter = (flags.journal as string | undefined) ?? null;
+  const limit = (flags.limit as number | undefined) ?? null;
+  const full = flags.full as boolean;
 
-  if (!['meta', 'pdf', 'text', 'all', 'status', 'prune'].includes(phase)) {
-    console.log('Usage: bun articles/harvest.ts <meta|pdf|text|all|status|prune> [--journal key] [--limit N] [--full]');
+  if (!PHASES.includes(phase)) {
+    console.log(`Bruk: bun articles/harvest.ts <${PHASES.join('|')}> [flagg] — se --help`);
     process.exit(1);
   }
 
@@ -658,4 +696,9 @@ async function main() {
   flushCatalog(true);
 }
 
-main().catch(e => { flushCatalog(true); console.error(e); process.exit(1); });
+// Kjører bare når fila startes direkte. Uten vakten kjører jobben ved IMPORT —
+// det er grunnen til at days.ts slettet data bare man lastet modulen (#108),
+// og det gjør skriptene umulige å teste.
+if (import.meta.main) {
+    main().catch(e => { flushCatalog(true); console.error(e); process.exit(1); });
+}

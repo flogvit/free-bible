@@ -11,6 +11,19 @@
 import { readFileSync, writeFileSync, readdirSync, existsSync, mkdirSync } from 'fs';
 import { join, dirname } from 'path';
 import { fileURLToPath } from 'url';
+import { parseArgs, formatHelp, COMMON_FLAGS } from '../../generate/cli.js';
+import type { FlagSpec } from '../../generate/cli.js';
+
+// Skriptet tar ingen argumenter i dag, men skal likevel gå gjennom kontrakten:
+// den er det som gjør at `--help` svarer i stedet for å skanne 1147 bibler, og
+// at et ukjent flagg feiler høyt framfor å bli ignorert.
+const SPEC: Record<string, FlagSpec> = {
+  help: COMMON_FLAGS.help,
+};
+
+const HELP_EXAMPLES = [
+  'bun kvn/scripts/analyze-verse-structures.ts',
+];
 
 const __dirname = dirname(fileURLToPath(import.meta.url));
 const PROJECT_ROOT = join(__dirname, '../..');
@@ -216,6 +229,18 @@ function classifyTradition(fp: TranslationFingerprint): string {
 // --- Main ---
 
 async function main() {
+  // Hjelpen skal ut før noe leses fra disk.
+  const { flags } = parseArgs(process.argv.slice(2), SPEC);
+  if (flags.help) {
+    console.log(formatHelp(
+      'kvn/scripts/analyze-verse-structures.ts',
+      'kartlegger versnummerering, kapittelantall og vershull i alle oversettelser og skriver kvn/data/verse-structure-report.json',
+      SPEC,
+      HELP_EXAMPLES,
+    ));
+    process.exit(0);
+  }
+
   console.log('=== Bible Verse Structure Analyzer ===\n');
 
   // Collect all translation names

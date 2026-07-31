@@ -1,9 +1,22 @@
+/**
+ * build-source-mappings.ts — utleder tanach- og sblgnt-mappingene fra osnb.
+ *
+ * Flaggene går gjennom den felles kontrakten i generate/cli.ts; `--help` viser
+ * dem. Skriptet tar ingen egne flagg: det skriver alltid begge mappingfilene.
+ */
+
 import * as fs from 'fs';
 import * as path from 'path';
 import {fileURLToPath} from 'url';
+import {formatHelp, parseArgs, COMMON_FLAGS} from '../../generate/cli.js';
+import type {FlagSpec} from '../../generate/cli.js';
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
+
+const SPEC: Record<string, FlagSpec> = {
+    help: COMMON_FLAGS.help,
+};
 
 const MAPPINGS_DIR = path.join(__dirname, '..', 'mappings');
 const SOURCE_FILE = path.join(MAPPINGS_DIR, 'osnb.ukvn.json');
@@ -70,6 +83,19 @@ function buildFiltered(
 }
 
 function main() {
+    // Hjelpen skal ut før noe leses fra eller skrives til disk: skriptet
+    // overskriver tanach.ukvn.json og sblgnt.ukvn.json uten å spørre.
+    const {flags} = parseArgs(process.argv.slice(2), SPEC);
+    if (flags.help) {
+        console.log(formatHelp(
+            'kvn/scripts/build-source-mappings.ts',
+            'utleder tanach- og sblgnt-mappingene fra osnb.ukvn.json (GT-bøkene 1-39 og NT-bøkene 40-66)',
+            SPEC,
+            ['bun kvn/scripts/build-source-mappings.ts'],
+        ));
+        process.exit(0);
+    }
+
     const source: Mapping = JSON.parse(fs.readFileSync(SOURCE_FILE, 'utf8'));
     console.log(`Source: ${source.name}, ${source.map.length} entries`);
 

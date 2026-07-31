@@ -1,13 +1,14 @@
-import dotenv from 'dotenv';
+import "./env.js";
 import * as fs from 'fs';
 import path from 'path';
 import {fileURLToPath} from 'url';
-dotenv.config();
 
 import {books} from './constants.js';
 import {getRef} from './lib.js';
 import {callWithRetry} from './llm.js';
 import {hasEmbeddings, buildEmbeddings, loadEmbeddings, topK, topKByIndex, embedQuery} from './embeddings.js';
+import {parseArgs, formatHelp, COMMON_FLAGS} from './cli.js';
+import type {FlagSpec, Range} from './cli.js';
 import type {EmbeddingItem, EmbeddingState, TopKResult} from './embeddings.js';
 import type {Chapter, Verse} from '../kvn/src/bible-types.js';
 
@@ -43,13 +44,7 @@ interface VerifyTotals {
     total: number;
 }
 
-/** Et bok-/kapittel-/versintervall fra kommandolinja, begge ender inklusive. */
-interface Range {
-    start: number;
-    end: number;
-}
-
-/** Innstillingene for en kjøring, slik `parseArgs` leser dem. */
+/** Innstillingene for en kjøring, slik `readOptions` leser dem. */
 interface SemanticOptions {
     buildOnly: boolean;
     verifyOnly: boolean;
@@ -67,8 +62,44 @@ interface SemanticOptions {
     verseStart: number | null;
     verseEnd: number | null;
     force: boolean;
-    help: boolean;
 }
+
+/**
+ * Flaggkontrakten for dette skriptet (#51, #52, #53).
+ *
+ * Ingen `--local`: hele jobben er lokal per konstruksjon — bge-m3 for vektorene
+ * og `local: true` i hvert `callWithRetry`-kall her i fila. Det er ikke et valg
+ * kommandolinja skal kunne snu.
+ *
+ * `--threshold` er `string` og ikke `number` fordi kontraktens `number` er
+ * `parseInt`: «0.60» ville blitt 0, altså ingen terskel i det hele tatt, uten at
+ * noe klaget. Verdien tolkes med `parseFloat` i `readOptions`.
+ */
+const SPEC: Record<string, FlagSpec> = {
+    'build-only': {kind: 'boolean', help: 'bygg bare vektorene, hopp over verifiseringen'},
+    'verify-only': {kind: 'boolean', help: 'verifiser bare, forutsetter at vektorene finnes'},
+    'top-k': {kind: 'number', help: 'antall kandidater per vers', default: 10},
+    threshold: {kind: 'string', help: 'minste cosinuslikhet (bge-m3 gir beslektede vers 0.60–0.70)', default: '0.60'},
+    'neighbor-skip': {kind: 'number', help: 'hopp over vers i samme kapittel innenfor N', default: 5},
+    theme: {kind: 'boolean', help: 'la modellen oppsummere verset og søk også på oppsummeringen'},
+    concepts: {kind: 'boolean', help: 'la modellen lage 4 fasettspørsmål og søk på hvert av dem'},
+    resume: {kind: 'boolean', help: 'hopp over vers som alt er kjørt (embeddings/<korpus>/semantic_progress.json)'},
+    'skip-existing': {kind: 'boolean', help: 'hopp over vers som alt har en referansefil'},
+    book: COMMON_FLAGS.book,
+    chapter: COMMON_FLAGS.chapter,
+    verse: COMMON_FLAGS.verse,
+    force: {kind: 'boolean', help: 'bygg vektorene på nytt (rører ikke referansefilene — fletting bevarer alltid det som finnes)'},
+    help: COMMON_FLAGS.help,
+};
+
+const HELP_EXAMPLES = [
+    'bun generate/references_semantic.ts --build-only',
+    'bun generate/references_semantic.ts --verify-only --book 42 --chapter 19',
+    'bun generate/references_semantic.ts --verify-only --resume',
+    'bun generate/references_semantic.ts --top-k 10 --threshold 0.78',
+    '',
+    'Verifiserte par flettes inn i references/nb/<bok>/<kapittel>/<vers>.json.',
+];
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
@@ -355,95 +386,55 @@ async function verifyVerse(verse: EmbeddingItem<Verse>, state: EmbeddingState<Ve
     return {found: candidates.length, kept: fresh.length, total: merged.length};
 }
 
-function printUsage(): void {
-    console.log(`
-Usage: node references_semantic.mjs [options]
+/** Oversetter de tolkede flaggene til `SemanticOptions`. */
+function readOptions(flags: ReturnType<typeof parseArgs>['flags']): SemanticOptions {
+    const book = flags.book as Range | undefined;
+    const chapter = flags.chapter as Range | undefined;
+    const verse = flags.verse as Range | undefined;
 
-Two-phase semantic cross-reference builder for osnb:
-  1. Build embeddings of all verses (bge-m3 via Ollama)
-  2. For each verse, fetch top-K semantic candidates and verify each with a local LLM (qwen3.5:122b).
-     Verified pairs are merged into references/nb/<book>/<chapter>/<verse>.json.
-
-Options:
-  --build-only         Only build embeddings; skip verification
-  --verify-only        Only verify; assumes embeddings exist
-  --top-k <n>          Candidate count per verse (default: 10)
-  --threshold <x>      Min cosine similarity (default: 0.60 — bge-m3 typically scores related verses 0.60-0.70)
-  --theme              Add theme-extraction step: LLM summarizes verse, embed summary, search for thematic parallels (in addition to text-based)
-  --concepts           Add concept-question step: LLM generates 4 facet-queries, each searched separately
-  --resume             Skip verses already processed in a prior semantic run (tracked in embeddings/<corpus>/semantic_progress.json)
-  --skip-existing      Skip verses that already have a references file (don't augment existing manual refs)
-  --neighbor-skip <n>  Skip same-chapter verses within N (default: 5)
-  --book <range>       Verify only these books: single (43) or range (1-20)
-  --chapter <range>    Verify only these chapters
-  --verse <range>      Verify only these verses
-  --force              Rebuild embeddings (does NOT overwrite refs; merge always preserves existing)
-  --help
-
-Examples:
-  node references_semantic.mjs --build-only
-  node references_semantic.mjs --verify-only --book 42 --chapter 19
-  node references_semantic.mjs --top-k 10 --threshold 0.78
-`);
-}
-
-function parseRange(value: string): Range {
-    if (value.includes('-')) {
-        const [start, end] = value.split('-').map(n => parseInt(n, 10));
-        return {start, end};
+    const threshold = parseFloat(flags.threshold as string);
+    if (Number.isNaN(threshold)) {
+        throw new Error(`--threshold: «${flags.threshold}» er ikke et tall`);
     }
-    const num = parseInt(value, 10);
-    return {start: num, end: num};
-}
 
-function parseArgs(args: string[]): SemanticOptions {
-    const opts: SemanticOptions = {
-        buildOnly: false,
-        verifyOnly: false,
-        topK: 10,
-        threshold: 0.60,
-        neighborSkip: 5,
-        useTheme: false,
-        useConcepts: false,
-        resume: false,
-        skipExisting: false,
-        bookStart: null, bookEnd: null,
-        chapterStart: null, chapterEnd: null,
-        verseStart: null, verseEnd: null,
-        force: false,
-        help: false
+    return {
+        buildOnly: flags['build-only'] as boolean,
+        verifyOnly: flags['verify-only'] as boolean,
+        topK: flags['top-k'] as number,
+        threshold,
+        neighborSkip: flags['neighbor-skip'] as number,
+        useTheme: flags.theme as boolean,
+        useConcepts: flags.concepts as boolean,
+        resume: flags.resume as boolean,
+        skipExisting: flags['skip-existing'] as boolean,
+        bookStart: book?.start ?? null,
+        bookEnd: book?.end ?? null,
+        chapterStart: chapter?.start ?? null,
+        chapterEnd: chapter?.end ?? null,
+        verseStart: verse?.start ?? null,
+        verseEnd: verse?.end ?? null,
+        force: flags.force as boolean,
     };
-    let i = 0;
-    while (i < args.length) {
-        const a = args[i];
-        if (a === '--build-only') opts.buildOnly = true;
-        else if (a === '--verify-only') opts.verifyOnly = true;
-        else if (a === '--top-k' && i + 1 < args.length) opts.topK = parseInt(args[++i], 10);
-        else if (a === '--threshold' && i + 1 < args.length) opts.threshold = parseFloat(args[++i]);
-        else if (a === '--neighbor-skip' && i + 1 < args.length) opts.neighborSkip = parseInt(args[++i], 10);
-        else if (a === '--book' && i + 1 < args.length) {
-            const r = parseRange(args[++i]); opts.bookStart = r.start; opts.bookEnd = r.end;
-        }
-        else if (a === '--chapter' && i + 1 < args.length) {
-            const r = parseRange(args[++i]); opts.chapterStart = r.start; opts.chapterEnd = r.end;
-        }
-        else if (a === '--verse' && i + 1 < args.length) {
-            const r = parseRange(args[++i]); opts.verseStart = r.start; opts.verseEnd = r.end;
-        }
-        else if (a === '--theme') opts.useTheme = true;
-        else if (a === '--concepts') opts.useConcepts = true;
-        else if (a === '--resume') opts.resume = true;
-        else if (a === '--skip-existing') opts.skipExisting = true;
-        else if (a === '--force') opts.force = true;
-        else if (a === '--help' || a === '-h') opts.help = true;
-        i++;
-    }
-    return opts;
 }
 
 async function main(): Promise<void> {
-    const opts = parseArgs(process.argv.slice(2));
-    if (opts.help) { printUsage(); return; }
+    // `-h` var et alias for `--help` i den gamle parseren. Kontrakten kjenner bare
+    // lange flagg, så den oversettes her framfor å bli borte.
+    const argv = process.argv.slice(2).map(a => a === '-h' ? '--help' : a);
+
+    // Hjelpen skal ut før noe leses fra disk eller sendes til Ollama.
+    const {flags} = parseArgs(argv, SPEC);
+    if (flags.help) {
+        console.log(formatHelp(
+            'generate/references_semantic.ts',
+            'semantiske kryssreferanser for osnb: bygger vektorer med bge-m3, henter topp-K kandidater per vers og lar en lokal modell verifisere hver enkelt',
+            SPEC,
+            HELP_EXAMPLES,
+        ));
+        process.exit(0);
+    }
+
+    const opts = readOptions(flags);
 
     const verses = loadAllOsnb2Verses();
     console.log(`Loaded ${verses.length} osnb verses`);
@@ -517,7 +508,12 @@ async function main(): Promise<void> {
     console.log(`Done. Total candidates: ${totalFound}, accepted: ${totalKept} (${pct}%)`);
 }
 
-main().catch(err => {
+// Kjører bare når fila startes direkte. Uten vakten kjører jobben ved IMPORT —
+// det er grunnen til at days.ts slettet data bare man lastet modulen (#108),
+// og det gjør skriptene umulige å teste.
+if (import.meta.main) {
+    main().catch(err => {
     console.error(err);
     process.exit(1);
 });
+}

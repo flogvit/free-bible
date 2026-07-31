@@ -1,3 +1,4 @@
+import "./env.js";
 /**
  * Local triage pass over a translated bible.
  *
@@ -26,21 +27,21 @@
  *               attempts in the prompt. Re-translating costs ~1/16 of proofreading.
  *
  * Usage:
- *   bun triage.mjs osen --book 1
- *   bun triage.mjs osen --nt --min-score 6 --drop
- *   bun triage.mjs osen --book 1-20 --recheck
+ *   bun generate/triage.ts osen --book 1
+ *   bun generate/triage.ts osen --nt --min-score 6 --drop
+ *   bun generate/triage.ts osen --book 1-20 --recheck
  */
 
-import dotenv from 'dotenv';
 import * as fs from 'fs';
 import path from 'path';
 import {fileURLToPath} from 'url';
 
-dotenv.config();
 
 import {bibles, books, getTaskModel, getLanguageCode} from './constants.js';
 import {callWithRetry, resolveLocalModel} from './llm.js';
 import {loadUkvnMapping, UkvnMapper, CrossMapper, ukvnEncode, ukvnDecode} from '../kvn/src/ukvn.js';
+import {parseArgs, formatHelp, COMMON_FLAGS} from './cli.js';
+import type {FlagSpec, Range} from './cli.js';
 import type {Book} from './constants.js';
 import type {Chapter, Verse} from '../kvn/src/bible-types.js';
 
@@ -120,12 +121,6 @@ interface TriageTotals {
     mechanical: number;
 }
 
-/** Et bok-/kapittel-/versintervall fra kommandolinja, begge ender inklusive. */
-interface Range {
-    start: number;
-    end: number;
-}
-
 /**
  * Innstillingene for en kjøring.
  *
@@ -149,7 +144,6 @@ interface TriageOptions {
     chapterEnd: number | null;
     verseStart: number | null;
     verseEnd: number | null;
-    help: boolean;
     referenceLanguage: string;
     sourceMapping: string;
     peerLookup: PeerLookup;
@@ -163,6 +157,55 @@ const PEERS: Record<string, string> = {
     nb: 'dnb30',
     nn: 'dnb30'
 };
+
+/**
+ * Flaggkontrakten for dette skriptet (#51, #52, #53).
+ *
+ * `--model` og `--peer` har ingen statisk standardverdi: null betyr «ikke pinnet»,
+ * og hva som faktisk brukes utledes av oppgaven (`getTaskModel`) og av målspråket
+ * (`PEERS`). Begge deler står derfor i hjelpeteksten i stedet for i `default`.
+ *
+ * Skriptet har ingen `--local`: triage kjører alltid mot lokal Ollama.
+ */
+const SPEC: Record<string, FlagSpec> = {
+    book: COMMON_FLAGS.book,
+    chapter: COMMON_FLAGS.chapter,
+    verse: COMMON_FLAGS.verse,
+    ot: COMMON_FLAGS.ot,
+    nt: COMMON_FLAGS.nt,
+    model: {
+        kind: 'string',
+        help: `pin den lokale modellen (uten flagget: ${getTaskModel('triage')}, eller en større som alt ligger i minnet; OLLAMA_MODEL overstyrer)`,
+    },
+    'min-score': {kind: 'number', help: 'flagg vers som scorer under dette (0-10)', default: 8},
+    drop: {kind: 'boolean', help: 'pensjoner flagget tekst slik at bible.ts oversetter den på nytt (historikken beholdes)'},
+    recheck: {kind: 'boolean', help: 'triager på nytt de versene som alt har en dom'},
+    peer: {
+        kind: 'string',
+        help: `oversettelse på samme språk, for lengde og ordvalg (uten flagget, per språk: ${Object.entries(PEERS).map(([k, v]) => `${k}=${v}`).join(', ')})`,
+    },
+    'no-peer': {kind: 'boolean', help: 'hopp over sammenlikningen mot samme språk'},
+    reference: {kind: 'string', help: 'korrekturlest oversettelse på et annet språk, for mening', default: 'osnb'},
+    help: COMMON_FLAGS.help,
+};
+
+const HELP_EXAMPLES = [
+    'bun generate/triage.ts osen --book 1',
+    'bun generate/triage.ts osen --nt --min-score 6 --drop',
+    'bun generate/triage.ts osen --book 1-20 --recheck',
+    '',
+    'Oversettelsen oppgis som posisjonsargument: bun generate/triage.ts <bibel> [flagg].',
+];
+
+/** Hjelpeteksten, som både `--help` og «mangler bibel» skriver ut. */
+function usage(): string {
+    return formatHelp(
+        'generate/triage.ts',
+        'scorer hvert vers med en lokal modell og flagger dem som er verdt å sende til Claude',
+        SPEC,
+        HELP_EXAMPLES,
+    );
+}
 
 // Register and convention checks that only make sense for one language.
 const LANGUAGE_CHECKS: Record<string, LanguageCheck[]> = {
@@ -495,79 +538,46 @@ async function triageChapter(bible: string, bookId: number, chapterId: number, o
     return totals;
 }
 
-function parseRange(value: string): Range {
-    if (value.includes('-')) {
-        const [start, end] = value.split('-').map(n => parseInt(n, 10));
-        return {start, end};
-    }
-    const n = parseInt(value, 10);
-    return {start: n, end: n};
-}
-
-function printUsage(): void {
-    console.log(`
-Usage: bun triage.mjs <bible> [options]
-
-Scores every verse with a local model and flags the ones worth sending to Claude.
-
-Options:
-  --model <name>     Local model to use (default: ${getTaskModel('triage')};
-                     OLLAMA_MODEL overrides the per-task default)
-  --min-score <n>    Flag verses scoring below this (default: 8, range 0-10)
-  --drop             Retire flagged text so bible.mjs re-translates it (keeps history)
-  --recheck          Re-triage verses that already have a verdict
-  --peer <id>        Same-language translation for length and wording checks
-                     (default by language: ${Object.entries(PEERS).map(([k, v]) => `${k}=${v}`).join(', ')})
-  --reference <id>   Reviewed translation in another language, for meaning (default: osnb)
-  --no-peer          Skip the same-language comparison
-  --ot / --nt        Old / New Testament only
-  --book <range>     Single (43) or range (1-20)
-  --chapter <range>  Single (1) or range (1-10)
-  --verse <range>    Single (5) or range (5-7)
-  --help
-
-Examples:
-  bun triage.mjs osen --book 1
-  bun triage.mjs osen --nt --min-score 6 --drop
-  bun triage.mjs osen --book 1-20 --recheck
-`);
-}
-
 async function main(): Promise<void> {
-    const args = process.argv.slice(2);
+    // Hjelpen skal ut før noe leses fra disk eller sendes over nettet.
+    const {flags, positional} = parseArgs(process.argv.slice(2), SPEC);
+    if (flags.help) {
+        console.log(usage());
+        process.exit(0);
+    }
+
+    const book = flags.book as Range | undefined;
+    const chapter = flags.chapter as Range | undefined;
+    const verse = flags.verse as Range | undefined;
+
     // `as TriageOptions`: referenceLanguage, sourceMapping og peerLookup har ingen
     // flagg og settes lenger nede, etter at argumentene er lest.
     const options = {
+        // Bibelen er posisjonsargumentet, som før: `bun generate/triage.ts osen`.
+        bible: positional[0] ?? null,
         // model står null med vilje: bare --model skal pinne modellen. Står den
         // fylt ut på forhånd, ser resolveLocalModel det som et pin og lar være å
         // adoptere en modell som alt ligger i minnet.
-        bible: null, model: null, minScore: 8, drop: false, recheck: false,
-        peer: null, noPeer: false, reference: 'osnb',
-        ot: false, nt: false, bookStart: null, bookEnd: null,
-        chapterStart: null, chapterEnd: null, verseStart: null, verseEnd: null, help: false
+        model: (flags.model as string | undefined) ?? null,
+        minScore: flags['min-score'] as number,
+        drop: flags.drop as boolean,
+        recheck: flags.recheck as boolean,
+        peer: (flags.peer as string | undefined) ?? null,
+        noPeer: flags['no-peer'] as boolean,
+        reference: flags.reference as string,
+        ot: flags.ot as boolean,
+        nt: flags.nt as boolean,
+        bookStart: book?.start ?? null,
+        bookEnd: book?.end ?? null,
+        chapterStart: chapter?.start ?? null,
+        chapterEnd: chapter?.end ?? null,
+        verseStart: verse?.start ?? null,
+        verseEnd: verse?.end ?? null,
     } as TriageOptions;
 
-    for (let i = 0; i < args.length; i++) {
-        const a = args[i];
-        if (a === '--model') options.model = args[++i];
-        else if (a === '--min-score') options.minScore = parseInt(args[++i], 10);
-        else if (a === '--drop') options.drop = true;
-        else if (a === '--recheck') options.recheck = true;
-        else if (a === '--peer') options.peer = args[++i];
-        else if (a === '--no-peer') options.noPeer = true;
-        else if (a === '--reference') options.reference = args[++i];
-        else if (a === '--ot') options.ot = true;
-        else if (a === '--nt') options.nt = true;
-        else if (a === '--book') { const r = parseRange(args[++i]); options.bookStart = r.start; options.bookEnd = r.end; }
-        else if (a === '--chapter') { const r = parseRange(args[++i]); options.chapterStart = r.start; options.chapterEnd = r.end; }
-        else if (a === '--verse') { const r = parseRange(args[++i]); options.verseStart = r.start; options.verseEnd = r.end; }
-        else if (a === '--help') options.help = true;
-        else if (!a.startsWith('--') && !options.bible) options.bible = a;
-    }
-
-    if (options.help || !options.bible) {
-        printUsage();
-        process.exit(options.help ? 0 : 1);
+    if (!options.bible) {
+        console.log(usage());
+        process.exit(1);
     }
     if (!bibles[options.bible]) {
         console.error(`Unknown bible '${options.bible}'. Known: ${Object.keys(bibles).join(', ')}`);
@@ -623,5 +633,11 @@ async function main(): Promise<void> {
 // Bare kjør CLI-en når fila startes direkte — de eksporterte funksjonene skal kunne
 // importeres (f.eks. av evalueringsskript) uten at main() går i gang.
 if (process.argv[1] && path.resolve(process.argv[1]) === fileURLToPath(import.meta.url)) {
-    main().catch(console.error);
+    // Avslutt med kode 1, ikke 0: et ukjent flagg skal stoppe et køskript, ikke
+    // bare skrive en linje det ingen leser. Tidligere var dette
+    // `.catch(console.error)`, som ga kode 0. Samme mønster som references.ts.
+    main().catch(err => {
+        console.error(err);
+        process.exit(1);
+    });
 }

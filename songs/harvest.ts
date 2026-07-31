@@ -20,9 +20,9 @@
  *   index.json                      master index (existing, extended by merge)
  *
  * Usage:
- *   node songs/harvest.mjs scrape [--collection key] [--limit N]
- *   node songs/harvest.mjs merge  [--dry]
- *   node songs/harvest.mjs status
+ *   bun songs/harvest.ts scrape [--collection key] [--limit N]
+ *   bun songs/harvest.ts merge  [--dry-run]
+ *   bun songs/harvest.ts status
  *
  * Idempotent + resumable: scrape skips songs whose file exists; merge skips
  * songs already in index.json (by collection+file source, and by normalized
@@ -32,8 +32,48 @@
 import fs from 'fs';
 import { join, dirname } from 'path';
 import { fileURLToPath } from 'url';
+import { parseArgs, formatHelp, COMMON_FLAGS } from '../generate/cli.js';
+import type { FlagSpec, ParsedArgs } from '../generate/cli.js';
 
 const __dirname = dirname(fileURLToPath(import.meta.url));
+
+// Flaggkontrakten kjører FØRST — før sources.json leses og før external/songs/
+// røres. `--help` skal svare uten å lese en eneste fil.
+const SPEC: Record<string, FlagSpec> = {
+  collection: { kind: 'string', help: 'bare denne samlingen (key i songs/sources.json)' },
+  limit: COMMON_FLAGS.limit,
+  // Het `--dry` før. Kontrakten godtar fortsatt det navnet, men advarer (#52).
+  'dry-run': COMMON_FLAGS['dry-run'],
+  help: COMMON_FLAGS.help,
+};
+
+let parsed: ParsedArgs;
+try {
+  parsed = parseArgs(process.argv.slice(2), SPEC);
+} catch (e) {
+  console.error((e as Error).message);
+  process.exit(1);
+}
+const { flags, positional } = parsed;
+
+const COMMANDS = ['scrape', 'merge', 'status'];
+
+if (flags.help) {
+  console.log(formatHelp(
+    'songs/harvest.ts',
+    'høster salmer/dikt fra wikisource og kalliope, og fletter dem inn i sangkorpuset',
+    SPEC,
+    [
+      'bun songs/harvest.ts scrape --collection kalliope-kingo --limit 50',
+      'bun songs/harvest.ts merge --dry-run',
+      'bun songs/harvest.ts status',
+    ],
+  ));
+  console.log(`\nKommando (første posisjonsargument): ${COMMANDS.join(' | ')}`);
+  console.log('  --collection og --limit gjelder scrape; --dry-run gjelder merge.');
+  process.exit(0);
+}
+
 const REPO = join(__dirname, '..');
 const DATA = join(REPO, 'external/songs');
 const HARVEST = join(DATA, 'harvest');
@@ -454,20 +494,16 @@ function status() {
 
 // ---------- main ----------
 
-const args = process.argv.slice(2);
-const cmd = args[0];
-const opt = (name: string): string | null => { const i = args.indexOf(`--${name}`); return i >= 0 ? args[i + 1] : null; };
-const flag = (name: string): boolean => args.includes(`--${name}`);
-
 async function main() {
+  const cmd = positional[0];
   if (cmd === 'status') return status();
-  if (cmd === 'merge') return mergeIntoMaster(flag('dry'));
+  if (cmd === 'merge') return mergeIntoMaster(flags['dry-run'] as boolean);
   if (cmd !== 'scrape') {
-    console.log('Usage: node songs/harvest.mjs <scrape|merge|status> [--collection key] [--limit N] [--dry]');
+    console.log(`Bruk: bun songs/harvest.ts <${COMMANDS.join('|')}> [flagg] — se --help`);
     process.exit(1);
   }
-  const only = opt('collection');
-  const limit = opt('limit') ? parseInt(opt('limit')!, 10) : null;
+  const only = (flags.collection as string | undefined) ?? null;
+  const limit = (flags.limit as number | undefined) ?? null;
   const state = loadState();
   for (const [key, cfg] of Object.entries(CONFIG.collections)) {
     if (only && key !== only) continue;
@@ -484,4 +520,9 @@ async function main() {
   }
 }
 
-main().catch(e => { console.error('Fatal:', e); process.exit(1); });
+// Kjører bare når fila startes direkte. Uten vakten kjører jobben ved IMPORT —
+// det er grunnen til at days.ts slettet data bare man lastet modulen (#108),
+// og det gjør skriptene umulige å teste.
+if (import.meta.main) {
+    main().catch(e => { console.error('Fatal:', e); process.exit(1); });
+}

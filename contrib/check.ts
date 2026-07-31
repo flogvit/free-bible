@@ -9,10 +9,10 @@
 //      OpenLibrary for ISBN — fasit for revieweren, skrives i review.note
 //
 // Funn skrives inn i selve fila (review.note under MASKINSJEKK:), status
-// røres aldri — det er reviewerens (menneskets) jobb via review.mjs.
+// røres aldri — det er reviewerens (menneskets) jobb via review.ts.
 //
 // Kjøres under tsx pga. kvn-TS-importene:
-//   bun contrib/check.mjs [--id <id>] [--target-lookup]
+//   bun contrib/check.ts [--id <id>] [--target-lookup]
 
 import * as fs from 'fs';
 import path from 'path';
@@ -23,6 +23,34 @@ import {encode, decode, BOOK_IDS, BOOK_NAMES} from '../kvn/src/types.js';
 import {loadUkvnMapping, UkvnMapper, ukvnEncode, ukvnDecode, resolveMappingId} from '../kvn/src/ukvn.js';
 import {getMaxVerse} from '../kvn/src/load-bible.js';
 import type {ContribDoc, ContribRef, ContribTarget, CrossrefAuthor} from './contrib-types.js';
+import {parseArgs, formatHelp, COMMON_FLAGS} from '../generate/cli.js';
+import type {FlagSpec} from '../generate/cli.js';
+
+const SPEC: Record<string, FlagSpec> = {
+  id: {kind: 'string', help: 'sjekk bare denne kø-id-en (contrib/queue/<id>.json)'},
+  'target-lookup': {kind: 'boolean', help: 'slå opp DOI mot Crossref og ISBN mot OpenLibrary'},
+  help: COMMON_FLAGS.help,
+};
+
+// Hjelpen skal ut FØR selvtesten og før køen leses: `--help` skal aldri røre
+// disk eller nett.
+const {flags} = parseArgs(process.argv.slice(2), SPEC);
+if (flags.help) {
+  console.log(formatHelp(
+    'contrib/check.ts',
+    'maskinsjekk av contrib-køfiler: struktur, KVN-oppløsning av refs, valgfritt målverk-oppslag',
+    SPEC,
+    [
+      'bun contrib/check.ts',
+      'bun contrib/check.ts --id 42',
+      'bun contrib/check.ts --target-lookup',
+    ],
+  ));
+  process.exit(0);
+}
+
+const onlyId = (flags.id as string | undefined) ?? null;
+const doLookup = flags['target-lookup'] as boolean;
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const QUEUE_DIR = path.join(__dirname, 'queue');
@@ -33,10 +61,6 @@ if (encode(15, 3, 1, 0) !== 15740944) {
   console.error('SELVTEST FEILET: encode(15,3,1) ≠ 15740944 — feil KVN-koding importert.');
   process.exit(1);
 }
-
-const args = process.argv.slice(2);
-const onlyId = args.includes('--id') ? args[args.indexOf('--id') + 1] : null;
-const doLookup = args.includes('--target-lookup');
 
 const KINDS = ['article_verse_refs', 'book_verse_refs', 'song_verse_refs'];
 const REF_KINDS = ['cites', 'discusses', 'covers_passage'];

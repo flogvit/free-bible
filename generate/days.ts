@@ -2,8 +2,29 @@ import * as fs from 'fs';
 import path from 'path';
 import {fileURLToPath} from 'url';
 
+import {parseArgs, formatHelp, COMMON_FLAGS} from './cli.js';
+import type {FlagSpec} from './cli.js';
+
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
+
+/**
+ * Skriptet tar ingen flagg: dagene og datoreglene ligger i fila, og det er
+ * ingenting å velge mellom. `--help` må likevel med, for uten den ble
+ * `bun generate/days.ts --help` en full kjøring — og en full kjøring
+ * overskriver hver dagfil (#109).
+ */
+const SPEC: Record<string, FlagSpec> = {
+    help: COMMON_FLAGS.help,
+};
+
+const HELP_EXAMPLES = [
+    'bun generate/days.ts',
+    '',
+    'ADVARSEL: hver fil skrives i sin helhet, med bare feltene som står i',
+    'skriptet. Felter som er lagt til etterpå — blant annet references[] —',
+    'forsvinner. Sjekk `git status generate/days/nb` etter kjøring.',
+];
 
 /** Regner ut datoen en dag faller på i et gitt år. */
 type DateCalc = (year: number) => Date;
@@ -844,6 +865,18 @@ function ensureDir(dirPath: string): void {
 }
 
 function main(): void {
+    // Hjelpen skal ut før den første fila røres — kjøringen er destruktiv.
+    const {flags} = parseArgs(process.argv.slice(2), SPEC);
+    if (flags.help) {
+        console.log(formatHelp(
+            'generate/days.ts',
+            'skriver dagene i kirkeåret og den jødiske festkalenderen til generate/days/nb/<id>.json, med datoene beregnet for 2025–2035',
+            SPEC,
+            HELP_EXAMPLES,
+        ));
+        process.exit(0);
+    }
+
     const outDir = path.join(__dirname, 'days', 'nb');
     ensureDir(outDir);
 
@@ -870,4 +903,9 @@ function main(): void {
     console.log(`\nCreated ${created} day files in ${outDir}`);
 }
 
-main();
+// Kjører bare når fila startes direkte. Uten vakten kjører jobben ved IMPORT —
+// det er grunnen til at days.ts slettet data bare man lastet modulen (#108),
+// og det gjør skriptene umulige å teste.
+if (import.meta.main) {
+    main();
+}

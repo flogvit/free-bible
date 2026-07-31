@@ -7,14 +7,28 @@
  * 3. For each chapter where verse counts differ, use text similarity
  *    to match DNB2011 verses to osnb verses
  * 4. Generate mapping entries where tkvn ≠ kvn
+ *
+ * Flaggene går gjennom den felles kontrakten i generate/cli.ts; `--help` viser dem.
  */
 
 import { readFileSync, readdirSync, existsSync, statSync, writeFileSync } from 'fs';
 import { join } from 'path';
+import { parseArgs, formatHelp, COMMON_FLAGS } from '../../generate/cli.js';
+import type { FlagSpec } from '../../generate/cli.js';
 
 const DNB2011_FILE = join(import.meta.dirname, '../../external/closed/dnb2011_nb.txt');
 const OSNB_DIR = join(import.meta.dirname, '../../generate/bibles_raw/osnb');
 const OUT_FILE = join(import.meta.dirname, '../mappings/dnb2011_nb.ukvn.json');
+
+// Skriptet tar ingen andre argumenter i dag: det bygger hele mappingen fra
+// dnb2011_nb.txt mot osnb, og skriver den til OUT_FILE.
+const SPEC: Record<string, FlagSpec> = {
+  help: COMMON_FLAGS.help,
+};
+
+const HELP_EXAMPLES = [
+  'bun kvn/scripts/build-dnb2011-mapping.ts',
+];
 
 // === Universal KVN encoding (same as osnb mapping) ===
 const PART_SIZE = 16;
@@ -158,215 +172,228 @@ function similarity(a: string, b: string): number {
 }
 
 // === Main ===
-console.log('Parsing DNB 2011...');
-const dnb2011Verses = parseDnb2011();
-console.log(`DNB 2011: ${dnb2011Verses.length} verses`);
-
-console.log('Loading osnb...');
-const osnbChapters = loadOsnb2();
-
-// Group DNB2011 by book:chapter
-const dnb2011Chapters = new Map<string, Verse[]>();
-for (const v of dnb2011Verses) {
-  const key = `${v.book}:${v.chapter}`;
-  if (!dnb2011Chapters.has(key)) dnb2011Chapters.set(key, []);
-  dnb2011Chapters.get(key)!.push(v);
-}
-
-console.log(`DNB 2011: ${dnb2011Chapters.size} chapters`);
-console.log(`osnb: ${osnbChapters.size} chapters`);
-
-// === Find differences ===
-// For each chapter, compare verse ranges
-const mapEntries: Array<{
-  tkvn: number;       // DNB2011 coordinate as KVN
-  kvn: number;        // osnb coordinate as KVN
-  tRef: string;       // human-readable tkvn
-  kvnRef: string;     // human-readable kvn
-  sim: number;        // text similarity score
-}> = [];
-
-const dnb2011Only: Array<{ tkvn: number; ref: string; text: string }> = [];
-const osnbOnly: Array<{ kvn: number; ref: string; text: string }> = [];
-
-// Get all chapter keys
-const allChapterKeys = new Set([...dnb2011Chapters.keys(), ...osnbChapters.keys()]);
-
-let identityCount = 0;
-let mappedCount = 0;
-
-for (const key of [...allChapterKeys].sort()) {
-  const dnbVerses = dnb2011Chapters.get(key);
-  const osnbVerses = osnbChapters.get(key);
-
-  if (!dnbVerses && osnbVerses) {
-    // Chapter only in osnb
-    for (const v of osnbVerses) {
-      osnbOnly.push({
-        kvn: encode(v.book, v.chapter, v.verse),
-        ref: `${BOOK_NAMES[v.book] ?? v.book} ${v.chapter}:${v.verse}`,
-        text: v.text.slice(0, 60),
-      });
-    }
-    continue;
+function main(): void {
+  // Hjelpen skal ut før noe leses fra eller skrives til disk.
+  const { flags } = parseArgs(process.argv.slice(2), SPEC);
+  if (flags.help) {
+    console.log(formatHelp(
+      'kvn/scripts/build-dnb2011-mapping.ts',
+      'bygger ukvn-mappingen for DNB 2011 ved å sammenlikne dnb2011_nb.txt med osnb',
+      SPEC,
+      HELP_EXAMPLES,
+    ));
+    process.exit(0);
   }
 
-  if (dnbVerses && !osnbVerses) {
-    // Chapter only in DNB2011
-    for (const v of dnbVerses) {
-      dnb2011Only.push({
-        tkvn: encode(v.book, v.chapter, v.verse),
-        ref: `${BOOK_NAMES[v.book] ?? v.book} ${v.chapter},${v.verse}`,
-        text: v.text.slice(0, 60),
-      });
-    }
-    continue;
+  console.log('Parsing DNB 2011...');
+  const dnb2011Verses = parseDnb2011();
+  console.log(`DNB 2011: ${dnb2011Verses.length} verses`);
+
+  console.log('Loading osnb...');
+  const osnbChapters = loadOsnb2();
+
+  // Group DNB2011 by book:chapter
+  const dnb2011Chapters = new Map<string, Verse[]>();
+  for (const v of dnb2011Verses) {
+    const key = `${v.book}:${v.chapter}`;
+    if (!dnb2011Chapters.has(key)) dnb2011Chapters.set(key, []);
+    dnb2011Chapters.get(key)!.push(v);
   }
 
-  if (!dnbVerses || !osnbVerses) continue;
+  console.log(`DNB 2011: ${dnb2011Chapters.size} chapters`);
+  console.log(`osnb: ${osnbChapters.size} chapters`);
 
-  // Both have this chapter — compare verse by verse
-  const dnbByVerse = new Map(dnbVerses.map(v => [v.verse, v]));
-  const osnbByVerse = new Map(osnbVerses.map(v => [v.verse, v]));
+  // === Find differences ===
+  // For each chapter, compare verse ranges
+  const mapEntries: Array<{
+    tkvn: number;       // DNB2011 coordinate as KVN
+    kvn: number;        // osnb coordinate as KVN
+    tRef: string;       // human-readable tkvn
+    kvnRef: string;     // human-readable kvn
+    sim: number;        // text similarity score
+  }> = [];
 
-  const [bookStr] = key.split(':');
-  const book = parseInt(bookStr);
+  const dnb2011Only: Array<{ tkvn: number; ref: string; text: string }> = [];
+  const osnbOnly: Array<{ kvn: number; ref: string; text: string }> = [];
 
-  // Check each DNB2011 verse
-  for (const [verseId, dnbVerse] of dnbByVerse) {
-    const osnbVerse = osnbByVerse.get(verseId);
+  // Get all chapter keys
+  const allChapterKeys = new Set([...dnb2011Chapters.keys(), ...osnbChapters.keys()]);
 
-    if (osnbVerse) {
-      // Same verse number exists in both — check if it's the same content
-      const sim = similarity(dnbVerse.text, osnbVerse.text);
-      if (sim > 0.5) {
-        // Identity mapping (or close enough)
-        identityCount++;
-        continue;
+  let identityCount = 0;
+  let mappedCount = 0;
+
+  for (const key of [...allChapterKeys].sort()) {
+    const dnbVerses = dnb2011Chapters.get(key);
+    const osnbVerses = osnbChapters.get(key);
+
+    if (!dnbVerses && osnbVerses) {
+      // Chapter only in osnb
+      for (const v of osnbVerses) {
+        osnbOnly.push({
+          kvn: encode(v.book, v.chapter, v.verse),
+          ref: `${BOOK_NAMES[v.book] ?? v.book} ${v.chapter}:${v.verse}`,
+          text: v.text.slice(0, 60),
+        });
+      }
+      continue;
+    }
+
+    if (dnbVerses && !osnbVerses) {
+      // Chapter only in DNB2011
+      for (const v of dnbVerses) {
+        dnb2011Only.push({
+          tkvn: encode(v.book, v.chapter, v.verse),
+          ref: `${BOOK_NAMES[v.book] ?? v.book} ${v.chapter},${v.verse}`,
+          text: v.text.slice(0, 60),
+        });
+      }
+      continue;
+    }
+
+    if (!dnbVerses || !osnbVerses) continue;
+
+    // Both have this chapter — compare verse by verse
+    const dnbByVerse = new Map(dnbVerses.map(v => [v.verse, v]));
+    const osnbByVerse = new Map(osnbVerses.map(v => [v.verse, v]));
+
+    // Check each DNB2011 verse
+    for (const [verseId, dnbVerse] of dnbByVerse) {
+      const osnbVerse = osnbByVerse.get(verseId);
+
+      if (osnbVerse) {
+        // Same verse number exists in both — check if it's the same content
+        const sim = similarity(dnbVerse.text, osnbVerse.text);
+        if (sim > 0.5) {
+          // Identity mapping (or close enough)
+          identityCount++;
+          continue;
+        }
+      }
+
+      // Verse number doesn't match or content is different — find best match in osnb
+      // Search this chapter and adjacent chapters in osnb
+      let bestMatch: { verse: Verse; sim: number; chKey: string } | null = null;
+
+      const [bStr, cStr] = key.split(':');
+      const b = parseInt(bStr);
+      const c = parseInt(cStr);
+
+      // Search in current chapter and neighbors
+      for (const searchKey of [`${b}:${c - 1}`, `${b}:${c}`, `${b}:${c + 1}`]) {
+        const searchVerses = osnbChapters.get(searchKey);
+        if (!searchVerses) continue;
+
+        for (const candidate of searchVerses) {
+          const sim = similarity(dnbVerse.text, candidate.text);
+          if (sim > (bestMatch?.sim ?? 0.3)) {
+            bestMatch = { verse: candidate, sim, chKey: searchKey };
+          }
+        }
+      }
+
+      if (bestMatch) {
+        const tkvn = encode(dnbVerse.book, dnbVerse.chapter, dnbVerse.verse);
+        const kvn = encode(bestMatch.verse.book, bestMatch.verse.chapter, bestMatch.verse.verse);
+
+        if (tkvn !== kvn) {
+          mapEntries.push({
+            tkvn,
+            kvn,
+            tRef: `${BOOK_NAMES[dnbVerse.book] ?? dnbVerse.book} ${dnbVerse.chapter},${dnbVerse.verse}`,
+            kvnRef: `${BOOK_NAMES[bestMatch.verse.book] ?? bestMatch.verse.book} ${bestMatch.verse.chapter}:${bestMatch.verse.verse}`,
+            sim: bestMatch.sim,
+          });
+          mappedCount++;
+        } else {
+          identityCount++;
+        }
+      } else {
+        // No match found in osnb
+        dnb2011Only.push({
+          tkvn: encode(dnbVerse.book, dnbVerse.chapter, dnbVerse.verse),
+          ref: `${BOOK_NAMES[dnbVerse.book] ?? dnbVerse.book} ${dnbVerse.chapter},${dnbVerse.verse}`,
+          text: dnbVerse.text.slice(0, 60),
+        });
       }
     }
 
-    // Verse number doesn't match or content is different — find best match in osnb
-    // Search this chapter and adjacent chapters in osnb
-    let bestMatch: { verse: Verse; sim: number; chKey: string } | null = null;
-
-    const [bStr, cStr] = key.split(':');
-    const b = parseInt(bStr);
-    const c = parseInt(cStr);
-
-    // Search in current chapter and neighbors
-    for (const searchKey of [`${b}:${c - 1}`, `${b}:${c}`, `${b}:${c + 1}`]) {
-      const searchVerses = osnbChapters.get(searchKey);
-      if (!searchVerses) continue;
-
-      for (const candidate of searchVerses) {
-        const sim = similarity(dnbVerse.text, candidate.text);
-        if (sim > (bestMatch?.sim ?? 0.3)) {
-          bestMatch = { verse: candidate, sim, chKey: searchKey };
+    // Check for osnb verses not in DNB2011
+    for (const [verseId, osnbVerse] of osnbByVerse) {
+      if (!dnbByVerse.has(verseId)) {
+        // Check if it was already mapped from a different DNB2011 verse
+        const kvn = encode(osnbVerse.book, osnbVerse.chapter, osnbVerse.verse);
+        const alreadyMapped = mapEntries.some(e => e.kvn === kvn);
+        if (!alreadyMapped) {
+          osnbOnly.push({
+            kvn,
+            ref: `${BOOK_NAMES[osnbVerse.book] ?? osnbVerse.book} ${osnbVerse.chapter}:${osnbVerse.verse}`,
+            text: osnbVerse.text.slice(0, 60),
+          });
         }
       }
     }
+  }
 
-    if (bestMatch) {
-      const tkvn = encode(dnbVerse.book, dnbVerse.chapter, dnbVerse.verse);
-      const kvn = encode(bestMatch.verse.book, bestMatch.verse.chapter, bestMatch.verse.verse);
+  // === Output results ===
+  console.log('\n=== MAPPING RESULTS ===');
+  console.log(`Identity (same coord, similar text): ${identityCount}`);
+  console.log(`Mapped (different coord): ${mappedCount}`);
+  console.log(`DNB2011-only (no osnb match): ${dnb2011Only.length}`);
+  console.log(`osnb-only (no DNB2011 match): ${osnbOnly.length}`);
 
-      if (tkvn !== kvn) {
-        mapEntries.push({
-          tkvn,
-          kvn,
-          tRef: `${BOOK_NAMES[dnbVerse.book] ?? dnbVerse.book} ${dnbVerse.chapter},${dnbVerse.verse}`,
-          kvnRef: `${BOOK_NAMES[bestMatch.verse.book] ?? bestMatch.verse.book} ${bestMatch.verse.chapter}:${bestMatch.verse.verse}`,
-          sim: bestMatch.sim,
-        });
-        mappedCount++;
-      } else {
-        identityCount++;
-      }
-    } else {
-      // No match found in osnb
-      dnb2011Only.push({
-        tkvn: encode(dnbVerse.book, dnbVerse.chapter, dnbVerse.verse),
-        ref: `${BOOK_NAMES[dnbVerse.book] ?? dnbVerse.book} ${dnbVerse.chapter},${dnbVerse.verse}`,
-        text: dnbVerse.text.slice(0, 60),
-      });
+  // Sort map entries by kvn
+  mapEntries.sort((a, b) => a.kvn - b.kvn);
+
+  console.log('\n=== SAMPLE MAPPINGS (first 30) ===');
+  for (const entry of mapEntries.slice(0, 30)) {
+    console.log(`  DNB2011 ${entry.tRef.padEnd(18)} → osnb ${entry.kvnRef.padEnd(18)} (sim: ${entry.sim.toFixed(2)})`);
+  }
+  if (mapEntries.length > 30) {
+    console.log(`  ... and ${mapEntries.length - 30} more`);
+  }
+
+  if (dnb2011Only.length > 0) {
+    console.log('\n=== DNB2011-ONLY VERSES (first 20) ===');
+    for (const v of dnb2011Only.slice(0, 20)) {
+      console.log(`  ${v.ref}: ${v.text}`);
+    }
+    if (dnb2011Only.length > 20) console.log(`  ... and ${dnb2011Only.length - 20} more`);
+  }
+
+  if (osnbOnly.length > 0) {
+    console.log('\n=== OSNB-ONLY VERSES (first 20) ===');
+    for (const v of osnbOnly.slice(0, 20)) {
+      console.log(`  ${v.ref}: ${v.text}`);
+    }
+    if (osnbOnly.length > 20) console.log(`  ... and ${osnbOnly.length - 20} more`);
+  }
+
+  // Low-similarity matches (potential errors)
+  const lowSim = mapEntries.filter(e => e.sim < 0.5);
+  if (lowSim.length > 0) {
+    console.log(`\n=== LOW SIMILARITY MATCHES (<0.5) — ${lowSim.length} ===`);
+    for (const entry of lowSim.slice(0, 20)) {
+      console.log(`  DNB2011 ${entry.tRef} → osnb ${entry.kvnRef} (sim: ${entry.sim.toFixed(2)})`);
     }
   }
 
-  // Check for osnb verses not in DNB2011
-  for (const [verseId, osnbVerse] of osnbByVerse) {
-    if (!dnbByVerse.has(verseId)) {
-      // Check if it was already mapped from a different DNB2011 verse
-      const kvn = encode(osnbVerse.book, osnbVerse.chapter, osnbVerse.verse);
-      const alreadyMapped = mapEntries.some(e => e.kvn === kvn);
-      if (!alreadyMapped) {
-        osnbOnly.push({
-          kvn,
-          ref: `${BOOK_NAMES[osnbVerse.book] ?? osnbVerse.book} ${osnbVerse.chapter}:${osnbVerse.verse}`,
-          text: osnbVerse.text.slice(0, 60),
-        });
-      }
-    }
-  }
+  // === Write mapping file ===
+  const mapping = {
+    version: 2,
+    system: 'dnb_2011_nb',
+    name: 'Bibelen 2011 (bokmål)',
+    encoding: {
+      partSize: PART_SIZE,
+      maxVerseSpaced: MAX_VERSE_SPACED,
+      maxChapterSpaced: MAX_CHAPTER_SPACED,
+    },
+    map: mapEntries.map(e => [e.tkvn, e.kvn, e.tRef, e.kvnRef]),
+    extraVerses: dnb2011Only.map(v => [v.tkvn, v.ref]),
+    missingVerses: osnbOnly.map(v => [v.kvn, v.ref]),
+  };
+
+  writeFileSync(OUT_FILE, JSON.stringify(mapping, null, 2));
+  console.log(`\nMapping written to ${OUT_FILE}`);
 }
 
-// === Output results ===
-console.log('\n=== MAPPING RESULTS ===');
-console.log(`Identity (same coord, similar text): ${identityCount}`);
-console.log(`Mapped (different coord): ${mappedCount}`);
-console.log(`DNB2011-only (no osnb match): ${dnb2011Only.length}`);
-console.log(`osnb-only (no DNB2011 match): ${osnbOnly.length}`);
-
-// Sort map entries by kvn
-mapEntries.sort((a, b) => a.kvn - b.kvn);
-
-console.log('\n=== SAMPLE MAPPINGS (first 30) ===');
-for (const entry of mapEntries.slice(0, 30)) {
-  console.log(`  DNB2011 ${entry.tRef.padEnd(18)} → osnb ${entry.kvnRef.padEnd(18)} (sim: ${entry.sim.toFixed(2)})`);
-}
-if (mapEntries.length > 30) {
-  console.log(`  ... and ${mapEntries.length - 30} more`);
-}
-
-if (dnb2011Only.length > 0) {
-  console.log('\n=== DNB2011-ONLY VERSES (first 20) ===');
-  for (const v of dnb2011Only.slice(0, 20)) {
-    console.log(`  ${v.ref}: ${v.text}`);
-  }
-  if (dnb2011Only.length > 20) console.log(`  ... and ${dnb2011Only.length - 20} more`);
-}
-
-if (osnbOnly.length > 0) {
-  console.log('\n=== OSNB-ONLY VERSES (first 20) ===');
-  for (const v of osnbOnly.slice(0, 20)) {
-    console.log(`  ${v.ref}: ${v.text}`);
-  }
-  if (osnbOnly.length > 20) console.log(`  ... and ${osnbOnly.length - 20} more`);
-}
-
-// Low-similarity matches (potential errors)
-const lowSim = mapEntries.filter(e => e.sim < 0.5);
-if (lowSim.length > 0) {
-  console.log(`\n=== LOW SIMILARITY MATCHES (<0.5) — ${lowSim.length} ===`);
-  for (const entry of lowSim.slice(0, 20)) {
-    console.log(`  DNB2011 ${entry.tRef} → osnb ${entry.kvnRef} (sim: ${entry.sim.toFixed(2)})`);
-  }
-}
-
-// === Write mapping file ===
-const mapping = {
-  version: 2,
-  system: 'dnb_2011_nb',
-  name: 'Bibelen 2011 (bokmål)',
-  encoding: {
-    partSize: PART_SIZE,
-    maxVerseSpaced: MAX_VERSE_SPACED,
-    maxChapterSpaced: MAX_CHAPTER_SPACED,
-  },
-  map: mapEntries.map(e => [e.tkvn, e.kvn, e.tRef, e.kvnRef]),
-  extraVerses: dnb2011Only.map(v => [v.tkvn, v.ref]),
-  missingVerses: osnbOnly.map(v => [v.kvn, v.ref]),
-};
-
-writeFileSync(OUT_FILE, JSON.stringify(mapping, null, 2));
-console.log(`\nMapping written to ${OUT_FILE}`);
+main();

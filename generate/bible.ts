@@ -1,11 +1,12 @@
-import dotenv from 'dotenv'
+import "./env.js";
 import * as fs from 'fs';
 import path from 'path';
 
-dotenv.config()
 
 import Anthropic from '@anthropic-ai/sdk';
 import {bibles, books, anthropicModel, maxTokens, getBibleStyle} from "./constants.js";
+import {parseArgs, formatHelp, COMMON_FLAGS} from './cli.js';
+import type {FlagSpec, Range} from './cli.js';
 import type {
     Verse,
     Chapter,
@@ -185,15 +186,14 @@ interface ChapterState {
     at: string;
 }
 
-/** Et intervall fra kommandolinjen, begge ender inklusive. */
-interface Range {
-    start: number;
-    end: number;
-}
-
 /**
- * Kommandolinjevalgene. Feltene nederst settes bare når flagget faktisk er gitt,
- * og er derfor valgfrie — koden skiller på «ikke oppgitt» og «oppgitt».
+ * Kommandolinjevalgene.
+ *
+ * `changedTypes` og `checkLength` er fortsatt valgfrie fordi «ikke oppgitt» er en
+ * egen tilstand for dem: de slår PÅ en målrettet andregangs-kjøring, så en
+ * standardverdi ville startet den jobben uten at noen ba om det. De øvrige er
+ * alltid satt — flaggkontrakten initialiserer boolske flagg til `false` og
+ * fyller inn standardverdiene fra `SPEC`.
  */
 interface CliOptions {
     bible: string | null;
@@ -210,13 +210,12 @@ interface CliOptions {
     verseStart: number | null;
     verseEnd: number | null;
     force: boolean;
-    help: boolean;
     changedTypes?: string[];
     checkLength?: number;
-    batch?: boolean;
-    textOnly?: boolean;
-    minScore?: number;
-    maxIterations?: number;
+    batch: boolean;
+    textOnly: boolean;
+    minScore: number;
+    maxIterations: number;
     styleFromBible?: boolean;
 }
 
@@ -1491,137 +1490,148 @@ async function proofreadChapterBatched(bible: string, bookId: number, chapterId:
     return last;
 }
 
-function printUsage(): void {
-    console.log(`
-Usage: bun bible_test.ts <bible> [options]
+/**
+ * Forholdstallet `--check-length` bruker når det gis uten verdi.
+ *
+ * Samme tall som `MIN_LENGTH_RATIO`, men et annet spørsmål: den avviser et for
+ * kort forslag i skriveøyeblikket, denne plukker opp vers som allerede står
+ * avkortet på disk. De kan settes hver for seg.
+ */
+const CHECK_LENGTH_DEFAULT = 0.85;
 
-Arguments:
-  bible              Bible version to work with (e.g., osnb, osnn, osen)
+/**
+ * Flaggkontrakten for dette skriptet (#51, #52, #53).
+ *
+ * `--style` har med vilje INGEN standardverdi her: står den tom slås stilen opp
+ * i `bibleStyles` for oversettelsen, og en standard på kommandolinja ville
+ * skrevet tekst mot feil brief uten at valget havner i versdataene.
+ *
+ * `--min-score` og `--max-iter` sto derimot uten synlig standard før — 8 og 3
+ * lå gjemt i `|| 8`/`|| 3` på bruksstedene. De står nå i `--help`, som er hele
+ * poenget med kontrakten.
+ */
+const SPEC: Record<string, FlagSpec> = {
+    // Oversettelsen oppgis som posisjonsargument (`bun generate/bible.ts osnb`);
+    // `--bible` godtas i tillegg, og gjør at `--source` treffer riktig felt.
+    bible: COMMON_FLAGS.bible,
+    book: COMMON_FLAGS.book,
+    chapter: COMMON_FLAGS.chapter,
+    verse: {kind: 'range', help: 'korrekturles bare disse versene — hopper over oversettelsen'},
+    ot: COMMON_FLAGS.ot,
+    nt: COMMON_FLAGS.nt,
+    force: COMMON_FLAGS.force,
+    style: {kind: 'string', help: 'oversettelsesstil; uten flagget hentes stilen fra oversettelsens oppsett'},
+    proofread: {kind: 'boolean', help: 'korrekturles etter oversettelsen'},
+    apply: {kind: 'boolean', help: 'skriv korrekturens forslag inn i teksten'},
+    batch: {kind: 'boolean', help: 'korrekturles hele kapittelet i noen få kall med tilbakemeldingssløyfe (osnbs metode, 6,6× billigere)'},
+    'text-only': {kind: 'boolean', help: 'bare tekstfasen, hopp over fotnotene'},
+    'skip-existing': {kind: 'boolean', help: 'hopp over vers som alt er gjort (fotnoter finnes, eller textChecked i --text-only)'},
+    'changed-only': {kind: 'string', help: 'andregangs pass over vers som alt er endret; valgfri kommaliste av typer, f.eks. error,grammar'},
+    'check-length': {kind: 'string', help: `andregangs pass over vers som er blitt mye kortere enn en tidligere versjon; valgfritt forholdstall (standard ${CHECK_LENGTH_DEFAULT})`},
+    'min-score': {kind: 'number', help: 'laveste godtatte score, 0-10', default: 8},
+    'max-iter': {kind: 'number', help: 'maks korrekturrunder per fase', default: 3},
+    help: COMMON_FLAGS.help,
+};
 
-Options:
-  --style <type>     Translation style: standard, oral (default: standard)
-  --proofread        Run proofreading after translation (can combine with translation)
-  --apply            Apply proofread suggestions (enables feedback loop)
-  --batch            Proofread the chapter in batches with a feedback loop (osnb's method)
-  --check-length [r] Re-check verses whose text is now much shorter than an earlier version
-                     (default ratio 0.85) — catches revisions that dropped verse content
-  --changed-only [t] Second pass: review only verses already changed. Optional comma list
-                     of types to narrow further, e.g. --changed-only error,grammar
-  --text-only        Proofread text only, skip the footnote phase (much cheaper)
-  --skip-existing    Skip verses already done (footnotes present, or textChecked in --text-only)
-  --min-score <n>    Minimum acceptable score (default: 8, range 0-10)
-  --max-iter <n>     Max proofread iterations per phase, per verse (default: 3)
-  --ot               Process only Old Testament (books 1-39)
-  --nt               Process only New Testament (books 40-66)
-  --book <range>     Process book(s): single (43) or range (1-20)
-  --chapter <range>  Process chapter(s): single (1) or range (1-10)
-  --verse <range>    Proofread only verse(s): single (5) or range (5-7) — skips translation
-  --force            Force re-translation even if file exists
-  --help             Show this help message
+const HELP_EXAMPLES = [
+    'bun generate/bible.ts osnb --style oral --nt                     # oversett NT',
+    'bun generate/bible.ts osnb --book 43 --chapter 1-11',
+    'bun generate/bible.ts osnb --book 1 --force                      # oversett på nytt',
+    'bun generate/bible.ts osnb --nt --proofread --batch --apply --min-score 8',
+    'bun generate/bible.ts osnb --proofread --check-length --apply    # avkortede vers',
+    'bun generate/bible.ts osnb --proofread --changed-only --apply    # bare endrede vers',
+    '',
+    'Oversettelsen oppgis som første argument uten --, f.eks. osnb, osnn, osen.',
+];
 
-Examples:
-  bun bible_test.ts osnb --style oral --nt
-  bun bible_test.ts osnb --book 43 --chapter 1-11
-  bun bible_test.ts osnb --nt --proofread --apply
-`);
-}
+/**
+ * `--changed-only` og `--check-length` tar en VALGFRI verdi. Kontrakten kjenner
+ * bare flagg med verdi og flagg uten, så den bare formen fylles ut her — etter
+ * nøyaktig samme regel som den gamle parseren brukte: neste argument er verdien
+ * bare hvis det finnes og ikke selv er et flagg.
+ *
+ * Hvilke flagg som sto bare returneres ved siden av, slik at den utfylte verdien
+ * aldri kan forveksles med en verdi brukeren faktisk skrev.
+ */
+function fillOptionalValues(argv: string[]): {argv: string[]; bare: Set<string>} {
+    const optional = new Set(['--changed-only', '--check-length']);
+    const filled: string[] = [];
+    const bare = new Set<string>();
 
-function parseRange(value: string): Range {
-    if (value.includes('-')) {
-        const [start, end] = value.split('-').map(n => parseInt(n, 10));
-        return {start, end};
-    }
-    const num = parseInt(value, 10);
-    return {start: num, end: num};
-}
-
-function parseArgs(args: string[]): CliOptions {
-    const options: CliOptions = {
-        bible: null,
-        style: null,          // null = slå opp fra bibelen; --style overstyrer
-        proofread: false,
-        apply: false,
-        skipExisting: false,
-        ot: false,
-        nt: false,
-        bookStart: null,
-        bookEnd: null,
-        chapterStart: null,
-        chapterEnd: null,
-        verseStart: null,
-        verseEnd: null,
-        force: false,
-        help: false
-    };
-
-    let i = 0;
-    while (i < args.length) {
-        const arg = args[i];
-
-        if (arg === '--style' && i + 1 < args.length) {
-            options.style = args[++i];
-        } else if (arg === '--proofread') {
-            options.proofread = true;
-        } else if (arg === '--apply') {
-            options.apply = true;
-        } else if (arg === '--skip-existing') {
-            options.skipExisting = true;
-        } else if (arg === '--changed-only') {
-            // valgfri liste: --changed-only error,grammar
-            const next = args[i + 1];
-            options.changedTypes = next && !next.startsWith('--') ? args[++i].split(',') : [];
-        } else if (arg === '--check-length') {
-            const next = args[i + 1];
-            options.checkLength = next && !next.startsWith('--') ? parseFloat(args[++i]) : 0.85;
-        } else if (arg === '--batch') {
-            options.batch = true;
-        } else if (arg === '--text-only') {
-            options.textOnly = true;
-        } else if (arg === '--ot') {
-            options.ot = true;
-        } else if (arg === '--nt') {
-            options.nt = true;
-        } else if (arg === '--book' && i + 1 < args.length) {
-            const range = parseRange(args[++i]);
-            options.bookStart = range.start;
-            options.bookEnd = range.end;
-        } else if (arg === '--chapter' && i + 1 < args.length) {
-            const range = parseRange(args[++i]);
-            options.chapterStart = range.start;
-            options.chapterEnd = range.end;
-        } else if (arg === '--verse' && i + 1 < args.length) {
-            const range = parseRange(args[++i]);
-            options.verseStart = range.start;
-            options.verseEnd = range.end;
-        } else if (arg === '--min-score' && i + 1 < args.length) {
-            options.minScore = parseInt(args[++i], 10);
-        } else if (arg === '--max-iter' && i + 1 < args.length) {
-            options.maxIterations = parseInt(args[++i], 10);
-        } else if (arg === '--force') {
-            options.force = true;
-        } else if (arg === '--help') {
-            options.help = true;
-        } else if (!arg.startsWith('--') && !options.bible) {
-            options.bible = arg;
+    for (let i = 0; i < argv.length; i++) {
+        filled.push(argv[i]);
+        if (!optional.has(argv[i])) continue;
+        const next = argv[i + 1];
+        if (next === undefined || next.startsWith('--')) {
+            filled.push('bare');   // plassholder; `bare` er fasiten, ikke denne
+            bare.add(argv[i].slice(2));
         }
-        i++;
     }
 
-    return options;
+    return {argv: filled, bare};
+}
+
+const help = (): string => formatHelp(
+    'generate/bible.ts',
+    'oversetter og korrekturleser bibeltekst med Claude, ett kapittel om gangen',
+    SPEC,
+    HELP_EXAMPLES,
+);
+
+/** Oversetter de tolkede flaggene til `CliOptions`. */
+function readOptions(
+    flags: ReturnType<typeof parseArgs>['flags'],
+    positional: string[],
+    bare: Set<string>,
+): CliOptions {
+    const book = flags.book as Range | undefined;
+    const chapter = flags.chapter as Range | undefined;
+    const verse = flags.verse as Range | undefined;
+
+    // Bare formen betyr «alle typer» (tom liste) og «forholdstall 0.85», som før.
+    const changedOnly = flags['changed-only'] as string | undefined;
+    const checkLength = flags['check-length'] as string | undefined;
+
+    return {
+        bible: positional[0] ?? (flags.bible as string | undefined) ?? null,
+        style: (flags.style as string | undefined) ?? null,   // null = slå opp fra bibelen
+        proofread: flags.proofread as boolean,
+        apply: flags.apply as boolean,
+        skipExisting: flags['skip-existing'] as boolean,
+        ot: flags.ot as boolean,
+        nt: flags.nt as boolean,
+        bookStart: book?.start ?? null,
+        bookEnd: book?.end ?? null,
+        chapterStart: chapter?.start ?? null,
+        chapterEnd: chapter?.end ?? null,
+        verseStart: verse?.start ?? null,
+        verseEnd: verse?.end ?? null,
+        force: flags.force as boolean,
+        changedTypes: bare.has('changed-only') ? [] : changedOnly?.split(','),
+        checkLength: bare.has('check-length') ? CHECK_LENGTH_DEFAULT
+            : checkLength !== undefined ? parseFloat(checkLength) : undefined,
+        batch: flags.batch as boolean,
+        textOnly: flags['text-only'] as boolean,
+        minScore: flags['min-score'] as number,
+        maxIterations: flags['max-iter'] as number,
+    };
 }
 
 async function main(): Promise<void> {
-    const args = process.argv.slice(2);
-    const options = parseArgs(args);
+    // Hjelpen skal ut før noe leses fra disk eller sendes over nettet.
+    const filled = fillOptionalValues(process.argv.slice(2));
+    const {flags, positional} = parseArgs(filled.argv, SPEC);
 
-    if (options.help) {
-        printUsage();
-        return;
+    if (flags.help) {
+        console.log(help());
+        process.exit(0);
     }
+
+    const options = readOptions(flags, positional, filled.bare);
 
     if (!options.bible) {
         console.error("Error: Bible version is required");
-        printUsage();
+        console.error(help());
         process.exit(1);
     }
 
@@ -1645,7 +1655,7 @@ async function main(): Promise<void> {
 
     if (options.bookStart !== null) {
         startBook = options.bookStart;
-        // `!`: --book setter alltid begge endene (parseRange gir start og end).
+        // `!`: --book setter alltid begge endene (et Range har start og end).
         endBook = options.bookEnd!;
     } else if (options.ot && !options.nt) {
         startBook = 1;
@@ -1742,4 +1752,14 @@ async function main(): Promise<void> {
     }
 }
 
-main().catch(console.error);
+// Tidligere var dette `.catch(console.error)`, som ga exit 0 på et flagg som ikke
+// finnes — et køskript ville trodd jobben gikk bra.
+// Kjører bare når fila startes direkte. Uten vakten kjører jobben ved IMPORT —
+// det er grunnen til at days.ts slettet data bare man lastet modulen (#108),
+// og det gjør skriptene umulige å teste.
+if (import.meta.main) {
+    main().catch(err => {
+    console.error(err);
+    process.exit(1);
+});
+}

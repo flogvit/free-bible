@@ -16,26 +16,32 @@
  * telles som PASS uten videre; identiske sett med LAV korrelasjon er
  * nettopp tittelsalme-klassen og blir UNCLEAR/AUTOFIX.
  *
- * Bruk:
- *   bun scripts/screen-alignment.ts --lengths <fil> [--apply] [oversettelser...]
- *
  * Lengdefila: { <oversettelse>: { "bok:kap": [[verseId, tekstlengde], ...] } }
  * (bygges av en scan over generate/bibles_raw). Rapport skrives til
  * kvn/data/alignment-screen.json (sammendrag + alle ikke-PASS-celler).
+ *
+ * Flaggene går gjennom den felles kontrakten i generate/cli.ts; `--help` viser dem.
  */
 import { readFileSync, writeFileSync } from 'fs';
 import { join } from 'path';
 import { listUkvnMappings, loadUkvnMapping } from '../src/ukvn-loader.js';
 import { ukvnDecode, ukvnEncode } from '../src/ukvn-types.js';
+import { parseArgs, formatHelp, COMMON_FLAGS } from '../../generate/cli.js';
+import type { FlagSpec } from '../../generate/cli.js';
 
 const REPO = join(import.meta.dirname, '../..');
 const MAPPINGS_DIR = join(import.meta.dirname, '../mappings');
 
-const args = process.argv.slice(2);
-const li = args.indexOf('--lengths');
-if (li < 0) { console.error('Mangler --lengths <fil>'); process.exit(1); }
-const apply = args.includes('--apply');
-const only = args.filter((a, i) => !a.startsWith('--') && i !== li + 1);
+const SPEC: Record<string, FlagSpec> = {
+  lengths: { kind: 'string', help: 'lengdefila å screene mot (påkrevd)' },
+  apply: { kind: 'boolean', help: 'skriv AUTOFIX-entries inn i mappingfilene' },
+  help: COMMON_FLAGS.help,
+};
+
+const HELP_EXAMPLES = [
+  'bun kvn/scripts/screen-alignment.ts --lengths kvn/data/lengths.json',
+  'bun kvn/scripts/screen-alignment.ts --lengths kvn/data/lengths.json --apply osnb osnn',
+];
 
 const MIN_PAIRS = 8;        // færre vers gir ustabil korrelasjon
 const PASS_SCORE = 0.75;
@@ -44,8 +50,10 @@ const AUTOFIX_MARGIN = 0.3; // ...og avstand ned til mappingens score
 const MIN_CV = 0.2;         // jevne verselengder (Ordspråkene) gir ikke signal
 
 type Lengths = Record<string, Record<string, [number, number][]>>;
-const lengths: Lengths = JSON.parse(readFileSync(args[li + 1], 'utf8'));
-const osm = lengths['osmain'];
+// Lengdefila leses først i main(), etter hjelpesjekken. screen() og
+// applyAutofix() lukker om disse to slik de alltid har gjort.
+let lengths: Lengths;
+let osm: Record<string, [number, number][]>;
 
 function corr(pairs: [number, number][]): number {
   const n = pairs.length;
@@ -181,26 +189,50 @@ function applyAutofix(name: string, cells: Cell[]): number {
   return added;
 }
 
-const names = only.length ? only : listUkvnMappings().filter(n => lengths[n]);
-const report: Record<string, { pass: number; skipped: number; autofix: Cell[]; unclear: Cell[]; lowsignal: Cell[] }> = {};
-let totPass = 0, totFix = 0, totUnclear = 0, totLow = 0, totApplied = 0;
-for (const name of names) {
-  if (!lengths[name]) continue;
-  const r = screen(name);
-  const autofix = r.cells.filter(c => c.verdict === 'AUTOFIX');
-  const unclear = r.cells.filter(c => c.verdict === 'UNCLEAR');
-  const lowsignal = r.cells.filter(c => c.verdict === 'LOWSIGNAL');
-  totPass += r.pass; totFix += autofix.length; totUnclear += unclear.length; totLow += lowsignal.length;
-  if (r.cells.length) report[name] = { pass: r.pass, skipped: r.skipped, autofix, unclear, lowsignal };
-  if (apply && autofix.length) totApplied += applyAutofix(name, autofix);
+function main(): void {
+  // Hjelpen skal ut før lengdefila leses og før noen mapping skrives.
+  const { flags, positional } = parseArgs(process.argv.slice(2), SPEC);
+  if (flags.help) {
+    console.log(formatHelp(
+      'kvn/scripts/screen-alignment.ts',
+      'lengdekorrelasjons-screen av mappingene (issue #18); tar oversettelser som posisjonsargumenter',
+      SPEC,
+      HELP_EXAMPLES,
+    ));
+    process.exit(0);
+  }
+
+  const lengthsFile = flags.lengths as string | undefined;
+  if (!lengthsFile) { console.error('Mangler --lengths <fil>'); process.exit(1); }
+  const apply = flags.apply as boolean;
+  const only = positional;
+
+  lengths = JSON.parse(readFileSync(lengthsFile, 'utf8'));
+  osm = lengths['osmain'];
+
+  const names = only.length ? only : listUkvnMappings().filter(n => lengths[n]);
+  const report: Record<string, { pass: number; skipped: number; autofix: Cell[]; unclear: Cell[]; lowsignal: Cell[] }> = {};
+  let totPass = 0, totFix = 0, totUnclear = 0, totLow = 0, totApplied = 0;
+  for (const name of names) {
+    if (!lengths[name]) continue;
+    const r = screen(name);
+    const autofix = r.cells.filter(c => c.verdict === 'AUTOFIX');
+    const unclear = r.cells.filter(c => c.verdict === 'UNCLEAR');
+    const lowsignal = r.cells.filter(c => c.verdict === 'LOWSIGNAL');
+    totPass += r.pass; totFix += autofix.length; totUnclear += unclear.length; totLow += lowsignal.length;
+    if (r.cells.length) report[name] = { pass: r.pass, skipped: r.skipped, autofix, unclear, lowsignal };
+    if (apply && autofix.length) totApplied += applyAutofix(name, autofix);
+  }
+
+  writeFileSync(join(REPO, 'kvn/data/alignment-screen.json'), JSON.stringify({
+    thresholds: { MIN_PAIRS, PASS_SCORE, AUTOFIX_SCORE, AUTOFIX_MARGIN, MIN_CV },
+    totals: { pass: totPass, autofix: totFix, unclear: totUnclear, lowsignal: totLow },
+    translations: report,
+  }, null, 2));
+
+  console.log(`${names.length} mappinger screenet`);
+  console.log(`PASS: ${totPass}  AUTOFIX: ${totFix}  UNCLEAR: ${totUnclear}  LOWSIGNAL: ${totLow}`);
+  if (apply) console.log(`Applisert: ${totApplied} entries`);
 }
 
-writeFileSync(join(REPO, 'kvn/data/alignment-screen.json'), JSON.stringify({
-  thresholds: { MIN_PAIRS, PASS_SCORE, AUTOFIX_SCORE, AUTOFIX_MARGIN, MIN_CV },
-  totals: { pass: totPass, autofix: totFix, unclear: totUnclear, lowsignal: totLow },
-  translations: report,
-}, null, 2));
-
-console.log(`${names.length} mappinger screenet`);
-console.log(`PASS: ${totPass}  AUTOFIX: ${totFix}  UNCLEAR: ${totUnclear}  LOWSIGNAL: ${totLow}`);
-if (apply) console.log(`Applisert: ${totApplied} entries`);
+main();

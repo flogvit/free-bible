@@ -1,10 +1,21 @@
 /**
  * Test renumbering fix on multiple chapters using Ollama.
  * Same approach as fix-psalm3-test but generalized.
+ *
+ * Flaggene går gjennom den felles kontrakten i generate/cli.ts; `--help` viser
+ * dem. Skriptet tar ingen egne flagg — testtilfellene står i `testCases`. Hele
+ * kjøringen ligger i `main()` slik at hjelpen kommer ut før Ollama laster en
+ * modell.
  */
 
 import { readFileSync, existsSync } from 'fs';
 import { join } from 'path';
+import { formatHelp, parseArgs, COMMON_FLAGS } from '../../generate/cli.js';
+import type { FlagSpec } from '../../generate/cli.js';
+
+const SPEC: Record<string, FlagSpec> = {
+  help: COMMON_FLAGS.help,
+};
 
 const OSNB_DIR = join(import.meta.dirname, '../../generate/bibles_raw/osnb');
 const RAW_DIR = join(import.meta.dirname, '../../external/closed/raw');
@@ -74,43 +85,56 @@ const testCases = [
   { name: '1 Kong 5 (boundary shift, 14 verses)', book: 11, chapter: 5, refBible: 'english_esv' },
 ];
 
-for (const tc of testCases) {
-  console.log(`\n${'='.repeat(60)}`);
-  console.log(`TEST: ${tc.name}`);
-  console.log(`${'='.repeat(60)}`);
-
-  const osnb = loadChapter(OSNB_DIR, tc.book, tc.chapter);
-  const ref = loadChapter(join(RAW_DIR, tc.refBible), tc.book, tc.chapter);
-
-  if (osnb.length === 0) { console.log('  SKIP: no osnb data'); continue; }
-  if (ref.length === 0) { console.log('  SKIP: no reference data'); continue; }
-
-  console.log(`  osnb: ${osnb.length} verses (${osnb[0].verseId}-${osnb[osnb.length-1].verseId})`);
-  console.log(`  ref:   ${ref.length} verses (${ref[0].verseId}-${ref[ref.length-1].verseId})`);
-
-  if (osnb.length === ref.length) {
-    console.log('  SKIP: same verse count, no renumbering needed');
-    continue;
+async function main() {
+  // Hjelpen skal ut før noe leses fra disk og før Ollama laster en modell.
+  const { flags } = parseArgs(process.argv.slice(2), SPEC);
+  if (flags.help) {
+    console.log(formatHelp(
+      'kvn/scripts/fix-renumber-test.ts',
+      'lar Ollama mappe osnb mot ESV-nummereringen i åtte kapitler med kjente nummereringsavvik',
+      SPEC,
+      ['bun kvn/scripts/fix-renumber-test.ts'],
+    ));
+    process.exit(0);
   }
 
-  // Also load osnb adjacent chapters for context
-  const osnbPrev = loadChapter(OSNB_DIR, tc.book, tc.chapter - 1);
-  const osnbNext = loadChapter(OSNB_DIR, tc.book, tc.chapter + 1);
+  for (const tc of testCases) {
+    console.log(`\n${'='.repeat(60)}`);
+    console.log(`TEST: ${tc.name}`);
+    console.log(`${'='.repeat(60)}`);
 
-  const osnbText = osnb.map(v => `v${v.verseId}: ${v.text}`).join('\n');
-  const refText = ref.map(v => `v${v.verseId}: ${v.text}`).join('\n');
+    const osnb = loadChapter(OSNB_DIR, tc.book, tc.chapter);
+    const ref = loadChapter(join(RAW_DIR, tc.refBible), tc.book, tc.chapter);
 
-  let contextText = '';
-  if (osnbPrev.length > 0) {
-    const last3 = osnbPrev.slice(-3);
-    contextText += `\nosnb chapter ${tc.chapter - 1} (last 3 verses):\n${last3.map(v => `v${v.verseId}: ${v.text}`).join('\n')}\n`;
-  }
-  if (osnbNext.length > 0) {
-    const first3 = osnbNext.slice(0, 3);
-    contextText += `\nosnb chapter ${tc.chapter + 1} (first 3 verses):\n${first3.map(v => `v${v.verseId}: ${v.text}`).join('\n')}\n`;
-  }
+    if (osnb.length === 0) { console.log('  SKIP: no osnb data'); continue; }
+    if (ref.length === 0) { console.log('  SKIP: no reference data'); continue; }
 
-  const prompt = `You are mapping Bible verse numbering.
+    console.log(`  osnb: ${osnb.length} verses (${osnb[0].verseId}-${osnb[osnb.length-1].verseId})`);
+    console.log(`  ref:   ${ref.length} verses (${ref[0].verseId}-${ref[ref.length-1].verseId})`);
+
+    if (osnb.length === ref.length) {
+      console.log('  SKIP: same verse count, no renumbering needed');
+      continue;
+    }
+
+    // Also load osnb adjacent chapters for context
+    const osnbPrev = loadChapter(OSNB_DIR, tc.book, tc.chapter - 1);
+    const osnbNext = loadChapter(OSNB_DIR, tc.book, tc.chapter + 1);
+
+    const osnbText = osnb.map(v => `v${v.verseId}: ${v.text}`).join('\n');
+    const refText = ref.map(v => `v${v.verseId}: ${v.text}`).join('\n');
+
+    let contextText = '';
+    if (osnbPrev.length > 0) {
+      const last3 = osnbPrev.slice(-3);
+      contextText += `\nosnb chapter ${tc.chapter - 1} (last 3 verses):\n${last3.map(v => `v${v.verseId}: ${v.text}`).join('\n')}\n`;
+    }
+    if (osnbNext.length > 0) {
+      const first3 = osnbNext.slice(0, 3);
+      contextText += `\nosnb chapter ${tc.chapter + 1} (first 3 verses):\n${first3.map(v => `v${v.verseId}: ${v.text}`).join('\n')}\n`;
+    }
+
+    const prompt = `You are mapping Bible verse numbering.
 
 OSNB (Hebrew/Tanach numbering, Norwegian text, ${osnb.length} verses):
 ${osnbText}
@@ -125,31 +149,34 @@ If an osnb verse was moved to an adjacent chapter, it may not appear in the mapp
 
 Compare the CONTENT of the verses to determine the mapping. Do not just match by verse number.`;
 
-  try {
-    const start = Date.now();
-    const result = await askOllama(prompt);
-    const elapsed = ((Date.now() - start) / 1000).toFixed(1);
+    try {
+      const start = Date.now();
+      const result = await askOllama(prompt);
+      const elapsed = ((Date.now() - start) / 1000).toFixed(1);
 
-    console.log(`  Ollama response (${elapsed}s):`);
-    for (const m of result.mappings) {
-      const osnbRefs = m.osnbVerses.join('+');
-      const marker = m.mergeType === 'merged' ? ' *** MERGED ***' : '';
-      console.log(`    target v${m.targetVerse} ← osnb v${osnbRefs}${marker}`);
-    }
+      console.log(`  Ollama response (${elapsed}s):`);
+      for (const m of result.mappings) {
+        const osnbRefs = m.osnbVerses.join('+');
+        const marker = m.mergeType === 'merged' ? ' *** MERGED ***' : '';
+        console.log(`    target v${m.targetVerse} ← osnb v${osnbRefs}${marker}`);
+      }
 
-    // Validate: every target verse should be present
-    const targetVerses = new Set(result.mappings.map((m: any) => m.targetVerse));
-    for (let i = 1; i <= ref.length; i++) {
-      if (!targetVerses.has(i)) console.log(`    ⚠ MISSING target v${i}`);
-    }
+      // Validate: every target verse should be present
+      const targetVerses = new Set(result.mappings.map((m: any) => m.targetVerse));
+      for (let i = 1; i <= ref.length; i++) {
+        if (!targetVerses.has(i)) console.log(`    ⚠ MISSING target v${i}`);
+      }
 
-    // Check for osnb verses not mapped
-    const mappedOsnb2 = new Set(result.mappings.flatMap((m: any) => m.osnbVerses));
-    const unmapped = osnb.filter(v => !mappedOsnb2.has(v.verseId));
-    if (unmapped.length > 0) {
-      console.log(`    Unmapped osnb verses: [${unmapped.map(v => v.verseId).join(',')}] (moved to adjacent chapter)`);
+      // Check for osnb verses not mapped
+      const mappedOsnb2 = new Set(result.mappings.flatMap((m: any) => m.osnbVerses));
+      const unmapped = osnb.filter(v => !mappedOsnb2.has(v.verseId));
+      if (unmapped.length > 0) {
+        console.log(`    Unmapped osnb verses: [${unmapped.map(v => v.verseId).join(',')}] (moved to adjacent chapter)`);
+      }
+    } catch (err: any) {
+      console.log(`  ERROR: ${err.message}`);
     }
-  } catch (err: any) {
-    console.log(`  ERROR: ${err.message}`);
   }
 }
+
+await main();

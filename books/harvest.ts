@@ -19,10 +19,10 @@
  * <shard> = first 2 hex chars of sha256(id).
  *
  * Usage:
- *   node books/harvest.mjs meta   [--collection key] [--limit N]
- *   node books/harvest.mjs text   [--collection key] [--limit N]
- *   node books/harvest.mjs all    [--collection key] [--limit N]
- *   node books/harvest.mjs status
+ *   bun books/harvest.ts meta   [--collection key] [--limit N]
+ *   bun books/harvest.ts text   [--collection key] [--limit N]
+ *   bun books/harvest.ts all    [--collection key] [--limit N]
+ *   bun books/harvest.ts status
  *
  * Idempotent + resumable like the articles harvester; re-run to pick up new
  * scans. settings.yearMax can gate text download by publication year (items
@@ -35,8 +35,45 @@ import fs from 'fs';
 import { join, dirname } from 'path';
 import { createHash } from 'crypto';
 import { fileURLToPath } from 'url';
+import { parseArgs, formatHelp, COMMON_FLAGS } from '../generate/cli.js';
+import type { FlagSpec, ParsedArgs } from '../generate/cli.js';
 
 const __dirname = dirname(fileURLToPath(import.meta.url));
+
+// Flaggkontrakten kjører FØRST — før collections.json leses og før
+// external/books/ røres. `--help` skal svare uten å lese en eneste fil.
+const SPEC: Record<string, FlagSpec> = {
+  collection: { kind: 'string', help: 'bare denne samlingen (key i books/collections.json)' },
+  limit: COMMON_FLAGS.limit,
+  help: COMMON_FLAGS.help,
+};
+
+let parsed: ParsedArgs;
+try {
+  parsed = parseArgs(process.argv.slice(2), SPEC);
+} catch (e) {
+  console.error((e as Error).message);
+  process.exit(1);
+}
+const { flags, positional } = parsed;
+
+const PHASES = ['meta', 'text', 'all', 'status'];
+
+if (flags.help) {
+  console.log(formatHelp(
+    'books/harvest.ts',
+    'høster OCR-tekst for public domain-bøker fra archive.org og Gutenberg (#16)',
+    SPEC,
+    [
+      'bun books/harvest.ts meta --collection matthew_henry --limit 100',
+      'bun books/harvest.ts all',
+      'bun books/harvest.ts status',
+    ],
+  ));
+  console.log(`\nFase (første posisjonsargument): ${PHASES.join(' | ')}`);
+  process.exit(0);
+}
+
 const REPO = join(__dirname, '..');
 const DATA = join(REPO, 'external/books');
 const CATALOG = join(DATA, 'catalog.jsonl');
@@ -402,14 +439,12 @@ function phaseStatus() {
 
 // ---------- main ----------
 async function main() {
-  const args = process.argv.slice(2);
-  const phase = args[0];
-  const flag = (n: string): string | null => { const i = args.indexOf(n); return i >= 0 ? args[i + 1] : null; };
-  const collFilter = flag('--collection');
-  const limit = flag('--limit') ? +flag('--limit')! : null;
+  const phase = positional[0];
+  const collFilter = (flags.collection as string | undefined) ?? null;
+  const limit = (flags.limit as number | undefined) ?? null;
 
-  if (!['meta', 'text', 'all', 'status'].includes(phase)) {
-    console.log('Usage: node books/harvest.mjs <meta|text|all|status> [--collection key] [--limit N]');
+  if (!PHASES.includes(phase)) {
+    console.log(`Bruk: bun books/harvest.ts <${PHASES.join('|')}> [flagg] — se --help`);
     process.exit(1);
   }
   ensure(join(DATA, 'state'));
@@ -433,4 +468,9 @@ async function main() {
   phaseStatus();
 }
 
-main().catch(e => { flushCatalog(true); console.error(e); process.exit(1); });
+// Kjører bare når fila startes direkte. Uten vakten kjører jobben ved IMPORT —
+// det er grunnen til at days.ts slettet data bare man lastet modulen (#108),
+// og det gjør skriptene umulige å teste.
+if (import.meta.main) {
+    main().catch(e => { flushCatalog(true); console.error(e); process.exit(1); });
+}

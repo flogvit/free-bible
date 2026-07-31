@@ -3,15 +3,46 @@
 // eyeball (semantic merges, low confidence) and groups the NEW slugs by phonetic
 // key so genuinely-missing persons can be created once (not duplicated).
 //
-// Usage: node persons_audit.mjs <proposals.json>
+// Usage: bun persons_audit.ts <proposals.json>
 import * as fs from 'fs';
 import path from 'path';
 import { fileURLToPath } from 'url';
+import { parseArgs, formatHelp, COMMON_FLAGS } from './cli.js';
+import type { FlagSpec } from './cli.js';
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const PERSONS_DIR = path.join(__dirname, 'persons', 'nb');
-const [, , PROP] = process.argv;
-if (!PROP) { console.error('usage: node persons_audit.mjs <proposals.json>'); process.exit(1); }
+
+/**
+ * Flaggkontrakten for dette skriptet (#51, #52, #53).
+ *
+ * Skriptet tok aldri andre flagg enn stien til proposals.json, som er et
+ * posisjonsargument. Det eneste som er nytt er `--help` — og at et ukjent
+ * flagg nå feiler i stedet for å bli lest som filstien.
+ */
+const SPEC: Record<string, FlagSpec> = {
+    help: COMMON_FLAGS.help,
+};
+
+const HELP_EXAMPLES = [
+    'bun generate/persons_audit.ts proposals.json',
+];
+
+// Hjelpesjekken står før alt annet: rapporten leser hele persons-katalogen og
+// proposals.json ved oppstart, og `--help` skal ikke koste noe av det.
+const { flags, positional } = parseArgs(process.argv.slice(2), SPEC);
+if (flags.help) {
+    console.log(formatHelp(
+        'generate/persons_audit.ts',
+        'revisjonsrapport over <proposals.json>: treffene et menneske må se på, og de NYE personene gruppert fonetisk',
+        SPEC,
+        HELP_EXAMPLES,
+    ));
+    process.exit(0);
+}
+
+const PROP = positional[0];
+if (!PROP) { console.error('usage: bun generate/persons_audit.ts <proposals.json>'); process.exit(1); }
 
 /** Personprofilen i generate/persons/nb/<slug>.json — bare feltene denne rapporten leser. */
 interface PersonProfile {

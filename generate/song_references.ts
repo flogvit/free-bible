@@ -11,13 +11,13 @@
  * Resumable: skips songs that already have a result file.
  *
  * Usage:
- *   bun song_references.ts                    # Process all songs
- *   bun song_references.ts --lang nb           # Only Norwegian bokmål
- *   bun song_references.ts --lang en           # Only English
- *   bun song_references.ts --id song-0217      # Process one specific song
- *   bun song_references.ts --limit 50          # Process max 50 songs
- *   bun song_references.ts --model gemma4:31b  # Use specific model
- *   bun song_references.ts --force             # Re-process even if result exists
+ *   bun generate/song_references.ts                       # Process all songs
+ *   bun generate/song_references.ts --language nb         # Only Norwegian bokmål
+ *   bun generate/song_references.ts --language en         # Only English
+ *   bun generate/song_references.ts --id song-0217        # Process one specific song
+ *   bun generate/song_references.ts --limit 50            # Process max 50 songs
+ *   bun generate/song_references.ts --model gemma4:31b    # Use specific model
+ *   bun generate/song_references.ts --force               # Re-process even if result exists
  */
 
 import fs from 'fs';
@@ -26,6 +26,8 @@ import { fileURLToPath } from 'url';
 import { ollamaBaseUrl, getOllamaConfig, getTaskModel, bookNames, books } from './constants.js';
 import type { OllamaOptions } from './constants.js';
 import { resolveLocalModel } from './llm.js';
+import { parseArgs, formatHelp, COMMON_FLAGS } from './cli.js';
+import type { FlagSpec } from './cli.js';
 import type { Chapter } from '../kvn/src/bible-types.js';
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
@@ -601,41 +603,53 @@ Svar med JSON i dette eksakte formatet:
 
 /** Kommandolinjevalgene. `null` betyr «ikke oppgitt», ikke «tom verdi». */
 interface Options {
-    lang: string | null;
+    language: string | null;
     id: string | null;
     limit: number | null;
     force: boolean;
 }
 
-function parseArgs(): Options {
-    const args = process.argv.slice(2);
-    const options: Options = { lang: null, id: null, limit: null, force: false };
+/**
+ * Flaggkontrakten for dette skriptet (#51, #52, #53).
+ *
+ * `--lang` het det før; kontrakten godtar det fortsatt som gammelt navn, med en
+ * advarsel, og oversetter det til `--language`.
+ *
+ * To flagg står med vilje UTEN standardverdi, selv om fellesflagget har en:
+ *
+ *   - `--language` har `nb` som standard i COMMON_FLAGS. Her betyr fravær «alle
+ *     språk», som før — en standard ville stille filtrert bort engelske sanger.
+ *   - `--model` har ingen standard fordi «ikke pinnet» er en egen tilstand:
+ *     modellen løses opp per sang av resolveLocalModel, som adopterer en større
+ *     modell som alt ligger i minnet. En standard her ville pinne den bort.
+ */
+const SPEC: Record<string, FlagSpec> = {
+    language: {kind: 'string', help: 'bare sanger på dette språket (nb, en, da-no-historic); uten flagget: alle'},
+    id: {kind: 'string', help: 'bare denne sangen, f.eks. song-0217'},
+    limit: COMMON_FLAGS.limit,
+    model: {kind: 'string', help: `pinn Ollama-modellen (uten flagget: ${getTaskModel('songs')}, eller en større som alt ligger i minnet)`},
+    force: COMMON_FLAGS.force,
+    help: COMMON_FLAGS.help,
+};
 
-    for (let i = 0; i < args.length; i++) {
-        if (args[i] === '--lang' && i + 1 < args.length) {
-            options.lang = args[++i];
-        } else if (args[i] === '--id' && i + 1 < args.length) {
-            options.id = args[++i];
-        } else if (args[i] === '--limit' && i + 1 < args.length) {
-            options.limit = parseInt(args[++i], 10);
-        } else if (args[i] === '--model' && i + 1 < args.length) {
-            pinnedModel = args[++i];
-            ollamaModel = pinnedModel;
-        } else if (args[i] === '--force') {
-            options.force = true;
-        } else if (args[i] === '--help') {
-            console.log(`Usage: bun song_references.ts [options]
-  --lang <nb|en|da-no-historic>  Filter by language
-  --id <song-XXXX>               Process one song
-  --limit <n>                    Max songs to process
-  --model <name>                 Pin Ollama model (default: ${getTaskModel('songs')},
-                                 eller en større som alt ligger i minnet)
-  --force                        Re-process existing results
-  --help                         Show this help`);
-            process.exit(0);
-        }
-    }
-    return options;
+const HELP_EXAMPLES = [
+    'bun generate/song_references.ts                     # alle sanger som mangler resultat',
+    'bun generate/song_references.ts --language nb       # bare norsk bokmål',
+    'bun generate/song_references.ts --id song-0217      # én sang',
+    'bun generate/song_references.ts --limit 50          # maks 50 sanger',
+    'bun generate/song_references.ts --model gemma4:31b  # pinn modellen',
+    '',
+    'Resultatene havner i generate/songs/<sang-id>.json — uten sangteksten.',
+];
+
+/** Oversetter de tolkede flaggene til `Options`. */
+function readOptions(flags: ReturnType<typeof parseArgs>['flags']): Options {
+    return {
+        language: (flags.language as string | undefined) ?? null,
+        id: (flags.id as string | undefined) ?? null,
+        limit: (flags.limit as number | undefined) ?? null,
+        force: flags.force as boolean,
+    };
 }
 
 /** Resultatfila per sang — uten sangteksten, bare referansene. */
@@ -652,7 +666,23 @@ interface SongReferenceOutput {
 }
 
 async function main(): Promise<void> {
-    const options = parseArgs();
+    // Hjelpen skal ut før noe leses fra disk eller sendes over nettet.
+    const {flags} = parseArgs(process.argv.slice(2), SPEC);
+    if (flags.help) {
+        console.log(formatHelp(
+            'generate/song_references.ts',
+            'kobler sanger til bibelvers med en lokal modell, i to steg: forslag, så verifisering mot den faktiske teksten',
+            SPEC,
+            HELP_EXAMPLES,
+        ));
+        process.exit(0);
+    }
+
+    const options = readOptions(flags);
+    if (flags.model) {
+        pinnedModel = flags.model as string;
+        ollamaModel = pinnedModel;
+    }
 
     // Load song index
     const files = fs.readdirSync(SONGS_DIR).filter(f => f.endsWith('.json')).sort();
@@ -665,7 +695,7 @@ async function main(): Promise<void> {
         const song: Song = JSON.parse(fs.readFileSync(path.join(SONGS_DIR, f), 'utf-8'));
 
         if (options.id && song.id !== options.id) continue;
-        if (options.lang && song.language !== options.lang) continue;
+        if (options.language && song.language !== options.language) continue;
 
         // Skip songs with no/minimal text
         const text = getSongText(song);

@@ -9,7 +9,7 @@
 // når credit=true. user_id forlater aldri frontend-databasen (står ikke i
 // køfila på eksporterbar form utover submitted.by — som ikke eksporteres).
 //
-//   bun contrib/export.mjs [--lookup]
+//   bun contrib/export.ts [--lookup]
 //
 // --lookup henter tittel/forfattere/år fra Crossref (DOI) / OpenLibrary (ISBN)
 // og overstyrer freetext-metadataene.
@@ -18,13 +18,36 @@ import * as fs from 'fs';
 import path from 'path';
 import {fileURLToPath} from 'url';
 import type {ContribDoc, ContribFreetext, ContribKind, ContribTarget, CrossrefAuthor} from './contrib-types.js';
+import {parseArgs, formatHelp, COMMON_FLAGS} from '../generate/cli.js';
+import type {FlagSpec} from '../generate/cli.js';
+
+const SPEC: Record<string, FlagSpec> = {
+  lookup: {kind: 'boolean', help: 'hent tittel/forfattere/år fra Crossref (DOI) og OpenLibrary (ISBN)'},
+  help: COMMON_FLAGS.help,
+};
+
+// Hjelpen skal ut FØR køen leses og før verse_works/ opprettes: `--help` skal
+// aldri røre disk eller nett.
+const {flags} = parseArgs(process.argv.slice(2), SPEC);
+if (flags.help) {
+  console.log(formatHelp(
+    'contrib/export.ts',
+    'eksporterer godkjente contrib-innsendinger til generate/verse_works/<workId>.json',
+    SPEC,
+    [
+      'bun contrib/export.ts',
+      'bun contrib/export.ts --lookup',
+    ],
+  ));
+  process.exit(0);
+}
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const QUEUE_DIR = path.join(__dirname, 'queue');
 const ARCHIVE_DIR = path.join(QUEUE_DIR, 'archive');
 const OUT_DIR = path.join(__dirname, '..', 'generate', 'verse_works');
 
-const doLookup = process.argv.includes('--lookup');
+const doLookup = flags.lookup as boolean;
 const UA = 'free-bible-contrib/1.0 (https://github.com/flogvit/free-bible; mailto:flogvit@gmail.com)';
 const sleep = (ms: number) => new Promise((resolve) => setTimeout(resolve, ms));
 

@@ -1,15 +1,16 @@
-import dotenv from 'dotenv'
+import "./env.js";
 import * as fs from 'fs';
 import path from 'path';
 import {fileURLToPath} from 'url';
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
-dotenv.config()
 
 import {books, normalizeLanguage, getLanguageCode, getBookName} from "./constants.js";
 import {getOriginalVerse, getOriginalChapter, getRef, getOsnb2VerseRange} from "./lib.js";
 import {callWithRetry} from "./llm.js";
+import {parseArgs, formatHelp, COMMON_FLAGS} from './cli.js';
+import type {FlagSpec, Range} from './cli.js';
 import type {Chapter} from '../kvn/src/bible-types.js';
 
 /**
@@ -79,7 +80,7 @@ interface ProofreadResult {
 /** Slår opp et kapittel, eller gir null om det ikke finnes. */
 type ChapterLoader = (bookId: number, chapterId: number) => Chapter | null;
 
-/** Flaggene fra kommandolinja. */
+/** Flaggene fra kommandolinja, etter at `parseArgs` har tolket dem. */
 interface Options {
     language: string;
     proofread: boolean;
@@ -95,10 +96,32 @@ interface Options {
     force: boolean;
     validate: boolean;
     fix: boolean;
-    help: boolean;
-    /** Settes bare når `--local` er gitt, ikke i initialiseringen. */
-    local?: boolean;
+    /** Alltid satt nå — kontrakten initialiserer boolske flagg til `false`. */
+    local: boolean;
 }
+
+/**
+ * Flaggkontrakten for dette skriptet (#51, #52, #53).
+ *
+ * `--local` sto ikke i den gamle bruksmeldingen selv om parseren tok imot det,
+ * og docs/lokale-jobber.md måtte skrive det opp som en felle: uten flagget går
+ * hele jobben på Claude API. Nå står det i `--help` som alle de andre.
+ */
+const SPEC: Record<string, FlagSpec> = {
+    language: COMMON_FLAGS.language,   // 'nb' → normalizeLanguage → 'Norwegian bokmål', som før
+    book: COMMON_FLAGS.book,
+    chapter: COMMON_FLAGS.chapter,
+    verse: COMMON_FLAGS.verse,
+    ot: COMMON_FLAGS.ot,
+    nt: COMMON_FLAGS.nt,
+    force: COMMON_FLAGS.force,
+    local: COMMON_FLAGS.local,
+    proofread: {kind: 'boolean', help: 'kjør korrektur etter genereringen'},
+    apply: {kind: 'boolean', help: 'skriv korrekturens reviderte referanser tilbake til fila'},
+    validate: {kind: 'boolean', help: 'sveip referansene som alt ligger på disk, uten å generere'},
+    fix: {kind: 'boolean', help: 'fjern de døde adressene --validate finner'},
+    help: COMMON_FLAGS.help,
+};
 
 let useLocal = false;
 
@@ -590,110 +613,42 @@ function applyProofreadChanges(language: string, bookId: number, chapterId: numb
     console.log(`  Applied revisions to ${bookName} ${chapterId}:${verseId} (${revisedRefs.length} references)`);
 }
 
-function printUsage(): void {
-    console.log(`
-Usage: node references.mjs [options]
+const HELP_EXAMPLES = [
+    'bun generate/references.ts --nt                              # NT, norsk bokmål',
+    'bun generate/references.ts --language nn --ot                # GT, nynorsk',
+    'bun generate/references.ts --language en --book 43           # Johannes, engelsk',
+    'bun generate/references.ts --book 43 --chapter 1 --verse 1-14',
+    'bun generate/references.ts --nt --proofread --apply          # generer → korrektur → skriv inn',
+    'bun generate/references.ts --local --book 10-39              # lokal Ollama i stedet for Claude',
+    'bun generate/references.ts --validate --fix                  # rydd døde adresser på disk',
+    '',
+    'Filene havner i references/<språkkode>/<bok>/<kapittel>/<vers>.json,',
+    'f.eks. references/nb/43/1/1.json.',
+];
 
-Options:
-  --language <lang>  Language for reference texts (default: nb)
-                     Accepts codes (nb, nn, en, de, es, fr, sv, da) or full names
-  --proofread        Run proofreading after generation
-  --apply            Apply proofread suggestions (requires prior --proofread run)
-  --ot               Process only Old Testament (books 1-39)
-  --nt               Process only New Testament (books 40-66)
-  --book <range>     Process book(s): single (43) or range (1-20)
-  --chapter <range>  Process chapter(s): single (1) or range (1-10)
-  --verse <range>    Process verse(s): single (1) or range (1-10)
-  --force            Force re-generation even if file exists
-  --help             Show this help message
+/** Oversetter de tolkede flaggene til `Options`. */
+function readOptions(flags: ReturnType<typeof parseArgs>['flags']): Options {
+    const book = flags.book as Range | undefined;
+    const chapter = flags.chapter as Range | undefined;
+    const verse = flags.verse as Range | undefined;
 
-Output structure:
-  references/<lang>/<book>/<chapter>/<verse>.json
-  e.g., references/nb/43/1/1.json
-
-Examples:
-  node references.mjs --nt                                    # Generate NT references (Norwegian bokmål)
-  node references.mjs --language nn --ot                      # Generate OT references (Norwegian nynorsk)
-  node references.mjs --language en --book 43                 # Generate John references (English)
-  node references.mjs --book 43 --chapter 1 --verse 1-14     # Generate John 1:1-14 references
-  node references.mjs --nt --proofread --apply                # Generate → proofread → apply
-  node references.mjs --book 40 --chapter 1 --force           # Re-generate Matt 1 references
-
-Parallel processing (run in separate terminals):
-  node references.mjs --book 1-20 &                           # terminal 1
-  node references.mjs --book 21-39 &                          # terminal 2
-`);
-}
-
-function parseRange(value: string): {start: number, end: number} {
-    if (value.includes('-')) {
-        const [start, end] = value.split('-').map((n: string) => parseInt(n, 10));
-        return {start, end};
-    }
-    const num = parseInt(value, 10);
-    return {start: num, end: num};
-}
-
-function parseArgs(args: string[]): Options {
-    const options: Options = {
-        language: 'Norwegian bokmål',
-        proofread: false,
-        apply: false,
-        ot: false,
-        nt: false,
-        bookStart: null,
-        bookEnd: null,
-        chapterStart: null,
-        chapterEnd: null,
-        verseStart: null,
-        verseEnd: null,
-        force: false,
-        validate: false,
-        fix: false,
-        help: false
+    return {
+        language: normalizeLanguage(flags.language as string),
+        proofread: flags.proofread as boolean,
+        apply: flags.apply as boolean,
+        ot: flags.ot as boolean,
+        nt: flags.nt as boolean,
+        bookStart: book?.start ?? null,
+        bookEnd: book?.end ?? null,
+        chapterStart: chapter?.start ?? null,
+        chapterEnd: chapter?.end ?? null,
+        verseStart: verse?.start ?? null,
+        verseEnd: verse?.end ?? null,
+        force: flags.force as boolean,
+        validate: flags.validate as boolean,
+        fix: flags.fix as boolean,
+        local: flags.local as boolean,
     };
-
-    let i = 0;
-    while (i < args.length) {
-        const arg = args[i];
-
-        if (arg === '--language' && i + 1 < args.length) {
-            options.language = args[++i];
-        } else if (arg === '--proofread') {
-            options.proofread = true;
-        } else if (arg === '--apply') {
-            options.apply = true;
-        } else if (arg === '--ot') {
-            options.ot = true;
-        } else if (arg === '--nt') {
-            options.nt = true;
-        } else if (arg === '--book' && i + 1 < args.length) {
-            const range = parseRange(args[++i]);
-            options.bookStart = range.start;
-            options.bookEnd = range.end;
-        } else if (arg === '--chapter' && i + 1 < args.length) {
-            const range = parseRange(args[++i]);
-            options.chapterStart = range.start;
-            options.chapterEnd = range.end;
-        } else if (arg === '--verse' && i + 1 < args.length) {
-            const range = parseRange(args[++i]);
-            options.verseStart = range.start;
-            options.verseEnd = range.end;
-        } else if (arg === '--local') {
-            options.local = true;
-        } else if (arg === '--force') {
-            options.force = true;
-        } else if (arg === '--validate') {
-            options.validate = true;
-        } else if (arg === '--fix') {
-            options.fix = true;
-        } else if (arg === '--help') {
-            options.help = true;
-        }
-        i++;
-    }
-
-    return options;
 }
 
 /**
@@ -769,16 +724,20 @@ function validateExisting(options: Options): void {
 }
 
 async function main(): Promise<void> {
-    const args = process.argv.slice(2);
-    const options = parseArgs(args);
-    useLocal = options.local || false;
-
-    options.language = normalizeLanguage(options.language);
-
-    if (options.help) {
-        printUsage();
-        return;
+    // Hjelpen skal ut før noe leses fra disk eller sendes over nettet.
+    const {flags} = parseArgs(process.argv.slice(2), SPEC);
+    if (flags.help) {
+        console.log(formatHelp(
+            'generate/references.ts',
+            'kryssreferanser per vers, generert og korrekturlest av en modell',
+            SPEC,
+            HELP_EXAMPLES,
+        ));
+        process.exit(0);
     }
+
+    const options = readOptions(flags);
+    useLocal = options.local;
 
     if (options.validate) {
         validateExisting(options);
@@ -867,5 +826,11 @@ async function main(): Promise<void> {
 // Guard slik at checkTarget kan importeres (av tester, eller av et annet skript)
 // uten at hele genereringen starter. Samme mønster som translations_meta.mjs.
 if (process.argv[1] && path.resolve(process.argv[1]) === __filename) {
-    main().catch(console.error);
+    // Avslutt med kode 1, ikke 0: et ukjent flagg skal stoppe et køskript, ikke
+    // bare skrive en linje det ingen leser. Samme mønster som
+    // references_semantic.ts. Tidligere var dette `.catch(console.error)`.
+    main().catch(err => {
+        console.error(err);
+        process.exit(1);
+    });
 }

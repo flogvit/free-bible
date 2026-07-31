@@ -64,13 +64,45 @@
  *   ... eller navngi oversettelser i stedet for --priority.
  *   --force        ignorer gjenopptakelsesmarkører
  *   --concurrency  parallelle kall (standard 4 for bge-m3, 1 for dommerne)
+ *   --help         hele flaggtabellen
  */
 import { readFileSync, writeFileSync, existsSync, mkdirSync, readdirSync } from 'fs';
 import { join, dirname } from 'path';
 import { fileURLToPath } from 'url';
+import { parseArgs, formatHelp, COMMON_FLAGS } from '../../generate/cli.js';
+import type { FlagSpec } from '../../generate/cli.js';
 import { loadUkvnMapping, listUkvnMappings } from '../src/ukvn-loader.js';
 import { UkvnMapper } from '../src/ukvn-mapper.js';
 import { ukvnEncode, ukvnDecode, ukvnFormat, UKVN_PART_SIZE } from '../src/ukvn-types.js';
+
+const SPEC: Record<string, FlagSpec> = {
+  pass: {kind: 'string', help: 'hvilket pass: prep | mech | judge1 | judge2 | verdict'},
+  priority: {kind: 'string', help: 'prioritetsnivåer fra research/text-verification/priority.txt, f.eks. 1 eller 1,2'},
+  concurrency: {kind: 'number', help: 'parallelle kall (standard 4 for prep og mech, 1 for dommerne)'},
+  limit: COMMON_FLAGS.limit,
+  force: COMMON_FLAGS.force,
+  help: COMMON_FLAGS.help,
+};
+
+const {flags, positional} = parseArgs(process.argv.slice(2), SPEC);
+if (flags.help) {
+  console.log(formatHelp(
+    'kvn/scripts/verify-text.ts',
+    'tekstverifisering av KVN-mappingene: svarer verset til osmain-verset mappingen peker på',
+    SPEC,
+    [
+      'bun kvn/scripts/verify-text.ts --pass prep --priority 1',
+      'bun kvn/scripts/verify-text.ts --pass mech --priority 1',
+      'bun kvn/scripts/verify-text.ts --pass judge1 kjv spanish',
+      'bun kvn/scripts/verify-text.ts --pass verdict --limit 3 --force kjv',
+      '',
+      'Oversettelser navngis som posisjonsargumenter i stedet for --priority.',
+      'Kjør check-mapping-coverage.ts FØRST — den finner gratis de versene der',
+      'oppslaget ikke kan lykkes i det hele tatt.',
+    ],
+  ));
+  process.exit(0);
+}
 
 const __dirname = dirname(fileURLToPath(import.meta.url));
 const REPO = join(__dirname, '../..');
@@ -82,15 +114,14 @@ const EMBED_MODEL = process.env.EMBED_MODEL ?? 'bge-m3';
 const JUDGE1 = process.env.JUDGE1 ?? 'gemma4:31b';
 const JUDGE2 = process.env.JUDGE2 ?? 'granite4.1:30b';
 
-const args = process.argv.slice(2);
-const opt = (n: string, d?: string) => { const i = args.indexOf(n); return i >= 0 ? args[i + 1] : d; };
-const has = (n: string) => args.includes(n);
-const PASS = opt('--pass') ?? '';
-const FORCE = has('--force');
-const PRIORITY = opt('--priority');
-const CONC = Number(opt('--concurrency', PASS === 'mech' || PASS === 'prep' ? '4' : '1'));
+const PASS = (flags.pass as string | undefined) ?? '';
+const FORCE = flags.force as boolean;
+const PRIORITY = flags.priority as string | undefined;
+/** Samtidigheten avhenger av passet, så standarden kan ikke stå i SPEC. */
+const CONC = (flags.concurrency as number | undefined)
+  ?? (PASS === 'mech' || PASS === 'prep' ? 4 : 1);
 /** Røyktest / måling på en ny maskin: behandle bare de første N kapitlene. */
-const LIMIT = Number(opt('--limit', '0'));
+const LIMIT = (flags.limit as number | undefined) ?? 0;
 
 if (!['prep', 'mech', 'judge1', 'judge2', 'verdict'].includes(PASS)) {
   console.error('--pass må være prep | mech | judge1 | judge2 | verdict');
@@ -642,30 +673,33 @@ function priorityList(tier: string): string[] {
     .map(p => p[1]);
 }
 
-const explicit = args.filter((a, i) => !a.startsWith('--') && !args[i - 1]?.startsWith('--'));
-let names = explicit.length ? explicit
-  : PRIORITY ? priorityList(PRIORITY)
-  : listUkvnMappings().filter(n => existsSync(join(RAW, n)));
-names = names.filter(n => n !== 'osmain' && existsSync(join(RAW, n)));
+async function main() {
+  let names = positional.length ? positional
+    : PRIORITY ? priorityList(PRIORITY)
+    : listUkvnMappings().filter(n => existsSync(join(RAW, n)));
+  names = names.filter(n => n !== 'osmain' && existsSync(join(RAW, n)));
 
-console.log(`pass ${PASS} · ${names.length} oversettelser` +
-  (PASS === 'judge1' ? ` · ${JUDGE1}` : PASS === 'judge2' ? ` · ${JUDGE2}` : PASS === 'verdict' ? '' : ` · ${EMBED_MODEL}`) +
-  ` · samtidighet ${CONC}\n`);
+  console.log(`pass ${PASS} · ${names.length} oversettelser` +
+    (PASS === 'judge1' ? ` · ${JUDGE1}` : PASS === 'judge2' ? ` · ${JUDGE2}` : PASS === 'verdict' ? '' : ` · ${EMBED_MODEL}`) +
+    ` · samtidighet ${CONC}\n`);
 
-const t0 = Date.now();
-let totV = 0, totC = 0, totS = 0;
-for (let i = 0; i < names.length; i++) {
-  const tr = names[i];
-  const r = await runPass(tr);
-  totV += r.verses; totC += r.chapters; totS += r.skipped;
-  if (PASS === 'prep') continue;
-  const el = (Date.now() - t0) / 1000;
-  const done = i + 1;
-  console.log(
-    `[${String(done).padStart(4)}/${names.length}] ${tr.padEnd(26)} ` +
-    `${String(r.chapters).padStart(4)} kap ${String(r.verses).padStart(6)} vers` +
-    (r.skipped ? `  (${r.skipped} uendret)` : '') +
-    `   ${(totV / el).toFixed(1)} vers/s   gjenstår ~${(((names.length - done) / done) * el / 3600).toFixed(1)} t`
-  );
+  const t0 = Date.now();
+  let totV = 0, totC = 0, totS = 0;
+  for (let i = 0; i < names.length; i++) {
+    const tr = names[i];
+    const r = await runPass(tr);
+    totV += r.verses; totC += r.chapters; totS += r.skipped;
+    if (PASS === 'prep') continue;
+    const el = (Date.now() - t0) / 1000;
+    const done = i + 1;
+    console.log(
+      `[${String(done).padStart(4)}/${names.length}] ${tr.padEnd(26)} ` +
+      `${String(r.chapters).padStart(4)} kap ${String(r.verses).padStart(6)} vers` +
+      (r.skipped ? `  (${r.skipped} uendret)` : '') +
+      `   ${(totV / el).toFixed(1)} vers/s   gjenstår ~${(((names.length - done) / done) * el / 3600).toFixed(1)} t`
+    );
+  }
+  console.log(`\n${totC} kapitler · ${totV} vers · ${totS} uendret · ${((Date.now() - t0) / 3600e3).toFixed(2)} t`);
 }
-console.log(`\n${totC} kapitler · ${totV} vers · ${totS} uendret · ${((Date.now() - t0) / 3600e3).toFixed(2)} t`);
+
+await main();

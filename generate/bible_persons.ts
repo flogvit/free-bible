@@ -1,16 +1,79 @@
-import dotenv from 'dotenv'
+import "./env.js";
 import * as fs from 'fs';
 import path from 'path';
 import {fileURLToPath} from 'url';
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
-dotenv.config()
 
 import {books, normalizeLanguage, getLanguageCode, getBookName, anthropicModel, ollamaModel} from "./constants.js";
 import {callWithRetry, callOllamaRaw} from "./llm.js";
 import {nameToId} from "./lib.js";
+import {parseArgs, formatHelp, COMMON_FLAGS} from './cli.js';
+import type {FlagSpec, Range} from './cli.js';
 import type {Chapter} from '../kvn/src/bible-types.js';
+
+/**
+ * Flaggkontrakten for dette skriptet (#51, #52, #53).
+ *
+ * Den gamle parseren lot alt den ikke kjente igjen falle ned i posisjons-
+ * argumentene, og de ble joinet til et personnavn. En skrivefeil (`--indx`)
+ * ble derfor ikke en feilmelding, men et forsøk på å generere en profil for
+ * personen «--indx». Kontrakten feiler i stedet høyt.
+ *
+ * `--min-score` og `--max-iter` sto som `null` i initialiseringen og fikk
+ * verdien sin først av `|| 8` / `|| 3` lenger nede. Standardene er de samme,
+ * men de står nå i `--help` der de kan leses.
+ */
+const SPEC: Record<string, FlagSpec> = {
+    bible: COMMON_FLAGS.bible,
+    book: COMMON_FLAGS.book,
+    chapter: COMMON_FLAGS.chapter,
+    ot: COMMON_FLAGS.ot,
+    nt: COMMON_FLAGS.nt,
+    local: COMMON_FLAGS.local,
+    index: {kind: 'boolean', help: 'skann bibelen for personnavn med Ollama og fest versreferanser'},
+    proofread: {kind: 'boolean', help: 'korrekturles personprofilene som finnes'},
+    apply: {kind: 'boolean', help: 'skriv korrekturens forslag tilbake (slår på tilbakekoblingssløyfa)'},
+    'min-score': {kind: 'number', help: 'laveste godtatte score, 0-10', default: 8},
+    'max-iter': {kind: 'number', help: 'maks korrekturrunder per person', default: 3},
+    continue: {kind: 'boolean', help: 'hopp over personer som alt har score >= --min-score og fotnoter'},
+    help: COMMON_FLAGS.help,
+};
+
+const HELP_EXAMPLES = [
+    'bun generate/bible_persons.ts abraham                       # generer Abraham',
+    'bun generate/bible_persons.ts "Set (Adams sønn)"            # generer en ny person',
+    'bun generate/bible_persons.ts all                           # generer alle forhåndsdefinerte',
+    'bun generate/bible_persons.ts --bible osnb --index          # indekser hele bibelen',
+    'bun generate/bible_persons.ts --bible osnb --index --book 1 # indekser bare 1. Mosebok',
+    'bun generate/bible_persons.ts --bible osnb --index --nt     # indekser bare NT',
+    'bun generate/bible_persons.ts --proofread --apply           # korrekturles alle personer',
+    'bun generate/bible_persons.ts --proofread --apply --continue    # fortsett der du slapp',
+    'bun generate/bible_persons.ts --proofread --apply --min-score 9 # høyere kvalitetskrav',
+    '',
+    'Uten flagg og uten posisjonsargument tar skriptet <person-id|navn|all>:',
+    'et navn som ikke står i den forhåndsdefinerte lista blir en ny profil.',
+];
+
+const HELP_PURPOSE =
+    'personprofiler i generate/persons/nb: generer én eller alle, indekser bibelen etter personnavn, eller korrekturles profilene';
+
+function printHelp(): void {
+    console.log(formatHelp('generate/bible_persons.ts', HELP_PURPOSE, SPEC, HELP_EXAMPLES));
+}
+
+// Hjelpesjekken står før alt annet: `--index` leser hele bibelen og `--proofread`
+// hele persons-katalogen, og begge modusene ringer en modell. `--help` skal ikke
+// koste noe av det.
+const {flags, positional} = parseArgs(process.argv.slice(2), SPEC);
+if (flags.help) {
+    printHelp();
+    process.exit(0);
+}
+
+// Uten `--local` går genereringen mot Claude — samme standard som før.
+const useLocal = flags.local as boolean;
 
 /** Slektsrelasjoner; id-ene er personfilenes id-er, ikke visningsnavn. */
 interface PersonFamily {
@@ -141,26 +204,24 @@ interface IndexOptions {
 }
 
 /**
- * Kommandolinjevalgene. Feltene starter som `null`/`false` og settes av
- * argumentløkka, så typen må romme begge — ellers låser den seg til `null`.
+ * Kommandolinjevalgene, etter at kontrakten har tolket dem.
+ *
+ * `minScore` og `maxIterations` er ikke lenger nullbare: standardverdiene står
+ * i `SPEC`, så de er alltid satt når vi kommer hit.
  */
 interface CliOptions extends IndexOptions {
     index: boolean;
     proofread: boolean;
     apply: boolean;
-    minScore: number | null;
-    maxIterations: number | null;
+    minScore: number;
+    maxIterations: number;
     bible: string | null;
     bookStart: number | null;
     bookEnd: number | null;
     chapterStart: number | null;
     chapterEnd: number | null;
     continue_: boolean;
-    local: boolean;
-    help: boolean;
 }
-
-let useLocal = false;
 
 // Persons to generate - Tier 1 (main characters)
 const personsList = [
@@ -884,118 +945,47 @@ async function indexBible(bible: string, options: IndexOptions = {}) {
     console.log(`\nDone in ${Math.floor(elapsed / 60)}m${elapsed % 60}s — ${processed} verses, ${refsAdded} refs added, ${newPersons} new persons`);
 }
 
-function parseRange(value: string): {start: number, end: number} {
-    if (value.includes('-')) {
-        const [start, end] = value.split('-').map((n: string) => parseInt(n, 10));
-        return {start, end};
+/**
+ * Oversetter de tolkede flaggene til `CliOptions`.
+ *
+ * `--ot`/`--nt` satte før bokintervallet direkte i argumentløkka, slik at det
+ * siste av `--ot`, `--nt` og `--book` vant. Rekkefølgen finnes ikke lenger
+ * etter parsingen, så et eksplisitt `--book` går foran — samme presedens som
+ * i references.ts.
+ */
+function readOptions(
+    parsedFlags: ReturnType<typeof parseArgs>['flags'],
+): CliOptions {
+    const book = parsedFlags.book as Range | undefined;
+    const chapter = parsedFlags.chapter as Range | undefined;
+
+    let bookStart: number | null = book?.start ?? null;
+    let bookEnd: number | null = book?.end ?? null;
+    if (bookStart === null && parsedFlags.ot) {
+        bookStart = 1;
+        bookEnd = 39;
+    } else if (bookStart === null && parsedFlags.nt) {
+        bookStart = 40;
+        bookEnd = 66;
     }
-    const num = parseInt(value, 10);
-    return {start: num, end: num};
-}
 
-function printUsage() {
-    console.log(`
-Usage: bun bible_persons.ts [options] [person-id|name|all]
-
-Modes:
-  <person-id|name>     Generate a single person profile
-  all                  Generate all pre-defined persons
-  --index              Scan bible for person names with Ollama
-  --proofread          Proofread all existing person profiles
-  --apply              Apply proofread suggestions (enables feedback loop)
-
-Options:
-  --bible <name>       Bible translation to scan (required for --index, e.g., osnb)
-  --book <range>       Process book(s): single (43) or range (1-20)
-  --chapter <range>    Process chapter(s): single (1) or range (1-10)
-  --ot                 Process only Old Testament (books 1-39)
-  --nt                 Process only New Testament (books 40-66)
-  --min-score <n>      Minimum acceptable score (default: 8, range 0-10)
-  --max-iter <n>       Max proofread iterations per person (default: 3)
-  --continue           Skip persons that already have score >= min-score
-  --local              Use Ollama instead of Claude for generation
-  --help               Show this help message
-
-Examples:
-  bun bible_persons.ts abraham                            # Generate Abraham
-  bun bible_persons.ts "Set (Adams sønn)"                 # Generate new person
-  bun bible_persons.ts all                                # Generate all pre-defined
-  bun bible_persons.ts --bible osnb --index              # Index entire bible
-  bun bible_persons.ts --bible osnb --index --book 1     # Index Genesis only
-  bun bible_persons.ts --bible osnb --index --nt         # Index NT only
-  bun bible_persons.ts --proofread --apply                # Proofread all persons
-  bun bible_persons.ts --proofread --apply --continue      # Resume from where you left off
-  bun bible_persons.ts --proofread --apply --min-score 9  # Higher quality bar
-`);
+    return {
+        index: parsedFlags.index as boolean,
+        proofread: parsedFlags.proofread as boolean,
+        apply: parsedFlags.apply as boolean,
+        minScore: parsedFlags['min-score'] as number,
+        maxIterations: parsedFlags['max-iter'] as number,
+        bible: (parsedFlags.bible as string | undefined) ?? null,
+        bookStart,
+        bookEnd,
+        chapterStart: chapter?.start ?? null,
+        chapterEnd: chapter?.end ?? null,
+        continue_: parsedFlags.continue as boolean,
+    };
 }
 
 async function main() {
-    const args = process.argv.slice(2);
-
-    const options: CliOptions = {
-        index: false,
-        proofread: false,
-        apply: false,
-        minScore: null,
-        maxIterations: null,
-        bible: null,
-        bookStart: null,
-        bookEnd: null,
-        chapterStart: null,
-        chapterEnd: null,
-        continue_: false,
-        local: false,
-        help: false,
-    };
-    const positional: string[] = [];
-
-    let i = 0;
-    while (i < args.length) {
-        const arg = args[i];
-        if (arg === '--index') {
-            options.index = true;
-        } else if (arg === '--bible' && i + 1 < args.length) {
-            options.bible = args[++i];
-        } else if (arg === '--book' && i + 1 < args.length) {
-            const range = parseRange(args[++i]);
-            options.bookStart = range.start;
-            options.bookEnd = range.end;
-        } else if (arg === '--chapter' && i + 1 < args.length) {
-            const range = parseRange(args[++i]);
-            options.chapterStart = range.start;
-            options.chapterEnd = range.end;
-        } else if (arg === '--ot') {
-            options.bookStart = 1;
-            options.bookEnd = 39;
-        } else if (arg === '--nt') {
-            options.bookStart = 40;
-            options.bookEnd = 66;
-        } else if (arg === '--proofread') {
-            options.proofread = true;
-        } else if (arg === '--apply') {
-            options.apply = true;
-        } else if (arg === '--min-score' && i + 1 < args.length) {
-            options.minScore = parseInt(args[++i], 10);
-        } else if (arg === '--max-iter' && i + 1 < args.length) {
-            options.maxIterations = parseInt(args[++i], 10);
-        } else if (arg === '--continue') {
-            options.continue_ = true;
-        } else if (arg === '--local') {
-            options.local = true;
-        } else if (arg === '--help') {
-            options.help = true;
-        } else {
-            positional.push(arg);
-        }
-        i++;
-    }
-
-    useLocal = options.local;
-
-    if (options.help) {
-        printUsage();
-        return;
-    }
+    const options = readOptions(flags);
 
     if (options.index) {
         if (!options.bible) {
@@ -1009,6 +999,10 @@ async function main() {
     if (options.proofread) {
         const personsDir = path.join(__dirname, 'persons', 'nb');
         let files = fs.readdirSync(personsDir).filter(f => f.endsWith('.json')).sort();
+        // `|| 8` / `|| 3` er beholdt fra den gamle koden, ikke overflødig: der
+        // fanget de `null`, her fanger de `--min-score 0` / `--max-iter 0`, som
+        // begge falt tilbake til standarden før. Migreringen bytter parsing,
+        // ikke oppførsel.
         const minScore = options.minScore || 8;
         const maxIterations = options.maxIterations || 3;
 
@@ -1084,8 +1078,10 @@ async function main() {
 
     const input = positional.join(" ");
 
+    // Uten modus og uten navn er det ingenting å gjøre — som før skrives
+    // bruksmeldingen, og som før er det ikke en feil (exit 0).
     if (!input) {
-        printUsage();
+        printHelp();
         return;
     }
 
@@ -1108,4 +1104,9 @@ async function main() {
     }
 }
 
-main();
+// Kjører bare når fila startes direkte. Uten vakten kjører jobben ved IMPORT —
+// det er grunnen til at days.ts slettet data bare man lastet modulen (#108),
+// og det gjør skriptene umulige å teste.
+if (import.meta.main) {
+    main();
+}

@@ -2,8 +2,31 @@ import * as fs from 'fs';
 import * as path from 'path';
 import { fileURLToPath } from 'url';
 
+import { parseArgs, formatHelp, COMMON_FLAGS } from './cli.js';
+import type { FlagSpec } from './cli.js';
+
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
+
+/**
+ * Skriptet tar ingen flagg: det parser alle tre årgangene og skriver dem om
+ * hver gang. `--help` er derfor det eneste som finnes, og sjekken må stå før
+ * `mkdirSync` og den første `writeFileSync` (#51).
+ */
+const SPEC: Record<string, FlagSpec> = {
+  help: COMMON_FLAGS.help,
+};
+
+const HELP_PURPOSE =
+  'parser Den norske kirkes lesetekster fra external/dnk/lesetekster/' +
+  '<årgang>-layout.txt (pdftotext -layout) og OVERSKRIVER ' +
+  'generate/dnk_lesetekster/<årgang>.json med dag, dato, rekke og ' +
+  '[ref:…@dnb2024]-oppmerkede lesninger. Alle tre årgangene skrives om ved ' +
+  'hver kjøring; manglende inndatafiler hoppes over med en advarsel.';
+
+const HELP_EXAMPLES = [
+  'bun generate/parse_lesetekster.ts        # parse alle årgangene på nytt',
+];
 
 const bookAbbreviations = [
   '1 Mos', '2 Mos', '3 Mos', '4 Mos', '5 Mos',
@@ -535,60 +558,76 @@ function parsePdf(text: string): DayEntry[] {
 const inputDir = path.join(__dirname, '..', 'external', 'dnk', 'lesetekster');
 const outputDir = path.join(__dirname, 'dnk_lesetekster');
 
-if (!fs.existsSync(outputDir)) {
-  fs.mkdirSync(outputDir, { recursive: true });
-}
-
 const files = [
   { input: '2025-2026-layout.txt', output: '2025-2026.json' },
   { input: '2026-2027-layout.txt', output: '2026-2027.json' },
   { input: '2027-2028-layout.txt', output: '2027-2028.json' },
 ];
 
-for (const file of files) {
-  const inputPath = path.join(inputDir, file.input);
-  if (!fs.existsSync(inputPath)) {
-    console.warn(`Skipping ${file.input} — not found`);
-    continue;
+function main(): void {
+  // Hjelpen skal ut før katalogen opprettes og før noe skrives.
+  const { flags } = parseArgs(process.argv.slice(2), SPEC);
+  if (flags.help) {
+    console.log(formatHelp('generate/parse_lesetekster.ts', HELP_PURPOSE, SPEC, HELP_EXAMPLES));
+    process.exit(0);
   }
-  const text = fs.readFileSync(inputPath, 'utf-8');
-  const entries = parsePdf(text);
-  const outputPath = path.join(outputDir, file.output);
-  fs.writeFileSync(outputPath, JSON.stringify(entries, null, 2), 'utf-8');
-  console.log(`${file.output}: ${entries.length} entries`);
 
-  let issues = 0;
-  for (const entry of entries) {
-    if (!entry.series) {
-      console.warn(`  WARNING: No series for "${entry.name}"`);
-      issues++;
+  if (!fs.existsSync(outputDir)) {
+    fs.mkdirSync(outputDir, { recursive: true });
+  }
+
+  for (const file of files) {
+    const inputPath = path.join(inputDir, file.input);
+    if (!fs.existsSync(inputPath)) {
+      console.warn(`Skipping ${file.input} — not found`);
+      continue;
     }
-    if (entry.slots.length === 0) {
-      console.warn(`  WARNING: No slots for "${entry.name}"`);
-      issues++;
-    }
-    for (const slot of entry.slots) {
-      for (const opt of slot.options) {
-        for (const part of opt.parts) {
-          if (!part.title) {
-            console.warn(`  WARNING: Empty title in "${entry.name}" for refs ${part.refs.join(',')}`);
-            issues++;
+    const text = fs.readFileSync(inputPath, 'utf-8');
+    const entries = parsePdf(text);
+    const outputPath = path.join(outputDir, file.output);
+    fs.writeFileSync(outputPath, JSON.stringify(entries, null, 2), 'utf-8');
+    console.log(`${file.output}: ${entries.length} entries`);
+
+    let issues = 0;
+    for (const entry of entries) {
+      if (!entry.series) {
+        console.warn(`  WARNING: No series for "${entry.name}"`);
+        issues++;
+      }
+      if (entry.slots.length === 0) {
+        console.warn(`  WARNING: No slots for "${entry.name}"`);
+        issues++;
+      }
+      for (const slot of entry.slots) {
+        for (const opt of slot.options) {
+          for (const part of opt.parts) {
+            if (!part.title) {
+              console.warn(`  WARNING: Empty title in "${entry.name}" for refs ${part.refs.join(',')}`);
+              issues++;
+            }
           }
         }
       }
+      if (entry.slots.length > 5) {
+        console.warn(`  WARNING: ${entry.slots.length} slots for "${entry.name}"`);
+        issues++;
+      }
+      if (!/^\d{4}-\d{2}-\d{2}$/.test(entry.date)) {
+        console.warn(`  WARNING: Bad date "${entry.date}" for "${entry.name}"`);
+        issues++;
+      }
     }
-    if (entry.slots.length > 5) {
-      console.warn(`  WARNING: ${entry.slots.length} slots for "${entry.name}"`);
-      issues++;
-    }
-    if (!/^\d{4}-\d{2}-\d{2}$/.test(entry.date)) {
-      console.warn(`  WARNING: Bad date "${entry.date}" for "${entry.name}"`);
-      issues++;
+    if (issues === 0) {
+      console.log(`  No issues found.`);
+    } else {
+      console.log(`  ${issues} issue(s) found.`);
     }
   }
-  if (issues === 0) {
-    console.log(`  No issues found.`);
-  } else {
-    console.log(`  ${issues} issue(s) found.`);
-  }
+}
+
+// Kjører bare når fila startes direkte. Uten vakten kjørte parsingen ved IMPORT
+// — den skrev alle tre årgangene bare man lastet modulen, som er samme feilform
+// som days.ts hadde (#108).
+if (import.meta.main) {
+  main();
 }

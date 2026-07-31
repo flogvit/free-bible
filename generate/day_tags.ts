@@ -1,14 +1,15 @@
-import dotenv from 'dotenv'
+import "./env.js";
 import * as fs from 'fs';
 import path from 'path';
 import {fileURLToPath} from 'url';
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
-dotenv.config()
 
 import {books, normalizeLanguage, getLanguageCode, getBookName} from "./constants.js";
 import {callWithRetry} from "./llm.js";
+import {parseArgs, formatHelp, COMMON_FLAGS} from './cli.js';
+import type {FlagSpec, Range} from './cli.js';
 import type {Chapter} from '../kvn/src/bible-types.js';
 
 let useLocal = false;
@@ -473,46 +474,39 @@ function countChapters(bookStart: number, bookEnd: number, chapterStart: number 
     return total;
 }
 
-function printUsage(): void {
-    console.log(`
-Usage: node day_tags.mjs [options]
+/**
+ * Flaggkontrakten for dette skriptet (#51, #52, #53).
+ *
+ * Samme liste som den gamle bruksmeldingen og den gamle parseren var enige om.
+ * `--min-score` og `--max-iter` er skriptets egne — de styrer korrekturløkka —
+ * og beholder navnene og standardverdiene de hadde.
+ */
+const SPEC: Record<string, FlagSpec> = {
+    language: COMMON_FLAGS.language,   // 'nb' → normalizeLanguage → 'Norwegian bokmål', som før
+    bible: COMMON_FLAGS.bible,
+    book: COMMON_FLAGS.book,
+    chapter: COMMON_FLAGS.chapter,
+    ot: COMMON_FLAGS.ot,
+    nt: COMMON_FLAGS.nt,
+    local: COMMON_FLAGS.local,
+    force: COMMON_FLAGS.force,
+    proofread: {kind: 'boolean', help: 'kjør korrektur etter taggingen'},
+    apply: {kind: 'boolean', help: 'skriv korrekturens reviderte tagger tilbake til fila'},
+    'min-score': {kind: 'number', help: 'laveste godtatte score 0-10 før korrekturen kjøres på nytt', default: 8},
+    'max-iter': {kind: 'number', help: 'flest korrekturrunder per kapittel', default: 3},
+    help: COMMON_FLAGS.help,
+};
 
-Options:
-  --language <lang>    Language (default: nb)
-  --bible <name>       Bible translation (e.g., osnb) [required]
-  --book <range>       Process book(s): single (43) or range (1-20)
-  --chapter <range>    Process chapter(s): single (1) or range (1-10)
-  --ot                 Process only Old Testament (books 1-39)
-  --nt                 Process only New Testament (books 40-66)
-  --local              Use Ollama instead of Claude
-  --force              Re-tag even if chapter already tagged
-  --proofread          Run proofreading after tagging
-  --apply              Apply proofread suggestions (feedback loop)
-  --min-score <n>      Minimum acceptable score (default: 8, range 0-10)
-  --max-iter <n>       Max proofread iterations per chapter (default: 3)
-  --help               Show this help message
-
-Output structure:
-  day_tags/<lang>/<bookId>/<chapterId>.json   (per-chapter tags)
-  days/<lang>/<dayId>.json                     (updated with references)
-
-Examples:
-  node day_tags.mjs --bible osnb --book 43                # Tag John's gospel
-  node day_tags.mjs --bible osnb --nt --local              # Tag NT with Ollama
-  node day_tags.mjs --bible osnb --book 40 --chapter 27    # Tag Matt 27
-  node day_tags.mjs --bible osnb --nt --proofread --apply  # Tag + proofread loop
-  node day_tags.mjs --bible osnb --force --book 43         # Re-tag John
-`);
-}
-
-function parseRange(value: string): {start: number; end: number} {
-    if (value.includes('-')) {
-        const [start, end] = value.split('-').map(n => parseInt(n, 10));
-        return {start, end};
-    }
-    const num = parseInt(value, 10);
-    return {start: num, end: num};
-}
+const HELP_EXAMPLES = [
+    'bun generate/day_tags.ts --bible osnb --book 43                # tagg Johannes',
+    'bun generate/day_tags.ts --bible osnb --nt --local             # tagg NT med lokal Ollama',
+    'bun generate/day_tags.ts --bible osnb --book 40 --chapter 27   # tagg Matteus 27',
+    'bun generate/day_tags.ts --bible osnb --nt --proofread --apply # tagg → korrektur → skriv inn',
+    'bun generate/day_tags.ts --bible osnb --force --book 43        # tagg Johannes på nytt',
+    '',
+    'Taggene havner i day_tags/<språkkode>/<bok>/<kapittel>.json, og',
+    'days/<språkkode>/<dagId>.json oppdateres med referansene.',
+];
 
 /** Flaggene skriptet kjenner. `null` = ikke oppgitt, ikke «tom». */
 interface DayTagOptions {
@@ -528,73 +522,64 @@ interface DayTagOptions {
     apply: boolean;
     minScore: number;
     maxIterations: number;
-    help: boolean;
+}
+
+/**
+ * Leser kommandolinja gjennom den felles kontrakten og oversetter til `DayTagOptions`.
+ *
+ * `--ot`/`--nt` satte bok-intervallet direkte i den gamle parseren, så det
+ * flagget som sto sist på linja vant over `--book`. Rekkefølgen finnes ikke i
+ * kontrakten, og et eksplisitt `--book` er det mest presise ønsket — derfor
+ * vinner det her. Samme presedens som references.ts.
+ */
+function readOptions(flags: ReturnType<typeof parseArgs>['flags']): DayTagOptions {
+    const book = flags.book as Range | undefined;
+    const chapter = flags.chapter as Range | undefined;
+
+    let bookStart = book?.start ?? null;
+    let bookEnd = book?.end ?? null;
+    if (book === undefined) {
+        if (flags.ot && !flags.nt) {
+            bookStart = 1;
+            bookEnd = 39;
+        } else if (flags.nt && !flags.ot) {
+            bookStart = 40;
+            bookEnd = 66;
+        }
+    }
+
+    return {
+        language: normalizeLanguage(flags.language as string),
+        bible: (flags.bible as string | undefined) ?? null,
+        bookStart,
+        bookEnd,
+        chapterStart: chapter?.start ?? null,
+        chapterEnd: chapter?.end ?? null,
+        local: flags.local as boolean,
+        force: flags.force as boolean,
+        proofread: flags.proofread as boolean,
+        apply: flags.apply as boolean,
+        minScore: flags['min-score'] as number,
+        maxIterations: flags['max-iter'] as number,
+    };
 }
 
 async function main(): Promise<void> {
-    const args = process.argv.slice(2);
-    const options: DayTagOptions = {
-        language: 'Norwegian bokmål',
-        bible: null,
-        bookStart: null,
-        bookEnd: null,
-        chapterStart: null,
-        chapterEnd: null,
-        local: false,
-        force: false,
-        proofread: false,
-        apply: false,
-        minScore: 8,
-        maxIterations: 3,
-        help: false
-    };
-
-    let i = 0;
-    while (i < args.length) {
-        const arg = args[i];
-        if (arg === '--language' && i + 1 < args.length) {
-            options.language = args[++i];
-        } else if (arg === '--bible' && i + 1 < args.length) {
-            options.bible = args[++i];
-        } else if (arg === '--book' && i + 1 < args.length) {
-            const range = parseRange(args[++i]);
-            options.bookStart = range.start;
-            options.bookEnd = range.end;
-        } else if (arg === '--chapter' && i + 1 < args.length) {
-            const range = parseRange(args[++i]);
-            options.chapterStart = range.start;
-            options.chapterEnd = range.end;
-        } else if (arg === '--ot') {
-            options.bookStart = 1;
-            options.bookEnd = 39;
-        } else if (arg === '--nt') {
-            options.bookStart = 40;
-            options.bookEnd = 66;
-        } else if (arg === '--local') {
-            options.local = true;
-        } else if (arg === '--force') {
-            options.force = true;
-        } else if (arg === '--proofread') {
-            options.proofread = true;
-        } else if (arg === '--apply') {
-            options.apply = true;
-        } else if (arg === '--min-score' && i + 1 < args.length) {
-            options.minScore = parseInt(args[++i], 10);
-        } else if (arg === '--max-iter' && i + 1 < args.length) {
-            options.maxIterations = parseInt(args[++i], 10);
-        } else if (arg === '--help') {
-            options.help = true;
-        }
-        i++;
+    // Hjelpen skal ut før noe leses fra disk eller sendes over nettet — `loadDays`
+    // under leser hele days/<språkkode>/.
+    const {flags} = parseArgs(process.argv.slice(2), SPEC);
+    if (flags.help) {
+        console.log(formatHelp(
+            'generate/day_tags.ts',
+            'kobler kapitler til kirkelige og bibelske dager, med korrekturløkke',
+            SPEC,
+            HELP_EXAMPLES,
+        ));
+        process.exit(0);
     }
 
-    options.language = normalizeLanguage(options.language);
+    const options = readOptions(flags);
     useLocal = options.local;
-
-    if (options.help) {
-        printUsage();
-        return;
-    }
 
     if (!options.bible) {
         console.error('--bible <name> is required (e.g., --bible osnb)');
@@ -713,4 +698,14 @@ async function main(): Promise<void> {
     console.log(`\nDone in ${Math.floor(elapsed / 60)}m${elapsed % 60}s — ${tagged} tagged (${totalDayTags} day connections), ${skipped} skipped`);
 }
 
-main().catch(console.error);
+// Avslutt med kode 1, ikke 0: et ukjent flagg skal stoppe et køskript, ikke bare
+// skrive en linje ingen leser. Tidligere var dette `.catch(console.error)`.
+// Kjører bare når fila startes direkte. Uten vakten kjører jobben ved IMPORT —
+// det er grunnen til at days.ts slettet data bare man lastet modulen (#108),
+// og det gjør skriptene umulige å teste.
+if (import.meta.main) {
+    main().catch(err => {
+    console.error(err);
+    process.exit(1);
+});
+}

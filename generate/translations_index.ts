@@ -12,18 +12,29 @@
  * The index is generated output: never edit it by hand, edit meta.json and
  * rebuild. Translations without meta.json are reported and left out.
  *
- *   node translations_index.mjs
+ *   bun translations_index.ts
+ *
+ * Flaggene går gjennom den felles kontrakten i cli.ts; `--help` viser dem.
  */
 import * as fs from 'fs';
 import path from 'path';
 import {fileURLToPath} from 'url';
 import type {TranslationMeta} from './translations_schema.js';
 import type {LicenseRecord} from './translations_meta.js';
+import {parseArgs, formatHelp, COMMON_FLAGS} from './cli.js';
+import type {FlagSpec} from './cli.js';
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const RAW_DIR = path.join(__dirname, 'bibles_raw');
 const OUT_DIR = path.join(__dirname, 'translations');
 const OUT_FILE = path.join(OUT_DIR, 'index.json');
+
+// Skriptet tar ingen argumenter utover hjelpen. Kontrakten er likevel med,
+// slik at `--help` svarer i stedet for å bli tolket som et vanlig argument og
+// skrive over translations/index.json (#108).
+const SPEC: Record<string, FlagSpec> = {
+    help: COMMON_FLAGS.help,
+};
 
 /**
  * meta.json slik indeksen leser den. `published` står ikke i `TranslationMeta`
@@ -73,6 +84,19 @@ function licenceBlock(license: LicenseRecord | null): LicenceBlock | undefined {
 }
 
 function main(): void {
+    // Hjelpen skal ut før noe leses fra eller skrives til disk.
+    const {flags} = parseArgs(process.argv.slice(2), SPEC);
+    if (flags.help) {
+        console.log(formatHelp(
+            'generate/translations_index.ts',
+            'slår sammen meta.json og license.json for hver oversettelse under '
+            + 'generate/bibles_raw/ og SKRIVER den samlede generate/translations/index.json '
+            + '(oversettelser uten meta.json, og de med "published": false, holdes utenfor)',
+            SPEC,
+        ));
+        process.exit(0);
+    }
+
     const translations = fs.readdirSync(RAW_DIR, {withFileTypes: true})
         .filter(entry => entry.isDirectory())
         .map(entry => entry.name)
@@ -131,4 +155,9 @@ function main(): void {
     }
 }
 
-main();
+// Kjører bare når fila startes direkte. Uten vakten kjører jobben ved IMPORT —
+// det er grunnen til at days.ts slettet data bare man lastet modulen (#108),
+// og det gjør skriptene umulige å teste.
+if (import.meta.main) {
+    main();
+}

@@ -4,6 +4,8 @@
  * Generates all reading plans from configuration
  *
  * Run with: bun generate_reading_plans.ts
+ *
+ * Flaggene går gjennom den felles kontrakten i cli.ts; `--help` viser dem.
  */
 
 import fs from 'fs';
@@ -12,6 +14,8 @@ import { fileURLToPath } from 'url';
 import { bookRanges, getChaptersForRange, getChaptersForBooks, resolveBookRange } from './lib.js';
 import type { BookRange, ChapterRef } from './lib.js';
 import { planDefinitions, categoryOrder } from './reading_plans_config.js';
+import { parseArgs, formatHelp, COMMON_FLAGS } from './cli.js';
+import type { FlagSpec } from './cli.js';
 
 /**
  * Én dags lesning i en ferdig generert plan.
@@ -84,10 +88,12 @@ const __dirname = path.dirname(fileURLToPath(import.meta.url));
 // other languages are produced from there with translate.mjs
 const outputDir = path.join(__dirname, 'reading_plans/nb');
 
-// Ensure output directory exists
-if (!fs.existsSync(outputDir)) {
-  fs.mkdirSync(outputDir, { recursive: true });
-}
+// Skriptet tar ingen argumenter utover hjelpen. Kontrakten er likevel med,
+// slik at `--help` svarer i stedet for å bli tolket som et vanlig argument og
+// skrive over reading_plans/nb/ (#108).
+const SPEC: Record<string, FlagSpec> = {
+  help: COMMON_FLAGS.help,
+};
 
 /**
  * Distribute chapters evenly over a number of days
@@ -288,19 +294,45 @@ function saveIndex(plans: GeneratedPlan[]): void {
 }
 
 // Main execution
-console.log('Genererer leseplaner...\n');
-
-const plans: GeneratedPlan[] = [];
-for (const definition of planDefinitions) {
-  try {
-    const plan = generatePlan(definition);
-    savePlan(plan);
-    plans.push(plan);
-  } catch (error) {
-    console.error(`✗ Feil ved generering av ${definition.id}: ${(error as Error).message}`);
+function main(): void {
+  // Hjelpen skal ut før noe leses fra eller skrives til disk.
+  const { flags } = parseArgs(process.argv.slice(2), SPEC);
+  if (flags.help) {
+    console.log(formatHelp(
+      'generate/generate_reading_plans.ts',
+      'genererer alle leseplanene fra reading_plans_config.ts og SKRIVER dem til '
+      + 'generate/reading_plans/nb/<plan-id>.json og index.json',
+      SPEC,
+    ));
+    process.exit(0);
   }
+
+  // Ensure output directory exists
+  if (!fs.existsSync(outputDir)) {
+    fs.mkdirSync(outputDir, { recursive: true });
+  }
+
+  console.log('Genererer leseplaner...\n');
+
+  const plans: GeneratedPlan[] = [];
+  for (const definition of planDefinitions) {
+    try {
+      const plan = generatePlan(definition);
+      savePlan(plan);
+      plans.push(plan);
+    } catch (error) {
+      console.error(`✗ Feil ved generering av ${definition.id}: ${(error as Error).message}`);
+    }
+  }
+
+  saveIndex(plans);
+
+  console.log(`\nFerdig! ${plans.length} leseplaner generert.`);
 }
 
-saveIndex(plans);
-
-console.log(`\nFerdig! ${plans.length} leseplaner generert.`);
+// Kjører bare når fila startes direkte. Uten vakten kjører jobben ved IMPORT —
+// det er grunnen til at days.ts slettet data bare man lastet modulen (#108),
+// og det gjør skriptene umulige å teste.
+if (import.meta.main) {
+  main();
+}

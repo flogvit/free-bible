@@ -216,4 +216,9 @@ async function main() {
     console.log(`\nFull results written to ${path.relative(process.cwd(), outFile)}`);
 }
 
-main().catch(err => { console.error(err); process.exit(1); });
+// Kjører bare når fila startes direkte. Uten vakten kjører jobben ved IMPORT —
+// det er grunnen til at days.ts slettet data bare man lastet modulen (#108),
+// og det gjør skriptene umulige å teste.
+if (import.meta.main) {
+    main().catch(err => { console.error(err); process.exit(1); });
+}

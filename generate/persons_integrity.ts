@@ -8,18 +8,53 @@
 // This script NEVER writes to persons data. It only reports and, with --worklist,
 // dumps a JSON worklist (to the given path) that drives the reconciliation work.
 //
-// Usage:
-//   node persons_integrity.mjs                 # summary + exit 1 if any unresolved
-//   node persons_integrity.mjs --verbose       # list every drift / unresolved ref
-//   node persons_integrity.mjs --worklist out.json
+// Usage: bun persons_integrity.ts --help
 //
 import * as fs from 'fs';
 import path from 'path';
 import { fileURLToPath } from 'url';
 import { nameToId } from './lib.js';
+import { parseArgs, formatHelp, COMMON_FLAGS } from './cli.js';
+import type { FlagSpec } from './cli.js';
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const PERSONS_DIR = path.join(__dirname, 'persons', 'nb');
+
+/**
+ * Flaggkontrakten for dette skriptet (#51, #52, #53).
+ *
+ * Skriptet tok `--verbose` og `--worklist <sti>`. Begge ble lest med
+ * `includes`/`indexOf`, så et ukjent flagg forsvant i stillhet — og
+ * `--worklist` uten sti ga `undefined`, som bare betydde at arbeidslista
+ * aldri ble skrevet. Nå feiler begge deler høyt.
+ */
+const SPEC: Record<string, FlagSpec> = {
+    verbose: { kind: 'boolean', help: 'list hvert avvik og hver uløst referanse, ikke bare tellingene' },
+    worklist: { kind: 'string', help: 'skriv arbeidslista som JSON til denne stien' },
+    help: COMMON_FLAGS.help,
+};
+
+const HELP_EXAMPLES = [
+    'bun generate/persons_integrity.ts                     # sammendrag, exit 1 hvis noe er uløst',
+    'bun generate/persons_integrity.ts --verbose           # hvert avvik og hver uløst referanse',
+    'bun generate/persons_integrity.ts --worklist out.json # arbeidslista persons_reconcile.ts leser',
+];
+
+// Hjelpesjekken står før alt annet: rapporten leser hele persons-katalogen ved
+// oppstart, og `--help` skal ikke koste noe av det.
+const { flags } = parseArgs(process.argv.slice(2), SPEC);
+if (flags.help) {
+    console.log(formatHelp(
+        'generate/persons_integrity.ts',
+        'skrivefri integritetskontroll av persons/nb: én kanonisk id per person, og hver slektsreferanse peker på nøyaktig én profil',
+        SPEC,
+        HELP_EXAMPLES,
+    ));
+    process.exit(0);
+}
+
+const VERBOSE = flags.verbose as boolean;
+const WORKLIST = (flags.worklist as string | undefined) ?? null;
 
 /** Slektsfeltene i en profil. Alle er valgfrie — de fleste personer har bare noen. */
 interface PersonFamily {
@@ -85,11 +120,6 @@ interface DriftEntry {
   slug: string;
   id: string;
 }
-
-const args = process.argv.slice(2);
-const VERBOSE = args.includes('--verbose');
-const worklistIdx = args.indexOf('--worklist');
-const WORKLIST = worklistIdx >= 0 ? args[worklistIdx + 1] : null;
 
 // --- normalization ---------------------------------------------------------
 

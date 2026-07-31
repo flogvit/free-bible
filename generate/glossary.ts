@@ -17,9 +17,8 @@
  * verse whose Hebrew/Greek contains the term, then see which candidate rendering the
  * translation used.
  *
- * Usage:
- *   bun glossary.mjs osen --audit
- *   bun glossary.mjs osen --write
+ * Oversettelsen oppgis som posisjonsargument. Flaggene går gjennom den felles
+ * kontrakten i cli.ts; `--help` viser dem.
  */
 
 import * as fs from 'fs';
@@ -27,6 +26,8 @@ import path from 'path';
 import {fileURLToPath} from 'url';
 
 import {bibles, books, getLanguageCode} from './constants.js';
+import {parseArgs, formatHelp, COMMON_FLAGS} from './cli.js';
+import type {FlagSpec} from './cli.js';
 import type {Chapter, Verse} from '../kvn/src/bible-types.js';
 
 /** Ett nøkkelbegrep: kildeformene som skal treffes, og gjengivelsene vi kjenner igjen. */
@@ -313,18 +314,49 @@ function write(bible: string, results: TermResult[]): string {
     return file;
 }
 
+/**
+ * `--audit` er standardoppførselen og har alltid vært det — den ble dokumentert,
+ * men aldri lest: alt som ikke var `--write` falt gjennom til rapporten. Flagget
+ * er med her fordi kontrakten kaster på ukjente flagg, og fordi det som er
+ * standard skal stå i `--help`.
+ */
+const SPEC: Record<string, FlagSpec> = {
+    audit: {kind: 'boolean', help: 'vis hvilke nøkkelbegreper som glir, og hvor minoritetsgjengivelsene står (standard)'},
+    write: {kind: 'boolean', help: 'skriv glossary/<oversettelse>.json som bible.ts bruker i oversettelsesprompten'},
+    parallels: {kind: 'boolean', help: 'sammenlikn parallellsteder: nær lik kilde, men oversettelser som har glidd fra hverandre'},
+    help: COMMON_FLAGS.help,
+};
+
+const HELP_EXAMPLES = [
+    'bun generate/glossary.ts osen --audit',
+    'bun generate/glossary.ts osen --write',
+    'bun generate/glossary.ts osen --parallels',
+];
+
+function helpText(): string {
+    return [
+        formatHelp(
+            'generate/glossary.ts <oversettelse>',
+            'nøkkelbegreper som skal gjengis likt gjennom hele oversettelsen — rapport og glossary-fil',
+            SPEC,
+            HELP_EXAMPLES,
+        ),
+        '',
+        `Kjente oversettelser: ${Object.keys(bibles).join(', ')}`,
+    ].join('\n');
+}
+
 function main(): void {
-    const args = process.argv.slice(2);
-    const bible = args.find(a => !a.startsWith('--'));
+    // Hjelpen skal ut før noe leses fra disk.
+    const {flags, positional} = parseArgs(process.argv.slice(2), SPEC);
+    if (flags.help) {
+        console.log(helpText());
+        process.exit(0);
+    }
+
+    const bible = positional[0];
     if (!bible || !bibles[bible]) {
-        console.log(`
-Usage: bun glossary.mjs <bible> [--audit|--write]
-
-  --audit   show which key terms drift, and where the minority renderings are
-  --write   emit glossary/<bible>.json for bible.mjs to use in the translation prompt
-
-Known bibles: ${Object.keys(bibles).join(', ')}
-`);
+        console.log(helpText());
         process.exit(1);
     }
 
@@ -335,7 +367,7 @@ Known bibles: ${Object.keys(bibles).join(', ')}
         process.exit(1);
     }
 
-    if (args.includes('--parallels')) {
+    if (flags.parallels) {
         console.log(`${bible} (${bibles[bible]}) — parallel passages\n`);
         parallels(bible);
         return;
@@ -344,7 +376,8 @@ Known bibles: ${Object.keys(bibles).join(', ')}
     console.log(`${bible} (${bibles[bible]}) — ${terms.length} key terms\n`);
     const results = collect(bible, terms);
 
-    if (args.includes('--write')) write(bible, results);
+    // `--write` vinner over `--audit` når begge er gitt, som før.
+    if (flags.write) write(bible, results);
     else audit(results);
 }
 

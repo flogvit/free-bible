@@ -1,16 +1,16 @@
-import dotenv from 'dotenv'
+import "./env.js";
 import * as fs from 'fs';
 import path from 'path';
 import {fileURLToPath} from 'url';
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
-dotenv.config()
 
 import {books, normalizeLanguage, getLanguageCode, getBookName, ollamaBaseUrl, ollamaModel, anthropicModel} from "./constants.js";
 import {callWithRetry, callOllamaRaw} from "./llm.js";
 import type {Chapter} from '../kvn/src/bible-types.js';
-import type {Range} from './cli.js';
+import {parseArgs, formatHelp, COMMON_FLAGS} from './cli.js';
+import type {FlagSpec, Range} from './cli.js';
 
 /**
  * Kilden til en fotnote om tallsymbolikk.
@@ -122,12 +122,41 @@ interface Options extends IndexRange {
     proofread: boolean;
     apply: boolean;
     force: boolean;
-    help: boolean;
-    minScore?: number;
-    maxIterations?: number;
-    /** Settes bare når `--local` er sendt — står ikke i initialiseringen. */
-    local?: boolean;
+    /** Sto som `minScore?` før, med `|| 8` på hvert bruksted. Nå er 8 standarden i SPEC. */
+    minScore: number;
+    maxIterations: number;
+    /** Alltid satt nå — kontrakten initialiserer boolske flagg til `false`. */
+    local: boolean;
 }
+
+/**
+ * Flaggkontrakten for dette skriptet (#51, #52, #53).
+ *
+ * `--min-score` og `--max-iter` sto som `undefined` i den gamle
+ * initialiseringen og fikk verdiene 8 og 3 gjennom `||` nede i løkka. Da var
+ * standarden usynlig for den som leste initialiseringen; her står den i
+ * `--help`, som er hele poenget med kontrakten.
+ */
+const SPEC: Record<string, FlagSpec> = {
+    language: COMMON_FLAGS.language,   // 'nb' → normalizeLanguage → 'Norwegian bokmål', som før
+    number: {kind: 'range', help: 'tall eller tallintervall, f.eks. 7 eller 1-12'},
+    all: {kind: 'boolean', help: 'alle tall som alt har en fil, ellers de kjente symbolske'},
+    bible: COMMON_FLAGS.bible,
+    scan: {kind: 'boolean', help: 'bare tell forekomster i oversettelsen, uten å generere'},
+    index: {kind: 'boolean', help: 'les hvert vers i oversettelsen og trekk ut tallene (krever --bible)'},
+    book: COMMON_FLAGS.book,
+    chapter: COMMON_FLAGS.chapter,
+    verse: COMMON_FLAGS.verse,
+    ot: COMMON_FLAGS.ot,
+    nt: COMMON_FLAGS.nt,
+    proofread: {kind: 'boolean', help: 'kjør korrektur etter genereringen'},
+    apply: {kind: 'boolean', help: 'skriv korrekturens forslag inn i fila (slår på tilbakekoblingssløyfa)'},
+    'min-score': {kind: 'number', help: 'godtatt korrekturscore, 0-10', default: 8},
+    'max-iter': {kind: 'number', help: 'maks korrekturrunder per tall', default: 3},
+    force: COMMON_FLAGS.force,
+    local: COMMON_FLAGS.local,
+    help: COMMON_FLAGS.help,
+};
 
 // Norwegian number words for scanning bible text
 const NUMBER_WORDS_NB: Record<number, string[]> = {
@@ -842,137 +871,85 @@ async function scanOnly(bible: string, number: number): Promise<void> {
 // Known symbolically significant numbers
 const SYMBOLIC_NUMBERS = [1, 2, 3, 4, 5, 6, 7, 8, 10, 12, 13, 14, 18, 24, 30, 40, 49, 50, 70, 153, 666];
 
-function printUsage(): void {
-    console.log(`
-Usage: node number_symbolism.mjs [options]
+const HELP_EXAMPLES = [
+    'bun generate/number_symbolism.ts --number 7                       # symbolikken for 7',
+    'bun generate/number_symbolism.ts --number 7 --bible osnb          # med skann av oversettelsen',
+    'bun generate/number_symbolism.ts --number 7 --bible osnb --scan   # bare skann, ingen modell',
+    'bun generate/number_symbolism.ts --all --proofread --apply        # generer → korrektur → skriv inn',
+    'bun generate/number_symbolism.ts --number 7 --proofread --apply --min-score 9',
+    'bun generate/number_symbolism.ts --number 3 --force               # generer 3 på nytt',
+    'bun generate/number_symbolism.ts --bible osnb --index --local     # indekser hele bibelen lokalt',
+    '',
+    `Kjente symbolske tall: ${SYMBOLIC_NUMBERS.join(', ')}`,
+    '',
+    'Filene havner i number_symbolism/<språkkode>/<tall>.json, f.eks.',
+    'number_symbolism/nb/7.json.',
+];
 
-Options:
-  --language <lang>  Language for texts (default: nb)
-                     Accepts codes (nb, nn, en) or full names
-  --number <n>       Process a specific number (e.g., 7)
-  --number <n-m>     Process a range of numbers (e.g., 1-12)
-  --all              Process all known symbolic numbers
-  --bible <name>     Bible translation to scan for references (e.g., osnb)
-  --scan             Only scan the bible for number occurrences (no AI generation)
-  --index            Index entire bible with Ollama: extract numbers from every verse
-                     and update/create JSON files. Requires --bible.
-  --proofread        Run proofreading after generation
-  --apply            Apply proofread suggestions (enables feedback loop)
-  --min-score <n>    Minimum acceptable score (default: 8, range 0-10)
-  --max-iter <n>     Max proofread iterations per number (default: 3)
-  --force            Force re-generation even if file exists
-  --help             Show this help message
+/** Oversetter de tolkede flaggene til `Options`. */
+function readOptions(flags: ReturnType<typeof parseArgs>['flags']): Options {
+    const number = flags.number as Range | undefined;
+    const book = flags.book as Range | undefined;
+    const chapter = flags.chapter as Range | undefined;
+    const verse = flags.verse as Range | undefined;
 
-Known symbolic numbers: ${SYMBOLIC_NUMBERS.join(', ')}
-
-Output structure:
-  number_symbolism/<lang>/<number>.json
-  e.g., number_symbolism/nb/7.json
-
-Examples:
-  node number_symbolism.mjs --number 7                            # Generate symbolism for 7
-  node number_symbolism.mjs --number 7 --bible osnb              # Generate with bible scan
-  node number_symbolism.mjs --number 7 --bible osnb --scan       # Only scan, no AI
-  node number_symbolism.mjs --all --bible osnb                   # Generate all with scan
-  node number_symbolism.mjs --all --proofread --apply             # Generate → proofread loop → apply
-  node number_symbolism.mjs --number 7 --proofread --apply --min-score 9  # Higher quality bar
-  node number_symbolism.mjs --number 3 --force                    # Re-generate number 3
-  node number_symbolism.mjs --bible osnb --index                 # Index entire bible with Ollama
-`);
-}
-
-function parseRange(value: string): Range {
-    if (value.includes('-')) {
-        const [start, end] = value.split('-').map(n => parseInt(n, 10));
-        return {start, end};
+    const numbers: number[] = [];
+    if (number) {
+        for (let n = number.start; n <= number.end; n++) numbers.push(n);
     }
-    const num = parseInt(value, 10);
-    return {start: num, end: num};
-}
 
-function parseArgs(args: string[]): Options {
-    const options: Options = {
-        language: 'Norwegian bokmål',
-        numbers: [],
-        all: false,
-        bible: null,
-        scan: false,
-        index: false,
-        proofread: false,
-        apply: false,
-        force: false,
-        help: false
-    };
-
-    let i = 0;
-    while (i < args.length) {
-        const arg = args[i];
-
-        if (arg === '--language' && i + 1 < args.length) {
-            options.language = args[++i];
-        } else if (arg === '--number' && i + 1 < args.length) {
-            const range = parseRange(args[++i]);
-            for (let n = range.start; n <= range.end; n++) {
-                options.numbers.push(n);
-            }
-        } else if (arg === '--all') {
-            options.all = true;
-        } else if (arg === '--bible' && i + 1 < args.length) {
-            options.bible = args[++i];
-        } else if (arg === '--scan') {
-            options.scan = true;
-        } else if (arg === '--book' && i + 1 < args.length) {
-            const range = parseRange(args[++i]);
-            options.bookStart = range.start;
-            options.bookEnd = range.end;
-        } else if (arg === '--chapter' && i + 1 < args.length) {
-            const range = parseRange(args[++i]);
-            options.chapterStart = range.start;
-            options.chapterEnd = range.end;
-        } else if (arg === '--verse' && i + 1 < args.length) {
-            const range = parseRange(args[++i]);
-            options.verseStart = range.start;
-            options.verseEnd = range.end;
-        } else if (arg === '--ot') {
-            options.bookStart = 1;
-            options.bookEnd = 39;
-        } else if (arg === '--nt') {
-            options.bookStart = 40;
-            options.bookEnd = 66;
-        } else if (arg === '--index') {
-            options.index = true;
-        } else if (arg === '--proofread') {
-            options.proofread = true;
-        } else if (arg === '--apply') {
-            options.apply = true;
-        } else if (arg === '--min-score' && i + 1 < args.length) {
-            options.minScore = parseInt(args[++i], 10);
-        } else if (arg === '--max-iter' && i + 1 < args.length) {
-            options.maxIterations = parseInt(args[++i], 10);
-        } else if (arg === '--local') {
-            options.local = true;
-        } else if (arg === '--force') {
-            options.force = true;
-        } else if (arg === '--help') {
-            options.help = true;
+    // `--ot`/`--nt` satte bokintervallet direkte i den gamle parseren. I
+    // kontrakten er de boolske, så oversettelsen til et intervall skjer her.
+    // Et eksplisitt `--book` vinner, som i references.ts.
+    let bookStart = book?.start;
+    let bookEnd = book?.end;
+    if (bookStart === undefined) {
+        if (flags.ot && !flags.nt) {
+            bookStart = 1;
+            bookEnd = 39;
+        } else if (flags.nt && !flags.ot) {
+            bookStart = 40;
+            bookEnd = 66;
         }
-        i++;
     }
 
-    return options;
+    return {
+        language: normalizeLanguage(flags.language as string),
+        numbers,
+        all: flags.all as boolean,
+        bible: (flags.bible as string | undefined) ?? null,
+        scan: flags.scan as boolean,
+        index: flags.index as boolean,
+        proofread: flags.proofread as boolean,
+        apply: flags.apply as boolean,
+        force: flags.force as boolean,
+        minScore: flags['min-score'] as number,
+        maxIterations: flags['max-iter'] as number,
+        local: flags.local as boolean,
+        bookStart,
+        bookEnd,
+        chapterStart: chapter?.start,
+        chapterEnd: chapter?.end,
+        verseStart: verse?.start,
+        verseEnd: verse?.end,
+    };
 }
 
 async function main(): Promise<void> {
-    const args = process.argv.slice(2);
-    const options = parseArgs(args);
-
-    options.language = normalizeLanguage(options.language);
-    useLocal = options.local || false;
-
-    if (options.help) {
-        printUsage();
-        return;
+    // Hjelpen skal ut før noe leses fra disk eller sendes over nettet.
+    const {flags} = parseArgs(process.argv.slice(2), SPEC);
+    if (flags.help) {
+        console.log(formatHelp(
+            'generate/number_symbolism.ts',
+            'symbolikken bak bibelske tall, generert og korrekturlest av en modell',
+            SPEC,
+            HELP_EXAMPLES,
+        ));
+        process.exit(0);
     }
+
+    const options = readOptions(flags);
+    useLocal = options.local;
 
     // Index mode: scan entire bible with Ollama
     if (options.index) {
@@ -1028,14 +1005,14 @@ async function main(): Promise<void> {
     console.log(`Model: ${useLocal ? ollamaModel : anthropicModel}`);
     console.log(`Mode: ${modes.join(' → ')}`);
     if (options.proofread && options.apply) {
-        console.log(`Feedback loop: min score ${options.minScore || 8}/10, max ${options.maxIterations || 3} iterations`);
+        console.log(`Feedback loop: min score ${options.minScore}/10, max ${options.maxIterations} iterations`);
     }
     console.log(`Numbers: ${numbers.join(', ')}`);
     if (options.bible) console.log(`Bible scan: ${options.bible}`);
     console.log('---');
 
-    const minScore = options.minScore || 8;
-    const maxIterations = options.maxIterations || 3;
+    const minScore = options.minScore;
+    const maxIterations = options.maxIterations;
 
     for (const number of numbers) {
         const filename = getOutputPath(options.language, number);
@@ -1086,4 +1063,15 @@ async function main(): Promise<void> {
     console.log('Done!');
 }
 
-main().catch(console.error);
+// Avslutt med kode 1, ikke 0: et ukjent flagg skal stoppe et køskript, ikke
+// bare skrive en linje det ingen leser. Samme mønster som references.ts.
+// Tidligere var dette `.catch(console.error)`.
+// Kjører bare når fila startes direkte. Uten vakten kjører jobben ved IMPORT —
+// det er grunnen til at days.ts slettet data bare man lastet modulen (#108),
+// og det gjør skriptene umulige å teste.
+if (import.meta.main) {
+    main().catch(err => {
+    console.error(err);
+    process.exit(1);
+});
+}

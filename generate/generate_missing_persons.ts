@@ -1,15 +1,51 @@
-import dotenv from 'dotenv'
+import "./env.js";
 import * as fs from 'fs';
 import path from 'path';
 import {fileURLToPath} from 'url';
 
-const __filename = fileURLToPath(import.meta.url);
-const __dirname = path.dirname(__filename);
-dotenv.config()
-
 import Anthropic from '@anthropic-ai/sdk';
 import {anthropicModel, maxTokens} from "./constants.js";
 import {nameToId} from "./lib.js";
+import {parseArgs, formatHelp, COMMON_FLAGS} from './cli.js';
+import type {FlagSpec} from './cli.js';
+
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = path.dirname(__filename);
+
+/**
+ * Flaggkontrakten for dette skriptet (#51, #52, #53).
+ *
+ * Den gamle parseren leste `--limit=N` og `--start=N` med likhetstegn, og
+ * ignorerte alt annet i stillhet. Kontrakten skiller flagg og verdi med
+ * mellomrom — `--limit 10`, `--start 20` — og feiler høyt på ukjente flagg.
+ * Standardverdiene er de samme som før: ingen grense og start på indeks 0.
+ */
+const SPEC: Record<string, FlagSpec> = {
+    limit: COMMON_FLAGS.limit,          // uten flagget: alle som mangler, som før
+    'dry-run': COMMON_FLAGS['dry-run'],
+    start: {kind: 'number', help: 'hopp over de N første som mangler', default: 0},
+    help: COMMON_FLAGS.help,
+};
+
+const HELP_EXAMPLES = [
+    'bun generate/generate_missing_persons.ts --dry-run              # bare list hvem som mangler',
+    'bun generate/generate_missing_persons.ts --limit 10             # generer de ti første',
+    'bun generate/generate_missing_persons.ts --start 20 --limit 10  # hopp over de tjue første',
+];
+
+// Hjelpen svares FØR .env leses, før klienten bygges og før PERSONER.md åpnes:
+// `--help` skal ikke gjøre arbeid.
+const {flags} = parseArgs(process.argv.slice(2), SPEC);
+if (flags.help) {
+    console.log(formatHelp(
+        'generate/generate_missing_persons.ts',
+        'genererer personprofilene som står uavkrysset i persons/PERSONER.md',
+        SPEC,
+        HELP_EXAMPLES,
+    ));
+    process.exit(0);
+}
+
 
 const anthropic = new Anthropic({
     apiKey: process.env.ANTHROPIC_API_KEY
@@ -191,14 +227,10 @@ Important guidelines:
 }
 
 async function main() {
-    const args = process.argv.slice(2);
-
-    // Parse options
-    const dryRun = args.includes('--dry-run');
-    const limit = args.find(a => a.startsWith('--limit='));
-    const maxCount = limit ? parseInt(limit.split('=')[1]) : Infinity;
-    const startFrom = args.find(a => a.startsWith('--start='));
-    const startIndex = startFrom ? parseInt(startFrom.split('=')[1]) : 0;
+    const dryRun = flags['dry-run'] as boolean;
+    // Uten --limit er det ingen grense, som før.
+    const maxCount = (flags.limit as number | undefined) ?? Infinity;
+    const startIndex = flags.start as number;
 
     console.log("Parsing PERSONER.md...");
     const allPersons = parseMissingPersons();
@@ -252,4 +284,9 @@ async function main() {
     }
 }
 
-main();
+// Kjører bare når fila startes direkte. Uten vakten kjører jobben ved IMPORT —
+// det er grunnen til at days.ts slettet data bare man lastet modulen (#108),
+// og det gjør skriptene umulige å teste.
+if (import.meta.main) {
+    main();
+}

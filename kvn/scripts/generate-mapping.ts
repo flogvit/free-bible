@@ -17,18 +17,88 @@
  * Output: mapping file in kvn/mappings/<system>.ukvn.json
  *
  * Usage:
- *   bun scripts/generate-mapping.ts --source dnb2011_nb --format txt
- *   bun scripts/generate-mapping.ts --source english_kj --format raw
- *   bun scripts/generate-mapping.ts --source dnb2011_nb --format txt --chapter 19:3
- *   bun scripts/generate-mapping.ts --source dnb2011_nb --format txt --dry-run
- *   bun scripts/generate-mapping.ts --source dnb2011_nb --format txt --model gemma4:31b
+ *   bun scripts/generate-mapping.ts --bible dnb2011_nb --format txt
+ *   bun scripts/generate-mapping.ts --bible english_kj --format raw
+ *   bun scripts/generate-mapping.ts --bible dnb2011_nb --format txt --chapter 19:3
+ *   bun scripts/generate-mapping.ts --bible dnb2011_nb --format txt --dry-run
+ *   bun scripts/generate-mapping.ts --bible dnb2011_nb --format txt --model gemma4:31b
+ *
+ * `--source` er det gamle navnet på `--bible` og godtas fortsatt (med advarsel),
+ * jf. LEGACY_ALIASES i generate/cli.ts.
  */
 
 import { readFileSync, readdirSync, existsSync, statSync, writeFileSync, mkdirSync } from 'fs';
 import { join } from 'path';
 import dotenv from 'dotenv';
-dotenv.config({ path: join(import.meta.dirname, '../../generate/.env') });
 import Anthropic from '@anthropic-ai/sdk';
+import { parseArgs, formatHelp, COMMON_FLAGS } from '../../generate/cli.js';
+import type { FlagSpec } from '../../generate/cli.js';
+
+// === Args ===
+//
+// Hjelpen skal ut før noe leses fra disk, skrives til disk eller sendes til en
+// modell. Dette skriptet lastet tidligere hele oversettelsen og startet mot
+// Ollama på toppnivå, så `--help` ble lest som data og jobben gikk i gang.
+//
+// `--chapter` er IKKE COMMON_FLAGS.chapter: her er verdien en bok:kapittel-nøkkel
+// («19:3»), ikke et kapittelintervall. Som `range` ville «19:3» blitt tolket som
+// kapittel 19 uten at noe klaget, så flagget må være en streng.
+//
+// `--no-verify` faller ut av at `verify` står på som standard — kontrakten slår
+// av et boolsk flagg med `--no-<flagg>`.
+const SPEC: Record<string, FlagSpec> = {
+  bible: { ...COMMON_FLAGS.bible, default: 'dnb2011_nb' },
+  format: {
+    kind: 'string',
+    help: "'raw' leser JSON-katalogene, 'txt' leser external/closed/<bibel>.txt",
+    default: 'raw',
+  },
+  chapter: { kind: 'string', help: 'bare dette kapittelet, som bok:kapittel, f.eks. 19:3' },
+  model: { kind: 'string', help: 'Ollama-modellen som gjør versmatchingen', default: 'gemma4:31b' },
+  'dry-run': { kind: 'boolean', help: 'list kapitlene som ville gått til Ollama, uten å kjøre dem' },
+  fast: {
+    kind: 'boolean',
+    help: 'hopp over Ollama for kapitler med samme versnumre som osmain (uten flagget går alle gjennom, så tekstnivå-splitter og -sammenslåinger også fanges)',
+  },
+  verify: {
+    kind: 'boolean',
+    default: true,
+    help: 'Claude-verifisering av flaggede kapitler; slått av markeres de «needsReview» i resultatfila i stedet',
+  },
+  help: COMMON_FLAGS.help,
+};
+
+const HELP_EXAMPLES = [
+  'bun kvn/scripts/generate-mapping.ts --bible dnb2011_nb --format txt',
+  'bun kvn/scripts/generate-mapping.ts --bible english_kj --format raw',
+  'bun kvn/scripts/generate-mapping.ts --bible dnb2011_nb --format txt --chapter 19:3',
+  'bun kvn/scripts/generate-mapping.ts --bible dnb2011_nb --format txt --dry-run',
+  'bun kvn/scripts/generate-mapping.ts --bible osnb --format raw --fast --no-verify',
+];
+
+const { flags } = parseArgs(process.argv.slice(2), SPEC);
+if (flags.help) {
+  console.log(formatHelp(
+    'kvn/scripts/generate-mapping.ts',
+    'bygger versmappingen mellom osmain og en oversettelse, kapittel for kapittel',
+    SPEC,
+    HELP_EXAMPLES,
+  ));
+  process.exit(0);
+}
+
+const sourceName = flags.bible as string;
+const sourceFormat = flags.format as string; // 'txt' or 'raw'
+const chapterFilter = (flags.chapter as string | undefined) ?? null;
+const ollamaModel = flags.model as string;
+const dryRun = flags['dry-run'] as boolean;
+// --fast: skip Ollama for chapters whose verse-ID set is identical to osmain
+// (identity chapters contribute no mapping entries anyway). Opt-in; without it
+// every chapter is sent to Ollama so text-level splits/merges are also detected.
+const fast = flags.fast as boolean;
+// --no-verify: skip the Claude API verification step. Flagged (non-exact) chapters
+// are instead marked "needsReview: true" in their result file for manual/agent review.
+const noVerify = !(flags.verify as boolean);
 
 const OSMAIN_DIR = join(import.meta.dirname, '../../generate/bibles_raw/osmain');
 const RAW_DIR = join(import.meta.dirname, '../../external/closed/raw');
@@ -37,29 +107,6 @@ const TXT_DIR = join(import.meta.dirname, '../../external/closed');
 const MAPPINGS_DIR = join(import.meta.dirname, '../mappings');
 const RESULTS_DIR = join(import.meta.dirname, '../data/mapping-results');
 const OLLAMA_URL = 'http://localhost:11434/api/generate';
-
-// === Args ===
-const args = process.argv.slice(2);
-function getArg(name: string): string | null {
-  const idx = args.indexOf(`--${name}`);
-  return idx >= 0 && idx + 1 < args.length ? args[idx + 1] : null;
-}
-const sourceName = getArg('source') ?? 'dnb2011_nb';
-const sourceFormat = getArg('format') ?? 'raw'; // 'txt' or 'raw'
-const chapterFilter = getArg('chapter');
-const ollamaModel = getArg('model') ?? 'gemma4:31b';
-const dryRun = args.includes('--dry-run');
-// --fast: skip Ollama for chapters whose verse-ID set is identical to osmain
-// (identity chapters contribute no mapping entries anyway). Opt-in; without it
-// every chapter is sent to Ollama so text-level splits/merges are also detected.
-const fast = args.includes('--fast');
-// --no-verify: skip the Claude API verification step. Flagged (non-exact) chapters
-// are instead marked "needsReview: true" in their result file for manual/agent review.
-const noVerify = args.includes('--no-verify');
-
-console.log(`Source: ${sourceName} (format: ${sourceFormat})`);
-console.log(`Model: ${ollamaModel}`);
-if (dryRun) console.log('DRY RUN\n');
 
 // === Types ===
 interface VerseData {
@@ -353,285 +400,300 @@ report it in the extraContent array. This means osmain needs to be expanded.`;
 
 // === Main ===
 
-console.log(`\nLoading translation ${sourceName}...`);
-const translation = sourceFormat === 'txt'
-  ? loadTxtBible(`${sourceName}.txt`)
-  : loadRawBible(sourceName);
-console.log(`Loaded ${translation.size} chapters\n`);
+async function main(): Promise<void> {
+  // .env leses her og ikke på toppnivå: --help skal ikke røre disk.
+  dotenv.config({ path: join(import.meta.dirname, '../../generate/.env') });
 
-// Collect all osmain chapter keys (books 1-66)
-const osmainKeys = new Set<string>();
-const osmainBookDirs = readdirSync(OSMAIN_DIR)
-  .filter(d => /^\d+$/.test(d) && parseInt(d) <= 66 && statSync(join(OSMAIN_DIR, d)).isDirectory());
-for (const bookStr of osmainBookDirs) {
-  const files = readdirSync(join(OSMAIN_DIR, bookStr)).filter(f => f.endsWith('.json'));
-  for (const f of files) {
-    osmainKeys.add(`${bookStr}:${f.replace('.json', '')}`);
-  }
-}
+  console.log(`Source: ${sourceName} (format: ${sourceFormat})`);
+  console.log(`Model: ${ollamaModel}`);
+  if (dryRun) console.log('DRY RUN\n');
 
-// Categorize chapters
-const identityChapters: string[] = [];
-const diffChapters: string[] = [];
-const missingInTranslation: string[] = [];
-const extraInTranslation: string[] = [];
+  console.log(`\nLoading translation ${sourceName}...`);
+  const translation = sourceFormat === 'txt'
+    ? loadTxtBible(`${sourceName}.txt`)
+    : loadRawBible(sourceName);
+  console.log(`Loaded ${translation.size} chapters\n`);
 
-const allKeys = new Set([...osmainKeys, ...translation.keys()]);
-
-for (const key of [...allKeys].sort((a, b) => {
-  const [ab, ac] = a.split(':').map(Number);
-  const [bb, bc] = b.split(':').map(Number);
-  return ab - bb || ac - bc;
-})) {
-  if (chapterFilter && key !== chapterFilter) continue;
-  const book = parseInt(key.split(':')[0]);
-  if (book > 66) continue;
-
-  const osmainVerses = loadOsmainChapter(book, parseInt(key.split(':')[1]));
-  const transVerses = translation.get(key);
-
-  if (!transVerses || transVerses.length === 0) {
-    if (osmainVerses.length > 0) missingInTranslation.push(key);
-    continue;
-  }
-  if (osmainVerses.length === 0) {
-    extraInTranslation.push(key);
-    continue;
+  // Collect all osmain chapter keys (books 1-66)
+  const osmainKeys = new Set<string>();
+  const osmainBookDirs = readdirSync(OSMAIN_DIR)
+    .filter(d => /^\d+$/.test(d) && parseInt(d) <= 66 && statSync(join(OSMAIN_DIR, d)).isDirectory());
+  for (const bookStr of osmainBookDirs) {
+    const files = readdirSync(join(OSMAIN_DIR, bookStr)).filter(f => f.endsWith('.json'));
+    for (const f of files) {
+      osmainKeys.add(`${bookStr}:${f.replace('.json', '')}`);
+    }
   }
 
-  // In --fast mode, skip Ollama when the verse-ID set is identical to osmain:
-  // such chapters are a clean 1:1 identity and contribute no mapping entries.
-  if (fast) {
-    const osIds = osmainVerses.map(v => v.verseId).sort((a, b) => a - b);
-    const trIds = transVerses.map(v => v.verseId).sort((a, b) => a - b);
-    const identical = osIds.length === trIds.length && osIds.every((v, i) => v === trIds[i]);
-    if (identical) {
-      identityChapters.push(key);
+  // Categorize chapters
+  const identityChapters: string[] = [];
+  const diffChapters: string[] = [];
+  const missingInTranslation: string[] = [];
+  const extraInTranslation: string[] = [];
+
+  const allKeys = new Set([...osmainKeys, ...translation.keys()]);
+
+  for (const key of [...allKeys].sort((a, b) => {
+    const [ab, ac] = a.split(':').map(Number);
+    const [bb, bc] = b.split(':').map(Number);
+    return ab - bb || ac - bc;
+  })) {
+    if (chapterFilter && key !== chapterFilter) continue;
+    const book = parseInt(key.split(':')[0]);
+    if (book > 66) continue;
+
+    const osmainVerses = loadOsmainChapter(book, parseInt(key.split(':')[1]));
+    const transVerses = translation.get(key);
+
+    if (!transVerses || transVerses.length === 0) {
+      if (osmainVerses.length > 0) missingInTranslation.push(key);
       continue;
     }
+    if (osmainVerses.length === 0) {
+      extraInTranslation.push(key);
+      continue;
+    }
+
+    // In --fast mode, skip Ollama when the verse-ID set is identical to osmain:
+    // such chapters are a clean 1:1 identity and contribute no mapping entries.
+    if (fast) {
+      const osIds = osmainVerses.map(v => v.verseId).sort((a, b) => a - b);
+      const trIds = transVerses.map(v => v.verseId).sort((a, b) => a - b);
+      const identical = osIds.length === trIds.length && osIds.every((v, i) => v === trIds[i]);
+      if (identical) {
+        identityChapters.push(key);
+        continue;
+      }
+    }
+
+    // Otherwise go through Ollama — even with same verse count,
+    // text content may differ (extra sentences, merges, etc.)
+    diffChapters.push(key);
   }
 
-  // Otherwise go through Ollama — even with same verse count,
-  // text content may differ (extra sentences, merges, etc.)
-  diffChapters.push(key);
-}
+  console.log(`Identity chapters (same verse IDs): ${identityChapters.length}`);
+  console.log(`Different chapters (need Ollama): ${diffChapters.length}`);
+  console.log(`Missing in translation: ${missingInTranslation.length}`);
+  console.log(`Extra in translation: ${extraInTranslation.length}`);
 
-console.log(`Identity chapters (same verse IDs): ${identityChapters.length}`);
-console.log(`Different chapters (need Ollama): ${diffChapters.length}`);
-console.log(`Missing in translation: ${missingInTranslation.length}`);
-console.log(`Extra in translation: ${extraInTranslation.length}`);
+  if (dryRun) {
+    console.log('\nChapters needing Ollama:');
+    for (const key of diffChapters) {
+      const [bookStr, chStr] = key.split(':');
+      const osmain = loadOsmainChapter(parseInt(bookStr), parseInt(chStr));
+      const trans = translation.get(key)!;
+      console.log(`  ${key}: osmain ${osmain.length}v, trans ${trans.length}v`);
+    }
+    process.exit(0);
+  }
 
-if (dryRun) {
-  console.log('\nChapters needing Ollama:');
+  // === Process diff chapters through Ollama ===
+
+  mkdirSync(RESULTS_DIR, { recursive: true });
+  const sourceResultsDir = join(RESULTS_DIR, sourceName);
+  mkdirSync(sourceResultsDir, { recursive: true });
+
+  const allMappings: MappingEntry[] = [];
+  const expansionNeeded: Array<{ key: string; verse: number; description: string }> = [];
+  let processed = 0;
+  let ollamaErrors = 0;
+  let claudeVerifications = 0;
+  let claudeCorrections = 0;
+
   for (const key of diffChapters) {
     const [bookStr, chStr] = key.split(':');
-    const osmain = loadOsmainChapter(parseInt(bookStr), parseInt(chStr));
-    const trans = translation.get(key)!;
-    console.log(`  ${key}: osmain ${osmain.length}v, trans ${trans.length}v`);
-  }
-  process.exit(0);
-}
+    const book = parseInt(bookStr);
+    const chapter = parseInt(chStr);
 
-// === Process diff chapters through Ollama ===
-
-mkdirSync(RESULTS_DIR, { recursive: true });
-const sourceResultsDir = join(RESULTS_DIR, sourceName);
-mkdirSync(sourceResultsDir, { recursive: true });
-
-const allMappings: MappingEntry[] = [];
-const expansionNeeded: Array<{ key: string; verse: number; description: string }> = [];
-let processed = 0;
-let ollamaErrors = 0;
-let claudeVerifications = 0;
-let claudeCorrections = 0;
-
-for (const key of diffChapters) {
-  const [bookStr, chStr] = key.split(':');
-  const book = parseInt(bookStr);
-  const chapter = parseInt(chStr);
-
-  // Skip if already processed (resume support)
-  const resultFile = join(sourceResultsDir, `${book}-${chapter}.json`);
-  if (existsSync(resultFile)) {
-    // Load existing result and add to mappings
-    const existing = JSON.parse(readFileSync(resultFile, 'utf-8'));
-    const result = existing.result;
-    for (const m of result.mappings) {
-      if (m.matchType === 'missing') continue;
-      for (let i = 0; i < m.osmainVerses.length; i++) {
-        const osmainVerse = m.osmainVerses[i];
-        const kvn = encode(book, chapter, osmainVerse);
-        const tkvn = encode(book, chapter, m.translationVerse);
-        if (kvn !== tkvn || m.osmainVerses.length > 1) {
-          allMappings.push({
-            kvnFrom: kvn, kvnTo: kvn,
-            kvnRef: `${BOOK_NAMES[book] ?? book} ${chapter}:${osmainVerse}`,
-            tkvnFrom: tkvn, tkvnTo: tkvn,
-            tkvnRef: `${BOOK_NAMES[book] ?? book} ${chapter},${m.translationVerse}`,
-            order: i,
-          });
+    // Skip if already processed (resume support)
+    const resultFile = join(sourceResultsDir, `${book}-${chapter}.json`);
+    if (existsSync(resultFile)) {
+      // Load existing result and add to mappings
+      const existing = JSON.parse(readFileSync(resultFile, 'utf-8'));
+      const result = existing.result;
+      for (const m of result.mappings) {
+        if (m.matchType === 'missing') continue;
+        for (let i = 0; i < m.osmainVerses.length; i++) {
+          const osmainVerse = m.osmainVerses[i];
+          const kvn = encode(book, chapter, osmainVerse);
+          const tkvn = encode(book, chapter, m.translationVerse);
+          if (kvn !== tkvn || m.osmainVerses.length > 1) {
+            allMappings.push({
+              kvnFrom: kvn, kvnTo: kvn,
+              kvnRef: `${BOOK_NAMES[book] ?? book} ${chapter}:${osmainVerse}`,
+              tkvnFrom: tkvn, tkvnTo: tkvn,
+              tkvnRef: `${BOOK_NAMES[book] ?? book} ${chapter},${m.translationVerse}`,
+              order: i,
+            });
+          }
         }
       }
-    }
-    if (result.extraContent?.length > 0) {
-      for (const ec of result.extraContent) {
-        expansionNeeded.push({ key, verse: ec.translationVerse, description: ec.description });
+      if (result.extraContent?.length > 0) {
+        for (const ec of result.extraContent) {
+          expansionNeeded.push({ key, verse: ec.translationVerse, description: ec.description });
+        }
       }
+      processed++;
+      continue;
     }
-    processed++;
-    continue;
-  }
 
-  const osmainVerses = loadOsmainChapter(book, chapter);
-  const transVerses = translation.get(key)!;
+    const osmainVerses = loadOsmainChapter(book, chapter);
+    const transVerses = translation.get(key)!;
 
-  const prompt = buildPrompt(osmainVerses, transVerses, book, chapter, sourceName);
+    const prompt = buildPrompt(osmainVerses, transVerses, book, chapter, sourceName);
 
-  process.stdout.write(`  ${key} (osmain:${osmainVerses.length}v trans:${transVerses.length}v)... `);
+    process.stdout.write(`  ${key} (osmain:${osmainVerses.length}v trans:${transVerses.length}v)... `);
 
-  try {
-    const start = Date.now();
-    let result = await askOllama(prompt);
-    const ollamaElapsed = ((Date.now() - start) / 1000).toFixed(1);
+    try {
+      const start = Date.now();
+      let result = await askOllama(prompt);
+      const ollamaElapsed = ((Date.now() - start) / 1000).toFixed(1);
 
-    // Claude verification for non-trivial findings
-    let claudeNote = '';
-    let needsReview = false;
-    if (needsVerification(result) && noVerify) {
-      // Skip the API; flag for manual/agent review instead.
-      needsReview = true;
-      claudeNote = ' [needs-review]';
-    } else if (needsVerification(result)) {
-      process.stdout.write(`gemma ${ollamaElapsed}s → Claude... `);
-      try {
-        const verification = await verifyWithClaude(
-          osmainVerses, transVerses, result, book, chapter, sourceName
-        );
-        claudeVerifications++;
+      // Claude verification for non-trivial findings
+      let claudeNote = '';
+      let needsReview = false;
+      if (needsVerification(result) && noVerify) {
+        // Skip the API; flag for manual/agent review instead.
+        needsReview = true;
+        claudeNote = ' [needs-review]';
+      } else if (needsVerification(result)) {
+        process.stdout.write(`gemma ${ollamaElapsed}s → Claude... `);
+        try {
+          const verification = await verifyWithClaude(
+            osmainVerses, transVerses, result, book, chapter, sourceName
+          );
+          claudeVerifications++;
 
-        if (!verification.verified && verification.correctedResult) {
-          // Apply Claude's corrections
-          const corrected = verification.correctedResult;
-          if (corrected.correctedMappings?.length > 0) {
-            // Replace only the corrected mappings in the result
-            for (const cm of corrected.correctedMappings) {
-              const idx = result.mappings.findIndex((m: any) => m.translationVerse === cm.translationVerse);
-              if (idx >= 0) result.mappings[idx] = cm;
+          if (!verification.verified && verification.correctedResult) {
+            // Apply Claude's corrections
+            const corrected = verification.correctedResult;
+            if (corrected.correctedMappings?.length > 0) {
+              // Replace only the corrected mappings in the result
+              for (const cm of corrected.correctedMappings) {
+                const idx = result.mappings.findIndex((m: any) => m.translationVerse === cm.translationVerse);
+                if (idx >= 0) result.mappings[idx] = cm;
+              }
             }
+            if (corrected.correctedExtraContent) {
+              result.extraContent = corrected.correctedExtraContent;
+            }
+            claudeCorrections++;
+            claudeNote = ` [Claude corrected: ${verification.explanation.slice(0, 60)}]`;
+          } else if (verification.verified) {
+            claudeNote = ' [Claude verified ✓]';
+          } else {
+            claudeNote = ` [Claude: ${verification.explanation.slice(0, 60)}]`;
           }
-          if (corrected.correctedExtraContent) {
-            result.extraContent = corrected.correctedExtraContent;
-          }
-          claudeCorrections++;
-          claudeNote = ` [Claude corrected: ${verification.explanation.slice(0, 60)}]`;
-        } else if (verification.verified) {
-          claudeNote = ' [Claude verified ✓]';
-        } else {
-          claudeNote = ` [Claude: ${verification.explanation.slice(0, 60)}]`;
-        }
-      } catch (err: any) {
-        claudeNote = ` [Claude error: ${err.message.slice(0, 40)}]`;
-      }
-    }
-
-    const elapsed = ((Date.now() - start) / 1000).toFixed(1);
-
-    // Save result (with Claude verification note)
-    writeFileSync(
-      join(sourceResultsDir, `${book}-${chapter}.json`),
-      JSON.stringify({ key, result, claudeNote, needsReview, timestamp: new Date().toISOString() }, null, 2)
-    );
-
-    // Convert to mapping entries
-    let entryCount = 0;
-    for (const m of result.mappings) {
-      if (m.matchType === 'missing') continue;
-
-      for (let i = 0; i < m.osmainVerses.length; i++) {
-        const osmainVerse = m.osmainVerses[i];
-        const kvn = encode(book, chapter, osmainVerse);
-        const tkvn = encode(book, chapter, m.translationVerse);
-
-        if (kvn !== tkvn || m.osmainVerses.length > 1) {
-          allMappings.push({
-            kvnFrom: kvn, kvnTo: kvn,
-            kvnRef: `${BOOK_NAMES[book] ?? book} ${chapter}:${osmainVerse}`,
-            tkvnFrom: tkvn, tkvnTo: tkvn,
-            tkvnRef: `${BOOK_NAMES[book] ?? book} ${chapter},${m.translationVerse}`,
-            order: i,
-          });
-          entryCount++;
+        } catch (err: any) {
+          claudeNote = ` [Claude error: ${err.message.slice(0, 40)}]`;
         }
       }
-    }
 
-    // Track extra content
-    if (result.extraContent?.length > 0) {
-      for (const ec of result.extraContent) {
-        expansionNeeded.push({ key, verse: ec.translationVerse, description: ec.description });
+      const elapsed = ((Date.now() - start) / 1000).toFixed(1);
+
+      // Save result (with Claude verification note)
+      writeFileSync(
+        join(sourceResultsDir, `${book}-${chapter}.json`),
+        JSON.stringify({ key, result, claudeNote, needsReview, timestamp: new Date().toISOString() }, null, 2)
+      );
+
+      // Convert to mapping entries
+      let entryCount = 0;
+      for (const m of result.mappings) {
+        if (m.matchType === 'missing') continue;
+
+        for (let i = 0; i < m.osmainVerses.length; i++) {
+          const osmainVerse = m.osmainVerses[i];
+          const kvn = encode(book, chapter, osmainVerse);
+          const tkvn = encode(book, chapter, m.translationVerse);
+
+          if (kvn !== tkvn || m.osmainVerses.length > 1) {
+            allMappings.push({
+              kvnFrom: kvn, kvnTo: kvn,
+              kvnRef: `${BOOK_NAMES[book] ?? book} ${chapter}:${osmainVerse}`,
+              tkvnFrom: tkvn, tkvnTo: tkvn,
+              tkvnRef: `${BOOK_NAMES[book] ?? book} ${chapter},${m.translationVerse}`,
+              order: i,
+            });
+            entryCount++;
+          }
+        }
       }
+
+      // Track extra content
+      if (result.extraContent?.length > 0) {
+        for (const ec of result.extraContent) {
+          expansionNeeded.push({ key, verse: ec.translationVerse, description: ec.description });
+        }
+      }
+
+      const extras = result.extraContent?.length > 0 ? `, ${result.extraContent.length} extra` : '';
+      console.log(`✓ ${elapsed}s, ${entryCount} entries${extras}${claudeNote}`);
+      processed++;
+    } catch (err: any) {
+      console.log(`ERROR: ${err.message}`);
+      ollamaErrors++;
+    }
+  }
+
+  // === Write mapping file ===
+
+  allMappings.sort((a, b) => a.kvnFrom - b.kvnFrom);
+
+  const mappingFile = {
+    version: 2,
+    system: sourceName,
+    name: sourceName,
+    encoding: {
+      partSize: PART_SIZE,
+      maxVerse: MAX_VERSE,
+      maxChapter: MAX_CHAPTER,
+    },
+    bookNames: BOOK_IDS,
+    stats: {
+      identityChapters: identityChapters.length,
+      mappedChapters: diffChapters.length,
+      totalMappingEntries: allMappings.length,
+      missingInTranslation: missingInTranslation.length,
+      expansionsNeeded: expansionNeeded.length,
+    },
+    map: allMappings,
+  };
+
+  const outFile = join(MAPPINGS_DIR, `${sourceName}.ukvn.json`);
+  writeFileSync(outFile, JSON.stringify(mappingFile, null, 2));
+
+  console.log(`\n=== SUMMARY ===`);
+  console.log(`Processed: ${processed} chapters through Ollama (gemma4)`);
+  console.log(`Claude verifications: ${claudeVerifications}`);
+  console.log(`Claude corrections: ${claudeCorrections}`);
+  console.log(`Ollama errors: ${ollamaErrors}`);
+  console.log(`Total mapping entries: ${allMappings.length}`);
+  console.log(`Mapping written to: ${outFile}`);
+
+  if (expansionNeeded.length > 0) {
+    console.log(`\n=== OSMAIN EXPANSION NEEDED ===`);
+    console.log(`${expansionNeeded.length} verses have extra content in ${sourceName}:`);
+    for (const e of expansionNeeded) {
+      console.log(`  ${e.key} v${e.verse}: ${e.description}`);
     }
 
-    const extras = result.extraContent?.length > 0 ? `, ${result.extraContent.length} extra` : '';
-    console.log(`✓ ${elapsed}s, ${entryCount} entries${extras}${claudeNote}`);
-    processed++;
-  } catch (err: any) {
-    console.log(`ERROR: ${err.message}`);
-    ollamaErrors++;
+    // Save expansion report
+    const expansionFile = join(sourceResultsDir, '_expansion-needed.json');
+    writeFileSync(expansionFile, JSON.stringify(expansionNeeded, null, 2));
+    console.log(`\nExpansion report: ${expansionFile}`);
+  }
+
+  if (missingInTranslation.length > 0 && missingInTranslation.length <= 20) {
+    console.log(`\n=== CHAPTERS MISSING IN TRANSLATION ===`);
+    for (const key of missingInTranslation) {
+      console.log(`  ${key}`);
+    }
   }
 }
 
-// === Write mapping file ===
-
-allMappings.sort((a, b) => a.kvnFrom - b.kvnFrom);
-
-const mappingFile = {
-  version: 2,
-  system: sourceName,
-  name: sourceName,
-  encoding: {
-    partSize: PART_SIZE,
-    maxVerse: MAX_VERSE,
-    maxChapter: MAX_CHAPTER,
-  },
-  bookNames: BOOK_IDS,
-  stats: {
-    identityChapters: identityChapters.length,
-    mappedChapters: diffChapters.length,
-    totalMappingEntries: allMappings.length,
-    missingInTranslation: missingInTranslation.length,
-    expansionsNeeded: expansionNeeded.length,
-  },
-  map: allMappings,
-};
-
-const outFile = join(MAPPINGS_DIR, `${sourceName}.ukvn.json`);
-writeFileSync(outFile, JSON.stringify(mappingFile, null, 2));
-
-console.log(`\n=== SUMMARY ===`);
-console.log(`Processed: ${processed} chapters through Ollama (gemma4)`);
-console.log(`Claude verifications: ${claudeVerifications}`);
-console.log(`Claude corrections: ${claudeCorrections}`);
-console.log(`Ollama errors: ${ollamaErrors}`);
-console.log(`Total mapping entries: ${allMappings.length}`);
-console.log(`Mapping written to: ${outFile}`);
-
-if (expansionNeeded.length > 0) {
-  console.log(`\n=== OSMAIN EXPANSION NEEDED ===`);
-  console.log(`${expansionNeeded.length} verses have extra content in ${sourceName}:`);
-  for (const e of expansionNeeded) {
-    console.log(`  ${e.key} v${e.verse}: ${e.description}`);
-  }
-
-  // Save expansion report
-  const expansionFile = join(sourceResultsDir, '_expansion-needed.json');
-  writeFileSync(expansionFile, JSON.stringify(expansionNeeded, null, 2));
-  console.log(`\nExpansion report: ${expansionFile}`);
-}
-
-if (missingInTranslation.length > 0 && missingInTranslation.length <= 20) {
-  console.log(`\n=== CHAPTERS MISSING IN TRANSLATION ===`);
-  for (const key of missingInTranslation) {
-    console.log(`  ${key}`);
-  }
-}
+// Avslutt med kode 1 på feil, ikke 0: et ukjent flagg skal stoppe et køskript.
+main().catch(err => {
+  console.error(err);
+  process.exit(1);
+});

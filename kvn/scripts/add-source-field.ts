@@ -2,10 +2,14 @@
  * Add "source" field to all osmain verses that came from osnb.
  * Books 1-39 (OT) = "tanach", Books 40-66 (NT) = "sblgnt"
  * Only adds to verses that don't already have a source field.
+ *
+ * Flaggene går gjennom den felles kontrakten i generate/cli.ts; `--help` viser dem.
  */
 
 import { readFileSync, readdirSync, existsSync, statSync, writeFileSync } from 'fs';
 import { join } from 'path';
+import { parseArgs, formatHelp, COMMON_FLAGS } from '../../generate/cli.js';
+import type { FlagSpec } from '../../generate/cli.js';
 
 const OSMAIN_DIR = join(import.meta.dirname, '../../generate/bibles_raw/osmain');
 
@@ -18,39 +22,68 @@ interface VerseData {
   [key: string]: any;
 }
 
-let updated = 0;
-let skipped = 0;
+const SPEC: Record<string, FlagSpec> = {
+  help: COMMON_FLAGS.help,
+};
 
-const bookDirs = readdirSync(OSMAIN_DIR)
-  .filter(d => /^\d+$/.test(d) && parseInt(d) <= 66 && statSync(join(OSMAIN_DIR, d)).isDirectory())
-  .sort((a, b) => parseInt(a) - parseInt(b));
+const HELP_EXAMPLES = [
+  'bun kvn/scripts/add-source-field.ts',
+];
 
-for (const bookStr of bookDirs) {
-  const bookId = parseInt(bookStr);
-  const source = bookId <= 39 ? 'tanach' : 'sblgnt';
-  const bookDir = join(OSMAIN_DIR, bookStr);
-  const files = readdirSync(bookDir).filter(f => f.endsWith('.json'));
+function main(): void {
+  // Hjelpen skal ut før noe leses fra eller skrives til disk.
+  const { flags } = parseArgs(process.argv.slice(2), SPEC);
+  if (flags.help) {
+    console.log(formatHelp(
+      'kvn/scripts/add-source-field.ts',
+      'setter source-feltet (tanach/sblgnt) på osmain-vers som mangler det',
+      SPEC,
+      HELP_EXAMPLES,
+    ));
+    process.exit(0);
+  }
 
-  for (const f of files) {
-    const filePath = join(bookDir, f);
-    const verses: VerseData[] = JSON.parse(readFileSync(filePath, 'utf-8'));
-    let changed = false;
+  let updated = 0;
+  let skipped = 0;
 
-    for (const v of verses) {
-      if (!v.source && v.text !== '[NEEDS_TRANSLATION]') {
-        v.source = source;
-        updated++;
-        changed = true;
-      } else {
-        skipped++;
+  const bookDirs = readdirSync(OSMAIN_DIR)
+    .filter(d => /^\d+$/.test(d) && parseInt(d) <= 66 && statSync(join(OSMAIN_DIR, d)).isDirectory())
+    .sort((a, b) => parseInt(a) - parseInt(b));
+
+  for (const bookStr of bookDirs) {
+    const bookId = parseInt(bookStr);
+    const source = bookId <= 39 ? 'tanach' : 'sblgnt';
+    const bookDir = join(OSMAIN_DIR, bookStr);
+    const files = readdirSync(bookDir).filter(f => f.endsWith('.json'));
+
+    for (const f of files) {
+      const filePath = join(bookDir, f);
+      const verses: VerseData[] = JSON.parse(readFileSync(filePath, 'utf-8'));
+      let changed = false;
+
+      for (const v of verses) {
+        if (!v.source && v.text !== '[NEEDS_TRANSLATION]') {
+          v.source = source;
+          updated++;
+          changed = true;
+        } else {
+          skipped++;
+        }
+      }
+
+      if (changed) {
+        writeFileSync(filePath, JSON.stringify(verses, null, 2));
       }
     }
-
-    if (changed) {
-      writeFileSync(filePath, JSON.stringify(verses, null, 2));
-    }
   }
+
+  console.log(`Added source field: ${updated} verses`);
+  console.log(`Skipped (already has source or placeholder): ${skipped}`);
 }
 
-console.log(`Added source field: ${updated} verses`);
-console.log(`Skipped (already has source or placeholder): ${skipped}`);
+try {
+  main();
+} catch (e) {
+  console.error(e);
+  process.exit(1);
+}

@@ -1,17 +1,71 @@
-import dotenv from 'dotenv'
+import "./env.js";
 import * as fs from 'fs';
 import path from 'path';
 import {fileURLToPath} from 'url';
 
-const __filename = fileURLToPath(import.meta.url);
-const __dirname = path.dirname(__filename);
-dotenv.config()
-
+import {parseArgs, formatHelp, COMMON_FLAGS} from './cli.js';
+import type {FlagSpec, Range} from './cli.js';
 import {books, normalizeLanguage, getLanguageCode, getBookName} from "./constants.js";
 import {callWithRetry} from "./llm.js";
 import type {Chapter} from '../kvn/src/bible-types.js';
 
-let useLocal = false;
+/**
+ * Flaggkontrakten for dette skriptet (#51, #52, #53).
+ *
+ * `--local` sto ikke i den gamle bruksmeldingen selv om parseren tok imot det.
+ * Uten flagget går hele jobben på Claude API, og valget havner ikke i de
+ * genererte .md-filene — så en glemt `--local` kan ikke finnes i ettertid.
+ * Nå står det i `--help` som alle de andre.
+ */
+const SPEC: Record<string, FlagSpec> = {
+    language: COMMON_FLAGS.language,   // 'nb' → normalizeLanguage → 'Norwegian bokmål', som før
+    book: COMMON_FLAGS.book,
+    chapter: COMMON_FLAGS.chapter,
+    ot: COMMON_FLAGS.ot,
+    nt: COMMON_FLAGS.nt,
+    force: COMMON_FLAGS.force,
+    local: COMMON_FLAGS.local,
+    proofread: {kind: 'boolean', help: 'kjør korrektur etter genereringen'},
+    apply: {kind: 'boolean', help: 'skriv korrekturens reviderte kontekst tilbake til fila'},
+    help: COMMON_FLAGS.help,
+};
+
+const HELP_PURPOSE =
+    'kapittel-spesifikk historisk og kulturell kontekst for bibelkapitler. ' +
+    'Kjør book_context.ts først — bok-konteksten leses inn som bakgrunn, og ' +
+    'uten den gjentar kapittelteksten det som hører hjemme på boknivå.';
+
+const HELP_EXAMPLES = [
+    'bun generate/chapter_context.ts --nt                         # NT, norsk bokmål',
+    'bun generate/chapter_context.ts --language nn --ot           # GT, nynorsk',
+    'bun generate/chapter_context.ts --language en --book 43      # Johannes, engelsk',
+    'bun generate/chapter_context.ts --book 1 --chapter 1-11      # 1. Mosebok 1-11',
+    'bun generate/chapter_context.ts --nt --proofread --apply     # generer → korrektur → skriv inn',
+    'bun generate/chapter_context.ts --local --book 10-39         # lokal Ollama i stedet for Claude',
+    'bun generate/chapter_context.ts --book 1 --force             # generer 1. Mosebok på nytt',
+    '',
+    'Filene havner i chapter_context/<språkkode>/<bok>-<kapittel>.md,',
+    'f.eks. chapter_context/nb/1-1.md (1. Mosebok 1).',
+    '',
+    'Parallellkjøring i hver sin terminal:',
+    '  bun generate/chapter_context.ts --book 1-20 &',
+    '  bun generate/chapter_context.ts --book 21-39 &',
+];
+
+/**
+ * Hjelpesjekken står FØRST, før dotenv og før noe som helst arbeid: `--help`
+ * skal svare selv om .env mangler eller datakatalogene ikke finnes.
+ */
+const {flags} = parseArgs(process.argv.slice(2), SPEC);
+if (flags.help) {
+    console.log(formatHelp('generate/chapter_context.ts', HELP_PURPOSE, SPEC, HELP_EXAMPLES));
+    process.exit(0);
+}
+
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = path.dirname(__filename);
+
+const useLocal = flags.local as boolean;
 
 /**
  * Én funn-post fra korrekturen, slik `PROOFREAD_CONTEXT_SCHEMA` under krever.
@@ -34,7 +88,7 @@ interface ProofreadContextResult {
     revisedContext: string;
 }
 
-/** Flaggene `parseArgs` under kjenner. */
+/** Flaggene fra kommandolinja, etter at `parseArgs` har tolket dem. */
 interface Options {
     language: string;
     proofread: boolean;
@@ -46,13 +100,8 @@ interface Options {
     chapterStart: number | null;
     chapterEnd: number | null;
     force: boolean;
-    help: boolean;
-    /**
-     * Valgfritt fordi feltet ikke står i initialiseringen: det finnes bare når
-     * brukeren faktisk sender `--local`. Typen beskriver den oppførselen slik
-     * den er i dag, den endrer den ikke.
-     */
-    local?: boolean;
+    /** Alltid satt nå — kontrakten initialiserer boolske flagg til `false`. */
+    local: boolean;
 }
 
 const PROOFREAD_CONTEXT_SCHEMA = {
@@ -486,117 +535,29 @@ function applyProofreadChanges(language: string, bookId: number, chapter: number
     console.log(`Applied revisions to ${bookName} ${chapter}`);
 }
 
-function printUsage(): void {
-    console.log(`
-Usage: node chapter_context.mjs [options]
+/** Oversetter de tolkede flaggene til `Options`. */
+function readOptions(parsed: typeof flags): Options {
+    const book = parsed.book as Range | undefined;
+    const chapter = parsed.chapter as Range | undefined;
 
-Generates chapter-specific historical and cultural context for Bible chapters.
-This complements book_context.mjs which provides book-level context.
-
-IMPORTANT: Run book_context.mjs first to generate book-level context, then
-run this script for chapter-specific details.
-
-Options:
-  --language <lang>  Language for context (default: nb)
-                     Accepts codes (nb, nn, en, de, es, fr, sv, da) or full names
-  --proofread        Run proofreading after generation
-  --apply            Apply proofread suggestions (requires prior --proofread run)
-  --ot               Process only Old Testament (books 1-39)
-  --nt               Process only New Testament (books 40-66)
-  --book <range>     Process book(s): single (43) or range (1-20)
-  --chapter <range>  Process chapter(s): single (1) or range (1-10)
-  --force            Force re-generation even if file exists
-  --help             Show this help message
-
-Output structure:
-  chapter_context/<lang>/<book>-<chapter>.md
-  e.g., chapter_context/nb/1-1.md (Genesis 1)
-
-Examples:
-  node chapter_context.mjs --nt                              # Generate NT chapter context
-  node chapter_context.mjs --language nn --ot                # Generate OT context (nynorsk)
-  node chapter_context.mjs --language en --book 43           # Generate John chapters (English)
-  node chapter_context.mjs --book 1 --chapter 1-11           # Generate Genesis 1-11 context
-  node chapter_context.mjs --nt --proofread --apply          # Generate → proofread → apply
-  node chapter_context.mjs --book 1 --force                  # Re-generate Genesis context
-
-Parallel processing (run in separate terminals):
-  node chapter_context.mjs --book 1-20 &                     # terminal 1
-  node chapter_context.mjs --book 21-39 &                    # terminal 2
-`);
-}
-
-function parseRange(value: string): {start: number, end: number} {
-    if (value.includes('-')) {
-        const [start, end] = value.split('-').map((n: string) => parseInt(n, 10));
-        return {start, end};
-    }
-    const num = parseInt(value, 10);
-    return {start: num, end: num};
-}
-
-function parseArgs(args: string[]): Options {
-    const options: Options = {
-        language: 'Norwegian bokmål',
-        proofread: false,
-        apply: false,
-        ot: false,
-        nt: false,
-        bookStart: null,
-        bookEnd: null,
-        chapterStart: null,
-        chapterEnd: null,
-        force: false,
-        help: false
+    return {
+        // Godtar både kode ('nb') og fullt navn ('Norwegian bokmål'), som før.
+        language: normalizeLanguage(parsed.language as string),
+        proofread: parsed.proofread as boolean,
+        apply: parsed.apply as boolean,
+        ot: parsed.ot as boolean,
+        nt: parsed.nt as boolean,
+        bookStart: book?.start ?? null,
+        bookEnd: book?.end ?? null,
+        chapterStart: chapter?.start ?? null,
+        chapterEnd: chapter?.end ?? null,
+        force: parsed.force as boolean,
+        local: parsed.local as boolean,
     };
-
-    let i = 0;
-    while (i < args.length) {
-        const arg = args[i];
-
-        if (arg === '--language' && i + 1 < args.length) {
-            options.language = args[++i];
-        } else if (arg === '--proofread') {
-            options.proofread = true;
-        } else if (arg === '--apply') {
-            options.apply = true;
-        } else if (arg === '--ot') {
-            options.ot = true;
-        } else if (arg === '--nt') {
-            options.nt = true;
-        } else if (arg === '--book' && i + 1 < args.length) {
-            const range = parseRange(args[++i]);
-            options.bookStart = range.start;
-            options.bookEnd = range.end;
-        } else if (arg === '--chapter' && i + 1 < args.length) {
-            const range = parseRange(args[++i]);
-            options.chapterStart = range.start;
-            options.chapterEnd = range.end;
-        } else if (arg === '--local') {
-            options.local = true;
-        } else if (arg === '--force') {
-            options.force = true;
-        } else if (arg === '--help') {
-            options.help = true;
-        }
-        i++;
-    }
-
-    return options;
 }
 
 async function main(): Promise<void> {
-    const args = process.argv.slice(2);
-    const options = parseArgs(args);
-
-    // Normalize language (accept both codes like 'nb' and full names like 'Norwegian bokmål')
-    options.language = normalizeLanguage(options.language);
-    useLocal = options.local || false;
-
-    if (options.help) {
-        printUsage();
-        return;
-    }
+    const options = readOptions(flags);
 
     // Determine book range
     let startBook = 1;
@@ -604,8 +565,9 @@ async function main(): Promise<void> {
 
     if (options.bookStart !== null) {
         startBook = options.bookStart;
-        // `bookEnd` settes alltid sammen med `bookStart` i `parseArgs`, så
-        // grenen her kan ikke se `null`. Kompilatoren kan ikke se koblingen.
+        // `bookEnd` settes alltid sammen med `bookStart` — kontraktens `Range`
+        // har begge feltene — så grenen her kan ikke se `null`. Kompilatoren
+        // kan ikke se koblingen.
         endBook = options.bookEnd as number;
     } else if (options.ot && !options.nt) {
         startBook = 1;
@@ -663,4 +625,9 @@ async function main(): Promise<void> {
     console.log('Done!');
 }
 
-main().catch(console.error);
+// Kjører bare når fila startes direkte. Uten vakten kjører jobben ved IMPORT —
+// det er grunnen til at days.ts slettet data bare man lastet modulen (#108),
+// og det gjør skriptene umulige å teste.
+if (import.meta.main) {
+    main().catch(console.error);
+}

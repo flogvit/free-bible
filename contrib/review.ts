@@ -1,12 +1,13 @@
 #!/usr/bin/env bun
+import "../generate/env.js";
 // Review av contrib-køfiler. Mennesket setter status; LLM-en gir bare en
 // anbefaling i review.note (skjemaets regel: alt menneske-reviewes).
 //
-//   bun contrib/review.mjs --list
-//   bun contrib/review.mjs --llm [--id <id>]        # Claude-anbefaling → note
-//   bun contrib/review.mjs --approve --id <id> [--note "…"]
-//   bun contrib/review.mjs --reject  --id <id> [--note "…"]
-//   bun contrib/review.mjs --needs-info --id <id> --note "spørsmål til bidragsyter"
+//   bun contrib/review.ts --list
+//   bun contrib/review.ts --llm [--id <id>]        # Claude-anbefaling → note
+//   bun contrib/review.ts --approve --id <id> [--note "…"]
+//   bun contrib/review.ts --reject  --id <id> [--note "…"]
+//   bun contrib/review.ts --needs-info --id <id> --note "spørsmål til bidragsyter"
 //
 // Approve-vakt (fra skjemaet): hver ref må ha kvnFrom/kvnTo, og target må ha
 // en konkret id (catalog_id/doi/isbn/openlibrary_id — freetext/url er ikke nok).
@@ -14,23 +15,46 @@
 import * as fs from 'fs';
 import path from 'path';
 import {fileURLToPath} from 'url';
-import dotenv from 'dotenv';
-import type {DotenvConfigOptions} from 'dotenv';
 import {callWithRetry} from '../generate/llm.js';
 import type {ContribDoc} from './contrib-types.js';
-
-// `quiet` finnes i dotenv 17, men typene som følger 16.0.3 kjenner den ikke;
-// assertion-en holder kallet uendret i stedet for å fjerne flagget.
-dotenv.config({path: path.join(path.dirname(fileURLToPath(import.meta.url)), '..', '.env'), quiet: true} as DotenvConfigOptions);
+import {parseArgs, formatHelp, COMMON_FLAGS} from '../generate/cli.js';
+import type {FlagSpec} from '../generate/cli.js';
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const QUEUE_DIR = path.join(__dirname, 'queue');
 
-const args = process.argv.slice(2);
-const flag = (name: string) => args.includes(name);
-const value = (name: string) => (args.includes(name) ? args[args.indexOf(name) + 1] : null);
-const onlyId = value('--id');
-const note = value('--note');
+const SPEC: Record<string, FlagSpec> = {
+  list: {kind: 'boolean', help: 'list køen: id, status, type, antall refs og target'},
+  llm: {kind: 'boolean', help: 'la Claude skrive en anbefaling i review.note — setter aldri status'},
+  approve: {kind: 'boolean', help: 'sett status approved (krever --id)'},
+  reject: {kind: 'boolean', help: 'sett status rejected (krever --id)'},
+  'needs-info': {kind: 'boolean', help: 'sett status needs_info (krever --id og --note)'},
+  id: {kind: 'string', help: 'kø-id å jobbe på (contrib/queue/<id>.json)'},
+  note: {kind: 'string', help: 'notat som lagres i review.note'},
+  help: COMMON_FLAGS.help,
+};
+
+// Hjelpen skal ut FØR .env leses og før køen røres: `--help` skal aldri gjøre
+// filesystem- eller nettverksarbeid.
+const {flags} = parseArgs(process.argv.slice(2), SPEC);
+if (flags.help) {
+  console.log(formatHelp(
+    'contrib/review.ts',
+    'review av contrib-køfiler: mennesket setter status, LLM-en gir bare en anbefaling i review.note',
+    SPEC,
+    [
+      'bun contrib/review.ts --list',
+      'bun contrib/review.ts --llm --id 42',
+      'bun contrib/review.ts --approve --id 42 --note "sjekket mot Crossref"',
+      'bun contrib/review.ts --needs-info --id 42 --note "hvilken utgave?"',
+    ],
+  ));
+  process.exit(0);
+}
+
+
+const onlyId = (flags.id as string | undefined) ?? null;
+const note = (flags.note as string | undefined) ?? null;
 
 function queueFiles() {
   if (!fs.existsSync(QUEUE_DIR)) return [];
@@ -58,14 +82,14 @@ function hasConcreteId(doc: ContribDoc): boolean {
   const target = doc.target ?? {};
   if (target.catalog_id || target.doi || target.isbn13 || target.isbn10 || target.openlibrary_id) return true;
   // Sanger har ingen global identifikator: katalog-id eller tittel (sluggeres
-  // av export.mjs) er det konkreteste som finnes.
+  // av export.ts) er det konkreteste som finnes.
   if (doc.kind === 'song_verse_refs') return !!(target.song_id || target.freetext?.title);
   return false;
 }
 
 // ---------------------------------------------------------------------------
 
-if (flag('--list')) {
+if (flags.list) {
   for (const file of queueFiles()) {
     const doc = load(file);
     const refs = doc.refs ?? [];
@@ -79,7 +103,7 @@ if (flag('--list')) {
   process.exit(0);
 }
 
-if (flag('--llm')) {
+if (flags.llm) {
   /** Svarformen SCHEMA under krever av modellen. */
   interface LlmRecommendation {
     recommendation: 'approve' | 'reject' | 'needs_info';
@@ -124,9 +148,9 @@ ${JSON.stringify(doc, null, 2)}`;
   process.exit(0);
 }
 
-const verdict = flag('--approve') ? 'approved' : flag('--reject') ? 'rejected' : flag('--needs-info') ? 'needs_info' : null;
+const verdict = flags.approve ? 'approved' : flags.reject ? 'rejected' : flags['needs-info'] ? 'needs_info' : null;
 if (!verdict) {
-  console.error('Bruk --list, --llm, eller --approve/--reject/--needs-info --id <id> [--note "…"]');
+  console.error('Bruk --list, --llm, eller --approve/--reject/--needs-info --id <id> [--note "…"] (--help for alle flagg)');
   process.exit(1);
 }
 if (!onlyId) {
@@ -145,7 +169,7 @@ if (verdict === 'approved') {
   if (unresolved.length) {
     console.error(`Kan ikke godkjenne: ${unresolved.length} ref(s) mangler kvnFrom/kvnTo:` +
       unresolved.map((r) => `\n  - «${r.raw}»`).join('') +
-      '\nKjør contrib/check.mjs eller fyll inn manuelt først.');
+      '\nKjør contrib/check.ts eller fyll inn manuelt først.');
     process.exit(1);
   }
   if (!hasConcreteId(doc)) {

@@ -4,8 +4,31 @@ import path from 'path';
 import {fileURLToPath} from 'url';
 import type {Verse} from '../kvn/src/bible-types.js';
 
+import {parseArgs, formatHelp, COMMON_FLAGS} from './cli.js';
+import type {FlagSpec} from './cli.js';
+
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
+
+/**
+ * Skriptet tar ingen flagg: det gjenimporterer HELE den greske grunnteksten
+ * hver gang, uten spørsmål. Derfor er `--help` det eneste som finnes — og
+ * derfor må sjekken stå før første `readFileSync`/`writeFileSync` (#51).
+ */
+const SPEC: Record<string, FlagSpec> = {
+    help: COMMON_FLAGS.help,
+};
+
+const HELP_PURPOSE =
+    'importerer den greske grunnteksten (SBLGNT) på nytt fra ' +
+    'external/bibles/SBLGNT/data/sblgnt/text/*.txt og OVERSKRIVER ' +
+    'generate/bibles_raw/sblgnt/<bok>/<kapittel>.json for alle 27 NT-bøkene. ' +
+    'Ingen flagg, ingen avgrensning: hele grunnteksten skrives om ved hver ' +
+    'kjøring.';
+
+const HELP_EXAMPLES = [
+    'bun generate/make_sblgnt.ts        # gjenimporter hele SBLGNT',
+];
 
 async function doSBLGNT(bookId: number): Promise<void> {
     const bookText = fs.readFileSync(path.join(__dirname, "../", books.find(b => b.id === bookId)!.file));
@@ -42,9 +65,21 @@ async function doSBLGNT(bookId: number): Promise<void> {
 }
 
 async function main(): Promise<void> {
+    // Hjelpen skal ut før noe leses eller skrives.
+    const {flags} = parseArgs(process.argv.slice(2), SPEC);
+    if (flags.help) {
+        console.log(formatHelp('generate/make_sblgnt.ts', HELP_PURPOSE, SPEC, HELP_EXAMPLES));
+        process.exit(0);
+    }
+
     for(let bookId=40;bookId<=66;bookId++) {
         await doSBLGNT(bookId)
     }
 }
 
-main()
+// Kjører bare når fila startes direkte. Uten vakten kjører jobben ved IMPORT —
+// det er grunnen til at days.ts slettet data bare man lastet modulen (#108),
+// og det gjør skriptene umulige å teste.
+if (import.meta.main) {
+    main()
+}

@@ -8,16 +8,49 @@
 // missing from the catalog, empty, or "NEW" are skipped (never applied).
 //
 // Usage:
-//   node persons_apply_reconcile.mjs <map.json> [--dry]
+//   bun persons_apply_reconcile.ts <map.json> [--dry-run]
 import * as fs from 'fs';
 import path from 'path';
 import { fileURLToPath } from 'url';
+import { parseArgs, formatHelp, COMMON_FLAGS } from './cli.js';
+import type { FlagSpec } from './cli.js';
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const PERSONS_DIR = path.join(__dirname, 'persons', 'nb');
-const [, , MAP_PATH, ...rest] = process.argv;
-const DRY = rest.includes('--dry');
-if (!MAP_PATH) { console.error('usage: node persons_apply_reconcile.mjs <map.json> [--dry]'); process.exit(1); }
+
+/**
+ * Flaggkontrakten for dette skriptet (#51, #52, #53).
+ *
+ * Skriptet tok `<map.json> [--dry]`. `--dry` heter nå `--dry-run` — det gamle
+ * navnet går fortsatt gjennom som alias, med en advarsel. Uten flagget skrives
+ * endringene til disk, som før.
+ */
+const SPEC: Record<string, FlagSpec> = {
+    'dry-run': COMMON_FLAGS['dry-run'],
+    help: COMMON_FLAGS.help,
+};
+
+const HELP_EXAMPLES = [
+    'bun generate/persons_apply_reconcile.ts map.json --dry-run   # vis hva som ville blitt endret',
+    'bun generate/persons_apply_reconcile.ts map.json             # skriv endringene',
+];
+
+// Hjelpesjekken står før alt annet: skriptet leser hele persons-katalogen og
+// kartet ved oppstart, og `--help` skal ikke koste noe av det.
+const { flags, positional } = parseArgs(process.argv.slice(2), SPEC);
+if (flags.help) {
+    console.log(formatHelp(
+        'generate/persons_apply_reconcile.ts',
+        'skriver et revidert avstemmingskart <map.json> inn i relasjonsfeltene i persons-profilene',
+        SPEC,
+        HELP_EXAMPLES,
+    ));
+    process.exit(0);
+}
+
+const MAP_PATH = positional[0];
+const DRY = flags['dry-run'] as boolean;
+if (!MAP_PATH) { console.error('usage: bun generate/persons_apply_reconcile.ts <map.json> [--dry-run]'); process.exit(1); }
 
 /** Slektsfeltene i en profil. Alle er valgfrie — de fleste har bare noen. */
 interface PersonFamily {

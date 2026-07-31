@@ -1,3 +1,4 @@
+import "./env.js";
 /**
  * Generate bibles_raw/<translation>/meta.json — publishable metadata about each
  * translation (who, when, where, how it was made).
@@ -12,20 +13,20 @@
  * An omitted field means unknown. Nothing is ever guessed into place.
  * license.json is read but never written — licence data stays where it is.
  *
- *   node translations_meta.mjs                     # all translations missing meta.json
- *   node translations_meta.mjs --only kjv,geneva   # named translations
- *   node translations_meta.mjs --force             # regenerate existing
- *   node translations_meta.mjs --recount           # refresh coverage only, no LLM
- *   node translations_meta.mjs --no-web            # pass 1 only (cheap dry run)
+ *   bun generate/translations_meta.ts                     # all translations missing meta.json
+ *   bun generate/translations_meta.ts --only kjv,geneva   # named translations
+ *   bun generate/translations_meta.ts --force             # regenerate existing
+ *   bun generate/translations_meta.ts --recount           # refresh coverage only, no LLM
+ *   bun generate/translations_meta.ts --no-web            # pass 1 only (cheap dry run)
  */
-import dotenv from 'dotenv';
 import * as fs from 'fs';
 import path from 'path';
 import {fileURLToPath} from 'url';
 
-dotenv.config();
 
 import {callWithRetry, callWithWebSearch} from './llm.js';
+import {parseArgs, formatHelp, COMMON_FLAGS} from './cli.js';
+import type {FlagSpec} from './cli.js';
 import {
     META_SCHEMA, KNOWLEDGE_FIELDS, PHILOSOPHY, TRADITION, TEXTUAL_BASIS,
     METHOD, REVIEW, EDITION_LABEL, LEGACY_TAG, RELATION,
@@ -413,21 +414,58 @@ interface Args {
     useWeb: boolean;
 }
 
-function parseArgs(argv: string[]): Args {
-    const args: Args = {only: null, force: false, recount: false, useWeb: true};
-    for (let i = 0; i < argv.length; i++) {
-        const arg = argv[i];
-        if (arg === '--only') args.only = argv[++i]?.split(',').map(s => s.trim()).filter(Boolean);
-        else if (arg === '--force') args.force = true;
-        else if (arg === '--recount') args.recount = true;
-        else if (arg === '--no-web') args.useWeb = false;
-        else throw new Error(`Unknown argument: ${arg}`);
-    }
-    return args;
+/**
+ * Flaggkontrakten for dette skriptet (#51, #52, #53).
+ *
+ * `--only` tar en KOMMASEPARERT liste og er derfor ikke `--bible` fra
+ * fellesflaggene — den navngir flere oversettelser, ikke én.
+ *
+ * `--no-web` beholder navnet sitt: aksen er «gjør pass 2 eller ikke», og uten
+ * flagget kjøres websøket, som før.
+ */
+const SPEC: Record<string, FlagSpec> = {
+    only: {kind: 'string', help: 'bare disse oversettelsene, kommaseparert (f.eks. kjv,geneva)'},
+    force: COMMON_FLAGS.force,
+    recount: {kind: 'boolean', help: 'oppdater bare coverage/features på eksisterende meta.json, uten modellkall'},
+    'no-web': {kind: 'boolean', help: 'hopp over websøk-passet — bare pass 1 (billig prøvekjøring)'},
+    help: COMMON_FLAGS.help,
+};
+
+const HELP_EXAMPLES = [
+    'bun generate/translations_meta.ts                     # alle uten meta.json',
+    'bun generate/translations_meta.ts --only kjv,geneva   # navngitte oversettelser',
+    'bun generate/translations_meta.ts --force             # lag på nytt selv om fila finnes',
+    'bun generate/translations_meta.ts --recount           # bare nye tall, ingen modellkall',
+    'bun generate/translations_meta.ts --no-web            # bare pass 1',
+];
+
+/** Oversetter de tolkede flaggene til `Args`. */
+function readOptions(flags: ReturnType<typeof parseArgs>['flags']): Args {
+    const only = (flags.only as string | undefined)
+        ?.split(',').map(s => s.trim()).filter(Boolean);
+
+    return {
+        only: only ?? null,
+        force: flags.force as boolean,
+        recount: flags.recount as boolean,
+        useWeb: !(flags['no-web'] as boolean),
+    };
 }
 
 async function main(): Promise<void> {
-    const args = parseArgs(process.argv.slice(2));
+    // Hjelpen skal ut før noe leses fra disk eller sendes over nettet.
+    const {flags} = parseArgs(process.argv.slice(2), SPEC);
+    if (flags.help) {
+        console.log(formatHelp(
+            'generate/translations_meta.ts',
+            'publiserbar metadata per oversettelse — målt dekning, frødata og modellens kunnskap',
+            SPEC,
+            HELP_EXAMPLES,
+        ));
+        process.exit(0);
+    }
+
+    const args = readOptions(flags);
     // Fila har også en `_comment`-nøkkel; oppslaget er på oversettelses-id, så
     // typen beskriver postene, ikke hver nøkkel i fila.
     const seeds = readJson<Record<string, TranslationMeta>>(SEED_FILE) ?? {};

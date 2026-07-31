@@ -3,24 +3,22 @@
  *
  * For each [NEEDS_TRANSLATION] verse:
  * 1. Scan ALL raw bibles to find every translation that has this verse
- * 2. Send all translations to Ollama to generate an original Norwegian translation
+ * 2. Send all translations to Claude to generate an original Norwegian translation
  * 3. Update osmain with the new text
  *
- * Usage:
- *   bun scripts/translate-missing.ts              # scan only
- *   bun scripts/translate-missing.ts --translate   # do the translation
- *   bun scripts/translate-missing.ts --translate --chapter 39:4  # one chapter
+ * Flaggene går gjennom den felles kontrakten i generate/cli.ts; `--help` viser dem.
  */
 
 import { readFileSync, readdirSync, existsSync, statSync, writeFileSync, mkdirSync } from 'fs';
 import { join } from 'path';
 import dotenv from 'dotenv';
-dotenv.config({ path: join(import.meta.dirname, '../../generate/.env') });
+import Anthropic from '@anthropic-ai/sdk';
+import { parseArgs, formatHelp, COMMON_FLAGS } from '../../generate/cli.js';
+import type { FlagSpec } from '../../generate/cli.js';
 
 const OSMAIN_DIR = join(import.meta.dirname, '../../generate/bibles_raw/osmain');
 const RAW_DIR = join(import.meta.dirname, '../../external/closed/raw');
 const RESULTS_DIR = join(import.meta.dirname, '../data/translate-results');
-import Anthropic from '@anthropic-ai/sdk';
 
 const ANTHROPIC_MODEL = 'claude-opus-4-6';
 const MAX_TOKENS = 1024;
@@ -41,9 +39,19 @@ interface VerseData {
   [key: string]: any;
 }
 
-const args = process.argv.slice(2);
-const doTranslate = args.includes('--translate');
-const chapterFilter = args.includes('--chapter') ? args[args.indexOf('--chapter') + 1] : null;
+// `--chapter` er ikke et kapittelintervall her, men nøkkelen «bok:kapittel»
+// slik kapitlene grupperes internt. Derfor `string` og ikke COMMON_FLAGS.chapter.
+const SPEC: Record<string, FlagSpec> = {
+  translate: {kind: 'boolean', help: 'skriv oversettelsene; uten flagget kjøres bare skanningen'},
+  chapter: {kind: 'string', help: 'bare dette kapitlet, som «bok:kapittel», f.eks. 39:4'},
+  help: COMMON_FLAGS.help,
+};
+
+const HELP_EXAMPLES = [
+  'bun kvn/scripts/translate-missing.ts',
+  'bun kvn/scripts/translate-missing.ts --translate',
+  'bun kvn/scripts/translate-missing.ts --translate --chapter 39:4',
+];
 
 // Deuterocanonical chapters to skip (will be added as "catholic" variant later)
 const SKIP_CHAPTERS = new Set([
@@ -54,62 +62,21 @@ const SKIP_CHAPTERS = new Set([
   '27:14',   // Daniel - Bel og dragen
 ]);
 
-// === Find all missing verses in osmain (books 1-66) ===
-
 interface MissingVerse {
   book: number;
   chapter: number;
   verse: number;
 }
 
-const missing: MissingVerse[] = [];
-
-const bookDirs = readdirSync(OSMAIN_DIR)
-  .filter(d => /^\d+$/.test(d) && parseInt(d) <= 66 && statSync(join(OSMAIN_DIR, d)).isDirectory())
-  .sort((a, b) => parseInt(a) - parseInt(b));
-
-for (const bookStr of bookDirs) {
-  const bookDir = join(OSMAIN_DIR, bookStr);
-  const files = readdirSync(bookDir).filter(f => f.endsWith('.json'));
-
-  for (const f of files) {
-    const chapter = parseInt(f.replace('.json', ''));
-    const key = `${bookStr}:${chapter}`;
-    if (chapterFilter && key !== chapterFilter) continue;
-    if (SKIP_CHAPTERS.has(key)) continue;
-
-    const verses: VerseData[] = JSON.parse(readFileSync(join(bookDir, f), 'utf-8'));
-    for (const v of verses) {
-      if (v.text === '[NEEDS_TRANSLATION]') {
-        missing.push({ book: parseInt(bookStr), chapter, verse: v.verseId });
-      }
-    }
-  }
+// Katalogene under external/closed/raw leses først når de trengs, ikke ved
+// import — ellers ville `--help` gått en tur på disk.
+let rawBiblesCache: string[] | null = null;
+function rawBibles(): string[] {
+  rawBiblesCache ??= readdirSync(RAW_DIR).filter(d =>
+    statSync(join(RAW_DIR, d)).isDirectory()
+  );
+  return rawBiblesCache;
 }
-
-console.log(`Found ${missing.length} verses needing translation in books 1-66\n`);
-
-if (missing.length === 0) {
-  console.log('Nothing to translate!');
-  process.exit(0);
-}
-
-// Group by chapter for efficient processing
-const byChapter = new Map<string, MissingVerse[]>();
-for (const m of missing) {
-  const key = `${m.book}:${m.chapter}`;
-  if (!byChapter.has(key)) byChapter.set(key, []);
-  byChapter.get(key)!.push(m);
-}
-
-console.log(`Spread across ${byChapter.size} chapters\n`);
-
-// === Collect all translations for missing verses ===
-
-// Cache of raw bible directories
-const rawBibles = readdirSync(RAW_DIR).filter(d =>
-  statSync(join(RAW_DIR, d)).isDirectory()
-);
 
 function collectTranslations(book: number, chapter: number, verseIds: number[]): Map<number, Array<{ bible: string; text: string }>> {
   const result = new Map<number, Array<{ bible: string; text: string }>>();
@@ -117,7 +84,7 @@ function collectTranslations(book: number, chapter: number, verseIds: number[]):
 
   const verseSet = new Set(verseIds);
 
-  for (const bible of rawBibles) {
+  for (const bible of rawBibles()) {
     const file = join(RAW_DIR, bible, String(book), `${chapter}.json`);
     if (!existsSync(file)) continue;
 
@@ -133,8 +100,6 @@ function collectTranslations(book: number, chapter: number, verseIds: number[]):
 
   return result;
 }
-
-// === Ollama translation ===
 
 async function translateVerse(
   book: number, chapter: number, verse: number,
@@ -181,112 +146,177 @@ Svar med KUN den norske oversettelsesteksten, ingenting annet.`;
   return text.text.trim();
 }
 
-// === Scan report ===
-
-for (const [key, verses] of [...byChapter.entries()].sort()) {
-  const [bookStr, chStr] = key.split(':');
-  const book = parseInt(bookStr);
-  const chapter = parseInt(chStr);
-  const verseIds = verses.map(v => v.verse);
-
-  const translations = collectTranslations(book, chapter, verseIds);
-
-  console.log(`${key}: ${verseIds.length} verses to translate`);
-  for (const [verseId, trans] of translations) {
-    // Count languages
-    const languages = new Set<string>();
-    for (const t of trans) {
-      if (t.bible.includes('norwegian') || t.bible.includes('nb') || t.bible.includes('nn')) languages.add('no');
-      else if (t.bible.includes('english')) languages.add('en');
-      else if (t.bible.includes('german')) languages.add('de');
-      else if (t.bible.includes('french')) languages.add('fr');
-      else if (t.bible.includes('spanish')) languages.add('es');
-      else if (t.bible.includes('latin')) languages.add('la');
-      else if (t.bible.includes('hebrew')) languages.add('he');
-      else if (t.bible.includes('greek')) languages.add('el');
-      else languages.add('other');
-    }
-    console.log(`  v${verseId}: ${trans.length} translations (${[...languages].join(',')})`);
+async function main(): Promise<void> {
+  // Hjelpen skal ut før noe leses fra eller skrives til disk.
+  const { flags } = parseArgs(process.argv.slice(2), SPEC);
+  if (flags.help) {
+    console.log(formatHelp(
+      'kvn/scripts/translate-missing.ts',
+      'oversetter osmain-vers merket [NEEDS_TRANSLATION] ut fra alle andre oversettelser',
+      SPEC,
+      HELP_EXAMPLES,
+    ));
+    process.exit(0);
   }
-}
 
-if (!doTranslate) {
-  console.log('\nRun with --translate to generate translations');
-  process.exit(0);
-}
+  const doTranslate = flags.translate as boolean;
+  const chapterFilter = (flags.chapter as string | undefined) ?? null;
 
-// === Do translations ===
+  dotenv.config({ path: join(import.meta.dirname, '../../generate/.env') });
 
-mkdirSync(RESULTS_DIR, { recursive: true });
+  // === Find all missing verses in osmain (books 1-66) ===
 
-let translated = 0;
-let failed = 0;
+  const missing: MissingVerse[] = [];
 
-for (const [key, verses] of [...byChapter.entries()].sort()) {
-  const [bookStr, chStr] = key.split(':');
-  const book = parseInt(bookStr);
-  const chapter = parseInt(chStr);
-  const verseIds = verses.map(v => v.verse).sort((a, b) => a - b);
+  const bookDirs = readdirSync(OSMAIN_DIR)
+    .filter(d => /^\d+$/.test(d) && parseInt(d) <= 66 && statSync(join(OSMAIN_DIR, d)).isDirectory())
+    .sort((a, b) => parseInt(a) - parseInt(b));
 
-  console.log(`\nTranslating ${key} (${verseIds.length} verses)...`);
+  for (const bookStr of bookDirs) {
+    const bookDir = join(OSMAIN_DIR, bookStr);
+    const files = readdirSync(bookDir).filter(f => f.endsWith('.json'));
 
-  const translations = collectTranslations(book, chapter, verseIds);
+    for (const f of files) {
+      const chapter = parseInt(f.replace('.json', ''));
+      const key = `${bookStr}:${chapter}`;
+      if (chapterFilter && key !== chapterFilter) continue;
+      if (SKIP_CHAPTERS.has(key)) continue;
 
-  // Load osmain chapter for context and updating
-  const osmainFile = join(OSMAIN_DIR, String(book), `${chapter}.json`);
-  const osmainVerses: VerseData[] = JSON.parse(readFileSync(osmainFile, 'utf-8'));
-
-  for (const verseId of verseIds) {
-    const trans = translations.get(verseId) ?? [];
-
-    if (trans.length === 0) {
-      console.log(`  v${verseId}: NO TRANSLATIONS FOUND — skipping`);
-      failed++;
-      continue;
+      const verses: VerseData[] = JSON.parse(readFileSync(join(bookDir, f), 'utf-8'));
+      for (const v of verses) {
+        if (v.text === '[NEEDS_TRANSLATION]') {
+          missing.push({ book: parseInt(bookStr), chapter, verse: v.verseId });
+        }
+      }
     }
+  }
 
-    // Get context (previous and next verses in osmain)
-    const prevV = osmainVerses.find(v => v.verseId === verseId - 1);
-    const nextV = osmainVerses.find(v => v.verseId === verseId + 1);
-    const context = {
-      prevVerse: prevV && prevV.text !== '[NEEDS_TRANSLATION]' ? prevV.text : undefined,
-      nextVerse: nextV && nextV.text !== '[NEEDS_TRANSLATION]' ? nextV.text : undefined,
-    };
+  console.log(`Found ${missing.length} verses needing translation in books 1-66\n`);
 
-    try {
-      const result = await translateVerse(book, chapter, verseId, trans, context);
-      console.log(`  v${verseId}: "${result.slice(0, 80)}${result.length > 80 ? '...' : ''}"`);
+  if (missing.length === 0) {
+    console.log('Nothing to translate!');
+    return;
+  }
 
-      // Update osmain
-      const target = osmainVerses.find(v => v.verseId === verseId);
-      if (target) {
-        target.text = result;
-        (target as any).source = 'translated';  // not in tanach/sblgnt
-        delete (target as any)._samples;
-        translated++;
+  // Group by chapter for efficient processing
+  const byChapter = new Map<string, MissingVerse[]>();
+  for (const m of missing) {
+    const key = `${m.book}:${m.chapter}`;
+    if (!byChapter.has(key)) byChapter.set(key, []);
+    byChapter.get(key)!.push(m);
+  }
+
+  console.log(`Spread across ${byChapter.size} chapters\n`);
+
+  // === Scan report ===
+
+  for (const [key, verses] of [...byChapter.entries()].sort()) {
+    const [bookStr, chStr] = key.split(':');
+    const book = parseInt(bookStr);
+    const chapter = parseInt(chStr);
+    const verseIds = verses.map(v => v.verse);
+
+    const translations = collectTranslations(book, chapter, verseIds);
+
+    console.log(`${key}: ${verseIds.length} verses to translate`);
+    for (const [verseId, trans] of translations) {
+      // Count languages
+      const languages = new Set<string>();
+      for (const t of trans) {
+        if (t.bible.includes('norwegian') || t.bible.includes('nb') || t.bible.includes('nn')) languages.add('no');
+        else if (t.bible.includes('english')) languages.add('en');
+        else if (t.bible.includes('german')) languages.add('de');
+        else if (t.bible.includes('french')) languages.add('fr');
+        else if (t.bible.includes('spanish')) languages.add('es');
+        else if (t.bible.includes('latin')) languages.add('la');
+        else if (t.bible.includes('hebrew')) languages.add('he');
+        else if (t.bible.includes('greek')) languages.add('el');
+        else languages.add('other');
+      }
+      console.log(`  v${verseId}: ${trans.length} translations (${[...languages].join(',')})`);
+    }
+  }
+
+  if (!doTranslate) {
+    console.log('\nRun with --translate to generate translations');
+    return;
+  }
+
+  // === Do translations ===
+
+  mkdirSync(RESULTS_DIR, { recursive: true });
+
+  let translated = 0;
+  let failed = 0;
+
+  for (const [key, verses] of [...byChapter.entries()].sort()) {
+    const [bookStr, chStr] = key.split(':');
+    const book = parseInt(bookStr);
+    const chapter = parseInt(chStr);
+    const verseIds = verses.map(v => v.verse).sort((a, b) => a - b);
+
+    console.log(`\nTranslating ${key} (${verseIds.length} verses)...`);
+
+    const translations = collectTranslations(book, chapter, verseIds);
+
+    // Load osmain chapter for context and updating
+    const osmainFile = join(OSMAIN_DIR, String(book), `${chapter}.json`);
+    const osmainVerses: VerseData[] = JSON.parse(readFileSync(osmainFile, 'utf-8'));
+
+    for (const verseId of verseIds) {
+      const trans = translations.get(verseId) ?? [];
+
+      if (trans.length === 0) {
+        console.log(`  v${verseId}: NO TRANSLATIONS FOUND — skipping`);
+        failed++;
+        continue;
       }
 
-      // Save result for audit
-      const resultFile = join(RESULTS_DIR, `${book}-${chapter}-${verseId}.json`);
-      writeFileSync(resultFile, JSON.stringify({
-        book, chapter, verse: verseId,
-        result,
-        sourceCount: trans.length,
-        sources: trans.slice(0, 10).map(t => ({ bible: t.bible, text: t.text.slice(0, 200) })),
-        timestamp: new Date().toISOString(),
-      }, null, 2));
+      // Get context (previous and next verses in osmain)
+      const prevV = osmainVerses.find(v => v.verseId === verseId - 1);
+      const nextV = osmainVerses.find(v => v.verseId === verseId + 1);
+      const context = {
+        prevVerse: prevV && prevV.text !== '[NEEDS_TRANSLATION]' ? prevV.text : undefined,
+        nextVerse: nextV && nextV.text !== '[NEEDS_TRANSLATION]' ? nextV.text : undefined,
+      };
 
-    } catch (err: any) {
-      console.error(`  v${verseId}: ERROR — ${err.message}`);
-      failed++;
+      try {
+        const result = await translateVerse(book, chapter, verseId, trans, context);
+        console.log(`  v${verseId}: "${result.slice(0, 80)}${result.length > 80 ? '...' : ''}"`);
+
+        // Update osmain
+        const target = osmainVerses.find(v => v.verseId === verseId);
+        if (target) {
+          target.text = result;
+          (target as any).source = 'translated';  // not in tanach/sblgnt
+          delete (target as any)._samples;
+          translated++;
+        }
+
+        // Save result for audit
+        const resultFile = join(RESULTS_DIR, `${book}-${chapter}-${verseId}.json`);
+        writeFileSync(resultFile, JSON.stringify({
+          book, chapter, verse: verseId,
+          result,
+          sourceCount: trans.length,
+          sources: trans.slice(0, 10).map(t => ({ bible: t.bible, text: t.text.slice(0, 200) })),
+          timestamp: new Date().toISOString(),
+        }, null, 2));
+
+      } catch (err: any) {
+        console.error(`  v${verseId}: ERROR — ${err.message}`);
+        failed++;
+      }
     }
+
+    // Save updated osmain chapter
+    writeFileSync(osmainFile, JSON.stringify(osmainVerses, null, 2));
   }
 
-  // Save updated osmain chapter
-  writeFileSync(osmainFile, JSON.stringify(osmainVerses, null, 2));
+  console.log(`\n=== TRANSLATION COMPLETE ===`);
+  console.log(`Translated: ${translated}`);
+  console.log(`Failed: ${failed}`);
+  console.log(`Results saved to: ${RESULTS_DIR}`);
 }
 
-console.log(`\n=== TRANSLATION COMPLETE ===`);
-console.log(`Translated: ${translated}`);
-console.log(`Failed: ${failed}`);
-console.log(`Results saved to: ${RESULTS_DIR}`);
+await main();

@@ -1,14 +1,19 @@
 /**
  * Benchmark Ollama models for verse matching quality and speed.
  * Tests each model on a few known cases and compares results.
+ *
+ * Flaggene går gjennom den felles kontrakten i generate/cli.ts; `--help` viser dem.
  */
 
 import { readFileSync, existsSync } from 'fs';
 import { join } from 'path';
+import { parseArgs, formatHelp, COMMON_FLAGS } from '../../generate/cli.js';
+import type { FlagSpec } from '../../generate/cli.js';
 
 const OSMAIN_DIR = join(import.meta.dirname, '../../generate/bibles_raw/osmain');
 const RAW_DIR = join(import.meta.dirname, '../../external/closed/raw');
 const OLLAMA_URL = 'http://localhost:11434/api/generate';
+const OLLAMA_TAGS_URL = 'http://localhost:11434/api/tags';
 
 interface VerseData {
   bookId: number;
@@ -16,6 +21,16 @@ interface VerseData {
   verseId: number;
   text: string;
 }
+
+const SPEC: Record<string, FlagSpec> = {
+  models: { kind: 'string', help: 'kommaseparert liste med modeller (standard: alle Ollama har)' },
+  help: COMMON_FLAGS.help,
+};
+
+const HELP_EXAMPLES = [
+  'bun kvn/scripts/benchmark-models.ts',
+  'bun kvn/scripts/benchmark-models.ts --models qwen3.5:27b,gemma4:31b',
+];
 
 function loadChapter(dir: string, book: number, chapter: number): VerseData[] {
   const file = join(dir, String(book), `${chapter}.json`);
@@ -110,57 +125,73 @@ Reply in JSON only:
 }`;
 }
 
-// Get available models
-const tagsResp = await fetch('http://localhost:11434/api/tags');
-const tags = await tagsResp.json() as { models: Array<{ name: string }> };
-// Filter to only test specific models, or all
-const modelsArg = process.argv.find(a => a.startsWith('--models='));
-const models = modelsArg
-  ? modelsArg.split('=')[1].split(',')
-  : tags.models.map(m => m.name);
-
-console.log(`Available models: ${models.join(', ')}\n`);
-
-// Run benchmarks
-for (const tc of testCases) {
-  console.log(`\n${'='.repeat(60)}`);
-  console.log(`TEST: ${tc.name}`);
-  console.log(`Expected: ${tc.expectedAnswer}`);
-  console.log(`${'='.repeat(60)}`);
-
-  const osmainVerses = loadChapter(OSMAIN_DIR, tc.book, tc.chapter);
-  const bibleVerses = loadChapter(join(RAW_DIR, tc.bible), tc.book, tc.chapter);
-
-  if (osmainVerses.length === 0 || bibleVerses.length === 0) {
-    console.log('  SKIP: missing data');
-    continue;
+async function main(): Promise<void> {
+  // Hjelpen skal ut før noe leses fra disk og før modellene lastes i VRAM.
+  const { flags } = parseArgs(process.argv.slice(2), SPEC);
+  if (flags.help) {
+    console.log(formatHelp(
+      'kvn/scripts/benchmark-models.ts',
+      'måler fart og treffsikkerhet for lokale modeller på vers-matching mot osmain',
+      SPEC,
+      HELP_EXAMPLES,
+    ));
+    process.exit(0);
   }
 
-  const prompt = buildPrompt(osmainVerses, bibleVerses, tc.missingVerse, tc.bible);
+  // Get available models
+  const tagsResp = await fetch(OLLAMA_TAGS_URL);
+  const tags = await tagsResp.json() as { models: Array<{ name: string }> };
+  // Filter to only test specific models, or all
+  const modelsArg = flags.models as string | undefined;
+  const models = modelsArg
+    ? modelsArg.split(',')
+    : tags.models.map(m => m.name);
 
-  for (const model of models) {
-    process.stdout.write(`  ${model.padEnd(20)}`);
+  console.log(`Available models: ${models.join(', ')}\n`);
 
-    try {
-      const { response, durationMs } = await askOllama(model, prompt);
+  // Run benchmarks
+  for (const tc of testCases) {
+    console.log(`\n${'='.repeat(60)}`);
+    console.log(`TEST: ${tc.name}`);
+    console.log(`Expected: ${tc.expectedAnswer}`);
+    console.log(`${'='.repeat(60)}`);
 
-      // Try to parse JSON
-      const jsonMatch = response.match(/\{[\s\S]*?\}/);
-      if (jsonMatch) {
-        const result = JSON.parse(jsonMatch[0]);
-        const correct = result.status === tc.expectedAnswer;
-        console.log(
-          `${(durationMs / 1000).toFixed(1)}s | ` +
-          `status=${result.status} | ` +
-          `osmainVerse=${result.osmainVerse} | ` +
-          `${correct ? '✓ CORRECT' : '✗ WRONG'} | ` +
-          `${(result.explanation ?? '').slice(0, 80)}`
-        );
-      } else {
-        console.log(`${(durationMs / 1000).toFixed(1)}s | PARSE ERROR: ${response.slice(0, 100)}`);
+    const osmainVerses = loadChapter(OSMAIN_DIR, tc.book, tc.chapter);
+    const bibleVerses = loadChapter(join(RAW_DIR, tc.bible), tc.book, tc.chapter);
+
+    if (osmainVerses.length === 0 || bibleVerses.length === 0) {
+      console.log('  SKIP: missing data');
+      continue;
+    }
+
+    const prompt = buildPrompt(osmainVerses, bibleVerses, tc.missingVerse, tc.bible);
+
+    for (const model of models) {
+      process.stdout.write(`  ${model.padEnd(20)}`);
+
+      try {
+        const { response, durationMs } = await askOllama(model, prompt);
+
+        // Try to parse JSON
+        const jsonMatch = response.match(/\{[\s\S]*?\}/);
+        if (jsonMatch) {
+          const result = JSON.parse(jsonMatch[0]);
+          const correct = result.status === tc.expectedAnswer;
+          console.log(
+            `${(durationMs / 1000).toFixed(1)}s | ` +
+            `status=${result.status} | ` +
+            `osmainVerse=${result.osmainVerse} | ` +
+            `${correct ? '✓ CORRECT' : '✗ WRONG'} | ` +
+            `${(result.explanation ?? '').slice(0, 80)}`
+          );
+        } else {
+          console.log(`${(durationMs / 1000).toFixed(1)}s | PARSE ERROR: ${response.slice(0, 100)}`);
+        }
+      } catch (err: any) {
+        console.log(`ERROR: ${err.message}`);
       }
-    } catch (err: any) {
-      console.log(`ERROR: ${err.message}`);
     }
   }
 }
+
+await main();

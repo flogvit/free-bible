@@ -1,15 +1,58 @@
-import dotenv from 'dotenv';
+import "./env.js";
 import * as fs from 'fs';
 import path from 'path';
 import {fileURLToPath} from 'url';
 
-const __filename = fileURLToPath(import.meta.url);
-const __dirname = path.dirname(__filename);
-dotenv.config();
-
 import {books, getBookName, bibles, getLanguageCode, ollamaModel, anthropicModel} from './constants.js';
 import {callWithRetry} from './llm.js';
+import {parseArgs, formatHelp, COMMON_FLAGS} from './cli.js';
+import type {FlagSpec, Range} from './cli.js';
 import type {Chapter} from '../kvn/src/bible-types.js';
+
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = path.dirname(__filename);
+
+/**
+ * Flaggene skriptet godtar, i den rekkefølgen `--help` viser dem.
+ *
+ * Om modellaksen: fram til migreringen het flagget her `--remote`, og
+ * standarden UTEN flagg var **lokal Ollama** — motsatt fortegn av de elleve
+ * skriptene som bruker `--local`. Kontrakten avviser `--remote` (se `cli.ts`),
+ * så aksen heter nå `--local`, men standarden er beholdt: `default: true` gjør
+ * at en kommando uten flagg treffer nøyaktig samme modell som før. `--no-local`
+ * er den nye måten å be om Claude på, altså det `--remote` gjorde.
+ */
+const SPEC: Record<string, FlagSpec> = {
+    bible: COMMON_FLAGS.bible,
+    book: COMMON_FLAGS.book,
+    chapter: {...COMMON_FLAGS.chapter, help: 'kapittel eller kapittelintervall (krever én enkelt bok)'},
+    ot: COMMON_FLAGS.ot,
+    nt: COMMON_FLAGS.nt,
+    local: {...COMMON_FLAGS.local, help: 'kjør mot lokal Ollama i stedet for Claude', default: true},
+    'no-local': {kind: 'boolean', help: 'kjør mot Claude i stedet for lokal Ollama (het --remote før)'},
+    force: COMMON_FLAGS.force,
+    help: COMMON_FLAGS.help,
+};
+
+const SCRIPT = 'generate/headings.ts';
+const PURPOSE = 'lag inline seksjonsoverskrifter kapittel for kapittel → '
+    + 'generate/headings/<språk>/<bokId>/<kapittelId>.json (språkkoden utledes av oversettelsen)';
+const EXAMPLES = [
+    'bun generate/headings.ts --bible osnb --book 1 --chapter 1',
+    'bun generate/headings.ts --bible osnb --book 1',
+    'bun generate/headings.ts --bible osnb --nt --no-local',
+    'bun generate/headings.ts --bible osnn --force',
+];
+
+// Hjelpesjekken står først — før .env-lasting og før enhver fil- eller
+// nettverksoperasjon. `--help` skal svare på hva skriptet tar, ikke begynne å
+// gjøre det.
+const {flags} = parseArgs(process.argv.slice(2), SPEC);
+if (flags.help) {
+    console.log(formatHelp(SCRIPT, PURPOSE, SPEC, EXAMPLES));
+    process.exit(0);
+}
+
 
 /** Én seksjonsoverskrift: tittel og versintervallet den dekker. */
 interface Heading {
@@ -168,11 +211,11 @@ function validateHeadings(headings: Heading[], verseCount: number): HeadingValid
     return {ok: true, sorted};
 }
 
-async function processChapter(bible: string, language: string, bookId: number, chapterId: number, options: HeadingsOptions): Promise<void> {
+async function processChapter(bible: string, language: string, bookId: number, chapterId: number, force: boolean, useLocal: boolean): Promise<void> {
     const bookName = getBookName(bookId, language);
     const outputFile = getOutputPath(language, bookId, chapterId);
 
-    if (!options.force && fs.existsSync(outputFile)) {
+    if (!force && fs.existsSync(outputFile)) {
         console.log(`  ${bookName} ${chapterId}: already processed, skipping`);
         return;
     }
@@ -187,7 +230,6 @@ async function processChapter(bible: string, language: string, bookId: number, c
     const verseCount = verses[verses.length - 1].verseId;
     const priorHeadings = loadPriorChapterHeadings(language, bookId, chapterId);
     const prompt = buildPrompt(language, bookName, chapterId, chapterText, verseCount, priorHeadings);
-    const useLocal = !options.remote;
     const modelLabel = useLocal ? ollamaModel : anthropicModel;
 
     process.stdout.write(`  ${bookName} ${chapterId} (${verses.length} vers, ${useLocal ? 'qwen' : 'claude'})... `);
@@ -248,144 +290,81 @@ async function processChapter(bible: string, language: string, bookId: number, c
     fs.writeFileSync(outputFile, JSON.stringify(output, null, 2));
 }
 
-function printUsage(): void {
-    console.log(`
-Usage: bun headings.ts --bible <name> [options]
-
-Generate inline section headings for a Bible translation, chapter by chapter.
-Default model: qwen3.5:122b (local Ollama). Pass --remote to use Anthropic Claude.
-
-Options:
-  --bible <name>       Bible translation (e.g., osnb, osnn) [required]
-  --book <range>       Process book(s): single (43) or range (1-20)
-  --chapter <range>    Process chapter(s): single (12) or range (1-10) [requires single --book]
-  --ot                 Process only Old Testament (books 1-39)
-  --nt                 Process only New Testament (books 40-66)
-  --remote             Use Anthropic Claude instead of local qwen
-  --force              Re-process even if chapter already has output
-  --help               Show this help message
-
-Output:
-  generate/headings/<lang>/<bookId>/<chapterId>.json
-  Language code is derived from the bible (osnb -> nb, osnn -> nn).
-
-Examples:
-  bun headings.ts --bible osnb --book 1 --chapter 1
-  bun headings.ts --bible osnb --book 1
-  bun headings.ts --bible osnb --nt --remote
-  bun headings.ts --bible osnn --force
-`);
-}
-
-function parseRange(value: string): {start: number; end: number} {
-    if (value.includes('-')) {
-        const [start, end] = value.split('-').map(n => parseInt(n, 10));
-        return {start, end};
-    }
-    const n = parseInt(value, 10);
-    return {start: n, end: n};
-}
-
-/** Flaggene skriptet kjenner. `null` = ikke oppgitt, ikke «tom». */
-interface HeadingsOptions {
-    bible: string | null;
-    bookStart: number | null;
-    bookEnd: number | null;
-    chapterStart: number | null;
-    chapterEnd: number | null;
-    force: boolean;
-    remote: boolean;
-    help: boolean;
-}
-
 async function main(): Promise<void> {
-    const args = process.argv.slice(2);
-    const options: HeadingsOptions = {
-        bible: null,
-        bookStart: null,
-        bookEnd: null,
-        chapterStart: null,
-        chapterEnd: null,
-        force: false,
-        remote: false,
-        help: false
-    };
-
-    let i = 0;
-    while (i < args.length) {
-        const arg = args[i];
-        if (arg === '--bible' && i + 1 < args.length) {
-            options.bible = args[++i];
-        } else if (arg === '--book' && i + 1 < args.length) {
-            const r = parseRange(args[++i]);
-            options.bookStart = r.start;
-            options.bookEnd = r.end;
-        } else if (arg === '--chapter' && i + 1 < args.length) {
-            const r = parseRange(args[++i]);
-            options.chapterStart = r.start;
-            options.chapterEnd = r.end;
-        } else if (arg === '--ot') {
-            options.bookStart = 1;
-            options.bookEnd = 39;
-        } else if (arg === '--nt') {
-            options.bookStart = 40;
-            options.bookEnd = 66;
-        } else if (arg === '--force') {
-            options.force = true;
-        } else if (arg === '--remote') {
-            options.remote = true;
-        } else if (arg === '--help') {
-            options.help = true;
-        } else {
-            console.error(`Unknown argument: ${arg}`);
-            options.help = true;
-        }
-        i++;
+    const bible = flags.bible as string | undefined;
+    if (!bible) {
+        // Samme som før: manglende --bible skriver bruksteksten og gir exit 1.
+        console.error(formatHelp(SCRIPT, PURPOSE, SPEC, EXAMPLES));
+        process.exit(1);
     }
 
-    if (options.help || !options.bible) {
-        printUsage();
-        process.exit(options.help ? 0 : 1);
-    }
-
-    const bibleLanguageName = bibles[options.bible];
+    const bibleLanguageName = bibles[bible];
     if (!bibleLanguageName) {
-        console.error(`Unknown bible "${options.bible}". Known: ${Object.keys(bibles).join(', ')}`);
+        console.error(`Unknown bible "${bible}". Known: ${Object.keys(bibles).join(', ')}`);
         process.exit(1);
     }
     const language = getLanguageCode(bibleLanguageName);
 
-    const bibleDir = path.join(SOURCES_DIR, options.bible);
+    const bibleDir = path.join(SOURCES_DIR, bible);
     if (!fs.existsSync(bibleDir)) {
         console.error(`Bible source not found: ${bibleDir}`);
         process.exit(1);
     }
 
-    const bookStart = options.bookStart ?? 1;
-    const bookEnd = options.bookEnd ?? 66;
+    const bookRange = flags.book as Range | undefined;
+    const chapterRange = flags.chapter as Range | undefined;
 
-    if ((options.chapterStart || options.chapterEnd) && bookStart !== bookEnd) {
+    // `--ot`/`--nt` er snarveier for `--book`. Den gamle parseren leste
+    // argumentene i rekkefølge og lot det siste vinne; kontrakten beholder ikke
+    // rekkefølgen, så et eksplisitt `--book` går foran, og `--nt` foran `--ot`.
+    // I praksis brukes de hver for seg, så resultatet er det samme.
+    let bookStart = 1;
+    let bookEnd = 66;
+    if (flags.ot) {
+        bookStart = 1;
+        bookEnd = 39;
+    }
+    if (flags.nt) {
+        bookStart = 40;
+        bookEnd = 66;
+    }
+    if (bookRange) {
+        bookStart = bookRange.start;
+        bookEnd = bookRange.end;
+    }
+
+    if (chapterRange && bookStart !== bookEnd) {
         console.error('--chapter requires a single book (use --book <id>)');
         process.exit(1);
     }
 
-    console.log(`Bible: ${options.bible} (${bibleLanguageName} / ${language})`);
-    console.log(`Model: ${options.remote ? `${anthropicModel} (Anthropic)` : `${ollamaModel} (Ollama)`}`);
-    console.log(`Books: ${bookStart}-${bookEnd}${options.chapterStart ? `, chapter ${options.chapterStart}-${options.chapterEnd}` : ''}`);
+    // Standarden er lokal — se kommentaren over `SPEC`. `--no-local` er
+    // arvtakeren etter `--remote` og er den eneste som slår den av.
+    const useLocal = (flags.local as boolean) && !(flags['no-local'] as boolean);
+    const force = flags.force as boolean;
+
+    console.log(`Bible: ${bible} (${bibleLanguageName} / ${language})`);
+    console.log(`Model: ${useLocal ? `${ollamaModel} (Ollama)` : `${anthropicModel} (Anthropic)`}`);
+    console.log(`Books: ${bookStart}-${bookEnd}${chapterRange ? `, chapter ${chapterRange.start}-${chapterRange.end}` : ''}`);
 
     for (const book of books) {
         if (book.id < bookStart || book.id > bookEnd) continue;
         const bookName = getBookName(book.id, language);
-        const startCh = options.chapterStart ?? 1;
-        const endCh = Math.min(options.chapterEnd ?? book.chapters, book.chapters);
+        const startCh = chapterRange?.start ?? 1;
+        const endCh = Math.min(chapterRange?.end ?? book.chapters, book.chapters);
         console.log(`\n=== ${bookName} (${book.id}), kapittel ${startCh}-${endCh} ===`);
         for (let ch = startCh; ch <= endCh; ch++) {
-            await processChapter(options.bible, language, book.id, ch, options);
+            await processChapter(bible, language, book.id, ch, force, useLocal);
         }
     }
 }
 
-main().catch(err => {
+// Kjører bare når fila startes direkte. Uten vakten kjører jobben ved IMPORT —
+// det er grunnen til at days.ts slettet data bare man lastet modulen (#108),
+// og det gjør skriptene umulige å teste.
+if (import.meta.main) {
+    main().catch(err => {
     console.error(err);
     process.exit(1);
 });
+}

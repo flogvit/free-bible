@@ -9,11 +9,28 @@ import * as fs from 'fs';
 import path from 'path';
 import { fileURLToPath } from 'url';
 import { callWithRetry } from './llm.js';
+import { parseArgs, formatHelp, COMMON_FLAGS } from './cli.js';
+import type { FlagSpec } from './cli.js';
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const PERSONS_DIR = path.join(__dirname, 'persons', 'nb');
-const [, , WORKLIST, OUT] = process.argv;
-if (!WORKLIST || !OUT) { console.error('usage: node persons_reconcile.mjs <worklist.json> <out.json>'); process.exit(1); }
+
+/**
+ * Flaggkontrakten for dette skriptet (#51, #52, #53).
+ *
+ * Skriptet har ingen flagg: begge argumentene er posisjonelle, og de leses nå
+ * som `positional[0]`/`positional[1]` framfor `process.argv[2..3]`. Modellen er
+ * ikke et valg her — kallene er hardkodet `local: true`, så det finnes ingen
+ * `--local`-akse å erklære.
+ */
+const SPEC: Record<string, FlagSpec> = {
+    help: COMMON_FLAGS.help,
+};
+
+const HELP_EXAMPLES = [
+    'bun generate/persons_integrity.ts --worklist worklist.json    # lag arbeidslista først',
+    'bun generate/persons_reconcile.ts worklist.json proposals.json',
+];
 
 /** Personprofilen i generate/persons/nb/<slug>.json — bare feltene katalogen bruker. */
 interface PersonProfile {

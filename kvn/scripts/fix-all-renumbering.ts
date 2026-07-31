@@ -9,13 +9,13 @@
  * Skips chapters that already look correct (no [NEEDS_TRANSLATION], same structure as reference).
  * Saves results for audit.
  *
- * Usage:
- *   bun scripts/fix-all-renumbering.ts
- *   bun scripts/fix-all-renumbering.ts --dry-run   # show what would change without saving
+ * Flaggene går gjennom den felles kontrakten i generate/cli.ts; `--help` viser dem.
  */
 
 import { readFileSync, readdirSync, existsSync, statSync, writeFileSync, mkdirSync } from 'fs';
 import { join } from 'path';
+import { parseArgs, formatHelp, COMMON_FLAGS } from '../../generate/cli.js';
+import type { FlagSpec } from '../../generate/cli.js';
 
 const OSNB_DIR = join(import.meta.dirname, '../../generate/bibles_raw/osnb');
 const OSMAIN_DIR = join(import.meta.dirname, '../../generate/bibles_raw/osmain');
@@ -33,21 +33,6 @@ interface VerseData {
   source?: string;
   [key: string]: any;
 }
-
-const dryRun = process.argv.includes('--dry-run');
-
-const log: Array<{ key: string; type: string; details: string }> =
-  JSON.parse(readFileSync(LOG_FILE, 'utf-8'));
-
-// Only process renumber entries for books 1-66
-const toFix = log.filter(e => {
-  const book = parseInt(e.key.split(':')[0]);
-  return book <= 66 &&
-    (e.type === 'renumber_boundary' || e.type === 'renumber_prepend' || e.type === 'renumber_mixed');
-});
-
-console.log(`Chapters to fix: ${toFix.length}`);
-if (dryRun) console.log('DRY RUN — no files will be modified\n');
 
 function loadChapter(dir: string, book: number, chapter: number): VerseData[] {
   const file = join(dir, String(book), `${chapter}.json`);
@@ -103,55 +88,93 @@ async function askOllama(prompt: string): Promise<any> {
   return JSON.parse(data.response);
 }
 
-mkdirSync(RESULTS_DIR, { recursive: true });
+const SPEC: Record<string, FlagSpec> = {
+  'dry-run': COMMON_FLAGS['dry-run'],
+  help: COMMON_FLAGS.help,
+};
 
-let fixed = 0;
-let skipped = 0;
-let errors = 0;
-let unchanged = 0;
+const HELP_EXAMPLES = [
+  'bun kvn/scripts/fix-all-renumbering.ts',
+  'bun kvn/scripts/fix-all-renumbering.ts --dry-run',
+];
 
-for (const entry of toFix) {
-  const [bookStr, chStr] = entry.key.split(':');
-  const book = parseInt(bookStr);
-  const chapter = parseInt(chStr);
-
-  const osnb = loadChapter(OSNB_DIR, book, chapter);
-  const ref = findReference(book, chapter);
-
-  if (osnb.length === 0) {
-    console.log(`  ${entry.key}: SKIP (no osnb data)`);
-    skipped++;
-    continue;
-  }
-  if (!ref) {
-    console.log(`  ${entry.key}: SKIP (no reference bible)`);
-    skipped++;
-    continue;
-  }
-  if (osnb.length === ref.verses.length) {
-    console.log(`  ${entry.key}: SKIP (same verse count as ${ref.bible})`);
-    unchanged++;
-    continue;
+async function main(): Promise<void> {
+  // Hjelpen skal ut før noe leses fra disk, og lenge før modellen lastes.
+  const { flags } = parseArgs(process.argv.slice(2), SPEC);
+  if (flags.help) {
+    console.log(formatHelp(
+      'kvn/scripts/fix-all-renumbering.ts',
+      'bygger om omnummererte osmain-kapitler ved å la Ollama pare osnb-vers mot en referanseoversettelse',
+      SPEC,
+      HELP_EXAMPLES,
+    ));
+    process.exit(0);
   }
 
-  // Build prompt
-  const osnbText = osnb.map(v => `v${v.verseId}: ${v.text}`).join('\n');
-  const refText = ref.verses.map(v => `v${v.verseId}: ${v.text}`).join('\n');
+  const dryRun = flags['dry-run'] as boolean;
 
-  // Context from adjacent chapters
-  const osnbPrev = loadChapter(OSNB_DIR, book, chapter - 1);
-  const osnbNext = loadChapter(OSNB_DIR, book, chapter + 1);
-  let contextText = '';
-  if (osnbPrev.length > 0) {
-    const last3 = osnbPrev.slice(-3);
-    contextText += `\nosnb chapter ${chapter - 1} (last 3 verses):\n${last3.map(v => `v${v.verseId}: ${v.text}`).join('\n')}\n`;
-  }
-  if (osnbNext.length > 0) {
-    const first3 = osnbNext.slice(0, 3);
-    contextText += `\nosnb chapter ${chapter + 1} (first 3 verses):\n${first3.map(v => `v${v.verseId}: ${v.text}`).join('\n')}\n`;
-  }
+  const log: Array<{ key: string; type: string; details: string }> =
+    JSON.parse(readFileSync(LOG_FILE, 'utf-8'));
 
-  const prompt = `You are mapping Bible verse numbering.
+  // Only process renumber entries for books 1-66
+  const toFix = log.filter(e => {
+    const book = parseInt(e.key.split(':')[0]);
+    return book <= 66 &&
+      (e.type === 'renumber_boundary' || e.type === 'renumber_prepend' || e.type === 'renumber_mixed');
+  });
+
+  console.log(`Chapters to fix: ${toFix.length}`);
+  if (dryRun) console.log('DRY RUN — no files will be modified\n');
+
+  mkdirSync(RESULTS_DIR, { recursive: true });
+
+  let fixed = 0;
+  let skipped = 0;
+  let errors = 0;
+  let unchanged = 0;
+
+  for (const entry of toFix) {
+    const [bookStr, chStr] = entry.key.split(':');
+    const book = parseInt(bookStr);
+    const chapter = parseInt(chStr);
+
+    const osnb = loadChapter(OSNB_DIR, book, chapter);
+    const ref = findReference(book, chapter);
+
+    if (osnb.length === 0) {
+      console.log(`  ${entry.key}: SKIP (no osnb data)`);
+      skipped++;
+      continue;
+    }
+    if (!ref) {
+      console.log(`  ${entry.key}: SKIP (no reference bible)`);
+      skipped++;
+      continue;
+    }
+    if (osnb.length === ref.verses.length) {
+      console.log(`  ${entry.key}: SKIP (same verse count as ${ref.bible})`);
+      unchanged++;
+      continue;
+    }
+
+    // Build prompt
+    const osnbText = osnb.map(v => `v${v.verseId}: ${v.text}`).join('\n');
+    const refText = ref.verses.map(v => `v${v.verseId}: ${v.text}`).join('\n');
+
+    // Context from adjacent chapters
+    const osnbPrev = loadChapter(OSNB_DIR, book, chapter - 1);
+    const osnbNext = loadChapter(OSNB_DIR, book, chapter + 1);
+    let contextText = '';
+    if (osnbPrev.length > 0) {
+      const last3 = osnbPrev.slice(-3);
+      contextText += `\nosnb chapter ${chapter - 1} (last 3 verses):\n${last3.map(v => `v${v.verseId}: ${v.text}`).join('\n')}\n`;
+    }
+    if (osnbNext.length > 0) {
+      const first3 = osnbNext.slice(0, 3);
+      contextText += `\nosnb chapter ${chapter + 1} (first 3 verses):\n${first3.map(v => `v${v.verseId}: ${v.text}`).join('\n')}\n`;
+    }
+
+    const prompt = `You are mapping Bible verse numbering.
 
 OSNB (Hebrew/Tanach numbering, Norwegian text, ${osnb.length} verses):
 ${osnbText}
@@ -166,99 +189,105 @@ If an osnb verse was moved to an adjacent chapter, it may not appear in the mapp
 
 Compare the CONTENT of the verses to determine the mapping. Do not just match by verse number.`;
 
-  process.stdout.write(`  ${entry.key} (osnb:${osnb.length}v → ref:${ref.verses.length}v)... `);
+    process.stdout.write(`  ${entry.key} (osnb:${osnb.length}v → ref:${ref.verses.length}v)... `);
 
-  try {
-    const start = Date.now();
-    const result = await askOllama(prompt);
-    const elapsed = ((Date.now() - start) / 1000).toFixed(1);
+    try {
+      const start = Date.now();
+      const result = await askOllama(prompt);
+      const elapsed = ((Date.now() - start) / 1000).toFixed(1);
 
-    // Validate mapping
-    const mappings: Array<{ targetVerse: number; osnbVerses: number[]; mergeType: string }> = result.mappings;
-    if (mappings.length !== ref.verses.length) {
-      console.log(`⚠ mapping count mismatch (got ${mappings.length}, expected ${ref.verses.length}) [${elapsed}s]`);
-    }
-
-    // Build new osmain chapter
-    const osnbByVerse = new Map(osnb.map(v => [v.verseId, v]));
-    const newOsmain: VerseData[] = [];
-    let mergeCount = 0;
-
-    for (const m of mappings) {
-      const texts: string[] = [];
-      let source = 'tanach';
-      for (const vId of m.osnbVerses) {
-        const v = osnbByVerse.get(vId);
-        if (v) {
-          texts.push(v.text);
-          source = v.source ?? (book <= 39 ? 'tanach' : 'sblgnt');
-        }
+      // Validate mapping
+      const mappings: Array<{ targetVerse: number; osnbVerses: number[]; mergeType: string }> = result.mappings;
+      if (mappings.length !== ref.verses.length) {
+        console.log(`⚠ mapping count mismatch (got ${mappings.length}, expected ${ref.verses.length}) [${elapsed}s]`);
       }
-      if (m.mergeType === 'merged') mergeCount++;
 
-      newOsmain.push({
-        bookId: book,
-        chapterId: chapter,
-        verseId: m.targetVerse,
-        text: texts.join(' '),
-        source,
-      });
-    }
+      // Build new osmain chapter
+      const osnbByVerse = new Map(osnb.map(v => [v.verseId, v]));
+      const newOsmain: VerseData[] = [];
+      let mergeCount = 0;
 
-    // Check for unmapped osnb verses
-    const mappedOsnb2 = new Set(mappings.flatMap(m => m.osnbVerses));
-    const unmapped = osnb.filter(v => !mappedOsnb2.has(v.verseId));
+      for (const m of mappings) {
+        const texts: string[] = [];
+        let source = 'tanach';
+        for (const vId of m.osnbVerses) {
+          const v = osnbByVerse.get(vId);
+          if (v) {
+            texts.push(v.text);
+            source = v.source ?? (book <= 39 ? 'tanach' : 'sblgnt');
+          }
+        }
+        if (m.mergeType === 'merged') mergeCount++;
 
-    const summary = [
-      `${elapsed}s`,
-      mergeCount > 0 ? `${mergeCount} merges` : null,
-      unmapped.length > 0 ? `${unmapped.length} unmapped→adjacent` : null,
-    ].filter(Boolean).join(', ');
+        newOsmain.push({
+          bookId: book,
+          chapterId: chapter,
+          verseId: m.targetVerse,
+          text: texts.join(' '),
+          source,
+        });
+      }
 
-    console.log(`✓ ${summary}`);
+      // Check for unmapped osnb verses
+      const mappedOsnb2 = new Set(mappings.flatMap(m => m.osnbVerses));
+      const unmapped = osnb.filter(v => !mappedOsnb2.has(v.verseId));
 
-    // Save result for audit
-    writeFileSync(
-      join(RESULTS_DIR, `${book}-${chapter}.json`),
-      JSON.stringify({
-        key: entry.key,
-        type: entry.type,
-        refBible: ref.bible,
-        mappings,
-        unmappedOsnb2: unmapped.map(v => v.verseId),
-        timestamp: new Date().toISOString(),
-      }, null, 2)
-    );
+      const summary = [
+        `${elapsed}s`,
+        mergeCount > 0 ? `${mergeCount} merges` : null,
+        unmapped.length > 0 ? `${unmapped.length} unmapped→adjacent` : null,
+      ].filter(Boolean).join(', ');
 
-    // Save to osmain (unless dry run)
-    if (!dryRun) {
-      // Preserve any existing translated verses (e.g., from fix-osmain-boundaries)
-      const existingOsmain = loadChapter(OSMAIN_DIR, book, chapter);
-      const existingByVerse = new Map(existingOsmain.map(v => [v.verseId, v]));
+      console.log(`✓ ${summary}`);
 
-      // For verses beyond the mapping range (e.g., added placeholder verses), keep them
-      const maxMappedVerse = Math.max(...mappings.map(m => m.targetVerse));
-      const extraVerses = existingOsmain.filter(v =>
-        v.verseId > maxMappedVerse && v.source === 'translated'
+      // Save result for audit
+      writeFileSync(
+        join(RESULTS_DIR, `${book}-${chapter}.json`),
+        JSON.stringify({
+          key: entry.key,
+          type: entry.type,
+          refBible: ref.bible,
+          mappings,
+          unmappedOsnb2: unmapped.map(v => v.verseId),
+          timestamp: new Date().toISOString(),
+        }, null, 2)
       );
 
-      const finalOsmain = [...newOsmain, ...extraVerses].sort((a, b) => a.verseId - b.verseId);
+      // Save to osmain (unless dry run)
+      if (!dryRun) {
+        // Preserve any existing translated verses (e.g., from fix-osmain-boundaries)
+        const existingOsmain = loadChapter(OSMAIN_DIR, book, chapter);
+        const existingByVerse = new Map(existingOsmain.map(v => [v.verseId, v]));
 
-      const osmainFile = join(OSMAIN_DIR, String(book), `${chapter}.json`);
-      writeFileSync(osmainFile, JSON.stringify(finalOsmain, null, 2));
+        // For verses beyond the mapping range (e.g., added placeholder verses), keep them
+        const maxMappedVerse = Math.max(...mappings.map(m => m.targetVerse));
+        const extraVerses = existingOsmain.filter(v =>
+          v.verseId > maxMappedVerse && v.source === 'translated'
+        );
+
+        const finalOsmain = [...newOsmain, ...extraVerses].sort((a, b) => a.verseId - b.verseId);
+
+        const osmainFile = join(OSMAIN_DIR, String(book), `${chapter}.json`);
+        writeFileSync(osmainFile, JSON.stringify(finalOsmain, null, 2));
+      }
+
+      fixed++;
+    } catch (err: any) {
+      console.log(`ERROR: ${err.message}`);
+      errors++;
     }
-
-    fixed++;
-  } catch (err: any) {
-    console.log(`ERROR: ${err.message}`);
-    errors++;
   }
+
+  console.log(`\n=== SUMMARY ===`);
+  console.log(`Fixed: ${fixed}`);
+  console.log(`Skipped: ${skipped}`);
+  console.log(`Unchanged: ${unchanged}`);
+  console.log(`Errors: ${errors}`);
+  console.log(`Total: ${toFix.length}`);
+  if (dryRun) console.log('\n(dry run — no files were modified)');
 }
 
-console.log(`\n=== SUMMARY ===`);
-console.log(`Fixed: ${fixed}`);
-console.log(`Skipped: ${skipped}`);
-console.log(`Unchanged: ${unchanged}`);
-console.log(`Errors: ${errors}`);
-console.log(`Total: ${toFix.length}`);
-if (dryRun) console.log('\n(dry run — no files were modified)');
+main().catch(e => {
+  console.error(e);
+  process.exit(1);
+});

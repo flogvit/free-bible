@@ -1,15 +1,16 @@
 #!/usr/bin/env bun
 /**
- * convert-refs.mjs — Convert plain-text Bible references to [ref:...|...] markup.
+ * convert-refs.ts — Convert plain-text Bible references to [ref:...|...] markup.
  *
- * Usage:
- *   bun convert-refs.ts [--dry-run] [--stats] [--verify] [--path <glob>]
+ * Flaggene går gjennom den felles kontrakten i cli.ts; `--help` viser dem.
  */
 
 import * as fs from 'fs';
 import path from 'path';
 import { fileURLToPath } from 'url';
 import { bookNames } from './constants.js';
+import { parseArgs, formatHelp, COMMON_FLAGS } from './cli.js';
+import type { FlagSpec } from './cli.js';
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
@@ -559,38 +560,29 @@ interface Options {
   pathGlob: string | null;
 }
 
-function parseArgs(args: string[]): Options {
-  const options: Options = {
-    dryRun: false,
-    stats: false,
-    verify: false,
-    pathGlob: null,
+const SPEC: Record<string, FlagSpec> = {
+  'dry-run': COMMON_FLAGS['dry-run'],
+  stats: {kind: 'boolean', help: 'skriv ut hvor mange referanser hver fil fikk'},
+  verify: {kind: 'boolean', help: 'valider [ref:...]-markeringene som alt ligger på disk'},
+  path: {kind: 'string', help: 'behandle bare filer under denne katalogen, relativt til generate/'},
+  help: COMMON_FLAGS.help,
+};
+
+const HELP_EXAMPLES = [
+  'bun generate/convert-refs.ts --dry-run --stats',
+  'bun generate/convert-refs.ts --path stories/nb',
+  'bun generate/convert-refs.ts --verify',
+];
+
+/** Oversetter de tolkede flaggene til `Options`. */
+function readOptions(flags: ReturnType<typeof parseArgs>['flags']): Options {
+  return {
+    dryRun: flags['dry-run'] as boolean,
+    stats: flags.stats as boolean,
+    verify: flags.verify as boolean,
+    // `--path` var `null` når det manglet, ikke `undefined`.
+    pathGlob: (flags.path as string | undefined) ?? null,
   };
-
-  let i = 0;
-  while (i < args.length) {
-    const arg = args[i];
-    if (arg === '--dry-run') options.dryRun = true;
-    else if (arg === '--stats') options.stats = true;
-    else if (arg === '--verify') options.verify = true;
-    else if (arg === '--path' && i + 1 < args.length) options.pathGlob = args[++i];
-    else if (arg === '--help') {
-      console.log(`
-Usage: bun convert-refs.ts [options]
-
-Options:
-  --dry-run    Show what would change without writing files
-  --stats      Show conversion statistics
-  --verify     Validate all converted [ref:...] markups
-  --path <glob> Process only files matching glob pattern
-  --help       Show this help
-`);
-      process.exit(0);
-    }
-    i++;
-  }
-
-  return options;
 }
 
 /** Recursively find files matching an extension under a directory. */
@@ -622,8 +614,19 @@ interface Stats {
 }
 
 function main(): void {
-  const args = process.argv.slice(2);
-  const options = parseArgs(args);
+  // Hjelpen skal ut før noe leses fra eller skrives til disk.
+  const { flags } = parseArgs(process.argv.slice(2), SPEC);
+  if (flags.help) {
+    console.log(formatHelp(
+      'generate/convert-refs.ts',
+      'gjør bibelreferanser i løpende tekst om til [ref:...|...]-markering',
+      SPEC,
+      HELP_EXAMPLES,
+    ));
+    process.exit(0);
+  }
+
+  const options = readOptions(flags);
 
   const { regex, nameMap } = buildRefRegex();
 
