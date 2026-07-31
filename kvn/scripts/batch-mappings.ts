@@ -6,7 +6,7 @@
  * exists, and generate-mapping.ts itself resumes per-chapter. Updates
  * kvn_mapping status in inventory.json as each completes.
  *
- * Usage: node scripts/batch-mappings.mjs [--model <name>] [--only <m1,m2>]
+ * Usage: bun scripts/batch-mappings.ts [--model <name>] [--only <m1,m2>]
  */
 import { execSync } from 'child_process';
 import { existsSync, readFileSync, writeFileSync } from 'fs';
@@ -40,7 +40,7 @@ for (const r of todo) {
   console.log(`\n=== ${m} (${r.language}) ===`);
   try {
     execSync(
-      `npx tsx scripts/generate-mapping.ts --source ${m} --format raw --fast --no-verify --model ${model}`,
+      `bun scripts/generate-mapping.ts --source ${m} --format raw --fast --no-verify --model ${model}`,
       { cwd: __dirname.replace(/\/scripts$/, ''), stdio: 'inherit' }
     );
     if (existsSync(mapFile)) { r.kvn_mapping = true; r.status = 'kvn_done'; done++; }

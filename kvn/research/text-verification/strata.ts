@@ -9,7 +9,7 @@
  * Andelen rekonstrueres fra testsettet: alle varianter av samme kildevers deler
  * A-tekst, så OK-variantens B er det hele verset og GRENSE-variantens B er stubben.
  *
- *   node strata.mjs [verdict-fil ...]
+ *   bun strata.ts [verdict-fil ...]
  */
 import { readFileSync, readdirSync, existsSync } from 'fs';
 import { join, dirname } from 'path';

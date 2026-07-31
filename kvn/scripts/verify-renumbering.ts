@@ -6,9 +6,9 @@
  * it to verify the mapping is correct.
  *
  * Usage:
- *   npx tsx scripts/verify-renumbering.ts              # scan what needs verification
- *   npx tsx scripts/verify-renumbering.ts --verify      # run Ollama verification
- *   npx tsx scripts/verify-renumbering.ts --verify --chapter 19:3  # one chapter
+ *   bun scripts/verify-renumbering.ts              # scan what needs verification
+ *   bun scripts/verify-renumbering.ts --verify      # run Ollama verification
+ *   bun scripts/verify-renumbering.ts --verify --chapter 19:3  # one chapter
  */
 
 import { readFileSync, readdirSync, existsSync, statSync, writeFileSync, mkdirSync } from 'fs';

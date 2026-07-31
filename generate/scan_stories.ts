@@ -1073,7 +1073,7 @@ function parseRange(value: string): {start: number, end: number} {
 
 function printUsage() {
     console.log(`
-Usage: node scan_stories.mjs [options]
+Usage: bun scan_stories.ts [options]
 
 Scan mode (default): systematically scan the Bible chapter by chapter and propose
 new stories not yet covered by stories/<lang>/*.json. Proposals land in
@@ -1113,13 +1113,13 @@ Common options:
   --help               Show this help.
 
 Examples:
-  node scan_stories.mjs                             # Scan all narrative books
-  node scan_stories.mjs --book 1 --chapter 12       # Scan Genesis 12
-  node scan_stories.mjs --proofread --apply                       # Proofread proposals, apply
-  node scan_stories.mjs --proofread --source existing --apply     # Proofread existing stories
-  node scan_stories.mjs --proofread --source both --apply         # Both proposed and existing
-  node scan_stories.mjs --proofread --apply --continue            # Resume
-  node scan_stories.mjs --proofread --book 41                     # Mark only, dry-run
+  bun scan_stories.ts                             # Scan all narrative books
+  bun scan_stories.ts --book 1 --chapter 12       # Scan Genesis 12
+  bun scan_stories.ts --proofread --apply                       # Proofread proposals, apply
+  bun scan_stories.ts --proofread --source existing --apply     # Proofread existing stories
+  bun scan_stories.ts --proofread --source both --apply         # Both proposed and existing
+  bun scan_stories.ts --proofread --apply --continue            # Resume
+  bun scan_stories.ts --proofread --book 41                     # Mark only, dry-run
 `);
 }
 

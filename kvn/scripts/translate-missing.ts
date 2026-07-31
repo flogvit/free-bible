@@ -7,9 +7,9 @@
  * 3. Update osmain with the new text
  *
  * Usage:
- *   npx tsx scripts/translate-missing.ts              # scan only
- *   npx tsx scripts/translate-missing.ts --translate   # do the translation
- *   npx tsx scripts/translate-missing.ts --translate --chapter 39:4  # one chapter
+ *   bun scripts/translate-missing.ts              # scan only
+ *   bun scripts/translate-missing.ts --translate   # do the translation
+ *   bun scripts/translate-missing.ts --translate --chapter 39:4  # one chapter
  */
 
 import { readFileSync, readdirSync, existsSync, statSync, writeFileSync, mkdirSync } from 'fs';

@@ -11,10 +11,10 @@
  * then processes them through Ollama one at a time.
  *
  * Usage:
- *   npx tsx scripts/verify-osmain.ts                    # scan only, show what needs work
- *   npx tsx scripts/verify-osmain.ts --verify           # run Ollama verification
- *   npx tsx scripts/verify-osmain.ts --verify --bible english_esv  # verify one bible
- *   npx tsx scripts/verify-osmain.ts --verify --chapter 19:3       # verify one chapter
+ *   bun scripts/verify-osmain.ts                    # scan only, show what needs work
+ *   bun scripts/verify-osmain.ts --verify           # run Ollama verification
+ *   bun scripts/verify-osmain.ts --verify --bible english_esv  # verify one bible
+ *   bun scripts/verify-osmain.ts --verify --chapter 19:3       # verify one chapter
  */
 
 import { readFileSync, readdirSync, existsSync, statSync, writeFileSync } from 'fs';

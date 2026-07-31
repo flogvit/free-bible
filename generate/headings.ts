@@ -250,7 +250,7 @@ async function processChapter(bible: string, language: string, bookId: number, c
 
 function printUsage(): void {
     console.log(`
-Usage: node headings.mjs --bible <name> [options]
+Usage: bun headings.ts --bible <name> [options]
 
 Generate inline section headings for a Bible translation, chapter by chapter.
 Default model: qwen3.5:122b (local Ollama). Pass --remote to use Anthropic Claude.
@@ -270,10 +270,10 @@ Output:
   Language code is derived from the bible (osnb -> nb, osnn -> nn).
 
 Examples:
-  node headings.mjs --bible osnb --book 1 --chapter 1
-  node headings.mjs --bible osnb --book 1
-  node headings.mjs --bible osnb --nt --remote
-  node headings.mjs --bible osnn --force
+  bun headings.ts --bible osnb --book 1 --chapter 1
+  bun headings.ts --bible osnb --book 1
+  bun headings.ts --bible osnb --nt --remote
+  bun headings.ts --bible osnn --force
 `);
 }
 

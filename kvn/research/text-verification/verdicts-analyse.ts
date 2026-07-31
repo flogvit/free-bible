@@ -13,7 +13,7 @@
  * Måles her: fordelingen av dommer per klasse, og hva som skjer med bomrate og
  * eskalering hvis B_EXTRA bare teller når lengden også er unormal.
  *
- *   node verdikt-analyse.mjs [verdict-fil ...]
+ *   bun verdikt-analyse.ts [verdict-fil ...]
  */
 import { readFileSync, readdirSync, writeFileSync } from 'fs';
 import { join, dirname } from 'path';

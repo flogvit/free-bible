@@ -10,8 +10,8 @@
  * Saves results for audit.
  *
  * Usage:
- *   npx tsx scripts/fix-all-renumbering.ts
- *   npx tsx scripts/fix-all-renumbering.ts --dry-run   # show what would change without saving
+ *   bun scripts/fix-all-renumbering.ts
+ *   bun scripts/fix-all-renumbering.ts --dry-run   # show what would change without saving
  */
 
 import { readFileSync, readdirSync, existsSync, statSync, writeFileSync, mkdirSync } from 'fs';

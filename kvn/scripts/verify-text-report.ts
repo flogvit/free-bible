@@ -17,10 +17,10 @@
  * av teksten ble av.
  *
  * Bruk:
- *   npx tsx scripts/verify-text-report.ts                    # sammendrag, alle
- *   npx tsx scripts/verify-text-report.ts kjv spanish        # bare disse
- *   npx tsx scripts/verify-text-report.ts --class WRONG      # bare én klasse
- *   npx tsx scripts/verify-text-report.ts --list --limit 40  # med verstekst
+ *   bun scripts/verify-text-report.ts                    # sammendrag, alle
+ *   bun scripts/verify-text-report.ts kjv spanish        # bare disse
+ *   bun scripts/verify-text-report.ts --class WRONG      # bare én klasse
+ *   bun scripts/verify-text-report.ts --list --limit 40  # med verstekst
  */
 import { readFileSync, writeFileSync, existsSync, readdirSync } from 'fs';
 import { join, dirname } from 'path';

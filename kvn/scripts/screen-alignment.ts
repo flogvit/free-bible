@@ -17,7 +17,7 @@
  * nettopp tittelsalme-klassen og blir UNCLEAR/AUTOFIX.
  *
  * Bruk:
- *   npx tsx scripts/screen-alignment.ts --lengths <fil> [--apply] [oversettelser...]
+ *   bun scripts/screen-alignment.ts --lengths <fil> [--apply] [oversettelser...]
  *
  * Lengdefila: { <oversettelse>: { "bok:kap": [[verseId, tekstlengde], ...] } }
  * (bygges av en scan over generate/bibles_raw). Rapport skrives til

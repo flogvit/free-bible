@@ -12,7 +12,7 @@
 // røres aldri — det er reviewerens (menneskets) jobb via review.mjs.
 //
 // Kjøres under tsx pga. kvn-TS-importene:
-//   npx tsx contrib/check.mjs [--id <id>] [--target-lookup]
+//   bun contrib/check.mjs [--id <id>] [--target-lookup]
 
 import * as fs from 'fs';
 import path from 'path';

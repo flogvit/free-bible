@@ -6,7 +6,7 @@
  * Dette skriptet henter fram de faktiske tekstparene dommeren flagget feilaktig,
  * og de ekte feilene den slapp gjennom.
  *
- *   node inspect.mjs <verdict-fil> [--misses] [--n 15]
+ *   bun inspect.ts <verdict-fil> [--misses] [--n 15]
  */
 import { readFileSync, readdirSync, existsSync } from 'fs';
 import { join, dirname } from 'path';

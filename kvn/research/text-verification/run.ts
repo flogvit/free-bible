@@ -5,8 +5,8 @@
  * modellene på nytt. «Hva blir bomraten hvis gemma4 ELLER lengde ELLER bge-m3
  * slår ut?» er da et spørsmål til en fil, ikke en ny kjøring på flere timer.
  *
- *   node run.mjs <modell> [--prompt E|YN] [--think] [--pivot osmain|bsb|osen] [--shots]
- *   node run.mjs --signals            # mekaniske signaler (bge-m3 + lengde), ingen LLM
+ *   bun run.ts <modell> [--prompt E|YN] [--think] [--pivot osmain|bsb|osen] [--shots]
+ *   bun run.ts --signals            # mekaniske signaler (bge-m3 + lengde), ingen LLM
  *
  * Skriver kvn/research/text-verification/verdicts/<konfig>.json:
  *   { config, cases: [{id, tr, kind, flag}] }

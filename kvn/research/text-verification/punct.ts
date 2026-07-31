@@ -12,7 +12,7 @@
  * ingenting. Falsk alarm-siden er derimot artefaktfri og kan leses som den er.
  * Ekte gjenkall må måles mot ekte avkortninger, ikke mot mine egne.
  *
- *   node punct.mjs
+ *   bun punct.ts
  */
 import { readFileSync, writeFileSync, mkdirSync } from 'fs';
 import { join, dirname } from 'path';

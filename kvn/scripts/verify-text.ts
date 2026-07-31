@@ -55,11 +55,11 @@
  * speiler bibles_raw én-til-én.
  *
  * Bruk:
- *   npx tsx scripts/verify-text.ts --pass prep    --priority 1
- *   npx tsx scripts/verify-text.ts --pass mech    --priority 1
- *   npx tsx scripts/verify-text.ts --pass judge1  --priority 1
- *   npx tsx scripts/verify-text.ts --pass judge2  --priority 1
- *   npx tsx scripts/verify-text.ts --pass verdict --priority 1
+ *   bun scripts/verify-text.ts --pass prep    --priority 1
+ *   bun scripts/verify-text.ts --pass mech    --priority 1
+ *   bun scripts/verify-text.ts --pass judge1  --priority 1
+ *   bun scripts/verify-text.ts --pass judge2  --priority 1
+ *   bun scripts/verify-text.ts --pass verdict --priority 1
  *
  *   ... eller navngi oversettelser i stedet for --priority.
  *   --force        ignorer gjenopptakelsesmarkører

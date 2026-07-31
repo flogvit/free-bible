@@ -2,11 +2,11 @@
  * Generate verse mapping between a Bible translation and osnb (tanach/sblgnt numbering).
  *
  * Usage:
- *   node generate-verse-mapping.mjs <input-file> <mapping-id> [--use-ai]
+ *   bun generate-verse-mapping.ts <input-file> <mapping-id> [--use-ai]
  *
  * Example:
- *   node generate-verse-mapping.mjs ../dnb2011.txt dnb_2011_nb
- *   node generate-verse-mapping.mjs ../dnb2011.txt dnb_2011_nb --use-ai
+ *   bun generate-verse-mapping.ts ../dnb2011.txt dnb_2011_nb
+ *   bun generate-verse-mapping.ts ../dnb2011.txt dnb_2011_nb --use-ai
  *
  * The input file should have one verse per line in the format:
  *   BookName chapter,verse text
@@ -527,7 +527,7 @@ function tryDeterministicMapping(
 async function main(): Promise<void> {
   const args = process.argv.slice(2);
   if (args.length < 2) {
-    console.log('Usage: node generate-verse-mapping.mjs <input-file> <mapping-id> [--use-ai]');
+    console.log('Usage: bun generate-verse-mapping.ts <input-file> <mapping-id> [--use-ai]');
     console.log('');
     console.log('Known mapping IDs:', Object.keys(KNOWN_FORMATS).join(', '));
     process.exit(1);

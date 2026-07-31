@@ -7,6 +7,6 @@ set -u
 cd "$(dirname "$0")"
 step() { echo; echo "=============================================================="; echo "== $1"; echo "=============================================================="; shift; "$@" || echo "!! feilet, fortsetter"; }
 
-step "testsett: svake språk" node matrix.mjs \
+step "testsett: svake språk" bun matrix.ts \
   --tr hcv,maori,my_judson,chinese_union_simp,ta_irv,pa_irv,kn_irv,te_irv \
   --out testset-svak.json

@@ -24,20 +24,20 @@ step() {
 }
 
 # Mekaniske signaler først — de er raske og trenger ingen dommer
-step "mekaniske signaler" node run.mjs --signals --n 40
-step "felles skår"       node joint.mjs --n 40
-step "tegnsetting"       node punct.mjs --n 40
-step "leddekning"        node coverage.mjs 40
-step "rangering"         node rank.mjs 40
+step "mekaniske signaler" bun run.ts --signals --n 40
+step "felles skår"       bun joint.ts --n 40
+step "tegnsetting"       bun punct.ts --n 40
+step "leddekning"        bun coverage.ts 40
+step "rangering"         bun rank.ts 40
 
 # Dommerne. shots-auto er produksjonsvarianten (velger eksempler mekanisk);
 # shots er med for å se om forskjellen holder seg på stort utvalg.
-step "gemma4 mekanisk kalibrert" node run.mjs gemma4:31b --prompt E --shots-auto --n 40
-step "granite4.1"                node run.mjs granite4.1:30b --prompt E --n 40
-step "gemma4 fasit-kalibrert"    node run.mjs gemma4:31b --prompt E --shots --n 40
-step "gemma4 rå"                 node run.mjs gemma4:31b --prompt E --n 40
+step "gemma4 mekanisk kalibrert" bun run.ts gemma4:31b --prompt E --shots-auto --n 40
+step "granite4.1"                bun run.ts granite4.1:30b --prompt E --n 40
+step "gemma4 fasit-kalibrert"    bun run.ts gemma4:31b --prompt E --shots --n 40
+step "gemma4 rå"                 bun run.ts gemma4:31b --prompt E --n 40
 
-step "ensemble"     node ensemble.mjs --dir verdicts-n40 --per-tr --cheapest
-step "holdout"      node ensemble.mjs --dir verdicts-n40 --holdout
-step "stratifisert" node strata.mjs --dir verdicts-n40
-step "verdiktfordeling" node verdicts-analyse.mjs --dir verdicts-n40
+step "ensemble"     bun ensemble.ts --dir verdicts-n40 --per-tr --cheapest
+step "holdout"      bun ensemble.ts --dir verdicts-n40 --holdout
+step "stratifisert" bun strata.ts --dir verdicts-n40
+step "verdiktfordeling" bun verdicts-analyse.ts --dir verdicts-n40

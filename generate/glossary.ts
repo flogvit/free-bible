@@ -18,8 +18,8 @@
  * translation used.
  *
  * Usage:
- *   npx tsx glossary.mjs osen --audit
- *   npx tsx glossary.mjs osen --write
+ *   bun glossary.mjs osen --audit
+ *   bun glossary.mjs osen --write
  */
 
 import * as fs from 'fs';
@@ -318,7 +318,7 @@ function main(): void {
     const bible = args.find(a => !a.startsWith('--'));
     if (!bible || !bibles[bible]) {
         console.log(`
-Usage: npx tsx glossary.mjs <bible> [--audit|--write]
+Usage: bun glossary.mjs <bible> [--audit|--write]
 
   --audit   show which key terms drift, and where the minority renderings are
   --write   emit glossary/<bible>.json for bible.mjs to use in the translation prompt

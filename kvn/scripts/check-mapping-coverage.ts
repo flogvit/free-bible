@@ -22,9 +22,9 @@
  * målet finnes.
  *
  * Bruk:
- *   npx tsx scripts/check-mapping-coverage.ts                  # alle
- *   npx tsx scripts/check-mapping-coverage.ts spanish japanese_jcb
- *   npx tsx scripts/check-mapping-coverage.ts --min 50          # bare de verste
+ *   bun scripts/check-mapping-coverage.ts                  # alle
+ *   bun scripts/check-mapping-coverage.ts spanish japanese_jcb
+ *   bun scripts/check-mapping-coverage.ts --min 50          # bare de verste
  */
 import { readFileSync, writeFileSync, existsSync, readdirSync } from 'fs';
 import { join, dirname } from 'path';

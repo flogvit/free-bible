@@ -14,7 +14,7 @@
  * og en samlerapport i kvn/data/derived-mappings-report.json.
  *
  * Bruk:
- *   npx tsx scripts/build-derived-mappings.ts --fingerprints <fil> [--dry-run]
+ *   bun scripts/build-derived-mappings.ts --fingerprints <fil> [--dry-run]
  *
  * Fingerprint-fila: { <oversettelse>: { "bok:kap": [verseId, ...] } } — bygges av en
  * engangs-scan over generate/bibles_raw (se issue #17).

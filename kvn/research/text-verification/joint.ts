@@ -12,7 +12,7 @@
  *     BÅDE kortere og mindre likt enn ventet er langt mer mistenkelig enn ett
  *     som bare er det ene. Vi slår dem sammen til én avstand.
  *
- *   node joint.mjs
+ *   bun joint.ts
  */
 import { readFileSync, writeFileSync, mkdirSync } from 'fs';
 import { join, dirname } from 'path';

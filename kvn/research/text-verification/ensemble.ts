@@ -9,9 +9,9 @@
  * Derfor optimeres nettet på bomrate alene. Eskaleringskostnaden får løpe:
  * målmaskinen har år til rådighet.
  *
- *   node ensemble.mjs              # alle konfigurasjoner + beste ELLER-nett
- *   node ensemble.mjs --per-tr     # og bomrate per oversettelse
- *   node ensemble.mjs a.json b.json
+ *   bun ensemble.ts              # alle konfigurasjoner + beste ELLER-nett
+ *   bun ensemble.ts --per-tr     # og bomrate per oversettelse
+ *   bun ensemble.ts a.json b.json
  */
 import { readFileSync, readdirSync, existsSync } from 'fs';
 import { join, dirname } from 'path';

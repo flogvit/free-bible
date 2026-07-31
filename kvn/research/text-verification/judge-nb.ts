@@ -8,7 +8,7 @@
  *
  * Krever at backtranslate.mjs har kjørt og skrevet backtranslations.json.
  *
- *   node judge-nb.mjs [modell]
+ *   bun judge-nb.ts [modell]
  */
 import { readFileSync, writeFileSync, existsSync, mkdirSync } from 'fs';
 import { join, dirname } from 'path';

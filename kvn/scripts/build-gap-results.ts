@@ -13,7 +13,7 @@
  * generate-mapping.ts (resume) never sends them to Ollama. Reports the
  * remaining "real" chapters per translation.
  *
- * Usage: node scripts/build-gap-results.mjs [--only m1,m2]
+ * Usage: bun scripts/build-gap-results.ts [--only m1,m2]
  */
 import fs from 'fs';
 import { join, dirname } from 'path';

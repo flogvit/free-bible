@@ -26,9 +26,9 @@
  *               attempts in the prompt. Re-translating costs ~1/16 of proofreading.
  *
  * Usage:
- *   npx tsx triage.mjs osen --book 1
- *   npx tsx triage.mjs osen --nt --min-score 6 --drop
- *   npx tsx triage.mjs osen --book 1-20 --recheck
+ *   bun triage.mjs osen --book 1
+ *   bun triage.mjs osen --nt --min-score 6 --drop
+ *   bun triage.mjs osen --book 1-20 --recheck
  */
 
 import dotenv from 'dotenv';
@@ -506,7 +506,7 @@ function parseRange(value: string): Range {
 
 function printUsage(): void {
     console.log(`
-Usage: npx tsx triage.mjs <bible> [options]
+Usage: bun triage.mjs <bible> [options]
 
 Scores every verse with a local model and flags the ones worth sending to Claude.
 
@@ -527,9 +527,9 @@ Options:
   --help
 
 Examples:
-  npx tsx triage.mjs osen --book 1
-  npx tsx triage.mjs osen --nt --min-score 6 --drop
-  npx tsx triage.mjs osen --book 1-20 --recheck
+  bun triage.mjs osen --book 1
+  bun triage.mjs osen --nt --min-score 6 --drop
+  bun triage.mjs osen --book 1-20 --recheck
 `);
 }
 
@@ -615,7 +615,7 @@ async function main(): Promise<void> {
     console.log(`Scanned ${totals.scanned}, flagged ${totals.flagged} (${pct}%), mechanical findings on ${totals.mechanical}${options.drop ? `, dropped ${totals.dropped}` : ''}`);
     if (totals.flagged) {
         console.log(options.drop
-            ? `Re-translate with: node bible.mjs ${options.bible} --style oral`
+            ? `Re-translate with: bun bible.ts ${options.bible} --style oral`
             : `Flagged verses carry triage.flagged — proofread only those.`);
     }
 }

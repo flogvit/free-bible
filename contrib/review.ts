@@ -2,11 +2,11 @@
 // Review av contrib-køfiler. Mennesket setter status; LLM-en gir bare en
 // anbefaling i review.note (skjemaets regel: alt menneske-reviewes).
 //
-//   npx tsx contrib/review.mjs --list
-//   npx tsx contrib/review.mjs --llm [--id <id>]        # Claude-anbefaling → note
-//   npx tsx contrib/review.mjs --approve --id <id> [--note "…"]
-//   npx tsx contrib/review.mjs --reject  --id <id> [--note "…"]
-//   npx tsx contrib/review.mjs --needs-info --id <id> --note "spørsmål til bidragsyter"
+//   bun contrib/review.mjs --list
+//   bun contrib/review.mjs --llm [--id <id>]        # Claude-anbefaling → note
+//   bun contrib/review.mjs --approve --id <id> [--note "…"]
+//   bun contrib/review.mjs --reject  --id <id> [--note "…"]
+//   bun contrib/review.mjs --needs-info --id <id> --note "spørsmål til bidragsyter"
 //
 // Approve-vakt (fra skjemaet): hver ref må ha kvnFrom/kvnTo, og target må ha
 // en konkret id (catalog_id/doi/isbn/openlibrary_id — freetext/url er ikke nok).

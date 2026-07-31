@@ -14,7 +14,7 @@
  *   rank1   flagg hvis et annet osmain-vers i kapitlet likner mer
  *   margin  flagg hvis forspranget til nummer to er lite (usikker match)
  *
- *   node rank.mjs [antall-per-klasse]
+ *   bun rank.ts [antall-per-klasse]
  */
 import { readFileSync, writeFileSync, existsSync, mkdirSync } from 'fs';
 import { join, dirname } from 'path';

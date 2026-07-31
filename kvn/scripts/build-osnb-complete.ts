@@ -6,7 +6,7 @@
  *
  * Also writes kvn/data/osnb-additions.json with metadata for each added verse.
  *
- * Run: npx tsx kvn/scripts/build-osnb-complete.ts
+ * Run: bun kvn/scripts/build-osnb-complete.ts
  */
 
 import { readFileSync, writeFileSync, readdirSync, existsSync, mkdirSync } from 'fs';

@@ -19,12 +19,12 @@
  * <shard> = first 2 hex chars of sha256(id), 256 buckets.
  *
  * Usage:
- *   node articles/harvest.mjs meta   [--journal key] [--limit N] [--full]
- *   node articles/harvest.mjs pdf    [--journal key] [--limit N]
- *   node articles/harvest.mjs text   [--journal key] [--limit N]
- *   node articles/harvest.mjs all    [--journal key] [--limit N]
- *   node articles/harvest.mjs status
- *   node articles/harvest.mjs prune  [--journal key]   # delete PDFs whose text is
+ *   bun articles/harvest.ts meta   [--journal key] [--limit N] [--full]
+ *   bun articles/harvest.ts pdf    [--journal key] [--limit N]
+ *   bun articles/harvest.ts text   [--journal key] [--limit N]
+ *   bun articles/harvest.ts all    [--journal key] [--limit N]
+ *   bun articles/harvest.ts status
+ *   bun articles/harvest.ts prune  [--journal key]   # delete PDFs whose text is
  *                                    # extracted (explicit user decision only)
  *
  * Text files keep pdftotext page breaks (\f) so a parser can locate the PDF page
@@ -613,7 +613,7 @@ async function main() {
   const full = args.includes('--full');
 
   if (!['meta', 'pdf', 'text', 'all', 'status', 'prune'].includes(phase)) {
-    console.log('Usage: node articles/harvest.mjs <meta|pdf|text|all|status|prune> [--journal key] [--limit N] [--full]');
+    console.log('Usage: bun articles/harvest.ts <meta|pdf|text|all|status|prune> [--journal key] [--limit N] [--full]');
     process.exit(1);
   }
 

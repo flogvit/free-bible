@@ -13,8 +13,8 @@
  * utvalg, og resultatet legges i bench-results.json. Ferdige konfigurasjoner
  * hoppes over, så kjøringen kan gå i dagevis og avbrytes når som helst.
  *
- *   node bench.mjs <modell[,modell...]> [--prompts E,YN] [--think] [--n 4]
- *   node bench.mjs --report
+ *   bun bench.ts <modell[,modell...]> [--prompts E,YN] [--think] [--n 4]
+ *   bun bench.ts --report
  */
 import { readFileSync, writeFileSync, existsSync } from 'fs';
 const DIR = '/private/tmp/claude-501/-Users-vhanssen-WebstormProjects-flogvit-free-bible/d75e4318-6f77-4d5f-a6f5-6476f4c272c0/scratchpad';

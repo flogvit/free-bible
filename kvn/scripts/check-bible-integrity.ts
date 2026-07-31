@@ -13,9 +13,9 @@
  * are reported separately, not as failures.
  *
  * Usage:
- *   node scripts/check-bible-integrity.mjs            # scan all, list problems
- *   node scripts/check-bible-integrity.mjs --only kjv,web
- *   node scripts/check-bible-integrity.mjs --all      # include clean ones
+ *   bun scripts/check-bible-integrity.ts            # scan all, list problems
+ *   bun scripts/check-bible-integrity.ts --only kjv,web
+ *   bun scripts/check-bible-integrity.ts --all      # include clean ones
  * Exit code 1 if any translation has a (non-benign) problem.
  */
 import fs from 'fs';

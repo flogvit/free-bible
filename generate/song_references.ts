@@ -11,13 +11,13 @@
  * Resumable: skips songs that already have a result file.
  *
  * Usage:
- *   node song_references.mjs                    # Process all songs
- *   node song_references.mjs --lang nb           # Only Norwegian bokmål
- *   node song_references.mjs --lang en           # Only English
- *   node song_references.mjs --id song-0217      # Process one specific song
- *   node song_references.mjs --limit 50          # Process max 50 songs
- *   node song_references.mjs --model gemma4:31b  # Use specific model
- *   node song_references.mjs --force             # Re-process even if result exists
+ *   bun song_references.ts                    # Process all songs
+ *   bun song_references.ts --lang nb           # Only Norwegian bokmål
+ *   bun song_references.ts --lang en           # Only English
+ *   bun song_references.ts --id song-0217      # Process one specific song
+ *   bun song_references.ts --limit 50          # Process max 50 songs
+ *   bun song_references.ts --model gemma4:31b  # Use specific model
+ *   bun song_references.ts --force             # Re-process even if result exists
  */
 
 import fs from 'fs';
@@ -624,7 +624,7 @@ function parseArgs(): Options {
         } else if (args[i] === '--force') {
             options.force = true;
         } else if (args[i] === '--help') {
-            console.log(`Usage: node song_references.mjs [options]
+            console.log(`Usage: bun song_references.ts [options]
   --lang <nb|en|da-no-historic>  Filter by language
   --id <song-XXXX>               Process one song
   --limit <n>                    Max songs to process

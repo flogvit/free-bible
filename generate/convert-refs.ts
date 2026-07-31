@@ -3,7 +3,7 @@
  * convert-refs.mjs — Convert plain-text Bible references to [ref:...|...] markup.
  *
  * Usage:
- *   node convert-refs.mjs [--dry-run] [--stats] [--verify] [--path <glob>]
+ *   bun convert-refs.ts [--dry-run] [--stats] [--verify] [--path <glob>]
  */
 
 import * as fs from 'fs';
@@ -576,7 +576,7 @@ function parseArgs(args: string[]): Options {
     else if (arg === '--path' && i + 1 < args.length) options.pathGlob = args[++i];
     else if (arg === '--help') {
       console.log(`
-Usage: node convert-refs.mjs [options]
+Usage: bun convert-refs.ts [options]
 
 Options:
   --dry-run    Show what would change without writing files

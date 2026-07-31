@@ -895,7 +895,7 @@ function parseRange(value: string): {start: number, end: number} {
 
 function printUsage() {
     console.log(`
-Usage: node bible_persons.mjs [options] [person-id|name|all]
+Usage: bun bible_persons.ts [options] [person-id|name|all]
 
 Modes:
   <person-id|name>     Generate a single person profile
@@ -917,15 +917,15 @@ Options:
   --help               Show this help message
 
 Examples:
-  node bible_persons.mjs abraham                            # Generate Abraham
-  node bible_persons.mjs "Set (Adams sønn)"                 # Generate new person
-  node bible_persons.mjs all                                # Generate all pre-defined
-  node bible_persons.mjs --bible osnb --index              # Index entire bible
-  node bible_persons.mjs --bible osnb --index --book 1     # Index Genesis only
-  node bible_persons.mjs --bible osnb --index --nt         # Index NT only
-  node bible_persons.mjs --proofread --apply                # Proofread all persons
-  node bible_persons.mjs --proofread --apply --continue      # Resume from where you left off
-  node bible_persons.mjs --proofread --apply --min-score 9  # Higher quality bar
+  bun bible_persons.ts abraham                            # Generate Abraham
+  bun bible_persons.ts "Set (Adams sønn)"                 # Generate new person
+  bun bible_persons.ts all                                # Generate all pre-defined
+  bun bible_persons.ts --bible osnb --index              # Index entire bible
+  bun bible_persons.ts --bible osnb --index --book 1     # Index Genesis only
+  bun bible_persons.ts --bible osnb --index --nt         # Index NT only
+  bun bible_persons.ts --proofread --apply                # Proofread all persons
+  bun bible_persons.ts --proofread --apply --continue      # Resume from where you left off
+  bun bible_persons.ts --proofread --apply --min-score 9  # Higher quality bar
 `);
 }
 

@@ -17,11 +17,11 @@
  * Output: mapping file in kvn/mappings/<system>.ukvn.json
  *
  * Usage:
- *   npx tsx scripts/generate-mapping.ts --source dnb2011_nb --format txt
- *   npx tsx scripts/generate-mapping.ts --source english_kj --format raw
- *   npx tsx scripts/generate-mapping.ts --source dnb2011_nb --format txt --chapter 19:3
- *   npx tsx scripts/generate-mapping.ts --source dnb2011_nb --format txt --dry-run
- *   npx tsx scripts/generate-mapping.ts --source dnb2011_nb --format txt --model gemma4:31b
+ *   bun scripts/generate-mapping.ts --source dnb2011_nb --format txt
+ *   bun scripts/generate-mapping.ts --source english_kj --format raw
+ *   bun scripts/generate-mapping.ts --source dnb2011_nb --format txt --chapter 19:3
+ *   bun scripts/generate-mapping.ts --source dnb2011_nb --format txt --dry-run
+ *   bun scripts/generate-mapping.ts --source dnb2011_nb --format txt --model gemma4:31b
  */
 
 import { readFileSync, readdirSync, existsSync, statSync, writeFileSync, mkdirSync } from 'fs';

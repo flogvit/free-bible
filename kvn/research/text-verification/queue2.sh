@@ -21,12 +21,12 @@ step() {
 
 # --- Kalibrering uten fasit. Kritisk: --shots tar eksemplene fra fasiten, som
 #     ikke finnes i produksjon. --shots-auto velger dem på likhet og lengde.
-step "gemma4 kalibrert MEKANISK"  node run.mjs gemma4:31b --prompt E --shots-auto --n 6
-step "ensemble n=6"               node ensemble.mjs --cheapest
+step "gemma4 kalibrert MEKANISK"  bun run.ts gemma4:31b --prompt E --shots-auto --n 6
+step "ensemble n=6"               bun ensemble.ts --cheapest
 
 # --- Kompetanse per oversettelse. Trenger ingen fasit, så den kan kjøres på
 #     alle 1158. Avgjør hvilken protokoll hver oversettelse trenger.
-step "kompetanse: 32 pri1-språk" node competence.mjs \
+step "kompetanse: 32 pri1-språk" bun competence.ts \
   kjv,bsb,luther_1912,segond_1910,rv_1909,synodal,diodati,almeida_rc,cornilescu,albanian,swahili,thaikjv,cadman,indo_tm,tagab,maori,hcv,my_judson,bn_irv,ta_irv,te_irv,kn_irv,gu_irv,mr_irv,pa_irv,irv,ha_con,kougo,chinese_union_simp,svd,opt,finn \
   --n 30
 
@@ -35,23 +35,23 @@ step "kompetanse: 32 pri1-språk" node competence.mjs \
 # ============================================================
 # Null bom på 210 forsøk betyr «under 1,4 % med 95 % sikkerhet», ikke null.
 # ~1900 par gir ~1400 ekte feil og ~50 per forskyvningsbånd.
-step "BEKREFT: mekaniske signaler" node run.mjs --signals --n 40
-step "BEKREFT: felles skår"        node joint.mjs --n 40
-step "BEKREFT: tegnsetting"        node punct.mjs --n 40
-step "BEKREFT: leddekning"         node coverage.mjs 40
-step "BEKREFT: rangering"          node rank.mjs 40
-step "BEKREFT: gemma4 kalibrert"   node run.mjs gemma4:31b --prompt E --shots --n 40
-step "BEKREFT: gemma4 mekanisk kal." node run.mjs gemma4:31b --prompt E --shots-auto --n 40
-step "BEKREFT: gemma4 rå"          node run.mjs gemma4:31b --prompt E --n 40
-step "BEKREFT: ensemble"           node ensemble.mjs --dir verdicts-n40 --per-tr --cheapest
-step "BEKREFT: holdout"            node ensemble.mjs --dir verdicts-n40 --holdout
-step "BEKREFT: stratifisert"       node strata.mjs --dir verdicts-n40
+step "BEKREFT: mekaniske signaler" bun run.ts --signals --n 40
+step "BEKREFT: felles skår"        bun joint.ts --n 40
+step "BEKREFT: tegnsetting"        bun punct.ts --n 40
+step "BEKREFT: leddekning"         bun coverage.ts 40
+step "BEKREFT: rangering"          bun rank.ts 40
+step "BEKREFT: gemma4 kalibrert"   bun run.ts gemma4:31b --prompt E --shots --n 40
+step "BEKREFT: gemma4 mekanisk kal." bun run.ts gemma4:31b --prompt E --shots-auto --n 40
+step "BEKREFT: gemma4 rå"          bun run.ts gemma4:31b --prompt E --n 40
+step "BEKREFT: ensemble"           bun ensemble.ts --dir verdicts-n40 --per-tr --cheapest
+step "BEKREFT: holdout"            bun ensemble.ts --dir verdicts-n40 --holdout
+step "BEKREFT: stratifisert"       bun strata.ts --dir verdicts-n40
 
 # --- Er falsk alarm systematisk B_EXTRA? ---
 # 15 av 15 leste falske alarmer var B_EXTRA: osmain er bygget fra osnb og er
 # tersere enn ordrette oversettelser, så KJV og Reina-Valera «har mer» uten at
 # noe er galt. Fletting — den ekte feilen B_EXTRA skal fange — gir et HELT
 # ekstra vers og slår derfor også ut på lengde. Så B_EXTRA alene bør ikke flagge.
-step "verdikt lagret: gemma4 mek.kal." node run.mjs gemma4:31b --prompt E --shots-auto --n 6 --force
-step "verdikt lagret: granite"         node run.mjs granite4.1:30b --prompt E --n 6 --force
-step "ensemble m/verdikter"            node ensemble.mjs --cheapest
+step "verdikt lagret: gemma4 mek.kal." bun run.ts gemma4:31b --prompt E --shots-auto --n 6 --force
+step "verdikt lagret: granite"         bun run.ts granite4.1:30b --prompt E --n 6 --force
+step "ensemble m/verdikter"            bun ensemble.ts --cheapest

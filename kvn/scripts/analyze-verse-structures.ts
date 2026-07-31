@@ -5,7 +5,7 @@
  * report of verse numbering traditions, chapter counts, verse gaps, and outliers.
  *
  * Output: kvn/data/verse-structure-report.json
- * Run:    npx tsx kvn/scripts/analyze-verse-structures.ts
+ * Run:    bun kvn/scripts/analyze-verse-structures.ts
  */
 
 import { readFileSync, writeFileSync, readdirSync, existsSync, mkdirSync } from 'fs';

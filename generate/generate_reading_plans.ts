@@ -3,7 +3,7 @@
  * Unified reading plan generator
  * Generates all reading plans from configuration
  *
- * Run with: node generate_reading_plans.mjs
+ * Run with: bun generate_reading_plans.ts
  */
 
 import fs from 'fs';

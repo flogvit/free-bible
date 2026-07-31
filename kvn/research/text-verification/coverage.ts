@@ -17,7 +17,7 @@
  *     kalibrert til 0 % falsk alarm. Vi lager både en bevis-variant (0 %) og en
  *     nett-variant (noen få prosent), og lar ensemblet velge.
  *
- *   node coverage.mjs [antall-per-klasse]
+ *   bun coverage.ts [antall-per-klasse]
  */
 import { readFileSync, writeFileSync, mkdirSync } from 'fs';
 import { join, dirname } from 'path';

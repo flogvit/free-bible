@@ -6,7 +6,7 @@
  * ment, så spørsmålet avgjøres på tekst: likner osmains hele vers mest på
  * oversettelsens X, på X+1, eller på X og X+1 satt sammen?
  *
- *   node partzero.mjs [antall]
+ *   bun partzero.ts [antall]
  */
 import { readFileSync, readdirSync, existsSync } from 'fs';
 import { join, dirname } from 'path';

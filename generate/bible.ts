@@ -1493,7 +1493,7 @@ async function proofreadChapterBatched(bible: string, bookId: number, chapterId:
 
 function printUsage(): void {
     console.log(`
-Usage: node bible_test.mjs <bible> [options]
+Usage: bun bible_test.ts <bible> [options]
 
 Arguments:
   bible              Bible version to work with (e.g., osnb, osnn, osen)
@@ -1520,9 +1520,9 @@ Options:
   --help             Show this help message
 
 Examples:
-  node bible_test.mjs osnb --style oral --nt
-  node bible_test.mjs osnb --book 43 --chapter 1-11
-  node bible_test.mjs osnb --nt --proofread --apply
+  bun bible_test.ts osnb --style oral --nt
+  bun bible_test.ts osnb --book 43 --chapter 1-11
+  bun bible_test.ts osnb --nt --proofread --apply
 `);
 }
 

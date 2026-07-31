@@ -12,7 +12,7 @@
  * For dyrt til det uttømmende laget (én generering per vers), men det er akkurat
  * det runde to skal være: dyrt, og bare på det som allerede er flagget.
  *
- *   node backtranslate.mjs [modell] [--n 6]
+ *   bun backtranslate.ts [modell] [--n 6]
  */
 import { readFileSync, writeFileSync, mkdirSync } from 'fs';
 import { join, dirname } from 'path';

@@ -12,7 +12,7 @@
  * mapped to a far-away osmain verse. (Works for Latin-script translations;
  * Hebrew/other scripts share fewer anchors so fewer verses are checkable.)
  *
- * Usage: node scripts/verify-mapping-anchors.mjs <translation>
+ * Usage: bun scripts/verify-mapping-anchors.ts <translation>
  */
 import fs from 'fs';
 import { join, dirname } from 'path';

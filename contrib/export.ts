@@ -9,7 +9,7 @@
 // når credit=true. user_id forlater aldri frontend-databasen (står ikke i
 // køfila på eksporterbar form utover submitted.by — som ikke eksporteres).
 //
-//   npx tsx contrib/export.mjs [--lookup]
+//   bun contrib/export.mjs [--lookup]
 //
 // --lookup henter tittel/forfattere/år fra Crossref (DOI) / OpenLibrary (ISBN)
 // og overstyrer freetext-metadataene.

@@ -20,7 +20,7 @@
  * Steg 2 velger IKKE de letteste parene — det ville gitt et pyntet tall. Det
  * fjerner bare dem vi har mekanisk grunn til å tro er ekte feil.
  *
- *   node competence.mjs <oversettelse[,oversettelse...]> [--n 40] [--model gemma4:31b]
+ *   bun competence.ts <oversettelse[,oversettelse...]> [--n 40] [--model gemma4:31b]
  */
 import { readFileSync, writeFileSync, existsSync, readdirSync, mkdirSync } from 'fs';
 import { join, dirname } from 'path';

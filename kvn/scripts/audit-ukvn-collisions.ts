@@ -10,7 +10,7 @@
  *  - KOLLISJON: identitetsfallback treffer samme oversettelsesvers som en entry
  *  - DANGLING: entry peker på oversettelsesvers som ikke finnes i dataene
  *
- * Bruk: npx tsx scripts/audit-ukvn-collisions.ts [mappingnavn ...]
+ * Bruk: bun scripts/audit-ukvn-collisions.ts [mappingnavn ...]
  * Uten argumenter auditeres alle mappinger som har bibeldata med samme navn.
  */
 import { readFileSync, existsSync } from 'fs';

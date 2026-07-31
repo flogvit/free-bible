@@ -4,7 +4,7 @@
  * osmain text, translation text, and the proposed mapping from its result file,
  * so a human can verify the alignment is correct.
  *
- * Usage: node scripts/review-mapping.mjs <translation> [chapter]
+ * Usage: bun scripts/review-mapping.ts <translation> [chapter]
  */
 import fs from 'fs';
 import { join, dirname } from 'path';

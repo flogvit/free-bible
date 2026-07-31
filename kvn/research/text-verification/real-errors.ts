@@ -9,7 +9,7 @@
  * at en detektor kan se en feil jeg selv har laget; dette viser om den ser feil
  * som faktisk har stått i dataene.
  *
- *   node real-errors.mjs [modell]
+ *   bun real-errors.ts [modell]
  */
 import { readFileSync, existsSync } from 'fs';
 import { join, dirname } from 'path';

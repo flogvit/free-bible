@@ -5,9 +5,9 @@
  * Measures: speed, JSON compliance, mapping accuracy.
  *
  * Usage:
- *   npx tsx scripts/benchmark-mapping-models.ts
- *   npx tsx scripts/benchmark-mapping-models.ts --models qwen3.5:122b,gemma4:31b
- *   npx tsx scripts/benchmark-mapping-models.ts --warmup   # warmup each model first
+ *   bun scripts/benchmark-mapping-models.ts
+ *   bun scripts/benchmark-mapping-models.ts --models qwen3.5:122b,gemma4:31b
+ *   bun scripts/benchmark-mapping-models.ts --warmup   # warmup each model first
  */
 
 import { readFileSync, existsSync } from 'fs';
