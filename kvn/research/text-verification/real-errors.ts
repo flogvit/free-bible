@@ -1,7 +1,7 @@
 /**
  * Validering mot EKTE mappingfeil, ikke syntetiske.
  *
- * FUNN.md dokumenterer feil med kjent fasit. For hver av dem vet vi både hva
+ * FINDINGS.md dokumenterer feil med kjent fasit. For hver av dem vet vi både hva
  * mappingen sa og hva den skulle ha sagt, så vi kan måle om detektorene skiller
  * de to — og like viktig: om de lar den riktige varianten være i fred.
  *
@@ -84,7 +84,7 @@ const FASIT: Fasit[] = [
   ...[1, 2, 3, 4, 5].map(v => ({ tr: 'basque', b: 19, c: 110, trV: v, feil: v, rett: v, feilKap: 110, rettKap: 111, hva: `basque Sal 110,${v} — er osmain 111` })),
 ];
 
-console.log(`${FASIT.length} kjente feil fra FUNN.md\n`);
+console.log(`${FASIT.length} kjente feil fra FINDINGS.md\n`);
 console.log(`${'sak'.padEnd(46)} ${'sim feil'.padStart(9)} ${'sim rett'.padStart(9)}  ${'dom(feil)'.padEnd(12)} ${'dom(rett)'.padEnd(12)}`);
 
 let simOK = 0, judgeOK = 0, judgeQuiet = 0, n = 0;

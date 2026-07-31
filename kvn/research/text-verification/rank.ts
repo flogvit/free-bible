@@ -1,7 +1,7 @@
 /**
  * Rangeringssignal: er det mapper-utpekte osmain-verset det som likner mest?
  *
- * På de 13 ekte feilene fra FUNN.md rangerte bge-m3 riktig vers over det gale
+ * På de 13 ekte feilene fra FINDINGS.md rangerte bge-m3 riktig vers over det gale
  * 13 av 13 — også der de absolutte likhetstallene var lave (basque Sal 110 lå
  * på 0,41-0,61 uansett). Rangering tåler at et språk gir svak absolutt likhet;
  * en terskel gjør det ikke.

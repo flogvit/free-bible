@@ -1,54 +1,56 @@
-# contrib — crowd-innsendte artikler/bøker med versreferanser
+# contrib — crowd-submitted articles and books with verse references
 
-Brukere på bible.flogvit.com melder inn artikler/bøker/sanger som omtaler bibelvers
-(issues #15/#16). Kontrakten er `verse-ref-contrib.schema.json`
-(`free-bible-contrib/1`), eksempler i `examples/`.
+Users on bible.flogvit.com submit articles, books and songs that discuss Bible
+verses (issues #15 and #16). The contract is `verse-ref-contrib.schema.json`
+(`free-bible-contrib/1`), with examples in `examples/`.
 
-**Arbeidsdeling:** bibel-appen eier databasen og alt som rører den; free-bible
-ser bare filer. `contrib/queue/*.json` (gitignort) er stafettpinnen — filnavn =
-bibel-DB-id, innholdet er skjemadokumentet.
+**Division of labour:** the bible app owns the database and everything touching
+it; free-bible only ever sees files. `contrib/queue/*.json` (gitignored) is the
+baton — the filename is the bible database id, the content is the schema
+document.
 
-**KVN-regelen:** bidragsyteren oppgir kun `raw` + `context_translation`.
-`kvnFrom`/`kvnTo` er **bit-shift-`encode()`** fra `kvn/src/types.ts`
-(Esra 3:1 = 15740944) — aldri `ukvnEncode`-verdiene. Oppløsningen går
-`parseRef` (i oversettelsens nummerering) → ukvn-mapping → osmain → `encode`.
+**The KVN rule:** the contributor supplies only `raw` and
+`context_translation`. `kvnFrom` and `kvnTo` are the **bit-shift `encode()`**
+from `kvn/src/types.ts` (Ezra 3:1 = 15740944) — never the `ukvnEncode` values.
+Resolution goes `parseRef` (in the translation's own numbering) → ukvn mapping →
+osmain → `encode`.
 
-**PII:** e-post/konto-id blir i bibel-DB-en. Ved eksport publiseres aldri
-`where.quote` (opphavsrett), aldri `raw`/`context_translation`, og navn kun
-når `credit=true`.
+**Personal data:** email addresses and account ids stay in the bible database. On
+export, `where.quote` is never published (copyright), nor are `raw` and
+`context_translation`, and names only when `credit=true`.
 
 ## Runbook
 
 ```bash
-# 1. Hent ventende innsendinger fra bibel (kjøres i bibel/):
+# 1. Fetch pending submissions from the bible app (run inside bibel/):
 CONTRIB_TOKEN=… bun scripts/contrib-pull.ts
 
-# 2. Maskinsjekk: strukturvalidering + KVN-oppløsning + target-oppslag:
+# 2. Machine check: structural validation, KVN resolution, target lookup:
 bun contrib/check.ts --target-lookup
 
-# 3. Review — LLM-anbefaling i note, menneske setter status:
+# 3. Review — an LLM writes a recommendation into the note, a human sets status:
 bun contrib/review.ts --llm
 bun contrib/review.ts --list
 bun contrib/review.ts --approve --id <id>
-bun contrib/review.ts --needs-info --id <id> --note "spørsmål"
+bun contrib/review.ts --needs-info --id <id> --note "question"
 
-# 4. Eksporter godkjente til kuratert data (FØR apply):
+# 4. Export the approved ones to curated data (BEFORE apply):
 bun contrib/export.ts --lookup        # → generate/verse_works/<workId>.json
 
-# 5. Skriv status tilbake til bibel-DB og arkiver køfilene (i bibel/):
+# 5. Write status back to the bible database and archive the queue files (in bibel/):
 CONTRIB_TOKEN=… bun scripts/contrib-apply.ts
 
-# 6. Synk inn i bibel-appen (i bibel/):
+# 6. Sync into the bible app (in bibel/):
 bun scripts/import-bible.ts
 deploy/deploy-bibel-data.sh works work_verse_refs
 ```
 
-Approve-vakten i `review.ts` håndhever skjemaets regel: godkjenning krever at
-hver ref har `kvnFrom`/`kvnTo` og at target har en konkret id (DOI/ISBN/
-OpenLibrary/katalog-id — fritekst/URL alene er ikke nok; for sang holder song_id
-eller tittel, som export.ts slugger til `sang-<slug>`). `needs_info` sendes
-tilbake til bidragsyteren i frontend-UI-et og blir `pending` igjen når de
-svarer.
+The approve guard in `review.ts` enforces the schema's rule: approval requires
+every reference to have `kvnFrom` and `kvnTo`, and the target to have a concrete
+id — DOI, ISBN, OpenLibrary or catalogue id. Free text or a bare URL is not
+enough; for a song, a `song_id` or a title is sufficient, and `export.ts` slugs
+the title to `sang-<slug>`. `needs_info` is sent back to the contributor in the
+frontend and returns to `pending` when they answer.
 
-`CONTRIB_TOKEN` er delt hemmelighet med bibel-tjenesten (`bibel.env` i prod,
-`bibel/.env` lokalt); uten den finnes ikke admin-endepunktene.
+`CONTRIB_TOKEN` is a shared secret with the bible service (`bibel.env` in
+production, `bibel/.env` locally); without it the admin endpoints do not exist.

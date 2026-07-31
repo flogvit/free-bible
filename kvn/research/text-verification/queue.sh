@@ -53,7 +53,7 @@ done
 
 step "ENSEMBLE"            bun ensemble.ts --per-tr
 step "STRATIFISERT"        bun strata.ts
-step "EKTE FEIL (FUNN.md)" bun real-errors.ts gemma4:31b
+step "EKTE FEIL (FINDINGS.md)" bun real-errors.ts gemma4:31b
 
 # --- Tillegg: identitet og dekning som ADSKILTE spørsmål ---
 # Å spørre «bærer de samme innhold?» blander to ting. Identitet (er dette samme

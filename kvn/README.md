@@ -1,319 +1,339 @@
-# KVN — Kanonisk Versnummer
+# KVN — Canonical Verse Number
 
-KVN er et kanonisk nummereringssystem for bibelvers. Hvert vers i Bibelen
-får et unikt tall basert på osmain-koordinater (bok, kapittel, vers, del).
+KVN is a canonical numbering system for Bible verses. Every verse in the Bible
+gets a unique number based on osmain coordinates (book, chapter, verse, part).
 
-Systemet løser problemet med at ulike bibeloversettelser nummererer vers
-forskjellig. Ved å ha én kanonisk nummerering (osmain) som alle oversettelser
-mappes til, kan man slå opp vers på tvers av oversettelser.
+It solves the problem that different Bible translations number verses
+differently. With one canonical numbering (osmain) that every translation maps
+to, verses can be looked up across translations.
 
-## Arkitektur
+## Architecture
 
 ```
-KJV vers ──→ KJV-mapping ──→ osmain KVN ──→ DNB2024-mapping ──→ DNB2024 vers
-              (toKvn)                         (toTkvn)
+KJV verse ──→ KJV mapping ──→ osmain KVN ──→ DNB2024 mapping ──→ DNB2024 verse
+               (toKvn)                          (toTkvn)
 ```
 
-Hver oversettelse lagrer tekst med sine **egne versnummer** (ikke KVN).
-Konvertering mellom oversettelser skjer i runtime via `CrossMapper`,
-som kjeder to mappinger gjennom osmain som pivot. Map-lookup er O(1),
-så konvertering av 1000 vers tar under 1ms.
+Each translation stores its text with **its own verse numbers** (not KVN).
+Conversion between translations happens at runtime through `CrossMapper`, which
+chains two mappings through osmain as the pivot. Map lookup is O(1), so
+converting 1,000 verses takes under 1 ms.
 
-Å lagre i oversettelsens originalnummer (ikke KVN) er et bevisst valg:
-- Dataene er selvforklarende og matcher trykte bibler
-- Nye oversettelser kan legges til uten datamigrering
-- Sub-vers (parts) trenger ikke eksponeres til konsumenter
-- Konverteringen er billig nok til å gjøres on-the-fly
+Storing verses in the translation's own numbering rather than in KVN is a
+deliberate choice:
+
+- The data is self-explanatory and matches printed Bibles
+- New translations can be added without migrating data
+- Sub-verses (parts) need not be exposed to consumers
+- The conversion is cheap enough to do on the fly
 
 ## osmain
 
-osmain er masterbibeloversettelsen som definerer KVN-koordinatsystemet.
-Den er bygget fra osnb (tanach/sblgnt) og utvidet med vers fra alle
-kjente bibeltradisjoner. Teksten er på norsk bokmål.
+osmain is the master translation that defines the KVN coordinate system. It is
+built from osnb (tanach/sblgnt) and extended with verses from all known Bible
+traditions. The text is in Norwegian bokmål.
 
-- **31 069 vers** fra osnb (`source: tanach/sblgnt`)
-- **56 oversatte vers** fra andre tradisjoner (`source: translated`)
-- Nummerering følger flertallet av ~1148 bibler (europeisk/protestantisk)
-- Salmeoverskrifter er innbakt i vers 1 (slått sammen med innholdet)
+- **31,069 verses** from osnb (`source: tanach/sblgnt`)
+- **56 translated verses** from other traditions (`source: translated`)
+- The numbering follows the majority of ~1,148 Bibles (European/Protestant)
+- Psalm titles are folded into verse 1 (merged with the content)
 
-osmain ligger i `generate/bibles_raw/osmain/`.
+osmain lives in `generate/bibles_raw/osmain/`.
 
-### Forholdet mellom osmain og osnb
+### The relationship between osmain and osnb
 
-osnb er kildebibelen (hebraisk/gresk nummerering). osmain er bygget
-fra osnb men renummerert til flertallsnummereringen. Forskjellene:
+osnb is the source Bible (Hebrew/Greek numbering). osmain is built from osnb but
+renumbered to the majority numbering. The differences:
 
-- **62 salmer**: osmain slår sammen overskrift (osnb v1) med innhold (osnb v2) i v1
-- **33 hebraiske versifikasjonspar**: vers flyttes mellom nabokapitler
-  (f.eks. 2 Mos 7:26-29 → 8:1-4, Joel 3-kapitlers vs 4-kapitlers inndeling)
-- **8 sammenslåinger**: osmain slår sammen to osnb-vers til ett
-  (f.eks. 2 Mos 21:36+37, Neh 10:1+2)
+- **62 psalms**: osmain merges the title (osnb v1) with the content (osnb v2) into v1
+- **33 Hebrew versification pairs**: verses move between neighbouring chapters
+  (for example Exodus 7:26-29 → 8:1-4, and Joel's 3-chapter versus 4-chapter division)
+- **8 merges**: osmain merges two osnb verses into one
+  (for example Exodus 21:36+37, Nehemiah 10:1+2)
 
-## KVN Encoding (v2)
+## KVN encoding (v2)
 
-KVN er et vanlig JavaScript-tall (BIGINT i MySQL):
+A KVN is an ordinary JavaScript number (BIGINT in MySQL):
 
 ```
 KVN = book * M_ch + chapter * M_v + verse * PART_SIZE + part
 ```
 
-Konstanter:
-- `PART_SIZE = 16` — gir 16 mulige sub-vers per vers
+Constants:
+
+- `PART_SIZE = 16` — allows 16 sub-verses per verse
 - `MAX_VERSE = 177`, `M_v = 177 * 16 = 2832`
 - `MAX_CHAPTER = 151`, `M_ch = 151 * 2832 = 427632`
 
-Part-feltet (0-15): 0=helt vers, 1=a (første del), 2=b (andre del), osv.
+The part field (0-15): 0 = whole verse, 1 = a (first part), 2 = b (second part),
+and so on.
 
-Runtime-funksjoner: `ukvnEncode(book, ch, verse, part)` og `ukvnDecode(kvn)`.
+Runtime functions: `ukvnEncode(book, ch, verse, part)` and `ukvnDecode(kvn)`.
 
-## Mappingfiler
+## Mapping files
 
-Hver oversettelse har en mappingfil (`mappings/*.ukvn.json`) som beskriver
-avvik fra osmain. Vers med identisk nummerering trenger ingen entry —
-de fleste vers er identiske, så mappingfilene er kompakte.
+Every translation has a mapping file (`mappings/*.ukvn.json`) describing its
+deviations from osmain. Verses with identical numbering need no entry — most
+verses are identical, so the mapping files stay compact.
 
-Tilgjengelige mappinger:
+Available mappings:
 
-| Fil | Oversettelse | Entries | Merknad |
+| file | translation | entries | note |
 |-----|-------------|---------|---------|
-| `english_kj.ukvn.json` | King James Version | 30 | Nesten identisk med osmain |
-| `dnb2011_nb.ukvn.json` | Bibelselskapets 2011 (bokmål) | ~1239 | Referanse for norske |
-| `dnb2024_nb.ukvn.json` | Bibelselskapets 2024 (bokmål) | ~1214 | 7 kap endret fra 2011 |
-| `dnb2024_nn.ukvn.json` | Bibelselskapets 2024 (nynorsk) | ~1214 | Identisk med nb-2024 |
-| `dnb30.ukvn.json` | Bibelselskapets 1930 | ~1239 | Identisk med 2011 |
-| `nb1978.ukvn.json` | Bibelselskapets 1978 | ~1241 | 2011 + 4 Mos 25 |
-| `nb88_nb.ukvn.json` | Norsk Bibel 1988 (bokmål) | ~1254 | 2011 + Joh 1:38 split |
-| `nb94_nn.ukvn.json` | Norsk Bibel 1994 (nynorsk) | ~1254 | Identisk med NB88 |
-| `osnb.ukvn.json` | osnb (hebraisk/gresk) | ~1090 | Kildebibelen |
+| `english_kj.ukvn.json` | King James Version | 30 | almost identical to osmain |
+| `dnb2011_nb.ukvn.json` | Bibelselskapet 2011 (bokmål) | ~1239 | the reference for the Norwegian ones |
+| `dnb2024_nb.ukvn.json` | Bibelselskapet 2024 (bokmål) | ~1214 | 7 chapters changed from 2011 |
+| `dnb2024_nn.ukvn.json` | Bibelselskapet 2024 (nynorsk) | ~1214 | identical to nb-2024 |
+| `dnb30.ukvn.json` | Bibelselskapet 1930 | ~1239 | identical to 2011 |
+| `nb1978.ukvn.json` | Bibelselskapet 1978 | ~1241 | 2011 plus Numbers 25 |
+| `nb88_nb.ukvn.json` | Norsk Bibel 1988 (bokmål) | ~1254 | 2011 plus the John 1:38 split |
+| `nb94_nn.ukvn.json` | Norsk Bibel 1994 (nynorsk) | ~1254 | identical to NB88 |
+| `osnb.ukvn.json` | osnb (Hebrew/Greek) | ~1090 | the source Bible |
 
-Entry-format:
+Entry format:
+
 ```json
 {
   "kvnFrom": 427648,    // osmain KVN
   "kvnTo": 427648,
   "kvnRef": "1 Mos 1:1",
-  "tkvnFrom": 427648,   // oversettelsens KVN
+  "tkvnFrom": 427648,   // the translation's KVN
   "tkvnTo": 427648,
   "tkvnRef": "1 Mos 1,1",
   "order": 0
 }
 ```
 
-### Sub-vers mapping (part-feltet)
+### Sub-verse mapping (the part field)
 
-Når osmain slår sammen flere oversettelsesvers til ett, bruker mappingen
-part-feltet for å angi hvilken del av osmain-verset som tilsvarer hvert
-oversettelsesvers.
+When osmain merges several translation verses into one, the mapping uses the
+part field to say which part of the osmain verse corresponds to each translation
+verse.
 
-Eksempel: Sal 92 — osmain slår sammen overskrift og innhold i v1:
+Example: Psalm 92 — osmain merges the title and the content into v1:
 
-| Oversettelse (f.eks. osnb) | osmain | part |
+| translation (e.g. osnb) | osmain | part |
 |-----------------------------|--------|------|
-| v1: "En salme, en sang for sabbatsdagen." | v1a | 1 |
-| v2: "Det er godt å takke Herren..." | v1b | 2 |
-| v3: "å forkynne din godhet..." | v2 | 0 |
+| v1: "A psalm, a song for the Sabbath day." | v1a | 1 |
+| v2: "It is good to give thanks to the LORD…" | v1b | 2 |
+| v3: "to proclaim your steadfast love…" | v2 | 0 |
 
-Tre typer salme-avvik:
+Three kinds of psalm deviation:
 
-- **Type A** (25 salmer): Identisk v1 i osmain og oversettelsen, men oversettelsen har ekstra vers på slutten. Ingen sub-vers nødvendig.
-- **Type B** (11 salmer): osmain v1 = oversettelsens v1+v2 sammenslått. Trenger sub-vers a/b.
-- **Type C** (26 salmer): Identisk v1, men oversettelsen har ekstra vers mellom v1 og v2 (offset). Trenger versnummer-forskyvning men ikke sub-vers.
+- **Type A** (25 psalms): v1 is identical in osmain and the translation, but the
+  translation has extra verses at the end. No sub-verses needed.
+- **Type B** (11 psalms): osmain v1 = the translation's v1+v2 merged. Needs
+  sub-verses a/b.
+- **Type C** (26 psalms): v1 is identical, but the translation has extra verses
+  between v1 and v2 (an offset). Needs a verse-number shift, but no sub-verses.
 
-Utenfor Salmene finnes 8 sammenslåinger (f.eks. 2 Mos 21:36, 4 Mos 25:18,
-1 Kong 22:43, 1 Krøn 5:1/3/4, 1 Krøn 12:40, Neh 10:1).
+Outside the Psalms there are 8 merges (Exodus 21:36, Numbers 25:18, 1 Kings
+22:43, 1 Chronicles 5:1/3/4, 1 Chronicles 12:40, Nehemiah 10:1).
 
-### Versifikasjonsforskjeller mellom oversettelser
+### Versification differences between translations
 
-De norske bibelselskaps-oversettelsene (1930, 1978, 2011, 2024) har nesten
-identisk versifisering. Hovedforskjellene:
+The Norwegian Bible Society translations (1930, 1978, 2011, 2024) are almost
+identically versified. The main differences:
 
-- **1978 vs 2011**: Kun 4 Mos 25 (1978 har 19v, 2011 har 18v)
-- **2024 vs 2011**: 7 kapitler endret (1 Mos 42/43, 4 Mos 25, Esek 20/21, Rom 9, Ef 1)
-- **NB88/NB94**: Identisk med 2011 unntatt Joh 1 (52v vs 51v) og Apg 19 (41v vs 40v)
+- **1978 vs 2011**: only Numbers 25 (1978 has 19 verses, 2011 has 18)
+- **2024 vs 2011**: 7 chapters changed (Genesis 42/43, Numbers 25, Ezekiel 20/21,
+  Romans 9, Ephesians 1)
+- **NB88/NB94**: identical to 2011 except John 1 (52 vs 51 verses) and Acts 19
+  (41 vs 40 verses)
 
-KJV er nesten identisk med osmain — kun 3 forskjeller:
-- 1 Krøn 5 (osmain 22v, KJV 26v — osmain slo sammen vers)
-- 3 Joh 1 (osmain 15v, KJV 14v — osmain splittet v14)
-- Åp 12/13 (osmain 18+18v, KJV 17+18v — "dragen på sanden" flyttet)
+The KJV is almost identical to osmain — only 3 differences:
 
-## Runtime-bibliotek (v2)
+- 1 Chronicles 5 (osmain 22 verses, KJV 26 — osmain merged verses)
+- 3 John 1 (osmain 15 verses, KJV 14 — osmain split v14)
+- Revelation 12/13 (osmain 18+18, KJV 17+18 — "the dragon on the sand" moved)
 
-Nye moduler i `src/ukvn-*.ts`:
+## Runtime library (v2)
+
+The v2 modules are in `src/ukvn-*.ts`:
 
 ```typescript
 import { UkvnMapper, CrossMapper, loadUkvnMapping, sliceVersePart, ukvnEncode } from './ukvn.js';
 
-// Last mappinger
+// Load mappings
 const kjv = new UkvnMapper(loadUkvnMapping('english_kj'));
 const dnb = new UkvnMapper(loadUkvnMapping('dnb2024_nb'));
 
-// Kryss-mapp fra KJV til DNB2024
+// Cross-map from KJV to DNB2024
 const cross = new CrossMapper(kjv, dnb);
-const result = cross.map(ukvnEncode(19, 92, 2)); // KJV Sal 92:2
-// result.tkvn = DNB2024 Sal 92:3
+const result = cross.map(ukvnEncode(19, 92, 2)); // KJV Psalm 92:2
+// result.tkvn = DNB2024 Psalm 92:3
 // result.partial = false
 
-// Når et vers er delvis (sub-vers), bruk TextSlicer
-const partialResult = cross.map(ukvnEncode(13, 5, 1)); // KJV 1 Krøn 5:1
-// partialResult.partial = true (KJV v1 = bare del a av osmain v1)
-// Bruk sliceVersePart(osmainText, 1, 2) for å hente riktig tekstdel
+// When a verse is partial (a sub-verse), use the text slicer
+const partialResult = cross.map(ukvnEncode(13, 5, 1)); // KJV 1 Chronicles 5:1
+// partialResult.partial = true (KJV v1 is only part a of the osmain verse)
+// Use sliceVersePart(osmainText, 1, 2) to get the right part of the text
 ```
 
 ### API
 
-| Klasse/funksjon | Beskrivelse |
+| class/function | description |
 |----------------|-------------|
-| `UkvnMapper` | Mapper mellom osmain og én oversettelse |
-| `CrossMapper` | Kjeder to UkvnMapper for oversettelse→oversettelse |
-| `sliceVersePart(text, part, totalParts, refTexts?)` | Kutter ut sub-vers-tekst fra sammenslått vers |
-| `loadUkvnMapping(name)` | Laster en `.ukvn.json` mappingfil |
-| `listUkvnMappings()` | Lister tilgjengelige mappinger |
-| `ukvnEncode(book, ch, verse, part?)` | Enkoder til KVN-tall |
-| `ukvnDecode(kvn)` | Dekoder fra KVN-tall |
+| `UkvnMapper` | maps between osmain and one translation |
+| `CrossMapper` | chains two UkvnMappers for translation → translation |
+| `sliceVersePart(text, part, totalParts, refTexts?)` | extracts sub-verse text from a merged verse |
+| `loadUkvnMapping(name)` | loads a `.ukvn.json` mapping file |
+| `listUkvnMappings()` | lists the available mappings |
+| `ukvnEncode(book, ch, verse, part?)` | encodes to a KVN number |
+| `ukvnDecode(kvn)` | decodes from a KVN number |
 
 ### CrossMapResult
 
 ```typescript
 {
-  tkvn: number;      // Verset i mål-oversettelsen
-  osmainKvn: number; // Mellomliggende osmain-referanse (kan ha part > 0)
-  partial: boolean;  // true = bare del av osmain-verset dekkes
+  tkvn: number;      // the verse in the target translation
+  osmainKvn: number; // the intermediate osmain reference (may have part > 0)
+  partial: boolean;  // true = only part of the osmain verse is covered
 }
 ```
 
-Når `partial=true`, dekker kilde-verset bare en del av osmain-verset.
-Bruk `ukvnDecode(result.osmainKvn).part` for å vite hvilken del,
-og `sliceVersePart()` for å hente riktig tekst-utsnitt.
+When `partial=true`, the source verse covers only part of the osmain verse. Use
+`ukvnDecode(result.osmainKvn).part` to find out which part, and
+`sliceVersePart()` to get the right slice of text.
 
-## Skript
+## Scripts
 
-### Bygge osmain
+### Building osmain
 
 ```bash
-# 1. Analyser alle 1148 bibler, finn flertallsnummerering
+# 1. Analyse all 1,148 Bibles, find the majority numbering
 
-# 2. Kopier osnb → osmain med renummerering og placeholders
+# 2. Copy osnb → osmain with renumbering and placeholders
 
-# 3. Fyll boundary-shift-vers fra osnb
+# 3. Fill boundary-shift verses from osnb
 bun scripts/fix-osmain-boundaries.ts
 
-# 4. Legg til source-felt (tanach/sblgnt) på alle vers
+# 4. Add the source field (tanach/sblgnt) to every verse
 bun scripts/add-source-field.ts
 
-# 5. Fiks renummerering via Ollama (salmeoverskrifter, kapittelskift)
+# 5. Fix renumbering through Ollama (psalm titles, chapter shifts)
 bun scripts/fix-all-renumbering.ts
 
-# 6. Oversett manglende vers via Claude API (krever ANTHROPIC_API_KEY i generate/.env)
+# 6. Translate missing verses through the Claude API
+#    (needs ANTHROPIC_API_KEY in generate/.env)
 bun scripts/translate-missing.ts --translate
 ```
 
-### Generere mappinger
+### Generating mappings
 
 ```bash
-# Fra raw JSON (støtter både external/closed/raw/ og generate/bibles_raw/)
+# From raw JSON (supports both external/closed/raw/ and generate/bibles_raw/)
 bun scripts/build-mapping.ts --source dnb2011_nb --format txt
 bun scripts/build-mapping.ts --source english_kj --format raw
 bun scripts/build-mapping.ts --source osnb --format raw
 
-# Enkelt kapittel (for testing)
+# A single chapter, for testing
 bun scripts/build-mapping.ts --source dnb2011_nb --format txt --chapter 19:3
 
-# Dry run / annen modell
+# Dry run / a different model
 bun scripts/build-mapping.ts --source dnb2011_nb --format txt --dry-run
 bun scripts/build-mapping.ts --source dnb2011_nb --format txt --model qwen3.5:122b
 ```
 
-Mapping-generering bruker gemma4 (lokal Ollama) for bulk-matching.
-Kapitler med avvik sendes til Claude API for verifisering.
+Mapping generation uses gemma4 (local Ollama) for bulk matching. Chapters with
+deviations are sent to the Claude API for verification.
 
-De fleste norske mappinger (dnb30, nb1978, dnb2024, nb88 osv.) ble laget
-manuelt ved å sammenligne versantall og innhold mot dnb2011, siden
-forskjellene er små og forutsigbare.
+Most of the Norwegian mappings (dnb30, nb1978, dnb2024, nb88 and so on) were made
+by hand, comparing verse counts and content against dnb2011, because the
+differences are small and predictable.
 
-Resume-støtte: Skriptet hopper over kapitler som allerede er prosessert
-(sjekker `data/mapping-results/<source>/`).
+Resume support: the script skips chapters that have already been processed (it
+checks `data/mapping-results/<source>/`).
 
-### Verifisere mappingene mot teksten
+### Verifying the mappings against the text
 
-**Ett sted å starte — skriptet forklarer seg selv:**
+**One place to start — the script explains itself:**
 
 ```bash
 cd kvn && ./scripts/run-verification.sh
 ```
 
-Uten argumenter skriver det ut kjørerekkefølgen, fallgruvene og hvilke modeller
-som trengs. Du behøver ikke huske noe av det som står nedenfor; det er der for å
-forklare *hvorfor*.
+With no arguments it prints the running order, the pitfalls and which models it
+needs. You do not have to remember any of what follows; that is here to explain
+*why*.
 
-Rundturskontrollen (`check-osmain-roundtrip.py`) teller **tall**: en mapping som
-er bijektiv består den selv om den peker på feil vers. `basque` Sal 110 pekte på
-feil kapittel og besto; `albanian` Åp 1–12 ligger ett vers ned hele veien og
-består. «1157 av 1158 rene» er derfor en påstand om aritmetikk, ikke om tekst.
+The round-trip check (`check-osmain-roundtrip.py`) counts **numbers**: a mapping
+that is bijective passes even when it points at the wrong verse. `basque` Psalm
+110 pointed at the wrong chapter and passed; `albanian` Revelation 1–12 sits one
+verse low throughout and passes. "1,157 of 1,158 clean" is therefore a claim
+about arithmetic, not about text.
 
-Tekstverifiseringen leser teksten. Kjør i denne rekkefølgen:
+The text verification reads the text. Run it in this order:
 
 ```bash
-./scripts/run-verification.sh maal        # mål farten på maskinen (~30 min)
-./scripts/run-verification.sh struktur    # gratis, ingen modell
-./scripts/run-verification.sh pri1        # de 81 åpne oversettelsene
+./scripts/run-verification.sh maal        # measure this machine's speed (~30 min)
+./scripts/run-verification.sh struktur    # free, no model
+./scripts/run-verification.sh pri1        # the 81 open translations
 ./scripts/run-verification.sh rapport --list
 ```
 
-**`struktur` må gå først.** `check-mapping-coverage.ts` finner osmain-vers som
-slås opp til et versnummer oversettelsen ikke har — 168 774 vers i 1 119
-oversettelser ved første kjøring. Årsaken er parafraser som fletter vers og
-merker blokken med det første versnummeret (`norwegian2018` 1 Mos 1 har 17 vers
-med numrene 1,3,6,9,…), så oppslaget returnerer ingenting. Uten denne runden
-brukes måneder med GPU-tid på vers der oppslaget ikke kan lykke uansett.
+**`struktur` must go first.** `check-mapping-coverage.ts` finds osmain verses
+that resolve to a verse number the translation does not have — 168,774 verses
+across 1,119 translations on the first run. The cause is paraphrases that merge
+verses and label the block with the first verse number (`norwegian2018` Genesis 1
+has 17 verses numbered 1, 3, 6, 9, …), so the lookup returns nothing. Without
+this pass, months of GPU time go into verses where the lookup cannot succeed at
+all.
 
-`verify-text.ts` kjører fem lag, ELLER-koblet, i **fem pass — ett per modell**:
+`verify-text.ts` runs five layers, OR-combined, in **five passes — one per
+model**:
 
-| pass | modell | hva |
+| pass | model | what |
 |---|---|---|
-| `prep` | bge-m3 | basislinjer og kalibreringseksempler per oversettelse |
-| `mech` | bge-m3 | likhet, lengde, leddekning, tegnsetting for hvert vers |
-| `judge1` | gemma4:31b | dom, kalibrert med oversettelsens egne eksempler |
-| `judge2` | granite4.1:30b | annen modellfamilie — halverer bomraten |
-| `verdict` | — | ren regning: endelig dom per vers |
+| `prep` | bge-m3 | baselines and calibration examples per translation |
+| `mech` | bge-m3 | similarity, length, clause coverage, punctuation per verse |
+| `judge1` | gemma4:31b | a verdict, calibrated with the translation's own examples |
+| `judge2` | granite4.1:30b | a different model family — halves the miss rate |
+| `verdict` | — | pure arithmetic: the final verdict per verse |
 
-Passene er delt per modell fordi to modeller i minnet samtidig gir utkasting og
-innlasting mellom kallene: målt 11 s/vers mot 3,5. Ikke kjør to pass samtidig.
-Alt er gjenopptakbart per kapittel — Ctrl-C koster ingenting.
+The passes are split per model because two models resident at once causes
+eviction and reloading between calls: measured at 11 s per verse against 3.5. Do
+not run two passes at the same time. Everything resumes per chapter — Ctrl-C
+costs nothing.
 
-Logg: `data/text-verification/<oversettelse>/<bok>/<kapittel>.json`. Kapittelnivå,
-ikke per vers: 27,5 M filer à ~150 byte legger beslag på 110 GB på 4 KB-blokker.
-Loggen er gitignorert — `_baseline.json` inneholder kalibreringseksempler med
-verstekst, og for de lukkede oversettelsene er det opphavsrettsbeskyttet.
+Log: `data/text-verification/<translation>/<book>/<chapter>.json`. Chapter level,
+not per verse: 27.5 M files of ~150 bytes would occupy 110 GB on 4 KB blocks. The
+log is gitignored — `_baseline.json` contains calibration examples with verse
+text, and for the closed translations that text is copyrighted.
 
-Dommen skrives, ikke bare ja/nei, fordi typen peker nesten entydig på feilklassen:
-`DIFFERENT` → feil vers (100 % i testsettet), `B_EXTRA` → fletting (99 %),
-`B_MISSING` → avkortet (85 %). Arbeidslisten kommer derfor sortert etter hva som
-må gjøres: `WRONG` trenger en forskyvning, `MERGED` en flettings- eller
-delverspost, `SHORT` at man finner ut hvor resten av teksten ble av.
+The verdict records a *type*, not merely yes/no, because the type points almost
+unambiguously at the class of error: `DIFFERENT` → wrong verse (100% in the test
+set), `B_EXTRA` → merging (99%), `B_MISSING` → truncated (85%). The work list
+therefore arrives sorted by what has to be done: `WRONG` needs a shift, `MERGED`
+needs a merge or sub-verse entry, `SHORT` needs someone to find out where the
+rest of the text went.
 
-Målt på 1 831 par fra 12 språk: **bomrate 0,07 %** (1 av 1 351, og den ene var en
-feilmerking i testsettet), eskalering 16,5 %. Validert mot de 13 dokumenterte
-mappingfeilene i `FUNN.md`: 13 av 13 — ingen enkeltdel klarte det alene.
+Measured on 1,831 pairs from 12 languages: **miss rate 0.07%** (1 of 1,351, and
+that one was a mislabelling in the test set), escalation 16.5%. Validated against
+the 13 documented mapping errors in `FINDINGS.md`: 13 of 13 — no single layer
+managed that alone.
 
-Rekkefølgen på oversettelsene står i `research/text-verification/priority.txt`.
-Forskningsgrunnlaget — testsett, benchmark, ensemble-analyse — ligger i samme
-katalog; skriptene er sporet, dataene gitignorert.
+The order of translations is in `research/text-verification/priority.txt`. The
+research behind it — test set, benchmark, ensemble analysis — is in the same
+directory; the scripts are tracked, the data is gitignored.
 
-Forbehold: de bge-m3-baserte lagene er målt på oversettelser med kryssspråklig
-likhet 0,66–0,87. `hcv` ligger på 0,573 og `maori` på 0,607, og der er de
-svakere. Tegnsetting, lengde og dommerne er upåvirket. Ikke målt ennå.
+Caveat: the bge-m3 layers are measured on translations with cross-lingual
+similarity 0.66–0.87. `hcv` sits at 0.573 and `maori` at 0.607, and they are
+weaker there. Punctuation, length and the judges are unaffected. Not yet
+measured.
 
-## Gammel KVN (v1)
+## Old KVN (v1)
 
-Det gamle 27-bit systemet (`book << 20 | chapter << 12 | verse << 4 | part`)
-ligger i `src/kvn.ts` og `src/types.ts` med 204 tester. Det bruker osnb som
-basis med en separat mappingfil for DNB 2011 (`mappings/dnb_2011_nb.kvn.json`).
+The old 27-bit system (`book << 20 | chapter << 12 | verse << 4 | part`) is in
+`src/kvn.ts` and `src/types.ts` with 204 tests. It uses osnb as its basis, with a
+separate mapping file for DNB 2011 (`mappings/dnb_2011_nb.kvn.json`).
 
-Det nye v2-systemet bruker osmain som basis og aritmetisk encoding uten bitpakking.
+The v2 system uses osmain as the basis and arithmetic encoding without bit
+packing.
 
-## Tester
+## Tests
 
 ```bash
-bun test          # kjør hele suiten
-bun test tests/ukvn-integration.test.ts  # kun v2 integrasjonstester
+bun test          # the whole suite
+bun test tests/ukvn-integration.test.ts  # only the v2 integration tests
 ```

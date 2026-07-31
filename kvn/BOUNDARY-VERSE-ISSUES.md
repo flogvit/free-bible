@@ -1,159 +1,165 @@
-# Osmain Boundary Verse Issues
+# Osmain boundary verse issues
 
-> **Status juli 2026:** de 16 ombrutte kapitlene (Type 2 under) er rettet, og
-> osmain ligger nå i europeisk rekkefølge i alle. Se `FUNN.md` for hele
-> oversikten over hva som ble funnet.
+> **Status July 2026:** the 16 rotated chapters (Type 2 below) have been fixed,
+> and osmain now sits in European order in all of them. See `FINDINGS.md` for the
+> full overview of what was found.
 >
-> To påstander nedenfor holdt ikke: **mappingfilene var ikke korrekte** for
-> versifikasjonsforskjellene — 190 300 poster kodet osmains ombrytning og kunne
-> fjernes da den ble rettet — og **osmains versantall var ikke gjennomgående
-> korrekte**: fem vers hadde duplisert tekst og flere manglet innhold.
+> Two claims below did not hold: **the mapping files were not correct** for the
+> versification differences — 190,300 entries encoded osmain's rotation and could
+> be deleted once it was fixed — and **osmain's verse counts were not uniformly
+> correct**: five verses had duplicated text and several were missing content.
 
-## Problem
+## The problem
 
-osmain har flere vers enn osnb i ~60 kapitler. De ekstra versene er ved
-kapittelgrensene — der flertallet av oversettelser plasserer et vers i et
-annet kapittel enn hebraisk/gresk nummerering.
+osmain has more verses than osnb in about 60 chapters. The extra verses are at
+the chapter boundaries — where the majority of translations place a verse in a
+different chapter from the Hebrew/Greek numbering.
 
-**Mange av disse ekstra versene har FEIL tekst.** Da osmain ble bygget,
-ble teksten for grenseversene ofte hentet fra feil sted. Resultatet er at
-osmain f.eks. har tekst fra 2 Mos 9:3 der det burde stått det som KJV har
-som Exodus 8:30.
+**Many of these extra verses have the WRONG text.** When osmain was built, the
+text for the boundary verses was often taken from the wrong place. The result is
+that osmain has, for example, text from Exodus 9:3 where it should have what the
+KJV has as Exodus 8:30.
 
-## Hva som gikk galt
+## What went wrong
 
-Osmain ble bygget fra osnb med renummerering. For versene som skifter
-kapittel mellom hebraisk og europeisk nummerering, trengs teksten fra osnb
-nabokappittel. Men byggescriptet kopierte feil vers i mange tilfeller.
+osmain was built from osnb with renumbering. For the verses that change chapter
+between Hebrew and European numbering, the text is needed from osnb's
+neighbouring chapter. But the build script copied the wrong verse in many cases.
 
-## Hva som IKKE er feil
+## What is NOT wrong
 
-- Selve **versantallene** i osmain er korrekte (verifisert mot 1148 oversettelser)
-- **osnb** og **osnn** er korrekte (1:1 med tanach/sblgnt)
-- **Mapping-filene** (.ukvn.json) er korrekte for versifikasjonsforskjellene
+- The **verse counts** in osmain are correct (verified against 1,148 translations)
+- **osnb** and **osnn** are correct (1:1 with tanach/sblgnt)
+- The **mapping files** (`.ukvn.json`) are correct for the versification
+  differences
 
-## Typer grensevers
+## Types of boundary verse
 
-Det er to forskjellige mønstre for hvordan grenseversene fungerer:
+There are two distinct patterns for how boundary verses behave:
 
-### Type 1: Sekvensiell shift
-osnb ch N+1 v1 → osmain ch N siste vers.
-Eksempel: Jona 1:17 i osmain = osnb Jona 2:1 ("Herren lot en stor fisk sluke Jona")
+### Type 1: sequential shift
 
-### Type 2: Wrap-around
-Versene i osmain kapittelet er omorganisert vs osnb.
-Eksempel: 2 Mos 8:29-32 i osmain. Her følger osmain en nummerering der hebraisk
-7:26-29 (= "la mitt folk dra" osv.) legges på slutten av kapittel 8,
-mens osnb har dem som 8:1-4. Riktig tekst for osmain 8:29-32 er
-IKKE osnb 9:1-4, men osnb 8:1-4 (wrap-around innenfor kapittelet).
+osnb ch N+1 v1 → osmain ch N's last verse.
+Example: Jonah 1:17 in osmain = osnb Jonah 2:1 ("The LORD had a great fish
+swallow Jonah").
 
-## Slik fikses det
+### Type 2: wrap-around
 
-Hvert vers må sjekkes manuelt mot:
-1. **KJV** (som følger samme nummerering som osmain i de fleste tilfeller)
-2. **tanach/sblgnt** (grunnteksten, som definerer hva innholdet faktisk er)
-3. **osnb** (for å finne riktig norsk oversettelse av det korrekte verset)
+The verses in the osmain chapter are rearranged relative to osnb.
+Example: Exodus 8:29-32 in osmain. Here osmain follows a numbering in which
+Hebrew 7:26-29 (= "let my people go", and so on) is placed at the end of chapter
+8, while osnb has them as 8:1-4. The correct text for osmain 8:29-32 is therefore
+NOT osnb 9:1-4 but osnb 8:1-4 — a wrap-around within the chapter.
 
-**IKKE bruk et script.** Scriptet vi prøvde antok alle var Type 1, men mange er Type 2.
+## How to fix it
 
-## Fullstendig liste over vers med feil tekst
+Every verse has to be checked by hand against:
 
-133 grensevers totalt, 131 med tekst som ikke matcher osnb neste-kapittelet.
-Noen av disse 131 kan ha riktig tekst allerede (Type 2 der teksten riktig
-hentes fra et annet sted), men alle bør verifiseres.
+1. **KJV**, which follows the same numbering as osmain in most cases
+2. **tanach/sblgnt**, the original text, which defines what the content actually is
+3. **osnb**, to find the correct Norwegian rendering of the correct verse
 
-### 1 Mos
-- 31:55 — har hoftesene-tekst (= 32:32 duplikat), burde være Labans avreise
+**Do NOT use a script.** The script we tried assumed everything was Type 1, and
+many are Type 2.
 
-### 2 Mos
-- 8:30-32 — har frosker-tekst fra kap 8, burde ha innholdet KJV har for 8:30-32
-- 22:31 — har "stjeler en okse" (= 22:1 i annen numm.), burde ha "hellige menn"
+## Full list of verses with wrong text
 
-### 3 Mos
-- 6:24-30 — har skyldoffer-tekst fra annet sted, burde ha lov om skyldofferet (KJV 7:1-7)
+133 boundary verses in total, 131 with text that does not match osnb's next
+chapter. Some of those 131 may already have the right text (Type 2, where the
+text is correctly taken from elsewhere), but all should be verified.
 
-### 4 Mos
-- 16:36-50 — har Aarons stav-tekst (kap 17), burde ha pest/soning-tekst (KJV 16:49-17:13)
-- 29:40 — har feil tekst
+### Genesis
+- 31:55 — has the sinew text (a duplicate of 32:32); should be Laban's departure
 
-### 5 Mos
-- 12:32 — har "hør på Herren" fra kap 13, burde ha "alt jeg befaler" (KJV 12:32)
-- 22:30 — har "din nestes kornåker" fra 23:25, burde ha "fars hustru" (KJV 22:30)
-- 29:29 — har paktsord fra 29:1, burde ha velsignelse/forbannelse (KJV 30:1)
+### Exodus
+- 8:30-32 — has frog text from ch 8; should have what the KJV has for 8:30-32
+- 22:31 — has "steals an ox" (= 22:1 in the other numbering); should have "holy men"
 
-### 1 Sam
-- 23:29 — feil tekst
+### Leviticus
+- 6:24-30 — has guilt-offering text from elsewhere; should have the law of the guilt offering (KJV 7:1-7)
 
-### 2 Sam
-- 18:33 — feil tekst
+### Numbers
+- 16:36-50 — has the Aaron's-staff text (ch 17); should have the plague/atonement text (KJV 16:49-17:13)
+- 29:40 — wrong text
 
-### 1 Kong
-- 4:21-34 — 14 vers med feil tekst (har kap 5-tekst, burde ha Salomos visdom/rike)
+### Deuteronomy
+- 12:32 — has "listen to the LORD" from ch 13; should have "everything I command" (KJV 12:32)
+- 22:30 — has "your neighbour's grainfield" from 23:25; should have "father's wife" (KJV 22:30)
+- 29:29 — has covenant words from 29:1; should have blessing/curse (KJV 30:1)
 
-### 2 Kong
-- 11:21 — feil tekst
+### 1 Samuel
+- 23:29 — wrong text
 
-### 1 Krøn
-- 6:67-81 — 15 vers med duplikat-tekst (gjentar Levi-genealogien), burde ha kap 7 tekst
+### 2 Samuel
+- 18:33 — wrong text
 
-### 2 Krøn
-- 2:18 — feil tekst
-- 14:15 — feil tekst
+### 1 Kings
+- 4:21-34 — 14 verses with wrong text (has ch 5 text; should have Solomon's wisdom and realm)
 
-### Neh
-- 4:18-23 — 6 vers med feil tekst
-- 7:73 — feil tekst
-- 9:38 — feil tekst
+### 2 Kings
+- 11:21 — wrong text
+
+### 1 Chronicles
+- 6:67-81 — 15 verses of duplicated text (repeats the Levi genealogy); should have ch 7 text
+
+### 2 Chronicles
+- 2:18 — wrong text
+- 14:15 — wrong text
+
+### Nehemiah
+- 4:18-23 — 6 verses with wrong text
+- 7:73 — wrong text
+- 9:38 — wrong text
 
 ### Job
-- 41:27-34 — 8 vers med feil tekst (har Leviatan-fortsettelse, burde ha Jobs svar/Guds tale)
+- 41:27-34 — 8 verses with wrong text (has the Leviathan continuation; should have Job's answer / God's speech)
 
-### Fork (Forkynneren)
-- 5:20 — feil tekst
+### Ecclesiastes
+- 5:20 — wrong text
 
-### Høys (Høysangen)
-- 6:13 — feil tekst
+### Song of Songs
+- 6:13 — wrong text
 
-### Jes
-- 9:21 — feil tekst
-- 64:12 — feil tekst
+### Isaiah
+- 9:21 — wrong text
+- 64:12 — wrong text
 
-### Jer
-- 9:26 — feil tekst
+### Jeremiah
+- 9:26 — wrong text
 
-### Esek
-- 20:45-49 — 5 vers med feil tekst
+### Ezekiel
+- 20:45-49 — 5 verses with wrong text
 
-### Dan
-- 4:35-37 — 3 vers med feil tekst
-- 5:31 — feil tekst
+### Daniel
+- 4:35-37 — 3 verses with wrong text
+- 5:31 — wrong text
 
-### Hos
-- 1:10-11 — feil tekst
-- 11:12 — feil tekst
-- 13:16 — feil tekst
+### Hosea
+- 1:10-11 — wrong text
+- 11:12 — wrong text
+- 13:16 — wrong text
 
 ### Joel
-- 2:28-30, 2:32 — 4 vers med feil tekst (duplikat av Joel 3:1-5)
-- 3:6-21 — 16 vers (hele Joel kap 4 i hebraisk nummerering)
+- 2:28-30, 2:32 — 4 verses with wrong text (duplicates of Joel 3:1-5)
+- 3:6-21 — 16 verses (all of Joel ch 4 in Hebrew numbering)
 
-### Jona
-- 1:17 — har "fisken spydde Jona" (= 2:10 duplikat), burde ha "fisken slukte Jona"
+### Jonah
+- 1:17 — has "the fish vomited Jonah" (a duplicate of 2:10); should have "the fish swallowed Jonah"
 
-### Mi
-- 5:15 — feil tekst
+### Micah
+- 5:15 — wrong text
 
-### Nah
-- 1:15 — feil tekst
+### Nahum
+- 1:15 — wrong text
 
-### Sak
-- 1:18-21 — 4 vers med feil tekst
+### Zechariah
+- 1:18-21 — 4 verses with wrong text
 
-### Apg
-- 19:41 — feil tekst
+### Acts
+- 19:41 — wrong text
 
-### Rom
-- 16:25-27 — doksologien (kan være korrekt, men bør verifiseres)
+### Romans
+- 16:25-27 — the doxology (may be correct, but should be verified)
 
-### 2 Kor
-- 13:14 — duplikat av 13:13
+### 2 Corinthians
+- 13:14 — a duplicate of 13:13

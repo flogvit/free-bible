@@ -49,18 +49,18 @@ export interface Range {
  * i tillegg, men skal aldri gi disse en annen betydning.
  */
 export const COMMON_FLAGS: Record<string, FlagSpec> = {
-    bible: {kind: 'string', help: 'hvilken oversettelse, f.eks. osnb'},
-    language: {kind: 'string', help: 'språkkode, f.eks. nb', default: 'nb'},
-    book: {kind: 'range', help: 'bok eller bokintervall, f.eks. 1 eller 1-5'},
-    chapter: {kind: 'range', help: 'kapittel eller kapittelintervall'},
-    verse: {kind: 'range', help: 'vers eller versintervall'},
-    ot: {kind: 'boolean', help: 'bare Det gamle testamentet'},
-    nt: {kind: 'boolean', help: 'bare Det nye testamentet'},
-    limit: {kind: 'number', help: 'stopp etter N enheter'},
-    force: {kind: 'boolean', help: 'kjør på nytt selv om resultatet finnes'},
-    local: {kind: 'boolean', help: 'kjør mot lokal Ollama i stedet for Claude'},
-    'dry-run': {kind: 'boolean', help: 'vis hva som ville skjedd, uten å skrive'},
-    help: {kind: 'boolean', help: 'vis denne teksten'},
+    bible: {kind: 'string', help: 'which translation, e.g. osnb'},
+    language: {kind: 'string', help: 'language code, e.g. nb', default: 'nb'},
+    book: {kind: 'range', help: 'book or book range, e.g. 1 or 1-5'},
+    chapter: {kind: 'range', help: 'chapter or chapter range'},
+    verse: {kind: 'range', help: 'verse or verse range'},
+    ot: {kind: 'boolean', help: 'Old Testament only'},
+    nt: {kind: 'boolean', help: 'New Testament only'},
+    limit: {kind: 'number', help: 'stop after N units'},
+    force: {kind: 'boolean', help: 'run again even if the output already exists'},
+    local: {kind: 'boolean', help: 'use the local Ollama instead of Claude'},
+    'dry-run': {kind: 'boolean', help: 'show what would happen, without writing'},
+    help: {kind: 'boolean', help: 'show this text'},
 };
 
 /**

@@ -24,7 +24,7 @@
  *   cov    et setningsledd i osmain-verset har ingen motpart i oversettelsens
  *   short  kortere enn oversettelsens egen normal for den verselengden
  *
- * Validert mot 13 dokumenterte mappingfeil i FUNN.md: 13 av 13. Ingen enkeltdel
+ * Validert mot 13 dokumenterte mappingfeil i FINDINGS.md: 13 av 13. Ingen enkeltdel
  * klarte det — dommeren tok 11, de gratis lagene tok de to siste.
  *
  * ───────────────────────────────────────────────────────────────────────────

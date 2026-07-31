@@ -2,7 +2,7 @@
  * Bomrate stratifisert etter hvor stor del av verset som flyttet.
  *
  * Et vers der 15 % av innholdet ligger i naboen er knapt en mappingfeil — det er
- * en oversetter som brøt setningen et annet sted. De ekte grensefeilene i FUNN.md
+ * en oversetter som brøt setningen et annet sted. De ekte grensefeilene i FINDINGS.md
  * (1 Sam 20,42, 4 Mos 25,18) er hele setningsledd som utvetydig hører til det
  * andre verset. Ett samlet gjennomsnitt over 15-100 % skjuler den forskjellen.
  *
