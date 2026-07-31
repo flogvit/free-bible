@@ -24,16 +24,16 @@ når `credit=true`.
 CONTRIB_TOKEN=… bun scripts/contrib-pull.ts
 
 # 2. Maskinsjekk: strukturvalidering + KVN-oppløsning + target-oppslag:
-npx tsx contrib/check.mjs --target-lookup
+bun contrib/check.mjs --target-lookup
 
 # 3. Review — LLM-anbefaling i note, menneske setter status:
-npx tsx contrib/review.mjs --llm
-npx tsx contrib/review.mjs --list
-npx tsx contrib/review.mjs --approve --id <id>
-npx tsx contrib/review.mjs --needs-info --id <id> --note "spørsmål"
+bun contrib/review.mjs --llm
+bun contrib/review.mjs --list
+bun contrib/review.mjs --approve --id <id>
+bun contrib/review.mjs --needs-info --id <id> --note "spørsmål"
 
 # 4. Eksporter godkjente til kuratert data (FØR apply):
-npx tsx contrib/export.mjs --lookup        # → generate/verse_works/<workId>.json
+bun contrib/export.mjs --lookup        # → generate/verse_works/<workId>.json
 
 # 5. Skriv status tilbake til bibel-DB og arkiver køfilene (i bibel/):
 CONTRIB_TOKEN=… bun scripts/contrib-apply.ts

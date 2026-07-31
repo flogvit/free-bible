@@ -195,32 +195,32 @@ og `sliceVersePart()` for å hente riktig tekst-utsnitt.
 # 2. Kopier osnb → osmain med renummerering og placeholders
 
 # 3. Fyll boundary-shift-vers fra osnb
-npx tsx scripts/fix-osmain-boundaries.ts
+bun scripts/fix-osmain-boundaries.ts
 
 # 4. Legg til source-felt (tanach/sblgnt) på alle vers
-npx tsx scripts/add-source-field.ts
+bun scripts/add-source-field.ts
 
 # 5. Fiks renummerering via Ollama (salmeoverskrifter, kapittelskift)
-npx tsx scripts/fix-all-renumbering.ts
+bun scripts/fix-all-renumbering.ts
 
 # 6. Oversett manglende vers via Claude API (krever ANTHROPIC_API_KEY i generate/.env)
-npx tsx scripts/translate-missing.ts --translate
+bun scripts/translate-missing.ts --translate
 ```
 
 ### Generere mappinger
 
 ```bash
 # Fra raw JSON (støtter både external/closed/raw/ og generate/bibles_raw/)
-npx tsx scripts/generate-mapping.ts --source dnb2011_nb --format txt
-npx tsx scripts/generate-mapping.ts --source english_kj --format raw
-npx tsx scripts/generate-mapping.ts --source osnb --format raw
+bun scripts/generate-mapping.ts --source dnb2011_nb --format txt
+bun scripts/generate-mapping.ts --source english_kj --format raw
+bun scripts/generate-mapping.ts --source osnb --format raw
 
 # Enkelt kapittel (for testing)
-npx tsx scripts/generate-mapping.ts --source dnb2011_nb --format txt --chapter 19:3
+bun scripts/generate-mapping.ts --source dnb2011_nb --format txt --chapter 19:3
 
 # Dry run / annen modell
-npx tsx scripts/generate-mapping.ts --source dnb2011_nb --format txt --dry-run
-npx tsx scripts/generate-mapping.ts --source dnb2011_nb --format txt --model qwen3.5:122b
+bun scripts/generate-mapping.ts --source dnb2011_nb --format txt --dry-run
+bun scripts/generate-mapping.ts --source dnb2011_nb --format txt --model qwen3.5:122b
 ```
 
 Mapping-generering bruker gemma4 (lokal Ollama) for bulk-matching.
@@ -314,6 +314,6 @@ Det nye v2-systemet bruker osmain som basis og aritmetisk encoding uten bitpakki
 ## Tester
 
 ```bash
-npm test          # kjør alle 248 tester
-npx vitest run tests/ukvn-integration.test.ts  # kun v2 integrasjonstester
+bun test          # kjør hele suiten
+bun test tests/ukvn-integration.test.ts  # kun v2 integrasjonstester
 ```

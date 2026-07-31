@@ -64,7 +64,7 @@ case "$MODE" in
     echo
     for p in prep mech judge1 judge2 verdict; do
       echo "-- pass $p"
-      npx tsx scripts/verify-text.ts --pass "$p" kjv --limit 3 --force 2>&1 | tail -2
+      bun scripts/verify-text.ts --pass "$p" kjv --limit 3 --force 2>&1 | tail -2
     done
     cat <<'TXT'
 
@@ -78,11 +78,11 @@ TXT
 
   struktur)
     echo "== strukturell dekningssjekk (ingen modell, ingen GPU) =="
-    npx tsx scripts/check-mapping-coverage.ts "${@:2}"
+    bun scripts/check-mapping-coverage.ts "${@:2}"
     ;;
 
   rapport)
-    npx tsx scripts/verify-text-report.ts "${@:2}"
+    bun scripts/verify-text-report.ts "${@:2}"
     ;;
 
   pri*|alle)
@@ -107,7 +107,7 @@ TXT
       echo "=============================================================="
       echo "== pass $p   $(date '+%Y-%m-%d %H:%M')"
       echo "=============================================================="
-      if ! npx tsx scripts/verify-text.ts --pass "$p" "${SEL[@]}"; then
+      if ! bun scripts/verify-text.ts --pass "$p" "${SEL[@]}"; then
         rc=$?
         echo
         if [[ $rc -eq 130 || $rc -eq 143 ]]; then
@@ -121,7 +121,7 @@ TXT
     done
 
     echo
-    npx tsx scripts/verify-text-report.ts
+    bun scripts/verify-text-report.ts
     ;;
 
   *)

@@ -134,9 +134,9 @@ Verses missing from osmain are defects to fix by extending osmain.
 `kvn/` is the canonical verse-numbering layer. A mapping maps **canonical → that
 translation's numbering**: `kvnFrom` "1 Mos 31:55" → `tkvnFrom` "1 Mos 32,1" for a
 translation following the Hebrew. Use `CrossMapper` from `kvn/src/ukvn.ts` — do not
-reimplement versification. Scripts that need it must run under `tsx`.
+reimplement versification. Scripts that need it must run under `bun`.
 
-`kvn/tests` (6,400+) is the safety net; run `npx vitest run` in `kvn/` after touching
+`kvn/tests` (6,400+) is the safety net; run `bun test` in `kvn/` after touching
 mappings or data.
 
 `tests/mapping-integrity.test.ts` checks **structure only** — valid book ids, no
@@ -180,7 +180,7 @@ usable; the large one is for overnight jobs. `gemma*` is held back from **open**
 only — unbounded arrays, free-text fields (`openSchema: false`). It handles closed ones
 fine: measured 64/64 valid answers on the four-value enum in `verify-text.ts`, catching
 more than it did without the schema. `isClosedSchema` in `llm.js` draws the line, and
-`node --test generate/*.test.mjs` covers it.
+`bun test` covers it.
 
 **Two jobs must never want different models at once.** Ollama keeps one runner, and
 qwen3.5:122b (81 GB) plus qwen3.5:27b (17 GB) do not fit side by side on 128 GB — so it
@@ -207,7 +207,11 @@ the valuable class: Hebrew morphology, cross-verse term consistency. Determinist
 
 ## Conventions
 
-- `tsx`, never `ts-node`.
+- `bun`, never `node`/`npx tsx`. Bun runs `.ts` and `.mjs` side by side, so a
+  half-converted tree is fine — but `bun` does **not** typecheck, so `tsc --noEmit`
+  runs before `bun test` in both `package.json`.
+- `bun test` needs an explicit root (`bunfig.toml`); without it the discovery walks
+  `external/` and `generate/bibles_raw/`.
 - Never `cp`/`mv` over an existing file without asking.
 - Data fixes: prefer fixing them by hand over writing a script — scripts against bible data
   have repeatedly caused errors here.
