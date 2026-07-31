@@ -18,7 +18,7 @@ const __dirname = dirname(fileURLToPath(import.meta.url));
 const REPO = join(__dirname, '../..');
 
 /** Formen på kvn/data/mapping-results/<oversettelse>/<bok>-<kapittel>.json,
- *  slik generate-mapping.ts skriver den (se ollamaSchema der). */
+ *  slik build-mapping.ts skriver den (se ollamaSchema der). */
 interface MappingResultEntry {
   translationVerse: number;
   osmainVerses: number[];

@@ -5,7 +5,7 @@
  * drevet fra hverandre på tre måter som alle er stille i drift:
  *
  *   1. `--local` og `--remote` uttrykte SAMME akse med motsatt fortegn.
- *      Elleve skript brukte `--local`, tre `--remote`, og `scan_stories`
+ *      Elleve skript brukte `--local`, tre `--remote`, og `scan-stories`
  *      godtok begge. Glemmer du flagget, kjører jobben på feil modell — og
  *      valget havner ikke i dataene, så feilen kan ikke finnes i ettertid.
  *      Det er samme feilform som en glemt `--style` i bible.ts.
@@ -129,7 +129,7 @@ export function parseArgs(argv: string[], spec: Record<string, FlagSpec>): Parse
         //
         // Uten denne var kontrakten for stiv: et skript der `local` er
         // standarden hadde ingen måte å velge Claude-veien på, siden `--local`
-        // da er en no-op. Det gjaldt `scan_stories`, der `--remote` var eneste
+        // da er en no-op. Det gjaldt `scan-stories`, der `--remote` var eneste
         // vei til Claude — og å innføre et nytt motsatt flagg ville gjenskapt
         // nettopp toveisaksen kontrakten avskaffer.
         if (name.startsWith('no-')) {

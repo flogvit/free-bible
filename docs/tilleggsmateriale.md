@@ -54,10 +54,10 @@ Rekkefølgen er ikke fri. Det som må komme først:
 
 | dette | før dette | fordi |
 |---|---|---|
-| `generate/days/` (`days.ts`) | `day_tags`, `days_mentions` | begge leser dagsdefinisjonene |
-| embeddings (`embeddings.ts`) | `references_semantic` | semantisk søk trenger vektorene |
+| `generate/days/` (`days.ts`) | `day-tags`, `days-mentions` | begge leser dagsdefinisjonene |
+| embeddings (`embeddings.ts`) | `references-semantic` | semantisk søk trenger vektorene |
 | bibeltekst ferdig | alt annet | alle leser `bibles_raw/<navn>/` |
-| `persons` generert | `persons_reconcile*` | avstemming trenger noe å stemme av |
+| `persons` generert | `persons-reconcile*` | avstemming trenger noe å stemme av |
 | KVN-mapping | `references` | referanseadresser valideres mot nummereringen |
 
 > **Ikke kjør `bun generate/days.ts`** før #108 er løst: den sletter
@@ -72,22 +72,22 @@ Rekkefølgen er ikke fri. Det som må komme først:
 | katalog | skript | merknad |
 |---|---|---|
 | `references` | `references.ts` | kryssreferanser. #31: 20 349 vers igjen, 53 av 66 bøker urørt |
-| `references` | `references_semantic.ts` | semantiske funn — bge-m3 + LLM-verifisering, finner paralleller som ikke står i standardverk |
-| `tags` | `chapter_tags.ts` | kirkeårstagging. #32: 1 163 av 1 189 kapitler igjen |
-| `day_tags` | `day_tags.ts` | dagstagging |
-| `days_mentions` | `days_mentions.ts` | omtaler av dager/høytider per vers. #33: 648 kapitler igjen |
+| `references` | `references-semantic.ts` | semantiske funn — bge-m3 + LLM-verifisering, finner paralleller som ikke står i standardverk |
+| `tags` | `chapter-tags.ts` | kirkeårstagging. #32: 1 163 av 1 189 kapitler igjen |
+| `day-tags` | `day-tags.ts` | dagstagging |
+| `days-mentions` | `days-mentions.ts` | omtaler av dager/høytider per vers. #33: 648 kapitler igjen |
 | `days` | `days.ts` | dagsdefinisjonene selv — **se advarselen over** |
-| `persons` | `bible_persons.ts` | personprofiler |
-| `persons` | `persons_reconcile*.ts` → `persons_audit.ts` → `persons_apply_*.ts` | avstemming: foreslå → menneske ser på → skriv |
-| `stories` | `scan_stories.ts`, `stories.ts` | systematisk skanning, så generering |
-| `number_symbolism` | `number_symbolism.ts` | tallsymbolikk |
-| `important_words` | `important_words_chapter.ts` | nøkkelord. #34: 301 av 1 189 igjen |
+| `persons` | `bible-persons.ts` | personprofiler |
+| `persons` | `persons-reconcile*.ts` → `persons-audit.ts` → `persons-apply-*.ts` | avstemming: foreslå → menneske ser på → skriv |
+| `stories` | `scan-stories.ts`, `stories.ts` | systematisk skanning, så generering |
+| `number-symbolism` | `number-symbolism.ts` | tallsymbolikk |
+| `important_words` | `important-words-chapter.ts` | nøkkelord. #34: 301 av 1 189 igjen |
 | `word4word` | `word4word.ts` | ord-for-ord. **Kun korrekt for `tanach` og `sblgnt`** |
-| `verse_translation` | `verse_translation.ts` | forklaringer per vers |
-| `chapter_summaries`, `book_summaries` | `chapter_summary.ts`, `book_summary.ts` | ferdig for nb (1 189 / 66) |
-| `chapter_context`, `book_context` | `chapter_context.ts`, `book_context.ts` | |
-| `reading_plans` | `generate_reading_plans.ts` | konfigurasjon i `reading_plans_config.ts` |
-| `songs` | `song_references.ts` | sang → vers. 383 av 5 910 gjort |
+| `verse-translation` | `verse-translation.ts` | forklaringer per vers |
+| `chapter_summaries`, `book_summaries` | `chapter-summary.ts`, `book-summary.ts` | ferdig for nb (1 189 / 66) |
+| `chapter-context`, `book-context` | `chapter-context.ts`, `book-context.ts` | |
+| `reading_plans` | `build-reading-plans.ts` | konfigurasjon i `reading-plans-config.ts` |
+| `songs` | `song-references.ts` | sang → vers. 383 av 5 910 gjort |
 
 ### Oversettes fra norsk
 
@@ -121,8 +121,8 @@ rørledningsartefakter.
 `docs/lokale-jobber.md` er fasiten. To ting derfra som er lette å gå glipp av:
 
 **De fleste skriptene går til Claude API hvis du glemmer `--local`.** Tre er
-alltid lokale uansett: `song_references`, `days_mentions` og
-`persons_reconcile*`.
+alltid lokale uansett: `song-references`, `days-mentions` og
+`persons-reconcile*`.
 
 **Lokal triage duger ikke til å bedømme oversettelseskvalitet.** Målt gjenkalling
 mot Claudes faktiske rettelser var 31 % (qwen3.5:27b) og 8 % (qwen3.6:35b), og
@@ -146,4 +146,4 @@ lastet, når den rangerer likt eller høyere enn oppgavens preferanse.
 - [ ] genererte kataloger fylt, i avhengighetsrekkefølge
 - [ ] `translate.ts --status` viser null gjenstående
 - [ ] `keepKeys` sjekket for hver nye katalog i `CONTENT_DIRS`
-- [ ] `translations_index.ts` kjørt til slutt
+- [ ] `build-translations-index.ts` kjørt til slutt

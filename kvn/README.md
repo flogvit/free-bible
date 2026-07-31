@@ -211,16 +211,16 @@ bun scripts/translate-missing.ts --translate
 
 ```bash
 # Fra raw JSON (støtter både external/closed/raw/ og generate/bibles_raw/)
-bun scripts/generate-mapping.ts --source dnb2011_nb --format txt
-bun scripts/generate-mapping.ts --source english_kj --format raw
-bun scripts/generate-mapping.ts --source osnb --format raw
+bun scripts/build-mapping.ts --source dnb2011_nb --format txt
+bun scripts/build-mapping.ts --source english_kj --format raw
+bun scripts/build-mapping.ts --source osnb --format raw
 
 # Enkelt kapittel (for testing)
-bun scripts/generate-mapping.ts --source dnb2011_nb --format txt --chapter 19:3
+bun scripts/build-mapping.ts --source dnb2011_nb --format txt --chapter 19:3
 
 # Dry run / annen modell
-bun scripts/generate-mapping.ts --source dnb2011_nb --format txt --dry-run
-bun scripts/generate-mapping.ts --source dnb2011_nb --format txt --model qwen3.5:122b
+bun scripts/build-mapping.ts --source dnb2011_nb --format txt --dry-run
+bun scripts/build-mapping.ts --source dnb2011_nb --format txt --model qwen3.5:122b
 ```
 
 Mapping-generering bruker gemma4 (lokal Ollama) for bulk-matching.

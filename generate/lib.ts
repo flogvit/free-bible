@@ -155,7 +155,7 @@ export function resolveBookRange(config: string | BookRange): BookRange {
         const range = bookRanges[config];
         // Ga før `undefined` for en ukjent nøkkel, mens signaturen lovte en
         // BookRange. Den udefinerte verdien gikk rett videre til
-        // getChaptersForRange i generate_reading_plans, som feilet et helt
+        // getChaptersForRange i build-reading-plans, som feilet et helt
         // annet sted (#112).
         if (!range) {
             const kjente = Object.keys(bookRanges).sort().join(', ');

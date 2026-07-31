@@ -1,0 +1,292 @@
+import "./env.js";
+import * as fs from 'fs';
+import path from 'path';
+import {fileURLToPath} from 'url';
+
+import Anthropic from '@anthropic-ai/sdk';
+import {anthropicModel, maxTokens} from "./constants.js";
+import {nameToId} from "./lib.js";
+import {parseArgs, formatHelp, COMMON_FLAGS} from './cli.js';
+import type {FlagSpec} from './cli.js';
+
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = path.dirname(__filename);
+
+/**
+ * Flaggkontrakten for dette skriptet (#51, #52, #53).
+ *
+ * Den gamle parseren leste `--limit=N` og `--start=N` med likhetstegn, og
+ * ignorerte alt annet i stillhet. Kontrakten skiller flagg og verdi med
+ * mellomrom — `--limit 10`, `--start 20` — og feiler høyt på ukjente flagg.
+ * Standardverdiene er de samme som før: ingen grense og start på indeks 0.
+ */
+const SPEC: Record<string, FlagSpec> = {
+    limit: COMMON_FLAGS.limit,          // uten flagget: alle som mangler, som før
+    'dry-run': COMMON_FLAGS['dry-run'],
+    start: {kind: 'number', help: 'hopp over de N første som mangler', default: 0},
+    help: COMMON_FLAGS.help,
+};
+
+const HELP_EXAMPLES = [
+    'bun generate/build-missing-persons.ts --dry-run              # bare list hvem som mangler',
+    'bun generate/build-missing-persons.ts --limit 10             # generer de ti første',
+    'bun generate/build-missing-persons.ts --start 20 --limit 10  # hopp over de tjue første',
+];
+
+// Hjelpen svares FØR .env leses, før klienten bygges og før PERSONER.md åpnes:
+// `--help` skal ikke gjøre arbeid.
+const {flags} = parseArgs(process.argv.slice(2), SPEC);
+if (flags.help) {
+    console.log(formatHelp(
+        'generate/build-missing-persons.ts',
+        'genererer personprofilene som står uavkrysset i persons/PERSONER.md',
+        SPEC,
+        HELP_EXAMPLES,
+    ));
+    process.exit(0);
+}
+
+
+const anthropic = new Anthropic({
+    apiKey: process.env.ANTHROPIC_API_KEY
+});
+
+/** JSON-schema slik SDK-en vil ha det i `output_config.format`. */
+type JsonSchema = Record<string, unknown>;
+
+/** En person fra PERSONER.md: avkrysningslista over profiler som mangler. */
+interface PersonConfig {
+    id: string;
+    name: string;
+}
+
+/** Utfallet av ett forsøk på å generere én profil. */
+interface GenerateResult {
+    status: 'created' | 'skipped' | 'error';
+    name: string;
+    error?: string;
+}
+
+function parseMissingPersons(): PersonConfig[] {
+    const mdPath = path.join(__dirname, "persons", "PERSONER.md");
+    const content = fs.readFileSync(mdPath, 'utf-8');
+
+    const persons: PersonConfig[] = [];
+    const lines = content.split('\n');
+
+    for (const line of lines) {
+        // Match lines like "- [ ] Name (description)"
+        const match = line.match(/^-\s*\[\s*\]\s*(.+)$/);
+        if (match) {
+            const fullName = match[1].trim();
+            const id = nameToId(fullName);
+            persons.push({ id, name: fullName });
+        }
+    }
+
+    return persons;
+}
+
+function getExistingPersons(): string[] {
+    const personsDir = path.join(__dirname, "persons", "nb");
+    const files = fs.readdirSync(personsDir);
+    return files
+        .filter(f => f.endsWith('.json'))
+        .map(f => f.replace('.json', ''));
+}
+
+const PERSON_SCHEMA = {
+    type: "object",
+    properties: {
+        id: {type: "string"},
+        name: {type: "string"},
+        title: {type: "string"},
+        era: {type: "string", enum: ["creation", "patriarchs", "exodus", "conquest", "judges", "united-kingdom", "divided-kingdom", "exile", "return", "intertestamental", "jesus", "early-church"]},
+        lifespan: {type: "string"},
+        summary: {type: "string"},
+        roles: {type: "array", items: {type: "string"}},
+        family: {
+            type: "object",
+            properties: {
+                father: {type: ["string", "null"]},
+                mother: {type: ["string", "null"]},
+                siblings: {type: "array", items: {type: "string"}},
+                spouse: {type: ["string", "null"]},
+                children: {type: "array", items: {type: "string"}}
+            },
+            required: ["father", "mother", "siblings", "spouse", "children"],
+            additionalProperties: false
+        },
+        relatedPersons: {type: "array", items: {type: "string"}},
+        keyEvents: {
+            type: "array",
+            items: {
+                type: "object",
+                properties: {
+                    title: {type: "string"},
+                    description: {type: "string"},
+                    verses: {
+                        type: "array",
+                        items: {
+                            type: "object",
+                            properties: {
+                                bookId: {type: "integer"},
+                                chapter: {type: "integer"},
+                                verses: {type: "array", items: {type: "integer"}}
+                            },
+                            required: ["bookId", "chapter", "verses"],
+                            additionalProperties: false
+                        }
+                    }
+                },
+                required: ["title", "description", "verses"],
+                additionalProperties: false
+            }
+        }
+    },
+    required: ["id", "name", "title", "era", "summary", "roles", "family", "relatedPersons", "keyEvents"],
+    additionalProperties: false
+};
+
+async function doAnthropicCall(content: string, schema: JsonSchema | null | undefined) {
+    const options: Anthropic.MessageCreateParamsNonStreaming = {
+        model: anthropicModel,
+        max_tokens: maxTokens,
+        messages: [{ role: "user", content }]
+    };
+    if (schema) {
+        options.output_config = { format: { type: "json_schema", schema } };
+    }
+    return anthropic.messages.create(options);
+}
+
+async function generatePerson(personConfig: PersonConfig): Promise<GenerateResult> {
+    const { id, name } = personConfig;
+    const outputPath = path.join(__dirname, "persons", "nb", `${id}.json`);
+
+    // Skip if already exists
+    if (fs.existsSync(outputPath)) {
+        console.log(`Skipping ${name} - already exists`);
+        return { status: 'skipped', name };
+    }
+
+    console.log(`Generating profile for ${name}...`);
+
+    const prompt = `Generate a comprehensive biblical character profile for ${name} in Norwegian bokmål.
+The profile should follow this exact JSON structure:
+
+{
+  "id": "${id}",
+  "name": "${name}",
+  "title": "<kort beskrivende tittel, f.eks. 'Troens far' eller 'Israels konge'>",
+  "era": "<en av: creation, patriarchs, exodus, conquest, judges, united-kingdom, divided-kingdom, exile, return, intertestamental, jesus, early-church>",
+  "lifespan": "<omtrentlig levetid hvis kjent, f.eks. 'ca. 2000 f.Kr.' eller utelat hvis ukjent>",
+  "summary": "<2-3 setninger som oppsummerer personen og deres betydning>",
+  "roles": [<liste med roller fra: profet, konge, dommer, prest, apostel, disippel, leder, matriark, patriark, martyr, kriger, vismann, tjener, hærfører, dronning, prinsesse>],
+  "family": {
+    "father": "<fars id eller null>",
+    "mother": "<mors id eller null>",
+    "siblings": [<liste med søskens id-er>],
+    "spouse": "<ektefelles id eller null>",
+    "children": [<liste med barns id-er>]
+  },
+  "relatedPersons": [<liste med andre relaterte personers id-er>],
+  "keyEvents": [
+    {
+      "title": "<kort tittel>",
+      "description": "<1-2 setninger>",
+      "verses": [{ "bookId": <1-66>, "chapter": <nummer>, "verses": [<vers-nummer>] }]
+    }
+  ]
+}
+
+Important guidelines:
+1. Use lowercase IDs for family members and related persons (e.g., "abraham", "sara", "isak")
+2. Include 3-6 key events that are most significant for this person
+3. For keyEvents verses, use accurate book IDs: OT books 1-39, NT books 40-66
+4. All descriptions and text should be in Norwegian bokmål
+5. Be historically and biblically accurate
+6. Include both OT and NT references where relevant
+7. If the person has limited biblical mentions, include fewer keyEvents but make them accurate
+
+`;
+
+    try {
+        const completion = await doAnthropicCall(prompt, PERSON_SCHEMA);
+        const personData = JSON.parse((completion.content[0] as Anthropic.TextBlock).text);
+
+        // Write to file
+        fs.writeFileSync(outputPath, JSON.stringify(personData, null, 2));
+        console.log(`  Written: ${outputPath}`);
+        return { status: 'created', name };
+
+    } catch (error) {
+        console.error(`Error generating ${name}:`, (error as Error).message);
+        return { status: 'error', name, error: (error as Error).message };
+    }
+}
+
+async function main() {
+    const dryRun = flags['dry-run'] as boolean;
+    // Uten --limit er det ingen grense, som før.
+    const maxCount = (flags.limit as number | undefined) ?? Infinity;
+    const startIndex = flags.start as number;
+
+    console.log("Parsing PERSONER.md...");
+    const allPersons = parseMissingPersons();
+    const existing = getExistingPersons();
+
+    // Filter out already existing
+    const missing = allPersons.filter(p => !existing.includes(p.id));
+
+    console.log(`\nFound ${allPersons.length} persons in PERSONER.md`);
+    console.log(`Already have ${existing.length} person files`);
+    console.log(`Missing: ${missing.length} persons\n`);
+
+    if (dryRun) {
+        console.log("Missing persons:");
+        missing.forEach((p, i) => console.log(`  ${i + 1}. ${p.name} (${p.id})`));
+        console.log("\nRun without --dry-run to generate files");
+        return;
+    }
+
+    // Apply start index and limit
+    const toGenerate = missing.slice(startIndex, startIndex + maxCount);
+
+    console.log(`Generating ${toGenerate.length} persons (starting from index ${startIndex})...\n`);
+
+    const results: { created: number; skipped: number; errors: GenerateResult[] } = { created: 0, skipped: 0, errors: [] };
+
+    for (let i = 0; i < toGenerate.length; i++) {
+        const person = toGenerate[i];
+        console.log(`[${i + 1}/${toGenerate.length}] Processing ${person.name}...`);
+
+        const result = await generatePerson(person);
+
+        if (result.status === 'created') results.created++;
+        else if (result.status === 'skipped') results.skipped++;
+        else if (result.status === 'error') results.errors.push(result);
+
+        // Delay between API calls to avoid rate limiting
+        if (i < toGenerate.length - 1) {
+            await new Promise(resolve => setTimeout(resolve, 1500));
+        }
+    }
+
+    console.log("\n--- Summary ---");
+    console.log(`Created: ${results.created}`);
+    console.log(`Skipped: ${results.skipped}`);
+    console.log(`Errors: ${results.errors.length}`);
+
+    if (results.errors.length > 0) {
+        console.log("\nFailed:");
+        results.errors.forEach(e => console.log(`  - ${e.name}: ${e.error}`));
+    }
+}
+
+// Kjører bare når fila startes direkte. Uten vakten kjører jobben ved IMPORT —
+// det er grunnen til at days.ts slettet data bare man lastet modulen (#108),
+// og det gjør skriptene umulige å teste.
+if (import.meta.main) {
+    main();
+}

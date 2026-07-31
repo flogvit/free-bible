@@ -1,7 +1,7 @@
 # Skriptreferanse
 
-> Generert av `generate/make_script_docs.ts` fra kildekoden.
-> **Ikke rediger for hånd** — kjør `bun generate/make_script_docs.ts`.
+> Generert av `generate/build-script-docs.ts` fra kildekoden.
+> **Ikke rediger for hånd** — kjør `bun generate/build-script-docs.ts`.
 
 Flaggtabellene kommer fra `SPEC`-en i hvert skript, så de kan ikke drifte
 fra koden. Standardverdien er tatt med fordi den er den eneste som ikke går
@@ -41,6 +41,24 @@ innstilling uten å si fra.
 
 Oversettelse, korrektur og alt tilleggsmateriale.
 
+### `generate/bible-persons.ts`
+
+| flagg | type | standard | betydning |
+|---|---|---|---|
+| `--bible` | string | — | hvilken oversettelse, f.eks. osnb |
+| `--book` | range | — | bok eller bokintervall, f.eks. 1 eller 1-5 |
+| `--chapter` | range | — | kapittel eller kapittelintervall |
+| `--ot` | boolean | — | bare Det gamle testamentet |
+| `--nt` | boolean | — | bare Det nye testamentet |
+| `--local` | boolean | — | kjør mot lokal Ollama i stedet for Claude |
+| `--index` | boolean | — | skann bibelen for personnavn med Ollama og fest versreferanser |
+| `--proofread` | boolean | — | korrekturles personprofilene som finnes |
+| `--apply` | boolean | — | skriv korrekturens forslag tilbake (slår på tilbakekoblingssløyfa) |
+| `--min-score` | number | `8` | laveste godtatte score, 0-10 |
+| `--max-iter` | number | `3` | maks korrekturrunder per person |
+| `--continue` | boolean | — | hopp over personer som alt har score >= --min-score og fotnoter |
+| `--help` | boolean | — | vis denne teksten |
+
 ### `generate/bible.ts`
 
 | flagg | type | standard | betydning |
@@ -64,25 +82,7 @@ Oversettelse, korrektur og alt tilleggsmateriale.
 | `--max-iter` | number | `3` | maks korrekturrunder per fase |
 | `--help` | boolean | — | vis denne teksten |
 
-### `generate/bible_persons.ts`
-
-| flagg | type | standard | betydning |
-|---|---|---|---|
-| `--bible` | string | — | hvilken oversettelse, f.eks. osnb |
-| `--book` | range | — | bok eller bokintervall, f.eks. 1 eller 1-5 |
-| `--chapter` | range | — | kapittel eller kapittelintervall |
-| `--ot` | boolean | — | bare Det gamle testamentet |
-| `--nt` | boolean | — | bare Det nye testamentet |
-| `--local` | boolean | — | kjør mot lokal Ollama i stedet for Claude |
-| `--index` | boolean | — | skann bibelen for personnavn med Ollama og fest versreferanser |
-| `--proofread` | boolean | — | korrekturles personprofilene som finnes |
-| `--apply` | boolean | — | skriv korrekturens forslag tilbake (slår på tilbakekoblingssløyfa) |
-| `--min-score` | number | `8` | laveste godtatte score, 0-10 |
-| `--max-iter` | number | `3` | maks korrekturrunder per person |
-| `--continue` | boolean | — | hopp over personer som alt har score >= --min-score og fotnoter |
-| `--help` | boolean | — | vis denne teksten |
-
-### `generate/book_context.ts`
+### `generate/book-context.ts`
 
 | flagg | type | standard | betydning |
 |---|---|---|---|
@@ -96,7 +96,7 @@ Oversettelse, korrektur og alt tilleggsmateriale.
 | `--apply` | boolean | — | skriv korrekturens reviderte kontekst tilbake til fila |
 | `--help` | boolean | — | vis denne teksten |
 
-### `generate/book_summary.ts`
+### `generate/book-summary.ts`
 
 | flagg | type | standard | betydning |
 |---|---|---|---|
@@ -110,7 +110,70 @@ Oversettelse, korrektur og alt tilleggsmateriale.
 | `--apply` | boolean | — | skriv korrekturens reviderte sammendrag tilbake til fila |
 | `--help` | boolean | — | vis denne teksten |
 
-### `generate/chapter_context.ts`
+### `generate/build-mapping-v1-osnb.ts`
+
+| flagg | type | standard | betydning |
+|---|---|---|---|
+| `--use-ai` | boolean | — | la Claude matche versene som ikke lar seg mappe deterministisk |
+| `--help` | boolean | — | vis denne teksten |
+
+### `generate/build-missing-persons.ts`
+
+| flagg | type | standard | betydning |
+|---|---|---|---|
+| `--limit` | number | — | stopp etter N enheter |
+| `--dry-run` | boolean | — | vis hva som ville skjedd, uten å skrive |
+| `--start` | number | `0` | hopp over de N første som mangler |
+| `--help` | boolean | — | vis denne teksten |
+
+### `generate/build-reading-plans.ts`
+
+Unified reading plan generator Generates all reading plans from configuration Run with: bun build-reading-plans.ts Flaggene går gjennom den felles kontrakten i cli.ts; `--help` viser dem.
+
+| flagg | type | standard | betydning |
+|---|---|---|---|
+| `--help` | boolean | — | vis denne teksten |
+
+### `generate/build-sblgnt.ts`
+
+| flagg | type | standard | betydning |
+|---|---|---|---|
+| `--help` | boolean | — | vis denne teksten |
+
+### `generate/build-script-docs.ts`
+
+Genererer `docs/skript.md` fra koden (#113).
+
+| flagg | type | standard | betydning |
+|---|---|---|---|
+| `--check` | boolean | — | ikke skriv — feil hvis docs/skript.md er utdatert |
+| `--help` | boolean | — | vis denne teksten |
+
+### `generate/build-tanach.ts`
+
+| flagg | type | standard | betydning |
+|---|---|---|---|
+| `--help` | boolean | — | vis denne teksten |
+
+### `generate/build-translations-index.ts`
+
+Build generate/translations/index.json — one merged record per translation, ready for a website to fetch once and use for both list and detail views.
+
+| flagg | type | standard | betydning |
+|---|---|---|---|
+| `--help` | boolean | — | vis denne teksten |
+
+### `generate/build-translations-meta.ts`
+
+| flagg | type | standard | betydning |
+|---|---|---|---|
+| `--only` | string | — | bare disse oversettelsene, kommaseparert (f.eks. kjv,geneva) |
+| `--force` | boolean | — | kjør på nytt selv om resultatet finnes |
+| `--recount` | boolean | — | oppdater bare coverage/features på eksisterende meta.json, uten modellkall |
+| `--no-web` | boolean | — | hopp over websøk-passet — bare pass 1 (billig prøvekjøring) |
+| `--help` | boolean | — | vis denne teksten |
+
+### `generate/chapter-context.ts`
 
 | flagg | type | standard | betydning |
 |---|---|---|---|
@@ -125,7 +188,7 @@ Oversettelse, korrektur og alt tilleggsmateriale.
 | `--apply` | boolean | — | skriv korrekturens reviderte kontekst tilbake til fila |
 | `--help` | boolean | — | vis denne teksten |
 
-### `generate/chapter_summary.ts`
+### `generate/chapter-summary.ts`
 
 | flagg | type | standard | betydning |
 |---|---|---|---|
@@ -140,7 +203,7 @@ Oversettelse, korrektur og alt tilleggsmateriale.
 | `--apply` | boolean | — | skriv korrekturens reviderte sammendrag tilbake til fila |
 | `--help` | boolean | — | vis denne teksten |
 
-### `generate/chapter_tags.ts`
+### `generate/chapter-tags.ts`
 
 | flagg | type | standard | betydning |
 |---|---|---|---|
@@ -166,7 +229,7 @@ convert-refs.ts — Convert plain-text Bible references to [ref:...|...] markup.
 | `--path` | string | — | behandle bare filer under denne katalogen, relativt til generate/ |
 | `--help` | boolean | — | vis denne teksten |
 
-### `generate/day_tags.ts`
+### `generate/day-tags.ts`
 
 | flagg | type | standard | betydning |
 |---|---|---|---|
@@ -184,13 +247,7 @@ convert-refs.ts — Convert plain-text Bible references to [ref:...|...] markup.
 | `--max-iter` | number | `3` | flest korrekturrunder per kapittel |
 | `--help` | boolean | — | vis denne teksten |
 
-### `generate/days.ts`
-
-| flagg | type | standard | betydning |
-|---|---|---|---|
-| `--help` | boolean | — | vis denne teksten |
-
-### `generate/days_mentions.ts`
+### `generate/days-mentions.ts`
 
 | flagg | type | standard | betydning |
 |---|---|---|---|
@@ -202,7 +259,13 @@ convert-refs.ts — Convert plain-text Bible references to [ref:...|...] markup.
 | `--force` | boolean | — | kjør på nytt selv om resultatet finnes |
 | `--help` | boolean | — | vis denne teksten |
 
-### `generate/eval_references.ts`
+### `generate/days.ts`
+
+| flagg | type | standard | betydning |
+|---|---|---|---|
+| `--help` | boolean | — | vis denne teksten |
+
+### `generate/eval-references.ts`
 
 | flagg | type | standard | betydning |
 |---|---|---|---|
@@ -219,30 +282,6 @@ convert-refs.ts — Convert plain-text Bible references to [ref:...|...] markup.
 | `--chapter` | range | — | kapittel eller kapittelintervall |
 | `--verse` | range | — | vers eller versintervall |
 | `--force` | boolean | — | bygg vektorene på nytt |
-| `--help` | boolean | — | vis denne teksten |
-
-### `generate/generate-verse-mapping.ts`
-
-| flagg | type | standard | betydning |
-|---|---|---|---|
-| `--use-ai` | boolean | — | la Claude matche versene som ikke lar seg mappe deterministisk |
-| `--help` | boolean | — | vis denne teksten |
-
-### `generate/generate_missing_persons.ts`
-
-| flagg | type | standard | betydning |
-|---|---|---|---|
-| `--limit` | number | — | stopp etter N enheter |
-| `--dry-run` | boolean | — | vis hva som ville skjedd, uten å skrive |
-| `--start` | number | `0` | hopp over de N første som mangler |
-| `--help` | boolean | — | vis denne teksten |
-
-### `generate/generate_reading_plans.ts`
-
-Unified reading plan generator Generates all reading plans from configuration Run with: bun generate_reading_plans.ts Flaggene går gjennom den felles kontrakten i cli.ts; `--help` viser dem.
-
-| flagg | type | standard | betydning |
-|---|---|---|---|
 | `--help` | boolean | — | vis denne teksten |
 
 ### `generate/glossary.ts`
@@ -270,28 +309,7 @@ Key-term consistency across a translation.
 | `--force` | boolean | — | kjør på nytt selv om resultatet finnes |
 | `--help` | boolean | — | vis denne teksten |
 
-### `generate/make_sblgnt.ts`
-
-| flagg | type | standard | betydning |
-|---|---|---|---|
-| `--help` | boolean | — | vis denne teksten |
-
-### `generate/make_script_docs.ts`
-
-Genererer `docs/skript.md` fra koden (#113).
-
-| flagg | type | standard | betydning |
-|---|---|---|---|
-| `--check` | boolean | — | ikke skriv — feil hvis docs/skript.md er utdatert |
-| `--help` | boolean | — | vis denne teksten |
-
-### `generate/make_tanach.ts`
-
-| flagg | type | standard | betydning |
-|---|---|---|---|
-| `--help` | boolean | — | vis denne teksten |
-
-### `generate/number_symbolism.ts`
+### `generate/number-symbolism.ts`
 
 | flagg | type | standard | betydning |
 |---|---|---|---|
@@ -314,33 +332,33 @@ Genererer `docs/skript.md` fra koden (#113).
 | `--local` | boolean | — | kjør mot lokal Ollama i stedet for Claude |
 | `--help` | boolean | — | vis denne teksten |
 
-### `generate/parse_lesetekster.ts`
+### `generate/parse-lesetekster.ts`
 
 | flagg | type | standard | betydning |
 |---|---|---|---|
 | `--help` | boolean | — | vis denne teksten |
 
-### `generate/persons_apply_context.ts`
-
-| flagg | type | standard | betydning |
-|---|---|---|---|
-| `--dry-run` | boolean | — | vis hva som ville skjedd, uten å skrive |
-| `--help` | boolean | — | vis denne teksten |
-
-### `generate/persons_apply_reconcile.ts`
+### `generate/persons-apply-context.ts`
 
 | flagg | type | standard | betydning |
 |---|---|---|---|
 | `--dry-run` | boolean | — | vis hva som ville skjedd, uten å skrive |
 | `--help` | boolean | — | vis denne teksten |
 
-### `generate/persons_audit.ts`
+### `generate/persons-apply-reconcile.ts`
+
+| flagg | type | standard | betydning |
+|---|---|---|---|
+| `--dry-run` | boolean | — | vis hva som ville skjedd, uten å skrive |
+| `--help` | boolean | — | vis denne teksten |
+
+### `generate/persons-audit.ts`
 
 | flagg | type | standard | betydning |
 |---|---|---|---|
 | `--help` | boolean | — | vis denne teksten |
 
-### `generate/persons_integrity.ts`
+### `generate/persons-integrity.ts`
 
 | flagg | type | standard | betydning |
 |---|---|---|---|
@@ -348,22 +366,41 @@ Genererer `docs/skript.md` fra koden (#113).
 | `--worklist` | string | — | skriv arbeidslista som JSON til denne stien |
 | `--help` | boolean | — | vis denne teksten |
 
-### `generate/persons_reconcile.ts`
+### `generate/persons-reconcile-context.ts`
 
 | flagg | type | standard | betydning |
 |---|---|---|---|
 | `--help` | boolean | — | vis denne teksten |
 
-### `generate/persons_reconcile_context.ts`
+### `generate/persons-reconcile.ts`
 
 | flagg | type | standard | betydning |
 |---|---|---|---|
 | `--help` | boolean | — | vis denne teksten |
 
-### `generate/persons_write_batch.ts`
+### `generate/persons-write-batch.ts`
 
 | flagg | type | standard | betydning |
 |---|---|---|---|
+| `--help` | boolean | — | vis denne teksten |
+
+### `generate/references-semantic.ts`
+
+| flagg | type | standard | betydning |
+|---|---|---|---|
+| `--build-only` | boolean | — | bygg bare vektorene, hopp over verifiseringen |
+| `--verify-only` | boolean | — | verifiser bare, forutsetter at vektorene finnes |
+| `--top-k` | number | `10` | antall kandidater per vers |
+| `--threshold` | string | `0.60` | minste cosinuslikhet (bge-m3 gir beslektede vers 0.60–0.70) |
+| `--neighbor-skip` | number | `5` | hopp over vers i samme kapittel innenfor N |
+| `--theme` | boolean | — | la modellen oppsummere verset og søk også på oppsummeringen |
+| `--concepts` | boolean | — | la modellen lage 4 fasettspørsmål og søk på hvert av dem |
+| `--resume` | boolean | — | hopp over vers som alt er kjørt (embeddings/<korpus>/semantic_progress.json) |
+| `--skip-existing` | boolean | — | hopp over vers som alt har en referansefil |
+| `--book` | range | — | bok eller bokintervall, f.eks. 1 eller 1-5 |
+| `--chapter` | range | — | kapittel eller kapittelintervall |
+| `--verse` | range | — | vers eller versintervall |
+| `--force` | boolean | — | bygg vektorene på nytt (rører ikke referansefilene — fletting bevarer alltid det som finnes) |
 | `--help` | boolean | — | vis denne teksten |
 
 ### `generate/references.ts`
@@ -384,26 +421,7 @@ Genererer `docs/skript.md` fra koden (#113).
 | `--fix` | boolean | — | fjern de døde adressene --validate finner |
 | `--help` | boolean | — | vis denne teksten |
 
-### `generate/references_semantic.ts`
-
-| flagg | type | standard | betydning |
-|---|---|---|---|
-| `--build-only` | boolean | — | bygg bare vektorene, hopp over verifiseringen |
-| `--verify-only` | boolean | — | verifiser bare, forutsetter at vektorene finnes |
-| `--top-k` | number | `10` | antall kandidater per vers |
-| `--threshold` | string | `0.60` | minste cosinuslikhet (bge-m3 gir beslektede vers 0.60–0.70) |
-| `--neighbor-skip` | number | `5` | hopp over vers i samme kapittel innenfor N |
-| `--theme` | boolean | — | la modellen oppsummere verset og søk også på oppsummeringen |
-| `--concepts` | boolean | — | la modellen lage 4 fasettspørsmål og søk på hvert av dem |
-| `--resume` | boolean | — | hopp over vers som alt er kjørt (embeddings/<korpus>/semantic_progress.json) |
-| `--skip-existing` | boolean | — | hopp over vers som alt har en referansefil |
-| `--book` | range | — | bok eller bokintervall, f.eks. 1 eller 1-5 |
-| `--chapter` | range | — | kapittel eller kapittelintervall |
-| `--verse` | range | — | vers eller versintervall |
-| `--force` | boolean | — | bygg vektorene på nytt (rører ikke referansefilene — fletting bevarer alltid det som finnes) |
-| `--help` | boolean | — | vis denne teksten |
-
-### `generate/scan_stories.ts`
+### `generate/scan-stories.ts`
 
 | flagg | type | standard | betydning |
 |---|---|---|---|
@@ -427,7 +445,7 @@ Genererer `docs/skript.md` fra koden (#113).
 | `--continue` | boolean | — | hopp over filer som alt er godkjent med score ≥ --min-score |
 | `--help` | boolean | — | vis denne teksten |
 
-### `generate/song_references.ts`
+### `generate/song-references.ts`
 
 Map songs to Bible verse references using LLM.
 
@@ -453,24 +471,6 @@ Map songs to Bible verse references using LLM.
 | `--min-score` | number | `7` | bruk endringene bare når scoren er lavere enn dette |
 | `--help` | boolean | — | vis denne teksten |
 
-### `generate/translations_index.ts`
-
-Build generate/translations/index.json — one merged record per translation, ready for a website to fetch once and use for both list and detail views.
-
-| flagg | type | standard | betydning |
-|---|---|---|---|
-| `--help` | boolean | — | vis denne teksten |
-
-### `generate/translations_meta.ts`
-
-| flagg | type | standard | betydning |
-|---|---|---|---|
-| `--only` | string | — | bare disse oversettelsene, kommaseparert (f.eks. kjv,geneva) |
-| `--force` | boolean | — | kjør på nytt selv om resultatet finnes |
-| `--recount` | boolean | — | oppdater bare coverage/features på eksisterende meta.json, uten modellkall |
-| `--no-web` | boolean | — | hopp over websøk-passet — bare pass 1 (billig prøvekjøring) |
-| `--help` | boolean | — | vis denne teksten |
-
 ### `generate/triage.ts`
 
 | flagg | type | standard | betydning |
@@ -489,7 +489,7 @@ Build generate/translations/index.json — one merged record per translation, re
 | `--reference` | string | `osnb` | korrekturlest oversettelse på et annet språk, for mening |
 | `--help` | boolean | — | vis denne teksten |
 
-### `generate/verse_translation.ts`
+### `generate/verse-translation.ts`
 
 | flagg | type | standard | betydning |
 |---|---|---|---|
@@ -530,30 +530,6 @@ Add "source" field to all osmain verses that came from osnb.
 |---|---|---|---|
 | `--help` | boolean | — | vis denne teksten |
 
-### `kvn/scripts/analyze-sentence-splits.ts`
-
-Analyze whether verse splits across translations align with sentence boundaries.
-
-| flagg | type | standard | betydning |
-|---|---|---|---|
-| `--help` | boolean | — | vis denne teksten |
-
-### `kvn/scripts/analyze-spacing.ts`
-
-Analyze all raw bibles to determine optimal spacing for universal KVN encoding.
-
-| flagg | type | standard | betydning |
-|---|---|---|---|
-| `--help` | boolean | — | vis denne teksten |
-
-### `kvn/scripts/analyze-verse-structures.ts`
-
-Analyze verse structures across all 1147+ Bible translations.
-
-| flagg | type | standard | betydning |
-|---|---|---|---|
-| `--help` | boolean | — | vis denne teksten |
-
 ### `kvn/scripts/audit-ukvn-collisions.ts`
 
 Kollisjonsaudit for ukvn-mappinger (issue #18).
@@ -564,31 +540,12 @@ Kollisjonsaudit for ukvn-mappinger (issue #18).
 
 ### `kvn/scripts/batch-mappings.ts`
 
-Generate KVN mappings for every open-licensed translation listed in docs/open-bibles/inventory.json, using qwen3.5:122b via generate-mapping.ts (--fast --no-verify).
+Generate KVN mappings for every open-licensed translation listed in docs/open-bibles/inventory.json, using qwen3.5:122b via build-mapping.ts (--fast --no-verify).
 
 | flagg | type | standard | betydning |
 |---|---|---|---|
-| `--model` | string | `qwen3.5:122b` | Ollama-modellen generate-mapping.ts skal bruke |
+| `--model` | string | `qwen3.5:122b` | Ollama-modellen build-mapping.ts skal bruke |
 | `--only` | string | — | kommaseparert liste over oversettelser; uten flagget kjøres alle med kvn_ok i inventaret |
-| `--help` | boolean | — | vis denne teksten |
-
-### `kvn/scripts/benchmark-mapping-models.ts`
-
-Benchmark all local Ollama models on the mapping task.
-
-| flagg | type | standard | betydning |
-|---|---|---|---|
-| `--models` | string | — | kommaseparert liste med modeller (standard: alle Ollama har) |
-| `--warmup` | boolean | — | varm opp hver modell med en kort forespørsel først |
-| `--help` | boolean | — | vis denne teksten |
-
-### `kvn/scripts/benchmark-models.ts`
-
-Benchmark Ollama models for verse matching quality and speed.
-
-| flagg | type | standard | betydning |
-|---|---|---|---|
-| `--models` | string | — | kommaseparert liste med modeller (standard: alle Ollama har) |
 | `--help` | boolean | — | vis denne teksten |
 
 ### `kvn/scripts/build-derived-mappings.ts`
@@ -618,12 +575,17 @@ GPU-free pre-pass for KVN mapping generation.
 | `--only` | string | — | behandle bare disse oversettelsene, kommaseparert |
 | `--help` | boolean | — | vis denne teksten |
 
-### `kvn/scripts/build-osnb-complete.ts`
-
-Build osnb_complete - complete Bible with all verse positions.
+### `kvn/scripts/build-mapping.ts`
 
 | flagg | type | standard | betydning |
 |---|---|---|---|
+| `--bible` | string | `dnb2011_nb` | hvilken oversettelse, f.eks. osnb |
+| `--format` | string | `raw` | 'raw' leser JSON-katalogene, 'txt' leser external/closed/<bibel>.txt |
+| `--chapter` | string | — | bare dette kapittelet, som bok:kapittel, f.eks. 19:3 |
+| `--model` | string | `gemma4:31b` | Ollama-modellen som gjør versmatchingen |
+| `--dry-run` | boolean | — | list kapitlene som ville gått til Ollama, uten å kjøre dem |
+| `--fast` | boolean | — | hopp over Ollama for kapitler med samme versnumre som osmain (uten flagget går alle gjennom, så tekstnivå-splitter og -sammenslåinger også fanges) |
+| `--no-verify` | boolean | `true` | Claude-verifisering av flaggede kapitler; slått av markeres de «needsReview» i resultatfila i stedet |
 | `--help` | boolean | — | vis denne teksten |
 
 ### `kvn/scripts/build-source-mappings.ts`
@@ -678,38 +640,6 @@ Fix osmain boundary-shift placeholders by copying text from osnb.
 |---|---|---|---|
 | `--help` | boolean | — | vis denne teksten |
 
-### `kvn/scripts/fix-psalm3-test.ts`
-
-Test: Fix Psalm 3 renumbering using Ollama.
-
-| flagg | type | standard | betydning |
-|---|---|---|---|
-| `--save` | boolean | — | skriv det gjenoppbygde kapittelet til osmain 19/3.json |
-| `--help` | boolean | — | vis denne teksten |
-
-### `kvn/scripts/fix-renumber-test.ts`
-
-Test renumbering fix on multiple chapters using Ollama.
-
-| flagg | type | standard | betydning |
-|---|---|---|---|
-| `--help` | boolean | — | vis denne teksten |
-
-### `kvn/scripts/generate-mapping.ts`
-
-Generate a verse mapping between osmain and a translation.
-
-| flagg | type | standard | betydning |
-|---|---|---|---|
-| `--bible` | string | `dnb2011_nb` | hvilken oversettelse, f.eks. osnb |
-| `--format` | string | `raw` | 'raw' leser JSON-katalogene, 'txt' leser external/closed/<bibel>.txt |
-| `--chapter` | string | — | bare dette kapittelet, som bok:kapittel, f.eks. 19:3 |
-| `--model` | string | `gemma4:31b` | Ollama-modellen som gjør versmatchingen |
-| `--dry-run` | boolean | — | list kapitlene som ville gått til Ollama, uten å kjøre dem |
-| `--fast` | boolean | — | hopp over Ollama for kapitler med samme versnumre som osmain (uten flagget går alle gjennom, så tekstnivå-splitter og -sammenslåinger også fanges) |
-| `--no-verify` | boolean | `true` | Claude-verifisering av flaggede kapitler; slått av markeres de «needsReview» i resultatfila i stedet |
-| `--help` | boolean | — | vis denne teksten |
-
 ### `kvn/scripts/patch-cross-chapter.ts`
 
 Add same-book, adjacent-chapter cross-chapter entries to a built .ukvn.json.
@@ -737,8 +667,6 @@ Lag 1 i mapping-verifiseringen (issue #18): lengdekorrelasjons-screen.
 | `--help` | boolean | — | vis denne teksten |
 
 ### `kvn/scripts/translate-missing.ts`
-
-Translate missing verses in osmain (books 1-66).
 
 | flagg | type | standard | betydning |
 |---|---|---|---|
@@ -894,9 +822,9 @@ Ikke kjørbare, og har derfor ingen flagg:
 - `generate/env.ts` — Laster `generate/.env`.
 - `generate/lib.ts`
 - `generate/llm.js`
-- `generate/reading_plans_config.ts` — Configuration for all reading plans Plan types: - sequential: Read books in order, X chapters per day - distributed: Distribute all chapters evenly over X days - parallel: Read multiple book ranges in parallel (e.g., GT + NT) - custom: Manually defined daily readings bookRanges are defined in lib.js
-- `generate/translations_schema.ts` — Schema and controlled vocabularies for translation metadata (meta.json).
+- `generate/reading-plans-config.ts` — Configuration for all reading plans Plan types: - sequential: Read books in order, X chapters per day - distributed: Distribute all chapters evenly over X days - parallel: Read multiple book ranges in parallel (e.g., GT + NT) - custom: Manually defined daily readings bookRanges are defined in lib.js
+- `generate/translations-schema.ts` — Schema and controlled vocabularies for translation metadata (meta.json).
 
 ---
 
-76 av 76 skript bruker den felles flaggkontrakten.
+68 av 68 skript bruker den felles flaggkontrakten.

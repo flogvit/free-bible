@@ -10,7 +10,7 @@
  *
  * Writes a result file for each pure-gap chapter into
  * kvn/data/mapping-results/<translation>/<book>-<chapter>.json so that
- * generate-mapping.ts (resume) never sends them to Ollama. Reports the
+ * build-mapping.ts (resume) never sends them to Ollama. Reports the
  * remaining "real" chapters per translation.
  *
  * Flaggene går gjennom den felles kontrakten i generate/cli.ts; `--help` viser dem.

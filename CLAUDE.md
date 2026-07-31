@@ -160,7 +160,7 @@ local run, and re-measure with the commands at the bottom rather than trusting t
 
 
 Live and used regularly: `bible.mjs`, `translate.mjs`, `references.mjs`,
-`references_semantic.mjs`, `chapter_tags.mjs`, `bible_persons.mjs`, `translations_index.mjs`
+`references-semantic.mjs`, `chapter-tags.mjs`, `bible-persons.mjs`, `build-translations-index.mjs`
 (regenerate after any `meta.json`/`license.json` change), `glossary.mjs`, `triage.mjs`.
 
 Under `kvn/scripts/`: `run-verification.sh` (entry point), `check-mapping-coverage.ts`,
@@ -176,7 +176,7 @@ understated it: it did not produce an identity mapping, it wrote a different *sc
 entirely — `books[book][chapter] = {max, missing}` instead of the `map: [...]` entry list
 `UkvnMapper` reads — so running it would have made every osnb lookup fail, not merely
 return the wrong verse. `kvn/mappings/osnb.ukvn.json` was checked and is intact: 1 640
-entries, none of them identity. The live generator is `generate-mapping.ts`.
+entries, none of them identity. The live generator is `build-mapping.ts`.
 
 Local models: `constants.ts` → `taskModels` sets a **preferred** model per task;
 `OLLAMA_MODEL` pins it. Small models handle per-verse yes/no work so the machine stays
@@ -201,7 +201,7 @@ in `localModelRanking` is never adopted. `OLLAMA_NO_ADOPT=1` turns just the adop
 
 Pass `task:` to `callWithRetry`/`call`/`callOllamaRaw`, not `model:` — `model:` is a pin and
 skips adoption. Scripts that pass neither get `ollamaModel` as before. Scripts that record
-which model ran (`triage.mjs`, `song_references.mjs`) must resolve it themselves via
+which model ran (`triage.mjs`, `song-references.mjs`) must resolve it themselves via
 `resolveLocalModel` and store *that* value.
 
 **Local triage does not work for judging translation quality** — measured recall against

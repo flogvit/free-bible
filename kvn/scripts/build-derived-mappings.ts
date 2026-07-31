@@ -5,7 +5,7 @@
  *  - kapittel der oversettelsens versnummer-sett ⊆ osmains → identitet, ingen entries
  *  - ellers: finn en donor blant eksisterende mappinger med identisk
  *    versstruktur i HELE boka, og lån donorens entries for boka
- *  - bøker uten donor → residual (må gjennom generate-mapping.ts/qwen senere)
+ *  - bøker uten donor → residual (må gjennom build-mapping.ts/qwen senere)
  *
  * Boknivå (ikke kapittelnivå) fordi entries kan krysse kapittelgrenser
  * (f.eks. Esek 20:45–49 → 21,33–37).

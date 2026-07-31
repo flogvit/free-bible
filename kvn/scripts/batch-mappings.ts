@@ -1,9 +1,9 @@
 #!/usr/bin/env bun
 /**
  * Generate KVN mappings for every open-licensed translation listed in
- * docs/open-bibles/inventory.json, using qwen3.5:122b via generate-mapping.ts
+ * docs/open-bibles/inventory.json, using qwen3.5:122b via build-mapping.ts
  * (--fast --no-verify). Resumable: skips translations whose mapping already
- * exists, and generate-mapping.ts itself resumes per-chapter. Updates
+ * exists, and build-mapping.ts itself resumes per-chapter. Updates
  * kvn_mapping status in inventory.json as each completes.
  *
  * Usage: bun scripts/batch-mappings.ts [--model <name>] [--only <m1,m2>]
@@ -22,7 +22,7 @@ import type { FlagSpec } from '../../generate/cli.js';
 const SPEC: Record<string, FlagSpec> = {
   model: {
     kind: 'string',
-    help: 'Ollama-modellen generate-mapping.ts skal bruke',
+    help: 'Ollama-modellen build-mapping.ts skal bruke',
     default: 'qwen3.5:122b',
   },
   only: {
@@ -42,7 +42,7 @@ const { flags } = parseArgs(process.argv.slice(2), SPEC);
 if (flags.help) {
   console.log(formatHelp(
     'kvn/scripts/batch-mappings.ts',
-    'kjører generate-mapping.ts for hver åpent lisensierte oversettelse i inventaret',
+    'kjører build-mapping.ts for hver åpent lisensierte oversettelse i inventaret',
     SPEC,
     HELP_EXAMPLES,
   ));
@@ -89,7 +89,7 @@ function main(): void {
     try {
       // `--bible` er det kanoniske navnet på det som het `--source`.
       execSync(
-        `bun scripts/generate-mapping.ts --bible ${m} --format raw --fast --no-verify --model ${model}`,
+        `bun scripts/build-mapping.ts --bible ${m} --format raw --fast --no-verify --model ${model}`,
         { cwd: __dirname.replace(/\/scripts$/, ''), stdio: 'inherit' }
       );
       if (existsSync(mapFile)) { r.kvn_mapping = true; r.status = 'kvn_done'; done++; }

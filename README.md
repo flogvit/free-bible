@@ -61,7 +61,7 @@ Detailed explanations of translation choices for each verse.
 ### Cross References
 Reference lists connecting related verses throughout the Bible. Two complementary scripts:
 - `references.ts` — LLM-knowledge-based (Claude or Ollama generates references from training data)
-- `references_semantic.ts` — Semantic discovery (bge-m3 embeddings + LLM verification finds parallels not in standard cross-reference works)
+- `references-semantic.ts` — Semantic discovery (bge-m3 embeddings + LLM verification finds parallels not in standard cross-reference works)
 
 ### Reading Plans
 36 different reading plans for Bible study (see Developer section for full list).
@@ -115,24 +115,24 @@ generate/
 | Script | Description |
 |--------|-------------|
 | `bible.ts` | Main Bible translation script |
-| `chapter_summary.ts` | Generate chapter summaries |
-| `book_summary.ts` | Generate book summaries |
-| `chapter_context.ts` | Generate chapter context |
-| `book_context.ts` | Generate book context |
+| `chapter-summary.ts` | Generate chapter summaries |
+| `book-summary.ts` | Generate book summaries |
+| `chapter-context.ts` | Generate chapter context |
+| `book-context.ts` | Generate book context |
 | `word4word.ts` | Generate word-for-word translations |
-| `verse_translation.ts` | Generate verse translation explanations |
-| `bible_persons.ts` | Generate Bible persons encyclopedia |
-| `generate_reading_plans.ts` | Generate reading plans |
+| `verse-translation.ts` | Generate verse translation explanations |
+| `bible-persons.ts` | Generate Bible persons encyclopedia |
+| `build-reading-plans.ts` | Generate reading plans |
 | `important_words_chapter.ts` | Key words per chapter with explanations (`--local` for Ollama) |
 | `references.ts` | Generate cross references (LLM-knowledge based) |
-| `references_semantic.ts` | Semantic cross references via embeddings + LLM verify |
-| `number_symbolism.ts` | Generate and index biblical number symbolism |
+| `references-semantic.ts` | Semantic cross references via embeddings + LLM verify |
+| `number-symbolism.ts` | Generate and index biblical number symbolism |
 | `stories.ts` | Generate Bible story summaries |
-| `scan_stories.ts` | Systematically scan Bible chapter-by-chapter for missing stories (proposals to `stories_proposed/`) |
+| `scan-stories.ts` | Systematically scan Bible chapter-by-chapter for missing stories (proposals to `stories_proposed/`) |
 | `convert-refs.ts` | Convert plain-text references to `[ref:...\|...]` markup |
 | `translate.ts` | Translate generated content (summaries, context, insights) from nb to other languages with local Ollama |
-| `make_tanach.ts` | Process Tanach source files |
-| `make_sblgnt.ts` | Process SBLGNT source files |
+| `build-tanach.ts` | Process Tanach source files |
+| `build-sblgnt.ts` | Process SBLGNT source files |
 
 ### Verifying the KVN mappings against the text
 
@@ -155,7 +155,7 @@ measured accuracy are in `kvn/README.md` → *Verifisere mappingene mot teksten*
 | `lib.ts` | Shared utilities: `bookRanges`, `getChaptersForRange()`, `getChaptersForBooks()`, `resolveBookRange()` |
 | `llm.ts` | Shared LLM module — supports both Claude (Anthropic) and Ollama |
 | `embeddings.ts` | Reusable embedding library — `buildEmbeddings`, `loadEmbeddings`, `topK`, `embedQuery` (corpus-agnostic; works for verses, songs, etc.) |
-| `reading_plans_config.ts` | Configuration for all 36 reading plans |
+| `reading-plans-config.ts` | Configuration for all 36 reading plans |
 
 ---
 
@@ -198,55 +198,55 @@ bun bible.ts osnb --book 1 --force
 
 ```bash
 # Generate NT summaries (Norwegian bokmål)
-bun chapter_summary.ts --nt
+bun chapter-summary.ts --nt
 
 # Generate OT summaries in nynorsk
-bun chapter_summary.ts --language nn --ot
+bun chapter-summary.ts --language nn --ot
 
 # Generate for specific book in English
-bun chapter_summary.ts --language en --book 43
+bun chapter-summary.ts --language en --book 43
 
 # Generate specific chapters
-bun chapter_summary.ts --book 43 --chapter 1-11
+bun chapter-summary.ts --book 43 --chapter 1-11
 
 # Generate, proofread, and apply
-bun chapter_summary.ts --nt --proofread --apply
+bun chapter-summary.ts --nt --proofread --apply
 ```
 
 ### Book Summaries
 
 ```bash
 # Generate NT book summaries
-bun book_summary.ts --nt
+bun book-summary.ts --nt
 
 # Generate for specific books
-bun book_summary.ts --book 1-5
+bun book-summary.ts --book 1-5
 
 # Generate with proofreading
-bun book_summary.ts --nt --proofread --apply
+bun book-summary.ts --nt --proofread --apply
 ```
 
 ### Chapter Context
 
 ```bash
 # Generate NT chapter context
-bun chapter_context.ts --nt
+bun chapter-context.ts --nt
 
 # Generate for specific book/chapters
-bun chapter_context.ts --book 1 --chapter 1-11
+bun chapter-context.ts --book 1 --chapter 1-11
 
 # With language option
-bun chapter_context.ts --language en --book 43
+bun chapter-context.ts --language en --book 43
 ```
 
 ### Book Context
 
 ```bash
 # Generate NT book context
-bun book_context.ts --nt
+bun book-context.ts --nt
 
 # Generate for specific books
-bun book_context.ts --book 1-5
+bun book-context.ts --book 1-5
 ```
 
 ### Word-for-Word Translation
@@ -266,43 +266,43 @@ bun word4word.ts sblgnt --nt                    # Greek NT → Norwegian
 
 ```bash
 # Explain translation choices
-bun verse_translation.ts osnb --book 1 --chapter 1
-bun verse_translation.ts osnb --book 43
-bun verse_translation.ts osnb --nt
+bun verse-translation.ts osnb --book 1 --chapter 1
+bun verse-translation.ts osnb --book 43
+bun verse-translation.ts osnb --nt
 ```
 
 ### Bible Persons
 
 ```bash
 # Generate specific person
-bun bible_persons.ts abraham
-bun bible_persons.ts "Set (Adams sønn)"
+bun bible-persons.ts abraham
+bun bible-persons.ts "Set (Adams sønn)"
 
 # Generate all persons
-bun bible_persons.ts all
+bun bible-persons.ts all
 ```
 
 ### Number Symbolism
 
 ```bash
 # Generate symbolism for a specific number
-bun number_symbolism.ts --number 7
+bun number-symbolism.ts --number 7
 
 # Index entire bible — extract numbers from every verse with Ollama
-bun number_symbolism.ts --bible osnb --index
+bun number-symbolism.ts --bible osnb --index
 
 # Index specific book/chapter
-bun number_symbolism.ts --bible osnb --index --book 11 --chapter 10
+bun number-symbolism.ts --bible osnb --index --book 11 --chapter 10
 
 # Proofread existing data
-bun number_symbolism.ts --all --proofread --apply
+bun number-symbolism.ts --all --proofread --apply
 ```
 
 ### Reading Plans
 
 ```bash
 # Generate all reading plans
-bun generate_reading_plans.ts
+bun build-reading-plans.ts
 ```
 
 ### Content Translation
@@ -311,7 +311,7 @@ bun generate_reading_plans.ts
 
 **Convention:** content is generated in Norwegian (`nb/`) and translated to other languages. For dirs covered by translate.ts, do not run the generator scripts with `--language en` directly - a generated `en/` file would be untracked by the translation state and overwritten on the next translate run.
 
-Covered dirs (processed in this order; see `CONTENT_DIRS` in the script): `chapter_summaries`, `book_summaries`, `chapter_context`, `book_context`, `chapter_insights`, `days`, `day_tags`, `tags`, `themes`, `timeline`, `stories`, `persons`, `number_symbolism`, `prophecies`, `important_words`, `verse_prayer`, `verse_sermon`, `reading_plans`, `daily_verse`, `gospel_parallels`, and `references` last (10k+ files, plan for multi-day runtime). Handles `.md`, `.json` (structure-validated, machine keys preserved) and `.txt`. Not translated on purpose: internal pipeline artifacts (`proofread_*`, `stories_proposed`, `stories_rejected`).
+Covered dirs (processed in this order; see `CONTENT_DIRS` in the script): `chapter_summaries`, `book_summaries`, `chapter-context`, `book-context`, `chapter_insights`, `days`, `day-tags`, `tags`, `themes`, `timeline`, `stories`, `persons`, `number-symbolism`, `prophecies`, `important_words`, `verse_prayer`, `verse_sermon`, `reading_plans`, `daily_verse`, `gospel_parallels`, and `references` last (10k+ files, plan for multi-day runtime). Handles `.md`, `.json` (structure-validated, machine keys preserved) and `.txt`. Not translated on purpose: internal pipeline artifacts (`proofread_*`, `stories_proposed`, `stories_rejected`).
 
 ```bash
 # Show status per dir (current / stale / untracked / missing)
@@ -342,13 +342,13 @@ bun translate.ts --language en --dirs chapter_summaries --book 43 --limit 10
 
 ### Semantic Cross References
 
-`references_semantic.ts` finds cross references via vector search over osnb verse embeddings, then LLM-verifies each candidate. Complements `references.ts` (which generates from LLM knowledge) by surfacing parallels that don't appear in standard cross-reference works.
+`references-semantic.ts` finds cross references via vector search over osnb verse embeddings, then LLM-verifies each candidate. Complements `references.ts` (which generates from LLM knowledge) by surfacing parallels that don't appear in standard cross-reference works.
 
 **Pipeline:** bge-m3 embeddings + LLM theme summary + LLM concept questions → unique candidate set → qwen3.5:122b verifies each → merged into `references/nb/<book>/<chapter>/<verse>.json`.
 
 **Recommended production command:**
 ```bash
-bun references_semantic.ts --top-k 30 --threshold 0.65 --theme --concepts --resume
+bun references-semantic.ts --top-k 30 --threshold 0.65 --theme --concepts --resume
 ```
 
 This config was chosen by evaluating 9 variants on 10 test verses with Claude as independent judge:
@@ -360,7 +360,7 @@ This config was chosen by evaluating 9 variants on 10 test verses with Claude as
 ```bash
 ollama pull bge-m3
 ollama pull qwen3.5:122b   # or already pulled
-bun references_semantic.ts --build-only   # one-time: build embeddings (128 MB, ~15 min)
+bun references-semantic.ts --build-only   # one-time: build embeddings (128 MB, ~15 min)
 ```
 
 **Key flags:**
@@ -387,14 +387,14 @@ All generation scripts support `--local` to use a local Ollama model instead of 
 
 ```bash
 bun references.ts --book 43 --chapter 1 --local
-bun chapter_summary.ts --nt --local
+bun chapter-summary.ts --nt --local
 ```
 
 Configuration in `constants.ts`:
 - `ollamaModel` — default: `qwen3.5:122b`
 - `ollamaBaseUrl` — default: `http://localhost:11434`
 
-The `number_symbolism.ts --index` mode always uses Ollama for verse scanning regardless of `--local`.
+The `number-symbolism.ts --index` mode always uses Ollama for verse scanning regardless of `--local`.
 
 ---
 
@@ -448,7 +448,7 @@ Proofread results are saved in `proofread/<bible>/<book>/<chapter>.json`.
 
 ### Adding New Reading Plans
 
-Edit `reading_plans_config.ts`:
+Edit `reading-plans-config.ts`:
 
 ```javascript
 {
@@ -464,7 +464,7 @@ Edit `reading_plans_config.ts`:
 
 Then run:
 ```bash
-bun generate_reading_plans.ts
+bun build-reading-plans.ts
 ```
 
 ---

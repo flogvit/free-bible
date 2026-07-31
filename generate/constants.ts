@@ -47,7 +47,7 @@ export const ollamaBaseUrl: string = process.env.OLLAMA_BASE_URL || "http://loca
 // ollamaModelConfig. It handles closed ones (enums, fixed objects) fine.
 export const taskModels: Record<string, string> = {
     triage: "qwen3.5:27b",
-    // Kapitteltagging har i praksis kjørt på 122b hele tiden — chapter_tags.mjs
+    // Kapitteltagging har i praksis kjørt på 122b hele tiden — chapter-tags.mjs
     // sendte aldri noe modellvalg, så den falt til ollamaModel. Tabellen sa 27b,
     // og det var død config. Satt til det som faktisk har produsert tag-dataene.
     tags: "qwen3.5:122b",

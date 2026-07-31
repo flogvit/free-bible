@@ -64,7 +64,7 @@ nesten aldri en kapittelgrense, så et kapittel gir versene den sammenhengen de
 trenger. Ikke prøv å oversette bok for bok eller vers for vers.
 
 Kilden er grunnteksten i `generate/bibles_raw/tanach/` og `.../sblgnt/`, som
-importeres av `make_tanach.ts` og `make_sblgnt.ts` fra `external/bibles/`.
+importeres av `build-tanach.ts` og `build-sblgnt.ts` fra `external/bibles/`.
 
 ## Steg 3 — Korrekturles
 
@@ -116,7 +116,7 @@ lage en ny. Det var tilfellet for `osen`.
 Følger den europeisk nummerering, må du lage en:
 
 ```bash
-bun kvn/scripts/generate-mapping.ts --source <navn> --format raw
+bun kvn/scripts/build-mapping.ts --source <navn> --format raw
 ```
 
 Les [`kvn/README.md`](../kvn/README.md) først. Mappingen går gjennom `osmain`
@@ -157,7 +157,7 @@ skriv den for hånd.
 ## Steg 7 — Regenerer indeksen
 
 ```bash
-bun generate/translations_index.ts
+bun generate/build-translations-index.ts
 ```
 
 **Kjør denne etter enhver endring i `meta.json` eller `license.json`.** Den
@@ -174,5 +174,5 @@ bygger `generate/translations/index.json`, som er det konsumentene leser.
 - [ ] `--check-length` kjørt
 - [ ] KVN-mapping finnes, eller det er bekreftet at den deler en eksisterende
 - [ ] `meta.json` og `license.json` på plass
-- [ ] `translations_index.ts` kjørt, og oversettelsen finnes i `index.json`
+- [ ] `build-translations-index.ts` kjørt, og oversettelsen finnes i `index.json`
 - [ ] `bun run test` er grønn
