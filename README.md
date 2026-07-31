@@ -60,8 +60,8 @@ Detailed explanations of translation choices for each verse.
 
 ### Cross References
 Reference lists connecting related verses throughout the Bible. Two complementary scripts:
-- `references.mjs` — LLM-knowledge-based (Claude or Ollama generates references from training data)
-- `references_semantic.mjs` — Semantic discovery (bge-m3 embeddings + LLM verification finds parallels not in standard cross-reference works)
+- `references.ts` — LLM-knowledge-based (Claude or Ollama generates references from training data)
+- `references_semantic.ts` — Semantic discovery (bge-m3 embeddings + LLM verification finds parallels not in standard cross-reference works)
 
 ### Reading Plans
 36 different reading plans for Bible study (see Developer section for full list).
@@ -75,10 +75,15 @@ Encyclopedia of people mentioned in the Bible.
 
 ### Requirements
 
-Node.js 18 or higher:
+[Bun](https://bun.sh) 1.3 or higher:
 ```bash
-nvm use 18
+curl -fsSL https://bun.sh/install | bash
+bun install
 ```
+
+Bun runs the `.ts` scripts directly — there is no build step, and no
+`node`/`npx`/`tsx` anywhere in the toolchain. Note that Bun does **not**
+typecheck; run `bun run typecheck` for that.
 
 Create `.env` file in `generate/` with:
 ```
@@ -109,25 +114,25 @@ generate/
 
 | Script | Description |
 |--------|-------------|
-| `bible.mjs` | Main Bible translation script |
-| `chapter_summary.mjs` | Generate chapter summaries |
-| `book_summary.mjs` | Generate book summaries |
-| `chapter_context.mjs` | Generate chapter context |
-| `book_context.mjs` | Generate book context |
-| `word4word.mjs` | Generate word-for-word translations |
-| `verse_translation.mjs` | Generate verse translation explanations |
-| `bible_persons.mjs` | Generate Bible persons encyclopedia |
-| `generate_reading_plans.mjs` | Generate reading plans |
-| `important_words_chapter.mjs` | Key words per chapter with explanations (`--local` for Ollama) |
-| `references.mjs` | Generate cross references (LLM-knowledge based) |
-| `references_semantic.mjs` | Semantic cross references via embeddings + LLM verify |
-| `number_symbolism.mjs` | Generate and index biblical number symbolism |
-| `stories.mjs` | Generate Bible story summaries |
-| `scan_stories.mjs` | Systematically scan Bible chapter-by-chapter for missing stories (proposals to `stories_proposed/`) |
-| `convert-refs.mjs` | Convert plain-text references to `[ref:...\|...]` markup |
-| `translate.mjs` | Translate generated content (summaries, context, insights) from nb to other languages with local Ollama |
-| `make_tanach.mjs` | Process Tanach source files |
-| `make_sblgnt.mjs` | Process SBLGNT source files |
+| `bible.ts` | Main Bible translation script |
+| `chapter_summary.ts` | Generate chapter summaries |
+| `book_summary.ts` | Generate book summaries |
+| `chapter_context.ts` | Generate chapter context |
+| `book_context.ts` | Generate book context |
+| `word4word.ts` | Generate word-for-word translations |
+| `verse_translation.ts` | Generate verse translation explanations |
+| `bible_persons.ts` | Generate Bible persons encyclopedia |
+| `generate_reading_plans.ts` | Generate reading plans |
+| `important_words_chapter.ts` | Key words per chapter with explanations (`--local` for Ollama) |
+| `references.ts` | Generate cross references (LLM-knowledge based) |
+| `references_semantic.ts` | Semantic cross references via embeddings + LLM verify |
+| `number_symbolism.ts` | Generate and index biblical number symbolism |
+| `stories.ts` | Generate Bible story summaries |
+| `scan_stories.ts` | Systematically scan Bible chapter-by-chapter for missing stories (proposals to `stories_proposed/`) |
+| `convert-refs.ts` | Convert plain-text references to `[ref:...\|...]` markup |
+| `translate.ts` | Translate generated content (summaries, context, insights) from nb to other languages with local Ollama |
+| `make_tanach.ts` | Process Tanach source files |
+| `make_sblgnt.ts` | Process SBLGNT source files |
 
 ### Verifying the KVN mappings against the text
 
@@ -146,11 +151,11 @@ measured accuracy are in `kvn/README.md` → *Verifisere mappingene mot teksten*
 
 | File | Description |
 |------|-------------|
-| `constants.js` | Book definitions, language mappings, model config |
-| `lib.js` | Shared utilities: `bookRanges`, `getChaptersForRange()`, `getChaptersForBooks()`, `resolveBookRange()` |
-| `llm.js` | Shared LLM module — supports both Claude (Anthropic) and Ollama |
-| `embeddings.js` | Reusable embedding library — `buildEmbeddings`, `loadEmbeddings`, `topK`, `embedQuery` (corpus-agnostic; works for verses, songs, etc.) |
-| `reading_plans_config.js` | Configuration for all 36 reading plans |
+| `constants.ts` | Book definitions, language mappings, model config |
+| `lib.ts` | Shared utilities: `bookRanges`, `getChaptersForRange()`, `getChaptersForBooks()`, `resolveBookRange()` |
+| `llm.ts` | Shared LLM module — supports both Claude (Anthropic) and Ollama |
+| `embeddings.ts` | Reusable embedding library — `buildEmbeddings`, `loadEmbeddings`, `topK`, `embedQuery` (corpus-agnostic; works for verses, songs, etc.) |
+| `reading_plans_config.ts` | Configuration for all 36 reading plans |
 
 ---
 
@@ -165,19 +170,19 @@ cd generate
 
 ```bash
 # Translate entire NT with oral style
-node bible.mjs osnb --style oral --nt
+bun bible.ts osnb --style oral --nt
 
 # Translate specific books
-node bible.mjs osnb --style oral --book 1-20
+bun bible.ts osnb --style oral --book 1-20
 
 # Translate specific chapters
-node bible.mjs osnb --book 43 --chapter 1-11
+bun bible.ts osnb --book 43 --chapter 1-11
 
 # Translate, proofread, and apply corrections
-node bible.mjs osnb --nt --proofread --apply
+bun bible.ts osnb --nt --proofread --apply
 
 # Force re-translation
-node bible.mjs osnb --book 1 --force
+bun bible.ts osnb --book 1 --force
 ```
 
 **Options:**
@@ -193,139 +198,139 @@ node bible.mjs osnb --book 1 --force
 
 ```bash
 # Generate NT summaries (Norwegian bokmål)
-node chapter_summary.mjs --nt
+bun chapter_summary.ts --nt
 
 # Generate OT summaries in nynorsk
-node chapter_summary.mjs --language nn --ot
+bun chapter_summary.ts --language nn --ot
 
 # Generate for specific book in English
-node chapter_summary.mjs --language en --book 43
+bun chapter_summary.ts --language en --book 43
 
 # Generate specific chapters
-node chapter_summary.mjs --book 43 --chapter 1-11
+bun chapter_summary.ts --book 43 --chapter 1-11
 
 # Generate, proofread, and apply
-node chapter_summary.mjs --nt --proofread --apply
+bun chapter_summary.ts --nt --proofread --apply
 ```
 
 ### Book Summaries
 
 ```bash
 # Generate NT book summaries
-node book_summary.mjs --nt
+bun book_summary.ts --nt
 
 # Generate for specific books
-node book_summary.mjs --book 1-5
+bun book_summary.ts --book 1-5
 
 # Generate with proofreading
-node book_summary.mjs --nt --proofread --apply
+bun book_summary.ts --nt --proofread --apply
 ```
 
 ### Chapter Context
 
 ```bash
 # Generate NT chapter context
-node chapter_context.mjs --nt
+bun chapter_context.ts --nt
 
 # Generate for specific book/chapters
-node chapter_context.mjs --book 1 --chapter 1-11
+bun chapter_context.ts --book 1 --chapter 1-11
 
 # With language option
-node chapter_context.mjs --language en --book 43
+bun chapter_context.ts --language en --book 43
 ```
 
 ### Book Context
 
 ```bash
 # Generate NT book context
-node book_context.mjs --nt
+bun book_context.ts --nt
 
 # Generate for specific books
-node book_context.mjs --book 1-5
+bun book_context.ts --book 1-5
 ```
 
 ### Word-for-Word Translation
 
 ```bash
 # From Bible translation (uses existing translation)
-node word4word.mjs osnb --nt
-node word4word.mjs osnb --book 43 --chapter 1 --verse 1-11
+bun word4word.ts osnb --nt
+bun word4word.ts osnb --book 43 --chapter 1 --verse 1-11
 
 # Direct from source texts (generates fresh translation)
-node word4word.mjs tanach --ot                    # Hebrew OT → Norwegian
-node word4word.mjs tanach --language en --book 1  # Hebrew OT → English
-node word4word.mjs sblgnt --nt                    # Greek NT → Norwegian
+bun word4word.ts tanach --ot                    # Hebrew OT → Norwegian
+bun word4word.ts tanach --language en --book 1  # Hebrew OT → English
+bun word4word.ts sblgnt --nt                    # Greek NT → Norwegian
 ```
 
 ### Verse Translation Explanations
 
 ```bash
 # Explain translation choices
-node verse_translation.mjs osnb --book 1 --chapter 1
-node verse_translation.mjs osnb --book 43
-node verse_translation.mjs osnb --nt
+bun verse_translation.ts osnb --book 1 --chapter 1
+bun verse_translation.ts osnb --book 43
+bun verse_translation.ts osnb --nt
 ```
 
 ### Bible Persons
 
 ```bash
 # Generate specific person
-node bible_persons.mjs abraham
-node bible_persons.mjs "Set (Adams sønn)"
+bun bible_persons.ts abraham
+bun bible_persons.ts "Set (Adams sønn)"
 
 # Generate all persons
-node bible_persons.mjs all
+bun bible_persons.ts all
 ```
 
 ### Number Symbolism
 
 ```bash
 # Generate symbolism for a specific number
-node number_symbolism.mjs --number 7
+bun number_symbolism.ts --number 7
 
 # Index entire bible — extract numbers from every verse with Ollama
-node number_symbolism.mjs --bible osnb --index
+bun number_symbolism.ts --bible osnb --index
 
 # Index specific book/chapter
-node number_symbolism.mjs --bible osnb --index --book 11 --chapter 10
+bun number_symbolism.ts --bible osnb --index --book 11 --chapter 10
 
 # Proofread existing data
-node number_symbolism.mjs --all --proofread --apply
+bun number_symbolism.ts --all --proofread --apply
 ```
 
 ### Reading Plans
 
 ```bash
 # Generate all reading plans
-node generate_reading_plans.mjs
+bun generate_reading_plans.ts
 ```
 
 ### Content Translation
 
-`translate.mjs` translates generated content from `<dir>/nb/` to `<dir>/<lang>/` using the local Ollama model (free, ~20-60 s per file). Unlike re-generating per language, translation keeps the content identical across languages.
+`translate.ts` translates generated content from `<dir>/nb/` to `<dir>/<lang>/` using the local Ollama model (free, ~20-60 s per file). Unlike re-generating per language, translation keeps the content identical across languages.
 
-**Convention:** content is generated in Norwegian (`nb/`) and translated to other languages. For dirs covered by translate.mjs, do not run the generator scripts with `--language en` directly - a generated `en/` file would be untracked by the translation state and overwritten on the next translate run.
+**Convention:** content is generated in Norwegian (`nb/`) and translated to other languages. For dirs covered by translate.ts, do not run the generator scripts with `--language en` directly - a generated `en/` file would be untracked by the translation state and overwritten on the next translate run.
 
 Covered dirs (processed in this order; see `CONTENT_DIRS` in the script): `chapter_summaries`, `book_summaries`, `chapter_context`, `book_context`, `chapter_insights`, `days`, `day_tags`, `tags`, `themes`, `timeline`, `stories`, `persons`, `number_symbolism`, `prophecies`, `important_words`, `verse_prayer`, `verse_sermon`, `reading_plans`, `daily_verse`, `gospel_parallels`, and `references` last (10k+ files, plan for multi-day runtime). Handles `.md`, `.json` (structure-validated, machine keys preserved) and `.txt`. Not translated on purpose: internal pipeline artifacts (`proofread_*`, `stories_proposed`, `stories_rejected`).
 
 ```bash
 # Show status per dir (current / stale / untracked / missing)
-node translate.mjs --language en --status
+bun translate.ts --language en --status
 
 # List what would be translated
-node translate.mjs --language en --dry-run
+bun translate.ts --language en --dry-run
 
 # Translate everything missing or stale
-node translate.mjs --language en
+bun translate.ts --language en
 
 # Pilot run: one dir, one book, limited count
-node translate.mjs --language en --dirs chapter_summaries --book 43 --limit 10
+bun translate.ts --language en --dirs chapter_summaries --book 43 --limit 10
 ```
 
 **Change tracking:** the sha256 of each nb source file is recorded in `translate_state/<lang>.json` when translated. If the nb file later changes, the next run marks it `stale` and re-translates it automatically — no manual bookkeeping. Earlier versions (hash, model, timestamp) are kept in a `history` list per file. State is saved after every file, so interrupted runs resume where they left off.
 
 **Key flags:**
-- `--language <lang>` — Target language (required); codes or full names from `constants.js`
+- `--language <lang>` — Target language (required); codes or full names from `constants.ts`
 - `--source <lang>` — Source language code (default: nb)
 - `--dirs <a,b,c>` — Restrict to specific content dirs
 - `--book <n|n-m>` — Restrict to specific book(s)
@@ -337,13 +342,13 @@ node translate.mjs --language en --dirs chapter_summaries --book 43 --limit 10
 
 ### Semantic Cross References
 
-`references_semantic.mjs` finds cross references via vector search over osnb verse embeddings, then LLM-verifies each candidate. Complements `references.mjs` (which generates from LLM knowledge) by surfacing parallels that don't appear in standard cross-reference works.
+`references_semantic.ts` finds cross references via vector search over osnb verse embeddings, then LLM-verifies each candidate. Complements `references.ts` (which generates from LLM knowledge) by surfacing parallels that don't appear in standard cross-reference works.
 
 **Pipeline:** bge-m3 embeddings + LLM theme summary + LLM concept questions → unique candidate set → qwen3.5:122b verifies each → merged into `references/nb/<book>/<chapter>/<verse>.json`.
 
 **Recommended production command:**
 ```bash
-node references_semantic.mjs --top-k 30 --threshold 0.65 --theme --concepts --resume
+bun references_semantic.ts --top-k 30 --threshold 0.65 --theme --concepts --resume
 ```
 
 This config was chosen by evaluating 9 variants on 10 test verses with Claude as independent judge:
@@ -355,7 +360,7 @@ This config was chosen by evaluating 9 variants on 10 test verses with Claude as
 ```bash
 ollama pull bge-m3
 ollama pull qwen3.5:122b   # or already pulled
-node references_semantic.mjs --build-only   # one-time: build embeddings (128 MB, ~15 min)
+bun references_semantic.ts --build-only   # one-time: build embeddings (128 MB, ~15 min)
 ```
 
 **Key flags:**
@@ -372,7 +377,7 @@ node references_semantic.mjs --build-only   # one-time: build embeddings (128 MB
 **Known limitations:**
 - Prophecy → fulfillment (e.g. Gen 3:15 → Rom 16:20) — fulfillment language is too different from prophetic language for embedding similarity to find it
 - Famous short verses (e.g. Ps 23:1) — too little text to embed meaningfully
-- For these, fall back to `references.mjs` (LLM-knowledge based)
+- For these, fall back to `references.ts` (LLM-knowledge based)
 
 ---
 
@@ -381,15 +386,15 @@ node references_semantic.mjs --build-only   # one-time: build embeddings (128 MB
 All generation scripts support `--local` to use a local Ollama model instead of Claude:
 
 ```bash
-node references.mjs --book 43 --chapter 1 --local
-node chapter_summary.mjs --nt --local
+bun references.ts --book 43 --chapter 1 --local
+bun chapter_summary.ts --nt --local
 ```
 
-Configuration in `constants.js`:
+Configuration in `constants.ts`:
 - `ollamaModel` — default: `qwen3.5:122b`
 - `ollamaBaseUrl` — default: `http://localhost:11434`
 
-The `number_symbolism.mjs --index` mode always uses Ollama for verse scanning regardless of `--local`.
+The `number_symbolism.ts --index` mode always uses Ollama for verse scanning regardless of `--local`.
 
 ---
 
@@ -399,10 +404,10 @@ For faster processing, run multiple instances in separate terminals:
 
 ```bash
 # Terminal 1
-node bible.mjs osnb --book 1-20 &
+bun bible.ts osnb --book 1-20 &
 
 # Terminal 2
-node bible.mjs osnb --book 21-39 &
+bun bible.ts osnb --book 21-39 &
 ```
 
 ---
@@ -417,12 +422,12 @@ All main scripts support a three-step workflow:
 
 ```bash
 # All in one command
-node bible.mjs osnb --nt --proofread --apply
+bun bible.ts osnb --nt --proofread --apply
 
 # Or separately
-node bible.mjs osnb --nt
-node bible.mjs osnb --nt --proofread
-node bible.mjs osnb --nt --apply
+bun bible.ts osnb --nt
+bun bible.ts osnb --nt --proofread
+bun bible.ts osnb --nt --apply
 ```
 
 Proofread results are saved in `proofread/<bible>/<book>/<chapter>.json`.
@@ -443,7 +448,7 @@ Proofread results are saved in `proofread/<bible>/<book>/<chapter>.json`.
 
 ### Adding New Reading Plans
 
-Edit `reading_plans_config.js`:
+Edit `reading_plans_config.ts`:
 
 ```javascript
 {
@@ -459,7 +464,7 @@ Edit `reading_plans_config.js`:
 
 Then run:
 ```bash
-node generate_reading_plans.mjs
+bun generate_reading_plans.ts
 ```
 
 ---

@@ -7,7 +7,7 @@ For å støtte andre oversettelser trenger vi en mapping mellom deres nummererin
 ## Kort oversikt
 
 1. Lag en tekstfil med ett vers per linje
-2. Legg til formatet i `generate/generate-verse-mapping.mjs`
+2. Legg til formatet i `generate/generate-verse-mapping.ts`
 3. Kjør skriptet for å generere mapping
 4. Resultat havner i `generate/mappings/<id>.json`
 
@@ -31,7 +31,7 @@ Alle 31 000+ vers skal være med, fra 1. Mosebok til Åpenbaringen.
 
 ## Steg 2: Legg til format i skriptet
 
-Åpne `generate/generate-verse-mapping.mjs` og legg til en ny oppføring i `KNOWN_FORMATS`:
+Åpne `generate/generate-verse-mapping.ts` og legg til en ny oppføring i `KNOWN_FORMATS`:
 
 ```js
 const KNOWN_FORMATS = {
@@ -59,10 +59,10 @@ const KNOWN_FORMATS = {
 cd generate/
 
 # Steg A: Kjør uten AI først for å se forskjellene
-node generate-verse-mapping.mjs /sti/til/fil.txt mittformat
+bun generate-verse-mapping.ts /sti/til/fil.txt mittformat
 
 # Steg B: Kjør med AI for å matche gjenværende kapitler
-node generate-verse-mapping.mjs /sti/til/fil.txt mittformat --use-ai
+bun generate-verse-mapping.ts /sti/til/fil.txt mittformat --use-ai
 ```
 
 Uten `--use-ai` løser skriptet de fleste forskjellene deterministisk
