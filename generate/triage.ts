@@ -40,7 +40,7 @@ dotenv.config();
 
 import {bibles, books, getTaskModel, getLanguageCode} from './constants.js';
 import {callWithRetry, resolveLocalModel} from './llm.js';
-import {loadUkvnMapping, UkvnMapper, CrossMapper, ukvnEncode, ukvnDecode} from '../kvn/src/ukvn.ts';
+import {loadUkvnMapping, UkvnMapper, CrossMapper, ukvnEncode, ukvnDecode} from '../kvn/src/ukvn.js';
 
 // Same-language comparison translation, per target language. Chosen for closeness in
 // register and length: measured against osen, bsb has a median length ratio of 1.00

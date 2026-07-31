@@ -17,10 +17,10 @@
 import * as fs from 'fs';
 import path from 'path';
 import {fileURLToPath} from 'url';
-import {parseRef} from '../kvn/src/kvn.ts';
-import {encode, decode, BOOK_IDS, BOOK_NAMES} from '../kvn/src/types.ts';
-import {loadUkvnMapping, UkvnMapper, ukvnEncode, ukvnDecode, resolveMappingId} from '../kvn/src/ukvn.ts';
-import {getMaxVerse} from '../kvn/src/load-bible.ts';
+import {parseRef} from '../kvn/src/kvn.js';
+import {encode, decode, BOOK_IDS, BOOK_NAMES} from '../kvn/src/types.js';
+import {loadUkvnMapping, UkvnMapper, ukvnEncode, ukvnDecode, resolveMappingId} from '../kvn/src/ukvn.js';
+import {getMaxVerse} from '../kvn/src/load-bible.js';
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const QUEUE_DIR = path.join(__dirname, 'queue');

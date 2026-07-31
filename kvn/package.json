@@ -10,8 +10,9 @@
     "./types": "./src/types.ts"
   },
   "scripts": {
-    "test": "tsc --noEmit && bun test",
-    "test:watch": "bun test --watch"
+    "test": "bun test",
+    "test:watch": "bun test --watch",
+    "typecheck": "tsc --noEmit"
   },
   "devDependencies": {
     "@types/bun": "^1.3.0",

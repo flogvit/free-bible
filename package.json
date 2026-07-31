@@ -4,14 +4,15 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "tsc --noEmit && bun test",
+    "test": "bun test",
     "test:kvn": "cd kvn && bun run test",
-    "test:all": "bun run test && bun run test:kvn"
+    "test:all": "bun run test && bun run test:kvn",
+    "typecheck": "tsc --noEmit"
   },
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "@anthropic-ai/sdk": "^0.71.2",
+    "@anthropic-ai/sdk": "^0.115.0",
     "chatgpt": "^5.2.4",
     "dotenv": "^16.0.3",
     "openai": "^4.30.0"
