@@ -15,16 +15,20 @@ import * as fs from 'fs';
 import path from 'path';
 import {fileURLToPath} from 'url';
 import dotenv from 'dotenv';
+import type {DotenvConfigOptions} from 'dotenv';
 import {callWithRetry} from '../generate/llm.js';
+import type {ContribDoc} from './contrib-types.js';
 
-dotenv.config({path: path.join(path.dirname(fileURLToPath(import.meta.url)), '..', '.env'), quiet: true});
+// `quiet` finnes i dotenv 17, men typene som følger 16.0.3 kjenner den ikke;
+// assertion-en holder kallet uendret i stedet for å fjerne flagget.
+dotenv.config({path: path.join(path.dirname(fileURLToPath(import.meta.url)), '..', '.env'), quiet: true} as DotenvConfigOptions);
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const QUEUE_DIR = path.join(__dirname, 'queue');
 
 const args = process.argv.slice(2);
-const flag = (name) => args.includes(name);
-const value = (name) => (args.includes(name) ? args[args.indexOf(name) + 1] : null);
+const flag = (name: string) => args.includes(name);
+const value = (name: string) => (args.includes(name) ? args[args.indexOf(name) + 1] : null);
 const onlyId = value('--id');
 const note = value('--note');
 
@@ -36,21 +40,21 @@ function queueFiles() {
     .map((name) => path.join(QUEUE_DIR, name));
 }
 
-function load(file) {
+function load(file: string): ContribDoc {
   return JSON.parse(fs.readFileSync(file, 'utf8'));
 }
 
-function save(file, doc) {
+function save(file: string, doc: ContribDoc): void {
   fs.writeFileSync(file, JSON.stringify(doc, null, 2) + '\n');
 }
 
-function targetSummary(doc) {
+function targetSummary(doc: ContribDoc): string {
   const target = doc.target ?? {};
   return target.freetext?.title || target.doi || target.isbn13 || target.isbn10 ||
     target.openlibrary_id || target.url || target.catalog_id || '—';
 }
 
-function hasConcreteId(doc) {
+function hasConcreteId(doc: ContribDoc): boolean {
   const target = doc.target ?? {};
   if (target.catalog_id || target.doi || target.isbn13 || target.isbn10 || target.openlibrary_id) return true;
   // Sanger har ingen global identifikator: katalog-id eller tittel (sluggeres
@@ -76,6 +80,12 @@ if (flag('--list')) {
 }
 
 if (flag('--llm')) {
+  /** Svarformen SCHEMA under krever av modellen. */
+  interface LlmRecommendation {
+    recommendation: 'approve' | 'reject' | 'needs_info';
+    reasoning: string;
+    note_to_contributor: string;
+  }
   const SCHEMA = {
     type: 'object',
     additionalProperties: false,
@@ -102,7 +112,7 @@ MASKINSJEKK-notatet nederst er deterministisk fasit (Crossref/OpenLibrary-oppsla
 
 Innsending:
 ${JSON.stringify(doc, null, 2)}`;
-    const result = await callWithRetry(prompt, {schema: SCHEMA, context: `contrib ${path.basename(file)}`});
+    const result = await callWithRetry(prompt, {schema: SCHEMA, context: `contrib ${path.basename(file)}`}) as LlmRecommendation;
     const line = `ANBEFALING (claude): ${result.recommendation} — ${result.reasoning}` +
       (result.note_to_contributor ? `\nForslag til note: ${result.note_to_contributor}` : '');
     doc.review.note = doc.review.note

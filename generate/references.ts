@@ -10,6 +10,95 @@ dotenv.config()
 import {books, normalizeLanguage, getLanguageCode, getBookName} from "./constants.js";
 import {getOriginalVerse, getOriginalChapter, getRef, getOsnb2VerseRange} from "./lib.js";
 import {callWithRetry} from "./llm.js";
+import type {Chapter} from '../kvn/src/bible-types.js';
+
+/**
+ * En kryssreferanse slik den kommer ut av modellen og slik den ligger på disk.
+ *
+ * Alle felter er valgfrie med vilje: `normalizeReferences` retter opp `verseId`
+ * i stedet for `fromVerseId` og fyller inn `toVerseId`, og `checkTarget` er
+ * porten som forkaster det som fortsatt mangler. Typen beskriver derfor
+ * inndataene, ikke det ferdig normaliserte resultatet.
+ */
+export interface RawReference {
+    bookId?: number;
+    chapterId?: number;
+    fromVerseId?: number;
+    toVerseId?: number;
+    /** Modellen skriver av og til `verseId` der `fromVerseId` skal stå. */
+    verseId?: number;
+    text?: string;
+}
+
+/**
+ * Måladressen etter at `checkTarget` har fått lov til å anta at feltene finnes.
+ * Kontrollene i funksjonen er de som faktisk håndhever det.
+ */
+interface ReferenceTarget {
+    bookId: number;
+    chapterId: number;
+    fromVerseId: number;
+    toVerseId: number;
+}
+
+/** Utfallet av adressekontrollen — se `checkTarget`. */
+export interface TargetCheck {
+    verdict: 'ok' | 'renumber' | 'drop';
+    reason?: string;
+}
+
+/** Fila på disk: `references/<lang>/<bok>/<kapittel>/<vers>.json`. */
+interface ReferenceFile {
+    bookId: number;
+    chapterId: number;
+    verseId: number;
+    references: RawReference[];
+}
+
+/** Svaret på REFERENCE_SCHEMA. */
+interface ReferenceResult {
+    references: RawReference[];
+}
+
+/** Ett funn fra korrekturen — jf. REFERENCE_PROOFREAD_SCHEMA. */
+interface ProofreadIssue {
+    type: string;
+    severity: string;
+    reference?: string;
+    explanation: string;
+}
+
+/** Svaret på REFERENCE_PROOFREAD_SCHEMA. */
+interface ProofreadResult {
+    issues?: ProofreadIssue[];
+    summary?: string;
+    score?: number | null;
+    revisedReferences?: RawReference[];
+}
+
+/** Slår opp et kapittel, eller gir null om det ikke finnes. */
+type ChapterLoader = (bookId: number, chapterId: number) => Chapter | null;
+
+/** Flaggene fra kommandolinja. */
+interface Options {
+    language: string;
+    proofread: boolean;
+    apply: boolean;
+    ot: boolean;
+    nt: boolean;
+    bookStart: number | null;
+    bookEnd: number | null;
+    chapterStart: number | null;
+    chapterEnd: number | null;
+    verseStart: number | null;
+    verseEnd: number | null;
+    force: boolean;
+    validate: boolean;
+    fix: boolean;
+    help: boolean;
+    /** Settes bare når `--local` er gitt, ikke i initialiseringen. */
+    local?: boolean;
+}
 
 let useLocal = false;
 
@@ -75,7 +164,7 @@ const REFERENCE_PROOFREAD_SCHEMA = {
     additionalProperties: false
 };
 
-function getReferencePrompt(language, bookId, chapterId, verseId, originalText) {
+function getReferencePrompt(language: string, bookId: number, chapterId: number, verseId: number, originalText: string): string {
     const bookName = getBookName(bookId, language);
     const ref = `${bookName} ${chapterId}:${verseId}`;
     const langCode = getLanguageCode(language);
@@ -152,11 +241,13 @@ Return a JSON object with a 'references' array. Each element has: bookId (number
  * Build context text for each cross-reference by looking up ±2 verses from osnb.
  * Returns a formatted string showing the actual Bible text around each referenced verse.
  */
-function buildReferenceContext(currentReferences) {
+function buildReferenceContext(currentReferences: RawReference[]): string {
     const CONTEXT_RANGE = 2; // ±2 verses
-    const sections = [];
+    const sections: string[] = [];
 
-    for (const ref of currentReferences) {
+    // Referansene som når hit har vært gjennom normalizeReferences/checkTarget,
+    // så adressefeltene er på plass.
+    for (const ref of currentReferences as ReferenceTarget[]) {
         const refBookId = ref.bookId;
         const refChapter = ref.chapterId;
         const fromVerse = ref.fromVerseId;
@@ -182,7 +273,7 @@ function buildReferenceContext(currentReferences) {
     return sections.join('\n\n');
 }
 
-function getProofreadPrompt(language, bookId, chapterId, verseId, originalText, currentReferences) {
+function getProofreadPrompt(language: string, bookId: number, chapterId: number, verseId: number, originalText: string, currentReferences: RawReference[]): string {
     const bookName = getBookName(bookId, language);
     const ref = `${bookName} ${chapterId}:${verseId}`;
     const langCode = getLanguageCode(language);
@@ -191,8 +282,8 @@ function getProofreadPrompt(language, bookId, chapterId, verseId, originalText, 
 
     const refsJson = JSON.stringify(currentReferences, null, 2);
 
-    let basePrompt;
-    let taskDescription;
+    let basePrompt: string;
+    let taskDescription: string;
 
     if (langCode === 'nb') {
         basePrompt = `Du er en korrekturleser for bibelske kryssreferanser. Gå gjennom følgende kryssreferanser for ${ref}.
@@ -260,21 +351,21 @@ eller om et nabovers er et bedre treff. Hvis et vers ikke finnes, er referansen 
 ${buildReferenceContext(currentReferences)}`;
 }
 
-function getOutputPath(language, bookId, chapterId, verseId) {
+function getOutputPath(language: string, bookId: number, chapterId: number, verseId: number): string {
     const langCode = getLanguageCode(language);
     return path.join(__dirname, `references/${langCode}/${bookId}/${chapterId}/${verseId}.json`);
 }
 
-function getProofreadPath(language, bookId, chapterId, verseId) {
+function getProofreadPath(language: string, bookId: number, chapterId: number, verseId: number): string {
     const langCode = getLanguageCode(language);
     return path.join(__dirname, `proofread_references/${langCode}/${bookId}/${chapterId}/${verseId}.json`);
 }
 
-function fileExists(filepath) {
+function fileExists(filepath: string): boolean {
     return fs.existsSync(filepath) && fs.statSync(filepath).size > 0;
 }
 
-function ensureDir(filepath) {
+function ensureDir(filepath: string): void {
     const dir = path.dirname(filepath);
     if (!fs.existsSync(dir)) {
         fs.mkdirSync(dir, {recursive: true});
@@ -303,9 +394,11 @@ function ensureDir(filepath) {
  *
  * @returns {{verdict: 'ok'|'renumber'|'drop', reason?: string}}
  */
-export function checkTarget(ref) {
-    const {bookId, chapterId, fromVerseId, toVerseId} = ref;
-    const drop = reason => ({verdict: 'drop', reason});
+export function checkTarget(ref: RawReference): TargetCheck {
+    // Feltene er ikke garantert til stede — Number.isInteger-portene under er
+    // nettopp der for å fange det, så typen får anta at de er tall.
+    const {bookId, chapterId, fromVerseId, toVerseId} = ref as ReferenceTarget;
+    const drop = (reason: string): TargetCheck => ({verdict: 'drop', reason});
 
     if (!Number.isInteger(bookId)) return drop(`bookId ${bookId} er ikke et heltall`);
     const book = books.find(b => b.id === bookId);
@@ -336,7 +429,7 @@ export function checkTarget(ref) {
 }
 
 /** Versnumrene i et kapittel, eller null om kapittelet ikke finnes. */
-function versesIn(loader, bookId, chapterId) {
+function versesIn(loader: ChapterLoader, bookId: number, chapterId: number): Set<number> | null {
     try {
         const verses = loader(bookId, chapterId);
         if (!verses || !verses.length) return null;
@@ -346,10 +439,11 @@ function versesIn(loader, bookId, chapterId) {
     }
 }
 
-const osmainCache = {};
+/** Nøkkelen er det absolutte filnavnet, så oppslaget er dynamisk og trenger `Record`. */
+const osmainCache: Record<string, Chapter | null> = {};
 
 /** osmain følger den europeiske nummereringen, og er fasiten for «er dette en gyldig adresse der». */
-function getOsmainChapter(bookId, chapterId) {
+function getOsmainChapter(bookId: number, chapterId: number): Chapter | null {
     const file = path.join(__dirname, 'bibles_raw', 'osmain', `${bookId}`, `${chapterId}.json`);
     if (!(file in osmainCache)) {
         osmainCache[file] = fs.existsSync(file) ? JSON.parse(fs.readFileSync(file, 'utf-8')) : null;
@@ -361,8 +455,8 @@ function getOsmainChapter(bookId, chapterId) {
  * Retter feltnavn og forkaster referanser som peker på et vers som ikke finnes.
  * Begge skriveveiene — generering og anvendt korrektur — går gjennom her.
  */
-function normalizeReferences(refs, context = '') {
-    const kept = [];
+function normalizeReferences(refs: RawReference[], context = ''): RawReference[] {
+    const kept: RawReference[] = [];
     for (const ref of refs) {
         // Fix common issue: verseId instead of fromVerseId
         if (ref.verseId !== undefined && ref.fromVerseId === undefined) {
@@ -390,7 +484,7 @@ function normalizeReferences(refs, context = '') {
     return kept;
 }
 
-async function generateReferences(language, bookId, chapterId, verseId, filename) {
+async function generateReferences(language: string, bookId: number, chapterId: number, verseId: number, filename: string): Promise<void> {
     const bookName = getBookName(bookId, language);
     const verseOrg = getOriginalVerse(bookId, chapterId, verseId);
     if (!verseOrg) {
@@ -401,11 +495,11 @@ async function generateReferences(language, bookId, chapterId, verseId, filename
     const prompt = getReferencePrompt(language, bookId, chapterId, verseId, verseOrg.text);
 
     console.log(`Generating references for ${bookName} ${chapterId}:${verseId}...`);
-    const result = await callWithRetry(prompt, {schema: REFERENCE_SCHEMA, local: useLocal, task: 'references', context: `${bookId}:${chapterId}:${verseId}`});
+    const result = await callWithRetry(prompt, {schema: REFERENCE_SCHEMA, local: useLocal, task: 'references', context: `${bookId}:${chapterId}:${verseId}`}) as ReferenceResult;
 
     const references = normalizeReferences(result.references, `${bookName} ${chapterId}:${verseId}`);
 
-    const verse = {
+    const verse: ReferenceFile = {
         bookId,
         chapterId,
         verseId,
@@ -417,7 +511,7 @@ async function generateReferences(language, bookId, chapterId, verseId, filename
     console.log(`  Saved: ${filename} (${references.length} references)`);
 }
 
-async function proofreadReferences(language, bookId, chapterId, verseId, refFilename, saveToFile = true) {
+async function proofreadReferences(language: string, bookId: number, chapterId: number, verseId: number, refFilename: string, saveToFile = true): Promise<ProofreadResult | null> {
     if (!fileExists(refFilename)) {
         console.log(`No reference file found for ${bookId}:${chapterId}:${verseId}`);
         return null;
@@ -430,7 +524,7 @@ async function proofreadReferences(language, bookId, chapterId, verseId, refFile
         return null;
     }
 
-    const currentData = JSON.parse(fs.readFileSync(refFilename, 'utf-8'));
+    const currentData = JSON.parse(fs.readFileSync(refFilename, 'utf-8')) as ReferenceFile;
     const currentReferences = currentData.references || [];
 
     if (currentReferences.length === 0) {
@@ -441,7 +535,7 @@ async function proofreadReferences(language, bookId, chapterId, verseId, refFile
     console.log(`Proofreading references for ${bookName} ${chapterId}:${verseId}...`);
 
     const prompt = getProofreadPrompt(language, bookId, chapterId, verseId, verseOrg.text, currentReferences);
-    const result = await callWithRetry(prompt, {schema: REFERENCE_PROOFREAD_SCHEMA, local: useLocal, task: 'references', context: `proofread ${bookId}:${chapterId}:${verseId}`});
+    const result = await callWithRetry(prompt, {schema: REFERENCE_PROOFREAD_SCHEMA, local: useLocal, task: 'references', context: `proofread ${bookId}:${chapterId}:${verseId}`}) as ProofreadResult;
 
     // Save proofread results if requested
     if (saveToFile) {
@@ -456,7 +550,7 @@ async function proofreadReferences(language, bookId, chapterId, verseId, refFile
     }
     if (result.issues && result.issues.length > 0) {
         console.log(` | Issues: ${result.issues.length}`);
-        result.issues.forEach((issue, i) => {
+        result.issues.forEach((issue: ProofreadIssue, i: number) => {
             console.log(`    ${i + 1}. [${issue.severity}] ${issue.type}: ${issue.explanation}`);
         });
     } else {
@@ -466,7 +560,7 @@ async function proofreadReferences(language, bookId, chapterId, verseId, refFile
     return result;
 }
 
-function applyProofreadChanges(language, bookId, chapterId, verseId, refFilename, proofreadResult = null) {
+function applyProofreadChanges(language: string, bookId: number, chapterId: number, verseId: number, refFilename: string, proofreadResult: ProofreadResult | null = null): void {
     // Load proofread result from file if not provided
     if (!proofreadResult) {
         const proofreadFile = getProofreadPath(language, bookId, chapterId, verseId);
@@ -474,7 +568,7 @@ function applyProofreadChanges(language, bookId, chapterId, verseId, refFilename
             console.log(`No proofread file found for ${bookId}:${chapterId}:${verseId}`);
             return;
         }
-        proofreadResult = JSON.parse(fs.readFileSync(proofreadFile, 'utf-8'));
+        proofreadResult = JSON.parse(fs.readFileSync(proofreadFile, 'utf-8')) as ProofreadResult;
     }
 
     if (!fileExists(refFilename)) {
@@ -487,7 +581,7 @@ function applyProofreadChanges(language, bookId, chapterId, verseId, refFilename
         return;
     }
 
-    const currentData = JSON.parse(fs.readFileSync(refFilename, 'utf-8'));
+    const currentData = JSON.parse(fs.readFileSync(refFilename, 'utf-8')) as ReferenceFile;
     const revisedRefs = normalizeReferences(proofreadResult.revisedReferences, `${getBookName(bookId, language)} ${chapterId}:${verseId} (korrektur)`);
     currentData.references = revisedRefs;
 
@@ -496,7 +590,7 @@ function applyProofreadChanges(language, bookId, chapterId, verseId, refFilename
     console.log(`  Applied revisions to ${bookName} ${chapterId}:${verseId} (${revisedRefs.length} references)`);
 }
 
-function printUsage() {
+function printUsage(): void {
     console.log(`
 Usage: node references.mjs [options]
 
@@ -531,17 +625,17 @@ Parallel processing (run in separate terminals):
 `);
 }
 
-function parseRange(value) {
+function parseRange(value: string): {start: number, end: number} {
     if (value.includes('-')) {
-        const [start, end] = value.split('-').map(n => parseInt(n, 10));
+        const [start, end] = value.split('-').map((n: string) => parseInt(n, 10));
         return {start, end};
     }
     const num = parseInt(value, 10);
     return {start: num, end: num};
 }
 
-function parseArgs(args) {
-    const options = {
+function parseArgs(args: string[]): Options {
+    const options: Options = {
         language: 'Norwegian bokmål',
         proofread: false,
         apply: false,
@@ -606,7 +700,7 @@ function parseArgs(args) {
  * Sveiper referansefilene som alt ligger på disk med samme port som skrivingen.
  * Rapporterer som standard; `--fix` fjerner de ugyldige.
  */
-function validateExisting(options) {
+function validateExisting(options: Options): void {
     const langCode = getLanguageCode(options.language);
     const root = path.join(__dirname, 'references', langCode);
     if (!fs.existsSync(root)) {
@@ -616,8 +710,9 @@ function validateExisting(options) {
 
     const bookDirs = fs.readdirSync(root).filter(n => /^\d+$/.test(n)).map(Number).sort((a, b) => a - b);
     let files = 0, total = 0, dropped = 0, renumber = 0, filesTouched = 0;
-    const deadTargets = new Map();
-    const renumberBooks = new Map();
+    const deadTargets = new Map<string, number>();
+    /** Nøkkelen er boknavnet, med bok-id-en som reserve når boka ikke finnes. */
+    const renumberBooks = new Map<string | number, number>();
 
     for (const bookId of bookDirs) {
         for (const chapterName of fs.readdirSync(path.join(root, `${bookId}`))) {
@@ -625,12 +720,12 @@ function validateExisting(options) {
             if (!fs.statSync(chapterDir).isDirectory()) continue;
             for (const verseFile of fs.readdirSync(chapterDir).filter(n => n.endsWith('.json'))) {
                 const file = path.join(chapterDir, verseFile);
-                const data = JSON.parse(fs.readFileSync(file, 'utf-8'));
+                const data = JSON.parse(fs.readFileSync(file, 'utf-8')) as ReferenceFile;
                 if (!Array.isArray(data.references)) continue;
                 files++;
                 total += data.references.length;
 
-                const kept = [];
+                const kept: RawReference[] = [];
                 for (const ref of data.references) {
                     const {verdict, reason} = checkTarget(ref);
                     const src = `${getBookName(data.bookId, options.language)} ${data.chapterId}:${data.verseId}`;
@@ -641,7 +736,7 @@ function validateExisting(options) {
                     if (verdict === 'renumber') {
                         renumber++;
                         const book = books.find(b => b.id === ref.bookId);
-                        renumberBooks.set(book?.name ?? ref.bookId, (renumberBooks.get(book?.name ?? ref.bookId) || 0) + 1);
+                        renumberBooks.set(book?.name ?? ref.bookId!, (renumberBooks.get(book?.name ?? ref.bookId!) || 0) + 1);
                         kept.push(ref);   // riktig referanse — skal rettes, ikke slettes
                         continue;
                     }
@@ -673,7 +768,7 @@ function validateExisting(options) {
     if (dropped && !options.fix) console.log('Kjør med --fix for å fjerne de døde.');
 }
 
-async function main() {
+async function main(): Promise<void> {
     const args = process.argv.slice(2);
     const options = parseArgs(args);
     useLocal = options.local || false;
@@ -696,7 +791,9 @@ async function main() {
 
     if (options.bookStart !== null) {
         startBook = options.bookStart;
-        endBook = options.bookEnd;
+        // parseArgs setter alltid bookEnd sammen med bookStart, men `!== null` på
+        // bookStart forteller ikke typesystemet det.
+        endBook = options.bookEnd!;
     } else if (options.ot && !options.nt) {
         startBook = 1;
         endBook = 39;
@@ -750,7 +847,7 @@ async function main() {
                 }
 
                 // Step 2: Proofread (if requested)
-                let proofreadResult = null;
+                let proofreadResult: ProofreadResult | null = null;
                 if (options.proofread && fileExists(filename)) {
                     const saveToFile = !options.apply;
                     proofreadResult = await proofreadReferences(options.language, bookId, chapterId, verseId, filename, saveToFile);

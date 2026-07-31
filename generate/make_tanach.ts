@@ -2,19 +2,20 @@ import fs from "fs";
 import {books} from "./constants.js";
 import path from 'path';
 import {fileURLToPath} from 'url';
+import type {Verse} from '../kvn/src/bible-types.js';
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 
-async function doTanach(bookId) {
-    const bookText = fs.readFileSync(path.join(__dirname, "../", books.find(b => b.id === bookId).file));
+async function doTanach(bookId: number): Promise<void> {
+    const bookText = fs.readFileSync(path.join(__dirname, "../", books.find(b => b.id === bookId)!.file));
     const lines = bookText.toString().split("\n");
     lines.shift();
 
-    const maxChapters = books.find(b => b.id === bookId).chapters;
+    const maxChapters = books.find(b => b.id === bookId)!.chapters;
 
     for(let chapterId=1;chapterId<=maxChapters;chapterId++) {
-        const chapter = lines.filter(verse => {
+        const chapter: Verse[] = lines.filter(verse => {
             // console.log(verse);
             if (verse.match(/xxxx/)) return false;
             const match = verse.match(/(\d+)\s*[:׃]\s*(\d+)/);
@@ -29,7 +30,7 @@ async function doTanach(bookId) {
 
         }).map(verse => {
             console.log(bookId, chapterId, verse)
-            const [_, verseId, chapter, text] = verse.match(/(\d+)\s*[:׃]\s*(\d+)\s*(.*)/);
+            const [_, verseId, chapter, text] = verse.match(/(\d+)\s*[:׃]\s*(\d+)\s*(.*)/)!;
             return {
                 bookId,
                 chapterId,
@@ -45,7 +46,7 @@ async function doTanach(bookId) {
     }
 }
 
-async function main() {
+async function main(): Promise<void> {
     for(let bookId=1;bookId<=39;bookId++) {
         await doTanach(bookId)
     }

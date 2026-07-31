@@ -17,19 +17,49 @@
 import * as fs from 'fs';
 import path from 'path';
 import {fileURLToPath} from 'url';
+import type {TranslationMeta} from './translations_schema.js';
+import type {LicenseRecord} from './translations_meta.js';
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const RAW_DIR = path.join(__dirname, 'bibles_raw');
 const OUT_DIR = path.join(__dirname, 'translations');
 const OUT_FILE = path.join(OUT_DIR, 'index.json');
 
-function readJson(file) {
+/**
+ * meta.json slik indeksen leser den. `published` står ikke i `TranslationMeta`
+ * fordi ingen av genereringspassene skriver det — det er et manuelt flagg som
+ * holder en oversettelse ute av den publiserte indeksen.
+ */
+type IndexMeta = TranslationMeta & {published?: boolean};
+
+/** Det `licenceBlock` slipper gjennom: lisensfeltene, omdøpt for nettstedet. */
+interface LicenceBlock {
+    license?: string;
+    spdx?: string;
+    attribution_required?: boolean;
+    noncommercial?: boolean;
+    kvn_renumber_ok?: boolean;
+    catalogue?: string;
+    statement?: string;
+}
+
+/** Én post i translations/index.json. */
+type IndexEntry = IndexMeta & {
+    translation: string;
+    licence?: LicenceBlock;
+};
+
+/**
+ * `T` er en påstand om hva fila inneholder, ikke en kontroll: `JSON.parse` gir
+ * `any`, og ingenting validerer resultatet. Kallstedet bestemmer formen.
+ */
+function readJson<T>(file: string): T | null {
     if (!fs.existsSync(file)) return null;
-    return JSON.parse(fs.readFileSync(file, 'utf-8'));
+    return JSON.parse(fs.readFileSync(file, 'utf-8')) as T;
 }
 
 /** Licence fields a website may need; `translation` and `name` come from elsewhere. */
-function licenceBlock(license) {
+function licenceBlock(license: LicenseRecord | null): LicenceBlock | undefined {
     if (!license) return undefined;
     return {
         license: license.license,
@@ -42,19 +72,19 @@ function licenceBlock(license) {
     };
 }
 
-function main() {
+function main(): void {
     const translations = fs.readdirSync(RAW_DIR, {withFileTypes: true})
         .filter(entry => entry.isDirectory())
         .map(entry => entry.name)
         .sort();
 
-    const entries = [];
-    const missingMeta = [];
-    const missingLicense = [];
-    const withheld = [];
+    const entries: IndexEntry[] = [];
+    const missingMeta: string[] = [];
+    const missingLicense: string[] = [];
+    const withheld: string[] = [];
 
     for (const translation of translations) {
-        const meta = readJson(path.join(RAW_DIR, translation, 'meta.json'));
+        const meta = readJson<IndexMeta>(path.join(RAW_DIR, translation, 'meta.json'));
         if (!meta) {
             missingMeta.push(translation);
             continue;
@@ -68,7 +98,7 @@ function main() {
             continue;
         }
 
-        const license = readJson(path.join(RAW_DIR, translation, 'license.json'));
+        const license = readJson<LicenseRecord>(path.join(RAW_DIR, translation, 'license.json'));
         if (!license) missingLicense.push(translation);
 
         // Licence sits under its own key so it stays visibly separate from the

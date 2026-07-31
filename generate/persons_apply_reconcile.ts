@@ -19,12 +19,34 @@ const [, , MAP_PATH, ...rest] = process.argv;
 const DRY = rest.includes('--dry');
 if (!MAP_PATH) { console.error('usage: node persons_apply_reconcile.mjs <map.json> [--dry]'); process.exit(1); }
 
-const rawMap = JSON.parse(fs.readFileSync(MAP_PATH, 'utf-8'));
+/** Slektsfeltene i en profil. Alle er valgfrie — de fleste har bare noen. */
+interface PersonFamily {
+  father?: string;
+  mother?: string;
+  spouse?: string;
+  siblings?: string[];
+  children?: string[];
+}
+
+/**
+ * En personprofil slik den ligger i generate/persons/nb/<slug>.json. Bare
+ * relasjonsfeltene dette skriptet skriver om er tatt med — resten går uendret
+ * gjennom JSON.parse/JSON.stringify.
+ */
+interface PersonProfile {
+  family?: PersonFamily;
+  relatedPersons?: string[];
+}
+
+/** Avstemmingskartet: { "<fromSlug>": "<canonicalId>", ... }. */
+type ReconcileMap = Record<string, string>;
+
+const rawMap = JSON.parse(fs.readFileSync(MAP_PATH, 'utf-8')) as ReconcileMap;
 const files = fs.readdirSync(PERSONS_DIR).filter(f => f.endsWith('.json'));
 const catalog = new Set(files.map(f => f.replace(/\.json$/, '')));
 
 // keep only valid, non-identity, non-NEW mappings whose target exists
-const map = new Map();
+const map = new Map<string, string>();
 let skipped = 0;
 for (const [from, to] of Object.entries(rawMap)) {
   if (!to || to === 'NEW' || to === from) { skipped++; continue; }
@@ -33,14 +55,14 @@ for (const [from, to] of Object.entries(rawMap)) {
 }
 console.log(`map: ${map.size} applicable, ${skipped} skipped`);
 
-const remapVal = v => (v && map.has(v)) ? map.get(v) : v;
-const remapArr = a => {
+const remapVal = (v: string | undefined): string | undefined => (v && map.has(v)) ? map.get(v) : v;
+const remapArr = (a: string[] | undefined): { arr: string[] | undefined; changed: number } => {
   if (!Array.isArray(a)) return { arr: a, changed: 0 };
   let changed = 0;
-  const seen = new Set();
-  const out = [];
+  const seen = new Set<string>();
+  const out: string[] = [];
   for (const v of a) {
-    const nv = remapVal(v);
+    const nv = remapVal(v) as string;
     if (nv !== v) changed++;
     if (!seen.has(nv)) { seen.add(nv); out.push(nv); } // dedupe after remap
   }
@@ -50,15 +72,15 @@ const remapArr = a => {
 let filesChanged = 0, edits = 0;
 for (const f of files) {
   const fp = path.join(PERSONS_DIR, f);
-  const d = JSON.parse(fs.readFileSync(fp, 'utf-8'));
+  const d = JSON.parse(fs.readFileSync(fp, 'utf-8')) as PersonProfile;
   let n = 0;
   const fam = d.family;
   if (fam) {
-    for (const k of ['father', 'mother', 'spouse']) {
+    for (const k of ['father', 'mother', 'spouse'] as const) {
       const nv = remapVal(fam[k]);
       if (nv !== fam[k]) { fam[k] = nv; n++; }
     }
-    for (const k of ['siblings', 'children']) {
+    for (const k of ['siblings', 'children'] as const) {
       const { arr, changed } = remapArr(fam[k]);
       if (changed) { fam[k] = arr; n += changed; }
     }

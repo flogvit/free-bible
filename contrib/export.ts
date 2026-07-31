@@ -17,6 +17,7 @@
 import * as fs from 'fs';
 import path from 'path';
 import {fileURLToPath} from 'url';
+import type {ContribDoc, ContribFreetext, ContribKind, ContribTarget, CrossrefAuthor} from './contrib-types.js';
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const QUEUE_DIR = path.join(__dirname, 'queue');
@@ -25,14 +26,14 @@ const OUT_DIR = path.join(__dirname, '..', 'generate', 'verse_works');
 
 const doLookup = process.argv.includes('--lookup');
 const UA = 'free-bible-contrib/1.0 (https://github.com/flogvit/free-bible; mailto:flogvit@gmail.com)';
-const sleep = (ms) => new Promise((resolve) => setTimeout(resolve, ms));
+const sleep = (ms: number) => new Promise((resolve) => setTimeout(resolve, ms));
 
 // Samme id-regel som articles/harvest.mjs.
-const doiToId = (doi) => doi.toLowerCase().trim()
+const doiToId = (doi: string) => doi.toLowerCase().trim()
   .replace(/^https?:\/\/(dx\.)?doi\.org\//, '')
   .replace(/\//g, '_');
 
-function slugify(text) {
+function slugify(text: string): string {
   return text.toLowerCase()
     .replace(/æ/g, 'ae').replace(/ø/g, 'o').replace(/å/g, 'a')
     .normalize('NFD').replace(/[\u0300-\u036f]/g, '')
@@ -40,7 +41,7 @@ function slugify(text) {
     .slice(0, 60);
 }
 
-function workIdFor(kind, target) {
+function workIdFor(kind: ContribKind, target: ContribTarget): string | null {
   if (target.catalog_id) return target.catalog_id;
   if (target.doi) return doiToId(target.doi);
   if (target.isbn13) return target.isbn13;
@@ -59,7 +60,18 @@ function workIdFor(kind, target) {
   return null;
 }
 
-async function lookupMetadata(target) {
+/**
+ * Metadata slått opp mot Crossref/OpenLibrary. Alt er valgfritt: oppslaget er
+ * best-effort, og tomt objekt betyr at freetext-feltene får stå.
+ */
+interface LookedUpMetadata {
+  title?: string;
+  authors?: string[];
+  year?: number;
+  container?: string;
+}
+
+async function lookupMetadata(target: ContribTarget): Promise<LookedUpMetadata> {
   try {
     if (target.doi) {
       const res = await fetch(
@@ -71,7 +83,7 @@ async function lookupMetadata(target) {
         const {message} = await res.json();
         return {
           title: (message.title ?? [])[0],
-          authors: (message.author ?? []).map((a) => `${a.given ?? ''} ${a.family ?? ''}`.trim()).filter(Boolean),
+          authors: (message.author ?? []).map((a: CrossrefAuthor) => `${a.given ?? ''} ${a.family ?? ''}`.trim()).filter(Boolean),
           year: message['published']?.['date-parts']?.[0]?.[0],
           container: (message['container-title'] ?? [])[0],
         };
@@ -97,7 +109,7 @@ async function lookupMetadata(target) {
   return {};
 }
 
-function approvedDocs() {
+function approvedDocs(): {name: string; doc: ContribDoc}[] {
   const docs = [];
   for (const dir of [QUEUE_DIR, ARCHIVE_DIR]) {
     if (!fs.existsSync(dir)) continue;
@@ -149,7 +161,7 @@ for (const {name, doc} of docs) {
       : {}),
   }));
 
-  const refKey = (r) => `${r.kvnFrom}-${r.kvnTo}-${r.kind}`;
+  const refKey = (r: {kvnFrom?: number; kvnTo?: number; kind?: string}) => `${r.kvnFrom}-${r.kvnTo}-${r.kind}`;
   const mergedRefs = [...(existing?.refs ?? [])];
   const seen = new Set(mergedRefs.map(refKey));
   for (const ref of newRefs) {
@@ -162,8 +174,8 @@ for (const {name, doc} of docs) {
   const contributors = new Set(existing?.contributors ?? []);
   if (doc.submitted?.by?.credit && doc.submitted.by.name) contributors.add(doc.submitted.by.name);
 
-  const freetext = doc.target?.freetext ?? {};
-  const looked = doLookup ? await lookupMetadata(doc.target ?? {}) : {};
+  const freetext: Partial<ContribFreetext> = doc.target?.freetext ?? {};
+  const looked: LookedUpMetadata = doLookup ? await lookupMetadata(doc.target ?? {}) : {};
   const meta = {
     title: looked.title ?? existing?.title ?? freetext.title,
     authors: looked.authors ?? existing?.authors ?? freetext.authors,
@@ -171,7 +183,7 @@ for (const {name, doc} of docs) {
     container: looked.container ?? existing?.container ?? freetext.publisher_or_journal,
   };
 
-  const target = {};
+  const target: ContribTarget = {};
   if (doc.target?.doi) target.doi = doc.target.doi;
   if (doc.target?.song_id) target.song_id = doc.target.song_id;
   if (doc.target?.isbn13) target.isbn13 = doc.target.isbn13;

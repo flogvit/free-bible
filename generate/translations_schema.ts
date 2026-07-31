@@ -11,12 +11,14 @@
  * - `coverage` and `features` are computed from the bible data, never from an LLM.
  */
 
-export const PHILOSOPHY = ['formal', 'dynamic', 'paraphrase', 'interlinear', 'source_text'];
+export const PHILOSOPHY = ['formal', 'dynamic', 'paraphrase', 'interlinear', 'source_text'] as const;
+export type Philosophy = (typeof PHILOSOPHY)[number];
 
 export const TRADITION = [
     'protestant', 'catholic', 'orthodox', 'jewish',
     'reformed', 'interconfessional', 'nondenominational'
-];
+] as const;
+export type Tradition = (typeof TRADITION)[number];
 
 // Codes for the source texts a translation was made from.
 export const TEXTUAL_BASIS = [
@@ -33,39 +35,52 @@ export const TEXTUAL_BASIS = [
     'sblgnt',   // SBL Greek New Testament
     'vulgate',
     'peshitta'
-];
+] as const;
+export type TextualBasis = (typeof TEXTUAL_BASIS)[number];
 
 export const RELATION = [
     'revision_of', 'modernization_of', 'strongs_edition_of',
     'translation_of', 'edition_of', 'renumbering_of'
-];
+] as const;
+export type Relation = (typeof RELATION)[number];
 
 export const METHOD = [
     'committee', 'single_translator', 'revision',
     'pivot', 'back_translation', 'ai_assisted'
-];
+] as const;
+export type Method = (typeof METHOD)[number];
 
-export const REVIEW = ['none', 'peer_review', 'ecclesiastical_approval', 'society_review'];
+export const REVIEW = ['none', 'peer_review', 'ecclesiastical_approval', 'society_review'] as const;
+export type Review = (typeof REVIEW)[number];
 
 export const EDITION_LABEL = [
     'first_edition', 'revision', 'reprint', 'new_testament', 'complete_bible'
-];
+] as const;
+export type EditionLabel = (typeof EDITION_LABEL)[number];
 
 export const LEGACY_TAG = [
     'innovation', 'influence', 'controversy', 'reception', 'distinctive', 'limitation'
-];
+] as const;
+export type LegacyTag = (typeof LEGACY_TAG)[number];
 
-export const PROVENANCE_METHOD = ['llm', 'llm+web', 'manual', 'computed'];
+export const PROVENANCE_METHOD = ['llm', 'llm+web', 'manual', 'computed'] as const;
+export type ProvenanceMethod = (typeof PROVENANCE_METHOD)[number];
 
-export const TESTAMENT = ['both', 'ot', 'nt', 'other'];
+export const TESTAMENT = ['both', 'ot', 'nt', 'other'] as const;
+export type Testament = (typeof TESTAMENT)[number];
 
-export const SCRIPT_DIRECTION = ['ltr', 'rtl'];
+export const SCRIPT_DIRECTION = ['ltr', 'rtl'] as const;
+export type ScriptDirection = (typeof SCRIPT_DIRECTION)[number];
 
 /**
  * Field paths the LLM is allowed to claim knowledge about. Used to validate the
  * `uncertain` list from pass 1 so pass 2 cannot be sent chasing invented fields.
+ *
+ * Typed `readonly string[]` and not a literal union on purpose: every caller
+ * filters *untrusted* paths against it (`KNOWLEDGE_FIELDS.includes(path)`), and
+ * a narrow element type would reject exactly that call.
  */
-export const KNOWLEDGE_FIELDS = [
+export const KNOWLEDGE_FIELDS: readonly string[] = [
     'name.en', 'abbreviation',
     'language.iso639_3', 'language.iso639_1', 'language.script', 'language.direction',
     'year.published', 'year.revised',
@@ -77,7 +92,152 @@ export const KNOWLEDGE_FIELDS = [
     'editions', 'legacy', 'links'
 ];
 
-const enumOf = (values) => ({ type: 'string', enum: values });
+/**
+ * The subset of JSON Schema this file writes. Structured outputs reject the rest,
+ * so the type doubles as a reminder of what is allowed in META_SCHEMA.
+ */
+export interface JsonSchema {
+    type?: 'object' | 'array' | 'string' | 'integer' | 'number' | 'boolean';
+    enum?: readonly string[];
+    properties?: Record<string, JsonSchema>;
+    items?: JsonSchema;
+    required?: readonly string[];
+    additionalProperties?: boolean | JsonSchema;
+    propertyNames?: { pattern: string };
+    description?: string;
+}
+
+/** An object schema whose `properties` is guaranteed present, so callers can index it. */
+export interface ObjectJsonSchema extends JsonSchema {
+    type: 'object';
+    properties: Record<string, JsonSchema>;
+}
+
+// ------------------------------------------------------------- meta.json shape ---
+
+export interface MetaName {
+    native?: string;
+    en?: string;
+}
+
+export interface MetaLanguage {
+    iso639_3?: string;
+    iso639_1?: string;
+    script?: string;
+    direction?: ScriptDirection;
+}
+
+export interface MetaYear {
+    published?: number;
+    revised?: number;
+}
+
+export interface MetaPlace {
+    city?: string;
+    country_iso?: string;
+}
+
+export interface MetaTextualBasis {
+    ot?: TextualBasis[];
+    nt?: TextualBasis[];
+}
+
+export interface MetaDerivedFrom {
+    translation: string;
+    relation: Relation;
+}
+
+export interface MetaWork {
+    started?: number;
+    completed?: number;
+    method?: Method[];
+    source_languages?: string[];
+    pivot_from?: string;
+    team_size?: number;
+    commissioned_by?: string;
+    review?: Review;
+    printer?: string;
+}
+
+export interface MetaEdition {
+    year: number;
+    label: EditionLabel;
+    note?: string;
+}
+
+/**
+ * Text keyed by ISO 639-1/639-3 language code. `en` is required: it is the floor
+ * the website falls back to. Dynamic keys, hence the index signature.
+ */
+export type LocalizedText = { en: string } & Record<string, string>;
+
+export interface MetaLegacy {
+    tag: LegacyTag;
+    text: LocalizedText;
+}
+
+export interface MetaLinks {
+    wikipedia?: string;
+    homepage?: string;
+}
+
+/** Counted off the files, never claimed by a model. */
+export interface MetaCoverage {
+    testament: Testament;
+    books: number;
+    chapters: number;
+    verses: number;
+    deuterocanonical: boolean;
+    missing_books: number[];
+}
+
+export interface MetaFeatures {
+    strongs: boolean;
+    alt_versions: boolean;
+}
+
+/** One retrieved page and the field paths it supports. */
+export interface MetaSource {
+    url: string;
+    fields: string[];
+}
+
+export interface MetaProvenance {
+    method: ProvenanceMethod;
+    verified: string[];
+    sources: MetaSource[];
+    generated: string;
+}
+
+/**
+ * A finished meta.json. Every field is optional — an omitted field means
+ * "unknown" — and the translation's id is its directory name, not a field here.
+ */
+export interface TranslationMeta {
+    name?: MetaName;
+    abbreviation?: string;
+    language?: MetaLanguage;
+    year?: MetaYear;
+    place?: MetaPlace;
+    translators?: string[];
+    body?: string;
+    publisher?: string;
+    philosophy?: Philosophy;
+    tradition?: Tradition;
+    textual_basis?: MetaTextualBasis;
+    derived_from?: MetaDerivedFrom;
+    work?: MetaWork;
+    editions?: MetaEdition[];
+    legacy?: MetaLegacy[];
+    links?: MetaLinks;
+    /** Only on the pass-1 draft; stripped before the record is written. */
+    uncertain?: string[];
+    coverage?: MetaCoverage;
+    features?: MetaFeatures;
+    provenance?: MetaProvenance;
+}
+
+const enumOf = (values: readonly string[]): JsonSchema => ({ type: 'string', enum: values });
 
 /**
  * JSON Schema for the LLM-authored part of meta.json (blocks a, b, e, f, g).
@@ -86,7 +246,7 @@ const enumOf = (values) => ({ type: 'string', enum: values });
  * Structured outputs reject unsupported keywords (minLength, maximum, ...), so
  * bounds are enforced in validateMeta() instead.
  */
-export const META_SCHEMA = {
+export const META_SCHEMA: ObjectJsonSchema = {
     type: 'object',
     additionalProperties: false,
     properties: {
@@ -218,34 +378,44 @@ export const META_SCHEMA = {
     required: ['uncertain']
 };
 
+/**
+ * The same shape back, but anything may have fallen away: an empty field is
+ * dropped, and dropping the last field of an object drops the object too.
+ */
+export type Stripped<T> =
+    T extends readonly (infer E)[] ? Stripped<E>[]
+        : T extends object ? { [K in keyof T]?: Stripped<T[K]> }
+            : T;
+
 /** Remove null, undefined, empty strings, empty arrays and empty objects, recursively. */
-export function stripEmpty(value) {
+export function stripEmpty<T>(value: T): Stripped<T> | undefined {
     if (Array.isArray(value)) {
         const items = value.map(stripEmpty).filter(v => v !== undefined);
-        return items.length ? items : undefined;
+        return (items.length ? items : undefined) as Stripped<T> | undefined;
     }
     if (value && typeof value === 'object') {
-        const out = {};
+        const out: Record<string, unknown> = {};
         for (const [key, val] of Object.entries(value)) {
             const cleaned = stripEmpty(val);
             if (cleaned !== undefined) out[key] = cleaned;
         }
-        return Object.keys(out).length ? out : undefined;
+        return (Object.keys(out).length ? out : undefined) as Stripped<T> | undefined;
     }
     if (value === null || value === undefined) return undefined;
     if (typeof value === 'string' && value.trim() === '') return undefined;
-    return value;
+    return value as unknown as Stripped<T>;
 }
 
-const inEnum = (value, values) => value === undefined || values.includes(value);
+const inEnum = <T extends string>(value: T | undefined, values: readonly T[]): boolean =>
+    value === undefined || values.includes(value);
 
 /**
  * Validate a finished meta object. Returns an array of problem strings; empty means valid.
  * Enforces the constraints structured outputs cannot express.
  */
-export function validateMeta(meta) {
-    const problems = [];
-    const check = (ok, message) => { if (!ok) problems.push(message); };
+export function validateMeta(meta: TranslationMeta): string[] {
+    const problems: string[] = [];
+    const check = (ok: boolean, message: string): void => { if (!ok) problems.push(message); };
 
     check(inEnum(meta.philosophy, PHILOSOPHY), `philosophy: unknown value "${meta.philosophy}"`);
     check(inEnum(meta.tradition, TRADITION), `tradition: unknown value "${meta.tradition}"`);
@@ -253,7 +423,7 @@ export function validateMeta(meta) {
         `language.direction: unknown value "${meta.language?.direction}"`);
     check(inEnum(meta.work?.review, REVIEW), `work.review: unknown value "${meta.work?.review}"`);
 
-    for (const testament of ['ot', 'nt']) {
+    for (const testament of ['ot', 'nt'] as const) {
         for (const code of meta.textual_basis?.[testament] ?? []) {
             check(TEXTUAL_BASIS.includes(code), `textual_basis.${testament}: unknown code "${code}"`);
         }

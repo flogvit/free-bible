@@ -13,11 +13,32 @@
  * Hvorfor en tidligere lesning ble erstattet.
  *
  * Engelske identifikatorer, i motsetning til `Footnote.source` — se der.
+ *
+ * Verdiene er hentet fra korrekturskjemaene og talt i dataene
+ * (125 689 vers i osnb/osmain/osen/osnn, 2026-07-31):
+ * `suggestion` 11 781 · `error` 4 045 · `grammar` 1 844 ·
+ * `theological` 550 · `translation` 4. `triage` skrives av `triage.ts`.
+ *
+ * Første utkast av denne typen ble skrevet av eksempelet i CLAUDE.md framfor
+ * av dataene, og fikk med `correction` og `alternative` — som ikke forekommer
+ * én eneste gang — mens fire ekte verdier manglet. Tell før du utvider.
  */
-export type VersionType = 'suggestion' | 'correction' | 'alternative';
+export type VersionType =
+    | 'suggestion'
+    | 'error'
+    | 'grammar'
+    | 'theological'
+    | 'translation'
+    | 'triage';
 
-/** Hvor mye en endring betyr. */
-export type Severity = 'minor' | 'moderate' | 'major';
+/**
+ * Hvor mye en endring betyr.
+ *
+ * Skjemaet sier `critical | major | minor`, og dataene bekrefter:
+ * `minor` 15 124 · `major` 2 842 · `critical` 258. Det finnes ingen
+ * `moderate`.
+ */
+export type Severity = 'minor' | 'major' | 'critical';
 
 /**
  * Kilden til en fotnote.
@@ -27,15 +48,21 @@ export type Severity = 'minor' | 'moderate' | 'major';
  * Selve fotnoteteksten (`Footnote.text`) skrives på oversettelsens eget språk.
  * De fleste andre enumene i dataene er engelske, så asymmetrien ser ut som en
  * feil og er blitt «rettet» før.
+ *
+ * Verdiene er skjemaets, og dataene bekrefter dem:
+ * `oversettelse` 2 460 · `lingvistisk` 1 621 · `teologisk` 1 436 ·
+ * `historisk` 1 335 · `tekstkritisk` 944 · `liturgisk` 298. `annet` står i
+ * skjemaet, men forekommer ikke ennå. `geografisk` og `kulturelt` sto i
+ * første utkast av denne typen og finnes ikke i verken skjema eller data.
  */
 export type FootnoteSource =
     | 'oversettelse'
     | 'lingvistisk'
-    | 'historisk'
-    | 'geografisk'
-    | 'kulturelt'
     | 'teologisk'
-    | 'tekstkritisk';
+    | 'historisk'
+    | 'tekstkritisk'
+    | 'liturgisk'
+    | 'annet';
 
 /** En tidligere lesning av verset, eldst først. */
 export interface VerseVersion {

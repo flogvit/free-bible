@@ -8,7 +8,65 @@ const __dirname = path.dirname(__filename);
 
 const EMBED_BASE = path.join(__dirname, 'embeddings');
 
-function paths(corpus) {
+/** Filene ett korpus består av: vektorene og indeksen ved siden av dem. */
+interface CorpusPaths {
+    dir: string;
+    bin: string;
+    index: string;
+}
+
+/**
+ * Ett metadataobjekt slik det ligger i index.json.
+ *
+ * `T` er kallerens egen form (et vers, en sang, …); `idx` legges på av
+ * `buildEmbeddings` og er raden i vektorbufferet. Standardverdien er
+ * `Record<string, any>` fordi metadataen er vilkårlig — den lar oppslag av
+ * felter kallerne kjenner (f.eks. `bookId`) gå gjennom uten at modulen må
+ * kjenne dem.
+ */
+export type EmbeddingItem<T = Record<string, any>> = T & { idx: number };
+
+/** index.json ved siden av embeddings.bin. */
+export interface EmbeddingIndex<T = Record<string, any>> {
+    model: string;
+    dim: number;
+    normalized: boolean;
+    complete: boolean;
+    completedCount: number;
+    items: EmbeddingItem<T>[];
+}
+
+/** Et ferdig korpus lastet i minnet — det `loadEmbeddings` gir fra seg. */
+export interface EmbeddingState<T = Record<string, any>> {
+    model: string;
+    dim: number;
+    items: EmbeddingItem<T>[];
+    /** Normaliserte vektorer, `items.length` × `dim`, rad for rad. */
+    embeddings: Float32Array;
+}
+
+export interface BuildEmbeddingsOptions<T> {
+    corpus: string;
+    items: T[];
+    model: string;
+    getText: (item: T) => string;
+    batchSize?: number;
+    force?: boolean;
+}
+
+export interface TopKOptions<T = Record<string, any>> {
+    k?: number;
+    threshold?: number;
+    filter?: ((item: EmbeddingItem<T>) => boolean) | null;
+}
+
+/** En treffrad: raden i korpuset og cosinuslikheten. */
+export interface TopKResult {
+    idx: number;
+    score: number;
+}
+
+function paths(corpus: string): CorpusPaths {
     const dir = path.join(EMBED_BASE, corpus);
     return {
         dir,
@@ -17,7 +75,7 @@ function paths(corpus) {
     };
 }
 
-function l2norm(v) {
+function l2norm(v: ArrayLike<number>): number {
     let s = 0;
     for (let i = 0; i < v.length; i++) s += v[i] * v[i];
     return Math.sqrt(s);
@@ -26,11 +84,11 @@ function l2norm(v) {
 /**
  * Whether a complete, ready-to-use embedding set exists for a corpus.
  */
-export function hasEmbeddings(corpus) {
+export function hasEmbeddings(corpus: string): boolean {
     const p = paths(corpus);
     if (!fs.existsSync(p.bin) || !fs.existsSync(p.index)) return false;
     try {
-        const idx = JSON.parse(fs.readFileSync(p.index, 'utf-8'));
+        const idx: EmbeddingIndex = JSON.parse(fs.readFileSync(p.index, 'utf-8'));
         return !!idx.complete;
     } catch {
         return false;
@@ -51,17 +109,17 @@ export function hasEmbeddings(corpus) {
  * Resumes automatically from a partial run if model + items.length match.
  * Writes embeddings/<corpus>/embeddings.bin (Float32Array, normalized) and index.json.
  */
-export async function buildEmbeddings({corpus, items, model, getText, batchSize = 32, force = false}) {
+export async function buildEmbeddings<T>({corpus, items, model, getText, batchSize = 32, force = false}: BuildEmbeddingsOptions<T>): Promise<void> {
     const p = paths(corpus);
     if (!fs.existsSync(p.dir)) fs.mkdirSync(p.dir, {recursive: true});
 
     let startIdx = 0;
-    let dim = null;
-    let buf = null;
+    let dim: number | null = null;
+    let buf: Float32Array | null = null;
 
     if (!force && fs.existsSync(p.index) && fs.existsSync(p.bin)) {
         try {
-            const idx = JSON.parse(fs.readFileSync(p.index, 'utf-8'));
+            const idx: EmbeddingIndex<T> = JSON.parse(fs.readFileSync(p.index, 'utf-8'));
             if (idx.model === model && Array.isArray(idx.items) && idx.items.length === items.length) {
                 if (idx.complete) {
                     console.log(`Embeddings already built for "${corpus}" (${items.length} items, dim ${idx.dim}, model ${model})`);
@@ -76,12 +134,12 @@ export async function buildEmbeddings({corpus, items, model, getText, batchSize 
                 console.log(`Resuming "${corpus}" from item ${startIdx}/${items.length}`);
             }
         } catch (e) {
-            console.warn(`Could not resume (${e.message}); starting fresh`);
+            console.warn(`Could not resume (${(e as Error).message}); starting fresh`);
         }
     }
 
     if (!buf) {
-        const probe = await embedTexts([getText(items[0])], model);
+        const probe: number[][] = await embedTexts([getText(items[0])], model);
         dim = probe[0].length;
         buf = new Float32Array(items.length * dim);
         const norm = l2norm(probe[0]);
@@ -93,8 +151,8 @@ export async function buildEmbeddings({corpus, items, model, getText, batchSize 
     let lastSaved = startIdx;
     const SAVE_EVERY = 1000;
 
-    const writeCheckpoint = (count, complete) => {
-        fs.writeFileSync(p.bin, Buffer.from(buf.buffer));
+    const writeCheckpoint = (count: number, complete: boolean): void => {
+        fs.writeFileSync(p.bin, Buffer.from(buf!.buffer) as Uint8Array);
         fs.writeFileSync(p.index, JSON.stringify({
             model, dim, normalized: true,
             complete,
@@ -111,14 +169,15 @@ export async function buildEmbeddings({corpus, items, model, getText, batchSize 
     for (let i = startIdx; i < total; i += batchSize) {
         const end = Math.min(i + batchSize, total);
         const texts = items.slice(i, end).map(getText);
-        const embs = await embedTexts(texts, model);
+        const embs: number[][] = await embedTexts(texts, model);
         if (embs.length !== texts.length) {
             throw new Error(`Embed batch returned ${embs.length} vectors, expected ${texts.length}`);
         }
         for (let j = 0; j < embs.length; j++) {
             const norm = l2norm(embs[j]);
-            for (let k = 0; k < dim; k++) {
-                buf[(i + j) * dim + k] = embs[j][k] / norm;
+            // dim settes i begge grenene over; flytanalysen ser det ikke gjennom try/catch-en.
+            for (let k = 0; k < dim!; k++) {
+                buf[(i + j) * dim! + k] = embs[j][k] / norm;
             }
         }
         process.stdout.write(`\r  Embedded ${end}/${total} for "${corpus}"`);
@@ -134,12 +193,12 @@ export async function buildEmbeddings({corpus, items, model, getText, batchSize 
  * Load a complete embedding corpus into memory.
  * Returns { model, dim, items, embeddings (Float32Array, normalized, items.length × dim) }.
  */
-export function loadEmbeddings(corpus) {
+export function loadEmbeddings<T = Record<string, any>>(corpus: string): EmbeddingState<T> {
     const p = paths(corpus);
     if (!fs.existsSync(p.bin) || !fs.existsSync(p.index)) {
         throw new Error(`No embeddings found for "${corpus}" — build them first`);
     }
-    const idx = JSON.parse(fs.readFileSync(p.index, 'utf-8'));
+    const idx: EmbeddingIndex<T> = JSON.parse(fs.readFileSync(p.index, 'utf-8'));
     if (!idx.complete) {
         throw new Error(`Embeddings for "${corpus}" are incomplete (${idx.completedCount}/${idx.items.length}) — re-run build`);
     }
@@ -155,8 +214,8 @@ export function loadEmbeddings(corpus) {
  * Embed a single query string against the same model used to build `state`.
  * Returns a normalized Float32Array of length state.dim.
  */
-export async function embedQuery(state, text) {
-    const result = await embedTexts([text], state.model);
+export async function embedQuery<T>(state: EmbeddingState<T>, text: string): Promise<Float32Array> {
+    const result: number[][] = await embedTexts([text], state.model);
     const v = result[0];
     const norm = l2norm(v);
     const out = new Float32Array(state.dim);
@@ -175,9 +234,9 @@ export async function embedQuery(state, text) {
  * @param {Function} [options.filter]       (item) => bool  — exclude items where filter returns false.
  * @returns {Array<{idx:number, score:number}>} sorted by score desc.
  */
-export function topK(state, queryEmbedding, {k = 20, threshold = 0, filter = null} = {}) {
+export function topK<T = Record<string, any>>(state: EmbeddingState<T>, queryEmbedding: Float32Array, {k = 20, threshold = 0, filter = null}: TopKOptions<T> = {}): TopKResult[] {
     const {dim, embeddings, items} = state;
-    const heap = [];
+    const heap: TopKResult[] = [];
     for (let i = 0; i < items.length; i++) {
         if (filter && !filter(items[i])) continue;
         let sim = 0;
@@ -200,7 +259,7 @@ export function topK(state, queryEmbedding, {k = 20, threshold = 0, filter = nul
 /**
  * Top-K similar items to an existing index in the same corpus (always excludes self).
  */
-export function topKByIndex(state, idx, options = {}) {
+export function topKByIndex<T = Record<string, any>>(state: EmbeddingState<T>, idx: number, options: TopKOptions<T> = {}): TopKResult[] {
     const {dim, embeddings} = state;
     const queryEmbedding = embeddings.subarray(idx * dim, (idx + 1) * dim);
     const baseFilter = options.filter;

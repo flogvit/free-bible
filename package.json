@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "bun test",
+    "test": "tsc --noEmit && bun test",
     "test:kvn": "cd kvn && bun run test",
     "test:all": "bun run test && bun run test:kvn",
     "typecheck": "tsc --noEmit"

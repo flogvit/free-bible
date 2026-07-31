@@ -1,4 +1,5 @@
-export const bibles = {
+/** Oversettelseskode → språknavn. Slås opp med kode fra kommandolinjen, derfor Record. */
+export const bibles: Record<string, string> = {
     "osnb": "Norwegian bokmål",
     "osnn": "Norwegian nynorsk",
     "osen": "English",
@@ -14,25 +15,25 @@ export const bibles = {
  * Navnekonvensjon: grunnformen er språkkoden (osnb, osnn, osen). Varianter får suffiks,
  * f.eks. osnb-child.
  */
-export const bibleStyles = {
+export const bibleStyles: Record<string, string> = {
     osnb: "oral",
     osnn: "oral",
     osen: "oral",
     oses: "oral",
 };
 
-export function getBibleStyle(bible) {
+export function getBibleStyle(bible: string): string {
     return bibleStyles[bible] || "standard";
 }
 
-export const anthropicModel = process.env.ANTHROPIC_MODEL || "claude-opus-5";
+export const anthropicModel: string = process.env.ANTHROPIC_MODEL || "claude-opus-5";
 // Opus 5 tenker som standard, og max_tokens dekker tenkning + svar under ett.
 // Doblet fra 16384 for å gi plass til begge deler.
-export const maxTokens = 32000;
+export const maxTokens: number = 32000;
 
 // Local Ollama models for lightweight tasks
-export const ollamaModel = "qwen3.5:122b";
-export const ollamaBaseUrl = process.env.OLLAMA_BASE_URL || "http://localhost:11434";
+export const ollamaModel: string = "qwen3.5:122b";
+export const ollamaBaseUrl: string = process.env.OLLAMA_BASE_URL || "http://localhost:11434";
 
 // Foretrukket lokal modell per task. Tunge jobber som får hele maskinen (typisk om
 // natta) bruker den store modellen; per-vers-arbeid som bare trenger en ja/nei-dom
@@ -44,7 +45,7 @@ export const ollamaBaseUrl = process.env.OLLAMA_BASE_URL || "http://localhost:11
 //
 // Note: gemma4:31b is held back only from OPEN schemas — see `openSchema` in
 // ollamaModelConfig. It handles closed ones (enums, fixed objects) fine.
-export const taskModels = {
+export const taskModels: Record<string, string> = {
     triage: "qwen3.5:27b",
     // Kapitteltagging har i praksis kjørt på 122b hele tiden — chapter_tags.mjs
     // sendte aldri noe modellvalg, så den falt til ollamaModel. Tabellen sa 27b,
@@ -67,8 +68,10 @@ export const taskModels = {
  * Dette er ikke nødvendigvis modellen kallet ender med å bruke — se
  * resolveLocalModel i llm.js.
  */
-export function getTaskModel(task) {
-    return process.env.OLLAMA_MODEL || taskModels[task] || ollamaModel;
+// `task` er valgfri: resolveLocalModel i llm.js kalles også uten task-navn, og
+// faller da til ollamaModel. `as string` beholder det oppslaget uendret.
+export function getTaskModel(task?: string): string {
+    return process.env.OLLAMA_MODEL || taskModels[task as string] || ollamaModel;
 }
 
 /**
@@ -79,7 +82,7 @@ export function getTaskModel(task) {
  * (gpt-oss:120b < qwen3.5:122b). En modell som ikke står her blir aldri adoptert:
  * vi vet ikke om den er god nok til å erstatte noe annet.
  */
-export const localModelRanking = [
+export const localModelRanking: string[] = [
     'qwen3.5:9b',
     'qwen3.5:27b',
     'gemma4:31b',
@@ -88,9 +91,30 @@ export const localModelRanking = [
 ];
 
 /** Plass i localModelRanking, eller null for en modell vi ikke har rangert. */
-export function localModelRank(model) {
+export function localModelRank(model: string): number | null {
     const index = localModelRanking.indexOf(model);
     return index === -1 ? null : index;
+}
+
+/**
+ * Samplingparametre som sendes videre som `options` i Ollama-kallet.
+ * top_p/top_k settes bare av gemma-configene, derfor valgfrie.
+ */
+export interface OllamaOptions {
+    temperature: number;
+    top_p?: number;
+    top_k?: number;
+}
+
+/** Formen på en oppføring i ollamaModelConfig, og på det getOllamaConfig returnerer. */
+export interface OllamaModelConfig {
+    options: OllamaOptions;
+    /** Prefiks som legges foran prompten for å slå av tenkning. */
+    noThinkPrefix: string;
+    /** Om modellen tar `think` som API-parameter i stedet for et prompt-prefiks. */
+    thinkParam: boolean;
+    /** Om modellen kan stoles på med et ÅPENT skjema — se kommentaren under. */
+    openSchema: boolean;
 }
 
 // Model-specific configuration.
@@ -107,7 +131,7 @@ export function localModelRank(model) {
 // answers and caught MORE boundary errors with the schema than without
 // (37/39 vs 33/39, at 3/25 false alarms). The line runs between open and closed
 // generation, not between models.
-export const ollamaModelConfig = {
+export const ollamaModelConfig: Record<string, OllamaModelConfig> = {
   'gemma4:31b': {
     options: { temperature: 1.0, top_p: 0.95, top_k: 64 },
     noThinkPrefix: '<|think|>\n',  // prepend to prompt to disable thinking
@@ -143,13 +167,13 @@ export const ollamaModelConfig = {
 // Familiestandarder for modeller som ikke står eksplisitt over. Uten dette faller en
 // nyhentet qwen til fallback-configen, som verken sender think:false eller /no_think —
 // og da bruker den hele output-budsjettet på resonnering og blir kuttet.
-const ollamaFamilyConfig = [
+const ollamaFamilyConfig: [RegExp, OllamaModelConfig][] = [
   [/^qwen/, { options: { temperature: 0 }, noThinkPrefix: '/no_think\n', thinkParam: true, openSchema: true }],
   [/^gemma/, { options: { temperature: 1.0, top_p: 0.95, top_k: 64 }, noThinkPrefix: '<|think|>\n', thinkParam: false, openSchema: false }],
   [/^gpt-oss/, { options: { temperature: 0.1 }, noThinkPrefix: '', thinkParam: false, openSchema: true }],
 ];
 
-export function getOllamaConfig(model) {
+export function getOllamaConfig(model: string): OllamaModelConfig {
   if (ollamaModelConfig[model]) return ollamaModelConfig[model];
 
   for (const [pattern, config] of ollamaFamilyConfig) {
@@ -165,7 +189,7 @@ export function getOllamaConfig(model) {
 }
 
 // Language name to code mapping
-export const languageCodes = {
+export const languageCodes: Record<string, string> = {
     'Norwegian bokmål': 'nb',
     'Norwegian nynorsk': 'nn',
     'English': 'en',
@@ -177,7 +201,7 @@ export const languageCodes = {
 };
 
 // Reverse mapping: code to full name
-export const languageNames = {
+export const languageNames: Record<string, string> = {
     'nb': 'Norwegian bokmål',
     'nn': 'Norwegian nynorsk',
     'en': 'English',
@@ -189,7 +213,7 @@ export const languageNames = {
 };
 
 // Normalize language input - accepts both codes (nb) and full names (Norwegian bokmål)
-export function normalizeLanguage(input) {
+export function normalizeLanguage(input: string): string {
     if (languageNames[input.toLowerCase()]) {
         return languageNames[input.toLowerCase()];
     }
@@ -197,12 +221,13 @@ export function normalizeLanguage(input) {
 }
 
 // Get language code from language name
-export function getLanguageCode(language) {
+export function getLanguageCode(language: string): string {
     return languageCodes[language] || language.toLowerCase().substring(0, 2);
 }
 
 // Book names in different languages (keyed by language code)
-export const bookNames = {
+// Ytre nøkkel er språkkode, indre er bok-id 1..66 — begge slås opp dynamisk.
+export const bookNames: Record<string, Record<number, string>> = {
     nb: {
         1: "1. Mosebok", 2: "2. Mosebok", 3: "3. Mosebok", 4: "4. Mosebok", 5: "5. Mosebok",
         6: "Josva", 7: "Dommerne", 8: "Rut", 9: "1. Samuel", 10: "2. Samuel",
@@ -251,7 +276,7 @@ export const bookNames = {
 };
 
 // Get book name for a language (falls back to English from books array)
-export function getBookName(bookId, language) {
+export function getBookName(bookId: number, language: string): string {
     const langCode = getLanguageCode(language);
     if (bookNames[langCode] && bookNames[langCode][bookId]) {
         return bookNames[langCode][bookId];
@@ -261,7 +286,15 @@ export function getBookName(bookId, language) {
     return book ? book.name : `Book ${bookId}`;
 }
 
-export const books = [
+/** En bok i kanon, med stien til grunnteksten (tanach for GT, SBLGNT for NT). */
+export interface Book {
+    id: number;
+    file: string;
+    name: string;
+    chapters: number;
+}
+
+export const books: Book[] = [
     {"id": 1, "file": "external/bibles/tanach/Genesis.txt", "name": "Genesis", "chapters": 50},
     {"id": 2, "file": "external/bibles/tanach/Exodus.txt", "name": "Exodus", "chapters": 40},
     {"id": 3, "file": "external/bibles/tanach/Leviticus.txt", "name": "Leviticus", "chapters": 27},

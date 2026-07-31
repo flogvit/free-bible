@@ -5,8 +5,14 @@ import {fileURLToPath} from 'url';
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 
+/** Regner ut datoen en dag faller på i et gitt år. */
+type DateCalc = (year: number) => Date;
+
+/** År → dato på formen `YYYY-MM-DD`, slik `dates`-feltet lagres. */
+type DateMap = Record<number, string>;
+
 // === Easter calculation (Anonymous Gregorian algorithm) ===
-function easterDate(year) {
+function easterDate(year: number): Date {
     const a = year % 19;
     const b = Math.floor(year / 100);
     const c = year % 100;
@@ -24,13 +30,13 @@ function easterDate(year) {
     return new Date(year, month - 1, day);
 }
 
-function addDays(date, days) {
+function addDays(date: Date, days: number): Date {
     const result = new Date(date);
     result.setDate(result.getDate() + days);
     return result;
 }
 
-function formatDate(date) {
+function formatDate(date: Date): string {
     const y = date.getFullYear();
     const m = String(date.getMonth() + 1).padStart(2, '0');
     const d = String(date.getDate()).padStart(2, '0');
@@ -38,7 +44,7 @@ function formatDate(date) {
 }
 
 // Find the Sunday closest to a given date
-function nearestSunday(date) {
+function nearestSunday(date: Date): Date {
     const day = date.getDay(); // 0=Sun
     if (day === 0) return new Date(date);
     if (day <= 3) return addDays(date, -day);
@@ -46,37 +52,37 @@ function nearestSunday(date) {
 }
 
 // Find first Sunday on or after a given date
-function sundayOnOrAfter(date) {
+function sundayOnOrAfter(date: Date): Date {
     const day = date.getDay();
     if (day === 0) return new Date(date);
     return addDays(date, 7 - day);
 }
 
 // Find last Sunday before a given date
-function sundayBefore(date) {
+function sundayBefore(date: Date): Date {
     const day = date.getDay();
     if (day === 0) return addDays(date, -7);
     return addDays(date, -day);
 }
 
 // Fixed date, returns same date every year
-function fixed(month, day) {
+function fixed(month: number, day: number): DateCalc {
     return (year) => new Date(year, month - 1, day);
 }
 
 // Relative to Easter
-function fromEaster(offset) {
+function fromEaster(offset: number): DateCalc {
     return (year) => addDays(easterDate(year), offset);
 }
 
 // 1. søndag i advent = nearest Sunday to Nov 30, but specifically:
 // the Sunday that falls between Nov 27 and Dec 3 inclusive
-function advent1(year) {
+function advent1(year: number): Date {
     const nov27 = new Date(year, 10, 27);
     return sundayOnOrAfter(nov27);
 }
 
-function adventSunday(n) {
+function adventSunday(n: number): DateCalc {
     return (year) => addDays(advent1(year), (n - 1) * 7);
 }
 
@@ -84,31 +90,31 @@ function adventSunday(n) {
 // or Jan 6 in some traditions. In DNK it's the first Sunday in the new year.
 // Looking at data: 2026: Jan 4, 2027: Jan 3, 2028: Jan 2
 // It's the first Sunday on or after Jan 2.
-function kristiAapenbaringsdag(year) {
+function kristiAapenbaringsdag(year: number): Date {
     const jan2 = new Date(year, 0, 2);
     return sundayOnOrAfter(jan2);
 }
 
 // Maria budskapsdag: the Sunday before Palm Sunday (5th Sunday in Lent)
 // From data: always Palm Sunday - 7
-function mariaBudskapsdag(year) {
+function mariaBudskapsdag(year: number): Date {
     return addDays(easterDate(year), -14);
 }
 
 // Mikkelsmesse: Sep 29 (fixed)
 // Allehelgensdag: first Sunday in November
-function allehelgensdag(year) {
+function allehelgensdag(year: number): Date {
     const nov1 = new Date(year, 10, 1);
     return sundayOnOrAfter(nov1);
 }
 
 // Domssøndag: last Sunday before Advent 1
-function domssoendag(year) {
+function domssoendag(year: number): Date {
     return addDays(advent1(year), -7);
 }
 
 // Bots- og bønnedag: last Friday before Allehelgensdag
-function botsOgBoennedag(year) {
+function botsOgBoennedag(year: number): Date {
     const ah = allehelgensdag(year);
     return addDays(ah, -2); // Friday before Sunday
 }
@@ -122,19 +128,19 @@ function botsOgBoennedag(year) {
 // 2026: Feb 8 (Fastelavn Feb 15, Easter Apr 5) -> Easter - 56
 // 2027: Jan 31 (Fastelavn Feb 7, Easter Mar 28) -> Easter - 56
 // So it's Easter - 56
-function kristiForklarelsesdag(year) {
+function kristiForklarelsesdag(year: number): Date {
     return addDays(easterDate(year), -56);
 }
 
 // Såmannssøndag: the Sunday before Kristi forklarelsesdag
 // 2026: Feb 1 (Kristi forkl. Feb 8) -> Easter - 63
 // 2027: Jan 24 (Kristi forkl. Jan 31) -> Easter - 63
-function samannssoendag(year) {
+function samannssoendag(year: number): Date {
     return addDays(easterDate(year), -63);
 }
 
 // Vingårdssøndag: 14th Sunday after Trinity
-function vingaardssoendag(year) {
+function vingaardssoendag(year: number): Date {
     return addDays(easterDate(year), 56 + 13 * 7); // Trinity + 13 weeks
 }
 
@@ -142,7 +148,16 @@ function vingaardssoendag(year) {
 // Source: Wikipedia (2025-2028) and hebcal.com (2029-2035).
 // Dates represent the first full calendar day of each holiday.
 
-const jewishDates = {
+type JewishHoliday =
+    | 'pesach'
+    | 'shavuot'
+    | 'rosh_hashana'
+    | 'yom_kippur'
+    | 'sukkot'
+    | 'purim'
+    | 'hanukkah';
+
+const jewishDates: Record<JewishHoliday, DateMap> = {
     pesach: {
         2025: '2025-04-13', 2026: '2026-04-02', 2027: '2027-04-22',
         2028: '2028-04-11', 2029: '2029-03-31', 2030: '2030-04-18',
@@ -191,24 +206,41 @@ const jewishDates = {
 
 const YEARS = [2025, 2026, 2027, 2028, 2029, 2030, 2031, 2032, 2033, 2034, 2035];
 
-function computeDates(calcFn) {
-    const dates = {};
+function computeDates(calcFn: DateCalc): DateMap {
+    const dates: DateMap = {};
     for (const year of YEARS) {
         dates[year] = formatDate(calcFn(year));
     }
     return dates;
 }
 
-function jewishHolidayDates(key) {
+function jewishHolidayDates(key: JewishHoliday): DateMap {
     const raw = jewishDates[key];
-    const dates = {};
+    const dates: DateMap = {};
     for (const year of YEARS) {
         if (raw[year]) dates[year] = raw[year];
     }
     return dates;
 }
 
-const days = [
+/**
+ * Én dag i kirkeåret eller den jødiske festkalenderen, slik den skrives til
+ * `days/nb/<id>.json`.
+ */
+interface Day {
+    id: string;
+    name: string;
+    description: string;
+    category: string;
+    biblicalBasis: string;
+    significance: string;
+    liturgicalContext: string;
+    history: string;
+    otConnections: string;
+    dates: DateMap;
+}
+
+const days: Day[] = [
     // === ADVENT ===
     {
         id: 'advent-1',
@@ -807,11 +839,11 @@ const days = [
 ];
 
 // === Generate files ===
-function ensureDir(dirPath) {
+function ensureDir(dirPath: string): void {
     if (!fs.existsSync(dirPath)) fs.mkdirSync(dirPath, {recursive: true});
 }
 
-function main() {
+function main(): void {
     const outDir = path.join(__dirname, 'days', 'nb');
     ensureDir(outDir);
 

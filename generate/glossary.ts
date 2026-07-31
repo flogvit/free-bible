@@ -27,6 +27,38 @@ import path from 'path';
 import {fileURLToPath} from 'url';
 
 import {bibles, books, getLanguageCode} from './constants.js';
+import type {Chapter, Verse} from '../kvn/src/bible-types.js';
+
+/** Ett nøkkelbegrep: kildeformene som skal treffes, og gjengivelsene vi kjenner igjen. */
+export interface KeyTerm {
+    source: string;
+    forms: string[];
+    candidates: string[];
+    note?: string;
+}
+
+/** Hvor et treff står. Ikke verset selv — bare adressen. */
+export interface VerseRef {
+    bookId: number;
+    chapterId: number;
+    verseId: number;
+}
+
+/** Ett nøkkelbegrep med treffene sine, gruppert på hvilken gjengivelse som ble brukt. */
+export interface TermResult extends KeyTerm {
+    byRendering: Map<string, VerseRef[]>;
+    /** Treff der ingen av kandidatene sto i den oversatte teksten. */
+    missing: VerseRef[];
+}
+
+/** Én post i glossary/<bibel>.json. */
+export interface GlossaryEntry {
+    source: string;
+    rendering: string;
+    share: number;
+    occurrences: number;
+    note?: string;
+}
 
 /**
  * Load-bearing terms whose rendering should stay stable across the whole bible.
@@ -36,8 +68,11 @@ import {bibles, books, getLanguageCode} from './constants.js';
  * Only terms where a single choice really is expected belong here. Words that
  * legitimately shift sense by context (nephesh, logos) are deliberately absent — a
  * glossary entry for those would force a wrong rendering.
+ *
+ * Nøkkelen er en språkkode som kommer fra `getLanguageCode` — et dynamisk
+ * oppslag, derfor `Record` framfor de utledede nøkkellitteralene.
  */
-export const KEY_TERMS = {
+export const KEY_TERMS: Record<string, KeyTerm[]> = {
     en: [
         {source: 'chesed', forms: ['חסד'], candidates: ['steadfast love', 'faithful love', 'lovingkindness', 'loyal love', 'unfailing love', 'mercy', 'kindness', 'goodness', 'devotion'], note: 'covenant loyalty; "kindness" is right for person-to-person use in the narratives'},
         {source: 'berit', forms: ['ברית'], candidates: ['covenant', 'treaty', 'pact', 'agreement']},
@@ -56,35 +91,39 @@ export const KEY_TERMS = {
 
 const HEB_MARKS = /[֑-ׇ‫‬]/g;
 
-function stripSource(text, bookId) {
+function stripSource(text: string, bookId: number): string {
     if (bookId <= 39) return text.replace(HEB_MARKS, '');
     return text.normalize('NFD').replace(/\p{M}/gu, '').toLowerCase();
 }
 
-function readJson(file) {
+/**
+ * `T` er en påstand om hva fila inneholder, ikke en kontroll: `JSON.parse` gir
+ * `any`, og ingenting validerer resultatet. Kallstedet bestemmer formen.
+ */
+function readJson<T>(file: string): T | null {
     if (!fs.existsSync(file)) return null;
     try {
-        return JSON.parse(fs.readFileSync(file, 'utf-8'));
+        return JSON.parse(fs.readFileSync(file, 'utf-8')) as T;
     } catch {
         return null;
     }
 }
 
-function renderingOf(text, candidates) {
+function renderingOf(text: string, candidates: string[]): string | null {
     const low = text.toLowerCase();
     const hits = candidates.filter(c => low.includes(c.toLowerCase()));
     // longest match wins: "steadfast love" before the "love" it contains
     return hits.length ? hits.reduce((a, b) => (b.length > a.length ? b : a)) : null;
 }
 
-export function collect(bible, terms) {
-    const results = terms.map(t => ({...t, byRendering: new Map(), missing: []}));
+export function collect(bible: string, terms: KeyTerm[]): TermResult[] {
+    const results: TermResult[] = terms.map(t => ({...t, byRendering: new Map(), missing: []}));
 
     for (const book of books) {
         const source = book.id <= 39 ? 'hebrew' : 'sblgnt';
         for (let chapter = 1; chapter <= book.chapters; chapter++) {
-            const translated = readJson(`bibles_raw/${bible}/${book.id}/${chapter}.json`);
-            const originals = readJson(`bibles_raw/${source}/${book.id}/${chapter}.json`);
+            const translated = readJson<Chapter>(`bibles_raw/${bible}/${book.id}/${chapter}.json`);
+            const originals = readJson<Chapter>(`bibles_raw/${source}/${book.id}/${chapter}.json`);
             if (!translated || !originals) continue;
 
             for (const original of originals) {
@@ -101,7 +140,9 @@ export function collect(bible, terms) {
                         continue;
                     }
                     if (!term.byRendering.has(rendering)) term.byRendering.set(rendering, []);
-                    term.byRendering.get(rendering).push(ref);
+                    // `!` er en ren typepåstand: linja over har nettopp sørget
+                    // for at nøkkelen finnes.
+                    term.byRendering.get(rendering)!.push(ref);
                 }
             }
         }
@@ -109,8 +150,10 @@ export function collect(bible, terms) {
     return results;
 }
 
-function bookName(id) {
-    return (books.find(b => b.id === id) || {}).name || `Book ${id}`;
+function bookName(id: number): string {
+    // `as`-påstanden beskriver `|| {}`-fallbacken: den tomme literalen har ingen
+    // `name`, og oppslaget faller da videre til `Book ${id}` — som før.
+    return (books.find(b => b.id === id) || {} as {name?: string}).name || `Book ${id}`;
 }
 
 /**
@@ -140,14 +183,14 @@ const PARALLEL_PASSAGES = [
 ];
 
 // Ratcliff/Obershelp, same measure difflib uses — enough to rank similarity.
-export function similarity(a, b) {
+export function similarity(a: string, b: string): number {
     if (!a || !b) return 0;
-    const matched = (x, y) => {
+    const matched = (x: string, y: string): number => {
         if (!x.length || !y.length) return 0;
         let best = 0, bx = 0, by = 0;
-        const prev = new Array(y.length + 1).fill(0);
+        const prev: number[] = new Array(y.length + 1).fill(0);
         for (let i = 0; i < x.length; i++) {
-            const cur = new Array(y.length + 1).fill(0);
+            const cur: number[] = new Array(y.length + 1).fill(0);
             for (let j = 0; j < y.length; j++) {
                 if (x[i] === y[j]) {
                     cur[j + 1] = prev[j] + 1;
@@ -162,22 +205,40 @@ export function similarity(a, b) {
     return (2 * matched(a, b)) / (a.length + b.length);
 }
 
-function parallels(bible, {minSource = 0.80, minGap = 0.12} = {}) {
+/** Ett par hvor kilden er nesten lik, men oversettelsen har glidd fra hverandre. */
+interface ParallelFinding {
+    va: Verse;
+    vb: Verse;
+    /** Likhet i kilden. */
+    s: number;
+    /** Likhet i oversettelsen. */
+    t: number;
+    ta: string;
+    tb: string;
+    gap: number;
+}
+
+interface ParallelOptions {
+    minSource?: number;
+    minGap?: number;
+}
+
+function parallels(bible: string, {minSource = 0.80, minGap = 0.12}: ParallelOptions = {}): void {
     console.log(`${'passage'.padEnd(28)}${'pairs'.padStart(6)}${'drift'.padStart(7)}\n`);
     let totalPairs = 0, totalDrift = 0;
 
     for (const p of PARALLEL_PASSAGES) {
-        const srcA = readJson(`bibles_raw/${p.a[0] <= 39 ? 'hebrew' : 'sblgnt'}/${p.a[0]}/${p.a[1]}.json`);
-        const srcB = readJson(`bibles_raw/${p.b[0] <= 39 ? 'hebrew' : 'sblgnt'}/${p.b[0]}/${p.b[1]}.json`);
-        const tgtA = readJson(`bibles_raw/${bible}/${p.a[0]}/${p.a[1]}.json`);
-        const tgtB = readJson(`bibles_raw/${bible}/${p.b[0]}/${p.b[1]}.json`);
+        const srcA = readJson<Chapter>(`bibles_raw/${p.a[0] <= 39 ? 'hebrew' : 'sblgnt'}/${p.a[0]}/${p.a[1]}.json`);
+        const srcB = readJson<Chapter>(`bibles_raw/${p.b[0] <= 39 ? 'hebrew' : 'sblgnt'}/${p.b[0]}/${p.b[1]}.json`);
+        const tgtA = readJson<Chapter>(`bibles_raw/${bible}/${p.a[0]}/${p.a[1]}.json`);
+        const tgtB = readJson<Chapter>(`bibles_raw/${bible}/${p.b[0]}/${p.b[1]}.json`);
         if (!srcA || !srcB || !tgtA || !tgtB) continue;
 
-        const findings = [];
+        const findings: ParallelFinding[] = [];
         let pairs = 0;
         for (const va of srcA) {
             const bareA = stripSource(va.text, p.a[0]);
-            let best = null;
+            let best: {vb: Verse; s: number} | null = null;
             for (const vb of srcB) {
                 const s = similarity(bareA, stripSource(vb.text, p.b[0]));
                 if (s >= minSource && (!best || s > best.s)) best = {vb, s};
@@ -206,7 +267,7 @@ function parallels(bible, {minSource = 0.80, minGap = 0.12} = {}) {
     console.log(`\n${totalDrift} diverging pairs out of ${totalPairs} matched verses`);
 }
 
-function audit(results) {
+function audit(results: TermResult[]): void {
     console.log(`${'term'.padEnd(12)}${'verses'.padStart(7)}  renderings`);
     for (const t of results) {
         const total = [...t.byRendering.values()].reduce((n, v) => n + v.length, 0) + t.missing.length;
@@ -227,9 +288,9 @@ function audit(results) {
     }
 }
 
-function write(bible, results) {
+function write(bible: string, results: TermResult[]): string {
     const entries = results
-        .map(t => {
+        .map((t): GlossaryEntry | null => {
             const sorted = [...t.byRendering.entries()].sort((a, b) => b[1].length - a[1].length);
             if (!sorted.length) return null;
             const [rendering, refs] = sorted[0];
@@ -252,7 +313,7 @@ function write(bible, results) {
     return file;
 }
 
-function main() {
+function main(): void {
     const args = process.argv.slice(2);
     const bible = args.find(a => !a.startsWith('--'));
     if (!bible || !bibles[bible]) {

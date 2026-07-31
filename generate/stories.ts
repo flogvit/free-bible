@@ -9,10 +9,72 @@ dotenv.config()
 
 import Anthropic from '@anthropic-ai/sdk';
 import {books, anthropicModel, maxTokens, getBookName} from "./constants.js";
+import type {Chapter, Verse} from '../kvn/src/bible-types.js';
 
 const anthropic = new Anthropic({
     apiKey: process.env.ANTHROPIC_API_KEY
 });
+
+/** En sammenhengende passasje historien dekker. Speiler references-items i STORY_SCHEMA. */
+interface StoryReference {
+    bookId: number;
+    startChapter: number;
+    startVerse: number;
+    endChapter: number;
+    endVerse: number;
+}
+
+/**
+ * En historie slik den ligger i `stories/nb/<slug>.json`.
+ *
+ * `category` er `string` og ikke en union: VALID_CATEGORIES er en kjøretidsliste
+ * som valideres mot i validateStory, og LLM-en kan returnere hva som helst.
+ */
+interface Story {
+    slug: string;
+    title: string;
+    keywords: string[];
+    description: string;
+    category: string;
+    references: StoryReference[];
+    /** Finnes på disk, men er ikke del av STORY_SCHEMA — skrives av andre skript. */
+    versions?: unknown[];
+}
+
+/** En historie lest fra disk, med filnavnet den kom fra. */
+interface StoryWithFilename extends Story {
+    filename: string;
+}
+
+/** Feltene korrekturen kan melde om — samme enum som i STORY_PROOFREAD_SCHEMA. */
+type StoryField = 'slug' | 'title' | 'keywords' | 'description' | 'category' | 'references';
+
+type ProofreadSeverity = 'critical' | 'major' | 'minor';
+
+interface StoryIssue {
+    field: StoryField;
+    severity: ProofreadSeverity;
+    explanation: string;
+    current?: string;
+    suggested?: string;
+}
+
+interface StoryProofreadResult {
+    issues: StoryIssue[];
+    summary: string;
+    score: number;
+    revisedStory: Story;
+}
+
+/** Det applyProofreadChanges melder tilbake når noe faktisk ble skrevet. */
+interface ApplyResult {
+    applied: boolean;
+    refsChanged: boolean;
+    newFilename: string;
+}
+
+/** JSON-schema slik SDK-en vil ha det i `output_config.format`. */
+type JsonSchema = Record<string, unknown>;
 
 const MAX_RETRIES = 3;
 
@@ -97,25 +159,25 @@ const GENERATE_STORIES_SCHEMA = {
 
 // --- Helpers ---
 
-function fileExists(filepath) {
+function fileExists(filepath: string): boolean {
     return fs.existsSync(filepath) && fs.statSync(filepath).size > 0;
 }
 
-function ensureDir(filepath) {
+function ensureDir(filepath: string): void {
     const dir = path.dirname(filepath);
     if (!fs.existsSync(dir)) {
         fs.mkdirSync(dir, {recursive: true});
     }
 }
 
-function getOsnb2Verses(bookId, chapterId) {
+function getOsnb2Verses(bookId: number, chapterId: number): Chapter {
     const filepath = path.join(OSNB_DIR, `${bookId}`, `${chapterId}.json`);
     if (!fileExists(filepath)) return [];
     return JSON.parse(fs.readFileSync(filepath, 'utf-8'));
 }
 
-function getPassageText(bookId, startChapter, startVerse, endChapter, endVerse) {
-    const lines = [];
+function getPassageText(bookId: number, startChapter: number, startVerse: number, endChapter: number, endVerse: number): string | null {
+    const lines: string[] = [];
     const book = books.find(b => b.id === bookId);
     if (!book) return null;
 
@@ -126,7 +188,7 @@ function getPassageText(bookId, startChapter, startVerse, endChapter, endVerse) 
         if (verses.length === 0) return null;
 
         const fromV = (ch === startChapter) ? startVerse : 1;
-        const toV = (ch === endChapter) ? endVerse : Math.max(...verses.map(v => v.verseId));
+        const toV = (ch === endChapter) ? endVerse : Math.max(...verses.map((v: Verse) => v.verseId));
 
         for (const v of verses) {
             if (v.verseId >= fromV && v.verseId <= toV) {
@@ -137,16 +199,16 @@ function getPassageText(bookId, startChapter, startVerse, endChapter, endVerse) 
     return lines.length > 0 ? lines.join('\n') : null;
 }
 
-function loadAllStories() {
-    const stories = [];
+function loadAllStories(): StoryWithFilename[] {
+    const stories: StoryWithFilename[] = [];
     if (!fs.existsSync(STORIES_DIR)) return stories;
     for (const file of fs.readdirSync(STORIES_DIR)) {
         if (!file.endsWith('.json')) continue;
         try {
-            const data = JSON.parse(fs.readFileSync(path.join(STORIES_DIR, file), 'utf-8'));
+            const data = JSON.parse(fs.readFileSync(path.join(STORIES_DIR, file), 'utf-8')) as Story;
             stories.push({filename: file, ...data});
         } catch (e) {
-            console.error(`Error reading ${file}: ${e.message}`);
+            console.error(`Error reading ${file}: ${(e as Error).message}`);
         }
     }
     return stories;
@@ -154,8 +216,8 @@ function loadAllStories() {
 
 // --- Anthropic calls ---
 
-async function doAnthropicCall(content, schema) {
-    const options = {
+async function doAnthropicCall(content: string, schema: JsonSchema | null | undefined) {
+    const options: Anthropic.MessageCreateParamsNonStreaming = {
         model: anthropicModel,
         max_tokens: maxTokens,
         messages: [{role: "user", content}]
@@ -166,19 +228,21 @@ async function doAnthropicCall(content, schema) {
     return anthropic.messages.create(options);
 }
 
-async function doAnthropicCallWithRetry(content, schema, context = '') {
-    let lastError;
+// T er formen kallstedet forventer tilbake fra JSON-svaret; skjemaet håndheves
+// på API-siden, så den er en påstand og ikke en kontroll.
+async function doAnthropicCallWithRetry<T>(content: string, schema: JsonSchema | null | undefined, context = ''): Promise<T> {
+    let lastError: unknown;
     for (let attempt = 1; attempt <= MAX_RETRIES; attempt++) {
         try {
             const completion = await doAnthropicCall(content, schema);
             if (completion.stop_reason === 'max_tokens') {
                 throw new Error('Response truncated due to max_tokens limit');
             }
-            return JSON.parse(completion.content[0].text);
+            return JSON.parse((completion.content[0] as Anthropic.TextBlock).text) as T;
         } catch (error) {
             lastError = error;
             if (attempt < MAX_RETRIES) {
-                console.log(`  Attempt ${attempt} failed (${error.message}), retrying...`);
+                console.log(`  Attempt ${attempt} failed (${(error as Error).message}), retrying...`);
                 await new Promise(resolve => setTimeout(resolve, 1000));
             }
         }
@@ -189,7 +253,7 @@ async function doAnthropicCallWithRetry(content, schema, context = '') {
 
 // --- Proofread ---
 
-function getProofreadPrompt(story, passageTexts) {
+function getProofreadPrompt(story: Story, passageTexts: string): string {
     const storyJson = JSON.stringify(story, null, 2);
     const categoriesList = VALID_CATEGORIES.join(', ');
 
@@ -232,9 +296,9 @@ VIKTIG:
 - ALDRI nevn spesifikke bibelutgaver, bibelselskap eller forlag (f.eks. "Bibelen 2011", "Bibelselskapet", "NIV", "ESV"). Skriv nøytralt uten referanse til bestemte oversettelser eller organisasjoner.`;
 }
 
-async function proofreadStory(story, filename) {
+async function proofreadStory(story: Story, filename: string): Promise<StoryProofreadResult> {
     // Build passage texts from osnb
-    const passageParts = [];
+    const passageParts: string[] = [];
     let missingPassage = false;
 
     for (const ref of story.references) {
@@ -253,7 +317,7 @@ async function proofreadStory(story, filename) {
     console.log(`Proofreading: ${story.title} (${filename})${missingPassage ? ' [delvis manglende tekst]' : ''}...`);
 
     const prompt = getProofreadPrompt(story, passageTexts);
-    const result = await doAnthropicCallWithRetry(prompt, STORY_PROOFREAD_SCHEMA, `proofread ${filename}`);
+    const result = await doAnthropicCallWithRetry<StoryProofreadResult>(prompt, STORY_PROOFREAD_SCHEMA, `proofread ${filename}`);
 
     // Save proofread result
     const proofreadFile = path.join(PROOFREAD_DIR, filename);
@@ -264,7 +328,7 @@ async function proofreadStory(story, filename) {
     process.stdout.write(`  Score: ${result.score}/10`);
     if (result.issues && result.issues.length > 0) {
         console.log(` | Issues: ${result.issues.length}`);
-        result.issues.forEach((issue, i) => {
+        result.issues.forEach((issue: StoryIssue, i: number) => {
             console.log(`    ${i + 1}. [${issue.severity}] ${issue.field}: ${issue.explanation}`);
             if (issue.current) console.log(`       Nå: ${issue.current}`);
             if (issue.suggested) console.log(`       Forslag: ${issue.suggested}`);
@@ -279,14 +343,14 @@ async function proofreadStory(story, filename) {
 // --- Apply ---
 
 // Returns { applied, refsChanged, newFilename } or null if nothing applied
-function applyProofreadChanges(filename, proofreadResult = null, minScore = 7) {
+function applyProofreadChanges(filename: string, proofreadResult: StoryProofreadResult | null = null, minScore = 7): ApplyResult | null {
     if (!proofreadResult) {
         const proofreadFile = path.join(PROOFREAD_DIR, filename);
         if (!fileExists(proofreadFile)) {
             console.log(`No proofread file for ${filename}`);
             return null;
         }
-        proofreadResult = JSON.parse(fs.readFileSync(proofreadFile, 'utf-8'));
+        proofreadResult = JSON.parse(fs.readFileSync(proofreadFile, 'utf-8')) as StoryProofreadResult;
     }
 
     if (!proofreadResult.revisedStory) return null;
@@ -301,19 +365,19 @@ function applyProofreadChanges(filename, proofreadResult = null, minScore = 7) {
     }
 
     const storyFile = path.join(STORIES_DIR, filename);
-    const original = JSON.parse(fs.readFileSync(storyFile, 'utf-8'));
+    const original = JSON.parse(fs.readFileSync(storyFile, 'utf-8')) as Story;
     const revised = proofreadResult.revisedStory;
 
     // Show what changed
-    const fields = ['slug', 'title', 'description', 'category'];
+    const fields: StoryField[] = ['slug', 'title', 'description', 'category'];
     for (const field of fields) {
         if (JSON.stringify(original[field]) !== JSON.stringify(revised[field])) {
             console.log(`  ${field}: "${original[field]}" → "${revised[field]}"`);
         }
     }
     if (JSON.stringify(original.keywords) !== JSON.stringify(revised.keywords)) {
-        const added = revised.keywords.filter(k => !original.keywords.includes(k));
-        const removed = original.keywords.filter(k => !revised.keywords.includes(k));
+        const added = revised.keywords.filter((k: string) => !original.keywords.includes(k));
+        const removed = original.keywords.filter((k: string) => !revised.keywords.includes(k));
         if (added.length) console.log(`  keywords added: ${added.join(', ')}`);
         if (removed.length) console.log(`  keywords removed: ${removed.join(', ')}`);
     }
@@ -344,7 +408,7 @@ function applyProofreadChanges(filename, proofreadResult = null, minScore = 7) {
 
 // --- Generate ---
 
-function getGeneratePrompt(existingTitles, category = null) {
+function getGeneratePrompt(existingTitles: string[], category: string | null = null): string {
     const categoriesList = VALID_CATEGORIES.join(', ');
     const existingList = existingTitles.join('\n- ');
 
@@ -383,11 +447,11 @@ VIKTIG:
 - ALDRI nevn spesifikke bibelutgaver, bibelselskap eller forlag (f.eks. "Bibelen 2011", "Bibelselskapet", "NIV", "ESV"). Skriv nøytralt uten referanse til bestemte oversettelser eller organisasjoner.`;
 }
 
-async function generateStories(existingTitles, category) {
+async function generateStories(existingTitles: string[], category: string | null): Promise<Story[]> {
     console.log('Generating new stories...');
 
     const prompt = getGeneratePrompt(existingTitles, category);
-    const result = await doAnthropicCallWithRetry(prompt, GENERATE_STORIES_SCHEMA, 'generate stories');
+    const result = await doAnthropicCallWithRetry<{ stories: Story[] }>(prompt, GENERATE_STORIES_SCHEMA, 'generate stories');
 
     const existingSlugs = new Set(
         fs.readdirSync(STORIES_DIR)
@@ -395,10 +459,10 @@ async function generateStories(existingTitles, category) {
             .map(f => f.replace('.json', ''))
     );
 
-    const existingTitlesLower = new Set(existingTitles.map(t => t.toLowerCase()));
+    const existingTitlesLower = new Set(existingTitles.map((t: string) => t.toLowerCase()));
 
     // Also build a set of reference signatures to detect stories covering the same passages
-    const existingRefSigs = new Set();
+    const existingRefSigs = new Set<string>();
     for (const story of loadAllStories()) {
         if (story.references) {
             for (const ref of story.references) {
@@ -420,8 +484,8 @@ async function generateStories(existingTitles, category) {
         }
 
         // Check if all references overlap with an existing story
-        const refSigs = story.references.map(r => `${r.bookId}:${r.startChapter}:${r.startVerse}-${r.endChapter}:${r.endVerse}`);
-        if (refSigs.length > 0 && refSigs.every(sig => existingRefSigs.has(sig))) {
+        const refSigs = story.references.map((r: StoryReference) => `${r.bookId}:${r.startChapter}:${r.startVerse}-${r.endChapter}:${r.endVerse}`);
+        if (refSigs.length > 0 && refSigs.every((sig: string) => existingRefSigs.has(sig))) {
             console.log(`  Skipping "${story.title}" (same references already exist)`);
             continue;
         }
@@ -439,8 +503,8 @@ async function generateStories(existingTitles, category) {
 
 // --- Local validation (no AI) ---
 
-function validateStory(story, filename) {
-    const issues = [];
+function validateStory(story: Story, filename: string): string[] {
+    const issues: string[] = [];
 
     // slug matches filename
     const expectedFilename = story.slug + '.json';
@@ -449,7 +513,7 @@ function validateStory(story, filename) {
     }
 
     // Required fields
-    for (const field of ['slug', 'title', 'keywords', 'description', 'category', 'references']) {
+    for (const field of ['slug', 'title', 'keywords', 'description', 'category', 'references'] as StoryField[]) {
         if (!story[field]) {
             issues.push(`Missing field: ${field}`);
         }
@@ -462,7 +526,7 @@ function validateStory(story, filename) {
 
     // Keywords should be lowercase
     if (story.keywords) {
-        const uppercaseKws = story.keywords.filter(k => k !== k.toLowerCase());
+        const uppercaseKws = story.keywords.filter((k: string) => k !== k.toLowerCase());
         if (uppercaseKws.length > 0) {
             issues.push(`Keywords not lowercase: ${uppercaseKws.join(', ')}`);
         }
@@ -503,7 +567,7 @@ function validateStory(story, filename) {
 
 // --- CLI ---
 
-function printUsage() {
+function printUsage(): void {
     console.log(`
 Usage: node stories.mjs [options]
 
@@ -535,8 +599,19 @@ Examples:
 `);
 }
 
-function parseArgs(args) {
-    const options = {
+interface Options {
+    validate: boolean;
+    proofread: boolean;
+    apply: boolean;
+    generate: boolean;
+    category: string | null;
+    file: string | null;
+    minScore: number;
+    help: boolean;
+}
+
+function parseArgs(args: string[]): Options {
+    const options: Options = {
         validate: false,
         proofread: false,
         apply: false,
@@ -573,7 +648,7 @@ function parseArgs(args) {
     return options;
 }
 
-async function main() {
+async function main(): Promise<void> {
     const args = process.argv.slice(2);
     const options = parseArgs(args);
 
@@ -625,9 +700,9 @@ async function main() {
     }
 
     // --- Generate ---
-    const generatedStories = [];
+    const generatedStories: StoryWithFilename[] = [];
     if (options.generate) {
-        const existingTitles = allStories.map(s => s.title);
+        const existingTitles = allStories.map((s: StoryWithFilename) => s.title);
         const newStories = await generateStories(existingTitles, options.category);
 
         if (newStories) {
@@ -646,7 +721,7 @@ async function main() {
         // If generate was also requested, only proofread the new stories
         const toProofread = options.generate ? generatedStories : stories;
         let proofreadCount = 0;
-        const results = {};
+        const results: Record<string, StoryProofreadResult> = {};
 
         for (const story of toProofread) {
             const {filename, ...storyData} = story;
@@ -662,7 +737,7 @@ async function main() {
                 if (applyResult && applyResult.refsChanged) {
                     const verifyFilename = applyResult.newFilename;
                     const verifyFile = path.join(STORIES_DIR, verifyFilename);
-                    const updatedStory = JSON.parse(fs.readFileSync(verifyFile, 'utf-8'));
+                    const updatedStory = JSON.parse(fs.readFileSync(verifyFile, 'utf-8')) as Story;
 
                     console.log(`  Re-proofreading with updated references...`);
                     const verifyResult = await proofreadStory(updatedStory, verifyFilename);

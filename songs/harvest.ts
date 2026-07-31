@@ -41,19 +41,147 @@ const STATE_FILE = join(DATA, 'state', 'harvest-state.json');
 const INDEX = join(DATA, 'index.json');
 const MASTER = join(DATA, 'master');
 
-const CONFIG = JSON.parse(fs.readFileSync(join(__dirname, 'sources.json'), 'utf8'));
+const CONFIG: Config = JSON.parse(fs.readFileSync(join(__dirname, 'sources.json'), 'utf8'));
 const { email, delayMs } = CONFIG.settings;
 const UA = `free-bible-songs/1.0 (https://github.com/flogvit/free-bible; mailto:${email})`;
 
-const sleep = ms => new Promise(r => setTimeout(r, ms));
-const ensure = p => fs.mkdirSync(p, { recursive: true });
+// ---------- types ----------
+// Formene under beskriver JSON-en dette skriptet leser og skriver: sources.json,
+// de høstede sangfilene, korpusets index.json, og svarene fra MediaWiki og
+// kalliope.org. Bare feltene koden faktisk rører er med — hele råteksten
+// (wikitext/HTML) lagres ved siden av, så dette er et utvalg.
 
-function loadState() {
+interface CollectionBase {
+  language: string;
+  comment?: string;
+  enabled?: boolean;
+}
+
+/** Kategorikryp på en MediaWiki-instans. */
+interface WikisourceCollection extends CollectionBase {
+  type: 'wikisource';
+  site: string;
+  category: string;
+  recurseSubcats?: boolean;
+}
+
+/** Én dikter på kalliope.org. */
+interface KalliopeCollection extends CollectionBase {
+  type: 'kalliope';
+  poet: string;
+}
+
+type SourceCollection = WikisourceCollection | KalliopeCollection;
+
+interface Config {
+  settings: {
+    email: string;
+    delayMs: number;
+  };
+  collections: Record<string, SourceCollection>;
+}
+
+/** `fetchJson`/`fetchText` henger HTTP-statusen på feilen. */
+interface HttpError extends Error {
+  status?: number;
+}
+
+/** state/harvest-state.json: siste kjøring per samling. */
+interface HarvestState {
+  collections: Record<string, { lastRun?: string }>;
+}
+
+/** Ett vers/strofe slik den lagres. */
+interface SongVerse {
+  tag: string;
+  text: string;
+}
+
+/** harvest/<collection>/<id>.json: parset sang + råkilde for reparse. */
+interface HarvestedSong {
+  harvestId: string;
+  collection: string;
+  title: string;
+  author: string;
+  language: string;
+  verses: SongVerse[];
+  keywords?: string[];
+  source: {
+    site?: string;
+    category?: string;
+    pageid?: number;
+    poet?: string;
+    workId?: string;
+    year?: number | null;
+    url: string;
+    fetched: string;
+    notes?: string[];
+  };
+  raw?: { wikitext: string; renderedHtml?: string };
+}
+
+/** En post i korpusets index.json. */
+interface IndexEntry {
+  id: string;
+  title: string;
+  author: string;
+  language: string;
+  textQuality: string;
+  sources?: { collection: string; file: string }[];
+}
+
+interface WikiCategoryMember {
+  pageid: number;
+  ns: number;
+  title: string;
+}
+
+interface WikiCategoryResponse {
+  query: { categorymembers: WikiCategoryMember[] };
+  continue?: { cmcontinue: string };
+}
+
+interface WikiParseResponse {
+  parse?: {
+    wikitext?: { '*'?: string };
+    text?: { '*'?: string };
+  };
+}
+
+/**
+ * En linje i en kalliope-blokk er enten teksten alene, eller et par
+ * [tekst, metadata] der metadata markerer at linja er rå HTML.
+ */
+type KalliopeLine = string | null | [string | null, { html?: boolean } | null];
+
+interface KalliopeBlock {
+  type?: string;
+  lines?: KalliopeLine[];
+}
+
+interface KalliopeText {
+  id: string;
+  title: string;
+  work_id?: string;
+  keywords?: string[];
+  blocks?: KalliopeBlock[];
+  notes?: (string | { content_html?: string })[];
+}
+
+interface KalliopeTextsResponse {
+  lines?: KalliopeText[];
+  poet?: { name?: { fullname?: string; firstname?: string; lastname?: string } };
+}
+
+const sleep = (ms: number) => new Promise(r => setTimeout(r, ms));
+const ensure = (p: string) => fs.mkdirSync(p, { recursive: true });
+
+function loadState(): HarvestState {
   try { return JSON.parse(fs.readFileSync(STATE_FILE, 'utf8')); } catch { return { collections: {} }; }
 }
-function saveState(s) { ensure(dirname(STATE_FILE)); fs.writeFileSync(STATE_FILE, JSON.stringify(s, null, 2) + '\n'); }
+function saveState(s: HarvestState) { ensure(dirname(STATE_FILE)); fs.writeFileSync(STATE_FILE, JSON.stringify(s, null, 2) + '\n'); }
 
-async function fetchWithRetry(url, tries = 3) {
+async function fetchWithRetry(url: string, tries = 3): Promise<Response> {
   for (let i = 0; i < tries; i++) {
     try {
       const ctl = new AbortController();
@@ -66,37 +194,38 @@ async function fetchWithRetry(url, tries = 3) {
   }
   throw new Error(`retries exhausted: ${url}`);
 }
-async function fetchJson(url) {
+async function fetchJson<T = any>(url: string): Promise<T> {
   const res = await fetchWithRetry(url);
-  if (!res.ok) { const e = new Error(`HTTP ${res.status} ${url}`); e.status = res.status; throw e; }
+  if (!res.ok) { const e = new Error(`HTTP ${res.status} ${url}`) as HttpError; e.status = res.status; throw e; }
   return res.json();
 }
-async function fetchText(url) {
+async function fetchText(url: string): Promise<string> {
   const res = await fetchWithRetry(url);
-  if (!res.ok) { const e = new Error(`HTTP ${res.status} ${url}`); e.status = res.status; throw e; }
+  if (!res.ok) { const e = new Error(`HTTP ${res.status} ${url}`) as HttpError; e.status = res.status; throw e; }
   return res.text();
 }
 
-function songFile(collection, id) { return join(HARVEST, collection, `${id}.json`); }
-function saveSong(collection, song) {
+function songFile(collection: string, id: string): string { return join(HARVEST, collection, `${id}.json`); }
+function saveSong(collection: string, song: HarvestedSong) {
   ensure(join(HARVEST, collection));
   fs.writeFileSync(songFile(collection, song.harvestId), JSON.stringify(song, null, 2) + '\n');
 }
 
 // ---------- wikisource ----------
 
-async function wikisourceListPages(site, category, recurse) {
-  const pages = [];
-  const seenCats = new Set();
-  const queue = [category];
+async function wikisourceListPages(site: string, category: string, recurse: boolean | undefined): Promise<WikiCategoryMember[]> {
+  const pages: WikiCategoryMember[] = [];
+  const seenCats = new Set<string>();
+  const queue: string[] = [category];
   while (queue.length) {
-    const cat = queue.shift();
+    // `!`: while-betingelsen over garanterer at køen ikke er tom.
+    const cat = queue.shift()!;
     if (seenCats.has(cat)) continue;
     seenCats.add(cat);
     let cont = '';
     do {
       const url = `https://${site}/w/api.php?action=query&list=categorymembers&cmtitle=${encodeURIComponent(cat)}&cmlimit=500&format=json${cont}`;
-      const d = await fetchJson(url);
+      const d: WikiCategoryResponse = await fetchJson(url);
       for (const m of d.query.categorymembers) {
         if (m.ns === 0) pages.push(m);
         else if (recurse && m.title.match(/^Kategori:/)) queue.push(m.title);
@@ -109,7 +238,7 @@ async function wikisourceListPages(site, category, recurse) {
 }
 
 /** Best-effort wikitext → stanzas. Raw wikitext is kept in the file for reparse. */
-function parseWikitext(wikitext) {
+function parseWikitext(wikitext: string): { author: string; verses: SongVerse[] } {
   let t = wikitext;
   const author = ((t.match(/\|\s*forfatter\s*=\s*([^\n|}]+)/i) || t.match(/\[\[\s*Forfatter:([^|\]]+)/i) || [])[1] || '')
     .replace(/\[\[(?:[^|\]]*\|)?([^\]]*)\]\]/g, '$1').replace(/<[^>]+>/g, '').trim();
@@ -135,12 +264,12 @@ function parseWikitext(wikitext) {
 }
 
 /** Rendered-HTML → stanzas, for pages built by <pages index=.../> transclusion. */
-function parseRenderedHtml(html) {
+function parseRenderedHtml(html: string): SongVerse[] {
   let t = html;
   t = t.replace(/<style[^>]*>.*?<\/style>/gis, '');
   t = t.replace(/<table[^>]*>.*?<\/table>/gis, '');           // header/license boxes
   t = t.replace(/<span[^>]*class="[^"]*pagenum[^"]*"[^>]*>.*?<\/span>/gis, '');
-  const stanzas = [];
+  const stanzas: string[] = [];
   for (const m of t.matchAll(/<p[^>]*>(.*?)<\/p>/gis)) {
     let s = m[1].replace(/<br\s*\/?>/gi, '\n').replace(/<[^>]+>/g, '');
     s = s.replace(/&#160;|&nbsp;/g, ' ').replace(/&amp;/g, '&').replace(/&lt;/g, '<')
@@ -151,7 +280,7 @@ function parseRenderedHtml(html) {
   return stanzas.map((text, i) => ({ tag: `V${i + 1}`, text }));
 }
 
-async function scrapeWikisource(key, cfg, limit) {
+async function scrapeWikisource(key: string, cfg: WikisourceCollection, limit: number | null) {
   const { site, category, recurseSubcats } = cfg;
   console.log(`[${key}] listing ${category} on ${site}...`);
   const pages = await wikisourceListPages(site, category, recurseSubcats);
@@ -163,12 +292,12 @@ async function scrapeWikisource(key, cfg, limit) {
     if (limit && done >= limit) break;
     try {
       const url = `https://${site}/w/api.php?action=parse&pageid=${p.pageid}&prop=wikitext&format=json`;
-      const d = await fetchJson(url);
+      const d: WikiParseResponse = await fetchJson(url);
       const wikitext = d.parse?.wikitext?.['*'] || '';
       let { author, verses } = parseWikitext(wikitext);
-      let renderedHtml = null;
+      let renderedHtml: string | null = null;
       if (/<pages\s+index=/i.test(wikitext)) {
-        const dh = await fetchJson(`https://${site}/w/api.php?action=parse&pageid=${p.pageid}&prop=text&format=json`);
+        const dh: WikiParseResponse = await fetchJson(`https://${site}/w/api.php?action=parse&pageid=${p.pageid}&prop=text&format=json`);
         renderedHtml = dh.parse?.text?.['*'] || '';
         verses = parseRenderedHtml(renderedHtml);
       }
@@ -181,7 +310,7 @@ async function scrapeWikisource(key, cfg, limit) {
       });
       done++;
       if (done % 25 === 0) console.log(`[${key}] ${done} scraped...`);
-    } catch (e) { console.log(`[${key}] FAIL ${p.title}: ${e.message}`); failed++; }
+    } catch (e: any) { console.log(`[${key}] FAIL ${p.title}: ${e.message}`); failed++; }
     await sleep(delayMs);
   }
   console.log(`[${key}] scraped ${done}, skipped ${skipped} existing, failed ${failed}`);
@@ -189,9 +318,9 @@ async function scrapeWikisource(key, cfg, limit) {
 
 // ---------- kalliope ----------
 
-function parseKalliopeBlocks(blocks) {
-  const stanzas = [];
-  let cur = [];
+function parseKalliopeBlocks(blocks: KalliopeBlock[] | undefined): SongVerse[] {
+  const stanzas: string[] = [];
+  let cur: string[] = [];
   const flush = () => { if (cur.length) { stanzas.push(cur.join('\n')); cur = []; } };
   for (const b of blocks || []) {
     if (b.type !== 'poetry') continue;
@@ -209,12 +338,12 @@ function parseKalliopeBlocks(blocks) {
   return stanzas.filter(Boolean).map((text, i) => ({ tag: `V${i + 1}`, text }));
 }
 
-async function scrapeKalliope(key, cfg, limit) {
+async function scrapeKalliope(key: string, cfg: KalliopeCollection, limit: number | null) {
   const { poet } = cfg;
   console.log(`[${key}] listing texts for ${poet}...`);
-  const d = await fetchJson(`https://kalliope.org/api/${poet}/texts.json`);
+  const d: KalliopeTextsResponse = await fetchJson(`https://kalliope.org/api/${poet}/texts.json`);
   const texts = d.lines || [];
-  const n = d.poet?.name || {};
+  const n: { fullname?: string; firstname?: string; lastname?: string } = d.poet?.name || {};
   const fullname = n.fullname || [n.firstname, n.lastname].filter(Boolean).join(' ') || poet;
   console.log(`[${key}] ${texts.length} texts`);
   let done = 0, skipped = 0, failed = 0;
@@ -226,7 +355,7 @@ async function scrapeKalliope(key, cfg, limit) {
       const html = await fetchText(`https://kalliope.org/da/text/${id}`);
       const m = html.match(/<script id="__NEXT_DATA__" type="application\/json">(.*?)<\/script>/s);
       if (!m) throw new Error('no __NEXT_DATA__');
-      const pp = JSON.parse(m[1]).props?.pageProps || {};
+      const pp: { text?: KalliopeText; work?: { year?: number | null } } = JSON.parse(m[1]).props?.pageProps || {};
       const text = pp.text;
       if (!text) throw new Error('no text in pageProps');
       const verses = parseKalliopeBlocks(text.blocks);
@@ -242,7 +371,7 @@ async function scrapeKalliope(key, cfg, limit) {
         }
       });
       done++;
-    } catch (e) { console.log(`[${key}] FAIL ${id}: ${e.message}`); failed++; }
+    } catch (e: any) { console.log(`[${key}] FAIL ${id}: ${e.message}`); failed++; }
     await sleep(delayMs);
   }
   console.log(`[${key}] scraped ${done}, skipped ${skipped} existing, failed ${failed}`);
@@ -250,21 +379,21 @@ async function scrapeKalliope(key, cfg, limit) {
 
 // ---------- merge ----------
 
-const normTitle = s => (s || '').toLowerCase().normalize('NFC')
+const normTitle = (s: string | null | undefined): string => (s || '').toLowerCase().normalize('NFC')
   .replace(/[«»"'".,!?;:()\[\]]/g, '').replace(/\s+/g, ' ').trim();
 
-function mergeIntoMaster(dry) {
-  const index = JSON.parse(fs.readFileSync(INDEX, 'utf8'));
+function mergeIntoMaster(dry: boolean) {
+  const index: IndexEntry[] = JSON.parse(fs.readFileSync(INDEX, 'utf8'));
   const knownTitles = new Set(index.map(s => normTitle(s.title)));
   const knownSources = new Set(index.flatMap(s => (s.sources || []).map(src => `${src.collection}/${src.file}`)));
   let nextNum = Math.max(...index.map(s => parseInt(s.id.replace('song-', ''), 10))) + 1;
 
-  const additions = [];
+  const additions: { key: string; f: string; srcKey: string; song: HarvestedSong }[] = [];
   for (const key of fs.existsSync(HARVEST) ? fs.readdirSync(HARVEST) : []) {
     const dir = join(HARVEST, key);
     if (!fs.statSync(dir).isDirectory()) continue;
     for (const f of fs.readdirSync(dir).filter(f => f.endsWith('.json'))) {
-      const song = JSON.parse(fs.readFileSync(join(dir, f), 'utf8'));
+      const song: HarvestedSong = JSON.parse(fs.readFileSync(join(dir, f), 'utf8'));
       const srcKey = `harvest/${key}/${f}`;
       if (knownSources.has(srcKey)) continue;
       if (!song.verses?.length) continue;
@@ -306,7 +435,7 @@ function mergeIntoMaster(dry) {
 
 function status() {
   if (!fs.existsSync(HARVEST)) { console.log('nothing harvested yet'); return; }
-  const index = fs.existsSync(INDEX) ? JSON.parse(fs.readFileSync(INDEX, 'utf8')) : [];
+  const index: IndexEntry[] = fs.existsSync(INDEX) ? JSON.parse(fs.readFileSync(INDEX, 'utf8')) : [];
   const merged = new Set(index.flatMap(s => (s.sources || []).map(src => `${src.collection}/${src.file}`)));
   for (const key of fs.readdirSync(HARVEST)) {
     const dir = join(HARVEST, key);
@@ -314,7 +443,7 @@ function status() {
     const files = fs.readdirSync(dir).filter(f => f.endsWith('.json'));
     let withText = 0, inMaster = 0;
     for (const f of files) {
-      const s = JSON.parse(fs.readFileSync(join(dir, f), 'utf8'));
+      const s: HarvestedSong = JSON.parse(fs.readFileSync(join(dir, f), 'utf8'));
       if (s.verses?.length) withText++;
       if (merged.has(`harvest/${key}/${f}`)) inMaster++;
     }
@@ -327,8 +456,8 @@ function status() {
 
 const args = process.argv.slice(2);
 const cmd = args[0];
-const opt = name => { const i = args.indexOf(`--${name}`); return i >= 0 ? args[i + 1] : null; };
-const flag = name => args.includes(`--${name}`);
+const opt = (name: string): string | null => { const i = args.indexOf(`--${name}`); return i >= 0 ? args[i + 1] : null; };
+const flag = (name: string): boolean => args.includes(`--${name}`);
 
 async function main() {
   if (cmd === 'status') return status();
@@ -338,7 +467,7 @@ async function main() {
     process.exit(1);
   }
   const only = opt('collection');
-  const limit = opt('limit') ? parseInt(opt('limit'), 10) : null;
+  const limit = opt('limit') ? parseInt(opt('limit')!, 10) : null;
   const state = loadState();
   for (const [key, cfg] of Object.entries(CONFIG.collections)) {
     if (only && key !== only) continue;
@@ -346,10 +475,12 @@ async function main() {
     try {
       if (cfg.type === 'wikisource') await scrapeWikisource(key, cfg, limit);
       else if (cfg.type === 'kalliope') await scrapeKalliope(key, cfg, limit);
-      else console.log(`[${key}] unknown type ${cfg.type}`);
+      // `as`: unionen dekker bare de to kjente typene, så `cfg` er `never` her.
+      // Grenen finnes nettopp for en tredje type i sources.json.
+      else console.log(`[${key}] unknown type ${(cfg as SourceCollection).type}`);
       state.collections[key] = { ...state.collections[key], lastRun: new Date().toISOString() };
       saveState(state);
-    } catch (e) { console.log(`[${key}] collection failed: ${e.message}`); }
+    } catch (e: any) { console.log(`[${key}] collection failed: ${e.message}`); }
   }
 }
 

@@ -9,6 +9,198 @@ dotenv.config();
 
 import {books, getBookName} from './constants.js';
 import {callWithRetry} from './llm.js';
+import type {Chapter} from '../kvn/src/bible-types.js';
+
+// --- Types ---
+
+/** Ett versspenn i en fortelling. Speiler STORY_SCHEMA.references.items. */
+interface StoryReference {
+    bookId: number;
+    startChapter: number;
+    startVerse: number;
+    endChapter: number;
+    endVerse: number;
+}
+
+/** En post i en fortellings versions[]: hva den så ut som før korrekturen endret den. */
+interface StoryVersionEntry {
+    title: string;
+    description: string;
+    category: string;
+    score: number;
+    verdict: string;
+    reason: string;
+    date: string;
+}
+
+/** Hvorfor et forslag ble forkastet. Skrives bare på filer i stories_rejected/. */
+interface StoryRejection {
+    reason: string;
+    duplicate_of: string | null;
+    score: number;
+    date: string;
+}
+
+/**
+ * En fortelling slik den ligger i stories/<lang>/, stories_proposed/<lang>/ eller
+ * stories_rejected/<lang>/. De seks første feltene er STORY_SCHEMA; resten legges
+ * på av korrekturen og strippes igjen når et forslag promoteres.
+ */
+interface Story {
+    slug: string;
+    title: string;
+    keywords: string[];
+    description: string;
+    category: string;
+    references: StoryReference[];
+    versions?: StoryVersionEntry[];
+    footnotes?: unknown[];
+    rejection?: StoryRejection;
+}
+
+/** Svaret fra SCAN_SCHEMA. */
+interface ScanResult {
+    stories: Story[];
+}
+
+/** Svaret fra CATEGORY_RESOLVE_SCHEMA. */
+interface CategoryResolution {
+    action: 'use_existing' | 'create_new';
+    category: string;
+    reasoning: string;
+}
+
+/** Ett funn fra korrekturen. Speiler PROOFREAD_SCHEMA.issues.items. */
+interface ProofreadIssue {
+    field: string;
+    type: 'error' | 'suggestion' | 'theological' | 'grammar' | 'missing' | 'duplicate' | 'out-of-scope';
+    severity: 'critical' | 'major' | 'minor';
+    explanation: string;
+}
+
+/** Korrekturens forslag til en sammenslått fortelling. Aldri brukt automatisk. */
+interface MergeSuggestion {
+    title: string;
+    description: string;
+    keywords: string[];
+    category: string;
+    references: StoryReference[];
+    reasoning: string;
+}
+
+/** Svaret fra PROOFREAD_SCHEMA. */
+interface ProofreadResult {
+    issues: ProofreadIssue[];
+    revised: Story;
+    verdict: 'approve' | 'revise' | 'reject' | 'merge';
+    rejection_reason?: string;
+    duplicate_of?: string;
+    merge_with?: string[];
+    merge_suggestion?: MergeSuggestion;
+    score: number;
+    summary: string;
+}
+
+/** Et versspenn kodet som to sammenlignbare heltall. Se encodePos. */
+interface Interval {
+    start: number;
+    end: number;
+    bookId: number;
+}
+
+/** Hvor en fil under korrektur kom fra — avgjør om den kan flyttes eller bare flagges. */
+type ProofreadSourceKind = 'proposed' | 'existing';
+
+interface NewCategoryLogEntry {
+    category: string;
+    originalCategory: string;
+    title: string;
+    slug: string;
+    reasoning: string;
+    bookId: number;
+    chapterId: number;
+    at: string;
+}
+
+interface MergeCandidateLogEntry {
+    source: ProofreadSourceKind;
+    slugs: string[];
+    merge_with: string[];
+    suggestion: MergeSuggestion | null;
+    reasoning: string;
+    score: number;
+    date: string;
+}
+
+interface FlaggedExistingLogEntry {
+    slug: string;
+    title: string;
+    reason: string;
+    duplicate_of: string | null;
+    score: number;
+    date: string;
+}
+
+interface ScanState {
+    processed: Record<string, {at: string}>;
+}
+
+interface Options {
+    bookStart: number | null;
+    bookEnd: number | null;
+    chapterStart: number | null;
+    chapterEnd: number | null;
+    lang: string;
+    includePoetic: boolean;
+    includeEpistles: boolean;
+    useLocal: boolean;
+    limit: number | null;
+    resume: boolean;
+    dryRun: boolean;
+    help: boolean;
+    proofread: boolean;
+    apply: boolean;
+    minScore: number;
+    rejectScore: number;
+    maxIter: number;
+    continue_: boolean;
+    source: string;
+}
+
+interface ScanChapterArgs {
+    bookId: number;
+    chapterId: number;
+    lang: string;
+    existingStories: Story[];
+    proposedStories: Story[];
+    categoryCache: Map<string, CategoryResolution | null>;
+    useLocal: boolean;
+    dryRun: boolean;
+}
+
+interface ProofreadCounters {
+    approved: number;
+    rejected: number;
+    flagged: number;
+    merges: number;
+    borderline: number;
+    skipped: number;
+    errored: number;
+    processed: number;
+}
+
+interface ProofreadQueueItem {
+    file: string;
+    sourceDir: string;
+    sourceKind: ProofreadSourceKind;
+}
+
+interface ProofreadOneFileArgs extends ProofreadQueueItem {
+    lang: string;
+    existingStories: Story[];
+    opts: Options;
+    counters: ProofreadCounters;
+}
 
 const OSNB_DIR = path.join(__dirname, 'bibles_raw', 'osnb');
 const STORIES_DIR_BASE = path.join(__dirname, 'stories');
@@ -163,39 +355,39 @@ const PROOFREAD_SCHEMA = {
 
 // --- File helpers ---
 
-function fileExists(filepath) {
+function fileExists(filepath: string): boolean {
     return fs.existsSync(filepath) && fs.statSync(filepath).size > 0;
 }
 
-function ensureDir(dir) {
+function ensureDir(dir: string): void {
     if (!fs.existsSync(dir)) fs.mkdirSync(dir, {recursive: true});
 }
 
-function loadChapter(bookId, chapterId) {
+function loadChapter(bookId: number, chapterId: number): Chapter | null {
     const file = path.join(OSNB_DIR, String(bookId), `${chapterId}.json`);
     if (!fileExists(file)) return null;
     return JSON.parse(fs.readFileSync(file, 'utf-8'));
 }
 
-function loadExistingStories(lang) {
+function loadExistingStories(lang: string): Story[] {
     const dir = path.join(STORIES_DIR_BASE, lang);
     if (!fs.existsSync(dir)) return [];
-    const out = [];
+    const out: Story[] = [];
     for (const file of fs.readdirSync(dir)) {
         if (!file.endsWith('.json')) continue;
         try {
             out.push(JSON.parse(fs.readFileSync(path.join(dir, file), 'utf-8')));
         } catch (e) {
-            console.error(`  warn: could not parse ${file}: ${e.message}`);
+            console.error(`  warn: could not parse ${file}: ${(e as Error).message}`);
         }
     }
     return out;
 }
 
-function loadProposedStories(lang) {
+function loadProposedStories(lang: string): Story[] {
     const dir = path.join(PROPOSED_DIR_BASE, lang);
     if (!fs.existsSync(dir)) return [];
-    const out = [];
+    const out: Story[] = [];
     for (const file of fs.readdirSync(dir)) {
         if (!file.endsWith('.json') || file.startsWith('.')) continue;
         try {
@@ -211,11 +403,11 @@ function loadProposedStories(lang) {
 
 // Encode a verse position as a single comparable integer:
 // bookId * 1e7 + chapter * 1e4 + verse  (chapters/verses fit comfortably).
-function encodePos(bookId, chapter, verse) {
+function encodePos(bookId: number, chapter: number, verse: number): number {
     return bookId * 10_000_000 + chapter * 10_000 + verse;
 }
 
-function refToInterval(ref) {
+function refToInterval(ref: StoryReference): Interval {
     return {
         start: encodePos(ref.bookId, ref.startChapter, ref.startVerse),
         end: encodePos(ref.bookId, ref.endChapter, ref.endVerse),
@@ -223,7 +415,7 @@ function refToInterval(ref) {
     };
 }
 
-function intervalsOverlap(a, b) {
+function intervalsOverlap(a: Interval, b: Interval): number {
     if (a.bookId !== b.bookId) return 0;
     const lo = Math.max(a.start, b.start);
     const hi = Math.min(a.end, b.end);
@@ -231,13 +423,13 @@ function intervalsOverlap(a, b) {
     return hi - lo + 1;
 }
 
-function intervalSize(iv) {
+function intervalSize(iv: Interval): number {
     return iv.end - iv.start + 1;
 }
 
 // Check if a proposed story's references heavily overlap an existing/proposed story.
 // Returns the slug of the overlapping story, or null.
-function findReferenceOverlap(candidate, existingStories, threshold = 0.6) {
+function findReferenceOverlap(candidate: Story, existingStories: Story[], threshold = 0.6): string | null {
     const candIntervals = candidate.references.map(refToInterval);
     if (candIntervals.length === 0) return null;
     const candTotal = candIntervals.reduce((s, iv) => s + intervalSize(iv), 0);
@@ -263,7 +455,7 @@ function findReferenceOverlap(candidate, existingStories, threshold = 0.6) {
 }
 
 // Find existing stories that touch a given chapter (used for context to LLM).
-function storiesTouchingChapter(stories, bookId, chapterId) {
+function storiesTouchingChapter(stories: Story[], bookId: number, chapterId: number): Story[] {
     const chapterStart = encodePos(bookId, chapterId, 1);
     const chapterEnd = encodePos(bookId, chapterId, 9999);
     const chapterIv = {start: chapterStart, end: chapterEnd, bookId};
@@ -275,7 +467,7 @@ function storiesTouchingChapter(stories, bookId, chapterId) {
 
 // --- Slug helpers ---
 
-function slugify(input) {
+function slugify(input: string): string {
     return String(input)
         .toLowerCase()
         .normalize('NFD')
@@ -288,12 +480,12 @@ function slugify(input) {
 
 // --- Prompt ---
 
-function buildChapterText(chapterVerses, bookName, chapterId) {
+function buildChapterText(chapterVerses: Chapter, bookName: string, chapterId: number): string {
     const lines = chapterVerses.map(v => `${chapterId}:${v.verseId} ${v.text}`);
     return `${bookName} kapittel ${chapterId}\n` + lines.join('\n');
 }
 
-function buildPrompt(bookName, bookId, chapterId, chapterText, existingStoriesForChapter, lastChapterInBook) {
+function buildPrompt(bookName: string, bookId: number, chapterId: number, chapterText: string, existingStoriesForChapter: Story[], lastChapterInBook: number): string {
     const categoriesList = VALID_CATEGORIES.join(', ');
 
     const existingBlock = existingStoriesForChapter.length > 0
@@ -347,9 +539,11 @@ VIKTIG:
 
 // --- Category resolution ---
 
-async function resolveCategory(story, invalidCategory, cache, useLocal) {
+async function resolveCategory(story: Story, invalidCategory: string, cache: Map<string, CategoryResolution | null>, useLocal: boolean): Promise<CategoryResolution | null> {
     if (cache.has(invalidCategory)) {
-        return cache.get(invalidCategory);
+        // has() garanterer at nøkkelen finnes; get() kan ellers ikke skille
+        // «ikke i cachen» fra en cachet null (= ingen løsning funnet).
+        return cache.get(invalidCategory) as CategoryResolution | null;
     }
 
     const prompt = `Du gjennomgår en kategori for en bibelsk fortelling som ikke matcher våre eksisterende kategorier.
@@ -368,13 +562,13 @@ Avgjør:
 
 Velg "use_existing" hvis det er noen som helst rimelig match. Bare velg "create_new" hvis fortellingen klart ikke passer noen av kategoriene.`;
 
-    let result;
+    let result: CategoryResolution | null;
     try {
         result = await callWithRetry(prompt, {
             schema: CATEGORY_RESOLVE_SCHEMA,
             local: useLocal,
             context: `category resolve "${invalidCategory}"`
-        });
+        }) as CategoryResolution;
     } catch (e) {
         result = null;
     }
@@ -392,11 +586,11 @@ Velg "use_existing" hvis det er noen som helst rimelig match. Bare velg "create_
     return result;
 }
 
-function logNewCategory(lang, info) {
+function logNewCategory(lang: string, info: NewCategoryLogEntry): void {
     const dir = path.join(PROPOSED_DIR_BASE, lang);
     ensureDir(dir);
     const file = path.join(dir, '.new_categories.json');
-    let log = [];
+    let log: NewCategoryLogEntry[] = [];
     if (fileExists(file)) {
         try { log = JSON.parse(fs.readFileSync(file, 'utf-8')); } catch {}
     }
@@ -407,8 +601,8 @@ function logNewCategory(lang, info) {
 // --- Proofread proposed stories against actual chapter text ---
 
 // Load the actual verse text covered by a story's references.
-function loadReferencedText(refs) {
-    const sections = [];
+function loadReferencedText(refs: StoryReference[]): string {
+    const sections: string[] = [];
     for (const ref of refs) {
         const book = books.find(b => b.id === ref.bookId);
         if (!book) continue;
@@ -427,7 +621,7 @@ function loadReferencedText(refs) {
     return sections.join('\n\n');
 }
 
-function buildProofreadPrompt(proposal, referencedText, neighboringStories) {
+function buildProofreadPrompt(proposal: Story, referencedText: string, neighboringStories: Story[]): string {
     const proposalJson = JSON.stringify({
         slug: proposal.slug,
         title: proposal.title,
@@ -487,7 +681,7 @@ VIKTIG:
 - Hvis ${proposal.versions?.length || 0} tidligere revisjoner er gjort, vær strengere.${versionContext}`;
 }
 
-function storiesOverlappingProposal(stories, proposal) {
+function storiesOverlappingProposal(stories: Story[], proposal: Story): Story[] {
     const propIntervals = proposal.references.map(refToInterval);
     return stories.filter(s => {
         if (!s.references) return false;
@@ -496,22 +690,22 @@ function storiesOverlappingProposal(stories, proposal) {
     });
 }
 
-async function proofreadProposal(proposalFile, existingStories, useLocal) {
-    const proposal = JSON.parse(fs.readFileSync(proposalFile, 'utf-8'));
+async function proofreadProposal(proposalFile: string, existingStories: Story[], useLocal: boolean): Promise<ProofreadResult | null> {
+    const proposal = JSON.parse(fs.readFileSync(proposalFile, 'utf-8')) as Story;
     const referencedText = loadReferencedText(proposal.references || []);
     const neighborsRaw = storiesOverlappingProposal(existingStories, proposal);
     const neighbors = neighborsRaw.filter(s => s.slug !== proposal.slug);
     const prompt = buildProofreadPrompt(proposal, referencedText, neighbors);
 
-    let result;
+    let result: ProofreadResult;
     try {
         result = await callWithRetry(prompt, {
             schema: PROOFREAD_SCHEMA,
             local: useLocal,
             context: `proofread ${proposal.slug}`
-        });
+        }) as ProofreadResult;
     } catch (e) {
-        console.error(`    ERROR proofreading ${proposal.slug}: ${e.message}`);
+        console.error(`    ERROR proofreading ${proposal.slug}: ${(e as Error).message}`);
         return null;
     }
 
@@ -529,12 +723,13 @@ async function proofreadProposal(proposalFile, existingStories, useLocal) {
     return result;
 }
 
-function applyProofread(proposalFile, proofreadResult) {
-    const data = JSON.parse(fs.readFileSync(proposalFile, 'utf-8'));
+function applyProofread(proposalFile: string, proofreadResult: ProofreadResult): boolean {
+    const data = JSON.parse(fs.readFileSync(proposalFile, 'utf-8')) as Story;
     const revised = proofreadResult.revised;
     if (!revised) return false;
 
-    const fields = ['slug', 'title', 'description', 'category'];
+    // `as const` gjør feltnavnene til nøkler i Story, så data[f]/revised[f] typer opp.
+    const fields = ['slug', 'title', 'description', 'category'] as const;
     let changed = false;
     for (const f of fields) {
         if (data[f] !== revised[f]) { changed = true; break; }
@@ -570,10 +765,10 @@ function applyProofread(proposalFile, proofreadResult) {
     return true;
 }
 
-function finalizeApprove(proposalFile, lang, proofreadResult) {
-    const data = JSON.parse(fs.readFileSync(proposalFile, 'utf-8'));
+function finalizeApprove(proposalFile: string, lang: string, proofreadResult: ProofreadResult): boolean {
+    const data = JSON.parse(fs.readFileSync(proposalFile, 'utf-8')) as Story;
     // Strip proofread-only fields when promoting
-    const promoted = {
+    const promoted: Story = {
         slug: data.slug,
         title: data.title,
         keywords: data.keywords,
@@ -595,11 +790,11 @@ function finalizeApprove(proposalFile, lang, proofreadResult) {
     return true;
 }
 
-function logMergeCandidate(lang, entry) {
+function logMergeCandidate(lang: string, entry: MergeCandidateLogEntry): void {
     const dir = path.join(PROPOSED_DIR_BASE, lang);
     ensureDir(dir);
     const file = path.join(dir, '.merge_candidates.json');
-    let log = [];
+    let log: MergeCandidateLogEntry[] = [];
     if (fileExists(file)) {
         try { log = JSON.parse(fs.readFileSync(file, 'utf-8')); } catch {}
     }
@@ -607,11 +802,11 @@ function logMergeCandidate(lang, entry) {
     fs.writeFileSync(file, JSON.stringify(log, null, 2));
 }
 
-function logFlaggedExisting(lang, entry) {
+function logFlaggedExisting(lang: string, entry: FlaggedExistingLogEntry): void {
     const dir = path.join(STORIES_DIR_BASE, lang);
     ensureDir(dir);
     const file = path.join(dir, '.flagged_existing.json');
-    let log = [];
+    let log: FlaggedExistingLogEntry[] = [];
     if (fileExists(file)) {
         try { log = JSON.parse(fs.readFileSync(file, 'utf-8')); } catch {}
     }
@@ -619,8 +814,8 @@ function logFlaggedExisting(lang, entry) {
     fs.writeFileSync(file, JSON.stringify(log, null, 2));
 }
 
-function pushVersionEntry(file, result) {
-    const data = JSON.parse(fs.readFileSync(file, 'utf-8'));
+function pushVersionEntry(file: string, result: ProofreadResult): void {
+    const data = JSON.parse(fs.readFileSync(file, 'utf-8')) as Story;
     if (!data.versions) data.versions = [];
     data.versions.push({
         title: data.title,
@@ -634,8 +829,8 @@ function pushVersionEntry(file, result) {
     fs.writeFileSync(file, JSON.stringify(data, null, 2));
 }
 
-function finalizeReject(proposalFile, lang, proofreadResult) {
-    const data = JSON.parse(fs.readFileSync(proposalFile, 'utf-8'));
+function finalizeReject(proposalFile: string, lang: string, proofreadResult: ProofreadResult): boolean {
+    const data = JSON.parse(fs.readFileSync(proposalFile, 'utf-8')) as Story;
     data.rejection = {
         reason: proofreadResult.rejection_reason || (proofreadResult.issues || []).map(i => `[${i.severity}] ${i.explanation}`).join('; '),
         duplicate_of: proofreadResult.duplicate_of || null,
@@ -653,7 +848,7 @@ function finalizeReject(proposalFile, lang, proofreadResult) {
 
 // --- Scan ---
 
-async function scanChapter({bookId, chapterId, lang, existingStories, proposedStories, categoryCache, useLocal, dryRun}) {
+async function scanChapter({bookId, chapterId, lang, existingStories, proposedStories, categoryCache, useLocal, dryRun}: ScanChapterArgs): Promise<{proposed: number, skipped: number}> {
     const bookName = getBookName(bookId, 'Norwegian bokmål');
     const verses = loadChapter(bookId, chapterId);
     if (!verses || verses.length === 0) {
@@ -673,7 +868,7 @@ async function scanChapter({bookId, chapterId, lang, existingStories, proposedSt
         schema: SCAN_SCHEMA,
         local: useLocal,
         context: `scan ${bookId}/${chapterId}`
-    });
+    }) as ScanResult;
 
     if (!result || !Array.isArray(result.stories)) {
         console.log(`  ${bookName} ${chapterId}: no result`);
@@ -801,7 +996,7 @@ async function scanChapter({bookId, chapterId, lang, existingStories, proposedSt
 
 // --- Skip-list ---
 
-function shouldSkipBook(bookId, opts) {
+function shouldSkipBook(bookId: number, opts: Options): string | null {
     if (POETIC_BOOK_IDS.has(bookId) && !opts.includePoetic) return 'poetic';
     if (EPISTLE_BOOK_IDS.has(bookId) && !opts.includeEpistles) return 'epistle';
     return null;
@@ -809,8 +1004,8 @@ function shouldSkipBook(bookId, opts) {
 
 // --- CLI ---
 
-function parseArgs(args) {
-    const opts = {
+function parseArgs(args: string[]): Options {
+    const opts: Options = {
         bookStart: null,
         bookEnd: null,
         chapterStart: null,
@@ -867,7 +1062,7 @@ function parseArgs(args) {
     return opts;
 }
 
-function parseRange(value) {
+function parseRange(value: string): {start: number, end: number} {
     if (value.includes('-')) {
         const [start, end] = value.split('-').map(n => parseInt(n, 10));
         return {start, end};
@@ -928,26 +1123,26 @@ Examples:
 `);
 }
 
-function loadState(lang) {
+function loadState(lang: string): ScanState {
     const file = path.join(PROPOSED_DIR_BASE, lang, '.scan_state.json');
     if (!fileExists(file)) return {processed: {}};
     try { return JSON.parse(fs.readFileSync(file, 'utf-8')); } catch { return {processed: {}}; }
 }
 
-function saveState(lang, state) {
+function saveState(lang: string, state: ScanState): void {
     const dir = path.join(PROPOSED_DIR_BASE, lang);
     ensureDir(dir);
     fs.writeFileSync(path.join(dir, '.scan_state.json'), JSON.stringify(state, null, 2));
 }
 
-function collectProofreadFiles(opts, lang, sourceDir) {
+function collectProofreadFiles(opts: Options, lang: string, sourceDir: string): string[] {
     if (!fs.existsSync(sourceDir)) return [];
     let files = fs.readdirSync(sourceDir).filter(f => f.endsWith('.json') && !f.startsWith('.')).sort();
     if (opts.bookStart !== null) {
         const bs = opts.bookStart, be = opts.bookEnd ?? bs;
         files = files.filter(f => {
             try {
-                const d = JSON.parse(fs.readFileSync(path.join(sourceDir, f), 'utf-8'));
+                const d = JSON.parse(fs.readFileSync(path.join(sourceDir, f), 'utf-8')) as Story;
                 return (d.references || []).some(r => r.bookId >= bs && r.bookId <= be);
             } catch { return false; }
         });
@@ -955,22 +1150,24 @@ function collectProofreadFiles(opts, lang, sourceDir) {
     return files;
 }
 
-async function proofreadOneFile({file, sourceDir, sourceKind, lang, existingStories, opts, counters}) {
+async function proofreadOneFile({file, sourceDir, sourceKind, lang, existingStories, opts, counters}: ProofreadOneFileArgs): Promise<void> {
     const filePath = path.join(sourceDir, file);
     if (!fileExists(filePath)) return;
 
     if (opts.continue_) {
         try {
-            const data = JSON.parse(fs.readFileSync(filePath, 'utf-8'));
-            const last = data.versions?.[data.versions.length - 1];
-            if (last?.score >= opts.minScore && last?.verdict === 'approve') {
+            const data = JSON.parse(fs.readFileSync(filePath, 'utf-8')) as Story;
+            // `!` inne i den valgfrie indekseringen: uttrykket kortsluttes helt når
+            // versions mangler, så .length blir aldri evaluert.
+            const last = data.versions?.[data.versions!.length - 1];
+            if ((last?.score as number) >= opts.minScore && last?.verdict === 'approve') {
                 counters.skipped++;
                 return;
             }
         } catch {}
     }
 
-    const startData = JSON.parse(fs.readFileSync(filePath, 'utf-8'));
+    const startData = JSON.parse(fs.readFileSync(filePath, 'utf-8')) as Story;
     counters.processed++;
     console.log(`\n[${counters.processed}] [${sourceKind}] ${startData.slug} — ${startData.title}`);
 
@@ -1021,8 +1218,8 @@ async function proofreadOneFile({file, sourceDir, sourceKind, lang, existingStor
                         counters.approved++;
                     } else {
                         // make sure a version entry exists so --continue can skip next time
-                        const data = JSON.parse(fs.readFileSync(filePath, 'utf-8'));
-                        const last = data.versions?.[data.versions.length - 1];
+                        const data = JSON.parse(fs.readFileSync(filePath, 'utf-8')) as Story;
+                        const last = data.versions?.[data.versions!.length - 1];
                         if (!last || last.score !== result.score) {
                             pushVersionEntry(filePath, result);
                         }
@@ -1086,7 +1283,7 @@ async function proofreadOneFile({file, sourceDir, sourceKind, lang, existingStor
     }
 }
 
-async function runProofread(opts) {
+async function runProofread(opts: Options): Promise<void> {
     const lang = opts.lang;
     const existingStories = loadExistingStories(lang);
 
@@ -1111,11 +1308,11 @@ async function runProofread(opts) {
     if (!opts.apply) console.log('(dry-run — no files moved or modified; use --apply to finalize)');
     console.log('---');
 
-    const counters = {approved: 0, rejected: 0, flagged: 0, merges: 0, borderline: 0, skipped: 0, errored: 0, processed: 0};
+    const counters: ProofreadCounters = {approved: 0, rejected: 0, flagged: 0, merges: 0, borderline: 0, skipped: 0, errored: 0, processed: 0};
 
-    const queue = [
-        ...proposedFiles.map(f => ({file: f, sourceDir: proposedDir, sourceKind: 'proposed'})),
-        ...existingFiles.map(f => ({file: f, sourceDir: existingDir, sourceKind: 'existing'}))
+    const queue: ProofreadQueueItem[] = [
+        ...proposedFiles.map((f): ProofreadQueueItem => ({file: f, sourceDir: proposedDir, sourceKind: 'proposed'})),
+        ...existingFiles.map((f): ProofreadQueueItem => ({file: f, sourceDir: existingDir, sourceKind: 'existing'}))
     ];
 
     for (const item of queue) {
@@ -1132,7 +1329,7 @@ async function runProofread(opts) {
     }
 }
 
-async function main() {
+async function main(): Promise<void> {
     const opts = parseArgs(process.argv.slice(2));
     if (opts.help) { printUsage(); return; }
     if (opts.proofread) {
@@ -1153,7 +1350,7 @@ async function main() {
     const state = loadState(lang);
 
     // Build chapter list
-    const targets = [];
+    const targets: {bookId: number, chapterId: number}[] = [];
     const bookExplicit = opts.bookStart !== null;
     const bs = opts.bookStart ?? 1;
     const be = opts.bookEnd ?? (bookExplicit ? bs : 66);
@@ -1173,7 +1370,7 @@ async function main() {
         }
         const cs = opts.chapterStart ?? 1;
         const ce = opts.chapterEnd ?? (opts.chapterStart !== null ? cs : book.chapters);
-        const chapters = [];
+        const chapters: number[] = [];
         for (let c = cs; c <= Math.min(ce, book.chapters); c++) chapters.push(c);
         for (const ch of chapters) {
             targets.push({bookId: book.id, chapterId: ch});
@@ -1183,7 +1380,7 @@ async function main() {
     let totalProposed = 0;
     let totalSkipped = 0;
     let processed = 0;
-    const categoryCache = new Map();
+    const categoryCache = new Map<string, CategoryResolution | null>();
 
     for (const t of targets) {
         const key = `${t.bookId}:${t.chapterId}`;
@@ -1208,7 +1405,7 @@ async function main() {
             totalSkipped += skipped;
             console.log(`  -> proposed: ${proposed}, skipped: ${skipped}`);
         } catch (e) {
-            console.error(`  ERROR ${bookName} ${t.chapterId}: ${e.message}`);
+            console.error(`  ERROR ${bookName} ${t.chapterId}: ${(e as Error).message}`);
         }
 
         state.processed[key] = {at: new Date().toISOString()};

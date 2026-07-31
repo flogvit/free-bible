@@ -6,10 +6,219 @@ dotenv.config()
 
 import Anthropic from '@anthropic-ai/sdk';
 import {bibles, books, anthropicModel, maxTokens, getBibleStyle} from "./constants.js";
+import type {
+    Verse,
+    Chapter,
+    Footnote,
+    FootnoteSource,
+    VersionType,
+    Severity,
+    ResumeMarker,
+    CheckedMarkers
+} from '../kvn/src/bible-types.js';
 
 // SDK-en prøver selv på nytt ved 429/5xx; hev taket, siden lange kjøringer treffer
 // overbelastning som varer lenger enn standardens to forsøk.
 const anthropic = new Anthropic({maxRetries: 5});
+
+/** JSON-schema slik SDK-en vil ha det i `output_config.format`. */
+type JsonSchema = Record<string, unknown>;
+
+/**
+ * Hvilken bunkekorrektur-modus en gjenopptaksmarkør hører til. Bundet til
+ * `CheckedMarkers` i den delte typemodellen, så modusnavnene og feltene i
+ * `checked` ikke kan komme fra hverandre.
+ */
+type CheckedMode = keyof CheckedMarkers;
+
+/**
+ * Verdimengdene korrekturskjemaene bruker for `type` og `severity`.
+ *
+ * NB: de er IKKE de samme som `VersionType`/`Severity` i den delte typemodellen —
+ * skjemaene her sier `error`/`grammar`/`theological` og `critical`, og det er de
+ * verdiene som faktisk ligger i versdataene. Der en verdi herfra skrives inn i
+ * `versions[]` står det derfor en `as`-påstand med en kommentar.
+ */
+type ProofreadIssueType = 'error' | 'suggestion' | 'theological' | 'grammar';
+type ProofreadSeverity = 'critical' | 'major' | 'minor';
+
+/**
+ * Kildekategoriene korrekturen kan foreslå. Også denne er videre enn
+ * `FootnoteSource` i den delte typemodellen: `liturgisk` og `annet` finnes bare her.
+ */
+type ProofreadFootnoteSource =
+    | 'oversettelse'
+    | 'lingvistisk'
+    | 'teologisk'
+    | 'historisk'
+    | 'tekstkritisk'
+    | 'liturgisk'
+    | 'annet';
+
+/** Ett funn fra bunkekorrekturen (PROOFREAD_SCHEMA). */
+interface ProofreadIssue {
+    verseId: number;
+    type: ProofreadIssueType;
+    severity: ProofreadSeverity;
+    original: string;
+    current: string;
+    suggested: string;
+    explanation: string;
+    previousWasDefensible: boolean;
+}
+
+/** En foreslått fotnote fra bunkekorrekturen, med verset den hører til. */
+interface ProofreadFootnote {
+    verseId: number;
+    text: string;
+    source: ProofreadFootnoteSource;
+}
+
+/** Svaret fra bunkekorrekturen. `footnotes` mangler i --text-only. */
+interface ProofreadResponse {
+    issues?: ProofreadIssue[];
+    footnotes?: ProofreadFootnote[];
+    summary?: string;
+    score?: number | null;
+}
+
+/** Det `proofreadChapter` returnerer: funnene, pluss hvilke målvers som ble frikjent. */
+interface ProofreadResult {
+    clearedTargets: number[];
+    issues: ProofreadIssue[];
+    footnotes: ProofreadFootnote[];
+    summary: string;
+    score: number | null;
+}
+
+/** Ett funn fra tekstfasen i per-vers-korrekturen (TEXT_REVIEW_SCHEMA). */
+interface TextReviewIssue {
+    type: ProofreadIssueType;
+    severity: ProofreadSeverity;
+    suggested: string;
+    explanation: string;
+    previousWasDefensible: boolean;
+}
+
+interface TextReviewResponse {
+    issue: TextReviewIssue | null;
+    done: boolean;
+    score: number | null;
+}
+
+/** En fotnote slik fotnotefasen returnerer den (FOOTNOTE_REVIEW_SCHEMA). */
+interface ReviewFootnote {
+    text: string;
+    source: ProofreadFootnoteSource;
+}
+
+interface FootnoteReviewResponse {
+    footnotes: ReviewFootnote[];
+    done: boolean;
+    score: number | null;
+}
+
+/** En runde i tekstfasen, slik den mates tilbake inn i neste prompt. */
+interface TextAttempt {
+    suggested: string | null;
+    explanation: string | null;
+    done: boolean;
+    score: number | null;
+}
+
+/** En runde i fotnotefasen, slik den mates tilbake inn i neste prompt. */
+interface FootnoteAttempt {
+    footnotes: ReviewFootnote[];
+    done: boolean;
+    score: number | null;
+}
+
+/** Ett funn fra per-vers-korrekturen, med versnummeret lagt på. */
+interface PerVerseIssue extends TextReviewIssue {
+    verseId: number;
+}
+
+/** En fotnote fra disken, med versnummeret lagt på. */
+interface VerseFootnote extends Footnote {
+    verseId: number;
+}
+
+/** Oppsummeringen `proofreadChapterPerVerse` returnerer. */
+interface PerVerseResult {
+    issues: PerVerseIssue[];
+    footnotes: VerseFootnote[];
+    score: number | null;
+    appliedCount: number;
+    footnoteCount: number;
+}
+
+/** Svaret fra oversettelseskallet (TRANSLATION_SCHEMA). */
+interface TranslationResponse {
+    verses: Verse[];
+}
+
+/** Valgene per-vers-korrekturen tar imot. */
+interface PerVerseOptions {
+    skipExisting?: boolean;
+    textOnly?: boolean;
+    maxIter?: number;
+    verseStart?: number | null;
+    verseEnd?: number | null;
+}
+
+/** Valgene bunkekorrekturen med tilbakemeldingssløyfe tar imot. */
+interface BatchedOptions {
+    minScore?: number;
+    maxIterations?: number;
+    textOnly?: boolean;
+    changedTypes?: string[] | null;
+    checkLength?: number | null;
+    force?: boolean;
+}
+
+/** Én post i `proofread/<bible>/state.json`. */
+interface ChapterState {
+    score: number | null;
+    rounds: number;
+    converged: boolean;
+    signature: string | null;
+    at: string;
+}
+
+/** Et intervall fra kommandolinjen, begge ender inklusive. */
+interface Range {
+    start: number;
+    end: number;
+}
+
+/**
+ * Kommandolinjevalgene. Feltene nederst settes bare når flagget faktisk er gitt,
+ * og er derfor valgfrie — koden skiller på «ikke oppgitt» og «oppgitt».
+ */
+interface CliOptions {
+    bible: string | null;
+    style: string | null;
+    proofread: boolean;
+    apply: boolean;
+    skipExisting: boolean;
+    ot: boolean;
+    nt: boolean;
+    bookStart: number | null;
+    bookEnd: number | null;
+    chapterStart: number | null;
+    chapterEnd: number | null;
+    verseStart: number | null;
+    verseEnd: number | null;
+    force: boolean;
+    help: boolean;
+    changedTypes?: string[];
+    checkLength?: number;
+    batch?: boolean;
+    textOnly?: boolean;
+    minScore?: number;
+    maxIterations?: number;
+    styleFromBible?: boolean;
+}
 
 const MAX_VERSES_PER_BATCH = 100;
 // En foreslått tekst som er mye kortere enn den den erstatter har som regel mistet
@@ -22,10 +231,10 @@ const MIN_LENGTH_RATIO = 0.85;
 // Signaturen fanger begge måtene det kan skje på: en ny versjon legges til, eller teksten
 // endres. Modusene har hver sin nøkkel — «mangler det innhold?» og «er oversettelsen
 // riktig?» er ulike spørsmål, så en frikjennelse i den ene sier ingenting om den andre.
-function reviewSignature(verse) {
+function reviewSignature(verse: Verse): ResumeMarker {
     return `${(verse.versions || []).length}:${verse.text.length}`;
 }
-function alreadyCleared(verse, mode) {
+function alreadyCleared(verse: Verse, mode: CheckedMode): boolean {
     return verse.checked?.[mode] === reviewSignature(verse);
 }
 const MAX_PROOFREAD_CHARS = 10000; // Target max input chars per proofread batch (lowered to account for footnotes)
@@ -154,7 +363,9 @@ const FOOTNOTE_REVIEW_SCHEMA = {
 };
 
 // Translation style prompts
-const TRANSLATION_PROMPTS = {
+// Record fordi stilen kommer fra kommandolinjen som en vanlig streng, og slås opp
+// dynamisk her — akkurat som `bibles` i constants.ts.
+const TRANSLATION_PROMPTS: Record<string, (language: string) => string> = {
     standard: (language) => `Translation must be ${language} in a modern, easy to read, language. But you should emphasize translating theologically correct.`,
     oral: (language) => `Translate the text to ${language} in a modern, adult language that flows well for both silent reading and oral reading.
 Optimize for natural rhythm, clear flow, and readability. Allow flexibility from literal wording when it improves clarity or flow, but preserve the meaning of the text.
@@ -163,7 +374,9 @@ Do not make the language childish, explanatory, or paraphrased.`
 };
 
 // Proof-reading prompt
-const PROOFREAD_PROMPT = (language, style, textOnly = false, restoring = false) => {
+// `restoring` leses bare som sannhetsverdi, men kallstedet sender inn forholdstallet
+// fra --check-length (et tall) eller null — derfor den brede typen.
+const PROOFREAD_PROMPT = (language: string, style: string, textOnly = false, restoring: boolean | number | null = false) => {
     const styleDescription = style === 'oral'
         ? 'optimized for oral reading with natural rhythm and flow'
         : 'modern and easy to read while being theologically correct';
@@ -223,14 +436,16 @@ const MAX_RETRIES = 8;
 
 // Overbelastning og rate limit er forbigående og varer typisk lenger enn sekunder.
 // Faste ett-sekunds pauser brant opp forsøkene før tjenesten rakk å komme tilbake.
-function isTransient(error) {
+// `any`: feilen kommer fra SDK-en eller fra nettverkslaget, og linjene under graver
+// gjennom felter som ikke finnes på `Error`.
+function isTransient(error: any): boolean {
     const type = error?.error?.error?.type || error?.error?.type || '';
     return ['overloaded_error', 'rate_limit_error', 'api_error'].includes(type)
         || [429, 500, 502, 503, 529].includes(error?.status)
         || /overloaded|rate.?limit|timeout|ECONNRESET|socket hang up/i.test(error?.message || '');
 }
 
-function backoffMs(attempt, transient) {
+function backoffMs(attempt: number, transient: boolean): number {
     if (!transient) return 1000;
     const base = Math.min(60000, 2000 * 2 ** (attempt - 1));   // 2s, 4s, 8s … taket 60s
     return Math.round(base * (0.5 + Math.random()));            // jitter, så parallelle kjøringer ikke synkroniserer
@@ -239,14 +454,14 @@ function backoffMs(attempt, transient) {
 // Akkumulert tokenforbruk for hele kjøringen, skrives ut til slutt.
 const usageTotals = {input: 0, output: 0, calls: 0};
 
-function formatUsage() {
+function formatUsage(): string {
     const {input, output, calls} = usageTotals;
     // Opus 5: $5 per M input, $25 per M output
     const cost = (input / 1e6) * 5 + (output / 1e6) * 25;
     return `${calls} calls | ${input.toLocaleString()} in / ${output.toLocaleString()} out | ~$${cost.toFixed(2)}`;
 }
 
-async function doAnthropicCall(content, schema) {
+async function doAnthropicCall(content: string, schema: JsonSchema) {
     // Streaming: max_tokens over ~16k risikerer HTTP-timeout uten strøm.
     const stream = anthropic.messages.stream({
         model: anthropicModel,
@@ -270,8 +485,8 @@ async function doAnthropicCall(content, schema) {
 
 // Med tenkning på ligger tenkeblokker først i content — teksten må hentes ut,
 // ikke leses fra content[0].
-function extractText(completion) {
-    const block = completion.content.find(b => b.type === 'text');
+function extractText(completion: Anthropic.Message): string {
+    const block = completion.content.find((b): b is Anthropic.TextBlock => b.type === 'text');
     if (!block) {
         throw new Error(`No text block in response (stop_reason: ${completion.stop_reason})`);
     }
@@ -279,7 +494,7 @@ function extractText(completion) {
 }
 
 // Detect hallucinated English words that shouldn't appear in Norwegian/other translations
-function isEnglishLanguage(language) {
+function isEnglishLanguage(language: string): boolean {
     const lower = language.toLowerCase();
     return lower === 'english' || lower === 'en';
 }
@@ -288,7 +503,7 @@ function isEnglishLanguage(language) {
 // Length comparisons must ignore that block, or every correction to a footnoted
 // verse looks like a truncation. Application must keep the block when the
 // suggestion drops it - otherwise an accepted fix would silently delete footnotes.
-function splitFootnoteDefs(text) {
+function splitFootnoteDefs(text: string): {body: string; defs: string} {
     const m = (text || '').match(/\n\n\[\^[^\]]+\]:[\s\S]*$/);
     if (!m) return {body: text || '', defs: ''};
     return {body: text.slice(0, m.index), defs: text.slice(m.index)};
@@ -301,7 +516,7 @@ const FOOTNOTE_MARKER = /\[\^[^\]]+\]/;
 // - newText re-attaches the original footnote block if the suggestion dropped it
 // - dropsMarker is true when the suggestion lost an inline [^fn] marker, which
 //   would orphan the definitions - such suggestions must be rejected
-function evaluateSuggestion(currentText, suggestedText) {
+function evaluateSuggestion(currentText: string, suggestedText: string): {ratio: number; newText: string; dropsMarker: boolean} {
     const current = splitFootnoteDefs(currentText);
     const suggested = splitFootnoteDefs(suggestedText);
     const ratio = current.body.length ? suggested.body.length / current.body.length : 1;
@@ -323,8 +538,8 @@ const HALLUCINATION_PATTERNS = [
     /\bthat\s+is\b/i,
 ];
 
-function detectHallucinations(text) {
-    const found = [];
+function detectHallucinations(text: string): string[] {
+    const found: string[] = [];
     for (const pattern of HALLUCINATION_PATTERNS) {
         const match = text.match(pattern);
         if (match) {
@@ -334,8 +549,10 @@ function detectHallucinations(text) {
     return found;
 }
 
-function validateTranslationResult(result) {
-    const verses = Array.isArray(result) ? result : [result];
+// `any`: kalles med det rå JSON-svaret, som er enten et oversettelsesresultat eller
+// et korrekturresultat — funksjonen plukker i begge og skriver tilbake i `issues`.
+function validateTranslationResult(result: any): boolean {
+    const verses: any[] = Array.isArray(result) ? result : [result];
 
     for (const verse of verses) {
         if (verse.text) {
@@ -345,7 +562,7 @@ function validateTranslationResult(result) {
             }
         }
         if (verse.issues) {
-            const filtered = verse.issues.filter(issue => {
+            const filtered = verse.issues.filter((issue: any) => {
                 if (issue.suggested) {
                     const hallucinations = detectHallucinations(issue.suggested);
                     if (hallucinations.length > 0) {
@@ -362,8 +579,10 @@ function validateTranslationResult(result) {
     return true;
 }
 
-async function doAnthropicCallWithRetry(content, schema, context = '', validate = true) {
-    let lastError;
+// T er formen kallstedet forventer tilbake fra JSON-svaret; skjemaet håndheves
+// på API-siden, så den er en påstand og ikke en kontroll.
+async function doAnthropicCallWithRetry<T>(content: string, schema: JsonSchema, context = '', validate = true): Promise<T> {
+    let lastError: unknown;
 
     for (let attempt = 1; attempt <= MAX_RETRIES; attempt++) {
         try {
@@ -392,7 +611,7 @@ async function doAnthropicCallWithRetry(content, schema, context = '', validate 
             if (attempt < MAX_RETRIES) {
                 const transient = isTransient(error);
                 const wait = backoffMs(attempt, transient);
-                const reason = (error.message || '').slice(0, 90);
+                const reason = ((error as Error).message || '').slice(0, 90);
                 console.log(`  Attempt ${attempt}/${MAX_RETRIES} failed (${reason}) — waiting ${Math.round(wait / 1000)}s`);
                 await new Promise(resolve => setTimeout(resolve, wait));
             }
@@ -404,16 +623,16 @@ async function doAnthropicCallWithRetry(content, schema, context = '', validate 
 }
 
 // "Genesis 6" — brukes i logglinjer så det går fram hvilket kapittel som kjøres.
-function chapterLabel(bookId, chapterId) {
+function chapterLabel(bookId: number, chapterId: number): string {
     const book = books.find(b => b.id === bookId);
     return `${book ? book.name : `Book ${bookId}`} ${chapterId}`;
 }
 
-function getOriginalSource(bookId) {
+function getOriginalSource(bookId: number): string {
     return bookId <= 39 ? 'hebrew' : 'sblgnt';
 }
 
-function readOriginalText(bookId, chapterId, existingVerses = []) {
+function readOriginalText(bookId: number, chapterId: number, existingVerses: Chapter = []): Chapter {
     const source = getOriginalSource(bookId);
     const sourceFile = `bibles_raw/${source}/${bookId}/${chapterId}.json`;
 
@@ -422,7 +641,7 @@ function readOriginalText(bookId, chapterId, existingVerses = []) {
         return [];
     }
 
-    const allVerses = JSON.parse(fs.readFileSync(sourceFile, 'utf-8'));
+    const allVerses: Chapter = JSON.parse(fs.readFileSync(sourceFile, 'utf-8'));
 
     // Et vers teller som gjort bare hvis det faktisk har tekst. triage.mjs --drop
     // tømmer teksten på vers som skal oversettes på nytt, men beholder posten med
@@ -433,7 +652,7 @@ function readOriginalText(bookId, chapterId, existingVerses = []) {
 }
 
 // Forkastede forsøk på et vers, formatert for oversettelsesprompten.
-function rejectedAttempts(existingVerses, verseId) {
+function rejectedAttempts(existingVerses: Chapter, verseId: number): string | null {
     const record = existingVerses.find(v => +v.verseId === +verseId);
     if (!record?.versions?.length) return null;
     return record.versions
@@ -441,7 +660,7 @@ function rejectedAttempts(existingVerses, verseId) {
         .join('\n');
 }
 
-function getTranslationPrompt(style, language, bookId, chapterId, text, rejected = '') {
+function getTranslationPrompt(style: string, language: string, bookId: number, chapterId: number, text: string, rejected = ''): string {
     const stylePrompt = TRANSLATION_PROMPTS[style](language);
 
     return `You will be given a bible text in the original language, and must return the translation.
@@ -459,7 +678,7 @@ Text:
 ${text}`;
 }
 
-function getProofreadPrompt(language, style, bookId, chapterId, originalText, translatedVerses, textOnly = false, targetIds = null, restoring = false) {
+function getProofreadPrompt(language: string, style: string, bookId: number, chapterId: number, originalText: string, translatedVerses: Verse[], textOnly = false, targetIds: Set<number> | null = null, restoring: boolean | number | null = false): string {
     const formattedTranslation = translatedVerses.map(v => {
         const isContext = targetIds && !targetIds.has(+v.verseId);
         let entry = `${v.verseId}:${isContext ? ' [context only]' : ''} ${v.text}`;
@@ -497,7 +716,7 @@ connectives and pronoun reference — do NOT report issues on them. Report issue
 the unmarked verses, which were changed in an earlier round and are being re-examined.` : ''}`;
 }
 
-async function translateChapter(bible, bookId, chapterId, style, existingVerses, filename) {
+async function translateChapter(bible: string, bookId: number, chapterId: number, style: string, existingVerses: Chapter, filename: string): Promise<void> {
     const language = bibles[bible];
     const verses = readOriginalText(bookId, chapterId, existingVerses);
 
@@ -505,14 +724,14 @@ async function translateChapter(bible, bookId, chapterId, style, existingVerses,
         return;
     }
 
-    const batches = [];
+    const batches: Verse[][] = [];
     for (let i = 0; i < verses.length; i += MAX_VERSES_PER_BATCH) {
         batches.push(verses.slice(i, i + MAX_VERSES_PER_BATCH));
     }
 
     console.log(`${chapterLabel(bookId, chapterId)} — translating ${verses.length} verses in ${batches.length} batch(es)`);
 
-    const allResults = [];
+    const allResults: Verse[] = [];
 
     for (let batchIndex = 0; batchIndex < batches.length; batchIndex++) {
         const batch = batches[batchIndex];
@@ -528,7 +747,7 @@ async function translateChapter(bible, bookId, chapterId, style, existingVerses,
             .join('\n');
         const content = getTranslationPrompt(style, language, bookId, chapterId, formattedBatch, rejected);
         const shouldValidate = !isEnglishLanguage(language);
-        const result = await doAnthropicCallWithRetry(content, TRANSLATION_SCHEMA, `${bookId}:${chapterId} batch ${batchIndex + 1}`, shouldValidate);
+        const result = await doAnthropicCallWithRetry<TranslationResponse>(content, TRANSLATION_SCHEMA, `${bookId}:${chapterId} batch ${batchIndex + 1}`, shouldValidate);
         allResults.push(...result.verses);
     }
 
@@ -539,7 +758,7 @@ async function translateChapter(bible, bookId, chapterId, style, existingVerses,
 
     // Slå sammen på verseId: et vers som ble tømt av triage --drop har fortsatt en post
     // med versions/triage-historikk, og den skal beholdes når teksten kommer tilbake.
-    const byId = new Map(existingVerses.map(v => [+v.verseId, v]));
+    const byId = new Map<number, Verse>(existingVerses.map((v): [number, Verse] => [+v.verseId, v]));
     for (const fresh of allResults) {
         const record = byId.get(+fresh.verseId);
         byId.set(+fresh.verseId, record ? {...record, text: fresh.text} : fresh);
@@ -549,7 +768,7 @@ async function translateChapter(bible, bookId, chapterId, style, existingVerses,
     fs.writeFileSync(filename, JSON.stringify(finalResult, null, 2));
 }
 
-function estimateVerseSize(verse, originalVerse) {
+function estimateVerseSize(verse: Verse, originalVerse: Verse | undefined): number {
     let size = 0;
 
     if (originalVerse) {
@@ -579,9 +798,9 @@ function estimateVerseSize(verse, originalVerse) {
     return size;
 }
 
-function createProofreadBatches(translatedVerses, originalVerses) {
-    const batches = [];
-    let currentBatch = [];
+function createProofreadBatches(translatedVerses: Verse[], originalVerses: Chapter): Verse[][] {
+    const batches: Verse[][] = [];
+    let currentBatch: Verse[] = [];
     let currentSize = 0;
 
     for (const verse of translatedVerses) {
@@ -605,7 +824,7 @@ function createProofreadBatches(translatedVerses, originalVerses) {
     return batches;
 }
 
-function getTextReviewPrompt(language, style, bookId, chapterId, verse, originalVerse, prevVerse, nextVerse, prevOriginal, nextOriginal, attempts) {
+function getTextReviewPrompt(language: string, style: string, bookId: number, chapterId: number, verse: Verse, originalVerse: Verse, prevVerse: Verse | null, nextVerse: Verse | null, prevOriginal: Verse | null | undefined, nextOriginal: Verse | null | undefined, attempts: TextAttempt[]): string {
     const styleDescription = style === 'oral'
         ? 'optimized for oral reading with natural rhythm and flow'
         : 'modern and easy to read while being theologically correct';
@@ -650,12 +869,12 @@ Review the TEXT of THIS VERSE and:
 2. Set "done" to true when the text is satisfactory and no further iteration is needed. Set false if you want another round.
 3. Score 0-10.
 
-${verse.versions?.length >= 3 ? 'This verse has 3+ revisions — only suggest changes for CRITICAL errors.' : ''}
+${verse.versions?.length! >= 3 ? 'This verse has 3+ revisions — only suggest changes for CRITICAL errors.' : ''}
 ${verse.versions?.length ? 'NEVER suggest text matching any previous version.' : ''}
 NEVER mention specific Bible editions, Bible societies, or publishers (e.g., "NIV", "ESV", "KJV", "Bibelen 2011", "Bibelselskapet"). Write neutrally without referencing specific translations or organizations.`;
 }
 
-function getFootnoteReviewPrompt(language, style, bookId, chapterId, verse, originalVerse, prevVerse, nextVerse, prevOriginal, nextOriginal, attempts) {
+function getFootnoteReviewPrompt(language: string, style: string, bookId: number, chapterId: number, verse: Verse, originalVerse: Verse, prevVerse: Verse | null, nextVerse: Verse | null, prevOriginal: Verse | null | undefined, nextOriginal: Verse | null | undefined, attempts: FootnoteAttempt[]): string {
     const styleDescription = style === 'oral'
         ? 'optimized for oral reading with natural rhythm and flow'
         : 'modern and easy to read while being theologically correct';
@@ -706,7 +925,7 @@ Return the FULL final set of footnotes (will replace existing ones entirely). Se
 NEVER mention specific Bible editions, Bible societies, or publishers (e.g., "NIV", "ESV", "KJV", "Bibelen 2011", "Bibelselskapet"). Write neutrally without referencing specific translations or organizations.`;
 }
 
-async function proofreadChapterPerVerse(bible, bookId, chapterId, style, filename, options = {}) {
+async function proofreadChapterPerVerse(bible: string, bookId: number, chapterId: number, style: string, filename: string, options: PerVerseOptions = {}): Promise<PerVerseResult | null> {
     const language = bibles[bible];
     const skipExisting = !!options.skipExisting;
     const textOnly = !!options.textOnly;
@@ -719,7 +938,7 @@ async function proofreadChapterPerVerse(bible, bookId, chapterId, style, filenam
         return null;
     }
 
-    const translatedVerses = JSON.parse(fs.readFileSync(filename, 'utf-8'));
+    const translatedVerses: Chapter = JSON.parse(fs.readFileSync(filename, 'utf-8'));
     const originalVerses = readOriginalText(bookId, chapterId, []);
 
     if (originalVerses.length === 0) {
@@ -727,11 +946,13 @@ async function proofreadChapterPerVerse(bible, bookId, chapterId, style, filenam
         return null;
     }
 
-    const inVerseScope = (vid) => verseStart === null || (+vid >= verseStart && +vid <= verseEnd);
+    // `verseEnd!`: --verse setter alltid begge endene, så er verseStart satt er
+    // verseEnd det også. Påstanden dokumenterer det, den innfører det ikke.
+    const inVerseScope = (vid: number) => verseStart === null || (+vid >= verseStart && +vid <= verseEnd!);
 
     // Hva som teller som "allerede gjort" avhenger av modus: i --text-only skrives
     // ingen fotnoter, så tekstfasen setter textChecked som gjenopptakelsesmarkør.
-    const isDone = (v) => textOnly
+    const isDone = (v: Verse) => textOnly
         ? !!v.textChecked
         : (v.footnotes && v.footnotes.length > 0);
 
@@ -753,9 +974,9 @@ async function proofreadChapterPerVerse(bible, bookId, chapterId, style, filenam
         return { issues: [], footnotes: [], score: 10, appliedCount: 0, footnoteCount: 0 };
     }
 
-    const allIssues = [];
-    const allFootnotes = [];
-    const scores = [];
+    const allIssues: PerVerseIssue[] = [];
+    const allFootnotes: VerseFootnote[] = [];
+    const scores: number[] = [];
     let appliedCount = 0;
     let footnoteCount = 0;
     const shouldValidate = !isEnglishLanguage(language);
@@ -774,15 +995,15 @@ async function proofreadChapterPerVerse(bible, bookId, chapterId, style, filenam
         const prevOriginal = prevVerse ? originalVerses.find(v => +v.verseId === +prevVerse.verseId) : null;
         const nextOriginal = nextVerse ? originalVerses.find(v => +v.verseId === +nextVerse.verseId) : null;
 
-        let verseScore = null;
+        let verseScore: number | null = null;
 
         // Phase 1: TEXT iteration
-        const textAttempts = [];
+        const textAttempts: TextAttempt[] = [];
         for (let round = 1; round <= maxIter; round++) {
             process.stdout.write(`\r  Verse ${verse.verseId}/${lastVerseId} text r${round}${''.padEnd(20)}`);
             const prompt = getTextReviewPrompt(language, style, bookId, chapterId, verse, originalVerse, prevVerse, nextVerse, prevOriginal, nextOriginal, textAttempts);
             try {
-                const result = await doAnthropicCallWithRetry(prompt, TEXT_REVIEW_SCHEMA, `proofread ${bookId}:${chapterId}:${verse.verseId} text r${round}`, shouldValidate);
+                const result = await doAnthropicCallWithRetry<TextReviewResponse>(prompt, TEXT_REVIEW_SCHEMA, `proofread ${bookId}:${chapterId}:${verse.verseId} text r${round}`, shouldValidate);
                 textAttempts.push({
                     suggested: result.issue?.suggested || null,
                     explanation: result.issue?.explanation || null,
@@ -802,8 +1023,11 @@ async function proofreadChapterPerVerse(bible, bookId, chapterId, style, filenam
                     if (!verse.versions) verse.versions = [];
                     verse.versions.push({
                         text: verse.text,
-                        type: result.issue.type,
-                        severity: result.issue.severity,
+                        // Skjemaets verdimengder er videre enn VersionType/Severity i den
+                        // delte typemodellen (error/grammar/theological, critical).
+                        // Påstandene beskriver det som allerede står i versdataene.
+                        type: result.issue.type as VersionType,
+                        severity: result.issue.severity as Severity,
                         explanation: result.issue.explanation,
                         // Begge slags versjoner må bli liggende — de er det som hindrer at
                         // korrekturen svinger tilbake — men bare alternativene vises for leseren.
@@ -816,7 +1040,7 @@ async function proofreadChapterPerVerse(bible, bookId, chapterId, style, filenam
 
                 if (result.done) break;
             } catch (error) {
-                console.warn(`\n  Error on verse ${verse.verseId} text r${round}: ${error.message}`);
+                console.warn(`\n  Error on verse ${verse.verseId} text r${round}: ${(error as Error).message}`);
                 break;
             }
         }
@@ -824,12 +1048,12 @@ async function proofreadChapterPerVerse(bible, bookId, chapterId, style, filenam
         verse.textChecked = true;
 
         // Phase 2: FOOTNOTE iteration (against final text from phase 1)
-        const footnoteAttempts = [];
+        const footnoteAttempts: FootnoteAttempt[] = [];
         for (let round = 1; !textOnly && round <= maxIter; round++) {
             process.stdout.write(`\r  Verse ${verse.verseId}/${lastVerseId} footnote r${round}${''.padEnd(20)}`);
             const prompt = getFootnoteReviewPrompt(language, style, bookId, chapterId, verse, originalVerse, prevVerse, nextVerse, prevOriginal, nextOriginal, footnoteAttempts);
             try {
-                const result = await doAnthropicCallWithRetry(prompt, FOOTNOTE_REVIEW_SCHEMA, `proofread ${bookId}:${chapterId}:${verse.verseId} fn r${round}`, shouldValidate);
+                const result = await doAnthropicCallWithRetry<FootnoteReviewResponse>(prompt, FOOTNOTE_REVIEW_SCHEMA, `proofread ${bookId}:${chapterId}:${verse.verseId} fn r${round}`, shouldValidate);
                 footnoteAttempts.push({
                     footnotes: result.footnotes,
                     done: !!result.done,
@@ -837,12 +1061,14 @@ async function proofreadChapterPerVerse(bible, bookId, chapterId, style, filenam
                 });
 
                 if (result.footnotes && result.footnotes.length > 0) {
-                    verse.footnotes = result.footnotes;
+                    // Skjemaet tillater `liturgisk` og `annet`, som ikke står i
+                    // FootnoteSource. Påstanden beskriver dataene som faktisk skrives.
+                    verse.footnotes = result.footnotes as Footnote[];
                 }
 
                 if (result.done) break;
             } catch (error) {
-                console.warn(`\n  Error on verse ${verse.verseId} footnote r${round}: ${error.message}`);
+                console.warn(`\n  Error on verse ${verse.verseId} footnote r${round}: ${(error as Error).message}`);
                 break;
             }
         }
@@ -876,7 +1102,7 @@ async function proofreadChapterPerVerse(bible, bookId, chapterId, style, filenam
     };
 }
 
-async function proofreadChapter(bible, bookId, chapterId, style, filename, saveToFile = true, textOnly = false, changedTypes = null, checkLength = null) {
+async function proofreadChapter(bible: string, bookId: number, chapterId: number, style: string, filename: string, saveToFile = true, textOnly = false, changedTypes: string[] | null = null, checkLength: number | null = null): Promise<ProofreadResult | null> {
     const language = bibles[bible];
 
     if (!fs.existsSync(filename)) {
@@ -884,7 +1110,7 @@ async function proofreadChapter(bible, bookId, chapterId, style, filename, saveT
         return null;
     }
 
-    const translatedVerses = JSON.parse(fs.readFileSync(filename, 'utf-8'));
+    const translatedVerses: Chapter = JSON.parse(fs.readFileSync(filename, 'utf-8'));
     const originalVerses = readOriginalText(bookId, chapterId, []);
 
     if (originalVerses.length === 0) {
@@ -895,8 +1121,8 @@ async function proofreadChapter(bible, bookId, chapterId, style, filename, saveT
     // Andre runde: et vers som ikke ble endret første gang er som regel greit, mens et
     // som ble endret — særlig med type error — er der tvilen ligger. changedTypes
     // begrenser gjennomgangen til dem, og lar resten av kapittelet være.
-    let versesToReview = translatedVerses;
-    let targetIds = null;
+    let versesToReview: Verse[] = translatedVerses;
+    let targetIds: Set<number> | null = null;
     if (changedTypes || checkLength) {
         const targets = translatedVerses.filter(v => {
             const versions = v.versions || [];
@@ -910,8 +1136,11 @@ async function proofreadChapter(bible, bookId, chapterId, style, filename, saveT
                 return !alreadyCleared(v, 'length');
             }
 
+            // Påstandene her endrer ingenting: `versions.length` er sjekket over, og
+            // ytre `if (changedTypes || checkLength)` gjør at changedTypes er satt når
+            // vi kommer hit uten checkLength. TS mister begge inne i tilbakekallet.
             const last = versions.at(-1);
-            if (changedTypes.length !== 0 && !changedTypes.includes(last.type)) return false;
+            if (changedTypes!.length !== 0 && !changedTypes!.includes(last!.type)) return false;
             return !alreadyCleared(v, 'changed');
         });
         if (targets.length === 0) return null;
@@ -919,7 +1148,7 @@ async function proofreadChapter(bible, bookId, chapterId, style, filename, saveT
         // Naboene må være med. Flyt, bindeord og pronomen kan ikke vurderes på et vers
         // som står alene — det var nettopp den feilklassen forrige runde fant.
         targetIds = new Set(targets.map(v => +v.verseId));
-        const keep = new Set();
+        const keep = new Set<number>();
         for (const v of targets) {
             const i = translatedVerses.findIndex(x => +x.verseId === +v.verseId);
             for (const j of [i - 1, i, i + 1]) {
@@ -933,22 +1162,23 @@ async function proofreadChapter(bible, bookId, chapterId, style, filename, saveT
     // Tegnbudsjettet kan skille et målvers fra naboene sine. En batch som bare inneholder
     // kontekst har ingenting å rapportere — hopp over den i stedet for å betale for kallet.
     if (targetIds) {
-        batches = batches.filter(b => b.some(v => targetIds.has(+v.verseId)));
+        batches = batches.filter(b => b.some(v => targetIds!.has(+v.verseId)));
         if (batches.length === 0) return null;
     }
 
     console.log(`${chapterLabel(bookId, chapterId)} — proofreading ${targetIds ? `${targetIds.size} verses (+${versesToReview.length - targetIds.size} context)` : `${versesToReview.length} verses`} in ${batches.length} batch(es)`);
 
-    const allIssues = [];
-    const allFootnotes = [];
-    const summaries = [];
-    const scores = [];
+    const allIssues: ProofreadIssue[] = [];
+    const allFootnotes: ProofreadFootnote[] = [];
+    const summaries: string[] = [];
+    const scores: number[] = [];
 
     // Process batches with automatic splitting on timeout
     const queue = batches.map((batch, i) => ({ batch, label: `${i + 1}/${batches.length}` }));
 
     while (queue.length > 0) {
-        const { batch, label } = queue.shift();
+        // `!`: løkka kjører bare mens køen har elementer.
+        const { batch, label } = queue.shift()!;
         const batchVerseIds = batch.map(v => v.verseId);
         const batchOriginal = originalVerses.filter(v => batchVerseIds.includes(+v.verseId));
 
@@ -961,7 +1191,7 @@ async function proofreadChapter(bible, bookId, chapterId, style, filename, saveT
         const shouldValidate = !isEnglishLanguage(language);
 
         try {
-            const batchResult = await doAnthropicCallWithRetry(content, textOnly ? PROOFREAD_TEXT_SCHEMA : PROOFREAD_SCHEMA, `proofread ${bookId}:${chapterId} batch ${label}`, shouldValidate);
+            const batchResult = await doAnthropicCallWithRetry<ProofreadResponse>(content, textOnly ? PROOFREAD_TEXT_SCHEMA : PROOFREAD_SCHEMA, `proofread ${bookId}:${chapterId} batch ${label}`, shouldValidate);
 
             if (batchResult.issues) {
                 allIssues.push(...batchResult.issues);
@@ -978,7 +1208,7 @@ async function proofreadChapter(bible, bookId, chapterId, style, filename, saveT
                 const raw = batchResult.score;
                 scores.push(raw > 10 ? Math.round(raw / 10) : raw);
             }
-        } catch (error) {
+        } catch (error: any) {
             if (error.message.includes('timed out') || error.message.includes('timeout') || error.message.includes('max_tokens')) {
                 if (batch.length <= 2) {
                     console.error(`  Batch ${label} failed even with ${batch.length} verses, skipping`);
@@ -997,7 +1227,7 @@ async function proofreadChapter(bible, bookId, chapterId, style, filename, saveT
     }
 
     const flagged = new Set(allIssues.map(i => +i.verseId));
-    let result = {
+    let result: ProofreadResult = {
         clearedTargets: targetIds ? [...targetIds].filter(id => !flagged.has(id)) : [],
         issues: allIssues,
         footnotes: allFootnotes,
@@ -1039,14 +1269,14 @@ async function proofreadChapter(bible, bookId, chapterId, style, filename, saveT
     return result;
 }
 
-function applyProofreadChanges(bible, bookId, chapterId, filename, proofreadResult = null) {
+function applyProofreadChanges(bible: string, bookId: number, chapterId: number, filename: string, proofreadResult: ProofreadResult | null = null) {
     if (!proofreadResult) {
         const proofreadFile = `proofread/${bible}/${bookId}/${chapterId}.json`;
         if (!fs.existsSync(proofreadFile)) {
             console.log(`No proofread file found for ${bookId}:${chapterId}`);
             return;
         }
-        proofreadResult = JSON.parse(fs.readFileSync(proofreadFile, 'utf-8'));
+        proofreadResult = JSON.parse(fs.readFileSync(proofreadFile, 'utf-8')) as ProofreadResult;
     }
 
     if (!fs.existsSync(filename)) {
@@ -1054,7 +1284,7 @@ function applyProofreadChanges(bible, bookId, chapterId, filename, proofreadResu
         return;
     }
 
-    const verses = JSON.parse(fs.readFileSync(filename, 'utf-8'));
+    const verses: Chapter = JSON.parse(fs.readFileSync(filename, 'utf-8'));
     const hasIssues = proofreadResult.issues && proofreadResult.issues.length > 0;
     const hasFootnotes = proofreadResult.footnotes && proofreadResult.footnotes.length > 0;
 
@@ -1101,8 +1331,10 @@ function applyProofreadChanges(bible, bookId, chapterId, filename, proofreadResu
 
             verse.versions.push({
                 text: verse.text,
-                type: issue.type,
-                severity: issue.severity,
+                // Se kommentaren i tekstfasen: skjemaets verdimengder er videre enn
+                // VersionType/Severity i den delte typemodellen.
+                type: issue.type as VersionType,
+                severity: issue.severity as Severity,
                 explanation: issue.explanation,
                 // Avgjør om leseren får se den forrige lesningen som et gyldig alternativ.
                 // type-feltet duger ikke til dette: 72% av «suggestion» viste seg å ha
@@ -1121,10 +1353,12 @@ function applyProofreadChanges(bible, bookId, chapterId, filename, proofreadResu
 
     if (hasFootnotes) {
         // Group new footnotes by verseId
-        const footnotesByVerse = {};
+        // Nøkkelen er versnummeret som strengt oppslag — derfor Record.
+        const footnotesByVerse: Record<string, Footnote[]> = {};
         for (const fn of proofreadResult.footnotes) {
             if (!footnotesByVerse[fn.verseId]) footnotesByVerse[fn.verseId] = [];
-            footnotesByVerse[fn.verseId].push({ text: fn.text, source: fn.source });
+            // `liturgisk`/`annet` finnes i skjemaet, men ikke i FootnoteSource.
+            footnotesByVerse[fn.verseId].push({ text: fn.text, source: fn.source as FootnoteSource });
         }
 
         // Replace all footnotes for each verse that has new ones
@@ -1161,11 +1395,12 @@ function applyProofreadChanges(bible, bookId, chapterId, filename, proofreadResu
  * The signature is verse count + total text length, so any later change to the chapter
  * invalidates the record and it gets looked at again.
  */
-function stateFile(bible) {
+function stateFile(bible: string): string {
     return `proofread/${bible}/state.json`;
 }
 
-function readState(bible) {
+// Nøkkelen er "<bok>:<kapittel>", altså et dynamisk oppslag — derfor Record.
+function readState(bible: string): Record<string, ChapterState | undefined> {
     const f = stateFile(bible);
     if (!fs.existsSync(f)) return {};
     try {
@@ -1175,13 +1410,13 @@ function readState(bible) {
     }
 }
 
-function chapterSignature(filename) {
+function chapterSignature(filename: string): string | null {
     if (!fs.existsSync(filename)) return null;
-    const verses = JSON.parse(fs.readFileSync(filename, 'utf-8'));
+    const verses: Chapter = JSON.parse(fs.readFileSync(filename, 'utf-8'));
     return `${verses.length}:${verses.reduce((n, v) => n + (v.text || '').length, 0)}`;
 }
 
-function writeState(bible, key, record) {
+function writeState(bible: string, key: string, record: ChapterState): void {
     const f = stateFile(bible);
     fs.mkdirSync(path.dirname(f), {recursive: true});
     const state = readState(bible);
@@ -1197,7 +1432,7 @@ function writeState(bible, key, record) {
  * versions[]. Repeat until the chapter scores at least minScore or the rounds run out.
  * Keeping versions[] is what stops a later round swinging the text back again.
  */
-async function proofreadChapterBatched(bible, bookId, chapterId, style, filename, {minScore = 8, maxIterations = 3, textOnly = false, changedTypes = null, checkLength = null, force = false} = {}) {
+async function proofreadChapterBatched(bible: string, bookId: number, chapterId: number, style: string, filename: string, {minScore = 8, maxIterations = 3, textOnly = false, changedTypes = null, checkLength = null, force = false}: BatchedOptions = {}): Promise<ProofreadResult | null> {
     const key = `${bookId}:${chapterId}`;
     const signature = chapterSignature(filename);
 
@@ -1205,10 +1440,12 @@ async function proofreadChapterBatched(bible, bookId, chapterId, style, filename
     // om igjen. Det er dette som gjør en full gjenkjøring billig etter første pass.
     if (!force && !changedTypes && !checkLength) {
         const prior = readState(bible)[key];
-        if (prior?.signature === signature && prior.converged && prior.score >= minScore) return null;
+        // `prior.score!`: den kan være null i state.json, og `null >= minScore` er
+        // falskt — akkurat som før typene kom til. Påstanden endrer ingen sammenlikning.
+        if (prior?.signature === signature && prior.converged && prior.score! >= minScore) return null;
     }
 
-    let last = null;
+    let last: ProofreadResult | null = null;
     for (let round = 1; round <= maxIterations; round++) {
         const result = await proofreadChapter(bible, bookId, chapterId, style, filename, false, textOnly, changedTypes, checkLength);
         if (!result) return null;
@@ -1216,9 +1453,9 @@ async function proofreadChapterBatched(bible, bookId, chapterId, style, filename
         const applied = applyProofreadChanges(bible, bookId, chapterId, filename, result);
         const changes = applied?.appliedCount || 0;
 
-        const mode = checkLength ? 'length' : (changedTypes ? 'changed' : null);
+        const mode: CheckedMode | null = checkLength ? 'length' : (changedTypes ? 'changed' : null);
         if (mode && result.clearedTargets?.length) {
-            const verses = JSON.parse(fs.readFileSync(filename, 'utf-8'));
+            const verses: Chapter = JSON.parse(fs.readFileSync(filename, 'utf-8'));
             let marked = 0;
             for (const id of result.clearedTargets) {
                 const verse = verses.find(v => +v.verseId === +id);
@@ -1254,7 +1491,7 @@ async function proofreadChapterBatched(bible, bookId, chapterId, style, filename
     return last;
 }
 
-function printUsage() {
+function printUsage(): void {
     console.log(`
 Usage: node bible_test.mjs <bible> [options]
 
@@ -1289,7 +1526,7 @@ Examples:
 `);
 }
 
-function parseRange(value) {
+function parseRange(value: string): Range {
     if (value.includes('-')) {
         const [start, end] = value.split('-').map(n => parseInt(n, 10));
         return {start, end};
@@ -1298,8 +1535,8 @@ function parseRange(value) {
     return {start: num, end: num};
 }
 
-function parseArgs(args) {
-    const options = {
+function parseArgs(args: string[]): CliOptions {
+    const options: CliOptions = {
         bible: null,
         style: null,          // null = slå opp fra bibelen; --style overstyrer
         proofread: false,
@@ -1373,7 +1610,7 @@ function parseArgs(args) {
     return options;
 }
 
-async function main() {
+async function main(): Promise<void> {
     const args = process.argv.slice(2);
     const options = parseArgs(args);
 
@@ -1408,7 +1645,8 @@ async function main() {
 
     if (options.bookStart !== null) {
         startBook = options.bookStart;
-        endBook = options.bookEnd;
+        // `!`: --book setter alltid begge endene (parseRange gir start og end).
+        endBook = options.bookEnd!;
     } else if (options.ot && !options.nt) {
         startBook = 1;
         endBook = 39;
@@ -1434,7 +1672,7 @@ async function main() {
     }
     console.log('---');
 
-    const failed = [];
+    const failed: string[] = [];
 
     for (let bookId = startBook; bookId <= endBook; bookId++) {
         const book = books.find(b => b.id === bookId);
@@ -1451,7 +1689,7 @@ async function main() {
             const verseScopeActive = options.verseStart !== null;
 
             if (!verseScopeActive) {
-                let existingVerses = [];
+                let existingVerses: Chapter = [];
                 if (fs.existsSync(filename) && !options.force) {
                     existingVerses = JSON.parse(fs.readFileSync(filename, 'utf-8'));
                 }
@@ -1484,7 +1722,7 @@ async function main() {
                     verseEnd: options.verseEnd
                 });
             }
-            } catch (error) {
+            } catch (error: any) {
                 // En kjøring over mange kapitler skal ikke gå tapt fordi ett kapittel feilet.
                 // Alt som er skrevet så langt ligger på disk, og --skip-existing eller
                 // merkene i versdataene gjør at en ny kjøring tar igjen det som mangler.

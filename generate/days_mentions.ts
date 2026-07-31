@@ -9,9 +9,26 @@ dotenv.config();
 
 import {books, getBookName} from './constants.js';
 import {callWithRetry} from './llm.js';
+import type {Verse, Chapter} from '../kvn/src/bible-types.js';
 
 const SOURCES_DIR = path.join(__dirname, 'bibles_raw');
 const OUTPUT_BASE = path.join(__dirname, 'days_mentions');
+
+/** Originalspråket verset hentes fra: hebraisk i GT, gresk i NT. */
+type OriginalLanguage = 'hebrew' | 'greek';
+
+/**
+ * Originalspråkverset som ligger parallelt med det norske.
+ *
+ * `text` er `null` og `reason` satt når oppslaget ikke lyktes — feltet
+ * `available` skiller de to tilfellene.
+ */
+interface ParallelVerse {
+    language: OriginalLanguage;
+    text: string | null;
+    available: boolean;
+    reason?: string;
+}
 
 // === Parallel verse lookup ===
 // For bibles whose verse numbering matches hebrew/sblgnt directly (e.g. osnb),
@@ -19,24 +36,27 @@ const OUTPUT_BASE = path.join(__dirname, 'days_mentions');
 
 const IDENTITY_PARALLEL_BIBLES = new Set(['osnb']);
 
-const chapterCache = new Map();
-function loadSourceChapter(sourceName, bookId, chapterId) {
+// `null` er en gyldig cache-verdi: den husker at kapitlet ikke finnes.
+const chapterCache = new Map<string, Chapter | null>();
+function loadSourceChapter(sourceName: string, bookId: number, chapterId: number): Chapter | null {
     const key = `${sourceName}/${bookId}/${chapterId}`;
-    if (chapterCache.has(key)) return chapterCache.get(key);
+    // `Map.get` er typet `V | undefined`, men `has` over har alt utelukket
+    // `undefined`. Påstanden dokumenterer det; den endrer ingenting.
+    if (chapterCache.has(key)) return chapterCache.get(key) as Chapter | null;
     const file = path.join(SOURCES_DIR, sourceName, String(bookId), `${chapterId}.json`);
     if (!fs.existsSync(file)) {
         chapterCache.set(key, null);
         return null;
     }
-    const data = JSON.parse(fs.readFileSync(file, 'utf8'));
+    const data: Chapter = JSON.parse(fs.readFileSync(file, 'utf8'));
     chapterCache.set(key, data);
     return data;
 }
 
-function getParallelVerse(bible, bookId, chapterId, verseId) {
+function getParallelVerse(bible: string, bookId: number, chapterId: number, verseId: number): ParallelVerse {
     const isOt = bookId <= 39;
     const sourceName = isOt ? 'hebrew' : 'sblgnt';
-    const language = isOt ? 'hebrew' : 'greek';
+    const language: OriginalLanguage = isOt ? 'hebrew' : 'greek';
 
     if (!IDENTITY_PARALLEL_BIBLES.has(bible)) {
         return {language, text: null, available: false, reason: `parallel-lookup-not-implemented-for-${bible}`};
@@ -92,7 +112,7 @@ const DAY_SCHEMA = {
     additionalProperties: false
 };
 
-function buildPrompt(ref, norwegianText, parallel) {
+function buildPrompt(ref: string, norwegianText: string, parallel: ParallelVerse): string {
     const originalBlock = parallel.available
         ? `Original (${parallel.language}): "${parallel.text}"`
         : `Original: IKKE TILGJENGELIG (originalspråk-kilde mangler for dette verset).`;
@@ -136,16 +156,55 @@ For hver dag du finner:
 Hvis ingen dager nevnes, returner tom liste.`;
 }
 
-async function processVerse(bible, bookId, chapterId, verse) {
+/**
+ * Kategoriene er norske identifikatorer, som `Footnote.source` i versdataene —
+ * ikke visningstekst.
+ */
+type DayCategory = 'høytid' | 'eskatologisk' | 'historisk' | 'ukentlig' | 'periode' | 'annet';
+
+/** Ordet fra originalteksten som svarer til det norske dagsuttrykket. */
+interface OriginalTerm {
+    language: OriginalLanguage;
+    script: string;
+    transliteration: string;
+}
+
+/** Én dagsnevnelse slik modellen svarer den (`DAY_SCHEMA`). */
+interface DayMention {
+    name: string;
+    category: DayCategory;
+    norwegianTerm: string;
+    originalTerm: OriginalTerm | null;
+    quote: string;
+    reason: string;
+}
+
+/** Svaret fra modellen, dekodet mot `DAY_SCHEMA`. */
+interface DayMentionResult {
+    days: DayMention[];
+}
+
+/** En dagsnevnelse med verset den ble funnet i — det som skrives til disk. */
+type DayMentionRecord = DayMention & {
+    bookId: number;
+    chapterId: number;
+    verseId: number;
+    translation: string;
+    originalAvailable: boolean;
+};
+
+async function processVerse(bible: string, bookId: number, chapterId: number, verse: Verse): Promise<DayMentionRecord[]> {
     const bookName = getBookName(bookId, 'nb');
     const ref = `${bookName} ${chapterId}:${verse.verseId}`;
     const parallel = getParallelVerse(bible, bookId, chapterId, verse.verseId);
     const prompt = buildPrompt(ref, verse.text, parallel);
+    // `callWithRetry` er typet `object | string`; med skjema er det det dekodede
+    // objektet. Påstanden navngir formen `DAY_SCHEMA` krever.
     const result = await callWithRetry(prompt, {
         schema: DAY_SCHEMA,
         local: true,
         context: ref
-    });
+    }) as DayMentionResult;
     const rawDays = result.days || [];
     return rawDays.map(d => ({
         ...d,
@@ -157,7 +216,14 @@ async function processVerse(bible, bookId, chapterId, verse) {
     }));
 }
 
-async function processChapter(bible, bookId, chapterId, force) {
+/** Ett vers i utdatafila: dagene som ble funnet, eller feilen som stanset det. */
+interface VerseDays {
+    verseId: number;
+    days: DayMentionRecord[];
+    error?: string;
+}
+
+async function processChapter(bible: string, bookId: number, chapterId: number, force: boolean): Promise<void> {
     const inputFile = path.join(SOURCES_DIR, bible, String(bookId), `${chapterId}.json`);
     const outputFile = path.join(OUTPUT_BASE, bible, String(bookId), `${chapterId}.json`);
     const bookName = getBookName(bookId, 'nb');
@@ -171,8 +237,8 @@ async function processChapter(bible, bookId, chapterId, force) {
         return;
     }
 
-    const verses = JSON.parse(fs.readFileSync(inputFile, 'utf8'));
-    const results = [];
+    const verses: Chapter = JSON.parse(fs.readFileSync(inputFile, 'utf8'));
+    const results: VerseDays[] = [];
     let totalDays = 0;
     const t0 = Date.now();
 
@@ -189,8 +255,8 @@ async function processChapter(bible, bookId, chapterId, force) {
                 process.stdout.write(`-\n`);
             }
         } catch (err) {
-            process.stdout.write(`FEIL: ${err.message}\n`);
-            results.push({verseId: verse.verseId, days: [], error: err.message});
+            process.stdout.write(`FEIL: ${(err as Error).message}\n`);
+            results.push({verseId: verse.verseId, days: [], error: (err as Error).message});
         }
     }
 
@@ -206,7 +272,7 @@ async function processChapter(bible, bookId, chapterId, force) {
     console.log(`  ${bookName} ${chapterId}: ${totalDays} dag-forekomster i ${verses.length} vers (${dt}s)`);
 }
 
-function printUsage() {
+function printUsage(): void {
     console.log(`
 Usage: node days_mentions.mjs --bible <name> [options]
 
@@ -233,7 +299,7 @@ Examples:
 `);
 }
 
-function parseRange(value) {
+function parseRange(value: string): {start: number; end: number} {
     if (value.includes('-')) {
         const [start, end] = value.split('-').map(n => parseInt(n, 10));
         return {start, end};
@@ -242,9 +308,20 @@ function parseRange(value) {
     return {start: n, end: n};
 }
 
-async function main() {
+/** Flaggene skriptet kjenner. `null` = ikke oppgitt, ikke «tom». */
+interface DaysMentionsOptions {
+    bible: string | null;
+    bookStart: number | null;
+    bookEnd: number | null;
+    chapterStart: number | null;
+    chapterEnd: number | null;
+    force: boolean;
+    help: boolean;
+}
+
+async function main(): Promise<void> {
     const args = process.argv.slice(2);
-    const options = {
+    const options: DaysMentionsOptions = {
         bible: null,
         bookStart: null,
         bookEnd: null,

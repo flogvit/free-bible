@@ -18,7 +18,9 @@ const __dirname = path.dirname(__filename);
 // KVN book abbreviations (same as kvn/src/types.ts)
 // ============================================================
 
-const BOOK_IDS = {
+// `Record`: `validateConvertedRefs` slår opp med en forkortelse lest ut av
+// teksten, ikke med en av nøklene her — oppslaget er dynamisk.
+const BOOK_IDS: Record<string, number> = {
   '1 Mos': 1, '2 Mos': 2, '3 Mos': 3, '4 Mos': 4, '5 Mos': 5,
   'Jos': 6, 'Dom': 7, 'Rut': 8, '1 Sam': 9, '2 Sam': 10,
   '1 Kong': 11, '2 Kong': 12, '1 Krøn': 13, '2 Krøn': 14,
@@ -36,7 +38,7 @@ const BOOK_IDS = {
 };
 
 // Reverse: bookId → KVN abbreviation
-const BOOK_NAMES = {};
+const BOOK_NAMES: Record<number, string> = {};
 for (const [name, id] of Object.entries(BOOK_IDS)) {
   if (!(id in BOOK_NAMES)) BOOK_NAMES[id] = name;
 }
@@ -45,11 +47,17 @@ for (const [name, id] of Object.entries(BOOK_IDS)) {
 // Name → { bookId, kvnAbbr } mapping
 // ============================================================
 
-/** Map from all known book name forms to { bookId, kvnAbbr } */
-function buildNameMap() {
-  const map = new Map();
+/** Én boknavn-form, slått opp til bok-id-en og KVN-forkortelsen den peker på. */
+interface BookEntry {
+  bookId: number;
+  kvnAbbr: string;
+}
 
-  function add(name, bookId) {
+/** Map from all known book name forms to { bookId, kvnAbbr } */
+function buildNameMap(): Map<string, BookEntry> {
+  const map = new Map<string, BookEntry>();
+
+  function add(name: string, bookId: number): void {
     const kvnAbbr = BOOK_NAMES[bookId];
     if (!kvnAbbr) return;
     map.set(name, { bookId, kvnAbbr });
@@ -154,7 +162,7 @@ function buildNameMap() {
 // Regex builder
 // ============================================================
 
-function escapeRegex(s) {
+function escapeRegex(s: string): string {
   return s.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
 }
 
@@ -162,7 +170,7 @@ function escapeRegex(s) {
  * Build the master regex for matching Bible references in text.
  * Returns { regex, nameMap }.
  */
-function buildRefRegex() {
+function buildRefRegex(): { regex: RegExp; nameMap: Map<string, BookEntry> } {
   const nameMap = buildNameMap();
 
   // Sort names longest-first for regex alternation
@@ -193,24 +201,30 @@ function buildRefRegex() {
 // Text conversion
 // ============================================================
 
+/** Et halvåpent intervall [start, end) i teksten som ikke skal konverteres. */
+interface SkipRegion {
+  start: number;
+  end: number;
+}
+
 /**
  * Convert plain-text Bible references in a string to [ref:...|...] markup.
  * Skips text that is already inside [ref:...] blocks.
  */
-function convertText(text, regex, nameMap) {
+function convertText(text: string, regex: RegExp, nameMap: Map<string, BookEntry>): { text: string; count: number } {
   let converted = '';
   let lastIndex = 0;
   let matchCount = 0;
 
   // Find existing [ref:...] regions to skip
-  const skipRegions = [];
+  const skipRegions: SkipRegion[] = [];
   const existingRefRegex = /\[ref:[^\]]+\]/g;
   let skipMatch;
   while ((skipMatch = existingRefRegex.exec(text)) !== null) {
     skipRegions.push({ start: skipMatch.index, end: skipMatch.index + skipMatch[0].length });
   }
 
-  function isInSkipRegion(pos) {
+  function isInSkipRegion(pos: number): boolean {
     return skipRegions.some(r => pos >= r.start && pos < r.end);
   }
 
@@ -249,22 +263,38 @@ function convertText(text, regex, nameMap) {
 // File processors
 // ============================================================
 
-function readJson(filepath) {
-  return JSON.parse(fs.readFileSync(filepath, 'utf-8'));
+/**
+ * `T` er en påstand om hva fila inneholder, ikke en kontroll: `JSON.parse` gir
+ * `any`, og ingenting validerer resultatet. Kallstedet bestemmer formen.
+ */
+function readJson<T>(filepath: string): T {
+  return JSON.parse(fs.readFileSync(filepath, 'utf-8')) as T;
 }
 
-function writeJson(filepath, data) {
+function writeJson(filepath: string, data: unknown): void {
   fs.writeFileSync(filepath, JSON.stringify(data, null, 2) + '\n');
 }
 
-function processTextField(text, regex, nameMap) {
+/**
+ * Et vilkårlig JSON-objekt slik det ligger på disk. Skriptet plukker felter ut
+ * av mange ulike filtyper og legger dem tilbake; `typeof`-sjekken i
+ * `processTextField` er den eneste kontrollen som finnes.
+ */
+type JsonRecord = Record<string, unknown>;
+
+/**
+ * `text: unknown` fordi feltet kommer rett ut av et JSON-objekt — det er
+ * `typeof`-sjekken under som avgjør om det i det hele tatt er tekst, og
+ * verdien gis uendret tilbake når den ikke er det.
+ */
+function processTextField(text: unknown, regex: RegExp, nameMap: Map<string, BookEntry>): { text: unknown; count: number } {
   if (!text || typeof text !== 'string') return { text, count: 0 };
   return convertText(text, regex, nameMap);
 }
 
 /** Process verse_translation files */
-function processVerseTranslation(filepath, regex, nameMap, dryRun) {
-  const data = readJson(filepath);
+function processVerseTranslation(filepath: string, regex: RegExp, nameMap: Map<string, BookEntry>, dryRun: boolean): number {
+  const data = readJson<JsonRecord[]>(filepath);
   let totalCount = 0;
   const fields = ['connections', 'explanation', 'lostInTranslation', 'uncertainty', 'theologicalImplications', 'culturalBackground'];
 
@@ -286,9 +316,17 @@ function processVerseTranslation(filepath, regex, nameMap, dryRun) {
   return totalCount;
 }
 
+/**
+ * Bare feltene skriptet rører. Resten av fila leses og skrives uendret, så en
+ * fullstendig type ville vært en påstand om data ingen her ser på.
+ */
+interface ReferencesFile {
+  references?: JsonRecord[];
+}
+
 /** Process reference files */
-function processReferences(filepath, regex, nameMap, dryRun) {
-  const data = readJson(filepath);
+function processReferences(filepath: string, regex: RegExp, nameMap: Map<string, BookEntry>, dryRun: boolean): number {
+  const data = readJson<ReferencesFile>(filepath);
   let totalCount = 0;
 
   if (data.references) {
@@ -310,7 +348,7 @@ function processReferences(filepath, regex, nameMap, dryRun) {
 }
 
 /** Process markdown files (whole file) */
-function processMarkdown(filepath, regex, nameMap, dryRun) {
+function processMarkdown(filepath: string, regex: RegExp, nameMap: Map<string, BookEntry>, dryRun: boolean): number {
   const content = fs.readFileSync(filepath, 'utf-8');
   const { text, count } = convertText(content, regex, nameMap);
 
@@ -320,9 +358,24 @@ function processMarkdown(filepath, regex, nameMap, dryRun) {
   return count;
 }
 
+interface Prophecy {
+  explanation?: unknown;
+  reference?: unknown;
+}
+
+interface PropheciesCategory {
+  explanation?: unknown;
+  reference?: unknown;
+  prophecies?: Prophecy[];
+}
+
+interface PropheciesFile {
+  categories?: PropheciesCategory[];
+}
+
 /** Process prophecies file */
-function processProphecies(filepath, regex, nameMap, dryRun) {
-  const data = readJson(filepath);
+function processProphecies(filepath: string, regex: RegExp, nameMap: Map<string, BookEntry>, dryRun: boolean): number {
+  const data = readJson<PropheciesFile>(filepath);
   let totalCount = 0;
 
   if (data.categories) {
@@ -357,9 +410,13 @@ function processProphecies(filepath, regex, nameMap, dryRun) {
   return totalCount;
 }
 
+interface StoryFile {
+  description?: unknown;
+}
+
 /** Process story files */
-function processStory(filepath, regex, nameMap, dryRun) {
-  const data = readJson(filepath);
+function processStory(filepath: string, regex: RegExp, nameMap: Map<string, BookEntry>, dryRun: boolean): number {
+  const data = readJson<StoryFile>(filepath);
   let totalCount = 0;
 
   if (data.description) {
@@ -373,9 +430,18 @@ function processStory(filepath, regex, nameMap, dryRun) {
   return totalCount;
 }
 
+interface ThemeSection {
+  description?: unknown;
+}
+
+interface ThemeFile {
+  introduction?: unknown;
+  sections?: ThemeSection[];
+}
+
 /** Process theme files */
-function processTheme(filepath, regex, nameMap, dryRun) {
-  const data = readJson(filepath);
+function processTheme(filepath: string, regex: RegExp, nameMap: Map<string, BookEntry>, dryRun: boolean): number {
+  const data = readJson<ThemeFile>(filepath);
   let totalCount = 0;
 
   if (data.introduction) {
@@ -398,9 +464,18 @@ function processTheme(filepath, regex, nameMap, dryRun) {
   return totalCount;
 }
 
+interface PersonEvent {
+  description?: unknown;
+}
+
+interface PersonFile {
+  summary?: unknown;
+  keyEvents?: PersonEvent[];
+}
+
 /** Process person files */
-function processPerson(filepath, regex, nameMap, dryRun) {
-  const data = readJson(filepath);
+function processPerson(filepath: string, regex: RegExp, nameMap: Map<string, BookEntry>, dryRun: boolean): number {
+  const data = readJson<PersonFile>(filepath);
   let totalCount = 0;
 
   if (data.summary) {
@@ -427,17 +502,24 @@ function processPerson(filepath, regex, nameMap, dryRun) {
 // Validation
 // ============================================================
 
-function validateConvertedRefs(filepath) {
-  let content;
+/** Én [ref:...]-markering som ikke lot seg tolke. */
+interface ValidationError {
+  file: string;
+  ref: string;
+  error: string;
+}
+
+function validateConvertedRefs(filepath: string): ValidationError[] {
+  let content: string;
   try {
     if (filepath.endsWith('.json')) {
-      content = JSON.stringify(readJson(filepath));
+      content = JSON.stringify(readJson<unknown>(filepath));
     } else {
       content = fs.readFileSync(filepath, 'utf-8');
     }
   } catch { return []; }
 
-  const errors = [];
+  const errors: ValidationError[] = [];
   const refRegex = /\[ref:([^|\]]+)\|([^\]]+)\]/g;
   let match;
 
@@ -469,8 +551,16 @@ function validateConvertedRefs(filepath) {
 // Main
 // ============================================================
 
-function parseArgs(args) {
-  const options = {
+/** `pathGlob: null` betyr «alle kjente filtyper», ikke «ingen filer». */
+interface Options {
+  dryRun: boolean;
+  stats: boolean;
+  verify: boolean;
+  pathGlob: string | null;
+}
+
+function parseArgs(args: string[]): Options {
+  const options: Options = {
     dryRun: false,
     stats: false,
     verify: false,
@@ -504,11 +594,11 @@ Options:
 }
 
 /** Recursively find files matching an extension under a directory. */
-function findFiles(dir, ext) {
-  const results = [];
+function findFiles(dir: string, ext: string): string[] {
+  const results: string[] = [];
   if (!fs.existsSync(dir)) return results;
 
-  function walk(d) {
+  function walk(d: string): void {
     for (const entry of fs.readdirSync(d, { withFileTypes: true })) {
       const fullPath = path.join(d, entry.name);
       if (entry.isDirectory()) {
@@ -523,20 +613,28 @@ function findFiles(dir, ext) {
   return results.sort();
 }
 
-function main() {
+/** `byType` telles opp på filtype-etiketter som settes i `main`, derfor `Record`. */
+interface Stats {
+  filesProcessed: number;
+  filesModified: number;
+  totalRefs: number;
+  byType: Record<string, number>;
+}
+
+function main(): void {
   const args = process.argv.slice(2);
   const options = parseArgs(args);
 
   const { regex, nameMap } = buildRefRegex();
 
-  const stats = {
+  const stats: Stats = {
     filesProcessed: 0,
     filesModified: 0,
     totalRefs: 0,
     byType: {},
   };
 
-  function trackStats(type, filepath, count) {
+  function trackStats(type: string, filepath: string, count: number): void {
     stats.filesProcessed++;
     if (count > 0) {
       stats.filesModified++;
@@ -654,7 +752,7 @@ function main() {
   // Verification pass
   if (options.verify) {
     console.log('\nValidating converted references...');
-    const allErrors = [];
+    const allErrors: ValidationError[] = [];
 
     const allFiles = [
       ...findFiles(path.join(generateDir, 'verse_translation'), '.json'),

@@ -15,30 +15,60 @@ const [, , PROP, ...rest] = process.argv;
 const DRY = rest.includes('--dry');
 if (!PROP) { console.error('usage: node persons_apply_context.mjs <proposals.json> [--dry]'); process.exit(1); }
 
+/** Slektsfeltene i en profil. Alle er valgfrie — de fleste har bare noen. */
+interface PersonFamily {
+  father?: string;
+  mother?: string;
+  spouse?: string;
+  siblings?: string[];
+  children?: string[];
+}
+
+/**
+ * En personprofil slik den ligger i generate/persons/nb/<slug>.json. Bare
+ * `id` og relasjonsfeltene dette skriptet rører er tatt med — resten går
+ * uendret gjennom JSON.parse/JSON.stringify.
+ */
+interface PersonProfile {
+  id: string;
+  family?: PersonFamily;
+  relatedPersons?: string[];
+}
+
+/** Ett forslag fra persons_reconcile_context.mjs, etter revisjon. */
+interface ContextProposal {
+  referrer: string;
+  field: string;
+  slug: string;
+  match: string;
+  confidence?: string;
+  reason?: string;
+}
+
 const files = fs.readdirSync(PERSONS_DIR).filter(f => f.endsWith('.json'));
 const catalog = new Set(files.map(f => f.replace(/\.json$/, '')));
-const idToFile = new Map();
-for (const f of files) { const d = JSON.parse(fs.readFileSync(path.join(PERSONS_DIR, f), 'utf-8')); idToFile.set(d.id, f); }
+const idToFile = new Map<string, string>();
+for (const f of files) { const d = JSON.parse(fs.readFileSync(path.join(PERSONS_DIR, f), 'utf-8')) as PersonProfile; idToFile.set(d.id, f); }
 
-const props = JSON.parse(fs.readFileSync(PROP, 'utf-8'));
-const FIELD_MAP = { father: 'father', mother: 'mother', spouse: 'spouse', sibling: 'siblings', child: 'children', related: 'relatedPersons' };
+const props = JSON.parse(fs.readFileSync(PROP, 'utf-8')) as ContextProposal[];
+const FIELD_MAP: Record<string, string> = { father: 'father', mother: 'mother', spouse: 'spouse', sibling: 'siblings', child: 'children', related: 'relatedPersons' };
 
 // group by referrer file
-const byReferrer = new Map();
+const byReferrer = new Map<string, ContextProposal[]>();
 let skipped = 0;
 for (const p of props) {
   if (!p.match || p.match === 'NEW' || p.match === p.slug || !catalog.has(p.match)) { skipped++; continue; }
   const file = idToFile.get(p.referrer);
   if (!file) { skipped++; continue; }
   if (!byReferrer.has(file)) byReferrer.set(file, []);
-  byReferrer.get(file).push(p);
+  byReferrer.get(file)!.push(p);
 }
 console.log(`applicable referrers: ${byReferrer.size}, skipped entries: ${skipped}`);
 
 let filesChanged = 0, edits = 0;
 for (const [file, list] of byReferrer) {
   const fp = path.join(PERSONS_DIR, file);
-  const d = JSON.parse(fs.readFileSync(fp, 'utf-8'));
+  const d = JSON.parse(fs.readFileSync(fp, 'utf-8')) as PersonProfile;
   let n = 0;
   for (const p of list) {
     const jsonField = FIELD_MAP[p.field] || p.field;
@@ -54,7 +84,7 @@ for (const [file, list] of byReferrer) {
     }
   }
   // dedupe arrays after edits
-  if (d.family) for (const k of ['siblings', 'children']) if (Array.isArray(d.family[k])) d.family[k] = [...new Set(d.family[k])];
+  if (d.family) for (const k of ['siblings', 'children'] as const) if (Array.isArray(d.family[k])) d.family[k] = [...new Set(d.family[k])];
   if (Array.isArray(d.relatedPersons)) d.relatedPersons = [...new Set(d.relatedPersons)];
   if (n > 0) { filesChanged++; edits += n; if (!DRY) fs.writeFileSync(fp, JSON.stringify(d, null, 2)); }
 }

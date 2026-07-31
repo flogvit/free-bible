@@ -31,6 +31,36 @@ import {
     METHOD, REVIEW, EDITION_LABEL, LEGACY_TAG, RELATION,
     stripEmpty, validateMeta
 } from './translations_schema.js';
+import type {
+    MetaCoverage, MetaFeatures, MetaProvenance, MetaSource,
+    ObjectJsonSchema, TranslationMeta
+} from './translations_schema.js';
+
+/**
+ * `bibles_raw/<oversettelse>/license.json` slik den ligger på disk. Den leses,
+ * men skrives aldri herfra — lisensdata blir der de er.
+ *
+ * Alle felter er valgfrie fordi fila bare blir `JSON.parse`-et: ingenting
+ * validerer den, og kallstedene her leser da også konsekvent med `?.`.
+ */
+export interface LicenseRecord {
+    translation?: string;
+    name?: string;
+    language?: string;
+    license?: string;
+    spdx?: string;
+    attribution_required?: boolean;
+    noncommercial?: boolean;
+    kvn_renumber_ok?: boolean;
+    source?: string;
+    statement?: string;
+}
+
+/** Det `computeCoverage` måler — tallene som aldri kommer fra en modell. */
+export interface ComputedMeta {
+    coverage: MetaCoverage;
+    features: MetaFeatures;
+}
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const RAW_DIR = path.join(__dirname, 'bibles_raw');
@@ -43,14 +73,14 @@ const NT_LAST = 66;
 
 // ---------------------------------------------------------------- computed ---
 
-export function listTranslations() {
+export function listTranslations(): string[] {
     return fs.readdirSync(RAW_DIR, {withFileTypes: true})
         .filter(entry => entry.isDirectory())
         .map(entry => entry.name)
         .sort();
 }
 
-function numericEntries(dir) {
+function numericEntries(dir: string): number[] {
     return fs.readdirSync(dir)
         .filter(name => /^\d+$/.test(name))
         .map(Number)
@@ -61,7 +91,7 @@ function numericEntries(dir) {
  * Read the whole translation once: book/chapter/verse counts plus feature detection.
  * Pure file IO — no LLM involved, so these numbers are always trustworthy.
  */
-export function computeCoverage(translation) {
+export function computeCoverage(translation: string): ComputedMeta {
     const translationDir = path.join(RAW_DIR, translation);
     const bookIds = numericEntries(translationDir);
 
@@ -106,16 +136,20 @@ export function computeCoverage(translation) {
     };
 }
 
-const range = (from, to) => Array.from({length: to - from + 1}, (_, i) => from + i);
+const range = (from: number, to: number): number[] => Array.from({length: to - from + 1}, (_, i) => from + i);
 
-function readJson(file) {
+/**
+ * `T` er en påstand om hva fila inneholder, ikke en kontroll: `JSON.parse` gir
+ * `any`, og ingenting validerer resultatet. Kallstedet bestemmer formen.
+ */
+function readJson<T>(file: string): T | null {
     if (!fs.existsSync(file)) return null;
-    return JSON.parse(fs.readFileSync(file, 'utf-8'));
+    return JSON.parse(fs.readFileSync(file, 'utf-8')) as T;
 }
 
 // ------------------------------------------------------------------ prompts ---
 
-const enumList = (label, values) => `${label}: ${values.join(' | ')}`;
+const enumList = (label: string, values: readonly string[]): string => `${label}: ${values.join(' | ')}`;
 
 const VOCABULARY = [
     enumList('philosophy', PHILOSOPHY),
@@ -143,7 +177,7 @@ const RULES = `Rules:
 - legacy[].text is exactly one factual sentence, in Norwegian bokmål.
 - editions[] is the revision history, one entry per published edition.`;
 
-function pass1Prompt(translation, license, computed, siblings) {
+function pass1Prompt(translation: string, license: LicenseRecord | null, computed: ComputedMeta, siblings: string[]): string {
     return `You are cataloguing a Bible translation for a public reference website.
 
 Translation id: ${translation}
@@ -176,7 +210,7 @@ ${KNOWLEDGE_FIELDS.join(', ')}
 For an obscure translation it is correct to return almost nothing. Do not pad.`;
 }
 
-function pass2SearchPrompt(translation, license, draft) {
+function pass2SearchPrompt(translation: string, license: LicenseRecord | null, draft: TranslationMeta): string {
     const uncertain = draft.uncertain?.length ? draft.uncertain.join(', ') : '(none flagged)';
     return `Verify facts about a Bible translation by searching the web.
 
@@ -200,7 +234,7 @@ Do not report a fact you did not find on a page you retrieved. "Not found" is a
 useful and expected answer.`;
 }
 
-function pass2MergePrompt(translation, draft, findings, urls) {
+function pass2MergePrompt(translation: string, draft: TranslationMeta, findings: string, urls: string[]): string {
     return `Produce the final catalogue record for Bible translation "${translation}".
 
 Draft from memory:
@@ -229,8 +263,17 @@ Merge the findings into the draft:
 
 // --------------------------------------------------------------- generation ---
 
+/**
+ * Svaret på sammensmeltings-prompten: de samme faktafeltene som meta.json,
+ * pluss modellens egen kildeføring. `uncertain` er byttet ut med `verified`.
+ */
+interface MergeResult extends TranslationMeta {
+    verified?: string[];
+    sources?: MetaSource[];
+}
+
 const {uncertain: _uncertain, ...MERGE_PROPS} = META_SCHEMA.properties;
-const MERGE_SCHEMA = {
+const MERGE_SCHEMA: ObjectJsonSchema = {
     type: 'object',
     additionalProperties: false,
     properties: {
@@ -252,12 +295,13 @@ const MERGE_SCHEMA = {
     required: ['verified', 'sources']
 };
 
-const today = () => new Date().toISOString().slice(0, 10);
+const today = (): string => new Date().toISOString().slice(0, 10);
 
 /** Keep only field paths the schema knows about, so provenance stays meaningful. */
-const knownPaths = (paths) => [...new Set((paths ?? []).filter(p => KNOWLEDGE_FIELDS.includes(p)))];
+const knownPaths = (paths?: readonly string[] | null): string[] =>
+    [...new Set((paths ?? []).filter(p => KNOWLEDGE_FIELDS.includes(p)))];
 
-function buildFromSeed(translation, seed, computed, license) {
+function buildFromSeed(translation: string, seed: TranslationMeta, computed: ComputedMeta, license: LicenseRecord | null): TranslationMeta {
     const {provenance, ...facts} = seed;
     return assemble(facts, computed, license, {
         ...provenance,
@@ -266,7 +310,14 @@ function buildFromSeed(translation, seed, computed, license) {
     });
 }
 
-function assemble(facts, computed, license, provenance) {
+function assemble(
+    facts: TranslationMeta,
+    computed: ComputedMeta,
+    license: LicenseRecord | null,
+    // `Partial`: frø-posten sprer inn sin egen provenance-blokk, og typen kan
+    // ikke se at `method` og `generated` alltid står der. Kallstedene setter dem.
+    provenance: Partial<MetaProvenance>
+): TranslationMeta {
     // Only the fact blocks get emptied out — for those, absent means unknown.
     // coverage, features and provenance are always measured or always known, so
     // they are attached verbatim: an empty missing_books means "complete", not
@@ -279,6 +330,10 @@ function assemble(facts, computed, license, provenance) {
 
     // No id field: the translation's id is its directory name. Writing it here
     // too would let the two disagree, and nothing reads it.
+    //
+    // `as TranslationMeta`: `stripEmpty` returnerer `Stripped<T>`, som gjør ALLE
+    // nestede felter valgfrie — den kan ikke vite hvilke som overlevde. Posten
+    // går rett videre til `validateMeta`, som er den faktiske porten.
     return {
         ...cleanFacts,
         coverage: computed.coverage,
@@ -289,14 +344,24 @@ function assemble(facts, computed, license, provenance) {
             sources: provenance.sources ?? [],
             generated: provenance.generated
         }
-    };
+    } as TranslationMeta;
 }
 
-async function generate(translation, {useWeb, license, computed, siblings}) {
+/** Det `generate` trenger utenom oversettelses-id-en. */
+interface GenerateOptions {
+    useWeb: boolean;
+    license: LicenseRecord | null;
+    computed: ComputedMeta;
+    siblings: string[];
+}
+
+async function generate(translation: string, {useWeb, license, computed, siblings}: GenerateOptions): Promise<TranslationMeta> {
+    // `callWithRetry` lover bare `string | object`; skjemaet over er det som
+    // avgjør formen, så påstanden hører hjemme her.
     const draft = await callWithRetry(pass1Prompt(translation, license, computed, siblings), {
         schema: META_SCHEMA,
         context: `${translation} (pass 1)`
-    });
+    }) as TranslationMeta;
 
     const flagged = knownPaths(draft.uncertain);
     if (!useWeb || flagged.length === 0) {
@@ -319,7 +384,7 @@ async function generate(translation, {useWeb, license, computed, siblings}) {
     const merged = await callWithRetry(
         pass2MergePrompt(translation, draft, search.text, retrieved),
         {schema: MERGE_SCHEMA, context: `${translation} (pass 2 merge)`}
-    );
+    ) as MergeResult;
 
     const {verified, sources, ...facts} = merged;
     // Drop citations the search never actually fetched — the model must not
@@ -340,8 +405,16 @@ async function generate(translation, {useWeb, license, computed, siblings}) {
 
 // --------------------------------------------------------------------- main ---
 
-function parseArgs(argv) {
-    const args = {only: null, force: false, recount: false, useWeb: true};
+/** `only: null` betyr «alle oversettelser», ikke «ingen». */
+interface Args {
+    only: string[] | null;
+    force: boolean;
+    recount: boolean;
+    useWeb: boolean;
+}
+
+function parseArgs(argv: string[]): Args {
+    const args: Args = {only: null, force: false, recount: false, useWeb: true};
     for (let i = 0; i < argv.length; i++) {
         const arg = argv[i];
         if (arg === '--only') args.only = argv[++i]?.split(',').map(s => s.trim()).filter(Boolean);
@@ -353,9 +426,11 @@ function parseArgs(argv) {
     return args;
 }
 
-async function main() {
+async function main(): Promise<void> {
     const args = parseArgs(process.argv.slice(2));
-    const seeds = readJson(SEED_FILE) ?? {};
+    // Fila har også en `_comment`-nøkkel; oppslaget er på oversettelses-id, så
+    // typen beskriver postene, ikke hver nøkkel i fila.
+    const seeds = readJson<Record<string, TranslationMeta>>(SEED_FILE) ?? {};
     const allTranslations = listTranslations();
 
     if (args.only) {
@@ -368,7 +443,7 @@ async function main() {
 
     for (const translation of translations) {
         const metaFile = path.join(RAW_DIR, translation, 'meta.json');
-        const existing = readJson(metaFile);
+        const existing = readJson<TranslationMeta>(metaFile);
 
         if (existing && !args.force && !args.recount) {
             skipped++;
@@ -376,12 +451,12 @@ async function main() {
         }
 
         try {
-            const license = readJson(path.join(RAW_DIR, translation, 'license.json'));
+            const license = readJson<LicenseRecord>(path.join(RAW_DIR, translation, 'license.json'));
             process.stdout.write(`${translation}: counting... `);
             const computed = computeCoverage(translation);
             console.log(`${computed.coverage.books} books, ${computed.coverage.verses} verses`);
 
-            let meta;
+            let meta: TranslationMeta;
             if (args.recount && existing) {
                 meta = {...existing, coverage: computed.coverage, features: computed.features};
             } else if (seeds[translation]) {
@@ -408,7 +483,9 @@ async function main() {
             console.log(`  wrote meta.json (${meta.provenance?.method}, ${verified} verified field(s))`);
             written++;
         } catch (error) {
-            console.error(`${translation}: FAILED — ${error.message}`);
+            // `as Error` framfor en `instanceof`-sjekk: en sjekk ville endret
+            // hva som skrives ut for et kast som ikke er en Error.
+            console.error(`${translation}: FAILED — ${(error as Error).message}`);
             failed++;
         }
     }

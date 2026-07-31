@@ -8,6 +8,67 @@ import {books} from './constants.js';
 import {getRef} from './lib.js';
 import {callWithRetry} from './llm.js';
 import {hasEmbeddings, buildEmbeddings, loadEmbeddings, topK, topKByIndex, embedQuery} from './embeddings.js';
+import type {EmbeddingItem, EmbeddingState, TopKResult} from './embeddings.js';
+import type {Chapter, Verse} from '../kvn/src/bible-types.js';
+
+/** En kryssreferanse slik den lagres i references/nb/<bok>/<kapittel>/<vers>.json. */
+interface SemanticReference {
+    bookId: number;
+    chapterId: number;
+    fromVerseId: number;
+    toVerseId: number;
+    text: string;
+}
+
+/** Hele innholdet i en slik referansefil. */
+interface ReferencesFile {
+    bookId: number;
+    chapterId: number;
+    verseId: number;
+    references: SemanticReference[];
+}
+
+/** Ett svar per kandidat, jf. VERIFY_SCHEMA. */
+interface VerifyResult {
+    id: number;
+    analysis: string;
+    accept: boolean;
+    note: string;
+}
+
+/** Tellerne `verifyVerse` rapporterer for ett vers. */
+interface VerifyTotals {
+    found: number;
+    kept: number;
+    total: number;
+}
+
+/** Et bok-/kapittel-/versintervall fra kommandolinja, begge ender inklusive. */
+interface Range {
+    start: number;
+    end: number;
+}
+
+/** Innstillingene for en kjøring, slik `parseArgs` leser dem. */
+interface SemanticOptions {
+    buildOnly: boolean;
+    verifyOnly: boolean;
+    topK: number;
+    threshold: number;
+    neighborSkip: number;
+    useTheme: boolean;
+    useConcepts: boolean;
+    resume: boolean;
+    skipExisting: boolean;
+    bookStart: number | null;
+    bookEnd: number | null;
+    chapterStart: number | null;
+    chapterEnd: number | null;
+    verseStart: number | null;
+    verseEnd: number | null;
+    force: boolean;
+    help: boolean;
+}
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
@@ -17,19 +78,19 @@ const CORPUS = 'osnb';
 const REFERENCES_LANG_DIR = path.join(__dirname, 'references', 'nb');
 const PROGRESS_FILE = path.join(__dirname, 'embeddings', CORPUS, 'semantic_progress.json');
 
-function verseKey(v) { return `${v.bookId}-${v.chapterId}-${v.verseId}`; }
+function verseKey(v: Verse): string { return `${v.bookId}-${v.chapterId}-${v.verseId}`; }
 
-function loadProgress() {
+function loadProgress(): Set<string> {
     if (!fs.existsSync(PROGRESS_FILE)) return new Set();
     try {
-        const data = JSON.parse(fs.readFileSync(PROGRESS_FILE, 'utf-8'));
+        const data = JSON.parse(fs.readFileSync(PROGRESS_FILE, 'utf-8')) as {processed?: string[]};
         return new Set(data.processed || []);
     } catch {
         return new Set();
     }
 }
 
-function saveProgress(progressSet) {
+function saveProgress(progressSet: Set<string>): void {
     const dir = path.dirname(PROGRESS_FILE);
     if (!fs.existsSync(dir)) fs.mkdirSync(dir, {recursive: true});
     fs.writeFileSync(PROGRESS_FILE, JSON.stringify({processed: [...progressSet]}, null, 2));
@@ -76,13 +137,13 @@ const VERIFY_SCHEMA = {
     additionalProperties: false
 };
 
-function loadAllOsnb2Verses() {
-    const all = [];
+function loadAllOsnb2Verses(): Verse[] {
+    const all: Verse[] = [];
     for (const book of books) {
         for (let ch = 1; ch <= book.chapters; ch++) {
             const file = path.join(__dirname, 'bibles_raw', 'osnb', `${book.id}`, `${ch}.json`);
             if (!fs.existsSync(file)) continue;
-            const verses = JSON.parse(fs.readFileSync(file, 'utf-8'));
+            const verses = JSON.parse(fs.readFileSync(file, 'utf-8')) as Chapter;
             for (const v of verses) {
                 all.push({
                     bookId: +v.bookId,
@@ -96,7 +157,7 @@ function loadAllOsnb2Verses() {
     return all;
 }
 
-function buildVerifyPrompt(sourceVerse, candidates) {
+function buildVerifyPrompt(sourceVerse: Verse, candidates: Verse[]): string {
     const candList = candidates.map((c, i) =>
         `[${i}] ${getRef(c.bookId, c.chapterId, c.verseId)}: ${c.text}`
     ).join('\n');
@@ -135,13 +196,13 @@ KRITERIER FOR ACCEPT=false:
 Vær villig til å avvise ALLE kandidater hvis ingen er ekte. En tom referanseliste er bedre enn dårlige referanser.`;
 }
 
-function refKey(bookId, chapterId, fromVerseId, toVerseId) {
+function refKey(bookId: number, chapterId: number, fromVerseId: number, toVerseId: number): string {
     return `${bookId}-${chapterId}-${fromVerseId}-${toVerseId}`;
 }
 
-function mergeReferences(existing, fresh) {
-    const seen = new Set();
-    const merged = [];
+function mergeReferences(existing: SemanticReference[], fresh: SemanticReference[]): SemanticReference[] {
+    const seen = new Set<string>();
+    const merged: SemanticReference[] = [];
     for (const r of existing) {
         const k = refKey(r.bookId, r.chapterId, r.fromVerseId, r.toVerseId);
         if (!seen.has(k)) { seen.add(k); merged.push(r); }
@@ -153,7 +214,7 @@ function mergeReferences(existing, fresh) {
     return merged;
 }
 
-async function extractConcepts(verse) {
+async function extractConcepts(verse: Verse): Promise<string[]> {
     const prompt = `Du er bibelforsker. Dette verset skal kobles med ekte kryssreferanser. Generer 4 søkespørsmål som hver fanger en *fasett* av verset — f.eks. teologisk hovedtema, narrativ kontekst, person eller motiv, profetisk sammenheng, kontrasterende ide, etc. Hvert spørsmål skal være en kort norsk setning (15-25 ord) som beskriver hva slags vers vi leter etter for å belyse denne fasetten.
 
 VERS: ${verse.text}
@@ -164,11 +225,11 @@ Returner 4 søkespørsmål som dekker forskjellige fasetter — ikke parafraser,
         local: true,
         task: 'references',
         context: `concepts ${verse.bookId}:${verse.chapterId}:${verse.verseId}`
-    });
+    }) as {queries?: string[]};
     return result.queries || [];
 }
 
-async function extractTheme(verse) {
+async function extractTheme(verse: Verse): Promise<string> {
     const prompt = `Du er bibelforsker. Skriv en kort tematisk oppsummering (2-3 setninger på norsk) av kjernekonseptene, teologien og de sentrale motivene i dette verset. Tenk: hvilke teologiske begreper, motiver, personer og handlinger gjør verset til det det er? Vær konkret og presis — denne oppsummeringen brukes til å finne tematisk parallelle vers.
 
 VERS: ${verse.text}`;
@@ -177,20 +238,20 @@ VERS: ${verse.text}`;
         local: true,
         task: 'references',
         context: `theme ${verse.bookId}:${verse.chapterId}:${verse.verseId}`
-    });
+    }) as {theme: string};
     return result.theme;
 }
 
-async function verifyVerse(verse, state, options) {
+async function verifyVerse(verse: EmbeddingItem<Verse>, state: EmbeddingState<Verse>, options: SemanticOptions): Promise<VerifyTotals> {
     const outFile = path.join(REFERENCES_LANG_DIR, `${verse.bookId}`, `${verse.chapterId}`, `${verse.verseId}.json`);
 
-    let existing = null;
+    let existing: ReferencesFile | null = null;
     if (fs.existsSync(outFile)) {
-        try { existing = JSON.parse(fs.readFileSync(outFile, 'utf-8')); } catch { /* corrupt — ignore */ }
+        try { existing = JSON.parse(fs.readFileSync(outFile, 'utf-8')) as ReferencesFile; } catch { /* corrupt — ignore */ }
     }
 
     const skip = options.neighborSkip || 0;
-    const filter = (item) => {
+    const filter = (item: EmbeddingItem<Verse>): boolean => {
         if (skip > 0 && item.bookId === verse.bookId && item.chapterId === verse.chapterId
             && Math.abs(item.verseId - verse.verseId) <= skip) {
             return false;
@@ -206,7 +267,7 @@ async function verifyVerse(verse, state, options) {
     });
 
     // Theme-based candidates (if enabled)
-    let themeCands = [];
+    let themeCands: TopKResult[] = [];
     if (options.useTheme) {
         try {
             const theme = await extractTheme(verse);
@@ -217,12 +278,12 @@ async function verifyVerse(verse, state, options) {
                 filter: (item) => filter(item) && item.idx !== verse.idx
             });
         } catch (err) {
-            console.warn(`\n  Theme extraction failed for ${getRef(verse.bookId, verse.chapterId, verse.verseId)}: ${err.message}`);
+            console.warn(`\n  Theme extraction failed for ${getRef(verse.bookId, verse.chapterId, verse.verseId)}: ${(err as Error).message}`);
         }
     }
 
     // Concept-question candidates (if enabled): LLM generates 4 facet-queries, each gets top-K/2
-    let conceptCands = [];
+    let conceptCands: TopKResult[] = [];
     if (options.useConcepts) {
         try {
             const queries = await extractConcepts(verse);
@@ -237,13 +298,13 @@ async function verifyVerse(verse, state, options) {
                 conceptCands.push(...got);
             }
         } catch (err) {
-            console.warn(`\n  Concepts extraction failed for ${getRef(verse.bookId, verse.chapterId, verse.verseId)}: ${err.message}`);
+            console.warn(`\n  Concepts extraction failed for ${getRef(verse.bookId, verse.chapterId, verse.verseId)}: ${(err as Error).message}`);
         }
     }
 
     // Merge unique candidates from all sources
-    const seenIdx = new Set();
-    const candidates = [];
+    const seenIdx = new Set<number>();
+    const candidates: TopKResult[] = [];
     for (const c of [...textCands, ...themeCands, ...conceptCands]) {
         if (!seenIdx.has(c.idx)) { seenIdx.add(c.idx); candidates.push(c); }
     }
@@ -253,20 +314,20 @@ async function verifyVerse(verse, state, options) {
     const candidateItems = candidates.map(c => state.items[c.idx]);
     const prompt = buildVerifyPrompt(verse, candidateItems);
 
-    let result;
+    let result: {results?: VerifyResult[]};
     try {
         result = await callWithRetry(prompt, {
             schema: VERIFY_SCHEMA,
             local: true,
             task: 'references',
             context: `verify ${verse.bookId}:${verse.chapterId}:${verse.verseId}`
-        });
+        }) as {results?: VerifyResult[]};
     } catch (err) {
-        console.warn(`\n  Failed verify ${getRef(verse.bookId, verse.chapterId, verse.verseId)}: ${err.message}`);
+        console.warn(`\n  Failed verify ${getRef(verse.bookId, verse.chapterId, verse.verseId)}: ${(err as Error).message}`);
         return {found: candidates.length, kept: 0, total: existing?.references?.length || 0};
     }
 
-    const fresh = [];
+    const fresh: SemanticReference[] = [];
     for (const r of result.results || []) {
         if (!r.accept) continue;
         const c = candidateItems[r.id];
@@ -294,7 +355,7 @@ async function verifyVerse(verse, state, options) {
     return {found: candidates.length, kept: fresh.length, total: merged.length};
 }
 
-function printUsage() {
+function printUsage(): void {
     console.log(`
 Usage: node references_semantic.mjs [options]
 
@@ -326,7 +387,7 @@ Examples:
 `);
 }
 
-function parseRange(value) {
+function parseRange(value: string): Range {
     if (value.includes('-')) {
         const [start, end] = value.split('-').map(n => parseInt(n, 10));
         return {start, end};
@@ -335,8 +396,8 @@ function parseRange(value) {
     return {start: num, end: num};
 }
 
-function parseArgs(args) {
-    const opts = {
+function parseArgs(args: string[]): SemanticOptions {
+    const opts: SemanticOptions = {
         buildOnly: false,
         verifyOnly: false,
         topK: 10,
@@ -380,7 +441,7 @@ function parseArgs(args) {
     return opts;
 }
 
-async function main() {
+async function main(): Promise<void> {
     const opts = parseArgs(process.argv.slice(2));
     if (opts.help) { printUsage(); return; }
 
@@ -405,17 +466,18 @@ async function main() {
 
     if (opts.buildOnly) return;
 
-    const state = loadEmbeddings(CORPUS);
+    const state = loadEmbeddings<Verse>(CORPUS);
     console.log(`Loaded ${state.items.length} embeddings (dim ${state.dim}, model ${state.model})`);
 
-    const inScope = (v) => {
-        if (opts.bookStart !== null && (v.bookId < opts.bookStart || v.bookId > opts.bookEnd)) return false;
-        if (opts.chapterStart !== null && (v.chapterId < opts.chapterStart || v.chapterId > opts.chapterEnd)) return false;
-        if (opts.verseStart !== null && (v.verseId < opts.verseStart || v.verseId > opts.verseEnd)) return false;
+    // `!` på ...End: parseRange setter alltid begge, så er den ene ikke-null er den andre det også.
+    const inScope = (v: Verse): boolean => {
+        if (opts.bookStart !== null && (v.bookId < opts.bookStart || v.bookId > opts.bookEnd!)) return false;
+        if (opts.chapterStart !== null && (v.chapterId < opts.chapterStart || v.chapterId > opts.chapterEnd!)) return false;
+        if (opts.verseStart !== null && (v.verseId < opts.verseStart || v.verseId > opts.verseEnd!)) return false;
         return true;
     };
 
-    const progress = opts.resume ? loadProgress() : new Set();
+    const progress: Set<string> = opts.resume ? loadProgress() : new Set();
     let allInScope = state.items.filter(inScope);
     let versesToProcess = allInScope;
 

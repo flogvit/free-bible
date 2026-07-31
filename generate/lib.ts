@@ -2,37 +2,57 @@ import * as fs from 'fs';
 import path from 'path';
 import {fileURLToPath} from 'url';
 import {books} from "./constants.js";
+import type {Verse, Chapter} from '../kvn/src/bible-types.js';
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 
-const cache = {}
+/** Et sammenhengende intervall av bok-id-er, begge ender inklusive. */
+export interface BookRange {
+    from: number;
+    to: number;
+}
 
-export function getOriginalVerse(bookId, chapterId, verseId) {
+/** Ett kapittel utpekt av bok-id og kapittelnummer (ikke kapittelets innhold). */
+export interface ChapterRef {
+    bookId: number;
+    chapter: number;
+}
+
+/**
+ * Nøkkelen er det absolutte filnavnet kapitlet ble lest fra, så oppslaget er
+ * dynamisk og trenger `Record`.
+ */
+const cache: Record<string, Chapter> = {}
+
+export function getOriginalVerse(bookId: number, chapterId: number, verseId: number): Verse | undefined {
     let filename = ""
     if (bookId<40) {
         filename = path.join(__dirname, "bibles_raw", "hebrew", `${bookId}`, `${chapterId}.json`)
     } else {
         filename = path.join(__dirname, "bibles_raw", "sblgnt", `${bookId}`, `${chapterId}.json`)
     }
-    const verses = cache[filename] ? cache[filename] : JSON.parse(fs.readFileSync(filename, 'utf-8'));
+    const verses: Chapter = cache[filename] ? cache[filename] : JSON.parse(fs.readFileSync(filename, 'utf-8'));
     if (!(filename in cache))
         cache[filename] = verses
     return verses.find( verse => +verse.bookId===+bookId && +verse.chapterId===+chapterId && +verse.verseId===+verseId)
 }
 
-export function getRef(bookId, chapterId, verseId) {
-    return `${books.find(book => book.id===+bookId).name} ${chapterId}:${verseId}`
+export function getRef(bookId: number, chapterId: number, verseId: number): string {
+    // `!` er en ren typepåstand og endrer ingenting: finnes ikke bok-id-en i
+    // `books`, kastet dette uttrykket på `.name` også før typene kom til.
+    // Påstanden dokumenterer den eksisterende oppførselen, den innfører den ikke.
+    return `${books.find(book => book.id===+bookId)!.name} ${chapterId}:${verseId}`
 }
 
-export function getOriginalChapter(bookId, chapterId) {
+export function getOriginalChapter(bookId: number, chapterId: number): Chapter {
     let filename = ""
     if (bookId<40) {
         filename = path.join(__dirname, "bibles_raw", "hebrew", `${bookId}`, `${chapterId}.json`)
     } else {
         filename = path.join(__dirname, "bibles_raw", "sblgnt", `${bookId}`, `${chapterId}.json`)
     }
-    const verses = cache[filename] ? cache[filename] : JSON.parse(fs.readFileSync(filename, 'utf-8'));
+    const verses: Chapter = cache[filename] ? cache[filename] : JSON.parse(fs.readFileSync(filename, 'utf-8'));
     if (!(filename in cache))
         cache[filename] = verses
     return verses.filter( verse => +verse.bookId===+bookId && +verse.chapterId===+chapterId)
@@ -42,10 +62,10 @@ export function getOriginalChapter(bookId, chapterId) {
  * Get osnb verse text by bookId, chapterId, verseId.
  * Returns { bookId, chapterId, verseId, text } or null.
  */
-export function getOsnb2Verse(bookId, chapterId, verseId) {
+export function getOsnb2Verse(bookId: number, chapterId: number, verseId: number): Verse | null {
     const filename = path.join(__dirname, "bibles_raw", "osnb", `${bookId}`, `${chapterId}.json`);
     if (!fs.existsSync(filename)) return null;
-    const verses = cache[filename] ? cache[filename] : JSON.parse(fs.readFileSync(filename, 'utf-8'));
+    const verses: Chapter = cache[filename] ? cache[filename] : JSON.parse(fs.readFileSync(filename, 'utf-8'));
     if (!(filename in cache)) cache[filename] = verses;
     return verses.find(v => +v.bookId === +bookId && +v.chapterId === +chapterId && +v.verseId === +verseId) || null;
 }
@@ -54,16 +74,18 @@ export function getOsnb2Verse(bookId, chapterId, verseId) {
  * Get osnb verses in a range [verseStart..verseEnd] for a chapter.
  * Returns array of { bookId, chapterId, verseId, text }.
  */
-export function getOsnb2VerseRange(bookId, chapterId, verseStart, verseEnd) {
+export function getOsnb2VerseRange(bookId: number, chapterId: number, verseStart: number, verseEnd: number): Chapter {
     const filename = path.join(__dirname, "bibles_raw", "osnb", `${bookId}`, `${chapterId}.json`);
     if (!fs.existsSync(filename)) return [];
-    const verses = cache[filename] ? cache[filename] : JSON.parse(fs.readFileSync(filename, 'utf-8'));
+    const verses: Chapter = cache[filename] ? cache[filename] : JSON.parse(fs.readFileSync(filename, 'utf-8'));
     if (!(filename in cache)) cache[filename] = verses;
     return verses.filter(v => +v.bookId === +bookId && +v.chapterId === +chapterId && +v.verseId >= verseStart && +v.verseId <= verseEnd);
 }
 
 // Book ranges for convenient reference
-export const bookRanges = {
+// `Record<string, …>` framfor de utledede nøkkellitteralene: `resolveBookRange`
+// slår opp med en vilkårlig streng fra leseplan-konfigurasjonen.
+export const bookRanges: Record<string, BookRange> = {
     // GT sections
     gt: { from: 1, to: 39 },
     mosebokene: { from: 1, to: 5 },
@@ -95,8 +117,8 @@ export const bookRanges = {
 /**
  * Get all chapters for a book range
  */
-export function getChaptersForRange(range) {
-    const chapters = [];
+export function getChaptersForRange(range: BookRange): ChapterRef[] {
+    const chapters: ChapterRef[] = [];
     for (const book of books) {
         if (book.id >= range.from && book.id <= range.to) {
             for (let ch = 1; ch <= book.chapters; ch++) {
@@ -110,8 +132,8 @@ export function getChaptersForRange(range) {
 /**
  * Get all chapters for specific book IDs
  */
-export function getChaptersForBooks(bookIds) {
-    const chapters = [];
+export function getChaptersForBooks(bookIds: number[]): ChapterRef[] {
+    const chapters: ChapterRef[] = [];
     for (const bookId of bookIds) {
         const book = books.find(b => b.id === bookId);
         if (book) {
@@ -126,7 +148,7 @@ export function getChaptersForBooks(bookIds) {
 /**
  * Resolve book range from string key or object
  */
-export function resolveBookRange(config) {
+export function resolveBookRange(config: string | BookRange): BookRange {
     if (typeof config === 'string') {
         return bookRanges[config];
     }
@@ -151,7 +173,7 @@ export function resolveBookRange(config) {
  * Samme regel som `slugify()` i `contrib/export.mjs`, som avkorter til 60 tegn
  * for verk-id-er. Person-id-er avkortes ikke — de er allerede publiserte URL-er.
  */
-export function nameToId(name) {
+export function nameToId(name: string): string {
     return String(name)
         // Bare balanserte, innerste parenteser. `[^)]*` spiste fra ytre `(` til
         // indre `)`, så «Jotam (Jerubbaals (Gideons) yngste sønn …)» mistet

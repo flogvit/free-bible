@@ -41,18 +41,131 @@ dotenv.config();
 import {bibles, books, getTaskModel, getLanguageCode} from './constants.js';
 import {callWithRetry, resolveLocalModel} from './llm.js';
 import {loadUkvnMapping, UkvnMapper, CrossMapper, ukvnEncode, ukvnDecode} from '../kvn/src/ukvn.js';
+import type {Book} from './constants.js';
+import type {Chapter, Verse} from '../kvn/src/bible-types.js';
+
+/** Kategoriene et funn kan ha — samme sett som enum-en i TRIAGE_SCHEMA. */
+export type TriageCategory =
+    | 'omission'
+    | 'addition'
+    | 'numerals'
+    | 'awkward'
+    | 'name'
+    | 'grammar'
+    | 'meaning'
+    | 'other';
+
+/** Ett funn: hva slags problem det er, og hva det består i. */
+export interface TriageIssue {
+    category: TriageCategory;
+    detail: string;
+}
+
+/** En språkspesifikk regelsjekk i LANGUAGE_CHECKS. */
+interface LanguageCheck {
+    pattern: RegExp;
+    category: TriageCategory;
+    detail: string;
+}
+
+/** Svaret modellen gir, jf. TRIAGE_SCHEMA. */
+interface TriageModelResult {
+    score: number;
+    issues: TriageIssue[];
+}
+
+/** En tidligere dom på verset, slik den arkiveres i `verdict.history`. */
+interface TriageHistoryEntry {
+    score: number;
+    issues: TriageIssue[];
+    model: string;
+    at: string;
+}
+
+/** Dommen som legges på verset som `triage`. */
+interface TriageVerdict {
+    score: number;
+    issues: TriageIssue[];
+    flagged: boolean;
+    model: string;
+    at: string;
+    history?: TriageHistoryEntry[];
+}
+
+/**
+ * Et vers med triage-feltet påhengt.
+ *
+ * `triage` står ikke i den delte versdatatypen fordi det bare er dette skriptet
+ * som skriver og leser det; resten av verset er den delte formen.
+ */
+interface TriagedVerse extends Verse {
+    triage?: TriageVerdict;
+}
+
+/** Et peer-treff: teksten, om mappingen var delvis, og hvor den lå. */
+interface PeerHit {
+    text: string;
+    partial: boolean;
+    ref: string;
+}
+
+/** Oppslagsfunksjonen `createPeerLookup` gir fra seg. */
+type PeerLookup = (bookId: number, chapterId: number, verseId: number) => PeerHit | null;
+
+/** Tellerne en kapittelkjøring rapporterer tilbake. */
+interface TriageTotals {
+    scanned: number;
+    flagged: number;
+    dropped: number;
+    mechanical: number;
+}
+
+/** Et bok-/kapittel-/versintervall fra kommandolinja, begge ender inklusive. */
+interface Range {
+    start: number;
+    end: number;
+}
+
+/**
+ * Innstillingene for en kjøring.
+ *
+ * De tre siste feltene har ingen flagg — `main()` utleder dem av de andre før
+ * første kapittel kjøres.
+ */
+interface TriageOptions {
+    bible: string | null;
+    model: string | null;
+    minScore: number;
+    drop: boolean;
+    recheck: boolean;
+    peer: string | null;
+    noPeer: boolean;
+    reference: string;
+    ot: boolean;
+    nt: boolean;
+    bookStart: number | null;
+    bookEnd: number | null;
+    chapterStart: number | null;
+    chapterEnd: number | null;
+    verseStart: number | null;
+    verseEnd: number | null;
+    help: boolean;
+    referenceLanguage: string;
+    sourceMapping: string;
+    peerLookup: PeerLookup;
+}
 
 // Same-language comparison translation, per target language. Chosen for closeness in
 // register and length: measured against osen, bsb has a median length ratio of 1.00
 // (IQR 0.95-1.04), where a cross-language reference like osnb sits at 1.14.
-const PEERS = {
+const PEERS: Record<string, string> = {
     en: 'bsb',
     nb: 'dnb30',
     nn: 'dnb30'
 };
 
 // Register and convention checks that only make sense for one language.
-const LANGUAGE_CHECKS = {
+const LANGUAGE_CHECKS: Record<string, LanguageCheck[]> = {
     en: [
         {
             pattern: /\b(thee|thou|thy|thine|ye|hath|doth|saith|shalt|wilt|whosoever|wherefore|thence|hither|verily|betwixt)\b/i,
@@ -94,8 +207,8 @@ export const TRIAGE_SCHEMA = {
 const HEB_GREEK = /[֐-׿Ͱ-Ͽἀ-῿]/;
 const LONG_SENTENCE_WORDS = 45;
 
-export function mechanicalIssues(text, langCode) {
-    const found = [];
+export function mechanicalIssues(text: string, langCode: string): TriageIssue[] {
+    const found: TriageIssue[] = [];
     if (!text || !text.trim()) {
         found.push({category: 'omission', detail: 'Verse text is empty.'});
         return found;
@@ -131,7 +244,7 @@ export function mechanicalIssues(text, langCode) {
 
 // --- layer 2: length against a same-language peer ---
 
-export function lengthOutlier(text, peerText) {
+export function lengthOutlier(text: string, peerText: string | undefined): TriageIssue | null {
     if (!peerText || !text) return null;
     const ratio = text.length / peerText.length;
     // Measured spread against bsb is 0.95-1.04; these bounds only catch real outliers.
@@ -146,7 +259,14 @@ export function lengthOutlier(text, peerText) {
 
 // --- layer 3: prompt ---
 
-export function buildPrompt(language, original, verse, peerText, referenceText, referenceLanguage) {
+export function buildPrompt(
+    language: string,
+    original: string,
+    verse: TriagedVerse,
+    peerText: string | undefined,
+    referenceText: string | undefined,
+    referenceLanguage: string
+): string {
     let history = '';
     if (verse.versions?.length) {
         history += `\nEARLIER TRANSLATIONS OF THIS VERSE, already replaced — do NOT ask for any of them back:\n`;
@@ -201,11 +321,15 @@ ${peerText ? `\nAnother ${language} translation:\n${peerText}\n` : ''}${referenc
 
 // --- core ---
 
-function getOriginalSource(bookId) {
+function getOriginalSource(bookId: number): string {
     return bookId <= 39 ? 'hebrew' : 'sblgnt';
 }
 
-function readJson(file) {
+/**
+ * `T` er formen kalleren vet fila har. Innholdet valideres ikke — funksjonen
+ * påstår bare typen, akkurat som det utypede `JSON.parse` gjorde før.
+ */
+function readJson<T = unknown>(file: string): T | null {
     if (!fs.existsSync(file)) return null;
     try {
         return JSON.parse(fs.readFileSync(file, 'utf-8'));
@@ -224,26 +348,27 @@ function readJson(file) {
  * mapping instead — and a mapped verse can land in another chapter, so chapters are
  * loaded on demand rather than assumed to match.
  */
-export function createPeerLookup(peerBible, sourceMappingId) {
+export function createPeerLookup(peerBible: string | null, sourceMappingId: string): PeerLookup {
     if (!peerBible) return () => null;
 
-    let cross;
+    let cross: CrossMapper;
     try {
         const source = new UkvnMapper(loadUkvnMapping(sourceMappingId));
         const target = new UkvnMapper(loadUkvnMapping(peerBible));
         cross = new CrossMapper(source, target);
     } catch (error) {
-        console.warn(`No KVN mapping for ${peerBible} or ${sourceMappingId} (${error.message}) — peer comparison disabled.`);
+        console.warn(`No KVN mapping for ${peerBible} or ${sourceMappingId} (${(error as Error).message}) — peer comparison disabled.`);
         return () => null;
     }
 
-    const cache = new Map();
-    const chapterOf = (bookId, chapterId) => {
+    const cache = new Map<string, Chapter>();
+    const chapterOf = (bookId: number, chapterId: number): Chapter => {
         const key = `${bookId}/${chapterId}`;
         if (!cache.has(key)) {
-            cache.set(key, readJson(`bibles_raw/${peerBible}/${bookId}/${chapterId}.json`) || []);
+            cache.set(key, readJson<Chapter>(`bibles_raw/${peerBible}/${bookId}/${chapterId}.json`) || []);
         }
-        return cache.get(key);
+        // `!` er ren typepåstand: nøkkelen ble nettopp satt hvis den manglet.
+        return cache.get(key)!;
     };
 
     return (bookId, chapterId, verseId) => {
@@ -258,28 +383,30 @@ export function createPeerLookup(peerBible, sourceMappingId) {
     };
 }
 
-async function triageChapter(bible, bookId, chapterId, options) {
+async function triageChapter(bible: string, bookId: number, chapterId: number, options: TriageOptions): Promise<TriageTotals | null> {
     const language = bibles[bible];
     const langCode = getLanguageCode(language);
     const filename = `bibles_raw/${bible}/${bookId}/${chapterId}.json`;
-    const verses = readJson(filename);
+    const verses = readJson<TriagedVerse[]>(filename);
     if (!verses) return null;
 
-    const originals = readJson(`bibles_raw/${getOriginalSource(bookId)}/${bookId}/${chapterId}.json`) || [];
+    const originals = readJson<Chapter>(`bibles_raw/${getOriginalSource(bookId)}/${bookId}/${chapterId}.json`) || [];
     // The reference shares this bible's versification, so it needs no mapping.
-    const references = options.reference ? readJson(`bibles_raw/${options.reference}/${bookId}/${chapterId}.json`) || [] : [];
+    const references: Chapter = options.reference ? readJson<Chapter>(`bibles_raw/${options.reference}/${bookId}/${chapterId}.json`) || [] : [];
 
     const scope = verses.filter(v => {
-        if (options.verseStart !== null && (+v.verseId < options.verseStart || +v.verseId > options.verseEnd)) return false;
+        // `!` på verseEnd: de to settes alltid sammen av --verse, så er den ene
+        // ikke-null er den andre det heller.
+        if (options.verseStart !== null && (+v.verseId < options.verseStart || +v.verseId > options.verseEnd!)) return false;
         if (!options.recheck && v.triage) return false;
         return true;
     });
     if (scope.length === 0) return null;
 
-    const label = `${(books.find(b => b.id === bookId) || {}).name || bookId} ${chapterId}`;
+    const label = `${(books.find(b => b.id === bookId) || {} as Partial<Book>).name || bookId} ${chapterId}`;
     process.stdout.write(`${label}: ${scope.length} verses`);
 
-    const totals = {scanned: 0, flagged: 0, dropped: 0, mechanical: 0};
+    const totals: TriageTotals = {scanned: 0, flagged: 0, dropped: 0, mechanical: 0};
 
     for (const verse of scope) {
         const original = originals.find(o => +o.verseId === +verse.verseId);
@@ -297,25 +424,27 @@ async function triageChapter(bible, bookId, chapterId, options) {
         if (outlier) issues.push(outlier);
         if (issues.length) totals.mechanical++;
 
-        let score = 10;
+        let score: number = 10;
         // Modellen løses opp per vers, ikke én gang: en annen jobb kan starte
         // underveis, og da adopterer vi dens modell framfor å kaste den ut. Verdien
         // havner i verse.triage.model, så det er den faktisk brukte som skal lagres.
-        let usedModel = options.model || getTaskModel('triage');
+        let usedModel: string = options.model || getTaskModel('triage');
         if (verse.text && verse.text.trim()) {
             try {
                 const prompt = buildPrompt(language, original.text, verse, peerText, referenceText, options.referenceLanguage);
-                usedModel = await resolveLocalModel('triage', {model: options.model, schema: TRIAGE_SCHEMA});
+                // `as string | undefined`: llm.js oppgir `model` som valgfri streng,
+                // mens options.model er `string | null`. Verdien går uendret videre.
+                usedModel = await resolveLocalModel('triage', {model: options.model as string | undefined, schema: TRIAGE_SCHEMA});
                 const result = await callWithRetry(prompt, {
                     schema: TRIAGE_SCHEMA,
                     local: true,
                     model: usedModel,
                     context: `triage ${bookId}:${chapterId}:${verse.verseId}`
-                });
+                }) as TriageModelResult;
                 score = typeof result.score === 'number' ? result.score : 10;
                 for (const i of result.issues || []) issues.push(i);
             } catch (error) {
-                console.warn(`\n  ${bookId}:${chapterId}:${verse.verseId} failed: ${error.message}`);
+                console.warn(`\n  ${bookId}:${chapterId}:${verse.verseId} failed: ${(error as Error).message}`);
                 continue;
             }
         } else {
@@ -328,7 +457,7 @@ async function triageChapter(bible, bookId, chapterId, options) {
         }
 
         const previous = verse.triage;
-        const verdict = {
+        const verdict: TriageVerdict = {
             score,
             issues,
             flagged: score < options.minScore,
@@ -366,7 +495,7 @@ async function triageChapter(bible, bookId, chapterId, options) {
     return totals;
 }
 
-function parseRange(value) {
+function parseRange(value: string): Range {
     if (value.includes('-')) {
         const [start, end] = value.split('-').map(n => parseInt(n, 10));
         return {start, end};
@@ -375,7 +504,7 @@ function parseRange(value) {
     return {start: n, end: n};
 }
 
-function printUsage() {
+function printUsage(): void {
     console.log(`
 Usage: npx tsx triage.mjs <bible> [options]
 
@@ -404,8 +533,10 @@ Examples:
 `);
 }
 
-async function main() {
+async function main(): Promise<void> {
     const args = process.argv.slice(2);
+    // `as TriageOptions`: referenceLanguage, sourceMapping og peerLookup har ingen
+    // flagg og settes lenger nede, etter at argumentene er lest.
     const options = {
         // model står null med vilje: bare --model skal pinne modellen. Står den
         // fylt ut på forhånd, ser resolveLocalModel det som et pin og lar være å
@@ -414,7 +545,7 @@ async function main() {
         peer: null, noPeer: false, reference: 'osnb',
         ot: false, nt: false, bookStart: null, bookEnd: null,
         chapterStart: null, chapterEnd: null, verseStart: null, verseEnd: null, help: false
-    };
+    } as TriageOptions;
 
     for (let i = 0; i < args.length; i++) {
         const a = args[i];
@@ -455,7 +586,8 @@ async function main() {
     options.peerLookup = createPeerLookup(options.peer, options.sourceMapping);
 
     let startBook = 1, endBook = 66;
-    if (options.bookStart !== null) { startBook = options.bookStart; endBook = options.bookEnd; }
+    // `!` på bookEnd: parseRange setter alltid begge, så er start ikke-null er end det heller.
+    if (options.bookStart !== null) { startBook = options.bookStart; endBook = options.bookEnd!; }
     else if (options.ot && !options.nt) endBook = 39;
     else if (options.nt && !options.ot) startBook = 40;
 
@@ -465,7 +597,7 @@ async function main() {
     console.log(`Flagging below score ${options.minScore}${options.drop ? ', dropping flagged text for re-translation' : ''}`);
     console.log('---');
 
-    const totals = {scanned: 0, flagged: 0, dropped: 0, mechanical: 0};
+    const totals: TriageTotals = {scanned: 0, flagged: 0, dropped: 0, mechanical: 0};
     for (let bookId = startBook; bookId <= endBook; bookId++) {
         const book = books.find(b => b.id === bookId);
         if (!book) continue;
@@ -473,7 +605,8 @@ async function main() {
         const last = Math.min(options.chapterEnd || book.chapters, book.chapters);
         for (let chapterId = first; chapterId <= last; chapterId++) {
             const r = await triageChapter(options.bible, bookId, chapterId, options);
-            if (r) for (const k of Object.keys(totals)) totals[k] += r[k] || 0;
+            // `as`: Object.keys gir string[], men nøklene er nettopp TriageTotals'.
+            if (r) for (const k of Object.keys(totals) as (keyof TriageTotals)[]) totals[k] += r[k] || 0;
         }
     }
 

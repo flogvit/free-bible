@@ -21,6 +21,71 @@ import { nameToId } from './lib.js';
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const PERSONS_DIR = path.join(__dirname, 'persons', 'nb');
 
+/** Slektsfeltene i en profil. Alle er valgfrie — de fleste personer har bare noen. */
+interface PersonFamily {
+  father?: string;
+  mother?: string;
+  spouse?: string;
+  siblings?: string[];
+  children?: string[];
+}
+
+/**
+ * En personprofil slik den ligger i generate/persons/nb/<slug>.json.
+ *
+ * Bare feltene denne validatoren rører er tatt med, og `id` er valgfri fordi
+ * det å mangle den er nettopp en av tingene skriptet leter etter.
+ */
+interface PersonProfile {
+  id?: string;
+  name?: string;
+  aliases?: string[];
+  family?: PersonFamily;
+  relatedPersons?: string[];
+}
+
+/** En innlest profil sammen med fila og slug-en den kom fra. */
+interface LoadedPerson {
+  file: string;
+  slug: string;
+  d: PersonProfile;
+}
+
+/** Én profil som peker på en slug, og gjennom hvilket forhold. */
+interface RefBy {
+  /** `undefined` når profilen som peker selv mangler `id`. */
+  by: string | undefined;
+  rel: string;
+}
+
+/** Hvor mange ganger en slug er referert, og av hvem. */
+interface RefInfo {
+  count: number;
+  refBy: RefBy[];
+}
+
+/** En referert slug med telleverket sitt, slik rapporten grupperer dem. */
+interface RefEntry extends RefInfo {
+  slug: string;
+}
+
+/** Slug som har nøyaktig én kandidat — trygg å skrive om. */
+interface VariantEntry extends RefEntry {
+  candidate: string;
+}
+
+/** Slug med flere kandidater — må avgjøres manuelt. */
+interface AmbiguousEntry extends RefEntry {
+  candidates: string[];
+}
+
+/** Fil hvis navn ikke stemmer med `content.id`. */
+interface DriftEntry {
+  file: string;
+  slug: string;
+  id: string;
+}
+
 const args = process.argv.slice(2);
 const VERBOSE = args.includes('--verbose');
 const worklistIdx = args.indexOf('--worklist');
@@ -31,12 +96,12 @@ const WORKLIST = worklistIdx >= 0 ? args[worklistIdx + 1] : null;
 // Display->slug. Delegerer til generatorens egen nameToId framfor å speile den:
 // denne kopien manglet translitterasjonen av ø og æ, så mirroret drev fra
 // originalen uten at noe kunne oppdage det (#25).
-export const baseSlug = (s) => nameToId(s);
+export const baseSlug = (s: string): string => nameToId(s);
 
 // Aggressive transliteration key: collapses the spelling drift between the slugs
 // the generator emitted in relations and the actual profile slugs.
 // Conservative on purpose — only well-known Norwegian<->generic pairs.
-export function phoneticKey(s) {
+export function phoneticKey(s: string): string {
   return String(s).toLowerCase()
     .replace(/\s*\([^)]*\)/g, '')
     .normalize('NFD').replace(/[̀-ͯ]/g, '')
@@ -60,42 +125,46 @@ export function phoneticKey(s) {
 // --- load ------------------------------------------------------------------
 
 const files = fs.readdirSync(PERSONS_DIR).filter(f => f.endsWith('.json'));
-const persons = [];
+const persons: LoadedPerson[] = [];
 for (const f of files) {
   const raw = fs.readFileSync(path.join(PERSONS_DIR, f), 'utf-8');
-  let d;
+  let d: PersonProfile;
   try { d = JSON.parse(raw); }
-  catch (e) { console.error(`PARSE ERROR ${f}: ${e.message}`); continue; }
+  catch (e) { console.error(`PARSE ERROR ${f}: ${(e as Error).message}`); continue; }
   persons.push({ file: f, slug: f.replace(/\.json$/, ''), d });
 }
 
 // --- structural checks -----------------------------------------------------
 
-const drift = [];          // filename != content.id
-const missingId = [];      // no content.id
-const idToFiles = new Map();
+const drift: DriftEntry[] = [];          // filename != content.id
+const missingId: string[] = [];      // no content.id
+const idToFiles = new Map<string, string[]>();
 for (const p of persons) {
   const id = p.d.id;
   if (!id) { missingId.push(p.file); continue; }
   if (id !== p.slug) drift.push({ file: p.file, slug: p.slug, id });
   if (!idToFiles.has(id)) idToFiles.set(id, []);
-  idToFiles.get(id).push(p.file);
+  // `!` er ren typepåstand: linja over har nettopp lagt inn nøkkelen.
+  idToFiles.get(id)!.push(p.file);
 }
 const dupIds = [...idToFiles.entries()].filter(([, fs]) => fs.length > 1);
 
 // --- resolution index ------------------------------------------------------
 
-const ids = new Set(persons.map(p => p.d.id).filter(Boolean));
+// `as string[]` fordi `filter(Boolean)` fjerner de tomme id-ene uten at typen
+// følger med — påstanden sier det filteret allerede gjør.
+const ids = new Set(persons.map(p => p.d.id).filter(Boolean) as string[]);
 const slugs = new Set(persons.map(p => p.slug));
 // canonical exact keys: id + filename
 const exact = new Set([...ids, ...slugs]);
 
 // phonetic index (may map to several ids -> ambiguous)
-const phonToIds = new Map();
-const addPhon = (k, id) => {
+const phonToIds = new Map<string, Set<string>>();
+const addPhon = (k: string, id: string): void => {
   if (!k) return;
   if (!phonToIds.has(k)) phonToIds.set(k, new Set());
-  phonToIds.get(k).add(id);
+  // `!` er ren typepåstand: linja over har nettopp lagt inn nøkkelen.
+  phonToIds.get(k)!.add(id);
 };
 for (const p of persons) {
   if (!p.d.id) continue;
@@ -105,8 +174,8 @@ for (const p of persons) {
   for (const a of (p.d.aliases || [])) addPhon(phoneticKey(a), p.d.id);
 }
 // prefix index: bare form -> disambiguated ids (jeroboam -> jeroboam-i, jeroboam-ii)
-function prefixCandidates(slug) {
-  const out = [];
+function prefixCandidates(slug: string): string[] {
+  const out: string[] = [];
   for (const id of ids) if (id === slug || id.startsWith(slug + '-')) out.push(id);
   return out;
 }
@@ -114,11 +183,14 @@ function prefixCandidates(slug) {
 // --- collect references with context --------------------------------------
 
 const RELS = ['father', 'mother', 'spouse', 'siblings', 'children'];
-const refs = new Map(); // slug -> { count, refBy: [{id, rel}] }
-function noteRef(slug, byId, rel) {
+const refs = new Map<string, RefInfo>(); // slug -> { count, refBy: [{id, rel}] }
+// `slug` og `byId` tar imot `undefined` fordi feltene i `family` er valgfrie;
+// vakten på første linje er den som allerede håndterer det.
+function noteRef(slug: string | undefined, byId: string | undefined, rel: string): void {
   if (!slug) return;
   if (!refs.has(slug)) refs.set(slug, { count: 0, refBy: [] });
-  const e = refs.get(slug);
+  // `!` er ren typepåstand: linja over har nettopp lagt inn nøkkelen.
+  const e = refs.get(slug)!;
   e.count++;
   e.refBy.push({ by: byId, rel });
 }
@@ -134,7 +206,7 @@ for (const p of persons) {
 
 // --- classify unresolved ---------------------------------------------------
 
-const resolved = [], variant = [], ambiguous = [], missing = [];
+const resolved: RefEntry[] = [], variant: VariantEntry[] = [], ambiguous: AmbiguousEntry[] = [], missing: RefEntry[] = [];
 for (const [slug, info] of refs) {
   if (exact.has(slug)) { resolved.push({ slug, ...info }); continue; }
   const pref = prefixCandidates(slug);
@@ -145,7 +217,7 @@ for (const [slug, info] of refs) {
   else missing.push({ slug, ...info });
 }
 
-const sortByCount = (a, b) => b.count - a.count;
+const sortByCount = (a: RefInfo, b: RefInfo): number => b.count - a.count;
 variant.sort(sortByCount); ambiguous.sort(sortByCount); missing.sort(sortByCount);
 
 // --- report ----------------------------------------------------------------

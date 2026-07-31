@@ -9,10 +9,81 @@ dotenv.config()
 
 import Anthropic from '@anthropic-ai/sdk';
 import {bibles, books, anthropicModel, maxTokens, getBookName} from "./constants.js";
+import type {Chapter, Verse} from '../kvn/src/bible-types.js';
 
 const anthropic = new Anthropic({
     apiKey: process.env.ANTHROPIC_API_KEY
 });
+
+/**
+ * Feltene i en forklaringspost. Rekkefølgen her er den samme som `fields` i
+ * getProofreadPrompt og som enumen i EXPLANATION_PROOFREAD_SCHEMA — de tre må
+ * følges ad, og typen er det som binder dem sammen.
+ */
+type ExplanationField =
+    | 'explanation'
+    | 'lostInTranslation'
+    | 'uncertainty'
+    | 'theologicalImplications'
+    | 'connections'
+    | 'culturalBackground';
+
+/** Historikknøkkelen for et felt: `connections` → `connectionsVersions`. */
+type ExplanationVersionsKey = `${ExplanationField}Versions`;
+
+type ProofreadIssueType = 'error' | 'factual' | 'suggestion' | 'addition' | 'redundant' | 'filler';
+type ProofreadSeverity = 'critical' | 'major' | 'minor';
+
+/** En tidligere lesning av ETT felt i forklaringen, eldst først. */
+interface ExplanationVersion {
+    text: string;
+    type: ProofreadIssueType;
+    severity: ProofreadSeverity;
+    explanation: string;
+}
+
+/**
+ * En forklaringspost slik den ligger i
+ * `verse_translation/<bible>/<book>/<chapter>.json`.
+ *
+ * Dette er IKKE versdataformen (`Verse`) — det er en egen fil med ett innslag
+ * per vers, der hvert felt har sin egen versjonshistorikk.
+ */
+interface VerseExplanation {
+    verseId: number;
+    explanation?: string;
+    lostInTranslation?: string;
+    uncertainty?: string;
+    theologicalImplications?: string;
+    connections?: string;
+    culturalBackground?: string;
+    explanationVersions?: ExplanationVersion[];
+    lostInTranslationVersions?: ExplanationVersion[];
+    uncertaintyVersions?: ExplanationVersion[];
+    theologicalImplicationsVersions?: ExplanationVersion[];
+    connectionsVersions?: ExplanationVersion[];
+    culturalBackgroundVersions?: ExplanationVersion[];
+}
+
+interface ProofreadIssue {
+    verseId: number;
+    field: ExplanationField;
+    type: ProofreadIssueType;
+    severity: ProofreadSeverity;
+    current: string;
+    suggested: string;
+    explanation: string;
+}
+
+interface ProofreadResult {
+    issues: ProofreadIssue[];
+    summary: string;
+    /** Skjemaet krever den, men koden sjekker likevel null/undefined før den skrives ut. */
+    score?: number | null;
+}
+
+/** JSON-schema slik SDK-en vil ha det i `output_config.format`. */
+type JsonSchema = Record<string, unknown>;
 
 const MAX_RETRIES = 3;
 const MAX_VERSES_PER_BATCH = 15; // Keep batches small for detailed explanations
@@ -69,11 +140,11 @@ const EXPLANATION_PROOFREAD_SCHEMA = {
     additionalProperties: false
 };
 
-function getOriginalSource(bookId) {
+function getOriginalSource(bookId: number): string {
     return bookId <= 39 ? 'hebrew' : 'sblgnt';
 }
 
-function readOriginalChapter(bookId, chapterId) {
+function readOriginalChapter(bookId: number, chapterId: number): Chapter | null {
     const source = getOriginalSource(bookId);
     const sourceFile = path.join(__dirname, `bibles_raw/${source}/${bookId}/${chapterId}.json`);
 
@@ -84,7 +155,7 @@ function readOriginalChapter(bookId, chapterId) {
     return JSON.parse(fs.readFileSync(sourceFile, 'utf-8'));
 }
 
-function readTranslatedChapter(bible, bookId, chapterId) {
+function readTranslatedChapter(bible: string, bookId: number, chapterId: number): Chapter | null {
     const translationFile = path.join(__dirname, `bibles_raw/${bible}/${bookId}/${chapterId}.json`);
 
     if (!fs.existsSync(translationFile)) {
@@ -94,13 +165,13 @@ function readTranslatedChapter(bible, bookId, chapterId) {
     return JSON.parse(fs.readFileSync(translationFile, 'utf-8'));
 }
 
-function getExplanationPrompt(language, bookId, chapterId, originalVerses, translatedVerses) {
+function getExplanationPrompt(language: string, bookId: number, chapterId: number, originalVerses: Chapter, translatedVerses: Chapter): string {
     const originalLanguage = bookId <= 39 ? 'hebraisk' : 'gresk';
     const originalLanguageEn = bookId <= 39 ? 'Hebrew' : 'Greek';
 
     // Pair up verses
-    const versePairs = originalVerses.map(orig => {
-        const trans = translatedVerses.find(t => +t.verseId === +orig.verseId);
+    const versePairs = originalVerses.map((orig: Verse) => {
+        const trans = translatedVerses.find((t: Verse) => +t.verseId === +orig.verseId);
         return {
             verseId: orig.verseId,
             original: orig.text,
@@ -205,8 +276,8 @@ ${formattedPairs}`;
     return promptEn;
 }
 
-async function doAnthropicCall(content, schema) {
-    const options = {
+async function doAnthropicCall(content: string, schema: JsonSchema | null | undefined) {
+    const options: Anthropic.MessageCreateParamsNonStreaming = {
         model: anthropicModel,
         max_tokens: maxTokens,
         messages: [{ role: "user", content }]
@@ -217,8 +288,10 @@ async function doAnthropicCall(content, schema) {
     return anthropic.messages.create(options);
 }
 
-async function doAnthropicCallWithRetry(content, schema, context = '') {
-    let lastError;
+// T er formen kallstedet forventer tilbake fra JSON-svaret; skjemaet håndheves
+// på API-siden, så den er en påstand og ikke en kontroll.
+async function doAnthropicCallWithRetry<T>(content: string, schema: JsonSchema | null | undefined, context = ''): Promise<T> {
+    let lastError: unknown;
 
     for (let attempt = 1; attempt <= MAX_RETRIES; attempt++) {
         try {
@@ -226,11 +299,11 @@ async function doAnthropicCallWithRetry(content, schema, context = '') {
             if (completion.stop_reason === 'max_tokens') {
                 throw new Error('Response truncated due to max_tokens limit');
             }
-            return JSON.parse(completion.content[0].text);
+            return JSON.parse((completion.content[0] as Anthropic.TextBlock).text) as T;
         } catch (error) {
             lastError = error;
             if (attempt < MAX_RETRIES) {
-                console.log(`  Attempt ${attempt} failed (${error.message}), retrying...`);
+                console.log(`  Attempt ${attempt} failed (${(error as Error).message}), retrying...`);
                 await new Promise(resolve => setTimeout(resolve, 1000));
             }
         }
@@ -240,18 +313,18 @@ async function doAnthropicCallWithRetry(content, schema, context = '') {
     throw lastError;
 }
 
-function getOutputPath(bible, bookId, chapterId) {
+function getOutputPath(bible: string, bookId: number, chapterId: number): string {
     return path.join(__dirname, `verse_translation/${bible}/${bookId}/${chapterId}.json`);
 }
 
-function getProofreadPath(bible, bookId, chapterId) {
+function getProofreadPath(bible: string, bookId: number, chapterId: number): string {
     return path.join(__dirname, `proofread_verse_translation/${bible}/${bookId}/${chapterId}.json`);
 }
 
-function getProofreadPrompt(language, currentExplanations) {
-    const fields = ['explanation', 'lostInTranslation', 'uncertainty', 'theologicalImplications', 'connections', 'culturalBackground'];
+function getProofreadPrompt(language: string, currentExplanations: VerseExplanation[]): string {
+    const fields: ExplanationField[] = ['explanation', 'lostInTranslation', 'uncertainty', 'theologicalImplications', 'connections', 'culturalBackground'];
 
-    const formatted = currentExplanations.map(v => {
+    const formatted = currentExplanations.map((v: VerseExplanation) => {
         let entry = `Vers ${v.verseId}:`;
 
         for (const field of fields) {
@@ -259,10 +332,10 @@ function getProofreadPrompt(language, currentExplanations) {
                 entry += `\n  ${field}: ${v[field]}`;
 
                 // Show version history for this field
-                const versionsKey = `${field}Versions`;
-                if (v[versionsKey] && v[versionsKey].length > 0) {
-                    entry += `\n    VERSJONSHISTORIKK (${v[versionsKey].length} tidligere versjoner - IKKE foreslå noen av disse):`;
-                    v[versionsKey].forEach((ver, i) => {
+                const versionsKey: ExplanationVersionsKey = `${field}Versions`;
+                if (v[versionsKey] && v[versionsKey]!.length > 0) {
+                    entry += `\n    VERSJONSHISTORIKK (${v[versionsKey]!.length} tidligere versjoner - IKKE foreslå noen av disse):`;
+                    v[versionsKey]!.forEach((ver: ExplanationVersion, i: number) => {
                         entry += `\n    ${i + 1}. [${ver.type}/${ver.severity}] "${ver.text}"`;
                         if (ver.explanation) {
                             entry += `\n       Grunn: ${ver.explanation}`;
@@ -322,7 +395,7 @@ Nåværende forklaringer:
 ${formatted}`;
 }
 
-async function proofreadExplanations(bible, bookId, chapterId, filename, saveToFile = true) {
+async function proofreadExplanations(bible: string, bookId: number, chapterId: number, filename: string, saveToFile = true): Promise<ProofreadResult | null> {
     if (!fileExists(filename)) {
         console.log(`No explanation file found for ${bookId}:${chapterId}`);
         return null;
@@ -330,12 +403,12 @@ async function proofreadExplanations(bible, bookId, chapterId, filename, saveToF
 
     const language = bibles[bible];
     const bookName = getBookName(bookId, 'nb');
-    const currentExplanations = JSON.parse(fs.readFileSync(filename, 'utf-8'));
+    const currentExplanations = JSON.parse(fs.readFileSync(filename, 'utf-8')) as VerseExplanation[];
 
     console.log(`Proofreading explanations for ${bookName} ${chapterId}...`);
 
     const prompt = getProofreadPrompt(language, currentExplanations);
-    const proofreadResult = await doAnthropicCallWithRetry(prompt, EXPLANATION_PROOFREAD_SCHEMA, `proofread ${bookId}:${chapterId}`);
+    const proofreadResult = await doAnthropicCallWithRetry<ProofreadResult>(prompt, EXPLANATION_PROOFREAD_SCHEMA, `proofread ${bookId}:${chapterId}`);
 
     if (saveToFile) {
         const proofreadFile = getProofreadPath(bible, bookId, chapterId);
@@ -355,7 +428,7 @@ async function proofreadExplanations(bible, bookId, chapterId, filename, saveToF
     console.log(`Summary: ${proofreadResult.summary}`);
     if (proofreadResult.issues && proofreadResult.issues.length > 0) {
         console.log(`Issues found: ${proofreadResult.issues.length}`);
-        proofreadResult.issues.forEach((issue, i) => {
+        proofreadResult.issues.forEach((issue: ProofreadIssue, i: number) => {
             console.log(`  ${i + 1}. [${issue.severity}] Verse ${issue.verseId} (${issue.field}): ${issue.type}`);
             console.log(`     ${issue.explanation}`);
         });
@@ -364,14 +437,14 @@ async function proofreadExplanations(bible, bookId, chapterId, filename, saveToF
     return proofreadResult;
 }
 
-function applyProofreadChanges(bible, bookId, chapterId, filename, proofreadResult = null) {
+function applyProofreadChanges(bible: string, bookId: number, chapterId: number, filename: string, proofreadResult: ProofreadResult | null = null): void {
     if (!proofreadResult) {
         const proofreadFile = getProofreadPath(bible, bookId, chapterId);
         if (!fileExists(proofreadFile)) {
             console.log(`No proofread file found for ${bookId}:${chapterId}`);
             return;
         }
-        proofreadResult = JSON.parse(fs.readFileSync(proofreadFile, 'utf-8'));
+        proofreadResult = JSON.parse(fs.readFileSync(proofreadFile, 'utf-8')) as ProofreadResult;
     }
 
     if (!fileExists(filename)) {
@@ -379,7 +452,7 @@ function applyProofreadChanges(bible, bookId, chapterId, filename, proofreadResu
         return;
     }
 
-    const explanations = JSON.parse(fs.readFileSync(filename, 'utf-8'));
+    const explanations = JSON.parse(fs.readFileSync(filename, 'utf-8')) as VerseExplanation[];
 
     if (!proofreadResult.issues || proofreadResult.issues.length === 0) {
         console.log(`No changes to apply for ${bookId}:${chapterId}`);
@@ -392,14 +465,14 @@ function applyProofreadChanges(bible, bookId, chapterId, filename, proofreadResu
         // Allow empty string for deletion (filler/redundant), but skip if undefined
         if (issue.suggested === undefined || issue.suggested === null) continue;
 
-        const verse = explanations.find(v => +v.verseId === +issue.verseId);
+        const verse = explanations.find((v: VerseExplanation) => +v.verseId === +issue.verseId);
         if (!verse) {
             console.log(`  Verse ${issue.verseId} not found, skipping`);
             continue;
         }
 
         const field = issue.field;
-        const versionsKey = `${field}Versions`;
+        const versionsKey: ExplanationVersionsKey = `${field}Versions`;
 
         // Skip if suggested is same as current
         if (verse[field] === issue.suggested) continue;
@@ -420,7 +493,7 @@ function applyProofreadChanges(bible, bookId, chapterId, filename, proofreadResu
                 continue;
             }
             // Save current text to history before deletion
-            verse[versionsKey].push({
+            verse[versionsKey]!.push({
                 text: verse[field] || '',
                 type: issue.type,
                 severity: issue.severity,
@@ -433,7 +506,7 @@ function applyProofreadChanges(bible, bookId, chapterId, filename, proofreadResu
             continue;
         } else {
             // Save current text to versions history
-            verse[versionsKey].push({
+            verse[versionsKey]!.push({
                 text: verse[field] || '',
                 type: issue.type,
                 severity: issue.severity,
@@ -455,18 +528,18 @@ function applyProofreadChanges(bible, bookId, chapterId, filename, proofreadResu
     }
 }
 
-function fileExists(filepath) {
+function fileExists(filepath: string): boolean {
     return fs.existsSync(filepath) && fs.statSync(filepath).size > 0;
 }
 
-function readExistingExplanations(filepath) {
+function readExistingExplanations(filepath: string): VerseExplanation[] {
     if (fileExists(filepath)) {
-        return JSON.parse(fs.readFileSync(filepath, 'utf-8'));
+        return JSON.parse(fs.readFileSync(filepath, 'utf-8')) as VerseExplanation[];
     }
     return [];
 }
 
-async function generateExplanations(bible, bookId, chapterId, filename, force = false) {
+async function generateExplanations(bible: string, bookId: number, chapterId: number, filename: string, force = false): Promise<void> {
     const language = bibles[bible];
     const bookName = getBookName(bookId, 'nb');
 
@@ -484,11 +557,11 @@ async function generateExplanations(bible, bookId, chapterId, filename, force = 
     }
 
     // Read existing explanations
-    let existingExplanations = force ? [] : readExistingExplanations(filename);
-    const existingVerseIds = existingExplanations.map(e => +e.verseId);
+    let existingExplanations: VerseExplanation[] = force ? [] : readExistingExplanations(filename);
+    const existingVerseIds = existingExplanations.map((e: VerseExplanation) => +e.verseId);
 
     // Filter to only verses that need explanations
-    const versesToProcess = originalVerses.filter(v => !existingVerseIds.includes(+v.verseId));
+    const versesToProcess = originalVerses.filter((v: Verse) => !existingVerseIds.includes(+v.verseId));
 
     if (versesToProcess.length === 0) {
         console.log(`Skipping ${bookName} ${chapterId} (all verses already explained)`);
@@ -496,19 +569,19 @@ async function generateExplanations(bible, bookId, chapterId, filename, force = 
     }
 
     // Process in batches
-    const batches = [];
+    const batches: Chapter[] = [];
     for (let i = 0; i < versesToProcess.length; i += MAX_VERSES_PER_BATCH) {
         batches.push(versesToProcess.slice(i, i + MAX_VERSES_PER_BATCH));
     }
 
     console.log(`Generating explanations for ${bookName} ${chapterId} (${versesToProcess.length} verses in ${batches.length} batch(es))...`);
 
-    const allResults = [];
+    const allResults: VerseExplanation[] = [];
 
     for (let batchIndex = 0; batchIndex < batches.length; batchIndex++) {
         const batch = batches[batchIndex];
-        const batchTranslations = translatedVerses.filter(t =>
-            batch.some(b => +b.verseId === +t.verseId)
+        const batchTranslations = translatedVerses.filter((t: Verse) =>
+            batch.some((b: Verse) => +b.verseId === +t.verseId)
         );
 
         if (batches.length > 1) {
@@ -516,7 +589,7 @@ async function generateExplanations(bible, bookId, chapterId, filename, force = 
         }
 
         const prompt = getExplanationPrompt(language, bookId, chapterId, batch, batchTranslations);
-        const result = await doAnthropicCallWithRetry(prompt, EXPLANATION_SCHEMA, `${bookId}:${chapterId} batch ${batchIndex + 1}`);
+        const result = await doAnthropicCallWithRetry<{ verses: VerseExplanation[] }>(prompt, EXPLANATION_SCHEMA, `${bookId}:${chapterId} batch ${batchIndex + 1}`);
         allResults.push(...result.verses);
     }
 
@@ -533,7 +606,7 @@ async function generateExplanations(bible, bookId, chapterId, filename, force = 
     console.log(`Saved: ${filename}`);
 }
 
-function printUsage() {
+function printUsage(): void {
     console.log(`
 Usage: node verse_translation.mjs <bible> [options]
 
@@ -569,17 +642,36 @@ Parallel processing (run in separate terminals):
 `);
 }
 
-function parseRange(value) {
+interface Range {
+    start: number;
+    end: number;
+}
+
+function parseRange(value: string): Range {
     if (value.includes('-')) {
-        const [start, end] = value.split('-').map(n => parseInt(n, 10));
+        const [start, end] = value.split('-').map((n: string) => parseInt(n, 10));
         return {start, end};
     }
     const num = parseInt(value, 10);
     return {start: num, end: num};
 }
 
-function parseArgs(args) {
-    const options = {
+interface Options {
+    bible: string | null;
+    proofread: boolean;
+    apply: boolean;
+    ot: boolean;
+    nt: boolean;
+    bookStart: number | null;
+    bookEnd: number | null;
+    chapterStart: number | null;
+    chapterEnd: number | null;
+    force: boolean;
+    help: boolean;
+}
+
+function parseArgs(args: string[]): Options {
+    const options: Options = {
         bible: null,
         proofread: false,
         apply: false,
@@ -626,7 +718,7 @@ function parseArgs(args) {
     return options;
 }
 
-async function main() {
+async function main(): Promise<void> {
     const args = process.argv.slice(2);
     const options = parseArgs(args);
 
@@ -652,7 +744,8 @@ async function main() {
 
     if (options.bookStart !== null) {
         startBook = options.bookStart;
-        endBook = options.bookEnd;
+        // --book setter alltid begge via parseRange, så bookEnd er satt her.
+        endBook = options.bookEnd as number;
     } else if (options.ot && !options.nt) {
         startBook = 1;
         endBook = 39;
@@ -693,7 +786,7 @@ async function main() {
             }
 
             // Step 2: Proofread (if requested)
-            let proofreadResult = null;
+            let proofreadResult: ProofreadResult | null = null;
             if (options.proofread && fileExists(filename)) {
                 const saveToFile = !options.apply;
                 proofreadResult = await proofreadExplanations(options.bible, bookId, chapterId, filename, saveToFile);

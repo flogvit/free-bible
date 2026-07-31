@@ -12,6 +12,46 @@ import {callWithRetry} from "./llm.js";
 
 let useLocal = false;
 
+/**
+ * Én funn-post fra korrekturen, slik `PROOFREAD_CONTEXT_SCHEMA` under krever.
+ * Enum-verdiene er duplisert med vilje: JSON-skjemaet er avtalen med modellen,
+ * typen er den samme avtalen for kompilatoren.
+ */
+interface ProofreadIssue {
+    type: 'error' | 'suggestion' | 'factual' | 'grammar' | 'structure' | 'scope';
+    severity: 'critical' | 'major' | 'minor';
+    current: string;
+    suggested: string;
+    explanation: string;
+}
+
+/** Svaret fra korrekturkallet — samme form som `PROOFREAD_CONTEXT_SCHEMA`. */
+interface ProofreadContextResult {
+    issues: ProofreadIssue[];
+    summary: string;
+    score: number;
+    revisedContext: string;
+}
+
+/** Flaggene `parseArgs` under kjenner. */
+interface Options {
+    language: string;
+    proofread: boolean;
+    apply: boolean;
+    ot: boolean;
+    nt: boolean;
+    bookStart: number | null;
+    bookEnd: number | null;
+    force: boolean;
+    help: boolean;
+    /**
+     * Valgfritt fordi feltet ikke står i initialiseringen: det finnes bare når
+     * brukeren faktisk sender `--local`. Typen beskriver den oppførselen slik
+     * den er i dag, den endrer den ikke.
+     */
+    local?: boolean;
+}
+
 const PROOFREAD_CONTEXT_SCHEMA = {
     type: "object",
     properties: {
@@ -39,10 +79,12 @@ const PROOFREAD_CONTEXT_SCHEMA = {
 };
 
 // Get book context generation prompt
-function getContextPrompt(language, bookId) {
+function getContextPrompt(language: string, bookId: number): string {
     const bookName = getBookName(bookId, language);
     const book = books.find(b => b.id === bookId);
-    const chapterCount = book.chapters;
+    // `!` er en ren typepåstand: fantes ikke bok-id-en i `books`, kastet denne
+    // linja på `.chapters` også før typene kom til.
+    const chapterCount = book!.chapters;
     const langCode = getLanguageCode(language);
 
     const structureNb = `Skriv historisk og kulturell kontekst for hele ${bookName} (${chapterCount} kapitler) på norsk, bokmål.
@@ -160,12 +202,12 @@ Use KVN abbreviations (1 Mos, Sal, Joh, Åp etc.) in the ref part and full book 
 }
 
 // Proofread prompt for book context
-function getProofreadPrompt(language, bookId, currentContext) {
+function getProofreadPrompt(language: string, bookId: number, currentContext: string): string {
     const bookName = getBookName(bookId, language);
     const langCode = getLanguageCode(language);
 
-    let basePrompt;
-    let structureReminder;
+    let basePrompt: string;
+    let structureReminder: string;
 
     if (langCode === 'nb') {
         basePrompt = `Du er en korrekturleser for bibelkontekst. Gå gjennom følgende bok-kontekst for ${bookName}.`;
@@ -226,26 +268,28 @@ Current context:
 ${currentContext}`;
 }
 
-function getOutputPath(language, bookId) {
+function getOutputPath(language: string, bookId: number): string {
     const langCode = getLanguageCode(language);
     return path.join(__dirname, `book_context/${langCode}/${bookId}.md`);
 }
 
-function getProofreadPath(language, bookId) {
+function getProofreadPath(language: string, bookId: number): string {
     const langCode = getLanguageCode(language);
     return path.join(__dirname, `proofread_book_context/${langCode}/${bookId}.json`);
 }
 
-function fileExists(filepath) {
+function fileExists(filepath: string): boolean {
     return fs.existsSync(filepath) && fs.statSync(filepath).size > 0;
 }
 
-async function generateBookContext(language, bookId, filename) {
+async function generateBookContext(language: string, bookId: number, filename: string): Promise<void> {
     const bookName = getBookName(bookId, language);
     const prompt = getContextPrompt(language, bookId);
 
     console.log(`Generating context for ${bookName}...`);
-    const text = await callWithRetry(prompt, {local: useLocal, context: `book ${bookId}`});
+    // Uten `schema` svarer `callWithRetry` med råtekst; påstanden sier bare
+    // hvilken gren av `string | object` kallet allerede lå i.
+    const text = await callWithRetry(prompt, {local: useLocal, context: `book ${bookId}`}) as string;
 
     const dir = path.dirname(filename);
     if (!fs.existsSync(dir)) {
@@ -256,7 +300,7 @@ async function generateBookContext(language, bookId, filename) {
     console.log(`Saved: ${filename}`);
 }
 
-async function proofreadBookContext(language, bookId, contextFilename, saveToFile = true) {
+async function proofreadBookContext(language: string, bookId: number, contextFilename: string, saveToFile: boolean = true): Promise<ProofreadContextResult | null> {
     if (!fileExists(contextFilename)) {
         console.log(`No context file found for book ${bookId}`);
         return null;
@@ -268,7 +312,7 @@ async function proofreadBookContext(language, bookId, contextFilename, saveToFil
     console.log(`Proofreading context for ${bookName}...`);
 
     const prompt = getProofreadPrompt(language, bookId, currentContext);
-    const result = await callWithRetry(prompt, {schema: PROOFREAD_CONTEXT_SCHEMA, local: useLocal, context: `proofread book ${bookId}`});
+    const result = await callWithRetry(prompt, {schema: PROOFREAD_CONTEXT_SCHEMA, local: useLocal, context: `proofread book ${bookId}`}) as ProofreadContextResult;
 
     // Save proofread results if requested
     if (saveToFile) {
@@ -289,7 +333,7 @@ async function proofreadBookContext(language, bookId, contextFilename, saveToFil
     console.log(`Summary: ${result.summary}`);
     if (result.issues && result.issues.length > 0) {
         console.log(`Issues found: ${result.issues.length}`);
-        result.issues.forEach((issue, i) => {
+        result.issues.forEach((issue: ProofreadIssue, i: number) => {
             console.log(`  ${i + 1}. [${issue.severity}] ${issue.type}`);
             console.log(`     ${issue.explanation}`);
         });
@@ -298,7 +342,7 @@ async function proofreadBookContext(language, bookId, contextFilename, saveToFil
     return result;
 }
 
-function applyProofreadChanges(language, bookId, contextFilename, proofreadResult = null) {
+function applyProofreadChanges(language: string, bookId: number, contextFilename: string, proofreadResult: ProofreadContextResult | null = null): void {
     // Load proofread result from file if not provided
     if (!proofreadResult) {
         const proofreadFile = getProofreadPath(language, bookId);
@@ -306,7 +350,7 @@ function applyProofreadChanges(language, bookId, contextFilename, proofreadResul
             console.log(`No proofread file found for book ${bookId}`);
             return;
         }
-        proofreadResult = JSON.parse(fs.readFileSync(proofreadFile, 'utf-8'));
+        proofreadResult = JSON.parse(fs.readFileSync(proofreadFile, 'utf-8')) as ProofreadContextResult;
     }
 
     if (!fileExists(contextFilename)) {
@@ -326,7 +370,7 @@ function applyProofreadChanges(language, bookId, contextFilename, proofreadResul
     console.log(`Applied revisions to ${bookName}`);
 }
 
-function printUsage() {
+function printUsage(): void {
     console.log(`
 Usage: node book_context.mjs [options]
 
@@ -363,17 +407,17 @@ Parallel processing (run in separate terminals):
 `);
 }
 
-function parseRange(value) {
+function parseRange(value: string): {start: number, end: number} {
     if (value.includes('-')) {
-        const [start, end] = value.split('-').map(n => parseInt(n, 10));
+        const [start, end] = value.split('-').map((n: string) => parseInt(n, 10));
         return {start, end};
     }
     const num = parseInt(value, 10);
     return {start: num, end: num};
 }
 
-function parseArgs(args) {
-    const options = {
+function parseArgs(args: string[]): Options {
+    const options: Options = {
         language: 'Norwegian bokmål',
         proofread: false,
         apply: false,
@@ -416,7 +460,7 @@ function parseArgs(args) {
     return options;
 }
 
-async function main() {
+async function main(): Promise<void> {
     const args = process.argv.slice(2);
     const options = parseArgs(args);
 
@@ -435,7 +479,9 @@ async function main() {
 
     if (options.bookStart !== null) {
         startBook = options.bookStart;
-        endBook = options.bookEnd;
+        // `bookEnd` settes alltid sammen med `bookStart` i `parseArgs`, så
+        // grenen her kan ikke se `null`. Kompilatoren kan ikke se koblingen.
+        endBook = options.bookEnd as number;
     } else if (options.ot && !options.nt) {
         startBook = 1;
         endBook = 39;
@@ -468,7 +514,7 @@ async function main() {
         }
 
         // Step 2: Proofread (if requested)
-        let proofreadResult = null;
+        let proofreadResult: ProofreadContextResult | null = null;
         if (options.proofread && fileExists(filename)) {
             const saveToFile = !options.apply;
             proofreadResult = await proofreadBookContext(options.language, bookId, filename, saveToFile);

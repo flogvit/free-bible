@@ -9,9 +9,128 @@ dotenv.config()
 
 import {books, normalizeLanguage, getLanguageCode, getBookName, ollamaBaseUrl, ollamaModel, anthropicModel} from "./constants.js";
 import {callWithRetry, callOllamaRaw} from "./llm.js";
+import type {Chapter} from '../kvn/src/bible-types.js';
+import type {Range} from './cli.js';
+
+/**
+ * Kilden til en fotnote om tallsymbolikk.
+ *
+ * Norske identifikatorer som `Footnote.source` i versdataene, men et ANNET
+ * sett: her er kategoriene rabbinsk/kabbalistisk/arkeologisk/liturgisk, som
+ * ikke finnes i versfotnotene. Derfor en egen type, ikke `FootnoteSource`.
+ */
+type SymbolismFootnoteSource =
+    | 'rabbinsk'
+    | 'kabbalistisk'
+    | 'historisk'
+    | 'arkeologisk'
+    | 'lingvistisk'
+    | 'liturgisk'
+    | 'teologisk'
+    | 'annet';
+
+interface SymbolismFootnote {
+    text: string;
+    source: SymbolismFootnoteSource;
+}
+
+/** Et bibelsted der tallet har symbolsk betydning. */
+interface SymbolismReference {
+    bookId: number;
+    chapterId: number;
+    fromVerseId: number;
+    toVerseId: number;
+}
+
+/** En tidligere lesning av tallets betydning, eldst først. */
+interface SymbolismVersion {
+    meaning: string;
+    description: string;
+    footnotes?: SymbolismFootnote[];
+    /** Oppsummering av korrekturfunnene som utløste endringen. */
+    reason?: string;
+    score?: number;
+    date?: string;
+}
+
+/** Ett tall slik det ligger i `number_symbolism/<lang>/<tall>.json`. */
+interface SymbolismData {
+    number: number;
+    meaning: string;
+    description: string;
+    footnotes?: SymbolismFootnote[];
+    references: SymbolismReference[];
+    versions?: SymbolismVersion[];
+}
+
+interface ProofreadIssue {
+    type: 'error' | 'suggestion' | 'theological' | 'grammar' | 'missing' | 'irrelevant';
+    severity: 'critical' | 'major' | 'minor';
+    explanation: string;
+}
+
+/** Korrekturen returnerer aldri `references` — de kommer fra bibelindekseringen. */
+interface ProofreadRevised {
+    number: number;
+    meaning: string;
+    description: string;
+    footnotes: SymbolismFootnote[];
+}
+
+interface ProofreadResult {
+    issues: ProofreadIssue[];
+    summary: string;
+    score: number;
+    revised: ProofreadRevised;
+}
+
+interface MeaningResult {
+    meaning: string;
+    description: string;
+}
+
+/** Ett treff fra skanningen av en oversettelse etter et tall. */
+interface ScanMatch {
+    bookId: number;
+    chapterId: number;
+    verseId: number;
+    text: string;
+}
+
+/** Skannekandidat før de tvetydige ordene er luket bort. */
+interface ScanCandidate extends ScanMatch {
+    matchedWord: string;
+}
+
+/** Avgrensningen `--book`/`--chapter`/`--verse` gir indekseringen. */
+interface IndexRange {
+    bookStart?: number;
+    bookEnd?: number;
+    chapterStart?: number;
+    chapterEnd?: number;
+    verseStart?: number;
+    verseEnd?: number;
+}
+
+interface Options extends IndexRange {
+    language: string;
+    numbers: number[];
+    all: boolean;
+    bible: string | null;
+    scan: boolean;
+    index: boolean;
+    proofread: boolean;
+    apply: boolean;
+    force: boolean;
+    help: boolean;
+    minScore?: number;
+    maxIterations?: number;
+    /** Settes bare når `--local` er sendt — står ikke i initialiseringen. */
+    local?: boolean;
+}
 
 // Norwegian number words for scanning bible text
-const NUMBER_WORDS_NB = {
+const NUMBER_WORDS_NB: Record<number, string[]> = {
     1: ['en', 'ett', 'én', 'étt', 'ene', 'eneste', 'første'],
     2: ['to', 'andre', 'annen', 'annet', 'begge', 'dobbelt', 'par'],
     3: ['tre', 'tredje', 'tretten', 'tredobbelt'],
@@ -112,7 +231,7 @@ const PROOFREAD_SCHEMA = {
 };
 
 // Ask Ollama to verify if a word in context is used as a number
-async function ollamaIsNumber(word, sentence) {
+async function ollamaIsNumber(word: string, sentence: string): Promise<boolean> {
     const prompt = `I denne setningen: "${sentence}"
 
 Er ordet "${word}" brukt som et tall/mengde (f.eks. "tre dager" = tallet 3), eller er det et annet ord (f.eks. "et tre" = trevirke/plante)?
@@ -123,7 +242,7 @@ Svar kun med "tall" eller "ikke tall". Ikke forklar.`;
         const answer = await callOllamaRaw(prompt);
         return answer.toLowerCase().includes('tall') && !answer.toLowerCase().includes('ikke');
     } catch (error) {
-        console.warn(`  Ollama unavailable, keeping match: ${error.message}`);
+        console.warn(`  Ollama unavailable, keeping match: ${(error as Error).message}`);
         return true;
     }
 }
@@ -132,7 +251,7 @@ Svar kun med "tall" eller "ikke tall". Ikke forklar.`;
 const AMBIGUOUS_WORDS = new Set(['tre', 'en', 'ett', 'én', 'étt', 'par', 'ti']);
 
 // Scan a bible translation for verses containing a specific number
-async function scanBibleForNumber(bible, number) {
+async function scanBibleForNumber(bible: string, number: number): Promise<ScanMatch[]> {
     const bibleDir = path.join(__dirname, 'bibles_raw', bible);
     if (!fs.existsSync(bibleDir)) {
         console.error(`Bible translation not found: ${bibleDir}`);
@@ -141,7 +260,7 @@ async function scanBibleForNumber(bible, number) {
 
     const numStr = String(number);
     const words = NUMBER_WORDS_NB[number] || [];
-    const candidates = [];
+    const candidates: ScanCandidate[] = [];
 
     for (const book of books) {
         const bookDir = path.join(bibleDir, String(book.id));
@@ -151,13 +270,13 @@ async function scanBibleForNumber(bible, number) {
             const chapterFile = path.join(bookDir, `${chapterId}.json`);
             if (!fs.existsSync(chapterFile)) continue;
 
-            const verses = JSON.parse(fs.readFileSync(chapterFile, 'utf-8'));
+            const verses: Chapter = JSON.parse(fs.readFileSync(chapterFile, 'utf-8'));
             for (const verse of verses) {
                 const text = verse.text.toLowerCase();
                 // Check for the number as digits (word boundary)
                 const digitRegex = new RegExp(`\\b${numStr}\\b`);
                 let found = digitRegex.test(text);
-                let matchedWord = found ? numStr : null;
+                let matchedWord: string | null = found ? numStr : null;
 
                 // Check for number words
                 if (!found) {
@@ -177,7 +296,9 @@ async function scanBibleForNumber(bible, number) {
                         chapterId: verse.chapterId,
                         verseId: verse.verseId,
                         text: verse.text,
-                        matchedWord
+                        // `found` er bare true etter at matchedWord er satt, så
+                        // kandidaten har alltid et ord — det ser kompilatoren ikke.
+                        matchedWord: matchedWord as string
                     });
                 }
             }
@@ -213,7 +334,7 @@ async function scanBibleForNumber(bible, number) {
     return safe.map(({matchedWord, ...rest}) => rest);
 }
 
-function getGeneratePrompt(language, number, scanResults) {
+function getGeneratePrompt(language: string, number: number, scanResults: ScanMatch[]): string {
     const langCode = getLanguageCode(language);
 
     let scanContext = '';
@@ -262,7 +383,7 @@ Return a JSON object with: number (integer), meaning (short symbolic meaning), d
     }
 }
 
-function getProofreadPrompt(language, number, currentData) {
+function getProofreadPrompt(language: string, number: number, currentData: SymbolismData): string {
     const langCode = getLanguageCode(language);
 
     // Build version history context
@@ -341,29 +462,29 @@ ${dataJson}`;
 // Shared local flag, set from parseArgs
 let useLocal = false;
 
-function getOutputPath(language, number) {
+function getOutputPath(language: string, number: number): string {
     const langCode = getLanguageCode(language);
     return path.join(__dirname, `number_symbolism/${langCode}/${number}.json`);
 }
 
-function getProofreadPath(language, number) {
+function getProofreadPath(language: string, number: number): string {
     const langCode = getLanguageCode(language);
     return path.join(__dirname, `proofread_number_symbolism/${langCode}/${number}.json`);
 }
 
-function fileExists(filepath) {
+function fileExists(filepath: string): boolean {
     return fs.existsSync(filepath) && fs.statSync(filepath).size > 0;
 }
 
-function ensureDir(filepath) {
+function ensureDir(filepath: string): void {
     const dir = path.dirname(filepath);
     if (!fs.existsSync(dir)) {
         fs.mkdirSync(dir, {recursive: true});
     }
 }
 
-async function generateSymbolism(language, number, filename, bible) {
-    let scanResults = [];
+async function generateSymbolism(language: string, number: number, filename: string, bible: string | null): Promise<void> {
+    let scanResults: ScanMatch[] = [];
     if (bible) {
         console.log(`Scanning ${bible} for number ${number}...`);
         scanResults = await scanBibleForNumber(bible, number);
@@ -373,7 +494,7 @@ async function generateSymbolism(language, number, filename, bible) {
     const prompt = getGeneratePrompt(language, number, scanResults);
 
     console.log(`Generating symbolism for number ${number}...`);
-    const result = await callWithRetry(prompt, {schema: SYMBOLISM_SCHEMA, local: useLocal, context: `number ${number}`});
+    const result = await callWithRetry(prompt, {schema: SYMBOLISM_SCHEMA, local: useLocal, context: `number ${number}`}) as SymbolismData;
 
     ensureDir(filename);
     fs.writeFileSync(filename, JSON.stringify(result, null, 2));
@@ -381,16 +502,16 @@ async function generateSymbolism(language, number, filename, bible) {
 }
 
 // Look up verse texts for references from a bible translation
-function getVerseTexts(bible, references) {
+function getVerseTexts(bible: string | null, references: SymbolismReference[] | undefined): string[] | null {
     if (!bible || !references || references.length === 0) return null;
     const bibleDir = path.join(__dirname, 'bibles_raw', bible);
     if (!fs.existsSync(bibleDir)) return null;
 
-    const texts = [];
+    const texts: string[] = [];
     for (const ref of references) {
         const chapterFile = path.join(bibleDir, String(ref.bookId), `${ref.chapterId}.json`);
         if (!fs.existsSync(chapterFile)) continue;
-        const verses = JSON.parse(fs.readFileSync(chapterFile, 'utf-8'));
+        const verses: Chapter = JSON.parse(fs.readFileSync(chapterFile, 'utf-8'));
         const matched = verses.filter(v => v.verseId >= ref.fromVerseId && v.verseId <= ref.toVerseId);
         const bookName = getBookName(ref.bookId, 'Norwegian bokmål');
         for (const v of matched) {
@@ -400,13 +521,13 @@ function getVerseTexts(bible, references) {
     return texts.length > 0 ? texts : null;
 }
 
-async function proofreadSymbolism(language, number, filename, saveToFile = true, bible = null) {
+async function proofreadSymbolism(language: string, number: number, filename: string, saveToFile = true, bible: string | null = null): Promise<ProofreadResult | null> {
     if (!fileExists(filename)) {
         console.log(`No symbolism file found for number ${number}`);
         return null;
     }
 
-    const currentData = JSON.parse(fs.readFileSync(filename, 'utf-8'));
+    const currentData: SymbolismData = JSON.parse(fs.readFileSync(filename, 'utf-8'));
 
     // Include actual verse texts as context when ≤5 references
     let verseContext = '';
@@ -420,7 +541,7 @@ async function proofreadSymbolism(language, number, filename, saveToFile = true,
     console.log(`Proofreading symbolism for number ${number}...`);
 
     const prompt = getProofreadPrompt(language, number, currentData) + verseContext;
-    const result = await callWithRetry(prompt, {schema: PROOFREAD_SCHEMA, local: useLocal, context: `proofread number ${number}`});
+    const result = await callWithRetry(prompt, {schema: PROOFREAD_SCHEMA, local: useLocal, context: `proofread number ${number}`}) as ProofreadResult;
 
     if (saveToFile) {
         const proofreadFile = getProofreadPath(language, number);
@@ -443,14 +564,14 @@ async function proofreadSymbolism(language, number, filename, saveToFile = true,
     return result;
 }
 
-function applyProofreadChanges(language, number, filename, proofreadResult = null) {
+function applyProofreadChanges(language: string, number: number, filename: string, proofreadResult: ProofreadResult | null = null): { changed: boolean; footnotesChanged: boolean } | undefined {
     if (!proofreadResult) {
         const proofreadFile = getProofreadPath(language, number);
         if (!fileExists(proofreadFile)) {
             console.log(`No proofread file found for number ${number}`);
             return;
         }
-        proofreadResult = JSON.parse(fs.readFileSync(proofreadFile, 'utf-8'));
+        proofreadResult = JSON.parse(fs.readFileSync(proofreadFile, 'utf-8')) as ProofreadResult;
     }
 
     if (!fileExists(filename)) {
@@ -462,7 +583,7 @@ function applyProofreadChanges(language, number, filename, proofreadResult = nul
         return;
     }
 
-    const currentData = JSON.parse(fs.readFileSync(filename, 'utf-8'));
+    const currentData: SymbolismData = JSON.parse(fs.readFileSync(filename, 'utf-8'));
 
     // Check if anything actually changed
     const meaningChanged = currentData.meaning !== proofreadResult.revised.meaning;
@@ -474,7 +595,7 @@ function applyProofreadChanges(language, number, filename, proofreadResult = nul
         if (!currentData.versions) {
             currentData.versions = [];
         }
-        const version = {
+        const version: SymbolismVersion = {
             meaning: currentData.meaning,
             description: currentData.description,
         };
@@ -507,7 +628,7 @@ function applyProofreadChanges(language, number, filename, proofreadResult = nul
 }
 
 // Ask Ollama to extract symbolic numbers from a verse
-async function ollamaExtractNumbers(verse, bookName) {
+async function ollamaExtractNumbers(verse: string, bookName: string): Promise<number[]> {
     const prompt = `List opp alle numeriske verdier i dette bibelverset. Inkluder både sammensatte tallord ("seks hundre og sekstiseks" = 666), enkle tallord ("tre" = 3), og mengdeangivelser ("ett" = 1, "begge" = 2). Ignorer ord som ikke angir mengde.
 
 "${verse}"
@@ -518,16 +639,16 @@ Svar BARE med en kommaseparert liste av heltall, eller "ingen".`;
         const answer = await callOllamaRaw(prompt);
         if (!answer || answer.toLowerCase() === 'ingen' || answer.toLowerCase() === 'none') return [];
 
-        const numbers = answer.match(/\d+/g);
+        const numbers = answer.match(/\d+/g) as RegExpMatchArray | null;
         return numbers ? [...new Set(numbers.map(n => parseInt(n, 10)).filter(n => n > 0))] : [];
     } catch (error) {
-        console.warn(`\n  Ollama error: ${error.message}`);
+        console.warn(`\n  Ollama error: ${(error as Error).message}`);
         return [];
     }
 }
 
 // Count total verses in a bible translation (with optional filters)
-function countBibleVerses(bible, bookStart, bookEnd, chapterStart, chapterEnd, verseStart, verseEnd) {
+function countBibleVerses(bible: string, bookStart: number, bookEnd: number, chapterStart: number | null, chapterEnd: number | null, verseStart: number | null, verseEnd: number | null): number {
     const bibleDir = path.join(__dirname, 'bibles_raw', bible);
     let total = 0;
     for (const book of books) {
@@ -539,7 +660,7 @@ function countBibleVerses(bible, bookStart, bookEnd, chapterStart, chapterEnd, v
         for (let chapterId = startCh; chapterId <= endCh; chapterId++) {
             const chapterFile = path.join(bookDir, `${chapterId}.json`);
             if (!fs.existsSync(chapterFile)) continue;
-            const verses = JSON.parse(fs.readFileSync(chapterFile, 'utf-8'));
+            const verses: Chapter = JSON.parse(fs.readFileSync(chapterFile, 'utf-8'));
             if (verseStart || verseEnd) {
                 total += verses.filter(v => v.verseId >= (verseStart || 1) && v.verseId <= (verseEnd || 999)).length;
             } else {
@@ -551,7 +672,7 @@ function countBibleVerses(bible, bookStart, bookEnd, chapterStart, chapterEnd, v
 }
 
 // Get meaning and description for a new number from Claude
-async function generateMeaningForNumber(language, number) {
+async function generateMeaningForNumber(language: string, number: number): Promise<MeaningResult> {
     const langCode = getLanguageCode(language);
 
     let prompt;
@@ -583,12 +704,12 @@ If the number has no known symbolic meaning in biblical tradition, use empty str
         additionalProperties: false
     };
 
-    const result = await callWithRetry(prompt, {schema: MEANING_SCHEMA, local: useLocal, context: `meaning for ${number}`});
+    const result = await callWithRetry(prompt, {schema: MEANING_SCHEMA, local: useLocal, context: `meaning for ${number}`}) as MeaningResult;
     return result;
 }
 
 // Index entire bible: send every verse to Ollama, update/create JSON files incrementally
-async function indexBible(bible, language, options = {}) {
+async function indexBible(bible: string, language: string, options: IndexRange = {}): Promise<void> {
     const bibleDir = path.join(__dirname, 'bibles_raw', bible);
     if (!fs.existsSync(bibleDir)) {
         console.error(`Bible translation not found: ${bibleDir}`);
@@ -616,7 +737,7 @@ async function indexBible(bible, language, options = {}) {
     console.log('');
 
     // Cache for loaded JSON files to avoid repeated reads/writes
-    const fileCache = {};
+    const fileCache: Record<number, SymbolismData> = {};
     let processed = 0;
     let newNumbers = 0;
     let refsAdded = 0;
@@ -635,7 +756,7 @@ async function indexBible(bible, language, options = {}) {
             const chapterFile = path.join(bookDir, `${chapterId}.json`);
             if (!fs.existsSync(chapterFile)) continue;
 
-            const verses = JSON.parse(fs.readFileSync(chapterFile, 'utf-8'));
+            const verses: Chapter = JSON.parse(fs.readFileSync(chapterFile, 'utf-8'));
             for (const verse of verses) {
                 if (verseStart && verse.verseId < verseStart) continue;
                 if (verseEnd && verse.verseId > verseEnd) continue;
@@ -708,7 +829,7 @@ async function indexBible(bible, language, options = {}) {
     console.log(`\nDone in ${Math.floor(elapsed / 60)}m${elapsed % 60}s — ${processed} verses, ${refsAdded} refs, ${newNumbers} new numbers`);
 }
 
-async function scanOnly(bible, number) {
+async function scanOnly(bible: string, number: number): Promise<void> {
     console.log(`Scanning ${bible} for number ${number}...`);
     const matches = await scanBibleForNumber(bible, number);
     console.log(`Found ${matches.length} verses:\n`);
@@ -721,7 +842,7 @@ async function scanOnly(bible, number) {
 // Known symbolically significant numbers
 const SYMBOLIC_NUMBERS = [1, 2, 3, 4, 5, 6, 7, 8, 10, 12, 13, 14, 18, 24, 30, 40, 49, 50, 70, 153, 666];
 
-function printUsage() {
+function printUsage(): void {
     console.log(`
 Usage: node number_symbolism.mjs [options]
 
@@ -760,7 +881,7 @@ Examples:
 `);
 }
 
-function parseRange(value) {
+function parseRange(value: string): Range {
     if (value.includes('-')) {
         const [start, end] = value.split('-').map(n => parseInt(n, 10));
         return {start, end};
@@ -769,8 +890,8 @@ function parseRange(value) {
     return {start: num, end: num};
 }
 
-function parseArgs(args) {
-    const options = {
+function parseArgs(args: string[]): Options {
+    const options: Options = {
         language: 'Norwegian bokmål',
         numbers: [],
         all: false,
@@ -841,7 +962,7 @@ function parseArgs(args) {
     return options;
 }
 
-async function main() {
+async function main(): Promise<void> {
     const args = process.argv.slice(2);
     const options = parseArgs(args);
 

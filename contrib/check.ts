@@ -18,9 +18,11 @@ import * as fs from 'fs';
 import path from 'path';
 import {fileURLToPath} from 'url';
 import {parseRef} from '../kvn/src/kvn.js';
+import type {VerseRef} from '../kvn/src/kvn.js';
 import {encode, decode, BOOK_IDS, BOOK_NAMES} from '../kvn/src/types.js';
 import {loadUkvnMapping, UkvnMapper, ukvnEncode, ukvnDecode, resolveMappingId} from '../kvn/src/ukvn.js';
 import {getMaxVerse} from '../kvn/src/load-bible.js';
+import type {ContribDoc, ContribRef, ContribTarget, CrossrefAuthor} from './contrib-types.js';
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const QUEUE_DIR = path.join(__dirname, 'queue');
@@ -45,7 +47,7 @@ const REF_KEYS = ['raw', 'context_translation', 'kvnFrom', 'kvnTo', 'kvnRef', 'r
 
 // Boknavn-normalisering: BOOK_IDS-nøklene (inkl. aliaser) case-insensitivt,
 // pluss «1. Mos»-varianten med punktum etter tallet.
-const BOOK_LOOKUP = new Map();
+const BOOK_LOOKUP = new Map<string, number>();
 for (const [name, id] of Object.entries(BOOK_IDS)) {
   BOOK_LOOKUP.set(name.toLowerCase(), id);
   BOOK_LOOKUP.set(name.toLowerCase().replace(/^(\d) /, '$1. '), id);
@@ -53,7 +55,7 @@ for (const [name, id] of Object.entries(BOOK_IDS)) {
 }
 
 /** «1. Mos 4,5» / «Rom 3:23» → kanonisk parseRef-form («1 Mos 4,5»), eller null. */
-function normalizeRaw(raw) {
+function normalizeRaw(raw: string): {bookId: number; rest: string | null} | null {
   let text = raw.trim().replace(/\s+/g, ' ');
   // Kolon-notasjon → komma (samme grep som refMarkupToKvn).
   text = text.replace(/(\d):(\d)/g, '$1,$2');
@@ -69,13 +71,13 @@ function normalizeRaw(raw) {
 }
 
 /** Løser én ref til kanonisk KVN-spenn. Kaster med forklaring ved feil. */
-function resolveRef(ref) {
+function resolveRef(ref: ContribRef): {kvnFrom: number; kvnTo: number; kvnRef: string} {
   const normalized = normalizeRaw(ref.raw);
   if (!normalized) throw new Error(`ukjent bok i «${ref.raw}»`);
   const {bookId, rest} = normalized;
 
   // Hele boken: 1,1 → siste kapittel, siste vers.
-  let translationRefs;
+  let translationRefs: VerseRef[];
   if (rest === null) {
     const lastChapter = lastChapterOf(bookId);
     translationRefs = [
@@ -91,7 +93,7 @@ function resolveRef(ref) {
 
   // Kontekst-oversettelsens nummerering → osmain via ukvn-mapping.
   const mappingId = resolveMappingId(ref.context_translation) ?? ref.context_translation;
-  let mapper;
+  let mapper: UkvnMapper;
   try {
     mapper = new UkvnMapper(loadUkvnMapping(mappingId));
   } catch {
@@ -114,7 +116,7 @@ function resolveRef(ref) {
   return {kvnFrom: canonical[0], kvnTo: canonical[canonical.length - 1], kvnRef};
 }
 
-function lastChapterOf(bookId) {
+function lastChapterOf(bookId: number): number {
   let chapter = 1;
   while (true) {
     try {
@@ -128,8 +130,8 @@ function lastChapterOf(bookId) {
 }
 
 /** Strukturvalidering — returnerer liste av problemer (tom = ok). */
-function validateDoc(doc) {
-  const problems = [];
+function validateDoc(doc: ContribDoc): string[] {
+  const problems: string[] = [];
   if (doc.schema !== 'free-bible-contrib/1') problems.push(`schema: ${doc.schema}`);
   if (!KINDS.includes(doc.kind)) problems.push(`kind: ${doc.kind}`);
   if (!doc.target || typeof doc.target !== 'object') problems.push('target mangler');
@@ -162,10 +164,10 @@ function validateDoc(doc) {
 }
 
 const UA = 'free-bible-contrib/1.0 (https://github.com/flogvit/free-bible; mailto:flogvit@gmail.com)';
-const sleep = (ms) => new Promise((resolve) => setTimeout(resolve, ms));
+const sleep = (ms: number) => new Promise((resolve) => setTimeout(resolve, ms));
 
-async function lookupTarget(target) {
-  const notes = [];
+async function lookupTarget(target: ContribTarget): Promise<string[]> {
+  const notes: string[] = [];
   try {
     if (target.doi) {
       const res = await fetch(
@@ -174,7 +176,7 @@ async function lookupTarget(target) {
       );
       if (res.ok) {
         const {message} = await res.json();
-        const authors = (message.author ?? []).map((a) => `${a.given ?? ''} ${a.family ?? ''}`.trim());
+        const authors = (message.author ?? []).map((a: CrossrefAuthor) => `${a.given ?? ''} ${a.family ?? ''}`.trim());
         notes.push(
           `Crossref: «${(message.title ?? [])[0] ?? '?'}» — ${authors.join(', ') || '?'}` +
             ` (${message['published']?.['date-parts']?.[0]?.[0] ?? '?'}, ${(message['container-title'] ?? [])[0] ?? '?'})`,
@@ -196,7 +198,7 @@ async function lookupTarget(target) {
       await sleep(1100);
     }
   } catch (error) {
-    notes.push(`oppslag feilet: ${error.message}`);
+    notes.push(`oppslag feilet: ${(error as Error).message}`);
   }
   return notes;
 }
@@ -215,11 +217,11 @@ const files = fs.readdirSync(QUEUE_DIR)
 let checked = 0;
 for (const name of files) {
   const file = path.join(QUEUE_DIR, name);
-  const doc = JSON.parse(fs.readFileSync(file, 'utf8'));
+  const doc: ContribDoc = JSON.parse(fs.readFileSync(file, 'utf8'));
   if (doc.review?.status !== 'pending') continue;
   checked++;
 
-  const report = [];
+  const report: string[] = [];
   const problems = validateDoc(doc);
   if (problems.length) report.push(...problems.map((p) => `struktur: ${p}`));
 
@@ -239,7 +241,7 @@ for (const name of files) {
       resolved++;
     } catch (error) {
       unresolved++;
-      report.push(`uoppløst «${ref.raw}» (${ref.context_translation}): ${error.message}`);
+      report.push(`uoppløst «${ref.raw}» (${ref.context_translation}): ${(error as Error).message}`);
     }
   }
 

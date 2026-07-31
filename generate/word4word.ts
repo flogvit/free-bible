@@ -6,8 +6,72 @@ dotenv.config()
 
 import Anthropic from '@anthropic-ai/sdk';
 import {bibles, books, anthropicModel, maxTokens, normalizeLanguage, getLanguageCode} from "./constants.js";
+import type {Chapter} from '../kvn/src/bible-types.js';
 
 const anthropic = new Anthropic();
+
+/** JSON-schema slik SDK-en vil ha det i `output_config.format`. */
+type JsonSchema = Record<string, unknown>;
+
+/** En tidligere forklaring av ordet, lagret av `applyProofreadChanges`. */
+interface WordVersion {
+    explanation: string;
+    type: string;
+    severity: string;
+    reason: string;
+    /** Bare i oversettelsesmodus. */
+    original?: string;
+    /** Bare i originalkildemodus (tanach/sblgnt). */
+    pronunciation?: string;
+}
+
+/**
+ * Ett forklart ord.
+ *
+ * `original` og `pronunciation` er de to modusene som utelukker hverandre:
+ * oversettelser har et originalord, originalkilder har en uttale.
+ */
+interface Word {
+    word: string;
+    wordId: number;
+    explanation: string;
+    pronunciation?: string;
+    original?: string;
+    versions?: WordVersion[];
+}
+
+/** Ett vers i `word4word/`-filene: versadressen pluss ordene. */
+interface VerseWords {
+    bookId: number;
+    chapterId: number;
+    verseId: number;
+    words: Word[];
+}
+
+/** Svaret fra genereringskallet — merk at det pakker versene i et `verses`-felt. */
+interface WordExplanationResult {
+    verses: VerseWords[];
+}
+
+interface ProofreadIssue {
+    wordId: number;
+    type: string;
+    severity: string;
+    currentExplanation?: string;
+    suggestedExplanation?: string;
+    currentPronunciation?: string;
+    suggestedPronunciation?: string;
+    currentOriginal?: string;
+    suggestedOriginal?: string;
+    reason: string;
+}
+
+interface ProofreadResult {
+    issues?: ProofreadIssue[];
+    summary?: string;
+    /** Skjemaet krever den, men koden sjekker likevel null/undefined før den skrives ut. */
+    score?: number | null;
+}
 
 const MAX_RETRIES = 3;
 
@@ -83,21 +147,21 @@ const WORD_PROOFREAD_SCHEMA = {
 const ORIGINAL_SOURCES = ['hebrew', 'tanach', 'wlc', 'sblgnt'];
 
 // Check if bible is an original source (not a translation)
-function isOriginalSource(bible) {
+function isOriginalSource(bible: string): boolean {
     return ORIGINAL_SOURCES.includes(bible);
 }
 
 // Get original language based on book ID
-function getOriginalLanguage(bookId) {
+function getOriginalLanguage(bookId: number): string {
     return bookId <= 39 ? 'Hebrew' : 'Greek';
 }
 
-function getOriginalSource(bookId) {
+function getOriginalSource(bookId: number): string {
     return bookId <= 39 ? 'hebrew' : 'sblgnt';
 }
 
 // Word explanation prompt for ORIGINAL language texts (tanach/sblgnt)
-function getOriginalWordExplanationPrompt(explanationLanguage, originalLanguage, bookId, chapterId, verseId, originalText) {
+function getOriginalWordExplanationPrompt(explanationLanguage: string, originalLanguage: string, bookId: number, chapterId: number, verseId: number, originalText: string): string {
     return `You will be given a verse in the original ${originalLanguage} language.
 You should explain every word in the text.
 Do not include punctuation marks as separate words, but include particles and prefixes that carry meaning.
@@ -122,7 +186,7 @@ ${originalText}`;
 }
 
 // Word explanation prompt for TRANSLATED texts (osnb, osnn, etc)
-function getTranslationWordExplanationPrompt(language, originalLanguage, bookId, chapterId, verseId, originalText, translatedText) {
+function getTranslationWordExplanationPrompt(language: string, originalLanguage: string, bookId: number, chapterId: number, verseId: number, originalText: string, translatedText: string): string {
     return `You will be given a verse in the original ${originalLanguage} language and a translation.
 You should explain every word in the translated text.
 Do not include punctuation, commas etc as words.
@@ -149,9 +213,9 @@ ${translatedText}`;
 }
 
 // Proofread prompt for word explanations
-function getProofreadPrompt(language, originalLanguage, bookId, chapterId, verseId, originalText, wordData, isOriginalSource = false) {
-    const formattedWords = wordData.words.map(w => {
-        let entry;
+function getProofreadPrompt(language: string, originalLanguage: string, bookId: number, chapterId: number, verseId: number, originalText: string, wordData: VerseWords, isOriginalSource = false): string {
+    const formattedWords = wordData.words.map((w: Word) => {
+        let entry: string;
         if (isOriginalSource) {
             // Original source mode: word is the original language word
             entry = `${w.wordId}. "${w.word}" (pronunciation: ${w.pronunciation || 'N/A'}): ${w.explanation}`;
@@ -161,7 +225,7 @@ function getProofreadPrompt(language, originalLanguage, bookId, chapterId, verse
         }
         if (w.versions && w.versions.length > 0) {
             entry += `\n      VERSION HISTORY (${w.versions.length} previous revisions - DO NOT suggest any of these):`;
-            w.versions.forEach((ver, i) => {
+            w.versions.forEach((ver: WordVersion, i: number) => {
                 const typeInfo = ver.type ? ` [${ver.type}/${ver.severity || 'unknown'}]` : '';
                 entry += `\n      ${i + 1}.${typeInfo} "${ver.explanation}"`;
             });
@@ -205,8 +269,8 @@ Current word explanations:
 ${formattedWords}`;
 }
 
-async function doAnthropicCall(content, schema) {
-    const options = {
+async function doAnthropicCall(content: string, schema: JsonSchema | null | undefined) {
+    const options: Anthropic.MessageCreateParamsNonStreaming = {
         model: anthropicModel,
         max_tokens: maxTokens,
         messages: [
@@ -231,7 +295,7 @@ async function doAnthropicCall(content, schema) {
 
 // Detect hallucinated English words that shouldn't appear in Norwegian/other translations
 // Check if language is English (hallucination detection should be skipped for English)
-function isEnglishLanguage(language) {
+function isEnglishLanguage(language: string): boolean {
     const lower = language.toLowerCase();
     return lower === 'english' || lower === 'en';
 }
@@ -249,8 +313,8 @@ const HALLUCINATION_PATTERNS = [
     /\bthat\s+is\b/i,
 ];
 
-function detectHallucinations(text) {
-    const found = [];
+function detectHallucinations(text: string): string[] {
+    const found: string[] = [];
     for (const pattern of HALLUCINATION_PATTERNS) {
         const match = text.match(pattern);
         if (match) {
@@ -260,7 +324,9 @@ function detectHallucinations(text) {
     return found;
 }
 
-function validateWordExplanationResult(result) {
+// `any` her er tilsiktet: funksjonen kalles med begge svarformene (generering
+// og korrektur) og plukker ut felter som bare finnes i én av dem.
+function validateWordExplanationResult(result: any): boolean {
     // Check array of verse data
     const verses = Array.isArray(result) ? result : [result];
 
@@ -292,8 +358,10 @@ function validateWordExplanationResult(result) {
     return true;
 }
 
-async function doAnthropicCallWithRetry(content, schema, context = '', validate = true) {
-    let lastError;
+// T er formen kallstedet forventer tilbake fra JSON-svaret; skjemaet håndheves
+// på API-siden, så den er en påstand og ikke en kontroll.
+async function doAnthropicCallWithRetry<T = any>(content: string, schema: JsonSchema | null | undefined, context = '', validate = true): Promise<T> {
+    let lastError: unknown;
 
     for (let attempt = 1; attempt <= MAX_RETRIES; attempt++) {
         try {
@@ -301,8 +369,8 @@ async function doAnthropicCallWithRetry(content, schema, context = '', validate 
             if (completion.stop_reason === 'max_tokens') {
                 throw new Error(`Response truncated (hit max_tokens limit of ${maxTokens})`);
             }
-            const responseText = completion.content[0].text;
-            const result = JSON.parse(responseText);
+            const responseText = (completion.content[0] as Anthropic.TextBlock).text;
+            const result = JSON.parse(responseText) as T;
 
             // Validate for hallucinations if requested
             if (validate) {
@@ -313,7 +381,7 @@ async function doAnthropicCallWithRetry(content, schema, context = '', validate 
         } catch (error) {
             lastError = error;
             if (attempt < MAX_RETRIES) {
-                console.log(`  Attempt ${attempt} failed (${error.message}), retrying...`);
+                console.log(`  Attempt ${attempt} failed (${(error as Error).message}), retrying...`);
                 await new Promise(resolve => setTimeout(resolve, 1000));
             }
         }
@@ -323,7 +391,7 @@ async function doAnthropicCallWithRetry(content, schema, context = '', validate 
     throw lastError;
 }
 
-function readOriginalVerse(bookId, chapterId, verseId) {
+function readOriginalVerse(bookId: number, chapterId: number, verseId: number) {
     const source = getOriginalSource(bookId);
     const sourceFile = `bibles_raw/${source}/${bookId}/${chapterId}.json`;
 
@@ -332,26 +400,26 @@ function readOriginalVerse(bookId, chapterId, verseId) {
         return null;
     }
 
-    const allVerses = JSON.parse(fs.readFileSync(sourceFile, 'utf-8'));
+    const allVerses = JSON.parse(fs.readFileSync(sourceFile, 'utf-8')) as Chapter;
     return allVerses.find(v => +v.verseId === +verseId);
 }
 
-function readTranslatedVerse(bible, bookId, chapterId, verseId) {
+function readTranslatedVerse(bible: string, bookId: number, chapterId: number, verseId: number) {
     const translationFile = `bibles_raw/${bible}/${bookId}/${chapterId}.json`;
 
     if (!fs.existsSync(translationFile)) {
         return null;
     }
 
-    const allVerses = JSON.parse(fs.readFileSync(translationFile, 'utf-8'));
+    const allVerses = JSON.parse(fs.readFileSync(translationFile, 'utf-8')) as Chapter;
     return allVerses.find(v => +v.verseId === +verseId);
 }
 
-async function generateWordExplanations(bible, bookId, chapterId, verseId, filename, explanationLanguage = 'Norwegian bokmål') {
+async function generateWordExplanations(bible: string, bookId: number, chapterId: number, verseId: number, filename: string, explanationLanguage = 'Norwegian bokmål') {
     const originalLanguage = getOriginalLanguage(bookId);
     const isOriginal = isOriginalSource(bible);
 
-    let content;
+    let content: string;
     // For validation: use explanationLanguage for originals, bibles[bible] for translations
     const language = isOriginal ? explanationLanguage : bibles[bible];
 
@@ -397,7 +465,7 @@ async function generateWordExplanations(bible, bookId, chapterId, verseId, filen
     }
 
     const shouldValidate = !isEnglishLanguage(language);
-    const result = await doAnthropicCallWithRetry(content, WORD_EXPLANATION_SCHEMA, `${bookId}:${chapterId}:${verseId}`, shouldValidate);
+    const result = await doAnthropicCallWithRetry<WordExplanationResult>(content, WORD_EXPLANATION_SCHEMA, `${bookId}:${chapterId}:${verseId}`, shouldValidate);
 
     const dir = path.dirname(filename);
     if (!fs.existsSync(dir)) {
@@ -408,7 +476,7 @@ async function generateWordExplanations(bible, bookId, chapterId, verseId, filen
     fs.writeFileSync(filename, JSON.stringify(result.verses, null, 2));
 }
 
-async function proofreadVerse(bible, bookId, chapterId, verseId, filename, saveToFile = true, explanationLanguage = 'Norwegian bokmål') {
+async function proofreadVerse(bible: string, bookId: number, chapterId: number, verseId: number, filename: string, saveToFile = true, explanationLanguage = 'Norwegian bokmål'): Promise<ProofreadResult | null> {
     const isOriginal = isOriginalSource(bible);
     const language = isOriginal ? explanationLanguage : bibles[bible];
     const originalLanguage = getOriginalLanguage(bookId);
@@ -418,7 +486,7 @@ async function proofreadVerse(bible, bookId, chapterId, verseId, filename, saveT
         return null;
     }
 
-    const wordData = JSON.parse(fs.readFileSync(filename, 'utf-8'));
+    const wordData = JSON.parse(fs.readFileSync(filename, 'utf-8')) as VerseWords[] | VerseWords;
     // Handle both array format [{ words: [...] }] and single object format { words: [...] }
     const verseData = Array.isArray(wordData) ? wordData[0] : wordData;
 
@@ -446,7 +514,7 @@ async function proofreadVerse(bible, bookId, chapterId, verseId, filename, saveT
     );
 
     const shouldValidate = !isEnglishLanguage(language);
-    const result = await doAnthropicCallWithRetry(content, WORD_PROOFREAD_SCHEMA, `proofread ${bookId}:${chapterId}:${verseId}`, shouldValidate);
+    const result = await doAnthropicCallWithRetry<ProofreadResult>(content, WORD_PROOFREAD_SCHEMA, `proofread ${bookId}:${chapterId}:${verseId}`, shouldValidate);
 
     // Save proofread results if requested
     if (saveToFile) {
@@ -471,7 +539,7 @@ async function proofreadVerse(bible, bookId, chapterId, verseId, filename, saveT
     console.log(`Summary: ${result.summary}`);
     if (result.issues && result.issues.length > 0) {
         console.log(`Issues found: ${result.issues.length}`);
-        result.issues.forEach((issue, i) => {
+        result.issues.forEach((issue: ProofreadIssue, i: number) => {
             console.log(`  ${i + 1}. [${issue.severity}] Word ${issue.wordId}: ${issue.type}`);
             console.log(`     ${issue.reason}`);
         });
@@ -480,7 +548,7 @@ async function proofreadVerse(bible, bookId, chapterId, verseId, filename, saveT
     return result;
 }
 
-function applyProofreadChanges(bible, bookId, chapterId, verseId, filename, proofreadResult = null, explanationLanguage = 'Norwegian bokmål') {
+function applyProofreadChanges(bible: string, bookId: number, chapterId: number, verseId: number, filename: string, proofreadResult: ProofreadResult | null = null, explanationLanguage = 'Norwegian bokmål') {
     const isOriginal = isOriginalSource(bible);
 
     // Load proofread result from file if not provided
@@ -494,7 +562,7 @@ function applyProofreadChanges(bible, bookId, chapterId, verseId, filename, proo
             console.log(`No proofread file found for ${bookId}:${chapterId}:${verseId}`);
             return;
         }
-        proofreadResult = JSON.parse(fs.readFileSync(proofreadFile, 'utf-8'));
+        proofreadResult = JSON.parse(fs.readFileSync(proofreadFile, 'utf-8')) as ProofreadResult;
     }
 
     if (!fs.existsSync(filename)) {
@@ -502,7 +570,7 @@ function applyProofreadChanges(bible, bookId, chapterId, verseId, filename, proo
         return;
     }
 
-    const wordData = JSON.parse(fs.readFileSync(filename, 'utf-8'));
+    const wordData = JSON.parse(fs.readFileSync(filename, 'utf-8')) as VerseWords[] | VerseWords;
     // Handle both array format and single object format
     const isArray = Array.isArray(wordData);
     const verseData = isArray ? wordData[0] : wordData;
@@ -514,7 +582,7 @@ function applyProofreadChanges(bible, bookId, chapterId, verseId, filename, proo
     let appliedCount = 0;
 
     for (const issue of proofreadResult.issues) {
-        const word = verseData.words.find(w => +w.wordId === +issue.wordId);
+        const word = verseData.words.find((w: Word) => +w.wordId === +issue.wordId);
         if (!word) {
             console.log(`  Word ${issue.wordId} not found, skipping`);
             continue;
@@ -539,7 +607,7 @@ function applyProofreadChanges(bible, bookId, chapterId, verseId, filename, proo
             }
 
             // Add current explanation to versions history with type and severity
-            const versionEntry = {
+            const versionEntry: WordVersion = {
                 explanation: word.explanation,
                 type: issue.type,
                 severity: issue.severity,
@@ -555,7 +623,8 @@ function applyProofreadChanges(bible, bookId, chapterId, verseId, filename, proo
             word.versions.push(versionEntry);
 
             // Update the explanation
-            word.explanation = issue.suggestedExplanation;
+            // `explanationChanging` er sann bare når suggestedExplanation finnes.
+            word.explanation = issue.suggestedExplanation as string;
         }
 
         // Update original word if changed (translation mode)
@@ -571,7 +640,7 @@ function applyProofreadChanges(bible, bookId, chapterId, verseId, filename, proo
         appliedCount++;
 
         // Build description of what changed
-        const changes = [];
+        const changes: string[] = [];
         if (explanationChanging) changes.push('explanation');
         if (pronunciationAdding) changes.push('added pronunciation');
         else if (pronunciationChanging) changes.push('pronunciation');
@@ -584,6 +653,27 @@ function applyProofreadChanges(bible, bookId, chapterId, verseId, filename, proo
         fs.writeFileSync(filename, JSON.stringify(isArray ? [verseData] : verseData, null, 2));
         console.log(`Applied ${appliedCount} changes to ${bookId}:${chapterId}:${verseId}`);
     }
+}
+
+/**
+ * Kommandolinjevalgene. Feltene starter som `null`/`false` og settes av
+ * argumentløkka, så typen må romme begge — ellers låser den seg til `null`.
+ */
+interface CliOptions {
+    source: string | null;
+    language: string;
+    proofread: boolean;
+    apply: boolean;
+    ot: boolean;
+    nt: boolean;
+    bookStart: number | null;
+    bookEnd: number | null;
+    chapterStart: number | null;
+    chapterEnd: number | null;
+    verseStart: number | null;
+    verseEnd: number | null;
+    force: boolean;
+    help: boolean;
 }
 
 function printUsage() {
@@ -634,17 +724,17 @@ Parallel processing (run in separate terminals):
 `);
 }
 
-function parseRange(value) {
+function parseRange(value: string): {start: number, end: number} {
     if (value.includes('-')) {
-        const [start, end] = value.split('-').map(n => parseInt(n, 10));
+        const [start, end] = value.split('-').map((n: string) => parseInt(n, 10));
         return { start, end };
     }
     const num = parseInt(value, 10);
     return { start: num, end: num };
 }
 
-function parseArgs(args) {
-    const options = {
+function parseArgs(args: string[]): CliOptions {
+    const options: CliOptions = {
         source: null,
         language: 'Norwegian bokmål',
         proofread: false,
@@ -741,8 +831,9 @@ async function main() {
 
     // Override with user-specified ranges
     if (options.bookStart !== null) {
+        // `--book` setter alltid begge endene samtidig, så bookEnd er satt her.
         startBook = Math.max(startBook, options.bookStart);
-        endBook = Math.min(endBook, options.bookEnd);
+        endBook = Math.min(endBook, options.bookEnd!);
     } else if (options.ot && !options.nt) {
         startBook = Math.max(startBook, 1);
         endBook = Math.min(endBook, 39);
@@ -785,7 +876,7 @@ async function main() {
                 continue;
             }
 
-            const verses = JSON.parse(fs.readFileSync(sourceFile, 'utf-8'));
+            const verses = JSON.parse(fs.readFileSync(sourceFile, 'utf-8')) as Chapter;
             const startVerse = options.verseStart || 1;
             const maxVerse = Math.max(...verses.map(v => +v.verseId));
             const endVerse = Math.min(options.verseEnd || maxVerse, maxVerse);

@@ -1,10 +1,42 @@
 import fs from 'fs';
 import path from 'path';
+import type {Chapter, Verse} from '../../kvn/src/bible-types.js';
 
-const parallelsData = JSON.parse(fs.readFileSync('gospel_parallels/nb/parallels.json', 'utf-8'));
+/** Ett evangelieutdrag i en parallell. */
+interface Passage {
+  bookId: number;
+  chapter: number;
+  verseStart: number;
+  verseEnd: number;
+  reference: string;
+}
+
+/** En parallell: samme stoff slik det står i to eller flere evangelier. */
+interface Parallel {
+  id: string;
+  section: string;
+  title: string;
+  /** Nøkkelen er evangeliet (`matthew`, `mark`, `luke`, `john`). */
+  passages: Record<string, Passage>;
+  notes?: string;
+}
+
+interface Section {
+  id: string;
+  name: string;
+  description: string;
+}
+
+interface ParallelsData {
+  description: string;
+  sections: Section[];
+  parallels: Parallel[];
+}
+
+const parallelsData: ParallelsData = JSON.parse(fs.readFileSync('gospel_parallels/nb/parallels.json', 'utf-8'));
 const biblePath = 'bibles_raw/osnb';
 
-const gospelNames = {
+const gospelNames: Record<string, string> = {
   matthew: 'Matteus',
   mark: 'Markus',
   luke: 'Lukas',
@@ -18,16 +50,16 @@ if (fs.existsSync(tempDir)) {
 }
 fs.mkdirSync(tempDir, { recursive: true });
 
-function getVerses(bookId, chapter, verseStart, verseEnd) {
+function getVerses(bookId: number, chapter: number, verseStart: number, verseEnd: number): string {
   const filePath = path.join(biblePath, String(bookId), `${chapter}.json`);
   if (!fs.existsSync(filePath)) {
     return `FEIL: Filen ${filePath} finnes ikke`;
   }
 
-  const chapterData = JSON.parse(fs.readFileSync(filePath, 'utf-8'));
+  const chapterData: Chapter = JSON.parse(fs.readFileSync(filePath, 'utf-8'));
   const verses = chapterData
-    .filter(v => v.verseId >= verseStart && v.verseId <= verseEnd)
-    .map(v => `${v.verseId}: ${v.text}`)
+    .filter((v: Verse) => v.verseId >= verseStart && v.verseId <= verseEnd)
+    .map((v: Verse) => `${v.verseId}: ${v.text}`)
     .join('\n');
 
   if (!verses) {

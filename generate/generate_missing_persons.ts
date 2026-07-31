@@ -15,11 +15,27 @@ const anthropic = new Anthropic({
     apiKey: process.env.ANTHROPIC_API_KEY
 });
 
-function parseMissingPersons() {
+/** JSON-schema slik SDK-en vil ha det i `output_config.format`. */
+type JsonSchema = Record<string, unknown>;
+
+/** En person fra PERSONER.md: avkrysningslista over profiler som mangler. */
+interface PersonConfig {
+    id: string;
+    name: string;
+}
+
+/** Utfallet av ett forsøk på å generere én profil. */
+interface GenerateResult {
+    status: 'created' | 'skipped' | 'error';
+    name: string;
+    error?: string;
+}
+
+function parseMissingPersons(): PersonConfig[] {
     const mdPath = path.join(__dirname, "persons", "PERSONER.md");
     const content = fs.readFileSync(mdPath, 'utf-8');
 
-    const persons = [];
+    const persons: PersonConfig[] = [];
     const lines = content.split('\n');
 
     for (const line of lines) {
@@ -35,7 +51,7 @@ function parseMissingPersons() {
     return persons;
 }
 
-function getExistingPersons() {
+function getExistingPersons(): string[] {
     const personsDir = path.join(__dirname, "persons", "nb");
     const files = fs.readdirSync(personsDir);
     return files
@@ -96,8 +112,8 @@ const PERSON_SCHEMA = {
     additionalProperties: false
 };
 
-async function doAnthropicCall(content, schema) {
-    const options = {
+async function doAnthropicCall(content: string, schema: JsonSchema | null | undefined) {
+    const options: Anthropic.MessageCreateParamsNonStreaming = {
         model: anthropicModel,
         max_tokens: maxTokens,
         messages: [{ role: "user", content }]
@@ -108,7 +124,7 @@ async function doAnthropicCall(content, schema) {
     return anthropic.messages.create(options);
 }
 
-async function generatePerson(personConfig) {
+async function generatePerson(personConfig: PersonConfig): Promise<GenerateResult> {
     const { id, name } = personConfig;
     const outputPath = path.join(__dirname, "persons", "nb", `${id}.json`);
 
@@ -161,7 +177,7 @@ Important guidelines:
 
     try {
         const completion = await doAnthropicCall(prompt, PERSON_SCHEMA);
-        const personData = JSON.parse(completion.content[0].text);
+        const personData = JSON.parse((completion.content[0] as Anthropic.TextBlock).text);
 
         // Write to file
         fs.writeFileSync(outputPath, JSON.stringify(personData, null, 2));
@@ -169,8 +185,8 @@ Important guidelines:
         return { status: 'created', name };
 
     } catch (error) {
-        console.error(`Error generating ${name}:`, error.message);
-        return { status: 'error', name, error: error.message };
+        console.error(`Error generating ${name}:`, (error as Error).message);
+        return { status: 'error', name, error: (error as Error).message };
     }
 }
 
@@ -207,7 +223,7 @@ async function main() {
 
     console.log(`Generating ${toGenerate.length} persons (starting from index ${startIndex})...\n`);
 
-    const results = { created: 0, skipped: 0, errors: [] };
+    const results: { created: number; skipped: number; errors: GenerateResult[] } = { created: 0, skipped: 0, errors: [] };
 
     for (let i = 0; i < toGenerate.length; i++) {
         const person = toGenerate[i];

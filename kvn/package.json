@@ -11,7 +11,7 @@
     "./bible-types": "./src/bible-types.ts"
   },
   "scripts": {
-    "test": "bun test",
+    "test": "tsc --noEmit && bun test",
     "test:watch": "bun test --watch",
     "typecheck": "tsc --noEmit"
   },

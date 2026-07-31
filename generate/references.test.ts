@@ -8,7 +8,7 @@
  */
 import { test, expect } from 'bun:test';
 
-import {checkTarget} from './references.mjs';
+import {checkTarget} from './references.js';
 
 const ref = (bookId: number, chapterId: number, fromVerseId: number, toVerseId: number = fromVerseId) =>
     ({bookId, chapterId, fromVerseId, toVerseId});

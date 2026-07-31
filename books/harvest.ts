@@ -41,23 +41,151 @@ const REPO = join(__dirname, '..');
 const DATA = join(REPO, 'external/books');
 const CATALOG = join(DATA, 'catalog.jsonl');
 
-const CONFIG = JSON.parse(fs.readFileSync(join(__dirname, 'collections.json'), 'utf8'));
+const CONFIG: Config = JSON.parse(fs.readFileSync(join(__dirname, 'collections.json'), 'utf8'));
 const { email, apiDelayMs, textDelayMs, yearMax } = CONFIG.settings;
 const UA = `free-bible-books/1.0 (https://github.com/flogvit/free-bible; mailto:${email})`;
 
-const sleep = ms => new Promise(r => setTimeout(r, ms));
-const sha256 = s => createHash('sha256').update(s).digest('hex');
-const shard = id => sha256(id).slice(0, 2);
-const ensure = p => fs.mkdirSync(p, { recursive: true });
-const metaPath = id => join(DATA, 'meta', shard(id), `${id}.json`);
-const textPath = id => join(DATA, 'text', shard(id), `${id}.txt`);
+// ---------- types ----------
+// Formene under beskriver JSON-en dette skriptet leser og skriver:
+// collections.json, katalogen (catalog.jsonl), meta/<id>.json og svarene fra
+// gutendex + archive.org. Bare feltene koden faktisk rører er med — råsvarene
+// lagres uavkortet i meta/, så dette er et utvalg, ikke en full beskrivelse.
 
-function loadMeta(id) {
+interface CollectionBase {
+  key: string;
+  name: string;
+}
+
+/** Kuratert archive.org-søk (advancedsearch.php). */
+interface ArchiveCollection extends CollectionBase {
+  source?: undefined;
+  query: string;
+}
+
+/** Project Gutenberg-emne, hentet via gutendex. */
+interface GutenbergCollection extends CollectionBase {
+  source: 'gutenberg';
+  topic: string;
+}
+
+type Collection = ArchiveCollection | GutenbergCollection;
+
+interface Config {
+  settings: {
+    email: string;
+    apiDelayMs: number;
+    textDelayMs: number;
+    yearMax: number;
+  };
+  collections: Collection[];
+}
+
+/** `fetchJson` henger HTTP-statusen på feilen så kallstedet kan se den. */
+interface HttpError extends Error {
+  status?: number;
+}
+
+interface FetchOpts {
+  timeoutMs?: number;
+}
+
+type BookStatus = 'meta_only' | 'no_text' | 'text_ok' | 'year_unverified';
+
+/** Relativ sti under external/books/ + integritetsdata for den. */
+interface BookFiles {
+  text?: string;
+  text_sha256?: string;
+  text_bytes?: number;
+}
+
+/** Én linje i catalog.jsonl. */
+interface CatalogEntry {
+  id: string;
+  status: BookStatus;
+  collection?: string;
+  title?: string | null;
+  authors?: string[];
+  year?: number | null;
+  language?: string | null;
+  licenseurl?: string | null;
+  pd_ok?: boolean;
+  url_details?: string;
+  url_text?: string;
+  files?: BookFiles;
+  text_attempts?: number;
+  text_last_error?: string;
+}
+
+interface GutendexBook {
+  id: number;
+  title?: string;
+  authors?: { name: string }[];
+  languages?: string[];
+  /** MIME-type → nedlastingslenke. */
+  formats?: Record<string, string>;
+}
+
+interface GutendexResponse {
+  results?: GutendexBook[];
+  next?: string | null;
+}
+
+/** Ett treff fra archive.org advancedsearch — feltene er de vi ber om i fl[]. */
+interface ArchiveSearchDoc {
+  identifier?: string;
+  title?: string | string[];
+  creator?: string | string[];
+  year?: string | number;
+  date?: string;
+  language?: string | string[];
+  licenseurl?: string;
+  subject?: string | string[];
+  downloads?: number;
+}
+
+interface ArchiveSearchResponse {
+  response?: {
+    docs?: ArchiveSearchDoc[];
+    numFound?: number;
+  };
+}
+
+/** /metadata/<id> — mye rikere enn dette, men vi rører bare fillisten. */
+interface ArchiveItemMetadata {
+  files?: { name?: string; format?: string }[];
+}
+
+/** meta/<shard>/<id>.json: råsvarene + nedlastingsproveniens. */
+interface MetaRecord {
+  id: string;
+  collection?: string;
+  sources: {
+    gutendex?: GutendexBook;
+    search?: ArchiveSearchDoc;
+    item?: ArchiveItemMetadata;
+  };
+  fetched: Record<string, string>;
+  textDownload?: {
+    url: string;
+    ts: string;
+    bytes: number;
+    sha256: string;
+  };
+}
+
+const sleep = (ms: number) => new Promise(r => setTimeout(r, ms));
+const sha256 = (s: string | Uint8Array): string => createHash('sha256').update(s).digest('hex');
+const shard = (id: string): string => sha256(id).slice(0, 2);
+const ensure = (p: string) => fs.mkdirSync(p, { recursive: true });
+const metaPath = (id: string): string => join(DATA, 'meta', shard(id), `${id}.json`);
+const textPath = (id: string): string => join(DATA, 'text', shard(id), `${id}.txt`);
+
+function loadMeta(id: string): MetaRecord {
   try { return JSON.parse(fs.readFileSync(metaPath(id), 'utf8')); } catch { return { id, sources: {}, fetched: {} }; }
 }
-function saveMeta(m) { ensure(dirname(metaPath(m.id))); fs.writeFileSync(metaPath(m.id), JSON.stringify(m, null, 2) + '\n'); }
+function saveMeta(m: MetaRecord) { ensure(dirname(metaPath(m.id))); fs.writeFileSync(metaPath(m.id), JSON.stringify(m, null, 2) + '\n'); }
 
-async function fetchWithRetry(url, opts = {}, tries = 3) {
+async function fetchWithRetry(url: string, opts: FetchOpts = {}, tries = 3): Promise<Response> {
   for (let i = 0; i < tries; i++) {
     try {
       const ctl = new AbortController();
@@ -70,19 +198,19 @@ async function fetchWithRetry(url, opts = {}, tries = 3) {
   }
   throw new Error(`retries exhausted: ${url}`);
 }
-async function fetchJson(url) {
+async function fetchJson<T = any>(url: string): Promise<T> {
   const res = await fetchWithRetry(url);
-  if (!res.ok) { const e = new Error(`HTTP ${res.status} ${url}`); e.status = res.status; throw e; }
+  if (!res.ok) { const e = new Error(`HTTP ${res.status} ${url}`) as HttpError; e.status = res.status; throw e; }
   return res.json();
 }
 
 // ---------- catalog ----------
-const catalog = new Map();
+const catalog = new Map<string, CatalogEntry>();
 function loadCatalog() {
   if (!fs.existsSync(CATALOG)) return;
   for (const line of fs.readFileSync(CATALOG, 'utf8').split('\n')) {
     if (!line.trim()) continue;
-    const e = JSON.parse(line); catalog.set(e.id, e);
+    const e: CatalogEntry = JSON.parse(line); catalog.set(e.id, e);
   }
 }
 let dirty = 0;
@@ -93,8 +221,8 @@ function flushCatalog(force = false) {
   fs.renameSync(tmp, CATALOG);
   dirty = 0;
 }
-function upsert(id, patch) {
-  const e = catalog.get(id) || { id, status: 'meta_only' };
+function upsert(id: string, patch: Partial<CatalogEntry>): CatalogEntry {
+  const e: CatalogEntry = catalog.get(id) || { id, status: 'meta_only' };
   Object.assign(e, patch);
   catalog.set(id, e);
   if (++dirty >= 50) flushCatalog();
@@ -105,13 +233,13 @@ function upsert(id, patch) {
 // Project Gutenberg ids are prefixed pg- in the catalog so they never collide
 // with archive.org identifiers. Everything Gutenberg publishes is cleared for
 // US public domain, and their texts are hand-proofed — no OCR noise.
-async function gutenbergMeta(c, limit) {
+async function gutenbergMeta(c: GutenbergCollection, limit: number | null): Promise<number> {
   let count = 0;
-  let url = `https://gutendex.com/books/?topic=${encodeURIComponent(c.topic)}`;
+  let url: string | null | undefined = `https://gutendex.com/books/?topic=${encodeURIComponent(c.topic)}`;
   while (url) {
-    let data;
+    let data: GutendexResponse;
     try { data = await fetchJson(url); }
-    catch (e) { console.log(`  gutendex failed: ${e.message}`); break; }
+    catch (e: any) { console.log(`  gutendex failed: ${e.message}`); break; }
     for (const b of data.results || []) {
       const id = `pg-${b.id}`;
       const m = loadMeta(id);
@@ -119,11 +247,11 @@ async function gutenbergMeta(c, limit) {
       m.sources.gutendex = b; // raw record incl. formats map
       m.fetched.gutendex = new Date().toISOString();
       saveMeta(m);
-      const existing = catalog.get(id) || {};
+      const existing: Partial<CatalogEntry> = catalog.get(id) || {};
       upsert(id, {
         collection: existing.collection || c.key, // topics overlap; first collection wins
         title: b.title || null,
-        authors: (b.authors || []).map(a => a.name),
+        authors: (b.authors || []).map((a: { name: string }) => a.name),
         year: null,
         language: (b.languages || [])[0] || null,
         url_details: `https://www.gutenberg.org/ebooks/${b.id}`,
@@ -143,7 +271,7 @@ async function gutenbergMeta(c, limit) {
 }
 
 // ---------- phase: meta (archive.org advanced search) ----------
-async function phaseMeta(collections, limit) {
+async function phaseMeta(collections: Collection[], limit: number | null): Promise<number> {
   let total = 0;
   for (const c of collections) {
     console.log(`=== meta: ${c.key} (${c.name}) ===`);
@@ -154,9 +282,9 @@ async function phaseMeta(collections, limit) {
       for (const f of ['identifier', 'title', 'creator', 'year', 'date', 'language', 'licenseurl', 'subject', 'downloads']) params.append('fl[]', f);
       params.append('sort[]', 'downloads desc'); // popular scans first = usually best OCR
       const url = `https://archive.org/advancedsearch.php?${params}`;
-      let data;
+      let data: ArchiveSearchResponse;
       try { data = await fetchJson(url); }
-      catch (e) { console.log(`  search failed p${page}: ${e.message}`); break; }
+      catch (e: any) { console.log(`  search failed p${page}: ${e.message}`); break; }
       const docs = data.response?.docs || [];
       for (const d of docs) {
         const id = d.identifier;
@@ -168,13 +296,15 @@ async function phaseMeta(collections, limit) {
         saveMeta(m);
         const year = +(d.year || String(d.date || '').slice(0, 4)) || null;
         const pdOk = year !== null && year <= yearMax;
-        const existing = catalog.get(id) || {};
+        const existing: Partial<CatalogEntry> = catalog.get(id) || {};
         upsert(id, {
           collection: c.key,
           title: Array.isArray(d.title) ? d.title[0] : d.title || null,
-          authors: [].concat(d.creator || []),
+          // `[] as string[]`: et bart `[]` er `never[]`, og archive.org gir feltet
+          // som enten streng eller liste — concat flater begge ut.
+          authors: ([] as string[]).concat(d.creator || []),
           year,
-          language: [].concat(d.language || [])[0] || null,
+          language: ([] as string[]).concat(d.language || [])[0] || null,
           url_details: `https://archive.org/details/${id}`,
           licenseurl: d.licenseurl || null,
           pd_ok: pdOk,
@@ -196,11 +326,11 @@ async function phaseMeta(collections, limit) {
 }
 
 // ---------- phase: text (fetch OCR txt via /metadata file listing) ----------
-async function phaseText(collections, limit) {
-  const keys = new Set(collections.map(c => c.key));
+async function phaseText(collections: Collection[], limit: number | null): Promise<number> {
+  const keys = new Set(collections.map((c: Collection) => c.key));
   let done = 0;
   for (const entry of catalog.values()) {
-    if (!keys.has(entry.collection)) continue;
+    if (!keys.has(entry.collection!)) continue;
     if (entry.files?.text || entry.status === 'no_text') continue;
     if (!entry.pd_ok) continue; // year_unverified items wait for human decision
     if ((entry.text_attempts || 0) >= 3) continue;
@@ -208,16 +338,16 @@ async function phaseText(collections, limit) {
 
     const m = loadMeta(entry.id);
     try {
-      let url;
+      let url: string;
       if (entry.id.startsWith('pg-')) {
         const fmts = m.sources.gutendex?.formats || {};
-        const key = Object.keys(fmts).find(k => k.startsWith('text/plain') && !fmts[k].endsWith('.zip'));
+        const key = Object.keys(fmts).find((k: string) => k.startsWith('text/plain') && !fmts[k].endsWith('.zip'));
         if (!key) { upsert(entry.id, { status: 'no_text' }); continue; }
         url = fmts[key];
       } else {
         // full item metadata (files list) — keep raw, it is rich (page counts, formats, scan info)
         if (!m.sources.item) {
-          m.sources.item = await fetchJson(`https://archive.org/metadata/${entry.id}`);
+          m.sources.item = await fetchJson<ArchiveItemMetadata>(`https://archive.org/metadata/${entry.id}`);
           m.fetched.item = new Date().toISOString();
           saveMeta(m);
           await sleep(apiDelayMs);
@@ -225,15 +355,19 @@ async function phaseText(collections, limit) {
         const files = m.sources.item.files || [];
         const txt = files.find(f => f.name?.endsWith('_djvu.txt')) || files.find(f => f.format === 'DjVuTXT');
         if (!txt) { upsert(entry.id, { status: 'no_text' }); continue; }
-        url = `https://archive.org/download/${entry.id}/${encodeURIComponent(txt.name)}`;
+        // `!`: en fil funnet på `format === 'DjVuTXT'` er typet med `name?`, men
+        // archive.org oppgir alltid navnet — koden under har alltid antatt det.
+        url = `https://archive.org/download/${entry.id}/${encodeURIComponent(txt.name!)}`;
       }
       const res = await fetchWithRetry(url, { timeoutMs: 300000 }, 2);
       if (!res.ok) throw new Error(`HTTP ${res.status}`);
       const buf = Buffer.from(await res.arrayBuffer());
       if (buf.length < 5000) throw new Error(`suspiciously small (${buf.length}B)`);
       ensure(dirname(textPath(entry.id)));
-      fs.writeFileSync(textPath(entry.id), buf);
-      m.textDownload = { url, ts: new Date().toISOString(), bytes: buf.length, sha256: sha256(buf) };
+      // `as Uint8Array`: @types/node i node_modules erklærer Buffer slik at den
+      // ikke regnes som tilordningsbar til ArrayBufferView. Ren typestøy.
+      fs.writeFileSync(textPath(entry.id), buf as Uint8Array);
+      m.textDownload = { url, ts: new Date().toISOString(), bytes: buf.length, sha256: sha256(buf as Uint8Array) };
       saveMeta(m);
       upsert(entry.id, {
         url_text: url,
@@ -242,7 +376,7 @@ async function phaseText(collections, limit) {
       });
       done++;
       if (done % 25 === 0) console.log(`  text: ${done} downloaded...`);
-    } catch (e) {
+    } catch (e: any) {
       console.log(`  text fail ${entry.id}: ${e.message.slice(0, 120)}`);
       upsert(entry.id, { text_attempts: (entry.text_attempts || 0) + 1, text_last_error: e.message.slice(0, 200) });
     }
@@ -253,11 +387,11 @@ async function phaseText(collections, limit) {
 
 // ---------- phase: status ----------
 function phaseStatus() {
-  const byStatus = {}, byColl = {};
+  const byStatus: Record<string, number> = {}, byColl: Record<string, { total: number; text: number }> = {};
   let bytes = 0;
   for (const e of catalog.values()) {
     byStatus[e.status] = (byStatus[e.status] || 0) + 1;
-    const c = byColl[e.collection] ||= { total: 0, text: 0 };
+    const c = byColl[e.collection!] ||= { total: 0, text: 0 };
     c.total++;
     if (e.files?.text) { c.text++; bytes += e.files.text_bytes || 0; }
   }
@@ -270,9 +404,9 @@ function phaseStatus() {
 async function main() {
   const args = process.argv.slice(2);
   const phase = args[0];
-  const flag = n => { const i = args.indexOf(n); return i >= 0 ? args[i + 1] : null; };
+  const flag = (n: string): string | null => { const i = args.indexOf(n); return i >= 0 ? args[i + 1] : null; };
   const collFilter = flag('--collection');
-  const limit = flag('--limit') ? +flag('--limit') : null;
+  const limit = flag('--limit') ? +flag('--limit')! : null;
 
   if (!['meta', 'text', 'all', 'status'].includes(phase)) {
     console.log('Usage: node books/harvest.mjs <meta|text|all|status> [--collection key] [--limit N]');
@@ -284,7 +418,7 @@ async function main() {
   process.on('SIGTERM', () => { flushCatalog(true); process.exit(143); });
 
   if (phase === 'status') { phaseStatus(); return; }
-  const collections = CONFIG.collections.filter(c => !collFilter || c.key === collFilter);
+  const collections = CONFIG.collections.filter((c: Collection) => !collFilter || c.key === collFilter);
 
   if (phase === 'meta' || phase === 'all') {
     const n = await phaseMeta(collections, limit);

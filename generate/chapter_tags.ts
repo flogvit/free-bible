@@ -9,20 +9,37 @@ dotenv.config()
 
 import {books, normalizeLanguage, getLanguageCode, getBookName} from "./constants.js";
 import {callWithRetry, callOllamaRaw} from "./llm.js";
+import type {Chapter} from '../kvn/src/bible-types.js';
 
 let useLocal = false;
 
-const GENRE_TAGS = ['law', 'narrative', 'poetry', 'prophecy', 'wisdom', 'epistle', 'apocalyptic', 'genealogy', 'psalm', 'parable'];
-const SENTIMENT_TAGS = ['comfort', 'warning', 'praise', 'lament', 'teaching', 'judgment', 'promise', 'prayer'];
-const THEME_TAGS = ['covenant', 'salvation', 'creation', 'sin', 'faith', 'love', 'justice', 'sacrifice', 'healing', 'prayer', 'holiness', 'mercy', 'kingdom', 'resurrection', 'repentance', 'obedience'];
-const LITURGY_TAGS = ['advent', 'christmas', 'epiphany', 'lent', 'easter', 'ascension', 'pentecost', 'funeral', 'wedding', 'baptism', 'communion', 'confirmation', 'ordination'];
+/**
+ * `as const` er en ren typepåstand: den fryser listene til literal-unioner
+ * (`GenreTag` og vennene under) slik at oppslagstabellene under må dekke
+ * nøyaktig de samme taggene. Kjøretidsverdien er den samme arrayen som før.
+ */
+const GENRE_TAGS = ['law', 'narrative', 'poetry', 'prophecy', 'wisdom', 'epistle', 'apocalyptic', 'genealogy', 'psalm', 'parable'] as const;
+const SENTIMENT_TAGS = ['comfort', 'warning', 'praise', 'lament', 'teaching', 'judgment', 'promise', 'prayer'] as const;
+const THEME_TAGS = ['covenant', 'salvation', 'creation', 'sin', 'faith', 'love', 'justice', 'sacrifice', 'healing', 'prayer', 'holiness', 'mercy', 'kingdom', 'resurrection', 'repentance', 'obedience'] as const;
+const LITURGY_TAGS = ['advent', 'christmas', 'epiphany', 'lent', 'easter', 'ascension', 'pentecost', 'funeral', 'wedding', 'baptism', 'communion', 'confirmation', 'ordination'] as const;
 
-const GENRE_NAMES = {
+type GenreTag = typeof GENRE_TAGS[number];
+type SentimentTag = typeof SENTIMENT_TAGS[number];
+type ThemeTag = typeof THEME_TAGS[number];
+type LiturgyTag = typeof LITURGY_TAGS[number];
+
+/**
+ * Språkene taggnavn og -beskrivelser finnes på. Andre språkkoder faller
+ * tilbake på `en` — se oppslagene i `main()`.
+ */
+type TagLang = 'nb' | 'en';
+
+const GENRE_NAMES: Record<TagLang, Record<GenreTag, string>> = {
     nb: {law: 'Lov', narrative: 'Fortelling', poetry: 'Poesi', prophecy: 'Profeti', wisdom: 'Visdom', epistle: 'Brev', apocalyptic: 'Apokalyptisk', genealogy: 'Slektstavle', psalm: 'Salme', parable: 'Lignelse'},
     en: {law: 'Law', narrative: 'Narrative', poetry: 'Poetry', prophecy: 'Prophecy', wisdom: 'Wisdom', epistle: 'Epistle', apocalyptic: 'Apocalyptic', genealogy: 'Genealogy', psalm: 'Psalm', parable: 'Parable'}
 };
 
-const GENRE_DESCRIPTIONS = {
+const GENRE_DESCRIPTIONS: Record<TagLang, Record<GenreTag, string>> = {
     nb: {
         law: 'Lovtekster, forskrifter og bud fra Gud til sitt folk',
         narrative: 'Fortellende tekst som beskriver historiske hendelser og personers liv',
@@ -49,12 +66,12 @@ const GENRE_DESCRIPTIONS = {
     }
 };
 
-const SENTIMENT_NAMES = {
+const SENTIMENT_NAMES: Record<TagLang, Record<SentimentTag, string>> = {
     nb: {comfort: 'Trøst', warning: 'Advarsel', praise: 'Lovprisning', lament: 'Klage', teaching: 'Undervisning', judgment: 'Dom', promise: 'Løfte', prayer: 'Bønn'},
     en: {comfort: 'Comfort', warning: 'Warning', praise: 'Praise', lament: 'Lament', teaching: 'Teaching', judgment: 'Judgment', promise: 'Promise', prayer: 'Prayer'}
 };
 
-const SENTIMENT_DESCRIPTIONS = {
+const SENTIMENT_DESCRIPTIONS: Record<TagLang, Record<SentimentTag, string>> = {
     nb: {
         comfort: 'Trøst og oppmuntring i vanskelige tider, forsikring om Guds nærhet og omsorg',
         warning: 'Advarsel mot synd, frafall eller ulydighet, med oppfordring til omvendelse',
@@ -77,12 +94,12 @@ const SENTIMENT_DESCRIPTIONS = {
     }
 };
 
-const THEME_NAMES = {
+const THEME_NAMES: Record<TagLang, Record<ThemeTag, string>> = {
     nb: {covenant: 'Pakt', salvation: 'Frelse', creation: 'Skapelse', sin: 'Synd', faith: 'Tro', love: 'Kjærlighet', justice: 'Rettferdighet', sacrifice: 'Offer', healing: 'Helbredelse', prayer: 'Bønn', holiness: 'Hellighet', mercy: 'Barmhjertighet', kingdom: 'Guds rike', resurrection: 'Oppstandelse', repentance: 'Omvendelse', obedience: 'Lydighet'},
     en: {covenant: 'Covenant', salvation: 'Salvation', creation: 'Creation', sin: 'Sin', faith: 'Faith', love: 'Love', justice: 'Justice', sacrifice: 'Sacrifice', healing: 'Healing', prayer: 'Prayer', holiness: 'Holiness', mercy: 'Mercy', kingdom: 'Kingdom of God', resurrection: 'Resurrection', repentance: 'Repentance', obedience: 'Obedience'}
 };
 
-const THEME_DESCRIPTIONS = {
+const THEME_DESCRIPTIONS: Record<TagLang, Record<ThemeTag, string>> = {
     nb: {
         covenant: 'Guds pakt med sitt folk — løfter, betingelser og tegn på paktsforholdet',
         salvation: 'Frelse fra synd, død og fortapelse gjennom Guds inngripen',
@@ -121,12 +138,12 @@ const THEME_DESCRIPTIONS = {
     }
 };
 
-const LITURGY_NAMES = {
+const LITURGY_NAMES: Record<TagLang, Record<LiturgyTag, string>> = {
     nb: {advent: 'Advent', christmas: 'Jul', epiphany: 'Åpenbaring', lent: 'Faste', easter: 'Påske', ascension: 'Kristi himmelfartsdag', pentecost: 'Pinse', funeral: 'Begravelse', wedding: 'Bryllup', baptism: 'Dåp', communion: 'Nattverd', confirmation: 'Konfirmasjon', ordination: 'Ordinasjon'},
     en: {advent: 'Advent', christmas: 'Christmas', epiphany: 'Epiphany', lent: 'Lent', easter: 'Easter', ascension: 'Ascension', pentecost: 'Pentecost', funeral: 'Funeral', wedding: 'Wedding', baptism: 'Baptism', communion: 'Communion', confirmation: 'Confirmation', ordination: 'Ordination'}
 };
 
-const LITURGY_DESCRIPTIONS = {
+const LITURGY_DESCRIPTIONS: Record<TagLang, Record<LiturgyTag, string>> = {
     nb: {
         advent: 'Tekster knyttet til adventstiden — venting, forberedelse og lengsel etter Messias',
         christmas: 'Tekster knyttet til Jesu fødsel og inkarnasjonen',
@@ -171,26 +188,26 @@ const TAG_SCHEMA = {
     additionalProperties: false
 };
 
-function getOriginalSource(bookId) {
+function getOriginalSource(bookId: number): string {
     return bookId <= 39 ? 'hebrew' : 'sblgnt';
 }
 
-function readOriginalChapter(bookId, chapterId) {
+function readOriginalChapter(bookId: number, chapterId: number): string | null {
     const source = getOriginalSource(bookId);
     const sourceFile = path.join(__dirname, `bibles_raw/${source}/${bookId}/${chapterId}.json`);
     if (!fs.existsSync(sourceFile)) return null;
-    const verses = JSON.parse(fs.readFileSync(sourceFile, 'utf-8'));
+    const verses: Chapter = JSON.parse(fs.readFileSync(sourceFile, 'utf-8'));
     return verses.map(v => `${v.verseId}: ${v.text}`).join('\n');
 }
 
-function readTranslatedChapter(bible, bookId, chapterId) {
+function readTranslatedChapter(bible: string, bookId: number, chapterId: number): string | null {
     const file = path.join(__dirname, `bibles_raw/${bible}/${bookId}/${chapterId}.json`);
     if (!fs.existsSync(file)) return null;
-    const verses = JSON.parse(fs.readFileSync(file, 'utf-8'));
+    const verses: Chapter = JSON.parse(fs.readFileSync(file, 'utf-8'));
     return verses.map(v => `${v.verseId}: ${v.text}`).join('\n');
 }
 
-function getTagPrompt(language, bookId, chapterId, chapterText) {
+function getTagPrompt(language: string, bookId: number, chapterId: number, chapterText: string): string {
     const bookName = getBookName(bookId, language);
     const langCode = getLanguageCode(language);
     const ref = `${bookName} ${chapterId}`;
@@ -236,14 +253,42 @@ ${chapterText}`;
     }
 }
 
-function ensureDir(filepath) {
+function ensureDir(filepath: string): void {
     const dir = path.dirname(filepath);
     if (!fs.existsSync(dir)) fs.mkdirSync(dir, {recursive: true});
 }
 
-function addReference(tagDir, category, tagId, names, descriptions, bookId, chapterId) {
+/** Ett kapittel utpekt av bok-id og kapittelnummer, slik det ligger i en taggfil. */
+interface TagChapterRef {
+    bookId: number;
+    chapterId: number;
+}
+
+/** Innholdet i `tags/<lang>/<kategori>/<tagg>.json`. */
+interface TagFile {
+    id: string;
+    category: string;
+    name: string;
+    description: string;
+    references: TagChapterRef[];
+}
+
+/**
+ * `names`/`descriptions` er `Record<string, string>` og ikke den smalere
+ * tagg-unionen: funksjonen kalles med alle fire kategoriene, som har hver sin
+ * union av nøkler.
+ */
+function addReference(
+    tagDir: string,
+    category: string,
+    tagId: string,
+    names: Record<string, string>,
+    descriptions: Record<string, string>,
+    bookId: number,
+    chapterId: number
+): boolean {
     const file = path.join(tagDir, category, `${tagId}.json`);
-    let data;
+    let data: TagFile;
     if (fs.existsSync(file)) {
         data = JSON.parse(fs.readFileSync(file, 'utf-8'));
     } else {
@@ -266,7 +311,7 @@ function addReference(tagDir, category, tagId, names, descriptions, bookId, chap
     return true;
 }
 
-function countChapters(bookStart, bookEnd, chapterStart, chapterEnd) {
+function countChapters(bookStart: number, bookEnd: number, chapterStart: number | null, chapterEnd: number | null): number {
     let total = 0;
     for (const book of books) {
         if (book.id < bookStart || book.id > bookEnd) continue;
@@ -277,7 +322,7 @@ function countChapters(bookStart, bookEnd, chapterStart, chapterEnd) {
     return total;
 }
 
-function printUsage() {
+function printUsage(): void {
     console.log(`
 Usage: node chapter_tags.mjs [options]
 
@@ -307,7 +352,7 @@ Examples:
 `);
 }
 
-function parseRange(value) {
+function parseRange(value: string): {start: number; end: number} {
     if (value.includes('-')) {
         const [start, end] = value.split('-').map(n => parseInt(n, 10));
         return {start, end};
@@ -316,9 +361,30 @@ function parseRange(value) {
     return {start: num, end: num};
 }
 
-async function main() {
+/** Flaggene skriptet kjenner. `null` = ikke oppgitt, ikke «tom». */
+interface TagOptions {
+    language: string;
+    bible: string | null;
+    bookStart: number | null;
+    bookEnd: number | null;
+    chapterStart: number | null;
+    chapterEnd: number | null;
+    local: boolean;
+    force: boolean;
+    help: boolean;
+}
+
+/** Svaret fra modellen, dekodet mot `TAG_SCHEMA`. */
+interface TagResult {
+    genres: GenreTag[];
+    sentiments: SentimentTag[];
+    themes: ThemeTag[];
+    liturgy: LiturgyTag[];
+}
+
+async function main(): Promise<void> {
     const args = process.argv.slice(2);
-    const options = {
+    const options: TagOptions = {
         language: 'Norwegian bokmål',
         bible: null,
         bookStart: null,
@@ -376,14 +442,17 @@ async function main() {
 
     const langCode = getLanguageCode(options.language);
     const tagDir = path.join(__dirname, 'tags', langCode);
-    const genreNames = GENRE_NAMES[langCode] || GENRE_NAMES.en;
-    const genreDescriptions = GENRE_DESCRIPTIONS[langCode] || GENRE_DESCRIPTIONS.en;
-    const sentimentNames = SENTIMENT_NAMES[langCode] || SENTIMENT_NAMES.en;
-    const sentimentDescriptions = SENTIMENT_DESCRIPTIONS[langCode] || SENTIMENT_DESCRIPTIONS.en;
-    const themeNames = THEME_NAMES[langCode] || THEME_NAMES.en;
-    const themeDescriptions = THEME_DESCRIPTIONS[langCode] || THEME_DESCRIPTIONS.en;
-    const liturgyNames = LITURGY_NAMES[langCode] || LITURGY_NAMES.en;
-    const liturgyDescriptions = LITURGY_DESCRIPTIONS[langCode] || LITURGY_DESCRIPTIONS.en;
+    // `getLanguageCode` gir en vilkårlig språkkode, og bare `nb`/`en` finnes i
+    // tabellene. `as TagLang` lar oppslaget kompilere; `|| …en` er fallbacken
+    // som alt fanget de andre kodene før typene kom til.
+    const genreNames = GENRE_NAMES[langCode as TagLang] || GENRE_NAMES.en;
+    const genreDescriptions = GENRE_DESCRIPTIONS[langCode as TagLang] || GENRE_DESCRIPTIONS.en;
+    const sentimentNames = SENTIMENT_NAMES[langCode as TagLang] || SENTIMENT_NAMES.en;
+    const sentimentDescriptions = SENTIMENT_DESCRIPTIONS[langCode as TagLang] || SENTIMENT_DESCRIPTIONS.en;
+    const themeNames = THEME_NAMES[langCode as TagLang] || THEME_NAMES.en;
+    const themeDescriptions = THEME_DESCRIPTIONS[langCode as TagLang] || THEME_DESCRIPTIONS.en;
+    const liturgyNames = LITURGY_NAMES[langCode as TagLang] || LITURGY_NAMES.en;
+    const liturgyDescriptions = LITURGY_DESCRIPTIONS[langCode as TagLang] || LITURGY_DESCRIPTIONS.en;
 
     const bookStart = options.bookStart || 1;
     const bookEnd = options.bookEnd || 66;
@@ -391,14 +460,14 @@ async function main() {
     const chapterEnd = options.chapterEnd || null;
 
     // Track which chapters are already tagged (for --force check)
-    const taggedChapters = new Set();
+    const taggedChapters = new Set<string>();
     if (!options.force) {
         // Scan all existing tag files to find already-tagged chapters
         for (const category of ['genre', 'sentiment', 'theme', 'liturgy']) {
             const catDir = path.join(tagDir, category);
             if (!fs.existsSync(catDir)) continue;
             for (const file of fs.readdirSync(catDir).filter(f => f.endsWith('.json'))) {
-                const data = JSON.parse(fs.readFileSync(path.join(catDir, file), 'utf-8'));
+                const data: TagFile = JSON.parse(fs.readFileSync(path.join(catDir, file), 'utf-8'));
                 for (const ref of data.references || []) {
                     taggedChapters.add(`${ref.bookId}:${ref.chapterId}`);
                 }
@@ -450,7 +519,9 @@ async function main() {
             const prompt = getTagPrompt(options.language, book.id, chapterId, chapterText);
 
             try {
-                const result = await callWithRetry(prompt, {schema: TAG_SCHEMA, local: useLocal, task: 'tags', context: `${book.id}:${chapterId}`});
+                // `callWithRetry` er typet `object | string`; med skjema er det
+                // det dekodede objektet. Påstanden navngir formen skjemaet krever.
+                const result = await callWithRetry(prompt, {schema: TAG_SCHEMA, local: useLocal, task: 'tags', context: `${book.id}:${chapterId}`}) as TagResult;
 
                 for (const genre of result.genres) {
                     addReference(tagDir, 'genre', genre, genreNames, genreDescriptions, book.id, chapterId);
@@ -466,7 +537,7 @@ async function main() {
                 }
                 tagged++;
             } catch (error) {
-                process.stdout.write(`\n  Error tagging ${bookName} ${chapterId}: ${error.message}\n`);
+                process.stdout.write(`\n  Error tagging ${bookName} ${chapterId}: ${(error as Error).message}\n`);
             }
         }
     }

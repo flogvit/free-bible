@@ -9,8 +9,49 @@ dotenv.config()
 
 import {books, normalizeLanguage, getLanguageCode, getBookName} from "./constants.js";
 import {callWithRetry} from "./llm.js";
+import type {Chapter} from '../kvn/src/bible-types.js';
 
 let useLocal = false;
+
+/**
+ * Én funn-post fra korrekturen, slik `PROOFREAD_SUMMARY_SCHEMA` under krever.
+ * Enum-verdiene er duplisert med vilje: JSON-skjemaet er avtalen med modellen,
+ * typen er den samme avtalen for kompilatoren.
+ */
+interface ProofreadIssue {
+    type: 'error' | 'suggestion' | 'theological' | 'grammar' | 'missing' | 'structure';
+    severity: 'critical' | 'major' | 'minor';
+    current: string;
+    suggested: string;
+    explanation: string;
+}
+
+/** Svaret fra korrekturkallet — samme form som `PROOFREAD_SUMMARY_SCHEMA`. */
+interface ProofreadSummaryResult {
+    issues: ProofreadIssue[];
+    summary: string;
+    score: number;
+    revisedSummary: string;
+}
+
+/** Flaggene `parseArgs` under kjenner. */
+interface Options {
+    language: string;
+    proofread: boolean;
+    apply: boolean;
+    ot: boolean;
+    nt: boolean;
+    bookStart: number | null;
+    bookEnd: number | null;
+    force: boolean;
+    help: boolean;
+    /**
+     * Valgfritt fordi feltet ikke står i initialiseringen: det finnes bare når
+     * brukeren faktisk sender `--local`. Typen beskriver den oppførselen slik
+     * den er i dag, den endrer den ikke.
+     */
+    local?: boolean;
+}
 
 const PROOFREAD_SUMMARY_SCHEMA = {
     type: "object",
@@ -39,21 +80,21 @@ const PROOFREAD_SUMMARY_SCHEMA = {
 };
 
 // Get original source based on book ID
-function getOriginalSource(bookId) {
+function getOriginalSource(bookId: number): string {
     return bookId <= 39 ? 'hebrew' : 'sblgnt';
 }
 
 // Read all chapters of a book from bibles_raw
-function readOriginalBook(bookId) {
+function readOriginalBook(bookId: number): string | null {
     const source = getOriginalSource(bookId);
     const book = books.find(b => b.id === bookId);
     if (!book) return null;
 
-    const chapters = [];
+    const chapters: string[] = [];
     for (let chapterId = 1; chapterId <= book.chapters; chapterId++) {
         const sourceFile = path.join(__dirname, `bibles_raw/${source}/${bookId}/${chapterId}.json`);
         if (fs.existsSync(sourceFile)) {
-            const verses = JSON.parse(fs.readFileSync(sourceFile, 'utf-8'));
+            const verses: Chapter = JSON.parse(fs.readFileSync(sourceFile, 'utf-8'));
             const chapterText = verses.map(v => `${v.verseId}: ${v.text}`).join('\n');
             chapters.push(`Kapittel ${chapterId}:\n${chapterText}`);
         }
@@ -62,10 +103,12 @@ function readOriginalBook(bookId) {
 }
 
 // Get book summary generation prompt
-function getSummaryPrompt(language, bookId, originalText) {
+function getSummaryPrompt(language: string, bookId: number, originalText: string): string {
     const bookName = getBookName(bookId, language);
     const book = books.find(b => b.id === bookId);
-    const chapterCount = book.chapters;
+    // `!` er en ren typepåstand: fantes ikke bok-id-en i `books`, kastet denne
+    // linja på `.chapters` også før typene kom til.
+    const chapterCount = book!.chapters;
     const langCode = getLanguageCode(language);
     const originalLanguage = bookId <= 39 ? 'hebraisk' : 'gresk';
 
@@ -150,16 +193,16 @@ const MAX_PROMPT_TOKENS = 180000; // Leave room for response within 200K limit
 const PROMPT_OVERHEAD_TOKENS = 3000; // Approximate tokens for prompt instructions
 
 // Read condensed version of a book (first verse of each chapter)
-function readCondensedBook(bookId) {
+function readCondensedBook(bookId: number): string | null {
     const source = getOriginalSource(bookId);
     const book = books.find(b => b.id === bookId);
     if (!book) return null;
 
-    const chapters = [];
+    const chapters: string[] = [];
     for (let chapterId = 1; chapterId <= book.chapters; chapterId++) {
         const sourceFile = path.join(__dirname, `bibles_raw/${source}/${bookId}/${chapterId}.json`);
         if (fs.existsSync(sourceFile)) {
-            const verses = JSON.parse(fs.readFileSync(sourceFile, 'utf-8'));
+            const verses: Chapter = JSON.parse(fs.readFileSync(sourceFile, 'utf-8'));
             const firstVerse = verses[0] ? `1: ${verses[0].text}` : '';
             const lastVerse = verses.length > 1 ? `${verses[verses.length - 1].verseId}: ${verses[verses.length - 1].text}` : '';
             chapters.push(`Kapittel ${chapterId} (${verses.length} vers):\n${firstVerse}${lastVerse ? '\n...\n' + lastVerse : ''}`);
@@ -169,7 +212,7 @@ function readCondensedBook(bookId) {
 }
 
 // Proofread prompt for book summaries
-function getProofreadPrompt(language, bookId, currentSummary, originalText) {
+function getProofreadPrompt(language: string, bookId: number, currentSummary: string, originalText: string): string {
     const bookName = getBookName(bookId, language);
     const langCode = getLanguageCode(language);
     const originalLanguage = bookId <= 39 ? 'hebraisk' : 'gresk';
@@ -180,8 +223,10 @@ function getProofreadPrompt(language, bookId, currentSummary, originalText) {
     const totalEstimate = summaryTokens + originalTokens + PROMPT_OVERHEAD_TOKENS;
     const textTooLarge = totalEstimate > MAX_PROMPT_TOKENS;
 
-    let referenceText;
-    let referenceNote;
+    // `readCondensedBook` kan gi `null`, og gjorde det før typene også — det
+    // ender i så fall som «null» i teksten. Typen beskriver, den endrer ikke.
+    let referenceText: string | null;
+    let referenceNote: string;
     if (textTooLarge) {
         referenceText = readCondensedBook(bookId);
         if (langCode === 'nb') {
@@ -197,8 +242,8 @@ function getProofreadPrompt(language, bookId, currentSummary, originalText) {
         referenceNote = '';
     }
 
-    let basePrompt;
-    let structureReminder;
+    let basePrompt: string;
+    let structureReminder: string;
 
     if (langCode === 'nb') {
         basePrompt = `Du er en korrekturleser for bibelsammendrag. Gå gjennom følgende sammendrag av ${bookName}.
@@ -265,21 +310,21 @@ Current summary:
 ${currentSummary}`;
 }
 
-function getOutputPath(language, bookId) {
+function getOutputPath(language: string, bookId: number): string {
     const langCode = getLanguageCode(language);
     return path.join(__dirname, `book_summaries/${langCode}/${bookId}.md`);
 }
 
-function getProofreadPath(language, bookId) {
+function getProofreadPath(language: string, bookId: number): string {
     const langCode = getLanguageCode(language);
     return path.join(__dirname, `proofread_book_summaries/${langCode}/${bookId}.json`);
 }
 
-function fileExists(filepath) {
+function fileExists(filepath: string): boolean {
     return fs.existsSync(filepath) && fs.statSync(filepath).size > 0;
 }
 
-async function generateBookSummary(language, bookId, filename) {
+async function generateBookSummary(language: string, bookId: number, filename: string): Promise<void> {
     const bookName = getBookName(bookId, language);
 
     // Read the original text
@@ -292,7 +337,9 @@ async function generateBookSummary(language, bookId, filename) {
     const prompt = getSummaryPrompt(language, bookId, originalText);
 
     console.log(`Generating summary for ${bookName}...`);
-    const text = await callWithRetry(prompt, {local: useLocal, context: `book ${bookId}`});
+    // Uten `schema` svarer `callWithRetry` med råtekst; påstanden sier bare
+    // hvilken gren av `string | object` kallet allerede lå i.
+    const text = await callWithRetry(prompt, {local: useLocal, context: `book ${bookId}`}) as string;
 
     const dir = path.dirname(filename);
     if (!fs.existsSync(dir)) {
@@ -303,7 +350,7 @@ async function generateBookSummary(language, bookId, filename) {
     console.log(`Saved: ${filename}`);
 }
 
-async function proofreadBookSummary(language, bookId, summaryFilename, saveToFile = true) {
+async function proofreadBookSummary(language: string, bookId: number, summaryFilename: string, saveToFile: boolean = true): Promise<ProofreadSummaryResult | null> {
     if (!fileExists(summaryFilename)) {
         console.log(`No summary file found for book ${bookId}`);
         return null;
@@ -323,7 +370,7 @@ async function proofreadBookSummary(language, bookId, summaryFilename, saveToFil
     console.log(`Proofreading summary for ${bookName}...`);
 
     const prompt = getProofreadPrompt(language, bookId, currentSummary, originalText);
-    const result = await callWithRetry(prompt, {schema: PROOFREAD_SUMMARY_SCHEMA, local: useLocal, context: `proofread book ${bookId}`});
+    const result = await callWithRetry(prompt, {schema: PROOFREAD_SUMMARY_SCHEMA, local: useLocal, context: `proofread book ${bookId}`}) as ProofreadSummaryResult;
 
     // Save proofread results if requested
     if (saveToFile) {
@@ -344,7 +391,7 @@ async function proofreadBookSummary(language, bookId, summaryFilename, saveToFil
     console.log(`Summary: ${result.summary}`);
     if (result.issues && result.issues.length > 0) {
         console.log(`Issues found: ${result.issues.length}`);
-        result.issues.forEach((issue, i) => {
+        result.issues.forEach((issue: ProofreadIssue, i: number) => {
             console.log(`  ${i + 1}. [${issue.severity}] ${issue.type}`);
             console.log(`     ${issue.explanation}`);
         });
@@ -353,7 +400,7 @@ async function proofreadBookSummary(language, bookId, summaryFilename, saveToFil
     return result;
 }
 
-function applyProofreadChanges(language, bookId, summaryFilename, proofreadResult = null) {
+function applyProofreadChanges(language: string, bookId: number, summaryFilename: string, proofreadResult: ProofreadSummaryResult | null = null): void {
     // Load proofread result from file if not provided
     if (!proofreadResult) {
         const proofreadFile = getProofreadPath(language, bookId);
@@ -361,7 +408,7 @@ function applyProofreadChanges(language, bookId, summaryFilename, proofreadResul
             console.log(`No proofread file found for book ${bookId}`);
             return;
         }
-        proofreadResult = JSON.parse(fs.readFileSync(proofreadFile, 'utf-8'));
+        proofreadResult = JSON.parse(fs.readFileSync(proofreadFile, 'utf-8')) as ProofreadSummaryResult;
     }
 
     if (!fileExists(summaryFilename)) {
@@ -381,7 +428,7 @@ function applyProofreadChanges(language, bookId, summaryFilename, proofreadResul
     console.log(`Applied revisions to ${bookName}`);
 }
 
-function printUsage() {
+function printUsage(): void {
     console.log(`
 Usage: node book_summary.mjs [options]
 
@@ -414,17 +461,17 @@ Parallel processing (run in separate terminals):
 `);
 }
 
-function parseRange(value) {
+function parseRange(value: string): {start: number, end: number} {
     if (value.includes('-')) {
-        const [start, end] = value.split('-').map(n => parseInt(n, 10));
+        const [start, end] = value.split('-').map((n: string) => parseInt(n, 10));
         return {start, end};
     }
     const num = parseInt(value, 10);
     return {start: num, end: num};
 }
 
-function parseArgs(args) {
-    const options = {
+function parseArgs(args: string[]): Options {
+    const options: Options = {
         language: 'Norwegian bokmål',
         proofread: false,
         apply: false,
@@ -467,7 +514,7 @@ function parseArgs(args) {
     return options;
 }
 
-async function main() {
+async function main(): Promise<void> {
     const args = process.argv.slice(2);
     const options = parseArgs(args);
 
@@ -486,7 +533,9 @@ async function main() {
 
     if (options.bookStart !== null) {
         startBook = options.bookStart;
-        endBook = options.bookEnd;
+        // `bookEnd` settes alltid sammen med `bookStart` i `parseArgs`, så
+        // grenen her kan ikke se `null`. Kompilatoren kan ikke se koblingen.
+        endBook = options.bookEnd as number;
     } else if (options.ot && !options.nt) {
         startBook = 1;
         endBook = 39;
@@ -519,7 +568,7 @@ async function main() {
         }
 
         // Step 2: Proofread (if requested)
-        let proofreadResult = null;
+        let proofreadResult: ProofreadSummaryResult | null = null;
         if (options.proofread && fileExists(filename)) {
             const saveToFile = !options.apply;
             proofreadResult = await proofreadBookSummary(options.language, bookId, filename, saveToFile);

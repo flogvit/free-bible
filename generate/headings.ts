@@ -9,6 +9,50 @@ dotenv.config();
 
 import {books, getBookName, bibles, getLanguageCode, ollamaModel, anthropicModel} from './constants.js';
 import {callWithRetry} from './llm.js';
+import type {Chapter} from '../kvn/src/bible-types.js';
+
+/** Én seksjonsoverskrift: tittel og versintervallet den dekker. */
+interface Heading {
+    title: string;
+    startVerse: number;
+    endVerse: number;
+}
+
+/** Svaret fra modellen, dekodet mot `HEADINGS_SCHEMA`. */
+interface HeadingsResult {
+    headings: Heading[];
+}
+
+/**
+ * Resultatet av valideringen — en diskriminert union på `ok`, så `sorted`
+ * bare finnes der den faktisk er beregnet.
+ */
+type HeadingValidation =
+    | {ok: false; reason: string}
+    | {ok: true; sorted: Heading[]};
+
+/** Titlene fra et tidligere kapittel, brukt som konsistenskontekst i prompten. */
+interface PriorChapterHeadings {
+    chapter: number;
+    titles: string[];
+}
+
+/**
+ * Innholdet i `headings/<lang>/<bookId>/<chapterId>.json`.
+ *
+ * `validationWarning` settes bare når overskriftene ikke validerte — fila
+ * skrives uansett, med advarselen i seg.
+ */
+interface HeadingsOutput {
+    translation: string;
+    language: string;
+    bookId: number;
+    chapterId: number;
+    model: string;
+    generatedAt: string;
+    headings: Heading[];
+    validationWarning?: string | null;
+}
 
 const SOURCES_DIR = path.join(__dirname, 'bibles_raw');
 const OUTPUT_BASE = path.join(__dirname, 'headings');
@@ -37,27 +81,27 @@ const HEADINGS_SCHEMA = {
     additionalProperties: false
 };
 
-function loadChapter(bible, bookId, chapterId) {
+function loadChapter(bible: string, bookId: number, chapterId: number): Chapter | null {
     const file = path.join(SOURCES_DIR, bible, String(bookId), `${chapterId}.json`);
     if (!fs.existsSync(file)) return null;
     return JSON.parse(fs.readFileSync(file, 'utf8'));
 }
 
-function formatChapterText(verses) {
+function formatChapterText(verses: Chapter): string {
     return verses.map(v => `${v.verseId}. ${v.text}`).join('\n');
 }
 
-function getOutputPath(language, bookId, chapterId) {
+function getOutputPath(language: string, bookId: number, chapterId: number): string {
     return path.join(OUTPUT_BASE, language, String(bookId), `${chapterId}.json`);
 }
 
-function loadPriorChapterHeadings(language, bookId, currentChapter) {
-    const priors = [];
+function loadPriorChapterHeadings(language: string, bookId: number, currentChapter: number): PriorChapterHeadings[] {
+    const priors: PriorChapterHeadings[] = [];
     for (let ch = Math.max(1, currentChapter - PRIOR_CONTEXT_CHAPTERS); ch < currentChapter; ch++) {
         const file = getOutputPath(language, bookId, ch);
         if (!fs.existsSync(file)) continue;
         try {
-            const data = JSON.parse(fs.readFileSync(file, 'utf8'));
+            const data: HeadingsOutput = JSON.parse(fs.readFileSync(file, 'utf8'));
             if (data.headings && data.headings.length) {
                 priors.push({chapter: ch, titles: data.headings.map(h => h.title)});
             }
@@ -68,7 +112,7 @@ function loadPriorChapterHeadings(language, bookId, currentChapter) {
     return priors;
 }
 
-function buildPrompt(language, bookName, chapterId, chapterText, verseCount, priorHeadings) {
+function buildPrompt(language: string, bookName: string, chapterId: number, chapterText: string, verseCount: number, priorHeadings: PriorChapterHeadings[]): string {
     const langLabel = language === 'nn' ? 'nynorsk' : 'bokmål';
     const priorBlock = priorHeadings.length
         ? `\nForrige kapitler i samme bok (for konsistens i stil og navngivning):\n${priorHeadings.map(p => `  Kapittel ${p.chapter}: ${p.titles.join(' / ')}`).join('\n')}\n`
@@ -92,7 +136,7 @@ ${chapterText}
 Returner JSON med en "headings"-array. Hver oppføring: {"title": "...", "startVerse": N, "endVerse": M}.`;
 }
 
-function validateHeadings(headings, verseCount) {
+function validateHeadings(headings: Heading[], verseCount: number): HeadingValidation {
     if (!Array.isArray(headings) || headings.length === 0) {
         return {ok: false, reason: 'empty or non-array'};
     }
@@ -124,7 +168,7 @@ function validateHeadings(headings, verseCount) {
     return {ok: true, sorted};
 }
 
-async function processChapter(bible, language, bookId, chapterId, options) {
+async function processChapter(bible: string, language: string, bookId: number, chapterId: number, options: HeadingsOptions): Promise<void> {
     const bookName = getBookName(bookId, language);
     const outputFile = getOutputPath(language, bookId, chapterId);
 
@@ -149,10 +193,13 @@ async function processChapter(bible, language, bookId, chapterId, options) {
     process.stdout.write(`  ${bookName} ${chapterId} (${verses.length} vers, ${useLocal ? 'qwen' : 'claude'})... `);
     const t0 = Date.now();
 
-    let result;
-    let validation;
+    // `!` er en definite-assignment-påstand: while-løkka kjører alltid minst én
+    // runde (`attempts` starter på 0, grensen er 2) og setter begge før de
+    // leses, men det ser ikke kompilatoren gjennom try/catch-en.
+    let result!: HeadingsResult;
+    let validation!: HeadingValidation;
     let attempts = 0;
-    let lastReason = null;
+    let lastReason: string | null = null;
     const MAX_VALIDATION_RETRIES = 2;
 
     while (attempts < MAX_VALIDATION_RETRIES) {
@@ -162,13 +209,15 @@ async function processChapter(bible, language, bookId, chapterId, options) {
             attemptPrompt = `${prompt}\n\nDet forrige forsøket ble forkastet fordi: ${lastReason}. Vennligst rett opp.`;
         }
         try {
+            // `callWithRetry` er typet `object | string`; med skjema er det det
+            // dekodede objektet. Påstanden navngir formen skjemaet krever.
             result = await callWithRetry(attemptPrompt, {
                 schema: HEADINGS_SCHEMA,
                 local: useLocal,
                 context: `${bookName} ${chapterId}`
-            });
+            }) as HeadingsResult;
         } catch (err) {
-            process.stdout.write(`FEIL (LLM): ${err.message}\n`);
+            process.stdout.write(`FEIL (LLM): ${(err as Error).message}\n`);
             return;
         }
         validation = validateHeadings(result.headings, verseCount);
@@ -178,7 +227,7 @@ async function processChapter(bible, language, bookId, chapterId, options) {
 
     const dt = ((Date.now() - t0) / 1000).toFixed(1);
 
-    const output = {
+    const output: HeadingsOutput = {
         translation: bible,
         language,
         bookId,
@@ -199,7 +248,7 @@ async function processChapter(bible, language, bookId, chapterId, options) {
     fs.writeFileSync(outputFile, JSON.stringify(output, null, 2));
 }
 
-function printUsage() {
+function printUsage(): void {
     console.log(`
 Usage: node headings.mjs --bible <name> [options]
 
@@ -228,7 +277,7 @@ Examples:
 `);
 }
 
-function parseRange(value) {
+function parseRange(value: string): {start: number; end: number} {
     if (value.includes('-')) {
         const [start, end] = value.split('-').map(n => parseInt(n, 10));
         return {start, end};
@@ -237,9 +286,21 @@ function parseRange(value) {
     return {start: n, end: n};
 }
 
-async function main() {
+/** Flaggene skriptet kjenner. `null` = ikke oppgitt, ikke «tom». */
+interface HeadingsOptions {
+    bible: string | null;
+    bookStart: number | null;
+    bookEnd: number | null;
+    chapterStart: number | null;
+    chapterEnd: number | null;
+    force: boolean;
+    remote: boolean;
+    help: boolean;
+}
+
+async function main(): Promise<void> {
     const args = process.argv.slice(2);
-    const options = {
+    const options: HeadingsOptions = {
         bible: null,
         bookStart: null,
         bookEnd: null,

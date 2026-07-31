@@ -21,14 +21,92 @@ import * as fs from 'fs';
 import path from 'path';
 import { fileURLToPath } from 'url';
 import { books, maxTokens } from './constants.js';
+import type { Verse, Chapter } from '../kvn/src/bible-types.js';
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 dotenv.config({ path: path.join(__dirname, '.env') });
 
+/** Ett vers slik det står i inndatafila, før noen mapping. */
+interface SourceVerse {
+  bookId: number;
+  srcBookName: string;
+  srcChapter: number;
+  srcVerse: number;
+  text: string;
+}
+
+/**
+ * Beskrivelsen av et kjent inndataformat.
+ *
+ * `bookNames` har `undefined` i verditypen fordi oppslaget er dynamisk og
+ * `parseInputFile` tester nettopp på `undefined` for et ukjent boknavn.
+ */
+interface InputFormat {
+  name: string;
+  description: string;
+  lineRegex: RegExp;
+  bookNames: Record<string, number | undefined>;
+}
+
+/** Kapitteltellingen for ett osnb-kapittel. */
+interface ChapterCount {
+  bookId: number;
+  chapter: number;
+  verseCount: number;
+  maxVerse: number;
+}
+
+/** Kapitteltellinger nøklet på `${bookId}-${chapter}`. */
+type ChapterCounts = Record<string, ChapterCount>;
+
+/** Kildevers gruppert på `${bookId}-${chapter}`. */
+type SourceGroups = Record<string, SourceVerse[]>;
+
+/** `${bookId}-${kapittel}-${vers}` i kilden → samme form i osnb. */
+type VerseMap = Record<string, string>;
+
+/** En forskjell mellom kildens og osnbs kapittelinndeling. */
+interface Diff {
+  bookId: number;
+  chapter: number;
+  type: 'missing_in_source' | 'missing_in_osnb' | 'verse_count_mismatch';
+  srcCount: number;
+  osnbCount: number;
+}
+
+/** Ett kapittel-og-vers-par, brukt når vers legges ut på rekke. */
+interface VerseRef {
+  chapter: number;
+  verse: number;
+}
+
+/**
+ * Én linje i svaret fra modellen: kildevers → osnb-vers, eller `null` når
+ * verset ikke har noen motpart.
+ */
+interface AiMappingEntry {
+  src: [number, number];
+  dst: [number, number] | null;
+}
+
+/**
+ * En post i `unmapped`. Feltene er valgfrie fordi tre ulike former legges inn:
+ * hele kapitler uten data, enkeltvers uten treff, og udekte forskjeller.
+ */
+interface UnmappedEntry {
+  bookId: number;
+  chapter?: number;
+  srcRef?: string;
+  type?: Diff['type'];
+  srcCount?: number;
+  osnbCount?: number;
+  reason: string;
+}
+
 // --- Configuration per known format ---
 
-const KNOWN_FORMATS = {
+const KNOWN_FORMATS: Record<string, InputFormat | undefined> = {
   dnb_2011_nb: {
     name: 'Det Norske Bibelselskap 2011 Bokmål',
     description: 'Bibelselskapets oversettelse 2011',
@@ -85,9 +163,9 @@ const VERSE_MAPPING_SCHEMA = {
 
 // --- Parsing ---
 
-function parseInputFile(filePath, format) {
+function parseInputFile(filePath: string, format: InputFormat): SourceVerse[] {
   const lines = fs.readFileSync(filePath, 'utf-8').trim().split('\n');
-  const verses = [];
+  const verses: SourceVerse[] = [];
 
   for (const line of lines) {
     const match = line.match(format.lineRegex);
@@ -115,14 +193,14 @@ function parseInputFile(filePath, format) {
 
 // --- Load osnb data ---
 
-function loadOsnb2Chapter(bookId, chapter) {
+function loadOsnb2Chapter(bookId: number, chapter: number): Chapter | null {
   const filePath = path.join(__dirname, 'bibles_raw', 'osnb', `${bookId}`, `${chapter}.json`);
   if (!fs.existsSync(filePath)) return null;
   return JSON.parse(fs.readFileSync(filePath, 'utf-8'));
 }
 
-function getOsnb2ChapterCounts() {
-  const counts = {};
+function getOsnb2ChapterCounts(): ChapterCounts {
+  const counts: ChapterCounts = {};
   for (const book of books) {
     for (let ch = 1; ch <= book.chapters; ch++) {
       const verses = loadOsnb2Chapter(book.id, ch);
@@ -142,8 +220,8 @@ function getOsnb2ChapterCounts() {
 
 // --- Group source verses by book+chapter ---
 
-function groupByChapter(verses) {
-  const groups = {};
+function groupByChapter(verses: SourceVerse[]): SourceGroups {
+  const groups: SourceGroups = {};
   for (const v of verses) {
     const key = `${v.bookId}-${v.srcChapter}`;
     if (!groups[key]) groups[key] = [];
@@ -154,11 +232,11 @@ function groupByChapter(verses) {
 
 // --- Find differences ---
 
-function findDifferences(srcGroups, osnbCounts) {
-  const diffs = [];
+function findDifferences(srcGroups: SourceGroups, osnbCounts: ChapterCounts): Diff[] {
+  const diffs: Diff[] = [];
 
   // Collect all unique bookId+chapter pairs from both sides
-  const allBooks = new Set();
+  const allBooks = new Set<number>();
   for (const key of Object.keys(srcGroups)) {
     allBooks.add(parseInt(key.split('-')[0]));
   }
@@ -211,7 +289,13 @@ function findDifferences(srcGroups, osnbCounts) {
 
 // --- AI-based verse matching ---
 
-async function matchVersesWithAI(srcVerses, osnbVerses, bookId, srcChapter, osnbChapter) {
+async function matchVersesWithAI(
+  srcVerses: SourceVerse[],
+  osnbVerses: Verse[],
+  bookId: number,
+  srcChapter: number,
+  osnbChapter: number,
+): Promise<AiMappingEntry[]> {
   const Anthropic = (await import('@anthropic-ai/sdk')).default;
   const anthropic = new Anthropic({ apiKey: process.env.ANTHROPIC_API_KEY });
 
@@ -265,7 +349,10 @@ If dst is null (no match), use: { "src": [chapter, verse], "dst": null }`;
     }
   });
 
-  const result = JSON.parse(response.content[0].text);
+  // `content[0]` er typet som unionen ContentBlock, der bare tekstvarianten har
+  // `text`. Påstanden sier hva koden alltid har antatt — svaret er tvunget til
+  // VERSE_MAPPING_SCHEMA over, så blokka er en tekstblokk.
+  const result = JSON.parse((response.content[0] as { text: string }).text);
   return result.mappings;
 }
 
@@ -276,9 +363,16 @@ If dst is null (no match), use: { "src": [chapter, verse], "dst": null }`;
  * All source verses are laid out in order, and mapped to all osnb verses in order.
  * Only adds entries where the mapping differs from identity (same chapter + verse).
  */
-function mapChapterGroupSequentially(bookId, srcChapters, osnbChapters, srcGroups, osnbCounts, verseMap) {
+function mapChapterGroupSequentially(
+  bookId: number,
+  srcChapters: number[],
+  osnbChapters: number[],
+  srcGroups: SourceGroups,
+  osnbCounts: ChapterCounts,
+  verseMap: VerseMap,
+): number {
   // Build sequential list of source refs
-  const srcRefs = [];
+  const srcRefs: VerseRef[] = [];
   for (const ch of srcChapters) {
     const verses = srcGroups[`${bookId}-${ch}`] || [];
     for (const v of verses) {
@@ -287,7 +381,7 @@ function mapChapterGroupSequentially(bookId, srcChapters, osnbChapters, srcGroup
   }
 
   // Build sequential list of osnb refs
-  const osnbRefs = [];
+  const osnbRefs: VerseRef[] = [];
   for (const ch of osnbChapters) {
     const info = osnbCounts[`${bookId}-${ch}`];
     if (info) {
@@ -317,12 +411,16 @@ function mapChapterGroupSequentially(bookId, srcChapters, osnbChapters, srcGroup
  * 2. Multi-chapter blocks (e.g. Job 38-41) where totals match
  * 3. Overflow chapters (e.g. Malachi 4 → Malachi 3:19-24)
  */
-function tryDeterministicMapping(diffs, srcGroups, osnbCounts) {
-  const verseMap = {};
-  const handled = new Set();
+function tryDeterministicMapping(
+  diffs: Diff[],
+  srcGroups: SourceGroups,
+  osnbCounts: ChapterCounts,
+): { verseMap: VerseMap; unhandled: Diff[] } {
+  const verseMap: VerseMap = {};
+  const handled = new Set<string>();
 
   // Group diffs by bookId, sorted by chapter
-  const diffsByBook = {};
+  const diffsByBook: Record<number, Diff[]> = {};
   for (const d of diffs) {
     if (!diffsByBook[d.bookId]) diffsByBook[d.bookId] = [];
     diffsByBook[d.bookId].push(d);
@@ -335,8 +433,8 @@ function tryDeterministicMapping(diffs, srcGroups, osnbCounts) {
     const bookId = parseInt(bookIdStr);
 
     // Find groups of consecutive diff chapters
-    const groups = [];
-    let currentGroup = [bookDiffs[0]];
+    const groups: Diff[][] = [];
+    let currentGroup: Diff[] = [bookDiffs[0]];
 
     for (let i = 1; i < bookDiffs.length; i++) {
       if (bookDiffs[i].chapter === currentGroup[currentGroup.length - 1].chapter + 1) {
@@ -354,8 +452,8 @@ function tryDeterministicMapping(diffs, srcGroups, osnbCounts) {
       // Calculate totals for the group
       let srcTotal = 0;
       let osnbTotal = 0;
-      const srcChapters = [];
-      const osnbChapters = [];
+      const srcChapters: number[] = [];
+      const osnbChapters: number[] = [];
 
       for (const d of group) {
         srcTotal += d.srcCount;
@@ -426,7 +524,7 @@ function tryDeterministicMapping(diffs, srcGroups, osnbCounts) {
 
 // --- Main ---
 
-async function main() {
+async function main(): Promise<void> {
   const args = process.argv.slice(2);
   if (args.length < 2) {
     console.log('Usage: node generate-verse-mapping.mjs <input-file> <mapping-id> [--use-ai]');
@@ -495,12 +593,12 @@ async function main() {
   }
 
   // Group unhandled diffs into consecutive chapter groups per book for AI matching
-  const unmapped = [];
+  const unmapped: UnmappedEntry[] = [];
   if (useAI && unhandled.length > 0) {
     console.log('\nUsing AI to match remaining chapters...');
 
     // Group consecutive unhandled chapters by book
-    const unhandledByBook = {};
+    const unhandledByBook: Record<number, Diff[]> = {};
     for (const d of unhandled) {
       if (!unhandledByBook[d.bookId]) unhandledByBook[d.bookId] = [];
       unhandledByBook[d.bookId].push(d);
@@ -512,8 +610,8 @@ async function main() {
 
       // Group into consecutive runs
       bookUnhandled.sort((a, b) => a.chapter - b.chapter);
-      const aiGroups = [];
-      let current = [bookUnhandled[0]];
+      const aiGroups: Diff[][] = [];
+      let current: Diff[] = [bookUnhandled[0]];
       for (let i = 1; i < bookUnhandled.length; i++) {
         if (bookUnhandled[i].chapter === current[current.length - 1].chapter + 1) {
           current.push(bookUnhandled[i]);
@@ -528,7 +626,7 @@ async function main() {
         const chapters = group.map(d => d.chapter);
 
         // Collect all source verses for these chapters
-        const allSrcVerses = [];
+        const allSrcVerses: SourceVerse[] = [];
         for (const d of group) {
           if (d.srcCount > 0) {
             const sv = srcGroups[`${bookId}-${d.chapter}`] || [];
@@ -537,7 +635,7 @@ async function main() {
         }
 
         // Collect all osnb verses for these chapters
-        const allOsnb2Verses = [];
+        const allOsnb2Verses: Verse[] = [];
         for (const d of group) {
           if (d.type !== 'missing_in_osnb') {
             const ov = loadOsnb2Chapter(bookId, d.chapter) || [];
@@ -592,11 +690,11 @@ async function main() {
           }
           console.log(`    → mapped ${mapped} verses`);
         } catch (err) {
-          console.error(`    → AI matching failed: ${err.message}`);
+          console.error(`    → AI matching failed: ${(err as Error).message}`);
           for (const d of group) {
             unmapped.push({
               bookId, chapter: d.chapter,
-              reason: `AI matching failed: ${err.message}`,
+              reason: `AI matching failed: ${(err as Error).message}`,
             });
           }
         }

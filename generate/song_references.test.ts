@@ -11,7 +11,7 @@
  */
 import { test, expect } from 'bun:test';
 
-import { readOllamaStream, extractJson } from './song_references.mjs';
+import { readOllamaStream, extractJson } from './song_references.js';
 
 const encoder = new TextEncoder();
 

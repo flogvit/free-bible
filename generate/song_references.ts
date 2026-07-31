@@ -24,45 +24,68 @@ import fs from 'fs';
 import path from 'path';
 import { fileURLToPath } from 'url';
 import { ollamaBaseUrl, getOllamaConfig, getTaskModel, bookNames, books } from './constants.js';
+import type { OllamaOptions } from './constants.js';
 import { resolveLocalModel } from './llm.js';
+import type { Chapter } from '../kvn/src/bible-types.js';
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const SONGS_DIR = path.join(__dirname, '..', 'external', 'songs', 'master');
 const OUTPUT_DIR = path.join(__dirname, 'songs');
 const OSMAIN_DIR = path.join(__dirname, 'bibles_raw', 'osmain');
 
+/** Ett vers i en sang slik den ligger i external/songs/master/<id>.json. */
+interface SongVerse {
+    tag?: string;
+    text: string;
+}
+
+/** En sang slik den ligger på disk. Teksten lagres aldri i resultatfila. */
+interface Song {
+    id: string;
+    title: string;
+    author?: string;
+    language: string;
+    verses: SongVerse[];
+}
+
+/** Ett oppslått vers fra osmain, redusert til det prompten trenger. */
+interface LookedUpVerse {
+    verse: number;
+    text: string;
+}
+
 // --model pinner modellen. Uten den løses den opp per sang, så en større modell
 // som alt ligger i minnet blir brukt framfor å kaste den ut — se resolveLocalModel.
-let pinnedModel = null;
+let pinnedModel: string | null = null;
 let ollamaModel = getTaskModel('songs');
 
 // ── Helpers ──────────────────────────────────────────────────────────────────
 
-function getSongText(song) {
+function getSongText(song: Song): string {
     return song.verses.map(v => v.text).join('\n\n');
 }
 
 /** Look up a verse from osmain. Returns null if not found. */
-function lookupVerse(bookId, chapter, verse) {
+function lookupVerse(bookId: number, chapter: number, verse: number): string | null {
     const chapterFile = path.join(OSMAIN_DIR, String(bookId), `${chapter}.json`);
     if (!fs.existsSync(chapterFile)) return null;
-    const data = JSON.parse(fs.readFileSync(chapterFile, 'utf-8'));
+    const data: Chapter = JSON.parse(fs.readFileSync(chapterFile, 'utf-8'));
     const v = data.find(d => d.verseId === verse);
     return v ? v.text : null;
 }
 
 /** Look up a range of verses. */
-function lookupVerses(bookId, chapter, verseStart, verseEnd) {
+function lookupVerses(bookId: number, chapter: number, verseStart: number, verseEnd: number): LookedUpVerse[] {
     const chapterFile = path.join(OSMAIN_DIR, String(bookId), `${chapter}.json`);
     if (!fs.existsSync(chapterFile)) return [];
-    const data = JSON.parse(fs.readFileSync(chapterFile, 'utf-8'));
+    const data: Chapter = JSON.parse(fs.readFileSync(chapterFile, 'utf-8'));
     return data
         .filter(d => d.verseId >= verseStart && d.verseId <= verseEnd)
         .map(d => ({ verse: d.verseId, text: d.text }));
 }
 
 /** Map book name (various formats) to bookId. */
-function parseBookName(name) {
+function parseBookName(name: string): number | null {
     const n = name.trim();
 
     // Direct bookId number
@@ -80,7 +103,9 @@ function parseBookName(name) {
     }
 
     // Common abbreviations
-    const abbrevMap = {
+    // `Record<string, number>` fordi oppslaget under er dynamisk (`abbrevMap[lower]`)
+    // — uten den ville nøkkelen måtte være en av literalene for å kunne indeksere.
+    const abbrevMap: Record<string, number> = {
         'matt': 40, 'mat': 40, 'mk': 41, 'mark': 41, 'luk': 42, 'lk': 42,
         'joh': 43, 'jn': 43, 'apg': 44, 'rom': 45, '1 kor': 46, '2 kor': 47,
         'gal': 48, 'ef': 49, 'fil': 50, 'kol': 51, '1 tess': 52, '2 tess': 53,
@@ -95,12 +120,16 @@ function parseBookName(name) {
         '1 kong': 11, '2 kong': 12, '1 krøn': 13, '2 krøn': 14,
         'esra': 15, 'neh': 16, 'est': 17, 'job': 18, 'høys': 22,
         'gen': 1, 'ex': 2, 'lev': 3, 'num': 4, 'deut': 5,
-        'josh': 6, 'judg': 7, 'ruth': 8, '1 sam': 9, '2 sam': 10,
-        '1 kgs': 11, '2 kgs': 12, 'ezra': 15, 'neh': 16, 'esth': 17,
+        // '1 sam', '2 sam' og 'neh' skrives likt på norsk og engelsk og står
+        // allerede i den norske blokken over. De sto her også, med identiske
+        // verdier, så oppførselen er uendret.
+        'josh': 6, 'judg': 7, 'ruth': 8,
+        '1 kgs': 11, '2 kgs': 12, 'ezra': 15, 'esth': 17,
         'ps': 19, 'prov': 20, 'eccl': 21, 'song': 22, 'isa': 23,
         'lam': 25, 'ezek': 26, 'joel': 29, 'amos': 30, 'obad': 31,
         'jonah': 32, 'mic': 33, 'zeph': 36, 'zech': 38,
-        'acts': 44, 'jas': 59, '1 pet': 60, '2 pet': 61, 'jude': 65,
+        // '1 pet'/'2 pet' står i den norske blokken over, med samme verdi.
+        'acts': 44, 'jas': 59, 'jude': 65,
         'psalm': 19, 'psalms': 19, 'salmene': 19, 'proverbs': 20,
         'isaiah': 23, 'jeremiah': 24, 'revelation': 66,
         'matthew': 40, 'john': 43, 'luke': 42, 'romans': 45,
@@ -117,8 +146,16 @@ function parseBookName(name) {
     return null;
 }
 
+/** En referanse etter at «Bok Kap:Vers-Vers» er tatt fra hverandre. */
+interface ParsedReference {
+    bookId: number;
+    chapter: number;
+    verseStart: number;
+    verseEnd: number;
+}
+
 /** Parse a reference string like "Matt 6:28-30" into structured form. */
-function parseReference(ref) {
+function parseReference(ref: string): ParsedReference | null {
     // Pattern: "Book Chapter:VerseStart-VerseEnd" or "Book Chapter:Verse"
     const m = ref.match(/^(.+?)\s+(\d+):(\d+)(?:\s*-\s*(\d+))?$/);
     if (!m) return null;
@@ -157,7 +194,12 @@ const IDLE_TIMEOUT_MS = Number(process.env.SONG_IDLE_TIMEOUT_MS) || 60000;
  * @param {{ idleMs?: number, abort?: () => void }} [opts]
  * @returns {Promise<string>}
  */
-export async function readOllamaStream(stream, { idleMs = IDLE_TIMEOUT_MS, abort } = {}) {
+export async function readOllamaStream(
+    // `string` er med i elementtypen fordi løkka under har en egen gren for den
+    // (`typeof chunk === 'string'`); typen beskriver det koden allerede tåler.
+    stream: AsyncIterable<Uint8Array | string>,
+    { idleMs = IDLE_TIMEOUT_MS, abort }: { idleMs?: number; abort?: () => void } = {},
+): Promise<string> {
     const decoder = new TextDecoder();
     const iterator = stream[Symbol.asyncIterator]();
     let out = '';
@@ -168,8 +210,10 @@ export async function readOllamaStream(stream, { idleMs = IDLE_TIMEOUT_MS, abort
     // ignorerer avbruddet, en strøm som ikke er en fetch-body — ville vi ellers
     // ventet for alltid på neste bit som aldri kommer.
     const stall = Symbol('stall');
-    let timer = null;
-    const deadline = () => new Promise(resolve => {
+    let timer: ReturnType<typeof setTimeout> | null = null;
+    // Typeargumentet til Promise er det som lar `step === stall` smalne unionen
+    // under; uten det blir kappløpets resultat `unknown`.
+    const deadline = () => new Promise<typeof stall>(resolve => {
         timer = setTimeout(() => resolve(stall), idleMs);
     });
 
@@ -182,7 +226,8 @@ export async function readOllamaStream(stream, { idleMs = IDLE_TIMEOUT_MS, abort
             next.catch(() => {});
 
             const step = await Promise.race([next, deadline()]);
-            clearTimeout(timer);
+            // `!` er ren typepåstand: deadline() over har nettopp satt `timer`.
+            clearTimeout(timer!);
 
             if (step === stall) {
                 abort?.();
@@ -204,14 +249,20 @@ export async function readOllamaStream(stream, { idleMs = IDLE_TIMEOUT_MS, abort
             }
         }
     } finally {
-        clearTimeout(timer);
+        // `!` er ren typepåstand, som over — clearTimeout(null) var og er et no-op.
+        clearTimeout(timer!);
     }
 
     return out;
 }
 
-/** Hent JSON ut av et svar som kan være pakket i ```json-blokker. */
-export function extractJson(text) {
+/**
+ * Hent JSON ut av et svar som kan være pakket i ```json-blokker.
+ *
+ * Returtypen er `any` fordi verdien kommer fra `JSON.parse` av modellsvar:
+ * formen er ikke kjent her, den normaliseres av normalizeStep1/normalizeStep2.
+ */
+export function extractJson(text: string): any {
     const trimmed = (text || '').trim();
     try { return JSON.parse(trimmed); } catch {}
 
@@ -226,9 +277,22 @@ export function extractJson(text) {
     return null;
 }
 
-async function callOllama(prompt, retries = 2) {
+/**
+ * Kroppen i POST /api/generate. `format` og `think` settes betinget under, så de
+ * må stå i typen selv om de ikke er med i objektliteralen.
+ */
+interface OllamaGenerateBody {
+    model: string;
+    prompt: string;
+    stream: boolean;
+    options: OllamaOptions & { num_predict: number };
+    format?: string;
+    think?: boolean;
+}
+
+async function callOllama(prompt: string, retries = 2): Promise<any> {
     const config = getOllamaConfig(ollamaModel);
-    const body = {
+    const body: OllamaGenerateBody = {
         model: ollamaModel,
         prompt: config.noThinkPrefix + prompt,
         stream: true,
@@ -237,7 +301,7 @@ async function callOllama(prompt, retries = 2) {
     if (config.openSchema) body.format = 'json';
     if (config.thinkParam) body.think = false;
 
-    let lastError;
+    let lastError: unknown;
     for (let attempt = 0; attempt <= retries; attempt++) {
         // fetch ligger INNE i try-en. Lå den utenfor, gjaldt `retries` bare når
         // svaret ikke lot seg parse, og hvert eneste tidsavbrudd ble fatalt.
@@ -251,7 +315,9 @@ async function callOllama(prompt, retries = 2) {
             });
             if (!response.ok) throw new Error(`ollama svarte ${response.status}`);
 
-            const text = await readOllamaStream(response.body, { abort: () => controller.abort() });
+            // `!` er ren typepåstand. Var `response.body` null, kastet dette
+            // uttrykket også før typene kom til — og fanges av catch-en under.
+            const text = await readOllamaStream(response.body!, { abort: () => controller.abort() });
             const parsed = extractJson(text);
             if (parsed) return parsed;
             lastError = new Error(`Could not parse JSON from LLM response: ${text.substring(0, 200)}`);
@@ -262,8 +328,42 @@ async function callOllama(prompt, retries = 2) {
     throw lastError;
 }
 
+/**
+ * Én referanse slik steg 1 leverer den. Alt er valgfritt: dette er modellsvar,
+ * og normalizeStep1 garanterer bare at `references` og `themes` er lister.
+ */
+interface Step1Reference {
+    line?: string;
+    verse?: string;
+    confidence?: string;
+    reason?: string;
+}
+
+interface Step1Result {
+    references: Step1Reference[];
+    themes: string[];
+}
+
+/** Én referanse slik steg 2 leverer den — bookId i stedet for boknavn. */
+interface Step2Reference {
+    bookId: number;
+    chapter: number;
+    verseStart: number;
+    verseEnd: number;
+    confidence: string;
+    reason: string;
+}
+
+interface Step2Result {
+    references: Step2Reference[];
+    themes: string[];
+}
+
+// `result: any` er ikke slurv: funksjonene tar imot uparset modellsvar og
+// skriver på det de mangler. En smalere parametertype ville gjort skrivingene
+// til feil uten å si noe sant om verdien som faktisk kommer inn.
 /** Normalize step 1 result: ensure { references: [...], themes: [...] } */
-function normalizeStep1(result) {
+function normalizeStep1(result: any): Step1Result {
     // If result is an array, it's probably the references directly
     if (Array.isArray(result)) {
         return { references: result, themes: [] };
@@ -292,7 +392,7 @@ function normalizeStep1(result) {
 }
 
 /** Normalize step 2 result: ensure { references: [...], themes: [...] } */
-function normalizeStep2(result) {
+function normalizeStep2(result: any): Step2Result {
     // If result is an array, it's the references directly
     if (Array.isArray(result)) {
         return { references: result, themes: [] };
@@ -342,7 +442,7 @@ const step1Schema = {
     required: ['references', 'themes'],
 };
 
-async function step1_identifyReferences(song) {
+async function step1_identifyReferences(song: Song): Promise<Step1Result> {
     const text = getSongText(song);
     const lang = song.language === 'en' ? 'English' : 'Norwegian';
 
@@ -397,11 +497,29 @@ const step2Schema = {
     required: ['references', 'themes'],
 };
 
-async function step2_verifyReferences(song, step1Result) {
+/**
+ * Ett oppslag før verifiseringen. Feltene er valgfrie fordi to ulike former
+ * dyttes inn i lista: en kort med bare `error`, og en full med bibelteksten.
+ */
+interface VerseLookup {
+    ref: string;
+    error?: string;
+    bookId?: number;
+    chapter?: number;
+    verseStart?: number;
+    verseEnd?: number;
+    bookName?: string;
+    verseTexts?: LookedUpVerse[];
+    found?: boolean;
+    confidence?: string;
+    reason?: string;
+}
+
+async function step2_verifyReferences(song: Song, step1Result: Step1Result): Promise<Step2Result> {
     const text = getSongText(song);
 
     // Look up actual verse texts for each reference
-    const verseLookups = [];
+    const verseLookups: VerseLookup[] = [];
     for (const ref of step1Result.references) {
         if (!ref.verse) continue;
         const parsed = parseReference(ref.verse);
@@ -436,7 +554,9 @@ async function step2_verifyReferences(song, step1Result) {
     const verseContext = verseLookups
         .filter(v => v.found)
         .map(v => {
-            const texts = v.verseTexts.map(vt => `  ${v.bookName} ${v.chapter}:${vt.verse}: ${vt.text}`).join('\n');
+            // `!` er ren typepåstand: filteret over slipper bare gjennom oppslag
+            // der `found` er satt, og de er nettopp de som har `verseTexts`.
+            const texts = v.verseTexts!.map(vt => `  ${v.bookName} ${v.chapter}:${vt.verse}: ${vt.text}`).join('\n');
             return `${v.ref} (foreslått fordi: ${v.reason}):\n${texts}`;
         })
         .join('\n\n');
@@ -479,9 +599,17 @@ Svar med JSON i dette eksakte formatet:
 
 // ── Main ─────────────────────────────────────────────────────────────────────
 
-function parseArgs() {
+/** Kommandolinjevalgene. `null` betyr «ikke oppgitt», ikke «tom verdi». */
+interface Options {
+    lang: string | null;
+    id: string | null;
+    limit: number | null;
+    force: boolean;
+}
+
+function parseArgs(): Options {
     const args = process.argv.slice(2);
-    const options = { lang: null, id: null, limit: null, force: false };
+    const options: Options = { lang: null, id: null, limit: null, force: false };
 
     for (let i = 0; i < args.length; i++) {
         if (args[i] === '--lang' && i + 1 < args.length) {
@@ -510,7 +638,20 @@ function parseArgs() {
     return options;
 }
 
-async function main() {
+/** Resultatfila per sang — uten sangteksten, bare referansene. */
+interface SongReferenceOutput {
+    id: string;
+    title: string;
+    language: string;
+    references: Step2Reference[];
+    themes: string[];
+    model: string;
+    processedAt: string;
+    /** Settes bare når sangen har en oppgitt forfatter. */
+    author?: string;
+}
+
+async function main(): Promise<void> {
     const options = parseArgs();
 
     // Load song index
@@ -519,9 +660,9 @@ async function main() {
     console.log(`Songs available: ${files.length}`);
 
     // Filter songs
-    let songs = [];
+    let songs: Song[] = [];
     for (const f of files) {
-        const song = JSON.parse(fs.readFileSync(path.join(SONGS_DIR, f), 'utf-8'));
+        const song: Song = JSON.parse(fs.readFileSync(path.join(SONGS_DIR, f), 'utf-8'));
 
         if (options.id && song.id !== options.id) continue;
         if (options.lang && song.language !== options.lang) continue;
@@ -556,7 +697,11 @@ async function main() {
             // følger vi etter i stedet for å kaste modellen dens ut av minnet.
             // output.model under leser samme variabel, så det som lagres er det
             // som faktisk kjørte.
-            ollamaModel = await resolveLocalModel('songs', {model: pinnedModel});
+            // resolveLocalModel er dokumentert med `string | undefined` for model,
+            // mens «ikke pinnet» her er `null`. Begge er falsy, og funksjonen
+            // tester nettopp på falsy (`if (model) return model`) — påstanden
+            // beskriver den eksisterende oppførselen, den innfører den ikke.
+            ollamaModel = await resolveLocalModel('songs', {model: pinnedModel as string | undefined});
 
             // Step 1: identify references
             process.stdout.write(`${song.id}: "${song.title}" ... `);
@@ -568,7 +713,7 @@ async function main() {
             process.stdout.write(`${refCount} refs -> `);
 
             // Step 2: verify with actual verse texts
-            let result;
+            let result: Step2Result;
             if (refCount > 0) {
                 result = await step2_verifyReferences(song, step1);
                 process.stdout.write(`${result.references?.length || 0} verified\n`);
@@ -578,7 +723,7 @@ async function main() {
             }
 
             // Save result (no lyrics!)
-            const output = {
+            const output: SongReferenceOutput = {
                 id: song.id,
                 title: song.title,
                 language: song.language,
@@ -592,7 +737,7 @@ async function main() {
             fs.writeFileSync(outFile, JSON.stringify(output, null, 2), 'utf-8');
             processed++;
         } catch (err) {
-            console.error(`\n  ERROR: ${err.message}`);
+            console.error(`\n  ERROR: ${(err as Error).message}`);
             errors++;
         }
     }

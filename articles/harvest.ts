@@ -70,33 +70,196 @@ const DATA = join(REPO, 'external/articles');
 const CATALOG = join(DATA, 'catalog.jsonl');
 const STATE_FILE = join(DATA, 'state/harvest-state.json');
 
-const CONFIG = JSON.parse(fs.readFileSync(join(__dirname, 'journals.json'), 'utf8'));
+const CONFIG: Config = JSON.parse(fs.readFileSync(join(__dirname, 'journals.json'), 'utf8'));
 const { email, apiDelayMs, pdfDelayMs, maxPdfMb } = CONFIG.settings;
 const UA = `free-bible-articles/1.0 (https://github.com/flogvit/free-bible; mailto:${email})`;
 
+// ---------- types ----------
+// Formene under beskriver JSON-en dette skriptet leser og skriver: journals.json,
+// katalogen (catalog.jsonl), meta/<id>.json og de tre API-svarene. Bare feltene
+// koden faktisk rører er med — API-ene returnerer atskillig mer, og hele råsvaret
+// lagres uavkortet i meta/, så dette er et utvalg og ikke en full beskrivelse.
+
+/** En journal i journals.json. */
+interface Journal {
+  key: string;
+  name: string;
+  issns: string[];
+  enabled: boolean;
+}
+
+interface Config {
+  settings: {
+    email: string;
+    apiDelayMs: number;
+    pdfDelayMs: number;
+    maxPdfMb: number;
+  };
+  journals: Journal[];
+}
+
+/**
+ * `fetchJson` henger HTTP-statusen på feilen, slik at kallstedet kan skille
+ * 404 (ISSN finnes ikke hos Crossref) fra alt annet.
+ */
+interface HttpError extends Error {
+  status?: number;
+}
+
+interface FetchOpts {
+  timeoutMs?: number;
+  headers?: Record<string, string>;
+}
+
+type ArticleStatus =
+  | 'meta_only'
+  | 'no_oa'
+  | 'pdf_ok'
+  | 'pdf_failed'
+  | 'pdf_skipped_size'
+  | 'text_ok'
+  | 'text_empty';
+
+/** Relative stier under external/articles/ + integritetsdata for dem. */
+interface ArticleFiles {
+  pdf?: string;
+  pdf_sha256?: string;
+  pdf_bytes?: number;
+  text?: string;
+}
+
+/** Én linje i catalog.jsonl. */
+interface CatalogEntry {
+  id: string;
+  status: ArticleStatus;
+  doi?: string | null;
+  journal?: string;
+  title?: string | null;
+  authors?: string[];
+  year?: number | null;
+  venue?: string | null;
+  publisher?: string | null;
+  language?: string | null;
+  license?: string | null;
+  abstract?: string | null;
+  oa_status?: string | null;
+  url_doi?: string | null;
+  url_landing?: string | null;
+  url_fulltext_doaj?: string | null;
+  url_pdf?: string;
+  files?: ArticleFiles;
+  text_pages?: boolean;
+  pdf_attempts?: number;
+  pdf_last_error?: string | null;
+  pdf_skipped?: { url: string; bytes: number };
+  pruned?: { ts: string; sha256?: string; bytes?: number };
+}
+
+interface CrossrefWork {
+  DOI?: string;
+  title?: string[];
+  author?: { given?: string; family?: string }[];
+  issued?: { 'date-parts'?: number[][] };
+  'container-title'?: string[];
+  publisher?: string;
+  language?: string;
+  license?: { URL?: string }[];
+  abstract?: string;
+  resource?: { primary?: { URL?: string } };
+  URL?: string;
+  link?: { URL?: string; 'content-type'?: string }[];
+}
+
+interface CrossrefResponse {
+  message?: {
+    items?: CrossrefWork[];
+    'next-cursor'?: string;
+  };
+}
+
+interface DoajBibjson {
+  title?: string;
+  year?: string | number;
+  abstract?: string;
+  identifier?: { type?: string; id?: string }[];
+  author?: { name: string }[];
+  journal?: { title?: string; language?: string[] };
+  link?: { type?: string; url?: string }[];
+}
+
+interface DoajArticle {
+  id?: string;
+  bibjson?: DoajBibjson;
+}
+
+interface DoajResponse {
+  total?: number;
+  results?: DoajArticle[];
+}
+
+interface UnpaywallLocation {
+  url_for_pdf?: string | null;
+  url?: string | null;
+  license?: string | null;
+}
+
+interface UnpaywallRecord {
+  is_oa?: boolean;
+  oa_status?: string | null;
+  best_oa_location?: UnpaywallLocation | null;
+  oa_locations?: UnpaywallLocation[];
+}
+
+/** meta/<shard>/<id>.json: råsvarene + nedlastingsproveniens. */
+interface MetaRecord {
+  id: string;
+  doi?: string;
+  journalKey?: string;
+  sources: {
+    crossref?: CrossrefWork;
+    doaj?: DoajArticle;
+    unpaywall?: UnpaywallRecord;
+  };
+  fetched: Record<string, string>;
+  pdfDownload?: {
+    url: string;
+    ts: string;
+    contentType: string | null;
+    etag: string | null;
+    lastModified: string | null;
+    bytes: number;
+    sha256: string;
+  };
+}
+
+/** state/harvest-state.json: inkrementell markør per journal. */
+interface HarvestState {
+  journals: Record<string, { lastMetaRun?: string }>;
+}
+
 // ---------- helpers ----------
-const sleep = ms => new Promise(r => setTimeout(r, ms));
-const sha256 = s => createHash('sha256').update(s).digest('hex');
-const shard = id => sha256(id).slice(0, 2);
-const doiToId = doi => doi.toLowerCase().trim().replace(/^https?:\/\/(dx\.)?doi\.org\//, '').replace(/\//g, '_');
-const decodeEntities = s => (s || '')
-  .replace(/&lt;/g, '<').replace(/&gt;/g, '>').replace(/&quot;/g, '"').replace(/&#(\d+);/g, (_, n) => String.fromCodePoint(+n)).replace(/&amp;/g, '&');
-const stripXml = s => decodeEntities(s).replace(/<[^>]+>/g, ' ').replace(/\s+/g, ' ').trim();
-const ensure = p => fs.mkdirSync(p, { recursive: true });
+const sleep = (ms: number) => new Promise(r => setTimeout(r, ms));
+const sha256 = (s: string | Uint8Array): string => createHash('sha256').update(s).digest('hex');
+const shard = (id: string): string => sha256(id).slice(0, 2);
+const doiToId = (doi: string): string => doi.toLowerCase().trim().replace(/^https?:\/\/(dx\.)?doi\.org\//, '').replace(/\//g, '_');
+const decodeEntities = (s: string | null | undefined): string => (s || '')
+  .replace(/&lt;/g, '<').replace(/&gt;/g, '>').replace(/&quot;/g, '"').replace(/&#(\d+);/g, (_: string, n: string) => String.fromCodePoint(+n)).replace(/&amp;/g, '&');
+const stripXml = (s: string | null | undefined): string => decodeEntities(s).replace(/<[^>]+>/g, ' ').replace(/\s+/g, ' ').trim();
+const ensure = (p: string) => fs.mkdirSync(p, { recursive: true });
 
-function metaPath(id) { return join(DATA, 'meta', shard(id), `${id}.json`); }
-function pdfPath(id) { return join(DATA, 'pdf', shard(id), `${id}.pdf`); }
-function textPath(id) { return join(DATA, 'text', shard(id), `${id}.txt`); }
+function metaPath(id: string): string { return join(DATA, 'meta', shard(id), `${id}.json`); }
+function pdfPath(id: string): string { return join(DATA, 'pdf', shard(id), `${id}.pdf`); }
+function textPath(id: string): string { return join(DATA, 'text', shard(id), `${id}.txt`); }
 
-function loadMeta(id) {
+function loadMeta(id: string): MetaRecord {
   try { return JSON.parse(fs.readFileSync(metaPath(id), 'utf8')); } catch { return { id, sources: {}, fetched: {} }; }
 }
-function saveMeta(m) {
+function saveMeta(m: MetaRecord) {
   ensure(dirname(metaPath(m.id)));
   fs.writeFileSync(metaPath(m.id), JSON.stringify(m, null, 2) + '\n');
 }
 
-async function fetchWithRetry(url, opts = {}, tries = 3) {
+async function fetchWithRetry(url: string, opts: FetchOpts = {}, tries = 3): Promise<Response> {
   for (let i = 0; i < tries; i++) {
     try {
       const ctl = new AbortController();
@@ -112,19 +275,19 @@ async function fetchWithRetry(url, opts = {}, tries = 3) {
   }
   throw new Error(`retries exhausted: ${url}`);
 }
-async function fetchJson(url) {
+async function fetchJson<T = any>(url: string): Promise<T> {
   const res = await fetchWithRetry(url);
-  if (!res.ok) { const err = new Error(`HTTP ${res.status} ${url}`); err.status = res.status; throw err; }
+  if (!res.ok) { const err = new Error(`HTTP ${res.status} ${url}`) as HttpError; err.status = res.status; throw err; }
   return res.json();
 }
 
 // ---------- catalog ----------
-const catalog = new Map(); // id -> entry
+const catalog = new Map<string, CatalogEntry>(); // id -> entry
 function loadCatalog() {
   if (!fs.existsSync(CATALOG)) return;
   for (const line of fs.readFileSync(CATALOG, 'utf8').split('\n')) {
     if (!line.trim()) continue;
-    const e = JSON.parse(line);
+    const e: CatalogEntry = JSON.parse(line);
     catalog.set(e.id, e);
   }
 }
@@ -136,8 +299,8 @@ function flushCatalog(force = false) {
   fs.renameSync(tmp, CATALOG);
   dirty = 0;
 }
-function upsert(id, patch) {
-  const e = catalog.get(id) || { id, status: 'meta_only' };
+function upsert(id: string, patch: Partial<CatalogEntry>): CatalogEntry {
+  const e: CatalogEntry = catalog.get(id) || { id, status: 'meta_only' };
   Object.assign(e, patch);
   catalog.set(id, e);
   if (++dirty >= 50) flushCatalog();
@@ -145,20 +308,20 @@ function upsert(id, patch) {
 }
 
 // ---------- state ----------
-function loadState() { try { return JSON.parse(fs.readFileSync(STATE_FILE, 'utf8')); } catch { return { journals: {} }; } }
-function saveState(s) { ensure(dirname(STATE_FILE)); fs.writeFileSync(STATE_FILE, JSON.stringify(s, null, 2) + '\n'); }
+function loadState(): HarvestState { try { return JSON.parse(fs.readFileSync(STATE_FILE, 'utf8')); } catch { return { journals: {} }; } }
+function saveState(s: HarvestState) { ensure(dirname(STATE_FILE)); fs.writeFileSync(STATE_FILE, JSON.stringify(s, null, 2) + '\n'); }
 
 // ---------- phase: meta ----------
-async function harvestCrossref(j, since, limit) {
+async function harvestCrossref(j: Journal, since: string | null, limit: number | null): Promise<number> {
   let count = 0;
   for (const issn of j.issns) {
-    let cursor = '*';
+    let cursor: string | undefined = '*';
     while (true) {
       const filter = ['type:journal-article', since ? `from-index-date:${since}` : null].filter(Boolean).join(',');
       const url = `https://api.crossref.org/journals/${issn}/works?rows=100&cursor=${encodeURIComponent(cursor)}&filter=${filter}&mailto=${email}`;
-      let data;
+      let data: CrossrefResponse;
       try { data = await fetchJson(url); }
-      catch (e) { if (e.status === 404) { console.log(`  crossref: ISSN ${issn} not found, skipping`); break; } throw e; }
+      catch (e: any) { if (e.status === 404) { console.log(`  crossref: ISSN ${issn} not found, skipping`); break; } throw e; }
       const items = data.message?.items || [];
       for (const item of items) {
         if (!item.DOI) continue;
@@ -198,17 +361,17 @@ async function harvestCrossref(j, since, limit) {
 // DOAJ caps deep paging at 1000 results per query (HTTP 400 beyond page 10).
 // For journals with more articles we slice the query per publication year so
 // every slice stays under the cap.
-async function harvestDoaj(j, limit) {
+async function harvestDoaj(j: Journal, limit: number | null): Promise<number> {
   let count = 0;
   for (const issn of j.issns) {
     // probe total first
     let total = 0;
     try {
-      const probe = await fetchJson(`https://doaj.org/api/search/articles/${encodeURIComponent(`issn:"${issn}"`)}?page=1&pageSize=1`);
+      const probe: DoajResponse = await fetchJson(`https://doaj.org/api/search/articles/${encodeURIComponent(`issn:"${issn}"`)}?page=1&pageSize=1`);
       total = probe.total ?? 0;
     } catch { /* fall through to plain sweep */ }
     await sleep(apiDelayMs);
-    const queries = [];
+    const queries: string[] = [];
     if (total > 1000) {
       const thisYear = new Date().getFullYear();
       for (let y = 1900; y <= thisYear; y++) queries.push(`issn:"${issn}" AND year:${y}`);
@@ -225,14 +388,14 @@ async function harvestDoaj(j, limit) {
   return count;
 }
 
-async function doajSweep(query, j, limit) {
+async function doajSweep(query: string, j: Journal, limit: number | null): Promise<number> {
   let count = 0;
   let page = 1;
   while (true) {
     const url = `https://doaj.org/api/search/articles/${encodeURIComponent(query)}?page=${page}&pageSize=100`;
-    let data;
+    let data: DoajResponse;
     try { data = await fetchJson(url); }
-    catch (e) { console.log(`  doaj: "${query}" page ${page} failed (${e.message}), moving on`); break; }
+    catch (e: any) { console.log(`  doaj: "${query}" page ${page} failed (${e.message}), moving on`); break; }
     const results = data.results || [];
     {
       for (const r of results) {
@@ -245,7 +408,7 @@ async function doajSweep(query, j, limit) {
         m.sources.doaj = r; // full raw record
         m.fetched.doaj = new Date().toISOString();
         saveMeta(m);
-        const existing = catalog.get(id) || {};
+        const existing: Partial<CatalogEntry> = catalog.get(id) || {};
         upsert(id, {
           doi: m.doi || existing.doi || null,
           journal: j.key,
@@ -273,8 +436,8 @@ async function doajSweep(query, j, limit) {
 }
 
 // ---------- phase: pdf ----------
-function pdfCandidates(entry, m) {
-  const urls = [];
+function pdfCandidates(entry: CatalogEntry, m: MetaRecord): string[] {
+  const urls: string[] = [];
   const up = m.sources.unpaywall;
   if (up) {
     if (up.best_oa_location?.url_for_pdf) urls.push(up.best_oa_location.url_for_pdf);
@@ -288,7 +451,7 @@ function pdfCandidates(entry, m) {
   return [...new Set(urls)];
 }
 
-async function phasePdf(journalFilter, limit) {
+async function phasePdf(journalFilter: string | null, limit: number | null): Promise<number> {
   let done = 0;
   for (const entry of catalog.values()) {
     if (journalFilter && entry.journal !== journalFilter) continue;
@@ -301,14 +464,14 @@ async function phasePdf(journalFilter, limit) {
     // 1. resolve via Unpaywall (once per article)
     if (entry.doi && !m.sources.unpaywall) {
       try {
-        m.sources.unpaywall = await fetchJson(`https://api.unpaywall.org/v2/${entry.doi}?email=${email}`);
+        m.sources.unpaywall = await fetchJson<UnpaywallRecord>(`https://api.unpaywall.org/v2/${entry.doi}?email=${email}`);
         m.fetched.unpaywall = new Date().toISOString();
         saveMeta(m);
         upsert(entry.id, {
           oa_status: m.sources.unpaywall.oa_status || null,
           license: entry.license || m.sources.unpaywall.best_oa_location?.license || null,
         });
-      } catch (e) {
+      } catch (e: any) {
         console.log(`  unpaywall miss ${entry.doi}: ${e.message}`);
       }
       await sleep(apiDelayMs);
@@ -321,8 +484,8 @@ async function phasePdf(journalFilter, limit) {
       continue;
     }
     let saved = false;
-    let sizeSkipped = null;
-    let lastError = null;
+    let sizeSkipped: { url: string; bytes: number } | null = null;
+    let lastError: string | null = null;
     for (const url of candidates) {
       try {
         const res = await fetchWithRetry(url, { timeoutMs: 120000 }, 2);
@@ -334,7 +497,9 @@ async function phasePdf(journalFilter, limit) {
         if (buf.length > maxPdfMb * 1024 * 1024) { sizeSkipped = { url, bytes: buf.length }; break; }
         if (!buf.subarray(0, 5).toString().startsWith('%PDF')) { lastError = `not a PDF @ ${url}`; continue; } // HTML landing page etc.
         ensure(dirname(pdfPath(entry.id)));
-        fs.writeFileSync(pdfPath(entry.id), buf);
+        // `as Uint8Array`: @types/node i node_modules erklærer Buffer slik at den
+        // ikke regnes som tilordningsbar til ArrayBufferView. Ren typestøy.
+        fs.writeFileSync(pdfPath(entry.id), buf as Uint8Array);
         m.pdfDownload = {
           url,
           ts: new Date().toISOString(),
@@ -342,7 +507,7 @@ async function phasePdf(journalFilter, limit) {
           etag: res.headers.get('etag'),
           lastModified: res.headers.get('last-modified'),
           bytes: buf.length,
-          sha256: sha256(buf),
+          sha256: sha256(buf as Uint8Array),
         };
         saveMeta(m);
         upsert(entry.id, {
@@ -354,7 +519,7 @@ async function phasePdf(journalFilter, limit) {
         done++;
         if (done % 25 === 0) console.log(`  pdf: ${done} downloaded...`);
         break;
-      } catch (e) {
+      } catch (e: any) {
         lastError = `${e.message} @ ${url.slice(0, 100)}`;
         console.log(`  pdf fail ${entry.id}: ${lastError.slice(0, 140)}`);
       }
@@ -373,7 +538,7 @@ async function phasePdf(journalFilter, limit) {
 }
 
 // ---------- phase: text ----------
-function phaseText(journalFilter, limit) {
+function phaseText(journalFilter: string | null, limit: number | null): number {
   let done = 0;
   for (const entry of catalog.values()) {
     if (journalFilter && entry.journal !== journalFilter) continue;
@@ -405,7 +570,7 @@ function phaseText(journalFilter, limit) {
 // meta/<id>.json keeps the exact download URL, sha256, size and headers, and the
 // catalog keeps pdf_sha256/pdf_bytes + pruned timestamp, so any PDF can be
 // re-fetched and verified bit-for-bit later.
-function phasePrune(journalFilter) {
+function phasePrune(journalFilter: string | null) {
   let n = 0, freed = 0;
   for (const entry of catalog.values()) {
     if (journalFilter && entry.journal !== journalFilter) continue;
@@ -424,10 +589,10 @@ function phasePrune(journalFilter) {
 
 // ---------- phase: status ----------
 function phaseStatus() {
-  const byStatus = {}, byJournal = {};
+  const byStatus: Record<string, number> = {}, byJournal: Record<string, { total: number; pdf: number; text: number }> = {};
   for (const e of catalog.values()) {
     byStatus[e.status] = (byStatus[e.status] || 0) + 1;
-    const j = byJournal[e.journal] ||= { total: 0, pdf: 0, text: 0 };
+    const j = byJournal[e.journal!] ||= { total: 0, pdf: 0, text: 0 };
     j.total++;
     if (e.files?.pdf) j.pdf++;
     if (e.files?.text) j.text++;
@@ -442,9 +607,9 @@ function phaseStatus() {
 async function main() {
   const args = process.argv.slice(2);
   const phase = args[0];
-  const flag = (name) => { const i = args.indexOf(name); return i >= 0 ? args[i + 1] : null; };
+  const flag = (name: string): string | null => { const i = args.indexOf(name); return i >= 0 ? args[i + 1] : null; };
   const journalFilter = flag('--journal');
-  const limit = flag('--limit') ? +flag('--limit') : null;
+  const limit = flag('--limit') ? +flag('--limit')! : null;
   const full = args.includes('--full');
 
   if (!['meta', 'pdf', 'text', 'all', 'status', 'prune'].includes(phase)) {
@@ -461,7 +626,7 @@ async function main() {
   if (phase === 'prune') { phasePrune(journalFilter); flushCatalog(true); phaseStatus(); return; }
 
   const state = loadState();
-  const journals = CONFIG.journals.filter(j => j.enabled && (!journalFilter || j.key === journalFilter));
+  const journals = CONFIG.journals.filter((j: Journal) => j.enabled && (!journalFilter || j.key === journalFilter));
 
   if (phase === 'meta' || phase === 'all') {
     for (const j of journals) {
