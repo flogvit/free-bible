@@ -98,7 +98,12 @@ som `chapter-tags.mjs` hadde til tabellen ble rettet (se kommentaren
 |---|---|---|---|---|
 | Kirkeårstagging | `bun day-tags.ts --local --bible osnb --book 41-66` | **1 163 av 1 189 kapitler** (bare Matteus gjort) | ja/nei per kapittel → 27b-kandidat | #32 |
 | Dagsomtaler pass 1 | `bun days-mentions.ts --bible osnb --nt` *(alltid lokal)* | **648 av 1 189 kapitler** (1. Mos–Salmene gjort) | ja/nei per vers → 27b-kandidat | #33 |
-| Personavstemming | `bun persons-reconcile.ts` / `persons-reconcile-context.mjs` *(alltid lokal)* | etter behov | klassifisering → 27b-kandidat | #37 |
+| Personavstemming | `bun persons-reconcile.ts` / `persons-reconcile-context.ts` *(alltid lokal)* | etter behov | klassifisering → 27b-kandidat | #37 |
+| Personprofiler som mangler | `bun generate/build-missing-persons.ts` *(Claude — qwen duger ikke, se #12)* | etter behov | prosa | #12 |
+| Personavstemming: gjennomgang | `bun generate/persons-audit.ts` (read-only) → `persons-apply-reconcile.ts` / `persons-apply-context.ts` | etter avstemmingen | — | #12 |
+| Dagsdefinisjoner | `bun generate/days.ts` — **skriver over `generate/days/`** | når dagsdefinisjonene endres | — | — |
+| Lesetekster (DNK) | `bun generate/parse-lesetekster.ts` | ny årgang | — | — |
+| Evaluering av semantiske referanser | `bun generate/eval-references.ts` *(Claude som dommer)* | når innstillingen endres | prosa | #31 |
 | Historieskanning | `bun scan-stories.ts --local` | 1 forslag, 1 avvist i kø | klassifisering → 27b-kandidat | #37 |
 | Tallsymbolikk | `bun number-symbolism.ts --local` | 326 tall dekket | blandet — ja/nei-kall + prosa | #37 |
 | Kapittel-/bokresymé | `bun chapter-summary.ts --local`, `bun book-summary.ts --local` | ferdig (1 189 / 66) | prosa → behold 122b | — |
@@ -300,7 +305,7 @@ find day_tags/nb -type f | wc -l            # kirkeår, per kapittel
 ls songs | wc -l                            # sangreferanser (av 6076)
 
 # korrekturstatus for oses
-node -e 'const s=require("./proofread/oses/state.json");console.log(Object.keys(s).length)'
+bun -e 'console.log(Object.keys(await Bun.file("./proofread/oses/state.json").json()).length)'
 
 # KVN-tekstverifisering
 find ../kvn/data/text-verification -name '*.json' | wc -l
