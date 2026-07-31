@@ -143,6 +143,16 @@ function getAnthropic() {
     return anthropic;
 }
 
+// Med tenkning på ligger tenkeblokker først i content — teksten må hentes ut,
+// ikke leses fra content[0]. Samme funksjon som i bible.mjs.
+function extractText(completion) {
+    const block = completion.content.find(b => b.type === 'text');
+    if (!block) {
+        throw new Error(`No text block in response (stop_reason: ${completion.stop_reason})`);
+    }
+    return block.text;
+}
+
 async function callAnthropic(content, schema) {
     const options = {
         model: anthropicModel,
@@ -152,11 +162,19 @@ async function callAnthropic(content, schema) {
     if (schema) {
         options.output_config = {format: {type: "json_schema", schema}};
     }
-    const completion = await getAnthropic().messages.create(options);
+    // Strømming, ikke messages.create: SDK-en regner ut en forventet varighet fra
+    // max_tokens og nekter å kjøre non-streaming når den overstiger 10 minutter
+    // (calculateNonstreamingTimeout). Taket er 128000 × 10/60 ≈ 21 333 tokens, og
+    // maxTokens er 32000 — så HVERT non-streaming-kall kastet, uansett hvor kort
+    // svaret faktisk ble. bible.mjs har strømmet av samme grunn siden februar.
+    const completion = await getAnthropic().messages.stream(options).finalMessage();
     if (completion.stop_reason === 'max_tokens') {
         throw new Error('Response truncated due to max_tokens limit');
     }
-    return completion.content[0].text;
+    if (completion.stop_reason === 'refusal') {
+        throw new Error(`Refused (${completion.stop_details?.category || 'unknown'})`);
+    }
+    return extractText(completion);
 }
 
 async function callOllama(content, schema, {think = false, ollamaOptions = {}, model, task} = {}) {
@@ -269,12 +287,14 @@ export async function callWithWebSearch(content, {maxUses = 6, allowedDomains, c
     const text = [];
 
     for (let turn = 0; turn <= MAX_PAUSE_TURNS; turn++) {
-        const completion = await getAnthropic().messages.create({
+        // Strømming av samme grunn som i callAnthropic: maxTokens er over SDK-ens
+        // non-streaming-tak, så messages.create kaster før forespørselen sendes.
+        const completion = await getAnthropic().messages.stream({
             model: anthropicModel,
             max_tokens: maxTokens,
             tools: [tool],
             messages
-        });
+        }).finalMessage();
 
         for (const block of completion.content) {
             if (block.type === 'text') {

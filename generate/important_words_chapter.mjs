@@ -44,11 +44,25 @@ function entryLines(text) {
     return text.split('\n').map(l => l.trim()).filter(Boolean).filter(isEntry);
 }
 
+/**
+ * Modellsvaret som {word, explanation}. Splitter på FØRSTE kolon — en forklaring
+ * kan selv inneholde kolon, et ord kan ikke (isEntry krever det).
+ *
+ * Trimmingen er kontrakten: modellen skrev vekselvis «Gud:...» og «Himmel: ...»,
+ * og det skillet skal ikke lekke ut i dataene.
+ */
+function parseEntries(text) {
+    return entryLines(text).map(line => {
+        const i = line.indexOf(':');
+        return {word: line.slice(0, i).trim(), explanation: line.slice(i + 1).trim()};
+    });
+}
+
 function rejectReason(entries) {
     if (entries.length < MIN_ENTRIES) {
         return `bare ${entries.length} oppføringer på formen ord:forklaring`;
     }
-    const words = entries.map(l => l.slice(0, l.indexOf(':')).trim());
+    const words = entries.map(e => e.word);
     if (words.length === TEMPLATE_WORDS.length && TEMPLATE_WORDS.every((w, i) => words[i] === w)) {
         return 'svaret er promptens egen mal, ikke kapitlet';
     }
@@ -56,7 +70,7 @@ function rejectReason(entries) {
 }
 
 function fileExists(language, bookNr, chapterNr) {
-    const filePath = path.join(__dirname, `important_words/${language}/${bookNr}-${chapterNr}.txt`);
+    const filePath = path.join(__dirname, `important_words/${language}/${bookNr}-${chapterNr}.json`);
     return fs.existsSync(filePath) && fs.statSync(filePath).size > 0;
 }
 
@@ -78,7 +92,7 @@ Skapte:Begrepet brukt til å beskrive Guds handling av å bringe universet og al
         context: `important words ${bibleRef}`,
     });
 
-    const entries = entryLines(text);
+    const entries = parseEntries(text);
     const problem = rejectReason(entries);
     if (problem) {
         console.log(`  SKIPPED ${bibleRef}: ${problem}`);
@@ -90,8 +104,8 @@ Skapte:Begrepet brukt til å beskrive Guds handling av å bringe universet og al
         fs.mkdirSync(outputDir, {recursive: true});
     }
 
-    const filename = path.join(outputDir, `${bookId}-${chapter}.txt`);
-    fs.writeFileSync(filename, entries.join('\n') + '\n');
+    const filename = path.join(outputDir, `${bookId}-${chapter}.json`);
+    fs.writeFileSync(filename, JSON.stringify(entries, null, 2) + '\n');
     console.log(`Saved: ${filename} (${entries.length} ord)`);
     return true;
 }
@@ -100,8 +114,9 @@ function printUsage() {
     console.log(`
 Usage: node important_words_chapter.mjs [language] [startBook] [startChapter] [options]
 
-Skriver important_words/<språk>/<bok>-<kapittel>.txt. Kapitler som allerede
-finnes hoppes over, så skriptet er trygt å kjøre om igjen.
+Skriver important_words/<språk>/<bok>-<kapittel>.json — en array av
+{word, explanation}. Kapitler som allerede finnes hoppes over, så skriptet er
+trygt å kjøre om igjen.
 
 Posisjonsargumentene er beholdt som de var. Flaggene overstyrer dem.
 

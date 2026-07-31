@@ -37,7 +37,8 @@ const CONTENT_DIRS = {
     'persons': {ext: '.json', keepKeys: ['id', 'era', 'source', 'father', 'mother', 'spouse', 'date', 'relatedPersons', 'siblings', 'children']},
     'number_symbolism': {ext: '.json', keepKeys: ['id', 'source', 'date']},
     'prophecies': {ext: '.json', keepKeys: ['id', 'category']},
-    'important_words': {ext: '.txt'},
+    // Både ord og forklaring skal oversettes, derfor tom keepKeys.
+    'important_words': {ext: '.json', keepKeys: []},
     'verse_prayer': {ext: '.txt'},
     'verse_sermon': {ext: '.txt'},
     'reading_plans': {ext: '.json', keepKeys: ['id', 'category']},

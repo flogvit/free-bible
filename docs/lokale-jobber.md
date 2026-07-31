@@ -33,50 +33,78 @@ Modellene som er lastet ned, med faktisk størrelse:
 
 ---
 
+## Tre ting som avgjør om du treffer riktig modell
+
+**1. De fleste skriptene går til Claude API hvis du glemmer `--local`.** Det er
+standarden, ikke unntaket. `bun important_words_chapter.ts` bruker Claude og
+koster penger; `bun important_words_chapter.ts --local` bruker Ollama. Skriptet
+sier hvilken modell det valgte i første linje — les den før du lar en jobb stå
+over natta.
+
+To skript er motsatt og har `--remote` i stedet, fordi lokalt er standarden der:
+`translate.mjs` og `headings.mjs`. Tre skript har ingen bryter i det hele tatt og
+er alltid lokale: `song-references.mjs`, `days-mentions.mjs` og
+`persons-reconcile*.ts`.
+
+**2. `triage.mjs` må kjøres med `bun`, ikke `node`.** Den importerer
+KVN-laget, som er TypeScript. Med `node` får du
+`ERR_MODULE_NOT_FOUND: kvn/src/ukvn-types.js` — som ser ut som en manglende fil,
+men er feil kjøremåte. Samme gjelder alt under `kvn/scripts/*.ts`.
+
+**3. `OLLAMA_MODEL` pinner modellen for alt** og slår av adopsjonen. Nyttig når
+maskinen er opptatt og du vil tvinge en jobb ned på 27b:
+`OLLAMA_MODEL=qwen3.5:27b bun important_words_chapter.ts --local`.
+
+---
+
 ## Jobblisten
 
 Sortert etter hvor den kan kjøre. «Gjenstår» er målte tall per 2026-07-30.
 
 ### Kan kjøre på 64 GB-maskinen døgnet rundt (≤31b)
 
-| jobb | skript | modell | gjenstår | issue |
+| jobb | kommando (fra `generate/`, der ikke annet står) | modell | gjenstår | issue |
 |---|---|---|---|---|
-| Sangreferanser | `generate/song_references.mjs` | gemma4:31b | **5 622 av 6 076 sanger** | #8 |
-| KVN-tekstverifisering | `kvn/scripts/run-verification.sh` | bge-m3 + gemma4:31b + granite4.1:30b | **så godt som alt** — 138 oversettelser i prioritetslista, 5 filer produsert | #35 |
-| Nøkkelord per kapittel | `generate/important_words_chapter.mjs` | qwen3.5:27b | **301 av 1 189 kapitler** | #34 |
-| Triage av korrektur | `generate/triage.mjs` | qwen3.5:27b | etter behov (mekanisk lag, ikke en køjobb) |
-| osmain-verifisering | `kvn/scripts/verify-osmain.ts` | qwen3.5:27b | etter behov |
-| Mappinggenerering | `kvn/scripts/generate-mapping.ts` | gemma4:31b | etter behov for nye oversettelser |
+| Sangreferanser | `bun song-references.ts` | gemma4:31b | **5 622 av 6 076 sanger** | #8 |
+| KVN-tekstverifisering | `kvn/scripts/run-verification.sh pri1` | bge-m3 + gemma4:31b + granite4.1:30b | **så godt som alt** — 138 oversettelser i prioritetslista, 5 filer produsert | #35 |
+| Nøkkelord per kapittel | `bun important_words_chapter.ts --local` | qwen3.5:27b | **278 av 1 189 kapitler** | #34 |
+| Triage av korrektur | `bun triage.mjs osnb` | qwen3.5:27b | etter behov (mekanisk lag, ikke en køjobb) | — |
+| osmain-verifisering | `bun kvn/scripts/verify-osmain.ts` | qwen3.5:27b | etter behov | — |
+| Mappinggenerering | `bun kvn/scripts/build-mapping.ts --source <navn>` | gemma4:31b | etter behov for nye oversettelser | — |
 
 ### Krever hovedmaskinen om natta (qwen3.5:122b)
 
-| jobb | skript | gjenstår | issue |
+| jobb | kommando (fra `generate/`) | gjenstår | issue |
 |---|---|---|---|
-| Tilleggsmateriale nb→es | `generate/translate.mjs --language es` | **18 247 filer** — alt | #29 |
-| Tilleggsmateriale nb→en | `generate/translate.mjs --language en` | **591 referansefiler**, resten er ferdig | #30 |
-| Kryssreferanser | `generate/references.mjs` | **20 349 vers** — 13 av 66 bøker er gjort | #31, #26 |
-| Semantiske referanser | `generate/references_semantic.mjs` | osnb-vektorene finnes; kandidatverifisering gjenstår | — |
-| Kapitteltagging | `generate/chapter_tags.mjs` | ferdig for nb/en (16 tagsett) | #2, #3 |
+| Tilleggsmateriale nb→es | `bun translate.ts --language es` | **18 247 filer** — alt | #29 |
+| Tilleggsmateriale nb→en | `bun translate.ts --language en --dirs references` | **591 referansefiler**, resten er ferdig | #30 |
+| Kryssreferanser | `bun references.ts --local --book 10-39` | **20 349 vers** — 13 av 66 bøker er gjort | #31, #26 |
+| Semantiske referanser | `bun references-semantic.ts --verify-only --resume` | osnb-vektorene finnes; kandidatverifisering gjenstår | — |
+| Kapitteltagging | `bun chapter-tags.ts --local --bible osnb` | ferdig for nb/en (16 tagsett) | #2, #3 |
+
+`translate.mjs` er lokal som standard — `--remote` er bryteren dit, ikke hit.
+`references.mjs` godtar `--local`, men **nevner det ikke i `--help`**; uten flagget
+går den til Claude API.
 
 ### Faller til 122b uten at noen har bestemt det
 
 Disse skriptene sender verken `task:` eller `model:`, og treffer derfor
 `ollamaModel` (= qwen3.5:122b) i `generate/constants.js:34`. **Det er ikke en
 vurdering av at de trenger den store modellen** — det er samme dødkonfigurasjon
-som `chapter_tags.mjs` hadde til tabellen ble rettet (se kommentaren
+som `chapter-tags.mjs` hadde til tabellen ble rettet (se kommentaren
 `constants.js:49-52`). Hvor mye de faktisk trenger er **ikke målt**.
 
-| jobb | skript | gjenstår | trolig klasse | issue |
+| jobb | kommando (fra `generate/`) | gjenstår | trolig klasse | issue |
 |---|---|---|---|---|
-| Kirkeårstagging | `generate/day_tags.mjs` | **1 163 av 1 189 kapitler** (bare Matteus gjort) | ja/nei per kapittel → 27b-kandidat | #32 |
-| Dagsomtaler pass 1 | `generate/days_mentions.mjs` | **648 av 1 189 kapitler** (1. Mos–Salmene gjort) | ja/nei per vers → 27b-kandidat | #33 |
-| Personavstemming | `generate/persons_reconcile.mjs`, `persons_reconcile_context.mjs` | etter behov | klassifisering → 27b-kandidat | #37 |
-| Historieskanning | `generate/scan_stories.mjs` | 1 forslag, 1 avvist i kø | klassifisering → 27b-kandidat | #37 |
-| Tallsymbolikk | `generate/number_symbolism.mjs` | 326 tall dekket | blandet — ja/nei-kall + prosa | #37 |
-| Kapittel-/bokresymé | `generate/chapter_summary.mjs`, `book_summary.mjs` | ferdig (1 189 / 66) | prosa → behold 122b | — |
-| Kapittel-/bokkontekst | `generate/chapter_context.mjs`, `book_context.mjs` | ferdig (1 188 / 66) | prosa → behold 122b | — |
-| Overskrifter | `generate/headings.mjs` | **alt** — `generate/headings/` finnes ikke, ingenting er kjørt | prosa → behold 122b | #36 |
-| Personprofiler | `generate/bible_persons.mjs` | 2 029 personer | profilene skrives av Claude, ikke lokalt | — |
+| Kirkeårstagging | `bun day-tags.ts --local --bible osnb --book 41-66` | **1 163 av 1 189 kapitler** (bare Matteus gjort) | ja/nei per kapittel → 27b-kandidat | #32 |
+| Dagsomtaler pass 1 | `bun days-mentions.ts --bible osnb --nt` *(alltid lokal)* | **648 av 1 189 kapitler** (1. Mos–Salmene gjort) | ja/nei per vers → 27b-kandidat | #33 |
+| Personavstemming | `bun persons-reconcile.ts` / `persons-reconcile-context.mjs` *(alltid lokal)* | etter behov | klassifisering → 27b-kandidat | #37 |
+| Historieskanning | `bun scan-stories.ts --local` | 1 forslag, 1 avvist i kø | klassifisering → 27b-kandidat | #37 |
+| Tallsymbolikk | `bun number-symbolism.ts --local` | 326 tall dekket | blandet — ja/nei-kall + prosa | #37 |
+| Kapittel-/bokresymé | `bun chapter-summary.ts --local`, `bun book-summary.ts --local` | ferdig (1 189 / 66) | prosa → behold 122b | — |
+| Kapittel-/bokkontekst | `bun chapter-context.ts --local`, `bun book-context.ts --local` | ferdig (1 188 / 66) | prosa → behold 122b | — |
+| Overskrifter | `bun headings.ts` *(lokal som standard; `--remote` gir Claude)* | **alt** — `generate/headings/` finnes ikke, ingenting er kjørt | prosa → behold 122b | #36 |
+| Personprofiler | `bun bible-persons.ts --local` | 2 029 personer | profilene skrives av Claude, ikke lokalt | — |
 
 Å flytte en av disse ned er én linje i `taskModels` — men gjør det etter en
 måling, ikke på antakelse. `triage.mjs`-erfaringen (31 % gjenkall på 27b mot
@@ -101,7 +129,7 @@ Disse er bestilt, men det finnes ingen kode som gjør dem. Bare høsting er bygg
 ### Sangreferanser — 454 av 6 076
 
 ```
-node generate/song_references.mjs
+bun generate/song-references.ts
 ```
 
 Korpuset er `external/songs/master/` (6 076 sanger). Utdata `generate/songs/<id>.json`,
@@ -135,8 +163,8 @@ kapittel, og alle tre modellene får plass.
 ### Tilleggsmateriale nb→es — alt gjenstår
 
 ```
-node generate/translate.mjs --language es --status     # gjeldende tall
-node generate/translate.mjs --language es
+bun generate/translate.ts --language es --status     # gjeldende tall
+bun generate/translate.ts --language es
 ```
 
 18 247 filer. De største postene: referanser 10 818, personer 2 029, historier
@@ -148,7 +176,7 @@ ligger i `generate/bibles_raw/oses/` (1 189 kapitler).
 ### Tilleggsmateriale nb→en — 591 filer igjen
 
 ```
-node generate/translate.mjs --language en --status
+bun generate/translate.ts --language en --status
 ```
 
 Alt annet enn referanser er `current`. De 591 manglende referansefilene er
@@ -156,18 +184,41 @@ merket `missing`, ikke `stale` — de er aldri oversatt, ikke utdaterte.
 
 ### Kryssreferanser — 13 av 66 bøker
 
+```
+bun generate/references.ts --local --book 10-39
+```
+
 10 818 versfiler under `generate/references/nb/`, i bøkene 1–9 (1. Mos–1. Sam) og
 40–43 (evangeliene). Det er 92 % av versene i nettopp de bøkene, og 35 % av bibelen.
 20 349 vers gjenstår.
 
-### Nøkkelord per kapittel — 888 av 1 189
+`--local` står ikke i `--help` for dette skriptet, men parseren tar imot det
+(`references.mjs:588`). Uten flagget går hele jobben på Claude API.
+
+### Nøkkelord per kapittel — 911 av 1 189
 
 ```
-node generate/important_words_chapter.mjs --local
+bun generate/important_words_chapter.ts --local
 ```
 
-301 kapitler igjen. Går på qwen3.5:27b med vilje (`constants.js:53-56`), så den
+278 kapitler igjen. Går på qwen3.5:27b med vilje (`constants.js:53-56`), så den
 kan stå på 64 GB-maskinen.
+
+Merk at `--book`/`--chapter` er et STARTPUNKT, ikke et filter: `--book 66
+--chapter 3` går fra Åp 3 og videre gjennom resten, ikke bare det ene kapitlet.
+
+Utdata er `important_words/<språk>/<bok>-<kapittel>.json`, en array:
+
+```json
+[
+  { "word": "Gud", "explanation": "Den allmektige skaperen som ..." }
+]
+```
+
+Array og ikke et objekt nøklet på ord: fem engelske filer har samme ord to
+ganger, og en nøkkel ville stille kastet den ene. Formatet var `.txt` med
+`ord: forklaring` per linje fram til 2026-07-31 — og skrev vekselvis `Gud:` og
+`Himmel: `, uten kontrakt for hva som var ord og hva som var mellomrom.
 
 ---
 
@@ -212,7 +263,7 @@ siden av hverandre på 128 GB, så den laster om for hvert kall: 17–19 s for
 går på skjemaets form, ikke på modellen (**#38**, rettet 2026-07-30). `openSchema:
 false` i `ollamaModelConfig` stenger gemma4 ute bare når kallet dekoder mot et
 *åpent* skjema — ubegrensede arrays eller fritekstfelter. `isClosedSchema` i
-`llm.js` avgjør, og `node --test generate/*.test.mjs` dekker grensen.
+`llm.js` avgjør, og `bun test` dekker grensen.
 
 I praksis, mens sangreferansene (gemma4) kjører:
 
@@ -235,8 +286,8 @@ enn uten (37/39 mot 33/39, 3/25 falsk alarm).
 cd generate
 
 # oversettelsesstatus for tilleggsmateriale
-node translate.mjs --language en --status
-node translate.mjs --language es --status
+bun translate.ts --language en --status
+bun translate.ts --language es --status
 
 # dekning per datatype
 find references/nb -type f | wc -l          # kryssreferanser, per vers
