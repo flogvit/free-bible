@@ -1,3 +1,4 @@
+import "../../generate/env.js";
 /**
  * Translate missing verses in osmain (books 1-66).
  *
@@ -11,7 +12,6 @@
 
 import { readFileSync, readdirSync, existsSync, statSync, writeFileSync, mkdirSync } from 'fs';
 import { join } from 'path';
-import dotenv from 'dotenv';
 import Anthropic from '@anthropic-ai/sdk';
 import { parseArgs, formatHelp, COMMON_FLAGS } from '../../generate/cli.js';
 import type { FlagSpec } from '../../generate/cli.js';
@@ -161,8 +161,6 @@ async function main(): Promise<void> {
 
   const doTranslate = flags.translate as boolean;
   const chapterFilter = (flags.chapter as string | undefined) ?? null;
-
-  dotenv.config({ path: join(import.meta.dirname, '../../generate/.env') });
 
   // === Find all missing verses in osmain (books 1-66) ===
 

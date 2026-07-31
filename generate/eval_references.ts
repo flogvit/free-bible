@@ -1,9 +1,8 @@
-import dotenv from 'dotenv';
+import "./env.js";
 import * as fs from 'fs';
 import path from 'path';
 import {fileURLToPath} from 'url';
 import {execSync} from 'child_process';
-dotenv.config();
 
 import {callWithRetry} from './llm.js';
 import {getRef} from './lib.js';

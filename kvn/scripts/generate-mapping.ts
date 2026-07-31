@@ -1,3 +1,4 @@
+import "../../generate/env.js";
 /**
  * Generate a verse mapping between osmain and a translation.
  *
@@ -29,7 +30,6 @@
 
 import { readFileSync, readdirSync, existsSync, statSync, writeFileSync, mkdirSync } from 'fs';
 import { join } from 'path';
-import dotenv from 'dotenv';
 import Anthropic from '@anthropic-ai/sdk';
 import { parseArgs, formatHelp, COMMON_FLAGS } from '../../generate/cli.js';
 import type { FlagSpec } from '../../generate/cli.js';
@@ -410,7 +410,6 @@ report it in the extraContent array. This means osmain needs to be expanded.`;
 
 async function main(): Promise<void> {
   // .env leses her og ikke på toppnivå: --help skal ikke røre disk.
-  dotenv.config({ path: join(import.meta.dirname, '../../generate/.env') });
 
   console.log(`Source: ${sourceName} (format: ${sourceFormat})`);
   console.log(`Model: ${ollamaModel}`);

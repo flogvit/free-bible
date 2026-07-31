@@ -40,7 +40,7 @@ const EXAMPLES = [
     'bun generate/days_mentions.ts --bible osnb',
 ];
 
-// Hjelpesjekken står først — før dotenv og før enhver fil- eller
+// Hjelpesjekken står først — før .env-lasting og før enhver fil- eller
 // nettverksoperasjon. `--help` skal svare på hva skriptet tar, ikke begynne å
 // gjøre det.
 const {flags} = parseArgs(process.argv.slice(2), SPEC);

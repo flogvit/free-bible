@@ -53,7 +53,7 @@ const HELP_EXAMPLES = [
 ];
 
 /**
- * Hjelpesjekken står FØRST, før dotenv og før noe som helst arbeid: `--help`
+ * Hjelpesjekken står FØRST, før .env-lasting og før noe som helst arbeid: `--help`
  * skal svare selv om .env mangler eller datakatalogene ikke finnes.
  */
 const {flags} = parseArgs(process.argv.slice(2), SPEC);
