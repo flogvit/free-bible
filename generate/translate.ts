@@ -1,4 +1,4 @@
-import dotenv from 'dotenv'
+import "./env.js";
 import * as fs from 'fs';
 import path from 'path';
 import crypto from 'crypto';
@@ -6,17 +6,94 @@ import {fileURLToPath} from 'url';
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
-dotenv.config()
 
 import {normalizeLanguage, getLanguageCode, getTaskModel, anthropicModel, bibles, getBookName} from "./constants.js";
 import {callWithRetry} from "./llm.js";
+import {parseArgs, formatHelp, COMMON_FLAGS} from './cli.js';
+import type {FlagSpec, ParsedArgs, Range} from './cli.js';
+import type {Chapter} from '../kvn/src/bible-types.js';
+
+const TASK = 'translate';
+
+/**
+ * Flaggkontrakten for dette skriptet (#51, #52, #53).
+ *
+ * To flagg måtte endres for å komme inn under kontrakten:
+ *
+ *   - `--remote` er borte. Oversettelsen kjørte LOKALT som standard, og
+ *     `--remote` var avmeldingen — altså motsatt fortegn av `--local`, som er
+ *     nettopp grunnen til at kontrakten avviser navnet. Aksen heter `--local`,
+ *     står på som standard her, og Claude-veien velges med `--no-local`.
+ *   - `--source` (kildespråket, standard `nb`) heter `bible` i SPEC-en, fordi
+ *     kontrakten oversetter `--source` til `--bible` (LEGACY_ALIASES). Navnet
+ *     er kontraktens, betydningen er skriptets egen: dette er ikke en
+ *     oversettelse, men språkkoden innholdskatalogene leses FRA.
+ */
+const SPEC: Record<string, FlagSpec> = {
+    language: {kind: 'string', help: 'målspråk, kode (en, de, es, fr, sv, da) eller fullt navn — påkrevd'},
+    // `--source` føres hit av kontraktens alias, derfor navnet `bible`.
+    bible: {kind: 'string', help: 'kildespråkkoden katalogene leses fra (flagget het --source)', default: 'nb'},
+    dirs: {kind: 'string', help: 'innholdskataloger å oversette, kommaseparert (standard: alle)'},
+    book: COMMON_FLAGS.book,
+    chapter: COMMON_FLAGS.chapter,
+    limit: COMMON_FLAGS.limit,
+    force: COMMON_FLAGS.force,
+    // Hjelpeteksten beskriver `--no-local`, siden det er den formen som vises
+    // når flagget står på som standard.
+    local: {kind: 'boolean', help: 'kjør mot Claude i stedet for lokal Ollama', default: true},
+    'dry-run': COMMON_FLAGS['dry-run'],
+    status: {kind: 'boolean', help: 'vis oversettelsesstatus per katalog, og avslutt'},
+    check: {kind: 'boolean', help: 'verifiser eksisterende oversettelser (norsk igjen, brutt struktur), og avslutt — ingen LLM-kall'},
+    invalidate: {kind: 'boolean', help: 'sammen med --check: nullstill tilstanden for de flaggede filene, så neste vanlige kjøring oversetter dem på nytt'},
+    help: COMMON_FLAGS.help,
+};
+
+const SCRIPT = 'generate/translate.ts';
+const PURPOSE = 'oversett innholdet under <katalog>/<kilde>/ til <katalog>/<språk>/, og spor '
+    + 'kildehashen per fil i translate_state/<språk>.json, slik at filer med endret kilde '
+    + 'oversettes på nytt. Har målspråket en prosjektbibel, følger sitert bibeltekst dens ordlyd';
+const EXAMPLES = [
+    'bun generate/translate.ts --language en --status',
+    'bun generate/translate.ts --language en --dirs chapter_summaries --limit 10',
+    'bun generate/translate.ts --language en --book 43',
+    'bun generate/translate.ts --language en              # alt som mangler eller er foreldet',
+    'bun generate/translate.ts --language en --check      # verifiser eksisterende oversettelser',
+    'bun generate/translate.ts --language en --no-local   # kjør mot Claude i stedet',
+];
+
+// Fila EKSPORTERER sourceHash og collectStringPaths, så den kan importeres av
+// andre skript. Flaggene tolkes derfor bare når den kjøres som program: et
+// ukjent flagg på det importerende skriptets kommandolinje ville ellers stoppet
+// selve importen med en feilmelding om translate.ts sine flagg.
+const isProgram = Boolean(process.argv[1]) && path.resolve(process.argv[1]) === __filename;
+
+// Hjelpesjekken er FØRSTE handling — før CONTENT_DIRS leses, før tilstandsfila
+// åpnes og før en eneste katalog listes. `--help` skal svare på hva skriptet
+// tar, ikke begynne å gjøre det. Det er også grunnen til at `--dirs` ikke har
+// standardverdien sin i SPEC: den ER hele CONTENT_DIRS, og settes i main().
+const {flags} = isProgram
+    ? parseArgs(process.argv.slice(2), SPEC)
+    : {flags: {} as ParsedArgs['flags']};
+
+if (flags.help) {
+    console.log(formatHelp(SCRIPT, PURPOSE, SPEC, EXAMPLES));
+    process.exit(0);
+}
+
+/** Hva én innholdskatalog inneholder, og hva som ikke skal oversettes i den. */
+interface DirConfig {
+    /** Filendelsen kildefilene har; avgjør også hvilken oversetter som brukes. */
+    ext: string;
+    /** JSON-nøkler hvis verdier er maskinverdier og må stå urørt. */
+    keepKeys?: string[];
+}
 
 // Directories under generate/ with translatable content in <dir>/<lang>/
 // keepKeys: JSON keys whose values are machine values and must not be translated.
 // Order matters: dirs are processed top to bottom (references last - 10k+ files).
 // Not listed on purpose: proofread_*, stories_proposed, stories_rejected
 // (internal pipeline artifacts, not published content).
-const CONTENT_DIRS = {
+const CONTENT_DIRS: Record<string, DirConfig> = {
     'chapter_summaries': {ext: '.md'},
     'book_summaries': {ext: '.md'},
     'chapter_context': {ext: '.md'},
@@ -47,9 +124,15 @@ const CONTENT_DIRS = {
     'references': {ext: '.json', keepKeys: []},
 };
 
+/** Sitattegnene et målspråk bruker. */
+interface QuoteStyle {
+    open: string;
+    close: string;
+}
+
 // Target-language quote style. « » in the source is converted to these after
 // translation. null = keep « » as-is.
-const QUOTE_STYLES = {
+const QUOTE_STYLES: Record<string, QuoteStyle | null> = {
     en: {open: '"', close: '"'},   // straight quotes — matches what the model produces when it converts on its own
     es: {open: '«', close: '»'},   // « » (RAE standard; also normalizes any “ ” the model produces)
     de: {open: '„', close: '“'},   // „ “
@@ -61,7 +144,7 @@ const QUOTE_STYLES = {
 
 // Per-language examples of published Bible translations the model must not
 // reproduce verbatim when translating quoted verses
-const BIBLE_TRANSLATION_EXAMPLES = {
+const BIBLE_TRANSLATION_EXAMPLES: Record<string, string> = {
     en: 'ESV, NIV, KJV',
     es: 'Reina-Valera, NVI, Dios Habla Hoy',
     de: 'Lutherbibel, Elberfelder, Einheitsübersetzung',
@@ -70,37 +153,53 @@ const BIBLE_TRANSLATION_EXAMPLES = {
     da: 'Bibelen 1992',
 };
 
-function translationExamples(langCode) {
+function translationExamples(langCode: string): string {
     return BIBLE_TRANSLATION_EXAMPLES[langCode] || 'ESV, NIV, KJV';
 }
 
 // Project Bible translation per language code (en → osen, es → oses, ...), derived
 // from constants so a new translation is picked up without touching this file
-const BIBLE_TRANSLATIONS = Object.fromEntries(
-    Object.entries(bibles).map(([translation, language]) => [getLanguageCode(language), translation])
+const BIBLE_TRANSLATIONS: Record<string, string> = Object.fromEntries(
+    Object.entries(bibles).map(([translation, language]) => [getLanguageCode(language), translation] as [string, string])
 );
 
-const bibleChapterCache = new Map();
+const bibleChapterCache = new Map<string, Chapter | null>();
 
-function loadBibleChapter(translation, bookId, chapterId) {
+function loadBibleChapter(translation: string, bookId: number, chapterId: number): Chapter | null {
     const key = `${translation}/${bookId}/${chapterId}`;
     if (!bibleChapterCache.has(key)) {
         const chapterPath = path.join(__dirname, 'bibles_raw', translation, String(bookId), `${chapterId}.json`);
         bibleChapterCache.set(key, fs.existsSync(chapterPath) ? JSON.parse(fs.readFileSync(chapterPath, 'utf-8')) : null);
     }
-    return bibleChapterCache.get(key);
+    // Nøkkelen ble nettopp satt, så oppslaget kan ikke gi undefined.
+    return bibleChapterCache.get(key) as Chapter | null;
+}
+
+/**
+ * En vershenvisning slik den ligger i JSON-trærne (stories/themes-formen).
+ *
+ * Bare `bookId` + `startChapter` + `startVerse` er sikre; sluttfeltene mangler
+ * på henvisninger til ett enkelt vers.
+ */
+interface VerseRef {
+    bookId: number;
+    startChapter: number;
+    startVerse: number;
+    endChapter?: number;
+    endVerse?: number;
 }
 
 // Verse reference objects anywhere in a JSON tree (the stories/themes shape:
 // bookId + startChapter/startVerse, optionally endChapter/endVerse)
-function collectVerseRefs(obj, out = []) {
+function collectVerseRefs(obj: unknown, out: VerseRef[] = []): VerseRef[] {
     if (Array.isArray(obj)) {
         obj.forEach(v => collectVerseRefs(v, out));
     } else if (obj !== null && typeof obj === 'object') {
-        if (Number.isInteger(obj.bookId) && Number.isInteger(obj.startChapter) && Number.isInteger(obj.startVerse)) {
-            out.push(obj);
+        const record = obj as Record<string, unknown>;
+        if (Number.isInteger(record.bookId) && Number.isInteger(record.startChapter) && Number.isInteger(record.startVerse)) {
+            out.push(obj as VerseRef);
         } else {
-            Object.values(obj).forEach(v => collectVerseRefs(v, out));
+            Object.values(record).forEach(v => collectVerseRefs(v, out));
         }
     }
     return out;
@@ -110,9 +209,9 @@ function collectVerseRefs(obj, out = []) {
 const MAX_QUOTE_CONTEXT_CHARS = 8000;
 
 // The current file's Bible text for quoted passages, set per file in the main
-// loop (same pattern as useRemote). null = no project Bible for the language,
+// loop (same pattern as useLocal). null = no project Bible for the language,
 // no quotes in the source, or no way to tell which verses are quoted.
-let quoteContext = null;
+let quoteContext: string | null = null;
 
 // Quoted Bible text in study material should match the project's own Bible for
 // the target language: the reader meets the same wording here as in the Bible
@@ -120,11 +219,11 @@ let quoteContext = null;
 // verses are found via the file's own references (JSON) or its book-chapter
 // filename (markdown/txt); book-level files are skipped - a whole book does
 // not fit in the prompt.
-function buildQuoteContext(item, langCode, language) {
+function buildQuoteContext(item: WorkItem, langCode: string, language: string): string | null {
     const translation = BIBLE_TRANSLATIONS[langCode];
     if (!translation || !item.sourceText.includes('«')) return null;
 
-    let refs;
+    let refs: VerseRef[];
     if (item.config.ext === '.json') {
         refs = collectVerseRefs(JSON.parse(item.sourceText));
     } else {
@@ -134,7 +233,7 @@ function buildQuoteContext(item, langCode, language) {
         refs = [{bookId, startChapter: chapterId, startVerse: 1}];
     }
 
-    const seen = new Set();
+    const seen = new Set<string>();
     let block = '';
     for (const ref of refs) {
         const endChapter = ref.endChapter ?? ref.startChapter;
@@ -156,9 +255,15 @@ function buildQuoteContext(item, langCode, language) {
     return block.trimEnd() || null;
 }
 
+/** Sitatregelen i ledeteksten, og bibelteksten den viser til. */
+interface QuotePromptParts {
+    rule: string;
+    block: string;
+}
+
 // The quote rule for the prompts: with a project Bible available the quoted
 // text must follow it; without one the old behavior (free, natural wording)
-function quotePromptParts(language) {
+function quotePromptParts(language: string): QuotePromptParts {
     const langCode = getLanguageCode(language);
     if (!quoteContext) {
         return {
@@ -176,13 +281,30 @@ function quotePromptParts(language) {
 // chapter_context files can exceed 16k total tokens and get truncated
 const OLLAMA_OPTIONS = {num_ctx: 32768};
 
-const TASK = 'translate';
+/** Én kildefil i historikken til en oversatt fil. */
+interface HistoryEntry {
+    srcHash: string;
+    model: string;
+    translatedAt: string;
+}
 
-function getStatePath(langCode) {
+/** Én fils oppføring i translate_state/<språk>.json. */
+interface StateEntry {
+    srcHash: string;
+    model: string;
+    translatedAt: string;
+    warnings: string[];
+    history: HistoryEntry[];
+}
+
+/** Hele tilstandsfila: kildefilnøkkel → siste oversettelse av den. */
+type TranslateState = Record<string, StateEntry>;
+
+function getStatePath(langCode: string): string {
     return path.join(__dirname, `translate_state/${langCode}.json`);
 }
 
-function loadState(langCode) {
+function loadState(langCode: string): TranslateState {
     const statePath = getStatePath(langCode);
     if (fs.existsSync(statePath)) {
         return JSON.parse(fs.readFileSync(statePath, 'utf-8'));
@@ -190,7 +312,7 @@ function loadState(langCode) {
     return {};
 }
 
-function saveState(langCode, state) {
+function saveState(langCode: string, state: TranslateState): void {
     const statePath = getStatePath(langCode);
     const dir = path.dirname(statePath);
     if (!fs.existsSync(dir)) {
@@ -199,7 +321,7 @@ function saveState(langCode, state) {
     fs.writeFileSync(statePath, JSON.stringify(state, null, 2));
 }
 
-function contentHash(text) {
+function contentHash(text: string): string {
     return crypto.createHash('sha256').update(text).digest('hex');
 }
 
@@ -217,9 +339,9 @@ function contentHash(text) {
  * bare teksten: dukker det opp et nytt oversettbart felt, må fila oversettes selv
  * om de gamle strengene står urørt.
  */
-function sourceHash(sourceText, config) {
+function sourceHash(sourceText: string, config: DirConfig): string {
     if (config.ext !== '.json') return contentHash(sourceText);
-    let parsed;
+    let parsed: unknown;
     try {
         parsed = JSON.parse(sourceText);
     } catch {
@@ -230,17 +352,17 @@ function sourceHash(sourceText, config) {
 }
 
 // Natural sort: "1-2.md" before "1-10.md", "books/2.json" before "books/10.json"
-function sortNatural(a, b) {
+function sortNatural(a: string, b: string): number {
     return a.localeCompare(b, undefined, {numeric: true});
 }
 
 // Lists files recursively; returns paths relative to <dir>/<sourceLang>/
 // (e.g. "1-1.md" or "books/1.json" for nested dirs like timeline)
-function listSourceFiles(dir, ext, sourceLang) {
+function listSourceFiles(dir: string, ext: string, sourceLang: string): string[] {
     const srcDir = path.join(__dirname, dir, sourceLang);
     if (!fs.existsSync(srcDir)) return [];
-    const result = [];
-    const walk = (sub) => {
+    const result: string[] = [];
+    const walk = (sub: string): void => {
         for (const entry of fs.readdirSync(path.join(srcDir, sub), {withFileTypes: true})) {
             if (entry.name.startsWith('.')) continue; // hidden internal artifacts (.flagged_existing.json)
             const rel = sub ? `${sub}/${entry.name}` : entry.name;
@@ -257,14 +379,14 @@ function listSourceFiles(dir, ext, sourceLang) {
 
 // Book id from "43.md", "2-3.md" or nested "40/7.json" (book = first dir).
 // NaN for non-numeric layouts (e.g. timeline/books/...) - the filters skip those.
-function bookIdOf(filename) {
+function bookIdOf(filename: string): number {
     const firstSegment = filename.split('/')[0];
     return parseInt(/^\d/.test(firstSegment) ? firstSegment : path.basename(filename), 10);
 }
 
 // Chapter from "2-3.md" (second number) or nested "40/7.json" (basename);
 // null for book-level files like "43.md"
-function chapterIdOf(filename) {
+function chapterIdOf(filename: string): number | null {
     if (filename.includes('/')) {
         const base = parseInt(path.basename(filename), 10);
         return Number.isNaN(base) ? null : base;
@@ -273,16 +395,18 @@ function chapterIdOf(filename) {
     return m ? parseInt(m[1], 10) : null;
 }
 
-let useRemote = false;
+// Kjøres jobben lokalt? Den gjorde det som standard før flaggkontrakten også —
+// da var `--remote` avmeldingen, nå er den `--no-local`.
+let useLocal = true;
 
 // Havner i translate_state per fil. taskModels.translate ligger øverst i
 // localModelRanking, så adopsjonen i resolveLocalModel kan ikke bytte den ut —
 // senkes den noen gang, må denne hente den faktisk brukte modellen i stedet.
-function activeModel() {
-    return useRemote ? anthropicModel : getTaskModel(TASK);
+function activeModel(): string {
+    return useLocal ? getTaskModel(TASK) : anthropicModel;
 }
 
-function getMarkdownPrompt(language, sourceText) {
+function getMarkdownPrompt(language: string, sourceText: string): string {
     const quote = quotePromptParts(language);
     return `You are a professional translator. Translate the following Norwegian (bokmål) Bible study material into ${language}.
 
@@ -300,7 +424,7 @@ ${sourceText}`;
 }
 
 // Strip ```markdown / ``` fences if the model wrapped its output
-function stripFences(text) {
+function stripFences(text: string): string {
     let result = text.trim();
     const fenceMatch = result.match(/^```[a-z]*\n([\s\S]*)\n```$/);
     if (fenceMatch) {
@@ -311,7 +435,7 @@ function stripFences(text) {
 
 // Normalizes both « » from the source and “ ” that the model sometimes
 // produces on its own, so the whole corpus ends up with one quote style
-function convertQuotes(text, langCode) {
+function convertQuotes(text: string, langCode: string): string {
     const style = QUOTE_STYLES[langCode];
     if (!style) return text;
     return text
@@ -319,9 +443,16 @@ function convertQuotes(text, langCode) {
         .replaceAll('“', style.open).replaceAll('”', style.close);
 }
 
+/** Strukturelt fingeravtrykk av et markdown-dokument. */
+interface MarkdownFingerprint {
+    headings: number;
+    bullets: number;
+    boldMarkers: number;
+}
+
 // Structural fingerprint of a markdown document, used to warn about
 // translations that dropped or invented structure
-function markdownFingerprint(text) {
+function markdownFingerprint(text: string): MarkdownFingerprint {
     const lines = text.split('\n');
     return {
         headings: lines.filter(l => /^#{1,6} /.test(l)).length,
@@ -333,7 +464,7 @@ function markdownFingerprint(text) {
 // The model sometimes converts « » itself despite instructions, so quotes are
 // checked after conversion: the final text must contain at least as many
 // target-style quote marks as the source has « » marks
-function quoteWarnings(sourceText, finalText, langCode) {
+function quoteWarnings(sourceText: string, finalText: string, langCode: string): string[] {
     const srcQuotes = (sourceText.match(/[«»]/g) || []).length;
     if (srcQuotes === 0) return [];
     const style = QUOTE_STYLES[langCode];
@@ -348,16 +479,37 @@ function quoteWarnings(sourceText, finalText, langCode) {
     return [];
 }
 
-function compareMarkdown(source, translated) {
+function compareMarkdown(source: string, translated: string): string[] {
     const src = markdownFingerprint(source);
     const dst = markdownFingerprint(translated);
-    const warnings = [];
-    for (const key of Object.keys(src)) {
+    const warnings: string[] = [];
+    for (const key of Object.keys(src) as (keyof MarkdownFingerprint)[]) {
         if (src[key] !== dst[key]) {
             warnings.push(`${key}: source ${src[key]}, translation ${dst[key]}`);
         }
     }
     return warnings;
+}
+
+/**
+ * Det en bunke faktisk sender modellen: teksten, og nøkkelen som kontekst.
+ *
+ * Egen type fordi bunkene får to ulike former inn — de utpakkede strengene fra
+ * JSON-treet (`StringPath`) og de avduplikerte (`UniqueString`) — og ingen av
+ * de andre feltene deres når fram til ledeteksten.
+ */
+interface TranslatableString {
+    key: string;
+    text: string;
+}
+
+/**
+ * En oversettbar streng i et JSON-tre, med stien dit.
+ *
+ * Stien blandes med vilje: tallene er array-indekser, strengene er nøkler.
+ */
+interface StringPath extends TranslatableString {
+    path: (string | number)[];
 }
 
 // Collect every translatable string value in a JSON tree, with its path.
@@ -366,11 +518,17 @@ function compareMarkdown(source, translated) {
 // refs array). Empty strings are skipped.
 // Pure ISO dates are never translatable, whatever key they sit under
 // (the days files even use year numbers as keys)
-function isTranslatable(value, key, keepKeys) {
+function isTranslatable(value: string, key: string, keepKeys: string[]): boolean {
     return !keepKeys.includes(key) && value.trim() !== '' && !/^\d{4}-\d{2}-\d{2}$/.test(value);
 }
 
-function collectStringPaths(obj, keepKeys, path = [], lastKey = '', out = []) {
+function collectStringPaths(
+    obj: unknown,
+    keepKeys: string[],
+    path: (string | number)[] = [],
+    lastKey = '',
+    out: StringPath[] = [],
+): StringPath[] {
     if (Array.isArray(obj)) {
         obj.forEach((v, i) => collectStringPaths(v, keepKeys, [...path, i], lastKey, out));
     } else if (obj !== null && typeof obj === 'object') {
@@ -390,10 +548,10 @@ function collectStringPaths(obj, keepKeys, path = [], lastKey = '', out = []) {
     return out;
 }
 
-function setPath(obj, path, value) {
-    let target = obj;
+function setPath(obj: unknown, path: (string | number)[], value: string): void {
+    let target = obj as Record<string | number, unknown>;
     for (let i = 0; i < path.length - 1; i++) {
-        target = target[path[i]];
+        target = target[path[i]] as Record<string | number, unknown>;
     }
     target[path[path.length - 1]] = value;
 }
@@ -404,7 +562,12 @@ const BATCH_SCHEMA = {
     required: ['translations']
 };
 
-function getBatchPrompt(language, items) {
+/** Svaret modellen skal gi på BATCH_SCHEMA. */
+interface BatchTranslations {
+    translations: string[];
+}
+
+function getBatchPrompt(language: string, items: TranslatableString[]): string {
     const quote = quotePromptParts(language);
     const list = items.map(it => ({key: it.key, text: it.text}));
     return `You are a professional translator. Translate the "text" value of each entry below from Norwegian (bokmål) into ${language}.
@@ -428,13 +591,20 @@ const BATCH_SIZE = 15;
 // A chunk that comes back miscounted is bisected and each half retried -
 // this always converges, ending at single strings which fall back to plain
 // text translation if even a one-element array fails
-async function translateStringChunk(language, langCode, items, context) {
+async function translateStringChunk(
+    language: string,
+    langCode: string,
+    items: TranslatableString[],
+    context: string,
+): Promise<string[]> {
     const prompt = getBatchPrompt(language, items);
-    const valid = out => out && Array.isArray(out.translations)
+    // `any` er den ærlige typen på et modellsvar: dette ER kontrollen av at det
+    // har formen BATCH_SCHEMA lover.
+    const valid = (out: any): out is BatchTranslations => out && Array.isArray(out.translations)
         && out.translations.length === items.length
-        && out.translations.every(s => typeof s === 'string');
+        && out.translations.every((s: unknown) => typeof s === 'string');
 
-    const out = await callWithRetry(prompt, {schema: BATCH_SCHEMA, local: !useRemote, task: TASK, think: false, ollamaOptions: OLLAMA_OPTIONS, context});
+    const out = await callWithRetry(prompt, {schema: BATCH_SCHEMA, local: useLocal, task: TASK, think: false, ollamaOptions: OLLAMA_OPTIONS, context});
     if (valid(out)) {
         return out.translations;
     }
@@ -454,21 +624,36 @@ async function translateStringChunk(language, langCode, items, context) {
 // array, so they are translated one by one as plain text instead
 const LONG_STRING_CHARS = 500;
 
-async function translateLongString(language, langCode, text, context) {
+async function translateLongString(
+    language: string,
+    langCode: string,
+    text: string,
+    context: string,
+): Promise<string> {
     const prompt = getTextPrompt(language, text);
-    let raw = await callWithRetry(prompt, {local: !useRemote, task: TASK, think: false, ollamaOptions: OLLAMA_OPTIONS, context});
+    let raw = await callWithRetry(prompt, {local: useLocal, task: TASK, think: false, ollamaOptions: OLLAMA_OPTIONS, context}) as string;
     if (looksTruncated(stripFences(raw))) {
         console.log(`  long string looks truncated, retrying with temperature...`);
-        raw = await callWithRetry(prompt, {local: !useRemote, task: TASK, think: false, ollamaOptions: {...OLLAMA_OPTIONS, temperature: 0.4}, context});
+        raw = await callWithRetry(prompt, {local: useLocal, task: TASK, think: false, ollamaOptions: {...OLLAMA_OPTIONS, temperature: 0.4}, context}) as string;
     }
     return stripFences(raw);
 }
 
-async function translateStringBatch(language, langCode, items, context) {
+/** En unik kildestreng i en bunke, med oversettelsen sin når den er hentet. */
+interface UniqueString extends TranslatableString {
+    translation: string | null;
+}
+
+async function translateStringBatch(
+    language: string,
+    langCode: string,
+    items: StringPath[],
+    context: string,
+): Promise<string[]> {
     // Identical strings (repeated year labels, region names, ...) are
     // translated once and fanned back out - repetition inside a chunk makes
     // the model merge entries, and this also saves tokens
-    const unique = new Map();
+    const unique = new Map<string, UniqueString>();
     for (const item of items) {
         if (!unique.has(item.text)) {
             unique.set(item.text, {key: item.key, text: item.text, translation: null});
@@ -487,7 +672,9 @@ async function translateStringBatch(language, langCode, items, context) {
         const translated = await translateStringChunk(language, langCode, chunk, `${context} [${i + 1}-${i + chunk.length}]`);
         chunk.forEach((u, k) => { u.translation = translated[k]; });
     }
-    return items.map(item => unique.get(item.text).translation);
+    // Hver `item.text` er en nøkkel i `unique`, og løkkene over har fylt hver
+    // eneste oppføring — derfor holder oppslaget og oversettelsen.
+    return items.map(item => unique.get(item.text)!.translation!);
 }
 
 // Restore bold on bullet keywords. The model reliably drops ** around bullets
@@ -495,14 +682,14 @@ async function translateStringBatch(language, langCode, items, context) {
 // Bullets are matched against the source by position, so bold is only restored
 // where the source bullet actually was bold; separator (colon/dash) follows the
 // translation, falling back to the source's colon when the model dropped it too.
-function restoreBulletBold(sourceText, text, langCode) {
+function restoreBulletBold(sourceText: string, text: string, langCode: string): string {
     const style = QUOTE_STYLES[langCode] || {open: '«', close: '»'};
-    const esc = s => s.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
-    const isBullet = l => /^\s*- /.test(l);
+    const esc = (s: string) => s.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
+    const isBullet = (l: string) => /^\s*- /.test(l);
 
     const srcBullets = sourceText.split('\n').filter(isBullet);
     const lines = text.split('\n');
-    const bulletLineNos = [];
+    const bulletLineNos: number[] = [];
     lines.forEach((line, i) => { if (isBullet(line)) bulletLineNos.push(i); });
     if (srcBullets.length !== bulletLineNos.length) return text;
 
@@ -533,9 +720,16 @@ function restoreBulletBold(sourceText, text, langCode) {
 // At temperature 0 this is deterministic (the model can emit EOS mid-word on
 // rare token sequences, e.g. Hebrew with vowel points), so the retry needs a
 // bit of temperature to escape it.
-function looksTruncated(text) {
+function looksTruncated(text: string): boolean {
     const lastLine = text.trimEnd().split('\n').filter(l => l.trim()).pop() || '';
     return !/[.!?»"”\)\]:*]$/.test(lastLine.trim());
+}
+
+/** Ett sitat funnet i en linje, med posisjon og om det står i fet skrift. */
+interface QuoteHit {
+    index: number;
+    text: string;
+    bold: boolean;
 }
 
 // Restore bold around quoted keywords inside paragraphs (chapter_context style:
@@ -543,20 +737,20 @@ function looksTruncated(text) {
 // lines are paired positionally, and within each line pair the quoted phrases
 // are paired by index - a quote that is bold in the source gets its bold back
 // in the translation. Skips any line where the quote counts do not match.
-function restoreQuotedInlineBold(sourceText, text, langCode) {
+function restoreQuotedInlineBold(sourceText: string, text: string, langCode: string): string {
     const style = QUOTE_STYLES[langCode] || {open: '«', close: '»'};
-    const esc = s => s.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
+    const esc = (s: string) => s.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
 
     const srcLines = sourceText.split('\n').filter(l => l.trim());
     const lines = text.split('\n');
-    const dstLineNos = [];
+    const dstLineNos: number[] = [];
     lines.forEach((l, i) => { if (l.trim()) dstLineNos.push(i); });
     if (srcLines.length !== dstLineNos.length) return text;
 
-    const findQuotes = (line, open, close) => {
+    const findQuotes = (line: string, open: string, close: string): QuoteHit[] => {
         const re = new RegExp(`${esc(open)}[^${esc(close)}\\n]+${esc(close)}`, 'g');
-        const result = [];
-        let m;
+        const result: QuoteHit[] = [];
+        let m: RegExpExecArray | null;
         while ((m = re.exec(line)) !== null) {
             const bold = line.slice(Math.max(0, m.index - 2), m.index) === '**';
             result.push({index: m.index, text: m[0], bold});
@@ -583,12 +777,36 @@ function restoreQuotedInlineBold(sourceText, text, langCode) {
     return lines.join('\n');
 }
 
-async function translateMarkdown(language, langCode, sourceText, keepKeys, context) {
+/** Den ferdige oversettelsen av én fil, med de strukturelle advarslene. */
+interface TranslationResult {
+    text: string;
+    warnings: string[];
+}
+
+/**
+ * Signaturen de tre oversetterne deler, slik utvelgelsen på filendelse kan
+ * behandle dem likt. `keepKeys` brukes bare av JSON-veien.
+ */
+type Translator = (
+    language: string,
+    langCode: string,
+    sourceText: string,
+    keepKeys: string[] | undefined,
+    context: string,
+) => Promise<TranslationResult>;
+
+async function translateMarkdown(
+    language: string,
+    langCode: string,
+    sourceText: string,
+    keepKeys: string[] | undefined,
+    context: string,
+): Promise<TranslationResult> {
     const prompt = getMarkdownPrompt(language, sourceText);
-    let raw = await callWithRetry(prompt, {local: !useRemote, task: TASK, think: false, ollamaOptions: OLLAMA_OPTIONS, context});
+    let raw = await callWithRetry(prompt, {local: useLocal, task: TASK, think: false, ollamaOptions: OLLAMA_OPTIONS, context}) as string;
     if (looksTruncated(stripFences(raw))) {
         console.log(`  output looks truncated, retrying with temperature...`);
-        raw = await callWithRetry(prompt, {local: !useRemote, task: TASK, think: false, ollamaOptions: {...OLLAMA_OPTIONS, temperature: 0.4}, context});
+        raw = await callWithRetry(prompt, {local: useLocal, task: TASK, think: false, ollamaOptions: {...OLLAMA_OPTIONS, temperature: 0.4}, context}) as string;
         if (looksTruncated(stripFences(raw))) {
             throw new Error('output truncated after temperature retry');
         }
@@ -599,7 +817,7 @@ async function translateMarkdown(language, langCode, sourceText, keepKeys, conte
     // **"**X**"** → **"X"**
     const style = QUOTE_STYLES[langCode];
     if (style) {
-        const esc = s => s.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
+        const esc = (s: string) => s.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
         const brokenBold = new RegExp(`\\*\\*${esc(style.open)}\\*\\*([^*\\n]+)\\*\\*${esc(style.close)}\\*\\*`, 'g');
         text = text.replace(brokenBold, `**${style.open}$1${style.close}**`);
     }
@@ -617,7 +835,7 @@ async function translateMarkdown(language, langCode, sourceText, keepKeys, conte
     return {text, warnings};
 }
 
-function getTextPrompt(language, sourceText) {
+function getTextPrompt(language: string, sourceText: string): string {
     const quote = quotePromptParts(language);
     return `You are a professional translator. Translate the following Norwegian (bokmål) Bible study text into ${language}.
 
@@ -633,19 +851,25 @@ Norwegian source:
 ${sourceText}`;
 }
 
-async function translateTxt(language, langCode, sourceText, keepKeys, context) {
+async function translateTxt(
+    language: string,
+    langCode: string,
+    sourceText: string,
+    keepKeys: string[] | undefined,
+    context: string,
+): Promise<TranslationResult> {
     const prompt = getTextPrompt(language, sourceText);
-    let raw = await callWithRetry(prompt, {local: !useRemote, task: TASK, think: false, ollamaOptions: OLLAMA_OPTIONS, context});
+    let raw = await callWithRetry(prompt, {local: useLocal, task: TASK, think: false, ollamaOptions: OLLAMA_OPTIONS, context}) as string;
     if (looksTruncated(stripFences(raw))) {
         console.log(`  output looks truncated, retrying with temperature...`);
-        raw = await callWithRetry(prompt, {local: !useRemote, task: TASK, think: false, ollamaOptions: {...OLLAMA_OPTIONS, temperature: 0.4}, context});
+        raw = await callWithRetry(prompt, {local: useLocal, task: TASK, think: false, ollamaOptions: {...OLLAMA_OPTIONS, temperature: 0.4}, context}) as string;
         if (looksTruncated(stripFences(raw))) {
             throw new Error('output truncated after temperature retry');
         }
     }
     const text = convertQuotes(stripFences(raw), langCode) + '\n';
 
-    const countLines = t => t.split('\n').filter(l => l.trim()).length;
+    const countLines = (t: string) => t.split('\n').filter(l => l.trim()).length;
     const srcLines = countLines(sourceText);
     const dstLines = countLines(text);
     const warnings = srcLines === dstLines ? []
@@ -653,7 +877,13 @@ async function translateTxt(language, langCode, sourceText, keepKeys, context) {
     return {text, warnings: [...warnings, ...quoteWarnings(sourceText, text, langCode)]};
 }
 
-async function translateJson(language, langCode, sourceText, keepKeys, context) {
+async function translateJson(
+    language: string,
+    langCode: string,
+    sourceText: string,
+    keepKeys: string[] | undefined,
+    context: string,
+): Promise<TranslationResult> {
     // Strings are extracted, translated as a batch, and reinserted - the
     // model never reproduces the JSON itself, so structure, keys, numbers
     // and machine values are correct by construction.
@@ -672,8 +902,50 @@ async function translateJson(language, langCode, sourceText, keepKeys, context) 
     return {text, warnings: []};
 }
 
-function collectWork(options, state) {
-    const work = [];
+/** Hvor en kildefil står i forhold til oversettelsen sin. */
+type WorkStatus = 'missing' | 'untracked' | 'stale' | 'current';
+
+/** Én kildefil med alt kjøringen trenger å vite om den. */
+interface WorkItem {
+    dir: string;
+    filename: string;
+    /** `<katalog>/<filnavn>` — nøkkelen i tilstandsfila. */
+    key: string;
+    srcPath: string;
+    outPath: string;
+    sourceText: string;
+    srcHash: string;
+    status: WorkStatus;
+    config: DirConfig;
+}
+
+/**
+ * De ferdig tolkede flaggene, slik resten av skriptet ser dem.
+ *
+ * `bookStart`/`bookEnd` og `chapterStart`/`chapterEnd` settes alltid sammen:
+ * begge kommer fra det samme intervallet, så er den ene satt, er den andre det
+ * også.
+ */
+interface Options {
+    language: string;
+    langCode: string;
+    sourceLang: string;
+    dirs: string[];
+    bookStart: number | null;
+    bookEnd: number | null;
+    chapterStart: number | null;
+    chapterEnd: number | null;
+    useLocal: boolean;
+    limit: number | null;
+    force: boolean;
+    dryRun: boolean;
+    status: boolean;
+    check: boolean;
+    invalidate: boolean;
+}
+
+function collectWork(options: Options, state: TranslateState): WorkItem[] {
+    const work: WorkItem[] = [];
     for (const dir of options.dirs) {
         const config = CONTENT_DIRS[dir];
         if (!config) {
@@ -683,11 +955,11 @@ function collectWork(options, state) {
         for (const filename of listSourceFiles(dir, config.ext, options.sourceLang)) {
             if (options.bookStart !== null) {
                 const bookId = bookIdOf(filename);
-                if (bookId < options.bookStart || bookId > options.bookEnd) continue;
+                if (bookId < options.bookStart || bookId > options.bookEnd!) continue;
             }
             if (options.chapterStart !== null) {
                 const chapterId = chapterIdOf(filename);
-                if (chapterId === null || chapterId < options.chapterStart || chapterId > options.chapterEnd) continue;
+                if (chapterId === null || chapterId < options.chapterStart || chapterId > options.chapterEnd!) continue;
             }
             const srcPath = path.join(__dirname, dir, options.sourceLang, filename);
             const outPath = path.join(__dirname, dir, options.langCode, filename);
@@ -695,7 +967,7 @@ function collectWork(options, state) {
             const sourceText = fs.readFileSync(srcPath, 'utf-8');
             const srcHash = sourceHash(sourceText, config);
 
-            let status;
+            let status: WorkStatus;
             if (!fs.existsSync(outPath)) {
                 status = 'missing';
             } else if (!state[key]) {
@@ -712,8 +984,8 @@ function collectWork(options, state) {
     return work;
 }
 
-function printStatus(work) {
-    const byDir = {};
+function printStatus(work: WorkItem[]): void {
+    const byDir: Record<string, Record<WorkStatus, number>> = {};
     for (const item of work) {
         byDir[item.dir] = byDir[item.dir] || {missing: 0, untracked: 0, stale: 0, current: 0};
         byDir[item.dir][item.status]++;
@@ -735,7 +1007,7 @@ function printStatus(work) {
 // threshold must be met. Only words with no English/Spanish homograph.
 const NORWEGIAN_WORDS = /\b(ikke|også|både|være|blir|gjennom|mellom|hvordan|derfor|fordi|kapittel|kapitlet|verset|dette|denne|disse|sier|svarte|hadde|gikk|jeg|dere|når|herren|sønn|sønner)\b/gi;
 
-function norwegianRemnants(text) {
+function norwegianRemnants(text: string): string[] {
     const hits = text.match(NORWEGIAN_WORDS) || [];
     const words = text.split(/\s+/).filter(Boolean).length;
     if (hits.length >= 3 && hits.length / Math.max(words, 1) >= 0.01) {
@@ -745,21 +1017,29 @@ function norwegianRemnants(text) {
     return [];
 }
 
+/** Funnene fra en deterministisk sjekk av én oversatt fil. */
+interface CheckFindings {
+    /** Oversettelsen er feil og bør oversettes på nytt. */
+    hard: string[];
+    /** Formateringsdrift en ny oversettelse ikke pålitelig ville rettet. */
+    soft: string[];
+}
+
 // Deterministic re-check of an existing translation against its source.
 // hard = the translation is wrong (untranslated Norwegian, broken structure)
 // and worth re-translating; soft = formatting drift (bold markers, quote
 // counts) that a re-translation would not reliably improve.
-function checkTranslatedFile(item, langCode) {
+function checkTranslatedFile(item: WorkItem, langCode: string): CheckFindings {
     const text = fs.readFileSync(item.outPath, 'utf-8');
-    const hard = [];
-    const soft = [];
+    const hard: string[] = [];
+    const soft: string[] = [];
 
     if (item.config.ext === '.json') {
-        let parsed;
+        let parsed: unknown;
         try {
             parsed = JSON.parse(text);
         } catch (error) {
-            return {hard: [`invalid JSON: ${error.message}`], soft};
+            return {hard: [`invalid JSON: ${(error as Error).message}`], soft};
         }
         const keepKeys = item.config.keepKeys || [];
         const srcPaths = collectStringPaths(JSON.parse(item.sourceText), keepKeys).map(s => s.path.join('.'));
@@ -769,7 +1049,7 @@ function checkTranslatedFile(item, langCode) {
         }
         hard.push(...norwegianRemnants(dstItems.map(s => s.text).join(' ')));
     } else if (item.config.ext === '.txt') {
-        const countLines = t => t.split('\n').filter(l => l.trim()).length;
+        const countLines = (t: string) => t.split('\n').filter(l => l.trim()).length;
         const srcLines = countLines(item.sourceText);
         const dstLines = countLines(text);
         if (srcLines !== dstLines) {
@@ -784,11 +1064,11 @@ function checkTranslatedFile(item, langCode) {
     return {hard, soft};
 }
 
-function runCheck(work, state, options) {
+function runCheck(work: WorkItem[], state: TranslateState, options: Options): void {
     const missing = work.filter(item => item.status === 'missing');
     const notCurrent = work.filter(item => item.status === 'stale' || item.status === 'untracked');
-    const flagged = [];
-    const softFindings = [];
+    const flagged: WorkItem[] = [];
+    const softFindings: {key: string, soft: string[]}[] = [];
     let checked = 0;
 
     for (const item of work) {
@@ -827,129 +1107,48 @@ function runCheck(work, state, options) {
     }
 }
 
-function printUsage() {
-    console.log(`
-Usage: node translate.mjs --language <lang> [options]
+/**
+ * Setter flaggene sammen til `Options`.
+ *
+ * `--dirs` får standardverdien sin her og ikke i SPEC: den er alle nøklene i
+ * CONTENT_DIRS, og hjelpeteksten skal kunne skrives ut før CONTENT_DIRS leses.
+ */
+function toOptions(language: string): Options {
+    const book = flags.book as Range | undefined;
+    const chapter = flags.chapter as Range | undefined;
+    const dirs = flags.dirs as string | undefined;
+    const normalized = normalizeLanguage(language);
 
-Translates content under <dir>/${'<source>'}/ to <dir>/<lang>/ using the local
-Ollama model (${getTaskModel(TASK)}). Tracks the source hash of every translated file in
-translate_state/<lang>.json, so files whose source changes are re-translated
-on the next run.
-
-Options:
-  --language <lang>  Target language (required). Accepts codes (en, de, es, fr,
-                     sv, da) or full names
-  --source <lang>    Source language code (default: nb)
-  --dirs <a,b,c>     Content dirs to translate (default: all)
-                     Known: ${Object.keys(CONTENT_DIRS).join(', ')}
-  --book <range>     Only files for book(s): single (43) or range (1-39)
-  --chapter <range>  Only chapter file(s): single (3) or range (1-10); skips book-level files
-  --remote           Use Claude (Anthropic API) instead of local Ollama - for
-                     files the local model cannot handle
-  --limit <n>        Translate at most n files (for pilot runs)
-  --force            Re-translate even if source is unchanged
-  --dry-run          List what would be translated, then exit
-  --status           Show translation status per dir, then exit
-  --check            Verify existing translations (untranslated Norwegian, broken
-                     structure), then exit. No LLM calls
-  --invalidate       With --check: clear state for flagged files so the next
-                     normal run re-translates them
-  --help             Show this help message
-
-When the target language has a project Bible (${Object.entries(BIBLE_TRANSLATIONS).map(([code, translation]) => `: `).join(', ')}),
-quoted Bible text is translated with the wording of that Bible, looked up via the
-file's verse references or its book-chapter filename.
-
-Examples:
-  node translate.mjs --language en --status
-  node translate.mjs --language en --dirs chapter_summaries --limit 10
-  node translate.mjs --language en --book 43
-  node translate.mjs --language en                # translate everything missing/stale
-  node translate.mjs --language en --check        # verify existing translations
-`);
-}
-
-function parseRange(value) {
-    if (value.includes('-')) {
-        const [start, end] = value.split('-').map(n => parseInt(n, 10));
-        return {start, end};
-    }
-    const num = parseInt(value, 10);
-    return {start: num, end: num};
-}
-
-function parseArgs(args) {
-    const options = {
-        language: null,
-        sourceLang: 'nb',
-        dirs: Object.keys(CONTENT_DIRS),
-        bookStart: null,
-        bookEnd: null,
-        chapterStart: null,
-        chapterEnd: null,
-        remote: false,
-        limit: null,
-        force: false,
-        dryRun: false,
-        status: false,
-        check: false,
-        invalidate: false,
-        help: false
+    return {
+        language: normalized,
+        langCode: getLanguageCode(normalized),
+        sourceLang: flags.bible as string,
+        dirs: dirs ? dirs.split(',').map(d => d.trim()) : Object.keys(CONTENT_DIRS),
+        bookStart: book?.start ?? null,
+        bookEnd: book?.end ?? null,
+        chapterStart: chapter?.start ?? null,
+        chapterEnd: chapter?.end ?? null,
+        useLocal: flags.local as boolean,
+        limit: (flags.limit as number | undefined) ?? null,
+        force: flags.force as boolean,
+        dryRun: flags['dry-run'] as boolean,
+        status: flags.status as boolean,
+        check: flags.check as boolean,
+        invalidate: flags.invalidate as boolean,
     };
-
-    let i = 0;
-    while (i < args.length) {
-        const arg = args[i];
-
-        if (arg === '--language' && i + 1 < args.length) {
-            options.language = args[++i];
-        } else if (arg === '--source' && i + 1 < args.length) {
-            options.sourceLang = args[++i];
-        } else if (arg === '--dirs' && i + 1 < args.length) {
-            options.dirs = args[++i].split(',').map(d => d.trim());
-        } else if (arg === '--book' && i + 1 < args.length) {
-            const range = parseRange(args[++i]);
-            options.bookStart = range.start;
-            options.bookEnd = range.end;
-        } else if (arg === '--chapter' && i + 1 < args.length) {
-            const range = parseRange(args[++i]);
-            options.chapterStart = range.start;
-            options.chapterEnd = range.end;
-        } else if (arg === '--remote') {
-            options.remote = true;
-        } else if (arg === '--limit' && i + 1 < args.length) {
-            options.limit = parseInt(args[++i], 10);
-        } else if (arg === '--force') {
-            options.force = true;
-        } else if (arg === '--dry-run') {
-            options.dryRun = true;
-        } else if (arg === '--status') {
-            options.status = true;
-        } else if (arg === '--check') {
-            options.check = true;
-        } else if (arg === '--invalidate') {
-            options.invalidate = true;
-        } else if (arg === '--help') {
-            options.help = true;
-        }
-        i++;
-    }
-
-    return options;
 }
 
-async function main() {
-    const args = process.argv.slice(2);
-    const options = parseArgs(args);
-
-    if (options.help || !options.language) {
-        printUsage();
+async function main(): Promise<void> {
+    const language = flags.language as string | undefined;
+    if (!language) {
+        // Som før: uten --language skrives bruksteksten, og skriptet avslutter
+        // uten feilkode.
+        console.log(formatHelp(SCRIPT, PURPOSE, SPEC, EXAMPLES));
         return;
     }
 
-    options.language = normalizeLanguage(options.language);
-    options.langCode = getLanguageCode(options.language);
-    useRemote = options.remote;
+    const options = toOptions(language);
+    useLocal = options.useLocal;
 
     if (options.langCode === options.sourceLang) {
         console.error(`Target language equals source language (${options.sourceLang})`);
@@ -995,7 +1194,7 @@ async function main() {
         const label = `[${done + failed + 1}/${pending.length}] ${item.key}`;
         try {
             quoteContext = buildQuoteContext(item, options.langCode, options.language);
-            const translator = {'.json': translateJson, '.txt': translateTxt}[item.config.ext] || translateMarkdown;
+            const translator = ({'.json': translateJson, '.txt': translateTxt} as Record<string, Translator>)[item.config.ext] || translateMarkdown;
             const {text, warnings} = await translator(
                 options.language, options.langCode, item.sourceText, item.config.keepKeys, item.key
             );
@@ -1027,7 +1226,7 @@ async function main() {
                 (warnings.length > 0 ? ` WARNINGS: ${warnings.join('; ')}` : ''));
         } catch (error) {
             failed++;
-            console.error(`${label} FAILED: ${error.message}`);
+            console.error(`${label} FAILED: ${(error as Error).message}`);
         }
     }
 
@@ -1044,7 +1243,7 @@ async function main() {
 
 // Kjør bare som program. Migreringsskriptet for resume-markørene importerer
 // sourceHash og collectStringPaths herfra framfor å duplisere dem.
-if (process.argv[1] && path.resolve(process.argv[1]) === __filename) {
+if (isProgram) {
     main().catch(console.error);
 }
 

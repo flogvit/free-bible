@@ -36,13 +36,13 @@ Modellene som er lastet ned, med faktisk størrelse:
 ## Tre ting som avgjør om du treffer riktig modell
 
 **1. De fleste skriptene går til Claude API hvis du glemmer `--local`.** Det er
-standarden, ikke unntaket. `bun important_words_chapter.ts` bruker Claude og
-koster penger; `bun important_words_chapter.ts --local` bruker Ollama. Skriptet
+standarden, ikke unntaket. `bun important-words-chapter.ts` bruker Claude og
+koster penger; `bun important-words-chapter.ts --local` bruker Ollama. Skriptet
 sier hvilken modell det valgte i første linje — les den før du lar en jobb stå
 over natta.
 
 To skript er motsatt og har `--remote` i stedet, fordi lokalt er standarden der:
-`translate.mjs` og `headings.mjs`. Tre skript har ingen bryter i det hele tatt og
+`translate.ts` og `headings.mjs`. Tre skript har ingen bryter i det hele tatt og
 er alltid lokale: `song-references.mjs`, `days-mentions.mjs` og
 `persons-reconcile*.ts`.
 
@@ -53,7 +53,7 @@ men er feil kjøremåte. Samme gjelder alt under `kvn/scripts/*.ts`.
 
 **3. `OLLAMA_MODEL` pinner modellen for alt** og slår av adopsjonen. Nyttig når
 maskinen er opptatt og du vil tvinge en jobb ned på 27b:
-`OLLAMA_MODEL=qwen3.5:27b bun important_words_chapter.ts --local`.
+`OLLAMA_MODEL=qwen3.5:27b bun important-words-chapter.ts --local`.
 
 ---
 
@@ -67,7 +67,7 @@ Sortert etter hvor den kan kjøre. «Gjenstår» er målte tall per 2026-07-30.
 |---|---|---|---|---|
 | Sangreferanser | `bun song-references.ts` | gemma4:31b | **5 622 av 6 076 sanger** | #8 |
 | KVN-tekstverifisering | `kvn/scripts/run-verification.sh pri1` | bge-m3 + gemma4:31b + granite4.1:30b | **så godt som alt** — 138 oversettelser i prioritetslista, 5 filer produsert | #35 |
-| Nøkkelord per kapittel | `bun important_words_chapter.ts --local` | qwen3.5:27b | **278 av 1 189 kapitler** | #34 |
+| Nøkkelord per kapittel | `bun important-words-chapter.ts --local` | qwen3.5:27b | **278 av 1 189 kapitler** | #34 |
 | Triage av korrektur | `bun triage.mjs osnb` | qwen3.5:27b | etter behov (mekanisk lag, ikke en køjobb) | — |
 | osmain-verifisering | `bun kvn/scripts/verify-osmain.ts` | qwen3.5:27b | etter behov | — |
 | Mappinggenerering | `bun kvn/scripts/build-mapping.ts --source <navn>` | gemma4:31b | etter behov for nye oversettelser | — |
@@ -82,7 +82,7 @@ Sortert etter hvor den kan kjøre. «Gjenstår» er målte tall per 2026-07-30.
 | Semantiske referanser | `bun references-semantic.ts --verify-only --resume` | osnb-vektorene finnes; kandidatverifisering gjenstår | — |
 | Kapitteltagging | `bun chapter-tags.ts --local --bible osnb` | ferdig for nb/en (16 tagsett) | #2, #3 |
 
-`translate.mjs` er lokal som standard — `--remote` er bryteren dit, ikke hit.
+`translate.ts` er lokal som standard — `--remote` er bryteren dit, ikke hit.
 `references.mjs` godtar `--local`, men **nevner det ikke i `--help`**; uten flagget
 går den til Claude API.
 
@@ -119,7 +119,7 @@ Disse er bestilt, men det finnes ingen kode som gjør dem. Bare høsting er bygg
 | Finne versreferanser i artikler | 13 226 hentede artikkeltekster i `external/articles/text/` | **skript mangler** — `articles/harvest.mjs` henter bare | #15 |
 | Finne versreferanser i bøker | 2 357 boktekster i `external/books/text/` | **skript mangler** — `books/harvest.mjs` henter bare | #16 |
 | Dagsomtaler pass 2 (dedupe) | 541 kapittelfiler i `generate/days_mentions/osnb/` | **skript mangler** | #33 |
-| Kapittelinnsikter | 96 av 1 189 filer finnes | **generatorskript finnes ikke i repoet** — bare `translate.mjs` kjenner katalogen | #39 |
+| Kapittelinnsikter | 96 av 1 189 filer finnes | **generatorskript finnes ikke i repoet** — bare `translate.ts` kjenner katalogen | #39 |
 | Versbønn / verspreken | 4 og 5 filer | **generatorskript finnes ikke i repoet** | #39 |
 
 ---
@@ -198,14 +198,17 @@ bun generate/references.ts --local --book 10-39
 ### Nøkkelord per kapittel — 911 av 1 189
 
 ```
-bun generate/important_words_chapter.ts --local
+bun generate/important-words-chapter.ts --local
 ```
 
 278 kapitler igjen. Går på qwen3.5:27b med vilje (`constants.js:53-56`), så den
 kan stå på 64 GB-maskinen.
 
-Merk at `--book`/`--chapter` er et STARTPUNKT, ikke et filter: `--book 66
---chapter 3` går fra Åp 3 og videre gjennom resten, ikke bare det ene kapitlet.
+`--book`/`--chapter` er INTERVALLER, som i alle andre skript (#51): `--book 66
+--chapter 3` er Åp 3 og ingenting annet. Fram til flaggkontrakten var de
+startpunkter — samme kommando gikk da fra Åp 3 og ut bibelen. «Fra Matteus og
+ut» skrives nå `--book 40-66`. Posisjonsformen `<språk> <bok> <kapittel>` er
+borte; bruk `--language`/`--book`/`--chapter`.
 
 Utdata er `important_words/<språk>/<bok>-<kapittel>.json`, en array:
 

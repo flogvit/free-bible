@@ -85,7 +85,7 @@ interface PlanIndexEntry {
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 // Plans are generated in Norwegian (the config language) into reading_plans/nb/;
-// other languages are produced from there with translate.mjs
+// other languages are produced from there with translate.ts
 const outputDir = path.join(__dirname, 'reading_plans/nb');
 
 // Skriptet tar ingen argumenter utover hjelpen. Kontrakten er likevel med,

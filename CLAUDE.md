@@ -159,7 +159,7 @@ runs it, which model, how much remains (measured, not estimated), and whether it
 local run, and re-measure with the commands at the bottom rather than trusting the numbers.
 
 
-Live and used regularly: `bible.mjs`, `translate.mjs`, `references.mjs`,
+Live and used regularly: `bible.mjs`, `translate.ts`, `references.mjs`,
 `references-semantic.mjs`, `chapter-tags.mjs`, `bible-persons.mjs`, `build-translations-index.mjs`
 (regenerate after any `meta.json`/`license.json` change), `glossary.mjs`, `triage.mjs`.
 
@@ -190,7 +190,7 @@ more than it did without the schema. `isClosedSchema` in `llm.js` draws the line
 qwen3.5:122b (81 GB) plus qwen3.5:27b (17 GB) do not fit side by side on 128 GB — so it
 reloads on *every call*: measured 17–19 s for the 122b runner, ~6 s for 27b, with a cold
 prompt cache each time (`task 0` in `~/.ollama/logs/server.log`). That is what made
-`translate.mjs` take 179 s per file on 2026-07-30 while `important_words_chapter.mjs` ran
+`translate.ts` take 179 s per file on 2026-07-30 while `important-words-chapter.mjs` ran
 alongside it.
 
 `resolveLocalModel` in `llm.js` handles this: it asks `/api/ps` what is already loaded and

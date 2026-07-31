@@ -309,6 +309,18 @@ Key-term consistency across a translation.
 | `--force` | boolean | — | kjør på nytt selv om resultatet finnes |
 | `--help` | boolean | — | vis denne teksten |
 
+### `generate/important-words-chapter.ts`
+
+Nøkkelord per kapittel, med forklaring på norsk.
+
+| flagg | type | standard | betydning |
+|---|---|---|---|
+| `--language` | string | `nb` | språkkode, f.eks. nb |
+| `--book` | range | — | bok eller bokintervall, f.eks. 1 eller 1-5 |
+| `--chapter` | range | — | kapittel eller kapittelintervall |
+| `--local` | boolean | — | kjør mot lokal Ollama i stedet for Claude |
+| `--help` | boolean | — | vis denne teksten |
+
 ### `generate/number-symbolism.ts`
 
 | flagg | type | standard | betydning |
@@ -469,6 +481,24 @@ Map songs to Bible verse references using LLM.
 | `--category` | string | — | begrens --generate til én kategori, f.eks. paulus |
 | `--file` | string | — | behandle bare denne historien, oppgitt som slug |
 | `--min-score` | number | `7` | bruk endringene bare når scoren er lavere enn dette |
+| `--help` | boolean | — | vis denne teksten |
+
+### `generate/translate.ts`
+
+| flagg | type | standard | betydning |
+|---|---|---|---|
+| `--language` | string | — | målspråk, kode (en, de, es, fr, sv, da) eller fullt navn — påkrevd |
+| `--bible` | string | `nb` | kildespråkkoden katalogene leses fra (flagget het --source) |
+| `--dirs` | string | — | innholdskataloger å oversette, kommaseparert (standard: alle) |
+| `--book` | range | — | bok eller bokintervall, f.eks. 1 eller 1-5 |
+| `--chapter` | range | — | kapittel eller kapittelintervall |
+| `--limit` | number | — | stopp etter N enheter |
+| `--force` | boolean | — | kjør på nytt selv om resultatet finnes |
+| `--no-local` | boolean | `true` | kjør mot Claude i stedet for lokal Ollama |
+| `--dry-run` | boolean | — | vis hva som ville skjedd, uten å skrive |
+| `--status` | boolean | — | vis oversettelsesstatus per katalog, og avslutt |
+| `--check` | boolean | — | verifiser eksisterende oversettelser (norsk igjen, brutt struktur), og avslutt — ingen LLM-kall |
+| `--invalidate` | boolean | — | sammen med --check: nullstill tilstanden for de flaggede filene, så neste vanlige kjøring oversetter dem på nytt |
 | `--help` | boolean | — | vis denne teksten |
 
 ### `generate/triage.ts`
@@ -821,10 +851,10 @@ Ikke kjørbare, og har derfor ingen flagg:
 - `generate/embeddings.ts`
 - `generate/env.ts` — Laster `generate/.env`.
 - `generate/lib.ts`
-- `generate/llm.js`
+- `generate/llm.ts`
 - `generate/reading-plans-config.ts` — Configuration for all reading plans Plan types: - sequential: Read books in order, X chapters per day - distributed: Distribute all chapters evenly over X days - parallel: Read multiple book ranges in parallel (e.g., GT + NT) - custom: Manually defined daily readings bookRanges are defined in lib.js
 - `generate/translations-schema.ts` — Schema and controlled vocabularies for translation metadata (meta.json).
 
 ---
 
-68 av 68 skript bruker den felles flaggkontrakten.
+70 av 70 skript bruker den felles flaggkontrakten.

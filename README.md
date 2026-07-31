@@ -123,7 +123,7 @@ generate/
 | `verse-translation.ts` | Generate verse translation explanations |
 | `bible-persons.ts` | Generate Bible persons encyclopedia |
 | `build-reading-plans.ts` | Generate reading plans |
-| `important_words_chapter.ts` | Key words per chapter with explanations (`--local` for Ollama) |
+| `important-words-chapter.ts` | Key words per chapter with explanations (`--local` for Ollama) |
 | `references.ts` | Generate cross references (LLM-knowledge based) |
 | `references-semantic.ts` | Semantic cross references via embeddings + LLM verify |
 | `number-symbolism.ts` | Generate and index biblical number symbolism |
