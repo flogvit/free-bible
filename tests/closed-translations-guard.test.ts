@@ -14,7 +14,7 @@ import { fileURLToPath } from 'url';
  *  2. `git ls-files` må ikke inneholde filer utenfor hvitelista.
  */
 
-const repoRoot = join(dirname(fileURLToPath(import.meta.url)), '..', '..');
+const repoRoot = join(dirname(fileURLToPath(import.meta.url)), '..');
 const gitignorePath = join(repoRoot, 'generate', 'bibles_raw', '.gitignore');
 
 // Oversettelser som ALDRI skal committes (jf. issue #17).

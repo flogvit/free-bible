@@ -5,7 +5,7 @@
  *
  * Bun-runden døpte om 75 skript fra `.mjs`/`.js` til `.ts`, og dokumentasjonen
  * ble stående igjen med de gamle navnene: CLAUDE.md pekte på ni filer som ikke
- * fantes, `docs/lokale-jobber.md` på ni til — inkludert en kommando en operatør
+ * fantes, `docs/running-jobs.md` på ni til — inkludert en kommando en operatør
  * skal kopiere rett inn i skallet (`bun triage.mjs osnb`). Symptomet er stille:
  * ingenting feiler før noen faktisk prøver, og da ser det ut som en manglende
  * fil framfor et utdatert dokument.
@@ -13,6 +13,11 @@
  * Testen er STRUKTURELL: den leter ikke etter `.mjs` spesielt, men krever at
  * ethvert filnavn i backticks lar seg resolve. Neste omdøping fanges dermed
  * uansett hvilket suffiks den går til.
+ *
+ * `.md` er med fordi dokumenter også døpes om: `lokale-jobber.md` ble
+ * `running-jobs.md` 2026-07-31, og fem filer pekte fortsatt på det gamle navnet.
+ * Merk at bare navn i BACKTICKS sjekkes — en markdown-lenke `[tekst](fil.md)`
+ * fanges bare hvis stien også står i backticks et sted.
  *
  * Bare MARKDOWN sjekkes. I kildekode er `./llm.js` en gyldig ESM-spesifikator
  * for `llm.ts`, så samme regel ville gitt falske positiver der.
@@ -36,6 +41,12 @@ const BEVISST_BORTE: Record<string, string> = {
     'kvn/src/ukvn-types.js':
         'sitert FEILMELDING fra node (ERR_MODULE_NOT_FOUND) i lokale-jobber.md — ' +
         'at fila ikke finnes er nettopp poenget i det avsnittet',
+    'lokale-jobber.md':
+        'døpt om til docs/running-jobs.md 2026-07-31; CLAUDE.md siterer det gamle navnet '
+        + 'nettopp for å forklare hvorfor tall ikke skal stå i prosa',
+    'triage.mjs':
+        'historisk sitat i CLAUDE.md: kommandoen dokumentasjonen ba en operatør ' +
+        'kjøre FØR omdøpingen, og eksempelet denne testen finnes for',
 };
 
 /**
@@ -68,7 +79,7 @@ function alleMarkdownfiler(): string[] {
 // Filnavn i backticks: `triage.ts`, `generate/bible.ts`, `kvn/src/ukvn.ts`.
 // Et navn kan stå midt i en kommando (`bun triage.ts osnb`), derfor tokeniseres
 // innholdet framfor å matche hele backtick-innslaget.
-const FILNAVN = /\b([\w./-]+\.(?:ts|mjs|js|sh))\b/g;
+const FILNAVN = /\b([\w./-]+\.(?:ts|mjs|js|sh|md))\b/g;
 const BACKTICKS = /`([^`\n]+)`/g;
 
 /** Stedene et dokumentert navn rimeligvis kan bo. */
@@ -108,8 +119,9 @@ test('hvert filnavn i dokumentasjonen finnes', () => {
 
 test('unntakslista er ikke utdatert', () => {
     // Et unntak som PLUTSELIG finnes igjen skal ut av lista, ellers slutter den
-    // å bety noe.
+    // å bety noe. Samme oppslag som selve sjekken, ikke bare ROOT — et navn
+    // som dukker opp igjen i `generate/` er like mye utdatert.
     for (const navn of Object.keys(BEVISST_BORTE)) {
-        expect(existsSync(join(ROOT, navn))).toBe(false);
+        expect(finnes(navn, join(ROOT, 'CLAUDE.md'))).toBe(false);
     }
 });
