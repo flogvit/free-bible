@@ -5,12 +5,7 @@ import { fileURLToPath } from 'url';
 const __dirname = dirname(fileURLToPath(import.meta.url));
 const BIBLES_DIR = join(__dirname, '../../generate/bibles_raw/osnb');
 
-interface RawVerse {
-  bookId: number;
-  chapterId: number;
-  verseId: number;
-  text: string;
-}
+import type { Verse as RawVerse } from './bible-types.js';
 
 /**
  * Get number of chapters for a book in osnb.
