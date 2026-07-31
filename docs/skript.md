@@ -114,7 +114,7 @@ Oversettelse, korrektur og alt tilleggsmateriale.
 
 | flagg | type | standard | betydning |
 |---|---|---|---|
-| `--use-ai` | boolean | — | la Claude matche versene som ikke lar seg mappe deterministisk |
+| `--use-llm` | boolean | — | la Claude matche versene som ikke lar seg mappe deterministisk |
 | `--help` | boolean | — | vis denne teksten |
 
 ### `generate/build-missing-persons.ts`

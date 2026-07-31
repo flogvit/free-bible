@@ -3,17 +3,17 @@ import "./env.js";
  * Generate verse mapping between a Bible translation and osnb (tanach/sblgnt numbering).
  *
  * Usage:
- *   bun generate/build-mapping-v1-osnb.ts <input-file> <mapping-id> [--use-ai]
+ *   bun generate/build-mapping-v1-osnb.ts <input-file> <mapping-id> [--use-llm]
  *
  * Example:
  *   bun generate/build-mapping-v1-osnb.ts ../dnb2011.txt dnb_2011_nb
- *   bun generate/build-mapping-v1-osnb.ts ../dnb2011.txt dnb_2011_nb --use-ai
+ *   bun generate/build-mapping-v1-osnb.ts ../dnb2011.txt dnb_2011_nb --use-llm
  *
  * The input file should have one verse per line in the format:
  *   BookName chapter,verse text
  *
- * Without --use-ai, the script detects differences and outputs a skeleton mapping
- * that needs manual review. With --use-ai, it uses Claude to match verses with
+ * Without --use-llm, the script detects differences and outputs a skeleton mapping
+ * that needs manual review. With --use-llm, it uses Claude to match verses with
  * different numbering.
  */
 
@@ -138,18 +138,18 @@ const KNOWN_FORMATS: Record<string, InputFormat | undefined> = {
  * Flaggkontrakten for dette skriptet (#51, #52, #53).
  *
  * Inndatafil og mapping-id er posisjonsargumenter, som før. Den gamle koden
- * leste dem som `args[0]`/`args[1]` i den rå argumentlista, så `--use-ai` foran
- * dem stjal plassen og skriptet lette etter en fil som het «--use-ai».
+ * leste dem som `args[0]`/`args[1]` i den rå argumentlista, så `--use-llm` foran
+ * dem stjal plassen og skriptet lette etter en fil som het «--use-llm».
  * Kontrakten skiller flagg fra posisjonsargumenter, så rekkefølgen er fri.
  */
 const SPEC: Record<string, FlagSpec> = {
-  'use-ai': {kind: 'boolean', help: 'la Claude matche versene som ikke lar seg mappe deterministisk'},
+  'use-llm': {kind: 'boolean', help: 'la Claude matche versene som ikke lar seg mappe deterministisk'},
   help: COMMON_FLAGS.help,
 };
 
 const HELP_EXAMPLES = [
   'bun generate/build-mapping-v1-osnb.ts ../dnb2011.txt dnb_2011_nb',
-  'bun generate/build-mapping-v1-osnb.ts ../dnb2011.txt dnb_2011_nb --use-ai',
+  'bun generate/build-mapping-v1-osnb.ts ../dnb2011.txt dnb_2011_nb --use-llm',
   '',
   `Kjente mapping-id-er: ${Object.keys(KNOWN_FORMATS).join(', ')}`,
   'Inndatafila har ett vers per linje: «Boknavn kapittel,vers tekst».',
@@ -326,7 +326,7 @@ function findDifferences(srcGroups: SourceGroups, osnbCounts: ChapterCounts): Di
   return diffs;
 }
 
-// --- AI-based verse matching ---
+// --- LLM-based verse matching ---
 
 async function matchVersesWithAI(
   srcVerses: SourceVerse[],
@@ -565,7 +565,7 @@ function tryDeterministicMapping(
 
 async function main(): Promise<void> {
   if (positional.length < 2) {
-    console.log('Usage: bun generate/build-mapping-v1-osnb.ts <input-file> <mapping-id> [--use-ai]');
+    console.log('Usage: bun generate/build-mapping-v1-osnb.ts <input-file> <mapping-id> [--use-llm]');
     console.log('');
     console.log('Known mapping IDs:', Object.keys(KNOWN_FORMATS).join(', '));
     process.exit(1);
@@ -573,7 +573,7 @@ async function main(): Promise<void> {
 
   const inputFile = positional[0];
   const mappingId = positional[1];
-  const useAI = flags['use-ai'] as boolean;
+  const useAI = flags['use-llm'] as boolean;
 
   const format = KNOWN_FORMATS[mappingId];
   if (!format) {
@@ -630,10 +630,10 @@ async function main(): Promise<void> {
     }
   }
 
-  // Group unhandled diffs into consecutive chapter groups per book for AI matching
+  // Group unhandled diffs into consecutive chapter groups per book for LLM matching
   const unmapped: UnmappedEntry[] = [];
   if (useAI && unhandled.length > 0) {
-    console.log('\nUsing AI to match remaining chapters...');
+    console.log('\nUsing the LLM to match remaining chapters...');
 
     // Group consecutive unhandled chapters by book
     const unhandledByBook: Record<number, Diff[]> = {};
@@ -728,11 +728,11 @@ async function main(): Promise<void> {
           }
           console.log(`    → mapped ${mapped} verses`);
         } catch (err) {
-          console.error(`    → AI matching failed: ${(err as Error).message}`);
+          console.error(`    → LLM matching failed: ${(err as Error).message}`);
           for (const d of group) {
             unmapped.push({
               bookId, chapter: d.chapter,
-              reason: `AI matching failed: ${(err as Error).message}`,
+              reason: `LLM matching failed: ${(err as Error).message}`,
             });
           }
         }
@@ -749,7 +749,7 @@ async function main(): Promise<void> {
         type: d.type,
         srcCount: d.srcCount,
         osnbCount: d.osnbCount,
-        reason: 'Not mapped (run with --use-ai to use AI matching)',
+        reason: 'Not mapped (run with --use-llm to use LLM matching)',
       });
     }
   }

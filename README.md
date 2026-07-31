@@ -37,7 +37,7 @@ Full Bible translations with two style options:
 - **Oral**: Optimized for reading aloud with natural rhythm and flow
 
 ### Chapter Summaries
-AI-generated summaries for each chapter in multiple languages.
+LLM-generated summaries for each chapter in multiple languages.
 
 ### Book Summaries
 Overview and context for each book of the Bible.
@@ -417,7 +417,7 @@ bun bible.ts osnb --book 21-39 &
 All main scripts support a three-step workflow:
 
 1. **Generate**: Create initial content
-2. **Proofread**: AI reviews and suggests corrections
+2. **Proofread**: the LLM reviews and suggests corrections
 3. **Apply**: Apply approved corrections
 
 ```bash

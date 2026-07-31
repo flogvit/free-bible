@@ -502,7 +502,7 @@ async function generateStories(existingTitles: string[], category: string | null
     return result.stories;
 }
 
-// --- Local validation (no AI) ---
+// --- Local validation (no LLM) ---
 
 function validateStory(story: Story, filename: string): string[] {
     const issues: string[] = [];

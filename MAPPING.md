@@ -58,18 +58,18 @@ const KNOWN_FORMATS = {
 ```bash
 cd generate/
 
-# Steg A: Kjør uten AI først for å se forskjellene
+# Steg A: Kjør uten LLM først for å se forskjellene
 bun build-mapping-v1-osnb.ts /sti/til/fil.txt mittformat
 
-# Steg B: Kjør med AI for å matche gjenværende kapitler
-bun build-mapping-v1-osnb.ts /sti/til/fil.txt mittformat --use-ai
+# Steg B: Kjør med LLM for å matche gjenværende kapitler
+bun build-mapping-v1-osnb.ts /sti/til/fil.txt mittformat --use-llm
 ```
 
-Uten `--use-ai` løser skriptet de fleste forskjellene deterministisk
-(enkle kapittelsgrense-skift). Med `--use-ai` bruker det Claude API til å
+Uten `--use-llm` løser skriptet de fleste forskjellene deterministisk
+(enkle kapittelsgrense-skift). Med `--use-llm` bruker det Claude API til å
 matche vers i kapitler der forskjellene er mer komplekse.
 
-AI krever `ANTHROPIC_API_KEY` i `generate/.env`.
+LLM-matchingen krever `ANTHROPIC_API_KEY` i `generate/.env`.
 
 ## Hva skriptet gjør
 
@@ -79,7 +79,7 @@ AI krever `ANTHROPIC_API_KEY` i `generate/.env`.
    - Kapittelsgrense-skift mellom to nabokaptiler (f.eks. 1 Mos 31–32)
    - Flerkaptittel-blokker der totalt versantall matcher (f.eks. Job 38–41)
    - Overflow til ikke-eksisterende kapitler (f.eks. Mal 4 → Mal 3:19–24)
-4. **AI-matching** (med `--use-ai`) for isolerte forskjeller der vers ikke
+4. **LLM-matching** (med `--use-llm`) for isolerte forskjeller der vers ikke
    bare er forskjøvet men kan være slått sammen eller splittet
 
 ## Resultatformat
@@ -125,7 +125,7 @@ Mappingen lagres som JSON i `generate/mappings/<id>.json`:
 
 ## Tips
 
-- Kjør alltid uten `--use-ai` først for å se omfanget av forskjellene
+- Kjør alltid uten `--use-llm` først for å se omfanget av forskjellene
 - De fleste oversettelser har ca. 50–60 kapitler med forskjeller, primært i GT
 - NT har svært få forskjeller (ofte bare Rom 16)
 - Bibel2011-mappingen kan brukes som referanse for andre norske oversettelser

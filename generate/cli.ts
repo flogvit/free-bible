@@ -72,6 +72,9 @@ export const LEGACY_ALIASES: Record<string, string> = {
     dry: 'dry-run',
     source: 'bible',
     n: 'limit',
+    // «AI» er feil på begge ledd. Det er en språkmodell, og det er det den
+    // heter i dette prosjektet.
+    'use-ai': 'use-llm',
     // `--remote` var motsatt fortegn av `--local`. Den kan ikke oversettes
     // mekanisk, så den avvises med en forklaring framfor å bli gjettet på.
 };
