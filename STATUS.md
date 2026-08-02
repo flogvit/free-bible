@@ -13,7 +13,7 @@ as someone else — see [CONTRIBUTING.md](CONTRIBUTING.md).
 | what | coverage | missing | runs on |
 |---|---|---|---|
 | [The Bible texts](#the-bible-texts) | 4 / 4 complete translations | complete | Claude (costs money) |
-| [Cross references](#cross-references) | 10,818 / 31,167 verses | **20,349** verses | local model |
+| [Cross references](#cross-references) | 14,040 / 31,167 verses | **17,127** verses | local model |
 | [Word-for-word](#word-for-word) | 30,537 / 31,167 verses | **630** verses | Claude (costs money) |
 | [Key words per chapter](#key-words-per-chapter) | 1,178 / 1,189 chapters | **11** chapters | local model |
 | [Day mentions](#day-mentions) | 549 / 1,189 chapters | **640** chapters | local model |
@@ -35,8 +35,8 @@ every language. Counted as files relative to Norwegian.
 
 | language | files | missing |
 |---|---|---|
-| English (`en`) | 18,548 / 19,101 | 553 |
-| Spanish (`es`) | 4 / 19,101 | 19,097 |
+| English (`en`) | 18,548 / 22,323 | 3,775 |
+| Spanish (`es`) | 4 / 22,323 | 22,319 |
 
 Runs on a local model, so it costs nothing but time:
 
@@ -57,13 +57,13 @@ Making a new one is a project of its own: see `docs/new-translation.md`. Around 
 
 Which other verses a verse connects to, and one sentence on why. This is the largest single job left in the repository.
 
-**10,818 of 31,167 verses.**
+**14,040 of 31,167 verses.**
 
 ```
 bun generate/references.ts --local --book 10-19
 ```
 
-Without `--local` this goes to Claude and costs money.
+Without `--local` this goes to Claude and costs money. There is a second way to find them — `references-semantic.ts` searches the corpus instead of asking the model, and merges into the same files. Order, flags and what the proofread step does not do: `docs/cross-references.md`.
 
 Issue: #31
 

@@ -155,11 +155,15 @@ answer — so run the stragglers one at a time and look at what comes out.
 
 ---
 
-## The two long ones
+## The long ones
 
-Two jobs are large enough to be projects rather than runs, and both are
+Three jobs are large enough to be projects rather than runs, and all three are
 documented where they belong rather than here:
 
+- **Cross references** are built by two scripts that write to the same files —
+  `references.ts` asks the model, `references-semantic.ts` searches with vectors
+  and merges what it finds. Which order, which flags, and what the proofread step
+  does and does not do is in `docs/cross-references.md`.
 - **KVN text verification** checks that every mapping points at corresponding
   *text*, not merely at a valid verse number. Run `kvn/scripts/run-verification.sh`
   with no arguments and it explains its own order. The structural pass must come

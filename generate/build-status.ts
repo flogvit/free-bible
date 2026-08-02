@@ -209,7 +209,10 @@ function poster(): Post[] {
             enhet: 'verses',
             motor: 'local model',
             kommando: ['bun generate/references.ts --local --book 10-19'],
-            merk: 'Without `--local` this goes to Claude and costs money.',
+            merk: 'Without `--local` this goes to Claude and costs money. There is a second way '
+                + 'to find them — `references-semantic.ts` searches the corpus instead of asking '
+                + 'the model, and merges into the same files. Order, flags and what the proofread '
+                + 'step does not do: `docs/cross-references.md`.',
             issue: '#31',
         },
         {
