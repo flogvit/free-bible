@@ -163,7 +163,7 @@ carries no counts at all.
 
 
 Live and used regularly: `bible.ts`, `translate.ts`, `references.ts`,
-`references-semantic.ts`, `chapter-tags.ts`, `bible-persons.ts`, `build-translations-index.ts`
+`references-semantic.ts`, `eval-judges.ts`, `chapter-tags.ts`, `bible-persons.ts`, `build-translations-index.ts`
 (regenerate after any `meta.json`/`license.json` change), `glossary.ts`, `triage.ts`.
 
 Under `kvn/scripts/`: `run-verification.sh` (entry point), `check-mapping-coverage.ts`,

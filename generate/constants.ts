@@ -131,6 +131,29 @@ export interface OllamaModelConfig {
 // answers and caught MORE boundary errors with the schema than without
 // (37/39 vs 33/39, at 3/25 false alarms). The line runs between open and closed
 // generation, not between models.
+//
+// The mechanism is an upstream bug, ollama/ollama#15502 (open, filed 2026-04-11 —
+// three days before our own observation). gemma4:31b enters a word-repetition
+// loop inside a JSON string value: a token doubles, collapses into one repeated
+// token, fills the num_predict budget, and leaves the JSON unterminated. Three
+// conditions are ALL required, isolated over 39 trials upstream:
+//
+//   1. gemma4:31b DENSE — gemma4:26b (MoE) and gemma3:27b do not do it
+//   2. `format=` with a schema — free generation never triggers it
+//   3. free-text string fields in that schema — arrays and enums alone are clean
+//
+// Rate 60-100% by prompt; repeat_penalty makes no difference at any value. This
+// is what `openSchema: false` is protecting against, and it explains why the
+// closed enum in verify-text.ts is unaffected: condition 3 is absent.
+//
+// Reproduced here 2026-08-01 on the semantic verify schema (13 candidates, each
+// with a 2-3 sentence `analysis` field): three attempts, all "Unterminated
+// string". Not a context limit — gemma4:31b has 262 144 tokens.
+//
+// Two consequences worth knowing before designing around it: a free-text answer
+// generated WITHOUT `format=` is safe from this bug entirely (condition 2), and
+// #15260 — `think: false` silently voiding `format` for gemma4 — is already
+// avoided here by `thinkParam: false`.
 export const ollamaModelConfig: Record<string, OllamaModelConfig> = {
   'gemma4:31b': {
     options: { temperature: 1.0, top_p: 0.95, top_k: 64 },
