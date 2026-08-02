@@ -3,7 +3,7 @@ import * as fs from 'fs';
 import path from 'path';
 import {fileURLToPath} from 'url';
 
-import {books} from './constants.js';
+import {books, getBookName} from './constants.js';
 import {getRef} from './lib.js';
 import {callWithRetry} from './llm.js';
 import {hasEmbeddings, buildEmbeddings, loadEmbeddings, topK, topKByIndex, embedQuery} from './embeddings.js';
@@ -77,7 +77,10 @@ interface SemanticOptions {
  */
 const SPEC: Record<string, FlagSpec> = {
     'build-only': {kind: 'boolean', help: 'bygg bare vektorene, hopp over verifiseringen'},
-    'verify-only': {kind: 'boolean', help: 'verifiser bare, forutsetter at vektorene finnes'},
+    // Navnet villeder: flagget hopper BARE over vektorbyggingen. Kandidatene
+    // verifiseres og referansene skrives uansett. Og finnes vektorene alt, gjør
+    // flagget ingenting — den andre grenen hopper over bygget likevel.
+    'verify-only': {kind: 'boolean', help: 'hopp over vektorbyggingen (referanser skrives uansett — vektorene bygges bare når de mangler)'},
     'top-k': {kind: 'number', help: 'antall kandidater per vers', default: 10},
     threshold: {kind: 'string', help: 'minste cosinuslikhet (bge-m3 gir beslektede vers 0.60–0.70)', default: '0.60'},
     'neighbor-skip': {kind: 'number', help: 'hopp over vers i samme kapittel innenfor N', default: 5},
@@ -106,6 +109,8 @@ const __dirname = path.dirname(__filename);
 
 const EMBED_MODEL = 'bge-m3';
 const CORPUS = 'osnb';
+/** Språket korpuset er på — boknavn i prompten skal være på det, ikke engelsk. */
+const CORPUS_LANGUAGE = 'Norwegian bokmål';
 const REFERENCES_LANG_DIR = path.join(__dirname, 'references', 'nb');
 const PROGRESS_FILE = path.join(__dirname, 'embeddings', CORPUS, 'semantic_progress.json');
 
@@ -146,7 +151,7 @@ const CONCEPTS_SCHEMA = {
     additionalProperties: false
 };
 
-const VERIFY_SCHEMA = {
+export const VERIFY_SCHEMA = {
     type: 'object',
     properties: {
         results: {
@@ -188,15 +193,32 @@ function loadAllOsnb2Verses(): Verse[] {
     return all;
 }
 
-function buildVerifyPrompt(sourceVerse: Verse, candidates: Verse[]): string {
+/**
+ * Boknavn i PROMPTEN, på korpusets eget språk.
+ *
+ * `getRef` gir engelske navn — den bygger på `books[].name`, som er
+ * identifikatorer og ikke visningstekst. Det var greit i logglinjer, men
+ * kandidatlista her går til en modell som blir bedt om å skrive et NORSK notat,
+ * og modellen skrev av det den så: «1 Chronicles 6:34 fungerer som en teologisk
+ * kontrast …» endte som referansetekst i `references/nb`. 1 047 av 4 112 notater
+ * fra kjøringen 2026-08-01 fikk engelsk boknavn i norsk prosa på denne måten.
+ *
+ * Logglinjene under bruker fortsatt `getRef` med vilje — de leses av en operatør,
+ * ikke av en modell.
+ */
+function promptRef(bookId: number, chapterId: number, verseId: number): string {
+    return `${getBookName(bookId, CORPUS_LANGUAGE)} ${chapterId}:${verseId}`;
+}
+
+export function buildVerifyPrompt(sourceVerse: Verse, candidates: Verse[]): string {
     const candList = candidates.map((c, i) =>
-        `[${i}] ${getRef(c.bookId, c.chapterId, c.verseId)}: ${c.text}`
+        `[${i}] ${promptRef(c.bookId, c.chapterId, c.verseId)}: ${c.text}`
     ).join('\n');
 
     return `Du er en bibelforsker som vurderer kryssreferanser. Ta deg tid til å tenke grundig gjennom hver kandidat.
 
 KILDEVERS:
-${getRef(sourceVerse.bookId, sourceVerse.chapterId, sourceVerse.verseId)}: ${sourceVerse.text}
+${promptRef(sourceVerse.bookId, sourceVerse.chapterId, sourceVerse.verseId)}: ${sourceVerse.text}
 
 KANDIDATER (funnet via semantisk likhet — må verifiseres):
 ${candList}
