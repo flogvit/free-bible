@@ -253,7 +253,23 @@ Measured by `generate/eval-references.ts` on six verses, scored 1–5 by Claude:
 | + `--concepts` | 45 | 1 | 8 | 80% |
 | + `--theme` | 50 | 2 | 9 | 78% |
 | + both | 51 | 2 | 8 | 80% |
+| `--top-k 20 --threshold 0.65` | 35 | 1 | 7 | 77% |
+| `--theme` (threshold 0.60) | 33 | 3 | 8 | 67% |
 | `--top-k 20` (threshold 0.60) | 49 | 1 | 15 | 67% |
+
+**`--threshold 0.65` and nothing else is the setting that won**, and it is the
+one in the command above. Every widening flag scores below it; none of the nine
+alternatives beats it on share ≥4.
+
+The runs behind the table are the ten files in `generate/eval/`, all from
+2026-05-10. **They are tracked, not gitignored, because they cannot be
+regenerated** — the judge is Claude, so a re-run costs API credit and returns
+its own numbers rather than these. `tests/eval-tabell.test.ts` reads them and
+fails if a run ever beats the documented setting, so the sentence above cannot
+quietly go stale. `results.json` is the file the script writes; the other nine
+were copied aside by hand to keep the comparison. It is excluded from the table
+because it is the only run over `EVAL_VERSES=extra` — four different verses, so
+its numbers do not belong in the same column as the rest.
 
 The threshold does the work. Raising it to 0.65 is what removes the crowd of
 3-scores; widening `--top-k` past the default buys more references at a steadily
