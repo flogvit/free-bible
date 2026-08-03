@@ -217,6 +217,24 @@ the valuable class: Hebrew morphology, cross-verse term consistency. Determinist
 - `bun`, never `node`/`npx tsx`. Bun runs `.ts` and `.mjs` side by side, so a
   half-converted tree is fine — but `bun` does **not** typecheck, so `tsc --noEmit`
   runs before `bun test` in both `package.json`.
+- **`generate/`'s root is code; data goes in a subdirectory.** The root holds the
+  ~58 scripts and nothing else — output belongs under `generate/<name>/`, input
+  under `generate/data/`. `tests/generate-rot.test.ts` enforces it with a suffix
+  allowlist (`.ts`, `.md`), because the alternative is a list of known offenders
+  that nobody maintains. This is what #107 was: eleven `eval_*.json` from one
+  tuning day left in the root by a script writing to `__dirname`, until no one
+  could tell a program from a measurement.
+
+  **The scripts themselves stay at `generate/<name>.ts`** — not moved down into
+  `generate/scripts/`. That path is the interface: 274 `bun generate/…` command
+  lines — 39 in the docs, 235 in the scripts' own `--help` examples, which is
+  what an operator actually pastes — and 149 `__dirname`-relative data paths
+  across 39 scripts that would each need a `..` added. A missed one does
+  not fail; it writes bible data one directory off. The reward is a shorter
+  `ls`, and it is not worth that trade. `parse-lesetekster.ts` stays here for the
+  same reason it never belonged in `kvn/`: it reads `external/dnk/` and writes
+  `generate/dnk_lesetekster/`, and touches no numbering code — two `kvn/` tests
+  read its *output*, which makes them consumers, not owners.
 - **Two kinds of test, two places.** A test of a module lives next to it
   (`generate/cli.test.ts`); a test of *the repository* — docs, tracked files,
   cross-directory invariants — lives in `tests/`. The distinction is what to do when
