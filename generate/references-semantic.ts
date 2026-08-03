@@ -30,7 +30,7 @@ interface ReferencesFile {
 }
 
 /** Ett svar per kandidat, jf. VERIFY_SCHEMA. */
-interface VerifyResult {
+export interface VerifyResult {
     id: number;
     analysis: string;
     accept: boolean;
@@ -257,6 +257,30 @@ export function coverageOf(results: Array<{id: number}> | null | undefined, aske
     for (let i = 0; i < asked; i++) if (!seen.has(i)) missing.push(i);
 
     return {asked, answered: seen.size, missing, outOfRange, duplicated};
+}
+
+/**
+ * Svarene som skal bli til referanser: godtatt, innenfor lista, én per kandidat.
+ *
+ * Både skrivestien og eval-judges plukket dem hver for seg med samme
+ * `if (!c) continue`. Den fanger en id utenfor lista, men ikke den samme id-en
+ * to ganger — og i eval-judges endte den doble opp i tallet vi velger dommer
+ * etter, mens den her ble to like poster som `mergeReferences` siden slo sammen.
+ */
+export function acceptedVerdicts<T, R extends {id: number; accept: boolean}>(
+    results: R[] | null | undefined,
+    candidates: T[],
+): Array<{candidate: T; verdict: R}> {
+    const taken = new Set<number>();
+    const out: Array<{candidate: T; verdict: R}> = [];
+    for (const r of results || []) {
+        if (!r?.accept || taken.has(r.id)) continue;
+        const candidate = candidates[r.id];
+        if (!candidate) continue;
+        taken.add(r.id);
+        out.push({candidate, verdict: r});
+    }
+    return out;
 }
 
 /**
@@ -541,19 +565,13 @@ async function verifyVerse(verse: EmbeddingItem<Verse>, state: EmbeddingState<Ve
     const gap = formatCoverage(coverage);
     if (gap) console.warn(`\n  ${getRef(verse.bookId, verse.chapterId, verse.verseId)}: ${gap}`);
 
-    const fresh: SemanticReference[] = [];
-    for (const r of result.results || []) {
-        if (!r.accept) continue;
-        const c = candidateItems[r.id];
-        if (!c) continue;
-        fresh.push({
-            bookId: c.bookId,
-            chapterId: c.chapterId,
-            fromVerseId: c.verseId,
-            toVerseId: c.verseId,
-            text: r.note
-        });
-    }
+    const fresh: SemanticReference[] = acceptedVerdicts(result.results, candidateItems).map(({candidate, verdict}) => ({
+        bookId: candidate.bookId,
+        chapterId: candidate.chapterId,
+        fromVerseId: candidate.verseId,
+        toVerseId: candidate.verseId,
+        text: verdict.note,
+    }));
 
     const merged = mergeReferences(existing?.references || [], fresh);
 

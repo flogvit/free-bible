@@ -5,7 +5,7 @@ import {fileURLToPath} from 'url';
 
 import {callWithRetry} from './llm.js';
 import {loadEmbeddings, topKByIndex} from './embeddings.js';
-import {buildVerifyPrompt, VERIFY_SCHEMA} from './references-semantic.js';
+import {buildVerifyPrompt, VERIFY_SCHEMA, coverageOf, acceptedVerdicts} from './references-semantic.js';
 import {parseArgs, formatHelp, COMMON_FLAGS} from './cli.js';
 import type {FlagSpec} from './cli.js';
 import type {Verse} from '../kvn/src/bible-types.js';
@@ -25,10 +25,11 @@ import type {Verse} from '../kvn/src/bible-types.js';
  *
  * ## Hva den fanger, og hvorfor akkurat det
  *
- * - **`covers`** — svarte modellen om ALLE kandidatene? Et svar med færre
+ * - **`ufullstendige`** — svarte modellen om ALLE kandidatene? Et svar med færre
  *   oppføringer enn kandidater er gyldig JSON og ser normalt ut, men lar
- *   kandidater være uvurdert. Produksjonskoden sjekker det ikke (#122), så det
- *   må måles her. gemma4:31b returnerte 1 av 13 og kalte det en suksess.
+ *   kandidater være uvurdert. gemma4:31b returnerte 1 av 13 og kalte det en
+ *   suksess. Målingen deles nå med produksjonsstien — `coverageOf` i
+ *   `references-semantic.ts` (#122) — slik at de to tallene betyr det samme.
  * - **Varm tid, ikke kald.** Ollama holder én modell om gangen, så et kall rett
  *   etter modellbytte betaler for innlastingen — og straffen er størst for den
  *   største modellen, altså skjev i modellenes disfavør. Målt 2026-08-01 er
@@ -182,21 +183,24 @@ async function main(): Promise<void> {
                     schema: VERIFY_SCHEMA, local: true, model,
                     context: `${model} ${source.bookId}:${source.chapterId}:${source.verseId}`
                 }) as {results?: Array<{id: number; accept: boolean; note: string}>};
-                const list = res.results || [];
                 seconds += (Date.now() - t) / 1000;
                 row.verses++;
                 row.candidates += candidates.length;
-                row.answered += list.length;
-                if (list.length !== candidates.length) row.incomplete++;
-                for (const r of list.filter(x => x.accept)) {
-                    const c = candidates[r.id];
-                    if (!c) continue;
+
+                // Samme måling som produksjonsstien gjør (#122), fra samme
+                // funksjon: `list.length` alene teller et duplikat som et svar
+                // og en id utenfor lista som dekning.
+                const coverage = coverageOf(res.results, candidates.length);
+                row.answered += coverage.answered;
+                if (coverage.missing.length) row.incomplete++;
+
+                for (const {candidate, verdict} of acceptedVerdicts(res.results, candidates)) {
                     row.accepted++;
                     accepted.push({
                         model,
                         source: `${source.bookId}:${source.chapterId}:${source.verseId}`,
-                        ref: `${c.bookId}:${c.chapterId}:${c.verseId}`,
-                        note: r.note,
+                        ref: `${candidate.bookId}:${candidate.chapterId}:${candidate.verseId}`,
+                        note: verdict.note,
                     });
                 }
             } catch (e) {

@@ -21,6 +21,7 @@ import {
     parseProgress,
     serializeProgress,
     isPending,
+    acceptedVerdicts,
 } from './references-semantic.js';
 import type {Verse} from '../kvn/src/bible-types.js';
 
@@ -166,6 +167,34 @@ test('ødelagt framdriftsfil gir tomme mengder, ikke krasj', () => {
     const p = parseProgress(null);
     expect(p.processed.size).toBe(0);
     expect(p.incomplete.size).toBe(0);
+});
+
+/*
+ * Både verifyVerse og eval-judges plukket de godtatte hver for seg, med samme
+ * `if (!c) continue`. Den fanger id-er utenfor lista, men ikke den samme id-en
+ * to ganger — og eval-judges teller opp det tallet vi velger dommer etter.
+ */
+test('samme godtatte id to ganger blir én referanse, ikke to', () => {
+    const got = acceptedVerdicts(
+        [{id: 0, accept: true, note: 'a'}, {id: 0, accept: true, note: 'a igjen'}],
+        [verse(1, 1, 1), verse(1, 1, 2)],
+    );
+    expect(got).toHaveLength(1);
+    expect(got[0].verdict.note).toBe('a');
+});
+
+test('godtatt id utenfor kandidatlista gir ingen referanse', () => {
+    const got = acceptedVerdicts([{id: 9, accept: true, note: 'a'}], [verse(1, 1, 1)]);
+    expect(got).toEqual([]);
+});
+
+test('avviste kandidater er ikke med', () => {
+    const got = acceptedVerdicts(
+        [{id: 0, accept: false, note: 'nei'}, {id: 1, accept: true, note: 'ja'}],
+        [verse(1, 1, 1), verse(1, 1, 2)],
+    );
+    expect(got).toHaveLength(1);
+    expect(got[0].candidate.verseId).toBe(2);
 });
 
 test('--resume hopper over et ufullstendig vers med mindre --retry-incomplete', () => {
