@@ -5,7 +5,7 @@ import "./env.js";
  *
  * Three sources of truth, in descending order of trust:
  *   1. computed  — coverage and features, read straight off the bible data
- *   2. manual    — translations_seed.json, for translations this repo produces itself
+ *   2. manual    — data/translations_seed.json, for translations this repo produces itself
  *   3. llm+web   — pass 1 fills what the model knows and flags what it is unsure
  *                  of; pass 2 web-searches only the flagged fields and keeps
  *                  what a retrieved page actually supports
@@ -65,7 +65,15 @@ export interface ComputedMeta {
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const RAW_DIR = path.join(__dirname, 'bibles_raw');
-const SEED_FILE = path.join(__dirname, 'translations_seed.json');
+/**
+ * Inndata, ikke skript: fila bor i `generate/data/`, ikke i skriptrota (#107).
+ *
+ * Eksportert fordi kallstedet er `readJson(SEED_FILE) ?? {}` — en sti som ikke
+ * finnes gir ingen feil, bare tomme seeds, og da skrives `meta.json` for de
+ * hjemmelagde oversettelsene UTEN det som er skrevet for hånd. Testen ved siden
+ * av holder stien i live.
+ */
+export const SEED_FILE = path.join(__dirname, 'data', 'translations_seed.json');
 
 const VERSE_ID_RE = /"verseId"/g;
 const STRONGS_RE = /\{[HG]\d+\}/;
