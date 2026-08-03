@@ -127,6 +127,46 @@ acceptance rates are the same. And the sample deliberately favoured verses with
 4–30 candidates, averaging 20 against the corpus median of 10, so a typical verse
 runs faster than 22 seconds.
 
+### Read the last column first
+
+**`incomplete answers` decides whether the rest of the row means anything.** The
+prompt asks for a verdict on all N candidates, in order. The schema cannot
+require it — the array has no `minItems` — so it is a request, and a model is
+free to answer about three of thirteen and return valid JSON. Measured with
+`gemma4:31b` on John 3:16, thirteen candidates, the production prompt and schema
+verbatim:
+
+| schema | candidates | verdicts | time |
+|---|---|---|---|
+| the real one | 13 | **1** | 60 s |
+| `id` + `accept` only | 13 | **14** | 11 s |
+
+The call succeeded and the JSON was valid in both. Note that the deviation goes
+both ways: fourteen verdicts for thirteen candidates.
+
+A judge that answers about one candidate in thirteen and accepts that one scores
+**1/13, 8%** on a row that counts candidates — and reads as the strictest judge
+in the field. It was not strict; it did not answer. So the rate is computed
+against **answered**, never against candidates, and both scripts now say how many
+of each (#122). Had that single `gemma4:31b` verdict been an accept, the run
+would now end:
+
+```
+Done. 1 verse, 13 candidates.
+Answered: 1 (8% of candidates).
+Accepted: 1 (100% of answered).
+12 candidates unanswered across 1 verse — the model said nothing about them,
+which is not the same as rejecting them.
+```
+
+The loss is not evenly spread. The failure mode is truncation at the end of
+generation, so it is the *last* entries that go missing, and the candidate list
+is sorted by descending similarity — the weakest candidates are hit hardest.
+That softens the consequence, since those are the ones that would mostly have
+been rejected anyway, but it makes the bias systematic rather than random. The
+per-verse warning prints the missing ids as a range for exactly that reason: a
+contiguous tail is the signature.
+
 **What is still unmeasured is the one that matters: precision at this scale.** The
 19-verse judging run failed in full on an expired API key, so the 549 accepted
 references have never been scored. The only judged comparison is 72 references
@@ -166,6 +206,8 @@ Written down so the next comparison does not rediscover them.
   mixture-of-experts model that activates a fraction of its parameters.
 - **Acceptance rate is not precision.** `aya:35b` accepted every candidate it was
   shown and looked, by count alone, like the most productive judge in the field.
+  And it is not an acceptance rate at all unless the model answered about every
+  candidate — see *Read the last column first*.
 
 Two things do not travel between machines: `generate/embeddings/` is gitignored,
 so the vectors must be rebuilt there with `--build-only` (cheap — `bge-m3` is
@@ -230,6 +272,21 @@ name the other script uses — and takes 96 seconds a verse instead of 22. Nothi
 in the output says which model it got, so a run started without the pin looks
 exactly like a run started with it, only four times longer. See *Choosing the
 judge* above for what else was measured.
+
+**When the run ends, read the unanswered count**, not just the accepted one. A
+verse where the model left candidates without a verdict is recorded as such in
+the progress file, and only those verses come back:
+
+```bash
+OLLAMA_MODEL=qwen3.6:35b bun generate/references-semantic.ts \
+    --verify-only --resume --retry-incomplete --threshold 0.65
+```
+
+Two limits on that. Verses processed before 2026-08-03 carry no record either
+way — they are marked done and `--retry-incomplete` does not reach them; a
+verse-range run is the way back to those. And a re-run is only worth starting
+with a different judge, or after a change: ask the same model the same question
+and it will most likely leave the same candidates unanswered.
 
 Nothing else on the command line should be there. Every flag that widens the
 search buys references at a worse rate, and:

@@ -205,6 +205,25 @@ const CONCEPTS_SCHEMA = {
     additionalProperties: false
 };
 
+/**
+ * Skjemaet dommeren svarer i.
+ *
+ * **`results` har med vilje verken `minItems` eller `maxItems`.** Prompten ber om
+ * «alltid alle N», og det er alt vi har — skjemaet kan ikke uttrykke kravet, så
+ * kallstedet MÅ måle svaret i stedet (`coverageOf`, #122).
+ *
+ * Grenser ble vurdert og lagt bort inntil noen har målt dem. To ting å vite:
+ *
+ * - Argumentet om at grenser lukker skjemaet er **feil**. `isClosedSchema` ser
+ *   på `items` også, og `analysis` og `note` er fritekst. Målt:
+ *   `isClosedSchema` er `false` både med og uten grensene, og blir `true` først
+ *   hvis fritekstfeltene fjernes. Grenser endrer altså ingenting for hvilke
+ *   modeller `resolveLocalModel` kan adoptere.
+ * - Det som gjenstår å måle er genereringen: `minItems` forbyr grammatikken å
+ *   avslutte arrayen før N, og feilmodusen her er nettopp trunkering på slutten
+ *   («Unterminated string»). Grensen kan derfor gjøre et delvis svar om til et
+ *   mislykket kall. Mål med `eval-judges.ts` på begge skjemaene før den innføres.
+ */
 export const VERIFY_SCHEMA = {
     type: 'object',
     properties: {
@@ -332,17 +351,17 @@ export interface RunTotals {
  */
 export function formatRunSummary(t: RunTotals): string {
     const pct = (n: number, of: number): number => of > 0 ? Math.round(n * 100 / of) : 0;
-    const n = (count: number, word: string): string => `${count} ${word}${count === 1 ? '' : 's'}`;
+    const plural = (count: number, word: string): string => `${count} ${word}${count === 1 ? '' : 's'}`;
     const lines = [
-        `Done. ${n(t.verses, 'verse')}, ${n(t.candidates, 'candidate')}.`,
+        `Done. ${plural(t.verses, 'verse')}, ${plural(t.candidates, 'candidate')}.`,
         `Answered: ${t.answered}${t.answered < t.candidates ? ` (${pct(t.answered, t.candidates)}% of candidates)` : ''}.`,
         `Accepted: ${t.accepted} (${pct(t.accepted, t.answered)}% of answered).`,
     ];
     if (t.answered < t.candidates) {
-        lines.push(`${n(t.candidates - t.answered, 'candidate')} unanswered across ${n(t.incompleteVerses, 'verse')} — the model said nothing about them, which is not the same as rejecting them.`);
+        lines.push(`${plural(t.candidates - t.answered, 'candidate')} unanswered across ${plural(t.incompleteVerses, 'verse')} — the model said nothing about them, which is not the same as rejecting them.`);
         if (t.resume) lines.push('Re-run with --resume --retry-incomplete to ask again for those verses.');
     }
-    if (t.outOfRange) lines.push(`${n(t.outOfRange, 'verdict')} named a candidate that was not in the list, and ${t.outOfRange === 1 ? 'was' : 'were'} dropped.`);
+    if (t.outOfRange) lines.push(`${plural(t.outOfRange, 'verdict')} named a candidate that was not in the list, and ${t.outOfRange === 1 ? 'was' : 'were'} dropped.`);
     return lines.join('\n');
 }
 

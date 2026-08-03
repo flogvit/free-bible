@@ -433,6 +433,7 @@ Nøkkelord per kapittel, med forklaring på norsk.
 | `--theme` | boolean | — | la modellen oppsummere verset og søk også på oppsummeringen |
 | `--concepts` | boolean | — | la modellen lage 4 fasettspørsmål og søk på hvert av dem |
 | `--resume` | boolean | — | hopp over vers som alt er kjørt (embeddings/<korpus>/semantic_progress.json) |
+| `--retry-incomplete` | boolean | — | ta med de av dem igjen der modellen lot kandidater stå ubesvart (krever --resume) |
 | `--skip-existing` | boolean | — | hopp over vers som alt har en referansefil |
 | `--book` | range | — | book or book range, e.g. 1 or 1-5 |
 | `--chapter` | range | — | chapter or chapter range |
