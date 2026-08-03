@@ -279,6 +279,17 @@ convert-refs.ts — Convert plain-text Bible references to [ref:...|...] markup.
 |---|---|---|---|
 | `--help` | boolean | — | show this text |
 
+### `generate/eval-judges.ts`
+
+| flag | type | default | meaning |
+|---|---|---|---|
+| `--models` | string | — | kommaseparerte ollama-modeller å måle |
+| `--verses` | number | `10` | antall vers i utvalget |
+| `--threshold` | string | `0.65` | minste cosinuslikhet, som i references-semantic |
+| `--neighbor-skip` | number | `5` | hopp over vers i samme kapittel innenfor N |
+| `--top-k` | number | `30` | antall kandidater per vers |
+| `--help` | boolean | — | show this text |
+
 ### `generate/eval-references.ts`
 
 | flag | type | default | meaning |
@@ -415,7 +426,7 @@ Nøkkelord per kapittel, med forklaring på norsk.
 | flag | type | default | meaning |
 |---|---|---|---|
 | `--build-only` | boolean | — | bygg bare vektorene, hopp over verifiseringen |
-| `--verify-only` | boolean | — | verifiser bare, forutsetter at vektorene finnes |
+| `--verify-only` | boolean | — | hopp over vektorbyggingen (referanser skrives uansett — vektorene bygges bare når de mangler) |
 | `--top-k` | number | `10` | antall kandidater per vers |
 | `--threshold` | string | `0.60` | minste cosinuslikhet (bge-m3 gir beslektede vers 0.60–0.70) |
 | `--neighbor-skip` | number | `5` | hopp over vers i samme kapittel innenfor N |
@@ -871,4 +882,4 @@ Not executable, and therefore have no flags:
 
 ---
 
-71 of 71 scripts use the common flag contract.
+72 of 72 scripts use the common flag contract.
