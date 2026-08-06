@@ -212,6 +212,27 @@ Claude's actual corrections was 31% (qwen3.5:27b) and 8% (qwen3.6:35b). Both mis
 the valuable class: Hebrew morphology, cross-verse term consistency. Deterministic checks
 (regex, length, verse counts) are the part of the local layer that pays off.
 
+## Nedstrøms: bible-llm
+
+Søsterrepoet **flogvit/bible-llm** (tavle: users/flogvit/projects/2) trener
+språkmodeller fra bunnen med dette repoet som domenekorpus, og målet er en modell
+publisert på ollama.com. Det leser external/books (574M ord), external/articles
+(90M ord), bibles_raw og KVN.
+
+**Konsekvensen for arbeid her er lisens, og den er hardere enn før.** Publiserte
+modellvekter er irreversible på en måte en gitignorert katalog ikke er: er en lukket
+oversettelse med i treningsdataene, kan det ikke tas tilbake etter at noen har gjort
+`ollama pull`. Whitelisten — de 82 modulene med license.json, pluss egne
+oversettelser — er derfor ikke lenger bare en regel for hva som pushes hit.
+
+Endrer du noe som avgjør hva som regnes som åpent, eller flytter du på
+katalogstrukturen under external/, hører det et varsel i bible-llm.
+
+Den bærende ideen som bruker disse dataene på en måte ingen andre kan: 82 uavhengige
+menneskelige oversettelser av samme 31 102 enheter, justert vers for vers av KVN, er
+*menneskeskapt parafrase med fasit*. Litteraturen om datafattig fortrening bruker
+utelukkende LLM-genererte omskrivinger, som bærer genereringsmodellens egen fordeling.
+
 ## Conventions
 
 - `bun`, never `node`/`npx tsx`. Bun runs `.ts` and `.mjs` side by side, so a
