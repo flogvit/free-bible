@@ -454,7 +454,7 @@ Nøkkelord per kapittel, med forklaring på norsk.
 | `--force` | boolean | — | run again even if the output already exists |
 | `--local` | boolean | — | use the local Ollama instead of Claude |
 | `--proofread` | boolean | — | kjør korrektur etter genereringen |
-| `--apply` | boolean | — | skriv korrekturens reviderte referanser tilbake til fila |
+| `--apply` | boolean | — | utfør korrekturens rettinger på referansefila |
 | `--validate` | boolean | — | sveip referansene som alt ligger på disk, uten å generere |
 | `--fix` | boolean | — | fjern de døde adressene --validate finner |
 | `--help` | boolean | — | show this text |
