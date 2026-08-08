@@ -33,6 +33,13 @@ test('resolveBookRange kaster på ukjent område, og lister de kjente', () => {
     expect(() => resolveBookRange('finnesikke')).toThrow(/kjente:/);
 });
 
+test('resolveBookRange kaster når området mangler helt', () => {
+    // En plandefinisjon uten `bookRange` var brolagt med `!` i
+    // build-reading-plans.ts: `undefined` gikk urørt gjennom her og krasjet
+    // først i getChaptersForRange, på `.from` av `undefined`.
+    expect(() => resolveBookRange(undefined)).toThrow(/mangler område/);
+});
+
 test('nameToId translittererer ø, æ og å før NFD', () => {
     // #25: `ø` og `æ` er egne bokstaver uten kanonisk dekomponering, så NFD
     // rører dem ikke — og `[^a-z0-9]` slettet dem da. «Bjørn» ble `bjrn`.

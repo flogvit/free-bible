@@ -150,7 +150,14 @@ export function getChaptersForBooks(bookIds: number[]): ChapterRef[] {
 /**
  * Resolve book range from string key or object
  */
-export function resolveBookRange(config: string | BookRange): BookRange {
+export function resolveBookRange(config: string | BookRange | undefined): BookRange {
+    // `undefined` er med i signaturen med vilje: en plandefinisjon uten
+    // `bookRange` måtte ellers brolegges med `!` hos kalleren, og da gikk den
+    // udefinerte verdien urørt videre til getChaptersForRange og krasjet på
+    // `.from` av `undefined` — igjen langt fra der feilen var (#112).
+    if (config === undefined) {
+        throw new Error('resolveBookRange: mangler område (verken en nøkkel eller et {from,to}-objekt ble sendt inn)');
+    }
     if (typeof config === 'string') {
         const range = bookRanges[config];
         // Ga før `undefined` for en ukjent nøkkel, mens signaturen lovte en
