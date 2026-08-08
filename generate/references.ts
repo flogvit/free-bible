@@ -69,11 +69,44 @@ interface ProofreadIssue {
     explanation: string;
 }
 
+/**
+ * Én retting fra korrekturen — en operasjon mot lista modellen fikk, ikke en ny liste.
+ *
+ * `index` er 1-basert og peker på `[N]`-numrene i prompten. Se `applyCorrections`
+ * for hvorfor det er operasjoner og ikke en omskrevet liste.
+ */
+export interface Correction {
+    op: 'remove' | 'rewrite' | 'add';
+    /** 1-basert, mot lista korrekturen fikk. Kreves for remove og rewrite. */
+    index?: number;
+    /** Adressefeltene: påkrevd for add, valgfrie for rewrite (bare det som skal endres). */
+    bookId?: number;
+    chapterId?: number;
+    fromVerseId?: number;
+    toVerseId?: number;
+    /** Forklaringsteksten. Påkrevd for add, valgfri for rewrite. */
+    text?: string;
+    reason?: string;
+}
+
+/** Det `applyCorrections` fikk utført — og det den lot være. */
+export interface CorrectionResult {
+    references: RawReference[];
+    removed: number;
+    rewritten: number;
+    added: number;
+    /** Operasjoner som ikke kunne utføres, med grunn. */
+    skipped: string[];
+    changed: boolean;
+}
+
 /** Svaret på REFERENCE_PROOFREAD_SCHEMA. */
 interface ProofreadResult {
     issues?: ProofreadIssue[];
     summary?: string;
     score?: number | null;
+    corrections?: Correction[];
+    /** Bare i korrekturfiler fra før #121 — se `applyProofreadChanges`. */
     revisedReferences?: RawReference[];
 }
 
@@ -117,7 +150,7 @@ const SPEC: Record<string, FlagSpec> = {
     force: COMMON_FLAGS.force,
     local: COMMON_FLAGS.local,
     proofread: {kind: 'boolean', help: 'kjør korrektur etter genereringen'},
-    apply: {kind: 'boolean', help: 'skriv korrekturens reviderte referanser tilbake til fila'},
+    apply: {kind: 'boolean', help: 'utfør korrekturens rettinger på referansefila'},
     validate: {kind: 'boolean', help: 'sveip referansene som alt ligger på disk, uten å generere'},
     fix: {kind: 'boolean', help: 'fjern de døde adressene --validate finner'},
     help: COMMON_FLAGS.help,
@@ -148,7 +181,18 @@ const REFERENCE_SCHEMA = {
     additionalProperties: false
 };
 
-const REFERENCE_PROOFREAD_SCHEMA = {
+/**
+ * Korrekturens svarform.
+ *
+ * Feltet het `revisedReferences` og var hele lista på nytt. Modellen leste det som
+ * «lista», ikke «lista etter retting», og leverte input tilbake: 139 av 140 filer
+ * adresselikt med det de fikk, 0 referanser fjernet, mens de samme filene meldte
+ * 578 funn (#121). Skjemaet krevde feltet, så det ble alltid fylt — med input.
+ *
+ * `corrections` er operasjoner mot indeksene i lista modellen fikk. Da finnes det
+ * ingen liste å ekko, og feilmodusen er borte i stedet for promptet bort.
+ */
+export const REFERENCE_PROOFREAD_SCHEMA = {
     type: "object",
     properties: {
         issues: {
@@ -167,23 +211,26 @@ const REFERENCE_PROOFREAD_SCHEMA = {
         },
         summary: {type: "string"},
         score: {type: "integer"},
-        revisedReferences: {
+        corrections: {
             type: "array",
             items: {
                 type: "object",
                 properties: {
+                    op: {type: "string", enum: ["remove", "rewrite", "add"]},
+                    index: {type: "integer"},
                     bookId: {type: "integer"},
                     chapterId: {type: "integer"},
                     fromVerseId: {type: "integer"},
                     toVerseId: {type: "integer"},
-                    text: {type: "string"}
+                    text: {type: "string"},
+                    reason: {type: "string"}
                 },
-                required: ["bookId", "chapterId", "fromVerseId", "toVerseId", "text"],
+                required: ["op", "reason"],
                 additionalProperties: false
             }
         }
     },
-    required: ["issues", "summary", "score", "revisedReferences"],
+    required: ["issues", "summary", "score", "corrections"],
     additionalProperties: false
 };
 
@@ -303,7 +350,8 @@ function getProofreadPrompt(language: string, bookId: number, chapterId: number,
     const originalLanguage = bookId <= 39 ? 'hebraisk' : 'gresk';
     const originalLanguageEn = bookId <= 39 ? 'Hebrew' : 'Greek';
 
-    const refsJson = JSON.stringify(currentReferences, null, 2);
+    // Nummerert, fordi rettingene peker tilbake hit med `index`.
+    const refsJson = currentReferences.map((r, i) => `[${i + 1}] ${JSON.stringify(r)}`).join('\n');
 
     let basePrompt: string;
     let taskDescription: string;
@@ -346,19 +394,26 @@ ${taskDescription}
 
 REFERANSEFORMAT:
 Bibelreferanser i text-feltet bruker formatet: [ref:FORKORTELSE KAPITTEL:VERS|VISNINGSTEKST]
-Eksempel: [ref:Joh 3:16|Johannes 3:16]. Bevar dette formatet i revisedReferences.
+Eksempel: [ref:Joh 3:16|Johannes 3:16]. Bevar dette formatet når du skriver ny tekst.
 Bruk KVN-forkortelser (1 Mos, Sal, Joh, Åp osv.) i ref-delen og fullt boknavn i visningsteksten.
 
 ${useLocal ? `VIKTIG FOR KVALITETSKONTROLL:
 - Fjern KUN referanser som er direkte feil (feil bookId/chapterId/verseId) eller helt irrelevante
-- IKKE legg til nye referanser — det gjøres i et eget steg
+- IKKE legg til nye referanser ("add") — det gjøres i et eget steg
 - IKKE fjern referanser bare fordi de er "svake" — behold alt som har en rimelig kobling
-- Hvis alle referansene er akseptable, returner tom issues-array og tom revisedReferences-array
 - Maks 5 issues. Fokuser på det viktigste.
 - score skal være 0-10 (0 = helt feil, 10 = perfekt)
-` : ''}IMPORTANT:
-- If the current references are good, return an empty issues array and empty revisedReferences array
-- The revisedReferences must use the same format: [{bookId, chapterId, fromVerseId, toVerseId, text}]
+` : ''}RETTINGER (corrections):
+Du retter IKKE ved å skrive lista på nytt. Du svarer med operasjoner mot numrene
+[N] i lista under. Hvert funn i issues som lar seg rette skal ha en operasjon:
+- {"op": "remove", "index": N, "reason": "..."} — fjern referanse [N]
+- {"op": "rewrite", "index": N, "text": "ny forklaring", "reason": "..."} — bytt teksten.
+  Skal adressen rettes, ta med feltene som endres: bookId, chapterId, fromVerseId, toVerseId.
+- {"op": "add", "bookId": .., "chapterId": .., "fromVerseId": .., "toVerseId": .., "text": "...", "reason": "..."}
+
+IMPORTANT:
+- index refers to the [N] numbers below, counted from 1. Never renumber them.
+- If nothing needs changing, return an empty issues array and an empty corrections array
 - bookId values: OT books 1-39, NT books 40-66
 - Focus on accuracy: are these real, meaningful cross-references?
 
@@ -481,15 +536,7 @@ function getOsmainChapter(bookId: number, chapterId: number): Chapter | null {
 function normalizeReferences(refs: RawReference[], context = ''): RawReference[] {
     const kept: RawReference[] = [];
     for (const ref of refs) {
-        // Fix common issue: verseId instead of fromVerseId
-        if (ref.verseId !== undefined && ref.fromVerseId === undefined) {
-            ref.fromVerseId = ref.verseId;
-            delete ref.verseId;
-        }
-        // Ensure toVerseId defaults to fromVerseId
-        if (ref.toVerseId === undefined && ref.fromVerseId !== undefined) {
-            ref.toVerseId = ref.fromVerseId;
-        }
+        normalizeFields(ref);
 
         const {verdict, reason} = checkTarget(ref);
         const where = context ? ` i ${context}` : '';
@@ -505,6 +552,137 @@ function normalizeReferences(refs: RawReference[], context = ''): RawReference[]
         kept.push(ref);
     }
     return kept;
+}
+
+/** Retter feltnavnene modellen bommer på, på plass i objektet. */
+function normalizeFields(ref: RawReference): RawReference {
+    // Fix common issue: verseId instead of fromVerseId
+    if (ref.verseId !== undefined && ref.fromVerseId === undefined) {
+        ref.fromVerseId = ref.verseId;
+        delete ref.verseId;
+    }
+    // Ensure toVerseId defaults to fromVerseId
+    if (ref.toVerseId === undefined && ref.fromVerseId !== undefined) {
+        ref.toVerseId = ref.fromVerseId;
+    }
+    return ref;
+}
+
+/** Adressen som tekst, til logglinjer og duplikatnøkler. */
+function targetKey(ref: RawReference): string {
+    return `${ref.bookId}:${ref.chapterId}:${ref.fromVerseId}-${ref.toVerseId ?? ref.fromVerseId}`;
+}
+
+/**
+ * Utfører korrekturens rettinger på referanselista.
+ *
+ * Hele poenget med at rettingene er operasjoner og ikke en omskrevet liste står i
+ * `REFERENCE_PROOFREAD_SCHEMA`: en liste kan ekkoes, en `remove` kan ikke.
+ *
+ * Tre ting den ikke gjør, med vilje:
+ * - Indeksene tolkes mot lista korrekturen FIKK, ikke mot en liste som forskyver
+ *   seg mens rettingene utføres. Derfor markeres fjerningene først og filtreres til slutt.
+ * - Bare det som endres går gjennom `checkTarget`. En referanse ingen rettet på
+ *   blir stående selv om adressen er død — den er `--validate --fix` sin jobb, og å
+ *   rydde den her ville gjort en korrekturkjøring til en stille datasletting.
+ * - En `add` med en adresse som alt står i lista er ikke en retting. Uten den porten
+ *   ville et svar som ramser opp hele lista på nytt doblet den.
+ */
+export function applyCorrections(refs: RawReference[], corrections: Correction[], context = ''): CorrectionResult {
+    const next = refs.map(r => ({...r}));
+    const removed = new Set<number>();
+    const added: RawReference[] = [];
+    const skipped: string[] = [];
+    const where = context ? ` i ${context}` : '';
+    let rewritten = 0;
+
+    const skip = (c: Correction, reason: string) => skipped.push(`${c.op}${c.index !== undefined ? ` [${c.index}]` : ''}: ${reason}`);
+
+    /** Gyldig 1-basert indeks inn i lista korrekturen fikk, ellers null. */
+    const resolve = (c: Correction): number | null => {
+        if (!Number.isInteger(c.index) || c.index! < 1 || c.index! > next.length) {
+            skip(c, `indeks ${c.index} finnes ikke i lista på ${next.length}`);
+            return null;
+        }
+        return c.index! - 1;
+    };
+
+    for (const c of corrections || []) {
+        if (c.op === 'remove') {
+            const i = resolve(c);
+            if (i !== null) removed.add(i);
+            continue;
+        }
+
+        if (c.op === 'rewrite') {
+            const i = resolve(c);
+            if (i === null) continue;
+
+            const fields = (['bookId', 'chapterId', 'fromVerseId', 'toVerseId'] as const)
+                .filter(f => Number.isInteger(c[f]));
+            if (!fields.length && (c.text === undefined || c.text === next[i].text)) {
+                skip(c, 'ingen endring i teksten eller adressen');
+                continue;
+            }
+
+            const candidate = normalizeFields({...next[i]});
+            for (const f of fields) candidate[f] = c[f];
+            if (c.text !== undefined) candidate.text = c.text;
+
+            if (fields.length) {
+                // Rettet adresse er en ny påstand om hvor teksten ligger, og skal
+                // gjennom samme port som en generert referanse.
+                const {verdict, reason} = checkTarget(candidate);
+                if (verdict === 'drop') {
+                    skip(c, `ny adresse forkastet — ${reason}`);
+                    continue;
+                }
+                if (verdict === 'renumber') console.log(`  NB${where}: ${reason}`);
+            }
+
+            next[i] = candidate;
+            rewritten++;
+            continue;
+        }
+
+        if (c.op === 'add') {
+            const candidate = normalizeFields({
+                bookId: c.bookId, chapterId: c.chapterId,
+                fromVerseId: c.fromVerseId, toVerseId: c.toVerseId,
+                text: c.text,
+            });
+            if (!candidate.text) {
+                skip(c, 'mangler forklaringstekst');
+                continue;
+            }
+            const {verdict, reason} = checkTarget(candidate);
+            if (verdict === 'drop') {
+                skip(c, `forkastet — ${reason}`);
+                continue;
+            }
+            if (verdict === 'renumber') console.log(`  NB${where}: ${reason}`);
+
+            const key = targetKey(candidate);
+            if (next.some(r => targetKey(r) === key) || added.some(r => targetKey(r) === key)) {
+                skip(c, `${key} står allerede i lista`);
+                continue;
+            }
+            added.push(candidate);
+            continue;
+        }
+
+        skip(c, `ukjent operasjon «${c.op}»`);
+    }
+
+    const references = next.filter((_, i) => !removed.has(i)).concat(added);
+    return {
+        references,
+        removed: removed.size,
+        rewritten,
+        added: added.length,
+        skipped,
+        changed: removed.size > 0 || rewritten > 0 || added.length > 0,
+    };
 }
 
 async function generateReferences(language: string, bookId: number, chapterId: number, verseId: number, filename: string): Promise<void> {
@@ -599,18 +777,30 @@ function applyProofreadChanges(language: string, bookId: number, chapterId: numb
         return;
     }
 
-    // Check if there are revised references to apply
-    if (!proofreadResult.revisedReferences || proofreadResult.revisedReferences.length === 0) {
+    const bookName = getBookName(bookId, language);
+    const ref = `${bookName} ${chapterId}:${verseId}`;
+
+    if (!proofreadResult.corrections) {
+        // Korrekturfiler fra før #121 har bare `revisedReferences`, og den er input
+        // uendret i 139 av 140 målte filer. Å skrive den tilbake er per definisjon
+        // en no-op; å late som den ble anvendt er verre. Kjør korrekturen på nytt.
+        if (proofreadResult.revisedReferences) {
+            console.log(`  ${ref}: korrekturfila er fra før rettingene ble operasjoner — kjør --proofread på nytt`);
+        }
         return;
     }
 
-    const currentData = JSON.parse(fs.readFileSync(refFilename, 'utf-8')) as ReferenceFile;
-    const revisedRefs = normalizeReferences(proofreadResult.revisedReferences, `${getBookName(bookId, language)} ${chapterId}:${verseId} (korrektur)`);
-    currentData.references = revisedRefs;
+    if (proofreadResult.corrections.length === 0) return;
 
+    const currentData = JSON.parse(fs.readFileSync(refFilename, 'utf-8')) as ReferenceFile;
+    const result = applyCorrections(currentData.references || [], proofreadResult.corrections, `${ref} (korrektur)`);
+
+    for (const reason of result.skipped) console.log(`  hoppet over retting i ${ref}: ${reason}`);
+    if (!result.changed) return;
+
+    currentData.references = result.references;
     fs.writeFileSync(refFilename, JSON.stringify(currentData, null, 2));
-    const bookName = getBookName(bookId, language);
-    console.log(`  Applied revisions to ${bookName} ${chapterId}:${verseId} (${revisedRefs.length} references)`);
+    console.log(`  Applied to ${ref}: ${result.removed} fjernet, ${result.rewritten} omskrevet, ${result.added} lagt til (${result.references.length} referanser)`);
 }
 
 const HELP_EXAMPLES = [
@@ -806,10 +996,12 @@ async function main(): Promise<void> {
                 }
 
                 // Step 2: Proofread (if requested)
+                // Funnene lagres alltid, også med --apply: sporet og rettingen er
+                // samme svar, og `saveToFile = !options.apply` gjorde at man fikk
+                // det ene eller det andre, aldri begge (#121).
                 let proofreadResult: ProofreadResult | null = null;
                 if (options.proofread && fileExists(filename)) {
-                    const saveToFile = !options.apply;
-                    proofreadResult = await proofreadReferences(options.language, bookId, chapterId, verseId, filename, saveToFile);
+                    proofreadResult = await proofreadReferences(options.language, bookId, chapterId, verseId, filename);
                 }
 
                 // Step 3: Apply (if requested)
