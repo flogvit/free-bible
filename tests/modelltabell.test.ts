@@ -89,7 +89,9 @@ test('maskintabellen oppgir resident minne, ikke bare nedlasting', () => {
     expect(maskin).toContain('resident');
     // Resident minne inkluderer KV-cachen, som skalerer med kontekstvinduet.
     // Står ikke det, leser en operatør nedlastingstall som om det var minnebruk.
-    expect(maskin).toMatch(/KV cache|KV-cache/i);
+    // `\s+` og ikke mellomrom: prosaen brytes på 80 tegn, og en ombrytning skal
+    // ikke felle testen.
+    expect(maskin).toMatch(/KV[\s-]+cache/i);
 });
 
 test('maskindokumentet deler ikke lenger inn etter parametertall', () => {
@@ -114,7 +116,7 @@ test('prinsippet bak tallene er skrevet ned, ikke bare tallene', () => {
     // andre: hvor kunnskapen kommer fra. Uten den setningen er tabellen to tall
     // som motsier hverandre.
     expect(kjøring).toMatch(/corpus/i);
-    expect(kjøring).toMatch(/own parameters|its own weights/i);
+    expect(kjøring).toMatch(/own\s+(parameters|weights)/i);
 });
 
 test('cross-references.md peker på dommertabellen framfor å duplisere den', () => {

@@ -78,38 +78,18 @@ no time, so nothing is being evicted.
 
 ### Choosing the judge
 
-Re-run this whenever a new model appears:
+`qwen3.6:35b`, pinned with `OLLAMA_MODEL` — the command is under *The semantic
+pass* below.
 
-```bash
-bun generate/eval-judges.ts --models qwen3.6:35b,<the-new-one> --verses 10
-```
+**Why that one, and what the alternatives cost, is in
+[running-jobs.md](running-jobs.md)** → *Which judge fits the machine*: resident
+memory, seconds per verse and precision for every model measured, plus
+`generate/eval-judges.ts`, which is how you re-measure when a new model appears.
+It lives there rather than here because it answers *what this machine can run* —
+a question about the hardware, not about this job. It is not repeated here; one
+table that drifts is worse than one table you have to click through to.
 
-It touches no reference files and spends no Claude credit. **Measure the old
-model in the same call as the new one** — seconds are only comparable inside a
-single run. Same model, same prompt, two consecutive days: 27 s/verse on a quiet
-machine, 122 s/verse with IntelliJ at 265% CPU and a load average of 11. No
-throttling, no battery — just contention. Ratios within a run survive that;
-absolute numbers do not.
-
-Measured 2026-08-01 on Ollama, warm runner, 13 candidates, the production prompt
-and schema verbatim. **Resident memory is not the download size** — it includes
-the KV cache, which scales with the context window:
-
-| model | resident | warm s/verse | verdict |
-|---|---|---|---|
-| **qwen3.6:35b** | **28.8 GB** | **17** | fastest, smallest, 100% precision judged |
-| qwen3.5:27b | 35.0 GB | 65 | 100% precision, accepts more per verse |
-| qwen3.6:27b | 35.0 GB | 63 | slower *and* larger than the 35b — MoE wins |
-| granite4.1:30b | 52.6 GB | 57 | fills a 64 GB machine on its own |
-| aya:35b | — | — | out: 54–71% precision, 8 192-token context |
-| gemma4:31b | — | — | out: see `ollamaModelConfig` in `generate/constants.ts` |
-
-Pin with `OLLAMA_MODEL`. That returns before the adoption logic in
-`resolveLocalModel`, and therefore before the `openSchema` guard as well — so
-pinning can put a model on a schema the guard would have refused it.
-
-**A 64 GB machine can run this**, which the default judge cannot: `qwen3.6:35b`
-at 28.8 GB leaves room for `bge-m3` beside it.
+What belongs to this job is the language, and one open question about the data.
 
 Over 19 verses and 750 candidates, the two front-runners behave almost
 identically apart from speed:
@@ -169,11 +149,9 @@ contiguous tail is the signature.
 
 **What is still unmeasured is the one that matters: precision at this scale.** The
 19-verse judging run failed in full on an expired API key, so the 549 accepted
-references have never been scored. The only judged comparison is 72 references
-from two verses, where both models scored 100% and `qwen3.6:35b` had the higher
-mean (4.71 against 4.33). That is the basis for preferring it, and it is a thin
-one. If the larger run ever shows `qwen3.5:27b` making fewer errors, speed does
-not outweigh that.
+references sitting in the data have never been scored — and scoring them is the
+one measurement that could change the choice of judge. Everything the precision
+column in running-jobs.md rests on is 72 references from two verses.
 
 Language: judge in Norwegian, and not because of quality. The note the model
 writes *becomes* the reference text in `references/nb`, so judging in English
