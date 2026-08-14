@@ -203,6 +203,8 @@ function createRepeatReadings(chapters: ChapterRef[], daysPerChapter: number): R
 // `!` under er rene typepåstander: hvilke felter som finnes følger av
 // `definition.type`, og et manglende felt kastet — eller ga NaN-dager — også før
 // typene kom til. Påstandene beskriver den eksisterende oppførselen.
+// `bookRange` er unntaket: den sendes uten `!`, fordi resolveBookRange selv
+// kaster med en melding som sier hvilken plan som mangler et område (#112).
 function generatePlan(definition: PlanDefinition): GeneratedPlan {
   let readings: Reading[];
   let chapters: ChapterRef[];
@@ -212,7 +214,7 @@ function generatePlan(definition: PlanDefinition): GeneratedPlan {
       if (definition.books) {
         chapters = getChaptersForBooks(definition.books);
       } else {
-        const range = resolveBookRange(definition.bookRange!);
+        const range = resolveBookRange(definition.bookRange);
         chapters = getChaptersForRange(range);
       }
       readings = createSequentialReadings(chapters, definition.chaptersPerDay!);
@@ -222,7 +224,7 @@ function generatePlan(definition: PlanDefinition): GeneratedPlan {
       if (definition.books) {
         chapters = getChaptersForBooks(definition.books);
       } else {
-        const range = resolveBookRange(definition.bookRange!);
+        const range = resolveBookRange(definition.bookRange);
         chapters = getChaptersForRange(range);
       }
       readings = distributeChapters(chapters, definition.days!);

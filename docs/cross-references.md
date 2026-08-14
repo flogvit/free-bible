@@ -391,11 +391,27 @@ that an address points at the wrong verse — the invisible class from the table
 above, for references that were produced by asking rather than searching. It
 writes its findings to `generate/proofread_references/<language>/...`.
 
-**It does not currently correct anything.** `revisedReferences` comes back
-byte-identical to the input, including references the same answer flagged as
-`critical`, so `--apply` writes back what was already there. Measured across the
-188 files on disk: 0 references removed, 0 explanations rewritten. That is
-issue #121, and it is a fault in the prompt, not in the pipeline.
+Add `--apply` to write the corrections into the reference files. The findings are
+saved either way — the trace and the fix are the same answer.
+
+**The corrections are operations, not a rewritten list.** The proofread answers
+with `corrections`: `remove` and `rewrite` against the `[N]` numbers in the list
+it was given, `add` with an address and a text. Until #121 it was asked for
+`revisedReferences` — the whole list again — and it echoed the input: 139 of 140
+files address-identical to what they were given, 0 references removed, while the
+same files reported 578 findings. A list can be echoed; a `remove` cannot, which
+is why the field is gone rather than better worded.
+
+What the code does with them: indices count from 1 and refer to the list as the
+proofread received it, so removals don't shift the targets of later operations;
+an index outside the list is skipped with a line, not applied to the wrong
+reference; a new or re-addressed target goes through the same `checkTarget` gate
+as a generated one, and an `add` that duplicates an address already present is
+dropped. A reference nobody corrected is left alone even if its address is dead —
+that is `--validate --fix`'s job, not the proofread's.
+
+Proofread files written before #121 have only `revisedReferences`. `--apply`
+reports them and writes nothing; run `--proofread` again to get corrections.
 
 Two more things to know before running it at scale:
 
