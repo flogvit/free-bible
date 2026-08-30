@@ -42,3 +42,14 @@ generate/stories_proposed/*/.scan_state.json
 # Ingen verstekst, men stor og regenererbar.
 kvn/data/text-verification-worklist.json
 kvn/data/mapping-coverage.json
+
+# AGENT-ARTEFAKTER. Vaktene kjoerer `claude -p` med DENNE klonen som
+# arbeidskatalog, og agentene legger igjen filer ingen har bedt om.
+# `.playwright/storage.json` er ikke bare rusk: formatet ER et cookie- og
+# localStorage-lager. Den er tom saa lenge ingen agent har logget inn i en
+# nettleser her — det er flaks, ikke en egenskap ved filen. Neste innlogging
+# fyller den, og `git add -A` ville tatt sesjonen med.
+# Uten skraastrek foran, saa moensteret treffer ogsaa fra en underkatalog.
+# Samme sak som flogvit-com#77 (meta) og flogvit-com-server#21 (server), som
+# begge stoppet ved sin egen klone. Se flogvit-com#240.
+.playwright-mcp/
