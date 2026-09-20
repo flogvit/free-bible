@@ -185,6 +185,27 @@ export const ollamaModelConfig: Record<string, OllamaModelConfig> = {
     thinkParam: false,
     openSchema: true,
   },
+  // Norwegian-centric models, for the stylist stage in generate/eval/reference-works/restyle.ts.
+  // Deliberately absent from localModelRanking: adoption must never swap one of these in for a
+  // translation job, and a stylist is not a substitute for a general model.
+  //
+  // Borealis (Nasjonalbiblioteket) 27b is google/gemma-3-27b-it continued for Norwegian, so it
+  // takes gemma's recommended sampling and inherits the gemma reservation about open schemas.
+  // It has no thinking mode.
+  'NbAiLab/borealis-instruct-preview:27b': {
+    options: { temperature: 1.0, top_p: 0.95, top_k: 64 },
+    noThinkPrefix: '',
+    thinkParam: false,
+    openSchema: false,
+  },
+  // normistral-11b-thinking (LTG/UiO) is Mistral-based and post-trained for thinking; `think`
+  // goes off for prose work, and restyle.ts strips a thinking block if one shows up anyway.
+  'LTG/normistral-11b-thinking:q8_0': {
+    options: { temperature: 0 },
+    noThinkPrefix: '',
+    thinkParam: true,
+    openSchema: true,
+  },
 };
 
 // Familiestandarder for modeller som ikke står eksplisitt over. Uten dette faller en
