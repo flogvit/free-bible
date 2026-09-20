@@ -36,10 +36,22 @@ import path from 'path';
 const DIR = import.meta.dir;
 const NUM_PREDICT = 4000;
 
+/**
+ * Two briefs, because the order of the rules turned out to decide the outcome. `careful` puts
+ * "the content must be identical" first; borealis then only dares touch morphology and left
+ * «Guds Ånd beveget» standing even though the prompt named «svevet» as the wanted form. `bold`
+ * leads with the diagnosis — this is translated English, fix the idiom — and got «svevde» and
+ * «verdens skikkelse» right on jfb-gen1_2, while «øde og tom», «uenige» and «scenen» still
+ * stood. The cost of `bold` is that the lemma's «--» turns into an en dash.
+ */
+const BRIEFS = ['careful', 'bold'] as const;
+type Brief = typeof BRIEFS[number];
+
 const SPEC: Record<string, FlagSpec> = {
   model: { kind: 'string', help: 'stylist model (Ollama tag); file names use it with "/" and ":" → "-"' },
   from: { kind: 'string', default: 'qwen3.5-122b', help: 'whose rendering to rewrite (file-name form)' },
   stage: { kind: 'string', default: 'proof', help: 'which rendering: proof | first' },
+  brief: { kind: 'string', default: 'careful', help: 'careful (content first) | bold (idiom first) — see BRIEFS' },
   only: { kind: 'string', help: 'run one sample directory only' },
   think: { kind: 'boolean', help: 'let the model think (default off; a thinking block is stripped either way)' },
   list: { kind: 'boolean', help: 'list samples and existing stylist outputs, then exit' },
@@ -75,8 +87,21 @@ if (flags.list) {
 if (!flags.model) { console.error('--model is required'); process.exit(1); }
 const MODEL = flags.model as string;
 const TAG = MODEL.replace(/[/:]/g, '-');
+const BRIEF = flags.brief as Brief;
+if (!BRIEFS.includes(BRIEF)) { console.error(`--brief must be one of ${BRIEFS.join(', ')}`); process.exit(1); }
 
-const PROMPT = (current: string) => `Nedenfor står et avsnitt norsk prosa som er maskinoversatt eller modernisert fra en gammel bibelkommentar. Innholdet er riktig, men språket er stivt og bærer preg av kilden.
+const BOLD_PROMPT = (current: string) => `Teksten nedenfor er maskinoversatt fra et annet språk. Den er full av anglisismer og germanismer: fremmed ordstilling, ord oversatt i feil betydning, og bibelsitater som ikke bruker de norske bibelordene. Den leser ikke som norsk.
+
+Din jobb er å gjøre den til ekte norsk. Vær frimodig: bytt ordvalg, snu setninger, erstatt direkte oversettelser med det en norsk forfatter ville skrevet. Bibelsitater skal ha ordlyden fra norsk bibeltradisjon.
+
+Det eneste du ikke får røre: tall, henvisninger, navn, og saksinnholdet. Ingen nye påstander, ingenting forklart, ingenting fjernet. Fet skrift etterfulgt av «--» er et oppslagsord; behold begge.
+
+Svar bare med den norske teksten.
+
+Tekst:
+${current}`;
+
+const CAREFUL_PROMPT = (current: string) => `Nedenfor står et avsnitt norsk prosa som er maskinoversatt eller modernisert fra en gammel bibelkommentar. Innholdet er riktig, men språket er stivt og bærer preg av kilden.
 
 Skriv teksten om til god, naturlig norsk bokmålsprosa.
 
@@ -99,7 +124,7 @@ function stripThinking(text: string): { text: string; stripped: boolean } {
   return { text: text.slice(m.index + m[0].length).trim(), stripped: true };
 }
 
-console.log(`stylist ${MODEL} over ${INPUT} → <sample>/${TAG}.restyle-of-${FROM}.txt\n`);
+console.log(`stylist ${MODEL} (brief: ${BRIEF}) over ${INPUT} → <sample>/${TAG}.restyle-of-${FROM}*.txt\n`);
 
 for (const sample of samples) {
   const inPath = path.join(DIR, sample, INPUT);
@@ -107,14 +132,15 @@ for (const sample of samples) {
   const current = fs.readFileSync(inPath, 'utf8').trim();
 
   const started = Date.now();
-  const raw = await call(PROMPT(current), {
+  const raw = await call(BRIEF === 'bold' ? BOLD_PROMPT(current) : CAREFUL_PROMPT(current), {
     local: true, model: MODEL, think: !!flags.think,
     ollamaOptions: { num_predict: NUM_PREDICT },
   });
   const { text, stripped } = stripThinking(raw);
   const secs = ((Date.now() - started) / 1000).toFixed(0);
 
-  const outPath = path.join(DIR, sample, `${TAG}.restyle-of-${FROM}.txt`);
+  const suffix = BRIEF === 'careful' ? '' : `-${BRIEF}`;
+  const outPath = path.join(DIR, sample, `${TAG}.restyle-of-${FROM}${suffix}.txt`);
   fs.writeFileSync(outPath, text + '\n');
   const ratio = (text.length / current.length).toFixed(2);
   console.log(`${sample}: ${current.length} → ${text.length} tegn (${ratio}×), ${secs} s${stripped ? ', tenkeblokk fjernet' : ''}`);
