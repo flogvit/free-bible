@@ -1,6 +1,7 @@
 import "./env.js";
 import * as fs from 'fs';
 import path from 'path';
+import {createHash} from 'crypto';
 
 
 import Anthropic from '@anthropic-ai/sdk';
@@ -1594,7 +1595,7 @@ export interface RetranslateResult {
     model: string;
     effort: string | null;
     at: string;
-    /** chapterSignature of the text the verdicts were made against. */
+    /** chapterHash of the text the verdicts were made against. */
     signature: string | null;
     fresh: Record<string, string>;
     /** Verses the fresh reading wins, i.e. where the current text has the error. */
@@ -1693,6 +1694,18 @@ export function applyRetranslate(verses: Verse[], result: Pick<RetranslateResult
     return {applied, rejected};
 }
 
+/**
+ * What the chapter says, as a hash of every verse number and text. Two different chapters
+ * never share it, unlike chapterSignature (verse count + total length), which calls a chapter
+ * unchanged when one word is swapped for another of the same length.
+ */
+function chapterHash(filename: string): string | null {
+    if (!fs.existsSync(filename)) return null;
+    const verses: Chapter = JSON.parse(fs.readFileSync(filename, 'utf-8'));
+    const content = verses.map(v => `${v.verseId}\u0000${v.text ?? ''}`).join('\u0001');
+    return createHash('sha256').update(content).digest('hex');
+}
+
 function retranslateFile(bible: string, bookId: number, chapterId: number): string {
     return path.join(GEN, `proofread/${bible}/${bookId}/${chapterId}.retranslate.json`);
 }
@@ -1706,7 +1719,7 @@ async function retranslateChapter(bible: string, bookId: number, chapterId: numb
     if (!fs.existsSync(filename)) return;
     const language = bibles[bible];
     const sidecar = retranslateFile(bible, bookId, chapterId);
-    const signature = chapterSignature(filename);
+    const signature = chapterHash(filename);
 
     let result: RetranslateResult | null = null;
     if (!force && fs.existsSync(sidecar)) {
@@ -1733,7 +1746,7 @@ async function retranslateChapter(bible: string, bookId: number, chapterId: numb
     const verses: Chapter = JSON.parse(fs.readFileSync(filename, 'utf-8'));
     const {applied, rejected} = applyRetranslate(verses, result);
     if (applied) fs.writeFileSync(filename, JSON.stringify(verses, null, 2));
-    const done: RetranslateResult = {...result, appliedSignature: chapterSignature(filename), appliedAt: new Date().toISOString()};
+    const done: RetranslateResult = {...result, appliedSignature: chapterHash(filename), appliedAt: new Date().toISOString()};
     fs.writeFileSync(sidecar, JSON.stringify(done, null, 2));
     console.log(`  ${chapterLabel(bookId, chapterId)}: applied ${applied}${rejected ? `, rejected ${rejected}` : ''}`);
 }
