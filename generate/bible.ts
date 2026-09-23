@@ -1684,11 +1684,20 @@ function quoteTrouble(verses: Verse[]): number {
  * exactly what the judge checks. With the guard on, a correct fix in Jes 40,13 was thrown
  * away for being 83 % of the old length. The ratio still decides `alternative`, as there.
  * A replacement that leaves the chapter's «» worse paired than before is not made.
+ *
+ * Only `error` verdicts (meaning: omissions, numbers, content) are written. `grammar` verdicts
+ * stay in the verdict file until they can be checked against a dictionary. On the first NT run,
+ * 15 of 45 grammar swaps in osnn rested on a false claim about the nynorsk norm — «talent» made
+ * neuter in seven verses, «gje», «gammalt», «sleppte», «landshovdingar» called errors — while
+ * both published nynorsk Bibles use those forms. Neither Opus 5.5 nor Fable 5.1 could sort the
+ * true claims from the false when asked directly (they rejected 12 and 20 of 33 true ones).
  */
-export function applyRetranslate(verses: Verse[], result: Pick<RetranslateResult, 'fresh' | 'replace'>): {applied: number; rejected: number} {
+export function applyRetranslate(verses: Verse[], result: Pick<RetranslateResult, 'fresh' | 'replace'>): {applied: number; rejected: number; held: number} {
     let applied = 0;
     let rejected = 0;
+    let held = 0;
     for (const r of result.replace) {
+        if (r.type !== 'error') { held++; continue; }
         const verse = verses.find(v => +v.verseId === r.verseId);
         const text = result.fresh[r.verseId];
         if (!verse || !text || verse.text === text) continue;
@@ -1725,7 +1734,7 @@ export function applyRetranslate(verses: Verse[], result: Pick<RetranslateResult
         verse.text = newText;
         applied++;
     }
-    return {applied, rejected};
+    return {applied, rejected, held};
 }
 
 /**
@@ -1778,11 +1787,11 @@ async function retranslateChapter(bible: string, bookId: number, chapterId: numb
     if (!write) return;
 
     const verses: Chapter = JSON.parse(fs.readFileSync(filename, 'utf-8'));
-    const {applied, rejected} = applyRetranslate(verses, result);
+    const {applied, rejected, held} = applyRetranslate(verses, result);
     if (applied) fs.writeFileSync(filename, JSON.stringify(verses, null, 2));
     const done: RetranslateResult = {...result, appliedSignature: chapterHash(filename), appliedAt: new Date().toISOString()};
     fs.writeFileSync(sidecar, JSON.stringify(done, null, 2));
-    console.log(`  ${chapterLabel(bookId, chapterId)}: applied ${applied}${rejected ? `, rejected ${rejected}` : ''}`);
+    console.log(`  ${chapterLabel(bookId, chapterId)}: applied ${applied}${rejected ? `, rejected ${rejected}` : ''}${held ? `, ${held} grammar verdict(s) held for a dictionary check` : ''}`);
 }
 
 /**
