@@ -1,0 +1,45 @@
+{
+  "model": "claude-opus-5-5",
+  "effort": null,
+  "at": "2026-09-23T18:11:26.579Z",
+  "fresh": {
+    "1": "Etter dette såg eg, og sjå, det stod ei dør open i himmelen. Og den første røysta eg hadde høyrt tala til meg, lik ein basun, sa: «Stig opp hit, så skal eg visa deg det som må skje etter dette.»",
+    "2": "Straks vart eg gripen av Anden. Og sjå, ein trone stod i himmelen, og på trona sat det ein.",
+    "3": "Han som sat der, var å sjå til som jaspis og karneol, og rundt trona var det ein regnboge som var å sjå til som smaragd.",
+    "4": "Rundt trona stod tjuefire troner, og på tronene sat tjuefire eldste, kledde i kvite klede og med gullkransar på hovudet.",
+    "5": "Frå trona gjekk det ut lyn og røyster og tordendrønn. Framfor trona brann sju eldfaklar; det er dei sju Guds andar.",
+    "6": "Framfor trona var det som eit glashav, likt krystall. Midt ved trona og rundt ikring henne var det fire levande skapningar, fulle av auge framme og bak.",
+    "7": "Den første skapningen var lik ei løve, den andre var lik ein okse, den tredje hadde andlet som eit menneske, og den fjerde var lik ei flygande ørn.",
+    "8": "Dei fire skapningane hadde kvar seks venger, og dei var fulle av auge rundt ikring og innvendes. Dag og natt kviler dei aldri, men seier: «Heilag, heilag, heilag er Herren Gud, Den Allmektige, han som var og som er og som kjem.»",
+    "9": "Og kvar gong skapningane gjev ære og pris og takk til han som sit på trona, han som lever i all æva,",
+    "10": "fell dei tjuefire eldste ned for han som sit på trona, og tilbed han som lever i all æva. Dei kastar kransane sine ned framfor trona og seier:",
+    "11": "«Verdig er du, vår Herre og Gud, til å få æra og prisen og makta, for du har skapt alle ting. Fordi du ville det, var dei til og vart skapte.»"
+  },
+  "replace": [
+    {
+      "verseId": 1,
+      "type": "grammar",
+      "reason": "«Ei basun» har feil kjønn, for «basun» er hankjønn på nynorsk og skal heite «ein basun».",
+      "otherDefensible": false
+    },
+    {
+      "verseId": 8,
+      "type": "error",
+      "reason": "«Seks vengjer, fulle av auge» knyter auga til vengjene, medan grunnteksten seier at det er skapningane som er fulle av auge.",
+      "otherDefensible": true
+    }
+  ],
+  "keep": [
+    {
+      "verseId": 4,
+      "reason": "«Troner» og «tronene» er bokmålsformer; på nynorsk heiter det «tronar» og «tronane»."
+    },
+    {
+      "verseId": 5,
+      "reason": "«Tordendrønn» er ikkje ei nynorsk form; på nynorsk heiter det til dømes «torebrak» eller «tordønn»."
+    }
+  ],
+  "signature": "f0ecdf31ab5ddb9863c0f0e04a783c3aa3acbbcda0eb555caf54b89132423c33",
+  "appliedSignature": "8e69671f94e087a764778b12dae2f5edc7d9db00355f1ba6f2929c3b4c85d917",
+  "appliedAt": "2026-09-23T18:11:26.582Z"
+}

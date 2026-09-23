@@ -71,11 +71,18 @@
     "bookId": 54,
     "chapterId": 1,
     "verseId": 9,
-    "text": "og forstår at lova ikkje er sett for den rettferdige, men for lovlause og opprørske, gudlause og syndarar, vanhellige og verdslege, dei som slår far eller mor, drapsmenn,",
+    "text": "og veit at lova ikkje er gjeven for den rettferdige, men for lovlause og ulydige, ugudelege og syndarar, vanheilage og gudlause, for dei som slår i hel far eller mor, for mordarar,",
     "versions": [
       {
         "text": "og forstår at lova ikkje er sett for den rettferdige, men for lovlause og opprørske, gudlause og syndarar, vanhellige og verdslege, dei som slår far sin eller mor si, drapsmenn,",
         "explanation": "Gresk πατρολῴαις καὶ μητρολῴαις refererer til fader- og moderdraparar/mishandlarar generelt, ikkje spesifikt 'sin eigen'. Formuleringa 'far eller mor' er meir generell og flyt betre munnleg."
+      },
+      {
+        "text": "og forstår at lova ikkje er sett for den rettferdige, men for lovlause og opprørske, gudlause og syndarar, vanhellige og verdslege, dei som slår far eller mor, drapsmenn,",
+        "type": "error",
+        "severity": "major",
+        "explanation": "«dei som slår far eller mor» fjernar at det gjeld dei som drep foreldra sine, og «vanhellige» er ikkje nynorsk («vanheilage»).",
+        "alternative": false
       }
     ]
   },

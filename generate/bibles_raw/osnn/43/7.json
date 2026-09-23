@@ -45,13 +45,20 @@
     "bookId": 43,
     "chapterId": 7,
     "verseId": 8,
-    "text": "Eg går enno ikkje opp til denne høgtida, for mi tid er enno ikkje fullenda.",
+    "text": "Gå de opp til høgtida! Eg går ikkje opp til denne høgtida, for mi tid er ikkje fullført enno.»",
     "versions": [
       {
         "text": "Gå de opp til høgtida! Eg går ikkje opp til denne høgtida, for mi tid er enno ikkje fullenda.»",
         "type": "error",
         "severity": "major",
         "explanation": "Mange greske handskrifter har οὔπω ('enno ikkje') i staden for οὐκ ('ikkje'). Sidan den kritiske teksten i parentes markerer nettopp denne varianten (⸀οὐκ), og 'enno ikkje' er teologisk viktig (Jesus gjekk seinare opp til høgtida, v.10), bør 'enno ikkje' brukast for å unngå at det ser ut som Jesus lyg."
+      },
+      {
+        "text": "Eg går enno ikkje opp til denne høgtida, for mi tid er enno ikkje fullenda.",
+        "type": "error",
+        "severity": "major",
+        "explanation": "Oppmodinga «Gå de opp til høgtida!» er fallen ut.",
+        "alternative": false
       }
     ]
   },
@@ -95,7 +102,7 @@
     "bookId": 43,
     "chapterId": 7,
     "verseId": 15,
-    "text": "Korleis kan han ha kunnskap om skriftene utan å ha studert?",
+    "text": "Jødane undra seg og sa: «Korleis kan han vera så lærd når han aldri har studert?»",
     "versions": [
       {
         "text": "Jødane undra seg og sa: «Korleis kan denne kunna skriftene når han ikkje har fått opplæring?»",
@@ -106,6 +113,13 @@
         "type": "suggestion",
         "severity": "minor",
         "explanation": "Det greske γράμματα οἶδεν μὴ μεμαθηκώς tyder bokstavleg 'kan skrifter utan å ha lært/studert'. 'Fått opplæring' er akseptabelt, men 'utan å ha studert' ligg nærmare det greske μανθάνω som viser til formell rabbinsk opplæring/studium. Sidan verset berre har éin tidlegare revisjon, er dette ei mindre forbetring."
+      },
+      {
+        "text": "Korleis kan han ha kunnskap om skriftene utan å ha studert?",
+        "type": "error",
+        "severity": "major",
+        "explanation": "Innleiinga om at jødane undra seg og sa noko, manglar, så det står berre att eit laust spørsmål.",
+        "alternative": false
       }
     ]
   },
@@ -203,7 +217,16 @@
     "bookId": 43,
     "chapterId": 7,
     "verseId": 31,
-    "text": "Men mange i folkemengda trudde på han og sa: «Når Messias kjem, vil han då gjera fleire teikn enn det denne har gjort?»"
+    "text": "Men mange av folket kom til tru på han, og dei sa: «Når Messias kjem, vil han vel ikkje gjera fleire teikn enn denne mannen har gjort?»",
+    "versions": [
+      {
+        "text": "Men mange i folkemengda trudde på han og sa: «Når Messias kjem, vil han då gjera fleire teikn enn det denne har gjort?»",
+        "type": "error",
+        "severity": "major",
+        "explanation": "Spørsmålet «vil han då gjera fleire teikn» er nøytralt, men originalen ventar eit nektande svar, slik «vil han vel ikkje gjera» får fram.",
+        "alternative": false
+      }
+    ]
   },
   {
     "bookId": 43,

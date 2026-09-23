@@ -143,13 +143,20 @@
     "bookId": 41,
     "chapterId": 14,
     "verseId": 22,
-    "text": "«Ta imot! Dette er lekamen min.»",
+    "text": "Medan dei åt, tok han eit brød, velsigna og braut det, gav dei og sa: «Ta imot, dette er min lekam.»",
     "versions": [
       {
         "text": "Medan dei åt, tok han eit brød, velsigna det, braut det og gav dei og sa: «Ta imot! Dette er kroppen min.»",
         "type": "theological",
         "severity": "major",
         "explanation": "Σῶμα i nattverdskonteksten er tradisjonelt omsett med 'lekam/lekamen' på nynorsk, ikkje 'kroppen'. 'Lekamen' er det innarbeidde liturgiske uttrykket og teologisk meir presist i sakramental samanheng. Men dersom ein ønskjer eit moderne og lettlese uttrykk kan 'kroppen' forsvarast – dette er difor ei tilråding, ikkje ein kritisk feil."
+      },
+      {
+        "text": "«Ta imot! Dette er lekamen min.»",
+        "type": "error",
+        "severity": "major",
+        "explanation": "Nesten heile verset manglar: at dei åt, at han tok brødet, velsigna det, braut det og gav dei, er borte, og berre «Ta imot! Dette er lekamen min.» står att.",
+        "alternative": false
       }
     ]
   },
@@ -311,7 +318,16 @@
     "bookId": 41,
     "chapterId": 14,
     "verseId": 43,
-    "text": "Straks, medan han endå tala, kom Judas, ein av dei tolv, og med han ein stor flokk med sverd og stokkar, utsende frå overprestane, dei skriftlærde og dei eldste."
+    "text": "I same stund, medan han enno tala, kom Judas, ein av dei tolv, og med han ein flokk med sverd og klubber, send av overprestane, dei skriftlærde og dei eldste.",
+    "versions": [
+      {
+        "text": "Straks, medan han endå tala, kom Judas, ein av dei tolv, og med han ein stor flokk med sverd og stokkar, utsende frå overprestane, dei skriftlærde og dei eldste.",
+        "type": "error",
+        "severity": "major",
+        "explanation": "«ein stor flokk» legg til «stor», som ikkje står i grunnteksten.",
+        "alternative": false
+      }
+    ]
   },
   {
     "bookId": 41,
@@ -421,7 +437,16 @@
     "bookId": 41,
     "chapterId": 14,
     "verseId": 60,
-    "text": "Då reiste øvstepresten seg, steig fram og spurde Jesus: «Svarar du ikkje på det desse vitnar mot deg?»"
+    "text": "Då reiste øvstepresten seg, steig fram og spurde Jesus: «Svarar du ingenting? Kva er det desse vitnar mot deg?»",
+    "versions": [
+      {
+        "text": "Då reiste øvstepresten seg, steig fram og spurde Jesus: «Svarar du ikkje på det desse vitnar mot deg?»",
+        "type": "error",
+        "severity": "major",
+        "explanation": "Dei to spørsmåla i grunnteksten er slått saman til eitt, slik at det sjølvstendige spørsmålet «Svarar du ingenting?» fell bort.",
+        "alternative": true
+      }
+    ]
   },
   {
     "bookId": 41,

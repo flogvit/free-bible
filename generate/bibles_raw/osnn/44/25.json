@@ -39,13 +39,20 @@
     "bookId": 44,
     "chapterId": 25,
     "verseId": 6,
-    "text": "Festus vart hjå dei i ikkje meir enn åtte eller ti dagar, og så reiste han ned til Cæsarea.",
+    "text": "Festus vart verande hos dei ikkje meir enn åtte eller ti dagar. Så drog han ned til Cæsarea, og dagen etter sette han seg i domarsetet og gav ordre om at Paulus skulle førast fram.",
     "versions": [
       {
         "text": "Festus vart hjå dei i åtte til ti dagar, og så reiste han ned til Cæsarea. Dagen etter sette han seg på dommarstolen og gav ordre om at Paulus skulle førast fram.",
         "type": "suggestion",
         "severity": "minor",
         "explanation": "Det greske οὐ πλείους ὀκτὼ ἢ δέκα betyr 'ikkje meir enn åtte eller ti'. Formuleringa 'åtte til ti dagar' er noko upresis og gjev inntrykk av eit bestemt tidsrom, medan originalen understrekar at opphaldet var kort."
+      },
+      {
+        "text": "Festus vart hjå dei i ikkje meir enn åtte eller ti dagar, og så reiste han ned til Cæsarea.",
+        "type": "error",
+        "severity": "major",
+        "explanation": "Omsetjinga stoppar ved «reiste han ned til Cæsarea» og manglar heile resten av verset: at han dagen etter sette seg i domarsetet og gav ordre om at Paulus skulle førast fram.",
+        "alternative": false
       }
     ]
   },

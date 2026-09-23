@@ -79,13 +79,20 @@
     "bookId": 47,
     "chapterId": 8,
     "verseId": 10,
-    "text": "Og eg gjev dykk eit råd i denne saka: Det er til gagn for dykk, de som alt i fjor var dei første til ikkje berre å vilja, men også å gjera.",
+    "text": "Her gjev eg dykk eit råd, for det tener dykk best: De var dei første som byrja i fjor, ikkje berre med å gjera noko, men òg med å ville det.",
     "versions": [
       {
         "text": "Og eg gjev dykk eit råd i denne saka: Det er til gagn for dykk, de som alt i fjor byrja ikkje berre å gjera noko, men også å vilja det.",
         "type": "suggestion",
         "severity": "minor",
         "explanation": "I den greske teksten kjem 'τὸ ποιῆσαι' (å gjera) før 'τὸ θέλειν' (å vilja), men poenget er at dei byrja ikkje berre å gjera, men også å vilja det – altså rekkjefølga er viktig. Likevel er det ein diskusjon om rekkjefølga. Meir vesentleg: 'προενήρξασθε' tyder 'byrja først/var dei første til å byrja', ikkje berre 'byrja'. Nyansforskyving."
+      },
+      {
+        "text": "Og eg gjev dykk eit råd i denne saka: Det er til gagn for dykk, de som alt i fjor var dei første til ikkje berre å vilja, men også å gjera.",
+        "type": "error",
+        "severity": "major",
+        "explanation": "«ikkje berre å vilja, men også å gjera» snur rekkjefølgja i grunnteksten, som seier ikkje berre å gjera, men òg å vilja.",
+        "alternative": false
       }
     ]
   },

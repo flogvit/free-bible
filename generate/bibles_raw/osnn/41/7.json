@@ -21,7 +21,7 @@
     "bookId": 41,
     "chapterId": 7,
     "verseId": 4,
-    "text": "Og når dei kjem frå torget, et dei ikkje utan å ha vatna seg. Det er òg mange andre skikkar dei har teke imot og held fast på, som vasking av beger, mugger, koparkar og benker.",
+    "text": "Og når dei kjem frå torget, et dei ikkje før dei har reinsa seg. Det er mykje anna dei har teke imot og held fast på, som å skylje beger, krukker, koparkar og benker.",
     "versions": [
       {
         "text": "Og når dei kjem frå torget, et dei ikkje utan å ha reinsa seg. Det er òg mange andre skikkar dei har teke imot og held fast på, som reinsing av beger, mugger, koparkar og benker.",
@@ -32,6 +32,13 @@
         "type": "error",
         "severity": "critical",
         "explanation": "Den andre halvdelen av verset er utelaten i den noverande versjonen. Den tidlegare revisjonen fjerna denne delen saman med ei ordendring, men grunnen for endringa gjaldt berre ordet 'reinsa' vs. 'vatna'. Den andre setningen om vasking av beger, mugger, koparkar og benker er ein viktig del av den greske teksten og må vera med. Ordet 'reinsing' er endra til 'vasking' for å unngå å gjenta den tidlegare versjonen nøyaktig."
+      },
+      {
+        "text": "Og når dei kjem frå torget, et dei ikkje utan å ha vatna seg. Det er òg mange andre skikkar dei har teke imot og held fast på, som vasking av beger, mugger, koparkar og benker.",
+        "type": "error",
+        "severity": "major",
+        "explanation": "«Vatna seg» tyder å gje vatn eller late vatnet, ikkje å reinse seg rituelt slik grunnteksten seier.",
+        "alternative": false
       }
     ]
   },

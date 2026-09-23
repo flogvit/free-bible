@@ -363,13 +363,20 @@
     "bookId": 42,
     "chapterId": 12,
     "verseId": 48,
-    "text": "Men den som ikkje kjende viljen, og gjorde det som fortener slag, skal få få slag.",
+    "text": "Men den som ikkje visste det, og gjorde noko som fortener slag, skal få få slag. Av den som har fått mykje, skal det krevjast mykje, og den som har fått mykje betrudd, skal ein krevja endå meir av.",
     "versions": [
       {
         "text": "Men den som ikkje kjende viljen, og gjorde det som fortener slag, skal få færre slag. Kvar den som har fått mykje, av han skal det krevjast mykje. Og den som har fått mykje å ta vare på, av han skal det krevjast endå meir.",
         "type": "suggestion",
         "severity": "minor",
         "explanation": "Det greske ὀλίγας tyder 'få', ikkje 'færre' (komparativ). Teksten seier ikkje at det er færre enn noko anna, men at det er få slag. 'Få slag' er meir nøyaktig."
+      },
+      {
+        "text": "Men den som ikkje kjende viljen, og gjorde det som fortener slag, skal få få slag.",
+        "type": "error",
+        "severity": "major",
+        "explanation": "Siste del av verset, om at det skal krevjast mykje av den som har fått mykje, er utelaten.",
+        "alternative": false
       }
     ]
   },

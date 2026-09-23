@@ -107,13 +107,20 @@
     "bookId": 44,
     "chapterId": 16,
     "verseId": 14,
-    "text": "Ei kvinne som heitte Lydia, ein purpurhandlar frå byen Tyatira som dyrka Gud, lytta til oss.",
+    "text": "Ei av dei som lydde, var ei kvinne som heitte Lydia. Ho handla med purpurstoff og var frå byen Tyatira, og ho var ei gudfryktig kvinne. Herren opna hjartet hennar, så ho tok til seg det Paulus sa.",
     "versions": [
       {
         "text": "Ei kvinne som heitte Lydia, lytta til oss. Ho var purpurhandlar frå byen Tyatira og æra Gud. Herren opna hjartet hennar så ho gav akt på det Paulus sa.",
         "type": "error",
         "severity": "minor",
         "explanation": "I originalteksten er 'purpurhandlar frå Tyatira' og 'gudfyrst' (σεβομένη τὸν θεόν) begge karakteristikkar av Lydia som kjem før hovudverbet ἤκουεν (lytta). Den noverande omsetjinga splittar dette opp og endrar tidsforma 'æra' (presens) i staden for 'dyrka' (imperfektum som samsvarar med ἤκουεν). Dessutan er 'lytta til oss' ikkje heilt rett – teksten seier berre ἤκουεν (lytta), ikkje 'lytta til oss'."
+      },
+      {
+        "text": "Ei kvinne som heitte Lydia, ein purpurhandlar frå byen Tyatira som dyrka Gud, lytta til oss.",
+        "type": "error",
+        "severity": "major",
+        "explanation": "Setninga om at Herren opna hjartet hennar, så ho tok til seg det Paulus sa, manglar heilt.",
+        "alternative": false
       }
     ]
   },
@@ -169,7 +176,7 @@
     "bookId": 44,
     "chapterId": 16,
     "verseId": 22,
-    "text": "Bydommarane reiv av dei kleda og gav ordre om å slå dei med stavar.",
+    "text": "Folkemengda reiste seg òg mot dei. Dommarane lét kleda rive av dei og gav ordre om at dei skulle piskast med stavar.",
     "versions": [
       {
         "text": "Folkemengda gjekk òg laus på dei. Bydommarane reiv sund kleda deira og gav ordre om å piska dei.",
@@ -180,6 +187,13 @@
         "type": "suggestion",
         "severity": "minor",
         "explanation": "Gresk περιρήξαντες αὐτῶν τὰ ἱμάτια betyr at dei reiv kleda av dei (ikkje at dei reiv dei i sund), og ῥαβδίζειν betyr 'å slå med stavar/kjepper', ikkje å piska. Pisk (μαστιγόω) er eit anna gresk ord."
+      },
+      {
+        "text": "Bydommarane reiv av dei kleda og gav ordre om å slå dei med stavar.",
+        "type": "error",
+        "severity": "major",
+        "explanation": "Det er ikkje med at folkemengda reiste seg mot dei («συνεπέστη ὁ ὄχλος»).",
+        "alternative": false
       }
     ]
   },

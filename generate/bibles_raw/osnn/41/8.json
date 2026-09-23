@@ -77,11 +77,18 @@
     "bookId": 41,
     "chapterId": 8,
     "verseId": 12,
-    "text": "Han sukka djupt og sa: «Kvifor krev denne slekta eit teikn? Sanneleg seier eg dykk: Aldri skal denne slekta få noko teikn.»",
+    "text": "Han sukka djupt i ånda og sa: «Kvifor krev denne slekta eit teikn? Sanneleg, eg seier dykk: Denne slekta skal ikkje få noko teikn!»",
     "versions": [
       {
         "text": "Han sukka djupt i ånda si og sa: «Kvifor krev denne slekta eit teikn? Sanneleg seier eg dykk: Denne slekta skal ikkje få noko teikn.»",
         "explanation": "Det greske uttrykket 'εἰ δοθήσεται' er ein sterk semittisk eidsformel som uttrykker ei absolutt nekting. 'Aldri' gjev betre uttrykk for den emfatiske karakteren av denne avvisinga."
+      },
+      {
+        "text": "Han sukka djupt og sa: «Kvifor krev denne slekta eit teikn? Sanneleg seier eg dykk: Aldri skal denne slekta få noko teikn.»",
+        "type": "error",
+        "severity": "major",
+        "explanation": "Omsetjinga utelèt «i ånda» (τῷ πνεύματι αὐτοῦ) og skriv berre «sukka djupt».",
+        "alternative": true
       }
     ]
   },

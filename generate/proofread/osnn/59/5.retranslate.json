@@ -1,0 +1,62 @@
+{
+  "model": "claude-opus-5-5",
+  "effort": null,
+  "at": "2026-09-23T18:00:09.342Z",
+  "fresh": {
+    "1": "Høyr no, de rike! Gråt og jamra over dei ulukkene som kjem over dykk.",
+    "2": "Rikdomen dykkar er rotna, og kleda dykkar er etne av møll.",
+    "3": "Gullet og sølvet dykkar er rusta, og rusten skal vitna mot dykk og eta kjøtet dykkar som eld. De har samla skattar i dei siste dagane.",
+    "4": "Sjå, løna til arbeidarane som hausta åkrane dykkar, den som de har halde att, ropar mot dykk, og ropa frå dei som skar kornet, har nådd øyra til Herren, Allhærs Gud.",
+    "5": "De har levd i luksus og overflod på jorda. De har fetta hjarta dykkar på slaktedagen.",
+    "6": "De har dømt og drepe den rettferdige. Han set seg ikkje til motverje mot dykk.",
+    "7": "Ver då tolmodige, sysken, til Herren kjem. Sjå, bonden ventar på den dyrebare grøda frå jorda og er tolmodig med henne til ho har fått haustregn og vårregn.",
+    "8": "Ver de òg tolmodige, og styrk hjarta dykkar, for Herren kjem snart.",
+    "9": "Klag ikkje på kvarandre, sysken, så de ikkje vert dømde. Sjå, dommaren står for døra.",
+    "10": "Sysken, ta profetane som talte i Herrens namn, til førebilete i å lida vondt og vera tolmodige.",
+    "11": "Sjå, vi prisar dei sæle som held ut. De har høyrt om kor trufast Job heldt ut, og de har sett korleis Herren til slutt greidde det for han. For Herren er full av medkjensle og miskunn.",
+    "12": "Men framfor alt, sysken: Sver ikkje, verken ved himmelen eller ved jorda eller med nokon annan eid. La jaet dykkar vera ja og neiet dykkar vera nei, så de ikkje fell under dom.",
+    "13": "Lid nokon av dykk vondt? Då skal han be. Er nokon glad? Då skal han syngja lovsongar.",
+    "14": "Er nokon av dykk sjuk? Då skal han kalla til seg eldste i kyrkjelyden, og dei skal be for han og salva han med olje i Herrens namn.",
+    "15": "Og bøna i tru skal frelsa den sjuke, og Herren skal reisa han opp. Har han gjort synder, skal dei verta tilgjevne han.",
+    "16": "Vedkjenn då syndene for kvarandre og be for kvarandre, så de kan verta lækte. Ei rettferdig manns bøn har stor kraft når ho er verksam.",
+    "17": "Elia var eit menneske som vi. Han bad inderleg om at det ikkje skulle regna, og det regna ikkje på jorda i tre år og seks månader.",
+    "18": "Så bad han igjen, og himmelen gav regn, og jorda bar grøde.",
+    "19": "Sysken, om nokon av dykk fer vill bort frå sanninga, og ein annan fører han attende,",
+    "20": "så skal de vita at den som fører ein syndar attende frå villvegen hans, skal frelsa sjela hans frå døden og dekkja over ei mengd synder."
+  },
+  "replace": [
+    {
+      "verseId": 2,
+      "type": "grammar",
+      "reason": "«Rikdommen» er bokmålsform; på nynorsk heiter det «rikdomen».",
+      "otherDefensible": false
+    },
+    {
+      "verseId": 12,
+      "type": "grammar",
+      "reason": "E-infinitiven «vere» blir blanda med a-infinitivar elles i teksten («vera», «koma»), og det bryt med kravet om konsekvent infinitivsform.",
+      "otherDefensible": true
+    }
+  ],
+  "keep": [
+    {
+      "verseId": 6,
+      "reason": "Spørsmålet i grunnteksten er gjort om til ei påstand, «Han set seg ikkje til motverje mot dykk»."
+    },
+    {
+      "verseId": 9,
+      "reason": "«dommaren» er bokmålsform; på nynorsk heiter det «domaren»."
+    },
+    {
+      "verseId": 16,
+      "reason": "«Ei rettferdig manns bøn» har feil kjønn på artikkelen; «mann» er hankjønn, så det skal vere «ein rettferdig manns bøn»."
+    },
+    {
+      "verseId": 20,
+      "reason": "«så skal de vita» gjer eintalet i grunnteksten («lat han vita») om til fleirtal."
+    }
+  ],
+  "signature": "f741d2ba8b72229128b8f93e3e84bd0399f4ef97497627ff4f445e119aba47a9",
+  "appliedSignature": "f741d2ba8b72229128b8f93e3e84bd0399f4ef97497627ff4f445e119aba47a9",
+  "appliedAt": "2026-09-23T18:00:09.342Z"
+}

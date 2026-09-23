@@ -1,0 +1,63 @@
+{
+  "model": "claude-opus-5-5",
+  "effort": null,
+  "at": "2026-09-23T17:59:33.617Z",
+  "fresh": {
+    "1": "Kvar kjem krig og strid mellom dykk frå? Kjem dei ikkje frå lystene dykkar, som fører krig i lemene dykkar?",
+    "2": "De begjærer og får ikkje. De drep og misunner, men kan ikkje nå det de vil. De strir og fører krig. De har ikkje fordi de ikkje bed.",
+    "3": "De bed og får ikkje, fordi de bed med vond hug, for å øyda det på lystene dykkar.",
+    "4": "De utru! Veit de ikkje at venskap med verda er fiendskap mot Gud? Den som vil vera ven av verda, gjer seg difor til Guds fiende.",
+    "5": "Eller trur de at Skrifta talar tomt når ho seier: Med brennande lengt krev han Anden som han lét bu i oss?",
+    "6": "Men han gjev endå større nåde. Difor seier ho: Gud står dei stolte imot, men dei audmjuke gjev han nåde.",
+    "7": "Så bøy dykk då under Gud! Stå djevelen imot, så skal han flykta frå dykk.",
+    "8": "Kom nær til Gud, så skal han koma nær til dykk. Gjer hendene reine, de syndarar, og rens hjarta, de tvisinna.",
+    "9": "Kjenn naudi, sørg og gråt! Lat latteren dykkar venda seg til sorg og gleda til tungsinn.",
+    "10": "Audmjuk dykk for Herren, så skal han lyfta dykk opp.",
+    "11": "Tal ikkje vondt om kvarandre, sysken. Den som talar vondt om ein bror eller dømer bror sin, talar vondt om lova og dømer lova. Men dømer du lova, er du ikkje ein som held lova, men ein som dømer henne.",
+    "12": "Éin er lovgjevar og dommar, han som kan frelsa og tyna. Men kven er du som dømer nesten din?",
+    "13": "Høyr no, de som seier: «I dag eller i morgon vil vi reisa til den og den byen, vera der eit år, driva handel og tena pengar.»",
+    "14": "De veit ikkje kva morgondagen ber med seg, eller korleis livet dykkar vil bli. For de er ein dis som syner seg ei lita stund og så blir borte.",
+    "15": "I staden skulle de seia: «Om Herren vil, skal vi leva og gjera både dette og hint.»",
+    "16": "Men no skryter de i hovmodet dykkar. All slik skryt er vond.",
+    "17": "Den som veit kva godt han skal gjera, og ikkje gjer det, han syndar."
+  },
+  "replace": [
+    {
+      "verseId": 1,
+      "type": "grammar",
+      "reason": "«lemmene» er ikkje rett nynorsk; fleirtal bunden form av «lem» er «lemene».",
+      "otherDefensible": false
+    },
+    {
+      "verseId": 2,
+      "type": "grammar",
+      "reason": "«krangler» er bokmålsbøying; på nynorsk heiter det «kranglar».",
+      "otherDefensible": false
+    },
+    {
+      "verseId": 5,
+      "type": "error",
+      "reason": "Sitatet frå Skrifta er gjort om frå ein del av spørsmålet til ei sjølvstendig utsegn, og «når ho seier» er falle bort.",
+      "otherDefensible": false
+    },
+    {
+      "verseId": 14,
+      "type": "error",
+      "reason": "«For det er ein damp» endrar subjektet; grunnteksten seier at de sjølve er ein damp.",
+      "otherDefensible": false
+    }
+  ],
+  "keep": [
+    {
+      "verseId": 9,
+      "reason": "«naudi» er ei i-form som ikkje lenger er med i gjeldande nynorsknorm; det skal vera «nauda»."
+    },
+    {
+      "verseId": 15,
+      "reason": "«både dette og hint» endrar grunnteksten, som seier «dette eller hint»."
+    }
+  ],
+  "signature": "8c9a0bfb9fb5e0eebf6030a1253c555c259218d780c0ed845a5996a4f3f7ee52",
+  "appliedSignature": "9ed97550d7ae9042281df93db81c615d266bdc9a83803c4e445b8d7180c8bb4d",
+  "appliedAt": "2026-09-23T17:59:33.621Z"
+}

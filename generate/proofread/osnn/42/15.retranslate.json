@@ -1,0 +1,66 @@
+{
+  "model": "claude-opus-5-5",
+  "effort": null,
+  "at": "2026-09-23T16:06:21.214Z",
+  "fresh": {
+    "1": "Alle tollarane og syndarane kom til Jesus for å høyra på han.",
+    "2": "Då murra farisearane og dei skriftlærde og sa: «Denne mannen tek imot syndarar og et saman med dei.»",
+    "3": "Då fortalde han dei denne likninga:",
+    "4": "«Tenk dykk at ein av dykk har hundre sauer og mistar ein av dei. Lèt han ikkje då dei nittini vera att i øydemarka og går og leitar etter den som har gått seg bort, til han finn han?",
+    "5": "Og når han har funne han, legg han han glad på akslene sine.",
+    "6": "Når han så kjem heim, kallar han saman venene og grannane sine og seier til dei: ‘Gled dykk med meg, for eg har funne sauen min som var komen bort!’",
+    "7": "Eg seier dykk: Slik skal det vera større glede i himmelen over éin syndar som vender om, enn over nittini rettferdige som ikkje treng omvending.",
+    "8": "Eller tenk dykk ei kvinne som har ti sølvmyntar og mistar ein av dei. Tenner ho ikkje då ei lampe, sopar huset og leitar nøye til ho finn han?",
+    "9": "Og når ho har funne han, kallar ho saman venninnene og grannekonene sine og seier: ‘Gled dykk med meg, for eg har funne mynten som eg miste!’",
+    "10": "Slik, seier eg dykk, er det glede hos Guds englar over éin syndar som vender om.»",
+    "11": "Så sa han: «Ein mann hadde to søner.",
+    "12": "Den yngste sa til far sin: ‘Far, gje meg den delen av formuen som høyrer meg til.’ Og faren skifte eigedomen mellom dei.",
+    "13": "Nokre dagar etter samla den yngste sonen saman alt han hadde, og reiste til eit land langt borte. Der sløste han bort formuen sin i eit vilt liv.",
+    "14": "Då han hadde brukt opp alt, kom det ein hard hungersnaud over landet, og han byrja å lida naud.",
+    "15": "Så gjekk han og tok teneste hos ein av innbyggjarane i landet, og mannen sende han ut på markene sine for å gjeta grisar.",
+    "16": "Han lengta etter å fylla magen med belgane som grisane åt, men ingen gav han noko.",
+    "17": "Då kom han til seg sjølv og sa: ‘Kor mange leigearbeidarar hos far min har ikkje meir mat enn nok, medan eg går til grunne her av svolt!",
+    "18": "Eg vil bryta opp og gå til far min og seia til han: Far, eg har synda mot himmelen og mot deg.",
+    "19": "Eg er ikkje lenger verd å kallast son din. Lat meg få vera som ein av leigearbeidarane dine.’",
+    "20": "Så braut han opp og gjekk heim til far sin. Medan han enno var langt borte, fekk faren sjå han, og han fekk inderleg medkjensle med han. Han sprang imot han, kasta seg om halsen hans og kyste han.",
+    "21": "Sonen sa til han: ‘Far, eg har synda mot himmelen og mot deg. Eg er ikkje lenger verd å kallast son din.’",
+    "22": "Men faren sa til tenarane sine: ‘Skund dykk! Hent den finaste kjortelen og kle han i den, og set ein ring på handa hans og sko på føtene hans.",
+    "23": "Hent gjøkalven og slakt han, så skal vi eta og halda fest.",
+    "24": "For denne sonen min var død og har fått livet att, han var komen bort og er funnen.’ Og dei tok til å halda fest.",
+    "25": "Men den eldste sonen var ute på marka. Då han kom heim og nærma seg huset, høyrde han musikk og dans.",
+    "26": "Han kalla til seg ein av tenestekarane og spurde kva som var på ferde.",
+    "27": "Tenaren svara: ‘Bror din er komen heim, og far din har slakta gjøkalven fordi han har fått han att i god behald.’",
+    "28": "Då vart han sint og ville ikkje gå inn. Men far hans kom ut og bad han inntrengjande.",
+    "29": "Han svara far sin: ‘Sjå, i så mange år har eg tent deg, og aldri har eg brote eit bod frå deg. Men meg har du aldri gjeve så mykje som eit kje, så eg kunne halda fest med venene mine.",
+    "30": "Men no, når denne sonen din kjem heim, han som har øydd opp eigedomen din saman med horer, då slaktar du gjøkalven for han!’",
+    "31": "Faren sa til han: ‘Barnet mitt, du er alltid hos meg, og alt mitt er ditt.",
+    "32": "Men no måtte vi halda fest og gleda oss, for denne bror din var død og har fått livet att, han var komen bort og er funnen.’»"
+  },
+  "replace": [
+    {
+      "verseId": 8,
+      "type": "grammar",
+      "reason": "«Sølvpeng» er hankjønnsord, så pronomenet skal vera «han», ikkje «finn henne».",
+      "otherDefensible": false
+    },
+    {
+      "verseId": 9,
+      "type": "grammar",
+      "reason": "«Sølvpengen» er hankjønnsord, så det skal vera «funne han», ikkje «funne henne».",
+      "otherDefensible": false
+    }
+  ],
+  "keep": [
+    {
+      "verseId": 31,
+      "reason": "Preposisjonen «hos» er ikkje nynorsk; på nynorsk heiter det «hjå meg»."
+    },
+    {
+      "verseId": 32,
+      "reason": "«denne bror din» er feil bøying, for etter påpeikande pronomen må substantivet stå i bunden form: «denne broren din»."
+    }
+  ],
+  "signature": "d2310a8400e503384f680b6757a14f49dc5df89540f85a75ec5b2c3cd1fa9ea8",
+  "appliedSignature": "d2310a8400e503384f680b6757a14f49dc5df89540f85a75ec5b2c3cd1fa9ea8",
+  "appliedAt": "2026-09-23T16:06:21.215Z"
+}

@@ -9,11 +9,18 @@
     "bookId": 42,
     "chapterId": 19,
     "verseId": 2,
-    "text": "Og sjå, der var ein mann som heitte Sakkeus. Han var overtollar og svært rik.",
+    "text": "Der var ein mann som heitte Sakkeus. Han var øvste tollar og var rik.",
     "versions": [
       {
         "text": "Der var det ein mann som heitte Sakkeus. Han var overtollar og svært rik.",
         "explanation": "Det greske 'καὶ ἰδοὺ' (kai idou) er ein viktig narrativ markør som betyr 'og sjå'. Dette skaper engasjement i munnleg lesing og er karakteristisk for Lukas' stil. 'Der var det' mister denne effekten."
+      },
+      {
+        "text": "Og sjå, der var ein mann som heitte Sakkeus. Han var overtollar og svært rik.",
+        "type": "error",
+        "severity": "major",
+        "explanation": "«Svært rik» legg til ei forsterking som ikkje står i grunnteksten; der står berre at han var rik.",
+        "alternative": true
       }
     ]
   },

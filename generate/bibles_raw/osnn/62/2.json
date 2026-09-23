@@ -245,11 +245,18 @@
     "bookId": 62,
     "chapterId": 2,
     "verseId": 28,
-    "text": "Og no, mine born, bli i han, så vi kan ha frimod og ikkje bli til skamme framfor han når han kjem att.",
+    "text": "Ja, borna mine, bli no verande i han, så vi kan ha frimod når han openberrar seg, og ikkje stå med skam framfor han når han kjem.",
     "versions": [
       {
         "text": "Og no, mine born, bli i han, så vi kan ha frimod når han openberrar seg, og ikkje bli til skamme framfor han når han kjem att.",
         "explanation": "Grunnteksten har éi tidsreferanse (ἐν τῇ παρουσίᾳ αὐτοῦ), ikkje to separate tidspunkt. Omsetjinga gjentek 'når han' unødvendig, noko som skapar eit kunstig skilje mellom frimod og ikkje-skam."
+      },
+      {
+        "text": "Og no, mine born, bli i han, så vi kan ha frimod og ikkje bli til skamme framfor han når han kjem att.",
+        "type": "error",
+        "severity": "major",
+        "explanation": "Leddet «når han openberrar seg» (ἐὰν φανερωθῇ) manglar; omsetjinga har berre «når han kjem att».",
+        "alternative": false
       }
     ]
   },

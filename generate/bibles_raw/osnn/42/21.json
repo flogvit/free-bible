@@ -153,7 +153,16 @@
     "bookId": 42,
     "chapterId": 21,
     "verseId": 20,
-    "text": "Når de ser Jerusalem omringa av hærar, då skal de vita at øydelegginga er nær."
+    "text": "Når de ser Jerusalem omringa av hærar, då skal de vite at øydelegginga hennar er nær.",
+    "versions": [
+      {
+        "text": "Når de ser Jerusalem omringa av hærar, då skal de vita at øydelegginga er nær.",
+        "type": "error",
+        "severity": "major",
+        "explanation": "«hennar» er utelate, så det kjem ikkje fram at det er Jerusalems øydelegging som er nær.",
+        "alternative": true
+      }
+    ]
   },
   {
     "bookId": 42,
@@ -243,11 +252,18 @@
     "bookId": 42,
     "chapterId": 21,
     "verseId": 34,
-    "text": "Ver på vakt så ikkje hjarta dykkar blir tyngde av rus og fyll og kvardagslege bekymringar, så den dagen kjem brått over dykk,",
+    "text": "Ta dykk i vare, så hjarta dykkar ikkje blir tyngde av rus og drikk og bekymringar for livet her, og den dagen kjem brått over dykk",
     "versions": [
       {
         "text": "Ver på vakt så ikkje hjarta dykkar blir tyngde av rus og fyll og kvardagslege bekymringar, så den dagen kjem brått over dykk",
         "explanation": "Det manglar komma på slutten av verset før vers 35 som fortset setninga med 'som ei snare'. Dette er viktig for leseflyten."
+      },
+      {
+        "text": "Ver på vakt så ikkje hjarta dykkar blir tyngde av rus og fyll og kvardagslege bekymringar, så den dagen kjem brått over dykk,",
+        "type": "error",
+        "severity": "major",
+        "explanation": "«så den dagen kjem brått over dykk» gjer det at dagen kjem brått til ei følgje av det som går føre, medan grunnteksten åtvarar mot at den dagen skal kome brått over dykk.",
+        "alternative": false
       }
     ]
   },

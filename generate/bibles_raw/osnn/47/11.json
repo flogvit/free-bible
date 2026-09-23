@@ -211,13 +211,20 @@
     "bookId": 47,
     "chapterId": 11,
     "verseId": 29,
-    "text": "Kven vert lokka til fall utan at det brenn i meg?",
+    "text": "Kven er veik utan at eg òg er veik? Kven blir forleidd til fall utan at det brenn i meg?",
     "versions": [
       {
         "text": "Kven er svak utan at eg er svak? Kven fell i synd utan at det brenn i meg?",
         "type": "suggestion",
         "severity": "minor",
         "explanation": "σκανδαλίζεται tyder meir 'vert lokka til fall' eller 'snublar' enn direkte 'fell i synd'. Det handlar om å bli ført til fall eller støytt, ikkje nødvendigvis å synda direkte. 'Lokka til fall' er meir presist."
+      },
+      {
+        "text": "Kven vert lokka til fall utan at det brenn i meg?",
+        "type": "error",
+        "severity": "major",
+        "explanation": "Det første spørsmålet, «Kven er veik utan at eg òg er veik?», manglar heilt.",
+        "alternative": false
       }
     ]
   },

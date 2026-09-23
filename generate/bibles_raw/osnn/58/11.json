@@ -129,7 +129,16 @@
     "bookId": 58,
     "chapterId": 11,
     "verseId": 18,
-    "text": "han som det var sagt om: Gjennom Isak skal ætta di nemnast."
+    "text": "han som det var sagt til: «Gjennom Isak skal du få den ætta som skal kallast di.»",
+    "versions": [
+      {
+        "text": "han som det var sagt om: Gjennom Isak skal ætta di nemnast.",
+        "type": "error",
+        "severity": "major",
+        "explanation": "«Sagt om» endrar meininga, for grunnteksten seier at ordet vart sagt til Abraham («til»), ikkje om han.",
+        "alternative": false
+      }
+    ]
   },
   {
     "bookId": 58,
@@ -265,13 +274,20 @@
     "bookId": 58,
     "chapterId": 11,
     "verseId": 35,
-    "text": "Andre vart pinte til døden og ville ikkje ta imot frigjering, for å kunna oppnå ei betre oppstode.",
+    "text": "Kvinner fekk dei døde sine att ved oppstode. Andre vart pinte til døde og ville ikkje ta imot fridom, for at dei skulle nå fram til ei betre oppstode.",
     "versions": [
       {
         "text": "Kvinner fekk sine døde att ved oppstode. Andre vart pinte til døden og ville ikkje ta imot frigjering, så dei kunne få del i ei betre oppstode.",
         "type": "suggestion",
         "severity": "minor",
         "explanation": "Det greske ἵνα + konjunktiv uttrykkjer formål ('for at dei skulle'). 'Så dei kunne' kan bli oppfatta som resultat snarare enn formål. 'For å kunna oppnå' gjer det tydelegare at det var deira motivasjon."
+      },
+      {
+        "text": "Andre vart pinte til døden og ville ikkje ta imot frigjering, for å kunna oppnå ei betre oppstode.",
+        "type": "error",
+        "severity": "major",
+        "explanation": "Første del av verset, «Kvinner fekk dei døde sine att ved oppstode», manglar heilt.",
+        "alternative": false
       }
     ]
   },

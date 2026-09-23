@@ -1,0 +1,71 @@
+{
+  "model": "claude-opus-5-5",
+  "effort": null,
+  "at": "2026-09-23T16:05:33.316Z",
+  "fresh": {
+    "1": "Ein sabbat kom Jesus inn i huset til ein av leiarane blant farisearane for å eta, og dei heldt auge med han.",
+    "2": "Og sjå, der framfor han sat ein mann som hadde vatsott.",
+    "3": "Jesus tok til orde og sa til dei lovkyndige og farisearane: «Er det lov å lækja på sabbaten, eller er det ikkje?»",
+    "4": "Men dei tagde. Då tok han mannen, lækte han og let han gå.",
+    "5": "Og han sa til dei: «Om sonen eller oksen til ein av dykk fell i ein brønn, vil han ikkje straks dra han opp, sjølv på sabbatsdagen?»",
+    "6": "Og dei kunne ikkje svara noko på dette.",
+    "7": "Då han merka korleis gjestene valde seg dei fremste plassane, fortalde han dei ei likning:",
+    "8": "«Når nokon bed deg i bryllaup, så set deg ikkje på den fremste plassen. Det kan vera at han har bede ein som er gjævare enn du,",
+    "9": "og at han som bad dykk båe, kjem og seier til deg: ‘Gje plass til denne mannen.’ Då må du med skam ta den nedste plassen.",
+    "10": "Nei, når du er beden, så gå og set deg nedst, så han som bad deg, kan koma og seia: ‘Ven, flytt deg lenger opp!’ Då får du ære framfor alle som sit til bords med deg.",
+    "11": "For kvar den som opphøgjer seg sjølv, skal bli audmjuka, og den som audmjukar seg sjølv, skal bli opphøgd.»",
+    "12": "Så sa han til mannen som hadde bede han: «Når du held middag eller kveldsmat, så be ikkje vennene dine eller brørne dine eller slektningane dine eller rike naboar. Då bed dei deg kanskje att, og du får det løna.",
+    "13": "Nei, når du held gjestebod, så be fattige, krøplingar, lamme og blinde.",
+    "14": "Då skal du vera sæl, for dei har ikkje noko å gje deg att. Men du skal få det att når dei rettferdige står opp.»",
+    "15": "Ein av dei som sat til bords, høyrde dette og sa til han: «Sæl er den som får eta brød i Guds rike!»",
+    "16": "Jesus sa til han: «Ein mann skulle halda eit stort gjestebod og bad mange.",
+    "17": "Då tida kom, sende han tenaren sin ut for å seia til dei som var bedne: ‘Kom, for no er alt ferdig!’",
+    "18": "Men alle som éin tok til å orsaka seg. Den første sa til han: ‘Eg har kjøpt ein åker og må gå ut og sjå på han. Eg bed deg, ha meg orsaka.’",
+    "19": "Ein annan sa: ‘Eg har kjøpt fem par oksar og skal ut og prøva dei. Eg bed deg, ha meg orsaka.’",
+    "20": "Og ein tredje sa: ‘Eg har nett gifta meg, og difor kan eg ikkje koma.’",
+    "21": "Tenaren kom tilbake og fortalde herren sin dette. Då vart husherren harm og sa til tenaren: ‘Skund deg ut på gatene og smugane i byen og hent inn dei fattige og krøplingane, dei blinde og dei lamme!’",
+    "22": "Tenaren sa: ‘Herre, det du bad om, er gjort, og framleis er det plass.’",
+    "23": "Då sa herren til tenaren: ‘Gå ut på vegane og langs gjerda og nød folk til å koma inn, så huset mitt kan bli fullt.’",
+    "24": "For eg seier dykk: Ingen av dei mennene som var bedne, skal smaka gjestebodet mitt.»",
+    "25": "Store folkemengder følgde med Jesus. Han snudde seg og sa til dei:",
+    "26": "«Om nokon kjem til meg og ikkje hatar far sin og mor si, kona og borna, brørne og systrene, ja, sitt eige liv, kan han ikkje vera læresveinen min.",
+    "27": "Den som ikkje ber krossen sin og følgjer meg, kan ikkje vera læresveinen min.",
+    "28": "For kven av dykk som vil byggja eit tårn, set seg ikkje først ned og reknar ut kostnaden, om han har nok til å gjera det ferdig?",
+    "29": "Elles kan det henda at han legg grunnmuren og ikkje greier å fullføra, og alle som ser det, tek til å spotta han",
+    "30": "og seier: ‘Denne mannen tok til å byggja, men greidde ikkje å fullføra.’",
+    "31": "Eller kva konge som dreg ut i krig mot ein annan konge, set seg ikkje først ned og tenkjer etter om han med ti tusen mann kan møta han som kjem mot han med tjue tusen?",
+    "32": "Kan han ikkje det, sender han menn av stad medan den andre enno er langt borte, og ber om fred.",
+    "33": "Slik er det med kvar og ein av dykk: Den som ikkje seier farvel til alt han eig, kan ikkje vera læresveinen min.",
+    "34": "Salt er godt. Men om saltet mistar smaken, kva skal det då saltast med?",
+    "35": "Det duger verken til jord eller gjødsel; det blir kasta ut. Den som har øyre å høyra med, han høyre!»"
+  },
+  "replace": [
+    {
+      "verseId": 2,
+      "type": "grammar",
+      "reason": "«vatersott» er ikkje ei godkjend nynorskform; den rette forma er «vatsott».",
+      "otherDefensible": false
+    },
+    {
+      "verseId": 30,
+      "type": "grammar",
+      "reason": "«Og seia» står i infinitiv der setninga krev presens «seier», og den store forbokstaven bryt setninga frå førre vers.",
+      "otherDefensible": false
+    },
+    {
+      "verseId": 35,
+      "type": "grammar",
+      "reason": "«Den som har øyre å høyra med, høyr!» koplar eit tredjepersons subjekt med imperativ; det greske «ἀκουέτω» er tredjeperson, som «han høyre» gjev att.",
+      "otherDefensible": true
+    }
+  ],
+  "keep": [
+    {
+      "verseId": 12,
+      "reason": "«vennene» er ikkje nynorsk; det heiter «venene»."
+    }
+  ],
+  "signature": "e22bf2185b51c1af1f4afdbba57d10443e60fc9f823b557099477c0f30a2e00d",
+  "appliedSignature": "e22bf2185b51c1af1f4afdbba57d10443e60fc9f823b557099477c0f30a2e00d",
+  "appliedAt": "2026-09-23T16:05:33.317Z"
+}

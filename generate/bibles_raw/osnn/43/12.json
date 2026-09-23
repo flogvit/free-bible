@@ -39,13 +39,20 @@
     "bookId": 43,
     "chapterId": 12,
     "verseId": 7,
-    "text": "Lat henne vera! Lat henne få gøyma det til gravferdsdagen min.",
+    "text": "Då sa Jesus: «Lat henne vere! Ho skulle ta vare på dette til den dagen eg blir gravlagd.",
     "versions": [
       {
         "text": "Då sa Jesus: «Lat henne vera! Ho har teke vare på salven til gravferdsdagen min.",
         "type": "error",
         "severity": "major",
         "explanation": "Den greske teksten med ἵνα + konjunktiv (τηρήσῃ) uttrykkjer ein føremålssetning: 'for at ho kan ta vare på det til gravferdsdagen min.' Den noverande omsetjinga 'Ho har teke vare på salven' gjev inntrykk av at ho allereie har gjort det, medan grunnteksten peikar framover mot gravferda. Meininga er at ho skal få lov til å halda av salven (eller bruka salven) med tanke på gravferda hans."
+      },
+      {
+        "text": "Lat henne vera! Lat henne få gøyma det til gravferdsdagen min.",
+        "type": "error",
+        "severity": "major",
+        "explanation": "Innleiinga «Då sa Jesus» manglar, så det kjem ikkje fram kven som talar.",
+        "alternative": false
       }
     ]
   },
@@ -247,13 +254,20 @@
     "bookId": 43,
     "chapterId": 12,
     "verseId": 35,
-    "text": "Gå medan de har lyset, så ikkje mørkret skal overmanna dykk. Den som går i mørkret, veit ikkje kvar han er på veg.",
+    "text": "Då sa Jesus til dei: «Endå ei lita stund er lyset hjå dykk. Gå medan de har lyset, så ikkje mørkret skal ta dykk. Den som går i mørkret, veit ikkje kvar han går.",
     "versions": [
       {
         "text": "Jesus sa til dei: «Enno ei lita stund er lyset mellom dykk. Gå medan de har lyset, så ikkje mørkret skal overmanna dykk. Den som går i mørkret, veit ikkje kvar han går.",
         "type": "suggestion",
         "severity": "minor",
         "explanation": "Det greske ποῦ ὑπάγει tyder 'kvar han går' i tydinga 'kvar han er på veg' (retning), ikkje berre 'kvar han går' (stad). Den noverande omsetjinga 'veit ikkje kvar han går' er akseptabel, men 'kvar han er på veg' kan vera noko tydelegare."
+      },
+      {
+        "text": "Gå medan de har lyset, så ikkje mørkret skal overmanna dykk. Den som går i mørkret, veit ikkje kvar han er på veg.",
+        "type": "error",
+        "severity": "major",
+        "explanation": "Opninga «Då sa Jesus til dei: Endå ei lita stund er lyset hjå dykk» manglar heilt.",
+        "alternative": false
       }
     ]
   },
@@ -347,19 +361,35 @@
     "bookId": 43,
     "chapterId": 12,
     "verseId": 48,
-    "text": "Den som avviser meg og ikkje tek imot orda mine, har ein som dømer seg: Ordet eg har tala, det skal døma han på den siste dagen."
+    "text": "Den som vender seg frå meg og ikkje tek imot orda mine, har ein som dømer han: Det ordet eg har tala, det skal døme han på den siste dagen.",
+    "versions": [
+      {
+        "text": "Den som avviser meg og ikkje tek imot orda mine, har ein som dømer seg: Ordet eg har tala, det skal døma han på den siste dagen.",
+        "type": "error",
+        "severity": "major",
+        "explanation": "«har ein som dømer seg» endrar meininga; det skal vera ein som dømer han, ikkje seg sjølv.",
+        "alternative": false
+      }
+    ]
   },
   {
     "bookId": 43,
     "chapterId": 12,
     "verseId": 49,
-    "text": "Far som sende meg, han har gjeve meg påbod om kva eg skal seia og tala.",
+    "text": "For eg har ikkje tala av meg sjølv. Far, som har sendt meg, har sjølv gjeve meg bod om kva eg skal seie og tale.",
     "versions": [
       {
         "text": "For eg har ikkje tala av meg sjølv. Far som sende meg, han har gjeve meg bod om kva eg skal seia og tala.",
         "type": "suggestion",
         "severity": "minor",
         "explanation": "Det greske ἐντολή tyder 'befaling, påbod, bud'. 'Bod' åleine kan vera tvitydig på nynorsk (kan også tyda 'tilbod, melding'). 'Påbod' er tydelegare og meir presist."
+      },
+      {
+        "text": "Far som sende meg, han har gjeve meg påbod om kva eg skal seia og tala.",
+        "type": "error",
+        "severity": "major",
+        "explanation": "Setninga «For eg har ikkje tala av meg sjølv» er utelaten.",
+        "alternative": false
       }
     ]
   },

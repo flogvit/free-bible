@@ -97,7 +97,7 @@
     "bookId": 60,
     "chapterId": 5,
     "verseId": 11,
-    "text": "Han tilhøyrer makta i all æve, amen.",
+    "text": "Hans er makta i all æve. Amen.",
     "versions": [
       {
         "text": "Han tilhøyrer makta i all æve! Amen.",
@@ -108,6 +108,13 @@
         "type": "error",
         "severity": "major",
         "explanation": "MERK: Eg ser at dette er identisk med versjon 1 i historikken. Men den noverande teksten 'Han høyrer makta til' er grammatisk underleg på nynorsk – 'høyrer ... til' vert feil splitta. Gresk αὐτῷ τὸ κράτος betyr 'hans er makta' eller 'makta tilhøyrer han'. Betre: 'Makta høyrer han til i all æve, amen.' der subjektet er 'makta' og ikkje 'han'."
+      },
+      {
+        "text": "Han tilhøyrer makta i all æve, amen.",
+        "type": "error",
+        "severity": "major",
+        "explanation": "«Han tilhøyrer makta» snur meininga, for grunnteksten seier at makta høyrer Gud til, ikkje at Gud høyrer makta til.",
+        "alternative": false
       }
     ]
   },

@@ -1,0 +1,66 @@
+{
+  "model": "claude-opus-5-5",
+  "effort": null,
+  "at": "2026-09-23T17:40:54.086Z",
+  "fresh": {
+    "1": "Men om tider og stunder, sysken, treng de ikkje at nokon skriv til dykk.",
+    "2": "For de veit sjølve godt at Herrens dag kjem som ein tjuv om natta.",
+    "3": "Når folk seier: «Fred og tryggleik», då kjem undergangen brått over dei, slik fødselsrier kjem over ei kvinne som ventar barn, og dei skal ikkje sleppe unna.",
+    "4": "Men de, sysken, er ikkje i mørkret, så den dagen skulle kome over dykk som ein tjuv.",
+    "5": "For alle er de born av lyset og born av dagen. Vi høyrer ikkje natta eller mørkret til.",
+    "6": "Lat oss difor ikkje sove som dei andre, men vake og vere edrue.",
+    "7": "For dei som søv, søv om natta, og dei som drikk seg fulle, er fulle om natta.",
+    "8": "Men vi som høyrer dagen til, skal vere edrue og kle oss i trua og kjærleiken som brynje og i håpet om frelse som hjelm.",
+    "9": "For Gud har ikkje sett oss til å råkast av vreiden, men til å vinne frelse ved vår Herre Jesus Kristus,",
+    "10": "han som døydde for oss, så vi skal leve saman med han, anten vi vakar eller søv.",
+    "11": "Oppmuntre difor kvarandre og byggjer kvarandre opp, slik de òg gjer.",
+    "12": "Vi bed dykk, sysken, om å setje pris på dei som strevar blant dykk, som leier dykk i Herren og formaner dykk.",
+    "13": "Vis dei den største vørnad og kjærleik for det arbeidet dei gjer. Hald fred med kvarandre.",
+    "14": "Vi formaner dykk, sysken: Vis til rette dei som lever uordentleg, trøyst dei motlause, ta dykk av dei veike, og ver tolmodige med alle.",
+    "15": "Sjå til at ingen gjengjeld vondt med vondt, men søk alltid det gode, både mot kvarandre og mot alle.",
+    "16": "Ver alltid glade,",
+    "17": "be utan stans,",
+    "18": "takk Gud i alle ting. For dette er Guds vilje med dykk i Kristus Jesus.",
+    "19": "Slokk ikkje Anden,",
+    "20": "forakt ikkje profetiske ord.",
+    "21": "Men prøv alt, og hald fast på det gode.",
+    "22": "Hald dykk borte frå all slags vondt.",
+    "23": "Må han, fredens Gud, helliggjere dykk heilt og fullt, og må heile dykkar ånd, sjel og kropp haldast ulastande til vår Herre Jesu Kristi komme.",
+    "24": "Trufast er han som kallar dykk, og han skal òg gjere det.",
+    "25": "Sysken, be for oss.",
+    "26": "Hels alle sysken med eit heilagt kyss.",
+    "27": "Eg tek dykk i eid ved Herren på at dette brevet skal lesast opp for alle sysken.",
+    "28": "Vår Herre Jesu Kristi nåde vere med dykk."
+  },
+  "replace": [
+    {
+      "verseId": 4,
+      "type": "error",
+      "reason": "«så den dagen skal overraska dykk» gjer føremålet til ei fylgje og seier dermed at dagen skal overraska dei, stikk motsett av meininga i grunnteksten.",
+      "otherDefensible": false
+    },
+    {
+      "verseId": 26,
+      "type": "grammar",
+      "reason": "«Helsa» er infinitiv; imperativ av «helse» er «hels».",
+      "otherDefensible": false
+    }
+  ],
+  "keep": [
+    {
+      "verseId": 11,
+      "reason": "«Oppmuntre … og byggjer» blandar imperativ og presens; det må heite «byggj» eller omformulerast."
+    },
+    {
+      "verseId": 18,
+      "reason": "Setninga «takk Gud i alle ting» byrjar med liten bokstav, jamvel om førre vers sluttar med punktum."
+    },
+    {
+      "verseId": 23,
+      "reason": "«helliggjere» er bokmål; på nynorsk heiter det «heilaggjere» eller «helga»."
+    }
+  ],
+  "signature": "b77bf935fbb87b86ca9e549ce5e44c9397b7fc8c10a6bfed23f4d8ff0d3ccbbf",
+  "appliedSignature": "9f7ab52a5239d23f7243f8334ee1d1205f6adcb888dc4d8764d0f273457719bc",
+  "appliedAt": "2026-09-23T17:40:54.090Z"
+}

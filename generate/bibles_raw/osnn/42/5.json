@@ -295,6 +295,15 @@
     "bookId": 42,
     "chapterId": 5,
     "verseId": 39,
-    "text": "Og ingen som har drukke gammal vin, vil ha ny. Han seier: 'Den gamle er god.'»"
+    "text": "Og ingen som har drukke gammal vin, vil ha ny. For han seier: ‘Den gamle er god.’»",
+    "versions": [
+      {
+        "text": "Og ingen som har drukke gammal vin, vil ha ny. Han seier: 'Den gamle er god.'»",
+        "type": "error",
+        "severity": "major",
+        "explanation": "Grunngjevinga «for» (gr. γάρ) er utelaten i «Han seier».",
+        "alternative": true
+      }
+    ]
   }
 ]

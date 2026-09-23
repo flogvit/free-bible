@@ -63,7 +63,7 @@
     "bookId": 43,
     "chapterId": 15,
     "verseId": 8,
-    "text": "Ved dette er Far min herleggjord: at de ber mykje frukt og viser at de er læresveinane mine.",
+    "text": "Ved dette blir Far min herleggjord: at de ber mykje frukt og blir læresveinane mine.",
     "versions": [
       {
         "text": "Ved dette blir Far min herleggjord, at de ber mykje frukt og blir læresveinane mine.",
@@ -74,6 +74,13 @@
         "type": "suggestion",
         "severity": "minor",
         "explanation": "'viser dykk å vera' er litt uidiomatisk på nynorsk. 'viser at de er' er meir naturleg og formidlar same meining av γένησθε i tydinga 'visa seg å vera'."
+      },
+      {
+        "text": "Ved dette er Far min herleggjord: at de ber mykje frukt og viser at de er læresveinane mine.",
+        "type": "error",
+        "severity": "major",
+        "explanation": "«viser at de er læresveinane mine» endrar meininga i originalen, som seier at dei skal «bli» læresveinar.",
+        "alternative": true
       }
     ]
   },

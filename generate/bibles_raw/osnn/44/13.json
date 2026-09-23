@@ -125,13 +125,20 @@
     "bookId": 44,
     "chapterId": 13,
     "verseId": 17,
-    "text": "Gud for dette folket Israel valde ut fedrane våre.",
+    "text": "Guden til dette folket Israel valde ut fedrane våre. Han gjorde folket stort medan dei budde som framande i Egypt, og med løfta arm førte han dei ut derifrå.",
     "versions": [
       {
         "text": "Gud åt dette folket Israel valde ut fedrane våre. Han gjorde folket stort medan dei var innflyttarar i Egypt, og med lyft arm førte han dei ut derifrå.",
         "type": "grammar",
         "severity": "minor",
         "explanation": "'Gud åt dette folket' er uheldig på nynorsk fordi 'åt' kan lesast som fortidsform av 'eta'. Preposisjonen 'for' er meir eintydig og naturleg."
+      },
+      {
+        "text": "Gud for dette folket Israel valde ut fedrane våre.",
+        "type": "error",
+        "severity": "major",
+        "explanation": "Omsetjinga stoppar etter «valde ut fedrane våre» og manglar at Gud gjorde folket stort i Egypt og førte dei ut med løfta arm.",
+        "alternative": false
       }
     ]
   },
@@ -371,13 +378,20 @@
     "bookId": 44,
     "chapterId": 13,
     "verseId": 48,
-    "text": "Og alle dei som var bestemte til evig liv, kom til tru.",
+    "text": "Då heidningane høyrde dette, vart dei glade og lova Herrens ord. Og alle som var bestemde til evig liv, kom til tru.",
     "versions": [
       {
         "text": "Då heidningane høyrde dette, vart dei glade og prisa Herrens ord. Og alle dei som var utvalde til evig liv, kom til tru.",
         "type": "theological",
         "severity": "minor",
         "explanation": "Gresk τεταγμένοι (frå τάσσω) betyr 'ordna/skikka/bestemte'. 'Utvalde' (ἐκλεκτοί) er eit anna gresk omgrep. 'Bestemte' er meir nøytralt og nærmare grunnordet, og overlet den teologiske tolkinga meir open."
+      },
+      {
+        "text": "Og alle dei som var bestemte til evig liv, kom til tru.",
+        "type": "error",
+        "severity": "major",
+        "explanation": "Omsetjinga manglar heile første delen av verset, at heidningane høyrde dette, vart glade og lova Herrens ord; ho byrjar berre med «Og alle dei som var bestemte til evig liv».",
+        "alternative": false
       }
     ]
   },

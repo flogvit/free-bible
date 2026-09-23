@@ -1,0 +1,54 @@
+{
+  "model": "claude-opus-5-5",
+  "effort": null,
+  "at": "2026-09-23T15:49:56.112Z",
+  "fresh": {
+    "1": "Då sabbaten var over, kjøpte Maria Magdalena, Maria, mor til Jakob, og Salome velluktande oljar, så dei kunne gå og salve han.",
+    "2": "Tidleg om morgonen den første dagen i veka, då sola gjekk opp, kom dei til grava.",
+    "3": "Dei sa til kvarandre: «Kven skal velte steinen frå inngangen til grava for oss?»",
+    "4": "Men då dei såg opp, såg dei at steinen var velta bort, og han var svært stor.",
+    "5": "Dei gjekk inn i grava og såg ein ung mann som sat på høgre sida, kledd i ei kvit kjortel, og dei vart forskrekka.",
+    "6": "Men han sa til dei: «Ver ikkje forskrekka! De leitar etter Jesus frå Nasaret, han som vart krossfest. Han er stått opp, han er ikkje her. Sjå, der er staden dei la han.",
+    "7": "Men gå no og sei til læresveinane hans og til Peter: Han går føre dykk til Galilea. Der skal de sjå han, slik han sa til dykk.»",
+    "8": "Då gjekk dei ut og flydde frå grava, for dei skalv og var ute av seg. Og dei sa ikkje noko til nokon, for dei var redde. [Men alt dei hadde fått beskjed om, fortalde dei kort til Peter og dei som var med han. Etter dette sende Jesus sjølv gjennom dei den heilage og uforgjengelege bodskapen om den evige frelsa ut frå aust til vest. Amen.]",
+    "9": "[Då Jesus hadde stått opp tidleg om morgonen den første dagen i veka, synte han seg først for Maria Magdalena, som han hadde drive sju demonar ut av.",
+    "10": "Ho gjekk og fortalde det til dei som hadde vore saman med han, og som no sørgde og gret.",
+    "11": "Men då dei høyrde at han levde og at ho hadde sett han, trudde dei det ikkje.",
+    "12": "Etter dette synte han seg i ein annan skapnad for to av dei medan dei var på veg ut på landet.",
+    "13": "Dei gjekk tilbake og fortalde det til dei andre, men heller ikkje dei vart trudde.",
+    "14": "Seinare synte han seg for dei elleve medan dei sat til bords. Han refsa dei for vantrua og hjartehardleiken deira, fordi dei ikkje hadde trutt dei som hadde sett han etter at han var stått opp.",
+    "15": "Og han sa til dei: «Gå ut i heile verda og forkynn evangeliet for heile skapninga.",
+    "16": "Den som trur og blir døypt, skal bli frelst, men den som ikkje trur, skal bli fordømd.",
+    "17": "Og desse teikna skal følgje dei som trur: I mitt namn skal dei drive ut demonar, dei skal tale med nye tunger,",
+    "18": "dei skal ta slangar i hendene, og om dei drikk noko giftig, skal det ikkje skade dei. Dei skal leggje hendene på sjuke, og dei skal bli friske.»",
+    "19": "Då Herren Jesus hadde tala til dei, vart han teken opp til himmelen og sette seg ved Guds høgre hand.",
+    "20": "Men dei gjekk ut og forkynte overalt, og Herren verka med dei og stadfeste ordet gjennom teikna som følgde med.]"
+  },
+  "replace": [
+    {
+      "verseId": 8,
+      "type": "error",
+      "reason": "Den korte avslutninga som står i klammer i grunnteksten («Men alt dei hadde fått beskjed om …»), er utelaten.",
+      "otherDefensible": false
+    },
+    {
+      "verseId": 12,
+      "type": "grammar",
+      "reason": "«Skapnad» er hankjønnsord, så «ei anna skapnad» skal vere «ein annan skapnad».",
+      "otherDefensible": false
+    }
+  ],
+  "keep": [
+    {
+      "verseId": 4,
+      "reason": "Grunngjevinga i originalen («for han var svært stor») er borte når ho blir gjord om til ei sideordna opplysning med «og han var svært stor»."
+    },
+    {
+      "verseId": 5,
+      "reason": "«Kjortel» er hankjønnsord på nynorsk, så «ei kvit kjortel» skal vere «ein kvit kjortel»."
+    }
+  ],
+  "signature": "c92df4196e7c0c7c32a631e710a5358bb48da7eb188e6e298c18547810c91a7a",
+  "appliedSignature": "7347c78177945a7b0e322aeb58536d18da4f88b1418bf98111e519a44820113c",
+  "appliedAt": "2026-09-23T15:49:56.113Z"
+}

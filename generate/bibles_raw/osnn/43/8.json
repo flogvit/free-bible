@@ -33,7 +33,7 @@
     "bookId": 43,
     "chapterId": 8,
     "verseId": 6,
-    "text": "Dette sa dei for å setja han på prøve, så dei kunne ha noko å klaga han for. Men Jesus bøygde seg ned og skreiv med fingeren på jorda.",
+    "text": "Dette sa dei for å prøve han, så dei kunne få noko å skulde han for. Men Jesus bøygde seg ned og skreiv med fingeren på jorda, som om han ikkje høyrde dei.",
     "versions": [
       {
         "text": "Dette sa dei for å setja han på prøve, så dei kunne ha noko å klaga han for. Men Jesus bøygde seg ned og skreiv med fingeren på jorda, utan å lata som han høyrde dei.",
@@ -44,6 +44,13 @@
         "type": "error",
         "severity": "major",
         "explanation": "Den noverande omsetjinga manglar den første delen av verset: 'τοῦτο δὲ ἔλεγον πειράζοντες αὐτόν, ἵνα ἔχωσιν κατηγορεῖν αὐτοῦ'. Det er rett at 'μὴ προσποιούμενος' er utelaten (tekstkritisk grunn), men den første setninga om kvifor dei sa dette bør vera med. Merk at den tidlegare versjonen hadde denne setninga med, men den noverande versjonen har mista ho i revisjonen. Sidan dette er ein vesentleg del av teksten, bør ho leggjast til att, men frasen om 'μὴ προσποιούμενος' er framleis utelaten i samsvar med intensjonen bak revisjonen."
+      },
+      {
+        "text": "Dette sa dei for å setja han på prøve, så dei kunne ha noko å klaga han for. Men Jesus bøygde seg ned og skreiv med fingeren på jorda.",
+        "type": "error",
+        "severity": "major",
+        "explanation": "Omsetjinga manglar «μὴ προσποιούμενος» – at Jesus lét som han ikkje høyrde dei.",
+        "alternative": false
       }
     ]
   },
@@ -63,11 +70,18 @@
     "bookId": 43,
     "chapterId": 8,
     "verseId": 9,
-    "text": "Då dei høyrde dette, gjekk dei bort, ein etter ein, dei eldste først. Jesus vart att åleine, og kvinna stod der midt i forsamlinga.",
+    "text": "Då dei høyrde dette, og samvitet dømde dei, gjekk dei ut éin etter éin, dei eldste først. Til slutt var Jesus åleine att, og kvinna stod der framleis midt imellom.",
     "versions": [
       {
         "text": "Då dei høyrde dette og vart refsa av samvitet sitt, gjekk dei bort, ein etter ein, dei eldste først. Jesus vart att åleine, og kvinna stod der midt i forsamlinga.",
         "explanation": "Frasen 'καὶ ὑπὸ τῆς συνειδήσεως ἐλεγχόμενοι' (refsa av samvitet) er eit seint tillegg som ikkje finst i dei beste handskriftene av denne perikopen. Mange kritiske utgåver utelet denne frasen."
+      },
+      {
+        "text": "Då dei høyrde dette, gjekk dei bort, ein etter ein, dei eldste først. Jesus vart att åleine, og kvinna stod der midt i forsamlinga.",
+        "type": "error",
+        "severity": "major",
+        "explanation": "Omsetjinga har utelate at samvitet dømde dei («ὑπὸ τῆς συνειδήσεως ἐλεγχόμενοι»).",
+        "alternative": false
       }
     ]
   },
@@ -75,13 +89,20 @@
     "bookId": 43,
     "chapterId": 8,
     "verseId": 10,
-    "text": "Jesus rette seg opp og såg ingen andre enn kvinna. Han sa til henne: «Kvinne, kvar er klagarane dine? Har ingen dømt deg?»",
+    "text": "Jesus retta seg opp, og då han ikkje såg nokon anna enn kvinna, sa han til henne: «Kvar er dei som klaga deg? Har ingen dømt deg?»",
     "versions": [
       {
         "text": "Jesus rette seg opp og såg ingen andre enn kvinna. Han sa til henne: «Kvinne, kvar er dei som klaga deg? Har ingen dømt deg?»",
         "type": "suggestion",
         "severity": "minor",
         "explanation": "Det greske 'οἱ κατήγοροί σου' tyder 'klagarane dine' (substantiv), ikkje 'dei som klaga deg' (relativsetning). 'Klagarane dine' er meir presist og naturleg nynorsk."
+      },
+      {
+        "text": "Jesus rette seg opp og såg ingen andre enn kvinna. Han sa til henne: «Kvinne, kvar er klagarane dine? Har ingen dømt deg?»",
+        "type": "error",
+        "severity": "major",
+        "explanation": "Tiltalen «Kvinne» står ikkje i grunnteksten, og «rette seg opp» er feil preteritumsform for «retta».",
+        "alternative": false
       }
     ]
   },

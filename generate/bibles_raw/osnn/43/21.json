@@ -157,13 +157,20 @@
     "bookId": 43,
     "chapterId": 21,
     "verseId": 19,
-    "text": "Dette sa han for å peika på kva slags død Peter skulle herleggjera Gud med.",
+    "text": "Dette sa han for å syne kva slags død Peter skulle ære Gud med. Og då han hadde sagt dette, sa han til han: «Følg meg!»",
     "versions": [
       {
         "text": "Dette sa han for å visa kva slags død Peter skulle æra Gud med. Og då han hadde sagt dette, sa han til han: «Følg meg!»",
         "type": "suggestion",
         "severity": "minor",
         "explanation": "δοξάσει (frå δοξάζω) tyder meir presist 'herleggjera' enn 'æra'. Det er eit sterkt teologisk omgrep i Johannes-evangeliet som handlar om å gje Gud ære/herlegdom (doxa), ikkje berre 'æra'."
+      },
+      {
+        "text": "Dette sa han for å peika på kva slags død Peter skulle herleggjera Gud med.",
+        "type": "error",
+        "severity": "major",
+        "explanation": "Siste delen av verset, «Og då han hadde sagt dette, sa han til han: «Følg meg!»», manglar.",
+        "alternative": false
       }
     ]
   },
@@ -171,13 +178,20 @@
     "bookId": 43,
     "chapterId": 21,
     "verseId": 20,
-    "text": "Det var han som hadde lent seg inn til brystet hans under måltidet og spurt: «Herre, kven er det som skal svika deg?»",
+    "text": "Peter snudde seg og såg at den læresveinen som Jesus elska, kom etter, han som ved måltidet hadde lent seg mot brystet hans og spurt: «Herre, kven er det som skal forråde deg?»",
     "versions": [
       {
         "text": "Peter snudde seg og såg at den læresveinen som Jesus hadde kjær, følgde etter. Det var han som hadde lent seg mot brystet til Jesus under måltidet og spurt: «Herre, kven er det som skal svika deg?»",
         "type": "grammar",
         "severity": "minor",
         "explanation": "ἐπὶ τὸ στῆθος αὐτοῦ tyder 'inn til/mot brystet hans'. 'Brystet til Jesus' er ei unødvendig presisering; pronomenet 'hans' er tilstrekkeleg og meir naturleg nynorsk her, sidan konteksten er klar."
+      },
+      {
+        "text": "Det var han som hadde lent seg inn til brystet hans under måltidet og spurt: «Herre, kven er det som skal svika deg?»",
+        "type": "error",
+        "severity": "major",
+        "explanation": "Første delen av verset manglar, at Peter snudde seg og såg den læresveinen Jesus elska kome etter, så «Det var han» heng i lufta.",
+        "alternative": false
       }
     ]
   },

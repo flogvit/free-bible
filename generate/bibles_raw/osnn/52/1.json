@@ -3,11 +3,18 @@
     "bookId": 52,
     "chapterId": 1,
     "verseId": 1,
-    "text": "Paulus, Silvanus og Timoteus helsar forsamlinga av tessalonikarane, i Gud, vår Far, og Herren Jesus Kristus: Nåde og fred vere med dykk.",
+    "text": "Paulus, Silvanus og Timoteus til kyrkjelyden i Tessalonika, som er i Gud Far og Herren Jesus Kristus: Nåde og fred vere med dykk.",
     "versions": [
       {
         "text": "Paulus, Silvanus og Timoteus helsar forsamlinga i Tessalonika, som er i Gud, vår Far, og Herren Jesus Kristus: Nåde og fred vere med dykk.",
         "explanation": "Det greske 'Θεσσαλονικέων' er genitiv fleirtal av folkenamnet (tessalonikarane), ikkje stadnamnet. Også 'ἐν θεῷ' tyder 'i Gud', ikkje 'som er i Gud' - relativsetninga legg til noko som ikkje står i grunnteksten."
+      },
+      {
+        "text": "Paulus, Silvanus og Timoteus helsar forsamlinga av tessalonikarane, i Gud, vår Far, og Herren Jesus Kristus: Nåde og fred vere med dykk.",
+        "type": "error",
+        "severity": "major",
+        "explanation": "«vår Far» legg til «vår», som ikkje står i grunnteksten («Gud Far»).",
+        "alternative": true
       }
     ]
   },
@@ -33,7 +40,7 @@
     "bookId": 52,
     "chapterId": 1,
     "verseId": 3,
-    "text": "vona",
+    "text": "minnest vi for Gud, vår Far, korleis trua dykkar er verksam, kjærleiken dykkar strevar, og vona dykkar på vår Herre Jesus Kristus held ut.",
     "versions": [
       {
         "text": "Vi kjem i hug truverket dykkar, kjærleiksslitet og det tolmodige håpet de har til vår Herre Jesus Kristus, framfor Gud, vår Far.",
@@ -46,6 +53,13 @@
         "type": "grammar",
         "severity": "minor",
         "explanation": "'Håp' er bokmålsform. På nynorsk bør ein nytte 'von' eller 'vona'."
+      },
+      {
+        "text": "vona",
+        "type": "error",
+        "severity": "major",
+        "explanation": "Omsetjinga har berre ordet «vona» og manglar nesten heile verset: at dei minnest trua som er verksam, kjærleiken som strevar og vona som held ut, framfor Gud, vår Far.",
+        "alternative": false
       }
     ]
   },

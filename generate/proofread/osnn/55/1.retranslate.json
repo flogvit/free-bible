@@ -1,0 +1,48 @@
+{
+  "model": "claude-opus-5-5",
+  "effort": null,
+  "at": "2026-09-23T17:45:42.243Z",
+  "fresh": {
+    "1": "Paulus, apostel for Kristus Jesus etter Guds vilje, for å forkynna lovnaden om livet i Kristus Jesus,",
+    "2": "til Timoteus, mitt kjære barn: Nåde, miskunn og fred frå Gud Far og Kristus Jesus, vår Herre.",
+    "3": "Eg takkar Gud, som eg tener med rein samvit slik forfedrane mine gjorde, når eg utan opphald minnest deg i bønene mine natt og dag.",
+    "4": "Eg minnest tårene dine og lengtar etter å sjå deg, så eg kan bli fylt av glede.",
+    "5": "For eg kjem i hug den ekte trua di, den som først budde i bestemor di, Lois, og i mor di, Evnike, og som eg er viss på òg bur i deg.",
+    "6": "Difor minner eg deg om å blåsa liv i den nådegåva frå Gud som du fekk då eg la hendene mine på deg.",
+    "7": "For Gud gav oss ikkje ei ånd som gjer oss motlause, men ei ånd som gjev kraft, kjærleik og sjølvtukt.",
+    "8": "Skjems difor ikkje over å vitna om Herren vår, og skjems ikkje over meg, som er fange for hans skuld. Men ta din del av lidingane for evangeliet, i krafta frå Gud.",
+    "9": "Han har frelst oss og kalla oss med eit heilagt kall, ikkje på grunn av våre gjerningar, men etter si eiga rådgjerd og nåde. Denne nåden vart gjeven oss i Kristus Jesus før evige tider,",
+    "10": "men no er han openberra ved at vår frelsar Kristus Jesus har stige fram. Han har gjort ende på døden og ført liv og uforgjengelegheit fram i lyset gjennom evangeliet.",
+    "11": "For dette evangeliet er eg sett til forkynnar, apostel og lærar.",
+    "12": "Det er òg grunnen til at eg lid slik som eg gjer. Men eg skjemmest ikkje, for eg veit kven eg har sett mi lit til, og eg er viss på at han har makt til å ta vare på det han har fått i hende av meg, fram til den dagen.",
+    "13": "Hald deg til dei sunne orda du høyrde frå meg, som eit mønster, i den trua og kjærleiken som er i Kristus Jesus.",
+    "14": "Ta vare på den gode skatten som er betrudd deg, ved Den heilage ande som bur i oss.",
+    "15": "Du veit at alle i Asia har vendt seg bort frå meg, mellom dei Fygelos og Hermogenes.",
+    "16": "Må Herren visa miskunn mot huset til Onesiforos! For han kvikka meg ofte opp og skjemdest ikkje over lenkjene mine.",
+    "17": "Då han kom til Roma, leita han ivrig etter meg til han fann meg.",
+    "18": "Må Herren gje at han finn miskunn hos Herren på den dagen! Og kor mykje han tente i Efesos, veit du betre enn nokon."
+  },
+  "replace": [
+    {
+      "verseId": 4,
+      "type": "error",
+      "reason": "«ønskjer eg å bli fylt av glede» knyter gleda til å hugse tårene, men i grunnteksten er gleda målet med å få sjå han igjen.",
+      "otherDefensible": false
+    },
+    {
+      "verseId": 18,
+      "type": "error",
+      "reason": "«kjenner du godt til» fjernar komparativen i grunnteksten, som seier at Timoteus veit dette betre.",
+      "otherDefensible": true
+    }
+  ],
+  "keep": [
+    {
+      "verseId": 3,
+      "reason": "«Samvit» er inkjekjønn, så «rein samvit» skal vere «reint samvit»."
+    }
+  ],
+  "signature": "e6a6470a123f7a9d7bff9314134a48aa46527b01a998b425d34ebfabadfe9cbe",
+  "appliedSignature": "691feefa8fe92c5a8ab44cbf38daa1a93df88288116fa5f0c4ea2d7e492b143b",
+  "appliedAt": "2026-09-23T17:45:42.244Z"
+}

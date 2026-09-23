@@ -85,13 +85,20 @@
     "bookId": 44,
     "chapterId": 18,
     "verseId": 12,
-    "text": "Medan Gallio var prokonsul i Akaia, gjekk jødane samstundes mot Paulus og førte han fram for domstolen.",
+    "text": "Men då Gallio var prokonsul i Akaia, gjekk jødane samla til åtak på Paulus og førte han fram for domstolen.",
     "versions": [
       {
         "text": "Medan Gallio var landshøvding i Akaia, gjekk jødane saman mot Paulus og førte han fram for domstolen.",
         "type": "suggestion",
         "severity": "minor",
         "explanation": "Det greske ἀνθυπάτου betyr 'prokonsul', ikkje 'landshøvding'. Akaia var ein senatsprovinse, og leiaren der hadde tittelen prokonsul. 'Landshøvding' er upresist og kan forvekslast med ἡγεμών. Dessutan gjengjev ὁμοθυμαδόν ('samstemmig/samla') noko meir enn berre 'saman'."
+      },
+      {
+        "text": "Medan Gallio var prokonsul i Akaia, gjekk jødane samstundes mot Paulus og førte han fram for domstolen.",
+        "type": "error",
+        "severity": "major",
+        "explanation": "«samstundes» tyder 'på same tid', medan grunnteksten seier at jødane gjekk samla, einstemmig, mot Paulus.",
+        "alternative": false
       }
     ]
   },

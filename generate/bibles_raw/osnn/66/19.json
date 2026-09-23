@@ -127,7 +127,7 @@
     "bookId": 66,
     "chapterId": 19,
     "verseId": 15,
-    "text": "og han trør vinpressa med vinen av vreiden og harmen til Gud, Den allmektige.",
+    "text": "Ut av munnen hans gjekk eit kvast sverd som han skal slå folkeslaga med. Han skal styre dei med jernstav, og han tråkkar vinpressa med vinen av Guds, Den allmektiges, brennande vreide.",
     "versions": [
       {
         "text": "Ut frå munnen hans gjekk det eit skarpt sverd, så han med det skulle slå folka. Han skal styra dei med jernstav, og han trør vinpressa med vreidedomen til Gud, Den allmektige.",
@@ -138,6 +138,13 @@
         "type": "suggestion",
         "severity": "minor",
         "explanation": "Gresk genitiv-kjeda τοῦ οἴνου τοῦ θυμοῦ τῆς ὀργῆς har rekkjefølgja vin > harme (θυμός) > vreide (ὀργή). Noverande versjon har 'harme og vreide' som ikkje tydeleg er knytt til vinen i ein genitiv-relasjon. 'Vinen av vreiden og harmen til Gud' gjev ein betre genitiv-struktur. (Ulikt tidlegare versjon 'vreidedomen'.)"
+      },
+      {
+        "text": "og han trør vinpressa med vinen av vreiden og harmen til Gud, Den allmektige.",
+        "type": "error",
+        "severity": "major",
+        "explanation": "Omsetjinga manglar heile første delen av verset, både det kvasse sverdet frå munnen og styringa med jernstav.",
+        "alternative": false
       }
     ]
   },

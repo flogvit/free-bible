@@ -203,13 +203,20 @@
     "bookId": 58,
     "chapterId": 9,
     "verseId": 28,
-    "text": "Og han skal syna seg andre gongen, utan synd, til frelse for dei som ventar på han.",
+    "text": "slik vart også Kristus ofra éin gong for å bera syndene til mange. Andre gongen skal han visa seg, ikkje for synda si skuld, men til frelse for dei som ventar på han.",
     "versions": [
       {
         "text": "slik vart også Kristus ofra éin gong for å bera syndene til mange. Og han skal syna seg andre gongen, ikkje for synda si skuld, men til frelse for dei som ventar på han.",
         "type": "suggestion",
         "severity": "minor",
         "explanation": "Gresk χωρὶς ἁμαρτίας betyr 'utan synd' – det er eit kort og presist uttrykk. Omsetjinga 'ikkje for synda si skuld' er ei tolking/parafrase som kan misleia. Poenget er at Kristus ved andre kome ikkje har noko med synd å gjera (den er allereie sona), ikkje berre at han kjem av ein annan grunn."
+      },
+      {
+        "text": "Og han skal syna seg andre gongen, utan synd, til frelse for dei som ventar på han.",
+        "type": "error",
+        "severity": "major",
+        "explanation": "Omsetjinga «Og han skal syna seg andre gongen» manglar heile første leddet i verset, at Kristus vart ofra éin gong for å bera syndene til mange.",
+        "alternative": false
       }
     ]
   }

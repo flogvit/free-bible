@@ -21,13 +21,20 @@
     "bookId": 52,
     "chapterId": 5,
     "verseId": 4,
-    "text": "Men de, søsken, er ikkje i mørkret, så den dagen skal overraska dykk som ein tjuv.",
+    "text": "Men de, sysken, er ikkje i mørkret, så den dagen skulle kome over dykk som ein tjuv.",
     "versions": [
       {
         "text": "Men de, søsken, er ikkje i mørkret, så den dagen skulle overraska dykk som ein tjuv.",
         "type": "suggestion",
         "severity": "minor",
         "explanation": "The Greek ἵνα + subjunctive expresses purpose/result. 'Skulle' (past tense modal) is less natural here than 'skal' which better conveys the intended sense in modern nynorsk: 'so that the day will not overtake you'. The negation is implied from the context (οὐκ ἐστὲ ἐν σκότει means they are NOT in darkness, so the day will NOT catch them like a thief). However, looking again, the current phrasing does work as a purpose clause. The issue is minor."
+      },
+      {
+        "text": "Men de, søsken, er ikkje i mørkret, så den dagen skal overraska dykk som ein tjuv.",
+        "type": "error",
+        "severity": "major",
+        "explanation": "«så den dagen skal overraska dykk» gjer føremålet til ei fylgje og seier dermed at dagen skal overraska dei, stikk motsett av meininga i grunnteksten.",
+        "alternative": false
       }
     ]
   },

@@ -1,0 +1,74 @@
+{
+  "model": "claude-opus-5-5",
+  "effort": null,
+  "at": "2026-09-23T16:11:45.526Z",
+  "fresh": {
+    "1": "Jesus såg opp og fekk sjå dei rike som la gåvene sine i tempelkista.",
+    "2": "Han såg òg ei fattig enkje som la to små koparmyntar i ho.",
+    "3": "Då sa han: «Sanneleg, eg seier dykk: Denne fattige enkja har gitt meir enn alle dei andre.",
+    "4": "For alle desse gav av overfloda si, men ho gav av sin naud alt ho hadde å leve av.»",
+    "5": "Nokre talte om tempelet, korleis det var prydd med vakre steinar og vigsla gåver. Då sa han:",
+    "6": "«Det kjem dagar då ikkje ein stein av alt det de ser her, skal bli liggjande att på ein annan; alt skal rivast ned.»",
+    "7": "Dei spurde han: «Meister, når skal dette skje? Og kva er teiknet på at det er i ferd med å hende?»",
+    "8": "Han svara: «Sjå til at de ikkje blir førte vill! For mange skal kome i mitt namn og seie: ‘Eg er det’, og: ‘Tida er nær.’ Følg dei ikkje!",
+    "9": "Når de høyrer om krigar og oppløp, så bli ikkje skræmde. For dette må skje først, men enden kjem ikkje med det same.»",
+    "10": "Så sa han til dei: «Folk skal reise seg mot folk og rike mot rike.",
+    "11": "Det skal kome store jordskjelv, og hungersnaud og pest den eine staden etter den andre. Det skal hende skremmande ting og vise seg store teikn frå himmelen.",
+    "12": "Men før alt dette skal dei leggje hand på dykk og forfølgje dykk. Dei skal overgi dykk til synagogane og kaste dykk i fengsel, og de skal førast fram for kongar og landshovdingar for mitt namn skuld.",
+    "13": "Slik skal de få høve til å vitne.",
+    "14": "Set dykk difor fore i hjartet at de ikkje skal førebu på førehand korleis de skal forsvare dykk.",
+    "15": "For eg skal gi dykk ord og visdom som ingen av motstandarane dykkar skal kunne stå imot eller seie imot.",
+    "16": "De skal bli sviktne og overgitte til og med av foreldre og sysken, slektningar og vener, og nokre av dykk skal dei drepe.",
+    "17": "De skal bli hata av alle for mitt namn skuld.",
+    "18": "Men ikkje eit hår på hovudet dykkar skal gå tapt.",
+    "19": "Ved å halde ut skal de vinne livet.",
+    "20": "Når de ser Jerusalem omringa av hærar, då skal de vite at øydelegginga hennar er nær.",
+    "21": "Då må dei som er i Judea, flykte til fjells, dei som er inne i byen, må dra ut, og dei som er ute på landet, må ikkje gå inn i han.",
+    "22": "For dette er straffedagane, då alt som står skrive, skal oppfyllast.",
+    "23": "Ve dei som er med barn, og dei som ammar i dei dagane! For det skal kome stor naud over landet og vreide over dette folket.",
+    "24": "Dei skal falle for sverdet og førast bort som fangar til alle folkeslag, og Jerusalem skal bli trakka ned av heidningane til tidene deira er fullførte.",
+    "25": "Det skal vise seg teikn i sol og måne og stjerner, og på jorda skal folka vere i angst og rådville over bruset frå havet og brenningane.",
+    "26": "Menneske skal miste motet av redsle og av uro for det som skal kome over verda. For himmelkreftene skal bli rysta.",
+    "27": "Og då skal dei sjå Menneskesonen kome i ei sky med makt og stor herlegdom.",
+    "28": "Når dette tek til å skje, så rett dykk opp og løft hovudet, for då er utløysinga dykkar nær.»",
+    "29": "Og han fortalde dei ein likning: «Sjå på fikentreet og alle dei andre trea.",
+    "30": "Når de ser at dei alt har sprunge ut, då veit de av dykk sjølve at sommaren er nær.",
+    "31": "Slik skal òg de vite at Guds rike er nær, når de ser dette hende.",
+    "32": "Sanneleg, eg seier dykk: Denne slekta skal ikkje forgå før alt dette har hendt.",
+    "33": "Himmel og jord skal forgå, men orda mine skal aldri forgå.",
+    "34": "Ta dykk i vare, så hjarta dykkar ikkje blir tyngde av rus og drikk og bekymringar for livet her, og den dagen kjem brått over dykk",
+    "35": "som ei snare. For han skal kome over alle som bur på heile jorda.",
+    "36": "Ver vakne og be til kvar tid, så de kan få kraft til å sleppe unna alt dette som skal hende, og stå fram for Menneskesonen.»",
+    "37": "Om dagane underviste Jesus i tempelet, men om nettene gjekk han ut og var på det fjellet som blir kalla Oljeberget.",
+    "38": "Og heile folket kom tidleg om morgonen til han i tempelet for å høyre på han."
+  },
+  "replace": [
+    {
+      "verseId": 5,
+      "type": "grammar",
+      "reason": "Perfektum partisipp av «pryde» er «prydd», ikkje «pryda».",
+      "otherDefensible": false
+    },
+    {
+      "verseId": 20,
+      "type": "error",
+      "reason": "«hennar» er utelate, så det kjem ikkje fram at det er Jerusalems øydelegging som er nær.",
+      "otherDefensible": true
+    },
+    {
+      "verseId": 34,
+      "type": "error",
+      "reason": "«så den dagen kjem brått over dykk» gjer det at dagen kjem brått til ei følgje av det som går føre, medan grunnteksten åtvarar mot at den dagen skal kome brått over dykk.",
+      "otherDefensible": false
+    }
+  ],
+  "keep": [
+    {
+      "verseId": 29,
+      "reason": "«likning» er hokjønnsord, så det skal vere «ei likning», ikkje «ein likning»."
+    }
+  ],
+  "signature": "d8b3012445d14711f7a6d0d178596f3918afd8e16f6708866b80944f7c11b66f",
+  "appliedSignature": "e58f1fb3d19333ec5ff5a98bca85635cf350019ba3b179c5bf86fee2628e9fe9",
+  "appliedAt": "2026-09-23T16:11:45.527Z"
+}

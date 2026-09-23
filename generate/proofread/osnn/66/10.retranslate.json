@@ -1,0 +1,42 @@
+{
+  "model": "claude-opus-5-5",
+  "effort": null,
+  "at": "2026-09-23T18:14:23.809Z",
+  "fresh": {
+    "1": "Så såg eg ein annan mektig engel koma ned frå himmelen. Han var kledd i ei sky, og regnbogen var over hovudet hans. Andletet hans var som sola, og føtene som søyler av eld.",
+    "2": "I handa hadde han ei lita bokrull som var opna. Han sette høgre foten på havet og den venstre på jorda,",
+    "3": "og han ropa med høg røyst, slik ei løve brølar. Og då han ropa, tala dei sju toredunane med sine røyster.",
+    "4": "Då dei sju toredunane hadde tala, skulle eg til å skriva. Men eg høyrde ei røyst frå himmelen som sa: «Set segl på det dei sju toredunane tala, og skriv det ikkje ned!»",
+    "5": "Og engelen som eg såg stå på havet og på jorda, lyfte høgre handa mot himmelen",
+    "6": "og svor ved han som lever i all æva, han som skapte himmelen og det som er i han, jorda og det som er på henne, og havet og det som er i det: «Det skal ikkje vera meir frist!",
+    "7": "Men i dei dagane då den sjuande engelen lèt røysta si lyda og skal til å blåsa i basunen, då skal Guds løyndom vera fullført, slik han forkynte det for tenarane sine, profetane.»",
+    "8": "Og røysta som eg hadde høyrt frå himmelen, tala til meg igjen og sa: «Gå og ta den opna bokrulla i handa til engelen som står på havet og på jorda!»",
+    "9": "Då gjekk eg bort til engelen og bad han gje meg den vesle bokrulla. Han sa til meg: «Ta henne og et henne! Ho skal bli bitter i magen din, men i munnen din skal ho vera søt som honning.»",
+    "10": "Eg tok den vesle bokrulla frå handa til engelen og åt henne. I munnen min var ho søt som honning, men då eg hadde ete henne, vart magen min bitter.",
+    "11": "Og dei sa til meg: «Du må profetera igjen om mange folk og folkeslag, tungemål og kongar.»"
+  },
+  "replace": [
+    {
+      "verseId": 3,
+      "type": "grammar",
+      "reason": "«Torebrak» er inkjekjønn på nynorsk, så bunden fleirtal skal vera «torebraka», ikkje «torebrakene».",
+      "otherDefensible": false
+    },
+    {
+      "verseId": 4,
+      "type": "grammar",
+      "reason": "«Torebrakene» er feil bøying av inkjekjønnsordet «torebrak»; rett form er «torebraka».",
+      "otherDefensible": false
+    },
+    {
+      "verseId": 7,
+      "type": "error",
+      "reason": "Omsetjinga «i dei dagane når den sjuande engelen skal til å blåsa» utelèt at det gjeld dagane då den sjuande engelen lèt røysta si lyda.",
+      "otherDefensible": true
+    }
+  ],
+  "keep": [],
+  "signature": "966ad784b3183969fc660a4be0921778e26a8d5f0687ef0fb831c603370a58b2",
+  "appliedSignature": "966ad784b3183969fc660a4be0921778e26a8d5f0687ef0fb831c603370a58b2",
+  "appliedAt": "2026-09-23T18:14:23.809Z"
+}

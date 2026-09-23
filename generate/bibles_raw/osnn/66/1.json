@@ -81,7 +81,7 @@
     "bookId": 66,
     "chapterId": 1,
     "verseId": 9,
-    "text": "Eg, Johannes, bror dykkar og medbrør i trengsla og riket og uthaldinga i Jesus, eg var på øya som heiter Patmos, for Guds ord og vitnemålet om Jesus skuld.",
+    "text": "Eg, Johannes, bror dykkar, som har del med dykk i trengsla, i riket og i tolmodet i Jesus, var på øya som heiter Patmos, for Guds ords skuld og for vitnemålet om Jesus.",
     "versions": [
       {
         "text": "Eg, Johannes, bror dykkar og meddelar i trengsla og riket og uthaldinga i Jesus, eg var på øya som heiter Patmos, på grunn av Guds ord og vitnemålet om Jesus.",
@@ -92,6 +92,13 @@
         "type": "grammar",
         "severity": "minor",
         "explanation": "'Medbroder' is not standard Nynorsk. The correct Nynorsk form would be 'medbrør' (combining 'med-' with the Nynorsk word 'brør' for 'brother'). However, since 'medbroder' was intentionally chosen in the last revision, this is only a minor grammar note. An alternative could be 'medliding' or simply keeping the compound. Actually 'bror' is nynorsk but 'broder' is more bokmål. Still, this was an intentional choice so severity is minor."
+      },
+      {
+        "text": "Eg, Johannes, bror dykkar og medbrør i trengsla og riket og uthaldinga i Jesus, eg var på øya som heiter Patmos, for Guds ord og vitnemålet om Jesus skuld.",
+        "type": "error",
+        "severity": "major",
+        "explanation": "«medbrør» endrar meininga; grunnteksten seier at Johannes har del saman med dei i trengsla, riket og uthaldet, ikkje at han er medbror.",
+        "alternative": false
       }
     ]
   },

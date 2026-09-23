@@ -3,7 +3,16 @@
     "bookId": 45,
     "chapterId": 8,
     "verseId": 1,
-    "text": "Så er det då inga fordøming for dei som er i Kristus Jesus."
+    "text": "Så er det no inga fordøming for dei som er i Kristus Jesus.",
+    "versions": [
+      {
+        "text": "Så er det då inga fordøming for dei som er i Kristus Jesus.",
+        "type": "error",
+        "severity": "major",
+        "explanation": "«då» svarar ikkje til grunnteksten sitt «νῦν» (no), så tidsmarkøren «no» fell bort.",
+        "alternative": false
+      }
+    ]
   },
   {
     "bookId": 45,
@@ -89,11 +98,18 @@
     "bookId": 45,
     "chapterId": 8,
     "verseId": 11,
-    "text": "Om Anden åt han som reiste Jesus opp frå dei døde, bur i dykk, så skal han som reiste Kristus opp frå dei døde, også gjera dykkar dødelege kroppar levande ved sin Ande som bur i dykk.",
+    "text": "Og bur Anden hans som reiste Jesus opp frå dei døde, i dykk, då skal han som reiste Kristus Jesus opp frå dei døde, også gjere dykkar dødelege kroppar levande ved sin Ande, som bur i dykk.",
     "versions": [
       {
         "text": "Om Anden åt han som reiste Jesus opp frå dei døde, bur i dykk, så skal han som reiste Kristus Jesus opp frå dei døde, også gjera dykkar dødelege kroppar levande ved sin Ande som bur i dykk.",
         "explanation": "Dei fleste greske manuskript har berre «Χριστόν» (Kristus) i den andre førekomsten, ikkje «Χριστὸν Ἰησοῦν». Å ha berre «Kristus» her gjer også setninga lettare for munnleg lesing og unngår unødig repetisjon."
+      },
+      {
+        "text": "Om Anden åt han som reiste Jesus opp frå dei døde, bur i dykk, så skal han som reiste Kristus opp frå dei døde, også gjera dykkar dødelege kroppar levande ved sin Ande som bur i dykk.",
+        "type": "error",
+        "severity": "major",
+        "explanation": "«reiste Kristus opp» utelèt namnet Jesus, som står i grunnteksten («Kristus Jesus»).",
+        "alternative": false
       }
     ]
   },
@@ -101,7 +117,16 @@
     "bookId": 45,
     "chapterId": 8,
     "verseId": 12,
-    "text": "Difor, sysken, står vi ikkje i skuld til kjøtet, så vi skulle leva etter kjøtet."
+    "text": "Så står vi altså i skuld, sysken, men ikkje til kjøtet, så vi skulle leve etter kjøtet.",
+    "versions": [
+      {
+        "text": "Difor, sysken, står vi ikkje i skuld til kjøtet, så vi skulle leva etter kjøtet.",
+        "type": "error",
+        "severity": "major",
+        "explanation": "«står vi ikkje i skuld til kjøtet» nektar skulda heilt, medan grunnteksten seier at vi står i skuld, men ikkje til kjøtet.",
+        "alternative": false
+      }
+    ]
   },
   {
     "bookId": 45,

@@ -287,13 +287,20 @@
     "bookId": 46,
     "chapterId": 7,
     "verseId": 40,
-    "text": "Men ho er lukkeleg om ho blir som ho er, etter mi meining. Og eg trur at eg òg har Guds Ande.",
+    "text": "Men ho er lukkelegare om ho held fram som ho er. Det er mi meining, og eg trur at også eg har Guds Ande.",
     "versions": [
       {
         "text": "Men etter mi meining er ho lukkeleg om ho blir som ho er. Og eg trur at eg òg har Guds Ande.",
         "type": "suggestion",
         "severity": "minor",
         "explanation": "The Greek μακαριωτέρα is comparative ('more blessed/happier'), not just 'lukkeleg' (happy). The verse says she is 'more blessed/happier' if she remains as she is - this is a comparison with remarrying. 'Lykkeleg' or 'meir lukkeleg' would better capture the comparative form."
+      },
+      {
+        "text": "Men ho er lukkeleg om ho blir som ho er, etter mi meining. Og eg trur at eg òg har Guds Ande.",
+        "type": "error",
+        "severity": "major",
+        "explanation": "«lukkeleg» fjernar komparativen i grunnteksten (μακαριωτέρα), som skal vere «lukkelegare».",
+        "alternative": false
       }
     ]
   }

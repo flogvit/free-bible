@@ -153,13 +153,20 @@
     "bookId": 46,
     "chapterId": 1,
     "verseId": 20,
-    "text": "Kvar er den vise? Kvar er den skriftlærde? Kvar er ordskiftaren frå denne tidsalderen?",
+    "text": "Kvar er den vise? Kvar er den skriftlærde? Kvar er ordkjemparen i denne tida? Har ikkje Gud gjort visdomen i verda til dårskap?",
     "versions": [
       {
         "text": "Kvar er den vise? Kvar er den skriftlærde? Kvar er debattanten frå denne verda? Har ikkje Gud gjort visdomen i verda til dårskap?",
         "type": "suggestion",
         "severity": "minor",
         "explanation": "αἰῶνος τούτου tyder meir presist 'denne tidsalderen' enn 'denne verda' (som ville vore κόσμου). Paulus brukar αἰών og κόσμος ulikt, og i same verset brukar han faktisk κόσμου om verda i neste setning. Å skilja mellom dei to gjev betre presisjon. 'Ordskiftaren' er eit godt nynorsk alternativ til 'debattanten'."
+      },
+      {
+        "text": "Kvar er den vise? Kvar er den skriftlærde? Kvar er ordskiftaren frå denne tidsalderen?",
+        "type": "error",
+        "severity": "major",
+        "explanation": "Det siste spørsmålet, «Har ikkje Gud gjort visdomen i verda til dårskap?», er utelate.",
+        "alternative": false
       }
     ]
   },
@@ -167,7 +174,16 @@
     "bookId": 46,
     "chapterId": 1,
     "verseId": 21,
-    "text": "For då verda med sin visdom ikkje kjende Gud gjennom Guds visdom, fann Gud det for godt å frelsa dei som trur, gjennom dårskapen i forkynninga."
+    "text": "For då verda, midt i Guds visdom, ikkje kjende Gud gjennom sin eigen visdom, fann Gud det godt å frelse dei som trur, gjennom dårskapen i forkynninga.",
+    "versions": [
+      {
+        "text": "For då verda med sin visdom ikkje kjende Gud gjennom Guds visdom, fann Gud det for godt å frelsa dei som trur, gjennom dårskapen i forkynninga.",
+        "type": "error",
+        "severity": "major",
+        "explanation": "«med sin visdom ikkje kjende Gud gjennom Guds visdom» byter om på dei to uttrykka: i grunnteksten kjende verda ikkje Gud gjennom sin eigen visdom, midt i Guds visdom.",
+        "alternative": false
+      }
+    ]
   },
   {
     "bookId": 46,

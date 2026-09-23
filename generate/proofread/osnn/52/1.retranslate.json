@@ -1,0 +1,41 @@
+{
+  "model": "claude-opus-5-5",
+  "effort": null,
+  "at": "2026-09-23T17:38:49.078Z",
+  "fresh": {
+    "1": "Paulus, Silvanus og Timoteus til kyrkjelyden i Tessalonika, som er i Gud Far og Herren Jesus Kristus: Nåde og fred vere med dykk.",
+    "2": "Vi takkar alltid Gud for dykk alle når vi nemner dykk i bønene våre. Utan stans",
+    "3": "minnest vi for Gud, vår Far, korleis trua dykkar er verksam, kjærleiken dykkar strevar, og vona dykkar på vår Herre Jesus Kristus held ut.",
+    "4": "For vi veit, kjære sysken, de som er elska av Gud, at han har utvalt dykk.",
+    "5": "Evangeliet vårt kom nemleg ikkje til dykk berre med ord, men òg med kraft og med Den heilage ande og med full visse. De veit jo korleis vi var hos dykk, for dykkar skuld.",
+    "6": "Og de tok etter oss og etter Herren. Midt i stor trengsle tok de imot ordet med den gleda som Den heilage ande gjev.",
+    "7": "Slik vart de eit førebilete for alle som trur, i Makedonia og Akaia.",
+    "8": "For frå dykk har Herrens ord lydt ut, ikkje berre i Makedonia og Akaia; overalt har det spurt seg kva tru de har på Gud. Difor treng vi ikkje seie noko om det.",
+    "9": "Folk fortel sjølve om korleis de tok imot oss, og korleis de vende dykk frå avgudane til Gud for å tene den levande og sanne Gud",
+    "10": "og vente på Son hans frå himmelen, han som Gud reiste opp frå dei døde: Jesus, som frelser oss frå den komande vreiden."
+  },
+  "replace": [
+    {
+      "verseId": 3,
+      "type": "error",
+      "reason": "Omsetjinga har berre ordet «vona» og manglar nesten heile verset: at dei minnest trua som er verksam, kjærleiken som strevar og vona som held ut, framfor Gud, vår Far.",
+      "otherDefensible": false
+    },
+    {
+      "verseId": 8,
+      "type": "grammar",
+      "reason": "«har rungjast ut» er ei feil bøygd passivform; det skal vere aktiv form, til dømes «har runga ut».",
+      "otherDefensible": false
+    },
+    {
+      "verseId": 1,
+      "type": "error",
+      "reason": "«vår Far» legg til «vår», som ikkje står i grunnteksten («Gud Far»).",
+      "otherDefensible": true
+    }
+  ],
+  "keep": [],
+  "signature": "42d87a152b741706727d7ab1da4dec42c0db5a535b4cabea9000cb6d0ecbfb03",
+  "appliedSignature": "5131776ac8e4cef3e987706be8f992d512d9b0b3da79516950261e8cb5aad379",
+  "appliedAt": "2026-09-23T17:38:49.080Z"
+}

@@ -35,11 +35,18 @@
     "bookId": 55,
     "chapterId": 1,
     "verseId": 4,
-    "text": "Eg lengtar etter å sjå deg, og når eg hugsar tårene dine, ønskjer eg å bli fylt av glede.",
+    "text": "Eg minnest tårene dine og lengtar etter å sjå deg, så eg kan bli fylt av glede.",
     "versions": [
       {
         "text": "Eg lengtar etter å sjå deg, for eg hugsar tårene dine, og eg vil så gjerne bli fylt av glede.",
         "explanation": "Strukturen 'for eg hugsar' gjer det til ei årsaksforklaring, men 'μεμνημένος' er eit partisipp som skildrar samtidige omstende. 'Og eg vil så gjerne' er litt uformelt for nynorsk bibeltekst; 'ønskjer eg' er meir passande for høgtlesing."
+      },
+      {
+        "text": "Eg lengtar etter å sjå deg, og når eg hugsar tårene dine, ønskjer eg å bli fylt av glede.",
+        "type": "error",
+        "severity": "major",
+        "explanation": "«ønskjer eg å bli fylt av glede» knyter gleda til å hugse tårene, men i grunnteksten er gleda målet med å få sjå han igjen.",
+        "alternative": false
       }
     ]
   },
@@ -151,6 +158,15 @@
     "bookId": 55,
     "chapterId": 1,
     "verseId": 18,
-    "text": "Må Herren gje at han finn miskunn hos Herren på den dagen. Og alt det han tente meg med i Efesos, kjenner du godt til."
+    "text": "Må Herren gje at han finn miskunn hos Herren på den dagen! Og kor mykje han tente i Efesos, veit du betre enn nokon.",
+    "versions": [
+      {
+        "text": "Må Herren gje at han finn miskunn hos Herren på den dagen. Og alt det han tente meg med i Efesos, kjenner du godt til.",
+        "type": "error",
+        "severity": "major",
+        "explanation": "«kjenner du godt til» fjernar komparativen i grunnteksten, som seier at Timoteus veit dette betre.",
+        "alternative": true
+      }
+    ]
   }
 ]

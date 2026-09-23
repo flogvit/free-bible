@@ -3,13 +3,20 @@
     "bookId": 44,
     "chapterId": 11,
     "verseId": 1,
-    "text": "Apostlane og dei truande syskena som var i Judea",
+    "text": "Apostlane og syskena rundt om i Judea fekk høyra at også heidningane hadde teke imot Guds ord.",
     "versions": [
       {
         "text": "Apostlane og dei truande syskena i Judea fekk høyra at også heidningane hadde teke imot Guds ord.",
         "type": "suggestion",
         "severity": "minor",
         "explanation": "Grunnteksten har 'οἱ ὄντες κατὰ τὴν Ἰουδαίαν' (dei som var i Judea) som ei nærmare bestemming til 'ἀδελφοί', ikkje til 'apostlane'. Det kan vera greitt å presisera at det er syskena som var i Judea, ikkje nødvendigvis apostlane."
+      },
+      {
+        "text": "Apostlane og dei truande syskena som var i Judea",
+        "type": "error",
+        "severity": "major",
+        "explanation": "Setninga stoppar etter «som var i Judea» og manglar heile hovudsetninga om at dei fekk høyra at også heidningane hadde teke imot Guds ord.",
+        "alternative": false
       }
     ]
   },
@@ -103,7 +110,16 @@
     "bookId": 44,
     "chapterId": 11,
     "verseId": 13,
-    "text": "Han fortalde oss korleis han hadde sett engelen stå i huset sitt og seia: 'Send bod til Jaffa og hent Simon som vert kalla Peter."
+    "text": "Han fortalde oss korleis han hadde sett engelen stå i huset hans og seia: ‘Send bod til Jaffa og hent Simon som blir kalla Peter.",
+    "versions": [
+      {
+        "text": "Han fortalde oss korleis han hadde sett engelen stå i huset sitt og seia: 'Send bod til Jaffa og hent Simon som vert kalla Peter.",
+        "type": "error",
+        "severity": "major",
+        "explanation": "«stå i huset sitt» gjer huset til engelen sitt, medan grunnteksten seier at det var huset til mannen («huset hans»).",
+        "alternative": false
+      }
+    ]
   },
   {
     "bookId": 44,

@@ -223,13 +223,20 @@
     "bookId": 42,
     "chapterId": 11,
     "verseId": 32,
-    "text": "Mennene frå Ninive skal stå fram i dommen saman med denne slekta og fordøma henne.",
+    "text": "Mennene frå Ninive skal stå fram i domen saman med denne slekta og dømme henne. For dei vende om då Jona forkynte, og her er meir enn Jona.",
     "versions": [
       {
         "text": "Folket i Ninive skal stå fram i dommen saman med denne slekta og fordøma henne. For dei vende om då Jona forkynte for dei, og sjå, her er meir enn Jona.",
         "type": "suggestion",
         "severity": "minor",
         "explanation": "Det greske ἄνδρες Νινευῖται betyr spesifikt 'mennene frå Ninive', ikkje berre 'folket i Ninive'. I vers 31 brukar Lukas ἀνδρῶν for 'menneska/mennene' i denne slekta, og her brukar han ἄνδρες igjen. Paralleliteten mellom vers 31 og 32 bør koma fram."
+      },
+      {
+        "text": "Mennene frå Ninive skal stå fram i dommen saman med denne slekta og fordøma henne.",
+        "type": "error",
+        "severity": "major",
+        "explanation": "Setninga «For dei vende om då Jona forkynte, og her er meir enn Jona» manglar heilt; berre første halvdel av verset er med.",
+        "alternative": false
       }
     ]
   },
@@ -275,7 +282,16 @@
     "bookId": 42,
     "chapterId": 11,
     "verseId": 37,
-    "text": "Då han hadde tala, bad ein farisear han heim til seg på eit måltid. Han gjekk inn og tok plass ved bordet."
+    "text": "Medan han tala, bad ein farisear han heim til seg for å ete. Jesus gjekk inn og sette seg til bords.",
+    "versions": [
+      {
+        "text": "Då han hadde tala, bad ein farisear han heim til seg på eit måltid. Han gjekk inn og tok plass ved bordet.",
+        "type": "error",
+        "severity": "major",
+        "explanation": "«Då han hadde tala» endrar tida, for grunnteksten seier at farisearen bad han medan han enno tala.",
+        "alternative": false
+      }
+    ]
   },
   {
     "bookId": 42,
@@ -405,6 +421,15 @@
     "bookId": 42,
     "chapterId": 11,
     "verseId": 54,
-    "text": "Dei lurte på han for å fanga han i noko han sa."
+    "text": "Dei låg på lur for å fange han i noko han sa.",
+    "versions": [
+      {
+        "text": "Dei lurte på han for å fanga han i noko han sa.",
+        "type": "error",
+        "severity": "major",
+        "explanation": "«lurte på han» tyder at dei undra seg over han, ikkje at dei låg på lur etter han.",
+        "alternative": false
+      }
+    ]
   }
 ]

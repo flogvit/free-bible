@@ -189,11 +189,18 @@
     "bookId": 66,
     "chapterId": 22,
     "verseId": 21,
-    "text": "Nåden frå Herren Jesus vere med dykk alle.",
+    "text": "Nåden frå Herren Jesus vere med alle.",
     "versions": [
       {
         "text": "Nåden frå Herren Jesus vere med alle.",
         "explanation": "Sjølv om tekstkritisk apparat har variasjon (πάντων/πάντων τῶν ἁγίων), er det naturleg på nynorsk å inkludera 'dykk' for betre flyt i ein munnleg velsigning, spesielt som avslutning på boka."
+      },
+      {
+        "text": "Nåden frå Herren Jesus vere med dykk alle.",
+        "type": "error",
+        "severity": "major",
+        "explanation": "«med dykk alle» legg til «dykk», som ikkje står i grunnteksten, der det berre står «med alle».",
+        "alternative": true
       }
     ]
   }

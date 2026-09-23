@@ -33,7 +33,7 @@
     "bookId": 46,
     "chapterId": 3,
     "verseId": 5,
-    "text": "Tenarar som de kom til tru ved, kvar etter det Herren gav.",
+    "text": "Kva er då Apollos? Og kva er Paulus? Tenarar som de kom til tru gjennom, og kvar av oss slik Herren har gjeve han.",
     "versions": [
       {
         "text": "Kva er då Apollos? Og kva er Paulus? Tenarar som de kom til tru ved, og kvar av dei tente slik Herren gav dei.",
@@ -44,6 +44,13 @@
         "type": "grammar",
         "severity": "minor",
         "explanation": "Pronomenet 'han' på slutten er litt uklart og kan verka forvirrande – kven er 'han'? Den greske teksten seier ἑκάστῳ ὡς ὁ κύριος ἔδωκεν ('kvar etter som Herren gav'), utan eit eksplisitt objekt-pronomen. Å droppa 'han' gjer setninga klarare."
+      },
+      {
+        "text": "Tenarar som de kom til tru ved, kvar etter det Herren gav.",
+        "type": "error",
+        "severity": "major",
+        "explanation": "Dei to spørsmåla «Kva er då Apollos? Og kva er Paulus?» er utelatne, så svaret «Tenarar …» heng i lause lufta.",
+        "alternative": false
       }
     ]
   },

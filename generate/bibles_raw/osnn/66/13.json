@@ -9,13 +9,20 @@
     "bookId": 66,
     "chapterId": 13,
     "verseId": 2,
-    "text": "Dyret eg såg likna ein leopard, føtene var som på ein bjørn, og munnen var som gapet på ei løve.",
+    "text": "Dyret eg såg, likna ein leopard. Føtene var som på ein bjørn, og gapet som gapet på ei løve. Og draken gav det krafta si og trona si og stor makt.",
     "versions": [
       {
         "text": "Dyret eg såg likna ein leopard, føtene var som på ein bjørn, og munnen var som munnen på ei løve. Draken gav det si makt og sin trone og stor myndigheit.",
         "type": "grammar",
         "severity": "minor",
         "explanation": "'Løve' er hankjønn på nynorsk ('ei løve' er bokmålsform). Det heiter 'ei løve' i bokmål, men på nynorsk er det 'ei løve' som òg kan brukast. Eigentleg er dette akseptabelt i moderne nynorsk, men 'munnen på ei løve' kan vurderast. Hovudpoenget er at 'gapet' kan vera meir naturleg for eit rovdyr, men dette er ein mindre detalj. La meg trekka tilbake dette - 'munnen' er greitt. Eg droppar dette."
+      },
+      {
+        "text": "Dyret eg såg likna ein leopard, føtene var som på ein bjørn, og munnen var som gapet på ei løve.",
+        "type": "error",
+        "severity": "major",
+        "explanation": "Setninga om at draken gav dyret krafta si, trona si og stor makt, manglar heilt.",
+        "alternative": false
       }
     ]
   },
@@ -155,6 +162,15 @@
     "bookId": 66,
     "chapterId": 13,
     "verseId": 18,
-    "text": "Her trengst det visdom. Den som har forstand, kan rekna ut talet til dyret, for det er eit menneske sitt tal. Og talet er sekshundre og sekstiseks."
+    "text": "Her trengst visdom. Den som har forstand, lat han rekna ut talet til dyret, for det er talet til eit menneske. Og talet er seks hundre og sekstiseks.",
+    "versions": [
+      {
+        "text": "Her trengst det visdom. Den som har forstand, kan rekna ut talet til dyret, for det er eit menneske sitt tal. Og talet er sekshundre og sekstiseks.",
+        "type": "error",
+        "severity": "major",
+        "explanation": "Oppmodinga i grunnteksten er gjord om til ei utsegn med «kan rekna ut».",
+        "alternative": true
+      }
+    ]
   }
 ]

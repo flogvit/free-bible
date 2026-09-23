@@ -45,13 +45,20 @@
     "bookId": 51,
     "chapterId": 1,
     "verseId": 7,
-    "text": "De lærte det av Epafras, vår kjære medtenar, som er ein trufast Kristi tenar for dykk.",
+    "text": "Dette lærte de av Epafras, vår kjære medtenar, som er ein trufast tenar for Kristus på vegner av oss.",
     "versions": [
       {
         "text": "De lærte det av Epafras, vår kjære medarbeidar, som er ein trufast Kristi tenar for dykk.",
         "type": "error",
         "severity": "minor",
         "explanation": "Det greske 'συνδούλου' tyder 'medtenar/medslave' (σύν + δοῦλος), ikkje 'medarbeidar'. Paulus understrekar at Epafras er ein medtenar/medslave saman med han i tenesta for Kristus. 'Medtenar' er meir presist enn 'medarbeidar'."
+      },
+      {
+        "text": "De lærte det av Epafras, vår kjære medtenar, som er ein trufast Kristi tenar for dykk.",
+        "type": "error",
+        "severity": "major",
+        "explanation": "«for dykk» gjev att variantlesnaden ὑμῶν, medan grunnteksten her har ἡμῶν, «for oss».",
+        "alternative": true
       }
     ]
   },

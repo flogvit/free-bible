@@ -35,13 +35,20 @@
     "bookId": 59,
     "chapterId": 4,
     "verseId": 5,
-    "text": "Eller meiner de at Skrifta talar til inga nytte? Med brennande iver lengtar Anden som han lét bu i oss.",
+    "text": "Eller trur de at Skrifta talar tomt når ho seier: Med brennande lengt krev han Anden som han lét bu i oss?",
     "versions": [
       {
         "text": "Med brennande iver lengtar Anden som han lét bu i oss, eller misunner han?",
         "type": "error",
         "severity": "critical",
         "explanation": "Den noverande omsetjinga manglar heilt den innleiande setninga 'ἢ δοκεῖτε ὅτι κενῶς ἡ γραφὴ λέγει' ('Eller meiner de at Skrifta talar til inga nytte?'). Dette er ein viktig retorisk spørsmål som innleiar sitatet. I tillegg er 'eller misunner han?' vanskeleg å forstå og gjev ikkje god meining på norsk. Verset er krevjande å tolke, men hovudpoenget er at Anden som Gud har late bu i oss, lengtar intenst (etter oss). πρὸς φθόνον kan tolkast som 'med sjalu iver' og er del av skriftsitatet."
+      },
+      {
+        "text": "Eller meiner de at Skrifta talar til inga nytte? Med brennande iver lengtar Anden som han lét bu i oss.",
+        "type": "error",
+        "severity": "major",
+        "explanation": "Sitatet frå Skrifta er gjort om frå ein del av spørsmålet til ei sjølvstendig utsegn, og «når ho seier» er falle bort.",
+        "alternative": false
       }
     ]
   },
@@ -123,7 +130,7 @@
     "bookId": 59,
     "chapterId": 4,
     "verseId": 14,
-    "text": "De veit ikkje kva morgondagen vil bringa, eller kva livet dykkar er. For det er ein damp som syner seg ei lita stund og så forsvinn.",
+    "text": "De veit ikkje kva morgondagen ber med seg, eller korleis livet dykkar vil bli. For de er ein dis som syner seg ei lita stund og så blir borte.",
     "versions": [
       {
         "text": "De veit ikkje korleis morgondagen blir, eller kva livet dykkar er. De er berre ein damp som syner seg ei lita stund og så forsvinn.",
@@ -134,6 +141,13 @@
         "type": "error",
         "severity": "minor",
         "explanation": "Gresk ἀτμὶς γάρ ἐστε kan lesast som at livet (ἡ ζωὴ ὑμῶν) er ein damp, ikkje at 'de' (personane) er ein damp. Sidan den føregåande setninga spør 'kva livet dykkar er', er det meir naturleg å seia 'det er ein damp' – der 'det' refererer til livet."
+      },
+      {
+        "text": "De veit ikkje kva morgondagen vil bringa, eller kva livet dykkar er. For det er ein damp som syner seg ei lita stund og så forsvinn.",
+        "type": "error",
+        "severity": "major",
+        "explanation": "«For det er ein damp» endrar subjektet; grunnteksten seier at de sjølve er ein damp.",
+        "alternative": false
       }
     ]
   },

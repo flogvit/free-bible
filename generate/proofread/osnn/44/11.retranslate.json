@@ -1,0 +1,70 @@
+{
+  "model": "claude-opus-5-5",
+  "effort": null,
+  "at": "2026-09-23T16:43:33.456Z",
+  "fresh": {
+    "1": "Apostlane og syskena rundt om i Judea fekk høyra at også heidningane hadde teke imot Guds ord.",
+    "2": "Då Peter kom opp til Jerusalem, gjekk dei omskorne i rette med han",
+    "3": "og sa: «Du gjekk inn til menn som ikkje er omskorne, og du åt saman med dei!»",
+    "4": "Då byrja Peter å fortelja dei alt frå først til sist. Han sa:",
+    "5": "«Eg var i byen Jaffa og bad, og i ei openberring såg eg eit syn: Noko som likna ein stor duk, kom ned frå himmelen, heist ned etter dei fire hjørna, og det kom heilt ned til meg.",
+    "6": "Eg stirde på han og såg nøye etter, og der såg eg firføtte dyr på jorda, villdyr, krypdyr og fuglar under himmelen.",
+    "7": "Og eg høyrde ei røyst som sa til meg: ‘Stå opp, Peter, slakt og et!’",
+    "8": "Men eg svara: ‘Nei, Herre, aldri! Noko vanheilagt eller ureint har aldri kome inn i munnen min.’",
+    "9": "Men røysta frå himmelen tala for andre gong: ‘Det som Gud har gjort reint, skal ikkje du kalla vanheilagt.’",
+    "10": "Dette hende tre gonger, og så vart alt dregi opp att til himmelen.",
+    "11": "Og i same stund stod tre menn utanfor huset der vi var. Dei var sende til meg frå Cæsarea.",
+    "12": "Anden sa til meg at eg skulle gå med dei utan å nøla. Desse seks brørne her gjekk òg med meg, og vi kom inn i huset til mannen.",
+    "13": "Han fortalde oss korleis han hadde sett engelen stå i huset hans og seia: ‘Send bod til Jaffa og hent Simon som blir kalla Peter.",
+    "14": "Han skal tala ord til deg som du og heile huset ditt skal bli frelste ved.’",
+    "15": "Og då eg byrja å tala, kom Den heilage ande over dei, slik han kom over oss i byrjinga.",
+    "16": "Då kom eg i hug det Herren hadde sagt: ‘Johannes døypte med vatn, men de skal bli døypte med Den heilage ande.’",
+    "17": "Når Gud no gav dei den same gåva som han gav oss då vi kom til tru på Herren Jesus Kristus, kven var då eg, at eg skulle kunna hindra Gud?»",
+    "18": "Då dei høyrde dette, vart dei stille. Dei prisa Gud og sa: «Så har Gud også gjeve heidningane omvending til liv!»",
+    "19": "Dei som hadde vorte spreidde under forfølginga som kom etter det som hende med Stefanus, drog no heilt til Fønikia, Kypros og Antiokia. Men dei forkynte ordet berre for jødar.",
+    "20": "Nokre av dei var likevel menn frå Kypros og Kyrene, og då dei kom til Antiokia, tala dei også til grekarane og forkynte evangeliet om Herren Jesus.",
+    "21": "Herrens hand var med dei, og mange kom til tru og vende om til Herren.",
+    "22": "Ryktet om dette nådde kyrkjelyden i Jerusalem, og dei sende Barnabas til Antiokia.",
+    "23": "Då han kom dit og såg Guds nåde, vart han glad og oppmoda alle til å halda fast ved Herren av heile sitt hjarta.",
+    "24": "For han var ein god mann, full av Den heilage ande og tru. Og mange menneske vart vunne for Herren.",
+    "25": "Så drog Barnabas til Tarsus for å leita etter Saulus.",
+    "26": "Då han fann han, tok han han med til Antiokia. Eit heilt år var dei saman med kyrkjelyden og lærte opp mange menneske. Og det var i Antiokia at læresveinane for første gong vart kalla kristne.",
+    "27": "I dei dagane kom nokre profetar ned frå Jerusalem til Antiokia.",
+    "28": "Ein av dei, som heitte Agabus, stod fram og kunngjorde ved Anden at det skulle koma ein stor hungersnaud over heile verda. Det skjedde medan Klaudius var keisar.",
+    "29": "Då vedtok læresveinane at kvar av dei, etter som han hadde evne til, skulle senda hjelp til syskena som budde i Judea.",
+    "30": "Det gjorde dei òg, og dei sende gåva til dei eldste med Barnabas og Saulus."
+  },
+  "replace": [
+    {
+      "verseId": 1,
+      "type": "error",
+      "reason": "Setninga stoppar etter «som var i Judea» og manglar heile hovudsetninga om at dei fekk høyra at også heidningane hadde teke imot Guds ord.",
+      "otherDefensible": false
+    },
+    {
+      "verseId": 13,
+      "type": "error",
+      "reason": "«stå i huset sitt» gjer huset til engelen sitt, medan grunnteksten seier at det var huset til mannen («huset hans»).",
+      "otherDefensible": false
+    },
+    {
+      "verseId": 14,
+      "type": "grammar",
+      "reason": "Med fleirtalssubjektet «du og heile ditt hus» må partisippet samsvarsbøyast, så det skal vera «frelste», ikkje «frelst».",
+      "otherDefensible": false
+    }
+  ],
+  "keep": [
+    {
+      "verseId": 6,
+      "reason": "«stirde på han» viser attende til inkjekjønnsordet «linklede» og skulle hatt pronomenet «det»."
+    },
+    {
+      "verseId": 10,
+      "reason": "Partisippforma «dregi» er ikkje med i gjeldande nynorsknormal; rett form er «drege»."
+    }
+  ],
+  "signature": "a7f3e625539b38983fd03d386bc2d359377347d830d582bacefa2db440698b16",
+  "appliedSignature": "fef8db378065eedb3004c2c8b34431a278b6a3d449a4d76d9c2a407c9c54bc0b",
+  "appliedAt": "2026-09-23T16:43:33.460Z"
+}

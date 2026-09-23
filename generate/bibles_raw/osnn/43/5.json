@@ -21,7 +21,7 @@
     "bookId": 43,
     "chapterId": 5,
     "verseId": 4,
-    "text": "For ein engel steig ned i dammen frå tid til anna og rørte opp vatnet. Den første som steig ned etter at vatnet var rørt opp, vart frisk, same kva sjukdom han hadde. [Dette verset manglar i dei eldste handskriftene.]",
+    "text": "For ein engel steig til visse tider ned i dammen og sette vatnet i rørsle. Den som då kom først uti etter at vatnet var sett i rørsle, vart frisk, same kva sjukdom han leid av.",
     "versions": [
       {
         "text": "For ein engel steig ned i dammen frå tid til anna og rørte opp vatnet. Den som først steig nedi etter at vatnet var rørt opp, vart frisk, same kva sjukdom han leid av.",
@@ -36,6 +36,13 @@
         "type": "suggestion",
         "severity": "major",
         "explanation": "Den noverande teksten er berre ein redaksjonell kommentar og ikkje ei omsetjing. For munnleg opplesing og fullstendigheit bør sjølve teksten omsetjast, med eit tydeleg tillegg i klammer som markerer den tekstkritiske situasjonen. Slik gjer dei fleste moderne bibelomsetjingar (t.d. NO2011, Bibel 2011)."
+      },
+      {
+        "text": "For ein engel steig ned i dammen frå tid til anna og rørte opp vatnet. Den første som steig ned etter at vatnet var rørt opp, vart frisk, same kva sjukdom han hadde. [Dette verset manglar i dei eldste handskriftene.]",
+        "type": "error",
+        "severity": "major",
+        "explanation": "Merknaden «[Dette verset manglar i dei eldste handskriftene.]» er eit tillegg som ikkje står i grunnteksten.",
+        "alternative": true
       }
     ]
   },

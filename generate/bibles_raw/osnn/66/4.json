@@ -73,7 +73,7 @@
     "bookId": 66,
     "chapterId": 4,
     "verseId": 8,
-    "text": "Kvar av dei fire levande skapningane hadde seks vengjer, fulle av auge rundt omkring og på innsida. Dag og natt seier dei utan stans: «Heilag, heilag, heilag er Herren Gud, den allmektige, han som var og som er og som kjem.»",
+    "text": "Dei fire skapningane hadde kvar seks venger, og dei var fulle av auge rundt ikring og innvendes. Dag og natt kviler dei aldri, men seier: «Heilag, heilag, heilag er Herren Gud, Den Allmektige, han som var og som er og som kjem.»",
     "versions": [
       {
         "text": "Kvar av dei fire levande skapningane hadde seks vengjer, og dei var fulle av auge rundt omkring og på innsida. Dag og natt seier dei utan stans: «Heilag, heilag, heilag er Herren Gud, Den allmektige, han som var og som er og som kjem.»",
@@ -82,6 +82,13 @@
       {
         "text": "Kvar av dei fire levande skapningane hadde seks vengjer, fulle av auge rundt omkring og på innsida. Dag og natt seier dei utan stans: «Heilag, heilag, heilag er Herren Gud, Den allmektige, han som var og som er og som kjem.»",
         "explanation": "The version history notes that 'Den allmektige' should not have 'Den' capitalized - it should be 'den allmektige' in nynorsk. This correction was noted but not implemented in the current version."
+      },
+      {
+        "text": "Kvar av dei fire levande skapningane hadde seks vengjer, fulle av auge rundt omkring og på innsida. Dag og natt seier dei utan stans: «Heilag, heilag, heilag er Herren Gud, den allmektige, han som var og som er og som kjem.»",
+        "type": "error",
+        "severity": "major",
+        "explanation": "«Seks vengjer, fulle av auge» knyter auga til vengjene, medan grunnteksten seier at det er skapningane som er fulle av auge.",
+        "alternative": true
       }
     ]
   },

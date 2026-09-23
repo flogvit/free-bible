@@ -3,7 +3,16 @@
     "bookId": 42,
     "chapterId": 24,
     "verseId": 1,
-    "text": "Tidleg på den første dagen i veka, medan det enno var skumring, kom dei til grava med velluktande salvar som dei hadde gjort i stand."
+    "text": "Men på den første dagen i veka, tidleg i otta, kom kvinnene til grava med dei velluktande urtene som dei hadde laga til.",
+    "versions": [
+      {
+        "text": "Tidleg på den første dagen i veka, medan det enno var skumring, kom dei til grava med velluktande salvar som dei hadde gjort i stand.",
+        "type": "error",
+        "severity": "major",
+        "explanation": "«medan det enno var skumring» tyder kveldsmørker, men grunnteksten seier at det var svært tidleg om morgonen.",
+        "alternative": false
+      }
+    ]
   },
   {
     "bookId": 42,
@@ -83,7 +92,16 @@
     "bookId": 42,
     "chapterId": 24,
     "verseId": 13,
-    "text": "Same dagen var to av dei på veg til ein landsby som heitte Emmaus, om lag seksti stadiar frå Jerusalem."
+    "text": "Same dagen var to av dei på veg til ein landsby som heitte Emmaus, seksti stadion frå Jerusalem.",
+    "versions": [
+      {
+        "text": "Same dagen var to av dei på veg til ein landsby som heitte Emmaus, om lag seksti stadiar frå Jerusalem.",
+        "type": "error",
+        "severity": "major",
+        "explanation": "«om lag» er lagt til; grunnteksten seier berre seksti stadiar.",
+        "alternative": false
+      }
+    ]
   },
   {
     "bookId": 42,
@@ -157,13 +175,20 @@
     "bookId": 42,
     "chapterId": 24,
     "verseId": 22,
-    "text": "Men nokre kvinner blant oss har også gjort oss forskrekka. Dei var ved grava tidleg i morgon,",
+    "text": "Og nokre av kvinnene hos oss har skaka oss. Dei var ved grava tidleg i dag,",
     "versions": [
       {
         "text": "Nokre av kvinnene våre har også gjort oss forskrekka. Dei var ved grava tidleg i dag,",
         "type": "suggestion",
         "severity": "minor",
         "explanation": "Grunnteksten har 'ἀλλὰ καὶ' (men også), og omsetjinga manglar 'men' som innleier kontrasten. Dessutan tyder 'ὀρθριναὶ' tidleg om morgonen (same dag), der 'tidleg i morgon' (dvs. tidleg i dag om morgonen) er meir presist enn berre 'tidleg i dag'."
+      },
+      {
+        "text": "Men nokre kvinner blant oss har også gjort oss forskrekka. Dei var ved grava tidleg i morgon,",
+        "type": "error",
+        "severity": "major",
+        "explanation": "«tidleg i morgon» tyder neste morgon, men kvinnene var ved grava tidleg same dagen.",
+        "alternative": false
       }
     ]
   },

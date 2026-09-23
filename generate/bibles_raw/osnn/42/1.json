@@ -241,13 +241,20 @@
     "bookId": 42,
     "chapterId": 1,
     "verseId": 35,
-    "text": "Difor skal òg det heilage som vert fødd, kallast Guds Son.",
+    "text": "Engelen svara henne: «Den Heilage Ande skal kome over deg, og krafta frå Den Høgste skal overskugge deg. Difor skal òg barnet som blir fødd, kallast heilagt, Guds Son.",
     "versions": [
       {
         "text": "Engelen svara henne: «Den Heilage Ande skal koma over deg, og krafta frå Den høgste skal overskygga deg. Difor skal òg barnet som vert fødd, kallast heilagt, Guds Son.",
         "type": "theological",
         "severity": "minor",
         "explanation": "Originalen seier 'τὸ γεννώμενον ἅγιον κληθήσεται υἱὸς θεοῦ' – 'det som vert fødd heilagt, skal kallast Guds Son'. 'Heilagt' (ἅγιον) er ikkje predikat til 'kallast' men attributt til 'det som vert fødd'. Barnet er heilagt OG skal kallast Guds Son. Noverande versjon kan gje inntrykk av at barnet berre skal 'kallast heilagt', men det er faktisk heilagt."
+      },
+      {
+        "text": "Difor skal òg det heilage som vert fødd, kallast Guds Son.",
+        "type": "error",
+        "severity": "major",
+        "explanation": "Heile første delen av verset manglar – at engelen svara, at Den Heilage Ande skal kome over henne og at krafta frå Den Høgste skal overskugge henne.",
+        "alternative": false
       }
     ]
   },
@@ -547,7 +554,16 @@
     "bookId": 42,
     "chapterId": 1,
     "verseId": 76,
-    "text": "Og du, barn, skal kallast profet for Den høgste, for du skal gå føre Herren og rydda vegen hans,"
+    "text": "Og du, barn, skal kallast profet for Den Høgste. For du skal gå fram føre Herren og rydde vegane hans",
+    "versions": [
+      {
+        "text": "Og du, barn, skal kallast profet for Den høgste, for du skal gå føre Herren og rydda vegen hans,",
+        "type": "error",
+        "severity": "major",
+        "explanation": "Grunnteksten har fleirtal (vegane), men «rydda vegen hans» gjer det om til eintal.",
+        "alternative": true
+      }
+    ]
   },
   {
     "bookId": 42,

@@ -27,13 +27,20 @@
     "bookId": 59,
     "chapterId": 2,
     "verseId": 4,
-    "text": "har de ikkje då vorte usikre i dykk sjølve og vorte dommarar med vonde tankar?",
+    "text": "har de ikkje då gjort skilnad mellom folk og vorte dommarar med vonde tankar?",
     "versions": [
       {
         "text": "har de ikkje då gjort skilnad hos dykk sjølve og vorte dommarar med vonde tankar?",
         "type": "suggestion",
         "severity": "minor",
         "explanation": "Gresk 'διεκρίθητε ἐν ἑαυτοῖς' tyder meir 'vorte splitta/i tvil hos dykk sjølve' enn 'gjort skilnad hos dykk sjølve'. Verbet 'διακρίνω' i passiv/medium tyder å vera i tvil, splitta i sinnet. 'Vorte usikre i dykk sjølve' fangar betre den indre konflikten og tvilen som teksten skildrar."
+      },
+      {
+        "text": "har de ikkje då vorte usikre i dykk sjølve og vorte dommarar med vonde tankar?",
+        "type": "error",
+        "severity": "major",
+        "explanation": "«vorte usikre i dykk sjølve» tolkar verbet som tvil, men samanhengen talar om å gjera skilnad mellom folk.",
+        "alternative": true
       }
     ]
   },
@@ -119,7 +126,16 @@
     "bookId": 59,
     "chapterId": 2,
     "verseId": 16,
-    "text": "og ein av dykk seier til dei: «Gå i fred, varm dykk og et dykk mette», men ikkje gjev dei det kroppen treng, kva gagnar det?"
+    "text": "og ein av dykk seier til dei: «Gå i fred, hald dykk varme og et dykk mette», men de gjev dei ikkje det kroppen treng – kva hjelper det?",
+    "versions": [
+      {
+        "text": "og ein av dykk seier til dei: «Gå i fred, varm dykk og et dykk mette», men ikkje gjev dei det kroppen treng, kva gagnar det?",
+        "type": "error",
+        "severity": "major",
+        "explanation": "«men ikkje gjev dei det kroppen treng» manglar subjektet «de», slik at det ser ut som dei trengande sjølve ikkje gjev, og ordstillinga vert ugrammatisk.",
+        "alternative": false
+      }
+    ]
   },
   {
     "bookId": 59,

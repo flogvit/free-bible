@@ -117,13 +117,20 @@
     "bookId": 47,
     "chapterId": 7,
     "verseId": 14,
-    "text": "Men liksom alt vi har sagt til dykk var sant, slik har òg skrytet vårt overfor Titus vist seg å vera sant.",
+    "text": "Om eg har rosa meg av dykk overfor han, er eg ikkje vorten til skamme. Men slik alt vi har sagt til dykk, har vore sant, slik har òg det vi rosa oss av overfor Titus, vist seg å vere sant.",
     "versions": [
       {
         "text": "For om eg har rosa dykk overfor han, så er eg ikkje blitt til skamme. Men liksom alt vi har sagt til dykk var sant, slik har òg rosa vår overfor Titus vist seg å vera sann.",
         "type": "grammar",
         "severity": "major",
         "explanation": "'Rosa vår' er grammatisk uklart – det kan tolkast som verbet 'å rosa'. Det er 'skrytet/lovorda våre overfor Titus' som er meint (ἡ καύχησις ἡμῶν ἡ ἐπὶ Τίτου = vår ros/skryt angåande dykk, retta mot Titus). Formuleringa bør gjerast klarare. Dessutan: 'rosa' som substantiv er hokjønn, men her er det kaύχησις som refererer til det Paulus sa om korintarane til Titus, ikkje omvendt."
+      },
+      {
+        "text": "Men liksom alt vi har sagt til dykk var sant, slik har òg skrytet vårt overfor Titus vist seg å vera sant.",
+        "type": "error",
+        "severity": "major",
+        "explanation": "Heile første leddet, «om eg har rosa meg av dykk overfor han, er eg ikkje vorten til skamme», manglar.",
+        "alternative": false
       }
     ]
   },

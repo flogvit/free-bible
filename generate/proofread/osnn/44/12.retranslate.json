@@ -1,0 +1,49 @@
+{
+  "model": "claude-opus-5-5",
+  "effort": null,
+  "at": "2026-09-23T16:44:15.617Z",
+  "fresh": {
+    "1": "På den tida tok kong Herodes til å fara hardt fram mot nokre av dei som høyrde til kyrkjelyden.",
+    "2": "Han let Jakob, bror til Johannes, drepa med sverd.",
+    "3": "Då han såg at jødane likte dette, gjekk han vidare og tok Peter òg. Det var i dagane då dei åt usyra brød.",
+    "4": "Han fekk tak i han og sette han i fengsel, og fire vaktlag med fire soldatar i kvart skulle vakta han. Etter påska ville han føra han fram for folket.",
+    "5": "Så vart Peter halden i fengselet, men kyrkjelyden bad inderleg til Gud for han.",
+    "6": "Natta før Herodes skulle føra han fram, låg Peter og sov mellom to soldatar, bunden med to lekkjer, og vaktmenn framfor døra heldt vakt over fengselet.",
+    "7": "Med eitt stod ein Herrens engel der, og eit lys skein i cella. Engelen slo Peter i sida, vekte han og sa: «Skund deg og stå opp!» Då fall lekkjene av hendene hans.",
+    "8": "Engelen sa til han: «Spenn beltet og bind på deg sandalane!» Det gjorde han. Så sa engelen: «Kast kappa om deg og følg meg!»",
+    "9": "Peter gjekk ut og følgde etter han. Han skjøna ikkje at det engelen gjorde, var verkeleg; han trudde han såg eit syn.",
+    "10": "Dei gjekk forbi den første vakta og den andre og kom til jernporten som førte ut til byen. Den opna seg for dei av seg sjølv, og dei gjekk ut og fram gjennom ei gate. Med det same forsvann engelen frå han.",
+    "11": "Då kom Peter til seg sjølv og sa: «No veit eg for visst at Herren har sendt engelen sin og berga meg ut or handa til Herodes og frå alt det jødefolket venta seg.»",
+    "12": "Då han hadde skjøna dette, gjekk han til huset til Maria, mor til Johannes, som vart kalla Markus. Der var mange samla og bad.",
+    "13": "Han banka på porten, og ei tenestejente som heitte Rode, kom for å høyra kven det var.",
+    "14": "Ho kjende att røysta til Peter, og av berre glede opna ho ikkje porten, men sprang inn og fortalde at Peter stod utanfor.",
+    "15": "«Du er frå vitet», sa dei til henne. Men ho heldt fast på at det var slik. Då sa dei: «Det er engelen hans.»",
+    "16": "Men Peter heldt fram med å banka. Då dei opna, fekk dei sjå han, og dei vart ståande heilt forfjamsa.",
+    "17": "Han gav dei teikn med handa at dei skulle vera stille, og fortalde korleis Herren hadde ført han ut or fengselet. «Fortel dette til Jakob og brørne», sa han. Så gjekk han ut og drog til ein annan stad.",
+    "18": "Då det vart dag, var det stor uro blant soldatane: Kva hadde det vorte av Peter?",
+    "19": "Herodes let leita etter han, men fann han ikkje. Då forhøyrde han vaktmennene og gav ordre om at dei skulle førast bort og avrettast. Sidan drog han frå Judea ned til Cæsarea og vart verande der.",
+    "20": "Herodes var i harm strid med folket i Tyrus og Sidon. No kom dei samla til han. Dei fekk Blastus, kammerherren til kongen, over på si side og bad om fred, for landet deira fekk mat frå landet til kongen.",
+    "21": "På ein fastsett dag kledde Herodes seg i kongeklede, sette seg på domarsetet og heldt ein tale til dei.",
+    "22": "Folket ropte: «Det er ein gud som talar, ikkje eit menneske!»",
+    "23": "Straks slo ein Herrens engel han fordi han ikkje gav Gud æra. Han vart eten opp av makk og døydde.",
+    "24": "Men Guds ord voks og breidde seg ut.",
+    "25": "Barnabas og Saulus fullførte tenesta si i Jerusalem og vende tilbake, og dei tok med seg Johannes, som vart kalla Markus."
+  },
+  "replace": [
+    {
+      "verseId": 25,
+      "type": "error",
+      "reason": "Grunnteksten, slik han er teiknsett her, knyter «εἰς Ἰερουσαλὴμ» til at dei fullførte tenesta i Jerusalem, men «vende attende til Jerusalem» gjer Jerusalem til målet for heimreisa.",
+      "otherDefensible": true
+    }
+  ],
+  "keep": [
+    {
+      "verseId": 19,
+      "reason": "Orda «og avrettast» er lagde til; grunnteksten seier berre at vaktmennene skulle «førast bort»."
+    }
+  ],
+  "signature": "96191fc583f7e2a24c318fa19fcc74d5b302b7ff5e2744ce31f87d9492f1f939",
+  "appliedSignature": "b0db4eb5778d2c901376e445c79bc8f736479e2bdd331d5b3f8a80e01330c006",
+  "appliedAt": "2026-09-23T16:44:15.618Z"
+}

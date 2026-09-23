@@ -1,0 +1,51 @@
+{
+  "model": "claude-opus-5-5",
+  "effort": null,
+  "at": "2026-09-23T18:12:24.005Z",
+  "fresh": {
+    "1": "Og eg såg at Lammet opna det første av dei sju sigla, og eg høyrde ein av dei fire livsvesena seia med ei røyst som torden: «Kom!»",
+    "2": "Eg såg, og sjå, der var ein kvit hest. Han som sat på han, hadde ein boge, og han fekk ein krans. Han drog ut som sigerherre for å vinna siger.",
+    "3": "Då Lammet opna det andre seglet, høyrde eg det andre livsvesenet seia: «Kom!»",
+    "4": "Og ein annan hest kom fram, ein raud. Han som sat på han, fekk makt til å ta freden bort frå jorda, så menneska skulle slakta kvarandre. Og han fekk eit stort sverd.",
+    "5": "Då Lammet opna det tredje seglet, høyrde eg det tredje livsvesenet seia: «Kom!» Eg såg, og sjå, der var ein svart hest. Han som sat på han, hadde ei vekt i handa.",
+    "6": "Og eg høyrde liksom ei røyst midt mellom dei fire livsvesena som sa: «Eit mål kveite for ein denar og tre mål bygg for ein denar! Men olja og vinen må du ikkje skada.»",
+    "7": "Då Lammet opna det fjerde seglet, høyrde eg røysta til det fjerde livsvesenet som sa: «Kom!»",
+    "8": "Eg såg, og sjå, der var ein bleikgrøn hest. Han som sat på han, heitte Døden, og dødsriket fylgde med han. Dei fekk makt over ein fjerdedel av jorda, til å drepa med sverd og svolt og pest og ved villdyra på jorda.",
+    "9": "Då Lammet opna det femte seglet, såg eg under altaret sjelene til dei som var slakta for Guds ord og for det vitnemålet dei hadde.",
+    "10": "Dei ropa med høg røyst: «Kor lenge, du heilage og sanne Herre, skal det vara før du held dom og tek hemn for blodet vårt over dei som bur på jorda?»",
+    "11": "Kvar av dei fekk ei kvit kappe, og det vart sagt til dei at dei skulle kvila enno ei lita tid, til talet var fullt av medtenarane og brørne deira, som skulle drepast slik som dei sjølve.",
+    "12": "Og eg såg då Lammet opna det sjette seglet: Det kom eit kraftig jordskjelv, sola vart svart som ein sekk av hår, og heile månen vart som blod.",
+    "13": "Stjernene på himmelen fall ned på jorda, slik eit fikentre slepper dei umogne fikene sine når det vert rista av ein sterk vind.",
+    "14": "Himmelen vart borte som ei bokrull som vert rulla saman, og kvart fjell og kvar øy vart flytt frå staden sin.",
+    "15": "Kongane på jorda, stormennene og hærførarane, dei rike og dei mektige, kvar slave og kvar fri mann gøymde seg i hòlene og mellom klippene i fjella.",
+    "16": "Og dei sa til fjella og klippene: «Fall over oss og gøym oss for andletet til han som sit på trona, og for vreiden til Lammet!",
+    "17": "For den store dagen for vreiden deira er komen, og kven kan då bli ståande?»"
+  },
+  "replace": [
+    {
+      "verseId": 6,
+      "type": "grammar",
+      "reason": "«Ein mål» har feil kjønn, sidan «mål» er inkjekjønn og skal heite «eit mål».",
+      "otherDefensible": false
+    },
+    {
+      "verseId": 11,
+      "type": "grammar",
+      "reason": "«ei kvit kjortel» har feil kjønn, sidan «kjortel» er hankjønn og skal heite «ein kvit kjortel».",
+      "otherDefensible": false
+    }
+  ],
+  "keep": [
+    {
+      "verseId": 1,
+      "reason": "«sigla» er feil skrivemåte for «segla», «ein av dei fire livsvesena» har feil kjønn (vesen er inkjekjønn: «eitt»), og «torden» er ikkje nynorsk."
+    },
+    {
+      "verseId": 14,
+      "reason": "«ei bokrull» har feil kjønn, sidan «bokrull» er hankjønn og skal heite «ein bokrull»."
+    }
+  ],
+  "signature": "e4b3475336940982d301e835161900ae41c13036c873d708c7e88b953e5315de",
+  "appliedSignature": "e4b3475336940982d301e835161900ae41c13036c873d708c7e88b953e5315de",
+  "appliedAt": "2026-09-23T18:12:24.006Z"
+}

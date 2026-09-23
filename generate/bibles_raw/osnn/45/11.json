@@ -259,11 +259,18 @@
     "bookId": 45,
     "chapterId": 11,
     "verseId": 33,
-    "text": "Å, for eit djup av rikdom og visdom og kunnskap hos Gud! Kor uransakelege hans domar er, og kor ugranskande hans vegar!",
+    "text": "Å, for ei djupn av rikdom og visdom og kunnskap hos Gud! Kor uransakelege domane hans er, og kor usporlege vegane hans!",
     "versions": [
       {
         "text": "Å, for eit djup av rikdom og visdom og kunnskap hos Gud! Kor uransakelege domane hans er, og kor ufattelege vegane hans!",
         "explanation": "'Ugranskande' (ἀνεξιχνίαστοι = ikkje til å spora opp/granska) er meir presis enn 'ufattelege'. Ordstillinga med 'hans' først gir betre rytme for høgtlesing og ein meir høgtideleg tone som passar den doksologiske karakteren."
+      },
+      {
+        "text": "Å, for eit djup av rikdom og visdom og kunnskap hos Gud! Kor uransakelege hans domar er, og kor ugranskande hans vegar!",
+        "type": "error",
+        "severity": "major",
+        "explanation": "«Ugranskande» tyder «som ikkje granskar» og ikkje «som ikkje kan granskast», så meininga blir forvrengd.",
+        "alternative": false
       }
     ]
   },
@@ -283,6 +290,15 @@
     "bookId": 45,
     "chapterId": 11,
     "verseId": 36,
-    "text": "For av han og ved han og til han er alle ting. Han vere æra i all æve! Amen."
+    "text": "For frå han og gjennom han og til han er alle ting. Hans er æra i all æve! Amen.",
+    "versions": [
+      {
+        "text": "For av han og ved han og til han er alle ting. Han vere æra i all æve! Amen.",
+        "type": "error",
+        "severity": "major",
+        "explanation": "«Han vere æra» seier at Gud skal vere æra, i staden for at æra tilhøyrer han («hans er æra»).",
+        "alternative": false
+      }
+    ]
   }
 ]

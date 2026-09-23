@@ -71,13 +71,20 @@
     "bookId": 45,
     "chapterId": 3,
     "verseId": 9,
-    "text": "Kva då? Har vi noko føremon? Slett ikkje!",
+    "text": "Korleis er det så? Har vi jødar noko fortrinn? Nei, slett ikkje. For vi har alt klaga både jødar og grekarar for å vera under synda, alle saman.",
     "versions": [
       {
         "text": "Kva då? Er vi betre enn dei? Ikkje på nokon måte! For vi har alt klaga både jødar og grekarar for å vera under synda,",
         "type": "error",
         "severity": "major",
         "explanation": "οὐ πάντως betyr 'slett ikkje' eller 'på ingen måte', men 'Ikkje på nokon måte' er ein uvanleg formulering på nynorsk. Viktigare: προεχόμεθα i medium tyder helst 'har vi noko føremon?' (ikkje 'er vi betre enn dei?'). Dessutan knyter spørsmålet seg tilbake til v. 1 om jødane sitt føremon, ikkje ei samanlikning med andre."
+      },
+      {
+        "text": "Kva då? Har vi noko føremon? Slett ikkje!",
+        "type": "error",
+        "severity": "major",
+        "explanation": "Omsetjinga stansar etter «Slett ikkje!» og utelèt heile grunngjevinga om at både jødar og grekarar er klaga for å vera under synda.",
+        "alternative": false
       }
     ]
   },
@@ -153,7 +160,16 @@
     "bookId": 45,
     "chapterId": 3,
     "verseId": 20,
-    "text": "Difor vert ikkje noko menneske rettferdiggjort for han ved lovgjerningar, for ved lova kjem kjennskap til synd."
+    "text": "For ikkje noko menneske blir rettferdig for Gud ved gjerningar som lova krev. Gjennom lova kjem kunnskap om synd.",
+    "versions": [
+      {
+        "text": "Difor vert ikkje noko menneske rettferdiggjort for han ved lovgjerningar, for ved lova kjem kjennskap til synd.",
+        "type": "error",
+        "severity": "major",
+        "explanation": "«Difor» gjer grunngjevinga (διότι, «for») om til ein konklusjon og endrar samanhengen i resonnementet.",
+        "alternative": true
+      }
+    ]
   },
   {
     "bookId": 45,

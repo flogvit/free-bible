@@ -115,7 +115,7 @@
     "bookId": 46,
     "chapterId": 9,
     "verseId": 15,
-    "text": "For eg vil heller døy enn — Ingen skal gjera det eg kan rosa meg av, til inkjes!",
+    "text": "Men eg har ikkje gjort bruk av nokon av desse rettane. Og eg skriv ikkje dette for at det skal verta gjort slik med meg. Heller vil eg døy enn at nokon skal ta frå meg det eg har å rosa meg av.",
     "versions": [
       {
         "text": "Men eg har ikkje nytta meg av noko av dette. Og eg skriv ikkje dette for at det skal bli slik med meg. For eg vil heller døy enn — Ingen skal ta frå meg det eg kan rosa meg av!",
@@ -126,6 +126,13 @@
         "type": "grammar",
         "severity": "minor",
         "explanation": "Den greske teksten har ein avbroten setning (aposiopese) med ἤ— (enn—). Paulus bryt av midt i setninga og startar på nytt. 'enn at nokon —' legg til 'at nokon' som ikkje finst i originalen og svekkar den brå avbrytinga. 'enn —' fangar betre opp den retoriske aposiopesen. NB: dette er ikkje det same som den tidlegare versjonen, som hadde anna ordlyd i siste del."
+      },
+      {
+        "text": "For eg vil heller døy enn — Ingen skal gjera det eg kan rosa meg av, til inkjes!",
+        "type": "error",
+        "severity": "major",
+        "explanation": "Omsetjinga manglar heile første delen av verset («eg har ikkje gjort bruk av nokon av desse rettane» og «eg skriv ikkje dette for at …») og byrjar brått med «For eg vil heller døy enn».",
+        "alternative": false
       }
     ]
   },
