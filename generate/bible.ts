@@ -1656,6 +1656,25 @@ export async function retranslateVerdicts(language: string, style: string, bookI
 }
 
 /**
+ * How badly the «» in a chapter fail to pair up: once for every closing mark with nothing
+ * open, plus whatever is still open at the end. 0 for a chapter where every quote closes.
+ */
+function quoteTrouble(verses: Verse[]): number {
+    let depth = 0;
+    let trouble = 0;
+    for (const v of verses) {
+        for (const ch of v.text || '') {
+            if (ch === '«') depth++;
+            else if (ch === '»') {
+                if (depth === 0) trouble++;
+                else depth--;
+            }
+        }
+    }
+    return trouble + depth;
+}
+
+/**
  * Write the verdicts into the verses. Mutates `verses`.
  *
  * A replacement that drops an inline footnote marker is rejected, as in the batch proofread,
@@ -1664,6 +1683,7 @@ export async function retranslateVerdicts(language: string, style: string, bookI
  * translation of the whole verse does not fail that way — whether content is missing is
  * exactly what the judge checks. With the guard on, a correct fix in Jes 40,13 was thrown
  * away for being 83 % of the old length. The ratio still decides `alternative`, as there.
+ * A replacement that leaves the chapter's «» worse paired than before is not made.
  */
 export function applyRetranslate(verses: Verse[], result: Pick<RetranslateResult, 'fresh' | 'replace'>): {applied: number; rejected: number} {
     let applied = 0;
@@ -1675,6 +1695,20 @@ export function applyRetranslate(verses: Verse[], result: Pick<RetranslateResult
         const {ratio, newText, dropsMarker} = evaluateSuggestion(verse.text, text);
         if (dropsMarker) {
             console.log(`  REJECTED: verse ${r.verseId} — the fresh reading drops an inline footnote marker`);
+            rejected++;
+            continue;
+        }
+        // The fresh verse comes from a translation with its own quotation marks. A speech
+        // that runs over several verses can then lose its close, or gain a second open, when
+        // one verse is swapped in. Seen in Mark 6, Matt 21 and Matt 25 on the first NT run.
+        // A swap that fixes the marks is welcome; one that makes them worse is not made.
+        const troubleBefore = quoteTrouble(verses);
+        const oldText = verse.text;
+        verse.text = newText;
+        const troubleAfter = quoteTrouble(verses);
+        verse.text = oldText;
+        if (troubleAfter > troubleBefore) {
+            console.log(`  REJECTED: verse ${r.verseId} — the fresh reading leaves the chapter's «» unpaired`);
             rejected++;
             continue;
         }
