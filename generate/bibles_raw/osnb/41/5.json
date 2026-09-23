@@ -3,13 +3,20 @@
     "bookId": 41,
     "chapterId": 5,
     "verseId": 1,
-    "text": "De kom over til den andre siden av sjøen, til Gerasenernes land.",
+    "text": "De kom over til den andre siden av sjøen, til landet der gerasenerne bodde.",
     "versions": [
       {
         "text": "De kom over til den andre siden av sjøen, til gerasenernes land.",
         "type": "suggestion",
         "severity": "minor",
         "explanation": "Gerasenerne er et folkenavn avledet fra et egennavn (Gerasa), og bør skrives med stor forbokstav på norsk, tilsvarende andre folkenavn i Bibelen."
+      },
+      {
+        "text": "De kom over til den andre siden av sjøen, til Gerasenernes land.",
+        "type": "grammar",
+        "severity": "major",
+        "explanation": "Innbyggernavn skrives med liten forbokstav på bokmål, så «Gerasenernes land» skal være «gerasenernes land».",
+        "alternative": false
       }
     ]
   },

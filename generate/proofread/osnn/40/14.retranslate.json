@@ -1,0 +1,78 @@
+{
+  "model": "claude-opus-5-5",
+  "effort": null,
+  "at": "2026-09-23T15:08:26.420Z",
+  "fresh": {
+    "1": "På den tida høyrde Herodes, landsfyrsten, gjetordet om Jesus,",
+    "2": "og han sa til tenarane sine: «Dette er døyparen Johannes. Han er stått opp frå dei døde, og difor verkar desse kreftene i han.»",
+    "3": "Herodes hadde nemleg late Johannes gripe, binde og setje i fengsel på grunn av Herodias, kona til Filip, bror hans.",
+    "4": "For Johannes hadde sagt til han: «Det er ikkje lov for deg å ha henne.»",
+    "5": "Herodes ville gjerne drepe han, men han var redd folket, for dei rekna Johannes for ein profet.",
+    "6": "Då Herodes feira fødselsdagen sin, dansa dotter til Herodias for gjestene, og Herodes vart så glad i henne",
+    "7": "at han lova med eid å gje henne kva ho så bad om.",
+    "8": "Etter å ha fått råd av mor si sa ho: «Gje meg her på eit fat hovudet til døyparen Johannes!»",
+    "9": "Kongen vart lei seg, men på grunn av eiden og gjestene ved bordet gav han ordre om at ho skulle få det.",
+    "10": "Han sende bod og let Johannes halshogge i fengselet.",
+    "11": "Hovudet hans vart bore inn på eit fat og gjeve til jenta, og ho bar det til mor si.",
+    "12": "Læresveinane hans kom og tok liket og gravla det. Så gjekk dei og fortalde det til Jesus.",
+    "13": "Då Jesus høyrde dette, drog han derifrå i båt til ein aud stad for å vere åleine. Men folket fekk vite det og følgde etter han til fots frå byane.",
+    "14": "Då han steig i land, såg han ein stor folkemengd. Han fekk inderleg medkjensle med dei og lækte dei sjuke hjå dei.",
+    "15": "Då det leid mot kveld, kom læresveinane til han og sa: «Staden er aud, og det er alt seint. Send folket frå deg, så dei kan gå inn i landsbyane og kjøpe seg mat.»",
+    "16": "Men Jesus sa til dei: «Dei treng ikkje gå. Gje de dei mat!»",
+    "17": "Dei svara: «Vi har ikkje meir her enn fem brød og to fiskar.»",
+    "18": "«Kom hit til meg med dei», sa han.",
+    "19": "Så bad han folket setje seg i graset. Han tok dei fem brøda og dei to fiskane, såg opp mot himmelen og velsigna. Så braut han brøda og gav dei til læresveinane, og læresveinane gav dei til folket.",
+    "20": "Alle åt og vart mette, og dei samla opp det som var att av brødstykke, tolv fulle korger.",
+    "21": "Dei som åt, var omkring fem tusen menn, i tillegg til kvinner og born.",
+    "22": "Straks etter fekk han læresveinane til å gå i båten og fare i førevegen over til den andre sida, medan han sende folket heim.",
+    "23": "Då han hadde sendt folket frå seg, gjekk han opp i fjellet for å be i einsemd. Då kvelden kom, var han der åleine.",
+    "24": "Båten var alt mange stadier frå land og vart hardt kasta av bølgjene, for vinden var imot.",
+    "25": "I den fjerde nattevakta kom han til dei, gåande på sjøen.",
+    "26": "Då læresveinane såg han gå på sjøen, vart dei forskrekka og sa: «Det er eit spøkjelse!» Og dei skreik av redsle.",
+    "27": "Men Jesus tala straks til dei og sa: «Ver frimodige, det er eg. Ver ikkje redde!»",
+    "28": "Då svara Peter: «Herre, er det deg, så sei at eg skal kome til deg på vatnet.»",
+    "29": "«Kom!» sa han. Og Peter steig ut av båten, gjekk på vatnet og kom bort til Jesus.",
+    "30": "Men då han merka kor sterk vinden var, vart han redd og byrja å søkkje. Då ropa han: «Herre, frels meg!»",
+    "31": "Straks rekte Jesus ut handa, greip tak i han og sa: «Du lite truande, kvifor tvila du?»",
+    "32": "Og då dei steig opp i båten, la vinden seg.",
+    "33": "Dei som var i båten, fall ned for han og sa: «Du er sanneleg Guds Son!»",
+    "34": "Då dei hadde fare over sjøen, kom dei i land ved Gennesaret.",
+    "35": "Folket på staden kjende han att og sende bod rundt i heile bygda omkring. Dei kom til han med alle som var sjuke,",
+    "36": "og dei bad om at dei berre måtte få røre ved dusken på kappa hans. Og alle som rørte ved han, vart heilt friske."
+  },
+  "replace": [
+    {
+      "verseId": 20,
+      "type": "grammar",
+      "reason": "«brøtstykka» er feilstava; det skal vere «brødstykka».",
+      "otherDefensible": false
+    },
+    {
+      "verseId": 36,
+      "type": "error",
+      "reason": "«vart fullt ut frelste» gjev ei åndeleg tyding, medan grunnteksten her talar om at dei vart lækte, altså heilt friske.",
+      "otherDefensible": false
+    }
+  ],
+  "keep": [
+    {
+      "verseId": 3,
+      "reason": "«bror hans» viser ikkje tilbake til subjektet Herodes og kan lesast som bror til Johannes; det skal vere «bror sin»."
+    },
+    {
+      "verseId": 6,
+      "reason": "«dotter til Herodias» manglar bunden form («dottera»), og «vart så glad i henne» tyder å elske henne, ikkje at dansen fall i smak."
+    },
+    {
+      "verseId": 7,
+      "reason": "«at han lova med eid …» står som ei ufullstendig setning etter at førre vers er avslutta med punktum."
+    },
+    {
+      "verseId": 14,
+      "reason": "«ein stor folkemengd» har feil kjønn; «folkemengd» er hokjønn og skal ha «ei stor folkemengd»."
+    }
+  ],
+  "signature": "c440f82205125925daf07f00c79c5fb739e011c4ed774d4f0cbfc23f6882e476",
+  "appliedSignature": "b5d89fe2c46485a5793adeef5991ef388f6fb74342f97db24a25bceba9835f2a",
+  "appliedAt": "2026-09-23T15:08:26.421Z"
+}

@@ -317,11 +317,18 @@
     "bookId": 41,
     "chapterId": 8,
     "verseId": 34,
-    "text": "Så kalte han til seg folkemengden og disiplene og sa til dem: «Om noen vil følge etter meg, må han fornekte seg selv, ta opp sitt kors og følge meg.»",
+    "text": "Så kalte han folket og disiplene til seg og sa: «Vil noen følge etter meg, må han fornekte seg selv, ta sitt kors og følge meg.",
     "versions": [
       {
         "text": "Så kalte han til seg folkemengden og disiplene og sa til dem: «Om noen vil følge etter meg, må han fornekte seg selv, ta opp sitt kors og følge meg.",
         "explanation": "Verset mangler avsluttende anførselstegn. Jesu tale avsluttes her før neste vers begynner med 'For'."
+      },
+      {
+        "text": "Så kalte han til seg folkemengden og disiplene og sa til dem: «Om noen vil følge etter meg, må han fornekte seg selv, ta opp sitt kors og følge meg.»",
+        "type": "grammar",
+        "severity": "major",
+        "explanation": "Anførselstegnet lukkes med «følge meg.»» selv om Jesu tale fortsetter til vers 38, der et nytt avsluttende anførselstegn står uten tilhørende åpning.",
+        "alternative": true
       }
     ]
   },

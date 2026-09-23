@@ -159,7 +159,16 @@
     "bookId": 40,
     "chapterId": 14,
     "verseId": 20,
-    "text": "Alle åt og vart mette. Og dei samla opp det som var att av brøtstykka, tolv fulle korger."
+    "text": "Alle åt og vart mette, og dei samla opp det som var att av brødstykke, tolv fulle korger.",
+    "versions": [
+      {
+        "text": "Alle åt og vart mette. Og dei samla opp det som var att av brøtstykka, tolv fulle korger.",
+        "type": "grammar",
+        "severity": "major",
+        "explanation": "«brøtstykka» er feilstava; det skal vere «brødstykka».",
+        "alternative": false
+      }
+    ]
   },
   {
     "bookId": 40,
@@ -263,13 +272,20 @@
     "bookId": 40,
     "chapterId": 14,
     "verseId": 36,
-    "text": "Dei bad han om at dei berre måtte få røra ved kanten av kappa hans. Og alle som rørte ved han, vart fullt ut frelste.",
+    "text": "og dei bad om at dei berre måtte få røre ved dusken på kappa hans. Og alle som rørte ved han, vart heilt friske.",
     "versions": [
       {
         "text": "Dei bad han om at dei berre måtte få røra ved kanten av kappa hans. Og alle som rørte ved han, vart fullstendig lækte.",
         "type": "error",
         "severity": "minor",
         "explanation": "διεσώθησαν kjem frå διασῴζω som tyder 'vart berga/frelste/heilbreda'. 'Fullstendig lækte' er akseptabelt, men 'frelste' eller 'berga' fangar betre den breiare tydinga av det greske ordet som inkluderer meir enn berre fysisk lækjing. Alternativt kan 'vart heilbreda' vera eit godt kompromiss."
+      },
+      {
+        "text": "Dei bad han om at dei berre måtte få røra ved kanten av kappa hans. Og alle som rørte ved han, vart fullt ut frelste.",
+        "type": "error",
+        "severity": "major",
+        "explanation": "«vart fullt ut frelste» gjev ei åndeleg tyding, medan grunnteksten her talar om at dei vart lækte, altså heilt friske.",
+        "alternative": false
       }
     ]
   }

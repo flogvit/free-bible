@@ -707,13 +707,20 @@
     "bookId": 40,
     "chapterId": 23,
     "verseId": 23,
-    "text": "Ve dere, skriftlærde og fariseere, dere hyklere! Dere gir tiende av mynte, dill og karve, men forsømmer det som veier tyngst i loven: rett og rettferdighet, barmhjertighet og troskap. Dette burde dere gjøre uten å forsømme det andre.",
+    "text": "Ve dere, skriftlærde og fariseere, dere hyklere! Dere gir tiende av mynte, dill og karve, men forsømmer det som veier tyngst i loven: rett, barmhjertighet og troskap. Dette burde dere gjøre, uten å forsømme det andre.",
     "versions": [
       {
         "text": "Ve dere, skriftlærde og fariseere, dere hyklere! Dere gir tiende av mynte, dill og karve, men forsømmer det som veier tyngst i loven: rettferdighet, barmhjertighet og troskap. Dette burde dere gjøre uten å forsømme det andre.",
         "type": "suggestion",
         "severity": "minor",
         "explanation": "Det greske ordet κρίσιν betyr primært 'dom' eller 'rett/rettferd' i juridisk forstand, ikke generell 'rettferdighet' (som ville være δικαιοσύνη). Oversettelsen 'rettferdighet' er akseptabel og vanlig i norske bibler, men 'rett og rettferdighet' eller bare 'rettferdighet' kan forsvares. Nåværende oversettelse er god og lesbar, men en mer presis gjengivelse kunne vært 'rettferdig dom' eller 'rett dom'. Forslaget er likevel marginalt, og den eksisterende oversettelsen er fullt forsvarlig."
+      },
+      {
+        "text": "Ve dere, skriftlærde og fariseere, dere hyklere! Dere gir tiende av mynte, dill og karve, men forsømmer det som veier tyngst i loven: rett og rettferdighet, barmhjertighet og troskap. Dette burde dere gjøre uten å forsømme det andre.",
+        "type": "error",
+        "severity": "major",
+        "explanation": "«rett og rettferdighet» legger til «rettferdighet», som ikke står i grunnteksten; der nevnes bare rett, barmhjertighet og troskap.",
+        "alternative": false
       }
     ],
     "footnotes": [

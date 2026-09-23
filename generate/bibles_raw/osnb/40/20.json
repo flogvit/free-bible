@@ -111,13 +111,20 @@
     "bookId": 40,
     "chapterId": 20,
     "verseId": 12,
-    "text": "og sa: «Disse siste har bare arbeidet én time, og du har gjort dem likestilt med oss som har båret dagens byrde og hete.»",
+    "text": "og sa: «Disse siste har arbeidet bare én time, og du har stilt dem likt med oss, som har båret dagens byrde og hete.»",
     "versions": [
       {
         "text": "og sa: «Disse siste har bare arbeidet én time, og du har stilt dem likt med oss som har båret dagens byrde og hete.»",
         "type": "suggestion",
         "severity": "minor",
         "explanation": "Det greske 'ἴσους ... ἐποίησας' betyr bokstavelig 'du har gjort dem like med oss'. 'Stilt dem likt' er akseptabelt, men 'gjort dem likestilt' er litt mer naturlig norsk og fanger bedre den greske konstruksjonen."
+      },
+      {
+        "text": "og sa: «Disse siste har bare arbeidet én time, og du har gjort dem likestilt med oss som har båret dagens byrde og hete.»",
+        "type": "grammar",
+        "severity": "major",
+        "explanation": "«gjort dem likestilt» mangler flertallsbøyning og skal være «likestilte», fordi adjektivet viser til «dem».",
+        "alternative": false
       }
     ]
   },

@@ -81,11 +81,18 @@
     "bookId": 41,
     "chapterId": 2,
     "verseId": 8,
-    "text": "Straks kjente Jesus i sin ånd at de tenkte slik ved seg selv, og han sa til dem: «Hvorfor tenker dere slik i deres hjerter?»",
+    "text": "Straks forsto Jesus i sin ånd at de tenkte slik, og han sa til dem: «Hvorfor tenker dere slikt i hjertene deres?",
     "versions": [
       {
         "text": "Straks kjente Jesus i sin ånd at de tenkte slik ved seg selv, og han sa til dem: «Hvorfor tenker dere slik i deres hjerter?",
         "explanation": "Mangler avsluttende anførselstegn på slutten av verset."
+      },
+      {
+        "text": "Straks kjente Jesus i sin ånd at de tenkte slik ved seg selv, og han sa til dem: «Hvorfor tenker dere slik i deres hjerter?»",
+        "type": "grammar",
+        "severity": "major",
+        "explanation": "Anførselstegnet lukkes etter «i deres hjerter?»» selv om Jesu tale fortsetter i de neste versene, så sitatet avsluttes for tidlig.",
+        "alternative": false
       }
     ]
   },
@@ -207,11 +214,18 @@
     "bookId": 41,
     "chapterId": 2,
     "verseId": 19,
-    "text": "Jesus svarte dem: «Kan bryllupsgjestene faste mens brudgommen er hos dem? Så lenge de har brudgommen hos seg, kan de ikke faste.»",
+    "text": "Jesus svarte dem: «Kan bryllupsgjestene faste mens brudgommen er hos dem? Så lenge de har brudgommen hos seg, kan de ikke faste.",
     "versions": [
       {
         "text": "Jesus svarte dem: «Kan bryllupsgjestene faste mens brudgommen er hos dem? Så lenge de har brudgommen hos seg, kan de ikke faste.",
         "explanation": "Mangler avsluttende anførselstegn. Vers 19 avslutter Jesu utsagn før vers 20 fortsetter med et nytt poeng."
+      },
+      {
+        "text": "Jesus svarte dem: «Kan bryllupsgjestene faste mens brudgommen er hos dem? Så lenge de har brudgommen hos seg, kan de ikke faste.»",
+        "type": "grammar",
+        "severity": "major",
+        "explanation": "Anførselstegnet lukkes etter «kan de ikke faste.»» selv om Jesu tale fortsetter til og med vers 22.",
+        "alternative": false
       }
     ]
   },
@@ -219,13 +233,20 @@
     "bookId": 41,
     "chapterId": 2,
     "verseId": 20,
-    "text": "Men det skal komme dager da brudgommen blir tatt fra dem, og da skal de faste, i de dagene.",
+    "text": "Men det skal komme dager da brudgommen blir tatt fra dem, og da skal de faste, på den dagen.",
     "versions": [
       {
         "text": "Men det skal komme dager da brudgommen blir tatt fra dem, og da skal de faste, på den dagen.",
         "type": "suggestion",
         "severity": "minor",
         "explanation": "Varianten 'ἐκείναις ταῖς ἡμέραις' (i de dagene) er den foretrukne lesemåten i mange manuskripter, og passer bedre med flertall 'ἡμέραι' (dager) i begynnelsen av verset. Uansett er 'på den dagen' noe klosset norsk i denne sammenhengen. Alternativt kan man beholde entall og si 'på den dag'."
+      },
+      {
+        "text": "Men det skal komme dager da brudgommen blir tatt fra dem, og da skal de faste, i de dagene.",
+        "type": "error",
+        "severity": "major",
+        "explanation": "«i de dagene» gjengir ikke originalens entall «på den dagen» (ἐν ἐκείνῃ τῇ ἡμέρᾳ).",
+        "alternative": false
       }
     ]
   },

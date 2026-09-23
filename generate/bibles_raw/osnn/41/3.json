@@ -3,13 +3,20 @@
     "bookId": 41,
     "chapterId": 3,
     "verseId": 1,
-    "text": "Han gjekk inn i synagogen igjen, og der var det ein mann som hadde ei vissen hand.",
+    "text": "Ein annan gong gjekk Jesus inn i synagogen. Der var det ein mann som hadde ei visna hand.",
     "versions": [
       {
         "text": "Han gjekk inn i synagogen igjen, og der var det ein mann som hadde ei visna hand.",
         "type": "suggestion",
         "severity": "minor",
         "explanation": "'Visna' er partisipp av 'visna' og kan brukast, men 'vissen' er meir vanleg adjektivform på nynorsk for noko som er uttørka/innskrumpa. Begge er akseptable, men 'vissen' er meir idiomatisk."
+      },
+      {
+        "text": "Han gjekk inn i synagogen igjen, og der var det ein mann som hadde ei vissen hand.",
+        "type": "grammar",
+        "severity": "major",
+        "explanation": "«vissen» er bokmålsform; på nynorsk heiter det «visen» eller «visna».",
+        "alternative": false
       }
     ]
   },

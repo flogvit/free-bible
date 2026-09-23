@@ -21,13 +21,20 @@
     "bookId": 40,
     "chapterId": 10,
     "verseId": 4,
-    "text": "Simon Kananeus og Judas Iskariot, han som svika han.",
+    "text": "Simon kananearen og Judas Iskariot, han som forrådde han.",
     "versions": [
       {
         "text": "Simon Kananeus og Judas Iskariot, han som sveik han.",
         "type": "suggestion",
         "severity": "minor",
         "explanation": "Det greske 'παραδοὺς' tyder 'overleverte' eller 'forrådte'. 'Sveik' kan fungere, men 'svika' er meir presis nynorsk og formidlar forråding/overleveringa betre."
+      },
+      {
+        "text": "Simon Kananeus og Judas Iskariot, han som svika han.",
+        "type": "grammar",
+        "severity": "major",
+        "explanation": "«svika» er feil preteritumsform av «svike»; det skal heite «sveik».",
+        "alternative": false
       }
     ]
   },
@@ -67,11 +74,18 @@
     "bookId": 40,
     "chapterId": 10,
     "verseId": 9,
-    "text": "Skaffa dykk ikkje gull eller sølv eller kopar til belta dykkar,",
+    "text": "Skaff dykk ikkje gull eller sølv eller kopar i beltet,",
     "versions": [
       {
         "text": "Skaffa dykk ikkje gull eller sølv eller kopar i belta dykkar,",
         "explanation": "Preposisjonen 'til' er meir naturleg på nynorsk enn 'i' når ein snakkar om å skaffa pengar ein skal ha med seg i beltet. Det greske 'εἰς' kan tyda begge delar, men 'til' flyt betre munnleg."
+      },
+      {
+        "text": "Skaffa dykk ikkje gull eller sølv eller kopar til belta dykkar,",
+        "type": "grammar",
+        "severity": "major",
+        "explanation": "Imperativ av «skaffa» er «skaff», ikkje «Skaffa».",
+        "alternative": false
       }
     ]
   },
@@ -159,13 +173,20 @@
     "bookId": 40,
     "chapterId": 10,
     "verseId": 22,
-    "text": "Og de skal verta hata av alle for mitt namn si skuld.",
+    "text": "Og de skal verta hata av alle for mitt namn skuld. Men den som held ut til enden, skal verta frelst.",
     "versions": [
       {
         "text": "Og de skal verta hata av alle for mitt namn skuld. Men den som held ut til enden, han skal verta frelst.",
         "type": "grammar",
         "severity": "minor",
         "explanation": "På nynorsk bør det vera 'for mitt namn si skuld' (eller 'for namnet mitt skuld'). 'For mitt namn skuld' manglar eigedomsleddet som bind 'skuld' grammatisk."
+      },
+      {
+        "text": "Og de skal verta hata av alle for mitt namn si skuld.",
+        "type": "error",
+        "severity": "major",
+        "explanation": "Setninga «Men den som held ut til enden, skal verta frelst» manglar.",
+        "alternative": false
       }
     ]
   },

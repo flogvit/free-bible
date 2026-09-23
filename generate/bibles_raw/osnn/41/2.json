@@ -159,13 +159,20 @@
     "bookId": 41,
     "chapterId": 2,
     "verseId": 19,
-    "text": "Jesus svara dei: «Kan bryllaupsgjesene fasta medan brudgomen er hos dei? Så lenge dei har brudgomen hos seg, kan dei ikkje fasta.",
+    "text": "Jesus svara: «Kan bryllaupsgjestene fasta medan brudgommen er hos dei? Så lenge dei har brudgommen hos seg, kan dei ikkje fasta.",
     "versions": [
       {
         "text": "Jesus sa til dei: «Kan bryllaupsgjesene fasta medan brudgomen er hos dei? Så lenge dei har brudgomen hos seg, kan dei ikkje fasta.",
         "type": "suggestion",
         "severity": "minor",
         "explanation": "Det greske εἶπεν tyder 'sa', men sidan dette er eit svar på eit spørsmål, er 'svara' også akseptabelt. Men hovudpoenget er at det greske οἱ υἱοὶ τοῦ νυμφῶνος bokstavleg tyder 'sønene til bryllaupssalen', altså bryllaupsfølgjet. 'Bryllaupsgjesene' er ein god omsetting. Denne er berre ein liten forbetringsforslag."
+      },
+      {
+        "text": "Jesus svara dei: «Kan bryllaupsgjesene fasta medan brudgomen er hos dei? Så lenge dei har brudgomen hos seg, kan dei ikkje fasta.",
+        "type": "grammar",
+        "severity": "major",
+        "explanation": "«bryllaupsgjesene» er feilstava; det skal vere «bryllaupsgjestene».",
+        "alternative": false
       }
     ]
   },
@@ -185,7 +192,16 @@
     "bookId": 41,
     "chapterId": 2,
     "verseId": 22,
-    "text": "Og ingen fyller ny vin i gamle skinnsekker. Gjer ein det, sprengjer vinen sekkene, og både vinen og sekkene vert øydelagde. Nei, ny vin må i nye skinnsekker.»"
+    "text": "Og ingen har ny vin på gamle skinnsekkar. Då sprengjer vinen sekkane, og både vinen og sekkane går tapt. Nei, ny vin skal på nye skinnsekkar.»",
+    "versions": [
+      {
+        "text": "Og ingen fyller ny vin i gamle skinnsekker. Gjer ein det, sprengjer vinen sekkene, og både vinen og sekkene vert øydelagde. Nei, ny vin må i nye skinnsekker.»",
+        "type": "grammar",
+        "severity": "major",
+        "explanation": "«skinnsekker» og «sekkene» er bokmålsbøying; på nynorsk heiter det «skinnsekkar» og «sekkane».",
+        "alternative": false
+      }
+    ]
   },
   {
     "bookId": 41,

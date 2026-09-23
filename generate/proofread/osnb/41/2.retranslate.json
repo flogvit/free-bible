@@ -1,0 +1,59 @@
+{
+  "model": "claude-opus-5-5",
+  "effort": null,
+  "at": "2026-09-23T15:18:11.962Z",
+  "fresh": {
+    "1": "Noen dager senere kom Jesus tilbake til Kapernaum, og det ble kjent at han var hjemme.",
+    "2": "Så mange samlet seg at det ikke lenger var plass, ikke engang utenfor døren, og han talte ordet til dem.",
+    "3": "Da kom noen til ham med en lam mann som ble båret av fire.",
+    "4": "Men de kunne ikke komme fram til ham på grunn av folkemengden. Derfor tok de av taket over stedet der han var, og da de hadde laget en åpning, firte de ned båren som den lamme lå på.",
+    "5": "Da Jesus så troen deres, sa han til den lamme: «Sønn, syndene dine er tilgitt.»",
+    "6": "Men noen av de skriftlærde satt der og tenkte i sitt hjerte:",
+    "7": "«Hvordan kan han tale slik? Han spotter Gud! Hvem kan tilgi synder uten Gud alene?»",
+    "8": "Straks forsto Jesus i sin ånd at de tenkte slik, og han sa til dem: «Hvorfor tenker dere slikt i hjertene deres?",
+    "9": "Hva er lettest, å si til den lamme: ‘Syndene dine er tilgitt’, eller å si: ‘Stå opp, ta båren din og gå’?",
+    "10": "Men for at dere skal vite at Menneskesønnen har makt på jorden til å tilgi synder» – så sa han til den lamme:",
+    "11": "«Jeg sier deg: Stå opp, ta båren din og gå hjem!»",
+    "12": "Og han reiste seg, tok straks båren og gikk ut mens alle så på. Alle ble slått av undring og priste Gud og sa: «Noe slikt har vi aldri sett!»",
+    "13": "Jesus gikk igjen ut langs sjøen. Hele folkemengden kom til ham, og han underviste dem.",
+    "14": "Da han gikk videre, så han Levi, sønn av Alfeus, sitte ved tollbua. Han sa til ham: «Følg meg!» Og Levi reiste seg og fulgte ham.",
+    "15": "Senere satt Jesus til bords i huset hans, og mange tollere og syndere lå til bords sammen med Jesus og disiplene hans. For det var mange av dem, og de fulgte ham.",
+    "16": "Da de skriftlærde blant fariseerne så at han spiste sammen med syndere og tollere, sa de til disiplene hans: «Hvorfor spiser han sammen med tollere og syndere?»",
+    "17": "Jesus hørte det og sa til dem: «Det er ikke de friske som trenger lege, men de syke. Jeg er ikke kommet for å kalle rettferdige, men syndere.»",
+    "18": "Johannes’ disipler og fariseerne holdt faste. Noen kom og spurte Jesus: «Hvorfor faster Johannes’ disipler og fariseernes disipler, mens dine disipler ikke faster?»",
+    "19": "Jesus svarte dem: «Kan bryllupsgjestene faste mens brudgommen er hos dem? Så lenge de har brudgommen hos seg, kan de ikke faste.",
+    "20": "Men det skal komme dager da brudgommen blir tatt fra dem, og da skal de faste, på den dagen.",
+    "21": "Ingen syr en lapp av ukrympet stoff på et gammelt klesplagg. Ellers river den nye lappen seg løs fra det gamle, og riften blir verre.",
+    "22": "Og ingen fyller ny vin på gamle skinnsekker. Ellers vil vinen sprenge sekkene, og både vinen og sekkene går tapt. Nei, ny vin på nye skinnsekker!»",
+    "23": "En sabbat gikk Jesus gjennom kornåkrene, og mens disiplene hans gikk der, begynte de å plukke aks.",
+    "24": "Fariseerne sa da til ham: «Se, hvorfor gjør de det som ikke er tillatt på sabbaten?»",
+    "25": "Han svarte dem: «Har dere aldri lest hva David gjorde da han var i nød og både han og mennene hans var sultne?",
+    "26": "Han gikk inn i Guds hus på den tiden Abjatar var øversteprest, og spiste skuebrødene, som ingen andre enn prestene har lov til å spise, og han ga også mennene sine av dem.»",
+    "27": "Og han sa til dem: «Sabbaten ble til for menneskets skyld, og ikke mennesket for sabbatens skyld.",
+    "28": "Derfor er Menneskesønnen herre også over sabbaten.»"
+  },
+  "replace": [
+    {
+      "verseId": 8,
+      "type": "grammar",
+      "reason": "Anførselstegnet lukkes etter «i deres hjerter?»» selv om Jesu tale fortsetter i de neste versene, så sitatet avsluttes for tidlig.",
+      "otherDefensible": false
+    },
+    {
+      "verseId": 19,
+      "type": "grammar",
+      "reason": "Anførselstegnet lukkes etter «kan de ikke faste.»» selv om Jesu tale fortsetter til og med vers 22.",
+      "otherDefensible": false
+    },
+    {
+      "verseId": 20,
+      "type": "error",
+      "reason": "«i de dagene» gjengir ikke originalens entall «på den dagen» (ἐν ἐκείνῃ τῇ ἡμέρᾳ).",
+      "otherDefensible": false
+    }
+  ],
+  "keep": [],
+  "signature": "887bf4044e035030382a0a66974b37f9381bd9c5655c2b76ecf0d8e78f88c780",
+  "appliedSignature": "eee7f19fd16f5979b69462b738d7dada1de140124aab056d03de5b21c8bc7026",
+  "appliedAt": "2026-09-23T15:18:11.963Z"
+}

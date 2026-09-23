@@ -41,11 +41,18 @@
     "bookId": 40,
     "chapterId": 12,
     "verseId": 6,
-    "text": "Men eg seier dykk: Her er ein som er større enn tempelet.",
+    "text": "Eg seier dykk: Her er det noko som er større enn templet.",
     "versions": [
       {
         "text": "Men eg seier dykk: Her er det som er større enn tempelet.",
         "explanation": "Grunnteksten har nøytrum 'μεῖζόν' som kan tolkast som noko upersonleg ('det som er større'), men konteksten peikar tydeleg på Jesus sjølv. Dei fleste omsetjingar brukar 'ein som er større' for å gjera det klart at det er ein person det handlar om."
+      },
+      {
+        "text": "Men eg seier dykk: Her er ein som er større enn tempelet.",
+        "type": "error",
+        "severity": "major",
+        "explanation": "Grunnteksten har inkjekjønn («noko som er større»), men «ein som er større» gjer det om til ein person.",
+        "alternative": false
       }
     ]
   },

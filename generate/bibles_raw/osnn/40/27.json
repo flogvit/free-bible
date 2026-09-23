@@ -431,13 +431,20 @@
     "bookId": 40,
     "chapterId": 27,
     "verseId": 65,
-    "text": "Pilatus sa til dei: «De får ein vakt. Gå og syt for vakthald så godt de kan.»",
+    "text": "Pilatus sa til dei: «De skal få ei vakt. Gå og sikra grava så godt de kan.»",
     "versions": [
       {
         "text": "Pilatus sa til dei: «De har vakter. Gå og syt for vakthald så godt de kan.»",
         "type": "suggestion",
         "severity": "minor",
         "explanation": "Ἔχετε κουστωδίαν kan tolkast som imperativ ('Ta ein vakt!') eller indikativ ('De har ein vakt'). Mange tolkar det som at Pilatus gjev dei ein romersk vakt, sidan dei elles ikkje ville trengt å spørja. 'De får ein vakt' gjev betre meining i konteksten."
+      },
+      {
+        "text": "Pilatus sa til dei: «De får ein vakt. Gå og syt for vakthald så godt de kan.»",
+        "type": "grammar",
+        "severity": "major",
+        "explanation": "«ein vakt» har feil kjønn, sidan «vakt» er hokjønnsord på nynorsk og skal heite «ei vakt».",
+        "alternative": false
       }
     ]
   },

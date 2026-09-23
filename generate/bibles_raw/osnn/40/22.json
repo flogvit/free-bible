@@ -21,13 +21,20 @@
     "bookId": 40,
     "chapterId": 22,
     "verseId": 4,
-    "text": "«Himmelriket kan liknast med ein konge som heldt bryllaup for son sin.",
+    "text": "Då sende han ut andre tenarar og sa: ‘Sei til dei som er bedne: No har eg laga til måltidet. Oksane og gjøfeet mitt er slakta, og alt står ferdig. Kom til bryllaupet!’",
     "versions": [
       {
         "text": "Då sende han ut andre tenarar og sa: 'Sei til dei som er bedne: Sjå, eg har gjort i stand måltidet mitt. Oksane mine og gjøfeet er slakta, og alt er ferdig. Kom til bryllaupet!'",
         "type": "suggestion",
         "severity": "minor",
         "explanation": "'Gjøfeet' er eit uvanleg ord på nynorsk. Meir vanleg ville vere 'gjøkalvane' eller 'gjøfeet' (feitfôra dyr). Faktisk er 'gjøfeet' akseptabelt som nynorsk for σιτιστά, så dette er berre ein marginal merknad. Eg trekkjer denne merknaden tilbake."
+      },
+      {
+        "text": "«Himmelriket kan liknast med ein konge som heldt bryllaup for son sin.",
+        "type": "error",
+        "severity": "major",
+        "explanation": "Omsetjinga gjentek teksten frå vers 2 («Himmelriket kan liknast med ein konge …») og manglar heile innhaldet i verset om tenarane som vart sende ut med innbydinga.",
+        "alternative": false
       }
     ]
   },

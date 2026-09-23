@@ -21,7 +21,16 @@
     "bookId": 40,
     "chapterId": 9,
     "verseId": 4,
-    "text": "Men Jesus kjende tankane deira og sa: «Kvifor tenkjer de vondt i hjarta dykkar?»"
+    "text": "Jesus visste kva dei tenkte, og sa: «Kvifor tenkjer de vondt i hjarta dykkar?",
+    "versions": [
+      {
+        "text": "Men Jesus kjende tankane deira og sa: «Kvifor tenkjer de vondt i hjarta dykkar?»",
+        "type": "grammar",
+        "severity": "major",
+        "explanation": "Sitatet vert avslutta med «» etter «hjarta dykkar?», sjølv om Jesus held fram å tale i dei neste versa.",
+        "alternative": true
+      }
+    ]
   },
   {
     "bookId": 40,
@@ -107,7 +116,16 @@
     "bookId": 40,
     "chapterId": 9,
     "verseId": 17,
-    "text": "Og ingen fyller ny vin i gamle skinnsekker. For då rivnar sekkene, vinen renn ut, og sekkene blir øydelagde. Nei, ny vin fyller ein i nye skinnsekker, så blir begge tekne vare på."
+    "text": "Heller ikkje fyller ein ny vin på gamle skinnsekkar. Då sprekk sekkane, vinen renn ut, og sekkane går til spille. Nei, ny vin fyller ein på nye skinnsekkar, og så held begge seg.",
+    "versions": [
+      {
+        "text": "Og ingen fyller ny vin i gamle skinnsekker. For då rivnar sekkene, vinen renn ut, og sekkene blir øydelagde. Nei, ny vin fyller ein i nye skinnsekker, så blir begge tekne vare på.",
+        "type": "grammar",
+        "severity": "major",
+        "explanation": "«skinnsekker» og «sekkene» er bokmålsformer; på nynorsk heiter det «skinnsekkar» og «sekkane».",
+        "alternative": false
+      }
+    ]
   },
   {
     "bookId": 40,
@@ -217,13 +235,20 @@
     "bookId": 40,
     "chapterId": 9,
     "verseId": 33,
-    "text": "Folket undra seg og sa: «Aldri har noko slikt synt seg i Israel!»",
+    "text": "Då den vonde ånda var driven ut, tok den stumme til å tale. Folket undra seg og sa: «Slikt har aldri vore sett i Israel!»",
     "versions": [
       {
         "text": "Og då demonen var driven ut, tala den stumme. Folket undra seg og sa: «Noko slikt har ein aldri sett i Israel!»",
         "type": "suggestion",
         "severity": "minor",
         "explanation": "ἐφάνη (av φαίνω) tyder 'synt seg' / 'vorte synleg', ikkje 'sett'. Originalen brukar passiv ('har synt seg'), ikkje aktiv ('har ein sett'). Ei meir nøyaktig gjengjeving ville vera 'synt seg'."
+      },
+      {
+        "text": "Folket undra seg og sa: «Aldri har noko slikt synt seg i Israel!»",
+        "type": "error",
+        "severity": "major",
+        "explanation": "Omsetjinga manglar heile første del av verset, at den vonde ånda vart driven ut og at den stumme tok til å tala.",
+        "alternative": false
       }
     ]
   },

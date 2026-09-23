@@ -3,7 +3,7 @@
     "bookId": 41,
     "chapterId": 1,
     "verseId": 1,
-    "text": "Her tek evangeliet om Jesus Kristus, Guds Son, til.",
+    "text": "Dette er byrjinga på evangeliet om Jesus Kristus.",
     "versions": [
       {
         "text": "Her byrjar evangeliet om Jesus Kristus.",
@@ -12,6 +12,13 @@
       {
         "text": "Her tek evangeliet om Jesus Kristus til.",
         "explanation": "Mange greske handskrifter inkluderer 'υἱοῦ θεοῦ' (Guds Son) i vers 1. Dette er ein viktig tekstkritisk variant som dei fleste moderne omsetjingar tek med, anten i teksten eller i ein fotnote. Vurder å inkludera dette, eventuelt med ein fotnote om tekstkritisk usikkerheit."
+      },
+      {
+        "text": "Her tek evangeliet om Jesus Kristus, Guds Son, til.",
+        "type": "error",
+        "severity": "major",
+        "explanation": "«Guds Son» er lagt til og står ikkje i grunnteksten som ligg føre her.",
+        "alternative": false
       }
     ]
   },
@@ -55,7 +62,16 @@
     "bookId": 41,
     "chapterId": 1,
     "verseId": 8,
-    "text": "Eg har døypt dykk med vatn, men han skal døypa dykk med Den heilage Ande.»"
+    "text": "Eg har døypt dykk med vatn, men han skal døypa dykk med Den heilage ande.»",
+    "versions": [
+      {
+        "text": "Eg har døypt dykk med vatn, men han skal døypa dykk med Den heilage Ande.»",
+        "type": "grammar",
+        "severity": "major",
+        "explanation": "«Den heilage Ande» har stor forbokstav i «Ande», medan nynorsk normalt skriv «Den heilage ande».",
+        "alternative": true
+      }
+    ]
   },
   {
     "bookId": 41,
@@ -97,7 +113,16 @@
     "bookId": 41,
     "chapterId": 1,
     "verseId": 15,
-    "text": "Han sa: «Tida er fullkomen, og Guds rike er nær. Vend om og tru på evangeliet!»"
+    "text": "Han sa: «Tida er fullenda, og Guds rike er kome nær. Vend om og tru på evangeliet!»",
+    "versions": [
+      {
+        "text": "Han sa: «Tida er fullkomen, og Guds rike er nær. Vend om og tru på evangeliet!»",
+        "type": "error",
+        "severity": "major",
+        "explanation": "«Tida er fullkomen» endrar tydinga, for grunnteksten seier at tida er oppfylt, ikkje at ho er fullkomen.",
+        "alternative": false
+      }
+    ]
   },
   {
     "bookId": 41,

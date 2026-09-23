@@ -27,13 +27,20 @@
     "bookId": 40,
     "chapterId": 23,
     "verseId": 5,
-    "text": "For dei gjer bønneremmane sine breie og duskane på kappene sine lange.",
+    "text": "Alt dei gjer, gjer dei for å bli sett av menneske. Dei gjer bønekapslane sine breie og duskane på kappene lange.",
     "versions": [
       {
         "text": "Alle gjerningane sine gjer dei for å bli sett av menneske. Dei gjer bønneremmane sine breie og duskane på kappene sine lange.",
         "type": "suggestion",
         "severity": "minor",
         "explanation": "The Greek γάρ (for) provides the causal connection explaining how they do everything to be seen. The translation omits this connective word, which clarifies that what follows is the reason/explanation."
+      },
+      {
+        "text": "For dei gjer bønneremmane sine breie og duskane på kappene sine lange.",
+        "type": "error",
+        "severity": "major",
+        "explanation": "Setninga «Alt dei gjer, gjer dei for å bli sett av menneske» manglar heilt.",
+        "alternative": false
       }
     ]
   },
@@ -41,7 +48,16 @@
     "bookId": 40,
     "chapterId": 23,
     "verseId": 6,
-    "text": "Dei elskar heidersplassane i gjesteboda og dei fremste setene i synagogane,"
+    "text": "Dei elskar æresplassen ved gjestebod og dei fremste seta i synagogane.",
+    "versions": [
+      {
+        "text": "Dei elskar heidersplassane i gjesteboda og dei fremste setene i synagogane,",
+        "type": "grammar",
+        "severity": "major",
+        "explanation": "«setene» er ikkje nynorsk; bunden fleirtal av inkjekjønnsordet «sete» er «seta».",
+        "alternative": false
+      }
+    ]
   },
   {
     "bookId": 40,
@@ -101,7 +117,16 @@
     "bookId": 40,
     "chapterId": 23,
     "verseId": 15,
-    "text": "Ve dykk, skriftlærde og farisearar, de hyklarar! De fer over hav og land for å vinna ein einaste tilhengar, og når han er vunnen, gjer de han til eit barn av helvete, dobbelt så ille som dykk sjølve."
+    "text": "Ve dykk, skriftlærde og farisearar, de hyklarar! De reiser over hav og land for å vinne ein einaste proselytt, og når han er vunnen, gjer de han til eit helvetesbarn, dobbelt så ille som de sjølve.",
+    "versions": [
+      {
+        "text": "Ve dykk, skriftlærde og farisearar, de hyklarar! De fer over hav og land for å vinna ein einaste tilhengar, og når han er vunnen, gjer de han til eit barn av helvete, dobbelt så ille som dykk sjølve.",
+        "type": "grammar",
+        "severity": "major",
+        "explanation": "«som dykk sjølve» skal vere «som de sjølve» i samanlikning med subjektet.",
+        "alternative": false
+      }
+    ]
   },
   {
     "bookId": 40,
@@ -181,7 +206,7 @@
     "bookId": 40,
     "chapterId": 23,
     "verseId": 26,
-    "text": "Du blinde farisear! Reinsa først innsida av begeret og fatet, så blir utsida òg rein.",
+    "text": "Du blinde farisear! Reins først innsida av begeret og fatet, så også utsida kan bli rein.",
     "versions": [
       {
         "text": "Du blinde farisear! Reinsa først innsida av begeret og fatet, så blir utsida òg rein.",
@@ -192,6 +217,13 @@
         "type": "error",
         "severity": "major",
         "explanation": "The version history shows that the previous version included 'og fatet' and was then removed with the note that 'many manuscripts omit it.' However, the Greek critical text (as presented in the original) does include 'καὶ τῆς παροψίδος' (and the dish). Since the source text provided here includes it, the translation should reflect it. The version history note itself acknowledges 'the current translation follows manuscripts that include it, which is also acceptable,' suggesting the removal may have been an error. Note: Since there is only 1 previous revision and the change reason was ambiguous (acknowledging both options are acceptable), this warrants reconsideration."
+      },
+      {
+        "text": "Du blinde farisear! Reinsa først innsida av begeret og fatet, så blir utsida òg rein.",
+        "type": "grammar",
+        "severity": "major",
+        "explanation": "Imperativ av «reinse» er «reins», ikkje «Reinsa».",
+        "alternative": false
       }
     ]
   },
@@ -211,7 +243,16 @@
     "bookId": 40,
     "chapterId": 23,
     "verseId": 29,
-    "text": "Ve dykk, skriftlærde og farisearar, de hyklarar! De byggjer gravene til profetane og prydar minnesmerkja til dei rettferdige,"
+    "text": "Ve dykk, skriftlærde og farisearar, de hyklarar! De byggjer gravene til profetane og pyntar minnesmerka over dei rettferdige,",
+    "versions": [
+      {
+        "text": "Ve dykk, skriftlærde og farisearar, de hyklarar! De byggjer gravene til profetane og prydar minnesmerkja til dei rettferdige,",
+        "type": "grammar",
+        "severity": "major",
+        "explanation": "«minnesmerkja» er ikkje korrekt bøying i nynorsk; bunden form fleirtal av «minnesmerke» er «minnesmerka».",
+        "alternative": false
+      }
+    ]
   },
   {
     "bookId": 40,

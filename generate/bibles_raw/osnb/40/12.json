@@ -95,7 +95,7 @@
     "bookId": 40,
     "chapterId": 12,
     "verseId": 4,
-    "text": "Hvordan han gikk inn i Guds hus og de spiste skuebrødene, som hverken han eller de som var med ham hadde lov til å spise, men bare prestene?",
+    "text": "Han gikk inn i Guds hus, og de spiste skuebrødene, som verken han eller de som var med ham, hadde lov til å spise, bare prestene.",
     "versions": [
       {
         "text": "Hvordan han gikk inn i Guds hus og spiste skuebrødene, som verken han eller de som var med ham hadde lov til å spise, men bare prestene.",
@@ -114,6 +114,13 @@
         "type": "grammar",
         "severity": "minor",
         "explanation": "'verken' er en stavefeil – korrekt norsk bokmål er 'hverken'. Dette er en ren skrivefeil som har overlevd to revisjoner."
+      },
+      {
+        "text": "Hvordan han gikk inn i Guds hus og de spiste skuebrødene, som hverken han eller de som var med ham hadde lov til å spise, men bare prestene?",
+        "type": "grammar",
+        "severity": "major",
+        "explanation": "Formen «hverken» er ikke lenger tillatt i gjeldende bokmålsnorm; den korrekte formen er «verken».",
+        "alternative": false
       }
     ],
     "footnotes": [
@@ -985,11 +992,18 @@
     "bookId": 40,
     "chapterId": 12,
     "verseId": 32,
-    "text": "Den som taler et ord mot Menneskesønnen, skal få tilgivelse. Men den som taler mot Den Hellige Ånd, skal ikke få tilgivelse, verken i denne tidsalder eller i den kommende.",
+    "text": "Den som sier et ord mot Menneskesønnen, skal få tilgivelse. Men den som taler mot Den hellige ånd, skal ikke få tilgivelse, verken i denne verden eller i den kommende.",
     "versions": [
       {
         "text": "Den som taler et ord mot Menneskesønnen, skal få tilgivelse. Men den som taler mot Den hellige ånd, skal ikke få tilgivelse, verken i denne tidsalder eller i den kommende.",
         "explanation": "I norsk bokmål skrives 'Den Hellige Ånd' med stor bokstav på alle tre ordene når det refererer til den tredje person i treenigheten, som er standard praksis i norske bibeloversettelser."
+      },
+      {
+        "text": "Den som taler et ord mot Menneskesønnen, skal få tilgivelse. Men den som taler mot Den Hellige Ånd, skal ikke få tilgivelse, verken i denne tidsalder eller i den kommende.",
+        "type": "grammar",
+        "severity": "major",
+        "explanation": "Språkrådet anbefaler skrivemåten «Den hellige ånd», med liten forbokstav i «hellige» og «ånd»; «Den Hellige Ånd» følger ikke gjeldende rettskrivningsråd.",
+        "alternative": true
       }
     ],
     "footnotes": [

@@ -403,7 +403,7 @@
     "bookId": 40,
     "chapterId": 28,
     "verseId": 13,
-    "text": "De sa: «Si at disiplene hans kom om natten og stjal ham mens vi sov.»",
+    "text": "og sa: «Dere skal si: ‘Disiplene hans kom om natten og stjal ham mens vi sov.’",
     "versions": [
       {
         "text": "og sa: «Si at disiplene hans kom om natten og stjal ham mens vi sov.",
@@ -414,6 +414,13 @@
         "type": "grammar",
         "severity": "minor",
         "explanation": "Den avsluttende guillemet-tegnet (») mangler. Selv om den direkte talen fortsetter i vers 14, avsluttes sitatet der med ». Imidlertid, om man ser versene som del av én sammenhengende direkte tale som avsluttes i vers 14, kan man la være å lukke sitattegnet her. Likevel er det vanlig i norsk bibeltradisjon å markere tydelig når direkte tale strekker seg over flere vers. I dette tilfellet mangler lukkende anførselstegn, og det finnes ikke en tydelig konvensjon i oversettelsen som viser at talen fortsetter. Siden vers 14 innleder med «Og» innenfor anførselstegn og lukker med », bør vers 13 enten ha avsluttende » eller tydelig vise at talen fortsetter. Med tanke på at vers 14 allerede har avsluttende », er det mest konsistent å avslutte den direkte talen i vers 13 med » og la vers 14 stå med sine egne anførselstegn — men konvensjonen i norske bibler er ofte å la sitatet stå åpent over vers og lukke det ved siste vers. Uansett bør det være konsistent. Her mangler rett og slett det avsluttende tegnet."
+      },
+      {
+        "text": "De sa: «Si at disiplene hans kom om natten og stjal ham mens vi sov.»",
+        "type": "grammar",
+        "severity": "major",
+        "explanation": "Sitatet lukkes for tidlig med «mens vi sov.»», selv om yppersteprestenes tale fortsetter i neste vers, der det så står et avsluttende anførselstegn uten noe åpnende.",
+        "alternative": true
       }
     ],
     "footnotes": [

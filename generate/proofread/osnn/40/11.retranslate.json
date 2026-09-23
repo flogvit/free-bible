@@ -1,0 +1,60 @@
+{
+  "model": "claude-opus-5-5",
+  "effort": null,
+  "at": "2026-09-23T15:05:08.883Z",
+  "fresh": {
+    "1": "Då Jesus var ferdig med å gje dei tolv læresveinane sine rettleiing, drog han vidare derifrå for å undervisa og forkynna i byane deira.",
+    "2": "Då Johannes i fengselet høyrde om det Kristus gjorde, sende han bod med læresveinane sine",
+    "3": "og spurde han: «Er du den som skal koma, eller skal vi venta på ein annan?»",
+    "4": "Jesus svara dei: «Gå og fortel Johannes det de høyrer og ser:",
+    "5": "Blinde ser og lamme går, spedalske blir reinsa og døve høyrer, døde blir vekte opp, og fattige får høyra evangeliet.",
+    "6": "Og sæl er den som ikkje fell frå på grunn av meg.»",
+    "7": "Medan dei gjekk, tok Jesus til å tala til folket om Johannes: «Kva gjekk de ut i øydemarka for å sjå? Eit sivstrå som svaiar i vinden?",
+    "8": "Kva var det så de gjekk ut for å sjå? Ein mann kledd i fine klede? Nei, dei som går i fine klede, finn de i kongepalassa.",
+    "9": "Kva gjekk de så ut for å sjå? Ein profet? Ja, eg seier dykk: Meir enn ein profet.",
+    "10": "Det er han det står skrive om: Sjå, eg sender bodberaren min framfor deg, han skal rydja vegen for deg.",
+    "11": "Sanneleg, eg seier dykk: Blant dei som er fødde av kvinner, har det ikkje stått fram nokon større enn døyparen Johannes. Men den minste i himmelriket er større enn han.",
+    "12": "Frå døyparen Johannes sine dagar og til no blir himmelriket teke med makt, og valdsmenn riv det til seg.",
+    "13": "For alle profetane og lova har profetert fram til Johannes.",
+    "14": "Og vil de ta imot det: Han er Elia, som skulle koma.",
+    "15": "Den som har øyre, lat han høyra!",
+    "16": "Kva skal eg samanlikna denne slekta med? Ho er som born som sit på torget og ropar til kvarandre:",
+    "17": "‘Vi spela fløyte for dykk, men de dansa ikkje. Vi song klagesongar, men de sørgde ikkje.’",
+    "18": "For Johannes kom, og han verken åt eller drakk, og dei seier: ‘Han har ein demon.’",
+    "19": "Menneskesonen kom, og han et og drikk, og dei seier: ‘Sjå, for ein storetar og vindrikkar, ein ven av tollarar og syndarar!’ Men visdommen blir rettferdiggjord av gjerningane sine.»",
+    "20": "Då tok han til å refsa byane der dei fleste av hans mektige gjerningar var gjorde, fordi dei ikkje hadde vendt om:",
+    "21": "«Ve deg, Korasin! Ve deg, Betsaida! For hadde dei mektige gjerningane som er gjorde hos dykk, vore gjorde i Tyros og Sidon, då hadde dei for lenge sidan vendt om i sekk og oske.",
+    "22": "Men eg seier dykk: Det skal bli lettare for Tyros og Sidon på domedagen enn for dykk.",
+    "23": "Og du, Kapernaum, skal vel du bli lyft opp til himmelen? Nei, ned til dødsriket skal du fara. For hadde dei mektige gjerningane som er gjorde hos deg, vore gjorde i Sodoma, då hadde byen stått den dag i dag.",
+    "24": "Men eg seier dykk: Det skal bli lettare for Sodoma-landet på domedagen enn for deg.»",
+    "25": "På den tida tok Jesus til orde og sa: «Eg prisar deg, Far, Herre over himmel og jord, fordi du har løynt dette for vise og kloke og openberra det for småborn.",
+    "26": "Ja, Far, slik var det du ville ha det.",
+    "27": "Alt er gjeve meg av Far min. Ingen kjenner Sonen utan Far, og ingen kjenner Far utan Sonen og den som Sonen vil openberra han for.",
+    "28": "Kom til meg, alle de som slit og har tungt å bera, så vil eg gje dykk kvile.",
+    "29": "Ta mitt åk på dykk og lær av meg, for eg er mild og audmjuk av hjartet, og de skal finna kvile for sjelene dykkar.",
+    "30": "For mitt åk er godt, og byrda mi er lett.»"
+  },
+  "replace": [
+    {
+      "verseId": 10,
+      "type": "grammar",
+      "reason": "«bodbæraren» er ikkje nynorsk skrivemåte; det skal vera «bodberaren».",
+      "otherDefensible": false
+    },
+    {
+      "verseId": 23,
+      "type": "error",
+      "reason": "Heile siste delen av verset, om at Sodoma ville ha stått den dag i dag om kraftgjerningane hadde skjedd der, er utelaten.",
+      "otherDefensible": false
+    }
+  ],
+  "keep": [
+    {
+      "verseId": 19,
+      "reason": "«visdommen» er bokmålsform; på nynorsk heiter det «visdomen»."
+    }
+  ],
+  "signature": "fd116acc66c460ce50dec54bc7628476fedcda3881bdffcf0206a1edfd46183c",
+  "appliedSignature": "b6314d08ca1c43dbe7fcc84c2438629679c5f2cc25adc450da84b42eaf88639b",
+  "appliedAt": "2026-09-23T15:05:08.884Z"
+}

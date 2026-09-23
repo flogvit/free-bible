@@ -9,11 +9,18 @@
     "bookId": 41,
     "chapterId": 6,
     "verseId": 2,
-    "text": "Da sabbaten kom, begynte han å undervise i synagogen. Mange som hørte ham, ble slått av undring og sa: «Hvor har han dette fra? Hva er dette for visdom han har fått? Og slike kraftige gjerninger som skjer ved hans hender!»",
+    "text": "Da det ble sabbat, begynte han å undervise i synagogen. Mange som hørte ham, ble slått av undring og sa: «Hvor har han alt dette fra? Hva er dette for en visdom som er gitt ham, og hvordan kan slike mektige gjerninger skje ved hendene hans?»",
     "versions": [
       {
         "text": "Da det ble sabbat, begynte han å undervise i synagogen. Mange som hørte ham, ble slått av undring og sa: «Hvor har han dette fra? Hva er dette for visdom han har fått? Og slike kraftige gjerninger som skjer ved hans hender!",
         "explanation": "Verset mangler avsluttende anførselstegn. Sitatet som begynner med «Hvor har han... må avsluttes med »."
+      },
+      {
+        "text": "Da sabbaten kom, begynte han å undervise i synagogen. Mange som hørte ham, ble slått av undring og sa: «Hvor har han dette fra? Hva er dette for visdom han har fått? Og slike kraftige gjerninger som skjer ved hans hender!»",
+        "type": "error",
+        "severity": "major",
+        "explanation": "Det siste leddet er et spørsmål i originalen, men «Og slike kraftige gjerninger som skjer ved hans hender!» gjør det om til et utrop.",
+        "alternative": false
       }
     ]
   },
@@ -79,7 +86,16 @@
     "bookId": 41,
     "chapterId": 6,
     "verseId": 9,
-    "text": "De skulle ha sandaler på føttene, men ikke ha med seg to kjortler."
+    "text": "De skulle ha sandaler på føttene, men ikke ta på seg to kjortler.",
+    "versions": [
+      {
+        "text": "De skulle ha sandaler på føttene, men ikke ha med seg to kjortler.",
+        "type": "error",
+        "severity": "major",
+        "explanation": "Originalen sier at de ikke skulle «ta på seg» to kjortler, men «ha med seg» endrer betydningen fra å bære på kroppen til å ha med i bagasjen.",
+        "alternative": true
+      }
+    ]
   },
   {
     "bookId": 41,

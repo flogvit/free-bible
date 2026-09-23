@@ -59,13 +59,20 @@
     "bookId": 40,
     "chapterId": 8,
     "verseId": 8,
-    "text": "Men offiseren svara: «Herre, eg er ikkje verdig til at du kjem inn under taket mitt. Men sei berre eit ord, så vil tenaren min bli lækt.»",
+    "text": "Men offiseren svara: «Herre, eg er ikkje verd at du går inn under taket mitt. Men sei berre eitt ord, så blir guten min frisk.",
     "versions": [
       {
         "text": "Men offiseren svara: «Herre, eg er ikkje verdig til at du kjem inn under taket mitt. Men sei berre eit ord, så vil tenaren min bli lækt.",
         "type": "grammar",
         "severity": "minor",
         "explanation": "Det manglar ei avsluttande hermeteikn (») på slutten av verset."
+      },
+      {
+        "text": "Men offiseren svara: «Herre, eg er ikkje verdig til at du kjem inn under taket mitt. Men sei berre eit ord, så vil tenaren min bli lækt.»",
+        "type": "grammar",
+        "severity": "major",
+        "explanation": "Sitatet vert avslutta med «lækt.»», endå talen held fram i neste vers utan nytt opningsteikn.",
+        "alternative": true
       }
     ]
   },
@@ -97,13 +104,20 @@
     "bookId": 40,
     "chapterId": 8,
     "verseId": 13,
-    "text": "Og Jesus sa til offiseren: «Gå! Det skal skje for deg slik du trudde.»",
+    "text": "Så sa Jesus til offiseren: «Gå! Det skal skje med deg slik du trudde.» Og i same stunda vart guten frisk.",
     "versions": [
       {
         "text": "Og Jesus sa til offiseren: «Gå! Det skal skje for deg som du trudde.» Og tenaren vart lækt i same stunda.",
         "type": "suggestion",
         "severity": "minor",
         "explanation": "ὡς ἐπίστευσας tyder 'slik du trudde' heller enn 'som du trudde'. 'Slik du trudde' er meir presist og naturleg på nynorsk i denne samanhengen."
+      },
+      {
+        "text": "Og Jesus sa til offiseren: «Gå! Det skal skje for deg slik du trudde.»",
+        "type": "error",
+        "severity": "major",
+        "explanation": "Setninga «og guten vart frisk i same stunda» manglar, så det vert borte at guten vart lækt.",
+        "alternative": false
       }
     ]
   },

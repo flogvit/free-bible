@@ -45,13 +45,20 @@
     "bookId": 40,
     "chapterId": 20,
     "verseId": 8,
-    "text": "Då det vart kveld, sa herren over vingarden til forvaltaren sin: 'Kall arbeidarane hit og gje dei løna deira. Byrja med dei siste og halda fram til dei første.'",
+    "text": "Då kvelden kom, sa eigaren av vingarden til forvaltaren sin: «Kall på arbeidarane og gje dei løna. Byrja med dei siste og slutt med dei første.»",
     "versions": [
       {
         "text": "Då det vart kveld, sa herren over vingarden til forvaltaren sin: 'Kall arbeidarane hit og gje dei løna deira. Byrja med dei siste og end med dei første.'",
         "type": "suggestion",
         "severity": "minor",
         "explanation": "'End med dei første' er litt klønete. Gresk 'ἕως τῶν πρώτων' tyder 'fram til dei første'. 'Halda fram til dei første' er meir naturleg nynorsk og nærare originalen."
+      },
+      {
+        "text": "Då det vart kveld, sa herren over vingarden til forvaltaren sin: 'Kall arbeidarane hit og gje dei løna deira. Byrja med dei siste og halda fram til dei første.'",
+        "type": "grammar",
+        "severity": "major",
+        "explanation": "«halda fram» står som infinitiv der det skal vere imperativ; det må heite «hald fram».",
+        "alternative": false
       }
     ]
   },
@@ -187,7 +194,16 @@
     "bookId": 40,
     "chapterId": 20,
     "verseId": 28,
-    "text": "For Menneskesonen kom ikkje for å la seg tena, men for å tena og gje livet sitt som løysepenge for mange.»"
+    "text": "slik Menneskesonen ikkje kom for å la seg tene, men for å tene og gje livet sitt som løysepengar for mange.»",
+    "versions": [
+      {
+        "text": "For Menneskesonen kom ikkje for å la seg tena, men for å tena og gje livet sitt som løysepenge for mange.»",
+        "type": "error",
+        "severity": "major",
+        "explanation": "«For Menneskesonen» gjer samanlikninga «slik som» (ὥσπερ) om til ei grunngjeving.",
+        "alternative": true
+      }
+    ]
   },
   {
     "bookId": 40,

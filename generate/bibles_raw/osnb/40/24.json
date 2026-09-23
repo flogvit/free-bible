@@ -549,11 +549,18 @@
     "bookId": 40,
     "chapterId": 24,
     "verseId": 19,
-    "text": "Ve de gravide og dem som ammer i de dagene!",
+    "text": "Ve de som er gravide, og de som ammer, i de dager!",
     "versions": [
       {
         "text": "Ve dem som er med barn og dem som ammer i de dagene!",
         "explanation": "For bedre muntlig flyt kan 'dem som er med barn' forenkles til 'de gravide', som er mer naturlig moderne norsk og lettere å lese høyt."
+      },
+      {
+        "text": "Ve de gravide og dem som ammer i de dagene!",
+        "type": "grammar",
+        "severity": "major",
+        "explanation": "«Ve de gravide og dem som ammer» blander subjektsformen «de» og objektsformen «dem» i to ledd som skulle hatt samme form.",
+        "alternative": false
       }
     ],
     "footnotes": [
@@ -1395,7 +1402,7 @@
     "bookId": 40,
     "chapterId": 24,
     "verseId": 46,
-    "text": "Salig er den tjeneren som herren finner gjøre nettopp dette når han kommer.",
+    "text": "Salig er den tjeneren som herren finner i full gang med dette når han kommer.",
     "versions": [
       {
         "text": "Salig er den tjeneren som herren finner i arbeid med dette når han kommer.",
@@ -1408,6 +1415,13 @@
         "type": "grammar",
         "severity": "minor",
         "explanation": "Den nåværende formuleringen 'finner gjøre dette' er grammatisk klønete på norsk. Verbet 'finner' krever typisk et infinitivsmerke eller en annen konstruksjon. En mer naturlig formulering kunne vært 'som herren finner i ferd med å gjøre dette' eller lignende, men siden tidligere versjoner er utelukket, foreslås 'finner gjøre nettopp dette' som en liten forbedring som beholder strukturen men gjør setningen noe mer tydelig med 'nettopp' som gjenspeiler οὕτως (slik/på denne måten)."
+      },
+      {
+        "text": "Salig er den tjeneren som herren finner gjøre nettopp dette når han kommer.",
+        "type": "grammar",
+        "severity": "major",
+        "explanation": "«finner gjøre nettopp dette» er ugrammatisk, fordi «finne» ikke kan stå med ren infinitiv; det må for eksempel hete «finner i ferd med å gjøre».",
+        "alternative": false
       }
     ],
     "footnotes": [

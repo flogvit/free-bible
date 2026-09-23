@@ -275,13 +275,20 @@
     "bookId": 40,
     "chapterId": 26,
     "verseId": 10,
-    "text": "Men Jesus visste det og sa til dem: «Hvorfor plager dere kvinnen? Hun har gjort en god gjerning mot meg.»",
+    "text": "Jesus merket det og sa til dem: «Hvorfor plager dere kvinnen? Det er en god gjerning hun har gjort mot meg.",
     "versions": [
       {
         "text": "Men Jesus visste det og sa til dem: «Hvorfor plager dere kvinnen? Hun har gjort en god gjerning mot meg.",
         "type": "grammar",
         "severity": "minor",
         "explanation": "The closing quotation mark (») is missing at the end of the verse. The direct speech that opens with «Hvorfor... continues through the next verses, but since verse 9 closes its quotation marks, and this verse opens a new direct speech from Jesus, the convention should be consistent. However, in this case Jesus' speech continues into the following verses (11–13), so one could argue the quote should remain open. Still, comparing with verse 9 which closes its quote within one verse, consistency suggests the quote should either be clearly left open by convention or closed. The most common Norwegian Bible convention is to close the quote at the end of the pericope (v. 13), but the missing » at the end of this verse may simply be intentional if the speech continues. Given that many Norwegian translations keep the quote open across verses, this is minor."
+      },
+      {
+        "text": "Men Jesus visste det og sa til dem: «Hvorfor plager dere kvinnen? Hun har gjort en god gjerning mot meg.»",
+        "type": "grammar",
+        "severity": "major",
+        "explanation": "Anførselstegnet etter «mot meg.»» avslutter Jesu tale for tidlig, enda talen fortsetter i de neste versene.",
+        "alternative": false
       }
     ],
     "footnotes": [
@@ -673,13 +680,20 @@
     "bookId": 40,
     "chapterId": 26,
     "verseId": 23,
-    "text": "Han svarte: «Den som dyppet hånden i fatet sammen med meg, han skal forråde meg.»",
+    "text": "Han svarte: «Den som dypper hånden i fatet sammen med meg, han skal forråde meg.",
     "versions": [
       {
         "text": "Han svarte: «Den som dyppet hånden i fatet sammen med meg, han skal forråde meg.",
         "type": "grammar",
         "severity": "minor",
         "explanation": "The closing quotation mark (») is missing at the end of the verse. The quote that begins with «Den... needs to be closed. Looking at the next verse (24), the closing » appears there, suggesting this might be an intentional continuation. However, since verse 23 is a self-contained statement and verse 24 begins a new sentence, it would be cleaner to close the quote here and reopen in verse 24, or at minimum the missing » should be noted. Actually, reviewing the context more carefully: verse 24 ends with », suggesting verses 23-24 are treated as one continuous quote. This is a valid editorial choice, but for verse-by-verse clarity, the quote should either be closed or a formatting convention should be consistent. Given that the next verse closes the quote, this is acceptable as a multi-verse quotation, so the issue is minor."
+      },
+      {
+        "text": "Han svarte: «Den som dyppet hånden i fatet sammen med meg, han skal forråde meg.»",
+        "type": "grammar",
+        "severity": "major",
+        "explanation": "Anførselstegnet etter «forråde meg.»» lukker sitatet midt i Jesu tale, som fortsetter i neste vers.",
+        "alternative": false
       }
     ],
     "footnotes": [
@@ -929,13 +943,20 @@
     "bookId": 40,
     "chapterId": 26,
     "verseId": 31,
-    "text": "Da sa Jesus til dem: «I denne natten skal dere alle falle fra på grunn av meg. For det står skrevet: Jeg skal slå hyrden, og sauene i flokken skal bli spredt.»",
+    "text": "Da sa Jesus til dem: «I natt skal dere alle falle fra på grunn av meg. For det står skrevet: Jeg vil slå hyrden, og sauene i flokken skal spres.",
     "versions": [
       {
         "text": "Da sa Jesus til dem: «I denne natten skal dere alle falle fra på grunn av meg. For det står skrevet: Jeg skal slå gjeteren, og sauene i flokken skal bli spredt.",
         "type": "suggestion",
         "severity": "minor",
         "explanation": "'Gjeteren' er et korrekt norsk ord, men i bibelsk sammenheng er 'hyrden' det tradisjonelle og teologisk ladede ordet som bærer med seg de rike konnotasjonene til hyrdemotivet i Bibelen (Salme 23, Johannes 10 osv.). I tillegg mangler det avsluttende anførselstegnet (»). Sitatet fra Sakarja 13:7 avsluttes her, og neste vers fortsetter Jesu tale, men setningen i dette verset bør stå som en avsluttet enhet med riktig tegnsetting."
+      },
+      {
+        "text": "Da sa Jesus til dem: «I denne natten skal dere alle falle fra på grunn av meg. For det står skrevet: Jeg skal slå hyrden, og sauene i flokken skal bli spredt.»",
+        "type": "grammar",
+        "severity": "major",
+        "explanation": "Anførselstegnet etter «bli spredt.»» avslutter talen for tidlig, selv om Jesus fortsetter å tale i neste vers.",
+        "alternative": false
       }
     ],
     "footnotes": [
@@ -1225,13 +1246,20 @@
     "bookId": 40,
     "chapterId": 26,
     "verseId": 40,
-    "text": "Da han kom tilbake til disiplene, fant han dem sovende, og han sa til Peter: «Så klarte dere ikke å våke med meg en eneste time?»",
+    "text": "Så kom han tilbake til disiplene og fant dem sovende. Han sa til Peter: «Klarte dere ikke å våke med meg en eneste time?",
     "versions": [
       {
         "text": "Da han kom tilbake til disiplene, fant han dem sovende, og han sa til Peter: «Så klarte dere ikke å våke med meg en eneste time?",
         "type": "grammar",
         "severity": "minor",
         "explanation": "The translation is missing the closing quotation mark (»). The direct speech that begins with « must be closed with ». Since the next verse (41) ends the quote with », this could be intentional if the speech continues, but looking at the Greek, verse 40 contains a complete question (indicated by the question mark), and verse 41 begins new imperatives that are also part of the same speech. If the intent is to keep the quote open across verses, the convention should be consistent. However, comparing with verse 41 which closes with », the opening « in verse 40 needs a corresponding ». The simplest fix is to add » at the end of verse 40, since verse 41 also has its own opening and closing quotes."
+      },
+      {
+        "text": "Da han kom tilbake til disiplene, fant han dem sovende, og han sa til Peter: «Så klarte dere ikke å våke med meg en eneste time?»",
+        "type": "grammar",
+        "severity": "major",
+        "explanation": "Anførselstegnet lukkes etter «en eneste time?»» selv om Jesu tale fortsetter i neste vers, som også slutter med et lukkende anførselstegn.",
+        "alternative": false
       }
     ],
     "footnotes": [
@@ -1621,13 +1649,20 @@
     "bookId": 40,
     "chapterId": 26,
     "verseId": 52,
-    "text": "Da sa Jesus til ham: «Stikk sverdet tilbake på plass! For alle som griper til sverd, skal falle for sverd.»",
+    "text": "Da sa Jesus til ham: «Stikk sverdet ditt på plass! For alle som griper til sverd, skal falle for sverd.",
     "versions": [
       {
         "text": "Da sa Jesus til ham: «Stikk sverdet tilbake på plass! For alle som griper til sverd, skal falle for sverd.",
         "type": "grammar",
         "severity": "minor",
         "explanation": "The closing quotation mark (») is missing at the end of the verse. While the direct speech continues into the next verses, Norwegian typographic convention in Bible translations typically closes the quote at the end of the verse or uses a continuation marker. However, looking at the next verse which continues Jesus' speech, it may be intentional to leave the quote open. Still, most Norwegian Bible editions close and reopen quotes per verse."
+      },
+      {
+        "text": "Da sa Jesus til ham: «Stikk sverdet tilbake på plass! For alle som griper til sverd, skal falle for sverd.»",
+        "type": "grammar",
+        "severity": "major",
+        "explanation": "Anførselstegnet lukkes etter «skal falle for sverd.»» selv om Jesu tale fortsetter i de to neste versene.",
+        "alternative": false
       }
     ],
     "footnotes": [
@@ -1717,13 +1752,20 @@
     "bookId": 40,
     "chapterId": 26,
     "verseId": 55,
-    "text": "I samme stund sa Jesus til folkemengden: «Dere har rykket ut med sverd og stokker for å gripe meg, som om jeg var en røver. Dag etter dag satt jeg i tempelet og underviste, og dere grep meg ikke.»",
+    "text": "I samme stund sa Jesus til folkemengden: «Som mot en røver har dere gått ut med sverd og stokker for å ta meg. Dag etter dag satt jeg i templet og underviste, og dere grep meg ikke.",
     "versions": [
       {
         "text": "I samme stund sa Jesus til folkemengden: «Dere har rykket ut med sverd og stokker for å gripe meg, som om jeg var en røver. Dag etter dag satt jeg i tempelet og underviste, og dere grep meg ikke.",
         "type": "grammar",
         "severity": "minor",
         "explanation": "Oversettelsen mangler avsluttende anførselstegn (») på slutten av Jesu direkte tale. Jesu tale fortsetter riktignok inn i vers 56, men sitatet avsluttes der med ». Likevel bør vers 55 enten ha et avsluttende anførselstegn eller konsekvent markere at talen fortsetter. Siden vers 56 har avsluttende anførselstegn etter 'oppfylles', bør vers 55 stå uten avsluttende tegn — men norsk konvensjon ved versoppdeling kan variere. Hovedproblemet er inkonsistens: vers 54 avslutter med », men Jesu tale løper fra v.55 inn i v.56. Mest korrekt er å la anførselstegnet stå åpent i v.55 og lukke det i v.56, slik det faktisk er gjort. Dermed er det akseptabelt. Imidlertid er det en mer substansiell oversettelsesnyananse: det greske Ὡς ἐπὶ λῃστὴν ἐξήλθατε bruker spørreform (implisitt spørsmål), men oversettelsen gjør det til en konstaterende setning. I originalen er dette retorisk spørsmål. En mer presis oversettelse bør gjenspeile spørsmålsformen."
+      },
+      {
+        "text": "I samme stund sa Jesus til folkemengden: «Dere har rykket ut med sverd og stokker for å gripe meg, som om jeg var en røver. Dag etter dag satt jeg i tempelet og underviste, og dere grep meg ikke.»",
+        "type": "grammar",
+        "severity": "major",
+        "explanation": "Anførselstegnet lukkes etter «dere grep meg ikke.»» selv om Jesu tale fortsetter i neste vers, som også avsluttes med et lukkende anførselstegn.",
+        "alternative": false
       }
     ],
     "footnotes": [

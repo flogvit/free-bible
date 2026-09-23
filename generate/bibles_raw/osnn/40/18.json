@@ -99,7 +99,7 @@
     "bookId": 40,
     "chapterId": 18,
     "verseId": 12,
-    "text": "vil han ikkje då lata dei nittiogni vera att i fjellet og gå av stad og leita etter den som er komen bort?",
+    "text": "Kva meiner de? Om ein mann har hundre sauer, og éin av dei går seg vill, vil han ikkje då la dei nittini vera att i fjellet og gå og leita etter den som har gått seg vill?",
     "versions": [
       {
         "text": "Kva meiner de? Om ein mann har hundre sauer og éin av dei går seg vill, vil han ikkje då lata dei nittini vera att i fjellet og gå av stad og leita etter den som er komen bort?",
@@ -110,6 +110,13 @@
         "type": "grammar",
         "severity": "minor",
         "explanation": "Formen 'nittiog ni' med mellomrom mellom 'nittiog' og 'ni' ser ut som ein skrivefeil. Det bør skrivast som eitt ord 'nittiogni' (slik som i samansette talord på nynorsk). Alternativt er 'nittini' akseptabelt i moderne nynorsk."
+      },
+      {
+        "text": "vil han ikkje då lata dei nittiogni vera att i fjellet og gå av stad og leita etter den som er komen bort?",
+        "type": "error",
+        "severity": "major",
+        "explanation": "Innleiinga «Kva meiner de? Om ein mann har hundre sauer, og éin av dei går seg vill» manglar, så verset byrjar midt i spørsmålet.",
+        "alternative": false
       }
     ]
   },

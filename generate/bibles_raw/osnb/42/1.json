@@ -277,7 +277,7 @@
     "bookId": 42,
     "chapterId": 1,
     "verseId": 35,
-    "text": "Engelen svarte henne: «Den hellige ånd skal komme over deg, og Den høyestes kraft skal overskygge deg. Derfor skal også barnet som blir født, kalles hellig – Guds Sønn.",
+    "text": "Engelen svarte henne: «Den hellige ånd skal komme over deg, og Den Høyestes kraft skal overskygge deg. Derfor skal også barnet som blir født, være hellig og kalles Guds Sønn.",
     "versions": [
       {
         "text": "Engelen svarte henne: «Den hellige ånd skal komme over deg, og Den høyestes kraft skal overskygge deg. Derfor skal også det hellige som fødes, kalles Guds Sønn.",
@@ -288,6 +288,13 @@
         "type": "suggestion",
         "severity": "minor",
         "explanation": "Den doble 'kalles...kalles'-konstruksjonen er klosset på norsk. En tankestrek gir bedre flyt og beholder det teologiske poenget om at barnet kalles både hellig og Guds Sønn. 'Barnet som blir født' er også klarere enn 'det som fødes'."
+      },
+      {
+        "text": "Engelen svarte henne: «Den hellige ånd skal komme over deg, og Den høyestes kraft skal overskygge deg. Derfor skal også barnet som blir født, kalles hellig – Guds Sønn.",
+        "type": "grammar",
+        "severity": "major",
+        "explanation": "Gudsbetegnelsen skal skrives med stor forbokstav, «Den Høyestes», ikke «Den høyestes».",
+        "alternative": true
       }
     ]
   },

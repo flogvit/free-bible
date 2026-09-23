@@ -1,0 +1,42 @@
+{
+  "model": "claude-opus-5-5",
+  "effort": null,
+  "at": "2026-09-23T14:58:00.639Z",
+  "fresh": {
+    "1": "I de dager sto døperen Johannes fram og forkynte i Judeas ørken.",
+    "2": "Han sa: «Vend om, for himmelriket er kommet nær!»",
+    "3": "Det er ham profeten Jesaja talte om da han sa: «En røst roper i ørkenen: Rydd vei for Herren, gjør hans stier rette!»",
+    "4": "Johannes hadde klær av kamelhår og et lærbelte om livet, og maten hans var gresshopper og villhonning.",
+    "5": "Da dro folk ut til ham fra Jerusalem og hele Judea og hele landet omkring Jordan.",
+    "6": "De bekjente syndene sine og ble døpt av ham i Jordanelven.",
+    "7": "Men da han så at mange av fariseerne og saddukeerne kom for å bli døpt, sa han til dem: «Dere ormeyngel! Hvem har lært dere å flykte fra den kommende vreden?",
+    "8": "Bær da frukt som svarer til omvendelsen!",
+    "9": "Og tro ikke at dere kan si til dere selv: ‹Vi har Abraham til far.› For jeg sier dere: Gud kan vekke opp barn for Abraham av disse steinene.",
+    "10": "Øksen ligger allerede ved roten av trærne. Hvert tre som ikke bærer god frukt, blir hogd ned og kastet på ilden.",
+    "11": "Jeg døper dere med vann til omvendelse. Men han som kommer etter meg, er sterkere enn jeg, og jeg er ikke verdig til å bære sandalene hans. Han skal døpe dere med Den hellige ånd og ild.",
+    "12": "Han har kasteskovlen i hånden og skal rense treskeplassen sin. Hveten skal han samle i låven, men agnene skal han brenne opp med en ild som aldri slukner.»",
+    "13": "Da kom Jesus fra Galilea til Johannes ved Jordan for å bli døpt av ham.",
+    "14": "Men Johannes ville hindre ham og sa: «Det er jeg som trenger å bli døpt av deg, og så kommer du til meg?»",
+    "15": "Jesus svarte: «La det nå skje! For slik skal vi oppfylle all rettferdighet.» Da lot Johannes det skje.",
+    "16": "Straks Jesus var døpt, steg han opp av vannet. Og se, himmelen åpnet seg, og han så Guds Ånd komme ned som en due og dale ned over ham.",
+    "17": "Og se, en røst fra himmelen sa: «Dette er min Sønn, den elskede, i ham har jeg min glede.»"
+  },
+  "replace": [
+    {
+      "verseId": 11,
+      "type": "grammar",
+      "reason": "Etter gjeldende rettskrivning skrives «Den hellige ånd» med liten forbokstav i «hellige» og «ånd», ikke «Den Hellige Ånd».",
+      "otherDefensible": false
+    },
+    {
+      "verseId": 17,
+      "type": "error",
+      "reason": "Utropet «se» (idou) fra grunnteksten er utelatt i «Og en røst fra himmelen sa».",
+      "otherDefensible": true
+    }
+  ],
+  "keep": [],
+  "signature": "67379270b8f96d34952db0fc3630c167ae142758137f4e4f961a99e80843b2af",
+  "appliedSignature": "b976856d3f8f32f9ac60b53b616f5ad4518784f4d139dae9bf9f96d85f671c83",
+  "appliedAt": "2026-09-23T14:58:00.640Z"
+}

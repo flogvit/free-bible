@@ -247,11 +247,18 @@
     "bookId": 40,
     "chapterId": 3,
     "verseId": 11,
-    "text": "Jeg døper dere med vann til omvendelse. Men han som kommer etter meg, er sterkere enn jeg – jeg er ikke verdig til å bære sandalene hans. Han skal døpe dere med Den Hellige Ånd og ild.",
+    "text": "Jeg døper dere med vann til omvendelse. Men han som kommer etter meg, er sterkere enn jeg, og jeg er ikke verdig til å bære sandalene hans. Han skal døpe dere med Den hellige ånd og ild.",
     "versions": [
       {
         "text": "Jeg døper dere med vann til omvendelse. Men han som kommer etter meg, er sterkere enn jeg – jeg er ikke verdig til å bære sandalene hans. Han skal døpe dere med Den hellige ånd og ild.",
         "explanation": "I norsk rettskrivning for religiøse tekster skrives 'Den Hellige Ånd' vanligvis med store bokstaver på alle tre ordene når det refererer til treenighetens tredje person."
+      },
+      {
+        "text": "Jeg døper dere med vann til omvendelse. Men han som kommer etter meg, er sterkere enn jeg – jeg er ikke verdig til å bære sandalene hans. Han skal døpe dere med Den Hellige Ånd og ild.",
+        "type": "grammar",
+        "severity": "major",
+        "explanation": "Etter gjeldende rettskrivning skrives «Den hellige ånd» med liten forbokstav i «hellige» og «ånd», ikke «Den Hellige Ånd».",
+        "alternative": false
       }
     ],
     "footnotes": [
@@ -415,11 +422,18 @@
     "bookId": 40,
     "chapterId": 3,
     "verseId": 17,
-    "text": "Og en røst fra himmelen sa: «Dette er min Sønn, den elskede. I ham har jeg min glede.»",
+    "text": "Og se, en røst fra himmelen sa: «Dette er min Sønn, den elskede, i ham har jeg min glede.»",
     "versions": [
       {
         "text": "Og en røst fra himmelen sa: «Dette er min Sønn, den elskede, i ham har jeg min glede.»",
         "explanation": "For bedre muntlig rytme og klarhet kan setningen deles med punktum før 'I ham'. Dette gir en naturlig pause som fremhever den siste delen som en selvstendig erklæring, og speiler den greske strukturens to utsagn: identifikasjonen ('min Sønn, den elskede') og velbehaget ('i ham har jeg min glede')."
+      },
+      {
+        "text": "Og en røst fra himmelen sa: «Dette er min Sønn, den elskede. I ham har jeg min glede.»",
+        "type": "error",
+        "severity": "major",
+        "explanation": "Utropet «se» (idou) fra grunnteksten er utelatt i «Og en røst fra himmelen sa».",
+        "alternative": true
       }
     ],
     "footnotes": [

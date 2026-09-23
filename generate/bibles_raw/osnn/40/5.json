@@ -91,13 +91,20 @@
     "bookId": 40,
     "chapterId": 5,
     "verseId": 13,
-    "text": "Det duger ikkje lenger til noko, anna enn å bli kasta ut og trakka ned av folk.",
+    "text": "De er salt for jorda. Men om saltet mistar smaken, kva skal det då saltast med? Det duger ikkje til anna enn å kastast ut og trakkast ned av folk.",
     "versions": [
       {
         "text": "De er saltet på jorda. Men om saltet mistar krafta si, korleis kan det då bli salt att? Det duger ikkje lenger til noko anna enn å kastast ut og trakkast ned av folk.",
         "type": "suggestion",
         "severity": "minor",
         "explanation": "Småjusteringar: 'bli kasta ut og trakka ned' er betre nynorsk enn 'kastast ut og trakkast ned'. I tillegg bør det vera komma etter 'noko' for å gjera setninga tydelegare."
+      },
+      {
+        "text": "Det duger ikkje lenger til noko, anna enn å bli kasta ut og trakka ned av folk.",
+        "type": "error",
+        "severity": "major",
+        "explanation": "Omsetjinga manglar heile første delen av verset, «De er salt for jorda … kva skal det då saltast med?», og byrjar først med «Det duger ikkje lenger til noko».",
+        "alternative": false
       }
     ]
   },

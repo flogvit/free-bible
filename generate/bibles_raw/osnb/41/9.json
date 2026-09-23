@@ -373,7 +373,7 @@
     "bookId": 41,
     "chapterId": 9,
     "verseId": 43,
-    "text": "Om hånden din lokker deg til fall, så hugg den av! Det er bedre for deg å gå lemlestet inn til livet enn å ha begge hender og bli kastet i Gehenna, i ilden som ikke slukkes.",
+    "text": "Om hånden din får deg til å falle, så hogg den av! Det er bedre for deg å gå vanfør inn til livet enn å ha begge hendene og komme i helvete, i den ilden som aldri slukner,",
     "versions": [
       {
         "text": "Om hånden din lokker deg til fall, så hugg den av! Det er bedre for deg å gå lemlestet inn til livet enn å ha begge hender og bli kastet til Gehenna, til ilden som ikke slukner.",
@@ -384,6 +384,13 @@
         "type": "suggestion",
         "severity": "minor",
         "explanation": "For konsistens: vers 44, 46 og 48 bruker alle 'slukkes'. Vers 43 bruker 'slukner', noe som er inkonsistent. Det greske σβέννυται er passiv og bør oversettes likt gjennom hele avsnittet. I tillegg er 'i ilden' mer naturlig enn 'til ilden' gitt at εἰς τὸ πῦρ parallellerer εἰς τὴν γέενναν."
+      },
+      {
+        "text": "Om hånden din lokker deg til fall, så hugg den av! Det er bedre for deg å gå lemlestet inn til livet enn å ha begge hender og bli kastet i Gehenna, i ilden som ikke slukkes.",
+        "type": "error",
+        "severity": "major",
+        "explanation": "Grunnteksten sier at man «går bort» (ἀπελθεῖν) til Gehenna, men «bli kastet i Gehenna» gjør det om til en passiv handling og legger til et bilde som først kommer i vers 45 og 47.",
+        "alternative": false
       }
     ]
   },

@@ -3,7 +3,16 @@
     "bookId": 40,
     "chapterId": 25,
     "verseId": 1,
-    "text": "Då skal himmelriket liknast med ti brurmøyar som tok lampane sine og gjekk ut for å møta brudgomen."
+    "text": "Då skal himmelriket likna ti brudemøyar som tok lampene sine og gjekk ut for å møta brudgomen.",
+    "versions": [
+      {
+        "text": "Då skal himmelriket liknast med ti brurmøyar som tok lampane sine og gjekk ut for å møta brudgomen.",
+        "type": "grammar",
+        "severity": "major",
+        "explanation": "«lampane» er feil bøying på nynorsk; «lampe» er eit hokjønnsord, og rett form er «lampene».",
+        "alternative": false
+      }
+    ]
   },
   {
     "bookId": 40,
@@ -15,13 +24,31 @@
     "bookId": 40,
     "chapterId": 25,
     "verseId": 3,
-    "text": "Dei uforstandige tok lampane sine, men tok ikkje med seg olje."
+    "text": "Dei uvituge tok lampene sine, men tok ikkje med seg olje.",
+    "versions": [
+      {
+        "text": "Dei uforstandige tok lampane sine, men tok ikkje med seg olje.",
+        "type": "grammar",
+        "severity": "major",
+        "explanation": "«lampane» er feil bøying; rett form er «lampene».",
+        "alternative": false
+      }
+    ]
   },
   {
     "bookId": 40,
     "chapterId": 25,
     "verseId": 4,
-    "text": "Men dei kloke tok med seg olje i kanner saman med lampane sine."
+    "text": "Men dei kloke tok med seg olje i kanner saman med lampene sine.",
+    "versions": [
+      {
+        "text": "Men dei kloke tok med seg olje i kanner saman med lampane sine.",
+        "type": "grammar",
+        "severity": "major",
+        "explanation": "«lampane» er feil bøying; rett form er «lampene».",
+        "alternative": false
+      }
+    ]
   },
   {
     "bookId": 40,
@@ -39,13 +66,31 @@
     "bookId": 40,
     "chapterId": 25,
     "verseId": 7,
-    "text": "Då vakna alle brurmøyane og stelte lampane sine."
+    "text": "Då vakna alle møyane og gjorde lampene sine i stand.",
+    "versions": [
+      {
+        "text": "Då vakna alle brurmøyane og stelte lampane sine.",
+        "type": "grammar",
+        "severity": "major",
+        "explanation": "«lampane» er feil bøying; rett form er «lampene».",
+        "alternative": false
+      }
+    ]
   },
   {
     "bookId": 40,
     "chapterId": 25,
     "verseId": 8,
-    "text": "Dei uforstandige sa til dei kloke: 'Gjev oss av oljen dykkar, for lampane våre sloknar.'"
+    "text": "Dei uvituge sa til dei kloke: «Gje oss litt av oljen dykkar, for lampene våre sloknar.»",
+    "versions": [
+      {
+        "text": "Dei uforstandige sa til dei kloke: 'Gjev oss av oljen dykkar, for lampane våre sloknar.'",
+        "type": "grammar",
+        "severity": "major",
+        "explanation": "«lampane» er feil bøying; rett form er «lampene».",
+        "alternative": false
+      }
+    ]
   },
   {
     "bookId": 40,
@@ -175,7 +220,16 @@
     "bookId": 40,
     "chapterId": 25,
     "verseId": 26,
-    "text": "Men herren hans svara han: 'Du vonde og late tenar! Du visste at eg haustar der eg ikkje har sådd, og samlar der eg ikkje har strødd."
+    "text": "Då svara herren hans: 'Du vonde og late tenar! Du visste at eg haustar der eg ikkje har sått, og samlar inn der eg ikkje har strødd ut?",
+    "versions": [
+      {
+        "text": "Men herren hans svara han: 'Du vonde og late tenar! Du visste at eg haustar der eg ikkje har sådd, og samlar der eg ikkje har strødd.",
+        "type": "error",
+        "severity": "major",
+        "explanation": "Det retoriske spørsmålet i grunnteksten er gjort om til ei vanleg utsegn som sluttar med punktum etter «strødd».",
+        "alternative": true
+      }
+    ]
   },
   {
     "bookId": 40,
@@ -245,13 +299,20 @@
     "bookId": 40,
     "chapterId": 25,
     "verseId": 34,
-    "text": "Kom hit, de som er velsigna av Far min, og arv det riket som er gjort ferdig for dykk frå verda vart grunnlagd.",
+    "text": "Då skal kongen seie til dei på høgre sida: 'Kom hit, de som er velsigna av min Far! Ta i arv det riket som har stått ferdig for dykk sidan verda vart grunnlagd.",
     "versions": [
       {
         "text": "Då skal kongen seia til dei på høgre sida: 'Kom hit, de som er velsigna av Far min, og ta i arv det riket som er gjort ferdig for dykk frå verda vart grunnlagd.",
         "type": "grammar",
         "severity": "minor",
         "explanation": "'κληρονομήσατε' kan gjengjevast enklare og meir naturleg med 'arv' i imperativ i staden for 'ta i arv'. Det er meir moderne og lettlese nynorsk."
+      },
+      {
+        "text": "Kom hit, de som er velsigna av Far min, og arv det riket som er gjort ferdig for dykk frå verda vart grunnlagd.",
+        "type": "error",
+        "severity": "major",
+        "explanation": "Innleiinga «Då skal kongen seie til dei på høgre sida» manglar, så det kjem ikkje fram kven som talar eller kven han talar til.",
+        "alternative": false
       }
     ]
   },

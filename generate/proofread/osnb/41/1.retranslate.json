@@ -1,0 +1,81 @@
+{
+  "model": "claude-opus-5-5",
+  "effort": null,
+  "at": "2026-09-23T15:17:42.603Z",
+  "fresh": {
+    "1": "Begynnelsen på evangeliet om Jesus Kristus.",
+    "2": "Det står skrevet hos profeten Jesaja: Se, jeg sender min budbærer foran deg, han skal rydde veien for deg.",
+    "3": "En røst roper i ødemarken: Gjør Herrens vei i stand, gjør stiene hans rette!",
+    "4": "Slik sto Johannes døperen fram i ødemarken og forkynte omvendelsens dåp til syndenes forlatelse.",
+    "5": "Hele Judea og alle som bodde i Jerusalem, dro ut til ham, og de bekjente syndene sine og ble døpt av ham i Jordanelven.",
+    "6": "Johannes var kledd i kamelhår og hadde et lærbelte om livet, og han levde av gresshopper og vill honning.",
+    "7": "Han forkynte: «Etter meg kommer han som er sterkere enn jeg. Jeg er ikke verdig til å bøye meg ned og løse sandalremmen hans.",
+    "8": "Jeg har døpt dere med vann, men han skal døpe dere med Den hellige ånd.»",
+    "9": "I de dagene kom Jesus fra Nasaret i Galilea og ble døpt av Johannes i Jordan.",
+    "10": "Straks han steg opp av vannet, så han himmelen revne og Ånden komme ned over ham som en due.",
+    "11": "Og en røst lød fra himmelen: «Du er min Sønn, den elskede, i deg har jeg min glede.»",
+    "12": "Straks drev Ånden ham ut i ødemarken.",
+    "13": "Der var han i førti dager og ble fristet av Satan. Han var blant de ville dyrene, og englene tjente ham.",
+    "14": "Etter at Johannes var blitt satt i fengsel, kom Jesus til Galilea og forkynte Guds evangelium.",
+    "15": "Han sa: «Tiden er inne, og Guds rike er kommet nær. Vend om og tro på evangeliet!»",
+    "16": "Da han gikk langs Galileasjøen, så han Simon og Andreas, Simons bror, som kastet garn i sjøen. De var fiskere.",
+    "17": "Jesus sa til dem: «Kom og følg meg, så skal jeg gjøre dere til menneskefiskere.»",
+    "18": "Straks forlot de garnene og fulgte ham.",
+    "19": "Da han gikk et lite stykke videre, så han Jakob, sønn av Sebedeus, og Johannes, broren hans. De satt i båten og gjorde i stand garnene.",
+    "20": "Straks kalte han på dem. De forlot sin far Sebedeus i båten sammen med leiekarene og fulgte ham.",
+    "21": "De kom til Kapernaum, og straks på sabbaten gikk han inn i synagogen og underviste.",
+    "22": "Folk var slått av undring over læren hans, for han underviste dem som en som har myndighet, og ikke som de skriftlærde.",
+    "23": "I synagogen deres var det nettopp da en mann med en uren ånd, og han skrek:",
+    "24": "«Hva vil du oss, Jesus fra Nasaret? Er du kommet for å ødelegge oss? Jeg vet hvem du er: Guds Hellige!»",
+    "25": "Men Jesus truet ham og sa: «Ti stille og far ut av ham!»",
+    "26": "Da rev og slet den urene ånden i mannen, skrek høyt og fór ut av ham.",
+    "27": "Alle ble grepet av undring og spurte hverandre: «Hva er dette? En ny lære med myndighet! Selv de urene åndene gir han befaling, og de adlyder ham.»",
+    "28": "Og ryktet om ham spredte seg straks overalt i hele Galilea og området omkring.",
+    "29": "Straks de var kommet ut av synagogen, gikk de sammen med Jakob og Johannes hjem til Simon og Andreas.",
+    "30": "Simons svigermor lå til sengs med feber, og de fortalte straks Jesus om henne.",
+    "31": "Han gikk bort til henne, tok henne i hånden og reiste henne opp. Da forlot feberen henne, og hun stelte for dem.",
+    "32": "Da det ble kveld og solen var gått ned, kom de til ham med alle som var syke eller besatt.",
+    "33": "Hele byen var samlet utenfor døren.",
+    "34": "Han helbredet mange som led av ulike sykdommer, og han drev ut mange onde ånder. Men han lot ikke åndene tale, for de visste hvem han var.",
+    "35": "Tidlig om morgenen, mens det ennå var mørkt, sto han opp og gikk ut til et øde sted, og der ba han.",
+    "36": "Simon og de som var med ham, skyndte seg etter ham.",
+    "37": "Da de fant ham, sa de: «Alle leter etter deg.»",
+    "38": "Han svarte: «La oss gå et annet sted, til landsbyene her omkring, så jeg kan forkynne der også. Det er for dette jeg er kommet.»",
+    "39": "Og han dro omkring i hele Galilea, forkynte i synagogene deres og drev ut onde ånder.",
+    "40": "En spedalsk kom til ham, falt på kne og ba: «Vil du, så kan du gjøre meg ren.»",
+    "41": "Jesus ble opprørt, rakte ut hånden, rørte ved ham og sa: «Jeg vil. Bli ren!»",
+    "42": "Straks forlot spedalskheten ham, og han ble ren.",
+    "43": "Jesus talte strengt til ham og sendte ham straks bort",
+    "44": "og sa: «Se til at du ikke sier noe til noen! Men gå og vis deg for presten, og bær fram det offeret for renselsen din som Moses har påbudt, til et vitnesbyrd for dem.»",
+    "45": "Men mannen gikk bort og begynte å fortelle vidt og bredt om det som hadde skjedd, og spredte ryktet, så Jesus ikke lenger kunne gå åpent inn i noen by. Han holdt seg utenfor, på øde steder. Likevel kom folk til ham fra alle kanter."
+  },
+  "replace": [
+    {
+      "verseId": 1,
+      "type": "error",
+      "reason": "«Guds Sønn» er lagt til; det står ikke i grunnteksten som er gitt her.",
+      "otherDefensible": false
+    },
+    {
+      "verseId": 7,
+      "type": "grammar",
+      "reason": "Anførselstegnet lukkes etter «sandalremmen hans.»» selv om Johannes’ tale fortsetter i neste vers, som derfor ender med et avsluttende anførselstegn uten noe åpnende.",
+      "otherDefensible": true
+    },
+    {
+      "verseId": 41,
+      "type": "error",
+      "reason": "Grunnteksten her har «ὀργισθεὶς» («ble harm/opprørt»), men «grepet av medfølelse» gjengir en annen tekstvariant og endrer dermed meningen.",
+      "otherDefensible": true
+    }
+  ],
+  "keep": [
+    {
+      "verseId": 2,
+      "reason": "Innledningen «Som» (kathōs) er utelatt, så setningen mister sammenhengen med omtalen av Johannes som oppfyllelse av skriftordet."
+    }
+  ],
+  "signature": "1c09dbb777464e796a8808127df1d6b76d812e5295483749e6f7e29bbf64ff0b",
+  "appliedSignature": "c14fe3d22a36c03a1593b6c219201a3cc66978550989c3528f43d355c59a49c3",
+  "appliedAt": "2026-09-23T15:17:42.608Z"
+}

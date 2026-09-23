@@ -57,7 +57,16 @@
     "bookId": 40,
     "chapterId": 21,
     "verseId": 8,
-    "text": "En stor folkemengde bredte kappene sine ut på veien, andre hogg greiner av trærne og strødde dem på veien."
+    "text": "Mesteparten av folkemengden bredte kappene sine ut på veien, mens andre skar grener av trærne og strødde dem på veien.",
+    "versions": [
+      {
+        "text": "En stor folkemengde bredte kappene sine ut på veien, andre hogg greiner av trærne og strødde dem på veien.",
+        "type": "error",
+        "severity": "major",
+        "explanation": "«En stor folkemengde» svekker superlativen «ho pleistos ochlos» (mesteparten av / den største delen av mengden), men lesningen «en svært stor mengde» er også mulig.",
+        "alternative": true
+      }
+    ]
   },
   {
     "bookId": 40,
@@ -249,13 +258,20 @@
     "bookId": 40,
     "chapterId": 21,
     "verseId": 31,
-    "text": "Hvem av de to gjorde farens vilje?' De svarte: «Den første.» Jesus sa til dem: «Sannelig, jeg sier dere: Tollere og skjøger går inn i Guds rike foran dere.",
+    "text": "Hvem av de to gjorde det faren ville?» De svarte: «Den første.» Jesus sa til dem: «Sannelig, jeg sier dere: Tollerne og de prostituerte går foran dere inn i Guds rike.",
     "versions": [
       {
         "text": "Hvem av de to gjorde farens vilje?» De svarte: «Den første.» Jesus sa til dem: «Sannelig, jeg sier dere: Tollere og skjøger går inn i Guds rike foran dere.",
         "type": "grammar",
         "severity": "major",
         "explanation": "Avsluttende anførselstegn her (»)  bør korrespondere med åpningen i vers 28. Hvis vers 28 endres til enkle anførselstegn for farens tale, må spørsmålet i vers 31 som avslutter Jesu lignelse-fortelling også bruke enkelt anførselstegn (') for å markere slutten på den nestede fortellingen, mens Jesu nye direkte tale fortsetter med vanlige anførselstegn."
+      },
+      {
+        "text": "Hvem av de to gjorde farens vilje?' De svarte: «Den første.» Jesus sa til dem: «Sannelig, jeg sier dere: Tollere og skjøger går inn i Guds rike foran dere.",
+        "type": "grammar",
+        "severity": "major",
+        "explanation": "Sitatet avsluttes feil med enkelt anførselstegn i «vilje?'», selv om talen ble åpnet med «.",
+        "alternative": true
       }
     ]
   },

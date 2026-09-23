@@ -215,7 +215,7 @@
     "bookId": 40,
     "chapterId": 7,
     "verseId": 9,
-    "text": "Hvem av dere vil gi sønnen sin en stein når han ber om brød?",
+    "text": "Eller hvem av dere vil gi sønnen sin en stein når han ber om brød?",
     "versions": [
       {
         "text": "Finnes det noen blant dere som gir sin sønn en stein når han ber om brød?",
@@ -226,6 +226,13 @@
         "type": "suggestion",
         "severity": "minor",
         "explanation": "'Sønnen sin' er mer naturlig moderne norsk bokmål enn 'sin sønn' i denne konteksten. Det greske 'ὁ υἱὸς αὐτοῦ' (hans sønn) oversettes naturligst med 'sønnen sin'."
+      },
+      {
+        "text": "Hvem av dere vil gi sønnen sin en stein når han ber om brød?",
+        "type": "error",
+        "severity": "major",
+        "explanation": "Innledningsordet «eller» (ἢ) er utelatt, så forbindelsen til det foregående blir borte.",
+        "alternative": true
       }
     ],
     "footnotes": [

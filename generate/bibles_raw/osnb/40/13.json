@@ -149,7 +149,16 @@
     "bookId": 40,
     "chapterId": 13,
     "verseId": 20,
-    "text": "Det som ble sådd på steingrunn, er den som hører ordet og straks tar imot det med glede."
+    "text": "Det som ble sådd på steingrunn, er den som hører ordet og straks tar imot det med glede,",
+    "versions": [
+      {
+        "text": "Det som ble sådd på steingrunn, er den som hører ordet og straks tar imot det med glede.",
+        "type": "grammar",
+        "severity": "major",
+        "explanation": "Setningen avsluttes med punktum, men den fortsetter i neste vers med liten forbokstav («men han har ingen rot»), så tegnsettingen blir feil.",
+        "alternative": false
+      }
+    ]
   },
   {
     "bookId": 40,

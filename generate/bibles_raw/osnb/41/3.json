@@ -155,13 +155,20 @@
     "bookId": 41,
     "chapterId": 3,
     "verseId": 17,
-    "text": "Videre Jakob, sønn av Sebedeus, og Johannes, Jakobs bror – dem ga han tilnavnet Boanerges, det betyr «Tordensønner» –",
+    "text": "Jakob, sønn av Sebedeus, og Johannes, bror av Jakob – dem ga han navnet Boanerges, det betyr tordensønner –",
     "versions": [
       {
         "text": "Videre Jakob, sønn av Sebedeus, og Johannes, Jakobs bror – dem ga han navnet Boanerges, det betyr Tordensønner –",
         "type": "suggestion",
         "severity": "minor",
         "explanation": "Boanerges var et tilnavn (ὀνόματα i betydningen tilnavn), ikke et erstatningsnavn. I tillegg bør oversettelsen 'Tordensønner' stå i anførselstegn for klarhet, da det er en oversettelse av det arameiske ordet."
+      },
+      {
+        "text": "Videre Jakob, sønn av Sebedeus, og Johannes, Jakobs bror – dem ga han tilnavnet Boanerges, det betyr «Tordensønner» –",
+        "type": "grammar",
+        "severity": "major",
+        "explanation": "«Videre» står med stor forbokstav midt i en setning som fortsetter fra forrige vers, som sluttet med komma; ordet skal ha liten forbokstav.",
+        "alternative": false
       }
     ]
   },

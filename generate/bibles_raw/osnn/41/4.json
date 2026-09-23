@@ -51,13 +51,20 @@
     "bookId": 41,
     "chapterId": 4,
     "verseId": 8,
-    "text": "«Høyr! Ein såmann gjekk ut for å så. Då han sådde, fall noko ved vegen, og fuglane kom og åt det opp. Noko fall på steingrunn der det var lite jord, og det spirte fort opp fordi jorda var så grunn. Men då sola steig, vart det svidd, og sidan det ikkje hadde rot, visna det. Noko fall mellom tornebuskar, og tornebuskane voks opp og kvelte det, så det ikkje gav grøde. Men noko fall i god jord og gav grøde som voks og auka; det bar tretti, seksti og hundrefaldig.»",
+    "text": "Men noko fall i den gode jorda. Det skaut opp og voks og bar frukt, og det gav tretti, seksti og hundre fold.»",
     "versions": [
       {
         "text": "Men noko fall i god jord og gav grøde som voks og auka; det bar tretti, seksti og hundre gonger det som vart sådd.»",
         "type": "suggestion",
         "severity": "minor",
         "explanation": "Gresk ἓν τριάκοντα καὶ ἓν ἑξήκοντα καὶ ἓν ἑκατόν tyder 'trettifaldig, sekstifaldig og hundrefaldig' - altså multiplikatorar. 'Gonger det som vart sådd' er eit tillegg som ikkje finst i grunnteksten. 'Hundrefaldig' er meir presist og kortare. Same korrigering bør gjelde vers 20."
+      },
+      {
+        "text": "«Høyr! Ein såmann gjekk ut for å så. Då han sådde, fall noko ved vegen, og fuglane kom og åt det opp. Noko fall på steingrunn der det var lite jord, og det spirte fort opp fordi jorda var så grunn. Men då sola steig, vart det svidd, og sidan det ikkje hadde rot, visna det. Noko fall mellom tornebuskar, og tornebuskane voks opp og kvelte det, så det ikkje gav grøde. Men noko fall i god jord og gav grøde som voks og auka; det bar tretti, seksti og hundrefaldig.»",
+        "type": "error",
+        "severity": "major",
+        "explanation": "Omsetjinga gjentek heile likninga frå vers 3–7 («Høyr! Ein såmann gjekk ut for å så …») og legg dermed til mykje tekst som ikkje står i dette verset.",
+        "alternative": false
       }
     ]
   },
@@ -159,13 +166,20 @@
     "bookId": 41,
     "chapterId": 4,
     "verseId": 21,
-    "text": "Han sa til dei: «Kjem vel lampa for å setjast under eit kar eller under senga? Nei, ho kjem for å setjast på lampestaken.",
+    "text": "Og han sa til dei: «Kjem vel lampa inn for å bli sett under skjeppa eller under senga? Skal ho ikkje setjast på lampestetta?",
     "versions": [
       {
         "text": "Han sa til dei: «Kjem vel lampa for å setjast under eit kar eller under senga? Nei, ho skal setjast på lampestaken.",
         "type": "suggestion",
         "severity": "minor",
         "explanation": "Grunnteksten har οὐχ ἵνα ἐπὶ τὴν λυχνίαν τεθῇ (er det ikkje for å setjast på lampestaken?) – altså eit retorisk spørsmål som held same konstruksjon som fyrste del. 'Nei, ho skal setjast' endrar forma frå spørsmål til påstand, som er ein vanleg fridom i omsetjing, men 'ho kjem for å setjast' held seg nærare originalen."
+      },
+      {
+        "text": "Han sa til dei: «Kjem vel lampa for å setjast under eit kar eller under senga? Nei, ho kjem for å setjast på lampestaken.",
+        "type": "error",
+        "severity": "major",
+        "explanation": "Det retoriske spørsmålet «οὐχ ἵνα ἐπὶ τὴν λυχνίαν τεθῇ;» er gjort om til ei utsegn: «Nei, ho kjem for å setjast på lampestaken.»",
+        "alternative": false
       }
     ]
   },

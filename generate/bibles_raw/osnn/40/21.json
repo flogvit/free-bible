@@ -195,7 +195,16 @@
     "bookId": 40,
     "chapterId": 21,
     "verseId": 33,
-    "text": "Høyr ei anna likning! Det var ein gong ein jordherre som planta ein vingard. Han sette gjerde rundt han, hogg ut ei vinpresse i berget og bygde eit vakttårn. Så leigde han bort vingarden til nokre vinbønder og drog utanlands."
+    "text": "Høyr ei anna likning: Det var ein jordeigar som planta ein vingard. Han sette gjerde rundt han, hogg ut ei vinpresse og bygde eit vakttårn. Så leigde han han bort til nokre vingardsmenn og reiste utanlands.",
+    "versions": [
+      {
+        "text": "Høyr ei anna likning! Det var ein gong ein jordherre som planta ein vingard. Han sette gjerde rundt han, hogg ut ei vinpresse i berget og bygde eit vakttårn. Så leigde han bort vingarden til nokre vinbønder og drog utanlands.",
+        "type": "error",
+        "severity": "major",
+        "explanation": "«i berget» er lagt til; grunnteksten seier at vinpressa vart hoggen ut i vingarden, ikkje i berget.",
+        "alternative": false
+      }
+    ]
   },
   {
     "bookId": 40,
@@ -263,7 +272,16 @@
     "bookId": 40,
     "chapterId": 21,
     "verseId": 42,
-    "text": "Jesus sa til dei: «Har de aldri lese i Skriftene: Steinen som bygningsmennene vraka, har vorte hjørnestein. Det er Herrens verk, og underfullt er det i våre auge."
+    "text": "Jesus sa til dei: «Har de aldri lese i skriftene: ‘Den steinen som bygningsmennene vraka, er vorten hjørnestein. Dette er Herrens verk, og det er underfullt i våre auge’?",
+    "versions": [
+      {
+        "text": "Jesus sa til dei: «Har de aldri lese i Skriftene: Steinen som bygningsmennene vraka, har vorte hjørnestein. Det er Herrens verk, og underfullt er det i våre auge.",
+        "type": "error",
+        "severity": "major",
+        "explanation": "Grunnteksten er eit spørsmål, men «Har de aldri lese i Skriftene …» sluttar med punktum og manglar spørjeteiknet, så spørsmålet kjem ikkje tydeleg fram.",
+        "alternative": true
+      }
+    ]
   },
   {
     "bookId": 40,

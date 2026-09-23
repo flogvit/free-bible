@@ -799,7 +799,7 @@
     "bookId": 40,
     "chapterId": 25,
     "verseId": 26,
-    "text": "Herren hans svarte ham: «Du onde og late tjener! Du visste at jeg høster der jeg ikke har sådd, og samler der jeg ikke har strødd ut.",
+    "text": "Men herren svarte: «Du onde og late tjener! Du visste at jeg høster der jeg ikke har sådd, og samler inn der jeg ikke har strødd ut?",
     "footnotes": [
       {
         "text": "Den greske teksten har «ἀποκριθεὶς δὲ ὁ κύριος αὐτοῦ εἶπεν αὐτῷ», ordrett «og hans herre svarte og sa til ham». Oversettelsen gjengir dette naturlig som «Herren hans svarte ham». «κύριος» er her oversatt «herren» (med liten h i rollen som eier/mester i lignelsen), selv om lignelsen allegorisk peker mot Kristus. Den retoriske spørsmålsformen i originalen er beholdt i oversettelsen. Setningen avsluttes uten spørsmålstegn i oversettelsen, noe som gjør at den retoriske kraften ikke kommer tydelig frem; et spørsmålstegn bør settes til slutt for å markere at dette er et retorisk spørsmål, men det kan også leses som en konstaterende gjengivelse av tjenerens egne ord tilbake til ham.",
@@ -816,6 +816,15 @@
       {
         "text": "I antikken var det vanlig at herrer ga tjenere (ofte slaver) ansvar for å forvalte eiendom og penger. Forventningen var at de skulle drive forretning og skape avkastning. Å gjemme penger i jorden var en kjent, men svært konservativ praksis som ikke ga noen avkastning.",
         "source": "historisk"
+      }
+    ],
+    "versions": [
+      {
+        "text": "Herren hans svarte ham: «Du onde og late tjener! Du visste at jeg høster der jeg ikke har sådd, og samler der jeg ikke har strødd ut.",
+        "type": "error",
+        "severity": "major",
+        "explanation": "Grunnteksten har et spørsmål, men «Du visste at jeg høster …» er gjort om til en fortellende setning med punktum.",
+        "alternative": true
       }
     ]
   },

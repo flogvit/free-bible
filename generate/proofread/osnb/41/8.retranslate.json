@@ -1,0 +1,66 @@
+{
+  "model": "claude-opus-5-5",
+  "effort": null,
+  "at": "2026-09-23T15:23:00.064Z",
+  "fresh": {
+    "1": "I de dagene var det igjen samlet en stor folkemengde, og de hadde ingenting å spise. Jesus kalte disiplene til seg og sa til dem:",
+    "2": "«Jeg har inderlig medfølelse med folket, for nå har de vært hos meg i tre dager og har ingenting å spise.",
+    "3": "Sender jeg dem sultne hjem, vil de segne om på veien. Noen av dem har jo kommet langveisfra.»",
+    "4": "Disiplene svarte ham: «Hvor skal noen kunne få brød nok til å mette disse folkene her ute i ødemarken?»",
+    "5": "Han spurte dem: «Hvor mange brød har dere?» «Sju», svarte de.",
+    "6": "Da ba han folket sette seg ned på bakken. Han tok de sju brødene, takket, brøt dem og gav dem til disiplene for at de skulle dele dem ut, og de delte dem ut til folket.",
+    "7": "De hadde også noen få småfisker. Han velsignet dem og sa at de skulle dele ut dem også.",
+    "8": "Og de spiste og ble mette. Etterpå samlet de opp sju kurver med stykkene som var til overs.",
+    "9": "Det var omkring fire tusen mennesker. Så sendte han dem av sted.",
+    "10": "Straks etter gikk han om bord i båten sammen med disiplene og kom til traktene ved Dalmanuta.",
+    "11": "Fariseerne kom ut og begynte å diskutere med ham. For å sette ham på prøve krevde de et tegn fra himmelen.",
+    "12": "Han sukket dypt i sin ånd og sa: «Hvorfor krever denne slekten et tegn? Sannelig, jeg sier dere: Denne slekten skal ikke få noe tegn!»",
+    "13": "Så forlot han dem, gikk om bord igjen og dro over til den andre siden.",
+    "14": "Disiplene hadde glemt å ta med brød, og de hadde bare ett brød med seg i båten.",
+    "15": "Da advarte han dem og sa: «Se opp, vokt dere for fariseernes surdeig og Herodes’ surdeig!»",
+    "16": "De begynte å snakke seg imellom om at de ikke hadde brød.",
+    "17": "Jesus merket det og sa til dem: «Hvorfor snakker dere om at dere ikke har brød? Forstår dere ennå ikke, skjønner dere ingenting? Er hjertet deres forherdet?",
+    "18": "Dere har øyne, men ser ikke, og ører, men hører ikke? Husker dere ikke",
+    "19": "da jeg brøt de fem brødene til de fem tusen, hvor mange kurver fulle av stykker dere samlet opp?» «Tolv», svarte de.",
+    "20": "«Og da jeg brøt de sju brødene til de fire tusen, hvor mange kurver fulle av stykker samlet dere da opp?» «Sju», svarte de.",
+    "21": "Da sa han til dem: «Forstår dere ennå ikke?»",
+    "22": "De kom til Betsaida. Der førte noen en blind mann til ham og ba ham om å røre ved ham.",
+    "23": "Han tok den blinde ved hånden og førte ham ut av landsbyen. Så spyttet han på øynene hans, la hendene på ham og spurte: «Ser du noe?»",
+    "24": "Mannen så opp og sa: «Jeg ser mennesker, jeg ser dem gå omkring, men de ser ut som trær.»",
+    "25": "Da la Jesus igjen hendene på øynene hans, og mannen så klart. Han var helbredet og kunne se alt tydelig.",
+    "26": "Jesus sendte ham hjem og sa: «Gå ikke inn i landsbyen!»",
+    "27": "Jesus og disiplene dro videre til landsbyene omkring Caesarea Filippi. På veien spurte han disiplene: «Hvem sier folk at jeg er?»",
+    "28": "De svarte: «Døperen Johannes. Andre sier Elia, og andre igjen at du er en av profetene.»",
+    "29": "Da spurte han dem: «Men dere, hvem sier dere at jeg er?» Peter svarte: «Du er Messias.»",
+    "30": "Da forbød han dem strengt å fortelle noen om ham.",
+    "31": "Så begynte han å lære dem at Menneskesønnen måtte lide mye og bli forkastet av de eldste, overprestene og de skriftlærde, bli slått i hjel og stå opp igjen etter tre dager.",
+    "32": "Dette sa han rett ut. Da tok Peter ham til side og begynte å irettesette ham.",
+    "33": "Men Jesus snudde seg, så på disiplene og irettesatte Peter: «Gå bort fra meg, Satan! Du har ikke Guds tanker, men menneskers.»",
+    "34": "Så kalte han folket og disiplene til seg og sa: «Vil noen følge etter meg, må han fornekte seg selv, ta sitt kors og følge meg.",
+    "35": "For den som vil berge sitt liv, skal miste det, men den som mister sitt liv for min skyld og for evangeliets skyld, skal berge det.",
+    "36": "Hva hjelper det et menneske om han vinner hele verden, men taper sitt liv?",
+    "37": "Hva kan vel et menneske gi i bytte for sitt liv?",
+    "38": "For den som skammer seg over meg og mine ord i denne utro og syndige slekten, ham skal også Menneskesønnen skamme seg over når han kommer i sin Fars herlighet med de hellige englene.»"
+  },
+  "replace": [
+    {
+      "verseId": 34,
+      "type": "grammar",
+      "reason": "Anførselstegnet lukkes med «følge meg.»» selv om Jesu tale fortsetter til vers 38, der et nytt avsluttende anførselstegn står uten tilhørende åpning.",
+      "otherDefensible": true
+    }
+  ],
+  "keep": [
+    {
+      "verseId": 7,
+      "reason": "«dele ut dem også» har feil ordstilling; et trykklett pronomen skal stå foran partikkelen, altså «dele dem ut også»."
+    },
+    {
+      "verseId": 19,
+      "reason": "Det direkte spørsmålet «hvor mange kurver … dere samlet opp?» mangler inversjon; det skal være «samlet dere opp»."
+    }
+  ],
+  "signature": "8c01ded73b8d4ff80509779c23b0b2197990648769079ba1cbe51af7a3724810",
+  "appliedSignature": "eaf82fac4aad9360860436dd243ce15b947e6701e02c21ea7d7ee5e24340509f",
+  "appliedAt": "2026-09-23T15:23:00.065Z"
+}

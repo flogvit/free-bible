@@ -47,11 +47,18 @@
     "bookId": 41,
     "chapterId": 14,
     "verseId": 6,
-    "text": "Men Jesus sa: «La henne være! Hvorfor plager dere henne? Hun har gjort en god gjerning mot meg.»",
+    "text": "Men Jesus sa: «La henne være! Hvorfor plager dere henne? Hun har gjort en god gjerning mot meg.",
     "versions": [
       {
         "text": "Men Jesus sa: «La henne være! Hvorfor plager dere henne? Hun har gjort en god gjerning mot meg.",
         "explanation": "Mangler avsluttende anførselstegn. Selv om Jesu tale fortsetter i de neste versene, avsluttes denne setningen her og bør ha avsluttende tegn for konsistens med de andre versene."
+      },
+      {
+        "text": "Men Jesus sa: «La henne være! Hvorfor plager dere henne? Hun har gjort en god gjerning mot meg.»",
+        "type": "grammar",
+        "severity": "major",
+        "explanation": "Anførselstegnet avsluttes med «meg.»» selv om Jesu tale fortsetter i neste vers.",
+        "alternative": false
       }
     ]
   },
@@ -203,13 +210,20 @@
     "bookId": 41,
     "chapterId": 14,
     "verseId": 24,
-    "text": "Og han sa til dem: «Dette er mitt blod, paktens blod, som blir utøst for mange.»",
+    "text": "Og han sa til dem: «Dette er mitt blod, paktens blod, som blir utøst for mange.",
     "versions": [
       {
         "text": "Og han sa til dem: «Dette er mitt blod, paktens blod, som blir utøst for mange.",
         "type": "suggestion",
         "severity": "minor",
         "explanation": "Verset mangler avsluttende anførselstegn (»). Selv om Jesu tale kan sies å fortsette i vers 25, bør det for konsistens med resten av oversettelsen ha avsluttende anførselstegn."
+      },
+      {
+        "text": "Og han sa til dem: «Dette er mitt blod, paktens blod, som blir utøst for mange.»",
+        "type": "grammar",
+        "severity": "major",
+        "explanation": "Anførselstegnet avsluttes med «for mange.»» selv om Jesu tale fortsetter med «Sannelig» i neste vers.",
+        "alternative": false
       }
     ]
   },
@@ -267,7 +281,16 @@
     "bookId": 41,
     "chapterId": 14,
     "verseId": 30,
-    "text": "Jesus sa til ham: «Sannelig, jeg sier deg: I denne natt, før hanen galer to ganger, skal du fornekte meg tre ganger.»"
+    "text": "Jesus svarte: «Sannelig, jeg sier deg: I dag, ja, i natt, før hanen galer to ganger, skal du fornekte meg tre ganger.»",
+    "versions": [
+      {
+        "text": "Jesus sa til ham: «Sannelig, jeg sier deg: I denne natt, før hanen galer to ganger, skal du fornekte meg tre ganger.»",
+        "type": "error",
+        "severity": "major",
+        "explanation": "«I dag» (σήμερον) er utelatt; bare «I denne natt» er gjengitt.",
+        "alternative": false
+      }
+    ]
   },
   {
     "bookId": 41,
@@ -485,13 +508,20 @@
     "bookId": 41,
     "chapterId": 14,
     "verseId": 60,
-    "text": "Da reiste øverstepresten seg og trådte fram og spurte Jesus: «Svarer du ikke på noe? Hva er det disse vitner mot deg?»",
+    "text": "Da reiste øverstepresten seg, trådte fram midt blant dem og spurte Jesus: «Svarer du ingenting? Hva er det disse vitner mot deg?»",
     "versions": [
       {
         "text": "Da reiste øverstepresten seg fram og spurte Jesus: «Svarer du ikke på noe? Hva er det disse vitner mot deg?»",
         "type": "suggestion",
         "severity": "minor",
         "explanation": "The Greek 'ἀναστὰς ... εἰς μέσον' indicates both standing up and stepping into the middle/center. The current translation 'reiste seg fram' partially captures this, but 'εἰς μέσον' (into the middle) is a distinct element. However, the current phrasing is acceptable and natural, so this is a minor observation."
+      },
+      {
+        "text": "Da reiste øverstepresten seg og trådte fram og spurte Jesus: «Svarer du ikke på noe? Hva er det disse vitner mot deg?»",
+        "type": "error",
+        "severity": "major",
+        "explanation": "Uttrykket «midt blant dem» (eis meson) er utelatt; teksten sier bare «trådte fram».",
+        "alternative": false
       }
     ]
   },

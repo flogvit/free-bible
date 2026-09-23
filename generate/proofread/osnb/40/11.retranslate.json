@@ -1,0 +1,55 @@
+{
+  "model": "claude-opus-5-5",
+  "effort": null,
+  "at": "2026-09-23T15:03:13.554Z",
+  "fresh": {
+    "1": "Da Jesus var ferdig med å gi sine tolv disipler disse påbudene, dro han videre derfra for å undervise og forkynne i byene deres.",
+    "2": "Johannes satt i fengsel. Da han fikk høre om det Kristus gjorde, sendte han bud med disiplene sine",
+    "3": "og spurte ham: «Er du den som skal komme, eller skal vi vente på en annen?»",
+    "4": "Jesus svarte dem: «Gå og fortell Johannes hva dere hører og ser:",
+    "5": "Blinde ser og lamme går, spedalske blir renset og døve hører, døde står opp, og fattige får høre evangeliet.",
+    "6": "Salig er den som ikke tar anstøt av meg.»",
+    "7": "Mens de gikk, begynte Jesus å tale til folkemengden om Johannes: «Hva dro dere ut i ødemarken for å se? Et siv som svaier i vinden?",
+    "8": "Eller hva dro dere ut for å se? En mann kledd i fine klær? De som går i fine klær, holder til i kongenes palasser.",
+    "9": "Hva var det da dere dro ut for å se? En profet? Ja, jeg sier dere: mer enn en profet.",
+    "10": "Det er han det står skrevet om: Se, jeg sender min budbærer foran deg, han skal rydde veien for deg.",
+    "11": "Sannelig, jeg sier dere: Blant alle som er født av kvinner, har det ikke stått fram noen som er større enn døperen Johannes. Men den minste i himmelriket er større enn han.",
+    "12": "Fra døperen Johannes’ dager og til nå trenger himmelriket seg fram med makt, og de som bruker makt, river det til seg.",
+    "13": "For alle profetene og loven har profetert fram til Johannes.",
+    "14": "Og om dere vil ta imot det: Han er Elia, som skulle komme.",
+    "15": "Den som har ører, han høre!",
+    "16": "Hva skal jeg sammenligne denne slekten med? Den ligner barn som sitter på torgene og roper til de andre:",
+    "17": "‘Vi spilte fløyte for dere, men dere danset ikke. Vi sang sørgesanger, men dere klaget ikke.’",
+    "18": "For Johannes kom, og han verken spiste eller drakk, og de sier: ‘Han har en demon.’",
+    "19": "Menneskesønnen kom, og han spiser og drikker, og de sier: ‘Se, for en storeter og vindrikker, en venn av tollere og syndere!’ Men visdommen blir rettferdiggjort av sine gjerninger.»",
+    "20": "Da begynte han å refse de byene der de fleste av hans mektige gjerninger var blitt gjort, fordi de ikke hadde omvendt seg:",
+    "21": "«Ve deg, Korasin! Ve deg, Betsaida! For hvis de mektige gjerningene som er gjort hos dere, hadde skjedd i Tyros og Sidon, ville de for lenge siden ha omvendt seg i sekk og aske.",
+    "22": "Men jeg sier dere: Det skal bli lettere for Tyros og Sidon på dommens dag enn for dere.",
+    "23": "Og du, Kapernaum, skal vel du bli opphøyd til himmelen? Nei, ned til dødsriket skal du fare! For hvis de mektige gjerningene som er gjort hos deg, hadde skjedd i Sodoma, ville byen ha stått til denne dag.",
+    "24": "Men jeg sier dere: Det skal bli lettere for Sodomas land på dommens dag enn for deg.»",
+    "25": "På den tiden tok Jesus til orde og sa: «Jeg priser deg, Far, himmelens og jordens Herre, fordi du har skjult dette for de vise og forstandige og åpenbart det for de små.",
+    "26": "Ja, Far, slik har du villet det.",
+    "27": "Alt er overgitt meg av min Far. Ingen kjenner Sønnen, uten Faderen, og ingen kjenner Faderen, uten Sønnen og den som Sønnen vil åpenbare ham for.",
+    "28": "Kom til meg, alle dere som strever og bærer tunge byrder, så vil jeg gi dere hvile.",
+    "29": "Ta mitt åk på dere og lær av meg, for jeg er mild og ydmyk av hjertet. Da skal dere finne hvile for deres sjeler.",
+    "30": "For mitt åk er godt, og min byrde er lett.»"
+  },
+  "replace": [
+    {
+      "verseId": 19,
+      "type": "grammar",
+      "reason": "Jesu tale, som begynte med «, blir ikke avsluttet med » etter «sine gjerninger», selv om en ny tale åpnes med « i vers 21.",
+      "otherDefensible": true
+    },
+    {
+      "verseId": 30,
+      "type": "grammar",
+      "reason": "Det mangler komma foran «og» mellom to helsetninger: «For mitt åk er godt og min byrde er lett».",
+      "otherDefensible": true
+    }
+  ],
+  "keep": [],
+  "signature": "e32e9002ad00fdd73e390285a5d79f5a1428ffc886b9b03d771e7c8b7203882a",
+  "appliedSignature": "f7acd72d9cb092a3af98dc6412d61939096567b06603575205a94254442efaab",
+  "appliedAt": "2026-09-23T15:03:13.556Z"
+}

@@ -1,0 +1,73 @@
+{
+  "model": "claude-opus-5-5",
+  "effort": null,
+  "at": "2026-09-23T15:09:18.735Z",
+  "fresh": {
+    "1": "Då kom nokre farisearar og skriftlærde frå Jerusalem til Jesus og sa:",
+    "2": "«Kvifor bryt læresveinane dine overleveringa frå dei gamle? Dei vaskar ikkje hendene når dei et.»",
+    "3": "Han svara dei: «Kvifor bryt de sjølve Guds bod for overleveringa dykkar skuld?",
+    "4": "For Gud har sagt: ‘Ær far din og mor di’, og: ‘Den som bannar far eller mor, skal døy.’",
+    "5": "Men de seier: Den som seier til far sin eller mor si: ‘Det du kunne ha fått av meg til hjelp, er ei gåve til Gud’,",
+    "6": "han treng ikkje æra far sin. Slik har de gjort Guds ord ugyldig for overleveringa dykkar skuld.",
+    "7": "De hyklarar! Rett profeterte Jesaja om dykk då han sa:",
+    "8": "‘Dette folket ærar meg med leppene, men hjartet deira er langt borte frå meg.",
+    "9": "Fåfengt dyrkar dei meg, for det dei lærer, er menneskebod.’»",
+    "10": "Så kalla han folket til seg og sa til dei: «Høyr og forstå!",
+    "11": "Det som går inn i munnen, gjer ikkje mennesket ureint. Men det som kjem ut av munnen, det gjer mennesket ureint.»",
+    "12": "Då kom læresveinane til han og sa: «Veit du at fariseararne tok anstøyt då dei høyrde det du sa?»",
+    "13": "Han svara: «Kvar plante som far min i himmelen ikkje har planta, skal rykkjast opp med rota.",
+    "14": "Lat dei vere! Dei er blinde vegvisarar for blinde. Og når ein blind leier ein blind, fell begge i grøfta.»",
+    "15": "Då sa Peter til han: «Forklar oss denne likninga!»",
+    "16": "Jesus sa: «Er de òg framleis utan forstand?",
+    "17": "Skjønar de ikkje at alt som går inn i munnen, går ned i magen og vert kasta ut i avtrede?",
+    "18": "Men det som kjem ut av munnen, kjem frå hjartet, og det er det som gjer mennesket ureint.",
+    "19": "For frå hjartet kjem vonde tankar, mord, ekteskapsbrot, hor, tjuveri, falske vitnemål og spott.",
+    "20": "Det er dette som gjer mennesket ureint. Men å eta med uvaska hender gjer ikkje mennesket ureint.»",
+    "21": "Jesus gjekk derifrå og drog seg attende til områda kring Tyrus og Sidon.",
+    "22": "Og sjå, ei kanaaneisk kvinne frå dei traktene kom og ropa: «Ha miskunn med meg, Herre, du Davids son! Dottera mi er hardt plaga av ein vond ånd.»",
+    "23": "Men han svara henne ikkje eit ord. Då kom læresveinane hans og bad han: «Send henne bort, for ho ropar etter oss.»",
+    "24": "Han svara: «Eg er ikkje send til andre enn dei bortkomne sauene av Israels hus.»",
+    "25": "Men ho kom og kasta seg ned for han og sa: «Herre, hjelp meg!»",
+    "26": "Han svara: «Det er ikkje rett å ta brødet frå borna og kasta det til hundane.»",
+    "27": "«Jo, Herre,» sa ho, «men hundane et då av smulene som fell frå bordet til herrane deira.»",
+    "28": "Då svara Jesus henne: «Kvinne, stor er trua di! Det skal skje med deg som du vil.» Og frå same stunda var dottera hennar frisk.",
+    "29": "Jesus drog vidare derifrå og kom til Galileasjøen. Han gjekk opp i fjellet og sette seg der.",
+    "30": "Store folkemengder kom til han. Dei hadde med seg lamme, blinde, krøplingar, stumme og mange andre. Dei la dei ned ved føtene hans, og han lækte dei.",
+    "31": "Folket undra seg når dei såg at stumme tala, krøplingar vart friske, lamme gjekk og blinde såg. Og dei lova Israels Gud.",
+    "32": "Jesus kalla læresveinane sine til seg og sa: «Eg har inderleg medkjensle med folket. Dei har no vore hjå meg i tre dagar og har ikkje noko å eta. Eg vil ikkje senda dei frå meg svoltne, for då kan dei segna om på vegen.»",
+    "33": "Læresveinane sa til han: «Kvar skal vi her i øydemarka få så mykje brød at vi kan metta så mykje folk?»",
+    "34": "Jesus spurde dei: «Kor mange brød har de?» «Sju,» svara dei, «og nokre få småfiskar.»",
+    "35": "Då baud han folket setja seg ned på marka.",
+    "36": "Han tok dei sju brøda og fiskane, takka, braut dei og gav til læresveinane, og læresveinane gav til folket.",
+    "37": "Alle åt og vart mette, og dei samla opp sju korger fulle av stykka som var til overs.",
+    "38": "Dei som åt, var fire tusen menn, kvinner og born ikkje medrekna.",
+    "39": "Så sende han folket av garde, steig i båten og kom til Magadan-traktene."
+  },
+  "replace": [
+    {
+      "verseId": 17,
+      "type": "error",
+      "reason": "«blir kasta ut att» let vere å ta med at det blir kasta ut i avtredet (εἰς ἀφεδρῶνα).",
+      "otherDefensible": true
+    },
+    {
+      "verseId": 22,
+      "type": "grammar",
+      "reason": "«ånd» er hankjønn på nynorsk, så «ei vond ånd» skal vere «ein vond ånd».",
+      "otherDefensible": false
+    }
+  ],
+  "keep": [
+    {
+      "verseId": 12,
+      "reason": "«fariseararne» er feil bøying; rett nynorskform er «farisearane»."
+    },
+    {
+      "verseId": 31,
+      "reason": "«når dei såg» er feil om ei einskild hending i fortida; det skal vere «då dei såg»."
+    }
+  ],
+  "signature": "e981bb28f319605f6de4b35ff641d9a60d14cebe969ac664b5c903bde0751119",
+  "appliedSignature": "2e972837ac599cf2d240f62a818763ff7ed3975494b855d5fc0860e43e9d2532",
+  "appliedAt": "2026-09-23T15:09:18.737Z"
+}

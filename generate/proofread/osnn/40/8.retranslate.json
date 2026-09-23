@@ -1,0 +1,64 @@
+{
+  "model": "claude-opus-5-5",
+  "effort": null,
+  "at": "2026-09-23T15:02:39.453Z",
+  "fresh": {
+    "1": "Då han kom ned frå fjellet, følgde store folkemengder etter han.",
+    "2": "Og sjå, ein spedalsk mann kom, kasta seg ned for han og sa: «Herre, om du vil, kan du gjere meg rein.»",
+    "3": "Jesus rekte ut handa, rørte ved han og sa: «Eg vil. Ver rein!» Og straks vart han rein for spedalsken.",
+    "4": "Då sa Jesus til han: «Sjå til at du ikkje seier det til nokon. Men gå og vis deg for presten, og ber fram den gåva som Moses har fastsett, til eit vitnemål for dei.»",
+    "5": "Då Jesus kom inn i Kapernaum, kom ein offiser til han og bad han:",
+    "6": "«Herre, guten min ligg lam heime og lid forferdeleg.»",
+    "7": "Jesus sa til han: «Eg skal kome og lækje han.»",
+    "8": "Men offiseren svara: «Herre, eg er ikkje verd at du går inn under taket mitt. Men sei berre eitt ord, så blir guten min frisk.",
+    "9": "For eg er sjølv ein mann som står under andre, og eg har soldatar under meg. Seier eg til ein: ‘Gå!’, så går han, og til ein annan: ‘Kom!’, så kjem han, og til tenaren min: ‘Gjer dette!’, så gjer han det.»",
+    "10": "Då Jesus høyrde dette, undra han seg og sa til dei som følgde han: «Sanneleg, eg seier dykk: Hos ingen i Israel har eg funne så stor tru.",
+    "11": "Eg seier dykk at mange skal kome frå aust og vest og sitje til bords med Abraham, Isak og Jakob i himmelriket.",
+    "12": "Men barna i riket skal kastast ut i mørkret utanfor. Der skal dei gråte og skjere tenner.»",
+    "13": "Så sa Jesus til offiseren: «Gå! Det skal skje med deg slik du trudde.» Og i same stunda vart guten frisk.",
+    "14": "Då Jesus kom inn i huset til Peter, såg han at svigermor hans låg til sengs med feber.",
+    "15": "Han rørte ved handa hennar, og feberen slepte henne. Ho stod opp og tente han.",
+    "16": "Då det vart kveld, kom dei til han med mange som var plaga av demonar. Han dreiv ut åndene med eit ord og lækte alle som var sjuke.",
+    "17": "Slik skulle det oppfyllast som er sagt gjennom profeten Jesaja: Han tok på seg våre plager og bar våre sjukdomar.",
+    "18": "Då Jesus såg dei store folkemengdene kring seg, sa han at dei skulle fare over til den andre sida av sjøen.",
+    "19": "Då kom ein skriftlærd bort til han og sa: «Meister, eg vil følgje deg kvar du enn går.»",
+    "20": "Jesus svara: «Revane har hi, og fuglane under himmelen har reir, men Menneskesonen har ikkje noko han kan kvile hovudet på.»",
+    "21": "Ein annan av læresveinane sa til han: «Herre, lat meg først få gå og gravleggje far min.»",
+    "22": "Men Jesus sa til han: «Følg meg, og lat dei døde gravleggje sine døde.»",
+    "23": "Så gjekk han om bord i båten, og læresveinane hans følgde med han.",
+    "24": "Og sjå, det braut laus ein så kraftig storm på sjøen at bølgjene slo inn over båten. Men han sov.",
+    "25": "Dei gjekk bort og vekte han og sa: «Herre, frels oss! Vi går under!»",
+    "26": "Han sa til dei: «Kvifor er de så redde, de lite truande?» Så reiste han seg og truga vinden og sjøen, og det vart heilt stilt.",
+    "27": "Mennene undra seg og sa: «Kven er han, sidan både vinden og sjøen lyder han?»",
+    "28": "Då han kom over til den andre sida, til landet der gadarenarane budde, kom to menn som var plaga av demonar, ut frå gravhòlene og møtte han. Dei var så farlege at ingen torde gå den vegen.",
+    "29": "Og sjå, dei ropa: «Kva har du med oss å gjere, du Guds Son? Har du kome hit for å pine oss før tida?»",
+    "30": "Eit stykke unna gjekk ein stor grisebuskap og beita.",
+    "31": "Demonane bad han: «Om du driv oss ut, så send oss inn i grisebuskapen.»",
+    "32": "Han sa til dei: «Far av stad!» Då fór dei ut og inn i grisane. Og sjå, heile buskapen storma utfor stupet og ut i sjøen og omkom i vatnet.",
+    "33": "Gjætarane flydde. Dei sprang inn i byen og fortalde alt, også det som hadde hendt med dei to som var plaga av demonar.",
+    "34": "Og sjå, heile byen gjekk ut for å møte Jesus. Då dei fekk sjå han, bad dei han om å fare bort frå bygdene deira."
+  },
+  "replace": [
+    {
+      "verseId": 13,
+      "type": "error",
+      "reason": "Setninga «og guten vart frisk i same stunda» manglar, så det vert borte at guten vart lækt.",
+      "otherDefensible": false
+    },
+    {
+      "verseId": 8,
+      "type": "grammar",
+      "reason": "Sitatet vert avslutta med «lækt.»», endå talen held fram i neste vers utan nytt opningsteikn.",
+      "otherDefensible": true
+    }
+  ],
+  "keep": [
+    {
+      "verseId": 15,
+      "reason": "«slepte» er preteritum av «slepe» (dra), medan preteritum av «sleppe» i nynorsk er «sleppte»."
+    }
+  ],
+  "signature": "3fde7c68ae0dcafb63937a7856495da87329f7211e1e31dc6502d5ddffc8413d",
+  "appliedSignature": "8db35f6facf3861f9c7b3fc684b14c3184d8d077e92ba35995fe969d3204f8e8",
+  "appliedAt": "2026-09-23T15:02:39.454Z"
+}
