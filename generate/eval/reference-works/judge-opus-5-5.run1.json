@@ -1,0 +1,266 @@
+{
+  "judge": "claude-fable-5-1",
+  "models": [
+    "claude-opus-5",
+    "claude-fable-5-1",
+    "claude-opus-5-5"
+  ],
+  "results": [
+    {
+      "sample": "jfb-gen1_2",
+      "ranking": [
+        "claude-fable-5-1",
+        "claude-opus-5-5",
+        "claude-opus-5"
+      ],
+      "renderings": [
+        {
+          "model": "claude-fable-5-1",
+          "score": 8,
+          "meaningErrors": [
+            "«fortsatte å ruge over det» – pronomenet «det» har ingen klar referent (kloden er hankjønn/hunkjønn); kilden har «over it» = kloden/vannmassen.",
+            "«fikk oppstå» for «was made to arise» tar bort det kausative (at verden ble frembrakt av en ytre kraft) og gjør det mer passivt/tillatende."
+          ],
+          "languageProblems": [
+            "Setningen «Åndens direkte virksomhet forente, ordnet og modnet de døde og uforenlige elementene ved å virke på dem, til en tilstand ...» er omstokket slik at «til en tilstand» henger løst etter et komma; leddet «ved å virke på dem» burde stått tidligere.",
+            "«verdens nåværende byggverk» er noe stivt, men forståelig."
+          ]
+        },
+        {
+          "model": "claude-opus-5",
+          "score": 6,
+          "meaningErrors": [
+            "«Åndens umiddelbare virksomhet» – «immediate agency» betyr her direkte (uten mellomledd) virksomhet; «umiddelbar» leses på norsk lett som «øyeblikkelig/straks».",
+            "«var kanskje i tidsaldre en ... ødemark» – «i tidsaldre» er upresist; kilden mener «gjennom tidsaldre» (varighet)."
+          ],
+          "languageProblems": [
+            "«bokstavelig, fortsatte å ruge» – engelsk kommatering; norsk krever kolon eller omskriving.",
+            "Semikolon foran «og» i siste setning («verset; og detaljene») er engelsk tegnsetting.",
+            "«på den naturlige måten som en tilskuer ville ha gjort det, en som så de forandringene som fant sted etter hverandre» – tung, hengende apposisjon («en som så»); klosset norsk.",
+            "«verdens nåværende bygning ble reist» – «bygning» er en for konkret/bokstavelig gjengivelse av «fabric»."
+          ]
+        },
+        {
+          "model": "claude-opus-5-5",
+          "score": 7,
+          "meaningErrors": [
+            "«uensartede elementene» for «discordant» – «discordant» betyr stridende/uforenlige, ikke bare ulikeartede; nyansen svekkes.",
+            "«fortsatte å ruge over det» – uklar referent for «det», som i A.",
+            "«kanskje i lange tidsaldre» – «lange» er tillegg uten motsvar i kilden (dog implisitt i «for ages»)."
+          ],
+          "languageProblems": [
+            "«på den naturlige måten en tilskuer ville ha gjort det, en som så forandringene som fant sted etter hverandre» – samme klossete apposisjon som i B.",
+            "«enkelthetene i prosessen» virker noe gammelmodig; «detaljene» er mer dagens bokmål.",
+            "Første halvdel er ellers svært flytende («Etter at denne kloden ... lå den som en mørk og vannfylt ødemark»)."
+          ]
+        }
+      ],
+      "reason": "Alle tre er innholdsmessig tett på kilden, og forskjellene ligger mest i språkføring. A er mest idiomatisk bokmål, særlig i siste setning der tilskuerbildet er løst elegant, og har bare en mindre omstokking som gjør én setning noe ujevn. C er flytende i første del, men velger det svakere «uensartede» for «discordant» og ender med en hengende apposisjon. B følger engelsk struktur og tegnsetting (komma etter «bokstavelig», semikolon foran «og»), bruker den flertydige kalken «umiddelbare virksomhet» og det upresise «i tidsaldre», og er derfor mest klosset."
+    },
+    {
+      "sample": "jfb-rom5_20",
+      "ranking": [
+        "claude-fable-5-1",
+        "claude-opus-5-5",
+        "claude-opus-5"
+      ],
+      "renderings": [
+        {
+          "model": "claude-fable-5-1",
+          "score": 8,
+          "meaningErrors": [
+            "Ingen egentlige meningsfeil. Små nyanser: «whose every act ... proclaims itself» er gjengitt med «og hvor hver eneste bevisste opprørshandling erklærer seg som barn», som løsner relasjonen til «medlemmene» noe, men innholdet er bevart."
+          ],
+          "languageProblems": [
+            "«og hvor hver eneste ... erklærer seg som barn av» er syntaktisk klosset (relativsetning omgjort til «og hvor»).",
+            "«mer enn møter denne forferdende situasjonen» – «møter» er en anglisisme for «meets»; bedre «mer enn dekker/oppveier».",
+            "«overhodet» for «the head» er forståelig, men noe stivt; «som et syndende prinsipp» er akseptabelt men tungt.",
+            "«kom inn i parentes» er noe uidiomatisk, men forståelig."
+          ]
+        },
+        {
+          "model": "claude-opus-5",
+          "score": 6,
+          "meaningErrors": [
+            "«Det som var én ulydighetshandling i hodet» – «in the head» betyr stamfaren/slektens overhode (Adam), ikke kroppsdelen. På norsk leses «i hodet» som en fysisk/mental lokalisering og gir feil mening.",
+            "«Dessuten loven--» som overskrift/lemma passer ikke til bibelteksten («Men loven kom til»); ordrett, men forvirrende som vershenvisning."
+          ],
+          "languageProblems": [
+            "«i alle den menneskelige families lemmer» – ordrett og unorsk; «menneskeslekten» er det naturlige.",
+            "«hvis hver eneste handling av forsettlig opprør forkynner seg selv som barn» – relativt «hvis» er gammelmodig/stivt, og «forkynner seg selv som» er anglisisme.",
+            "«nedlagt i brystet på hvert Adams barn» – ordrett for «bosom», klosset på moderne bokmål.",
+            "«dette forferdelige tilfellet» – «tilfellet» for «case» er anglisisme.",
+            "«Adam voldte», «desto fullstendigere» – noe gammelmodig stil.",
+            "«Dessuten loven» er klosset som frittstående lemma."
+          ]
+        },
+        {
+          "model": "claude-opus-5-5",
+          "score": 7,
+          "meaningErrors": [
+            "Bruker «overtredelsen» for «the offence» (fallet) i stedet for den etablerte bibeltekstens «fallet»; dermed viskes kildens skille mellom «offense» (fallet) og «transgression» (overtredelse) ut («den ene overtredelsens mangfoldiggjøring til utallige lovbrudd», «den opprinnelige overtredelsen»). Ikke direkte feil, men terminologisk inkonsekvent og avviker fra det bibelverset kommentaren forklarer.",
+            "«for at overtredelsen skulle bli større» og «der synden ble større» – kilden/bibelteksten har «abound» = «bli stor(t)», ikke komparativ.",
+            "«kom inn ved siden av» for «entered incidentally» er upresist; kilden mener «tilfeldig/underordnet», ikke «parallelt».",
+            "«hos stamfaren» for «in the head» er en tolkende utvidelse (riktig i sak, men mer eksplisitt enn kilden)."
+          ],
+          "languageProblems": [
+            "Gjennomgående god og moderne norsk. Mindre ting: «skremmende tilstanden» er svakere enn «appalling»; «botemiddelet ved Kristus» er litt stivt; «prinsipp for ulydighet» er greit men tyngre enn «ulydighetsprinsipp»."
+          ]
+        }
+      ],
+      "reason": "A er mest presis i forhold til kilden og følger norsk bibelspråk («kom til», «fallet skulle bli stort», «nåden enda større», «sneket seg inn») uten meningsfeil; noen få klossete uttrykk («og hvor ...», «møter situasjonen») trekker litt. C har det jevneste og mest moderne språket, men bytter ut bibeltekstens «fallet» med «overtredelsen» og mister dermed kildens skille mellom offense og transgression, bruker komparativ («større») der kilden har «bli stort», og glosserer «head» som «stamfaren». B er nokså trofast, men «i hodet» for «in the head» er misvisende, og språket er flere steder ordrett og gammelmodig («den menneskelige families lemmer», «hvis hver eneste handling», «i brystet», «tilfellet», «Dessuten loven»)."
+    },
+    {
+      "sample": "kd-gen1_1",
+      "ranking": [
+        "claude-opus-5-5",
+        "claude-fable-5-1",
+        "claude-opus-5"
+      ],
+      "renderings": [
+        {
+          "model": "claude-fable-5-1",
+          "score": 7,
+          "meaningErrors": [
+            "«Ewald, Lehrb. § 277 i 7. utg.» – kilden har «§.277°» (OCR for 277c); bokstaven c er falt bort.",
+            "«skapte» for «hat ... geschaffen» – akseptabel normalisering, men perfektum i kilden er ikke bevart (marginalt)."
+          ],
+          "languageProblems": [
+            "«som også tiden har tatt sin begynnelse med» – tung, uidiomatisk relativsetning (bedre: «da også tiden tok sin begynnelse»).",
+            "«grunnes på det faktum ... som sin urgrunn» – klosset; «grunnes på» er ikke naturlig bokmål.",
+            "«som verdensaltet ble frembrakt ved» – litt tung, men forståelig.",
+            "Lang, ubrutt periode i «den andre strider mot enkelheten ... helt bortsett fra at ...» tro mot kilden men vanskelig å lese."
+          ]
+        },
+        {
+          "model": "claude-opus-5-5",
+          "score": 8,
+          "meaningErrors": [
+            "«har Gud skapt» – bokstavelig gjengivelse av tysk perfektum; på norsk er «skapte» det naturlige bibelsitatet. Ikke feil, men ufordøyd.",
+            "«I begynnelsen, da Gud … skapte» for «zu Anfang da Gott ... schuf» – kilden skiller mellom «im Anfang» (Aben Esra) og «zu Anfang» (Ewald/Bunsen); nyansen er flatet ut.",
+            "«innskutt periode» for «einschachtelnde Periode» – «innkapslende/innskaktende» er mer presist, men meningen holder.",
+            "«underordnes dette ordet» – eksplisitterer «ihm»; korrekt tolkning, liten tilføyelse."
+          ],
+          "languageProblems": [
+            "«åpenbaringsurkunden» – «urkunde» er lite brukt i dagens bokmål; «åpenbaringsdokumentet/-skriftet» hadde vært bedre.",
+            "«Abenesr., Jarch.» – forkortelsene er beholdt uoppløst; A og C løser dem opp.",
+            "Setningen «Dette følger regelen om ...» er en fri oppdeling av kildens ene periode – god for lesbarhet, men bryter kildens struktur."
+          ]
+        },
+        {
+          "model": "claude-opus-5",
+          "score": 6,
+          "meaningErrors": [
+            "«uropphavet» for «des Uranfangs» – «urbegynnelsen» er det presise; «opphav» skyver betydningen mot årsak/kilde.",
+            "«knyttes til med [hebr.]» – kildens forklarende «und» («og») etter det hebraiske tegnet er sløyfet.",
+            "«Kap. 1,1.» satt i markdown-fet (**...**) – formatering som ikke finnes i kilden.",
+            "«i førstningen» for «anfangs» – innholdsmessig riktig, men gammelmodig."
+          ],
+          "languageProblems": [
+            "Gjennomgående riksmåls-/dansknær stil som ikke er «dagens bokmål»: «tillike», «hvorved», «med hvilken», «for seg betraktet», «holdes for overflødig», «i førstningen».",
+            "Manglende dobbelt bestemmelse: «den oppfatning», «den følgende beskrivelse», «den moderne panteisme», «det følgende skaperverk», «den setningsbygning».",
+            "«grunnfestes på ... som sin urgrunn» – tungt og uidiomatisk.",
+            "«skapelsens gang» for «Schöpfungshergang» – litt gammelmodig."
+          ]
+        }
+      ],
+      "reason": "B er innholdsmessig fullstendig, gjenoppretter det greske ἐν ἀρχῇ korrekt, beholder § 277c, og er den eneste som konsekvent skriver et lesbart, moderne bokmål (f.eks. «da også tiden tok sin begynnelse»); svakhetene er den bokstavelige perfektumen «har Gud skapt», «åpenbaringsurkunden» og utjevningen av im/zu Anfang. A er like nøyaktig i sak (bevarer til og med im/zu-skillet og løser opp Aben Esra/Jarchi), men mister «c» i § 277c og har flere klossete formuleringer («som også tiden har tatt sin begynnelse med», «grunnes på»). C er trofast, men skrevet i et gammelmodig riksmål («tillike», «hvorved», «med hvilken», manglende dobbelt bestemmelse) som bryter med oppgaven om dagens bokmål, legger til markdown-formatering og forskyver «Uranfang» til «uropphavet»."
+    },
+    {
+      "sample": "kd-gen1_2",
+      "ranking": [
+        "claude-opus-5-5",
+        "claude-fable-5-1",
+        "claude-opus-5"
+      ],
+      "renderings": [
+        {
+          "model": "claude-opus-5-5",
+          "score": 8,
+          "meaningErrors": [
+            "«hvis etymologi er forsvunnet» – kilden sier «deren Etyma» (grunnordene/rotordene), ikke etymologien som disiplin; liten forskyvning.",
+            "«for det passer ikke med verbet» – kilden: «dazu passt das v. nicht» (verbet passer ikke til den tolkningen); meningen er bevart, men subjekt/objekt-forholdet er snudd noe."
+          ],
+          "languageProblems": [
+            "«uadskilt» er dansk form; bokmål har «uatskilt».",
+            "«i religiøst øyemed» er litt stivt, men gangbart."
+          ]
+        },
+        {
+          "model": "claude-fable-5-1",
+          "score": 7,
+          "meaningErrors": [
+            "«betyr øde og tomhet (ødemark)» – i kilden er «(Oede)» en forklaring til «Leere», ikke «ødemark»; og «Wüste» som substantiv er svakt gjengitt med adjektivet «øde».",
+            "Fotnotemarkøren etter sitatet («hervor.»¹) er falt bort."
+          ],
+          "languageProblems": [
+            "«Som et fra gammelt av overlevert ord» – tungt og klosset, tyskpreget leddstilling.",
+            "«gjelder også om himmelen» – mer naturlig: «gjelder også himmelen».",
+            "«[hebr.] pust betyr vind og ånd» – mangler komma/apposisjonsmarkering, blir uklart.",
+            "«meddeler om himmelens dannelse bare så mye» – tysk ordstilling."
+          ]
+        },
+        {
+          "model": "claude-opus-5",
+          "score": 6,
+          "meaningErrors": [
+            "«Ew. § 277a» – A og B leser OCR-tegnet «°» som «c»; C avviker og gir sannsynligvis feil henvisning.",
+            "«Selv om fortelleren handler om skapelsen» – en person «handler» ikke «om» noe på norsk; kilden sier at fortelleren behandler emnet («von der Schöpfung … handelnd»).",
+            "«betyr ørken og tomhet» – «Wüste» her er «ødemark/øde», ikke «ørken» (for konkret)."
+          ],
+          "languageProblems": [
+            "Gjennomgående gammelmodig og ordrett: «til tilfredsstillelse av vitebegjæret, men til befestelse i troen», «den kaotiske masse, i hvilken», «endog», «dertil passer ikke verbet».",
+            "Ubestemte/danskpregede former: «Den vordende jord», «den fremstormende vannbølge eller vannflom», «det språk».",
+            "«skikkelses- og livløs masse» – klosset sammensetning.",
+            "«for erkjennelsen av dens sammenheng» – tungt substantivspråk der «for å forstå» er naturlig."
+          ]
+        }
+      ],
+      "reason": "A er mest flytende og idiomatisk på dagens bokmål, beholder fotnotemarkøren og gjengir innholdet presist; eneste klare feil er den danske formen «uadskilt». B er nesten like god og enkelte steder mer moderne («så å si ufødte», «i ferd med å bli til»), men har noen klossete tyskpregede konstruksjoner, en forskjøvet glosse («øde og tomhet (ødemark)») og mangler fotnotemarkøren. C er korrekt i hovedsak, men er for ordrett og gammelmodig for oppgaven («til befestelse i troen», «i hvilken», «endog», ubestemte substantivformer), har den unorske vendingen «fortelleren handler om», og avviker i Ewald-henvisningen (277a mot 277c)."
+    },
+    {
+      "sample": "odland-rom5_20-21",
+      "ranking": [
+        "claude-opus-5-5",
+        "claude-fable-5-1",
+        "claude-opus-5"
+      ],
+      "renderings": [
+        {
+          "model": "claude-opus-5",
+          "score": 6,
+          "meaningErrors": [
+            "«ennå mye mer» – kildens «ennu meget mer» betyr 'enda mye mer' (grad), ikke tidsadverbet 'ennå'; formen gir feil lesning i moderne bokmål.",
+            "«Loven er mye mer bestemt til å bringe» – «meget mer» i kilden betyr 'snarere/heller'; «mye mer bestemt» kan leses som gradsangivelse ('i mye høyere grad bestemt') og forskyver nyansen."
+          ],
+          "languageProblems": [
+            "Nesten ren ortografisk oppdatering, ikke reell modernisering: «den med Adams fall innledede syndige utvikling», «den fra Adam til Kristus varende periode» er tunge tyskaktige partisippkonstruksjoner.",
+            "Gammelmodig ordvalg beholdt: «religiøs-sedelig», «tilkjennegitt», «foranstaltning», «stående i tjenende forhold», «som ovenfor (til v. 12) sagt», «Dog», «Gjelder det om».",
+            "Ubestemt form der moderne bokmål krever dobbel bestemmelse: «den epokegjørende betydning», «Det uttrykk i grunnteksten», «bruker det uttrykk at»."
+          ]
+        },
+        {
+          "model": "claude-fable-5-1",
+          "score": 8,
+          "meaningErrors": [],
+          "languageProblems": [
+            "«hver eneste syndige handling» – bøyningen bør være «syndig» (ubestemt) etter «hver eneste».",
+            "«Gjelder det om hver eneste …» er fortsatt arkaisk konstruksjon; «tilkjennegitt», «foranstaltning», «foreliggende» er gammelmodige og kunne vært modernisert.",
+            "«den perioden som varer fra Adam til Kristus» – presens er forsvarlig, men litt uvant om en avsluttet historisk periode."
+          ]
+        },
+        {
+          "model": "claude-opus-5-5",
+          "score": 9,
+          "meaningErrors": [],
+          "languageProblems": [
+            "«Gjelder det om hver eneste syndig handling» beholder kildens arkaiske setningsbygning.",
+            "«et bestemt foreliggende guddommelig bud» – «foreliggende» er noe stivt.",
+            "«Loven er mye snarere bestemt til» – «mye snarere» er litt uvant; «snarere» alene hadde vært naturligere."
+          ]
+        }
+      ],
+      "reason": "Alle tre bevarer innholdet i hovedsak. C er mest gjennomført modernisert (gitt til kjenne, tiltak, med «synden» mener han, det som … var at) uten meningstap, og har korrekt bøyning der B glipper («syndige»). B er nesten like god, men beholder litt flere gammelmodige ord. A er i praksis bare en rettskrivningsoppdatering med tunge partisippkonstruksjoner og en feilaktig «ennå» for kildens gradsbetydning «enda», samt en tvetydig gjengivelse av «meget mer»."
+    }
+  ]
+}
