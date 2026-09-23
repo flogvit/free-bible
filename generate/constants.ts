@@ -27,6 +27,12 @@ export function getBibleStyle(bible: string): string {
 }
 
 export const anthropicModel: string = process.env.ANTHROPIC_MODEL || "claude-opus-5";
+// Model for bible.ts — translation and proofreading. Chosen by the model test in
+// generate/eval/proofread/ (run.ts --report shows why); change it here when a new model wins
+// there. ANTHROPIC_MODEL still overrides it for one run. The other scripts keep
+// anthropicModel above: nothing has tested them on another model.
+export const bibleModel: string = process.env.ANTHROPIC_MODEL || "claude-opus-5-5";
+
 // List price in dollars per million tokens, [input, output]. Thinking is billed as output.
 // Cost lines in the logs are computed from this, so a model missing here reports no cost
 // rather than the wrong one.

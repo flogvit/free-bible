@@ -85,23 +85,25 @@ the translation's own language. Most other enums are English (`type`, `severity`
 
 ## Pipeline
 
-`generate/bible.ts` — translate, then proofread. Three proofread modes:
+`generate/bible.ts` — translate, then proofread with `--proofread`, which writes its
+corrections into the text. The model is `bibleModel` in `constants.ts` (Opus 5.5), picked by
+the model test below. `--method` chooses how to proofread:
 
-- **`--retranslate`** translates the chapter again from the source and lets a blind judge
-  (A/B drawn per verse) compare the fresh reading with the current one. It replaces a verse
-  only where the current reading has an *error* the fresh one lacks — never on taste. On
-  the model test below, Opus 5.5 fixed 25–26 of 30 known errors this way against 16–17 for
-  `--batch`, at $0.0040 per verse ($123 per translation, one pass). Without `--apply` it
-  only writes the verdicts to `proofread/<bible>/<book>/<chapter>.retranslate.json`, so they
-  can be read first; `--apply` then uses them without paying again. The replaced reading
-  goes to `versions[]` as with `--batch`; a fresh reading the judge did not pick is kept in
-  that sidecar file only.
-- **`--batch`** sends the chapter in a few calls and gets back only the findings, in a
+- **`retranslate`** (the default) translates the chapter again from the source and lets a
+  blind judge (A/B drawn per verse) compare the fresh reading with the current one. It
+  replaces a verse only where the current reading has an *error* the fresh one lacks —
+  never on taste. On the model test, Opus 5.5 fixed 25–26 of 30 known errors this way
+  against 16–17 for `batch`, at $0.0040 per verse ($123 per translation, one pass). The
+  verdicts are saved to `proofread/<bible>/<book>/<chapter>.retranslate.json` first;
+  `--dry-run` stops there, and the next run uses them without paying again. The replaced
+  reading goes to `versions[]` as with `batch`; a fresh reading the judge did not pick is
+  kept in that sidecar file only. It writes no footnotes.
+- **`batch`** sends the chapter in a few calls and gets back only the findings, in a
   feedback loop until the chapter scores `--min-score` or the rounds run out. **This is
   the method that produced osnb** (99.2% of its chapters predate per-verse mode) and it is
   6.6× cheaper than per-verse — the cheapest mode, but see the model test below for what
   it misses.
-- default (per-verse) reviews each verse with its neighbours, in two phases (text, then
+- **`per-verse`** reviews each verse with its neighbours, in two phases (text, then
   footnotes). Thorough but expensive; `--text-only` skips the footnote phase.
 
 Measured with Claude Opus 5 ($5/$25 per MTok), per verse and for the whole bible:
@@ -119,12 +121,13 @@ halve any of these.
 **When a new model arrives**, run `bun generate/eval/proofread/run.ts --model <id>`. It runs
 both proofread modes through the production code above over eight frozen chapters with 30
 known errors (13 real, 17 planted) and prints the new model next to every model tested
-before. `--model` and `--effort` on `bible.ts` then select it for a real run. The batch
+before. If it wins, change `bibleModel` in `constants.ts`. The batch
 proofread's history rule («NEVER suggest text that matches ANY previous version») is why
 it misses every «honom» in osnn: an earlier round introduced them, and the rule forbids
 the fix.
 
-Targeted second passes, both free to re-run because they write resume markers:
+Targeted second passes over the `batch` method, both free to re-run because they write
+resume markers:
 
 - `--check-length` re-examines verses whose text is now much shorter than an earlier
   version. **This catches a real and repeated failure**: the model returns only the phrase

@@ -4,7 +4,7 @@ import path from 'path';
 
 
 import Anthropic from '@anthropic-ai/sdk';
-import {bibles, books, anthropicModel, anthropicPrices, maxTokens, getBibleStyle} from "./constants.js";
+import {bibles, books, bibleModel, anthropicPrices, maxTokens, getBibleStyle} from "./constants.js";
 import {parseArgs, formatHelp, COMMON_FLAGS} from './cli.js';
 import type {FlagSpec, Range} from './cli.js';
 import type {
@@ -28,11 +28,11 @@ const anthropic = new Anthropic({maxRetries: 5});
 const GEN = import.meta.dir;
 
 /**
- * Model and effort for this run. `--model` overrides ANTHROPIC_MODEL; `--effort` is sent
- * as `output_config.effort` and left out when unset, so the model's own default applies
- * (`medium` on Opus 5.5, `high` on Opus 5 and Fable 5.1).
+ * Model and effort for this run: `bibleModel` from constants.ts unless the model test sets
+ * another. Effort is left out unless set, so the model's own default applies (`medium` on
+ * Opus 5.5, `high` on Opus 5 and Fable 5.1) — which is what the model test ran.
  */
-let runModel: string = anthropicModel;
+let runModel: string = bibleModel;
 let runEffort: string | undefined;
 export function configureRun(opts: {model?: string; effort?: string}): void {
     if (opts.model) runModel = opts.model;
@@ -212,11 +212,16 @@ interface ChapterState {
  * alltid satt — flaggkontrakten initialiserer boolske flagg til `false` og
  * fyller inn standardverdiene fra `SPEC`.
  */
+/** How --proofread works. `retranslate` is the default; see the block comment above it. */
+type ProofreadMethod = 'retranslate' | 'batch' | 'per-verse';
+const PROOFREAD_METHODS: ProofreadMethod[] = ['retranslate', 'batch', 'per-verse'];
+
 interface CliOptions {
     bible: string | null;
     style: string | null;
     proofread: boolean;
-    apply: boolean;
+    method: ProofreadMethod;
+    dryRun: boolean;
     skipExisting: boolean;
     ot: boolean;
     nt: boolean;
@@ -229,10 +234,6 @@ interface CliOptions {
     force: boolean;
     changedTypes?: string[];
     checkLength?: number;
-    batch: boolean;
-    retranslate: boolean;
-    model?: string;
-    effort?: string;
     textOnly: boolean;
     minScore: number;
     maxIterations: number;
@@ -1519,8 +1520,8 @@ async function proofreadChapterBatched(bible: string, bookId: number, chapterId:
 }
 
 /*
- * --retranslate: proofread by translating the chapter again from the source and letting a
- * judge compare the fresh rendering with the current one, verse by verse.
+ * --proofread (--method retranslate, the default): translate the chapter again from the source
+ * and let a judge compare the fresh rendering with the current one, verse by verse.
  *
  * Why: a reviewer reading the current text is anchored in it. A fresh translation from the
  * Hebrew/Greek disagrees exactly where the current text has drifted from the source, and a
@@ -1583,12 +1584,12 @@ Report only verses where one reading has an ERROR the other does not:
 - it breaks the grammar, spelling or inflection of the current official written standard of ${language}.
 If both readings are faithful and correct, skip the verse — even if one reads better. Differences of style or taste are not errors.
 
-For each reported verse: "better" (A or B — the one without the error), "type" (error for meaning, grammar for language), "reason" (one sentence, in ${language}, naming the error), and "otherDefensible" (always false here unless the error is trivial).
+For each reported verse: "better" (A or B — the one without the error), "type" (error for meaning, grammar for language), "reason" (one sentence, in ${language}, naming the error — quote the wrong words; do not call the readings A or B, since the reason is shown to readers later without them), and "otherDefensible" (always false here unless the error is trivial).
 
 ${body}`;
 }
 
-/** What one --retranslate pass over a chapter produced, before anything is applied. */
+/** What one retranslate pass over a chapter produced, before anything is written. */
 export interface RetranslateResult {
     model: string;
     effort: string | null;
@@ -1600,7 +1601,7 @@ export interface RetranslateResult {
     replace: {verseId: number; type: 'error' | 'grammar'; reason: string; otherDefensible: boolean}[];
     /** Verses where the judge found the error in the fresh reading instead. */
     keep: {verseId: number; reason: string}[];
-    /** Set by --apply: the chapter signature after the replacements were written. */
+    /** Set when the replacements are written: the chapter signature after writing. */
     appliedSignature?: string | null;
     appliedAt?: string;
 }
@@ -1697,11 +1698,11 @@ function retranslateFile(bible: string, bookId: number, chapterId: number): stri
 }
 
 /**
- * One chapter of --retranslate. The verdicts are saved before anything is applied, so a run
- * without --apply can be read first and a later run with --apply uses them without paying
- * again — as long as the model is the same and the chapter text has not changed since.
+ * One chapter of the retranslate proofread. The verdicts are saved before anything is written,
+ * so a --dry-run can be read first and the next run uses them without paying again — as long
+ * as the model is the same and the chapter text has not changed since.
  */
-async function retranslateChapter(bible: string, bookId: number, chapterId: number, style: string, filename: string, {apply = false, force = false} = {}): Promise<void> {
+async function retranslateChapter(bible: string, bookId: number, chapterId: number, style: string, filename: string, {write = true, force = false} = {}): Promise<void> {
     if (!fs.existsSync(filename)) return;
     const language = bibles[bible];
     const sidecar = retranslateFile(bible, bookId, chapterId);
@@ -1727,7 +1728,7 @@ async function retranslateChapter(bible: string, bookId: number, chapterId: numb
     }
 
     for (const r of result.replace) console.log(`    ${r.verseId} [${r.type}] ${r.reason}`);
-    if (!apply) return;
+    if (!write) return;
 
     const verses: Chapter = JSON.parse(fs.readFileSync(filename, 'utf-8'));
     const {applied, rejected} = applyRetranslate(verses, result);
@@ -1763,23 +1764,20 @@ const SPEC: Record<string, FlagSpec> = {
     bible: COMMON_FLAGS.bible,
     book: COMMON_FLAGS.book,
     chapter: COMMON_FLAGS.chapter,
-    verse: {kind: 'range', help: 'korrekturles bare disse versene — hopper over oversettelsen'},
+    verse: {kind: 'range', help: 'bare disse versene (--method per-verse) — hopper over oversettelsen'},
     ot: COMMON_FLAGS.ot,
     nt: COMMON_FLAGS.nt,
     force: COMMON_FLAGS.force,
     style: {kind: 'string', help: 'oversettelsesstil; uten flagget hentes stilen fra oversettelsens oppsett'},
-    proofread: {kind: 'boolean', help: 'korrekturles etter oversettelsen'},
-    apply: {kind: 'boolean', help: 'skriv korrekturens forslag inn i teksten'},
-    batch: {kind: 'boolean', help: 'korrekturles hele kapittelet i noen få kall med tilbakemeldingssløyfe (osnbs metode, 6,6× billigere)'},
-    retranslate: {kind: 'boolean', help: 'korrekturles ved å oversette kapittelet på nytt og la en blind dommer velge der én lesning har en feil; uten --apply lagres bare dommen'},
-    model: {kind: 'string', help: 'Claude-modell for denne kjøringen; overstyrer ANTHROPIC_MODEL'},
-    effort: {kind: 'string', help: 'low, medium, high, xhigh eller max; uten flagget gjelder modellens egen standard'},
-    'text-only': {kind: 'boolean', help: 'bare tekstfasen, hopp over fotnotene'},
-    'skip-existing': {kind: 'boolean', help: 'hopp over vers som alt er gjort (fotnoter finnes, eller textChecked i --text-only)'},
-    'changed-only': {kind: 'string', help: 'andregangs pass over vers som alt er endret; valgfri kommaliste av typer, f.eks. error,grammar'},
-    'check-length': {kind: 'string', help: `andregangs pass over vers som er blitt mye kortere enn en tidligere versjon; valgfritt forholdstall (standard ${CHECK_LENGTH_DEFAULT})`},
-    'min-score': {kind: 'number', help: 'laveste godtatte score, 0-10', default: 8},
-    'max-iter': {kind: 'number', help: 'maks korrekturrunder per fase', default: 3},
+    proofread: {kind: 'boolean', help: 'korrekturles etter oversettelsen, og skriv rettelsene inn i teksten'},
+    method: {kind: 'string', default: 'retranslate', help: 'retranslate: oversett kapittelet på nytt og la en blind dommer bytte der gjeldende tekst har en feil. batch: kapittelvis korrektur med tilbakemeldingsløkke (skriver også fotnoter). per-verse: vers for vers, dyrest'},
+    'dry-run': {kind: 'boolean', help: 'lagre bare dommen i proofread/, skriv ingenting i teksten; neste kjøring bruker dommen (bare --method retranslate)'},
+    'text-only': {kind: 'boolean', help: 'bare tekstfasen, hopp over fotnotene (batch, per-verse)'},
+    'skip-existing': {kind: 'boolean', help: 'hopp over vers som alt er gjort (per-verse)'},
+    'changed-only': {kind: 'string', help: 'andregangs pass over vers som alt er endret; valgfri kommaliste av typer, f.eks. error,grammar (batch)'},
+    'check-length': {kind: 'string', help: `andregangs pass over vers som er blitt mye kortere enn en tidligere versjon; valgfritt forholdstall, standard ${CHECK_LENGTH_DEFAULT} (batch)`},
+    'min-score': {kind: 'number', help: 'laveste godtatte score, 0-10 (batch)', default: 8},
+    'max-iter': {kind: 'number', help: 'maks korrekturrunder per fase (batch, per-verse)', default: 3},
     help: COMMON_FLAGS.help,
 };
 
@@ -1787,11 +1785,10 @@ const HELP_EXAMPLES = [
     'bun generate/bible.ts osnb --style oral --nt                     # oversett NT',
     'bun generate/bible.ts osnb --book 43 --chapter 1-11',
     'bun generate/bible.ts osnb --book 1 --force                      # oversett på nytt',
-    'bun generate/bible.ts osnb --nt --proofread --batch --apply --min-score 8',
-    'bun generate/bible.ts osnb --proofread --check-length --apply    # avkortede vers',
-    'bun generate/bible.ts osnb --proofread --changed-only --apply    # bare endrede vers',
-    'bun generate/bible.ts osnn --proofread --retranslate --model claude-opus-5-5 --book 45        # dom uten å skrive',
-    'bun generate/bible.ts osnn --proofread --retranslate --model claude-opus-5-5 --book 45 --apply',
+    'bun generate/bible.ts osnn --proofread --book 45                 # korrektur, skriver inn rettelsene',
+    'bun generate/bible.ts osnn --proofread --book 45 --dry-run       # bare dommen, les den først',
+    'bun generate/bible.ts osnb --nt --proofread --method batch --min-score 8',
+    'bun generate/bible.ts osnb --proofread --method batch --check-length    # avkortede vers',
     '',
     'Oversettelsen oppgis som første argument uten --, f.eks. osnb, osnn, osen.',
 ];
@@ -1848,7 +1845,8 @@ function readOptions(
         bible: positional[0] ?? (flags.bible as string | undefined) ?? null,
         style: (flags.style as string | undefined) ?? null,   // null = slå opp fra bibelen
         proofread: flags.proofread as boolean,
-        apply: flags.apply as boolean,
+        method: flags.method as ProofreadMethod,
+        dryRun: flags['dry-run'] as boolean,
         skipExisting: flags['skip-existing'] as boolean,
         ot: flags.ot as boolean,
         nt: flags.nt as boolean,
@@ -1862,10 +1860,6 @@ function readOptions(
         changedTypes: bare.has('changed-only') ? [] : changedOnly?.split(','),
         checkLength: bare.has('check-length') ? CHECK_LENGTH_DEFAULT
             : checkLength !== undefined ? parseFloat(checkLength) : undefined,
-        batch: flags.batch as boolean,
-        retranslate: flags.retranslate as boolean,
-        model: flags.model as string | undefined,
-        effort: flags.effort as string | undefined,
         textOnly: flags['text-only'] as boolean,
         minScore: flags['min-score'] as number,
         maxIterations: flags['max-iter'] as number,
@@ -1895,7 +1889,30 @@ async function main(): Promise<void> {
         process.exit(1);
     }
 
-    configureRun({model: options.model, effort: options.effort});
+    // A flag that does nothing in the chosen method fails loudly instead of being ignored —
+    // the contract in cli.ts. `given` is read from argv because parseArgs fills defaults.
+    const given = new Set(filled.argv.filter(a => a.startsWith('--')).map(a => a.slice(2)));
+    if (!PROOFREAD_METHODS.includes(options.method)) {
+        console.error(`Error: --method must be one of ${PROOFREAD_METHODS.join(', ')}`);
+        process.exit(1);
+    }
+    const onlyFor: Record<string, ProofreadMethod[]> = {
+        'dry-run': ['retranslate'],
+        'min-score': ['batch'], 'changed-only': ['batch'], 'check-length': ['batch'],
+        'skip-existing': ['per-verse'], verse: ['per-verse'],
+        'text-only': ['batch', 'per-verse'], 'max-iter': ['batch', 'per-verse'],
+    };
+    for (const [flag, methods] of Object.entries(onlyFor)) {
+        if (!given.has(flag)) continue;
+        if (!options.proofread || !methods.includes(options.method)) {
+            console.error(`Error: --${flag} only works with --proofread --method ${methods.join(' or ')}`);
+            process.exit(1);
+        }
+    }
+    if (given.has('method') && !options.proofread) {
+        console.error('Error: --method only works with --proofread');
+        process.exit(1);
+    }
 
     if (!options.style) {
         options.style = getBibleStyle(options.bible);
@@ -1922,15 +1939,14 @@ async function main(): Promise<void> {
         endBook = 66;
     }
 
-    const modes = ['Translation'];
-    if (options.proofread) modes.push('Proofread');
-    if (options.apply) modes.push('Apply');
+    const modes = options.dryRun ? [] : ['Translation'];
+    if (options.proofread) modes.push(`Proofread (${options.method}${options.dryRun ? ', dry run' : ''})`);
 
     console.log(`Bible: ${options.bible}`);
     console.log(`Model: ${runModel}${runEffort ? ` (effort ${runEffort})` : ''}`);
     console.log(`Style: ${options.style}${options.styleFromBible ? ' (from bible config)' : ' (from --style)'}`);
     console.log(`Mode: ${modes.join(' → ')}`);
-    if (options.proofread && options.apply) {
+    if (options.proofread && options.method === 'batch') {
         console.log(`Feedback loop: min score ${options.minScore || 8}/10, max ${options.maxIterations || 3} iterations`);
     }
     console.log(`Books: ${startBook}-${endBook}`);
@@ -1955,24 +1971,26 @@ async function main(): Promise<void> {
 
             const verseScopeActive = options.verseStart !== null;
 
-            if (!verseScopeActive) {
+            // A dry run writes nothing to the text, and translating missing verses would.
+            if (!verseScopeActive && !options.dryRun) {
                 let existingVerses: Chapter = [];
-                // --force means "translate over what is there" for translation, but for
-                // --retranslate it only means "judge again". Without this exception
-                // `--retranslate --force` would overwrite the chapter before judging it.
-                if (fs.existsSync(filename) && (!options.force || options.retranslate)) {
+                // --force means "translate over what is there" for translation, but for the
+                // retranslate proofread it only means "judge again". Without this exception
+                // `--proofread --force` would overwrite the chapter before judging it.
+                const retranslating = options.proofread && options.method === 'retranslate';
+                if (fs.existsSync(filename) && (!options.force || retranslating)) {
                     existingVerses = JSON.parse(fs.readFileSync(filename, 'utf-8'));
                 }
                 await translateChapter(options.bible, bookId, chapterId, options.style, existingVerses, filename);
             }
 
             try {
-            if (options.proofread && options.retranslate) {
+            if (options.proofread && options.method === 'retranslate') {
                 await retranslateChapter(options.bible, bookId, chapterId, options.style, filename, {
-                    apply: options.apply,
+                    write: !options.dryRun,
                     force: options.force
                 });
-            } else if (options.proofread && options.batch) {
+            } else if (options.proofread && options.method === 'batch') {
                 // Batch mode: the whole chapter goes in a few calls, and only the issues
                 // come back — not a verdict per verse. This is the method that produced
                 // osnb (99% of its chapters predate per-verse mode), run as a feedback
@@ -1985,7 +2003,7 @@ async function main(): Promise<void> {
                     checkLength: options.checkLength,
                     force: options.force
                 });
-            } else if (options.proofread) {
+            } else if (options.proofread && options.method === 'per-verse') {
                 // Per-verse mode: proofread each verse individually with neighbor context
                 // Two phases: (1) iterate text, (2) iterate footnotes against final text
                 // Applies changes and footnotes directly — no separate apply step needed

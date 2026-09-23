@@ -71,23 +71,20 @@ Translation, proofreading and all the supporting material.
 | `--bible` | string | — | which translation, e.g. osnb |
 | `--book` | range | — | book or book range, e.g. 1 or 1-5 |
 | `--chapter` | range | — | chapter or chapter range |
-| `--verse` | range | — | korrekturles bare disse versene — hopper over oversettelsen |
+| `--verse` | range | — | bare disse versene (--method per-verse) — hopper over oversettelsen |
 | `--ot` | boolean | — | Old Testament only |
 | `--nt` | boolean | — | New Testament only |
 | `--force` | boolean | — | run again even if the output already exists |
 | `--style` | string | — | oversettelsesstil; uten flagget hentes stilen fra oversettelsens oppsett |
-| `--proofread` | boolean | — | korrekturles etter oversettelsen |
-| `--apply` | boolean | — | skriv korrekturens forslag inn i teksten |
-| `--batch` | boolean | — | korrekturles hele kapittelet i noen få kall med tilbakemeldingssløyfe (osnbs metode, 6,6× billigere) |
-| `--retranslate` | boolean | — | korrekturles ved å oversette kapittelet på nytt og la en blind dommer velge der én lesning har en feil; uten --apply lagres bare dommen |
-| `--model` | string | — | Claude-modell for denne kjøringen; overstyrer ANTHROPIC_MODEL |
-| `--effort` | string | — | low, medium, high, xhigh eller max; uten flagget gjelder modellens egen standard |
-| `--text-only` | boolean | — | bare tekstfasen, hopp over fotnotene |
-| `--skip-existing` | boolean | — | hopp over vers som alt er gjort (fotnoter finnes, eller textChecked i --text-only) |
-| `--changed-only` | string | — | andregangs pass over vers som alt er endret; valgfri kommaliste av typer, f.eks. error,grammar |
-| `--check-length` | string | — | andregangs pass over vers som er blitt mye kortere enn en tidligere versjon; valgfritt forholdstall (standard (fra koden)) |
-| `--min-score` | number | `8` | laveste godtatte score, 0-10 |
-| `--max-iter` | number | `3` | maks korrekturrunder per fase |
+| `--proofread` | boolean | — | korrekturles etter oversettelsen, og skriv rettelsene inn i teksten |
+| `--method` | string | `retranslate` | retranslate: oversett kapittelet på nytt og la en blind dommer bytte der gjeldende tekst har en feil. batch: kapittelvis korrektur med tilbakemeldingsløkke (skriver også fotnoter). per-verse: vers for vers, dyrest |
+| `--dry-run` | boolean | — | lagre bare dommen i proofread/, skriv ingenting i teksten; neste kjøring bruker dommen (bare --method retranslate) |
+| `--text-only` | boolean | — | bare tekstfasen, hopp over fotnotene (batch, per-verse) |
+| `--skip-existing` | boolean | — | hopp over vers som alt er gjort (per-verse) |
+| `--changed-only` | string | — | andregangs pass over vers som alt er endret; valgfri kommaliste av typer, f.eks. error,grammar (batch) |
+| `--check-length` | string | — | andregangs pass over vers som er blitt mye kortere enn en tidligere versjon; valgfritt forholdstall, standard (fra koden) (batch) |
+| `--min-score` | number | `8` | laveste godtatte score, 0-10 (batch) |
+| `--max-iter` | number | `3` | maks korrekturrunder per fase (batch, per-verse) |
 | `--help` | boolean | — | show this text |
 
 ### `generate/book-context.ts`

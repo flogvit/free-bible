@@ -72,44 +72,35 @@ The source is the original-language text in `generate/bibles_raw/tanach/` and
 
 ## Step 3 — Proofread
 
-**Use `--batch`.** It sends the chapter in a few calls and gets back only the
-findings, in a feedback loop until the chapter reaches `--min-score` or the
-rounds run out.
-
 ```bash
-bun generate/bible.ts <name> --proofread --batch --apply --min-score 8
-```
-
-This is the method that produced `osnb` — 99.2% of its chapters were proofread
-this way — and it is **6.6× cheaper** than per verse.
-
-Per-verse mode (without `--batch`) reviews each verse together with its
-neighbours, in two phases: text, then footnotes. More thorough, and expensive.
-`--text-only` skips the footnote phase.
-
-### Or: retranslate and judge
-
-```bash
-bun generate/bible.ts <name> --proofread --retranslate --model claude-opus-5-5 --book 45         # verdicts only
-bun generate/bible.ts <name> --proofread --retranslate --model claude-opus-5-5 --book 45 --apply
+bun generate/bible.ts <name> --proofread --book 45 --dry-run    # verdicts only, read them
+bun generate/bible.ts <name> --proofread --book 45              # writes the corrections
 ```
 
 The chapter is translated again from the source, and a judge that does not know
 which reading is which marks the verses where one of them has an error. The
 current text is replaced only there. On the model test in
-`generate/eval/proofread/` this found more real errors than `--batch` — including
-the nynorsk forms (`honom`, `gjaldt`, `Elska` as an imperative) that `--batch`
-missed in every run — at about 1.4× its price. The first command writes only the
-verdicts, under `proofread/<name>/`; read a few before running with `--apply`,
-which reuses them without paying again.
+`generate/eval/proofread/` this found more real errors than the batch proofread —
+including the nynorsk forms (`honom`, `gjaldt`, `Elska` as an imperative) that
+the batch proofread missed in every run — at about 1.4× its price. The dry run
+writes the verdicts under `proofread/<name>/`; the run after it reuses them
+without paying again.
+
+This proofread writes no footnotes. Those come from the two older methods:
+`--method batch` sends the chapter in a few calls in a feedback loop until it
+reaches `--min-score` (the method that produced `osnb`), and `--method per-verse`
+reviews each verse with its neighbours, text first and footnotes after.
+`--text-only` skips the footnotes in both.
 
 ## Step 4 — The targeted second passes
 
+These follow up the batch proofread. The default proofread translates whole
+verses afresh, so it does not truncate verses the way the batch reviewer did.
 Both are **free to re-run**, because they write resume markers.
 
 ```bash
-bun generate/bible.ts <name> --proofread --check-length --apply
-bun generate/bible.ts <name> --proofread --changed-only --apply
+bun generate/bible.ts <name> --proofread --method batch --check-length
+bun generate/bible.ts <name> --proofread --method batch --changed-only
 ```
 
 **`--check-length` catches a real and repeated failure.** The model sometimes
@@ -192,7 +183,7 @@ bun generate/build-translations-index.ts
 - [ ] the name follows the convention (language code, optionally with a suffix — never a running number)
 - [ ] the style is in `constants.ts` → `bibleStyles`
 - [ ] translated with an explicit `--style`
-- [ ] proofread with `--batch`
+- [ ] proofread with `--proofread`
 - [ ] `--check-length` has been run
 - [ ] a KVN mapping exists, or it is confirmed that it shares an existing one
 - [ ] `meta.json` and `license.json` are in place

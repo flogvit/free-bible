@@ -162,7 +162,7 @@ bun generate/eval/proofread/run.ts --model <new-model-id>    # ~$4, a few minute
 ```
 
 It proofreads eight frozen chapters with 30 known errors, both ways `bible.ts` can
-(`--batch` and `--retranslate`), twice each, and prints the new model in a table
+(`--method retranslate` and `--method batch`), twice each, and prints the new model in a table
 next to every model tested before. Add the model's price to `anthropicPrices` in
 `constants.ts` first, or the cost column says `?`.
 
@@ -171,9 +171,9 @@ much. Before switching, open the newest files in `generate/eval/proofread/out/`
 and read the changes listed under `other` — they are either real errors the test
 set does not know about, or taste.
 
-To use the model on a translation, pass it to `bible.ts` with `--model`; there is
-no default to change. Run one book without `--apply` first and read the verdicts
-under `generate/proofread/<translation>/`.
+If the new model wins, change `bibleModel` in `constants.ts`; `bible.ts` uses it
+for translating and proofreading. Run one book with `--dry-run` first and read
+the verdicts under `generate/proofread/<translation>/`.
 
 ---
 

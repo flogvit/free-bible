@@ -19,8 +19,8 @@
  * defensible rendering and must be left alone.
  *
  * Methods, both as bible.ts runs them, one round, no footnotes:
- *   proofread    --proofread --batch --text-only
- *   retranslate  --proofread --retranslate
+ *   retranslate  --proofread                         (the default)
+ *   batch        --proofread --method batch --text-only
  *
  * Reading the result: `fixed` is what we are after. `other changes` counts verses changed outside
  * the targets — some are real errors the test set does not know about, some are taste; read them
@@ -44,14 +44,14 @@ import {
 } from '../../bible.js';
 
 const DIR = import.meta.dir;
-const METHODS = ['proofread', 'retranslate'] as const;
+const METHODS = ['batch', 'retranslate'] as const;
 type Method = typeof METHODS[number];
 // Verses in osnb and osnn, for the per-translation estimate.
 const BIBLE_VERSES = 31167;
 
 const SPEC: Record<string, FlagSpec> = {
     model: {kind: 'string', help: 'Claude model to test'},
-    method: {kind: 'string', default: 'both', help: 'proofread, retranslate or both'},
+    method: {kind: 'string', default: 'both', help: 'retranslate, batch or both'},
     runs: {kind: 'number', default: 2, help: 'runs per method; the same model differs from run to run'},
     effort: {kind: 'string', help: 'output_config.effort; without it the model\'s own default applies'},
     report: {kind: 'boolean', help: 'print the comparison of everything in out/ and exit'},
@@ -79,7 +79,7 @@ function isFixed(x: Target, text: string): boolean {
     return !x.bad.some(s => text.includes(s)) && x.need.every(alts => alts.some(s => text.includes(s)));
 }
 
-/** Run one method over one chapter; returns the chapter as it would stand after --apply. */
+/** Run one method over one chapter; returns the chapter as bible.ts would write it. */
 async function runChapter(method: Method, t: string, b: number, c: number): Promise<{after: Verse[]; reasons: Map<number, string>}> {
     const before = frozen(t, b, c);
     const after: Verse[] = structuredClone(before);
