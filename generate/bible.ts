@@ -4,7 +4,7 @@ import path from 'path';
 
 
 import Anthropic from '@anthropic-ai/sdk';
-import {bibles, books, anthropicModel, maxTokens, getBibleStyle} from "./constants.js";
+import {bibles, books, anthropicModel, anthropicPrices, maxTokens, getBibleStyle} from "./constants.js";
 import {parseArgs, formatHelp, COMMON_FLAGS} from './cli.js';
 import type {FlagSpec, Range} from './cli.js';
 import type {
@@ -21,6 +21,23 @@ import type {
 // SDK-en prøver selv på nytt ved 429/5xx; hev taket, siden lange kjøringer treffer
 // overbelastning som varer lenger enn standardens to forsøk.
 const anthropic = new Anthropic({maxRetries: 5});
+
+// Every data path is anchored here. They used to be relative to the working directory,
+// so `bun generate/bible.ts` from the repo root — the form the docs give — found no source
+// text, translated nothing and exited 0.
+const GEN = import.meta.dir;
+
+/**
+ * Model and effort for this run. `--model` overrides ANTHROPIC_MODEL; `--effort` is sent
+ * as `output_config.effort` and left out when unset, so the model's own default applies
+ * (`medium` on Opus 5.5, `high` on Opus 5 and Fable 5.1).
+ */
+let runModel: string = anthropicModel;
+let runEffort: string | undefined;
+export function configureRun(opts: {model?: string; effort?: string}): void {
+    if (opts.model) runModel = opts.model;
+    runEffort = opts.effort;
+}
 
 /** JSON-schema slik SDK-en vil ha det i `output_config.format`. */
 type JsonSchema = Record<string, unknown>;
@@ -213,6 +230,9 @@ interface CliOptions {
     changedTypes?: string[];
     checkLength?: number;
     batch: boolean;
+    retranslate: boolean;
+    model?: string;
+    effort?: string;
     textOnly: boolean;
     minScore: number;
     maxIterations: number;
@@ -224,7 +244,7 @@ const MAX_VERSES_PER_BATCH = 100;
 // innhold: modellen returnerte bare frasen den festet seg ved, ikke hele verset.
 // Målt på osen: 97 vers står avkortet slik, verst 325 → 68 tegn der begrunnelsen bare
 // gjaldt ett ord. Median for et legitimt bytte er 1.03, 5. persentil 0.91.
-const MIN_LENGTH_RATIO = 0.85;
+export const MIN_LENGTH_RATIO = 0.85;
 
 // Et vers modellen har frikjent skal ikke kontrolleres igjen før noe faktisk endrer seg.
 // Signaturen fanger begge måtene det kan skje på: en ny versjon legges til, eller teksten
@@ -240,7 +260,7 @@ const MAX_PROOFREAD_CHARS = 10000; // Target max input chars per proofread batch
 
 // --- JSON Schemas for structured outputs ---
 
-const TRANSLATION_SCHEMA = {
+export const TRANSLATION_SCHEMA = {
     type: "object",
     properties: {
         verses: {
@@ -304,7 +324,7 @@ const PROOFREAD_SCHEMA = {
 };
 
 // Batch review without footnotes — same issue shape, footnotes dropped.
-const PROOFREAD_TEXT_SCHEMA = {
+export const PROOFREAD_TEXT_SCHEMA = {
     type: "object",
     properties: {
         issues: PROOFREAD_SCHEMA.properties.issues,
@@ -451,19 +471,25 @@ function backoffMs(attempt: number, transient: boolean): number {
 }
 
 // Akkumulert tokenforbruk for hele kjøringen, skrives ut til slutt.
-const usageTotals = {input: 0, output: 0, calls: 0};
+export const usageTotals = {input: 0, output: 0, calls: 0};
+
+/** Dollars spent so far in this run, at list price for the run's model; null if the price is unknown. */
+export function usageCost(): number | null {
+    const price = anthropicPrices[runModel];
+    if (!price) return null;
+    return (usageTotals.input / 1e6) * price[0] + (usageTotals.output / 1e6) * price[1];
+}
 
 function formatUsage(): string {
     const {input, output, calls} = usageTotals;
-    // Opus 5: $5 per M input, $25 per M output
-    const cost = (input / 1e6) * 5 + (output / 1e6) * 25;
-    return `${calls} calls | ${input.toLocaleString()} in / ${output.toLocaleString()} out | ~$${cost.toFixed(2)}`;
+    const cost = usageCost();
+    return `${calls} calls | ${input.toLocaleString()} in / ${output.toLocaleString()} out | ${cost === null ? `no price for ${runModel}` : `~$${cost.toFixed(2)}`}`;
 }
 
 async function doAnthropicCall(content: string, schema: JsonSchema) {
     // Streaming: max_tokens over ~16k risikerer HTTP-timeout uten strøm.
     const stream = anthropic.messages.stream({
-        model: anthropicModel,
+        model: runModel,
         max_tokens: maxTokens,
         thinking: {type: "adaptive"},
         messages: [
@@ -476,7 +502,9 @@ async function doAnthropicCall(content: string, schema: JsonSchema) {
             format: {
                 type: "json_schema",
                 schema
-            }
+            },
+            // `effort` is newer than the SDK's types; the API takes it.
+            ...(runEffort ? {effort: runEffort as any} : {})
         }
     });
     return stream.finalMessage();
@@ -515,7 +543,7 @@ const FOOTNOTE_MARKER = /\[\^[^\]]+\]/;
 // - newText re-attaches the original footnote block if the suggestion dropped it
 // - dropsMarker is true when the suggestion lost an inline [^fn] marker, which
 //   would orphan the definitions - such suggestions must be rejected
-function evaluateSuggestion(currentText: string, suggestedText: string): {ratio: number; newText: string; dropsMarker: boolean} {
+export function evaluateSuggestion(currentText: string, suggestedText: string): {ratio: number; newText: string; dropsMarker: boolean} {
     const current = splitFootnoteDefs(currentText);
     const suggested = splitFootnoteDefs(suggestedText);
     const ratio = current.body.length ? suggested.body.length / current.body.length : 1;
@@ -580,7 +608,7 @@ function validateTranslationResult(result: any): boolean {
 
 // T er formen kallstedet forventer tilbake fra JSON-svaret; skjemaet håndheves
 // på API-siden, så den er en påstand og ikke en kontroll.
-async function doAnthropicCallWithRetry<T>(content: string, schema: JsonSchema, context = '', validate = true): Promise<T> {
+export async function doAnthropicCallWithRetry<T>(content: string, schema: JsonSchema, context = '', validate = true): Promise<T> {
     let lastError: unknown;
 
     for (let attempt = 1; attempt <= MAX_RETRIES; attempt++) {
@@ -631,9 +659,9 @@ function getOriginalSource(bookId: number): string {
     return bookId <= 39 ? 'hebrew' : 'sblgnt';
 }
 
-function readOriginalText(bookId: number, chapterId: number, existingVerses: Chapter = []): Chapter {
+export function readOriginalText(bookId: number, chapterId: number, existingVerses: Chapter = []): Chapter {
     const source = getOriginalSource(bookId);
-    const sourceFile = `bibles_raw/${source}/${bookId}/${chapterId}.json`;
+    const sourceFile = path.join(GEN, `bibles_raw/${source}/${bookId}/${chapterId}.json`);
 
     if (!fs.existsSync(sourceFile)) {
         console.error(`Original source not found: ${sourceFile}`);
@@ -659,7 +687,7 @@ function rejectedAttempts(existingVerses: Chapter, verseId: number): string | nu
         .join('\n');
 }
 
-function getTranslationPrompt(style: string, language: string, bookId: number, chapterId: number, text: string, rejected = ''): string {
+export function getTranslationPrompt(style: string, language: string, bookId: number, chapterId: number, text: string, rejected = ''): string {
     const stylePrompt = TRANSLATION_PROMPTS[style](language);
 
     return `You will be given a bible text in the original language, and must return the translation.
@@ -677,7 +705,7 @@ Text:
 ${text}`;
 }
 
-function getProofreadPrompt(language: string, style: string, bookId: number, chapterId: number, originalText: string, translatedVerses: Verse[], textOnly = false, targetIds: Set<number> | null = null, restoring: boolean | number | null = false): string {
+export function getProofreadPrompt(language: string, style: string, bookId: number, chapterId: number, originalText: string, translatedVerses: Verse[], textOnly = false, targetIds: Set<number> | null = null, restoring: boolean | number | null = false): string {
     const formattedTranslation = translatedVerses.map(v => {
         const isContext = targetIds && !targetIds.has(+v.verseId);
         let entry = `${v.verseId}:${isContext ? ' [context only]' : ''} ${v.text}`;
@@ -797,7 +825,7 @@ function estimateVerseSize(verse: Verse, originalVerse: Verse | undefined): numb
     return size;
 }
 
-function createProofreadBatches(translatedVerses: Verse[], originalVerses: Chapter): Verse[][] {
+export function createProofreadBatches(translatedVerses: Verse[], originalVerses: Chapter): Verse[][] {
     const batches: Verse[][] = [];
     let currentBatch: Verse[] = [];
     let currentSize = 0;
@@ -1237,7 +1265,7 @@ async function proofreadChapter(bible: string, bookId: number, chapterId: number
     };
 
     if (saveToFile) {
-        const proofreadDir = `proofread/${bible}/${bookId}`;
+        const proofreadDir = path.join(GEN, `proofread/${bible}/${bookId}`);
         if (!fs.existsSync(proofreadDir)) {
             fs.mkdirSync(proofreadDir, {recursive: true});
         }
@@ -1270,7 +1298,7 @@ async function proofreadChapter(bible: string, bookId: number, chapterId: number
 
 function applyProofreadChanges(bible: string, bookId: number, chapterId: number, filename: string, proofreadResult: ProofreadResult | null = null) {
     if (!proofreadResult) {
-        const proofreadFile = `proofread/${bible}/${bookId}/${chapterId}.json`;
+        const proofreadFile = path.join(GEN, `proofread/${bible}/${bookId}/${chapterId}.json`);
         if (!fs.existsSync(proofreadFile)) {
             console.log(`No proofread file found for ${bookId}:${chapterId}`);
             return;
@@ -1395,7 +1423,7 @@ function applyProofreadChanges(bible: string, bookId: number, chapterId: number,
  * invalidates the record and it gets looked at again.
  */
 function stateFile(bible: string): string {
-    return `proofread/${bible}/state.json`;
+    return path.join(GEN, `proofread/${bible}/state.json`);
 }
 
 // Nøkkelen er "<bok>:<kapittel>", altså et dynamisk oppslag — derfor Record.
@@ -1490,6 +1518,225 @@ async function proofreadChapterBatched(bible: string, bookId: number, chapterId:
     return last;
 }
 
+/*
+ * --retranslate: proofread by translating the chapter again from the source and letting a
+ * judge compare the fresh rendering with the current one, verse by verse.
+ *
+ * Why: a reviewer reading the current text is anchored in it. A fresh translation from the
+ * Hebrew/Greek disagrees exactly where the current text has drifted from the source, and a
+ * judge choosing between two concrete readings is steadier than one scoring a single text.
+ * On the test set in generate/eval/proofread/ (Opus 5.5, 2026-09-23) this fixed 23–24 of 24
+ * known errors, against 15–17 for the batch proofread, and found real errors outside the set
+ * that no proofread run found (nynorsk imperatives and preterites, a participle agreement).
+ *
+ * The judge sees the two readings under random labels A/B per verse, so it cannot favour
+ * the one it wrote, and it reports only verses where one reading has an ERROR the other
+ * lacks. A first version that also let it pick the reading that "reads better" replaced
+ * whole verses on taste and did worse, so style is deliberately out of scope here.
+ *
+ * What is kept: exactly what the batch proofread keeps today. A replaced reading goes to
+ * versions[] with `alternative` from the judge's `otherDefensible`. Verses where the judge
+ * found both readings correct keep their text, and the fresh rendering is not stored in the
+ * verse — it stays in the sidecar file, proofread/<bible>/<book>/<chapter>.retranslate.json.
+ */
+
+/** One verdict: the verse where one reading has an error the other does not. */
+interface JudgeVerdict {
+    verseId: number;
+    better: 'A' | 'B';
+    type: 'error' | 'grammar';
+    reason: string;
+    otherDefensible: boolean;
+}
+
+const JUDGE_SCHEMA = {
+    type: 'object',
+    properties: {
+        verdicts: {
+            type: 'array',
+            items: {
+                type: 'object',
+                properties: {
+                    verseId: {type: 'integer'},
+                    better: {type: 'string', enum: ['A', 'B']},
+                    type: {type: 'string', enum: ['error', 'grammar']},
+                    reason: {type: 'string'},
+                    otherDefensible: {type: 'boolean'},
+                },
+                required: ['verseId', 'better', 'type', 'reason', 'otherDefensible'],
+                additionalProperties: false,
+            },
+        },
+    },
+    required: ['verdicts'],
+    additionalProperties: false,
+};
+
+function getJudgePrompt(language: string, style: string, body: string): string {
+    const styleDescription = style === 'oral'
+        ? 'optimized for oral reading with natural rhythm and flow'
+        : 'modern and easy to read while being theologically correct';
+    return `You compare two translations of the same Bible chapter into ${language}, ${styleDescription}. For each verse you get the original (Hebrew/Greek) and two readings, A and B.
+
+Report only verses where one reading has an ERROR the other does not:
+- it omits, adds or changes the meaning of the original (watch negations, numbers, names, who does what to whom, questions turned into statements), or
+- it breaks the grammar, spelling or inflection of the current official written standard of ${language}.
+If both readings are faithful and correct, skip the verse — even if one reads better. Differences of style or taste are not errors.
+
+For each reported verse: "better" (A or B — the one without the error), "type" (error for meaning, grammar for language), "reason" (one sentence, in ${language}, naming the error), and "otherDefensible" (always false here unless the error is trivial).
+
+${body}`;
+}
+
+/** What one --retranslate pass over a chapter produced, before anything is applied. */
+export interface RetranslateResult {
+    model: string;
+    effort: string | null;
+    at: string;
+    /** chapterSignature of the text the verdicts were made against. */
+    signature: string | null;
+    fresh: Record<string, string>;
+    /** Verses the fresh reading wins, i.e. where the current text has the error. */
+    replace: {verseId: number; type: 'error' | 'grammar'; reason: string; otherDefensible: boolean}[];
+    /** Verses where the judge found the error in the fresh reading instead. */
+    keep: {verseId: number; reason: string}[];
+    /** Set by --apply: the chapter signature after the replacements were written. */
+    appliedSignature?: string | null;
+    appliedAt?: string;
+}
+
+/**
+ * Translate the chapter afresh and judge it against `current`. Pure apart from the API
+ * calls: reads and writes nothing, so the eval harness runs the same code as production.
+ */
+export async function retranslateVerdicts(language: string, style: string, bookId: number, chapterId: number, current: Verse[], original: Verse[]): Promise<Omit<RetranslateResult, 'signature'>> {
+    const fresh = new Map<number, string>();
+    for (let i = 0; i < original.length; i += MAX_VERSES_PER_BATCH) {
+        const batch = original.slice(i, i + MAX_VERSES_PER_BATCH);
+        const content = getTranslationPrompt(style, language, bookId, chapterId, batch.map(v => `${v.verseId}: ${v.text}`).join('\n'));
+        const result = await doAnthropicCallWithRetry<TranslationResponse>(content, TRANSLATION_SCHEMA, `retranslate ${bookId}:${chapterId}`, !isEnglishLanguage(language));
+        for (const v of result.verses) if (v.text?.trim()) fresh.set(+v.verseId, v.text.trim());
+    }
+
+    // Only verses with both readings go to the judge. A/B is drawn per verse.
+    const pairs = original
+        .map(o => ({o, cur: current.find(v => +v.verseId === +o.verseId)?.text?.trim(), nw: fresh.get(+o.verseId)}))
+        .filter((p): p is {o: Verse; cur: string; nw: string} => !!p.cur && !!p.nw && p.cur !== p.nw)
+        .map(p => ({...p, curIsA: Math.random() < 0.5}));
+
+    const replace: RetranslateResult['replace'] = [];
+    const keep: RetranslateResult['keep'] = [];
+    let chunk: typeof pairs = [];
+    let size = 0;
+    const flush = async () => {
+        if (!chunk.length) return;
+        const body = chunk.map(p => `${p.o.verseId}\nORIGINAL: ${p.o.text}\nA: ${p.curIsA ? p.cur : p.nw}\nB: ${p.curIsA ? p.nw : p.cur}`).join('\n\n');
+        const result = await doAnthropicCallWithRetry<{verdicts: JudgeVerdict[]}>(getJudgePrompt(language, style, body), JUDGE_SCHEMA, `judge ${bookId}:${chapterId}`, false);
+        for (const d of result.verdicts) {
+            const p = chunk.find(x => +x.o.verseId === +d.verseId);
+            if (!p) continue;
+            const freshWins = (d.better === 'A') !== p.curIsA;
+            if (freshWins) replace.push({verseId: +d.verseId, type: d.type, reason: d.reason, otherDefensible: d.otherDefensible});
+            else keep.push({verseId: +d.verseId, reason: d.reason});
+        }
+        chunk = [];
+        size = 0;
+    };
+    for (const p of pairs) {
+        const s = p.o.text.length + p.cur.length + p.nw.length + 40;
+        if (size + s > MAX_PROOFREAD_CHARS && chunk.length) await flush();
+        chunk.push(p);
+        size += s;
+    }
+    await flush();
+
+    return {model: runModel, effort: runEffort ?? null, at: new Date().toISOString(), fresh: Object.fromEntries(fresh), replace, keep};
+}
+
+/**
+ * Write the verdicts into the verses. Mutates `verses`.
+ *
+ * A replacement that drops an inline footnote marker is rejected, as in the batch proofread,
+ * since it would orphan the footnote. The length guard there (MIN_LENGTH_RATIO) is NOT applied:
+ * it exists because a reviewer returned only the phrase it was focused on, and a fresh
+ * translation of the whole verse does not fail that way — whether content is missing is
+ * exactly what the judge checks. With the guard on, a correct fix in Jes 40,13 was thrown
+ * away for being 83 % of the old length. The ratio still decides `alternative`, as there.
+ */
+export function applyRetranslate(verses: Verse[], result: Pick<RetranslateResult, 'fresh' | 'replace'>): {applied: number; rejected: number} {
+    let applied = 0;
+    let rejected = 0;
+    for (const r of result.replace) {
+        const verse = verses.find(v => +v.verseId === r.verseId);
+        const text = result.fresh[r.verseId];
+        if (!verse || !text || verse.text === text) continue;
+        const {ratio, newText, dropsMarker} = evaluateSuggestion(verse.text, text);
+        if (dropsMarker) {
+            console.log(`  REJECTED: verse ${r.verseId} — the fresh reading drops an inline footnote marker`);
+            rejected++;
+            continue;
+        }
+        verse.versions = verse.versions || [];
+        verse.versions.push({
+            text: verse.text,
+            // Se kommentaren i tekstfasen: skjemaets verdimengder er videre enn
+            // VersionType/Severity i den delte typemodellen.
+            type: r.type as VersionType,
+            severity: 'major' as Severity,
+            explanation: r.reason,
+            alternative: r.otherDefensible === true && ratio < (1 / MIN_LENGTH_RATIO),
+        });
+        verse.text = newText;
+        applied++;
+    }
+    return {applied, rejected};
+}
+
+function retranslateFile(bible: string, bookId: number, chapterId: number): string {
+    return path.join(GEN, `proofread/${bible}/${bookId}/${chapterId}.retranslate.json`);
+}
+
+/**
+ * One chapter of --retranslate. The verdicts are saved before anything is applied, so a run
+ * without --apply can be read first and a later run with --apply uses them without paying
+ * again — as long as the model is the same and the chapter text has not changed since.
+ */
+async function retranslateChapter(bible: string, bookId: number, chapterId: number, style: string, filename: string, {apply = false, force = false} = {}): Promise<void> {
+    if (!fs.existsSync(filename)) return;
+    const language = bibles[bible];
+    const sidecar = retranslateFile(bible, bookId, chapterId);
+    const signature = chapterSignature(filename);
+
+    let result: RetranslateResult | null = null;
+    if (!force && fs.existsSync(sidecar)) {
+        const prior: RetranslateResult = JSON.parse(fs.readFileSync(sidecar, 'utf-8'));
+        // Applied by this model, and nothing has changed since: done.
+        if (prior.model === runModel && prior.appliedSignature === signature) return;
+        // Judged against this exact text by this model: reuse, don't pay again.
+        if (prior.model === runModel && prior.signature === signature && !prior.appliedSignature) result = prior;
+    }
+
+    if (!result) {
+        const current: Chapter = JSON.parse(fs.readFileSync(filename, 'utf-8'));
+        const original = readOriginalText(bookId, chapterId, []);
+        if (!original.length) return;
+        result = {...await retranslateVerdicts(language, style, bookId, chapterId, current, original), signature};
+        fs.mkdirSync(path.dirname(sidecar), {recursive: true});
+        fs.writeFileSync(sidecar, JSON.stringify(result, null, 2));
+        console.log(`  ${chapterLabel(bookId, chapterId)}: ${result.replace.length} to replace, ${result.keep.length} where the fresh reading was worse [${formatUsage()}]`);
+    }
+
+    for (const r of result.replace) console.log(`    ${r.verseId} [${r.type}] ${r.reason}`);
+    if (!apply) return;
+
+    const verses: Chapter = JSON.parse(fs.readFileSync(filename, 'utf-8'));
+    const {applied, rejected} = applyRetranslate(verses, result);
+    if (applied) fs.writeFileSync(filename, JSON.stringify(verses, null, 2));
+    const done: RetranslateResult = {...result, appliedSignature: chapterSignature(filename), appliedAt: new Date().toISOString()};
+    fs.writeFileSync(sidecar, JSON.stringify(done, null, 2));
+    console.log(`  ${chapterLabel(bookId, chapterId)}: applied ${applied}${rejected ? `, rejected ${rejected}` : ''}`);
+}
+
 /**
  * Forholdstallet `--check-length` bruker når det gis uten verdi.
  *
@@ -1524,6 +1771,9 @@ const SPEC: Record<string, FlagSpec> = {
     proofread: {kind: 'boolean', help: 'korrekturles etter oversettelsen'},
     apply: {kind: 'boolean', help: 'skriv korrekturens forslag inn i teksten'},
     batch: {kind: 'boolean', help: 'korrekturles hele kapittelet i noen få kall med tilbakemeldingssløyfe (osnbs metode, 6,6× billigere)'},
+    retranslate: {kind: 'boolean', help: 'korrekturles ved å oversette kapittelet på nytt og la en blind dommer velge der én lesning har en feil; uten --apply lagres bare dommen'},
+    model: {kind: 'string', help: 'Claude-modell for denne kjøringen; overstyrer ANTHROPIC_MODEL'},
+    effort: {kind: 'string', help: 'low, medium, high, xhigh eller max; uten flagget gjelder modellens egen standard'},
     'text-only': {kind: 'boolean', help: 'bare tekstfasen, hopp over fotnotene'},
     'skip-existing': {kind: 'boolean', help: 'hopp over vers som alt er gjort (fotnoter finnes, eller textChecked i --text-only)'},
     'changed-only': {kind: 'string', help: 'andregangs pass over vers som alt er endret; valgfri kommaliste av typer, f.eks. error,grammar'},
@@ -1540,6 +1790,8 @@ const HELP_EXAMPLES = [
     'bun generate/bible.ts osnb --nt --proofread --batch --apply --min-score 8',
     'bun generate/bible.ts osnb --proofread --check-length --apply    # avkortede vers',
     'bun generate/bible.ts osnb --proofread --changed-only --apply    # bare endrede vers',
+    'bun generate/bible.ts osnn --proofread --retranslate --model claude-opus-5-5 --book 45        # dom uten å skrive',
+    'bun generate/bible.ts osnn --proofread --retranslate --model claude-opus-5-5 --book 45 --apply',
     '',
     'Oversettelsen oppgis som første argument uten --, f.eks. osnb, osnn, osen.',
 ];
@@ -1611,6 +1863,9 @@ function readOptions(
         checkLength: bare.has('check-length') ? CHECK_LENGTH_DEFAULT
             : checkLength !== undefined ? parseFloat(checkLength) : undefined,
         batch: flags.batch as boolean,
+        retranslate: flags.retranslate as boolean,
+        model: flags.model as string | undefined,
+        effort: flags.effort as string | undefined,
         textOnly: flags['text-only'] as boolean,
         minScore: flags['min-score'] as number,
         maxIterations: flags['max-iter'] as number,
@@ -1639,6 +1894,8 @@ async function main(): Promise<void> {
         console.error(`Error: Unknown bible version '${options.bible}'. Known versions: ${Object.keys(bibles).join(', ')}`);
         process.exit(1);
     }
+
+    configureRun({model: options.model, effort: options.effort});
 
     if (!options.style) {
         options.style = getBibleStyle(options.bible);
@@ -1670,7 +1927,7 @@ async function main(): Promise<void> {
     if (options.apply) modes.push('Apply');
 
     console.log(`Bible: ${options.bible}`);
-    console.log(`Model: ${anthropicModel}`);
+    console.log(`Model: ${runModel}${runEffort ? ` (effort ${runEffort})` : ''}`);
     console.log(`Style: ${options.style}${options.styleFromBible ? ' (from bible config)' : ' (from --style)'}`);
     console.log(`Mode: ${modes.join(' → ')}`);
     if (options.proofread && options.apply) {
@@ -1693,21 +1950,29 @@ async function main(): Promise<void> {
         const endChapter = Math.min(options.chapterEnd || maxChapters, maxChapters);
 
         for (let chapterId = startChapter; chapterId <= endChapter; chapterId++) {
-            const dir = `bibles_raw/${options.bible}/${bookId}`;
+            const dir = path.join(GEN, `bibles_raw/${options.bible}/${bookId}`);
             const filename = `${dir}/${chapterId}.json`;
 
             const verseScopeActive = options.verseStart !== null;
 
             if (!verseScopeActive) {
                 let existingVerses: Chapter = [];
-                if (fs.existsSync(filename) && !options.force) {
+                // --force means "translate over what is there" for translation, but for
+                // --retranslate it only means "judge again". Without this exception
+                // `--retranslate --force` would overwrite the chapter before judging it.
+                if (fs.existsSync(filename) && (!options.force || options.retranslate)) {
                     existingVerses = JSON.parse(fs.readFileSync(filename, 'utf-8'));
                 }
                 await translateChapter(options.bible, bookId, chapterId, options.style, existingVerses, filename);
             }
 
             try {
-            if (options.proofread && options.batch) {
+            if (options.proofread && options.retranslate) {
+                await retranslateChapter(options.bible, bookId, chapterId, options.style, filename, {
+                    apply: options.apply,
+                    force: options.force
+                });
+            } else if (options.proofread && options.batch) {
                 // Batch mode: the whole chapter goes in a few calls, and only the issues
                 // come back — not a verdict per verse. This is the method that produced
                 // osnb (99% of its chapters predate per-verse mode), run as a feedback

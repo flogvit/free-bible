@@ -27,6 +27,16 @@ export function getBibleStyle(bible: string): string {
 }
 
 export const anthropicModel: string = process.env.ANTHROPIC_MODEL || "claude-opus-5";
+// List price in dollars per million tokens, [input, output]. Thinking is billed as output.
+// Cost lines in the logs are computed from this, so a model missing here reports no cost
+// rather than the wrong one.
+export const anthropicPrices: Record<string, [number, number]> = {
+    'claude-opus-5': [5, 25],
+    'claude-opus-5-5': [4, 20],
+    'claude-fable-5-1': [10, 50],
+    'claude-sonnet-5': [2, 10],
+};
+
 // Opus 5 tenker som standard, og max_tokens dekker tenkning + svar under ett.
 // Doblet fra 16384 for å gi plass til begge deler.
 export const maxTokens: number = 32000;
