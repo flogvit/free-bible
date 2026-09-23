@@ -1,0 +1,44 @@
+{
+  "model": "claude-opus-5-5",
+  "effort": null,
+  "at": "2026-09-23T17:16:01.308Z",
+  "fresh": {
+    "1": "Mange ganger og på mange måter talte Gud i fordums tid til fedrene gjennom profetene.",
+    "2": "Men nå, i disse siste dager, har han talt til oss gjennom Sønnen, som han har innsatt som arving til alle ting, og ved ham har han også skapt verden.",
+    "3": "Han er utstrålingen av Guds herlighet og det uttrykte bildet av hans vesen, og han bærer alle ting ved sitt mektige ord. Da han hadde fullført renselsen for syndene, satte han seg ved Majestetens høyre hånd i det høye.",
+    "4": "Slik er han blitt så mye større enn englene som det navnet han har arvet, er høyere enn deres.",
+    "5": "For til hvem av englene har Gud noen gang sagt: «Du er min Sønn, i dag har jeg født deg»? Og videre: «Jeg vil være hans Far, og han skal være min Sønn»?",
+    "6": "Og når han igjen fører den førstefødte inn i verden, sier han: «Alle Guds engler skal tilbe ham.»",
+    "7": "Om englene sier han: «Han gjør sine engler til vinder og sine tjenere til flammende ild.»",
+    "8": "Men om Sønnen sier han: «Din trone, Gud, står i all evighet, og rettferdighetens septer er ditt kongedømmes septer.",
+    "9": "Du har elsket rettferdighet og hatet lovløshet. Derfor har Gud, din Gud, salvet deg med gledens olje fremfor dine medbrødre.»",
+    "10": "Og videre: «Du, Herre, grunnla jorden i begynnelsen, og himmelen er dine henders verk.",
+    "11": "De skal forgå, men du blir værende. De skal alle eldes som et klesplagg,",
+    "12": "du skal rulle dem sammen som en kappe, som et plagg skal de byttes ut. Men du er den samme, og dine år tar aldri slutt.»",
+    "13": "Til hvem av englene har han noen gang sagt: «Sett deg ved min høyre hånd til jeg har lagt dine fiender som en skammel for dine føtter»?",
+    "14": "Er de ikke alle tjenende ånder, sendt ut for å hjelpe dem som skal arve frelsen?"
+  },
+  "replace": [
+    {
+      "verseId": 8,
+      "type": "grammar",
+      "reason": "Ordet «septер» er feilstavet med fremmede (kyrilliske) tegn i stedet for «septer», og sitatet lukkes for tidlig, selv om det fortsetter i neste vers.",
+      "otherDefensible": false
+    },
+    {
+      "verseId": 11,
+      "type": "grammar",
+      "reason": "Setningen avsluttes med punktum etter «som en kledning», men fortsetter i neste vers med liten forbokstav («du skal rulle»), noe som gir feil tegnsetting.",
+      "otherDefensible": false
+    }
+  ],
+  "keep": [
+    {
+      "verseId": 3,
+      "reason": "Uttrykket «ved seg selv» (δι' αὑτοῦ) er utelatt i «Da han hadde fullført renselsen for syndene»."
+    }
+  ],
+  "signature": "2e25c6eda86d41c98aa99d4af31b979902c78c32ce23849962bfa671fa877dc8",
+  "appliedSignature": "2e25c6eda86d41c98aa99d4af31b979902c78c32ce23849962bfa671fa877dc8",
+  "appliedAt": "2026-09-23T17:16:01.308Z"
+}

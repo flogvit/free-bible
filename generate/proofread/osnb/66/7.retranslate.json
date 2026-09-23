@@ -1,0 +1,47 @@
+{
+  "model": "claude-opus-5-5",
+  "effort": null,
+  "at": "2026-09-23T17:34:36.232Z",
+  "fresh": {
+    "1": "Deretter så jeg fire engler som sto ved jordens fire hjørner. De holdt fast jordens fire vinder, så ingen vind skulle blåse over jorden eller over havet eller mot noe tre.",
+    "2": "Og jeg så en annen engel stige opp fra solens oppgang. Han hadde den levende Guds segl, og han ropte med høy røst til de fire englene som hadde fått makt til å skade jorden og havet:",
+    "3": "«Skad ikke jorden eller havet eller trærne før vi har satt segl på pannen til vår Guds tjenere!»",
+    "4": "Og jeg hørte tallet på dem som ble merket med seglet: hundre og førti-fire tusen, merket med segl av alle stammene av Israels barn.",
+    "5": "Av Juda stamme ble tolv tusen merket med segl, av Rubens stamme tolv tusen, av Gads stamme tolv tusen,",
+    "6": "av Asers stamme tolv tusen, av Naftalis stamme tolv tusen, av Manasses stamme tolv tusen,",
+    "7": "av Simeons stamme tolv tusen, av Levis stamme tolv tusen, av Jissakars stamme tolv tusen,",
+    "8": "av Sebulons stamme tolv tusen, av Josefs stamme tolv tusen, og av Benjamins stamme ble tolv tusen merket med segl.",
+    "9": "Deretter så jeg, og se: en stor skare som ingen kunne telle, av alle folkeslag og stammer og folk og tungemål. De sto foran tronen og foran Lammet, kledd i hvite kapper og med palmegreiner i hendene.",
+    "10": "Og de ropte med høy røst: «Frelsen tilhører vår Gud, han som sitter på tronen, og Lammet!»",
+    "11": "Alle englene sto rundt tronen og rundt de eldste og de fire levende skapningene. De kastet seg ned på sitt ansikt foran tronen og tilba Gud",
+    "12": "og sa: «Amen! Lovsangen og æren og visdommen og takken og hyllesten og makten og styrken tilhører vår Gud i all evighet. Amen!»",
+    "13": "Da tok en av de eldste til orde og sa til meg: «Disse som er kledd i hvite kapper, hvem er de, og hvor kommer de fra?»",
+    "14": "Jeg svarte ham: «Min herre, du vet det.» Og han sa til meg: «Dette er de som kommer ut av den store trengselen. De har vasket kappene sine og gjort dem hvite i Lammets blod.",
+    "15": "Derfor står de foran Guds trone og tjener ham dag og natt i hans tempel, og han som sitter på tronen, skal slå opp sitt telt over dem.",
+    "16": "De skal aldri mer sulte og aldri mer tørste, og verken solen eller noen brennende hete skal ramme dem.",
+    "17": "For Lammet, som står midt foran tronen, skal være deres hyrde og føre dem til kilder med livets vann. Og Gud skal tørke bort hver tåre fra deres øyne.»"
+  },
+  "replace": [
+    {
+      "verseId": 11,
+      "type": "grammar",
+      "reason": "«de fire livsvesener» mangler dobbel bestemthet og skal være «de fire livsvesenene».",
+      "otherDefensible": false
+    },
+    {
+      "verseId": 14,
+      "type": "error",
+      "reason": "«Herre» utelater «min» (μου), og anførselstegnet avslutter talen for tidlig, selv om den eldste fortsetter å tale i versene etter.",
+      "otherDefensible": false
+    }
+  ],
+  "keep": [
+    {
+      "verseId": 4,
+      "reason": "Tallordet er skrevet «førti-fire» med bindestrek, men riktig bokmålsskrivemåte er «førtifire»."
+    }
+  ],
+  "signature": "7c893791f6d17152cf2c704e38f08840ac14301381713ef2dae7f64a445ee2c6",
+  "appliedSignature": "333c4b59622c30b6c255cdb57fa5d3426bfa65a0472ffec8d193a894fb692b9e",
+  "appliedAt": "2026-09-23T17:34:36.233Z"
+}

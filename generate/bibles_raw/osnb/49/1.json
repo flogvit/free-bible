@@ -171,13 +171,20 @@
     "bookId": 49,
     "chapterId": 1,
     "verseId": 15,
-    "text": "Derfor, etter at jeg har hørt om deres tro på Herren Jesus og deres kjærlighet til alle de hellige,",
+    "text": "Derfor har også jeg, siden jeg hørte om deres tro på Herren Jesus og deres kjærlighet til alle de hellige,",
     "versions": [
       {
         "text": "Derfor, etter at jeg hørte om deres tro på Herren Jesus og deres kjærlighet til alle de hellige,",
         "type": "suggestion",
         "severity": "minor",
         "explanation": "ἀκούσας (aorist partisipp) i kombinasjon med det vedvarende οὐ παύομαι i v.16 antyder at Paulus hørte om det og fortsetter å respondere. 'Har hørt' (perfektum) gjenspeiler bedre at dette er noe som fortsatt er relevant for ham, og flyter naturlig inn i v.16."
+      },
+      {
+        "text": "Derfor, etter at jeg har hørt om deres tro på Herren Jesus og deres kjærlighet til alle de hellige,",
+        "type": "error",
+        "severity": "major",
+        "explanation": "«Derfor, etter at jeg har hørt …» utelater «også jeg» (κἀγώ) og mangler subjekt og verbal, så setningen med «ikke sluttet å takke» i neste vers blir ufullstendig.",
+        "alternative": false
       }
     ]
   },

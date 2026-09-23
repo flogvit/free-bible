@@ -59,11 +59,18 @@
     "bookId": 60,
     "chapterId": 3,
     "verseId": 7,
-    "text": "På samme måte skal dere menn leve med forstand sammen med deres hustruer som det svakere kar. Vis dem ære, siden dere også er medarvinger til livets nåde – slik at deres bønner ikke blir hindret.",
+    "text": "På samme måte skal dere menn leve sammen med kvinnen med forstand, som med den svakere parten, og vise henne ære, for hun er medarving til livets nåde sammen med dere. Da blir ikke bønnene deres hindret.",
     "versions": [
       {
         "text": "På samme måte skal dere menn leve med forstand sammen med deres hustruer. Vis dem ære som det svakere kar, siden dere også er medarvinger til livets nåde – slik at deres bønner ikke blir hindret.",
         "explanation": "Gresken knytter 'som det svakere kar' (ὡς ἀσθενεστέρῳ σκεύει τῷ γυναικείῳ) til hvordan man skal leve sammen med hustruen, ikke direkte til æresvisningen. Omstruktureringen gjør dette klarere."
+      },
+      {
+        "text": "På samme måte skal dere menn leve med forstand sammen med deres hustruer som det svakere kar. Vis dem ære, siden dere også er medarvinger til livets nåde – slik at deres bønner ikke blir hindret.",
+        "type": "error",
+        "severity": "major",
+        "explanation": "«siden dere også er medarvinger» gjør mennene til medarvinger, mens grunnteksten sier at hustruene er medarvinger til livets nåde sammen med mennene.",
+        "alternative": false
       }
     ]
   },

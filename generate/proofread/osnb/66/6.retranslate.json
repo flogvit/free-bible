@@ -1,0 +1,51 @@
+{
+  "model": "claude-opus-5-5",
+  "effort": null,
+  "at": "2026-09-23T17:34:08.122Z",
+  "fresh": {
+    "1": "Og jeg så at Lammet åpnet det første av de sju seglene, og jeg hørte en av de fire livsvesenene si med en røst som torden: «Kom!»",
+    "2": "Jeg så, og se: en hvit hest. Han som satt på den, hadde en bue, og han fikk en krone. Han drog ut som seierherre og for å seire.",
+    "3": "Da Lammet åpnet det andre seglet, hørte jeg det andre livsvesenet si: «Kom!»",
+    "4": "Da kom en annen hest til syne, rød som ild. Han som satt på den, fikk makt til å ta freden bort fra jorden, så menneskene skulle slakte hverandre. Og han fikk et stort sverd.",
+    "5": "Da Lammet åpnet det tredje seglet, hørte jeg det tredje livsvesenet si: «Kom!» Jeg så, og se: en svart hest. Han som satt på den, hadde en vekt i hånden.",
+    "6": "Og jeg hørte noe som lignet en røst midt blant de fire livsvesenene. Den sa: «Et mål hvete for en denar og tre mål bygg for en denar! Men oljen og vinen må du ikke skade.»",
+    "7": "Da Lammet åpnet det fjerde seglet, hørte jeg røsten til det fjerde livsvesenet si: «Kom!»",
+    "8": "Jeg så, og se: en gulblek hest. Han som satt på den, het Døden, og dødsriket fulgte med ham. De fikk makt over en fjerdedel av jorden, til å drepe med sverd, med sult, med pest og ved jordens ville dyr.",
+    "9": "Da Lammet åpnet det femte seglet, så jeg under alteret sjelene til dem som var blitt slaktet for Guds ords skyld og for det vitnesbyrdet de hadde.",
+    "10": "De ropte med høy røst: «Hvor lenge, du hellige og sannferdige Herre, skal det vare før du holder dom og krever vårt blod hevnet på dem som bor på jorden?»",
+    "11": "Hver av dem fikk en hvit kjortel, og det ble sagt til dem at de skulle hvile en liten stund ennå, til tallet var fullt også av deres medtjenere og søsken, som skulle bli drept slik de selv var blitt det.",
+    "12": "Og jeg så at Lammet åpnet det sjette seglet. Da kom det et kraftig jordskjelv. Solen ble svart som en sekk av hår, og hele månen ble som blod.",
+    "13": "Himmelens stjerner falt ned på jorden, slik et fikentre kaster sine umodne fiken når det rystes av en sterk vind.",
+    "14": "Himmelen veek bort som en bokrull som rulles sammen, og hvert fjell og hver øy ble flyttet fra sitt sted.",
+    "15": "Jordens konger og stormenn, hærførerne, de rike og de mektige, og alle, både slaver og frie, skjulte seg i hulene og blant klippene i fjellene.",
+    "16": "Og de sier til fjellene og klippene: «Fall over oss og skjul oss for ansiktet til ham som sitter på tronen, og for Lammets vrede!",
+    "17": "For deres vredes store dag er kommet, og hvem kan da bli stående?»"
+  },
+  "replace": [
+    {
+      "verseId": 1,
+      "type": "grammar",
+      "reason": "«livsvesnene» er ikke en gyldig bokmålsform; bestemt form flertall er «livsvesenene».",
+      "otherDefensible": false
+    },
+    {
+      "verseId": 6,
+      "type": "grammar",
+      "reason": "«livsvesnene» er ikke en gyldig bokmålsform; bestemt form flertall er «livsvesenene».",
+      "otherDefensible": false
+    }
+  ],
+  "keep": [
+    {
+      "verseId": 2,
+      "reason": "«drog» er ikke lenger en tillatt preteritumsform av «dra» i gjeldende bokmål; riktig form er «dro»."
+    },
+    {
+      "verseId": 14,
+      "reason": "«veek» er ikke en gyldig bokmålsform av «vike»; riktig preteritum er «vek» eller «veik»."
+    }
+  ],
+  "signature": "3c7dccdc4400096c31333fc16672981235587f5766ec86eac74d6b5eed4a31dc",
+  "appliedSignature": "3c7dccdc4400096c31333fc16672981235587f5766ec86eac74d6b5eed4a31dc",
+  "appliedAt": "2026-09-23T17:34:08.122Z"
+}

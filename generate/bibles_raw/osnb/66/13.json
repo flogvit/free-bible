@@ -77,13 +77,20 @@
     "bookId": 66,
     "chapterId": 13,
     "verseId": 10,
-    "text": "Den som skal i fangenskap, går i fangenskap. Den som dreper med sverd, skal selv drepes med sverd. Her må de hellige vise utholdenhet og tro.",
+    "text": "Er noen bestemt til fangenskap, skal han gå i fangenskap. Er noen bestemt til å bli drept med sverd, skal han bli drept med sverd. Her gjelder det for de hellige å holde ut og være trofaste.",
     "versions": [
       {
         "text": "Den som skal i fangenskap, går i fangenskap. Den som skal drepes med sverd, må drepes med sverd. Her må de hellige vise utholdenhet og tro.",
         "type": "suggestion",
         "severity": "minor",
         "explanation": "Den greske teksten 'εἴ τις ἐν μαχαίρῃ ἀποκτανθῆναι' har en variant lesemåte der mange manuskripter har 'ἀποκτενεῖ' (dreper) i første ledd, noe som gir den retributive meningen 'den som dreper med sverd, skal drepes med sverd'. Denne lesemåten er teologisk mer meningsfull i konteksten og samsvarer med Jesu ord i Matt 26:52. Den nåværende oversettelsen 'Den som skal drepes med sverd, må drepes med sverd' er tautologisk og gir lite mening som trøst for de hellige."
+      },
+      {
+        "text": "Den som skal i fangenskap, går i fangenskap. Den som dreper med sverd, skal selv drepes med sverd. Her må de hellige vise utholdenhet og tro.",
+        "type": "error",
+        "severity": "major",
+        "explanation": "«Den som dreper med sverd, skal selv drepes med sverd» endrer grunnteksten, som her sier at den som er bestemt til å bli drept med sverd, skal bli drept med sverd.",
+        "alternative": false
       }
     ]
   },

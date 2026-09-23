@@ -137,13 +137,20 @@
     "bookId": 44,
     "chapterId": 27,
     "verseId": 21,
-    "text": "«Menn, dere burde ha hørt på meg og ikke seilt fra Kreta. Da hadde dere sluppet denne ulykken og dette tapet.",
+    "text": "Ingen hadde spist på lenge. Da stod Paulus fram midt iblant dem og sa: «Menn, dere burde ha hørt på meg og ikke seilt fra Kreta. Da ville dere ha sluppet denne ulykken og dette tapet.",
     "versions": [
       {
         "text": "De hadde ikke spist på lenge. Da reiste Paulus seg midt iblant dem og sa: «Menn, dere burde ha hørt på meg og ikke seilt fra Kreta. Da hadde dere unngått denne skaden og tapet.",
         "type": "suggestion",
         "severity": "minor",
         "explanation": "Det greske 'κερδῆσαι' (å vinne/spare seg) med 'ὕβριν' (skade/ulykke) og 'ζημίαν' (tap) oversettes bedre med 'sluppet denne ulykken og dette tapet'. 'Skaden' er litt svakt for ὕβριν, og 'dette tapet' gir bedre norsk enn bare 'tapet'."
+      },
+      {
+        "text": "«Menn, dere burde ha hørt på meg og ikke seilt fra Kreta. Da hadde dere sluppet denne ulykken og dette tapet.",
+        "type": "error",
+        "severity": "major",
+        "explanation": "Innledningen om at ingen hadde spist på lenge, og at Paulus stod fram midt iblant dem, er utelatt; oversettelsen begynner direkte med «Menn, dere burde ha hørt på meg».",
+        "alternative": false
       }
     ]
   },

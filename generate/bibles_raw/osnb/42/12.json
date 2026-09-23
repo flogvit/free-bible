@@ -393,7 +393,16 @@
     "bookId": 42,
     "chapterId": 12,
     "verseId": 48,
-    "text": "Men den som ikke kjente den og gjorde det som fortjener slag, skal få færre slag. Den som har fått mye, av ham skal det kreves mye. Og den som mye er betrodd, av ham skal det fordres enda mer."
+    "text": "Men den som ikke kjente den, og gjorde noe som fortjente slag, skal få få slag. Av hver den som har fått mye, skal det kreves mye, og av den som er blitt betrodd mye, skal det kreves enda mer.",
+    "versions": [
+      {
+        "text": "Men den som ikke kjente den og gjorde det som fortjener slag, skal få færre slag. Den som har fått mye, av ham skal det kreves mye. Og den som mye er betrodd, av ham skal det fordres enda mer.",
+        "type": "error",
+        "severity": "major",
+        "explanation": "«færre slag» gjør originalens «få» (ὀλίγας) om til en sammenligning.",
+        "alternative": true
+      }
+    ]
   },
   {
     "bookId": 42,

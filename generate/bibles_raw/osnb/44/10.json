@@ -151,11 +151,18 @@
     "bookId": 44,
     "chapterId": 10,
     "verseId": 19,
-    "text": "Mens Peter fortsatt tenkte over synet, sa Ånden til ham: «Se, tre menn leter etter deg.",
+    "text": "Peter grunnet fremdeles på synet da Ånden sa til ham: «Se, noen menn leter etter deg.",
     "versions": [
       {
         "text": "Mens Peter fortsatt tenkte over synet, sa Ånden til ham: «Se, det er menn her som leter etter deg.",
         "explanation": "Noen manuskripter (inkludert viktige tekstvitner) har 'τρεῖς' (tre), og dette stemmer med konteksten i vers 7 hvor to tjenere og én soldat sendes. Vurder om dette skal inkluderes."
+      },
+      {
+        "text": "Mens Peter fortsatt tenkte over synet, sa Ånden til ham: «Se, tre menn leter etter deg.",
+        "type": "error",
+        "severity": "major",
+        "explanation": "«tre menn» legger til et tall som ikke står i den greske teksten her, der det bare står «menn».",
+        "alternative": true
       }
     ]
   },

@@ -79,13 +79,20 @@
     "bookId": 43,
     "chapterId": 16,
     "verseId": 9,
-    "text": "For synd, fordi de ikke tror på meg.",
+    "text": "om synd, fordi de ikke tror på meg,",
     "versions": [
       {
         "text": "Om synd, fordi de ikke tror på meg.",
         "type": "suggestion",
         "severity": "minor",
         "explanation": "Preposisjonen 'περὶ' er oversatt med 'for' i vers 8, men med 'om' i vers 9-11. For konsistens med vers 8 bør det stå 'for' også her."
+      },
+      {
+        "text": "For synd, fordi de ikke tror på meg.",
+        "type": "error",
+        "severity": "major",
+        "explanation": "«For synd» gjengir ikke περί riktig og bryter sammenhengen med «overbevise verden om synd»; det skal være «om synd».",
+        "alternative": false
       }
     ]
   },
@@ -93,13 +100,20 @@
     "bookId": 43,
     "chapterId": 16,
     "verseId": 10,
-    "text": "For rettferdighet, fordi jeg går til Faderen og dere ikke lenger ser meg.",
+    "text": "om rettferdighet, fordi jeg går til Far og dere ikke lenger ser meg,",
     "versions": [
       {
         "text": "Om rettferdighet, fordi jeg går til Faderen og dere ikke lenger ser meg.",
         "type": "suggestion",
         "severity": "minor",
         "explanation": "Samme inkonsistens som vers 9 — bør matche 'for' fra vers 8 for konsistens."
+      },
+      {
+        "text": "For rettferdighet, fordi jeg går til Faderen og dere ikke lenger ser meg.",
+        "type": "error",
+        "severity": "major",
+        "explanation": "«For rettferdighet» gjengir ikke περί riktig og bryter sammenhengen med «overbevise … om»; det skal være «om rettferdighet».",
+        "alternative": false
       }
     ]
   },
@@ -107,13 +121,20 @@
     "bookId": 43,
     "chapterId": 16,
     "verseId": 11,
-    "text": "For dom, fordi denne verdens fyrste er dømt.",
+    "text": "og om dom, fordi denne verdens fyrste er dømt.",
     "versions": [
       {
         "text": "Om dom, fordi denne verdens fyrste er dømt.",
         "type": "suggestion",
         "severity": "minor",
         "explanation": "Samme inkonsistens som vers 9-10 — bør matche 'for' fra vers 8."
+      },
+      {
+        "text": "For dom, fordi denne verdens fyrste er dømt.",
+        "type": "error",
+        "severity": "major",
+        "explanation": "«For dom» gjengir ikke περί riktig og bryter sammenhengen med «overbevise … om»; det skal være «om dom».",
+        "alternative": false
       }
     ]
   },

@@ -41,11 +41,18 @@
     "bookId": 43,
     "chapterId": 8,
     "verseId": 6,
-    "text": "Dette sa de for å sette ham på prøve, så de kunne ha noe å anklage ham for. Men Jesus bøyde seg ned og skrev med fingeren på jorden.",
+    "text": "Dette sa de for å prøve ham, så de kunne få noe å anklage ham for. Men Jesus bøyde seg ned og skrev med fingeren på jorden, som om han ikke hørte dem.",
     "versions": [
       {
         "text": "Dette sa de for å sette ham på prøve, så de kunne ha noe å anklage ham for. Men Jesus bøyde seg ned og skrev på jorden med fingeren, uten å akte på dem.",
         "explanation": "Frasen 'μὴ προσποιούμενος' er tekstkritisk usikker og mangler i mange manuskripter. Oversettelsen 'uten å akte på dem' er en tolkning som legger til mening. Det er bedre å utelate dette og følge den kortere lesemåten som mange moderne tekstvitner støtter."
+      },
+      {
+        "text": "Dette sa de for å sette ham på prøve, så de kunne ha noe å anklage ham for. Men Jesus bøyde seg ned og skrev med fingeren på jorden.",
+        "type": "error",
+        "severity": "major",
+        "explanation": "Oversettelsen utelater «μὴ προσποιούμενος» – at Jesus lot som om han ikke hørte dem – og slutter bare med «skrev med fingeren på jorden».",
+        "alternative": false
       }
     ]
   },
@@ -65,13 +72,20 @@
     "bookId": 43,
     "chapterId": 8,
     "verseId": 9,
-    "text": "Da de hørte dette, gikk de bort, én etter én, de eldste først. Jesus ble igjen alene med kvinnen som sto der.",
+    "text": "Da de hørte dette, og samvittigheten anklaget dem, gikk de ut, den ene etter den andre, de eldste først. Til slutt var Jesus alene igjen med kvinnen, som stod der midt foran ham.",
     "versions": [
       {
         "text": "Da de hørte dette og ble dømt av sin egen samvittighet, gikk de bort, én etter én, de eldste først. Jesus ble igjen alene med kvinnen som sto der.",
         "type": "suggestion",
         "severity": "minor",
         "explanation": "Frasen 'ὑπὸ τῆς συνειδήσεως ἐλεγχόμενοι' (dømt av sin egen samvittighet) er tekstkritisk usikker og mangler i de fleste tidlige manuskripter, på samme måte som 'μὴ προσποιούμενος' i vers 6 ble fjernet. For konsistens i den tekstkritiske tilnærmingen bør denne frasen også utelates."
+      },
+      {
+        "text": "Da de hørte dette, gikk de bort, én etter én, de eldste først. Jesus ble igjen alene med kvinnen som sto der.",
+        "type": "error",
+        "severity": "major",
+        "explanation": "Oversettelsen utelater at samvittigheten anklaget dem («ὑπὸ τῆς συνειδήσεως ἐλεγχόμενοι») og at kvinnen sto midt i blant dem.",
+        "alternative": false
       }
     ]
   },
@@ -79,7 +93,16 @@
     "bookId": 43,
     "chapterId": 8,
     "verseId": 10,
-    "text": "Jesus rettet seg opp, og da han ikke så noen andre enn kvinnen, sa han til henne: «Kvinne, hvor er de som anklaget deg? Har ingen fordømt deg?»"
+    "text": "Jesus rettet seg opp, og da han ikke så noen andre enn kvinnen, sa han til henne: «Hvor er de som anklaget deg? Har ingen fordømt deg?»",
+    "versions": [
+      {
+        "text": "Jesus rettet seg opp, og da han ikke så noen andre enn kvinnen, sa han til henne: «Kvinne, hvor er de som anklaget deg? Har ingen fordømt deg?»",
+        "type": "error",
+        "severity": "major",
+        "explanation": "Tiltalen «Kvinne» er lagt til, men finnes ikke i den gitte grunnteksten.",
+        "alternative": false
+      }
+    ]
   },
   {
     "bookId": 43,

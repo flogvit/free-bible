@@ -105,7 +105,7 @@
     "bookId": 66,
     "chapterId": 5,
     "verseId": 11,
-    "text": "Og jeg så, og jeg hørte røsten av mange engler rundt tronen og livsvesnene og de eldste. Tallet på dem var ti tusen ganger ti tusen og tusen ganger tusen.",
+    "text": "Og jeg så, og jeg hørte røsten av mange engler rundt tronen og livsvesenene og de eldste. Tallet på dem var titusener ganger titusener og tusener ganger tusener.",
     "versions": [
       {
         "text": "Og jeg så, og jeg hørte røsten av mange engler rundt tronen og livsvesener og de eldste, og tallet på dem var ti tusen ganger ti tusen og tusen ganger tusen.",
@@ -116,6 +116,13 @@
         "type": "grammar",
         "severity": "minor",
         "explanation": "Setningen er svært lang med mange ledd. Et punktum etter 'de eldste' gir bedre lesbarhet uten å endre mening."
+      },
+      {
+        "text": "Og jeg så, og jeg hørte røsten av mange engler rundt tronen og livsvesnene og de eldste. Tallet på dem var ti tusen ganger ti tusen og tusen ganger tusen.",
+        "type": "error",
+        "severity": "major",
+        "explanation": "«ti tusen ganger ti tusen og tusen ganger tusen» gjør de ubestemte flertallsformene i grunnteksten («titusener av titusener, tusener av tusener») om til eksakte tall.",
+        "alternative": false
       }
     ]
   },

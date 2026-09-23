@@ -239,11 +239,18 @@
     "bookId": 42,
     "chapterId": 21,
     "verseId": 34,
-    "text": "Vær på vakt så ikke hjertene deres tynges av rus og fyll og livets bekymringer, så den dagen kommer plutselig over dere",
+    "text": "Vokt dere, så hjertene deres ikke blir tynget av rus og drikk og livets bekymringer, og den dagen plutselig kommer over dere",
     "versions": [
       {
         "text": "Vær på vakt så ikke hjertene deres tynges av rus og fyll og livets bekymringer, så den dagen plutselig kommer over dere",
         "explanation": "Ordstillingen 'kommer plutselig over dere' er mer naturlig norsk enn 'plutselig kommer over dere', og gjenspeiler bedre det greske αἰφνίδιος som står som attributt til ἡ ἡμέρα ἐκείνη."
+      },
+      {
+        "text": "Vær på vakt så ikke hjertene deres tynges av rus og fyll og livets bekymringer, så den dagen kommer plutselig over dere",
+        "type": "error",
+        "severity": "major",
+        "explanation": "«så den dagen kommer plutselig over dere» gjør den plutselige dagen til en følge av årvåkenheten i stedet for noe man skal vokte seg mot, og leddstillingen i leddsetningen er gal (skal være «plutselig kommer»).",
+        "alternative": false
       }
     ]
   },

@@ -3,7 +3,7 @@
     "bookId": 45,
     "chapterId": 1,
     "verseId": 1,
-    "text": "Paulus, Jesu Kristi tjener, kalt til apostel, utsatt til Guds evangelium,",
+    "text": "Paulus, Kristi Jesu tjener, kalt til apostel og utvalgt til å forkynne Guds evangelium,",
     "versions": [
       {
         "text": "Paulus, Kristi Jesu tjener, kalt til apostel, utvalgt til å forkynne Guds evangelium,",
@@ -14,6 +14,13 @@
         "type": "suggestion",
         "severity": "minor",
         "explanation": "ἀφωρισμένος betyr 'avsatt/utsatt/adskilt' (satt til side for), ikke 'utvalgt'. Og εἰς εὐαγγέλιον betyr 'til evangeliet', ikke 'til å forkynne evangeliet'. 'Å forkynne' er tillagt. En mer nøyaktig oversettelse ville være 'satt til side for Guds evangelium'. Men gitt at verset allerede har én revisjon, og 'utvalgt til å forkynne' er lettlest og teologisk forsvarlig om enn noe fritt, er dette en mindre sak."
+      },
+      {
+        "text": "Paulus, Jesu Kristi tjener, kalt til apostel, utsatt til Guds evangelium,",
+        "type": "error",
+        "severity": "major",
+        "explanation": "«utsatt til Guds evangelium» betyr noe annet enn at Paulus er utvalgt eller utskilt for evangeliet; «utsatt» gir feil mening.",
+        "alternative": false
       }
     ]
   },

@@ -15,11 +15,18 @@
     "bookId": 58,
     "chapterId": 13,
     "verseId": 3,
-    "text": "Husk på de som er i fengsel, som om dere selv var fanget sammen med dem, og på de som blir mishandlet, som om det skjedde med deres egen kropp.",
+    "text": "Husk på fangene som om dere selv var bundet sammen med dem, og på dem som blir mishandlet, for også dere har en kropp.",
     "versions": [
       {
         "text": "Husk på de som er i fengsel, som om dere selv var fanget sammen med dem, og på de som blir mishandlet, siden dere også selv er i en kropp.",
         "explanation": "Uttrykket 'ὡς καὶ αὐτοὶ ὄντες ἐν σώματι' betyr at leserne også er i en (fysisk) kropp og derfor kan lide på samme måte. Den nåværende oversettelsen 'siden dere også selv er i en kropp' er litt uklar. En tydeligere formulering ville være 'som om det skjedde med deres egen kropp' for å formidle den empatiske identifikasjonen med de lidende."
+      },
+      {
+        "text": "Husk på de som er i fengsel, som om dere selv var fanget sammen med dem, og på de som blir mishandlet, som om det skjedde med deres egen kropp.",
+        "type": "error",
+        "severity": "major",
+        "explanation": "«som om det skjedde med deres egen kropp» endrer grunnteksten, som begrunner formaningen med at leserne selv også har en kropp, og «husk på de som» bruker subjektsformen der objektsformen «dem» kreves.",
+        "alternative": false
       }
     ]
   },

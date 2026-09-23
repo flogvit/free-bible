@@ -195,11 +195,18 @@
     "bookId": 66,
     "chapterId": 22,
     "verseId": 21,
-    "text": "Herren Jesu nåde være med dere alle.",
+    "text": "Herren Jesu nåde være med alle.",
     "versions": [
       {
         "text": "Herren Jesu nåde være med alle.",
         "explanation": "Tillegget 'dere' gjør velsignelsen mer personlig og direkte, slik det er vanlig i norske bibeloversettelser av avsluttende velsignelser. Flere tekstvitnebyrder har også 'ὑμῶν' (dere)."
+      },
+      {
+        "text": "Herren Jesu nåde være med dere alle.",
+        "type": "error",
+        "severity": "major",
+        "explanation": "«med dere alle» legger til «dere», som ikke står i grunnteksten; den sier bare «med alle».",
+        "alternative": true
       }
     ]
   }

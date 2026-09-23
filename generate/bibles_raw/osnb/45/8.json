@@ -77,11 +77,18 @@
     "bookId": 45,
     "chapterId": 8,
     "verseId": 12,
-    "text": "Altså, søsken, står vi ikke i gjeld til kjødet, så vi skulle leve etter kjødet.",
+    "text": "Derfor, søsken, står vi i gjeld, men ikke til kjøttet, så vi skulle leve etter kjøttet.",
     "versions": [
       {
         "text": "Derfor, søsken, skylder vi ikke kjødet å leve etter kjødet.",
         "explanation": "Den greske konstruksjonen 'ὀφειλέται ἐσμέν' (vi er skyldnere/står i gjeld) med dativ 'τῇ σαρκὶ' uttrykker at vi ikke står i gjeld til kjødet. Nåværende oversettelse er grammatisk akseptabel men mister noe av det billedlige uttrykket. Forslaget gir bedre flyt for muntlig lesning og er nærmere originalen."
+      },
+      {
+        "text": "Altså, søsken, står vi ikke i gjeld til kjødet, så vi skulle leve etter kjødet.",
+        "type": "error",
+        "severity": "major",
+        "explanation": "«står vi ikke i gjeld til kjødet» benekter gjelden helt, mens grunnteksten sier at vi står i gjeld, men ikke til kjødet.",
+        "alternative": false
       }
     ]
   },

@@ -239,7 +239,7 @@
     "bookId": 43,
     "chapterId": 10,
     "verseId": 29,
-    "text": "Min Far, som har gitt meg det, er større enn alt, og ingen kan rive dem ut av min Fars hånd.",
+    "text": "Min Far, som har gitt meg dem, er større enn alle, og ingen kan rive dem ut av Fars hånd.",
     "versions": [
       {
         "text": "Min Far, som har gitt meg dem, er større enn alle, og ingen kan rive dem ut av min Fars hånd.",
@@ -250,6 +250,13 @@
         "type": "suggestion",
         "severity": "minor",
         "explanation": "Verset har allerede vært revidert én gang, men den nåværende oversettelsen har et problem. Selv om grunnteksten har nøytrum 'ὃ', er 'πάντων μεῖζων' (større enn alle/alt) med 'ἐστίν' vanskelig å lese som om det er 'det gitte' som er subjektet, fordi setningen da mangler logisk koherens med konteksten om beskyttelse. Mange eksegeter og oversettelser tolker dette slik at Faderen er subjektet. Den foreslåtte versjonen unngår den forrige versjonens ordlyd ('er større enn alle') ved å bruke 'er større enn alt', men klargjør at Faderen er den som er større."
+      },
+      {
+        "text": "Min Far, som har gitt meg det, er større enn alt, og ingen kan rive dem ut av min Fars hånd.",
+        "type": "error",
+        "severity": "major",
+        "explanation": "«som har gitt meg det» mangler et klart bezugsord og blander to tekstvarianter, og «min Fars hånd» legger til «min», som ikke står i grunnteksten.",
+        "alternative": true
       }
     ]
   },

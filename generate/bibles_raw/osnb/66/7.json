@@ -97,11 +97,18 @@
     "bookId": 66,
     "chapterId": 7,
     "verseId": 14,
-    "text": "Jeg svarte ham: «Herre, du vet det.» Og han sa til meg: «Dette er de som kommer ut av den store trengselen. De har vasket sine kapper og gjort dem hvite i Lammets blod.»",
+    "text": "Jeg svarte ham: «Min herre, du vet det.» Og han sa til meg: «Dette er de som kommer ut av den store trengselen. De har vasket kappene sine og gjort dem hvite i Lammets blod.",
     "versions": [
       {
         "text": "Jeg svarte ham: «Herre, du vet det.» Og han sa til meg: «Dette er de som kommer ut av den store trengselen. De har vasket sine kapper og gjort dem hvite i Lammets blod.",
         "explanation": "Det mangler avsluttende anførselstegn på slutten av verset. Sitatet som begynner i vers 14 avsluttes i vers 17, men vers 14 mangler likevel strukturell markering. Alternativt bør anførselstegnet først avsluttes etter vers 17."
+      },
+      {
+        "text": "Jeg svarte ham: «Herre, du vet det.» Og han sa til meg: «Dette er de som kommer ut av den store trengselen. De har vasket sine kapper og gjort dem hvite i Lammets blod.»",
+        "type": "error",
+        "severity": "major",
+        "explanation": "«Herre» utelater «min» (μου), og anførselstegnet avslutter talen for tidlig, selv om den eldste fortsetter å tale i versene etter.",
+        "alternative": false
       }
     ]
   },

@@ -77,11 +77,18 @@
     "bookId": 42,
     "chapterId": 9,
     "verseId": 10,
-    "text": "Da apostlene kom tilbake, fortalte de ham alt de hadde gjort. Han tok dem med seg og trakk seg tilbake til et sted nær en by som heter Betsaida, for å være alene med dem.",
+    "text": "Da apostlene kom tilbake, fortalte de Jesus alt de hadde gjort. Han tok dem med seg og trakk seg tilbake til en by som heter Betsaida, for å være alene med dem.",
     "versions": [
       {
         "text": "Da apostlene kom tilbake, fortalte de ham alt de hadde gjort. Han tok dem med seg og trakk seg tilbake til en by som heter Betsaida, for å være alene med dem.",
         "explanation": "Konteksten i vers 12 viser at de var på et 'øde sted' (ἐν ἐρήμῳ τόπῳ), ikke inne i en by. Det greske 'εἰς πόλιν' kan forstås som 'mot/i retning av' byen. Alternativt kan oversettelsen beholdes som den er, men dette er en teologisk/geografisk observasjon."
+      },
+      {
+        "text": "Da apostlene kom tilbake, fortalte de ham alt de hadde gjort. Han tok dem med seg og trakk seg tilbake til et sted nær en by som heter Betsaida, for å være alene med dem.",
+        "type": "error",
+        "severity": "major",
+        "explanation": "«til et sted nær en by» legger til noe grunnteksten ikke har, for den sier at han trakk seg tilbake til en by som heter Betsaida.",
+        "alternative": false
       }
     ]
   },

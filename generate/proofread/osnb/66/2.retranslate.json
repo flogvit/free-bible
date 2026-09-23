@@ -1,0 +1,54 @@
+{
+  "model": "claude-opus-5-5",
+  "effort": null,
+  "at": "2026-09-23T17:32:27.457Z",
+  "fresh": {
+    "1": "Skriv til engelen for menigheten i Efesos: Dette sier han som holder de sju stjernene i sin høyre hånd, han som vandrer midt blant de sju lysestakene av gull:",
+    "2": "Jeg kjenner dine gjerninger, ditt strev og din utholdenhet. Jeg vet at du ikke kan tåle onde mennesker. Du har prøvd dem som kaller seg apostler uten å være det, og du har funnet ut at de er løgnere.",
+    "3": "Du er utholdende, du har båret byrder for mitt navns skyld, og du har ikke gått trett.",
+    "4": "Men jeg har dette imot deg: Du har forlatt din første kjærlighet.",
+    "5": "Husk derfor hvor du er falt fra, vend om og gjør de første gjerningene! Ellers kommer jeg over deg og flytter lysestaken din bort fra dens plass, hvis du ikke vender om.",
+    "6": "Men dette har du for deg: Du hater det nikolaittene gjør, det som også jeg hater.",
+    "7": "Den som har øre, hør hva Ånden sier til menighetene! Den som seirer, skal jeg gi å spise av livets tre, som står i Guds paradis.",
+    "8": "Skriv til engelen for menigheten i Smyrna: Dette sier den første og den siste, han som var død og ble levende:",
+    "9": "Jeg kjenner din trengsel og din fattigdom – men du er rik. Jeg kjenner også spotten fra dem som kaller seg jøder uten å være det; de er en Satans synagoge.",
+    "10": "Frykt ikke for det du skal lide! Se, djevelen skal kaste noen av dere i fengsel for at dere skal bli prøvd, og dere skal ha trengsel i ti dager. Vær tro inntil døden, så skal jeg gi deg livets seierskrans.",
+    "11": "Den som har øre, hør hva Ånden sier til menighetene! Den som seirer, skal slett ikke skades av den annen død.",
+    "12": "Skriv til engelen for menigheten i Pergamon: Dette sier han som har det skarpe, tveeggede sverdet:",
+    "13": "Jeg vet hvor du bor: der hvor Satans trone står. Likevel holder du fast ved mitt navn. Du fornektet ikke troen på meg, heller ikke i de dagene da Antipas, mitt trofaste vitne, ble drept hos dere, der hvor Satan bor.",
+    "14": "Men jeg har noe imot deg: Du har noen der som holder fast ved Bileams lære. Han lærte Balak å legge en snare for israelittene, så de spiste avgudsoffer og drev hor.",
+    "15": "På samme måte har også du noen som holder fast ved nikolaittenes lære.",
+    "16": "Vend derfor om! Ellers kommer jeg snart over deg og vil kjempe mot dem med sverdet fra min munn.",
+    "17": "Den som har øre, hør hva Ånden sier til menighetene! Den som seirer, skal jeg gi av den skjulte manna. Jeg vil gi ham en hvit stein, og på steinen står det skrevet et nytt navn som ingen kjenner, uten den som får det.",
+    "18": "Skriv til engelen for menigheten i Tyatira: Dette sier Guds Sønn, han som har øyne som flammende ild og føtter som skinnende bronse:",
+    "19": "Jeg kjenner dine gjerninger, din kjærlighet og din tro, din tjeneste og din utholdenhet, og jeg vet at dine siste gjerninger er flere enn de første.",
+    "20": "Men jeg har dette imot deg: Du lar kvinnen Jesabel holde på, hun som kaller seg profetinne. Hun lærer og forfører mine tjenere til å drive hor og spise avgudsoffer.",
+    "21": "Jeg har gitt henne tid til å vende om, men hun vil ikke vende om fra sin hor.",
+    "22": "Se, jeg kaster henne på sykeleiet, og dem som bedriver hor med henne, kaster jeg i stor trengsel, hvis de ikke vender om fra hennes gjerninger.",
+    "23": "Hennes barn skal jeg slå i hjel. Og alle menighetene skal kjenne at jeg er den som ransaker nyrer og hjerter, og jeg skal gi hver enkelt av dere etter deres gjerninger.",
+    "24": "Men til dere andre i Tyatira, alle dere som ikke har denne læren og ikke har lært å kjenne Satans dybder, som de kaller det, sier jeg: Jeg legger ingen annen byrde på dere.",
+    "25": "Bare hold fast ved det dere har, til jeg kommer.",
+    "26": "Den som seirer og tar vare på mine gjerninger helt til enden, vil jeg gi makt over folkene.",
+    "27": "Han skal styre dem med jernstav, som når leirkar knuses,",
+    "28": "slik også jeg har fått makt av min Far. Og jeg vil gi ham morgenstjernen.",
+    "29": "Den som har øre, hør hva Ånden sier til menighetene!"
+  },
+  "replace": [
+    {
+      "verseId": 5,
+      "type": "grammar",
+      "reason": "«flytter lysestaken din fra sin plass» bruker refleksivt «sin» som viser tilbake til subjektet «jeg», men det skal vise til lysestaken, så det må være «dens plass».",
+      "otherDefensible": false
+    },
+    {
+      "verseId": 29,
+      "type": "error",
+      "reason": "Grunnteksten har entall «øre» (οὖς), men «ører» gjør det om til flertall; forskjellen er liten.",
+      "otherDefensible": true
+    }
+  ],
+  "keep": [],
+  "signature": "1b805de9c020922e34d586ef34ae20d83c4c281a9a0d220f17f62225b5c2c9d5",
+  "appliedSignature": "764dc6d75edc0f25b8dc22b8a387c7097af00bf94880a9ccb6e84938ebf3b2cb",
+  "appliedAt": "2026-09-23T17:32:27.457Z"
+}

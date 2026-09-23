@@ -1,0 +1,43 @@
+{
+  "model": "claude-opus-5-5",
+  "effort": null,
+  "at": "2026-09-23T17:08:06.702Z",
+  "fresh": {
+    "1": "Da vi ikke lenger kunne holde det ut, bestemte vi oss for å bli igjen alene i Aten,",
+    "2": "og vi sendte Timoteus, vår bror og Guds medarbeider i evangeliet om Kristus. Han skulle styrke dere og oppmuntre dere i troen,",
+    "3": "så ingen skulle bli rokket av disse trengslene. Dere vet jo selv at det er dette vi er bestemt til.",
+    "4": "Da vi var hos dere, sa vi dere nemlig på forhånd at vi kom til å møte trengsler, og slik gikk det også, som dere vet.",
+    "5": "Derfor, da jeg ikke lenger kunne holde det ut, sendte jeg bud for å få vite hvordan det stod til med troen deres. Jeg var redd for at fristeren kunne ha fristet dere, og at vårt strev skulle ha vært forgjeves.",
+    "6": "Men nå er Timoteus kommet tilbake til oss fra dere, og han har brakt oss det gode budskapet om troen og kjærligheten deres. Han forteller at dere alltid tenker på oss med glede og lengter etter å se oss, slik vi også lengter etter å se dere.",
+    "7": "Derfor er vi blitt trøstet, søsken, på grunn av dere og troen deres, midt i all vår nød og trengsel.",
+    "8": "For nå lever vi, når dere står fast i Herren.",
+    "9": "Hvordan kan vi takke Gud nok for dere, for all den glede vi har over dere for vår Guds ansikt?",
+    "10": "Natt og dag ber vi inderlig om å få se dere ansikt til ansikt og fullføre det som ennå mangler i troen deres.",
+    "11": "Må han selv, vår Gud og Far, og vår Herre Jesus, bane veien for oss til dere.",
+    "12": "Og må Herren la dere vokse og bli rike i kjærlighet til hverandre og til alle, slik vi også elsker dere,",
+    "13": "så han kan styrke hjertene deres, så de står uklanderlige i hellighet for vår Gud og Far når vår Herre Jesus kommer med alle sine hellige."
+  },
+  "replace": [
+    {
+      "verseId": 8,
+      "type": "error",
+      "reason": "Ordet «virkelig» i «lever vi virkelig» har ingen dekning i grunnteksten og er et tillegg.",
+      "otherDefensible": true
+    },
+    {
+      "verseId": 12,
+      "type": "grammar",
+      "reason": "Uttrykket «slik vi også har det til dere» er uidiomatisk, og «det» viser ikke klart tilbake til kjærligheten.",
+      "otherDefensible": true
+    }
+  ],
+  "keep": [
+    {
+      "verseId": 1,
+      "reason": "Den ene lesningen utelater det innledende «Derfor» (Διὸ), som knytter verset til sammenhengen foran."
+    }
+  ],
+  "signature": "8c2d4bdb3e45c1681eb05057d6a2c462ea3cf63760172e310aec489562fb805b",
+  "appliedSignature": "ad6ee8292e5263d88c17b5465a2b5e371af316b4850bf2fccb70e4b6a3eb2e01",
+  "appliedAt": "2026-09-23T17:08:06.704Z"
+}

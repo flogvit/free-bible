@@ -21,11 +21,18 @@
     "bookId": 52,
     "chapterId": 5,
     "verseId": 4,
-    "text": "Men dere, søsken, er ikke i mørket, så den dagen skal overraske dere som en tyv.",
+    "text": "Men dere, søsken, lever ikke i mørket, så dagen skulle overraske dere som en tyv.",
     "versions": [
       {
         "text": "Men dere, søsken, er ikke i mørket, så den dagen skulle overraske dere som en tyv.",
         "explanation": "Verbet 'skulle' i konjunktiv gir en uklar betydning. Det greske ἵνα med konjunktiv uttrykker her hensikt/resultat som blir nektet - poenget er at dagen IKKE skal overraske dem. 'Skal' gir bedre flyt og klarhet på norsk."
+      },
+      {
+        "text": "Men dere, søsken, er ikke i mørket, så den dagen skal overraske dere som en tyv.",
+        "type": "error",
+        "severity": "major",
+        "explanation": "«så den dagen skal overraske dere» gjør formålsleddet til et bekreftende utsagn om at dagen faktisk vil overraske dem, stikk i strid med meningen i grunnteksten.",
+        "alternative": false
       }
     ]
   },

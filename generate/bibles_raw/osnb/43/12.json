@@ -185,11 +185,18 @@
     "bookId": 43,
     "chapterId": 12,
     "verseId": 26,
-    "text": "Om noen vil tjene meg, må han følge meg. Og der jeg er, der skal også min tjener være. Den som tjener meg, ham skal min Far ære.",
+    "text": "Den som vil tjene meg, må følge meg, og der jeg er, skal også min tjener være. Den som tjener meg, skal Far ære.",
     "versions": [
       {
         "text": "Den som vil tjene meg, må følge meg. Og der jeg er, der skal også min tjener være. Den som tjener meg, skal min Far ære.",
         "explanation": "Den greske teksten har ἐάν τις (om noen/hvis noen), som er mer betingende enn 'Den som'. Også τιμήσει αὐτὸν ὁ πατήρ har 'ham' (αὐτόν) som objekt - 'ham skal Faderen ære' - som gir bedre emfase og er mer tro mot originalen."
+      },
+      {
+        "text": "Om noen vil tjene meg, må han følge meg. Og der jeg er, der skal også min tjener være. Den som tjener meg, ham skal min Far ære.",
+        "type": "error",
+        "severity": "major",
+        "explanation": "«min Far» legger til eiendomsordet «min», som ikke står i grunnteksten; der står bare «Faderen».",
+        "alternative": true
       }
     ]
   },

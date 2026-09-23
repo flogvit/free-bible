@@ -127,11 +127,18 @@
     "bookId": 42,
     "chapterId": 6,
     "verseId": 17,
-    "text": "Han gikk ned sammen med dem og stanset på en slette. Der var en stor skare av disiplene hans og en mengde mennesker fra hele Judea og Jerusalem og fra kysten ved Tyros og Sidon.",
+    "text": "Han gikk ned sammen med dem og ble stående på en slette. Der var en stor flokk av disiplene hans og en stor mengde mennesker fra hele Judea og Jerusalem og fra kystbyene Tyros og Sidon.",
     "versions": [
       {
         "text": "Han gikk ned sammen med dem og stanset på en slette. Der var en stor skare av disiplene hans, og en mengde mennesker fra hele Judea og Jerusalem og kysten ved Tyros og Sidon.",
         "explanation": "Kommaet før «og en mengde» bryter setningsflyten unødvendig. I tillegg mangler «fra» foran «kysten» for å matche strukturen med «fra hele Judea»."
+      },
+      {
+        "text": "Han gikk ned sammen med dem og stanset på en slette. Der var en stor skare av disiplene hans og en mengde mennesker fra hele Judea og Jerusalem og fra kysten ved Tyros og Sidon.",
+        "type": "error",
+        "severity": "major",
+        "explanation": "«en mengde mennesker» utelater at mengden var stor (πλῆθος πολύ).",
+        "alternative": true
       }
     ]
   },
@@ -235,11 +242,18 @@
     "bookId": 42,
     "chapterId": 6,
     "verseId": 30,
-    "text": "Gi til hver som ber deg, og krever noen tilbake det som er ditt, så krev det ikke igjen.",
+    "text": "Gi til hver den som ber deg, og krev ikke tilbake av den som tar det som er ditt.",
     "versions": [
       {
         "text": "Gi til hver den som ber deg, og krever noen tilbake det som er ditt, så krev det ikke igjen.",
         "explanation": "«hver den som» er noe tungt; «hver som» er mer naturlig muntlig norsk og like korrekt."
+      },
+      {
+        "text": "Gi til hver som ber deg, og krever noen tilbake det som er ditt, så krev det ikke igjen.",
+        "type": "error",
+        "severity": "major",
+        "explanation": "«krever noen tilbake det som er ditt, så krev det ikke igjen» snur meningen: grunnteksten sier at en ikke skal kreve tilbake fra den som tar det som er ditt.",
+        "alternative": false
       }
     ]
   },

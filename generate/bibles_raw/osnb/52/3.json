@@ -69,7 +69,16 @@
     "bookId": 52,
     "chapterId": 3,
     "verseId": 8,
-    "text": "For nå lever vi virkelig, når dere står faste i Herren."
+    "text": "For nå lever vi, når dere står fast i Herren.",
+    "versions": [
+      {
+        "text": "For nå lever vi virkelig, når dere står faste i Herren.",
+        "type": "error",
+        "severity": "major",
+        "explanation": "Ordet «virkelig» i «lever vi virkelig» har ingen dekning i grunnteksten og er et tillegg.",
+        "alternative": true
+      }
+    ]
   },
   {
     "bookId": 52,

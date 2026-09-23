@@ -191,11 +191,18 @@
     "bookId": 44,
     "chapterId": 22,
     "verseId": 26,
-    "text": "Da offiseren hørte dette, gikk han til kommandanten og meldte fra: «Tenk på hva du gjør! Denne mannen er jo romersk borger!»",
+    "text": "Da offiseren hørte dette, gikk han til kommandanten og meldte fra: «Hva er det du har tenkt å gjøre? Denne mannen er romersk borger.»",
     "versions": [
       {
         "text": "Da offiseren hørte dette, gikk han til kommandanten og meldte fra: «Hva er det du holder på med? Denne mannen er jo romersk borger!»",
         "explanation": "Det greske 'Τί μέλλεις ποιεῖν' er mer en advarsel ('Hva er du i ferd med å gjøre?') enn et spørsmål om hva som foregår. 'Tenk på hva du gjør!' formidler bedre alvoret i situasjonen."
+      },
+      {
+        "text": "Da offiseren hørte dette, gikk han til kommandanten og meldte fra: «Tenk på hva du gjør! Denne mannen er jo romersk borger!»",
+        "type": "error",
+        "severity": "major",
+        "explanation": "Grunnteksten har et spørsmål («Hva har du tenkt å gjøre?»), men «Tenk på hva du gjør!» gjør det om til en befaling.",
+        "alternative": false
       }
     ]
   },

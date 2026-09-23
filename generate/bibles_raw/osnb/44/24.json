@@ -49,7 +49,16 @@
     "bookId": 44,
     "chapterId": 24,
     "verseId": 6,
-    "text": "Han forsøkte også å vanhellige tempelet, og derfor grep vi ham."
+    "text": "Han forsøkte til og med å vanhellige templet, og da grep vi ham.",
+    "versions": [
+      {
+        "text": "Han forsøkte også å vanhellige tempelet, og derfor grep vi ham.",
+        "type": "error",
+        "severity": "major",
+        "explanation": "«og derfor grep vi ham» legger til en årsakssammenheng som ikke står i grunnteksten, der det bare heter at de også grep ham.",
+        "alternative": true
+      }
+    ]
   },
   {
     "bookId": 44,
@@ -199,7 +208,16 @@
     "bookId": 44,
     "chapterId": 24,
     "verseId": 21,
-    "text": "om det ikke var dette ene jeg ropte ut da jeg sto blant dem: 'Det er for de dødes oppstandelse jeg i dag blir dømt av dere.'»"
+    "text": "bortsett fra dette ene utropet da jeg stod blant dem: ‘Det er for de dødes oppstandelse jeg står for retten hos dere i dag.’»",
+    "versions": [
+      {
+        "text": "om det ikke var dette ene jeg ropte ut da jeg sto blant dem: 'Det er for de dødes oppstandelse jeg i dag blir dømt av dere.'»",
+        "type": "error",
+        "severity": "major",
+        "explanation": "«blir dømt av dere» gjør «krinomai» (å stå for retten, bli prøvd) om til at dommen allerede er felt.",
+        "alternative": false
+      }
+    ]
   },
   {
     "bookId": 44,

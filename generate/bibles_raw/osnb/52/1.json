@@ -3,13 +3,20 @@
     "bookId": 52,
     "chapterId": 1,
     "verseId": 1,
-    "text": "Paulus, Silvanus og Timoteus hilser menigheten i Tessalonika, som er i Gud vår Far og Herren Jesus Kristus: Nåde og fred være med dere.",
+    "text": "Paulus, Silvanus og Timoteus til menigheten i Tessalonika, som er i Gud Far og Herren Jesus Kristus: Nåde være med dere, og fred.",
     "versions": [
       {
         "text": "Paulus, Silvanus og Timoteus hilser menigheten i Tessalonika, som er i Gud, vår Far, og Herren Jesus Kristus: Nåde og fred være med dere.",
         "type": "suggestion",
         "severity": "minor",
         "explanation": "I den greske teksten er det ingen komma mellom θεῷ og πατρὶ – 'Gud vår Far' er én tiltaleform uten komma. Kommaet mellom 'Gud' og 'vår Far' kan gi inntrykk av en apposisjon som skiller dem mer enn originalen gjør."
+      },
+      {
+        "text": "Paulus, Silvanus og Timoteus hilser menigheten i Tessalonika, som er i Gud vår Far og Herren Jesus Kristus: Nåde og fred være med dere.",
+        "type": "error",
+        "severity": "major",
+        "explanation": "«Gud vår Far» legger til «vår», som ikke står i grunnteksten, der det bare står «Gud Far».",
+        "alternative": true
       }
     ]
   },

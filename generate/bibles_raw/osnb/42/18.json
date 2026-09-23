@@ -27,11 +27,18 @@
     "bookId": 42,
     "chapterId": 18,
     "verseId": 5,
-    "text": "vil jeg likevel sørge for at denne enken får sin rett. Ellers kommer hun stadig tilbake og sliter meg helt ut.'»",
+    "text": "vil jeg likevel hjelpe denne enken til hennes rett, fordi hun plager meg. Ellers ender det med at hun kommer og gjør meg helt utslitt.’»",
     "versions": [
       {
         "text": "vil jeg likevel sørge for at denne enken får sin rett, siden hun plager meg slik. Ellers kommer hun til slutt og sliter meg helt ut.'»",
         "explanation": "Det greske 'εἰς τέλος ἐρχομένη' betyr 'ved å komme stadig/hele tiden' - det handler om hennes vedvarende oppmøte, ikke bare 'til slutt'. Frasen 'siden hun plager meg slik' er en tilføyelse som ikke har direkte dekning i grunnteksten på dette stedet."
+      },
+      {
+        "text": "vil jeg likevel sørge for at denne enken får sin rett. Ellers kommer hun stadig tilbake og sliter meg helt ut.'»",
+        "type": "error",
+        "severity": "major",
+        "explanation": "Begrunnelsen i grunnteksten, at enken plager dommeren («διά γε τὸ παρέχειν μοι κόπον»), er utelatt i gjengivelsen «vil jeg likevel sørge for at denne enken får sin rett».",
+        "alternative": false
       }
     ]
   },
@@ -257,11 +264,18 @@
     "bookId": 42,
     "chapterId": 18,
     "verseId": 32,
-    "text": "For han skal bli overgitt til hedningene, hånet, skamfullt behandlet og spyttet på.",
+    "text": "Han skal overgis til hedningene, og han skal bli hånet, mishandlet og spyttet på.",
     "versions": [
       {
         "text": "For han skal overgis til hedningene og bli hånet, mishandlet og spyttet på.",
         "explanation": "Det greske 'ὑβρισθήσεται' betyr mer spesifikt 'bli behandlet skamfullt/vanærende' enn generelt 'mishandlet'. Dette er en sterkere term om vanære. 'Bli overgitt' er mer presis enn 'overgis'."
+      },
+      {
+        "text": "For han skal bli overgitt til hedningene, hånet, skamfullt behandlet og spyttet på.",
+        "type": "error",
+        "severity": "major",
+        "explanation": "«Skamfullt behandlet» betyr egentlig behandlet på en skamfull (skambelagt) måte og gjengir dårlig «mishandlet/skammelig behandlet»; ordet «skamfull» brukes om den som skammer seg, ikke om krenkende behandling.",
+        "alternative": true
       }
     ]
   },

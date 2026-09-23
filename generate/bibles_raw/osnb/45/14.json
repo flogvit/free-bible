@@ -181,11 +181,18 @@
     "bookId": 45,
     "chapterId": 14,
     "verseId": 21,
-    "text": "Det er godt å ikke spise kjøtt eller drikke vin eller gjøre noe annet som får din bror til å snuble.",
+    "text": "Det er godt å la være å spise kjøtt eller drikke vin eller gjøre noe annet som får din bror til å snuble, falle eller bli svak.",
     "versions": [
       {
         "text": "Det er godt å ikke spise kjøtt eller drikke vin eller gjøre noe annet som får din bror til å snuble eller ta anstøt eller bli svak.",
         "explanation": "De tekstkritiske klammene ⸂ἢ σκανδαλίζεται ἢ ἀσθενεῖ⸃ indikerer at 'eller ta anstøt eller bli svak' er en usikker lesemåte som mangler i flere viktige håndskrifter. Mange moderne oversettelser utelater dette. Vurder om den kortere lesemåten er å foretrekke."
+      },
+      {
+        "text": "Det er godt å ikke spise kjøtt eller drikke vin eller gjøre noe annet som får din bror til å snuble.",
+        "type": "error",
+        "severity": "major",
+        "explanation": "Oversettelsen utelater «eller blir fristet til fall eller svekket» og nevner bare at broren «snubler».",
+        "alternative": false
       }
     ]
   },

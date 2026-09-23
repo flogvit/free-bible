@@ -523,11 +523,18 @@
     "bookId": 42,
     "chapterId": 22,
     "verseId": 69,
-    "text": "Men fra nå av skal Menneskesønnen sitte ved den Allmektiges høyre hånd.»",
+    "text": "Men fra nå av skal Menneskesønnen sitte ved Guds, den Allmektiges, høyre hånd.»",
     "versions": [
       {
         "text": "Men fra nå av skal Menneskesønnen sitte ved Guds krafts høyre hånd.»",
         "explanation": "Uttrykket 'τῆς δυνάμεως τοῦ θεοῦ' (Guds kraft/makt) er en omskrivning for Gud selv. 'Guds krafts høyre hånd' er grammatisk tungt på norsk. 'Den Allmektiges høyre hånd' gjengir meningen mer naturlig og flyter bedre ved høytlesning, samtidig som det bevarer den ærbødige omskrivningen."
+      },
+      {
+        "text": "Men fra nå av skal Menneskesønnen sitte ved den Allmektiges høyre hånd.»",
+        "type": "error",
+        "severity": "major",
+        "explanation": "Formuleringen «ved den Allmektiges høyre hånd» utelater «Guds» (τοῦ θεοῦ) fra originalen.",
+        "alternative": false
       }
     ]
   },

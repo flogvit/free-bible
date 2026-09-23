@@ -173,11 +173,18 @@
     "bookId": 50,
     "chapterId": 4,
     "verseId": 20,
-    "text": "Vår Gud og Far tilhører æren i all evighet! Amen.",
+    "text": "Vår Gud og Far være æren i all evighet! Amen.",
     "versions": [
       {
         "text": "Vår Gud og Far være æren i all evighet! Amen.",
         "explanation": "Setningen mangler et verb. Grunnteksten har en dativ-konstruksjon som uttrykker tilhørighet ('til Gud være æren'). 'Være æren' er ugrammatisk på norsk; det bør være enten 'tilhører æren' eller 'være ære' (med omvendt rekkefølge: 'Gud og vår Far være ære')."
+      },
+      {
+        "text": "Vår Gud og Far tilhører æren i all evighet! Amen.",
+        "type": "error",
+        "severity": "major",
+        "explanation": "«Vår Gud og Far tilhører æren» leses naturlig med Gud som subjekt og snur dermed meningen, som er at æren tilhører Gud.",
+        "alternative": false
       }
     ]
   },

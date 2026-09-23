@@ -1,0 +1,50 @@
+{
+  "model": "claude-opus-5-5",
+  "effort": null,
+  "at": "2026-09-23T15:59:21.362Z",
+  "fresh": {
+    "1": "Den tredje dagen var det bryllup i Kana i Galilea, og Jesu mor var der.",
+    "2": "Også Jesus og disiplene hans var innbudt til bryllupet.",
+    "3": "Da vinen tok slutt, sa Jesu mor til ham: «De har ikke mer vin.»",
+    "4": "Jesus svarte henne: «Hva vil du meg, kvinne? Min time er ennå ikke kommet.»",
+    "5": "Hans mor sa til tjenerne: «Gjør det han sier til dere!»",
+    "6": "Der stod seks vannkar av stein, slik jødene brukte dem til renselse. Hvert av dem rommet to eller tre mål.",
+    "7": "Jesus sa til dem: «Fyll karene med vann!» Og de fylte dem helt opp til randen.",
+    "8": "Så sa han til dem: «Øs nå opp og bær det til kjøkemesteren!» Og de gjorde det.",
+    "9": "Kjøkemesteren smakte på vannet, som nå var blitt til vin. Han visste ikke hvor den kom fra, men tjenerne som hadde øst opp vannet, visste det. Da kalte kjøkemesteren på brudgommen",
+    "10": "og sa til ham: «Alle setter fram den gode vinen først, og når gjestene har drukket godt, den som er dårligere. Men du har spart den gode vinen til nå.»",
+    "11": "Dette gjorde Jesus i Kana i Galilea, som det første av sine tegn. Slik åpenbarte han sin herlighet, og disiplene hans trodde på ham.",
+    "12": "Etter dette drog han ned til Kapernaum sammen med sin mor, sine brødre og disiplene sine, og der ble de noen få dager.",
+    "13": "Jødenes påske nærmet seg, og Jesus gikk opp til Jerusalem.",
+    "14": "I tempelet fant han dem som solgte okser, sauer og duer, og pengevekslerne som satt der.",
+    "15": "Da laget han en svepe av tau og drev dem alle ut av tempelet, både sauene og oksene. Pengevekslernes mynter strødde han utover, og bordene deres veltet han.",
+    "16": "Til dem som solgte duer, sa han: «Bort med dette herfra! Gjør ikke min Fars hus til et handelshus!»",
+    "17": "Disiplene hans kom da til å tenke på at det står skrevet: «Nidkjærheten for ditt hus skal fortære meg.»",
+    "18": "Jødene tok da til orde og sa til ham: «Hvilket tegn kan du vise oss, siden du gjør dette?»",
+    "19": "Jesus svarte dem: «Riv ned dette tempelet, og på tre dager skal jeg reise det opp igjen.»",
+    "20": "Jødene sa: «I førtiseks år har de bygd på dette tempelet, og du vil reise det opp på tre dager?»",
+    "21": "Men han talte om sitt legemes tempel.",
+    "22": "Da han så var reist opp fra de døde, husket disiplene hans at han hadde sagt dette, og de trodde på Skriften og på det ordet Jesus hadde sagt.",
+    "23": "Mens han var i Jerusalem under påskehøytiden, kom mange til tro på hans navn da de så tegnene han gjorde.",
+    "24": "Men Jesus betrodde seg ikke til dem, for han kjente dem alle.",
+    "25": "Han trengte ikke at noen skulle vitne om menneskene, for han visste selv hva som bodde i et menneske."
+  },
+  "replace": [
+    {
+      "verseId": 22,
+      "type": "grammar",
+      "reason": "«var stått opp» er ikke normal bokmålsbøyning; verbet «stå» tar hjelpeverbet «ha» («hadde stått opp»).",
+      "otherDefensible": true
+    },
+    {
+      "verseId": 24,
+      "type": "error",
+      "reason": "«stolte ikke på dem» endrer meningen: grunnteksten sier at Jesus ikke betrodde seg til dem, ikke at han manglet tillit til dem.",
+      "otherDefensible": false
+    }
+  ],
+  "keep": [],
+  "signature": "683c36ec2f0283e679ccf67ef37627aade1c0b44c147a605778e331d9a5e930b",
+  "appliedSignature": "e74e2bd7dc3c24f0b9cf4b081859b3a956c6559fa8d449da1f72e8946da6bf74",
+  "appliedAt": "2026-09-23T15:59:21.363Z"
+}

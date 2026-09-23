@@ -193,13 +193,20 @@
     "bookId": 49,
     "chapterId": 6,
     "verseId": 23,
-    "text": "Fred være med søsknene, og kjærlighet og tro, fra Gud Fader og Herren Jesus Kristus.",
+    "text": "Fred være med brødrene, og kjærlighet med tro, fra Gud Fader og Herren Jesus Kristus.",
     "versions": [
       {
         "text": "Fred være med søsknene, og kjærlighet med tro, fra Gud Fader og Herren Jesus Kristus.",
         "type": "theological",
         "severity": "major",
         "explanation": "Det greske 'ἀγάπη μετὰ πίστεως' betyr 'kjærlighet med tro' (dvs. kjærlighet ledsaget av tro), men på norsk gir 'kjærlighet med tro' inntrykk av at tro er et middel. 'Kjærlighet og tro' er den vanligste og mest naturlige norske gjengivelsen, men alternativt kan man beholde 'kjærlighet sammen med tro'. Merk: μετά + genitiv = 'med/sammen med', så 'kjærlighet med tro' er forsvarlig, men 'og' er mer idiomatisk. Vurder om dette er en bevisst nyanse."
+      },
+      {
+        "text": "Fred være med søsknene, og kjærlighet og tro, fra Gud Fader og Herren Jesus Kristus.",
+        "type": "error",
+        "severity": "major",
+        "explanation": "«kjærlighet og tro» gjør troen til en egen gave ved siden av kjærligheten, mens grunnteksten har «kjærlighet med tro» (μετὰ πίστεως).",
+        "alternative": false
       }
     ]
   },

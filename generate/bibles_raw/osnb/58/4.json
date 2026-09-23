@@ -15,11 +15,18 @@
     "bookId": 58,
     "chapterId": 4,
     "verseId": 2,
-    "text": "For også vi har fått det gode budskapet forkynt, slik som de fikk. Men ordet de hørte, gagnet dem ikke, fordi det ikke ble forenet med tro hos dem som hørte.",
+    "text": "For også vi har fått evangeliet forkynt, likesom de. Men ordet de hørte, var ikke til gagn for dem, fordi de ikke var forent i tro med dem som hørte.",
     "versions": [
       {
         "text": "For også vi har fått det gode budskapet forkynt, slik som de fikk. Men ordet de hørte, var til ingen nytte for dem, fordi det ikke ble forenet med tro hos dem som hørte.",
         "explanation": "«Var til ingen nytte» er litt tungt for muntlig lesning. «Gagnet dem ikke» er mer naturlig norsk og flyter bedre, samtidig som det gjengir ὠφέλησεν korrekt."
+      },
+      {
+        "text": "For også vi har fått det gode budskapet forkynt, slik som de fikk. Men ordet de hørte, gagnet dem ikke, fordi det ikke ble forenet med tro hos dem som hørte.",
+        "type": "error",
+        "severity": "major",
+        "explanation": "Grunnteksten (συγκεκερασμένους) sier at de ikke var forent i tro med dem som hørte, men «fordi det ikke ble forenet med tro hos dem som hørte» gjør ordet til subjekt og følger en annen tekstvariant.",
+        "alternative": true
       }
     ]
   },

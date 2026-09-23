@@ -189,13 +189,20 @@
     "bookId": 44,
     "chapterId": 18,
     "verseId": 22,
-    "text": "Han gikk i land i Cæsarea, dro opp til Jerusalem og hilste på menigheten, og reiste så ned til Antiokia.",
+    "text": "Han kom til Caesarea, og derfra dro han opp og hilste på menigheten. Deretter dro han ned til Antiokia.",
     "versions": [
       {
         "text": "Han gikk i land i Cæsarea, dro opp og hilste på menigheten, og reiste så ned til Antiokia.",
         "type": "suggestion",
         "severity": "minor",
         "explanation": "ἀναβάς ('dro opp') og κατέβη ('dro ned') er tekniske termer for å reise opp til Jerusalem og ned derfra. De fleste kommentatorer forstår dette som et besøk til menigheten i Jerusalem. Å nevne Jerusalem eksplisitt gjør teksten klarere for moderne lesere, selv om det ikke står direkte i originalen. Dette er likevel bare et forslag - den nåværende oversettelsen er ikke feil."
+      },
+      {
+        "text": "Han gikk i land i Cæsarea, dro opp til Jerusalem og hilste på menigheten, og reiste så ned til Antiokia.",
+        "type": "error",
+        "severity": "major",
+        "explanation": "«til Jerusalem» står ikke i grunnteksten, som bare sier at han «dro opp»; tilføyelsen er en tolkning.",
+        "alternative": true
       }
     ]
   },

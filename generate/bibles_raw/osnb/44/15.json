@@ -273,7 +273,7 @@
     "bookId": 44,
     "chapterId": 15,
     "verseId": 34,
-    "text": "[Vers 34 finnes ikke i de eldste håndskriftene.]",
+    "text": "Men Silas bestemte seg for å bli der.",
     "versions": [
       {
         "text": "Men Silas besluttet å bli der.",
@@ -282,6 +282,13 @@
       {
         "text": "[Dette verset mangler i de eldste manuskriptene og bør merkes eller utelates.]",
         "explanation": "Den nåværende formuleringen er mer en instruksjon enn en faktisk versetekst. En kortere og mer informativ merknad er bedre egnet for opplesning og gir samme informasjon på en mer elegant måte."
+      },
+      {
+        "text": "[Vers 34 finnes ikke i de eldste håndskriftene.]",
+        "type": "error",
+        "severity": "major",
+        "explanation": "Verset er utelatt og erstattet med en merknad, selv om grunnteksten som er gitt, sier at Silas bestemte seg for å bli der.",
+        "alternative": true
       }
     ]
   },

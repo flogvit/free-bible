@@ -289,13 +289,20 @@
     "bookId": 42,
     "chapterId": 3,
     "verseId": 34,
-    "text": "sønn av Jakob, sønn av Isak, sønn av Abraham, sønn av Tera, sønn av Nakor,",
+    "text": "sønn av Jakob, sønn av Isak, sønn av Abraham, sønn av Terah, sønn av Nahor,",
     "versions": [
       {
         "text": "sønn av Jakob, sønn av Isak, sønn av Abraham, sønn av Tarah, sønn av Nakor,",
         "type": "suggestion",
         "severity": "minor",
         "explanation": "Det greske 'Θάρα' (Thara) er den greske formen av det hebraiske navnet 'Terah' (תֶּרַח). På norsk er den vanlige formen 'Tera' (brukt i de fleste norske bibeloversettelser). 'Tarah' er en uvanlig norsk form."
+      },
+      {
+        "text": "sønn av Jakob, sønn av Isak, sønn av Abraham, sønn av Tera, sønn av Nakor,",
+        "type": "error",
+        "severity": "major",
+        "explanation": "Navnet Nahor er gjengitt med den uvanlige formen «Nakor», som avviker fra etablert norsk navneform.",
+        "alternative": true
       }
     ]
   },

@@ -221,11 +221,18 @@
     "bookId": 43,
     "chapterId": 19,
     "verseId": 31,
-    "text": "Siden det var forberedelsesdag, og jødene ikke ville at kroppene skulle bli hengende på korset over sabbaten – for den sabbaten var en stor høytidsdag – ba de Pilatus om å få knuse beina deres og ta ned kroppene.",
+    "text": "Det var forberedelsesdag, og jødene ville ikke at kroppene skulle bli hengende på korset over sabbaten, for denne sabbaten var en stor høytidsdag. Derfor ba de Pilatus om at beina på de korsfestede måtte bli knust og kroppene tatt ned.",
     "versions": [
       {
         "text": "Siden det var forberedelsesdag, og jødene ikke ville at kroppene skulle bli hengende på korset over sabbaten – for den sabbaten var en stor høytidsdag – ba de Pilatus om å få beina deres knust og kroppene fjernet.",
         "explanation": "Formuleringen 'ba de om å få beina deres knust' er litt tung. 'Ba de om å få knuse beina deres' flyter bedre på norsk og gjenspeiler den aktive handlingen bedre."
+      },
+      {
+        "text": "Siden det var forberedelsesdag, og jødene ikke ville at kroppene skulle bli hengende på korset over sabbaten – for den sabbaten var en stor høytidsdag – ba de Pilatus om å få knuse beina deres og ta ned kroppene.",
+        "type": "error",
+        "severity": "major",
+        "explanation": "«ba de Pilatus om å få knuse beina deres og ta ned kroppene» gjør jødene selv til dem som skal knuse beina, mens grunnteksten har passiv form: at beina skulle bli knust og kroppene tatt ned.",
+        "alternative": true
       }
     ]
   },

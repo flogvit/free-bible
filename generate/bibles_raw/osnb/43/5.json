@@ -27,11 +27,18 @@
     "bookId": 43,
     "chapterId": 5,
     "verseId": 4,
-    "text": "[Vers 4 mangler i de eldste håndskriftene, men i senere tekster står det: For en engel steg fra tid til annen ned i dammen og rørte opp vannet. Den som da først steg ned etter at vannet var blitt opprørt, ble frisk, uansett hvilken sykdom han led av.]",
+    "text": "For en engel steg fra tid til annen ned i dammen og satte vannet i bevegelse. Den som da først kom ned i vannet etter at det var blitt satt i bevegelse, ble frisk, uansett hvilken sykdom han led av.",
     "versions": [
       {
         "text": "For en engel steg fra tid til annen ned i dammen og rørte opp vannet. Den som da først steg ned etter at vannet var blitt opprørt, ble frisk, uansett hvilken sykdom han led av.",
         "explanation": "Vers 4 (og siste del av vers 3) er ikke inkludert i de eldste og mest pålitelige greske håndskriftene. De fleste moderne bibeloversettelser markerer dette som en tekstkritisk usikker passasje, enten ved å sette det i hakeparenteser, fotnoter, eller utelate det. Oversettelsen bør indikere denne tekstkritiske usikkerheten."
+      },
+      {
+        "text": "[Vers 4 mangler i de eldste håndskriftene, men i senere tekster står det: For en engel steg fra tid til annen ned i dammen og rørte opp vannet. Den som da først steg ned etter at vannet var blitt opprørt, ble frisk, uansett hvilken sykdom han led av.]",
+        "type": "error",
+        "severity": "major",
+        "explanation": "Den innskutte merknaden «Vers 4 mangler i de eldste håndskriftene, men i senere tekster står det» er et tillegg som ikke står i grunnteksten.",
+        "alternative": true
       }
     ]
   },

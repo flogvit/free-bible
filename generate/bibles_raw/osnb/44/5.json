@@ -3,7 +3,16 @@
     "bookId": 44,
     "chapterId": 5,
     "verseId": 1,
-    "text": "En mann ved navn Ananias solgte en eiendom sammen med sin kone Safira."
+    "text": "En mann som het Ananias, solgte sammen med sin kone Saffira et jordstykke.",
+    "versions": [
+      {
+        "text": "En mann ved navn Ananias solgte en eiendom sammen med sin kone Safira.",
+        "type": "error",
+        "severity": "major",
+        "explanation": "Navnet er skrevet «Safira» i stedet for den etablerte norske formen «Saffira».",
+        "alternative": true
+      }
+    ]
   },
   {
     "bookId": 44,
@@ -215,11 +224,18 @@
     "bookId": 44,
     "chapterId": 5,
     "verseId": 28,
-    "text": "«Ga vi dere ikke streng befaling om ikke å undervise i dette navnet? Likevel har dere fylt Jerusalem med deres lære, og dere vil legge dette menneskets blod på oss.»",
+    "text": "Han sa: «Vi forbød dere strengt å undervise i dette navnet. Og nå har dere fylt Jerusalem med læren deres og vil gjøre oss skyldige i denne mannens blod!»",
     "versions": [
       {
         "text": "«Vi ga dere streng befaling om ikke å undervise i dette navnet. Likevel har dere fylt Jerusalem med deres lære, og dere vil legge dette menneskets blod på oss.»",
         "explanation": "Den greske konstruksjonen med dativ av det beslektede substantivet (Παραγγελίᾳ παρηγγείλαμεν) har en retorisk/spørrende tone som passer bedre med et spørsmål enn en påstand."
+      },
+      {
+        "text": "«Ga vi dere ikke streng befaling om ikke å undervise i dette navnet? Likevel har dere fylt Jerusalem med deres lære, og dere vil legge dette menneskets blod på oss.»",
+        "type": "error",
+        "severity": "major",
+        "explanation": "Innledningen «Han sa» (λέγων) er utelatt, så det kommer ikke fram hvem som taler.",
+        "alternative": true
       }
     ]
   },

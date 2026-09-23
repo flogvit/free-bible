@@ -15,7 +15,7 @@
     "bookId": 47,
     "chapterId": 3,
     "verseId": 3,
-    "text": "Det er klart at dere er et Kristi brev, utarbeidet gjennom vår tjeneste, skrevet ikke med blekk, men med den levende Guds Ånd, ikke på steintavler, men på levende hjerter av kjøtt og blod.",
+    "text": "Det er tydelig at dere er et brev fra Kristus, utformet ved vår tjeneste, skrevet ikke med blekk, men med den levende Guds Ånd, ikke på tavler av stein, men på tavler av kjøtt, i hjertene.",
     "versions": [
       {
         "text": "Det er klart at dere er et Kristi brev, utarbeidet gjennom vår tjeneste, skrevet ikke med blekk, men med den levende Guds Ånd, ikke på steintavler, men på hjertets kjødelige tavler.",
@@ -26,6 +26,13 @@
         "type": "suggestion",
         "severity": "minor",
         "explanation": "Det greske σαρκίναις betyr 'av kjød/kjøtt' og kontrasterer stein med det levende og mottakelige. 'Hjerter av kjøtt og blod' er akseptabelt, men å legge til 'levende' tydeliggjør kontrasten med steintavler, som er kjernen i Paulus' poeng. Bare et lite forslag; den nåværende versjonen er også forsvarlig."
+      },
+      {
+        "text": "Det er klart at dere er et Kristi brev, utarbeidet gjennom vår tjeneste, skrevet ikke med blekk, men med den levende Guds Ånd, ikke på steintavler, men på levende hjerter av kjøtt og blod.",
+        "type": "error",
+        "severity": "major",
+        "explanation": "«på levende hjerter av kjøtt og blod» utelater tavlene («tavler av kjøtt») og legger til «levende», som ikke står i grunnteksten.",
+        "alternative": true
       }
     ]
   },

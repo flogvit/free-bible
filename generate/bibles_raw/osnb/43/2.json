@@ -199,13 +199,20 @@
     "bookId": 43,
     "chapterId": 2,
     "verseId": 24,
-    "text": "Men Jesus selv stolte ikke på dem, fordi han kjente alle.",
+    "text": "Men Jesus betrodde seg ikke til dem, for han kjente dem alle.",
     "versions": [
       {
         "text": "Men Jesus selv betrodde seg ikke til dem, fordi han kjente alle.",
         "type": "suggestion",
         "severity": "minor",
         "explanation": "Det greske 'οὐκ ἐπίστευεν αὑτὸν αὐτοῖς' betyr at han ikke betrodde/overlot seg selv til dem, altså at han ikke satte sin lit til dem. 'Betrodde seg ikke til dem' kan på norsk misforstås som at han ikke fortalte dem ting. 'Stolte ikke på dem' eller 'overlot seg ikke til dem' formidler bedre at han ikke satte sin tillit til dem."
+      },
+      {
+        "text": "Men Jesus selv stolte ikke på dem, fordi han kjente alle.",
+        "type": "error",
+        "severity": "major",
+        "explanation": "«stolte ikke på dem» endrer meningen: grunnteksten sier at Jesus ikke betrodde seg til dem, ikke at han manglet tillit til dem.",
+        "alternative": false
       }
     ]
   },

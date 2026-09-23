@@ -247,7 +247,16 @@
     "bookId": 42,
     "chapterId": 10,
     "verseId": 31,
-    "text": "Nå traff det seg slik at en prest kom samme vei. Han så ham, men gikk forbi på den andre siden."
+    "text": "Nå traff det seg slik at en prest kom samme vei ned. Han så ham, men gikk forbi på den andre siden.",
+    "versions": [
+      {
+        "text": "Nå traff det seg slik at en prest kom samme vei. Han så ham, men gikk forbi på den andre siden.",
+        "type": "error",
+        "severity": "major",
+        "explanation": "«kom samme vei» utelater at presten var på vei «ned» (κατέβαινεν).",
+        "alternative": true
+      }
+    ]
   },
   {
     "bookId": 42,
@@ -311,13 +320,22 @@
     "bookId": 42,
     "chapterId": 10,
     "verseId": 38,
-    "text": "Mens de var på vandring, kom han til en landsby, og en kvinne som het Marta, tok imot ham i sitt hjem."
+    "text": "Mens de var på vandring, kom han til en landsby, og en kvinne som het Marta, tok imot ham.",
+    "versions": [
+      {
+        "text": "Mens de var på vandring, kom han til en landsby, og en kvinne som het Marta, tok imot ham i sitt hjem.",
+        "type": "error",
+        "severity": "major",
+        "explanation": "«i sitt hjem» er lagt til og står ikke i grunnteksten.",
+        "alternative": false
+      }
+    ]
   },
   {
     "bookId": 42,
     "chapterId": 10,
     "verseId": 39,
-    "text": "Hun hadde en søster som ble kalt Maria, og hun satte seg ved Herrens føtter og lyttet til hans ord.",
+    "text": "Hun hadde en søster som het Maria. Hun satte seg ved Jesu føtter og lyttet til det han sa.",
     "versions": [
       {
         "text": "Hun hadde en søster som ble kalt Maria. Hun satte seg ned ved Jesu føtter og lyttet til hans ord.",
@@ -326,6 +344,13 @@
       {
         "text": "Hun hadde en søster som ble kalt Maria, og hun satte seg ned ved Herrens føtter og lyttet til hans ord.",
         "explanation": "Verbet 'παρακαθεσθεῖσα' betyr 'å sette seg ved' eller 'å ta plass ved'. 'Satte seg ned' er litt overflødigt - 'satte seg' er tilstrekkelig og gir bedre flyt for muntlig lesning."
+      },
+      {
+        "text": "Hun hadde en søster som ble kalt Maria, og hun satte seg ved Herrens føtter og lyttet til hans ord.",
+        "type": "error",
+        "severity": "major",
+        "explanation": "«Herrens føtter» endrer navnet, for grunnteksten har «Jesu føtter».",
+        "alternative": false
       }
     ]
   },
@@ -345,7 +370,7 @@
     "bookId": 42,
     "chapterId": 10,
     "verseId": 42,
-    "text": "Men bare én ting er nødvendig. Maria har valgt den gode delen, og den skal ikke tas fra henne.»",
+    "text": "Men lite er nødvendig, ja, bare én ting. Maria har valgt den gode del, og den skal ikke tas fra henne.»",
     "versions": [
       {
         "text": "Men ett er nødvendig. Maria har valgt den gode delen, og den skal ikke tas fra henne.»",
@@ -354,6 +379,13 @@
       {
         "text": "Men bare én ting er nødvendig. Maria har valgt den gode delen, og den skal ikke tas fra henne.",
         "explanation": "Det mangler avsluttende anførselstegn. Jesu tale som startet i vers 41 avsluttes her."
+      },
+      {
+        "text": "Men bare én ting er nødvendig. Maria har valgt den gode delen, og den skal ikke tas fra henne.»",
+        "type": "error",
+        "severity": "major",
+        "explanation": "«bare én ting er nødvendig» utelater leddet om at «lite» (ὀλίγων) er nødvendig.",
+        "alternative": false
       }
     ]
   }

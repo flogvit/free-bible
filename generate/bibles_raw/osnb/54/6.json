@@ -63,7 +63,16 @@
     "bookId": 54,
     "chapterId": 6,
     "verseId": 7,
-    "text": "For vi har ikke brakt noe inn i verden, og det er klart at vi heller ikke kan ta noe med ut."
+    "text": "For vi har ikke tatt noe med oss inn i verden, og vi kan heller ikke ta noe med oss ut.",
+    "versions": [
+      {
+        "text": "For vi har ikke brakt noe inn i verden, og det er klart at vi heller ikke kan ta noe med ut.",
+        "type": "error",
+        "severity": "major",
+        "explanation": "«det er klart at» er et tillegg som ikke står i den greske grunnteksten her, der det bare står ὅτι.",
+        "alternative": true
+      }
+    ]
   },
   {
     "bookId": 54,

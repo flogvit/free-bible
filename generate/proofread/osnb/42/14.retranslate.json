@@ -1,0 +1,63 @@
+{
+  "model": "claude-opus-5-5",
+  "effort": null,
+  "at": "2026-09-23T15:49:52.944Z",
+  "fresh": {
+    "1": "En sabbat kom Jesus til huset til en av de ledende fariseerne for å spise, og de holdt nøye øye med ham.",
+    "2": "Og se, rett foran ham satt en mann som led av vattersott.",
+    "3": "Jesus tok da til orde og spurte de lovkyndige og fariseerne: «Er det tillatt å helbrede på sabbaten, eller ikke?»",
+    "4": "Men de tidde. Da tok han mannen, helbredet ham og lot ham gå.",
+    "5": "Så sa han til dem: «Hvem av dere vil ikke straks trekke sin sønn eller sin okse opp hvis den faller i en brønn, selv om det er sabbat?»",
+    "6": "Og de kunne ikke svare noe på dette.",
+    "7": "Da han la merke til hvordan gjestene valgte seg de fremste plassene ved bordet, fortalte han dem en lignelse:",
+    "8": "«Når du blir invitert til bryllup, så sett deg ikke på den fremste plassen. Det kan jo være at det er invitert en som er mer ansett enn deg,",
+    "9": "og da kommer verten, som har invitert dere begge, og sier til deg: ‘Gi plassen til ham!’ Og da må du med skam ta den nederste plassen.",
+    "10": "Nei, når du blir invitert, så gå og sett deg på den nederste plassen. Når så verten kommer, vil han si til deg: ‘Min venn, flytt deg lenger opp!’ Da blir du æret i nærvær av alle som sitter til bords med deg.",
+    "11": "For hver den som opphøyer seg selv, skal fornedres, og den som fornedrer seg selv, skal opphøyes.»",
+    "12": "Og til verten sa han: «Når du holder et måltid eller et selskap, så inviter ikke vennene dine, brødrene dine, slektningene dine eller rike naboer. For da inviterer de deg tilbake, og du har fått gjengjeld.",
+    "13": "Nei, når du holder gjestebud, så inviter fattige, vanføre, lamme og blinde.",
+    "14": "Da skal du være salig, for de har ingenting å gjengjelde deg med. Men du skal få gjengjeld ved de rettferdiges oppstandelse.»",
+    "15": "Da en av dem som satt til bords, hørte dette, sa han til Jesus: «Salig er den som får spise brød i Guds rike!»",
+    "16": "Jesus svarte: «En mann holdt et stort festmåltid og innbød mange.",
+    "17": "Da tiden for måltidet var kommet, sendte han tjeneren sin ut for å si til de innbudte: ‘Kom, for nå er alt ferdig!’",
+    "18": "Men alle som én begynte de å be seg unnskyldt. Den første sa til ham: ‘Jeg har kjøpt en åker og må dra ut og se på den. Jeg ber deg, ha meg unnskyldt.’",
+    "19": "En annen sa: ‘Jeg har kjøpt fem par okser og skal ut og prøve dem. Jeg ber deg, ha meg unnskyldt.’",
+    "20": "Og en tredje sa: ‘Jeg har nettopp giftet meg, og derfor kan jeg ikke komme.’",
+    "21": "Tjeneren kom tilbake og fortalte dette til herren sin. Da ble husherren sint og sa til tjeneren: ‘Skynd deg ut på gatene og smugene i byen, og hent hit de fattige og vanføre, de blinde og lamme!’",
+    "22": "Snart meldte tjeneren: ‘Herre, det du befalte, er gjort, og ennå er det plass.’",
+    "23": "Da sa herren til tjeneren: ‘Gå ut på veiene og langs gjerdene, og nød folk til å komme inn, så huset mitt blir fullt.’",
+    "24": "For jeg sier dere: Ingen av de mennene som var innbudt, skal få smake mitt måltid.»",
+    "25": "Store folkemengder fulgte med Jesus, og han vendte seg om og sa til dem:",
+    "26": "«Om noen kommer til meg og ikke hater sin far og mor, sin kone og sine barn, sine brødre og søstre, ja, sitt eget liv, kan han ikke være min disippel.",
+    "27": "Den som ikke bærer sitt kors og følger etter meg, kan ikke være min disippel.",
+    "28": "For hvem av dere som vil bygge et tårn, setter seg ikke først ned og regner ut hva det vil koste, for å se om han har nok til å fullføre det?",
+    "29": "Ellers kan det gå slik at han legger grunnmuren, men ikke klarer å fullføre, og alle som ser det, begynner å gjøre narr av ham",
+    "30": "og sier: ‘Denne mannen begynte å bygge, men klarte ikke å fullføre.’",
+    "31": "Eller hvilken konge som drar ut i krig mot en annen konge, setter seg ikke først ned og overveier om han med ti tusen mann kan møte ham som kommer mot ham med tjue tusen?",
+    "32": "Kan han ikke det, sender han sendemenn mens den andre ennå er langt borte, og ber om fredsvilkår.",
+    "33": "Slik er det også med dere: Den av dere som ikke gir avkall på alt han eier, kan ikke være min disippel.",
+    "34": "Salt er godt. Men om saltet mister sin kraft, hva skal det da saltes med?",
+    "35": "Det duger verken til jord eller gjødsel; det blir kastet ut. Den som har ører å høre med, han høre!»"
+  },
+  "replace": [
+    {
+      "verseId": 2,
+      "type": "grammar",
+      "reason": "«vatersott» er feilstavet; riktig bokmålsform er «vattersott».",
+      "otherDefensible": false
+    }
+  ],
+  "keep": [
+    {
+      "verseId": 22,
+      "reason": "«Snart» er lagt til og har ikke dekning i grunnteksten."
+    },
+    {
+      "verseId": 30,
+      "reason": "«og sier» passer ikke grammatisk med foregående vers «vil alle ... begynne å spotte ham»; det skulle vært infinitiven «og si»."
+    }
+  ],
+  "signature": "afd9d49ecd93f8e35d25096254c1fa0277e929cdcd97cd9e3d32a6ca4558f42e",
+  "appliedSignature": "afd9d49ecd93f8e35d25096254c1fa0277e929cdcd97cd9e3d32a6ca4558f42e",
+  "appliedAt": "2026-09-23T15:49:52.945Z"
+}

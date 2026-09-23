@@ -245,7 +245,7 @@
     "bookId": 42,
     "chapterId": 19,
     "verseId": 9,
-    "text": "Da sa Jesus om ham: «I dag er frelsen kommet til dette huset, siden også han er en sønn av Abraham.",
+    "text": "Jesus sa til ham: «I dag er frelse kommet til dette huset, for også han er en Abrahams sønn.",
     "versions": [
       {
         "text": "Da sa Jesus til ham: «I dag er frelse kommet til dette huset, for også han er en Abrahams sønn.",
@@ -262,6 +262,13 @@
         "type": "suggestion",
         "severity": "minor",
         "explanation": "Bruk av bestemt form «frelsen» gjenspeiler den spesifikke, eskatologiske frelsen som Jesus bringer (med artikkelen underforstått i det greske σωτηρία i denne konteksten). «Siden» i stedet for «for» gir en litt mer naturlig muntlig flyt på norsk. Endringen fra ubestemt «frelse» til bestemt «frelsen» understreker at dette er Guds konkrete frelseshandling, ikke frelse i generell forstand."
+      },
+      {
+        "text": "Da sa Jesus om ham: «I dag er frelsen kommet til dette huset, siden også han er en sønn av Abraham.",
+        "type": "error",
+        "severity": "major",
+        "explanation": "«sa Jesus om ham» endrer grunnteksten, som sier at Jesus talte «til ham» (πρὸς αὐτόν).",
+        "alternative": false
       }
     ],
     "footnotes": [

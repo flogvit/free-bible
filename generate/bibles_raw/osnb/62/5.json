@@ -153,7 +153,7 @@
     "bookId": 62,
     "chapterId": 5,
     "verseId": 18,
-    "text": "Vi vet at den som er født av Gud, ikke synder, men den som er født av Gud, blir bevart av ham, og den onde rører ham ikke.",
+    "text": "Vi vet at hver den som er født av Gud, ikke synder. Han som er født av Gud, bevarer ham, og den onde får ikke tak i ham.",
     "versions": [
       {
         "text": "Vi vet at den som er født av Gud, ikke synder, men han som er født av Gud, bevarer ham, og den onde rører ham ikke.",
@@ -164,6 +164,13 @@
         "type": "theological",
         "severity": "minor",
         "explanation": "Verset er tvetydig, noe som også er kommentert i versjonshistorikken uten at endring ble gjort. Det nåværende 'han som er født av Gud, bevarer ham' er problematisk fordi begge leddene bruker 'født av Gud' og det blir uklart hvem som bevarer hvem. Tekstkritisk leses αὐτόν, som typisk forstås som at Kristus (ὁ γεννηθείς, den enfødte) bevarer den troende, eller alternativt at Gud bevarer den troende. En passiv konstruksjon kan løse tvetydigheten noe. Merk: dette er kun et forslag siden historikken viser at det allerede er diskutert."
+      },
+      {
+        "text": "Vi vet at den som er født av Gud, ikke synder, men den som er født av Gud, blir bevart av ham, og den onde rører ham ikke.",
+        "type": "error",
+        "severity": "major",
+        "explanation": "«den som er født av Gud, blir bevart av ham» snur om hvem som gjør hva, for i grunnteksten er det han som er født av Gud (Kristus), som bevarer den troende.",
+        "alternative": false
       }
     ]
   },

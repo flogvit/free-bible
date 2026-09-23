@@ -157,7 +157,7 @@
     "bookId": 62,
     "chapterId": 3,
     "verseId": 17,
-    "text": "Men den som har verdens goder og ser sin neste lide nød, og likevel lukker sitt hjerte – hvordan kan Guds kjærlighet bli i ham?",
+    "text": "Men den som har det han trenger her i verden, og ser sin bror lide nød, men lukker sitt hjerte for ham – hvordan kan Guds kjærlighet bli i ham?",
     "versions": [
       {
         "text": "Men den som har verdens goder og ser sin bror lide nød, og likevel lukker sitt hjerte for ham – hvordan kan Guds kjærlighet bli i ham?",
@@ -168,6 +168,13 @@
         "type": "grammar",
         "severity": "major",
         "explanation": "'Sitt søsken' er grammatisk problematisk på norsk. 'Søsken' er normalt et flertallsord, mens den greske teksten har entall (τὸν ἀδελφὸν αὐτοῦ). 'Sitt søsken' fungerer dårlig som entallsform. Siden 'sin bror' allerede ble endret bort (versjonhistorikk), kan 'sin neste' være et alternativ som bevarer entallsbetydningen og inkluderende språk. Alternativt kan 'sin søster eller bror' brukes, men det er tungvint."
+      },
+      {
+        "text": "Men den som har verdens goder og ser sin neste lide nød, og likevel lukker sitt hjerte – hvordan kan Guds kjærlighet bli i ham?",
+        "type": "error",
+        "severity": "major",
+        "explanation": "«sin neste» endrer grunnteksten, som sier «sin bror», og i tillegg er «for ham» utelatt etter «lukker sitt hjerte».",
+        "alternative": false
       }
     ]
   },

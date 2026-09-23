@@ -1,0 +1,49 @@
+{
+  "model": "claude-opus-5-5",
+  "effort": null,
+  "at": "2026-09-23T17:41:03.437Z",
+  "fresh": {
+    "1": "Og han viste meg en elv med livets vann, klar som krystall. Den strømmet ut fra Guds og Lammets trone",
+    "2": "midt i byens gate. På begge sider av elven sto livets tre, som bærer frukt tolv ganger og gir sin frukt hver måned, og bladene på treet er til legedom for folkene.",
+    "3": "Det skal ikke lenger finnes noe som er under forbannelse. Guds og Lammets trone skal stå i byen, og hans tjenere skal tjene ham.",
+    "4": "De skal se hans ansikt, og hans navn skal stå på pannen deres.",
+    "5": "Det skal ikke lenger være natt, og de trenger verken lys fra lampe eller lys fra sol, for Herren Gud skal lyse over dem, og de skal være konger i all evighet.",
+    "6": "Og han sa til meg: «Disse ordene er troverdige og sanne. Herren, Gud som gir profetene sin Ånd, har sendt sin engel for å vise sine tjenere det som snart skal skje.",
+    "7": "Se, jeg kommer snart. Salig er den som holder fast på de profetiske ordene i denne boken.»",
+    "8": "Jeg, Johannes, er den som hørte og så dette. Og da jeg hadde hørt og sett det, falt jeg ned for å tilbe ved føttene til engelen som viste meg dette.",
+    "9": "Men han sa til meg: «Nei, ikke gjør det! Jeg er en medtjener av deg og av dine brødre profetene og av dem som holder fast på ordene i denne boken. Tilbe Gud!»",
+    "10": "Og han sa til meg: «Sett ikke segl for de profetiske ordene i denne boken, for tiden er nær.",
+    "11": "La den som gjør urett, fortsatt gjøre urett, og den som er uren, fortsatt være uren. La den rettferdige fortsatt gjøre det som er rett, og den hellige fortsatt helliges.»",
+    "12": "«Se, jeg kommer snart, og lønnen jeg gir, har jeg med meg, for å gi enhver igjen etter hans gjerning.",
+    "13": "Jeg er Alfa og Omega, den første og den siste, begynnelsen og enden.",
+    "14": "Salige er de som vasker kappene sine, så de får rett til livets tre og kan gå gjennom portene inn i byen.",
+    "15": "Utenfor er hundene, trollmennene, de som lever i hor, morderne, avgudsdyrkerne og alle som elsker løgn og farer med løgn.",
+    "16": "Jeg, Jesus, har sendt min engel for å vitne om dette for dere i menighetene. Jeg er Davids rotskudd og ætt, den klare morgenstjernen.»",
+    "17": "Ånden og bruden sier: «Kom!» Og den som hører det, skal si: «Kom!» Den som tørster, skal komme. Den som vil, skal få livets vann for ingenting.",
+    "18": "Jeg vitner for hver den som hører de profetiske ordene i denne boken: Om noen legger noe til dem, skal Gud legge på ham de plagene som det står skrevet om i denne boken.",
+    "19": "Og om noen tar bort noe fra ordene i denne profetiske boken, skal Gud ta bort hans del i livets tre og i den hellige byen, som det står skrevet om i denne boken.",
+    "20": "Han som vitner om dette, sier: «Ja, jeg kommer snart.» Amen. Kom, Herre Jesus!",
+    "21": "Herren Jesu nåde være med alle."
+  },
+  "replace": [
+    {
+      "verseId": 21,
+      "type": "error",
+      "reason": "«med dere alle» legger til «dere», som ikke står i grunnteksten; den sier bare «med alle».",
+      "otherDefensible": true
+    }
+  ],
+  "keep": [
+    {
+      "verseId": 6,
+      "reason": "«Gud som gir profetene sin Ånd» endrer meningen i «Gud over profetenes ånder»; grunnteksten sier at Gud er Herre over profetenes ånder, ikke at han gir dem sin Ånd."
+    },
+    {
+      "verseId": 9,
+      "reason": "«en medtjener av deg» er en ugrammatisk konstruksjon på bokmål; det heter «medtjener med deg» eller «sammen med deg»."
+    }
+  ],
+  "signature": "cb9b28c0c7f9b1b3c5be15e10940716aca7dd7fc88d45b777e0051afd94cfb62",
+  "appliedSignature": "87225f0dfa36a542b67d67f8150df59ed8e2e3e09885b5193e8a15820dbbf271",
+  "appliedAt": "2026-09-23T17:41:03.441Z"
+}

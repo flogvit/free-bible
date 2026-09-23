@@ -163,11 +163,18 @@
     "bookId": 64,
     "chapterId": 1,
     "verseId": 6,
-    "text": "De har vitnet om din kjærlighet for menigheten. Gjør vel og send dem videre på en måte som er verdig Gud.",
+    "text": "De har vitnet om din kjærlighet for menigheten. Du gjør vel i å hjelpe dem videre på reisen på en måte som er Gud verdig.",
     "versions": [
       {
         "text": "De har vitnet om din kjærlighet for menigheten. Du gjør vel i å sende dem videre på en måte som er verdig Gud.",
         "explanation": "Det greske 'καλῶς ποιήσεις' er en høflig oppfordring/formaning ('du vil gjøre vel ved å...'), ikke en beskrivelse av noe Gaius allerede gjør. 'Gjør vel og send dem videre' gjengir dette bedre som en vennlig oppfordring."
+      },
+      {
+        "text": "De har vitnet om din kjærlighet for menigheten. Gjør vel og send dem videre på en måte som er verdig Gud.",
+        "type": "error",
+        "severity": "major",
+        "explanation": "«Gjør vel og send dem videre» gjør grunntekstens konstaterende framtidsform («du vil gjøre vel i å sende dem videre») om til en direkte befaling.",
+        "alternative": true
       }
     ],
     "footnotes": [
