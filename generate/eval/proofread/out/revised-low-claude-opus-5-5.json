@@ -1,0 +1,353 @@
+{
+  "summary": {
+    "method": "revised",
+    "effort": "low",
+    "model": "claude-opus-5-5",
+    "usage": {
+      "in": 59569,
+      "out": 7549,
+      "calls": 11
+    },
+    "cost": 0.389256,
+    "verses": 198,
+    "perVerse": 0.001965939393939394
+  },
+  "results": [
+    {
+      "t": "osnn",
+      "b": 19,
+      "c": 98,
+      "issues": [
+        {
+          "verseId": 1,
+          "type": "grammar",
+          "severity": "major",
+          "suggested": "Ein salme. Syng ein ny song for Herren, for han har gjort underfulle gjerningar! Hans høgre hand og hans heilage arm har gjeve han siger.",
+          "explanation": "«Honom» er ei arkaisk kasusform som ikkje høyrer til gjeldande nynorsknormal, så den tidlegare lesinga med «han» var rett og grunngjevinga for endringa var feil.",
+          "defensible": false
+        },
+        {
+          "verseId": 2,
+          "type": "error",
+          "severity": "major",
+          "suggested": "Herren har kunngjort si frelse, for augo på folkeslaga har han openberra si rettferd.",
+          "explanation": "Dette verset treng inga endring.",
+          "defensible": true
+        }
+      ],
+      "score": 8
+    },
+    {
+      "t": "osnb",
+      "b": 1,
+      "c": 12,
+      "issues": [
+        {
+          "verseId": 4,
+          "type": "error",
+          "severity": "critical",
+          "suggested": "Abram dro av sted slik Herren hadde sagt til ham, og Lot dro med ham. Abram var syttifem år gammel da han forlot Harran.",
+          "explanation": "Hebraisk sier fem og sytti år, altså syttifem, ikke syttifire.",
+          "defensible": false
+        },
+        {
+          "verseId": 7,
+          "type": "error",
+          "severity": "major",
+          "suggested": "Da viste Herren seg for Abram og sa: «Din ætt vil jeg gi dette landet.» Der bygde han et alter for Herren, som hadde vist seg for ham.",
+          "explanation": "לְזַרְעֲךָ betyr «til din ætt/dine etterkommere», ikke «til deg».",
+          "defensible": false
+        },
+        {
+          "verseId": 13,
+          "type": "error",
+          "severity": "major",
+          "suggested": "Si derfor at du er min søster, så det kan gå meg godt for din skyld, og jeg får leve takket være deg.»",
+          "explanation": "Setningen «og min sjel skal leve for din skyld» er utelatt.",
+          "defensible": false
+        },
+        {
+          "verseId": 16,
+          "type": "error",
+          "severity": "major",
+          "suggested": "Farao behandlet Abram godt for hennes skyld, og Abram fikk småfe og storfe, esler, slaver og slavinner, eselhopper og kameler.",
+          "explanation": "בַּעֲבוּרָהּ betyr «for hennes skyld»; endringen til «hans» forvansket meningen.",
+          "defensible": false
+        },
+        {
+          "verseId": 16,
+          "type": "grammar",
+          "severity": "minor",
+          "suggested": "Farao behandlet Abram godt for hennes skyld, og Abram fikk småfe og storfe, esler, slaver og slavinner, eselhopper og kameler.",
+          "explanation": "Farao er brukt som tittel ellers i kapitlet og bør skrives med liten forbokstav konsekvent; her står det først i setningen, så stor forbokstav er i orden.",
+          "defensible": true
+        }
+      ],
+      "score": 5
+    },
+    {
+      "t": "osnn",
+      "b": 55,
+      "c": 1,
+      "issues": [
+        {
+          "verseId": 5,
+          "type": "error",
+          "severity": "critical",
+          "suggested": "Eg kjem i hug den oppriktige trua di, den som først budde i mormor di Lois og i mor di Eunike. Eg er overtydd om at ho òg bur i deg.",
+          "explanation": "Namna er bytte om: i grunnteksten er Lois bestemora og Eunike mora.",
+          "defensible": false
+        }
+      ],
+      "score": 7
+    },
+    {
+      "t": "osnn",
+      "b": 45,
+      "c": 4,
+      "issues": [
+        {
+          "verseId": 3,
+          "type": "grammar",
+          "severity": "major",
+          "suggested": "For kva seier Skrifta? Abraham trudde Gud, og det vart rekna han til rettferd.",
+          "explanation": "'Honom' er ei gammal dativform som ikkje er med i gjeldande nynorsknormal, så den tidlegare lesemåten 'han' var rett.",
+          "defensible": false
+        },
+        {
+          "verseId": 22,
+          "type": "grammar",
+          "severity": "major",
+          "suggested": "Difor vart det rekna han til rettferd.",
+          "explanation": "'Honom' er ikkje gjeldande nynorsk; 'han' er rett form.",
+          "defensible": false
+        },
+        {
+          "verseId": 23,
+          "type": "grammar",
+          "severity": "major",
+          "suggested": "Men det vart ikkje skrive berre for hans skuld at det vart tilrekna han,",
+          "explanation": "'Honom' er ikkje gjeldande nynorsk; 'han' er rett form.",
+          "defensible": false
+        },
+        {
+          "verseId": 19,
+          "type": "error",
+          "severity": "critical",
+          "suggested": "Han vart ikkje svak i trua då han såg på sin eigen kropp, som alt var utlevd – han var om lag hundre år – og på at Saras morsliv var dødt.",
+          "explanation": "Gresk ἑκατονταετής tyder hundre år, ikkje nitti.",
+          "defensible": false
+        },
+        {
+          "verseId": 25,
+          "type": "error",
+          "severity": "minor",
+          "suggested": "han som vart gjeven over for våre brot og reist opp til vår rettferdiggjering.",
+          "explanation": "Παρεδόθη tyder 'vart gjeven over'; berre 'gjeven' er uklårt og kan misforståast.",
+          "defensible": true
+        },
+        {
+          "verseId": 16,
+          "type": "error",
+          "severity": "minor",
+          "suggested": "Difor er det av tru, så det kan vera av nåde, for at lovnaden skal stå fast for heile ætta, ikkje berre for dei som held seg til lova, men også for dei som har Abrahams tru. Han er far til oss alle,",
+          "explanation": "Τῷ ἐκ τοῦ νόμου tyder dei som byggjer på lova, ikkje berre dei som har ho, og 'held seg til lova' samsvarar med vers 14.",
+          "defensible": true
+        }
+      ],
+      "score": 6
+    },
+    {
+      "t": "osnn",
+      "b": 48,
+      "c": 3,
+      "issues": [
+        {
+          "verseId": 6,
+          "type": "grammar",
+          "severity": "major",
+          "suggested": "Slik trudde Abraham Gud, og det vart rekna han til rettferd.",
+          "explanation": "«Honom» er ei gammal kasusform som ikkje er med i gjeldande nynorsknormal, så den tidlegare lesemåten med «han» var rett og bør takast attende.",
+          "defensible": false
+        },
+        {
+          "verseId": 28,
+          "type": "error",
+          "severity": "critical",
+          "suggested": "Her er ikkje jøde eller grekar, her er ikkje træl eller fri, her er ikkje mann og kvinne. For de er alle éin i Kristus Jesus.",
+          "explanation": "Leddet οὐκ ἔνι δοῦλος οὐδὲ ἐλεύθερος manglar i omsetjinga.",
+          "defensible": false
+        },
+        {
+          "verseId": 17,
+          "type": "error",
+          "severity": "major",
+          "suggested": "Det eg meiner, er dette: Lova, som kom fire hundre og tretti år seinare, gjer ikkje ugyldig ei pakt som Gud alt hadde stadfest, så lovnaden vert sett ut av kraft.",
+          "explanation": "Grunnteksten seier τετρακόσια καὶ τριάκοντα, det vil seie fire hundre og tretti år, ikkje tjue.",
+          "defensible": false
+        },
+        {
+          "verseId": 20,
+          "type": "suggestion",
+          "severity": "minor",
+          "suggested": "Men ein mellommann er ikkje mellommann for berre éin, og Gud er éin.",
+          "explanation": "Den noverande lesemåten tolkar meir enn grunnteksten seier, og den tidlegare lesemåten låg nærmare det greske.",
+          "defensible": true
+        },
+        {
+          "verseId": 13,
+          "type": "error",
+          "severity": "minor",
+          "suggested": "Kristus kjøpte oss fri frå forbanninga i lova då han vart ei forbanning for oss. For det står skrive: «Forbanna er kvar den som heng på eit tre.»",
+          "explanation": "τῆς κατάρας τοῦ νόμου tyder forbanninga som lova fører med seg, ikkje forbanninga «under» lova.",
+          "defensible": true
+        }
+      ],
+      "score": 6
+    },
+    {
+      "t": "osnb",
+      "b": 41,
+      "c": 4,
+      "issues": [
+        {
+          "verseId": 12,
+          "type": "error",
+          "severity": "critical",
+          "suggested": "for at de skal se og se, men ikke innse, og høre og høre, men ikke forstå, så de ikke vender om og blir tilgitt.»",
+          "explanation": "Gresk μήποτε betyr «for at ikke», så nektelsen må med; den forrige endringen fjernet den og snudde meningen.",
+          "defensible": false
+        },
+        {
+          "verseId": 19,
+          "type": "grammar",
+          "severity": "minor",
+          "suggested": "men verdens bekymringer, rikdommens bedrag og begjæret etter andre ting trenger inn og kveler ordet, så det blir uten frukt.",
+          "explanation": "Stavefeil: «bekymmringer» skal være «bekymringer».",
+          "defensible": false
+        },
+        {
+          "verseId": 24,
+          "type": "error",
+          "severity": "major",
+          "suggested": "Han sa til dem: «Gi akt på det dere hører! Med det målet dere måler med, skal det bli målt opp til dere, og dere skal få enda mer i tillegg.",
+          "explanation": "Leddet καὶ προστεθήσεται ὑμῖν er utelatt i oversettelsen.",
+          "defensible": false
+        },
+        {
+          "verseId": 15,
+          "type": "suggestion",
+          "severity": "minor",
+          "suggested": "De ved veien, der ordet blir sådd, er slik: Straks de har hørt det, kommer Satan og tar bort ordet som er sådd i dem.",
+          "explanation": "«er de hvor ordet blir sådd» er uklart, og «men» har ingen dekning i gresken.",
+          "defensible": true
+        },
+        {
+          "verseId": 37,
+          "type": "grammar",
+          "severity": "major",
+          "suggested": "Da kom det en voldsom vindstorm, og bølgene slo inn i båten så den holdt på å fylles.",
+          "explanation": "«Vindstorm» er hankjønn eller hunkjønn, så det heter «en voldsom vindstorm», ikke «et voldsom».",
+          "defensible": false
+        },
+        {
+          "verseId": 41,
+          "type": "error",
+          "severity": "minor",
+          "suggested": "De ble grepet av stor frykt og sa til hverandre: «Hvem er han da, siden både vinden og sjøen adlyder ham?»",
+          "explanation": "Partikkelen «ἄρα» er utelatt og kan gjengis med «da».",
+          "defensible": true
+        },
+        {
+          "verseId": 29,
+          "type": "suggestion",
+          "severity": "minor",
+          "suggested": "Men når grøden er moden, sender han straks sigden ut, for høsten er kommet.»",
+          "explanation": "«Παραδοῖ» brukt om grøde betyr at den er moden, så begrunnelsen for å fjerne «er moden» var feil, og den opprinnelige gjengivelsen er mest presis.",
+          "defensible": true
+        }
+      ],
+      "score": 8
+    },
+    {
+      "t": "osnb",
+      "b": 23,
+      "c": 40,
+      "issues": [
+        {
+          "verseId": 2,
+          "type": "error",
+          "severity": "major",
+          "suggested": "Tal vennlig til Jerusalem og rop til henne at hennes strid er fullført, at hennes skyld er betalt, at hun har fått dobbelt fra Herrens hånd for alle sine synder.",
+          "explanation": "Hebraisk לָקְחָה er perfektum og betyr at hun allerede har fått dobbelt, ikke at hun skal få det.",
+          "defensible": false
+        },
+        {
+          "verseId": 13,
+          "type": "grammar",
+          "severity": "minor",
+          "suggested": "Hvem har utgrunnet Herrens Ånd, og hvem har som hans rådgiver lært ham noe?",
+          "explanation": "«Utgrunnnet» er feilstavet med tre n; riktig form er «utgrunnet».",
+          "defensible": false
+        },
+        {
+          "verseId": 22,
+          "type": "error",
+          "severity": "major",
+          "suggested": "Han troner over jordens krets, og de som bor på den, er som gresshopper. Han spenner ut himmelen som et tynt slør og breier den ut som et telt å bo i.",
+          "explanation": "חֲגָבִים betyr gresshopper, ikke maur, og endringen til «maur» var ikke begrunnet.",
+          "defensible": false
+        },
+        {
+          "verseId": 25,
+          "type": "grammar",
+          "severity": "minor",
+          "suggested": "Hvem vil dere sammenligne meg med, så jeg skulle være hans like? sier Den hellige.",
+          "explanation": "Etter gjeldende rettskrivning skrives bare første ord med stor forbokstav i slike navnelignende betegnelser: «Den hellige».",
+          "defensible": true
+        },
+        {
+          "verseId": 31,
+          "type": "error",
+          "severity": "critical",
+          "suggested": "Men de som venter på Herren, skal få ny kraft. De skal løfte vingene som ørner. De skal løpe og ikke bli utmattet, de skal gå og ikke bli trette.",
+          "explanation": "Siste ledd, «de skal gå og ikke bli trette» (ילכו ולא ייעפו), mangler i oversettelsen.",
+          "defensible": false
+        },
+        {
+          "verseId": 28,
+          "type": "grammar",
+          "severity": "minor",
+          "suggested": "Vet du ikke? Har du ikke hørt? Herren er en evig Gud, skaperen av jordens ender. Han blir ikke trett eller utmattet. Hans forstand er uransakelig.",
+          "explanation": "Etter nektelse er «eller» mer presist enn «og», fordi det nekter begge leddene hver for seg.",
+          "defensible": true
+        }
+      ],
+      "score": 6
+    },
+    {
+      "t": "osnn",
+      "b": 60,
+      "c": 2,
+      "issues": [
+        {
+          "verseId": 1,
+          "type": "grammar",
+          "severity": "minor",
+          "suggested": "Legg difor av all vondskap, alt svik, hykleri, misunning og all baktaling.",
+          "explanation": "«Baktale» er eit verb på nynorsk, så substantivet bør vera «baktaling».",
+          "defensible": false
+        },
+        {
+          "verseId": 24,
+          "type": "error",
+          "severity": "major",
+          "suggested": "Han bar sjølv syndene våre i kroppen sin opp på treet, så vi skulle døy bort frå syndene og leva for rettferda. Ved hans sår har de fått lækjedom.",
+          "explanation": "Omsetjinga manglar «αὐτὸς» (sjølv) og «ἐν τῷ σώματι αὐτοῦ» (i kroppen sin), som understrekar at Kristus personleg og kroppsleg bar syndene.",
+          "defensible": false
+        }
+      ],
+      "score": 7
+    }
+  ]
+}
