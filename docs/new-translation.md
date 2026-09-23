@@ -87,6 +87,22 @@ Per-verse mode (without `--batch`) reviews each verse together with its
 neighbours, in two phases: text, then footnotes. More thorough, and expensive.
 `--text-only` skips the footnote phase.
 
+### Or: retranslate and judge
+
+```bash
+bun generate/bible.ts <name> --proofread --retranslate --model claude-opus-5-5 --book 45         # verdicts only
+bun generate/bible.ts <name> --proofread --retranslate --model claude-opus-5-5 --book 45 --apply
+```
+
+The chapter is translated again from the source, and a judge that does not know
+which reading is which marks the verses where one of them has an error. The
+current text is replaced only there. On the model test in
+`generate/eval/proofread/` this found more real errors than `--batch` — including
+the nynorsk forms (`honom`, `gjaldt`, `Elska` as an imperative) that `--batch`
+missed in every run — at about 1.4× its price. The first command writes only the
+verdicts, under `proofread/<name>/`; read a few before running with `--apply`,
+which reuses them without paying again.
+
 ## Step 4 — The targeted second passes
 
 Both are **free to re-run**, because they write resume markers.

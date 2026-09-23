@@ -1,0 +1,99 @@
+{
+  "model": "claude-opus-5-5",
+  "effort": null,
+  "method": "proofread",
+  "at": "2026-09-23T12:30:46.450Z",
+  "cost": 0.554536,
+  "verses": 198,
+  "fixed": [
+    "osnb 1:12:7",
+    "osnb 1:12:13",
+    "osnb 1:12:16",
+    "osnb 41:4:12",
+    "osnb 41:4:19",
+    "osnb 41:4:24",
+    "osnb 41:4:37",
+    "osnb 23:40:2",
+    "osnb 23:40:13",
+    "osnb 23:40:22",
+    "osnb 23:40:31",
+    "osnn 45:4:19",
+    "osnn 60:2:12",
+    "osnn 60:2:24",
+    "osnn 48:3:28",
+    "osnn 55:1:5"
+  ],
+  "missed": [
+    "osnb 1:12:4",
+    "osnb 41:4:39",
+    "osnn 45:4:2",
+    "osnn 45:4:3",
+    "osnn 45:4:22",
+    "osnn 45:4:23",
+    "osnn 60:2:5",
+    "osnn 60:2:17",
+    "osnn 60:2:23",
+    "osnn 48:3:6",
+    "osnn 48:3:17",
+    "osnn 48:3:19",
+    "osnn 19:98:1",
+    "osnn 55:1:9"
+  ],
+  "trapChanged": false,
+  "other": [
+    {
+      "key": "osnb 41:4:41",
+      "before": "De ble grepet av stor frykt og sa til hverandre: «Hvem er han, siden både vinden og sjøen adlyder ham?»",
+      "after": "De ble grepet av stor frykt og sa til hverandre: «Hvem er han egentlig, siden både vinden og sjøen adlyder ham?»",
+      "reason": "Partikkelen 'ἄρα' uttrykker forundring og forsterker spørsmålet ('hvem er han da/egentlig?'). Den er utelatt i den nåværende oversettelsen. 'Egentlig' fanger disiplenes undring og gir spørsmålet mer tyngde ved opplesning."
+    },
+    {
+      "key": "osnb 23:40:28",
+      "before": "Vet du ikke? Har du ikke hørt? Herren er en evig Gud, skaperen av jordens ender. Han blir ikke trett og utmattet. Hans forstand er uransakelig.",
+      "after": "Vet du ikke? Har du ikke hørt? Herren er en evig Gud, skaperen av jordens ender. Han blir verken trett eller utmattet. Hans forstand er uransakelig.",
+      "reason": "The Hebrew negates each verb separately. 'Ikke trett og utmattet' could be read as 'not both at once'. 'Verken … eller' is clearer and reads well aloud."
+    },
+    {
+      "key": "osnn 48:3:1",
+      "before": "Å, uvitande galatarar! Kven har forheksa dykk? Jesus Kristus vart jo tydeleg framstilt for augo dykkar som krossfest!",
+      "after": "Å, de uforstandige galatarar! Kven har forheksa dykk? Jesus Kristus vart jo tydeleg framstilt for augo dykkar som krossfest!",
+      "reason": "ἀνόητοι tyder «uforstandige» eller «vituge», altså at dei manglar dømmekraft. Det tyder ikkje at dei manglar kunnskap. «Uvitande» svekkjer det skarpe tilropet. Tiltaleforma «de» gjev dessutan betre munnleg flyt."
+    },
+    {
+      "key": "osnn 48:3:3",
+      "before": "Er de så uvitande? De byrja i Anden, vil de no fullføra i kjøtet?",
+      "after": "Er de så uforstandige? De byrja i Anden, vil de no fullføra i kjøtet?",
+      "reason": "Same ord som i v. 1 (ἀνόητοι). Her bør det stå «uforstandige», slik at det samsvarar med v. 1 og får fram meininga «utan vit/dømmekraft»."
+    },
+    {
+      "key": "osnn 19:98:4",
+      "before": "Rop av glede for Herren, all jorda! Bryt ut i jubel og lovsyng!",
+      "after": "Rop av glede for Herren, all jorda! Bryt ut, jubla og lovsyng!",
+      "reason": "Hebraisk har tre verb (pitsḥu, rannenu, zammeru). Omsetjinga slår dei to første saman til éin frase. Med tre verb får ein med alle ledda og ein sterkare rytme ved opplesing."
+    },
+    {
+      "key": "osnn 19:98:9",
+      "before": "framfor Herren, for han kjem for å døma jorda. Han skal døma jordkrinsen med rettferd og folka med det som er rett.",
+      "after": "Framfor Herren, for han kjem for å døma jorda. Han skal døma jordkrinsen med rettferd og folka med det som er rett.",
+      "reason": "Vers 8 sluttar no med utropsteikn. Då kan ikkje vers 9 byrja med liten bokstav som om det heldt fram same setninga. Stor forbokstav gjer teiknsetjinga konsekvent."
+    },
+    {
+      "key": "osnn 55:1:13",
+      "before": "Ha dei sunne orda du har høyrt frå meg, som førebilete, i tru og kjærleik i Kristus Jesus.",
+      "after": "Hald fast på dei sunne orda du har høyrt frå meg, som eit mønster, i tru og kjærleik i Kristus Jesus.",
+      "reason": "'Ha ... som førebilete' med innskoten komma er tungt ved høgtlesing. 'Hald fast på' flyt betre og tek vare på imperativen ἔχε. 'Mønster' gjev ὑποτύπωσις meir presist."
+    },
+    {
+      "key": "osnn 55:1:16",
+      "before": "Må Herren visa miskunn mot huset til Onesiforos, for han har ofte styrkt meg og skamma seg ikkje over lenkjene mine.",
+      "after": "Må Herren visa miskunn mot huset til Onesiforos, for han har ofte gjeve meg ny styrke og har ikkje skamma seg over lenkjene mine.",
+      "reason": "'Har ... og skamma seg ikkje' har feil ordstilling. I perfektum må nektinga stå før partisippet: 'har ikkje skamma seg'. 'Gjeve meg ny styrke' får òg betre fram ἀνέψυξεν ('forfriska, kveikte opp')."
+    },
+    {
+      "key": "osnn 55:1:18",
+      "before": "Må Herren gje at han finn miskunn hos Herren på den dagen. Og alt det han tente meg med i Efesos, kjenner du godt til.",
+      "after": "Må Herren gje at han finn miskunn hos Herren på den dagen. Og kor mykje han tente i Efesos, veit du betre enn nokon.",
+      "reason": "Grunnteksten har ikkje 'meg'. Tenesta i Efesos kan ha gjeldt fleire enn Paulus. Komparativen βέλτιον ('betre') har òg falle bort i 'kjenner du godt til'."
+    }
+  ]
+}

@@ -1,0 +1,135 @@
+{
+  "model": "claude-opus-5",
+  "effort": null,
+  "method": "proofread",
+  "at": "2026-09-23T12:33:12.985Z",
+  "cost": 1.1085850000000002,
+  "verses": 198,
+  "fixed": [
+    "osnb 1:12:4",
+    "osnb 1:12:7",
+    "osnb 1:12:13",
+    "osnb 1:12:16",
+    "osnb 41:4:12",
+    "osnb 41:4:19",
+    "osnb 41:4:24",
+    "osnb 41:4:37",
+    "osnb 41:4:39",
+    "osnb 23:40:2",
+    "osnb 23:40:13",
+    "osnb 23:40:22",
+    "osnb 23:40:31",
+    "osnn 45:4:19",
+    "osnn 60:2:5",
+    "osnn 60:2:12",
+    "osnn 60:2:23",
+    "osnn 60:2:24",
+    "osnn 48:3:17",
+    "osnn 48:3:28",
+    "osnn 55:1:5",
+    "osnn 55:1:9"
+  ],
+  "missed": [
+    "osnn 45:4:2",
+    "osnn 45:4:3",
+    "osnn 45:4:22",
+    "osnn 45:4:23",
+    "osnn 60:2:17",
+    "osnn 48:3:6",
+    "osnn 48:3:19",
+    "osnn 19:98:1"
+  ],
+  "trapChanged": false,
+  "other": [
+    {
+      "key": "osnb 41:4:15",
+      "before": "De ved veien er de hvor ordet blir sådd, men straks de hører det, kommer Satan og tar bort ordet som er sådd i dem.",
+      "after": "Noen er som veikanten der ordet blir sådd: Straks de har hørt det, kommer Satan og tar bort ordet som er sådd i dem.",
+      "reason": "«De ved veien er de hvor ordet blir sådd» er tungt og uklart ved høytlesning ('de ... de hvor'). Forslaget gjengir gresken like presist, men med naturlig norsk setningsflyt."
+    },
+    {
+      "key": "osnb 41:4:30",
+      "before": "Han sa: «Hva skal vi ligne Guds rike med, og hvilken lignelse skal vi bruke om det?",
+      "after": "Han sa: «Hva skal vi ligne Guds rike med, eller hvilken lignelse skal vi bruke om det?",
+      "reason": "Gresk ἤ er «eller», ikke «og». Konjunksjonen markerer et alternativt spørsmål, og «eller» gjengir det retoriske paret mer presist."
+    },
+    {
+      "key": "osnb 23:40:17",
+      "before": "Alle folkeslagene er som ingenting for ham, de regnes av ham som tomhet og intet.",
+      "after": "Alle folkeslagene er som ingenting for ham, de regnes av ham som mindre enn intet og tomhet.",
+      "reason": "Preposisjonen mem i מֵאֶפֶס er trolig komparativ (\"mindre enn intet\"), noe som forsterker den retoriske stigningen fra første setningsledd. Nåværende gjengivelse er mulig, men mister denne forsterkningen."
+    },
+    {
+      "key": "osnb 23:40:29",
+      "before": "Han gir den trette kraft, og den som er uten styrke, gir han stor makt.",
+      "after": "Han gir den trette kraft, og den som er uten krefter, gir han rikelig styrke.",
+      "reason": "עָצְמָה יַרְבֶּה betyr «han gir rikelig med styrke», ikke «makt» i betydningen myndighet. «Makt» kan misforstås; «styrke/krefter» er nærmere og gir bedre parallell til kֹּחַ i første ledd."
+    },
+    {
+      "key": "osnn 45:4:14",
+      "before": "For om dei som held seg til lova er arvingar, då er trua utan meining og lovnaden sett ut av kraft.",
+      "after": "For om dei som held seg til lova, er arvingar, då er trua tom og lovnaden sett ut av kraft.",
+      "reason": "Det manglar komma etter den innskotne relativsetninga ('dei som held seg til lova'), noko som er påkravd i nynorsk og hjelper på lesinga høgt. Dessutan ligg 'tom' nærare κεκένωται ('er gjort tom') enn 'utan meining'."
+    },
+    {
+      "key": "osnn 45:4:20",
+      "before": "Han tvila ikkje i vantru på Guds lovnad, men vart styrkt i trua og gav Gud ære.",
+      "after": "På Guds lovnad tvila han ikkje i vantru, men vart styrkt i trua og gav Gud ære.",
+      "reason": "Gresk set 'Guds lovnad' fremst i setninga (εἰς δὲ τὴν ἐπαγγελίαν τοῦ θεοῦ). Å la dette leddet stå først gjev både betre samsvar med originalen og ein jamnare rytme ved høgtlesing, i staden for den tunge rekkja 'ikkje i vantru på'."
+    },
+    {
+      "key": "osnn 60:2:7",
+      "before": "For dykk som trur, er han dyrebar. Men for dei som ikkje trur, har den steinen bygningsmennene vraka, vorte hjørnestein.",
+      "after": "For dykk som trur, er han dyrebar. Men for dei som ikkje trur, har den steinen som bygningsmennene vraka, vorte hjørnestein.",
+      "reason": "Utan relativpronomenet «som» blir setninga tung og uklar ved høgtlesing, sidan «den steinen» først kan oppfattast som objekt for «har». Omissjon av objektsrelativ er tillate, men «som» gjer strukturen tydeleg for øyret."
+    },
+    {
+      "key": "osnn 60:2:8",
+      "before": "Han er ein støytestein og eit berg til fall. Dei støyter seg fordi dei ikkje er lydige mot ordet, og til det var dei sette.",
+      "after": "Han er ein støytestein og ei klippe til fall. Dei støyter seg fordi dei ikkje er lydige mot ordet, og til det var dei sette.",
+      "reason": "«Πέτρα» viser til ei klippe/berghall som ein snublar i, og «klippe» er det vanlege biletet i denne samanhengen. «Berg» kan oppfattast som ein heil fjellformasjon og svekkjer biletet av noko ein snublar over."
+    },
+    {
+      "key": "osnn 60:2:15",
+      "before": "For det er Guds vilje at de ved å gjera godt skal bringa dei uforstandige menneska sin vankunne til teiing.",
+      "after": "For det er Guds vilje at de ved å gjera godt skal målbinda vankunna hjå dei uforstandige menneska.",
+      "reason": "«Vankunne» er hokjønn på nynorsk, så eigedomspronomenet må vera «si», ikkje «sin». Formuleringa «bringa … til teiing» er dessutan tung ved høgtlesing; «målbinda vankunna hjå …» gjev same meining (uvitskapen skal knebllast, ikkje menneska) med betre flyt."
+    },
+    {
+      "key": "osnn 60:2:19",
+      "before": "For det er nåde om nokon av samvit for Gud toler sorger og lid med urette.",
+      "after": "For det er nåde om nokon held ut sorger fordi han har Gud for auga, når han lid urett.",
+      "reason": "«Av samvit for Gud» er ei uvanleg og stiv formulering på nynorsk og bryt flyten ved opplesing. Ei meir naturleg vending held meiningsinnhaldet (medvitet om Gud som grunn til å halda ut) og får fram at lidinga skjer urettferdig."
+    },
+    {
+      "key": "osnn 19:98:3",
+      "before": "Han har kome i hug si miskunn og si truskap mot Israels hus. Alle endane av jorda har sett frelsa frå vår Gud.",
+      "after": "Han har kome i hug si miskunn og sin truskap mot Israels hus. Alle endane av jorda har sett frelsa frå vår Gud.",
+      "reason": "'Truskap' er hankjønnsord på nynorsk (ein truskap), så eigedomsordet skal vera 'sin', ikkje 'si'. 'Miskunn' er hokjønn og har rett form ('si miskunn')."
+    },
+    {
+      "key": "osnn 19:98:6",
+      "before": "Med trompetar og lyden av horn, rop av glede for Herren, kongen!",
+      "after": "Med trompetar og lyden av horn, rop av glede framfor kongen, Herren!",
+      "reason": "Hebraisk לִפְנֵי tyder 'framfor', og ordstillinga er 'kongen, Herren'. Dette gjev òg betre samsvar med vers 9, som opnar med 'framfor Herren'. Den noverande forma er forståeleg, men sløyfer 'framfor' og snur apposisjonen."
+    },
+    {
+      "key": "osnn 55:1:13",
+      "before": "Ha dei sunne orda du har høyrt frå meg, som førebilete, i tru og kjærleik i Kristus Jesus.",
+      "after": "Hald fast på mønsteret av dei sunne orda du har høyrt frå meg, i tru og kjærleik i Kristus Jesus.",
+      "reason": "Setninga er tungvint for høgtlesing med innskotet 'som førebilete' mellom kommaer. 'Hald fast på mønsteret av' gjev ὑποτύπωσιν ἔχε på ein meir flytande måte og held på biletet av ein mal/eit mønster."
+    },
+    {
+      "key": "osnn 55:1:15",
+      "before": "Du veit at alle i Asia har vendt seg bort frå meg, mellom dei Fygelus og Hermogenes.",
+      "after": "Du veit at alle i Asia har vendt seg bort frå meg, mellom dei Fygelos og Hermogenes.",
+      "reason": "Den greske forma Φύγελος blir vanlegvis attgjeven som 'Fygelos' på norsk, i samsvar med 'Hermogenes' i same setning. 'Fygelus' er ei latinisert form som bryt med namneforma elles."
+    },
+    {
+      "key": "osnn 55:1:17",
+      "before": "Tvert imot, då han kom til Roma, leita han iherdig etter meg og fann meg.",
+      "after": "Tvert imot, då han kom til Roma, leita han ivrig etter meg og fann meg.",
+      "reason": "'Iherdig' er eit bokmålsprega ord som verkar framandt i nynorsk høgtlesingstekst. 'Ivrig' (eller 'utrøytteleg') dekkjer σπουδαίως godt og flyt betre."
+    }
+  ]
+}

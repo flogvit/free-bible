@@ -1,0 +1,111 @@
+{
+  "model": "claude-opus-5-5",
+  "effort": null,
+  "method": "proofread",
+  "at": "2026-09-23T12:30:16.034Z",
+  "cost": 0.584816,
+  "verses": 198,
+  "fixed": [
+    "osnb 1:12:4",
+    "osnb 1:12:7",
+    "osnb 1:12:13",
+    "osnb 1:12:16",
+    "osnb 41:4:12",
+    "osnb 41:4:19",
+    "osnb 41:4:24",
+    "osnb 41:4:37",
+    "osnb 23:40:2",
+    "osnb 23:40:13",
+    "osnb 23:40:22",
+    "osnb 23:40:31",
+    "osnn 45:4:19",
+    "osnn 60:2:24",
+    "osnn 48:3:28",
+    "osnn 19:98:1",
+    "osnn 55:1:5"
+  ],
+  "missed": [
+    "osnb 41:4:39",
+    "osnn 45:4:2",
+    "osnn 45:4:3",
+    "osnn 45:4:22",
+    "osnn 45:4:23",
+    "osnn 60:2:5",
+    "osnn 60:2:12",
+    "osnn 60:2:17",
+    "osnn 60:2:23",
+    "osnn 48:3:6",
+    "osnn 48:3:17",
+    "osnn 48:3:19",
+    "osnn 55:1:9"
+  ],
+  "trapChanged": false,
+  "other": [
+    {
+      "key": "osnb 41:4:41",
+      "before": "De ble grepet av stor frykt og sa til hverandre: «Hvem er han, siden både vinden og sjøen adlyder ham?»",
+      "after": "De ble grepet av stor frykt og sa til hverandre: «Hvem er han da, siden både vinden og sjøen adlyder ham?»",
+      "reason": "Partikkelen ἄρα («da, altså») uttrykker disiplenes forundrede slutning og er ikke gjengitt i dag. Med «da» får spørsmålet den undrende tonen som ligger i gresken, og det flyter godt ved høytlesning."
+    },
+    {
+      "key": "osnb 23:40:28",
+      "before": "Vet du ikke? Har du ikke hørt? Herren er en evig Gud, skaperen av jordens ender. Han blir ikke trett og utmattet. Hans forstand er uransakelig.",
+      "after": "Vet du ikke? Har du ikke hørt? Herren er en evig Gud, skaperen av jordens ender. Han blir ikke trett, han blir ikke utmattet. Hans forstand er uransakelig.",
+      "reason": "Hebraisk har to separate nektelser («ikke … og ikke …»). Formuleringen «ikke trett og utmattet» kan forstås som at han ikke blir begge deler samtidig. Når nektelsen gjentas, blir utsagnet tydeligere. Det gir også bedre rytme ved opplesning."
+    },
+    {
+      "key": "osnn 45:4:17",
+      "before": "som det står skrive: Eg har sett deg til far for mange folkeslag. Dette gjeld framfor den Gud han trudde på, han som gjer dei døde levande og kallar det som ikkje er til, som om det var til.",
+      "after": "som det står skrive: Eg har sett deg til far for mange folkeslag. Det er han framfor den Gud han trudde på, han som gjer dei døde levande og kallar det som ikkje er til, som om det var til.",
+      "reason": "'Dette gjeld framfor' er uklart og stivt. κατέναντι knyter seg til at Abraham er far til oss alle framfor Gud; 'Det er han framfor den Gud' gjer samanhengen tydelegare ved opplesing."
+    },
+    {
+      "key": "osnn 60:2:1",
+      "before": "Legg difor av all vondskap, alt svik, hykleri, misunning og all baktale.",
+      "after": "Legg difor av all vondskap, alt svik, hykleri, misunning og all baktaling.",
+      "reason": "'Baktale' er i nynorsk i hovudsak eit verb. Det vanlege substantivet er 'baktaling' (ei), som passar grammatisk med 'all' og gjev ein naturleg rytme ved opplesing."
+    },
+    {
+      "key": "osnn 60:2:15",
+      "before": "For det er Guds vilje at de ved å gjera godt skal bringa dei uforstandige menneska sin vankunne til teiing.",
+      "after": "For det er Guds vilje at de ved å gjera godt skal få vankunna hjå dei uforstandige menneska til å teia.",
+      "reason": "Garpegenitiv med 'sin' etter eit fleirtalsuttrykk ('menneska sin vankunne') og 'bringa til teiing' er tungt å lesa høgt. Framlegget held fast på at det er vankunna som skal teia, slik den førre endringa sikra, men flyt betre."
+    },
+    {
+      "key": "osnn 48:3:1",
+      "before": "Å, uvitande galatarar! Kven har forheksa dykk? Jesus Kristus vart jo tydeleg framstilt for augo dykkar som krossfest!",
+      "after": "Å, uforstandige galatarar! Kven har forheksa dykk? Jesus Kristus vart jo tydeleg framstilt for augo dykkar som krossfest!",
+      "reason": "Ordet ἀνόητοι tyder «uforstandige» eller «vitlause», ikkje «uvitande». Galatarane mangla ikkje kunnskap. Dei hadde fått evangeliet, men nytta ikkje vitet sitt. «Uforstandige» fangar skulda betre. Same endring bør gjerast i v. 3."
+    },
+    {
+      "key": "osnn 48:3:3",
+      "before": "Er de så uvitande? De byrja i Anden, vil de no fullføra i kjøtet?",
+      "after": "Er de så uforstandige? De byrja i Anden, vil de no fullføra i kjøtet?",
+      "reason": "Det er det same ordet som i v. 1 (ἀνόητοι). «Uforstandige» er meir presist enn «uvitande» og held samsvar med v. 1."
+    },
+    {
+      "key": "osnn 19:98:2",
+      "before": "Herren har kunngjort si frelse, for augo på folkeslaga har han openberra si rettferd.",
+      "after": "Herren har kunngjort si frelse; framfor augo på folkeslaga har han openberra si rettferd.",
+      "reason": "Når setningsleddet byrjar med 'for' etter eit komma, kan tilhøyraren lett oppfatta ordet som konjunksjonen 'for' (fordi). 'Framfor augo på' gjer det klart ved opplesing."
+    },
+    {
+      "key": "osnn 19:98:6",
+      "before": "Med trompetar og lyden av horn, rop av glede for Herren, kongen!",
+      "after": "Med trompetar og lyden av horn: rop av glede framfor kongen, Herren!",
+      "reason": "Hebraisk har 'lifne' (framfor), ikkje berre 'for'. Ordfølgja i grunnteksten er 'kongen, Herren'. Ordet 'framfor' er òg i samsvar med 'framfor Herren' i vers 9."
+    },
+    {
+      "key": "osnn 55:1:16",
+      "before": "Må Herren visa miskunn mot huset til Onesiforos, for han har ofte styrkt meg og skamma seg ikkje over lenkjene mine.",
+      "after": "Må Herren visa miskunn mot huset til Onesiforos, for han kveikte meg ofte opp og skamma seg ikkje over lenkjene mine.",
+      "reason": "Setninga blandar perfektum ('har styrkt') og preteritum ('skamma seg'), og det les ujamt. Ἀνέψυξεν tyder 'kvikka opp' eller 'gav ny kraft', og 'kveikte opp' fangar dette godt."
+    },
+    {
+      "key": "osnn 55:1:18",
+      "before": "Må Herren gje at han finn miskunn hos Herren på den dagen. Og alt det han tente meg med i Efesos, kjenner du godt til.",
+      "after": "Må Herren gje at han finn miskunn hos Herren på den dagen. Og kor mykje han tente i Efesos, veit du betre enn nokon.",
+      "reason": "Grunnteksten har ikkje noko objekt 'meg' til διηκόνησεν. Tenesta kan ha vore for kyrkjelyden generelt. Komparativen βέλτιον ('betre') er dessutan svekt til 'godt'."
+    }
+  ]
+}

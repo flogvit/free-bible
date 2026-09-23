@@ -79,6 +79,9 @@ Translation, proofreading and all the supporting material.
 | `--proofread` | boolean | — | korrekturles etter oversettelsen |
 | `--apply` | boolean | — | skriv korrekturens forslag inn i teksten |
 | `--batch` | boolean | — | korrekturles hele kapittelet i noen få kall med tilbakemeldingssløyfe (osnbs metode, 6,6× billigere) |
+| `--retranslate` | boolean | — | korrekturles ved å oversette kapittelet på nytt og la en blind dommer velge der én lesning har en feil; uten --apply lagres bare dommen |
+| `--model` | string | — | Claude-modell for denne kjøringen; overstyrer ANTHROPIC_MODEL |
+| `--effort` | string | — | low, medium, high, xhigh eller max; uten flagget gjelder modellens egen standard |
 | `--text-only` | boolean | — | bare tekstfasen, hopp over fotnotene |
 | `--skip-existing` | boolean | — | hopp over vers som alt er gjort (fotnoter finnes, eller textChecked i --text-only) |
 | `--changed-only` | string | — | andregangs pass over vers som alt er endret; valgfri kommaliste av typer, f.eks. error,grammar |

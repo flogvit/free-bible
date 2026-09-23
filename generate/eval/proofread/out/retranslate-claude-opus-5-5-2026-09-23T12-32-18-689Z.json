@@ -1,0 +1,63 @@
+{
+  "model": "claude-opus-5-5",
+  "effort": null,
+  "method": "retranslate",
+  "at": "2026-09-23T12:32:18.689Z",
+  "cost": 0.783532,
+  "verses": 198,
+  "fixed": [
+    "osnb 1:12:7",
+    "osnb 1:12:13",
+    "osnb 1:12:16",
+    "osnb 41:4:12",
+    "osnb 41:4:19",
+    "osnb 41:4:24",
+    "osnb 41:4:37",
+    "osnb 23:40:2",
+    "osnb 23:40:13",
+    "osnb 23:40:22",
+    "osnb 23:40:31",
+    "osnn 45:4:2",
+    "osnn 45:4:3",
+    "osnn 45:4:19",
+    "osnn 45:4:22",
+    "osnn 45:4:23",
+    "osnn 60:2:5",
+    "osnn 60:2:12",
+    "osnn 60:2:23",
+    "osnn 60:2:24",
+    "osnn 48:3:6",
+    "osnn 48:3:17",
+    "osnn 48:3:28",
+    "osnn 19:98:1",
+    "osnn 55:1:5"
+  ],
+  "missed": [
+    "osnb 1:12:4",
+    "osnb 41:4:39",
+    "osnn 60:2:17",
+    "osnn 48:3:19",
+    "osnn 55:1:9"
+  ],
+  "trapChanged": false,
+  "other": [
+    {
+      "key": "osnb 41:4:9",
+      "before": "Og han sa: «Den som har ører å høre med, hør!»",
+      "after": "Og han sa: «Den som har ører å høre med, skal høre!»",
+      "reason": "B bryter setningen: «Den som har ører å høre med, hør!» blander tredje person med en imperativ som henvender seg direkte til tilhøreren."
+    },
+    {
+      "key": "osnb 41:4:21",
+      "before": "Han sa til dem: «Kommer noen med en lampe for å sette den under et kar eller under sengen? Nei, den settes på lysestaken.",
+      "after": "Og han sa til dem: «Kommer lyset inn for å bli satt under et kornmål eller under sengen? Skal det ikke settes i lampestaken?",
+      "reason": "B gjør det andre retoriske spørsmålet om til en påstand («Nei, den settes på lysestaken»)."
+    },
+    {
+      "key": "osnn 60:2:3",
+      "before": "De har då smaka at Herren er god.",
+      "after": "så sant de har smaka at Herren er god.",
+      "reason": "B gjer den vilkårlege setninga («så sant de har smaka») om til ei rein fastslåing."
+    }
+  ]
+}

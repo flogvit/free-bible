@@ -18,11 +18,11 @@
 // bun generate/eval/proofread/run.ts <method> <effort> [model]   method: current | revised | retrans | retrans-strict
 // effort: low | medium | high | default (the model's own default). RUN=<tag> suffixes the output file,
 // TR_EFFORT sets the translation step's effort separately for retrans*.
-import '../../env.js';
+import '../../../env.js';
 import Anthropic from '@anthropic-ai/sdk';
 import fs from 'fs';
 
-const ROOT = `${import.meta.dir}/../../bibles_raw`;
+const ROOT = `${import.meta.dir}/../../../bibles_raw`;
 const HERE = import.meta.dir;
 const [method, effort, model = 'claude-opus-5-5'] = process.argv.slice(2);
 const PRICE: Record<string, [number, number]> = { 'claude-opus-5-5': [4, 20], 'claude-opus-5': [5, 25], 'claude-fable-5-1': [10, 50], 'claude-sonnet-5': [2, 10] };

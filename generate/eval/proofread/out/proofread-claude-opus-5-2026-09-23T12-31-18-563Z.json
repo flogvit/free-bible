@@ -1,0 +1,99 @@
+{
+  "model": "claude-opus-5",
+  "effort": null,
+  "method": "proofread",
+  "at": "2026-09-23T12:31:18.563Z",
+  "cost": 1.02191,
+  "verses": 198,
+  "fixed": [
+    "osnb 1:12:4",
+    "osnb 1:12:7",
+    "osnb 1:12:13",
+    "osnb 1:12:16",
+    "osnb 41:4:12",
+    "osnb 41:4:19",
+    "osnb 41:4:24",
+    "osnb 41:4:37",
+    "osnb 41:4:39",
+    "osnb 23:40:2",
+    "osnb 23:40:13",
+    "osnb 23:40:22",
+    "osnb 23:40:31",
+    "osnn 45:4:19",
+    "osnn 60:2:5",
+    "osnn 60:2:23",
+    "osnn 60:2:24",
+    "osnn 48:3:17",
+    "osnn 48:3:28",
+    "osnn 55:1:5",
+    "osnn 55:1:9"
+  ],
+  "missed": [
+    "osnn 45:4:2",
+    "osnn 45:4:3",
+    "osnn 45:4:22",
+    "osnn 45:4:23",
+    "osnn 60:2:12",
+    "osnn 60:2:17",
+    "osnn 48:3:6",
+    "osnn 48:3:19",
+    "osnn 19:98:1"
+  ],
+  "trapChanged": false,
+  "other": [
+    {
+      "key": "osnb 41:4:15",
+      "before": "De ved veien er de hvor ordet blir sådd, men straks de hører det, kommer Satan og tar bort ordet som er sådd i dem.",
+      "after": "Noen er som det som falt ved veien, der ordet blir sådd. Men straks de hører det, kommer Satan og tar bort ordet som er sådd i dem.",
+      "reason": "«De ved veien er de hvor ordet blir sådd» er tungt og uklart norsk ved høytlesning. Forslaget gir samme innhold i en klarere og mer muntlig setningsflyt."
+    },
+    {
+      "key": "osnb 41:4:30",
+      "before": "Han sa: «Hva skal vi ligne Guds rike med, og hvilken lignelse skal vi bruke om det?",
+      "after": "Han sa: «Hva skal vi ligne Guds rike med, eller hvilken lignelse skal vi bruke om det?",
+      "reason": "Gresk ἤ betyr «eller» og markerer et alternativt spørsmål. «Eller» gjengir den retoriske doblingen mer presist enn «og»."
+    },
+    {
+      "key": "osnn 60:2:7",
+      "before": "For dykk som trur, er han dyrebar. Men for dei som ikkje trur, har den steinen bygningsmennene vraka, vorte hjørnestein.",
+      "after": "For dykk som trur, er han dyrebar. Men for dei som ikkje trur, har den steinen som bygningsmennene vraka, vorte hjørnesteinen.",
+      "reason": "Utan «som» blir setninga tung og lett å misforstå ved høgtlesing, sidan lesaren først må finna ut at «bygningsmennene» ikkje er subjekt for hovudverbet. Bestemt form «hjørnesteinen» svarar òg betre til εἰς κεφαλὴν γωνίας som eit bestemt embete i sitatet."
+    },
+    {
+      "key": "osnn 60:2:15",
+      "before": "For det er Guds vilje at de ved å gjera godt skal bringa dei uforstandige menneska sin vankunne til teiing.",
+      "after": "For det er Guds vilje at de ved å gjera godt skal kneble vankunna hos dei uforstandige menneska.",
+      "reason": "«Vankunne» er hokjønn, så eigedomsforma må vera «si vankunne», ikkje «sin vankunne». Samstundes er s-genitiv-omskrivinga («menneska sin …») tung ved munnleg lesing; «kneble vankunna hos …» gjev same meining (φιμοῦν = setja munnkorg på, kneble) med betre flyt, og held fast på at det er uvitskapen, ikkje menneska, som skal tiast."
+    },
+    {
+      "key": "osnn 19:98:2",
+      "before": "Herren har kunngjort si frelse, for augo på folkeslaga har han openberra si rettferd.",
+      "after": "Herren har kunngjort si frelse, framfor augo på folkeslaga har han openberra si rettferd.",
+      "reason": "'For augo på folkeslaga' kan i tale lesast som ein grunnsetning ('for augo ...'). 'Framfor augo på folkeslaga' er tydelegare og flyt betre ved høgtlesing."
+    },
+    {
+      "key": "osnn 19:98:3",
+      "before": "Han har kome i hug si miskunn og si truskap mot Israels hus. Alle endane av jorda har sett frelsa frå vår Gud.",
+      "after": "Han har kome i hug si miskunn og sin truskap mot Israels hus. Alle endane av jorda har sett frelsa frå vår Gud.",
+      "reason": "'Truskap' er hankjønn på nynorsk (ein truskap), og eigedomsordet må difor vera 'sin', ikkje 'si'. 'Miskunn' er hokjønn og står korrekt med 'si'."
+    },
+    {
+      "key": "osnn 19:98:6",
+      "before": "Med trompetar og lyden av horn, rop av glede for Herren, kongen!",
+      "after": "Med trompetar og lyden av horn, rop av glede framfor kongen, Herren!",
+      "reason": "Hebraisk לִפְנֵי tyder 'framfor', og apposisjonen er 'kongen, Herren' (הַמֶּלֶךְ יְהוָה). Gjeldande omsetjing snur ledda og misser 'framfor', som dessutan går att i vers 9 ('framfor Herren') og bør vera konsistent."
+    },
+    {
+      "key": "osnn 55:1:13",
+      "before": "Ha dei sunne orda du har høyrt frå meg, som førebilete, i tru og kjærleik i Kristus Jesus.",
+      "after": "Hald fast på førebiletet i dei sunne orda du har høyrt frå meg, i tru og kjærleik i Kristus Jesus.",
+      "reason": "Den innskotne leddstillinga 'som førebilete' midt i setninga bryt flyten ved høgtlesing. Ei framstilt formulering gjev jamnare rytme og same innhald."
+    },
+    {
+      "key": "osnn 55:1:18",
+      "before": "Må Herren gje at han finn miskunn hos Herren på den dagen. Og alt det han tente meg med i Efesos, kjenner du godt til.",
+      "after": "Må Herren gje at han finn miskunn hos Herren på den dagen. Og kor mykje han tente meg i Efesos, veit du best.",
+      "reason": "βέλτιον er komparativ ('betre'), og poenget er at Timoteus veit dette betre enn Paulus kan fortelja. 'Kjenner du godt til' mistar samanlikninga."
+    }
+  ]
+}

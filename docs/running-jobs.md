@@ -155,6 +155,28 @@ answer — so run the stragglers one at a time and look at what comes out.
 
 ---
 
+## When a new model arrives
+
+```bash
+bun generate/eval/proofread/run.ts --model <new-model-id>    # ~$4, a few minutes
+```
+
+It proofreads eight frozen chapters with 30 known errors, both ways `bible.ts` can
+(`--batch` and `--retranslate`), twice each, and prints the new model in a table
+next to every model tested before. Add the model's price to `anthropicPrices` in
+`constants.ts` first, or the cost column says `?`.
+
+A difference of one fixed error is noise; runs of the same model differ that
+much. Before switching, open the newest files in `generate/eval/proofread/out/`
+and read the changes listed under `other` — they are either real errors the test
+set does not know about, or taste.
+
+To use the model on a translation, pass it to `bible.ts` with `--model`; there is
+no default to change. Run one book without `--apply` first and read the verdicts
+under `generate/proofread/<translation>/`.
+
+---
+
 ## The long ones
 
 Three jobs are large enough to be projects rather than runs, and all three are
