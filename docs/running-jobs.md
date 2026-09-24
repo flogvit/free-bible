@@ -90,35 +90,100 @@ In practice, while song references (gemma4) are running:
 
 ## Hardware
 
+**Resident memory is not the download size.** What Ollama holds includes the
+KV cache, and that scales with the context window: `qwen3.6:35b` is 23 GB
+downloaded and **28.8 GB** resident under a production prompt. Size a machine
+from `ollama list` and you undercount by a quarter or more.
+
 | memory | what fits | when |
 |---|---|---|
-| 64 GB | models up to about 23 GB — the ≤31b class | anytime |
-| 128 GB | `qwen3.5:122b` (81 GB) | when you are not using the machine |
+| 64 GB | `qwen3.6:35b` (28.8 GB resident) with `bge-m3` beside it; `qwen3.5:27b` (35.0 GB) or `granite4.1:30b` (52.6 GB) on their own | anytime |
+| 128 GB | `qwen3.5:122b` (81 GB downloaded) | when you are not using the machine |
 
-Model sizes as downloaded:
+**Parameter count no longer predicts either number.** `qwen3.6:35b` is
+mixture-of-experts — 35B parameters with a fraction of them active per token — so
+it is both smaller resident and faster than the dense `qwen3.6:27b`. A rule of
+the form "this machine takes models up to 31 billion parameters" sorts them wrong
+in both directions; read the measured columns instead.
 
-| model | size | used for |
-|---|---|---|
-| `bge-m3` | 1.2 GB | embeddings — semantic references, text verification |
-| `qwen3.5:27b` | 17 GB | triage, key words, osmain verification |
-| `granite4.1:30b` | 17 GB | second judge in text verification |
-| `gemma4:31b` | 19 GB | first judge, mapping generation, song references |
-| `qwen3.5:122b` | 81 GB | translation, cross references, tagging |
+| model | downloaded | resident | used for |
+|---|---|---|---|
+| `bge-m3` | 1.2 GB | — | embeddings — semantic references, text verification |
+| `qwen3.5:27b` | 17 GB | 35.0 GB | triage, key words, osmain verification |
+| `granite4.1:30b` | 17 GB | 52.6 GB | second judge in text verification |
+| `gemma4:31b` | 19 GB | — | first judge, mapping generation, song references |
+| `qwen3.6:35b` | 23 GB | 28.8 GB | judging semantic cross-reference candidates |
+| `qwen3.5:122b` | 81 GB | — | translation, cross references, tagging |
 
-If you only have the smaller class, every job in STATUS.md marked *local model*
-that asks for a 27b or 31b model is available to you. Song references is the
-largest of them.
+A blank in `resident` means nobody has measured it, not that it is small. The
+figures that are there were measured under the cross-reference prompt, below.
+
+Every job in STATUS.md marked *local model* that asks for a 27b or 31b model runs
+on 64 GB. Song references is the largest of them.
+
+### Which judge fits the machine
+
+A *judge* reads a source verse and a candidate verse side by side and answers
+whether the connection between them is real — the second half of
+`generate/references-semantic.ts`, and the most model-hungry loop here. Measured
+2026-08-01 on Ollama, warm runner, 13 candidates, the production prompt and
+schema verbatim:
+
+| model | resident | s/verse | precision | verdict |
+|---|---|---|---|---|
+| **`qwen3.6:35b`** | **28.8 GB** | **17** | 100% | fastest and smallest — the judge a 64 GB machine can run |
+| `qwen3.5:27b` | 35.0 GB | 65 | 100% | same acceptance rate over 19 verses / 750 candidates |
+| `qwen3.6:27b` | 35.0 GB | 63 | — | slower *and* larger than the 35b — dense against MoE |
+| `granite4.1:30b` | 52.6 GB | 57 | — | fills a 64 GB machine on its own |
+| `qwen3.5:122b` | — | 96 | — | what `taskModels.references` asks for, and 5.6× slower |
+| `aya:35b` | — | — | 54–71% | out: accepted nearly everything, 8 192-token context |
+| `gemma4:31b` | — | — | — | out on open schemas: see `ollamaModelConfig` in `generate/constants.ts` |
+
+**The precision column is thinner than it looks.** Both 100% figures come from 72
+references over two verses, scored by Claude. The 19-verse run that would have
+settled it failed on an expired API key, so its 549 accepted references have
+never been scored. `qwen3.6:35b` had the higher mean in the small sample (4.71
+against 4.33), and that is the whole basis for preferring it — if a larger run
+ever shows `qwen3.5:27b` making fewer errors, speed does not outweigh that.
+
+Re-measure whenever a new model appears:
+
+```bash
+bun generate/eval-judges.ts --models qwen3.6:35b,<the-new-one> --verses 10
+```
+
+It touches no reference files and spends no Claude credit. **Measure the old
+model in the same call as the new one** — seconds are only comparable inside a
+single run. Same model, same prompt, two consecutive days: 27 s/verse on a quiet
+machine, 122 s/verse with an IDE at 265% CPU and a load average of 11. No
+throttling, no battery — just contention. Ratios within a run survive that;
+absolute numbers do not.
+
+Pin the judge with `OLLAMA_MODEL`. That returns before the adoption logic in
+`resolveLocalModel`, and therefore before the `openSchema` guard as well — so
+pinning can put a model on a schema the guard would have refused it. How to run
+the pass itself is in `docs/cross-references.md`.
 
 ---
 
-## What local models cannot do here
+## What local models can and cannot do here
 
-**They cannot judge translation quality.** Measured against Claude's actual
+**Where the knowledge comes from decides whether a small model is enough.** When
+the corpus supplies the material and the model only passes a verdict on it, a
+28.8 GB model is the equal of an 81 GB one: the judge above reads both verses in
+the prompt, and matched the acceptance rate of a model twice its size while
+running 5.6× faster than the default. When the answer has to come out of the
+model's own parameters instead — Hebrew morphology, a term rendered differently
+four chapters earlier — there is nothing in the prompt to lean on, and the size
+it does not have is exactly what is missing.
+
+**So they cannot judge translation quality.** Measured against Claude's actual
 corrections, local triage caught 31% of them (`qwen3.5:27b`) and 8%
 (`qwen3.6:35b`) — and both missed exactly the valuable class: Hebrew morphology
-and consistency of terms across verses. The deterministic part of that layer
-(regular expressions, length checks, verse counts) is what pays off; the
-judgement part does not.
+and consistency of terms across verses. That 8% is the same `qwen3.6:35b` that
+tops the judge table; the task changed, not the model. The deterministic part of
+that layer (regular expressions, length checks, verse counts) is what pays off;
+the judgement part does not.
 
 **They cannot write the encyclopedic prose.** Person profiles are written by
 Claude for the same reason.
