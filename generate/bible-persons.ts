@@ -8,7 +8,7 @@ const __dirname = path.dirname(__filename);
 
 import {books, normalizeLanguage, getLanguageCode, getBookName, anthropicModel, ollamaModel} from "./constants.js";
 import {callWithRetry, callOllamaRaw} from "./llm.js";
-import {nameToId} from "./lib.js";
+import {nameToId, personNameIndex} from "./lib.js";
 import {parseArgs, formatHelp, COMMON_FLAGS} from './cli.js';
 import type {FlagSpec, Range} from './cli.js';
 import type {Chapter} from '../kvn/src/bible-types.js';
@@ -764,24 +764,28 @@ async function indexBible(bible: string, options: IndexOptions = {}) {
     if (chapterStart) console.log(`  Chapters: ${chapterStart}-${chapterEnd}`);
     console.log('');
 
-    // Map: lowercase name/alias → person file path (for quick lookup)
-    const nameToFile: Record<string, string> = {};
+    // Navn → kandidat-id-er. Bare et navn med ÉN bærer kan slås opp direkte;
+    // et delt navn går til disambigueringen for hvert vers, og svaret derfra
+    // lagres aldri som fasit for navnet (#127).
+    const personFile = (id: string) => path.join(personsDir, `${id}.json`);
     // Set of names we've validated as NOT persons (skip in future)
     const notPersons = new Set<string>();
 
     const existingFiles = fs.readdirSync(personsDir).filter(f => f.endsWith('.json'));
-    for (const f of existingFiles) {
-        const filePath = path.join(personsDir, f);
-        const data = JSON.parse(fs.readFileSync(filePath, 'utf-8')) as PersonData;
-        nameToFile[data.name.toLowerCase()] = filePath;
-        // Register aliases too
-        if (data.aliases) {
-            for (const alias of data.aliases) {
-                nameToFile[alias.toLowerCase()] = filePath;
-            }
-        }
-    }
-    console.log(`  ${existingFiles.length} existing persons loaded (${Object.keys(nameToFile).length} names/aliases)\n`);
+    const nameIndex = personNameIndex(existingFiles.map(f =>
+        JSON.parse(fs.readFileSync(path.join(personsDir, f), 'utf-8')) as PersonData
+    ));
+    const register = (name: string, id: string) => {
+        const key = name.toLowerCase();
+        const ids = nameIndex.get(key) ?? [];
+        if (!ids.includes(id)) ids.push(id);
+        nameIndex.set(key, ids);
+    };
+    const uniqueOwner = (name: string): string | null => {
+        const ids = nameIndex.get(name.toLowerCase());
+        return ids?.length === 1 ? ids[0] : null;
+    };
+    console.log(`  ${existingFiles.length} existing persons loaded (${nameIndex.size} names/aliases)\n`);
 
     let processed = 0;
     let newPersons = 0;
@@ -820,48 +824,52 @@ async function indexBible(bible: string, options: IndexOptions = {}) {
                     // Skip names we've already rejected
                     if (notPersons.has(nameLower)) continue;
 
-                    // Known person — just add reference
-                    if (nameToFile[nameLower]) {
-                        const added = addReference(nameToFile[nameLower], verse.bookId, verse.chapterId, verse.verseId);
+                    // Known person with this name alone — just add reference
+                    const owner = uniqueOwner(nameLower);
+                    if (owner) {
+                        const added = addReference(personFile(owner), verse.bookId, verse.chapterId, verse.verseId);
                         if (added) refsAdded++;
                         continue;
                     }
 
-                    // Unknown name — check existing files by slug
-                    const matchingFiles = findExistingPersonFiles(rawName, personsDir);
+                    // Shared or unknown name — candidates by name and by slug
+                    const candidates = [...new Set([
+                        ...(nameIndex.get(nameLower) ?? []),
+                        ...findExistingPersonFiles(rawName, personsDir).map(f => path.basename(f, '.json')),
+                    ])];
 
-                    if (matchingFiles.length >= 1) {
-                        // Slug matches but name differs — disambiguate with Claude
-                        const existingPersons = matchingFiles.map((f: string) =>
-                            JSON.parse(fs.readFileSync(path.join(personsDir, f), 'utf-8')) as PersonData
+                    if (candidates.length >= 1) {
+                        // Disambiguate this verse with Claude
+                        const existingPersons = candidates.map(id =>
+                            JSON.parse(fs.readFileSync(personFile(id), 'utf-8')) as PersonData
                         );
                         process.stdout.write(`\n  Disambiguating "${rawName}" — asking Claude...`);
                         const result = await claudeDisambiguate(rawName, verse.text, existingPersons);
 
-                        if (result.existingId) {
-                            // Known person — map name and add reference
-                            const file = path.join(personsDir, `${result.existingId}.json`);
-                            if (fs.existsSync(file)) {
-                                nameToFile[nameLower] = file;
-                                addReference(file, verse.bookId, verse.chapterId, verse.verseId);
-                                refsAdded++;
-                            }
+                        if (result.existingId && fs.existsSync(personFile(result.existingId))) {
+                            // Bare et navn med én kandidat blir et fast oppslag
+                            if (candidates.length === 1) register(nameLower, result.existingId);
+                            addReference(personFile(result.existingId), verse.bookId, verse.chapterId, verse.verseId);
+                            refsAdded++;
                             process.stdout.write(` → ${result.existingId}\n`);
                         } else if (result.isNew && result.disambiguation) {
                             const newId = nameToId(rawName) + '-' + nameToId(result.disambiguation);
                             process.stdout.write(` → new: ${newId}\n`);
                             await generatePerson({id: newId, name: `${rawName} (${result.disambiguation})`});
-                            const file = path.join(personsDir, `${newId}.json`);
-                            if (fs.existsSync(file)) {
-                                nameToFile[nameLower] = file;
-                                addReference(file, verse.bookId, verse.chapterId, verse.verseId);
+                            if (fs.existsSync(personFile(newId))) {
+                                // Navnet har nå flere bærere og disambigueres heretter
+                                register(nameLower, newId);
+                                addReference(personFile(newId), verse.bookId, verse.chapterId, verse.verseId);
                                 refsAdded++;
                             }
                             newPersons++;
-                        } else {
-                            nameToFile[nameLower] = path.join(personsDir, matchingFiles[0]);
-                            addReference(nameToFile[nameLower], verse.bookId, verse.chapterId, verse.verseId);
+                        } else if (candidates.length === 1) {
+                            register(nameLower, candidates[0]);
+                            addReference(personFile(candidates[0]), verse.bookId, verse.chapterId, verse.verseId);
                             refsAdded++;
+                        } else {
+                            // Å gjette den første kandidaten var nettopp feilen i #127
+                            process.stdout.write(` → no answer, skipped (${candidates.join(', ')})\n`);
                         }
                         continue;
                     }
@@ -881,23 +889,22 @@ async function indexBible(bible: string, options: IndexOptions = {}) {
                     const aliases = validation.aliases || [];
                     const aliasFor = validation.aliasFor || null;
                     const id = nameToId(canonicalName);
-                    const file = path.join(personsDir, `${id}.json`);
+                    const file = personFile(id);
 
                     // Check if canonical name, aliasFor, or any alias already exists
                     const allNames = [canonicalName, ...aliases];
                     if (aliasFor) allNames.push(aliasFor);
-                    let existingFile: string | null = null;
+                    let existingId: string | null = null;
                     for (const n of allNames) {
-                        if (nameToFile[n.toLowerCase()]) {
-                            existingFile = nameToFile[n.toLowerCase()];
-                            break;
-                        }
+                        existingId = uniqueOwner(n);
+                        if (existingId) break;
                     }
 
-                    if (existingFile) {
-                        // Map all names/aliases to this file
-                        nameToFile[nameLower] = existingFile;
-                        for (const a of aliases) nameToFile[a.toLowerCase()] = existingFile;
+                    if (existingId) {
+                        const existingFile = personFile(existingId);
+                        // Map all names/aliases to this person
+                        register(nameLower, existingId);
+                        for (const a of aliases) register(a, existingId);
                         addReference(existingFile, verse.bookId, verse.chapterId, verse.verseId);
                         refsAdded++;
                         // Add aliases to the existing file if not already there
@@ -927,9 +934,9 @@ async function indexBible(bible: string, options: IndexOptions = {}) {
                             data.aliases = aliases;
                             fs.writeFileSync(file, JSON.stringify(data, null, 2));
                         }
-                        nameToFile[nameLower] = file;
-                        nameToFile[canonicalName.toLowerCase()] = file;
-                        for (const a of aliases) nameToFile[a.toLowerCase()] = file;
+                        register(nameLower, id);
+                        register(canonicalName, id);
+                        for (const a of aliases) register(a, id);
                         addReference(file, verse.bookId, verse.chapterId, verse.verseId);
                         refsAdded++;
                     }

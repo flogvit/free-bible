@@ -205,3 +205,29 @@ export function nameToId(name: string): string {
         .replace(/[^a-z0-9]+/g, '-')
         .replace(/^-+|-+$/g, '');
 }
+
+/**
+ * Navn (grunnform uten parentes, og hvert alias, i små bokstaver) → id-ene
+ * til personene som bærer det.
+ *
+ * Et navn med flere bærere peker på alle. Det er ikke en oppslagstabell som
+ * kan gi svaret, bare kandidatene — verset må avgjøre hvem det gjelder (#127).
+ * Indekseren hadde ett kart med én fil per navn, og den som ble lest først
+ * fikk hver forekomst: Gideons sønn Jotam satt med kong Jotams vers, og Josef
+ * i Egypt med Marias mann i Matt 1:16.
+ */
+export function personNameIndex(
+    persons: {id: string; name: string; aliases?: string[]}[],
+): Map<string, string[]> {
+    const index = new Map<string, string[]>();
+    for (const p of persons) {
+        const names = [p.name.replace(/\s*\(.*$/, ''), ...(p.aliases ?? [])];
+        for (const name of names) {
+            const key = name.trim().toLowerCase();
+            const ids = index.get(key) ?? [];
+            if (!ids.includes(p.id)) ids.push(p.id);
+            index.set(key, ids);
+        }
+    }
+    return index;
+}

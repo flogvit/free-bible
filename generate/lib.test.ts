@@ -5,7 +5,7 @@
  * Testene her dekker de to stedene som krasjet uleselig på ukjent nøkkel (#112).
  */
 import {test, expect} from 'bun:test';
-import {getRef, resolveBookRange, nameToId} from './lib.js';
+import {getRef, resolveBookRange, nameToId, personNameIndex} from './lib.js';
 
 test('getRef gir referanse for en gyldig bok', () => {
     expect(getRef(43, 3, 16)).toBe('John 3:16');
@@ -60,4 +60,21 @@ test('nameToId beholder disambigueringen i en nøstet parentes', () => {
     // «Mattatias (… sønn av Amos)» med en annen Mattatias. Parentesen BÆRER
     // disambigueringen, så delvis fjerning er det riktige.
     expect(nameToId('Jotam (Jerubbaals (Gideons) yngste sønn)')).toBe('jotam-jerubbaals-yngste-sonn');
+});
+
+test('personNameIndex lar et navn flere deler peke på alle bærerne (#127)', () => {
+    // Indekseren slo opp navnet i et kart med ÉN fil per navn, og den som ble
+    // lest først fikk hver forekomst: Gideons sønn Jotam fikk kong Jotams vers
+    // i Matt 1:9, og byen Hasor fikk Asor i Matt 1:13.
+    const index = personNameIndex([
+        {id: 'jotam-jerubbaals-yngste-sonn', name: 'Jotam (Jerubbaals yngste sønn)'},
+        {id: 'jotam-ussias-sonn', name: 'Jotam (Ussias sønn)'},
+        {id: 'amon-byens-overste', name: 'Amon (byens øverste)', aliases: ['Amis', 'Amon']},
+        {id: 'amon', name: 'Amon (Manasses sønn)'},
+        {id: 'abraham', name: 'Abraham', aliases: ['Abram']},
+    ]);
+    expect(index.get('jotam')).toEqual(['jotam-jerubbaals-yngste-sonn', 'jotam-ussias-sonn']);
+    expect(index.get('amon')).toEqual(['amon-byens-overste', 'amon']);
+    expect(index.get('abram')).toEqual(['abraham']);
+    expect(index.get('abraham')).toEqual(['abraham']);
 });
