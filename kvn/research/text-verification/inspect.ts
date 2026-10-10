@@ -8,7 +8,7 @@
  *
  *   bun inspect.ts <verdict-fil> [--misses] [--n 15]
  */
-import { readFileSync, readdirSync, existsSync } from 'fs';
+import { readFileSync, readdirSync } from 'fs';
 import { join, dirname } from 'path';
 import { fileURLToPath } from 'url';
 

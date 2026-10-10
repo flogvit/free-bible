@@ -67,15 +67,6 @@ function getSongText(song: Song): string {
     return song.verses.map(v => v.text).join('\n\n');
 }
 
-/** Look up a verse from osmain. Returns null if not found. */
-function lookupVerse(bookId: number, chapter: number, verse: number): string | null {
-    const chapterFile = path.join(OSMAIN_DIR, String(bookId), `${chapter}.json`);
-    if (!fs.existsSync(chapterFile)) return null;
-    const data: Chapter = JSON.parse(fs.readFileSync(chapterFile, 'utf-8'));
-    const v = data.find(d => d.verseId === verse);
-    return v ? v.text : null;
-}
-
 /** Look up a range of verses. */
 function lookupVerses(bookId: number, chapter: number, verseStart: number, verseEnd: number): LookedUpVerse[] {
     const chapterFile = path.join(OSMAIN_DIR, String(bookId), `${chapter}.json`);
@@ -423,27 +414,6 @@ function normalizeStep2(result: any): Step2Result {
 
 // ── Step 1: Get initial references ───────────────────────────────────────────
 
-const step1Schema = {
-    type: 'object',
-    properties: {
-        references: {
-            type: 'array',
-            items: {
-                type: 'object',
-                properties: {
-                    line: { type: 'string' },
-                    verse: { type: 'string' },
-                    confidence: { type: 'string', enum: ['high', 'medium', 'low'] },
-                    reason: { type: 'string' },
-                },
-                required: ['verse', 'confidence', 'reason'],
-            },
-        },
-        themes: { type: 'array', items: { type: 'string' } },
-    },
-    required: ['references', 'themes'],
-};
-
 async function step1_identifyReferences(song: Song): Promise<Step1Result> {
     const text = getSongText(song);
     const lang = song.language === 'en' ? 'English' : 'Norwegian';
@@ -475,29 +445,6 @@ Svar med JSON i dette eksakte formatet:
 }
 
 // ── Step 2: Verify with actual verses ────────────────────────────────────────
-
-const step2Schema = {
-    type: 'object',
-    properties: {
-        references: {
-            type: 'array',
-            items: {
-                type: 'object',
-                properties: {
-                    bookId: { type: 'number' },
-                    chapter: { type: 'number' },
-                    verseStart: { type: 'number' },
-                    verseEnd: { type: 'number' },
-                    confidence: { type: 'string', enum: ['high', 'medium', 'low'] },
-                    reason: { type: 'string' },
-                },
-                required: ['bookId', 'chapter', 'verseStart', 'verseEnd', 'confidence', 'reason'],
-            },
-        },
-        themes: { type: 'array', items: { type: 'string' } },
-    },
-    required: ['references', 'themes'],
-};
 
 /**
  * Ett oppslag før verifiseringen. Feltene er valgfrie fordi to ulike former

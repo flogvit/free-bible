@@ -12,7 +12,7 @@
  * Flaggene går gjennom den felles kontrakten i generate/cli.ts; `--help` viser dem.
  */
 
-import { readFileSync, readdirSync, existsSync, statSync, writeFileSync, mkdirSync } from 'fs';
+import { readFileSync, existsSync, writeFileSync, mkdirSync } from 'fs';
 import { join } from 'path';
 import { parseArgs, formatHelp, COMMON_FLAGS } from '../../generate/cli.js';
 import type { FlagSpec } from '../../generate/cli.js';

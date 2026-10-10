@@ -64,26 +64,11 @@ function formatDate(date: Date): string {
     return `${y}-${m}-${d}`;
 }
 
-// Find the Sunday closest to a given date
-function nearestSunday(date: Date): Date {
-    const day = date.getDay(); // 0=Sun
-    if (day === 0) return new Date(date);
-    if (day <= 3) return addDays(date, -day);
-    return addDays(date, 7 - day);
-}
-
 // Find first Sunday on or after a given date
 function sundayOnOrAfter(date: Date): Date {
     const day = date.getDay();
     if (day === 0) return new Date(date);
     return addDays(date, 7 - day);
-}
-
-// Find last Sunday before a given date
-function sundayBefore(date: Date): Date {
-    const day = date.getDay();
-    if (day === 0) return addDays(date, -7);
-    return addDays(date, -day);
 }
 
 // Fixed date, returns same date every year

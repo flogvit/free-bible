@@ -511,7 +511,6 @@ function tryDeterministicMapping(
         // Find the osnb chapter(s) that contain the overflow
         // E.g., Mal 4 missing → Mal 3 in osnb has extra verses
         const firstCh = chapters[0];
-        const lastCh = chapters[chapters.length - 1];
 
         // Check if previous chapter absorbs the overflow
         const prevKey = `${bookId}-${firstCh - 1}`;

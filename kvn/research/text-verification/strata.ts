@@ -11,7 +11,7 @@
  *
  *   bun strata.ts [verdict-fil ...]
  */
-import { readFileSync, readdirSync, existsSync } from 'fs';
+import { readFileSync, readdirSync } from 'fs';
 import { join, dirname } from 'path';
 import { fileURLToPath } from 'url';
 

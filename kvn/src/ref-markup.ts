@@ -1,4 +1,4 @@
-import { BOOK_IDS, BOOK_NAMES, encode, decode } from './types.js';
+import { BOOK_IDS, BOOK_NAMES } from './types.js';
 
 // ============================================================
 // Ref markup format: [ref:BOK KAPITTEL:VERS@SYSTEM|VISNINGSTEKST]

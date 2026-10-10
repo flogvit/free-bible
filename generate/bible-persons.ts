@@ -6,7 +6,7 @@ import {fileURLToPath} from 'url';
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 
-import {books, normalizeLanguage, getLanguageCode, getBookName, anthropicModel, ollamaModel} from "./constants.js";
+import {books, getBookName, anthropicModel, ollamaModel} from "./constants.js";
 import {callWithRetry, callOllamaRaw} from "./llm.js";
 import {nameToId, personNameIndex} from "./lib.js";
 import {parseArgs, formatHelp, COMMON_FLAGS} from './cli.js';
@@ -261,38 +261,6 @@ const personsList = [
     { id: "adam", name: "Adam", searchTerms: ["Adam"] },
     { id: "eva", name: "Eva", searchTerms: ["Eva"] },
 ];
-
-// Roles in Norwegian
-const roles = {
-    prophet: "profet",
-    king: "konge",
-    judge: "dommer",
-    priest: "prest",
-    apostle: "apostel",
-    disciple: "disippel",
-    leader: "leder",
-    matriarch: "matriark",
-    patriarch: "patriark",
-    martyr: "martyr",
-    warrior: "kriger",
-    wiseman: "vismann"
-};
-
-// Eras (linked to timeline periods)
-const eras = {
-    creation: "Skapelsen",
-    patriarchs: "Patriarkene",
-    exodus: "Utgang fra Egypt",
-    conquest: "Erobringen",
-    judges: "Dommertiden",
-    "united-kingdom": "Det forente kongerike",
-    "divided-kingdom": "Det delte kongerike",
-    exile: "Eksilet",
-    return: "Tilbakekomsten",
-    intertestamental: "Mellomtestamentlig tid",
-    jesus: "Jesu tid",
-    "early-church": "Den tidlige kirke"
-};
 
 const PERSON_SCHEMA = {
     type: "object",

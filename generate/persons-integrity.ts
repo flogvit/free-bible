@@ -212,7 +212,6 @@ function prefixCandidates(slug: string): string[] {
 
 // --- collect references with context --------------------------------------
 
-const RELS = ['father', 'mother', 'spouse', 'siblings', 'children'];
 const refs = new Map<string, RefInfo>(); // slug -> { count, refBy: [{id, rel}] }
 // `slug` og `byId` tar imot `undefined` fordi feltene i `family` er valgfrie;
 // vakten på første linje er den som allerede håndterer det.

@@ -11,7 +11,7 @@
  * Skriver kvn/research/text-verification/verdicts/<konfig>.json:
  *   { config, cases: [{id, tr, kind, flag}] }
  */
-import { readFileSync, writeFileSync, existsSync, mkdirSync, readdirSync } from 'fs';
+import { readFileSync, writeFileSync, existsSync, mkdirSync } from 'fs';
 import { join, dirname } from 'path';
 import { fileURLToPath } from 'url';
 

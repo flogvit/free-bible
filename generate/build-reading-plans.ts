@@ -11,7 +11,7 @@
 import fs from 'fs';
 import path from 'path';
 import { fileURLToPath } from 'url';
-import { bookRanges, getChaptersForRange, getChaptersForBooks, resolveBookRange } from './lib.js';
+import { getChaptersForRange, getChaptersForBooks, resolveBookRange } from './lib.js';
 import type { BookRange, ChapterRef } from './lib.js';
 import { planDefinitions, categoryOrder } from './reading-plans-config.js';
 import { parseArgs, formatHelp, COMMON_FLAGS } from './cli.js';

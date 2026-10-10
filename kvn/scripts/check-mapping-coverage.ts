@@ -32,7 +32,7 @@ import { readFileSync, writeFileSync, existsSync, readdirSync } from 'fs';
 import { join, dirname } from 'path';
 import { fileURLToPath } from 'url';
 import { loadUkvnMapping, listUkvnMappings } from '../src/ukvn-loader.js';
-import { ukvnEncode, ukvnDecode, UKVN_PART_SIZE } from '../src/ukvn-types.js';
+import { ukvnEncode, ukvnDecode } from '../src/ukvn-types.js';
 import { UkvnMapper } from '../src/ukvn-mapper.js';
 import { parseArgs, formatHelp, COMMON_FLAGS } from '../../generate/cli.js';
 import type { FlagSpec } from '../../generate/cli.js';

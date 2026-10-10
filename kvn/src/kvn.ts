@@ -1,4 +1,4 @@
-import { encode, decode, formatKvn, BOOK_IDS, BOOK_NAMES } from './types.js';
+import { encode, decode, BOOK_IDS, BOOK_NAMES } from './types.js';
 import type { KvnMappingFile, MaxVerseProvider } from './types.js';
 
 /**

@@ -6,7 +6,7 @@
  * Flaggene går gjennom den felles kontrakten i generate/cli.ts; `--help` viser dem.
  */
 
-import { readFileSync, readdirSync, existsSync, statSync, writeFileSync } from 'fs';
+import { readFileSync, readdirSync, statSync, writeFileSync } from 'fs';
 import { join } from 'path';
 import { parseArgs, formatHelp, COMMON_FLAGS } from '../../generate/cli.js';
 import type { FlagSpec } from '../../generate/cli.js';

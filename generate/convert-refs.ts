@@ -526,7 +526,6 @@ function validateConvertedRefs(filepath: string): ValidationError[] {
 
   while ((match = refRegex.exec(content)) !== null) {
     const refPart = match[1].trim();
-    const displayText = match[2];
 
     // Extract book abbreviation
     let remaining = refPart;

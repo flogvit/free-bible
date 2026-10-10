@@ -11,7 +11,7 @@
  * Flaggene går gjennom den felles kontrakten i generate/cli.ts; `--help` viser dem.
  */
 
-import { readFileSync, readdirSync, existsSync, statSync, writeFileSync } from 'fs';
+import { readFileSync, readdirSync, statSync, writeFileSync } from 'fs';
 import { join } from 'path';
 import { parseArgs, formatHelp, COMMON_FLAGS } from '../../generate/cli.js';
 import type { FlagSpec } from '../../generate/cli.js';
@@ -39,16 +39,6 @@ const M_ch = MAX_CHAPTER_SPACED * M_v;
 
 function encode(book: number, chapter: number, verse: number, part = 0): number {
   return (book * 10) * M_ch + (chapter * 10) * M_v + (verse * 10) * PART_SIZE + part;
-}
-
-function decode(kvn: number): { book: number; chapter: number; verse: number; part: number } {
-  const part = kvn % PART_SIZE;
-  let rest = (kvn - part) / PART_SIZE;
-  const verseSpaced = rest % MAX_VERSE_SPACED;
-  rest = (rest - verseSpaced) / MAX_VERSE_SPACED;
-  const chapterSpaced = rest % MAX_CHAPTER_SPACED;
-  const bookSpaced = (rest - chapterSpaced) / MAX_CHAPTER_SPACED;
-  return { book: bookSpaced / 10, chapter: chapterSpaced / 10, verse: verseSpaced / 10, part };
 }
 
 // === Book name mapping (DNB2011 Norwegian names → book IDs) ===

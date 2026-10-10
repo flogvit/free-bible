@@ -6,7 +6,7 @@
  */
 import {test, expect} from 'bun:test';
 import {parseArgs, formatHelp, COMMON_FLAGS} from './cli.js';
-import type {FlagSpec, Range} from './cli.js';
+import type {FlagSpec} from './cli.js';
 
 const SPEC: Record<string, FlagSpec> = {
     ...COMMON_FLAGS,

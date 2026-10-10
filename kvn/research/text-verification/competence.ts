@@ -22,7 +22,7 @@
  *
  *   bun competence.ts <oversettelse[,oversettelse...]> [--n 40] [--model gemma4:31b]
  */
-import { readFileSync, writeFileSync, existsSync, readdirSync, mkdirSync } from 'fs';
+import { readFileSync, writeFileSync, existsSync } from 'fs';
 import { join, dirname } from 'path';
 import { fileURLToPath } from 'url';
 import type { Chapter } from '../../src/bible-types.js';

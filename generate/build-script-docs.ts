@@ -52,7 +52,7 @@ function purpose(src: string): string {
     if (!block) return '';
     const text = block[1]
         .split('\n')
-        .map(l => l.replace(/^\s*\*ateral?\s?/, '').replace(/^\s*\*\s?/, '').trim())
+        .map(l => l.replace(/^\s*\*\s?/, '').trim())
         .filter(l => l && !l.startsWith('Usage:') && !l.startsWith('Bruk:') && !l.startsWith('bun '))
         .join(' ')
         .trim();
