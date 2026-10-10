@@ -9,6 +9,7 @@ const __dirname = path.dirname(__filename);
 import {books, getBookName} from './constants.js';
 import {callWithRetry} from './llm.js';
 import {parseArgs, formatHelp, COMMON_FLAGS} from './cli.js';
+import {fileExists} from './lib.js';
 import type {FlagSpec, Range} from './cli.js';
 import type {Chapter} from '../kvn/src/bible-types.js';
 
@@ -397,10 +398,6 @@ const PROOFREAD_SCHEMA = {
 };
 
 // --- File helpers ---
-
-function fileExists(filepath: string): boolean {
-    return fs.existsSync(filepath) && fs.statSync(filepath).size > 0;
-}
 
 function ensureDir(dir: string): void {
     if (!fs.existsSync(dir)) fs.mkdirSync(dir, {recursive: true});

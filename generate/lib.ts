@@ -25,16 +25,46 @@ export interface ChapterRef {
  */
 const cache: Record<string, Chapter> = {}
 
+function readCached(filename: string): Chapter {
+    if (!(filename in cache)) cache[filename] = JSON.parse(fs.readFileSync(filename, 'utf-8'));
+    return cache[filename];
+}
+
+/** Grunnteksten et kapittel oversettes fra: hebraisk for GT, SBLGNT for NT. */
+export function getOriginalSource(bookId: number): string {
+    return bookId <= 39 ? 'hebrew' : 'sblgnt';
+}
+
+function rawChapterFile(bible: string, bookId: number, chapterId: number): string {
+    return path.join(__dirname, "bibles_raw", bible, `${bookId}`, `${chapterId}.json`);
+}
+
+/** `bibles_raw/<bible>/<bok>/<kapittel>.json`, eller `null` når kapitlet ikke finnes. */
+export function readRawChapter(bible: string, bookId: number, chapterId: number): Chapter | null {
+    const filename = rawChapterFile(bible, bookId, chapterId);
+    if (!fs.existsSync(filename)) return null;
+    return JSON.parse(fs.readFileSync(filename, 'utf-8'));
+}
+
+/** Kapitlet som `vers: tekst`-linjer — formen promptene får det i. `null` når det mangler. */
+export function readChapterText(bible: string, bookId: number, chapterId: number): string | null {
+    const verses = readRawChapter(bible, bookId, chapterId);
+    return verses && verses.map(v => `${v.verseId}: ${v.text}`).join('\n');
+}
+
+/** Finnes fila, og har den innhold? En tom fil regnes som ikke skrevet. */
+export function fileExists(filepath: string): boolean {
+    return fs.existsSync(filepath) && fs.statSync(filepath).size > 0;
+}
+
+/** Lager katalogen fila skal ligge i. */
+export function ensureParentDir(filepath: string): void {
+    const dir = path.dirname(filepath);
+    if (!fs.existsSync(dir)) fs.mkdirSync(dir, {recursive: true});
+}
+
 export function getOriginalVerse(bookId: number, chapterId: number, verseId: number): Verse | undefined {
-    let filename = ""
-    if (bookId<40) {
-        filename = path.join(__dirname, "bibles_raw", "hebrew", `${bookId}`, `${chapterId}.json`)
-    } else {
-        filename = path.join(__dirname, "bibles_raw", "sblgnt", `${bookId}`, `${chapterId}.json`)
-    }
-    const verses: Chapter = cache[filename] ? cache[filename] : JSON.parse(fs.readFileSync(filename, 'utf-8'));
-    if (!(filename in cache))
-        cache[filename] = verses
+    const verses = readCached(rawChapterFile(getOriginalSource(bookId), bookId, chapterId));
     return verses.find( verse => +verse.bookId===+bookId && +verse.chapterId===+chapterId && +verse.verseId===+verseId)
 }
 
@@ -48,39 +78,18 @@ export function getRef(bookId: number, chapterId: number, verseId: number): stri
 }
 
 export function getOriginalChapter(bookId: number, chapterId: number): Chapter {
-    let filename = ""
-    if (bookId<40) {
-        filename = path.join(__dirname, "bibles_raw", "hebrew", `${bookId}`, `${chapterId}.json`)
-    } else {
-        filename = path.join(__dirname, "bibles_raw", "sblgnt", `${bookId}`, `${chapterId}.json`)
-    }
-    const verses: Chapter = cache[filename] ? cache[filename] : JSON.parse(fs.readFileSync(filename, 'utf-8'));
-    if (!(filename in cache))
-        cache[filename] = verses
+    const verses = readCached(rawChapterFile(getOriginalSource(bookId), bookId, chapterId));
     return verses.filter( verse => +verse.bookId===+bookId && +verse.chapterId===+chapterId)
-}
-
-/**
- * Get osnb verse text by bookId, chapterId, verseId.
- * Returns { bookId, chapterId, verseId, text } or null.
- */
-export function getOsnb2Verse(bookId: number, chapterId: number, verseId: number): Verse | null {
-    const filename = path.join(__dirname, "bibles_raw", "osnb", `${bookId}`, `${chapterId}.json`);
-    if (!fs.existsSync(filename)) return null;
-    const verses: Chapter = cache[filename] ? cache[filename] : JSON.parse(fs.readFileSync(filename, 'utf-8'));
-    if (!(filename in cache)) cache[filename] = verses;
-    return verses.find(v => +v.bookId === +bookId && +v.chapterId === +chapterId && +v.verseId === +verseId) || null;
 }
 
 /**
  * Get osnb verses in a range [verseStart..verseEnd] for a chapter.
  * Returns array of { bookId, chapterId, verseId, text }.
  */
-export function getOsnb2VerseRange(bookId: number, chapterId: number, verseStart: number, verseEnd: number): Chapter {
-    const filename = path.join(__dirname, "bibles_raw", "osnb", `${bookId}`, `${chapterId}.json`);
+export function getOsnbVerseRange(bookId: number, chapterId: number, verseStart: number, verseEnd: number): Chapter {
+    const filename = rawChapterFile("osnb", bookId, chapterId);
     if (!fs.existsSync(filename)) return [];
-    const verses: Chapter = cache[filename] ? cache[filename] : JSON.parse(fs.readFileSync(filename, 'utf-8'));
-    if (!(filename in cache)) cache[filename] = verses;
+    const verses = readCached(filename);
     return verses.filter(v => +v.bookId === +bookId && +v.chapterId === +chapterId && +v.verseId >= verseStart && +v.verseId <= verseEnd);
 }
 

@@ -41,6 +41,7 @@ import {bibles, books, getTaskModel, getLanguageCode} from './constants.js';
 import {callWithRetry, resolveLocalModel} from './llm.js';
 import {loadUkvnMapping, UkvnMapper, CrossMapper, ukvnEncode, ukvnDecode} from '../kvn/src/ukvn.js';
 import {parseArgs, formatHelp, COMMON_FLAGS} from './cli.js';
+import {getOriginalSource} from './lib.js';
 import type {FlagSpec, Range} from './cli.js';
 import type {Book} from './constants.js';
 import type {Chapter, Verse} from '../kvn/src/bible-types.js';
@@ -363,10 +364,6 @@ ${peerText ? `\nAnother ${language} translation:\n${peerText}\n` : ''}${referenc
 }
 
 // --- core ---
-
-function getOriginalSource(bookId: number): string {
-    return bookId <= 39 ? 'hebrew' : 'sblgnt';
-}
 
 /**
  * `T` er formen kalleren vet fila har. Innholdet valideres ikke — funksjonen

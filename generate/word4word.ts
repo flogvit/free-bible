@@ -7,6 +7,7 @@ import Anthropic from '@anthropic-ai/sdk';
 import {bibles, books, anthropicModel, maxTokens, normalizeLanguage, getLanguageCode} from "./constants.js";
 import type {Chapter} from '../kvn/src/bible-types.js';
 import {parseArgs, formatHelp, COMMON_FLAGS} from './cli.js';
+import {getOriginalSource} from './lib.js';
 import type {FlagSpec, Range} from './cli.js';
 
 const anthropic = new Anthropic();
@@ -155,10 +156,6 @@ function isOriginalSource(bible: string): boolean {
 // Get original language based on book ID
 function getOriginalLanguage(bookId: number): string {
     return bookId <= 39 ? 'Hebrew' : 'Greek';
-}
-
-function getOriginalSource(bookId: number): string {
-    return bookId <= 39 ? 'hebrew' : 'sblgnt';
 }
 
 // Word explanation prompt for ORIGINAL language texts (tanach/sblgnt)

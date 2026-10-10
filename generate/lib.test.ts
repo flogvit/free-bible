@@ -2,10 +2,17 @@
  * bun test
  *
  * `lib.ts` er den delte modulen — en dårlig verdi herfra treffer mange skript.
- * Testene her dekker de to stedene som krasjet uleselig på ukjent nøkkel (#112).
+ * Testene her dekker de to stedene som krasjet uleselig på ukjent nøkkel (#112),
+ * og fil-hjelperne som før lå som en kopi i hvert skript (#128).
  */
 import {test, expect} from 'bun:test';
-import {getRef, resolveBookRange, nameToId, personNameIndex} from './lib.js';
+import * as fs from 'fs';
+import * as os from 'os';
+import path from 'path';
+import {
+    getRef, resolveBookRange, nameToId, personNameIndex,
+    getOriginalSource, readRawChapter, readChapterText, fileExists, ensureParentDir,
+} from './lib.js';
 
 test('getRef gir referanse for en gyldig bok', () => {
     expect(getRef(43, 3, 16)).toBe('John 3:16');
@@ -77,4 +84,38 @@ test('personNameIndex lar et navn flere deler peke på alle bærerne (#127)', ()
     expect(index.get('amon')).toEqual(['amon-byens-overste', 'amon']);
     expect(index.get('abram')).toEqual(['abraham']);
     expect(index.get('abraham')).toEqual(['abraham']);
+});
+
+test('getOriginalSource: hebraisk til og med Malaki, SBLGNT fra Matteus', () => {
+    expect(getOriginalSource(1)).toBe('hebrew');
+    expect(getOriginalSource(39)).toBe('hebrew');
+    expect(getOriginalSource(40)).toBe('sblgnt');
+    expect(getOriginalSource(66)).toBe('sblgnt');
+});
+
+test('readChapterText gir «vers: tekst»-linjer, og null når kapitlet mangler', () => {
+    const verses = readRawChapter('hebrew', 1, 1)!;
+    const text = readChapterText('hebrew', 1, 1)!;
+    expect(text.split('\n')).toHaveLength(verses.length);
+    expect(text.split('\n')[0]).toBe(`1: ${verses[0].text}`);
+    // 1 Mos har 50 kapitler.
+    expect(readRawChapter('hebrew', 1, 51)).toBeNull();
+    expect(readChapterText('hebrew', 1, 51)).toBeNull();
+});
+
+test('fileExists regner en tom fil som ikke skrevet, og ensureParentDir lager katalogen', () => {
+    const dir = fs.mkdtempSync(path.join(os.tmpdir(), 'lib-test-'));
+    try {
+        const file = path.join(dir, 'a', 'b', 'c.json');
+        expect(fileExists(file)).toBe(false);
+        ensureParentDir(file);
+        expect(fs.statSync(path.dirname(file)).isDirectory()).toBe(true);
+        ensureParentDir(file); // finnes fra før: ingen feil
+        fs.writeFileSync(file, '');
+        expect(fileExists(file)).toBe(false);
+        fs.writeFileSync(file, '[]');
+        expect(fileExists(file)).toBe(true);
+    } finally {
+        fs.rmSync(dir, {recursive: true, force: true});
+    }
 });

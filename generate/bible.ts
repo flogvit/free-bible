@@ -7,6 +7,7 @@ import {createHash} from 'crypto';
 import Anthropic from '@anthropic-ai/sdk';
 import {bibles, books, bibleModel, anthropicPrices, maxTokens, getBibleStyle} from "./constants.js";
 import {parseArgs, formatHelp, COMMON_FLAGS} from './cli.js';
+import {getOriginalSource} from './lib.js';
 import type {FlagSpec, Range} from './cli.js';
 import type {
     Verse,
@@ -655,10 +656,6 @@ export async function doAnthropicCallWithRetry<T>(content: string, schema: JsonS
 function chapterLabel(bookId: number, chapterId: number): string {
     const book = books.find(b => b.id === bookId);
     return `${book ? book.name : `Book ${bookId}`} ${chapterId}`;
-}
-
-function getOriginalSource(bookId: number): string {
-    return bookId <= 39 ? 'hebrew' : 'sblgnt';
 }
 
 export function readOriginalText(bookId: number, chapterId: number, existingVerses: Chapter = []): Chapter {

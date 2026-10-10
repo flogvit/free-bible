@@ -9,6 +9,7 @@ const __dirname = path.dirname(__filename);
 import Anthropic from '@anthropic-ai/sdk';
 import {books, anthropicModel, maxTokens, getBookName} from "./constants.js";
 import {parseArgs, formatHelp, COMMON_FLAGS} from './cli.js';
+import {fileExists, ensureParentDir} from './lib.js';
 import type {FlagSpec} from './cli.js';
 import type {Chapter, Verse} from '../kvn/src/bible-types.js';
 
@@ -159,17 +160,6 @@ const GENERATE_STORIES_SCHEMA = {
 };
 
 // --- Helpers ---
-
-function fileExists(filepath: string): boolean {
-    return fs.existsSync(filepath) && fs.statSync(filepath).size > 0;
-}
-
-function ensureDir(filepath: string): void {
-    const dir = path.dirname(filepath);
-    if (!fs.existsSync(dir)) {
-        fs.mkdirSync(dir, {recursive: true});
-    }
-}
 
 function getOsnb2Verses(bookId: number, chapterId: number): Chapter {
     const filepath = path.join(OSNB_DIR, `${bookId}`, `${chapterId}.json`);
@@ -322,7 +312,7 @@ async function proofreadStory(story: Story, filename: string): Promise<StoryProo
 
     // Save proofread result
     const proofreadFile = path.join(PROOFREAD_DIR, filename);
-    ensureDir(proofreadFile);
+    ensureParentDir(proofreadFile);
     fs.writeFileSync(proofreadFile, JSON.stringify(result, null, 2));
 
     // Print summary
@@ -492,7 +482,7 @@ async function generateStories(existingTitles: string[], category: string | null
         }
 
         const filename = path.join(STORIES_DIR, `${story.slug}.json`);
-        ensureDir(filename);
+        ensureParentDir(filename);
         fs.writeFileSync(filename, JSON.stringify(story, null, 2));
         console.log(`  Created: ${story.slug}.json — ${story.title}`);
         saved++;

@@ -9,8 +9,8 @@ const __dirname = path.dirname(__filename);
 import {books, normalizeLanguage, getLanguageCode, getBookName} from "./constants.js";
 import {callWithRetry} from "./llm.js";
 import {parseArgs, formatHelp, COMMON_FLAGS} from './cli.js';
+import {getOriginalSource, readChapterText, ensureParentDir} from './lib.js';
 import type {FlagSpec, Range} from './cli.js';
-import type {Chapter} from '../kvn/src/bible-types.js';
 
 let useLocal = false;
 
@@ -164,23 +164,6 @@ const PROOFREAD_SCHEMA = {
     additionalProperties: false
 };
 
-// === Read chapter text ===
-
-function readTranslatedChapter(bible: string, bookId: number, chapterId: number): string | null {
-    const file = path.join(__dirname, `bibles_raw/${bible}/${bookId}/${chapterId}.json`);
-    if (!fs.existsSync(file)) return null;
-    const verses: Chapter = JSON.parse(fs.readFileSync(file, 'utf-8'));
-    return verses.map(v => `${v.verseId}: ${v.text}`).join('\n');
-}
-
-function readOriginalChapter(bookId: number, chapterId: number): string | null {
-    const source = bookId <= 39 ? 'hebrew' : 'sblgnt';
-    const file = path.join(__dirname, `bibles_raw/${source}/${bookId}/${chapterId}.json`);
-    if (!fs.existsSync(file)) return null;
-    const verses: Chapter = JSON.parse(fs.readFileSync(file, 'utf-8'));
-    return verses.map(v => `${v.verseId}: ${v.text}`).join('\n');
-}
-
 // === Prompts ===
 
 function getTagPrompt(langCode: string, bookName: string, chapterId: number, chapterText: string, days: DayDefinition[]): string {
@@ -305,11 +288,6 @@ ${chapterText}`;
 
 // === File I/O ===
 
-function ensureDir(filepath: string): void {
-    const dir = path.dirname(filepath);
-    if (!fs.existsSync(dir)) fs.mkdirSync(dir, {recursive: true});
-}
-
 function getTagFile(langCode: string, bookId: number, chapterId: number): string {
     return path.join(__dirname, `day_tags/${langCode}/${bookId}/${chapterId}.json`);
 }
@@ -377,8 +355,8 @@ function removeDayReferences(langCode: string, bookId: number, chapterId: number
 async function tagChapter(langCode: string, bible: string, bookId: number, chapterId: number, days: DayDefinition[], options: Partial<DayTagOptions> = {}): Promise<ChapterDayTags | null> {
     const bookName = getBookName(bookId, options.language || 'Norwegian bokmål');
 
-    let chapterText = readTranslatedChapter(bible, bookId, chapterId);
-    if (!chapterText) chapterText = readOriginalChapter(bookId, chapterId);
+    let chapterText = readChapterText(bible, bookId, chapterId);
+    if (!chapterText) chapterText = readChapterText(getOriginalSource(bookId), bookId, chapterId);
     if (!chapterText) return null;
 
     const prompt = getTagPrompt(langCode, bookName, chapterId, chapterText, days);
@@ -392,7 +370,7 @@ async function tagChapter(langCode: string, bible: string, bookId: number, chapt
 
     // Save per-chapter tag file
     const tagFile = getTagFile(langCode, bookId, chapterId);
-    ensureDir(tagFile);
+    ensureParentDir(tagFile);
     fs.writeFileSync(tagFile, JSON.stringify(result, null, 2));
 
     // Update day reference files
@@ -414,8 +392,8 @@ async function proofreadChapter(langCode: string, bible: string, bookId: number,
     if (!currentTags.days || currentTags.days.length === 0) return {score: 10, issues: [], revised: []};
 
     const bookName = getBookName(bookId, options.language || 'Norwegian bokmål');
-    let chapterText = readTranslatedChapter(bible, bookId, chapterId);
-    if (!chapterText) chapterText = readOriginalChapter(bookId, chapterId);
+    let chapterText = readChapterText(bible, bookId, chapterId);
+    if (!chapterText) chapterText = readChapterText(getOriginalSource(bookId), bookId, chapterId);
     if (!chapterText) return null;
 
     const prompt = getProofreadPrompt(langCode, bookName, chapterId, chapterText, currentTags, days);
@@ -423,7 +401,7 @@ async function proofreadChapter(langCode: string, bible: string, bookId: number,
 
     if (!options.apply) {
         const proofFile = getProofreadFile(langCode, bookId, chapterId);
-        ensureDir(proofFile);
+        ensureParentDir(proofFile);
         fs.writeFileSync(proofFile, JSON.stringify(result, null, 2));
     }
 

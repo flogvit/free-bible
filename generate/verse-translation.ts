@@ -9,6 +9,7 @@ const __dirname = path.dirname(__filename);
 import Anthropic from '@anthropic-ai/sdk';
 import {bibles, books, anthropicModel, maxTokens, getBookName} from "./constants.js";
 import {parseArgs, formatHelp, COMMON_FLAGS} from './cli.js';
+import {fileExists, getOriginalSource, readRawChapter} from './lib.js';
 import type {FlagSpec, Range} from './cli.js';
 import type {Chapter, Verse} from '../kvn/src/bible-types.js';
 
@@ -152,31 +153,6 @@ const EXPLANATION_PROOFREAD_SCHEMA = {
     required: ["issues", "summary", "score"],
     additionalProperties: false
 };
-
-function getOriginalSource(bookId: number): string {
-    return bookId <= 39 ? 'hebrew' : 'sblgnt';
-}
-
-function readOriginalChapter(bookId: number, chapterId: number): Chapter | null {
-    const source = getOriginalSource(bookId);
-    const sourceFile = path.join(__dirname, `bibles_raw/${source}/${bookId}/${chapterId}.json`);
-
-    if (!fs.existsSync(sourceFile)) {
-        return null;
-    }
-
-    return JSON.parse(fs.readFileSync(sourceFile, 'utf-8'));
-}
-
-function readTranslatedChapter(bible: string, bookId: number, chapterId: number): Chapter | null {
-    const translationFile = path.join(__dirname, `bibles_raw/${bible}/${bookId}/${chapterId}.json`);
-
-    if (!fs.existsSync(translationFile)) {
-        return null;
-    }
-
-    return JSON.parse(fs.readFileSync(translationFile, 'utf-8'));
-}
 
 function getExplanationPrompt(language: string, bookId: number, chapterId: number, originalVerses: Chapter, translatedVerses: Chapter): string {
     const originalLanguage = bookId <= 39 ? 'hebraisk' : 'gresk';
@@ -541,10 +517,6 @@ function applyProofreadChanges(bible: string, bookId: number, chapterId: number,
     }
 }
 
-function fileExists(filepath: string): boolean {
-    return fs.existsSync(filepath) && fs.statSync(filepath).size > 0;
-}
-
 function readExistingExplanations(filepath: string): VerseExplanation[] {
     if (fileExists(filepath)) {
         return JSON.parse(fs.readFileSync(filepath, 'utf-8')) as VerseExplanation[];
@@ -557,13 +529,13 @@ async function generateExplanations(bible: string, bookId: number, chapterId: nu
     const bookName = getBookName(bookId, 'nb');
 
     // Read original and translated texts
-    const originalVerses = readOriginalChapter(bookId, chapterId);
+    const originalVerses = readRawChapter(getOriginalSource(bookId), bookId, chapterId);
     if (!originalVerses) {
         console.log(`Skipping ${bookName} ${chapterId} (no original text found)`);
         return;
     }
 
-    const translatedVerses = readTranslatedChapter(bible, bookId, chapterId);
+    const translatedVerses = readRawChapter(bible, bookId, chapterId);
     if (!translatedVerses) {
         console.log(`Skipping ${bookName} ${chapterId} (no translation found for ${bible})`);
         return;

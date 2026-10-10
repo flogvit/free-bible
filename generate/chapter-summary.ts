@@ -9,8 +9,8 @@ const __dirname = path.dirname(__filename);
 import {books, normalizeLanguage, getLanguageCode, getBookName} from "./constants.js";
 import {callWithRetry} from "./llm.js";
 import {parseArgs, formatHelp, COMMON_FLAGS} from './cli.js';
+import {fileExists, getOriginalSource, readChapterText} from './lib.js';
 import type {FlagSpec, Range} from './cli.js';
-import type {Chapter} from '../kvn/src/bible-types.js';
 
 let useLocal = false;
 
@@ -97,23 +97,12 @@ const PROOFREAD_SUMMARY_SCHEMA = {
     additionalProperties: false
 };
 
-// Get original source based on book ID
-function getOriginalSource(bookId: number): string {
-    return bookId <= 39 ? 'hebrew' : 'sblgnt';
-}
-
 // Read original chapter text from bibles_raw
 function readOriginalChapter(bookId: number, chapterId: number): string | null {
     const source = getOriginalSource(bookId);
-    const sourceFile = path.join(__dirname, `bibles_raw/${source}/${bookId}/${chapterId}.json`);
-
-    if (!fs.existsSync(sourceFile)) {
-        console.error(`Original source not found: ${sourceFile}`);
-        return null;
-    }
-
-    const verses: Chapter = JSON.parse(fs.readFileSync(sourceFile, 'utf-8'));
-    return verses.map(v => `${v.verseId}: ${v.text}`).join('\n');
+    const text = readChapterText(source, bookId, chapterId);
+    if (text === null) console.error(`Original source not found: ${path.join(__dirname, `bibles_raw/${source}/${bookId}/${chapterId}.json`)}`);
+    return text;
 }
 
 // Get summary generation prompt
@@ -273,10 +262,6 @@ function getOutputPath(language: string, bookId: number, chapterId: number): str
 function getProofreadPath(language: string, bookId: number, chapterId: number): string {
     const langCode = getLanguageCode(language);
     return path.join(__dirname, `proofread_summaries/${langCode}/${bookId}-${chapterId}.json`);
-}
-
-function fileExists(filepath: string): boolean {
-    return fs.existsSync(filepath) && fs.statSync(filepath).size > 0;
 }
 
 async function generateChapterSummary(language: string, bookId: number, chapter: number, filename: string): Promise<void> {

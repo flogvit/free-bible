@@ -7,7 +7,7 @@ const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 
 import {books, normalizeLanguage, getLanguageCode, getBookName} from "./constants.js";
-import {getOriginalVerse, getOriginalChapter, getRef, getOsnb2VerseRange} from "./lib.js";
+import {getOriginalVerse, getOriginalChapter, getOsnbVerseRange, fileExists, ensureParentDir} from "./lib.js";
 import {callWithRetry} from "./llm.js";
 import {parseArgs, formatHelp, COMMON_FLAGS} from './cli.js';
 import type {FlagSpec, Range} from './cli.js';
@@ -326,7 +326,7 @@ function buildReferenceContext(currentReferences: RawReference[]): string {
         const rangeStart = Math.max(1, fromVerse - CONTEXT_RANGE);
         const rangeEnd = toVerse + CONTEXT_RANGE;
 
-        const verses = getOsnb2VerseRange(refBookId, refChapter, rangeStart, rangeEnd);
+        const verses = getOsnbVerseRange(refBookId, refChapter, rangeStart, rangeEnd);
         if (verses.length === 0) {
             sections.push(`  [${refBookId}:${refChapter}:${fromVerse}-${toVerse}] — vers ikke funnet i osnb`);
             continue;
@@ -437,17 +437,6 @@ function getOutputPath(language: string, bookId: number, chapterId: number, vers
 function getProofreadPath(language: string, bookId: number, chapterId: number, verseId: number): string {
     const langCode = getLanguageCode(language);
     return path.join(__dirname, `proofread_references/${langCode}/${bookId}/${chapterId}/${verseId}.json`);
-}
-
-function fileExists(filepath: string): boolean {
-    return fs.existsSync(filepath) && fs.statSync(filepath).size > 0;
-}
-
-function ensureDir(filepath: string): void {
-    const dir = path.dirname(filepath);
-    if (!fs.existsSync(dir)) {
-        fs.mkdirSync(dir, {recursive: true});
-    }
 }
 
 /**
@@ -707,7 +696,7 @@ async function generateReferences(language: string, bookId: number, chapterId: n
         references
     };
 
-    ensureDir(filename);
+    ensureParentDir(filename);
     fs.writeFileSync(filename, JSON.stringify(verse, null, 2));
     console.log(`  Saved: ${filename} (${references.length} references)`);
 }
@@ -741,7 +730,7 @@ async function proofreadReferences(language: string, bookId: number, chapterId: 
     // Save proofread results if requested
     if (saveToFile) {
         const proofreadFile = getProofreadPath(language, bookId, chapterId, verseId);
-        ensureDir(proofreadFile);
+        ensureParentDir(proofreadFile);
         fs.writeFileSync(proofreadFile, JSON.stringify(result, null, 2));
     }
 

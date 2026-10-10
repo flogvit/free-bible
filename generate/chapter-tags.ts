@@ -7,10 +7,10 @@ const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 
 import {books, normalizeLanguage, getLanguageCode, getBookName} from "./constants.js";
-import {callWithRetry, callOllamaRaw} from "./llm.js";
+import {callWithRetry} from "./llm.js";
 import {parseArgs, formatHelp, COMMON_FLAGS} from './cli.js';
+import {getOriginalSource, readChapterText, ensureParentDir} from './lib.js';
 import type {FlagSpec, Range} from './cli.js';
-import type {Chapter} from '../kvn/src/bible-types.js';
 
 let useLocal = false;
 
@@ -189,25 +189,6 @@ const TAG_SCHEMA = {
     additionalProperties: false
 };
 
-function getOriginalSource(bookId: number): string {
-    return bookId <= 39 ? 'hebrew' : 'sblgnt';
-}
-
-function readOriginalChapter(bookId: number, chapterId: number): string | null {
-    const source = getOriginalSource(bookId);
-    const sourceFile = path.join(__dirname, `bibles_raw/${source}/${bookId}/${chapterId}.json`);
-    if (!fs.existsSync(sourceFile)) return null;
-    const verses: Chapter = JSON.parse(fs.readFileSync(sourceFile, 'utf-8'));
-    return verses.map(v => `${v.verseId}: ${v.text}`).join('\n');
-}
-
-function readTranslatedChapter(bible: string, bookId: number, chapterId: number): string | null {
-    const file = path.join(__dirname, `bibles_raw/${bible}/${bookId}/${chapterId}.json`);
-    if (!fs.existsSync(file)) return null;
-    const verses: Chapter = JSON.parse(fs.readFileSync(file, 'utf-8'));
-    return verses.map(v => `${v.verseId}: ${v.text}`).join('\n');
-}
-
 function getTagPrompt(language: string, bookId: number, chapterId: number, chapterText: string): string {
     const bookName = getBookName(bookId, language);
     const langCode = getLanguageCode(language);
@@ -252,11 +233,6 @@ Only pick tags that clearly fit. Better too few than too many. Liturgy tags can 
 Text:
 ${chapterText}`;
     }
-}
-
-function ensureDir(filepath: string): void {
-    const dir = path.dirname(filepath);
-    if (!fs.existsSync(dir)) fs.mkdirSync(dir, {recursive: true});
 }
 
 /** Ett kapittel utpekt av bok-id og kapittelnummer, slik det ligger i en taggfil. */
@@ -307,7 +283,7 @@ function addReference(
     if (exists) return false;
 
     data.references.push({bookId, chapterId});
-    ensureDir(file);
+    ensureParentDir(file);
     fs.writeFileSync(file, JSON.stringify(data, null, 2));
     return true;
 }
@@ -505,9 +481,9 @@ async function main(): Promise<void> {
             }
 
             // Prefer translated text, fall back to original
-            let chapterText = readTranslatedChapter(options.bible, book.id, chapterId);
+            let chapterText = readChapterText(options.bible, book.id, chapterId);
             if (!chapterText) {
-                chapterText = readOriginalChapter(book.id, chapterId);
+                chapterText = readChapterText(getOriginalSource(book.id), book.id, chapterId);
             }
             if (!chapterText) continue;
 

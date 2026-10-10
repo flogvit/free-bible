@@ -4,6 +4,7 @@ import path from 'path';
 import {fileURLToPath} from 'url';
 
 import {parseArgs, formatHelp, COMMON_FLAGS} from './cli.js';
+import {fileExists} from './lib.js';
 import type {FlagSpec, Range} from './cli.js';
 import {books, normalizeLanguage, getLanguageCode, getBookName} from "./constants.js";
 import {callWithRetry} from "./llm.js";
@@ -327,10 +328,6 @@ function getOutputPath(language: string, bookId: number): string {
 function getProofreadPath(language: string, bookId: number): string {
     const langCode = getLanguageCode(language);
     return path.join(__dirname, `proofread_book_context/${langCode}/${bookId}.json`);
-}
-
-function fileExists(filepath: string): boolean {
-    return fs.existsSync(filepath) && fs.statSync(filepath).size > 0;
 }
 
 async function generateBookContext(language: string, bookId: number, filename: string): Promise<void> {

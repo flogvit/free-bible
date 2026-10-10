@@ -6,10 +6,11 @@ import {fileURLToPath} from 'url';
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 
-import {books, normalizeLanguage, getLanguageCode, getBookName, ollamaBaseUrl, ollamaModel, anthropicModel} from "./constants.js";
+import {books, normalizeLanguage, getLanguageCode, getBookName, ollamaModel, anthropicModel} from "./constants.js";
 import {callWithRetry, callOllamaRaw} from "./llm.js";
 import type {Chapter} from '../kvn/src/bible-types.js';
 import {parseArgs, formatHelp, COMMON_FLAGS} from './cli.js';
+import {fileExists, ensureParentDir} from './lib.js';
 import type {FlagSpec, Range} from './cli.js';
 
 /**
@@ -501,17 +502,6 @@ function getProofreadPath(language: string, number: number): string {
     return path.join(__dirname, `proofread_number_symbolism/${langCode}/${number}.json`);
 }
 
-function fileExists(filepath: string): boolean {
-    return fs.existsSync(filepath) && fs.statSync(filepath).size > 0;
-}
-
-function ensureDir(filepath: string): void {
-    const dir = path.dirname(filepath);
-    if (!fs.existsSync(dir)) {
-        fs.mkdirSync(dir, {recursive: true});
-    }
-}
-
 async function generateSymbolism(language: string, number: number, filename: string, bible: string | null): Promise<void> {
     let scanResults: ScanMatch[] = [];
     if (bible) {
@@ -525,7 +515,7 @@ async function generateSymbolism(language: string, number: number, filename: str
     console.log(`Generating symbolism for number ${number}...`);
     const result = await callWithRetry(prompt, {schema: SYMBOLISM_SCHEMA, local: useLocal, context: `number ${number}`}) as SymbolismData;
 
-    ensureDir(filename);
+    ensureParentDir(filename);
     fs.writeFileSync(filename, JSON.stringify(result, null, 2));
     console.log(`  Saved: ${filename} (${result.references.length} references)`);
 }
@@ -574,7 +564,7 @@ async function proofreadSymbolism(language: string, number: number, filename: st
 
     if (saveToFile) {
         const proofreadFile = getProofreadPath(language, number);
-        ensureDir(proofreadFile);
+        ensureParentDir(proofreadFile);
         fs.writeFileSync(proofreadFile, JSON.stringify(result, null, 2));
     }
 
