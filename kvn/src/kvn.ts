@@ -293,27 +293,6 @@ export function kvnToRefs(kvns: number[]): VerseRef[] {
   });
 }
 
-/**
- * Convert a reference string from one system to another.
- *
- * Example: convertRef("2 Mos 8,1-4", converter) converts from translation tkvn
- * coordinates to basis kvn, or vice versa depending on direction.
- */
-export function convertRef(
-  ref: string,
-  converter: KVNConverter,
-  direction: 'toKvn' | 'toTkvn'
-): number[] {
-  const refs = parseRef(ref);
-  const kvns = refsToKvn(refs);
-
-  if (direction === 'toKvn') {
-    return kvns.map(tkvn => converter.toKvn(tkvn) ?? tkvn);
-  } else {
-    return kvns.map(kvn => converter.toTkvn(kvn));
-  }
-}
-
 /** Format a list of kvn numbers as a human-readable reference string. */
 export function formatRefs(kvns: number[]): string {
   if (kvns.length === 0) return '';

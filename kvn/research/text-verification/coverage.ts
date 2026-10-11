@@ -62,7 +62,7 @@ const N_PER = Number(process.argv[2] ?? 6);
 /**
  * Del i setningsledd. Uten skilletegn: del på lengde, så vi alltid får ≥2 biter.
  *
- * minLen=30 HER, men 15 i backtranslate.mjs — og det er ikke en inkonsistens.
+ * minLen=30 HER, men 15 i backtranslate.ts — og det er ikke en inkonsistens.
  * Et kort ledd («men ingen ga ham noe.», 24 tegn) bærer ofte nettopp det som
  * mangler ved en grensefeil, så lav terskel er riktig når begge sider er samme
  * språk. På tvers av språk finnes ingen pålitelig motpart til et så kort ledd —

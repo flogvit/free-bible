@@ -7,7 +7,8 @@ import {createHash} from 'crypto';
 import Anthropic from '@anthropic-ai/sdk';
 import {bibles, books, bibleModel, anthropicPrices, maxTokens, getBibleStyle} from "./constants.js";
 import {parseArgs, formatHelp, COMMON_FLAGS} from './cli.js';
-import {getOriginalSource} from './lib.js';
+import {getOriginalSource, isEnglishLanguage, detectHallucinations} from './lib.js';
+import {extractText} from './llm.js';
 import type {FlagSpec, Range} from './cli.js';
 import type {
     Verse,
@@ -513,22 +514,6 @@ async function doAnthropicCall(content: string, schema: JsonSchema) {
     return stream.finalMessage();
 }
 
-// Med tenkning på ligger tenkeblokker først i content — teksten må hentes ut,
-// ikke leses fra content[0].
-function extractText(completion: Anthropic.Message): string {
-    const block = completion.content.find((b): b is Anthropic.TextBlock => b.type === 'text');
-    if (!block) {
-        throw new Error(`No text block in response (stop_reason: ${completion.stop_reason})`);
-    }
-    return block.text;
-}
-
-// Detect hallucinated English words that shouldn't appear in Norwegian/other translations
-function isEnglishLanguage(language: string): boolean {
-    const lower = language.toLowerCase();
-    return lower === 'english' || lower === 'en';
-}
-
 // Verse text can carry footnote definitions at the end ("... [^fn]\n\n[^fn]: ...").
 // Length comparisons must ignore that block, or every correction to a footnoted
 // verse looks like a truncation. Application must keep the block when the
@@ -553,30 +538,6 @@ export function evaluateSuggestion(currentText: string, suggestedText: string): 
     const dropsMarker = FOOTNOTE_MARKER.test(current.body) && !FOOTNOTE_MARKER.test(suggested.body);
     const newText = suggested.defs ? suggestedText : suggested.body + current.defs;
     return {ratio, newText, dropsMarker};
-}
-
-const HALLUCINATION_PATTERNS = [
-    /\bsatisf\w+/i,
-    /\bthe\s+[a-z]+ing\b/i,
-    /\bhowever\b/i,
-    /\btherefore\b/i,
-    /\bmoreover\b/i,
-    /\bfurthermore\b/i,
-    /\bnevertheless\b/i,
-    /\balthough\b/i,
-    /\bwhich\s+is\b/i,
-    /\bthat\s+is\b/i,
-];
-
-function detectHallucinations(text: string): string[] {
-    const found: string[] = [];
-    for (const pattern of HALLUCINATION_PATTERNS) {
-        const match = text.match(pattern);
-        if (match) {
-            found.push(match[0]);
-        }
-    }
-    return found;
 }
 
 // `any`: kalles med det rå JSON-svaret, som er enten et oversettelsesresultat eller

@@ -7,7 +7,7 @@ import Anthropic from '@anthropic-ai/sdk';
 import {bibles, books, anthropicModel, maxTokens, normalizeLanguage, getLanguageCode} from "./constants.js";
 import type {Chapter} from '../kvn/src/bible-types.js';
 import {parseArgs, formatHelp, COMMON_FLAGS} from './cli.js';
-import {getOriginalSource} from './lib.js';
+import {getOriginalSource, isEnglishLanguage, detectHallucinations} from './lib.js';
 import type {FlagSpec, Range} from './cli.js';
 
 const anthropic = new Anthropic();
@@ -289,37 +289,6 @@ async function doAnthropicCall(content: string, schema: JsonSchema | null | unde
     }
 
     return anthropic.messages.create(options);
-}
-
-// Detect hallucinated English words that shouldn't appear in Norwegian/other translations
-// Check if language is English (hallucination detection should be skipped for English)
-function isEnglishLanguage(language: string): boolean {
-    const lower = language.toLowerCase();
-    return lower === 'english' || lower === 'en';
-}
-
-const HALLUCINATION_PATTERNS = [
-    /\bsatisf\w+/i,           // satisfying, satisfactory, satisfaction, etc.
-    /\bthe\s+[a-z]+ing\b/i,   // "the [verb]ing" English patterns
-    /\bhowever\b/i,
-    /\btherefore\b/i,
-    /\bmoreover\b/i,
-    /\bfurthermore\b/i,
-    /\bnevertheless\b/i,
-    /\balthough\b/i,
-    /\bwhich\s+is\b/i,
-    /\bthat\s+is\b/i,
-];
-
-export function detectHallucinations(text: string): string[] {
-    const found: string[] = [];
-    for (const pattern of HALLUCINATION_PATTERNS) {
-        const match = text.match(pattern);
-        if (match) {
-            found.push(match[0]);
-        }
-    }
-    return found;
 }
 
 // `any` her er tilsiktet: funksjonen kalles med begge svarformene (generering

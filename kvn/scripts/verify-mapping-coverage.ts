@@ -90,8 +90,6 @@ function main(): void {
     for (let o = 1; o <= osCount; o++) if (!covered.has(o)) uncovered.push(o);
     // classify: uncovered ONLY at the edges (first/last, contiguous) = cross-chapter boundary (expected);
     // uncovered in the middle, or a target beyond osmain, or non-monotonic = a real alignment error.
-    const edgeOnly = uncovered.length > 0 && uncovered.every(o => o <= (uncovered.filter(x => x <= 3).length) || o > osCount - 6)
-      && !uncovered.some((o, i) => i > 0 && o - uncovered[i - 1] > 1 && o < osCount - 5 && o > 3);
     const realError = issues.length > 0 || uncovered.some(o => o > 3 && o <= osCount - 6);
     if (uncovered.length) issues.push(`uncovered: ${uncovered.join(',')}`);
     const tag = realError ? 'ERROR' : (uncovered.length ? 'boundary' : 'ok');

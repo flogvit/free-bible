@@ -22,6 +22,7 @@ import {fileURLToPath} from 'url';
 import type {TranslationMeta} from './translations-schema.js';
 import type {LicenseRecord} from './build-translations-meta.js';
 import {parseArgs, formatHelp, COMMON_FLAGS} from './cli.js';
+import {readJson} from './lib.js';
 import type {FlagSpec} from './cli.js';
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
@@ -60,14 +61,6 @@ type IndexEntry = IndexMeta & {
     licence?: LicenceBlock;
 };
 
-/**
- * `T` er en påstand om hva fila inneholder, ikke en kontroll: `JSON.parse` gir
- * `any`, og ingenting validerer resultatet. Kallstedet bestemmer formen.
- */
-function readJson<T>(file: string): T | null {
-    if (!fs.existsSync(file)) return null;
-    return JSON.parse(fs.readFileSync(file, 'utf-8')) as T;
-}
 
 /** Licence fields a website may need; `translation` and `name` come from elsewhere. */
 function licenceBlock(license: LicenseRecord | null): LicenceBlock | undefined {

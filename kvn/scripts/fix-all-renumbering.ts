@@ -257,7 +257,6 @@ Compare the CONTENT of the verses to determine the mapping. Do not just match by
       if (!dryRun) {
         // Preserve any existing translated verses (e.g., from fix-osmain-boundaries)
         const existingOsmain = loadChapter(OSMAIN_DIR, book, chapter);
-        const existingByVerse = new Map(existingOsmain.map(v => [v.verseId, v]));
 
         // For verses beyond the mapping range (e.g., added placeholder verses), keep them
         const maxMappedVerse = Math.max(...mappings.map(m => m.targetVerse));

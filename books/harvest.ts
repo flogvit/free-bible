@@ -1,7 +1,7 @@
 #!/usr/bin/env bun
 /**
  * Public-domain book harvester for the book→verse linking project (issue #16).
- * Same style as articles/harvest.mjs: tracked scripts here, data GITIGNORED in
+ * Same style as articles/harvest.ts: tracked scripts here, data GITIGNORED in
  * external/books/ (never pushed). We harvest classic PD commentaries from the
  * Internet Archive as PLAIN TEXT (the OCR *_djvu.txt) — no PDFs needed, which
  * keeps disk tiny and gives the Bible-reference parser direct input. Frontend

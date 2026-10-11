@@ -194,8 +194,9 @@ function getAnthropic(): Anthropic {
 }
 
 // Med tenkning på ligger tenkeblokker først i content — teksten må hentes ut,
-// ikke leses fra content[0]. Samme funksjon som i bible.ts.
-function extractText(completion: Anthropic.Message): string {
+// ikke leses fra content[0]. Eksportert fordi bible.ts, som har sitt eget
+// strømmende kall, leser svaret på samme måte.
+export function extractText(completion: Anthropic.Message): string {
     const block = completion.content.find((b): b is Anthropic.TextBlock => b.type === 'text');
     if (!block) {
         throw new Error(`No text block in response (stop_reason: ${completion.stop_reason})`);

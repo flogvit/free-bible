@@ -26,16 +26,6 @@ export function decode(kvn: number): { book: number; chapter: number; verse: num
   };
 }
 
-/**
- * Format a KVN as a human-readable string like "2 Mos 8:1" or "2 Mos 8:1a".
- */
-export function formatKvn(kvn: number, bookNames?: Record<number, string>): string {
-  const { book, chapter, verse, part } = decode(kvn);
-  const bookName = bookNames?.[book] ?? String(book);
-  const partSuffix = part > 0 ? String.fromCharCode(96 + part) : ''; // 1=a, 2=b, ...
-  return `${bookName} ${chapter}:${verse}${partSuffix}`;
-}
-
 // Book name -> book ID mapping (standard norsk)
 export const BOOK_IDS: Record<string, number> = {
   '1 Mos': 1, '2 Mos': 2, '3 Mos': 3, '4 Mos': 4, '5 Mos': 5,
@@ -98,23 +88,6 @@ export interface KvnMappingFile {
   bookNames: Record<string, number>;
   map: MappingEntry[];
   extraVerses: ExtraVerseEntry[];
-}
-
-// ============================================================
-// Old types (kept for generate script)
-// ============================================================
-
-export interface VerseMapping {
-  id: string;
-  name: string;
-  description: string;
-  bookNames: Record<string, number>;
-  verseMap: Record<string, string>;
-  unmapped: Array<{
-    bookId: number;
-    srcRef: string;
-    reason: string;
-  }>;
 }
 
 // ============================================================

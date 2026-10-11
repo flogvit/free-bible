@@ -13,7 +13,6 @@
 import * as fs from 'fs';
 import path from 'path';
 import { fileURLToPath } from 'url';
-import { nameToId } from './lib.js';
 import { parseArgs, formatHelp, COMMON_FLAGS } from './cli.js';
 import type { FlagSpec } from './cli.js';
 
@@ -122,11 +121,6 @@ interface DriftEntry {
 }
 
 // --- normalization ---------------------------------------------------------
-
-// Display->slug. Delegerer til generatorens egen nameToId framfor å speile den:
-// denne kopien manglet translitterasjonen av ø og æ, så mirroret drev fra
-// originalen uten at noe kunne oppdage det (#25).
-export const baseSlug = (s: string): string => nameToId(s);
 
 // Aggressive transliteration key: collapses the spelling drift between the slugs
 // the generator emitted in relations and the actual profile slugs.

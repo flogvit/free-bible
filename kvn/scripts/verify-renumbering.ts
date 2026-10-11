@@ -157,10 +157,8 @@ async function main(): Promise<void> {
     const book = parseInt(bookStr);
     const chapter = parseInt(chStr);
 
-    // Load osmain chapter and neighbors
+    // Load osmain chapter
     const osmainCh = loadChapter(OSMAIN_DIR, book, chapter);
-    const osmainPrev = loadChapter(OSMAIN_DIR, book, chapter - 1);
-    const osmainNext = loadChapter(OSMAIN_DIR, book, chapter + 1);
 
     // Load osnb chapter and neighbors
     const osnbCh = loadChapter(OSNB_DIR, book, chapter);

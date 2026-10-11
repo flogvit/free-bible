@@ -6,7 +6,7 @@
  * enten vei). Modellen slipper å holde to språk i hodet samtidig, og alle
  * nedstrøms signaler blir enspråklige.
  *
- * Krever at backtranslate.mjs har kjørt og skrevet backtranslations.json.
+ * Krever at backtranslate.ts har kjørt og skrevet backtranslations.json.
  *
  *   bun judge-nb.ts [modell]
  */

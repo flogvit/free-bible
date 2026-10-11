@@ -40,7 +40,7 @@ const N_PER = Number(process.argv.includes('--n') ? process.argv[process.argv.in
 const rows: Row[] = JSON.parse(readFileSync(join(HERE, 'testset.json'), 'utf8'));
 const caseId = (r: Row) => `${r.tr}|${r.kind}|${r.A.length}|${r.B.length}|${r.B.slice(0, 24)}`;
 
-// samme utvalg som run.mjs
+// samme utvalg som run.ts
 const byTr = new Map<string, Map<string, Row[]>>();
 for (const r of rows) {
   if (!byTr.has(r.tr)) byTr.set(r.tr, new Map(KINDS.map((k): [string, Row[]] => [k, []])));

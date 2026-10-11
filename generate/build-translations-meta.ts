@@ -26,6 +26,7 @@ import {fileURLToPath} from 'url';
 
 import {callWithRetry, callWithWebSearch} from './llm.js';
 import {parseArgs, formatHelp, COMMON_FLAGS} from './cli.js';
+import {readJson} from './lib.js';
 import type {FlagSpec} from './cli.js';
 import {
     META_SCHEMA, KNOWLEDGE_FIELDS, PHILOSOPHY, TRADITION, TEXTUAL_BASIS,
@@ -147,14 +148,6 @@ export function computeCoverage(translation: string): ComputedMeta {
 
 const range = (from: number, to: number): number[] => Array.from({length: to - from + 1}, (_, i) => from + i);
 
-/**
- * `T` er en påstand om hva fila inneholder, ikke en kontroll: `JSON.parse` gir
- * `any`, og ingenting validerer resultatet. Kallstedet bestemmer formen.
- */
-function readJson<T>(file: string): T | null {
-    if (!fs.existsSync(file)) return null;
-    return JSON.parse(fs.readFileSync(file, 'utf-8')) as T;
-}
 
 // ------------------------------------------------------------------ prompts ---
 

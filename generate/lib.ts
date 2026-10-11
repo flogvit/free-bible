@@ -63,6 +63,52 @@ export function ensureParentDir(filepath: string): void {
     if (!fs.existsSync(dir)) fs.mkdirSync(dir, {recursive: true});
 }
 
+/**
+ * JSON-fila, eller `null` når den ikke finnes. En fil som finnes men ikke er
+ * gyldig JSON, kaster.
+ *
+ * `T` er en påstand om hva fila inneholder, ikke en kontroll: `JSON.parse` gir
+ * `any`, og ingenting validerer resultatet. Kallstedet bestemmer formen.
+ */
+export function readJson<T>(file: string): T | null {
+    if (!fs.existsSync(file)) return null;
+    return JSON.parse(fs.readFileSync(file, 'utf-8')) as T;
+}
+
+/** Engelsk målspråk? Da hoppes sjekken etter hallusinert engelsk over. */
+export function isEnglishLanguage(language: string): boolean {
+    const lower = language.toLowerCase();
+    return lower === 'english' || lower === 'en';
+}
+
+// Engelske ord som ikke hører hjemme i en norsk (eller annen ikke-engelsk) tekst
+// — tegnet på at modellen har sklidd over i engelsk. Brukes av bible.ts og
+// word4word.ts.
+const HALLUCINATION_PATTERNS = [
+    /\bsatisf\w+/i,           // satisfying, satisfactory, satisfaction, etc.
+    /\bthe\s+[a-z]+ing\b/i,   // "the [verb]ing" English patterns
+    /\bhowever\b/i,
+    /\btherefore\b/i,
+    /\bmoreover\b/i,
+    /\bfurthermore\b/i,
+    /\bnevertheless\b/i,
+    /\balthough\b/i,
+    /\bwhich\s+is\b/i,
+    /\bthat\s+is\b/i,
+];
+
+/** Første treff per mønster i HALLUCINATION_PATTERNS; tom liste = ingen funn. */
+export function detectHallucinations(text: string): string[] {
+    const found: string[] = [];
+    for (const pattern of HALLUCINATION_PATTERNS) {
+        const match = text.match(pattern);
+        if (match) {
+            found.push(match[0]);
+        }
+    }
+    return found;
+}
+
 export function getOriginalVerse(bookId: number, chapterId: number, verseId: number): Verse | undefined {
     const verses = readCached(rawChapterFile(getOriginalSource(bookId), bookId, chapterId));
     return verses.find( verse => +verse.bookId===+bookId && +verse.chapterId===+chapterId && +verse.verseId===+verseId)
