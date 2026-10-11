@@ -303,9 +303,14 @@ export async function call(
 }
 
 /** Valgene `callWithRetry` tar imot. */
-export interface CallWithRetryOptions extends CallOptions {
+export interface CallWithRetryOptions<T = any> extends CallOptions {
     /** Context string for error messages */
     context?: string;
+    /**
+     * Sjekk av det tolkede svaret. Kaster den, regnes forsøket som feilet og
+     * kallet gjøres på nytt — slik word4word.ts sin hallusinasjonssjekk vil ha det.
+     */
+    validate?: (result: T) => void;
 }
 
 /**
@@ -319,14 +324,16 @@ export interface CallWithRetryOptions extends CallOptions {
  */
 export async function callWithRetry<T = any>(
     content: string,
-    {schema, local, think, ollamaOptions, model, task, context = ''}: CallWithRetryOptions = {}
+    {schema, local, think, ollamaOptions, model, task, context = '', validate}: CallWithRetryOptions<T> = {}
 ): Promise<T> {
     let lastError: unknown;
 
     for (let attempt = 1; attempt <= MAX_RETRIES; attempt++) {
         try {
             const text = await call(content, {schema, local, think, ollamaOptions, model, task});
-            return (schema ? JSON.parse(text) : text) as T;
+            const result = (schema ? JSON.parse(text) : text) as T;
+            validate?.(result);
+            return result;
         } catch (error) {
             lastError = error;
             if (attempt < MAX_RETRIES) {

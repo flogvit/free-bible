@@ -3,17 +3,13 @@ import * as fs from 'fs';
 import path from 'path';
 
 
-import Anthropic from '@anthropic-ai/sdk';
-import {bibles, books, anthropicModel, maxTokens, normalizeLanguage, getLanguageCode} from "./constants.js";
+import {bibles, books, normalizeLanguage, getLanguageCode} from "./constants.js";
+import {callWithRetry} from './llm.js';
+import type {OutputSchema} from './llm.js';
 import type {Chapter} from '../kvn/src/bible-types.js';
 import {parseArgs, formatHelp, COMMON_FLAGS} from './cli.js';
 import {getOriginalSource, isEnglishLanguage, detectHallucinations} from './lib.js';
 import type {FlagSpec, Range} from './cli.js';
-
-const anthropic = new Anthropic();
-
-/** JSON-schema slik SDK-en vil ha det i `output_config.format`. */
-type JsonSchema = Record<string, unknown>;
 
 /** En tidligere forklaring av ordet, lagret av `applyProofreadChanges`. */
 interface WordVersion {
@@ -74,8 +70,6 @@ interface ProofreadResult {
     /** Skjemaet krever den, men koden sjekker likevel null/undefined før den skrives ut. */
     score?: number | null;
 }
-
-const MAX_RETRIES = 3;
 
 // --- JSON Schemas for structured outputs ---
 
@@ -267,30 +261,6 @@ Current word explanations:
 ${formattedWords}`;
 }
 
-async function doAnthropicCall(content: string, schema: JsonSchema | null | undefined) {
-    const options: Anthropic.MessageCreateParamsNonStreaming = {
-        model: anthropicModel,
-        max_tokens: maxTokens,
-        messages: [
-            {
-                role: "user",
-                content
-            }
-        ]
-    };
-
-    if (schema) {
-        options.output_config = {
-            format: {
-                type: "json_schema",
-                schema
-            }
-        };
-    }
-
-    return anthropic.messages.create(options);
-}
-
 // `any` her er tilsiktet: funksjonen kalles med begge svarformene (generering
 // og korrektur) og plukker ut felter som bare finnes i én av dem.
 export function validateWordExplanationResult(result: any): boolean {
@@ -331,36 +301,14 @@ export function validateWordExplanationResult(result: any): boolean {
 }
 
 // T er formen kallstedet forventer tilbake fra JSON-svaret; skjemaet håndheves
-// på API-siden, så den er en påstand og ikke en kontroll.
-async function doAnthropicCallWithRetry<T = any>(content: string, schema: JsonSchema | null | undefined, context = '', validate = true): Promise<T> {
-    let lastError: unknown;
-
-    for (let attempt = 1; attempt <= MAX_RETRIES; attempt++) {
-        try {
-            const completion = await doAnthropicCall(content, schema);
-            if (completion.stop_reason === 'max_tokens') {
-                throw new Error(`Response truncated (hit max_tokens limit of ${maxTokens})`);
-            }
-            const responseText = (completion.content[0] as Anthropic.TextBlock).text;
-            const result = JSON.parse(responseText) as T;
-
-            // Validate for hallucinations if requested
-            if (validate) {
-                validateWordExplanationResult(result);
-            }
-
-            return result;
-        } catch (error) {
-            lastError = error;
-            if (attempt < MAX_RETRIES) {
-                console.log(`  Attempt ${attempt} failed (${(error as Error).message}), retrying...`);
-                await new Promise(resolve => setTimeout(resolve, 1000));
-            }
-        }
-    }
-
-    console.error(`Failed after ${MAX_RETRIES} attempts for ${context}`);
-    throw lastError;
+// på API-siden, så den er en påstand og ikke en kontroll. Hallusinasjonssjekken
+// kjøres inne i forsøket, så et svar som feiler den gir et nytt kall.
+export async function requestWords<T = any>(content: string, schema: OutputSchema, context = '', validate = true): Promise<T> {
+    return callWithRetry<T>(content, {
+        schema,
+        context,
+        validate: validate ? validateWordExplanationResult : undefined,
+    });
 }
 
 function readOriginalVerse(bookId: number, chapterId: number, verseId: number) {
@@ -437,7 +385,7 @@ async function generateWordExplanations(bible: string, bookId: number, chapterId
     }
 
     const shouldValidate = !isEnglishLanguage(language);
-    const result = await doAnthropicCallWithRetry<WordExplanationResult>(content, WORD_EXPLANATION_SCHEMA, `${bookId}:${chapterId}:${verseId}`, shouldValidate);
+    const result = await requestWords<WordExplanationResult>(content, WORD_EXPLANATION_SCHEMA, `${bookId}:${chapterId}:${verseId}`, shouldValidate);
 
     const dir = path.dirname(filename);
     if (!fs.existsSync(dir)) {
@@ -486,7 +434,7 @@ async function proofreadVerse(bible: string, bookId: number, chapterId: number, 
     );
 
     const shouldValidate = !isEnglishLanguage(language);
-    const result = await doAnthropicCallWithRetry<ProofreadResult>(content, WORD_PROOFREAD_SCHEMA, `proofread ${bookId}:${chapterId}:${verseId}`, shouldValidate);
+    const result = await requestWords<ProofreadResult>(content, WORD_PROOFREAD_SCHEMA, `proofread ${bookId}:${chapterId}:${verseId}`, shouldValidate);
 
     // Save proofread results if requested
     if (saveToFile) {
