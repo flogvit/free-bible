@@ -6,16 +6,12 @@ import {fileURLToPath} from 'url';
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 
-import Anthropic from '@anthropic-ai/sdk';
-import {books, anthropicModel, maxTokens, getBookName} from "./constants.js";
+import {books, getBookName} from "./constants.js";
+import {callWithRetry} from './llm.js';
 import {parseArgs, formatHelp, COMMON_FLAGS} from './cli.js';
 import {fileExists, ensureParentDir} from './lib.js';
 import type {FlagSpec} from './cli.js';
 import type {Chapter, Verse} from '../kvn/src/bible-types.js';
-
-const anthropic = new Anthropic({
-    apiKey: process.env.ANTHROPIC_API_KEY
-});
 
 /** En sammenhengende passasje historien dekker. Speiler references-items i STORY_SCHEMA. */
 interface StoryReference {
@@ -74,11 +70,6 @@ interface ApplyResult {
     refsChanged: boolean;
     newFilename: string;
 }
-
-/** JSON-schema slik SDK-en vil ha det i `output_config.format`. */
-type JsonSchema = Record<string, unknown>;
-
-const MAX_RETRIES = 3;
 
 const STORIES_DIR = path.join(__dirname, 'stories', 'nb');
 const PROOFREAD_DIR = path.join(__dirname, 'proofread_stories', 'nb');
@@ -205,43 +196,6 @@ function loadAllStories(): StoryWithFilename[] {
     return stories;
 }
 
-// --- Anthropic calls ---
-
-async function doAnthropicCall(content: string, schema: JsonSchema | null | undefined) {
-    const options: Anthropic.MessageCreateParamsNonStreaming = {
-        model: anthropicModel,
-        max_tokens: maxTokens,
-        messages: [{role: "user", content}]
-    };
-    if (schema) {
-        options.output_config = {format: {type: "json_schema", schema}};
-    }
-    return anthropic.messages.create(options);
-}
-
-// T er formen kallstedet forventer tilbake fra JSON-svaret; skjemaet håndheves
-// på API-siden, så den er en påstand og ikke en kontroll.
-async function doAnthropicCallWithRetry<T>(content: string, schema: JsonSchema | null | undefined, context = ''): Promise<T> {
-    let lastError: unknown;
-    for (let attempt = 1; attempt <= MAX_RETRIES; attempt++) {
-        try {
-            const completion = await doAnthropicCall(content, schema);
-            if (completion.stop_reason === 'max_tokens') {
-                throw new Error('Response truncated due to max_tokens limit');
-            }
-            return JSON.parse((completion.content[0] as Anthropic.TextBlock).text) as T;
-        } catch (error) {
-            lastError = error;
-            if (attempt < MAX_RETRIES) {
-                console.log(`  Attempt ${attempt} failed (${(error as Error).message}), retrying...`);
-                await new Promise(resolve => setTimeout(resolve, 1000));
-            }
-        }
-    }
-    console.error(`Failed after ${MAX_RETRIES} attempts for ${context}`);
-    throw lastError;
-}
-
 // --- Proofread ---
 
 function getProofreadPrompt(story: Story, passageTexts: string): string {
@@ -308,7 +262,7 @@ async function proofreadStory(story: Story, filename: string): Promise<StoryProo
     console.log(`Proofreading: ${story.title} (${filename})${missingPassage ? ' [delvis manglende tekst]' : ''}...`);
 
     const prompt = getProofreadPrompt(story, passageTexts);
-    const result = await doAnthropicCallWithRetry<StoryProofreadResult>(prompt, STORY_PROOFREAD_SCHEMA, `proofread ${filename}`);
+    const result = await callWithRetry<StoryProofreadResult>(prompt, {schema: STORY_PROOFREAD_SCHEMA, context: `proofread ${filename}`});
 
     // Save proofread result
     const proofreadFile = path.join(PROOFREAD_DIR, filename);
@@ -442,7 +396,7 @@ async function generateStories(existingTitles: string[], category: string | null
     console.log('Generating new stories...');
 
     const prompt = getGeneratePrompt(existingTitles, category);
-    const result = await doAnthropicCallWithRetry<{ stories: Story[] }>(prompt, GENERATE_STORIES_SCHEMA, 'generate stories');
+    const result = await callWithRetry<{ stories: Story[] }>(prompt, {schema: GENERATE_STORIES_SCHEMA, context: 'generate stories'});
 
     const existingSlugs = new Set(
         fs.readdirSync(STORIES_DIR)

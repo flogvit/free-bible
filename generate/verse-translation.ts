@@ -6,28 +6,12 @@ import {fileURLToPath} from 'url';
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 
-import Anthropic from '@anthropic-ai/sdk';
-import {bibles, books, anthropicModel, maxTokens, getBookName} from "./constants.js";
+import {bibles, books, getBookName} from "./constants.js";
+import {callWithRetry} from './llm.js';
 import {parseArgs, formatHelp, COMMON_FLAGS} from './cli.js';
 import {fileExists, getOriginalSource, readRawChapter} from './lib.js';
 import type {FlagSpec, Range} from './cli.js';
 import type {Chapter, Verse} from '../kvn/src/bible-types.js';
-
-/**
- * Klienten lages først når den faktisk skal brukes.
- *
- * Konstruktøren kaster når ANTHROPIC_API_KEY mangler, og sto den på modulnivå
- * skjedde det før `--help` rakk å skrive noe — hjelpen krevde altså en API-nøkkel
- * for et kall den aldri gjør.
- */
-let anthropic: Anthropic | null = null;
-
-function getAnthropic(): Anthropic {
-    if (!anthropic) {
-        anthropic = new Anthropic({apiKey: process.env.ANTHROPIC_API_KEY});
-    }
-    return anthropic;
-}
 
 /**
  * Feltene i en forklaringspost. Rekkefølgen her er den samme som `fields` i
@@ -96,10 +80,6 @@ interface ProofreadResult {
     score?: number | null;
 }
 
-/** JSON-schema slik SDK-en vil ha det i `output_config.format`. */
-type JsonSchema = Record<string, unknown>;
-
-const MAX_RETRIES = 3;
 const MAX_VERSES_PER_BATCH = 15; // Keep batches small for detailed explanations
 
 const EXPLANATION_SCHEMA = {
@@ -265,43 +245,6 @@ ${formattedPairs}`;
     return promptEn;
 }
 
-async function doAnthropicCall(content: string, schema: JsonSchema | null | undefined) {
-    const options: Anthropic.MessageCreateParamsNonStreaming = {
-        model: anthropicModel,
-        max_tokens: maxTokens,
-        messages: [{ role: "user", content }]
-    };
-    if (schema) {
-        options.output_config = { format: { type: "json_schema", schema } };
-    }
-    return getAnthropic().messages.create(options);
-}
-
-// T er formen kallstedet forventer tilbake fra JSON-svaret; skjemaet håndheves
-// på API-siden, så den er en påstand og ikke en kontroll.
-async function doAnthropicCallWithRetry<T>(content: string, schema: JsonSchema | null | undefined, context = ''): Promise<T> {
-    let lastError: unknown;
-
-    for (let attempt = 1; attempt <= MAX_RETRIES; attempt++) {
-        try {
-            const completion = await doAnthropicCall(content, schema);
-            if (completion.stop_reason === 'max_tokens') {
-                throw new Error('Response truncated due to max_tokens limit');
-            }
-            return JSON.parse((completion.content[0] as Anthropic.TextBlock).text) as T;
-        } catch (error) {
-            lastError = error;
-            if (attempt < MAX_RETRIES) {
-                console.log(`  Attempt ${attempt} failed (${(error as Error).message}), retrying...`);
-                await new Promise(resolve => setTimeout(resolve, 1000));
-            }
-        }
-    }
-
-    console.error(`Failed after ${MAX_RETRIES} attempts for ${context}`);
-    throw lastError;
-}
-
 function getOutputPath(bible: string, bookId: number, chapterId: number): string {
     return path.join(__dirname, `verse_translation/${bible}/${bookId}/${chapterId}.json`);
 }
@@ -397,7 +340,7 @@ async function proofreadExplanations(bible: string, bookId: number, chapterId: n
     console.log(`Proofreading explanations for ${bookName} ${chapterId}...`);
 
     const prompt = getProofreadPrompt(language, currentExplanations);
-    const proofreadResult = await doAnthropicCallWithRetry<ProofreadResult>(prompt, EXPLANATION_PROOFREAD_SCHEMA, `proofread ${bookId}:${chapterId}`);
+    const proofreadResult = await callWithRetry<ProofreadResult>(prompt, {schema: EXPLANATION_PROOFREAD_SCHEMA, context: `proofread ${bookId}:${chapterId}`});
 
     if (saveToFile) {
         const proofreadFile = getProofreadPath(bible, bookId, chapterId);
@@ -574,7 +517,7 @@ async function generateExplanations(bible: string, bookId: number, chapterId: nu
         }
 
         const prompt = getExplanationPrompt(language, bookId, chapterId, batch, batchTranslations);
-        const result = await doAnthropicCallWithRetry<{ verses: VerseExplanation[] }>(prompt, EXPLANATION_SCHEMA, `${bookId}:${chapterId} batch ${batchIndex + 1}`);
+        const result = await callWithRetry<{ verses: VerseExplanation[] }>(prompt, {schema: EXPLANATION_SCHEMA, context: `${bookId}:${chapterId} batch ${batchIndex + 1}`});
         allResults.push(...result.verses);
     }
 

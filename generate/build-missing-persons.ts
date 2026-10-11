@@ -3,8 +3,7 @@ import * as fs from 'fs';
 import path from 'path';
 import {fileURLToPath} from 'url';
 
-import Anthropic from '@anthropic-ai/sdk';
-import {anthropicModel, maxTokens} from "./constants.js";
+import {call} from "./llm.js";
 import {nameToId} from "./lib.js";
 import {parseArgs, formatHelp, COMMON_FLAGS} from './cli.js';
 import type {FlagSpec} from './cli.js';
@@ -46,13 +45,6 @@ if (flags.help) {
     process.exit(0);
 }
 
-
-const anthropic = new Anthropic({
-    apiKey: process.env.ANTHROPIC_API_KEY
-});
-
-/** JSON-schema slik SDK-en vil ha det i `output_config.format`. */
-type JsonSchema = Record<string, unknown>;
 
 /** En person fra PERSONER.md: avkrysningslista over profiler som mangler. */
 interface PersonConfig {
@@ -148,18 +140,6 @@ const PERSON_SCHEMA = {
     additionalProperties: false
 };
 
-async function doAnthropicCall(content: string, schema: JsonSchema | null | undefined) {
-    const options: Anthropic.MessageCreateParamsNonStreaming = {
-        model: anthropicModel,
-        max_tokens: maxTokens,
-        messages: [{ role: "user", content }]
-    };
-    if (schema) {
-        options.output_config = { format: { type: "json_schema", schema } };
-    }
-    return anthropic.messages.create(options);
-}
-
 async function generatePerson(personConfig: PersonConfig): Promise<GenerateResult> {
     const { id, name } = personConfig;
     const outputPath = path.join(__dirname, "persons", "nb", `${id}.json`);
@@ -212,8 +192,7 @@ Important guidelines:
 `;
 
     try {
-        const completion = await doAnthropicCall(prompt, PERSON_SCHEMA);
-        const personData = JSON.parse((completion.content[0] as Anthropic.TextBlock).text);
+        const personData = JSON.parse(await call(prompt, {schema: PERSON_SCHEMA}));
 
         // Write to file
         fs.writeFileSync(outputPath, JSON.stringify(personData, null, 2));
