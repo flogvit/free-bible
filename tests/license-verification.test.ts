@@ -40,6 +40,19 @@ describe('licence verification', () => {
       }
       expect(rec.translation).toBe(id);
     });
+    // What a reader sees under the text is `credits`, never `statement`: a
+    // confirmed licence that asks for credit must say whom, with links.
+    if (v.status === 'confirmed' && rec.attribution_required) {
+      it(`${id}: a licence that asks for credit names its sources for the reader`, () => {
+        expect(rec.credits?.length ?? 0).toBeGreaterThan(0);
+        for (const c of rec.credits) {
+          expect(c.name.trim().length).toBeGreaterThan(0);
+          expect(c.url).toMatch(/^https:\/\//);
+          expect(['translated_from', 'text']).toContain(c.relation);
+          if (c.license_url) expect(c.license_url).toMatch(/^https:\/\//);
+        }
+      });
+    }
     if (v.status === 'not_confirmed') {
       it(`${id}: a "not confirmed" says why`, () => {
         expect((v.note ?? '').trim().length).toBeGreaterThan(40);

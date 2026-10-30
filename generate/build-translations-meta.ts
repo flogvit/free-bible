@@ -57,6 +57,22 @@ export interface LicenseRecord {
     source?: string;
     statement?: string;
     verification?: LicenseVerification;
+    credits?: LicenseCredit[];
+}
+
+/**
+ * What a reader is shown under the text when the licence asks for credit
+ * (bible.flogvit.com#170): each source, its link and its licence.
+ * `translated_from` says the text was changed (CC BY asks for that), `text`
+ * that the text shown IS the source. `statement` above is the full wording for
+ * the edition page; it is never what a reader sees under the text.
+ */
+export interface LicenseCredit {
+    name: string;
+    url: string;
+    license?: string;
+    license_url?: string;
+    relation: 'translated_from' | 'text';
 }
 
 /**
