@@ -23,6 +23,24 @@ that publish per-translation license text (BibleSuperSearch, openbible.com, eBib
 Classification is driven by the **license statement text**, not BSS's `copyright` flag — that
 flag is unreliable (e.g. the NET Bible has `copyright=0` but reads "© … used with permission").
 
+## Catalogue claim vs. confirmed licence
+
+The catalogue match above is a CLAIM. Before a translation is published on
+bible.flogvit.com or in its MCP server, a person checks it against the source
+(the publisher's or distributor's own page, eBible.org, CrossWire, or the
+edition's own statement) and writes the result into `license.json` as
+`verification`: `status` (`confirmed` / `not_confirmed`), the date, and the
+evidence as the source's URL and its own words. Only `confirmed` may be
+published. `tests/license-verification.test.ts` holds every verification to
+that form. The work is tracked in flogvit/bible.flogvit.com#170.
+
+Checked so far (2026-10-30): kjv, web, bsb, asv, luther_1912, segond_1910,
+rv_1909 and oses are confirmed. **norwegian1921 and norwegian1938 are not**:
+the catalogue's "70 years after the translators' death" does not hold. Jon
+Mannsåker (d. 1964) translated parts of the 1921 edition, and Ragnvald Indrebø
+(d. 1984) revised the 1938 one, so both are still protected in Norway. The
+reasons and sources are in their `license.json`.
+
 ## Not in this list
 
 - **7 CC BY-NC-ND** — matched and free-ish, but **NonCommercial + NoDerivatives**: incompatible

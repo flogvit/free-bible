@@ -54,7 +54,10 @@ generate/bibles_raw/<translation>/<book>/<chapter>.json   verses, 1..66 / 1..n
 generate/bibles_raw/<translation>/meta.json               editorial metadata
 generate/bibles_raw/<translation>/license.json            licence — required, or the
                                                           translation is silently left out
-                                                          of translations/index.json
+                                                          of translations/index.json.
+                                                          `verification.status: confirmed`
+                                                          is the only state that may be
+                                                          published (docs/open-bibles/README.md)
 kvn/mappings/<translation>.ukvn.json                      canonical numbering ↔ this
                                                           translation
 ```
