@@ -20,7 +20,7 @@ import * as fs from 'fs';
 import path from 'path';
 import {fileURLToPath} from 'url';
 import type {TranslationMeta} from './translations-schema.js';
-import type {LicenseRecord} from './build-translations-meta.js';
+import type {LicenseRecord, LicenseVerification} from './build-translations-meta.js';
 import {parseArgs, formatHelp, COMMON_FLAGS} from './cli.js';
 import {readJson} from './lib.js';
 import type {FlagSpec} from './cli.js';
@@ -53,6 +53,7 @@ interface LicenceBlock {
     kvn_renumber_ok?: boolean;
     catalogue?: string;
     statement?: string;
+    verification?: LicenseVerification;
 }
 
 /** Én post i translations/index.json. */
@@ -72,7 +73,8 @@ function licenceBlock(license: LicenseRecord | null): LicenceBlock | undefined {
         noncommercial: license.noncommercial,
         kvn_renumber_ok: license.kvn_renumber_ok,
         catalogue: license.source,
-        statement: license.statement
+        statement: license.statement,
+        verification: license.verification
     };
 }
 

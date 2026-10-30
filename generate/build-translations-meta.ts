@@ -56,6 +56,20 @@ export interface LicenseRecord {
     kvn_renumber_ok?: boolean;
     source?: string;
     statement?: string;
+    verification?: LicenseVerification;
+}
+
+/**
+ * Whether a person has checked the licence against its source (#170 in
+ * bible.flogvit.com). The catalogue fields above were harvested and are a
+ * CLAIM; only `status: "confirmed"` means the claim was checked, and only a
+ * confirmed translation may be published. `evidence` is the source's own words.
+ */
+export interface LicenseVerification {
+    status: 'confirmed' | 'not_confirmed';
+    checked: string;
+    evidence: {url: string; quote: string}[];
+    note?: string;
 }
 
 /** Det `computeCoverage` måler — tallene som aldri kommer fra en modell. */
