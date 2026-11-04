@@ -23,7 +23,7 @@
  *   bun scripts/verify-text-report.ts --list --limit 40  # med verstekst
  *   bun scripts/verify-text-report.ts --help             # hele flaggtabellen
  */
-import { readFileSync, writeFileSync, existsSync, readdirSync } from 'fs';
+import { readFileSync, writeFileSync, existsSync, readdirSync, statSync } from 'fs';
 import { join, dirname } from 'path';
 import { fileURLToPath } from 'url';
 import { parseArgs, formatHelp, COMMON_FLAGS } from '../../generate/cli.js';
@@ -92,7 +92,8 @@ function verseText(tr: string, b: number, c: number, v: number): string | null {
 
 function main() {
   if (!existsSync(VER)) { console.error(`${VER} finnes ikke — kjør verify-text.ts først`); process.exit(1); }
-  const translations = (only.length ? only : readdirSync(VER)).filter(t => existsSync(join(VER, t)) && !t.startsWith('_'));
+  // Only directories: the log directory also holds its .gitignore.
+  const translations = (only.length ? only : readdirSync(VER)).filter(t => !t.startsWith('_') && !t.startsWith('.') && existsSync(join(VER, t)) && statSync(join(VER, t)).isDirectory());
 
   const items: Item[] = [];
   const perTr: Record<string, { verses: number; judged: number; counts: Record<string, number> }> = {};
