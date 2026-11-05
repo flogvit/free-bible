@@ -2,6 +2,12 @@
   "version": 2,
   "system": "web",
   "name": "web",
+  "textVerification": {
+    "status": "verified",
+    "checked": "2026-11-05",
+    "method": "Every verse followed through bibel's import (native -> osmain -> osnb) and compared (bge-m3) with the osnb verse it lands on and its neighbours; plus a landing check (no osnb verse left empty next to one that receives two) and check-mapping-coverage.ts. Deviations fixed in flogvit/free-bible#138.",
+    "remaining": "Headings that stay with v1 (Ps 18, 38, 68 and others), half a sentence across a verse boundary (1 Kgs 18:33, 1 Chr 28:17, Jer 11:5, Luke 20:30), and verses osnb does not have (Rom 16:25-27). verify-text.ts with both judges is running; what it finds comes as later fixes."
+  },
   "encoding": {
     "partSize": 16,
     "maxVerse": 177,
