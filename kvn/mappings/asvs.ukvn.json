@@ -2,6 +2,12 @@
   "version": 2,
   "system": "asvs",
   "name": "asvs",
+  "textVerification": {
+    "status": "verified",
+    "checked": "2026-11-08",
+    "method": "Every verse moved through bibel's import (native -> osmain -> osnb, toOsnbNumbering) and checked with bibel's scripts/check-edition-landing.ts against kjv: chapter by chapter, the verse lengths follow kjv's in place and not one verse over (it finds kjv's old Ps 9 and Ps 77 errors when they are put back), no osnb verse kjv fills is left empty unless the translation omits or joins it, and no source placeholder reaches the reader; every flagged chapter read against kjv. Plus check-mapping-coverage.ts. Deviations fixed for bible.flogvit.com#216.",
+    "remaining": "The ASV text with Strong's numbers in it ({H935}); the numbers keep 1 Sam 20:42 from being split, so osnb 21:1 stays empty. As asv otherwise: Ps 60's title, and the verses the critical text omits (Luke 17:36, Acts 8:37 ...). verify-text.ts with both judges follows on Home Mac; what it finds comes as later fixes."
+  },
   "encoding": {
     "partSize": 16,
     "maxVerse": 177,
