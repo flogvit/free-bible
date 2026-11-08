@@ -8,5 +8,20 @@
   "noncommercial": false,
   "kvn_renumber_ok": true,
   "source": "bss",
-  "statement": "This Bible is in the Public Domain."
+  "statement": "This Bible is in the Public Domain.",
+  "verification": {
+    "status": "confirmed",
+    "checked": "2026-11-05",
+    "evidence": [
+      {
+        "url": "https://api.biblesupersearch.com/api/bibles",
+        "quote": "The English Revised Version, 1881 Including the American Standard Version, 1901 (Applying Strong's numbering to the public domain ASV text)"
+      },
+      {
+        "url": "https://ebible.org/Scriptures/details.php?id=eng-asv",
+        "quote": "Public Domain [...] This public domain Bible translation is brought to you courtesy of eBible.org."
+      }
+    ],
+    "note": "The ASV text (1901) is in the public domain, and Strong's numbers are public domain."
+  }
 }
