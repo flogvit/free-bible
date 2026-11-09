@@ -2,6 +2,12 @@
   "version": 2,
   "system": "elberfelder_1871",
   "name": "elberfelder_1871",
+  "textVerification": {
+    "status": "verified",
+    "checked": "2026-11-09",
+    "method": "Text read again from CrossWire GerElb1871 with its notes in footnotes (free-bible#147). Every verse moved through bibel's import (toOsnbNumbering) and checked with bibel's scripts/check-edition-landing.ts against kjv; every flagged chapter read in place. Plus a scan for notes or markup in the text.",
+    "remaining": "Where the Hebrew and KJV chapters part (Lev 5/6, Num 30, 1 Sam 23/24, 2 Kgs 11/12, Job 40/41, Eccl 6/7, Ezek 20/21, Dan 5/6, Hos 11/12, Jonah 1/2, Mic 4/5, 2 Cor 13) the edition joins two verses in one, so the second osnb verse stays empty and its text is in the first. Psalm titles that osnb divides stay in v1 (Ps 7, 88, 120). verify-text.ts with both judges follows on Home Mac."
+  },
   "encoding": {
     "partSize": 16,
     "maxVerse": 177,
@@ -138,279 +144,1440 @@
   "stats": {
     "identityChapters": 1174,
     "mappedChapters": 15,
-    "totalMappingEntries": 568,
+    "totalMappingEntries": 921,
     "missingInTranslation": 9,
     "expansionsNeeded": 0
   },
   "map": [
     {
-      "kvnFrom": 1299904,
-      "kvnTo": 1299904,
-      "kvnRef": "Lev 6:1",
+      "kvnFrom": 1297072,
+      "kvnTo": 1297072,
+      "kvnRef": "3 5:1 (osnb)",
+      "tkvnFrom": 1297072,
+      "tkvnTo": 1297072,
+      "tkvnRef": "3 5,1",
+      "order": 0
+    },
+    {
+      "kvnFrom": 1297088,
+      "kvnTo": 1297088,
+      "kvnRef": "3 5:2 (osnb)",
+      "tkvnFrom": 1297088,
+      "tkvnTo": 1297088,
+      "tkvnRef": "3 5,2",
+      "order": 0
+    },
+    {
+      "kvnFrom": 1297104,
+      "kvnTo": 1297104,
+      "kvnRef": "3 5:3 (osnb)",
+      "tkvnFrom": 1297104,
+      "tkvnTo": 1297104,
+      "tkvnRef": "3 5,3",
+      "order": 0
+    },
+    {
+      "kvnFrom": 1297120,
+      "kvnTo": 1297120,
+      "kvnRef": "3 5:4 (osnb)",
+      "tkvnFrom": 1297120,
+      "tkvnTo": 1297120,
+      "tkvnRef": "3 5,4",
+      "order": 0
+    },
+    {
+      "kvnFrom": 1297136,
+      "kvnTo": 1297136,
+      "kvnRef": "3 5:5 (osnb)",
+      "tkvnFrom": 1297136,
+      "tkvnTo": 1297136,
+      "tkvnRef": "3 5,5",
+      "order": 0
+    },
+    {
+      "kvnFrom": 1297152,
+      "kvnTo": 1297152,
+      "kvnRef": "3 5:6 (osnb)",
+      "tkvnFrom": 1297152,
+      "tkvnTo": 1297152,
+      "tkvnRef": "3 5,6",
+      "order": 0
+    },
+    {
+      "kvnFrom": 1297168,
+      "kvnTo": 1297168,
+      "kvnRef": "3 5:7 (osnb)",
+      "tkvnFrom": 1297168,
+      "tkvnTo": 1297168,
+      "tkvnRef": "3 5,7",
+      "order": 0
+    },
+    {
+      "kvnFrom": 1297184,
+      "kvnTo": 1297184,
+      "kvnRef": "3 5:8 (osnb)",
+      "tkvnFrom": 1297184,
+      "tkvnTo": 1297184,
+      "tkvnRef": "3 5,8",
+      "order": 0
+    },
+    {
+      "kvnFrom": 1297200,
+      "kvnTo": 1297200,
+      "kvnRef": "3 5:9 (osnb)",
+      "tkvnFrom": 1297200,
+      "tkvnTo": 1297200,
+      "tkvnRef": "3 5,9",
+      "order": 0
+    },
+    {
+      "kvnFrom": 1297216,
+      "kvnTo": 1297216,
+      "kvnRef": "3 5:10 (osnb)",
+      "tkvnFrom": 1297216,
+      "tkvnTo": 1297216,
+      "tkvnRef": "3 5,10",
+      "order": 0
+    },
+    {
+      "kvnFrom": 1297232,
+      "kvnTo": 1297232,
+      "kvnRef": "3 5:11 (osnb)",
+      "tkvnFrom": 1297232,
+      "tkvnTo": 1297232,
+      "tkvnRef": "3 5,11",
+      "order": 0
+    },
+    {
+      "kvnFrom": 1297248,
+      "kvnTo": 1297248,
+      "kvnRef": "3 5:12 (osnb)",
+      "tkvnFrom": 1297248,
+      "tkvnTo": 1297248,
+      "tkvnRef": "3 5,12",
+      "order": 0
+    },
+    {
+      "kvnFrom": 1297264,
+      "kvnTo": 1297264,
+      "kvnRef": "3 5:13 (osnb)",
       "tkvnFrom": 1297264,
       "tkvnTo": 1297264,
-      "tkvnRef": "Lev 5,13",
+      "tkvnRef": "3 5,13",
       "order": 0
+    },
+    {
+      "kvnFrom": 1297280,
+      "kvnTo": 1297280,
+      "kvnRef": "3 5:14 (osnb)",
+      "tkvnFrom": 1297280,
+      "tkvnTo": 1297280,
+      "tkvnRef": "3 5,14",
+      "order": 0
+    },
+    {
+      "kvnFrom": 1297296,
+      "kvnTo": 1297296,
+      "kvnRef": "3 5:15 (osnb)",
+      "tkvnFrom": 1297296,
+      "tkvnTo": 1297296,
+      "tkvnRef": "3 5,15",
+      "order": 0
+    },
+    {
+      "kvnFrom": 1297312,
+      "kvnTo": 1297312,
+      "kvnRef": "3 5:16 (osnb)",
+      "tkvnFrom": 1297312,
+      "tkvnTo": 1297312,
+      "tkvnRef": "3 5,16",
+      "order": 0
+    },
+    {
+      "kvnFrom": 1297328,
+      "kvnTo": 1297328,
+      "kvnRef": "3 5:17 (osnb)",
+      "tkvnFrom": 1297328,
+      "tkvnTo": 1297328,
+      "tkvnRef": "3 5,17",
+      "order": 0
+    },
+    {
+      "kvnFrom": 1297344,
+      "kvnTo": 1297344,
+      "kvnRef": "3 5:18 (osnb)",
+      "tkvnFrom": 1297344,
+      "tkvnTo": 1297344,
+      "tkvnRef": "3 5,18",
+      "order": 0
+    },
+    {
+      "kvnFrom": 1297360,
+      "kvnTo": 1297360,
+      "kvnRef": "3 5:19 (osnb)",
+      "tkvnFrom": 1297360,
+      "tkvnTo": 1297360,
+      "tkvnRef": "3 5,19",
+      "order": 0
+    },
+    {
+      "kvnFrom": 1299904,
+      "kvnTo": 1299904,
+      "kvnRef": "3 5:20 (osnb)",
+      "tkvnFrom": 1297360,
+      "tkvnTo": 1297360,
+      "tkvnRef": "3 5,19",
+      "order": 1
     },
     {
       "kvnFrom": 1299920,
       "kvnTo": 1299920,
-      "kvnRef": "Lev 6:2",
-      "tkvnFrom": 1297280,
-      "tkvnTo": 1297280,
-      "tkvnRef": "Lev 5,14",
-      "order": 0
+      "kvnRef": "3 5:21 (osnb)",
+      "tkvnFrom": 1297360,
+      "tkvnTo": 1297360,
+      "tkvnRef": "3 5,19",
+      "order": 2
     },
     {
       "kvnFrom": 1299936,
       "kvnTo": 1299936,
-      "kvnRef": "Lev 6:3",
-      "tkvnFrom": 1297296,
-      "tkvnTo": 1297296,
-      "tkvnRef": "Lev 5,15",
-      "order": 0
+      "kvnRef": "3 5:22 (osnb)",
+      "tkvnFrom": 1297360,
+      "tkvnTo": 1297360,
+      "tkvnRef": "3 5,19",
+      "order": 3
     },
     {
       "kvnFrom": 1299952,
       "kvnTo": 1299952,
-      "kvnRef": "Lev 6:4",
-      "tkvnFrom": 1297312,
-      "tkvnTo": 1297312,
-      "tkvnRef": "Lev 5,16",
-      "order": 0
+      "kvnRef": "3 5:23 (osnb)",
+      "tkvnFrom": 1297360,
+      "tkvnTo": 1297360,
+      "tkvnRef": "3 5,19",
+      "order": 4
     },
     {
       "kvnFrom": 1299968,
       "kvnTo": 1299968,
-      "kvnRef": "Lev 6:5",
-      "tkvnFrom": 1297328,
-      "tkvnTo": 1297328,
-      "tkvnRef": "Lev 5,17",
-      "order": 0
+      "kvnRef": "3 5:24 (osnb)",
+      "tkvnFrom": 1297360,
+      "tkvnTo": 1297360,
+      "tkvnRef": "3 5,19",
+      "order": 5
     },
     {
       "kvnFrom": 1299984,
       "kvnTo": 1299984,
-      "kvnRef": "Lev 6:6",
-      "tkvnFrom": 1297344,
-      "tkvnTo": 1297344,
-      "tkvnRef": "Lev 5,18",
-      "order": 0
+      "kvnRef": "3 5:25 (osnb)",
+      "tkvnFrom": 1297360,
+      "tkvnTo": 1297360,
+      "tkvnRef": "3 5,19",
+      "order": 6
     },
     {
       "kvnFrom": 1300000,
       "kvnTo": 1300000,
-      "kvnRef": "Lev 6:7",
+      "kvnRef": "3 5:26 (osnb)",
       "tkvnFrom": 1297360,
       "tkvnTo": 1297360,
-      "tkvnRef": "Lev 5,19",
-      "order": 0
+      "tkvnRef": "3 5,19",
+      "order": 7
     },
     {
       "kvnFrom": 1300016,
       "kvnTo": 1300016,
-      "kvnRef": "Lev 6:8",
+      "kvnRef": "3 6:1 (osnb)",
       "tkvnFrom": 1299904,
       "tkvnTo": 1299904,
-      "tkvnRef": "Lev 6,1",
+      "tkvnRef": "3 6,1",
       "order": 0
     },
     {
       "kvnFrom": 1300032,
       "kvnTo": 1300032,
-      "kvnRef": "Lev 6:9",
+      "kvnRef": "3 6:2 (osnb)",
       "tkvnFrom": 1299920,
       "tkvnTo": 1299920,
-      "tkvnRef": "Lev 6,2",
+      "tkvnRef": "3 6,2",
       "order": 0
     },
     {
       "kvnFrom": 1300048,
       "kvnTo": 1300048,
-      "kvnRef": "Lev 6:10",
+      "kvnRef": "3 6:3 (osnb)",
       "tkvnFrom": 1299936,
       "tkvnTo": 1299936,
-      "tkvnRef": "Lev 6,3",
+      "tkvnRef": "3 6,3",
       "order": 0
     },
     {
       "kvnFrom": 1300064,
       "kvnTo": 1300064,
-      "kvnRef": "Lev 6:11",
+      "kvnRef": "3 6:4 (osnb)",
       "tkvnFrom": 1299952,
       "tkvnTo": 1299952,
-      "tkvnRef": "Lev 6,4",
+      "tkvnRef": "3 6,4",
       "order": 0
     },
     {
       "kvnFrom": 1300080,
       "kvnTo": 1300080,
-      "kvnRef": "Lev 6:12",
+      "kvnRef": "3 6:5 (osnb)",
       "tkvnFrom": 1299968,
       "tkvnTo": 1299968,
-      "tkvnRef": "Lev 6,5",
+      "tkvnRef": "3 6,5",
       "order": 0
     },
     {
       "kvnFrom": 1300096,
       "kvnTo": 1300096,
-      "kvnRef": "Lev 6:13",
+      "kvnRef": "3 6:6 (osnb)",
       "tkvnFrom": 1299984,
       "tkvnTo": 1299984,
-      "tkvnRef": "Lev 6,6",
+      "tkvnRef": "3 6,6",
       "order": 0
     },
     {
       "kvnFrom": 1300112,
       "kvnTo": 1300112,
-      "kvnRef": "Lev 6:14",
+      "kvnRef": "3 6:7 (osnb)",
       "tkvnFrom": 1300000,
       "tkvnTo": 1300000,
-      "tkvnRef": "Lev 6,7",
+      "tkvnRef": "3 6,7",
       "order": 0
     },
     {
       "kvnFrom": 1300128,
       "kvnTo": 1300128,
-      "kvnRef": "Lev 6:15",
+      "kvnRef": "3 6:8 (osnb)",
       "tkvnFrom": 1300016,
       "tkvnTo": 1300016,
-      "tkvnRef": "Lev 6,8",
+      "tkvnRef": "3 6,8",
       "order": 0
     },
     {
       "kvnFrom": 1300144,
       "kvnTo": 1300144,
-      "kvnRef": "Lev 6:16",
+      "kvnRef": "3 6:9 (osnb)",
       "tkvnFrom": 1300032,
       "tkvnTo": 1300032,
-      "tkvnRef": "Lev 6,9",
+      "tkvnRef": "3 6,9",
       "order": 0
     },
     {
       "kvnFrom": 1300160,
       "kvnTo": 1300160,
-      "kvnRef": "Lev 6:17",
+      "kvnRef": "3 6:10 (osnb)",
       "tkvnFrom": 1300048,
       "tkvnTo": 1300048,
-      "tkvnRef": "Lev 6,10",
+      "tkvnRef": "3 6,10",
       "order": 0
     },
     {
       "kvnFrom": 1300176,
       "kvnTo": 1300176,
-      "kvnRef": "Lev 6:18",
+      "kvnRef": "3 6:11 (osnb)",
       "tkvnFrom": 1300064,
       "tkvnTo": 1300064,
-      "tkvnRef": "Lev 6,11",
+      "tkvnRef": "3 6,11",
       "order": 0
     },
     {
       "kvnFrom": 1300192,
       "kvnTo": 1300192,
-      "kvnRef": "Lev 6:19",
+      "kvnRef": "3 6:12 (osnb)",
       "tkvnFrom": 1300080,
       "tkvnTo": 1300080,
-      "tkvnRef": "Lev 6,12",
+      "tkvnRef": "3 6,12",
       "order": 0
     },
     {
       "kvnFrom": 1300208,
       "kvnTo": 1300208,
-      "kvnRef": "Lev 6:20",
+      "kvnRef": "3 6:13 (osnb)",
       "tkvnFrom": 1300096,
       "tkvnTo": 1300096,
-      "tkvnRef": "Lev 6,13",
+      "tkvnRef": "3 6,13",
       "order": 0
     },
     {
       "kvnFrom": 1300224,
       "kvnTo": 1300224,
-      "kvnRef": "Lev 6:21",
+      "kvnRef": "3 6:14 (osnb)",
       "tkvnFrom": 1300112,
       "tkvnTo": 1300112,
-      "tkvnRef": "Lev 6,14",
+      "tkvnRef": "3 6,14",
       "order": 0
     },
     {
       "kvnFrom": 1300240,
       "kvnTo": 1300240,
-      "kvnRef": "Lev 6:22",
+      "kvnRef": "3 6:15 (osnb)",
       "tkvnFrom": 1300128,
       "tkvnTo": 1300128,
-      "tkvnRef": "Lev 6,15",
+      "tkvnRef": "3 6,15",
       "order": 0
     },
     {
       "kvnFrom": 1300256,
       "kvnTo": 1300256,
-      "kvnRef": "Lev 6:23",
+      "kvnRef": "3 6:16 (osnb)",
       "tkvnFrom": 1300144,
       "tkvnTo": 1300144,
-      "tkvnRef": "Lev 6,16",
+      "tkvnRef": "3 6,16",
       "order": 0
     },
     {
       "kvnFrom": 1300272,
       "kvnTo": 1300272,
-      "kvnRef": "Lev 6:24",
+      "kvnRef": "3 6:17 (osnb)",
       "tkvnFrom": 1300160,
       "tkvnTo": 1300160,
-      "tkvnRef": "Lev 6,17",
+      "tkvnRef": "3 6,17",
       "order": 0
     },
     {
       "kvnFrom": 1300288,
       "kvnTo": 1300288,
-      "kvnRef": "Lev 6:25",
+      "kvnRef": "3 6:18 (osnb)",
       "tkvnFrom": 1300176,
       "tkvnTo": 1300176,
-      "tkvnRef": "Lev 6,18",
+      "tkvnRef": "3 6,18",
       "order": 0
     },
     {
       "kvnFrom": 1300304,
       "kvnTo": 1300304,
-      "kvnRef": "Lev 6:26",
+      "kvnRef": "3 6:19 (osnb)",
       "tkvnFrom": 1300192,
       "tkvnTo": 1300192,
-      "tkvnRef": "Lev 6,19",
+      "tkvnRef": "3 6,19",
       "order": 0
     },
     {
       "kvnFrom": 1300320,
       "kvnTo": 1300320,
-      "kvnRef": "Lev 6:27",
+      "kvnRef": "3 6:20 (osnb)",
       "tkvnFrom": 1300208,
       "tkvnTo": 1300208,
-      "tkvnRef": "Lev 6,20",
+      "tkvnRef": "3 6,20",
       "order": 0
     },
     {
       "kvnFrom": 1300336,
       "kvnTo": 1300336,
-      "kvnRef": "Lev 6:28",
+      "kvnRef": "3 6:21 (osnb)",
       "tkvnFrom": 1300224,
       "tkvnTo": 1300224,
-      "tkvnRef": "Lev 6,21",
+      "tkvnRef": "3 6,21",
       "order": 0
     },
     {
       "kvnFrom": 1300352,
       "kvnTo": 1300352,
-      "kvnRef": "Lev 6:29",
+      "kvnRef": "3 6:22 (osnb)",
       "tkvnFrom": 1300240,
       "tkvnTo": 1300240,
-      "tkvnRef": "Lev 6,22",
+      "tkvnRef": "3 6,22",
       "order": 0
     },
     {
       "kvnFrom": 1300368,
       "kvnTo": 1300368,
-      "kvnRef": "Lev 6:30",
+      "kvnRef": "3 6:23 (osnb)",
       "tkvnFrom": 1300256,
       "tkvnTo": 1300256,
-      "tkvnRef": "Lev 6,23",
+      "tkvnRef": "3 6,23",
+      "order": 0
+    },
+    {
+      "kvnFrom": 1795504,
+      "kvnTo": 1795504,
+      "kvnRef": "4 30:1",
+      "tkvnFrom": 1795504,
+      "tkvnTo": 1795504,
+      "tkvnRef": "4 30,1",
+      "order": 0
+    },
+    {
+      "kvnFrom": 1795504,
+      "kvnTo": 1795504,
+      "kvnRef": "4 30:1",
+      "tkvnFrom": 1795520,
+      "tkvnTo": 1795520,
+      "tkvnRef": "4 30,2",
+      "order": 0
+    },
+    {
+      "kvnFrom": 1795520,
+      "kvnTo": 1795520,
+      "kvnRef": "4 30:2",
+      "tkvnFrom": 1795536,
+      "tkvnTo": 1795536,
+      "tkvnRef": "4 30,3",
+      "order": 0
+    },
+    {
+      "kvnFrom": 1795536,
+      "kvnTo": 1795536,
+      "kvnRef": "4 30:3",
+      "tkvnFrom": 1795552,
+      "tkvnTo": 1795552,
+      "tkvnRef": "4 30,4",
+      "order": 0
+    },
+    {
+      "kvnFrom": 1795552,
+      "kvnTo": 1795552,
+      "kvnRef": "4 30:4",
+      "tkvnFrom": 1795568,
+      "tkvnTo": 1795568,
+      "tkvnRef": "4 30,5",
+      "order": 0
+    },
+    {
+      "kvnFrom": 1795568,
+      "kvnTo": 1795568,
+      "kvnRef": "4 30:5",
+      "tkvnFrom": 1795584,
+      "tkvnTo": 1795584,
+      "tkvnRef": "4 30,6",
+      "order": 0
+    },
+    {
+      "kvnFrom": 1795584,
+      "kvnTo": 1795584,
+      "kvnRef": "4 30:6",
+      "tkvnFrom": 1795600,
+      "tkvnTo": 1795600,
+      "tkvnRef": "4 30,7",
+      "order": 0
+    },
+    {
+      "kvnFrom": 1795600,
+      "kvnTo": 1795600,
+      "kvnRef": "4 30:7",
+      "tkvnFrom": 1795616,
+      "tkvnTo": 1795616,
+      "tkvnRef": "4 30,8",
+      "order": 0
+    },
+    {
+      "kvnFrom": 1795616,
+      "kvnTo": 1795616,
+      "kvnRef": "4 30:8",
+      "tkvnFrom": 1795632,
+      "tkvnTo": 1795632,
+      "tkvnRef": "4 30,9",
+      "order": 0
+    },
+    {
+      "kvnFrom": 1795632,
+      "kvnTo": 1795632,
+      "kvnRef": "4 30:9",
+      "tkvnFrom": 1795648,
+      "tkvnTo": 1795648,
+      "tkvnRef": "4 30,10",
+      "order": 0
+    },
+    {
+      "kvnFrom": 1795648,
+      "kvnTo": 1795648,
+      "kvnRef": "4 30:10",
+      "tkvnFrom": 1795664,
+      "tkvnTo": 1795664,
+      "tkvnRef": "4 30,11",
+      "order": 0
+    },
+    {
+      "kvnFrom": 1795664,
+      "kvnTo": 1795664,
+      "kvnRef": "4 30:11",
+      "tkvnFrom": 1795680,
+      "tkvnTo": 1795680,
+      "tkvnRef": "4 30,12",
+      "order": 0
+    },
+    {
+      "kvnFrom": 1795680,
+      "kvnTo": 1795680,
+      "kvnRef": "4 30:12",
+      "tkvnFrom": 1795696,
+      "tkvnTo": 1795696,
+      "tkvnRef": "4 30,13",
+      "order": 0
+    },
+    {
+      "kvnFrom": 1795696,
+      "kvnTo": 1795696,
+      "kvnRef": "4 30:13",
+      "tkvnFrom": 1795712,
+      "tkvnTo": 1795712,
+      "tkvnRef": "4 30,14",
+      "order": 0
+    },
+    {
+      "kvnFrom": 1795712,
+      "kvnTo": 1795712,
+      "kvnRef": "4 30:14",
+      "tkvnFrom": 1795728,
+      "tkvnTo": 1795728,
+      "tkvnRef": "4 30,15",
+      "order": 0
+    },
+    {
+      "kvnFrom": 1795728,
+      "kvnTo": 1795728,
+      "kvnRef": "4 30:15",
+      "tkvnFrom": 1795744,
+      "tkvnTo": 1795744,
+      "tkvnRef": "4 30,16",
+      "order": 0
+    },
+    {
+      "kvnFrom": 1795744,
+      "kvnTo": 1795744,
+      "kvnRef": "4 30:16",
+      "tkvnFrom": 1795744,
+      "tkvnTo": 1795744,
+      "tkvnRef": "4 30,16",
+      "order": 1
+    },
+    {
+      "kvnFrom": 3913840,
+      "kvnTo": 3913840,
+      "kvnRef": "9 23:1 (osnb)",
+      "tkvnFrom": 3913840,
+      "tkvnTo": 3913840,
+      "tkvnRef": "9 23,1",
+      "order": 0
+    },
+    {
+      "kvnFrom": 3913856,
+      "kvnTo": 3913856,
+      "kvnRef": "9 23:2 (osnb)",
+      "tkvnFrom": 3913856,
+      "tkvnTo": 3913856,
+      "tkvnRef": "9 23,2",
+      "order": 0
+    },
+    {
+      "kvnFrom": 3913872,
+      "kvnTo": 3913872,
+      "kvnRef": "9 23:3 (osnb)",
+      "tkvnFrom": 3913872,
+      "tkvnTo": 3913872,
+      "tkvnRef": "9 23,3",
+      "order": 0
+    },
+    {
+      "kvnFrom": 3913888,
+      "kvnTo": 3913888,
+      "kvnRef": "9 23:4 (osnb)",
+      "tkvnFrom": 3913888,
+      "tkvnTo": 3913888,
+      "tkvnRef": "9 23,4",
+      "order": 0
+    },
+    {
+      "kvnFrom": 3913904,
+      "kvnTo": 3913904,
+      "kvnRef": "9 23:5 (osnb)",
+      "tkvnFrom": 3913904,
+      "tkvnTo": 3913904,
+      "tkvnRef": "9 23,5",
+      "order": 0
+    },
+    {
+      "kvnFrom": 3913920,
+      "kvnTo": 3913920,
+      "kvnRef": "9 23:6 (osnb)",
+      "tkvnFrom": 3913920,
+      "tkvnTo": 3913920,
+      "tkvnRef": "9 23,6",
+      "order": 0
+    },
+    {
+      "kvnFrom": 3913936,
+      "kvnTo": 3913936,
+      "kvnRef": "9 23:7 (osnb)",
+      "tkvnFrom": 3913936,
+      "tkvnTo": 3913936,
+      "tkvnRef": "9 23,7",
+      "order": 0
+    },
+    {
+      "kvnFrom": 3913952,
+      "kvnTo": 3913952,
+      "kvnRef": "9 23:8 (osnb)",
+      "tkvnFrom": 3913952,
+      "tkvnTo": 3913952,
+      "tkvnRef": "9 23,8",
+      "order": 0
+    },
+    {
+      "kvnFrom": 3913968,
+      "kvnTo": 3913968,
+      "kvnRef": "9 23:9 (osnb)",
+      "tkvnFrom": 3913968,
+      "tkvnTo": 3913968,
+      "tkvnRef": "9 23,9",
+      "order": 0
+    },
+    {
+      "kvnFrom": 3913984,
+      "kvnTo": 3913984,
+      "kvnRef": "9 23:10 (osnb)",
+      "tkvnFrom": 3913984,
+      "tkvnTo": 3913984,
+      "tkvnRef": "9 23,10",
+      "order": 0
+    },
+    {
+      "kvnFrom": 3914000,
+      "kvnTo": 3914000,
+      "kvnRef": "9 23:11 (osnb)",
+      "tkvnFrom": 3914000,
+      "tkvnTo": 3914000,
+      "tkvnRef": "9 23,11",
+      "order": 0
+    },
+    {
+      "kvnFrom": 3914016,
+      "kvnTo": 3914016,
+      "kvnRef": "9 23:12 (osnb)",
+      "tkvnFrom": 3914016,
+      "tkvnTo": 3914016,
+      "tkvnRef": "9 23,12",
+      "order": 0
+    },
+    {
+      "kvnFrom": 3914032,
+      "kvnTo": 3914032,
+      "kvnRef": "9 23:13 (osnb)",
+      "tkvnFrom": 3914032,
+      "tkvnTo": 3914032,
+      "tkvnRef": "9 23,13",
+      "order": 0
+    },
+    {
+      "kvnFrom": 3914048,
+      "kvnTo": 3914048,
+      "kvnRef": "9 23:14 (osnb)",
+      "tkvnFrom": 3914048,
+      "tkvnTo": 3914048,
+      "tkvnRef": "9 23,14",
+      "order": 0
+    },
+    {
+      "kvnFrom": 3914064,
+      "kvnTo": 3914064,
+      "kvnRef": "9 23:15 (osnb)",
+      "tkvnFrom": 3914064,
+      "tkvnTo": 3914064,
+      "tkvnRef": "9 23,15",
+      "order": 0
+    },
+    {
+      "kvnFrom": 3914080,
+      "kvnTo": 3914080,
+      "kvnRef": "9 23:16 (osnb)",
+      "tkvnFrom": 3914080,
+      "tkvnTo": 3914080,
+      "tkvnRef": "9 23,16",
+      "order": 0
+    },
+    {
+      "kvnFrom": 3914096,
+      "kvnTo": 3914096,
+      "kvnRef": "9 23:17 (osnb)",
+      "tkvnFrom": 3914096,
+      "tkvnTo": 3914096,
+      "tkvnRef": "9 23,17",
+      "order": 0
+    },
+    {
+      "kvnFrom": 3914112,
+      "kvnTo": 3914112,
+      "kvnRef": "9 23:18 (osnb)",
+      "tkvnFrom": 3914112,
+      "tkvnTo": 3914112,
+      "tkvnRef": "9 23,18",
+      "order": 0
+    },
+    {
+      "kvnFrom": 3914128,
+      "kvnTo": 3914128,
+      "kvnRef": "9 23:19 (osnb)",
+      "tkvnFrom": 3914128,
+      "tkvnTo": 3914128,
+      "tkvnRef": "9 23,19",
+      "order": 0
+    },
+    {
+      "kvnFrom": 3914144,
+      "kvnTo": 3914144,
+      "kvnRef": "9 23:20 (osnb)",
+      "tkvnFrom": 3914144,
+      "tkvnTo": 3914144,
+      "tkvnRef": "9 23,20",
+      "order": 0
+    },
+    {
+      "kvnFrom": 3914160,
+      "kvnTo": 3914160,
+      "kvnRef": "9 23:21 (osnb)",
+      "tkvnFrom": 3914160,
+      "tkvnTo": 3914160,
+      "tkvnRef": "9 23,21",
+      "order": 0
+    },
+    {
+      "kvnFrom": 3914176,
+      "kvnTo": 3914176,
+      "kvnRef": "9 23:22 (osnb)",
+      "tkvnFrom": 3914176,
+      "tkvnTo": 3914176,
+      "tkvnRef": "9 23,22",
+      "order": 0
+    },
+    {
+      "kvnFrom": 3914192,
+      "kvnTo": 3914192,
+      "kvnRef": "9 23:23 (osnb)",
+      "tkvnFrom": 3914192,
+      "tkvnTo": 3914192,
+      "tkvnRef": "9 23,23",
+      "order": 0
+    },
+    {
+      "kvnFrom": 3914208,
+      "kvnTo": 3914208,
+      "kvnRef": "9 23:24 (osnb)",
+      "tkvnFrom": 3914208,
+      "tkvnTo": 3914208,
+      "tkvnRef": "9 23,24",
+      "order": 0
+    },
+    {
+      "kvnFrom": 3914224,
+      "kvnTo": 3914224,
+      "kvnRef": "9 23:25 (osnb)",
+      "tkvnFrom": 3914224,
+      "tkvnTo": 3914224,
+      "tkvnRef": "9 23,25",
+      "order": 0
+    },
+    {
+      "kvnFrom": 3914240,
+      "kvnTo": 3914240,
+      "kvnRef": "9 23:26 (osnb)",
+      "tkvnFrom": 3914240,
+      "tkvnTo": 3914240,
+      "tkvnRef": "9 23,26",
+      "order": 0
+    },
+    {
+      "kvnFrom": 3914256,
+      "kvnTo": 3914256,
+      "kvnRef": "9 23:27 (osnb)",
+      "tkvnFrom": 3914256,
+      "tkvnTo": 3914256,
+      "tkvnRef": "9 23,27",
+      "order": 0
+    },
+    {
+      "kvnFrom": 3914272,
+      "kvnTo": 3914272,
+      "kvnRef": "9 23:28 (osnb)",
+      "tkvnFrom": 3914272,
+      "tkvnTo": 3914272,
+      "tkvnRef": "9 23,28",
+      "order": 0
+    },
+    {
+      "kvnFrom": 3914288,
+      "kvnTo": 3914288,
+      "kvnRef": "9 24:1 (osnb)",
+      "tkvnFrom": 3916672,
+      "tkvnTo": 3916672,
+      "tkvnRef": "9 24,1",
+      "order": 0
+    },
+    {
+      "kvnFrom": 3916672,
+      "kvnTo": 3916672,
+      "kvnRef": "9 24:2 (osnb)",
+      "tkvnFrom": 3916688,
+      "tkvnTo": 3916688,
+      "tkvnRef": "9 24,2",
+      "order": 0
+    },
+    {
+      "kvnFrom": 3916688,
+      "kvnTo": 3916688,
+      "kvnRef": "9 24:3 (osnb)",
+      "tkvnFrom": 3916704,
+      "tkvnTo": 3916704,
+      "tkvnRef": "9 24,3",
+      "order": 0
+    },
+    {
+      "kvnFrom": 3916704,
+      "kvnTo": 3916704,
+      "kvnRef": "9 24:4 (osnb)",
+      "tkvnFrom": 3916720,
+      "tkvnTo": 3916720,
+      "tkvnRef": "9 24,4",
+      "order": 0
+    },
+    {
+      "kvnFrom": 3916720,
+      "kvnTo": 3916720,
+      "kvnRef": "9 24:5 (osnb)",
+      "tkvnFrom": 3916736,
+      "tkvnTo": 3916736,
+      "tkvnRef": "9 24,5",
+      "order": 0
+    },
+    {
+      "kvnFrom": 3916736,
+      "kvnTo": 3916736,
+      "kvnRef": "9 24:6 (osnb)",
+      "tkvnFrom": 3916752,
+      "tkvnTo": 3916752,
+      "tkvnRef": "9 24,6",
+      "order": 0
+    },
+    {
+      "kvnFrom": 3916752,
+      "kvnTo": 3916752,
+      "kvnRef": "9 24:7 (osnb)",
+      "tkvnFrom": 3916768,
+      "tkvnTo": 3916768,
+      "tkvnRef": "9 24,7",
+      "order": 0
+    },
+    {
+      "kvnFrom": 3916768,
+      "kvnTo": 3916768,
+      "kvnRef": "9 24:8 (osnb)",
+      "tkvnFrom": 3916784,
+      "tkvnTo": 3916784,
+      "tkvnRef": "9 24,8",
+      "order": 0
+    },
+    {
+      "kvnFrom": 3916784,
+      "kvnTo": 3916784,
+      "kvnRef": "9 24:9 (osnb)",
+      "tkvnFrom": 3916800,
+      "tkvnTo": 3916800,
+      "tkvnRef": "9 24,9",
+      "order": 0
+    },
+    {
+      "kvnFrom": 3916800,
+      "kvnTo": 3916800,
+      "kvnRef": "9 24:10 (osnb)",
+      "tkvnFrom": 3916816,
+      "tkvnTo": 3916816,
+      "tkvnRef": "9 24,10",
+      "order": 0
+    },
+    {
+      "kvnFrom": 3916816,
+      "kvnTo": 3916816,
+      "kvnRef": "9 24:11 (osnb)",
+      "tkvnFrom": 3916832,
+      "tkvnTo": 3916832,
+      "tkvnRef": "9 24,11",
+      "order": 0
+    },
+    {
+      "kvnFrom": 3916832,
+      "kvnTo": 3916832,
+      "kvnRef": "9 24:12 (osnb)",
+      "tkvnFrom": 3916848,
+      "tkvnTo": 3916848,
+      "tkvnRef": "9 24,12",
+      "order": 0
+    },
+    {
+      "kvnFrom": 3916848,
+      "kvnTo": 3916848,
+      "kvnRef": "9 24:13 (osnb)",
+      "tkvnFrom": 3916864,
+      "tkvnTo": 3916864,
+      "tkvnRef": "9 24,13",
+      "order": 0
+    },
+    {
+      "kvnFrom": 3916864,
+      "kvnTo": 3916864,
+      "kvnRef": "9 24:14 (osnb)",
+      "tkvnFrom": 3916880,
+      "tkvnTo": 3916880,
+      "tkvnRef": "9 24,14",
+      "order": 0
+    },
+    {
+      "kvnFrom": 3916880,
+      "kvnTo": 3916880,
+      "kvnRef": "9 24:15 (osnb)",
+      "tkvnFrom": 3916896,
+      "tkvnTo": 3916896,
+      "tkvnRef": "9 24,15",
+      "order": 0
+    },
+    {
+      "kvnFrom": 3916896,
+      "kvnTo": 3916896,
+      "kvnRef": "9 24:16 (osnb)",
+      "tkvnFrom": 3916912,
+      "tkvnTo": 3916912,
+      "tkvnRef": "9 24,16",
+      "order": 0
+    },
+    {
+      "kvnFrom": 3916912,
+      "kvnTo": 3916912,
+      "kvnRef": "9 24:17 (osnb)",
+      "tkvnFrom": 3916928,
+      "tkvnTo": 3916928,
+      "tkvnRef": "9 24,17",
+      "order": 0
+    },
+    {
+      "kvnFrom": 3916928,
+      "kvnTo": 3916928,
+      "kvnRef": "9 24:18 (osnb)",
+      "tkvnFrom": 3916944,
+      "tkvnTo": 3916944,
+      "tkvnRef": "9 24,18",
+      "order": 0
+    },
+    {
+      "kvnFrom": 3916944,
+      "kvnTo": 3916944,
+      "kvnRef": "9 24:19 (osnb)",
+      "tkvnFrom": 3916960,
+      "tkvnTo": 3916960,
+      "tkvnRef": "9 24,19",
+      "order": 0
+    },
+    {
+      "kvnFrom": 3916960,
+      "kvnTo": 3916960,
+      "kvnRef": "9 24:20 (osnb)",
+      "tkvnFrom": 3916976,
+      "tkvnTo": 3916976,
+      "tkvnRef": "9 24,20",
+      "order": 0
+    },
+    {
+      "kvnFrom": 3916976,
+      "kvnTo": 3916976,
+      "kvnRef": "9 24:21 (osnb)",
+      "tkvnFrom": 3916992,
+      "tkvnTo": 3916992,
+      "tkvnRef": "9 24,21",
+      "order": 0
+    },
+    {
+      "kvnFrom": 3916992,
+      "kvnTo": 3916992,
+      "kvnRef": "9 24:22 (osnb)",
+      "tkvnFrom": 3917008,
+      "tkvnTo": 3917008,
+      "tkvnRef": "9 24,22",
+      "order": 0
+    },
+    {
+      "kvnFrom": 3917008,
+      "kvnTo": 3917008,
+      "kvnRef": "9 24:23 (osnb)",
+      "tkvnFrom": 3917008,
+      "tkvnTo": 3917008,
+      "tkvnRef": "9 24,22",
+      "order": 1
+    },
+    {
+      "kvnFrom": 5162752,
+      "kvnTo": 5162752,
+      "kvnRef": "12 11:1 (osnb)",
+      "tkvnFrom": 5162752,
+      "tkvnTo": 5162752,
+      "tkvnRef": "12 11,1",
+      "order": 0
+    },
+    {
+      "kvnFrom": 5162768,
+      "kvnTo": 5162768,
+      "kvnRef": "12 11:2 (osnb)",
+      "tkvnFrom": 5162768,
+      "tkvnTo": 5162768,
+      "tkvnRef": "12 11,2",
+      "order": 0
+    },
+    {
+      "kvnFrom": 5162784,
+      "kvnTo": 5162784,
+      "kvnRef": "12 11:3 (osnb)",
+      "tkvnFrom": 5162784,
+      "tkvnTo": 5162784,
+      "tkvnRef": "12 11,3",
+      "order": 0
+    },
+    {
+      "kvnFrom": 5162800,
+      "kvnTo": 5162800,
+      "kvnRef": "12 11:4 (osnb)",
+      "tkvnFrom": 5162800,
+      "tkvnTo": 5162800,
+      "tkvnRef": "12 11,4",
+      "order": 0
+    },
+    {
+      "kvnFrom": 5162816,
+      "kvnTo": 5162816,
+      "kvnRef": "12 11:5 (osnb)",
+      "tkvnFrom": 5162816,
+      "tkvnTo": 5162816,
+      "tkvnRef": "12 11,5",
+      "order": 0
+    },
+    {
+      "kvnFrom": 5162832,
+      "kvnTo": 5162832,
+      "kvnRef": "12 11:6 (osnb)",
+      "tkvnFrom": 5162832,
+      "tkvnTo": 5162832,
+      "tkvnRef": "12 11,6",
+      "order": 0
+    },
+    {
+      "kvnFrom": 5162848,
+      "kvnTo": 5162848,
+      "kvnRef": "12 11:7 (osnb)",
+      "tkvnFrom": 5162848,
+      "tkvnTo": 5162848,
+      "tkvnRef": "12 11,7",
+      "order": 0
+    },
+    {
+      "kvnFrom": 5162864,
+      "kvnTo": 5162864,
+      "kvnRef": "12 11:8 (osnb)",
+      "tkvnFrom": 5162864,
+      "tkvnTo": 5162864,
+      "tkvnRef": "12 11,8",
+      "order": 0
+    },
+    {
+      "kvnFrom": 5162880,
+      "kvnTo": 5162880,
+      "kvnRef": "12 11:9 (osnb)",
+      "tkvnFrom": 5162880,
+      "tkvnTo": 5162880,
+      "tkvnRef": "12 11,9",
+      "order": 0
+    },
+    {
+      "kvnFrom": 5162896,
+      "kvnTo": 5162896,
+      "kvnRef": "12 11:10 (osnb)",
+      "tkvnFrom": 5162896,
+      "tkvnTo": 5162896,
+      "tkvnRef": "12 11,10",
+      "order": 0
+    },
+    {
+      "kvnFrom": 5162912,
+      "kvnTo": 5162912,
+      "kvnRef": "12 11:11 (osnb)",
+      "tkvnFrom": 5162912,
+      "tkvnTo": 5162912,
+      "tkvnRef": "12 11,11",
+      "order": 0
+    },
+    {
+      "kvnFrom": 5162928,
+      "kvnTo": 5162928,
+      "kvnRef": "12 11:12 (osnb)",
+      "tkvnFrom": 5162928,
+      "tkvnTo": 5162928,
+      "tkvnRef": "12 11,12",
+      "order": 0
+    },
+    {
+      "kvnFrom": 5162944,
+      "kvnTo": 5162944,
+      "kvnRef": "12 11:13 (osnb)",
+      "tkvnFrom": 5162944,
+      "tkvnTo": 5162944,
+      "tkvnRef": "12 11,13",
+      "order": 0
+    },
+    {
+      "kvnFrom": 5162960,
+      "kvnTo": 5162960,
+      "kvnRef": "12 11:14 (osnb)",
+      "tkvnFrom": 5162960,
+      "tkvnTo": 5162960,
+      "tkvnRef": "12 11,14",
+      "order": 0
+    },
+    {
+      "kvnFrom": 5162976,
+      "kvnTo": 5162976,
+      "kvnRef": "12 11:15 (osnb)",
+      "tkvnFrom": 5162976,
+      "tkvnTo": 5162976,
+      "tkvnRef": "12 11,15",
+      "order": 0
+    },
+    {
+      "kvnFrom": 5162992,
+      "kvnTo": 5162992,
+      "kvnRef": "12 11:16 (osnb)",
+      "tkvnFrom": 5162992,
+      "tkvnTo": 5162992,
+      "tkvnRef": "12 11,16",
+      "order": 0
+    },
+    {
+      "kvnFrom": 5163008,
+      "kvnTo": 5163008,
+      "kvnRef": "12 11:17 (osnb)",
+      "tkvnFrom": 5163008,
+      "tkvnTo": 5163008,
+      "tkvnRef": "12 11,17",
+      "order": 0
+    },
+    {
+      "kvnFrom": 5163024,
+      "kvnTo": 5163024,
+      "kvnRef": "12 11:18 (osnb)",
+      "tkvnFrom": 5163024,
+      "tkvnTo": 5163024,
+      "tkvnRef": "12 11,18",
+      "order": 0
+    },
+    {
+      "kvnFrom": 5163040,
+      "kvnTo": 5163040,
+      "kvnRef": "12 11:19 (osnb)",
+      "tkvnFrom": 5163040,
+      "tkvnTo": 5163040,
+      "tkvnRef": "12 11,19",
+      "order": 0
+    },
+    {
+      "kvnFrom": 5163056,
+      "kvnTo": 5163056,
+      "kvnRef": "12 11:20 (osnb)",
+      "tkvnFrom": 5163056,
+      "tkvnTo": 5163056,
+      "tkvnRef": "12 11,20",
+      "order": 0
+    },
+    {
+      "kvnFrom": 5163072,
+      "kvnTo": 5163072,
+      "kvnRef": "12 12:1 (osnb)",
+      "tkvnFrom": 5165584,
+      "tkvnTo": 5165584,
+      "tkvnRef": "12 12,1",
+      "order": 0
+    },
+    {
+      "kvnFrom": 5165584,
+      "kvnTo": 5165584,
+      "kvnRef": "12 12:2 (osnb)",
+      "tkvnFrom": 5165584,
+      "tkvnTo": 5165584,
+      "tkvnRef": "12 12,1",
+      "order": 1
+    },
+    {
+      "kvnFrom": 5165600,
+      "kvnTo": 5165600,
+      "kvnRef": "12 12:3 (osnb)",
+      "tkvnFrom": 5165600,
+      "tkvnTo": 5165600,
+      "tkvnRef": "12 12,2",
+      "order": 0
+    },
+    {
+      "kvnFrom": 5165616,
+      "kvnTo": 5165616,
+      "kvnRef": "12 12:4 (osnb)",
+      "tkvnFrom": 5165616,
+      "tkvnTo": 5165616,
+      "tkvnRef": "12 12,3",
+      "order": 0
+    },
+    {
+      "kvnFrom": 5165632,
+      "kvnTo": 5165632,
+      "kvnRef": "12 12:5 (osnb)",
+      "tkvnFrom": 5165632,
+      "tkvnTo": 5165632,
+      "tkvnRef": "12 12,4",
+      "order": 0
+    },
+    {
+      "kvnFrom": 5165648,
+      "kvnTo": 5165648,
+      "kvnRef": "12 12:6 (osnb)",
+      "tkvnFrom": 5165648,
+      "tkvnTo": 5165648,
+      "tkvnRef": "12 12,5",
+      "order": 0
+    },
+    {
+      "kvnFrom": 5165664,
+      "kvnTo": 5165664,
+      "kvnRef": "12 12:7 (osnb)",
+      "tkvnFrom": 5165664,
+      "tkvnTo": 5165664,
+      "tkvnRef": "12 12,6",
+      "order": 0
+    },
+    {
+      "kvnFrom": 5165680,
+      "kvnTo": 5165680,
+      "kvnRef": "12 12:8 (osnb)",
+      "tkvnFrom": 5165680,
+      "tkvnTo": 5165680,
+      "tkvnRef": "12 12,7",
+      "order": 0
+    },
+    {
+      "kvnFrom": 5165696,
+      "kvnTo": 5165696,
+      "kvnRef": "12 12:9 (osnb)",
+      "tkvnFrom": 5165696,
+      "tkvnTo": 5165696,
+      "tkvnRef": "12 12,8",
+      "order": 0
+    },
+    {
+      "kvnFrom": 5165712,
+      "kvnTo": 5165712,
+      "kvnRef": "12 12:10 (osnb)",
+      "tkvnFrom": 5165712,
+      "tkvnTo": 5165712,
+      "tkvnRef": "12 12,9",
+      "order": 0
+    },
+    {
+      "kvnFrom": 5165728,
+      "kvnTo": 5165728,
+      "kvnRef": "12 12:11 (osnb)",
+      "tkvnFrom": 5165728,
+      "tkvnTo": 5165728,
+      "tkvnRef": "12 12,10",
+      "order": 0
+    },
+    {
+      "kvnFrom": 5165744,
+      "kvnTo": 5165744,
+      "kvnRef": "12 12:12 (osnb)",
+      "tkvnFrom": 5165744,
+      "tkvnTo": 5165744,
+      "tkvnRef": "12 12,11",
+      "order": 0
+    },
+    {
+      "kvnFrom": 5165760,
+      "kvnTo": 5165760,
+      "kvnRef": "12 12:13 (osnb)",
+      "tkvnFrom": 5165760,
+      "tkvnTo": 5165760,
+      "tkvnRef": "12 12,12",
+      "order": 0
+    },
+    {
+      "kvnFrom": 5165776,
+      "kvnTo": 5165776,
+      "kvnRef": "12 12:14 (osnb)",
+      "tkvnFrom": 5165776,
+      "tkvnTo": 5165776,
+      "tkvnRef": "12 12,13",
+      "order": 0
+    },
+    {
+      "kvnFrom": 5165792,
+      "kvnTo": 5165792,
+      "kvnRef": "12 12:15 (osnb)",
+      "tkvnFrom": 5165792,
+      "tkvnTo": 5165792,
+      "tkvnRef": "12 12,14",
+      "order": 0
+    },
+    {
+      "kvnFrom": 5165808,
+      "kvnTo": 5165808,
+      "kvnRef": "12 12:16 (osnb)",
+      "tkvnFrom": 5165808,
+      "tkvnTo": 5165808,
+      "tkvnRef": "12 12,15",
+      "order": 0
+    },
+    {
+      "kvnFrom": 5165824,
+      "kvnTo": 5165824,
+      "kvnRef": "12 12:17 (osnb)",
+      "tkvnFrom": 5165824,
+      "tkvnTo": 5165824,
+      "tkvnRef": "12 12,16",
+      "order": 0
+    },
+    {
+      "kvnFrom": 5165840,
+      "kvnTo": 5165840,
+      "kvnRef": "12 12:18 (osnb)",
+      "tkvnFrom": 5165840,
+      "tkvnTo": 5165840,
+      "tkvnRef": "12 12,17",
+      "order": 0
+    },
+    {
+      "kvnFrom": 5165856,
+      "kvnTo": 5165856,
+      "kvnRef": "12 12:19 (osnb)",
+      "tkvnFrom": 5165856,
+      "tkvnTo": 5165856,
+      "tkvnRef": "12 12,18",
+      "order": 0
+    },
+    {
+      "kvnFrom": 5165872,
+      "kvnTo": 5165872,
+      "kvnRef": "12 12:20 (osnb)",
+      "tkvnFrom": 5165872,
+      "tkvnTo": 5165872,
+      "tkvnRef": "12 12,19",
+      "order": 0
+    },
+    {
+      "kvnFrom": 5165888,
+      "kvnTo": 5165888,
+      "kvnRef": "12 12:21 (osnb)",
+      "tkvnFrom": 5165888,
+      "tkvnTo": 5165888,
+      "tkvnRef": "12 12,20",
+      "order": 0
+    },
+    {
+      "kvnFrom": 5165904,
+      "kvnTo": 5165904,
+      "kvnRef": "12 12:22 (osnb)",
+      "tkvnFrom": 5165904,
+      "tkvnTo": 5165904,
+      "tkvnRef": "12 12,21",
       "order": 0
     },
     {
@@ -1068,6 +2235,528 @@
       "tkvnFrom": 6863104,
       "tkvnTo": 6863104,
       "tkvnRef": "Neh 7,73",
+      "order": 0
+    },
+    {
+      "kvnFrom": 7810672,
+      "kvnTo": 7810672,
+      "kvnRef": "18 40:1 (osnb)",
+      "tkvnFrom": 7810672,
+      "tkvnTo": 7810672,
+      "tkvnRef": "18 40,1",
+      "order": 0
+    },
+    {
+      "kvnFrom": 7810688,
+      "kvnTo": 7810688,
+      "kvnRef": "18 40:2 (osnb)",
+      "tkvnFrom": 7810688,
+      "tkvnTo": 7810688,
+      "tkvnRef": "18 40,2",
+      "order": 0
+    },
+    {
+      "kvnFrom": 7810704,
+      "kvnTo": 7810704,
+      "kvnRef": "18 40:3 (osnb)",
+      "tkvnFrom": 7810704,
+      "tkvnTo": 7810704,
+      "tkvnRef": "18 40,3",
+      "order": 0
+    },
+    {
+      "kvnFrom": 7810720,
+      "kvnTo": 7810720,
+      "kvnRef": "18 40:4 (osnb)",
+      "tkvnFrom": 7810720,
+      "tkvnTo": 7810720,
+      "tkvnRef": "18 40,4",
+      "order": 0
+    },
+    {
+      "kvnFrom": 7810736,
+      "kvnTo": 7810736,
+      "kvnRef": "18 40:5 (osnb)",
+      "tkvnFrom": 7810736,
+      "tkvnTo": 7810736,
+      "tkvnRef": "18 40,5",
+      "order": 0
+    },
+    {
+      "kvnFrom": 7810752,
+      "kvnTo": 7810752,
+      "kvnRef": "18 40:6 (osnb)",
+      "tkvnFrom": 7810752,
+      "tkvnTo": 7810752,
+      "tkvnRef": "18 40,6",
+      "order": 0
+    },
+    {
+      "kvnFrom": 7810768,
+      "kvnTo": 7810768,
+      "kvnRef": "18 40:7 (osnb)",
+      "tkvnFrom": 7810768,
+      "tkvnTo": 7810768,
+      "tkvnRef": "18 40,7",
+      "order": 0
+    },
+    {
+      "kvnFrom": 7810784,
+      "kvnTo": 7810784,
+      "kvnRef": "18 40:8 (osnb)",
+      "tkvnFrom": 7810784,
+      "tkvnTo": 7810784,
+      "tkvnRef": "18 40,8",
+      "order": 0
+    },
+    {
+      "kvnFrom": 7810800,
+      "kvnTo": 7810800,
+      "kvnRef": "18 40:9 (osnb)",
+      "tkvnFrom": 7810800,
+      "tkvnTo": 7810800,
+      "tkvnRef": "18 40,9",
+      "order": 0
+    },
+    {
+      "kvnFrom": 7810816,
+      "kvnTo": 7810816,
+      "kvnRef": "18 40:10 (osnb)",
+      "tkvnFrom": 7810816,
+      "tkvnTo": 7810816,
+      "tkvnRef": "18 40,10",
+      "order": 0
+    },
+    {
+      "kvnFrom": 7810832,
+      "kvnTo": 7810832,
+      "kvnRef": "18 40:11 (osnb)",
+      "tkvnFrom": 7810832,
+      "tkvnTo": 7810832,
+      "tkvnRef": "18 40,11",
+      "order": 0
+    },
+    {
+      "kvnFrom": 7810848,
+      "kvnTo": 7810848,
+      "kvnRef": "18 40:12 (osnb)",
+      "tkvnFrom": 7810848,
+      "tkvnTo": 7810848,
+      "tkvnRef": "18 40,12",
+      "order": 0
+    },
+    {
+      "kvnFrom": 7810864,
+      "kvnTo": 7810864,
+      "kvnRef": "18 40:13 (osnb)",
+      "tkvnFrom": 7810864,
+      "tkvnTo": 7810864,
+      "tkvnRef": "18 40,13",
+      "order": 0
+    },
+    {
+      "kvnFrom": 7810880,
+      "kvnTo": 7810880,
+      "kvnRef": "18 40:14 (osnb)",
+      "tkvnFrom": 7810880,
+      "tkvnTo": 7810880,
+      "tkvnRef": "18 40,14",
+      "order": 0
+    },
+    {
+      "kvnFrom": 7810896,
+      "kvnTo": 7810896,
+      "kvnRef": "18 40:15 (osnb)",
+      "tkvnFrom": 7810896,
+      "tkvnTo": 7810896,
+      "tkvnRef": "18 40,15",
+      "order": 0
+    },
+    {
+      "kvnFrom": 7810912,
+      "kvnTo": 7810912,
+      "kvnRef": "18 40:16 (osnb)",
+      "tkvnFrom": 7810912,
+      "tkvnTo": 7810912,
+      "tkvnRef": "18 40,16",
+      "order": 0
+    },
+    {
+      "kvnFrom": 7810928,
+      "kvnTo": 7810928,
+      "kvnRef": "18 40:17 (osnb)",
+      "tkvnFrom": 7810928,
+      "tkvnTo": 7810928,
+      "tkvnRef": "18 40,17",
+      "order": 0
+    },
+    {
+      "kvnFrom": 7810944,
+      "kvnTo": 7810944,
+      "kvnRef": "18 40:18 (osnb)",
+      "tkvnFrom": 7810944,
+      "tkvnTo": 7810944,
+      "tkvnRef": "18 40,18",
+      "order": 0
+    },
+    {
+      "kvnFrom": 7810960,
+      "kvnTo": 7810960,
+      "kvnRef": "18 40:19 (osnb)",
+      "tkvnFrom": 7810960,
+      "tkvnTo": 7810960,
+      "tkvnRef": "18 40,19",
+      "order": 0
+    },
+    {
+      "kvnFrom": 7810976,
+      "kvnTo": 7810976,
+      "kvnRef": "18 40:20 (osnb)",
+      "tkvnFrom": 7810976,
+      "tkvnTo": 7810976,
+      "tkvnRef": "18 40,20",
+      "order": 0
+    },
+    {
+      "kvnFrom": 7810992,
+      "kvnTo": 7810992,
+      "kvnRef": "18 40:21 (osnb)",
+      "tkvnFrom": 7810992,
+      "tkvnTo": 7810992,
+      "tkvnRef": "18 40,21",
+      "order": 0
+    },
+    {
+      "kvnFrom": 7811008,
+      "kvnTo": 7811008,
+      "kvnRef": "18 40:22 (osnb)",
+      "tkvnFrom": 7811008,
+      "tkvnTo": 7811008,
+      "tkvnRef": "18 40,22",
+      "order": 0
+    },
+    {
+      "kvnFrom": 7811024,
+      "kvnTo": 7811024,
+      "kvnRef": "18 40:23 (osnb)",
+      "tkvnFrom": 7811024,
+      "tkvnTo": 7811024,
+      "tkvnRef": "18 40,23",
+      "order": 0
+    },
+    {
+      "kvnFrom": 7811040,
+      "kvnTo": 7811040,
+      "kvnRef": "18 40:24 (osnb)",
+      "tkvnFrom": 7811040,
+      "tkvnTo": 7811040,
+      "tkvnRef": "18 40,24",
+      "order": 0
+    },
+    {
+      "kvnFrom": 7813504,
+      "kvnTo": 7813504,
+      "kvnRef": "18 40:25 (osnb)",
+      "tkvnFrom": 7811040,
+      "tkvnTo": 7811040,
+      "tkvnRef": "18 40,24",
+      "order": 1
+    },
+    {
+      "kvnFrom": 7813520,
+      "kvnTo": 7813520,
+      "kvnRef": "18 40:26 (osnb)",
+      "tkvnFrom": 7811040,
+      "tkvnTo": 7811040,
+      "tkvnRef": "18 40,24",
+      "order": 2
+    },
+    {
+      "kvnFrom": 7813536,
+      "kvnTo": 7813536,
+      "kvnRef": "18 40:27 (osnb)",
+      "tkvnFrom": 7811040,
+      "tkvnTo": 7811040,
+      "tkvnRef": "18 40,24",
+      "order": 3
+    },
+    {
+      "kvnFrom": 7813552,
+      "kvnTo": 7813552,
+      "kvnRef": "18 40:28 (osnb)",
+      "tkvnFrom": 7811040,
+      "tkvnTo": 7811040,
+      "tkvnRef": "18 40,24",
+      "order": 4
+    },
+    {
+      "kvnFrom": 7813568,
+      "kvnTo": 7813568,
+      "kvnRef": "18 40:29 (osnb)",
+      "tkvnFrom": 7811040,
+      "tkvnTo": 7811040,
+      "tkvnRef": "18 40,24",
+      "order": 5
+    },
+    {
+      "kvnFrom": 7813584,
+      "kvnTo": 7813584,
+      "kvnRef": "18 40:30 (osnb)",
+      "tkvnFrom": 7811040,
+      "tkvnTo": 7811040,
+      "tkvnRef": "18 40,24",
+      "order": 6
+    },
+    {
+      "kvnFrom": 7813600,
+      "kvnTo": 7813600,
+      "kvnRef": "18 40:31 (osnb)",
+      "tkvnFrom": 7811040,
+      "tkvnTo": 7811040,
+      "tkvnRef": "18 40,24",
+      "order": 7
+    },
+    {
+      "kvnFrom": 7813616,
+      "kvnTo": 7813616,
+      "kvnRef": "18 40:32 (osnb)",
+      "tkvnFrom": 7811040,
+      "tkvnTo": 7811040,
+      "tkvnRef": "18 40,24",
+      "order": 8
+    },
+    {
+      "kvnFrom": 7813632,
+      "kvnTo": 7813632,
+      "kvnRef": "18 41:1 (osnb)",
+      "tkvnFrom": 7813504,
+      "tkvnTo": 7813504,
+      "tkvnRef": "18 41,1",
+      "order": 0
+    },
+    {
+      "kvnFrom": 7813648,
+      "kvnTo": 7813648,
+      "kvnRef": "18 41:2 (osnb)",
+      "tkvnFrom": 7813520,
+      "tkvnTo": 7813520,
+      "tkvnRef": "18 41,2",
+      "order": 0
+    },
+    {
+      "kvnFrom": 7813664,
+      "kvnTo": 7813664,
+      "kvnRef": "18 41:3 (osnb)",
+      "tkvnFrom": 7813536,
+      "tkvnTo": 7813536,
+      "tkvnRef": "18 41,3",
+      "order": 0
+    },
+    {
+      "kvnFrom": 7813680,
+      "kvnTo": 7813680,
+      "kvnRef": "18 41:4 (osnb)",
+      "tkvnFrom": 7813552,
+      "tkvnTo": 7813552,
+      "tkvnRef": "18 41,4",
+      "order": 0
+    },
+    {
+      "kvnFrom": 7813696,
+      "kvnTo": 7813696,
+      "kvnRef": "18 41:5 (osnb)",
+      "tkvnFrom": 7813568,
+      "tkvnTo": 7813568,
+      "tkvnRef": "18 41,5",
+      "order": 0
+    },
+    {
+      "kvnFrom": 7813712,
+      "kvnTo": 7813712,
+      "kvnRef": "18 41:6 (osnb)",
+      "tkvnFrom": 7813584,
+      "tkvnTo": 7813584,
+      "tkvnRef": "18 41,6",
+      "order": 0
+    },
+    {
+      "kvnFrom": 7813728,
+      "kvnTo": 7813728,
+      "kvnRef": "18 41:7 (osnb)",
+      "tkvnFrom": 7813600,
+      "tkvnTo": 7813600,
+      "tkvnRef": "18 41,7",
+      "order": 0
+    },
+    {
+      "kvnFrom": 7813744,
+      "kvnTo": 7813744,
+      "kvnRef": "18 41:8 (osnb)",
+      "tkvnFrom": 7813616,
+      "tkvnTo": 7813616,
+      "tkvnRef": "18 41,8",
+      "order": 0
+    },
+    {
+      "kvnFrom": 7813760,
+      "kvnTo": 7813760,
+      "kvnRef": "18 41:9 (osnb)",
+      "tkvnFrom": 7813632,
+      "tkvnTo": 7813632,
+      "tkvnRef": "18 41,9",
+      "order": 0
+    },
+    {
+      "kvnFrom": 7813776,
+      "kvnTo": 7813776,
+      "kvnRef": "18 41:10 (osnb)",
+      "tkvnFrom": 7813648,
+      "tkvnTo": 7813648,
+      "tkvnRef": "18 41,10",
+      "order": 0
+    },
+    {
+      "kvnFrom": 7813792,
+      "kvnTo": 7813792,
+      "kvnRef": "18 41:11 (osnb)",
+      "tkvnFrom": 7813664,
+      "tkvnTo": 7813664,
+      "tkvnRef": "18 41,11",
+      "order": 0
+    },
+    {
+      "kvnFrom": 7813808,
+      "kvnTo": 7813808,
+      "kvnRef": "18 41:12 (osnb)",
+      "tkvnFrom": 7813680,
+      "tkvnTo": 7813680,
+      "tkvnRef": "18 41,12",
+      "order": 0
+    },
+    {
+      "kvnFrom": 7813824,
+      "kvnTo": 7813824,
+      "kvnRef": "18 41:13 (osnb)",
+      "tkvnFrom": 7813696,
+      "tkvnTo": 7813696,
+      "tkvnRef": "18 41,13",
+      "order": 0
+    },
+    {
+      "kvnFrom": 7813840,
+      "kvnTo": 7813840,
+      "kvnRef": "18 41:14 (osnb)",
+      "tkvnFrom": 7813712,
+      "tkvnTo": 7813712,
+      "tkvnRef": "18 41,14",
+      "order": 0
+    },
+    {
+      "kvnFrom": 7813856,
+      "kvnTo": 7813856,
+      "kvnRef": "18 41:15 (osnb)",
+      "tkvnFrom": 7813728,
+      "tkvnTo": 7813728,
+      "tkvnRef": "18 41,15",
+      "order": 0
+    },
+    {
+      "kvnFrom": 7813872,
+      "kvnTo": 7813872,
+      "kvnRef": "18 41:16 (osnb)",
+      "tkvnFrom": 7813744,
+      "tkvnTo": 7813744,
+      "tkvnRef": "18 41,16",
+      "order": 0
+    },
+    {
+      "kvnFrom": 7813888,
+      "kvnTo": 7813888,
+      "kvnRef": "18 41:17 (osnb)",
+      "tkvnFrom": 7813760,
+      "tkvnTo": 7813760,
+      "tkvnRef": "18 41,17",
+      "order": 0
+    },
+    {
+      "kvnFrom": 7813904,
+      "kvnTo": 7813904,
+      "kvnRef": "18 41:18 (osnb)",
+      "tkvnFrom": 7813776,
+      "tkvnTo": 7813776,
+      "tkvnRef": "18 41,18",
+      "order": 0
+    },
+    {
+      "kvnFrom": 7813920,
+      "kvnTo": 7813920,
+      "kvnRef": "18 41:19 (osnb)",
+      "tkvnFrom": 7813792,
+      "tkvnTo": 7813792,
+      "tkvnRef": "18 41,19",
+      "order": 0
+    },
+    {
+      "kvnFrom": 7813936,
+      "kvnTo": 7813936,
+      "kvnRef": "18 41:20 (osnb)",
+      "tkvnFrom": 7813808,
+      "tkvnTo": 7813808,
+      "tkvnRef": "18 41,20",
+      "order": 0
+    },
+    {
+      "kvnFrom": 7813952,
+      "kvnTo": 7813952,
+      "kvnRef": "18 41:21 (osnb)",
+      "tkvnFrom": 7813824,
+      "tkvnTo": 7813824,
+      "tkvnRef": "18 41,21",
+      "order": 0
+    },
+    {
+      "kvnFrom": 7813968,
+      "kvnTo": 7813968,
+      "kvnRef": "18 41:22 (osnb)",
+      "tkvnFrom": 7813840,
+      "tkvnTo": 7813840,
+      "tkvnRef": "18 41,22",
+      "order": 0
+    },
+    {
+      "kvnFrom": 7813984,
+      "kvnTo": 7813984,
+      "kvnRef": "18 41:23 (osnb)",
+      "tkvnFrom": 7813856,
+      "tkvnTo": 7813856,
+      "tkvnRef": "18 41,23",
+      "order": 0
+    },
+    {
+      "kvnFrom": 7814000,
+      "kvnTo": 7814000,
+      "kvnRef": "18 41:24 (osnb)",
+      "tkvnFrom": 7813872,
+      "tkvnTo": 7813872,
+      "tkvnRef": "18 41,24",
+      "order": 0
+    },
+    {
+      "kvnFrom": 7814016,
+      "kvnTo": 7814016,
+      "kvnRef": "18 41:25 (osnb)",
+      "tkvnFrom": 7813888,
+      "tkvnTo": 7813888,
+      "tkvnRef": "18 41,25",
+      "order": 0
+    },
+    {
+      "kvnFrom": 7814032,
+      "kvnTo": 7814032,
+      "kvnRef": "18 41:26 (osnb)",
+      "tkvnFrom": 7813904,
+      "tkvnTo": 7813904,
+      "tkvnRef": "18 41,26",
       "order": 0
     },
     {
@@ -4374,6 +6063,114 @@
       "order": 0
     },
     {
+      "kvnFrom": 8997280,
+      "kvnTo": 8997280,
+      "kvnRef": "21 6:1 (osnb)",
+      "tkvnFrom": 8997280,
+      "tkvnTo": 8997280,
+      "tkvnRef": "21 6,1",
+      "order": 0
+    },
+    {
+      "kvnFrom": 8997296,
+      "kvnTo": 8997296,
+      "kvnRef": "21 6:2 (osnb)",
+      "tkvnFrom": 8997296,
+      "tkvnTo": 8997296,
+      "tkvnRef": "21 6,2",
+      "order": 0
+    },
+    {
+      "kvnFrom": 8997312,
+      "kvnTo": 8997312,
+      "kvnRef": "21 6:3 (osnb)",
+      "tkvnFrom": 8997312,
+      "tkvnTo": 8997312,
+      "tkvnRef": "21 6,3",
+      "order": 0
+    },
+    {
+      "kvnFrom": 8997328,
+      "kvnTo": 8997328,
+      "kvnRef": "21 6:4 (osnb)",
+      "tkvnFrom": 8997328,
+      "tkvnTo": 8997328,
+      "tkvnRef": "21 6,4",
+      "order": 0
+    },
+    {
+      "kvnFrom": 8997344,
+      "kvnTo": 8997344,
+      "kvnRef": "21 6:5 (osnb)",
+      "tkvnFrom": 8997344,
+      "tkvnTo": 8997344,
+      "tkvnRef": "21 6,5",
+      "order": 0
+    },
+    {
+      "kvnFrom": 8997360,
+      "kvnTo": 8997360,
+      "kvnRef": "21 6:6 (osnb)",
+      "tkvnFrom": 8997360,
+      "tkvnTo": 8997360,
+      "tkvnRef": "21 6,6",
+      "order": 0
+    },
+    {
+      "kvnFrom": 8997376,
+      "kvnTo": 8997376,
+      "kvnRef": "21 6:7 (osnb)",
+      "tkvnFrom": 8997376,
+      "tkvnTo": 8997376,
+      "tkvnRef": "21 6,7",
+      "order": 0
+    },
+    {
+      "kvnFrom": 8997392,
+      "kvnTo": 8997392,
+      "kvnRef": "21 6:8 (osnb)",
+      "tkvnFrom": 8997392,
+      "tkvnTo": 8997392,
+      "tkvnRef": "21 6,8",
+      "order": 0
+    },
+    {
+      "kvnFrom": 8997408,
+      "kvnTo": 8997408,
+      "kvnRef": "21 6:9 (osnb)",
+      "tkvnFrom": 8997408,
+      "tkvnTo": 8997408,
+      "tkvnRef": "21 6,9",
+      "order": 0
+    },
+    {
+      "kvnFrom": 8997424,
+      "kvnTo": 8997424,
+      "kvnRef": "21 6:10 (osnb)",
+      "tkvnFrom": 8997424,
+      "tkvnTo": 8997424,
+      "tkvnRef": "21 6,10",
+      "order": 0
+    },
+    {
+      "kvnFrom": 8997440,
+      "kvnTo": 8997440,
+      "kvnRef": "21 6:11 (osnb)",
+      "tkvnFrom": 8997440,
+      "tkvnTo": 8997440,
+      "tkvnRef": "21 6,11",
+      "order": 0
+    },
+    {
+      "kvnFrom": 8997456,
+      "kvnTo": 8997456,
+      "kvnRef": "21 6:12 (osnb)",
+      "tkvnFrom": 8997456,
+      "tkvnTo": 8997456,
+      "tkvnRef": "21 6,12",
+      "order": 0
+    },
+    {
       "kvnFrom": 10014258,
       "kvnTo": 10014258,
       "kvnRef": "Jes 63:19b",
@@ -4482,723 +6279,2109 @@
       "order": 0
     },
     {
+      "kvnFrom": 11175088,
+      "kvnTo": 11175088,
+      "kvnRef": "26 20:1 (osnb)",
+      "tkvnFrom": 11175088,
+      "tkvnTo": 11175088,
+      "tkvnRef": "26 20,1",
+      "order": 0
+    },
+    {
+      "kvnFrom": 11175104,
+      "kvnTo": 11175104,
+      "kvnRef": "26 20:2 (osnb)",
+      "tkvnFrom": 11175104,
+      "tkvnTo": 11175104,
+      "tkvnRef": "26 20,2",
+      "order": 0
+    },
+    {
+      "kvnFrom": 11175120,
+      "kvnTo": 11175120,
+      "kvnRef": "26 20:3 (osnb)",
+      "tkvnFrom": 11175120,
+      "tkvnTo": 11175120,
+      "tkvnRef": "26 20,3",
+      "order": 0
+    },
+    {
+      "kvnFrom": 11175136,
+      "kvnTo": 11175136,
+      "kvnRef": "26 20:4 (osnb)",
+      "tkvnFrom": 11175136,
+      "tkvnTo": 11175136,
+      "tkvnRef": "26 20,4",
+      "order": 0
+    },
+    {
+      "kvnFrom": 11175152,
+      "kvnTo": 11175152,
+      "kvnRef": "26 20:5 (osnb)",
+      "tkvnFrom": 11175152,
+      "tkvnTo": 11175152,
+      "tkvnRef": "26 20,5",
+      "order": 0
+    },
+    {
+      "kvnFrom": 11175168,
+      "kvnTo": 11175168,
+      "kvnRef": "26 20:6 (osnb)",
+      "tkvnFrom": 11175168,
+      "tkvnTo": 11175168,
+      "tkvnRef": "26 20,6",
+      "order": 0
+    },
+    {
+      "kvnFrom": 11175184,
+      "kvnTo": 11175184,
+      "kvnRef": "26 20:7 (osnb)",
+      "tkvnFrom": 11175184,
+      "tkvnTo": 11175184,
+      "tkvnRef": "26 20,7",
+      "order": 0
+    },
+    {
+      "kvnFrom": 11175200,
+      "kvnTo": 11175200,
+      "kvnRef": "26 20:8 (osnb)",
+      "tkvnFrom": 11175200,
+      "tkvnTo": 11175200,
+      "tkvnRef": "26 20,8",
+      "order": 0
+    },
+    {
+      "kvnFrom": 11175216,
+      "kvnTo": 11175216,
+      "kvnRef": "26 20:9 (osnb)",
+      "tkvnFrom": 11175216,
+      "tkvnTo": 11175216,
+      "tkvnRef": "26 20,9",
+      "order": 0
+    },
+    {
+      "kvnFrom": 11175232,
+      "kvnTo": 11175232,
+      "kvnRef": "26 20:10 (osnb)",
+      "tkvnFrom": 11175232,
+      "tkvnTo": 11175232,
+      "tkvnRef": "26 20,10",
+      "order": 0
+    },
+    {
+      "kvnFrom": 11175248,
+      "kvnTo": 11175248,
+      "kvnRef": "26 20:11 (osnb)",
+      "tkvnFrom": 11175248,
+      "tkvnTo": 11175248,
+      "tkvnRef": "26 20,11",
+      "order": 0
+    },
+    {
+      "kvnFrom": 11175264,
+      "kvnTo": 11175264,
+      "kvnRef": "26 20:12 (osnb)",
+      "tkvnFrom": 11175264,
+      "tkvnTo": 11175264,
+      "tkvnRef": "26 20,12",
+      "order": 0
+    },
+    {
+      "kvnFrom": 11175280,
+      "kvnTo": 11175280,
+      "kvnRef": "26 20:13 (osnb)",
+      "tkvnFrom": 11175280,
+      "tkvnTo": 11175280,
+      "tkvnRef": "26 20,13",
+      "order": 0
+    },
+    {
+      "kvnFrom": 11175296,
+      "kvnTo": 11175296,
+      "kvnRef": "26 20:14 (osnb)",
+      "tkvnFrom": 11175296,
+      "tkvnTo": 11175296,
+      "tkvnRef": "26 20,14",
+      "order": 0
+    },
+    {
+      "kvnFrom": 11175312,
+      "kvnTo": 11175312,
+      "kvnRef": "26 20:15 (osnb)",
+      "tkvnFrom": 11175312,
+      "tkvnTo": 11175312,
+      "tkvnRef": "26 20,15",
+      "order": 0
+    },
+    {
+      "kvnFrom": 11175328,
+      "kvnTo": 11175328,
+      "kvnRef": "26 20:16 (osnb)",
+      "tkvnFrom": 11175328,
+      "tkvnTo": 11175328,
+      "tkvnRef": "26 20,16",
+      "order": 0
+    },
+    {
+      "kvnFrom": 11175344,
+      "kvnTo": 11175344,
+      "kvnRef": "26 20:17 (osnb)",
+      "tkvnFrom": 11175344,
+      "tkvnTo": 11175344,
+      "tkvnRef": "26 20,17",
+      "order": 0
+    },
+    {
+      "kvnFrom": 11175360,
+      "kvnTo": 11175360,
+      "kvnRef": "26 20:18 (osnb)",
+      "tkvnFrom": 11175360,
+      "tkvnTo": 11175360,
+      "tkvnRef": "26 20,18",
+      "order": 0
+    },
+    {
+      "kvnFrom": 11175376,
+      "kvnTo": 11175376,
+      "kvnRef": "26 20:19 (osnb)",
+      "tkvnFrom": 11175376,
+      "tkvnTo": 11175376,
+      "tkvnRef": "26 20,19",
+      "order": 0
+    },
+    {
+      "kvnFrom": 11175392,
+      "kvnTo": 11175392,
+      "kvnRef": "26 20:20 (osnb)",
+      "tkvnFrom": 11175392,
+      "tkvnTo": 11175392,
+      "tkvnRef": "26 20,20",
+      "order": 0
+    },
+    {
+      "kvnFrom": 11175408,
+      "kvnTo": 11175408,
+      "kvnRef": "26 20:21 (osnb)",
+      "tkvnFrom": 11175408,
+      "tkvnTo": 11175408,
+      "tkvnRef": "26 20,21",
+      "order": 0
+    },
+    {
+      "kvnFrom": 11175424,
+      "kvnTo": 11175424,
+      "kvnRef": "26 20:22 (osnb)",
+      "tkvnFrom": 11175424,
+      "tkvnTo": 11175424,
+      "tkvnRef": "26 20,22",
+      "order": 0
+    },
+    {
+      "kvnFrom": 11175440,
+      "kvnTo": 11175440,
+      "kvnRef": "26 20:23 (osnb)",
+      "tkvnFrom": 11175440,
+      "tkvnTo": 11175440,
+      "tkvnRef": "26 20,23",
+      "order": 0
+    },
+    {
+      "kvnFrom": 11175456,
+      "kvnTo": 11175456,
+      "kvnRef": "26 20:24 (osnb)",
+      "tkvnFrom": 11175456,
+      "tkvnTo": 11175456,
+      "tkvnRef": "26 20,24",
+      "order": 0
+    },
+    {
+      "kvnFrom": 11175472,
+      "kvnTo": 11175472,
+      "kvnRef": "26 20:25 (osnb)",
+      "tkvnFrom": 11175472,
+      "tkvnTo": 11175472,
+      "tkvnRef": "26 20,25",
+      "order": 0
+    },
+    {
+      "kvnFrom": 11175488,
+      "kvnTo": 11175488,
+      "kvnRef": "26 20:26 (osnb)",
+      "tkvnFrom": 11175488,
+      "tkvnTo": 11175488,
+      "tkvnRef": "26 20,26",
+      "order": 0
+    },
+    {
+      "kvnFrom": 11175504,
+      "kvnTo": 11175504,
+      "kvnRef": "26 20:27 (osnb)",
+      "tkvnFrom": 11175504,
+      "tkvnTo": 11175504,
+      "tkvnRef": "26 20,27",
+      "order": 0
+    },
+    {
+      "kvnFrom": 11175520,
+      "kvnTo": 11175520,
+      "kvnRef": "26 20:28 (osnb)",
+      "tkvnFrom": 11175520,
+      "tkvnTo": 11175520,
+      "tkvnRef": "26 20,28",
+      "order": 0
+    },
+    {
+      "kvnFrom": 11175536,
+      "kvnTo": 11175536,
+      "kvnRef": "26 20:29 (osnb)",
+      "tkvnFrom": 11175536,
+      "tkvnTo": 11175536,
+      "tkvnRef": "26 20,29",
+      "order": 0
+    },
+    {
+      "kvnFrom": 11175552,
+      "kvnTo": 11175552,
+      "kvnRef": "26 20:30 (osnb)",
+      "tkvnFrom": 11175552,
+      "tkvnTo": 11175552,
+      "tkvnRef": "26 20,30",
+      "order": 0
+    },
+    {
+      "kvnFrom": 11175568,
+      "kvnTo": 11175568,
+      "kvnRef": "26 20:31 (osnb)",
+      "tkvnFrom": 11175568,
+      "tkvnTo": 11175568,
+      "tkvnRef": "26 20,31",
+      "order": 0
+    },
+    {
+      "kvnFrom": 11175584,
+      "kvnTo": 11175584,
+      "kvnRef": "26 20:32 (osnb)",
+      "tkvnFrom": 11175584,
+      "tkvnTo": 11175584,
+      "tkvnRef": "26 20,32",
+      "order": 0
+    },
+    {
+      "kvnFrom": 11175600,
+      "kvnTo": 11175600,
+      "kvnRef": "26 20:33 (osnb)",
+      "tkvnFrom": 11175600,
+      "tkvnTo": 11175600,
+      "tkvnRef": "26 20,33",
+      "order": 0
+    },
+    {
+      "kvnFrom": 11175616,
+      "kvnTo": 11175616,
+      "kvnRef": "26 20:34 (osnb)",
+      "tkvnFrom": 11175616,
+      "tkvnTo": 11175616,
+      "tkvnRef": "26 20,34",
+      "order": 0
+    },
+    {
+      "kvnFrom": 11175632,
+      "kvnTo": 11175632,
+      "kvnRef": "26 20:35 (osnb)",
+      "tkvnFrom": 11175632,
+      "tkvnTo": 11175632,
+      "tkvnRef": "26 20,35",
+      "order": 0
+    },
+    {
+      "kvnFrom": 11175648,
+      "kvnTo": 11175648,
+      "kvnRef": "26 20:36 (osnb)",
+      "tkvnFrom": 11175648,
+      "tkvnTo": 11175648,
+      "tkvnRef": "26 20,36",
+      "order": 0
+    },
+    {
+      "kvnFrom": 11175664,
+      "kvnTo": 11175664,
+      "kvnRef": "26 20:37 (osnb)",
+      "tkvnFrom": 11175664,
+      "tkvnTo": 11175664,
+      "tkvnRef": "26 20,37",
+      "order": 0
+    },
+    {
+      "kvnFrom": 11175680,
+      "kvnTo": 11175680,
+      "kvnRef": "26 20:38 (osnb)",
+      "tkvnFrom": 11175680,
+      "tkvnTo": 11175680,
+      "tkvnRef": "26 20,38",
+      "order": 0
+    },
+    {
+      "kvnFrom": 11175696,
+      "kvnTo": 11175696,
+      "kvnRef": "26 20:39 (osnb)",
+      "tkvnFrom": 11175696,
+      "tkvnTo": 11175696,
+      "tkvnRef": "26 20,39",
+      "order": 0
+    },
+    {
+      "kvnFrom": 11175712,
+      "kvnTo": 11175712,
+      "kvnRef": "26 20:40 (osnb)",
+      "tkvnFrom": 11175712,
+      "tkvnTo": 11175712,
+      "tkvnRef": "26 20,40",
+      "order": 0
+    },
+    {
+      "kvnFrom": 11175728,
+      "kvnTo": 11175728,
+      "kvnRef": "26 20:41 (osnb)",
+      "tkvnFrom": 11175728,
+      "tkvnTo": 11175728,
+      "tkvnRef": "26 20,41",
+      "order": 0
+    },
+    {
+      "kvnFrom": 11175744,
+      "kvnTo": 11175744,
+      "kvnRef": "26 20:42 (osnb)",
+      "tkvnFrom": 11175744,
+      "tkvnTo": 11175744,
+      "tkvnRef": "26 20,42",
+      "order": 0
+    },
+    {
+      "kvnFrom": 11175760,
+      "kvnTo": 11175760,
+      "kvnRef": "26 20:43 (osnb)",
+      "tkvnFrom": 11175760,
+      "tkvnTo": 11175760,
+      "tkvnRef": "26 20,43",
+      "order": 0
+    },
+    {
+      "kvnFrom": 11175776,
+      "kvnTo": 11175776,
+      "kvnRef": "26 20:44 (osnb)",
+      "tkvnFrom": 11175776,
+      "tkvnTo": 11175776,
+      "tkvnRef": "26 20,44",
+      "order": 0
+    },
+    {
       "kvnFrom": 11175792,
       "kvnTo": 11175792,
-      "kvnRef": "Esek 20:45",
-      "tkvnFrom": 11178352,
-      "tkvnTo": 11178352,
-      "tkvnRef": "Esek 21,28",
+      "kvnRef": "26 21:1 (osnb)",
+      "tkvnFrom": 11177920,
+      "tkvnTo": 11177920,
+      "tkvnRef": "26 21,1",
       "order": 0
     },
     {
       "kvnFrom": 11175808,
       "kvnTo": 11175808,
-      "kvnRef": "Esek 20:46",
-      "tkvnFrom": 11178368,
-      "tkvnTo": 11178368,
-      "tkvnRef": "Esek 21,29",
+      "kvnRef": "26 21:2 (osnb)",
+      "tkvnFrom": 11177936,
+      "tkvnTo": 11177936,
+      "tkvnRef": "26 21,2",
       "order": 0
     },
     {
       "kvnFrom": 11175824,
       "kvnTo": 11175824,
-      "kvnRef": "Esek 20:47",
-      "tkvnFrom": 11178384,
-      "tkvnTo": 11178384,
-      "tkvnRef": "Esek 21,30",
+      "kvnRef": "26 21:3 (osnb)",
+      "tkvnFrom": 11177952,
+      "tkvnTo": 11177952,
+      "tkvnRef": "26 21,3",
       "order": 0
     },
     {
       "kvnFrom": 11175840,
       "kvnTo": 11175840,
-      "kvnRef": "Esek 20:48",
-      "tkvnFrom": 11178400,
-      "tkvnTo": 11178400,
-      "tkvnRef": "Esek 21,31",
+      "kvnRef": "26 21:4 (osnb)",
+      "tkvnFrom": 11177968,
+      "tkvnTo": 11177968,
+      "tkvnRef": "26 21,4",
       "order": 0
     },
     {
       "kvnFrom": 11175856,
       "kvnTo": 11175856,
-      "kvnRef": "Esek 20:49",
-      "tkvnFrom": 11178416,
-      "tkvnTo": 11178416,
-      "tkvnRef": "Esek 21,32",
+      "kvnRef": "26 21:5 (osnb)",
+      "tkvnFrom": 11177984,
+      "tkvnTo": 11177984,
+      "tkvnRef": "26 21,5",
       "order": 0
     },
     {
       "kvnFrom": 11177920,
       "kvnTo": 11177920,
-      "kvnRef": "Esek 21:1",
-      "tkvnFrom": 11175792,
-      "tkvnTo": 11175792,
-      "tkvnRef": "Esek 20,45",
+      "kvnRef": "26 21:6 (osnb)",
+      "tkvnFrom": 11178000,
+      "tkvnTo": 11178000,
+      "tkvnRef": "26 21,6",
       "order": 0
     },
     {
       "kvnFrom": 11177936,
       "kvnTo": 11177936,
-      "kvnRef": "Esek 21:2",
-      "tkvnFrom": 11175808,
-      "tkvnTo": 11175808,
-      "tkvnRef": "Esek 20,46",
+      "kvnRef": "26 21:7 (osnb)",
+      "tkvnFrom": 11178016,
+      "tkvnTo": 11178016,
+      "tkvnRef": "26 21,7",
       "order": 0
     },
     {
       "kvnFrom": 11177952,
       "kvnTo": 11177952,
-      "kvnRef": "Esek 21:3",
-      "tkvnFrom": 11175824,
-      "tkvnTo": 11175824,
-      "tkvnRef": "Esek 20,47",
+      "kvnRef": "26 21:8 (osnb)",
+      "tkvnFrom": 11178032,
+      "tkvnTo": 11178032,
+      "tkvnRef": "26 21,8",
       "order": 0
     },
     {
       "kvnFrom": 11177968,
       "kvnTo": 11177968,
-      "kvnRef": "Esek 21:4",
-      "tkvnFrom": 11175840,
-      "tkvnTo": 11175840,
-      "tkvnRef": "Esek 20,48",
+      "kvnRef": "26 21:9 (osnb)",
+      "tkvnFrom": 11178048,
+      "tkvnTo": 11178048,
+      "tkvnRef": "26 21,9",
       "order": 0
     },
     {
       "kvnFrom": 11177984,
       "kvnTo": 11177984,
-      "kvnRef": "Esek 21:5",
-      "tkvnFrom": 11175856,
-      "tkvnTo": 11175856,
-      "tkvnRef": "Esek 20,49",
+      "kvnRef": "26 21:10 (osnb)",
+      "tkvnFrom": 11178064,
+      "tkvnTo": 11178064,
+      "tkvnRef": "26 21,10",
       "order": 0
     },
     {
       "kvnFrom": 11178000,
       "kvnTo": 11178000,
-      "kvnRef": "Esek 21:6",
-      "tkvnFrom": 11177920,
-      "tkvnTo": 11177920,
-      "tkvnRef": "Esek 21,1",
+      "kvnRef": "26 21:11 (osnb)",
+      "tkvnFrom": 11178080,
+      "tkvnTo": 11178080,
+      "tkvnRef": "26 21,11",
       "order": 0
     },
     {
       "kvnFrom": 11178016,
       "kvnTo": 11178016,
-      "kvnRef": "Esek 21:7",
-      "tkvnFrom": 11177936,
-      "tkvnTo": 11177936,
-      "tkvnRef": "Esek 21,2",
+      "kvnRef": "26 21:12 (osnb)",
+      "tkvnFrom": 11178096,
+      "tkvnTo": 11178096,
+      "tkvnRef": "26 21,12",
       "order": 0
     },
     {
       "kvnFrom": 11178032,
       "kvnTo": 11178032,
-      "kvnRef": "Esek 21:8",
-      "tkvnFrom": 11177952,
-      "tkvnTo": 11177952,
-      "tkvnRef": "Esek 21,3",
+      "kvnRef": "26 21:13 (osnb)",
+      "tkvnFrom": 11178112,
+      "tkvnTo": 11178112,
+      "tkvnRef": "26 21,13",
       "order": 0
     },
     {
       "kvnFrom": 11178048,
       "kvnTo": 11178048,
-      "kvnRef": "Esek 21:9",
-      "tkvnFrom": 11177968,
-      "tkvnTo": 11177968,
-      "tkvnRef": "Esek 21,4",
+      "kvnRef": "26 21:14 (osnb)",
+      "tkvnFrom": 11178128,
+      "tkvnTo": 11178128,
+      "tkvnRef": "26 21,14",
       "order": 0
     },
     {
       "kvnFrom": 11178064,
       "kvnTo": 11178064,
-      "kvnRef": "Esek 21:10",
-      "tkvnFrom": 11177984,
-      "tkvnTo": 11177984,
-      "tkvnRef": "Esek 21,5",
+      "kvnRef": "26 21:15 (osnb)",
+      "tkvnFrom": 11178144,
+      "tkvnTo": 11178144,
+      "tkvnRef": "26 21,15",
       "order": 0
     },
     {
       "kvnFrom": 11178080,
       "kvnTo": 11178080,
-      "kvnRef": "Esek 21:11",
-      "tkvnFrom": 11178000,
-      "tkvnTo": 11178000,
-      "tkvnRef": "Esek 21,6",
+      "kvnRef": "26 21:16 (osnb)",
+      "tkvnFrom": 11178160,
+      "tkvnTo": 11178160,
+      "tkvnRef": "26 21,16",
       "order": 0
     },
     {
       "kvnFrom": 11178096,
       "kvnTo": 11178096,
-      "kvnRef": "Esek 21:12",
-      "tkvnFrom": 11178016,
-      "tkvnTo": 11178016,
-      "tkvnRef": "Esek 21,7",
+      "kvnRef": "26 21:17 (osnb)",
+      "tkvnFrom": 11178176,
+      "tkvnTo": 11178176,
+      "tkvnRef": "26 21,17",
       "order": 0
     },
     {
       "kvnFrom": 11178112,
       "kvnTo": 11178112,
-      "kvnRef": "Esek 21:13",
-      "tkvnFrom": 11178032,
-      "tkvnTo": 11178032,
-      "tkvnRef": "Esek 21,8",
+      "kvnRef": "26 21:18 (osnb)",
+      "tkvnFrom": 11178192,
+      "tkvnTo": 11178192,
+      "tkvnRef": "26 21,18",
       "order": 0
     },
     {
       "kvnFrom": 11178128,
       "kvnTo": 11178128,
-      "kvnRef": "Esek 21:14",
-      "tkvnFrom": 11178048,
-      "tkvnTo": 11178048,
-      "tkvnRef": "Esek 21,9",
+      "kvnRef": "26 21:19 (osnb)",
+      "tkvnFrom": 11178208,
+      "tkvnTo": 11178208,
+      "tkvnRef": "26 21,19",
       "order": 0
     },
     {
       "kvnFrom": 11178144,
       "kvnTo": 11178144,
-      "kvnRef": "Esek 21:15",
-      "tkvnFrom": 11178064,
-      "tkvnTo": 11178064,
-      "tkvnRef": "Esek 21,10",
+      "kvnRef": "26 21:20 (osnb)",
+      "tkvnFrom": 11178224,
+      "tkvnTo": 11178224,
+      "tkvnRef": "26 21,20",
       "order": 0
     },
     {
       "kvnFrom": 11178160,
       "kvnTo": 11178160,
-      "kvnRef": "Esek 21:16",
-      "tkvnFrom": 11178080,
-      "tkvnTo": 11178080,
-      "tkvnRef": "Esek 21,11",
+      "kvnRef": "26 21:21 (osnb)",
+      "tkvnFrom": 11178240,
+      "tkvnTo": 11178240,
+      "tkvnRef": "26 21,21",
       "order": 0
     },
     {
       "kvnFrom": 11178176,
       "kvnTo": 11178176,
-      "kvnRef": "Esek 21:17",
-      "tkvnFrom": 11178096,
-      "tkvnTo": 11178096,
-      "tkvnRef": "Esek 21,12",
+      "kvnRef": "26 21:22 (osnb)",
+      "tkvnFrom": 11178256,
+      "tkvnTo": 11178256,
+      "tkvnRef": "26 21,22",
       "order": 0
     },
     {
       "kvnFrom": 11178192,
       "kvnTo": 11178192,
-      "kvnRef": "Esek 21:18",
-      "tkvnFrom": 11178112,
-      "tkvnTo": 11178112,
-      "tkvnRef": "Esek 21,13",
+      "kvnRef": "26 21:23 (osnb)",
+      "tkvnFrom": 11178272,
+      "tkvnTo": 11178272,
+      "tkvnRef": "26 21,23",
       "order": 0
     },
     {
       "kvnFrom": 11178208,
       "kvnTo": 11178208,
-      "kvnRef": "Esek 21:19",
-      "tkvnFrom": 11178128,
-      "tkvnTo": 11178128,
-      "tkvnRef": "Esek 21,14",
+      "kvnRef": "26 21:24 (osnb)",
+      "tkvnFrom": 11178288,
+      "tkvnTo": 11178288,
+      "tkvnRef": "26 21,24",
       "order": 0
     },
     {
       "kvnFrom": 11178224,
       "kvnTo": 11178224,
-      "kvnRef": "Esek 21:20",
-      "tkvnFrom": 11178144,
-      "tkvnTo": 11178144,
-      "tkvnRef": "Esek 21,15",
+      "kvnRef": "26 21:25 (osnb)",
+      "tkvnFrom": 11178304,
+      "tkvnTo": 11178304,
+      "tkvnRef": "26 21,25",
       "order": 0
     },
     {
       "kvnFrom": 11178240,
       "kvnTo": 11178240,
-      "kvnRef": "Esek 21:21",
-      "tkvnFrom": 11178160,
-      "tkvnTo": 11178160,
-      "tkvnRef": "Esek 21,16",
+      "kvnRef": "26 21:26 (osnb)",
+      "tkvnFrom": 11178320,
+      "tkvnTo": 11178320,
+      "tkvnRef": "26 21,26",
       "order": 0
     },
     {
       "kvnFrom": 11178256,
       "kvnTo": 11178256,
-      "kvnRef": "Esek 21:22",
-      "tkvnFrom": 11178176,
-      "tkvnTo": 11178176,
-      "tkvnRef": "Esek 21,17",
+      "kvnRef": "26 21:27 (osnb)",
+      "tkvnFrom": 11178336,
+      "tkvnTo": 11178336,
+      "tkvnRef": "26 21,27",
       "order": 0
     },
     {
       "kvnFrom": 11178272,
       "kvnTo": 11178272,
-      "kvnRef": "Esek 21:23",
-      "tkvnFrom": 11178192,
-      "tkvnTo": 11178192,
-      "tkvnRef": "Esek 21,18",
+      "kvnRef": "26 21:28 (osnb)",
+      "tkvnFrom": 11178352,
+      "tkvnTo": 11178352,
+      "tkvnRef": "26 21,28",
       "order": 0
     },
     {
       "kvnFrom": 11178288,
       "kvnTo": 11178288,
-      "kvnRef": "Esek 21:24",
-      "tkvnFrom": 11178208,
-      "tkvnTo": 11178208,
-      "tkvnRef": "Esek 21,19",
+      "kvnRef": "26 21:29 (osnb)",
+      "tkvnFrom": 11178368,
+      "tkvnTo": 11178368,
+      "tkvnRef": "26 21,29",
       "order": 0
     },
     {
       "kvnFrom": 11178304,
       "kvnTo": 11178304,
-      "kvnRef": "Esek 21:25",
-      "tkvnFrom": 11178224,
-      "tkvnTo": 11178224,
-      "tkvnRef": "Esek 21,20",
+      "kvnRef": "26 21:30 (osnb)",
+      "tkvnFrom": 11178384,
+      "tkvnTo": 11178384,
+      "tkvnRef": "26 21,30",
       "order": 0
     },
     {
       "kvnFrom": 11178320,
       "kvnTo": 11178320,
-      "kvnRef": "Esek 21:26",
-      "tkvnFrom": 11178240,
-      "tkvnTo": 11178240,
-      "tkvnRef": "Esek 21,21",
+      "kvnRef": "26 21:31 (osnb)",
+      "tkvnFrom": 11178400,
+      "tkvnTo": 11178400,
+      "tkvnRef": "26 21,31",
       "order": 0
     },
     {
       "kvnFrom": 11178336,
       "kvnTo": 11178336,
-      "kvnRef": "Esek 21:27",
-      "tkvnFrom": 11178256,
-      "tkvnTo": 11178256,
-      "tkvnRef": "Esek 21,22",
+      "kvnRef": "26 21:32 (osnb)",
+      "tkvnFrom": 11178416,
+      "tkvnTo": 11178416,
+      "tkvnRef": "26 21,32",
       "order": 0
     },
     {
       "kvnFrom": 11178352,
       "kvnTo": 11178352,
-      "kvnRef": "Esek 21:28",
-      "tkvnFrom": 11178272,
-      "tkvnTo": 11178272,
-      "tkvnRef": "Esek 21,23",
-      "order": 0
+      "kvnRef": "26 21:33 (osnb)",
+      "tkvnFrom": 11178416,
+      "tkvnTo": 11178416,
+      "tkvnRef": "26 21,32",
+      "order": 1
     },
     {
       "kvnFrom": 11178368,
       "kvnTo": 11178368,
-      "kvnRef": "Esek 21:29",
-      "tkvnFrom": 11178288,
-      "tkvnTo": 11178288,
-      "tkvnRef": "Esek 21,24",
-      "order": 0
+      "kvnRef": "26 21:34 (osnb)",
+      "tkvnFrom": 11178416,
+      "tkvnTo": 11178416,
+      "tkvnRef": "26 21,32",
+      "order": 2
     },
     {
       "kvnFrom": 11178384,
       "kvnTo": 11178384,
-      "kvnRef": "Esek 21:30",
-      "tkvnFrom": 11178304,
-      "tkvnTo": 11178304,
-      "tkvnRef": "Esek 21,25",
-      "order": 0
+      "kvnRef": "26 21:35 (osnb)",
+      "tkvnFrom": 11178416,
+      "tkvnTo": 11178416,
+      "tkvnRef": "26 21,32",
+      "order": 3
     },
     {
       "kvnFrom": 11178400,
       "kvnTo": 11178400,
-      "kvnRef": "Esek 21:31",
-      "tkvnFrom": 11178320,
-      "tkvnTo": 11178320,
-      "tkvnRef": "Esek 21,26",
-      "order": 0
+      "kvnRef": "26 21:36 (osnb)",
+      "tkvnFrom": 11178416,
+      "tkvnTo": 11178416,
+      "tkvnRef": "26 21,32",
+      "order": 4
     },
     {
       "kvnFrom": 11178416,
       "kvnTo": 11178416,
-      "kvnRef": "Esek 21:32",
-      "tkvnFrom": 11178336,
-      "tkvnTo": 11178336,
-      "tkvnRef": "Esek 21,27",
+      "kvnRef": "26 21:37 (osnb)",
+      "tkvnFrom": 11178416,
+      "tkvnTo": 11178416,
+      "tkvnRef": "26 21,32",
+      "order": 5
+    },
+    {
+      "kvnFrom": 11560240,
+      "kvnTo": 11560240,
+      "kvnRef": "27 5:1 (osnb)",
+      "tkvnFrom": 11560240,
+      "tkvnTo": 11560240,
+      "tkvnRef": "27 5,1",
+      "order": 0
+    },
+    {
+      "kvnFrom": 11560256,
+      "kvnTo": 11560256,
+      "kvnRef": "27 5:2 (osnb)",
+      "tkvnFrom": 11560256,
+      "tkvnTo": 11560256,
+      "tkvnRef": "27 5,2",
+      "order": 0
+    },
+    {
+      "kvnFrom": 11560272,
+      "kvnTo": 11560272,
+      "kvnRef": "27 5:3 (osnb)",
+      "tkvnFrom": 11560272,
+      "tkvnTo": 11560272,
+      "tkvnRef": "27 5,3",
+      "order": 0
+    },
+    {
+      "kvnFrom": 11560288,
+      "kvnTo": 11560288,
+      "kvnRef": "27 5:4 (osnb)",
+      "tkvnFrom": 11560288,
+      "tkvnTo": 11560288,
+      "tkvnRef": "27 5,4",
+      "order": 0
+    },
+    {
+      "kvnFrom": 11560304,
+      "kvnTo": 11560304,
+      "kvnRef": "27 5:5 (osnb)",
+      "tkvnFrom": 11560304,
+      "tkvnTo": 11560304,
+      "tkvnRef": "27 5,5",
+      "order": 0
+    },
+    {
+      "kvnFrom": 11560320,
+      "kvnTo": 11560320,
+      "kvnRef": "27 5:6 (osnb)",
+      "tkvnFrom": 11560320,
+      "tkvnTo": 11560320,
+      "tkvnRef": "27 5,6",
+      "order": 0
+    },
+    {
+      "kvnFrom": 11560336,
+      "kvnTo": 11560336,
+      "kvnRef": "27 5:7 (osnb)",
+      "tkvnFrom": 11560336,
+      "tkvnTo": 11560336,
+      "tkvnRef": "27 5,7",
+      "order": 0
+    },
+    {
+      "kvnFrom": 11560352,
+      "kvnTo": 11560352,
+      "kvnRef": "27 5:8 (osnb)",
+      "tkvnFrom": 11560352,
+      "tkvnTo": 11560352,
+      "tkvnRef": "27 5,8",
+      "order": 0
+    },
+    {
+      "kvnFrom": 11560368,
+      "kvnTo": 11560368,
+      "kvnRef": "27 5:9 (osnb)",
+      "tkvnFrom": 11560368,
+      "tkvnTo": 11560368,
+      "tkvnRef": "27 5,9",
+      "order": 0
+    },
+    {
+      "kvnFrom": 11560384,
+      "kvnTo": 11560384,
+      "kvnRef": "27 5:10 (osnb)",
+      "tkvnFrom": 11560384,
+      "tkvnTo": 11560384,
+      "tkvnRef": "27 5,10",
+      "order": 0
+    },
+    {
+      "kvnFrom": 11560400,
+      "kvnTo": 11560400,
+      "kvnRef": "27 5:11 (osnb)",
+      "tkvnFrom": 11560400,
+      "tkvnTo": 11560400,
+      "tkvnRef": "27 5,11",
+      "order": 0
+    },
+    {
+      "kvnFrom": 11560416,
+      "kvnTo": 11560416,
+      "kvnRef": "27 5:12 (osnb)",
+      "tkvnFrom": 11560416,
+      "tkvnTo": 11560416,
+      "tkvnRef": "27 5,12",
+      "order": 0
+    },
+    {
+      "kvnFrom": 11560432,
+      "kvnTo": 11560432,
+      "kvnRef": "27 5:13 (osnb)",
+      "tkvnFrom": 11560432,
+      "tkvnTo": 11560432,
+      "tkvnRef": "27 5,13",
+      "order": 0
+    },
+    {
+      "kvnFrom": 11560448,
+      "kvnTo": 11560448,
+      "kvnRef": "27 5:14 (osnb)",
+      "tkvnFrom": 11560448,
+      "tkvnTo": 11560448,
+      "tkvnRef": "27 5,14",
+      "order": 0
+    },
+    {
+      "kvnFrom": 11560464,
+      "kvnTo": 11560464,
+      "kvnRef": "27 5:15 (osnb)",
+      "tkvnFrom": 11560464,
+      "tkvnTo": 11560464,
+      "tkvnRef": "27 5,15",
+      "order": 0
+    },
+    {
+      "kvnFrom": 11560480,
+      "kvnTo": 11560480,
+      "kvnRef": "27 5:16 (osnb)",
+      "tkvnFrom": 11560480,
+      "tkvnTo": 11560480,
+      "tkvnRef": "27 5,16",
+      "order": 0
+    },
+    {
+      "kvnFrom": 11560496,
+      "kvnTo": 11560496,
+      "kvnRef": "27 5:17 (osnb)",
+      "tkvnFrom": 11560496,
+      "tkvnTo": 11560496,
+      "tkvnRef": "27 5,17",
+      "order": 0
+    },
+    {
+      "kvnFrom": 11560512,
+      "kvnTo": 11560512,
+      "kvnRef": "27 5:18 (osnb)",
+      "tkvnFrom": 11560512,
+      "tkvnTo": 11560512,
+      "tkvnRef": "27 5,18",
+      "order": 0
+    },
+    {
+      "kvnFrom": 11560528,
+      "kvnTo": 11560528,
+      "kvnRef": "27 5:19 (osnb)",
+      "tkvnFrom": 11560528,
+      "tkvnTo": 11560528,
+      "tkvnRef": "27 5,19",
+      "order": 0
+    },
+    {
+      "kvnFrom": 11560544,
+      "kvnTo": 11560544,
+      "kvnRef": "27 5:20 (osnb)",
+      "tkvnFrom": 11560544,
+      "tkvnTo": 11560544,
+      "tkvnRef": "27 5,20",
+      "order": 0
+    },
+    {
+      "kvnFrom": 11560560,
+      "kvnTo": 11560560,
+      "kvnRef": "27 5:21 (osnb)",
+      "tkvnFrom": 11560560,
+      "tkvnTo": 11560560,
+      "tkvnRef": "27 5,21",
+      "order": 0
+    },
+    {
+      "kvnFrom": 11560576,
+      "kvnTo": 11560576,
+      "kvnRef": "27 5:22 (osnb)",
+      "tkvnFrom": 11560576,
+      "tkvnTo": 11560576,
+      "tkvnRef": "27 5,22",
+      "order": 0
+    },
+    {
+      "kvnFrom": 11560592,
+      "kvnTo": 11560592,
+      "kvnRef": "27 5:23 (osnb)",
+      "tkvnFrom": 11560592,
+      "tkvnTo": 11560592,
+      "tkvnRef": "27 5,23",
+      "order": 0
+    },
+    {
+      "kvnFrom": 11560608,
+      "kvnTo": 11560608,
+      "kvnRef": "27 5:24 (osnb)",
+      "tkvnFrom": 11560608,
+      "tkvnTo": 11560608,
+      "tkvnRef": "27 5,24",
+      "order": 0
+    },
+    {
+      "kvnFrom": 11560624,
+      "kvnTo": 11560624,
+      "kvnRef": "27 5:25 (osnb)",
+      "tkvnFrom": 11560624,
+      "tkvnTo": 11560624,
+      "tkvnRef": "27 5,25",
+      "order": 0
+    },
+    {
+      "kvnFrom": 11560640,
+      "kvnTo": 11560640,
+      "kvnRef": "27 5:26 (osnb)",
+      "tkvnFrom": 11560640,
+      "tkvnTo": 11560640,
+      "tkvnRef": "27 5,26",
+      "order": 0
+    },
+    {
+      "kvnFrom": 11560656,
+      "kvnTo": 11560656,
+      "kvnRef": "27 5:27 (osnb)",
+      "tkvnFrom": 11560656,
+      "tkvnTo": 11560656,
+      "tkvnRef": "27 5,27",
+      "order": 0
+    },
+    {
+      "kvnFrom": 11560672,
+      "kvnTo": 11560672,
+      "kvnRef": "27 5:28 (osnb)",
+      "tkvnFrom": 11560672,
+      "tkvnTo": 11560672,
+      "tkvnRef": "27 5,28",
+      "order": 0
+    },
+    {
+      "kvnFrom": 11560688,
+      "kvnTo": 11560688,
+      "kvnRef": "27 5:29 (osnb)",
+      "tkvnFrom": 11560688,
+      "tkvnTo": 11560688,
+      "tkvnRef": "27 5,29",
+      "order": 0
+    },
+    {
+      "kvnFrom": 11560704,
+      "kvnTo": 11560704,
+      "kvnRef": "27 5:30 (osnb)",
+      "tkvnFrom": 11560704,
+      "tkvnTo": 11560704,
+      "tkvnRef": "27 5,30",
+      "order": 0
+    },
+    {
+      "kvnFrom": 11560720,
+      "kvnTo": 11560720,
+      "kvnRef": "27 6:1 (osnb)",
+      "tkvnFrom": 11563072,
+      "tkvnTo": 11563072,
+      "tkvnRef": "27 6,1",
       "order": 0
     },
     {
       "kvnFrom": 11563072,
       "kvnTo": 11563072,
-      "kvnRef": "Dan 6:1",
+      "kvnRef": "27 6:2 (osnb)",
       "tkvnFrom": 11563088,
       "tkvnTo": 11563088,
-      "tkvnRef": "Dan 6,2",
-      "order": 0
-    },
-    {
-      "kvnFrom": 11563073,
-      "kvnTo": 11563073,
-      "kvnRef": "Dan 6:1a",
-      "tkvnFrom": 11563072,
-      "tkvnTo": 11563072,
-      "tkvnRef": "Dan 6,1",
+      "tkvnRef": "27 6,2",
       "order": 0
     },
     {
       "kvnFrom": 11563088,
       "kvnTo": 11563088,
-      "kvnRef": "Dan 6:2",
+      "kvnRef": "27 6:3 (osnb)",
       "tkvnFrom": 11563104,
       "tkvnTo": 11563104,
-      "tkvnRef": "Dan 6,3",
+      "tkvnRef": "27 6,3",
       "order": 0
     },
     {
       "kvnFrom": 11563104,
       "kvnTo": 11563104,
-      "kvnRef": "Dan 6:3",
+      "kvnRef": "27 6:4 (osnb)",
       "tkvnFrom": 11563120,
       "tkvnTo": 11563120,
-      "tkvnRef": "Dan 6,4",
+      "tkvnRef": "27 6,4",
       "order": 0
     },
     {
       "kvnFrom": 11563120,
       "kvnTo": 11563120,
-      "kvnRef": "Dan 6:4",
+      "kvnRef": "27 6:5 (osnb)",
       "tkvnFrom": 11563136,
       "tkvnTo": 11563136,
-      "tkvnRef": "Dan 6,5",
+      "tkvnRef": "27 6,5",
       "order": 0
     },
     {
       "kvnFrom": 11563136,
       "kvnTo": 11563136,
-      "kvnRef": "Dan 6:5",
+      "kvnRef": "27 6:6 (osnb)",
       "tkvnFrom": 11563152,
       "tkvnTo": 11563152,
-      "tkvnRef": "Dan 6,6",
+      "tkvnRef": "27 6,6",
       "order": 0
     },
     {
       "kvnFrom": 11563152,
       "kvnTo": 11563152,
-      "kvnRef": "Dan 6:6",
+      "kvnRef": "27 6:7 (osnb)",
       "tkvnFrom": 11563168,
       "tkvnTo": 11563168,
-      "tkvnRef": "Dan 6,7",
+      "tkvnRef": "27 6,7",
       "order": 0
     },
     {
       "kvnFrom": 11563168,
       "kvnTo": 11563168,
-      "kvnRef": "Dan 6:7",
+      "kvnRef": "27 6:8 (osnb)",
       "tkvnFrom": 11563184,
       "tkvnTo": 11563184,
-      "tkvnRef": "Dan 6,8",
+      "tkvnRef": "27 6,8",
       "order": 0
     },
     {
       "kvnFrom": 11563184,
       "kvnTo": 11563184,
-      "kvnRef": "Dan 6:8",
+      "kvnRef": "27 6:9 (osnb)",
       "tkvnFrom": 11563200,
       "tkvnTo": 11563200,
-      "tkvnRef": "Dan 6,9",
+      "tkvnRef": "27 6,9",
       "order": 0
     },
     {
       "kvnFrom": 11563200,
       "kvnTo": 11563200,
-      "kvnRef": "Dan 6:9",
+      "kvnRef": "27 6:10 (osnb)",
       "tkvnFrom": 11563216,
       "tkvnTo": 11563216,
-      "tkvnRef": "Dan 6,10",
+      "tkvnRef": "27 6,10",
       "order": 0
     },
     {
       "kvnFrom": 11563216,
       "kvnTo": 11563216,
-      "kvnRef": "Dan 6:10",
+      "kvnRef": "27 6:11 (osnb)",
       "tkvnFrom": 11563232,
       "tkvnTo": 11563232,
-      "tkvnRef": "Dan 6,11",
+      "tkvnRef": "27 6,11",
       "order": 0
     },
     {
       "kvnFrom": 11563232,
       "kvnTo": 11563232,
-      "kvnRef": "Dan 6:11",
+      "kvnRef": "27 6:12 (osnb)",
       "tkvnFrom": 11563248,
       "tkvnTo": 11563248,
-      "tkvnRef": "Dan 6,12",
+      "tkvnRef": "27 6,12",
       "order": 0
     },
     {
       "kvnFrom": 11563248,
       "kvnTo": 11563248,
-      "kvnRef": "Dan 6:12",
+      "kvnRef": "27 6:13 (osnb)",
       "tkvnFrom": 11563264,
       "tkvnTo": 11563264,
-      "tkvnRef": "Dan 6,13",
+      "tkvnRef": "27 6,13",
       "order": 0
     },
     {
       "kvnFrom": 11563264,
       "kvnTo": 11563264,
-      "kvnRef": "Dan 6:13",
+      "kvnRef": "27 6:14 (osnb)",
       "tkvnFrom": 11563280,
       "tkvnTo": 11563280,
-      "tkvnRef": "Dan 6,14",
+      "tkvnRef": "27 6,14",
       "order": 0
     },
     {
       "kvnFrom": 11563280,
       "kvnTo": 11563280,
-      "kvnRef": "Dan 6:14",
+      "kvnRef": "27 6:15 (osnb)",
       "tkvnFrom": 11563296,
       "tkvnTo": 11563296,
-      "tkvnRef": "Dan 6,15",
+      "tkvnRef": "27 6,15",
       "order": 0
     },
     {
       "kvnFrom": 11563296,
       "kvnTo": 11563296,
-      "kvnRef": "Dan 6:15",
+      "kvnRef": "27 6:16 (osnb)",
       "tkvnFrom": 11563312,
       "tkvnTo": 11563312,
-      "tkvnRef": "Dan 6,16",
+      "tkvnRef": "27 6,16",
       "order": 0
     },
     {
       "kvnFrom": 11563312,
       "kvnTo": 11563312,
-      "kvnRef": "Dan 6:16",
+      "kvnRef": "27 6:17 (osnb)",
       "tkvnFrom": 11563328,
       "tkvnTo": 11563328,
-      "tkvnRef": "Dan 6,17",
+      "tkvnRef": "27 6,17",
       "order": 0
     },
     {
       "kvnFrom": 11563328,
       "kvnTo": 11563328,
-      "kvnRef": "Dan 6:17",
+      "kvnRef": "27 6:18 (osnb)",
       "tkvnFrom": 11563344,
       "tkvnTo": 11563344,
-      "tkvnRef": "Dan 6,18",
+      "tkvnRef": "27 6,18",
       "order": 0
     },
     {
       "kvnFrom": 11563344,
       "kvnTo": 11563344,
-      "kvnRef": "Dan 6:18",
+      "kvnRef": "27 6:19 (osnb)",
       "tkvnFrom": 11563360,
       "tkvnTo": 11563360,
-      "tkvnRef": "Dan 6,19",
+      "tkvnRef": "27 6,19",
       "order": 0
     },
     {
       "kvnFrom": 11563360,
       "kvnTo": 11563360,
-      "kvnRef": "Dan 6:19",
+      "kvnRef": "27 6:20 (osnb)",
       "tkvnFrom": 11563376,
       "tkvnTo": 11563376,
-      "tkvnRef": "Dan 6,20",
+      "tkvnRef": "27 6,20",
       "order": 0
     },
     {
       "kvnFrom": 11563376,
       "kvnTo": 11563376,
-      "kvnRef": "Dan 6:20",
+      "kvnRef": "27 6:21 (osnb)",
       "tkvnFrom": 11563392,
       "tkvnTo": 11563392,
-      "tkvnRef": "Dan 6,21",
+      "tkvnRef": "27 6,21",
       "order": 0
     },
     {
       "kvnFrom": 11563392,
       "kvnTo": 11563392,
-      "kvnRef": "Dan 6:21",
+      "kvnRef": "27 6:22 (osnb)",
       "tkvnFrom": 11563408,
       "tkvnTo": 11563408,
-      "tkvnRef": "Dan 6,22",
+      "tkvnRef": "27 6,22",
       "order": 0
     },
     {
       "kvnFrom": 11563408,
       "kvnTo": 11563408,
-      "kvnRef": "Dan 6:22",
+      "kvnRef": "27 6:23 (osnb)",
       "tkvnFrom": 11563424,
       "tkvnTo": 11563424,
-      "tkvnRef": "Dan 6,23",
+      "tkvnRef": "27 6,23",
       "order": 0
     },
     {
       "kvnFrom": 11563424,
       "kvnTo": 11563424,
-      "kvnRef": "Dan 6:23",
+      "kvnRef": "27 6:24 (osnb)",
       "tkvnFrom": 11563440,
       "tkvnTo": 11563440,
-      "tkvnRef": "Dan 6,24",
+      "tkvnRef": "27 6,24",
       "order": 0
     },
     {
       "kvnFrom": 11563440,
       "kvnTo": 11563440,
-      "kvnRef": "Dan 6:24",
+      "kvnRef": "27 6:25 (osnb)",
       "tkvnFrom": 11563456,
       "tkvnTo": 11563456,
-      "tkvnRef": "Dan 6,25",
+      "tkvnRef": "27 6,25",
       "order": 0
     },
     {
       "kvnFrom": 11563456,
       "kvnTo": 11563456,
-      "kvnRef": "Dan 6:25",
+      "kvnRef": "27 6:26 (osnb)",
       "tkvnFrom": 11563472,
       "tkvnTo": 11563472,
-      "tkvnRef": "Dan 6,26",
+      "tkvnRef": "27 6,26",
       "order": 0
     },
     {
       "kvnFrom": 11563472,
       "kvnTo": 11563472,
-      "kvnRef": "Dan 6:26",
+      "kvnRef": "27 6:27 (osnb)",
       "tkvnFrom": 11563488,
       "tkvnTo": 11563488,
-      "tkvnRef": "Dan 6,27",
+      "tkvnRef": "27 6,27",
       "order": 0
     },
     {
       "kvnFrom": 11563488,
       "kvnTo": 11563488,
-      "kvnRef": "Dan 6:27",
+      "kvnRef": "27 6:28 (osnb)",
       "tkvnFrom": 11563504,
       "tkvnTo": 11563504,
-      "tkvnRef": "Dan 6,28",
+      "tkvnRef": "27 6,28",
+      "order": 0
+    },
+    {
+      "kvnFrom": 11563504,
+      "kvnTo": 11563504,
+      "kvnRef": "27 6:29 (osnb)",
+      "tkvnFrom": 11563504,
+      "tkvnTo": 11563504,
+      "tkvnRef": "27 6,28",
+      "order": 1
+    },
+    {
+      "kvnFrom": 12004864,
+      "kvnTo": 12004864,
+      "kvnRef": "28 11:1 (osnb)",
+      "tkvnFrom": 12004864,
+      "tkvnTo": 12004864,
+      "tkvnRef": "28 11,1",
+      "order": 0
+    },
+    {
+      "kvnFrom": 12004880,
+      "kvnTo": 12004880,
+      "kvnRef": "28 11:2 (osnb)",
+      "tkvnFrom": 12004880,
+      "tkvnTo": 12004880,
+      "tkvnRef": "28 11,2",
+      "order": 0
+    },
+    {
+      "kvnFrom": 12004896,
+      "kvnTo": 12004896,
+      "kvnRef": "28 11:3 (osnb)",
+      "tkvnFrom": 12004896,
+      "tkvnTo": 12004896,
+      "tkvnRef": "28 11,3",
+      "order": 0
+    },
+    {
+      "kvnFrom": 12004912,
+      "kvnTo": 12004912,
+      "kvnRef": "28 11:4 (osnb)",
+      "tkvnFrom": 12004912,
+      "tkvnTo": 12004912,
+      "tkvnRef": "28 11,4",
+      "order": 0
+    },
+    {
+      "kvnFrom": 12004928,
+      "kvnTo": 12004928,
+      "kvnRef": "28 11:5 (osnb)",
+      "tkvnFrom": 12004928,
+      "tkvnTo": 12004928,
+      "tkvnRef": "28 11,5",
+      "order": 0
+    },
+    {
+      "kvnFrom": 12004944,
+      "kvnTo": 12004944,
+      "kvnRef": "28 11:6 (osnb)",
+      "tkvnFrom": 12004944,
+      "tkvnTo": 12004944,
+      "tkvnRef": "28 11,6",
+      "order": 0
+    },
+    {
+      "kvnFrom": 12004960,
+      "kvnTo": 12004960,
+      "kvnRef": "28 11:7 (osnb)",
+      "tkvnFrom": 12004960,
+      "tkvnTo": 12004960,
+      "tkvnRef": "28 11,7",
+      "order": 0
+    },
+    {
+      "kvnFrom": 12004976,
+      "kvnTo": 12004976,
+      "kvnRef": "28 11:8 (osnb)",
+      "tkvnFrom": 12004976,
+      "tkvnTo": 12004976,
+      "tkvnRef": "28 11,8",
+      "order": 0
+    },
+    {
+      "kvnFrom": 12004992,
+      "kvnTo": 12004992,
+      "kvnRef": "28 11:9 (osnb)",
+      "tkvnFrom": 12004992,
+      "tkvnTo": 12004992,
+      "tkvnRef": "28 11,9",
+      "order": 0
+    },
+    {
+      "kvnFrom": 12005008,
+      "kvnTo": 12005008,
+      "kvnRef": "28 11:10 (osnb)",
+      "tkvnFrom": 12005008,
+      "tkvnTo": 12005008,
+      "tkvnRef": "28 11,10",
+      "order": 0
+    },
+    {
+      "kvnFrom": 12005024,
+      "kvnTo": 12005024,
+      "kvnRef": "28 11:11 (osnb)",
+      "tkvnFrom": 12005024,
+      "tkvnTo": 12005024,
+      "tkvnRef": "28 11,11",
+      "order": 0
+    },
+    {
+      "kvnFrom": 12005040,
+      "kvnTo": 12005040,
+      "kvnRef": "28 12:1 (osnb)",
+      "tkvnFrom": 12007696,
+      "tkvnTo": 12007696,
+      "tkvnRef": "28 12,1",
+      "order": 0
+    },
+    {
+      "kvnFrom": 12007696,
+      "kvnTo": 12007696,
+      "kvnRef": "28 12:2 (osnb)",
+      "tkvnFrom": 12007712,
+      "tkvnTo": 12007712,
+      "tkvnRef": "28 12,2",
+      "order": 0
+    },
+    {
+      "kvnFrom": 12007712,
+      "kvnTo": 12007712,
+      "kvnRef": "28 12:3 (osnb)",
+      "tkvnFrom": 12007728,
+      "tkvnTo": 12007728,
+      "tkvnRef": "28 12,3",
+      "order": 0
+    },
+    {
+      "kvnFrom": 12007728,
+      "kvnTo": 12007728,
+      "kvnRef": "28 12:4 (osnb)",
+      "tkvnFrom": 12007744,
+      "tkvnTo": 12007744,
+      "tkvnRef": "28 12,4",
+      "order": 0
+    },
+    {
+      "kvnFrom": 12007744,
+      "kvnTo": 12007744,
+      "kvnRef": "28 12:5 (osnb)",
+      "tkvnFrom": 12007760,
+      "tkvnTo": 12007760,
+      "tkvnRef": "28 12,5",
+      "order": 0
+    },
+    {
+      "kvnFrom": 12007760,
+      "kvnTo": 12007760,
+      "kvnRef": "28 12:6 (osnb)",
+      "tkvnFrom": 12007776,
+      "tkvnTo": 12007776,
+      "tkvnRef": "28 12,6",
+      "order": 0
+    },
+    {
+      "kvnFrom": 12007776,
+      "kvnTo": 12007776,
+      "kvnRef": "28 12:7 (osnb)",
+      "tkvnFrom": 12007792,
+      "tkvnTo": 12007792,
+      "tkvnRef": "28 12,7",
+      "order": 0
+    },
+    {
+      "kvnFrom": 12007792,
+      "kvnTo": 12007792,
+      "kvnRef": "28 12:8 (osnb)",
+      "tkvnFrom": 12007808,
+      "tkvnTo": 12007808,
+      "tkvnRef": "28 12,8",
+      "order": 0
+    },
+    {
+      "kvnFrom": 12007808,
+      "kvnTo": 12007808,
+      "kvnRef": "28 12:9 (osnb)",
+      "tkvnFrom": 12007824,
+      "tkvnTo": 12007824,
+      "tkvnRef": "28 12,9",
+      "order": 0
+    },
+    {
+      "kvnFrom": 12007824,
+      "kvnTo": 12007824,
+      "kvnRef": "28 12:10 (osnb)",
+      "tkvnFrom": 12007840,
+      "tkvnTo": 12007840,
+      "tkvnRef": "28 12,10",
+      "order": 0
+    },
+    {
+      "kvnFrom": 12007840,
+      "kvnTo": 12007840,
+      "kvnRef": "28 12:11 (osnb)",
+      "tkvnFrom": 12007856,
+      "tkvnTo": 12007856,
+      "tkvnRef": "28 12,11",
+      "order": 0
+    },
+    {
+      "kvnFrom": 12007856,
+      "kvnTo": 12007856,
+      "kvnRef": "28 12:12 (osnb)",
+      "tkvnFrom": 12007872,
+      "tkvnTo": 12007872,
+      "tkvnRef": "28 12,12",
+      "order": 0
+    },
+    {
+      "kvnFrom": 12007872,
+      "kvnTo": 12007872,
+      "kvnRef": "28 12:13 (osnb)",
+      "tkvnFrom": 12007888,
+      "tkvnTo": 12007888,
+      "tkvnRef": "28 12,13",
+      "order": 0
+    },
+    {
+      "kvnFrom": 12007888,
+      "kvnTo": 12007888,
+      "kvnRef": "28 12:14 (osnb)",
+      "tkvnFrom": 12007904,
+      "tkvnTo": 12007904,
+      "tkvnRef": "28 12,14",
+      "order": 0
+    },
+    {
+      "kvnFrom": 12007904,
+      "kvnTo": 12007904,
+      "kvnRef": "28 12:15 (osnb)",
+      "tkvnFrom": 12007904,
+      "tkvnTo": 12007904,
+      "tkvnRef": "28 12,14",
+      "order": 1
+    },
+    {
+      "kvnFrom": 13687072,
+      "kvnTo": 13687072,
+      "kvnRef": "32 1:1 (osnb)",
+      "tkvnFrom": 13687072,
+      "tkvnTo": 13687072,
+      "tkvnRef": "32 1,1",
+      "order": 0
+    },
+    {
+      "kvnFrom": 13687088,
+      "kvnTo": 13687088,
+      "kvnRef": "32 1:2 (osnb)",
+      "tkvnFrom": 13687088,
+      "tkvnTo": 13687088,
+      "tkvnRef": "32 1,2",
+      "order": 0
+    },
+    {
+      "kvnFrom": 13687104,
+      "kvnTo": 13687104,
+      "kvnRef": "32 1:3 (osnb)",
+      "tkvnFrom": 13687104,
+      "tkvnTo": 13687104,
+      "tkvnRef": "32 1,3",
+      "order": 0
+    },
+    {
+      "kvnFrom": 13687120,
+      "kvnTo": 13687120,
+      "kvnRef": "32 1:4 (osnb)",
+      "tkvnFrom": 13687120,
+      "tkvnTo": 13687120,
+      "tkvnRef": "32 1,4",
+      "order": 0
+    },
+    {
+      "kvnFrom": 13687136,
+      "kvnTo": 13687136,
+      "kvnRef": "32 1:5 (osnb)",
+      "tkvnFrom": 13687136,
+      "tkvnTo": 13687136,
+      "tkvnRef": "32 1,5",
+      "order": 0
+    },
+    {
+      "kvnFrom": 13687152,
+      "kvnTo": 13687152,
+      "kvnRef": "32 1:6 (osnb)",
+      "tkvnFrom": 13687152,
+      "tkvnTo": 13687152,
+      "tkvnRef": "32 1,6",
+      "order": 0
+    },
+    {
+      "kvnFrom": 13687168,
+      "kvnTo": 13687168,
+      "kvnRef": "32 1:7 (osnb)",
+      "tkvnFrom": 13687168,
+      "tkvnTo": 13687168,
+      "tkvnRef": "32 1,7",
+      "order": 0
+    },
+    {
+      "kvnFrom": 13687184,
+      "kvnTo": 13687184,
+      "kvnRef": "32 1:8 (osnb)",
+      "tkvnFrom": 13687184,
+      "tkvnTo": 13687184,
+      "tkvnRef": "32 1,8",
+      "order": 0
+    },
+    {
+      "kvnFrom": 13687200,
+      "kvnTo": 13687200,
+      "kvnRef": "32 1:9 (osnb)",
+      "tkvnFrom": 13687200,
+      "tkvnTo": 13687200,
+      "tkvnRef": "32 1,9",
+      "order": 0
+    },
+    {
+      "kvnFrom": 13687216,
+      "kvnTo": 13687216,
+      "kvnRef": "32 1:10 (osnb)",
+      "tkvnFrom": 13687216,
+      "tkvnTo": 13687216,
+      "tkvnRef": "32 1,10",
+      "order": 0
+    },
+    {
+      "kvnFrom": 13687232,
+      "kvnTo": 13687232,
+      "kvnRef": "32 1:11 (osnb)",
+      "tkvnFrom": 13687232,
+      "tkvnTo": 13687232,
+      "tkvnRef": "32 1,11",
+      "order": 0
+    },
+    {
+      "kvnFrom": 13687248,
+      "kvnTo": 13687248,
+      "kvnRef": "32 1:12 (osnb)",
+      "tkvnFrom": 13687248,
+      "tkvnTo": 13687248,
+      "tkvnRef": "32 1,12",
+      "order": 0
+    },
+    {
+      "kvnFrom": 13687264,
+      "kvnTo": 13687264,
+      "kvnRef": "32 1:13 (osnb)",
+      "tkvnFrom": 13687264,
+      "tkvnTo": 13687264,
+      "tkvnRef": "32 1,13",
+      "order": 0
+    },
+    {
+      "kvnFrom": 13687280,
+      "kvnTo": 13687280,
+      "kvnRef": "32 1:14 (osnb)",
+      "tkvnFrom": 13687280,
+      "tkvnTo": 13687280,
+      "tkvnRef": "32 1,14",
+      "order": 0
+    },
+    {
+      "kvnFrom": 13687296,
+      "kvnTo": 13687296,
+      "kvnRef": "32 1:15 (osnb)",
+      "tkvnFrom": 13687296,
+      "tkvnTo": 13687296,
+      "tkvnRef": "32 1,15",
+      "order": 0
+    },
+    {
+      "kvnFrom": 13687312,
+      "kvnTo": 13687312,
+      "kvnRef": "32 1:16 (osnb)",
+      "tkvnFrom": 13687312,
+      "tkvnTo": 13687312,
+      "tkvnRef": "32 1,16",
+      "order": 0
+    },
+    {
+      "kvnFrom": 13687328,
+      "kvnTo": 13687328,
+      "kvnRef": "32 2:1 (osnb)",
+      "tkvnFrom": 13689904,
+      "tkvnTo": 13689904,
+      "tkvnRef": "32 2,1",
+      "order": 0
+    },
+    {
+      "kvnFrom": 13689904,
+      "kvnTo": 13689904,
+      "kvnRef": "32 2:2 (osnb)",
+      "tkvnFrom": 13689920,
+      "tkvnTo": 13689920,
+      "tkvnRef": "32 2,2",
+      "order": 0
+    },
+    {
+      "kvnFrom": 13689920,
+      "kvnTo": 13689920,
+      "kvnRef": "32 2:3 (osnb)",
+      "tkvnFrom": 13689936,
+      "tkvnTo": 13689936,
+      "tkvnRef": "32 2,3",
+      "order": 0
+    },
+    {
+      "kvnFrom": 13689936,
+      "kvnTo": 13689936,
+      "kvnRef": "32 2:4 (osnb)",
+      "tkvnFrom": 13689952,
+      "tkvnTo": 13689952,
+      "tkvnRef": "32 2,4",
+      "order": 0
+    },
+    {
+      "kvnFrom": 13689952,
+      "kvnTo": 13689952,
+      "kvnRef": "32 2:5 (osnb)",
+      "tkvnFrom": 13689968,
+      "tkvnTo": 13689968,
+      "tkvnRef": "32 2,5",
+      "order": 0
+    },
+    {
+      "kvnFrom": 13689968,
+      "kvnTo": 13689968,
+      "kvnRef": "32 2:6 (osnb)",
+      "tkvnFrom": 13689984,
+      "tkvnTo": 13689984,
+      "tkvnRef": "32 2,6",
+      "order": 0
+    },
+    {
+      "kvnFrom": 13689984,
+      "kvnTo": 13689984,
+      "kvnRef": "32 2:7 (osnb)",
+      "tkvnFrom": 13690000,
+      "tkvnTo": 13690000,
+      "tkvnRef": "32 2,7",
+      "order": 0
+    },
+    {
+      "kvnFrom": 13690000,
+      "kvnTo": 13690000,
+      "kvnRef": "32 2:8 (osnb)",
+      "tkvnFrom": 13690016,
+      "tkvnTo": 13690016,
+      "tkvnRef": "32 2,8",
+      "order": 0
+    },
+    {
+      "kvnFrom": 13690016,
+      "kvnTo": 13690016,
+      "kvnRef": "32 2:9 (osnb)",
+      "tkvnFrom": 13690032,
+      "tkvnTo": 13690032,
+      "tkvnRef": "32 2,9",
+      "order": 0
+    },
+    {
+      "kvnFrom": 13690032,
+      "kvnTo": 13690032,
+      "kvnRef": "32 2:10 (osnb)",
+      "tkvnFrom": 13690048,
+      "tkvnTo": 13690048,
+      "tkvnRef": "32 2,10",
+      "order": 0
+    },
+    {
+      "kvnFrom": 13690048,
+      "kvnTo": 13690048,
+      "kvnRef": "32 2:11 (osnb)",
+      "tkvnFrom": 13690048,
+      "tkvnTo": 13690048,
+      "tkvnRef": "32 2,10",
+      "order": 1
+    },
+    {
+      "kvnFrom": 14123200,
+      "kvnTo": 14123200,
+      "kvnRef": "33 4:1 (osnb)",
+      "tkvnFrom": 14123200,
+      "tkvnTo": 14123200,
+      "tkvnRef": "33 4,1",
+      "order": 0
+    },
+    {
+      "kvnFrom": 14123216,
+      "kvnTo": 14123216,
+      "kvnRef": "33 4:2 (osnb)",
+      "tkvnFrom": 14123216,
+      "tkvnTo": 14123216,
+      "tkvnRef": "33 4,2",
+      "order": 0
+    },
+    {
+      "kvnFrom": 14123232,
+      "kvnTo": 14123232,
+      "kvnRef": "33 4:3 (osnb)",
+      "tkvnFrom": 14123232,
+      "tkvnTo": 14123232,
+      "tkvnRef": "33 4,3",
+      "order": 0
+    },
+    {
+      "kvnFrom": 14123248,
+      "kvnTo": 14123248,
+      "kvnRef": "33 4:4 (osnb)",
+      "tkvnFrom": 14123248,
+      "tkvnTo": 14123248,
+      "tkvnRef": "33 4,4",
+      "order": 0
+    },
+    {
+      "kvnFrom": 14123264,
+      "kvnTo": 14123264,
+      "kvnRef": "33 4:5 (osnb)",
+      "tkvnFrom": 14123264,
+      "tkvnTo": 14123264,
+      "tkvnRef": "33 4,5",
+      "order": 0
+    },
+    {
+      "kvnFrom": 14123280,
+      "kvnTo": 14123280,
+      "kvnRef": "33 4:6 (osnb)",
+      "tkvnFrom": 14123280,
+      "tkvnTo": 14123280,
+      "tkvnRef": "33 4,6",
+      "order": 0
+    },
+    {
+      "kvnFrom": 14123296,
+      "kvnTo": 14123296,
+      "kvnRef": "33 4:7 (osnb)",
+      "tkvnFrom": 14123296,
+      "tkvnTo": 14123296,
+      "tkvnRef": "33 4,7",
+      "order": 0
+    },
+    {
+      "kvnFrom": 14123312,
+      "kvnTo": 14123312,
+      "kvnRef": "33 4:8 (osnb)",
+      "tkvnFrom": 14123312,
+      "tkvnTo": 14123312,
+      "tkvnRef": "33 4,8",
+      "order": 0
+    },
+    {
+      "kvnFrom": 14123328,
+      "kvnTo": 14123328,
+      "kvnRef": "33 4:9 (osnb)",
+      "tkvnFrom": 14123328,
+      "tkvnTo": 14123328,
+      "tkvnRef": "33 4,9",
+      "order": 0
+    },
+    {
+      "kvnFrom": 14123344,
+      "kvnTo": 14123344,
+      "kvnRef": "33 4:10 (osnb)",
+      "tkvnFrom": 14123344,
+      "tkvnTo": 14123344,
+      "tkvnRef": "33 4,10",
+      "order": 0
+    },
+    {
+      "kvnFrom": 14123360,
+      "kvnTo": 14123360,
+      "kvnRef": "33 4:11 (osnb)",
+      "tkvnFrom": 14123360,
+      "tkvnTo": 14123360,
+      "tkvnRef": "33 4,11",
+      "order": 0
+    },
+    {
+      "kvnFrom": 14123376,
+      "kvnTo": 14123376,
+      "kvnRef": "33 4:12 (osnb)",
+      "tkvnFrom": 14123376,
+      "tkvnTo": 14123376,
+      "tkvnRef": "33 4,12",
+      "order": 0
+    },
+    {
+      "kvnFrom": 14123392,
+      "kvnTo": 14123392,
+      "kvnRef": "33 4:13 (osnb)",
+      "tkvnFrom": 14123392,
+      "tkvnTo": 14123392,
+      "tkvnRef": "33 4,13",
       "order": 0
     },
     {
       "kvnFrom": 14126032,
       "kvnTo": 14126032,
-      "kvnRef": "Mic 5:1",
+      "kvnRef": "33 4:14 (osnb)",
       "tkvnFrom": 14123392,
       "tkvnTo": 14123392,
-      "tkvnRef": "Mic 4,13",
-      "order": 0
+      "tkvnRef": "33 4,13",
+      "order": 1
     },
     {
       "kvnFrom": 14126048,
       "kvnTo": 14126048,
-      "kvnRef": "Mic 5:2",
+      "kvnRef": "33 5:1 (osnb)",
       "tkvnFrom": 14126032,
       "tkvnTo": 14126032,
-      "tkvnRef": "Mic 5,1",
+      "tkvnRef": "33 5,1",
       "order": 0
     },
     {
       "kvnFrom": 14126064,
       "kvnTo": 14126064,
-      "kvnRef": "Mic 5:3",
+      "kvnRef": "33 5:2 (osnb)",
       "tkvnFrom": 14126048,
       "tkvnTo": 14126048,
-      "tkvnRef": "Mic 5,2",
+      "tkvnRef": "33 5,2",
       "order": 0
     },
     {
       "kvnFrom": 14126080,
       "kvnTo": 14126080,
-      "kvnRef": "Mic 5:4",
+      "kvnRef": "33 5:3 (osnb)",
       "tkvnFrom": 14126064,
       "tkvnTo": 14126064,
-      "tkvnRef": "Mic 5,3",
+      "tkvnRef": "33 5,3",
       "order": 0
     },
     {
       "kvnFrom": 14126096,
       "kvnTo": 14126096,
-      "kvnRef": "Mic 5:5",
+      "kvnRef": "33 5:4 (osnb)",
       "tkvnFrom": 14126080,
       "tkvnTo": 14126080,
-      "tkvnRef": "Mic 5,4",
+      "tkvnRef": "33 5,4",
       "order": 0
     },
     {
       "kvnFrom": 14126112,
       "kvnTo": 14126112,
-      "kvnRef": "Mic 5:6",
+      "kvnRef": "33 5:5 (osnb)",
       "tkvnFrom": 14126096,
       "tkvnTo": 14126096,
-      "tkvnRef": "Mic 5,5",
+      "tkvnRef": "33 5,5",
       "order": 0
     },
     {
       "kvnFrom": 14126128,
       "kvnTo": 14126128,
-      "kvnRef": "Mic 5:7",
+      "kvnRef": "33 5:6 (osnb)",
       "tkvnFrom": 14126112,
       "tkvnTo": 14126112,
-      "tkvnRef": "Mic 5,6",
+      "tkvnRef": "33 5,6",
       "order": 0
     },
     {
       "kvnFrom": 14126144,
       "kvnTo": 14126144,
-      "kvnRef": "Mic 5:8",
+      "kvnRef": "33 5:7 (osnb)",
       "tkvnFrom": 14126128,
       "tkvnTo": 14126128,
-      "tkvnRef": "Mic 5,7",
+      "tkvnRef": "33 5,7",
       "order": 0
     },
     {
       "kvnFrom": 14126160,
       "kvnTo": 14126160,
-      "kvnRef": "Mic 5:9",
+      "kvnRef": "33 5:8 (osnb)",
       "tkvnFrom": 14126144,
       "tkvnTo": 14126144,
-      "tkvnRef": "Mic 5,8",
+      "tkvnRef": "33 5,8",
       "order": 0
     },
     {
       "kvnFrom": 14126176,
       "kvnTo": 14126176,
-      "kvnRef": "Mic 5:10",
+      "kvnRef": "33 5:9 (osnb)",
       "tkvnFrom": 14126160,
       "tkvnTo": 14126160,
-      "tkvnRef": "Mic 5,9",
+      "tkvnRef": "33 5,9",
       "order": 0
     },
     {
       "kvnFrom": 14126192,
       "kvnTo": 14126192,
-      "kvnRef": "Mic 5:11",
+      "kvnRef": "33 5:10 (osnb)",
       "tkvnFrom": 14126176,
       "tkvnTo": 14126176,
-      "tkvnRef": "Mic 5,10",
+      "tkvnRef": "33 5,10",
       "order": 0
     },
     {
       "kvnFrom": 14126208,
       "kvnTo": 14126208,
-      "kvnRef": "Mic 5:12",
+      "kvnRef": "33 5:11 (osnb)",
       "tkvnFrom": 14126192,
       "tkvnTo": 14126192,
-      "tkvnRef": "Mic 5,11",
+      "tkvnRef": "33 5,11",
       "order": 0
     },
     {
       "kvnFrom": 14126224,
       "kvnTo": 14126224,
-      "kvnRef": "Mic 5:13",
+      "kvnRef": "33 5:12 (osnb)",
       "tkvnFrom": 14126208,
       "tkvnTo": 14126208,
-      "tkvnRef": "Mic 5,12",
+      "tkvnRef": "33 5,12",
       "order": 0
     },
     {
       "kvnFrom": 14126240,
       "kvnTo": 14126240,
-      "kvnRef": "Mic 5:14",
+      "kvnRef": "33 5:13 (osnb)",
       "tkvnFrom": 14126224,
       "tkvnTo": 14126224,
-      "tkvnRef": "Mic 5,13",
+      "tkvnRef": "33 5,13",
       "order": 0
     },
     {
       "kvnFrom": 14126256,
       "kvnTo": 14126256,
-      "kvnRef": "Mic 5:15",
+      "kvnRef": "33 5:14 (osnb)",
       "tkvnFrom": 14126240,
       "tkvnTo": 14126240,
-      "tkvnRef": "Mic 5,14",
+      "tkvnRef": "33 5,14",
+      "order": 0
+    },
+    {
+      "kvnFrom": 20135536,
+      "kvnTo": 20135536,
+      "kvnRef": "47 13:1 (osnb)",
+      "tkvnFrom": 20135536,
+      "tkvnTo": 20135536,
+      "tkvnRef": "47 13,1",
+      "order": 0
+    },
+    {
+      "kvnFrom": 20135552,
+      "kvnTo": 20135552,
+      "kvnRef": "47 13:2 (osnb)",
+      "tkvnFrom": 20135552,
+      "tkvnTo": 20135552,
+      "tkvnRef": "47 13,2",
+      "order": 0
+    },
+    {
+      "kvnFrom": 20135568,
+      "kvnTo": 20135568,
+      "kvnRef": "47 13:3 (osnb)",
+      "tkvnFrom": 20135568,
+      "tkvnTo": 20135568,
+      "tkvnRef": "47 13,3",
+      "order": 0
+    },
+    {
+      "kvnFrom": 20135584,
+      "kvnTo": 20135584,
+      "kvnRef": "47 13:4 (osnb)",
+      "tkvnFrom": 20135584,
+      "tkvnTo": 20135584,
+      "tkvnRef": "47 13,4",
+      "order": 0
+    },
+    {
+      "kvnFrom": 20135600,
+      "kvnTo": 20135600,
+      "kvnRef": "47 13:5 (osnb)",
+      "tkvnFrom": 20135600,
+      "tkvnTo": 20135600,
+      "tkvnRef": "47 13,5",
+      "order": 0
+    },
+    {
+      "kvnFrom": 20135616,
+      "kvnTo": 20135616,
+      "kvnRef": "47 13:6 (osnb)",
+      "tkvnFrom": 20135616,
+      "tkvnTo": 20135616,
+      "tkvnRef": "47 13,6",
+      "order": 0
+    },
+    {
+      "kvnFrom": 20135632,
+      "kvnTo": 20135632,
+      "kvnRef": "47 13:7 (osnb)",
+      "tkvnFrom": 20135632,
+      "tkvnTo": 20135632,
+      "tkvnRef": "47 13,7",
+      "order": 0
+    },
+    {
+      "kvnFrom": 20135648,
+      "kvnTo": 20135648,
+      "kvnRef": "47 13:8 (osnb)",
+      "tkvnFrom": 20135648,
+      "tkvnTo": 20135648,
+      "tkvnRef": "47 13,8",
+      "order": 0
+    },
+    {
+      "kvnFrom": 20135664,
+      "kvnTo": 20135664,
+      "kvnRef": "47 13:9 (osnb)",
+      "tkvnFrom": 20135664,
+      "tkvnTo": 20135664,
+      "tkvnRef": "47 13,9",
+      "order": 0
+    },
+    {
+      "kvnFrom": 20135680,
+      "kvnTo": 20135680,
+      "kvnRef": "47 13:10 (osnb)",
+      "tkvnFrom": 20135680,
+      "tkvnTo": 20135680,
+      "tkvnRef": "47 13,10",
+      "order": 0
+    },
+    {
+      "kvnFrom": 20135696,
+      "kvnTo": 20135696,
+      "kvnRef": "47 13:11 (osnb)",
+      "tkvnFrom": 20135696,
+      "tkvnTo": 20135696,
+      "tkvnRef": "47 13,11",
+      "order": 0
+    },
+    {
+      "kvnFrom": 20135712,
+      "kvnTo": 20135712,
+      "kvnRef": "47 13:12 (osnb)",
+      "tkvnFrom": 20135712,
+      "tkvnTo": 20135712,
+      "tkvnRef": "47 13,12",
+      "order": 0
+    },
+    {
+      "kvnFrom": 20135744,
+      "kvnTo": 20135744,
+      "kvnRef": "47 13:13 (osnb)",
+      "tkvnFrom": 20135728,
+      "tkvnTo": 20135728,
+      "tkvnRef": "47 13,13",
       "order": 0
     },
     {
