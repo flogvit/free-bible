@@ -62,9 +62,13 @@ function leadingHeading(text: string): string | null {
  *   ¡: in the Reina-Valera a psalm title would then take the first question
  *   with it (Ps 22:1);
  * - the full-width stops «。», «！», «？» (Chinese, Japanese), after any closing
- *   brackets and spaces, before more text — those scripts have no capitals.
+ *   brackets and spaces, before more text — those scripts have no capitals;
+ * - «.», «!», «?», «؟» or «۔» and a space before an Arabic, Hebrew or Syriac
+ *   letter, also no capitals; directional marks (U+200E/F) around the stop are
+ *   allowed, as in the Smith–Van Dyke Arabic «ابنه‎. ‎يا رب» (#223).
  */
-const SENTENCE_BREAK = /(?<=[.!?»])\s+(?=[\p{Lu}«])|(?<=[。！？][\s」』）)]*)(?=[^\s」』）)])/gu;
+const SENTENCE_BREAK =
+  /(?<=[.!?»])\s+(?=[\p{Lu}«])|(?<=[。！？][\s」』）)]*)(?=[^\s」』）)])|(?<=[.!?؟۔][\u200e\u200f]?)\s+(?=[\u200e\u200f]*[\p{Script=Arabic}\p{Script=Hebrew}\p{Script=Syriac}])/gu;
 
 function splitBySentences(text: string, part: number, totalParts: number): string {
   const breaks: number[] = [0];
