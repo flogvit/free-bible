@@ -44,11 +44,13 @@ function splitByReference(text: string, part: number, refTexts: string[]): strin
 /**
  * A psalm title some translations print in brackets at the start of verse 1
  * (the Chinese Union Version: «（大卫逃避他儿子押沙龙的时候作的诗。）耶和华啊…»).
+ * Darby prints it in braces, «{A Psalm of David, when he fled from Absalom his
+ * son.} Jehovah, how…» (bible.flogvit.com#220).
  * Returns the bracketed block with its trailing space, or null. Only a block
  * followed by more text counts: a verse that is all brackets has no title.
  */
 function leadingHeading(text: string): string | null {
-  const m = /^\s*[（(][^（()）]*[）)]\s*/.exec(text);
+  const m = /^\s*(?:[（(][^（()）]*[）)]|\{[^{}]*\})\s*/.exec(text);
   if (!m || m[0].length >= text.trimEnd().length) return null;
   return m[0];
 }

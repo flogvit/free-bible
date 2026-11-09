@@ -65,6 +65,12 @@ describe('sliceVersePart', () => {
     expect(sliceVersePart(text, 2, 2)).toBe('DIOS mío, Dios mío, ¿por qué me has dejado? ¿Por qué estás lejos de mi salud?');
   });
 
+  it("takes Darby's title in braces as the leading part (Ps 3:1)", () => {
+    const text = '{A Psalm of David, when he fled from Absalom his son.} Jehovah, how are mine oppressors increased! Many rise up against me.';
+    expect(sliceVersePart(text, 1, 2)).toBe('{A Psalm of David, when he fled from Absalom his son.}');
+    expect(sliceVersePart(text, 2, 2)).toBe('Jehovah, how are mine oppressors increased! Many rise up against me.');
+  });
+
   it('does not take brackets in the middle of a verse as a title', () => {
     const text = 'Paul, an apostle, (not of men, neither by man,) unto the churches. Grace be to you.';
     expect(sliceVersePart(text, 1, 2)).toBe('Paul, an apostle, (not of men, neither by man,) unto the churches.');
