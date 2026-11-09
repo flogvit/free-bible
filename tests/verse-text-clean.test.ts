@@ -22,7 +22,7 @@ export const INLINE_NOTE =
 describe("own translations: no notes in the verse text", () => {
   for (const ed of OWN) {
     const dir = join(rawDir, ed);
-    it(`${ed}: every verse is the verse alone`, { timeout: 60_000 }, () => {
+    it(`${ed}: every verse is the verse alone`, () => {
       const books = readdirSync(dir).filter((b) => /^\d+$/.test(b));
       // A sparse or missing checkout would make this pass by measuring nothing.
       expect(books.length).toBe(66);
@@ -35,7 +35,7 @@ describe("own translations: no notes in the verse text", () => {
         }
       }
       expect(found).toEqual([]);
-    });
+    }, 60_000);
   }
 
   it('the pattern knows every form that was found', () => {
