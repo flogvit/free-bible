@@ -2,6 +2,12 @@
   "version": 2,
   "system": "kn_irv",
   "name": "kn_irv",
+  "textVerification": {
+    "status": "verified",
+    "checked": "2026-11-09",
+    "method": "Every verse moved through bibel's import (toOsnbNumbering) and checked with bibel's scripts/check-edition-landing.ts against kjv; every flagged chapter read in place; a scan for notes or markup in the text (red-letter ‹ › is taken out by bibel's import). kjv's #138 fixes taken where the verse structure is kjv's. For bible.flogvit.com#225.",
+    "remaining": "Prints no psalm titles: v1 maps to the last part of osmain X:1, so osnb's title verses stay empty. Verses the critical text leaves out (Matt 18:11, Mark 9:44 …) stay empty. Verses the source prints as one (66 of them) carry join entries and land on the first (bible.flogvit.com#234). verify-text.ts with both judges follows on Home Mac."
+  },
   "encoding": {
     "partSize": 16,
     "maxVerse": 177,
