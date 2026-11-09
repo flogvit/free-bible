@@ -2,6 +2,12 @@
   "version": 2,
   "system": "dnb30",
   "name": "dnb30",
+  "textVerification": {
+    "status": "verified",
+    "checked": "2026-11-09",
+    "method": "Text read again from CrossWire Norsk (Det Norske Bibelselskaps 1930 utgave) with its notes in footnotes (free-bible#146). Mapping: kjv's verified mapping as the base (the module has KJV slots), and osnb's for the 63 chapters where the module puts the Hebrew numbering in the KJV slots, decided chapter by chapter by comparing the text with osnb both ways. Every verse moved through bibel's import and checked with scripts/check-edition-landing.ts against kjv; every flagged chapter read.",
+    "remaining": "In the titled psalms the module has only KJV's slots, so the psalm's last verse is joined into the one before it (e.g. Ps 3:8 holds 3:8-9) and the last osnb verse stays empty (bible.flogvit.com#234 would divide it). Dan 10:21 is joined into 11:1 by the module. verify-text.ts with both judges follows on Home Mac."
+  },
   "encoding": {
     "partSize": 16,
     "maxVerse": 177,
