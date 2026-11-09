@@ -2,6 +2,12 @@
   "version": 2,
   "system": "ylt",
   "name": "ylt",
+  "textVerification": {
+    "status": "verified",
+    "checked": "2026-11-09",
+    "method": "Every verse moved through bibel's import (toOsnbNumbering) and checked with bibel's scripts/check-edition-landing.ts against kjv; every flagged chapter read in place; a scan for notes or markup in the text. kjv's #138 fixes taken where the verse structure is kjv's. For bible.flogvit.com#224.",
+    "remaining": "Ps 54:1 in the source ends after the title, so «O God, by Thy name save me» (osnb 54:3) is missing. 1 Sam 20:42 stays whole where osnb divides it. verify-text.ts with both judges follows on Home Mac."
+  },
   "encoding": {
     "partSize": 16,
     "maxVerse": 177,

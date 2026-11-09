@@ -2,6 +2,12 @@
   "version": 2,
   "system": "weymouth",
   "name": "weymouth",
+  "textVerification": {
+    "status": "verified",
+    "checked": "2026-11-09",
+    "method": "Every verse moved through bibel's import (toOsnbNumbering) and checked with bibel's scripts/check-edition-landing.ts against kjv; every flagged chapter read in place; a scan for notes or markup in the text. kjv's #138 fixes taken where the verse structure is kjv's. For bible.flogvit.com#224.",
+    "remaining": "New Testament only. Emphasis printed as *word* is taken out by bibel's import (55 verses). Verses the critical text leaves out stay empty. verify-text.ts with both judges follows on Home Mac."
+  },
   "encoding": {
     "partSize": 16,
     "maxVerse": 177,
