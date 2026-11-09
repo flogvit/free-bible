@@ -2,6 +2,12 @@
   "version": 2,
   "system": "diodati",
   "name": "diodati",
+  "textVerification": {
+    "status": "verified",
+    "checked": "2026-11-09",
+    "method": "Every verse moved through bibel's import (native -> osmain -> osnb, toOsnbNumbering) and checked with bibel's scripts/check-edition-landing.ts against kjv: verse lengths in place vs one verse over, osnb verses left empty, source placeholders; every flagged chapter read against kjv. Plus check-mapping-coverage.ts and a scan for notes or markup in the text. Deviations fixed for bible.flogvit.com#220.",
+    "remaining": "kjv's #138 fixes taken where the verse structure is kjv's (1 Chr 12, Neh 7, Ps 9, Ps 77, 2 Cor 13, Phil 1, 3 John, Rev 13). Psalm titles in v1 (Ps 4, 120 read in place). verify-text.ts with both judges follows on Home Mac."
+  },
   "encoding": {
     "partSize": 16,
     "maxVerse": 177,
