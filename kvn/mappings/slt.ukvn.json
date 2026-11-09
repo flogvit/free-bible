@@ -2,6 +2,12 @@
   "version": 2,
   "system": "slt",
   "name": "slt",
+  "textVerification": {
+    "status": "verified",
+    "checked": "2026-11-09",
+    "method": "Every verse moved through bibel's import (toOsnbNumbering) and checked with bibel's scripts/check-edition-landing.ts against kjv; every flagged chapter read in place; a scan for notes or markup in the text. kjv's #138 fixes taken where the verse structure is kjv's. For bible.flogvit.com#223.",
+    "remaining": "Josh 21:36-37 are not in this text; Luke 17:36 carries the translator's remark that it is wanting. verify-text.ts with both judges follows on Home Mac."
+  },
   "encoding": {
     "partSize": 16,
     "maxVerse": 177,
@@ -138,7 +144,7 @@
   "stats": {
     "identityChapters": 1185,
     "mappedChapters": 4,
-    "totalMappingEntries": 406,
+    "totalMappingEntries": 462,
     "missingInTranslation": 9,
     "expansionsNeeded": 0
   },
@@ -405,13 +411,22 @@
       "order": 0
     },
     {
+      "kvnFrom": 5593264,
+      "kvnTo": 5593264,
+      "kvnRef": "1 Krøn 12:4",
+      "tkvnFrom": 5593265,
+      "tkvnTo": 5593265,
+      "tkvnRef": "1 Krøn 12,4a",
+      "order": 0
+    },
+    {
       "kvnFrom": 5593280,
       "kvnTo": 5593280,
       "kvnRef": "1 Krøn 12:5",
-      "tkvnFrom": 5593264,
-      "tkvnTo": 5593264,
-      "tkvnRef": "1 Krøn 12,4",
-      "order": 1
+      "tkvnFrom": 5593266,
+      "tkvnTo": 5593266,
+      "tkvnRef": "1 Krøn 12,4b",
+      "order": 0
     },
     {
       "kvnFrom": 5593296,
@@ -738,6 +753,60 @@
       "order": 0
     },
     {
+      "kvnFrom": 6863024,
+      "kvnTo": 6863024,
+      "kvnRef": "Neh 7:68",
+      "tkvnFrom": 6863040,
+      "tkvnTo": 6863040,
+      "tkvnRef": "Neh 7,69",
+      "order": 0
+    },
+    {
+      "kvnFrom": 6863040,
+      "kvnTo": 6863040,
+      "kvnRef": "Neh 7:69",
+      "tkvnFrom": 6863056,
+      "tkvnTo": 6863056,
+      "tkvnRef": "Neh 7,70",
+      "order": 0
+    },
+    {
+      "kvnFrom": 6863056,
+      "kvnTo": 6863056,
+      "kvnRef": "Neh 7:70",
+      "tkvnFrom": 6863072,
+      "tkvnTo": 6863072,
+      "tkvnRef": "Neh 7,71",
+      "order": 0
+    },
+    {
+      "kvnFrom": 6863072,
+      "kvnTo": 6863072,
+      "kvnRef": "Neh 7:71",
+      "tkvnFrom": 6863088,
+      "tkvnTo": 6863088,
+      "tkvnRef": "Neh 7,72",
+      "order": 0
+    },
+    {
+      "kvnFrom": 6863088,
+      "kvnTo": 6863088,
+      "kvnRef": "Neh 7:72",
+      "tkvnFrom": 6863104,
+      "tkvnTo": 6863104,
+      "tkvnRef": "Neh 7,73",
+      "order": 0
+    },
+    {
+      "kvnFrom": 6863104,
+      "kvnTo": 6863104,
+      "kvnRef": "Neh 7:73",
+      "tkvnFrom": 6863104,
+      "tkvnTo": 6863104,
+      "tkvnRef": "Neh 7,73",
+      "order": 0
+    },
+    {
       "kvnFrom": 8139200,
       "kvnTo": 8139200,
       "kvnRef": "Sal 5:2",
@@ -843,6 +912,186 @@
       "tkvnFrom": 8139360,
       "tkvnTo": 8139360,
       "tkvnRef": "Sal 5,12",
+      "order": 0
+    },
+    {
+      "kvnFrom": 8150528,
+      "kvnTo": 8150528,
+      "kvnRef": "Sal 9:2",
+      "tkvnFrom": 8150512,
+      "tkvnTo": 8150512,
+      "tkvnRef": "Sal 9,1",
+      "order": 0
+    },
+    {
+      "kvnFrom": 8150544,
+      "kvnTo": 8150544,
+      "kvnRef": "Sal 9:3",
+      "tkvnFrom": 8150528,
+      "tkvnTo": 8150528,
+      "tkvnRef": "Sal 9,2",
+      "order": 0
+    },
+    {
+      "kvnFrom": 8150560,
+      "kvnTo": 8150560,
+      "kvnRef": "Sal 9:4",
+      "tkvnFrom": 8150544,
+      "tkvnTo": 8150544,
+      "tkvnRef": "Sal 9,3",
+      "order": 0
+    },
+    {
+      "kvnFrom": 8150576,
+      "kvnTo": 8150576,
+      "kvnRef": "Sal 9:5",
+      "tkvnFrom": 8150560,
+      "tkvnTo": 8150560,
+      "tkvnRef": "Sal 9,4",
+      "order": 0
+    },
+    {
+      "kvnFrom": 8150592,
+      "kvnTo": 8150592,
+      "kvnRef": "Sal 9:6",
+      "tkvnFrom": 8150576,
+      "tkvnTo": 8150576,
+      "tkvnRef": "Sal 9,5",
+      "order": 0
+    },
+    {
+      "kvnFrom": 8150608,
+      "kvnTo": 8150608,
+      "kvnRef": "Sal 9:7",
+      "tkvnFrom": 8150592,
+      "tkvnTo": 8150592,
+      "tkvnRef": "Sal 9,6",
+      "order": 0
+    },
+    {
+      "kvnFrom": 8150624,
+      "kvnTo": 8150624,
+      "kvnRef": "Sal 9:8",
+      "tkvnFrom": 8150608,
+      "tkvnTo": 8150608,
+      "tkvnRef": "Sal 9,7",
+      "order": 0
+    },
+    {
+      "kvnFrom": 8150640,
+      "kvnTo": 8150640,
+      "kvnRef": "Sal 9:9",
+      "tkvnFrom": 8150624,
+      "tkvnTo": 8150624,
+      "tkvnRef": "Sal 9,8",
+      "order": 0
+    },
+    {
+      "kvnFrom": 8150656,
+      "kvnTo": 8150656,
+      "kvnRef": "Sal 9:10",
+      "tkvnFrom": 8150640,
+      "tkvnTo": 8150640,
+      "tkvnRef": "Sal 9,9",
+      "order": 0
+    },
+    {
+      "kvnFrom": 8150672,
+      "kvnTo": 8150672,
+      "kvnRef": "Sal 9:11",
+      "tkvnFrom": 8150656,
+      "tkvnTo": 8150656,
+      "tkvnRef": "Sal 9,10",
+      "order": 0
+    },
+    {
+      "kvnFrom": 8150688,
+      "kvnTo": 8150688,
+      "kvnRef": "Sal 9:12",
+      "tkvnFrom": 8150672,
+      "tkvnTo": 8150672,
+      "tkvnRef": "Sal 9,11",
+      "order": 0
+    },
+    {
+      "kvnFrom": 8150704,
+      "kvnTo": 8150704,
+      "kvnRef": "Sal 9:13",
+      "tkvnFrom": 8150688,
+      "tkvnTo": 8150688,
+      "tkvnRef": "Sal 9,12",
+      "order": 0
+    },
+    {
+      "kvnFrom": 8150720,
+      "kvnTo": 8150720,
+      "kvnRef": "Sal 9:14",
+      "tkvnFrom": 8150704,
+      "tkvnTo": 8150704,
+      "tkvnRef": "Sal 9,13",
+      "order": 0
+    },
+    {
+      "kvnFrom": 8150736,
+      "kvnTo": 8150736,
+      "kvnRef": "Sal 9:15",
+      "tkvnFrom": 8150720,
+      "tkvnTo": 8150720,
+      "tkvnRef": "Sal 9,14",
+      "order": 0
+    },
+    {
+      "kvnFrom": 8150752,
+      "kvnTo": 8150752,
+      "kvnRef": "Sal 9:16",
+      "tkvnFrom": 8150736,
+      "tkvnTo": 8150736,
+      "tkvnRef": "Sal 9,15",
+      "order": 0
+    },
+    {
+      "kvnFrom": 8150768,
+      "kvnTo": 8150768,
+      "kvnRef": "Sal 9:17",
+      "tkvnFrom": 8150752,
+      "tkvnTo": 8150752,
+      "tkvnRef": "Sal 9,16",
+      "order": 0
+    },
+    {
+      "kvnFrom": 8150784,
+      "kvnTo": 8150784,
+      "kvnRef": "Sal 9:18",
+      "tkvnFrom": 8150768,
+      "tkvnTo": 8150768,
+      "tkvnRef": "Sal 9,17",
+      "order": 0
+    },
+    {
+      "kvnFrom": 8150800,
+      "kvnTo": 8150800,
+      "kvnRef": "Sal 9:19",
+      "tkvnFrom": 8150784,
+      "tkvnTo": 8150784,
+      "tkvnRef": "Sal 9,18",
+      "order": 0
+    },
+    {
+      "kvnFrom": 8150816,
+      "kvnTo": 8150816,
+      "kvnRef": "Sal 9:20",
+      "tkvnFrom": 8150800,
+      "tkvnTo": 8150800,
+      "tkvnRef": "Sal 9,19",
+      "order": 0
+    },
+    {
+      "kvnFrom": 8150832,
+      "kvnTo": 8150832,
+      "kvnRef": "Sal 9:21",
+      "tkvnFrom": 8150816,
+      "tkvnTo": 8150816,
+      "tkvnRef": "Sal 9,20",
       "order": 0
     },
     {
@@ -3024,6 +3273,177 @@
       "order": 0
     },
     {
+      "kvnFrom": 8343104,
+      "kvnTo": 8343104,
+      "kvnRef": "Sal 77:2",
+      "tkvnFrom": 8343088,
+      "tkvnTo": 8343088,
+      "tkvnRef": "Sal 77,1",
+      "order": 0
+    },
+    {
+      "kvnFrom": 8343120,
+      "kvnTo": 8343120,
+      "kvnRef": "Sal 77:3",
+      "tkvnFrom": 8343104,
+      "tkvnTo": 8343104,
+      "tkvnRef": "Sal 77,2",
+      "order": 0
+    },
+    {
+      "kvnFrom": 8343136,
+      "kvnTo": 8343136,
+      "kvnRef": "Sal 77:4",
+      "tkvnFrom": 8343120,
+      "tkvnTo": 8343120,
+      "tkvnRef": "Sal 77,3",
+      "order": 0
+    },
+    {
+      "kvnFrom": 8343152,
+      "kvnTo": 8343152,
+      "kvnRef": "Sal 77:5",
+      "tkvnFrom": 8343136,
+      "tkvnTo": 8343136,
+      "tkvnRef": "Sal 77,4",
+      "order": 0
+    },
+    {
+      "kvnFrom": 8343168,
+      "kvnTo": 8343168,
+      "kvnRef": "Sal 77:6",
+      "tkvnFrom": 8343152,
+      "tkvnTo": 8343152,
+      "tkvnRef": "Sal 77,5",
+      "order": 0
+    },
+    {
+      "kvnFrom": 8343184,
+      "kvnTo": 8343184,
+      "kvnRef": "Sal 77:7",
+      "tkvnFrom": 8343168,
+      "tkvnTo": 8343168,
+      "tkvnRef": "Sal 77,6",
+      "order": 0
+    },
+    {
+      "kvnFrom": 8343200,
+      "kvnTo": 8343200,
+      "kvnRef": "Sal 77:8",
+      "tkvnFrom": 8343184,
+      "tkvnTo": 8343184,
+      "tkvnRef": "Sal 77,7",
+      "order": 0
+    },
+    {
+      "kvnFrom": 8343216,
+      "kvnTo": 8343216,
+      "kvnRef": "Sal 77:9",
+      "tkvnFrom": 8343200,
+      "tkvnTo": 8343200,
+      "tkvnRef": "Sal 77,8",
+      "order": 0
+    },
+    {
+      "kvnFrom": 8343232,
+      "kvnTo": 8343232,
+      "kvnRef": "Sal 77:10",
+      "tkvnFrom": 8343216,
+      "tkvnTo": 8343216,
+      "tkvnRef": "Sal 77,9",
+      "order": 0
+    },
+    {
+      "kvnFrom": 8343248,
+      "kvnTo": 8343248,
+      "kvnRef": "Sal 77:11",
+      "tkvnFrom": 8343232,
+      "tkvnTo": 8343232,
+      "tkvnRef": "Sal 77,10",
+      "order": 0
+    },
+    {
+      "kvnFrom": 8343264,
+      "kvnTo": 8343264,
+      "kvnRef": "Sal 77:12",
+      "tkvnFrom": 8343248,
+      "tkvnTo": 8343248,
+      "tkvnRef": "Sal 77,11",
+      "order": 0
+    },
+    {
+      "kvnFrom": 8343280,
+      "kvnTo": 8343280,
+      "kvnRef": "Sal 77:13",
+      "tkvnFrom": 8343264,
+      "tkvnTo": 8343264,
+      "tkvnRef": "Sal 77,12",
+      "order": 0
+    },
+    {
+      "kvnFrom": 8343296,
+      "kvnTo": 8343296,
+      "kvnRef": "Sal 77:14",
+      "tkvnFrom": 8343280,
+      "tkvnTo": 8343280,
+      "tkvnRef": "Sal 77,13",
+      "order": 0
+    },
+    {
+      "kvnFrom": 8343312,
+      "kvnTo": 8343312,
+      "kvnRef": "Sal 77:15",
+      "tkvnFrom": 8343296,
+      "tkvnTo": 8343296,
+      "tkvnRef": "Sal 77,14",
+      "order": 0
+    },
+    {
+      "kvnFrom": 8343328,
+      "kvnTo": 8343328,
+      "kvnRef": "Sal 77:16",
+      "tkvnFrom": 8343312,
+      "tkvnTo": 8343312,
+      "tkvnRef": "Sal 77,15",
+      "order": 0
+    },
+    {
+      "kvnFrom": 8343344,
+      "kvnTo": 8343344,
+      "kvnRef": "Sal 77:17",
+      "tkvnFrom": 8343328,
+      "tkvnTo": 8343328,
+      "tkvnRef": "Sal 77,16",
+      "order": 0
+    },
+    {
+      "kvnFrom": 8343360,
+      "kvnTo": 8343360,
+      "kvnRef": "Sal 77:18",
+      "tkvnFrom": 8343344,
+      "tkvnTo": 8343344,
+      "tkvnRef": "Sal 77,17",
+      "order": 0
+    },
+    {
+      "kvnFrom": 8343376,
+      "kvnTo": 8343376,
+      "kvnRef": "Sal 77:19",
+      "tkvnFrom": 8343360,
+      "tkvnTo": 8343360,
+      "tkvnRef": "Sal 77,18",
+      "order": 0
+    },
+    {
+      "kvnFrom": 8343392,
+      "kvnTo": 8343392,
+      "kvnRef": "Sal 77:20",
+      "tkvnFrom": 8343376,
+      "tkvnTo": 8343376,
+      "tkvnRef": "Sal 77,19",
+      "order": 0
+    },
+    {
       "kvnFrom": 8343408,
       "kvnTo": 8343408,
       "kvnRef": "Sal 77:21",
@@ -3795,6 +4215,96 @@
       "tkvnFrom": 10016976,
       "tkvnTo": 10016976,
       "tkvnRef": "Jes 64,12",
+      "order": 0
+    },
+    {
+      "kvnFrom": 20135713,
+      "kvnTo": 20135713,
+      "kvnRef": "2 Kor 13:12a",
+      "tkvnFrom": 20135712,
+      "tkvnTo": 20135712,
+      "tkvnRef": "2 Kor 13,12",
+      "order": 0
+    },
+    {
+      "kvnFrom": 20135714,
+      "kvnTo": 20135714,
+      "kvnRef": "2 Kor 13:12b",
+      "tkvnFrom": 20135728,
+      "tkvnTo": 20135728,
+      "tkvnRef": "2 Kor 13,13",
+      "order": 0
+    },
+    {
+      "kvnFrom": 20135728,
+      "kvnTo": 20135728,
+      "kvnRef": "2 Kor 13:13",
+      "tkvnFrom": 20135744,
+      "tkvnTo": 20135744,
+      "tkvnRef": "2 Kor 13,14",
+      "order": 0
+    },
+    {
+      "kvnFrom": 20135744,
+      "kvnTo": 20135744,
+      "kvnRef": "2 Kor 13:14",
+      "tkvnFrom": 20135744,
+      "tkvnTo": 20135744,
+      "tkvnRef": "2 Kor 13,14",
+      "order": 0
+    },
+    {
+      "kvnFrom": 21384688,
+      "kvnTo": 21384688,
+      "kvnRef": "Fil 1:16",
+      "tkvnFrom": 21384704,
+      "tkvnTo": 21384704,
+      "tkvnRef": "Fil 1,17",
+      "order": 0
+    },
+    {
+      "kvnFrom": 21384704,
+      "kvnTo": 21384704,
+      "kvnRef": "Fil 1:17",
+      "tkvnFrom": 21384688,
+      "tkvnTo": 21384688,
+      "tkvnRef": "Fil 1,16",
+      "order": 0
+    },
+    {
+      "kvnFrom": 27371504,
+      "kvnTo": 27371504,
+      "kvnRef": "3 Joh 1:14",
+      "tkvnFrom": 27371505,
+      "tkvnTo": 27371505,
+      "tkvnRef": "3 Joh 1,14a",
+      "order": 0
+    },
+    {
+      "kvnFrom": 27371520,
+      "kvnTo": 27371520,
+      "kvnRef": "3 Joh 1:15",
+      "tkvnFrom": 27371506,
+      "tkvnTo": 27371506,
+      "tkvnRef": "3 Joh 1,14b",
+      "order": 0
+    },
+    {
+      "kvnFrom": 28257984,
+      "kvnTo": 28257984,
+      "kvnRef": "Åp 12:18",
+      "tkvnFrom": 28260545,
+      "tkvnTo": 28260545,
+      "tkvnRef": "Åp 13,1a",
+      "order": 0
+    },
+    {
+      "kvnFrom": 28260544,
+      "kvnTo": 28260544,
+      "kvnRef": "Åp 13:1",
+      "tkvnFrom": 28260546,
+      "tkvnTo": 28260546,
+      "tkvnRef": "Åp 13,1b",
       "order": 0
     }
   ]

@@ -8,5 +8,20 @@
   "noncommercial": false,
   "kvn_renumber_ok": true,
   "source": "bss",
-  "statement": "This Bible is in the Public Domain."
+  "statement": "This Bible is in the Public Domain.",
+  "verification": {
+    "status": "not_confirmed",
+    "checked": "2026-11-09",
+    "evidence": [
+      {
+        "url": "https://api.biblesupersearch.com/api/bibles",
+        "quote": "Greek NT: Textus Receptus (1550/1894) [Parsed] The Textus Receptus with complete parsing information for all Greek words"
+      },
+      {
+        "url": "https://crosswire.org/sword/modules/ModInfo.jsp?modName=TR",
+        "quote": "Distribution License: Creative Commons: BY-NC-SA 4.0"
+      }
+    ],
+    "note": "The Greek text is public domain, but the source of the parsing data is not stated, and CrossWire's parsed TR is CC BY-NC-SA (non-commercial), which is not a licence we publish under."
+  }
 }

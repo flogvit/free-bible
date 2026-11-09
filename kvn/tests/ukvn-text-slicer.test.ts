@@ -71,6 +71,13 @@ describe('sliceVersePart', () => {
     expect(sliceVersePart(text, 2, 2)).toBe('Jehovah, how are mine oppressors increased! Many rise up against me.');
   });
 
+  it('splits Arabic at a full stop with directional marks (Ps 3:1, Smith–Van Dyke)', () => {
+    // The title is the first sentence; with no capitals, the stop before an Arabic letter is the break.
+    const text = 'مزمور لداود حينما هرب من وجه ابشالوم ابنه\u200e. \u200eيا رب ما اكثر مضايقي كثيرون قائمون عليّ\u200e.';
+    expect(sliceVersePart(text, 1, 2)).toBe('مزمور لداود حينما هرب من وجه ابشالوم ابنه\u200e.');
+    expect(sliceVersePart(text, 2, 2)).toBe('\u200eيا رب ما اكثر مضايقي كثيرون قائمون عليّ\u200e.');
+  });
+
   it('does not take brackets in the middle of a verse as a title', () => {
     const text = 'Paul, an apostle, (not of men, neither by man,) unto the churches. Grace be to you.';
     expect(sliceVersePart(text, 1, 2)).toBe('Paul, an apostle, (not of men, neither by man,) unto the churches.');
