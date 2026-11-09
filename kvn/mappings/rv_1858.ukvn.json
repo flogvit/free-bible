@@ -2,6 +2,12 @@
   "version": 2,
   "system": "rv_1858",
   "name": "rv_1858",
+  "textVerification": {
+    "status": "verified",
+    "checked": "2026-11-09",
+    "method": "Every verse moved through bibel's import (toOsnbNumbering) and checked with bibel's scripts/check-edition-landing.ts against kjv; every flagged chapter read in place; a scan for notes or markup in the text. kjv's #138 fixes taken where the verse structure is kjv's. For bible.flogvit.com#222.",
+    "remaining": "New Testament only. Italic words in brackets; the epistles' subscriptions are in braces, as printed. verify-text.ts with both judges follows on Home Mac."
+  },
   "encoding": {
     "partSize": 16,
     "maxVerse": 177,
@@ -138,9 +144,46 @@
   "stats": {
     "identityChapters": 258,
     "mappedChapters": 2,
-    "totalMappingEntries": 0,
+    "totalMappingEntries": 4,
     "missingInTranslation": 938,
     "expansionsNeeded": 0
   },
-  "map": []
+  "map": [
+    {
+      "kvnFrom": 21384688,
+      "kvnTo": 21384688,
+      "kvnRef": "Fil 1:16",
+      "tkvnFrom": 21384704,
+      "tkvnTo": 21384704,
+      "tkvnRef": "Fil 1,17",
+      "order": 0
+    },
+    {
+      "kvnFrom": 21384704,
+      "kvnTo": 21384704,
+      "kvnRef": "Fil 1:17",
+      "tkvnFrom": 21384688,
+      "tkvnTo": 21384688,
+      "tkvnRef": "Fil 1,16",
+      "order": 0
+    },
+    {
+      "kvnFrom": 28257984,
+      "kvnTo": 28257984,
+      "kvnRef": "Åp 12:18",
+      "tkvnFrom": 28260545,
+      "tkvnTo": 28260545,
+      "tkvnRef": "Åp 13,1a",
+      "order": 0
+    },
+    {
+      "kvnFrom": 28260544,
+      "kvnTo": 28260544,
+      "kvnRef": "Åp 13:1",
+      "tkvnFrom": 28260546,
+      "tkvnTo": 28260546,
+      "tkvnRef": "Åp 13,1b",
+      "order": 0
+    }
+  ]
 }
