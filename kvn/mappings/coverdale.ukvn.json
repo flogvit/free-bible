@@ -2,6 +2,12 @@
   "version": 2,
   "system": "coverdale",
   "name": "coverdale",
+  "textVerification": {
+    "status": "verified",
+    "checked": "2026-11-10",
+    "method": "Every verse moved through bibel's import (toOsnbNumbering) and checked with bibel's scripts/check-edition-landing.ts against kjv; the psalms whose division is coverdale's own (52, 53, 55, 75, 87) aligned to kjv by text (letter-trigram similarity, with joins and splits, «Sela» left out of the comparison) and read against osnb. For free-bible#150 and bible.flogvit.com#220.",
+    "remaining": "Prints no psalm titles, so osnb's title verses stay empty. Where coverdale joins two kjv verses (Ps 52:9 = KJV 8-9, 55:1 = 1-2, 75:10 = 9-10, 87:1 = 1-2) the text lands on the first (bible.flogvit.com#234). Ps 53 is still flagged by the check because kjv divides 53:1-2 differently; coverdale matches osnb there verse by verse. verify-text.ts with both judges follows on Home Mac."
+  },
   "encoding": {
     "partSize": 16,
     "maxVerse": 177,
