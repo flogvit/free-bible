@@ -2,6 +2,12 @@
   "version": 2,
   "system": "wlc",
   "name": "wlc",
+  "textVerification": {
+    "status": "verified",
+    "checked": "2026-11-18",
+    "method": "Every verse moved through bibel's import (toOsnbNumbering) and checked with bibel's scripts/check-edition-landing.ts; against tanach: no verse shifted or empty; every flagged chapter read in place. For bible.flogvit.com#170 (the owner's choice 18.11: the open source texts go out as editions of their own).",
+    "remaining": "The mapping is hebrew's (the same text and division), except 1 Sam 23-24, where wlc divides as the KJV does (23:29 = Hebrew 24:1) and osmain is the identity. Its own earlier entries assumed a shift in the psalm titles the text does not have (Ps 20, 36, 41, 46, 69, 80, 140). verify-text.ts with both judges follows on Home Mac."
+  },
   "encoding": {
     "partSize": 16,
     "maxVerse": 177,
@@ -138,7 +144,7 @@
   "stats": {
     "identityChapters": 793,
     "mappedChapters": 135,
-    "totalMappingEntries": 1649,
+    "totalMappingEntries": 1603,
     "missingInTranslation": 270,
     "expansionsNeeded": 60
   },
@@ -726,6 +732,24 @@
       "tkvnFrom": 878368,
       "tkvnTo": 878368,
       "tkvnRef": "Ex 8,28",
+      "order": 0
+    },
+    {
+      "kvnFrom": 915313,
+      "kvnTo": 915313,
+      "kvnRef": "2 Mos 21:36a",
+      "tkvnFrom": 915312,
+      "tkvnTo": 915312,
+      "tkvnRef": "2 Mos 21,36",
+      "order": 0
+    },
+    {
+      "kvnFrom": 915314,
+      "kvnTo": 915314,
+      "kvnRef": "2 Mos 21:36b",
+      "tkvnFrom": 915328,
+      "tkvnTo": 915328,
+      "tkvnRef": "2 Mos 21,37",
       "order": 0
     },
     {
@@ -1536,6 +1560,15 @@
       "tkvnFrom": 1781632,
       "tkvnTo": 1781632,
       "tkvnRef": "4 Mos 25,19",
+      "order": 0
+    },
+    {
+      "kvnFrom": 1784178,
+      "kvnTo": 1784178,
+      "kvnRef": "4 Mos 26:1b",
+      "tkvnFrom": 1784176,
+      "tkvnTo": 1784176,
+      "tkvnRef": "4 Mos 26,1",
       "order": 0
     },
     {
@@ -2358,6 +2391,15 @@
       "order": 0
     },
     {
+      "kvnFrom": 3906001,
+      "kvnTo": 3906001,
+      "kvnRef": "1 Sam 20:42a",
+      "tkvnFrom": 3906000,
+      "tkvnTo": 3906000,
+      "tkvnRef": "1 Sam 20,42",
+      "order": 0
+    },
+    {
       "kvnFrom": 3906002,
       "kvnTo": 3906002,
       "kvnRef": "1 Sam 20:42b",
@@ -2504,397 +2546,397 @@
     {
       "kvnFrom": 4327824,
       "kvnTo": 4327824,
-      "kvnRef": "2 Sam 18:33",
+      "kvnRef": "2Sam 18:33",
       "tkvnFrom": 4330144,
       "tkvnTo": 4330144,
-      "tkvnRef": "2 Sam 19,1",
+      "tkvnRef": "2Sam 19,1",
       "order": 0
     },
     {
       "kvnFrom": 4330144,
       "kvnTo": 4330144,
-      "kvnRef": "2 Sam 19:1",
+      "kvnRef": "2Sam 19:1",
       "tkvnFrom": 4330160,
       "tkvnTo": 4330160,
-      "tkvnRef": "2 Sam 19,2",
+      "tkvnRef": "2Sam 19,2",
       "order": 0
     },
     {
       "kvnFrom": 4330160,
       "kvnTo": 4330160,
-      "kvnRef": "2 Sam 19:2",
+      "kvnRef": "2Sam 19:2",
       "tkvnFrom": 4330176,
       "tkvnTo": 4330176,
-      "tkvnRef": "2 Sam 19,3",
+      "tkvnRef": "2Sam 19,3",
       "order": 0
     },
     {
       "kvnFrom": 4330176,
       "kvnTo": 4330176,
-      "kvnRef": "2 Sam 19:3",
+      "kvnRef": "2Sam 19:3",
       "tkvnFrom": 4330192,
       "tkvnTo": 4330192,
-      "tkvnRef": "2 Sam 19,4",
+      "tkvnRef": "2Sam 19,4",
       "order": 0
     },
     {
       "kvnFrom": 4330192,
       "kvnTo": 4330192,
-      "kvnRef": "2 Sam 19:4",
+      "kvnRef": "2Sam 19:4",
       "tkvnFrom": 4330208,
       "tkvnTo": 4330208,
-      "tkvnRef": "2 Sam 19,5",
+      "tkvnRef": "2Sam 19,5",
       "order": 0
     },
     {
       "kvnFrom": 4330208,
       "kvnTo": 4330208,
-      "kvnRef": "2 Sam 19:5",
+      "kvnRef": "2Sam 19:5",
       "tkvnFrom": 4330224,
       "tkvnTo": 4330224,
-      "tkvnRef": "2 Sam 19,6",
+      "tkvnRef": "2Sam 19,6",
       "order": 0
     },
     {
       "kvnFrom": 4330224,
       "kvnTo": 4330224,
-      "kvnRef": "2 Sam 19:6",
+      "kvnRef": "2Sam 19:6",
       "tkvnFrom": 4330240,
       "tkvnTo": 4330240,
-      "tkvnRef": "2 Sam 19,7",
+      "tkvnRef": "2Sam 19,7",
       "order": 0
     },
     {
       "kvnFrom": 4330240,
       "kvnTo": 4330240,
-      "kvnRef": "2 Sam 19:7",
+      "kvnRef": "2Sam 19:7",
       "tkvnFrom": 4330256,
       "tkvnTo": 4330256,
-      "tkvnRef": "2 Sam 19,8",
+      "tkvnRef": "2Sam 19,8",
       "order": 0
     },
     {
       "kvnFrom": 4330256,
       "kvnTo": 4330256,
-      "kvnRef": "2 Sam 19:8",
+      "kvnRef": "2Sam 19:8",
       "tkvnFrom": 4330272,
       "tkvnTo": 4330272,
-      "tkvnRef": "2 Sam 19,9",
+      "tkvnRef": "2Sam 19,9",
       "order": 0
     },
     {
       "kvnFrom": 4330272,
       "kvnTo": 4330272,
-      "kvnRef": "2 Sam 19:9",
+      "kvnRef": "2Sam 19:9",
       "tkvnFrom": 4330288,
       "tkvnTo": 4330288,
-      "tkvnRef": "2 Sam 19,10",
+      "tkvnRef": "2Sam 19,10",
       "order": 0
     },
     {
       "kvnFrom": 4330288,
       "kvnTo": 4330288,
-      "kvnRef": "2 Sam 19:10",
+      "kvnRef": "2Sam 19:10",
       "tkvnFrom": 4330304,
       "tkvnTo": 4330304,
-      "tkvnRef": "2 Sam 19,11",
+      "tkvnRef": "2Sam 19,11",
       "order": 0
     },
     {
       "kvnFrom": 4330304,
       "kvnTo": 4330304,
-      "kvnRef": "2 Sam 19:11",
+      "kvnRef": "2Sam 19:11",
       "tkvnFrom": 4330320,
       "tkvnTo": 4330320,
-      "tkvnRef": "2 Sam 19,12",
+      "tkvnRef": "2Sam 19,12",
       "order": 0
     },
     {
       "kvnFrom": 4330320,
       "kvnTo": 4330320,
-      "kvnRef": "2 Sam 19:12",
+      "kvnRef": "2Sam 19:12",
       "tkvnFrom": 4330336,
       "tkvnTo": 4330336,
-      "tkvnRef": "2 Sam 19,13",
+      "tkvnRef": "2Sam 19,13",
       "order": 0
     },
     {
       "kvnFrom": 4330336,
       "kvnTo": 4330336,
-      "kvnRef": "2 Sam 19:13",
+      "kvnRef": "2Sam 19:13",
       "tkvnFrom": 4330352,
       "tkvnTo": 4330352,
-      "tkvnRef": "2 Sam 19,14",
+      "tkvnRef": "2Sam 19,14",
       "order": 0
     },
     {
       "kvnFrom": 4330352,
       "kvnTo": 4330352,
-      "kvnRef": "2 Sam 19:14",
+      "kvnRef": "2Sam 19:14",
       "tkvnFrom": 4330368,
       "tkvnTo": 4330368,
-      "tkvnRef": "2 Sam 19,15",
+      "tkvnRef": "2Sam 19,15",
       "order": 0
     },
     {
       "kvnFrom": 4330368,
       "kvnTo": 4330368,
-      "kvnRef": "2 Sam 19:15",
+      "kvnRef": "2Sam 19:15",
       "tkvnFrom": 4330384,
       "tkvnTo": 4330384,
-      "tkvnRef": "2 Sam 19,16",
+      "tkvnRef": "2Sam 19,16",
       "order": 0
     },
     {
       "kvnFrom": 4330384,
       "kvnTo": 4330384,
-      "kvnRef": "2 Sam 19:16",
+      "kvnRef": "2Sam 19:16",
       "tkvnFrom": 4330400,
       "tkvnTo": 4330400,
-      "tkvnRef": "2 Sam 19,17",
+      "tkvnRef": "2Sam 19,17",
       "order": 0
     },
     {
       "kvnFrom": 4330400,
       "kvnTo": 4330400,
-      "kvnRef": "2 Sam 19:17",
+      "kvnRef": "2Sam 19:17",
       "tkvnFrom": 4330416,
       "tkvnTo": 4330416,
-      "tkvnRef": "2 Sam 19,18",
+      "tkvnRef": "2Sam 19,18",
       "order": 0
     },
     {
       "kvnFrom": 4330416,
       "kvnTo": 4330416,
-      "kvnRef": "2 Sam 19:18",
+      "kvnRef": "2Sam 19:18",
       "tkvnFrom": 4330432,
       "tkvnTo": 4330432,
-      "tkvnRef": "2 Sam 19,19",
+      "tkvnRef": "2Sam 19,19",
       "order": 0
     },
     {
       "kvnFrom": 4330432,
       "kvnTo": 4330432,
-      "kvnRef": "2 Sam 19:19",
+      "kvnRef": "2Sam 19:19",
       "tkvnFrom": 4330448,
       "tkvnTo": 4330448,
-      "tkvnRef": "2 Sam 19,20",
+      "tkvnRef": "2Sam 19,20",
       "order": 0
     },
     {
       "kvnFrom": 4330448,
       "kvnTo": 4330448,
-      "kvnRef": "2 Sam 19:20",
+      "kvnRef": "2Sam 19:20",
       "tkvnFrom": 4330464,
       "tkvnTo": 4330464,
-      "tkvnRef": "2 Sam 19,21",
+      "tkvnRef": "2Sam 19,21",
       "order": 0
     },
     {
       "kvnFrom": 4330464,
       "kvnTo": 4330464,
-      "kvnRef": "2 Sam 19:21",
+      "kvnRef": "2Sam 19:21",
       "tkvnFrom": 4330480,
       "tkvnTo": 4330480,
-      "tkvnRef": "2 Sam 19,22",
+      "tkvnRef": "2Sam 19,22",
       "order": 0
     },
     {
       "kvnFrom": 4330480,
       "kvnTo": 4330480,
-      "kvnRef": "2 Sam 19:22",
+      "kvnRef": "2Sam 19:22",
       "tkvnFrom": 4330496,
       "tkvnTo": 4330496,
-      "tkvnRef": "2 Sam 19,23",
+      "tkvnRef": "2Sam 19,23",
       "order": 0
     },
     {
       "kvnFrom": 4330496,
       "kvnTo": 4330496,
-      "kvnRef": "2 Sam 19:23",
+      "kvnRef": "2Sam 19:23",
       "tkvnFrom": 4330512,
       "tkvnTo": 4330512,
-      "tkvnRef": "2 Sam 19,24",
+      "tkvnRef": "2Sam 19,24",
       "order": 0
     },
     {
       "kvnFrom": 4330512,
       "kvnTo": 4330512,
-      "kvnRef": "2 Sam 19:24",
+      "kvnRef": "2Sam 19:24",
       "tkvnFrom": 4330528,
       "tkvnTo": 4330528,
-      "tkvnRef": "2 Sam 19,25",
+      "tkvnRef": "2Sam 19,25",
       "order": 0
     },
     {
       "kvnFrom": 4330528,
       "kvnTo": 4330528,
-      "kvnRef": "2 Sam 19:25",
+      "kvnRef": "2Sam 19:25",
       "tkvnFrom": 4330544,
       "tkvnTo": 4330544,
-      "tkvnRef": "2 Sam 19,26",
+      "tkvnRef": "2Sam 19,26",
       "order": 0
     },
     {
       "kvnFrom": 4330544,
       "kvnTo": 4330544,
-      "kvnRef": "2 Sam 19:26",
+      "kvnRef": "2Sam 19:26",
       "tkvnFrom": 4330560,
       "tkvnTo": 4330560,
-      "tkvnRef": "2 Sam 19,27",
+      "tkvnRef": "2Sam 19,27",
       "order": 0
     },
     {
       "kvnFrom": 4330560,
       "kvnTo": 4330560,
-      "kvnRef": "2 Sam 19:27",
+      "kvnRef": "2Sam 19:27",
       "tkvnFrom": 4330576,
       "tkvnTo": 4330576,
-      "tkvnRef": "2 Sam 19,28",
+      "tkvnRef": "2Sam 19,28",
       "order": 0
     },
     {
       "kvnFrom": 4330576,
       "kvnTo": 4330576,
-      "kvnRef": "2 Sam 19:28",
+      "kvnRef": "2Sam 19:28",
       "tkvnFrom": 4330592,
       "tkvnTo": 4330592,
-      "tkvnRef": "2 Sam 19,29",
+      "tkvnRef": "2Sam 19,29",
       "order": 0
     },
     {
       "kvnFrom": 4330592,
       "kvnTo": 4330592,
-      "kvnRef": "2 Sam 19:29",
+      "kvnRef": "2Sam 19:29",
       "tkvnFrom": 4330608,
       "tkvnTo": 4330608,
-      "tkvnRef": "2 Sam 19,30",
+      "tkvnRef": "2Sam 19,30",
       "order": 0
     },
     {
       "kvnFrom": 4330608,
       "kvnTo": 4330608,
-      "kvnRef": "2 Sam 19:30",
+      "kvnRef": "2Sam 19:30",
       "tkvnFrom": 4330624,
       "tkvnTo": 4330624,
-      "tkvnRef": "2 Sam 19,31",
+      "tkvnRef": "2Sam 19,31",
       "order": 0
     },
     {
       "kvnFrom": 4330624,
       "kvnTo": 4330624,
-      "kvnRef": "2 Sam 19:31",
+      "kvnRef": "2Sam 19:31",
       "tkvnFrom": 4330640,
       "tkvnTo": 4330640,
-      "tkvnRef": "2 Sam 19,32",
+      "tkvnRef": "2Sam 19,32",
       "order": 0
     },
     {
       "kvnFrom": 4330640,
       "kvnTo": 4330640,
-      "kvnRef": "2 Sam 19:32",
+      "kvnRef": "2Sam 19:32",
       "tkvnFrom": 4330656,
       "tkvnTo": 4330656,
-      "tkvnRef": "2 Sam 19,33",
+      "tkvnRef": "2Sam 19,33",
       "order": 0
     },
     {
       "kvnFrom": 4330656,
       "kvnTo": 4330656,
-      "kvnRef": "2 Sam 19:33",
+      "kvnRef": "2Sam 19:33",
       "tkvnFrom": 4330672,
       "tkvnTo": 4330672,
-      "tkvnRef": "2 Sam 19,34",
+      "tkvnRef": "2Sam 19,34",
       "order": 0
     },
     {
       "kvnFrom": 4330672,
       "kvnTo": 4330672,
-      "kvnRef": "2 Sam 19:34",
+      "kvnRef": "2Sam 19:34",
       "tkvnFrom": 4330688,
       "tkvnTo": 4330688,
-      "tkvnRef": "2 Sam 19,35",
+      "tkvnRef": "2Sam 19,35",
       "order": 0
     },
     {
       "kvnFrom": 4330688,
       "kvnTo": 4330688,
-      "kvnRef": "2 Sam 19:35",
+      "kvnRef": "2Sam 19:35",
       "tkvnFrom": 4330704,
       "tkvnTo": 4330704,
-      "tkvnRef": "2 Sam 19,36",
+      "tkvnRef": "2Sam 19,36",
       "order": 0
     },
     {
       "kvnFrom": 4330704,
       "kvnTo": 4330704,
-      "kvnRef": "2 Sam 19:36",
+      "kvnRef": "2Sam 19:36",
       "tkvnFrom": 4330720,
       "tkvnTo": 4330720,
-      "tkvnRef": "2 Sam 19,37",
+      "tkvnRef": "2Sam 19,37",
       "order": 0
     },
     {
       "kvnFrom": 4330720,
       "kvnTo": 4330720,
-      "kvnRef": "2 Sam 19:37",
+      "kvnRef": "2Sam 19:37",
       "tkvnFrom": 4330736,
       "tkvnTo": 4330736,
-      "tkvnRef": "2 Sam 19,38",
+      "tkvnRef": "2Sam 19,38",
       "order": 0
     },
     {
       "kvnFrom": 4330736,
       "kvnTo": 4330736,
-      "kvnRef": "2 Sam 19:38",
+      "kvnRef": "2Sam 19:38",
       "tkvnFrom": 4330752,
       "tkvnTo": 4330752,
-      "tkvnRef": "2 Sam 19,39",
+      "tkvnRef": "2Sam 19,39",
       "order": 0
     },
     {
       "kvnFrom": 4330752,
       "kvnTo": 4330752,
-      "kvnRef": "2 Sam 19:39",
+      "kvnRef": "2Sam 19:39",
       "tkvnFrom": 4330768,
       "tkvnTo": 4330768,
-      "tkvnRef": "2 Sam 19,40",
+      "tkvnRef": "2Sam 19,40",
       "order": 0
     },
     {
       "kvnFrom": 4330768,
       "kvnTo": 4330768,
-      "kvnRef": "2 Sam 19:40",
+      "kvnRef": "2Sam 19:40",
       "tkvnFrom": 4330784,
       "tkvnTo": 4330784,
-      "tkvnRef": "2 Sam 19,41",
+      "tkvnRef": "2Sam 19,41",
       "order": 0
     },
     {
       "kvnFrom": 4330784,
       "kvnTo": 4330784,
-      "kvnRef": "2 Sam 19:41",
+      "kvnRef": "2Sam 19:41",
       "tkvnFrom": 4330800,
       "tkvnTo": 4330800,
-      "tkvnRef": "2 Sam 19,42",
+      "tkvnRef": "2Sam 19,42",
       "order": 0
     },
     {
       "kvnFrom": 4330800,
       "kvnTo": 4330800,
-      "kvnRef": "2 Sam 19:42",
+      "kvnRef": "2Sam 19:42",
       "tkvnFrom": 4330816,
       "tkvnTo": 4330816,
-      "tkvnRef": "2 Sam 19,43",
+      "tkvnRef": "2Sam 19,43",
       "order": 0
     },
     {
       "kvnFrom": 4330816,
       "kvnTo": 4330816,
-      "kvnRef": "2 Sam 19:43",
+      "kvnRef": "2Sam 19:43",
       "tkvnFrom": 4330832,
       "tkvnTo": 4330832,
-      "tkvnRef": "2 Sam 19,44",
+      "tkvnRef": "2Sam 19,44",
       "order": 0
     },
     {
@@ -4455,6 +4497,24 @@
       "order": 0
     },
     {
+      "kvnFrom": 5593841,
+      "kvnTo": 5593841,
+      "kvnRef": "1 Krøn 12:40a",
+      "tkvnFrom": 5593840,
+      "tkvnTo": 5593840,
+      "tkvnRef": "1 Krøn 12,40",
+      "order": 0
+    },
+    {
+      "kvnFrom": 5593842,
+      "kvnTo": 5593842,
+      "kvnRef": "1 Krøn 12:40b",
+      "tkvnFrom": 5593856,
+      "tkvnTo": 5593856,
+      "tkvnRef": "1 Krøn 12,41",
+      "order": 0
+    },
+    {
       "kvnFrom": 5992528,
       "kvnTo": 5992528,
       "kvnRef": "2Chr 2:1",
@@ -4956,6 +5016,15 @@
       "tkvnFrom": 6853712,
       "tkvnTo": 6853712,
       "tkvnRef": "Neh 4,17",
+      "order": 0
+    },
+    {
+      "kvnFrom": 6863104,
+      "kvnTo": 6863104,
+      "kvnRef": "Neh 7:73",
+      "tkvnFrom": 6863088,
+      "tkvnTo": 6863088,
+      "tkvnRef": "Neh 7,72",
       "order": 0
     },
     {
@@ -6363,21 +6432,21 @@
       "order": 0
     },
     {
-      "kvnFrom": 8181664,
-      "kvnTo": 8181664,
-      "kvnRef": "Sal 20:1",
-      "tkvnFrom": 8181680,
-      "tkvnTo": 8181680,
-      "tkvnRef": "Sal 20,2",
-      "order": 0
-    },
-    {
       "kvnFrom": 8181665,
       "kvnTo": 8181665,
       "kvnRef": "Sal 20:1a",
       "tkvnFrom": 8181664,
       "tkvnTo": 8181664,
       "tkvnRef": "Sal 20,1",
+      "order": 0
+    },
+    {
+      "kvnFrom": 8181666,
+      "kvnTo": 8181666,
+      "kvnRef": "Sal 20:1b",
+      "tkvnFrom": 8181680,
+      "tkvnTo": 8181680,
+      "tkvnRef": "Sal 20,2",
       "order": 0
     },
     {
@@ -7173,21 +7242,21 @@
       "order": 0
     },
     {
-      "kvnFrom": 8226976,
-      "kvnTo": 8226976,
-      "kvnRef": "Sal 36:1",
-      "tkvnFrom": 8226992,
-      "tkvnTo": 8226992,
-      "tkvnRef": "Sal 36,2",
-      "order": 0
-    },
-    {
       "kvnFrom": 8226977,
       "kvnTo": 8226977,
       "kvnRef": "Sal 36:1a",
       "tkvnFrom": 8226976,
       "tkvnTo": 8226976,
       "tkvnRef": "Sal 36,1",
+      "order": 0
+    },
+    {
+      "kvnFrom": 8226978,
+      "kvnTo": 8226978,
+      "kvnRef": "Sal 36:1b",
+      "tkvnFrom": 8226992,
+      "tkvnTo": 8226992,
+      "tkvnRef": "Sal 36,2",
       "order": 0
     },
     {
@@ -7452,21 +7521,21 @@
       "order": 0
     },
     {
-      "kvnFrom": 8241136,
-      "kvnTo": 8241136,
-      "kvnRef": "Sal 41:1",
-      "tkvnFrom": 8241152,
-      "tkvnTo": 8241152,
-      "tkvnRef": "Sal 41,2",
-      "order": 0
-    },
-    {
       "kvnFrom": 8241137,
       "kvnTo": 8241137,
       "kvnRef": "Sal 41:1a",
       "tkvnFrom": 8241136,
       "tkvnTo": 8241136,
       "tkvnRef": "Sal 41,1",
+      "order": 0
+    },
+    {
+      "kvnFrom": 8241138,
+      "kvnTo": 8241138,
+      "kvnRef": "Sal 41:1b",
+      "tkvnFrom": 8241152,
+      "tkvnTo": 8241152,
+      "tkvnRef": "Sal 41,2",
       "order": 0
     },
     {
@@ -7821,21 +7890,21 @@
       "order": 0
     },
     {
-      "kvnFrom": 8255296,
-      "kvnTo": 8255296,
-      "kvnRef": "Sal 46:1",
-      "tkvnFrom": 8255312,
-      "tkvnTo": 8255312,
-      "tkvnRef": "Sal 46,2",
-      "order": 0
-    },
-    {
       "kvnFrom": 8255297,
       "kvnTo": 8255297,
       "kvnRef": "Sal 46:1a",
       "tkvnFrom": 8255296,
       "tkvnTo": 8255296,
       "tkvnRef": "Sal 46,1",
+      "order": 0
+    },
+    {
+      "kvnFrom": 8255298,
+      "kvnTo": 8255298,
+      "kvnRef": "Sal 46:1b",
+      "tkvnFrom": 8255312,
+      "tkvnTo": 8255312,
+      "tkvnRef": "Sal 46,2",
       "order": 0
     },
     {
@@ -9882,357 +9951,6 @@
       "order": 0
     },
     {
-      "kvnFrom": 8318129,
-      "kvnTo": 8318129,
-      "kvnRef": "Sal 68:34b",
-      "tkvnFrom": 8318144,
-      "tkvnTo": 8318144,
-      "tkvnRef": "Sal 68,35",
-      "order": 0
-    },
-    {
-      "kvnFrom": 8318144,
-      "kvnTo": 8318144,
-      "kvnRef": "Sal 68:35",
-      "tkvnFrom": 8318160,
-      "tkvnTo": 8318160,
-      "tkvnRef": "Sal 68,36",
-      "order": 0
-    },
-    {
-      "kvnFrom": 8320432,
-      "kvnTo": 8320432,
-      "kvnRef": "Sal 69:1",
-      "tkvnFrom": 8320448,
-      "tkvnTo": 8320448,
-      "tkvnRef": "Sal 69,2",
-      "order": 0
-    },
-    {
-      "kvnFrom": 8320433,
-      "kvnTo": 8320433,
-      "kvnRef": "Sal 69:1a",
-      "tkvnFrom": 8320432,
-      "tkvnTo": 8320432,
-      "tkvnRef": "Sal 69,1",
-      "order": 0
-    },
-    {
-      "kvnFrom": 8320448,
-      "kvnTo": 8320448,
-      "kvnRef": "Sal 69:2",
-      "tkvnFrom": 8320464,
-      "tkvnTo": 8320464,
-      "tkvnRef": "Sal 69,3",
-      "order": 0
-    },
-    {
-      "kvnFrom": 8320464,
-      "kvnTo": 8320464,
-      "kvnRef": "Sal 69:3",
-      "tkvnFrom": 8320480,
-      "tkvnTo": 8320480,
-      "tkvnRef": "Sal 69,4",
-      "order": 0
-    },
-    {
-      "kvnFrom": 8320480,
-      "kvnTo": 8320480,
-      "kvnRef": "Sal 69:4",
-      "tkvnFrom": 8320496,
-      "tkvnTo": 8320496,
-      "tkvnRef": "Sal 69,5",
-      "order": 0
-    },
-    {
-      "kvnFrom": 8320496,
-      "kvnTo": 8320496,
-      "kvnRef": "Sal 69:5",
-      "tkvnFrom": 8320512,
-      "tkvnTo": 8320512,
-      "tkvnRef": "Sal 69,6",
-      "order": 0
-    },
-    {
-      "kvnFrom": 8320512,
-      "kvnTo": 8320512,
-      "kvnRef": "Sal 69:6",
-      "tkvnFrom": 8320528,
-      "tkvnTo": 8320528,
-      "tkvnRef": "Sal 69,7",
-      "order": 0
-    },
-    {
-      "kvnFrom": 8320528,
-      "kvnTo": 8320528,
-      "kvnRef": "Sal 69:7",
-      "tkvnFrom": 8320544,
-      "tkvnTo": 8320544,
-      "tkvnRef": "Sal 69,8",
-      "order": 0
-    },
-    {
-      "kvnFrom": 8320544,
-      "kvnTo": 8320544,
-      "kvnRef": "Sal 69:8",
-      "tkvnFrom": 8320560,
-      "tkvnTo": 8320560,
-      "tkvnRef": "Sal 69,9",
-      "order": 0
-    },
-    {
-      "kvnFrom": 8320560,
-      "kvnTo": 8320560,
-      "kvnRef": "Sal 69:9",
-      "tkvnFrom": 8320576,
-      "tkvnTo": 8320576,
-      "tkvnRef": "Sal 69,10",
-      "order": 0
-    },
-    {
-      "kvnFrom": 8320576,
-      "kvnTo": 8320576,
-      "kvnRef": "Sal 69:10",
-      "tkvnFrom": 8320592,
-      "tkvnTo": 8320592,
-      "tkvnRef": "Sal 69,11",
-      "order": 0
-    },
-    {
-      "kvnFrom": 8320592,
-      "kvnTo": 8320592,
-      "kvnRef": "Sal 69:11",
-      "tkvnFrom": 8320608,
-      "tkvnTo": 8320608,
-      "tkvnRef": "Sal 69,12",
-      "order": 0
-    },
-    {
-      "kvnFrom": 8320608,
-      "kvnTo": 8320608,
-      "kvnRef": "Sal 69:12",
-      "tkvnFrom": 8320624,
-      "tkvnTo": 8320624,
-      "tkvnRef": "Sal 69,13",
-      "order": 0
-    },
-    {
-      "kvnFrom": 8320624,
-      "kvnTo": 8320624,
-      "kvnRef": "Sal 69:13",
-      "tkvnFrom": 8320640,
-      "tkvnTo": 8320640,
-      "tkvnRef": "Sal 69,14",
-      "order": 0
-    },
-    {
-      "kvnFrom": 8320640,
-      "kvnTo": 8320640,
-      "kvnRef": "Sal 69:14",
-      "tkvnFrom": 8320656,
-      "tkvnTo": 8320656,
-      "tkvnRef": "Sal 69,15",
-      "order": 0
-    },
-    {
-      "kvnFrom": 8320656,
-      "kvnTo": 8320656,
-      "kvnRef": "Sal 69:15",
-      "tkvnFrom": 8320672,
-      "tkvnTo": 8320672,
-      "tkvnRef": "Sal 69,16",
-      "order": 0
-    },
-    {
-      "kvnFrom": 8320672,
-      "kvnTo": 8320672,
-      "kvnRef": "Sal 69:16",
-      "tkvnFrom": 8320688,
-      "tkvnTo": 8320688,
-      "tkvnRef": "Sal 69,17",
-      "order": 0
-    },
-    {
-      "kvnFrom": 8320688,
-      "kvnTo": 8320688,
-      "kvnRef": "Sal 69:17",
-      "tkvnFrom": 8320704,
-      "tkvnTo": 8320704,
-      "tkvnRef": "Sal 69,18",
-      "order": 0
-    },
-    {
-      "kvnFrom": 8320704,
-      "kvnTo": 8320704,
-      "kvnRef": "Sal 69:18",
-      "tkvnFrom": 8320720,
-      "tkvnTo": 8320720,
-      "tkvnRef": "Sal 69,19",
-      "order": 0
-    },
-    {
-      "kvnFrom": 8320720,
-      "kvnTo": 8320720,
-      "kvnRef": "Sal 69:19",
-      "tkvnFrom": 8320736,
-      "tkvnTo": 8320736,
-      "tkvnRef": "Sal 69,20",
-      "order": 0
-    },
-    {
-      "kvnFrom": 8320736,
-      "kvnTo": 8320736,
-      "kvnRef": "Sal 69:20",
-      "tkvnFrom": 8320752,
-      "tkvnTo": 8320752,
-      "tkvnRef": "Sal 69,21",
-      "order": 0
-    },
-    {
-      "kvnFrom": 8320752,
-      "kvnTo": 8320752,
-      "kvnRef": "Sal 69:21",
-      "tkvnFrom": 8320768,
-      "tkvnTo": 8320768,
-      "tkvnRef": "Sal 69,22",
-      "order": 0
-    },
-    {
-      "kvnFrom": 8320768,
-      "kvnTo": 8320768,
-      "kvnRef": "Sal 69:22",
-      "tkvnFrom": 8320784,
-      "tkvnTo": 8320784,
-      "tkvnRef": "Sal 69,23",
-      "order": 0
-    },
-    {
-      "kvnFrom": 8320784,
-      "kvnTo": 8320784,
-      "kvnRef": "Sal 69:23",
-      "tkvnFrom": 8320800,
-      "tkvnTo": 8320800,
-      "tkvnRef": "Sal 69,24",
-      "order": 0
-    },
-    {
-      "kvnFrom": 8320800,
-      "kvnTo": 8320800,
-      "kvnRef": "Sal 69:24",
-      "tkvnFrom": 8320816,
-      "tkvnTo": 8320816,
-      "tkvnRef": "Sal 69,25",
-      "order": 0
-    },
-    {
-      "kvnFrom": 8320816,
-      "kvnTo": 8320816,
-      "kvnRef": "Sal 69:25",
-      "tkvnFrom": 8320832,
-      "tkvnTo": 8320832,
-      "tkvnRef": "Sal 69,26",
-      "order": 0
-    },
-    {
-      "kvnFrom": 8320832,
-      "kvnTo": 8320832,
-      "kvnRef": "Sal 69:26",
-      "tkvnFrom": 8320848,
-      "tkvnTo": 8320848,
-      "tkvnRef": "Sal 69,27",
-      "order": 0
-    },
-    {
-      "kvnFrom": 8320848,
-      "kvnTo": 8320848,
-      "kvnRef": "Sal 69:27",
-      "tkvnFrom": 8320864,
-      "tkvnTo": 8320864,
-      "tkvnRef": "Sal 69,28",
-      "order": 0
-    },
-    {
-      "kvnFrom": 8320864,
-      "kvnTo": 8320864,
-      "kvnRef": "Sal 69:28",
-      "tkvnFrom": 8320880,
-      "tkvnTo": 8320880,
-      "tkvnRef": "Sal 69,29",
-      "order": 0
-    },
-    {
-      "kvnFrom": 8320880,
-      "kvnTo": 8320880,
-      "kvnRef": "Sal 69:29",
-      "tkvnFrom": 8320896,
-      "tkvnTo": 8320896,
-      "tkvnRef": "Sal 69,30",
-      "order": 0
-    },
-    {
-      "kvnFrom": 8320896,
-      "kvnTo": 8320896,
-      "kvnRef": "Sal 69:30",
-      "tkvnFrom": 8320912,
-      "tkvnTo": 8320912,
-      "tkvnRef": "Sal 69,31",
-      "order": 0
-    },
-    {
-      "kvnFrom": 8320912,
-      "kvnTo": 8320912,
-      "kvnRef": "Sal 69:31",
-      "tkvnFrom": 8320928,
-      "tkvnTo": 8320928,
-      "tkvnRef": "Sal 69,32",
-      "order": 0
-    },
-    {
-      "kvnFrom": 8320928,
-      "kvnTo": 8320928,
-      "kvnRef": "Sal 69:32",
-      "tkvnFrom": 8320944,
-      "tkvnTo": 8320944,
-      "tkvnRef": "Sal 69,33",
-      "order": 0
-    },
-    {
-      "kvnFrom": 8320944,
-      "kvnTo": 8320944,
-      "kvnRef": "Sal 69:33",
-      "tkvnFrom": 8320960,
-      "tkvnTo": 8320960,
-      "tkvnRef": "Sal 69,34",
-      "order": 0
-    },
-    {
-      "kvnFrom": 8320960,
-      "kvnTo": 8320960,
-      "kvnRef": "Sal 69:34",
-      "tkvnFrom": 8320976,
-      "tkvnTo": 8320976,
-      "tkvnRef": "Sal 69,35",
-      "order": 0
-    },
-    {
-      "kvnFrom": 8320976,
-      "kvnTo": 8320976,
-      "kvnRef": "Sal 69:35",
-      "tkvnFrom": 8320992,
-      "tkvnTo": 8320992,
-      "tkvnRef": "Sal 69,36",
-      "order": 0
-    },
-    {
-      "kvnFrom": 8320992,
-      "kvnTo": 8320992,
-      "kvnRef": "Sal 69:36",
-      "tkvnFrom": 8321008,
-      "tkvnTo": 8321008,
-      "tkvnRef": "Sal 69,37",
-      "order": 0
-    },
-    {
       "kvnFrom": 8323265,
       "kvnTo": 8323265,
       "kvnRef": "Sal 70:1a",
@@ -10503,21 +10221,21 @@
       "order": 0
     },
     {
-      "kvnFrom": 8351584,
-      "kvnTo": 8351584,
-      "kvnRef": "Sal 80:1",
-      "tkvnFrom": 8351600,
-      "tkvnTo": 8351600,
-      "tkvnRef": "Sal 80,2",
-      "order": 0
-    },
-    {
       "kvnFrom": 8351585,
       "kvnTo": 8351585,
       "kvnRef": "Sal 80:1a",
       "tkvnFrom": 8351584,
       "tkvnTo": 8351584,
       "tkvnRef": "Sal 80,1",
+      "order": 0
+    },
+    {
+      "kvnFrom": 8351586,
+      "kvnTo": 8351586,
+      "kvnRef": "Sal 80:1b",
+      "tkvnFrom": 8351600,
+      "tkvnTo": 8351600,
+      "tkvnRef": "Sal 80,2",
       "order": 0
     },
     {
@@ -11853,132 +11571,6 @@
       "order": 0
     },
     {
-      "kvnFrom": 8521504,
-      "kvnTo": 8521504,
-      "kvnRef": "Sal 140:1",
-      "tkvnFrom": 8521520,
-      "tkvnTo": 8521520,
-      "tkvnRef": "Sal 140,2",
-      "order": 0
-    },
-    {
-      "kvnFrom": 8521505,
-      "kvnTo": 8521505,
-      "kvnRef": "Sal 140:1a",
-      "tkvnFrom": 8521504,
-      "tkvnTo": 8521504,
-      "tkvnRef": "Sal 140,1",
-      "order": 0
-    },
-    {
-      "kvnFrom": 8521520,
-      "kvnTo": 8521520,
-      "kvnRef": "Sal 140:2",
-      "tkvnFrom": 8521536,
-      "tkvnTo": 8521536,
-      "tkvnRef": "Sal 140,3",
-      "order": 0
-    },
-    {
-      "kvnFrom": 8521536,
-      "kvnTo": 8521536,
-      "kvnRef": "Sal 140:3",
-      "tkvnFrom": 8521552,
-      "tkvnTo": 8521552,
-      "tkvnRef": "Sal 140,4",
-      "order": 0
-    },
-    {
-      "kvnFrom": 8521552,
-      "kvnTo": 8521552,
-      "kvnRef": "Sal 140:4",
-      "tkvnFrom": 8521568,
-      "tkvnTo": 8521568,
-      "tkvnRef": "Sal 140,5",
-      "order": 0
-    },
-    {
-      "kvnFrom": 8521568,
-      "kvnTo": 8521568,
-      "kvnRef": "Sal 140:5",
-      "tkvnFrom": 8521584,
-      "tkvnTo": 8521584,
-      "tkvnRef": "Sal 140,6",
-      "order": 0
-    },
-    {
-      "kvnFrom": 8521584,
-      "kvnTo": 8521584,
-      "kvnRef": "Sal 140:6",
-      "tkvnFrom": 8521600,
-      "tkvnTo": 8521600,
-      "tkvnRef": "Sal 140,7",
-      "order": 0
-    },
-    {
-      "kvnFrom": 8521600,
-      "kvnTo": 8521600,
-      "kvnRef": "Sal 140:7",
-      "tkvnFrom": 8521616,
-      "tkvnTo": 8521616,
-      "tkvnRef": "Sal 140,8",
-      "order": 0
-    },
-    {
-      "kvnFrom": 8521616,
-      "kvnTo": 8521616,
-      "kvnRef": "Sal 140:8",
-      "tkvnFrom": 8521632,
-      "tkvnTo": 8521632,
-      "tkvnRef": "Sal 140,9",
-      "order": 0
-    },
-    {
-      "kvnFrom": 8521632,
-      "kvnTo": 8521632,
-      "kvnRef": "Sal 140:9",
-      "tkvnFrom": 8521648,
-      "tkvnTo": 8521648,
-      "tkvnRef": "Sal 140,10",
-      "order": 0
-    },
-    {
-      "kvnFrom": 8521648,
-      "kvnTo": 8521648,
-      "kvnRef": "Sal 140:10",
-      "tkvnFrom": 8521664,
-      "tkvnTo": 8521664,
-      "tkvnRef": "Sal 140,11",
-      "order": 0
-    },
-    {
-      "kvnFrom": 8521664,
-      "kvnTo": 8521664,
-      "kvnRef": "Sal 140:11",
-      "tkvnFrom": 8521680,
-      "tkvnTo": 8521680,
-      "tkvnRef": "Sal 140,12",
-      "order": 0
-    },
-    {
-      "kvnFrom": 8521680,
-      "kvnTo": 8521680,
-      "kvnRef": "Sal 140:12",
-      "tkvnFrom": 8521696,
-      "tkvnTo": 8521696,
-      "tkvnRef": "Sal 140,13",
-      "order": 0
-    },
-    {
-      "kvnFrom": 8521696,
-      "kvnTo": 8521696,
-      "kvnRef": "Sal 140:13",
-      "tkvnFrom": 8521712,
-      "tkvnTo": 8521712,
-      "tkvnRef": "Sal 140,14",
-      "order": 0
-    },
-    {
       "kvnFrom": 8527169,
       "kvnTo": 8527169,
       "kvnRef": "Sal 142:1a",
@@ -12561,6 +12153,15 @@
       "tkvnFrom": 10016800,
       "tkvnTo": 10016800,
       "tkvnRef": "Jes 64,1",
+      "order": 0
+    },
+    {
+      "kvnFrom": 10016976,
+      "kvnTo": 10016976,
+      "kvnRef": "Jes 64:12",
+      "tkvnFrom": 10016960,
+      "tkvnTo": 10016960,
+      "tkvnRef": "Jes 64,11",
       "order": 0
     },
     {
