@@ -2,6 +2,12 @@
   "version": 2,
   "system": "hebrew",
   "name": "hebrew",
+  "textVerification": {
+    "status": "verified",
+    "checked": "2026-11-18",
+    "method": "Every verse moved through bibel's import (toOsnbNumbering) and checked with bibel's scripts/check-edition-landing.ts; against tanach, the same Leningrad text in osnb's (the Hebrew) numbering: no verse shifted or empty; every flagged chapter read in place. For bible.flogvit.com#170 (the owner's choice 18.11: the open source texts go out as editions of their own).",
+    "remaining": "Its verse division is tanach's in all 929 chapters. The five osnb verses tanach also lacks stay empty (Neh 10:40, Ps 13:2, 51:3, 60:3, Isa 64:1 in kjv's landing). verify-text.ts with both judges follows on Home Mac."
+  },
   "encoding": {
     "partSize": 16,
     "maxVerse": 177,

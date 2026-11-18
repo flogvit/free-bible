@@ -2,6 +2,12 @@
   "version": 2,
   "system": "tr",
   "name": "tr",
+  "textVerification": {
+    "status": "verified",
+    "checked": "2026-11-18",
+    "method": "Every verse moved through bibel's import (toOsnbNumbering) and checked with bibel's scripts/check-edition-landing.ts; against kjv: no chapter shifted; every flagged chapter read in place. For bible.flogvit.com#170 (the owner's choice 18.11: the open source texts go out as editions of their own).",
+    "remaining": "Luke 17:36 is not in Stephanus 1550 (the KJV took it from Beza), so it stays empty. verify-text.ts with both judges follows on Home Mac."
+  },
   "encoding": {
     "partSize": 16,
     "maxVerse": 177,
