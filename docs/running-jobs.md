@@ -244,8 +244,8 @@ the verdicts under `generate/proofread/<translation>/`.
 
 ## The long ones
 
-Three jobs are large enough to be projects rather than runs, and all three are
-documented where they belong rather than here:
+Four jobs are large enough to be projects rather than runs. Three are documented
+where they belong rather than here:
 
 - **Cross references** are built by two scripts that write to the same files —
   `references.ts` asks the model, `references-semantic.ts` searches with vectors
@@ -260,3 +260,48 @@ documented where they belong rather than here:
 - **Supporting material into a new language** is `translate.ts`, described in
   `docs/supporting-material.md`. Cross references come last in its
   order on purpose: more than ten thousand files, and it runs for days.
+
+### Matthew Henry into bokmål
+
+`generate/commentary.ts` runs until the commentary is done or the month's money
+is, and is safe to stop and start at any time: everything it has paid for is on
+disk under `generate/commentary_work/mhc/nb/`, including the batches still in
+flight.
+
+1. **The key.** It uses only `DUX_ANTHROPIC_API_KEY`, the Ultra API credit Dux
+   hands the session — never `ANTHROPIC_API_KEY` (Claude Code's own) and never
+   `generate/.env`. A key not scoped to a workspace also needs
+   `DUX_ANTHROPIC_WORKSPACE_ID`; without it every call answers «This API key is
+   not scoped to a workspace».
+2. **A sample first**, when the model or the prompt is new:
+
+   ```bash
+   bun generate/commentary.ts --work mhc --language nb --book 65 --limit 5 --once
+   ```
+
+   `--once` sends one batch and exits; run it again to collect. The cost of each
+   collected batch goes to `cost.jsonl`, and from then on `--dry-run` prices the
+   next batch from what the earlier ones actually cost.
+3. **The long run**, on the Home Mac (no local model involved, so it sits fine
+   beside image and puzzles), from a clone of its own — not from a worktree under
+   `.claude/worktrees`:
+
+   ```bash
+   bun generate/commentary.ts --work mhc --language nb
+   ```
+
+   It works on three books at a time in canonical order (`--books`), polls once
+   a minute, and writes a book to `generate/commentary/mhc/nb/` the moment its
+   last part is checked. Commit and push those files as books appear; the site
+   imports them from there.
+4. **Exit code 75 means the money stopped it**, not an error: either the API said
+   «Your credit balance is too low», or the next request could take the month past
+   `--budget` (default $180, 90 % of the $200 Ultra credit — each request is held
+   at the price of its largest possible answer until its real cost is known). Run
+   the same command again on the 1st, or with another key; it goes on from where
+   it stopped.
+5. **Stuck parts** — still not clean after three reviews, or failing three times —
+   keep their book from being published. The run lists them; `--retry-stuck` gives
+   them new rounds, and `--again --model <newer>` lets a newer model review
+   everything an older one wrote (set `commentaryModel` in `generate/constants.ts`
+   when one wins the trial in `generate/eval/reference-works/`).

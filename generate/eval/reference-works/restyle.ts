@@ -9,7 +9,7 @@
  * dominated by Norwegian idiom, not comprehension («jorden var uten form og tom» for «øde og
  * tom», «Guds Ånd beveget» for «svevet», «scenen for en ny skapelse»), and those are fixable
  * from the Norwegian alone. A stylist that reads the source is translating again with a
- * weaker model. Content drift is caught afterwards by refcheck.py and worddiff.py against
+ * weaker model. Content drift is caught afterwards by generate/refcheck.ts and worddiff.py against
  * the source, not by the stylist's own judgement.
  *
  * Layout (one directory per sample, as run.ts):
@@ -23,7 +23,7 @@
  *   bun generate/eval/reference-works/restyle.ts --list
  *
  * Then compare, per sample:
- *   python3 generate/eval/reference-works/refcheck.py <sample>/source.txt <sample>/<out>
+ *   bun generate/refcheck.ts <sample>/source.txt <sample>/<out>
  *   python3 generate/eval/reference-works/worddiff.py <sample>/<from>.proof.txt <sample>/<out>
  */
 import '../../env.js';

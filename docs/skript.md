@@ -231,6 +231,12 @@ Build generate/translations/index.json — one merged record per translation, re
 | `--force` | boolean | — | run again even if the output already exists |
 | `--help` | boolean | — | show this text |
 
+### `generate/commentary.ts`
+
+Old public-domain Bible commentaries rendered into today's language, book by book, through the Message Batches API, and published per book once every part of it has passed the checks.
+
+*Hand-rolled argument parsing — the flags are not generated from here.*
+
 ### `generate/convert-refs.ts`
 
 convert-refs.ts — Convert plain-text Bible references to [ref:...|...] markup.
@@ -421,6 +427,12 @@ Nøkkelord per kapittel, med forklaring på norsk.
 |---|---|---|---|
 | `--help` | boolean | — | show this text |
 
+### `generate/refcheck.ts`
+
+Mechanical reference check between a source text and a rendering of it in another language or spelling: every reference in the source must be in the rendering with the same numbers, and the rendering must not have references the source lacks.
+
+*Hand-rolled argument parsing — the flags are not generated from here.*
+
 ### `generate/references-semantic.ts`
 
 | flag | type | default | meaning |
@@ -508,6 +520,12 @@ Map songs to Bible verse references using LLM.
 | `--file` | string | — | behandle bare denne historien, oppgitt som slug |
 | `--min-score` | number | `7` | bruk endringene bare når scoren er lavere enn dette |
 | `--help` | boolean | — | show this text |
+
+### `generate/sword.ts`
+
+Reader for CrossWire SWORD modules in the compressed verse formats (zText/zCom and zText4/zCom4), KJV versification.
+
+*Hand-rolled argument parsing — the flags are not generated from here.*
 
 ### `generate/translate.ts`
 
@@ -883,4 +901,4 @@ Not executable, and therefore have no flags:
 
 ---
 
-72 of 72 scripts use the common flag contract.
+72 of 75 scripts use the common flag contract.

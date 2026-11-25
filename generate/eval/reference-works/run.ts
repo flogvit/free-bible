@@ -24,7 +24,7 @@
  *
  * Then compare, per sample:
  *   python3 generate/eval/reference-works/worddiff.py <sample>/source.txt <sample>/<model>.first.txt
- *   python3 generate/eval/reference-works/refcheck.py <sample>/source.txt <sample>/<model>.proof.txt
+ *   bun generate/refcheck.ts <sample>/source.txt <sample>/<model>.proof.txt
  *
  * Measured 2026-09-03/04 (qwen3.5:122b, claude-opus-5, claude-fable-5-1): a local reviewer
  * ran away past 12 000 tokens on one sample when given version history, so local calls cap
