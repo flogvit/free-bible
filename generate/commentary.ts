@@ -61,6 +61,7 @@ const MAX_BATCH_BYTES = 200 * 1024 * 1024;   // the API's limit is 256 MB
 const POLL_MS = 60_000;
 const MAX_ATTEMPTS = 3;
 export const EXIT_NO_CREDIT = 75;
+const NO_CREDIT = `\nKreditten er brukt opp. Det som er betalt for, er lagret. Kjør samme kommando igjen når det er kreditt (den 1.) eller med en annen nøkkel i DUX_ANTHROPIC_API_KEY; den fortsetter der den stoppet.`;
 
 // ---------------------------------------------------------------- works and languages
 
@@ -524,7 +525,6 @@ class Store {
 
 // ---------------------------------------------------------------- batches
 
-type Client = Anthropic;
 const customId = (kind: Kind, unitId: string) => `${kind[0]}_${unitId}`;
 
 function requestFor(store: Store, kind: Kind, unitId: string, model: string): Anthropic.Messages.Batches.BatchCreateParams.Request {
@@ -561,7 +561,7 @@ function costOf(model: string, usage: Anthropic.Usage): number {
     return BATCH_DISCOUNT * (usage.input_tokens * price[0] + usage.output_tokens * price[1]) / 1e6;
 }
 
-async function harvest(client: Client, store: Store, pending: Pending, maxRounds: number): Promise<{credit: boolean}> {
+async function harvest(client: Anthropic, store: Store, pending: Pending, maxRounds: number): Promise<{credit: boolean}> {
     let credit = false;
     let input = 0, output = 0, usd = 0, ok = 0, errors = 0;
     for await (const r of await client.messages.batches.results(pending.id)) {
@@ -779,7 +779,7 @@ async function main() {
         if (flags.limit) next = next.slice(0, flags.limit as number);
 
         if (credit) {
-            console.log(`\nKreditten er brukt opp. Det som kom tilbake er lagret. Kjør samme kommando igjen når det er kreditt (den 1.) eller med en annen nøkkel i DUX_ANTHROPIC_API_KEY; den fortsetter der den stoppet.`);
+            console.log(NO_CREDIT);
             report(store, window);
             return EXIT_NO_CREDIT;
         }
@@ -818,7 +818,7 @@ async function main() {
                     console.log(`sendt: ${kind} ${batch.id}, ${group.length} forespørsler`);
                 } catch (e) {
                     if (isCreditExhausted(e)) {
-                        console.log(`\nKreditten er brukt opp. Kjør samme kommando igjen når det er kreditt (den 1.) eller med en annen nøkkel i DUX_ANTHROPIC_API_KEY; den fortsetter der den stoppet.`);
+                        console.log(NO_CREDIT);
                         report(store, window);
                         return EXIT_NO_CREDIT;
                     }
