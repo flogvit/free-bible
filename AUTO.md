@@ -1,9 +1,9 @@
 # AUTO.md — flogvit/free-bible
 
 How Dux builds, tests, deploys, verifies, rolls back and patches free-bible.
-Format: [Grensesnitt/grensesnitt-auto](https://github.com/Grensesnitt/grensesnitt-auto) (`docs/reference.md`). Facts read on 2026-10-29 from main of this repository and of flogvit/flogvit-com-server (`README.md`, `package.json`; `deploy-bibel-data.sh`).
+Format: [Grensesnitt/grensesnitt-auto](https://github.com/Grensesnitt/grensesnitt-auto) ([docs/reference.md](https://github.com/Grensesnitt/grensesnitt-auto/blob/main/docs/reference.md)). Facts read on 2026-10-29 from main of this repository and of flogvit/flogvit-com-server (`README.md`, `package.json`; [deploy-bibel-data.sh](https://github.com/flogvit/flogvit-com-server/blob/main/deploy-bibel-data.sh)).
 
-Open Bible translations and their generators. The Bible app reads this text: `server/deploy-bibel-data.sh` imports it locally and replaces the content tables in prod, table by table in one transaction each, then restarts bibel-hono.
+Open Bible translations and their generators. The Bible app reads this text: [server/deploy-bibel-data.sh](https://github.com/flogvit/flogvit-com-server/blob/main/deploy-bibel-data.sh) imports it locally and replaces the content tables in prod, table by table in one transaction each, then restarts bibel-hono.
 
 ## about
 
