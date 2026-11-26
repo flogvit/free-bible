@@ -1,7 +1,7 @@
 import {describe, expect, test} from 'bun:test';
 import {
-    afterReview, afterTranslation, applyFindings, chaptersFromEntries, isCreditExhausted,
-    mechanicalProblems, nextRequests, osisToParagraphs, splitParagraphs, worstCase,
+    afterReview, afterTranslation, applyFindings, chaptersFromEntries, costOf, isCreditExhausted,
+    mechanicalProblems, nextRequests, osisToParagraphs, reviewPrompt, splitParagraphs, translatePrompt, WORKS, worstCase,
     type Review, type Unit,
 } from './commentary.js';
 
@@ -144,4 +144,26 @@ test('isCreditExhausted recognises the API saying the credit is used up, and not
     expect(isCreditExhausted({error: {type: 'billing_error', message: 'x'}})).toBe(true);
     expect(isCreditExhausted(new Error(`400 ${JSON.stringify({type: 'error', error: {type: 'invalid_request_error', message: msg}})}`))).toBe(true);
     expect(isCreditExhausted({type: 'error', error: {type: 'overloaded_error', message: 'Overloaded'}})).toBe(false);
+});
+
+describe('prompt caching (#163: as cheap as it can be)', () => {
+    test('the fixed part of a prompt is the same for every unit, and the unit stays out of it', () => {
+        const w = Object.values(WORKS)[0];
+        const file = {work: 'mhc', language: 'en', book: 1, chapter: 1, sections: [{from: 1, to: 2, paragraphs: ['<sup>1</sup> In the beginning.', 'Note.']}]} as any;
+        const a = {id: '1-1-0-0', section: 0, start: 0, end: 2, status: 'draft', text: ['<sup>1</sup> I begynnelsen.', 'Merk.'], rounds: 0, attempts: 0, versions: [], reviews: []} as any;
+        const b = {...a, id: '1-1-0-1', start: 1};
+        for (const make of [translatePrompt, reviewPrompt]) {
+            expect(make(w, 'nb', file, a).fixed).toBe(make(w, 'nb', {...file, chapter: 9}, b).fixed);
+            expect(make(w, 'nb', file, a).fixed).not.toContain('In the beginning');
+            expect(make(w, 'nb', file, a).unit).toContain('In the beginning');
+        }
+    });
+    test('cache writes and reads are counted in what was spent', () => {
+        const usage = {input_tokens: 1000, output_tokens: 1000, cache_read_input_tokens: 1_000_000, cache_creation_input_tokens: 0} as any;
+        // 0.5 x (1000 x $8 + 1M x $0.20 + 1000 x $40) / 1M
+        expect(costOf('claude-fable-5-2', usage)).toBeCloseTo(0.5 * (8000 + 200_000 + 40_000) / 1e6, 9);
+        const written = {input_tokens: 0, output_tokens: 0, cache_creation_input_tokens: 1_000_000, cache_read_input_tokens: 0,
+            cache_creation: {ephemeral_5m_input_tokens: 0, ephemeral_1h_input_tokens: 1_000_000}} as any;
+        expect(costOf('claude-fable-5-2', written)).toBeCloseTo(0.5 * 16, 9);
+    });
 });

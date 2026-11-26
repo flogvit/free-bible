@@ -40,7 +40,7 @@ import fs from 'fs';
 import path from 'path';
 import {readModule, type SwordEntry} from './sword.js';
 import {referenceProblems, formatProblem} from './refcheck.js';
-import {anthropicPrices, commentaryModel} from './constants.js';
+import {anthropicCacheReads, anthropicPrices, commentaryModel} from './constants.js';
 import {parseArgs, formatHelp, COMMON_FLAGS, type FlagSpec, type Range} from './cli.js';
 
 const GENERATE = import.meta.dir;
@@ -320,24 +320,36 @@ function where(file: ChapterFile, u: Unit): string {
     return `bok ${file.book} (osis-rekkefølge), ${verses}${parts}`;
 }
 
-export function translatePrompt(w: Work, lang: string, file: ChapterFile, u: Unit): string {
-    return `Du gjengir ${w.describe} på ${LANGUAGES[lang]}. Teksten er fra ${where(file, u)}.
+/**
+ * Each prompt in two parts: what is the same for every request of its kind (the brief and the instructions), sent as
+ * the system prompt and cached, and what is this unit's (where it is from, the source, the rendering). Cache reads cost
+ * a fortieth of input on Fable 5.2, and a batch's requests share the cached part (#163: «implementer alt du kan for å
+ * få det billigere»).
+ */
+export interface Prompt { fixed: string; unit: string }
+
+export function translatePrompt(w: Work, lang: string, file: ChapterFile, u: Unit): Prompt {
+    return {
+        fixed: `Du gjengir ${w.describe} på ${LANGUAGES[lang]}.
 
 ${BRIEF(w, lang)}
 
-Svar med «paragraphs»: én streng per avsnitt i kilden.
+Svar med «paragraphs»: én streng per avsnitt i kilden.`,
+        unit: `Teksten er fra ${where(file, u)}.
 
 KILDE (${sourceOf(file, u).length} avsnitt):
-${numbered(sourceOf(file, u))}`;
+${numbered(sourceOf(file, u))}`,
+    };
 }
 
-export function reviewPrompt(w: Work, lang: string, file: ChapterFile, u: Unit): string {
+export function reviewPrompt(w: Work, lang: string, file: ChapterFile, u: Unit): Prompt {
     const source = sourceOf(file, u);
     const mechanical = mechanicalProblems(source, u.text!);
     const advisory = source.flatMap((s, i) => referenceProblems(s, u.text![i] ?? '')
         .filter(p => !p.blocking).map(p => `avsnitt ${i + 1}: ${formatProblem(p)}`));
     const found = [...mechanical, ...advisory];
-    return `Du er korrekturleser for en gjengivelse av ${w.describe} på ${LANGUAGES[lang]}. Teksten er fra ${where(file, u)}.
+    return {
+        fixed: `Du er korrekturleser for en gjengivelse av ${w.describe} på ${LANGUAGES[lang]}.
 
 ${BRIEF(w, lang)}
 
@@ -352,13 +364,15 @@ Hvert funn bærer bare stedet som endres:
 - «replacement»: det som skal stå i stedet
 Send aldri hele avsnitt. Fri, naturlig norsk er en del av oppdraget og er ikke en feil — rapporter ikke smak.
 Alvorlighet: critical = meningen er feil, eller innhold mangler eller er lagt til; major = en henvisning, et tall, et belegg eller en nyanse som argumentet hviler på, er feil; minor = språk og stil som er galt, ikke bare annerledes.
-Er gjengivelsen god, er «issues» tom. «score» 0–10, der 10 er trofast og godt språk uten noe igjen.
+Er gjengivelsen god, er «issues» tom. «score» 0–10, der 10 er trofast og godt språk uten noe igjen.`,
+        unit: `Teksten er fra ${where(file, u)}.
 ${found.length ? `\nMekanisk sjekk av henvisningene (tall som ikke stemmer med kilden — vurder hver og rett det som er feil):\n${found.map(f => '- ' + f).join('\n')}\n` : ''}
 KILDE (${source.length} avsnitt):
 ${numbered(source)}
 
 GJENGIVELSE (${u.text!.length} avsnitt):
-${numbered(u.text!)}`;
+${numbered(u.text!)}`,
+    };
 }
 
 const TRANSLATE_SCHEMA = {
@@ -536,6 +550,7 @@ const customId = (kind: Kind, unitId: string) => `${kind[0]}_${unitId}`;
 function requestFor(store: Store, kind: Kind, unitId: string, model: string): Anthropic.Messages.Batches.BatchCreateParams.Request {
     const {source, unit} = store.unit(unitId)!;
     const w = WORKS[store.work];
+    const prompt = kind === 'translate' ? translatePrompt(w, store.lang, source, unit) : reviewPrompt(w, store.lang, source, unit);
     return {
         custom_id: customId(kind, unitId),
         params: {
@@ -545,9 +560,9 @@ function requestFor(store: Store, kind: Kind, unitId: string, model: string): An
                 effort: EFFORT,
                 format: {type: 'json_schema', schema: kind === 'translate' ? TRANSLATE_SCHEMA : REVIEW_SCHEMA},
             },
-            messages: [{role: 'user', content: kind === 'translate'
-                ? translatePrompt(w, store.lang, source, unit)
-                : reviewPrompt(w, store.lang, source, unit)}],
+            // The fixed part is cached for an hour: a batch can take longer than the five-minute default to work through.
+            system: [{type: 'text', text: prompt.fixed, cache_control: {type: 'ephemeral', ttl: '1h'}}],
+            messages: [{role: 'user', content: prompt.unit}],
         },
     };
 }
@@ -560,11 +575,15 @@ export function nextRequests(units: Unit[], inFlight: Set<string>): {kind: Kind;
                 : []);
 }
 
-function costOf(model: string, usage: Anthropic.Usage): number {
+export function costOf(model: string, usage: Anthropic.Usage): number {
     const price = anthropicPrices[model];
     if (!price) return NaN;
-    // No prompt caching here: every prompt is a different text.
-    return BATCH_DISCOUNT * (usage.input_tokens * price[0] + usage.output_tokens * price[1]) / 1e6;
+    // The fixed part of each prompt is cached (an hour): written at 2x input, read at the model's cache-read price.
+    const written = usage.cache_creation
+        ? (usage.cache_creation.ephemeral_5m_input_tokens ?? 0) * 1.25 + (usage.cache_creation.ephemeral_1h_input_tokens ?? 0) * 2
+        : (usage.cache_creation_input_tokens ?? 0) * 2;
+    const read = (usage.cache_read_input_tokens ?? 0) * (anthropicCacheReads[model] ?? price[0] / 10);
+    return BATCH_DISCOUNT * (usage.input_tokens * price[0] + written * price[0] + read + usage.output_tokens * price[1]) / 1e6;
 }
 
 async function harvest(client: Anthropic, store: Store, pending: Pending, maxRounds: number): Promise<{credit: boolean}> {
@@ -618,7 +637,8 @@ async function harvest(client: Anthropic, store: Store, pending: Pending, maxRou
 export function worstCase(model: string, r: Anthropic.Messages.Batches.BatchCreateParams.Request): number {
     const price = anthropicPrices[model];
     if (!price) throw new Error(`no price for ${model} in constants.ts → anthropicPrices; the budget cannot be kept without it`);
-    const input = JSON.stringify(r.params.messages).length / 3;
+    // The cached part counted at full input price: the most it can cost.
+    const input = JSON.stringify([r.params.system, r.params.messages]).length / 3;
     return BATCH_DISCOUNT * (input * price[0] + r.params.max_tokens * price[1]) / 1e6;
 }
 

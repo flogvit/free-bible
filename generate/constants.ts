@@ -51,6 +51,14 @@ export const anthropicPrices: Record<string, [number, number]> = {
     'claude-sonnet-5': [2, 10],
 };
 
+// What a cache read costs per million tokens, where it is not a tenth of input: Fable 5.2 and Opus 5.5 read at $0.20,
+// Fable 5.1 at $0.25 (the API's pricing). A cache write costs 1.25x input for five minutes, 2x for an hour.
+export const anthropicCacheReads: Record<string, number> = {
+    'claude-fable-5-2': 0.20,
+    'claude-opus-5-5': 0.20,
+    'claude-fable-5-1': 0.25,
+};
+
 // Opus 5 tenker som standard, og max_tokens dekker tenkning + svar under ett.
 // Doblet fra 16384 for å gi plass til begge deler.
 export const maxTokens: number = 32000;
