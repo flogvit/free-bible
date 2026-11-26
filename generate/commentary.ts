@@ -189,6 +189,7 @@ export interface Unit {
     versions: {text: string[]; explanation: string; model: string}[];
     reviews: (Review & {model: string; mechanical: string[]; skipped: string[]})[];
     note?: string;            // why it is stuck
+    retried?: boolean;        // stuck once and given new rounds before its book was left (#163)
 }
 
 interface ChapterState { book: number; chapter: number; units: Unit[] }
@@ -794,8 +795,15 @@ async function main() {
         // 2. publish finished books
         for (const b of allBooks) if (publishBook(store, b)) console.log(`publisert: bok ${b}`);
 
-        // 3. the window: the first --books books that are not all checked
-        const window = allBooks.filter(b => store.bookUnits(b).some(u => u.status !== 'checked' && u.status !== 'stuck')).slice(0, flags.books as number);
+        // 3. the window: the first --books books that are not all checked. A book with stuck units is not done (#163: «en
+        // bok ferdig før vi starter på en ny»): each stuck unit gets new rounds once; one stuck again keeps the book open
+        // and is said in the report, for the owner to see.
+        const window = allBooks.filter(b => store.bookUnits(b).some(u => u.status !== 'checked')).slice(0, flags.books as number);
+        for (const u of window.flatMap(b => store.bookUnits(b)).filter(u => u.status === 'stuck' && !u.retried)) {
+            store.put(u.id, {...u, status: u.text ? 'draft' : 'new', rounds: 0, attempts: 0, note: undefined, retried: true});
+            console.log(`  ${u.id}: fast (${u.note}), får nye runder`);
+        }
+        store.save();
         const inFlight = new Set(store.pending.flatMap(p => p.units));
         // The whole book at once, one book at a time (#163: «peise på mens vi har credits», «en bok ferdig før vi starter på en ny»).
         let next = nextRequests(window.flatMap(b => store.bookUnits(b)), inFlight);
