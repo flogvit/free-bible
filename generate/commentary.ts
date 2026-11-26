@@ -467,6 +467,8 @@ export const paths = (work: string, lang: string) => {
         state: (b: number, c: number) => path.join(GENERATE, 'commentary_work', work, lang, `${b}`, `${c}.json`),
         batches: path.join(GENERATE, 'commentary_work', work, lang, 'batches.json'),
         cost: path.join(GENERATE, 'commentary_work', work, lang, 'cost.jsonl'),
+        // Why the job stopped with work left (credit or the month's budget), for the watch that tells a stop from a stall.
+        stopped: path.join(GENERATE, 'commentary_work', work, lang, 'stopped.json'),
         download: path.join(ROOT, 'external', 'commentaries', work),
     };
 };
@@ -832,11 +834,14 @@ async function main() {
         let next = nextRequests(window.flatMap(b => store.bookUnits(b)), inFlight);
         if (flags.limit) next = next.slice(0, flags.limit as number);
 
-        if (credit) {
-            console.log(NO_CREDIT);
+        // Work is left and nothing more can be paid for: said here, in stopped.json, and by the exit code.
+        const stop = (why: string) => {
+            console.log(why);
+            writeJson(paths(work, lang).stopped, {at: new Date().toISOString(), why: why.trim(), spent: spentThisMonth(work, lang)});
             report(store, window);
             return EXIT_NO_CREDIT;
-        }
+        };
+        if (credit) return stop(NO_CREDIT);
 
         if (flags['dry-run']) {
             for (const kind of ['translate', 'review'] as Kind[]) {
@@ -869,22 +874,17 @@ async function main() {
                         created: new Date().toISOString(),
                     });
                     store.save();
+                    fs.rmSync(paths(work, lang).stopped, {force: true});
                     console.log(`sendt: ${kind} ${batch.id}, ${group.length} forespørsler`);
                 } catch (e) {
-                    if (isCreditExhausted(e)) {
-                        console.log(NO_CREDIT);
-                        report(store, window);
-                        return EXIT_NO_CREDIT;
-                    }
+                    if (isCreditExhausted(e)) return stop(NO_CREDIT);
                     throw e;
                 }
             }
         }
 
         if (!store.pending.length && next.length) {
-            console.log(`\nMånedens budsjett (--budget $${flags.budget}) er brukt: $${spentThisMonth(work, lang).toFixed(2)} denne måneden. Kjør samme kommando igjen den 1.; den fortsetter der den stoppet.`);
-            report(store, window);
-            return EXIT_NO_CREDIT;
+            return stop(`\nMånedens budsjett (--budget $${flags.budget}) er brukt: $${spentThisMonth(work, lang).toFixed(2)} denne måneden. Kjør samme kommando igjen den 1.; den fortsetter der den stoppet.`);
         }
         if (!store.pending.length) {
             report(store, allBooks);
