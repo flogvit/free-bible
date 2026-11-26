@@ -72,8 +72,8 @@
    "section": 2,
    "start": 0,
    "end": 10,
-   "status": "draft",
-   "rounds": 1,
+   "status": "checked",
+   "rounds": 2,
    "attempts": 0,
    "versions": [
     {
@@ -124,6 +124,20 @@
      "model": "claude-fable-5-2",
      "mechanical": [],
      "skipped": []
+    },
+    {
+     "argument": {
+      "premises": true,
+      "conclusions": true,
+      "evidence": true,
+      "problems": ""
+     },
+     "issues": [],
+     "summary": "Gjengivelsen er trofast mot kilden i alle ti avsnitt: hvert resonnement, hvert skriftsted, den kaldeiske parafrasen og sitatet fra biskop Hall er med, med samme innhold og vekt. Merking og osisRef står som i kilden, henvisningene er riktig omskrevet til norsk form, og språket er naturlig, moderne bokmål. Ingen feil funnet.",
+     "score": 10,
+     "model": "claude-fable-5-2",
+     "mechanical": [],
+     "skipped": []
     }
    ],
    "text": [
@@ -146,11 +160,26 @@
    "section": 3,
    "start": 0,
    "end": 4,
-   "status": "draft",
-   "rounds": 0,
+   "status": "checked",
+   "rounds": 1,
    "attempts": 0,
    "versions": [],
-   "reviews": [],
+   "reviews": [
+    {
+     "argument": {
+      "premises": true,
+      "conclusions": true,
+      "evidence": true,
+      "problems": ""
+     },
+     "issues": [],
+     "summary": "Gjengivelsen er trofast og idiomatisk: alle resonnementer, sitater, tall og henvisninger er bevart, merkingen er intakt, og språket er naturlig moderne bokmål. Ingen feil funnet.",
+     "score": 10,
+     "model": "claude-fable-5-2",
+     "mechanical": [],
+     "skipped": []
+    }
+   ],
    "text": [
     "<h>Rut sendes tilbake i fred til Noomi. (1312 f.Kr.)</h>",
     "<sup>14</sup> Og hun lå ved føttene hans til morgenen, og hun sto opp før den ene kunne kjenne den andre. Og han sa: La det ikke bli kjent at en kvinne kom til treskeplassen. <sup>15</sup> Han sa også: Ta sløret som <i>du har</i> på deg, og hold det fram. Og da hun holdt det, målte han opp seks <i>mål</i> bygg og la <i>det</i> på henne; og hun gikk inn i byen. <sup>16</sup> Og da hun kom til sin svigermor, sa hun: Hvem <i>er</i> du, min datter? Og hun fortalte henne alt det mannen hadde gjort for henne. <sup>17</sup> Og hun sa: Disse seks <i>mål</i> bygg ga han meg, for han sa til meg: Gå ikke tomhendt til din svigermor. <sup>18</sup> Da sa hun: Sitt stille, min datter, til du får vite hvordan saken faller ut; for mannen vil ikke falle til ro før han har fullført saken i dag.",
