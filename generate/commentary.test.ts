@@ -167,3 +167,8 @@ describe('prompt caching (#163: as cheap as it can be)', () => {
         expect(costOf('claude-fable-5-2', written)).toBeCloseTo(0.5 * 16, 9);
     });
 });
+
+test('a unit stuck after its retry stays stuck and is not retried again', () => {
+    const u = {id: '1-1-0-0', section: 0, start: 0, end: 1, status: 'stuck', text: ['x'], rounds: 3, attempts: 0, versions: [], reviews: [], note: 'not clean after 3 reviews', retried: true} as any;
+    expect(nextRequests([u], new Set())).toEqual([]);
+});
