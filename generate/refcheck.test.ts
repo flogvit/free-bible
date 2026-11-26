@@ -37,6 +37,15 @@ describe('referenceProblems', () => {
         expect(blocking('The Creation. (b. c. 4004.)', 'Skapelsen (4004 f.Kr.)')).toEqual([]);
     });
 
+    test('a word ending in s or c before a numbered point is no page or chapter (#163)', () => {
+        // Each pair held a Genesis–Deuteronomy unit stuck through every review the reviewer passed.
+        expect(blocking('Ps. civ. 25 , &amp;c. 2. The blessing', 'Sal 104,25 osv. 2. Velsignelsen')).toEqual([]);
+        expect(blocking("gifts should attend God's. 2. He gave", 'gaver skal følge Guds. 2. Han ga')).toEqual([]);
+        expect(blocking('made of no effect. 2. Yet', 'gjort virkningsløs. 2. Likevel')).toEqual([]);
+        expect(blocking('see p. 12', 'se s. 21')).toEqual(['page']);
+        expect(blocking('see ch. ii', 'se kap. 3')).toEqual(['chapter']);
+    });
+
     test('plain chapter:verse pairs and bare numbers are advisory', () => {
         const p = referenceProblems('Is 34:11', 'Jes 34,12');
         expect(p.map(x => [x.kind, x.blocking])).toEqual([['pair', false]]);

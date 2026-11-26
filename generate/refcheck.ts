@@ -54,8 +54,10 @@ export function romanToArabic(s: string): string {
 // as a plain number.
 const PATTERNS: [RefKind, RegExp][] = [
     ['section', /(?:§|\$\.)\s*(\d+[a-z]?)(?![a-z])/g],   // «$.277» is how the K&D OCR reads §
-    ['page', /\b(?:pp?\.|pag\.|page\.?|s\.|side|sidene)\s*(\d+)/gi],
-    ['chapter', /\b(?:ch\.|chap\.|c\.|cap\.|kap\.|kapittel)\s*([ivxlc]+\b|\d+)/gi],
+    // A cue word starts a word: JavaScript's \b sees æ, ø, å and the apostrophe as word ends, so «løs. 2» and
+    // «God's. 2» would read as page 2 (#163: 8 of 16 stuck units).
+    ['page', /(?<![\p{L}\p{N}'’])(?:pp?\.|pag\.|page\.?|s\.|side|sidene)\s*(\d+)/giu],
+    ['chapter', /(?<![\p{L}\p{N}'’])(?:ch\.|chap\.|c\.|cap\.|kap\.|kapittel)\s*([ivxlc]+(?![\p{L}\p{N}])|\d+)/giu],
     ['pair', /(?<!\d)(\d{1,3})\s*[:,]\s*(\d{1,3})(?!\d)/g],
     ['number', /\d+/g],
 ];
@@ -76,6 +78,8 @@ function collect(text: string): Counts {
     t = t.replace(/<[^>]+>/g, ' ');
     // Era markers, so «b. c. 4004» is a year and not chapter 4004.
     t = t.replace(/\b(?:b\.\s*c\.|a\.\s*d\.|f\.\s*kr\.|e\.\s*kr\.)/gi, ' ');
+    // «&c.» is et cetera, so «&c. 2. The blessing» is the next point and not chapter 2 (#163: the other 8 stuck units).
+    t = t.replace(/&(?:amp;)?c\./g, ' ');
     for (const [kind, re] of PATTERNS) {
         t = t.replace(re, (m: string, ...groups: unknown[]) => {
             const [a, b] = groups as string[];

@@ -1,7 +1,7 @@
 import {describe, expect, test} from 'bun:test';
 import {
     afterReview, afterTranslation, applyFindings, chaptersFromEntries, costOf, isCreditExhausted,
-    mechanicalProblems, nextRequests, osisToParagraphs, reviewPrompt, splitParagraphs, translatePrompt, WORKS, worstCase,
+    mechanicalProblems, nextRequests, osisToParagraphs, recheck, reviewPrompt, splitParagraphs, translatePrompt, WORKS, worstCase,
     type Review, type Unit,
 } from './commentary.js';
 
@@ -171,4 +171,14 @@ describe('prompt caching (#163: as cheap as it can be)', () => {
 test('a unit stuck after its retry stays stuck and is not retried again', () => {
     const u = {id: '1-1-0-0', section: 0, start: 0, end: 1, status: 'stuck', text: ['x'], rounds: 3, attempts: 0, versions: [], reviews: [], note: 'not clean after 3 reviews', retried: true} as any;
     expect(nextRequests([u], new Set())).toEqual([]);
+});
+
+test('a stuck unit its review passed is checked once the reference check no longer raises a false alarm', () => {
+    // 1-1-5-0: held through six reviews that found nothing, by «&c. 2.» read as chapter 2.
+    const passed = {issues: [], argument: {premises: true, conclusions: true, evidence: true, problems: ''}, score: 9, summary: '', model: 'm', mechanical: ['paragraph 1: chapter: missing 2'], skipped: []};
+    const u = {id: '1-1-5-0', section: 0, start: 0, end: 1, status: 'stuck', text: ['Sal 104,25 osv. 2. Velsignelsen'], rounds: 3, attempts: 0, versions: [], reviews: [passed], note: 'not clean after 3 reviews', retried: true} as any;
+    expect(recheck(u, ['Ps. civ. 25 , &amp;c. 2. The blessing']).status).toBe('checked');
+    expect(recheck(u, ['Ps. civ. 25 , ch. 2. The blessing']).status).toBe('stuck');
+    const major = {...passed, issues: [{paragraph: 1, quote: 'x', replacement: 'y', type: 't', severity: 'major', explanation: ''}]};
+    expect(recheck({...u, reviews: [major]}, ['Ps. civ. 25 , &amp;c. 2. The blessing']).status).toBe('stuck');
 });
