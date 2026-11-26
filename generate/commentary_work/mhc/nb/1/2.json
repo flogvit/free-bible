@@ -332,8 +332,8 @@
    "section": 6,
    "start": 0,
    "end": 6,
-   "status": "draft",
-   "rounds": 1,
+   "status": "checked",
+   "rounds": 2,
    "attempts": 0,
    "versions": [
     {
@@ -377,6 +377,20 @@
      ],
      "summary": "Trofast og velskrevet gjengivelse: alle seks avsnitt og hele argumentasjonen er bevart, i naturlig norsk. Én henvisning har feil osisRef-attributt (1Kor for 1Cor), og ett ordvalg («omsorg» for «care») er misvisende på moderne bokmål.",
      "score": 8,
+     "model": "claude-fable-5-2",
+     "mechanical": [],
+     "skipped": []
+    },
+    {
+     "argument": {
+      "premises": true,
+      "conclusions": true,
+      "evidence": true,
+      "problems": ""
+     },
+     "issues": [],
+     "summary": "Gjengivelsen er trofast i alle seks avsnitt: hvert resonnement, hver nummerert observasjon og alle skrifthenvisninger er med, med samme innhold og vekt som i kilden. Merkingen og osisRef-verdiene er bevart, og språket er naturlig, moderne bokmål. Jeg fant ingen feil som bør rettes.",
+     "score": 10,
      "model": "claude-fable-5-2",
      "mechanical": [],
      "skipped": []
