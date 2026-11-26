@@ -91,6 +91,20 @@ requires.
 Fixing this meant **4,160 translation psalms need no entries at all**, and 1,008
 get the ordinary Hebrew shift.
 
+Mappings made before the fold that were not followed up (#164), now read against
+the text and pinned in `tests/psalm-titles.test.ts`:
+
+- `english_kj` Ps 9, 60, 77: no shift for the title. Now the same entries as `akjv`.
+- `dnb2024_nb`, `dnb2024_nn`, `dnb2011_nb` Ps 13, 51, 60: Bibelselskapet keeps the
+  title as its own verse, as osnb does. Same entries as osnb, except that 13:6 is
+  one whole verse that osmain 13:5 and 13:6 both point to (order 0/1), so the
+  reading lesson «Salme 13,6» round-trips.
+- The own editions (osnb, osnn, osen, oses) had stale entries at the end of Ps 18,
+  42, 64, 68, 81 and 140 from before osmain got the last verse of those psalms
+  (49f19d5a78). They sent the last osnb verse to a part of the verse before, so the
+  KJV came out one verse short. They are gone, and the osmain verses that still
+  repeated the added verse's text (18:50, 64:10, 68:35, 81:16, 140:13) are trimmed.
+
 ## 2. Errors in the translations' source data
 
 These **cannot** be fixed with mapping entries. They carry `derived.dataWarning`
