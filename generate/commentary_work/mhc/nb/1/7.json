@@ -7,13 +7,75 @@
    "section": 0,
    "start": 0,
    "end": 1,
-   "status": "draft",
-   "rounds": 0,
+   "status": "checked",
+   "rounds": 2,
    "attempts": 0,
-   "versions": [],
-   "reviews": [],
+   "versions": [
+    {
+     "text": [
+      "I dette kapitlet ser vi oppfyllelsen av det som ble forutsagt i det forrige, både om ødeleggelsen av den gamle verden og om Noahs frelse. For vi kan være sikre på at ikke ett av Guds ord skal falle til jorden. Der forlot vi Noah mens han var travelt opptatt med arken sin og full av omsorg for å få den ferdig i tide, mens resten av naboene lo av ham for alt strevet. Her ser vi nå hvordan det endte, både hans omsorg og deres sorgløshet. Og denne berømte perioden i den gamle verdens historie gir oss en viss forestilling om hvordan det vil være når den verden som nå er, skal ødelegges ved ild, slik den gamle ble ødelagt ved vann. Se <ref osisRef=\"2Pet.3.6-2Pet.3.7\">2 Pet 3,6–7</ref>. I dette kapitlet har vi: I. Guds nådige kall til Noah om å gå inn i arken (<ref osisRef=\"Gen.7.1\">v. 1</ref>) og ta med seg de skapningene som skulle bevares i live (<ref osisRef=\"Gen.7.2-Gen.7.3\">v. 2–3</ref>), i betraktning av at vannflommen var nær forestående, <ref osisRef=\"Gen.7.4\">v. 4</ref>. II. Noahs lydighet mot dette himmelske synet, <ref osisRef=\"Gen.7.5\">v. 5</ref>. Da han var seks hundre år gammel, gikk han inn i arken med familien sin (<ref osisRef=\"Gen.7.6-Gen.7.7\">v. 6–7</ref>) og tok skapningene med seg (<ref osisRef=\"Gen.7.8-Gen.7.9\">v. 8–9</ref>). Beretningen om dette gjentas (<ref osisRef=\"Gen.7.13-Gen.7.16\">v. 13–16</ref>), og der føyes det til at Gud i sin ømme omsorg lukket etter ham. III. Den varslede vannflommen kommer (<ref osisRef=\"Gen.7.10\">v. 10</ref>), årsakene til den (<ref osisRef=\"Gen.7.11-Gen.7.12\">v. 11–12</ref>) og hvordan den fikk overtaket, <ref osisRef=\"Gen.7.17-Gen.7.20\">v. 17–20</ref>. IV. De fryktelige ødeleggelsene den førte med seg, ved at hver levende skapning på jorden døde, unntatt de som var i arken, <ref osisRef=\"Gen.7.21-Gen.7.23\">v. 21–23</ref>. V. Hvor lenge den sto på sitt høyeste før den begynte å synke: hundre og femti dager, <ref osisRef=\"Gen.7.24\">v. 24</ref>."
+     ],
+     "explanation": "«Period» betyr her «ende, avslutning» i eldre engelsk. Henry sammenligner den gamle verdens undergang med den nåværende verdens undergang, ikke et tidsrom i historien. | «Care» betyr her bekymring eller iver. «Omsorg» betyr på norsk å ta seg av noen og passer ikke i sammenhengen. | Motsetningen «care»/«carelessness» gjelder bekymring mot ubekymrethet. «Omsorg» er feil ord og svekker kontrasten.",
+     "model": "claude-fable-5-2"
+    }
+   ],
+   "reviews": [
+    {
+     "argument": {
+      "premises": true,
+      "conclusions": true,
+      "evidence": true,
+      "problems": "Resonnementet er bevart: oppfyllelsen av forutsigelsen, begrunnelsen om at Guds ord ikke faller til jorden, parallellen mellom vannflommen og verdens kommende ødeleggelse ved ild (2 Pet 3,6–7) og alle fem punktene i disposisjonen med versreferanser. Én nyanse er svekket: «this famous period of the old world» betyr den gamle verdens ende. Gjengitt som «perioden i den gamle verdens historie» blir sammenligningen (ende mot ende) mindre presis, men den er fortsatt gjenkjennelig."
+     },
+     "issues": [
+      {
+       "paragraph": 1,
+       "quote": "denne berømte perioden i den gamle verdens historie",
+       "replacement": "denne navngjetne enden på den gamle verden",
+       "type": "meaning",
+       "severity": "major",
+       "explanation": "«Period» betyr her «ende, avslutning» i eldre engelsk. Henry sammenligner den gamle verdens undergang med den nåværende verdens undergang, ikke et tidsrom i historien."
+      },
+      {
+       "paragraph": 1,
+       "quote": "full av omsorg for å",
+       "replacement": "full av bekymring for å",
+       "type": "meaning",
+       "severity": "minor",
+       "explanation": "«Care» betyr her bekymring eller iver. «Omsorg» betyr på norsk å ta seg av noen og passer ikke i sammenhengen."
+      },
+      {
+       "paragraph": 1,
+       "quote": "hans omsorg og deres sorgløshet",
+       "replacement": "hans bekymring og deres ubekymrethet",
+       "type": "meaning",
+       "severity": "minor",
+       "explanation": "Motsetningen «care»/«carelessness» gjelder bekymring mot ubekymrethet. «Omsorg» er feil ord og svekker kontrasten."
+      }
+     ],
+     "summary": "Trofast og velskrevet gjengivelse med all merking, alle referanser og alle fem punkter intakt. Svakhetene er at «period» (ende) er misforstått som tidsperiode, og at «care» to ganger er gjengitt med det misvisende «omsorg».",
+     "score": 8,
+     "model": "claude-fable-5-2",
+     "mechanical": [],
+     "skipped": []
+    },
+    {
+     "argument": {
+      "premises": true,
+      "conclusions": true,
+      "evidence": true,
+      "problems": ""
+     },
+     "issues": [],
+     "summary": "Gjengivelsen er trofast og idiomatisk. Alle ledd i kapitteloversikten (I–V), alle versreferanser, tallene (seks hundre år, hundre og femti dager) og henvisningen til 2 Pet 3,6–7 er bevart med uendrede osisRef-verdier. Begrunnelsen om at ikke noe Guds ord faller til jorden og parallellen mellom vann og ild er med i samme vekt som i kilden. Ingen feil funnet.",
+     "score": 10,
+     "model": "claude-fable-5-2",
+     "mechanical": [],
+     "skipped": []
+    }
+   ],
    "text": [
-    "I dette kapitlet ser vi oppfyllelsen av det som ble forutsagt i det forrige, både om ødeleggelsen av den gamle verden og om Noahs frelse. For vi kan være sikre på at ikke ett av Guds ord skal falle til jorden. Der forlot vi Noah mens han var travelt opptatt med arken sin og full av omsorg for å få den ferdig i tide, mens resten av naboene lo av ham for alt strevet. Her ser vi nå hvordan det endte, både hans omsorg og deres sorgløshet. Og denne berømte perioden i den gamle verdens historie gir oss en viss forestilling om hvordan det vil være når den verden som nå er, skal ødelegges ved ild, slik den gamle ble ødelagt ved vann. Se <ref osisRef=\"2Pet.3.6-2Pet.3.7\">2 Pet 3,6–7</ref>. I dette kapitlet har vi: I. Guds nådige kall til Noah om å gå inn i arken (<ref osisRef=\"Gen.7.1\">v. 1</ref>) og ta med seg de skapningene som skulle bevares i live (<ref osisRef=\"Gen.7.2-Gen.7.3\">v. 2–3</ref>), i betraktning av at vannflommen var nær forestående, <ref osisRef=\"Gen.7.4\">v. 4</ref>. II. Noahs lydighet mot dette himmelske synet, <ref osisRef=\"Gen.7.5\">v. 5</ref>. Da han var seks hundre år gammel, gikk han inn i arken med familien sin (<ref osisRef=\"Gen.7.6-Gen.7.7\">v. 6–7</ref>) og tok skapningene med seg (<ref osisRef=\"Gen.7.8-Gen.7.9\">v. 8–9</ref>). Beretningen om dette gjentas (<ref osisRef=\"Gen.7.13-Gen.7.16\">v. 13–16</ref>), og der føyes det til at Gud i sin ømme omsorg lukket etter ham. III. Den varslede vannflommen kommer (<ref osisRef=\"Gen.7.10\">v. 10</ref>), årsakene til den (<ref osisRef=\"Gen.7.11-Gen.7.12\">v. 11–12</ref>) og hvordan den fikk overtaket, <ref osisRef=\"Gen.7.17-Gen.7.20\">v. 17–20</ref>. IV. De fryktelige ødeleggelsene den førte med seg, ved at hver levende skapning på jorden døde, unntatt de som var i arken, <ref osisRef=\"Gen.7.21-Gen.7.23\">v. 21–23</ref>. V. Hvor lenge den sto på sitt høyeste før den begynte å synke: hundre og femti dager, <ref osisRef=\"Gen.7.24\">v. 24</ref>."
+    "I dette kapitlet ser vi oppfyllelsen av det som ble forutsagt i det forrige, både om ødeleggelsen av den gamle verden og om Noahs frelse. For vi kan være sikre på at ikke ett av Guds ord skal falle til jorden. Der forlot vi Noah mens han var travelt opptatt med arken sin og full av bekymring for å få den ferdig i tide, mens resten av naboene lo av ham for alt strevet. Her ser vi nå hvordan det endte, både hans bekymring og deres ubekymrethet. Og denne navngjetne enden på den gamle verden gir oss en viss forestilling om hvordan det vil være når den verden som nå er, skal ødelegges ved ild, slik den gamle ble ødelagt ved vann. Se <ref osisRef=\"2Pet.3.6-2Pet.3.7\">2 Pet 3,6–7</ref>. I dette kapitlet har vi: I. Guds nådige kall til Noah om å gå inn i arken (<ref osisRef=\"Gen.7.1\">v. 1</ref>) og ta med seg de skapningene som skulle bevares i live (<ref osisRef=\"Gen.7.2-Gen.7.3\">v. 2–3</ref>), i betraktning av at vannflommen var nær forestående, <ref osisRef=\"Gen.7.4\">v. 4</ref>. II. Noahs lydighet mot dette himmelske synet, <ref osisRef=\"Gen.7.5\">v. 5</ref>. Da han var seks hundre år gammel, gikk han inn i arken med familien sin (<ref osisRef=\"Gen.7.6-Gen.7.7\">v. 6–7</ref>) og tok skapningene med seg (<ref osisRef=\"Gen.7.8-Gen.7.9\">v. 8–9</ref>). Beretningen om dette gjentas (<ref osisRef=\"Gen.7.13-Gen.7.16\">v. 13–16</ref>), og der føyes det til at Gud i sin ømme omsorg lukket etter ham. III. Den varslede vannflommen kommer (<ref osisRef=\"Gen.7.10\">v. 10</ref>), årsakene til den (<ref osisRef=\"Gen.7.11-Gen.7.12\">v. 11–12</ref>) og hvordan den fikk overtaket, <ref osisRef=\"Gen.7.17-Gen.7.20\">v. 17–20</ref>. IV. De fryktelige ødeleggelsene den førte med seg, ved at hver levende skapning på jorden døde, unntatt de som var i arken, <ref osisRef=\"Gen.7.21-Gen.7.23\">v. 21–23</ref>. V. Hvor lenge den sto på sitt høyeste før den begynte å synke: hundre og femti dager, <ref osisRef=\"Gen.7.24\">v. 24</ref>."
    ],
    "translator": "claude-fable-5-2",
    "model": "claude-fable-5-2"
@@ -23,11 +85,26 @@
    "section": 1,
    "start": 0,
    "end": 7,
-   "status": "draft",
-   "rounds": 0,
+   "status": "checked",
+   "rounds": 1,
    "attempts": 0,
    "versions": [],
-   "reviews": [],
+   "reviews": [
+    {
+     "argument": {
+      "premises": true,
+      "conclusions": true,
+      "evidence": true,
+      "problems": ""
+     },
+     "issues": [],
+     "summary": "Gjengivelsen er trofast i alle sju avsnitt: hvert punkt, hver nummerering, hvert sitat og hver henvisning er med, med samme innhold og vekt som i kilden. Merkingen og osisRef står som i kilden, og språket er naturlig moderne bokmål. To frie valg i avsnitt 6 er vurdert og ikke regnet som feil: «he» er presisert til «Noah», og «are still propagated» er gjengitt som «og slik formeres de fremdeles».",
+     "score": 10,
+     "model": "claude-fable-5-2",
+     "mechanical": [],
+     "skipped": []
+    }
+   ],
    "text": [
     "<h>Noah innbys til arken. (2349 f.Kr.)</h>",
     "<sup>1</sup> Og Herren sa til Noah: Kom, du og hele ditt hus, inn i arken; for deg har jeg sett rettferdig for mitt åsyn i denne slekt. <sup>2</sup> Av alle rene dyr skal du ta til deg sju og sju, hannen og hans hunn; og av de dyr som ikke <i>er</i> rene, to og to, hannen og hans hunn. <sup>3</sup> Også av himmelens fugler sju og sju, hann og hunn, for å holde ætt i live over hele jordens flate. <sup>4</sup> For ennå sju dager, så vil jeg la det regne på jorden i førti dager og førti netter; og alt levende som jeg har gjort, vil jeg utslette fra jordens flate.",
@@ -45,11 +122,26 @@
    "section": 2,
    "start": 0,
    "end": 3,
-   "status": "draft",
-   "rounds": 0,
+   "status": "checked",
+   "rounds": 1,
    "attempts": 0,
    "versions": [],
-   "reviews": [],
+   "reviews": [
+    {
+     "argument": {
+      "premises": true,
+      "conclusions": true,
+      "evidence": true,
+      "problems": ""
+     },
+     "issues": [],
+     "summary": "Gjengivelsen er trofast og velskrevet. Alle tre observasjonene (Noahs tro uten synlige tegn, familien og argumentet mot flerkoneri, dyrenes villighet mot menneskets sløvhet) er med, med samme innhold og vekt. Skrifthenvisningene, tallene og merkingen stemmer med kilden, og språket er naturlig bokmål.",
+     "score": 10,
+     "model": "claude-fable-5-2",
+     "mechanical": [],
+     "skipped": []
+    }
+   ],
    "text": [
     "<h>Storflommen. (2349 f.Kr.)</h>",
     "<sup>5</sup> Og Noah gjorde i ett og alt som Herren hadde befalt ham. <sup>6</sup> Og Noah <i>var</i> seks hundre år gammel da vannflommen kom over jorden. <sup>7</sup> Og Noah gikk inn, og hans sønner og hans kone og hans sønners koner med ham, inn i arken, på grunn av flommens vann. <sup>8</sup> Av rene dyr og av dyr som ikke <i>er</i> rene, og av fugler og av alt som kryper på jorden, <sup>9</sup> gikk det to og to inn til Noah i arken, hann og hunn, slik Gud hadde befalt Noah. <sup>10</sup> Og det skjedde etter sju dager at flommens vann kom over jorden.",
@@ -63,11 +155,26 @@
    "section": 3,
    "start": 0,
    "end": 8,
-   "status": "draft",
-   "rounds": 0,
+   "status": "checked",
+   "rounds": 1,
    "attempts": 0,
    "versions": [],
-   "reviews": [],
+   "reviews": [
+    {
+     "argument": {
+      "premises": true,
+      "conclusions": true,
+      "evidence": true,
+      "problems": ""
+     },
+     "issues": [],
+     "summary": "Gjengivelsen er trofast avsnitt for avsnitt: alle resonnementer, alle skriftsteder, tall og osisRef-er stemmer med kilden, merkingen er bevart, og språket er naturlig bokmål. Jeg fant ingen feil som bør rettes.",
+     "score": 10,
+     "model": "claude-fable-5-2",
+     "mechanical": [],
+     "skipped": []
+    }
+   ],
    "text": [
     "<sup>11</sup> I det sekshundrede året av Noahs liv, i den andre måneden, på den syttende dagen i måneden, på den samme dagen ble alle det store dyps kilder brutt opp, og himmelens vinduer ble åpnet. <sup>12</sup> Og regnet var over jorden i førti dager og førti netter.",
     "Her har vi: I. Tidspunktet for denne store hendelsen. Det er nøye nedtegnet, for at beretningen skal være desto sikrere.",
@@ -86,11 +193,26 @@
    "section": 4,
    "start": 0,
    "end": 7,
-   "status": "draft",
-   "rounds": 0,
+   "status": "checked",
+   "rounds": 1,
    "attempts": 0,
    "versions": [],
-   "reviews": [],
+   "reviews": [
+    {
+     "argument": {
+      "premises": true,
+      "conclusions": true,
+      "evidence": true,
+      "problems": ""
+     },
+     "issues": [],
+     "summary": "Gjengivelsen er trofast avsnitt for avsnitt: alle fem punktene, underpunktene, skriftstedene og sitatene er med, med samme innhold og vekt som i kilden. Henvisninger og merking er korrekte, og språket er naturlig moderne bokmål. Ingen feil funnet.",
+     "score": 10,
+     "model": "claude-fable-5-2",
+     "mechanical": [],
+     "skipped": []
+    }
+   ],
    "text": [
     "<sup>13</sup> Samme dag gikk Noah og Sem og Kam og Jafet, Noahs sønner, og Noahs kone og de tre sønnekonene hans sammen med dem, inn i arken; <sup>14</sup> de og alle ville dyr etter sitt slag, og alt fe etter sitt slag, og alt kryp som kryper på jorden, etter sitt slag, og alle fugler etter sitt slag, hver fugl av alle slag. 15 Og de gikk inn til Noah i arken, to og to av alt kjød som det <i>er</i> livsånde i. <sup>16</sup> Og de som gikk inn, gikk inn som hann og hunn av alt kjød, slik Gud hadde befalt ham; og Herren lukket ham inne.",
     "Her gjentas det som allerede er fortalt om at Noah gikk inn i arken sammen med familien sin og de skapningene som var utpekt til å bli bevart. Legg nå merke til dette:",
@@ -108,16 +230,52 @@
    "section": 5,
    "start": 0,
    "end": 5,
-   "status": "draft",
-   "rounds": 0,
+   "status": "checked",
+   "rounds": 1,
    "attempts": 0,
-   "versions": [],
-   "reviews": [],
+   "versions": [
+    {
+     "text": [
+      "<sup>17</sup> Og flommen var over jorden i førti dager; og vannet økte og bar arken oppe, og den ble løftet opp over jorden. <sup>18</sup> Og vannet fikk overhånd og økte sterkt på jorden; og arken fór på vannets flate. <sup>19</sup> Og vannet fikk overmåte stor overhånd på jorden; og alle de høye fjellene som <i>var</i> under hele himmelen, ble dekket. <sup>20</sup> Femten alen oppover fikk vannet overhånd; og fjellene ble dekket.",
+      "Her får vi vite:",
+      "I. Hvor lenge flommen fortsatte å stige: <i>førti dager,</i> <ref osisRef=\"Gen.7.17\">v. 17</ref>. Den ugudelige verden hadde ikke trodd at flommen ville komme. Da den kom, smigret de seg trolig med håp om at den snart ville avta og aldri ville gå til det ytterste. Men den steg fortsatt, den fikk overhånd. Merk: 1. Når Gud dømmer, vinner han. Begynner han, så fullfører han også; hans vei er fullkommen, både i dom og i barmhjertighet. 2. Guds dommer nærmer seg og rykker fram gradvis, og meningen med det er å føre syndere til omvendelse. Likevel blir nettopp dette ofte misbrukt, så de forherdes i sin formastelige selvsikkerhet.",
+      "II. Hvor høyt vannet steg: Det steg så høyt at ikke bare de lave slettelandene ble oversvømt. For at verket skulle gjøres grundig og ingen skulle slippe unna, ble også toppene på de høyeste fjellene oversvømt – med <i>femten alen,</i> det vil si sju og en halv yard. Dermed var det <i>forgjeves å håpe på frelse fra hauger eller fjell,</i> <ref osisRef=\"Jer.3.23\">Jer 3,23</ref>. Ingen av Guds skapninger er så høye at ikke hans makt kan rage over dem, og han vil la dem få vite at der de farer hovmodig fram, står han over dem. Kanskje ble fjelltoppene vasket ned av vannets kraft, noe som i så fall hjalp mye til at vannet fikk overhånd over dem. For det heter (<ref osisRef=\"Job.12.15\">Job 12,15</ref>): <i>Han sender vannet ut,</i> og det ikke bare oversvømmer jorden, men velter den om. Slik ble løgnens tilflukt feid bort, og vannet oversvømte disse syndernes skjulested (<ref osisRef=\"Isa.28.17\">Jes 28,17</ref>), og forgjeves flykter de dit for å finne trygghet, <ref osisRef=\"Rev.6.16\">Åp 6,16</ref>. Nå vek fjellene og haugene rokket, og ingenting kunne være et menneske til hjelp uten <i>fredspakten,</i> <ref osisRef=\"Isa.54.10\">Jes 54,10</ref>. Det finnes ikke noe sted på jorden som ligger så høyt at det setter mennesker utenfor rekkevidde for Guds dommer, <ref osisRef=\"Jer.49.16\">Jer 49,16</ref>; <ref osisRef=\"Obad.1.3-Obad.1.4\">Ob 3–4</ref>. Guds hånd skal <i>finne alle hans fiender,</i> <ref osisRef=\"Ps.21.8\">Sal 21,8</ref>. Legg merke til hvor nøyaktig dybden er loddet (<i>femten alen</i>), ikke med Noahs lodd, men ved kunnskapen hos ham som <i>veier vannet med mål,</i> <ref osisRef=\"Job.28.25\">Job 28,25</ref>.",
+      "III. Hva som skjedde med Noahs ark da vannet steg slik: <i>Den ble løftet opp over jorden</i> (<ref osisRef=\"Gen.7.17\">v. 17</ref>) <i>og fór på vannets flate,</i> <ref osisRef=\"Gen.7.18\">v. 18</ref>. Alle andre byggverk ble revet ned av vannet og begravd under det; bare arken ble stående. Legg merke til: 1. Det samme vannet som brøt ned alt annet, bar arken oppe. Det som for de vantro er en duft av død til død, er for de troende en duft av liv til liv. 2. Jo mer vannet steg, desto høyere ble arken løftet opp mot himmelen. Slik er helligede trengsler åndelige opphøyelser, og når trengslene blir mange, blir trøsten enda mye rikere."
+     ],
+     "explanation": "«Rokke» er transitivt på norsk. Kildens «the hills were removed» er passiv, så det må stå «ble rokket» (eller «rokkes»).",
+     "model": "claude-fable-5-2"
+    }
+   ],
+   "reviews": [
+    {
+     "argument": {
+      "premises": true,
+      "conclusions": true,
+      "evidence": true,
+      "problems": ""
+     },
+     "issues": [
+      {
+       "paragraph": 4,
+       "quote": "haugene rokket",
+       "replacement": "haugene ble rokket",
+       "type": "grammar",
+       "severity": "minor",
+       "explanation": "«Rokke» er transitivt på norsk. Kildens «the hills were removed» er passiv, så det må stå «ble rokket» (eller «rokkes»)."
+      }
+     ],
+     "summary": "Gjengivelsen er trofast og velskrevet. Alle tre hovedpunktene, begge «Merk»-leddene og samtlige skriftbelegg står med riktig osisRef og norsk henvisningsform, og merkingen er bevart. Eneste funn er en liten grammatisk feil i avsnitt 4.",
+     "score": 9,
+     "model": "claude-fable-5-2",
+     "mechanical": [],
+     "skipped": []
+    }
+   ],
    "text": [
     "<sup>17</sup> Og flommen var over jorden i førti dager; og vannet økte og bar arken oppe, og den ble løftet opp over jorden. <sup>18</sup> Og vannet fikk overhånd og økte sterkt på jorden; og arken fór på vannets flate. <sup>19</sup> Og vannet fikk overmåte stor overhånd på jorden; og alle de høye fjellene som <i>var</i> under hele himmelen, ble dekket. <sup>20</sup> Femten alen oppover fikk vannet overhånd; og fjellene ble dekket.",
     "Her får vi vite:",
     "I. Hvor lenge flommen fortsatte å stige: <i>førti dager,</i> <ref osisRef=\"Gen.7.17\">v. 17</ref>. Den ugudelige verden hadde ikke trodd at flommen ville komme. Da den kom, smigret de seg trolig med håp om at den snart ville avta og aldri ville gå til det ytterste. Men den steg fortsatt, den fikk overhånd. Merk: 1. Når Gud dømmer, vinner han. Begynner han, så fullfører han også; hans vei er fullkommen, både i dom og i barmhjertighet. 2. Guds dommer nærmer seg og rykker fram gradvis, og meningen med det er å føre syndere til omvendelse. Likevel blir nettopp dette ofte misbrukt, så de forherdes i sin formastelige selvsikkerhet.",
-    "II. Hvor høyt vannet steg: Det steg så høyt at ikke bare de lave slettelandene ble oversvømt. For at verket skulle gjøres grundig og ingen skulle slippe unna, ble også toppene på de høyeste fjellene oversvømt – med <i>femten alen,</i> det vil si sju og en halv yard. Dermed var det <i>forgjeves å håpe på frelse fra hauger eller fjell,</i> <ref osisRef=\"Jer.3.23\">Jer 3,23</ref>. Ingen av Guds skapninger er så høye at ikke hans makt kan rage over dem, og han vil la dem få vite at der de farer hovmodig fram, står han over dem. Kanskje ble fjelltoppene vasket ned av vannets kraft, noe som i så fall hjalp mye til at vannet fikk overhånd over dem. For det heter (<ref osisRef=\"Job.12.15\">Job 12,15</ref>): <i>Han sender vannet ut,</i> og det ikke bare oversvømmer jorden, men velter den om. Slik ble løgnens tilflukt feid bort, og vannet oversvømte disse syndernes skjulested (<ref osisRef=\"Isa.28.17\">Jes 28,17</ref>), og forgjeves flykter de dit for å finne trygghet, <ref osisRef=\"Rev.6.16\">Åp 6,16</ref>. Nå vek fjellene og haugene rokket, og ingenting kunne være et menneske til hjelp uten <i>fredspakten,</i> <ref osisRef=\"Isa.54.10\">Jes 54,10</ref>. Det finnes ikke noe sted på jorden som ligger så høyt at det setter mennesker utenfor rekkevidde for Guds dommer, <ref osisRef=\"Jer.49.16\">Jer 49,16</ref>; <ref osisRef=\"Obad.1.3-Obad.1.4\">Ob 3–4</ref>. Guds hånd skal <i>finne alle hans fiender,</i> <ref osisRef=\"Ps.21.8\">Sal 21,8</ref>. Legg merke til hvor nøyaktig dybden er loddet (<i>femten alen</i>), ikke med Noahs lodd, men ved kunnskapen hos ham som <i>veier vannet med mål,</i> <ref osisRef=\"Job.28.25\">Job 28,25</ref>.",
+    "II. Hvor høyt vannet steg: Det steg så høyt at ikke bare de lave slettelandene ble oversvømt. For at verket skulle gjøres grundig og ingen skulle slippe unna, ble også toppene på de høyeste fjellene oversvømt – med <i>femten alen,</i> det vil si sju og en halv yard. Dermed var det <i>forgjeves å håpe på frelse fra hauger eller fjell,</i> <ref osisRef=\"Jer.3.23\">Jer 3,23</ref>. Ingen av Guds skapninger er så høye at ikke hans makt kan rage over dem, og han vil la dem få vite at der de farer hovmodig fram, står han over dem. Kanskje ble fjelltoppene vasket ned av vannets kraft, noe som i så fall hjalp mye til at vannet fikk overhånd over dem. For det heter (<ref osisRef=\"Job.12.15\">Job 12,15</ref>): <i>Han sender vannet ut,</i> og det ikke bare oversvømmer jorden, men velter den om. Slik ble løgnens tilflukt feid bort, og vannet oversvømte disse syndernes skjulested (<ref osisRef=\"Isa.28.17\">Jes 28,17</ref>), og forgjeves flykter de dit for å finne trygghet, <ref osisRef=\"Rev.6.16\">Åp 6,16</ref>. Nå vek fjellene og haugene ble rokket, og ingenting kunne være et menneske til hjelp uten <i>fredspakten,</i> <ref osisRef=\"Isa.54.10\">Jes 54,10</ref>. Det finnes ikke noe sted på jorden som ligger så høyt at det setter mennesker utenfor rekkevidde for Guds dommer, <ref osisRef=\"Jer.49.16\">Jer 49,16</ref>; <ref osisRef=\"Obad.1.3-Obad.1.4\">Ob 3–4</ref>. Guds hånd skal <i>finne alle hans fiender,</i> <ref osisRef=\"Ps.21.8\">Sal 21,8</ref>. Legg merke til hvor nøyaktig dybden er loddet (<i>femten alen</i>), ikke med Noahs lodd, men ved kunnskapen hos ham som <i>veier vannet med mål,</i> <ref osisRef=\"Job.28.25\">Job 28,25</ref>.",
     "III. Hva som skjedde med Noahs ark da vannet steg slik: <i>Den ble løftet opp over jorden</i> (<ref osisRef=\"Gen.7.17\">v. 17</ref>) <i>og fór på vannets flate,</i> <ref osisRef=\"Gen.7.18\">v. 18</ref>. Alle andre byggverk ble revet ned av vannet og begravd under det; bare arken ble stående. Legg merke til: 1. Det samme vannet som brøt ned alt annet, bar arken oppe. Det som for de vantro er en duft av død til død, er for de troende en duft av liv til liv. 2. Jo mer vannet steg, desto høyere ble arken løftet opp mot himmelen. Slik er helligede trengsler åndelige opphøyelser, og når trengslene blir mange, blir trøsten enda mye rikere."
    ],
    "translator": "claude-fable-5-2",
@@ -128,11 +286,26 @@
    "section": 6,
    "start": 0,
    "end": 6,
-   "status": "draft",
-   "rounds": 0,
+   "status": "checked",
+   "rounds": 1,
    "attempts": 0,
    "versions": [],
-   "reviews": [],
+   "reviews": [
+    {
+     "argument": {
+      "premises": true,
+      "conclusions": true,
+      "evidence": true,
+      "problems": ""
+     },
+     "issues": [],
+     "summary": "Gjengivelsen er trofast i alle seks avsnitt: hvert resonnement, sitat og skriftsted er med, osisRef og merking står som i kilden, og språket er naturlig bokmål. Ingen feil funnet.",
+     "score": 10,
+     "model": "claude-fable-5-2",
+     "mechanical": [],
+     "skipped": []
+    }
+   ],
    "text": [
     "<sup>21</sup> Og alt kjød som rørte seg på jorden, døde, både fugler og fe og ville dyr og alt kryp som kryper på jorden, og hvert menneske. <sup>22</sup> Alt som <i>hadde</i> livets ånde i sine nesebor, alt som <i>var</i> på det tørre <i>land,</i> døde. <sup>23</sup> Og hvert levende vesen som var på jordens overflate, ble utryddet, både mennesker og fe og krypdyr og himmelens fugler; de ble utryddet fra jorden. Bare Noah ble tilbake <i>i live,</i> og de som <i>var</i> med ham i arken. <sup>24</sup> Og vannet hadde overtaket på jorden i hundre og femti dager.",
     "Her har vi: I. Den allmenne ødeleggelsen av alt kjød i flommens vann. <i>Kom og se de ødeleggelsene Gud gjør på jorden</i> (<ref osisRef=\"Ps.46.8\">Sal 46,8</ref>), og hvordan han legger haug på haug. Aldri har døden triumfert slik som den gjorde da, fra den først kom inn i verden og til denne dag. Kom og se Døden på sin gulbleke hest, og helvete som følger med ham, <ref osisRef=\"Rev.6.7-Rev.6.8\">Åp 6,7–8</ref>.",
