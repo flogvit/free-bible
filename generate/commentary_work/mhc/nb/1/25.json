@@ -7,11 +7,26 @@
    "section": 0,
    "start": 0,
    "end": 1,
-   "status": "draft",
-   "rounds": 0,
+   "status": "checked",
+   "rounds": 1,
    "attempts": 0,
    "versions": [],
-   "reviews": [],
+   "reviews": [
+    {
+     "argument": {
+      "premises": true,
+      "conclusions": true,
+      "evidence": true,
+      "problems": ""
+     },
+     "issues": [],
+     "summary": "Gjengivelsen er trofast og fullstendig. Alle tre hovedpunktene med underpunkter er med i riktig rekkefølge, og alle versene og osisRef-verdiene stemmer med kilden. Språket er naturlig norsk bokmål, og ingenting er lagt til eller utelatt.",
+     "score": 10,
+     "model": "claude-fable-5-2",
+     "mechanical": [],
+     "skipped": []
+    }
+   ],
    "text": [
     "I dette kapitlet gjør den hellige historieskriveren følgende: I. Han tar avskjed med Abraham og forteller 1. om barna han fikk med en annen kone, <ref osisRef=\"Gen.25.1-Gen.25.4\">v. 1–4</ref>, 2. om hans siste vilje og testamente, <ref osisRef=\"Gen.25.5-Gen.25.6\">v. 5–6</ref>, og 3. om hans alder, død og begravelse, <ref osisRef=\"Gen.25.7-Gen.25.10\">v. 7–10</ref>. II. Han tar avskjed med Ismael og forteller kort 1. om barna hans, <ref osisRef=\"Gen.25.12-Gen.25.16\">v. 12–16</ref>, og 2. om hans alder og død, <ref osisRef=\"Gen.25.17-Gen.25.18\">v. 17–18</ref>. III. Han tar fatt på Isaks historie: 1. hans framgang, <ref osisRef=\"Gen.25.11\">v. 11</ref>, 2. unnfangelsen og fødselen av hans to sønner, med Guds orakelsvar om dem, <ref osisRef=\"Gen.25.19-Gen.25.26\">v. 19–26</ref>, 3. deres ulike karakter, <ref osisRef=\"Gen.25.27-Gen.25.28\">v. 27–28</ref>, og 4. at Esau solgte førstefødselsretten sin til Jakob, <ref osisRef=\"Gen.25.29-Gen.25.34\">v. 29–34</ref>."
    ],
@@ -23,11 +38,60 @@
    "section": 1,
    "start": 0,
    "end": 7,
-   "status": "draft",
-   "rounds": 0,
+   "status": "stuck",
+   "rounds": 3,
    "attempts": 0,
    "versions": [],
-   "reviews": [],
+   "reviews": [
+    {
+     "argument": {
+      "premises": true,
+      "conclusions": true,
+      "evidence": true,
+      "problems": ""
+     },
+     "issues": [],
+     "summary": "Gjengivelsen er trofast og idiomatisk: alle resonnementer, tall, skriftsteder og det latinske sitatet er med, og merkingen og osisRef står som i kilden. Det mekaniske varselet for avsnitt 5 er vurdert og er falsk alarm: punkt «2.» og henvisningene (v. 5–6; kap. 24,36; Dom 6,5 og 33) stemmer med kilden. Ingen rettelser er nødvendige.",
+     "score": 10,
+     "model": "claude-fable-5-2",
+     "mechanical": [
+      "paragraph 5: page: missing 2"
+     ],
+     "skipped": []
+    },
+    {
+     "argument": {
+      "premises": true,
+      "conclusions": true,
+      "evidence": true,
+      "problems": ""
+     },
+     "issues": [],
+     "summary": "Gjengivelsen er trofast og idiomatisk: alle resonnementer, oppregninger, sitater og henvisninger er med, og merkingen er intakt. Den mekaniske advarselen for avsnitt 5 er falsk alarm; både punkt «2.» og henvisningene (v. 5–6, kap. 24,36, Dom 6,5.33) stemmer med kilden.",
+     "score": 10,
+     "model": "claude-fable-5-2",
+     "mechanical": [
+      "paragraph 5: page: missing 2"
+     ],
+     "skipped": []
+    },
+    {
+     "argument": {
+      "premises": true,
+      "conclusions": true,
+      "evidence": true,
+      "problems": ""
+     },
+     "issues": [],
+     "summary": "Gjengivelsen er trofast og idiomatisk: alle resonnementer, punktlister, sitater og henvisninger er bevart, og merkingen er intakt. Den mekaniske sjekken for avsnitt 5 er falsk alarm; tallene (v. 5–6, kap. 24,36, punkt 1 og 2, Dom 6,5 og 33) stemmer med kilden.",
+     "score": 10,
+     "model": "claude-fable-5-2",
+     "mechanical": [
+      "paragraph 5: page: missing 2"
+     ],
+     "skipped": []
+    }
+   ],
    "text": [
     "<h>Abrahams død. (1822 f.Kr.)</h>",
     "<sup>1</sup> Så tok Abraham seg igjen en kone, og hennes navn <i>var</i> Ketura. <sup>2</sup> Og hun fødte ham Simran og Joksjan og Medan og Midian og Jisjbak og Sjuah. <sup>3</sup> Og Joksjan fikk Saba og Dedan. Og Dedans sønner var assurittene, letusjittene og leummittene. <sup>4</sup> Og Midians sønner: Efa og Efer og Hanok og Abida og Eldaa. Alle disse <i>var</i> Keturas barn. <sup>5</sup> Og Abraham ga alt han eide, til Isak. <sup>6</sup> Men til sønnene av medhustruene som Abraham hadde, ga Abraham gaver, og han sendte dem bort fra sin sønn Isak mens han ennå levde, østover, til Østerlandet. <sup>7</sup> Og dette <i>er</i> dagene i Abrahams leveår, som han levde: hundre og syttifem år. <sup>8</sup> Så oppga Abraham ånden og døde i en god alderdom, en gammel mann og mett <i>av år</i>; og han ble samlet til sitt folk. <sup>9</sup> Og hans sønner Isak og Ismael begravde ham i Makpela-hulen, på marken til hetitten Efron, Sohars sønn, som <i>ligger</i> rett foran Mamre, <sup>10</sup> den marken som Abraham hadde kjøpt av Hets sønner. Der ble Abraham begravet, og Sara, hans kone.",
@@ -38,18 +102,34 @@
     "IV. Begravelsen hans, <ref osisRef=\"Gen.25.9-Gen.25.10\">v. 9–10</ref>. Det står ingenting her om prakt eller seremonier ved gravferden. Vi får bare vite: 1. Hvem som begravde ham: <i>hans sønner Isak og Ismael</i>. Det var den siste æren de kunne vise sin gode far. Tidligere hadde det vært en viss avstand mellom Isak og Ismael. Men det ser ut til at Abraham enten selv hadde ført dem sammen mens han levde, eller i det minste at hans død forsonte dem. 2. Hvor de begravde ham: i hans eget gravsted, som han selv hadde kjøpt, og der han hadde begravet Sara. Merk: De som har stått hverandre svært nær i livet, kan ønske å bli begravet sammen, og det er ikke bare uskyldig, men prisverdig. Slik blir de ikke skilt i døden, og det er et tegn på håpet deres om å stå opp sammen."
    ],
    "translator": "claude-fable-5-2",
-   "model": "claude-fable-5-2"
+   "model": "claude-fable-5-2",
+   "note": "not clean after 3 reviews"
   },
   {
    "id": "1-25-2-0",
    "section": 2,
    "start": 0,
    "end": 3,
-   "status": "draft",
-   "rounds": 0,
+   "status": "checked",
+   "rounds": 1,
    "attempts": 0,
    "versions": [],
-   "reviews": [],
+   "reviews": [
+    {
+     "argument": {
+      "premises": true,
+      "conclusions": true,
+      "evidence": true,
+      "problems": ""
+     },
+     "issues": [],
+     "summary": "Gjengivelsen er trofast og fullstendig: alle resonnementer, merknader, sitater og henvisninger (med osisRef uendret) står med samme innhold og vekt som i kilden. Språket er naturlig moderne bokmål, og merkingen er bevart. Ingen feil funnet.",
+     "score": 10,
+     "model": "claude-fable-5-2",
+     "mechanical": [],
+     "skipped": []
+    }
+   ],
    "text": [
     "<h>Ismaels ættetavle. (1822 f.Kr.)</h>",
     "<sup>11</sup> Og det skjedde etter Abrahams død at Gud velsignet hans sønn Isak; og Isak bodde ved brønnen Lakai-Ro'i. <sup>12</sup> Dette <i>er</i> slektshistorien til Ismael, Abrahams sønn, som egypterkvinnen Hagar, Saras tjenestekvinne, fødte Abraham. <sup>13</sup> Og dette <i>er</i> navnene på Ismaels sønner, etter deres navn, etter deres slekter: Ismaels førstefødte, Nebajot; og Kedar og Adbe'el og Mibsam, <sup>14</sup> og Misjma og Duma og Massa, <sup>15</sup> Hadar og Tema, Jetur, Nafisj og Kedma. <sup>16</sup> Dette <i>er</i> Ismaels sønner, og dette <i>er</i> deres navn, etter deres byer og etter deres borger; tolv fyrster etter deres folk. <sup>17</sup> Og dette <i>er</i> Ismaels leveår: hundre og trettisju år; og han oppgav ånden og døde og ble samlet til sitt folk. <sup>18</sup> Og de bodde fra Havila til Sur, som <i>ligger</i> foran Egypt, når du går mot Assyria; <i>og</i> han døde i alle sine brødres nærvær.",
@@ -63,11 +143,26 @@
    "section": 3,
    "start": 0,
    "end": 12,
-   "status": "draft",
-   "rounds": 0,
+   "status": "checked",
+   "rounds": 1,
    "attempts": 0,
    "versions": [],
-   "reviews": [],
+   "reviews": [
+    {
+     "argument": {
+      "premises": true,
+      "conclusions": true,
+      "evidence": true,
+      "problems": ""
+     },
+     "issues": [],
+     "summary": "Gjengivelsen er trofast i alle tolv avsnitt: resonnementer, nummererte punkter, skriftsteder, tall og merking stemmer med kilden, og språket er naturlig moderne bokmål. Ingen feil funnet.",
+     "score": 10,
+     "model": "claude-fable-5-2",
+     "mechanical": [],
+     "skipped": []
+    }
+   ],
    "text": [
     "<h>Esau og Jakob blir født. (1837 f.Kr.)</h>",
     "<sup>19</sup> Og dette <i>er</i> slektshistorien til Isak, Abrahams sønn: Abraham fikk Isak. <sup>20</sup> Og Isak var førti år gammel da han tok Rebekka til kone, datter av syreren Betuel fra Paddan-Aram, søster av syreren Laban. 21 Og Isak bønnfalt Herren for sin kone, fordi hun <i>var</i> ufruktbar; og Herren lot seg bønnfalle av ham, og Rebekka, hans kone, ble med barn. <sup>22</sup> Og barna kjempet med hverandre i henne; og hun sa: Hvis <i>det er</i> slik, hvorfor <i>er</i> jeg da slik? Og hun gikk for å spørre Herren. <sup>23</sup> Og Herren sa til henne: To folkeslag <i>er</i> i ditt morsliv, og to slags folk skal skilles fra ditt skjød; og <i>det ene</i> folket skal være sterkere enn <i>det andre</i> folket; og den eldste skal tjene den yngste. <sup>24</sup> Og da dagene var fullført og hun skulle føde, se, da <i>var det</i> tvillinger i morslivet hennes. <sup>25</sup> Og den første kom ut rød, over det hele som en hårete kappe; og de ga ham navnet Esau. 26 Og deretter kom broren hans ut, og hånden hans holdt fast i Esaus hæl; og han fikk navnet Jakob. Og Isak <i>var</i> seksti år gammel da hun fødte dem. <sup>27</sup> Og guttene vokste opp; og Esau var en kløktig jeger, en markens mann; og Jakob <i>var</i> en enkel mann som bodde i telt. <sup>28</sup> Og Isak elsket Esau, fordi han spiste av viltet <i>hans</i>; men Rebekka elsket Jakob.",
@@ -90,11 +185,26 @@
    "section": 3,
    "start": 12,
    "end": 13,
-   "status": "draft",
-   "rounds": 0,
+   "status": "checked",
+   "rounds": 1,
    "attempts": 0,
    "versions": [],
-   "reviews": [],
+   "reviews": [
+    {
+     "argument": {
+      "premises": true,
+      "conclusions": true,
+      "evidence": true,
+      "problems": ""
+     },
+     "issues": [],
+     "summary": "Gjengivelsen er trofast og idiomatisk. Begge delresonnementene er med: Isaks forkjærlighet for Esau, begrunnet med viltet, og Rebekkas for Jakob, begrunnet med Guds orakelsvar. Den betingede konklusjonen om at Rebekka hadde rett, er bevart, og henvisningen til v. 28 og merkingen står som i kilden.",
+     "score": 10,
+     "model": "claude-fable-5-2",
+     "mechanical": [],
+     "skipped": []
+    }
+   ],
    "text": [
     "4. Også når det gjaldt plassen i foreldrenes hjerter, sto de ulikt. Foreldrene hadde bare disse to barna, og det ser ut til at den ene var farens yndling og den andre morens, <ref osisRef=\"Gen.25.28\">v. 28</ref>. (1.) Isak var ikke selv noen driftig og virkelysten mann (for når han gikk ut på marken, var det for å grunne og be, ikke for å jakte), men han likte likevel at sønnen var aktiv. Esau visste hvordan han skulle glede ham, og viste ham stor respekt ved ofte å traktere ham med vilt. Det skaffet ham den gode gamle mannens hengivenhet og vant ham mer enn man skulle ha trodd. (2.) Rebekka hadde Guds orakelsvar i tankene, det som hadde gitt Jakob forrangen, og derfor ga hun ham forrangen i sin kjærlighet. Og dersom det i det hele tatt er tillatt for foreldre å gjøre forskjell på barna sine av noen grunn, hadde Rebekka utvilsomt rett, hun som elsket den Gud elsket."
    ],
@@ -106,13 +216,52 @@
    "section": 4,
    "start": 0,
    "end": 8,
-   "status": "draft",
-   "rounds": 0,
+   "status": "checked",
+   "rounds": 1,
    "attempts": 0,
-   "versions": [],
-   "reviews": [],
+   "versions": [
+    {
+     "text": [
+      "<h>Esau selger førstefødselsretten. (ca. 1805 f.Kr.)</h>",
+      "<sup>29</sup> Og Jakob kokte en suppe, og Esau kom inn fra marken, og han <i>var</i> utmattet. <sup>30</sup> Og Esau sa til Jakob: Mat meg, jeg ber deg, med denne røde <i>suppen</i>, for jeg <i>er</i> utmattet. Derfor ble han kalt Edom. <sup>31</sup> Og Jakob sa: Selg meg i dag din førstefødselsrett. <sup>32</sup> Og Esau sa: Se, jeg <i>er</i> døden nær, og hva nytte har jeg da av denne førstefødselsretten? <sup>33</sup> Og Jakob sa: Sverg meg det i dag. Og han sverget ham det, og han solgte sin førstefødselsrett til Jakob. <sup>34</sup> Så ga Jakob Esau brød og linsesuppe, og han spiste og drakk og reiste seg og gikk sin vei. Slik foraktet Esau <i>sin</i> førstefødselsrett.",
+      "Her har vi en handel mellom Jakob og Esau om førstefødselsretten. Den tilhørte Esau i kraft av forsynet, men Jakob i kraft av løftet. Den var et åndelig privilegium, og den omfattet forrang i verdighet og forrang i makt i tillegg til den dobbelte arvelodden, <ref osisRef=\"Gen.49.3\">kap. 49,3</ref>. Det ser ut til at førstefødselsretten den gang hadde velsignelsen knyttet til seg, og at løftet gikk i arv sammen med den. Se nå:",
+      "I. Jakobs fromme ønske om førstefødselsretten, som han likevel forsøkte å skaffe seg på krokveier som ikke passet for en likefram mann som ham. Det var ikke av stolthet eller ærgjerrighet han traktet etter førstefødselsretten. Han hadde blikket rettet mot åndelige velsignelser, som han var blitt godt kjent med i teltene sine, mens Esau hadde mistet sporet av dem ute på marken. Jakob fortjener ros for at han ivrig traktet etter de beste gavene. Men det kan ikke forsvares at han utnyttet brorens nød til å presse ham til en svært hard handel (<ref osisRef=\"Gen.25.31\">v. 31</ref>): <i>Selg meg i dag din førstefødselsrett.</i> Trolig hadde de to snakket om saken tidligere, og da kom ikke dette så overraskende på Esau som det kan se ut til her. Kanskje hadde Esau også av og til snakket nedsettende om førstefødselsretten og det som fulgte med den, og det kan ha gitt Jakob mot til å komme med dette forslaget. I så fall kan Jakob til en viss grad unnskyldes for det han gjorde for å nå målet sitt. Merk: Likeframme mennesker som lever sitt liv i enkelhet og gudfryktig oppriktighet, uten verdslig visdom, viser seg ofte å være de aller klokeste når det gjelder sjelen og evigheten. De er i sannhet vise som er vise med tanke på en annen verden. Jakobs visdom viste seg i to ting: 1. Han valgte det best egnede tidspunktet. Han grep anledningen da den bød seg, og lot den ikke gå fra seg. 2. Da handelen var gjort, gjorde han den sikker og fikk den bekreftet med Esaus ed: <i>Sverg meg det i dag,</i> <ref osisRef=\"Gen.25.33\">v. 33</ref>. Han tok Esau mens han var villig, og ville ikke gi ham noen mulighet til å trekke seg. I en sak av denne art er det godt å være sikker.",
+      "II. Esaus vanhellige forakt for førstefødselsretten og det tåpelige salget han gjorde. For dette blir han kalt <i>den vanhellige Esau</i> (<ref osisRef=\"Heb.12.16\">Hebr 12,16</ref>), fordi <i>han solgte sin førstefødselsrett for én eneste matbit</i>. Det var den dyreste matbiten som er spist siden den forbudte frukten, og han fikk leve lenge nok til å angre da det var for sent. Aldri er det gjort en så tåpelig handel som den Esau gjorde nå. Likevel var han stolt av sin egen kløkt og hadde ord på seg for å være en slu mann, og kanskje hadde han ofte ertet sin bror Jakob for å være svak og enfoldig. Merk: Det finnes folk som sparer på skillingen og lar daleren gå. De er listige jegere som kan overliste andre og lokke dem i snarene sine, men selv blir de narret av Satans knep og ført bort som hans fanger slik han vil. Og videre: Gud velger ofte det som er dårskap i verden, for med det å gjøre de vise til skamme. Den likeframme Jakob gjør den slu Esau til narr. Legg merke til hvordan Esaus dårskap kommer til uttrykk.",
+      "1. Appetitten hans var svært sterk, <ref osisRef=\"Gen.25.29-Gen.25.30\">v. 29–30</ref>. Stakkars Jakob hadde skaffet seg litt brød og suppe (<ref osisRef=\"Gen.25.29\">v. 29</ref>) til middag og satte seg til med det, fornøyd nok, uten viltkjøtt. Da kom Esau hjem fra jakt, sulten og sliten, og kanskje hadde han ikke fått noe bytte. Nå falt Jakobs suppe mer i øynene på ham enn viltet hans noen gang hadde gjort. Gi meg (sier han) noe av <i>det røde, det røde,</i> slik det står i grunnteksten. Det passet til hans egen farge (<ref osisRef=\"Gen.25.25\">v. 25</ref>), og til skam for ham på grunn av dette ble han alltid siden kalt <i>Edom, rød.</i> Ja, det ser ut til at han var så utmattet at han ikke klarte å spise selv. Han hadde heller ingen tjener for hånden som kunne hjelpe ham, så han ber broren om å mate ham. Merk: (1.) De som hengir seg til jakt og fornøyelser, <i>sliter seg ut for det som bare er tomhet,</i> <ref osisRef=\"Hab.2.13\">Hab 2,13</ref>. De kunne ha gjort det mest nødvendige arbeidet og vunnet de største fordelene med halvparten av det strevet de legger ned og halvparten av de farene de utsetter seg for i jakten på sine tåpelige fornøyelser. (2.) De som arbeider i stillhet, er jevnere og bedre forsørget enn de som jakter med larm og ståk. Brødet tilfaller ikke alltid de vise, men de som stoler på Herren og gjør det gode, de skal sannelig få mat, få sitt daglige brød. De skal ikke ha det som Esau, som snart fråtset og snart var avkreftet. (3.) Det å tilfredsstille den sanselige appetitten er det som ødelegger tusener av dyrebare sjeler. Om Esau var sulten og utmattet, kunne han sikkert ha fått et måltid mat billigere enn til prisen av førstefødselsretten. Men han var ubegripelig betatt av fargen på denne suppen og kunne ikke nekte seg gleden av en porsjon, hva den enn kostet ham. Det kan aldri komme noe bedre ut av det når menneskers <i>hjerter følger øynene</i> (<ref osisRef=\"Job.31.7\">Job 31,7</ref>), og når de tjener sin egen buk. Se derfor ikke på vinen, eller som Esau på suppen, når den er rød, når den i begeret eller i fatet får den fargen som frister mest, <ref osisRef=\"Prov.23.31\">Ordsp 23,31</ref>. Hvis vi venner oss til å fornekte oss selv, bryter vi kraften i de fleste fristelser.",
+      "2. Resonnementet hans var svært svakt (<ref osisRef=\"Gen.25.32\">v. 32</ref>): <i>Se, jeg er døden nær.</i> Og om han var det, var det da ikke noe annet enn denne suppen som kunne holde ham i live? Dersom det nå var hungersnød i landet (<ref osisRef=\"Gen.26.1\">kap. 26,1</ref>), slik dr. Lightfoot antar, kan vi likevel ikke tro at Isak var så fattig, eller Rebekka så dårlig til å stelle huset, at han ikke kunne ha fått passende mat på annen måte og dermed berget førstefødselsretten. Men appetitten har makten over ham. Han er grepet av et sykelig sug, og ingenting kan tilfredsstille ham annet enn dette <i>røde</i>, denne <i>røde suppen</i>. For å pynte på begjæret sitt later han som om han er døden nær. Hadde det vært slik, ville det ikke da vært bedre for ham å dø i ære enn å leve i vanære, å dø under en velsignelse enn å leve under en forbannelse? Førstefødselsretten var et forbilde på åndelige privilegier, de som tilhører de førstefødtes menighet. Esau ble nå prøvd på hvor høyt han ville verdsette dem, og han viser at han bare har sans for de plagene han kjenner i øyeblikket. Får han bare lindring for dem, bryr han seg ikke om førstefødselsretten. Nabot hadde bedre grunnsetninger. Han ville heller miste livet enn selge vingården sin, fordi hans del i det jordiske Kanaan betegnet hans del i det himmelske, <ref osisRef=\"1Kgs.21.3\">1 Kong 21,3</ref>. (1.) Hvis vi ser på Esaus førstefødselsrett som bare en timelig fordel, var det noe sant i det han sa: Våre verdslige goder, selv de vi er aller mest glad i, vil ikke hjelpe oss det minste i dødens time (<ref osisRef=\"Ps.49.6-Ps.49.8\">Sal 49,6–8</ref>). De kan ikke avverge dødens slag, ikke lindre smertene og ikke ta bort brodden. Likevel burde Esau, som gjorde krav på å være en fornem mann, hatt et større og edlere sinn enn å selge selv en slik ære så billig. (2.) Men siden førstefødselsretten var av åndelig art, var det den største vanhelligelse en kan tenke seg at han verdsatte den så lavt. Merk: Det er en himmelropende dårskap å gi fra seg vår del i Gud og Kristus og himmelen for denne verdens rikdom, ære og nytelser. Det er en like dårlig handel som den han gjorde som solgte en førstefødselsrett for en skål suppe.",
+      "3. Angeren var skjult for øynene hans (<ref osisRef=\"Gen.25.34\">v. 34</ref>): <i>Han spiste og drakk,</i> gledet ganen, stilte suget og gratulerte seg selv med det gode måltidet han hadde fått. Så reiste han seg sorgløst og gikk sin vei, uten noen alvorlig ettertanke om den dårlige handelen han hadde gjort, og uten noe tegn til anger. Slik foraktet Esau sin førstefødselsrett. Han gjorde ingenting som helst for å få handelen omgjort. Han la ikke saken fram for faren, og han foreslo ikke for broren at de skulle komme til en minnelig ordning. Den handelen som nøden hadde drevet ham til (om vi nå antar at det var slik), stadfestet hans vanhellige sinn <i>ex post facto – etter at det var gjort;</i> og ved sin senere likegyldighet og forakt ga han så å si overdragelsen rettslig gyldighet, og ved å forsvare det han hadde gjort, gjorde han handelen ugjenkallelig. Merk: Mennesker går ikke til grunne så mye fordi de gjør det som er galt, som fordi de gjør det og ikke angrer, gjør det og står fast ved det."
+     ],
+     "explanation": "Kildens «b. c. 1805» betyr «1805 f.Kr.»; «ca.» er lagt til og gjør en bestemt datering omtrentlig.",
+     "model": "claude-fable-5-2"
+    }
+   ],
+   "reviews": [
+    {
+     "argument": {
+      "premises": true,
+      "conclusions": true,
+      "evidence": true,
+      "problems": ""
+     },
+     "issues": [
+      {
+       "paragraph": 1,
+       "quote": "(ca. 1805 f.Kr.)",
+       "replacement": "(1805 f.Kr.)",
+       "type": "addition",
+       "severity": "minor",
+       "explanation": "Kildens «b. c. 1805» betyr «1805 f.Kr.»; «ca.» er lagt til og gjør en bestemt datering omtrentlig."
+      }
+     ],
+     "summary": "Gjengivelsen er trofast og naturlig. Alle resonnementer, skriftsteder, henvisninger og merking er bevart avsnitt for avsnitt. Eneste funn er et tillagt «ca.» i årstallet i overskriften.",
+     "score": 9,
+     "model": "claude-fable-5-2",
+     "mechanical": [],
+     "skipped": []
+    }
+   ],
    "text": [
-    "<h>Esau selger førstefødselsretten. (ca. 1805 f.Kr.)</h>",
+    "<h>Esau selger førstefødselsretten. (1805 f.Kr.)</h>",
     "<sup>29</sup> Og Jakob kokte en suppe, og Esau kom inn fra marken, og han <i>var</i> utmattet. <sup>30</sup> Og Esau sa til Jakob: Mat meg, jeg ber deg, med denne røde <i>suppen</i>, for jeg <i>er</i> utmattet. Derfor ble han kalt Edom. <sup>31</sup> Og Jakob sa: Selg meg i dag din førstefødselsrett. <sup>32</sup> Og Esau sa: Se, jeg <i>er</i> døden nær, og hva nytte har jeg da av denne førstefødselsretten? <sup>33</sup> Og Jakob sa: Sverg meg det i dag. Og han sverget ham det, og han solgte sin førstefødselsrett til Jakob. <sup>34</sup> Så ga Jakob Esau brød og linsesuppe, og han spiste og drakk og reiste seg og gikk sin vei. Slik foraktet Esau <i>sin</i> førstefødselsrett.",
     "Her har vi en handel mellom Jakob og Esau om førstefødselsretten. Den tilhørte Esau i kraft av forsynet, men Jakob i kraft av løftet. Den var et åndelig privilegium, og den omfattet forrang i verdighet og forrang i makt i tillegg til den dobbelte arvelodden, <ref osisRef=\"Gen.49.3\">kap. 49,3</ref>. Det ser ut til at førstefødselsretten den gang hadde velsignelsen knyttet til seg, og at løftet gikk i arv sammen med den. Se nå:",
     "I. Jakobs fromme ønske om førstefødselsretten, som han likevel forsøkte å skaffe seg på krokveier som ikke passet for en likefram mann som ham. Det var ikke av stolthet eller ærgjerrighet han traktet etter førstefødselsretten. Han hadde blikket rettet mot åndelige velsignelser, som han var blitt godt kjent med i teltene sine, mens Esau hadde mistet sporet av dem ute på marken. Jakob fortjener ros for at han ivrig traktet etter de beste gavene. Men det kan ikke forsvares at han utnyttet brorens nød til å presse ham til en svært hard handel (<ref osisRef=\"Gen.25.31\">v. 31</ref>): <i>Selg meg i dag din førstefødselsrett.</i> Trolig hadde de to snakket om saken tidligere, og da kom ikke dette så overraskende på Esau som det kan se ut til her. Kanskje hadde Esau også av og til snakket nedsettende om førstefødselsretten og det som fulgte med den, og det kan ha gitt Jakob mot til å komme med dette forslaget. I så fall kan Jakob til en viss grad unnskyldes for det han gjorde for å nå målet sitt. Merk: Likeframme mennesker som lever sitt liv i enkelhet og gudfryktig oppriktighet, uten verdslig visdom, viser seg ofte å være de aller klokeste når det gjelder sjelen og evigheten. De er i sannhet vise som er vise med tanke på en annen verden. Jakobs visdom viste seg i to ting: 1. Han valgte det best egnede tidspunktet. Han grep anledningen da den bød seg, og lot den ikke gå fra seg. 2. Da handelen var gjort, gjorde han den sikker og fikk den bekreftet med Esaus ed: <i>Sverg meg det i dag,</i> <ref osisRef=\"Gen.25.33\">v. 33</ref>. Han tok Esau mens han var villig, og ville ikke gi ham noen mulighet til å trekke seg. I en sak av denne art er det godt å være sikker.",

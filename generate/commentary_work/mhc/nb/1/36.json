@@ -7,13 +7,67 @@
    "section": 0,
    "start": 0,
    "end": 1,
-   "status": "draft",
-   "rounds": 0,
+   "status": "checked",
+   "rounds": 2,
    "attempts": 0,
-   "versions": [],
-   "reviews": [],
+   "versions": [
+    {
+     "text": [
+      "Dette kapitlet gjør rede for etterkommerne til Esau, som etter ham ble kalt edomitter. Det er den Esau som solgte førstefødselsretten sin og mistet velsignelsen, og som Gud ikke elsket slik han elsket Jakob. Her er det ført en kort fortegnelse over slekten hans gjennom noen generasjoner. 1. Fordi han var sønn av Isak, og det er for Isaks skyld han blir vist denne æren. 2. Fordi edomittene var naboer til Israel, og slektstavlen deres ville være til nytte ved å kaste lys over de senere fortellingene om det som skjedde mellom dem. 3. Den skal vise at løftet til Abraham ble oppfylt, om at han skulle bli «far til mange folkeslag». Den skal også vise oppfyllelsen av svaret Rebekka fikk da hun søkte råd hos Gud, «To folkeslag er i ditt morsliv», og av Isaks velsignelse, «Din bolig skal være jordens fedme». Her har vi: I. Esaus koner, <ref osisRef=\"Gen.36.1-Gen.36.5\">v. 1–5</ref>. II. Flyttingen hans til Se'ir-fjellet, <ref osisRef=\"Gen.36.6-Gen.36.8\">v. 6–8</ref>. III. Navnene på sønnene hans, <ref osisRef=\"Gen.36.9-Gen.36.14\">v. 9–14</ref>. IV. Stammefyrstene som nedstammet fra sønnene hans, <ref osisRef=\"Gen.36.15-Gen.36.19\">v. 15–19</ref>. V. Horittenes stammefyrster, <ref osisRef=\"Gen.36.20-Gen.36.30\">v. 20–30</ref>. VI. Kongene og stammefyrstene i Edom, <ref osisRef=\"Gen.36.31-Gen.36.43\">v. 31–43</ref>. Det er ikke nedtegnet stort mer enn navnene deres. Historien til dem som sto utenfor kirken, kunne kanskje ha vært nyttig i politikken, men den ville vært til liten nytte i teologien. Det er i kirken vi finner de minneverdige eksemplene på særskilt nåde og særskilt forsyn, for den er det inngjerdede området, og resten er allmenning. Dette kapitlet er gjengitt i forkortet form i <ref osisRef=\"1Chr.1.35-1Chr.1.54\">1 Krøn 1,35</ref> osv."
+     ],
+     "explanation": "Kildens «because» er falt ut. Henry oppgir uttrykkelig grunnen til at bare navnene er nedtegnet, og i gjengivelsen står påstanden og begrunnelsen som to uforbundne utsagn. | Kilden har «from the oracle she consulted». Gjengivelsen bytter orakelet ut med «Gud» og forklarer dermed i stedet for å gjengi Henrys ordvalg.",
+     "model": "claude-fable-5-2"
+    }
+   ],
+   "reviews": [
+    {
+     "argument": {
+      "premises": false,
+      "conclusions": true,
+      "evidence": true,
+      "problems": "Kilden begrunner uttrykkelig hvorfor lite annet enn navnene er nedtegnet («because the history of those that were out of the church … would have been of little use in divinity»). Gjengivelsen deler dette i to sideordnede setninger uten årsaksledd, så premisset står ikke lenger som begrunnelse. I tillegg er «the oracle she consulted» gjengitt som «søkte råd hos Gud», som tolker bort orakelet. De tre grunnene for slektsregisteret, de tre skriftsitatene og alle henvisningene er ellers bevart."
+     },
+     "issues": [
+      {
+       "paragraph": 1,
+       "quote": "navnene deres. Historien til dem som sto utenfor kirken, kunne",
+       "replacement": "navnene deres, for historien til dem som sto utenfor kirken, kunne",
+       "type": "omission",
+       "severity": "major",
+       "explanation": "Kildens «because» er falt ut. Henry oppgir uttrykkelig grunnen til at bare navnene er nedtegnet, og i gjengivelsen står påstanden og begrunnelsen som to uforbundne utsagn."
+      },
+      {
+       "paragraph": 1,
+       "quote": "da hun søkte råd hos Gud",
+       "replacement": "fra orakelet hun rådspurte",
+       "type": "meaning",
+       "severity": "minor",
+       "explanation": "Kilden har «from the oracle she consulted». Gjengivelsen bytter orakelet ut med «Gud» og forklarer dermed i stedet for å gjengi Henrys ordvalg."
+      }
+     ],
+     "summary": "Gjengivelsen er gjennomgående trofast og i godt, naturlig bokmål, med riktig merking og riktige henvisninger. Hovedinnvendingen er at årsaksleddet («because») mangler i setningen om hvorfor bare navnene er nedtegnet, noe som svekker resonnementet. Dessuten er «orakelet» tolket til «Gud».",
+     "score": 7,
+     "model": "claude-fable-5-2",
+     "mechanical": [],
+     "skipped": []
+    },
+    {
+     "argument": {
+      "premises": true,
+      "conclusions": true,
+      "evidence": true,
+      "problems": ""
+     },
+     "issues": [],
+     "summary": "Gjengivelsen er trofast og velskrevet. De tre begrunnelsene for slektsregisteret, alle tre sitatene, de seks disposisjonspunktene med henvisninger og sluttresonnementet om kirken som det inngjerdede området er bevart med samme innhold og vekt. Alle osisRef-verdier er uendret og henvisningene er riktig omskrevet til norsk form. Ingen feil funnet.",
+     "score": 10,
+     "model": "claude-fable-5-2",
+     "mechanical": [],
+     "skipped": []
+    }
+   ],
    "text": [
-    "Dette kapitlet gjør rede for etterkommerne til Esau, som etter ham ble kalt edomitter. Det er den Esau som solgte førstefødselsretten sin og mistet velsignelsen, og som Gud ikke elsket slik han elsket Jakob. Her er det ført en kort fortegnelse over slekten hans gjennom noen generasjoner. 1. Fordi han var sønn av Isak, og det er for Isaks skyld han blir vist denne æren. 2. Fordi edomittene var naboer til Israel, og slektstavlen deres ville være til nytte ved å kaste lys over de senere fortellingene om det som skjedde mellom dem. 3. Den skal vise at løftet til Abraham ble oppfylt, om at han skulle bli «far til mange folkeslag». Den skal også vise oppfyllelsen av svaret Rebekka fikk da hun søkte råd hos Gud, «To folkeslag er i ditt morsliv», og av Isaks velsignelse, «Din bolig skal være jordens fedme». Her har vi: I. Esaus koner, <ref osisRef=\"Gen.36.1-Gen.36.5\">v. 1–5</ref>. II. Flyttingen hans til Se'ir-fjellet, <ref osisRef=\"Gen.36.6-Gen.36.8\">v. 6–8</ref>. III. Navnene på sønnene hans, <ref osisRef=\"Gen.36.9-Gen.36.14\">v. 9–14</ref>. IV. Stammefyrstene som nedstammet fra sønnene hans, <ref osisRef=\"Gen.36.15-Gen.36.19\">v. 15–19</ref>. V. Horittenes stammefyrster, <ref osisRef=\"Gen.36.20-Gen.36.30\">v. 20–30</ref>. VI. Kongene og stammefyrstene i Edom, <ref osisRef=\"Gen.36.31-Gen.36.43\">v. 31–43</ref>. Det er ikke nedtegnet stort mer enn navnene deres. Historien til dem som sto utenfor kirken, kunne kanskje ha vært nyttig i politikken, men den ville vært til liten nytte i teologien. Det er i kirken vi finner de minneverdige eksemplene på særskilt nåde og særskilt forsyn, for den er det inngjerdede området, og resten er allmenning. Dette kapitlet er gjengitt i forkortet form i <ref osisRef=\"1Chr.1.35-1Chr.1.54\">1 Krøn 1,35</ref> osv."
+    "Dette kapitlet gjør rede for etterkommerne til Esau, som etter ham ble kalt edomitter. Det er den Esau som solgte førstefødselsretten sin og mistet velsignelsen, og som Gud ikke elsket slik han elsket Jakob. Her er det ført en kort fortegnelse over slekten hans gjennom noen generasjoner. 1. Fordi han var sønn av Isak, og det er for Isaks skyld han blir vist denne æren. 2. Fordi edomittene var naboer til Israel, og slektstavlen deres ville være til nytte ved å kaste lys over de senere fortellingene om det som skjedde mellom dem. 3. Den skal vise at løftet til Abraham ble oppfylt, om at han skulle bli «far til mange folkeslag». Den skal også vise oppfyllelsen av svaret Rebekka fikk fra orakelet hun rådspurte, «To folkeslag er i ditt morsliv», og av Isaks velsignelse, «Din bolig skal være jordens fedme». Her har vi: I. Esaus koner, <ref osisRef=\"Gen.36.1-Gen.36.5\">v. 1–5</ref>. II. Flyttingen hans til Se'ir-fjellet, <ref osisRef=\"Gen.36.6-Gen.36.8\">v. 6–8</ref>. III. Navnene på sønnene hans, <ref osisRef=\"Gen.36.9-Gen.36.14\">v. 9–14</ref>. IV. Stammefyrstene som nedstammet fra sønnene hans, <ref osisRef=\"Gen.36.15-Gen.36.19\">v. 15–19</ref>. V. Horittenes stammefyrster, <ref osisRef=\"Gen.36.20-Gen.36.30\">v. 20–30</ref>. VI. Kongene og stammefyrstene i Edom, <ref osisRef=\"Gen.36.31-Gen.36.43\">v. 31–43</ref>. Det er ikke nedtegnet stort mer enn navnene deres, for historien til dem som sto utenfor kirken, kunne kanskje ha vært nyttig i politikken, men den ville vært til liten nytte i teologien. Det er i kirken vi finner de minneverdige eksemplene på særskilt nåde og særskilt forsyn, for den er det inngjerdede området, og resten er allmenning. Dette kapitlet er gjengitt i forkortet form i <ref osisRef=\"1Chr.1.35-1Chr.1.54\">1 Krøn 1,35</ref> osv."
    ],
    "translator": "claude-fable-5-2",
    "model": "claude-fable-5-2"
@@ -23,11 +77,26 @@
    "section": 1,
    "start": 0,
    "end": 3,
-   "status": "draft",
-   "rounds": 0,
+   "status": "checked",
+   "rounds": 1,
    "attempts": 0,
    "versions": [],
-   "reviews": [],
+   "reviews": [
+    {
+     "argument": {
+      "premises": true,
+      "conclusions": true,
+      "evidence": true,
+      "problems": ""
+     },
+     "issues": [],
+     "summary": "Gjengivelsen er trofast mot kilden avsnitt for avsnitt: alle tre punktene, begge «Merk»-anvendelsene, skriftbeleggene og henvisningene (med uendret osisRef) er med, merkingen er bevart, og språket er naturlig bokmål. Ingen feil funnet.",
+     "score": 10,
+     "model": "claude-fable-5-2",
+     "mechanical": [],
+     "skipped": []
+    }
+   ],
    "text": [
     "<h>Esaus slekt. (1780 f.Kr.)</h>",
     "<sup>1</sup> Dette <i>er</i> Esaus slektshistorie, han som <i>er</i> Edom. <sup>2</sup> Esau tok sine koner blant Kanaans døtre: Ada, datter av hetitten Elon, og Oholibama, datter av Ana, datter av hevitten Sibon; <sup>3</sup> og Basmat, Ismaels datter, søster av Nebajot. <sup>4</sup> Og Ada fødte Esau Elifas, og Basmat fødte Re'uel; <sup>5</sup> og Oholibama fødte Jeusj og Jalam og Korah: Disse <i>er</i> Esaus sønner, som ble født ham i Kanaans land. 6 Og Esau tok sine koner og sine sønner og sine døtre og alle i sitt hus, og buskapen sin og alle dyrene sine og all eiendommen han hadde skaffet seg i Kanaans land, og dro av sted til et annet land, bort fra sin bror Jakobs åsyn. <sup>7</sup> For rikdommen deres var større enn at de kunne bo sammen, og landet der de var fremmede, kunne ikke bære dem på grunn av buskapen deres. <sup>8</sup> Slik bosatte Esau seg i Se'ir-fjellet: Esau <i>er</i> Edom.",
@@ -41,11 +110,26 @@
    "section": 2,
    "start": 0,
    "end": 3,
-   "status": "draft",
-   "rounds": 0,
+   "status": "checked",
+   "rounds": 1,
    "attempts": 0,
    "versions": [],
-   "reviews": [],
+   "reviews": [
+    {
+     "argument": {
+      "premises": true,
+      "conclusions": true,
+      "evidence": true,
+      "problems": ""
+     },
+     "issues": [],
+     "summary": "Gjengivelsen er trofast mot kilden avsnitt for avsnitt. Alle tre punktene i Henrys resonnement er bevart med premisser, konklusjoner og skriftbelegg, og henvisningene, osisRef-verdiene og merkingen stemmer. Bibelteksten ligger nær King James-ordlyden, og språket er naturlig bokmål. Ingen feil funnet.",
+     "score": 10,
+     "model": "claude-fable-5-2",
+     "mechanical": [],
+     "skipped": []
+    }
+   ],
    "text": [
     "<h>Hertugene i Edom. (1729 f.Kr.)</h>",
     "<sup>9</sup> Og dette <i>er</i> slektshistorien til Esau, edomittenes far, i Se'ir-fjellet: <sup>10</sup> Dette <i>er</i> navnene på Esaus sønner: Elifas, sønn av Ada, Esaus kone, og Re'uel, sønn av Basemat, Esaus kone. <sup>11</sup> Og Elifas' sønner var Teman, Omar, Sefo og Gatam og Kenas. <sup>12</sup> Og Timna var medhustru til Elifas, Esaus sønn, og hun fødte Elifas Amalek. Dette <i>var</i> sønnene til Ada, Esaus kone. <sup>13</sup> Og dette <i>er</i> Re'uels sønner: Nahat og Serah, Sjamma og Missa. Dette var sønnene til Basemat, Esaus kone. <sup>14</sup> Og dette var sønnene til Oholibama, datter av Ana, datter av Sibon, Esaus kone: Hun fødte Esau Je'usj og Jalam og Korah. <sup>15</sup> Dette <i>var</i> hertuger blant Esaus sønner: sønnene til Elifas, Esaus førstefødte <i>sønn</i>: hertug Teman, hertug Omar, hertug Sefo, hertug Kenas, <sup>16</sup> hertug Korah, hertug Gatam <i>og</i> hertug Amalek. Dette <i>er</i> hertugene <i>som stammet</i> fra Elifas i landet Edom; dette <i>var</i> Adas sønner. <sup>17</sup> Og dette <i>er</i> sønnene til Re'uel, Esaus sønn: hertug Nahat, hertug Serah, hertug Sjamma, hertug Missa. Dette <i>er</i> hertugene <i>som stammet</i> fra Re'uel i landet Edom; dette <i>er</i> sønnene til Basemat, Esaus kone. <sup>18</sup> Og dette <i>er</i> sønnene til Oholibama, Esaus kone: hertug Je'usj, hertug Jalam, hertug Korah. Dette <i>var</i> hertugene <i>som stammet</i> fra Oholibama, datter av Ana, Esaus kone. <sup>19</sup> Dette <i>er</i> sønnene til Esau, som <i>er</i> Edom, og dette <i>er</i> hertugene deres.",
@@ -59,11 +143,26 @@
    "section": 3,
    "start": 0,
    "end": 2,
-   "status": "draft",
-   "rounds": 0,
+   "status": "checked",
+   "rounds": 1,
    "attempts": 0,
    "versions": [],
-   "reviews": [],
+   "reviews": [
+    {
+     "argument": {
+      "premises": true,
+      "conclusions": true,
+      "evidence": true,
+      "problems": ""
+     },
+     "issues": [],
+     "summary": "Gjengivelsen er trofast og idiomatisk. Alle resonnementer, begge «Merk»-anvendelsene, alle skrifthenvisninger og osisRef-verdier er bevart, og merkingen følger kilden, også der versnumrene 21, 22 og 27 står uten <sup> i kilden. Ingen feil funnet.",
+     "score": 10,
+     "model": "claude-fable-5-2",
+     "mechanical": [],
+     "skipped": []
+    }
+   ],
    "text": [
     "<sup>20</sup> Dette <i>er</i> sønnene til horitten Se'ir, som bodde i landet: Lotan og Sjobal og Sibon og Ana 21 og Disjon og Eser og Disjan. Dette <i>er</i> horittenes høvdinger, Se'irs barn i landet Edom. 22 Og Lotans barn var Hori og Hemam, og Lotans søster <i>var</i> Timna. <sup>23</sup> Og Sjobals barn <i>var</i> disse: Alvan og Manahat og Ebal, Sjefo og Onam. <sup>24</sup> Og dette <i>er</i> Sibons barn: både Aja og Ana. Dette <i>var den</i> Ana som fant muldyrene i ørkenen da han gjette eslene til sin far Sibon. <sup>25</sup> Og Anas barn <i>var</i> disse: Disjon og Oholibama, Anas datter. <sup>26</sup> Og dette <i>er</i> Disjons barn: Hemdan og Esjban og Jitran og Keran. 27 Esers barn <i>er</i> disse: Bilhan og Sa'avan og Akan. <sup>28</sup> Disjans barn <i>er</i> disse: Us og Aran. <sup>29</sup> Dette <i>er</i> høvdingene <i>som kom</i> av horittene: høvding Lotan, høvding Sjobal, høvding Sibon, høvding Ana, <sup>30</sup> høvding Disjon, høvding Eser, høvding Disjan. Dette <i>er</i> høvdingene <i>som kom</i> av Hori, blant deres høvdinger i landet Se'ir.",
     "Midt i denne slektstavlen over edomittene er slektstavlen over horittene satt inn. De var kanaaneere, eller hetitter (sammenlign <ref osisRef=\"Gen.26.34\">1 Mos 26,34</ref>), og de var de opprinnelige innbyggerne på Se'ir-fjellet. De er nevnt i <ref osisRef=\"Gen.14.6\">1 Mos 14,6</ref>, og deres eiendomsrett til Se'ir-fjellet, før edomittene tok det i eie, er nevnt i <ref osisRef=\"Deut.2.12\">5 Mos 2,12</ref>, <ref osisRef=\"Deut.2.22\">22</ref>. Slektstavlen er tatt med her ikke bare for å kaste lys over beretningen, men også som en stående bebreidelse mot edomittene fordi de giftet seg inn blant dem. Sannsynligvis var det slik de lærte horittenes veier og fordervet seg selv. Esau hadde solgt førstefødselsretten, mistet velsignelsen og inngått forbund med hetittene, og derfor blir hans etterkommere og Se'irs sønner her regnet opp sammen. Merk: De som troløst forlater Guds kirke, blir med rette regnet sammen med dem som aldri har vært i den. Frafalne edomitter står på samme grunn som forbannede horitter. Det legges særlig merke til en viss Ana, som gjette eslene til sin far Sibon (<ref osisRef=\"Gen.36.24\">v. 24</ref>), og som likevel kalles <i>høvding Ana,</i> <ref osisRef=\"Gen.36.29\">v. 29</ref>. Merk: De som venter å stige høyt, bør begynne lavt. En ærefull herkomst bør ikke holde noen borte fra et ærlig arbeid, og et simpelt arbeid bør ikke stå i veien for at noen blir forfremmet. Denne Ana var ikke bare flittig i sitt arbeid, men også oppfinnsom og framgangsrik, for han fant <i>muldyr,</i> eller (som noen leser det) <i>vann, varme kilder,</i> i ørkenen. De som er flittige i sitt arbeid, finner iblant flere fordeler enn de hadde ventet."
@@ -76,11 +175,26 @@
    "section": 4,
    "start": 0,
    "end": 2,
-   "status": "draft",
-   "rounds": 0,
+   "status": "checked",
+   "rounds": 1,
    "attempts": 0,
    "versions": [],
-   "reviews": [],
+   "reviews": [
+    {
+     "argument": {
+      "premises": true,
+      "conclusions": true,
+      "evidence": true,
+      "problems": ""
+     },
+     "issues": [],
+     "summary": "Gjengivelsen er trofast og idiomatisk. Alle tre punktene (konger, stammefyrster, landet i eie) er med, med hver «Merk»-anvendelse, alle skriftsteder, henvisningen til biskop Patrick og merkingen intakt. Bibelteksten ligger nær King James-ordlyden. Ingen feil funnet.",
+     "score": 10,
+     "model": "claude-fable-5-2",
+     "mechanical": [],
+     "skipped": []
+    }
+   ],
    "text": [
     "<sup>31</sup> Og dette <i>er</i> kongene som regjerte i Edoms land før det regjerte noen konge over Israels barn. <sup>32</sup> Bela, sønn av Beor, regjerte i Edom, og navnet på byen hans <i>var</i> Dinhaba. <sup>33</sup> Og Bela døde, og Jobab, sønn av Serah fra Bosra, regjerte i hans sted. <sup>34</sup> Og Jobab døde, og Husjam fra temanittenes land regjerte i hans sted. <sup>35</sup> Og Husjam døde, og Hadad, sønn av Bedad, han som slo Midjan på Moabs mark, regjerte i hans sted, og navnet på byen hans <i>var</i> Avit. <sup>36</sup> Og Hadad døde, og Samla fra Masreka regjerte i hans sted. <sup>37</sup> Og Samla døde, og Saul fra Rehobot <i>ved</i> elven regjerte i hans sted. <sup>38</sup> Og Saul døde, og Ba'al-Hanan, sønn av Akbor, regjerte i hans sted. <sup>39</sup> Og Ba'al-Hanan, sønn av Akbor, døde, og Hadar regjerte i hans sted, og navnet på byen hans <i>var</i> Pa'u, og hans hustrus navn <i>var</i> Mehetabel, datter av Matred, datter av Me-Sahab. <sup>40</sup> Og dette <i>er</i> navnene på stammefyrstene <i>som stammet</i> fra Esau, etter deres ætter, etter deres steder, ved deres navn: stammefyrsten Timna, stammefyrsten Alva, stammefyrsten Jetet, <sup>41</sup> stammefyrsten Oholibama, stammefyrsten Ela, stammefyrsten Pinon, <sup>42</sup> stammefyrsten Kenas, stammefyrsten Teman, stammefyrsten Mibsar, <sup>43</sup> stammefyrsten Magdiel, stammefyrsten Iram. Dette <i>er</i> Edoms stammefyrster, etter deres bosteder i det landet de hadde i eie. Han <i>er</i> Esau, edomittenes far.",
     "Det ser ut til at edomittene litt etter litt trengte horittene ut, fikk full besittelse av landet og fikk sitt eget styre. 1. De ble styrt av konger som regjerte over hele landet, og som synes å ha kommet til tronen ved valg og ikke ved arv i rett linje. Det bemerker biskop Patrick. Disse kongene regjerte i <i>Edom før det regjerte noen konge over Israels barn,</i> det vil si før Moses' tid, for <i>han var konge i Jesjurun,</i> <ref osisRef=\"Deut.33.5\">5 Mos 33,5</ref>. Gud hadde nylig lovet <i>Jakob at konger skulle utgå fra hans lender</i> (<ref osisRef=\"Gen.35.11\">kap. 35,11</ref>), og likevel blir Esaus blod kongelig lenge før noe av Jakobs ble det. Merk: Når det gjelder ytre velstand og ære, blir paktens barn ofte liggende etter, mens de som står utenfor pakten, får forspranget. De ugudeliges triumf kan komme raskt, men den er kort. Den er tidlig moden og like tidlig råtten. Det som løftet bærer fram, kommer derimot langsomt, men det er sikkert og varig: <i>til sist skal det tale og ikke lyve.</i> Vi kan tenke oss at det var en stor prøvelse for troen til Guds Israel å høre om Edoms kongers prakt og makt mens de selv var treller i Egypt. Men de som venter seg store ting av Gud, må finne seg i å vente på dem. Guds tid er den beste tiden. 2. Senere ble de styrt av stammefyrster, som nevnes ved navn her igjen. Jeg antar at de alle regjerte samtidig, på forskjellige steder i landet. Enten innførte de denne styreformen for å rette seg etter horittene, som hadde brukt den (<ref osisRef=\"Gen.36.29\">v. 29</ref>), eller så var det Guds forsyn som brakte dem ned til den. Noen gjetter på at det skjedde for å refse dem for uvennligheten mot Israel, da de nektet dem å dra gjennom landet sitt, <ref osisRef=\"Num.20.18\">4 Mos 20,18</ref>. Merk: Når makt blir misbrukt, er det rettferdig av Gud å svekke den ved å lede den ut i mange forskjellige løp. <i>For et lands overtredelses skyld blir dets fyrster mange.</i> Synden førte Edom fra konger til stammefyrster, fra kongekroner til fyrstekroner. Vi leser om Edoms stammefyrster (<ref osisRef=\"Exod.15.15\">2 Mos 15,15</ref>), men lenge etterpå leser vi igjen om deres konger. 3. Se'ir-fjellet kalles <i>det landet de hadde i eie,</i> <ref osisRef=\"Gen.36.43\">v. 43</ref>. Mens israelittene bodde i trellehuset og deres Kanaan bare var det lovede land, bodde edomittene i sine egne bosteder, og Se'ir var i deres eie. Merk: Denne verdens barn har alt sitt i hånden og ingenting i håpet (<ref osisRef=\"Luke.16.25\">Luk 16,25</ref>), mens Guds barn har alt sitt i håpet og nesten ingenting i hånden. Men når alt kommer til alt, er det bedre å ha Kanaan som løfte enn Se'ir-fjellet som eiendom."
