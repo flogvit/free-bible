@@ -700,7 +700,7 @@ const SPEC: Record<string, FlagSpec> = {
     'dry-run': {kind: 'boolean', help: 'show what the next batch would hold and roughly cost, send nothing'},
     again: {kind: 'boolean', help: 'a later pass: checked units written by another model are reviewed again by --model'},
     'retry-stuck': {kind: 'boolean', help: 'give stuck units new attempts and rounds'},
-    budget: {kind: 'float', default: 180, help: 'dollars this job may spend on the key per calendar month (90 % of the $200 Ultra credit, flogvit/dux-machina#879)'},
+    budget: {kind: 'float', default: 200, help: 'dollars this job may spend on the key per calendar month: all of the $200 credit, which does not carry over (flogvit/dux-machina#879)'},
     help: COMMON_FLAGS.help,
 };
 

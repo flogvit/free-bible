@@ -296,7 +296,7 @@ flight.
    imports them from there.
 4. **Exit code 75 means the money stopped it**, not an error: either the API said
    «Your credit balance is too low», or the next request could take the month past
-   `--budget` (default $180, 90 % of the $200 Ultra credit — each request is held
+   `--budget` (default $200, all of the credit, which does not carry over to the next month — each request is held
    at the price of its largest possible answer until its real cost is known). Run
    the same command again on the 1st, or with another key; it goes on from where
    it stopped.
