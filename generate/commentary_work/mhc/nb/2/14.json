@@ -146,8 +146,8 @@
    "section": 4,
    "start": 0,
    "end": 8,
-   "status": "draft",
-   "rounds": 2,
+   "status": "stuck",
+   "rounds": 3,
    "attempts": 0,
    "versions": [
     {
@@ -206,6 +206,22 @@
       "paragraph 7: chapter: missing 3"
      ],
      "skipped": []
+    },
+    {
+     "argument": {
+      "premises": true,
+      "conclusions": true,
+      "evidence": true,
+      "problems": ""
+     },
+     "issues": [],
+     "summary": "Gjengivelsen er trofast og idiomatisk: alle resonnementer, skriftsteder, sitater og oppregninger (I–IV, 1–3, (1.)–(3.)) er med i samme rekkefølge og med samme vekt, og merkingen og osisRef-verdiene stemmer med kilden. Den mekaniske advarselen for avsnitt 7 er falsk alarm: alle henvisningene der (v. 23, v. 24–25, v. 29, v. 27–28, Ordsp 1,17; 7,23, Sak 12,6, Åp 6,15, Job 27,20, 4 Mos 31,8, Sal 72,14, Job 40,12, Esek 31,18) samsvarer med kilden, og tallet 3 er trolig punktnummeret «3.» som følger rett etter «osv.». Eneste småting er at «bay, or gulf, or arm of the sea» er trukket sammen til «en bukt eller en havarm», som ikke endrer innholdet.",
+     "score": 10,
+     "model": "claude-fable-5-2",
+     "mechanical": [
+      "paragraph 7: chapter: missing 3"
+     ],
+     "skipped": []
     }
    ],
    "text": [
@@ -219,7 +235,8 @@
     "IV. Her ser vi hvordan israelittene la merke til dette underfulle verket som Gud gjorde for dem, og hvilket godt inntrykk det gjorde på dem for øyeblikket."
    ],
    "translator": "claude-fable-5-2",
-   "model": "claude-fable-5-2"
+   "model": "claude-fable-5-2",
+   "note": "not clean after 3 reviews"
   },
   {
    "id": "2-14-4-1",

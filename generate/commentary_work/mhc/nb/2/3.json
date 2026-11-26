@@ -142,8 +142,8 @@
    "section": 3,
    "start": 0,
    "end": 11,
-   "status": "draft",
-   "rounds": 2,
+   "status": "stuck",
+   "rounds": 3,
    "attempts": 0,
    "versions": [],
    "reviews": [
@@ -178,6 +178,22 @@
       "paragraph 4: chapter: missing 2"
      ],
      "skipped": []
+    },
+    {
+     "argument": {
+      "premises": true,
+      "conclusions": true,
+      "evidence": true,
+      "problems": ""
+     },
+     "issues": [],
+     "summary": "Gjengivelsen er trofast og idiomatisk. Alle fire hovedpunkter (I–IV) med underpunkter, «Merk»-setninger, skriftsteder og latinske uttrykk er bevart med samme innhold og vekt. Merking og osisRef står som i kilden. Det mekaniske varselet for avsnitt 4 er falsk alarm: Dom 9,8 er korrekt, og punktnummeret «2.» står på rett plass etter «osv.». Ingen feil funnet.",
+     "score": 10,
+     "model": "claude-fable-5-2",
+     "mechanical": [
+      "paragraph 4: chapter: missing 2"
+     ],
+     "skipped": []
     }
    ],
    "text": [
@@ -194,7 +210,8 @@
     "2. Et navn som betegner hva han er for sitt folk. For at navnet <i>JEG ER</i> ikke skal gjøre dem rådville og forvirret, får han dessuten beskjed om å bruke et annet av Guds navn, et som er mer kjent og lettere å forstå: <i>Herren, deres fedres Gud, har sendt meg til dere</i> (<ref osisRef=\"Exod.3.15\">v. 15</ref>). Slik hadde Gud gjort seg kjent for ham (<ref osisRef=\"Exod.3.6\">v. 6</ref>), og slik skulle han gjøre ham kjent for dem: (1.) For å vekke til live blant dem fedrenes religion, som det er grunn til å frykte var sterkt forfalt og nesten gått tapt. Dette var nødvendig for å forberede dem på utfrielsen, <ref osisRef=\"Ps.80.19\">Sal 80,19</ref>. (2.) For å vekke forventningene deres om at løftene som var gitt fedrene, snart skulle bli oppfylt. Abraham, Isak og Jakob nevnes uttrykkelig ved navn, fordi pakten først ble sluttet med Abraham og ofte og uttrykkelig ble fornyet med Isak og Jakob. Disse tre ble skilt ut fra brødrene sine og utvalgt til å forvalte pakten, mens brødrene deres ble forkastet. Gud vil at dette skal være hans navn til evig tid, og det har vært, er og vil være hans navn, det som hans tilbedere kjenner ham ved og skiller ham fra alle falske guder ved; se <ref osisRef=\"1Kgs.18.36\">1 Kong 18,36</ref>. Merk: Guds paktsforhold til sitt folk er noe han alltid vil ha i minne, noe han setter sin ære i, og noe han vil at vi aldri skal glemme, men gi ham æren for. Når han vil at dette skal være hans minne for alle slekter, har vi all grunn i verden til å la det være det også hos oss, for det er et dyrebart minne."
    ],
    "translator": "claude-fable-5-2",
-   "model": "claude-fable-5-2"
+   "model": "claude-fable-5-2",
+   "note": "not clean after 3 reviews"
   },
   {
    "id": "2-3-4-0",

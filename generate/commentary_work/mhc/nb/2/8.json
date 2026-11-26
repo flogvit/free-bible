@@ -38,8 +38,8 @@
    "section": 1,
    "start": 0,
    "end": 9,
-   "status": "draft",
-   "rounds": 2,
+   "status": "stuck",
+   "rounds": 3,
    "attempts": 0,
    "versions": [],
    "reviews": [
@@ -74,6 +74,22 @@
       "paragraph 4: chapter: missing 2"
      ],
      "skipped": []
+    },
+    {
+     "argument": {
+      "premises": true,
+      "conclusions": true,
+      "evidence": true,
+      "problems": ""
+     },
+     "issues": [],
+     "summary": "Gjengivelsen er trofast og idiomatisk: alle resonnementer, skriftbelegg, latinske sitater og all merking er bevart avsnitt for avsnitt. Den mekaniske advarselen for avsnitt 4 er en falsk alarm; alle henvisningene der (v. 1–2, Sal 7,12, v. 3–4, 5 Mos 28,16) stemmer med kilden. Ingen feil funnet.",
+     "score": 10,
+     "model": "claude-fable-5-2",
+     "mechanical": [
+      "paragraph 4: chapter: missing 2"
+     ],
+     "skipped": []
     }
    ],
    "text": [
@@ -88,7 +104,8 @@
     "VI. Hva som ble utfallet av denne plagen (<ref osisRef=\"Exod.8.15\">v. 15</ref>): <i>Da farao så at det ble et pusterom,</i> forherdet han sitt hjerte, uten å tenke på verken det han nettopp hadde fått kjenne, eller det han hadde grunn til å frykte. Merk: 1. Før hjertet er fornyet ved Guds nåde, varer ikke de inntrykkene som lidelsens tvang etterlater. Overbevisningen slites bort, og løftene som ble presset fram, blir glemt. Før selve luften slår om, vil det som tiner i solen, fryse igjen i skyggen. 2. Guds tålmodighet blir skammelig misbrukt av syndere som ikke vil omvende seg. Pusterommet han gir dem for å lede dem til omvendelse, blir de forherdet av. Og mens han nådig innvilger dem våpenhvile for at de skal slutte fred, bruker de anledningen til på ny å samle de slagne styrkene til en gjenstridig vantro. Se <ref osisRef=\"Eccl.8.11\">Fork 8,11</ref>; <ref osisRef=\"Ps.78.34\">Sal 78,34</ref> osv."
    ],
    "translator": "claude-fable-5-2",
-   "model": "claude-fable-5-2"
+   "model": "claude-fable-5-2",
+   "note": "not clean after 3 reviews"
   },
   {
    "id": "2-8-2-0",
