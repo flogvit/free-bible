@@ -535,12 +535,6 @@ class Store {
     }
     allUnits(): Unit[] { return [...this.states.values()].flatMap(s => s.units); }
     bookUnits(book: number): Unit[] { return [...this.states.values()].filter(s => s.book === book).flatMap(s => s.units); }
-    /** The units of the book's first chapter that is not done (every unit checked or stuck): chapter by chapter, the
-     *  next one only when this one is done (#163). */
-    chapterUnits(book: number): Unit[] {
-        return [...this.states.values()].filter(s => s.book === book && s.units.some(u => u.status !== 'checked' && u.status !== 'stuck'))
-            .sort((a, b) => a.chapter - b.chapter)[0]?.units ?? [];
-    }
 }
 
 // ---------------------------------------------------------------- batches
@@ -800,10 +794,11 @@ async function main() {
         // 2. publish finished books
         for (const b of allBooks) if (publishBook(store, b)) console.log(`publisert: bok ${b}`);
 
-        // 3. the window: the first --books books that are not all checked, and in each its first chapter not done
+        // 3. the window: the first --books books that are not all checked
         const window = allBooks.filter(b => store.bookUnits(b).some(u => u.status !== 'checked' && u.status !== 'stuck')).slice(0, flags.books as number);
         const inFlight = new Set(store.pending.flatMap(p => p.units));
-        let next = nextRequests(window.flatMap(b => store.chapterUnits(b)), inFlight);
+        // The whole book at once, one book at a time (#163: «peise på mens vi har credits», «en bok ferdig før vi starter på en ny»).
+        let next = nextRequests(window.flatMap(b => store.bookUnits(b)), inFlight);
         if (flags.limit) next = next.slice(0, flags.limit as number);
 
         if (credit) {
