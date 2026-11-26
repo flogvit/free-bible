@@ -23,7 +23,8 @@
  *   4. gate      a unit is `checked` when a review finds nothing critical or major, keeps the
  *                argument, and the mechanical checks pass (same paragraph count; refcheck.ts:
  *                every reference, verse number, §, page and chapter number as in the source).
- *                After --rounds reviews without that it is `stuck`, and its book waits.
+ *                After --rounds reviews without that it is `stuck`; it gets new rounds once
+ *                before the window leaves its book, and the book stays unpublished until it passes.
  *   5. publish   a book whose units are all checked is written to
  *                generate/commentary/<work>/<language>/<book>/<chapter>.json, the same shape
  *                as the source with the model(s) that wrote and checked each section.
@@ -262,13 +263,28 @@ export function applyFindings(text: string[], findings: Finding[]): {text: strin
 
 const BLOCKS = (f: Finding) => f.severity !== 'minor';
 
+/** A review passes a text when it finds nothing critical or major, the argument holds and the mechanical checks pass. */
+function passes(review: Review, mechanical: string[]): boolean {
+    const a = review.argument;
+    return !review.issues.some(BLOCKS) && a.premises && a.conclusions && a.evidence && mechanical.length === 0;
+}
+
+/**
+ * A stuck unit its last review passed, checked again with today's mechanical checks: a false alarm the check no
+ * longer raises makes it checked without another review (#163: «&c. 2.» and «løs. 2.» held 16 units).
+ */
+export function recheck(u: Unit, source: string[]): Unit {
+    const last = u.reviews.at(-1);
+    if (u.status !== 'stuck' || !last || !u.text) return u;
+    return passes(last, mechanicalProblems(source, u.text)) ? {...u, status: 'checked', note: undefined} : u;
+}
+
 /** The unit after one review: findings applied, then checked, another round, or stuck. */
 export function afterReview(u: Unit, source: string[], review: Review, model: string, maxRounds: number): Unit {
     const {text, skipped} = applyFindings(u.text!, review.issues);
     const mechanical = mechanicalProblems(source, text);
     const changed = text.some((p, i) => p !== u.text![i]);
-    const a = review.argument;
-    const clean = !review.issues.some(BLOCKS) && a.premises && a.conclusions && a.evidence && mechanical.length === 0;
+    const clean = passes(review, mechanical);
     const rounds = u.rounds + 1;
     return {
         ...u,
@@ -750,6 +766,11 @@ async function main() {
 
     ensureSource(work, lang);
     const store = new Store(work, lang, allBooks);
+    for (const u of store.allUnits()) {
+        const again = recheck(u, sourceOf(store.unit(u.id)!.source, u));
+        if (again !== u) { store.put(u.id, again); console.log(`  ${u.id}: godkjent, henvisningssjekken hadde en falsk alarm`); }
+    }
+    store.save();
 
     if (flags.again || flags['retry-stuck']) {
         for (const u of store.allUnits()) {
@@ -795,10 +816,12 @@ async function main() {
         // 2. publish finished books
         for (const b of allBooks) if (publishBook(store, b)) console.log(`publisert: bok ${b}`);
 
-        // 3. the window: the first --books books that are not all checked. A book with stuck units is not done (#163: «en
-        // bok ferdig før vi starter på en ny»): each stuck unit gets new rounds once; one stuck again keeps the book open
-        // and is said in the report, for the owner to see.
-        const window = allBooks.filter(b => store.bookUnits(b).some(u => u.status !== 'checked')).slice(0, flags.books as number);
+        // 3. the window: the first --books books with work left. A book with stuck units is not done (#163: «en bok
+        // ferdig før vi starter på en ny»): each stuck unit gets new rounds once. One stuck again leaves the book
+        // unpublished and named in the report, and the window moves on: a book with nothing left to send held the job
+        // still from 26.11 16:56 with $45 of the month's credit unused.
+        const workLeft = (u: Unit) => u.status !== 'checked' && !(u.status === 'stuck' && u.retried);
+        const window = allBooks.filter(b => store.bookUnits(b).some(workLeft)).slice(0, flags.books as number);
         for (const u of window.flatMap(b => store.bookUnits(b)).filter(u => u.status === 'stuck' && !u.retried)) {
             store.put(u.id, {...u, status: u.text ? 'draft' : 'new', rounds: 0, attempts: 0, note: undefined, retried: true});
             console.log(`  ${u.id}: fast (${u.note}), får nye runder`);
