@@ -74,8 +74,8 @@
    "section": 2,
    "start": 0,
    "end": 5,
-   "status": "draft",
-   "rounds": 1,
+   "status": "checked",
+   "rounds": 2,
    "attempts": 0,
    "versions": [
     {
@@ -110,6 +110,20 @@
      ],
      "summary": "Gjengivelsen er trofast og velskrevet. Bibelteksten, henvisningene og merkingen stemmer med kilden, og resonnementet er komplett. Den eneste reelle feilen er «overbevist» for «convicted» i avsnitt 5, som forskyver et premiss om når blodhevneren kan handle uten dom.",
      "score": 8,
+     "model": "claude-fable-5-2",
+     "mechanical": [],
+     "skipped": []
+    },
+    {
+     "argument": {
+      "premises": true,
+      "conclusions": true,
+      "evidence": true,
+      "problems": ""
+     },
+     "issues": [],
+     "summary": "Gjengivelsen er trofast i alle fem avsnitt. Bibelteksten ligger nær King James-ordlyden, og alle resonnementer, skriftsteder og henvisninger i avsnitt 5 er med, med riktig osisRef og bevart merking. Versnummer 23 står uten <sup> slik som i kilden. Språket er naturlig og idiomatisk bokmål; ingen feil funnet.",
+     "score": 10,
      "model": "claude-fable-5-2",
      "mechanical": [],
      "skipped": []
