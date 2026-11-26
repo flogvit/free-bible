@@ -75,8 +75,8 @@
    "section": 1,
    "start": 7,
    "end": 8,
-   "status": "draft",
-   "rounds": 1,
+   "status": "checked",
+   "rounds": 2,
    "attempts": 0,
    "versions": [
     {
@@ -107,6 +107,20 @@
      ],
      "summary": "Gjengivelsen er trofast og har godt, naturlig språk; merking og versehenvisning er bevart. Ett sted i punkt 2 gjør setningsbygningen tilknytningen mellom fedrenes synd og korsfestelsen tvetydig eller feil, og det bør rettes.",
      "score": 8,
+     "model": "claude-fable-5-2",
+     "mechanical": [],
+     "skipped": []
+    },
+    {
+     "argument": {
+      "premises": true,
+      "conclusions": true,
+      "evidence": true,
+      "problems": ""
+     },
+     "issues": [],
+     "summary": "Gjengivelsen er trofast og fullstendig: begge oppfyllelsene (hjemkomsten fra Babylon og jødenes framtidige omvendelse), Efraim-sitatet, versreferansen og sluttsitatet er bevart med riktig merking og naturlig norsk. Ingen feil funnet.",
+     "score": 10,
      "model": "claude-fable-5-2",
      "mechanical": [],
      "skipped": []

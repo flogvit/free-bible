@@ -55,8 +55,8 @@
    "section": 1,
    "start": 0,
    "end": 5,
-   "status": "draft",
-   "rounds": 1,
+   "status": "checked",
+   "rounds": 2,
    "attempts": 0,
    "versions": [
     {
@@ -91,6 +91,20 @@
      ],
      "summary": "Trofast og velskrevet gjengivelse. Alle resonnementer, sitater og henvisninger er med, og merkingen er bevart. Eneste feil er osisRef-verdien for Salme 90,10 i avsnitt 3, som er fornorsket og må rettes tilbake til kildens form.",
      "score": 9,
+     "model": "claude-fable-5-2",
+     "mechanical": [],
+     "skipped": []
+    },
+    {
+     "argument": {
+      "premises": true,
+      "conclusions": true,
+      "evidence": true,
+      "problems": ""
+     },
+     "issues": [],
+     "summary": "Gjengivelsen er trofast og idiomatisk. Alle resonnementer, nummererte punkter, skriftbelegg og henvisninger er bevart med samme innhold og vekt, og merkingen og osisRef-verdiene står som i kilden. Ingen feil å rette.",
+     "score": 10,
      "model": "claude-fable-5-2",
      "mechanical": [],
      "skipped": []

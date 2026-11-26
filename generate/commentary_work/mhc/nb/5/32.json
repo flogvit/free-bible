@@ -129,8 +129,8 @@
    "section": 2,
    "start": 0,
    "end": 10,
-   "status": "draft",
-   "rounds": 1,
+   "status": "checked",
+   "rounds": 2,
    "attempts": 0,
    "versions": [
     {
@@ -186,6 +186,20 @@
      ],
      "summary": "Trofast og godt skrevet gjengivelse på naturlig bokmål. Avsnittstall, merking og alle osisRef stemmer med kilden, og argumentasjonen er bevart. Det som gjenstår, er en tvetydig pronomenreferanse i avsnitt 7 som kan snu poenget, en liten mildning i avsnitt 8 og et flertall i bibelteksten som svekker koblingen til kommentaren.",
      "score": 9,
+     "model": "claude-fable-5-2",
+     "mechanical": [],
+     "skipped": []
+    },
+    {
+     "argument": {
+      "premises": true,
+      "conclusions": true,
+      "evidence": true,
+      "problems": ""
+     },
+     "issues": [],
+     "summary": "Gjengivelsen er trofast mot kilden i alle ti avsnitt. Resonnementene, de nummererte leddene, skriftstedene og merkingen er bevart, og språket er naturlig moderne bokmål. Ingen feil å rette.",
+     "score": 10,
      "model": "claude-fable-5-2",
      "mechanical": [],
      "skipped": []
