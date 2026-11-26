@@ -723,6 +723,7 @@ const SPEC: Record<string, FlagSpec> = {
     rounds: {kind: 'number', default: 3, help: 'reviews before a unit that is still not clean is stuck'},
     limit: {...COMMON_FLAGS.limit, help: 'at most N requests per batch (a sample run)'},
     once: {kind: 'boolean', help: 'one pass: collect finished batches, send the next, then exit without waiting'},
+    minutes: {kind: 'number', help: 'poll every minute for this many minutes, then exit 0 (a scheduler runs it again): a batch is done in minutes, and chapter by chapter each step waits for the one before'},
     'dry-run': {kind: 'boolean', help: 'show what the next batch would hold and roughly cost, send nothing'},
     again: {kind: 'boolean', help: 'a later pass: checked units written by another model are reviewed again by --model'},
     'retry-stuck': {kind: 'boolean', help: 'give stuck units new attempts and rounds'},
@@ -776,6 +777,7 @@ async function main() {
         defaultHeaders: workspace ? {'anthropic-workspace-id': workspace} : undefined,
     });
 
+    const startedAt = Date.now();
     while (true) {
         // 1. collect what has ended
         let credit = false;
@@ -864,7 +866,7 @@ async function main() {
             console.log(stuck.length ? `ferdig, men ${stuck.length} enheter står fast (--retry-stuck gir dem nye runder)` : 'ferdig');
             return 0;
         }
-        if (flags.once) { report(store, window); return 0; }
+        if (flags.once || (flags.minutes && Date.now() + POLL_MS > startedAt + (flags.minutes as number) * 60_000)) { report(store, window); return 0; }
         await Bun.sleep(POLL_MS);
     }
 }
