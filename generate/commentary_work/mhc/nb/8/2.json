@@ -7,8 +7,8 @@
    "section": 0,
    "start": 0,
    "end": 1,
-   "status": "draft",
-   "rounds": 2,
+   "status": "stuck",
+   "rounds": 3,
    "attempts": 0,
    "versions": [],
    "reviews": [
@@ -43,13 +43,79 @@
       "paragraph 1: chapter: not in source 1"
      ],
      "skipped": []
+    },
+    {
+     "argument": {
+      "premises": true,
+      "conclusions": true,
+      "evidence": true,
+      "problems": ""
+     },
+     "issues": [],
+     "summary": "Gjengivelsen er trofast og idiomatisk: resonnementet (kapitlets ringe emne, begrunnet med Ruts innpoding i Kristi slektslinje som bilde på hedningkirkens trolovelse), henvisningen til Jes 54,1 og tredelingen med versangivelser er bevart uten tillegg eller utelatelser. Den mekaniske flaggingen er falsk alarm: Jes 54,1 svarer til «Isa. liv. 1», og ingen henvisning er lagt til.",
+     "score": 10,
+     "model": "claude-fable-5-2",
+     "mechanical": [
+      "paragraph 1: chapter: not in source 1"
+     ],
+     "skipped": []
+    },
+    {
+     "argument": {
+      "premises": true,
+      "conclusions": true,
+      "evidence": true,
+      "problems": ""
+     },
+     "issues": [],
+     "summary": "Gjengivelsen er trofast og idiomatisk: alle ledd i resonnementet, henvisningen til Jes 54,1 og den tredelte disposisjonen med versangivelser er bevart, og osisRef-verdiene står uendret. Den mekaniske sjekkens merknad er en falsk alarm, siden «liv. 1» i kilden er kapittel 54, vers 1, altså riktig gjengitt som Jes 54,1.",
+     "score": 10,
+     "model": "claude-fable-5-2",
+     "mechanical": [
+      "paragraph 1: chapter: not in source 1"
+     ],
+     "skipped": []
+    },
+    {
+     "argument": {
+      "premises": true,
+      "conclusions": true,
+      "evidence": true,
+      "problems": ""
+     },
+     "issues": [],
+     "summary": "Gjengivelsen er trofast og naturlig. Resonnementet (det ringe emnet – hensikten: innpoding i Kristi slektslinje og bilde på hedningkirkens trolovelse – derfor bemerkelsesverdig og lærerik) er fullt bevart, og tredelingen står som i kilden. Alle henvisninger (Jes 54,1; v. 1–3; v. 4–16; v. 18–23) og osisRef stemmer. Den mekaniske sjekkens merknad om «chapter» er falsk alarm: gjengivelsen har ingen henvisning eller tall som ikke står i kilden.",
+     "score": 10,
+     "model": "claude-fable-5-2",
+     "mechanical": [
+      "paragraph 1: chapter: not in source 1"
+     ],
+     "skipped": []
+    },
+    {
+     "argument": {
+      "premises": true,
+      "conclusions": true,
+      "evidence": true,
+      "problems": ""
+     },
+     "issues": [],
+     "summary": "Gjengivelsen er trofast og godt skrevet: alle ledd i resonnementet, henvisningen til Jes 54,1 og den tredelte disposisjonen med versangivelser er bevart, og merkingen er intakt. Den mekaniske sjekkens treff på «chapter» er falsk alarm: «kapittel» gjengir kildens «chapter» og er ikke en lagt til henvisning.",
+     "score": 10,
+     "model": "claude-fable-5-2",
+     "mechanical": [
+      "paragraph 1: chapter: not in source 1"
+     ],
+     "skipped": []
     }
    ],
    "text": [
     "Det finnes knapt noe kapittel i hele den hellige historien som bøyer seg så dypt som dette, for å ta notis av en så ringe person som Rut, en fattig moabittisk enke, og av en så ringe handling som at hun sanket aks på en nabos åker, med alle de små omstendighetene omkring det. Men alt dette skjedde for at hun skulle bli podet inn i Kristi slektslinje og tatt opp blant hans forfedre, slik at hun kunne være et bilde på hedningkirkens trolovelse med Kristus, <ref osisRef=\"Isa.54.1\">Jes 54,1</ref>. Det er dette som gjør fortellingen bemerkelsesverdig, og mange steder i den er lærerike og svært godt egnet til å dra nytte av. Her har vi: I. Ruts ydmykhet og flid da hun sanket aks, og hvordan forsynet ledet henne til Boas' åker, <ref osisRef=\"Ruth.2.1-Ruth.2.3\">v. 1–3</ref>. II. Den store velviljen Boas viste henne på mange måter, <ref osisRef=\"Ruth.2.4-Ruth.2.16\">v. 4–16</ref>. III. Ruts hjemkomst til svigermoren, <ref osisRef=\"Ruth.2.18-Ruth.2.23\">v. 18–23</ref>."
    ],
    "translator": "claude-fable-5-2",
-   "model": "claude-fable-5-2"
+   "model": "claude-fable-5-2",
+   "note": "not clean after 3 reviews",
+   "retried": true
   },
   {
    "id": "8-2-1-0",
@@ -91,11 +157,26 @@
    "section": 2,
    "start": 0,
    "end": 12,
-   "status": "draft",
-   "rounds": 0,
+   "status": "checked",
+   "rounds": 1,
    "attempts": 0,
    "versions": [],
-   "reviews": [],
+   "reviews": [
+    {
+     "argument": {
+      "premises": true,
+      "conclusions": true,
+      "evidence": true,
+      "problems": ""
+     },
+     "issues": [],
+     "summary": "Gjengivelsen er trofast og velskrevet. Alle tolv avsnitt, alle resonnementer, sitater og henvisninger er med, med samme innhold og vekt som i kilden. Merking og osisRef er bevart, og bibelteksten ligger nær King James-ordlyden. Én bagatell er ikke ført som feil: «the wife of Elimelech» er gjengitt «enken etter Elimelek» i avsnitt 12, noe som er saklig riktig og naturlig norsk.",
+     "score": 10,
+     "model": "claude-fable-5-2",
+     "mechanical": [],
+     "skipped": []
+    }
+   ],
    "text": [
     "<h>Boas' godhet mot Rut. (1312 f.Kr.)</h>",
     "<sup>4</sup> Og se, Boas kom fra Betlehem og sa til høstfolkene: Herren <i>være</i> med dere! Og de svarte ham: Herren velsigne deg! <sup>5</sup> Da sa Boas til sin tjener som var satt over høstfolkene: Hvem sin pike <i>er</i> dette? <sup>6</sup> Og tjeneren som var satt over høstfolkene, svarte og sa: Det <i>er</i> den moabittiske piken som kom tilbake med Noomi fra Moabs land. <sup>7</sup> Og hun sa: Jeg ber dere, la meg få sanke og samle etter høstfolkene blant kornbåndene. Så kom hun, og hun har holdt på helt fra morgenen og til nå, bortsett fra at hun ble en liten stund i huset. <sup>8</sup> Da sa Boas til Rut: Hører du ikke, min datter? Gå ikke for å sanke på en annen åker, og gå heller ikke herfra, men hold deg her, tett ved mine piker. <sup>9</sup> <i>La</i> øynene dine <i>være</i> på åkeren som de høster, og gå etter dem. Har jeg ikke pålagt de unge mennene at de ikke skal røre deg? Og når du er tørst, så gå til karene og drikk av <i>det</i> som de unge mennene har øst opp. <sup>10</sup> Da falt hun på sitt ansikt og bøyde seg til jorden og sa til ham: Hvorfor har jeg funnet nåde for dine øyne, så du legger merke til meg, enda jeg <i>er</i> en fremmed? <sup>11</sup> Og Boas svarte og sa til henne: Det er til fulle blitt fortalt meg, alt det du har gjort mot din svigermor etter din manns død, og <i>hvordan</i> du har forlatt din far og din mor og ditt fødeland og er kommet til et folk som du ikke kjente før. <sup>12</sup> Herren gjengjelde din gjerning, og måtte du få full lønn av Herren, Israels Gud, under hvis vinger du er kommet for å sette din lit. <sup>13</sup> Da sa hun: La meg finne velvilje for dine øyne, min herre, for du har trøstet meg og talt vennlig til din tjenestekvinne, enda jeg ikke er som en av dine tjenestekvinner. <sup>14</sup> Og Boas sa til henne: Kom hit ved måltidet og spis av brødet, og dypp biten din i eddiken. Og hun satte seg ved siden av høstfolkene, og han rakte henne ristet <i>korn,</i> og hun spiste og ble mett og hadde til overs. <sup>15</sup> Og da hun reiste seg for å sanke, bød Boas sine unge menn og sa: La henne sanke også mellom kornbåndene, og gjør henne ikke til skamme. <sup>16</sup> Og la også <i>noe</i> av håndfullene falle med vilje for henne, og la <i>det</i> ligge, så hun kan sanke <i>det</i> opp, og skjenn ikke på henne.",
@@ -118,11 +199,26 @@
    "section": 2,
    "start": 12,
    "end": 14,
-   "status": "draft",
-   "rounds": 0,
+   "status": "checked",
+   "rounds": 1,
    "attempts": 0,
    "versions": [],
-   "reviews": [],
+   "reviews": [
+    {
+     "argument": {
+      "premises": true,
+      "conclusions": true,
+      "evidence": true,
+      "problems": ""
+     },
+     "issues": [],
+     "summary": "Gjengivelsen er trofast og velskrevet. Alle punktene (1.)–(6.) og (1.)–(5.) er med i riktig rekkefølge, og hvert premiss, hver «Merk»-slutning og hvert belegg er bevart med samme vekt. Henvisningene (v. 8, 9, 14, 11, 12, 15, 10, 13, 14–15, 2 Sam 23,15, Ordsp 31,20) stemmer, og osisRef og kursivmerkingen står som i kilden. Språket er naturlig moderne bokmål. Ingen feil å rette.",
+     "score": 10,
+     "model": "claude-fable-5-2",
+     "mechanical": [],
+     "skipped": []
+    }
+   ],
    "text": [
     "2. Boas viste henne deretter stor vennlighet på flere måter. (1.) Han ba henne følge høstfolkene hans på hver åker de høstet inn, og ikke sanke på en annens åker, for hun skulle ikke trenge å gå noe annet sted for å få det bedre (<ref osisRef=\"Ruth.2.8\">v. 8</ref>): <i>Hold deg her, tett ved pikene mine;</i> for de av hennes eget kjønn var det mest passende selskapet for henne. (2.) Han påla alle tjenerne sine å være hensynsfulle mot henne og vise henne respekt, og det var de uten tvil mot en som de så at husbonden var god mot. Hun var en fremmed, og trolig var språket, klærne og framtoningen hennes svært forskjellig fra deres. Men han påla dem at de ikke på noen måte skulle fornærme henne eller behandle henne stygt, slik uhøflige tjenere altfor lett gjør mot fremmede. (3.) Han ønsket henne velkommen til det måltidet han hadde sørget for til sine egne tjenere. Han ba henne ikke bare drikke av vannet som var øst opp til dem (for det ser ut til å være den drikken han mener, <ref osisRef=\"Ruth.2.9\">v. 9</ref>, hentet fra den berømte brønnen i Betlehem ved porten, den som David lengtet etter vann fra, <ref osisRef=\"2Sam.23.15\">2 Sam 23,15</ref>), men også <i>ved måltidet å komme og spise av brødet deres</i> (<ref osisRef=\"Ruth.2.14\">v. 14</ref>). Ja, hun skulle være velkommen til sausen deres også: <i>Kom, dypp biten din i eddiken,</i> så den får smak. For Gud unner oss ikke bare nærende mat, men også velsmakende, ikke bare til nødtørft, men til glede. Og til oppmuntring for henne og rettledning for tjenerne <i>rakte han henne ristet korn</i> å spise, han selv, siden han tilfeldigvis var til stede da høstfolkene satte seg til bords. Det er ingen skam for den fineste hånd å bli <i>rakt ut mot den trengende</i> (<ref osisRef=\"Prov.31.20\">Ordsp 31,20</ref>) og brukt til å tjene de fattige. Legg merke til at Boas ikke var knuslete med forsyningene til høstfolkene, men sendte dem så mye mer enn de selv trengte, at det også ble et måltid for en fremmed. Slik er det: <i>Den ene strør ut og får likevel mer.</i> (4.) Han roste henne for den pliktoppfyllende respekten hun viste svigermoren. Den hadde han hørt om, selv om han ikke kjente Rut av utseende (<ref osisRef=\"Ruth.2.11\">v. 11</ref>): <i>Det er blitt meg fullt ut fortalt alt det du har gjort mot din svigermor.</i> Merk: De som gjør det gode, bør få ros for det. Men det han særlig roste henne for, var at hun hadde forlatt sitt eget land og blitt proselytt til den jødiske religion. For slik utlegger den kaldeiske teksten det: «Du er kommet for å bli proselytt og bo blant <i>et folk som du ikke kjenner.</i>» De som forlater alt for å slutte seg til den sanne religion, er dobbelt ære verd. (5.) Han ba for henne (<ref osisRef=\"Ruth.2.12\">v. 12</ref>): <i>Herren lønne din gjerning.</i> Hennes sterke kjærlighet til Israels samfunn, som hun av fødsel var fremmed for, var et slikt verk av Guds nåde i henne at det helt sikkert ville bli kronet med full lønn av ham <i>under hvis vinger hun var kommet for å sette sin lit.</i> Merk: De som ved tro kommer inn under den guddommelige nådens vinger og finner full glede og tillit i den nåden, kan være sikre på å få full lønn for det. Ut fra dette uttrykket beskriver jødene en proselytt som en som er <i>samlet under den guddommelige majestets vinger.</i> (6.) Han oppmuntret henne til å fortsette å sanke, og tilbød seg ikke å ta henne bort fra det arbeidet. For den største godhet vi kan vise våre fattige slektninger, er å hjelpe og oppmuntre fliden deres. Boas ba tjenerne la henne sanke mellom kornbåndene, der andre sankere ikke fikk komme, og ikke klandre henne, det vil si ikke kalle henne <i>tyv</i> eller mistenke henne for å ta mer enn hun hadde lov til, <ref osisRef=\"Ruth.2.15\">v. 15</ref>. Alt dette viser at Boas var en mann med et gavmildt sinn, og en som i samsvar med loven hadde omtanke for den fremmedes hjerte.",
     "3. Rut tok imot velgjerningene hans med stor ydmykhet og takknemlighet, og hun oppførte seg like sømmelig på sin plass som han gjorde på sin. Men lite ante hun at hun snart skulle bli frue over den åkeren hun nå sanket på. (1.) Hun viste ham all mulig respekt og æret ham etter landets skikk (<ref osisRef=\"Ruth.2.10\">v. 10</ref>): <i>Hun falt på sitt ansikt og bøyde seg til jorden.</i> Merk: God folkeskikk er en stor pryd for religionen, og vi skal gi <i>ære til den som ære tilkommer.</i> (2.) Hun erkjente ydmykt at hun ikke var verdig hans velgjerninger: «<i>Jeg er en fremmed</i> (<ref osisRef=\"Ruth.2.10\">v. 10</ref>) og <i>ikke som en av dine tjenestekvinner</i> (<ref osisRef=\"Ruth.2.13\">v. 13</ref>), ikke så godt kledd eller så godt opplært, ikke så ordentlig eller så nevenyttig.» Merk: Det sømmer seg for oss alle å tenke ringe om oss selv og legge merke til det hos oss selv som gjør oss mindre, og akte andre høyere enn oss selv. (3.) Hun anerkjente takknemlig hans godhet mot henne. Selv om den ikke kostet ham stort, og ikke var mye mer enn det Guds lov forpliktet ham til, gjør hun den likevel stor og undrer seg over den: <i>Hvorfor har jeg funnet nåde for dine øyne?</i> <ref osisRef=\"Ruth.2.10\">v. 10</ref>. (4.) Hun ber om at hans velvilje må vare ved: <i>La meg finne nåde for dine øyne</i> (<ref osisRef=\"Ruth.2.13\">v. 13</ref>), og hun erkjenner at det han hadde sagt, hadde vært en hjertestyrkning for henne: <i>Du har trøstet meg, fordi du har talt vennlig til meg.</i> De som er store og høyt på strå, vet ikke hvor mye godt de kan gjøre mot dem som står under dem, med et vennlig blikk eller noen vennlige ord. Og en så liten utgift skulle man tro de ikke ville vegre seg for, når den blir ført opp på regnskapet over deres godgjørenhet. (5.) Da Boas ga henne middag sammen med høstfolkene, spiste hun bare så mye som hun trengte, lot resten være og reiste seg straks for å sanke, <ref osisRef=\"Ruth.2.14-Ruth.2.15\">v. 14–15</ref>. Hun brukte verken nøden eller arbeidet som påskudd for å spise mer enn det som var passende for henne, og heller ikke så mye at hun ble uskikket til arbeid om ettermiddagen. Måtehold er flidens venn, og vi skal spise og drikke for å få styrke til arbeidet, ikke for å bli uopplagte til det."
