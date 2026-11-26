@@ -144,8 +144,8 @@
    "section": 2,
    "start": 7,
    "end": 11,
-   "status": "draft",
-   "rounds": 1,
+   "status": "checked",
+   "rounds": 2,
    "attempts": 0,
    "versions": [
     {
@@ -179,6 +179,20 @@
      ],
      "summary": "Trofast og velskrevet gjengivelse med naturlig, moderne bokmål. Alle avsnitt, henvisninger, osisRef-verdier og all merking er på plass, og argumentasjonen er fullt bevart. Én feil gjenstår: «satte det på trykk i skrift» i avsnitt 3 må rettes til «satte det på skrift».",
      "score": 8,
+     "model": "claude-fable-5-2",
+     "mechanical": [],
+     "skipped": []
+    },
+    {
+     "argument": {
+      "premises": true,
+      "conclusions": true,
+      "evidence": true,
+      "problems": ""
+     },
+     "issues": [],
+     "summary": "Gjengivelsen er trofast avsnitt for avsnitt. Alle fire tolkninger av Josvas ord, folkets svar, paktens tre formelle kjennetegn og avskjeden er med, med samme innhold og vekt. Alle skriftsteder, versnumre og osisRef stemmer, og merkingen er beholdt. Språket er naturlig og godt bokmål. Ingen feil funnet.",
+     "score": 10,
      "model": "claude-fable-5-2",
      "mechanical": [],
      "skipped": []
