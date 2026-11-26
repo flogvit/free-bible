@@ -77,8 +77,8 @@
    "section": 0,
    "start": 10,
    "end": 12,
-   "status": "draft",
-   "rounds": 1,
+   "status": "checked",
+   "rounds": 2,
    "attempts": 0,
    "versions": [
     {
@@ -110,6 +110,20 @@
      ],
      "summary": "Trofast og velskrevet gjengivelse i naturlig, moderne bokmål. Alle resonnementer, henvisninger, latinske sitater og merking er på plass. Eneste funn er en uheldig ordstilling i avsnitt 1 som gjør formålsleddet om fruktene tvetydig eller feil.",
      "score": 9,
+     "model": "claude-fable-5-2",
+     "mechanical": [],
+     "skipped": []
+    },
+    {
+     "argument": {
+      "premises": true,
+      "conclusions": true,
+      "evidence": true,
+      "problems": ""
+     },
+     "issues": [],
+     "summary": "Gjengivelsen er trofast og velskrevet. Alle resonnementer, sitater, latinske uttrykk, skrifthenvisninger og all merking er bevart med samme innhold og vekt som i kilden, og språket er naturlig, moderne bokmål. Ingen feil funnet.",
+     "score": 10,
      "model": "claude-fable-5-2",
      "mechanical": [],
      "skipped": []
@@ -430,7 +444,7 @@
    "start": 0,
    "end": 3,
    "status": "draft",
-   "rounds": 1,
+   "rounds": 2,
    "attempts": 0,
    "versions": [],
    "reviews": [
@@ -443,6 +457,22 @@
      },
      "issues": [],
      "summary": "Gjengivelsen er trofast og idiomatisk. Alle resonnementer, sitater og henvisninger er med og stemmer med kilden, og merkingen er bevart. Den mekaniske advarselen om tallet 2 i avsnitt 3 er falsk alarm: alle skriftstedshenvisninger og begge punktnumrene (1. og 2.) står som i kilden.",
+     "score": 10,
+     "model": "claude-fable-5-2",
+     "mechanical": [
+      "paragraph 3: chapter: missing 2"
+     ],
+     "skipped": []
+    },
+    {
+     "argument": {
+      "premises": true,
+      "conclusions": true,
+      "evidence": true,
+      "problems": ""
+     },
+     "issues": [],
+     "summary": "Gjengivelsen er trofast og fullstendig. Alle resonnementer er med: den gradvise stigningen i skaperverket, første årsak og sekundære årsaker, hvalen som Leviatan, velsignelsen som grunn til artenes beståen, og anvendelsen på fiske og fuglefangst. Alle skriftsteder (1 Mos 1,20–21; Job 41,1; Sal 104,25; 1 Mos 1,22; Fork 3,14; Job 12,7.9) og henvisningen til Boyle står med riktig osisRef og riktig norsk form. Merkingen er bevart, og språket er naturlig bokmål. Den mekaniske advarselen om tallet 2 i avsnitt 3 er en falsk alarm: punktnummeret «2.» og alle kapittel- og verstall stemmer med kilden, og utslaget skyldes trolig kildens uvanlige skrivemåte «Job xli. :1».",
      "score": 10,
      "model": "claude-fable-5-2",
      "mechanical": [
@@ -497,8 +527,8 @@
    "section": 7,
    "start": 0,
    "end": 8,
-   "status": "draft",
-   "rounds": 1,
+   "status": "checked",
+   "rounds": 2,
    "attempts": 0,
    "versions": [
     {
@@ -536,6 +566,20 @@
      ],
      "summary": "Trofast og velskrevet gjengivelse. Avsnittstall, merking, osisRef-er og norske henvisninger stemmer, og argumentasjonen er fullstendig bevart. Eneste funn er at «habitual» er gjengitt med «til vanlig», som svekker utsagnet om urtilstandens fullkomne samsvar med Guds vilje.",
      "score": 9,
+     "model": "claude-fable-5-2",
+     "mechanical": [],
+     "skipped": []
+    },
+    {
+     "argument": {
+      "premises": true,
+      "conclusions": true,
+      "evidence": true,
+      "problems": ""
+     },
+     "issues": [],
+     "summary": "Gjengivelsen er trofast i alle åtte avsnitt: hvert resonnement, sitat og skriftsted står med samme innhold og vekt som i kilden, og alle osisRef og merking er uendret. Språket er naturlig moderne bokmål, og jeg fant ingenting som må rettes.",
+     "score": 10,
      "model": "claude-fable-5-2",
      "mechanical": [],
      "skipped": []
