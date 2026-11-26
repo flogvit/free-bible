@@ -53,3 +53,11 @@ kvn/data/mapping-coverage.json
 # Samme sak som flogvit-com#77 (meta) og flogvit-com-server#21 (server), som
 # begge stoppet ved sin egen klone. Se flogvit-com#240.
 .playwright-mcp/
+
+# SWORD modules downloaded by generate/commentary.ts; the text is extracted to generate/commentary/
+external/commentaries
+# Claude Code legger igjen .claude/.cc-writes/ i katalogen den skriver til. I
+# kildedataene er det rusk som ville fulgt med en `git add` av en hel bok.
+# Avgrenset hit: repoets egen .claude/ (settings.json, hooks) er sjekket inn.
+generate/commentary/**/.claude/
+generate/commentary_work/**/.claude/

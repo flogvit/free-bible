@@ -33,6 +33,13 @@ export const anthropicModel: string = process.env.ANTHROPIC_MODEL || "claude-opu
 // anthropicModel above: nothing has tested them on another model.
 export const bibleModel: string = process.env.ANTHROPIC_MODEL || "claude-opus-5-5";
 
+// Model for commentary.ts — old commentaries rendered into today's language. The trial in
+// generate/eval/reference-works/ (2026-09-20) chose Fable over Opus 5, which misread
+// Odland's «meget mer» (= snarere) and changed an Ewald § reference; 5.2 is the same line
+// at a lower price. A newer model goes here, and `commentary.ts --again` lets it make a
+// second pass over what an older one wrote.
+export const commentaryModel: string = "claude-fable-5-2";
+
 // List price in dollars per million tokens, [input, output]. Thinking is billed as output.
 // Cost lines in the logs are computed from this, so a model missing here reports no cost
 // rather than the wrong one.
@@ -40,7 +47,16 @@ export const anthropicPrices: Record<string, [number, number]> = {
     'claude-opus-5': [5, 25],
     'claude-opus-5-5': [4, 20],
     'claude-fable-5-1': [10, 50],
+    'claude-fable-5-2': [8, 40],
     'claude-sonnet-5': [2, 10],
+};
+
+// What a cache read costs per million tokens, where it is not a tenth of input: Fable 5.2 and Opus 5.5 read at $0.20,
+// Fable 5.1 at $0.25 (the API's pricing). A cache write costs 1.25x input for five minutes, 2x for an hour.
+export const anthropicCacheReads: Record<string, number> = {
+    'claude-fable-5-2': 0.20,
+    'claude-opus-5-5': 0.20,
+    'claude-fable-5-1': 0.25,
 };
 
 // Opus 5 tenker som standard, og max_tokens dekker tenkning + svar under ett.

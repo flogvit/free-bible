@@ -188,7 +188,10 @@ carries no counts at all.
 
 Live and used regularly: `bible.ts`, `translate.ts`, `references.ts`,
 `references-semantic.ts`, `eval-judges.ts`, `chapter-tags.ts`, `bible-persons.ts`, `build-translations-index.ts`
-(regenerate after any `meta.json`/`license.json` change), `glossary.ts`, `triage.ts`.
+(regenerate after any `meta.json`/`license.json` change), `glossary.ts`, `triage.ts`,
+`commentary.ts` (old commentaries into today's language, through the Batches API — see
+`docs/running-jobs.md` → *Matthew Henry into bokmål*; it reads SWORD modules with `sword.ts` and
+checks references with `refcheck.ts`).
 
 Under `kvn/scripts/`: `run-verification.sh` (entry point), `check-mapping-coverage.ts`,
 `verify-text.ts`, `verify-text-report.ts` — the text verification of the mappings.

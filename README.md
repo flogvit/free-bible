@@ -82,6 +82,35 @@ import {CrossMapper} from './kvn/src/ukvn.ts';
 
 See [kvn/README.md](kvn/README.md).
 
+### Matthew Henry's commentary in today's bokmål
+
+Matthew Henry's *Complete Commentary on the Whole Bible* (1706–1721, public
+domain, CrossWire's `MHC` module) is being rendered into today's bokmål, book by
+book, by `generate/commentary.ts`. The brief is a free modernisation that keeps
+every argument, reference and quotation — not a word-for-word translation.
+
+```
+generate/commentary/mhc/meta.json          # title, author, licence, source
+generate/commentary/mhc/en/1/1.json        # the original, Genesis 1
+generate/commentary/mhc/nb/1/1.json        # the rendering, once Genesis is done and checked
+generate/commentary/mhc/nb/index.json      # which books are out, when, and by which model
+```
+
+A chapter is a list of sections, one per verse range (`from: 0` is the chapter's
+introduction, chapter `0` the book's), each a list of paragraphs. The rendering
+has exactly the paragraphs of the original, so paragraph *n* stands beside
+paragraph *n*, and each section names the `models` that wrote and checked it.
+Paragraphs use a small HTML subset: `<h>`, `<i>`, `<b>`, `<sup>` (verse number),
+`<br>`, `<note>`, and `<ref osisRef="John.3.21">Joh 3,21</ref>`.
+
+The model is Claude Fable 5.2 (`commentaryModel` in `generate/constants.ts`),
+through the Message Batches API at **effort `high`** (`EFFORT` in
+`generate/commentary.ts`) — the level the 2026-09 trial ran when Fable was
+chosen. A book is published only when every part of it has passed a proofread
+round with nothing critical or major, kept its argument structure (premises,
+conclusions, evidence), and has the same references, verse numbers, § and page
+numbers as the original (`generate/refcheck.ts`).
+
 ## Running the scripts
 
 ```bash
