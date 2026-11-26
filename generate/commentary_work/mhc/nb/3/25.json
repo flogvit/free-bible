@@ -135,8 +135,8 @@
    "section": 2,
    "start": 9,
    "end": 10,
-   "status": "draft",
-   "rounds": 1,
+   "status": "checked",
+   "rounds": 2,
    "attempts": 0,
    "versions": [
     {
@@ -175,6 +175,20 @@
      ],
      "summary": "Trofast og naturlig gjengivelse der hele argumentasjonen og alle henvisninger er bevart. To ting bør rettes: «omsorg» for «care» gir feil mening på moderne bokmål, og «over dere» er lagt til i bibelsitatet fra v. 21.",
      "score": 8,
+     "model": "claude-fable-5-2",
+     "mechanical": [],
+     "skipped": []
+    },
+    {
+     "argument": {
+      "premises": true,
+      "conclusions": true,
+      "evidence": true,
+      "problems": ""
+     },
+     "issues": [],
+     "summary": "Gjengivelsen er trofast og naturlig. Alle tre løftene, de tre underpunktene om det sjette årets velsignelse, begge «Merk»-anvendelsene og alle henvisninger er med, med uendret osisRef og bevart merking. «Comfort» er gjengitt med et ordpar («trøst og velvære»), som er innenfor fri gjengivelse.",
+     "score": 10,
      "model": "claude-fable-5-2",
      "mechanical": [],
      "skipped": []

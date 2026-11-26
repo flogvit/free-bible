@@ -73,8 +73,8 @@
    "section": 2,
    "start": 0,
    "end": 2,
-   "status": "draft",
-   "rounds": 1,
+   "status": "stuck",
+   "rounds": 3,
    "attempts": 0,
    "versions": [],
    "reviews": [
@@ -93,6 +93,38 @@
       "paragraph 2: chapter: missing 3"
      ],
      "skipped": []
+    },
+    {
+     "argument": {
+      "premises": true,
+      "conclusions": true,
+      "evidence": true,
+      "problems": ""
+     },
+     "issues": [],
+     "summary": "Gjengivelsen er trofast og idiomatisk: alle tre hovedpunktene med underpunkt (1.) og (2.), begrunnelsene og samtlige skrifthenvisninger er bevart med riktig osisRef og norsk form. Bibelteksten ligger nær King James-ordlyden, og merkingen er intakt. De to varslene fra den mekaniske sjekken (tallet 3 i avsnitt 2) er falske alarmer; alle henvisninger og nummereringer stemmer med kilden.",
+     "score": 10,
+     "model": "claude-fable-5-2",
+     "mechanical": [
+      "paragraph 2: chapter: missing 3"
+     ],
+     "skipped": []
+    },
+    {
+     "argument": {
+      "premises": true,
+      "conclusions": true,
+      "evidence": true,
+      "problems": ""
+     },
+     "issues": [],
+     "summary": "Gjengivelsen er trofast og velskrevet. Alle tre hovedpunktene og de to underpunktene om fett og blod er med, med premisser, konklusjoner og skriftbelegg i samme rekkefølge og med samme vekt. Bibelteksten ligger nær King James-ordlyden, og kursiv og versnumre er bevart. Den mekaniske sjekken (manglende/tillagt «3» i avsnitt 2) er falsk alarm: alle osisRef-verdier er identiske med kilden, og alle kapittel- og verstall er riktig omskrevet (1 Kor 12,23–24; 1 Kong 4,22; Neh 8,10; Mal 1,7.12; Sal 16,4; Hebr 10,29).",
+     "score": 10,
+     "model": "claude-fable-5-2",
+     "mechanical": [
+      "paragraph 2: chapter: missing 3"
+     ],
+     "skipped": []
     }
    ],
    "text": [
@@ -100,7 +132,8 @@
     "Her gis det anvisninger om fredsofferet når det var en sau eller en geit. Turtelduer eller dueunger, som kunne bæres fram som brennoffer, var ikke tillatt som fredsoffer. De har nemlig ikke fett nok til at det er noe å brenne på alteret, og det ville bli nesten ingenting igjen av dem om de skulle deles etter loven for fredsofferet. Lovene om et lam eller en geit som ofres til fredsoffer, er stort sett de samme som for en okse, og her kommer det lite til. Men: 1. Sauens halestykke skulle brennes på alteret sammen med innvollsfettet, <i>hele halestykket</i> (<ref osisRef=\"Lev.3.9\">v. 9</ref>), fordi det i de landene var svært fett og stort. Noen merker seg ut fra dette at hvor foraktelig en ting enn er, kan Gud gjøre den ærefull ved å ta den i bruk i sin tjeneste. Slik sies det at Gud gir <i>desto større ære til den delen som manglet det</i>, <ref osisRef=\"1Cor.12.23-1Cor.12.24\">1 Kor 12,23–24</ref>. 2. Det som ble brent på alteret, kalles <i>offerets mat</i>, <ref osisRef=\"Lev.3.11\">v. 11</ref>, <ref osisRef=\"Lev.3.16\">16</ref>. Det nærte den hellige ilden, og det var til behag for Gud slik maten vår er det for oss. Og siden Gud i tabernaklet så å si holdt hus blant dem, holdt han ved ofrene på alteret et godt bord, slik Salomo gjorde ved sitt hoff, <ref osisRef=\"1Kgs.4.22-1Kgs.4.28\">1 Kong 4,22</ref> osv. 3. Her slås det fast en allmenn regel, at <i>alt fettet er Herrens</i> (<ref osisRef=\"Lev.3.16\">v. 16</ref>), og på den bygges en lov om at de <i>verken skulle spise fett eller blod</i>, nei, ikke engang i sine egne hjem, <ref osisRef=\"Lev.3.17\">v. 17</ref>. (1.) Når det gjelder <i>fettet</i>, menes ikke det som er innvevd i kjøttet (det kunne de spise, <ref osisRef=\"Neh.8.10\">Neh 8,10</ref>), men innvollsfettet, talgen, som alltid var Guds del av offerdyrene. Derfor skulle de ikke spise av det, nei, ikke engang fra de dyrene de slaktet til vanlig bruk. Slik ville Gud verne om æren til det som var helliget ham selv. De skulle ikke bare la være å spise det fettet som skulle være alterets mat, men heller ikke noe som lignet. Ellers kunne <i>Herrens bord</i> (som alteret kalles), om ikke noe ble forbeholdt det alene, bli foraktelig, og <i>frukten av det, maten på det, foraktelig</i>, <ref osisRef=\"Mal.1.7\">Mal 1,7</ref>, <ref osisRef=\"Mal.1.12\">12</ref>. (2.) Også blodet var forbudt uten unntak, av samme grunn som fettet: Det var Guds del av hvert offer. Hedningene drakk blodet av ofrene sine; derfor leser vi om deres <i>drikkoffer av blod</i>, <ref osisRef=\"Ps.16.4\">Sal 16,4</ref>. Men Gud ville ikke tillate at blodet, som gjorde soning, ble brukt som noe alminnelig (<ref osisRef=\"Heb.10.29\">Hebr 10,29</ref>). Heller ikke vil han la oss, selv om vi har trøsten av den soningen som er gjort, tilta oss noen del i æren for å ha gjort den. Den som roser seg, skal rose seg i Herren, og til hans pris skal alt blodet helles ut."
    ],
    "translator": "claude-fable-5-2",
-   "model": "claude-fable-5-2"
+   "model": "claude-fable-5-2",
+   "note": "not clean after 3 reviews"
   }
  ]
 }

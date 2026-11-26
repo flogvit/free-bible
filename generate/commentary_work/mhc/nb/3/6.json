@@ -38,8 +38,8 @@
    "section": 1,
    "start": 0,
    "end": 5,
-   "status": "draft",
-   "rounds": 1,
+   "status": "checked",
+   "rounds": 2,
    "attempts": 0,
    "versions": [
     {
@@ -74,6 +74,20 @@
      ],
      "summary": "Gjengivelsen er trofast, flytende og fullstendig, med riktig merking og riktige henvisninger. Én alvorlig meningsfeil i avsnitt 5: «undo» er blitt «gjøre om igjen», som forvrenger definisjonen av omvendelse.",
      "score": 8,
+     "model": "claude-fable-5-2",
+     "mechanical": [],
+     "skipped": []
+    },
+    {
+     "argument": {
+      "premises": true,
+      "conclusions": true,
+      "evidence": true,
+      "problems": ""
+     },
+     "issues": [],
+     "summary": "Gjengivelsen er trofast og fullstendig: alle resonnementer, de fem overtredelsene, begge leddene om skyldofferet og samtlige skrifthenvisninger er bevart med riktig innhold og vekt. Merking og osisRef stemmer med kilden, og språket er naturlig, moderne bokmål. Ingen feil funnet.",
+     "score": 10,
      "model": "claude-fable-5-2",
      "mechanical": [],
      "skipped": []

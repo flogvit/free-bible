@@ -71,8 +71,8 @@
    "section": 2,
    "start": 0,
    "end": 2,
-   "status": "draft",
-   "rounds": 1,
+   "status": "checked",
+   "rounds": 2,
    "attempts": 0,
    "versions": [
     {
@@ -104,6 +104,20 @@
      ],
      "summary": "Gjengivelsen er gjennomgående trofast og på godt, naturlig bokmål. Bibelteksten, merkingen og alle henvisninger er på plass. Én alvorlig feil: Henrys egen formodning i punkt 3 er snudd ved en dobbel nektelse, slik at konklusjonen avviker fra kilden.",
      "score": 6,
+     "model": "claude-fable-5-2",
+     "mechanical": [],
+     "skipped": []
+    },
+    {
+     "argument": {
+      "premises": true,
+      "conclusions": true,
+      "evidence": true,
+      "problems": ""
+     },
+     "issues": [],
+     "summary": "Gjengivelsen er trofast: alle fire punktene, biskop Patricks syn, Henrys egen gjetning om ilden og typologien Aron–Kristus er med i samme rekkefølge og med samme vekt. Bibelteksten ligger nær King James-ordlyden, henvisningene og merkingen stemmer, og språket er naturlig bokmål. Formuleringen «at han ikke tente ilden» følger kilden slik den er gitt.",
+     "score": 10,
      "model": "claude-fable-5-2",
      "mechanical": [],
      "skipped": []

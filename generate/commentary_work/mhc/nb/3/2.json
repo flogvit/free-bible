@@ -38,8 +38,8 @@
    "section": 1,
    "start": 0,
    "end": 5,
-   "status": "draft",
-   "rounds": 1,
+   "status": "stuck",
+   "rounds": 3,
    "attempts": 0,
    "versions": [
     {
@@ -79,6 +79,38 @@
       "paragraph 5: chapter: missing 2"
      ],
      "skipped": []
+    },
+    {
+     "argument": {
+      "premises": true,
+      "conclusions": true,
+      "evidence": true,
+      "problems": ""
+     },
+     "issues": [],
+     "summary": "Gjengivelsen er trofast og idiomatisk. Begge grunnene for innstiftelsen (I) og alle seks lovpunktene (II) er med, med samme innhold og vekt, og alle skriftsteder, osisRef-er og merking stemmer med kilden. Den mekaniske sjekken for avsnitt 5 er falsk alarm: «2 Kor 2,15» gjengir «2 Cor. ii. 15» korrekt, og «v. 1–2» svarer til «v. 1, 2». Små friheter som «av to grunner» og «gudsfrykt» for «devotion» ligger innenfor oppdraget.",
+     "score": 10,
+     "model": "claude-fable-5-2",
+     "mechanical": [
+      "paragraph 5: chapter: missing 2"
+     ],
+     "skipped": []
+    },
+    {
+     "argument": {
+      "premises": true,
+      "conclusions": true,
+      "evidence": true,
+      "problems": ""
+     },
+     "issues": [],
+     "summary": "Gjengivelsen er trofast og velskrevet: alle premisser, konklusjoner, skriftsteder og sitater er med i riktig rekkefølge, og merkingen og osisRef-verdiene stemmer med kilden. Den mekaniske advarselen for avsnitt 5 er falsk alarm: «2 Kor 2,15» gjengir «2 Cor. ii. 15» korrekt, og de øvrige henvisningene stemmer også. «Av to grunner» i avsnitt 4 er lagt til, men gjengir bare kildens nummerering 1–2. Eneste språklige merknad er bøyningen «brennofferne/fredsofferne/matofferne», der normert bokmål har «-ofrene», slik gjengivelsen selv skriver andre steder; det er ikke ført opp som egne funn.",
+     "score": 9,
+     "model": "claude-fable-5-2",
+     "mechanical": [
+      "paragraph 5: chapter: missing 2"
+     ],
+     "skipped": []
     }
    ],
    "text": [
@@ -89,7 +121,8 @@
     "II. Lovene for matofferne var disse: 1. Ingrediensene skulle alltid være fint mel og olje, to av de viktigste varene i Kanaans land, <ref osisRef=\"Deut.8.8\">5 Mos 8,8</ref>. Olje var i kosten deres den gangen det smør er for oss nå. Var offeret ikke tilberedt, skulle oljen helles over melet (<ref osisRef=\"Lev.2.1\">v. 1</ref>); var det tilberedt, skulle den blandes med melet, <ref osisRef=\"Lev.2.4\">v. 4</ref> osv. 2. Var det ubakt mel, skulle det i tillegg til oljen legges røkelse på det, og den skulle brennes sammen med det (<ref osisRef=\"Lev.2.1-Lev.2.2\">v. 1–2</ref>) for å gi alteret vellukt. Det er med hentydning til dette at evangeliets tjenere sies å være <i>en velbehagelig duft for Gud,</i> <ref osisRef=\"2Cor.2.15\">2 Kor 2,15</ref>. 3. Var det tilberedt, kunne det gjøres på forskjellige måter. Den som ofret, kunne bake det eller steke det eller blande melet og oljen på en plate, og det fantes redskaper til dette ved tabernaklet. Loven var svært nøyaktig selv når det gjaldt de ofrene som kostet minst. Det antyder at Gud legger merke til de gudstjenestlige handlingene som blir utført med et fromt sinn, også av de fattige i hans folk. 4. Den som ofret, skulle legge det fram for presten, og det kalles <i>å bringe det til Herren</i> (<ref osisRef=\"Lev.2.8\">v. 8</ref>), for prestene var de som tok imot på Guds vegne, og de var innsatt for å bære fram gaver. 5. En del av det skulle brennes på alteret som en minnedel, det vil si som tegn på at de husket Guds gavmildhet mot dem, han som gav dem alle ting i rikt mål til å nyte. Det var <i>et ildoffer,</i> <ref osisRef=\"Lev.2.2\">v. 2</ref>, <ref osisRef=\"Lev.2.9\">9</ref>. At ilden fortærte det, kunne minne dem om at de fortjente at all jordens grøde ble brent opp på samme måte, og at det skyldtes Herrens barmhjertighet at det ikke skjedde. De kunne også lære at likesom <i>maten er for magen og magen for maten,</i> slik skal <i>Gud gjøre ende på begge deler</i> (<ref osisRef=\"1Cor.6.13\">1 Kor 6,13</ref>), og at <i>mennesket ikke lever av brød alene.</i> Om dette ildofferet sies det her at det er <i>en velbehagelig duft for Herren.</i> Det er også våre åndelige offer, som blir båret fram ved den hellige kjærlighetens ild. Særlig gjelder det almissen, som sies å være <i>en duft av vellukt, et offer som tas imot og er til behag for Gud</i> (<ref osisRef=\"Phil.4.18\">Fil 4,18</ref>), og <i>slike offer har Gud behag i,</i> <ref osisRef=\"Heb.13.16\">Hebr 13,16</ref>. 6. Resten av matofferet skulle gis til prestene, <ref osisRef=\"Lev.2.3\">v. 3</ref>, <ref osisRef=\"Lev.2.10\">10</ref>. <i>Det er noe høyhellig.</i> Det skulle ikke spises av dem som ofret, slik fredsofferne ble (de var hellige, men ikke høyhellige), men bare av prestene og familiene deres. Slik sørget Gud for at de som tjente ved alteret, skulle leve av alteret, og leve godt."
    ],
    "translator": "claude-fable-5-2",
-   "model": "claude-fable-5-2"
+   "model": "claude-fable-5-2",
+   "note": "not clean after 3 reviews"
   },
   {
    "id": "3-2-2-0",

@@ -131,8 +131,8 @@
    "section": 3,
    "start": 0,
    "end": 7,
-   "status": "draft",
-   "rounds": 1,
+   "status": "checked",
+   "rounds": 2,
    "attempts": 0,
    "versions": [
     {
@@ -169,6 +169,20 @@
      ],
      "summary": "Trofast og godt lesbar gjengivelse på naturlig bokmål. Alle premisser, konklusjoner, skriftbelegg og det latinske sitatet er bevart, og bibelteksten ligger nær King James-ordlyden. Eneste feil er osisRef-verdien for Hebr 4,11, som den mekaniske sjekken også fanget opp.",
      "score": 9,
+     "model": "claude-fable-5-2",
+     "mechanical": [],
+     "skipped": []
+    },
+    {
+     "argument": {
+      "premises": true,
+      "conclusions": true,
+      "evidence": true,
+      "problems": ""
+     },
+     "issues": [],
+     "summary": "Gjengivelsen er trofast og fullstendig: alle fem hovedpunkter, de fem argumentene under IV og de tre merknadene under V er med, med samme innhold og vekt. Alle skriftsteder, osisRef-verdier, versnumre og det latinske sitatet stemmer med kilden, og merkingen er bevart. Språket er naturlig, moderne bokmål, og Henrys tone er beholdt. Ingen feil å rette.",
+     "score": 10,
      "model": "claude-fable-5-2",
      "mechanical": [],
      "skipped": []

@@ -38,8 +38,8 @@
    "section": 1,
    "start": 0,
    "end": 7,
-   "status": "draft",
-   "rounds": 1,
+   "status": "stuck",
+   "rounds": 3,
    "attempts": 0,
    "versions": [
     {
@@ -81,6 +81,38 @@
       "paragraph 6: chapter: missing 2"
      ],
      "skipped": []
+    },
+    {
+     "argument": {
+      "premises": true,
+      "conclusions": true,
+      "evidence": true,
+      "problems": ""
+     },
+     "issues": [],
+     "summary": "Gjengivelsen er trofast og idiomatisk. Alle fire hovedpunkter med underpunkter, begge tolkningene av loven (Cudworths og Henrys egen), de tre begrunnelsene og samtlige skriftbelegg står med samme innhold og vekt som i kilden. Den mekaniske advarselen for avsnitt 6 er falsk alarm: alle henvisningene der (Jos 22,12; Dom 6,26; 13,19; 1 Sam 7,9; 9,13; 11,15; 2 Sam 24,18; 1 Kong 18,23) stemmer med kilden, og «to og en halv stammene» gjengir «two tribes and a half» riktig. Merkingen er bevart, og språket er naturlig bokmål.",
+     "score": 10,
+     "model": "claude-fable-5-2",
+     "mechanical": [
+      "paragraph 6: chapter: missing 2"
+     ],
+     "skipped": []
+    },
+    {
+     "argument": {
+      "premises": true,
+      "conclusions": true,
+      "evidence": true,
+      "problems": ""
+     },
+     "issues": [],
+     "summary": "Gjengivelsen er trofast mot kilden i alle sju avsnitt: resonnementene, skriftstedene, henvisningen til Cudworth og merkingen er bevart, og språket er naturlig bokmål. Den mekaniske advarselen for avsnitt 6 er falsk alarm; alle henvisningene der (Jos 22,12; Dom 6,26; 13,19; 1 Sam 7,9; 9,13; 11,15; 2 Sam 24,18; 1 Kong 18,23) stemmer med kilden.",
+     "score": 10,
+     "model": "claude-fable-5-2",
+     "mechanical": [
+      "paragraph 6: chapter: missing 2"
+     ],
+     "skipped": []
     }
    ],
    "text": [
@@ -93,7 +125,8 @@
     "IV. Hvordan saken står nå, og hvilken nytte vi skal ha av denne loven. 1. Det er sikkert at de åndelige ofrene vi nå skal bære fram, ikke er bundet til noe bestemt sted. Det har vår Frelser gjort klart (<ref osisRef=\"John.4.21\">Joh 4,21</ref>), og apostelen likeså (<ref osisRef=\"1Tim.2.8\">1 Tim 2,8</ref>), i samsvar med profetien om at <i>det på hvert sted skulle ofres røkelse</i>, <ref osisRef=\"Mal.1.11\">Mal 1,11</ref>. Vi har nå verken tempel eller alter som helliger gaven, og evangeliets enhet ligger ikke i ett sted, men i ett hjerte og i <i>Åndens enhet</i>. 2. Kristus er vårt alter og <i>det sanne tabernakel</i> (<ref osisRef=\"Heb.8.2\">Hebr 8,2</ref>; <ref osisRef=\"Heb.13.10\">13,10</ref>). I ham bor Gud iblant oss, og det er i ham, og bare i ham, at våre offer er til behag for Gud, <ref osisRef=\"1Pet.2.5\">1 Pet 2,5</ref>. Å sette opp andre mellommenn, andre altere eller andre sonoffer er i virkeligheten å sette opp andre guder. Han er enhetens midtpunkt, der hele Guds Israel møtes. 3. Likevel skal vi holde den offentlige gudstjenesten i ære og ikke <i>forlate</i> hans folks <i>forsamlinger</i>, <ref osisRef=\"Heb.10.25\">Hebr 10,25</ref>. Herren elsker <i>Sions porter mer enn alle Jakobs boliger</i>, og det bør vi også gjøre; se <ref osisRef=\"Ezek.20.40\">Esek 20,40</ref>. Selv om Gud i sin nåde vil ta imot de ofrene vi bærer fram i familien, må vi ikke av den grunn forsømme tabernaklets dør."
    ],
    "translator": "claude-fable-5-2",
-   "model": "claude-fable-5-2"
+   "model": "claude-fable-5-2",
+   "note": "not clean after 3 reviews"
   },
   {
    "id": "3-17-2-0",
