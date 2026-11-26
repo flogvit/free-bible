@@ -290,7 +290,7 @@ flight.
    bun generate/commentary.ts --work mhc --language nb
    ```
 
-   It works on three books at a time in canonical order (`--books`), polls once
+   It works on one book at a time in canonical order (`--books`), and publishes each when it is done, polls once
    a minute, and writes a book to `generate/commentary/mhc/nb/` the moment its
    last part is checked. Commit and push those files as books appear; the site
    imports them from there.

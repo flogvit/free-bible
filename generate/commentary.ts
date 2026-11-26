@@ -693,7 +693,7 @@ const SPEC: Record<string, FlagSpec> = {
     language: {...COMMON_FLAGS.language, help: `target language: ${Object.keys(LANGUAGES).join(', ')}`},
     book: COMMON_FLAGS.book,
     model: {kind: 'string', default: commentaryModel, help: 'model for new requests (constants.ts → commentaryModel)'},
-    books: {kind: 'number', default: 3, help: 'work on this many unfinished books at a time, in canonical order'},
+    books: {kind: 'number', default: 1, help: 'work on this many unfinished books at a time, in canonical order: book by book, each published when done (#163)'},
     rounds: {kind: 'number', default: 3, help: 'reviews before a unit that is still not clean is stuck'},
     limit: {...COMMON_FLAGS.limit, help: 'at most N requests per batch (a sample run)'},
     once: {kind: 'boolean', help: 'one pass: collect finished batches, send the next, then exit without waiting'},
