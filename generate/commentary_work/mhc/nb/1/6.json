@@ -7,11 +7,26 @@
    "section": 0,
    "start": 0,
    "end": 1,
-   "status": "draft",
-   "rounds": 0,
+   "status": "checked",
+   "rounds": 1,
    "attempts": 0,
    "versions": [],
-   "reviews": [],
+   "reviews": [
+    {
+     "argument": {
+      "premises": true,
+      "conclusions": true,
+      "evidence": true,
+      "problems": ""
+     },
+     "issues": [],
+     "summary": "Gjengivelsen er trofast og fullstendig. Hele disposisjonen (I–III med underpunktene 1–4 og «Til slutt») er med i riktig rekkefølge, alle osisRef står uendret, og henvisningene er riktig omskrevet til norsk form. Avslutningen med anvendelsen på «oss» er bevart. Språket er naturlig bokmål, og jeg fant ingen feil å rette.",
+     "score": 10,
+     "model": "claude-fable-5-2",
+     "mechanical": [],
+     "skipped": []
+    }
+   ],
    "text": [
     "Det mest bemerkelsesverdige som er nedtegnet om den gamle verden, er at den ble ødelagt i den verdensomspennende vannflommen. Beretningen om dette begynner i dette kapitlet. Her finner vi: I. Den overhåndtagende ondskapen i denne ugudelige verden, <ref osisRef=\"Gen.6.1-Gen.6.5\">v. 1–5</ref> og <ref osisRef=\"Gen.6.11-Gen.6.12\">v. 11–12</ref>. II. Den rettferdige Guds rettmessige harme over denne overhåndtagende ondskapen, og hans hellige beslutning om å straffe den, <ref osisRef=\"Gen.6.6-Gen.6.7\">v. 6–7</ref>. III. Guds særlige velvilje mot sin tjener Noah. 1. I det skussmålet han får, <ref osisRef=\"Gen.6.8-Gen.6.10\">v. 8–10</ref>. 2. I at Gud gjør sitt forsett kjent for ham, <ref osisRef=\"Gen.6.13\">v. 13</ref>, <ref osisRef=\"Gen.6.17\">17</ref>. 3. I anvisningene Gud ga ham om å bygge en ark til sin egen redning, <ref osisRef=\"Gen.6.14-Gen.6.16\">v. 14–16</ref>. 4. I at Gud brukte ham til å bevare de øvrige skapningene, <ref osisRef=\"Gen.6.18-Gen.6.21\">v. 18–21</ref>. Til slutt: Noahs lydighet mot de påleggene han hadde fått, <ref osisRef=\"Gen.6.22\">v. 22</ref>. Og dette om den gamle verden er skrevet til formaning for oss, som den nye verdens ende er kommet over."
    ],
@@ -23,11 +38,26 @@
    "section": 1,
    "start": 0,
    "end": 3,
-   "status": "draft",
-   "rounds": 0,
+   "status": "checked",
+   "rounds": 1,
    "attempts": 0,
    "versions": [],
-   "reviews": [],
+   "reviews": [
+    {
+     "argument": {
+      "premises": true,
+      "conclusions": true,
+      "evidence": true,
+      "problems": ""
+     },
+     "issues": [],
+     "summary": "Gjengivelsen er trofast og idiomatisk. Begge årsakene til den gamle verdens ondskap, alle tre innvendingene mot ekteskapene, og samtlige skriftsteder og sitater er med i riktig rekkefølge og med samme vekt som i kilden. Merking og osisRef er intakt, og henvisningene er riktig omskrevet til norsk form. Ingen feil funnet.",
+     "score": 10,
+     "model": "claude-fable-5-2",
+     "mechanical": [],
+     "skipped": []
+    }
+   ],
    "text": [
     "<h>Verdens fordervelse. (2469 f.Kr.)</h>",
     "<sup>1</sup> Og det skjedde, da menneskene begynte å bli mange på jordens overflate og de fikk døtre, <sup>2</sup> at Guds sønner så at menneskenes døtre <i>var</i> vakre; og de tok seg hustruer av alle dem de valgte.",
@@ -42,10 +72,43 @@
    "start": 0,
    "end": 5,
    "status": "draft",
-   "rounds": 0,
+   "rounds": 2,
    "attempts": 0,
    "versions": [],
-   "reviews": [],
+   "reviews": [
+    {
+     "argument": {
+      "premises": true,
+      "conclusions": true,
+      "evidence": true,
+      "problems": ""
+     },
+     "issues": [],
+     "summary": "Gjengivelsen er trofast og idiomatisk. Alle tre hovedpunkter (I–III), de nummererte merknadene, skriftstedene (1 Pet 3,19–20; Hos 4,17) og de kursiverte sitatene er bevart med samme innhold og vekt. «six-score years» er riktig gjengitt som hundre og tjue år. Den mekaniske advarselen for avsnitt 4 er falsk alarm: tallet 2 er punktnummeret i «virkningsløs. 2. Når», ikke en sidehenvisning, og det står som i kilden. Ingen rettelser nødvendig.",
+     "score": 10,
+     "model": "claude-fable-5-2",
+     "mechanical": [
+      "paragraph 4: page: not in source 2"
+     ],
+     "skipped": []
+    },
+    {
+     "argument": {
+      "premises": true,
+      "conclusions": true,
+      "evidence": true,
+      "problems": ""
+     },
+     "issues": [],
+     "summary": "Gjengivelsen er trofast og idiomatisk: alle tre hovedpunktene med underpunkter, skriftstedene (1 Pet 3,19–20; Hos 4,17) og sitatene er med, og merkingen er intakt. Den mekaniske sjekkens funn i avsnitt 4 er falsk alarm: «virkningsløs. 2.» er feillest som en sidehenvisning, og punkt 1 og 2 står som i kilden. «Utfordret» for «provoked» er noe svakt, men forsvarlig.",
+     "score": 9,
+     "model": "claude-fable-5-2",
+     "mechanical": [
+      "paragraph 4: page: not in source 2"
+     ],
+     "skipped": []
+    }
+   ],
    "text": [
     "<sup>3</sup> Og Herren sa: Min Ånd skal ikke alltid stride med mennesket, for også han <i>er</i> kjød; likevel skal hans dager være hundre og tjue år.",
     "Dette kommer inn her som et tegn på Guds mishag mot dem som giftet seg med fremmede kvinner. Han truer med å trekke sin Ånd tilbake fra dem, den Ånd de hadde bedrøvet ved slike ekteskap, inngått i strid med deres egen overbevisning. Kjødelige lyster blir ofte straffet med åndelige dommer, og de er de tyngste av alle dommer. Eller det kan forstås som enda en årsak til den store ondskapen i den gamle verden: Herrens Ånd ble utfordret ved at de sto imot hans tilskyndelser, og han sluttet å stride med dem. Da gikk det ikke lang tid før all religion var tapt blant dem. Dette advarer han dem om på forhånd, for at de ikke skulle krenke hans Hellige Ånd ytterligere, men ved sine bønner få ham til å bli hos dem. Legg merke til dette i verset:",
@@ -61,11 +124,26 @@
    "section": 3,
    "start": 0,
    "end": 4,
-   "status": "draft",
-   "rounds": 0,
+   "status": "checked",
+   "rounds": 1,
    "attempts": 0,
    "versions": [],
-   "reviews": [],
+   "reviews": [
+    {
+     "argument": {
+      "premises": true,
+      "conclusions": true,
+      "evidence": true,
+      "problems": ""
+     },
+     "issues": [],
+     "summary": "Gjengivelsen er trofast og fullstendig: alle resonnementer, inndelinger (I–II, 1–2, (1.)–(3.)), skriftsteder og merking er bevart, og språket er naturlig moderne bokmål. Ingen feil funnet som krever retting.",
+     "score": 10,
+     "model": "claude-fable-5-2",
+     "mechanical": [],
+     "skipped": []
+    }
+   ],
    "text": [
     "<sup>4</sup> Det var kjemper på jorden i de dager, og også senere, da Guds sønner gikk inn til menneskenes døtre og de fødte dem <i>barn</i>; disse <i>ble</i> de veldige menn som <i>var</i> fra gammel tid, menn med ry. 5 Og Gud så at menneskets ondskap <i>var</i> stor på jorden, og <i>at</i> hvert påfunn i hans hjertes tanker <i>var</i> bare ondt, hele tiden.",
     "Her får vi høre mer om fordervelsen i den gamle verden. <i>Guds sønner</i> hadde giftet seg med <i>menneskenes døtre</i>. Det mishaget Gud sterkt, men han utryddet dem likevel ikke med det samme. Han ventet for å se hva som ville komme ut av disse ekteskapene, og hvilken side barna ville slekte på. Og det viste seg, som det pleier, at de slektet på den verste siden. Her ser vi:",
@@ -80,11 +158,26 @@
    "section": 4,
    "start": 0,
    "end": 4,
-   "status": "draft",
-   "rounds": 0,
+   "status": "checked",
+   "rounds": 1,
    "attempts": 0,
    "versions": [],
-   "reviews": [],
+   "reviews": [
+    {
+     "argument": {
+      "premises": true,
+      "conclusions": true,
+      "evidence": true,
+      "problems": ""
+     },
+     "issues": [],
+     "summary": "Gjengivelsen er trofast og på naturlig, moderne bokmål. Alle resonnementer, skriftsteder og kursiverte sitater er med, og merkingen og osisRef-verdiene står som i kilden. «Sal 115,10» følger kildens egen visningstekst (cxv), selv om osisRef peker til Sal 95, og er derfor ikke en feil i gjengivelsen.",
+     "score": 10,
+     "model": "claude-fable-5-2",
+     "mechanical": [],
+     "skipped": []
+    }
+   ],
    "text": [
     "<h>Menneskeheten trues med utslettelse. (2469 f.Kr.)</h>",
     "<sup>6</sup> Og Herren angret at han hadde skapt mennesket på jorden, og det bedrøvet ham i hjertet. <sup>7</sup> Og Herren sa: Jeg vil utrydde mennesket som jeg har skapt, fra jordens overflate, både mennesker og dyr og kryp og himmelens fugler; for jeg angrer at jeg har skapt dem.",
@@ -99,11 +192,26 @@
    "section": 5,
    "start": 0,
    "end": 2,
-   "status": "draft",
-   "rounds": 0,
+   "status": "checked",
+   "rounds": 1,
    "attempts": 0,
    "versions": [],
-   "reviews": [],
+   "reviews": [
+    {
+     "argument": {
+      "premises": true,
+      "conclusions": true,
+      "evidence": true,
+      "problems": ""
+     },
+     "issues": [],
+     "summary": "Gjengivelsen er trofast mot kilden avsnitt for avsnitt: alle premisser, konklusjoner, skriftbelegg og henvisninger er med, merkingen er bevart, og språket er naturlig, moderne bokmål. Ingen feil som krever retting.",
+     "score": 9,
+     "model": "claude-fable-5-2",
+     "mechanical": [],
+     "skipped": []
+    }
+   ],
    "text": [
     "<sup>8</sup> Men Noah fant nåde for Herrens øyne. <sup>9</sup> Dette <i>er</i> Noahs slektshistorie: Noah var en rettferdig mann <i>og</i> fullkommen i sin samtid, <i>og</i> Noah vandret med Gud. <sup>10</sup> Og Noah fikk tre sønner: Sem, Kam og Jafet.",
     "Her ser vi at Noah blir skilt ut fra resten av verden og får et særskilt hederstegn. 1. Da Gud var misfornøyd med resten av verden, viste han Noah velvilje: <i>Men Noah fant nåde for Herrens øyne,</i> <ref osisRef=\"Gen.6.8\">v. 8</ref>. Dette viser at Gud var rettferdig i sitt mishag mot verden, og at han nøye hadde gransket karakteren til hvert eneste menneske i den før han erklærte den gjennomgående fordervet. For da det fantes én god mann, fant han ham og smilte til ham. Det gjør også Guds nåde mot Noah desto større at han ble gjort til et kar for Guds barmhjertighet da hele resten av menneskeheten var blitt hans vredes slekt: Gunst som skiller én ut fra andre, legger særlig sterke forpliktelser på den som får den. Sannsynligvis fant Noah ikke nåde for menneskers øyne. De hatet og forfulgte ham, fordi han både ved sitt liv og sin forkynnelse <i>fordømte verden. Men han fant nåde for Herrens øyne,</i> og det var ære og trøst nok. Gud satte Noah høyere enn hele resten av verden, og det gjorde ham større og mer virkelig ærefull enn alle kjempene som fantes i de dager, de som ble mektige menn og menn med ry. La dette være det høyeste vi streber etter: å <i>finne nåde for Herrens øyne;</i> la oss legge vår flid i dette, at vi, enten vi er hjemme eller borte, kan være til behag for ham, <ref osisRef=\"2Cor.5.9\">2 Kor 5,9</ref>. Høyt begunstiget er de som Gud viser sin gunst. 2. Da resten av verden var fordervet og ond, bevarte Noah sin rettskaffenhet: <i>Dette er Noahs slektshistorie</i> (dette er den beretningen vi har å gi om ham), <i>Noah var en rettferdig mann,</i> <ref osisRef=\"Gen.6.9\">v. 9</ref>. Denne karakteristikken av Noah kommer inn her enten (1.) som grunnen til Guds velvilje mot ham: Hans enestående fromhet gjorde ham skikket til å få enestående tegn på Guds miskunn. De som vil finne nåde for Herrens øyne, må være som Noah var og gjøre som Noah gjorde; Gud elsker dem som elsker ham. Eller (2.) som virkningen av Guds velvilje mot ham. Det var Guds godhet mot ham som frembrakte denne gode gjerningen i ham. Han var en svært god mann, men han var ikke bedre enn Guds nåde gjorde ham, <ref osisRef=\"1Cor.15.10\">1 Kor 15,10</ref>. Legg nå merke til hans karakter. [1.] Han <i>var en rettferdig mann,</i> det vil si rettferdiggjort for Gud ved troen på den lovede ætten; for han var <i>arving til den rettferdighet som er av tro,</i> <ref osisRef=\"Heb.11.7\">Hebr 11,7</ref>. Han var helliget og hadde fått rette prinsipper og et rett sinnelag nedlagt i seg. Og han var rettferdig i sin ferd, en som gjorde det til en samvittighetssak å gi alle det de hadde krav på, Gud det som tilkom ham, og mennesker det som tilkom dem. Merk: Ingen andre enn et tvers igjennom ærlig menneske kan finne nåde hos Gud. Den ferd som skal behage Gud, må være styrt av <i>enkelhet og gudfryktig oppriktighet,</i> ikke av <i>kjødelig visdom,</i> <ref osisRef=\"2Cor.1.12\">2 Kor 1,12</ref>. Gud har iblant utvalgt det som er dåraktig i verden, men han har aldri utvalgt det som er kjeltringaktig i den. [2.] Han var <i>fullkommen,</i> ikke med en syndfri fullkommenhet, men med oppriktighetens fullkommenhet. Og det er godt for oss at oppriktighet, i kraft av nådepakten og på grunnlag av Kristi rettferdighet, blir godtatt som vår evangeliske fullkommenhet. [3.] Han <i>vandret med Gud,</i> slik Enok hadde gjort før ham. Han var ikke bare ærlig, men også from. Han <i>vandret,</i> det vil si at han handlet med Gud, som en som alltid er under hans øyne. Han levde et liv i samfunn med Gud; det lå ham alltid på hjertet å rette seg etter Guds vilje, å behage ham og å bestå for ham. Merk: Gud ser ned med nådens øye på dem som oppriktig ser opp til ham med troens øye. Men [4.] det som kroner hans karakter, er at slik var han, og slik gjorde han, <i>i sin samtid,</i> i den fordervede og vanslektede tidsalderen som det ble hans lodd å leve i. Det er lett å være religiøs når religion er på moten. Men det vitner om sterk tro og besluttsomhet å svømme mot strømmen til himmelen og å tre fram for Gud når ingen andre trer fram for ham. Det gjorde Noah, og det står nedtegnet, til hans udødelige ære."
@@ -116,15 +224,63 @@
    "section": 6,
    "start": 0,
    "end": 3,
-   "status": "draft",
-   "rounds": 0,
+   "status": "checked",
+   "rounds": 2,
    "attempts": 0,
-   "versions": [],
-   "reviews": [],
+   "versions": [
+    {
+     "text": [
+      "<h>Verdens fordervelse. (2448 f.Kr.)</h>",
+      "<sup>11</sup> Jorden var også fordervet for Guds åsyn, og jorden var full av vold. <sup>12</sup> Og Gud så på jorden, og se, den var fordervet; for alt kjød hadde fordervet sin vei på jorden.",
+      "Her tales det igjen om ugudeligheten i denne slekten. Enten er det for å danne en bakgrunn som Noahs fromhet trer tydeligere fram mot – han var rettferdig og hel da hele jorden var fordervet – eller for ytterligere å rettferdiggjøre Guds beslutning om å ødelegge verden, den han nå skulle til å meddele sin tjener Noah. 1. Alle slags synder fantes blant dem, for det sies (<ref osisRef=\"Gen.6.11\">v. 11</ref>) at jorden var: (1.) <i>Fordervet for Guds åsyn,</i> det vil si i det som gjaldt gudsdyrkelsen. Enten hadde de andre guder foruten ham, eller de tilba ham ved hjelp av bilder, eller de var fordervet og onde i tross og forakt for Gud, så de utfordret ham og trosset ham like opp i ansiktet. (2.) <i>Jorden var også full av vold</i> og urett mot mennesker. Det fantes verken orden eller ordnet styre. Ingen kunne være trygg på å få beholde det han hadde den klareste og mest ubestridelige rett til, nei, ikke engang det mest uskyldige liv. Det var ikke annet enn mord, voldtekt og rov. Merk: Ondskapen er en skam for menneskenaturen, og like fullt er den en ødeleggelse for det menneskelige samfunn. Ta bort samvittigheten og gudsfrykten, og menneskene blir dyr og djevler mot hverandre, lik fiskene i havet, der de store sluker de små. Synden fyller jorden med vold og gjør dermed verden til en villmark, til en hanekampbane. 2. Beviset for dette var ugjendrivelig, for <i>Gud så på jorden</i> og var selv øyenvitne til fordervelsen som fantes der, slik det er omtalt tidligere, <ref osisRef=\"Gen.6.5\">v. 5</ref>. I alle sine dommer går den rettferdige Dommer fram på grunnlag av sin egen allvitenhets ufeilbarlige visshet, <ref osisRef=\"Ps.33.13\">Sal 33,13</ref>. 3. Det som mest av alt gjorde saken verre, var at smitten hadde bredt seg overalt: <i>Alt kjød hadde fordervet sin vei.</i> Det var ikke bare enkelte folkeslag eller byer som var så onde, men hele menneskeheten. Det var ingen som gjorde godt, nei, ikke en eneste, bortsett fra Noah. Merk: Når ondskapen er blitt allmenn og altomfattende, er undergangen ikke langt unna. Så lenge det finnes en rest av bedende mennesker i et folk, som tømmer målet etter hvert som det fylles, kan dommene holdes borte i lang tid. Men når alle hender er i arbeid med å rive ned gjerdene ved synd, og ingen stiller seg i gapet for å tette bruddet, hva annet kan en da vente enn en flom av vrede?"
+     ],
+     "explanation": "Kilden har en sammenstilling («as it is the shame … so it is the ruin»): de to leddene er parallelle. «Like fullt» betyr «likevel» og innfører en motsetning som ikke står i kilden.",
+     "model": "claude-fable-5-2"
+    }
+   ],
+   "reviews": [
+    {
+     "argument": {
+      "premises": true,
+      "conclusions": true,
+      "evidence": true,
+      "problems": "Alle premisser, konklusjoner og belegg (v. 11, v. 5, Sal 33,13) er med, men én lærdom har fått endret logisk forhold: I «Merk»-setningen om ondskapen er kildens sammenstilling («as … so») gjengitt med «like fullt», som gjør de to leddene til en motsetning."
+     },
+     "issues": [
+      {
+       "paragraph": 3,
+       "quote": "Ondskapen er en skam for menneskenaturen, og like fullt er den en ødeleggelse for det menneskelige samfunn.",
+       "replacement": "Likesom ondskapen er en skam for menneskenaturen, er den også en ødeleggelse for det menneskelige samfunn.",
+       "type": "meaning",
+       "severity": "major",
+       "explanation": "Kilden har en sammenstilling («as it is the shame … so it is the ruin»): de to leddene er parallelle. «Like fullt» betyr «likevel» og innfører en motsetning som ikke står i kilden."
+      }
+     ],
+     "summary": "Trofast og naturlig gjengivelse med riktig avsnittstall, merking og henvisninger. Eneste reelle feil er «like fullt» i «Merk»-setningen, som gjør en parallell til en motsetning.",
+     "score": 8,
+     "model": "claude-fable-5-2",
+     "mechanical": [],
+     "skipped": []
+    },
+    {
+     "argument": {
+      "premises": true,
+      "conclusions": true,
+      "evidence": true,
+      "problems": ""
+     },
+     "issues": [],
+     "summary": "Gjengivelsen er trofast mot kilden i alle tre avsnitt. Hvert ledd i resonnementet (1, (1.), (2.), 2, 3), begge «Merk»-anvendelsene og alle tre henvisninger (v. 11, v. 5, Sal 33,13) er med, med samme innhold og vekt. Merkingen er intakt og språket er naturlig bokmål. «Proof and evidence» er slått sammen til «beviset», uten tap av innhold.",
+     "score": 10,
+     "model": "claude-fable-5-2",
+     "mechanical": [],
+     "skipped": []
+    }
+   ],
    "text": [
     "<h>Verdens fordervelse. (2448 f.Kr.)</h>",
     "<sup>11</sup> Jorden var også fordervet for Guds åsyn, og jorden var full av vold. <sup>12</sup> Og Gud så på jorden, og se, den var fordervet; for alt kjød hadde fordervet sin vei på jorden.",
-    "Her tales det igjen om ugudeligheten i denne slekten. Enten er det for å danne en bakgrunn som Noahs fromhet trer tydeligere fram mot – han var rettferdig og hel da hele jorden var fordervet – eller for ytterligere å rettferdiggjøre Guds beslutning om å ødelegge verden, den han nå skulle til å meddele sin tjener Noah. 1. Alle slags synder fantes blant dem, for det sies (<ref osisRef=\"Gen.6.11\">v. 11</ref>) at jorden var: (1.) <i>Fordervet for Guds åsyn,</i> det vil si i det som gjaldt gudsdyrkelsen. Enten hadde de andre guder foruten ham, eller de tilba ham ved hjelp av bilder, eller de var fordervet og onde i tross og forakt for Gud, så de utfordret ham og trosset ham like opp i ansiktet. (2.) <i>Jorden var også full av vold</i> og urett mot mennesker. Det fantes verken orden eller ordnet styre. Ingen kunne være trygg på å få beholde det han hadde den klareste og mest ubestridelige rett til, nei, ikke engang det mest uskyldige liv. Det var ikke annet enn mord, voldtekt og rov. Merk: Ondskapen er en skam for menneskenaturen, og like fullt er den en ødeleggelse for det menneskelige samfunn. Ta bort samvittigheten og gudsfrykten, og menneskene blir dyr og djevler mot hverandre, lik fiskene i havet, der de store sluker de små. Synden fyller jorden med vold og gjør dermed verden til en villmark, til en hanekampbane. 2. Beviset for dette var ugjendrivelig, for <i>Gud så på jorden</i> og var selv øyenvitne til fordervelsen som fantes der, slik det er omtalt tidligere, <ref osisRef=\"Gen.6.5\">v. 5</ref>. I alle sine dommer går den rettferdige Dommer fram på grunnlag av sin egen allvitenhets ufeilbarlige visshet, <ref osisRef=\"Ps.33.13\">Sal 33,13</ref>. 3. Det som mest av alt gjorde saken verre, var at smitten hadde bredt seg overalt: <i>Alt kjød hadde fordervet sin vei.</i> Det var ikke bare enkelte folkeslag eller byer som var så onde, men hele menneskeheten. Det var ingen som gjorde godt, nei, ikke en eneste, bortsett fra Noah. Merk: Når ondskapen er blitt allmenn og altomfattende, er undergangen ikke langt unna. Så lenge det finnes en rest av bedende mennesker i et folk, som tømmer målet etter hvert som det fylles, kan dommene holdes borte i lang tid. Men når alle hender er i arbeid med å rive ned gjerdene ved synd, og ingen stiller seg i gapet for å tette bruddet, hva annet kan en da vente enn en flom av vrede?"
+    "Her tales det igjen om ugudeligheten i denne slekten. Enten er det for å danne en bakgrunn som Noahs fromhet trer tydeligere fram mot – han var rettferdig og hel da hele jorden var fordervet – eller for ytterligere å rettferdiggjøre Guds beslutning om å ødelegge verden, den han nå skulle til å meddele sin tjener Noah. 1. Alle slags synder fantes blant dem, for det sies (<ref osisRef=\"Gen.6.11\">v. 11</ref>) at jorden var: (1.) <i>Fordervet for Guds åsyn,</i> det vil si i det som gjaldt gudsdyrkelsen. Enten hadde de andre guder foruten ham, eller de tilba ham ved hjelp av bilder, eller de var fordervet og onde i tross og forakt for Gud, så de utfordret ham og trosset ham like opp i ansiktet. (2.) <i>Jorden var også full av vold</i> og urett mot mennesker. Det fantes verken orden eller ordnet styre. Ingen kunne være trygg på å få beholde det han hadde den klareste og mest ubestridelige rett til, nei, ikke engang det mest uskyldige liv. Det var ikke annet enn mord, voldtekt og rov. Merk: Likesom ondskapen er en skam for menneskenaturen, er den også en ødeleggelse for det menneskelige samfunn. Ta bort samvittigheten og gudsfrykten, og menneskene blir dyr og djevler mot hverandre, lik fiskene i havet, der de store sluker de små. Synden fyller jorden med vold og gjør dermed verden til en villmark, til en hanekampbane. 2. Beviset for dette var ugjendrivelig, for <i>Gud så på jorden</i> og var selv øyenvitne til fordervelsen som fantes der, slik det er omtalt tidligere, <ref osisRef=\"Gen.6.5\">v. 5</ref>. I alle sine dommer går den rettferdige Dommer fram på grunnlag av sin egen allvitenhets ufeilbarlige visshet, <ref osisRef=\"Ps.33.13\">Sal 33,13</ref>. 3. Det som mest av alt gjorde saken verre, var at smitten hadde bredt seg overalt: <i>Alt kjød hadde fordervet sin vei.</i> Det var ikke bare enkelte folkeslag eller byer som var så onde, men hele menneskeheten. Det var ingen som gjorde godt, nei, ikke en eneste, bortsett fra Noah. Merk: Når ondskapen er blitt allmenn og altomfattende, er undergangen ikke langt unna. Så lenge det finnes en rest av bedende mennesker i et folk, som tømmer målet etter hvert som det fylles, kan dommene holdes borte i lang tid. Men når alle hender er i arbeid med å rive ned gjerdene ved synd, og ingen stiller seg i gapet for å tette bruddet, hva annet kan en da vente enn en flom av vrede?"
    ],
    "translator": "claude-fable-5-2",
    "model": "claude-fable-5-2"
@@ -134,21 +290,86 @@
    "section": 7,
    "start": 0,
    "end": 10,
-   "status": "draft",
-   "rounds": 0,
+   "status": "checked",
+   "rounds": 1,
    "attempts": 0,
-   "versions": [],
-   "reviews": [],
+   "versions": [
+    {
+     "text": [
+      "<h>Forutsigelse av vannflommen. (2448 f.Kr.)</h>",
+      "<sup>13</sup> Og Gud sa til Noah: Enden på alt kjød er kommet for mitt åsyn; for jorden er fylt av vold på grunn av dem; og se, jeg vil ødelegge dem sammen med jorden. <sup>14</sup> Lag deg en ark av gofertre; rom skal du lage i arken, og du skal bek den innvendig og utvendig med bek. <sup>15</sup> Og dette <i>er formen</i> du skal lage den <i>i:</i> Arkens lengde <i>skal være</i> tre hundre alen, bredden femti alen og høyden tretti alen. <sup>16</sup> Et vindu skal du lage på arken, og på en alen skal du fullføre den oventil; og døren til arken skal du sette i siden på den; <i>med</i> en nederste, en annen og en tredje <i>etasje</i> skal du lage den. <sup>17</sup> Og se, jeg, ja jeg, lar en vannflom komme over jorden for å ødelegge alt kjød, der livets ånde <i>er</i>, under himmelen; <i>og</i> alt som <i>er</i> på jorden, skal dø. <sup>18</sup> Men med deg vil jeg opprette min pakt; og du skal gå inn i arken, du og dine sønner og din kone og dine sønners koner med deg. <sup>19</sup> Og av alt som lever, av alt kjød, skal du føre to av hvert <i>slag</i> inn i arken for å holde <i>dem</i> i live sammen med deg; hann og hunn skal de være. <sup>20</sup> Av fuglene etter deres slag og av feet etter dets slag, av alt jordens kryp etter dets slag, skal to av hvert <i>slag</i> komme til deg, for å holde <i>dem</i> i live. <sup>21</sup> Og ta du med deg av all mat som spises, og du skal samle <i>den</i> hos deg; og det skal være til føde for deg og for dem.",
+      "Her viser det seg virkelig at Noah <i>fant nåde for Herrens øyne.</i> Guds velvilje mot ham kom tydelig fram allerede i det han sa om ham i <ref osisRef=\"Gen.6.8-Gen.6.10\">v. 8–10</ref>. Der nevnes navnet hans fem ganger på fem linjer, enda én gang hadde vært nok til å gjøre meningen klar, som om Den hellige ånd fant glede i å holde minnet om ham levende. Men den viser seg langt tydeligere i det han sier til ham i disse versene, i de opplysningene og anvisningene han får her.",
+      "I. Gud gjør her Noah til <i>sitt råds mann</i> ved å meddele ham sin hensikt om å ødelegge denne ugudelige verden med vann. Senere fortalte han Abraham hva han hadde besluttet om Sodoma (<ref osisRef=\"Gen.18.17\">kap. 18,17</ref>: <i>Skulle jeg skjule det for Abraham?</i>). På samme måte her: «Skulle jeg skjule for Noah <i>det jeg gjør,</i> når han skal <i>bli et stort folk?</i>» Merk: <i>Herrens hemmelighet er hos dem som frykter ham</i> (<ref osisRef=\"Ps.25.14\">Sal 25,14</ref>). Den var hos <i>hans tjenere profetene</i> (<ref osisRef=\"Amos.3.7\">Am 3,7</ref>) ved en åpenbaringens ånd, som gjorde dem kjent med hans hensikter i enkeltheter. Den er hos alle troende ved en visdommens og troens ånd, som setter dem i stand til å forstå og anvende de allmenne erklæringene i det skrevne ordet og de advarslene som gis der. Nå:",
+      "1. Gud fortalte Noah i allmenne ordelag at han ville ødelegge verden (<ref osisRef=\"Gen.6.13\">v. 13</ref>): <i>Enden på alt kjød er kommet for mitt åsyn; jeg vil ødelegge dem.</i> Det vil si at denne ugudelige verdens undergang er besluttet og fastsatt. <i>Den er kommet,</i> det vil si at den kommer sikkert, og den kommer snart. Noah hadde trolig, når han forkynte for naboene sine, advart dem i allmenne ordelag mot den Guds vrede de ville føre over seg selv med sin ondskap. Nå støtter Gud opp om det han har forsøkt, med en uttrykkelig kunngjøring av vrede, så Noah kunne prøve om dette ville virke på dem. Legg av dette merke til (1.) at Gud <i>stadfester sine sendebuds ord,</i> <ref osisRef=\"Isa.44.26\">Jes 44,26</ref>, og (2.) at <i>den som har,</i> og bruker det han har til andres beste, <i>skal få mer,</i> nemlig fyldigere undervisning.",
+      "2. Han fortalte ham mer bestemt at han ville ødelegge verden med en vannflom: <i>Og se, jeg, ja jeg, lar en vannflom komme over jorden,</i> <ref osisRef=\"Gen.6.17\">v. 17</ref>. Gud kunne ha utslettet hele menneskeheten med en engels sverd, et flammende sverd som vendte seg til alle kanter, slik han utslettet alle de førstefødte hos egypterne og assyrernes leir. Da hadde det ikke trengtes mer enn å sette et merke på Noah og familien hans for å bevare dem. Men Gud valgte å gjøre det med en <i>vannflom</i> som skulle drukne verden. Grunnene var vise og rettferdige, det kan vi være sikre på, selv om vi ikke kjenner dem. Gud har mange piler i koggeret sitt, og han kan bruke den han vil. Slik han velger riset han vil tukte sine barn med, velger han også sverdet han vil hogge ned sine fiender med. Legg merke til uttrykksmåten: «<i>Jeg, ja jeg, lar en flom komme;</i> jeg som er uendelig i makt og derfor <i>kan</i> gjøre det, uendelig i rettferdighet og derfor <i>vil</i> gjøre det.» (1.) Den antyder at dommen er viss: <i>Jeg, ja jeg,</i> vil gjøre det. Det Gud selv påtar seg å gjøre, kan ikke annet enn bli virkningsfullt gjort. Se <ref osisRef=\"Job.11.10\">Job 11,10</ref>. (2.) Den antyder at dommen tjener til Guds ære og til heder for hans rettferdighet. Slik vil han bli opphøyd og gjort stor på jorden, og hele verden skal få vite at han er den Gud <i>som hevnen hører til.</i> Jeg synes uttrykket her minner noe om det i <ref osisRef=\"Isa.1.24\">Jes 1,24</ref>: <i>Å, jeg vil få lettelse fra mine motstandere.</i>",
+      "II. Gud gjør her Noah til <i>sin pakts mann,</i> som er enda en hebraisk omskrivning for en venn (<ref osisRef=\"Gen.6.18\">v. 18</ref>): <i>Men med deg vil jeg opprette min pakt.</i> 1. Forsynets pakt: at naturens gang skal fortsette til tidens ende, til tross for det avbruddet flommen ville føre med seg. Dette løftet ble gitt direkte til Noah og sønnene hans, <ref osisRef=\"Gen.9.8-Gen.9.11\">kap. 9,8</ref> osv. De sto som forvaltere på vegne av hele denne delen av skaperverket, og dermed ble han og hans vist stor ære. 2. Nådens pakt: at Gud ville være en Gud for ham, og at Gud av hans ætt ville ta seg ut et folk. Merk: (1.) Når Gud slutter en pakt, oppretter han den, han gjør den sikker, og han holder den. Hans pakter er evige pakter. (2.) Nådepakten rommer lønnen for enestående tjeneste og er kilden til og grunnlaget for all særskilt gunst. Vi trenger ikke ønske oss mer enn at hans pakt blir opprettet med oss, verken for å få erstattet det vi har tapt for Guds skyld, eller for å ha vår fulle lykke i Gud.",
+      "III. Gud gjør her Noah til et minnesmerke over skånende barmhjertighet. Han viser ham hvordan han kan berge seg i den vannflommen som nærmer seg, så han ikke skal gå til grunne med resten av verden. <i>Jeg vil ødelegge dem,</i> sier Gud, <i>sammen med jorden,</i> <ref osisRef=\"Gen.6.13\">v. 13</ref>. «Men <i>lag deg en ark;</i> jeg vil sørge for å holde deg i live.» Merk: Enestående gudsfrykt skal lønnes med særskilt frelse, og slik frelse forplikter på en særlig måte. Det vil øke de herliggjorte helliges ære og lykke mye at de blir frelst når størstedelen av verden blir overlatt til å gå fortapt. Nå:",
+      "1. Gud pålegger Noah å <i>lage en ark,</i> <ref osisRef=\"Gen.6.14-Gen.6.16\">v. 14–16</ref>. Denne arken var som skroget på et skip. Den var ikke laget for å seile på vannet (det var det ingen grunn til når det ikke fantes noen kyst å seile til), men for å flyte på vannet mens den ventet på at det skulle synke. Gud kunne ha berget Noah ved englers tjeneste, uten å påføre ham selv noen omsorg, møye eller bry. Men han valgte å sette ham til å lage det som skulle være middelet til å bevare ham. Det gjorde han både for å prøve hans tro og lydighet og for å lære oss at ingen blir frelst ved Kristus uten dem som <i>arbeider på sin frelse.</i> Vi kan ikke gjøre det uten Gud, og han vil ikke gjøre det uten oss. Både Guds forsyn og Guds nåde vedkjenner seg og kroner det de lydige og flittige strever med. Gud ga ham svært nøyaktige anvisninger om dette byggverket, og det kunne ikke annet enn bli beundringsverdig godt egnet for formålet når den uendelige visdom selv var arkitekten. (1.) Den skulle lages av <i>gofertre.</i> Noah visste utvilsomt hva slags tre det var, selv om vi ikke vet det nå, enten det var seder eller sypress eller noe annet. (2.) Han skulle lage den tre etasjer høy innvendig. (3.) Han skulle dele den inn i lugarer med skillevegger, rom tilpasset de forskjellige slags dyr, slik at ingen plass gikk til spille. (4.) Han fikk nøyaktige mål, så han kunne lage den i rett forhold og ha plass nok i den til å oppfylle hensikten, og ikke mer. Merk: De som arbeider for Gud, må ta målene sine fra ham og følge dem nøye. Merk videre: Det er rimelig at han som anviser oss vår bolig, også fastsetter dens grenser. (5.) Han skulle <i>bek den innvendig og utvendig</i>, utvendig for å få regnet til å renne av og hindre vannet i å trenge inn, innvendig for å ta bort den vonde lukten av dyrene når de ble holdt innestengt. Legg merke til at Gud ikke ber ham male den, men bek den. Gir Gud oss boliger som er trygge, varme og sunne, er vi skyldige å være takknemlige, selv om de ikke er praktfulle eller fine. (6.) Han skulle lage et lite vindu oppe mot toppen for å slippe inn lys, og (mener noen) for at han gjennom det vinduet kunne se ødeleggelsene som skulle komme over jorden. (7.) Han skulle lage en dør i siden på den, til å gå inn og ut gjennom.",
+      "2. Gud lover Noah at han og hans skal bli holdt i live i arken (<ref osisRef=\"Gen.6.18\">v. 18</ref>): <i>Du skal gå inn i arken.</i> Merk: Det vi gjør i lydighet mot Gud, får vi trolig selv trøsten og nytten av. <i>Er du vis, er du vis til ditt eget beste.</i> Og det var ikke bare han selv som ble berget i arken, men også <i>hans kone og hans sønner og hans sønners koner.</i> Legg merke til: (1.) Gode foreldres omsorg. De er opptatt ikke bare av sin egen frelse, men av frelsen for familien sin, og særlig for barna. (2.) Lykken til de barna som har gudfryktige foreldre. Foreldrenes gudsfrykt skaffer dem ofte timelig frelse, som her, og den hjelper dem fram på veien til evig frelse, hvis de gjør seg nytte av den."
+     ],
+     "explanation": "Verbet heter «beke» i infinitiv; «bek» er substantivet. Etter «skal» må det stå infinitiv. | Etter «skulle» må verbet stå i infinitiv: «beke». | Parallelt med infinitiven «male» må det stå «beke», ikke «bek». | «Care» betyr her bekymring, ikke omsorg. «Påføre noen omsorg» er dessuten unorsk.",
+     "model": "claude-fable-5-2"
+    }
+   ],
+   "reviews": [
+    {
+     "argument": {
+      "premises": true,
+      "conclusions": true,
+      "evidence": true,
+      "problems": ""
+     },
+     "issues": [
+      {
+       "paragraph": 2,
+       "quote": "du skal bek den",
+       "replacement": "du skal beke den",
+       "type": "grammar",
+       "severity": "minor",
+       "explanation": "Verbet heter «beke» i infinitiv; «bek» er substantivet. Etter «skal» må det stå infinitiv."
+      },
+      {
+       "paragraph": 9,
+       "quote": "<i>bek den innvendig og utvendig</i>",
+       "replacement": "<i>beke den innvendig og utvendig</i>",
+       "type": "grammar",
+       "severity": "minor",
+       "explanation": "Etter «skulle» må verbet stå i infinitiv: «beke»."
+      },
+      {
+       "paragraph": 9,
+       "quote": "male den, men bek den",
+       "replacement": "male den, men beke den",
+       "type": "grammar",
+       "severity": "minor",
+       "explanation": "Parallelt med infinitiven «male» må det stå «beke», ikke «bek»."
+      },
+      {
+       "paragraph": 9,
+       "quote": "uten å påføre ham selv noen omsorg, møye eller bry",
+       "replacement": "uten at han selv fikk noen bekymring, møye eller bry",
+       "type": "meaning",
+       "severity": "minor",
+       "explanation": "«Care» betyr her bekymring, ikke omsorg. «Påføre noen omsorg» er dessuten unorsk."
+      }
+     ],
+     "summary": "Gjengivelsen er trofast og velskrevet. Alle resonnementer, skriftbelegg, henvisninger og all merking er bevart, i samme avsnittsrekkefølge som kilden. Det som gjenstår, er språklige småfeil: verbet «beke» står tre steder i formen «bek», og «care» er gjengitt med «omsorg» der det skulle vært «bekymring».",
+     "score": 8,
+     "model": "claude-fable-5-2",
+     "mechanical": [],
+     "skipped": []
+    }
+   ],
    "text": [
     "<h>Forutsigelse av vannflommen. (2448 f.Kr.)</h>",
-    "<sup>13</sup> Og Gud sa til Noah: Enden på alt kjød er kommet for mitt åsyn; for jorden er fylt av vold på grunn av dem; og se, jeg vil ødelegge dem sammen med jorden. <sup>14</sup> Lag deg en ark av gofertre; rom skal du lage i arken, og du skal bek den innvendig og utvendig med bek. <sup>15</sup> Og dette <i>er formen</i> du skal lage den <i>i:</i> Arkens lengde <i>skal være</i> tre hundre alen, bredden femti alen og høyden tretti alen. <sup>16</sup> Et vindu skal du lage på arken, og på en alen skal du fullføre den oventil; og døren til arken skal du sette i siden på den; <i>med</i> en nederste, en annen og en tredje <i>etasje</i> skal du lage den. <sup>17</sup> Og se, jeg, ja jeg, lar en vannflom komme over jorden for å ødelegge alt kjød, der livets ånde <i>er</i>, under himmelen; <i>og</i> alt som <i>er</i> på jorden, skal dø. <sup>18</sup> Men med deg vil jeg opprette min pakt; og du skal gå inn i arken, du og dine sønner og din kone og dine sønners koner med deg. <sup>19</sup> Og av alt som lever, av alt kjød, skal du føre to av hvert <i>slag</i> inn i arken for å holde <i>dem</i> i live sammen med deg; hann og hunn skal de være. <sup>20</sup> Av fuglene etter deres slag og av feet etter dets slag, av alt jordens kryp etter dets slag, skal to av hvert <i>slag</i> komme til deg, for å holde <i>dem</i> i live. <sup>21</sup> Og ta du med deg av all mat som spises, og du skal samle <i>den</i> hos deg; og det skal være til føde for deg og for dem.",
+    "<sup>13</sup> Og Gud sa til Noah: Enden på alt kjød er kommet for mitt åsyn; for jorden er fylt av vold på grunn av dem; og se, jeg vil ødelegge dem sammen med jorden. <sup>14</sup> Lag deg en ark av gofertre; rom skal du lage i arken, og du skal beke den innvendig og utvendig med bek. <sup>15</sup> Og dette <i>er formen</i> du skal lage den <i>i:</i> Arkens lengde <i>skal være</i> tre hundre alen, bredden femti alen og høyden tretti alen. <sup>16</sup> Et vindu skal du lage på arken, og på en alen skal du fullføre den oventil; og døren til arken skal du sette i siden på den; <i>med</i> en nederste, en annen og en tredje <i>etasje</i> skal du lage den. <sup>17</sup> Og se, jeg, ja jeg, lar en vannflom komme over jorden for å ødelegge alt kjød, der livets ånde <i>er</i>, under himmelen; <i>og</i> alt som <i>er</i> på jorden, skal dø. <sup>18</sup> Men med deg vil jeg opprette min pakt; og du skal gå inn i arken, du og dine sønner og din kone og dine sønners koner med deg. <sup>19</sup> Og av alt som lever, av alt kjød, skal du føre to av hvert <i>slag</i> inn i arken for å holde <i>dem</i> i live sammen med deg; hann og hunn skal de være. <sup>20</sup> Av fuglene etter deres slag og av feet etter dets slag, av alt jordens kryp etter dets slag, skal to av hvert <i>slag</i> komme til deg, for å holde <i>dem</i> i live. <sup>21</sup> Og ta du med deg av all mat som spises, og du skal samle <i>den</i> hos deg; og det skal være til føde for deg og for dem.",
     "Her viser det seg virkelig at Noah <i>fant nåde for Herrens øyne.</i> Guds velvilje mot ham kom tydelig fram allerede i det han sa om ham i <ref osisRef=\"Gen.6.8-Gen.6.10\">v. 8–10</ref>. Der nevnes navnet hans fem ganger på fem linjer, enda én gang hadde vært nok til å gjøre meningen klar, som om Den hellige ånd fant glede i å holde minnet om ham levende. Men den viser seg langt tydeligere i det han sier til ham i disse versene, i de opplysningene og anvisningene han får her.",
     "I. Gud gjør her Noah til <i>sitt råds mann</i> ved å meddele ham sin hensikt om å ødelegge denne ugudelige verden med vann. Senere fortalte han Abraham hva han hadde besluttet om Sodoma (<ref osisRef=\"Gen.18.17\">kap. 18,17</ref>: <i>Skulle jeg skjule det for Abraham?</i>). På samme måte her: «Skulle jeg skjule for Noah <i>det jeg gjør,</i> når han skal <i>bli et stort folk?</i>» Merk: <i>Herrens hemmelighet er hos dem som frykter ham</i> (<ref osisRef=\"Ps.25.14\">Sal 25,14</ref>). Den var hos <i>hans tjenere profetene</i> (<ref osisRef=\"Amos.3.7\">Am 3,7</ref>) ved en åpenbaringens ånd, som gjorde dem kjent med hans hensikter i enkeltheter. Den er hos alle troende ved en visdommens og troens ånd, som setter dem i stand til å forstå og anvende de allmenne erklæringene i det skrevne ordet og de advarslene som gis der. Nå:",
     "1. Gud fortalte Noah i allmenne ordelag at han ville ødelegge verden (<ref osisRef=\"Gen.6.13\">v. 13</ref>): <i>Enden på alt kjød er kommet for mitt åsyn; jeg vil ødelegge dem.</i> Det vil si at denne ugudelige verdens undergang er besluttet og fastsatt. <i>Den er kommet,</i> det vil si at den kommer sikkert, og den kommer snart. Noah hadde trolig, når han forkynte for naboene sine, advart dem i allmenne ordelag mot den Guds vrede de ville føre over seg selv med sin ondskap. Nå støtter Gud opp om det han har forsøkt, med en uttrykkelig kunngjøring av vrede, så Noah kunne prøve om dette ville virke på dem. Legg av dette merke til (1.) at Gud <i>stadfester sine sendebuds ord,</i> <ref osisRef=\"Isa.44.26\">Jes 44,26</ref>, og (2.) at <i>den som har,</i> og bruker det han har til andres beste, <i>skal få mer,</i> nemlig fyldigere undervisning.",
     "2. Han fortalte ham mer bestemt at han ville ødelegge verden med en vannflom: <i>Og se, jeg, ja jeg, lar en vannflom komme over jorden,</i> <ref osisRef=\"Gen.6.17\">v. 17</ref>. Gud kunne ha utslettet hele menneskeheten med en engels sverd, et flammende sverd som vendte seg til alle kanter, slik han utslettet alle de førstefødte hos egypterne og assyrernes leir. Da hadde det ikke trengtes mer enn å sette et merke på Noah og familien hans for å bevare dem. Men Gud valgte å gjøre det med en <i>vannflom</i> som skulle drukne verden. Grunnene var vise og rettferdige, det kan vi være sikre på, selv om vi ikke kjenner dem. Gud har mange piler i koggeret sitt, og han kan bruke den han vil. Slik han velger riset han vil tukte sine barn med, velger han også sverdet han vil hogge ned sine fiender med. Legg merke til uttrykksmåten: «<i>Jeg, ja jeg, lar en flom komme;</i> jeg som er uendelig i makt og derfor <i>kan</i> gjøre det, uendelig i rettferdighet og derfor <i>vil</i> gjøre det.» (1.) Den antyder at dommen er viss: <i>Jeg, ja jeg,</i> vil gjøre det. Det Gud selv påtar seg å gjøre, kan ikke annet enn bli virkningsfullt gjort. Se <ref osisRef=\"Job.11.10\">Job 11,10</ref>. (2.) Den antyder at dommen tjener til Guds ære og til heder for hans rettferdighet. Slik vil han bli opphøyd og gjort stor på jorden, og hele verden skal få vite at han er den Gud <i>som hevnen hører til.</i> Jeg synes uttrykket her minner noe om det i <ref osisRef=\"Isa.1.24\">Jes 1,24</ref>: <i>Å, jeg vil få lettelse fra mine motstandere.</i>",
     "II. Gud gjør her Noah til <i>sin pakts mann,</i> som er enda en hebraisk omskrivning for en venn (<ref osisRef=\"Gen.6.18\">v. 18</ref>): <i>Men med deg vil jeg opprette min pakt.</i> 1. Forsynets pakt: at naturens gang skal fortsette til tidens ende, til tross for det avbruddet flommen ville føre med seg. Dette løftet ble gitt direkte til Noah og sønnene hans, <ref osisRef=\"Gen.9.8-Gen.9.11\">kap. 9,8</ref> osv. De sto som forvaltere på vegne av hele denne delen av skaperverket, og dermed ble han og hans vist stor ære. 2. Nådens pakt: at Gud ville være en Gud for ham, og at Gud av hans ætt ville ta seg ut et folk. Merk: (1.) Når Gud slutter en pakt, oppretter han den, han gjør den sikker, og han holder den. Hans pakter er evige pakter. (2.) Nådepakten rommer lønnen for enestående tjeneste og er kilden til og grunnlaget for all særskilt gunst. Vi trenger ikke ønske oss mer enn at hans pakt blir opprettet med oss, verken for å få erstattet det vi har tapt for Guds skyld, eller for å ha vår fulle lykke i Gud.",
     "III. Gud gjør her Noah til et minnesmerke over skånende barmhjertighet. Han viser ham hvordan han kan berge seg i den vannflommen som nærmer seg, så han ikke skal gå til grunne med resten av verden. <i>Jeg vil ødelegge dem,</i> sier Gud, <i>sammen med jorden,</i> <ref osisRef=\"Gen.6.13\">v. 13</ref>. «Men <i>lag deg en ark;</i> jeg vil sørge for å holde deg i live.» Merk: Enestående gudsfrykt skal lønnes med særskilt frelse, og slik frelse forplikter på en særlig måte. Det vil øke de herliggjorte helliges ære og lykke mye at de blir frelst når størstedelen av verden blir overlatt til å gå fortapt. Nå:",
-    "1. Gud pålegger Noah å <i>lage en ark,</i> <ref osisRef=\"Gen.6.14-Gen.6.16\">v. 14–16</ref>. Denne arken var som skroget på et skip. Den var ikke laget for å seile på vannet (det var det ingen grunn til når det ikke fantes noen kyst å seile til), men for å flyte på vannet mens den ventet på at det skulle synke. Gud kunne ha berget Noah ved englers tjeneste, uten å påføre ham selv noen omsorg, møye eller bry. Men han valgte å sette ham til å lage det som skulle være middelet til å bevare ham. Det gjorde han både for å prøve hans tro og lydighet og for å lære oss at ingen blir frelst ved Kristus uten dem som <i>arbeider på sin frelse.</i> Vi kan ikke gjøre det uten Gud, og han vil ikke gjøre det uten oss. Både Guds forsyn og Guds nåde vedkjenner seg og kroner det de lydige og flittige strever med. Gud ga ham svært nøyaktige anvisninger om dette byggverket, og det kunne ikke annet enn bli beundringsverdig godt egnet for formålet når den uendelige visdom selv var arkitekten. (1.) Den skulle lages av <i>gofertre.</i> Noah visste utvilsomt hva slags tre det var, selv om vi ikke vet det nå, enten det var seder eller sypress eller noe annet. (2.) Han skulle lage den tre etasjer høy innvendig. (3.) Han skulle dele den inn i lugarer med skillevegger, rom tilpasset de forskjellige slags dyr, slik at ingen plass gikk til spille. (4.) Han fikk nøyaktige mål, så han kunne lage den i rett forhold og ha plass nok i den til å oppfylle hensikten, og ikke mer. Merk: De som arbeider for Gud, må ta målene sine fra ham og følge dem nøye. Merk videre: Det er rimelig at han som anviser oss vår bolig, også fastsetter dens grenser. (5.) Han skulle <i>bek den innvendig og utvendig</i>, utvendig for å få regnet til å renne av og hindre vannet i å trenge inn, innvendig for å ta bort den vonde lukten av dyrene når de ble holdt innestengt. Legg merke til at Gud ikke ber ham male den, men bek den. Gir Gud oss boliger som er trygge, varme og sunne, er vi skyldige å være takknemlige, selv om de ikke er praktfulle eller fine. (6.) Han skulle lage et lite vindu oppe mot toppen for å slippe inn lys, og (mener noen) for at han gjennom det vinduet kunne se ødeleggelsene som skulle komme over jorden. (7.) Han skulle lage en dør i siden på den, til å gå inn og ut gjennom.",
+    "1. Gud pålegger Noah å <i>lage en ark,</i> <ref osisRef=\"Gen.6.14-Gen.6.16\">v. 14–16</ref>. Denne arken var som skroget på et skip. Den var ikke laget for å seile på vannet (det var det ingen grunn til når det ikke fantes noen kyst å seile til), men for å flyte på vannet mens den ventet på at det skulle synke. Gud kunne ha berget Noah ved englers tjeneste, uten at han selv fikk noen bekymring, møye eller bry. Men han valgte å sette ham til å lage det som skulle være middelet til å bevare ham. Det gjorde han både for å prøve hans tro og lydighet og for å lære oss at ingen blir frelst ved Kristus uten dem som <i>arbeider på sin frelse.</i> Vi kan ikke gjøre det uten Gud, og han vil ikke gjøre det uten oss. Både Guds forsyn og Guds nåde vedkjenner seg og kroner det de lydige og flittige strever med. Gud ga ham svært nøyaktige anvisninger om dette byggverket, og det kunne ikke annet enn bli beundringsverdig godt egnet for formålet når den uendelige visdom selv var arkitekten. (1.) Den skulle lages av <i>gofertre.</i> Noah visste utvilsomt hva slags tre det var, selv om vi ikke vet det nå, enten det var seder eller sypress eller noe annet. (2.) Han skulle lage den tre etasjer høy innvendig. (3.) Han skulle dele den inn i lugarer med skillevegger, rom tilpasset de forskjellige slags dyr, slik at ingen plass gikk til spille. (4.) Han fikk nøyaktige mål, så han kunne lage den i rett forhold og ha plass nok i den til å oppfylle hensikten, og ikke mer. Merk: De som arbeider for Gud, må ta målene sine fra ham og følge dem nøye. Merk videre: Det er rimelig at han som anviser oss vår bolig, også fastsetter dens grenser. (5.) Han skulle <i>beke den innvendig og utvendig</i>, utvendig for å få regnet til å renne av og hindre vannet i å trenge inn, innvendig for å ta bort den vonde lukten av dyrene når de ble holdt innestengt. Legg merke til at Gud ikke ber ham male den, men beke den. Gir Gud oss boliger som er trygge, varme og sunne, er vi skyldige å være takknemlige, selv om de ikke er praktfulle eller fine. (6.) Han skulle lage et lite vindu oppe mot toppen for å slippe inn lys, og (mener noen) for at han gjennom det vinduet kunne se ødeleggelsene som skulle komme over jorden. (7.) Han skulle lage en dør i siden på den, til å gå inn og ut gjennom.",
     "2. Gud lover Noah at han og hans skal bli holdt i live i arken (<ref osisRef=\"Gen.6.18\">v. 18</ref>): <i>Du skal gå inn i arken.</i> Merk: Det vi gjør i lydighet mot Gud, får vi trolig selv trøsten og nytten av. <i>Er du vis, er du vis til ditt eget beste.</i> Og det var ikke bare han selv som ble berget i arken, men også <i>hans kone og hans sønner og hans sønners koner.</i> Legg merke til: (1.) Gode foreldres omsorg. De er opptatt ikke bare av sin egen frelse, men av frelsen for familien sin, og særlig for barna. (2.) Lykken til de barna som har gudfryktige foreldre. Foreldrenes gudsfrykt skaffer dem ofte timelig frelse, som her, og den hjelper dem fram på veien til evig frelse, hvis de gjør seg nytte av den."
    ],
    "translator": "claude-fable-5-2",
@@ -159,11 +380,26 @@
    "section": 7,
    "start": 10,
    "end": 11,
-   "status": "draft",
-   "rounds": 0,
+   "status": "checked",
+   "rounds": 1,
    "attempts": 0,
    "versions": [],
-   "reviews": [],
+   "reviews": [
+    {
+     "argument": {
+      "premises": true,
+      "conclusions": true,
+      "evidence": true,
+      "problems": ""
+     },
+     "issues": [],
+     "summary": "Gjengivelsen er trofast og fullstendig. Begge hovedpunktene (Noah som forkynner og som frelser for de lavere skapningene), underpunktene (1.) og (2.), de to typologiske sammenligningene med Kristus og alle skriftbeleggene er med, med samme innhold og vekt. Alle osisRef-verdier og all kursivmerking er bevart, og henvisningene er riktig omgjort til norsk form. Språket er naturlig bokmål, og de lange setningene er delt på en fornuftig måte uten tap av innhold.",
+     "score": 10,
+     "model": "claude-fable-5-2",
+     "mechanical": [],
+     "skipped": []
+    }
+   ],
    "text": [
     "IV. Her gjør Gud Noah til en stor velsignelse for verden, og dermed til et fremtredende forbilde på Messias – selv om han ikke var Messias selv, slik foreldrene hans ventet, <ref osisRef=\"Gen.5.29\">kap. 5,29</ref>. 1. Gud gjorde ham til forkynner for menneskene i den slekten. Som vekter mottok han ordet fra Guds munn for å kunne advare dem, <ref osisRef=\"Ezek.3.17\">Esek 3,17</ref>. Slik var det at han, <i>mens Guds langmodighet ventet,</i> ved sin Ånd i Noah <i>forkynte for</i> den gamle verden, for dem som var <i>ånder i fengsel</i> da Peter skrev (<ref osisRef=\"1Pet.3.18-1Pet.3.20\">1 Pet 3,18–20</ref>). I dette var Noah et forbilde på Kristus, som i et land og en tid der alt kjød hadde fordervet sin vei, gikk omkring og forkynte omvendelse og advarte menneskene mot en flom av vrede som skulle komme. 2. Gud gjorde ham til en frelser for de lavere skapningene, så de ulike artene ikke skulle gå til grunne og gå tapt i flommen, <ref osisRef=\"Gen.6.19-Gen.6.21\">v. 19–21</ref>. Dette var en stor ære som ble lagt på ham. Ikke bare skulle menneskeslekten holdes oppe i ham, og fra ham skulle det utgå en ny verden, kirken, som er verdens sjel, og Messias, som er denne kirkens hode. Han skulle også være redskapet til å bevare de lavere skapningene, slik at menneskeheten i ham fikk en ny rett til dem og til deres tjeneste. (1.) Han skulle sørge for ly til dem, så de ikke druknet. <i>To av hvert slag, hann og hunn,</i> måtte han ta med seg inn i arken. Og for at han ikke skulle se det som noen vanskelighet å samle dem og få dem inn, lover Gud (<ref osisRef=\"Gen.6.20\">v. 20</ref>) at de av seg selv skal komme til ham. Han som får oksen til å kjenne sin eier og sin krybbe, fikk den da til å kjenne sin bevarer og sin ark. (2.) Han skulle sørge for føde til dem, så de ikke sultet i hjel, <ref osisRef=\"Gen.6.21\">v. 21</ref>. Han måtte proviantere skipet etter størrelsen på mannskapet, den store familien han nå hadde ansvaret for, og etter den tiden som var fastsatt for innestengningen. Også i dette var han et forbilde på Kristus. Det er ham verden kan takke for at den står, ved ham består alle ting, og han bevarer menneskeheten fra å bli fullstendig utryddet og ødelagt av synden. I ham blir den hellige ætten berget i live, og skaperverket fridd ut fra den forgjengeligheten det sukker under. Noah frelste dem han skulle herske over; det gjør også Kristus, <ref osisRef=\"Heb.5.9\">Hebr 5,9</ref>."
    ],
@@ -175,11 +411,26 @@
    "section": 8,
    "start": 0,
    "end": 2,
-   "status": "draft",
-   "rounds": 0,
+   "status": "checked",
+   "rounds": 1,
    "attempts": 0,
    "versions": [],
-   "reviews": [],
+   "reviews": [
+    {
+     "argument": {
+      "premises": true,
+      "conclusions": true,
+      "evidence": true,
+      "problems": ""
+     },
+     "issues": [],
+     "summary": "Gjengivelsen er trofast og naturlig. Alle fire punktene (tro, lydighet, klokskap, advarsel) er med, likeså innvendingene, «Merk»-anvendelsene og samtlige skrifthenvisninger. Merking og osisRef stemmer med kilden. Små friheter, som «på flere måter» og «1 Mos 1,9–10» for «ch. i. 9, 10», endrer ikke innholdet.",
+     "score": 9,
+     "model": "claude-fable-5-2",
+     "mechanical": [],
+     "skipped": []
+    }
+   ],
    "text": [
     "<sup>22</sup> Så gjorde Noah; i samsvar med alt det Gud hadde befalt ham, slik gjorde han.",
     "Noahs omhu og flid med å bygge arken kan betraktes på flere måter. 1. Som en frukt av hans tro på Guds ord. Gud hadde sagt til ham at han om kort tid ville drukne verden. Han trodde det, fryktet den vannflommen som var truet med, og i denne frykten gjorde han arken i stand. Merk: Vi bør ta imot i tro det Gud har åpenbart om sin vrede mot all ugudelighet og urettferdighet hos mennesker; truslene i Ordet er ikke falsk alarm. Mye kunne ha vært innvendt mot troverdigheten i denne advarselen til Noah. «Hvem kan tro at den vise Gud, som skapte verden, så snart skulle gjøre den til intet igjen, at han som hadde trukket vannet bort fra det tørre land (<ref osisRef=\"Gen.1.9-Gen.1.10\">1 Mos 1,9–10</ref>), skulle la det dekke landet på nytt? Hvordan lar dette seg forene med Guds barmhjertighet, som hviler over alle hans gjerninger, og særlig det at de uskyldige skapningene skulle dø for menneskets synd? Hvor skulle det komme nok vann fra til å oversvømme verden? Og om det nå må bli slik, hvorfor skulle bare Noah få beskjed om det?» Men Noahs tro seiret over alle disse fordervede resonnementene. 2. Som en lydighetshandling mot Guds befaling. Hadde han rådført seg med kjøtt og blod, ville det ha reist seg mange innvendinger. Å reise et byggverk som han aldri hadde sett maken til, så stort og med så nøyaktige mål, ville koste ham mye omtanke, arbeid og utgifter. Det ville ta tid; synet gjaldt en tid langt fram. Naboene ville gjøre narr av ham for hans godtroenhet, og han ville bli en vise for drankerne; byggverket hans ville bli kalt <i>Noahs dårskap.</i> Og om det verste skulle skje, som vi sier, ville det ikke gå den ene verre enn naboene. Men disse og tusen lignende innvendinger kom Noah over ved tro. Lydigheten hans var villig og besluttsom: <i>Så gjorde Noah,</i> villig og med glede, uten å knurre eller diskutere. Gud sier: <i>Gjør dette,</i> og han gjør det. Den var også nøyaktig og utholdende: Han gjorde alt nøyaktig etter de anvisningene han hadde fått, og da han først hadde begynt å bygge, ga han seg ikke før han var ferdig. Slik gjorde han, og slik må vi gjøre. 3. Som et eksempel på klokskap for egen del, ved at han på denne måten sørget for sin egen sikkerhet. Han fryktet vannflommen, og derfor gjorde han arken i stand. Merk: Når Gud varsler om dommer som nærmer seg, er det både klokt av oss og vår plikt å innrette oss etter det. Se <ref osisRef=\"Exod.9.20-Exod.9.21\">2 Mos 9,20–21</ref>; <ref osisRef=\"Ezek.3.18\">Esek 3,18</ref>. Vi må gjøre oss rede til å møte Herren i hans dommer på jorden, flykte til hans navn som til et fast tårn (<ref osisRef=\"Prov.18.10\">Ordsp 18,10</ref>) og gå inn i våre kammer (<ref osisRef=\"Isa.26.20-Isa.26.21\">Jes 26,20–21</ref>). Framfor alt må vi gjøre oss rede til å møte ham i døden og i dommen på den store dag, bygge på Kristus, Klippen (<ref osisRef=\"Matt.7.24\">Matt 7,24</ref>), og gå inn i Kristus, Arken. 4. Som ment til advarsel for en sorgløs verden; og det var en ærlig og tydelig advarsel om at vannflommen var på vei. Hvert slag av øksene og hamrene hans var et kall til omvendelse, et kall til dem om å gjøre i stand arker, de også. Men siden han ikke kunne overbevise verden ved dette, fordømte han verden ved det, <ref osisRef=\"Heb.11.7\">Hebr 11,7</ref>."
