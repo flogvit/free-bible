@@ -110,8 +110,8 @@
    "section": 3,
    "start": 0,
    "end": 8,
-   "status": "draft",
-   "rounds": 1,
+   "status": "checked",
+   "rounds": 2,
    "attempts": 0,
    "versions": [
     {
@@ -165,6 +165,20 @@
      ],
      "summary": "Gjengivelsen er gjennomgående trofast og idiomatisk, med alle henvisninger, all merking og hele avsnittsstrukturen intakt. Ett reelt meningsavvik: påbudet i avsnitt 8 er innsnevret fra alle mennesker til «hele folket». I tillegg en skjerpet modalitet i avsnitt 7 og en tvetydig formulering i avsnitt 4.",
      "score": 8,
+     "model": "claude-fable-5-2",
+     "mechanical": [],
+     "skipped": []
+    },
+    {
+     "argument": {
+      "premises": true,
+      "conclusions": true,
+      "evidence": true,
+      "problems": ""
+     },
+     "issues": [],
+     "summary": "Gjengivelsen er trofast og flyter godt på norsk. Alle resonnementer, skriftsteder, sitater og henvisninger er med, osisRef-ene står som i kilden, og merkingen er bevart. Ingen meningsfeil, utelatelser eller tillegg er funnet.",
+     "score": 10,
      "model": "claude-fable-5-2",
      "mechanical": [],
      "skipped": []

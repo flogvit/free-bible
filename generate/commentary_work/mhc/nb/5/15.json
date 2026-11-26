@@ -38,8 +38,8 @@
    "section": 1,
    "start": 0,
    "end": 6,
-   "status": "draft",
-   "rounds": 1,
+   "status": "checked",
+   "rounds": 2,
    "attempts": 0,
    "versions": [
     {
@@ -83,6 +83,20 @@
      ],
      "summary": "Trofast og velskrevet gjengivelse med alle avsnitt, henvisninger og merking på plass. Dobbeltføringen av «(v. 7) … barmhjertighet» i avsnitt 4 står også i kilden og er ikke en feil. Bare to funn: en mildning av et premiss og et upresist verbuttrykk, begge i avsnitt 4.",
      "score": 8,
+     "model": "claude-fable-5-2",
+     "mechanical": [],
+     "skipped": []
+    },
+    {
+     "argument": {
+      "premises": true,
+      "conclusions": true,
+      "evidence": true,
+      "problems": ""
+     },
+     "issues": [],
+     "summary": "Gjengivelsen er trofast og velskrevet: alle resonnementer, de tre begrunnelsene for loven, de seks merknadene og samtlige skrifthenvisninger er bevart med riktig innhold og vekt, og merkingen er intakt. Dubletten «(v. 7), og at det aldri ville mangle …» i avsnitt 4 står slik også i kilden og er derfor ikke en feil. Jeg fant ingenting som må rettes.",
+     "score": 10,
      "model": "claude-fable-5-2",
      "mechanical": [],
      "skipped": []
