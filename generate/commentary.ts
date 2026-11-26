@@ -62,7 +62,6 @@ const MAX_BATCH_BYTES = 200 * 1024 * 1024;   // the API's limit is 256 MB
 const POLL_MS = 60_000;
 const MAX_ATTEMPTS = 3;
 export const EXIT_NO_CREDIT = 75;
-const NO_CREDIT = `\nKreditten er brukt opp. Det som er betalt for, er lagret. Kjør samme kommando igjen når det er kreditt (den 1.) eller med en annen nøkkel i DUX_ANTHROPIC_API_KEY; den fortsetter der den stoppet.`;
 
 // ---------------------------------------------------------------- works and languages
 
@@ -203,6 +202,7 @@ interface Pending {
     chars: number;            // input characters, for the measured price in --dry-run
     reserved: number;         // dollars held against the budget until the batch is collected
     created: string;
+    account?: string;         // the API account that sent it, and so the only key that can fetch it; none = the first
 }
 type Kind = 'translate' | 'review';
 
@@ -469,6 +469,8 @@ export const paths = (work: string, lang: string) => {
         cost: path.join(GENERATE, 'commentary_work', work, lang, 'cost.jsonl'),
         // Why the job stopped with work left (credit or the month's budget), for the watch that tells a stop from a stall.
         stopped: path.join(GENERATE, 'commentary_work', work, lang, 'stopped.json'),
+        // Each API account's month: spent, budget, and why it is used up (`AccountState`).
+        accounts: path.join(GENERATE, 'commentary_work', work, lang, 'accounts.json'),
         download: path.join(ROOT, 'external', 'commentaries', work),
     };
 };
@@ -637,7 +639,7 @@ async function harvest(client: Anthropic, store: Store, pending: Pending, maxRou
             : afterReview(unit, src, data as Review, pending.model, maxRounds));
     }
     fs.appendFileSync(paths(store.work, store.lang).cost,
-        JSON.stringify({batch: pending.id, kind: pending.kind, model: pending.model, requests: pending.units.length, chars: pending.chars, ok, errors, input, output, usd: +usd.toFixed(4), ended: new Date().toISOString()}) + '\n');
+        JSON.stringify({batch: pending.id, account: pending.account, kind: pending.kind, model: pending.model, requests: pending.units.length, chars: pending.chars, ok, errors, input, output, usd: +usd.toFixed(4), ended: new Date().toISOString()}) + '\n');
     console.log(`  ${pending.kind} ${pending.id}: ${ok} ok, ${errors} feil, ${input} inn / ${output} ut, $${usd.toFixed(2)}`);
     return {credit};
 }
@@ -655,15 +657,45 @@ export function worstCase(model: string, r: Anthropic.Messages.Batches.BatchCrea
     return BATCH_DISCOUNT * (input * price[0] + r.params.max_tokens * price[1]) / 1e6;
 }
 
-/** Dollars collected batches cost this calendar month (UTC), from cost.jsonl. */
-export function spentThisMonth(work: string, lang: string, now = new Date()): number {
+// ---------------------------------------------------------------- API accounts
+
+/** One of the owner's API accounts: each has the month's --budget of its own (#163: «vi støtter flere api-nøkler/kontoer»). */
+export interface Account { name: string; key: string; workspace?: string }
+
+/**
+ * The accounts in the order they are used: `DUX_ANTHROPIC_API_KEYS`, one per line as `name<TAB>key<TAB>workspace`, or
+ * the one key Dux gives a session (`DUX_ANTHROPIC_API_KEY`, `DUX_ANTHROPIC_WORKSPACE_ID`). Never ANTHROPIC_API_KEY.
+ */
+export function apiAccounts(env: Record<string, string | undefined>): Account[] {
+    const listed = (env.DUX_ANTHROPIC_API_KEYS ?? '').split('\n').map(l => l.split('\t').map(x => x.trim()))
+        .filter(([name, key]) => name && key).map(([name, key, workspace]) => ({name, key, workspace: workspace || undefined}));
+    if (listed.length) return listed;
+    return env.DUX_ANTHROPIC_API_KEY ? [{name: env.DUX_ANTHROPIC_API_ACCOUNT ?? 'default', key: env.DUX_ANTHROPIC_API_KEY, workspace: env.DUX_ANTHROPIC_WORKSPACE_ID || undefined}] : [];
+}
+
+interface CostRow { usd: number; ended: string; account?: string }
+
+/**
+ * Dollars collected batches cost this calendar month (UTC), from cost.jsonl: all of them, or one account's. A row from
+ * before rows named their account was the first account's: the only one there was.
+ */
+export function spentThisMonth(work: string, lang: string, now = new Date(), account?: string, first?: string): number {
     const p = paths(work, lang).cost;
     if (!fs.existsSync(p)) return 0;
-    const month = now.toISOString().slice(0, 7);
-    return fs.readFileSync(p, 'utf8').split('\n').filter(Boolean).map(l => JSON.parse(l))
-        .filter((r: {ended: string}) => r.ended.startsWith(month))
-        .reduce((a: number, r: {usd: number}) => a + r.usd, 0);
+    return spentIn(fs.readFileSync(p, 'utf8').split('\n').filter(Boolean).map(l => JSON.parse(l)), now, account, first);
 }
+
+export function spentIn(rows: CostRow[], now: Date, account?: string, first?: string): number {
+    const month = now.toISOString().slice(0, 7);
+    return rows.filter(r => r.ended.startsWith(month) && (account === undefined || (r.account ?? first) === account))
+        .reduce((a, r) => a + r.usd, 0);
+}
+
+/**
+ * What each account has left this month, and those the API said are out of credit (`out`, kept in accounts.json until
+ * the month ends): the job uses the first with room, and the watch tells the owner of each one used up.
+ */
+export interface AccountState { month: string; accounts: {name: string; spent: number; budget: number; out?: string}[] }
 
 /**
  * The price of a batch, from what earlier batches of the same kind and model actually cost
@@ -783,23 +815,35 @@ async function main() {
         store.save();
     }
 
-    const key = process.env.DUX_ANTHROPIC_API_KEY;
-    if (!key && !flags['dry-run']) {
-        console.error('DUX_ANTHROPIC_API_KEY mangler. Jobben bruker bare nøkkelen Dux gir økta (aldri ANTHROPIC_API_KEY eller generate/.env).');
+    const accounts = apiAccounts(process.env);
+    if (!accounts.length && !flags['dry-run']) {
+        console.error('DUX_ANTHROPIC_API_KEYS (eller DUX_ANTHROPIC_API_KEY) mangler. Jobben bruker bare nøklene Dux gir den (aldri ANTHROPIC_API_KEY eller generate/.env).');
         return 2;
     }
+    const first = accounts[0]?.name;
     // A key not scoped to a workspace must name one on every request.
-    const workspace = process.env.DUX_ANTHROPIC_WORKSPACE_ID;
-    const client = new Anthropic({
-        apiKey: key ?? 'dry-run', authToken: null,
-        defaultHeaders: workspace ? {'anthropic-workspace-id': workspace} : undefined,
-    });
+    const clients = new Map(accounts.map(a => [a.name, new Anthropic({
+        apiKey: a.key, authToken: null, defaultHeaders: a.workspace ? {'anthropic-workspace-id': a.workspace} : undefined,
+    })]));
+    const budget = flags.budget as number;
+    const thisMonth = () => new Date().toISOString().slice(0, 7);
+    const statePath = paths(work, lang).accounts;
+    const kept: AccountState | undefined = fs.existsSync(statePath) ? readJson<AccountState>(statePath) : undefined;
+    // Out of credit by the API's own word, for the rest of the month.
+    const out = new Map((kept?.month === thisMonth() ? kept.accounts : []).filter(a => a.out).map(a => [a.name, a.out!]));
+    const spentBy = (name: string) => spentThisMonth(work, lang, new Date(), name, first);
+    const leftOf = (name: string) => out.has(name) ? 0
+        : budget - spentBy(name) - store.pending.filter(p => (p.account ?? first) === name).reduce((a, p) => a + p.reserved, 0);
+    const saveAccounts = () => writeJson(statePath, {month: thisMonth(), accounts: accounts.map(a => ({
+        name: a.name, spent: +spentBy(a.name).toFixed(2), budget, out: out.get(a.name),
+    }))} satisfies AccountState);
 
     const startedAt = Date.now();
     while (true) {
         // 1. collect what has ended
-        let credit = false;
-        for (const pend of key ? [...store.pending] : []) {
+        for (const pend of accounts.length ? [...store.pending] : []) {
+            const account = pend.account ?? first!, client = clients.get(account);
+            if (!client) { console.log(`  batch ${pend.id}: kontoen ${account} har ingen nøkkel her nå; den hentes når nøkkelen er tilbake`); continue; }
             let batch;
             try { batch = await client.messages.batches.retrieve(pend.id); } catch (e) {
                 if (e instanceof Anthropic.NotFoundError) {
@@ -810,10 +854,11 @@ async function main() {
                 throw e;
             }
             if (batch.processing_status !== 'ended') continue;
-            credit = (await harvest(client, store, pend, maxRounds)).credit || credit;
+            if ((await harvest(client, store, pend, maxRounds)).credit) out.set(account, new Date().toISOString());
             store.pending = store.pending.filter(x => x !== pend);
             store.save();
         }
+        if (accounts.length) saveAccounts();
 
         // 2. publish finished books
         for (const b of allBooks) if (publishBook(store, b)) console.log(`publisert: bok ${b}`);
@@ -841,7 +886,6 @@ async function main() {
             report(store, window);
             return EXIT_NO_CREDIT;
         };
-        if (credit) return stop(NO_CREDIT);
 
         if (flags['dry-run']) {
             for (const kind of ['translate', 'review'] as Kind[]) {
@@ -853,9 +897,11 @@ async function main() {
             return 0;
         }
 
-        // 4. send the next step, as much of it as this month's budget leaves room for
-        let left = (flags.budget as number) - spentThisMonth(work, lang) - store.pending.reduce((a, p) => a + p.reserved, 0);
-        for (const kind of ['translate', 'review'] as Kind[]) {
+        // 4. send the next step on the first account whose month leaves room for one request, as much as that room allows
+        const cheapest = Math.min(...next.map(r => worstCase(model, requestFor(store, r.kind, r.id, model))));
+        const account = accounts.find(a => leftOf(a.name) >= cheapest);
+        let left = account ? leftOf(account.name) : 0;
+        send: for (const kind of account ? ['translate', 'review'] as Kind[] : []) {
             const reqs = next.filter(r => r.kind === kind).map(r => requestFor(store, kind, r.id, model));
             const affordable = [];
             for (const r of reqs) {
@@ -866,9 +912,9 @@ async function main() {
             }
             for (const group of chunk(affordable, r => JSON.stringify(r).length)) {
                 try {
-                    const batch = await client.messages.batches.create({requests: group});
+                    const batch = await clients.get(account!.name)!.messages.batches.create({requests: group});
                     store.pending.push({
-                        id: batch.id, kind, model, units: group.map(r => r.custom_id.slice(2)),
+                        id: batch.id, kind, model, account: account!.name, units: group.map(r => r.custom_id.slice(2)),
                         chars: group.reduce((a, r) => a + JSON.stringify(r.params.messages).length, 0),
                         reserved: group.reduce((a, r) => a + worstCase(model, r), 0),
                         created: new Date().toISOString(),
@@ -877,16 +923,21 @@ async function main() {
                     fs.rmSync(paths(work, lang).stopped, {force: true});
                     console.log(`sendt: ${kind} ${batch.id}, ${group.length} forespørsler`);
                 } catch (e) {
-                    if (isCreditExhausted(e)) return stop(NO_CREDIT);
-                    throw e;
+                    if (!isCreditExhausted(e)) throw e;
+                    // Its credit is out before its budget: the next round goes on with the next account.
+                    out.set(account!.name, new Date().toISOString());
+                    saveAccounts();
+                    console.log(`kontoen ${account!.name} er tom for kreditt; neste runde bruker neste konto`);
+                    break send;
                 }
             }
         }
 
-        if (!store.pending.length && next.length) {
-            return stop(`\nMånedens budsjett (--budget $${flags.budget}) er brukt: $${spentThisMonth(work, lang).toFixed(2)} denne måneden. Kjør samme kommando igjen den 1.; den fortsetter der den stoppet.`);
+        if (!store.pending.length && next.length && !accounts.some(a => leftOf(a.name) >= cheapest)) {
+            const each = accounts.map(a => `${a.name} $${spentBy(a.name).toFixed(2)}${out.has(a.name) ? ' (tom for kreditt)' : ''}`).join(', ');
+            return stop(`\nMånedens budsjett (--budget $${budget} per konto) er brukt på alle kontoene: ${each}. Jobben går videre den 1., eller med en ny nøkkel (~/.dux/keys/dux-<konto>.api); den fortsetter der den stoppet.`);
         }
-        if (!store.pending.length) {
+        if (!store.pending.length && !next.length) {
             report(store, allBooks);
             const stuck = store.allUnits().filter(u => u.status === 'stuck');
             console.log(stuck.length ? `ferdig, men ${stuck.length} enheter står fast (--retry-stuck gir dem nye runder)` : 'ferdig');
