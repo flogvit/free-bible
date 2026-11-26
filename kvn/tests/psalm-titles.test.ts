@@ -44,6 +44,14 @@ describe('english_kj: printed KJV has the title outside the verses', () => {
   it('Ps 60: KJV 60:1 is «O God, thou hast cast us off» = osnb 60:3', () =>
     expectPsalm('english_kj', 60, shifted(3, 14, 2)));
 
+  // osnb 13:6 is printed KJV 13:5 and 13:6: one osnb verse cannot name two
+  // KJV verses, so the KJV side lands on its two parts.
+  it('Ps 13: KJV 13:5 and 13:6 are the two halves of osnb 13:6', () => {
+    const back = new CrossMapper(new UkvnMapper(loadUkvnMapping('english_kj')), osnb);
+    expect([2, 3, 4, 5, 6].map((v) => ukvnFormat(back.map(ukvnEncode(19, 13, v)).tkvn)))
+      .toEqual(['19 13:3', '19 13:4', '19 13:5', '19 13:6a', '19 13:6b']);
+  });
+
   // osmain has these six in the Hebrew numbering; the own editions' mapping
   // used to send the last osnb verses to a part of the verse before.
   for (const [psalm, last] of [[18, 51], [42, 12], [64, 11], [68, 36], [81, 17], [140, 14]]) {
