@@ -7,13 +7,45 @@
    "section": 0,
    "start": 0,
    "end": 1,
-   "status": "draft",
-   "rounds": 0,
+   "status": "checked",
+   "rounds": 1,
    "attempts": 0,
-   "versions": [],
-   "reviews": [],
+   "versions": [
+    {
+     "text": [
+      "Tempelbygningen og inventaret var svært herlig, men innvielsen overgår dette i herlighet – like mye som bønn og lovsang, de helliges gjerning, overgår metallstøping og steinhogging, håndverkerens arbeid. Tempelet var ment å holde samfunnet mellom Gud og hans folk ved like, og her får vi en beretning om det høytidelige første møtet deres der. I. Representantene for hele Israel ble kalt sammen (<ref osisRef=\"1Kgs.8.1-1Kgs.8.2\">v. 1–2</ref>) for å holde en fest til Guds ære i fjorten dager, <ref osisRef=\"1Kgs.8.65\">v. 65</ref>. II. Prestene bar paktkisten inn i Det aller helligste og satte den på plass der, <ref osisRef=\"1Kgs.8.3-1Kgs.8.9\">v. 3–9</ref>. III. Gud tok tempelet i eie ved en sky, <ref osisRef=\"1Kgs.8.10-1Kgs.8.11\">v. 10–11</ref>. IV. Salomo, som med takk gav Gud æren, forklarte folket hva som var anledningen til at de var samlet, <ref osisRef=\"1Kgs.8.12-1Kgs.8.21\">v. 12–21</ref>. V. I en lang bønn bad han Gud om nådig å ta imot alle bønner som skulle bli bedt på dette stedet eller vendt mot det, <ref osisRef=\"1Kgs.8.22-1Kgs.8.53\">v. 22–53</ref>. VI. Han sendte forsamlingen fra seg med en velsignelse og en formaning, <ref osisRef=\"1Kgs.8.54-1Kgs.8.61\">v. 54–61</ref>. VII. Han bar fram en mengde ofre, som han og folket holdt festmåltid på, og så skiltes de, svært tilfredse, <ref osisRef=\"1Kgs.8.62-1Kgs.8.66\">v. 62–66</ref>. Dette var Israels gylne dager, Menneskesønnens dager i forbilde."
+     ],
+     "explanation": "Subjektet er to sideordnede ledd (tempelbygningen og inventaret), så predikativet skal stå i flertall.",
+     "model": "claude-fable-5-2"
+    }
+   ],
+   "reviews": [
+    {
+     "argument": {
+      "premises": true,
+      "conclusions": true,
+      "evidence": true,
+      "problems": ""
+     },
+     "issues": [
+      {
+       "paragraph": 1,
+       "quote": "var svært herlig,",
+       "replacement": "var svært herlige,",
+       "type": "grammar",
+       "severity": "minor",
+       "explanation": "Subjektet er to sideordnede ledd (tempelbygningen og inventaret), så predikativet skal stå i flertall."
+      }
+     ],
+     "summary": "Gjengivelsen er trofast og fullstendig: alle sju punkter, alle versreferanser og osisRef-verdier er bevart, og språket er naturlig bokmål. Eneste funn er en liten samsvarsbøyningsfeil i første setning.",
+     "score": 9,
+     "model": "claude-fable-5-2",
+     "mechanical": [],
+     "skipped": []
+    }
+   ],
    "text": [
-    "Tempelbygningen og inventaret var svært herlig, men innvielsen overgår dette i herlighet – like mye som bønn og lovsang, de helliges gjerning, overgår metallstøping og steinhogging, håndverkerens arbeid. Tempelet var ment å holde samfunnet mellom Gud og hans folk ved like, og her får vi en beretning om det høytidelige første møtet deres der. I. Representantene for hele Israel ble kalt sammen (<ref osisRef=\"1Kgs.8.1-1Kgs.8.2\">v. 1–2</ref>) for å holde en fest til Guds ære i fjorten dager, <ref osisRef=\"1Kgs.8.65\">v. 65</ref>. II. Prestene bar paktkisten inn i Det aller helligste og satte den på plass der, <ref osisRef=\"1Kgs.8.3-1Kgs.8.9\">v. 3–9</ref>. III. Gud tok tempelet i eie ved en sky, <ref osisRef=\"1Kgs.8.10-1Kgs.8.11\">v. 10–11</ref>. IV. Salomo, som med takk gav Gud æren, forklarte folket hva som var anledningen til at de var samlet, <ref osisRef=\"1Kgs.8.12-1Kgs.8.21\">v. 12–21</ref>. V. I en lang bønn bad han Gud om nådig å ta imot alle bønner som skulle bli bedt på dette stedet eller vendt mot det, <ref osisRef=\"1Kgs.8.22-1Kgs.8.53\">v. 22–53</ref>. VI. Han sendte forsamlingen fra seg med en velsignelse og en formaning, <ref osisRef=\"1Kgs.8.54-1Kgs.8.61\">v. 54–61</ref>. VII. Han bar fram en mengde ofre, som han og folket holdt festmåltid på, og så skiltes de, svært tilfredse, <ref osisRef=\"1Kgs.8.62-1Kgs.8.66\">v. 62–66</ref>. Dette var Israels gylne dager, Menneskesønnens dager i forbilde."
+    "Tempelbygningen og inventaret var svært herlige, men innvielsen overgår dette i herlighet – like mye som bønn og lovsang, de helliges gjerning, overgår metallstøping og steinhogging, håndverkerens arbeid. Tempelet var ment å holde samfunnet mellom Gud og hans folk ved like, og her får vi en beretning om det høytidelige første møtet deres der. I. Representantene for hele Israel ble kalt sammen (<ref osisRef=\"1Kgs.8.1-1Kgs.8.2\">v. 1–2</ref>) for å holde en fest til Guds ære i fjorten dager, <ref osisRef=\"1Kgs.8.65\">v. 65</ref>. II. Prestene bar paktkisten inn i Det aller helligste og satte den på plass der, <ref osisRef=\"1Kgs.8.3-1Kgs.8.9\">v. 3–9</ref>. III. Gud tok tempelet i eie ved en sky, <ref osisRef=\"1Kgs.8.10-1Kgs.8.11\">v. 10–11</ref>. IV. Salomo, som med takk gav Gud æren, forklarte folket hva som var anledningen til at de var samlet, <ref osisRef=\"1Kgs.8.12-1Kgs.8.21\">v. 12–21</ref>. V. I en lang bønn bad han Gud om nådig å ta imot alle bønner som skulle bli bedt på dette stedet eller vendt mot det, <ref osisRef=\"1Kgs.8.22-1Kgs.8.53\">v. 22–53</ref>. VI. Han sendte forsamlingen fra seg med en velsignelse og en formaning, <ref osisRef=\"1Kgs.8.54-1Kgs.8.61\">v. 54–61</ref>. VII. Han bar fram en mengde ofre, som han og folket holdt festmåltid på, og så skiltes de, svært tilfredse, <ref osisRef=\"1Kgs.8.62-1Kgs.8.66\">v. 62–66</ref>. Dette var Israels gylne dager, Menneskesønnens dager i forbilde."
    ],
    "translator": "claude-fable-5-2",
    "model": "claude-fable-5-2"
@@ -23,11 +55,26 @@
    "section": 1,
    "start": 0,
    "end": 7,
-   "status": "draft",
-   "rounds": 0,
+   "status": "checked",
+   "rounds": 1,
    "attempts": 0,
    "versions": [],
-   "reviews": [],
+   "reviews": [
+    {
+     "argument": {
+      "premises": true,
+      "conclusions": true,
+      "evidence": true,
+      "problems": ""
+     },
+     "issues": [],
+     "summary": "Gjengivelsen er trofast avsnitt for avsnitt: alle resonnementer, oppregninger, skriftsteder og henvisninger er med, osisRef og merking står som i kilden, og språket er naturlig bokmål. Ingen feil som bør rettes.",
+     "score": 10,
+     "model": "claude-fable-5-2",
+     "mechanical": [],
+     "skipped": []
+    }
+   ],
    "text": [
     "<h>Innvielsen av tempelet. (1003 f.Kr.)</h>",
     "<sup>1</sup> Da samlet Salomo Israels eldste og alle stammenes overhoder, de fremste blant fedrene til Israels barn, hos kong Salomo i Jerusalem, for at de skulle føre Herrens paktsark opp fra Davidsbyen, som <i>er</i> Sion. <sup>2</sup> Og alle Israels menn samlet seg hos kong Salomo ved høytiden i måneden etanim, som <i>er</i> den sjuende måneden. <sup>3</sup> Og alle Israels eldste kom, og prestene løftet opp arken. <sup>4</sup> Og de førte opp Herrens ark og sammenkomstens tabernakel og alle de hellige karene som <i>var</i> i tabernaklet; dem førte prestene og levittene opp. <sup>5</sup> Og kong Salomo og hele Israels menighet, som hadde samlet seg hos ham, <i>var</i> sammen med ham foran arken og ofret sauer og okser, så mange at de ikke kunne telles eller regnes. <sup>6</sup> Og prestene førte Herrens paktsark inn til dens plass, inn i husets orakel, til det aller helligste <i>sted, nemlig</i> under kjerubenes vinger. <sup>7</sup> For kjerubene bredte <i>sine</i> to vinger ut over stedet der arken sto, og kjerubene dekket arken og bærestengene ovenfra. <sup>8</sup> Og de trakk stengene ut, slik at endene av stengene kunne ses ute i det hellige <i>sted</i> foran orakelet, men de kunne ikke ses utenfor; og der er de den dag i dag. <sup>9</sup> <i>Det var</i> ingenting i arken uten de to steintavlene som Moses la der ved Horeb, da Herren sluttet <i>en pakt</i> med Israels barn, da de kom ut av landet Egypt. <sup>10</sup> Og det skjedde, da prestene var kommet ut av det hellige <i>sted</i>, at skyen fylte Herrens hus, <sup>11</sup> slik at prestene ikke kunne stå og gjøre tjeneste på grunn av skyen; for Herrens herlighet hadde fylt Herrens hus.",
@@ -45,11 +92,26 @@
    "section": 2,
    "start": 0,
    "end": 7,
-   "status": "draft",
-   "rounds": 0,
+   "status": "checked",
+   "rounds": 1,
    "attempts": 0,
    "versions": [],
-   "reviews": [],
+   "reviews": [
+    {
+     "argument": {
+      "premises": true,
+      "conclusions": true,
+      "evidence": true,
+      "problems": ""
+     },
+     "issues": [],
+     "summary": "Gjengivelsen er trofast mot kilden i alle sju avsnitt: hvert premiss, hver konklusjon, hvert skriftsted og hver henvisning er med, osisRef og merking er uendret, og språket er naturlig moderne bokmål. Jeg fant ingen feil å rette.",
+     "score": 10,
+     "model": "claude-fable-5-2",
+     "mechanical": [],
+     "skipped": []
+    }
+   ],
    "text": [
     "<sup>12</sup> Da talte Salomo: Herren har sagt at han vil bo i det tykke mørket. <sup>13</sup> Jeg har sannelig bygd deg et hus å bo i, et fast sted der du kan bli for evig. <sup>14</sup> Og kongen vendte ansiktet om og velsignet hele Israels menighet (og hele Israels menighet sto). <sup>15</sup> Og han sa: Velsignet <i>være</i> Herren, Israels Gud, som talte med sin munn til min far David og med sin hånd har oppfylt <i>det</i>, da han sa: <sup>16</sup> Fra den dagen jeg førte mitt folk Israel ut av Egypt, har jeg ikke valgt noen by blant alle Israels stammer til å bygge et hus, så mitt navn kunne være der; men jeg valgte David til å stå over mitt folk Israel. <sup>17</sup> Og det var i min far Davids hjerte å bygge et hus for navnet til Herren, Israels Gud. <sup>18</sup> Og Herren sa til min far David: Siden det var i ditt hjerte å bygge et hus for mitt navn, gjorde du vel i at det var i ditt hjerte. <sup>19</sup> Likevel skal ikke du bygge huset; men din sønn, som skal utgå av dine lender, han skal bygge huset for mitt navn. <sup>20</sup> Og Herren har holdt sitt ord som han talte, og jeg har reist meg i min far Davids sted og sitter på Israels trone, slik Herren lovet, og jeg har bygd et hus for navnet til Herren, Israels Gud. <sup>21</sup> Og der har jeg gjort i stand et sted for arken, der Herrens pakt <i>er</i>, den han sluttet med våre fedre da han førte dem ut av landet Egypt.",
     "Her ser vi: I. Salomo setter mot i prestene. De kom ut av tempelet fra tjenesten sin, svært forferdet over den mørke skyen som overskygget dem. Kristi disipler <i>ble redde da de kom inn i skyen</i>, enda det var en <i>lysende sky</i> (<ref osisRef=\"Luke.9.34\">Luk 9,34</ref>). Slik gikk det også med prestene da de fant seg innhyllet i en tykk sky. For å stille frykten deres gjør han to ting. 1. Han minner dem om noe de umulig kunne være uvitende om, nemlig at dette var et tegn på Guds nærvær (<ref osisRef=\"1Kgs.8.12\">v. 12</ref>): <i>Herren har sagt at han vil bo i det tykke mørket.</i> Det er så langt fra å være et tegn på hans mishag at det tvert imot viser hans velvilje, for han hadde sagt: <i>Jeg vil åpenbare meg i en sky</i>, <ref osisRef=\"Lev.16.2\">3 Mos 16,2</ref>. Merk: Ingenting forsoner oss mer virkningsfullt med mørke tilskikkelser enn å tenke over hva Gud har sagt, og å holde hans ord og hans gjerninger opp mot hverandre, slik som i <ref osisRef=\"Lev.10.3\">3 Mos 10,3</ref>: <i>Dette er det Herren har sagt.</i> Gud er lys (<ref osisRef=\"1John.1.5\">1 Joh 1,5</ref>), og han bor i lys (<ref osisRef=\"1Tim.6.16\">1 Tim 6,16</ref>). Men hos menneskene bor han <i>i det tykke mørket</i> og gjør det til sitt telt, fordi de ikke kunne tåle den blendende glansen av hans herlighet. <i>Sannelig, du er en Gud som skjuler seg.</i> Slik blir vår hellige tro øvd og vår hellige frykt styrket. Der Gud bor i lys, går troen opp i beskuelse og frykten i kjærlighet. 2. Selv ønsker han skyen velkommen, som noe det er all grunn til å ta imot. Og siden Gud med denne skyen steg ned for å ta huset i eie, overdrar Salomo det høytidelig til ham med noen få ord (<ref osisRef=\"1Kgs.8.13\">v. 13</ref>): «<i>Sannelig, jeg kommer</i>», sier Gud. «<i>Amen</i>», sier Salomo, «<i>ja, kom, Herre.</i> Huset er ditt eget, helt og fullt ditt eget. <i>Jeg har sannelig bygd det for deg</i> og utstyrt det for deg. Det er ditt eget for alltid, <i>et fast sted der du kan bli for evig</i>. Det skal aldri avhendes eller tas i bruk til noe annet. Arken skal aldri flyttes derfra, aldri mer bli uten fast sted.» Det er Salomos glede at Gud har tatt huset i eie, og det er hans ønske at han må beholde det. La derfor ikke prestene grue for det som Salomo jubler slik over.",
@@ -67,11 +129,26 @@
    "section": 3,
    "start": 0,
    "end": 8,
-   "status": "draft",
-   "rounds": 0,
+   "status": "checked",
+   "rounds": 1,
    "attempts": 0,
    "versions": [],
-   "reviews": [],
+   "reviews": [
+    {
+     "argument": {
+      "premises": true,
+      "conclusions": true,
+      "evidence": true,
+      "problems": ""
+     },
+     "issues": [],
+     "summary": "Gjengivelsen er trofast og velskrevet. Alle resonnementer, skrifthenvisninger, sitater (Herbert, pro re nata) og merkingen er bevart, og bibelteksten ligger nær King James-ordlyden. Ingen reelle feil funnet.",
+     "score": 10,
+     "model": "claude-fable-5-2",
+     "mechanical": [],
+     "skipped": []
+    }
+   ],
    "text": [
     "<h>Salomos bønn. (1003 f.Kr.)</h>",
     "<sup>22</sup> Og Salomo stod foran Herrens alter i nærvær av hele Israels menighet og bredte ut hendene mot himmelen. <sup>23</sup> Og han sa: Herre, Israels Gud, <i>det finnes</i> ingen Gud som du, verken i himmelen der oppe eller på jorden her nede, du som holder pakt og miskunn med dine tjenere som vandrer for ditt ansikt av hele sitt hjerte, <sup>24</sup> du som har holdt det du lovet din tjener David, min far. Du talte også med din munn og har oppfylt <i>det</i> med din hånd, slik <i>det er</i> i dag. <sup>25</sup> Så hold nå, Herre, Israels Gud, det du lovet din tjener David, min far, da du sa: Det skal aldri mangle deg en mann for mine øyne til å sitte på Israels trone, så sant dine barn tar seg i vare på sin vei, så de vandrer for mitt ansikt slik du har vandret for mitt ansikt. <sup>26</sup> Og nå, Israels Gud, la ditt ord, ber jeg deg, bli stadfestet, det som du talte til din tjener David, min far. <sup>27</sup> Men vil Gud virkelig bo på jorden? Se, himmelen og himlenes himmel kan ikke romme deg; hvor mye mindre da dette huset som jeg har bygd! <sup>28</sup> Ha likevel akt på din tjeners bønn og hans påkallelse, Herre min Gud, så du lytter til det ropet og den bønnen som din tjener ber for ditt ansikt i dag, <sup>29</sup> så dine øyne må være åpne mot dette huset natt og dag, <i>ja,</i> mot det stedet som du har sagt om: Mitt navn skal være der, så du lytter til den bønnen din tjener ber vendt mot dette stedet. <sup>30</sup> Og lytt til din tjeners og ditt folk Israels påkallelse når de ber vendt mot dette stedet. Hør du i himmelen, din bolig, og når du hører, så tilgi. <sup>31</sup> Hvis noen forgår seg mot sin neste, og det blir lagt en ed på ham for å få ham til å sverge, og eden kommer fram for ditt alter i dette huset, <sup>32</sup> så hør du i himmelen, og grip inn og døm dine tjenere, så du fordømmer den ugudelige og lar hans ferd komme over hans eget hode, og rettferdiggjør den rettferdige og gir ham etter hans rettferdighet. <sup>33</sup> Når ditt folk Israel blir slått av fienden fordi de har syndet mot deg, og de vender om til deg igjen og bekjenner ditt navn og ber og påkaller deg i dette huset, <sup>34</sup> så hør du i himmelen og tilgi ditt folk Israels synd, og før dem tilbake til det landet du gav deres fedre. <sup>35</sup> Når himmelen er lukket og det ikke kommer regn fordi de har syndet mot deg, og de så ber vendt mot dette stedet og bekjenner ditt navn og vender om fra sin synd når du plager dem, <sup>36</sup> så hør du i himmelen og tilgi dine tjeneres og ditt folk Israels synd, så du lærer dem den gode veien de skal vandre på, og gi regn over ditt land, som du har gitt ditt folk til arv. <sup>37</sup> Hvis det blir hungersnød i landet, hvis det blir pest, kornbrann, rust, gresshopper <i>eller</i> hvis det kommer larver, hvis fienden beleirer dem i landet med deres byer – hva slags plage, hva slags sykdom <i>det enn er</i> – <sup>38</sup> hver bønn og hver påkallelse som da <i>bæres fram</i> av noe menneske <i>eller</i> av hele ditt folk Israel, når de kjenner hver sitt eget hjertes plage og brer ut hendene mot dette huset, <sup>39</sup> den hør du i himmelen, din bolig, og tilgi og grip inn, og gi enhver etter hans veier, du som kjenner hans hjerte (for du, <i>ja,</i> du alene, kjenner hjertene til alle menneskenes barn), <sup>40</sup> så de må frykte deg alle de dager de lever i det landet du gav våre fedre. <sup>41</sup> Og dessuten, når det gjelder en fremmed som ikke <i>er</i> av ditt folk Israel, men kommer fra et land langt borte for ditt navns skyld <sup>42</sup> (for de skal høre om ditt store navn og om din sterke hånd og din utstrakte arm), når han kommer og ber vendt mot dette huset, <sup>43</sup> så hør du i himmelen, din bolig, og gjør alt det den fremmede roper til deg om, så alle folk på jorden må kjenne ditt navn og frykte deg, slik ditt folk Israel <i>gjør</i>, og så de må vite at dette huset som jeg har bygd, er kalt ved ditt navn. <sup>44</sup> Hvis ditt folk drar ut til strid mot sin fiende, hvor du enn sender dem, og de ber til Herren vendt mot den byen du har utvalgt, og <i>mot</i> det huset jeg har bygd for ditt navn, <sup>45</sup> så hør du i himmelen deres bønn og deres påkallelse, og hevd deres sak. <sup>46</sup> Hvis de synder mot deg (for <i>det finnes</i> ikke noe menneske som ikke synder), og du blir vred på dem og overgir dem til fienden, så de blir ført bort som fanger til fiendens land, fjernt eller nær, <sup>47</sup> <i>men</i> de så går i seg selv i det landet de er bortført til, og omvender seg og påkaller deg i landet til dem som førte dem bort, og sier: Vi har syndet og handlet forvendt, vi har gjort ondt, <sup>48</sup> og <i>slik</i> vender om til deg av hele sitt hjerte og hele sin sjel i landet til sine fiender, som førte dem bort som fanger, og ber til deg vendt mot sitt land, som du gav deres fedre, mot den byen du har utvalgt, og det huset jeg har bygd for ditt navn, <sup>49</sup> så hør du deres bønn og deres påkallelse i himmelen, din bolig, og hevd deres sak, <sup>50</sup> og tilgi ditt folk som har syndet mot deg, og alle de overtredelsene de har gjort seg skyldige i mot deg, og la dem finne barmhjertighet hos dem som førte dem bort, så de forbarmer seg over dem. <sup>51</sup> For de <i>er</i> ditt folk og din arv, som du førte ut av Egypt, midt ut av jernovnen, <sup>52</sup> så dine øyne må være åpne for din tjeners påkallelse og for ditt folk Israels påkallelse, så du lytter til dem i alt de roper til deg om. <sup>53</sup> For du skilte dem ut fra alle folk på jorden <i>til å være</i> din arv, slik du talte ved din tjener Moses' hånd da du førte våre fedre ut av Egypt, Herre Gud.",
@@ -90,11 +167,26 @@
    "section": 3,
    "start": 8,
    "end": 17,
-   "status": "draft",
-   "rounds": 0,
+   "status": "checked",
+   "rounds": 1,
    "attempts": 0,
    "versions": [],
-   "reviews": [],
+   "reviews": [
+    {
+     "argument": {
+      "premises": true,
+      "conclusions": true,
+      "evidence": true,
+      "problems": ""
+     },
+     "issues": [],
+     "summary": "Gjengivelsen er trofast i alle ni avsnitt: hvert premiss, hver konklusjon og hvert skriftbelegg står med samme innhold og vekt, og inndelingen (1.)/(2.), [1.]–[3.], a./b., (a.)–(c.), [a.]–[d.] er fullstendig. Alle osisRef er uendret, henvisningene er riktig norsk form, og kursiv og annen merking er bevart. Språket er naturlig, moderne bokmål. Ingen feil å rette.",
+     "score": 10,
+     "model": "claude-fable-5-2",
+     "mechanical": [],
+     "skipped": []
+    }
+   ],
    "text": [
     "(1.) At Gud ville oppfylle for ham og hans hus den miskunn han hadde lovet, <ref osisRef=\"1Kgs.8.25-1Kgs.8.26\">v. 25–26</ref>. Legg merke til hvordan dette kommer inn. Han erkjenner med takk at løftet delvis er oppfylt; hittil hadde Gud stått ved sitt ord: «<i>Du har holdt det du lovet din tjener David,</i> så langt at hans sønn sitter på tronen hans og har bygd det planlagte tempelet; <i>hold derfor nå det du</i> videre <i>har lovet din tjener David,</i> og som ennå gjenstår å oppfylle i sin tid.» Merk: De erfaringene vi har gjort av at Gud holder sine løfter, bør gi oss mot til å stole på dem og påberope oss dem overfor Gud. Og de som venter seg ny miskunn, må være takknemlige for den de alt har fått. Hittil har Gud hjulpet, <ref osisRef=\"2Cor.1.10\">2 Kor 1,10</ref>. Salomo gjentar løftet (<ref osisRef=\"1Kgs.8.25\">v. 25</ref>): <i>Det skal aldri mangle deg en mann til å sitte på tronen,</i> og han utelater ikke vilkåret, <i>så sant dine barn tar seg i vare på sin vei;</i> for vi kan ikke vente at Gud oppfyller løftet uten at vi oppfyller vilkåret. Deretter ber han ydmykt om at denne arvefølgen må stå fast (<ref osisRef=\"1Kgs.8.26\">v. 26</ref>): <i>Og nå, Israels Gud, la ditt ord bli stadfestet.</i> Guds løfter (som vi ofte har bemerket) må være både rettesnoren for våre ønsker og grunnlaget for vårt håp og våre forventninger i bønnen. David hadde bedt (<ref osisRef=\"2Sam.7.25\">2 Sam 7,25</ref>): <i>Herre, gjør som du har sagt.</i> Merk: Barn bør lære av sine gudfryktige foreldre hvordan de skal be, og hvordan de skal føre sin sak i bønnen.",
     "(2.) At Gud ville se i nåde til dette tempelet, som han nå hadde tatt i eie, og at hans øyne måtte være <i>åpne mot det til enhver tid</i> (<ref osisRef=\"1Kgs.8.29\">v. 29</ref>), at han nådig ville vedkjenne seg det og slik gi det ære. Med dette for øye:",
@@ -114,14 +206,49 @@
    "section": 3,
    "start": 17,
    "end": 21,
-   "status": "draft",
-   "rounds": 0,
+   "status": "checked",
+   "rounds": 1,
    "attempts": 0,
-   "versions": [],
-   "reviews": [],
+   "versions": [
+    {
+     "text": [
+      "<i>c.</i> Deretter nevnes den fremmede som ikke er israelitt, en proselytt som kommer til tempelet for å be til Israels Gud fordi han er blitt overbevist om hvor tåpelig og ondt det er å dyrke gudene i hjemlandet sitt. (<i>a.</i>) Salomo regnet med at det ville bli mange slike (<ref osisRef=\"1Kgs.8.41-1Kgs.8.42\">v. 41–42</ref>). Ryktet om de store gjerningene Gud hadde gjort for Israel, gjerninger som viste at han står over alle guder, ja, at han alene er Gud, ville nå helt til fjerne land: «De som bor langt borte, <i>skal høre om din sterke hånd og din utrakte arm</i>; og det vil få alle tenkende og ettertenksomme mennesker til å be vendt mot dette huset, for å vinne velvilje hos en Gud som er i stand til å gjøre dem virkelig godt.» (<i>b.</i>) Han ba om at Gud måtte ta imot proselyttens bønn og svare på den (<ref osisRef=\"1Kgs.8.43\">v. 43</ref>): <i>Gjør alt det den fremmede roper til deg om.</i> Så tidlig, så gamle, var tegnene på velvilje mot <i>synderne blant hedningene</i>. Slik det den gang var <i>én lov for den innfødte og for den fremmede</i> (<ref osisRef=\"Exod.12.49\">2 Mos 12,49</ref>), slik var det også ett evangelium for begge. (<i>c.</i>) Med dette siktet han mot Guds ære og mot å utbre kunnskapen om ham: «La det på en særlig måte gå den fremmede vel når han vender seg til deg, så han kan ta med seg hjem til sitt eget land et godt vitnesbyrd om Israels Gud, <i>så alle folk kan kjenne deg og frykte deg</i> (og kjenner de deg rett, vil de frykte deg) <i>slik ditt folk Israel gjør.</i>» Så langt var Salomo fra å ville ha enerett på kunnskapen om Gud og tjenesten for ham, og fra å ønske dem forbeholdt Israel alene (det var jødenes misunnelige ønske i Kristi og apostlenes dager), at han ba om at <i>alle folk måtte frykte Gud slik Israel gjorde.</i> Gid alle menneskenes barn måtte få barnekår og bli gjort til Guds barn! <i>Far, herliggjør</i> slik <i>ditt navn.</i>",
+      "<i>d.</i> Deretter overgir Salomo en hær som drar ut i strid, til Guds velvilje. Det forutsettes at hæren ligger i leir et sted langt borte, sendt ut på Guds befaling <i>mot fienden</i>, <ref osisRef=\"1Kgs.8.44\">v. 44</ref>. «Når de står klare til å gå i kamp og tenker på farene ved slaget og det uvisse utfallet, og de sender opp en bønn til Gud om vern og fremgang med blikket <i>vendt mot denne byen og dette tempelet</i>, da <i>hør deres bønn</i>, sett mot i hjertene deres, styrk hendene deres, vern hodene deres, og før på den måten deres sak og gi dem seier.» Soldater i felt må ikke mene det er nok at de som blir hjemme, ber for dem. De må be for seg selv, og her blir de oppmuntret til å håpe på et nådig svar. Bønn skal alltid følge striden.",
+      "<i>e.</i> De stakkars fangene er det siste tilfellet som nevnes her som et rett mål for Guds medfølelse. (<i>a.</i>) Han forutsetter at Israel kommer til å synde. Han kjente dem, seg selv og menneskenaturen for godt til å regne dette som en fjern tanke; <i>for det finnes ikke noe menneske som ikke synder</i>, som ikke gjør nok til at Gud har retten på sin side selv i de strengeste refselsene fra sitt forsyn. Det finnes ikke noe menneske som ikke står i fare for å falle i grov synd, og som ikke vil gjøre det dersom Gud overlater ham til seg selv. (<i>b.</i>) Han forutsetter, som en må vente, at dersom Israel faller fra Gud, vil Gud bli <i>vred på dem</i> og <i>gi dem i fiendenes hånd</i>, så de blir ført som fanger til et fremmed land, <ref osisRef=\"1Kgs.8.46\">v. 46</ref>. (<i>c.</i>) Videre forutsetter han at de vil komme til ettertanke og granske sine veier (for trengsler får mennesker til å tenke seg om). Når de først er brakt til ettertanke, vil de omvende seg og be, bekjenne sine synder og ydmyke seg og si: <i>Vi har syndet og handlet forvendt</i> (<ref osisRef=\"1Kgs.8.47\">v. 47</ref>), og <i>i fiendenes land vil de vende tilbake til Gud</i>, som de hadde forlatt i sitt eget land. (<i>d.</i>) Han forutsetter at de i bønnene sine vil vende seg mot sitt eget land, det hellige landet, mot Jerusalem, den hellige byen, og mot tempelet, det hellige huset, og han pålegger dem å gjøre det (<ref osisRef=\"1Kgs.8.48\">v. 48</ref>), for hans skyld som ga dem dette landet, som valgte ut denne byen, og som huset ble bygd til ære for. (<i>e.</i>) Han ber om at Gud da må <i>høre deres bønner, tilgi deres synder, føre deres sak</i> og bøye fiendene deres til å <i>ha medfølelse med dem</i>, <ref osisRef=\"1Kgs.8.49-1Kgs.8.50\">v. 49–50</ref>. Gud har alle hjerter i sin hånd. Når han vil, kan han snu den sterkeste strøm motsatt vei og få dem som har vært hans folks grusomste forfølgere, til å synes synd på dem. Se hvordan denne bønnen ble besvart i <ref osisRef=\"Ps.106.46\">Sal 106,46</ref>. Han <i>lot dem finne medynk hos dem som førte dem bort som fanger</i>, og om det ikke satte dem fri, lettet det i det minste fangenskapet. (<i>f.</i>) Han påberoper seg deres forhold til Gud og den eiendomsretten Gud har til dem: «De er ditt folk, som du har tatt inn i din pakt og under din omsorg og ledelse. De er din arv, som din avgift og skatt av ære kommer fra, mer enn fra noe annet folk (<ref osisRef=\"1Kgs.8.51\">v. 51</ref>), <i>skilt ut fra alle folk</i> for å være det og gjort til dine egne ved en velvilje som utmerker dem fremfor andre,» <ref osisRef=\"1Kgs.8.53\">v. 53</ref>.",
+      "<i>Til slutt:</i> Etter alle disse enkelttilfellene avslutter han med en allmenn bønn om at Gud må lytte til hele sitt bedende folk <i>i alt de roper til ham om</i>, <ref osisRef=\"1Kgs.8.52\">v. 52</ref>. Nå, under evangeliet, kan en ikke tenke seg at noe sted gjør bønner som blir bedt der eller vendt mot det, mer velbehagelige, slik tempelet gjorde den gang. Tempelet var en skygge; selve virkeligheten er Kristus. Alt det vi ber om i hans navn, skal bli gitt oss."
+     ],
+     "explanation": "Kilden sier «go along with fighting», altså at bønn skal ledsage kampen. «Følge striden» kan leses som at bønnen kommer etter striden.",
+     "model": "claude-fable-5-2"
+    }
+   ],
+   "reviews": [
+    {
+     "argument": {
+      "premises": true,
+      "conclusions": true,
+      "evidence": true,
+      "problems": ""
+     },
+     "issues": [
+      {
+       "paragraph": 2,
+       "quote": "Bønn skal alltid følge striden.",
+       "replacement": "Bønn skal alltid gå sammen med striden.",
+       "type": "meaning",
+       "severity": "minor",
+       "explanation": "Kilden sier «go along with fighting», altså at bønn skal ledsage kampen. «Følge striden» kan leses som at bønnen kommer etter striden."
+      }
+     ],
+     "summary": "Gjengivelsen er trofast og velskrevet. Alle premisser, konklusjoner, skriftsteder og henvisninger er bevart med riktig innhold og vekt, og merkingen er intakt. Eneste funn er en liten tvetydighet i siste setning i avsnitt 2.",
+     "score": 9,
+     "model": "claude-fable-5-2",
+     "mechanical": [],
+     "skipped": []
+    }
+   ],
    "text": [
     "<i>c.</i> Deretter nevnes den fremmede som ikke er israelitt, en proselytt som kommer til tempelet for å be til Israels Gud fordi han er blitt overbevist om hvor tåpelig og ondt det er å dyrke gudene i hjemlandet sitt. (<i>a.</i>) Salomo regnet med at det ville bli mange slike (<ref osisRef=\"1Kgs.8.41-1Kgs.8.42\">v. 41–42</ref>). Ryktet om de store gjerningene Gud hadde gjort for Israel, gjerninger som viste at han står over alle guder, ja, at han alene er Gud, ville nå helt til fjerne land: «De som bor langt borte, <i>skal høre om din sterke hånd og din utrakte arm</i>; og det vil få alle tenkende og ettertenksomme mennesker til å be vendt mot dette huset, for å vinne velvilje hos en Gud som er i stand til å gjøre dem virkelig godt.» (<i>b.</i>) Han ba om at Gud måtte ta imot proselyttens bønn og svare på den (<ref osisRef=\"1Kgs.8.43\">v. 43</ref>): <i>Gjør alt det den fremmede roper til deg om.</i> Så tidlig, så gamle, var tegnene på velvilje mot <i>synderne blant hedningene</i>. Slik det den gang var <i>én lov for den innfødte og for den fremmede</i> (<ref osisRef=\"Exod.12.49\">2 Mos 12,49</ref>), slik var det også ett evangelium for begge. (<i>c.</i>) Med dette siktet han mot Guds ære og mot å utbre kunnskapen om ham: «La det på en særlig måte gå den fremmede vel når han vender seg til deg, så han kan ta med seg hjem til sitt eget land et godt vitnesbyrd om Israels Gud, <i>så alle folk kan kjenne deg og frykte deg</i> (og kjenner de deg rett, vil de frykte deg) <i>slik ditt folk Israel gjør.</i>» Så langt var Salomo fra å ville ha enerett på kunnskapen om Gud og tjenesten for ham, og fra å ønske dem forbeholdt Israel alene (det var jødenes misunnelige ønske i Kristi og apostlenes dager), at han ba om at <i>alle folk måtte frykte Gud slik Israel gjorde.</i> Gid alle menneskenes barn måtte få barnekår og bli gjort til Guds barn! <i>Far, herliggjør</i> slik <i>ditt navn.</i>",
-    "<i>d.</i> Deretter overgir Salomo en hær som drar ut i strid, til Guds velvilje. Det forutsettes at hæren ligger i leir et sted langt borte, sendt ut på Guds befaling <i>mot fienden</i>, <ref osisRef=\"1Kgs.8.44\">v. 44</ref>. «Når de står klare til å gå i kamp og tenker på farene ved slaget og det uvisse utfallet, og de sender opp en bønn til Gud om vern og fremgang med blikket <i>vendt mot denne byen og dette tempelet</i>, da <i>hør deres bønn</i>, sett mot i hjertene deres, styrk hendene deres, vern hodene deres, og før på den måten deres sak og gi dem seier.» Soldater i felt må ikke mene det er nok at de som blir hjemme, ber for dem. De må be for seg selv, og her blir de oppmuntret til å håpe på et nådig svar. Bønn skal alltid følge striden.",
+    "<i>d.</i> Deretter overgir Salomo en hær som drar ut i strid, til Guds velvilje. Det forutsettes at hæren ligger i leir et sted langt borte, sendt ut på Guds befaling <i>mot fienden</i>, <ref osisRef=\"1Kgs.8.44\">v. 44</ref>. «Når de står klare til å gå i kamp og tenker på farene ved slaget og det uvisse utfallet, og de sender opp en bønn til Gud om vern og fremgang med blikket <i>vendt mot denne byen og dette tempelet</i>, da <i>hør deres bønn</i>, sett mot i hjertene deres, styrk hendene deres, vern hodene deres, og før på den måten deres sak og gi dem seier.» Soldater i felt må ikke mene det er nok at de som blir hjemme, ber for dem. De må be for seg selv, og her blir de oppmuntret til å håpe på et nådig svar. Bønn skal alltid gå sammen med striden.",
     "<i>e.</i> De stakkars fangene er det siste tilfellet som nevnes her som et rett mål for Guds medfølelse. (<i>a.</i>) Han forutsetter at Israel kommer til å synde. Han kjente dem, seg selv og menneskenaturen for godt til å regne dette som en fjern tanke; <i>for det finnes ikke noe menneske som ikke synder</i>, som ikke gjør nok til at Gud har retten på sin side selv i de strengeste refselsene fra sitt forsyn. Det finnes ikke noe menneske som ikke står i fare for å falle i grov synd, og som ikke vil gjøre det dersom Gud overlater ham til seg selv. (<i>b.</i>) Han forutsetter, som en må vente, at dersom Israel faller fra Gud, vil Gud bli <i>vred på dem</i> og <i>gi dem i fiendenes hånd</i>, så de blir ført som fanger til et fremmed land, <ref osisRef=\"1Kgs.8.46\">v. 46</ref>. (<i>c.</i>) Videre forutsetter han at de vil komme til ettertanke og granske sine veier (for trengsler får mennesker til å tenke seg om). Når de først er brakt til ettertanke, vil de omvende seg og be, bekjenne sine synder og ydmyke seg og si: <i>Vi har syndet og handlet forvendt</i> (<ref osisRef=\"1Kgs.8.47\">v. 47</ref>), og <i>i fiendenes land vil de vende tilbake til Gud</i>, som de hadde forlatt i sitt eget land. (<i>d.</i>) Han forutsetter at de i bønnene sine vil vende seg mot sitt eget land, det hellige landet, mot Jerusalem, den hellige byen, og mot tempelet, det hellige huset, og han pålegger dem å gjøre det (<ref osisRef=\"1Kgs.8.48\">v. 48</ref>), for hans skyld som ga dem dette landet, som valgte ut denne byen, og som huset ble bygd til ære for. (<i>e.</i>) Han ber om at Gud da må <i>høre deres bønner, tilgi deres synder, føre deres sak</i> og bøye fiendene deres til å <i>ha medfølelse med dem</i>, <ref osisRef=\"1Kgs.8.49-1Kgs.8.50\">v. 49–50</ref>. Gud har alle hjerter i sin hånd. Når han vil, kan han snu den sterkeste strøm motsatt vei og få dem som har vært hans folks grusomste forfølgere, til å synes synd på dem. Se hvordan denne bønnen ble besvart i <ref osisRef=\"Ps.106.46\">Sal 106,46</ref>. Han <i>lot dem finne medynk hos dem som førte dem bort som fanger</i>, og om det ikke satte dem fri, lettet det i det minste fangenskapet. (<i>f.</i>) Han påberoper seg deres forhold til Gud og den eiendomsretten Gud har til dem: «De er ditt folk, som du har tatt inn i din pakt og under din omsorg og ledelse. De er din arv, som din avgift og skatt av ære kommer fra, mer enn fra noe annet folk (<ref osisRef=\"1Kgs.8.51\">v. 51</ref>), <i>skilt ut fra alle folk</i> for å være det og gjort til dine egne ved en velvilje som utmerker dem fremfor andre,» <ref osisRef=\"1Kgs.8.53\">v. 53</ref>.",
     "<i>Til slutt:</i> Etter alle disse enkelttilfellene avslutter han med en allmenn bønn om at Gud må lytte til hele sitt bedende folk <i>i alt de roper til ham om</i>, <ref osisRef=\"1Kgs.8.52\">v. 52</ref>. Nå, under evangeliet, kan en ikke tenke seg at noe sted gjør bønner som blir bedt der eller vendt mot det, mer velbehagelige, slik tempelet gjorde den gang. Tempelet var en skygge; selve virkeligheten er Kristus. Alt det vi ber om i hans navn, skal bli gitt oss."
    ],
@@ -133,11 +260,26 @@
    "section": 4,
    "start": 0,
    "end": 6,
-   "status": "draft",
-   "rounds": 0,
+   "status": "checked",
+   "rounds": 1,
    "attempts": 0,
    "versions": [],
-   "reviews": [],
+   "reviews": [
+    {
+     "argument": {
+      "premises": true,
+      "conclusions": true,
+      "evidence": true,
+      "problems": ""
+     },
+     "issues": [],
+     "summary": "Gjengivelsen er trofast avsnitt for avsnitt: alle premisser, konklusjoner, skriftbelegg og henvisninger er med, merkingen og osisRef-verdiene er uendret, og språket er naturlig moderne bokmål. Ingen feil funnet.",
+     "score": 10,
+     "model": "claude-fable-5-2",
+     "mechanical": [],
+     "skipped": []
+    }
+   ],
    "text": [
     "<h>Salomo velsigner og formaner folket. (1003 f.Kr.)</h>",
     "<sup>54</sup> Og det skjedde <i>slik,</i> at da Salomo var ferdig med å be hele denne bønnen og påkallelsen til Herren, reiste han seg fra plassen foran Herrens alter, der han hadde ligget på kne med hendene utstrakt mot himmelen. <sup>55</sup> Og han sto og velsignet hele Israels menighet med høy røst og sa: <sup>56</sup> Velsignet <i>være</i> Herren, som har gitt sitt folk Israel hvile, i samsvar med alt han lovet. Ikke ett ord har slått feil av hele hans gode løfte, som han ga ved sin tjener Moses' hånd. <sup>57</sup> Herren vår Gud være med oss, slik han var med våre fedre. Måtte han ikke forlate oss og ikke svikte oss, <sup>58</sup> så han kan bøye våre hjerter til seg, så vi vandrer på alle hans veier og holder hans bud og hans forskrifter og hans dommer, som han påla våre fedre. <sup>59</sup> Og la disse mine ord, som jeg har båret fram i bønn for Herren, være nær Herren vår Gud dag og natt, så han hevder sin tjeners sak og sitt folk Israels sak til alle tider, slik saken krever det, <sup>60</sup> for at alle folk på jorden skal vite at Herren <i>er</i> Gud, <i>og at det ikke finnes</i> noen annen. <sup>61</sup> La derfor hjertet deres være fullkomment med Herren vår Gud, så dere vandrer etter hans forskrifter og holder hans bud, slik som på denne dag.",
@@ -154,11 +296,26 @@
    "section": 5,
    "start": 0,
    "end": 5,
-   "status": "draft",
-   "rounds": 0,
+   "status": "checked",
+   "rounds": 1,
    "attempts": 0,
    "versions": [],
-   "reviews": [],
+   "reviews": [
+    {
+     "argument": {
+      "premises": true,
+      "conclusions": true,
+      "evidence": true,
+      "problems": ""
+     },
+     "issues": [],
+     "summary": "Gjengivelsen er trofast og idiomatisk. Alle resonnementer, tall (22 000 / 120 000, tjuefire, 180, tretti, fjorten), skriftstedhenvisninger og merking er bevart. Den mekaniske advarselen i avsnitt 4 skyldes bare norsk tallformat (22 000 for 22,000) og er ikke en feil. I avsnitt 5 er sluttparentesen flyttet slik at «ved at hans trone er blitt opphøyet …» står utenfor; det er en forsvarlig lesning som følger parallellen med «ved at de blir helliget og trøstet», og meningen er uendret.",
+     "score": 10,
+     "model": "claude-fable-5-2",
+     "mechanical": [],
+     "skipped": []
+    }
+   ],
    "text": [
     "<h>Salomo holder en stor fest. (1003 f.Kr.)</h>",
     "<sup>62</sup> Og kongen, og hele Israel med ham, bar fram offer for Herrens åsyn. <sup>63</sup> Og Salomo bar fram et fredsoffer, som han ofret til Herren: tjueto tusen okser og hundre og tjue tusen sauer. Slik innviet kongen og alle Israels barn Herrens hus. <sup>64</sup> Samme dag helliget kongen den midtre delen av forgården som <i>lå</i> foran Herrens hus; for der bar han fram brennoffer og matoffer og fettet av fredsofrene, fordi kobberalteret som <i>sto</i> for Herrens åsyn, <i>var</i> for lite til å romme brennofrene og matofrene og fettet av fredsofrene. <sup>65</sup> Og på den tiden holdt Salomo en fest, og hele Israel med ham, en stor forsamling, fra veien inn til Hamat og til Egypts elv, for Herren vår Guds åsyn, i sju dager og sju dager, <i>altså</i> fjorten dager. <sup>66</sup> Den åttende dagen sendte han folket bort; og de velsignet kongen og gikk til teltene sine, glade og vel til mote for all den godhet Herren hadde vist sin tjener David og sitt folk Israel.",
