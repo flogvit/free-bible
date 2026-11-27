@@ -1,0 +1,150 @@
+{
+ "book": 13,
+ "chapter": 8,
+ "units": [
+  {
+   "id": "13-8-0-0",
+   "section": 0,
+   "start": 0,
+   "end": 1,
+   "status": "checked",
+   "rounds": 2,
+   "attempts": 0,
+   "versions": [
+    {
+     "text": [
+      "I forrige kapittel fikk vi en kort omtale av Benjamin. Her får vi en fyldigere fortegnelse over de store mennene i denne stammen. 1. Fra denne stammen kom Saul, Israels første konge, og den hellige forfatteren haster videre mot hans historie, <ref osisRef=\"1Chr.10.1\">kap. 10,1</ref>. 2. Denne stammen holdt fast ved Juda, bebodde en stor del av Jerusalem og var én av de to stammene som ble ført i fangenskap og vendte tilbake. Også den historien har han for øye, <ref osisRef=\"1Chr.9.1\">kap. 9,1</ref>. Her får vi: I. Navnene på noen av stammens overhoder, <ref osisRef=\"1Chr.8.1-1Chr.8.32\">v. 1–32</ref>. II. En mer inngående redegjørelse for Sauls slekt, <ref osisRef=\"1Chr.8.30-1Chr.8.40\">v. 33–40</ref>."
+     ],
+     "explanation": "Kilden har «Because of that tribe Saul came»: punktet er en begrunnelse for den fyldigere fortegnelsen. Uten «fordi» forsvinner årsakssammenhengen. | Kilden har «Because that tribe clave to Judah»: også dette er en begrunnelse, ikke en frittstående opplysning. | Kilden sier bare «some account». «Kort» er lagt til og står ikke i originalen.",
+     "model": "claude-fable-5-2"
+    }
+   ],
+   "reviews": [
+    {
+     "argument": {
+      "premises": false,
+      "conclusions": true,
+      "evidence": true,
+      "problems": "Kilden oppgir to uttrykkelige grunner («1. Because … 2. Because …») til at Benjamin får en fyldigere fortegnelse her. I gjengivelsen er begge «fordi» falt bort, slik at punktene står som løsrevne opplysninger og ikke lenger som begrunnelse. Innholdet i punktene og alle henvisningene er ellers bevart. «Some account» er dessuten blitt «en kort omtale», en liten tilføyelse."
+     },
+     "issues": [
+      {
+       "paragraph": 1,
+       "quote": "Fra denne stammen kom Saul, Israels første konge,",
+       "replacement": "Fordi Saul, Israels første konge, kom fra denne stammen,",
+       "type": "omission",
+       "severity": "major",
+       "explanation": "Kilden har «Because of that tribe Saul came»: punktet er en begrunnelse for den fyldigere fortegnelsen. Uten «fordi» forsvinner årsakssammenhengen."
+      },
+      {
+       "paragraph": 1,
+       "quote": "Denne stammen holdt fast ved Juda",
+       "replacement": "Fordi denne stammen holdt fast ved Juda",
+       "type": "omission",
+       "severity": "major",
+       "explanation": "Kilden har «Because that tribe clave to Judah»: også dette er en begrunnelse, ikke en frittstående opplysning."
+      },
+      {
+       "paragraph": 1,
+       "quote": "en kort omtale",
+       "replacement": "en viss omtale",
+       "type": "addition",
+       "severity": "minor",
+       "explanation": "Kilden sier bare «some account». «Kort» er lagt til og står ikke i originalen."
+      }
+     ],
+     "summary": "Gjengivelsen er språklig god, og alle henvisninger og all merking er korrekt. Den viktigste svakheten er at de to «Because»-leddene er gjengitt uten årsaksmarkør, slik at begrunnelsen for den utvidede fortegnelsen over Benjamin ikke lenger fremgår. I tillegg er «kort» lagt til i første setning.",
+     "score": 6,
+     "model": "claude-fable-5-2",
+     "mechanical": [],
+     "skipped": []
+    },
+    {
+     "argument": {
+      "premises": true,
+      "conclusions": true,
+      "evidence": true,
+      "problems": ""
+     },
+     "issues": [],
+     "summary": "Gjengivelsen er trofast og idiomatisk. Begge begrunnelsene for den fyldigere fortegnelsen (Saul kom fra stammen; stammen holdt fast ved Juda, bebodde mye av Jerusalem, ble ført i fangenskap og vendte tilbake) er bevart med samme innhold og vekt. Alle fire henvisninger har uendret osisRef og riktig norsk form, og inndelingen i I og II er intakt. Ingen feil funnet.",
+     "score": 10,
+     "model": "claude-fable-5-2",
+     "mechanical": [],
+     "skipped": []
+    }
+   ],
+   "text": [
+    "I forrige kapittel fikk vi en viss omtale av Benjamin. Her får vi en fyldigere fortegnelse over de store mennene i denne stammen. 1. Fordi Saul, Israels første konge, kom fra denne stammen, og den hellige forfatteren haster videre mot hans historie, <ref osisRef=\"1Chr.10.1\">kap. 10,1</ref>. 2. Fordi denne stammen holdt fast ved Juda, bebodde en stor del av Jerusalem og var én av de to stammene som ble ført i fangenskap og vendte tilbake. Også den historien har han for øye, <ref osisRef=\"1Chr.9.1\">kap. 9,1</ref>. Her får vi: I. Navnene på noen av stammens overhoder, <ref osisRef=\"1Chr.8.1-1Chr.8.32\">v. 1–32</ref>. II. En mer inngående redegjørelse for Sauls slekt, <ref osisRef=\"1Chr.8.30-1Chr.8.40\">v. 33–40</ref>."
+   ],
+   "translator": "claude-fable-5-2",
+   "model": "claude-fable-5-2"
+  },
+  {
+   "id": "13-8-1-0",
+   "section": 1,
+   "start": 0,
+   "end": 3,
+   "status": "checked",
+   "rounds": 1,
+   "attempts": 0,
+   "versions": [],
+   "reviews": [
+    {
+     "argument": {
+      "premises": true,
+      "conclusions": true,
+      "evidence": true,
+      "problems": ""
+     },
+     "issues": [],
+     "summary": "Gjengivelsen er trofast mot kilden i alle tre avsnitt. Alle seks punktene i kommentaren er med, med premisser, konklusjoner og belegg uendret. Henvisninger, tall (600 mann, den andre dommeren), osisRef-verdier og merking stemmer, og bibelteksten følger King James-ordlyden med riktige versnumre. Språket er naturlig og idiomatisk bokmål. Ingen feil funnet.",
+     "score": 10,
+     "model": "claude-fable-5-2",
+     "mechanical": [],
+     "skipped": []
+    }
+   ],
+   "text": [
+    "<h>Slektstavler. (1660 f.Kr.)</h>",
+    "<sup>1</sup> Benjamin ble far til Bela, sin førstefødte, Asjbel, den andre, og Ahrah, den tredje, <sup>2</sup> Noha, den fjerde, og Rafa, den femte. <sup>3</sup> Og Belas sønner var Addar og Gera og Abihud <sup>4</sup> og Abisjua og Na'aman og Ahoah <sup>5</sup> og Gera og Sjefufan og Huram. <sup>6</sup> Og dette <i>er</i> Ehuds sønner: dette er overhodene for fedrene til innbyggerne i Geba, og de førte dem bort til Manahat: <sup>7</sup> Og Na'aman og Ahia og Gera, han førte dem bort, og han ble far til Ussa og Ahihud. <sup>8</sup> Og Sjaharajim fikk <i>barn</i> i Moabs land etter at han hadde sendt dem bort; Husjim og Ba'ara <i>var</i> hans koner. <sup>9</sup> Og med Hodesj, sin kone, fikk han Jobab og Sibja og Mesja og Malkam <sup>10</sup> og Je'us og Sakja og Mirma. Dette <i>var</i> hans sønner, overhoder for fedrene. <sup>11</sup> Og med Husjim fikk han Abitub og Elpa'al. <sup>12</sup> Elpa'als sønner: Eber og Misjam og Sjemed, som bygde Ono og Lod med de tilhørende småbyene, <sup>13</sup> dessuten Beria og Sjema, som <i>var</i> overhoder for fedrene til innbyggerne i Ajjalon, og som drev bort innbyggerne i Gat, <sup>14</sup> og Ahjo, Sjasjak og Jeremot <sup>15</sup> og Sebadja og Arad og Eder <sup>16</sup> og Mikael og Jispa og Joha, Berias sønner, <sup>17</sup> og Sebadja og Mesjullam og Hiski og Heber, <sup>18</sup> dessuten Jisjmerai og Jislia og Jobab, Elpa'als sønner, <sup>19</sup> og Jakim og Sikri og Sabdi <sup>20</sup> og Elienai og Silletai og Eliel <sup>21</sup> og Adaja og Beraja og Sjimrat, Sjimis sønner, <sup>22</sup> og Jisjpan og Heber og Eliel <sup>23</sup> og Abdon og Sikri og Hanan <sup>24</sup> og Hananja og Elam og Antotija <sup>25</sup> og Jifdeja og Penuel, Sjasjaks sønner, <sup>26</sup> og Sjamsjerai og Sjeharja og Atalja <sup>27</sup> og Ja'aresja og Elia og Sikri, Jerohams sønner. <sup>28</sup> Disse <i>var</i> overhoder for fedrene, etter sine slektsledd, fremstående <i>menn.</i> Disse bodde i Jerusalem. <sup>29</sup> Og i Gibeon bodde Gibeons far; hans kones navn <i>var</i> Ma'aka. <sup>30</sup> Og hans førstefødte sønn var Abdon, og så Sur og Kisj og Ba'al og Nadab <sup>31</sup> og Gedor og Ahjo og Seker. <sup>32</sup> Og Miklot ble far til Sjima. Og også disse bodde sammen med sine brødre i Jerusalem, rett overfor dem.",
+    "Det er lite eller ingenting av historie i alle disse versene, og vi har derfor ikke mye å merke oss. 1. Vanskene som dukker opp i denne og de foregående slektstavlene, trenger vi ikke bry hodet med. Jeg går ut fra at Esra tok dem slik han fant dem <i>i bøkene om Israels og Judas konger</i> (<ref osisRef=\"1Chr.9.1\">kap. 9,1</ref>), slik de var levert inn av de enkelte stammene, som hver fulgte den fremgangsmåten de selv fant for godt. Derfor går noen <i>opp</i>over, andre <i>ned</i>over; noen har <i>tall</i> føyd til, andre <i>steder;</i> noen har historiske merknader flettet inn, andre ikke; noen er kortere, andre lengre; noen stemmer med andre opptegnelser, andre avviker; noen var trolig revet i stykker, utvisket og flekket, andre lettere å lese. Slektstavlene for Dan og Ruben var helt gått tapt. Denne hellige mannen skrev slik han ble drevet av Den hellige ånd; men det var ikke nødvendig at manglene i disse slektstavlene ble utfylt ved inspirasjon, nei, heller ikke at feilene ble rettet. Det var nok at han skrev dem av slik de kom ham i hende, eller så mye av dem som trengtes for formålet der og da, nemlig å veilede de hjemvendte fangene til å slå seg ned så nær som mulig dem av sin egen slekt og på de stedene der de før hadde bodd. Vi kan anta at mye i disse slektstavlene som for oss virker innfløkt, brått og forvirrende, var klart og enkelt for dem den gangen (de visste hvordan hullene skulle fylles), og at det til fulle svarte til hensikten med å gjøre dem kjent. 2. Det fantes på den tiden mange store og mektige folkeslag på jorden, og mange berømte menn i dem, hvis navn er begravet i evig glemsel, mens navnene på mengder av Guds Israel her er omhyggelig bevart til evig minne. De er <i>Jasher, Jeshurun – rettferdige,</i> og <i>den rettferdiges minne er velsignet.</i> Mange av disse har vi grunn til å frykte ikke nådde fram til evig ære (for selv de onde kongene i Juda er med i slektstavlen), men at navnene deres ble bevart for ettertiden her, var likevel et bilde på at navnene til hele Guds åndelige Israel blir skrevet i Lammets livsbok. 3. Denne stammen, Benjamin, var en gang brakt svært langt ned, i dommertiden, i anledning Gibeas misgjerning, da bare 600 mann unnslapp rettferdighetens sverd; og likevel gjør den i disse slektstavlene en like god figur som nesten hvilken som helst av stammene. For det er Guds ære å hjelpe de svakeste og reise opp dem som er mest forminsket og fornedret. 4. Her nevnes en Ehud (<ref osisRef=\"1Chr.8.6\">v. 6</ref>), i verset foran en Gera (<ref osisRef=\"1Chr.8.5\">v. 5</ref>) og (<ref osisRef=\"1Chr.8.8\">v. 8</ref>) en som stammet fra ham, og som <i>fikk barn i Moabs land.</i> Det får meg til å tro at dette var den Ehud som var den andre av Israels dommere; for om ham sies det at han var <i>sønn av Gera</i> og <i>benjaminitt</i> (<ref osisRef=\"Judg.3.15\">Dom 3,15</ref>), og han fridde Israel fra moabittenes undertrykkelse ved å drepe Moabs konge. Det kan ha gitt ham større innflytelse i Moabs land enn vi finner belegg for i hans historie, og kan ha ført til at noen av etterkommerne hans slo seg ned der. 5. Her nevnes noen av benjaminittene som <i>drev bort innbyggerne i Gat</i> (<ref osisRef=\"1Chr.8.13\">v. 13</ref>), kanskje dem som hadde drept efraimittene (<ref osisRef=\"1Chr.7.21\">kap. 7,21</ref>), eller etterkommerne deres, som gjengjeld. Og en av dem som utførte denne rettferdige handlingen, het også <i>Beria</i>, det navnet som minnet om den uretten var bevart i. 6. Det legges særlig merke til dem som <i>bodde i Jerusalem</i> (<ref osisRef=\"1Chr.8.28\">v. 28</ref> og igjen <ref osisRef=\"1Chr.8.32\">v. 32</ref>), for at de som hadde forfedre med bosted der, på den måten skulle bli tilskyndet til å slå seg ned der, de også, når de vendte hjem fra fangenskapet. Etter alt å dømme var det få som var villige til det, fordi det var den farlige posten; og derfor finner vi (<ref osisRef=\"Neh.11.2\">Neh 11,2</ref>) at <i>folket velsignet dem som villig tilbød seg å bo i Jerusalem,</i> mens de fleste var tilbøyelige til å foretrekke byene i Juda. De som hadde gudfryktige foreldre med sin vandel i det nye Jerusalem, bør dermed føle seg forpliktet til å vende ansiktet dit og følge veien dit, hva det enn koster dem."
+   ],
+   "translator": "claude-fable-5-2",
+   "model": "claude-fable-5-2"
+  },
+  {
+   "id": "13-8-2-0",
+   "section": 2,
+   "start": 0,
+   "end": 3,
+   "status": "checked",
+   "rounds": 1,
+   "attempts": 0,
+   "versions": [],
+   "reviews": [
+    {
+     "argument": {
+      "premises": true,
+      "conclusions": true,
+      "evidence": true,
+      "problems": ""
+     },
+     "issues": [],
+     "summary": "Gjengivelsen er trofast og fullstendig. Alle resonnementer er med: at Israels konger er utelatt fordi de var avgudsdyrkere, harmoniseringen av Ner og Abiel via 1 Sam 14,51, Jonatans linje og pakten med David, og Ulams 150 bueskyttere. Henvisninger, tall, kursiv, versnumre og osisRef står som i kilden. Språket er naturlig, moderne bokmål.",
+     "score": 10,
+     "model": "claude-fable-5-2",
+     "mechanical": [],
+     "skipped": []
+    }
+   ],
+   "text": [
+    "<h>Slektstavler. (700 f.Kr.)</h>",
+    "<sup>33</sup> Og Ner fikk sønnen Kisj, og Kisj fikk Saul, og Saul fikk Jonatan og Malkisjua og Abinadab og Esjbaal. <sup>34</sup> Og Jonatans sønn <i>var</i> Merib-Baal, og Merib-Baal fikk <ref osisRef=\"Mic.35\">Mika. 35</ref> Og Mikas sønner <i>var</i> Piton og Melek og Tarea og Ahas. <sup>36</sup> Og Ahas fikk Jehoadda, og Jehoadda fikk Alemet og Asmavet og Simri, og Simri fikk Mosa. <sup>37</sup> Og Mosa fikk Bina; Rafa <i>var</i> hans sønn, Elasa hans sønn, Asel hans sønn. <sup>38</sup> Og Asel hadde seks sønner, og navnene deres <i>er</i> disse: Asrikam, Bokeru og Ismael og Sjearja og Obadja og Hanan. Alle disse <i>var</i> Asels sønner. <sup>39</sup> Og sønnene til hans bror Esjek <i>var</i> Ulam, hans førstefødte, Je'usj, den andre, og Elifelet, den tredje. <sup>40</sup> Og Ulams sønner var veldige krigere, bueskyttere, og de hadde mange sønner og sønnesønner, hundre og femti. Alle disse <i>er</i> av Benjamins sønner.",
+    "Det er verdt å merke seg at slektstavlene over stammene ikke nevner en eneste av Israels konger etter frafallet fra Davids hus, og langt mindre familiene deres. Det står ikke et ord om Jeroboams hus eller Basjas, om Omris eller Jehus, for de var avgudsdyrkere alle sammen. Men om Sauls slekt, som var kongeslekten før David ble opphøyd, får vi her en utførlig beretning. 1. Før Saul nevnes bare Kisj og Ner, faren og bestefaren hans, <ref osisRef=\"1Chr.8.33\">v. 33</ref>. Ættelinjen hans føres lenger tilbake i <ref osisRef=\"1Sam.9.1\">1 Sam 9,1</ref>, men der sies Kisj å være <i>sønn av Abiel,</i> her <i>av Ner.</i> I virkeligheten var han sønn av Ner, men sønnesønn av Abiel. Det går fram av <ref osisRef=\"1Sam.14.51\">1 Sam 14,51</ref>, der det står at <i>Ner var sønn av Abiel,</i> og at Abner, som var sønn av Ner, var Sauls onkel (det vil si farens bror). Altså var også faren hans sønn av Ner. I alle språk er det vanlig å si sønner om sønnesønner og andre etterkommere, og enda mer i det ordfattige språket til <ref osisRef=\"Heb.2\">hebreerne. 2</ref>. Etter Saul nevnes flere av sønnene hans, men ikke etterkommerne til noen av dem, bortsett fra Jonatan alene. Han ble velsignet med en tallrik ætt, og den fikk æren av en plass i de hellige slektstavlene på grunn av hans oppriktige godhet mot David. Jonatans linje føres her ned gjennom omkring ti slektsledd. Kanskje var David særlig omhyggelig med å bevare den, og ga den en side for seg selv, på grunn av pakten som var sluttet mellom hans ætt og Jonatans ætt for alltid, <ref osisRef=\"1Sam.20.15\">1 Sam 20,15</ref>, <ref osisRef=\"1Sam.20.23\">23</ref>, <ref osisRef=\"1Sam.20.42\">42</ref>. Denne slektstavlen ender med Ulam, og hans slekt ble berømt i Benjamins stamme for sine mange tapre menn. Av denne ene mannens etterkommere ble det, etter alt å dømme, på én og samme tid ført 150 bueskyttere ut på slagmarken, og de var <i>veldige krigere,</i> <ref osisRef=\"1Chr.8.40\">v. 40</ref>. Det som blir framhevet ved dem, er noe som tjener en mann mer til ros enn prakt eller rikdom gjør: at de var skikket til å tjene landet sitt."
+   ],
+   "translator": "claude-fable-5-2",
+   "model": "claude-fable-5-2"
+  }
+ ]
+}
