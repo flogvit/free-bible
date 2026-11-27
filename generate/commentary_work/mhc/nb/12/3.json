@@ -7,13 +7,59 @@
    "section": 0,
    "start": 0,
    "end": 1,
-   "status": "draft",
-   "rounds": 0,
+   "status": "checked",
+   "rounds": 2,
    "attempts": 0,
-   "versions": [],
-   "reviews": [],
+   "versions": [
+    {
+     "text": [
+      "Nå skal vi rette oppmerksomheten mot Israels offentlige anliggender, og der vil vi finne at Elisja er involvert. Her har vi: I. Det allmenne omdømmet til Joram, Israels konge, <ref osisRef=\"2Kgs.3.1-2Kgs.3.3\">v. 1–3</ref>. II. En krig mot Moab, som Joram og hans allierte var innblandet i, <ref osisRef=\"2Kgs.3.4-2Kgs.3.8\">v. 4–8</ref>. III. Den nøden den forbundne hæren kom i under felttoget mot Moab, hvordan de i denne trengselen rådførte seg med Elisja, og det fredens svar han ga dem, <ref osisRef=\"2Kgs.3.9-2Kgs.3.19\">v. 9–19</ref>. IV. Det ærerike utfallet av dette felttoget (<ref osisRef=\"2Kgs.3.20-2Kgs.3.25\">v. 20–25</ref>) og den barbariske utveien Moabs konge grep til for å tvinge den forbundne hæren til å trekke seg tilbake, <ref osisRef=\"2Kgs.3.26-2Kgs.3.27\">v. 26–27</ref>. Akabs hus er dømt til undergang. I dette kapitlet står det riktignok bedre til enn før både med husets karakter og med dets kår, men den ødeleggelsen det er truet med, er likevel ikke langt unna."
+     ],
+     "explanation": "«Character» betyr her en karakteristikk av hvordan Joram var (v. 1–3), ikke ryktet hans blant folk. «Omdømme» forskyver meningen og bryter dessuten sammenhengen med «husets karakter» i siste setning.",
+     "model": "claude-fable-5-2"
+    }
+   ],
+   "reviews": [
+    {
+     "argument": {
+      "premises": true,
+      "conclusions": true,
+      "evidence": true,
+      "problems": ""
+     },
+     "issues": [
+      {
+       "paragraph": 1,
+       "quote": "Det allmenne omdømmet til Joram",
+       "replacement": "Den allmenne karakteristikken av Joram",
+       "type": "meaning",
+       "severity": "major",
+       "explanation": "«Character» betyr her en karakteristikk av hvordan Joram var (v. 1–3), ikke ryktet hans blant folk. «Omdømme» forskyver meningen og bryter dessuten sammenhengen med «husets karakter» i siste setning."
+      }
+     ],
+     "summary": "Gjengivelsen er trofast og velskrevet: alle fire punkter, alle henvisninger og sluttresonnementet om Akabs hus er med, og merkingen er intakt. Eneste funn er at «character» er gjengitt med «omdømme» i punkt I.",
+     "score": 9,
+     "model": "claude-fable-5-2",
+     "mechanical": [],
+     "skipped": []
+    },
+    {
+     "argument": {
+      "premises": true,
+      "conclusions": true,
+      "evidence": true,
+      "problems": ""
+     },
+     "issues": [],
+     "summary": "Gjengivelsen er trofast og fullstendig. Alle fire punktene i kapitteloversikten, alle versehenvisningene med uendret osisRef og sluttbemerkningen om Akabs hus er med, med samme innhold og vekt. Språket er naturlig bokmål, og jeg fant ingen feil.",
+     "score": 10,
+     "model": "claude-fable-5-2",
+     "mechanical": [],
+     "skipped": []
+    }
+   ],
    "text": [
-    "Nå skal vi rette oppmerksomheten mot Israels offentlige anliggender, og der vil vi finne at Elisja er involvert. Her har vi: I. Det allmenne omdømmet til Joram, Israels konge, <ref osisRef=\"2Kgs.3.1-2Kgs.3.3\">v. 1–3</ref>. II. En krig mot Moab, som Joram og hans allierte var innblandet i, <ref osisRef=\"2Kgs.3.4-2Kgs.3.8\">v. 4–8</ref>. III. Den nøden den forbundne hæren kom i under felttoget mot Moab, hvordan de i denne trengselen rådførte seg med Elisja, og det fredens svar han ga dem, <ref osisRef=\"2Kgs.3.9-2Kgs.3.19\">v. 9–19</ref>. IV. Det ærerike utfallet av dette felttoget (<ref osisRef=\"2Kgs.3.20-2Kgs.3.25\">v. 20–25</ref>) og den barbariske utveien Moabs konge grep til for å tvinge den forbundne hæren til å trekke seg tilbake, <ref osisRef=\"2Kgs.3.26-2Kgs.3.27\">v. 26–27</ref>. Akabs hus er dømt til undergang. I dette kapitlet står det riktignok bedre til enn før både med husets karakter og med dets kår, men den ødeleggelsen det er truet med, er likevel ikke langt unna."
+    "Nå skal vi rette oppmerksomheten mot Israels offentlige anliggender, og der vil vi finne at Elisja er involvert. Her har vi: I. Den allmenne karakteristikken av Joram, Israels konge, <ref osisRef=\"2Kgs.3.1-2Kgs.3.3\">v. 1–3</ref>. II. En krig mot Moab, som Joram og hans allierte var innblandet i, <ref osisRef=\"2Kgs.3.4-2Kgs.3.8\">v. 4–8</ref>. III. Den nøden den forbundne hæren kom i under felttoget mot Moab, hvordan de i denne trengselen rådførte seg med Elisja, og det fredens svar han ga dem, <ref osisRef=\"2Kgs.3.9-2Kgs.3.19\">v. 9–19</ref>. IV. Det ærerike utfallet av dette felttoget (<ref osisRef=\"2Kgs.3.20-2Kgs.3.25\">v. 20–25</ref>) og den barbariske utveien Moabs konge grep til for å tvinge den forbundne hæren til å trekke seg tilbake, <ref osisRef=\"2Kgs.3.26-2Kgs.3.27\">v. 26–27</ref>. Akabs hus er dømt til undergang. I dette kapitlet står det riktignok bedre til enn før både med husets karakter og med dets kår, men den ødeleggelsen det er truet med, er likevel ikke langt unna."
    ],
    "translator": "claude-fable-5-2",
    "model": "claude-fable-5-2"
@@ -23,11 +69,26 @@
    "section": 1,
    "start": 0,
    "end": 5,
-   "status": "draft",
-   "rounds": 0,
+   "status": "checked",
+   "rounds": 1,
    "attempts": 0,
    "versions": [],
-   "reviews": [],
+   "reviews": [
+    {
+     "argument": {
+      "premises": true,
+      "conclusions": true,
+      "evidence": true,
+      "problems": ""
+     },
+     "issues": [],
+     "summary": "Gjengivelsen er trofast og idiomatisk. Begge hovedpunktene (I og II), de tre begrunnelsene for at Jorams reformasjon var nesten ingen, og alle skriftbelegg er med i riktig rekkefølge og med samme vekt. Alle osisRef står som i kilden, og henvisningene er riktig omskrevet til norsk form. Det mekaniske varselet i avsnitt 5 er falsk alarm: «100 000» er bare norsk tallformat for kildens «100,000». Ingen feil å rette.",
+     "score": 10,
+     "model": "claude-fable-5-2",
+     "mechanical": [],
+     "skipped": []
+    }
+   ],
    "text": [
     "<h>Jorams regjeringstid (895 f.Kr.)</h>",
     "<sup>1</sup> Joram, Akabs sønn, ble konge over Israel i Samaria i det attende året til Josjafat, kongen i Juda, og han regjerte i tolv år. <sup>2</sup> Han gjorde det som var ondt i Herrens øyne, men ikke som sin far og som sin mor; for han tok bort Ba'al-bildet som hans far hadde laget. <sup>3</sup> Likevel holdt han fast ved syndene til Jeroboam, Nebats sønn, som fikk Israel til å synde; dem vek han ikke fra. <sup>4</sup> Mesja, kongen i Moab, drev med sauehold, og han betalte til Israels konge hundre tusen lam og hundre tusen værer, med ullen. <sup>5</sup> Men da Akab var død, skjedde det at kongen i Moab gjorde opprør mot Israels konge.",
@@ -43,11 +104,26 @@
    "section": 2,
    "start": 0,
    "end": 8,
-   "status": "draft",
-   "rounds": 0,
+   "status": "checked",
+   "rounds": 1,
    "attempts": 0,
    "versions": [],
-   "reviews": [],
+   "reviews": [
+    {
+     "argument": {
+      "premises": true,
+      "conclusions": true,
+      "evidence": true,
+      "problems": ""
+     },
+     "issues": [],
+     "summary": "Gjengivelsen er trofast avsnitt for avsnitt: alle resonnementer, skriftsteder, henvisninger, tall, det latinske sitatet og merkingen er bevart, og osisRef står som i kilden. Språket er naturlig, moderne bokmål, og Henrys tone er beholdt. Ingen feil funnet.",
+     "score": 10,
+     "model": "claude-fable-5-2",
+     "mechanical": [],
+     "skipped": []
+    }
+   ],
    "text": [
     "<h>Felttoget mot Moab; Elisja blir rådspurt. (895 f.Kr.)</h>",
     "<sup>6</sup> Og kong Joram dro ut fra Samaria på samme tid og mønstret hele Israel. <sup>7</sup> Og han dro av sted og sendte bud til Josjafat, kongen i Juda, og sa: Kongen i Moab har gjort opprør mot meg. Vil du dra med meg i krig mot Moab? Og han sa: Jeg vil dra opp. Jeg <i>er</i> som du <i>er,</i> mitt folk som ditt folk, <i>og</i> mine hester som dine hester. <sup>8</sup> Og han sa: Hvilken vei skal vi dra opp? Og han svarte: Veien gjennom Edoms ørken. <sup>9</sup> Så dro Israels konge og Judas konge og Edoms konge av sted, og de tok en omvei på sju dagsreiser; og det var ikke vann til hæren eller til buskapen som fulgte dem. <sup>10</sup> Og Israels konge sa: Akk! Herren har kalt disse tre kongene sammen for å overgi dem i Moabs hånd! <sup>11</sup> Men Josjafat sa: <i>Er det</i> ikke her en Herrens profet, så vi kan spørre Herren gjennom ham? Og en av tjenerne til Israels konge svarte og sa: Her <i>er</i> Elisja, Sjafats sønn, som helte vann på Elias hender. <sup>12</sup> Og Josjafat sa: Herrens ord er hos ham. Så gikk Israels konge og Josjafat og Edoms konge ned til ham. <sup>13</sup> Og Elisja sa til Israels konge: Hva har jeg med deg å gjøre? Gå til din fars profeter og til din mors profeter. Og Israels konge sa til ham: Nei, for Herren har kalt disse tre kongene sammen for å overgi dem i Moabs hånd. <sup>14</sup> Og Elisja sa: <i>Så sant</i> hærskarenes Herre lever, han som jeg står for: Var det ikke fordi jeg tar hensyn til at Josjafat, kongen i Juda, er til stede, ville jeg sannelig ikke vende blikket mot deg eller se deg. <sup>15</sup> Men hent nå en strengespiller til meg. Og det skjedde, da strengespilleren spilte, at Herrens hånd kom over ham. <sup>16</sup> Og han sa: Så sier Herren: Gjør denne dalen full av grøfter. <sup>17</sup> For så sier Herren: Dere skal ikke se vind, og dere skal ikke se regn; likevel skal denne dalen fylles med vann, så dere kan drikke, både dere og buskapen og dyrene deres. <sup>18</sup> Og dette er <i>bare</i> en lett sak i Herrens øyne: Han vil også overgi moabittene i deres hånd. <sup>19</sup> Og dere skal slå hver befestet by og hver utvalgt by, og dere skal felle hvert godt tre og stoppe til alle vannkilder og ødelegge hvert godt jordstykke med stein.",
@@ -66,11 +142,26 @@
    "section": 2,
    "start": 8,
    "end": 9,
-   "status": "draft",
-   "rounds": 0,
+   "status": "checked",
+   "rounds": 1,
    "attempts": 0,
    "versions": [],
-   "reviews": [],
+   "reviews": [
+    {
+     "argument": {
+      "premises": true,
+      "conclusions": true,
+      "evidence": true,
+      "problems": ""
+     },
+     "issues": [],
+     "summary": "Gjengivelsen er trofast mot kilden: alle resonnementer, skriftsteder og henvisninger er med, med samme innhold og vekt. osisRef-verdiene står som i kilden (også Exod.14.3 med teksten Esek 14,3), merkingen er bevart, og språket er naturlig bokmål. Ingen feil funnet.",
+     "score": 10,
+     "model": "claude-fable-5-2",
+     "mechanical": [],
+     "skipped": []
+    }
+   ],
    "text": [
     "VI. Mottakelsen Elisja ga dem. 1. Han talte rett ut til den ugudelige kongen i Israel (<ref osisRef=\"2Kgs.3.13\">v. 13</ref>): «<i>Hva har jeg med deg å gjøre?</i> Hvordan kan du vente et fredens svar fra meg? <i>Gå til din fars og din mors profeter,</i> dem du har støttet og underholdt i dine gode dager, og la dem hjelpe deg nå i din nød.» Elisja lot seg ikke lure, slik Josjafat gjorde, av hans halvhjertede og hyklerske reformasjon. Han visste at selv om kongen hadde fjernet Ba'al-bildet, var Ba'als profeter fremdeles kjære for ham, og kanskje var noen av dem i leiren hans nå. «Gå,» sa han, «<i>gå til dem. Gå til de gudene dere har tjent,</i> <ref osisRef=\"Judg.10.14\">Dom 10,14</ref>. Verden og kjødet har hersket over dere, la dem hjelpe dere. Hvorfor skulle Gud la seg <i>spørre til råds av</i> dere?» <ref osisRef=\"Exod.14.3\">Esek 14,3</ref>. I hellig harme over hans ondskap sier Elisja ham rett opp i ansiktet at han knapt kan få seg til å <i>se bort på ham</i> eller <i>se ham,</i> <ref osisRef=\"2Kgs.3.14\">v. 14</ref>. Joram skal respekteres som fyrste, men som ugudelig mann er han en foraktelig person og skal fordømmes, <ref osisRef=\"Ps.15.4\">Sal 15,4</ref>. Som undersått vil Elisja ære ham, men som profet vil han la ham få kjenne sin misgjerning. For dem som hadde et så ekstraordinært oppdrag, var det på sin plass (men ikke for en vanlig mann) å si til en konge: <i>Du er ugudelig,</i> <ref osisRef=\"Job.34.18\">Job 34,18</ref>. Joram har såpass selvbeherskelse at han tålmodig finner seg i denne rene talen. Nå bryr han seg ikke om å høre snakk om Ba'als profeter, men kommer som en ydmyk bønnfallende til Israels Gud og hans profet. Han framstiller situasjonen som svært sørgelig og legger den ydmykt fram for profetens medfølende omtanke. I realiteten erkjenner han at han selv er uverdig, men ber om at de andre kongene ikke må gå til grunne for hans skyld. 2. Elisja viste stor respekt for den gudfryktige kongen i Juda. Han <i>tok hensyn til hans nærvær</i> og ville for hans skyld <i>spørre Herren til råds</i> for dem alle. Det er godt å være sammen med dem som har Guds velvilje og hans profets kjærlighet. Ugudelige mennesker får det ofte bedre på grunn av vennskap og samvær med de gudfryktige. 3. Han samlet seg for å ta imot veiledning fra Gud. Synet av Joram hadde brakt sinnet hans noe ut av likevekt og uroet ham. Han var ikke kommet i syndig opphisselse eller sinne, og han hadde heller ikke talt ubetenksomt. Likevel gjorde nidkjærheten ham for øyeblikket uskikket til bønn og til Åndens virke, som krevde et svært rolig og avbalansert sinn. Derfor ba han om å få en musiker (<ref osisRef=\"2Kgs.3.15\">v. 15</ref>), en from musiker, en som var vant til å spille på harpen sin og synge salmer til. Å høre Guds pris vakkert sunget, slik David hadde fastsatt, ville oppmuntre ham, roe sinnet og hjelpe ham inn i den rette stemningen både til å tale til Gud og til å høre fra ham. Vi leser om en flokk profeter som profeterte med <i>harpe og tamburin foran seg,</i> <ref osisRef=\"1Sam.10.5\">1 Sam 10,5</ref>. De som ønsker samfunn med Gud, må holde ånden stille og fredfull. Da Elisja var blitt forfrisket og denne guddommelige musikken hadde lagt uroen i sinnet hans, <i>kom Herrens hånd over ham,</i> og det besøket gjorde ham større ære enn besøket fra tre konger. 4. Gjennom ham ga Gud dem forsikring om at den nøden de nå var i, skulle få en trøsterik og herlig utgang. (1.) De skulle snart få vann, <ref osisRef=\"2Kgs.3.16-2Kgs.3.17\">v. 16–17</ref>. For å prøve deres tro og lydighet ber han dem <i>gjøre dalen full av grøfter</i> som kan ta imot vannet. De som venter Guds velsignelser, må gjøre plass til dem og <i>grave dammene</i> som regnet skal fylle, slik de gjorde i Baka-dalen og dermed gjorde til og med den til en kilde, <ref osisRef=\"Ps.84.6\">Sal 84,6</ref>. For å gjøre underet større sier han at de skal få nok vann, og likevel skal det <i>verken komme vind eller regn.</i> Elia fikk ved bønn vann fra skyene, men Elisja henter det ingen vet hvorfra. Kilden til dette vannet skal være like skjult som Nilens utspring. Gud er ikke bundet til sekundære årsaker. Vanligvis er det ved rikelig regn Gud <i>styrker sin arv</i> (<ref osisRef=\"Ps.68.9\">Sal 68,9</ref>), men her skjer det uten regn, i det minste uten regn på det stedet. Trolig <i>brast</i> noen av <i>kildene i det store dyp</i> ved denne anledningen. Og for å gjøre miraklet enda større var det (slik det ser ut) bare <i>den dalen</i> som <i>ble fylt med vann,</i> og ikke noe annet sted fikk del i det. (2.) Denne forsyningen skulle være et pant på seier (<ref osisRef=\"2Kgs.3.18\">v. 18</ref>): «<i>Dette er bare en liten ting i Herrens øyne.</i> Dere skal ikke bare bli reddet fra å omkomme, men vende tilbake i triumf.» Slik Gud gir fritt til de uverdige, gir han også rikelig, slik det er ham likt, mer enn vi er <i>i stand til å be om eller tenke.</i> Det han gir, overgår våre bønner og forventninger. De som oppriktig søker duggen av Guds nåde, skal få den, og ved den bli <i>mer enn seierherrer.</i> De får løfte om at de skal bli herrer over det opprørske landet, og de får lov til å legge det øde og ødelegge det, <ref osisRef=\"2Kgs.3.19\">v. 19</ref>. Loven forbød dem å felle frukttrær til bruk under beleiringer (<ref osisRef=\"Deut.20.19\">5 Mos 20,19</ref>). Men den forbød det ikke når hensikten, med rette, var å sulte ut et land som hadde forspilt sine frukter ved å nekte <i>skatt til dem som skatt tilkom.</i>"
    ],
@@ -82,11 +173,50 @@
    "section": 3,
    "start": 0,
    "end": 8,
-   "status": "draft",
-   "rounds": 0,
+   "status": "checked",
+   "rounds": 1,
    "attempts": 0,
-   "versions": [],
-   "reviews": [],
+   "versions": [
+    {
+     "text": [
+      "<h>Moabittenes nederlag. (895 f.Kr.)</h>",
+      "<sup>20</sup> Og det skjedde om morgenen, da matofferet ble båret fram, at se, det kom vann fra veien mot Edom, og landet ble fylt med vann. <sup>21</sup> Og da alle moabittene hørte at kongene hadde dratt opp for å kjempe mot dem, samlet de alle som var i stand til å ta på seg rustning, og dem som var eldre, og stilte seg ved grensen. <sup>22</sup> Og de sto tidlig opp om morgenen, og solen skinte på vannet, og moabittene så vannet på den andre siden <i>så</i> rødt som blod. <sup>23</sup> Og de sa: Dette <i>er</i> blod; kongene er sikkert drept, og de har slått hverandre i hjel. Nå derfor, Moab, til byttet! <sup>24</sup> Og da de kom til Israels leir, reiste israelittene seg og slo moabittene, så de flyktet for dem; men de rykket fram og slo moabittene, like inn i landet <i>deres</i>. <sup>25</sup> Og de rev ned byene, og på hvert godt jordstykke kastet hver mann sin stein og fylte det; og de stoppet til alle vannkildene og felte alle de gode trærne. Bare i Kir-Hareset lot de steinene bli stående; men slyngekasterne gikk rundt <i>den</i> og slo den. <sup>26</sup> Og da kongen av Moab så at striden ble for hard for ham, tok han med seg sju hundre menn som dro sverd, for å bryte gjennom <i>helt</i> til kongen av Edom; men de klarte det ikke. <sup>27</sup> Da tok han sin eldste sønn, som skulle ha regjert i hans sted, og ofret ham <i>som</i> brennoffer på muren. Og det ble stor harme mot Israel; og de dro bort fra ham og vendte tilbake til <i>sitt eget</i> land.",
+      "I. Her ser vi Gud gi begge de tingene han hadde lovet gjennom Elisja: vann og seier. Det første var ikke bare et pant på det andre, men også et middel til det. Gud, som har skapt alle vann og rår over dem, både dem over og dem under hvelvingen, sendte dem plutselig vann i overflod, og det gjorde dem en dobbelt tjeneste.",
+      "1. Det berget hærene deres, som var nær ved å gå til grunne, <ref osisRef=\"2Kgs.3.20\">v. 20</ref>. Og det er svært verdt å merke seg at hjelpen kom nettopp på den tiden da <i>morgenofferet ble båret fram</i> på alteret i Jerusalem, et fast tidspunkt som alle kjente. Det tidspunktet valgte Elisja som sin <i>bønnetime</i>. Trolig ba han <i>vendt mot tempelet</i>, for slik skulle de gjøre i bønnene sine når de <i>dro ut til strid</i> og lå i leir langt borte, <ref osisRef=\"1Kgs.8.44\">1 Kong 8,44</ref>. Det var et tegn på at han hadde fellesskap med tempeltjenesten, og på at han ventet framgang i kraft av det store offeret. Vi kan nå ikke peke ut noen time som mer velbehagelig enn en annen, for vår øversteprest trer alltid fram for oss for å bære fram sitt offer og påberope seg det. Det tidspunktet valgte Gud som nådens time for å kaste ære over det daglige offeret, som var blitt foraktet. Gud svarte på Daniels bønn nettopp ved <i>tiden for kveldsofferet</i> (<ref osisRef=\"Dan.9.21\">Dan 9,21</ref>), for han vil vedkjenne seg sine egne ordninger.",
+      "2. Det narret fiendene deres, som var klare til å triumfere, rett i undergangen. Moabittene fikk melding om at den forbundne hæren rykket fram. For å møte den ble <i>alle som var i stand til å ta på seg rustning</i>, stilt opp ved grensen, og der sto de klare til å gi israelittene en varm mottakelse (<ref osisRef=\"2Kgs.3.21\">v. 21</ref>). De regnet med at det ville bli lett å gjøre opp med en hær som var utmattet etter en så lang marsj gjennom Edoms ørken. Men se her,",
+      "(1.) hvor lett de lot seg dra inn i sine egne villfarelser. Legg merke til trinnene i selvbedraget. [1.] De så vannet i dalen der Israels hær lå i leir, og innbilte seg at det var blod (<ref osisRef=\"2Kgs.3.22\">v. 22</ref>). De visste jo at dalen var tørr, og siden det ikke hadde regnet, kunne de ikke forestille seg at det skulle være vann. Solen skinte på det, og sannsynligvis var <i>himmelen rød og truende</i>, et varsel om <i>uvær den dagen</i> (<ref osisRef=\"Matt.16.3\">Matt 16,3</ref>), og slik gikk det også for dem. Men siden dette fikk vannet til å se rødt ut, hvisket deres egen innbilning, som gjorde dem villige til å tro det som tjente dem: <i>Dette er blod.</i> Og Gud tillot at de førte seg selv bak lyset på denne måten. [2.] Når leiren var så full av blod, sluttet de: «Kongene har sikkert røket uklar med hverandre (slik forbundsfeller med ulike interesser lett gjør), og de har <i>slått hverandre i hjel</i> (<ref osisRef=\"2Kgs.3.23\">v. 23</ref>), for hvem andre skulle ha drept dem?» Og [3.] «Har hærene slått hverandre i hjel, har vi ikke annet å gjøre enn å dele byttet. <i>Nå derfor, Moab, til byttet!</i>» Slik kom innskytelsene trinn for trinn fra noen sangvinske sjeler blant dem, som mente at de var klokere og heldigere i gjetningene sine enn naboene. Og de andre, som ønsket at det skulle være slik, var snare til å tro at det var slik. <i>Quod volumus facile credimus – det vi ønsker, tror vi gjerne.</i> Slik blir de som skal ødelegges, først forført (<ref osisRef=\"Rev.20.8\">Åp 20,8</ref>), og ingen blir så grundig bedratt som de som bedrar seg selv.",
+      "(2.) hvor skjebnesvangert de dermed løp rett i sin egen undergang. De styrtet sorgløst inn i Israels leir for å plyndre den, men ble revet ut av villfarelsen da det var for sent. Israelittene, som var oppildnet av at Elisja hadde forsikret dem om seier, kastet seg over dem med det største raseri, slo dem på flukt og forfulgte dem inn i deres eget land (<ref osisRef=\"2Kgs.3.24\">v. 24</ref>). Landet la de øde (<ref osisRef=\"2Kgs.3.25\">v. 25</ref>): De ødela byene, skjemte jorden, stoppet til brønnene og felte tømmeret, og de lot bare kongebyen stå igjen, og i murene på den slo de store brecher med murbrekkerne sine. Dette var det de fikk igjen for å gjøre opprør mot Israel. Hvem har noen gang <i>forherdet sitt hjerte mot Gud og hatt lykke med seg?</i>",
+      "II. Mot slutten av kapitlet får vi høre hva kongen av Moab gjorde da han så at beleirerne hadde drevet ham til det ytterste, og at hovedstaden hans sto i fare for å falle i deres hender. 1. Han forsøkte noe som var dristig og tappert. Han samlet 700 utvalgte menn og gjorde med dem et utfall mot skansene til kongen av Edom. Denne var jo bare en leiesoldat på dette felttoget, og kongen av Moab håpet at han ikke ville gjøre stor motstand hvis han ble kraftig angrepet, slik at det gikk an å slippe unna den veien. Men det lyktes ikke. Selv kongen av Edom ble for sterk for ham og tvang ham til å trekke seg tilbake, <ref osisRef=\"2Kgs.3.26\">v. 26</ref>. 2. Da dette slo feil, gjorde han noe som var dyrisk og barbarisk. Han tok sin egen sønn, den eldste, som skulle etterfølge ham, og som var det kjæreste både han selv og folket hans hadde, og <i>ofret ham som brennoffer på muren</i>, <ref osisRef=\"2Kgs.3.27\">v. 27</ref>. Med dette ville han (1.) vinne velvilje hos sin gud Kemosj, som var en djevel og derfor frydet seg over blod og mord og menneskehetens ødeleggelse. Jo kjærere noe var for dem, desto mer velbehagelig mente disse avgudsdyrkerne det nødvendigvis måtte være når det ble ofret til gudene deres, og derfor brente de barna sine i ilden til deres ære. (2.) Han ville skremme beleirerne og tvinge dem til å trekke seg tilbake. Derfor gjorde han det <i>på muren</i>, rett for øynene på dem, så de kunne se hvilke desperate utveier han var fast bestemt på å ta heller enn å overgi seg, og hvor dyrt han ville selge byen og livet sitt. Han ville på denne måten gjøre dem forhatte og hisse og egge sine egne undersåtter opp mot dem. Og den virkningen fikk det: <i>Det ble stor harme mot Israel</i> fordi de hadde drevet ham til denne ytterligheten, og dermed hevet de beleiringen og vendte hjem. Ømme og edelmodige sinn vil ikke gjøre det som driver et menneske fra vettet eller gjør det desperat, selv om det er rettferdig."
+     ],
+     "explanation": "«Brecher» er ikke norsk bokmål; ordet for åpning slått i en mur heter «bresje», flertall «bresjer».",
+     "model": "claude-fable-5-2"
+    }
+   ],
+   "reviews": [
+    {
+     "argument": {
+      "premises": true,
+      "conclusions": true,
+      "evidence": true,
+      "problems": ""
+     },
+     "issues": [
+      {
+       "paragraph": 7,
+       "quote": "brecher",
+       "replacement": "bresjer",
+       "type": "language",
+       "severity": "minor",
+       "explanation": "«Brecher» er ikke norsk bokmål; ordet for åpning slått i en mur heter «bresje», flertall «bresjer»."
+      }
+     ],
+     "summary": "Gjengivelsen er trofast og velskrevet. Alle resonnementer, skriftsteder, det latinske sitatet og merkingen er bevart, med samme avsnittsinndeling og uendrede osisRef. Eneste funn er en skrivemåte som ikke er bokmål («brecher» i avsnitt 7).",
+     "score": 9,
+     "model": "claude-fable-5-2",
+     "mechanical": [],
+     "skipped": []
+    }
+   ],
    "text": [
     "<h>Moabittenes nederlag. (895 f.Kr.)</h>",
     "<sup>20</sup> Og det skjedde om morgenen, da matofferet ble båret fram, at se, det kom vann fra veien mot Edom, og landet ble fylt med vann. <sup>21</sup> Og da alle moabittene hørte at kongene hadde dratt opp for å kjempe mot dem, samlet de alle som var i stand til å ta på seg rustning, og dem som var eldre, og stilte seg ved grensen. <sup>22</sup> Og de sto tidlig opp om morgenen, og solen skinte på vannet, og moabittene så vannet på den andre siden <i>så</i> rødt som blod. <sup>23</sup> Og de sa: Dette <i>er</i> blod; kongene er sikkert drept, og de har slått hverandre i hjel. Nå derfor, Moab, til byttet! <sup>24</sup> Og da de kom til Israels leir, reiste israelittene seg og slo moabittene, så de flyktet for dem; men de rykket fram og slo moabittene, like inn i landet <i>deres</i>. <sup>25</sup> Og de rev ned byene, og på hvert godt jordstykke kastet hver mann sin stein og fylte det; og de stoppet til alle vannkildene og felte alle de gode trærne. Bare i Kir-Hareset lot de steinene bli stående; men slyngekasterne gikk rundt <i>den</i> og slo den. <sup>26</sup> Og da kongen av Moab så at striden ble for hard for ham, tok han med seg sju hundre menn som dro sverd, for å bryte gjennom <i>helt</i> til kongen av Edom; men de klarte det ikke. <sup>27</sup> Da tok han sin eldste sønn, som skulle ha regjert i hans sted, og ofret ham <i>som</i> brennoffer på muren. Og det ble stor harme mot Israel; og de dro bort fra ham og vendte tilbake til <i>sitt eget</i> land.",
@@ -94,7 +224,7 @@
     "1. Det berget hærene deres, som var nær ved å gå til grunne, <ref osisRef=\"2Kgs.3.20\">v. 20</ref>. Og det er svært verdt å merke seg at hjelpen kom nettopp på den tiden da <i>morgenofferet ble båret fram</i> på alteret i Jerusalem, et fast tidspunkt som alle kjente. Det tidspunktet valgte Elisja som sin <i>bønnetime</i>. Trolig ba han <i>vendt mot tempelet</i>, for slik skulle de gjøre i bønnene sine når de <i>dro ut til strid</i> og lå i leir langt borte, <ref osisRef=\"1Kgs.8.44\">1 Kong 8,44</ref>. Det var et tegn på at han hadde fellesskap med tempeltjenesten, og på at han ventet framgang i kraft av det store offeret. Vi kan nå ikke peke ut noen time som mer velbehagelig enn en annen, for vår øversteprest trer alltid fram for oss for å bære fram sitt offer og påberope seg det. Det tidspunktet valgte Gud som nådens time for å kaste ære over det daglige offeret, som var blitt foraktet. Gud svarte på Daniels bønn nettopp ved <i>tiden for kveldsofferet</i> (<ref osisRef=\"Dan.9.21\">Dan 9,21</ref>), for han vil vedkjenne seg sine egne ordninger.",
     "2. Det narret fiendene deres, som var klare til å triumfere, rett i undergangen. Moabittene fikk melding om at den forbundne hæren rykket fram. For å møte den ble <i>alle som var i stand til å ta på seg rustning</i>, stilt opp ved grensen, og der sto de klare til å gi israelittene en varm mottakelse (<ref osisRef=\"2Kgs.3.21\">v. 21</ref>). De regnet med at det ville bli lett å gjøre opp med en hær som var utmattet etter en så lang marsj gjennom Edoms ørken. Men se her,",
     "(1.) hvor lett de lot seg dra inn i sine egne villfarelser. Legg merke til trinnene i selvbedraget. [1.] De så vannet i dalen der Israels hær lå i leir, og innbilte seg at det var blod (<ref osisRef=\"2Kgs.3.22\">v. 22</ref>). De visste jo at dalen var tørr, og siden det ikke hadde regnet, kunne de ikke forestille seg at det skulle være vann. Solen skinte på det, og sannsynligvis var <i>himmelen rød og truende</i>, et varsel om <i>uvær den dagen</i> (<ref osisRef=\"Matt.16.3\">Matt 16,3</ref>), og slik gikk det også for dem. Men siden dette fikk vannet til å se rødt ut, hvisket deres egen innbilning, som gjorde dem villige til å tro det som tjente dem: <i>Dette er blod.</i> Og Gud tillot at de førte seg selv bak lyset på denne måten. [2.] Når leiren var så full av blod, sluttet de: «Kongene har sikkert røket uklar med hverandre (slik forbundsfeller med ulike interesser lett gjør), og de har <i>slått hverandre i hjel</i> (<ref osisRef=\"2Kgs.3.23\">v. 23</ref>), for hvem andre skulle ha drept dem?» Og [3.] «Har hærene slått hverandre i hjel, har vi ikke annet å gjøre enn å dele byttet. <i>Nå derfor, Moab, til byttet!</i>» Slik kom innskytelsene trinn for trinn fra noen sangvinske sjeler blant dem, som mente at de var klokere og heldigere i gjetningene sine enn naboene. Og de andre, som ønsket at det skulle være slik, var snare til å tro at det var slik. <i>Quod volumus facile credimus – det vi ønsker, tror vi gjerne.</i> Slik blir de som skal ødelegges, først forført (<ref osisRef=\"Rev.20.8\">Åp 20,8</ref>), og ingen blir så grundig bedratt som de som bedrar seg selv.",
-    "(2.) hvor skjebnesvangert de dermed løp rett i sin egen undergang. De styrtet sorgløst inn i Israels leir for å plyndre den, men ble revet ut av villfarelsen da det var for sent. Israelittene, som var oppildnet av at Elisja hadde forsikret dem om seier, kastet seg over dem med det største raseri, slo dem på flukt og forfulgte dem inn i deres eget land (<ref osisRef=\"2Kgs.3.24\">v. 24</ref>). Landet la de øde (<ref osisRef=\"2Kgs.3.25\">v. 25</ref>): De ødela byene, skjemte jorden, stoppet til brønnene og felte tømmeret, og de lot bare kongebyen stå igjen, og i murene på den slo de store brecher med murbrekkerne sine. Dette var det de fikk igjen for å gjøre opprør mot Israel. Hvem har noen gang <i>forherdet sitt hjerte mot Gud og hatt lykke med seg?</i>",
+    "(2.) hvor skjebnesvangert de dermed løp rett i sin egen undergang. De styrtet sorgløst inn i Israels leir for å plyndre den, men ble revet ut av villfarelsen da det var for sent. Israelittene, som var oppildnet av at Elisja hadde forsikret dem om seier, kastet seg over dem med det største raseri, slo dem på flukt og forfulgte dem inn i deres eget land (<ref osisRef=\"2Kgs.3.24\">v. 24</ref>). Landet la de øde (<ref osisRef=\"2Kgs.3.25\">v. 25</ref>): De ødela byene, skjemte jorden, stoppet til brønnene og felte tømmeret, og de lot bare kongebyen stå igjen, og i murene på den slo de store bresjer med murbrekkerne sine. Dette var det de fikk igjen for å gjøre opprør mot Israel. Hvem har noen gang <i>forherdet sitt hjerte mot Gud og hatt lykke med seg?</i>",
     "II. Mot slutten av kapitlet får vi høre hva kongen av Moab gjorde da han så at beleirerne hadde drevet ham til det ytterste, og at hovedstaden hans sto i fare for å falle i deres hender. 1. Han forsøkte noe som var dristig og tappert. Han samlet 700 utvalgte menn og gjorde med dem et utfall mot skansene til kongen av Edom. Denne var jo bare en leiesoldat på dette felttoget, og kongen av Moab håpet at han ikke ville gjøre stor motstand hvis han ble kraftig angrepet, slik at det gikk an å slippe unna den veien. Men det lyktes ikke. Selv kongen av Edom ble for sterk for ham og tvang ham til å trekke seg tilbake, <ref osisRef=\"2Kgs.3.26\">v. 26</ref>. 2. Da dette slo feil, gjorde han noe som var dyrisk og barbarisk. Han tok sin egen sønn, den eldste, som skulle etterfølge ham, og som var det kjæreste både han selv og folket hans hadde, og <i>ofret ham som brennoffer på muren</i>, <ref osisRef=\"2Kgs.3.27\">v. 27</ref>. Med dette ville han (1.) vinne velvilje hos sin gud Kemosj, som var en djevel og derfor frydet seg over blod og mord og menneskehetens ødeleggelse. Jo kjærere noe var for dem, desto mer velbehagelig mente disse avgudsdyrkerne det nødvendigvis måtte være når det ble ofret til gudene deres, og derfor brente de barna sine i ilden til deres ære. (2.) Han ville skremme beleirerne og tvinge dem til å trekke seg tilbake. Derfor gjorde han det <i>på muren</i>, rett for øynene på dem, så de kunne se hvilke desperate utveier han var fast bestemt på å ta heller enn å overgi seg, og hvor dyrt han ville selge byen og livet sitt. Han ville på denne måten gjøre dem forhatte og hisse og egge sine egne undersåtter opp mot dem. Og den virkningen fikk det: <i>Det ble stor harme mot Israel</i> fordi de hadde drevet ham til denne ytterligheten, og dermed hevet de beleiringen og vendte hjem. Ømme og edelmodige sinn vil ikke gjøre det som driver et menneske fra vettet eller gjør det desperat, selv om det er rettferdig."
    ],
    "translator": "claude-fable-5-2",
