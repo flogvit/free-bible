@@ -56,8 +56,11 @@ const PATTERNS: [RefKind, RegExp][] = [
     ['section', /(?:§|\$\.)\s*(\d+[a-z]?)(?![a-z])/g],   // «$.277» is how the K&D OCR reads §
     // A cue word starts a word: JavaScript's \b sees æ, ø, å and the apostrophe as word ends, so «løs. 2» and
     // «God's. 2» would read as page 2 (#163: 8 of 16 stuck units).
-    ['page', /(?<![\p{L}\p{N}'’])(?:pp?\.|pag\.|page\.?|s\.|side|sidene)\s*(\d+)/giu],
-    ['chapter', /(?<![\p{L}\p{N}'’])(?:ch\.|chap\.|c\.|cap\.|kap\.|kapittel)\s*([ivxlc]+(?![\p{L}\p{N}])|\d+)/giu],
+    // «s.» after a number is shillings («353 l. 11 s. 10 1/2 d.»), not a page (#173: 1 Kings 16).
+    ['page', /(?<![\p{L}\p{N}'’])(?:pp?\.|pag\.|page\.?|(?<!\d\s*)s\.|side|sidene)\s*(\d+)/giu],
+    // A Roman numeral only after a cue word that takes one: after «kapittel» an «i» is the preposition («et kapittel i
+    // Kongebøkene»), and a rendering writes its chapter numbers in Arabic (#173: Ruth 2 and 2 Chronicles 9).
+    ['chapter', /(?<![\p{L}\p{N}'’])(?:(?:ch\.|chap\.|c\.|cap\.|kap\.)\s*([ivxlc]+(?![\p{L}\p{N}])|\d+)|kapittel\s*(\d+))/giu],
     ['pair', /(?<!\d)(\d{1,3})\s*[:,]\s*(\d{1,3})(?!\d)/g],
     ['number', /\d+/g],
 ];
@@ -83,7 +86,7 @@ function collect(text: string): Counts {
     for (const [kind, re] of PATTERNS) {
         t = t.replace(re, (m: string, ...groups: unknown[]) => {
             const [a, b] = groups as string[];
-            add(counts, kind, kind === 'number' ? m : kind === 'pair' ? `${a}:${b}` : romanToArabic(a));
+            add(counts, kind, kind === 'number' ? m : kind === 'pair' ? `${a}:${b}` : romanToArabic(a ?? b));
             return ' ';
         });
     }
