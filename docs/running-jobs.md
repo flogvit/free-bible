@@ -301,7 +301,9 @@ flight.
    the same command again on the 1st, or with another key; it goes on from where
    it stopped.
 5. **Stuck parts** — still not clean after three reviews, or failing three times —
-   keep their book from being published. The run lists them; `--retry-stuck` gives
-   them new rounds, and `--again --model <newer>` lets a newer model review
+   are sent once more, the review told what the last one found. Stuck after that,
+   the book is published anyway and the part is marked `unchecked` in its chapter
+   file (in the English if it never got a rendering), with the count in
+   `index.json`. `--retry-stuck` gives them new rounds, and `--again --model <newer>` lets a newer model review
    everything an older one wrote (set `commentaryModel` in `generate/constants.ts`
    when one wins the trial in `generate/eval/reference-works/`).

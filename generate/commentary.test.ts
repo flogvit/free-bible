@@ -1,7 +1,7 @@
 import {describe, expect, test} from 'bun:test';
 import {
-    apiAccounts, spentIn, afterReview, afterTranslation, applyFindings, chaptersFromEntries, costOf, isCreditExhausted,
-    mechanicalProblems, nextRequests, osisToParagraphs, recheck, reviewPrompt, splitParagraphs, translatePrompt, WORKS, worstCase,
+    apiAccounts, spentIn, afterReview, afterTranslation, applyFindings, bookFiles, chaptersFromEntries, costOf, failed, isCreditExhausted,
+    lastSend, mechanicalProblems, nextRequests, osisToParagraphs, recheck, reviewPrompt, splitParagraphs, translatePrompt, WORKS, worstCase,
     type Review, type Unit,
 } from './commentary.js';
 
@@ -171,6 +171,45 @@ describe('prompt caching (#163: as cheap as it can be)', () => {
 test('a unit stuck after its retry stays stuck and is not retried again', () => {
     const u = {id: '1-1-0-0', section: 0, start: 0, end: 1, status: 'stuck', text: ['x'], rounds: 3, attempts: 0, versions: [], reviews: [], note: 'not clean after 3 reviews', retried: true} as any;
     expect(nextRequests([u], new Set())).toEqual([]);
+});
+
+describe('a book whose last unit is stuck is not left behind (#173)', () => {
+    const w = Object.values(WORKS)[0];
+    const source = {work: 'mhc', language: 'en', book: 8, chapter: 2, sections: [{from: 1, to: 3, paragraphs: ['One.', 'Two, v. 3.']}]} as any;
+    const done = {id: '8-2-0-0', section: 0, start: 0, end: 1, status: 'checked', text: ['En.'], translator: 'm', model: 'm', rounds: 1, attempts: 0, versions: [], reviews: []} as any;
+    const found = {issues: [{paragraph: 1, quote: 'To', replacement: 'To,', type: 'reference', severity: 'major', explanation: 'henvisningen til v. 3 mangler'}],
+        argument: {premises: true, conclusions: true, evidence: false, problems: 'belegget v. 3 er borte'}, score: 4, summary: '', model: 'm', mechanical: [], skipped: ['[major] paragraph 1: quote not found: «Tu»']} as any;
+    const stuck = {id: '8-2-0-1', section: 0, start: 1, end: 2, status: 'stuck', text: ['To.'], translator: 'm', model: 'm', rounds: 3, attempts: 0, versions: [], reviews: [found], note: 'not clean after 3 reviews'} as any;
+    const files = (last: Unit) => bookFiles([{book: 8, chapter: 2, units: [done, last]}], new Map([['8-2', source]]), 'nb');
+
+    test('it is sent once more, on its own, with what its review found', () => {
+        expect(files(stuck)).toBeUndefined();
+        const again = lastSend(stuck, 3);
+        expect([again.status, again.retried, nextRequests([done, again], new Set())]).toEqual(['draft', true, [{kind: 'review', id: '8-2-0-1'}]]);
+        const prompt = reviewPrompt(w, 'nb', source, again).unit;
+        for (const s of ['henvisningen til v. 3 mangler', 'belegget v. 3 er borte', 'quote not found: «Tu»']) expect(prompt).toContain(s);
+        expect(reviewPrompt(w, 'nb', source, {...again, retried: false}).unit).not.toContain('belegget v. 3 er borte');
+    });
+
+    test('still not clean after that: the book is published, the unit marked as not checked', () => {
+        const after = afterReview(lastSend(stuck, 3), ['Two, v. 3.'], found, 'm', 3);
+        expect(after.status).toBe('stuck');
+        expect(nextRequests([done, after], new Set())).toEqual([]);
+        expect(files(after)![0].sections).toEqual([{from: 1, to: 3, paragraphs: ['En.', ...after.text!], models: ['m'], unchecked: [{start: 1, end: 2}]}]);
+    });
+
+    test('a unit that never got a translation is published in its English', () => {
+        const untranslated = {...stuck, status: 'stuck', text: undefined, translator: undefined, model: undefined, attempts: 3, reviews: [], note: 'answer was not JSON'};
+        const again = lastSend(untranslated, 3);
+        expect([again.status, again.attempts]).toEqual(['new', 2]);
+        const after = failed(again, 'answer was not JSON');
+        expect(after.status).toBe('stuck');
+        expect(files(after)![0].sections[0]).toEqual({from: 1, to: 3, paragraphs: ['En.', 'Two, v. 3.'], models: ['m'], unchecked: [{start: 1, end: 2, english: true}]});
+    });
+
+    test('a book whose units are all checked carries no mark', () => {
+        expect(files({...stuck, status: 'checked'})![0].sections[0].unchecked).toBeUndefined();
+    });
 });
 
 test('a stuck unit its review passed is checked once the reference check no longer raises a false alarm', () => {
