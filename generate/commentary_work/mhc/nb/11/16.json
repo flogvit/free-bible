@@ -108,8 +108,8 @@
    "section": 2,
    "start": 0,
    "end": 8,
-   "status": "draft",
-   "rounds": 1,
+   "status": "stuck",
+   "rounds": 3,
    "attempts": 0,
    "versions": [],
    "reviews": [
@@ -176,6 +176,38 @@
       "paragraph 7: page: missing 10"
      ],
      "skipped": []
+    },
+    {
+     "argument": {
+      "premises": true,
+      "conclusions": true,
+      "evidence": true,
+      "problems": ""
+     },
+     "issues": [],
+     "summary": "Gjengivelsen er trofast i alle åtte avsnitt, og jeg har ingen rettelser. Premisser, konklusjoner og belegg står med samme innhold og vekt som i kilden: Ordsp 28,2, versene 15–28, Raleigh (2.19.6), Mi 6,16 og myntutregningen. Merking og osisRef er uendret. Den mekaniske sjekken av «10» i avsnitt 7 er en falsk alarm: «10 1/2 pence» er riktig gjengitt etter kildens «10 1/2 d.». Språket er naturlig moderne bokmål.",
+     "score": 10,
+     "model": "claude-fable-5-2",
+     "mechanical": [
+      "paragraph 7: page: missing 10"
+     ],
+     "skipped": []
+    },
+    {
+     "argument": {
+      "premises": true,
+      "conclusions": true,
+      "evidence": true,
+      "problems": ""
+     },
+     "issues": [],
+     "summary": "Gjengivelsen er trofast og idiomatisk: alle resonnementer, tall, skriftsteder og Raleigh-henvisningen (2.19.6) er bevart, og merkingen står som i kilden. Det mekaniske varselet for avsnitt 7 er falsk alarm: «10 1/2 pence» står korrekt, og «l.» betyr her pund, ikke en bokhenvisning.",
+     "score": 10,
+     "model": "claude-fable-5-2",
+     "mechanical": [
+      "paragraph 7: page: missing 10"
+     ],
+     "skipped": []
     }
    ],
    "text": [
@@ -190,7 +222,8 @@
    ],
    "translator": "claude-fable-5-2",
    "model": "claude-fable-5-2",
-   "retried": true
+   "retried": true,
+   "note": "not clean after 3 reviews"
   },
   {
    "id": "11-16-3-0",
