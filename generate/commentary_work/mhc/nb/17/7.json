@@ -1,0 +1,140 @@
+{
+ "book": 17,
+ "chapter": 7,
+ "units": [
+  {
+   "id": "17-7-0-0",
+   "section": 0,
+   "start": 0,
+   "end": 1,
+   "status": "checked",
+   "rounds": 1,
+   "attempts": 0,
+   "versions": [
+    {
+     "text": [
+      "Nå skal vi være til stede ved det andre gjestebudet som kongen og Haman var innbudt til. Der skjer følgende: I. Ester legger fram sin bønn for kongen om sitt eget liv og sitt folks liv, <ref osisRef=\"Esth.7.1-Esth.7.4\">v. 1–4</ref>. II. Hun sier rett ut til kongen at Haman er mannen som har planlagt hennes undergang og undergangen til alle hennes venner, <ref osisRef=\"Esth.7.5-Esth.7.6\">v. 5–6</ref>. III. Kongen gir da ordre om at Haman skal henges i den galgen han hadde gjort i stand for Mordekai, og slik ble det også gjort, <ref osisRef=\"Esth.7.7-Esth.7.10\">v. 7–10</ref>. Da den som hadde lagt det onde anslaget, på denne måten ble tilintetgjort, var et godt skritt tatt mot å gjøre selve anslaget til intet."
+     ],
+     "explanation": "Kilden har preteritum her («gave orders … which was done»). Gjengivelsen blander presens («gir») og preteritum («ble det også gjort») i samme setning. | Kilden har bare «the plotter». Det vurderende adjektivet «onde» er lagt til.",
+     "model": "claude-fable-5-2"
+    }
+   ],
+   "reviews": [
+    {
+     "argument": {
+      "premises": true,
+      "conclusions": true,
+      "evidence": true,
+      "problems": ""
+     },
+     "issues": [
+      {
+       "paragraph": 1,
+       "quote": "Kongen gir da ordre",
+       "replacement": "Kongen ga da ordre",
+       "type": "grammar",
+       "severity": "minor",
+       "explanation": "Kilden har preteritum her («gave orders … which was done»). Gjengivelsen blander presens («gir») og preteritum («ble det også gjort») i samme setning."
+      },
+      {
+       "paragraph": 1,
+       "quote": "det onde anslaget",
+       "replacement": "anslaget",
+       "type": "addition",
+       "severity": "minor",
+       "explanation": "Kilden har bare «the plotter». Det vurderende adjektivet «onde» er lagt til."
+      }
+     ],
+     "summary": "Gjengivelsen er trofast og idiomatisk. Alle tre punktene, sluttkonklusjonen og de tre henvisningene er med, med osisRef uendret. Bare to småting gjenstår: en tempusblanding i punkt III og et tillagt adjektiv («onde») i siste setning.",
+     "score": 9,
+     "model": "claude-fable-5-2",
+     "mechanical": [],
+     "skipped": []
+    }
+   ],
+   "text": [
+    "Nå skal vi være til stede ved det andre gjestebudet som kongen og Haman var innbudt til. Der skjer følgende: I. Ester legger fram sin bønn for kongen om sitt eget liv og sitt folks liv, <ref osisRef=\"Esth.7.1-Esth.7.4\">v. 1–4</ref>. II. Hun sier rett ut til kongen at Haman er mannen som har planlagt hennes undergang og undergangen til alle hennes venner, <ref osisRef=\"Esth.7.5-Esth.7.6\">v. 5–6</ref>. III. Kongen ga da ordre om at Haman skal henges i den galgen han hadde gjort i stand for Mordekai, og slik ble det også gjort, <ref osisRef=\"Esth.7.7-Esth.7.10\">v. 7–10</ref>. Da den som hadde lagt anslaget, på denne måten ble tilintetgjort, var et godt skritt tatt mot å gjøre selve anslaget til intet."
+   ],
+   "translator": "claude-fable-5-2",
+   "model": "claude-fable-5-2"
+  },
+  {
+   "id": "17-7-1-0",
+   "section": 1,
+   "start": 0,
+   "end": 10,
+   "status": "checked",
+   "rounds": 1,
+   "attempts": 0,
+   "versions": [],
+   "reviews": [
+    {
+     "argument": {
+      "premises": true,
+      "conclusions": true,
+      "evidence": true,
+      "problems": ""
+     },
+     "issues": [],
+     "summary": "Gjengivelsen er trofast og komplett: alle resonnementer, punktinndelinger, sitater og henvisninger er bevart med riktig merking og uendrede osisRef. Språket er naturlig, moderne bokmål, og bibelteksten ligger nær King James-ordlyden. Ingen feil å rette.",
+     "score": 10,
+     "model": "claude-fable-5-2",
+     "mechanical": [],
+     "skipped": []
+    }
+   ],
+   "text": [
+    "<h>Haman anklages av Ester. (510 f.Kr.)</h>",
+    "<sup>1</sup> Så kom kongen og Haman til gjestebud hos dronning Ester. <sup>2</sup> Og kongen sa igjen til Ester den andre dagen, ved vingjestebudet: Hva <i>er</i> din bønn, dronning Ester? Den skal bli innvilget deg. Og hva <i>er</i> ditt ønske? Det skal bli oppfylt, <i>om det så er</i> halve riket. <sup>3</sup> Da svarte dronning Ester og sa: Har jeg funnet nåde for dine øyne, konge, og om det behager kongen, så la mitt liv bli gitt meg på min bønn, og mitt folk på mitt ønske. <sup>4</sup> For vi er solgt, jeg og mitt folk, til å bli ødelagt, drept og gå til grunne. Var vi bare blitt solgt som treller og trellkvinner, hadde jeg tiet, enda fienden ikke kunne oppveie kongens tap. <sup>5</sup> Da svarte kong Ahasverus og sa til dronning Ester: Hvem er han, og hvor er han, som har våget i sitt hjerte å gjøre slikt? <sup>6</sup> Og Ester sa: Motstanderen og fienden <i>er</i> denne onde Haman. Da ble Haman redd framfor kongen og dronningen.",
+    "Kongen er i godt humør og Haman i dårlig humør når de møtes ved Esters bord. Og nå:",
+    "I. Kongen ba for tredje gang Ester inntrengende om å si hva hun ønsket, for han lengtet etter å få vite det, og han gjentok løftet om at hun skulle få det, <ref osisRef=\"Esth.7.2\">v. 2</ref>. Hadde kongen nå glemt at Ester hadde et ærend til ham, og ikke spurt på nytt hva det var, ville hun knapt ha visst hvordan hun selv skulle ta det opp igjen. Men han husket det, og nå var han bundet med en tredobbelt snor, et løfte gitt tre ganger, til å vise henne velvilje.",
+    "II. Til slutt overrasker Ester kongen med sin bønn. Hun ber ikke om rikdom eller ære, eller om at noen av vennene hennes skal forfremmes til en høy stilling, slik kongen ventet. Hun ber om at hun selv og landsmennene hennes må bli berget fra død og ødeleggelse, <ref osisRef=\"Esth.7.3-Esth.7.4\">v. 3–4</ref>.",
+    "1. Selv en fremmed, selv en forbryter, skal få lov til å be for livet sitt. Men at en venn, en hustru, skulle få grunn til å legge fram en slik bønn, var dypt gripende: <i>La mitt liv bli gitt meg på min bønn, og mitt folk på mitt ønske.</i> To ting gjør liv særlig dyrebare og verdt å redde for enhver pris, så sant de er uskyldige: (1.) Majestet. Er det et kronet hode slaget rettes mot, er det på tide å røre på seg. Slik var det med Ester: «<i>La mitt liv bli gitt meg.</i> Har du noen kjærlighet til hustruen i din favn, er det nå du skal vise den, for det er hennes liv som står på spill.» (2.) Mengde. Er det mange liv, svært mange, det siktes mot, og liv som på ingen måte er forbrutt, må en verken tape tid eller spare på kreftene for å avverge ulykken. «Det er ikke en venn eller to, men <i>mitt folk</i>, en hel nasjon, og en nasjon som er meg kjær, jeg nå går i forbønn for å redde.»",
+    "2. For å bevege kongen enda mer peker hun på (1.) at hun og folket hennes var kjøpt og solgt. De hadde ikke solgt seg selv ved noen forbrytelse mot styresmakten, men var solgt for å tilfredsstille én manns stolthet og hevnlyst. (2.) At det ikke bare var friheten deres som var solgt, men livet. «Var vi blitt solgt til slaveri», sier hun, «ville jeg ikke ha klaget, for med tiden kunne vi ha vunnet friheten tilbake, enda kongen da ville ha gjort en dårlig handel og ikke blitt rikere av prisen for oss. Hva som enn var blitt betalt for oss, ville tapet av så mange arbeidsomme hender i riket hans ha skadet statskassen mer enn prisen kunne oppveie.» Å forfølge gode mennesker er like uklokt som det er ugudelig, og en åpenbar urett mot fyrsters og staters interesser, for de blir svekket og utarmet av det. Men slik var ikke saken. <i>Vi er solgt</i>, sier hun, <i>til å bli ødelagt, drept og gå til grunne</i>, og da er det på tide å tale. Hun viser til ordlyden i forordningen (<ref osisRef=\"Esth.3.13\">kap. 3,13</ref>), som siktet mot intet mindre enn deres utslettelse. Dette ville ramme et ømt punkt, om det fantes noe slikt i kongens hjerte, og få ham til å gi etter.",
+    "III. Kongen blir forbløffet over klagen og spør (<ref osisRef=\"Esth.7.5\">v. 5</ref>): «<i>Hvem er han, og hvor er han, som har våget i sitt hjerte å gjøre slikt?</i> Hva! Planlegge mord på dronningen og alle vennene hennes? Finnes det et slikt menneske, eller snarere et slikt uhyre, i naturen? <i>Hvem er han, og hvor er han, hvis hjerte har fylt ham til å gjøre slikt?</i>» Eller: Hvem har <i>fylt hans hjerte</i>? Han undrer seg over 1. at noen kunne være så ond at han tenkte noe slikt; det var sikkert Satan som fylte hans hjerte. 2. At noen kunne være så dristig at han gjorde noe slikt, kunne ha hjertet så helt innstilt på å gjøre ondt, kunne være så uredd. Merk: (1.) Det er vanskelig å forestille seg at det blir begått så grufull ondskap i verden som det virkelig blir. Hvem er han, og hvor er han, som våger og drister seg til å trekke Guds eksistens og hans forsyn i tvil, til å spotte hans ord, vanhellige hans navn og forfølge hans folk, og likevel trosse hans vrede? Slike finnes, og bare tanken på dem er nok til at <i>redsel griper oss</i>, <ref osisRef=\"Ps.119.53\">Sal 119,53</ref>. (2.) Noen ganger skvetter vi når det blir nevnt et onde som vi likevel selv kan lastes for. Ahasverus er forbløffet over en ondskap han selv er skyldig i, for han samtykket i den blodige forordningen mot jødene. <i>Du er mannen</i>, kunne Ester med altfor god grunn ha sagt.",
+    "IV. Ester anklaget Haman for det rett ut og like opp i ansiktet på ham: «Her er han, la ham tale for seg selv, for det er derfor han er innbudt: <i>Motstanderen og fienden er denne onde Haman</i> (<ref osisRef=\"Esth.7.6\">v. 6</ref>). Det er han som har planlagt å myrde oss, og som, det som verre er, på nedrig vis har lokket kongen til å bli <i>particeps criminis – medskyldig i forbrytelsen hans</i>, ved at han uvitende gikk med på den.»",
+    "V. Haman skjønner snart hvilken fare han er i: <i>Han ble redd framfor kongen og dronningen.</i> Og det var på tide at han ble redd, når dronningen var hans anklager, kongen hans dommer og hans egen samvittighet et vitne mot ham. De overraskende inngrepene forsynet hadde gjort mot ham samme morgen, kunne heller ikke annet enn øke frykten. Nå har han liten glede av å være innbudt til vingjestebudet. Han er kommet i trengsel nettopp da han mente seg å ha <i>overflod i fullt mål. Han blir kastet i et garn av sine egne føtter.</i>"
+   ],
+   "translator": "claude-fable-5-2",
+   "model": "claude-fable-5-2"
+  },
+  {
+   "id": "17-7-2-0",
+   "section": 2,
+   "start": 0,
+   "end": 8,
+   "status": "checked",
+   "rounds": 1,
+   "attempts": 0,
+   "versions": [],
+   "reviews": [
+    {
+     "argument": {
+      "premises": true,
+      "conclusions": true,
+      "evidence": true,
+      "problems": ""
+     },
+     "issues": [],
+     "summary": "Gjengivelsen er trofast avsnitt for avsnitt: alle punktene (I–V og «Til slutt»), alle delpunkter, skriftsteder, sitater og det latinske sitatet er med, med samme innhold og vekt. Henvisninger, tall og merking stemmer med kilden, og språket er naturlig, moderne bokmål. Ingen feil å rette.",
+     "score": 10,
+     "model": "claude-fable-5-2",
+     "mechanical": [],
+     "skipped": []
+    }
+   ],
+   "text": [
+    "<h>Kongen blir rasende på Haman; Haman henges i sin egen galge. (510 f.Kr.)</h>",
+    "<sup>7</sup> Og kongen reiste seg i sin vrede fra vingildet og <i>gikk</i> ut i slottshagen. Og Haman reiste seg for å be dronning Ester om sitt liv, for han så at kongen hadde besluttet ondt mot ham. <sup>8</sup> Så vendte kongen tilbake fra slottshagen til stedet for vingildet, og Haman hadde falt ned på benken der Ester <i>var.</i> Da sa kongen: Vil han også tvinge dronningen hos meg i huset? Idet ordet gikk ut av kongens munn, dekket de til Hamans ansikt. <sup>9</sup> Og Harbona, en av kammertjenerne, sa framfor kongen: Se, galgen på femti alen, som Haman har laget til Mordekai, han som talte godt for kongen, står også der i Hamans hus. Da sa kongen: Heng ham på den. <sup>10</sup> Så hengte de Haman i galgen som han hadde gjort i stand til Mordekai. Da ble kongens vrede stilnet.",
+    "Her ser vi: I. Kongen trekker seg tilbake i sinne. Han reiste seg fra bordet i voldsom opphisselse og <i>gikk ut i slottshagen</i> for å kjøle seg ned og tenke over hva som måtte gjøres, <ref osisRef=\"Esth.7.7\">v. 7</ref>. Han sendte ikke bud på sine <i>sju vise rådgivere som kjente tidene</i>. Han skammet seg over å skulle rådføre seg med dem om hvordan han kunne gjøre om det han så overilt hadde gjort uten at de visste om det eller hadde gitt råd. I stedet gikk han en stund omkring i hagen for i tankene å sammenholde det Ester nå hadde fortalt ham, med det som tidligere hadde foregått mellom ham og Haman. Og vi kan tenke oss at han var: 1. Ergerlig på seg selv, fordi han hadde vært en slik tåpe at han dømte et skyldfritt folk til undergang, og sin egen dronning sammen med de andre, på grunn av de lumpne innskytelsene fra en mann som bare tenkte på sitt eget, og uten å undersøke om påstandene hans var sanne. De som handler i egenrådighet, ser siden tilbake på det med selvbebreidelse. 2. Ergerlig på Haman, som han hadde tatt til sitt bryst, fordi han var en slik skurk at han misbrukte sin innflytelse hos kongen til å få ham til å samtykke i et så ondt tiltak. Da han så seg forrådt av en han hadde kjælt for, ble han fylt av harme mot ham. Likevel ville han ikke si noe før han hadde tatt seg tid til å tenke seg om en gang til, for å se om saken da ville ta seg bedre eller verre ut enn den gjorde først, så han kunne gå fram deretter. Når vi er sinte, bør vi stanse opp en stund før vi bestemmer oss for noe, som mennesker som har <i>herredømme over sin egen ånd</i> og lar seg styre av fornuften.",
+    "II. Haman blir en ydmyk bønnfallende som ber dronningen om sitt liv. Av måten kongen brått fór ut av rommet på, kunne han lett skjønne at <i>kongen hadde besluttet ondt mot ham.</i> For <i>en konges vrede</i>, en slik konges, <i>er som løvebrøl</i> og som <i>dødens sendebud</i>. Og se nå: 1. Hvor ynkelig Haman tar seg ut når han først reiser seg og så faller ned for Esters føtter for å trygle henne om å redde livet hans og ta alt han eier. De som er mest hovmodige, frekke og herskesyke når de har makt og medgang, er som regel de mest krypende og motløse når hjulet snur seg mot dem. Feiginger, sies det, er de grusomste, og bevisstheten om egen grusomhet gjør dem enda feigere. 2. Hvor stor Ester tar seg ut, hun som nylig var blitt tilsidesatt og dømt til slakt <i>tanquam ovis – som et får</i>. Nå innrømmer hennes svorne fiende at han er prisgitt hennes nåde, og han tigger livet sitt av hennes hånd. Slik <i>så Gud til sin tjenestekvinnes ringe kår</i> og <i>spredte de stolte i deres hjerters tanker</i>, <ref osisRef=\"Luke.1.48\">Luk 1,48</ref>.<ref osisRef=\"Luke.1.51\">51</ref>. Sammenlign dette med løftet til menigheten i Filadelfia (<ref osisRef=\"Rev.3.9\">Åp 3,9</ref>): <i>Jeg vil få dem fra Satans synagoge til å komme og tilbe for dine føtter og forstå at jeg har elsket deg.</i> Den dagen kommer da de som hater og forfølger Guds utvalgte, gjerne skulle stått i takknemlighetsgjeld til dem. <i>Gi oss av oljen deres. Far Abraham, send Lasarus. De oppriktige skal herske om morgenen.</i>",
+    "III. Kongen kommer tilbake og er enda mer forbitret på Haman. Jo mer han tenker på ham, desto verre tenker han om ham og om det han har gjort. Det er ikke lenge siden alt Haman sa og gjorde, selv det mest forbryterske, ble tatt godt opp og tolket til hans fordel. Nå er det omvendt: Det Haman gjør, som ikke bare er uskyldig, men et tegn på anger, blir tatt ille opp og uten skygge av grunn tolket til hans ulempe. Han lå i redsel ved Esters føtter for å be for livet. Hva! (sier kongen) <i>Vil han også tvinge dronningen hos meg i huset?</i> Ikke at kongen trodde han hadde noen slik hensikt. Men han hadde gått og grublet over Hamans plan om å drepe dronningen, og da han fant ham i denne stillingen, grep han anledningen til å få utløp for sitt raseri mot Haman, som en mann som ikke ville ha betenkeligheter med den største og frekkeste ondskap. «Han hadde tenkt å drepe dronningen, og å drepe henne <i>hos meg i huset</i>. Vil han på samme måte tvinge henne? Hva! Først voldta henne og så myrde henne? Den som hadde planer mot hennes liv, kan godt mistenkes for å ha planer mot hennes kyskhet.»",
+    "IV. De som var omkring ham, var rede til å være redskaper for hans vrede. Hoffmennene som tilba Haman da han var den oppgående sol, vender seg like sterkt mot ham nå som han er en fallende stjerne, og de er til og med glade for en anledning til å rakke ned på ham. Så lite sikre kan stolte mennesker være på den stillingen de tror de har hos andre. 1. Så snart kongen sa et sint ord, <i>dekket de til Hamans ansikt</i>, som på en dødsdømt, en som ikke lenger var verdig verken til å se kongen eller til å bli sett av ham. De merket ham for henrettelse. De som blir hengt, får vanligvis ansiktet tildekket. Se hvor raske tjenerne var til å oppfatte det første vinket om hva kongen mente i denne saken. <i>Turba Romae sequitur fortunam, et semper et odit damnatos – Roms folkemengde skifter slik lykken skifter ansikt, og undertrykker alltid de falne.</i> Er Haman på vei ned, roper alle: «Ned med ham.» 2. En av dem som nylig var blitt sendt til Hamans hus for å hente ham til gjestebudet, fortalte kongen om galgen Haman hadde gjort i stand til Mordekai, <ref osisRef=\"Esth.7.9\">v. 9</ref>. Nå som Mordekai er yndlingen, roser kammertjeneren ham: Han <i>talte godt for kongen</i>. Og siden Haman er i unåde, blir alt lagt merke til som kan tale mot ham, egge kongen opp mot ham og fylle hans misgjernings mål.",
+    "V. Kongen ga ordre om at han skulle henges i sin egen galge, og slik ble det gjort. Han ble ikke engang spurt om hva han hadde å si til at denne dommen ikke skulle felles over ham og fullbyrdes. Dommen er kort: <i>Heng ham på den.</i> Og fullbyrdelsen er rask: <i>Så hengte de Haman i galgen</i>, <ref osisRef=\"Esth.7.10\">v. 10</ref>. Se her: 1. Stolthet som blir styrtet. Han som ventet at alle skulle hylle ham, blir nå gjort til et vanærende skue for verden, og selv blir han ofret for sin hevnlyst. Gud står de stolte imot, og de han står imot, vil finne at han er uimotståelig. 2. Forfølgelse som blir straffet. Haman var på mange måter en ond mann, men fiendskapet mot Guds kirke var hans mest utfordrende forbrytelse. For <i>den</i> er det Gud, han som hevnen hører til, her holder oppgjør med ham. Og selv om planen hans ble forpurret, gir Gud ham <i>etter ondskapen i hans forsøk</i>, <ref osisRef=\"Ps.28.4\">Sal 28,4</ref>. 3. Ulykke som faller tilbake på den som pønsket den ut, <i>den onde fanget i sine egne henders verk</i>, <ref osisRef=\"Ps.7.15-Ps.7.16\">Sal 7,15–16</ref>; <ref osisRef=\"Ps.9.15-Ps.9.16\">9,15–16</ref>. Haman ble med rette hengt i nettopp den galgen han med urette hadde gjort i stand til Mordekai. Hadde han ikke reist den galgen, ville kongen kanskje ikke ha tenkt på å la ham henge. Men når han reiser en galge for <i>den mannen kongen gjerne vil ære</i>, er tanken svært nærliggende at han selv skal få ordre om å prøve den, og se hvordan den passer ham og hvordan han liker den. Slik er fiendene av Guds kirke ofte blitt fanget i sin egen list. Om morgenen tiltenkte Haman seg selv æresdrakten og Mordekai galgen. Men rollene er byttet om: Mordekai får kronen, Haman korset. <i>Herren blir kjent ved slike dommer.</i> Se <ref osisRef=\"Prov.11.8\">Ordsp 11,8</ref>; <ref osisRef=\"Prov.21.18\">21,18</ref>.",
+    "<i>Til slutt</i>: den tilfredsstillelsen kongen fikk av denne henrettelsen. <i>Da ble kongens vrede stilnet</i>, og ikke før. Han var like fornøyd med å gi ordre om at Haman skulle henges, som med å gi ordre om at Mordekai skulle æres. Slik skal det gjøres med den mannen kongen gjerne vil ta hevn over. Gud sier om de onde (<ref osisRef=\"Ezek.5.13\">Esek 5,13</ref>): <i>Jeg vil la min harme hvile over dem, og jeg vil bli trøstet.</i>"
+   ],
+   "translator": "claude-fable-5-2",
+   "model": "claude-fable-5-2"
+  }
+ ]
+}
