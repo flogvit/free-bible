@@ -7,8 +7,8 @@
    "section": 0,
    "start": 0,
    "end": 1,
-   "status": "draft",
-   "rounds": 2,
+   "status": "stuck",
+   "rounds": 3,
    "attempts": 0,
    "versions": [],
    "reviews": [
@@ -43,13 +43,79 @@
       "paragraph 1: chapter: not in source 1"
      ],
      "skipped": []
+    },
+    {
+     "argument": {
+      "premises": true,
+      "conclusions": true,
+      "evidence": true,
+      "problems": ""
+     },
+     "issues": [],
+     "summary": "Gjengivelsen er trofast og i godt, naturlig bokmål. Alle påstander, henvisninger og disposisjonen (I–III) er bevart med uendrede osisRef. Den mekaniske advarselen er falsk alarm: tallene i henvisningene stemmer med kilden (1 Kong 10, kap. 11, 1 Kong 11,41–43). Den ufullstendige setningen om vers 25 er defekt allerede i kilden og er korrekt gjengitt uten at noen henvisning er lagt til.",
+     "score": 10,
+     "model": "claude-fable-5-2",
+     "mechanical": [
+      "paragraph 1: chapter: not in source 1"
+     ],
+     "skipped": []
+    },
+    {
+     "argument": {
+      "premises": true,
+      "conclusions": true,
+      "evidence": true,
+      "problems": ""
+     },
+     "issues": [],
+     "summary": "Gjengivelsen er trofast og idiomatisk. Alle påstander, henvisninger og osisRef-verdier stemmer med kilden, og tredelingen I–III er bevart. Den mekaniske advarselen er falsk alarm: «kap. 11» svarer til «ch. xi.», og ingen henvisning er lagt til. Det forkludrede stedet i kilden («vers 25 her er hentet fra de tre siste versene her fra …») er korrekt gjengitt som det står, uten utfylling.",
+     "score": 10,
+     "model": "claude-fable-5-2",
+     "mechanical": [
+      "paragraph 1: chapter: not in source 1"
+     ],
+     "skipped": []
+    },
+    {
+     "argument": {
+      "premises": true,
+      "conclusions": true,
+      "evidence": true,
+      "problems": ""
+     },
+     "issues": [],
+     "summary": "Gjengivelsen er trofast og i godt, naturlig bokmål. Alle påstander, henvisninger og osisRef-verdier stemmer med kilden. Den mekaniske advarselen er falsk alarm: «1 Kong 10» og «kap. 11» gjengir kildens romertall «1 Kings x.» og «ch. xi.» korrekt. Kildens ufullstendige formulering «verse 25 here is taken from last three verses here from …» er beholdt som den står, uten at noen henvisning er lagt til, slik oppdraget krever.",
+     "score": 10,
+     "model": "claude-fable-5-2",
+     "mechanical": [
+      "paragraph 1: chapter: not in source 1"
+     ],
+     "skipped": []
+    },
+    {
+     "argument": {
+      "premises": true,
+      "conclusions": true,
+      "evidence": true,
+      "problems": ""
+     },
+     "issues": [],
+     "summary": "Gjengivelsen er trofast og idiomatisk. Alle påstander, sammenligningen med 1 Kong 10, merknaden om det utelatte frafallet og tredelingen av kapitlet er med, og alle osisRef står uendret. Den mekaniske advarselen er falsk alarm: «1 Kong 10» og «kap. 11» svarer til kildens «1 Kings x.» og «ch. xi.» i romertall. Den uklare formuleringen «vers 25 her er hentet fra de tre siste versene her fra …» gjenspeiler en lakune i kilden og er riktig gjengitt uten tilføyelser.",
+     "score": 10,
+     "model": "claude-fable-5-2",
+     "mechanical": [
+      "paragraph 1: chapter: not in source 1"
+     ],
+     "skipped": []
     }
    ],
    "text": [
     "Salomo fremstår fortsatt som stor, både hjemme og ute. Denne skildringen av hans storhet hadde vi i <ref osisRef=\"1Kgs.10.1-1Kgs.10.29\">1 Kong 10</ref>. Ingenting er lagt til her. Men frafallet hans mot slutten av livet, som vi finner der (<ref osisRef=\"1Kgs.11.1-1Kgs.11.43\">kap. 11</ref>), er utelatt her, og slutten av dette kapitlet følger ham til graven med et uplettet ettermæle. Kanskje stemmer ingen av kapitlene i Krønikebøkene så godt overens med et kapittel i Kongebøkene som dette gjør med <ref osisRef=\"1Kgs.10.1-1Kgs.10.29\">1 Kong 10</ref>, vers for vers. Den eneste forskjellen er at <ref osisRef=\"1Kgs.10.1-1Kgs.10.2 2Chr.9.1\">de to første versene der</ref> er slått sammen til ett her, og at <ref osisRef=\"2Chr.9.25 1Kgs.4.26\">vers 25</ref> her er hentet fra <ref osisRef=\"2Chr.9.29-2Chr.9.31 1Kgs.11.41-1Kgs.11.43\">de tre siste versene</ref> her fra <ref osisRef=\"1Kgs.11.41-1Kgs.11.43 2Chr.9.29-2Chr.9.31\">1 Kong 11,41–43</ref>. Her har vi: I. Den æren dronningen av Saba viste Salomo da hun besøkte ham for å høre hans visdom, <ref osisRef=\"2Chr.9.1-2Chr.9.12\">v. 1–12</ref>. II. Mange eksempler på rikdommen og prakten ved Salomos hoff, <ref osisRef=\"2Chr.9.13-2Chr.9.28\">v. 13–28</ref>. III. Avslutningen på hans regjeringstid, <ref osisRef=\"2Chr.9.29-2Chr.9.31\">v. 29–31</ref>."
    ],
    "translator": "claude-fable-5-2",
-   "model": "claude-fable-5-2"
+   "model": "claude-fable-5-2",
+   "note": "not clean after 3 reviews",
+   "retried": true
   },
   {
    "id": "14-9-1-0",
