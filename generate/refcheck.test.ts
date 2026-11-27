@@ -46,6 +46,15 @@ describe('referenceProblems', () => {
         expect(blocking('see ch. ii', 'se kap. 3')).toEqual(['chapter']);
     });
 
+    test('«kapittel i» is the preposition, and «11 s. 10» is shillings, not a page (#173)', () => {
+        // 8-2-0-0, 14-9-0-0 and 11-16-2-0: each held Ruth, 2 Chronicles and 1 Kings back through six passed reviews.
+        expect(blocking('There is scarcely any chapter in all the sacred history', 'Det finnes knapt noe kapittel i hele den hellige historien')).toEqual([]);
+        expect(blocking('with a chapter in the Kings', 'med et kapittel i Kongebøkene')).toEqual([]);
+        expect(blocking('a talent was 353<i>l.</i> 11<i>s.</i> 10 1/2<i>d.</i>', 'en talent var 353 <i>pund</i> 11 <i>shilling</i> 10 1/2 <i>pence.</i>')).toEqual([]);
+        expect(blocking('see ch. xi', 'se kapittel 12')).toEqual(['chapter']);
+        expect(blocking('Temple, p. 329', 'Temple, s. 239')).toEqual(['page']);
+    });
+
     test('plain chapter:verse pairs and bare numbers are advisory', () => {
         const p = referenceProblems('Is 34:11', 'Jes 34,12');
         expect(p.map(x => [x.kind, x.blocking])).toEqual([['pair', false]]);

@@ -23,11 +23,12 @@
  *   4. gate      a unit is `checked` when a review finds nothing critical or major, keeps the
  *                argument, and the mechanical checks pass (same paragraph count; refcheck.ts:
  *                every reference, verse number, §, page and chapter number as in the source).
- *                After --rounds reviews without that it is `stuck`; it gets new rounds once
- *                before the window leaves its book, and the book stays unpublished until it passes.
- *   5. publish   a book whose units are all checked is written to
+ *                After --rounds reviews without that it is `stuck`; it is sent once more, with what
+ *                its last review found, before the window leaves its book.
+ *   5. publish   a book whose units are all checked, or stuck after that last send, is written to
  *                generate/commentary/<work>/<language>/<book>/<chapter>.json, the same shape
- *                as the source with the model(s) that wrote and checked each section.
+ *                as the source with the model(s) that wrote and checked each section. A stuck unit is
+ *                published marked as not checked (`unchecked`), in its English if it has no rendering.
  *
  * Money: only the key Dux gives the session, DUX_ANTHROPIC_API_KEY — never ANTHROPIC_API_KEY
  * (Claude Code's own) and never generate/.env. When the API says the credit is used up, the
@@ -146,6 +147,8 @@ export interface Section {
     to: number;
     paragraphs: string[];
     models?: string[];        // rendered files only: who wrote and checked it
+    /** Rendered files only: paragraphs [start, end) that never passed the checks; `english` = shown in the source's words. */
+    unchecked?: {start: number; end: number; english?: true}[];
 }
 
 export interface ChapterFile {
@@ -189,7 +192,7 @@ export interface Unit {
     versions: {text: string[]; explanation: string; model: string}[];
     reviews: (Review & {model: string; mechanical: string[]; skipped: string[]})[];
     note?: string;            // why it is stuck
-    retried?: boolean;        // stuck once and given new rounds before its book was left (#163)
+    retried?: boolean;        // stuck once and sent once more (`lastSend`); stuck again, it is published unchecked (#173)
 }
 
 interface ChapterState { book: number; chapter: number; units: Unit[] }
@@ -279,6 +282,17 @@ export function recheck(u: Unit, source: string[]): Unit {
     return passes(last, mechanicalProblems(source, u.text)) ? {...u, status: 'checked', note: undefined} : u;
 }
 
+/** A unit with nothing more to send: checked, or stuck after its last send. */
+export const settled = (u: Unit) => u.status === 'checked' || (u.status === 'stuck' && !!u.retried);
+
+/**
+ * A stuck unit sent once more (#173): one review that is told what the last one found, or, with no rendering yet,
+ * one more translation. Still not clean after it, the unit is settled and its book is published with it unchecked.
+ */
+export function lastSend(u: Unit, maxRounds: number): Unit {
+    return {...u, status: u.text ? 'draft' : 'new', rounds: maxRounds - 1, attempts: MAX_ATTEMPTS - 1, note: undefined, retried: true};
+}
+
 /** The unit after one review: findings applied, then checked, another round, or stuck. */
 export function afterReview(u: Unit, source: string[], review: Review, model: string, maxRounds: number): Unit {
     const {text, skipped} = applyFindings(u.text!, review.issues);
@@ -365,6 +379,13 @@ export function reviewPrompt(w: Work, lang: string, file: ChapterFile, u: Unit):
     const advisory = source.flatMap((s, i) => referenceProblems(s, u.text![i] ?? '')
         .filter(p => !p.blocking).map(p => `avsnitt ${i + 1}: ${formatProblem(p)}`));
     const found = [...mechanical, ...advisory];
+    // On its last send a unit carries what its last review found: findings, the argument, and quotes that did not match.
+    const last = u.retried ? u.reviews.at(-1) : undefined;
+    const earlier = last ? [
+        ...last.issues.map(i => `[${i.severity}] avsnitt ${i.paragraph}: ${i.explanation}`),
+        ...(last.argument.problems ? [`argumentasjonen: ${last.argument.problems}`] : []),
+        ...last.skipped.map(x => `ikke rettet, sitatet stemte ikke: ${x}`),
+    ] : [];
     return {
         fixed: `Du er korrekturleser for en gjengivelse av ${w.describe} på ${LANGUAGES[lang]}.
 
@@ -383,7 +404,7 @@ Send aldri hele avsnitt. Fri, naturlig norsk er en del av oppdraget og er ikke e
 Alvorlighet: critical = meningen er feil, eller innhold mangler eller er lagt til; major = en henvisning, et tall, et belegg eller en nyanse som argumentet hviler på, er feil; minor = språk og stil som er galt, ikke bare annerledes.
 Er gjengivelsen god, er «issues» tom. «score» 0–10, der 10 er trofast og godt språk uten noe igjen.`,
         unit: `Teksten er fra ${where(file, u)}.
-${found.length ? `\nMekanisk sjekk av henvisningene (tall som ikke stemmer med kilden — vurder hver og rett det som er feil):\n${found.map(f => '- ' + f).join('\n')}\n` : ''}
+${found.length ? `\nMekanisk sjekk av henvisningene (tall som ikke stemmer med kilden — vurder hver og rett det som er feil):\n${found.map(f => '- ' + f).join('\n')}\n` : ''}${earlier.length ? `\nDen forrige gjennomgangen fant dette. Se om hvert punkt fortsatt gjelder, og rett det som gjør det, med et sitat som står nøyaktig slik i gjengivelsen:\n${earlier.map(f => '- ' + f).join('\n')}\n` : ''}
 KILDE (${source.length} avsnitt):
 ${numbered(source)}
 
@@ -726,33 +747,47 @@ function chunk<T>(items: T[], size: (t: T) => number): T[][] {
 // ---------------------------------------------------------------- publishing
 
 /**
- * Write a book's rendered chapters once every unit in it is checked — only the files whose
- * content changed, so a later pass republishes exactly what it changed. True if anything
- * was written.
+ * A book's rendered chapters, once every unit in it is settled: a stuck one is marked `unchecked`, and shown in the
+ * source's words if it has no rendering (#173: a book is not left behind for one unit). Undefined while work is left.
  */
-export function publishBook(store: Store, book: number): boolean {
-    const states = [...store.states.values()].filter(s => s.book === book);
-    if (!states.length || states.some(s => s.units.some(u => u.status !== 'checked'))) return false;
-    const p = paths(store.work, store.lang);
-    const models = new Set<string>();
-    let changed = false;
-    for (const state of states) {
-        const src = store.sources.get(`${state.book}-${state.chapter}`)!;
+export function bookFiles(states: ChapterState[], sources: Map<string, ChapterFile>, lang: string): ChapterFile[] | undefined {
+    if (!states.length || !states.every(s => s.units.every(settled))) return undefined;
+    return states.map(state => {
+        const src = sources.get(`${state.book}-${state.chapter}`)!;
         const sections: Section[] = src.sections.map((s, si) => {
             const us = state.units.filter(u => u.section === si).sort((a, b) => a.start - b.start);
-            const sm = [...new Set(us.flatMap(u => [u.translator!, u.model!]))];
-            sm.forEach(m => models.add(m));
-            return {from: s.from, to: s.to, paragraphs: us.flatMap(u => u.text!), models: sm};
+            const unchecked = us.filter(u => u.status !== 'checked').map(u => ({start: u.start, end: u.end, ...(u.text ? {} : {english: true as const})}));
+            return {
+                from: s.from, to: s.to,
+                paragraphs: us.flatMap(u => u.text ?? sourceOf(src, u)),
+                models: [...new Set(us.flatMap(u => [u.translator, u.model]).filter((m): m is string => !!m))],
+                ...(unchecked.length ? {unchecked} : {}),
+            };
         });
-        const file: ChapterFile = {work: store.work, language: store.lang, source: src.language, book: state.book, chapter: state.chapter, sections};
-        const out = p.out(state.book, state.chapter);
+        return {work: src.work, language: lang, source: src.language, book: state.book, chapter: state.chapter, sections};
+    });
+}
+
+/**
+ * Write a book's rendered chapters (`bookFiles`) — only the files whose content changed, so a later pass
+ * republishes exactly what it changed. True if anything was written.
+ */
+export function publishBook(store: Store, book: number): boolean {
+    const files = bookFiles([...store.states.values()].filter(s => s.book === book), store.sources, store.lang);
+    if (!files) return false;
+    const p = paths(store.work, store.lang);
+    let changed = false;
+    for (const file of files) {
+        const out = p.out(file.book, file.chapter);
         if (fs.existsSync(out) && JSON.stringify(readJson(out)) === JSON.stringify(file)) continue;
         writeJson(out, file);
         changed = true;
     }
     if (!changed) return false;
+    const sections = files.flatMap(f => f.sections);
+    const unchecked = sections.reduce((a, s) => a + (s.unchecked?.length ?? 0), 0);
     const books = fs.existsSync(p.outIndex) ? readJson<{books: Record<string, unknown>}>(p.outIndex).books : {};
-    books[book] = {published: new Date().toISOString().slice(0, 10), models: [...models]};
+    books[book] = {published: new Date().toISOString().slice(0, 10), models: [...new Set(sections.flatMap(s => s.models ?? []))], ...(unchecked ? {unchecked} : {})};
     writeJson(p.outIndex, {work: store.work, language: store.lang, source: WORKS[store.work].language, books});
     return true;
 }
@@ -864,14 +899,13 @@ async function main() {
         for (const b of allBooks) if (publishBook(store, b)) console.log(`publisert: bok ${b}`);
 
         // 3. the window: the first --books books with work left. A book with stuck units is not done (#163: «en bok
-        // ferdig før vi starter på en ny»): each stuck unit gets new rounds once. One stuck again leaves the book
-        // unpublished and named in the report, and the window moves on: a book with nothing left to send held the job
-        // still from 26.11 16:56 with $45 of the month's credit unused.
-        const workLeft = (u: Unit) => u.status !== 'checked' && !(u.status === 'stuck' && u.retried);
-        const window = allBooks.filter(b => store.bookUnits(b).some(workLeft)).slice(0, flags.books as number);
+        // ferdig før vi starter på en ny»): each stuck unit is sent once more with what its review found. Stuck again,
+        // it is settled: its book is published with it marked unchecked, and the window moves on (#173: one stuck unit
+        // each kept Ruth, 1 Kings and 2 Chronicles from the reader).
+        const window = allBooks.filter(b => !store.bookUnits(b).every(settled)).slice(0, flags.books as number);
         for (const u of window.flatMap(b => store.bookUnits(b)).filter(u => u.status === 'stuck' && !u.retried)) {
-            store.put(u.id, {...u, status: u.text ? 'draft' : 'new', rounds: 0, attempts: 0, note: undefined, retried: true});
-            console.log(`  ${u.id}: fast (${u.note}), får nye runder`);
+            store.put(u.id, lastSend(u, maxRounds));
+            console.log(`  ${u.id}: fast (${u.note}), sendes en gang til med det gjennomgangen fant`);
         }
         store.save();
         const inFlight = new Set(store.pending.flatMap(p => p.units));
@@ -940,7 +974,7 @@ async function main() {
         if (!store.pending.length && !next.length) {
             report(store, allBooks);
             const stuck = store.allUnits().filter(u => u.status === 'stuck');
-            console.log(stuck.length ? `ferdig, men ${stuck.length} enheter står fast (--retry-stuck gir dem nye runder)` : 'ferdig');
+            console.log(stuck.length ? `ferdig, men ${stuck.length} enheter står fast og er publisert ukontrollert (--retry-stuck gir dem nye runder)` : 'ferdig');
             return 0;
         }
         if (flags.once || (flags.minutes && Date.now() + POLL_MS > startedAt + (flags.minutes as number) * 60_000)) { report(store, window); return 0; }
