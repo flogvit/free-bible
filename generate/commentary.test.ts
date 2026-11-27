@@ -1,6 +1,6 @@
 import {describe, expect, test} from 'bun:test';
 import {
-    afterReview, afterTranslation, applyFindings, chaptersFromEntries, costOf, isCreditExhausted,
+    apiAccounts, spentIn, afterReview, afterTranslation, applyFindings, chaptersFromEntries, costOf, isCreditExhausted,
     mechanicalProblems, nextRequests, osisToParagraphs, recheck, reviewPrompt, splitParagraphs, translatePrompt, WORKS, worstCase,
     type Review, type Unit,
 } from './commentary.js';
@@ -181,4 +181,24 @@ test('a stuck unit its review passed is checked once the reference check no long
     expect(recheck(u, ['Ps. civ. 25 , ch. 2. The blessing']).status).toBe('stuck');
     const major = {...passed, issues: [{paragraph: 1, quote: 'x', replacement: 'y', type: 't', severity: 'major', explanation: ''}]};
     expect(recheck({...u, reviews: [major]}, ['Ps. civ. 25 , &amp;c. 2. The blessing']).status).toBe('stuck');
+});
+
+test('the API accounts come in their order, each with a name, and only from the keys Dux gives', () => {
+    expect(apiAccounts({DUX_ANTHROPIC_API_KEYS: 'vhanssen-menneske.no\tsk-a\twrkspc_1\nother\tsk-b\t\n', ANTHROPIC_API_KEY: 'never'}))
+        .toEqual([{name: 'vhanssen-menneske.no', key: 'sk-a', workspace: 'wrkspc_1'}, {name: 'other', key: 'sk-b', workspace: undefined}]);
+    expect(apiAccounts({DUX_ANTHROPIC_API_KEY: 'sk-a', DUX_ANTHROPIC_WORKSPACE_ID: 'wrkspc_1'})).toEqual([{name: 'default', key: 'sk-a', workspace: 'wrkspc_1'}]);
+    expect(apiAccounts({ANTHROPIC_API_KEY: 'never'})).toEqual([]);
+});
+
+test('each account has its own month: rows from before accounts were named are the first one\'s', () => {
+    const now = new Date('2026-11-26T20:00:00Z');
+    const rows = [
+        {usd: 150, ended: '2026-11-20T10:00:00Z'},                              // before rows named their account
+        {usd: 40, ended: '2026-11-26T18:00:00Z', account: 'vhanssen-menneske.no'},
+        {usd: 5, ended: '2026-11-26T19:00:00Z', account: 'other'},
+        {usd: 99, ended: '2026-10-31T23:00:00Z', account: 'other'},             // last month
+    ];
+    expect(spentIn(rows, now, 'vhanssen-menneske.no', 'vhanssen-menneske.no')).toBe(190);
+    expect(spentIn(rows, now, 'other', 'vhanssen-menneske.no')).toBe(5);
+    expect(spentIn(rows, now)).toBe(195);
 });
