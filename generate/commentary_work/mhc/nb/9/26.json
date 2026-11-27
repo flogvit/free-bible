@@ -7,13 +7,45 @@
    "section": 0,
    "start": 0,
    "end": 1,
-   "status": "draft",
-   "rounds": 0,
+   "status": "checked",
+   "rounds": 1,
    "attempts": 0,
-   "versions": [],
-   "reviews": [],
+   "versions": [
+    {
+     "text": [
+      "Her begynner Davids vanskeligheter med Saul på nytt. Skyene kommer tilbake etter regnet, nettopp da en kunne ha håpet at uværet var drevet over og himmelen hadde klarnet på den kanten. Saul hadde innrømmet at det var galt av ham å forfølge David, og han hadde erkjent Davids rett til kronen. Likevel tar han her opp forfølgelsen igjen, så fullstendig hadde han mistet all sans for ære og dyd. I. Sifittene meldte fra til ham om hvor David var (<ref osisRef=\"1Sam.26.1\">v. 1</ref>), og dermed rykket han ut med en betydelig styrke for å lete etter ham, <ref osisRef=\"1Sam.26.2-1Sam.26.3\">v. 2–3</ref>. II. David fikk kjennskap til bevegelsene hans (<ref osisRef=\"1Sam.26.4\">v. 4</ref>) og tok leiren hans i øyesyn, <ref osisRef=\"1Sam.26.5\">v. 5</ref>. III. Sammen med en av mennene sine våget han seg om natten inn i leiren og fant både Saul og hele vaktstyrken hans i dyp søvn, <ref osisRef=\"1Sam.26.6-1Sam.26.7\">v. 6–7</ref>. IV. Selv om følgesvennen presset hardt på, ville David ikke ta livet av Saul. Han tok bare med seg spydet og vannkrukken hans, <ref osisRef=\"1Sam.26.8-1Sam.26.12\">v. 8–12</ref>. V. Disse la han fram som enda et vitnesbyrd om at han ikke hadde noe ondt i sinne mot Saul, og han gikk i rette med ham for måten han hadde opptrådt på, <ref osisRef=\"1Sam.26.13-1Sam.26.20\">v. 13–20</ref>. VI. Slik ble Saul overbevist om at han hadde tatt feil, og enda en gang holdt han opp med å forfølge David, <ref osisRef=\"1Sam.26.21-1Sam.26.25\">v. 21–25</ref>. Fortellingen ligner mye på den vi hadde tidligere (<ref osisRef=\"1Sam.24.1-1Sam.24.22\">kap. 24</ref>). I begge blir David berget ut av Sauls hånd, og Saul ut av Davids."
+     ],
+     "explanation": "Kilden har flertall («by his companions»). Gjengivelsen har entall og retter dermed stilltiende på kilden. «Urged to it» bør også komme tydelig fram.",
+     "model": "claude-fable-5-2"
+    }
+   ],
+   "reviews": [
+    {
+     "argument": {
+      "premises": true,
+      "conclusions": true,
+      "evidence": true,
+      "problems": "Alle seks punktene i oversikten, sammenligningen med kap. 24 og alle vershenvisningene er bevart med samme innhold og vekt. Eneste avvik er at kildens flertall «companions» i punkt IV er gjengitt i entall («følgesvennen»)."
+     },
+     "issues": [
+      {
+       "paragraph": 1,
+       "quote": "følgesvennen presset hardt på",
+       "replacement": "følgesvennene presset ham hardt til det",
+       "type": "meaning",
+       "severity": "minor",
+       "explanation": "Kilden har flertall («by his companions»). Gjengivelsen har entall og retter dermed stilltiende på kilden. «Urged to it» bør også komme tydelig fram."
+      }
+     ],
+     "summary": "Trofast og naturlig gjengivelse på godt bokmål. Alle henvisninger, osisRef-verdier og merking er korrekte. Bare ett lite avvik: «companions» er gjengitt i entall.",
+     "score": 9,
+     "model": "claude-fable-5-2",
+     "mechanical": [],
+     "skipped": []
+    }
+   ],
    "text": [
-    "Her begynner Davids vanskeligheter med Saul på nytt. Skyene kommer tilbake etter regnet, nettopp da en kunne ha håpet at uværet var drevet over og himmelen hadde klarnet på den kanten. Saul hadde innrømmet at det var galt av ham å forfølge David, og han hadde erkjent Davids rett til kronen. Likevel tar han her opp forfølgelsen igjen, så fullstendig hadde han mistet all sans for ære og dyd. I. Sifittene meldte fra til ham om hvor David var (<ref osisRef=\"1Sam.26.1\">v. 1</ref>), og dermed rykket han ut med en betydelig styrke for å lete etter ham, <ref osisRef=\"1Sam.26.2-1Sam.26.3\">v. 2–3</ref>. II. David fikk kjennskap til bevegelsene hans (<ref osisRef=\"1Sam.26.4\">v. 4</ref>) og tok leiren hans i øyesyn, <ref osisRef=\"1Sam.26.5\">v. 5</ref>. III. Sammen med en av mennene sine våget han seg om natten inn i leiren og fant både Saul og hele vaktstyrken hans i dyp søvn, <ref osisRef=\"1Sam.26.6-1Sam.26.7\">v. 6–7</ref>. IV. Selv om følgesvennen presset hardt på, ville David ikke ta livet av Saul. Han tok bare med seg spydet og vannkrukken hans, <ref osisRef=\"1Sam.26.8-1Sam.26.12\">v. 8–12</ref>. V. Disse la han fram som enda et vitnesbyrd om at han ikke hadde noe ondt i sinne mot Saul, og han gikk i rette med ham for måten han hadde opptrådt på, <ref osisRef=\"1Sam.26.13-1Sam.26.20\">v. 13–20</ref>. VI. Slik ble Saul overbevist om at han hadde tatt feil, og enda en gang holdt han opp med å forfølge David, <ref osisRef=\"1Sam.26.21-1Sam.26.25\">v. 21–25</ref>. Fortellingen ligner mye på den vi hadde tidligere (<ref osisRef=\"1Sam.24.1-1Sam.24.22\">kap. 24</ref>). I begge blir David berget ut av Sauls hånd, og Saul ut av Davids."
+    "Her begynner Davids vanskeligheter med Saul på nytt. Skyene kommer tilbake etter regnet, nettopp da en kunne ha håpet at uværet var drevet over og himmelen hadde klarnet på den kanten. Saul hadde innrømmet at det var galt av ham å forfølge David, og han hadde erkjent Davids rett til kronen. Likevel tar han her opp forfølgelsen igjen, så fullstendig hadde han mistet all sans for ære og dyd. I. Sifittene meldte fra til ham om hvor David var (<ref osisRef=\"1Sam.26.1\">v. 1</ref>), og dermed rykket han ut med en betydelig styrke for å lete etter ham, <ref osisRef=\"1Sam.26.2-1Sam.26.3\">v. 2–3</ref>. II. David fikk kjennskap til bevegelsene hans (<ref osisRef=\"1Sam.26.4\">v. 4</ref>) og tok leiren hans i øyesyn, <ref osisRef=\"1Sam.26.5\">v. 5</ref>. III. Sammen med en av mennene sine våget han seg om natten inn i leiren og fant både Saul og hele vaktstyrken hans i dyp søvn, <ref osisRef=\"1Sam.26.6-1Sam.26.7\">v. 6–7</ref>. IV. Selv om følgesvennene presset ham hardt til det, ville David ikke ta livet av Saul. Han tok bare med seg spydet og vannkrukken hans, <ref osisRef=\"1Sam.26.8-1Sam.26.12\">v. 8–12</ref>. V. Disse la han fram som enda et vitnesbyrd om at han ikke hadde noe ondt i sinne mot Saul, og han gikk i rette med ham for måten han hadde opptrådt på, <ref osisRef=\"1Sam.26.13-1Sam.26.20\">v. 13–20</ref>. VI. Slik ble Saul overbevist om at han hadde tatt feil, og enda en gang holdt han opp med å forfølge David, <ref osisRef=\"1Sam.26.21-1Sam.26.25\">v. 21–25</ref>. Fortellingen ligner mye på den vi hadde tidligere (<ref osisRef=\"1Sam.24.1-1Sam.24.22\">kap. 24</ref>). I begge blir David berget ut av Sauls hånd, og Saul ut av Davids."
    ],
    "translator": "claude-fable-5-2",
    "model": "claude-fable-5-2"
@@ -23,11 +55,26 @@
    "section": 1,
    "start": 0,
    "end": 4,
-   "status": "draft",
-   "rounds": 0,
+   "status": "checked",
+   "rounds": 1,
    "attempts": 0,
    "versions": [],
-   "reviews": [],
+   "reviews": [
+    {
+     "argument": {
+      "premises": true,
+      "conclusions": true,
+      "evidence": true,
+      "problems": ""
+     },
+     "issues": [],
+     "summary": "Gjengivelsen er trofast og på naturlig bokmål. Alle resonnementer, skriftsteder, henvisninger og all merking er bevart, og jeg fant ingen feil å rette.",
+     "score": 10,
+     "model": "claude-fable-5-2",
+     "mechanical": [],
+     "skipped": []
+    }
+   ],
    "text": [
     "<h>Saul forfølger David på nytt. (1056 f.Kr.)</h>",
     "<sup>1</sup> Og sifittene kom til Saul i Gibea og sa: Holder ikke David seg skjult på Hakila-høyden, <i>som ligger</i> rett overfor Jesjimon? <sup>2</sup> Da brøt Saul opp og dro ned til Sif-ørkenen, og han hadde med seg tre tusen utvalgte menn av Israel, for å lete etter David i Sif-ørkenen. <sup>3</sup> Og Saul slo leir på Hakila-høyden, som <i>ligger</i> rett overfor Jesjimon, ved veien. Men David holdt seg i ørkenen, og han så at Saul kom etter ham ut i ørkenen. <sup>4</sup> Derfor sendte David ut speidere og fikk vite at Saul virkelig var kommet. <sup>5</sup> Og David brøt opp og kom til stedet der Saul hadde slått leir, og David så stedet der Saul lå, og Abner, sønn av Ner, hærføreren hans. Saul lå innenfor forskansningen, og folket hadde slått leir rundt ham.",
@@ -42,18 +89,56 @@
    "section": 2,
    "start": 0,
    "end": 7,
-   "status": "draft",
-   "rounds": 0,
+   "status": "checked",
+   "rounds": 1,
    "attempts": 0,
-   "versions": [],
-   "reviews": [],
+   "versions": [
+    {
+     "text": [
+      "<h>David sparer Sauls liv. (1056 f.Kr.)</h>",
+      "<sup>6</sup> Da tok David til orde og sa til hetitten Ahimelek og til Abisjai, Serujas sønn, bror til Joab: Hvem vil gå ned med meg til Saul i leiren? Og Abisjai sa: Jeg vil gå ned med deg. <sup>7</sup> Så kom David og Abisjai til folket om natten, og se, Saul lå og sov innenfor vollgraven, og spydet hans sto stukket i jorden ved hodegjerdet hans; men Abner og folket lå rundt omkring ham. <sup>8</sup> Da sa Abisjai til David: Gud har i dag gitt din fiende i din hånd. La meg derfor nå, ber jeg deg, slå ham med spydet helt ned i jorden med ett eneste støt; jeg skal ikke <i>slå</i> ham en gang til. <sup>9</sup> Men David sa til Abisjai: Drep ham ikke! For hvem kan rekke ut sin hånd mot Herrens salvede og være uten skyld? <sup>10</sup> Og David sa videre: <i>Så sant</i> Herren lever: Herren skal slå ham; eller hans dag skal komme da han må dø; eller han skal dra ned i striden og omkomme. <sup>11</sup> Herren forby at jeg skulle rekke ut min hånd mot Herrens salvede! Men ta nå, ber jeg deg, spydet som <i>står</i> ved hodegjerdet hans, og vannkrukken, og la oss gå. <sup>12</sup> Så tok David spydet og vannkrukken fra Sauls hodegjerde, og de kom seg bort. Ingen så <i>det</i>, og ingen merket <i>det</i>, og ingen våknet; for de <i>sov</i> alle sammen, fordi en dyp søvn fra Herren var falt over dem.",
+      "Her har vi: I. Davids dristige ferd inn i Sauls leir om natten, med bare sin slektning Abisjai, Serujas sønn, i følge. Han la forslaget fram for ham og for en annen av sine fortrolige (<ref osisRef=\"1Sam.26.6\">v. 6</ref>). Men den andre avslo enten fordi foretaket var for farlig, eller han var i det minste tilfreds med at Abisjai, som var ivrig etter å bli med, tok risikoen i stedet for ham. Om det var Davids eget mot som drev ham til dette, eller en ekstraordinær tilskyndelse i hans sinn, eller orakelet, går ikke fram. Men i likhet med Gideon våget han seg gjennom vaktpostene med en særskilt visshet om Guds vern.",
+      "II. Tilstanden han fant leiren i. <i>Saul lå og sov i vollgraven</i>, eller, som noen leser det, <i>i sin vogn, midt blant trossvognene</i>, med <i>spydet stukket i jorden</i> ved siden av seg, så det var for hånden om leiren skulle bli overfalt (<ref osisRef=\"1Sam.26.7\">v. 7</ref>). Og alle soldatene, også de som var satt til å stå vakt, lå <i>i dyp søvn</i>, <ref osisRef=\"1Sam.26.12\">v. 12</ref>. Slik var øynene deres lukket og hendene bundet, <i>for en dyp søvn fra Herren var falt over dem</i>. Det var noe ekstraordinært ved at alle sov på samme tid, og sov så tungt at David og Abisjai gikk omkring og snakket sammen midt iblant dem uten at en eneste rørte på seg. Når Gud gir sine elskede søvn, er den deres hvile og vederkvegelse; men når han vil, kan han gjøre den til et fengsel for sine fiender. Slik blir <i>de tapre plyndret; de har sovet sin søvn, og ingen av de veldige menn har funnet sine hender, for din trussel, Jakobs Gud!</i> <ref osisRef=\"Ps.76.5-Ps.76.6\">Sal 76,5–6</ref>. <i>Det var en dyp søvn fra Herren</i>, han som rår over naturens krefter og lar dem tjene sine hensikter slik han vil. Den Gud vil gjøre maktesløs eller ødelegge, binder han med <i>en sløvhetens ånd</i>, <ref osisRef=\"Rom.11.8\">Rom 11,8</ref>. Hvor hjelpeløse ligger ikke Saul og hele hæren hans der, alle i virkeligheten avvæpnet og lagt i lenker! Og likevel blir det ikke gjort dem noe; de er bare vugget i søvn. Hvor lett kan ikke Gud svekke de sterkeste, gjøre de klokeste til narr og overliste de mest årvåkne! La derfor alle hans venner stole på ham og alle hans fiender frykte ham.",
+      "III. Abisjais bønn til David om fullmakt til å gjøre ende på Saul med spydet som sto ved hodegjerdet hans. Det påtok han seg å gjøre med ett eneste støt, nå som Saul lå så lagelig til, <ref osisRef=\"1Sam.26.8\">v. 8</ref>. Han ville ikke presse David til å drepe ham selv, siden David hadde avstått fra det før, da han hadde en lignende anledning. Men han ba inntrengende om at David måtte gi ham lov til å gjøre det. Han førte som grunn at Saul var hans fiende, ikke bare grusom og uforsonlig, men også falsk og troløs, en som ingen fornuft kunne styre og ingen godhet virke på, og at <i>Gud nå hadde gitt ham i hans hånd</i> og i virkeligheten bød ham å slå til. Den forrige fordelen av dette slaget var riktignok bare tilfeldig, da Saul rent slumpevis var i hulen samtidig med ham. Men her var det noe ekstraordinært: Den dype søvnen som var falt over Saul og alle vaktene hans, kom åpenbart fra Herren, så det var et særskilt forsyn som ga ham denne anledningen. Derfor burde han ikke la den gå fra seg.",
+      "IV. Davids høysinnede avslag på å la noe vondt bli gjort mot Saul, og med det hans faste troskap mot sine lojalitetsprinsipper, <ref osisRef=\"1Sam.26.9\">v. 9</ref>. David påla Abisjai å ikke drepe ham. Han ville ikke bare la være å gjøre det selv, men heller ikke tillate at en annen gjorde det. Og han ga to grunner: 1. Det ville være en syndig krenkelse av Guds ordning. Saul var Herrens salvede, konge over Israel ved særskilt innsettelse og utpeking av Israels Gud, den øvrighet som var, og å sette seg opp mot ham var å <i>stå Guds ordning imot</i>, <ref osisRef=\"Rom.13.2\">Rom 13,2</ref>. Ingen kunne gjøre det og være uten skyld. Det han fryktet, var skyld, og han var mer opptatt av sin uskyld enn av sin sikkerhet. 2. Det ville være syndig å foregripe Guds forsyn. Gud hadde i saken med Nabal vist ham tydelig nok at om han overlot hevnen til ham, ville han ta den i rett tid. Oppmuntret av det han da erfarte, bestemmer han seg derfor for å vente til Gud finner det for godt å hevne ham på Saul, og han vil på ingen måte <i>hevne seg selv</i> (<ref osisRef=\"1Sam.26.10\">v. 10</ref>): <i>«Herren skal slå ham,</i> slik han slo Nabal, med et plutselig slag, eller han skal <i>dø i striden</i> (slik det viste seg at han gjorde kort tid etter), eller, om ikke det, skal <i>hans dag komme da han må dø</i> en naturlig død. Og jeg vil med glede vente til da, heller enn å tvinge meg fram til den lovede kronen ad krokveier.» Fristelsen var riktignok svært sterk. Men om han ga etter, ville han synde mot Gud, og derfor vil han stå fristelsen imot med den største besluttsomhet (<ref osisRef=\"1Sam.26.11\">v. 11</ref>): «<i>Herren forby at jeg skulle rekke ut min hånd mot Herrens salvede!</i> Nei, det vil jeg aldri gjøre, og heller ikke tillate at det blir gjort.» Så tappert setter han samvittigheten foran egen fordel og overlater utfallet til Gud.",
+      "V. Hvordan han brukte denne anledningen til å gi enda et bevis på sin egen rettskaffenhet. Han og Abisjai tok med seg spydet og vannkrukken som Saul hadde ved sengen (<ref osisRef=\"1Sam.26.12\">v. 12</ref>), og, underlig nok, ingen av alle vaktene merket det. Om en lege hadde gitt dem det sterkeste opiat eller den kraftigste bedøvende dose, kunne de ikke ha vært fastere innelåst i søvnen. Sauls spyd, som han hadde hos seg til forsvar, og vannbegeret, som han hadde til vederkvegelse, ble begge stjålet fra ham mens han sov. Slik mister vi vår styrke og vår trøst når vi er likegyldige og selvsikre og ikke holder vakt."
+     ],
+     "explanation": "«Contentedly wait» betyr å vente tilfreds og uten utålmodighet, ikke med glede. Gjengivelsen overdriver Davids holdning noe.",
+     "model": "claude-fable-5-2"
+    }
+   ],
+   "reviews": [
+    {
+     "argument": {
+      "premises": true,
+      "conclusions": true,
+      "evidence": true,
+      "problems": ""
+     },
+     "issues": [
+      {
+       "paragraph": 6,
+       "quote": "med glede vente",
+       "replacement": "tålmodig og tilfreds vente",
+       "type": "meaning",
+       "severity": "minor",
+       "explanation": "«Contentedly wait» betyr å vente tilfreds og uten utålmodighet, ikke med glede. Gjengivelsen overdriver Davids holdning noe."
+      }
+     ],
+     "summary": "Trofast og velskrevet gjengivelse. Alle fem punktene (I–V), Davids to begrunnelser, skriftbeleggene (Sal 76,5–6; Rom 11,8; Rom 13,2) og vershenvisningene er på plass med riktig osisRef, og merkingen er bevart. Bare én liten nyanseforskyvning er funnet.",
+     "score": 9,
+     "model": "claude-fable-5-2",
+     "mechanical": [],
+     "skipped": []
+    }
+   ],
    "text": [
     "<h>David sparer Sauls liv. (1056 f.Kr.)</h>",
     "<sup>6</sup> Da tok David til orde og sa til hetitten Ahimelek og til Abisjai, Serujas sønn, bror til Joab: Hvem vil gå ned med meg til Saul i leiren? Og Abisjai sa: Jeg vil gå ned med deg. <sup>7</sup> Så kom David og Abisjai til folket om natten, og se, Saul lå og sov innenfor vollgraven, og spydet hans sto stukket i jorden ved hodegjerdet hans; men Abner og folket lå rundt omkring ham. <sup>8</sup> Da sa Abisjai til David: Gud har i dag gitt din fiende i din hånd. La meg derfor nå, ber jeg deg, slå ham med spydet helt ned i jorden med ett eneste støt; jeg skal ikke <i>slå</i> ham en gang til. <sup>9</sup> Men David sa til Abisjai: Drep ham ikke! For hvem kan rekke ut sin hånd mot Herrens salvede og være uten skyld? <sup>10</sup> Og David sa videre: <i>Så sant</i> Herren lever: Herren skal slå ham; eller hans dag skal komme da han må dø; eller han skal dra ned i striden og omkomme. <sup>11</sup> Herren forby at jeg skulle rekke ut min hånd mot Herrens salvede! Men ta nå, ber jeg deg, spydet som <i>står</i> ved hodegjerdet hans, og vannkrukken, og la oss gå. <sup>12</sup> Så tok David spydet og vannkrukken fra Sauls hodegjerde, og de kom seg bort. Ingen så <i>det</i>, og ingen merket <i>det</i>, og ingen våknet; for de <i>sov</i> alle sammen, fordi en dyp søvn fra Herren var falt over dem.",
     "Her har vi: I. Davids dristige ferd inn i Sauls leir om natten, med bare sin slektning Abisjai, Serujas sønn, i følge. Han la forslaget fram for ham og for en annen av sine fortrolige (<ref osisRef=\"1Sam.26.6\">v. 6</ref>). Men den andre avslo enten fordi foretaket var for farlig, eller han var i det minste tilfreds med at Abisjai, som var ivrig etter å bli med, tok risikoen i stedet for ham. Om det var Davids eget mot som drev ham til dette, eller en ekstraordinær tilskyndelse i hans sinn, eller orakelet, går ikke fram. Men i likhet med Gideon våget han seg gjennom vaktpostene med en særskilt visshet om Guds vern.",
     "II. Tilstanden han fant leiren i. <i>Saul lå og sov i vollgraven</i>, eller, som noen leser det, <i>i sin vogn, midt blant trossvognene</i>, med <i>spydet stukket i jorden</i> ved siden av seg, så det var for hånden om leiren skulle bli overfalt (<ref osisRef=\"1Sam.26.7\">v. 7</ref>). Og alle soldatene, også de som var satt til å stå vakt, lå <i>i dyp søvn</i>, <ref osisRef=\"1Sam.26.12\">v. 12</ref>. Slik var øynene deres lukket og hendene bundet, <i>for en dyp søvn fra Herren var falt over dem</i>. Det var noe ekstraordinært ved at alle sov på samme tid, og sov så tungt at David og Abisjai gikk omkring og snakket sammen midt iblant dem uten at en eneste rørte på seg. Når Gud gir sine elskede søvn, er den deres hvile og vederkvegelse; men når han vil, kan han gjøre den til et fengsel for sine fiender. Slik blir <i>de tapre plyndret; de har sovet sin søvn, og ingen av de veldige menn har funnet sine hender, for din trussel, Jakobs Gud!</i> <ref osisRef=\"Ps.76.5-Ps.76.6\">Sal 76,5–6</ref>. <i>Det var en dyp søvn fra Herren</i>, han som rår over naturens krefter og lar dem tjene sine hensikter slik han vil. Den Gud vil gjøre maktesløs eller ødelegge, binder han med <i>en sløvhetens ånd</i>, <ref osisRef=\"Rom.11.8\">Rom 11,8</ref>. Hvor hjelpeløse ligger ikke Saul og hele hæren hans der, alle i virkeligheten avvæpnet og lagt i lenker! Og likevel blir det ikke gjort dem noe; de er bare vugget i søvn. Hvor lett kan ikke Gud svekke de sterkeste, gjøre de klokeste til narr og overliste de mest årvåkne! La derfor alle hans venner stole på ham og alle hans fiender frykte ham.",
     "III. Abisjais bønn til David om fullmakt til å gjøre ende på Saul med spydet som sto ved hodegjerdet hans. Det påtok han seg å gjøre med ett eneste støt, nå som Saul lå så lagelig til, <ref osisRef=\"1Sam.26.8\">v. 8</ref>. Han ville ikke presse David til å drepe ham selv, siden David hadde avstått fra det før, da han hadde en lignende anledning. Men han ba inntrengende om at David måtte gi ham lov til å gjøre det. Han førte som grunn at Saul var hans fiende, ikke bare grusom og uforsonlig, men også falsk og troløs, en som ingen fornuft kunne styre og ingen godhet virke på, og at <i>Gud nå hadde gitt ham i hans hånd</i> og i virkeligheten bød ham å slå til. Den forrige fordelen av dette slaget var riktignok bare tilfeldig, da Saul rent slumpevis var i hulen samtidig med ham. Men her var det noe ekstraordinært: Den dype søvnen som var falt over Saul og alle vaktene hans, kom åpenbart fra Herren, så det var et særskilt forsyn som ga ham denne anledningen. Derfor burde han ikke la den gå fra seg.",
-    "IV. Davids høysinnede avslag på å la noe vondt bli gjort mot Saul, og med det hans faste troskap mot sine lojalitetsprinsipper, <ref osisRef=\"1Sam.26.9\">v. 9</ref>. David påla Abisjai å ikke drepe ham. Han ville ikke bare la være å gjøre det selv, men heller ikke tillate at en annen gjorde det. Og han ga to grunner: 1. Det ville være en syndig krenkelse av Guds ordning. Saul var Herrens salvede, konge over Israel ved særskilt innsettelse og utpeking av Israels Gud, den øvrighet som var, og å sette seg opp mot ham var å <i>stå Guds ordning imot</i>, <ref osisRef=\"Rom.13.2\">Rom 13,2</ref>. Ingen kunne gjøre det og være uten skyld. Det han fryktet, var skyld, og han var mer opptatt av sin uskyld enn av sin sikkerhet. 2. Det ville være syndig å foregripe Guds forsyn. Gud hadde i saken med Nabal vist ham tydelig nok at om han overlot hevnen til ham, ville han ta den i rett tid. Oppmuntret av det han da erfarte, bestemmer han seg derfor for å vente til Gud finner det for godt å hevne ham på Saul, og han vil på ingen måte <i>hevne seg selv</i> (<ref osisRef=\"1Sam.26.10\">v. 10</ref>): <i>«Herren skal slå ham,</i> slik han slo Nabal, med et plutselig slag, eller han skal <i>dø i striden</i> (slik det viste seg at han gjorde kort tid etter), eller, om ikke det, skal <i>hans dag komme da han må dø</i> en naturlig død. Og jeg vil med glede vente til da, heller enn å tvinge meg fram til den lovede kronen ad krokveier.» Fristelsen var riktignok svært sterk. Men om han ga etter, ville han synde mot Gud, og derfor vil han stå fristelsen imot med den største besluttsomhet (<ref osisRef=\"1Sam.26.11\">v. 11</ref>): «<i>Herren forby at jeg skulle rekke ut min hånd mot Herrens salvede!</i> Nei, det vil jeg aldri gjøre, og heller ikke tillate at det blir gjort.» Så tappert setter han samvittigheten foran egen fordel og overlater utfallet til Gud.",
+    "IV. Davids høysinnede avslag på å la noe vondt bli gjort mot Saul, og med det hans faste troskap mot sine lojalitetsprinsipper, <ref osisRef=\"1Sam.26.9\">v. 9</ref>. David påla Abisjai å ikke drepe ham. Han ville ikke bare la være å gjøre det selv, men heller ikke tillate at en annen gjorde det. Og han ga to grunner: 1. Det ville være en syndig krenkelse av Guds ordning. Saul var Herrens salvede, konge over Israel ved særskilt innsettelse og utpeking av Israels Gud, den øvrighet som var, og å sette seg opp mot ham var å <i>stå Guds ordning imot</i>, <ref osisRef=\"Rom.13.2\">Rom 13,2</ref>. Ingen kunne gjøre det og være uten skyld. Det han fryktet, var skyld, og han var mer opptatt av sin uskyld enn av sin sikkerhet. 2. Det ville være syndig å foregripe Guds forsyn. Gud hadde i saken med Nabal vist ham tydelig nok at om han overlot hevnen til ham, ville han ta den i rett tid. Oppmuntret av det han da erfarte, bestemmer han seg derfor for å vente til Gud finner det for godt å hevne ham på Saul, og han vil på ingen måte <i>hevne seg selv</i> (<ref osisRef=\"1Sam.26.10\">v. 10</ref>): <i>«Herren skal slå ham,</i> slik han slo Nabal, med et plutselig slag, eller han skal <i>dø i striden</i> (slik det viste seg at han gjorde kort tid etter), eller, om ikke det, skal <i>hans dag komme da han må dø</i> en naturlig død. Og jeg vil tålmodig og tilfreds vente til da, heller enn å tvinge meg fram til den lovede kronen ad krokveier.» Fristelsen var riktignok svært sterk. Men om han ga etter, ville han synde mot Gud, og derfor vil han stå fristelsen imot med den største besluttsomhet (<ref osisRef=\"1Sam.26.11\">v. 11</ref>): «<i>Herren forby at jeg skulle rekke ut min hånd mot Herrens salvede!</i> Nei, det vil jeg aldri gjøre, og heller ikke tillate at det blir gjort.» Så tappert setter han samvittigheten foran egen fordel og overlater utfallet til Gud.",
     "V. Hvordan han brukte denne anledningen til å gi enda et bevis på sin egen rettskaffenhet. Han og Abisjai tok med seg spydet og vannkrukken som Saul hadde ved sengen (<ref osisRef=\"1Sam.26.12\">v. 12</ref>), og, underlig nok, ingen av alle vaktene merket det. Om en lege hadde gitt dem det sterkeste opiat eller den kraftigste bedøvende dose, kunne de ikke ha vært fastere innelåst i søvnen. Sauls spyd, som han hadde hos seg til forsvar, og vannbegeret, som han hadde til vederkvegelse, ble begge stjålet fra ham mens han sov. Slik mister vi vår styrke og vår trøst når vi er likegyldige og selvsikre og ikke holder vakt."
    ],
    "translator": "claude-fable-5-2",
@@ -64,11 +149,26 @@
    "section": 3,
    "start": 0,
    "end": 9,
-   "status": "draft",
-   "rounds": 0,
+   "status": "checked",
+   "rounds": 1,
    "attempts": 0,
    "versions": [],
-   "reviews": [],
+   "reviews": [
+    {
+     "argument": {
+      "premises": true,
+      "conclusions": true,
+      "evidence": true,
+      "problems": ""
+     },
+     "issues": [],
+     "summary": "Gjengivelsen er trofast avsnitt for avsnitt: alle resonnementer, sitater, skriftsteder og henvisninger er med og har samme vekt som i kilden. Merking og osisRef er bevart, og språket er naturlig og godt bokmål. Ingen feil som krever retting.",
+     "score": 10,
+     "model": "claude-fable-5-2",
+     "mechanical": [],
+     "skipped": []
+    }
+   ],
    "text": [
     "<h>David går i rette med Saul. (1056 f.Kr.)</h>",
     "<sup>13</sup> Så gikk David over til den andre siden og stilte seg på toppen av en høyde langt borte; det <i>var</i> stor avstand mellom dem. <sup>14</sup> Og David ropte til folket og til Abner, Ners sønn, og sa: Svarer du ikke, Abner? Da svarte Abner og sa: Hvem <i>er</i> du <i>som</i> roper til kongen? <sup>15</sup> Og David sa til Abner: <i>Er</i> ikke du en <i>tapper</i> mann? Og hvem <i>er</i> som du i Israel? Hvorfor har du da ikke voktet din herre kongen? For en av folket kom inn for å ødelegge kongen, din herre. <sup>16</sup> Dette <i>er</i> ikke godt, det du har gjort. <i>Så sant</i> Herren lever, dere <i>er</i> verdige til å dø, fordi dere ikke har voktet deres herre, Herrens salvede. Og se nå hvor kongens spyd <i>er</i>, og vannkrukken som <i>sto</i> ved hodegjerdet hans. <sup>17</sup> Og Saul kjente Davids røst og sa: <i>Er</i> dette din røst, min sønn David? Og David sa: <i>Det er</i> min røst, min herre konge. <sup>18</sup> Og han sa: Hvorfor forfølger min herre sin tjener slik? For hva har jeg gjort? Eller hvilket ondt <i>er</i> i min hånd? <sup>19</sup> Så la nå, jeg ber deg, min herre kongen høre sin tjeners ord. Hvis Herren har egget deg opp mot meg, så la ham ta imot et offer; men hvis <i>det er</i> menneskenes barn, da <i>være</i> de forbannet for Herrens ansikt; for de har i dag drevet meg ut, så jeg ikke får bo i Herrens arv, og sagt: Gå og tjen andre guder. <sup>20</sup> Så la nå ikke mitt blod falle til jorden for Herrens ansikt; for Israels konge har dratt ut for å lete etter en loppe, som når en jager en rapphøne i fjellene.",
@@ -88,17 +188,62 @@
    "section": 4,
    "start": 0,
    "end": 6,
-   "status": "draft",
-   "rounds": 0,
+   "status": "checked",
+   "rounds": 1,
    "attempts": 0,
-   "versions": [],
-   "reviews": [],
+   "versions": [
+    {
+     "text": [
+      "<h>Saul gir etter. (ca. 1056 f.Kr.)</h>",
+      "<sup>21</sup> Da sa Saul: Jeg har syndet. Vend tilbake, min sønn David! For jeg vil ikke mer gjøre deg noe vondt, fordi min sjel var dyrebar i dine øyne i dag. Se, jeg har oppført meg som en dåre og har faret svært vill. <sup>22</sup> David svarte og sa: Se, her er kongens spyd! La en av de unge mennene komme over og hente det. <sup>23</sup> Herren gjengjelde enhver hans rettferdighet og hans trofasthet. For Herren overgav deg i <i>min</i> hånd i dag, men jeg ville ikke rekke ut hånden mot Herrens salvede. <sup>24</sup> Og se, slik ditt liv ble høyt aktet i mine øyne i dag, slik la mitt liv bli høyt aktet i Herrens øyne, og la ham utfri meg av all trengsel. <sup>25</sup> Da sa Saul til David: Velsignet <i>være</i> du, min sønn David! Du skal både gjøre store <i>ting</i> og også stadig vinne fram. Så gikk David sin vei, og Saul vendte tilbake til sitt sted.",
+      "Her har vi: I. Sauls angerfulle bekjennelse av sin skyld og dårskap i å forfølge David, og hans løfte om ikke å gjøre det mer. Dette andre eksempelet på Davids respekt for ham gjorde sterkere inntrykk på ham enn det første og tvang fram bedre innrømmelser fra ham, <ref osisRef=\"1Sam.26.21\">v. 21</ref>. 1. Han vedgår at Davids godhet mot ham har smeltet ham og fullstendig overvunnet ham: «<i>Min sjel var dyrebar i dine øyne i dag,</i> den som jeg trodde var avskyelig for deg!» 2. Han erkjenner at han har gjort stor urett ved å forfølge ham. Med det har han handlet mot Guds lov (<i>jeg har syndet</i>) og mot sin egen interesse (<i>jeg har oppført meg som en dåre</i>), ved å jage som en fiende en mann som ville ha vært en av hans beste venner, om han bare hadde kunnet tro det. «I dette», sier han, «har jeg <i>faret svært vill</i> og gjort urett både mot deg og mot meg selv.» Merk: De som synder, oppfører seg som dårer og farer svært vill, og særlig de som hater og forfølger Guds folk, <ref osisRef=\"Job.19 Job.28\">Job 19,28</ref>. 3. Han innbyr ham til hoffet igjen: <i>Vend tilbake, min sønn David.</i> De som har forstand, vil se at det er i deres egen interesse å ha omkring seg slike som <i>går klokt fram</i>, slik David gjorde, og som har Gud med seg. 4. Han lover at han ikke vil forfølge ham slik han har gjort, men beskytte ham: <i>Jeg vil ikke mer gjøre deg noe vondt.</i> Vi har grunn til å tro at han, slik han var til sinns akkurat da, mente det han sa. Likevel kom verken bekjennelsen eller løftet om bedring fra en virkelig omvendelse.",
+      "II. Hvordan David gjorde seg nytte av Sauls overbevisning og bekjennelser, og det beviset han kunne legge fram på sin egen oppriktighet. Han bad om at en av tjenerne måtte hente spydet (<ref osisRef=\"1Sam.26.22\">v. 22</ref>), og deretter (<ref osisRef=\"1Sam.26.23\">v. 23</ref>): 1. Han påkaller Gud som dommer i striden: <i>Herren gjengjelde enhver hans rettferdighet.</i> Ved troen er David viss på at han vil gjøre det, for han kjenner ufeilbarlig den sanne karakteren til alle mennesker og handlinger, og han er urokkelig rettferdig og gir enhver etter hans gjerning. Og i bønn ber David om at han må gjøre det. Med dette ber han i virkeligheten mot Saul, som hadde handlet urettferdig og troløst mot ham (<i>Gi dem etter deres gjerninger,</i> <ref osisRef=\"Ps.28.4\">Sal 28,4</ref>). Men først og fremst mener han det som en bønn for seg selv: at Gud måtte beskytte ham i hans rettferdighet og trofasthet, og også lønne ham, siden Saul gjengjeldte ham så dårlig. 2. Han minner Saul nok en gang om det beviset han nå hadde gitt på sin respekt for ham, en respekt som sprang ut av lojalitet: <i>Jeg ville ikke rekke ut hånden mot Herrens salvede.</i> Dermed lar han Saul forstå at salvingsoljen var hans vern, at han stod i gjeld til Herren for den og burde vise ham sin takknemlighet (hadde han vært en vanlig mann, ville ikke David ha vært så varsom med ham). Kanskje ligger det også noe mer i det: at Saul visste, eller hadde grunn til å tro, at også David var Herrens salvede, og at Saul derfor, etter samme regel, burde være like varsom med Davids liv som David hadde vært med hans. 3. Han stoler ikke stort på Sauls løfter, men legger seg under Guds vern og ber om hans velvilje (<ref osisRef=\"1Sam.26.24\">v. 24</ref>): «<i>La mitt liv bli høyt aktet i Herrens øyne,</i> hvor lite du enn bryr deg om det.» Slik tar han Gud til å være den som lønner ham for godheten mot Saul. Det kan de gjøre med hellig frimodighet som <i>gjør det gode og lider for det.</i>",
+      "III. Sauls forutsigelse om Davids opphøyelse. Han roser ham (<ref osisRef=\"1Sam.26.25\">v. 25</ref>): <i>Velsignet være du, min sønn David.</i> Så sterkt var Saul nå overbevist om Davids redelighet at han ikke skammet seg over å fordømme seg selv og hylle David, til og med mens hans egne soldater hørte på. De kunne ikke annet enn rødme ved tanken på at de hadde rykket ut i slikt raseri mot en mann som deres herre, når han møter ham, overøser med slike kjærlige ord. Han forutsier hans seirer og at han til slutt skal bli opphøyet: <i>Du skal gjøre store ting.</i> Merk: De som gjør det til en samvittighetssak å gjøre det som virkelig er godt, kan med Guds hjelp komme til å gjøre det som virkelig er stort. Han legger til: «<i>Du skal også stadig vinne fram,</i> mer og mer.» Han mener over ham selv, men vegrer seg for å si det rett ut. De fyrstelige egenskapene som viste seg hos David – hans storsinn da han sparte Saul, hans militære myndighet da han refset Abner for å sove, hans omsorg for det felles beste og de tydelige tegnene på at Gud var med ham – overbeviste Saul om at han helt sikkert ville bli løftet opp på tronen til slutt, slik profetiene om ham sa.",
+      "<i>Til slutt:</i> Da såret på denne måten hadde fått en lindrende behandling, skiltes de som venner. Saul vendte tilbake til Gibea <i>re infecta – uten å ha gjennomført sitt forsett,</i> og skamfull over felttoget han hadde lagt ut på. Men David kunne ikke stole så mye på ordet hans at han ble med ham tilbake. Den som én gang har vært falsk, får man ikke lett tillit til en gang til. Derfor <i>gikk David sin vei.</i> Og etter denne avskjeden ser det ikke ut til at Saul og David noen gang så hverandre igjen."
+     ],
+     "explanation": "Kildens «b. c. 1056» betyr «before Christ 1056». Gjengivelsen legger til «ca.», som ikke står i kilden og gjør dateringen omtrentlig. | Kilden sier «he means against himself», altså Saul selv. Det krever refleksivt «seg selv»; «ham selv» kan leses som om det viser til David.",
+     "model": "claude-fable-5-2"
+    }
+   ],
+   "reviews": [
+    {
+     "argument": {
+      "premises": true,
+      "conclusions": true,
+      "evidence": true,
+      "problems": ""
+     },
+     "issues": [
+      {
+       "paragraph": 1,
+       "quote": "(ca. 1056 f.Kr.)",
+       "replacement": "(1056 f.Kr.)",
+       "type": "addition",
+       "severity": "minor",
+       "explanation": "Kildens «b. c. 1056» betyr «before Christ 1056». Gjengivelsen legger til «ca.», som ikke står i kilden og gjør dateringen omtrentlig."
+      },
+      {
+       "paragraph": 5,
+       "quote": "Han mener over ham selv",
+       "replacement": "Han mener over seg selv",
+       "type": "grammar",
+       "severity": "minor",
+       "explanation": "Kilden sier «he means against himself», altså Saul selv. Det krever refleksivt «seg selv»; «ham selv» kan leses som om det viser til David."
+      }
+     ],
+     "summary": "Gjengivelsen er trofast og flyter godt. Alle resonnementer, skriftsteder, sitater og merking er bevart, og osisRef-verdiene står uendret. Det er bare to småting: et tillagt «ca.» i overskriftens årstall og en refleksivfeil i avsnitt 5.",
+     "score": 9,
+     "model": "claude-fable-5-2",
+     "mechanical": [],
+     "skipped": []
+    }
+   ],
    "text": [
-    "<h>Saul gir etter. (ca. 1056 f.Kr.)</h>",
+    "<h>Saul gir etter. (1056 f.Kr.)</h>",
     "<sup>21</sup> Da sa Saul: Jeg har syndet. Vend tilbake, min sønn David! For jeg vil ikke mer gjøre deg noe vondt, fordi min sjel var dyrebar i dine øyne i dag. Se, jeg har oppført meg som en dåre og har faret svært vill. <sup>22</sup> David svarte og sa: Se, her er kongens spyd! La en av de unge mennene komme over og hente det. <sup>23</sup> Herren gjengjelde enhver hans rettferdighet og hans trofasthet. For Herren overgav deg i <i>min</i> hånd i dag, men jeg ville ikke rekke ut hånden mot Herrens salvede. <sup>24</sup> Og se, slik ditt liv ble høyt aktet i mine øyne i dag, slik la mitt liv bli høyt aktet i Herrens øyne, og la ham utfri meg av all trengsel. <sup>25</sup> Da sa Saul til David: Velsignet <i>være</i> du, min sønn David! Du skal både gjøre store <i>ting</i> og også stadig vinne fram. Så gikk David sin vei, og Saul vendte tilbake til sitt sted.",
     "Her har vi: I. Sauls angerfulle bekjennelse av sin skyld og dårskap i å forfølge David, og hans løfte om ikke å gjøre det mer. Dette andre eksempelet på Davids respekt for ham gjorde sterkere inntrykk på ham enn det første og tvang fram bedre innrømmelser fra ham, <ref osisRef=\"1Sam.26.21\">v. 21</ref>. 1. Han vedgår at Davids godhet mot ham har smeltet ham og fullstendig overvunnet ham: «<i>Min sjel var dyrebar i dine øyne i dag,</i> den som jeg trodde var avskyelig for deg!» 2. Han erkjenner at han har gjort stor urett ved å forfølge ham. Med det har han handlet mot Guds lov (<i>jeg har syndet</i>) og mot sin egen interesse (<i>jeg har oppført meg som en dåre</i>), ved å jage som en fiende en mann som ville ha vært en av hans beste venner, om han bare hadde kunnet tro det. «I dette», sier han, «har jeg <i>faret svært vill</i> og gjort urett både mot deg og mot meg selv.» Merk: De som synder, oppfører seg som dårer og farer svært vill, og særlig de som hater og forfølger Guds folk, <ref osisRef=\"Job.19 Job.28\">Job 19,28</ref>. 3. Han innbyr ham til hoffet igjen: <i>Vend tilbake, min sønn David.</i> De som har forstand, vil se at det er i deres egen interesse å ha omkring seg slike som <i>går klokt fram</i>, slik David gjorde, og som har Gud med seg. 4. Han lover at han ikke vil forfølge ham slik han har gjort, men beskytte ham: <i>Jeg vil ikke mer gjøre deg noe vondt.</i> Vi har grunn til å tro at han, slik han var til sinns akkurat da, mente det han sa. Likevel kom verken bekjennelsen eller løftet om bedring fra en virkelig omvendelse.",
     "II. Hvordan David gjorde seg nytte av Sauls overbevisning og bekjennelser, og det beviset han kunne legge fram på sin egen oppriktighet. Han bad om at en av tjenerne måtte hente spydet (<ref osisRef=\"1Sam.26.22\">v. 22</ref>), og deretter (<ref osisRef=\"1Sam.26.23\">v. 23</ref>): 1. Han påkaller Gud som dommer i striden: <i>Herren gjengjelde enhver hans rettferdighet.</i> Ved troen er David viss på at han vil gjøre det, for han kjenner ufeilbarlig den sanne karakteren til alle mennesker og handlinger, og han er urokkelig rettferdig og gir enhver etter hans gjerning. Og i bønn ber David om at han må gjøre det. Med dette ber han i virkeligheten mot Saul, som hadde handlet urettferdig og troløst mot ham (<i>Gi dem etter deres gjerninger,</i> <ref osisRef=\"Ps.28.4\">Sal 28,4</ref>). Men først og fremst mener han det som en bønn for seg selv: at Gud måtte beskytte ham i hans rettferdighet og trofasthet, og også lønne ham, siden Saul gjengjeldte ham så dårlig. 2. Han minner Saul nok en gang om det beviset han nå hadde gitt på sin respekt for ham, en respekt som sprang ut av lojalitet: <i>Jeg ville ikke rekke ut hånden mot Herrens salvede.</i> Dermed lar han Saul forstå at salvingsoljen var hans vern, at han stod i gjeld til Herren for den og burde vise ham sin takknemlighet (hadde han vært en vanlig mann, ville ikke David ha vært så varsom med ham). Kanskje ligger det også noe mer i det: at Saul visste, eller hadde grunn til å tro, at også David var Herrens salvede, og at Saul derfor, etter samme regel, burde være like varsom med Davids liv som David hadde vært med hans. 3. Han stoler ikke stort på Sauls løfter, men legger seg under Guds vern og ber om hans velvilje (<ref osisRef=\"1Sam.26.24\">v. 24</ref>): «<i>La mitt liv bli høyt aktet i Herrens øyne,</i> hvor lite du enn bryr deg om det.» Slik tar han Gud til å være den som lønner ham for godheten mot Saul. Det kan de gjøre med hellig frimodighet som <i>gjør det gode og lider for det.</i>",
-    "III. Sauls forutsigelse om Davids opphøyelse. Han roser ham (<ref osisRef=\"1Sam.26.25\">v. 25</ref>): <i>Velsignet være du, min sønn David.</i> Så sterkt var Saul nå overbevist om Davids redelighet at han ikke skammet seg over å fordømme seg selv og hylle David, til og med mens hans egne soldater hørte på. De kunne ikke annet enn rødme ved tanken på at de hadde rykket ut i slikt raseri mot en mann som deres herre, når han møter ham, overøser med slike kjærlige ord. Han forutsier hans seirer og at han til slutt skal bli opphøyet: <i>Du skal gjøre store ting.</i> Merk: De som gjør det til en samvittighetssak å gjøre det som virkelig er godt, kan med Guds hjelp komme til å gjøre det som virkelig er stort. Han legger til: «<i>Du skal også stadig vinne fram,</i> mer og mer.» Han mener over ham selv, men vegrer seg for å si det rett ut. De fyrstelige egenskapene som viste seg hos David – hans storsinn da han sparte Saul, hans militære myndighet da han refset Abner for å sove, hans omsorg for det felles beste og de tydelige tegnene på at Gud var med ham – overbeviste Saul om at han helt sikkert ville bli løftet opp på tronen til slutt, slik profetiene om ham sa.",
+    "III. Sauls forutsigelse om Davids opphøyelse. Han roser ham (<ref osisRef=\"1Sam.26.25\">v. 25</ref>): <i>Velsignet være du, min sønn David.</i> Så sterkt var Saul nå overbevist om Davids redelighet at han ikke skammet seg over å fordømme seg selv og hylle David, til og med mens hans egne soldater hørte på. De kunne ikke annet enn rødme ved tanken på at de hadde rykket ut i slikt raseri mot en mann som deres herre, når han møter ham, overøser med slike kjærlige ord. Han forutsier hans seirer og at han til slutt skal bli opphøyet: <i>Du skal gjøre store ting.</i> Merk: De som gjør det til en samvittighetssak å gjøre det som virkelig er godt, kan med Guds hjelp komme til å gjøre det som virkelig er stort. Han legger til: «<i>Du skal også stadig vinne fram,</i> mer og mer.» Han mener over seg selv, men vegrer seg for å si det rett ut. De fyrstelige egenskapene som viste seg hos David – hans storsinn da han sparte Saul, hans militære myndighet da han refset Abner for å sove, hans omsorg for det felles beste og de tydelige tegnene på at Gud var med ham – overbeviste Saul om at han helt sikkert ville bli løftet opp på tronen til slutt, slik profetiene om ham sa.",
     "<i>Til slutt:</i> Da såret på denne måten hadde fått en lindrende behandling, skiltes de som venner. Saul vendte tilbake til Gibea <i>re infecta – uten å ha gjennomført sitt forsett,</i> og skamfull over felttoget han hadde lagt ut på. Men David kunne ikke stole så mye på ordet hans at han ble med ham tilbake. Den som én gang har vært falsk, får man ikke lett tillit til en gang til. Derfor <i>gikk David sin vei.</i> Og etter denne avskjeden ser det ikke ut til at Saul og David noen gang så hverandre igjen."
    ],
    "translator": "claude-fable-5-2",
