@@ -7,13 +7,59 @@
    "section": 0,
    "start": 0,
    "end": 1,
-   "status": "draft",
-   "rounds": 0,
+   "status": "checked",
+   "rounds": 2,
    "attempts": 0,
-   "versions": [],
-   "reviews": [],
+   "versions": [
+    {
+     "text": [
+      "Elihu fortsetter her med å lovprise Guds underfulle makt i luftens fenomener og i alle skiftninger i været. Når været skifter, bøyer vi oss for Guds vilje, tar det som det er og gjør det beste ut av det. Hvorfor skulle vi ikke gjøre det samme når andre ting i livet vårt skifter? Her peker han på Guds hånd: I. I torden og lyn, <ref osisRef=\"Job.37.1-Job.37.5\">v. 1–5</ref>. II. I frost og snø, regn og vind, <ref osisRef=\"Job.37.6-Job.37.13\">v. 6–13</ref>. III. Han anvender det på Job og utfordrer ham til å forklare fenomenene i disse naturens verk. Slik skulle Job, ved å innrømme at han ikke forstår dem, erkjenne at han ikke er skikket til å dømme om hvordan Guds forsyn går fram, <ref osisRef=\"Job.37.14-Job.37.22\">v. 14–22</ref>. Og så, IV. avslutter han med grunnsetningen han hadde påtatt seg å godtgjøre: at Gud er stor og i høy grad skal fryktes, <ref osisRef=\"Job.37.23-Job.37.24\">v. 23–24</ref>."
+     ],
+     "explanation": "Kilden har et betinget premiss («if … we submit»). Gjengivelsen gjør det til et konstaterende utsagn om at vi faktisk bøyer oss, og endrer dermed premissets form og vekt i resonnementet.",
+     "model": "claude-fable-5-2"
+    }
+   ],
+   "reviews": [
+    {
+     "argument": {
+      "premises": false,
+      "conclusions": true,
+      "evidence": true,
+      "problems": "Kildens betingede premiss («if, in those changes, we submit to the will of God …, why should we not do so …?») er gjort om til en påstand om at vi faktisk bøyer oss for Guds vilje når været skifter. Premisset får dermed en annen logisk form og større vekt enn hos Henry. Konklusjonen (at Job må erkjenne at han ikke er skikket til å dømme om forsynet, og at Gud er stor og skal fryktes) og alle fire vershenvisningene er bevart."
+     },
+     "issues": [
+      {
+       "paragraph": 1,
+       "quote": "Når været skifter, bøyer vi oss for Guds vilje, tar det som det er og gjør det beste ut av det. Hvorfor skulle vi ikke",
+       "replacement": "Hvis vi bøyer oss for Guds vilje når været skifter, tar det som det er og gjør det beste ut av det, hvorfor skulle vi da ikke",
+       "type": "meaning",
+       "severity": "major",
+       "explanation": "Kilden har et betinget premiss («if … we submit»). Gjengivelsen gjør det til et konstaterende utsagn om at vi faktisk bøyer oss, og endrer dermed premissets form og vekt i resonnementet."
+      }
+     ],
+     "summary": "Gjengivelsen er trofast og har godt, naturlig språk. Alle henvisninger, osisRef-verdier og inndelingen I–IV er korrekte. Eneste avvik er at det betingede premisset om å bøye seg for Guds vilje i værskiftene er gjort om til en ren påstand.",
+     "score": 8,
+     "model": "claude-fable-5-2",
+     "mechanical": [],
+     "skipped": []
+    },
+    {
+     "argument": {
+      "premises": true,
+      "conclusions": true,
+      "evidence": true,
+      "problems": ""
+     },
+     "issues": [],
+     "summary": "Gjengivelsen er trofast og idiomatisk. Resonnementet fra værskifter til andre skiftninger i livet, alle fire disposisjonspunktene og alle fire vershenvisningene står med samme innhold og vekt som i kilden. «Meteors» er riktig forstått i eldre betydning som «luftens fenomener». Ingen feil funnet.",
+     "score": 10,
+     "model": "claude-fable-5-2",
+     "mechanical": [],
+     "skipped": []
+    }
+   ],
    "text": [
-    "Elihu fortsetter her med å lovprise Guds underfulle makt i luftens fenomener og i alle skiftninger i været. Når været skifter, bøyer vi oss for Guds vilje, tar det som det er og gjør det beste ut av det. Hvorfor skulle vi ikke gjøre det samme når andre ting i livet vårt skifter? Her peker han på Guds hånd: I. I torden og lyn, <ref osisRef=\"Job.37.1-Job.37.5\">v. 1–5</ref>. II. I frost og snø, regn og vind, <ref osisRef=\"Job.37.6-Job.37.13\">v. 6–13</ref>. III. Han anvender det på Job og utfordrer ham til å forklare fenomenene i disse naturens verk. Slik skulle Job, ved å innrømme at han ikke forstår dem, erkjenne at han ikke er skikket til å dømme om hvordan Guds forsyn går fram, <ref osisRef=\"Job.37.14-Job.37.22\">v. 14–22</ref>. Og så, IV. avslutter han med grunnsetningen han hadde påtatt seg å godtgjøre: at Gud er stor og i høy grad skal fryktes, <ref osisRef=\"Job.37.23-Job.37.24\">v. 23–24</ref>."
+    "Elihu fortsetter her med å lovprise Guds underfulle makt i luftens fenomener og i alle skiftninger i været. Hvis vi bøyer oss for Guds vilje når været skifter, tar det som det er og gjør det beste ut av det, hvorfor skulle vi da ikke gjøre det samme når andre ting i livet vårt skifter? Her peker han på Guds hånd: I. I torden og lyn, <ref osisRef=\"Job.37.1-Job.37.5\">v. 1–5</ref>. II. I frost og snø, regn og vind, <ref osisRef=\"Job.37.6-Job.37.13\">v. 6–13</ref>. III. Han anvender det på Job og utfordrer ham til å forklare fenomenene i disse naturens verk. Slik skulle Job, ved å innrømme at han ikke forstår dem, erkjenne at han ikke er skikket til å dømme om hvordan Guds forsyn går fram, <ref osisRef=\"Job.37.14-Job.37.22\">v. 14–22</ref>. Og så, IV. avslutter han med grunnsetningen han hadde påtatt seg å godtgjøre: at Gud er stor og i høy grad skal fryktes, <ref osisRef=\"Job.37.23-Job.37.24\">v. 23–24</ref>."
    ],
    "translator": "claude-fable-5-2",
    "model": "claude-fable-5-2"
@@ -23,11 +69,26 @@
    "section": 1,
    "start": 0,
    "end": 3,
-   "status": "draft",
-   "rounds": 0,
+   "status": "checked",
+   "rounds": 1,
    "attempts": 0,
    "versions": [],
-   "reviews": [],
+   "reviews": [
+    {
+     "argument": {
+      "premises": true,
+      "conclusions": true,
+      "evidence": true,
+      "problems": ""
+     },
+     "issues": [],
+     "summary": "Gjengivelsen er trofast og velskrevet. Alle resonnementer, skriftsteder og henvisninger er med og har samme vekt som i kilden: torden og lyn som vitnesbyrd om Guds storhet, Elihus egen reaksjon, de fem punktene i beskrivelsen og slutningen til Guds øvrige gjerninger. Merking og osisRef er intakte, og språket er naturlig bokmål. Ingen feil funnet.",
+     "score": 10,
+     "model": "claude-fable-5-2",
+     "mechanical": [],
+     "skipped": []
+    }
+   ],
    "text": [
     "<h>Elihus tale. (1520 f.Kr.)</h>",
     "<sup>1</sup> Ved dette skjelver også mitt hjerte og rykkes bort fra sitt sted. <sup>2</sup> Hør oppmerksomt på drønnet av hans røst og lyden <i>som</i> går ut av hans munn. <sup>3</sup> Han styrer den under hele himmelen, og sitt lyn til jordens ender. <sup>4</sup> Etter det brøler en røst: han tordner med sin høyhets røst, og han holder dem ikke tilbake når hans røst høres. <sup>5</sup> Gud tordner underfullt med sin røst; store ting gjør han, som vi ikke kan fatte.",
@@ -41,11 +102,26 @@
    "section": 2,
    "start": 0,
    "end": 6,
-   "status": "draft",
-   "rounds": 0,
+   "status": "checked",
+   "rounds": 1,
    "attempts": 0,
    "versions": [],
-   "reviews": [],
+   "reviews": [
+    {
+     "argument": {
+      "premises": true,
+      "conclusions": true,
+      "evidence": true,
+      "problems": ""
+     },
+     "issues": [],
+     "summary": "Gjengivelsen er trofast avsnitt for avsnitt: alle fire hovedpunkter (snø og regn, vind, frost, skyer) med underpunkter, begge «Merk»-anvendelsene, alle skriftstedshenvisninger med uendret osisRef og LXX-henvisningen er med, med samme innhold og vekt. Merkingen er beholdt, og språket er naturlig, moderne bokmål. Ingen feil funnet som krever retting.",
+     "score": 10,
+     "model": "claude-fable-5-2",
+     "mechanical": [],
+     "skipped": []
+    }
+   ],
    "text": [
     "<sup>6</sup> For han sier til snøen: Vær du <i>på</i> jorden; likeså til det lette regnet og til det store regnet av hans styrke. <sup>7</sup> Han forsegler hvert menneskes hånd, for at alle mennesker skal kjenne hans verk. <sup>8</sup> Da går dyrene inn i hi og blir på sine steder. <sup>9</sup> Fra sør kommer virvelvinden, og kulde fra nord. <sup>10</sup> Ved Guds ånde gis frost, og vannenes bredde blir trengt sammen. 11 Også ved å vanne trøtter han ut den tykke skyen; han sprer sin lyse sky. <sup>12</sup> Og den blir vendt rundt omkring ved hans råd, for at de skal gjøre alt det han befaler dem på verdens overflate på jorden. <sup>13</sup> Han lar den komme, enten til tukt eller for sitt land eller til miskunn.",
     "Skiftene og ytterlighetene i været, vått eller tørt, varmt eller kaldt, er noe vi snakker mye om og legger mye merke til i det daglige. Men hvor sjelden tenker og taler vi om disse tingene slik Elihu gjør her, med ærefrykt for Gud, som styrer dem, og som gjennom dem viser sin makt og fremmer sitt forsyns hensikter! Vi må legge merke til Guds herlighet ikke bare i torden og lyn, men også i de mer alminnelige omskiftningene i været, som ikke er så skremmende og lager mindre larm. For eksempel:",
@@ -62,11 +138,26 @@
    "section": 3,
    "start": 0,
    "end": 5,
-   "status": "draft",
-   "rounds": 0,
+   "status": "checked",
+   "rounds": 1,
    "attempts": 0,
    "versions": [],
-   "reviews": [],
+   "reviews": [
+    {
+     "argument": {
+      "premises": true,
+      "conclusions": true,
+      "evidence": true,
+      "problems": ""
+     },
+     "issues": [],
+     "summary": "Gjengivelsen er trofast og velskrevet. Alle premisser, konklusjoner, skriftsteder, det latinske sitatet og oppregningene (I–III, 1–2, (1.)–(3.), [1.]–[2.]) er med og har samme vekt som i kilden. Alle osisRef og all merking stemmer, og språket er naturlig, moderne bokmål. «Forferdelsen» for «Astonishment» i siste setning er et forsvarlig ordvalg og ikke en feil.",
+     "score": 10,
+     "model": "claude-fable-5-2",
+     "mechanical": [],
+     "skipped": []
+    }
+   ],
    "text": [
     "<sup>14</sup> Lytt til dette, Job: stå stille og tenk over Guds underfulle gjerninger. <sup>15</sup> Vet du når Gud gav dem sine påbud og lot lyset fra sin sky skinne? 16 Kjenner du skyenes avveining, de underfulle gjerningene til ham som er fullkommen i kunnskap? <sup>17</sup> Hvordan klærne dine <i>blir</i> varme når han lar jorden falle til ro ved <i>vinden</i> fra sør<i>?</i> <sup>18</sup> Har du sammen med ham bredt ut himmelen, <i>som er</i> sterk <i>og</i> som et støpt speil? 19 Lær oss hva vi skal si til ham; <i>for</i> vi kan ikke ordne <i>vår tale</i> på grunn av mørket. <sup>20</sup> Skal det bli fortalt ham at jeg taler? Om en mann taler, blir han sannelig oppslukt.",
     "Her vender Elihu seg direkte til Job og ber ham anvende på seg selv det han hittil har sagt. Han ber ham lytte til denne talen (<ref osisRef=\"Job.37.14\">v. 14</ref>) og stanse opp en stund: <i>Stå stille og tenk over Guds underfulle gjerninger.</i> Det vi hører, gagner oss neppe hvis vi ikke tenker over det, og vi tenker neppe grundig over noe hvis vi ikke står stille og samler oss om det. Guds gjerninger er underfulle, og derfor både fortjener og krever de vår ettertanke. Tenker vi over dem slik vi bør, hjelper det oss til å forsone oss med alt han i sitt forsyn lar skje. For å ydmyke Job viser Elihu ham følgende:",
@@ -82,11 +173,26 @@
    "section": 4,
    "start": 0,
    "end": 2,
-   "status": "draft",
-   "rounds": 0,
+   "status": "checked",
+   "rounds": 1,
    "attempts": 0,
    "versions": [],
-   "reviews": [],
+   "reviews": [
+    {
+     "argument": {
+      "premises": true,
+      "conclusions": true,
+      "evidence": true,
+      "problems": ""
+     },
+     "issues": [],
+     "summary": "Gjengivelsen er trofast og godt skrevet. Alle sju punktene i Elihus avslutning, de alternative lesemåtene og alle skrifthenvisningene er bevart med samme innhold og vekt, og merkingen er intakt. Kildens henvisning til 1 Kor 1,15 er beholdt som i kilden, slik oppdraget krever. Ingen feil funnet.",
+     "score": 10,
+     "model": "claude-fable-5-2",
+     "mechanical": [],
+     "skipped": []
+    }
+   ],
    "text": [
     "<sup>21</sup> Og nå ser <i>menneskene</i> ikke det klare lyset som <i>er</i> i skyene; men vinden farer forbi og renser dem. <sup>22</sup> Godvær kommer fra nord; hos Gud <i>er</i> det fryktinngytende majestet. <sup>23</sup> <i>Når det gjelder</i> Den Allmektige, kan vi ikke finne ham ut; <i>han er</i> opphøyd i makt og i dom og i rikdom på rettferdighet; han vil ikke plage. <sup>24</sup> Derfor frykter menneskene ham; han akter ikke på noen <i>som er</i> vise i hjertet.",
     "Elihu avslutter her talen sin med noen korte, men store utsagn om Guds herlighet. Den hadde fylt ham selv med hellig ærefrykt, og den samme ærefrykten ønsket han å vekke hos andre. Han taler knapt og i hast, for han merket tydeligvis at Gud var i ferd med å ta saken i egne hender. 1. Han legger merke til at Gud, som har sagt at han vil <i>bo i det tykke mørket</i> og <i>gjøre det til sitt telt</i> (<ref osisRef=\"2Chr.6.1\">2 Krøn 6,1</ref>, <ref osisRef=\"Ps.18.11\">Sal 18,11</ref>), nå rykker fram mot dem i denne ærefryktinngytende vognen, som om han gjorde tronen sin klar til dom, omgitt av <i>skyer og mørke</i>, <ref osisRef=\"Ps.97.2\">Sal 97,2</ref>, <ref osisRef=\"Ps.97.9\">9</ref>. Han så skyen komme fra sør med en virvelvind i sitt indre. Men nå hang den så tykk og svart over hodene på dem at ingen av dem kunne <i>se det klare lyset som</i> like før <i>var i skyene</i>. Sollyset var nå formørket. Dette minnet ham om mørket som gjorde at han ikke kunne tale (<ref osisRef=\"Job.37.19\">v. 19</ref>), og gjorde ham redd for å fortsette, <ref osisRef=\"Job.37.20\">v. 20</ref>. Slik ble også disiplene <i>redde da de kom inn i skyen</i>, <ref osisRef=\"Luke.9.34\">Luk 9,34</ref>. Likevel ser han mot nord og ser at det er klart i den retningen. Det gir ham håp om at skyene ikke samler seg til en oversvømmelse; de er dekket av skyer, men ikke omringet av dem. Han venter at <i>vinden skal fare forbi</i> (slik kan det leses) <i>og rense dem</i>, en vind lik den som for over jorden for å befri den fra vannet etter Noahs flom (<ref osisRef=\"Gen.8.1\">1 Mos 8,1</ref>), som tegn på at Guds velvilje vendte tilbake. Da vil <i>godvær komme fra nord</i> (<ref osisRef=\"Job.37.22\">v. 22</ref>), og alt vil bli godt. Gud vil ikke alltid se med vrede på oss, og han går ikke i rette med oss for evig. 2. Han skynder seg å avslutte nå som Gud skal til å tale. Derfor sier han mye med få ord, som en sum av alt han har talt om. Om det ble overveid slik det burde, ville det ikke bare nagle fast den spikeren han hadde drevet inn, men også bane vei for det Gud ville si. Han bemerker: (1.) At <i>hos Gud er det fryktinngytende majestet</i>. Han er en herlighetens Gud, med en så overveldende fullkommenhet at den nødvendigvis må fylle alle hans tjenere med ærefrykt og alle hans motstandere med redsel. <i>Hos Gud er det fryktinngytende lovprisning</i> (slik leser noen det), for han er <i>fryktelig i lovsanger</i>, <ref osisRef=\"Exod.15.11\">2 Mos 15,11</ref>. (2.) At når vi taler <i>om Den Allmektige</i>, må vi innrømme at <i>vi ikke kan finne ham ut</i>. Vår begrensede forstand kan ikke fatte hans uendelige fullkommenheter, <ref osisRef=\"Job.37.23\">v. 23</ref>. Kan vi få havet opp i et eggeskall? Vi kan ikke spore de skrittene han tar i sitt forsyn. <i>Hans vei går gjennom havet.</i> (3.) At <i>han er opphøyd i makt</i>. Det opphøyde ved hans makt er at han kan gjøre hva han vil i himmelen og på jorden. Det er maktens altomfattende rekkevidde og uimotståelige kraft som gjør den så opphøyd; ingen skapning har en arm som hans, så lang og så sterk. (4.) At han ikke er mindre opphøyd i visdom og rettferdighet, <i>i dom og i rikdom på rettferdighet</i>; ellers ville det vært lite opphøyd ved hans makt. Vi kan være sikre på at han som kan gjøre alt, vil gjøre alt til det beste, for han er uendelig vis, og at han ikke vil gjøre urett i noe, for han er uendelig rettferdig. Også når han holder dom over syndere, er det rikelig med rettferdighet i fullbyrdelsen, og han pålegger dem ikke mer enn de fortjener. (5.) At <i>han ikke vil plage</i>, det vil si at han ikke plager med glede. Det er ingen fryd for ham å bedrøve menneskenes barn, og langt mindre sine egne barn. Han plager aldri uten at det er grunn til det og behov for det, og han lesser ikke for mye lidelse på oss, men tar hensyn til hvordan vi er skapt. Noen leser det slik: «<i>Den Allmektige, som vi ikke kan finne ut, er stor i makt, men han vil ikke plage i dommen, og hos ham er det rikdom på rettferdighet</i>, og han er heller ikke streng til å merke seg det vi gjør galt.» (6.) Han bryr seg ikke om kritikken fra dem som er vise i egne øyne: <i>Han akter ikke på dem</i>, <ref osisRef=\"Job.37.24\">v. 24</ref>. Han endrer ikke sine råd for å føye dem, og de som vil foreskrive ham hva han skal gjøre, får ham ikke til å gjøre som de vil. Han akter på den ydmykes bønn, men ikke på de listiges kløkt. Nei, Guds dårskap er visere enn menneskene, <ref osisRef=\"1Cor.1.15\">1 Kor 1,15</ref>. (7.) Av alt dette er det lett å slutte at siden Gud er stor, skal han fryktes stort. Ja, nettopp fordi han er nådig og ikke vil plage, <i>frykter menneskene ham derfor</i>, for <i>hos ham er det tilgivelse, for at han skal fryktes</i>, <ref osisRef=\"Ps.130.1-Ps.130.8\">Sal 130</ref>,4. Å frykte Gud er alle menneskers plikt, og det er til deres eget beste. <i>Menneskene skal frykte ham</i> (slik leser noen det); før eller siden skal de frykte ham. De som ikke vil frykte Herren og hans godhet, skal skjelve for evig når hans vredes skåler blir tømt ut over dem."

@@ -38,8 +38,8 @@
    "section": 1,
    "start": 0,
    "end": 8,
-   "status": "draft",
-   "rounds": 1,
+   "status": "checked",
+   "rounds": 2,
    "attempts": 0,
    "versions": [
     {
@@ -101,6 +101,20 @@
      ],
      "summary": "Gjengivelsen er gjennomgående trofast og skrevet på godt, naturlig bokmål, med alle henvisninger, latinske sitater og merking på plass. Én alvorlig feil: en sentral konklusjon i avsnitt 6 er logisk snudd. I tillegg kommer en svekket nyanse («cheerfully») og to unorske formuleringer.",
      "score": 6,
+     "model": "claude-fable-5-2",
+     "mechanical": [],
+     "skipped": []
+    },
+    {
+     "argument": {
+      "premises": true,
+      "conclusions": true,
+      "evidence": true,
+      "problems": ""
+     },
+     "issues": [],
+     "summary": "Gjengivelsen er trofast avsnitt for avsnitt: alle resonnementer, sitater, latinske innslag og henvisninger er bevart med riktig innhold og vekt, osisRef og merking er intakt, og språket er naturlig moderne bokmål. Ingen feil funnet.",
+     "score": 10,
      "model": "claude-fable-5-2",
      "mechanical": [],
      "skipped": []

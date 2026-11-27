@@ -190,8 +190,8 @@
    "section": 3,
    "start": 0,
    "end": 8,
-   "status": "draft",
-   "rounds": 1,
+   "status": "checked",
+   "rounds": 2,
    "attempts": 0,
    "versions": [
     {
@@ -229,6 +229,20 @@
      ],
      "summary": "Trofast og velskrevet gjengivelse på naturlig bokmål. Alle resonnementer, sitater og henvisninger er med. Eneste feil er at osisRef-attributtet for Jes 53,3 i avsnitt 3 er endret fra kildens form.",
      "score": 9,
+     "model": "claude-fable-5-2",
+     "mechanical": [],
+     "skipped": []
+    },
+    {
+     "argument": {
+      "premises": true,
+      "conclusions": true,
+      "evidence": true,
+      "problems": ""
+     },
+     "issues": [],
+     "summary": "Gjengivelsen er trofast avsnitt for avsnitt: alle premisser, konklusjoner, skriftsteder og sitater er med i samme rekkefølge og med samme vekt. Henvisninger, osisRef-verdier og merking stemmer med kilden, og språket er naturlig, moderne bokmål. Ingen feil funnet.",
+     "score": 10,
      "model": "claude-fable-5-2",
      "mechanical": [],
      "skipped": []
